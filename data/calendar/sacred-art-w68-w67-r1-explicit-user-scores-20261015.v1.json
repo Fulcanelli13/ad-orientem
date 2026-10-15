@@ -1,0 +1,2787 @@
+{
+  "schema": "AO_SACRED_ART_W68_W67_R1_EXPLICIT_NUMERIC_USER_RATINGS_V1",
+  "asOf": "2026-10-15",
+  "authorityType": "NEW_EXPLICIT_USER_NUMERIC_SCORES_NOT_COMPLETE_SUCCINCT_FIT_DECISIONS",
+  "sourceBatchId": "AO-SACRED-ART-W67-SAINTS-R1-20261015",
+  "sourceExportedAt": "2026-10-15T14:54:27.467Z",
+  "attachedExportSha256": "73729edb41ea3d90f0f63e3b3ba532996a43bd3156ad9f3fc074488f9e80b7d7",
+  "sourceSnapshotManifest": "data/research/sacred-art-w67-saints-r1-unrated-gallery-manifest-20261015.v1.json",
+  "previousRatingAuthorities": [
+    "data/calendar/sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json",
+    "data/calendar/sacred-art-w49-permanent-original-rejection-blocklist-20261014.v1.json",
+    "data/calendar/sacred-art-w46-cross-export-rating-authority-20261014.v1.json"
+  ],
+  "scope": "THESE_70_SCORES_SUPPLEMENT_PRIOR_RATINGS_NO_REPLACEMENT_NO_NEW_FIVES",
+  "counts": {
+    "total": 70,
+    "numericRated": 70,
+    "reviewerCompletedPerOldGallery": 2,
+    "missingSubjectFit": 68,
+    "score0": 2,
+    "score1": 0,
+    "score2": 6,
+    "score3": 34,
+    "score4": 28,
+    "score5": 0,
+    "bannedExactReviewedCandidateIds": 8,
+    "userImageSourceIssueFlags": 8,
+    "photoWrongFlags": 0,
+    "poorCropFlags": 0,
+    "explicitElsewhere": 2,
+    "explicitPerfect": 0,
+    "priorRatedIdCollisions": 0,
+    "sourceConfirmedCheckmarks": 0
+  },
+  "methodology": [
+    "The 70 scores are explicit user decisions even where separate suitability was left null.",
+    "The old HTML completion metric of 2/70 reflects both score+fit; do not call the other 68 unrated.",
+    "0–2 rejects the rated original globally and must be excluded from future reviews, images and variants after exact-object identity is resolved.",
+    "3 research only, 4 pending final curation, 5 would mean user aesthetic selection only; this export has zero 5.",
+    "Never convert a 4 into a 5 because of subject suitability or image quality inferred elsewhere.",
+    "The 8 sourceIssue flags have no detailed reason and do not establish wrong image, attribution or copyright failure.",
+    "No sourceViewed checkbox was ticked; this is absence of an explicit confirmation, not proof user did not see artworks.",
+    "No user photo/artist/physical attribution was reverified and no publication master or permissions have been secured.",
+    "Previous existing numeric-five corpus remains 109 known ID records, not automatically unique physical paintings.",
+    "No rights-holder outreach and no paid licences. No live app changes."
+  ],
+  "records": [
+    {
+      "recordId": "C32:0lavisiondesaintetheresedavilapprubensjpg",
+      "sourceSubjectId": "SNT-DC-08",
+      "sourceSubjectName": "Saint Teresa of Ávila",
+      "title": "0 La Vision de sainte Thérèse d'Avila - P.P. Rubens.jpg",
+      "artistAsPresented": "Peter Paul Rubens",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:0_La_Vision_de_sainte_Th%C3%A9r%C3%A8se_d'Avila_-_P.P._Rubens.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:0_La_Vision_de_sainte_Th%C3%A9r%C3%A8se_d'Avila_-_P.P._Rubens.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:0lavisiondesaintetheresedavilapprubensjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:juanrodriguezjuarezthevirginofthecarmenwithsainttheresaandsa",
+      "sourceSubjectId": "SNT-DC-08",
+      "sourceSubjectName": "Saint Teresa of Ávila",
+      "title": "Juan Rodríguez Juárez - The Virgin of the Carmen with Saint Theresa and Saint John of the Cross - Google Art Project.jpg",
+      "artistAsPresented": "Juan Rodríguez Juárez",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Juan_Rodr%C3%ADguez_Ju%C3%A1rez_-_The_Virgin_of_the_Carmen_with_Saint_Theresa_and_Saint_John_of_the_Cross_-_Google_Art_Project.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Juan_Rodr%C3%ADguez_Ju%C3%A1rez_-_The_Virgin_of_the_Carmen_with_Saint_Theresa_and_Saint_John_of_the_Cross_-_Google_Art_Project.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:juanrodriguezjuarezthevirginofthecarmenwithsainttheresaandsa",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:giuseppepasseriepisodidellavitadisantacaterinadasiena01jpg",
+      "sourceSubjectId": "SNT-DC-09",
+      "sourceSubjectName": "Saint Catherine of Siena",
+      "title": "Giuseppe passeri, episodi della vita di santa caterina da siena, 01.JPG",
+      "artistAsPresented": "Giuseppe Passeri",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Giuseppe_passeri%2C_episodi_della_vita_di_santa_caterina_da_siena%2C_01.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Giuseppe_passeri%2C_episodi_della_vita_di_santa_caterina_da_siena%2C_01.JPG?width=960",
+      "sourcePhysicalObjectId": "C32:giuseppepasseriepisodidellavitadisantacaterinadasiena01jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:giambattistanaldiniegiovannibalduccimatrimoniomisticodiscate",
+      "sourceSubjectId": "SNT-DC-09",
+      "sourceSubjectName": "Saint Catherine of Siena",
+      "title": "Giambattista naldini e giovanni balducci, matrimonio mistico di s. caterina, con profeti e santi, 1568 poi 1591, da s. caterina a prato.jpg",
+      "artistAsPresented": "Giambattista Naldini and Giovanni Balducci",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Giambattista_naldini_e_giovanni_balducci%2C_matrimonio_mistico_di_s._caterina%2C_con_profeti_e_santi%2C_1568_poi_1591%2C_da_s._caterina_a_prato.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Giambattista_naldini_e_giovanni_balducci%2C_matrimonio_mistico_di_s._caterina%2C_con_profeti_e_santi%2C_1568_poi_1591%2C_da_s._caterina_a_prato.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:giambattistanaldiniegiovannibalduccimatrimoniomisticodiscate",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:gustavecourtoissaintsebastianasitoriginallyappearedatthepari",
+      "sourceSubjectId": "SNT-OT-19",
+      "sourceSubjectName": "Saint Sebastian",
+      "title": "Gustave Courtois--Saint Sebastian as it originally appeared at the Paris Salon of 1898.jpg",
+      "artistAsPresented": "Gustave Courtois",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Gustave_Courtois--Saint_Sebastian_as_it_originally_appeared_at_the_Paris_Salon_of_1898.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Gustave_Courtois--Saint_Sebastian_as_it_originally_appeared_at_the_Paris_Salon_of_1898.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:gustavecourtoissaintsebastianasitoriginallyappearedatthepari",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:santmartiielpobremiquelmarchmuseudebellesartsdevalenciajpg",
+      "sourceSubjectId": "SNT-OT-29",
+      "sourceSubjectName": "Saint Martin of Tours",
+      "title": "Sant Martí i el pobre, Miquel March, museu de Belles Arts de València.JPG",
+      "artistAsPresented": "Miquel March",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Sant_Mart%C3%AD_i_el_pobre%2C_Miquel_March%2C_museu_de_Belles_Arts_de_Val%C3%A8ncia.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Sant_Mart%C3%AD_i_el_pobre%2C_Miquel_March%2C_museu_de_Belles_Arts_de_Val%C3%A8ncia.JPG?width=960",
+      "sourcePhysicalObjectId": "C32:santmartiielpobremiquelmarchmuseudebellesartsdevalenciajpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:domenicomorellilamaddalenaaipiedidigesujpg",
+      "sourceSubjectId": "SNT-OT-25",
+      "sourceSubjectName": "Saint Mary Magdalene",
+      "title": "Domenico Morelli - La Maddalena ai piedi di Gesù.jpg",
+      "artistAsPresented": "Domenico Morelli",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:domenicomorellilamaddalenaaipiedidigesujpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:gaspardecrayertheascensionofsaintcatherineofalexandriang1211",
+      "sourceSubjectId": "SNT-OT-24",
+      "sourceSubjectName": "Saint Catherine of Alexandria",
+      "title": "Gaspar de Crayer - The Ascension of Saint Catherine of Alexandria - NG 1211 - National Galleries of Scotland.jpg",
+      "artistAsPresented": "Gaspar de Crayer",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_The_Ascension_of_Saint_Catherine_of_Alexandria_-_NG_1211_-_National_Galleries_of_Scotland.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Gaspar_de_Crayer_-_The_Ascension_of_Saint_Catherine_of_Alexandria_-_NG_1211_-_National_Galleries_of_Scotland.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:gaspardecrayertheascensionofsaintcatherineofalexandriang1211",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:abrahamdiepenbeeckmartyrdomofstcatherinemob1482nationalmuseu",
+      "sourceSubjectId": "SNT-OT-24",
+      "sourceSubjectName": "Saint Catherine of Alexandria",
+      "title": "Abraham Diepenbeeck - Martyrdom of St. Catherine (^) - M.Ob.1482 - National Museum in Warsaw.jpg",
+      "artistAsPresented": "Abraham Diepenbeeck",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Abraham_Diepenbeeck_-_Martyrdom_of_St._Catherine_(%5E)_-_M.Ob.1482_-_National_Museum_in_Warsaw.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Abraham_Diepenbeeck_-_Martyrdom_of_St._Catherine_(%5E)_-_M.Ob.1482_-_National_Museum_in_Warsaw.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:abrahamdiepenbeeckmartyrdomofstcatherinemob1482nationalmuseu",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:federicobaroccimartiriodisantacaterinadalessandria161002jpg",
+      "sourceSubjectId": "SNT-OT-24",
+      "sourceSubjectName": "Saint Catherine of Alexandria",
+      "title": "Federico barocci, martirio di santa caterina d'alessandria, 1610, 02.jpg",
+      "artistAsPresented": "Federico Barocci",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:federicobaroccimartiriodisantacaterinadalessandria161002jpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:filippolippistambrosesmiracleofthebees144147jpg",
+      "sourceSubjectId": "SNT-DC-01",
+      "sourceSubjectName": "Saint Ambrose",
+      "title": "Filippo Lippi, St. Ambrose's Miracle of the Bees, 1441-47.jpg",
+      "artistAsPresented": "Filippo Lippi",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Filippo_Lippi%2C_St._Ambrose's_Miracle_of_the_Bees%2C_1441-47.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Filippo_Lippi%2C_St._Ambrose's_Miracle_of_the_Bees%2C_1441-47.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:filippolippistambrosesmiracleofthebees144147jpg",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:bernardinomeiattrsangiovannibattistadavantiaerode01jpg",
+      "sourceSubjectId": "SNT-OT-04",
+      "sourceSubjectName": "Saint John the Baptist",
+      "title": "Bernardino mei (attr.), san giovanni battista davanti a erode, 01.jpg",
+      "artistAsPresented": "attributed to Bernardino Mei",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bernardino_mei_(attr.)%2C_san_giovanni_battista_davanti_a_erode%2C_01.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bernardino_mei_(attr.)%2C_san_giovanni_battista_davanti_a_erode%2C_01.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:bernardinomeiattrsangiovannibattistadavantiaerode01jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:giulianobugiardinisangiovannibattista152325jpg",
+      "sourceSubjectId": "SNT-OT-04",
+      "sourceSubjectName": "Saint John the Baptist",
+      "title": "Giuliano bugiardini, san giovanni battista 1523-25.JPG",
+      "artistAsPresented": "Giuliano Bugiardini",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Giuliano_bugiardini%2C_san_giovanni_battista_1523-25.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Giuliano_bugiardini%2C_san_giovanni_battista_1523-25.JPG?width=960",
+      "sourcePhysicalObjectId": "C32:giulianobugiardinisangiovannibattista152325jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:bartolommeodigiovanniscenesfromthelifeofsaintjohnthebaptist1",
+      "sourceSubjectId": "SNT-OT-04",
+      "sourceSubjectName": "Saint John the Baptist",
+      "title": "Bartolommeo di Giovanni - Scenes from the Life of Saint John the Baptist - 1937.996 - Art Institute of Chicago.jpg",
+      "artistAsPresented": "Bartolommeo di Giovanni",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bartolommeo_di_Giovanni_-_Scenes_from_the_Life_of_Saint_John_the_Baptist_-_1937.996_-_Art_Institute_of_Chicago.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bartolommeo_di_Giovanni_-_Scenes_from_the_Life_of_Saint_John_the_Baptist_-_1937.996_-_Art_Institute_of_Chicago.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:bartolommeodigiovanniscenesfromthelifeofsaintjohnthebaptist1",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:miguelcabreratheconversionofsaintignatiusloyolagoogleartproj",
+      "sourceSubjectId": "SNT-OT-16",
+      "sourceSubjectName": "Saint Ignatius of Loyola",
+      "title": "Miguel Cabrera - The Conversion of Saint Ignatius Loyola - Google Art Project.jpg",
+      "artistAsPresented": "Miguel Cabrera",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_The_Conversion_of_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Miguel_Cabrera_-_The_Conversion_of_Saint_Ignatius_Loyola_-_Google_Art_Project.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:miguelcabreratheconversionofsaintignatiusloyolagoogleartproj",
+      "review": {
+        "numericScore": 3,
+        "suitability": "suitable_elsewhere",
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": true,
+        "recordedInSourceExportComplete": true,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:saintetienneenprierecharleslelorrain1eremoitiedu17esieclemus",
+      "sourceSubjectId": "SNT-OT-10",
+      "sourceSubjectName": "Saint Stephen",
+      "title": "Saint-Étienne en prière (Charles le Lorrain) 1ere moitié du 17e siècle (Musée d'Arts de Nantes) février 2024.jpg",
+      "artistAsPresented": "Charles Le Lorrain",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saint-%C3%89tienne_en_pri%C3%A8re_(Charles_le_Lorrain)_1ere_moiti%C3%A9_du_17e_si%C3%A8cle_(Mus%C3%A9e_d'Arts_de_Nantes)_f%C3%A9vrier_2024.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Saint-%C3%89tienne_en_pri%C3%A8re_(Charles_le_Lorrain)_1ere_moiti%C3%A9_du_17e_si%C3%A8cle_(Mus%C3%A9e_d'Arts_de_Nantes)_f%C3%A9vrier_2024.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:saintetienneenprierecharleslelorrain1eremoitiedu17esieclemus",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:corradogiaquintosaintnicolassauvantlesnaufragesjpg",
+      "sourceSubjectId": "SNT-OT-20",
+      "sourceSubjectName": "Saint Nicholas",
+      "title": "Corrado Giaquinto Saint Nicolas sauvant les naufragés.JPG",
+      "artistAsPresented": "Corrado Giaquinto",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Corrado_Giaquinto_Saint_Nicolas_sauvant_les_naufrag%C3%A9s.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_Giaquinto_Saint_Nicolas_sauvant_les_naufrag%C3%A9s.JPG?width=960",
+      "sourcePhysicalObjectId": "C32:corradogiaquintosaintnicolassauvantlesnaufragesjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:corradogiaquintosannicoladibarijpg",
+      "sourceSubjectId": "SNT-OT-20",
+      "sourceSubjectName": "Saint Nicholas",
+      "title": "Corrado giaquinto, san nicola di bari.jpg",
+      "artistAsPresented": "Corrado Giaquinto",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Corrado_giaquinto%2C_san_nicola_di_bari.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_giaquinto%2C_san_nicola_di_bari.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:corradogiaquintosannicoladibarijpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:bernardocavallinosantaceciliainestasi1640cajpg",
+      "sourceSubjectId": "SNT-OT-23",
+      "sourceSubjectName": "Saint Cecilia",
+      "title": "Bernardo cavallino, santa cecilia in estasi, 1640 ca..JPG",
+      "artistAsPresented": "Bernardo Cavallino",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bernardo_cavallino%2C_santa_cecilia_in_estasi%2C_1640_ca..JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bernardo_cavallino%2C_santa_cecilia_in_estasi%2C_1640_ca..JPG?width=960",
+      "sourcePhysicalObjectId": "C32:bernardocavallinosantaceciliainestasi1640cajpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:michaelwillmanopusmagnum2019p06matyrdomofstlawrence1663jpg",
+      "sourceSubjectId": "SNT-OT-11",
+      "sourceSubjectName": "Saint Lawrence",
+      "title": "Michael Willman Opus Magnum 2019 P06 Matyrdom of St. Lawrence (1663).jpg",
+      "artistAsPresented": "Michael Willmann",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg?width=960",
+      "sourcePhysicalObjectId": "C32:michaelwillmanopusmagnum2019p06matyrdomofstlawrence1663jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:corradogiaquintomartiriodisanlorenzojpg",
+      "sourceSubjectId": "SNT-OT-11",
+      "sourceSubjectName": "Saint Lawrence",
+      "title": "Corrado giaquinto, martirio di san lorenzo.jpg",
+      "artistAsPresented": "Corrado Giaquinto",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Corrado_giaquinto%2C_martirio_di_san_lorenzo.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_giaquinto%2C_martirio_di_san_lorenzo.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:corradogiaquintomartiriodisanlorenzojpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:jeanfrancoisdetroystvincentdepaulatthedeathbedoflouisxiiikms",
+      "sourceSubjectId": "SNT-OT-28",
+      "sourceSubjectName": "Saint Vincent de Paul",
+      "title": "Jean Francois de Troy - St Vincent de Paul at the Deathbed of Louis XIII - KMS7697 - Statens Museum for Kunst.jpg",
+      "artistAsPresented": "Jean-François de Troy",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Jean_Francois_de_Troy_-_St_Vincent_de_Paul_at_the_Deathbed_of_Louis_XIII_-_KMS7697_-_Statens_Museum_for_Kunst.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Jean_Francois_de_Troy_-_St_Vincent_de_Paul_at_the_Deathbed_of_Louis_XIII_-_KMS7697_-_Statens_Museum_for_Kunst.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:jeanfrancoisdetroystvincentdepaulatthedeathbedoflouisxiiikms",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C32:domenicopuligothevisionofsaintbernardwalters37652jpg",
+      "sourceSubjectId": "SNT-DC-07",
+      "sourceSubjectName": "Saint Bernard of Clairvaux",
+      "title": "Domenico Puligo - The Vision of Saint Bernard - Walters 37652.jpg",
+      "artistAsPresented": "Domenico Puligo",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Domenico_Puligo_-_The_Vision_of_Saint_Bernard_-_Walters_37652.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Domenico_Puligo_-_The_Vision_of_Saint_Bernard_-_Walters_37652.jpg?width=960",
+      "sourcePhysicalObjectId": "C32:domenicopuligothevisionofsaintbernardwalters37652jpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:basiliosantacruzpumacallaosaintbonaventureandsaintanthonyofp",
+      "sourceSubjectId": "SNT-DC-06",
+      "sourceSubjectName": "Saint Bonaventure",
+      "title": "Basilio Santa Cruz Pumacallao - Saint Bonaventure and Saint Anthony of Padua - 2018.652.1 - Metropolitan Museum of Art.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Basilio_Santa_Cruz_Pumacallao_-_Saint_Bonaventure_and_Saint_Anthony_of_Padua_-_2018.652.1_-_Metropolitan_Museum_of_Art.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Basilio_Santa_Cruz_Pumacallao_-_Saint_Bonaventure_and_Saint_Anthony_of_Padua_-_2018.652.1_-_Metropolitan_Museum_of_Art.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:basiliosantacruzpumacallaosaintbonaventureandsaintanthonyofp",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:rebeccadulcibellaorpen18301923saintbonaventureinspiredtowrit",
+      "sourceSubjectId": "SNT-DC-06",
+      "sourceSubjectName": "Saint Bonaventure",
+      "title": "Rebecca Dulcibella Orpen (1830-1923) - Saint Bonaventure Inspired to Write - 343200 - National Trust.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Rebecca_Dulcibella_Orpen_(1830-1923)_-_Saint_Bonaventure_Inspired_to_Write_-_343200_-_National_Trust.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Rebecca_Dulcibella_Orpen_(1830-1923)_-_Saint_Bonaventure_Inspired_to_Write_-_343200_-_National_Trust.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:rebeccadulcibellaorpen18301923saintbonaventureinspiredtowrit",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:autorkopieneznamysaintthomasaquinaso1698slovaknationalgaller",
+      "sourceSubjectId": "SNT-DC-05",
+      "sourceSubjectName": "Saint Thomas Aquinas",
+      "title": "Autor kópie neznámy - Saint Thomas Aquinas - O 1698 - Slovak National Gallery.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Autor_k%C3%B3pie_nezn%C3%A1my_-_Saint_Thomas_Aquinas_-_O_1698_-_Slovak_National_Gallery.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Autor_k%C3%B3pie_nezn%C3%A1my_-_Saint_Thomas_Aquinas_-_O_1698_-_Slovak_National_Gallery.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:autorkopieneznamysaintthomasaquinaso1698slovaknationalgaller",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:saintthomasdaquinaryshefferjpg",
+      "sourceSubjectId": "SNT-DC-05",
+      "sourceSubjectName": "Saint Thomas Aquinas",
+      "title": "Saint Thomas d Aquin-Ary Sheffer.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_d_Aquin-Ary_Sheffer.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Saint_Thomas_d_Aquin-Ary_Sheffer.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:saintthomasdaquinaryshefferjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:smnchiostrograndee06maurosoderinisantommasodaquinopresentalu",
+      "sourceSubjectId": "SNT-DC-05",
+      "sourceSubjectName": "Saint Thomas Aquinas",
+      "title": "SMN Chiostro Grande e06 Mauro Soderini, San Tommaso d'Aquino presenta l'uffizio del Corpus Domini a Urbano IV.JPG",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e06_Mauro_Soderini%2C_San_Tommaso_d'Aquino_presenta_l'uffizio_del_Corpus_Domini_a_Urbano_IV.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:SMN_Chiostro_Grande_e06_Mauro_Soderini%2C_San_Tommaso_d'Aquino_presenta_l'uffizio_del_Corpus_Domini_a_Urbano_IV.JPG?width=960",
+      "sourcePhysicalObjectId": "C34:smnchiostrograndee06maurosoderinisantommasodaquinopresentalu",
+      "review": {
+        "numericScore": 0,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:smnchiostrograndee09cosimogamberuccisantommasovienecintodadu",
+      "sourceSubjectId": "SNT-DC-05",
+      "sourceSubjectName": "Saint Thomas Aquinas",
+      "title": "SMN Chiostro Grande e09 Cosimo Gamberucci, San Tommaso viene cinto da due angeli con cingolo di perpetua castità.JPG",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e09_Cosimo_Gamberucci%2C_San_Tommaso_viene_cinto_da_due_angeli_con_cingolo_di_perpetua_castit%C3%A0.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:SMN_Chiostro_Grande_e09_Cosimo_Gamberucci%2C_San_Tommaso_viene_cinto_da_due_angeli_con_cingolo_di_perpetua_castit%C3%A0.JPG?width=960",
+      "sourcePhysicalObjectId": "C34:smnchiostrograndee09cosimogamberuccisantommasovienecintodadu",
+      "review": {
+        "numericScore": 0,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:cathedralesaintetiennedetoulousesaintfrancoisdesalesremetlar",
+      "sourceSubjectId": "SNT-DC-12",
+      "sourceSubjectName": "Saint Francis de Sales",
+      "title": "Cathédrale Saint-Étienne de Toulouse – Saint François de Sales remet la règle à sainte Jeanne de Chantal - By Bertrand François (1756-1805) PM31001527.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:cathedralesaintetiennedetoulousesaintfrancoisdesalesremetlar",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:corradogiacquintosaintjanefrancesofchantalandsaintfrancisofs",
+      "sourceSubjectId": "SNT-DC-12",
+      "sourceSubjectName": "Saint Francis de Sales",
+      "title": "Corrado Giacquinto - Saint Jane Frances of Chantal and Saint Francis of Sales in adoration of the Heart of Jesus - Santa Bárbara, Madrid.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:corradogiacquintosaintjanefrancesofchantalandsaintfrancisofs",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:sermonofsaintalbertusmagnusmetdp164883jpg",
+      "sourceSubjectId": "SNT-DC-21",
+      "sourceSubjectName": "Saint Albert the Great",
+      "title": "Sermon of Saint Albertus Magnus MET DP164883.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Sermon_of_Saint_Albertus_Magnus_MET_DP164883.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Sermon_of_Saint_Albertus_Magnus_MET_DP164883.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:sermonofsaintalbertusmagnusmetdp164883jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:bartolomeomontagnamadonnaintronoconilbambinotraisantigiovann",
+      "sourceSubjectId": "SNT-AP-06",
+      "sourceSubjectName": "Saint Bartholomew",
+      "title": "Bartolomeo Montagna Madonna in trono con il Bambino tra i santi Giovanni Battista, Bartolomeo, Agostino e Sebastiano e tre angeli musici Vicenza.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Montagna_Madonna_in_trono_con_il_Bambino_tra_i_santi_Giovanni_Battista%2C_Bartolomeo%2C_Agostino_e_Sebastiano_e_tre_angeli_musici_Vicenza.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bartolomeo_Montagna_Madonna_in_trono_con_il_Bambino_tra_i_santi_Giovanni_Battista%2C_Bartolomeo%2C_Agostino_e_Sebastiano_e_tre_angeli_musici_Vicenza.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:bartolomeomontagnamadonnaintronoconilbambinotraisantigiovann",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:michaelwillmanopusmagnum2019p14matyrdomofstmatthew1700jpg",
+      "sourceSubjectId": "SNT-AP-08",
+      "sourceSubjectName": "Saint Matthew",
+      "title": "Michael Willman Opus Magnum 2019 P14 Matyrdom of St. Matthew (1700).jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg?width=960",
+      "sourcePhysicalObjectId": "C34:michaelwillmanopusmagnum2019p14matyrdomofstmatthew1700jpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:hendrickterbrugghenthecallingofstmatthewwga22168jpg",
+      "sourceSubjectId": "SNT-AP-08",
+      "sourceSubjectName": "Saint Matthew",
+      "title": "Hendrick ter Brugghen - The Calling of St Matthew - WGA22168.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Hendrick_ter_Brugghen_-_The_Calling_of_St_Matthew_-_WGA22168.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Hendrick_ter_Brugghen_-_The_Calling_of_St_Matthew_-_WGA22168.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:hendrickterbrugghenthecallingofstmatthewwga22168jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:claudevignonsaintluketheevangelistjpg",
+      "sourceSubjectId": "SNT-EV-02",
+      "sourceSubjectName": "Saint Luke the Evangelist",
+      "title": "Claude Vignon - Saint Luke the Evangelist.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Luke_the_Evangelist.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Claude_Vignon_-_Saint_Luke_the_Evangelist.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:claudevignonsaintluketheevangelistjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:apariciondelninoasanantonioantoniodelcastillosaavedrajpg",
+      "sourceSubjectId": "SNT-OT-06",
+      "sourceSubjectName": "Saint Anthony of Padua",
+      "title": "Aparición del Niño a San Antonio - Antonio del Castillo Saavedra.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:apariciondelninoasanantonioantoniodelcastillosaavedrajpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:apoteosisdesanantoniojuancarrenodemirandasanantoniodelosalem",
+      "sourceSubjectId": "SNT-OT-06",
+      "sourceSubjectName": "Saint Anthony of Padua",
+      "title": "Apoteosis de san Antonio - Juan Carreño de Miranda - San Antonio de los Alemanes (Madrid).jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Apoteosis_de_san_Antonio_-_Juan_Carre%C3%B1o_de_Miranda_-_San_Antonio_de_los_Alemanes_(Madrid).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Apoteosis_de_san_Antonio_-_Juan_Carre%C3%B1o_de_Miranda_-_San_Antonio_de_los_Alemanes_(Madrid).jpg?width=960",
+      "sourcePhysicalObjectId": "C34:apoteosisdesanantoniojuancarrenodemirandasanantoniodelosalem",
+      "review": {
+        "numericScore": 3,
+        "suitability": "suitable_elsewhere",
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": true,
+        "recordedInSourceExportComplete": true,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:saintanthonyofpaduaandthechristchildbyfranciscogoyajpg",
+      "sourceSubjectId": "SNT-OT-06",
+      "sourceSubjectName": "Saint Anthony of Padua",
+      "title": "'Saint Anthony of Padua and the Christ Child' by Francisco Goya.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:'Saint_Anthony_of_Padua_and_the_Christ_Child'_by_Francisco_Goya.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:'Saint_Anthony_of_Padua_and_the_Christ_Child'_by_Francisco_Goya.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:saintanthonyofpaduaandthechristchildbyfranciscogoyajpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:cristoconfortandoasantodomingoalonsomigueldetovarjpg",
+      "sourceSubjectId": "SNT-OT-13",
+      "sourceSubjectName": "Saint Dominic",
+      "title": "Cristo confortando a Santo Domingo, Alonso Miguel de Tovar.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Cristo_confortando_a_Santo_Domingo%2C_Alonso_Miguel_de_Tovar.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Cristo_confortando_a_Santo_Domingo%2C_Alonso_Miguel_de_Tovar.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:cristoconfortandoasantodomingoalonsomigueldetovarjpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:lactaciondelavirgenasantodomingojuansimongutierrezjpg",
+      "sourceSubjectId": "SNT-OT-13",
+      "sourceSubjectName": "Saint Dominic",
+      "title": "Lactación de la Virgen a Santo Domingo, Juan Simón Gutiérrez.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Lactaci%C3%B3n_de_la_Virgen_a_Santo_Domingo%2C_Juan_Sim%C3%B3n_Guti%C3%A9rrez.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Lactaci%C3%B3n_de_la_Virgen_a_Santo_Domingo%2C_Juan_Sim%C3%B3n_Guti%C3%A9rrez.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:lactaciondelavirgenasantodomingojuansimongutierrezjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:michaelwillmanopusmagnum2019p59deathofstbenedictca1682jpg",
+      "sourceSubjectId": "SNT-OT-14",
+      "sourceSubjectName": "Saint Benedict",
+      "title": "Michael Willman Opus Magnum 2019 P59 Death of St. Benedict (ca 1682).jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg?width=960",
+      "sourcePhysicalObjectId": "C34:michaelwillmanopusmagnum2019p59deathofstbenedictca1682jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": true
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": true,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:miguelcabrerasaintfrancisxaviergoogleartprojectjpg",
+      "sourceSubjectId": "SNT-OT-15",
+      "sourceSubjectName": "Saint Francis Xavier",
+      "title": "Miguel Cabrera - Saint Francis Xavier - Google Art Project.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Miguel_Cabrera_-_Saint_Francis_Xavier_-_Google_Art_Project.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Miguel_Cabrera_-_Saint_Francis_Xavier_-_Google_Art_Project.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:miguelcabrerasaintfrancisxaviergoogleartprojectjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C34:passignanomiracolodisanmicheleeilbuesulgargano160101jpg",
+      "sourceSubjectId": "SNT-OT-02",
+      "sourceSubjectName": "Saint Michael Archangel",
+      "title": "Passignano, miracolo di san michele e il bue sul gargano, 1601, 01.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Passignano%2C_miracolo_di_san_michele_e_il_bue_sul_gargano%2C_1601%2C_01.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Passignano%2C_miracolo_di_san_michele_e_il_bue_sul_gargano%2C_1601%2C_01.jpg?width=960",
+      "sourcePhysicalObjectId": "C34:passignanomiracolodisanmicheleeilbuesulgargano160101jpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:francescobotticinitobiasandtheangelc1470uffizijpg",
+      "sourceSubjectId": "SNT-OT-03",
+      "sourceSubjectName": "Saint Raphael Archangel",
+      "title": "Francesco Botticini, Tobias and the Angel, c1470, Uffizi.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Francesco_Botticini%2C_Tobias_and_the_Angel%2C_c1470%2C_Uffizi.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Francesco_Botticini%2C_Tobias_and_the_Angel%2C_c1470%2C_Uffizi.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:francescobotticinitobiasandtheangelc1470uffizijpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:camilloprocaccininativitabeataverginechiesaabrinziovajpg",
+      "sourceSubjectId": "SNT-OT-30",
+      "sourceSubjectName": "Saint Anne",
+      "title": "Camillo Procaccini, Natività Beata Vergine, chiesa a Brinzio (VA).jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Camillo_Procaccini%2C_Nativit%C3%A0_Beata_Vergine%2C_chiesa_a_Brinzio_(VA).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Camillo_Procaccini%2C_Nativit%C3%A0_Beata_Vergine%2C_chiesa_a_Brinzio_(VA).jpg?width=960",
+      "sourcePhysicalObjectId": "C35:camilloprocaccininativitabeataverginechiesaabrinziovajpg",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:werkstattlucascranachdastannanachdergeburtderjungfraujpg",
+      "sourceSubjectId": "SNT-OT-30",
+      "sourceSubjectName": "Saint Anne",
+      "title": "Werkstatt Lucas Cranach d.Ä. - St. Anna nach der Geburt der Jungfrau.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Werkstatt_Lucas_Cranach_d.%C3%84._-_St._Anna_nach_der_Geburt_der_Jungfrau.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Werkstatt_Lucas_Cranach_d.%C3%84._-_St._Anna_nach_der_Geburt_der_Jungfrau.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:werkstattlucascranachdastannanachdergeburtderjungfraujpg",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:hansmemlingoldwomanatprayerwithstannegoogleartprojectjpg",
+      "sourceSubjectId": "SNT-OT-30",
+      "sourceSubjectName": "Saint Anne",
+      "title": "Hans Memling - Old Woman at Prayer with St. Anne - Google Art Project.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Hans_Memling_-_Old_Woman_at_Prayer_with_St._Anne_-_Google_Art_Project.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Hans_Memling_-_Old_Woman_at_Prayer_with_St._Anne_-_Google_Art_Project.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:hansmemlingoldwomanatprayerwithstannegoogleartprojectjpg",
+      "review": {
+        "numericScore": 2,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "PERMANENT_REJECT_EXACT_REVIEWED_ORIGINAL",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:saracenicarlothemadonnaandchildwithsaintanneandanangleoilonc",
+      "sourceSubjectId": "SNT-OT-30",
+      "sourceSubjectName": "Saint Anne",
+      "title": "Saraceni, Carlo - The Madonna and Child with Saint Anne and an Angle, oil on copper, c. 1608-1610.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saraceni%2C_Carlo_-_The_Madonna_and_Child_with_Saint_Anne_and_an_Angle%2C_oil_on_copper%2C_c._1608-1610.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Saraceni%2C_Carlo_-_The_Madonna_and_Child_with_Saint_Anne_and_an_Angle%2C_oil_on_copper%2C_c._1608-1610.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:saracenicarlothemadonnaandchildwithsaintanneandanangleoilonc",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:thedeathofsaintannebygiulialamajpg",
+      "sourceSubjectId": "SNT-OT-30",
+      "sourceSubjectName": "Saint Anne",
+      "title": "The death of Saint Anne (by Giulia Lama).jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:The_death_of_Saint_Anne_(by_Giulia_Lama).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:The_death_of_Saint_Anne_(by_Giulia_Lama).jpg?width=960",
+      "sourcePhysicalObjectId": "C35:thedeathofsaintannebygiulialamajpg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:aryschefferdeintochtvanjeannedarcenkarelviiinreimsdms78dordr",
+      "sourceSubjectId": "SNT-OT-07",
+      "sourceSubjectName": "Saint Joan of Arc",
+      "title": "Ary Scheffer - De intocht van Jeanne d' Arc en Karel VII in Reims - DM-S-78 - Dordrechts Museum.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Ary_Scheffer_-_De_intocht_van_Jeanne_d'_Arc_en_Karel_VII_in_Reims_-_DM-S-78_-_Dordrechts_Museum.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Ary_Scheffer_-_De_intocht_van_Jeanne_d'_Arc_en_Karel_VII_in_Reims_-_DM-S-78_-_Dordrechts_Museum.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:aryschefferdeintochtvanjeannedarcenkarelviiinreimsdms78dordr",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:jeannedarcprisonnierearouenpierrerevoilmbalyon2014jpeg",
+      "sourceSubjectId": "SNT-OT-07",
+      "sourceSubjectName": "Saint Joan of Arc",
+      "title": "Jeanne d'arc prisonnière à Rouen-Pierre Révoil-MBA Lyon 2014.jpeg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Jeanne_d'arc_prisonni%C3%A8re_%C3%A0_Rouen-Pierre_R%C3%A9voil-MBA_Lyon_2014.jpeg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Jeanne_d'arc_prisonni%C3%A8re_%C3%A0_Rouen-Pierre_R%C3%A9voil-MBA_Lyon_2014.jpeg?width=960",
+      "sourcePhysicalObjectId": "C35:jeannedarcprisonnierearouenpierrerevoilmbalyon2014jpeg",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:lucascranachtheeldersaintsgenevieveandapolloniagoogleartproj",
+      "sourceSubjectId": "SNT-OT-26",
+      "sourceSubjectName": "Saint Geneviève",
+      "title": "Lucas Cranach the Elder - Saints Genevieve and Apollonia - Google Art Project.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Lucas_Cranach_the_Elder_-_Saints_Genevieve_and_Apollonia_-_Google_Art_Project.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Lucas_Cranach_the_Elder_-_Saints_Genevieve_and_Apollonia_-_Google_Art_Project.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:lucascranachtheeldersaintsgenevieveandapolloniagoogleartproj",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:saintegenevievegardantsesmoutonsecoleflamandefinduxviesiecle",
+      "sourceSubjectId": "SNT-OT-26",
+      "sourceSubjectName": "Saint Geneviève",
+      "title": "Sainte Geneviève gardant ses moutons - École flamande, fin du XVIe siècle.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Sainte_Genevi%C3%A8ve_gardant_ses_moutons_-_%C3%89cole_flamande%2C_fin_du_XVIe_si%C3%A8cle.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Sainte_Genevi%C3%A8ve_gardant_ses_moutons_-_%C3%89cole_flamande%2C_fin_du_XVIe_si%C3%A8cle.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:saintegenevievegardantsesmoutonsecoleflamandefinduxviesiecle",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:josephmarievienschoolofsaintlouishandingtheregencytohismothe",
+      "sourceSubjectId": "SNT-OT-08",
+      "sourceSubjectName": "Saint Louis IX",
+      "title": "Joseph-Marie Vien (school of) - Saint Louis Handing the Regency to his Mother Blanche of Castile (1773).JPG",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Joseph-Marie_Vien_(school_of)_-_Saint_Louis_Handing_the_Regency_to_his_Mother_Blanche_of_Castile_(1773).JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Joseph-Marie_Vien_(school_of)_-_Saint_Louis_Handing_the_Regency_to_his_Mother_Blanche_of_Castile_(1773).JPG?width=960",
+      "sourcePhysicalObjectId": "C35:josephmarievienschoolofsaintlouishandingtheregencytohismothe",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:ladernierecommuniondesaintlouistableaudanslachapellestremijp",
+      "sourceSubjectId": "SNT-OT-08",
+      "sourceSubjectName": "Saint Louis IX",
+      "title": "La dernière communion de Saint-Louis tableau dans la chapelle St-Rémi.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:La_derni%C3%A8re_communion_de_Saint-Louis_tableau_dans_la_chapelle_St-R%C3%A9mi.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:La_derni%C3%A8re_communion_de_Saint-Louis_tableau_dans_la_chapelle_St-R%C3%A9mi.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:ladernierecommuniondesaintlouistableaudanslachapellestremijp",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:ladeferencedesaintlouispoursamerefleuryfrancoisrichardmbalyo",
+      "sourceSubjectId": "SNT-OT-08",
+      "sourceSubjectName": "Saint Louis IX",
+      "title": "La déférence de Saint Louis pour sa mère-Fleury François Richard-MBA Lyon 2014.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:La_d%C3%A9f%C3%A9rence_de_Saint_Louis_pour_sa_m%C3%A8re-Fleury_Fran%C3%A7ois_Richard-MBA_Lyon_2014.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:La_d%C3%A9f%C3%A9rence_de_Saint_Louis_pour_sa_m%C3%A8re-Fleury_Fran%C3%A7ois_Richard-MBA_Lyon_2014.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:ladeferencedesaintlouispoursamerefleuryfrancoisrichardmbalyo",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:nicolasguybrenetsaintlouisrecevantlesmessagersduvieuxdelamon",
+      "sourceSubjectId": "SNT-OT-08",
+      "sourceSubjectName": "Saint Louis IX",
+      "title": "Nicolas Guy Brenet - Saint Louis recevant les messagers du Vieux de la Montagne - P2666 - Musée Carnavalet - 2.jpg",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Nicolas_Guy_Brenet_-_Saint_Louis_recevant_les_messagers_du_Vieux_de_la_Montagne_-_P2666_-_Mus%C3%A9e_Carnavalet_-_2.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Nicolas_Guy_Brenet_-_Saint_Louis_recevant_les_messagers_du_Vieux_de_la_Montagne_-_P2666_-_Mus%C3%A9e_Carnavalet_-_2.jpg?width=960",
+      "sourcePhysicalObjectId": "C35:nicolasguybrenetsaintlouisrecevantlesmessagersduvieuxdelamon",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "C35:saintlouisenpriereparjeancharlesnicaiseperrinjpg",
+      "sourceSubjectId": "SNT-OT-08",
+      "sourceSubjectName": "Saint Louis IX",
+      "title": "Saint Louis en prière, par Jean Charles Nicaise Perrin.JPG",
+      "artistAsPresented": "Artist to verify",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Saint_Louis_en_pri%C3%A8re%2C_par_Jean_Charles_Nicaise_Perrin.JPG",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Saint_Louis_en_pri%C3%A8re%2C_par_Jean_Charles_Nicaise_Perrin.JPG?width=960",
+      "sourcePhysicalObjectId": "C35:saintlouisenpriereparjeancharlesnicaiseperrinjpg",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W38-020",
+      "sourceSubjectId": "SNT-OT-15",
+      "sourceSubjectName": "Saint Francis Xavier",
+      "title": "Saint Francis Xavier",
+      "artistAsPresented": "Peter Paul Rubens",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Rubens_-_RKDimages,_253803.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Rubens_-_RKDimages,_253803.jpg?width=960",
+      "sourcePhysicalObjectId": "RKDimages 253803; custodian to verify",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W39-001",
+      "sourceSubjectId": "SNT-OT-03",
+      "sourceSubjectName": "Saint Raphael Archangel",
+      "title": "El Arcángel san Rafael",
+      "artistAsPresented": "Miguel Cabrera",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:El_Arc%C3%A1ngel_san_Rafael,_ca._1760,_de_Miguel_Cabrera_en_el_MUNAL_01.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:El_Arc%C3%A1ngel_san_Rafael,_ca._1760,_de_Miguel_Cabrera_en_el_MUNAL_01.jpg?width=960",
+      "sourcePhysicalObjectId": "MUNAL:CABRERA_RAPHAEL_NO_ACCESSION_CONFIRMED",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W39-003",
+      "sourceSubjectId": "SNT-OT-03",
+      "sourceSubjectName": "Saint Raphael Archangel",
+      "title": "San Rafael Arcángel",
+      "artistAsPresented": "Anonymous Spanish painter, formerly attributed to Antonio Palomino",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:San_Rafael_Arc%C3%A1ngel_(CE1553P,_Museo_de_Bellas_Artes_de_C%C3%B3rdoba).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:San_Rafael_Arc%C3%A1ngel_(CE1553P,_Museo_de_Bellas_Artes_de_C%C3%B3rdoba).jpg?width=960",
+      "sourcePhysicalObjectId": "CORDOBA:CE1553P",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W39-007",
+      "sourceSubjectId": "SNT-OT-14",
+      "sourceSubjectName": "Saint Benedict",
+      "title": "San Benito de Nursia",
+      "artistAsPresented": "Antonio de Comontes",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:San_Benito_de_Nursia,_de_Antonio_de_Comontes_(Museo_L%C3%A1zaro_Galdiano,_Madrid).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:San_Benito_de_Nursia,_de_Antonio_de_Comontes_(Museo_L%C3%A1zaro_Galdiano,_Madrid).jpg?width=960",
+      "sourcePhysicalObjectId": "Museo Lázaro Galdiano 07494",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W39-008",
+      "sourceSubjectId": "SNT-OT-15",
+      "sourceSubjectName": "Saint Francis Xavier",
+      "title": "San Francisco Javier",
+      "artistAsPresented": "Luca Giordano",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:San_Francisco_Javier_de_Luca_Giordano.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:San_Francisco_Javier_de_Luca_Giordano.jpg?width=960",
+      "sourcePhysicalObjectId": "PRADO:P000181",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W40-009",
+      "sourceSubjectId": "SNT-OT-20",
+      "sourceSubjectName": "Saint Nicholas",
+      "title": "San Nicola da Bari",
+      "artistAsPresented": "Attributed to Domenico Beccafumi",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Domenico_beccafumi_(attr.),_san_nicola_da_bari,_02.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Domenico_beccafumi_(attr.),_san_nicola_da_bari,_02.jpg?width=960",
+      "sourcePhysicalObjectId": "Ca' Rezzonico, Venice; Wikidata Q138267803",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W40-017",
+      "sourceSubjectId": "SNT-OT-29",
+      "sourceSubjectName": "Saint Martin of Tours",
+      "title": "San Martino (Sala Capitolare)",
+      "artistAsPresented": "Battistello Caracciolo",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Certosa_di_San_Martino._(2533)_San_Martino_di_Battistello_Caracciolo,_XVII_sec.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Certosa_di_San_Martino._(2533)_San_Martino_di_Battistello_Caracciolo,_XVII_sec.jpg?width=960",
+      "sourcePhysicalObjectId": "Certosa di San Martino, Naples, Sala Capitolare",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W40-018",
+      "sourceSubjectId": "SNT-OT-29",
+      "sourceSubjectName": "Saint Martin of Tours",
+      "title": "San Martino in maestà",
+      "artistAsPresented": "Ercole Ramazzani",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Ercole_Ramazzani,_San_Martino_in_maest%C3%A0,_1564,_Castelleone_di_Suasa,_cappelletta_rurale_di_San_Martino.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Ercole_Ramazzani,_San_Martino_in_maest%C3%A0,_1564,_Castelleone_di_Suasa,_cappelletta_rurale_di_San_Martino.jpg?width=960",
+      "sourcePhysicalObjectId": "Chapel of Saint Martin, Castelleone di Suasa",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W44-002",
+      "sourceSubjectId": "SNT-AP-05",
+      "sourceSubjectName": "Saint Philip",
+      "title": "Saint Philip the Apostle",
+      "artistAsPresented": "Esteban Márquez de Velasco",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:San_Felipe,_Esteban_M%C3%A1rquez_de_Velasco.jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:San_Felipe,_Esteban_M%C3%A1rquez_de_Velasco.jpg?width=960",
+      "sourcePhysicalObjectId": "Hospital de las Cinco Llagas church, Seville (object no. pending)",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W44-007",
+      "sourceSubjectId": "SNT-OT-14",
+      "sourceSubjectName": "Saint Benedict",
+      "title": "Saint Benedict Blessing Saint Maurus",
+      "artistAsPresented": "Juan Andrés Rizi",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:San_Benito_bendiciendo_a_San_Mauro_(Museo_del_Prado).jpg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:San_Benito_bendiciendo_a_San_Mauro_(Museo_del_Prado).jpg?width=960",
+      "sourcePhysicalObjectId": "Museo del Prado P003108",
+      "review": {
+        "numericScore": 3,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "RESEARCH_ONLY",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    },
+    {
+      "recordId": "W44-009",
+      "sourceSubjectId": "SNT-OT-28",
+      "sourceSubjectName": "Saint Vincent de Paul",
+      "title": "Portrait of Saint Vincent de Paul",
+      "artistAsPresented": "Simon François de Tours",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Simon_Fran%C3%A7ois_de_Tours_-_Portrait_Vincent_de_Paul.jpeg",
+      "sourcePreviewAsPresented": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Simon_Fran%C3%A7ois_de_Tours_-_Portrait_Vincent_de_Paul.jpeg?width=960",
+      "sourcePhysicalObjectId": "Mission des Lazaristes, Paris (object number not in Commons)",
+      "review": {
+        "numericScore": 4,
+        "suitability": null,
+        "notes": "",
+        "flags": {
+          "wrongImage": false,
+          "poorCrop": false,
+          "sourceIssue": false
+        },
+        "stage": "AWAITING_FIVE_STAR_APPROVAL_OR_ALTERNATE_SELECTION",
+        "scorePresent": true,
+        "suitabilitySupplied": false,
+        "recordedInSourceExportComplete": false,
+        "sourceViewedConfirmationFlag": false
+      },
+      "checks": {
+        "sourceProblemFlagged": false,
+        "photoWrongFlagged": false,
+        "poorCropFlagged": false,
+        "userExplicitlyInspectedSource": false,
+        "sourceFilenamePhysicalObjectMatchCertified": false,
+        "fullImageCopyrightFileTermsCertified": false
+      },
+      "rightsRelease": false,
+      "originalAestheticRatingOnly": true,
+      "noScoreTransferToDifferentOriginal": true,
+      "originalArtPublicationApproved": false
+    }
+  ],
+  "globalRejectionDelta": [
+    {
+      "candidateId": "C32:gaspardecrayertheascensionofsaintcatherineofalexandriang1211",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Gaspar_de_Crayer_-_The_Ascension_of_Saint_Catherine_of_Alexandria_-_NG_1211_-_National_Galleries_of_Scotland.jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Gaspar_de_Crayer_-_The_Ascension_of_Saint_Catherine_of_Alexandria_-_NG_1211_-_National_Galleries_of_Scotland.jpg?width=960",
+      "sourceObjectId": "C32:gaspardecrayertheascensionofsaintcatherineofalexandriang1211",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C32:filippolippistambrosesmiracleofthebees144147jpg",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Filippo_Lippi%2C_St._Ambrose's_Miracle_of_the_Bees%2C_1441-47.jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Filippo_Lippi%2C_St._Ambrose's_Miracle_of_the_Bees%2C_1441-47.jpg?width=960",
+      "sourceObjectId": "C32:filippolippistambrosesmiracleofthebees144147jpg",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C34:smnchiostrograndee06maurosoderinisantommasodaquinopresentalu",
+      "score": 0,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e06_Mauro_Soderini%2C_San_Tommaso_d'Aquino_presenta_l'uffizio_del_Corpus_Domini_a_Urbano_IV.JPG",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:SMN_Chiostro_Grande_e06_Mauro_Soderini%2C_San_Tommaso_d'Aquino_presenta_l'uffizio_del_Corpus_Domini_a_Urbano_IV.JPG?width=960",
+      "sourceObjectId": "C34:smnchiostrograndee06maurosoderinisantommasodaquinopresentalu",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C34:smnchiostrograndee09cosimogamberuccisantommasovienecintodadu",
+      "score": 0,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:SMN_Chiostro_Grande_e09_Cosimo_Gamberucci%2C_San_Tommaso_viene_cinto_da_due_angeli_con_cingolo_di_perpetua_castit%C3%A0.JPG",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:SMN_Chiostro_Grande_e09_Cosimo_Gamberucci%2C_San_Tommaso_viene_cinto_da_due_angeli_con_cingolo_di_perpetua_castit%C3%A0.JPG?width=960",
+      "sourceObjectId": "C34:smnchiostrograndee09cosimogamberuccisantommasovienecintodadu",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C34:bartolomeomontagnamadonnaintronoconilbambinotraisantigiovann",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Montagna_Madonna_in_trono_con_il_Bambino_tra_i_santi_Giovanni_Battista%2C_Bartolomeo%2C_Agostino_e_Sebastiano_e_tre_angeli_musici_Vicenza.jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bartolomeo_Montagna_Madonna_in_trono_con_il_Bambino_tra_i_santi_Giovanni_Battista%2C_Bartolomeo%2C_Agostino_e_Sebastiano_e_tre_angeli_musici_Vicenza.jpg?width=960",
+      "sourceObjectId": "C34:bartolomeomontagnamadonnaintronoconilbambinotraisantigiovann",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C35:camilloprocaccininativitabeataverginechiesaabrinziovajpg",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Camillo_Procaccini%2C_Nativit%C3%A0_Beata_Vergine%2C_chiesa_a_Brinzio_(VA).jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Camillo_Procaccini%2C_Nativit%C3%A0_Beata_Vergine%2C_chiesa_a_Brinzio_(VA).jpg?width=960",
+      "sourceObjectId": "C35:camilloprocaccininativitabeataverginechiesaabrinziovajpg",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C35:werkstattlucascranachdastannanachdergeburtderjungfraujpg",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Werkstatt_Lucas_Cranach_d.%C3%84._-_St._Anna_nach_der_Geburt_der_Jungfrau.jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Werkstatt_Lucas_Cranach_d.%C3%84._-_St._Anna_nach_der_Geburt_der_Jungfrau.jpg?width=960",
+      "sourceObjectId": "C35:werkstattlucascranachdastannanachdergeburtderjungfraujpg",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    },
+    {
+      "candidateId": "C35:hansmemlingoldwomanatprayerwithstannegoogleartprojectjpg",
+      "score": 2,
+      "reviewedSourceUrl": "https://commons.wikimedia.org/wiki/File:Hans_Memling_-_Old_Woman_at_Prayer_with_St._Anne_-_Google_Art_Project.jpg",
+      "reviewedPreviewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Hans_Memling_-_Old_Woman_at_Prayer_with_St._Anne_-_Google_Art_Project.jpg?width=960",
+      "sourceObjectId": "C35:hansmemlingoldwomanatprayerwithstannegoogleartprojectjpg",
+      "globalBan": true,
+      "doNotReintroduceAsSourceMirrorOrCrop": true,
+      "originalPhotoEquivalenceGate": "DO_NOT_PROPAGATE_TO_OTHER_IDS_UNTIL_IDENTITY_ESTABLISHED"
+    }
+  ],
+  "sourceFlagsQueue": [
+    {
+      "candidateId": "C32:domenicomorellilamaddalenaaipiedidigesujpg",
+      "score": 4,
+      "subject": "Saint Mary Magdalene",
+      "title": "Domenico Morelli - La Maddalena ai piedi di Gesù.jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Domenico_Morelli_-_La_Maddalena_ai_piedi_di_Ges%C3%B9.jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C32:federicobaroccimartiriodisantacaterinadalessandria161002jpg",
+      "score": 4,
+      "subject": "Saint Catherine of Alexandria",
+      "title": "Federico barocci, martirio di santa caterina d'alessandria, 1610, 02.jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Federico_barocci%2C_martirio_di_santa_caterina_d'alessandria%2C_1610%2C_02.jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C32:bernardinomeiattrsangiovannibattistadavantiaerode01jpg",
+      "score": 3,
+      "subject": "Saint John the Baptist",
+      "title": "Bernardino mei (attr.), san giovanni battista davanti a erode, 01.jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bernardino_mei_(attr.)%2C_san_giovanni_battista_davanti_a_erode%2C_01.jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C32:michaelwillmanopusmagnum2019p06matyrdomofstlawrence1663jpg",
+      "score": 3,
+      "subject": "Saint Lawrence",
+      "title": "Michael Willman Opus Magnum 2019 P06 Matyrdom of St. Lawrence (1663).jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P06_Matyrdom_of_St._Lawrence_(1663).jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C34:cathedralesaintetiennedetoulousesaintfrancoisdesalesremetlar",
+      "score": 4,
+      "subject": "Saint Francis de Sales",
+      "title": "Cathédrale Saint-Étienne de Toulouse – Saint François de Sales remet la règle à sainte Jeanne de Chantal - By Bertrand François (1756-1805) PM31001527.jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse_%E2%80%93_Saint_Fran%C3%A7ois_de_Sales_remet_la_r%C3%A8gle_%C3%A0_sainte_Jeanne_de_Chantal_-_By_Bertrand_Fran%C3%A7ois_(1756-1805)_PM31001527.jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C34:corradogiacquintosaintjanefrancesofchantalandsaintfrancisofs",
+      "score": 4,
+      "subject": "Saint Francis de Sales",
+      "title": "Corrado Giacquinto - Saint Jane Frances of Chantal and Saint Francis of Sales in adoration of the Heart of Jesus - Santa Bárbara, Madrid.jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Corrado_Giacquinto_-_Saint_Jane_Frances_of_Chantal_and_Saint_Francis_of_Sales_in_adoration_of_the_Heart_of_Jesus_-_Santa_B%C3%A1rbara%2C_Madrid.jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C34:michaelwillmanopusmagnum2019p14matyrdomofstmatthew1700jpg",
+      "score": 4,
+      "subject": "Saint Matthew",
+      "title": "Michael Willman Opus Magnum 2019 P14 Matyrdom of St. Matthew (1700).jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P14_Matyrdom_of_St._Matthew_(1700).jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    },
+    {
+      "candidateId": "C34:michaelwillmanopusmagnum2019p59deathofstbenedictca1682jpg",
+      "score": 3,
+      "subject": "Saint Benedict",
+      "title": "Michael Willman Opus Magnum 2019 P59 Death of St. Benedict (ca 1682).jpg",
+      "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Michael_Willman_Opus_Magnum_2019_P59_Death_of_St._Benedict_(ca_1682).jpg?width=960",
+      "note": "User flagged sourceIssue without details; investigate exact reviewed file, catalogue attribution and reusable reproduction before any placement."
+    }
+  ]
+}
