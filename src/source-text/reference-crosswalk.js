@@ -2,7 +2,7 @@
 // remain owned by data/reference; this module imports no books or raw text.
 const valid=(s)=>typeof s==="string"&&s.trim().length>0;
 function readInputs({canonical,formation,profiles}={}){
- if(canonical?.schema!=="AO_CANONICAL_WORKS_PILOT_V1"||
+ if(canonical?.schema!=="ao-canonical-works-pilot-v1"||
     formation?.schema!=="AO_FORMATION_SOURCE_CROSSWALK_V1"||
     profiles?.schema!=="AO_SOURCE_TEXT_WITNESS_PROFILES_V1"||
     !Array.isArray(canonical.works)||!Array.isArray(formation.source_bindings)||
