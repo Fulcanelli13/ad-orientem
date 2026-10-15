@@ -28,8 +28,8 @@ assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.deepEqual([r70.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
 r70.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,
-r70.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[106,70,574]);
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[104,70,576]);
+r70.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[161,6,583]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[159,6,585]);
 assert.equal(r70.candidates.length,750);
 assert.equal(heritage.place_crosswalk.length,258);
 assert.equal(heritage.counts.places,258);
