@@ -130,6 +130,7 @@ export function createFindOwner(win=globalThis){
     view:"map",
     directoryGroup:"ALL",
     query:"",
+    saintCategory:"ALL",
     day:"ANY",
     affiliations:[],
     unaCum:"ANY",
@@ -254,7 +255,14 @@ export function createFindOwner(win=globalThis){
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
-    if(state.lens==="saints"&&state.view==="list")return filterExploreItems(projectSaintCatalogueItems(dataset),{query:state.query});
+    if(state.lens==="saints"&&state.view==="list"){
+      const people=filterExploreItems(projectSaintCatalogueItems(dataset),{query:state.query});
+      if(state.saintCategory==="ALL")return people;
+      return people.filter(item=>{
+        const saint=item.saints?.[0],classifications=saint?.classification??{};
+        return [...(classifications.roles??[]),...(classifications.honours??[])].some(category=>category.code===state.saintCategory);
+      });
+    }
     const list=filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
     return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
