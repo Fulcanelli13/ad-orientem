@@ -5,22 +5,34 @@ export function createSourceTextReader({manifest,loadChunk}={}){
    !Array.isArray(manifest.passages)||!Array.isArray(manifest.chunks)||
    typeof loadChunk!=="function")throw new Error("SOURCE_TEXT_MANIFEST_INVALID");
  validateSourceWork(manifest.work,{requireReproduction:true});
- const files=new Set(manifest.chunks.map(x=>x.path)),ids=new Map(),cache=new Map();
+ const files=new Set(manifest.chunks.map(x=>x.path)),ids=new Map(),cache=new Map(),byChunk=new Map();
  if(!files.size||manifest.chunks.some(x=>!SAFE_CHUNK.test(x.path))||
     files.size!==manifest.chunks.length)throw new Error("SOURCE_TEXT_CHUNK_PATH_INVALID");
  manifest.passages.forEach((p,i)=>{
   if(!p?.id?.startsWith(manifest.work.id+"/")||ids.has(p.id)||!files.has(p.chunk))
    throw new Error("SOURCE_TEXT_INDEX_INVALID");
   ids.set(p.id,{...p,index:i});
+  if(!byChunk.has(p.chunk))byChunk.set(p.chunk,[]);
+  byChunk.get(p.chunk).push(p.id);
  });
+ for(const file of manifest.chunks){
+  if(!Number.isInteger(file.count)||file.count!==byChunk.get(file.path)?.length)
+   throw new Error("SOURCE_TEXT_CHUNK_COUNT_INVALID");
+ }
  async function chunkFor(path){
   if(!cache.has(path))cache.set(path,Promise.resolve().then(()=>loadChunk(path))
    .then(data=>{
     const parsed=typeof data==="string"?JSON.parse(data):data;
     if(parsed?.schema!=="AO_SOURCE_TEXT_V1"||parsed.workId!==manifest.work.id||
       !Array.isArray(parsed.passages))throw new Error("SOURCE_TEXT_CHUNK_INVALID");
-    for(const p of parsed.passages){
-     if(ids.get(p.id)?.chunk!==path||typeof p.text!=="string")
+    const expected=byChunk.get(path)??[];
+    if(parsed.passages.length!==expected.length)
+     throw new Error("SOURCE_TEXT_CHUNK_COUNT_MISMATCH");
+    for(let i=0;i<parsed.passages.length;i++){
+     const p=parsed.passages[i];
+     if(p?.id!==expected[i]||p.workId!==manifest.work.id||
+       p.editionId!==manifest.work.editionId||p.witnessId!==manifest.work.witnessId||
+       typeof p.text!=="string")
       throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
     }
     return new Map(parsed.passages.map(p=>[p.id,p]));
