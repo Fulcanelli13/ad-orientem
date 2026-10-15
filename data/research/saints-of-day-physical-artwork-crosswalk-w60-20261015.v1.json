@@ -80,7 +80,14 @@
     ],
     "caution": "Different original-painting versions by the same artist can have the same conventional title. Provisional evidence MUST be manually verified with institution/accession/photo before merging. Commons category is never physical-artwork identity.",
     "scores": "W49 current effective scores overrule W48 historical scores; W46/W36 earlier ratings and W49 global blocklist remain authoritative and unmodified.",
-    "sourceScope": "Cross-ledger on W59 historical data versus PR #887 W48/W49, W46, 281 master, W31, W24 and earlier rating files. NOT an exhaustive W55/W56 Breviarium image-level join."
+    "sourceScope": "Cross-ledger on W59 historical data versus PR #887 W48/W49, W46, 281 master, W31, W24 and earlier rating files. NOT an exhaustive W55/W56 Breviarium image-level join.",
+    "additionalInstitutionalAdjudications": [
+      "AO012 / W07-014: same Sanssouci Caravaggio, existing 5/5 maintained",
+      "AO109 / W05-027: same Rome Cerasi Chapel Caravaggio, existing 5/5 maintained",
+      "AO073 / nga-96688: same NGA museum accession and existing rating from 2026-10-13 ledger maintained",
+      "AO021 / cma-135659: DIFFERENT Murillo canvases; Prado P002809 must not inherit Cleveland rating",
+      "saint.joseph-cupertino named file: already present as Met 724811, not another physical original"
+    ]
   },
   "counts": {
     "historicCalendarTarget": {
@@ -104,15 +111,19 @@
     "legacyProperStatus": {
       "EXCLUDED_BY_CURRENT_USER_ARTIST_POLICY": 4,
       "UNMATCHED_HISTORICAL_LEAD_NOT_NEW_CERTIFIED_ART": 41,
-      "PROBABLE_SAME_PAINTING_NEEDS_IDENTITY_CHECK": 3,
+      "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED": 2,
+      "DISTINCT_PRADO_ORIGINAL_NOT_MERGED_WITH_SIMILAR_CMA_MURILLO": 1,
       "MATCHED_EXACT_OBJECT_OR_FILE_REVIEW_LINK": 1
     },
-    "exactEvidenceNamedFileDirectives": 0,
-    "probableEvidenceNamedFileDirectives": 1,
+    "exactEvidenceNamedFileDirectives": 1,
+    "probableEvidenceNamedFileDirectives": 0,
     "w49Selected5Placements": 86,
     "w49PermanentRejectObjects": 95,
     "previouslyClaimedSaintFeastMissingArt": 149,
-    "updatedSaintFeastGap": "NOT_MEASURABLE_FROM_RECOVERED_W59_MANIFEST_ALONE"
+    "updatedSaintFeastGap": "NOT_MEASURABLE_FROM_RECOVERED_W59_MANIFEST_ALONE",
+    "manualCorroboratedExistingProperOriginals": 2,
+    "sameObjectMuseumAccessionProperOriginals": 1,
+    "verifiedFalsePositiveObjectLinks": 1
   },
   "physicalProperArtworks": [
     {
@@ -258,9 +269,8 @@
         31589
       ],
       "artistExcluded": false,
-      "status": "PROBABLE_SAME_PAINTING_NEEDS_IDENTITY_CHECK",
-      "confirmedCrossCatalogueEvidence": [],
-      "possibleCrossCatalogueEvidence": [
+      "status": "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED",
+      "confirmedCrossCatalogueEvidence": [
         {
           "candidateId": "W07-014",
           "title": "The Incredulity of Saint Thomas",
@@ -268,13 +278,16 @@
           "source": "W48_USER_SNAPSHOT",
           "rating": 5,
           "ratingState": "CONFIRMED_5",
-          "identityEvidence": "TITLE_ARTIST_ONLY",
+          "identityEvidence": "CURATORIAL_SAME_PHYSICAL_ORIGINAL_CORROBORATED_BY_ORIGINAL_LOCATION",
           "confidence": 58,
           "url": "https://www.spsg.de/en/press-material-paintings",
           "sha": null,
-          "previewsMismatch": false
+          "previewsMismatch": false,
+          "confirmationSource": "https://www.spsg.de/en/press-material-paintings",
+          "manualVerification": "Same Caravaggio physical canvas at Sanssouci Picture Gallery, as specified by both source records"
         }
       ],
+      "possibleCrossCatalogueEvidence": [],
       "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
       "properAssignments": [
         {
@@ -350,23 +363,9 @@
         2952
       ],
       "artistExcluded": false,
-      "status": "PROBABLE_SAME_PAINTING_NEEDS_IDENTITY_CHECK",
+      "status": "DISTINCT_PRADO_ORIGINAL_NOT_MERGED_WITH_SIMILAR_CMA_MURILLO",
       "confirmedCrossCatalogueEvidence": [],
-      "possibleCrossCatalogueEvidence": [
-        {
-          "candidateId": "cma-135659",
-          "title": "The Immaculate Conception",
-          "artist": "Bartolomé Esteban Murillo",
-          "source": "CANONICAL_281_REGISTRY",
-          "rating": null,
-          "ratingState": "CANDIDATE",
-          "identityEvidence": "TITLE_ARTIST_VARIANT",
-          "confidence": 45,
-          "url": "https://clevelandart.org/art/1959.189",
-          "sha": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
-          "previewsMismatch": false
-        }
-      ],
+      "possibleCrossCatalogueEvidence": [],
       "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
       "properAssignments": [
         {
@@ -375,7 +374,16 @@
           "relationship": "DAY_ART",
           "legacyStatus": "GREEN"
         }
-      ]
+      ],
+      "verifiedDifferentOriginals": [
+        {
+          "misleadingCandidateId": "cma-135659",
+          "reason": "Murillo painted multiple Immaculate Conceptions. Cleveland CMA original inventory 1959.189, dated c.1680 and 220.5×127.5 cm unframed, is NOT the Prado original P002809 dated 1660–65 and 274×190 cm",
+          "independentPradoSource": "https://www.museodelprado.es/en/the-collection/art-work/immaculate-conception-los-venerables/76179d81-beaf-4f9e-9a05-ef92340a00d1",
+          "independentClevelandSource": "https://www.clevelandart.org/art/1959.189"
+        }
+      ],
+      "originalMuseumAccession": "Prado P002809"
     },
     {
       "legacyArtworkId": "AO022",
@@ -501,8 +509,8 @@
           "title": "The Miraculous Draught of Fishes",
           "artist": "Jacopo Bassano",
           "source": "CANONICAL_281_REGISTRY",
-          "rating": null,
-          "ratingState": "CANDIDATE",
+          "rating": 4,
+          "ratingState": "EARLIER_USER_RATING_PRESERVED",
           "identityEvidence": "SAME_MUSEUM_ACCESSION",
           "confidence": 100,
           "url": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
@@ -1210,9 +1218,8 @@
         10537
       ],
       "artistExcluded": false,
-      "status": "PROBABLE_SAME_PAINTING_NEEDS_IDENTITY_CHECK",
-      "confirmedCrossCatalogueEvidence": [],
-      "possibleCrossCatalogueEvidence": [
+      "status": "CROSS_CATALOGUE_SAME_PHYSICAL_ORIGINAL_RATING_PRESERVED",
+      "confirmedCrossCatalogueEvidence": [
         {
           "candidateId": "W05-027",
           "title": "The Crucifixion of Saint Peter",
@@ -1220,13 +1227,16 @@
           "source": "W48_USER_SNAPSHOT",
           "rating": 5,
           "ratingState": "CONFIRMED_5",
-          "identityEvidence": "TITLE_ARTIST_ONLY",
+          "identityEvidence": "CURATORIAL_SAME_PHYSICAL_ORIGINAL_CORROBORATED_BY_ORIGINAL_LOCATION",
           "confidence": 58,
           "url": "https://turismoroma.it/en/node/18610",
           "sha": null,
-          "previewsMismatch": false
+          "previewsMismatch": false,
+          "confirmationSource": "https://www.turismoroma.it/en/node/18610",
+          "manualVerification": "Same Caravaggio Cerasi Chapel painting in Santa Maria del Popolo, Rome"
         }
       ],
+      "possibleCrossCatalogueEvidence": [],
       "reviewGate": "NO_AUTO_APPROVAL_OR_RE_RATING",
       "properAssignments": [
         {
@@ -1467,8 +1477,7 @@
         {
           "file": "File:A Miracle of Saint Joseph of Cupertino (1603–1663) MET costanzi.jpg",
           "validSpecificCommonsFileDirective": true,
-          "exactMatches": [],
-          "possibleMatches": [
+          "exactMatches": [
             {
               "candidateId": "met-724811",
               "title": "A Miracle of Saint Joseph of Cupertino",
@@ -1476,14 +1485,18 @@
               "source": "CANONICAL_281_REGISTRY",
               "rating": null,
               "ratingState": "CANDIDATE",
-              "identityEvidence": "TITLE_ARTIST_VARIANT",
-              "confidence": 45,
+              "identityEvidence": "MUSEUM_TITLE_ARTIST_OBJECT_AND_DATE_CONFIRMATION",
+              "confidence": 95,
               "url": "https://www.metmuseum.org/art/collection/search/724811",
               "sha": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
-              "previewsMismatch": false
+              "previewsMismatch": false,
+              "confirmationSource": "https://www.metmuseum.org/art/collection/search/724811",
+              "metMuseumAccession": "2016.394",
+              "manualVerification": "Legacy file names Placido Costanzi Met painting, Met catalog directly identifies same miracle depiction, artist/date and open-access painting; reuses existing met-724811 canonical record, not a newly found original"
             }
           ],
-          "state": "PROBABLE_REUSE_REVIEW"
+          "possibleMatches": [],
+          "state": "REUSE_EXISTING_MET_724811_NOT_NEW_ARTWORK"
         }
       ],
       "state": "NAMED_FILE_DISCOVERY_OR_REUSE",
