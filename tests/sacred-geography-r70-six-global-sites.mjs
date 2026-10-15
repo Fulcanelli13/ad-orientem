@@ -15,19 +15,19 @@ const board=read("data/geography/research/sacred-geography-coverage-first-r70.v1
 const illustrated=[...read("data/shrines/illustrated-place-guides-ireland.v1.json").guides,...read("data/shrines/illustrated-place-guides-france.v1.json").guides,...read("data/shrines/illustrated-place-guides-france-r67.v1.json").guides];
 const hero=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[247,243,230,421]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[251,247,234,429]);
 assert.equal(newSites.length,6);
 assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));
-assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,243);
-assert.equal(new Set(geo.places.map(x=>x.place_id)).size,247);
+assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,247);
+assert.equal(new Set(geo.places.map(x=>x.place_id)).size,251);
 assert.equal(hero.items.length,18);
 assert.equal(gallery.items.length,6);
 assert.equal(illustrated.length,14);
 assert.equal(board.candidates.length,750);
-assert.equal(board.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,95);
+assert.equal(board.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,99);
 assert.equal(board.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,70);
-assert.equal(board.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,585);
+assert.equal(board.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,581);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
  temporalLinks:seed.temporalLinks,sources:source.sources,places:geo.places}).pass,true);
 const src=new Map(source.sources.map(x=>[x.id,x]));
@@ -68,8 +68,8 @@ const dataset={directory:{records:[],communities:[]},
 };
 const proj=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,proj,{today:"2026-10-11"});
-assert.equal(profiles.length,247);
-assert.equal(exploreMapFeatures(proj.byLens.shrines).length,243);
+assert.equal(profiles.length,251);
+assert.equal(exploreMapFeatures(proj.byLens.shrines).length,247);
 for(const row of newSites){
  const profile=profiles.find(p=>p.place_id===row.id);
  assert.ok(profile);
