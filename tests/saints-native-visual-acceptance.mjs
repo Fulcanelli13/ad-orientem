@@ -73,39 +73,18 @@ try{
    assert(rect?.height>=39&&rect.width>=44,"Saints filter too small for touch");
    await nav.click();
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="saints"]')
-     &&document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30",null,{timeout:30000});
-   assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),24,
+     &&document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="6",null,{timeout:30000});
+   assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),6,
      "List should show first 24 of 30 canonical people");
-   assert((await page.locator('#ao-find-modular-root .aoSaintScopeNote').innerText()).includes("One profile per saint"));
+   assert((await page.locator('#ao-find-modular-root .aoSaintScopeNote').innerText()).includes("Six source-linked Saints pilot profiles"));
    await page.screenshot({path:resolve(destination,config.name+"-00-catalogue-list.png"),fullPage:false});
-   await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"][data-find-filter-value="DOCTOR_OF_CHURCH"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="9");
-   await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"][data-find-filter-value="ALL"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
-   // Verify actual delegated cross-navigation, not just static hyperlink markup.
-   await page.locator('#ao-find-modular-root [data-find-filter="saintScope"][data-find-filter-value="doctors"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="38");
-   await page.locator('#ao-find-modular-root [data-find-query]').fill("Thomas Aquinas");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
-   await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').first().click();
-   const doctorSource=page.locator('#ao-find-modular-root .aoSaintSourceIndexSheet');
-   await doctorSource.waitFor({state:"visible",timeout:12000});
-   await doctorSource.locator('[data-saint-crosslink-target="saints:person:saint:thomas-aquinas"]').click();
-   const thomasProfile=page.locator('#ao-find-modular-root .aoSaintPlaceSheet');
-   await thomasProfile.waitFor({state:"visible",timeout:12000});
-   assert.equal(await thomasProfile.locator('[data-saint-id="saint:thomas-aquinas"]').count(),1,
-     "Doctor roster must open the full canonical Thomas profile");
-   await thomasProfile.locator('[data-saint-crosslink-target="saints:historic:saint.thomas-aquinas"]').click();
-   const historicSource=page.locator('#ao-find-modular-root .aoSaintSourceIndexSheet');
-   await historicSource.waitFor({state:"visible",timeout:12000});
-   assert.equal(await historicSource.getAttribute("data-saint-source-id"),"saint.thomas-aquinas");
-   await historicSource.locator('[data-saint-crosslink-target="saints:person:saint:thomas-aquinas"]').click();
-   await page.locator('#ao-find-modular-root .aoSaintPlaceSheet').waitFor({state:"visible",timeout:12000});
-   await page.locator('#ao-find-modular-root button[data-find-close-detail]').click();
-   await page.waitForFunction(()=>!document.querySelector('#ao-find-modular-root .aoFindSheetBackdrop'),null,{timeout:12000});
-   await page.locator('#ao-find-modular-root [data-find-filter="saintScope"][data-find-filter-value="profiles"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
-   await page.screenshot({path:resolve(destination,config.name+"-00b-doctor-source-navigation.png"),fullPage:false});
+   assert.equal(await page.locator('#ao-find-modular-root [data-find-filter="saintScope"]').count(),0,
+     "No draft-only history or Doctor tabs in public pilot");
+   assert.equal(await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"]').count(),0,
+     "No draft-only research filters in public pilot");
+   assert(!((await page.locator('#ao-find-modular-root .aoFindSurface').innerText()).includes("John Chrysostom")),
+     "Uncertified biography exposed in public pilot");
+   await page.screenshot({path:resolve(destination,config.name+"-00b-public-release-gate.png"),fullPage:false});
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').click();
    await page.waitForFunction(()=>{
      const s=globalThis.AO_FIND_APP_V1?.status?.();
@@ -138,7 +117,7 @@ try{
    else await page.waitForTimeout(1200);
    await page.screenshot({path:resolve(destination,config.name+"-01-native-map.png"),fullPage:false});
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="6");
    const query=page.locator('#ao-find-modular-root [data-find-query]');
    await query.fill("Stigmata");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
