@@ -58,7 +58,7 @@ assert.equal(chains,192);
 assert.equal(references,296,"24-case original source selection total must match the reconciled 2026-10-09 pack");
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,640);
+assert.equal(audit.summary.stage_specific_mapping_references,652);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 const pending=CSE_DEBATE_IDS.filter(id=>!CSE_HIGH_STAGE_SOURCE_IDS[id]);
