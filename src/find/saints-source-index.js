@@ -14,7 +14,7 @@ const item=(id,title,titleFr,subtitle,subtitleFr,summary,summaryFr,sourceLinks,m
   title,title_fr:titleFr||title,subtitle,subtitle_fr:subtitleFr||subtitle,
   eyebrow:"SAINTS · SOURCES",summary,summary_fr:summaryFr||summary,
   index_metadata:Object.freeze(meta),source_links:Object.freeze(sourceLinks),
-  search_text:fold([title,titleFr,subtitle,subtitleFr,summary,summaryFr,meta?.source_id,meta?.date].join(" ")),
+  search_text:folded([title,titleFr,subtitle,subtitleFr,summary,summaryFr,meta?.source_id,meta?.date].join(" ")),
   map_publishable:false,geo:null,place_id:null,saints:Object.freeze([]),
   artwork_id:null,editorial_status:"SOURCE_REFERENCE_WITHOUT_BIOGRAPHY"
 });
