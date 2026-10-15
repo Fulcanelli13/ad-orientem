@@ -1,0 +1,38 @@
+name: Source parsing and Catena chapter packs
+on:
+  pull_request:
+    paths:
+      - 'src/reference/**'
+      - 'src/scripture/catena-inline.js'
+      - 'data/reference/parsing-opportunities.v1.json'
+      - 'data/scripture/catena/chunks/**'
+      - 'tests/reference-parsing.mjs'
+      - 'tests/scripture-catena-corpus.mjs'
+      - '.github/workflows/source-parsing-and-catena-packs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/reference/**'
+      - 'src/scripture/catena-inline.js'
+      - 'data/reference/parsing-opportunities.v1.json'
+      - 'data/scripture/catena/chunks/**'
+      - 'tests/reference-parsing.mjs'
+      - 'tests/scripture-catena-corpus.mjs'
+      - '.github/workflows/source-parsing-and-catena-packs.yml'
+permissions:
+  contents: read
+jobs:
+  parsing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pinned text parser, rights gate and full source-owner inventory
+        run: node tests/reference-parsing.mjs
+      - name: Full Catena corpus and 23 exact source-preserving pack checks
+        run: node tests/scripture-catena-corpus.mjs
+      - name: Browser module import sanity
+        run: node --check src/scripture/catena-inline.js && node --check src/reference/text-parser.js

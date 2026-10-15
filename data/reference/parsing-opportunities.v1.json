@@ -1,0 +1,331 @@
+{
+  "schema": "ao.source-parsing-opportunities.v1",
+  "repository": "Fulcanelli13/ad-orientem",
+  "policy": {
+    "ownership": "This parsing pipeline adds data indexes, lazy packs, safe source reading and performance optimizations only. Existing Mass, Formation, Prayer, Calendar and Explore pipelines remain editorial/UX owners.",
+    "workVsWitness": "A document work, a digital witness and an edition-specific passage are distinct IDs; never deduplicate by title or bare short source ID.",
+    "permission": "Parse and display only original/authorised texts with edition and reproduction-rights approval. Do not infer rights from HTTPS or public availability.",
+    "narrative": "All opinions must remain attributed to their actual author; cross-links do not imply endorsement.",
+    "unresolved": "No inline rendering of unresolved source macros, OCR artifacts, inferred chant divisions, or incomplete rituals.",
+    "performance": "Chunk per chapter/section or content ID; fetch only on user demand; preserve offline and exact return context."
+  },
+  "statuses": [
+    "ALREADY_STRUCTURED",
+    "CHUNKED_IMPLEMENTED_ON_BRANCH",
+    "PASSAGE_EXTRACTION_REQUIRED",
+    "RIGHTS_AND_EDITION_REVIEW",
+    "EXTERNAL_PRIMARY_INDEX",
+    "DOCUMENT_INDEX_ONLY",
+    "DIRECTIVE_AWARE_PARSER_REQUIRED",
+    "EDITORIAL_HOLD",
+    "METADATA_INDEX_ONLY",
+    "REUSE_IN_CONTEXT"
+  ],
+  "items": [
+    {
+      "id": "scripture-gospels",
+      "title": "Scripture / Catholic Bible",
+      "source": "src/scripture/reader.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P0",
+      "method": "Book/chapter/verse, witness-specific segmentation; preserve edition and verse numbering; lazy book/chapter"
+    },
+    {
+      "id": "catena-aurea",
+      "title": "Four-Gospel Catena Aurea",
+      "source": "src/scripture/catena-inline.js",
+      "status": "CHUNKED_IMPLEMENTED_ON_BRANCH",
+      "priority": "P0",
+      "method": "Father/pericope/verse; 23 verified four-chapter packs; no changed excerpts"
+    },
+    {
+      "id": "mass-ordinary",
+      "title": "1962 Ordinary and Canon",
+      "source": "src/mass/reader-data.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P0",
+      "method": "Keep Mass owner; parse only additional independent source commentaries by exact phrase/line"
+    },
+    {
+      "id": "mass-propers",
+      "title": "1962 movable and fixed Propers",
+      "source": "src/mass/proper-reader-slots.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P0",
+      "method": "No invented Gradual/Tract/Sequence boundaries; source-aligned conditional portions only"
+    },
+    {
+      "id": "mass-rubrics",
+      "title": "1962 rubrics and ceremonial manuals",
+      "source": "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P1",
+      "method": "Article/rubric/paragraph and alternative customary profiles; edition and rights gate"
+    },
+    {
+      "id": "mass-commentary",
+      "title": "Guéranger/Gihr/Le Brun/Lanslots/Fortescue etc.",
+      "source": "data/learn/research",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P1",
+      "method": "Chapter/page/quote linked to liturgical phrase; interpretive attribution separate from direct Scripture"
+    },
+    {
+      "id": "mass-mystery",
+      "title": "Mystery of the Mass bilingual manuscript",
+      "source": "data/learn/research",
+      "status": "EDITORIAL_HOLD",
+      "priority": "P1",
+      "method": "39 study owners and biblical timeline drafts; no import of uncertified text"
+    },
+    {
+      "id": "catechism-piusx",
+      "title": "St Pius X catechism",
+      "source": "src/learn/catechism-guided-reader.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P1",
+      "method": "Q&A index, answer and linked doctrinal evidence; no duplicate catechism runtime"
+    },
+    {
+      "id": "catechism-daily",
+      "title": "Daily catechism programme",
+      "source": "src/learn/catechism-guided-study.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Reuse canonical question IDs with progressive read and return"
+    },
+    {
+      "id": "formations-apologetics",
+      "title": "60 canonical apologetics dossiers",
+      "source": "data/learn/apologetics-canonical.v1.json",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P1",
+      "method": "Opposing position, source witness, paragraph, argumentative context and controversy status"
+    },
+    {
+      "id": "formations-crisis",
+      "title": "81 Church Crisis dossiers",
+      "source": "data/learn/church-crisis-canonical.v1.json",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P1",
+      "method": "Original SSPX/sedevacantist/papal positions distinct; full evidence, no editorial voice rewrite"
+    },
+    {
+      "id": "sexual-ethics",
+      "title": "Catholic Sexual Ethics Q&A",
+      "source": "src/learn/sexual-ethics.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P1",
+      "method": "Precise moral documents and attributed disputation passages; original sources unchanged"
+    },
+    {
+      "id": "spiritual-life",
+      "title": "14 Spiritual Life lessons",
+      "source": "src/learn/spiritual-life.js",
+      "status": "RIGHTS_AND_EDITION_REVIEW",
+      "priority": "P1",
+      "method": "Selected paragraphs of Tanquerey, de Sales, Ignatius etc.; no unlicensed translation bundling"
+    },
+    {
+      "id": "papal-originals",
+      "title": "Official papal and Holy See documents",
+      "source": "src/learn/spiritual-life-data.js",
+      "status": "EXTERNAL_PRIMARY_INDEX",
+      "priority": "P1",
+      "method": "Paragraph and section IDs; prefer official links until reproduction rights are cleared"
+    },
+    {
+      "id": "councils-canonlaw",
+      "title": "Councils, canons and rubrical decrees",
+      "source": "src/learn/sexual-ethics-data/source-targets.js",
+      "status": "EXTERNAL_PRIMARY_INDEX",
+      "priority": "P1",
+      "method": "Canonical paragraph locators and legal date/version, not bulk copied text"
+    },
+    {
+      "id": "patristic-scholastic",
+      "title": "Fathers, Doctors and Scholastics",
+      "source": "data/learn",
+      "status": "RIGHTS_AND_EDITION_REVIEW",
+      "priority": "P2",
+      "method": "Work/chapter/disputed question/objection; title translation and source original status"
+    },
+    {
+      "id": "rosary",
+      "title": "Rosary meditation and 190 biblical bead citations",
+      "source": "src/pray/rosary-scripture-policy.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Reuse Bible passage context and optional primary meditations, not prayer-body rewriting"
+    },
+    {
+      "id": "stations",
+      "title": "Stations of the Cross forms",
+      "source": "src/pray/presentation-runtime.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P2",
+      "method": "Station/order/meditation/short prayer and nonbiblical historical scene distinction"
+    },
+    {
+      "id": "novenas",
+      "title": "16 Novenas and historical witnesses",
+      "source": "src/pray/novena-corpus-v4.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Day, prayer variant and Scripture meditation; witness rights and historical claims held"
+    },
+    {
+      "id": "common-prayers",
+      "title": "Prayer library and editions",
+      "source": "src/pray/canonical-data.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Prayer/verse/response; reuse text from current canonical owner, no duplicated pack"
+    },
+    {
+      "id": "litanies-sacredheart",
+      "title": "Litanies and Sacred Heart devotions",
+      "source": "src/pray/traditional-pray-data.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P2",
+      "method": "Invocation/responded clause and original witness; language-level collation"
+    },
+    {
+      "id": "angelus-regina",
+      "title": "Angelus and Regina Caeli",
+      "source": "src/pray/angelus-guide-data.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Scriptural verse/response/cue, preserve real devotional text"
+    },
+    {
+      "id": "adoration-benediction",
+      "title": "Adoration and Benediction",
+      "source": "src/pray/presentation-runtime.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P2",
+      "method": "Rite stages, hymn verse, prayer and independent historical sources"
+    },
+    {
+      "id": "confession-death",
+      "title": "Confession, Viaticum, Good Death",
+      "source": "src/pray/good-death-data.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P2",
+      "method": "Ritual vs lay text classification; priest-reserved boundaries and edition rights"
+    },
+    {
+      "id": "tenebrae",
+      "title": "Tenebrae source witnesses",
+      "source": "data/pray/tenebrae-1960-source",
+      "status": "DIRECTIVE_AWARE_PARSER_REQUIRED",
+      "priority": "P2",
+      "method": "Sections and lessons from pinned MIT source, but unresolved Divinum macros block rendering"
+    },
+    {
+      "id": "sacramental-rituals",
+      "title": "Baptism, Confirmation, Matrimony etc.",
+      "source": "src/learn/traditional-life-data.js",
+      "status": "RIGHTS_AND_EDITION_REVIEW",
+      "priority": "P2",
+      "method": "Rituale/Pontificale source sections; never substitute modern ceremonial texts for 1962"
+    },
+    {
+      "id": "calendar-propers",
+      "title": "Feast-day lessons and historical titles",
+      "source": "src/calendar/scripture-handoff.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Reuse Mass and Scripture owners; link feast to relevant canonical passages"
+    },
+    {
+      "id": "saints-hagiography",
+      "title": "Saint biographies and writings",
+      "source": "src/calendar/calendar-runtime.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P2",
+      "method": "Saint/work/episode/dates; claims and doubtful traditions labelled"
+    },
+    {
+      "id": "bible-atlas",
+      "title": "Bible Atlas and genealogy",
+      "source": "src/find/bible-atlas.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Event/person/place Scripture crosswalk; avoid duplicating Bible chapters"
+    },
+    {
+      "id": "pilgrimage-shrines",
+      "title": "Pilgrimages, shrines and apparitions",
+      "source": "src/find/explore-projection.js",
+      "status": "DOCUMENT_INDEX_ONLY",
+      "priority": "P2",
+      "method": "Original shrine descriptions, episcopal decrees, historical accounts; safe geospatial IDs"
+    },
+    {
+      "id": "relics",
+      "title": "Relic custody and historical inventories",
+      "source": "data/explore/relic-worldwide-census-gates.v2.json",
+      "status": "DOCUMENT_INDEX_ONLY",
+      "priority": "P2",
+      "method": "Attestation and custody passage, witness date and contradictory claims"
+    },
+    {
+      "id": "latin-learning",
+      "title": "Forty Latin lessons and phrasebook",
+      "source": "src/learn/latin-course-v2.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Latin lemma/inflection/phrase, link to prayer and Missal without copying them"
+    },
+    {
+      "id": "glossary",
+      "title": "450 glossary concepts and 80 Latin phrases",
+      "source": "src/glossary/browser-entry.js",
+      "status": "ALREADY_STRUCTURED",
+      "priority": "P2",
+      "method": "Lazily load glossary sections; connect each source to exact primary passage"
+    },
+    {
+      "id": "apostolate",
+      "title": "Apostolate scenarios and skills",
+      "source": "src/apostolate/browser-entry.js",
+      "status": "PASSAGE_EXTRACTION_REQUIRED",
+      "priority": "P3",
+      "method": "Claim-to-document proof and contextual reading, not unnecessary full-book copies"
+    },
+    {
+      "id": "sacred-art",
+      "title": "Sacred painting identities and provenance",
+      "source": "src/assets/asset-registry.js",
+      "status": "METADATA_INDEX_ONLY",
+      "priority": "P3",
+      "method": "Inscriptions, subject scenes, catalogue provenance and rights, not prose reader"
+    },
+    {
+      "id": "tlm-directory",
+      "title": "Traditional Mass venue directory",
+      "source": "src/find/data-service.js",
+      "status": "METADATA_INDEX_ONLY",
+      "priority": "P3",
+      "method": "Physical pin, name, affiliation, source URL; not full-text parsing"
+    },
+    {
+      "id": "customs",
+      "title": "Traditional customs research",
+      "source": "src/find/traditions-browse.js",
+      "status": "REUSE_IN_CONTEXT",
+      "priority": "P3",
+      "method": "Link historical custom to Calendar/Formation/Prayer instead of a separate map"
+    }
+  ],
+  "counts": {
+    "total": 37,
+    "byPriority": {
+      "P0": 4,
+      "P1": 10,
+      "P2": 19,
+      "P3": 4
+    }
+  }
+}
