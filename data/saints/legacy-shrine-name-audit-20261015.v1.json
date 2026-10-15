@@ -1,0 +1,2083 @@
+{
+  "schema": "ao.saints.precanonical-shrine-name-audit.v1",
+  "scope": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "path": "data/shrines/shrines-pilgrimages-seed.v1.json",
+    "blob_sha": "c320c784b9b9b13a884bd3bd6d6e67a8ca82f895"
+  },
+  "caution": "A name-string census is NOT a count of historical persons or verified saints. Some names designate groups, Blesseds, ambiguous persons or old traditions. A shrine association does NOT establish birth, residence, martyrdom, relics or death at that site.",
+  "counts": {
+    "shrine_records": 250,
+    "shrines_with_saint_names": 121,
+    "association_edges": 145,
+    "distinct_name_strings": 119
+  },
+  "mentions": [
+    {
+      "candidate_key": "mention:blessed%20bishop%20and%20martyr%20vasyl%20velychkovsky",
+      "name_literal": "Blessed Bishop and Martyr Vasyl Velychkovsky",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "source_ids": [
+            "SG-R70-SITE-SG-INV-0422",
+            "SG-R70-CUSTODIAN-SG-INV-0422",
+            "SG-R70-GEO-SG-INV-0422"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:blessed%20jacques-d%C3%A9sir%C3%A9%20laval",
+      "name_literal": "Blessed Jacques-Désiré Laval",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:MU:pere-laval",
+          "place_id": "place:MU:pere-laval-sainte-croix",
+          "source_ids": [
+            "SHR-PERE-LAVAL-CENTRE",
+            "PIL-PERE-LAVAL-ANNUAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:blessed%20marie-louise%20trichet",
+      "name_literal": "Blessed Marie-Louise Trichet",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20adalbert%20of%20prague",
+      "name_literal": "Saint Adalbert of Prague",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+          "place_id": "place:PL:gniezno-cathedral-adalbert",
+          "source_ids": [
+            "SHR-PL-gniezno-cathedral-adalbert"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20agatha%20of%20sicily",
+      "name_literal": "Saint Agatha of Sicily",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+          "place_id": "place:IT:cattedrale-sant-agata-catania",
+          "source_ids": [
+            "SHR-IT-cattedrale-sant-agata-catania"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20alphonsus%20liguori",
+      "name_literal": "Saint Alphonsus Liguori",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sant-alfonso-pagani",
+          "place_id": "place:IT:sant-alfonso-pagani",
+          "source_ids": [
+            "SHR-IT-sant-alfonso-pagani"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20ambrose%20of%20milan",
+      "name_literal": "Saint Ambrose of Milan",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20andr%C3%A9%20bessette",
+      "name_literal": "Saint André Bessette",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20andrew%20kaggwa",
+      "name_literal": "Saint Andrew Kaggwa",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "place_id": "place:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20andrew%20the%20apostle",
+      "name_literal": "Saint Andrew the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:amalfi-sant-andrea",
+          "place_id": "place:IT:amalfi-sant-andrea",
+          "source_ids": [
+            "SHR-IT-amalfi-sant-andrea"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20anne",
+      "name_literal": "Saint Anne",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+          "place_id": "place:CA:sainte-anne-de-beaupre",
+          "source_ids": [
+            "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
+            "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:FR:sainte-anne-d-auray",
+          "place_id": "place:FR:sainte-anne-d-auray",
+          "source_ids": [
+            "SHR-SAINTE-ANNE-IDENTITY",
+            "PIL-SAINTE-ANNE-GRAND-PARDON"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "place_id": "place:US:st-anne-fiskdale",
+          "source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20anthony%20of%20padua",
+      "name_literal": "Saint Anthony of Padua",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+          "place_id": "place:FR:grottes-saint-antoine-brive",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-grottes-saint-antoine-brive"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+          "place_id": "place:IT:basilica-sant-antonio-padova",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-sant-antonio-padova"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20apollinaris",
+      "name_literal": "Saint Apollinaris",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+          "place_id": "place:DE:st-apollinaris-frielingsdorf",
+          "source_ids": [
+            "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+            "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20augustine%20of%20hippo",
+      "name_literal": "Saint Augustine of Hippo",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+          "place_id": "place:IT:san-pietro-ciel-doro",
+          "source_ids": [
+            "SHR-IT-san-pietro-ciel-doro"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20bartholomew%20the%20apostle",
+      "name_literal": "Saint Bartholomew the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:san-bartolomeo-isola",
+          "place_id": "place:IT:san-bartolomeo-isola",
+          "source_ids": [
+            "SHR-IT-san-bartolomeo-isola"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20bartolo%20longo",
+      "name_literal": "Saint Bartolo Longo",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:pompei-rosary",
+          "place_id": "place:IT:pompei-rosary-shrine",
+          "source_ids": [
+            "SHR-POMPEI-CONTACT",
+            "PIL-POMPEI-SUPPLICA-MAY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20benedict%20of%20nursia",
+      "name_literal": "Saint Benedict of Nursia",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+          "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-fleury-saint-benoit-loire",
+            "R63-FLEURY-HISTORY",
+            "R63-FLEURY-PILGRIMAGE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "place_id": "place:IT:montecassino-abbey",
+          "source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20bernadette%20soubirous",
+      "name_literal": "Saint Bernadette Soubirous",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+          "place_id": "place:FR:espace-bernadette-nevers",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-espace-bernadette-nevers"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:FR:lourdes-our-lady",
+          "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+          "source_ids": [
+            "SHR-LOURDES-CONTACT",
+            "SHR-LOURDES-PILGRIMAGE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+          "place_id": "place:US:lourdes-grotto-emmitsburg",
+          "source_ids": [
+            "SHR-GROTTO-LOURDES-EMMITSBURG",
+            "PIL-GROTTO-LOURDES-FEAST"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "place_id": "place:US:lourdes-litchfield",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20beuno",
+      "name_literal": "Saint Beuno",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "place_id": "place:GB:holywell-st-winefride",
+          "source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20brigid%20of%20kildare",
+      "name_literal": "Saint Brigid of Kildare",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IE:solas-bhride-kildare",
+          "place_id": "place:IE:solas-bhride-kildare",
+          "source_ids": [
+            "SG-R65-IE-BRIGID-CENTRE",
+            "SG-R65-IE-BRIGID-PILGRIMAGE",
+            "SG-R65-IE-BRIGID-OSM",
+            "SG-R65-IE-BRIGID-CATHEDRAL",
+            "SG-R65-IE-BRIGID-2026"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20casimir",
+      "name_literal": "Saint Casimir",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+          "place_id": "place:LT:vilnius-cathedral-st-casimir",
+          "source_ids": [
+            "SHR-LT-vilnius-cathedral-st-casimir"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20catherine%20labour%C3%A9",
+      "name_literal": "Saint Catherine Labouré",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "place_id": "place:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+          "place_id": "place:US:miraculous-medal-philadelphia",
+          "source_ids": [
+            "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+            "PIL-MIRACULOUS-MEDAL-NOVENA"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20catherine%20of%20siena",
+      "name_literal": "Saint Catherine of Siena",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+          "place_id": "place:IT:santa-maria-minerva-rome",
+          "source_ids": [
+            "SHR-IT-santa-maria-minerva-rome"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20charbel%20makhlouf",
+      "name_literal": "Saint Charbel Makhlouf",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+          "place_id": "place:LB:monastery-saint-maron-annaya",
+          "source_ids": [
+            "SHR-LB-monastery-saint-maron-annaya"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20charles%20borromeo",
+      "name_literal": "Saint Charles Borromeo",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:duomo-milano",
+          "place_id": "place:IT:duomo-milano",
+          "source_ids": [
+            "SHR-IT-duomo-milano"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20charles%20lwanga",
+      "name_literal": "Saint Charles Lwanga",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "place_id": "place:UG:namugongo-martyrs",
+          "source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20clare%20of%20assisi",
+      "name_literal": "Saint Clare of Assisi",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:santa-chiara-assisi",
+          "place_id": "place:IT:santa-chiara-assisi",
+          "source_ids": [
+            "SHR-IT-santa-chiara-assisi"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20claude%20la%20colombi%C3%A8re",
+      "name_literal": "Saint Claude La Colombière",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20columbanus",
+      "name_literal": "Saint Columbanus",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+          "place_id": "place:IT:abbey-san-colombano-bobbio",
+          "source_ids": [
+            "SHR-IT-abbey-san-colombano-bobbio"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20denis%20of%20paris",
+      "name_literal": "Saint Denis of Paris",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-saint-denis",
+          "place_id": "place:FR:basilique-saint-denis",
+          "source_ids": [
+            "SHR-SAINT-DENIS-OFFICIAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+          "place_id": "place:FR:basilique-saint-denys-argenteuil",
+          "source_ids": [
+            "SHR-FR-ARGENTEUIL-TUNIQUE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20dominic",
+      "name_literal": "Saint Dominic",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CO:chiquinquira",
+          "place_id": "place:CO:chiquinquira-basilica",
+          "source_ids": [
+            "SHR-CHIQUINQUIRA-DIOCESE",
+            "PIL-CHIQUINQUIRA-JULY9"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20dominic%20de%20guzm%C3%A1n",
+      "name_literal": "Saint Dominic de Guzmán",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+          "place_id": "place:IT:basilica-san-domenico-bologna",
+          "source_ids": [
+            "SHR-IT-basilica-san-domenico-bologna"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20edward%20the%20confessor",
+      "name_literal": "Saint Edward the Confessor",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+          "place_id": "place:GB:westminster-abbey-st-edward",
+          "source_ids": [
+            "SHR-GB-westminster-abbey-st-edward"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20elizabeth%20ann%20seton",
+      "name_literal": "Saint Elizabeth Ann Seton",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:seton-emmitsburg",
+          "place_id": "place:US:seton-emmitsburg",
+          "source_ids": [
+            "SHR-SETON-EMMITSBURG",
+            "PIL-SETON-SEA-SERVICES-2026"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20eusebius%20of%20vercelli",
+      "name_literal": "Saint Eusebius of Vercelli",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+          "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+          "source_ids": [
+            "SHR-IT-duomo-sant-eusebio-vercelli"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20faustina%20kowalska",
+      "name_literal": "Saint Faustina Kowalska",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+          "place_id": "place:PL:divine-mercy-plock",
+          "source_ids": [
+            "SHR-PIL-BULK-PL-divine-mercy-plock"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:divine-mercy-stockbridge",
+          "place_id": "place:US:divine-mercy-stockbridge",
+          "source_ids": [
+            "SHR-DIVINE-MERCY-STOCKBRIDGE",
+            "PIL-DIVINE-MERCY-SUNDAY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20francis%20de%20sales",
+      "name_literal": "Saint Francis de Sales",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20francis%20of%20assisi",
+      "name_literal": "Saint Francis of Assisi",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
+          "place_id": "place:IT:basilica-san-francesco-assisi",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20francis%20xavier",
+      "name_literal": "Saint Francis Xavier",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "source_ids": [
+            "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20francisco%20marto",
+      "name_literal": "Saint Francisco Marto",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PT:fatima",
+          "place_id": "place:PT:fatima-sanctuary",
+          "source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20gervasius%20of%20milan",
+      "name_literal": "Saint Gervasius of Milan",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20helena",
+      "name_literal": "Saint Helena",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+          "place_id": "place:IT:scala-santa-rome",
+          "source_ids": [
+            "SHR-PIL-IT-scala-santa-rome"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:IT:santa-croce-rome",
+          "place_id": "place:IT:santa-croce-gerusalemme-rome",
+          "source_ids": [
+            "SHR-SANTA-CROCE-RELICS"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20hilary%20of%20poitiers",
+      "name_literal": "Saint Hilary of Poitiers",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+          "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+          "source_ids": [
+            "SHR-FR-saint-hilaire-le-grand-poitiers"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20ignatius%20of%20loyola",
+      "name_literal": "Saint Ignatius of Loyola",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:chiesa-gesu-rome",
+          "place_id": "place:IT:chiesa-gesu-rome",
+          "source_ids": [
+            "SHR-IT-chiesa-gesu-rome"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20isaac%20jogues",
+      "name_literal": "Saint Isaac Jogues",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "place_id": "place:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jacinta%20marto",
+      "name_literal": "Saint Jacinta Marto",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PT:fatima",
+          "place_id": "place:PT:fatima-sanctuary",
+          "source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20james%20the%20greater",
+      "name_literal": "Saint James the Greater",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+          "place_id": "place:ES:santiago-compostela-cathedral",
+          "source_ids": [
+            "SHR-PIL-ES-santiago-compostela-cathedral"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+          "place_id": "place:BA:medjugorje-st-james-parish",
+          "source_ids": [
+            "SG-R71-MEDJUGORJE-PARISH",
+            "SG-R71-MEDJUGORJE-DDF",
+            "SG-R71-MEDJUGORJE-GEO"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jane%20frances%20de%20chantal",
+      "name_literal": "Saint Jane Frances de Chantal",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jean%20de%20br%C3%A9beuf",
+      "name_literal": "Saint Jean de Brébeuf",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jean-marie%20vianney",
+      "name_literal": "Saint Jean-Marie Vianney",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-ars",
+          "place_id": "place:FR:basilique-ars",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-ars"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20joachim",
+      "name_literal": "Saint Joachim",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "place_id": "place:US:st-anne-fiskdale",
+          "source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20joan%20of%20arc",
+      "name_literal": "Saint Joan of Arc",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:bermont-greux",
+          "place_id": "place:FR:bermont-greux",
+          "source_ids": [
+            "SHR-BERMONT-GREUX"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20bosco",
+      "name_literal": "Saint John Bosco",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+          "place_id": "place:IT:maria-ausiliatrice-torino",
+          "source_ids": [
+            "SHR-IT-maria-ausiliatrice-torino"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20de%20lalande",
+      "name_literal": "Saint John de Lalande",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "place_id": "place:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20neumann",
+      "name_literal": "Saint John Neumann",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:neumann-philadelphia",
+          "place_id": "place:US:st-john-neumann-philadelphia",
+          "source_ids": [
+            "SHR-NEUMANN-PHILADELPHIA",
+            "PIL-NEUMANN-PHILADELPHIA"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20of%20the%20cross",
+      "name_literal": "Saint John of the Cross",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+          "place_id": "place:ES:convento-san-juan-cruz-segovia",
+          "source_ids": [
+            "SHR-ES-convento-san-juan-cruz-segovia"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20paul%20ii",
+      "name_literal": "Saint John Paul II",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+          "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+          "source_ids": [
+            "SHR-JPII-KRAKOW-OFFICIAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20the%20baptist",
+      "name_literal": "Saint John the Baptist",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+          "place_id": "place:DE:aachener-dom-four-textiles",
+          "source_ids": [
+            "SHR-DE-aachener-dom-four-textiles"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+          "place_id": "place:FR:cathedrale-notre-dame-amiens",
+          "source_ids": [
+            "SHR-FR-AMIENS-JEAN-BAPTISTE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20john%20the%20evangelist",
+      "name_literal": "Saint John the Evangelist",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IE:knock",
+          "place_id": "place:IE:knock-shrine",
+          "source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jos%C3%A9%20de%20anchieta",
+      "name_literal": "Saint José de Anchieta",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+          "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+          "source_ids": [
+            "SHR-BR-pateo-do-collegio-sao-paulo"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20joseph",
+      "name_literal": "Saint Joseph",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+          "place_id": "place:FR:saint-joseph-bessillon",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-saint-joseph-bessillon"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:IE:knock",
+          "place_id": "place:IE:knock-shrine",
+          "source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20josephine%20bakhita",
+      "name_literal": "Saint Josephine Bakhita",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+          "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+          "source_ids": [
+            "SHR-IT-sacra-famiglia-bakhita-schio"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20juan%20diego",
+      "name_literal": "Saint Juan Diego",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:MX:guadalupe-tepeyac",
+          "place_id": "place:MX:basilica-guadalupe-mexico-city",
+          "source_ids": [
+            "SHR-GUADALUPE-MX-CONTACT",
+            "PIL-GUADALUPE-MX-FEAST"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:US:guadalupe-la-crosse",
+          "place_id": "place:US:guadalupe-shrine-la-crosse",
+          "source_ids": [
+            "SHR-GUADALUPE-SCHEDULE",
+            "SHR-GUADALUPE-PILGRIMAGE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20julienne%20of%20cornillon",
+      "name_literal": "Saint Julienne of Cornillon",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+          "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+          "source_ids": [
+            "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20jun%C3%ADpero%20serra",
+      "name_literal": "Saint Junípero Serra",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+          "place_id": "place:US:carmel-mission-basilica-serra",
+          "source_ids": [
+            "SHR-US-carmel-mission-basilica-serra"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20kateri%20tekakwitha",
+      "name_literal": "Saint Kateri Tekakwitha",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "place_id": "place:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20katharine%20drexel",
+      "name_literal": "Saint Katharine Drexel",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+          "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+          "source_ids": [
+            "SHR-US-cathedral-katharine-drexel-philadelphia"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20kizito",
+      "name_literal": "Saint Kizito",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "place_id": "place:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20leonard%20of%20noblac",
+      "name_literal": "Saint Leonard of Noblac",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+          "place_id": "place:DE:st-leonhard-nussdorf",
+          "source_ids": [
+            "SHR-ST-LEONHARD-NUSSDORF",
+            "PIL-ST-LEONHARD-NUSSDORF"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20louis%20de%20montfort",
+      "name_literal": "Saint Louis de Montfort",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "place_id": "place:US:lourdes-litchfield",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20louis-marie%20de%20montfort",
+      "name_literal": "Saint Louis-Marie de Montfort",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20louise%20de%20marillac",
+      "name_literal": "Saint Louise de Marillac",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "place_id": "place:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20lucy%20of%20syracuse",
+      "name_literal": "Saint Lucy of Syracuse",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+          "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+          "source_ids": [
+            "SHR-IT-san-geremia-santa-lucia-venezia"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20luke%20the%20evangelist",
+      "name_literal": "Saint Luke the Evangelist",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:santa-giustina-padova",
+          "place_id": "place:IT:santa-giustina-padova",
+          "source_ids": [
+            "SHR-IT-santa-giustina-padova"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20margaret%20mary%20alacoque",
+      "name_literal": "Saint Margaret Mary Alacoque",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20mark%20the%20evangelist",
+      "name_literal": "Saint Mark the Evangelist",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+          "place_id": "place:IT:basilica-san-marco-venezia",
+          "source_ids": [
+            "SHR-IT-basilica-san-marco-venezia"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20martha%20of%20bethany",
+      "name_literal": "Saint Martha of Bethany",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+          "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+          "source_ids": [
+            "SHR-FR-collegiale-sainte-marthe-tarascon"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20martin%20de%20porres",
+      "name_literal": "Saint Martin de Porres",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20martin%20of%20tours",
+      "name_literal": "Saint Martin of Tours",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+          "place_id": "place:FR:basilique-saint-martin-tours",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-saint-martin-tours"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20mary%20magdalene",
+      "name_literal": "Saint Mary Magdalene",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+          "source_ids": [
+            "SHR-FR-VEZELAY-MADELEINE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20matthew%20the%20apostle",
+      "name_literal": "Saint Matthew the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:salerno-duomo",
+          "place_id": "place:IT:salerno-duomo",
+          "source_ids": [
+            "SHR-IT-salerno-duomo"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20matthias%20the%20apostle",
+      "name_literal": "Saint Matthias the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:DE:trier-sankt-matthias",
+          "place_id": "place:DE:trier-sankt-matthias",
+          "source_ids": [
+            "SHR-DE-trier-sankt-matthias"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20maurice%20and%20the%20theban%20martyrs",
+      "name_literal": "Saint Maurice and the Theban martyrs",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+          "place_id": "place:CH:abbaye-saint-maurice-agaune",
+          "source_ids": [
+            "SHR-CH-abbaye-saint-maurice-agaune"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20maximin",
+      "name_literal": "Saint Maximin",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20meinrad",
+      "name_literal": "Saint Meinrad",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CH:einsiedeln-our-lady",
+          "place_id": "place:CH:einsiedeln-monastery",
+          "source_ids": [
+            "SHR-EINSIEDELN-PILGRIMAGE",
+            "SHR-EINSIEDELN-ENGELWEIHE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20michael%20the%20archangel",
+      "name_literal": "Saint Michael the Archangel",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+          "place_id": "place:FR:abbaye-mont-saint-michel",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-mont-saint-michel"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+          "place_id": "place:IT:san-michele-gargano",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-san-michele-gargano"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20monica",
+      "name_literal": "Saint Monica",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+          "place_id": "place:IT:sant-agostino-campo-marzio",
+          "source_ids": [
+            "SHR-IT-sant-agostino-campo-marzio"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20nicholas",
+      "name_literal": "Saint Nicholas",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+          "place_id": "place:IT:basilica-san-nicola-bari",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-nicola-bari"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20nicholas%20of%20myra",
+      "name_literal": "Saint Nicholas of Myra",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+          "place_id": "place:FR:basilique-saint-nicolas-de-port",
+          "source_ids": [
+            "SHR-FR-basilique-saint-nicolas-de-port"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20oliver%20plunkett",
+      "name_literal": "Saint Oliver Plunkett",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
+          "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+          "source_ids": [
+            "SG-R65-IE-OLIVER-ARMAGH",
+            "SG-R65-IE-OLIVER-RELIC",
+            "SG-R65-IE-OLIVER-TOURISM"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20oscar%20romero",
+      "name_literal": "Saint Oscar Romero",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+          "place_id": "place:SV:catedral-metropolitana-san-salvador",
+          "source_ids": [
+            "SHR-SV-catedral-metropolitana-san-salvador"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20patrick",
+      "name_literal": "Saint Patrick",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IE:croagh-patrick-pilgrimage",
+          "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+          "source_ids": [
+            "SG-R65-IE-CROAGH-LOCAL",
+            "SG-R65-IE-CROAGH-TRAIL",
+            "SG-R65-IE-CROAGH-SAFETY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:IE:lough-derg",
+          "place_id": "place:IE:lough-derg-station-island",
+          "source_ids": [
+            "SHR-LOUGH-DERG-CONTACT",
+            "PIL-LOUGH-DERG-THREE-DAY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20paul%20the%20apostle",
+      "name_literal": "Saint Paul the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+          "place_id": "place:IT:saint-paul-outside-walls-rome",
+          "source_ids": [
+            "SHR-PIL-IT-saint-paul-outside-walls-rome"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20peter%20chanel",
+      "name_literal": "Saint Peter Chanel",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+          "place_id": "place:NZ:st-peter-chanel-russell",
+          "source_ids": [
+            "SHR-ST-PETER-CHANEL-NZ",
+            "PIL-NGA-TAPUWAE"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20peter%20the%20apostle",
+      "name_literal": "Saint Peter the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+          "place_id": "place:VA:saint-peter-vatican",
+          "source_ids": [
+            "SHR-PIL-VA-saint-peter-vatican"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+          "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+          "source_ids": [
+            "SG-R76-SITE-SG-INV-0726",
+            "SG-R76-GEO-SG-INV-0726"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:MA:cathedrale-saint-pierre-rabat",
+          "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+          "source_ids": [
+            "SG-R70-SITE-SG-INV-0705",
+            "SG-R70-CUSTODIAN-SG-INV-0705",
+            "SG-R70-GEO-SG-INV-0705"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20philip%20neri",
+      "name_literal": "Saint Philip Neri",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+          "place_id": "place:IT:santa-maria-vallicella-rome",
+          "source_ids": [
+            "SHR-IT-santa-maria-vallicella-rome"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20pio%20of%20pietrelcina",
+      "name_literal": "Saint Pio of Pietrelcina",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+          "place_id": "place:IT:santuario-san-pio-rotondo",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-santuario-san-pio-rotondo"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20protasius%20of%20milan",
+      "name_literal": "Saint Protasius of Milan",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20quentin",
+      "name_literal": "Saint Quentin",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+          "place_id": "place:FR:basilique-saint-quentin-aisne",
+          "source_ids": [
+            "SHR-FR-basilique-saint-quentin-aisne"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20ren%C3%A9%20goupil",
+      "name_literal": "Saint René Goupil",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "place_id": "place:US:auriesville-martyrs",
+          "source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20rita%20of%20cascia",
+      "name_literal": "Saint Rita of Cascia",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+          "place_id": "place:IT:basilica-santa-rita-cascia",
+          "source_ids": [
+            "SHR-PIL-BULK-IT-basilica-santa-rita-cascia"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20rose%20of%20lima",
+      "name_literal": "Saint Rose of Lima",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20saturninus",
+      "name_literal": "Saint Saturninus",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+          "place_id": "place:FR:basilique-saint-sernin-toulouse",
+          "source_ids": [
+            "SHR-FR-basilique-saint-sernin-toulouse"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20scholastica",
+      "name_literal": "Saint Scholastica",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "place_id": "place:IT:montecassino-abbey",
+          "source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20siviard%3B%20saint%20columba%20of%20sens%3B%20saint%20lupus%20of%20sens",
+      "name_literal": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+          "place_id": "place:FR:cathedrale-saint-etienne-sens",
+          "source_ids": [
+            "SHR-FR-cathedrale-saint-etienne-sens"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20stanislaus%20of%20krak%C3%B3w",
+      "name_literal": "Saint Stanislaus of Kraków",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+          "place_id": "place:PL:wawel-cathedral-stanislaus",
+          "source_ids": [
+            "SHR-PL-wawel-cathedral-stanislaus"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20stephen%20of%20hungary",
+      "name_literal": "Saint Stephen of Hungary",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+          "place_id": "place:HU:st-stephen-basilica-budapest",
+          "source_ids": [
+            "SHR-HU-st-stephen-basilica-budapest"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20teresa%20of%20%C3%A1vila",
+      "name_literal": "Saint Teresa of Ávila",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+          "place_id": "place:ES:carmel-alba-tormes",
+          "source_ids": [
+            "SHR-PIL-ES-carmel-alba-tormes"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20th%C3%A9r%C3%A8se%20of%20lisieux",
+      "name_literal": "Saint Thérèse of Lisieux",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+          "place_id": "place:FR:basilique-sainte-therese-lisieux",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+          "place_id": "place:FR:carmel-lisieux",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-carmel-lisieux"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20thomas%20aquinas",
+      "name_literal": "Saint Thomas Aquinas",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+          "place_id": "place:FR:couvent-jacobins-toulouse",
+          "source_ids": [
+            "SHR-FR-couvent-jacobins-toulouse"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20thomas%20the%20apostle",
+      "name_literal": "Saint Thomas the Apostle",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:IT:ortona-san-tommaso",
+          "place_id": "place:IT:ortona-san-tommaso",
+          "source_ids": [
+            "SHR-IT-ortona-san-tommaso"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20titus",
+      "name_literal": "Saint Titus",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:GR:saint-titus-heraklion",
+          "place_id": "place:GR:saint-titus-heraklion",
+          "source_ids": [
+            "SHR-GR-saint-titus-heraklion"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20turibius%20of%20astorga",
+      "name_literal": "Saint Turibius of Astorga",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+          "place_id": "place:ES:santo-toribio-liebana",
+          "source_ids": [
+            "SHR-PIL-ES-santo-toribio-liebana"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20vincent%20de%20paul",
+      "name_literal": "Saint Vincent de Paul",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "place_id": "place:FR:rue-du-bac",
+          "source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20wenceslas",
+      "name_literal": "Saint Wenceslas",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+          "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+          "source_ids": [
+            "SHR-STARA-BOLESLAV-OFFICIAL",
+            "PIL-ST-WENCESLAS-NATIONAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20willibrord",
+      "name_literal": "Saint Willibrord",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+          "place_id": "place:LU:basilica-st-willibrord-echternach",
+          "source_ids": [
+            "SHR-LU-basilica-st-willibrord-echternach"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:saint%20winefride",
+      "name_literal": "Saint Winefride",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "place_id": "place:GB:holywell-st-winefride",
+          "source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:the%20three%20magi",
+      "name_literal": "The Three Magi",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:DE:kolner-dom-three-kings",
+          "place_id": "place:DE:kolner-dom-three-kings",
+          "source_ids": [
+            "SHR-DE-kolner-dom-three-kings"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    },
+    {
+      "candidate_key": "mention:uganda%20martyrs",
+      "name_literal": "Uganda Martyrs",
+      "identity_status": "UNRECONCILED_NAME_STRING",
+      "shrine_associations": [
+        {
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "place_id": "place:UG:munyonyo-martyrs",
+          "source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        },
+        {
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "place_id": "place:UG:namugongo-martyrs",
+          "source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "relationship_semantics": "SHRINE_ASSOCIATION_ONLY_NOT_PROOF_OF_LIFE_EVENT"
+        }
+      ]
+    }
+  ]
+}
