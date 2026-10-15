@@ -82,6 +82,17 @@ const css = [
   "#ao-formation-recovery-review .rrList small{display:block;font:.7rem var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}",
   "#ao-formation-recovery-review .rrSources{display:flex;gap:5px 12px;flex-wrap:wrap;font:.72rem/1.6 var(--ao-font-ui,system-ui);margin:4px 0 15px}",
   "#ao-formation-recovery-review .rrSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}",
+
+  "#ao-formation-recovery-review .rrEvidenceDisclosure{margin:23px 0 14px;border-top:1px solid var(--ao-rule,#3d3d40);padding-top:9px;font:400 max(13px,.8125rem)/1.55 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrEvidenceDisclosure>summary{min-height:44px;display:flex;align-items:center;color:var(--ao-text-muted,#a9a5a0);cursor:pointer;font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrEvidenceDisclosure[open]>summary{color:var(--liturgical,#c9ad78)}",
+  "#ao-formation-recovery-review .rrEvidenceDisclosure summary:focus-visible,#ao-formation-recovery-review .rrEvidenceDisclosure a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
+  "#ao-formation-recovery-review .rrEvidenceHelp{color:var(--ao-text-muted,#a9a5a0);font:.75rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrEvidenceList{padding-left:22px;margin:0}#ao-formation-recovery-review .rrEvidenceList>li{margin:12px 0;padding:0}",
+  "#ao-formation-recovery-review .rrEvidenceRole{display:block;font-weight:600;color:var(--ao-text-primary,#e9e4da)}",
+  "#ao-formation-recovery-review .rrEvidenceExcerpt{display:block;margin:3px 0;color:var(--ao-text-muted,#a9a5a0)}",
+  "#ao-formation-recovery-review .rrEvidenceList .rrSources{margin:4px 0 9px;font-size:max(13px,.8125rem)}",
+
   "#ao-formation-recovery-review .rrBibleHandoff{display:inline-flex;flex-direction:column;gap:4px;max-width:100%;vertical-align:middle}.rrBibleHandoff .aoScriptureContextCapsule{min-height:44px}.rrBibleHandoff small{max-width:270px;color:var(--muted,#9ba5b1);font:400 .7rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}",
   "#ao-formation-recovery-review .rrNode{margin:12px 0 17px}",
   "#ao-formation-recovery-review .rrNode>h3{margin:12px 0 8px;font:500 .94rem var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78)}",
@@ -229,9 +240,29 @@ export function createFormationRecoveryReview(win=globalThis) {
       return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title||id)+'">'+esc(s.title||id)+'</a>'+formationSourceBibleMarkup(s,{french:isFr(win)});
     }).join("")+'</nav>';
   };
-  const renderNode=(value,map,depth=0)=>{
+  // Claim links remain pack-scoped. Collapse only their presentation; each
+  // paragraph and opposing argument retains its original reference membership.
+  const sourceEvidenceDisclosure=(records,owner)=>{
+    if(!records.length)return "";
+    const rows=records.map((entry,index)=>{
+      const quoted=String(entry.excerpt||"").replace(/\s+/g," ").trim();
+      const excerpt=quoted.length>145?quoted.slice(0,142)+"…":quoted;
+      const meta=entry.role?'<span class="rrEvidenceRole">'+esc(entry.role)+'</span>':"";
+      return '<li data-rr-evidence-row="'+esc(entry.id||String(index+1))+'">'+meta+
+        (excerpt?'<span class="rrEvidenceExcerpt">'+esc(excerpt)+'</span>':"")+
+        sourceLinks(entry.ids,entry.registry)+'</li>';
+    }).join("");
+    return '<details class="rrEvidenceDisclosure" data-rr-source-panel="'+esc(owner)+'">'+
+      '<summary>'+esc(pick(win,"Sources & original texts","Sources et textes originaux"))+
+      ' · '+records.length+'</summary>'+
+      '<p class="rrEvidenceHelp">'+esc(pick(win,
+        "References are grouped under the exact paragraph or argument they support. An external link does not certify its edition, interpretation, or reproduction rights.",
+        "Chaque référence reste liée au paragraphe ou à l’argument concerné. Un lien externe ne certifie ni l’édition, ni l’interprétation, ni les droits de reproduction."))+'</p>'+
+      '<ol class="rrEvidenceList">'+rows+'</ol></details>';
+  };
+  const renderNode=(value,map,depth=0,evidenceRows=null,sectionLabel="")=>{
     if(value===null || value===undefined || depth>8)return "";
-    if(Array.isArray(value))return value.map(x=>'<div class="rrNode">'+renderNode(x,map,depth+1)+'</div>').join("");
+    if(Array.isArray(value))return value.map(x=>'<div class="rrNode">'+renderNode(x,map,depth+1,evidenceRows,sectionLabel)+'</div>').join("");
     if(typeof value==="string")return '<p>'+esc(value)+'</p>';
     if(typeof value!=="object")return "";
     const text=isFr(win)?value.text_fr||asText(value.text,win)||value.text_en:
@@ -239,12 +270,15 @@ export function createFormationRecoveryReview(win=globalThis) {
     const claimText=text||value.finding||value.note||value.summary||"";
     const role=value.role||value.proponent||value.attributed_to||value.voice||"";
     let html=role?'<div class="rrRole">'+esc(role)+'</div>':"";
+    if(Array.isArray(value.source_ids)&&evidenceRows){
+      evidenceRows.push({id:sectionLabel+"-"+evidenceRows.length,excerpt:claimText,role:[sectionLabel,role].filter(Boolean).join(" · "),ids:value.source_ids,registry:map});
+    }
     if(claimText){
-      html+='<p>'+esc(claimText)+'</p>'+(Array.isArray(value.source_ids)?sourceLinks(value.source_ids,map):"");
-    }else if(Array.isArray(value.source_ids))html+=sourceLinks(value.source_ids,map);
+      html+='<p>'+esc(claimText)+'</p>'+(Array.isArray(value.source_ids)&&!evidenceRows?sourceLinks(value.source_ids,map):"");
+    }else if(Array.isArray(value.source_ids)&&!evidenceRows)html+=sourceLinks(value.source_ids,map);
     const childFields=RECOVERY_REVIEW_CHILD_KEYS;
     for(const k of childFields)if(value[k] && (Array.isArray(value[k])||typeof value[k]==="object")){
-      html+='<div class="rrNode"><h3>'+esc(kind(k))+'</h3>'+renderNode(value[k],map,depth+1)+'</div>';
+      html+='<div class="rrNode"><h3>'+esc(kind(k))+'</h3>'+renderNode(value[k],map,depth+1,evidenceRows,sectionLabel||kind(k))+'</div>';
     }
     if(!text&&!html)html='<p class="rrMuted">No substantive text in this record.</p>';
     return html;
@@ -290,13 +324,18 @@ export function createFormationRecoveryReview(win=globalThis) {
     const qSources=x.bank==="BAQ"?x.raw?.question_provenance_ids||[]:
       x.content?.question_provenance_ids||x.content?.question_source_ids||[];
     const qRegistry=x.bank==="BAQ"?new Map((state.questionSources||[]).map(y=>[y.id,y])):x.sourceRegistry;
-    const section=v=>'<section class="rrArticleSection"><h3>'+esc(v.label)+'</h3>'+renderNode(v.body,x.sourceRegistry)+'</section>';
+    const citations=[];
+    if(qSources.length)citations.push({id:x.id+"-question",role:pick(win,"Question provenance","Provenance de la question"),excerpt:ttl(x),ids:qSources,registry:qRegistry});
+    const section=v=>'<section class="rrArticleSection"><h3>'+esc(v.label)+'</h3>'+renderNode(v.body,x.sourceRegistry,0,citations,v.label)+'</section>';
+    const substantive=drafted.length?drafted.map(section).join(""):'<p class="rrMuted">No substantive sourced answer in this record.</p>';
+    const editorial=notes.length?notes.map(section).join(""):"";
+    const citationsHtml=sourceEvidenceDisclosure(citations,x.id);
     return '<details class="rrArticle" data-rr-article="'+esc(x.id)+'"'+(index===0?" open":"")+'>'+
       '<summary>'+esc(ttl(x))+'</summary><div class="rrArticleBody">'+
       '<p class="rrMuted">'+esc(x.id)+' · '+esc(x.bank)+'</p>'+
-      (qSources.length?'<h3>'+esc(pick(win,"Question provenance","Provenance de la question"))+'</h3>'+sourceLinks(qSources,qRegistry):"")+
-      (drafted.length?drafted.map(section).join(""):'<p class="rrMuted">No substantive sourced answer in this record.</p>')+
-      (notes.length?'<details class="rrArticle"><summary>'+esc(pick(win,"Editorial verification notes","Notes de vérification éditoriale"))+'</summary>'+notes.map(section).join("")+'</details>':"")+
+      substantive+
+      (notes.length?'<details class="rrArticle"><summary>'+esc(pick(win,"Editorial verification notes","Notes de vérification éditoriale"))+'</summary>'+editorial+'</details>':"")+
+      citationsHtml+
       '<button type="button" class="rrInspect" data-rr-id="'+esc(x.id)+'">'+esc(pick(win,"Inspect original record","Examiner la fiche originale"))+'</button>'+
       '</div></details>';
   };
@@ -323,6 +362,11 @@ export function createFormationRecoveryReview(win=globalThis) {
   const synthesisReading=d=>{
     if(!d.synthesis)return "";
     const corpus=d.synthesis.sourceRegistry||new Map();
+    const citations=d.synthesis.sections.map((q,index)=>({
+      id:d.id+"-s"+index,excerpt:asText(q.text,win),
+      role:([q.role,q.attribution].filter(Boolean).join(" · ")),
+      ids:q.source_ids,registry:corpus
+    }));
     const labels={
       answer:["Direct answer","Réponse directe"],
       documented_objection:["Documented objection","Objection documentée"],
@@ -338,8 +382,8 @@ export function createFormationRecoveryReview(win=globalThis) {
       d.synthesis.sections.map(q=>'<section class="rrArticleSection" data-rr-synthesis-role="'+esc(q.role)+'">'+
       '<h3>'+esc(pick(win,...(synthesisRoleLabel(d,q.role)||labels[q.role]||[q.role,q.role])))+'</h3>'+
       (q.attribution?'<p class="rrMuted">'+esc(q.attribution)+'</p>':"")+
-      '<p>'+esc(asText(q.text,win))+'</p>'+
-      sourceLinks(q.source_ids,corpus)+'</section>').join("")+'</section>';
+      '<p>'+esc(asText(q.text,win))+'</p></section>').join("")+
+      sourceEvidenceDisclosure(citations,d.id)+'</section>';
   };
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
@@ -482,13 +526,15 @@ export function createFormationRecoveryReview(win=globalThis) {
       '<h1>'+esc(ttl(x))+'</h1><div class="rrWarning">'+esc(pick(win,
       "Unpublished draft. Compare every argument with its original context before approving.",
       "Brouillon non publié. Vérifier chaque argument dans son contexte original avant approbation."))+'</div>';
-    if(qSource.length)html+='<h2>'+esc(pick(win,"Question provenance","Sources de la question"))+'</h2>'+
-      sourceLinks(qSource,x.bank==="BAQ"?new Map((state.questionSources||[]).map(y=>[y.id,y])):x.sourceRegistry);
+    const citations=[];
+    if(qSource.length)citations.push({id:x.id+"-question",excerpt:ttl(x),role:pick(win,"Question provenance","Sources de la question"),ids:qSource,
+      registry:x.bank==="BAQ"?new Map((state.questionSources||[]).map(y=>[y.id,y])):x.sourceRegistry});
     if(!x.content)return html+'<p class="rrMuted">'+esc(pick(win,"No answer draft is registered.",
       "Aucun projet de réponse enregistré."))+'</p>';
     const sections=sectionsFor(x.content);
     if(!sections.length)return html+'<p class="rrMuted">Draft structure requires manual review.</p>';
-    return html+sections.map(s=>'<section><h2>'+esc(s.label)+'</h2>'+renderNode(s.body,x.sourceRegistry)+'</section>').join("");
+    const sectionHtml=sections.map(s=>'<section><h2>'+esc(s.label)+'</h2>'+renderNode(s.body,x.sourceRegistry,0,citations,s.label)+'</section>').join("");
+    return html+sectionHtml+sourceEvidenceDisclosure(citations,x.id);
   };
   function ensure(){
     const doc=win?.document;if(!doc?.body)return null;
