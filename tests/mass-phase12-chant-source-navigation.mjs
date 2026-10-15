@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {certifyPreGospelChantParts,validatedPreGospelChantParts} from "../src/mass/reader-pre-gospel-chant-source.js";
 import {properToReaderSlots} from "../src/mass/proper-reader-slots.js";
+import {recoverReaderProperOmissions} from "../src/mass/reader-proper-runtime-recovery.js";
 import {createMassReaderModel} from "../src/mass/reader-model.js";
 import {projectCuratedOrdinaryLiveCards,projectCuratedIntroitEntryLiveCards} from "../src/mass/reader-live-curated-cards.js";
 import {createNativeScholaController} from "../src/mass/reader-schola.js";
@@ -37,6 +38,26 @@ function sources(secondary="Alleluia"){
 const certify=(proper,secondary="Alleluia")=>
   certifyPreGospelChantParts(proper,{sources:sources(secondary),
     normalizeRows:rows=>rows.join("\n").trim()});
+// Exercise the actual browser-entry recovery API, not only its stand-alone
+// source validator: each named section must already exist in the host resolver.
+const sourceMaps=sources();
+const calls=[];
+const hostResolver={async resolveSource(path,language){
+  calls.push([path,language]);
+  return sourceMaps[language];
+}};
+const readyEnvelope={status:"READY",sourcePath:base.sourcePath,data:base};
+const recovered=await recoverReaderProperOmissions(readyEnvelope,{hostResolver});
+assert.equal(recovered.data.preGospelChants?.status,"SOURCE_VERIFIED_EXACT",
+ "Host recovery failed to carry genuinely distinct chant ownership");
+assert.deepEqual(recovered.data.preGospelChants.parts.map(p=>p.kind),
+  ["GRADUAL","ALLELUIA"]);
+assert.equal(calls.length,3,"Named chant ownership should reuse only one parsed source per language");
+const unresolved=await recoverReaderProperOmissions({
+ ...readyEnvelope,data:{...base,gradual:{...base.gradual,en:"Unrelated EN"}}
+},{hostResolver});
+assert.equal(unresolved.data.preGospelChants,undefined,
+ "Host recovery silently replaced a nonmatching translation");
 const proof=certify(base);
 assert.ok(proof,"Real named bilingual source sections must reconcile");
 assert.equal(proof.status,"SOURCE_VERIFIED_EXACT");
