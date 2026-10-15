@@ -10,6 +10,15 @@ const sample=json("data/source-text/fortescue-1908-print-excerpts.v1.json");
 const witness=json("data/source-text/witness-profiles.v1.json").profiles
  .find(p=>p.id===sample.work.witnessId);
 assert.equal(validatePrintPagePlan(plan).size,13);
+assert.equal(plan.scanEdition,"1913_SPECIAL_EDITION");
+assert.equal(plan.editionId,"ED-CE1913-V3-KOC-SPECIAL");
+assert.deepEqual(plan.pagesVisuallyComparedForShortExcerpts,[255,256,257]);
+const ocr=json("data/source-text/fortescue-1913-p257-ocr-triage.v1.json");
+assert.equal(ocr.editionId,plan.editionId);
+assert.equal(ocr.cases.length,6);
+assert.equal(ocr.uncertaintyCount,1);
+assert.ok(ocr.cases.every(c=>c.automaticSubstitutionAllowed===false&&c.humanRecheckRequired===true));
+
 assert.equal(plan.pages[0].printedPage,255);
 assert.equal(plan.pages.at(-1).printedPage,267);
 assert.equal(plan.pages[0].scanPage,303);
