@@ -1,0 +1,46 @@
+{
+  "schema": "AO_MASS_ULTRA_MASTER_SOURCE_RECONCILIATION_20261015_V1",
+  "date": "2026-10-15",
+  "status": "SOURCE_OF_TRUTH_RECONCILIATION_NOT_A_PRODUCTION_RELEASE",
+  "principles": [
+    "One canonical 1962 Mass text and actor registry remains GitHub source; XLSX is a unified evidence/research index, not a competing reader",
+    "Do not flatten actor-specific priest rubrics into faithful posture",
+    "Preserve all pre-existing Guide copy and variant form conditions with their original IDs",
+    "Distinguish published actions from historical French rubric research and from author theological commentary",
+    "Retain source author/witness interpretation vs author-explicit Scripture in separate fields, not inferred by overlap"
+  ],
+  "observed": {
+    "masterCurrentMicroUnits": 435,
+    "currentSourceCueIds": 279,
+    "olderFullGuideRows": 154,
+    "currentGithubGuideKeys": 32,
+    "historicGuideOnly": 122,
+    "guideEvidenceRows": 1123,
+    "ceremonialPriestEvents": 279,
+    "currentPublishedRubricEvents": 57,
+    "publishedEventCues": 37,
+    "olderFrenchRubricCandidates": 98,
+    "frenchCandidatesWithoutSameCueEvent": 77,
+    "frenchCandidatesWithSameCueEvent": 21,
+    "historicalFaithfulPostureEvents": 23,
+    "historicalGestureDonors": 31,
+    "responseDonors": 33,
+    "historySourceClaims": 635,
+    "verifiedHistoricalClaims": 139,
+    "legacyHistoricalEvidenceAttachments": 955,
+    "mysteryCanonicalOwners": 39,
+    "mysteryBilingualDrafts": 44,
+    "p1p2p3ClassifiedClauses": 325
+  },
+  "linkedGithubSourcePaths": [
+    "data/presentation/guide-registry.v1.json",
+    "data/presentation/reader-rubric-events.v1.json",
+    "data/presentation/reader-text-sung.v1.json",
+    "data/presentation/reader-canon-rubric-review.v1.json",
+    "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json",
+    "data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json"
+  ],
+  "workbookDelivery": "Ad_Orientem_Ultra_Master_Mass_Source_of_Truth_2026-10-15.xlsx",
+  "workbookStatus": "CONVERSATION_ATTACHMENT; NOT_COMMITTED_BINARY",
+  "handoff": "PR #1193; no current app or published Mass reader changes"
+}
