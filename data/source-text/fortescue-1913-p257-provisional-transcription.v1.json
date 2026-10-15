@@ -74,7 +74,9 @@
       "kind": "body",
       "extent": "CROSSES_COLUMN_BREAK",
       "text": "The first great turning-point in the history of the Roman Canon is the exclusive use of the Latin language. Latin had been used side by side with Greek, apparently for some time. It occurs first as a Christian language, not in Rome, but in Africa. Pope Victor I (190–202), an African, seems to have been the first Roman bishop who used it (supposing that the Ps.-Cyprian, \"De Aleatoribus\", is by him; Harnack, \"Der Ps.-Cypr. Tractat. de Aleatoribus\", Leipzig, 1888). After this time it soon becomes the only language used by popes; Cornelius (251–53) and Stephen (254–57) write in Latin. Greek seems to have disappeared at Rome as a liturgical language in the second half of the third century (Kattenbusch, Symbolik, II, 331), though parts of the Liturgy were left in Greek.",
-      "review": "Column break occurs within parenthesis immediately after 'supposing that' and resumes at top of right column; do not treat 'III.—17' as text or footnote. Historical chronological assertions belong to Fortescue and require attribution."
+      "review": "Column break occurs within parenthesis immediately after 'supposing that' and resumes at top of right column; do not treat 'III.—17' as text or footnote. Historical chronological assertions belong to Fortescue and require attribution.",
+      "printParagraphGroupId": "PRINT257-LATIN-LANGUAGE-HISTORY",
+      "printBoundaryFromNextBlock": "NO_PARAGRAPH_BREAK_VISIBLE_AT_TEXT_JOIN"
     },
     {
       "id": "P257-07",
@@ -82,7 +84,9 @@
       "kind": "body",
       "extent": "PARAGRAPH_CANDIDATE",
       "text": "The Creed was sometimes said in Greek down to Byzantine times (Duchesne, Origines, 290). The \"Ordo Rom. I\" says that certain psalms were still said in Greek (Mabillon, Mus. Ital., II, 37–40); and of this liturgical use of Greek there are still remnants in our Kyrie Eleison and the \"Agios o Theos\", etc., on Good Friday. Very soon after the acceptance of Latin as the only liturgical language we find allusions to parts of the Eucharistic prayer, that are the same as parts of our present Canon.",
-      "review": "The printed paragraph beginning is not independently adjudicated; text spans multiple original print lines and may follow previous paragraph without break."
+      "review": "The printed paragraph beginning is not independently adjudicated; text spans multiple original print lines and may follow previous paragraph without break. The source print and secondary transcription place 'left in Greek. The Creed was...' continuously, not as a new paragraph; keep P257-07 only as a practical workbench segment.",
+      "printParagraphGroupId": "PRINT257-LATIN-LANGUAGE-HISTORY",
+      "printBoundaryFromPreviousBlock": "SAME_PRINTED_PARAGRAPH_AS_P257-06"
     },
     {
       "id": "P257-08",
@@ -148,7 +152,31 @@
     "mergeApproved": false,
     "independentImageProofread": false,
     "lastWordsOnCurrentPage": "He also says that at",
-    "firstWordsOnNextPage": "Rome the names of persons for whom the celebrant prays are read in the Canon:"
+    "firstWordsOnNextPage": "Rome the names of persons for whom the celebrant prays are read in the Canon:",
+    "physicalJoinStatus": "P257_LAST_PRINTED_CLAUSE_TO_P258_FIRST_PRINTED_LINE_LOCATED",
+    "reviewScope": "Physical scan page continuity observed; text beyond the boundary remains provisional and not a certified single paragraph."
   },
-  "lastTargetedRevision": "2026-10-15: corrected P257-09 hunc→hanc panem against print image; full page remains unproofread"
+  "lastTargetedRevision": "2026-10-15: corrected P257-09 hunc→hanc panem against print image; full page remains unproofread",
+  "printParagraphBoundaryChecks": [
+    {
+      "fromBlock": "P257-06",
+      "toBlock": "P257-07",
+      "sourceEnd": "left in Greek.",
+      "sourceStart": "The Creed was sometimes said",
+      "status": "CONTIGUOUS_IN_SAME_PRINTED_PARAGRAPH_PRELIMINARY_VISUAL_CHECK",
+      "printedPage": 257
+    },
+    {
+      "fromBlock": "P257-08",
+      "toBlock": "P257-09",
+      "status": "POSSIBLE_SAME_PRINTED_PARAGRAPH_NOT_CERTIFIED",
+      "printedPage": 257
+    },
+    {
+      "fromBlock": "P257-09",
+      "toBlock": "P257-10",
+      "status": "POSSIBLE_SAME_PRINTED_PARAGRAPH_NOT_CERTIFIED",
+      "printedPage": 257
+    }
+  ]
 }
