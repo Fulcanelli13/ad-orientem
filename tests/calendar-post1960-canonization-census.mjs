@@ -38,7 +38,8 @@ for(const e of census.events){
 for(const g of census.groups){
   assert.ok(eIds.has(g.eventId));
   assert.ok(g.memberCount>1 || (g.memberCount===null && g.estimatedMemberCount>1 && g.countPrecision==="APPROXIMATELY_PER_DICASTERY_NOT_EXACT"));
-  assert.equal(g.memberIdentityStatus,"UNEXPANDED_IN_THIS_BATCH");
+  assert.ok(["UNEXPANDED_IN_THIS_BATCH","PARTIAL_IDENTITIES_NEED_EXPANSION"].includes(g.memberIdentityStatus));
+  if(g.memberIdentityStatus==="PARTIAL_IDENTITIES_NEED_EXPANSION")assert.ok(g.individuallyIdentifiedPersonIds?.length>0 && g.unexpandedMemberCount>0);
   assert.ok(!pIds.has("saint."+g.id),"Do not count a group as a single saint");
 }
 assert.equal(census.events.filter(e=>e.date==="2025-09-07")[0].namedIndividualIds.length,2);
