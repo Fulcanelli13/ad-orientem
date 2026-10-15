@@ -615,6 +615,12 @@ export function createFindOwner(win=globalThis){
       const selected=Number(button.dataset.bibleStep)===index;
       button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));
     });
+    // Reading groups only navigate existing canonical eventKeys. One timeline,
+    // one saved Scripture reading position; no competing journey bookmark.
+    root?.querySelectorAll?.("[data-bible-reading-start]")?.forEach(button=>{
+      const begin=Number(button.dataset.bibleReadingStart),end=Number(button.dataset.bibleReadingEnd);
+      button.setAttribute("aria-pressed",String(index>=begin&&index<=end));
+    });
     const detail=root?.querySelector?.("[data-bible-detail]");
     if(detail){
       detail.innerHTML=atlasDetail(active,lang,{historicalPreview:bibleHistoricalPreview});
@@ -744,6 +750,28 @@ export function createFindOwner(win=globalThis){
       bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
     }
     if(bibleCinemaPreview&&state.bibleAtlas){
+      const readingToggle=target?.closest?.("[data-bible-reading-toggle]");
+      if(readingToggle){
+        event.preventDefault?.();
+        const panel=getRoot(win)?.querySelector?.("[data-bible-reading-panel]");
+        if(panel){
+          panel.hidden=!panel.hidden;
+          readingToggle.setAttribute("aria-expanded",String(!panel.hidden));
+        }
+        return;
+      }
+      const readingStart=target?.closest?.("[data-bible-reading-start]");
+      if(readingStart){
+        event.preventDefault?.();
+        const chosen=Number(readingStart.dataset.bibleReadingStart);
+        if(Number.isInteger(chosen)&&chosen>=0&&chosen<151){
+          updateBibleIndex(chosen,{center:true,remember:true});
+          const root=getRoot(win),panel=root?.querySelector?.("[data-bible-reading-panel]");
+          if(panel)panel.hidden=true;
+          root?.querySelector?.("[data-bible-reading-toggle]")?.setAttribute?.("aria-expanded","false");
+        }
+        return;
+      }
       const chapter=target?.closest?.("[data-bible-chapter]");
       if(chapter){
         event.preventDefault?.();
