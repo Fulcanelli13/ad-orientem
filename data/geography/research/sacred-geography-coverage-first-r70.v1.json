@@ -20,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 230,
-    "existing_published_shrines": 226,
-    "linked_pilgrimages": 212,
-    "existing_country_coverage": 52,
-    "published_sites_bilingual": 226,
-    "source_registry_sites": 226,
-    "existing_physical_pins": 226,
+    "existing_production_places": 237,
+    "existing_published_shrines": 233,
+    "linked_pilgrimages": 219,
+    "existing_country_coverage": 55,
+    "published_sites_bilingual": 233,
+    "source_registry_sites": 233,
+    "existing_physical_pins": 233,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 53,
+      "CONFIRMED_EXISTING_PROMOTION": 60,
       "POTENTIAL_EXISTING_ID_REVIEW": 93,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 604
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 597
     },
     "priorities": {
       "Essential": 64,
@@ -57,10 +57,10 @@
     {
       "country": "IT",
       "curated_candidates": 58,
-      "published_shrines": 38,
-      "confirmed_promotions": 3,
+      "published_shrines": 39,
+      "confirmed_promotions": 4,
       "possible_reuses": 15,
-      "unresolved": 40
+      "unresolved": 39
     },
     {
       "country": "FR",
@@ -89,10 +89,10 @@
     {
       "country": "PH",
       "curated_candidates": 38,
-      "published_shrines": 5,
-      "confirmed_promotions": 5,
+      "published_shrines": 6,
+      "confirmed_promotions": 6,
       "possible_reuses": 0,
-      "unresolved": 33
+      "unresolved": 32
     },
     {
       "country": "GB",
@@ -145,10 +145,10 @@
     {
       "country": "PT",
       "curated_candidates": 17,
-      "published_shrines": 2,
-      "confirmed_promotions": 0,
+      "published_shrines": 3,
+      "confirmed_promotions": 1,
       "possible_reuses": 2,
-      "unresolved": 15
+      "unresolved": 14
     },
     {
       "country": "AT",
@@ -257,10 +257,10 @@
     {
       "country": "HU",
       "curated_candidates": 8,
-      "published_shrines": 1,
-      "confirmed_promotions": 0,
+      "published_shrines": 2,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 8
+      "unresolved": 7
     },
     {
       "country": "JP",
@@ -361,10 +361,10 @@
     {
       "country": "GT",
       "curated_candidates": 5,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 5
+      "unresolved": 4
     },
     {
       "country": "MT",
@@ -417,10 +417,10 @@
     {
       "country": "PY",
       "curated_candidates": 4,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 4
+      "unresolved": 3
     },
     {
       "country": "RO",
@@ -465,10 +465,10 @@
     {
       "country": "CN",
       "curated_candidates": 3,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 3
+      "unresolved": 2
     },
     {
       "country": "CR",
@@ -2462,14 +2462,15 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:CN:sheshan-our-lady-help-christians",
       "possible_existing_place_id": null,
       "review_wave": 2,
       "review_order": 94,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0457",
@@ -2896,14 +2897,15 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:PY:caacupe-our-lady-miracles",
       "possible_existing_place_id": null,
       "review_wave": 2,
       "review_order": 121,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0328",
@@ -3040,14 +3042,15 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:GT:esquipulas-black-christ-basilica",
       "possible_existing_place_id": null,
       "review_wave": 2,
       "review_order": 130,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0352",
@@ -3168,14 +3171,15 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:HU:mariapocs-greek-catholic-basilica",
       "possible_existing_place_id": null,
       "review_wave": 2,
       "review_order": 138,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0234",
@@ -3425,14 +3429,15 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:PT:santarem-santissimo-milagre",
       "possible_existing_place_id": null,
       "review_wave": 3,
       "review_order": 154,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0279",
@@ -3586,14 +3591,15 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:PH:manaoag-rosary-basilica",
       "possible_existing_place_id": null,
       "review_wave": 3,
       "review_order": 164,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0017",
@@ -3618,14 +3624,15 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 3,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:IT:lanciano-eucharistic-miracle",
       "possible_existing_place_id": null,
       "review_wave": 3,
       "review_order": 166,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R72_INSTITUTIONALLY_GROUNDED_PHYSICAL_SITE"
     },
     {
       "candidate_id": "SG-INV-0611",

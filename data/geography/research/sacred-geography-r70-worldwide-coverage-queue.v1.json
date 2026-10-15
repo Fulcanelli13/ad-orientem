@@ -5,14 +5,14 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 47,
+    "explicit_promoted": 54,
     "text_hint_review": 93,
-    "unmatched": 610,
+    "unmatched": 603,
     "zero_crosslist": 485,
     "essential_remaining": 38,
-    "published_places": 230,
-    "published_shrines": 226,
-    "published_pilgrimages": 212
+    "published_places": 237,
+    "published_shrines": 233,
+    "published_pilgrimages": 219
   },
   "countries": [
     {
@@ -27,9 +27,9 @@
     {
       "country": "IT",
       "candidates": 58,
-      "promoted": 3,
+      "promoted": 4,
       "text_hint": 15,
-      "unmatched": 40,
+      "unmatched": 39,
       "essential_review": 2,
       "no_crosslist": 28
     },
@@ -117,9 +117,9 @@
     {
       "country": "PT",
       "candidates": 17,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 2,
-      "unmatched": 15,
+      "unmatched": 14,
       "essential_review": 1,
       "no_crosslist": 12
     },
@@ -207,9 +207,9 @@
     {
       "country": "CN",
       "candidates": 3,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 3,
+      "unmatched": 2,
       "essential_review": 1,
       "no_crosslist": 2
     },
@@ -306,9 +306,9 @@
     {
       "country": "PH",
       "candidates": 38,
-      "promoted": 5,
+      "promoted": 6,
       "text_hint": 0,
-      "unmatched": 33,
+      "unmatched": 32,
       "essential_review": 0,
       "no_crosslist": 31
     },
@@ -360,9 +360,9 @@
     {
       "country": "HU",
       "candidates": 8,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 8,
+      "unmatched": 7,
       "essential_review": 0,
       "no_crosslist": 3
     },
@@ -477,9 +477,9 @@
     {
       "country": "GT",
       "candidates": 5,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 5,
+      "unmatched": 4,
       "essential_review": 0,
       "no_crosslist": 4
     },
@@ -558,9 +558,9 @@
     {
       "country": "PY",
       "candidates": 4,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 4,
+      "unmatched": 3,
       "essential_review": 0,
       "no_crosslist": 3
     },
@@ -1626,10 +1626,10 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 3,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IT:lanciano-eucharistic-miracle",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0055",
@@ -2706,10 +2706,10 @@
       "country": "PT",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PT:santarem-santissimo-milagre",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0153",
@@ -4557,10 +4557,10 @@
       "country": "HU",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0321",
@@ -5923,10 +5923,10 @@
       "country": "GT",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:GT:esquipulas-black-christ-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0445",
@@ -6837,10 +6837,10 @@
       "country": "PY",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PY:caacupe-our-lady-miracles",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0528",
@@ -7751,10 +7751,10 @@
       "country": "CN",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:CN:sheshan-our-lady-help-christians",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0611",
@@ -8004,10 +8004,10 @@
       "country": "PH",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R72",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PH:manaoag-rosary-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0634",
