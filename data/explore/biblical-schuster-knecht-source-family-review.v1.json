@@ -928,5 +928,138 @@
         "handling": "NO_PRECISE_PIN"
       }
     ]
+  },
+  "wikisource1910SourceQualityReview": {
+    "status": "REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED",
+    "sourceEdition": "KNECHT-EN-1910-HERDER",
+    "printScanSource": "https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu",
+    "printScanSourceRights": "WIKIMEDIA_COMMONS_DECLARED_PUBLIC_DOMAIN_WITH_ORIGINAL_TRANSLATOR_UNKNOWN; JURISDICTION_AND_SCANNED_WITNESS_EDITORIAL_CHECK_NOT_REPLACED_BY_DECLARATION",
+    "mirrorSource": "https://www.ecatholic2000.com/knecht/untitled-09.shtml",
+    "comparativeEvidence": "A second hosted transcription of the same book is a comparison witness, not an independent original-language edition or scanned-page proof.",
+    "displayedPrimaryNarrativeTextApproved": false,
+    "metadataCitationOnly": true,
+    "sourceTextBytesImported": 0,
+    "aiAuthoredNarrativeWords": 0,
+    "physicalScanImageAttemptLog": [
+      {
+        "id": "WIKISOURCE_SOURCE_PAGE_IMAGE",
+        "target": "Wikimedia thumb images of DJVU p43 via Wikisource Image link",
+        "result": "TIMEOUT_IN_WEB_IMAGE_FETCH; NO_RENDERED_PRINT_IMAGE_INSPECTED",
+        "status": "BLOCKED_NO_PRINT_VERIFICATION"
+      },
+      {
+        "id": "WIKIMEDIA_THUMBNAIL_ALTERNATE_960",
+        "target": "Wikimedia 960px DJVU p43 thumb",
+        "result": "NOT_ACCESSIBLE_VIA_WEB_ACCESS; DIRECT_CONTAINER_EGRESS_FAILED",
+        "status": "BLOCKED_NO_PRINT_VERIFICATION"
+      },
+      {
+        "id": "INTERNET_ARCHIVE_IIIF",
+        "target": "Page-level IA IIIF image access for original scan",
+        "result": "WEB_ACCESS_UNAVAILABLE",
+        "status": "BLOCKED_NO_PRINT_VERIFICATION"
+      }
+    ],
+    "issueCases": [
+      {
+        "id": "WITNESS-FOOTNOTE-MARKER-LOSS",
+        "severity": "BLOCK_IMPORT",
+        "sourcePage": 42,
+        "comparisonUrl": "https://www.ecatholic2000.com/knecht/untitled-09.shtml",
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/42",
+        "evidence": "Mirror flattens numbered editorial footnote link on the fourth-day lights to inline bare numeral; Wikisource retains numbered footnote with separate explanatory text.",
+        "effect": "SOURCE_NARRATIVE_AND_NOTES_CANNOT_BE_RECONSTRUCTED_FROM_FLATTENED_MIRROR",
+        "required": "Rely on original source page + independently proofread notes; no mirror-text straight import."
+      },
+      {
+        "id": "WITNESS-NARRATIVE-AND-COMMENTARY-SAME-PAGE",
+        "severity": "BLOCK_IMPORT",
+        "sourcePage": 43,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43",
+        "evidence": "Creation narrative ends and commentary starts within scan page 43.",
+        "effect": "ONE_PAGE_IS_NOT_ONE_SOURCE_TEXT_TYPE",
+        "required": "Separate narrative and commentary by source headings and span offsets; keep original page reference."
+      },
+      {
+        "id": "WITNESS-ANGELS-MIXED-PAGE",
+        "severity": "BLOCK_IMPORT",
+        "sourcePage": 48,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/48",
+        "evidence": "Angelic narrative ends and commentary heading starts on same source page; footnotes accompany narrative.",
+        "effect": "BOTH_AUGMENTATIONS_AND_NARRATIVE_ON_SAME_PAGE",
+        "required": "Split title, narrative, notes and commentary."
+      },
+      {
+        "id": "WITNESS-APPLICATION-THIRD-TEXT-LAYER",
+        "severity": "BLOCK_IMPORT",
+        "sourcePage": 46,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/46",
+        "evidence": "A separately headed Application follows commentary and begins on p46.",
+        "effect": "APPLICATION_IS_NOR_STORY_NOR_GENERAL_COMMENTARY",
+        "required": "Separate catechetical Application from story narrative, commentary and page footnotes."
+      },
+      {
+        "id": "WITNESS-OLD-DATING",
+        "severity": "NO_CANONICAL_DATA_PROMOTION",
+        "sourcePage": 41,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/41",
+        "evidence": "1910 source opens the primeval history with approximate 4000–2100 B.C. dating, reflecting its historical model.",
+        "effect": "UNSUPPORTED_ABSOLUTE_DATE_FOR_CREATION_AND_PRIMEVAL_EVENTS",
+        "required": "Preserve attribution only; never fill the synchronized Atlas timeline with source's speculative year dates."
+      },
+      {
+        "id": "WITNESS-PRESCIENTIFIC-CLAIMS",
+        "severity": "NO_CANONICAL_DATA_PROMOTION",
+        "sourcePage": 42,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/42",
+        "evidence": "Creation footnotes assert obsolete physical/scientific explanations as commentary.",
+        "effect": "UNVETTED_SOURCE_HISTORICAL_GENERALIZATION",
+        "required": "Historic note may be available for source study but is not an app factual geo/science datum."
+      },
+      {
+        "id": "WITNESS-RACIST-PATRIARCHAL-COMMENTARY",
+        "severity": "EDITORIAL_HOLD",
+        "sourcePage": 83,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/83",
+        "evidence": "Noah/Ham commentary equates Ham's descendants with Africans and makes explicitly racist assertions.",
+        "effect": "INCOMPATIBLE_WITH_UNQUALIFIED_HISTORICAL_GENEALOGY_AND_CATHOLIC_TEACHING",
+        "required": "Never auto-import as authoritative narrative, ethnic genealogy or doctrinal formation. Optional historical source display requires contextual editorial review; preserve source attribution."
+      },
+      {
+        "id": "WITNESS-TRANSCRIPTION-UNPROOFREAD",
+        "severity": "BLOCK_AUTHORIAL_WORD_CERTIFICATION",
+        "sourcePage": 41,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/41",
+        "evidence": "Wikisource marks this original page transcription as not proofread, and original scanned image not available for independent checking in this session.",
+        "effect": "VISIBLE_WEB_TRANSCRIPTION_IS_NOT_VERBATIM_CERTIFICATION",
+        "required": "Acquire printed page image or independently collated historical transcription before source passage approval."
+      },
+      {
+        "id": "WITNESS-ORIGINAL-SCHUSTER-EDITION-DIFFERENCE",
+        "severity": "NO_AUTOMATIC_EDITION_EQUIVALENCE",
+        "sourcePage": 47,
+        "comparisonUrl": null,
+        "sourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/47",
+        "evidence": "Knecht's authorial narrative is based on Schuster, but text is translated/adapted in historic editions; displayed passages alone cannot prove Schuster 1925 wording.",
+        "effect": "FALSE_VERBATIM_IDENTIFICATION_ACROSS_EDITIONS",
+        "required": "Use work+edition+language+page+original paragraph as an identity; preserve source labels."
+      }
+    ],
+    "requiredTextLayers": [
+      "AUTHOR_NARRATIVE",
+      "KNECHT_COMMENTARY",
+      "CATECHETICAL_APPLICATION",
+      "ORIGINAL_FOOTNOTE",
+      "HEADING_OR_CHAPTER_REFERENCE",
+      "EDITORIAL_SOURCE_CONTEXT"
+    ],
+    "importGate": "NO_APP_SOURCE_TEXT_UNTIL_SOURCE_TEXT_PARSER_PR_1229_CONFIRMS_ORIGINAL_WITNESS_AND_RIGHTS"
   }
 }
