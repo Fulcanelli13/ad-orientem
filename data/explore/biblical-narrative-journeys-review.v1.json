@@ -1,0 +1,1037 @@
+{
+  "schema": "AO_BIBLICAL_NARRATIVE_JOURNEYS_REVIEW_V1",
+  "status": "RESEARCH_NOT_PRODUCTION_CERTIFIED",
+  "generatedFor": "Ad Orientem Biblical Theatre reading journeys",
+  "date": "2026-10-15",
+  "ownership": {
+    "canonicalAtlas": "src/find/bible-atlas.js (151 selected events; main after PR #1108)",
+    "theatreStudies": "data/explore/biblical-cinematic-studies-review.v1.json (183 research scenes; PR #1069)",
+    "personsPlaces": "PR #1018 research donor, not authoritative public genealogy",
+    "scriptureReader": "Existing native Catholic Scripture reader and independent source parser PR #1229",
+    "massBible": "PR #1082, separately owned",
+    "artwork": "Sacred Art editorial owner; no unapproved images imported"
+  },
+  "policy": {
+    "derivedOverlayOnly": true,
+    "noNewCanonicalEvents": true,
+    "notFull73BookBible": true,
+    "noCitationOverlapAsHistoricalIdentity": true,
+    "noInferredGeography": true,
+    "noGospelHarmonyCertification": true,
+    "noArtworkOrNarrativeTextIncluded": true,
+    "noPublicPromotionWithoutSourceReview": true,
+    "multipleJourneyMembershipAllowed": true,
+    "onePrimaryStoryPerResearchScene": true
+  },
+  "eraKeys": [
+    "ORIGINS",
+    "PATRIARCHS",
+    "EXODUS",
+    "ISRAEL",
+    "EXILE",
+    "INFANCY",
+    "PUBLIC",
+    "PASSION",
+    "RESURRECTION",
+    "APOSTLES",
+    "REVELATION"
+  ],
+  "arcs": [
+    {
+      "id": "arc:salvation-history",
+      "kind": "ARC",
+      "title_en": "The History of Salvation",
+      "title_fr": "L'histoire du salut",
+      "eraKeys": [
+        "ORIGINS",
+        "PATRIARCHS",
+        "EXODUS",
+        "ISRAEL",
+        "EXILE",
+        "INFANCY",
+        "PUBLIC",
+        "PASSION",
+        "RESURRECTION",
+        "APOSTLES",
+        "REVELATION"
+      ],
+      "storyIds": [
+        "story:abraham-call",
+        "story:abraham-wanderings",
+        "story:abraham-lot",
+        "story:abraham-covenant",
+        "story:abraham-mamre",
+        "story:abraham-isaac",
+        "story:abraham-sacrifice",
+        "story:moses-calling",
+        "story:moses-pharaoh",
+        "story:moses-passover",
+        "story:moses-wilderness",
+        "story:moses-sinai",
+        "story:moses-calf",
+        "story:moses-wandering",
+        "story:moses-land",
+        "story:christ-annunciation",
+        "story:christ-nativity",
+        "story:christ-childhood",
+        "story:christ-calling",
+        "story:christ-early-ministry",
+        "story:christ-teaching",
+        "story:christ-mercy",
+        "story:christ-bread",
+        "story:christ-transfiguration",
+        "story:christ-parables",
+        "story:christ-bethany",
+        "story:christ-jerusalem",
+        "story:christ-supper",
+        "story:christ-trial",
+        "story:christ-calvary",
+        "story:christ-resurrection",
+        "story:apostles-beginnings",
+        "story:paul-cyprus",
+        "story:paul-asia",
+        "story:paul-macedonia",
+        "story:paul-greece",
+        "story:paul-ephesus",
+        "story:paul-trial",
+        "story:paul-rome"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Full 151-event selected chronology, not full 73-book continuous Bible; substantial prose bridges absent."
+    },
+    {
+      "id": "arc:beginnings",
+      "kind": "ARC",
+      "title_en": "The Beginnings",
+      "title_fr": "Les origines",
+      "eraKeys": [
+        "ORIGINS"
+      ],
+      "storyIds": [],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Six source milestones; zero mapped theatre scenes; no historic GPS coordinates."
+    },
+    {
+      "id": "arc:story-of-israel",
+      "kind": "ARC",
+      "title_en": "The Story of Israel",
+      "title_fr": "L'histoire d'Israël",
+      "eraKeys": [
+        "PATRIARCHS",
+        "EXODUS",
+        "ISRAEL",
+        "EXILE"
+      ],
+      "storyIds": [
+        "story:abraham-call",
+        "story:abraham-wanderings",
+        "story:abraham-lot",
+        "story:abraham-covenant",
+        "story:abraham-mamre",
+        "story:abraham-isaac",
+        "story:abraham-sacrifice",
+        "story:moses-calling",
+        "story:moses-pharaoh",
+        "story:moses-passover",
+        "story:moses-wilderness",
+        "story:moses-sinai",
+        "story:moses-calf",
+        "story:moses-wandering",
+        "story:moses-land"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Israel and Exile lack theatre scenes; Wisdom/prophetic texts need genre-sensitive inclusion."
+    },
+    {
+      "id": "arc:abraham",
+      "kind": "ARC",
+      "title_en": "Abraham and the Patriarchs",
+      "title_fr": "Abraham et les patriarches",
+      "eraKeys": [
+        "PATRIARCHS"
+      ],
+      "storyIds": [
+        "story:abraham-call",
+        "story:abraham-wanderings",
+        "story:abraham-lot",
+        "story:abraham-covenant",
+        "story:abraham-mamre",
+        "story:abraham-isaac",
+        "story:abraham-sacrifice"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Jacob and Joseph milestones have no corresponding theatre scenes."
+    },
+    {
+      "id": "arc:exodus",
+      "kind": "ARC",
+      "title_en": "The Exodus and Covenant",
+      "title_fr": "L'Exode et l'Alliance",
+      "eraKeys": [
+        "EXODUS"
+      ],
+      "storyIds": [
+        "story:moses-calling",
+        "story:moses-pharaoh",
+        "story:moses-passover",
+        "story:moses-wilderness",
+        "story:moses-sinai",
+        "story:moses-calf",
+        "story:moses-wandering",
+        "story:moses-land"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Research scenes follow Moses; some selected chronology milestones remain unrepresented."
+    },
+    {
+      "id": "arc:israel-prophets",
+      "kind": "ARC",
+      "title_en": "The Kingdom and Prophets",
+      "title_fr": "Le Royaume et les prophètes",
+      "eraKeys": [
+        "ISRAEL"
+      ],
+      "storyIds": [],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Thirteen milestones; no mapped theatre scenes."
+    },
+    {
+      "id": "arc:exile-restoration",
+      "kind": "ARC",
+      "title_en": "Exile, Return and Fidelity",
+      "title_fr": "Exil, retour et fidélité",
+      "eraKeys": [
+        "EXILE"
+      ],
+      "storyIds": [],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Twenty-one milestones; no mapped theatre scenes."
+    },
+    {
+      "id": "arc:life-of-christ",
+      "kind": "ARC",
+      "title_en": "The Life of Christ",
+      "title_fr": "La vie du Christ",
+      "eraKeys": [
+        "INFANCY",
+        "PUBLIC",
+        "PASSION",
+        "RESURRECTION"
+      ],
+      "storyIds": [
+        "story:christ-annunciation",
+        "story:christ-nativity",
+        "story:christ-childhood",
+        "story:christ-calling",
+        "story:christ-early-ministry",
+        "story:christ-teaching",
+        "story:christ-mercy",
+        "story:christ-bread",
+        "story:christ-transfiguration",
+        "story:christ-parables",
+        "story:christ-bethany",
+        "story:christ-jerusalem",
+        "story:christ-supper",
+        "story:christ-trial",
+        "story:christ-calvary",
+        "story:christ-resurrection"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Selected Gospel order is editorial, not a certified harmonized historical sequence."
+    },
+    {
+      "id": "arc:apostolic-church",
+      "kind": "ARC",
+      "title_en": "The Apostolic Church",
+      "title_fr": "L'Église apostolique",
+      "eraKeys": [
+        "APOSTLES"
+      ],
+      "storyIds": [
+        "story:apostles-beginnings",
+        "story:paul-cyprus",
+        "story:paul-asia",
+        "story:paul-macedonia",
+        "story:paul-greece",
+        "story:paul-ephesus",
+        "story:paul-trial",
+        "story:paul-rome"
+      ],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Paul donor studies do not cover all apostolic events."
+    },
+    {
+      "id": "arc:apocalypse",
+      "kind": "ARC",
+      "title_en": "The Apocalypse",
+      "title_fr": "L'Apocalypse",
+      "eraKeys": [
+        "REVELATION"
+      ],
+      "storyIds": [],
+      "basis": "CANONICAL_151_SELECTED_EVENTS",
+      "note": "Prophetic visions; not a map itinerary or dated event sequence."
+    }
+  ],
+  "stories": [
+    {
+      "id": "story:abraham-call",
+      "kind": "STORY",
+      "title_en": "The call and departure of Abram",
+      "title_fr": "L'appel et le départ d'Abram",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:000",
+        "biblical:scene:abraham:001",
+        "biblical:scene:abraham:002",
+        "biblical:scene:abraham:003",
+        "biblical:scene:abraham:004",
+        "biblical:scene:abraham:005"
+      ]
+    },
+    {
+      "id": "story:abraham-wanderings",
+      "kind": "STORY",
+      "title_en": "The journeys of Abram",
+      "title_fr": "Les voyages d'Abram",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:006",
+        "biblical:scene:abraham:007"
+      ]
+    },
+    {
+      "id": "story:abraham-lot",
+      "kind": "STORY",
+      "title_en": "Abraham and Lot",
+      "title_fr": "Abraham et Lot",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:008",
+        "biblical:scene:abraham:009",
+        "biblical:scene:abraham:010",
+        "biblical:scene:abraham:011"
+      ]
+    },
+    {
+      "id": "story:abraham-covenant",
+      "kind": "STORY",
+      "title_en": "Blessing and covenant",
+      "title_fr": "Bénédiction et Alliance",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:012",
+        "biblical:scene:abraham:013",
+        "biblical:scene:abraham:014"
+      ]
+    },
+    {
+      "id": "story:abraham-mamre",
+      "kind": "STORY",
+      "title_en": "Abraham's household and Mamre",
+      "title_fr": "La maison d'Abraham et Mambré",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:015",
+        "biblical:scene:abraham:016",
+        "biblical:scene:abraham:017",
+        "biblical:scene:abraham:018",
+        "biblical:scene:abraham:019"
+      ]
+    },
+    {
+      "id": "story:abraham-isaac",
+      "kind": "STORY",
+      "title_en": "The birth of Isaac",
+      "title_fr": "La naissance d'Isaac",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:020",
+        "biblical:scene:abraham:021",
+        "biblical:scene:abraham:022"
+      ]
+    },
+    {
+      "id": "story:abraham-sacrifice",
+      "kind": "STORY",
+      "title_en": "The sacrifice of Isaac",
+      "title_fr": "Le sacrifice d'Isaac",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:abraham:023",
+        "biblical:scene:abraham:024"
+      ]
+    },
+    {
+      "id": "story:moses-calling",
+      "kind": "STORY",
+      "title_en": "The calling of Moses",
+      "title_fr": "La vocation de Moïse",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:025",
+        "biblical:scene:moses:026",
+        "biblical:scene:moses:027",
+        "biblical:scene:moses:028"
+      ]
+    },
+    {
+      "id": "story:moses-pharaoh",
+      "kind": "STORY",
+      "title_en": "Moses confronts Pharaoh",
+      "title_fr": "Moïse devant Pharaon",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:029",
+        "biblical:scene:moses:030",
+        "biblical:scene:moses:031",
+        "biblical:scene:moses:032"
+      ]
+    },
+    {
+      "id": "story:moses-passover",
+      "kind": "STORY",
+      "title_en": "Passover and deliverance",
+      "title_fr": "La Pâque et la délivrance",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:033",
+        "biblical:scene:moses:034",
+        "biblical:scene:moses:035",
+        "biblical:scene:moses:036",
+        "biblical:scene:moses:037"
+      ]
+    },
+    {
+      "id": "story:moses-wilderness",
+      "kind": "STORY",
+      "title_en": "God provides in the desert",
+      "title_fr": "Dieu pourvoit dans le désert",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:038",
+        "biblical:scene:moses:039",
+        "biblical:scene:moses:040",
+        "biblical:scene:moses:041",
+        "biblical:scene:moses:042"
+      ]
+    },
+    {
+      "id": "story:moses-sinai",
+      "kind": "STORY",
+      "title_en": "At Sinai",
+      "title_fr": "Au Sinaï",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:043",
+        "biblical:scene:moses:044",
+        "biblical:scene:moses:045"
+      ]
+    },
+    {
+      "id": "story:moses-calf",
+      "kind": "STORY",
+      "title_en": "The golden calf and restoration",
+      "title_fr": "Le veau d'or et le renouveau",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:046",
+        "biblical:scene:moses:047",
+        "biblical:scene:moses:048"
+      ]
+    },
+    {
+      "id": "story:moses-wandering",
+      "kind": "STORY",
+      "title_en": "The wilderness years",
+      "title_fr": "Les années au désert",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:049",
+        "biblical:scene:moses:050",
+        "biblical:scene:moses:051",
+        "biblical:scene:moses:052"
+      ]
+    },
+    {
+      "id": "story:moses-land",
+      "kind": "STORY",
+      "title_en": "Toward the Promised Land",
+      "title_fr": "Vers la Terre promise",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:moses:053",
+        "biblical:scene:moses:054",
+        "biblical:scene:moses:055",
+        "biblical:scene:moses:056"
+      ]
+    },
+    {
+      "id": "story:christ-annunciation",
+      "kind": "STORY",
+      "title_en": "The coming of the Saviour",
+      "title_fr": "La venue du Sauveur",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:057",
+        "biblical:scene:christ:058",
+        "biblical:scene:christ:059",
+        "biblical:scene:christ:060"
+      ]
+    },
+    {
+      "id": "story:christ-nativity",
+      "kind": "STORY",
+      "title_en": "Nativity and the Holy Innocents",
+      "title_fr": "Nativité et Saints Innocents",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:061",
+        "biblical:scene:christ:062",
+        "biblical:scene:christ:063",
+        "biblical:scene:christ:064",
+        "biblical:scene:christ:181"
+      ]
+    },
+    {
+      "id": "story:christ-childhood",
+      "kind": "STORY",
+      "title_en": "Flight, return and hidden life",
+      "title_fr": "Fuite, retour et vie cachée",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:065",
+        "biblical:scene:christ:066",
+        "biblical:scene:christ:067",
+        "biblical:scene:christ:068"
+      ]
+    },
+    {
+      "id": "story:christ-calling",
+      "kind": "STORY",
+      "title_en": "Baptism and first signs",
+      "title_fr": "Baptême et premiers signes",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:069",
+        "biblical:scene:christ:070",
+        "biblical:scene:christ:071",
+        "biblical:scene:christ:072",
+        "biblical:scene:christ:073",
+        "biblical:scene:christ:074"
+      ]
+    },
+    {
+      "id": "story:christ-early-ministry",
+      "kind": "STORY",
+      "title_en": "Early encounters and healings",
+      "title_fr": "Premières rencontres et guérisons",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:075",
+        "biblical:scene:christ:076",
+        "biblical:scene:christ:077",
+        "biblical:scene:christ:078",
+        "biblical:scene:christ:079",
+        "biblical:scene:christ:080"
+      ]
+    },
+    {
+      "id": "story:christ-teaching",
+      "kind": "STORY",
+      "title_en": "Disciples and the Sermon",
+      "title_fr": "Disciples et discours sur la montagne",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:081",
+        "biblical:scene:christ:082",
+        "biblical:scene:christ:083",
+        "biblical:scene:christ:084",
+        "biblical:scene:christ:085",
+        "biblical:scene:christ:086"
+      ]
+    },
+    {
+      "id": "story:christ-mercy",
+      "kind": "STORY",
+      "title_en": "Parables and works of mercy",
+      "title_fr": "Paraboles et œuvres de miséricorde",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:087",
+        "biblical:scene:christ:088",
+        "biblical:scene:christ:089",
+        "biblical:scene:christ:090",
+        "biblical:scene:christ:091",
+        "biblical:scene:christ:092"
+      ]
+    },
+    {
+      "id": "story:christ-bread",
+      "kind": "STORY",
+      "title_en": "Mission and Bread of Life",
+      "title_fr": "Mission et Pain de vie",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:093",
+        "biblical:scene:christ:094",
+        "biblical:scene:christ:095",
+        "biblical:scene:christ:096",
+        "biblical:scene:christ:097"
+      ]
+    },
+    {
+      "id": "story:christ-transfiguration",
+      "kind": "STORY",
+      "title_en": "Confession and Transfiguration",
+      "title_fr": "Confession et Transfiguration",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:098",
+        "biblical:scene:christ:099",
+        "biblical:scene:christ:100",
+        "biblical:scene:christ:101",
+        "biblical:scene:christ:102",
+        "biblical:scene:christ:103",
+        "biblical:scene:christ:104"
+      ]
+    },
+    {
+      "id": "story:christ-parables",
+      "kind": "STORY",
+      "title_en": "Teachings on mercy and the Kingdom",
+      "title_fr": "Enseignements sur la miséricorde et le Royaume",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:105",
+        "biblical:scene:christ:106",
+        "biblical:scene:christ:107",
+        "biblical:scene:christ:108",
+        "biblical:scene:christ:109",
+        "biblical:scene:christ:110"
+      ]
+    },
+    {
+      "id": "story:christ-bethany",
+      "kind": "STORY",
+      "title_en": "The road toward Jerusalem",
+      "title_fr": "La route vers Jérusalem",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:111",
+        "biblical:scene:christ:112",
+        "biblical:scene:christ:113",
+        "biblical:scene:christ:114"
+      ]
+    },
+    {
+      "id": "story:christ-jerusalem",
+      "kind": "STORY",
+      "title_en": "Entry into Jerusalem",
+      "title_fr": "Entrée à Jérusalem",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:115",
+        "biblical:scene:christ:116",
+        "biblical:scene:christ:117",
+        "biblical:scene:christ:118"
+      ]
+    },
+    {
+      "id": "story:christ-supper",
+      "kind": "STORY",
+      "title_en": "The Last Supper and farewell",
+      "title_fr": "La Cène et les adieux",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:119",
+        "biblical:scene:christ:120",
+        "biblical:scene:christ:121",
+        "biblical:scene:christ:122"
+      ]
+    },
+    {
+      "id": "story:christ-trial",
+      "kind": "STORY",
+      "title_en": "Gethsemane and the trial",
+      "title_fr": "Gethsémani et le procès",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:123",
+        "biblical:scene:christ:124",
+        "biblical:scene:christ:125",
+        "biblical:scene:christ:126",
+        "biblical:scene:christ:127"
+      ]
+    },
+    {
+      "id": "story:christ-calvary",
+      "kind": "STORY",
+      "title_en": "Calvary and burial",
+      "title_fr": "Calvaire et sépulture",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:128",
+        "biblical:scene:christ:129",
+        "biblical:scene:christ:130"
+      ]
+    },
+    {
+      "id": "story:christ-resurrection",
+      "kind": "STORY",
+      "title_en": "Resurrection and Ascension",
+      "title_fr": "Résurrection et Ascension",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:christ:131",
+        "biblical:scene:christ:132",
+        "biblical:scene:christ:133",
+        "biblical:scene:christ:134",
+        "biblical:scene:christ:135",
+        "biblical:scene:christ:136",
+        "biblical:scene:christ:137"
+      ]
+    },
+    {
+      "id": "story:apostles-beginnings",
+      "kind": "STORY",
+      "title_en": "Pentecost and the conversion of Saul",
+      "title_fr": "Pentecôte et conversion de Saul",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:182",
+        "biblical:scene:paul:138",
+        "biblical:scene:paul:139",
+        "biblical:scene:paul:140",
+        "biblical:scene:paul:141",
+        "biblical:scene:paul:142"
+      ]
+    },
+    {
+      "id": "story:paul-cyprus",
+      "kind": "STORY",
+      "title_en": "First mission: Cyprus",
+      "title_fr": "Première mission : Chypre",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:143",
+        "biblical:scene:paul:144",
+        "biblical:scene:paul:145",
+        "biblical:scene:paul:146"
+      ]
+    },
+    {
+      "id": "story:paul-asia",
+      "kind": "STORY",
+      "title_en": "First mission: Asia Minor",
+      "title_fr": "Première mission : Asie Mineure",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:147",
+        "biblical:scene:paul:148",
+        "biblical:scene:paul:149",
+        "biblical:scene:paul:150",
+        "biblical:scene:paul:151",
+        "biblical:scene:paul:152"
+      ]
+    },
+    {
+      "id": "story:paul-macedonia",
+      "kind": "STORY",
+      "title_en": "Second mission: Macedonia",
+      "title_fr": "Deuxième mission : Macédoine",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:153",
+        "biblical:scene:paul:154",
+        "biblical:scene:paul:155",
+        "biblical:scene:paul:156",
+        "biblical:scene:paul:157",
+        "biblical:scene:paul:158",
+        "biblical:scene:paul:159"
+      ]
+    },
+    {
+      "id": "story:paul-greece",
+      "kind": "STORY",
+      "title_en": "Second mission: Greece",
+      "title_fr": "Deuxième mission : Grèce",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:160",
+        "biblical:scene:paul:161",
+        "biblical:scene:paul:162",
+        "biblical:scene:paul:163",
+        "biblical:scene:paul:164"
+      ]
+    },
+    {
+      "id": "story:paul-ephesus",
+      "kind": "STORY",
+      "title_en": "Third mission and Ephesus",
+      "title_fr": "Troisième mission et Éphèse",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:165",
+        "biblical:scene:paul:166",
+        "biblical:scene:paul:167",
+        "biblical:scene:paul:168",
+        "biblical:scene:paul:169"
+      ]
+    },
+    {
+      "id": "story:paul-trial",
+      "kind": "STORY",
+      "title_en": "The arrest and trial of Paul",
+      "title_fr": "L'arrestation et le procès de Paul",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:170",
+        "biblical:scene:paul:171",
+        "biblical:scene:paul:172",
+        "biblical:scene:paul:173",
+        "biblical:scene:paul:174"
+      ]
+    },
+    {
+      "id": "story:paul-rome",
+      "kind": "STORY",
+      "title_en": "The voyage and arrival in Rome",
+      "title_fr": "Le voyage et l'arrivée à Rome",
+      "sourceStatus": "SCENE_RESEARCH_ONLY",
+      "sceneKeys": [
+        "biblical:scene:paul:175",
+        "biblical:scene:paul:176",
+        "biblical:scene:paul:177",
+        "biblical:scene:paul:178",
+        "biblical:scene:paul:179",
+        "biblical:scene:paul:180"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "theme:promises-covenants",
+      "kind": "THEME",
+      "title_en": "Promises and Covenants",
+      "title_fr": "Promesses et Alliances",
+      "sceneKeys": [
+        "biblical:scene:abraham:000",
+        "biblical:scene:abraham:004",
+        "biblical:scene:abraham:013",
+        "biblical:scene:abraham:014",
+        "biblical:scene:abraham:016",
+        "biblical:scene:abraham:023",
+        "biblical:scene:moses:033",
+        "biblical:scene:moses:044",
+        "biblical:scene:moses:045",
+        "biblical:scene:christ:119",
+        "biblical:scene:christ:121"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Distinguish covenant narratives from typological/interpretive connections."
+    },
+    {
+      "id": "theme:sacrifice-passover",
+      "kind": "THEME",
+      "title_en": "Sacrifice and Passover",
+      "title_fr": "Sacrifice et Pâque",
+      "sceneKeys": [
+        "biblical:scene:abraham:012",
+        "biblical:scene:abraham:023",
+        "biblical:scene:moses:033",
+        "biblical:scene:moses:036",
+        "biblical:scene:moses:039",
+        "biblical:scene:moses:052",
+        "biblical:scene:christ:096",
+        "biblical:scene:christ:097",
+        "biblical:scene:christ:119",
+        "biblical:scene:christ:129"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Typological claims need explicit Catholic source references and Scripture."
+    },
+    {
+      "id": "theme:divine-calling",
+      "kind": "THEME",
+      "title_en": "God Calls His People",
+      "title_fr": "Dieu appelle son peuple",
+      "sceneKeys": [
+        "biblical:scene:abraham:000",
+        "biblical:scene:moses:028",
+        "biblical:scene:christ:057",
+        "biblical:scene:christ:072",
+        "biblical:scene:christ:083",
+        "biblical:scene:christ:084",
+        "biblical:scene:paul:138",
+        "biblical:scene:paul:143",
+        "biblical:scene:paul:155"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Different callings are compared thematically, not declared to be the same event."
+    },
+    {
+      "id": "theme:prayer-intercession",
+      "kind": "THEME",
+      "title_en": "Prayer and Intercession",
+      "title_fr": "Prière et intercession",
+      "sceneKeys": [
+        "biblical:scene:abraham:018",
+        "biblical:scene:moses:037",
+        "biblical:scene:moses:054",
+        "biblical:scene:christ:059",
+        "biblical:scene:christ:086",
+        "biblical:scene:christ:109",
+        "biblical:scene:christ:122",
+        "biblical:scene:christ:123",
+        "biblical:scene:paul:169"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Curated reading path only."
+    },
+    {
+      "id": "theme:signs-miracles",
+      "kind": "THEME",
+      "title_en": "Signs and Miracles",
+      "title_fr": "Signes et miracles",
+      "sceneKeys": [
+        "biblical:scene:moses:032",
+        "biblical:scene:moses:036",
+        "biblical:scene:moses:038",
+        "biblical:scene:moses:039",
+        "biblical:scene:moses:040",
+        "biblical:scene:moses:052",
+        "biblical:scene:christ:073",
+        "biblical:scene:christ:077",
+        "biblical:scene:christ:079",
+        "biblical:scene:christ:080",
+        "biblical:scene:christ:087",
+        "biblical:scene:christ:090",
+        "biblical:scene:christ:091",
+        "biblical:scene:christ:092",
+        "biblical:scene:christ:095",
+        "biblical:scene:christ:096",
+        "biblical:scene:christ:100",
+        "biblical:scene:christ:101",
+        "biblical:scene:christ:105",
+        "biblical:scene:christ:106",
+        "biblical:scene:christ:111",
+        "biblical:scene:christ:113",
+        "biblical:scene:christ:131",
+        "biblical:scene:christ:134",
+        "biblical:scene:paul:150",
+        "biblical:scene:paul:168"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Not an exhaustive catalogue; note distinct biblical genres."
+    },
+    {
+      "id": "theme:women-scripture",
+      "kind": "THEME",
+      "title_en": "Women of Sacred Scripture",
+      "title_fr": "Les femmes de l'Écriture",
+      "sceneKeys": [
+        "biblical:scene:christ:059",
+        "biblical:scene:christ:061",
+        "biblical:scene:christ:064",
+        "biblical:scene:christ:076",
+        "biblical:scene:christ:088",
+        "biblical:scene:christ:109",
+        "biblical:scene:christ:114",
+        "biblical:scene:christ:131",
+        "biblical:scene:paul:158"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Add canonical event references for Judith and Esther only through separately verified eventKey records."
+    },
+    {
+      "id": "theme:kingdom-and-mercy",
+      "kind": "THEME",
+      "title_en": "Kingdom and Mercy",
+      "title_fr": "Royaume et miséricorde",
+      "sceneKeys": [
+        "biblical:scene:christ:085",
+        "biblical:scene:christ:089",
+        "biblical:scene:christ:093",
+        "biblical:scene:christ:107",
+        "biblical:scene:christ:108",
+        "biblical:scene:christ:110",
+        "biblical:scene:christ:118"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Parables do not become literal geographic events."
+    },
+    {
+      "id": "theme:prophecy-fulfilment",
+      "kind": "THEME",
+      "title_en": "Prophecy and Fulfilment",
+      "title_fr": "Prophétie et accomplissement",
+      "sceneKeys": [
+        "biblical:scene:abraham:013",
+        "biblical:scene:christ:057",
+        "biblical:scene:christ:058",
+        "biblical:scene:christ:063",
+        "biblical:scene:christ:071",
+        "biblical:scene:christ:103",
+        "biblical:scene:christ:104",
+        "biblical:scene:christ:115",
+        "biblical:scene:christ:118",
+        "biblical:scene:christ:137"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Proposed correspondences must be source-backed; not automatic doctrinal tags."
+    },
+    {
+      "id": "theme:from-exile-to-home",
+      "kind": "THEME",
+      "title_en": "Journey, Exile and Homecoming",
+      "title_fr": "Voyage, exil et retour",
+      "sceneKeys": [
+        "biblical:scene:abraham:006",
+        "biblical:scene:abraham:007",
+        "biblical:scene:moses:025",
+        "biblical:scene:moses:034",
+        "biblical:scene:moses:049",
+        "biblical:scene:moses:055",
+        "biblical:scene:moses:056",
+        "biblical:scene:christ:065",
+        "biblical:scene:christ:066",
+        "biblical:scene:paul:175",
+        "biblical:scene:paul:180"
+      ],
+      "editorialStatus": "CURATED_CANDIDATES_REQUIRING_SOURCE_REVIEW",
+      "note": "Geography must retain location certainty and avoid fabricated routes."
+    }
+  ],
+  "readingStateContract": {
+    "scope": "PER_JOURNEY_AND_READER",
+    "storage": "PERSISTENT_LOCAL_DEVICE_FIRST",
+    "keyFields": [
+      "journeyId",
+      "currentEventKeyOrSceneKey",
+      "paragraphAnchor",
+      "relativeScrollOffset",
+      "lastReadAt",
+      "editionId",
+      "language"
+    ],
+    "navigationContext": [
+      "mapFocusPlaceId",
+      "timelineFocusEventKey",
+      "genealogyFocusPersonId"
+    ],
+    "invariant": "Opening a cross-reference or exploring a different journey must not overwrite the saved reading cursor."
+  },
+  "coverageSnapshot": {
+    "canonicalEvents": 151,
+    "researchScenes": 183,
+    "chapters": 14,
+    "primaryStories": 39,
+    "exactCitationSceneRecords": 67,
+    "automaticallyReversibleSceneJumps": 66,
+    "overlapOnlyScenes": 29,
+    "noDirectMatchScenes": 87,
+    "canonicalNoSceneCandidates": 67,
+    "note": "Citation equivalence is not event/harmony certification; study-only scene clusters are not all of Sacred Scripture."
+  }
+}
