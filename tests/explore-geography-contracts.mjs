@@ -58,7 +58,10 @@ const r70PublishedPlaces=new Set([
  "place:ZM:archdiocese-lusaka-marian-shrine",
 ]);
 for(const id of r70PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R70 Place lost");
-const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces]);
+const r74=readJson("../data/geography/research/sacred-geography-r74-essential-sites.v1.json");
+const r74PublishedPlaces=new Set(r74.published_new.map(row=>row.place_id));
+for(const id of r74PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R74 Place lost");
+const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces]);
 assert.deepEqual(
   seed.places.filter(place=>!laterPublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [
