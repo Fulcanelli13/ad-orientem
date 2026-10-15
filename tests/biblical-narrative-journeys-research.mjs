@@ -1,10 +1,18 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
+import {readFileSync,existsSync} from "node:fs";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const taxonomy=read("data/explore/biblical-narrative-journeys-review.v1.json");
 const scenes=read("data/explore/biblical-cinematic-studies-review.v1.json");
 assert.equal(taxonomy.schema,"AO_BIBLICAL_NARRATIVE_JOURNEYS_REVIEW_V1");
 assert.equal(taxonomy.status,"RESEARCH_NOT_PRODUCTION_CERTIFIED");
+// Product-owner editorial rule: do not reintroduce AI-written Bible narration.
+assert.equal(taxonomy.policy.noAiAuthoredNarrative,true);
+assert.equal(taxonomy.policy.noAiNarrativeTranslation,true);
+assert.equal(taxonomy.policy.existingAuthorProseOnly,true);
+assert.equal(taxonomy.policy.historicalSourceWitnessRequired,true);
+assert.equal(taxonomy.policy.noPermissionRequests,true);
+assert.ok(!existsSync(new URL("../data/explore/biblical-original-narrative-pilot.v1.json",import.meta.url)),"Rejected AI narrative must not return to this branch");
+
 assert.equal(scenes.scenes.length,183);
 assert.equal(taxonomy.eraKeys.length,11);
 assert.equal(taxonomy.arcs.length,10);
