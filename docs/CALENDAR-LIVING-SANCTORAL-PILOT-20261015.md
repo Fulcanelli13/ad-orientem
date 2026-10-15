@@ -1,3 +1,15 @@
+# Current editorial decision — Saints of the Day, not a martyrology
+
+**15 October 2026. Supersedes the earlier cohort-member enumeration TODOs in this historical log.** The user's scope decision is explicit: **one martyr group = one public saint profile**, regardless of whether the group has 2 or 2,000 members. Publish separate individual martyrs **only when historically or devotionally significant**. Never schedule additional member-name expansion work just to complete a numerical cohort.
+
+**Work committed on PR #1226:** the same 13 pre-existing cohort IDs now have short **English/French** group stories and direct explanations of *why* they are honoured, plus sources and selective significant-saint links; 5 modern USCCB calendar date **witnesses** (Uganda 3 June; China 9 July; Korea 20 September; Lorenzo Ruiz/Japan 28 September; Vietnam 24 November). None is automatically treated as a universal 1962 feast or a selected Mass. All remain editorial review, and those dates cannot retroject into historical calendars without further evidence. The original six individual pilot saints now also explain **why** they are saints, and direct to Vatican primary sources.
+
+The cohort counts (including exact historical group sizes and approximately 800 at Otranto) are retained **only for context and provenance**. There are **zero required individual-member research tasks**. No saints/artwork/geo IDs have been invented: approved image and existing canonical Map place matches are pending from their proper owners. The presentation projections are pure, tested functions, **not yet wired to production**. The 1962 principal Mass, its proper and historical Observance rules remain unchanged.
+
+**Next priority is date + asset + place reconciliation**, not martyrology, not another census. Confirm universal/particular memorial dates for high-value saints and groups; match existing artwork and sacred-geography records, then integrate as a visually led secondary Calendar/Home/Map layer without displacing the traditional observance.
+
+---
+
 # Living Sanctoral — Phase 2 source-bound pilot (15 October 2026)
 
 **Canonical issue:** [#1224](https://github.com/Fulcanelli13/ad-orientem/issues/1224)  
