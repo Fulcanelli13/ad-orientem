@@ -73,7 +73,7 @@ assert.ok(!sacred.relics.some(r=>["place:PS:holy-sepulchre-jerusalem","place:PS:
 
 assert.ok(sacred.relics.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"));
 const projection=projectExploreDataset({geography:geo,sacredPhenomena:sacred});
-assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
+assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]);
 for(const lens of ["apparitions","relics"]){
   const items=projection.byLens[lens],records=sacred[lens];
   assert.equal(items.length,records.length);
