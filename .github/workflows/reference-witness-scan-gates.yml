@@ -1,0 +1,31 @@
+name: Reference witness and scan source gates
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/reference/edition-witness-contracts.js"
+      - "src/reference/witness-locators.js"
+      - "src/reference/scan-staging.js"
+      - "data/reference/research/**"
+      - "tests/reference-witness-scan-gates.mjs"
+      - ".github/workflows/reference-witness-scan-gates.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Metadata, rights, provenance, and scan review gates
+        run: |
+          node --check src/reference/edition-witness-contracts.js
+          node --check src/reference/witness-locators.js
+          node --check src/reference/scan-staging.js
+          node tests/reference-witness-scan-gates.mjs
+          node tests/reference-passage-packs.mjs
+          node tests/reference-parsing.mjs
