@@ -61,4 +61,22 @@ assert.equal(domains.chapterRange.commentaryParts,9);
 assert.equal(new Set(domains.territories.map(t=>t.id)).size,18);
 assert.ok(domains.prohibitedAutoMetadataImport.length>=4);
 for(const page of domains.sampledWikisourceProofreadingStates){assert.ok(["PROOFREAD_NOT_VALIDATED","NOT_PROOFREAD"].includes(page.status));}
+
+const quality=fam.wikisource1910SourceQualityReview;
+assert.equal(quality.status,"REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED");
+assert.equal(quality.displayedPrimaryNarrativeTextApproved,false);
+assert.equal(quality.sourceTextBytesImported,0);
+assert.equal(quality.aiAuthoredNarrativeWords,0);
+assert.equal(quality.issueCases.length,9);
+assert.equal(new Set(quality.issueCases.map(x=>x.id)).size,9);
+assert.deepEqual(quality.requiredTextLayers,["AUTHOR_NARRATIVE","KNECHT_COMMENTARY","CATECHETICAL_APPLICATION","ORIGINAL_FOOTNOTE","HEADING_OR_CHAPTER_REFERENCE","EDITORIAL_SOURCE_CONTEXT"]);
+for(const x of quality.issueCases){
+ assert.ok(["BLOCK_IMPORT","NO_CANONICAL_DATA_PROMOTION","EDITORIAL_HOLD","BLOCK_AUTHORIAL_WORD_CERTIFICATION","NO_AUTOMATIC_EDITION_EQUIVALENCE"].includes(x.severity));
+ assert.ok(x.sourcePageUrl.includes(String(x.sourcePage)));
+ assert.ok(x.required&&x.effect);
+}
+assert.equal(quality.issueCases.find(x=>x.id==="WITNESS-RACIST-PATRIARCHAL-COMMENTARY").severity,"EDITORIAL_HOLD");
+assert.equal(quality.issueCases.find(x=>x.id==="WITNESS-FOOTNOTE-MARKER-LOSS").severity,"BLOCK_IMPORT");
+assert.ok(quality.physicalScanImageAttemptLog.every(x=>x.status==="BLOCKED_NO_PRINT_VERIFICATION"));
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
