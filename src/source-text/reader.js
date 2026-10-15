@@ -1,4 +1,4 @@
-import {SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope} from "./contracts.js";
+import {SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope,validateSourcePageSpan} from "./contracts.js";
 const SAFE_CHUNK=/^chunks\/[0-9]{4}\.json$/;
 export function createSourceTextReader({manifest,loadChunk}={}){
  if(manifest?.schema!==SOURCE_TEXT_MANIFEST_SCHEMA||
@@ -36,6 +36,12 @@ export function createSourceTextReader({manifest,loadChunk}={}){
     for(let i=0;i<parsed.passages.length;i++){
      const p=parsed.passages[i];
      const expectedIndex=ids.get(expected[i]);
+     validateSourcePageSpan(p);
+     if(expectedIndex.sourcePages!==undefined){
+      validateSourcePageSpan(expectedIndex);
+      if(JSON.stringify(p.sourcePages)!==JSON.stringify(expectedIndex.sourcePages))
+       throw new Error("SOURCE_SCAN_PAGE_SPAN_IDENTITY_MISMATCH");
+     }
      if(p?.id!==expected[i]||p.workId!==manifest.work.id||
        p.editionId!==manifest.work.editionId||p.witnessId!==manifest.work.witnessId||
        typeof p.text!=="string"||
