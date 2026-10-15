@@ -48,15 +48,15 @@ const hostResolver={async resolveSource(path,language){
 }};
 const readyEnvelope={status:"READY",sourcePath:base.sourcePath,data:base};
 const recovered=await recoverReaderProperOmissions(readyEnvelope,{hostResolver});
-assert.equal(recovered.data.preGospelChants?.status,"SOURCE_VERIFIED_EXACT",
+assert.equal(recovered.data.readerChantSourceProof?.status,"SOURCE_VERIFIED_EXACT",
  "Host recovery failed to carry genuinely distinct chant ownership");
-assert.deepEqual(recovered.data.preGospelChants.parts.map(p=>p.kind),
+assert.deepEqual(recovered.data.readerChantSourceProof.parts.map(p=>p.kind),
   ["GRADUAL","ALLELUIA"]);
 assert.equal(calls.length,3,"Named chant ownership should reuse only one parsed source per language");
 const unresolved=await recoverReaderProperOmissions({
  ...readyEnvelope,data:{...base,gradual:{...base.gradual,en:"Unrelated EN"}}
 },{hostResolver});
-assert.equal(unresolved.data.preGospelChants,undefined,
+assert.equal(unresolved.data.readerChantSourceProof,undefined,
  "Host recovery silently replaced a nonmatching translation");
 // Real Divinum Officium source forms also pack both chants into [Graduale].
 // Rosary: the Latin Alleluia starts a new line; in EN/FR the same refrain
@@ -84,8 +84,8 @@ const inlineProof=certifyPreGospelChantParts(properInline,{
 assert.equal(inlineProof?.sourceMode,"INTRA_SECTION_TRILINGUAL_BOUNDARY",
  "Alleluia at different EN/FR line offsets was not recognized");
 assert.deepEqual(inlineProof.parts.map(x=>x.kind),["GRADUAL","ALLELUIA"]);
-assert.equal(validatedPreGospelChantParts({...properInline,preGospelChants:inlineProof})?.length,2);
-assert.deepEqual(makeForInline({...properInline,preGospelChants:inlineProof}),["Gradual","Alleluia"]);
+assert.equal(validatedPreGospelChantParts({...properInline,readerChantSourceProof:inlineProof})?.length,2);
+assert.deepEqual(makeForInline({...properInline,readerChantSourceProof:inlineProof}),["Gradual","Alleluia"]);
 function makeForInline(proper){
  const source=createMassReaderModel({resolvedMass:{
   schema:"ao-resolved-mass-v2",date:"2026-10-15",
@@ -113,7 +113,7 @@ const tractProper={...base,gradual:{
 }};
 const tractProof=certifyPreGospelChantParts(tractProper,{sources:tractSources,normalizeRows:normal});
 assert.deepEqual(tractProof?.parts.map(x=>x.kind),["GRADUAL","TRACT"]);
-assert.deepEqual(makeForInline({...tractProper,preGospelChants:tractProof}),["Gradual","Tract"]);
+assert.deepEqual(makeForInline({...tractProper,readerChantSourceProof:tractProof}),["Gradual","Tract"]);
 const shifted={...sourcesInline,fr:{...sourcesInline.fr,
  map:new Map([["Graduale",["Unrelated translation"]]])}};
 assert.equal(certifyPreGospelChantParts(properInline,{
@@ -124,7 +124,7 @@ const proof=certify(base);
 assert.ok(proof,"Real named bilingual source sections must reconcile");
 assert.equal(proof.status,"SOURCE_VERIFIED_EXACT");
 assert.deepEqual(proof.parts.map(p=>p.kind),["GRADUAL","ALLELUIA"]);
-assert.deepEqual(validatedPreGospelChantParts({...base,preGospelChants:proof}).map(p=>p.sourceRef),
+assert.deepEqual(validatedPreGospelChantParts({...base,readerChantSourceProof:proof}).map(p=>p.sourceRef),
   ["Sancti/10-07:Graduale","Sancti/10-07:Alleluia"]);
 assert.equal(certify({...base,gradual:{...base.gradual,en:"Nonmatching translation"}}),null,
   "English source drift must fail closed");
@@ -137,10 +137,10 @@ assert.equal(certifyPreGospelChantParts(base,{sources:{
  la:{...sources().la,order:["Graduale"]},en:sources().en,fr:sources().fr},
  normalizeRows:rows=>rows.join("\n")}),null,
  "Source order drift must fail closed");
-assert.throws(()=>validatedPreGospelChantParts({...base,preGospelChants:{
+assert.throws(()=>validatedPreGospelChantParts({...base,readerChantSourceProof:{
   ...proof,parts:[proof.parts[0],{...proof.parts[1],lat:"Injected chant"}]}}),
  /PARITY_FAILED/,"Tampering a certified payload must not silently render");
-const plain=properToReaderSlots(base),typed=properToReaderSlots({...base,preGospelChants:proof});
+const plain=properToReaderSlots(base),typed=properToReaderSlots({...base,readerChantSourceProof:proof});
 assert.equal(plain.slots.ALLELUIA_TRACT_SEQUENCE.status,"NOT_APPLICABLE");
 assert.equal(typed.slots.GRADUAL.data.paragraphs[0].liturgicalGroup,"AO.CHANT.GRADUAL");
 assert.equal(typed.slots.ALLELUIA_TRACT_SEQUENCE.data.paragraphs[0].liturgicalGroup,"AO.CHANT.ALLELUIA");
@@ -160,7 +160,7 @@ const make=(proper,language="en")=>{
  return {source,curated:projectCuratedOrdinaryLiveCards(source),prepared};
 };
 for(const language of ["en","fr"]){
- const withSplit={...base,preGospelChants:proof};
+ const withSplit={...base,readerChantSourceProof:proof};
  for(const hasSequence of [false,true]){
   const proper=hasSequence?{...withSplit,sequence:t("Lauda Sion","Praise O Sion","Loue Sion")}:withSplit;
   const {source,curated,prepared}=make(proper,language);
