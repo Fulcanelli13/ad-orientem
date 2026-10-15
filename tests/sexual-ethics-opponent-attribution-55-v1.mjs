@@ -14,11 +14,11 @@ assert.equal(audit.summary.canonical_main_debates,55);
 assert.equal(audit.summary.stage_reference_sets,440);
 assert.deepEqual(audit.cases.map(x=>x.id),[...CSE_DEBATE_IDS].sort());
 assert.deepEqual(audit.summary.opposition_class_counts,{
- AUTHOR_FULL_FIRST_PERSON:7,
+ AUTHOR_FULL_FIRST_PERSON:8,
  NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED:11,
  AUTHOR_EXCERPTS_MEDIATED:0,
  DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED:2,
- REASONED_OR_ILLUSTRATIVE_NOT_NAMED_AUTHOR:27,
+ REASONED_OR_ILLUSTRATIVE_NOT_NAMED_AUTHOR:26,
  AUTHOR_EXCERPTS_CDF:6,
  MISCONCEPTION_NOT_AN_AUTHOR:2
 });
