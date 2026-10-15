@@ -109,6 +109,25 @@ This is **not** a claim to have compared against rendered historical page images
 
 This correction has a direct code-owner implication for Source Parsing PR #1229: the upcoming extraction must preserve **historical narrative**, **Knecht commentary**, **catechetical Application**, **footnotes**, and **source headers** as separate node types, including cases where commentary→Application→new narrative share the same single printed page. **0 certified original paragraphs, 0 source body imported.**
 
+## Original 1910 print-image inspection — access breakthrough and 23-page spot audit
+
+**Later source-quality advance, 15 October 2026:** the earlier statement that page images were completely unavailable has been superseded. Wikimedia's **1280-pixel page thumbnails** linked from the Wikisource individual-page “Image” view **did load**. I visually inspected **23 distinct page images** from the actual B. Herder 1910 printed edition, DJVU page numbers:
+
+**41, 43, 46, 47, 48, 50, 51, 53, 56, 59, 61, 62, 64, 66, 69, 72, 76, 79, 82, 84, 86, 88, 89.**
+
+Verified as printed typography: all nine narrative→**COMMENTARY** openings (43, 48, 53, 59, 64, 69, 76, 82, 86); all nine **APPLICATION** openings (46, 50, 56, 61, 66, 72, 79, 84, 88); eight of nine narrative starts (41, 47, 51, 62, 66, 72, 79, 84). The remaining **Chapter IV Part I opening on DJVU page 57** was confirmed by page transcription, but its 1280/1920-pixel print images timed out here, so it stays **not image-verified**. A genuine printed-page instance of Application and the following chapter's story on the same sheet is DJVU 66, 72, 79 and 84. Footnotes remain visibly beneath the main text and may share the sheet with multiple other text roles.
+
+**Two independently confirmed transcription defects:**
+
+1. [Noah narrative, DJVU p79](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/79): the unproofread Wikisource body incorrectly gives `2nd after a hundred and fifty days`; the scanned 1910 original clearly reads **“and after a hundred and fifty days.”** This is an actual word-substitution error that must be corrected when the canonical parser eventually ingests the authentic author's text.
+2. [Tower of Babel, DJVU p84](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/84): the unproofread source-reference transcription gives **`Gen. xx, x—9`**, while the printed heading clearly shows **Gen. 11, 1–9**. A parser reading the raw online transcription would corrupt the Scripture link and falsely appear to have verified biblical coordinates.
+
+All image inspections are explicitly recorded in `wikisource1910TerritoryReview.originalPrintImageSpotAudit.originalPrintedPages`, with the exact printed-page offset (DJVU minus 38), source URLs, observed role, and **no manuscript-copy approval**. The errors are in `defectsAgainstUnproofreadTranscription` as localized correction tickets for Source Parsing PR #1229.
+
+**Precision about remaining blockers:** Visually checking selected pages and headings **does not** establish full word-for-word proofreading of the entirety of any narrative chapter, or an authorized source-text import. The 1910 Knecht print-image route now works for many individual pages; the **separate 1925 Schuster English** scan and **1887 Couissinier French** print images are **still not independently text-collated**. Nor is this proof of 1910 English Knecht narration being identical to either Schuster witness. Rights claims and whole-passages release remain independent gates; Commons's public-domain statement on the 1910 mechanical print is useful provenance, not a release decision for third-party HTML, modern artwork or another edition.
+
+**Measured progress:** 23 original 1910 print pages visibly inspected; 18/18 key commentary/Application boundaries print-image confirmed; 8/9 narrative openings print-image confirmed; 2 localized transcription defects confirmed; **0 complete original narrative paragraphs cleared**, **0 historical author source bodies imported**, **0 AI-written story text**, **0 production changes**.
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
