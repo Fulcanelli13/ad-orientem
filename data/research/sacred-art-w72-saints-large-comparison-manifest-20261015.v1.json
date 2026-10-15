@@ -13,7 +13,8 @@
     "No artwork user rating, original image/master hash, runtime Calendar or coverage module is modified by preparing this gallery.",
     "Rights claims, exact photo-original relation, actual app release and final crop not certified by inclusion.",
     "Multi-option subject groups are first and additional subject groups remain visible as research gaps; not all groups falsely promise two or more usable images.",
-    "Fra Angelico and El Greco excluded; no permissions or licensing contacts or paid image licences."
+    "Fra Angelico and El Greco excluded; no permissions or licensing contacts or paid image licences.",
+    "Nine photo-only W48 placements had no institutional object-page source. Eight now carry exact Commons photograph file-page links extracted from their unchanged thumbnail filenames (photo source, NOT physical-original proof). One Rubens Saint Andrew item displays only a commercial Meisterdrucke preview and is barred from final placement/approval until an independently open-licenced exact original is identified."
   ],
   "inputs": {
     "w48Path": "data/calendar/sacred-art-w48-user-full-snapshot-20261014.v1.json",
@@ -45,7 +46,9 @@
       "4": 75,
       "5": 69,
       "unrated": 46
-    }
+    },
+    "photoOnlySourceReferencesRecovered": 8,
+    "commercialPreviewPublicationHolds": 1
   },
   "subjectRequirements": [
     {
@@ -925,7 +928,7 @@
       "artist": "Peter Paul Rubens",
       "title": "Martyrdom of Saint Andrew",
       "image": "https://www.meisterdrucke.uk/kunstwerke/1260px/Peter%20Paul%20Rubens%20-%20The%20Martyrdom%20of%20St%20Andrew%201637%20%20-%20%28MeisterDrucke-147660%29.jpg",
-      "sourceURL": null,
+      "sourceURL": "https://www.meisterdrucke.uk/kunstwerke/1260px/Peter%20Paul%20Rubens%20-%20The%20Martyrdom%20of%20St%20Andrew%201637%20%20-%20%28MeisterDrucke-147660%29.jpg",
       "sourceWave": "W32 master",
       "score": 4,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -936,7 +939,9 @@
       "recordedReviewImage": "https://www.meisterdrucke.uk/kunstwerke/1260px/Peter%20Paul%20Rubens%20-%20The%20Martyrdom%20of%20St%20Andrew%201637%20%20-%20%28MeisterDrucke-147660%29.jpg",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMERCIAL_PREVIEW_IMAGE_ONLY_NOT_RIGHTS_CLEARED",
+      "technicalPublicationHold": "NO_COMPATIBLE_OPEN_LICENCE_OR_PHYSICAL_ORIGINAL_IMAGE_IDENTITY_ESTABLISHED"
     },
     {
       "candidateId": "W02-004",
@@ -1261,7 +1266,7 @@
       "artist": "Carlo Crivelli",
       "title": "Saint Thomas Aquinas",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg/960px-Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -1272,7 +1277,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg/960px-Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "prado-ribalta-p002804",
@@ -1471,7 +1477,7 @@
       "artist": "Bartolomé Esteban Murillo",
       "title": "Saint Isidore of Seville",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Isidor_von_Sevilla.jpeg/960px-Isidor_von_Sevilla.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -1482,7 +1488,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Isidor_von_Sevilla.jpeg/960px-Isidor_von_Sevilla.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "G20-001",
@@ -1786,7 +1793,7 @@
       "artist": "Juan de Juanes",
       "title": "Martyrdom of Saint Stephen",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_%28Museo_del_Prado%29.jpg/960px-Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_%28Museo_del_Prado%29.jpg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -1797,7 +1804,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_%28Museo_del_Prado%29.jpg/960px-Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
@@ -1807,7 +1815,7 @@
       "artist": "Anthony van Dyck",
       "title": "Saint Francis in Ecstasy",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/St_Francis_in_Ecstasy.jpg/960px-St_Francis_in_Ecstasy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:St_Francis_in_Ecstasy.jpg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -1818,7 +1826,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/St_Francis_in_Ecstasy.jpg/960px-St_Francis_in_Ecstasy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "cma-150955",
@@ -1870,7 +1879,7 @@
       "artist": "Peter Paul Rubens",
       "title": "Miracles of Saint Ignatius of Loyola",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg/960px-Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200705210239",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
       "sourceWave": "W32 master",
       "score": null,
       "scoreAuthority": null,
@@ -1881,7 +1890,8 @@
       "recordedReviewImage": null,
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "W14-004",
@@ -2080,7 +2090,7 @@
       "artist": "Anthony van Dyck",
       "title": "Saint Martin Dividing His Cloak",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG/960px-Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -2091,7 +2101,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG/960px-Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
@@ -2101,7 +2112,7 @@
       "artist": "Anthony van Dyck",
       "title": "Saint Rosalia Interceding for Palermo",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg/960px-Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -2112,7 +2123,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg/960px-Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
@@ -2122,7 +2134,7 @@
       "artist": "Peter Paul Rubens",
       "title": "Miracles of Saint Francis of Paola",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg/960px-Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "sourceURL": null,
+      "sourceURL": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
       "sourceWave": "W32 master",
       "score": 5,
       "scoreAuthority": "W49_HISTORICAL_HUMAN",
@@ -2133,7 +2145,8 @@
       "recordedReviewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg/960px-Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "previouslyPendingOriginalIdentityResearch": false,
       "excludedByUser": false,
-      "permanentArtStyleExclusion": false
+      "permanentArtStyleExclusion": false,
+      "sourceLocatorType": "COMMONS_REVIEWED_PHOTOGRAPH_FILE_NOT_PHYSICAL_ORIGINAL_PROVENANCE"
     },
     {
       "candidateId": "C32:antoniopalominosantateresadejesusescribiendojpg",
