@@ -1,0 +1,68 @@
+{
+  "schema": "AO_SOURCE_TEXT_BULK_JOB_MANIFEST_V1",
+  "date": "2026-10-15",
+  "policy": "Only whole-source jobs with explicit chapter coverage; unreviewed third-party text stays metadata-only; no production authorizations inferred.",
+  "jobs": [
+    {
+      "jobId": "BROTHER-LAWRENCE-PG13871-PINNED",
+      "sourceKind": "GUTENBERG_13871",
+      "sourceFile": "data/source-text/staging/brother-lawrence-pg13871-full.txt",
+      "upstreamGitCommit": "a2c7fd571d9abbd9f35fa6e40eef2590630505a0",
+      "work": {
+        "id": "WORK-BROTHER-LAWRENCE-PRACTICE-PRESENCE",
+        "title": "The Practice of the Presence of God: The Best Rule of a Holy Life",
+        "editionId": "ED-REVELL-GUTENBERG13871-GITENBERG2018",
+        "witnessId": "WIT-PG13871-GITENBERG-A2C7FD57",
+        "language": "en",
+        "rights": {
+          "status": "NOT_REVIEWED",
+          "scope": "COMPLETE_WORK"
+        }
+      },
+      "expectedChapterIds": [
+        "frontmatter",
+        "preface",
+        "conversation-01",
+        "conversation-02",
+        "conversation-03",
+        "conversation-04",
+        "letter-01",
+        "letter-02",
+        "letter-03",
+        "letter-04",
+        "letter-05",
+        "letter-06",
+        "letter-07",
+        "letter-08",
+        "letter-09",
+        "letter-10",
+        "letter-11",
+        "letter-12",
+        "letter-13",
+        "letter-14",
+        "letter-15",
+        "notes"
+      ],
+      "mode": "INDEX_ONLY",
+      "sourceTextClassification": "COMPLETE_HISTORICAL_ENGLISH_ELECTRONIC_TRANSCRIPTION_PUBLIC_DOMAIN_US_UNPROOFREAD",
+      "expectedParagraphs": 182,
+      "outputReviewStatus": "STAGED_STRUCTURALLY_COMPLETE_NOT_EDITORIALLY_CERTIFIED"
+    }
+  ],
+  "futureJobContract": {
+    "sourceKind": "LOCAL_CHAPTER_FILES",
+    "documentsShape": "[{id,title,format,sourceUrl,path}]",
+    "acceptedFormats": [
+      "ANCHORED_PARAGRAPHS",
+      "PLAIN_PARAGRAPHS"
+    ],
+    "requiresEditionId": true,
+    "requiresWitnessId": true,
+    "requiresExpectedChapters": true
+  },
+  "existingCorpusSkip": [
+    "data/scripture/catena/manifest.v1.json",
+    "data/scripture/README.md",
+    "data/reference/formation-canonical-source-crosswalk.v1.json"
+  ]
+}
