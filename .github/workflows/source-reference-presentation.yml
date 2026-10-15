@@ -1,0 +1,33 @@
+name: Source reference presentation pilot
+on:
+  pull_request:
+    paths:
+      - 'src/learn/source-reference-panel.js'
+      - 'src/learn/formation-research-preview.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/reference-presentation-pilot.mjs'
+      - 'data/reference/canonical-works-pilot.v1.json'
+      - '.github/workflows/source-reference-presentation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reference-display:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source UI module syntax
+        run: |
+          node --check src/learn/source-reference-panel.js
+          node --check src/learn/formation-research-preview.js
+          node --check src/learn/mass-formation.js
+      - name: Verify compact references and original claim evidence
+        run: node tests/reference-presentation-pilot.mjs
+      - name: Protect published Mass Formation source and Scripture contexts
+        run: node tests/mass-formation.mjs
+      - name: Protect unpublished Formation provenance and publication gate
+        run: node tests/formation-research-preview.mjs
