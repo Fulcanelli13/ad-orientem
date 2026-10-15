@@ -54,6 +54,37 @@ Historical-author assertions are not automatically verified facts for Ad Oriente
 
 Data: `wikisource1910TerritoryReview.territories` in `data/explore/biblical-schuster-knecht-source-family-review.v1.json`. The source parser PR #1229 is the only owner of eventual text packaging and print-image collation. Original source passages accepted: **0**; production source text: **0**; new AI narrative: **0**.
 
+## Source-integrity audit: online mirror vs historical printed witness
+
+**15 October 2026, follow-on batch. This is an editorial hold register, not approval of any source paragraph.**
+
+A direct comparison of online [eCatholic Creation](https://www.ecatholic2000.com/knecht/untitled-09.shtml) with the 1910 source-bound [Wikisource pages 41–43](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43) reveals a real loss of textual structure. The secondary mirror renders a source footnote as a bare numeral immediately following “lights”, rather than a correctly associated separate note. The [1910 p.42](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/42) transcription retains the linked numbered footnote and its text. **A convenient HTML mirror is not an original-edition text source suitable for blind ingestion.**
+
+The 1910 source also distinguishes at least **six kinds of textual territory**: narrative, Knecht commentary, catechetical **Application**, footnotes, headings/scriptural references, and critical editorial apparatus. On [p.46](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/46), **Application** starts after commentary; on [p.48](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/48), commentary follows the angels' story **mid-page**. This invalidates any extraction strategy that uses only page numbers or chapter headings to concatenate continuous narrative.
+
+### Nine source-quality holds and decisions
+
+The JSON register includes nine machine-readable cases in `wikisource1910SourceQualityReview.issueCases`, with exact page links and required handling:
+- Flattened numbered footnote in an unverified eCatholic mirror: **block straight HTML import**.
+- Narrative and commentary interleaved on the same source page: **split using within-page heading offsets**.
+- Angelic history and commentary + associated footnotes on the same source page: **preserve three roles**.
+- Independently headed **Application** after commentary: **a fourth source layer, not part of story prose**.
+- Original 1910 “about 4000–2100 B.C.” prologue: **do not create biblical timeline dates from the historical author's chronology**.
+- Old scientific descriptions inside Creation notes: **source attribution only, not modern scientific data**.
+- Explicitly racist Ham-descendants assertions in [Noah commentary p.83](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/83): **quarantine from unqualified Catholic formation, ethnicity and genealogy; contextual review required even if optional historical commentary is eventually shown**. This is *Knecht's commentary*, not the text of inspired Genesis, and must not be attached to the Schuster narrative.
+- Wikisource labels many individual pages **not proofread**: web-readable transcription is not independently inspected original printed-page evidence.
+- Knecht's later English translation/adaptation must not be equated automatically with Schuster's 1925 English or Couissinier's 1887 French words.
+
+The Wikimedia Commons source record marks the **1910 scan** as public-domain with a publisher/author/translation explanation: https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu . This is useful rights evidence for the *original scanned edition*, **not** blanket reproduction approval of another site's HTML, later modern illustrations, or the twentieth-century translation outside relevant jurisdictional terms. The Wikisource transcription is user-edited and displays its own site terms.
+
+### Access and certification
+
+In this session the [Wikisource original page-image link](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43) returned a Wikimedia thumbnail URL that timed out or was inaccessible for image loading. Alternate lower-resolution thumbnail and Internet Archive IIIF image access were also unavailable. Thus no original scanned page *image* was available for visual proofreading. The page **transcription text** itself and edition-specific heading locations remain accessible. Do not claim proofread words, corrected OCR, accepted narrative text or newly authorized reproduction from this pass.
+
+A future proper text import needs exact **work ID, edition ID, language, printed image/scan locator, narrative span, commentary span, Application span, footnote association, original author and translator, publication-rights evidence**, all processed by existing Source Parser PR #1229. **AI may faithfully translate a verified historical author's words when necessary, but must not create or abridge the story.** Do not request permissions.
+
+**New passages approved:** 0. **Original scanned pages newly visually verified:** 0. **App runtime affected:** none. This is a stronger evidence-based parser gate, not a hidden release milestone.
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
