@@ -653,7 +653,10 @@ export function createFindOwner(win=globalThis){
         try{
           map.setPaintProperty?.("ao-explore-points","circle-color",["case",["==",["get","item_id"],key],"#edcb86","#79909f"]);
           if(!bibleCinemaPreview||bibleCinemaFollow)
-           map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
+           map.easeTo?.({center:[active.geo.lng,active.geo.lat],
+             zoom:bibleCinemaPreview?(active.era==="APOSTLES"?5.3:active.geo.key==="jerusalem"?6.2:5.5)
+              :(active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8),
+             duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
         }catch{}
       }
     };
@@ -696,9 +699,17 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
       state.bibleAtlas=true;state.bibleIndex=0;
+      // This review is explicitly map-first: begin at the earliest
+      // source-qualified geographic event rather than a blank Creation map.
+      // Creation remains at index zero in the unchanged 151-event chronology.
+      if(bibleCinemaPreview){
+        const firstMapped=buildBibleAtlas(dataset.biblePlaces?.entries??[])
+          .find(stop=>Boolean(stop.geo));
+        if(firstMapped)state.bibleIndex=firstMapped.index;
+      }
       bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;
       lastMapView=null;lastMapLens=null;
-      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
+      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(state.bibleIndex);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
     }
     if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
       event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;

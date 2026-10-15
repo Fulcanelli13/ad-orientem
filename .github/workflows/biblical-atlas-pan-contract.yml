@@ -1,0 +1,28 @@
+name: Biblical Atlas free-pan contract
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/browser-entry.js"
+      - "tests/explore-atlas-cinema-pan-contract.mjs"
+      - ".github/workflows/biblical-atlas-pan-contract.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pan-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native browser pointer-drag with deterministic MapLibre adapter
+        run: node tests/explore-atlas-cinema-pan-contract.mjs
+      - name: Canonical unchanged Atlas source evidence
+        run: |
+          node tests/explore-bible-atlas-151.mjs
+          node tests/explore-bible-atlas-151-scope.mjs
