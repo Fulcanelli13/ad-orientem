@@ -12,7 +12,7 @@ export const SANCTORAL_DAY_CSS=[
 ".aoCalSecondarySaintCard>p{margin:0 0 8px;color:#bcb6ac;font:400 12px/1.55 var(--ao-font-ui,system-ui,sans-serif)}",
 ".aoCalSecondarySaintCard>.aoCalSaintPlace{font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#9a9b94}",
 ".aoCalSecondarySaintCard details{margin-top:6px;color:#bbb3a6;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
-".aoCalSecondarySaintCard summary{cursor:pointer;padding:5px 0;min-height:32px}",
+".aoCalSecondarySaintCard summary{cursor:pointer;display:flex;align-items:center;padding:9px 0;min-height:44px;touch-action:manipulation}",
 ".aoCalSecondarySaintCard a{display:inline-block;color:#d6c4a6;padding:5px 0;overflow-wrap:anywhere}",
 ".aoCalSecondarySaintCard a:focus-visible,.aoCalSecondarySaintCard summary:focus-visible{outline:2px solid #bea77e;outline-offset:3px}"
 ].join("");
