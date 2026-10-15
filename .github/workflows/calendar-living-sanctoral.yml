@@ -1,0 +1,33 @@
+name: Living sanctoral source integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/living-sanctoral-pilot.v1.json'
+      - 'data/calendar/doctors-of-church-roster.review.v1.json'
+      - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
+      - 'src/calendar/living-sanctoral.js'
+      - 'tests/calendar-living-sanctoral-*.mjs'
+      - 'tests/calendar-doctors-roster-review.mjs'
+      - 'tests/calendar-cum-sanctissima-protected-annex.mjs'
+      - '.github/workflows/calendar-living-sanctoral.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sanctoral-identity-guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source-bound registry and projection checks
+        run: |
+          node tests/calendar-living-sanctoral-pilot.mjs
+          node tests/calendar-doctors-roster-review.mjs
+          node tests/calendar-cum-sanctissima-protected-annex.mjs
+          node tests/calendar-living-sanctoral-projection.mjs
