@@ -49,6 +49,11 @@ export function supplementarySaintsForDate(date, persons, {
       result.push(Object.freeze({
         personId: person.id,
         title: personLabel(person, language),
+        whyHonoured:person.presentation?.whyHonoured?.[language==="fr"?"fr":"en"]||null,
+        historicalContribution:person.presentation?.historicalContribution?.[language==="fr"?"fr":"en"]||null,
+        artworkId:person.presentation?.approvedArtworkId||null,
+        canonicalPlaceId:person.presentation?.canonicalPlaceId||null,
+        furtherReadingUrls:Object.freeze([...(person.presentation?.verifiedFurtherReadingUrls||[])]),
         modernCalendarKind: current ? observance.kind : null,
         sourceIds: Object.freeze([...observance.sourceIds]),
         doctorOfChurch: recognition.doctorOfChurch,
