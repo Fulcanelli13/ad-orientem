@@ -2,6 +2,7 @@
 // Never promotes text or infers priest action from an adjacent prayer cue.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { MYSTERY_CANON_PRECISION_REVIEW as review } from '../src/learn/mystery-mass-canon-precision-review.js';
 const get=(path)=>JSON.parse(readFileSync(new URL('../'+path, import.meta.url),'utf8'));
 const root='data/learn/research/';
 const col=get(root+'mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json');
@@ -51,6 +52,19 @@ for(const e of draft.entries){
  assert(e.reading.en.length>=100&&e.reading.fr.length>=100,'missing meaningful bilingual explanation: '+e.id);
  assert(!e.editorialChecks.readyForPublication && !e.editorialChecks.sourceRightsApproved);
  assert(e.priorEvidenceIds.length>=2 && e.workLocators.length>=1);
+}
+assert.equal(review.length,draft.entries.length);
+for(let i=0;i<draft.entries.length;i++){
+ const stored=draft.entries[i],display=review[i];
+ assert.equal(display.id,stored.id);
+ assert.equal(display.owner,stored.sourceOwnerId);
+ assert.equal(display.cueId,stored.latinCueId);
+ assert.equal(display.latin,stored.latinPhrase);
+ assert.equal(display.displayTier,stored.displayTier);
+ assert.deepEqual(display.reading,stored.reading);
+ assert.deepEqual(display.workLocators,stored.workLocators);
+ assert.deepEqual(display.evidenceIds,stored.priorEvidenceIds);
+ assert.equal(display.approved,false);
 }
 const alphonsus=col.originalEditionWarnings.find(x=>x.includes('unnamed'));
 assert(alphonsus.includes('St Alphonsus')&&alphonsus.includes('Dom Prosper Guéranger'));
