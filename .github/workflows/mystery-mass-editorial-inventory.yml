@@ -31,6 +31,8 @@ on:
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
+      - 'tests/mystery-mass-p3-full-triage.mjs'
       - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
       - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
       - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
@@ -58,6 +60,8 @@ on:
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
+      - 'tests/mystery-mass-p3-full-triage.mjs'
       - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
       - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
       - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
@@ -89,6 +93,8 @@ jobs:
         run: node tests/mystery-mass-p1-p2-review-ownership.mjs
       - name: Check P1 source-backed six lookups and 32 micro-unit alignments
         run: node tests/mystery-mass-p1-source-alignment.mjs
+      - name: Verify P3 57 clause classifications and existing priest cue reuse
+        run: node tests/mystery-mass-p3-full-triage.mjs
       - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
         run: node tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs
       - name: Validate source-first editorial inventory and deduplication
