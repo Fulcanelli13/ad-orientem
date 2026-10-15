@@ -13,7 +13,7 @@
     "SAINTS_INDIVIDUAL",
     "SAINTS_GROUP",
     "LITURGICAL_FEAST",
-    "Eucharist_and_sacraments",
+    "EUCHARIST_AND_SACRAMENTS",
     "SPIRITUAL_DEVOTION",
     "SACRED_PLACE",
     "HISTORICAL_OBJECT",
@@ -23,18 +23,18 @@
   "counts": {
     "sourceRegistryRecords": 281,
     "primaryGroups": {
-      "SACRED_NARRATIVE": 17,
-      "CHRIST_AND_TRINITY": 19,
-      "OUR_LADY": 125,
-      "ANGELS": 4,
-      "SAINTS_INDIVIDUAL": 59,
-      "SAINTS_GROUP": 4,
-      "LITURGICAL_FEAST": 1,
-      "Eucharist_and_sacraments": 23,
+      "SACRED_NARRATIVE": 57,
+      "CHRIST_AND_TRINITY": 28,
+      "OUR_LADY": 61,
+      "ANGELS": 3,
+      "SAINTS_INDIVIDUAL": 60,
+      "SAINTS_GROUP": 6,
+      "LITURGICAL_FEAST": 3,
+      "EUCHARIST_AND_SACRAMENTS": 5,
       "SPIRITUAL_DEVOTION": 1,
       "SACRED_PLACE": 0,
       "HISTORICAL_OBJECT": 0,
-      "GENERAL_CONTEXT": 28,
+      "GENERAL_CONTEXT": 57,
       "UNCLASSIFIED": 0
     },
     "sourceOriginalHashes": 266,
@@ -246,7 +246,7 @@
       "artist": "El Greco",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -289,7 +289,7 @@
       "artist": "L'Ortolano",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -332,7 +332,7 @@
       "artist": "Girolamo da Carpi",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -375,7 +375,7 @@
       "artist": "Vincenzo Catena",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -418,7 +418,7 @@
       "artist": "Christian Wilhelm Ernst Dietrich",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -461,7 +461,7 @@
       "artist": "Antoniazzo Romano",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "LITURGICAL_FEAST",
       "secondarySubjectTags": [
         "nativity"
       ],
@@ -505,7 +505,7 @@
       "artist": "Quinten Massys",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "adoration-magi",
         "epiphany"
@@ -542,7 +542,7 @@
       "artist": "Gerard David and Workshop",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "adoration-magi",
         "epiphany"
@@ -577,7 +577,7 @@
       "artist": "Netherlandish (Antwerp Mannerist) Painter",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "adoration-magi",
         "epiphany"
@@ -612,7 +612,7 @@
       "artist": "Sebastiano Ricci",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "baptism-christ"
       ],
@@ -652,7 +652,7 @@
       "artist": "Sébastien Bourdon",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "baptism-christ"
       ],
@@ -692,7 +692,7 @@
       "artist": "El Greco",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "carrying-cross",
         "passion"
@@ -735,7 +735,7 @@
       "artist": "Jan Gossart",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "carrying-cross",
         "passion"
@@ -778,7 +778,7 @@
       "artist": "Gerard David",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion",
@@ -822,7 +822,7 @@
       "artist": "Pedro Orrente",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -865,7 +865,7 @@
       "artist": "Jacopo Palma the Younger",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -906,7 +906,7 @@
       "artist": "Circle of Jan Provoost",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -949,7 +949,7 @@
       "artist": "Perugino",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "regina-caeli",
         "resurrection"
@@ -995,7 +995,7 @@
       "artist": "Spanish (Aragonese) Painter",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "regina-caeli",
         "resurrection"
@@ -1039,7 +1039,7 @@
       "artist": "Hans Süss von Kulmbach",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "ascension-christ"
       ],
@@ -1281,7 +1281,7 @@
       "artist": "Ugolino da Siena",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "EUCHARIST_AND_SACRAMENTS",
       "secondarySubjectTags": [
         "eucharist",
         "holy-thursday",
@@ -1323,7 +1323,7 @@
       "artist": "Netherlandish (Antwerp Mannerist) Painters",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "EUCHARIST_AND_SACRAMENTS",
       "secondarySubjectTags": [
         "eucharist",
         "holy-thursday",
@@ -1410,7 +1410,7 @@
       "artist": "Alvaro Pirez",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "candlemas",
         "presentation-jesus",
@@ -1452,7 +1452,7 @@
       "artist": "Giovanni di Paolo",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "candlemas",
         "presentation-jesus",
@@ -1570,7 +1570,7 @@
       "artist": "Sano di Pietro",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "holy-innocents",
         "massacre-innocents"
@@ -1751,7 +1751,7 @@
       "artist": "Attribution pending inspection",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "agony-garden",
         "crowning-thorns"
@@ -1792,7 +1792,7 @@
       "artist": "Attribution pending inspection",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "flagellation"
       ],
@@ -1944,7 +1944,7 @@
       "artist": "Johann König",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "regina-caeli",
         "resurrection"
@@ -1985,7 +1985,7 @@
       "artist": "Giovanni Battista Piazzetta",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "supper-emmaus"
       ],
@@ -2021,7 +2021,7 @@
       "artist": "Abraham Hondius",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "finding-jesus-temple"
       ],
@@ -2059,7 +2059,7 @@
       "artist": "Master of the Catholic Kings",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "finding-jesus-temple"
       ],
@@ -2097,7 +2097,7 @@
       "artist": "Bernard van Orley",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "finding-jesus-temple"
       ],
@@ -2173,7 +2173,7 @@
       "artist": "Workshop of Bernard van Orley",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "pentecost"
       ],
@@ -2213,7 +2213,7 @@
       "artist": "French",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "pentecost"
       ],
@@ -2253,7 +2253,7 @@
       "artist": "Bachiacca",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "flagellation"
       ],
@@ -2371,7 +2371,7 @@
       "artist": "Raphael",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "LITURGICAL_FEAST",
       "secondarySubjectTags": [
         "agony-garden"
       ],
@@ -2412,7 +2412,7 @@
       "artist": "Nicolas Poussin",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "agony-garden"
       ],
@@ -2450,7 +2450,7 @@
       "artist": "Antonello da Messina",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "crowning-thorns"
       ],
@@ -2488,7 +2488,7 @@
       "artist": "Adriaen Isenbrant",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "crowning-thorns"
       ],
@@ -2603,7 +2603,7 @@
       "artist": "Johann Koerbecke",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "ascension-christ"
       ],
@@ -3044,7 +3044,7 @@
       "artist": "Gerard David",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "joy3"
       ],
@@ -3082,7 +3082,7 @@
       "artist": "Lorenzo Monaco",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "joy3"
       ],
@@ -3120,7 +3120,7 @@
       "artist": "Byzantine Painter",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "joy4"
       ],
@@ -3158,7 +3158,7 @@
       "artist": "Spanish (Catalan) Painter",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "joy5"
       ],
@@ -3196,7 +3196,7 @@
       "artist": "Master of the Berswordt Altar",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "sor2"
       ],
@@ -3234,7 +3234,7 @@
       "artist": "Master of Forlì",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "sor2"
       ],
@@ -3272,7 +3272,7 @@
       "artist": "Gerard David",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "sor4"
       ],
@@ -3312,7 +3312,7 @@
       "artist": "Fra Angelico",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "sor5"
       ],
@@ -3352,7 +3352,7 @@
       "artist": "Andrea di Cione (Orcagna)",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "sor5"
       ],
@@ -3390,7 +3390,7 @@
       "artist": "Ludwig Schongauer",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "glo1"
       ],
@@ -3686,7 +3686,7 @@
       "artist": "Andrea Solario",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "christ-blessing"
       ],
@@ -3875,7 +3875,7 @@
       "artist": "Follower of Giotto",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "ANGELS",
+      "primaryGroup": "SAINTS_GROUP",
       "secondarySubjectTags": [
         "saint-mary-magdalene"
       ],
@@ -3911,7 +3911,7 @@
       "artist": "Juan de Flandes",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "lum2",
         "wedding-cana"
@@ -3952,7 +3952,7 @@
       "artist": "Jacopo Bassano",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "lum1"
       ],
@@ -3990,7 +3990,7 @@
       "artist": "Hans Multscher",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "CHRIST_AND_TRINITY",
       "secondarySubjectTags": [
         "descent-holy-spirit",
         "pentecost"
@@ -4033,7 +4033,7 @@
       "artist": "Salomon de Bray",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "descent-holy-spirit",
         "pentecost"
@@ -4074,7 +4074,7 @@
       "artist": "Master of the Baroncelli Portraits",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "descent-holy-spirit",
         "pentecost"
@@ -4115,7 +4115,7 @@
       "artist": "Workshop of Peter Paul Rubens",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "SAINTS_INDIVIDUAL",
+      "primaryGroup": "SAINTS_GROUP",
       "secondarySubjectTags": [
         "holy-souls",
         "intercession-saints",
@@ -4509,7 +4509,7 @@
       "artist": "Cecco del Caravaggio (Francesco Buoneri)",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -5744,7 +5744,7 @@
       "artist": "Bernardo Cavallino",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "nativity",
         "adoration-shepherds"
@@ -5783,7 +5783,7 @@
       "artist": "Carlo Dolci",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "nativity",
         "adoration-shepherds"
@@ -5822,7 +5822,7 @@
       "artist": "Unknown old master",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "nativity",
         "adoration-shepherds"
@@ -5861,7 +5861,7 @@
       "artist": "Follower of Netherlandish Antwerp Mannerist",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "epiphany",
         "adoration-magi"
@@ -5896,7 +5896,7 @@
       "artist": "Neapolitan Follower of Giotto",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "epiphany",
         "adoration-magi"
@@ -5966,7 +5966,7 @@
       "artist": "Andrea da Firenze",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -6008,7 +6008,7 @@
       "artist": "Unknown old master",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -6050,7 +6050,7 @@
       "artist": "Matteo di Giovanni",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -6092,7 +6092,7 @@
       "artist": "Unknown old master",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -6582,7 +6582,7 @@
       "artist": "workshop of Jacopo Tintoretto",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "baptism-christ"
       ],
@@ -6622,7 +6622,7 @@
       "artist": "Lucas Cranach",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "baptism-christ"
       ],
@@ -7084,7 +7084,7 @@
       "artist": "Maestro Bartolomé",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "transfiguration"
       ],
@@ -7127,7 +7127,7 @@
       "artist": "Follower of Raphael",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "massacre-innocents",
         "holy-innocents"
@@ -7162,7 +7162,7 @@
       "artist": "François Joseph Navez",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "massacre-innocents",
         "holy-innocents"
@@ -7380,7 +7380,7 @@
       "artist": "Netherlandish (Brussels) Painter",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "our-lady-rosary",
         "fifteen-rosary-mysteries"
@@ -7635,7 +7635,7 @@
       "artist": "Master of the Krainburg Altar",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "SACRED_NARRATIVE",
+      "primaryGroup": "SAINTS_INDIVIDUAL",
       "secondarySubjectTags": [
         "lamentation",
         "passion",
@@ -7706,7 +7706,7 @@
       "artist": "Artist not identified in source API",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "nativity",
         "adoration-shepherds"
@@ -7743,7 +7743,7 @@
       "artist": "Konrad Laib",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "epiphany",
         "adoration-magi"
@@ -7776,7 +7776,7 @@
       "artist": "Giovanni di Paolo",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "epiphany",
         "adoration-magi"
@@ -7809,7 +7809,7 @@
       "artist": "Artist not identified in source API",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -7846,7 +7846,7 @@
       "artist": "Sodoma",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -8015,7 +8015,7 @@
       "artist": "El Greco",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "OUR_LADY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "crucifixion",
         "passion"
@@ -8373,7 +8373,7 @@
       "artist": "Juan de Flandes",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "CHRIST_AND_TRINITY",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "temptation-christ"
       ],
@@ -8730,7 +8730,7 @@
       "artist": "Artist not identified in first-pass CMA metadata",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "adoration-magi",
         "epiphany"
@@ -8769,7 +8769,7 @@
       "artist": "Geertgen tot Sint Jans",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "SACRED_NARRATIVE",
       "secondarySubjectTags": [
         "adoration-magi",
         "epiphany"
@@ -8878,7 +8878,7 @@
       "artist": "Sassetta",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "CHRIST_AND_TRINITY",
+      "primaryGroup": "SAINTS_INDIVIDUAL",
       "secondarySubjectTags": [
         "saint-francis-assisi",
         "francis-adoring-cross"
@@ -9286,7 +9286,7 @@
       "artist": "Frans Francken the Younger; Master HDB",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -9323,7 +9323,7 @@
       "artist": "Sebastiano Ricci",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "EUCHARIST_AND_SACRAMENTS",
       "secondarySubjectTags": [
         "last-supper",
         "eucharist"
@@ -9962,7 +9962,7 @@
       "artist": "Giorgione",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -9999,7 +9999,7 @@
       "artist": "William Blake",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "EUCHARIST_AND_SACRAMENTS",
       "secondarySubjectTags": [
         "last-supper",
         "eucharist"
@@ -10286,7 +10286,7 @@
       "artist": "Giovanni Girolamo Savoldo",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -10535,7 +10535,7 @@
       "artist": "Adriaen Isenbrant",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "GENERAL_CONTEXT",
       "secondarySubjectTags": [
         "adoration-shepherds",
         "nativity"
@@ -10611,7 +10611,7 @@
       "artist": "Peter Paul Rubens",
       "owner": "SACRED_ART_PR887",
       "type": "painting",
-      "primaryGroup": "Eucharist_and_sacraments",
+      "primaryGroup": "EUCHARIST_AND_SACRAMENTS",
       "secondarySubjectTags": [
         "glorification-eucharist",
         "eucharist",
@@ -12145,5 +12145,6 @@
       "artistExcluded": false,
       "publicationReady": false
     }
-  ]
+  ],
+  "classificationCaution": "Automated first-pass group labels are CURATORIAL TRIAGE; they are NOT individually verified iconographic identities. Text heuristics apply title/tags but explicitly exclude generic rosary/module routing from subject classification. Correct group errors before publication; multi-subject links have separate provenance."
 }
