@@ -1,0 +1,355 @@
+{
+  "schema": "AO_SCHUSTER_KNECHT_SHARED_NARRATIVE_WITNESSES_V1",
+  "date": "2026-10-15",
+  "status": "BIBLIOGRAPHY_AND_OPENING_TOC_SOURCE_REVIEW_NOT_AUTHORIZED_PROSE",
+  "owner": "Atlas PR #1069 research handoff; Source Parsing PR #1229 owns future actual text processing",
+  "keyFinding": "Knecht 1894 first-English-edition preface explicitly identifies Dr Schuster's Bible History as its narrative; Knecht writes/adds commentary. Scholarly edition variations may alter narrative wording. Do not create duplicate body text.",
+  "sourceFamilies": [
+    {
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "originalAuthor": "Ignaz Schuster (1813–1869)",
+      "workType": "CATHOLIC_SCHOOL_BIBLE_HISTORY",
+      "bodyOriginal": "Authorial Bible narrative",
+      "spanning": "Selected histories of both Old and New Testaments; NOT full 73-book coverage",
+      "verifiedFrom": "Bishop Knecht's first-English-edition preface says the narrative of Practical Commentary is Dr Schuster's Bible History",
+      "evidence": "https://www.ecatholic2000.com/knecht/untitled-03.shtml"
+    },
+    {
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "originalAuthor": "Friedrich Justus Knecht (1839–1921)",
+      "workType": "SCHUSTER_NARRATIVE_WITH_CATHOLIC_COMMENTARY",
+      "bodyOriginal": "Schuster Bible History narrative plus Knecht original commentary, with translation/adaptation differences across editions",
+      "verifiedFrom": "1910 English edition contents and 1894 editor's preface",
+      "evidence": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "SCHUSTER-EN-1889-SADLIER",
+      "language": "en",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "W. H. Sadlier, 1889, 404 pages",
+      "witnessKind": "HISTORICAL_PRINT_BIBLIOGRAPHIC",
+      "url": "https://books.google.com/books/about/Illustrated_Bible_History_of_the_Old_and.html?id=C3L8zwEACAAJ",
+      "physicalScan": "NOT_LOCATED_OR_EXAMINED",
+      "titlePageRead": false,
+      "tocRead": false,
+      "textRead": false,
+      "importEligibility": "HOLD"
+    },
+    {
+      "id": "SCHUSTER-EN-1950-32ND-TAN-2014",
+      "language": "en",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "TAN Books 2014 reproduction; thirty-second edition, imprimatur 21 Aug 1950; originally B. Herder",
+      "witnessKind": "PUBLISHER_PREVIEW_20_PAGE_MODERN_REPRINT",
+      "url": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "page2": "Exact chapter title page identifies 32nd edition",
+      "page3": "2014 TAN typography rights statement, 1950 imprimatur",
+      "page4": "Contents first eight OT chapters and printed starting page figures 1,3,4,5,8,10,13,15",
+      "textRead": false,
+      "allowedUse": "STRUCTURAL_BIBLIOGRAPHIC_EVIDENCE_ONLY_NO_TEXT_OR_IMAGES_IMPORTED",
+      "importEligibility": "BLOCK_MODERN_REPRINT_RIGHTS_AND_UNCOLLATED_PRINT"
+    },
+    {
+      "id": "SCHUSTER-FR-1887-COUISSINIER",
+      "language": "fr",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "Histoire biblique de l'Ancien et du Nouveau Testament; Abbé Marie-Barthélemy Couissinier translation, B. Herder, Fribourg 1887, 296 pages",
+      "witnessKind": "LIBRARY_CATALOGUES_TWO_INDEPENDENT",
+      "url": "https://www.cageweb.be/catalog.html?f%5Blanguage_facet%5D%5B%5D=fre&f%5Bpub_date%5D%5B%5D=1887&q=schuster",
+      "secondaryCatalogUrl": "https://www.adabi.org.mx/vufind/Record/1082271",
+      "printCopyKnown": true,
+      "fullReadableDigitalText": "NOT_LOCATED",
+      "frenchTableOfContents": "NOT_EXAMINED",
+      "originalGermanBase": "One undated library catalogue entry reports translation from 58th German edition; not yet independently confirmed for 1887 printing",
+      "importEligibility": "HOLD"
+    },
+    {
+      "id": "KNECHT-EN-1910-HERDER",
+      "language": "en",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "edition": "1910 third revised English B. Herder translation/adaptation from German 16th edition",
+      "witnessKind": "DIGITIZED_HISTORICAL_BOOK_AND_ONLINE_TRANSCRIPTION",
+      "url": "https://en.wikisource.org/wiki/A_Practical_Commentary_on_Holy_Scripture",
+      "tocUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "translatorHistorical": "Source's 1894 preface credited Schuster narrative, but 1910 edition requires literal comparison against the direct English Schuster historical print",
+      "importEligibility": "HOLD_PRINT_AND_RIGHTS_GATE"
+    }
+  ],
+  "openingEnglishTocSections": [
+    {
+      "chapterId": "schuster:chapter:OT-I",
+      "originalEnglishChapterNumber": "I",
+      "originalEnglishHeadingFromModernPublisherPreview": "The Creation of the World",
+      "frenchDisplayLabelWorkingMetadataOnly": "La Création du monde",
+      "englishEditionPrintPageFromPublisherPreview": 1,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-I",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-1-1-31"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        0
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-II",
+      "originalEnglishChapterNumber": "II",
+      "originalEnglishHeadingFromModernPublisherPreview": "Creation and Fall of the Angels",
+      "frenchDisplayLabelWorkingMetadataOnly": "Création et chute des anges",
+      "englishEditionPrintPageFromPublisherPreview": 3,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-II",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [],
+      "atlasDisplayIndicesAuditOnly": [],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "Original source chapter exists; no separate canonical 151-event stop; keep it in the book reading order."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-III",
+      "originalEnglishChapterNumber": "III",
+      "originalEnglishHeadingFromModernPublisherPreview": "Creation of the First Man; Paradise; First Commandment; Creation of Eve",
+      "frenchDisplayLabelWorkingMetadataOnly": "Création du premier homme ; paradis ; premier commandement ; création d’Ève",
+      "englishEditionPrintPageFromPublisherPreview": 4,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-III",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [],
+      "atlasDisplayIndicesAuditOnly": [],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "Original source chapter exists; no separate canonical 151-event stop; keep it in the book reading order."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-IV",
+      "originalEnglishChapterNumber": "IV",
+      "originalEnglishHeadingFromModernPublisherPreview": "The Fall of Our First Parents",
+      "frenchDisplayLabelWorkingMetadataOnly": "La Chute de nos premiers parents",
+      "englishEditionPrintPageFromPublisherPreview": 5,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-IV",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-3-1-24"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        1
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-V",
+      "originalEnglishChapterNumber": "V",
+      "originalEnglishHeadingFromModernPublisherPreview": "Cain and Abel",
+      "frenchDisplayLabelWorkingMetadataOnly": "Caïn et Abel",
+      "englishEditionPrintPageFromPublisherPreview": 8,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-V",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-4-1-16"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        2
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-VI",
+      "originalEnglishChapterNumber": "VI",
+      "originalEnglishHeadingFromModernPublisherPreview": "The Deluge",
+      "frenchDisplayLabelWorkingMetadataOnly": "Le Déluge",
+      "englishEditionPrintPageFromPublisherPreview": 10,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-VI",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-7-1-24"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        3
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-VII",
+      "originalEnglishChapterNumber": "VII",
+      "originalEnglishHeadingFromModernPublisherPreview": "Noe's Offering; His Children",
+      "frenchDisplayLabelWorkingMetadataOnly": "L’Offrande de Noé ; ses enfants",
+      "englishEditionPrintPageFromPublisherPreview": 13,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-VII",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-9-8-17"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        4
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    },
+    {
+      "chapterId": "schuster:chapter:OT-VIII",
+      "originalEnglishChapterNumber": "VIII",
+      "originalEnglishHeadingFromModernPublisherPreview": "The Tower of Babel",
+      "frenchDisplayLabelWorkingMetadataOnly": "La Tour de Babel",
+      "englishEditionPrintPageFromPublisherPreview": 15,
+      "english1950_2014PublisherPreview": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
+      "knecht1910NarrativeAlignment": {
+        "chapterId": "knecht:OT-VIII",
+        "status": "SAME_CHAPTER_HEADING_AND_KNECHT_AUTHOR_PREFACE_CREDITS_SCHUSTER_NARRATIVE_NOT_VERBATIM_ALIGNED",
+        "sourceUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml"
+      },
+      "frenchCouissinier1887Alignment": {
+        "chapterId": null,
+        "status": "HISTORICAL_EDITION_EXISTS_CHAPTER_HEADING_AND_TEXT_NOT_LOCATED",
+        "page": null
+      },
+      "atlasEventKeys": [
+        "biblical:passage:genesis-11-1-9"
+      ],
+      "atlasDisplayIndicesAuditOnly": [
+        5
+      ],
+      "sourceTextBlockIds": [],
+      "actualParagraphCollationStatus": "NOT_STARTED",
+      "editorNote": "A canonical Atlas milestone shares the subject but has not been verified at verbatim edition-text level."
+    }
+  ],
+  "openGates": [
+    {
+      "code": "SCHUSTER_ORIGINAL_LANGUAGE",
+      "scope": "Original German text and which author's edition each translation uses",
+      "status": "NOT_COLLATED",
+      "remedy": "Identify actual German source edition and demonstrate text lineage, avoiding claims of line-for-line equivalence."
+    },
+    {
+      "code": "SCHUSTER_EN_PREVIEW_COPYRIGHT",
+      "scope": "TAN 2014 32nd edition, 1950 imprimatur and modern typographical rights",
+      "status": "MODERN_COPY_NOT_APP_IMPORTABLE_AS_IS",
+      "remedy": "Work from independently examined historic eligible publication, not the current publisher's typeset PDF."
+    },
+    {
+      "code": "FR_SCAN",
+      "scope": "Couissinier French 1887 296-page book",
+      "status": "LIBRARY_CATALOG_ONLY_NO_FULL_WITNESS",
+      "remedy": "Find accessible historical scan with title, contents and passage pages; do not claim French chapter equivalence yet."
+    },
+    {
+      "code": "CHAPTER_II_III",
+      "scope": "Schuster book chapters II Angels, III Adam/Eve",
+      "status": "CANONICAL_ATLAS_NO_DISTINCT_SELECTED_STOP",
+      "remedy": "Preserve both book chapters in the reading sequence, link adjacent Genesis context without manufacturing canonical event keys."
+    },
+    {
+      "code": "WORK_VS_EDITION",
+      "scope": "Schuster EN 1889 vs 1950 publisher preview; Schuster FR 1887; Knecht EN 1910",
+      "status": "NOT_TEXTUALLY_ALIGNED",
+      "remedy": "Compare identical sentence passages and source chapter boundaries with print-page image evidence."
+    },
+    {
+      "code": "SCRIPTURE_CANON",
+      "scope": "Bible History selected episodes compared against full 73-book Catholic Bible",
+      "status": "NOT_BOOK_BY_BOOK_CERTIFIED",
+      "remedy": "Do not use 151 selected Atlas milestones or classroom history chapter count to infer 73-book coverage."
+    },
+    {
+      "code": "TRANSLATION",
+      "scope": "New AI-assisted EN/FR translation from verified source",
+      "status": "PERMITTED_NOT_STARTED",
+      "remedy": "Prefer historic human editions; where translation needed, preserve source author's exact meaning/structure, cite source segments, label as AI-assisted and require manual review."
+    }
+  ],
+  "counts": {
+    "schusterOpeningChapters": 8,
+    "linked151Milestones": 6,
+    "bookChaptersBeyondSixOriginAtlasStops": 2,
+    "historicFrenchReadableScansVerified": 0,
+    "historicEnglish1889PagesRead": 0,
+    "modernPreviewContentsPagesInspected": 1,
+    "sourceParagraphsApproved": 0,
+    "aiNarrativeWords": 0
+  },
+  "policy": {
+    "keepExistingAuthorship": true,
+    "noAiCreatedRetelling": true,
+    "faithfulAITranslationAllowedAfterExactOriginalTextVerified": true,
+    "noInventedBridging": true,
+    "translationRequiresEditionAndWitness": true,
+    "neverRepublishModernPublisherPDFOrArtwork": true,
+    "noPermissionsRequests": true,
+    "notFull73BookCoverage": true,
+    "doNotTreatKnechtAsIndependentNarrative": true
+  }
+}
