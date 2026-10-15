@@ -10,8 +10,8 @@ assert.ok(coverage.boundary1960.listedCanonizationDates.every(d=>d<coverage.elig
 const yr=new Set(coverage.years.map(x=>x.year));
 assert.equal(yr.size,51);
 assert.equal(coverage.progress.yearsIndexedPost1960,51);
-assert.equal(coverage.progress.yearsWithDetailedEventsStaged,25);
-assert.equal(coverage.progress.yearsAwaitingSourceTranscription,26);
+assert.equal(coverage.progress.yearsWithDetailedEventsStaged,51);
+assert.equal(coverage.progress.yearsAwaitingSourceTranscription,0);
 assert.equal(coverage.progress.namedIndividualRecordsStaged,cohort.persons.length);
 assert.equal(coverage.progress.groupMembershipsStillToExpand,cohort.groups.reduce((n,x)=>n+(x.unexpandedMemberCount??x.memberCount??0),0));
 assert.deepEqual(coverage.years.filter(x=>x.status==="NAMES_AND_EVENTS_STAGED").map(x=>x.year).sort((a,b)=>a-b),cohort.coverage.scopeYears);
@@ -21,4 +21,4 @@ assert.equal(coverage.progress.approximateUnidentifiedMartyrsOtranto,800);
 for(const row of coverage.years)assert.equal(row.sourceUrl,`https://www.causesanti.va/it/celebrazioni/canonizzazioni/${row.year}.html`);
 assert.ok(coverage.absentFromCurrentDirectoryIndexButNotAssertedEmpty.some(x=>x.year===2026));
 assert.ok(coverage.absentFromCurrentDirectoryIndexButNotAssertedEmpty.every(x=>x.status==="NOT_LISTED_DO_NOT_INFER_NO_CANONIZATION"));
-console.log("Post-1960 year source index: PASS (51 post-cutoff indexed years, 25 staged, 26 pending)");
+console.log("Post-1960 year source index: PASS (51 indexed post-cutoff years staged, 0 year pages pending)");
