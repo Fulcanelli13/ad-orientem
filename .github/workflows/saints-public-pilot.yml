@@ -13,6 +13,7 @@ on:
       - 'data/saints/holiness-first-editorial-pilot-20261015.v1.json'
       - 'data/saints/parallel-owner-identity-bridge-20261015.v1.json'
       - 'tests/saints-public-pilot.mjs'
+      - 'tests/saints-public-phone-desktop.mjs'
   workflow_dispatch:
 jobs:
   release-safety:
@@ -31,3 +32,9 @@ jobs:
         run: |
           node tests/explore-surface.mjs
           node tests/sacred-geography-atlas.mjs
+      - name: Install browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify public release on phone and desktop
+        run: node tests/saints-public-phone-desktop.mjs
