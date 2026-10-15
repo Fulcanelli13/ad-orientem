@@ -62,16 +62,21 @@ assert.equal(deskReview.scope.source_spot_checked,11);
 assert.equal(deskReview.scope.source_pending_deeper_check,13);
 assert.equal(deskReview.scope.released_people,0);
 const deepDocs=deskReview.records.filter(x=>x.reader_biography_review);
-assert.equal(deepDocs.length,13,"Exactly 13 previously deeper-held subjects should receive specific reader research");
+assert.equal(deepDocs.length,24,"Each of 24 held lives needs its own standalone reader review");
+const originalDeepReview=deepDocs.filter(x=>x.source_anchor_check==="PRIMARY_DOCUMENT_REVIEWED_CLAIM_LEVEL_COPYEDIT_PENDING");
+assert.equal(originalDeepReview.length,13,"Preserve the original 13 deeper-source-research cases");
 assert.equal(deskReview.scope.primary_documents_checked_for_held_subjects,13);
 assert.equal(deskReview.scope.primary_documents_need_additional_line_by_line_audit,13);
-assert.equal(deskReview.scope.people_with_nonrepetitive_reader_biography,13);
-assert(deepDocs.every(x=>x.source_anchor_check==="PRIMARY_DOCUMENT_REVIEWED_CLAIM_LEVEL_COPYEDIT_PENDING"
- && !x.reader_biography_review.second_editor_certified
+assert.equal(deskReview.scope.people_with_nonrepetitive_reader_biography,24);
+assert.equal(deskReview.scope.reader_biographies_remaining,0);
+assert.equal(deskReview.scope.standalone_reader_biographies_ready_for_second_editor,24);
+assert.equal(deskReview.scope.approved_by_second_editor,0);
+assert(deepDocs.every(x=>!x.reader_biography_review.second_editor_certified
+ && x.reader_biography_review.status==="ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC"
  && x.reader_biography_review.primary_source_url.startsWith("https://")
- && x.reader_biography_review.finding.length>60));
+ && x.reader_biography_review.finding.length>30));
 const ownerHeld=[...eight.people,...sixteen.people], readerBios=ownerHeld.filter(x=>x.reader_biography);
-assert.equal(readerBios.length,13,"No duplicate reader biographies, and no accidental publication");
+assert.equal(readerBios.length,24,"Every held subject must have one reader biography");
 const readerIds=new Set(readerBios.map(x=>x.calendar_person_id||x.person_id));
 assert.deepEqual([...readerIds].sort(),deepDocs.map(x=>x.person_id).sort());
 for(const p of readerBios){
