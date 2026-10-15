@@ -19,7 +19,7 @@ function chooseSite(links, id, approvedPaths) {
 // USCCB material is only displayed when jurisdiction=US is explicitly selected.
 // Vatican General Roman Calendar decrees are usable globally after publication.
 export function buildReviewedSanctoralCards({
-  date,language="en",jurisdiction="UNSPECIFIED",observedPrincipalId=null,
+  date,language="en",jurisdiction="UNSPECIFIED",observedPrincipalId=null,observedCommemorationIds=[],
   observanceRegistry,pilotPersons=[],censusPersons=[],doctorRoster=[],
   martyrGroups=[],visualCrosswalk,approvedSiteMedia=[]
 }={}) {
@@ -55,7 +55,8 @@ export function buildReviewedSanctoralCards({
     if(!isGroup && !person && !doc)continue;
     if(!isGroup && person?.publicationHold)continue;
     const c1962=person?.calendar1962?.principalId || doc?.observanceSourceIdentity;
-    if(sameIdentity(c1962,observedPrincipalId))continue;
+    if(sameIdentity(c1962,observedPrincipalId)||
+      (Array.isArray(observedCommemorationIds)&&observedCommemorationIds.some(x=>sameIdentity(c1962,typeof x==="string"?x:x?.id))))continue;
     const title=isGroup?read(group.presentation.title,lang):
       objectName(person?.name,lang)||doc?.name||"";
     const rationale=isGroup?read(group.presentation.whyHonoured,lang):
