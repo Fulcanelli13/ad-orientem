@@ -1,7 +1,7 @@
 # Living Sanctoral — Phase 2 source-bound pilot (15 October 2026)
 
 **Canonical issue:** [#1224](https://github.com/Fulcanelli13/ad-orientem/issues/1224)  
-**Status:** source-ID reconciliation completed for all 70 protected third-class feasts and 34/38 Doctors; six-person devotional projection is **not wired to runtime**. Not a complete post-1960 canonisations census.  
+**Status (15 Oct):** 70/70 protected 1962 feast IDs; 34/38 Doctors matched to old resolver; **51/51 official source-year pages transcribed** (258 named post-1960 saints, 13 cohorts); **NOT** an exhaustive person/feast-day or liturgical certification, and **NOT** wired to runtime.  
 **Canonical baseline:** `main` 1962 Calendar and shared day/Proper resolver. No mass-text, rank, colour, commemoration or selected-formulary override in this pilot.
 
 ## Existing production ownership discovered
@@ -152,3 +152,23 @@ Additional independent [Dicastery year source](https://www.causesanti.va/it/cele
 **Latest cumulative counts:** **25/51** source years staged; 26 indexed years outstanding; **54 canonisation events**; **179 named individual canonised persons**; **7 martyr groups**, with **207 precisely countable unexpanded members** (including 141 in 2000) and **Otranto c. 800 as a separate approximate cohort**; after the original six pilot records are merged and three existing names reused, **182 unique canonical research person IDs**.
 
 This is a source and identity inventory only; it does not certify new feast dates or change the 1962 Mass selection. Existing pure source-projection and eligibility tests remain in the CI pipeline.
+
+
+## 15 October — final source-year intake: **51/51 Dicastery-listed post-cutoff years**
+
+The official [Dicastery year index](https://www.causesanti.va/it/celebrazioni/canonizzazioni.html) was rechecked as of 15 October 2026. The 26 remaining listed years (1961–1977 and 1982–1998, for years actually enumerated in that index) have been transcribed from their respective original Vatican year pages. The census intake now has:
+
+- **51/51 indexed years recorded**; no remaining *indexed year-page* transcription tasks.
+- **112 recorded canonisation event dates** and **258 individually named canonised persons** in `data/calendar/post1960-canonizations.official-batch1.v1.json`.
+- **13 martyr/group cohort records**, with **497 precisely countable but as-yet-unexpanded individuals** after excluding 15 already named cohort members. The **approximately 800 Martyrs of Otranto** remain a separate, expressly approximate cohort and are not treated as 800 individually verified identities.
+- Reconciliation with the six-person original pilot gives **261 distinct canonical research person IDs** (Newman, Carlo Acutis and Padre Pio appear in both sources and are counted once).
+
+**Critical distinction:** This closes **the 51 source-year-page intake**, *not* the entire global person inventory, every equivalent canonisation, or all liturgical observance metadata. Years absent from the public directory, including 2026 at the audit timestamp, have not been certified empty; future canonisations are a maintenance input.
+
+**Cohort boundaries:** Year 1984's 103 Korean martyrs (2 individually named, 101 still unexpanded); 1987's 16 Japanese martyrs (3 identified, 13 unexpanded); 1988's 117 Vietnamese martyrs (1 linked, 116 unexpanded) and three Paraguay Jesuit martyrs (all 3 named); 1970's Forty Martyrs of England and Wales (40 unexpanded), and 1964's 22 Ugandan Catholic martyrs (2 named, 20 unexpanded) are stored separately. `memberCount` must never be added to individually named members again, and other Christian martyrs must not be silently included in a Catholic canonisation cohort.
+
+**1997 source correction:** [The Dicastery's 1997 year page](https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html) names Edwige di Polonia / Jadwiga, but its descriptive paragraph describes a duchess and Cistercian connections consistent with an earlier different St Hedwig. The [8 June 1997 papal canonisation homily](https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19970608_cracovia.html) explicitly names **Queen Hedwig of Poland**, Wawel and the Jagiellonians, settling the identity. Canonical ID `saint.jadwiga-queen-poland` is now tagged as adjudicated by a primary papal document, with the erroneous secondary description recorded as a source discrepancy. **Do not link her to Hedwig of Silesia.**
+
+**Formal limitations:** No newly transcribed individual has an inferred universal 1962/modern feast date, liturgical class, Proper, independently approved celebrant option or artwork assignment. `Cum sanctissima` gate remains fail-closed; this research census is not wired to live Calendar, the homepage, or the Mass reader.
+
+**Next acceptance sequence (do not restart the same year audit):** (1) expand 497 exactly enumerated martyr identities where authoritative member lists exist and retain Otranto approximate status; (2) align identities with the established historical saints/art and Doctors registries; (3) independently certify *universal vs particular vs devotional* saint dates and required local authorities, beginning with well-supported current-calendar dates; (4) inspect legal precedence/permission and available approved traditional formularies; (5) add a small reviewed supplementary visual Calendar panel without changing the principal 1962 Mass. Maintain one GitHub source-of-truth PR, not a second calendar.
