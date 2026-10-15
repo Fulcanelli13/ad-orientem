@@ -25,9 +25,27 @@ Primary images: https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volum
 
 These checks constitute **targeted corrections and structural progress**, not a claim of a fully verified Latin quotation or completed first page.
 
+## Page-257 paragraph audit and bounded proofing handoff — next review pass
+
+The [1913 printed page 257 / image 305](https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305) has **two physical columns**. To prevent the 12 OCR editing blocks from creating false authorial paragraphs, the working JSON now contains **nine provisional print-paragraph groups**, each with member-block IDs and the status `PROVISIONAL_PRINT_INDENT_CENSUS_NOT_HUMAN_CERTIFIED`.
+
+The most important joins to retain are **P257-02a + P257-02b** (one opening early-liturgy paragraph split between the short excerpt and its OCR draft continuation), **P257-06 + P257-07** (the discussion of Latin continues around the physical column break), and provisionally **P257-08 + P257-09** (Damasus and the ensuing Pseudo-Ambrose quotation). That last grouping is **not a certified original paragraph boundary**: it requires a larger image/indentation check, along with the transition from the long quotation to P257-10. Group 9/P257-11 continues to **printed page 258 / image 306**, with that join still unapproved. The nine groups are a **review target**, not nine certified source-text paragraphs. The parser now refuses duplicated, reordered, unmapped, automatically certified, or cross-page-approved candidate groupings.
+
+A further correction in the **second embedded Latin quotation** preserves the printed/secondary-witness spelling **`adscensionis`** rather than the earlier draft's normalized `ascensionis`. It has been corrected *only in the provisional transcription*; the adjoining `cœlum` versus `cælum` print ligature remains **unresolved**, so the phrase and the passage are not editorially certified.
+
+Remaining high-priority decisions for an independent editor:
+
+1. Magnify and compare each Latin letter in P257-09 against the printed 1913 image, including `coelum/cælum`, `adscensionis`, `hanc panem`, `Fac nos`, quotation punctuation, references and typographic ligatures.
+2. Check **all nine tentative paragraph groups** against original printed indentation, including P257-08→09 and P257-09→10; record *yes/no/uncertain* for every block boundary.
+3. Verify physical left/right column continuity and the p257→p258 break without inserting a synthetic paragraph or punctuation.
+4. Confirm every historical book/chapter reference and separate Fortescue's conjectural analysis from quoted patristic material.
+5. Provide an independent reviewer ID, dated collation record, residual uncertainty count and explicitly bounded rights approval before changing `fullTextProofread:false` or the four-excerpt whitelist.
+
+**Independent full-page certifications remain zero.** This audit does not approve public display of the OCR-assisted transcription.
+
 ## Technical record and review model
 
-`data/source-text/fortescue-1913-p257-variant-collation.v1.json` contains **18 targeted comparisons** with inspected block IDs, source or secondary readings, exact decisions, independent source corroboration where available, and unresolved flags. The statuses deliberately distinguish *print/source-locator corroborated* from *preliminary scan visual reading* and *unresolved original typography*.
+`data/source-text/fortescue-1913-p257-variant-collation.v1.json` contains **19 targeted comparisons** with inspected block IDs, source or secondary readings, exact decisions, independent source corroboration where available, and unresolved flags. The statuses deliberately distinguish *print/source-locator corroborated* from *preliminary scan visual reading* and *unresolved original typography*.
 
 `tests/source-text-provisional-page.mjs` now verifies that every collation point refers to an existing historical working block, that the Clement reference is `(xl)`, that the contrary New Advent reference is recorded, and that unresolved Latin readings and editorial hold states remain explicitly unresolved. These checks **do not** prove that every word on printed p.257 has been independently transcribed or that the long Latin quote is exact.
 
