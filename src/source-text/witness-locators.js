@@ -48,6 +48,11 @@ export function validateExternalLocatorBinding({profile,locator,hostUrl,nodeKind
   throw new Error("SOURCE_WITNESS_LINK_REQUIRED");
  const allowed=[profile.witnessUrl,...(profile.witnessUrls??[])].filter(Boolean);
  if(!allowed.includes(hostUrl))throw new Error("SOURCE_WITNESS_URL_NOT_REGISTERED");
+ if(profile.observedLocatorPages){
+  const pinned=profile.observedLocatorPages[record.sourceLocator];
+  if(!pinned)throw new Error("SOURCE_WITNESS_LOCATOR_PAGE_UNVERIFIED");
+  if(pinned!==hostUrl)throw new Error("SOURCE_WITNESS_LOCATOR_WRONG_PAGE");
+ }
  return Object.freeze({...record,externalPage:hostUrl});
 }
 export function editionQualifiedCitation({work,passageId,sourceAnchor}={}){
