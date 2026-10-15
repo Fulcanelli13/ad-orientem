@@ -1,0 +1,25 @@
+name: Sacred Art W66 source-demand reconciliation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
+      - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
+      - ".github/workflows/sacred-visual-w66-coverage.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-demand-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check counts, non-promotion and no-permission policy
+        run: node tests/sacred-visual-w66-visual-demand-preaudit.mjs
