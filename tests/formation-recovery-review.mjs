@@ -330,6 +330,57 @@ assert.ok(node.innerHTML.includes('data-rr-source-panel="CR-LIT-07"'),
   "CR-LIT-07 must retain a folded source-evidence panel");
 node.listeners.click(makeClick({back:true}));
 
+// All 22 current owner rewrites must reach their exact UI evidence row.
+// The prior-audit reconciliation test already validates the historical screen,
+// old/new role fingerprints and section source identities; this test checks
+// the separate presentation boundary without certifying passages or quotations.
+assert.equal(formationCurrent.changed_previous_screened_sections.length,22);
+const changedByDossier=new Map();
+for(const change of formationCurrent.changed_previous_screened_sections){
+  assert.equal(change.section_key,
+    change.scope+"::"+change.owner+"::"+change.section_key.split("::")[2],
+    "Rewritten section scope/owner identity mismatch");
+  const dossier=coverage.dossiers.find(d=>d.id===change.owner);
+  assert.ok(dossier?.synthesis?.sourceRegistry instanceof Map,
+    "Rewritten source owner missing from canonical reader: "+change.owner);
+  const index=Number(change.section_key.split("::")[2]);
+  assert.ok(Number.isInteger(index)&&index>=0&&index<dossier.synthesis.sections.length,
+    "Invalid rewritten section index "+change.section_key);
+  const section=dossier.synthesis.sections[index];
+  assert.equal(section.role,change.role,"Rewritten source role migrated: "+change.section_key);
+  assert.deepEqual(section.source_ids,change.new_source_ids,
+    "Current owner source assignment lost: "+change.section_key);
+  assert.notDeepEqual(section.source_ids,change.old_source_ids,
+    "Historical sources restored wholesale: "+change.section_key);
+  for(const id of change.new_source_ids)
+    assert.ok(dossier.synthesis.sourceRegistry.get(id)?.url?.startsWith("https://"),
+      "Current scoped witness unresolved: "+change.section_key+" "+id);
+  if(!changedByDossier.has(change.owner))changedByDossier.set(change.owner,[]);
+  changedByDossier.get(change.owner).push({change,index});
+}
+let renderedRewrittenRoles=0;
+for(const [owner,changes] of changedByDossier){
+  node.listeners.click(makeClick({dossier:owner}));
+  const html=node.innerHTML;
+  assert.ok(html.includes('data-rr-canonical-synthesis="'+owner+'"'));
+  assert.ok(html.includes('data-rr-source-panel="'+owner+'"'));
+  for(const {change,index} of changes){
+    const match=html.match(new RegExp(
+      '<li data-rr-evidence-row="'+owner+'-s'+index+'">([\\s\\S]*?)<\\/li>'));
+    assert.ok(match,"Missing rewritten section evidence row "+change.section_key);
+    assert.ok(match[1].includes('class="rrEvidenceRole">'+change.role),
+      "Evidence role attribution changed: "+change.section_key);
+    const displayed=[...match[1].matchAll(/data-rr-source-local-id="([^"]+)"/g)]
+      .map(x=>x[1]);
+    assert.deepEqual(displayed,change.new_source_ids,
+      "Stale or cross-role sources shown in reader: "+change.section_key);
+    renderedRewrittenRoles++;
+  }
+  node.listeners.click(makeClick({back:true}));
+}
+assert.equal(renderedRewrittenRoles,22,
+  "Not all current rewritten Formation sections are protected in the reader");
+
 for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
                  "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
   node.listeners.click(makeClick({dossier:id}));
