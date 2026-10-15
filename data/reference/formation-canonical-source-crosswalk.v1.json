@@ -73,7 +73,8 @@
     "unresolved_section_references": 0,
     "unapproved_context_bindings": 408,
     "evidence_edges": 1541,
-    "uncited_source_bindings": 12
+    "uncited_source_bindings": 12,
+    "cross_url_work_identities_verified": 1
   },
   "witness_index": [
     {
@@ -2076,7 +2077,7 @@
         "FORM-SYN-06::V1"
       ],
       "distinct_titles": 2,
-      "inspection": "URL_NOT_INDEPENDENTLY_TESTED_IN_THIS_PASS"
+      "inspection": "OFFICIAL_PAGE_OPENED_2026_10_15__SAME_DOCUMENT_IDENTITY_ONLY"
     },
     {
       "id": "FW-0180",
@@ -3021,7 +3022,7 @@
         "FORM-SYN-01::V1"
       ],
       "distinct_titles": 1,
-      "inspection": "URL_NOT_INDEPENDENTLY_TESTED_IN_THIS_PASS"
+      "inspection": "OFFICIAL_PAGE_OPENED_2026_10_15__SAME_DOCUMENT_IDENTITY_ONLY"
     },
     {
       "id": "FW-0262",
@@ -8810,7 +8811,15 @@
           "FORM-SYN-04::V1",
           "FORM-SYN-06::V1"
         ],
-        "status": "MANUAL_WORK_EDITION_CONFIRMATION_REQUIRED__DO_NOT_AUTOMERGE"
+        "status": "SAME_WORK__PRESERVE_DISTINCT_URL_WITNESSES_AND_ORIGINAL_SCOPES",
+        "work_identity_status": "SAME_DOCUMENT_IDENTITY_CONFIRMED_BY_TWO_PUBLIC_HOLY_SEE_PAGES",
+        "work_candidate_id": "WORK-PASTOR-AETERNUS-1870",
+        "verification_scope": "The two official Vatican HTML pages are accessible and identify the same 18 July 1870 dogmatic constitution, in Latin; no paragraph-by-paragraph comparison of all citations has been performed.",
+        "verified_urls": [
+          "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+          "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+        ],
+        "verified_on": "2026-10-15"
       }
     ],
     "uncited_sources": [
