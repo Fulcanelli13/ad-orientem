@@ -5,16 +5,16 @@ const pilot=JSON.parse(readFileSync(new URL("../data/calendar/living-sanctoral-p
 assert.equal(census.schema,"AO_POST1960_CANONIZATION_EVENT_CENSUS_BATCH1_V1");
 assert.equal(census.publicationStatus,"RESEARCH_ONLY_NOT_RUNTIME");
 assert.equal(census.coverage.completeGlobal1960To2026,false);
-assert.deepEqual(census.coverage.scopeYears,[2014,2018,2019,2022,2024,2025]);
-assert.equal(census.years.length,6);
-assert.equal(census.events.length,13);
-assert.equal(census.persons.length,49);
-assert.equal(census.groups.length,2);
-assert.equal(census.groups.reduce((n,g)=>n+g.memberCount,0),27);
+assert.deepEqual(census.coverage.scopeYears,[2014,2016,2017,2018,2019,2021,2022,2024,2025]);
+assert.equal(census.years.length,9);
+assert.equal(census.events.length,19);
+assert.equal(census.persons.length,67);
+assert.equal(census.groups.length,3);
+assert.equal(census.groups.reduce((n,g)=>n+g.memberCount,0),57);
 const pIds=new Set(census.persons.map(p=>p.id));
 const eIds=new Set(census.events.map(e=>e.id));
 const gIds=new Set(census.groups.map(g=>"canon-group."+g.id));
-assert.equal(pIds.size,49);assert.equal(eIds.size,13);assert.equal(gIds.size,2);
+assert.equal(pIds.size,67);assert.equal(eIds.size,19);assert.equal(gIds.size,3);
 for(const p of census.persons){
   assert.match(p.id,/^saint\.[a-z0-9-]+$/);
   assert.equal(p.liturgicalDate.monthDay,null,"Never invent a universal memorial date");
@@ -42,8 +42,11 @@ assert.equal(census.events.filter(e=>e.date==="2025-09-07")[0].namedIndividualId
 assert.equal(census.events.filter(e=>e.date==="2025-10-19")[0].namedIndividualIds.length,7);
 assert.equal(census.events.find(e=>e.date==="2024-10-20").groupIds.length,1);
 assert.equal(census.events.find(e=>e.date==="2024-12-18").kind,"EQUIVALENT_CANONIZATION");
+assert.equal(census.events.find(e=>e.date==="2017-05-13").namedIndividualIds.length,2);
+assert.equal(census.events.find(e=>e.date==="2017-10-15").groupIds.length,1);
+assert.equal(census.persons.find(p=>p.id==="saint.teresa-calcutta").canonizedOn,"2016-09-04");
 const pilotIds=new Set(pilot.persons.map(p=>p.id));
 for(const reusedId of census.coverage.knownCanonicalPersonIdReuse)assert.ok(pIds.has(reusedId) && pilotIds.has(reusedId));
 assert.equal(census.persons.find(p=>p.id==="saint.carlo-acutis").canonizedOn,
   pilot.persons.find(p=>p.id==="saint.carlo-acutis").recognition.canonizedOn);
-console.log("Post-1960 official canonization census: PASS (13 events, 49 named persons, 2 groups containing 27 persons)");
+console.log("Post-1960 official canonization census: PASS (19 events, 67 named persons, 3 groups containing 57 persons)");
