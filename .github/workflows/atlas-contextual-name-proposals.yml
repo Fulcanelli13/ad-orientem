@@ -1,0 +1,32 @@
+name: Biblical Atlas contextual historical names review
+on:
+  push:
+    paths:
+      - "data/explore/biblical-atlas-contextual-name-proposals.research.v1.json"
+      - "docs/research/BIBLICAL-ATLAS-CONTEXTUAL-NAME-DECISIONS-20261015.md"
+      - "tests/atlas-contextual-name-proposals.mjs"
+      - ".github/workflows/atlas-contextual-name-proposals.yml"
+  pull_request:
+    paths:
+      - "data/explore/biblical-atlas-contextual-name-proposals.research.v1.json"
+      - "docs/research/BIBLICAL-ATLAS-CONTEXTUAL-NAME-DECISIONS-20261015.md"
+      - "tests/atlas-contextual-name-proposals.mjs"
+      - ".github/workflows/atlas-contextual-name-proposals.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contextual-history-research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check canonical Atlas source and held annotation decisions
+        run: |
+          node tests/atlas-pleiades-reconciliation.mjs
+          node tests/atlas-geography-phase2.mjs
+          node tests/atlas-source-collation.mjs
+          node tests/atlas-historical-toponym-audit.mjs
+          node tests/atlas-contextual-name-proposals.mjs
