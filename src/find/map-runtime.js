@@ -166,6 +166,8 @@ export function exploreMapFeatures(items){
         heritage_primary:String(item.heritage_primary??""),
         place_type:String(item.place_type??"other"),
         name:String(item.title??""),
+        ...(typeof item.atlas_label==="string"&&item.atlas_label.trim()&&item.atlas_label_basis==="existing_settlement_anchor"
+         ?{atlas_label:item.atlas_label.trim()}:{}),
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate),
         indicative_only:Boolean(g.indicative_only),
@@ -428,6 +430,20 @@ export async function mountExploreMap(container,items,{
         "text-optional":true},
       paint:{"text-color":"#e9dfcc","text-halo-color":"#08121b",
         "text-halo-width":1.4,"text-opacity":0.92}});
+    // The review-only physical atlas labels its existing source-qualified
+    // settlements. Never label traditional event sites or create map points.
+    if(styleOverride){
+      map.addLayer({id:prefix+"-scripture-settlement-labels",type:"symbol",source:sourceId,
+        minzoom:4.5,
+        filter:["all",["!",["has","point_count"]],["has","atlas_label"]],
+        layout:{"text-field":["get","atlas_label"],
+          "text-size":["interpolate",["linear"],["zoom"],4.5,10,8,13],
+          "text-anchor":"top","text-offset":[0,1.1],
+          "text-allow-overlap":false,"text-ignore-placement":false,
+          "text-optional":true},
+        paint:{"text-color":"#efe0b8","text-halo-color":"#142631",
+          "text-halo-width":2,"text-halo-blur":0.35}});
+    }
     // Real affiliation insignia appear only for classified TLM venues.
     // Progressive loading keeps every existing pin usable when a source blocks CORS.
     if(features.some(feature=>feature.properties?.lens==="tlm")){
