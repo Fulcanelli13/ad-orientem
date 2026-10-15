@@ -59,9 +59,9 @@ export function buildReviewedSanctoralCards({
     const title=isGroup?read(group.presentation.title,lang):
       objectName(person?.name,lang)||doc?.name||"";
     const rationale=isGroup?read(group.presentation.whyHonoured,lang):
-      read(person?.presentation?.whyHonoured,lang)||null;
+      read(person?.presentation?.whyHonoured,lang)||read(row.editorialTeaser?.whyHonoured,lang)||null;
     const shortHistory=isGroup?read(group.presentation.context,lang):
-      read(person?.presentation?.historicalContribution,lang)||null;
+      read(person?.presentation?.historicalContribution,lang)||read(row.editorialTeaser?.context,lang)||null;
     const site=chooseSite(visualCrosswalk.links,row.subjectId,approvedPaths);
     const sources=[row.sourceUrl,...(person?.presentation?.verifiedFurtherReadingUrls||[])];
     results.push(Object.freeze({
