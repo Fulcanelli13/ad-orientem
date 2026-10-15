@@ -176,3 +176,28 @@ The test `tests/saints-source-index.mjs` asserts exact **307**, **258+13**, **38
 ### Next integration boundary
 
 As source-owner projects deliver a source-backed life, an exact identity link, Calendar observance or an approved reproduction, attach it to that *one* canonical person's reader entry. Do not backfill biographies through AI prose, repeat the user's artwork ratings, or infer personal identities from saint names/regions/groups. No permissions requests. No unrelated pipeline mutation, PR auto-merge, or GitHub Pages release from this work.
+
+
+## Phase 18 — exact-ID navigation across Saints, Calendar and source records
+
+15 October 2026 · Native Explore implementation on existing draft PR #1227.
+
+The **30 reading profiles** now carry buttons to their genuinely matching **historical sanctoral source**, **post-1960 official canonization record**, or **38-Doctor roster record**. The relation is made **only** when the underlying source IDs are exactly the same; similarity of names, historical artwork labels, shared dates and proposed aliases do not establish an identity. Each source-only record has a reverse **Read the full Saints profile** button when it has an exact native profile owner.
+
+| Cross-reference | Exact profile matches |
+| --- | ---: |
+| Historical source subject to full reader | 13 |
+| Later official canonization record to reader | 6 |
+| Doctor of the Church roster to reader | 8 |
+| Distinct of 30 reader profiles with any exact match | **22** |
+| Combined exact buttons across the 30 profiles | **27** |
+
+The **Doctors (38)** list is a dedicated fourth Saints source-reference tab, distinct from the existing 30 biography list and the user-approved Doctor category filter. New Doctor titles declared after 1962 remain **post-1962**, even if an older Mass calendar already commemorated that person; source index entries are not newly assigned feast observances.
+
+Native Saint profile cards now display **Open this date in Calendar** only when the pre-existing identity bridge supplies a verified, actually observed **2026** civil date and original source ID. Archived nominal dates and modern canonization dates **never** trigger that handoff. The existing standard Explore-to-Calendar shell route is reused, with source-authority failure handling, rather than introducing another calendar engine.
+
+Navigation is fully delegated and validates each proposed target against the currently projected canonical record list. It clears stale search and filter state, does not open unknown IDs, and returns exactly to a source record or biography. This has no change to any map pin, artwork approval, user's artwork ratings or Mass/Proper assignment.
+
+CI now checks 13+6+8 exact links, 22 unique matched readers, 38 Doctor titles and historically scoped declarations. Phone/desktop Playwright acceptance also clicks Doctor → full biography → historic source → full biography. This is **feature implementation**, not another research or approval round.
+
+The no-auto-promotion policy remains. PR #1227 is draft/unmerged, and public Pages remains unchanged.
