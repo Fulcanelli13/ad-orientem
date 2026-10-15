@@ -113,7 +113,9 @@
     "historical_amendment_roles_still_same": 10,
     "historical_amendment_role_reassignments": 6,
     "crisis_editorial_historical_amendments": 12,
-    "crisis_editorial_role_corrections_requiring_rescope": 3
+    "crisis_editorial_role_corrections_requiring_rescope": 3,
+    "historical_preview_citation_count_changed_owners": 27,
+    "historical_preview_citation_count_unchanged_owners": 114
   },
   "added_source_bindings": [
     {
@@ -2185,6 +2187,224 @@
         "AO26_CRAUT05_CRITI_3"
       ],
       "status": "SCOPED_CRITICAL_RESPONSE_REWRITTEN__HISTORICAL_SOURCES_PRESERVED_NOT_AUTOTRANSFERRED"
+    }
+  ],
+  "historical_preview_citation_count_changes": [
+    {
+      "owner": "CR-LIT-04",
+      "source_edges_before": 8,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-05",
+      "source_edges_before": 13,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-DOC-09",
+      "source_edges_before": 10,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-002",
+      "source_edges_before": 8,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-053",
+      "source_edges_before": 9,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 7,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ORG-09",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-07",
+      "source_edges_before": 13,
+      "source_edges_now": 13,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 11,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-08",
+      "source_edges_before": 10,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ORG-05",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-09",
+      "source_edges_before": 13,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 11,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-12",
+      "source_edges_before": 12,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-IDM-05",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-01",
+      "source_edges_before": 14,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-06",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-001",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-007",
+      "source_edges_before": 12,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-009",
+      "source_edges_before": 10,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-058",
+      "source_edges_before": 11,
+      "source_edges_now": 13,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-DOC-05",
+      "source_edges_before": 13,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-11",
+      "source_edges_before": 11,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "source_edges_before": 13,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-MOR-01",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-MOR-06",
+      "source_edges_before": 10,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "source_edges_before": 13,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-02",
+      "source_edges_before": 9,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-03",
+      "source_edges_before": 8,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 2,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "source_edges_before": 10,
+      "source_edges_now": 7,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
     }
   ]
 }
