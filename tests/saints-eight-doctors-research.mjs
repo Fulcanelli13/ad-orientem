@@ -111,4 +111,5 @@ for(const p of draft.people.filter(p=>enrichedDoctors.has(p.calendar_person_id))
  assert(joined("fr")>=110,"French research life should not be abridged relative to English");
 }
 
+assert.equal(draft.people.filter(x=>x.reader_biography).length,5);
 console.log("PASS eight source-backed bilingual Doctor life drafts, 24 per-claim sources, two qualified private accounts, no release mutations");
