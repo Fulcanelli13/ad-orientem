@@ -81,7 +81,7 @@ const doctorsRows=doctors.doctors.map(d=>{
  const status=id&&md?evaluateSource(id,md):null;
  return {calendar_person_id:d.canonicalPersonId,name:d.name,
   doctor_declaration_after_1962:!!d.recognitionAfter1962,
-  1962_nominal_identity:id,nominal_mm_dd:md,
+  nominal_1962_identity:id,nominal_mm_dd:md,
   source_status:d.status1962??null,
   observation:status,
   held_reason:!id?"NO_1962_SOURCE_ID_IN_DOCTOR_OWNER_NOT_NEGATIVE_FEAST_CLAIM":null};
