@@ -317,7 +317,7 @@ export function createFindOwner(win=globalThis){
       mapHandle?.destroy?.();mapHandle=null;
       const mapNode=node.querySelector?.("[data-bible-map]");
       try{
-        const handle=await mountExploreMap(mapNode,atlasMapItems(atlasStops,state.bibleIndex),{
+        const handle=await mountExploreMap(mapNode,atlasMapItems(atlasStops,state.bibleIndex,{cinematic:bibleCinemaPreview,language:language(win)}),{
           win,allowEmpty:true,initialViewport:{center:[35,31],zoom:3.6},
           styleOverride:bibleCinemaPreview?ATLAS_PHYSICAL_STYLE:null,
           onSelect:id=>{
@@ -643,7 +643,7 @@ export function createFindOwner(win=globalThis){
     const map=mapHandle?.map;
     const sync=()=>{
       const source=map?.getSource?.("ao-explore-items");if(!source)return;
-      source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index))});
+      source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index,{cinematic:bibleCinemaPreview,language:lang}))});
       if(!active.geo){
         try{map.setPaintProperty?.("ao-explore-points","circle-color","#79909f");}catch{}
       }
