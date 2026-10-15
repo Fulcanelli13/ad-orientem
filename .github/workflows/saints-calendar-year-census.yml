@@ -5,6 +5,7 @@ on:
     paths:
       - 'tests/saints-calendar-year-census.mjs'
       - 'tools/saints/project-observed-day-subject-demand.mjs'
+      - 'tools/saints/reconcile-2026-cross-owner-evidence.mjs'
       - '.github/workflows/saints-calendar-year-census.yml'
   workflow_dispatch:
 jobs:
@@ -22,6 +23,15 @@ jobs:
         run: node tests/saints-calendar-year-census.mjs
       - name: Derive source-name and sacred-art demand triage (no identity promotion)
         run: node tools/saints/project-observed-day-subject-demand.mjs
+      - name: Download pinned owner-only Calendar and W63 art input (read-only)
+        run: |
+          mkdir -p artifacts/saints-owner-inputs
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/622e9073272948e90549851ad30efcf3b7d7ec2a/data/calendar/cum-sanctissima-protected-third-class.review.v1.json" -o artifacts/saints-owner-inputs/calendar-protected-70.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/622e9073272948e90549851ad30efcf3b7d7ec2a/data/calendar/doctors-of-church-roster.review.v1.json" -o artifacts/saints-owner-inputs/calendar-doctors-38.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/8cfaaf62e7d0dee14dbad182e58d0aa8009dfcdb/data/research/sacred-visual-w62-live-route-and-saint-identity-inputs-20261015.v1.json" -o artifacts/saints-owner-inputs/art-w62-historical-expectations.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/8cfaaf62e7d0dee14dbad182e58d0aa8009dfcdb/data/research/sacred-visual-w63-2026-365-date-candidate-image-index-20261015.v1.json" -o artifacts/saints-owner-inputs/art-w63-dated-source-evidence.json
+      - name: Join observed 2026 source IDs to protected 1962, Doctors, W62 and W63
+        run: node tools/saints/reconcile-2026-cross-owner-evidence.mjs
       - name: Keep auditable source-owner census
         uses: actions/upload-artifact@v4
         if: always()
