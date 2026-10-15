@@ -211,6 +211,12 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintIndexSynopsis{font:16px/1.6 var(--ao-font-body,Georgia,serif);color:#ecdfcb;margin:15px 0}
 .aoSaintIndexReferences{display:grid;gap:12px;border-top:1px solid #78684b55;padding:15px 0;color:#e4d3b6}
 .aoSaintIndexReferences a{color:#e5c98b;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoSaintCatalogueScopes{display:flex;flex-wrap:wrap;gap:6px;padding:9px 14px;border-bottom:1px solid rgba(217,197,154,.14)}
+.aoSaintCatalogueScopes button{min-height:42px;border:1px solid rgba(217,197,154,.22);border-radius:10px;padding:7px 11px;
+ background:#121d29;color:#c9bca9;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoSaintCatalogueScopes button.active{border-color:#bfa779;color:#f3e5ce;background:#302a23}
+.aoSaintCatalogueScopes button:focus-visible{outline:2px solid #e2c88d;outline-offset:2px}
+@media(max-width:390px){.aoSaintCatalogueScopes button{font-size:11px;padding-inline:9px}}
 .aoSaintCatalogueFacets{display:flex;gap:6px;overflow-x:auto;padding:7px 13px 12px;scrollbar-width:thin}
 .aoSaintCatalogueFacets button{flex:none;min-height:38px;white-space:nowrap;border-radius:999px;padding:7px 12px;
  background:#101a24;color:#d1c2a9;border:1px solid rgba(217,197,154,.21);
