@@ -76,7 +76,8 @@ for(const language of ["en","fr"]){
  ]){
   assert(subject,"Expected source index subject missing");
   const vm=buildExploreViewModel({language,lens:"saints",view:"list",items,
-    selectedId:subject.item_id,filters:{query:"",saintScope:scope}});
+    selectedId:subject.item_id,filters:{query:"",saintScope:scope},
+    saintsRelease:{channel:"RESEARCH_PREVIEW",researchEnabled:true}});
   const html=renderExploreToString(vm);
   assert(html.includes('data-find-filter="saintScope"'),"Browse tabs not visible");
   assert(html.includes('aoSaintSourceIndexSheet'),"Selecting a reference must show a reference sheet");
