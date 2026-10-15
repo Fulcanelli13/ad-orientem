@@ -57,7 +57,12 @@
       "verified": "HTML_CONTENT_READ_2026-10-15",
       "rights": "NOT_CLEARED",
       "handling": "INDEX_AND_LINK_ONLY",
-      "warning": "One work is distributed across multiple EWTN URLs; preserve printed section number and per-section host page"
+      "warning": "One work is distributed across multiple EWTN URLs; preserve printed section number and per-section host page; do not guess which EWTN installment contains an unverified section",
+      "observedLocatorPages": {
+        "§407": "https://www.ewtn.com/catholicism/library/spiritual-life-12632",
+        "§409": "https://www.ewtn.com/catholicism/library/spiritual-life-12632",
+        "§643": "https://www.ewtn.com/catholicism/library/spiritual-life-12636"
+      }
     },
     {
       "id": "WIT-HUME-E10-ONLINE",
