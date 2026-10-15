@@ -903,7 +903,8 @@
         "Confiteor of servers",
         "Aufer a nobis"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CARD.003",
@@ -915,7 +916,8 @@
         "Qui tollis",
         "doxology"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CARD.006",
@@ -925,7 +927,8 @@
         "Alleluia or Tract",
         "Sequence if source-selected"
       ],
-      "cueIds": "PROPER_DEPENDENT_NO_UNSOURCED_SPLITS"
+      "cueIds": "PROPER_DEPENDENT_NO_UNSOURCED_SPLITS",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CARD.009",
@@ -936,7 +939,8 @@
         "Crucifixus etiam pro nobis",
         "Et exspecto"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CARD.010",
@@ -949,7 +953,8 @@
         "Lavabo",
         "Suscipe sancta Trinitas"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.05",
@@ -962,7 +967,8 @@
         "acceptabilem",
         "Corpus et Sanguis"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.06",
@@ -973,7 +979,8 @@
         "genuflection",
         "elevation"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.07",
@@ -984,7 +991,8 @@
         "genuflection",
         "elevation"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.09",
@@ -994,7 +1002,8 @@
         "Abraham",
         "Melchisedech"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.10",
@@ -1005,7 +1014,8 @@
         "profound bow",
         "heavenly altar interpretation"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CANON.11",
@@ -1015,7 +1025,8 @@
         "somno pacis",
         "locum refrigerii lucis et pacis"
       ],
-      "cueIds": "AO.SM.C0194_REQUIRES_CHECK"
+      "cueIds": "AO.SM.C0194_REQUIRES_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     },
     {
       "owner": "AO.CARD.030",
@@ -1025,7 +1036,8 @@
         "Et Verbum caro factum est",
         "genuflection"
       ],
-      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK",
+      "legacyCuePlaceholderStatus": "SUPERSEDED_WHERE_MATCHED_BY_FINER_CANON_CUE_RESEARCH; remaining cases still require source-cue checks"
     }
   ],
   "bibliographyIdentityHandoff": [
@@ -1378,5 +1390,13 @@
       }
     ],
     "interpretation": "The initial 422 archive concentrates on 15 author/institution labels; absence of Ratzinger/Guardini/Hahn/etc from these 422 alone does not prove absence from parallel later research. This gap motivates reconciliation, NOT a new duplicate work registration."
+  },
+  "finerCanonCueResearch": {
+    "status": "21_EXACT_LATIN_CUE_SUBSTRINGS_MATCHED_NO_UI_ATTACHMENT",
+    "source": "data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json",
+    "cases": 32,
+    "phraseAnchors": 21,
+    "interpretativeDossiers": 5,
+    "pending": "Independent original printed work edition collation and rubrical gesture-source pairing remain separate."
   }
 }
