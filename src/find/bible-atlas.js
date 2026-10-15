@@ -197,26 +197,6 @@ export function atlasIndexForPin(stops,index,pin){
  const same=matches.filter(s=>s.era===stops[index]?.era);
  return (same.length?same:matches).reduce((best,s)=>Math.abs(s.index-index)<Math.abs(best.index-index)?s:best).index;
 }
-// For review only: remove modern political/transport annotation from the
-// present-day basemap. This is NOT a verified historical coastline.
-// High-contrast sea/land silhouette for the opt-in atlas visual study.
-// The same contemporary coastline data remain; no claim of period accuracy.
-export function atlasCinemaBasemapTone(layer){
- const id=String(layer?.id??"");
- if(!id||id.startsWith("ao-"))return null;
- if(layer.type==="background")return Object.freeze({property:"background-color",value:"#172532"});
- if(layer.type==="fill")
-  return Object.freeze({property:"fill-color",
-   value:/(water|ocean|lake|river|marine)/i.test(id)?"#172532":"#40433e"});
- return null;
-}
-export function atlasCinemaHideModernBasemapLayer(layer){
- const id=String(layer?.id??"");
- if(!id||id.startsWith("ao-"))return false; // never suppress app-owned qualified pins
- if(layer.type==="symbol")return true; // modern country/city/road labels
- if(layer.type==="line"&&/(administrative|admin-|boundary|border|road|rail|motorway|trunk|transport|highway)/i.test(id))return true;
- return false; // keep land, water, relief and unpolitical coastlines
-}
 // Timeline shortcuts derive only from the current, stable 151-event corpus.
 export function atlasCinemaChapters(stops){
  const result=[],seen=new Set();
