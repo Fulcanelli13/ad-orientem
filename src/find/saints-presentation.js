@@ -59,6 +59,10 @@ export function renderSaintPlaceSheet(vm){
        /^sancti:\d{2}-\d{2}[a-z]?:[1-4]:[wr]$/.test(observed.principalSourceId)){
       html+='<p class="aoSaintCalendarContext"><strong>'+esc(dateLabel(observed.civilDate))+'</strong>'
         +' · '+esc(say("Observed in the 1962-calendar cycle (2026)","Observé dans le calendrier de 1962 (2026)"))+'</p>';
+      // Only the Calendar owner-backed exact observed date is actionable.
+      // Never offer a Calendar handoff for an archived nominal-date candidate.
+      html+='<button type="button" class="aoSaintCalendarOpen" data-explore-calendar-date="'+esc(observed.civilDate)+'">'
+        +esc(say("Open this date in Calendar","Ouvrir cette date dans le calendrier"))+' →</button>';
       html+='<p class="aoSaintCalendarCaution">'+esc(say(
         "2026 observance; not a timeless feast date or authorization to select a Mass.",
         "Observance de 2026 ; ni date universelle permanente ni autorisation de choisir une messe."))+'</p>';
@@ -70,7 +74,7 @@ export function renderSaintPlaceSheet(vm){
     }
     if(!observed&&!life?.celebration){
       const candidate=saint.calendar_candidate;
-      const date=/^\\d{2}-\\d{2}$/.test(candidate||"")?candidate.slice(3)+"/"+candidate.slice(0,2):null;
+      const date=/^\d{2}-\d{2}$/.test(candidate||"")?candidate.slice(3)+"/"+candidate.slice(0,2):null;
       html+='<p class="aoSaintOtherFeast">'+esc(date
         ?say("Historical calendar candidate · ","Date historique à vérifier · ")+date
         :say("Feast date awaiting Calendar verification","Date de fête en attente de vérification"))+'</p>';
@@ -92,6 +96,15 @@ export function renderSaintPlaceSheet(vm){
       ?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.id)+'</a>':""}).filter(Boolean);
     if(sources.length)html+='<details class="aoSaintReading"><summary>'
       +esc(say("Read further","Pour approfondir"))+'</summary><div>'+sources.join("")+'</div></details>';
+    // Exact owner-identity comparisons only. A similar name, feast date or
+    // historical icon is never a sufficient reason to create a cross-link.
+    const crosslinks=item.kind==="SAINT_CATALOGUE_PROFILE"?arr(item.source_index_links):[];
+    if(crosslinks.length)html+='<nav class="aoSaintCrosslinks" aria-label="'+esc(say("Related source records","Références associées"))+'">'
+      +crosslinks.filter(link=>["historical","later"].includes(link.scope)&&
+        /^saints:(historic|modern):saint\.[a-z0-9-]+$/.test(link.item_id??"")&&
+        link.identity_policy==="EXACT_SOURCE_ID_ONLY")
+        .map(link=>'<button type="button" data-saint-crosslink-scope="'+esc(link.scope)+'" data-saint-crosslink-target="'+esc(link.item_id)+'">'
+          +esc(link["label_"+language]||link.label_en)+' →</button>').join("")+'</nav>';
     if(index<people.length-1)html+='<div class="aoSaintPersonDivider"></div>';
     html+='</article>';
   }
@@ -152,6 +165,11 @@ export function renderSaintSourceIndexSheet(vm){
   const links=arr(item.source_links).filter(x=>sourceUrl(x));
   if(links.length)html+='<div class="aoSaintIndexReferences"><strong>'+esc(say("Original source","Source d’origine"))+'</strong>'
     +links.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(sourceUrl(x))+'">'+esc(x.issuer||x.title||say("Source","Source"))+' ↗</a>').join("")+'</div>';
+  const profile=meta.related_profile_item_id;
+  if(/^saints:person:saint:[a-z0-9-]+$/.test(profile||"")){
+    html+='<nav class="aoSaintCrosslinks"><button type="button" data-saint-crosslink-scope="profiles" data-saint-crosslink-target="'+esc(profile)+'">'
+      +esc(say("Read the full Saints profile","Lire la biographie complète"))+' →</button></nav>';
+  }
   html+='</section></div>';
   return html;
 }
@@ -211,6 +229,11 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintIndexSynopsis{font:16px/1.6 var(--ao-font-body,Georgia,serif);color:#ecdfcb;margin:15px 0}
 .aoSaintIndexReferences{display:grid;gap:12px;border-top:1px solid #78684b55;padding:15px 0;color:#e4d3b6}
 .aoSaintIndexReferences a{color:#e5c98b;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoSaintCrosslinks{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;padding-top:10px;border-top:1px solid rgba(217,197,154,.14)}
+.aoSaintCrosslinks button,.aoSaintCalendarOpen{min-height:42px;text-align:left;background:#17232e;border:1px solid rgba(217,197,154,.25);
+ border-radius:9px;padding:9px 12px;color:#e8d4ad;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoSaintCalendarOpen{margin:4px 0 9px}
+.aoSaintCrosslinks button:focus-visible,.aoSaintCalendarOpen:focus-visible{outline:2px solid #dec792;outline-offset:2px}
 .aoSaintCatalogueScopes{display:flex;flex-wrap:wrap;gap:6px;padding:9px 14px;border-bottom:1px solid rgba(217,197,154,.14)}
 .aoSaintCatalogueScopes button{min-height:42px;border:1px solid rgba(217,197,154,.22);border-radius:10px;padding:7px 11px;
  background:#121d29;color:#c9bca9;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
