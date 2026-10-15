@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:226,
-  pilgrimages:212,
+  shrines:233,
+  pilgrimages:219,
   routes:20,
   temporalLinks:77,
-  sources:387,
+  sources:401,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){

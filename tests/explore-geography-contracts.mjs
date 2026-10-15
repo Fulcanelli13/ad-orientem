@@ -30,7 +30,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -245,6 +245,13 @@ assert.deepEqual(
     "place:EG:zeitoun-coptic-saint-mary",
     "place:IT:santa-croce-gerusalemme-rome",
     "place:BA:medjugorje-st-james-parish",
+    "place:IT:lanciano-eucharistic-miracle",
+    "place:PT:santarem-santissimo-milagre",
+    "place:HU:mariapocs-greek-catholic-basilica",
+    "place:CN:sheshan-our-lady-help-christians",
+    "place:PH:manaoag-rosary-basilica",
+    "place:GT:esquipulas-black-christ-basilica",
+    "place:PY:caacupe-our-lady-miracles",
     ...launch.promoted.map(item=>item.place_id),
     ...exceptions.promoted.map(item=>item.place_id),
   ].sort(),
@@ -304,8 +311,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 55,
-  places: 231,
+  geoAreas: 58,
+  places: 238,
   directoryPlaceLinks: 1,
 });
 
