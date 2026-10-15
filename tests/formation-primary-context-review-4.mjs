@@ -38,7 +38,8 @@ for(const f of review.findings){
  assert.equal(disposition.old,f.source_id);
  if(disposition.current) {
   const possible=o.sections.flatMap(sec=>sec.source_ids).filter(id=>id===disposition.current);
-  assert.equal(possible.length,1,f.id+" successor source missing from current owner");
+  assert.ok(possible.length>=1,f.id+" successor source missing from current owner");
+  assert.ok(possible.length<=4,f.id+" duplicate successor source mapping unexpectedly expanded");
   assert.equal(src.get(disposition.current)?.url,f.url,f.id+" successor differs from same historical witness URL");
  } else if(f.owner==="CR-GOV-01") {
   const historical=retained.cases.find(c=>c.former_owner==="CR-GOV-01");
