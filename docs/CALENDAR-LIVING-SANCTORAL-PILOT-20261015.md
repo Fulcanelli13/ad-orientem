@@ -58,3 +58,10 @@ Every asserted status has a linked source ID; missing material remains flagged r
 - Sacred-art calendars [#885](https://github.com/Fulcanelli13/ad-orientem/issues/885) and [#944](https://github.com/Fulcanelli13/ad-orientem/issues/944)
 
 No duplicate saints library, separate frontend or replacement Mass engine should arise from this workstream.
+
+
+## Additional Doctor-title census gate (same branch)
+
+`data/calendar/doctors-of-church-roster.review.v1.json` now enumerates **38 candidate Doctor identities**, reconciled to the six-person pilot IDs where they overlap. Eight Doctor declarations after 1962 have dated Holy See witnesses or index entries: Teresa of Ávila (1970), Catherine of Siena (1970), Thérèse of Lisieux (1997), John of Ávila (2012), Hildegard of Bingen (2012), Gregory of Narek (2015), Irenaeus of Lyon (2022), and John Henry Newman (2025).
+
+**Status distinction:** The list is an identity census corroborated by a published July 2026 38-Doctor compilation plus USCCB's 38th Doctor report; it is **not** a primary-source certification of all 38 entries. Pre-1962 doctor records still require canonical ID reconciliation against the source resolver. No invented dates or feast ranks are published. See `node tests/calendar-doctors-roster-review.mjs`.
