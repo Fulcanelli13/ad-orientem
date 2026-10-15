@@ -98,4 +98,17 @@ for(const p of draft.people){
 }
 assert(draft.people.some(p=>p.life_events_review.birth.date_precision==="YEAR_RANGE"),
  "Medieval birth uncertainty must be explicitly retained");
+
+const enrichedDoctors=new Set(["saint.gregory-great","saint.john-chrysostom","saint.francis-sales",
+ "saint.alphonsus-liguori","saint.augustine-hippo","saint.bonaventure"]);
+assert.equal(draft.people.filter(p=>p.editorial_expansion).length,6);
+for(const p of draft.people.filter(p=>enrichedDoctors.has(p.calendar_person_id))){
+ assert.equal(p.editorial_expansion.status,"SOURCE_ANCHORED_BILINGUAL_RESEARCH_REVISION_NOT_APPROVED");
+ assert(p.editorial_expansion.source_urls.length>0);
+ assert(p.editorial_expansion.source_urls.every(u=>p.source_urls.includes(u)));
+ const joined=lang=>[p.why_honoured[lang],...p.biography_facts.map(x=>x[lang])].join(" ").trim().split(/\s+/).length;
+ assert(joined("en")>=110&&joined("en")<=150);
+ assert(joined("fr")>=110,"French research life should not be abridged relative to English");
+}
+
 console.log("PASS eight source-backed bilingual Doctor life drafts, 24 per-claim sources, two qualified private accounts, no release mutations");
