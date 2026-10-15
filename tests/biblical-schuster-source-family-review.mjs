@@ -37,4 +37,22 @@ assert.equal(books.books.reduce((sum,b)=>sum+b.selectedAtlasMilestoneCount,0),15
 assert.equal(books.books.filter(x=>x.testament==="OLD").length,46);
 assert.equal(books.books.filter(x=>x.testament==="NEW").length,27);
 assert.equal(books.policy.doNotConflateNarrativeHistoryWithInspiredScripture,true);
+
+// Page-linked Knecht 1910 transcriptions: boundaries only, not approved historical words.
+const domains=fam.wikisource1910TerritoryReview;
+assert.equal(domains.unproofreadTranscriptions,true);
+assert.equal(domains.scanImagesUnavailableToReview,true);
+assert.equal(domains.authorProseCertified,0);
+assert.equal(domains.territories.length,6);
+assert.equal(domains.territories.filter(t=>t.kind==="HISTORICAL_NARRATIVE").length,3);
+assert.equal(domains.territories.filter(t=>t.kind==="KNECHT_COMMENTARY").length,3);
+for(const t of domains.territories){
+  assert.equal(t.originalPageImagesIndependentlyInspected,false);
+  assert.equal(t.printedPageWordsCertified,false);
+  assert.equal(t.sourceTextImported,false);
+  assert.equal(t.publicationApproved,false);
+  assert.ok(t.startPageTranscriptionUrl.includes("/"+t.djvuStart));
+  assert.ok(t.endPageTranscriptionUrl.includes("/"+t.djvuEnd));
+}
+assert.deepEqual(domains.territories.map(t=>[t.djvuStart,t.djvuEnd]),[[41,43],[43,47],[57,59],[59,62],[62,64],[64,66]]);
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
