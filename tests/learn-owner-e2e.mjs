@@ -447,7 +447,7 @@ try{
         label:node.dataset.aoSlEvidenceBlock??"",
         ids:node.querySelector("[data-ao-sl-claim-sources]")?.dataset?.aoSlClaimSources?.split(" ")||[],
         links:[...node.querySelectorAll(".aoSLInlineSources a[href]")].map(a=>a.href),
-      })),bibliography:[...root.querySelectorAll(".aoSLSources a[href]")].map(a=>a.href),
+      })),bibliography:[...root.querySelectorAll(".aoSLSources > .aoSLSource > a[href]")].map(a=>a.href),
       overflow:root.scrollWidth-root.clientWidth};
   }),SPIRITUAL_LIFE_LESSONS.map(x=>x.id));
   assert.equal(inlineAudit.length,14,"Spiritual Life source audit missed a lesson");
