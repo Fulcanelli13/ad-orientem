@@ -4878,12 +4878,22 @@
     "knechtRole": "COMMENTARY_AND_TRANSLATED_ADAPTED_PRESENTATION_OF_SCHUSTER_NARRATIVE",
     "existingKnechtSectionAssignments": "PROVISIONAL_TOPIC_AND_LOCATOR_MATCHES_FOR_SCHUSTER_NARRATIVE_IN_KNECHT_NOT_SEPARATE_AUTHORIAL_BIBLE_STORIES",
     "primarySourceEvidence": "https://www.ecatholic2000.com/knecht/untitled-03.shtml",
-    "scholarlyWarning": "Knecht first-English-edition preface attributes the narrative to Schuster; Knecht 1910 is a later revised, translated, adapted witness, not automatically word-identical to Schuster 1889 EN or Couissinier 1887 FR."
+    "scholarlyWarning": "Knecht first-English-edition preface attributes the narrative to Schuster; Knecht 1910 is a later revised, translated, adapted witness, not automatically word-identical to Schuster 1889 EN or Couissinier 1887 FR.",
+    "fullAuthorChapterIndexPath": "data/explore/biblical-schuster-182-chapter-toc-evidence.v1.json",
+    "fullAuthorChapterIndexScope": "182 headings and printed start pages from TAN 2014 reprint TOC only, not original 1925/1887 text or automatically approved citation matches",
+    "frenchDigitalAccessUrl": "https://play.google.com/store/books/details/I_Schuster_Histoire_biblique_de_l_Ancien_et_du_Nou?id=iuUejjayBWEC",
+    "frenchHistoricalEditionStatus": "1887 Herder 296-page free ebook LISTED; actual paragraph/chapter text not opened",
+    "modernTocChapterCounts": {
+      "OT": 86,
+      "NT": 96,
+      "total": 182
+    },
+    "englishKnechtSectionIdentityStatus": "101 TOPICAL CHAPTER SELECTORS NOT CERTIFIED VERBATIM SCHUSTER-1925 PASSAGE IDENTITIES"
   },
   "sourcePriority": [
-    "Verified historical Schuster authorial narrative in English/French",
-    "Knecht's distinct explanatory commentary as linked 'Read Further'",
-    "Native Catholic Scripture for gaps",
-    "Secondary historically authored history only when editorially identified and verified"
+    "Schuster historical existing author chapters (English 1925 source scan; French Couissinier 1887 free ebook) as one canonical original-story source lineage, with edition-specific differences",
+    "Separate original 1882 French Schuster abridgement as optional short reader, not a generated abridgement",
+    "Knecht's commentary linked for Read Further, not an independent duplicate history author",
+    "Native Catholic Scripture for passages not present in the historic narrative"
   ]
 }
