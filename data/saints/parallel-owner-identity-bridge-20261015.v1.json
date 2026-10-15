@@ -36,7 +36,9 @@
     "named_commemoration_occurrences": 117,
     "distinct_named_commemoration_strings": 115,
     "distinct_principal_source_ids": 297,
-    "publication_scope": "REAL_2026_RESOLVER_OBSERVATIONS_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION"
+    "publication_scope": "REAL_2026_RESOLVER_OBSERVATIONS_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION",
+    "latest_reproduced_workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221",
+    "latest_dual_json_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221/artifacts/11970800681"
   },
   "identity_links": [
     {
@@ -85,5 +87,21 @@
   "collective_policy": "Calendar's 13 canonization martyr groups and Art's 311 historical saint/group component occurrences must be treated as groups/occurrences, not individual saint ID expansion.",
   "calendar_policy": "Only actual observed principal and commemoration identifiers from the source resolver; keep 1962 liturgical precedence in Calendar owner.",
   "art_policy": "Research link does not approve paintings or create a new canonical artwork master.",
-  "next": "Joint exact source-ID and name adjudication for all 2026 Sanctoral principals and named commemorations; compare with complete nominal 1962, 2024/2027 displaced feats, and W59/W62 historical 252-day/311-occurrence corpus."
+  "next": "Joint exact source-ID and name adjudication for all 2026 Sanctoral principals and named commemorations; compare with complete nominal 1962, 2024/2027 displaced feats, and W59/W62 historical 252-day/311-occurrence corpus.",
+  "subject_demand_review": {
+    "source_file": "saints-2026-daily-subject-demand-review.json",
+    "generator": "tools/saints/project-observed-day-subject-demand.mjs",
+    "review_days": 365,
+    "days_with_source_title_mentions": 222,
+    "provisional_sanctoral_principal_titles": 165,
+    "named_commemoration_title_occurrences": 117,
+    "total_source_title_mentions_not_unique_saints": 282,
+    "lexical_hint_individual_or_person": 187,
+    "lexical_hint_collective_or_group": 41,
+    "lexical_hint_marian": 17,
+    "lexical_hint_other": 37,
+    "canonical_person_id_promotions": 0,
+    "approved_artwork_promotions": 0,
+    "categorisation_note": "Keyword-only hints for an editorial queue; not a statement of sainthood, group membership, painting demand or missing art. All 365 daily image states remain NOT_YET_AUDITED."
+  }
 }
