@@ -13,7 +13,7 @@ function chooseSite(links, id, approvedPaths) {
   const found=ranked.find(x=>x.placePhotoAsset===null || approvedPaths.has(x.placePhotoAsset));
   if(!found)return null;
   const photo=found.placePhotoAsset && approvedPaths.has(found.placePhotoAsset)?found.placePhotoAsset:null;
-  return Object.freeze({placeId:found.placeId,role:found.role,approvedSitePhotoPath:photo,
+  return Object.freeze({placeId:found.placeId,placeName:found.placeName||null,role:found.role,approvedSitePhotoPath:photo,
     mediaKind:photo?"PHYSICAL_SITE_PHOTO_NOT_SACRED_PAINTING":"NO_MEDIA",approvedSacredPaintingId:null});
 }
 // USCCB material is only displayed when jurisdiction=US is explicitly selected.
