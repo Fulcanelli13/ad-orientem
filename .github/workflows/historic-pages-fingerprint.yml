@@ -75,3 +75,25 @@ jobs:
           name: historic-pages-network-fingerprint
           path: artifacts/pages-fingerprint/
           retention-days: 14
+
+  capture-public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Capture actual historic Pages Home at 320, 390, 768 and 1280 px
+        run: node tests/historic-pages-browser-baseline.mjs
+      - name: Retain screenshots and browser diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historic-pages-four-width-screenshots
+          path: artifacts/historic-pages-visual/
+          retention-days: 14
