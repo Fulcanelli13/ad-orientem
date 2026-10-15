@@ -109,7 +109,7 @@ for(const language of ["en","fr"]){
  assert(html.includes("aoSaintCalendarContext"),"Exact observed Calendar context missing from Saints sheet");
  assert(html.includes(language==="fr"?"3 octobre 2026":"3 October 2026"));
  assert(html.includes(language==="fr"?"Observé dans le calendrier de 1962":"Observed in the 1962-calendar cycle"));
- assert(html.includes(language==="fr"?"non d’une date de fête valable pour toute année":"not a timeless feast date"));
+ assert(html.includes(language==="fr"?"ni date universelle permanente":"not a timeless feast date"));
  assert(!html.includes("data-calendar-mass"),"No new Mass selection action");
 }
 const noBridge=projectSaintPlaceItems({...dataset,saintsCalendarBridge:null});
