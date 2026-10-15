@@ -15,6 +15,15 @@ const canon=get('data/presentation/reader-canon-source-map.v1.json');
 assert.equal(col.sixPairTranscriptionCollations.length,6);
 assert.equal(col.fiveInterpretativeIssueReconciliations.length,5);
 assert.equal(col.summary.printedPageImageVerified,1);
+assert.equal(col.phaseGTargetedPassageReview.additionalOriginalPageImagesCertifiedThisPass,0);
+assert.equal(col.phaseGTargetedPassageReview.remainingImageTargets.length,5);
+assert(col.phaseGTargetedPassageReview.remainingImageTargets.every(x=>x.imageVerification==="PENDING" && x.scanImagePage==null));
+assert.equal(col.printedWitnessProcurement.find(x=>x.work==="Guéranger").independentDigitizations.length,2);
+const qa=col.phaseGTargetedPassageReview.crossSourceTranscriptionQa.find(x=>x.work==="Gueranger 1885" && x.massCue==="AO.SM.C0156");
+assert(qa?.transcriptionAsSeen.includes("rides cognita") && qa?.referenceMissalCorrectText.includes("fides"));
+const massMemento=get('data/presentation/reader-text-sung.v1.json').blocks.flatMap(x=>x.units).find(x=>x.cue_id==="AO.SM.C0156");
+assert(massMemento.latin.includes("fides cógnita") && !massMemento.latin.includes("rides"));
+
 const verifiedAlphonsus=col.sixPairTranscriptionCollations.find(x=>x.ids[0]==="VER-032");
 assert.equal(verifiedAlphonsus.printImage.printedPage,46);
 assert.equal(verifiedAlphonsus.printImage.djvuImagePage,48);
