@@ -1,0 +1,59 @@
+import {SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork} from "./contracts.js";
+const SAFE_CHUNK=/^chunks\/[0-9]{4}\.json$/;
+export function createSourceTextReader({manifest,loadChunk}={}){
+ if(manifest?.schema!==SOURCE_TEXT_MANIFEST_SCHEMA||
+   !Array.isArray(manifest.passages)||!Array.isArray(manifest.chunks)||
+   typeof loadChunk!=="function")throw new Error("SOURCE_TEXT_MANIFEST_INVALID");
+ validateSourceWork(manifest.work,{requireReproduction:true});
+ const files=new Set(manifest.chunks.map(x=>x.path)),ids=new Map(),cache=new Map();
+ if(!files.size||manifest.chunks.some(x=>!SAFE_CHUNK.test(x.path))||
+    files.size!==manifest.chunks.length)throw new Error("SOURCE_TEXT_CHUNK_PATH_INVALID");
+ manifest.passages.forEach((p,i)=>{
+  if(!p?.id?.startsWith(manifest.work.id+"/")||ids.has(p.id)||!files.has(p.chunk))
+   throw new Error("SOURCE_TEXT_INDEX_INVALID");
+  ids.set(p.id,{...p,index:i});
+ });
+ async function chunkFor(path){
+  if(!cache.has(path))cache.set(path,Promise.resolve().then(()=>loadChunk(path))
+   .then(data=>{
+    const parsed=typeof data==="string"?JSON.parse(data):data;
+    if(parsed?.schema!=="AO_SOURCE_TEXT_V1"||parsed.workId!==manifest.work.id||
+      !Array.isArray(parsed.passages))throw new Error("SOURCE_TEXT_CHUNK_INVALID");
+    for(const p of parsed.passages){
+     if(ids.get(p.id)?.chunk!==path||typeof p.text!=="string")
+      throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
+    }
+    return new Map(parsed.passages.map(p=>[p.id,p]));
+   }).catch(error=>{cache.delete(path);throw error;}));
+  return cache.get(path);
+ }
+ async function open(id){
+  const hit=ids.get(id);if(!hit)throw new Error("SOURCE_TEXT_PASSAGE_NOT_FOUND");
+  const passage=(await chunkFor(hit.chunk)).get(id);
+  if(!passage)throw new Error("SOURCE_TEXT_PASSAGE_MISSING_FROM_CHUNK");
+  return Object.freeze({passage,previous:manifest.passages[hit.index-1]?.id??null,
+   next:manifest.passages[hit.index+1]?.id??null});
+ }
+ function searchMetadata(query,{limit=30}={}){
+  const q=String(query??"").trim().toLocaleLowerCase();
+  if(!q)return [];
+  return manifest.passages.filter(p=>(p.heading+" "+p.section+" "+p.locator).toLocaleLowerCase().includes(q))
+   .slice(0,Math.max(1,Math.min(100,limit)));
+ }
+ async function searchFullText(query,{limit=30}={}){
+  const q=String(query??"").trim().toLocaleLowerCase();
+  if(!q)return [];
+  const results=[];
+  for(const file of manifest.chunks){
+   const chunk=await chunkFor(file.path);
+   for(const passage of chunk.values()){
+    if(passage.text.toLocaleLowerCase().includes(q))results.push(passage);
+    if(results.length>=Math.max(1,Math.min(100,limit)))return results;
+   }
+  }
+  return results;
+ }
+ return Object.freeze({open,searchMetadata,searchFullText,
+  firstId:manifest.passages[0]?.id??null,loadedChunks:()=>cache.size,
+  work:manifest.work});
+}
