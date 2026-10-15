@@ -49,7 +49,7 @@ Existing source ledgers are from `platform/885-sacred-art-candidates`:
 | `met-910391` (Cecco del Caravaggio, *Christ on the Cross*) | Passion Sunday | 2 |
 | `kress-k0355` (Vittore Carpaccio, *St John the Baptist*) | Advent Sundays | 2 |
 
-The last eight or nine low-scored sources must not be offered again to the user for a fresh rating simply because an older liturgical association table mentions them. Their subject remains valid and better paintings may be sought after the full corpus reuse pass.
+These nine rejected physical originals must not be offered again to the user for a fresh rating simply because an older liturgical association table mentions them. Their subject remains valid and better paintings may be sought after the full corpus reuse pass.
 
 ## What W63 actually proves
 
