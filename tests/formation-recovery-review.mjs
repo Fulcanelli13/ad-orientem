@@ -361,7 +361,7 @@ for(const dossier of coverage.dossiers){
     dossier.id+" lost original source hyperlinks");
   for(const part of dossier.synthesis.sections){
     assert.ok(visibleAnswer.includes('data-rr-synthesis-role="'+part.role+'"'),dossier.id+" missing argumentative role "+part.role);
-    if(part.attribution)assert.ok(visibleAnswer.includes(part.attribution.replace(/&/g,"&amp;").replace(/"/g,"&quot;")),
+    if(part.attribution)assert.ok(visibleAnswer.includes(String(part.attribution).replace(/[&<>"\']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#39;"}[ch]))),
       dossier.id+" failed to show original speaker attribution");
   }
   node.listeners.click(makeClick({back:true}));
