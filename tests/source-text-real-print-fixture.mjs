@@ -25,6 +25,19 @@ assert.equal(sample.records[0].djvuPage-sample.records[0].printedPage,48);
 assert.equal(sample.records[1].djvuPage-sample.records[1].printedPage,48);
 assert.equal(normalizeWitnessLocator(profile,"p255:s001").sourceAnchor,"ce1913-v3-p255-s001");
 assert.throws(()=>normalizeWitnessLocator(profile,"p255:s1"),/PRINT_PAGE_INVALID/);
+const pageAudit=json("data/source-text/fortescue-1913-p257-layout-audit.v1.json");
+assert.equal(pageAudit.printedPage,257);
+assert.equal(pageAudit.scanPage,305);
+assert.equal(pageAudit.sourceTerritories.length,4);
+assert.equal(pageAudit.physicalLayout.printSignature,"III.—17");
+assert.equal(pageAudit.physicalLayout.pageFootnoteApparatus,"NO_SEPARATE_FOOTNOTE_BLOCK_OBSERVED");
+assert.equal(pageAudit.productionStatus.completeOriginalPageTranscriptions,0);
+assert.equal(pageAudit.productionStatus.completePrintedParagraphCensus,"NOT_YET_VERIFIED");
+assert.equal(pageAudit.sourceTerritories[1].textAvailability,"OPENING_FRAGMENT_ONLY");
+assert.equal(pageAudit.sourceTerritories[3].endsOnPrintedPage,258);
+assert.deepEqual(sample.records.map(r=>r.sourceExtent),[
+ "SENTENCE_ONLY","SENTENCE_ONLY",
+ "COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY","PARAGRAPH_OPENING_FRAGMENT"]);
 const parsed=extractReviewedWitnessDocument({
  profile,work:sample.work,review:sample.review,
  heading:sample.heading,records:sample.records
@@ -41,6 +54,8 @@ const bundled=packageSourceDocument(parsed,{chunkSize:1});
 assert.equal(bundled.manifest.chunks.length,4);
 assert.equal(bundled.manifest.passages[0].sourcePage,sample.records[0].hostUrl);
 assert.equal(bundled.manifest.passages[1].sourcePage,sample.records[1].hostUrl);
+assert.equal(bundled.manifest.passages[2].sourceExtent,"COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY");
+assert.equal(bundled.manifest.passages[3].sourceExtent,"PARAGRAPH_OPENING_FRAGMENT");
 let reads=0;
 const reader=createSourceTextReader({manifest:bundled.manifest,loadChunk:async path=>{
  reads++;return bundled.chunks[path];
@@ -78,6 +93,12 @@ wrongPage.records[0].hostUrl=sample.records[1].hostUrl;
 assert.throws(()=>extractReviewedWitnessDocument({
  profile,work:wrongPage.work,review:wrongPage.review,
  heading:wrongPage.heading,records:wrongPage.records}),/WRONG_PAGE/);
+const tamperedExtent=createSourceTextReader({manifest:bundled.manifest,loadChunk:async path=>{
+ const chunk=JSON.parse(bundled.chunks[path]);
+ chunk.passages[0].sourceExtent="COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY";
+ return chunk;
+}});
+await assert.rejects(tamperedExtent.open(tamperedExtent.firstId),/CHUNK_IDENTITY_MISMATCH/);
 const forged=createSourceTextReader({manifest:bundled.manifest,loadChunk:async path=>{
  const chunk=JSON.parse(bundled.chunks[path]);
  chunk.passages[0].text+=" forged";
