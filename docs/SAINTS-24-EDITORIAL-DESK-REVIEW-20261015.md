@@ -61,3 +61,54 @@ This section supersedes the **six revised / 19 under-target** *length* figures i
 Dedicated 8-Doctor, 16-vocation and 30-person QA asserts the expanded records and keeps all 24 profiles `NOT_APP_VISIBLE` / `eligible_for_publication:false`.
 
 **Next substantive editorial gate:** settle sentence-level source and translation issues, resolve high-priority chronology exceptions (especially disputed birth/death facts), and eliminate overlapping claims before any of the 24 profiles reaches the native reader. The native six-person card layout remains the implementation reference.
+
+## Phase 15 — source-level check of 13 deeper-held lives and clean reader copy
+
+15 October 2026 · PR #1227 · **research edits only, no second-editor certification**
+
+### What changed
+
+All **13** biographies previously marked for deeper inspection now have a separate `reader_biography.en/fr` field within their ORIGINAL owning research record. This is a coherent, self-contained account for the approved compact Saint profile, NOT another set of canonical identity records. It avoids appending the older `why_honoured` paragraph and three individual research facts together, which had introduced repetitive wording. The earlier `why_honoured` and sourced facts remain intact for auditing rather than being rendered as a second biography.
+
+- Doctors (5): John Chrysostom; Francis de Sales; Alphonsus Liguori; Augustine of Hippo; Bonaventure.
+- Cross-vocation Saints (8): Vincent de Paul; John Bosco; Charles Borromeo; Maximilian Kolbe; Damien of Molokai; Louise de Marillac; Faustina Kowalska; Elizabeth Ann Seton.
+
+Primary texts were directly inspected for all 13; the linked research reviewer entry records the exact source and the fact checked. **This is not a claim that all 13 biographies have passed sentence-level historical verification.** The remaining **11** held biographies still need the same nonrepetitive reader-copy transformation. Every one of the **24** is still editorially unapproved and not app-visible.
+
+### Verified adjustments and remaining distinctions
+
+| Saint | Source check / resolution | Remaining hold |
+| --- | --- | --- |
+| John Chrysostom | Benedict XVI, 26 Sep 2007, corroborated by independent Catholic biographical reference: **forced** exile; death at Comana in Pontus, 14 Sep 407 | Final bilingual copyedit |
+| Francis de Sales | Benedict XVI, 2 Mar 2011: spiritual crisis, 1593 ordination, 1602 episcopacy and Annecy, lay holiness and Visitation | Final bilingual copyedit; dates from existing linked document |
+| Alphonsus Liguori | Benedict XVI, 30 Mar 2011, and Redemptorist biography: evening chapels, pastoral moral theology; born Marianella, died Pagani | Final bilingual copyedit |
+| Augustine | Benedict XVI, 27 Feb 2008: baptism in 387 was a milestone, not a completed single-stage conversion | Preserve Tagaste/Hippo separate geography |
+| Bonaventure | Benedict XVI, 17 Mar 2010: Journey of the Mind into God; contemplative theology and death during Lyon council | Birth year remains approximate |
+| Vincent de Paul | 2017 Vatican message: mission, poor and priestly formation; Vincentian scholarly chronological dictionary and historical Coste discussion disagree on birth day/year | **Keep birth date contested**, never a fake precise ISO |
+| John Bosco | Pope Francis, 21 Jun 2015: Turin street beginnings and travelling oratory; Salesian founder chronology supports date and Castelnuovo | Avoid unsourced precise hamlet |
+| Charles Borromeo | Benedict XVI, 2010 letter: seminaries and charity in plague of 1576; independent historical biographies corroborate dates and Arona/Milan | Final bilingual copyedit |
+| Maximilian Kolbe | Benedict XVI, 13 Aug 2008, and Auschwitz-Birkenau State Museum: substituted for another prisoner, died after starvation bunker by phenol injection, 14 Aug 1941 | Respectful tone; source distinctions |
+| Damien de Veuster | Vatican canonization biography: volunteered in 1873 and remained at Kalaupapa, dying in 1889 | Avoid collapsing forced Hawaiian settlement into birthplace |
+| Louise de Marillac | *Dilexi te* §51 and the Daughters of Charity: actual formation/leadership and 1657 letter | **Birthplace disputed (Paris vs Le Meux)** |
+| Faustina | John Paul II, 30 Apr 2000: Diary, two rays and active Christian mercy | Distinguish attributed private experience from doctrine; no invented 1962 feast |
+| Elizabeth Ann Seton | Paul VI, 14 Sep 1975: wife, mother, widow, convert and religious; Daughters of Charity original family paper archive | Final direct document-level review for individual life events |
+
+### Quality gates retained
+
+- Research source files keep 30 unique person IDs; zero new place markers, zero app-visible held Saints, zero approved portraits, zero publication changes.
+- 13 standalone bilingual reader paragraphs each keep their independent source references. The current native Explore pilot remains **only six** biographies.
+- All 13 have a `reader_biography.editorial_status=SOURCE_CHECKED_READER_DRAFT_NOT_SECOND_EDITOR_APPROVED` lock. The reviewer register explicitly requires **line-by-line copy and source adjudication** before release, even though page-level primary documents were inspected.
+- Existing six reported extraordinary-event claims stay separate and appropriately attributed. There is no private revelation or miracle score.
+- Calendar remains sole owner of traditional/modern feast claims and Mass/Proper decisions; Sacred Art remains sole owner of artwork metadata and existing user aesthetic ratings. No permission outreach.
+- Next: prepare clean text for the other 11 and then compare all 24 bilingual accounts to the final primary-source evidence.
+
+### Source anchors
+
+- John Chrysostom: https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070926.html
+- Francis de Sales: https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110302.html
+- Vincent de Paul: https://wiki.famvin.org/en/Chronological_Dictionary_of_Vincent%27s_Life/Chapter_01
+- Kolbe: https://www.auschwitz.org/en/museum/news/sixty-ninth-anniversary-of-the-death-of-st-maximilian-kolbe,723.html
+- Louise: https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/10/09/251009h.html
+- Seton: https://via.library.depaul.edu/seton_family_papers/
+
+The complete source links for all other records are stored in each saint's original `source_urls` and `reader_biography.source_urls` fields.
