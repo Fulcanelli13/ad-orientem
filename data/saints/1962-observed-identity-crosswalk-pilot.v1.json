@@ -1,0 +1,70 @@
+{
+  "schema": "ao.saints.1962-observed-identity-crosswalk-pilot.v1",
+  "publication": "SOURCE_BOUND_REVIEW_ONLY",
+  "owner": "Calendar source resolver governs observed principal, rank, commemorations and transfers",
+  "rule": "Fixed general 1962 sanctoral-date candidates can identify a saint only when the actual date resolved by the existing canonical day resolver bears matching observed principal or named commemoration. Never turn a civil date into a certified 1962 observed feast; never alter the 1962 calendar.",
+  "sources": [
+    {
+      "id": "1962-ordo-reference",
+      "title": "1962 Roman Missal calendar for 2026",
+      "url": "https://manualistpress.com/liturgical-calendar/1962-missal/",
+      "role": "INDEPENDENT_DATE_INDEX_NOT_APP_RESOLVER"
+    },
+    {
+      "id": "1962-original-propers",
+      "title": "Missale Meum, 17 October 1962, Saint Margaret Mary",
+      "url": "https://www.missalemeum.com/en/calendar/1962-10-17",
+      "role": "TRADITIONAL_PROPER_REFERENCE"
+    }
+  ],
+  "candidate_general_1962": [
+    {
+      "saint_id": "saint:therese-of-lisieux",
+      "month_day": "10-03",
+      "expected_title_tokens": [
+        "Therese",
+        "Thérèse",
+        "Teresa",
+        "Theresa"
+      ],
+      "status": "CANDIDATE_PENDING_OBSERVED_RESOLVER_AND_LITURGICAL_RECONCILIATION",
+      "source_ids": [
+        "1962-ordo-reference"
+      ]
+    },
+    {
+      "saint_id": "saint:margaret-mary-alacoque",
+      "month_day": "10-17",
+      "expected_title_tokens": [
+        "Margaret Mary",
+        "Marguerite-Marie"
+      ],
+      "status": "CANDIDATE_PENDING_OBSERVED_RESOLVER_AND_LITURGICAL_RECONCILIATION",
+      "source_ids": [
+        "1962-ordo-reference",
+        "1962-original-propers"
+      ]
+    }
+  ],
+  "not_assigned_general_1962": [
+    {
+      "saint_id": "saint:bernadette-soubirous",
+      "reason": "Do not confuse Our Lady of Lourdes (11 February) with a universal 1962 feast of Bernadette; local/religious propers may differ."
+    },
+    {
+      "saint_id": "saint:peter-chanel",
+      "reason": "Canonized before 1962, but no general 1962 principal day assigned from this pilot; regional and Marist propers require their own assessment."
+    },
+    {
+      "saint_id": "saint:claude-la-colombiere",
+      "reason": "Canonized in 1992; keep extra-sanctoral and independently searchable in the 1962 default."
+    },
+    {
+      "saint_id": "blessed:jacques-desire-laval",
+      "reason": "Beatified in 1979, not canonized; keep correct Blessed status and local prayer context separate from the universal 1962 Missal."
+    }
+  ],
+  "after_1962_policy": "Later recognized saints, Doctors and Blesseds belong in a supplementary searchable lives/saints layer, not silently inserted into the historical 1962 rite calendar.",
+  "transfer_policy": "Never claim a date is observed if a higher-rank celebration displaces it; include principal + commemorations from actual Calendar resolution, and distinct local propers only when available.",
+  "note": "This file is a small identity crosswalk pilot, not a certified exhaustive 1962 sanctoral."
+}
