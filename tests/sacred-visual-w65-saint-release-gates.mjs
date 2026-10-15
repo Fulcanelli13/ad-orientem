@@ -1,0 +1,47 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const prior=read("data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json");
+const release=read("data/research/sacred-visual-w65-first-user-five-saints-technical-release-gates-20261015.v1.json");
+assert.equal(release.schema,"AO_SACRED_VISUAL_W65_SAINT_ARTWORK_TECHNICAL_REVIEW_V1");
+assert.equal(release.sourceOwner,"data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json");
+assert.equal(prior.saintPilotPortraitArtworkCandidates.length,2);
+assert.equal(release.entries.length,prior.saintPilotPortraitArtworkCandidates.length);
+assert.equal(release.nativePilotCount,6);
+assert.equal(release.publishedPortraitAssets,0);
+assert.equal(release.guardrails.singleCanonicalArtId,true);
+assert.equal(release.guardrails.noNewPaintingOrNewRating,true);
+assert.equal(release.guardrails.neverReleaseWhenRightsUnknown,true);
+const ids=new Set();
+for(const r of release.entries){
+ const original=prior.saintPilotPortraitArtworkCandidates.find(x=>x.canonicalSaintId===r.saintId);
+ assert.ok(original,"Not linked to art owner's existing saint identity");
+ assert.equal(r.artworkId,original.artworkId,"Never rename or copy a physical work identity");
+ assert.equal(r.aestheticRating,original.sourceScore);
+ assert.equal(r.aestheticRating,5,"Only previously user-approved aesthetic originals");
+ assert.equal(r.noAestheticRerating,true);
+ assert.equal(original.releaseAllowed,false);
+ assert.equal(r.releaseAllowed,false);
+ assert.equal(r.provenance.ratedImageMatched,false);
+ assert.equal(r.provenance.originalObjectId,null);
+ assert.equal(r.media.localAsset,null);
+ assert.equal(r.media.rightsVerified,false);
+ assert.equal(r.media.phoneVisualQA,false);
+ assert.equal(r.media.cropVerified,false);
+ assert.ok(!ids.has(r.artworkId),"Duplicate work");ids.add(r.artworkId);
+ assert.ok(r.rights.state && r.nextAction);
+}
+const therese=release.entries.find(x=>x.saintId==="saint:therese-of-lisieux");
+assert.equal(therese.artistDied,1959);
+assert.ok(therese.rights.note.includes("2029"));
+assert.equal(therese.rights.permissionProof,null);
+const margaret=release.entries.find(x=>x.saintId==="saint:margaret-mary-alacoque");
+assert.equal(margaret.subjectType,"MYSTICAL_APPARITION_SCENE_NOT_SOLO_PORTRAIT");
+assert.equal(margaret.media.originalListedWidth,800);
+assert.equal(margaret.media.originalListedHeight,600);
+assert.equal(margaret.provenance.claimedMuseum,"Vatican Museums");
+assert.match(margaret.source,/commons\.wikimedia\.org\/wiki\/File:/);
+assert.equal(margaret.rights.permissionProof,null);
+assert.deepEqual(prior.saintPilotWithoutMatchedFiveStarInThisPass.map(x=>x.saintId).sort(),
+["blessed:jacques-desire-laval","saint:bernadette-soubirous","saint:claude-la-colombiere","saint:peter-chanel"].sort());
+console.log("PASS: W65 two existing user-five saint artworks retain aesthetic approval, exact original rights/file/mobile holds, no publication");
