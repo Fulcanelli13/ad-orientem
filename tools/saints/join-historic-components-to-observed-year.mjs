@@ -20,8 +20,12 @@ const daysMap=new Map(observed.days.map(d=>[d.date,d]));
 const historyComponentSet=new Set();
 const summary={historical_dates:0,historical_components:0,source_observance_occurrences:0,
  source_observed_as_principal:0,source_exactly_commemorated:0,source_no_exact_same_date_match:0,
+ source_nominal_path_same_but_rank_or_color_changed:0,
  dates_with_at_least_one_principal_source:0,dates_with_only_commemorated_sources:0,
  dates_with_no_exact_observed_historic_source:0,
+ no_exact_observed_with_sanctoral_source_variant:0,
+ no_exact_observed_temporale_override:0,
+ no_exact_observed_sunday_override:0,
  groups_or_traditions:0,source_evidence_overrides:0,
  unique_historical_ids:0, new_person_id_promotions:0,new_approved_artwork_bindings:0};
 const distinctIds=new Set();
@@ -30,10 +34,16 @@ const rows=historic.rows.map(row=>{
  assert(day,"Observed Calendar day absent "+date);
  const principalId=day.principal.source_id;
  const commIds=new Set((day.commemorations.canonical_rows||[]).map(c=>c.source_id).filter(Boolean));
+ const normalize=value=>String(value??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
  const source_observances=row.original_source_observances.map(o=>{
   const match=o.id===principalId?"EXACT_PRINCIPAL_SOURCE_ID":
               commIds.has(o.id)?"EXACT_NAMED_COMMEMORATION_SOURCE_ID":
               "NOT_EXACTLY_OBSERVED_ON_2026_NOMINAL_DATE";
+  const firstTwo=id=>String(id).split(":").slice(0,2).join(":");
+  const sameNominalSourceChangedRankColor=match==="NOT_EXACTLY_OBSERVED_ON_2026_NOMINAL_DATE"
+    &&o.id!==principalId&&firstTwo(o.id)===firstTwo(principalId)
+    &&normalize(o.title)===normalize(day.principal.title_en);
+  if(sameNominalSourceChangedRankColor)summary.source_nominal_path_same_but_rank_or_color_changed++;
   summary.source_observance_occurrences++;
   if(match==="EXACT_PRINCIPAL_SOURCE_ID")summary.source_observed_as_principal++;
   else if(match==="EXACT_NAMED_COMMEMORATION_SOURCE_ID")summary.source_exactly_commemorated++;
@@ -44,13 +54,21 @@ const rows=historic.rows.map(row=>{
    source_scope:o.scope_reason,
    original_art_scope_excluded:o.excluded_from_art_scope,
    observed_match_kind:match,
+   possible_same_observance_source_rank_or_colour_revision:sameNominalSourceChangedRankColor,
+   current_2026_source_id_if_candidate:sameNominalSourceChangedRankColor?principalId:null,
   };
  });
  const principal=source_observances.some(x=>x.observed_match_kind==="EXACT_PRINCIPAL_SOURCE_ID");
  const comm=source_observances.some(x=>x.observed_match_kind==="EXACT_NAMED_COMMEMORATION_SOURCE_ID");
  if(principal)summary.dates_with_at_least_one_principal_source++;
  else if(comm)summary.dates_with_only_commemorated_sources++;
- else summary.dates_with_no_exact_observed_historic_source++;
+ else{
+  summary.dates_with_no_exact_observed_historic_source++;
+  if(source_observances.some(x=>x.possible_same_observance_source_rank_or_colour_revision))
+   summary.no_exact_observed_with_sanctoral_source_variant++;
+  if(day.principal.observed_cycle==="temporale")summary.no_exact_observed_temporale_override++;
+  if(/\bsunday\b/i.test(day.principal.title_en))summary.no_exact_observed_sunday_override++;
+ }
  const components=row.components.map((c,i)=>{
   assert(c.historical_component_id&&!historyComponentSet.has(c.historical_component_id));
   historyComponentSet.add(c.historical_component_id);
