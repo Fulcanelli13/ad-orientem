@@ -10,6 +10,7 @@ on:
       - 'tests/reference-presentation-pilot.mjs'
       - 'tests/reference-spiritual-life-pilot.mjs'
       - 'tests/formation-recovery-review.mjs'
+      - 'tests/source-reference-browser-acceptance.mjs'
       - 'tests/formation-source-crosswalk.mjs'
       - 'tests/formation-evidence-relationship-ledger.mjs'
       - 'tests/formation-prior-audit-reconciliation.mjs'
@@ -58,3 +59,25 @@ jobs:
         run: node tests/formation-evidence-relationship-ledger.mjs
       - name: Reuse merged and independent editorial audits without new claim verifications
         run: node tests/formation-prior-audit-reconciliation.mjs
+
+  reference-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium acceptance dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Capture source presentation, open/closed, English/French and phone/desktop
+        run: node tests/source-reference-browser-acceptance.mjs
+      - name: Upload source-panel acceptance screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-reference-visual-acceptance
+          path: artifacts/visual-acceptance/source-references
+          if-no-files-found: warn
