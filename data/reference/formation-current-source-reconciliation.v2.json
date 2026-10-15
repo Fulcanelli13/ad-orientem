@@ -111,7 +111,9 @@
     "historical_pass4_source_dispositions": 7,
     "historical_eight_crisis_amendments": 16,
     "historical_amendment_roles_still_same": 10,
-    "historical_amendment_role_reassignments": 6
+    "historical_amendment_role_reassignments": 6,
+    "crisis_editorial_historical_amendments": 12,
+    "crisis_editorial_role_corrections_requiring_rescope": 3
   },
   "added_source_bindings": [
     {
@@ -1970,7 +1972,8 @@
     "Added registry sources are existing correction references, not new independently verified claims; keep approval flags unchanged.",
     "The document is solely structural provenance reconciliation: it does not independently assess the accuracy of corrected Q&A arguments.",
     "A retained original-opponent source inspected in an older role cannot be transferred to a newly rewritten magisterial position; retain original findings PSV1-002 and PSV1-016 as historical.",
-    "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim."
+    "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim.",
+    "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2139,6 +2142,49 @@
         "AO26_CRGOV09_CRITI_1"
       ],
       "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    }
+  ],
+  "historical_crisis_editorial_amendment_reassignments": [
+    {
+      "owner": "CR-AUT-05",
+      "role": "answer",
+      "historic_source_ids": null,
+      "current_source_ids": [
+        "AO26_CRAUT05_ANSWE_1",
+        "AO26_CRAUT05_ANSWE_2"
+      ],
+      "status": "CURRENT_ANSWER_RESOURCED_AFTER_PREVIOUS_BASELINE__NO_NEW_CLAIM_CERTIFICATION"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "role": "documented_position",
+      "historic_source_ids": [
+        "CCC212",
+        "DV90",
+        "CURRAN86-ORIGINAL-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRAUT05_DOCUM_1",
+        "AO26_CRAUT05_DOCUM_2"
+      ],
+      "original_proponent_successor": "AO26_CRAUT05_DOCUM_1",
+      "status": "SAME_ORIGINAL_CURRAN_ARTICLE_URL_UNDER_NEW_SCOPED_CITATION__NOT_CLAIM_CERTIFIED"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "role": "critical_response",
+      "historic_source_ids": [
+        "DV90",
+        "PF98",
+        "CCC212",
+        "CURRAN86-ORIGINAL-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRAUT05_DOCUM_2",
+        "AO26_CRAUT05_CRITI_2",
+        "AO26_CRAUT05_CRITI_3"
+      ],
+      "status": "SCOPED_CRITICAL_RESPONSE_REWRITTEN__HISTORICAL_SOURCES_PRESERVED_NOT_AUTOTRANSFERRED"
     }
   ]
 }
