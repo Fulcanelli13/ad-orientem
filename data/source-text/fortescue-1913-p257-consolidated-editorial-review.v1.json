@@ -1,0 +1,145 @@
+{
+  "schema": "AO_SOURCE_TEXT_CONSOLIDATED_PAGE_REVIEW_V1",
+  "reviewId": "AO-CE1913-V3-P257-CONSOLIDATED-20261015",
+  "date": "2026-10-15",
+  "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+  "printing": "1913 Catholic Encyclopedia volume III special edition, not the 1908 first edition of Fortescue's article",
+  "printPage": 257,
+  "imagePage": 305,
+  "primaryImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+  "nextPageImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/306",
+  "secondaryText": "https://www.newadvent.org/cathen/03255c.htm",
+  "reviewerClass": "MODEL_VISUAL_STRUCTURAL_PASS_NOT_SECOND_INDEPENDENT_HUMAN_PROOFREADER",
+  "reviewStatus": "CONSOLIDATED_EVIDENCE_PREPARED__PAGE_NOT_TEXTUALLY_CERTIFIED",
+  "paragraphLayout": {
+    "imageBasedProvisionalStarts": 3,
+    "editingBlocks": 12,
+    "newParagraphBoundaries": 2,
+    "samePrintedParagraphEditingJoins": 9,
+    "paragraphStarts": [
+      {
+        "id": "PRINT257-PPG-01",
+        "at": "P257-01",
+        "opening": "It is very possible that at some unknown period",
+        "endsOnPrintPage": 257
+      },
+      {
+        "id": "PRINT257-PPG-02",
+        "at": "P257-02a",
+        "opening": "In the first century, as known",
+        "endsOnPrintPage": 257
+      },
+      {
+        "id": "PRINT257-PPG-03",
+        "at": "P257-06",
+        "opening": "The first great turning-point in the history of the Roman Canon",
+        "endsOnPrintPage": 258
+      }
+    ],
+    "correction": "The previous nine-print-paragraph inference was caused by treating workbench block divisions as original indentation; the scanned physical page has three identifiable paragraph starts.",
+    "status": "PRINT_IMAGE_LAYOUT_PRELIMINARY__AWAITING_INDEPENDENT_SECOND_PASS"
+  },
+  "physicalStructure": {
+    "readingOrder": [
+      "left column top to bottom",
+      "right column top to bottom"
+    ],
+    "printFurnitureExcluded": [
+      "CANON running header",
+      "printed page number 257",
+      "printer signature III.—17"
+    ],
+    "footnoteStatus": "NO_SEPARATE_FOOTNOTE_BLOCK_VISIBLE; numerous inline citations and embedded Latin quotation",
+    "lastWordsOfP257": "He also says that at",
+    "firstWordsOfP258": "Rome the names of persons for whom the celebrant prays are read in the Canon:",
+    "joinProofStatus": "PHYSICAL_PAGE_TURN_LOCATED_NOT_WORD_BY_WORD_COLLATED",
+    "joinApproved": false
+  },
+  "textCollation": {
+    "provisionalDraftWords": 1209,
+    "draftTextBlocks": 10,
+    "previouslyHeldShortExcerptReferences": 2,
+    "independentlyProofreadWholePageWords": 0,
+    "entireLatinQuoteIndependentlyCompared": false,
+    "exactPrintItalicsAndLigaturesReviewed": false,
+    "exactPrintPunctuationReviewed": false,
+    "excerptWhitelistCount": 4,
+    "fullPageTextApproved": false,
+    "productionImport": false
+  },
+  "comparisonLedger": {
+    "file": "data/source-text/fortescue-1913-p257-variant-collation.v1.json",
+    "caseCount": 19,
+    "resolvedOrProvisionallyCorrected": [
+      "Clement reference (xl) versus secondary (xi)",
+      "hanc panem, not hunc panem in the scanned encyclopedia",
+      "adscensionis, not ascensionis in the cited phrase",
+      "Justin First Apology (lxv–lxvi) provisionally"
+    ],
+    "stillHeld": [
+      "exact 1913 ligature coelum/cælum/cœlum forms across the Latin quotation",
+      "line-by-line Latin punctuation and quotation boundaries",
+      "patristic quotation language/attribution vs CSEL 73",
+      "fully collated transition into printed page 258",
+      "whole-page spelling and typography, including sources and dates"
+    ],
+    "distinctWitnesses": "CSEL 73 De sacramentis, Fortescue's encyclopedia and Fortescue's monograph must not be collapsed into one textual witness."
+  },
+  "formalDecision": {
+    "pageApproved": false,
+    "editorialReleaseAllowed": false,
+    "reviewerSignedOff": false,
+    "legalEditionClearanceBeyondFourExcerpts": false,
+    "noProductionChanges": true,
+    "reason": "Physical paragraph structure and 19 targeted variants have been inspected; human second-pass full-word collation and Latin typography remain incomplete."
+  },
+  "acceptanceChecklist": [
+    {
+      "id": "P257-A",
+      "task": "Independently reread every printed line of left and right columns against original image 305",
+      "status": "OPEN",
+      "acceptance": "Every candidate word linked to original line; no unresolved illegible letters or unrecorded corrections."
+    },
+    {
+      "id": "P257-B",
+      "task": "Independently verify all three paragraph starts and nine non-paragraph workbench joins",
+      "status": "OPEN",
+      "acceptance": "Second reviewer signs each of 11 original print boundaries, including physical column break."
+    },
+    {
+      "id": "P257-C",
+      "task": "Collate the full De Sacramentis Latin quotation character by character",
+      "status": "OPEN",
+      "acceptance": "Source orthography, accents, ligatures, italics, punctuation, quotation boundaries and CSEL comparison separately indexed."
+    },
+    {
+      "id": "P257-D",
+      "task": "Verify historical citations including Clement XL, Justin LXV–LXVI, Patrologia Latina and Probst",
+      "status": "OPEN",
+      "acceptance": "Exact source locators and variant decisions recorded with original printed images."
+    },
+    {
+      "id": "P257-E",
+      "task": "Proof printed page 258 first paragraph and join to p257 without synthetic punctuation",
+      "status": "OPEN",
+      "acceptance": "Two-image cross-page continuity and complete source paragraph authenticated."
+    },
+    {
+      "id": "P257-F",
+      "task": "Independent human reviewer and rights editor sign off bounded edition",
+      "status": "OPEN",
+      "acceptance": "Named dated reviewer, residual issues closed, explicit reviewed text span and copyright decision; only then update whitelist."
+    }
+  ],
+  "relatedFiles": [
+    "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json",
+    "data/source-text/fortescue-1913-p257-layout-audit.v1.json",
+    "data/source-text/fortescue-1913-p257-variant-collation.v1.json",
+    "data/source-text/fortescue-1908-print-page-plan.v1.json",
+    "data/source-text/fortescue-1908-print-excerpts.v1.json"
+  ],
+  "publishMetadataOnly": true,
+  "notes": "This record consolidates evidence for an editor; it is NOT an editorial signoff or certification of full historical source text. The selected print passage is a historical viewpoint and not a normative statement of 1962 rubrics."
+}
