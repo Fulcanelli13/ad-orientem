@@ -4189,6 +4189,1119 @@
         "hasOriginalRecord": true
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "rome",
+      "pleiades": {
+        "id": "423025",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/4/2/3/0/423025.json",
+        "sha": "cfe7be407fbc52dcc8159656fa9020b96c28f7e4",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "urban",
+          "settlement"
+        ],
+        "locationWitnesses": [],
+        "matchedNames": [
+          {
+            "name": "Roma",
+            "uri": "https://pleiades.stoa.org/places/423025/roma",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "Barrington Atlas: BAtlas 43 B2 Roma"
+          },
+          {
+            "name": "Rhome",
+            "uri": "https://pleiades.stoa.org/places/423025/rhome",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Romē",
+            "uri": "https://pleiades.stoa.org/places/423025/rome-coptic",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": "cop",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Rūme",
+            "uri": "https://pleiades.stoa.org/places/423025/rume",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": "ota",
+            "bibliographicSource": "Pleiades"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mb083bc",
+        "name": "Rome",
+        "sourceUrl": "https://www.openbible.info/geo/modern/mb083bc/rome",
+        "coordinates": "12.485200,41.892200",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Babylon 3",
+            "score": 934
+          },
+          {
+            "name": "Italy",
+            "score": 1000
+          },
+          {
+            "name": "Babylon 2",
+            "score": 917
+          },
+          {
+            "name": "Rome",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "samaria",
+      "pleiades": {
+        "id": "678370",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/7/8/3/678370.json",
+        "sha": "5959c9b288c66b2b51f31c610c406ecb962e1cd7",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "archaeological-site",
+          "findspot"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/678370/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/678370/5d25df-5dc5d05d55de5d9-5e95d55de5e85d55df",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Location based on OpenStreetMap",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": []
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/678370/cigs-location-al-samirah",
+            "accuracyMeters": 5,
+            "associationCertainty": "certain",
+            "precisionStatement": null,
+            "featureTypes": [
+              "archaeological-site",
+              "findspot"
+            ],
+            "attestations": []
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Samaria",
+            "uri": "https://pleiades.stoa.org/places/678370/samaria",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 69 B5 Samaria/Sebaste"
+          },
+          {
+            "name": "Sebaste",
+            "uri": "https://pleiades.stoa.org/places/678370/sebaste",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": 300,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Barrington Atlas: BAtlas 69 B5 Samaria/Sebaste"
+          },
+          {
+            "name": "Gabinia",
+            "uri": "https://pleiades.stoa.org/places/678370/gabinia",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident-inferred"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": -30
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 69 B5 Samaria/Sebaste"
+          },
+          {
+            "name": "Samerīna",
+            "uri": "https://pleiades.stoa.org/places/678370/samerina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Samerna",
+            "uri": "https://pleiades.stoa.org/places/678370/samerna",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Samarna",
+            "uri": "https://pleiades.stoa.org/places/678370/samarna",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -720,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Samerīnāya",
+            "uri": "https://pleiades.stoa.org/places/678370/samerinaya",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Samernāya",
+            "uri": "https://pleiades.stoa.org/places/678370/samernaya",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "less-confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "me64af8",
+        "name": "Samaria",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "35.195000,32.276111",
+        "precisionMeters": 250,
+        "precisionStatement": "point in modern settlement",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Samaria 1",
+            "score": 1000
+          },
+          {
+            "name": "Samaria 2",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "shiloh",
+      "pleiades": {
+        "id": "688028",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/8/8/0/688028.json",
+        "sha": "bdf3d48947704d81d2f472d986b542e8d1cd8f57",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/688028/darmc-location-18885",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "500K scale point location",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Silo",
+            "uri": "https://pleiades.stoa.org/places/688028/silo",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 G1 Silo"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "m12f296",
+        "name": "Khirbet Seilun",
+        "sourceUrl": "https://www.openbible.info/geo/modern/m12f296/khirbet-seilun",
+        "coordinates": "35.289536,32.055703",
+        "precisionMeters": 50,
+        "precisionStatement": "point on tel",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Shiloh",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "tabor",
+      "pleiades": {
+        "id": "678419",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/7/8/4/678419.json",
+        "sha": "7d54088d9c495abbd146662f29d81248db971095",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "mountain"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/678419/osm-location-of-mount-tabor",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative location based on OpenStreetMap.",
+            "featureTypes": [
+              "mountain"
+            ],
+            "attestations": [
+              {
+                "period": "modern",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Thabor",
+            "uri": "https://pleiades.stoa.org/places/678419/Thabor-M",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 69 B4 Thabor M."
+          }
+        ]
+      },
+      "openBible": {
+        "id": "m8e169f",
+        "name": "Jebel et Tur",
+        "sourceUrl": "https://www.openstreetmap.org/way/255793567",
+        "coordinates": "35.392917,32.686250",
+        "precisionMeters": 1000,
+        "precisionStatement": "point on mountain",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Mount Tabor",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "tarsus",
+      "pleiades": {
+        "id": "648789",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/4/8/7/648789.json",
+        "sha": "1d993ed43b062fddda93f2b7a99ac5aa73859ebe",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "city-center",
+          "settlement",
+          "archaeological-site"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/648789/gozlukule-hoyugu",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative location based on OpenStreetMap",
+            "featureTypes": [
+              "archaeological-site"
+            ],
+            "attestations": []
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/648789/cigs-location-of-gozlukule",
+            "accuracyMeters": 5,
+            "associationCertainty": "certain",
+            "precisionStatement": null,
+            "featureTypes": [
+              "archaeological-site"
+            ],
+            "attestations": []
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/648789/imagery-location",
+            "accuracyMeters": 5,
+            "associationCertainty": "certain",
+            "precisionStatement": "Likely central intersection of major roads: the Via Tauri (Pilgrim's Road) and the Zephyrion-Tarsus road (Cilicia coastal route).",
+            "featureTypes": [
+              "unknown",
+              "city-center"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident-inferred"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Tarsus",
+            "uri": "https://pleiades.stoa.org/places/648789/tarsus",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 66 F3 Tarsus/Antiochia ad Cydnum"
+          },
+          {
+            "name": "Antiochia ad Cydnum",
+            "uri": "https://pleiades.stoa.org/places/648789/antiochia-ad-cydnum",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 66 F3 Tarsus/Antiochia ad Cydnum"
+          },
+          {
+            "name": "Tarzu",
+            "uri": "https://pleiades.stoa.org/places/648789/tarzu",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "achaemenid-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -330
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Iouliopolis",
+            "uri": "https://pleiades.stoa.org/places/648789/iouliopolis",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -140,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Antiocheia",
+            "uri": "https://pleiades.stoa.org/places/648789/antiocheia",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Antiocheia pros Kydnō",
+            "uri": "https://pleiades.stoa.org/places/648789/antiocheia-pros-kydno",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": -30
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Tarša",
+            "uri": "https://pleiades.stoa.org/places/648789/tarsa",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "middle-hittite-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "achaemenid-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1450,
+              "end": -330
+            },
+            "rangeMatchesBaseline": true,
+            "language": "hit",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Taršıš",
+            "uri": "https://pleiades.stoa.org/places/648789/tars131s",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "TAVO Index"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mc9df1a",
+        "name": "Tarsus",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "34.892056,36.913028",
+        "precisionMeters": 250,
+        "precisionStatement": "archaeological site in modern settlement",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Tarsus",
+            "score": 1000
+          },
+          {
+            "name": "Hilakku",
+            "score": 1000
+          },
+          {
+            "name": "Cilicia",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "thessalonica",
+      "pleiades": {
+        "id": "491741",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/4/9/1/7/491741.json",
+        "sha": "fcd7cbe5ecc5af91c32fb0f4e1d760bc8725ca7a",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/491741/darmc-location-24552",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "1:1 million scale representative point location digitized from the Barrington Atlas of the Greek and Roman World by the Digital Atlas of Roman and Medieval Civilizations project at Harvard University.",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "period": "classical",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/491741/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "period": "classical",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Thessalonica",
+            "uri": "https://pleiades.stoa.org/places/491741/thessalonica",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 50 C3 Thessalonica"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mdadcc0",
+        "name": "Thessaloniki",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "22.945767,40.637771",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Thessalonica",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "troas",
+      "pleiades": {
+        "id": "550434",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/5/5/0/4/550434.json",
+        "sha": "c0612ae8ca32699c2495c39dc3adb76d5dc425cc",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/550434/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/550434/osm-location-of-alexandria-troas",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative location based on OpenStreetMap",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Antigoneia",
+            "uri": "https://pleiades.stoa.org/places/550434/antigoneia",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": -30
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 56 C2 Antigoneia/(Col. Augusta) Alexandria Troas"
+          },
+          {
+            "name": "Col. Augusta Alexandria Troas",
+            "uri": "https://pleiades.stoa.org/places/550434/col-augusta-alexandria-troas",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 56 C2 Antigoneia/(Col. Augusta) Alexandria Troas"
+          },
+          {
+            "name": "Alexandria Troas",
+            "uri": "https://pleiades.stoa.org/places/550434/alexandria-troas",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "Barrington Atlas: BAtlas 56 C2 Antigoneia/(Col. Augusta) Alexandria Troas"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mf8cbc7",
+        "name": "Alexandria Troas",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "26.158611,39.751944",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Troas",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     }
   ]
 }
