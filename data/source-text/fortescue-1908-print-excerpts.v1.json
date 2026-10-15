@@ -1,20 +1,20 @@
 {
   "schema": "AO_SOURCE_TEXT_PRINT_EXCERPT_FIXTURE_V1",
   "date": "2026-10-15",
-  "purpose": "First independently inspected original-print sample in isolated source parsing tests; this is not an edition-wide transcription, a production route, or content for the Mass reader.",
+  "purpose": "Two short excerpt fixtures from the 1913 special-edition scan of Fortescue's originally 1908 article; not a complete edition, production route, or Mass-reader content.",
   "work": {
     "id": "WORK-CE1908-FORTESCUE-CANON-MASS",
     "title": "Canon of the Mass",
     "author": "Adrian Fortescue",
-    "editionId": "ED-CE1908-VOL3-APPLETON",
-    "witnessId": "WIT-CE1908-V3-PRINT-FORTESCUE",
+    "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+    "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
     "language": "en",
     "demoOnly": true,
     "rights": {
       "status": "REPRODUCTION_CLEARED",
-      "reviewId": "AO-PRINT1908-TWO-EXCERPTS-20261015",
+      "reviewId": "AO-CE1913-PRINT-EXCERPTS-20261015",
       "scope": "REVIEWED_EXCERPTS_ONLY",
-      "copyrightBasis": "Original article in 1908 printed edition, author died 1923. Public-domain original typography and selected words, independently transcribed from scan images; no reuse of modern editorial apparatus or transcription.",
+      "copyrightBasis": "Original Fortescue article first published 1908 (author died 1923). Examined scan is a distinct 1913 special edition; limited text reproduction assessed only for selected old printed words, not for online OCR/editorial additions.",
       "approvedExcerpts": [
         {
           "anchor": "ce1908-v3-p255-s001",
@@ -31,10 +31,10 @@
   },
   "review": {
     "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
-    "editionId": "ED-CE1908-VOL3-APPLETON",
-    "witnessId": "WIT-CE1908-V3-PRINT-FORTESCUE",
-    "reproductionReviewId": "AO-PRINT1908-TWO-EXCERPTS-20261015",
-    "sourceDocumentId": "CATHOLIC-ENCYCLOPEDIA-V3-1908-APPLETON-DJVU-SCAN",
+    "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+    "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+    "reproductionReviewId": "AO-CE1913-PRINT-EXCERPTS-20261015",
+    "sourceDocumentId": "CE-V3-1913-KOC-ENCYCLOPEDIA-PRESS-DJVU",
     "collationReviewId": "AO-SCAN-P255-256-TWO-SENTENCES-20261015",
     "reviewType": "TECHNICAL_PRELIMINARY_VISUAL_COLLATION_NOT_HUMAN_EDITION_CERTIFICATION"
   },
@@ -64,7 +64,7 @@
     "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/303",
     "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/304"
   ],
-  "originalEdition": "The Catholic Encyclopedia, vol. III, New York: Robert Appleton Company, 1908",
-  "rightsNote": "This restricted test fixture approves only the exact two sentences. The complete Catholic Encyclopedia article, its electronic transcription and other jurisdictions still require their own approved acquisition record before broader production import.",
+  "originalEdition": "Examined witness: 1913 Knights of Columbus special edition, The Encyclopedia Press (printed text). Fortescue article originally published in Catholic Encyclopedia vol. III (Robert Appleton, 1908); textual equivalence between editions not yet checked.",
+  "rightsNote": "Examined printing is 1913 special edition, not 1908 facsimile. Scoped public-domain assumption and two excerpts only; all general or online editions remain held.",
   "productionImportAllowed": false
 }
