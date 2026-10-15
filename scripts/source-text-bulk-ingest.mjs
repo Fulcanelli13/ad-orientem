@@ -6,6 +6,7 @@ import {readFileSync,writeFileSync} from "node:fs";
 import {resolve,relative,dirname} from "node:path";
 import {stageBulkWork,summarizeBulkStages} from "../src/source-text/bulk-import.js";
 import {extractBrotherLawrence13871} from "../src/source-text/gutenberg-13871.js";
+import {extractHistoricalClassic} from "../src/source-text/gutenberg-classics.js";
 const root=resolve(import.meta.dirname,"..");
 const safePath=path=>{
  if(typeof path!=="string"||!path||path.startsWith("/")||path.includes("\\"))
@@ -33,6 +34,15 @@ export function executeBulkJobs(jobManifest){
       book.edition.witnessId!==job.work.witnessId||
       book.edition.upstreamGitCommit!==job.upstreamGitCommit)
     throw new Error("BULK_JOB_ELECTRONIC_EDITION_MISMATCH");
+   chapters=book.chapters;
+  }else if(job.sourceKind==="GUTENBERG_CLASSIC"){
+   const source=readFileSync(safePath(job.sourceFile),"utf8");
+   const book=extractHistoricalClassic(job.classicKind,source);
+   if(book.edition.workId!==job.work?.id||
+      book.edition.editionId!==job.work.editionId||
+      book.edition.witnessId!==job.work.witnessId||
+      book.edition.upstreamCommit!==job.upstreamGitCommit)
+    throw new Error("BULK_JOB_CLASSIC_EDITION_MISMATCH");
    chapters=book.chapters;
   }else if(job.sourceKind==="LOCAL_CHAPTER_FILES"){
    if(!Array.isArray(job.documents)||!job.documents.length)
