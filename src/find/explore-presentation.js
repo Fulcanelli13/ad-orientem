@@ -494,6 +494,7 @@ export function buildExploreViewModel({
   unavailableProviders=[],
   view="list",
   filters={},
+  saintsRelease=null,
   selectedId=null,
   selectedOverride=null,
   placeProfiles=[],
@@ -520,6 +521,7 @@ export function buildExploreViewModel({
     unavailableProviders:arr(unavailableProviders),
     view,
     filters,
+    saintsRelease,
     selected,
     selectedPlace,
     expandPlace:Boolean(expandPlace),
@@ -559,7 +561,9 @@ export function renderExploreToString(vm){
   ?L(vm.language,"Post-1960 canonization index: named persons and collective groups, not yet complete biographies or assigned 1962 feasts.","Index des canonisations postérieures à 1960 : personnes et groupes, sans biographies complètes ni fêtes de 1962.")
   :f.saintScope==="doctors"
   ?L(vm.language,"38 Doctors of the Church from the Calendar owner roster. Later declarations are not retrospective 1962 titles.","38 Docteurs de l’Église recensés par le calendrier. Les proclamations ultérieures ne modifient pas rétroactivement les titres de 1962.")
-  :L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation."))+"</p>";
+  :(vm.saintsRelease?.researchEnabled
+    ?L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation.")
+    :L(vm.language,"Six source-linked Saints pilot profiles. Artwork and final editorial approval remain pending.","Six notices pilotes sourcées de saints. Illustrations et validation éditoriale définitive en attente.")))+"</p>";
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
   if(vm.lens==="tlm")html+='<div class="aoTlmToolbar">';
@@ -576,7 +580,7 @@ export function renderExploreToString(vm){
   html+='<nav class="aoFindViewTabs">'+pill("view","list",vm.lens==="traditions"?L(vm.language,"Practices","Pratiques"):L(vm.language,"List","Liste"),vm.view)+pill("view","map",vm.lens==="traditions"?L(vm.language,"Attested places","Lieux attestés"):L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
-  if(vm.lens==="saints"&&vm.view==="list"){
+  if(vm.lens==="saints"&&vm.view==="list"&&vm.saintsRelease?.researchEnabled){
     html+='<nav class="aoSaintCatalogueScopes" aria-label="'+esc(L(vm.language,"Saints catalogue sections","Sections du catalogue des saints"))+'">';
     for(const [code,en,fr] of [
       ["profiles","30 biographies","30 biographies"],["historical","Historical sanctoral","Sanctoral historique"],
@@ -585,7 +589,7 @@ export function renderExploreToString(vm){
     ])html+=pill("saintScope",code,L(vm.language,en,fr),f.saintScope||"profiles");
     html+='</nav>';
   }
-  if(vm.lens==="saints"&&vm.view==="list"&&(!f.saintScope||f.saintScope==="profiles")){
+  if(vm.lens==="saints"&&vm.view==="list"&&vm.saintsRelease?.researchEnabled&&(!f.saintScope||f.saintScope==="profiles")){
     html+='<nav class="aoSaintCatalogueFacets" aria-label="'+esc(L(vm.language,"Saint categories","Catégories de saints"))+'">';
     for(const [code,en,fr] of [
       ["ALL","All","Tous"],["DOCTOR_OF_CHURCH","Doctors","Docteurs"],
