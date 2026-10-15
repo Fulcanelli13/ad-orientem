@@ -34,7 +34,8 @@
       "onlineToc": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
       "sourceStatus": "CHAPTER_INDEX_VERIFIED; PRINT_NOT_COLLATED",
       "reproductionStatus": "NOT_APPROVED_FOR_APP_IMPORT",
-      "permissionsRequested": false
+      "permissionsRequested": false,
+      "authorshipRole": "Schuster original narrative plus Knecht authored commentary; preface documented, passage differences not collated."
     },
     {
       "id": "WORK-GILMOUR-BIBLE-HISTORY",
@@ -4869,5 +4870,20 @@
     },
     "frenchVerifiedEventSections": 0,
     "approvedAuthorTextPassages": 0
-  }
+  },
+  "sourceFamilyReconciliation": {
+    "status": "PRIMARY_HISTORICAL_AUTHOR_PREFACE_EXPLICIT; TEXTUAL_EQUIVALENCE_UNPROVEN",
+    "primaryNarrativeWorkId": "WORK-SCHUSTER-BIBLE-HISTORY",
+    "witnessMapPath": "data/explore/biblical-schuster-knecht-source-family-review.v1.json",
+    "knechtRole": "COMMENTARY_AND_TRANSLATED_ADAPTED_PRESENTATION_OF_SCHUSTER_NARRATIVE",
+    "existingKnechtSectionAssignments": "PROVISIONAL_TOPIC_AND_LOCATOR_MATCHES_FOR_SCHUSTER_NARRATIVE_IN_KNECHT_NOT_SEPARATE_AUTHORIAL_BIBLE_STORIES",
+    "primarySourceEvidence": "https://www.ecatholic2000.com/knecht/untitled-03.shtml",
+    "scholarlyWarning": "Knecht first-English-edition preface attributes the narrative to Schuster; Knecht 1910 is a later revised, translated, adapted witness, not automatically word-identical to Schuster 1889 EN or Couissinier 1887 FR."
+  },
+  "sourcePriority": [
+    "Verified historical Schuster authorial narrative in English/French",
+    "Knecht's distinct explanatory commentary as linked 'Read Further'",
+    "Native Catholic Scripture for gaps",
+    "Secondary historically authored history only when editorially identified and verified"
+  ]
 }
