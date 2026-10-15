@@ -70,4 +70,32 @@ assert(!draft.people.some(x=>pilots.people.some(y=>y.saint_id===x.calendar_perso
 assert.equal(draft.people.find(x=>x.calendar_person_id==="saint.thomas-aquinas").extraordinary_accounts[0].kind,"CHRIST_LOCUTION_ACCOUNT",
  "Reported words from a crucifix must not be mislabelled as an apparition");
 assert.equal(draft.people.find(x=>x.calendar_person_id==="saint.catherine-siena").extraordinary_accounts[0].kind,"CHRIST_APPARITION_ACCOUNT");
+// Separate historical-life metadata: do not infer birthdays from feast dates or
+// silently turn an approximate medieval year into a spurious exact ISO day.
+const allowedPrecisions=new Set([
+ "APPROXIMATE_YEAR","YEAR_RANGE","YEAR","EXACT_DATE",
+ "EXACT_DATE_NEEDS_SECOND_SOURCE","EXACT_DATE_PLACE_AWAITING_SEPARATE_CHECK"
+]);
+for(const p of draft.people){
+ const v=p.life_events_review;
+ assert.equal(v?.review_status,"RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED");
+ assert.equal(v.feast_scope,"CALENDAR_OWNER_PENDING_CONSULT_EXISTING_NOMINAL_1962_DATE");
+ assert.equal(v.artwork_scope,"SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION");
+ for(const key of ["birth","death"]){
+   const event=v[key];
+   assert(allowedPrecisions.has(event?.date_precision),p.calendar_person_id+" "+key+" invalid date precision");
+   for(const lang of ["en","fr"]){
+     assert(event.date_label?.[lang]?.length>2,p.calendar_person_id+" "+key+" missing "+lang+" date label");
+     assert(event.place?.[lang]?.length>3,p.calendar_person_id+" "+key+" missing "+lang+" birthplace or deathplace");
+   }
+   const u=new URL(event.source_url);
+   assert.equal(u.hostname,"www.vatican.va");
+   assert.equal(u.protocol,"https:");
+   if(event.iso_date)assert(/^\d{4}-\d{2}-\d{2}$/.test(event.iso_date));
+   if(["APPROXIMATE_YEAR","YEAR_RANGE","YEAR"].includes(event.date_precision))
+     assert.equal(event.iso_date,null,"Imprecise date must not get fake exact ISO birthday");
+ }
+}
+assert(draft.people.some(p=>p.life_events_review.birth.date_precision==="YEAR_RANGE"),
+ "Medieval birth uncertainty must be explicitly retained");
 console.log("PASS eight source-backed bilingual Doctor life drafts, 24 per-claim sources, two qualified private accounts, no release mutations");
