@@ -1,0 +1,947 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_TOPONYM_AUDIT_RESEARCH_V1",
+  "generated": "2026-10-15",
+  "integration": "RESEARCH_ONLY_ZERO_RUNTIME_IMPORT",
+  "upstreamCrosswalk": "data/explore/biblical-atlas-pleiades-crosswalk.research.v1.json",
+  "pinnedPleiadesRevision": "d8c06f28656312eee6b7a0f76415b34a89e3c728",
+  "licensing": {
+    "pleiades": "CC BY 3.0; © Pleiades contributors",
+    "additionalSources": "External source links for editorial consultation only; no third-party prose imported"
+  },
+  "metrics": {
+    "canonicalAtlasEvents": 151,
+    "activeEnglishFrenchAliasKeys": 22,
+    "ancientNameReviews": 22,
+    "unmatchedPleiadesAnchors": 7,
+    "runtimeLabelChanges": 0,
+    "mapCoordinatesChanged": 0
+  },
+  "safeguards": {
+    "noAutoAncientNames": true,
+    "noAutomaticPleiadesCoordSubstitution": true,
+    "roughPrecisionNeverUpgraded": true,
+    "noExactEventCertification": true,
+    "allPendingReview": true
+  },
+  "aliasReview": [
+    {
+      "anchorKey": "hebron",
+      "existingEnglishLabel": "Hebron",
+      "existingFrenchLabel": "Hébron",
+      "crosswalkPlaceId": "687915",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Hebron",
+          "sourceUri": "https://pleiades.stoa.org/places/687915/hebron",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Hevron",
+          "sourceUri": "https://pleiades.stoa.org/places/687915/hevron",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "CITY_CONTEXT_NOT_MAMRE_EVENT_SITE"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "jerusalem",
+      "existingEnglishLabel": "Jerusalem",
+      "existingFrenchLabel": "Jérusalem",
+      "crosswalkPlaceId": "687928",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Ierusalem",
+          "sourceUri": "https://pleiades.stoa.org/places/687928/ierusalem",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Hierosolyma",
+          "sourceUri": "https://pleiades.stoa.org/places/687928/hierosolyma",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Col. Aelia Capitolina",
+          "sourceUri": "https://pleiades.stoa.org/places/687928/col-aelia-capitolina",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Colonia Aelia Capitolina",
+          "sourceUri": "https://pleiades.stoa.org/places/687928/colonia-aelia-capitolina",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        }
+      ],
+      "flags": [
+        "AELIA_CAPITOLINA_POST_NEW_TESTAMENT",
+        "CITY_CONTEXT_NOT_TEMPLE_CENACLE_TRIAL"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "jericho",
+      "existingEnglishLabel": "Jericho",
+      "existingFrenchLabel": "Jéricho",
+      "crosswalkPlaceId": "687917",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Hierichous",
+          "sourceUri": "https://pleiades.stoa.org/places/687917/hierichous",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Hierico",
+          "sourceUri": "https://pleiades.stoa.org/places/687917/hierico",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Tall as-Sulṭān",
+          "sourceUri": "https://pleiades.stoa.org/places/687917/tall-as-sultan",
+          "sourceAfter": 300,
+          "sourceBefore": 2000
+        },
+        {
+          "name": "Arīḥā",
+          "sourceUri": "https://pleiades.stoa.org/places/687917/ariha-1",
+          "sourceAfter": -18000,
+          "sourceBefore": 2000
+        }
+      ],
+      "flags": [
+        "CITY_CONTEXT_NOT_ANY_SINGLE_JERICHO_PERIOD"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "nazareth",
+      "existingEnglishLabel": "Nazareth",
+      "existingFrenchLabel": "Nazareth",
+      "crosswalkPlaceId": "678299",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Nazareth",
+          "sourceUri": "https://pleiades.stoa.org/places/678299/nazareth",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "SCRIPTURE_ERA_AND_HISTORICAL_NAME_NOT_YET_COLLATED"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "capernaum",
+      "existingEnglishLabel": "Capernaum",
+      "existingFrenchLabel": "Capharnaüm",
+      "crosswalkPlaceId": "678231",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Kefar Nahum",
+          "sourceUri": "https://pleiades.stoa.org/places/678231/kefar-nahum",
+          "sourceAfter": -30,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Kapharnaoum",
+          "sourceUri": "https://pleiades.stoa.org/places/678231/kapharnaoum",
+          "sourceAfter": -30,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "SCRIPTURE_ERA_AND_HISTORICAL_NAME_NOT_YET_COLLATED"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "samaria",
+      "existingEnglishLabel": "Samaria",
+      "existingFrenchLabel": "Samarie",
+      "crosswalkPlaceId": "678370",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Samaria",
+          "sourceUri": "https://pleiades.stoa.org/places/678370/samaria",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Sebaste",
+          "sourceUri": "https://pleiades.stoa.org/places/678370/sebaste",
+          "sourceAfter": 300,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Gabinia",
+          "sourceUri": "https://pleiades.stoa.org/places/678370/gabinia",
+          "sourceAfter": -330,
+          "sourceBefore": -30
+        },
+        {
+          "name": "Samerīna",
+          "sourceUri": "https://pleiades.stoa.org/places/678370/samerina",
+          "sourceAfter": -1000,
+          "sourceBefore": -540
+        }
+      ],
+      "flags": [
+        "KINGDOM_VS_LATER_SEBASTE"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "caesarea-maritima",
+      "existingEnglishLabel": "Caesarea Maritima",
+      "existingFrenchLabel": "Césarée maritime",
+      "crosswalkPlaceId": "678401",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Stratonos Pyrgos",
+          "sourceUri": "https://pleiades.stoa.org/places/678401/stratonos-pyrgos",
+          "sourceAfter": -330,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Caesarea",
+          "sourceUri": "https://pleiades.stoa.org/places/678401/caesarea",
+          "sourceAfter": -30,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Kaisareia metropolis",
+          "sourceUri": "https://pleiades.stoa.org/places/678401/kaisareia-metropolis",
+          "sourceAfter": 300,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "STRATONOS_PYRGOS_VS_CAESAREA"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "joppa",
+      "existingEnglishLabel": "Joppa",
+      "existingFrenchLabel": "Joppé",
+      "crosswalkPlaceId": "687931",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Ioppe",
+          "sourceUri": "https://pleiades.stoa.org/places/687931/ioppe",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Yafo",
+          "sourceUri": "https://pleiades.stoa.org/places/687931/yafo",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Iope",
+          "sourceUri": "https://pleiades.stoa.org/places/687931/iope",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Flavia Ioppa",
+          "sourceUri": "https://pleiades.stoa.org/places/687931/flavia-ioppa",
+          "sourceAfter": -30,
+          "sourceBefore": 226
+        }
+      ],
+      "flags": [
+        "BRONZE_VS_GRECO_ROMAN_VARIANTS"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "nineveh",
+      "existingEnglishLabel": "Nineveh",
+      "existingFrenchLabel": "Ninive",
+      "crosswalkPlaceId": "874621",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Nȋnos",
+          "sourceUri": "https://pleiades.stoa.org/places/874621/ninos",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Ninuwā",
+          "sourceUri": "https://pleiades.stoa.org/places/874621/ninuwa",
+          "sourceAfter": -2335,
+          "sourceBefore": -540
+        },
+        {
+          "name": "Ninâ",
+          "sourceUri": "https://pleiades.stoa.org/places/874621/nina",
+          "sourceAfter": -1000,
+          "sourceBefore": -540
+        }
+      ],
+      "flags": [
+        "ASSYRIAN_NINUWA_VS_GRECO_ROMAN_NINOS"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "babylon",
+      "existingEnglishLabel": "Babylon",
+      "existingFrenchLabel": "Babylone",
+      "crosswalkPlaceId": "893951",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Babylon",
+          "sourceUri": "https://pleiades.stoa.org/places/893951/babylon",
+          "sourceAfter": -330,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Babil",
+          "sourceUri": "https://pleiades.stoa.org/places/893951/babil",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Babylon",
+          "sourceUri": "https://pleiades.stoa.org/places/893951/babylona",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Bābili",
+          "sourceUri": "https://pleiades.stoa.org/places/893951/name.2018-01-06.8890273340",
+          "sourceAfter": -1600,
+          "sourceBefore": -100
+        }
+      ],
+      "flags": [
+        "AKKADIAN_HELLENISTIC_MULTIPLE_NAMES"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "damascus",
+      "existingEnglishLabel": "Damascus",
+      "existingFrenchLabel": "Damas",
+      "crosswalkPlaceId": "678106",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Damascus",
+          "sourceUri": "https://pleiades.stoa.org/places/678106/damascus",
+          "sourceAfter": -550,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Damaskene",
+          "sourceUri": "https://pleiades.stoa.org/places/678106/damaskene",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        },
+        {
+          "name": "aš-Šām",
+          "sourceUri": "https://pleiades.stoa.org/places/678106/as-sam",
+          "sourceAfter": -720,
+          "sourceBefore": 2000
+        },
+        {
+          "name": "Damešeq",
+          "sourceUri": "https://pleiades.stoa.org/places/678106/dameseq",
+          "sourceAfter": -1200,
+          "sourceBefore": -550
+        }
+      ],
+      "flags": [
+        "SEMITIC_GREEK_MULTIPLE_NAMES"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "antioch-syria",
+      "existingEnglishLabel": "Antioch",
+      "existingFrenchLabel": "Antioche",
+      "crosswalkPlaceId": "658381",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Antiochia",
+          "sourceUri": "https://pleiades.stoa.org/places/658381/antiochia",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Theoupolis",
+          "sourceUri": "https://pleiades.stoa.org/places/658381/theoupolis",
+          "sourceAfter": 300,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Antiocheia epi Daphnē",
+          "sourceUri": "https://pleiades.stoa.org/places/658381/antiocheia-epi-daphne",
+          "sourceAfter": -330,
+          "sourceBefore": -30
+        },
+        {
+          "name": "Antiocheia",
+          "sourceUri": "https://pleiades.stoa.org/places/658381/antiocheia",
+          "sourceAfter": -330,
+          "sourceBefore": 1307
+        }
+      ],
+      "flags": [
+        "MULTI_PERIOD_ANTIOCHIA_THEOUPOLIS"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "tarsus",
+      "existingEnglishLabel": "Tarsus",
+      "existingFrenchLabel": "Tarse",
+      "crosswalkPlaceId": "648789",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Tarsus",
+          "sourceUri": "https://pleiades.stoa.org/places/648789/tarsus",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Antiochia ad Cydnum",
+          "sourceUri": "https://pleiades.stoa.org/places/648789/antiochia-ad-cydnum",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Tarzu",
+          "sourceUri": "https://pleiades.stoa.org/places/648789/tarzu",
+          "sourceAfter": -1000,
+          "sourceBefore": -330
+        },
+        {
+          "name": "Iouliopolis",
+          "sourceUri": "https://pleiades.stoa.org/places/648789/iouliopolis",
+          "sourceAfter": -140,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "BRONZE_ASSYRIAN_GREEK_ROMAN_NAMES"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "athens",
+      "existingEnglishLabel": "Athens",
+      "existingFrenchLabel": "Athènes",
+      "crosswalkPlaceId": "579885",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "rough",
+      "periodSpecificVariants": [
+        {
+          "name": "Athenae",
+          "sourceUri": "https://pleiades.stoa.org/places/579885/athenae",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Athēnai",
+          "sourceUri": "https://pleiades.stoa.org/places/579885/name.2015-09-02.2659017776",
+          "sourceAfter": -550,
+          "sourceBefore": -330
+        },
+        {
+          "name": "Athenas",
+          "sourceUri": "https://pleiades.stoa.org/places/579885/athenas",
+          "sourceAfter": 300,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "ROUGH_GAZETTEER_REPRESENTATIVE_POINT"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "ephesus",
+      "existingEnglishLabel": "Ephesus",
+      "existingFrenchLabel": "Éphèse",
+      "crosswalkPlaceId": "599612",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Ephesus",
+          "sourceUri": "https://pleiades.stoa.org/places/599612/ephesus",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Arsinoeia",
+          "sourceUri": "https://pleiades.stoa.org/places/599612/arsinoeia",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Arsinoe",
+          "sourceUri": "https://pleiades.stoa.org/places/599612/arsinoe",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Arsinoē",
+          "sourceUri": "https://pleiades.stoa.org/places/599612/arsinoe-1",
+          "sourceAfter": -330,
+          "sourceBefore": -140
+        }
+      ],
+      "flags": [
+        "BRONZE_HELLENISTIC_ROMAN_MULTIPLE_NAMES"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "philippi",
+      "existingEnglishLabel": "Philippi",
+      "existingFrenchLabel": "Philippes",
+      "crosswalkPlaceId": "501482",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Krenides",
+          "sourceUri": "https://pleiades.stoa.org/places/501482/krenides",
+          "sourceAfter": -550,
+          "sourceBefore": -330
+        },
+        {
+          "name": "Philippi",
+          "sourceUri": "https://pleiades.stoa.org/places/501482/philippi",
+          "sourceAfter": -550,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Col. Augusta Iulia Philippensis",
+          "sourceUri": "https://pleiades.stoa.org/places/501482/col-augusta-iulia-philippensis",
+          "sourceAfter": -30,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "GREEK_VS_ROMAN_COLONY_TITLE"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "corinth",
+      "existingEnglishLabel": "Corinth",
+      "existingFrenchLabel": "Corinthe",
+      "crosswalkPlaceId": "570182",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Corinthus",
+          "sourceUri": "https://pleiades.stoa.org/places/570182/corinthus",
+          "sourceAfter": -750,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Aigiales",
+          "sourceUri": "https://pleiades.stoa.org/places/570182/aigiales",
+          "sourceAfter": -750,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Aigialos",
+          "sourceUri": "https://pleiades.stoa.org/places/570182/aigialos",
+          "sourceAfter": -750,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Sicyonia",
+          "sourceUri": "https://pleiades.stoa.org/places/570182/sicyonia",
+          "sourceAfter": -750,
+          "sourceBefore": 300
+        }
+      ],
+      "flags": [
+        "GREEK_VS_ROMAN_COLONY_NAME"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "rome",
+      "existingEnglishLabel": "Rome",
+      "existingFrenchLabel": "Rome",
+      "crosswalkPlaceId": "423025",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "rough",
+      "periodSpecificVariants": [
+        {
+          "name": "Roma",
+          "sourceUri": "https://pleiades.stoa.org/places/423025/roma",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Rhome",
+          "sourceUri": "https://pleiades.stoa.org/places/423025/rhome",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        }
+      ],
+      "flags": [
+        "ROUGH_GAZETTEER_REPRESENTATIVE_POINT"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "lystra",
+      "existingEnglishLabel": "Lystra",
+      "existingFrenchLabel": "Lystres",
+      "crosswalkPlaceId": "648699",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Lystra",
+          "sourceUri": "https://pleiades.stoa.org/places/648699/lystra",
+          "sourceAfter": -30,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Col. Iulia Felix Gemina",
+          "sourceUri": "https://pleiades.stoa.org/places/648699/col-iulia-felix-gemina",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        }
+      ],
+      "flags": [
+        "SCRIPTURE_ERA_AND_HISTORICAL_NAME_NOT_YET_COLLATED"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "thessalonica",
+      "existingEnglishLabel": "Thessalonica",
+      "existingFrenchLabel": "Thessalonique",
+      "crosswalkPlaceId": "491741",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Thessalonica",
+          "sourceUri": "https://pleiades.stoa.org/places/491741/thessalonica",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        }
+      ],
+      "flags": [
+        "SCRIPTURE_ERA_AND_HISTORICAL_NAME_NOT_YET_COLLATED"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "troas",
+      "existingEnglishLabel": "Troas",
+      "existingFrenchLabel": "Troade",
+      "crosswalkPlaceId": "550434",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Antigoneia",
+          "sourceUri": "https://pleiades.stoa.org/places/550434/antigoneia",
+          "sourceAfter": -330,
+          "sourceBefore": -30
+        },
+        {
+          "name": "Col. Augusta Alexandria Troas",
+          "sourceUri": "https://pleiades.stoa.org/places/550434/col-augusta-alexandria-troas",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        },
+        {
+          "name": "Alexandria Troas",
+          "sourceUri": "https://pleiades.stoa.org/places/550434/alexandria-troas",
+          "sourceAfter": -30,
+          "sourceBefore": 300
+        }
+      ],
+      "flags": [
+        "ANTIGONEIA_VS_ALEXANDRIA_TROAS"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    },
+    {
+      "anchorKey": "miletus",
+      "existingEnglishLabel": "Miletus",
+      "existingFrenchLabel": "Milet",
+      "crosswalkPlaceId": "599799",
+      "sourceConfidence": "CANDIDATE_UNCOLLATED",
+      "originalPleiadesPrecision": "precise",
+      "periodSpecificVariants": [
+        {
+          "name": "Millawa(n)da",
+          "sourceUri": "https://pleiades.stoa.org/places/599799/millawa-n-da",
+          "sourceAfter": -1450,
+          "sourceBefore": -1200
+        },
+        {
+          "name": "Miletus",
+          "sourceUri": "https://pleiades.stoa.org/places/599799/miletus",
+          "sourceAfter": -750,
+          "sourceBefore": 640
+        },
+        {
+          "name": "Palatia",
+          "sourceUri": "https://pleiades.stoa.org/places/599799/palatia",
+          "sourceAfter": 500,
+          "sourceBefore": 850
+        },
+        {
+          "name": "Balat",
+          "sourceUri": "https://pleiades.stoa.org/places/599799/balat-ota",
+          "sourceAfter": -1750,
+          "sourceBefore": 1683
+        }
+      ],
+      "flags": [
+        "BRONZE_AND_GRECO_ROMAN_FORMS"
+      ],
+      "status": "EDITORIAL_HOLD",
+      "automaticDisplay": false,
+      "automaticCoordinateChange": false,
+      "requireIndependentHistoricalAttestation": true
+    }
+  ],
+  "nonPleiadesSiteResearch": [
+    {
+      "anchorKey": "nain",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "STRONG_INDEPENDENT_SETTLEMENT_IDENTIFICATION_NOT_PLEIADES",
+      "scopeNote": "OpenBible's Nain ancient-place entry identifies modern Nein with very high confidence; existing ATLAS_GEO is a modern settlement reference, not a miracle-site coordinate.",
+      "sources": [
+        {
+          "url": "https://www.openbible.info/geo/ancient/aee679c/nain",
+          "type": "independent_biblical_gazetteer"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "bethesda",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "ARCHAEOLOGICAL_SITE_AND_TRADITION_DISTINCT",
+      "scopeNote": "The archaeological pool complex at St Anne is documented; keep distinct the excavated water structures, Christian identification and the exact healing locale.",
+      "sources": [
+        {
+          "url": "https://www.academia.edu/22894959/The_Excavations_at_the_Bethesda_Pool_in_Jerusalem_Preliminary_Report_on_a_Project_of_Stratigraphic_and_Structural_Analysis_Text",
+          "type": "excavation_report"
+        },
+        {
+          "url": "https://www.proterrasancta.org/en/news/bethesda-pool-and-st-annes-church-following-in-the-footsteps-of-jesus-and-mary",
+          "type": "site_context"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "siloam",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "PUBLISHED_EXCAVATION_IDENTIFICATION_REQUIRES_SITE_SCOPE",
+      "scopeNote": "The Israel Antiquities Authority publishes specific Second Temple excavation and identification evidence for the Pool of Siloam; do not conflate adjoining pools or certify the precise Gospel event location.",
+      "sources": [
+        {
+          "url": "https://publications.iaa.org.il/atiqot/vol113/iss1/3/",
+          "type": "peer_reviewed_archaeology"
+        },
+        {
+          "url": "https://hadashot.iaa.org.il/Report_Detail_Eng.aspx?id=25721",
+          "type": "excavation_report"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "bethphage",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "SCRIPTURAL_AREA_WITH_DISPUTED_PRECISE_VILLAGE",
+      "scopeNote": "The Gospel locates Bethphage near the Mount of Olives/Bethany; reference literature explicitly says no positive modern site identification, despite pilgrimage tradition.",
+      "sources": [
+        {
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Bethphage",
+          "type": "reference_geography"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "olives",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "MOUNTAIN_RIDGE_NOT_SINGLE_EVENT_POINT",
+      "scopeNote": "The Mount of Olives is a geographic ridge with multiple summits; one geographic point is not evidence for a specific Gospel or Ascension locus.",
+      "sources": [
+        {
+          "url": "https://www.biblicaltraining.org/library/mount-of-olives",
+          "type": "reference_topography"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "gethsemane",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "NEARBY_FIRST_CENTURY_ARCHAEOLOGY_NOT_EXACT_GARDEN",
+      "scopeNote": "A Second Temple-period ritual bath was reported near the church, corroborating historical activity around the traditional area, not the exact place of Christ's prayer.",
+      "sources": [
+        {
+          "url": "https://www.terrasanctamuseum.org/en/presentation-of-the-new-archaeological-finds-at-gethsemane/",
+          "type": "excavation_announcement"
+        },
+        {
+          "url": "https://www.biblicalarchaeology.org/daily/remains-found-at-gethsemane/",
+          "type": "archaeological_reporting"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    },
+    {
+      "anchorKey": "holy-sepulchre",
+      "pleiadesDirectMatch": null,
+      "independentEvidenceStatus": "QUARRY_BURIAL_GARDEN_CONTEXT_NOT_PROOF_OF_IDENTICAL_TOMB",
+      "scopeNote": "Stratigraphic work documents quarrying, burial and later Christian construction and cultivation context. It does not itself locate or certify the exact Golgotha and Resurrection-tomb events.",
+      "sources": [
+        {
+          "url": "https://www.lpj.org/en/news/the-stones-speak-excavations-reshaping-the-history-of-the-holy",
+          "type": "site_excavation_reporting"
+        },
+        {
+          "url": "https://www.academia.edu/128346647/Archaeological_excavations_in_the_Holy_Sepulchre_Jerusalem_2024_preliminary_report",
+          "type": "excavation_preliminary_report"
+        }
+      ],
+      "editorialStatus": "HOLD",
+      "newCoordinate": null,
+      "publishLocation": false,
+      "publishNewPeriodName": false
+    }
+  ]
+}
