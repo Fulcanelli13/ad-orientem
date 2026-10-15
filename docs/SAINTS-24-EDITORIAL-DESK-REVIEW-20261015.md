@@ -112,3 +112,40 @@ Primary texts were directly inspected for all 13; the linked research reviewer e
 - Seton: https://via.library.depaul.edu/seton_family_papers/
 
 The complete source links for all other records are stored in each saint's original `source_urls` and `reader_biography.source_urls` fields.
+
+
+## Phase 16 — remaining 11 standalone Saints biographies complete (15 October 2026)
+
+The final **11** held people now have complete, bilingual `reader_biography.en/fr` records in the **existing** 8-Doctor and 16-vocation research sources. This finishes the non-repetitive *reader-copy drafting* pass for **24/24 held people**.
+
+New reader texts this phase: Gregory the Great; Thomas Aquinas; Catherine of Siena; Ignatius of Antioch; Francis Xavier; John Mary Vianney; Rose of Lima; Francis of Assisi; Maria Goretti; Teresa Benedicta of the Cross (Edith Stein); Jeanne Jugan.
+
+Sources were checked against their original papal general audiences, letters, messages or Holy See saint biographies. Illustrative integrity controls:
+- Gregory's `Pastoral Rule`, famine relief, Lombard peace efforts and Augustine's English mission all appear in Benedict XVI's two catecheses of May–June 2008.
+- Urban IV commissioned Aquinas for the feast of Corpus Christi; Thomas's alleged locution remains a separately attributed historical devotional report.
+- Catherine's deeds for the sick, appeals for Gregory XI's return and writings precede her distinct **1970** Doctor designation. Her reported mystical espousal belongs to Raymond of Capua's attributed testimony.
+- Ignatius's seven letters and the early term *Catholic Church* are from the 14 March 2007 papal catechesis; **Doctor of Unity** is descriptive, not a formal Doctor of the Church title; birthplace unknown and martyrdom date traditional.
+- Francis Xavier's catechism in local languages, Japan journey and death at Shangchuan without landing in mainland China are documented. **2 or 3 December 1552 remains disputed**.
+- Vianney's extended confessional ministry and Eucharistic life are source supported.
+- Rose of Lima is principally represented through prayer and care for the sick/poor rather than invented miracle counts.
+- Francis of Assisi's 1219 meeting with al-Kamil and reported 1224 La Verna stigmata remain carefully attributed.
+- Maria Goretti's assault at Le Ferriere is not confused with her **6 July 1902** death in a Nettuno hospital. Her pardon is not depicted as excusing the attacker or violence.
+- Edith Stein's deportation with Rosa and murder at Auschwitz are presented without inventing certainty about the precise killing date.
+- Jeanne Jugan's **1792–1879** dates come from the body of the Vatican biography; its misleading search/page-title lifespan is NOT transcribed.
+
+### Evidence and editorial status
+
+| Measure | After Phase 16 |
+| --- | ---: |
+| Research lives (unique Saints/Blessed persons) | 30 |
+| Native pilot biographies, unchanged and draft | 6 |
+| Held research biographies with self-contained EN/FR reader prose | **24/24** |
+| Earlier 13 deeper-held profiles now source-reviewed with their own reader texts | 13 |
+| Last 11 profiles newly converted into reader text | 11 |
+| Subject-specific research review records | 24/24 |
+| Second-editor certified / published from this research batch | **0** |
+| New map sites, saints promoted into 1962 sanctoral, or new approved artworks | **0** |
+
+The older `why_honoured` and three claim-linked fact records are retained **only as research evidence**. They must **not** be rendered as a second series of paragraphs or expandable 'Read more' within the profile. The user-approved profile instead displays the single continuous narrative and reserves 'Read further' for external biographies.
+
+Human/editorial certification is **not implied** by passing word-count, source-link or syntax checks. All 24 remain research-only, all 24 require a final EN/FR sentence-to-source copyedit, and exceptional dates/places remain explicitly qualified. Artwork selection and feast observances are owned by the pre-existing Art and Calendar pipelines. Public Pages unchanged.
