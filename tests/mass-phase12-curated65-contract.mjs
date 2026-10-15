@@ -27,7 +27,7 @@ assert.deepEqual(pre.order,["AO.SM.B021","AO.SM.B022","AO.SM.B023"]);
 assert.equal(pre.alleluiaTract.mayMergeIntoGradual,false);
 assert.ok(sourceMap.ordinarySungSections.some(row=>row.sectionId==="AO.CARD.006"&&row.name.includes("Gradual")));
 assert.match(properSlots,/const sequenceRows=values\(proper\.sequence,locale\)/);
-assert.match(properSlots,/No separate Sequence;/,"Missing Sequence must not create invented content");
+assert.match(properSlots,/No separately sourced Alleluia/Tract or Sequence./,"Missing Sequence must not create invented content");
 assert.match(packageJson.scripts["test:mass-batch4-release"],/mass-phase12-curated65-contract/);
 assert.ok(packageJson.scripts.test.includes("test:mass-batch4-release"));
 console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");
