@@ -1,4 +1,5 @@
 import {MYSTERY_MASS_REVIEW_DATA as DATA} from "./mystery-mass-review-data.js";
+import {MYSTERY_CANON_PRECISION_REVIEW as PRECISION} from "./mystery-mass-canon-precision-review.js";
 
 export const MYSTERY_MASS_ROUTE="learn.mystery_mass";
 export const MYSTERY_MASS_VERSION="mystery-mass-dual-review-v1";
@@ -60,6 +61,13 @@ return `
 #${ROOT_ID} .mmSources a{display:block;width:fit-content;line-height:1.5;color:#d8bc8c;font-size:.8rem;margin:8px 0;text-decoration:underline;text-underline-offset:3px}
 #${ROOT_ID} .mmStudy{padding:18px 0;border-bottom:1px solid rgba(220,194,147,.14)}
 #${ROOT_ID} .mmStudy p{font:1.04rem/1.55 'EB Garamond',Georgia,serif;margin:8px 0}
+#${ROOT_ID} .mmPrecision{border:1px solid rgba(203,181,135,.2);padding:14px 16px;border-radius:12px}
+#${ROOT_ID} .mmPrecision summary{cursor:pointer;color:#d2b987;font:.84rem/1.5 system-ui;min-height:28px}
+#${ROOT_ID} .mmPrecision .mmPhrase{font:italic 1rem/1.45 Georgia,serif;color:#d7c4a5}
+#${ROOT_ID} .mmPrecision .mmPrecisionItem{padding:12px 0;border-bottom:1px solid rgba(220,194,147,.14)}
+#${ROOT_ID} .mmPrecision .mmPrecisionItem:last-child{border-bottom:0}
+#${ROOT_ID} .mmPrecision p{font:1.03rem/1.55 'EB Garamond',Georgia,serif;margin:7px 0}
+#${ROOT_ID} .mmPrecision .mmWitness{color:#aaa59b;font:.68rem/1.5 system-ui}
 #${ROOT_ID} .mmStudy a{color:#d8bc8c}
 #${ROOT_ID} .mmQuestion{color:#d6c09b;font:italic 1.2rem/1.5 'EB Garamond',Georgia,serif}
 #${ROOT_ID} .mmDisclaimer{font:.68rem/1.45 system-ui;color:#a6a299}
@@ -80,13 +88,24 @@ function bodyBiblical(scene,fr){
  sourceLinks(scene.sourceCitations,fr)+
  (scene.qualified.length?'<p class="mmDisclaimer">'+esc(ui(fr,"Source distinctions remain under review.","Les distinctions entre sources restent à réviser."))+'</p>':"");
 }
+function precisionMarkup(scene,fr,deep){
+ const entries=PRECISION.filter(x=>x.owner===scene.id&&(deep||x.displayTier==="CONCISE"));
+ if(!entries.length)return "";
+ return '<details class="mmNotes mmPrecision" data-mm-precision-owner="'+esc(scene.id)+'"><summary>'+
+ ui(fr,"Prayer phrases · additional editorial interpretations","Expressions de la prière · interprétations en révision")+
+ ' ('+entries.length+')</summary>'+
+ entries.map(x=>'<div class="mmPrecisionItem" data-mm-precision="'+esc(x.id)+'" data-mm-source-cue="'+esc(x.cueId)+'">'+
+ '<div class="mmPhrase">'+esc(x.latin)+'</div><p>'+esc(titleOf(x.reading,fr))+'</p>'+
+ '<div class="mmWitness">'+esc(x.workLocators.join(" · "))+'</div></div>').join("")+
+ '<small class="mmDisclaimer">'+ui(fr,"Research drafts; original editions, bilingual accuracy and rights are not yet certified. Not a priest-action cue.","Brouillons d’étude : éditions, texte bilingue et droits restent à vérifier. Ceci n’est pas un geste prescrit au célébrant.")+'</small></details>';
+}
 function bodyLiturgical(scene,fr,deep){
  const blocks=scene.studies.map((study,i)=>'<div class="mmStudy"><div class="mmSourceTitle">'+ui(fr,"Study of the Mass · source dossier","Étude de la Messe · dossier")+' '+esc(study.id)+'</div><p>'+studyMarkup(titleOf(deep?study.deep:study.short,fr))+'</p></div>').join("");
  const canon=scene.canon?'<section class="mmNotes"><h2>'+ui(fr,"Theological question","Question théologique")+'</h2><div class="mmQuestion">'+esc(scene.canon.question)+'</div><div class="mmStudy"><p>'+esc(scene.canon.text)+'</p></div><small class="mmDisclaimer">'+ui(fr,"Critical commentary is in English pending French editorial review.","Commentaire critique provisoirement en anglais, en attente de révision française.")+'</small></section>':"";
  const biblical=scene.biblicalScenes.map(id=>({id,scene:DATA.biblical.find(x=>x.id===id)})).filter(x=>x.scene);
  return '<article class="mmStory"><h1>'+esc(scene.title)+'</h1><small class="mmDisclaimer">'+ui(fr,"1962 Roman Mass · historical and theological study; not a live rubric.","Messe romaine de 1962 · étude historique et théologique, non rubrique en direct.")+'</small></article>'+
  '<div class="mmNotes mmDepth"><button type="button" data-mm-depth aria-pressed="'+String(deep)+'">'+ui(fr,deep?"Short explanation":"Detailed study",deep?"Résumé":"Étude approfondie")+'</button></div>'+
- blocks+canon+scriptureButtons(scene.scripture,fr)+
+ blocks+canon+precisionMarkup(scene,fr,deep)+scriptureButtons(scene.scripture,fr)+
  (biblical.length?'<section class="mmNotes"><h2>'+ui(fr,"Return to salvation history","Retour à l’histoire du salut")+'</h2><div class="mmJump">'+biblical.map(x=>'<button type="button" data-mm-jump-bible="'+esc(x.id)+'">'+esc(titleOf(x.scene.title,fr))+' →</button>').join("")+'</div></section>':"")+
  sourceLinks(scene.authorLinks,fr);
 }
