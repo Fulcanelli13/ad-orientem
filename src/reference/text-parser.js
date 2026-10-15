@@ -23,7 +23,7 @@ export function parsePinnedSourceText({
  if(typeof text!=="string"||!text.trim()||text.length>maxChars)
    throw new Error("PINNED_SOURCE_TEXT_MISSING_OR_TOO_LARGE");
  const source=escapeControl(text);
- const sections=[];let current=null,buffer=[],blocked=0;
+ const sections=[];let current=null,buffer=[],bufferStart=null,blocked=0;
  const addSection=(label)=>{
    current={id:witnessId+":s"+String(sections.length+1).padStart(3,"0"),
      title:String(label||"Text").trim(),paragraphs:[]};
@@ -33,12 +33,13 @@ export function parsePinnedSourceText({
    if(!buffer.length)return;
    if(!current)addSection("Text");
    const lines=buffer.splice(0),unresolved=lines.some(directive);
+   const sourceLine=bufferStart;bufferStart=null;
    const position=current.paragraphs.length+1;
    current.paragraphs.push(Object.freeze({
       id:current.id+":p"+String(position).padStart(3,"0"),
       text:lines.join("\n").trim(),
       unresolved,
-      sourceLine:lines[0]?.line??null
+      sourceLine
    }));
    if(unresolved)blocked++;
  };
@@ -49,6 +50,7 @@ export function parsePinnedSourceText({
    const plain=format==="plain-paragraphs"?/^#{1,3}\s+(.+)$/.exec(line):null;
    if(divinum||plain){flush();addSection((divinum||plain)[1]);continue}
    if(!line){flush();continue}
+   if(buffer.length===0)bufferStart=i+1;
    buffer.push(line);
  }
  flush();
