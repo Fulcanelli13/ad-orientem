@@ -10,7 +10,11 @@ on:
       - 'tests/reference-presentation-pilot.mjs'
       - 'tests/reference-spiritual-life-pilot.mjs'
       - 'tests/formation-recovery-review.mjs'
+      - 'tests/formation-source-crosswalk.mjs'
       - 'data/reference/canonical-works-pilot.v1.json'
+      - 'data/reference/formation-canonical-source-crosswalk.v1.json'
+      - 'data/learn/formation-canonical-*.json'
+      - 'data/learn/formation-crisis-sourcefirst-*.json'
       - '.github/workflows/source-reference-presentation.yml'
   workflow_dispatch:
 permissions:
@@ -44,3 +48,5 @@ jobs:
         run: |
           node tests/formation-research-preview.mjs
           node tests/formation-recovery-review.mjs
+      - name: Audit 408 Formation sources against eight canonical batches
+        run: node tests/formation-source-crosswalk.mjs
