@@ -115,11 +115,12 @@ function installStyle(win){
 }
 
 export function createFindOwner(win=globalThis){
-  // Opt-in cinematic design review, using the *real* 151 canonical events.
+  // Integrated canonical Biblical Atlas: map-first physical terrain and
+  // source-context notes are the default. Explicit legacy opt-outs exist for
+  // regression comparisons without hiding shipped features behind URL flags.
   const query=new URLSearchParams(String(win?.location?.search??""));
-  const bibleCinemaPreview=query.get("atlasCinema")==="1";
-  // Second flag keeps historical-name research off the ordinary and cinematic-only experiences.
-  const bibleHistoricalPreview=bibleCinemaPreview&&query.get("atlasHistory")==="1";
+  const bibleCinemaPreview=query.get("atlasCinema")!=="0";
+  const bibleHistoricalPreview=bibleCinemaPreview&&query.get("atlasHistory")!=="0";
   let bibleCinemaFollow=true,bibleCinemaSheetExpanded=false,bibleCinemaPlateTimer=null;
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
@@ -610,6 +611,13 @@ export function createFindOwner(win=globalThis){
     });
     const detail=root?.querySelector?.("[data-bible-detail]");
     if(detail)detail.innerHTML=atlasDetail(active,lang,{historicalPreview:bibleHistoricalPreview});
+    const contextShortcut=root?.querySelector?.("[data-bible-context-open]");
+    if(contextShortcut){
+      const extra=Boolean(detail?.querySelector?.("[data-bible-history-note],[data-bible-landscape]"));
+      contextShortcut.setAttribute("aria-label",lang==="fr"?
+       (extra?"Ouvrir le contexte historique de cette étape":"Ouvrir les détails et le contexte biblique"):
+       (extra?"Open this scene’s historical context":"Open Biblical scene details and context"));
+    }
     if(bibleCinemaPreview){
       const sheetTitle=root?.querySelector?.("[data-bible-sheet-title]");
       if(sheetTitle)sheetTitle.textContent=lang==="fr"?active.title_fr:active.title_en;
@@ -733,6 +741,22 @@ export function createFindOwner(win=globalThis){
         event.preventDefault?.();
         if(bibleCinemaPlateTimer)win.clearTimeout?.(bibleCinemaPlateTimer);
         getRoot(win)?.querySelector?.("[data-bible-era-overlay]")?.replaceChildren?.();
+        return;
+      }
+      const context=target?.closest?.("[data-bible-context-open]");
+      if(context){
+        event.preventDefault?.();
+        bibleCinemaSheetExpanded=true;
+        const sheet=context.closest?.(".aoBibleAtlasDetail");
+        if(sheet){
+          sheet.dataset.bibleSheet="expanded";
+          sheet.querySelector?.("[data-bible-sheet-toggle]")?.setAttribute?.("aria-expanded","true");
+          const contextNote=sheet.querySelector?.("[data-bible-history-note],[data-bible-landscape]");
+          if(contextNote){
+            contextNote.open=true;
+            contextNote.scrollIntoView?.({block:"nearest",behavior:"instant"});
+          }
+        }
         return;
       }
       const toggle=target?.closest?.("[data-bible-sheet-toggle]");
