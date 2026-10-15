@@ -72,13 +72,13 @@ const requiredRewrites=[
  ["APOL-046","traditional_catholic_argument","Nostra aetate","Nostra aetate"],
  ["CR-LIT-04","traditional_catholic_argument","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["CR-LIT-05","critical_response","Sacrosanctum Concilium","Sacrosanctum Concilium"],
- ["APOL-002","answer","Humani generis","Humani generis"],
- ["APOL-002","critical_response","Humani generis","Humani generis"],
+ ["APOL-002","answer","Dei Filius","Dei Filius"],
+ ["APOL-002","critical_response","Dei Filius","Dei Filius"],
  ["APOL-004","critical_response","Hume","Hume"],
  ["CR-LIT-02","answer","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["CR-LIT-09","answer","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["CR-LIT-09","traditional_catholic_argument","Sacrosanctum Concilium","Sacrosanctum Concilium"],
- ["CR-LIT-07","answer","Mediator Dei","Mediator Dei"],
+ ["CR-LIT-07","answer","1962","1962"],
  ["CR-DOC-08","answer","Nostra aetate","Nostra aetate"],
  ["CR-DOC-08","traditional_catholic_argument","Nostra aetate","Nostra aetate"]
 ];
@@ -92,7 +92,13 @@ for(const [id,role,en,fr] of requiredRewrites){
 }
 const evolutionPack = packs.find(p=>p.dossiers.some(d=>d.id==="APOL-002"));
 assert.match(evolutionPack.source_registry.find(s=>s.id==="HG1950").locator,/§37/,"Pius XII polygenism locator missing");
-assert.match(owners.get("APOL-002").d.sections.find(s=>s.role==="critical_response").source_claim_locators.HG1950,/§36–37/);
+const currentFaithReason=owners.get("APOL-002").d.sections.find(s=>s.role==="critical_response");
+assert.match(currentFaithReason.source_claim_locators.AO26_APOL002_CRITI_1,/Chapter IV/,
+ "Current faith-and-reason dossier must cite Dei Filius at its chapter");
+assert.ok(!currentFaithReason.source_ids.includes("HG1950"),
+ "Previously reviewed evolution content cannot be misfiled under the corrected faith/reason answer");
+const savedEvolution=read(root+"formation-retained-evolution-china-case-records-20261014.v1.json").cases.find(x=>x.former_owner==="APOL-002");
+assert.ok(savedEvolution?.source_registry.some(s=>s.id==="HG1950"),"Older evolution research must remain recoverable");
 // Historical wave-nine invariants are recalculated from the first nine real
 // ledgers; later editorial batches must not make this regression test stale.
 assert.ok(matrix.review_ledgers.length>=9);
