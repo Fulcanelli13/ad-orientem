@@ -85,7 +85,7 @@ const rows=historic.rows.map(row=>{
   source_overlap_summary:principal?"SOME_HISTORICAL_SOURCE_IS_PRINCIPAL":
                          comm?"ONLY_EXACT_COMMEMORATIONS_MATCH":"NO_EXACT_HISTORICAL_SOURCE_MATCH_ON_DATE",
   person_identity_completeness:"NOT_CERTIFIED_FROM_SOURCE_DATE_JOIN",
-  1962_nominal_title_count_claim:"NONE",
+  nominal_1962_title_count_claim:"NONE",
   image_coverage_status:"NOT_ASSESSED_AGAINST_CURRENT_PHYSICAL_ART_AND_RATINGS"
  };
 });
