@@ -57,7 +57,9 @@ assert.equal(requests,1);
 await reader.open(bundle.manifest.passages[50].id);
 assert.equal(requests,2);
 const search=await reader.searchFullText("not a real source",{limit:1200});
-assert.equal(search.length,1200);
+assert.equal(search.length,100,"The reader deliberately caps one full-text request at 100 results");
+const last=await reader.searchFullText("24.50");
+assert.equal(last.length,1,"Searching the last synthetic passage must reach the last chunk");
 assert.equal(requests,24);
 assert.equal(reader.loadedChunks(),24);
 const inserted=extractReviewedEdition({work:demo,review,
