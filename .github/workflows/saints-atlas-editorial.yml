@@ -5,6 +5,7 @@ on:
       - 'data/saints/**'
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
+      - 'tests/saints-parallel-owner-bridge.mjs'
       - 'previews/saints-map-holiness-first-20261015.html'
       - 'tests/saints-atlas-editorial-pilot.mjs'
       - '.github/workflows/saints-atlas-editorial.yml'
@@ -21,6 +22,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Reconcile Calendar, Relics and Sacred Art identities without merging owners
+        run: node tests/saints-parallel-owner-bridge.mjs
       - name: Check native module syntax
         run: |
           node --check src/find/saints-lens.js
