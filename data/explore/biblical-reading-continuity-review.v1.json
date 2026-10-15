@@ -19,7 +19,13 @@
     "proseNotAuthored": true,
     "notFullBible": true,
     "noUnverifiedRoutePins": true,
-    "noArtworkImports": true
+    "noArtworkImports": true,
+    "noAiAuthoredNarrative": true,
+    "noAiNarrativeTranslation": true,
+    "existingAuthorProseOnly": true,
+    "noPermissionRequests": true,
+    "historicalSourceWitnessRequired": true,
+    "narrativeTextRule": "VERBATIM_PREEXISTING_CATHOLIC_AUTHORED_TEXT_ONLY. Narrative body may consist solely of properly attributed verified historical/public-domain (or already licensed) source prose or direct source-edition Scripture. No AI-written, AI-paraphrased, AI-translated or AI-composed connecting narration; metadata and indexes may still be algorithmically generated. If no suitable historical prose is available, present the original Scripture passage, not invented bridging text. No permission requests."
   },
   "counts": {
     "events": 151,
