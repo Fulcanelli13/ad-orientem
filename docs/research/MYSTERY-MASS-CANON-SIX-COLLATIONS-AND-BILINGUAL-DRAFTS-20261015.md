@@ -90,3 +90,8 @@ Related scanned pages were separately inspected or matched to the corresponding 
 | *Supplices*, Angel, earlier French predecessor | 46 | [48](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/48) |
 
 **Status: 1/6 source overlap pairs verified by original printed-image inspection; 5/6 remain.** Guéranger's two and Gihr's three original page-image collations are still outstanding; catalogue or OCR links are not substitutes. The German and Italian originals also remain outside this narrow scan certification. All findings remain research-only; no theological or rights release gate changed.
+
+
+### Additional original-page check — St Alphonsus's editorial Notice
+
+The [1887 Grimm edition's Notice, unnumbered printed page, DjVu image 17](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/17) and its [original page image](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Complete_ascetical_works_of_St_Alphonsus_v6.djvu/page17-1280px-Complete_ascetical_works_of_St_Alphonsus_v6.djvu.jpg) have now **also been visually inspected**. The editor discusses Condren/Quesnel parallels but doubts that he has identified the actual earlier French source. The source is therefore **historically uncertain**, not a proved work-to-work derivation. This newly inspected prefatory page is an **additional printed witness**, not an additional one of the six passage pairs; the six-pair count remains **1 verified / 5 pending**.
