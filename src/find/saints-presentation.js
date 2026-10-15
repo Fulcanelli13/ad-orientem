@@ -128,7 +128,7 @@ export function renderSaintSourceIndexSheet(vm){
   const title=lang==="fr"?item.title_fr:item.title;
   const summary=lang==="fr"?item.summary_fr:item.summary;
   const subtitle=lang==="fr"?item.subtitle_fr:item.subtitle;
-  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoSaintSourceIndexSheet" role="dialog" aria-modal="true" aria-label="'+esc(title)+'">';
+  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoSaintSourceIndexSheet" data-saint-source-id="'+esc(meta.source_id||"")+'" role="dialog" aria-modal="true" aria-label="'+esc(title)+'">';
   html+='<header><div><small>'+esc(say("SAINTS · SOURCE INDEX","SAINTS · INDEX DES SOURCES"))+'</small><h2>'+esc(title)+'</h2></div>'
    +'<button type="button" data-find-close-detail aria-label="'+esc(say("Close","Fermer"))+'">×</button></header>';
   html+='<p class="aoSaintIndexScope">'+esc(historical
