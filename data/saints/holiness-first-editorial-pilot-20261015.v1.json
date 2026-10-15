@@ -59,6 +59,20 @@
       "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/1979/documents/hf_jp-ii_hom_19790429_beat-laval-coll.html",
       "kind": "HOLY_SEE_DOCUMENT",
       "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN_2007": {
+      "id": "BERN_2007",
+      "title": "Benedict XVI, Angelus on the Lourdes apparition (11 February 2007)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/angelus/2007/documents/hf_ben-xvi_ang_20070211.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER_OCEANIA": {
+      "id": "PETER_OCEANIA",
+      "title": "John Paul II, Ecclesia in Oceania, §7 (2001)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_20011122_ecclesia-in-oceania.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
     }
   },
   "people": [
@@ -133,7 +147,37 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "FORMAL_PAPAL_PROCLAMATION",
+            "source_ids": [
+              "THER"
+            ]
+          }
+        ],
+        "roles": [
+          {
+            "code": "CONTEMPLATIVE_RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "THER"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "THER"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     },
     {
       "saint_id": "saint:bernadette-soubirous",
@@ -180,7 +224,8 @@
         "BERN"
       ],
       "further_reading_source_ids": [
-        "BERN"
+        "BERN",
+        "BERN_2007"
       ],
       "place_links": [
         {
@@ -227,7 +272,42 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "BERN"
+            ]
+          },
+          {
+            "code": "VISIONARY_WITNESS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "BERN_2007"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "event_id": "event:bernadette:1858-lourdes",
+          "kind": "MARIAN_APPARITION_ACCOUNT",
+          "attribution": "PERSONAL_REPORTED_EXPERIENCE",
+          "subject": "BLESSED_VIRGIN_MARY",
+          "status": "ACKNOWLEDGED_IN_HOLY_SEE_DOCUMENT_NOT_PROOF_OF_EVERY_DETAIL",
+          "en": "Bernadette reported appearances of the Blessed Virgin Mary at Lourdes beginning in 1858. This is an apparition testimony—not a claim that Bernadette herself performed the cures reported at the shrine.",
+          "fr": "Bernadette a rapporté des apparitions de la Sainte Vierge à Lourdes à partir de 1858. Il s'agit d'un témoignage d'apparitions, non de l'affirmation qu'elle aurait personnellement accompli les guérisons rapportées au sanctuaire.",
+          "source_ids": [
+            "BERN_2007"
+          ]
+        }
+      ],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     },
     {
       "saint_id": "saint:margaret-mary-alacoque",
@@ -295,7 +375,49 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG1"
+            ]
+          },
+          {
+            "code": "MYSTIC",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          },
+          {
+            "code": "VISIONARY_WITNESS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "event_id": "event:margaret-mary:paray-sacred-heart",
+          "kind": "CHRIST_APPARITION_ACCOUNT",
+          "attribution": "PERSONAL_REPORTED_EXPERIENCE",
+          "subject": "JESUS_CHRIST",
+          "status": "ACCOUNT_DESCRIBED_WITH_DISCERNMENT_IN_MAGISTERIAL_DOCUMENT",
+          "en": "Margaret Mary described appearances of Christ at Paray-le-Monial between 1673 and 1675, centred on his Sacred Heart. The Church discusses the account while cautioning that not every detail of a private experience must be accepted.",
+          "fr": "Marguerite-Marie a relaté des apparitions du Christ à Paray-le-Monial entre 1673 et 1675, centrées sur son Sacré-Cœur. L'Église en présente le récit tout en rappelant que chaque détail d'une expérience privée ne doit pas nécessairement être accepté.",
+          "source_ids": [
+            "MARG2"
+          ]
+        }
+      ],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     },
     {
       "saint_id": "saint:claude-la-colombiere",
@@ -342,7 +464,8 @@
         "CLAUDE"
       ],
       "further_reading_source_ids": [
-        "CLAUDE"
+        "CLAUDE",
+        "MARG2"
       ],
       "place_links": [
         {
@@ -360,7 +483,36 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "CLAUDE"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_DIRECTOR",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     },
     {
       "saint_id": "saint:peter-chanel",
@@ -407,7 +559,8 @@
         "PETER"
       ],
       "further_reading_source_ids": [
-        "PETER"
+        "PETER",
+        "PETER_OCEANIA"
       ],
       "place_links": [
         {
@@ -425,7 +578,36 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          },
+          {
+            "code": "MARTYR",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     },
     {
       "saint_id": "blessed:jacques-desire-laval",
@@ -490,7 +672,37 @@
       "later_calendar_keys": [],
       "approved_artwork_ids": [],
       "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
-      "publication": "EDITORIAL_REVIEW_ONLY"
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          },
+          {
+            "code": "PASTORAL_CARITY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE"
     }
-  ]
+  ],
+  "extraordinary_editorial_rule": "An empty extraordinary_accounts list means NOT_RESEARCHED_OR_NOT_SOURCE_CONFIRMED; it never means that no miracle, vision, stigmata or other extraordinary event occurred. Personal visions, authenticated miracles, reported cures and shrine-associated miracles are different claims."
 }
