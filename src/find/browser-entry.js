@@ -696,6 +696,14 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
       state.bibleAtlas=true;state.bibleIndex=0;
+      // This review is explicitly map-first: begin at the earliest
+      // source-qualified geographic event rather than a blank Creation map.
+      // Creation remains at index zero in the unchanged 151-event chronology.
+      if(bibleCinemaPreview){
+        const firstMapped=buildBibleAtlas(dataset.biblePlaces?.entries??[])
+          .find(stop=>Boolean(stop.geo));
+        if(firstMapped)state.bibleIndex=firstMapped.index;
+      }
       bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;
       lastMapView=null;lastMapLens=null;
       void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
