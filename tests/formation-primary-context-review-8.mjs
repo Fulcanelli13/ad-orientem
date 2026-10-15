@@ -7,6 +7,29 @@ const packs=matrix.source_packs.map(read);
 const map=new Map(packs.flatMap(pack=>pack.dossiers.map(d=>[d.id,{d,reg:new Map(pack.source_registry.map(s=>[s.id,s]))}])));
 const prev=read(base+"formation-primary-context-review-7-2026-10-09.v1.json");
 const ledger=read(base+"formation-primary-context-review-8-2026-10-09.v1.json");
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const historicPass=delta.historical_primary_source_dispositions_by_pass["8"];
+assert.equal(historicPass.dispositions.length,4);
+const historicByFinding=new Map(historicPass.dispositions.map(row=>[row.finding_id,row]));
+assert.equal(historicByFinding.size,historicPass.dispositions.length);
+const assertRetained=(f,section,registry)=>{
+ const row=historicByFinding.get(f.id);
+ if(section?.source_ids.includes(f.source_id)){
+  assert.ok(!row,f.id+" original source still cited; incorrect supersession");
+  return;
+ }
+ assert.ok(row,f.id+" original source moved without an explicitly preserved historical finding");
+ assert.equal(row.owner,f.owner);assert.equal(row.role,f.role);
+ assert.equal(row.historic_source_id,f.source_id);
+ assert.equal(row.historic_url,f.url);
+ assert.equal(registry.get(f.source_id)?.url,f.url,
+  f.id+" previous exact original document removed from its source registry");
+ assert.deepEqual(row.current_source_ids,section.source_ids);
+ assert.deepEqual(row.matching_original_url_successor_ids,
+   section.source_ids.filter(id=>registry.get(id)?.url===f.url));
+ assert.equal(row.current_claim_independently_certified,false);
+ assert.match(row.disposition,/NOT_AUTOMATICALLY_TRANSFERRED|NOT_CERTIFIED/);
+};
 assert.equal(prev.findings.length,88);
 assert.equal(ledger.version,"FORMATION_PRIMARY_CONTEXT_EDITORIAL_PASS8_20261009_V1");
 assert.equal(ledger.scope.prior_findings_retained,235);
@@ -15,6 +38,8 @@ assert.equal(ledger.scope.new_distinct_sections_with_bounded_review,50);
 assert.equal(ledger.scope.bilingual_sections_rewritten_in_wave,12);
 assert.equal(ledger.findings.length,50);
 assert.equal(ledger.publication_allowed,false);
+assert.equal(historicPass.historical_findings,50);
+assert.equal(historicPass.unchanged_current_source_links,46);
 assert.equal(ledger.independent_theological_canonical_approval,false);
 assert.equal(ledger.native_french_copyapproval,false);
 const pairSet=new Set();
@@ -25,7 +50,7 @@ for(const [i,f] of ledger.findings.entries()){
  const key=f.owner+"|"+f.role;assert.ok(!pairSet.has(key),"Claim observation duplicated: "+key);pairSet.add(key);
  const obj=map.get(f.owner);assert.ok(obj,"Unknown dossier "+f.owner);
  const section=obj.d.sections.find(s=>s.role===f.role);
- assert.ok(section?.source_ids.includes(f.source_id),key+": claimed original not linked in substantive section");
+ assertRetained(f,section,obj.reg);
  assert.equal(obj.reg.get(f.source_id)?.url,f.url,"URL differs from canonical original source registry");
  assert.match(f.url,/^https:\/\/[^\s/]+\/\S+/);
  assert.ok(f.locator.length>25&&f.document_finding.length>65&&f.qualification.length>=65,"Thin primary-text review "+f.id);
