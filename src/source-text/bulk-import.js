@@ -32,7 +32,7 @@ function parseChapter(chapter){
   if(body.includes("\u00AD"))warnings.push("OCR_SOFT_HYPHEN");
   if(/\b[A-Za-z]{2,}-\s+[a-z]{2,}\b/.test(body))warnings.push("OCR_BROKEN_LINE_HYPHEN");
   if(/(?:\[\?\]|\(\?\)|<script\b)/i.test(body))warnings.push("SUSPICIOUS_TRANSCRIPTION_MARKER");
-  if(!hasAnchors)warnings.push("ORDINAL_ANCHOR_UNSTABLE_IF_SOURCE_CHANGES");
+  // Ordinal stability is a chapter-level policy, not 182 false-positive errors.
   if(body.trim().split(/\s+/).length<3)warnings.push("VERY_SHORT_PARAGRAPH_REVIEW");
   blocks.push({anchor,ordinal:i+1,text:body.replace(/\s+/g," ").trim(),warnings});
  }
@@ -66,6 +66,8 @@ export function stageBulkWork({work,chapters,mode="INDEX_ONLY",review}={}){
   chapterIds.add(ch.id);observed.push(ch.id);
   const parsed=parseChapter(ch);
   exceptions.push(...parsed.exceptions.map(e=>({chapterId:ch.id,...e})));
+  if(ch.format==="PLAIN_PARAGRAPHS")
+   exceptions.push({chapterId:ch.id,type:"ORDINAL_LOCATORS_NEED_EDITION_LOCK_OR_SOURCE_ANCHORS"});
   for(const b of parsed.blocks){
    const alreadyReviewed=review?.verifiedPassages?.includes(ch.id+":"+b.anchor)===true;
    let grade=b.warnings.some(w=>w.startsWith("OCR_")||w==="SUSPICIOUS_TRANSCRIPTION_MARKER")?"C":
@@ -108,6 +110,7 @@ export function stageBulkWork({work,chapters,mode="INDEX_ONLY",review}={}){
   productionPublished:false,humanReviewRequired:qualityB+qualityC>0||
    !exactCoverage,
   sourceContentStored:mode==="LOCAL_REVIEW",
+  locatorPolicy:"ANCHORED_CHAPTER_IDS_REQUIRED_FOR_STABLE_CITATION;_PLAIN_CHAPTER_ORDINALS_ARE_BROWSE_ONLY",
   corpusProvenance:"EDITION_SPECIFIC_STAGED_INPUT_NOT_INDEPENDENTLY_PROOFREAD_BY_PARSER"};
 }
 export function summarizeBulkStages(stages){
