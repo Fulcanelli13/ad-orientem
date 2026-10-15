@@ -1,0 +1,29 @@
+name: Saints observed 1962 Calendar census 2026
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/saints-calendar-year-census.mjs'
+      - '.github/workflows/saints-calendar-year-census.yml'
+  workflow_dispatch:
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Read all 365 observed days from existing Calendar resolver
+        run: node tests/saints-calendar-year-census.mjs
+      - name: Keep auditable source-owner census
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: saints-2026-observed-source-owner-census
+          path: artifacts/saints-calendar-census/*.json
+          if-no-files-found: warn
+          retention-days: 14
