@@ -28,9 +28,32 @@
     "precedingContext": "The section and subheading began on printed p.256",
     "followingContext": "The paragraph at the end of the right column continues on printed p.258."
   },
-  "paragraphUnits": [
+  "productionStatus": {
+    "completeOriginalPageTranscriptions": 0,
+    "fullyProofreadParagraphs": 0,
+    "selectedPreviouslyStoredParagraphCount": 1,
+    "selectedCompleteParagraphsForThisPage": 1,
+    "selectedIncompleteParagraphExcerptsForThisPage": 1,
+    "untranscribedTextBlocks": "AT_LEAST_TWO_MAJOR_TERRITORIES_WITH_INTERNAL_PARAGRAPH_BOUNDARIES_UNRESOLVED",
+    "appReady": false,
+    "reason": "Physical page segmentation and a few existing passages were compared to the image; full orthographic and bibliographic verification is not complete.",
+    "completePrintedParagraphCensus": "NOT_YET_VERIFIED"
+  },
+  "reviewDependencies": [
+    "Manually proofread entirety of p257 from original printed image, including source Latin, proper names, references, ligatures and punctuation",
+    "Distinguish visible punctuation/hyphenation from unreviewed Wikisource OCR and New Advent transcription",
+    "Verify P257-02 is exactly one printed paragraph and document all corrections",
+    "Verify P257-03 right-column end",
+    "Collate P257-04 across printed p257→p258 with both scans, no guessed join",
+    "Independent editor signs off actual complete page, all footnotes and boundaries before editorial promotion",
+    "Determine exact printed paragraph indentation inside both right-column historical territories before assigning additional passage IDs"
+  ],
+  "reviewerKind": "MODEL_IMAGE_STRUCTURAL_ASSESSMENT_NOT_HUMAN_EDITION_CERTIFICATION",
+  "notCanonicalMassRubrics": true,
+  "noMassModuleMutation": true,
+  "sourceTerritories": [
     {
-      "id": "P257-01",
+      "id": "T257-01",
       "reviewedLocator": "p257:s001",
       "startsOnPrintedPage": 257,
       "endsOnPrintedPage": 257,
@@ -43,7 +66,7 @@
       "qualification": "Fortescue proposes a possible historical rearrangement; not established liturgical fact or 1962 rule."
     },
     {
-      "id": "P257-02",
+      "id": "T257-02",
       "reviewedLocator": "p257:s002",
       "startsOnPrintedPage": 257,
       "endsOnPrintedPage": 257,
@@ -57,52 +80,33 @@
       "qualification": "The 87-word excerpt is not an entire paragraph. The scan continues in left column through the source comparisons and the end of the account of Hippolytus."
     },
     {
-      "id": "P257-03",
+      "id": "T257-03",
       "reviewedLocator": "p257:s003",
       "startsOnPrintedPage": 257,
       "endsOnPrintedPage": 257,
       "startsWith": "The first great turning-point in the history of the Roman Canon",
       "endsWith": "the same as parts of our present Canon.",
-      "pageCompleteness": "COMPLETE_PRINTED_PARAGRAPH_NOT_TRANSCRIBED",
+      "pageCompleteness": "SOURCE_TERRITORY_CROSSES_COLUMN_BREAK_INTERNAL_PARAGRAPHS_NOT_ADJUDICATED",
       "textAvailability": "LOCATORS_ONLY",
       "proofreading": "UNCOLLATED",
       "transition": "Begins near foot of left column; runs over physical column break to top of right column.",
       "type": "AUTHORIAL_HISTORY_OF_LATIN_LITURGY"
     },
     {
-      "id": "P257-04",
+      "id": "T257-04",
       "reviewedLocator": "p257:s004",
       "startsOnPrintedPage": 257,
       "endsOnPrintedPage": 258,
       "startsWith": "In the time of Pope Damasus",
       "lastPage257Words": "He also says that at",
       "firstPage258Words": "Rome the names of persons for whom the celebrant prays are read in the Canon",
-      "pageCompleteness": "CROSS_PAGE_PARAGRAPH_NOT_TRANSCRIBED",
+      "pageCompleteness": "MULTIPARAGRAPH_TERRITORY_CROSSES_TO_258_NOT_TRANSCRIBED",
       "textAvailability": "LOCATORS_ONLY",
       "proofreading": "UNCOLLATED_REQUIRES_PAGE258_REVIEW",
       "sourceWithinQuote": "De Sacramentis (Pseudo-Ambrose) cited/quoted by Fortescue; preserve quotation provenance separate from Fortescue authorship",
-      "type": "AUTHORIAL_HISTORY_WITH_EMBEDDED_PATRISTIC_QUOTATION"
+      "type": "LATE_ANTIQUE_LATIN_WITNESSES_WITH_MULTIPLE_EMBEDDED_QUOTATIONS",
+      "internalParagraphBreaks": "UNRESOLVED_FROM_CURRENT_PAGE_IMAGE_REVIEW"
     }
   ],
-  "productionStatus": {
-    "completeOriginalPageTranscriptions": 0,
-    "fullyProofreadParagraphs": 0,
-    "selectedPreviouslyStoredParagraphCount": 2,
-    "selectedCompleteParagraphsForThisPage": 1,
-    "selectedIncompleteParagraphExcerptsForThisPage": 1,
-    "untranscribedTextBlocks": 2,
-    "appReady": false,
-    "reason": "Physical page segmentation and a few existing passages were compared to the image; full orthographic and bibliographic verification is not complete."
-  },
-  "reviewDependencies": [
-    "Manually proofread entirety of p257 from original printed image, including source Latin, proper names, references, ligatures and punctuation",
-    "Distinguish visible punctuation/hyphenation from unreviewed Wikisource OCR and New Advent transcription",
-    "Verify P257-02 is exactly one printed paragraph and document all corrections",
-    "Verify P257-03 right-column end",
-    "Collate P257-04 across printed p257→p258 with both scans, no guessed join",
-    "Independent editor signs off actual complete page, all footnotes and boundaries before editorial promotion"
-  ],
-  "reviewerKind": "MODEL_IMAGE_STRUCTURAL_ASSESSMENT_NOT_HUMAN_EDITION_CERTIFICATION",
-  "notCanonicalMassRubrics": true,
-  "noMassModuleMutation": true
+  "scopeClarification": "The four source territories are reading-order macro segments, not a certified census of exactly four printed paragraphs."
 }
