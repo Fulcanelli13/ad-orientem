@@ -32,6 +32,26 @@ assert.equal(exploreMapFeatures(items).length,8,"MapLibre feature count must equ
 assert(items.every(x=>x.kind==="SAINTS_AT_PHYSICAL_PLACE"&&x.lens==="saints"));
 assert(items.every(x=>x.saints.every(s=>s.name_en&&s.why_en&&s.name_fr&&s.why_fr&&s.biography_facts.length===3)));
 assert(items.every(x=>x.saints.every(s=>s.artwork_id===null)),"No art without curated approval");
+const distinct=new Map(items.flatMap(i=>i.saints).map(p=>[p.saint_id,p]));
+assert.equal(distinct.size,6,"The person taxonomy is identity-owned, not duplicated per shrine");
+const canonicalHonours=[...distinct.values()].flatMap(p=>p.classification.honours);
+assert.deepEqual(canonicalHonours.map(h=>h.code),["DOCTOR_OF_CHURCH"],"Only formally declared Doctor of Church is classified as such");
+assert.equal(distinct.get("saint:therese-of-lisieux").classification.honours[0].en,"Doctor of the Church");
+assert.equal([...distinct.values()].reduce((n,p)=>n+p.classification.roles.length,0),16);
+assert(distinct.get("saint:peter-chanel").classification.roles.some(x=>x.code==="MARTYR"));
+assert(!distinct.get("saint:bernadette-soubirous").classification.roles.some(x=>x.code==="MARTYR"));
+const extraordinary=[...distinct.values()].flatMap(x=>x.classification.extraordinary);
+assert.equal(extraordinary.length,2,"Only two verified private-experience accounts; never invent personal miracles");
+assert(new Set(extraordinary.map(e=>e.kind)).has("MARIAN_APPARITION_ACCOUNT"));
+assert(new Set(extraordinary.map(e=>e.kind)).has("CHRIST_APPARITION_ACCOUNT"));
+assert(!extraordinary.some(e=>/STIGMATA|MIRACULOUS_HEALING|OTHER_MIRACLE/.test(e.kind)),
+ "No verified stigmata or personally performed cures in current six-profile source set");
+assert([...distinct.values()].every(p=>p.classification.extraordinary.every(e=>e.source_ids.length>0)));
+assert(distinct.get("blessed:jacques-desire-laval").classification.roles.some(r=>r.code==="MISSIONARY"));
+assert(!distinct.get("blessed:jacques-desire-laval").classification.extraordinary.length);
+const bern=distinct.get("saint:bernadette-soubirous");
+assert(bern.classification.extraordinary[0].en.includes("not a claim that Bernadette herself performed the cures"));
+assert(bern.sources.some(s=>s.id==="BERN_2007"));
 const paray=items.find(x=>x.place_id==="place:FR:sanctuaire-sacre-coeur-paray");
 assert(paray?.map_publishable&&paray.saints.length===2,"Paray is one map marker with both Margaret Mary and Claude");
 assert(new Set(paray.saints.map(x=>x.saint_id)).has("saint:margaret-mary-alacoque"));
@@ -55,6 +75,12 @@ for(const lang of ["en","fr"]){
   assert(html.includes('data-explore-open-place="place:FR:sanctuaire-sacre-coeur-paray"'));
   assert(html.includes(lang==="fr"?"Sainte Marguerite-Marie Alacoque":"Saint Margaret Mary Alacoque"));
   assert(html.includes("aoSaintFacts"),"Meaning-first bullet biographies must render");
+  assert(html.includes('data-saint-category="MYSTIC"'),"Descriptive spiritual categories missing from bilingual biography");
+  assert(html.includes("aoSaintExtraordinary"),"One documented Christ appearance account must be progressively disclosed");
+  assert(html.includes("aoSaintEventRefs"),"Extraordinary experience account must have its own source");
+  assert(html.includes(lang==="fr"?"Expériences extraordinaires rapportées":"Reported extraordinary experiences"));
+  assert(html.includes('data-saint-event="event:margaret-mary:paray-sacred-heart"'));
+
   assert(html.includes("aoSaintReading"),"Further reading should remain folded");
   assert(html.includes("Art portrait pending")||html.includes("Portrait en attente"));
   assert(!html.includes("<img"),"No borrowed sacred art/saint imagery in editorial pilot");
