@@ -1,4 +1,4 @@
-import {SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork} from "./contracts.js";
+import {SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope} from "./contracts.js";
 const SAFE_CHUNK=/^chunks\/[0-9]{4}\.json$/;
 export function createSourceTextReader({manifest,loadChunk}={}){
  if(manifest?.schema!==SOURCE_TEXT_MANIFEST_SCHEMA||
@@ -43,6 +43,7 @@ export function createSourceTextReader({manifest,loadChunk}={}){
         expectedIndex[field]!==undefined&&p[field]!==expectedIndex[field]))
       throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
     }
+    assertPassageReproductionScope(manifest.work,parsed.passages);
     return new Map(parsed.passages.map(p=>[p.id,p]));
    }).catch(error=>{cache.delete(path);throw error;}));
   return cache.get(path);
