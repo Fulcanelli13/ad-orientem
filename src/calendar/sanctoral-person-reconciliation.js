@@ -35,6 +35,7 @@ export function reconcileSaintPersonRecords(existingPersons,officialCensus) {
       observances:Object.freeze([]),
       calendar1962:Object.freeze({principalId:null,identityStatus:"NOT_RECONCILED_WITH_1962_RESOLVER",protectedThirdClass:false}),
       laterTraditionalMass:Object.freeze({status:"UNIVERSAL_MEMORIAL_DATE_UNVERIFIED"}),
+      ...(person.publicationHold ? {publicationHold:person.publicationHold,reviewFlags:Object.freeze([...(person.reviewFlags||[])])}:{}),
       sourceReconciliation:Object.freeze({existingRecordKept:false,canonizationEventId:event.id,sourceUrl:event.sourceUrl}),
     }));
   }
