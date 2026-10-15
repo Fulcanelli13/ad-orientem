@@ -108,7 +108,10 @@
     "primary_findings_historical_or_superseded": 2,
     "historical_pass4_findings": 31,
     "historical_pass4_still_same_source_id": 24,
-    "historical_pass4_source_dispositions": 7
+    "historical_pass4_source_dispositions": 7,
+    "historical_eight_crisis_amendments": 16,
+    "historical_amendment_roles_still_same": 10,
+    "historical_amendment_role_reassignments": 6
   },
   "added_source_bindings": [
     {
@@ -2047,6 +2050,95 @@
       "old": "PIUS1945",
       "current": null,
       "disposition": "ORIGINAL_1945_JURIDICAL_CITATION_NO_LONGER_ATTACHED_TO_NEW_CRITICAL_ROLE__REVIEW_RETAINED_HISTORICALLY"
+    }
+  ],
+  "historical_crisis_amendment_reassignments": [
+    {
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "BEN07",
+        "TC21",
+        "FR21",
+        "OTT69-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "RP84",
+        "VS93",
+        "FUCHS71-FIRSTPERSON-REPRINT"
+      ],
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "status": "FORMER_FIRST_PERSON_FUCHS_POSITION_NO_LONGER_CITED__CURRENT_MAGISTERIAL_SUMMARY_EXPLICITLY_NOT_FIRST_PERSON__OPPONENT_ATTRIBUTION_UNRESOLVED"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "EN75",
+        "AG65",
+        "FRANCIS-AUD23-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_1",
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_DOCUM_3"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "role": "critical_response",
+      "historical_source_ids": [
+        "EN75",
+        "AG65",
+        "DOMJES",
+        "FRANCIS-AUD23-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_CRITI_2"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "CICADMIN",
+        "CICFIN",
+        "MONEYVAL-CR-2024"
+      ],
+      "current_source_ids": [
+        "AO26_CRGOV09_DOCUM_1",
+        "AO26_CRGOV09_DOCUM_2"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "role": "critical_response",
+      "historical_source_ids": [
+        "CICADMIN",
+        "CICFIN",
+        "MONEYVAL-CR-2024"
+      ],
+      "current_source_ids": [
+        "AO26_CRGOV09_CRITI_1"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
     }
   ]
 }
