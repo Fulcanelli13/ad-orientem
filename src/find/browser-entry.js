@@ -11,6 +11,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
+import { projectSaintCatalogueItems } from "./saints-catalogue.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
@@ -253,6 +254,7 @@ export function createFindOwner(win=globalThis){
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
+    if(state.lens==="saints"&&state.view==="list")return filterExploreItems(projectSaintCatalogueItems(dataset),{query:state.query});
     const list=filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
     return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
