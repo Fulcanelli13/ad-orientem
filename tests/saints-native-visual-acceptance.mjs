@@ -16,9 +16,10 @@ const server=http.createServer(async(req,res)=>{
     const p=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
     const f=resolve(root,"."+p);
     if(f!==root&&!f.startsWith(root+sep)){res.writeHead(403);res.end("forbidden");return;}
+    const payload=await readFile(f);
     res.writeHead(200,{"content-type":mime[extname(f)]||"application/octet-stream","cache-control":"no-store"});
-    res.end(await readFile(f));
-  }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message??error));}
+    res.end(payload);
+  }catch(error){if(!res.headersSent)res.writeHead(error?.code==="ENOENT"?404:500);if(!res.writableEnded)res.end(String(error?.message??error));}
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4211,"127.0.0.1",ok)});
 
