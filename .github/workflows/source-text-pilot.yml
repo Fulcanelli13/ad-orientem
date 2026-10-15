@@ -1,35 +1,27 @@
-name: Source-text parser pilot
+name: Source reference locator checks
 on:
+  push:
+    branches:
+      - feature/source-text-parsing-infrastructure-20261015
+    paths:
+      - 'src/source-text/**'
+      - 'data/source-text/witness-profiles.v1.json'
+      - 'tests/source-text-references.mjs'
+      - '.github/workflows/source-text-pilot.yml'
   pull_request:
     paths:
-      - "src/source-text/**"
-      - "data/source-text/**"
-      - "tests/source-text-*.mjs"
-      - "previews/source-text-parsing-pilot.html"
-      - "docs/source-text-*.md"
-      - ".github/workflows/source-text-pilot.yml"
+      - 'src/source-text/**'
+      - 'data/source-text/witness-profiles.v1.json'
+      - 'tests/source-text-references.mjs'
+      - '.github/workflows/source-text-pilot.yml'
   workflow_dispatch:
-permissions:
-  contents: read
 jobs:
-  parser:
+  reference-only:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - name: Check source, edition, rights and lazy loading
-        run: |
-          node tests/source-text-pilot.mjs
-          node tests/source-text-acquisition-scale.mjs
-          node tests/source-text-witness-locators.mjs
-          node tests/source-text-real-print-fixture.mjs
-          node tests/source-text-scan-review.mjs
-          node tests/source-text-provisional-page.mjs
-          node tests/source-text-print-batch.mjs
-          node tests/source-text-print-followon.mjs
-          node tests/source-text-bulk-whole-work.mjs
-          node tests/source-text-bulk-reconciliation.mjs
-          node tests/source-text-bulk-classics.mjs
-          node scripts/source-text-bulk-ingest.mjs data/source-text/bulk-jobs.v1.json
+          node-version: 22
+      - name: Source locator and existing reference crosswalk
+        run: node tests/source-text-references.mjs
