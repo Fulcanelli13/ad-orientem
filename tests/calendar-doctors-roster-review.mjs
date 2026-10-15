@@ -20,7 +20,7 @@ for (const row of registry.doctors) {
   assert.ok(row.name);
   assert.equal(row.runtime, "NOT_CONNECTED");
   if (row.observanceSourceIdentity) {
-    assert.match(row.observanceSourceIdentity, /^sancti:\\d{2}-\\d{2}(?:r)?$/);
+    assert.match(row.observanceSourceIdentity, /^sancti:\\d{2}-\\d{2}(?:[a-z]+)?:3:[wr]$/);
     assert.equal(row.status1962, "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER");
     assert.ok(row.evidence?.source);
     assert.deepEqual(row.evidence.years, [2024, 2027]);
