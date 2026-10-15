@@ -23,7 +23,7 @@ assert.deepEqual(new Set(release.sites.map(x=>x.country)),new Set(["IT","PT","HU
 assert.equal(new Set(release.sites.map(x=>x.place_id)).size,7);
 assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[246,242,228,419]);
 assert.equal(new Set(g.places.map(x=>x.place_id)).size,246);
-assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,233);
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,242);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.deepEqual([r70.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
