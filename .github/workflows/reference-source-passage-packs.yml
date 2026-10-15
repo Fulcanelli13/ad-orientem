@@ -5,6 +5,8 @@ on:
       - 'src/reference/**'
       - 'data/reference/source-demo/**'
       - 'tests/reference-passage-packs.mjs'
+      - 'tests/reference-passage-reader-browser.mjs'
+      - 'previews/reference-passage-reader-20261015.html'
       - 'tests/reference-parsing.mjs'
       - 'tests/fixtures/source-passage-original.html'
       - 'tools/reference/build-source-packs.mjs'
@@ -35,3 +37,25 @@ jobs:
           node --check src/reference/passage-packs.js
           node --check src/reference/passage-reader.js
           node --check tools/reference/build-source-packs.mjs
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Test local passage pilot at three widths and both interface languages
+        run: node tests/reference-passage-reader-browser.mjs
+      - name: Upload phone and tablet reader screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-passage-pilot-screenshots
+          path: artifacts/source-passage-pilot
+          if-no-files-found: warn
