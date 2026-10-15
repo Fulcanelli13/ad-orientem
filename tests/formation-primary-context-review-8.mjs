@@ -58,10 +58,10 @@ for(const [i,f] of ledger.findings.entries()){
  assert.equal(section.french_final_approved,false);
 }
 const rewritten=[
- ["CR-DOC-05","traditional_catholic_argument","Libertas","Libertas"],
+ ["CR-DOC-05","traditional_catholic_argument","Quas primas","Quas primas"],
  ["CR-DOC-07","traditional_catholic_argument","Lumen gentium","Lumen gentium"],
  ["CR-AUT-04","critical_response","Doctrinal Commentary","Commentaire doctrinal"],
- ["CR-AUT-05","traditional_catholic_argument","Canon 212","canon 212"],
+ ["CR-AUT-05","traditional_catholic_argument","canon 212","canon 212"],
  ["CR-AUT-10","traditional_catholic_argument","Aquinas","Saint Thomas"],
  ["APOL-039","traditional_catholic_argument","Lumen gentium","Lumen gentium"],
  ["APOL-045","traditional_catholic_argument","Romans 11","Romains 11"],
