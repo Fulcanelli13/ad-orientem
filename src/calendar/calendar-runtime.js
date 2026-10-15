@@ -627,6 +627,7 @@ function supplementaryDayMarkup(selected,r){
     const cards=buildReviewedSanctoralCards({
       date:selected,language:fr()?"fr":"en",jurisdiction:"UNSPECIFIED",
       observedPrincipalId:r.day.main.id,
+      observedCommemorationIds:(r.day.commemorations||[]).map(x=>x.id).filter(Boolean),
       ...secondarySaintModel
     });
     return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
