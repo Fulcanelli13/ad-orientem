@@ -4143,6 +4143,56 @@
         "SG-R75-GEO-SG-INV-0721"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:US:allentown-guadalupe-national-shrine",
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Guadalupe, Mother of the Americas",
+      "origin_summary": "Catholic national shrine located in the parish Church of the Immaculate Conception at 501 Ridge Avenue, Allentown. The parish records designation as the National Shrine of Our Lady of Guadalupe in 1974. It is physically separate from the basilica at Tepeyac in Mexico City.",
+      "origin_summary_fr": "Sanctuaire national catholique établi dans l'église paroissiale de l'Immaculée-Conception, au 501 Ridge Avenue à Allentown. La paroisse atteste sa désignation comme sanctuaire national de Notre-Dame de Guadalupe en 1974. Il est distinct de la basilique du Tepeyac à Mexico.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0377",
+        "SG-R76-GEO-SG-INV-0377"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:TT:laventille-our-lady-fatima-shrine",
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Fátima / Our Lady of Laventille",
+      "origin_summary": "Marian pilgrimage church on Laventille hill above Port of Spain, inventoried by the National Trust of Trinidad and Tobago. The hilltop Fatima devotion has a documented history of walking pilgrimages; the coordinate denotes the church complex, not an apparition site.",
+      "origin_summary_fr": "Église mariale de pèlerinage sur les hauteurs de Laventille dominant Port-d'Espagne, inscrite à l'inventaire du National Trust de Trinité-et-Tobago. Les pèlerinages à pied liés à cette dévotion sont documentés ; le repère désigne le complexe de l'église, non un lieu d'apparition.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0474",
+        "SG-R76-GEO-SG-INV-0474"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "name": "St Peter's Cathedral Basilica, Kumasi",
+      "shrine_kind": "SAINT",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Saint Peter the Apostle",
+      "origin_summary": "Catholic Cathedral Basilica of Saint Peter in Kumasi, the seat of the metropolitan archdiocese. Ghana Catholic and Catholic church directories attest its cathedral identity and the recognition of the minor-basilica title in June 2004. This record does not invent a distinct pilgrimage itinerary or recurring programme.",
+      "origin_summary_fr": "Cathédrale-basilique catholique Saint-Pierre de Kumasi, siège de l'archidiocèse métropolitain. Les sources ecclésiales attestent son identité et le titre de basilique mineure reconnu en juin 2004. Aucun parcours ni programme de pèlerinage particulier n'est présumé.",
+      "associated_saints": [
+        "Saint Peter the Apostle"
+      ],
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0726",
+        "SG-R76-GEO-SG-INV-0726"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -7679,6 +7729,34 @@
       "scope_note_fr": "Pèlerinage attesté au sanctuaire ; aucun horaire, parcours, relique ou récit d'apparition nouvelle n'est déduit.",
       "source_ids": [
         "SG-R75-SITE-SG-INV-0721"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:US:allentown-guadalupe-national-shrine-destination",
+      "name": "Pilgrimage to National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:US:allentown-guadalupe-national-shrine",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Site-attested Catholic pilgrimage destination; no claim of an apparition at this church, actual route itinerary, Mass timetable or liturgical calendar event.",
+      "scope_note_fr": "Destination de pèlerinage catholique attestée ; aucun récit d'apparition locale, itinéraire, horaire de messe ni événement du calendrier n'est présumé.",
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0377"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:TT:laventille-our-lady-fatima-shrine-destination",
+      "name": "Pilgrimage to Our Lady of Fatima Church and Shrine, Laventille",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:TT:laventille-our-lady-fatima-shrine",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Site-attested Catholic pilgrimage destination; no claim of an apparition at this church, actual route itinerary, Mass timetable or liturgical calendar event.",
+      "scope_note_fr": "Destination de pèlerinage catholique attestée ; aucun récit d'apparition locale, itinéraire, horaire de messe ni événement du calendrier n'est présumé.",
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0474"
       ],
       "confidence": "HIGH"
     }

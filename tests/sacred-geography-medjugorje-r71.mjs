@@ -18,7 +18,7 @@ const pilgrimId="pilgrimage:BA:medjugorje-destination";
 const reportId="apparition:BA:medjugorje";
 
 assert.deepEqual([geography.places.length,corpus.shrines.length,corpus.pilgrimages.length,
-  phenomena.apparitions.length,sources.sources.length],[251,247,234,33,429]);
+  phenomena.apparitions.length,sources.sources.length],[254,250,236,33,435]);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({
   shrines:corpus.shrines,pilgrimages:corpus.pilgrimages,routes:corpus.routes,
@@ -53,11 +53,16 @@ const live=new Set(geography.places.map(x=>x.place_id));
 for(const entry of r71.reviewed_existing)assert.ok(live.has(entry.place_id));
 for(const entry of r71.rejected_wrong_physical_alias){
   const candidate=r70.candidates.find(x=>x.candidate_id===entry.candidate_id);
-  assert.equal(candidate.reconciliation_status,"PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW");
+  // R71 rejects an incorrect alias to a different sanctuary, not later independent site research.
+  if(entry.candidate_id==="SG-INV-0377"){
+    assert.equal(candidate.reconciliation_status,"CONFIRMED_EXISTING_PROMOTION");
+    assert.equal(candidate.confirmed_place_id,"place:US:allentown-guadalupe-national-shrine");
+    assert.notEqual(candidate.confirmed_place_id,"place:US:guadalupe-shrine-la-crosse","Allentown must never be conflated with La Crosse");
+  }else assert.equal(candidate.reconciliation_status,"PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW");
   assert.equal(candidate.possible_existing_place_id,null,"Do not conflate distinct sanctuaries");
 }
 const q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json");
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[97,70,583]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[100,70,580]);
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0317").canonical_place_id,venueId);
 const projection=projectExploreDataset({
  directory:{records:[],communities:[]},

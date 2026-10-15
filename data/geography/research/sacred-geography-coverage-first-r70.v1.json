@@ -20,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 251,
-    "existing_published_shrines": 247,
-    "linked_pilgrimages": 234,
-    "existing_country_coverage": 65,
-    "published_sites_bilingual": 247,
-    "source_registry_sites": 247,
-    "existing_physical_pins": 247,
+    "existing_production_places": 254,
+    "existing_published_shrines": 250,
+    "linked_pilgrimages": 236,
+    "existing_country_coverage": 67,
+    "published_sites_bilingual": 250,
+    "source_registry_sites": 250,
+    "existing_physical_pins": 250,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 99,
+      "CONFIRMED_EXISTING_PROMOTION": 102,
       "POTENTIAL_EXISTING_ID_REVIEW": 70,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 581
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 578
     },
     "priorities": {
       "Essential": 64,
@@ -81,10 +81,10 @@
     {
       "country": "US",
       "curated_candidates": 39,
-      "published_shrines": 19,
-      "confirmed_promotions": 4,
+      "published_shrines": 20,
+      "confirmed_promotions": 5,
       "possible_reuses": 6,
-      "unresolved": 29
+      "unresolved": 28
     },
     {
       "country": "PH",
@@ -569,10 +569,10 @@
     {
       "country": "GH",
       "curated_candidates": 2,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 1
     },
     {
       "country": "IQ",
@@ -681,10 +681,10 @@
     {
       "country": "TT",
       "curated_candidates": 2,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 1
     },
     {
       "country": "TW",
@@ -1032,14 +1032,15 @@
       "category": "Great church / monastery",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 5,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R76_CATHOLIC_SITE_AND_PHYSICAL_PIN_VERIFIED"
     },
     {
       "candidate_id": "SG-INV-0235",
@@ -1213,14 +1214,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:TT:laventille-our-lady-fatima-shrine",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 16,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R76_CATHOLIC_SITE_AND_PHYSICAL_PIN_VERIFIED"
     },
     {
       "candidate_id": "SG-INV-0710",
@@ -1954,15 +1956,16 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:US:allentown-guadalupe-national-shrine",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 61,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Allentown is not La Crosse"
+      "identity_warning": "Allentown is not La Crosse",
+      "reconciliation_evidence": "R76_CATHOLIC_SITE_AND_PHYSICAL_PIN_VERIFIED"
     },
     {
       "candidate_id": "SG-INV-0565",

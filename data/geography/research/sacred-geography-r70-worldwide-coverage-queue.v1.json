@@ -5,23 +5,23 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 97,
+    "explicit_promoted": 100,
     "text_hint_review": 70,
-    "unmatched": 583,
+    "unmatched": 580,
     "zero_crosslist": 485,
-    "essential_remaining": 13,
-    "published_places": 251,
-    "published_shrines": 247,
-    "published_pilgrimages": 234
+    "essential_remaining": 10,
+    "published_places": 254,
+    "published_shrines": 250,
+    "published_pilgrimages": 236
   },
   "countries": [
     {
       "country": "US",
       "candidates": 39,
-      "promoted": 4,
+      "promoted": 5,
       "text_hint": 6,
-      "unmatched": 29,
-      "essential_review": 1,
+      "unmatched": 28,
+      "essential_review": 0,
       "no_crosslist": 21
     },
     {
@@ -216,10 +216,10 @@
     {
       "country": "TT",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 1,
+      "unmatched": 1,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
@@ -243,10 +243,10 @@
     {
       "country": "GH",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 1,
+      "unmatched": 1,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
@@ -5184,10 +5184,10 @@
       "country": "US",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_SITE_R76",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:US:allentown-guadalupe-national-shrine",
+      "publish_approved": true,
       "identity_warning": "Allentown is not La Crosse"
     },
     {
@@ -6253,10 +6253,10 @@
       "country": "TT",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R76",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0475",
@@ -9028,10 +9028,10 @@
       "country": "GH",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R76",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0727",
