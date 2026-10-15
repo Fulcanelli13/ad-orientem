@@ -1,0 +1,212 @@
+{
+  "schema": "AO_SOURCE_TEXT_PRINT_BATCH_REVIEW_V2",
+  "date": "2026-10-15",
+  "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+  "precedingBatchFile": "data/source-text/fortescue-1913-print-batch-258-260.v1.json",
+  "sourceEvidence": "UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTIONS_READ__ORIGINAL_IMAGE_LINKS_RESOLVED__DIRECT_IMAGE_MAGNIFIED_COLLATION_NOT_COMPLETED",
+  "scanImageDirectlyVerified": false,
+  "publicationApproved": false,
+  "productionIngestAllowed": false,
+  "articleContext": "Original Fortescue article 1908; examined Wikisource scan witness is 1913 Knights of Columbus special edition.",
+  "readingRule": "Original print reading order left column to right column; hosted OCR order and paragraph breaks are not accepted without image collation.",
+  "pages": [
+    {
+      "printedPage": 261,
+      "scanPage": 309,
+      "url": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/309",
+      "startsInContinuationFrom": 260,
+      "firstVisibleWordsCandidate": "are all simply the Roman use with slight local variations",
+      "majorSectionTransition": {
+        "heading": "III. The Text and Rubrics of the Canon",
+        "kind": "MAJOR_SECTION_WITHIN_SAME_ARTICLE",
+        "approximateRegion": "mid-right-column",
+        "humanImageVerification": false
+      },
+      "segments": [
+        {
+          "label": "End of historical development",
+          "role": "AUTHORIAL_HISTORICAL_ARGUMENT",
+          "owner": "HISTORICAL_CONTEXT",
+          "note": "Regional uses, medieval expansions, Trent, Pius V, Missal editions and Fortescue's permanence thesis. Do not collapse earlier Denzinger 819/830 into D/DS/DH without edition mapping."
+        },
+        {
+          "label": "The Text and Rubrics of the Canon",
+          "role": "PRINTED_MAJOR_SECTION",
+          "owner": "MASS_SOURCE_REFERENCE",
+          "note": "Historical explanation of the silence, gestures and liturgical texts; not directly authoritative for 1962 rubrics."
+        },
+        {
+          "label": "Te igitur",
+          "role": "PRINTED_SUBHEADING_AND_PRAYER_COMMENTARY",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Gesture, kiss of altar, three crosses, hands and texts; preserve precise relation to live reader's semantic segments without modifying the 65-card implementation."
+        }
+      ],
+      "sourceCitationsNeedingExactCheck": [
+        "Trent Session XXII ch. IV and canon VI",
+        "Fortescue Denzinger 819, 830: original edition-specific numbering",
+        "Pius V Quo primum / 1570 Missal historical description",
+        "Mabillon, Roman Ordines and Suarez",
+        "Sicardus / Roman Ordo XIV / Innocent III"
+      ],
+      "highRiskClaims": [
+        "Roman Canon unchanged since St Gregory: historical assertion requiring qualification",
+        "Tridentine reform and exceptions: historical/legal context, not software permissions",
+        "Old priest gestures and rubrics cannot be copied as current 1962 rules"
+      ],
+      "fullPageTextCollated": false,
+      "paragraphStartsApproved": false,
+      "sourceImageMagnified": false
+    },
+    {
+      "printedPage": 262,
+      "scanPage": 310,
+      "url": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/310",
+      "startsInContinuationFrom": 261,
+      "firstVisibleWordsCandidate": "priest prays first for the Church, then for the pope and diocesan ordinary by name",
+      "segments": [
+        {
+          "label": "Te igitur (continued)",
+          "role": "PRAYER_COMMENTARY_CONTINUATION",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Pope/bishop name, bishop Ordinary, emperor and older local naming practices; political examples are historical as of original article."
+        },
+        {
+          "label": "Commemoratio pro vivis",
+          "role": "PRINTED_PRAYER_SUBHEADING",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Living diptychs, intercessions and historical private intentions; separate author's view from rubrical law."
+        },
+        {
+          "label": "Communicantes",
+          "role": "PRINTED_PRAYER_SUBHEADING",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Infra Actionem heading, seasonal interpolations, saints lists and ancient sources. OCR ambiguously has Intra/Infra: hold exact print wording."
+        },
+        {
+          "label": "Hanc igitur (opening)",
+          "role": "PRINTED_PRAYER_SUBHEADING",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Starts near bottom of right column, continues onto printed p263."
+        }
+      ],
+      "sourceCitationsNeedingExactCheck": [
+        "Pope Celestine I / Boniface I to emperors",
+        "Ebner, Missale Romanum historical variants",
+        "Drews and Syriac anaphora parallels",
+        "Brightman Greek/Syrian liturgies",
+        "Gelasian Sacramentary / Wilson",
+        "Duchesne / Benedict XIV"
+      ],
+      "highRiskClaims": [
+        "Named sovereign and Austria-Hungary examples are historical, not applicable as modern rubrics",
+        "Saint lists and local medieval additions must be linked to actual calendar period, not assumed current",
+        "Five Communicantes feast additions in Fortescue era require separate 1962 verification"
+      ],
+      "fullPageTextCollated": false,
+      "paragraphStartsApproved": false,
+      "sourceImageMagnified": false
+    },
+    {
+      "printedPage": 263,
+      "scanPage": 311,
+      "url": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/311",
+      "startsInContinuationFrom": 262,
+      "firstVisibleWordsCandidate": "on four occasions only, on Maundy Thursday, Easter, Whitsunday",
+      "segments": [
+        {
+          "label": "Hanc igitur (continued)",
+          "role": "PRAYER_COMMENTARY_CONTINUATION",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Historical feast additions, Gelasian Sacramentary interpolations and prayer/gesture explanation. Example counts are period-specific, not 1962 fixed facts."
+        },
+        {
+          "label": "Quam oblationem",
+          "role": "PRINTED_PRAYER_SUBHEADING",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Five epithets, De sacramentis textual parallel and five signs of the cross."
+        },
+        {
+          "label": "Qui pridie",
+          "role": "PRINTED_PRAYER_SUBHEADING",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Institution narrative, bread consecration, eyes/hand gestures and host elevation; distinguish historically documented ceremony from 1962 cue registry."
+        },
+        {
+          "label": "Gratias agens",
+          "role": "PRINTED_INLINE_PHRASE_ANALYSIS_NOT_STANDALONE_PRAYER",
+          "owner": "MASS_COMMENTARY_REFERENCE",
+          "note": "Inline explanation of words of Qui pridie; do NOT create an extra Mass card or artificial numbered prayer from this printed label."
+        }
+      ],
+      "sourceCitationsNeedingExactCheck": [
+        "Gelasian Sacramentary / Wilson, 38 historical variants",
+        "Dominican/Carmelite historical hand position",
+        "De sacramentis IV v",
+        "Rom 12:1 rationabilis",
+        "Benedict XIV and Gospels institution narrative",
+        "Roman Ordines XIII and XIV elevation history"
+      ],
+      "highRiskClaims": [
+        "Quoted Institution words must preserve their own textual witness, not be sourced from OCR",
+        "Rubric references Rit. cel. VIII,5 and elevation gestures should be checked against 1962 owner",
+        "Calendar Maundy Thursday and other exceptions must not overwrite locked liturgical overlays"
+      ],
+      "fullPageTextCollated": false,
+      "paragraphStartsApproved": false,
+      "sourceImageMagnified": false
+    }
+  ],
+  "transitionChecks": [
+    {
+      "fromPage": 260,
+      "toPage": 261,
+      "fromImage": 308,
+      "toImage": 309,
+      "relation": "PRIOR_HISTORICAL_SECTION_CONTINUES_THEN_MAJOR_SECTION_III_BEGINS",
+      "textJoinProofread": false
+    },
+    {
+      "fromPage": 261,
+      "toPage": 262,
+      "fromImage": 309,
+      "toImage": 310,
+      "relation": "TE_IGITUR_COMMENTARY_CONTINUES",
+      "textJoinProofread": false
+    },
+    {
+      "fromPage": 262,
+      "toPage": 263,
+      "fromImage": 310,
+      "toImage": 311,
+      "relation": "HANC_IGITUR_COMMENTARY_CONTINUES",
+      "textJoinProofread": false
+    }
+  ],
+  "editorialRouting": {
+    "canonicalOwner": "SOURCE_TEXT_PARSING_PIPELINE",
+    "massReaderOwner": "EXISTING_65_CARD_MASS_PIPELINE",
+    "operation": "RECORD_SOURCE_PARALLELS_ONLY__NO_CARD_REORDER_OR_CUE_CHANGE",
+    "rubricAuthority": "HISTORICAL_1913_EXPLANATION_NOT_1962_RITUS_SERVANDUS",
+    "bibliographyNumbering": "DENZINGER_819_830_LEGACY_EDITION_SPECIFIC_DO_NOT_MAP_TO_DH_DIRECTLY",
+    "editionEquivalenceTo1908": "NOT_CERTIFIED",
+    "citationProvenance": "ORIGINAL_SCAN_PAGE_LOCATORS_PLUS_HOSTED_UNPROOFREAD_TEXT_ONLY",
+    "noPermissionRequests": true
+  },
+  "metrics": {
+    "sourcePagesIndexed": 3,
+    "newFullyProofreadPages": 0,
+    "newlyApprovedSourceExcerpts": 0,
+    "independentEditorialSignoffs": 0,
+    "existingScopeLimitedExcerptsUnchanged": 4,
+    "directFullResolutionScanImagesVerified": 0,
+    "productionImports": 0
+  },
+  "nextBatch": [
+    264,
+    265,
+    266
+  ]
+}
