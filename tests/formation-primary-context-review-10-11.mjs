@@ -110,7 +110,7 @@ for(const [id,role,term] of [
  ["CR-ECC-04","critical_response","Bellarmine"],
  ["CR-ECC-08","traditional_catholic_argument","Pastor aeternus"],
  ["CR-DOC-04","answer","Libertas"],
- ["CR-DOC-09","critical_response","Mater Populi Fidelis"],
+ ["CR-DOC-09","critical_response","Donum veritatis"],
  ["APOL-020","answer","Pastor aeternus"],
  ["APOL-021","traditional_catholic_argument","Vincent"],
  ["APOL-022","answer","Apostolicae curae"],
