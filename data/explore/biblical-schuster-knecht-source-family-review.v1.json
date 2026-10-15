@@ -98,6 +98,27 @@
       "tocUrl": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
       "translatorHistorical": "Source's 1894 preface credited Schuster narrative, but 1910 edition requires literal comparison against the direct English Schuster historical print",
       "importEligibility": "HOLD_PRINT_AND_RIGHTS_GATE"
+    },
+    {
+      "id": "SCHUSTER-ES-1908-HERDER-ORTI-12TH",
+      "language": "es",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "Historia Sagrada del Antiguo y del Nuevo Testamento para uso de las escuelas católicas, B. Herder Freiburg, 1908, 12th Spanish edition",
+      "originalAuthor": "Ignaz Schuster (1813–1869)",
+      "historicalTranslator": "Vicente Ortí y Escolano (identified on 1908 title page)",
+      "sourceUrl": "https://archive.org/details/historiasagradad00schu",
+      "ocrTextUrl": "https://archive.org/stream/historiasagradad00schu/historiasagradad00schu_djvu.txt",
+      "archiveItemIdentifier": "historiasagradad00schu",
+      "physicalSourceLibrary": "Princeton Theological Seminary Library",
+      "printNumberedPages": 268,
+      "scannedImageCountFromArchiveMetadata": 296,
+      "witnessKind": "HISTORICAL_SCHOOL_BIBLE_HISTORY_FULL_SCAN_AVAILABLE_WITH_SEARCHABLE_UNCHECKED_OCR",
+      "tocReadFromArchiveOCR": true,
+      "editorPrefaceInstructionsReadFromArchiveOCR": true,
+      "physicalPageImagesDirectlyInspected": false,
+      "originalWordsPrintCollated": false,
+      "importEligibility": "HOLD_ORIGINAL_PAGE_IMAGES_AND_TRANSLATOR_RIGHTS_AND_CHAR_BY_CHAR_SOURCE_COLLATION",
+      "sourceRelationship": "SAME_SCHOOL_BIBLE_HISTORY_WORK_FAMILY_WITH_1925_EN_AND_1887_FR_BUT_DIFFERENT_TRANSLATION_EDITION_NOT_VERBATIM_SUBSTITUTABLE"
     }
   ],
   "openingEnglishTocSections": [
@@ -392,7 +413,11 @@
     "wikisource1910ApplicationStartsVisuallyVerified": 9,
     "wikisource1910NarrativeStartsVisuallyVerified": 9,
     "wikisource1910TranscriptionDefectsConfirmedAgainstPrint": 2,
-    "wikisource1910NarrativeParagraphsPreliminarilyCompared": 7
+    "wikisource1910NarrativeParagraphsPreliminarilyCompared": 7,
+    "spanish1908SchoolHistoryScansCatalogued": 1,
+    "spanish1908OriginalPrintedImagesInspected": 0,
+    "spanish1908OpeningTocUnitsReadFromOCR": 9,
+    "spanish1908ParagraphsPrintCertified": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -2187,5 +2212,143 @@
     "nextOperationalGate": "Acquire ORIGINAL page images from the 1925 or 1887 school-history witness (or an authentic matching historical edition), collate large contiguous narrative paragraph batches including footnotes, edition and translator, then publish only after editorial/rights review. Do not invent translation or narrative where witness is unreadable.",
     "sourceParagraphsCertifiedNew": 0,
     "appReleaseAffected": false
+  },
+  "spanish1908ReadingAndSourceReview": {
+    "date": "2026-10-15",
+    "scope": "Direct text-level inspection of scanned 1908 Spanish SCHOOL Bible History title-page OCR, editorial teaching note OCR and opening table-of-contents OCR; original page raster NOT independently read. Not an authored narrative import.",
+    "status": "HISTORICAL_COMPLETE_OCR_WITNESS_FOUND_LEVEL_SCHEME_AND_9_OPENING_UNITS_TOC_ONLY_NOT_PRINT_COLLATED",
+    "witnessId": "SCHUSTER-ES-1908-HERDER-ORTI-12TH",
+    "sourceTitlePageOcrUrl": "https://archive.org/stream/historiasagradad00schu/historiasagradad00schu_djvu.txt",
+    "sourceItemMetadataUrl": "https://archive.org/details/historiasagradad00schu",
+    "evidence": {
+      "titlePage": {
+        "startApproxOcrLine": 204,
+        "endApproxOcrLine": 247,
+        "editionTitle": "Historia Sagrada del Antiguo y del Nuevo Testamento para uso de las escuelas católicas",
+        "historicalTranslator": "Vicente Ortí y Escolano",
+        "editionNumber": "12th Spanish",
+        "imagesAndMaps": "114 plates and two maps (as stated on scanned edition title-page OCR)",
+        "status": "OCR_READ_NOT_PRINT_PROOF"
+      },
+      "editorReadingInstructions": {
+        "startApproxOcrLine": 353,
+        "endApproxOcrLine": 400,
+        "sourceHeading": "Instrucción para el uso del libro",
+        "status": "OCR_READ_NOT_PRINT_PROOF"
+      },
+      "contentsOpening": {
+        "startApproxOcrLine": 408,
+        "endApproxOcrLine": 446,
+        "status": "OCR_READ_NOT_PRINT_PROOF"
+      }
+    },
+    "historicalLevelPolicy": {
+      "intendedForHistoricalPedagogyNotModernReadingAgeFilter": true,
+      "rawSourceParagraphMarkers": [
+        {
+          "marker": "NONE",
+          "historicalUse": "Essential unmarked paragraphs, basis for youngest pupils"
+        },
+        {
+          "marker": "**",
+          "historicalUse": "Added paragraphs for next school levels"
+        },
+        {
+          "marker": "*",
+          "historicalUse": "Further added paragraphs for older pupils"
+        },
+        {
+          "marker": "CROSS",
+          "historicalUse": "Additional readings for advanced elementary or Sunday classes; OCR often renders source cross as 'f'"
+        }
+      ],
+      "levelsCumulative": true,
+      "conceptForApp": "POTENTIAL_ESSENTIAL_EXPANDED_COMPLETE_AUTHOR_TEXT_SELECTION_ONLY_AFTER_PRINT_CHECK_AND_COHERENCE_REVIEW",
+      "notAnInvitationToAiAbridgement": true,
+      "originalSourceMarkerTypographyIndependentlyCertified": false,
+      "wholeParagraphMarkersVerifiedInPrint": 0
+    },
+    "openingTocNineSpanishUnits": [
+      {
+        "spanishNumber": 1,
+        "printedPage": 1,
+        "topic": "Creation and Sabbath",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-I"
+        ]
+      },
+      {
+        "spanishNumber": 2,
+        "printedPage": 2,
+        "topic": "Angels and their fall",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-II"
+        ]
+      },
+      {
+        "spanishNumber": 3,
+        "printedPage": 3,
+        "topic": "Adam, paradise, first commandment, Eve",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-III"
+        ]
+      },
+      {
+        "spanishNumber": 4,
+        "printedPage": 4,
+        "topic": "Original sin / Fall",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-IV"
+        ]
+      },
+      {
+        "spanishNumber": 5,
+        "printedPage": 5,
+        "topic": "Punishment and promise of redeemer",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-IV"
+        ]
+      },
+      {
+        "spanishNumber": 6,
+        "printedPage": 6,
+        "topic": "Cain and Abel",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-V"
+        ]
+      },
+      {
+        "spanishNumber": 7,
+        "printedPage": 8,
+        "topic": "Corruption of the first people and Deluge",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-VI"
+        ]
+      },
+      {
+        "spanishNumber": 8,
+        "printedPage": 10,
+        "topic": "Noah's thanksgiving sacrifice and sons",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-VII"
+        ]
+      },
+      {
+        "spanishNumber": 9,
+        "printedPage": 12,
+        "topic": "Babel and general idolatry",
+        "english32ndCandidateIds": [
+          "schuster:chapter:OT-VIII"
+        ]
+      }
+    ],
+    "tocAndEditionDifference": "The 1908 Spanish source has 9 Origins units through Babel, whereas later 32nd EN TOC lists 8 chapters; Fall is split into unit IV and V in ES. Do NOT transfer chapter numbers across witnesses. Crosswalk maps topic only, never words or exact biblical locus.",
+    "scannedImageFilesListedAsDownloadable": true,
+    "directPrintedImageAttempt": "Internet Archive PDF download redirects to an inaccessible archive shard; IIIF image/manifest unavailable via accessible public routes; printed pages not visually read",
+    "sourceTextCopiedIntoRepository": false,
+    "fullyPrintCertifiedParagraphs": 0,
+    "eligibleEnglishTranslationsNow": 0,
+    "releasedReaderSourceParagraphs": 0,
+    "nextTarget": "Once original 1908 school-book pages become viewable, check whole contiguous paragraph groups including editor-level symbols, illustrations and printed page numbers against 1908 OCR. Prioritize historic EN 1925/FR 1887 scans; Spanish is an additional historical-language path, not replacement."
   }
 }
