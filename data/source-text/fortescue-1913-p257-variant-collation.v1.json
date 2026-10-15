@@ -190,10 +190,23 @@
       "status": "SEPARATE_WORK_AND_EDITION_UNCOLLATED_LEAD",
       "decision": "DO_NOT_MERGE_BOOK_WITH_ENCYCLOPEDIA_ARTICLE",
       "note": "A digital monograph text has hunc, while the scanned encyclopedia article p257 appears to print hanc. Separate works, editions and publishing history; a hosted modern PDF is not evidence of original 1912 printed pagination without facsimile collation. Not a correction licence."
+    },
+    {
+      "id": "SC257-019",
+      "blockId": "P257-09",
+      "field": "same_scanned_article_distinct_occurrence",
+      "witnessReading": "Fac nos hanc oblationem",
+      "otherOccurrenceReading": "Fac nobis hanc oblationem",
+      "otherOccurrencePrintedPage": 259,
+      "otherOccurrenceScanImagePage": 307,
+      "otherOccurrenceScanUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/307",
+      "status": "INTRA_WORK_DISTINCT_OCCURRENCES_ORIGINAL_IMAGES_LOCATED",
+      "decision": "RETAIN_BOTH_OCCURRENCES_WITH_PRINTED_PAGE_IDENTIFIERS",
+      "note": "The *same scanned 1913 encyclopedia article* on printed p257/image305 quotes Fac nos, but on printed p259/image307 separately quotes the beginning of the Quam oblationem as Fac nobis. Both page images inspected for the short readings. This is an intra-work textual difference, not sufficient evidence to classify either as an error; p259 paragraph has not been fully transcribed or independently editorially certified."
     }
   ],
   "metrics": {
-    "comparisonCount": 17,
+    "comparisonCount": 18,
     "primaryPatristicCrossChecks": 1,
     "printEditionIdentityResolved": true,
     "completePageWordByWordProofed": false,
@@ -202,7 +215,10 @@
     "patristicTextWitnessCrossChecks": 1,
     "directlyInspected1912MonographPages": 0,
     "directlyInspectedCSEL1955PageImages": 0,
-    "comparisonsResolvedPrintPreliminary": 1
+    "comparisonsResolvedPrintPreliminary": 1,
+    "intraWorkDistinctSourceOccurrences": 1,
+    "additionalPrintedPageWitnessesInspectedTargeted": 1,
+    "fullyTranscribedPage259Paragraphs": 0
   },
   "publicationApproved": false,
   "originalDraftFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
