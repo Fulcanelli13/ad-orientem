@@ -1,0 +1,859 @@
+{
+  "schema": "AO_73_BOOK_CANON_VS_151_ATLAS_MILESTONES_V1",
+  "status": "DENOMINATOR_AUDIT_NOT_SCHUSTER_BOOK_COVERAGE",
+  "date": "2026-10-15",
+  "note": "Every one of the 73 canonical books is included in this book-level index. 151 Atlas milestones reference only selected books; absence is not evidence that the original Schuster, Knecht, other historical books or native Scripture text lacks it. Prevents reporting a complete biblical book reading experience from an event index.",
+  "bookCount": 73,
+  "atlasMilestones": 151,
+  "booksDirectlyRepresentedBySelectedEventReferences": 28,
+  "booksWithoutDirectSelectedEventReference": 45,
+  "testamentTotals": {
+    "OLD": 46,
+    "NEW": 27
+  },
+  "books": [
+    {
+      "book": "Genesis",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 18,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:genesis-1-1-31",
+        "biblical:passage:genesis-3-1-24",
+        "biblical:passage:genesis-4-1-16",
+        "biblical:passage:genesis-7-1-24",
+        "biblical:passage:genesis-9-8-17",
+        "biblical:passage:genesis-11-1-9",
+        "biblical:passage:genesis-11-31",
+        "biblical:passage:genesis-12-1-9",
+        "biblical:passage:genesis-14-18-20",
+        "biblical:passage:genesis-15-1-21",
+        "biblical:passage:genesis-18-1-8",
+        "biblical:passage:genesis-21-1-7",
+        "biblical:passage:genesis-22-1-19",
+        "biblical:passage:genesis-28-10-22",
+        "biblical:passage:genesis-32-24-32",
+        "biblical:passage:genesis-37-18-36",
+        "biblical:passage:genesis-41-37-45",
+        "biblical:passage:genesis-46-1-7"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Exodus",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 11,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:exodus-2-1-10",
+        "biblical:passage:exodus-3-1-15",
+        "biblical:passage:exodus-7-14-25",
+        "biblical:passage:exodus-12-1-28",
+        "biblical:passage:exodus-12-31-42",
+        "biblical:passage:exodus-14-15-31",
+        "biblical:passage:exodus-16-1-36",
+        "biblical:passage:exodus-19-16-20",
+        "biblical:passage:exodus-20-1-17",
+        "biblical:passage:exodus-32-1-35",
+        "biblical:passage:exodus-40-1-38"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Leviticus",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Numbers",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Deuteronomy",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:deuteronomy-34-1-6"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Joshua",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 2,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:joshua-3-1-17",
+        "biblical:passage:joshua-6-1-27"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Judges",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Ruth",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1Samuel",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 3,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:1samuel-1-9-20",
+        "biblical:passage:1samuel-10-1-8",
+        "biblical:passage:1samuel-17-1-54"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "2Samuel",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 2,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:2samuel-2-1-4",
+        "biblical:passage:2samuel-5-6-10"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "1Kings",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 4,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:1kings-8-1-66",
+        "biblical:passage:1kings-12-1-24",
+        "biblical:passage:1kings-18-19-39",
+        "biblical:passage:1kings-19-1-18"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "2Kings",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 4,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:2kings-17-1-18",
+        "biblical:passage:2kings-23-1-25",
+        "biblical:passage:2kings-25-1-12",
+        "biblical:passage:2kings-25-8-12"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "1Chronicles",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2Chronicles",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Ezra",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 2,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:ezra-1-1-11",
+        "biblical:passage:ezra-6-13-22"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Nehemiah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:nehemiah-8-1-12"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Tobit",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:tobit-1-10"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Judith",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:judith-13-1-20"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Esther",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 2,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:esther-4-1-17",
+        "biblical:passage:esther-14-1-19"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "1Maccabees",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 2,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:1maccabees-2-1-5",
+        "biblical:passage:1maccabees-4-36-59"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "2Maccabees",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:2maccabees-7-1-42"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Job",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Psalms",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Proverbs",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Ecclesiastes",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "SongOfSongs",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Wisdom",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:wisdom-7-7-14"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Sirach",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:sirach-24-1-22"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Isaiah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:isaiah-6-1-13"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Jeremiah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:jeremiah-7-1-15"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Lamentations",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Baruch",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:baruch-5-1-9"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Ezekiel",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 1,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:ezekiel-1-1-28"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Daniel",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 5,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:daniel-1-1-21",
+        "biblical:passage:daniel-3-24-90",
+        "biblical:passage:daniel-13-1-64",
+        "biblical:passage:daniel-14-1-22",
+        "biblical:passage:daniel-14-23-42"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Hosea",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Joel",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Amos",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Obadiah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Jonah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Micah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Nahum",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Habakkuk",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Zephaniah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Haggai",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Zechariah",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Malachi",
+      "testament": "OLD",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Matthew",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 18,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:event:nazareth-additional-001",
+        "biblical:event:bethlehem-e2",
+        "biblical:event:bethlehem-additional-003",
+        "biblical:event:egypt-e1",
+        "biblical:event:egypt-e2",
+        "biblical:event:jordan-baptism-e1",
+        "biblical:event:judean-wilderness-e1",
+        "biblical:event:beatitudes-e2",
+        "biblical:event:galilee-sea-e3",
+        "biblical:event:caesarea-philippi-e1",
+        "biblical:event:caesarea-philippi-additional-044",
+        "biblical:event:transfiguration-e1",
+        "biblical:event:transfiguration-additional-045",
+        "biblical:event:bethphage-e1",
+        "biblical:event:gethsemane-e1",
+        "biblical:event:gethsemane-e2",
+        "biblical:event:jerusalem-trial-e2",
+        "biblical:event:christ-tomb-e3"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Mark",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 6,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:event:galilee-sea-e1",
+        "biblical:event:capernaum-e1",
+        "biblical:event:capernaum-miracle-04",
+        "biblical:event:capernaum-e2",
+        "biblical:event:galilee-sea-e2",
+        "biblical:event:bethsaida-miracle-25"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Luke",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 16,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:event:nazareth-e1",
+        "biblical:event:ein-karem-e1",
+        "biblical:event:bethlehem-e1",
+        "biblical:event:bethlehem-additional-002",
+        "biblical:event:jerusalem-temple-e1",
+        "biblical:event:jerusalem-temple-e2",
+        "biblical:event:nazareth-additional-006",
+        "biblical:event:beatitudes-additional-021",
+        "biblical:event:nain-e1",
+        "biblical:event:bethany-additional-057",
+        "biblical:event:jericho-e1",
+        "biblical:event:jericho-e2",
+        "biblical:event:olives-e1",
+        "biblical:event:cenacle-e1",
+        "biblical:event:golgotha-e3",
+        "biblical:event:emmaus-e1"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "John",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 19,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:event:jordan-east-bank-additional-008",
+        "biblical:event:cana-e1",
+        "biblical:event:jerusalem-temple-e3",
+        "biblical:event:sychar-e1",
+        "biblical:event:sychar-additional-013",
+        "biblical:event:cana-miracle-02",
+        "biblical:event:bethesda-miracle-18",
+        "biblical:event:tabgha-e1",
+        "biblical:event:capernaum-e3",
+        "biblical:event:siloam-miracle-26",
+        "biblical:event:bethany-e1",
+        "biblical:event:bethany-e2",
+        "biblical:event:cenacle-e2",
+        "biblical:event:jerusalem-trial-e3",
+        "biblical:event:golgotha-e2",
+        "biblical:event:christ-tomb-e1",
+        "biblical:event:christ-tomb-e2",
+        "biblical:event:cenacle-e3",
+        "biblical:event:galilee-sea-e4"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Acts",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 21,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:event:olives-e3",
+        "biblical:passage:acts-2-1-41",
+        "biblical:passage:acts-3-1-10",
+        "biblical:passage:acts-7-54-60",
+        "biblical:passage:acts-8-26-40",
+        "biblical:passage:acts-9-1-22",
+        "biblical:passage:acts-9-29-30",
+        "biblical:passage:acts-9-36-43",
+        "biblical:passage:acts-10-1-48",
+        "biblical:passage:acts-11-19-26",
+        "biblical:passage:acts-14-8-18",
+        "biblical:passage:acts-15-1-29",
+        "biblical:passage:acts-16-11-15",
+        "biblical:passage:acts-17-1-9",
+        "biblical:passage:acts-17-16-34",
+        "biblical:passage:acts-18-1-18",
+        "biblical:passage:acts-19-1-20",
+        "biblical:passage:acts-20-7-12",
+        "biblical:passage:acts-20-17-38",
+        "biblical:passage:acts-27-13-44",
+        "biblical:passage:acts-28-16-31"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    },
+    {
+      "book": "Romans",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1Corinthians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2Corinthians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Galatians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Ephesians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Philippians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Colossians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1Thessalonians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2Thessalonians",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1Timothy",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2Timothy",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Titus",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Philemon",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Hebrews",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "James",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1Peter",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2Peter",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "1John",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "2John",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "3John",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Jude",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 0,
+      "selectedAtlasMilestoneEventKeys": [],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "NO_DIRECT_151_ATLAS_MILESTONE_DOES_NOT_IMPLY_OMISSION_FROM_SCHUSTER"
+    },
+    {
+      "book": "Revelation",
+      "testament": "NEW",
+      "selectedAtlasMilestoneCount": 5,
+      "selectedAtlasMilestoneEventKeys": [
+        "biblical:passage:revelation-1-9-20",
+        "biblical:passage:revelation-2-1-29",
+        "biblical:passage:revelation-3-1-22",
+        "biblical:passage:revelation-4-1-11",
+        "biblical:passage:revelation-21-1-27"
+      ],
+      "actualNarrativeSourceBookCoverage": "UNKNOWN_NEEDS_EDITION_TEXT_COLLATION",
+      "actualNativeScriptureReaderBookCoverage": "NOT_ASSESSED_IN_THIS_AUDIT",
+      "interpretation": "ATLAS_HAS_SELECTED_MILESTONES_NOT_COMPLETE_BOOK"
+    }
+  ],
+  "policy": {
+    "noCreationOfNewCanonicalEvents": true,
+    "scriptureCanonBookIndexIsAuditOnly": true,
+    "existingHistoryBooksAreSelective": true,
+    "doNotConflateNarrativeHistoryWithInspiredScripture": true,
+    "scriptureLinksStayNative": true
+  }
+}
