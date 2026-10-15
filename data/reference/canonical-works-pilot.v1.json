@@ -58,14 +58,158 @@
       "witness_ids": [
         "SRC-CAMPION-1954"
       ]
+    },
+    {
+      "id": "WORK-TANQUEREY-SPIRITUAL-LIFE",
+      "author": "Adolphe Tanquerey",
+      "title": "The Spiritual Life",
+      "type": "classical_spiritual_treatise",
+      "edition": "EN online edition uncollated",
+      "rights": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-TANQUEREY-1930"
+      ]
+    },
+    {
+      "id": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "author": "St Francis de Sales",
+      "title": "Introduction to the Devout Life",
+      "type": "classical_spiritual_work",
+      "edition": "EN CCEL transcription/translation edition uncollated",
+      "rights": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-FRANCIS-SALES-DEVOUT-LIFE"
+      ]
+    },
+    {
+      "id": "WORK-IGNATIUS-EXERCISES",
+      "author": "St Ignatius of Loyola",
+      "title": "Spiritual Exercises",
+      "type": "classical_spiritual_work",
+      "edition": "EN CCEL translation edition uncollated",
+      "rights": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-IGNATIUS-EXERCISES"
+      ]
+    },
+    {
+      "id": "WORK-CHAUTARD-SOUL-APOSTOLATE",
+      "author": "Dom Jean-Baptiste Chautard",
+      "title": "The Soul of the Apostolate",
+      "type": "classical_spiritual_work",
+      "edition": "PDF English edition uncollated",
+      "rights": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-CHAUTARD-APOSTOLATE"
+      ]
+    },
+    {
+      "id": "WORK-PIUS-X-CATECHISM",
+      "author": "St Pius X",
+      "title": "Catechism attributed to St Pius X",
+      "type": "catechetical_manual",
+      "edition": "PDF French edition uncollated",
+      "rights": "REPRODUCTION_UNREVIEWED",
+      "language": "fr",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-PIUS-X-CATECHISM"
+      ]
+    },
+    {
+      "id": "WORK-MISERENTISSIMUS-1928",
+      "author": "Pius XI",
+      "title": "Miserentissimus Redemptor",
+      "type": "magisterial_primary",
+      "edition": "1928 papal encyclical",
+      "rights": "REPRODUCTION_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-PIUS-XI-MISERENTISSIMUS"
+      ]
+    },
+    {
+      "id": "WORK-INDULGENTIARUM-1967",
+      "author": "Paul VI",
+      "title": "Indulgentiarum Doctrina",
+      "type": "magisterial_primary",
+      "edition": "1967 apostolic constitution",
+      "rights": "REPRODUCTION_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-PAUL-VI-INDULGENTIARUM"
+      ]
+    },
+    {
+      "id": "WORK-CODE-CANON-LAW-1983",
+      "author": "John Paul II",
+      "title": "Code of Canon Law (1983)",
+      "type": "canonical_law",
+      "edition": "Official Holy See English witness; cc. 992-997",
+      "rights": "REPRODUCTION_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "RIGHTS_REVIEW_REQUIRED",
+      "witness_ids": [
+        "SL-CIC83-992-997"
+      ]
+    },
+    {
+      "id": "WORK-CATHOLIC-BIBLE",
+      "author": null,
+      "title": "Holy Bible, Catholic canon",
+      "type": "scripture",
+      "edition": "Douay–Rheims English edition as hosted by drbo.org; readings via canonical in-app Scripture reader",
+      "rights": "BIBLE_EDITION_RIGHTS_AND_COLLATION_UNREVIEWED",
+      "language": "en",
+      "display_locator": "exact passage to be linked at claim level",
+      "internal_reader": "canonical_scripture_reader",
+      "witness_ids": [
+        "SL-SCRIPTURE-MT5-48",
+        "SL-SCRIPTURE-JN15",
+        "SL-SCRIPTURE-1COR10-31",
+        "SL-SCRIPTURE-COL3-17"
+      ]
     }
   ],
-  "witnessed_in": "data/learn/mass-formation-campion.v1.json",
+  "witnessed_in": [
+    "data/learn/mass-formation-campion.v1.json",
+    "data/learn/spiritual-life-sot.v1.json"
+  ],
   "pending": [
     "Set precise page/paragraph locators",
     "Verify URLs and fallback witnesses",
     "Research edition/public domain and OCR/translation rights",
     "Crosswalk duplicate work IDs across Formation, PRAY, Mass and geography",
-    "Keep original claim-to-source IDs immutable until an audited migration"
-  ]
+    "Keep original claim-to-source IDs immutable until an audited migration",
+    "Cross-module alias deduplication in Formation research and PRAY source registries"
+  ],
+  "audit_scope": {
+    "date": "2026-10-15",
+    "work_count": 13,
+    "scoped_source_ids": 16,
+    "claim_counts": {
+      "massFormation": 24,
+      "spiritualLife": 76
+    },
+    "status": "SCOPED_PILOT_ONLY",
+    "verifiedLinkPolicy": "Link loaded as a webpage is not an approved edition or permission to redistribute"
+  }
 }
