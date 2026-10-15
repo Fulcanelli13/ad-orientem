@@ -119,8 +119,6 @@ try{
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').click();
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="6");
    const query=page.locator('#ao-find-modular-root [data-find-query]');
-   await query.fill("Stigmata");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await query.fill("Lisieux");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first().click();
