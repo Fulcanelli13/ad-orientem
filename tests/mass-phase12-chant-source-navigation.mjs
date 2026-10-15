@@ -58,6 +58,68 @@ const unresolved=await recoverReaderProperOmissions({
 },{hostResolver});
 assert.equal(unresolved.data.preGospelChants,undefined,
  "Host recovery silently replaced a nonmatching translation");
+// Real Divinum Officium source forms also pack both chants into [Graduale].
+// Rosary: the Latin Alleluia starts a new line; in EN/FR the same refrain
+// starts partway through a Gradual verse. We validate the entire source in
+// each language rather than assuming matching line indices.
+const inline={
+ la:["!Ps 44:5","Propter veritátem et mansuetúdinem.",
+   "V. Audi, fília, et vide.","Allelúja, allelúja.","V. Sollémnitas gloriósæ Vírginis. Allelúja."],
+ en:["!Ps 44:5","In the cause of truth and mercy.",
+   "V. Hear, O daughter, and see. Alleluia, alleluia.",
+   "V. The solemnity of the glorious Virgin Mary. Alleluia."],
+ fr:["!Ps 44:5","Pour la vérité, la douceur et la justice.",
+   "V. Écoutez, ma Fille, voyez. Alléluia, alléluia.",
+   "V. Voici la Solennité de la glorieuse Vierge Marie. Alléluia."],
+};
+const normal=(rows)=>rows.map(x=>x.startsWith("!")?x.slice(1):x).join("\n").trim();
+const sourcesInline=Object.fromEntries(["la","en","fr"].map(lang=>
+  [lang,{order:["__TOP__","Graduale"],map:new Map([["Graduale",inline[lang]]])}]));
+const properInline={...base,gradual:{
+ lat:normal(inline.la),en:normal(inline.en),fr:normal(inline.fr),
+}};
+const inlineProof=certifyPreGospelChantParts(properInline,{
+ sources:sourcesInline,normalizeRows:normal,
+});
+assert.equal(inlineProof?.sourceMode,"INTRA_SECTION_TRILINGUAL_BOUNDARY",
+ "Alleluia at different EN/FR line offsets was not recognized");
+assert.deepEqual(inlineProof.parts.map(x=>x.kind),["GRADUAL","ALLELUIA"]);
+assert.equal(validatedPreGospelChantParts({...properInline,preGospelChants:inlineProof})?.length,2);
+assert.deepEqual(makeForInline({...properInline,preGospelChants:inlineProof}),["Gradual","Alleluia"]);
+function makeForInline(proper){
+ const source=createMassReaderModel({resolvedMass:{
+  schema:"ao-resolved-mass-v2",date:"2026-10-15",
+  form:"MISSA_CANTATA_INCENSE",presentationMode:"LIVE",
+  actualCelebration:{id:"test-inline",type:"CALENDAR"},
+  calendarCelebration:{id:"test-inline",type:"CALENDAR"},
+  proper:{status:"READY",data:proper,sourcePath:proper.sourcePath},
+  overlays:[],precedingRites:[],followingActions:[],distinctRite:null,
+ },...presentation});
+ return projectCuratedOrdinaryLiveCards(source).cards
+   .filter(c=>c.sourceSectionId==="AO.CARD.006").map(c=>c.title);
+}
+const tractInline={
+ la:["!Ps 90:11","Angelis suis Deus mandávit.","V. In mánibus portábunt te.",
+   "_","!Tractus","!Ps 90:1-7","Qui hábitat in adjutório.","V. Dicet Dómino."],
+ en:["!Ps 90:11","To His angels God has given command.","V. Upon their hands.",
+   "_","!Tractus","!Ps 90:1-7","You who dwell in the shelter.","V. Say to the Lord."],
+ fr:["!Ps 90:11","Dieu a commandé pour toi à ses anges.","V. Ils te porteront.",
+   "_","!Tractus.","!Ps 90:1-7","Celui qui habite sous l’assistance.","V. Il dira au Seigneur."],
+};
+const tractSources=Object.fromEntries(["la","en","fr"].map(lang=>
+ [lang,{order:["__TOP__","Graduale"],map:new Map([["Graduale",tractInline[lang]]])}]));
+const tractProper={...base,gradual:{
+ lat:normal(tractInline.la),en:normal(tractInline.en),fr:normal(tractInline.fr),
+}};
+const tractProof=certifyPreGospelChantParts(tractProper,{sources:tractSources,normalizeRows:normal});
+assert.deepEqual(tractProof?.parts.map(x=>x.kind),["GRADUAL","TRACT"]);
+assert.deepEqual(makeForInline({...tractProper,preGospelChants:tractProof}),["Gradual","Tract"]);
+const shifted={...sourcesInline,fr:{...sourcesInline.fr,
+ map:new Map([["Graduale",["Unrelated translation"]]])}};
+assert.equal(certifyPreGospelChantParts(properInline,{
+ sources:shifted,normalizeRows:normal,
+}),null,"Different French source must not create an Alleluia card");
+
 const proof=certify(base);
 assert.ok(proof,"Real named bilingual source sections must reconcile");
 assert.equal(proof.status,"SOURCE_VERIFIED_EXACT");
