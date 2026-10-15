@@ -1,7 +1,7 @@
 {
   "schema": "AO_SOURCE_TEXT_PRINT_PAGE_LAYOUT_AUDIT_V1",
   "date": "2026-10-15",
-  "state": "STRUCTURAL_PAGE_IMAGE_REVIEW_COMPLETE__FULL_TEXT_COLLATION_INCOMPLETE",
+  "state": "PHYSICAL_PAGE_LAYOUT_REVIEW_PLUS_OCR_ASSISTED_PAGE_DRAFT__INDEPENDENT_PROOFREAD_PENDING",
   "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
   "editionId": "ED-CE1913-V3-KOC-SPECIAL",
   "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
@@ -34,19 +34,24 @@
     "selectedPreviouslyStoredParagraphCount": 1,
     "selectedCompleteParagraphsForThisPage": 1,
     "selectedIncompleteParagraphExcerptsForThisPage": 1,
-    "untranscribedTextBlocks": "AT_LEAST_TWO_MAJOR_TERRITORIES_WITH_INTERNAL_PARAGRAPH_BOUNDARIES_UNRESOLVED",
+    "untranscribedTextBlocks": "PROVISIONAL_TEXT_CANDIDATES_EXIST_BUT_NOT_A_SINGLE_PRINTED_PAGE_FULLY_PROOFREAD",
     "appReady": false,
     "reason": "Physical page segmentation and a few existing passages were compared to the image; full orthographic and bibliographic verification is not complete.",
-    "completePrintedParagraphCensus": "NOT_YET_VERIFIED"
+    "completePrintedParagraphCensus": "NOT_YET_VERIFIED",
+    "candidateDraftBlocks": 10,
+    "independentlyProofreadPages": 0,
+    "longLatinQuoteHumanReview": "PENDING",
+    "interpageJoinHumanReview": "PENDING"
   },
   "reviewDependencies": [
     "Manually proofread entirety of p257 from original printed image, including source Latin, proper names, references, ligatures and punctuation",
     "Distinguish visible punctuation/hyphenation from unreviewed Wikisource OCR and New Advent transcription",
-    "Verify P257-02 is exactly one printed paragraph and document all corrections",
+    "Determine the number of actual printed paragraph breaks in the early-liturgy block; prior assumption of one long paragraph is not certified",
     "Verify P257-03 right-column end",
     "Collate P257-04 across printed p257→p258 with both scans, no guessed join",
     "Independent editor signs off actual complete page, all footnotes and boundaries before editorial promotion",
-    "Determine exact printed paragraph indentation inside both right-column historical territories before assigning additional passage IDs"
+    "Determine exact printed paragraph indentation inside both right-column historical territories before assigning additional passage IDs",
+    "Resolve all provisional candidate inconsistencies against 1913 source image; any New Advent/Wikisource reading is merely a lead"
   ],
   "reviewerKind": "MODEL_IMAGE_STRUCTURAL_ASSESSMENT_NOT_HUMAN_EDITION_CERTIFICATION",
   "notCanonicalMassRubrics": true,
@@ -72,9 +77,9 @@
       "endsOnPrintedPage": 257,
       "startsWith": "In the first century, as known, the Church of Rome",
       "endsWith": "Sursum corda, etc.",
-      "pageCompleteness": "COMPLETE_PRINTED_PARAGRAPH_NOT_FULLY_TRANSCRIBED",
-      "textAvailability": "OPENING_FRAGMENT_ONLY",
-      "proofreading": "UNCOLLATED_REMAINDER",
+      "pageCompleteness": "LONG_EARLY_LITURGY_TERRITORY_INTERNAL_PARAGRAPH_CENSUS_UNCONFIRMED",
+      "textAvailability": "ORIGINAL_OPENING_FRAGMENT_IN_RESTRICTED_FIXTURE_AND_MORE_DRAFT_OCR_ASSISTED_TEXT_HELD",
+      "proofreading": "REMAINING_TEXT_CANDIDATE_ONLY_NOT_INDEPENDENTLY_PROOFREAD",
       "existingExcerptEndsWith": "before this service lessons were read from the Bible, litanies and prayers were said.",
       "type": "AUTHORIAL_EARLY_LITURGY_RECONSTRUCTION",
       "qualification": "The 87-word excerpt is not an entire paragraph. The scan continues in left column through the source comparisons and the end of the account of Hippolytus."
@@ -87,7 +92,7 @@
       "startsWith": "The first great turning-point in the history of the Roman Canon",
       "endsWith": "the same as parts of our present Canon.",
       "pageCompleteness": "SOURCE_TERRITORY_CROSSES_COLUMN_BREAK_INTERNAL_PARAGRAPHS_NOT_ADJUDICATED",
-      "textAvailability": "LOCATORS_ONLY",
+      "textAvailability": "PROVISIONAL_OCR_ASSISTED_DRAFT_HELD_NOT_CLEARANCE",
       "proofreading": "UNCOLLATED",
       "transition": "Begins near foot of left column; runs over physical column break to top of right column.",
       "type": "AUTHORIAL_HISTORY_OF_LATIN_LITURGY"
@@ -101,12 +106,13 @@
       "lastPage257Words": "He also says that at",
       "firstPage258Words": "Rome the names of persons for whom the celebrant prays are read in the Canon",
       "pageCompleteness": "MULTIPARAGRAPH_TERRITORY_CROSSES_TO_258_NOT_TRANSCRIBED",
-      "textAvailability": "LOCATORS_ONLY",
+      "textAvailability": "PROVISIONAL_OCR_ASSISTED_DRAFT_AND_P258_JOIN_CANDIDATE_HELD",
       "proofreading": "UNCOLLATED_REQUIRES_PAGE258_REVIEW",
       "sourceWithinQuote": "De Sacramentis (Pseudo-Ambrose) cited/quoted by Fortescue; preserve quotation provenance separate from Fortescue authorship",
       "type": "LATE_ANTIQUE_LATIN_WITNESSES_WITH_MULTIPLE_EMBEDDED_QUOTATIONS",
       "internalParagraphBreaks": "UNRESOLVED_FROM_CURRENT_PAGE_IMAGE_REVIEW"
     }
   ],
-  "scopeClarification": "The four source territories are reading-order macro segments, not a certified census of exactly four printed paragraphs."
+  "scopeClarification": "The four source territories are reading-order macro segments, not a certified census of exactly four printed paragraphs.",
+  "provisionalTranscription": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
 }
