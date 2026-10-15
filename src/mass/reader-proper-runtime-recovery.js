@@ -184,7 +184,7 @@ export async function recoverReaderProperOmissions(proper,{
   // The host resolver is remote/cache-backed. Do not refetch a bare
   // Gradual with no second-chant evidence. This is a discovery filter ONLY:
   // a label match cannot authorize a split without trilingual source parity.
-  const chantDiscoveryCandidate=/(?:allel[uú]ia|tr[áa]ctus|tract|alléluia)/iu
+  const chantDiscoveryCandidate=/(?:allel[uú][ij]a|tr[áa]ctus|tract|alléluia)/iu
     .test(String(data.gradual?.lat??data.gradual?.la??""));
   if(!data.readerChantSourceProof && chantDiscoveryCandidate &&
      hasThreeLanguages(data.gradual)){
