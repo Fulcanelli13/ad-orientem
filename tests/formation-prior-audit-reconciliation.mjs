@@ -29,7 +29,7 @@ for(const row of index.owners){
  const current=corpus.get(row.owner);assert.ok(current,"Invented dossier owner "+row.owner);
  assert.equal(row.scope,current.scope);
  assert.equal(row.canonical_path,current.path);
- assert.equal(row.section_count,current.dos.sections.length);
+ assert.equal(row.section_count,current.d.sections.length);
  assert.equal(row.publication_allowed,false);
  assert.equal(row.whole_dossier_independently_certified,false);
  if(row.prior_draft_screen){
@@ -39,9 +39,9 @@ for(const row of index.owners){
   assert.equal(source.final_certified,false);
   assert.equal(source.audit_commit,"3ebe6a6dc1e1dd0757f0ed80d3eefaf80e6c9f21");
   assert.match(source.review_type,/NOT_CLAIM_CERTIFICATION/);
-  assert.equal(source.role_fingerprints.length,current.dos.sections.length);
+  assert.equal(source.role_fingerprints.length,current.d.sections.length);
   for(const role of source.role_fingerprints){
-   const section=current.dos.sections.find(s=>s.role===role.role);
+   const section=current.d.sections.find(s=>s.role===role.role);
    assert.ok(section,row.owner+" historical role missing: "+role.role);
    assert.deepEqual(role.source_ids,section.source_ids,row.owner+" previous citations changed");
    assert.equal(role.text_source_fingerprint,
