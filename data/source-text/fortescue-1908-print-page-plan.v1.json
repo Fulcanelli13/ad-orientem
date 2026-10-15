@@ -91,7 +91,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "followOnBatch": "data/source-text/fortescue-1913-print-batch-261-263.v1.json",
+      "reviewStatus": "UNPROOFREAD_PAGE_TRANSCRIPTION_STRUCTURALLY_READ__MAGNIFIED_IMAGE_COLLATION_PENDING",
+      "imageDirectlyMagnified": false
     },
     {
       "printedPage": 262,
@@ -100,7 +103,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "followOnBatch": "data/source-text/fortescue-1913-print-batch-261-263.v1.json",
+      "reviewStatus": "UNPROOFREAD_PAGE_TRANSCRIPTION_STRUCTURALLY_READ__MAGNIFIED_IMAGE_COLLATION_PENDING",
+      "imageDirectlyMagnified": false
     },
     {
       "printedPage": 263,
@@ -109,7 +115,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "followOnBatch": "data/source-text/fortescue-1913-print-batch-261-263.v1.json",
+      "reviewStatus": "UNPROOFREAD_PAGE_TRANSCRIPTION_STRUCTURALLY_READ__MAGNIFIED_IMAGE_COLLATION_PENDING",
+      "imageDirectlyMagnified": false
     },
     {
       "printedPage": 264,
@@ -170,13 +179,15 @@
   "fullPageCensus": "NOT_COMPLETE",
   "page257DraftStatus": "ONE_PAGE_PROVISIONAL_WORKBENCH__NOT_VERIFIED_OR_RELEASED",
   "nextReviewBatch": [
+    264,
+    265,
+    266
+  ],
+  "reviewedBatchPageRange": [
     261,
     262,
     263
   ],
-  "reviewedBatchPageRange": [
-    258,
-    259,
-    260
-  ]
+  "preliminarySourcePageReadingThrough": 263,
+  "allPageEvidenceQualified": "PAGE_INDEX_AND_UNPROOFREAD_HOSTED_TRANSCRIPTIONS_NOT_EQUIVALENT_TO_CERTIFIED_ORIGINAL_TEXT"
 }
