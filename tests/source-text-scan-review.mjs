@@ -25,7 +25,7 @@ for(let page=255;page<=267;page++){
    column:j%13===0?"unknown":j%2?"left":"right",
    articleStatus:j%19===0?"UNKNOWN":"CONFIRMED_IN_SCOPE",
    text:j%23===0?"Synthetic OCR contains dou-\nbt about a word.":
-    j%29===0?"Synthetic replacement \uFFFD character.":"Synthetic staging line "+page+"."+j+" — not from Fortescue."});
+    j%19===0?"Synthetic replacement \uFFFD character.":"Synthetic staging line "+page+"."+j+" — not from Fortescue."});
  }
 }
 const queue=buildScanReviewQueue({plan,candidates});
