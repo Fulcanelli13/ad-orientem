@@ -2738,6 +2738,1457 @@
         "hasOriginalRecord": true
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "jerusalem",
+      "pleiades": {
+        "id": "687928",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/8/7/9/687928.json",
+        "sha": "d544041c2fd1ef43efe13b9c8eeacb125312766c",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "archaeological-site",
+          "findspot"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/687928/darmc-location-18044",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "1:500,000 scale representative point location digitized from the Barrington Atlas of the Greek and Roman World by the Digital Atlas of Roman and Medieval Civilizations project at Harvard University.",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/687928/cigs-location-of-yrvshlym",
+            "accuracyMeters": 5,
+            "associationCertainty": "certain",
+            "precisionStatement": null,
+            "featureTypes": [
+              "archaeological-site",
+              "findspot"
+            ],
+            "attestations": []
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Ierusalem",
+            "uri": "https://pleiades.stoa.org/places/687928/ierusalem",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 G2 Ierusalem/Hierosolyma/Col. Aelia Capitolina"
+          },
+          {
+            "name": "Hierosolyma",
+            "uri": "https://pleiades.stoa.org/places/687928/hierosolyma",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 G2 Ierusalem/Hierosolyma/Col. Aelia Capitolina"
+          },
+          {
+            "name": "Col. Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/col-aelia-capitolina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 G2 Ierusalem/Hierosolyma/Col. Aelia Capitolina"
+          },
+          {
+            "name": "Colonia Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/colonia-aelia-capitolina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Ailia",
+            "uri": "https://pleiades.stoa.org/places/687928/ailia",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": 300,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Aelia Capitolina",
+            "uri": "https://pleiades.stoa.org/places/687928/aelia-capitolina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-roman-early-empire",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman-early-empire-parthian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "ptolemaic-roman-egypt",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique-sasanian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Yǝrušalayim",
+            "uri": "https://pleiades.stoa.org/places/687928/y1ddrusalayim",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -720,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Īliyāʾ",
+            "uri": "https://pleiades.stoa.org/places/687928/iliya2be",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "caliphate-umayyad-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": 632,
+              "end": 750
+            },
+            "rangeMatchesBaseline": true,
+            "language": "hbo",
+            "bibliographicSource": "TAVO Index"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "m66c5b8",
+        "name": "Jerusalem",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "35.234167,31.776667",
+        "precisionMeters": 250,
+        "precisionStatement": "point in modern settlement",
+        "coordinateSourceType": "wikipedia_article",
+        "ancientAssociations": [
+          {
+            "name": "The Lord Is There",
+            "score": 1000
+          },
+          {
+            "name": "Water Gate",
+            "score": 1000
+          },
+          {
+            "name": "South Gate",
+            "score": 1000
+          },
+          {
+            "name": "Judea 1",
+            "score": 1000
+          },
+          {
+            "name": "Jerusalem",
+            "score": 1000
+          },
+          {
+            "name": "Dung Gate",
+            "score": 1000
+          },
+          {
+            "name": "Lower Pool",
+            "score": 1000
+          },
+          {
+            "name": "Way of Holiness",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "joppa",
+      "pleiades": {
+        "id": "687931",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/8/7/9/687931.json",
+        "sha": "5c99a88f35756e1c4a30292f7de3976759c9f312",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "port"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/687931/darmc-location-5161",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "1:500,000 scale representative point location digitized from the Barrington Atlas of the Greek and Roman World by the Digital Atlas of Roman and Medieval Civilizations project at Harvard University.",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/687931/dare-location",
+            "accuracyMeters": 100,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, village precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Ioppe",
+            "uri": "https://pleiades.stoa.org/places/687931/ioppe",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 F1 Ioppe"
+          },
+          {
+            "name": "Yafo",
+            "uri": "https://pleiades.stoa.org/places/687931/yafo",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 70 F1 Ioppe"
+          },
+          {
+            "name": "Iope",
+            "uri": "https://pleiades.stoa.org/places/687931/iope",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Jaffa",
+            "uri": "https://pleiades.stoa.org/places/687931/jaffa",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Flavia Ioppa",
+            "uri": "https://pleiades.stoa.org/places/687931/flavia-ioppa",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman-early-empire-parthian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 226
+            },
+            "rangeMatchesBaseline": true,
+            "language": "ka",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Yappū",
+            "uri": "https://pleiades.stoa.org/places/687931/yappu",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -720,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "asyr",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Yapu",
+            "uri": "https://pleiades.stoa.org/places/687931/yapu",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "egyptian-hittite-levant",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1344,
+              "end": -1212
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Jappû",
+            "uri": "https://pleiades.stoa.org/places/687931/jappu",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "achaemenid-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -720,
+              "end": -330
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "TAVO Index"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mcb49f3",
+        "name": "Jaffa",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "34.753039,32.054481",
+        "precisionMeters": 10,
+        "precisionStatement": "historical site in modern settlement",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Joppa",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "lystra",
+      "pleiades": {
+        "id": "648699",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/4/8/6/648699.json",
+        "sha": "c8cb14ebec1271e6063eda38860d7c8b4e63b3cd",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/648699/darmc-location-15",
+            "accuracyMeters": 100,
+            "associationCertainty": "certain",
+            "precisionStatement": "TIB representative point location digitized from the Barrington Atlas of the Greek and Roman World by the Digital Atlas of Roman and Medieval Civilizations project at Harvard University.",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/648699/dare-location",
+            "accuracyMeters": 100,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, village precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Lystra",
+            "uri": "https://pleiades.stoa.org/places/648699/lystra",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Barrington Atlas: BAtlas 66 A1 Lystra/Col. Iulia Felix Gemina"
+          },
+          {
+            "name": "Col. Iulia Felix Gemina",
+            "uri": "https://pleiades.stoa.org/places/648699/col-iulia-felix-gemina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 66 A1 Lystra/Col. Iulia Felix Gemina"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "ma6f6dc",
+        "name": "Tel Lystra",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "32.338400,37.601700",
+        "precisionMeters": 50,
+        "precisionStatement": "point on tel",
+        "coordinateSourceType": "topostext",
+        "ancientAssociations": [
+          {
+            "name": "Lystra",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "miletus",
+      "pleiades": {
+        "id": "599799",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/5/9/9/7/599799.json",
+        "sha": "3b9ec72d5a366614a43d7f40badffdc276007ae6",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "port",
+          "archaeological-site"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/599799/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "period": "classical",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/599799/osm-location-of-ancient-miletus",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Location based on OpenStreetMap",
+            "featureTypes": [
+              "archaeological-site"
+            ],
+            "attestations": []
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Millawa(n)da",
+            "uri": "https://pleiades.stoa.org/places/599799/millawa-n-da",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "middle-hittite-anatolia",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1450,
+              "end": -1200
+            },
+            "rangeMatchesBaseline": true,
+            "language": "hit",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Miletus",
+            "uri": "https://pleiades.stoa.org/places/599799/miletus",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "la",
+            "bibliographicSource": "Barrington Atlas: BAtlas 61 E2 Miletus"
+          },
+          {
+            "name": "Palatia",
+            "uri": "https://pleiades.stoa.org/places/599799/palatia",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "proto-byzantine",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-byzantine",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": 500,
+              "end": 850
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Balat",
+            "uri": "https://pleiades.stoa.org/places/599799/balat-ota",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "middle-bronze-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "middle-late-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "ottoman-rise",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-ottoman-empire",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1750,
+              "end": 1683
+            },
+            "rangeMatchesBaseline": true,
+            "language": "ota",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Balat",
+            "uri": "https://pleiades.stoa.org/places/599799/balat-tur",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "middle-bronze-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "middle-late-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "ottoman-rise",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-ottoman-empire",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1750,
+              "end": 1683
+            },
+            "rangeMatchesBaseline": true,
+            "language": "tr",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Miletos",
+            "uri": "https://pleiades.stoa.org/places/599799/miletos",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "middle-byzantine",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -720,
+              "end": 1200
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Milētos",
+            "uri": "https://pleiades.stoa.org/places/599799/miletos-1",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "middle-bronze-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "middle-late-iron-age-anatolia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "achaemenid-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman-early-empire-parthian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "transition-roman-early-empire-late-antique",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique-late-byzantine",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique-sasanian-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "proto-byzantine",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-byzantine",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "abassid-middle-east",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "middle-byzantine",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "modern-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1750,
+              "end": 2000
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "TAVO Index"
+          },
+          {
+            "name": "Miléisioi",
+            "uri": "https://pleiades.stoa.org/places/599799/mileisioi",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 300
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Pleiades"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mcf7752",
+        "name": "Miletus",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "27.275556,37.531111",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Miletus",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "nazareth",
+      "pleiades": {
+        "id": "678299",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/6/7/8/2/678299.json",
+        "sha": "f772ed85f8b972ac195f74fc9beb4dd576591e83",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/678299/darmc-location-13888",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "500K scale point location",
+            "featureTypes": [
+              "unknown"
+            ],
+            "attestations": [
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Nazareth",
+            "uri": "https://pleiades.stoa.org/places/678299/nazareth",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -330,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 69 B4 Nazareth"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mb3f688",
+        "name": "Nazareth",
+        "sourceUrl": "https://www.openstreetmap.org/way/97417380",
+        "coordinates": "35.297690,32.702140",
+        "precisionMeters": 10,
+        "precisionStatement": "traditional site in modern settlement",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Nazareth",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "nineveh",
+      "pleiades": {
+        "id": "874621",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/8/7/4/6/874621.json",
+        "sha": "646d909e88c4913213eb2d00fdf70188a1c67ca8",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "archaeological-site"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/874621/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "period": "classical",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/874621/osm-location-of-archaeological-site-of-nineveh",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Location based on OpenStreetMap",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": []
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/874621/cigs-location-of-ninua",
+            "accuracyMeters": 5,
+            "associationCertainty": "certain",
+            "precisionStatement": null,
+            "featureTypes": [
+              "archaeological-site"
+            ],
+            "attestations": []
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Nȋnos",
+            "uri": "https://pleiades.stoa.org/places/874621/ninos",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "archaic",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -750,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": "grc",
+            "bibliographicSource": "Barrington Atlas: BAtlas 89 F4 Nineveh/Ninos"
+          },
+          {
+            "name": "Ninuwā",
+            "uri": "https://pleiades.stoa.org/places/874621/ninuwa",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "akkadian-ur-iii-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "2nd-millenium-bce",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -2335,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          },
+          {
+            "name": "Ninâ",
+            "uri": "https://pleiades.stoa.org/places/874621/nina",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "early-1st-millennium-mesopotamia",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "neo-assyrian-babylonian-middle-east",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -1000,
+              "end": -540
+            },
+            "rangeMatchesBaseline": true,
+            "language": "akk",
+            "bibliographicSource": "Pleiades"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "m52bd87",
+        "name": "Nineveh",
+        "sourceUrl": "https://www.openbible.info/geo/modern/m52bd87/nineveh",
+        "coordinates": "43.152800,36.359400",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Assyria",
+            "score": 1000
+          },
+          {
+            "name": "Nineveh",
+            "score": 1000
+          },
+          {
+            "name": "Nimrod",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
+    },
+    {
+      "anchorKey": "philippi",
+      "pleiades": {
+        "id": "501482",
+        "sourceFile": "https://github.com/isawnyu/pleiades.datasets/blob/d8c06f28656312eee6b7a0f76415b34a89e3c728/data/json/5/0/1/4/501482.json",
+        "sha": "f769b40d1edeb961a7915c54fb7b33baa03d13ae",
+        "published": true,
+        "uriMatches": true,
+        "titleMatches": true,
+        "reprPointMatches": true,
+        "featureTypes": [
+          "settlement",
+          "archaeological-site"
+        ],
+        "locationWitnesses": [
+          {
+            "uri": "https://pleiades.stoa.org/places/501482/dare-location",
+            "accuracyMeters": 10,
+            "associationCertainty": "certain",
+            "precisionStatement": "Representative point location, site precision",
+            "featureTypes": [
+              "settlement"
+            ],
+            "attestations": [
+              {
+                "period": "classical",
+                "confidence": "confident"
+              },
+              {
+                "period": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "period": "roman",
+                "confidence": "confident"
+              },
+              {
+                "period": "late-antique",
+                "confidence": "confident"
+              }
+            ]
+          },
+          {
+            "uri": "https://pleiades.stoa.org/places/501482/osm-location-of-philippi",
+            "accuracyMeters": 20,
+            "associationCertainty": "certain",
+            "precisionStatement": "Location based on OpenStreetMap",
+            "featureTypes": [
+              "archaeological-site"
+            ],
+            "attestations": []
+          }
+        ],
+        "matchedNames": [
+          {
+            "name": "Krenides",
+            "uri": "https://pleiades.stoa.org/places/501482/krenides",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -550,
+              "end": -330
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 51 C2 Krenides/Philippi/Col. Augusta Iulia Philippensis"
+          },
+          {
+            "name": "Philippi",
+            "uri": "https://pleiades.stoa.org/places/501482/philippi",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "classical",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "hellenistic-republican",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -550,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 51 C2 Krenides/Philippi/Col. Augusta Iulia Philippensis"
+          },
+          {
+            "name": "Col. Augusta Iulia Philippensis",
+            "uri": "https://pleiades.stoa.org/places/501482/col-augusta-iulia-philippensis",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [
+              {
+                "timePeriod": "roman",
+                "confidence": "confident"
+              },
+              {
+                "timePeriod": "late-antique",
+                "confidence": "confident"
+              }
+            ],
+            "sourceDateRange": {
+              "start": -30,
+              "end": 640
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 51 C2 Krenides/Philippi/Col. Augusta Iulia Philippensis"
+          },
+          {
+            "name": "Assyla",
+            "uri": "https://pleiades.stoa.org/places/501482/assyla",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 51 C2 Krenides/Philippi/Col. Augusta Iulia Philippensis"
+          },
+          {
+            "name": "Col. Victrix Philippensis",
+            "uri": "https://pleiades.stoa.org/places/501482/col-victrix-philippensis",
+            "originalPresent": true,
+            "associationCertainty": "certain",
+            "attestations": [],
+            "sourceDateRange": {
+              "start": null,
+              "end": null
+            },
+            "rangeMatchesBaseline": true,
+            "language": null,
+            "bibliographicSource": "Barrington Atlas: BAtlas 51 C2 Krenides/Philippi/Col. Augusta Iulia Philippensis"
+          }
+        ]
+      },
+      "openBible": {
+        "id": "mec5201",
+        "name": "Philippi",
+        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinates": "24.284576,41.012072",
+        "precisionMeters": 5,
+        "precisionStatement": "point in visible remains",
+        "coordinateSourceType": "wikidata",
+        "ancientAssociations": [
+          {
+            "name": "Philippi",
+            "score": 1000
+          }
+        ],
+        "hasOriginalRecord": true
+      },
+      "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     }
   ]
 }
