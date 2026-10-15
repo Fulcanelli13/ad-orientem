@@ -186,7 +186,7 @@ export async function recoverReaderProperOmissions(proper,{
   // a label match cannot authorize a split without trilingual source parity.
   const chantDiscoveryCandidate=/(?:allel[uú]ia|tr[áa]ctus|tract|alléluia)/iu
     .test(String(data.gradual?.lat??data.gradual?.la??""));
-  if(!data.preGospelChants && chantDiscoveryCandidate &&
+  if(!data.readerChantSourceProof && chantDiscoveryCandidate &&
      hasThreeLanguages(data.gradual)){
     try{
       const sources={};
@@ -219,7 +219,7 @@ export async function recoverReaderProperOmissions(proper,{
      !needsApostolicSource&&!recoveredChants)return proper;
 
   const next={...data};
-  if(recoveredChants)next.preGospelChants=recoveredChants;
+  if(recoveredChants)next.readerChantSourceProof=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;
   if(needs.epistle){
     const value=await recoverText(hostResolver,path,["Lectio"],diagnostic);
