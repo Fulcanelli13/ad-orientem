@@ -94,3 +94,15 @@ Source: [Atlas + Saints map 5-star reuse candidates](../../data/research/sacred-
 5. Build full subject-aware Map/Timeline image demand and rated-five match audit for 151/183 and geography pins; only after this identify true subject artwork gaps.
 
 This research PR is intentionally unmerged and contains no production code changes, no user-rating mutation and no unverified new art downloads.
+
+## W65 (15 October) — two 5/5 saints artworks: final media clearance, not re-rating
+
+The 5/5 user aesthetic choice remains confirmed for both exact W64 artwork IDs. Neither artwork is newly approved for Ad Orientem reproduction. Source review and release evidence are tracked in `data/research/sacred-visual-w65-first-user-five-saints-technical-release-gates-20261015.v1.json`, with a regression test and CI.
+
+**Thérèse of Lisieux, `carmel-lisieux-1925-therese-aux-roses`:** Céline Martin (Soeur Geneviève), artist and Thérèse's sister, died in **1959**, per the [Carmel of Lisieux archive](https://archives.carmeldelisieux.fr/personnage/celine-martin/). In creator-life-plus-70 territories, copyright can ordinarily last until **end of 2029**, subject to local rules and extensions. The source photograph and original work must be matched to the user-rated image; suitable exact reproduction and either permission or a valid rights basis remain to be established. Do not quietly replace it with a photographic print or stock devotional copy.
+
+**Margaret Mary Alacoque, `podesti-margaret-mary-source`:** [the Wikimedia Commons source file](https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg) describes a 19th-century oil attributed to **Francesco Podesti**, listed in the Vatican Museums, claims a faithful public-domain reproduction and also lists an uploader **CC BY-SA 4.0** licence. It has **800 × 600 pixels / 49,529 bytes** and gives the source photographer as the uploader's own work, without a verifiable museum accession. The old underlying painting is widely public domain, but precise reproduction attribution, original-object identity, high-quality matching media, and valid jurisdiction/credit requirements need verification. The depiction is a **mystical apparition scene including Margaret Mary**, not a standard solo portrait.
+
+The release ledger preserves both existing artwork IDs, both existing 5/5 ratings and explicitly sets releaseAllowed=false, with no local image assigned. Neither the Saints Map PR #1227 nor the Calendar PR #1226 is permitted to promote the artwork until a positive exact-reproduction rights and visual-quality review occurs. Do not send these original images to the user for another aesthetic rating.
+
+**Action order:** (1) confirm physical original and previously user-viewed file, (2) obtain or verify exact work-photo rights and required credits, (3) acquire sufficient resolution of the *same painting*, (4) certify safe mobile/desktop cropping, (5) have art owner approve final file ID for reuse across Calendar and Map.
