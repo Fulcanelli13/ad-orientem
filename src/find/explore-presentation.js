@@ -535,7 +535,7 @@ export function buildExploreViewModel({
 
 export function renderExploreToString(vm){
   if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview:compactExploreItemSheet});
-  const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
+  const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.lens==="saints"?vm.items.length:(vm.counts?.[vm.lens]??vm.items.length));
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
@@ -551,7 +551,7 @@ export function renderExploreToString(vm){
   }
   html+='</div></details></nav>';
   if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
-  if(vm.lens==="saints")html+='<p class="aoSaintScopeNote">'+esc(L(vm.language,"Six source-linked pilot biographies at existing sacred places. Portraits and full 1962 Calendar connections are awaiting owner review.","Six notices biographiques sourcées liées à des lieux existants. Portraits et liens complets au calendrier de 1962 en attente de validation."))+"</p>";
+  if(vm.lens==="saints")html+='<p class="aoSaintScopeNote">'+esc(vm.view==="list"?L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation."):L(vm.language,"Map shows verified physical places only. Switch to List for the 30-profile Saints catalogue.","La carte ne montre que des lieux vérifiés. Passez en Liste pour consulter les 30 notices."))+"</p>";
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
   if(vm.lens==="tlm")html+='<div class="aoTlmToolbar">';
@@ -569,7 +569,7 @@ export function renderExploreToString(vm){
   if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
-  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?L(vm.language,"places connected to saints","lieux associés aux saints"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
+  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?(vm.view==="list"?L(vm.language,"saint profiles","notices de saints"):L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
