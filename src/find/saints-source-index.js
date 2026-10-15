@@ -1,5 +1,6 @@
 // Browsable source-index records, not invented saint biographies or map pins.
 // All person/group identifiers remain owned by their original Calendar or v43 archive.
+import {projectSaintCatalogueItems} from "./saints-catalogue.js";
 const arr=x=>Array.isArray(x)?x:[];
 const str=x=>String(x??"").trim();
 const folded=x=>str(x).toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -28,6 +29,12 @@ export function projectSaintSourceIndexItems(dataset={},scope="historical"){
   if(index?.schema!=="ao.saints.read-only-owner-index-20261015.v1"||
     index?.status!=="READ_ONLY_DERIVED_CROSS_OWNER_SNAPSHOT_NOT_PRIMARY_IDENTITY_OR_LITURGICAL_OWNER")
     return Object.freeze([]);
+  const canonicalIds=new Set(projectSaintCatalogueItems(dataset).map(x=>x.saint_id));
+  const linkExactPerson=owner=>{
+    if(!/^saint\.[a-z0-9-]+$/.test(owner||""))return null;
+    const person="saint:"+owner.slice(6);
+    return canonicalIds.has(person)?"saints:person:"+person:null;
+  };
   if(scope==="historical"){
     return Object.freeze(arr(index.historical_subjects).filter(x=>x.source_identity_id&&x.archive_name)
       .map(x=>{
@@ -40,7 +47,7 @@ export function projectSaintSourceIndexItems(dataset={},scope="historical"){
           "Sujet des archives historiques, non une biographie individuelle vérifiée ni une fête observée du calendrier actuel.",
           [],{scope:"ARCHIVED_SOURCE_SUBJECT",source_id:x.source_identity_id,date:dates,
             precision:"ARCHIVED_NOMINAL_NOT_OBSERVED",record_type:x.record_type,
-            representation_modes:x.representation_modes??[]});
+            representation_modes:x.representation_modes??[],related_profile_item_id:linkExactPerson(x.source_identity_id)});
       }));
   }
   if(scope==="later"){
@@ -54,7 +61,8 @@ export function projectSaintSourceIndexItems(dataset={},scope="historical"){
           "Personne nommée dans l’index des canonisations du Dicastère. La biographie sourcée n’est pas encore intégrée à cet index.",
           url?[{url,issuer:"Dicastery for the Causes of Saints"}]:[],
           {scope:"OFFICIAL_NAMED_CANONIZATION",source_id:x.calendar_person_id,date:on,
-            precision:"CANONIZATION_DATE_NOT_FEAST_DATE",record_type:x.record_type});
+            precision:"CANONIZATION_DATE_NOT_FEAST_DATE",record_type:x.record_type,
+            related_profile_item_id:linkExactPerson(x.calendar_person_id)});
       });
     const groups=arr(index.post1960_collectives).filter(x=>x.source_group_id&&x.title?.en).map(x=>{
       const url=officialLink(x.source_url)?x.source_url:null;
