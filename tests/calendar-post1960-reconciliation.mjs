@@ -16,6 +16,14 @@ for(const id of ["saint.john-henry-newman","saint.carlo-acutis","saint.pio-pietr
 assert.ok(census.groups.every(g=>!ids.has("saint."+g.id)));
 assert.ok(ids.has("saint.louis-martin") && ids.has("saint.zelie-guerin"));
 assert.ok(ids.has("saint.hildegard-bingen"));
+assert.ok(ids.has("saint.john-avila"),"1970 saint reuses the 2012 Doctor identity");
+const conflicted=people.find(p=>p.id==="saint.jadwiga-queen-poland");
+assert.equal(conflicted.publicationHold,"IDENTITY_DESCRIPTION_REQUIRES_INDEPENDENT_REVIEW");
+assert.ok(conflicted.reviewFlags.includes("OFFICIAL_1997_TITLE_VS_BODY_HEDWIG_SILESIA_CONFLATION_REVIEW_REQUIRED"));
+const hypotheticalConflict=structuredClone(conflicted);
+hypotheticalConflict.observances=[{calendar:"CURRENT_ROMAN_GENERAL",monthDay:"06-08",sourceIds:["example-only"],publishedOn:"1997-06-08"}];
+assert.equal(supplementarySaintsForDate("2026-06-08",[hypotheticalConflict]).length,0,"Publication-held saints cannot appear even when an observance date is proposed");
+
 assert.equal(people.find(p=>p.id==="saint.francisco-marto").recognition.canonizedOn,"2017-05-13");
 assert.equal(saintRecognitionAt(people.find(p=>p.id==="saint.teresa-calcutta"),"2015-09-05").recognizedAsSaint,false);
 assert.equal(saintRecognitionAt(people.find(p=>p.id==="saint.teresa-calcutta"),"2017-09-05").recognizedAsSaint,true);
