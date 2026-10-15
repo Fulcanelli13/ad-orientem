@@ -1158,6 +1158,70 @@
       "codes": {
         "iso_alpha2": "MZ"
       }
+    },
+    {
+      "geo_area_id": "geo:country:TT",
+      "name": {
+        "official": "Trinidad and Tobago",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GH",
+      "name": {
+        "official": "Ghana",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GH"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BZ",
+      "name": {
+        "official": "Belize",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PK",
+      "name": {
+        "official": "Pakistan",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PK"
+      }
     }
   ],
   "places": [
@@ -10654,6 +10718,283 @@
       "source_ids": [
         "SG-R75-SITE-SG-INV-0721",
         "SG-R75-GEO-SG-INV-0721"
+      ]
+    },
+    {
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "name": {
+        "official": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+        "aliases": [
+          "National Shrine of Our Lady of Guadalupe, Allentown",
+          "Immaculate Conception BVM Church, Allentown"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.destinationes.com/pilgrimage/allentown-pennsylvania",
+        "source_ref": "destinationes:allentown-national-shrine-gps",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "501 Ridge Avenue",
+        "line2": null,
+        "postal_code": "18102",
+        "city": "Allentown",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "501 Ridge Avenue, Allentown, PA 18102, United States"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0377",
+        "SG-R76-GEO-SG-INV-0377"
+      ]
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "name": {
+        "official": "Our Lady of Fatima Church and Shrine, Laventille",
+        "aliases": [
+          "National Marian Shrine of Our Lady of Laventille",
+          "Sanctuaire Notre-Dame de Laventille"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:TT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.6556583,
+        "lng": -61.4949787,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame_de_Laventille",
+        "source_ref": "frwiki:sanctuaire-notre-dame-laventille-coordinate",
+        "matched_country_code": "TT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "Upper Picton Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Laventille",
+        "region": "San Juan–Laventille",
+        "country_code": "TT",
+        "country": "Trinidad and Tobago",
+        "formatted": "Upper Picton Road, Laventille, San Juan–Laventille, Trinidad and Tobago"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0474",
+        "SG-R76-GEO-SG-INV-0474"
+      ]
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "name": {
+        "official": "St Peter's Cathedral Basilica, Kumasi",
+        "aliases": [
+          "Cathedral Basilica of Saint Peter, Kumasi",
+          "St Peter's Catholic Cathedral, Kumasi"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.69536,
+        "lng": -1.61775,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/819917453",
+        "source_ref": "osm:way:819917453",
+        "matched_country_code": "GH",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kumasi",
+        "region": "Ashanti Region",
+        "country_code": "GH",
+        "country": "Ghana",
+        "formatted": "St Peter's Cathedral Basilica, Kumasi, Ashanti Region, Ghana"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0726",
+        "SG-R76-GEO-SG-INV-0726"
+      ]
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "name": {
+        "official": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+        "aliases": [
+          "Santuario de Guadalupe, Guadalupe, Zacatecas",
+          "Templo de Nuestra Señora de Guadalupe, Zacatecas"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:MX"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 22.74656,
+        "lng": -102.51787,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4046916240",
+        "source_ref": "osm:node/4046916240",
+        "matched_country_code": "MX",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Calle Luis Moya esquina Independencia",
+        "line2": null,
+        "postal_code": null,
+        "city": "Guadalupe",
+        "region": "Zacatecas",
+        "country_code": "MX",
+        "country": "Mexico",
+        "formatted": "Calle Luis Moya esquina Independencia, Centro, Guadalupe, Zacatecas, México"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0431",
+        "SG-R77-GEO-SG-INV-0431"
+      ]
+    },
+    {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "name": {
+        "official": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+        "aliases": [
+          "Concatedral de Nuestra Señora de Guadalupe, Belmopán",
+          "Our Lady of Guadalupe Roman Catholic Church, Belmopan"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:BZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.24867,
+        "lng": -88.7635,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/294567114",
+        "source_ref": "osm:way/294567114",
+        "matched_country_code": "BZ",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "East Ring Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Belmopan",
+        "region": "Cayo District",
+        "country_code": "BZ",
+        "country": "Belize",
+        "formatted": "East Ring Road, Belmopan, Cayo District, Belize"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0449",
+        "SG-R77-GEO-SG-INV-0449"
+      ]
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "name": {
+        "official": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+        "aliases": [
+          "Iglesia Nuestra Señora de Lourdes, San Pedro de Montes de Oca",
+          "Shrine of Our Lady of Lourdes, San José (research name; parish only)"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:CR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 9.93288,
+        "lng": -84.04176,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/372659552",
+        "source_ref": "osm:way/372659552",
+        "matched_country_code": "CR",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Calle 77, Lourdes",
+        "line2": null,
+        "postal_code": null,
+        "city": "San Pedro de Montes de Oca",
+        "region": "San José",
+        "country_code": "CR",
+        "country": "Costa Rica",
+        "formatted": "Calle 77, Lourdes, San Pedro de Montes de Oca, San José, Costa Rica"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0459",
+        "SG-R77-GEO-SG-INV-0459"
+      ]
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "name": {
+        "official": "Our Lady of Fatima Catholic Church, Karachi",
+        "aliases": [
+          "Our Lady of Fatima Parish, Karachi",
+          "Fatima Shrine Church, Karachi (map label)"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:PK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 24.86672,
+        "lng": 67.02199,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://en.wikipedia.org/wiki/Our_Lady_of_Fatima_Church%2C_Karachi",
+        "source_ref": "wiki:Our_Lady_of_Fatima_Church_Karachi:approx_site_coordinate",
+        "matched_country_code": "PK",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "73 Randle Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Karachi",
+        "region": "Sindh",
+        "country_code": "PK",
+        "country": "Pakistan",
+        "formatted": "73 Randle Road, Karachi 74400, Sindh, Pakistan"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0609",
+        "SG-R77-GEO-SG-INV-0609"
       ]
     }
   ],

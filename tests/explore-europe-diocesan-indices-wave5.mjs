@@ -21,6 +21,7 @@ for(const row of read("data/geography/research/sacred-geography-r72-world-anchor
 // R73 promotions postdate the frozen European discovery snapshots.
 for(const row of read("data/geography/research/sacred-geography-r73-major-shrines.v1.json").sites)publishedAfterFreeze.add(row.place_id);
 for(const row of read("data/geography/research/sacred-geography-r75-essential-sites.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
+for(const row of read("data/geography/research/sacred-geography-r77-essential-completeness.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const id=x=>x.research_id||x.lead_id||x.id||x.site_id||x.place_id;
 const allBefore=[

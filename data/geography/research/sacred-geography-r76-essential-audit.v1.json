@@ -1,0 +1,140 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R76_FINAL_ESSENTIAL_AUDIT_V1",
+  "date": "2026-10-15",
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0377",
+      "country": "US",
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "shrine_id": "shrine:US:allentown-guadalupe-national-shrine",
+      "pilgrimage_id": "pilgrimage:US:allentown-guadalupe-national-shrine-destination",
+      "name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "lat": 40.613235,
+      "lng": -75.461138,
+      "precision": "complex_anchor",
+      "site_source_url": "https://www.immaculateconceptionallentown.org/history.html",
+      "geo_source_url": "https://www.destinationes.com/pilgrimage/allentown-pennsylvania"
+    },
+    {
+      "candidate_id": "SG-INV-0474",
+      "country": "TT",
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "shrine_id": "shrine:TT:laventille-our-lady-fatima-shrine",
+      "pilgrimage_id": "pilgrimage:TT:laventille-our-lady-fatima-shrine-destination",
+      "name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "lat": 10.6556583,
+      "lng": -61.4949787,
+      "precision": "complex_anchor",
+      "site_source_url": "https://nationaltrust.tt/location/our-lady-of-fatima-church-shrine/",
+      "geo_source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame_de_Laventille"
+    },
+    {
+      "candidate_id": "SG-INV-0726",
+      "country": "GH",
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+      "pilgrimage_id": null,
+      "name": "St Peter's Cathedral Basilica, Kumasi",
+      "lat": 6.69536,
+      "lng": -1.61775,
+      "precision": "site",
+      "site_source_url": "https://gcatholic.org/churches/africa/1462",
+      "geo_source_url": "https://www.openstreetmap.org/way/819917453"
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0248",
+      "name": "Anglican Shrine of Our Lady of Walsingham",
+      "country": "GB",
+      "status": "UNMATCHED",
+      "reason": "Anglican physical shrine outside Catholic site scope; do not equate with existing Catholic Walsingham."
+    },
+    {
+      "candidate_id": "SG-INV-0415",
+      "name": "Shrine of Our Lady of Fatima, Quebec",
+      "country": "CA",
+      "status": "UNMATCHED",
+      "reason": "Quebec Fatima title is ambiguous among multiple parishes, no verified standalone shrine identity."
+    },
+    {
+      "candidate_id": "SG-INV-0431",
+      "name": "Sanctuary of Our Lady of Guadalupe, Zacatecas",
+      "country": "MX",
+      "status": "UNMATCHED",
+      "reason": "Zacatecas area has distinct Guadalupe sanctuaries (Guadalupito vs historic Guadalupe town); must distinguish destination."
+    },
+    {
+      "candidate_id": "SG-INV-0449",
+      "name": "Shrine of Our Lady of Guadalupe, Belmopan",
+      "country": "BZ",
+      "status": "UNMATCHED",
+      "reason": "Belmopan shrine not independently located to a site."
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "name": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "country": "NI",
+      "status": "UNMATCHED",
+      "reason": "Matagalpa church versus sanctuary identity unresolved."
+    },
+    {
+      "candidate_id": "SG-INV-0459",
+      "name": "Shrine of Our Lady of Lourdes, San José",
+      "country": "CR",
+      "status": "UNMATCHED",
+      "reason": "San José Lourdes shrine title unconfirmed as a distinct pilgrimage destination."
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "name": "Shrine of Our Lady of Fatima, Karachi",
+      "country": "PK",
+      "status": "UNMATCHED",
+      "reason": "Karachi Fatima parish existence likely, but categorisation as a pilgrimage shrine not established."
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "name": "Our Lady of Lourdes Shrine, Tianjin",
+      "country": "CN",
+      "status": "UNMATCHED",
+      "reason": "Tianjin Lourdes shrine identity/geographic pin unconfirmed."
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "name": "Shrine of Our Lady of Fátima, Dili",
+      "country": "TL",
+      "status": "UNMATCHED",
+      "reason": "Fátima church at Railaco is distinct from Dili; a Dili shrine remains unsubstantiated."
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "name": "Saint Peter Chanel Memorial, Russell",
+      "country": "NZ",
+      "status": "TEXT_HINT_REVIEW",
+      "reason": "Existing Russell site pin references nearby school and is explicitly indicative_only."
+    }
+  ],
+  "counts": {
+    "geoAreas": 70,
+    "places": 254,
+    "shrines": 250,
+    "pilgrimages": 236,
+    "sources": 435,
+    "countries": 67,
+    "r70": {
+      "confirmed": 102,
+      "tentative": 70,
+      "unresolved": 578,
+      "explicit": 100,
+      "review": 70,
+      "unmatched": 580,
+      "essential": 10
+    }
+  },
+  "notes": [
+    "Three distinct physical Catholic places, two source-documented pilgrimage destinations; Kumasi cathedral-basilica is not assigned an invented pilgrimage route.",
+    "All 750 curated candidates retained with identity-level dispositions.",
+    "No apparition records, relic claims, images, schedules, calendar links or unrelated modules modified.",
+    "The Anglican Walsingham item is intentionally not linked to the Catholic national shrine."
+  ]
+}
