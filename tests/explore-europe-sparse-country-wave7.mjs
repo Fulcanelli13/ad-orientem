@@ -16,6 +16,8 @@ const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geograph
 for(const p of read("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json").promoted)publishedAfterFreeze.add(p.place_id);
 // R65 Irish publications are later than this research baseline.
 for(const c of read("data/shrines/illustrated-place-guides-ireland.v1.json").candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
+// R71 publication is later than the frozen European source-acquisition baseline.
+for(const row of read("data/geography/research/sacred-geography-r71-major-site-reconciliation.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W7.schema,"AO_EXPLORE_EUROPE_WAVE7_SPARSE_COUNTRY_SOURCE_RESEARCH_V1");
 assert.equal(W7.status,"RESEARCH_ONLY_NO_NEW_PUBLIC_PLACES");

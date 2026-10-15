@@ -931,6 +931,25 @@
       "codes": {
         "iso_alpha2": "ZM"
       }
+    },
+    {
+      "geo_area_id": "geo:country:BA",
+      "name": {
+        "official": "Bosnia and Herzegovina",
+        "aliases": [
+          "Bosna i Hercegovina",
+          "Bosnie-Herzégovine"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BA"
+      }
     }
   ],
   "places": [
@@ -9530,6 +9549,51 @@
       "source_ids": [
         "SG-R70-SITE-SG-INV-0724",
         "SG-R70-GEO-SG-INV-0724"
+      ]
+    },
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "name": {
+        "official": "St James Parish Church — Međugorje",
+        "aliases": [
+          "Medjugorje",
+          "Međugorje",
+          "Crkva svetog Jakova",
+          "Church of St James, Medjugorje",
+          "Église Saint-Jacques de Međugorje",
+          "Queen of Peace pilgrimage parish"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:BA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.1906,
+        "lng": 17.67757,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1115592386",
+        "source_ref": "osm:way:1115592386",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "BA",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": "88266",
+        "city": "Međugorje",
+        "region": "Čitluk",
+        "country_code": "BA",
+        "country": "Bosnia and Herzegovina",
+        "formatted": "St James Parish Church, 88266 Međugorje, Bosnia and Herzegovina"
+      },
+      "source_ids": [
+        "SG-R71-MEDJUGORJE-PARISH",
+        "SG-R71-MEDJUGORJE-GEO",
+        "SG-R71-MEDJUGORJE-DDF"
       ]
     }
   ],

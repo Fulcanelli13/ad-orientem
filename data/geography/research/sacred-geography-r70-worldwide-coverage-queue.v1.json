@@ -5,31 +5,31 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 38,
-    "text_hint_review": 106,
-    "unmatched": 606,
+    "explicit_promoted": 47,
+    "text_hint_review": 93,
+    "unmatched": 610,
     "zero_crosslist": 485,
-    "essential_remaining": 42,
-    "published_places": 229,
-    "published_shrines": 225,
-    "published_pilgrimages": 211
+    "essential_remaining": 38,
+    "published_places": 230,
+    "published_shrines": 226,
+    "published_pilgrimages": 212
   },
   "countries": [
     {
       "country": "US",
       "candidates": 39,
       "promoted": 2,
-      "text_hint": 9,
-      "unmatched": 28,
+      "text_hint": 8,
+      "unmatched": 29,
       "essential_review": 3,
       "no_crosslist": 21
     },
     {
       "country": "IT",
       "candidates": 58,
-      "promoted": 1,
-      "text_hint": 18,
-      "unmatched": 39,
+      "promoted": 3,
+      "text_hint": 15,
+      "unmatched": 40,
       "essential_review": 2,
       "no_crosslist": 28
     },
@@ -37,8 +37,8 @@
       "country": "FR",
       "candidates": 48,
       "promoted": 1,
-      "text_hint": 24,
-      "unmatched": 23,
+      "text_hint": 21,
+      "unmatched": 26,
       "essential_review": 2,
       "no_crosslist": 25
     },
@@ -46,8 +46,8 @@
       "country": "GB",
       "candidates": 23,
       "promoted": 0,
-      "text_hint": 4,
-      "unmatched": 19,
+      "text_hint": 3,
+      "unmatched": 20,
       "essential_review": 2,
       "no_crosslist": 15
     },
@@ -55,8 +55,8 @@
       "country": "MX",
       "candidates": 18,
       "promoted": 0,
-      "text_hint": 3,
-      "unmatched": 15,
+      "text_hint": 2,
+      "unmatched": 16,
       "essential_review": 2,
       "no_crosslist": 10
     },
@@ -99,9 +99,9 @@
     {
       "country": "ES",
       "candidates": 40,
-      "promoted": 2,
+      "promoted": 3,
       "text_hint": 2,
-      "unmatched": 36,
+      "unmatched": 35,
       "essential_review": 1,
       "no_crosslist": 24
     },
@@ -135,17 +135,17 @@
     {
       "country": "IL",
       "candidates": 22,
-      "promoted": 9,
+      "promoted": 10,
       "text_hint": 0,
-      "unmatched": 13,
+      "unmatched": 12,
       "essential_review": 1,
       "no_crosslist": 14
     },
     {
       "country": "IE",
       "candidates": 12,
-      "promoted": 0,
-      "text_hint": 3,
+      "promoted": 1,
+      "text_hint": 2,
       "unmatched": 9,
       "essential_review": 1,
       "no_crosslist": 7
@@ -163,8 +163,8 @@
       "country": "AR",
       "candidates": 8,
       "promoted": 1,
-      "text_hint": 2,
-      "unmatched": 5,
+      "text_hint": 1,
+      "unmatched": 6,
       "essential_review": 1,
       "no_crosslist": 3
     },
@@ -180,9 +180,9 @@
     {
       "country": "PS",
       "candidates": 5,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 5,
+      "unmatched": 4,
       "essential_review": 1,
       "no_crosslist": 4
     },
@@ -261,9 +261,9 @@
     {
       "country": "VA",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 1,
-      "unmatched": 1,
+      "unmatched": 0,
       "essential_review": 1,
       "no_crosslist": 1
     },
@@ -315,9 +315,9 @@
     {
       "country": "DE",
       "candidates": 21,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 3,
-      "unmatched": 18,
+      "unmatched": 17,
       "essential_review": 0,
       "no_crosslist": 12
     },
@@ -334,8 +334,8 @@
       "country": "IN",
       "candidates": 17,
       "promoted": 2,
-      "text_hint": 2,
-      "unmatched": 13,
+      "text_hint": 1,
+      "unmatched": 14,
       "essential_review": 0,
       "no_crosslist": 12
     },
@@ -523,8 +523,8 @@
       "country": "EG",
       "candidates": 7,
       "promoted": 0,
-      "text_hint": 2,
-      "unmatched": 5,
+      "text_hint": 1,
+      "unmatched": 6,
       "essential_review": 0,
       "no_crosslist": 7
     },
@@ -576,9 +576,9 @@
     {
       "country": "BA",
       "candidates": 3,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 3,
+      "unmatched": 2,
       "essential_review": 0,
       "no_crosslist": 2
     },
@@ -1227,10 +1227,11 @@
       "country": "FR",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Montmartre is not Paray-le-Monial"
     },
     {
       "candidate_id": "SG-INV-0019",
@@ -1260,10 +1261,11 @@
       "country": "FR",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:FR:basilique-saint-martin-tours",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Holy Face church is not Saint Martin Basilica, Tours"
     },
     {
       "candidate_id": "SG-INV-0022",
@@ -1436,10 +1438,11 @@
       "country": "FR",
       "priority": "Review",
       "discovery_sources_count": 0,
-      "match_class": "EXACT_TEXT_NAME",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:FR:notre-dame-paris",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Sainte-Chapelle is not Notre-Dame cathedral, Paris"
     },
     {
       "candidate_id": "SG-INV-0038",
@@ -1722,10 +1725,11 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:IT:basilica-san-domenico-bologna",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "San Luca sanctuary is not San Domenico basilica, Bologna"
     },
     {
       "candidate_id": "SG-INV-0064",
@@ -1865,10 +1869,10 @@
       "country": "IT",
       "priority": "Essential",
       "discovery_sources_count": 3,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:IT:santa-chiara-assisi",
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IT:basilica-san-francesco-assisi",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0077",
@@ -1887,10 +1891,11 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:IT:santa-chiara-assisi",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Santa Maria degli Angeli is not Santa Chiara in Assisi"
     },
     {
       "candidate_id": "SG-INV-0079",
@@ -1942,10 +1947,10 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IT:basilica-sant-antonio-padova",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0084",
@@ -2217,10 +2222,10 @@
       "country": "ES",
       "priority": "Strong",
       "discovery_sources_count": 3,
-      "match_class": "STRONG_NAME_SIMILARITY",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0109",
@@ -2888,10 +2893,10 @@
       "country": "DE",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:DE:kolner-dom-three-kings",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0170",
@@ -3636,10 +3641,10 @@
       "country": "IE",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0238",
@@ -3724,10 +3729,11 @@
       "country": "IE",
       "priority": "Review",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:IE:lough-derg-station-island",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Armagh is not Lough Derg"
     },
     {
       "candidate_id": "SG-INV-0246",
@@ -3757,10 +3763,11 @@
       "country": "GB",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:GB:walsingham-catholic-shrine",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Anglican and Catholic Walsingham sites must not be collapsed"
     },
     {
       "candidate_id": "SG-INV-0249",
@@ -4516,10 +4523,11 @@
       "country": "BA",
       "priority": "Strong",
       "discovery_sources_count": 4,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:BA:medjugorje-st-james-parish",
+      "publish_approved": true,
+      "priority_override": "WORLD_CORE_PILGRIMAGE"
     },
     {
       "candidate_id": "SG-INV-0318",
@@ -5121,10 +5129,10 @@
       "country": "VA",
       "priority": "Essential",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:VA:saint-peter-vatican",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0373",
@@ -5176,10 +5184,11 @@
       "country": "US",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:US:guadalupe-shrine-la-crosse",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Allentown is not La Crosse"
     },
     {
       "candidate_id": "SG-INV-0378",
@@ -5770,10 +5779,11 @@
       "country": "MX",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:MX:basilica-guadalupe-mexico-city",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Zacatecas is not Mexico City"
     },
     {
       "candidate_id": "SG-INV-0432",
@@ -6441,10 +6451,11 @@
       "country": "AR",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:AR:san-nicolas-virgen-rosario",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Rosario is not San Nicolás"
     },
     {
       "candidate_id": "SG-INV-0493",
@@ -7013,10 +7024,10 @@
       "country": "IL",
       "priority": "Essential",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0545",
@@ -7255,10 +7266,10 @@
       "country": "PS",
       "priority": "Essential",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R71",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PS:nativity-bethlehem",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0567",
@@ -7618,10 +7629,11 @@
       "country": "IN",
       "priority": "Review",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Se Cathedral is not Basilica Bom Jesus, Old Goa"
     },
     {
       "candidate_id": "SG-INV-0600",
@@ -8751,10 +8763,11 @@
       "country": "EG",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
-      "canonical_place_id": "place:EG:zeitoun-coptic-saint-mary",
-      "publish_approved": false
+      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
+      "status": "UNMATCHED",
+      "canonical_place_id": null,
+      "publish_approved": false,
+      "identity_warning": "Assiut is not Zeitoun"
     },
     {
       "candidate_id": "SG-INV-0703",

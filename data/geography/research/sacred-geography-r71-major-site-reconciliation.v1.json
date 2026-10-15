@@ -1,0 +1,120 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R71_MAJOR_SITE_RECONCILIATION_V1",
+  "as_of": "2026-10-15",
+  "phase": "INITIAL_WORLD_CORE_RECONCILIATION",
+  "publication_scope": "ONE_NEW_SITE_MEDJUGORJE_AND_EIGHT_EXISTING_CROSSWALK_REPAIRS",
+  "note": "R71 remedies source-owner matches but does not silently add missing sites or change the required original-site source gate.",
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0317",
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "pilgrimage_id": "pilgrimage:BA:medjugorje-destination",
+      "apparition_id": "apparition:BA:medjugorje",
+      "site_identity": "https://www.medjugorje.hr/en/",
+      "geography": "https://www.openstreetmap.org/way/1115592386",
+      "qualification": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html"
+    }
+  ],
+  "reviewed_existing": [
+    {
+      "candidate_id": "SG-INV-0372",
+      "place_id": "place:VA:saint-peter-vatican",
+      "live_name": "St Peter's Basilica — Vatican"
+    },
+    {
+      "candidate_id": "SG-INV-0544",
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "live_name": "Church of the Holy Sepulchre — shared Christian sanctuary"
+    },
+    {
+      "candidate_id": "SG-INV-0566",
+      "place_id": "place:PS:nativity-bethlehem",
+      "live_name": "Church of the Nativity — shared Christian sanctuary"
+    },
+    {
+      "candidate_id": "SG-INV-0076",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "live_name": "Basilica di San Francesco d'Assisi"
+    },
+    {
+      "candidate_id": "SG-INV-0237",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "live_name": "Croagh Patrick — Murrisk Pilgrimage Base"
+    },
+    {
+      "candidate_id": "SG-INV-0108",
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "live_name": "Basílica de Nuestra Señora del Pilar"
+    },
+    {
+      "candidate_id": "SG-INV-0083",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "live_name": "Basilica di Sant'Antonio, Padova"
+    },
+    {
+      "candidate_id": "SG-INV-0169",
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "live_name": "Hohe Domkirche St. Petrus, Köln"
+    }
+  ],
+  "rejected_wrong_physical_alias": [
+    {
+      "candidate_id": "SG-INV-0248",
+      "reason": "Anglican and Catholic Walsingham sites must not be collapsed"
+    },
+    {
+      "candidate_id": "SG-INV-0078",
+      "reason": "Santa Maria degli Angeli is not Santa Chiara in Assisi"
+    },
+    {
+      "candidate_id": "SG-INV-0431",
+      "reason": "Zacatecas is not Mexico City"
+    },
+    {
+      "candidate_id": "SG-INV-0377",
+      "reason": "Allentown is not La Crosse"
+    },
+    {
+      "candidate_id": "SG-INV-0599",
+      "reason": "Se Cathedral is not Basilica Bom Jesus, Old Goa"
+    },
+    {
+      "candidate_id": "SG-INV-0018",
+      "reason": "Montmartre is not Paray-le-Monial"
+    },
+    {
+      "candidate_id": "SG-INV-0492",
+      "reason": "Rosario is not San Nicolás"
+    },
+    {
+      "candidate_id": "SG-INV-0245",
+      "reason": "Armagh is not Lough Derg"
+    },
+    {
+      "candidate_id": "SG-INV-0702",
+      "reason": "Assiut is not Zeitoun"
+    },
+    {
+      "candidate_id": "SG-INV-0021",
+      "reason": "Holy Face church is not Saint Martin Basilica, Tours"
+    },
+    {
+      "candidate_id": "SG-INV-0063",
+      "reason": "San Luca sanctuary is not San Domenico basilica, Bologna"
+    },
+    {
+      "candidate_id": "SG-INV-0037",
+      "reason": "Sainte-Chapelle is not Notre-Dame cathedral, Paris"
+    }
+  ],
+  "held_shared_complex": [
+    {
+      "candidate_id": "SG-INV-0577",
+      "other_candidate_id": "SG-INV-0580",
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "reason": "Both refer to Saint Maron/Charbel's Annaya monastic complex; decide whether the visitor destinations are separate accessible physical sites before creating extra pins."
+    }
+  ],
+  "governance": "Country/name text similarity never proves physical identity; published Place geo must have original identity URL and defensible coordinate. Apparition status never proves supernatural authenticity."
+}

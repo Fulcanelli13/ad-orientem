@@ -1,6 +1,6 @@
 {
   "schema": "AO_EXPLORE_PLACE_RECONCILIATION_REVIEW_V1",
-  "created_at": "2026-10-10",
+  "created_at": "2026-10-15",
   "status": "EDITORIAL_REVIEW_ONLY_NOT_PRODUCTION_DATA",
   "purpose": "Lossless crosswalk of source-owned heritage evidence to canonical Places; never grants relic authenticity, apparition approval, custom distribution, or publishable coordinate status.",
   "ownership": {
@@ -11,14 +11,14 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 229,
-    "places_with_linked_records": 227,
+    "places": 230,
+    "places_with_linked_records": 228,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 183,
-    "shrines": 225,
-    "pilgrimages": 211,
+    "multicategory_heritage_places": 184,
+    "shrines": 226,
+    "pilgrimages": 212,
     "relic_claims": 122,
-    "apparition_accounts": 32,
+    "apparition_accounts": 33,
     "canonical_customs": 13,
     "custom_attestations": 71,
     "novena_context_links": 18,
@@ -220,6 +220,22 @@
         ],
         "pilgrimages": [
           "pilgrimage:AU:penrose-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "display_name": "St James Parish Church — Međugorje",
+      "record_ids": {
+        "shrines": [
+          "shrine:BA:medjugorje-queen-of-peace"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BA:medjugorje-destination"
+        ],
+        "apparitions": [
+          "apparition:BA:medjugorje"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3677,10 +3693,10 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 225,
-    "pilgrimages": 183,
+    "shrines": 226,
+    "pilgrimages": 184,
     "relics": 92,
-    "apparitions": 29,
+    "apparitions": 30,
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
@@ -3698,5 +3714,17 @@
       "St Winefride's parish church georeference comes from an OSGB36 national grid source transformed to WGS84, distinct from Holy Well/Chapel.",
       "Martyrs' Shrine and St Alphonsus coordinates come from non-OSM published site listings; independently confirm doors/entrances before asserting navigation precision."
     ]
+  },
+  "georeference_tranche_20261015": {
+    "release": "R71",
+    "places_added": [
+      "place:BA:medjugorje-st-james-parish"
+    ],
+    "relationship_ids": [
+      "shrine:BA:medjugorje-queen-of-peace",
+      "pilgrimage:BA:medjugorje-destination",
+      "apparition:BA:medjugorje"
+    ],
+    "scope": "Review ledger refreshed after a source-anchored canonical Place release; no unqualified relic, apparition-authenticity or TLM inference."
   }
 }
