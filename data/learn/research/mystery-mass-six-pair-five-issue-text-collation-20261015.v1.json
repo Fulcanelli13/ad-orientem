@@ -11,7 +11,9 @@
     "originalItalianAlphonsusChecked": false,
     "originalGermanGihrChecked": false,
     "originalGuérangerConferenceAutographChecked": false,
-    "publicationApprovals": 0
+    "publicationApprovals": 0,
+    "sourceRubricPageVisualRead": true,
+    "sourceRubricPrinted1962FacsimilePageRead": false
   },
   "originalEditionWarnings": [
     "Guéranger text identifies an 1885 second edition compiled from conference notes; foreword expressly warns original note-taking/copying may be imperfect. Treat attribution as 'Guéranger conference notes, 1885 ed.', not a verbatim authorial manuscript.",
@@ -286,5 +288,85 @@
     }
   ],
   "previousCanonicalLedger": "data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json",
-  "publicationStatus": "HELD_NO_PRODUCTION_APP_CHANGES"
+  "publicationStatus": "HELD_NO_PRODUCTION_APP_CHANGES",
+  "ritus1962HancIgitur": {
+    "status": "NORMATIVE_GESTURE_ALREADY_IN_PRODUCTION_DO_NOT_DUPLICATE",
+    "primaryRule": "Ritus servandus in celebratione Missae VIII.4",
+    "latinSourceSentence": "Cum dicit: Hanc igitur oblationem, expandit manus simul super oblata, ita ut palmae sint apertae versus ac super Calicem et Hostiam, quas sic tenet usque ad illa verba: Per Christum, Dominum nostrum. Tunc enim jungit manus",
+    "sourceWitnesses": [
+      {
+        "url": "https://aomoi.net/odv/tlm/ritus_servandus_lat.pdf",
+        "kind": "MODERN_RESET_LATIN_PDF_WITNESS",
+        "pdfPageOneBased": 12,
+        "printedPageAsShown": 12,
+        "visualPageInspected": true,
+        "note": "Page 12 verified by direct image; this retypeset PDF is not itself a 1962 printed-page facsimile."
+      },
+      {
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "kind": "1962_MISSALE_FACSIMILE_OCR_PDF",
+        "visualPageInspected": false,
+        "note": "1962 original printed facsimile OCR result matches wording; full PDF too large to open and visually certify in this pass."
+      }
+    ],
+    "currentMainReaderSources": {
+      "cueId": "AO.SM.C0161",
+      "sourceBlock": "AO.SM.B050",
+      "canonOwner": "AO.CANON.04",
+      "publishedEventId": "AO.RUB.C0161.01",
+      "publishedLabel": "HANDS OVER OBLATIONS",
+      "actor": "PRIEST",
+      "sourceId": "MR62_RITUS",
+      "registryPath": "data/presentation/reader-rubric-events.v1.json",
+      "publishedGatePath": "src/mass/reader-canon-published-rubrics.js",
+      "separateEditorialEvidencePath": "data/presentation/reader-canon-rubric-review.v1.json"
+    },
+    "duration": "From Hanc igitur through Per Christum Dominum nostrum; hands are joined at the end.",
+    "previousNeedForDuplicateEvent": false,
+    "historicDerivation": "HANDS_UPON_VICTIM_TYPOLOGY_ONLY_NOT_PROVEN_LITURGICAL_ORIGIN",
+    "ministerBells": "AO.RUB.C0161.02 is SERVER role, separate and cannot be inferred as synchronized with specific Hanc igitur syllables. Keep minister clock distinct.",
+    "faithfulPosture": "Priest's gesture is not a universal congregational posture command.",
+    "appMutation": "NONE"
+  },
+  "printedWitnessProcurement": [
+    {
+      "work": "Gihr",
+      "edition": "B. Herder English printed 1902",
+      "scanMetadataUrl": "https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf",
+      "scanKind": "788_SCAN_PAGES_72MB",
+      "targetPrintedPages": [
+        658,
+        659,
+        660
+      ],
+      "scanPageOffsetEstablished": false,
+      "imageChecked": false,
+      "blocker": "The full 72MB scan could not be fetched through the available access path; do not infer PDF page index."
+    },
+    {
+      "work": "Guéranger",
+      "edition": "1885 Solesmes second edition",
+      "scanMetadataUrl": "https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C",
+      "scanKind": "KU_LEUVEN_DIGITIZED_BOOK_LISTED_2024",
+      "targetPrintedChapters": [
+        "Memento des vivants p.126",
+        "Quam oblationem p.140",
+        "Supplices te rogamus (verify page)"
+      ],
+      "imageChecked": false,
+      "blocker": "Digitized edition landing page available; exact original page scans have not been inspected."
+    },
+    {
+      "work": "St Alphonsus",
+      "edition": "Grimm 1887 Centenary English Volume VI",
+      "scanMetadataUrl": "https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus",
+      "scanKind": "1887_EDITION_CATALOGUE",
+      "targetPrintedPages": [
+        56,
+        57
+      ],
+      "imageChecked": false,
+      "blocker": "Confirm scan volume and original page numbers before PDF-to-printed-page mapping; no visual page examined."
+    }
+  ]
 }
