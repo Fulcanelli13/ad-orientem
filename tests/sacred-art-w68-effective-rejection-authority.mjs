@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const base=new URL("../data/calendar/",import.meta.url);
+const read=name=>JSON.parse(readFileSync(new URL(name,base),"utf8"));
+const older=read("sacred-art-w49-permanent-original-rejection-blocklist-20261014.v1.json");
+const rated=read("sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json");
+const all=read("sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json");
+const ids=new Set(all.items.map(x=>x.artworkId));
+let n=0;const chk=(p,msg)=>{assert.ok(p,msg);n++}
+chk(older.items.length===95,"historic 95 retained");
+chk(rated.records.length===70,"new numeric scores retained");
+chk(rated.globalRejectionDelta.length===8,"8 new originals blocked");
+chk(all.items.length===103&&ids.size===103,"combined 103 unique IDs");
+chk(older.items.every(x=>ids.has(x.artworkId)),"no original 95 IDs lost");
+chk(rated.globalRejectionDelta.every(x=>ids.has(x.candidateId)),"new eight IDs in combined ban");
+chk(rated.globalRejectionDelta.every(x=>x.score<=2),"only 0-2 appended");
+chk(all.items.filter(x=>x.rejectionAuthority?.startsWith("W68_USER_EXPORT_SHA256_")).length===8,"new score provenance");
+chk(all.items.every(x=>x.score===0||x.score===1||x.score===2),"ban only 0-2");
+chk(!rated.records.some(x=>x.review.numericScore===5),"no manufactured fives");
+chk(rated.records.filter(x=>x.review.flags.sourceIssue).length===8,"source flags not lost");
+chk(rated.records.filter(x=>x.review.suitability===null).length===68,"do not invent suitability");
+console.log("W68 combined artwork rejection audit: "+n+"/"+n+" passed");
