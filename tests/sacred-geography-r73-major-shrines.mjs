@@ -16,14 +16,14 @@ const h=read("data/explore/heritage-place-reconciliation.review.v1.json");
 assert.equal(manifest.schema,"AO_SACRED_GEOGRAPHY_R73_MAJOR_SHRINES_V1");
 assert.equal(manifest.sites.length,9);
 assert.equal(manifest.existing_confirmed.length,12);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[247,243,230,421]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[251,247,234,429]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
-assert.equal(h.place_crosswalk.length,247);
+assert.equal(h.place_crosswalk.length,251);
 assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
  r.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,
- r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[95,70,585]);
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[89,70,591]);
+ r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[99,70,581]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[97,70,583]);
 assert.equal(r.candidates.length,750,"Original candidate universe must be preserved");
 const p=new Map(g.places.map(x=>[x.place_id,x]));
 const ids=new Set(sources.sources.map(x=>x.id));
