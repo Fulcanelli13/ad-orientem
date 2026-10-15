@@ -5,7 +5,12 @@ const iso=value=>typeof value==="string" && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
   !Number.isNaN(Date.parse(value+"T12:00:00Z")) &&
   new Date(value+"T12:00:00Z").toISOString().slice(0,10)===value;
 const id=value=>typeof value==="string" && /^saint\.[a-z0-9-]+$/.test(value);
-const source=value=>typeof value==="string" && /^sancti:\d\d-\d\d[a-z]?:[1-4]:[wr]$/.test(value);
+const source=value=>{
+  const match=typeof value==="string" && /^sancti:(\d\d)-(\d\d)[a-z]?:[1-4]:[wr]$/.exec(value);
+  if(!match)return false;
+  const date="2024-"+match[1]+"-"+match[2];
+  return iso(date); // 2024 permits the possible leap-day source without accepting 10-99.
+};
 export function sourceBoundCalendarContext(saintsId,bridge) {
   if(!/^saint:[a-z0-9-]+$/.test(saintsId||"") ||
      bridge?.schema!=="ao.saints.parallel-owner-identity-bridge.v1" ||
