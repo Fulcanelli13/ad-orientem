@@ -140,7 +140,7 @@
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
     "test:novena-context": "node tests/novena-context-sot.mjs",
-    "test:explore-surface": "node tests/explore-surface.mjs && node tests/explore-institution-emblems.mjs && node tests/explore-cluster-interactions.mjs && node tests/sacred-geography-medjugorje-r71.mjs && node tests/sacred-geography-r72-world-anchors.mjs",
+    "test:explore-surface": "node tests/explore-surface.mjs && node tests/explore-institution-emblems.mjs && node tests/explore-cluster-interactions.mjs && node tests/sacred-geography-medjugorje-r71.mjs && node tests/sacred-geography-r72-world-anchors.mjs && node tests/sacred-geography-r73-major-shrines.mjs",
     "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
     "test:directory-official-geo": "node tests/directory-official-geo.mjs",
     "test:catholic-life-retirement": "node tests/catholic-life-retirement.mjs",
