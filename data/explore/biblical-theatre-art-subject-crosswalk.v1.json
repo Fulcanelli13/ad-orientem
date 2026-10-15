@@ -1,0 +1,453 @@
+{
+  "schema": "AO_BIBLICAL_THEATRE_ART_SUBJECT_CROSSWALK_V1",
+  "date": "2026-10-12",
+  "owner": "BIBLICAL_ATLAS_SCENE_RESEARCH",
+  "branches": {
+    "sacredArt": "platform/885-sacred-art-candidates",
+    "biblicalAtlas": "feature/biblical-atlas-current-main-convergence-20261012"
+  },
+  "sourceArtSelection": "data/calendar/sacred-art-curator-decisions-20261011.v1.json",
+  "sourceSceneCorpus": "data/explore/biblical-cinematic-studies-review.v1.json",
+  "sourceArtBranchHead": "4abb93b1be209e48087b7d2b2b1d83a258a38707",
+  "sourceAtlasBranchHead": "SOURCE_ADVANCED_AFTER_A11_CHECKPOINT",
+  "status": "CROSS_MODULE_RESEARCH_ONLY",
+  "publicationAllowed": false,
+  "policy": "Target IDs reference independently owned Sacred Art selections. This file never stores art objects or grants painting/image/subject/rights/crop approval. Positive matches are candidate depictions, not certification; holds and unrepresented scenes must not render art.",
+  "counts": {
+    "COMPOSITE_ICONOGRAPHY_HOLD": 2,
+    "DEPICTS_SUBEPISODE_REVIEW": 4,
+    "DIFFERENT_MOMENT_HOLD": 3,
+    "EXCLUDED_ARTIST_HOLD": 3,
+    "HISTORICAL_IDENTITY_HOLD": 1,
+    "NON_NARRATIVE_SUBJECT": 15,
+    "SAME_EPISODE_REVIEW": 16
+  },
+  "joins": [
+    {
+      "targetId": "calendar.christmas",
+      "sceneKey": "biblical:scene:christ:061",
+      "sceneReference": "Luke 2:1–20",
+      "relation": "DEPICTS_SUBEPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Shepherds' adoration is part of Luke 2:1–20, not a depiction of every moment in the Nativity passage.",
+      "atlasEventKey": "biblical:event:bethlehem-e1"
+    },
+    {
+      "targetId": "calendar.epiphany",
+      "sceneKey": "biblical:scene:christ:063",
+      "sceneReference": "Matthew 2:1–12",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Magi's adoration is Matthew 2:1–12; exact figures and setting still need art review.",
+      "atlasEventKey": "biblical:event:bethlehem-e2"
+    },
+    {
+      "targetId": "calendar.annunciation",
+      "sceneKey": "biblical:scene:christ:057",
+      "sceneReference": "Luke 1:26–38",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Annunciation corresponds to Luke 1:26–38; approved art subject does not certify a screenshot crop.",
+      "atlasEventKey": "biblical:event:nazareth-e1"
+    },
+    {
+      "targetId": "calendar.holy-thursday",
+      "sceneKey": "biblical:scene:christ:119",
+      "sceneReference": "Luke 22:14–20",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Last Supper corresponds to Luke 22:14–20; 151-event reference Luke 22:7–20 covers a broader passage.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "calendar.palm-sunday",
+      "sceneKey": "biblical:scene:christ:115",
+      "sceneReference": "Matthew 21:1–11",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Entry into Jerusalem is depicted; separate Synoptic verse boundaries must remain distinct.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "calendar.candlemas",
+      "sceneKey": "biblical:scene:christ:064",
+      "sceneReference": "Luke 2:22–38",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Presentation of Jesus in the Temple, Luke 2:22–38.",
+      "atlasEventKey": "biblical:event:jerusalem-temple-e1"
+    },
+    {
+      "targetId": "calendar.good-friday",
+      "sceneKey": "biblical:scene:christ:128",
+      "sceneReference": "Luke 23:26–32",
+      "relation": "EXCLUDED_ARTIST_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The previously selected Carrying the Cross work is by El Greco; no display or automatic replacement.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "calendar.holy-saturday",
+      "sceneKey": "biblical:scene:christ:130",
+      "sceneReference": "John 19:38–42",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Entombment is part of John 19:38–42; depicted details still need verification.",
+      "atlasEventKey": "biblical:event:christ-tomb-e1"
+    },
+    {
+      "targetId": "calendar.easter",
+      "sceneKey": "biblical:scene:christ:131",
+      "sceneReference": "John 20:1–18",
+      "relation": "DIFFERENT_MOMENT_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Artwork depicts the Resurrection; John 20:1–18 narrates the empty tomb and Mary Magdalene, not a witnessed instant of Resurrection.",
+      "atlasEventKey": "biblical:event:christ-tomb-e2"
+    },
+    {
+      "targetId": "calendar.ascension",
+      "sceneKey": "biblical:scene:christ:137",
+      "sceneReference": "Acts 1:6–12",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Ascension corresponds to Acts 1:6–12.",
+      "atlasEventKey": "biblical:event:olives-e3"
+    },
+    {
+      "targetId": "calendar.pentecost",
+      "sceneKey": "biblical:scene:paul:182",
+      "sceneReference": "Acts 2:1–41",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The newly added Pentecost scene cites Acts 2:1–41 exactly. The selected Pentecost painting is a subject candidate only; its figures, original quality, rights and crop still require review.",
+      "atlasEventKey": "biblical:passage:acts-2-1-41"
+    },
+    {
+      "targetId": "calendar.trinity",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Trinitarian representation is devotional/doctrinal, not one narrated event."
+    },
+    {
+      "targetId": "calendar.corpus-christi",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Mass of Saint Gregory is a later devotional/liturgical subject, not a biblical episode."
+    },
+    {
+      "targetId": "calendar.sacred-heart",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Sacred Heart imagery is devotional, not an event depicted within the 181 scenes."
+    },
+    {
+      "targetId": "calendar.assumption",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Assumption painting is not an explicitly narrated episode in the canonical Gospel/Acts passages."
+    },
+    {
+      "targetId": "calendar.immaculate-conception",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Immaculate Conception is a doctrinal subject, not the Annunciation."
+    },
+    {
+      "targetId": "calendar.holy-rosary",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Marian Rosary devotion with later saints is not an episode of Scripture."
+    },
+    {
+      "targetId": "calendar.our-lady-sorrows",
+      "sceneKey": "biblical:scene:christ:130",
+      "sceneReference": "John 19:38–42",
+      "relation": "DIFFERENT_MOMENT_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Lamentation imagery and John's burial narrative cannot be treated as identical moments.",
+      "atlasEventKey": "biblical:event:christ-tomb-e1"
+    },
+    {
+      "targetId": "calendar.saint-joseph",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "A general Holy Family image is not proof of a particular childhood episode."
+    },
+    {
+      "targetId": "calendar.st-john-baptist",
+      "sceneKey": "biblical:scene:christ:094",
+      "sceneReference": "Mark 6:17–29",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The beheading of St John the Baptist is in Mark 6:17–29, although this scene lacks a 151-event match.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "calendar.holy-innocents",
+      "sceneKey": "biblical:scene:christ:181",
+      "sceneReference": "Matthew 2:16–18",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The new Matthew 2:16–18 scene now depicts Herod's massacre as narrated. The selected artwork needs editorial review of its painted episode and figures; no historically precise individual child or location is claimed.",
+      "atlasEventKey": "biblical:event:bethlehem-additional-003"
+    },
+    {
+      "targetId": "rosary.joy1",
+      "sceneKey": "biblical:scene:christ:057",
+      "sceneReference": "Luke 1:26–38",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Same Annunciation event as the Calendar subject; reuse one canonical artwork identity.",
+      "atlasEventKey": "biblical:event:nazareth-e1"
+    },
+    {
+      "targetId": "rosary.joy2",
+      "sceneKey": "biblical:scene:christ:059",
+      "sceneReference": "Luke 1:39–56",
+      "relation": "COMPOSITE_ICONOGRAPHY_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Visitation scene includes saints Nicholas and Anthony Abbot in the painting; their presence is not narrated in Luke 1.",
+      "atlasEventKey": "biblical:event:ein-karem-e1"
+    },
+    {
+      "targetId": "rosary.joy3",
+      "sceneKey": "biblical:scene:christ:061",
+      "sceneReference": "Luke 2:1–20",
+      "relation": "DEPICTS_SUBEPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Shepherds' adoration occurs during Luke's Nativity pericope.",
+      "atlasEventKey": "biblical:event:bethlehem-e1"
+    },
+    {
+      "targetId": "rosary.joy4",
+      "sceneKey": "biblical:scene:christ:064",
+      "sceneReference": "Luke 2:22–38",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The Presentation corresponds to Luke 2:22–38.",
+      "atlasEventKey": "biblical:event:jerusalem-temple-e1"
+    },
+    {
+      "targetId": "rosary.joy5",
+      "sceneKey": "biblical:scene:christ:068",
+      "sceneReference": "Luke 2:41–52",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Christ among the Doctors corresponds to the Finding in the Temple, Luke 2:41–52; do not conflate Nazareth transition.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "rosary.sor1",
+      "sceneKey": "biblical:scene:christ:123",
+      "sceneReference": "Matthew 26:36–46",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Agony in the Garden corresponds to Matthew 26:36–46.",
+      "atlasEventKey": "biblical:event:gethsemane-e1"
+    },
+    {
+      "targetId": "rosary.sor2",
+      "sceneKey": "biblical:scene:christ:127",
+      "sceneReference": "John 19:1–16",
+      "relation": "DEPICTS_SUBEPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Flagellation is within John 19:1–16 but that theatrical scene includes crowning and presentation.",
+      "atlasEventKey": "biblical:event:jerusalem-trial-e3"
+    },
+    {
+      "targetId": "rosary.sor3",
+      "sceneKey": "biblical:scene:christ:127",
+      "sceneReference": "John 19:1–16",
+      "relation": "COMPOSITE_ICONOGRAPHY_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Crowning with Thorns and Mourning Virgin together are an artistic devotional composite, not one documented John 19 moment.",
+      "atlasEventKey": "biblical:event:jerusalem-trial-e3"
+    },
+    {
+      "targetId": "rosary.sor4",
+      "sceneKey": "biblical:scene:christ:128",
+      "sceneReference": "Luke 23:26–32",
+      "relation": "EXCLUDED_ARTIST_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The selected Carrying the Cross work is by El Greco, excluded from shortlisting despite earlier subject choice.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "rosary.sor5",
+      "sceneKey": "biblical:scene:christ:129",
+      "sceneReference": "John 19:17–30",
+      "relation": "EXCLUDED_ARTIST_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The selected Crucifixion work is by El Greco, excluded from shortlisting despite earlier subject choice.",
+      "atlasEventKey": "biblical:event:golgotha-e2"
+    },
+    {
+      "targetId": "rosary.glo1",
+      "sceneKey": "biblical:scene:christ:131",
+      "sceneReference": "John 20:1–18",
+      "relation": "DIFFERENT_MOMENT_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "A depicted Resurrection instant must not silently stand for the empty tomb and Mary Magdalene in John 20.",
+      "atlasEventKey": "biblical:event:christ-tomb-e2"
+    },
+    {
+      "targetId": "rosary.glo2",
+      "sceneKey": "biblical:scene:christ:137",
+      "sceneReference": "Acts 1:6–12",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Ascension as narrated in Acts 1:6–12.",
+      "atlasEventKey": "biblical:event:olives-e3"
+    },
+    {
+      "targetId": "rosary.glo3",
+      "sceneKey": "biblical:scene:paul:182",
+      "sceneReference": "Acts 2:1–41",
+      "relation": "SAME_EPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Shares the same canonical Pentecost subject and artwork original as the Calendar; do not duplicate the painting. All depicted figures and iconography require separate source review.",
+      "atlasEventKey": "biblical:passage:acts-2-1-41"
+    },
+    {
+      "targetId": "rosary.glo4",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Assumption is not a depicted event in the canonical Gospel/Acts narrative source."
+    },
+    {
+      "targetId": "rosary.glo5",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Coronation of the Virgin is not narrated as a discrete Gospel/Acts historical episode."
+    },
+    {
+      "targetId": "devotion.immaculate-heart",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Existing painting is iconographically the Immaculate Conception, not a documentary Immaculate Heart event."
+    },
+    {
+      "targetId": "devotion.sacred-heart",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Devotional Sacred Heart painting, no direct 181-scene event."
+    },
+    {
+      "targetId": "devotion.confession",
+      "sceneKey": "biblical:scene:christ:088",
+      "sceneReference": "Luke 7:36–50",
+      "relation": "HISTORICAL_IDENTITY_HOLD",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "The penitent Magdalene is not securely identified as Luke 7's unnamed sinful woman; do not attribute identity from tradition to narrative evidence.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "person.paul",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Peter-and-Paul paired portrait is not proof of a single specific Acts scene."
+    },
+    {
+      "targetId": "person.peter",
+      "sceneKey": "biblical:scene:christ:125",
+      "sceneReference": "Luke 22:54–62",
+      "relation": "DEPICTS_SUBEPISODE_REVIEW",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "Peter's tears after his denials are part of Luke 22:54–62; painting requires subject confirmation.",
+      "atlasEventKey": null
+    },
+    {
+      "targetId": "person.benedict",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "St Benedict is post-biblical and has no 181-scene historical event."
+    },
+    {
+      "targetId": "person.francis-assisi",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "St Francis is post-biblical; his Marian vision is not a biblical event."
+    },
+    {
+      "targetId": "person.dominic",
+      "sceneKey": null,
+      "sceneReference": null,
+      "relation": "NON_NARRATIVE_SUBJECT",
+      "review": "SOURCE_ASSOCIATION_NOT_APPROVED",
+      "release": false,
+      "note": "St Dominic is post-biblical and has no 181-scene event."
+    }
+  ],
+  "note": "A12: two additional source-reviewed scenes are appended after historic 181 without renumbering. Three prior no-scene holds now have preliminary same-passage subject matches. Nothing is approved for publication."
+}

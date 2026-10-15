@@ -1,0 +1,181 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_EDITORIAL_HOLDS_V1",
+  "status": "REVIEW_NOT_PUBLISHED",
+  "policy": {
+    "canonicalChronologyProtected": true,
+    "citationEqualityNotEventIdentity": true,
+    "noSpeculativeGeo": true,
+    "noArtworkRightsAssumed": true,
+    "releaseRequiresHumanSourceReview": true
+  },
+  "holds": [
+    {
+      "id": "JOHN2_PASSION_PLACEMENT",
+      "priority": "P0",
+      "sceneIndex": 74,
+      "atlasIndices": [
+        82
+      ],
+      "passages": [
+        "John 2:13–22"
+      ],
+      "issue": "The John 2 Temple cleansing has been moved into PUBLIC in its Johannine narrative position after Cana. Whether it is a distinct historical cleansing or the same episode as the Synoptic Passion accounts remains an unresolved exegetical question.",
+      "resolution": "HOLD",
+      "requiredAction": "Keep the PUBLIC placement explicitly qualified as Johannine narrative order, not proof of precise historical dating or one-versus-two cleansings. Review the source relationship before theatre publication.",
+      "source": "https://www.newadvent.org/bible/joh002.htm",
+      "sourceOrderCorrection": "IMPLEMENTED_2026_10_12",
+      "commentarySource": "https://bible.usccb.org/bible/john/2",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e3"
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Display John 2:13–22 after Cana only as John's narrative order, without asserting whether a separate historical cleansing occurred.",
+        "withheldClaim": "One-cleansing or two-cleansing harmonisation, precise historical date, and Passion-era relocation.",
+        "sources": [
+          "https://www.newadvent.org/bible/joh002.htm",
+          "https://bible.usccb.org/bible/john/2"
+        ]
+      }
+    },
+    {
+      "id": "JOHN20_RESURRECTION_VS_EMPTY_TOMB",
+      "priority": "P0",
+      "sceneIndex": 131,
+      "atlasIndices": [
+        120
+      ],
+      "passages": [
+        "John 20:1–18"
+      ],
+      "issue": "The John 20 cinematic scene now describes the empty tomb and appearance to Mary Magdalene. Artwork must not imply John 20 narrates an eyewitness account of the instant of Resurrection.",
+      "resolution": "HOLD",
+      "requiredAction": "Review depiction and licensing of any cinematic artwork against John 20:1–18 and keep the source-note visible.",
+      "source": "https://www.newadvent.org/bible/joh020.htm",
+      "textCorrection": "IMPLEMENTED_2026_10_12",
+      "atlasEventKeys": [
+        "biblical:event:christ-tomb-e2"
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Illustrate the empty tomb and risen Christ appearing to Mary Magdalene; do not depict an eyewitness view of the instant of Resurrection as John 20:1–18.",
+        "withheldClaim": "Scripture-backed depiction of the exact moment of Resurrection, and unlicensed art publication.",
+        "sources": [
+          "https://www.newadvent.org/bible/joh020.htm",
+          "https://bible.usccb.org/bible/john/20"
+        ]
+      }
+    },
+    {
+      "id": "LUKE2_TEMPLE_EXACT_AND_OVERLAP",
+      "priority": "P0",
+      "sceneIndex": 68,
+      "atlasIndices": [
+        76,
+        77
+      ],
+      "passages": [
+        "Luke 2:41–52",
+        "Luke 2:51–52"
+      ],
+      "issue": "A single scene has an exact citation plus a secondary overlapping hidden-life citation; not one automatic canonical identity.",
+      "resolution": "HOLD",
+      "requiredAction": "Adjudicate exact Temple episode and overlapping hidden-life transition independently.",
+      "source": "https://www.newadvent.org/bible/luk002.htm",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e2",
+        "biblical:event:nazareth-additional-006"
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Use Luke 2:41–52 for the finding in the Temple and Luke 2:51–52 for the overlapping return to Nazareth. Retain separate IDs and suppress an automatic multi-candidate scene jump.",
+        "withheldClaim": "Treating Luke 2:51–52 as an independent second Temple finding or one unambiguous scene identity.",
+        "sources": [
+          "https://www.newadvent.org/bible/luk002.htm",
+          "https://bible.usccb.org/bible/luke/2"
+        ]
+      }
+    },
+    {
+      "id": "MAGI_PRESENTATION_GOSPEL_HARMONY",
+      "priority": "P1",
+      "sceneIndex": 63,
+      "atlasIndices": [
+        72,
+        71
+      ],
+      "passages": [
+        "Matthew 2:1–12",
+        "Luke 2:22–38"
+      ],
+      "issue": "The Magi and Presentation chronology compares different Evangelists; narrative order is not an explicitly supplied single-Gospel dating.",
+      "resolution": "HOLD",
+      "requiredAction": "Specify conservative harmony basis or avoid asserted precise order/dates.",
+      "source": "https://www.newadvent.org/bible/mat002.htm",
+      "atlasEventKeys": [
+        "biblical:event:bethlehem-e2",
+        "biblical:event:jerusalem-temple-e1"
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Keep the Magi (Matthew 2) and the Presentation (Luke 2) as distinct Evangelist narratives; state that visual succession is reading order, not an established dated harmony.",
+        "withheldClaim": "A date-certain itinerary or Gospel-proven relative timing for Magi versus Presentation.",
+        "sources": [
+          "https://www.newadvent.org/bible/mat002.htm",
+          "https://bible.usccb.org/bible/luke/2"
+        ]
+      }
+    },
+    {
+      "id": "PUBLIC_MINISTRY_ORDER_HARMONIZATION",
+      "priority": "P1",
+      "sceneIndex": 74,
+      "atlasIndices": [
+        82,
+        91,
+        93,
+        95,
+        88,
+        103,
+        105,
+        108,
+        104
+      ],
+      "passages": [
+        "John 2:13–22",
+        "John 4:4–26",
+        "John 4:46–54",
+        "Luke 7:11–17",
+        "Mark 4:35–41",
+        "John 9:1–12",
+        "Luke 10:38–42",
+        "Luke 19:1–10",
+        "John 11:1–44"
+      ],
+      "issue": "The Johannine cleansing is now in PUBLIC, but selected public-ministry chapters retain differences between the canonical chronology and the 181-scene study order across Gospel narratives.",
+      "resolution": "HOLD",
+      "requiredAction": "Review chronology and source-specific narrative order without imposing unsupported cross-Gospel dates or identifying distinct Gospel accounts by citation similarity.",
+      "source": "https://www.newadvent.org/bible/joh004.htm",
+      "atlasEventKeys": [
+        "biblical:event:jerusalem-temple-e3",
+        "biblical:event:sychar-e1",
+        "biblical:event:cana-miracle-02",
+        "biblical:event:nain-e1",
+        "biblical:event:galilee-sea-e2",
+        "biblical:event:siloam-miracle-26",
+        "biblical:event:bethany-additional-057",
+        "biblical:event:jericho-e2",
+        "biblical:event:bethany-e1"
+      ],
+      "presentationDecision": {
+        "status": "DOCUMENTED_RESEARCH_VIEW_ONLY",
+        "displayRule": "Preserve cited within-Gospel narrative precedence and the stable 151 event keys, without imposing one dated global Matthew–Mark–Luke–John chronology.",
+        "withheldClaim": "Full historical cross-Gospel harmonisation, source-free chronology, or conflating event identities by passage overlap.",
+        "sources": [
+          "https://bible.usccb.org/bible/john/2",
+          "https://www.newadvent.org/bible/joh004.htm"
+        ]
+      }
+    }
+  ]
+}

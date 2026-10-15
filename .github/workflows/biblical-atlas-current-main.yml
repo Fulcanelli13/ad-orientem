@@ -1,0 +1,93 @@
+name: Biblical Atlas Current-Main Acceptance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/find/**"
+      - "data/explore/bible-places-*.json"
+      - "tests/explore-bible-atlas-*.mjs"
+      - "tests/biblical-lineage-native-review.mjs"
+      - "tests/biblical-cinematic-studies.mjs"
+      - "tests/biblical-cinematic-original-181-lock.mjs"
+      - "tests/biblical-151-183-coverage-audit.mjs"
+      - "data/explore/biblical-cinematic-studies-review.v1.json"
+      - "data/explore/biblical-lineage-curated-review.v1.json"
+      - "data/explore/biblical-atlas-editorial-holds.v1.json"
+      - "data/explore/biblical-theatre-art-subject-crosswalk.v1.json"
+      - "tests/biblical-theatre-art-subject-crosswalk.mjs"
+      - "tests/biblical-atlas-editorial-holds.mjs"
+      - "tests/biblical-atlas-scripture-witness-coverage.mjs"
+      - "data/scripture/witness/**"
+      - ".github/workflows/biblical-atlas-current-main.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Current-shell and Atlas syntax
+        run: |
+          node --check src/find/browser-entry.js
+          node --check src/find/bible-atlas.js
+          node --check src/find/bible-atlas-expanded-milestones.js
+          node --check src/find/bible-lineage-review.js
+          node --check src/find/bible-cinematic-studies.js
+          node --check src/find/explore-data-service.js
+          node --check src/find/map-runtime.js
+          node --check src/find/heritage-presentation.js
+      - name: Canonical 151 milestones, references and no invented pins
+        run: npm run test:explore-bible-atlas
+      - name: Review-only lineage and apostolic evidence
+        run: node tests/biblical-lineage-native-review.mjs
+      - name: Cinematic 181-to-151 evidence crosswalk
+        run: node tests/biblical-cinematic-studies.mjs
+      - name: Cryptographic freeze of the complete original 181 Theatre scenes
+        run: node tests/biblical-cinematic-original-181-lock.mjs
+      - name: Canonical 151-event to 183-scene research coverage and missing-episode audit
+        run: node tests/biblical-151-183-coverage-audit.mjs
+      - name: Source-critical 151-to-181 release holds
+        run: node tests/biblical-atlas-editorial-holds.mjs
+      - name: Canonical art-to-183 Theatre subjects — 44 reviewed subject positions
+        run: node tests/biblical-theatre-art-subject-crosswalk.mjs
+      - name: Crampon/Douay original witness verse-slot coverage and exceptions
+        run: node tests/biblical-atlas-scripture-witness-coverage.mjs
+      - name: Existing Explore and sacred place regression
+        run: |
+          node tests/explore-surface.mjs
+          node tests/find-surface.mjs
+          node tests/explore-place-preview-r54.mjs
+          node tests/explore-touch-navigation-r53.mjs
+  phone:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native Bible reader roundtrip on phone
+        run: npm run test:explore-bible-atlas-phone
+      - name: Mainline Explore touch and layout preserved
+        run: |
+          node tests/explore-reachability-phone.mjs
+          node tests/explore-layout-phone.mjs
+      - name: Archive A3 responsive review captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-atlas-a3-responsive-review
+          path: test-output/biblical-atlas-a3/*.png
+          if-no-files-found: ignore
+          retention-days: 14
