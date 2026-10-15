@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
-import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory,inspectCurrentFormationRevision,prepareReferencePresentation} from "../src/source-text/reference-crosswalk.js";
+import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory,inspectCurrentFormationRevision,prepareReferencePresentation,prepareScopedSourceLink} from "../src/source-text/reference-crosswalk.js";
 import {normalizeWitnessLocator,validateExternalLocatorBinding,
  editionQualifiedCitation,extractReviewedWitnessDocument} from "../src/source-text/witness-locators.js";
 const json=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -9,6 +9,37 @@ const formation=json("data/reference/formation-canonical-source-crosswalk.v1.jso
 const profiles=json("data/source-text/witness-profiles.v1.json");
 const audit=inspectReferenceInventory({canonical,formation,profiles});
 const handoff=json("data/source-text/reference-owner-handoff.v1.json");
+const historicalEvidence=json("data/reference/formation-evidence-relationship-ledger.v1.json");
+assert.equal(handoff.scopedEdgeReview.counts.historicalEdges,21);
+assert.equal(handoff.scopedEdgeReview.counts.distinctHistoricalSections,21);
+assert.equal(handoff.scopedEdgeReview.counts.withClaimLocator,3);
+assert.equal(handoff.scopedEdgeReview.counts.noHistoricalClaimLocator,18);
+assert.equal(handoff.scopedEdgeReview.counts.supersededEdges,1);
+assert.equal(handoff.scopedEdgeReview.counts.ownerCurrentClaimCertifications,0);
+assert.equal(handoff.scopedEdgeReview.immutableLimits.publicCitationApprovals,0);
+const staged=handoff.scopedEdgeReview.historicalSectionSourceEdges.map(record=>
+ prepareScopedSourceLink({formation,evidenceLedger:historicalEvidence,handoff,edgeKey:record.edgeKey}));
+assert.equal(staged.length,21);
+assert.equal(staged.filter(x=>x.status==="DRAFT_OWNER_REVIEW_ONLY").length,20);
+assert.equal(staged.filter(x=>x.status==="SUPPRESSED_SUPERSEDED_OWNER_CITATION").length,1);
+assert.equal(staged.filter(x=>x.originalClaimLocator!==null).length,3);
+assert.ok(staged.every(x=>x.publicDisplayApproved===false&&x.inlineCitation===null&&x.exactPassageQuote===null));
+assert.ok(staged.every(x=>x.historicalEdgeIsCurrentClaim===false));
+const blocked=staged.find(x=>x.status==="SUPPRESSED_SUPERSEDED_OWNER_CITATION");
+assert.equal(blocked.oldEvidenceEdgeKey,"FORM-SYN-02::CR-LIT-07::00::MD47");
+assert.equal(blocked.externalLink,null);
+assert.equal(blocked.sectionKey,"FORM-SYN-02::CR-LIT-07::00");
+const opponent=staged.filter(x=>x.sourceBindingKey==="FORM-SYN-02::HUME-MIRACLE-X");
+assert.equal(opponent.length,2);
+assert.ok(opponent.every(x=>x.originalSourceRole.includes("original philosophical opponent")));
+assert.ok(opponent.every(x=>x.externalLink?.url==="https://davidhume.org/texts/e/10"));
+const held=structuredClone(handoff);
+held.scopedEdgeReview.historicalSectionSourceEdges[0].publicDisplayApproved=true;
+assert.throws(()=>prepareScopedSourceLink({formation,evidenceLedger:historicalEvidence,handoff:held,
+ edgeKey:held.scopedEdgeReview.historicalSectionSourceEdges[0].edgeKey}),/REVIEW_MISMATCH/);
+assert.throws(()=>prepareScopedSourceLink({formation,evidenceLedger:historicalEvidence,handoff,
+ edgeKey:"FORM-SYN-02::MADEUP::00::MD47"}),/REVIEW_MISMATCH/);
+
 assert.equal(handoff.schema,"AO_REFERENCE_SOURCE_OWNER_HANDOFF_V1");
 assert.equal(handoff.baseline.formationBindings,408);
 assert.equal(handoff.baseline.urlWitnesses,304);
@@ -113,6 +144,14 @@ let currentTested=false;
 if(existsSync(currentOwnerPath)){
  const v2=JSON.parse(readFileSync(currentOwnerPath,"utf8"));
  const current=inspectCurrentFormationRevision({formation,revision:v2,profiles});
+ const target=v2.changed_previous_screened_sections.find(x=>x.section_key===handoff.scopedEdgeReview.oneEditorialException.sectionKey);
+ assert.ok(target);
+ assert.equal(target.role,"answer");
+ assert.ok(target.old_source_ids.includes("MD47"));
+ assert.ok(!target.new_source_ids.includes("MD47"));
+ assert.deepEqual(target.new_source_ids,handoff.scopedEdgeReview.oneEditorialException.replacementSourceIds);
+ assert.equal(v2.changed_previous_screened_sections.filter(x=>
+    handoff.scopedEdgeReview.historicalSectionSourceEdges.some(e=>e.sectionKey===x.section_key)).length,1);
  assert.equal(current.currentSourceBindings,527);
  assert.equal(current.currentSourceBindings,handoff.current.formationBindings);
  assert.equal(current.currentUrlWitnesses,handoff.current.urlWitnesses);
@@ -152,4 +191,5 @@ assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
 assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
  {...mock,added_source_bindings:[{...mock.added_source_bindings[0],original_context_approved:true}]},profiles}),/REVISION_ADDITION_INVALID/);
 console.log("PASS existing Formation citations: 4 exact URL-to-witness matches only, no invented editions or approved quotes; latest owner v2 checked="+currentTested);
+console.log("PASS owner-specific section links: 21 historical section edges, 20 held, 1 superseded and blocked, zero public citations");
 console.log("PASS reference-only scope: 13 canonical works, 408 existing Formation links, 304 URLs, 9 profiles; no books imported or fabricated citations");
