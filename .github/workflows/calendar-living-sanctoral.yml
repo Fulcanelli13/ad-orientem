@@ -4,15 +4,19 @@ on:
   pull_request:
     paths:
       - 'data/calendar/living-sanctoral-pilot.v1.json'
+      - 'data/calendar/living-sanctoral-modern-observances.review.v1.json'
+      - 'data/calendar/living-sanctoral-place-art-crosswalk.review.v1.json'
       - 'data/calendar/post1960-canonizations.official-batch1.v1.json'
       - 'data/calendar/post1960-canonizations.source-year-coverage.v1.json'
       - 'data/calendar/doctors-of-church-roster.review.v1.json'
       - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
       - 'src/calendar/living-sanctoral.js'
+      - 'src/calendar/reviewed-sanctoral-cards.js'
       - 'src/calendar/optional-post1960-saint-review.js'
       - 'src/calendar/sanctoral-person-reconciliation.js'
       - 'tests/calendar-living-sanctoral-*.mjs'
       - 'tests/calendar-post1960-*.mjs'
+      - 'tests/calendar-reviewed-sanctoral-cards.mjs'
       - 'tests/calendar-doctors-roster-review.mjs'
       - 'tests/calendar-cum-sanctissima-protected-annex.mjs'
       - '.github/workflows/calendar-living-sanctoral.yml'
@@ -41,3 +45,4 @@ jobs:
           node tests/calendar-post1960-year-coverage.mjs
           node tests/calendar-post1960-reconciliation.mjs
           node tests/calendar-post1960-collective-cards.mjs
+          node tests/calendar-reviewed-sanctoral-cards.mjs
