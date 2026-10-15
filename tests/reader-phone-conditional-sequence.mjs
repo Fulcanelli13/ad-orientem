@@ -63,7 +63,7 @@ try{
         })),
         before,after,renderedTitle,sections,
         sourceParagraphs:api.sourceModel.cards.find(c=>c.sectionId==="AO.CARD.006")?.paragraphs.length,
-        translationVisible:shell?.textContent?.includes(document.documentElement.lang==="fr"
+        translationVisible:shell?.textContent?.includes(new URL(location.href).searchParams.get("lang")==="fr"
           ?"Loue, Sion, ton Sauveur":"Praise, O Sion, thy Saviour"),
         overflow:document.documentElement.scrollWidth>innerWidth+1,
         rootWidth:shell?.getBoundingClientRect()?.width??0,
