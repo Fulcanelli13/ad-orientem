@@ -215,3 +215,21 @@ All the place IDs are reused from `data/geography/seed-registry.v1.json`; the tw
 `tests/calendar-reviewed-sanctoral-cards.mjs` verifies: exact owner IDs against the existing geography/saints/Doctors registries, two approved photo paths and rights review, separation of photographs from sacred paintings, Vatican versus U.S. date scope, 2021/2025/2026 publication gating, historical date protection, suppression of a duplicate 1962 principal saint, and preservation of `selectedFormularyId:null`. All 13 collective martyr profiles remain one entry per group, **not** a martyrology.
 
 **Still open:** independent modern General Calendar authority for the nine USCCB date witnesses, additional exact artwork approval and canonical place/site coverage, editorial final review of explanations, and a phone/desktop presentation acceptance pass before wiring the new read-only secondary layer into production Calendar/Home/Map. Do not claim this stage already displays in the deployed app.
+
+
+## 15 October — native Calendar Day supplementary integration (draft #1226)
+
+The earlier read-only projection now connects to the **Calendar Day screen in the draft branch**. It is not yet merged or deployed. It renders a quiet **Also honoured / Également honorés** section below a resolved 1962 principal feast, without changing the original rank, colour, Mass buttons, Proper, commemorations or existing saint-detail action.
+
+The worldwide default displays **only five explicitly Vatican-decreed General Roman Calendar memorials**: Gregory of Narek (27 February), John of Ávila (10 May), Hildegard of Bingen (17 September), Teresa of Calcutta (5 September) and John Henry Newman (9 October). All are gated to source publication; USCCB witnesses are available in the research projection only with an explicit US jurisdiction and are **not auto-enabled in the global UI**. No local jurisdiction inference.
+
+### Small, source-derived model
+- The new data/calendar/living-sanctoral-read-model.v1.json is a **~31 KB filtered projection** of the existing 14 date witness records, relevant canonical person/group/Doctor records and approved place metadata; its source files originally total ~345 KB. This is not a new authoritative saints database. CI compares the derived fields with the original registries and requires regeneration if they diverge.
+- Calendar runtime performs one lazy data fetch **only when Calendar opens**, then refreshes the current Day screen. Its new secondary UI comes from src/calendar/sanctoral-day-ui.js. Safe source links are presented under a closed Further reading disclosure; copy is short EN/FR and escaped.
+- No image is inserted in the saint portrait slot until the sacred-art owner approves an exact painting. Approved shrine photos remain classified as physical-site images, not paintings. Sacred art research PR #887 retains artwork ownership.
+- The previously provisional Vatican 2021 Doctors decree URL was replaced with the verified canonical decree: https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html .
+
+### QA
+- New tests/calendar-reviewed-sanctoral-day-integration.mjs checks the 14-entry source model against all upstream registries and geo/photo evidence, compact delivery, five global dates, publication-gated historical display, hidden US-specific dates in the worldwide default, French/English text, robust HTML escaping, permitted external reference URLs, no invented painting or image, and no Mass/Proper actions.
+- The older tests remain in place for historical 1962 principal identity and source-date reconciliation.
+- **Still required:** current full GitHub suite, on-device Calendar visual/interaction QA, art selection from its own owner, then separate Home and Map of Saints consumption. Do not report these as completed or merge the draft prematurely.
