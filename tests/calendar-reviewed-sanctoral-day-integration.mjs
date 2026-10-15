@@ -60,7 +60,7 @@ assert.ok(unsafe.includes("&lt;img")&&!unsafe.includes("<img")&&!unsafe.includes
 assert.equal(renderSecondarySaintSection([{...newman[0],changes1962Principal:true}]),"");
 const cal=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 for(const text of ["function loadCalendarSecondarySaints()","loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();",
- "observedPrincipalId:r.day.main.id",'renderSecondarySaintSection(cards,{language:fr()?"fr":"en"})',
+ "observedPrincipalId:r.day.main.id","observedCommemorationIds:(r.day.commemorations||[]).map(x=>x.id).filter(Boolean)",'renderSecondarySaintSection(cards,{language:fr()?"fr":"en"})',
  "SANCTORAL_DAY_CSS","supplementaryDayMarkup(selected,r)"]){assert.ok(cal.includes(text),text);}
 assert.ok(!cal.includes("jurisdiction:\"US\""),"Cannot silently infer user's jurisdiction");
 console.log("Secondary Calendar saints: PASS (14-source read-model, 1962 isolation, safe EN/FR text and links)");
