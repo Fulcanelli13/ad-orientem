@@ -63,3 +63,52 @@ export function supplementarySaintsForDate(date, persons, {
   }
   return Object.freeze(result);
 }
+
+// Single group -> single contextual card. Person-member enumeration is out of scope.
+// All observance dates here are contemporary external witnesses, not decisions
+// about the 1962 sanctorale or its actual celebrant's chosen Mass.
+export function collectiveMartyrCards(groups, events, {language="en", date=null}={}) {
+  if (!Array.isArray(groups) || !Array.isArray(events)) throw new TypeError("Expected group and event arrays");
+  if (date !== null && !isDate(date)) throw new TypeError("Expected ISO date");
+  const eventIndex = new Map(events.map(e => [e.id,e]));
+  const result=[];
+  const seen=new Set();
+  const lang=language==="fr"?"fr":"en";
+  for(const g of groups) {
+    if(!g?.id || seen.has(g.id) || g.presentation?.entryType!=="COLLECTIVE_MARTYR_PROFILE")continue;
+    const event=eventIndex.get(g.eventId);
+    if(!event || !isDate(event.date))continue;
+    if(date && event.date>date)continue; // A group not yet canonised is not a canonised group.
+    const sources=Array.isArray(g.presentation.dates)?g.presentation.dates:[];
+    const matches=date
+      ? sources.filter(o=>o?.monthDay===monthDay(date) &&
+        o.calendar==="CURRENT_USCCB_WITNESS" &&
+        o.sourceUrl?.startsWith("https://") &&
+        o.universalRomanStatus==="NOT_SEPARATELY_CERTIFIED" &&
+        o.appliesTo1962Mass===false &&
+        date >= "2026-01-01") // Prior-year liturgical inscription chronology unverified.
+      : [];
+    if(date && matches.length===0)continue;
+    const pres=g.presentation;
+    const artworkId=pres.artwork?.canonicalArtworkId||null;
+    const placeId=pres.geography?.canonicalPlaceId||null;
+    result.push(Object.freeze({
+      id:"canon-group."+g.id,
+      type:"COLLECTIVE_MARTYR_PROFILE",
+      title:pres.title?.[lang]||pres.title?.en||"",
+      context:pres.context?.[lang]||pres.context?.en||"",
+      whyHonoured:pres.whyHonoured?.[lang]||pres.whyHonoured?.en||"",
+      featuredPersonIds:Object.freeze([...(pres.featuredCanonicalPersonIds||[])]),
+      furtherReadingUrl:pres.deeperReading?.entrySourceUrl||event.sourceUrl,
+      artworkId, placeId,
+      visualStatus:artworkId?"ARTWORK_ID_PROPOSED_FOR_REVIEW":"ARTWORK_NOT_YET_MATCHED",
+      geographicStatus:placeId?"PLACE_ID_PROPOSED_FOR_REVIEW":"PLACE_NOT_YET_MATCHED",
+      modernCalendarWitness:date?Object.freeze({calendar:matches[0].calendar,monthDay:matches[0].monthDay,kind:matches[0].kind,url:matches[0].sourceUrl}):null,
+      massSelectionAuthority:"NONE",
+      changes1962Principal:false,
+      individualMemberEnumerationRequired:false,
+    }));
+    seen.add(g.id);
+  }
+  return Object.freeze(result);
+}
