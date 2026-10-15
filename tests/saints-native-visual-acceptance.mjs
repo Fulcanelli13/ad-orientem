@@ -128,6 +128,20 @@ try{
    await query.fill("Therese");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2",null,{timeout:10000});
    assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),2,"Accented/unaccented French saint search regressed");
+
+   await page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first().click();
+   const thSheet=page.locator("#ao-find-modular-root .aoSaintPlaceSheet");
+   await thSheet.waitFor({state:"visible",timeout:12000});
+   assert.equal(await thSheet.locator('[data-saint-id="saint:therese-of-lisieux"] .aoSaintCalendarContext').count(),1,
+     "Saint Thérèse must display exact Calendar-owner observed date in native Explore");
+   const thCalendar=await thSheet.locator(".aoSaintCalendarContext").innerText();
+   assert.match(thCalendar,/3 October 2026/);
+   assert.match(await thSheet.locator(".aoSaintCalendarCaution").innerText(),/not a timeless feast date/);
+   assert.equal(await thSheet.locator("img").count(),0,"No unapproved portrait may be inferred from the Calendar link");
+   await page.screenshot({path:resolve(destination,config.name+"-02b-therese-calendar-context.png"),fullPage:false});
+   await thSheet.locator("button[data-find-close-detail]").click();
+   await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
+
    await page.locator('#ao-find-modular-root [data-find-query]').fill("Paray");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1",null,{timeout:10000});
    const paray=page.locator('#ao-find-modular-root .aoFindList [data-explore-item]');
