@@ -35,6 +35,9 @@ on:
       - 'data/learn/formation-141-preview-acceptance-2026-10-10.v1.json'
       - 'data/learn/formation-vatican-i-original-link-repair-2026-10-10.v1.json'
       - 'tests/formation-141-preview-acceptance.mjs'
+      - 'tests/formation-291-integration-contract.mjs'
+      - 'data/learn/formation-overlay-integration-reconciliation-20261015.v1.json'
+      - 'data/learn/formation-apol002-evolution-research-preserved-20261014.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -273,3 +276,5 @@ jobs:
         run: node tests/baq-sdv-source-attribution.mjs
       - name: Check Traditionis custodes bilingual debate sources
         run: node tests/traditionis-custodes-debates.mjs
+      - name: Verify all 291 canonical Formation owners, 141 bilingual dossiers and safe release locks
+        run: npm run test:formation-291-integration
