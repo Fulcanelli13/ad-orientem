@@ -100,8 +100,8 @@ export function renderSaintPlaceSheet(vm){
     // historical icon is never a sufficient reason to create a cross-link.
     const crosslinks=item.kind==="SAINT_CATALOGUE_PROFILE"?arr(item.source_index_links):[];
     if(crosslinks.length)html+='<nav class="aoSaintCrosslinks" aria-label="'+esc(say("Related source records","Références associées"))+'">'
-      +crosslinks.filter(link=>["historical","later"].includes(link.scope)&&
-        /^saints:(historic|modern):saint\.[a-z0-9-]+$/.test(link.item_id??"")&&
+      +crosslinks.filter(link=>["historical","later","doctors"].includes(link.scope)&&
+        /^saints:(historic|modern|doctor):saint\.[a-z0-9-]+$/.test(link.item_id??"")&&
         link.identity_policy==="EXACT_SOURCE_ID_ONLY")
         .map(link=>'<button type="button" data-saint-crosslink-scope="'+esc(link.scope)+'" data-saint-crosslink-target="'+esc(link.item_id)+'">'
           +esc(link["label_"+language]||link.label_en)+' →</button>').join("")+'</nav>';
@@ -138,6 +138,7 @@ export function renderSaintSourceIndexSheet(vm){
   const meta=item.index_metadata??{};
   const historical=meta.scope==="ARCHIVED_SOURCE_SUBJECT";
   const collective=meta.scope==="COLLECTIVE_CANONIZATION";
+  const doctor=meta.scope==="DOCTORS_OWNER_ROSTER";
   const title=lang==="fr"?item.title_fr:item.title;
   const summary=lang==="fr"?item.summary_fr:item.summary;
   const subtitle=lang==="fr"?item.subtitle_fr:item.subtitle;
@@ -146,6 +147,7 @@ export function renderSaintSourceIndexSheet(vm){
    +'<button type="button" data-find-close-detail aria-label="'+esc(say("Close","Fermer"))+'">×</button></header>';
   html+='<p class="aoSaintIndexScope">'+esc(historical
     ?say("Historical sanctoral archive · research reference","Archives historiques du sanctoral · référence de recherche")
+    :doctor?say("Doctor of the Church · source roster","Docteur de l’Église · registre des sources")
     :collective?say("Collective canonization · group record","Canonisation collective · fiche de groupe")
     :say("Later canonization · official index","Canonisation ultérieure · index officiel"))+'</p>';
   if(subtitle)html+='<p class="aoSaintIndexDate">'+esc(subtitle)+'</p>';
@@ -158,6 +160,8 @@ export function renderSaintSourceIndexSheet(vm){
   html+='<p class="aoSaintGeoNote">'+esc(historical
     ?say("Archived subject identification is not a certified individual saint biography, current feast, or Mass assignment.",
       "L’identification archivistique ne vaut ni biographie individuelle certifiée, ni fête actuelle, ni choix de messe.")
+    :doctor?say("A Doctor title is not a feast date. Declarations after 1962 cannot be backdated into the historical Missal.",
+       "Le titre de Docteur n’est pas une date de fête. Une proclamation postérieure à 1962 ne peut être attribuée rétroactivement au missel.")
     :collective?say("This group is one index entry, not one person or a list of unnamed individual biographies.",
        "Ce groupe constitue une seule entrée de l’index, et non une personne ou une série de biographies individuelles.")
     :say("Canonization date is not a liturgical feast date. A complete sourced life is not available in this index.",
