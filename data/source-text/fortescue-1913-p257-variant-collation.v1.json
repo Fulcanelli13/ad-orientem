@@ -203,10 +203,23 @@
       "status": "INTRA_WORK_DISTINCT_OCCURRENCES_ORIGINAL_IMAGES_LOCATED",
       "decision": "RETAIN_BOTH_OCCURRENCES_WITH_PRINTED_PAGE_IDENTIFIERS",
       "note": "The *same scanned 1913 encyclopedia article* on printed p257/image305 quotes Fac nos, but on printed p259/image307 separately quotes the beginning of the Quam oblationem as Fac nobis. Both page images inspected for the short readings. This is an intra-work textual difference, not sufficient evidence to classify either as an error; p259 paragraph has not been fully transcribed or independently editorially certified."
+    },
+    {
+      "id": "SC257-020",
+      "blockId": "P257-09",
+      "field": "latin_adscensionis_not_ascensionis",
+      "witnessReading": "in cœlum adscensionis",
+      "earlierProvisionalReading": "in cœlum ascensionis",
+      "secondaryReading": "in cælum adscensionis",
+      "originalImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+      "secondaryUrl": "https://www.newadvent.org/cathen/03255c.htm",
+      "status": "PRELIMINARY_PRINT_OCR_AND_SECONDARY_LEXEME_CORROBORATION",
+      "decision": "PRESERVE_ADSCENSIONIS_IN_1913_QUOTATION__LIGATURE_UNRESOLVED",
+      "note": "Printed scan OCR and the independent hosted transcription both indicate adscensionis. The previously typed ascensionis silently dropped d. Draft corrected. Coelum/caelum/ligature typography must be checked from a magnified scan before edition certification."
     }
   ],
   "metrics": {
-    "comparisonCount": 18,
+    "comparisonCount": 19,
     "primaryPatristicCrossChecks": 1,
     "printEditionIdentityResolved": true,
     "completePageWordByWordProofed": false,
@@ -218,7 +231,9 @@
     "comparisonsResolvedPrintPreliminary": 1,
     "intraWorkDistinctSourceOccurrences": 1,
     "additionalPrintedPageWitnessesInspectedTargeted": 1,
-    "fullyTranscribedPage259Paragraphs": 0
+    "fullyTranscribedPage259Paragraphs": 0,
+    "printParagraphGroupsProvisional": 9,
+    "printParagraphGroupsIndependentlyCertified": 0
   },
   "publicationApproved": false,
   "originalDraftFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
