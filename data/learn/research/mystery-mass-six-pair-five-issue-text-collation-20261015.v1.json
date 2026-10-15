@@ -7,13 +7,27 @@
     "sameSummaryPairs": 6,
     "interpretativeIssues": 5,
     "transcriptionCompared": 6,
-    "printedPageImageVerified": 0,
+    "printedPageImageVerified": 1,
     "originalItalianAlphonsusChecked": false,
     "originalGermanGihrChecked": false,
     "originalGuérangerConferenceAutographChecked": false,
     "publicationApprovals": 0,
     "sourceRubricPageVisualRead": true,
-    "sourceRubricPrinted1962FacsimilePageRead": false
+    "sourceRubricPrinted1962FacsimilePageRead": false,
+    "verifiedFacsimilePairIds": [
+      [
+        "VER-032",
+        "I062"
+      ]
+    ],
+    "printPageLocatorCorrections": [
+      {
+        "author": "St Alphonsus",
+        "old": "printed pp.56–57",
+        "correct": "printed p.46 / Wikisource scanned image 48",
+        "reason": "Old locator points to post-Communion and Last Gospel, not Supplices"
+      }
+    ]
   },
   "originalEditionWarnings": [
     "Guéranger text identifies an 1885 second edition compiled from conference notes; foreword expressly warns original note-taking/copying may be imperfect. Treat attribution as 'Guéranger conference notes, 1885 ed.', not a verbatim authorial manuscript.",
@@ -32,16 +46,25 @@
       "owner": "AO.CANON.10",
       "author": "St Alphonsus",
       "edition": "1887 English Centenary Edition, vol. VI, edited by Eugene Grimm",
-      "locator": "Short Explanation of the Prayers of Mass, Supplices te rogamus; printed pp.56–57",
-      "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
-      "accessLevel": "TEXT_TRANSCRIPTION_CONFIRMED",
+      "locator": "The Sacrifice of Jesus Christ / Short Explanation of the Prayers of Mass, printed p.46 (scan page 48), Supplices te rogamus",
+      "url": "https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/48",
+      "accessLevel": "ORIGINAL_1887_PRINTED_PAGE_IMAGE_AND_PAGE_TRANSCRIPTION_VERIFIED",
       "result": "One received passage summarizes an angel presiding at Mass, an earlier unidentified French author's Christological reading, and a preference for the ministering angel presenting prayer. The two legacy summaries refer to this same paragraph, but retain both IDs.",
       "disposition": "ONE_SYNTHESIS_WITH_ATTRIBUTED_VARIANTS",
       "sourcePassageCollatedInAccessibleTranscription": true,
-      "matchingPrintedPageImageIndependentlyInspected": false,
+      "matchingPrintedPageImageIndependentlyInspected": true,
       "originalLanguageEditionCollated": false,
       "publicationApproved": false,
-      "retainedBothEvidenceIDs": true
+      "retainedBothEvidenceIDs": true,
+      "printImage": {
+        "index": "Complete ascetical works of St Alphonsus v6.djvu",
+        "printedPage": 46,
+        "djvuImagePage": 48,
+        "scanPageUrl": "https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/48",
+        "visualImageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Complete_ascetical_works_of_St_Alphonsus_v6.djvu/page48-1280px-Complete_ascetical_works_of_St_Alphonsus_v6.djvu.jpg",
+        "inspected": "DIRECT_PAGE_SCAN_IMAGE_VISIBLE",
+        "content": "Supplices te rogamus, the created-angel vs Christological options, cited unnamed French author, and preference for Aquinas angel presenting prayers."
+      }
     },
     {
       "ids": [
@@ -359,14 +382,60 @@
     {
       "work": "St Alphonsus",
       "edition": "Grimm 1887 Centenary English Volume VI",
-      "scanMetadataUrl": "https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus",
-      "scanKind": "1887_EDITION_CATALOGUE",
+      "scanMetadataUrl": "https://commons.wikimedia.org/wiki/File:Complete_ascetical_works_of_St_Alphonsus_v6.djvu",
+      "scanKind": "1887_BENZIGER_GRIMM_V6_520_PAGE_SCANNED_DJVU",
       "targetPrintedPages": [
-        56,
-        57
+        46
       ],
-      "imageChecked": false,
-      "blocker": "Confirm scan volume and original page numbers before PDF-to-printed-page mapping; no visual page examined."
+      "imageChecked": true,
+      "blocker": null,
+      "printedToScanPageOffset": 2,
+      "visualPageNote": "Printed page 46 / scan image 48 directly inspected, not pp.56–57. Adjacent pages pp.40–45 additionally checked for broader author context."
     }
-  ]
+  ],
+  "phaseFAdjacentSourcePageEvidence": {
+    "edition": "St Alphonsus Grimm ed. vol VI 1887, original-page scanned images, Commons/Wikisource",
+    "physicalToImagePageOffset": "printed page +2",
+    "crossChecked": [
+      {
+        "printedPage": 40,
+        "scanPage": 42,
+        "sourceCue": "AO.SM.C0156",
+        "topic": "Memento / quorum tibi fides"
+      },
+      {
+        "printedPage": 41,
+        "scanPage": 43,
+        "sourceCue": "AO.SM.C0161",
+        "topic": "Hanc igitur hands; begins Quam oblationem"
+      },
+      {
+        "printedPage": 42,
+        "scanPage": 44,
+        "sourceCue": "AO.SM.C0164",
+        "topic": "Quam oblationem five adjectives / rational worship Romans 12:1"
+      },
+      {
+        "printedPage": 43,
+        "scanPage": 45,
+        "sourceCue": "AO.SM.C0179",
+        "topic": "Chalice formula, Luke/Matthew/Hebrews and mysterium fidei"
+      },
+      {
+        "printedPage": 44,
+        "scanPage": 46,
+        "sourceCue": "AO.SM.C0179",
+        "topic": "pro vobis et pro multis and sufficiency / effect; page transcription inspected"
+      },
+      {
+        "printedPage": 46,
+        "scanPage": 48,
+        "sourceCue": "AO.SM.C0187",
+        "topic": "Alphonsus in Supplices: theological readings of Angel"
+      }
+    ],
+    "visualStatus": "PAGE_SCANS_40_41_42_43_46_DIRECTLY_VIEWED; PAGE_44_TEXT_TRANSCRIPTION_CHECKED",
+    "distinction": "This physically verifies the Alphonsus pair only among the original six comparison pairs; it does not certify Guéranger's or Gihr's separate scans.",
+    "scriptureCaution": "Alphonsus's footnoted Matt/Luke/Heb references are source attributions that must not be automatically recast as a single verbatim scriptural formula."
+  }
 }
