@@ -270,7 +270,7 @@ export function atlasDetail(s,lang,{historicalPreview=false}={}){
  (sourceQualification?'<small class="aoBibleAtlasQualification">'+esc(sourceQualification)+'</small>':"")+
  (witnessNote?'<details class="aoBibleAtlasSourceNote"><summary>'+esc(L(lang,"Scripture edition note","Note sur l'édition biblique"))+'</summary><p>'+esc(L(lang,witnessNote.en,witnessNote.fr))+'</p><a href="'+esc(witnessNote.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Compare source","Comparer la source"))+' ↗</a></details>':"")+
  (historicalPreview?atlasHistoricalNameReview(s,lang):"")+
- '<div class="aoBibleAtlasActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">+esc(L(lang,"Read Scripture","Lire le passage"))+' · '+esc(s.reference)+'</button>'+
+ '<div class="aoBibleAtlasActions"><button type="button" data-ao-scripture-context="'+esc(s.reference)+'">'+esc(L(lang,"Read Scripture","Lire le passage"))+' · '+esc(s.reference)+'</button>'+
  (geo?'<a target="_blank" rel="noopener noreferrer" href="'+esc(geo.url)+'">'+esc(L(lang,"Map evidence","Source géographique"))+' ↗</a>':"")+'</div>';
 }
 export function atlasPinEpisodes(stops,records,key,index,lang){
