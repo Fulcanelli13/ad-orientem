@@ -10,11 +10,20 @@ for (const f of annex.feasts) {
   assert.match(f.monthDay, /^\d{2}-\d{2}$/);
   assert.ok(f.titleForReview);
   assert.equal(f.protectedUnder, "CUM_SANCTISSIMA_2020_ANNEX_8");
-  assert.equal(f.resolverIdentity, null, "Cannot invent canonical resolver identity");
-  assert.equal(f.identityMatchStatus, "PENDING_SOURCE_ID_CROSSWALK");
+  if (f.resolverIdentity) {
+    assert.match(f.resolverIdentity, /^sancti:\\d{2}-\\d{2}(?:r)?$/);
+    assert.ok(f.evidence?.path, f.monthDay + " attestation not grounded");
+    assert.match(f.identityMatchStatus, /^REPOSITORY_ATTESTED_/);
+  } else {
+    assert.equal(f.identityMatchStatus, "SOURCE_ID_UNVERIFIED");
+    assert.equal(f.candidateResolverStem, "sancti:" + f.monthDay);
+  }
 }
+assert.equal(annex.crosswalk.attestedExact, 10);
+assert.equal(annex.crosswalk.unresolved, 60);
+assert.equal(annex.feasts.filter(f => f.resolverIdentity).length, 10);
 assert.ok(ids.includes("10-03"));
 assert.ok(ids.includes("10-15"));
 assert.ok(ids.includes("06-30"));
 assert.ok(!ids.includes("09-23"), "Ember Wednesday rule is from the resolver, not the 70-feast annex");
-console.log("Cum sanctissima 70-feast transcription/collision-source guard: PASS (70 source-review entries)");
+console.log("Cum sanctissima 70-feast transcription and documented source-ID matches: PASS (10 attested / 60 pending)");
