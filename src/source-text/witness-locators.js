@@ -105,7 +105,11 @@ export function extractReviewedWitnessDocument({profile,work,review,hostUrl,head
   const source=prepared.locators[i];
   if(!passage.id.endsWith("/"+source.sourceAnchor))
    throw new Error("SOURCE_WITNESS_EXTRACT_ANCHOR_MISMATCH");
+  const extent=records[i]?.sourceExtent;
+  if(extent!==undefined&&!["SENTENCE_ONLY","COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY","PARAGRAPH_OPENING_FRAGMENT"].includes(extent))
+   throw new Error("SOURCE_WITNESS_EXTENT_INVALID");
   return Object.freeze({...passage,sourceLocator:source.sourceLocator,
+   ...(extent===undefined?{}:{sourceExtent:extent}),
    sourcePage:source.externalPage,
    editionQualifiedCitation:editionQualifiedCitation({work,passageId:passage.id,
     sourceAnchor:source.sourceAnchor})});
