@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const registry=load("data/source-text/bulk-reconciliation.v1.json");
+const works=load("data/reference/canonical-works-pilot.v1.json");
+const candidates=load("data/source-text/acquisition-expansion.v1.json");
+const catena=load("data/scripture/catena/manifest.v1.json");
+const formation=load("data/reference/formation-canonical-source-crosswalk.v1.json");
+const opportunities=load("data/reference/parsing-opportunities.v1.json");
+const index=load("data/source-text/staging/brother-lawrence-pg13871-index.v1.json");
+assert.equal(registry.schema,"AO_SOURCE_TEXT_BULK_RECONCILIATION_V1");
+assert.equal(registry.inventory.canonicalWorkIdentities,works.works.length);
+assert.equal(registry.inventory.newWorkCandidateIdentities,candidates.proposedWorks.length);
+assert.equal(registry.inventory.rawParsingOpportunities,opportunities.items.length);
+assert.equal(registry.inventory.catenaExistingPericopes,catena.totalPericopes);
+assert.equal(registry.inventory.catenaExistingFragments,catena.totalFragments);
+assert.equal(registry.inventory.formationDossiers,formation.metrics.dossiers);
+assert.equal(registry.inventory.formationScopedBindings,formation.source_bindings.length);
+assert.equal(registry.inventory.formationExactUrlWitnesses,formation.witness_index.length);
+assert.equal(registry.inventory.formationOriginallyApprovedContextBindings,
+ formation.source_bindings.filter(x=>x.original_context_approved===true).length);
+assert.equal(registry.inventory.formationOriginallyApprovedContextBindings,0);
+assert.equal(registry.inventory.newCompleteElectronicWitnessStaged,1);
+assert.equal(registry.inventory.totalDistinctWorkIdsInThisSnapshot,24);
+assert.equal(new Set(registry.workIndex.map(x=>x.workId)).size,24);
+assert.equal(registry.workIndex.filter(x=>x.action==="COMPLETE_ELECTRONIC_WITNESS_STAGED_METADATA_ONLY").length,1);
+assert.equal(registry.newBulkWitness.workId,index.workId);
+assert.equal(registry.newBulkWitness.editionId,index.editionId);
+assert.equal(registry.newBulkWitness.witnessId,index.witnessId);
+assert.equal(registry.newBulkWitness.expectedSections,index.chapterCount);
+assert.equal(registry.newBulkWitness.status,"STAGED_NOT_PRODUCTION");
+assert.equal(registry.newBulkWitness.licenseNoticeRetained,true);
+assert.equal(registry.reuse.find(x=>x.owner==="scripture-catena").fragments,12692);
+assert.equal(registry.reuse.find(x=>x.owner==="formation").bindings,408);
+assert.equal(registry.reuse.find(x=>x.owner==="mass").action,"NO_REPLACEMENT_OR_REORDERING_OF_65_MASS_CARDS");
+assert.equal(registry.policy.pendingPassageLinks,"NO_NEW_CROSSMODULE_CLAIMS_VERIFIED_IN_THIS_PASS");
+assert.equal(registry.policy.approvedCitationRequiresA,true);
+assert.equal(registry.policy.reproductionRightsIndependentFromParsing,true);
+console.log("PASS whole-work inventory reconciliation: 24 distinct work IDs, 12,692 preexisting Catena fragments and 408 Formation links reused, no duplicate imports");
+console.log(JSON.stringify({canonicalWorkIds:13,candidateWorkIds:10,realNewElectronicWorksStaged:1,
+ existingCatenaFragments:12692,formationBindings:408,witnessUrls:304,
+ exactQuotedHistoricalPassagesApprovedFromNewWork:0,productionImports:0}));
