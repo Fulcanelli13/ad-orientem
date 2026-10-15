@@ -1,6 +1,7 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { massFormationScriptureHtml } from "./mass-formation-scripture-context.js";
+import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-reference-panel.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
 export const MASS_FORMATION_ROUTE="learn.mass";
@@ -31,7 +32,7 @@ function css(){
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
     ".aoMFBible{border-top:1px solid var(--border,rgba(255,255,255,.16));margin:24px 0 4px;padding-top:20px}.aoMFBible h2{margin:0 0 7px;font:500 1.2rem/1.28 var(--ao-font-display,Georgia,serif)}.aoMFBible>p{margin:0 0 14px;color:var(--muted,#9ba5b1);font:.82rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoMFBible ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;margin:0;padding:0;list-style:none}.aoMFBibleItem{border:1px solid var(--border,rgba(255,255,255,.13));border-radius:10px;padding:9px}.aoMFBibleItem button{display:flex;width:100%;min-height:44px;gap:7px;flex-wrap:wrap;align-items:center;justify-content:space-between;text-align:left;color:var(--liturgical,#c9ad78);background:transparent;border:0;font:.85rem/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}.aoMFBibleItem button strong{font-weight:500}.aoMFBibleItem button span{font-size:.73rem}.aoMFBibleItem small{display:block;margin-top:5px;font:.72rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#9ba5b1)}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("")+formationReaderCss();
+  ].join("")+sourceReferencePanelCss()+formationReaderCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){
@@ -51,14 +52,25 @@ function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
   return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p><div class="aoMFList">'+rows+'</div></main>';
 }
+// Further reading requires explicit editorial selection from sources already
+// supporting the lesson. Third-party digitizations are not promoted automatically.
+const MASS_FORMATION_FURTHER_READING=Object.freeze({
+  MF01:["SRC-MEDIATOR-DEI"],MF02:["SRC-MEDIATOR-DEI"],
+  MF03:["SRC-MEDIATOR-DEI"],MF04:[],
+  MF05:["SRC-MEDIATOR-DEI"],MF06:["SRC-MEDIATOR-DEI"],
+  MF07:["SRC-MEDIATOR-DEI"],MF08:["SRC-MEDIATOR-DEI"]
+});
 function stageHtml(win,data,stage){
   const sources=sourceMap(data);
-  const claims=stage.claims.map(claim=>{
-    const links=(claim.sources??[]).map(id=>sources[id]).filter(Boolean).map(source=>'<a href="'+esc(source.canonical_url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.title)+' ↗</a>').join("");
-    return '<article class="aoMFClaim"><p>'+esc(pick(win,claim.text))+'</p><div class="aoMFSources">'+links+'</div></article>';
-  }).join("");
+  const claims=stage.claims.map(claim=>'<article class="aoMFClaim" data-ao-mf-claim="'+esc(claim.id)+'"><p>'+esc(pick(win,claim.text))+'</p></article>').join("");
+  const evidence=stage.claims.map(claim=>({id:claim.id,text:pick(win,claim.text),sourceIds:claim.sources}));
+  const references=sourceReferencePanelHtml({
+    rows:evidence,registry:sources,french:isFr(win),idPrefix:stage.id,
+    furtherReadingIds:MASS_FORMATION_FURTHER_READING[stage.id]||[]
+  });
   return top(win,pick(win,stage.title))+'<main class="aoMFWrap aoMFStage"><div class="aoMFQuestion">'+esc(pick(win,stage.question))+'</div><h1>'+esc(pick(win,stage.title))+'</h1><p class="aoMFStageLead">'+esc(pick(win,stage.summary))+'</p>'+claims+
-    massFormationScriptureHtml(stage.id,{french:isFr(win)})+'<nav class="aoMFNav"><button type="button" data-ao-mf-prev>'+esc(isFr(win)?"Précédent":"Previous")+'</button><button type="button" data-ao-mf-list>'+esc(isFr(win)?"Toutes les étapes":"All stages")+'</button><button type="button" data-ao-mf-next>'+esc(isFr(win)?"Suivant":"Next")+'</button></nav></main>';
+    massFormationScriptureHtml(stage.id,{french:isFr(win)})+references+
+    '<nav class="aoMFNav"><button type="button" data-ao-mf-prev>'+esc(isFr(win)?"Précédent":"Previous")+'</button><button type="button" data-ao-mf-list>'+esc(isFr(win)?"Toutes les étapes":"All stages")+'</button><button type="button" data-ao-mf-next>'+esc(isFr(win)?"Suivant":"Next")+'</button></nav></main>';
 }
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
