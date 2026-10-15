@@ -243,7 +243,7 @@
     "test:reader-live-rails-phone": "node tests/reader-live-rails-phone.mjs",
     "test:phone-curated65": "node tests/reader-phone-curated65.mjs",
     "test:mass-speaking-roles": "node tests/reader-speaker-roles.mjs && node tests/reader-chant-line-layout.mjs && node tests/reader-mode-switch.mjs && node tests/reader-schola.mjs && node tests/reader-schola-curated.mjs && node tests/reader-live-liturgical-acceptance.mjs && node tests/reader-priest-event-alignment.mjs",
-    "test:mass-batch4-release": "node tests/mass-batch4-release-acceptance.mjs",
+    "test:mass-batch4-release": "node tests/mass-batch4-release-acceptance.mjs && node tests/mass-phase12-curated65-contract.mjs",
     "test:1962-form-commemorations": "node tests/mass-1962-form-source-selection.mjs",
     "test:1962-mission-sunday": "node tests/mass-1962-mission-sunday.mjs",
     "test:1962-multi-failclosed": "node tests/mass-1962-multiple-commemoration-failclosed.mjs",
