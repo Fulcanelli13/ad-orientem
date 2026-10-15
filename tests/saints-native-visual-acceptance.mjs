@@ -82,6 +82,30 @@ try{
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="9");
    await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"][data-find-filter-value="ALL"]').click();
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
+   // Verify actual delegated cross-navigation, not just static hyperlink markup.
+   await page.locator('#ao-find-modular-root [data-find-filter="saintScope"][data-find-filter-value="doctors"]').click();
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="38");
+   await page.locator('#ao-find-modular-root [data-find-query]').fill("Thomas Aquinas");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
+   await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').first().click();
+   const doctorSource=page.locator('#ao-find-modular-root .aoSaintSourceIndexSheet');
+   await doctorSource.waitFor({state:"visible",timeout:12000});
+   await doctorSource.locator('[data-saint-crosslink-target="saints:person:saint:thomas-aquinas"]').click();
+   const thomasProfile=page.locator('#ao-find-modular-root .aoSaintPlaceSheet');
+   await thomasProfile.waitFor({state:"visible",timeout:12000});
+   assert.equal(await thomasProfile.locator('[data-saint-id="saint:thomas-aquinas"]').count(),1,
+     "Doctor roster must open the full canonical Thomas profile");
+   await thomasProfile.locator('[data-saint-crosslink-target="saints:historic:saint.thomas-aquinas"]').click();
+   const historicSource=page.locator('#ao-find-modular-root .aoSaintSourceIndexSheet');
+   await historicSource.waitFor({state:"visible",timeout:12000});
+   assert.equal(await historicSource.getAttribute("data-saint-source-id"),"saint.thomas-aquinas");
+   await historicSource.locator('[data-saint-crosslink-target="saints:person:saint:thomas-aquinas"]').click();
+   await page.locator('#ao-find-modular-root .aoSaintPlaceSheet').waitFor({state:"visible",timeout:12000});
+   await page.locator('#ao-find-modular-root button[data-find-close-detail]').click();
+   await page.waitForFunction(()=>!document.querySelector('#ao-find-modular-root .aoFindSheetBackdrop'),null,{timeout:12000});
+   await page.locator('#ao-find-modular-root [data-find-filter="saintScope"][data-find-filter-value="profiles"]').click();
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
+   await page.screenshot({path:resolve(destination,config.name+"-00b-doctor-source-navigation.png"),fullPage:false});
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').click();
    await page.waitForFunction(()=>{
      const s=globalThis.AO_FIND_APP_V1?.status?.();
