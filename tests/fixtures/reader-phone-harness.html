@@ -26,7 +26,11 @@ const proper={
   collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son","Ô Dieu, dont le Fils unique")],
   epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world","Dès le commencement et avant les siècles"),
   gradual:t("Propter veritátem","Because of truth","À cause de la vérité"),
-  sequence:{lat:"",en:"",fr:""},
+  // This variant exists only for browser verification of a separately sourced Sequence.
+  // Production text continues to come exclusively from the selected day\u0027s Proper.
+  sequence:params.get("sequence")==="1"
+    ?t("Lauda Sion Salvatórem","Praise, O Sion, thy Saviour","Loue, Sion, ton Sauveur")
+    :{lat:"",en:"",fr:""},
   gospel:t("In illo témpore: Missus est Angelus","At that time the Angel was sent","En ce temps-là, l’Ange fut envoyé"),
   offertory:t("In me grátia omnis viæ","In me is all grace of the way","En moi est toute grâce"),
   secrets:[t("Fac nos, quǽsumus, Dómine","Grant us, we beseech Thee, O Lord","Faites que nous, Seigneur")],
