@@ -33,7 +33,9 @@ assert.equal(pageAudit.physicalLayout.printSignature,"III.—17");
 assert.equal(pageAudit.physicalLayout.pageFootnoteApparatus,"NO_SEPARATE_FOOTNOTE_BLOCK_OBSERVED");
 assert.equal(pageAudit.productionStatus.completeOriginalPageTranscriptions,0);
 assert.equal(pageAudit.productionStatus.completePrintedParagraphCensus,"NOT_YET_VERIFIED");
-assert.equal(pageAudit.sourceTerritories[1].textAvailability,"OPENING_FRAGMENT_ONLY");
+assert.ok(pageAudit.sourceTerritories[1].textAvailability.includes("DRAFT_OCR_ASSISTED_TEXT_HELD"));
+assert.equal(pageAudit.productionStatus.completeOriginalPageTranscriptions,0);
+assert.equal(pageAudit.productionStatus.independentlyProofreadPages,0);
 assert.equal(pageAudit.sourceTerritories[3].endsOnPrintedPage,258);
 assert.deepEqual(sample.records.map(r=>r.sourceExtent),[
  "SENTENCE_ONLY","SENTENCE_ONLY",
