@@ -119,6 +119,12 @@ try{
    await page.screenshot({path:resolve(destination,config.name+"-02-places-list.png"),fullPage:false});
 
    const query=page.locator('#ao-find-modular-root [data-find-query]');
+   await query.fill("Doctor of the Church");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2",null,{timeout:10000});
+   await query.fill("Martyr");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1",null,{timeout:10000});
+   await query.fill("Stigmata");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="0",null,{timeout:10000});
    await query.fill("Therese");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2",null,{timeout:10000});
    assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),2,"Accented/unaccented French saint search regressed");
@@ -134,6 +140,14 @@ try{
    assert.match(text,/Margaret Mary/);
    assert.match(text,/Claude/);
    assert.match(text,/Sources & further reading/);
+   assert.equal(await sheet.locator('[data-saint-category="MYSTIC"]').count(),1,"Source-backed Mystic category absent");
+   assert.equal(await sheet.locator('.aoSaintExtraordinary').count(),1,"One sourced private Christ-apparition account is missing");
+   const account=sheet.locator(".aoSaintExtraordinary");
+   assert.equal(await account.getAttribute("open"),null,"Private revelations must be progressive disclosure, not lead the biography");
+   await account.locator("summary").click();
+   assert.equal(await account.locator('[data-saint-event="event:margaret-mary:paray-sacred-heart"]').count(),1);
+   const eventLinks=await account.locator('.aoSaintEventRefs a[href]').evaluateAll(nodes=>nodes.map(x=>x.href));
+   assert(eventLinks.some(url=>url.includes("dilexit-nos")),"Extraordinary event needs direct Holy See reference");
    assert.equal(await sheet.locator("img").count(),0,"Non-approved artwork must not be published in a saint biography");
    const reading=sheet.locator("details.aoSaintReading");
    assert.equal(await reading.count(),2);
