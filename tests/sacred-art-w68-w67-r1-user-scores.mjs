@@ -1,0 +1,20 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const x=JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json", import.meta.url),"utf8"));
+const rows=x.records;let n=0;
+function check(cond,message){assert.ok(cond,message);n++}
+check(x.schema==="AO_SACRED_ART_W68_W67_R1_EXPLICIT_NUMERIC_USER_RATINGS_V1","schema");
+check(rows.length===70&&new Set(rows.map(r=>r.recordId)).size===70,"70 independent candidate IDs");
+check(rows.every(r=>Number.isInteger(r.review.numericScore)&&r.review.numericScore>=0&&r.review.numericScore<=5),"all numeric scores");
+for(const [score,count] of [[0,2],[1,0],[2,6],[3,34],[4,28],[5,0]])check(rows.filter(r=>r.review.numericScore===score).length===count,"distribution for "+score);
+check(rows.filter(r=>r.review.suitability===null).length===68,"do not fill null fit");
+check(rows.filter(r=>r.review.suitability==="suitable_elsewhere").length===2,"two suitable elsewhere");
+check(rows.filter(r=>r.review.flags.sourceIssue).length===8,"eight user source flags");
+check(rows.every(r=>!r.review.flags.wrongImage&&!r.review.flags.poorCrop),"no invented flags");
+check(x.globalRejectionDelta.length===8 && x.globalRejectionDelta.every(r=>r.score<=2 && r.globalBan),"reject delta");
+check(x.sourceFlagsQueue.length===8,"source queue");
+check(rows.every(r=>!r.rightsRelease&&!r.originalArtPublicationApproved),"zero releases");
+check(rows.every(r=>r.noScoreTransferToDifferentOriginal),"no different painting score transfer");
+check(x.counts.numericRated===70 && x.counts.reviewerCompletedPerOldGallery===2,"don't confuse rating with optional fit");
+check(x.counts.priorRatedIdCollisions===0 && x.counts.score5===0,"no old rating overwritten/new fives");
+console.log("W68 new numeric decisions: "+n+"/"+n+" tests passed.");
