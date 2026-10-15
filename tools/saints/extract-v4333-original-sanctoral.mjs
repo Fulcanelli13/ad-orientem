@@ -164,6 +164,46 @@ const historicalOutput={
 };
 writeFileSync(resolve(artifact,"v4333-original-saint-art-manifest-instance-rows.json"),
  JSON.stringify(historicalOutput,null,2)+"\n");
+// Compact permanent source-identity snapshot: keep the original evidence
+// and every one of the 311 component IDs; omit unrelated historical art API
+// network policies. This can be committed after independent full-source QA.
+const compact={
+ schema:"ao.saints.v4333-original-311-historical-component-instances.v1",
+ status:"RESEARCH_SOURCE_EVIDENCE_NOT_CERTIFIED_UNIQUE_SAINTS_OR_APPROVED_IMAGES",
+ frozen_original_sha256:fullSha,
+ source_parser_revision:"f43359b7a79a5a299158651eedf75cdaf0e43c94",
+ date_count:histRows.length,component_count:histCount,
+ unique_historical_identity_count:new Set(histRows.flatMap(x=>x.historical_art_components.map(c=>c.historical_canonical_id))).size,
+ historical_monthly:Object.fromEntries(Object.entries(historicalMonthly).map(([m,v])=>[m,[v.dates,v.components]])),
+ rows:histRows.map(r=>({
+  date:r.calendar_mm_dd,
+  original_source_observances:r.original_source_observances.map(e=>({
+    id:e.id,title:e.title,excluded_from_art_scope:!e.original_scope_included,
+    scope_reason:e.original_scope_reason
+  })),
+  components:r.historical_art_components.map(c=>({
+   historical_component_id:c.original_component_id,
+   historical_identity_id:c.historical_canonical_id,
+   display_name:c.historical_display_name,
+   historical_representation_mode:c.historical_representation_mode,
+   companion_model:c.historical_companion_model,
+   historical_override:!!c.historical_evidence?.override,
+   historical_identity_status:c.original_qa_status
+  }))
+ })),
+ no_auto_promotions:["Original art-approved and certified-no-art flags are historical, not current rating/rights decisions",
+ "Groups, individuals, angels, historical event identities and commemoration instances are not interchangeable",
+ "One component occurrence is not necessarily one unique saint, and one feast is not one approved painting"]
+};
+assert.equal(compact.rows.length,252);
+assert.equal(compact.rows.reduce((n,x)=>n+x.components.length,0),311);
+const compactSerialized=JSON.stringify(compact);
+writeFileSync(resolve(artifact,"v4333-original-311-components-compact.json"),JSON.stringify(compact,null,2)+"\n");
+const frameSize=6000,totalFrames=Math.ceil(compactSerialized.length/frameSize);
+console.log("AO_SAINTS_COMPACT_JSON_BEGIN frames="+totalFrames+" bytes="+compactSerialized.length);
+for(let n=0;n<totalFrames;n++)
+ console.log("AO_SAINTS_COMPACT_JSON_FRAME "+(n+1)+"/"+totalFrames+" "+compactSerialized.slice(n*frameSize,(n+1)*frameSize));
+console.log("AO_SAINTS_COMPACT_JSON_END sha256="+createHash("sha256").update(compactSerialized).digest("hex"));
 console.log("RECOVERED ACTUAL V43.33 SAINT ART MANIFEST: "+JSON.stringify(historicalOutput.counts));
 console.log("ACTUAL HISTORICAL MONTHLY COUNTS: "+JSON.stringify(historicalMonthly));
 if(histCount===311&&histRows.length===252&&hist.countMatches.saintBearingDates&&hist.countMatches.components)
