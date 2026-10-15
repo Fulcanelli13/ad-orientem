@@ -27,7 +27,10 @@
         "originalObjectId": null,
         "exactReproductionUrl": null,
         "hash": null,
-        "ratedImageMatched": false
+        "ratedImageMatched": false,
+        "ratedSourceLandingPageUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+        "ratedSourceLandingPageMatchesW64": true,
+        "ratedFileSha256": null
       },
       "media": {
         "localAsset": null,
@@ -61,7 +64,18 @@
         "exactReproductionUrl": null,
         "hash": null,
         "ratedImageMatched": false,
-        "claimedMuseum": "Vatican Museums"
+        "claimedMuseum": "Vatican Museums",
+        "ratedSourceLandingPageUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+        "ratedSourceLandingPageMatchesW64": true,
+        "ratedFileSha256": null,
+        "independentPublishedObjectAttribution": {
+          "author": "Teodoro De Giorgio",
+          "work": "The devotion to the Sacred Heart of Christ: A theological and iconographic study (Osaka, 2021)",
+          "reference": "https://www.academia.edu/figures/36808214/figure-1-francesco-podesti-apparition-of-jesus-to-margue",
+          "citedImageDescription": "Francesco Podesti, Apparition of Jesus to Marguerite-Marie Alacoque, before 1864, Vatican Museums",
+          "status": "SECONDARY_SCHOLARLY_CORROBORATION_OF_ARTIST_AND_COLLECTION_NOT_PRIMARY_ACCESSION_CERTIFICATION"
+        },
+        "primaryMuseumAccessionVerified": false
       },
       "media": {
         "originalListedWidth": 800,
@@ -84,5 +98,6 @@
     "no1962MassChange": true,
     "neverReleaseWhenRightsUnknown": true,
     "keepSourceMapPortraitNullUntilCertified": true
-  }
+  },
+  "validationNote": "Compared both W65 source landing URLs with W64's exact user-five-rated canonical physical record museumSourceURL. Matching landing pages are corroborated; actual uploaded pixels, hash, collection accession and release rights remain unverified."
 }
