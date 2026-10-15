@@ -54,11 +54,23 @@ try{
    const next=()=>root.querySelector('[data-reader-nav="next"]')?.click();
    if(!next)return {error:"Next button absent"};
    api.showSequence(cards[0].sequence);
-   const snapshot=()=>({
-    title:api.getCurrentCard()?.title,
-    schola:api.getNativeScholaState?.()?.schola?.segmentId??null,
-    header:root.querySelector('[data-role="section-title"]')?.textContent?.trim(),
-   });
+   const snapshot=()=>{
+    const toggle=root.querySelector(".ao-schola-toggle")?.getBoundingClientRect();
+    const kick=root.querySelector(".ao-schola-kicker")?.getBoundingClientRect();
+    const page=root.querySelector(".ao-schola-page")?.getBoundingClientRect();
+    const intersects=(a,b)=>Boolean(a&&b&&
+      a.width>0&&b.width>0&&
+      Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&
+      Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1);
+    return {
+     title:api.getCurrentCard()?.title,
+     schola:api.getNativeScholaState?.()?.schola?.segmentId??null,
+     header:root.querySelector('[data-role="section-title"]')?.textContent?.trim(),
+     scholaHeaderText:root.querySelector(".ao-schola-kicker")?.textContent?.trim(),
+     scholaHeaderOverlapsControls:intersects(toggle,kick)||intersects(toggle,page),
+     scholaToggleWidth:toggle?.width??0,
+    };
+   };
    actions.push(snapshot());
    next();actions.push(snapshot());
    if(cards.length===3){next();actions.push(snapshot());}
@@ -82,6 +94,12 @@ try{
   assert.deepEqual(result.actions.map(a=>a.title),names,
    "Physical next button did not navigate distinct source chants");
   assert.deepEqual(result.actions.map(a=>a.header),names);
+  assert.deepEqual(result.actions.map(a=>a.scholaHeaderText),names.map(x=>x.toUpperCase()),
+   "The Schola should label only the actual source-owned chant");
+  assert.equal(result.actions.some(a=>a.scholaHeaderOverlapsControls),false,
+   "Schola Hide button overlaps the chant name or segment counter");
+  assert.equal(result.actions.every(a=>a.scholaToggleWidth>=44),true,
+   "The Schola Hide button lost its mobile touch target");
   assert.equal(result.overflow,false);
   assert.ok(result.width<=width+1);
   assert.deepEqual(errors,[],"Console page errors");
