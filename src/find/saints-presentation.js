@@ -12,6 +12,7 @@ const sourceUrl=s=>{
  * Life events and celebrations are source-scoped, never inferred from a shrine marker.
  * Only external authoritative biographies belong under "Read further".
  */
+const saintPreviewOnly=people=>people.some(p=>p.editorial_status==="RESEARCH_READER_PREVIEW_ONLY");
 export function renderSaintPlaceSheet(vm){
   const item=vm?.selected;if(item?.lens!=="saints")return "";
   const language=vm.language,people=arr(item.saints),floating=vm.view==="map";
@@ -28,7 +29,7 @@ export function renderSaintPlaceSheet(vm){
     +'<section class="aoFindSheet aoSaintPlaceSheet" role="dialog" aria-modal="'+String(!floating)+'" aria-label="'+esc(say("Lives of saints","Vies des saints"))+'">';
   html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
   html+='<header><div><small>'+esc(say("SAINTS","SAINTS"))+'</small>'
-    +'<h2>'+esc(item.subtitle||item.title)+'</h2></div>'
+    +'<h2>'+esc(item.kind==="SAINT_CATALOGUE_PROFILE"?(language==="fr"?item.title_fr:item.title):(item.subtitle||item.title))+'</h2></div>'
     +'<button type="button" data-find-close-detail aria-label="'+esc(say("Close","Fermer"))+'">×</button></header>';
   for(const [index,saint] of people.entries()){
     const life=saint.life;
@@ -45,7 +46,7 @@ export function renderSaintPlaceSheet(vm){
     if(life){
       html+='<dl class="aoSaintLifeEvents">';
       for(const [label,event] of [[say("Born","Naissance"),life.birth],[say("Died","Décès"),life.death]]){
-        html+='<div><dt>'+esc(label)+'</dt><dd><strong>'+esc(dateLabel(event.date))+'</strong>'
+        html+='<div><dt>'+esc(label)+'</dt><dd><strong>'+esc(event.date_label?.[language]||event.date_label?.en||dateLabel(event.date))+'</strong>'
           +'<span>'+esc(event.place?.[language]||event.place?.en)+'</span></dd></div>';
       }
       html+='</dl>';
@@ -67,8 +68,16 @@ export function renderSaintPlaceSheet(vm){
       html+='<p class="aoSaintOtherFeast"><strong>'+esc(dayLabel(c.month_day))+'</strong>'
         +' · '+esc(c.label?.[language]||c.label?.en)+'</p>';
     }
-    if(!observed&&!life?.celebration)
-      html+='<p class="aoSaintOtherFeast">'+esc(say("Calendar date awaiting source verification","Date de fête à vérifier dans les sources"))+'</p>';
+    if(!observed&&!life?.celebration){
+      const candidate=saint.calendar_candidate;
+      const date=/^\\d{2}-\\d{2}$/.test(candidate||"")?candidate.slice(3)+"/"+candidate.slice(0,2):null;
+      html+='<p class="aoSaintOtherFeast">'+esc(date
+        ?say("Historical calendar candidate · ","Date historique à vérifier · ")+date
+        :say("Feast date awaiting Calendar verification","Date de fête en attente de vérification"))+'</p>';
+      if(date)html+='<p class="aoSaintCalendarCaution">'+esc(say(
+        "Research cross-reference only; not a certified 1962 observance or Mass selection.",
+        "Référence de recherche uniquement ; ni célébration de 1962 certifiée ni choix de messe."))+'</p>';
+    }
     html+='</div>';
     const narrative=[translated(saint,language,"why"),...arr(saint.biography_facts).map(f=>String(f?.[language]??f?.en??""))].filter(Boolean).join(" ");
     html+='<p class="aoSaintLife">'+esc(narrative)+'</p>';
@@ -86,14 +95,20 @@ export function renderSaintPlaceSheet(vm){
     if(index<people.length-1)html+='<div class="aoSaintPersonDivider"></div>';
     html+='</article>';
   }
-  html+='<div class="aoFindActions"><button type="button" data-explore-open-place="'+esc(item.place_id)+'">'
+  if(item.place_id)html+='<div class="aoFindActions"><button type="button" data-explore-open-place="'+esc(item.place_id)+'">'
     +esc(say("View associated place","Voir le lieu associé"))+'</button></div>';
-  html+='<p class="aoSaintGeoNote">'+esc(say(
-    "Shrine associations do not by themselves establish where someone was born, lived or died.",
-    "Une association à un sanctuaire n’établit pas à elle seule le lieu de naissance, de vie ou de décès."))+'</p>';
-  if(!item.map_publishable)html+='<p class="aoSaintGeoNote">'+esc(say(
-    "This site remains list-only until its coordinates are verified.",
-    "Ce lieu reste dans la liste jusqu’à vérification de ses coordonnées."))+'</p>';
+  if(item.kind!=="SAINT_CATALOGUE_PROFILE"){
+    html+='<p class="aoSaintGeoNote">'+esc(say(
+      "Shrine associations do not by themselves establish where someone was born, lived or died.",
+      "Une association à un sanctuaire n’établit pas à elle seule le lieu de naissance, de vie ou de décès."))+'</p>';
+    if(!item.map_publishable)html+='<p class="aoSaintGeoNote">'+esc(say(
+      "This site remains list-only until its coordinates are verified.",
+      "Ce lieu reste dans la liste jusqu’à vérification de ses coordonnées."))+'</p>';
+  }else if(saintPreviewOnly(people)){
+    html+='<p class="aoSaintGeoNote">'+esc(say(
+      "Research catalogue preview; biographies await final editorial release.",
+      "Aperçu de recherche ; notices en attente de validation éditoriale."))+'</p>';
+  }
   html+='</section></div>';
   return html;
 }
