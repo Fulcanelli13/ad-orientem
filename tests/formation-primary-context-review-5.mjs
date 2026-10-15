@@ -38,7 +38,7 @@ for (const f of review5.findings) {
     assert.equal(change.historic_source_id,f.source_id);
     assert.equal(change.historic_url,f.url);
     assert.deepEqual(change.current_source_ids,section.source_ids);
-    assert.ok(change.disposition.length>65&&change.disposition.includes("NOT")||change.disposition.includes("NO_VERDICT"),
+    assert.ok(change.disposition.length>65&&/NOT_|NO_VERDICT|NO_LONGER|NO_CLAIM/.test(change.disposition),
       f.id+": rescope must not imply old passage certifies new claim");
     const matching=section.source_ids.filter(id=>sources.get(id)?.url===f.url);
     assert.deepEqual(matching,change.matching_url_successor_id?[change.matching_url_successor_id]:[]);
