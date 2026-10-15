@@ -20,17 +20,26 @@ Status: **working branch / not approved / not deployed**. This is an auditable b
 - Existing production browser entry already uses `reviewCuratedCards:!rollback48`. The native lower-level test fixture may still require `?aoLiveCards=65`: fixture behaviour must not be confused with the real app's entrypoint.
 - No restoration of the rejected 116-card experiment. Do not replace the current app shell, three modes, or the sourced Canon and gesture/cinematic work.
 
-## Identified Phase 2 issue — pre-Gospel navigation
+## Phase 2 — pre-Gospel navigation: implemented first source-backed subdivision
 
-The 65-card source grouping currently retains **AO.CARD.006**, titled “Gradual · Alleluia / Tract / Sequence,” as ONE visible presentation card. The source layer separately identifies `AO.SM.B021` (Gradual), `AO.SM.B022` (Alleluia/Tract/Sequence) and `AO.SM.B023` (Munda / Gospel preparation). The Proper resolver often coalesces Gradual/Alleluia/Tract in `proper.gradual`, and only offers a distinct Sequence if actually present in `proper.sequence`.
+**Implemented on review branch, not yet deployed:** the independently witnessed Sequence in `AO.SM.B022` now receives its own visible navigation card when and only when the day’s resolved Proper supplies nonempty source paragraphs. `AO.SM.B021` retains its original Gradual / Alleluia or Tract prayer paragraphs, without creating phantom separate chants from a coalesced source string. The adjacent `AO.SM.B023` Munda cor meum / Gospel preparation retains its own existing card. This gives:
 
-**This does not yet meet the requested finer pre-Gospel navigation.** Next integration should split source-witnessed chant moments where texts and rubrics allow, with distinct focus/cue boundaries, without inventing source text, chapel practice, absent chants, or an inflexible universal card count. Exact handling of Solemn priest vs Schola ownership must remain intact.
+- No separately sourced Sequence: **65 model cards** (64 visible normally / 65 with optional second Confiteor).
+- Separate source-backed Sequence: **66 model cards** (65 visible normally / 66 with optional second Confiteor).
+- Pre-Mass Introit handoff: **61 or 62 model cards** respectively after omitting the four Foot-of-Altar prayers, while keeping exact source cue/paragraph identity.
+- The **48-card explicit rollback** remains unchanged.
+
+The integration changes only source-backed presentation grouping, not canonical prayers, rubric time, priest/schola speaker owners or the host visual shell. New tests assert English/French texts, paragraph conservation, exact B021/B022 block ownership, Schola track handoff, previous/next navigation and Introit/mode-switch projections. The R17 phone suite additionally includes a real conditional Sequence test via `tests/reader-phone-conditional-sequence.mjs` at 320, 390 and 768 px with English, French and optional Confiteor; screenshots are retained in the existing curated65 artifact.
+
+**Still open:** Gradual versus Alleluia/Tract **within** the B021 source paragraph. The source resolver often coalesces their text in `proper.gradual`, so no honest cue-safe split is possible until separate witnessed Latin/French/English source sections are carried through to the reader. Existing `src/mass/pre-gospel-sequence.js` recognizes `GradualeL…`, `TractusL…`, `AlleluiaL…` and `SequentiaL…` in exact source order; integrate those actual sourced payload boundaries instead of guessing at regex words. This is an explicit remaining Phase 2 issue and is **not** certified by adding the Sequence card.
+
+Verified Pages network parity and initial fresh-browser Home baseline: [run #38685965148](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38685965148). Network files matched source `main`; the live site has not been updated by the draft PR.
 
 ## Acceptance before promoting
 
 1. Prove the current Pages deployment's source SHA, retain screenshots at 320/390/768/1280 px in English and French and compare the preferred historic Home, Mass, Prayer and Calendar screens.
 2. Run the **production entry**, not just the low-level fixture: 64 visible/65 optional, source text conservation, 48 rollback, swipe versus vertical scroll, Schola independence, Guide, icon rails, bells, exact highlighted cues and focus.
-3. Reconcile proper-conditional Gradual, seasonal Alleluia/Tract and sourced Sequence as navigable boundaries. Test ordinary Sunday, Lent, a Mass with Sequence, special rites and cases with absent chants.
+3. Verify the new independently sourced Sequence card in actual production phone/browser acceptance and continue resolving separate source-witnessed Gradual versus Alleluia/Tract paragraphs. Test Ordinary, Lent, Sequence days and special rites; no phantom chants.
 4. Preserve Missal/Simple, Low, Missa Cantata, Solemn, Canon, Good Friday, Easter Vigil, Palm/Ash/Candlemas, Requiem, nuptial, Ember lessons and processions with fail-closed source ownership.
 5. Do not merge to `main` or alter the approved Pages link until Node release tests, real browser acceptance and **user visual review** are recorded against the exact candidate commit.
 
@@ -38,5 +47,5 @@ The 65-card source grouping currently retains **AO.CARD.006**, titled “Gradual
 
 - Baseline branch and working branch: **established**.
 - 65-default source contract: **inspected**, protected by `tests/mass-phase12-curated65-contract.mjs`.
-- Independent visible Gradual/Tract/Alleluia/Sequence navigation: **open**.
-- Verified historical Pages parity, exact-head browser tests, deployment: **open**.
+- Sequence distinct conditional card: **implemented on review branch, exact-head CI/visual approval pending**. Independent Gradual versus Tract/Alleluia split **open pending source witness**.
+- Historic Pages network source and fresh Home at four widths: **verified**. User's existing cached-tab visual parity, exact-head new Sequence phone acceptance, user approval and deployment: **open**.
