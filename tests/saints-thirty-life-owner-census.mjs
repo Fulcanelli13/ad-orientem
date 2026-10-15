@@ -61,6 +61,32 @@ assert(deskReview.records.every(x=>x.publication_blocks?.length>=1 && x.profile_
 assert.equal(deskReview.scope.source_spot_checked,11);
 assert.equal(deskReview.scope.source_pending_deeper_check,13);
 assert.equal(deskReview.scope.released_people,0);
+const deepDocs=deskReview.records.filter(x=>x.reader_biography_review);
+assert.equal(deepDocs.length,13,"Exactly 13 previously deeper-held subjects should receive specific reader research");
+assert.equal(deskReview.scope.primary_documents_checked_for_held_subjects,13);
+assert.equal(deskReview.scope.primary_documents_need_additional_line_by_line_audit,13);
+assert.equal(deskReview.scope.people_with_nonrepetitive_reader_biography,13);
+assert(deepDocs.every(x=>x.source_anchor_check==="PRIMARY_DOCUMENT_REVIEWED_CLAIM_LEVEL_COPYEDIT_PENDING"
+ && !x.reader_biography_review.second_editor_certified
+ && x.reader_biography_review.primary_source_url.startsWith("https://")
+ && x.reader_biography_review.finding.length>60));
+const ownerHeld=[...eight.people,...sixteen.people], readerBios=ownerHeld.filter(x=>x.reader_biography);
+assert.equal(readerBios.length,13,"No duplicate reader biographies, and no accidental publication");
+const readerIds=new Set(readerBios.map(x=>x.calendar_person_id||x.person_id));
+assert.deepEqual([...readerIds].sort(),deepDocs.map(x=>x.person_id).sort());
+for(const p of readerBios){
+ assert.equal(p.reader_biography.editorial_status,"SOURCE_CHECKED_READER_DRAFT_NOT_SECOND_EDITOR_APPROVED");
+ assert(p.reader_biography.source_urls.length>0);
+ for(const lang of ["en","fr"]){
+   const biography=p.reader_biography[lang];
+   assert(biography.length>300,"A readout is missing or trivial");
+   const n=biography.trim().split(/\\s+/).length;
+   assert(n>=100 && n<=165,"A polished inline biography is poorly sized: "+(p.person_id||p.calendar_person_id)+" "+lang+" "+n);
+ }
+ assert(!p.approved_artwork_id&&!p.artwork_master_id);
+ assert(p.publication==="NOT_APP_VISIBLE"||p.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE");
+}
+
 assert.equal(deskReview.scope.bios_with_sourced_longer_draft,24);
 assert.equal(deskReview.scope.bios_below_compact_target,0);
 assert(deskReview.records.every(row=>row.current_combined_biography_words.en>0
@@ -79,6 +105,8 @@ const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESE
  desk_review_is_not_publication_approval:true,
  bilingual_reader_narrative_revisions:deskReview.scope.bios_with_sourced_longer_draft,
  held_reader_narratives_below_110_words:deskReview.scope.bios_below_compact_target,
+ reviewed_nonrepetitive_readers:readerBios.length,
+ deeper_source_records_retained_for_claim_line_audit:deepDocs.length,
  drafts_with_an_existing_map_lens_surface:6,public_pages_released_from_this_pr:0,
  individually_approved_new_portraits:0,additional_map_pins_created:0,
  native_six_life_date_records:entries.filter(x=>x.life_data_status==="NATIVE_DATES_SOURCED_EDITORIAL_REVIEW").length,
