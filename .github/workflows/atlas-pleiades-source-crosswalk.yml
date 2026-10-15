@@ -1,0 +1,26 @@
+name: Atlas Pleiades source crosswalk research
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/explore/biblical-atlas-pleiades-crosswalk.research.v1.json"
+      - "tests/atlas-pleiades-reconciliation.mjs"
+      - ".github/workflows/atlas-pleiades-source-crosswalk.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pleiades version, candidate links, precision and editorial holds
+        run: |
+          node --check tests/atlas-pleiades-reconciliation.mjs
+          node tests/atlas-pleiades-reconciliation.mjs
+          node tests/atlas-source-place-labels.mjs
+          node tests/explore-bible-atlas-151.mjs
