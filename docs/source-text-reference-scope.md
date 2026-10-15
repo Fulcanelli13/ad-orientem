@@ -53,6 +53,21 @@ For example, a *future editorially approved* reference could be displayed compac
 - Resolve any *genuinely broken or inaccurate* locators specifically discovered during an owner's editorial review. A source lacking one of these nine optional profile records is **not** a reason for a new audit.
 - Implement the compact *Read further* presentation only in the existing reading interfaces, after the originating content owner approves the precise link.
 
+
+## Targeted section-level audit — four already-owned source links
+
+The owner handoff was extended with `scopedEdgeReview` after inspecting `data/reference/formation-evidence-relationship-ledger.v1.json` against the **current** Formation source-owner reconciliation v2 (main Git blob `ba73286fa26f8564f0dc33048551ee527b597c27`). This is a **closed list** of the four literal-exact URL matches already identified; it is **not** an inspection of all 527 sources, and it does not supersede Formation's editorial research.
+
+- **21 historical section-to-source edges**, one per section, use those four old source-binding keys. **Three historical edges** record a claim-specific locator; **18 do not**. All were historical `UNASSESSED` in the existing evidence ledger. The other current Formation source bindings remain outside this narrow audit, **not automatically suspect or missing**.
+- Exactly **one of these 21 sections** occurs among the current owner's 22 rewritten prior-screened sections: `FORM-SYN-02::CR-LIT-07::00`. Its former answer referenced source ID **`MD47`**, but the owning Formation correction now has **`AO26_CRLIT07_ANSWE_1`**, `_2`, and `_3` instead. This existing source edge is **superseded and must not be restored by the source-reference pipeline**. The other 20 edges are **not identified as rewritten by that particular v2 list**, which does not prove they are all current or already valid.
+- The historic `CR-LIT-07` edge described `Mediator Dei §§48–50, 63–65`, whereas the older `MD47` title is `§§46–49`. Its mismatch is **preserved as a recorded historical locator difference**, not reconciled into a new citation or independent passage approval. Because the edge is superseded, **no new paragraph verification is requested** here.
+- The two Hume historical edges belong to `APOL-004`; the source remains the **philosophical opponent's** *First Enquiry*, Section X (*Of Miracles*), with visible `E 10.1`/`E 10.2` witness identifiers. Its source role must not be presented as Catholic endorsement.
+- The Vatican English [*Mediator Dei*](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) visibly numbers paragraphs 46–50. [Hume's Section X source](https://davidhume.org/texts/e/10) has Parts I–II and chapter paragraph identifiers. **Neither site's HTML fragment stability was verified**, so the user-facing target remains the documented, existing whole-document/section HTTPS URL with the original locator shown separately; never invent a `#` deep link.
+
+`prepareScopedSourceLink()` takes the original historical evidence edge ID together with the unchanged Formation bindings and the pinned owner handoff. For the superseded `MD47` answer it returns **`SUPPRESSED_SUPERSEDED_OWNER_CITATION` and no link**. For 20 others it returns **`DRAFT_OWNER_REVIEW_ONLY`**, an optional `Read further` lead and original section/source roles. **All 21 have `publicDisplayApproved:false`, `inlineCitation:null`, no exact quotation and `historicalEdgeIsCurrentClaim:false`.** Existing Formation owners decide whether a link is still needed or whether previous reviews already cover it. Nothing was edited in that module.
+
+The repository test suite checks these 21 actual prior edges, detects the one suppressed former source, and, when current Formation v2 is in the checkout, verifies the owner's explicit replacement source IDs. No general reverification queue was manufactured.
+
 ## Check
 
 ```sh
