@@ -1,0 +1,290 @@
+{
+  "schema": "AO_MYSTERY_MASS_CANON_SIX_COLLATIONS_FIVE_ISSUES_V1",
+  "date": "2026-10-15",
+  "sourceTextMethod": "Original historically identified editions/translated historical texts accessible as online transcriptions or OCR, plus Latin Summa; no independent printed-page visual proof.",
+  "basis": "Existing 32-case comparison ledger and user-owned 2026-10-15 Passage Deduplication & Source Handoff.",
+  "summary": {
+    "sameSummaryPairs": 6,
+    "interpretativeIssues": 5,
+    "transcriptionCompared": 6,
+    "printedPageImageVerified": 0,
+    "originalItalianAlphonsusChecked": false,
+    "originalGermanGihrChecked": false,
+    "originalGuérangerConferenceAutographChecked": false,
+    "publicationApprovals": 0
+  },
+  "originalEditionWarnings": [
+    "Guéranger text identifies an 1885 second edition compiled from conference notes; foreword expressly warns original note-taking/copying may be imperfect. Treat attribution as 'Guéranger conference notes, 1885 ed.', not a verbatim authorial manuscript.",
+    "The St Alphonsus online English witness is the Eugene Grimm-edited 1887 Centenary Edition vol VI. Its editor's notice identifies an earlier *unnamed* French author, with tentative discussion of Condren/Quesnel. This CANNOT be Dom Prosper Guéranger (1805–1875), who postdates St Alphonsus (1696–1787). Do not equate that unnamed French source with Guéranger or register an unsupported donor identity.",
+    "Gihr's online 1902 edition is an English translation from German; printed page labels in OCR are identifiable but the facsimile page image is not independently checked in this pass.",
+    "Aquinas ST III q.83 a.4 ad 7–9 is directly checkable in a Latin/English scholarly transcription; an online transcription does not establish medieval manuscript critical-text collation.",
+    "Three scriptural-sacrificial types and mystical allegories must remain separate from the literal statements of Genesis 4, 14, 22 and the 1962 rubric.",
+    "Attribution/synthesis approval is not text-reproduction permission. Shared Reference owns work/edition/witness, rights and stable link qualification."
+  ],
+  "sixPairTranscriptionCollations": [
+    {
+      "ids": [
+        "VER-032",
+        "I062"
+      ],
+      "owner": "AO.CANON.10",
+      "author": "St Alphonsus",
+      "edition": "1887 English Centenary Edition, vol. VI, edited by Eugene Grimm",
+      "locator": "Short Explanation of the Prayers of Mass, Supplices te rogamus; printed pp.56–57",
+      "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+      "accessLevel": "TEXT_TRANSCRIPTION_CONFIRMED",
+      "result": "One received passage summarizes an angel presiding at Mass, an earlier unidentified French author's Christological reading, and a preference for the ministering angel presenting prayer. The two legacy summaries refer to this same paragraph, but retain both IDs.",
+      "disposition": "ONE_SYNTHESIS_WITH_ATTRIBUTED_VARIANTS",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": false,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    },
+    {
+      "ids": [
+        "VER-045",
+        "I006"
+      ],
+      "owner": "AO.CANON.02",
+      "author": "Dom Prosper Guéranger (conference notes)",
+      "edition": "1885 second edition, Imprimerie Saint-Pierre, Solesmes; editorially compiled conference notes",
+      "locator": "MEMENTO DES VIVANTS, et omnium circumstantium",
+      "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "accessLevel": "FRENCH_EDITED_TEXT_CONFIRMED",
+      "result": "The celebrant commends the faithful physically present and stresses their faith and devotion. Both claim summaries return to the same adjacent sentences; one compact study claim with two provenance IDs.",
+      "disposition": "ONE_SYNTHESIS_KEEP_DETAILS",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": true,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    },
+    {
+      "ids": [
+        "VER-049",
+        "I016"
+      ],
+      "owner": "AO.CANON.05",
+      "author": "Dom Prosper Guéranger (conference notes)",
+      "edition": "1885 second edition, Imprimerie Saint-Pierre, Solesmes; editorially compiled conference notes",
+      "locator": "QUAM OBLATIONEM, rationabilem; compare Romans 12:1",
+      "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "accessLevel": "FRENCH_EDITED_TEXT_CONFIRMED",
+      "result": "The word rationabilem is explained by reference to a truly spiritual oblation and Romans 12:1. Other details address the neighbouring crosses and transformation; synthesize the shared word meaning without losing separate sign-cue commentary.",
+      "disposition": "ONE_WORD_LEVEL_SYNTHESIS_SEPARATE_SIGNS",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": true,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    },
+    {
+      "ids": [
+        "VER-057",
+        "I054"
+      ],
+      "owner": "AO.CANON.09",
+      "author": "Nicholas Gihr",
+      "edition": "1902 English translation of sixth German edition (German original not collated)",
+      "locator": "The Holy Sacrifice of the Mass, §61, printed p.659, Abel",
+      "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "accessLevel": "ENGLISH_OCR_CONFIRMED",
+      "result": "Both describe Abel's faithful offering and innocent death prefiguring Christ. One text also speculates that fire may have consumed Abel's offering; Genesis does not establish this.",
+      "disposition": "ONE_SYNTHESIS_WITH_CONJECTURE_HELD",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": false,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    },
+    {
+      "ids": [
+        "VER-058",
+        "I056"
+      ],
+      "owner": "AO.CANON.09",
+      "author": "Nicholas Gihr",
+      "edition": "1902 English translation of sixth German edition (German original not collated)",
+      "locator": "The Holy Sacrifice of the Mass, §61, printed p.659, Abraham",
+      "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "accessLevel": "ENGLISH_OCR_CONFIRMED",
+      "result": "Both summarize Abraham's faith and willingness to offer Isaac; Gihr explicitly makes clear Isaac's blood was not shed. Keep figurative language separate from the historical Genesis event.",
+      "disposition": "ONE_SYNTHESIS_ISAAC_NOT_KILLED",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": false,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    },
+    {
+      "ids": [
+        "VER-059",
+        "I058"
+      ],
+      "owner": "AO.CANON.09",
+      "author": "Nicholas Gihr",
+      "edition": "1902 English translation of sixth German edition (German original not collated)",
+      "locator": "The Holy Sacrifice of the Mass, §61, printed pp.660 and earlier broader Melchisedech chapters",
+      "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "accessLevel": "ENGLISH_OCR_CONFIRMED",
+      "result": "Both place bread-and-wine offering in Eucharistic sacrificial typology, but the former also discusses Christian priesthood. Genesis 14:18 describes the bread and wine without explicitly describing a sacrificial rite.",
+      "disposition": "ONE_SYNTHESIS_PRESERVE_SCRIPTURAL_DISTINCTION",
+      "sourcePassageCollatedInAccessibleTranscription": true,
+      "matchingPrintedPageImageIndependentlyInspected": false,
+      "originalLanguageEditionCollated": false,
+      "publicationApproved": false,
+      "retainedBothEvidenceIDs": true
+    }
+  ],
+  "fiveInterpretativeIssueReconciliations": [
+    {
+      "id": "CANON-ISSUE-1",
+      "owner": "AO.CANON.10",
+      "topic": "sacred angel",
+      "sourceIds": [
+        "VER-032",
+        "I062",
+        "VER-051",
+        "I033"
+      ],
+      "sourceWitnesses": [
+        {
+          "work": "Guéranger 1885 notes",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPPLICES TE ROGAMUS",
+          "finding": "Identifies the angel Christologically as Christ, the one sent by the Father."
+        },
+        {
+          "work": "Aquinas ST III q.83 a.4 ad 9",
+          "url": "https://www.logicmuseum.com/wiki/Authors/Thomas_Aquinas/Summa_Theologiae/Part_III/Q83",
+          "locator": "ad nonum",
+          "finding": "Explicit two alternatives: ministering angel presenting prayers; Christ himself as Angel of Great Counsel."
+        },
+        {
+          "work": "Alphonsus, English Centenary 1887",
+          "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+          "locator": "Supplices te rogamus",
+          "finding": "Repeats both readings; prefers angelic prayer presentation; 'our French author' cannot be Guéranger, a later writer."
+        }
+      ],
+      "decision": "PARALLEL_ATTRIBUTED_READINGS; BLOCK_GUERANGER_CREATED_ANGEL_ATTRIBUTION; HOLD_UNIDENTIFIED_FRENCH_DONOR"
+    },
+    {
+      "id": "CANON-ISSUE-2",
+      "owner": "AO.CANON.09",
+      "topic": "acceptance of sacrifice",
+      "sourceIds": [
+        "VER-057",
+        "I054",
+        "VER-058",
+        "I056",
+        "VER-059",
+        "I058"
+      ],
+      "sourceWitnesses": [
+        {
+          "work": "Gihr 1902 translated, pp.658–660",
+          "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+          "locator": "§61 pp.658–660",
+          "finding": "Comparison concerns ancient offerers' devotion, not parity of sacrificial value; three distinct typologies."
+        },
+        {
+          "work": "Aquinas ST III q.83 a.4 ad 8",
+          "url": "https://www.logicmuseum.com/wiki/Authors/Thomas_Aquinas/Summa_Theologiae/Part_III/Q83",
+          "locator": "ad octavum",
+          "finding": "Ancient offerings pleasing because of offerers' devotion, not because Eucharist lacked value."
+        },
+        {
+          "work": "Guéranger 1885",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPRA QUAE",
+          "finding": "No parity between Christ's sacrifice and those of Abel/Abraham/Melchisedech."
+        }
+      ],
+      "decision": "ONE_DOCTRINAL_BASELINE_WITH_THREE_DISTINCT_BIBLICAL_TYPES; HOLD_HISTORICAL_SPECULATIONS"
+    },
+    {
+      "id": "CANON-ISSUE-3",
+      "owner": "AO.CANON.05",
+      "topic": "Quam oblationem adjectives",
+      "sourceIds": [
+        "VER-049",
+        "I016"
+      ],
+      "sourceWitnesses": [
+        {
+          "work": "Guéranger 1885",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "QUAM OBLATIONEM",
+          "finding": "Explains adscriptam/ratam/rationabilem with Romans 12:1, and distinguishes the crosses."
+        },
+        {
+          "work": "Alphonsus 1887 English",
+          "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+          "locator": "Quam oblationem",
+          "finding": "Gives lexical gloss for five adjectives and notes Aquinas's qualification."
+        },
+        {
+          "work": "Aquinas ST III q.83 a.4 ad 7 Latin",
+          "url": "https://www.logicmuseum.com/wiki/Authors/Thomas_Aquinas/Summa_Theologiae/Part_III/Q83",
+          "locator": "ad septimum",
+          "finding": "Reading concerns sanctifying fruit for us; distinct from strict dictionary definition or efficacy of signs."
+        }
+      ],
+      "decision": "FIVE_DISTINCT_WORD_ANCHORS; LEXICAL_SPIRITUAL_RUBRIC_EXPLANATIONS_TYPED_SEPARATELY"
+    },
+    {
+      "id": "CANON-ISSUE-4",
+      "owner": "AO.CANON.04",
+      "topic": "Hanc igitur hand extension",
+      "sourceIds": [
+        "VER-018",
+        "I046"
+      ],
+      "sourceWitnesses": [
+        {
+          "work": "Guéranger 1885",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "HANC IGITUR",
+          "finding": "Draws an Old Law sacrifice imposition-of-hands analogy."
+        },
+        {
+          "work": "Alphonsus 1887 English",
+          "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+          "locator": "Hanc igitur",
+          "finding": "Offers spiritual significance of offering oneself with the victim and recalls Old Law hand placement."
+        }
+      ],
+      "decision": "SPIRITUAL_TYPOLOGY_NOT_ESTABLISHED_CEREMONIAL_ORIGIN; RUBRIC_SOURCE_SEPARATE"
+    },
+    {
+      "id": "CANON-ISSUE-5",
+      "owner": "AO.CANON.07",
+      "topic": "words over chalice",
+      "sourceIds": [
+        "VER-023",
+        "VER-024",
+        "VER-025",
+        "VER-026"
+      ],
+      "sourceWitnesses": [
+        {
+          "work": "Alphonsus 1887 English",
+          "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+          "locator": "Consecration of Chalice",
+          "finding": "Compares Luke and Matthew, Hebrews' eternal covenant, and traditio for Mysterium fidei; pro multis distinction treated by author."
+        },
+        {
+          "work": "1962 Mass source text",
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/presentation/reader-text-sung.v1.json",
+          "locator": "AO.SM.C0179",
+          "finding": "One complete Latin received formula on one source cue; multiple word-level explanation points."
+        }
+      ],
+      "decision": "RECEIVED_1962_FORMULA_NOT_ONE_BIBLE_VERSE; RETAIN_EXACT_FORM_WHILE_HISTORICAL_CLAIMS_REMAIN_ATTRIBUTED"
+    }
+  ],
+  "previousCanonicalLedger": "data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json",
+  "publicationStatus": "HELD_NO_PRODUCTION_APP_CHANGES"
+}
