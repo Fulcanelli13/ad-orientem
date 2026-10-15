@@ -33,7 +33,7 @@ assert.equal(entries.filter(x=>x.owner!=="NATIVE_SIX_PROFILE_PILOT").length,24);
 assert(entries.every(x=>!x.visible_on_public_pages&&!x.artwork_ready));
 assert.equal(entries.reduce((s,x)=>s+x.facts,0),6*3+8*3+16*3);
 assert.equal(entries.reduce((s,x)=>s+x.extraordinary_reports,0),2+2+2);
-assert(entries.some(x=>x.id==="blessed.jacques-desire-laval"&&x.subject_kind==="BLESSED"));
+assert(entries.some(x=>x.id==="blessed.jacques-desire-laval"&&x.subject_kind==="BEATIFIED_NOT_CANONIZED"));
 assert(!entries.some(x=>x.id==="saint.francois-de-montmorency-laval"),
   "Do not replace Blessed Jacques-Désiré Laval with François de Montmorency-Laval");
 const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESEARCH_CENSUS_NOT_A_30_PERSON_PUBLIC_APP",
