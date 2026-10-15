@@ -8,7 +8,7 @@
   "originalScanPage257": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
   "originalScanPage258": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/306",
   "secondary1908Base": "https://www.newadvent.org/cathen/03255c.htm",
-  "scope": "Print witness first. The secondary web transcription cannot overrule the examined 1913 scan, especially the Clement XL/XI reference, variant service/the service and Latin letterform differences. Candidate corrections do not represent human-approved full-page transcription.",
+  "scope": "Print witness first. The secondary web transcription cannot overrule the examined 1913 scan, especially the Clement XL/XI reference, variant service/the service and Latin letterform differences. Candidate corrections do not represent human-approved full-page transcription. Patristic De Sacramentis readings are a separate primary-text witness and must not overwrite Fortescue's 1913 quotation.",
   "comparisons": [
     {
       "id": "SC257-001",
@@ -150,15 +150,31 @@
       "status": "SCAN_LAYOUT_CHECKED_TEXT_INCOMPLETE",
       "decision": "HOLD_TEXT_JOIN_UNTIL_PROOFREAD",
       "note": "Cross-page image indices 305→306, printed pp.257→258; never insert synthetic punctuation at break."
+    },
+    {
+      "id": "SC257-016",
+      "blockId": "P257-09",
+      "field": "quoted_patristic_text_vs_printed_fortescue",
+      "witnessReading": "Fac nos hanc oblationem",
+      "primaryWitnessReading": "Fac nobis hanc oblationem",
+      "secondary": "DE_SACRAMENTIS_IV_5",
+      "primaryComparisonUrls": [
+        "https://fr.wikisource.org/wiki/Dictionnaire_de_th%C3%A9ologie_catholique/MESSE_VIII._La_messe_dans_la_liturgie_7._Le_De_sacramentis_du_Pseudo_Ambroise",
+        "https://publicacions.iec.cat/repository/pdf/00000174/00000057.pdf"
+      ],
+      "status": "DISTINCT_AUTHORIAL_QUOTATION_VS_PATRISTIC_TEXT_WITNESSES",
+      "decision": "KEEP_DISTINCT_DO_NOT_AUTONORMALIZE",
+      "note": "Fortescue 1913 prints 'Fac nos' as a quotation, while versions of De Sacramentis IV print 'Fac nobis'. Never correct a historical author's quoted form merely because another textual edition differs; keep text and provenance separate."
     }
   ],
   "metrics": {
-    "comparisonCount": 14,
+    "comparisonCount": 15,
     "primaryPatristicCrossChecks": 1,
     "printEditionIdentityResolved": true,
     "completePageWordByWordProofed": false,
     "allLatinCharactersCompared": false,
-    "clearanceForProduction": false
+    "clearanceForProduction": false,
+    "patristicTextWitnessCrossChecks": 1
   },
   "publicationApproved": false,
   "originalDraftFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
