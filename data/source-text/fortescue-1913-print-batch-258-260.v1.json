@@ -1,0 +1,163 @@
+{
+  "schema": "AO_SOURCE_TEXT_PRINT_BATCH_REVIEW_V1",
+  "date": "2026-10-15",
+  "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+  "scanRoot": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu",
+  "purpose": "First post-p257 contiguous three-page original-scan source review. Physical page and argument boundaries, not full edition acquisition. No text cleared for app or production reader.",
+  "reviewLevel": "ORIGINAL_PRINTED_IMAGES_VISUALLY_INSPECTED__TEXT_COLLATION_PARTIAL",
+  "reviewerType": "MODEL_VISUAL_REVIEW_NOT_INDEPENDENT_HUMAN_EDITORIAL_SIGNOFF",
+  "rightsReview": "NOT_CLEARED_FOR_BULK_REPRODUCTION",
+  "publicationApproved": false,
+  "productionIngestAllowed": false,
+  "copyTextIntoCanonicalReader": false,
+  "passageWhitelistChangeRequested": false,
+  "pages": [
+    {
+      "printedPage": 258,
+      "scanPage": 306,
+      "sourceImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/306",
+      "beginsMidParagraphFromPrintedPage": 257,
+      "beginsWith": "Rome the names of persons for whom the celebrant prays are read in the Canon",
+      "openingContinuationStatus": "PRELIMINARY_IMAGE_COMPARED_AND_REUSES_P257_JOIN_DRAFT",
+      "firstFullParagraphEnd": "and show it as approved by him.",
+      "secondPrintedParagraphOpens": "A question that can only be answered by conjecture",
+      "themes": [
+        "Letter of Innocent I: givers and Canon diptychs",
+        "Relation of Roman Canon to Egyptian and Syrian anaphoras",
+        "Claims of structural similarity attributed to Fortescue",
+        "Ancient liturgical parallel prayers and prefatory Igitur argument"
+      ],
+      "authorialAssertionClass": "FORTESCUE_HISTORICAL_COMPARATIVE_ANALYSIS_NOT_NORMATIVE_1962_RUBRICS",
+      "footnoteStatus": "INLINE_SOURCES_NOT_SEPARATE_PRINTED_FOOTNOTES_PRELIMINARY",
+      "fullPageTextCollated": false,
+      "imageReviewDone": true,
+      "proofreadingNext": [
+        "Validate every quotation and Latin/Greek source reference",
+        "Identify all printed paragraph indentations",
+        "Verify physical end-of-page continuation to printed p259"
+      ]
+    },
+    {
+      "printedPage": 259,
+      "scanPage": 307,
+      "sourceImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/307",
+      "beginsMidParagraphFromPrintedPage": 258,
+      "beginsWith": "in our preface or in any of the other rites.",
+      "themes": [
+        "Fortescue reviews competing responses to Roman Canon arrangement",
+        "Drews' conjectural reordering and analogy to the Syrian Anaphora",
+        "Quoted liturgical prayer sequence remains a proposal not normative Mass order",
+        "Hanc igitur: prayers for dead, Quam oblationem textual interpretation",
+        "Two text occurrences Fac nos p257 versus Fac nobis p259 remain distinct"
+      ],
+      "importantOriginalTextWitness": {
+        "type": "SAME_AUTHOR_DISTINCT_OCCURRENCE",
+        "printedPage": 259,
+        "quotationOpening": "Fac nobis hanc oblationem",
+        "sourceImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/307",
+        "relatedPage257Quotation": "Fac nos hanc oblationem",
+        "textVariantsMustRemainDistinct": true
+      },
+      "authorialAssertionClass": "DREWS_THEORY_AS_REPORTED_BY_FORTESCUE_NOT_ADOPTED_HISTORICAL_FACT",
+      "footnoteStatus": "INLINE_PRINT_REFERENCES_REQUIRE_INDIVIDUAL_COLLATION",
+      "fullPageTextCollated": false,
+      "imageReviewDone": true,
+      "proofreadingNext": [
+        "Reconcile embedded hypothetical rearranged Canon prayers",
+        "Collate Greek/Latin quotations and named modern liturgists",
+        "Verify page 259→260 transition and paragraph boundaries"
+      ]
+    },
+    {
+      "printedPage": 260,
+      "scanPage": 308,
+      "sourceImage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/308",
+      "beginsMidParagraphFromPrintedPage": 259,
+      "beginsWith": "tells us that he re-arranged a few parts of the Canon",
+      "newSectionOnPage": {
+        "heading": "From the time of St. Gregory I (590–604)",
+        "column": "right",
+        "semanticType": "PRINTED_SUBSECTION_HEADING_NOT_COMPLETE_ARTICLE_BOUNDARY"
+      },
+      "themes": [
+        "Continuation of Drews hypothesis and objections",
+        "Roman Canon text and internal prayer sequence",
+        "Transition to later history and Gregory I",
+        "Historical claims concerning sacramentaries and papal additions"
+      ],
+      "authorialAssertionClass": "CONTESTED_LITURGICAL_HISTORY_AS_FORTESCUE_AUTHORIAL_VIEW",
+      "footnoteStatus": "INLINE_SOURCES_REQUIRE_COLLATION",
+      "fullPageTextCollated": false,
+      "imageReviewDone": true,
+      "proofreadingNext": [
+        "Collate printed right-column subsection heading separately from paragraph text",
+        "Distinguish source descriptions from authorial conjecture",
+        "Confirm the paragraph continuation into printed p261"
+      ]
+    }
+  ],
+  "transcribedContinuation": {
+    "sourceBlockId": "P257-11",
+    "sourceFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json",
+    "draftProperty": "pageJoinCandidate.continuedTextDraft",
+    "firstPhysicalPage": 257,
+    "secondPhysicalPage": 258,
+    "firstImagePage": 305,
+    "secondImagePage": 306,
+    "printParagraphStartsOn": 257,
+    "printParagraphEndsOn": 258,
+    "evidence": "Image 306 top left column continues Innocent I paragraph from image 305 bottom right; paragraph concludes before a newly indented question about the Canon and Eastern anaphoras.",
+    "status": "PRELIMINARY_IMAGE_COMPARED__HUMAN_PROOFREAD_REQUIRED",
+    "contentIsReusedNotDuplicated": true,
+    "completeTextReproductionClearance": false,
+    "approvedForAutoJoin": false
+  },
+  "pageBoundaryChain": [
+    {
+      "fromPrintedPage": 257,
+      "toPrintedPage": 258,
+      "fromImage": 305,
+      "toImage": 306,
+      "state": "SAME_PRINTED_PARAGRAPH_CROSS_PAGE_CONFIRMED_STRUCTURALLY_NOT_LETTER_BY_LETTER"
+    },
+    {
+      "fromPrintedPage": 258,
+      "toPrintedPage": 259,
+      "fromImage": 306,
+      "toImage": 307,
+      "state": "LEFT_UNJOINED__PHYSICAL_MID_ARGUMENT_CONTINUATION_REVIEW_ONLY"
+    },
+    {
+      "fromPrintedPage": 259,
+      "toPrintedPage": 260,
+      "fromImage": 307,
+      "toImage": 308,
+      "state": "LEFT_UNJOINED__PHYSICAL_MID_ARGUMENT_CONTINUATION_REVIEW_ONLY"
+    }
+  ],
+  "crossModuleRestrictions": {
+    "mayInformFutureMassCommentary": true,
+    "mustNotOverwrite65CardMassReader": true,
+    "mustNotNormalizeHistoricalQuotations": true,
+    "mustNotImply1962RubricAuthority": true
+  },
+  "reviewMetrics": {
+    "originalScanPagesInspected": 3,
+    "page258TopContinuationTextFromExistingDraft": true,
+    "pagesWithFullyProofreadEntireText": 0,
+    "sourceParagraphsCertified": 0,
+    "newlyPublishedThirdPartyParagraphs": 0,
+    "alreadyAllowedTestExcerptsUnchanged": 4,
+    "independentHumanProofreadersSignedOff": 0
+  },
+  "nextReviewBatch": {
+    "printedPages": [
+      261,
+      262,
+      263
+    ],
+    "beginOnlyAfter": "Complete structured visual indexing or identify clear blockers; do not claim full text acquisition"
+  }
+}
