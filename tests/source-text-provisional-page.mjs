@@ -52,7 +52,7 @@ assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.at(-1)
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.find(b=>b.kind==="attributed-quotation").kind="body")}),/SCOPE_INCOMPLETE/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.mergeApproved=true)}),/JOIN_UNVERIFIED/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.scanPageSequence=[305,307])}),/JOIN_UNVERIFIED/);
-assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.firstWordsOnPage258="Confabulated text")}),/JOIN_UNVERIFIED/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.firstWordsOnNextPage="Confabulated text")}),/JOIN_UNVERIFIED/);
 console.log("PASS 1913 source p257 OCR-assisted transcription: 10 text blocks, 2 existing excerpt references, one Latin quote held and p258 boundary protected");
 console.log(JSON.stringify({printedPage:257,provisionalWords:audit.pageWordCountProvisional,
  draftBlocks:audit.transcribedDraftBlocks,
