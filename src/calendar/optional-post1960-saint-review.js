@@ -29,7 +29,7 @@ const plainResult = (status, rationale, details={})=>Object.freeze({
 function verifiedProtectedAnnex(list) {
   return Array.isArray(list) && list.length===70 &&
     new Set(list.map(f=>f?.resolverIdentity)).size===70 &&
-    list.every(f=>/^sancti:\\d{2}-\\d{2}(?:[a-z]+)?:3:[wr]$/.test(f?.resolverIdentity||"") &&
+    list.every(f=>/^sancti:\d{2}-\d{2}(?:[a-z]+)?:3:[wr]$/.test(f?.resolverIdentity||"") &&
       f?.identityMatchStatus==="ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER");
 }
 function protectedIdentityMatches(id, list) {
