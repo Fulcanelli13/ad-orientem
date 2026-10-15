@@ -75,7 +75,10 @@
     "groupsWithApproximateCounts": 1,
     "knownGroupMembersAlreadyIncludedInNamedRecords": 15,
     "all51OfficialIndexYearsTranscribed": true,
-    "remainingEventIdentityAndGroupWork": "OPEN"
+    "remainingEventIdentityAndGroupWork": "OPEN",
+    "openMartyrMembershipBacklog": 0,
+    "collectiveEntriesReadyForEditorialReview": 13,
+    "groupMemberCountRetainedForSourceProvenanceOnly": true
   },
   "countingRule": "Individually named saint IDs count once even when in martyr groups. Every cohort with explicit crosswalk uses unexpandedMemberCount=memberCount-named member IDs. Approximate Otranto count is separate. Source-listed ceremonial form may be unresolved; no feast date inferred.",
   "liturgicalRule": "No individual record in this batch asserts universal feast date, 1962 optional mass eligibility, mass texts, or a change to the principal observed 1962 mass.",
@@ -2145,7 +2148,39 @@
         "Abdel Mooti Massabki",
         "Raphael Massabki"
       ],
-      "note": "Names of all eight Franciscans and the distinct brothers require person-level expansion. Group is not one individual saint."
+      "note": "Names of all eight Franciscans and the distinct brothers require person-level expansion. Group is not one individual saint.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Damascus",
+          "fr": "Martyrs de Damas"
+        },
+        "context": {
+          "en": "Franciscan religious and Maronite Catholic laymen were killed amid anti-Christian violence in Damascus in 1860.",
+          "fr": "Des franciscains et des laïcs maronites furent tués lors des violences antichrétiennes de Damas en 1860."
+        },
+        "whyHonoured": {
+          "en": "Honoured for remaining faithful to Christ during persecution.",
+          "fr": "Honorés pour leur fidélité au Christ dans la persécution."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "carmelites-compiegne",
@@ -2156,7 +2191,39 @@
       "namedLead": [
         "Teresa of St Augustine"
       ],
-      "note": "Sixteen persons; do not attach the group's event to one invented individual saint ID."
+      "note": "Sixteen persons; do not attach the group's event to one invented individual saint ID.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Carmelite Martyrs of Compiègne",
+          "fr": "Carmélites martyres de Compiègne"
+        },
+        "context": {
+          "en": "Sixteen Carmelite religious were executed during the French Revolution in 1794.",
+          "fr": "Seize carmélites furent exécutées pendant la Révolution française en 1794."
+        },
+        "whyHonoured": {
+          "en": "Honoured for their religious fidelity and courageous witness at death.",
+          "fr": "Honorées pour leur fidélité religieuse et leur témoignage courageux jusqu'à la mort."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "martyrs-brazil-1645",
@@ -2169,7 +2236,39 @@
         "Ambrósio Francisco Ferro",
         "Mateus Moreira"
       ],
-      "note": "Thirty individual martyrs, not one saint. Expand named person records before individual map/art publication."
+      "note": "Thirty individual martyrs, not one saint. Expand named person records before individual map/art publication.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Brazil",
+          "fr": "Martyrs du Brésil"
+        },
+        "context": {
+          "en": "Catholics in colonial Brazil were killed for their faith in 1645.",
+          "fr": "Des catholiques du Brésil colonial furent tués pour leur foi en 1645."
+        },
+        "whyHonoured": {
+          "en": "Honoured for preserving the Catholic faith under violent persecution.",
+          "fr": "Honorés pour leur fidélité catholique face à la persécution."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "martyrs-otranto-1480",
@@ -2182,7 +2281,39 @@
       "namedLead": [
         "Antonio Primaldo"
       ],
-      "note": "Dicastery says circa ottocento martyrs. Approximate group size; do not add 800 as certified identified persons."
+      "note": "Dicastery says circa ottocento martyrs. Approximate group size; do not add 800 as certified identified persons.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Otranto",
+          "fr": "Martyrs d'Otrante"
+        },
+        "context": {
+          "en": "Approximately 800 inhabitants of Otranto were killed after the Ottoman capture of the city in 1480.",
+          "fr": "Environ 800 habitants d'Otrante furent tués après la prise ottomane de la ville en 1480."
+        },
+        "whyHonoured": {
+          "en": "Honoured for refusing to abandon the Christian faith.",
+          "fr": "Honorés pour leur refus de renier la foi chrétienne."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "martyrs-turon-lasallian-1934",
@@ -2193,7 +2324,39 @@
       "namedLead": [
         "Cirilo Bertrán"
       ],
-      "note": "Nine Lasallian martyrs form one cohort, distinct from Passionist Inocencio de la Inmaculada who is individually listed in this ceremony. Expand all nine identities later."
+      "note": "Nine Lasallian martyrs form one cohort, distinct from Passionist Inocencio de la Inmaculada who is individually listed in this ceremony. Expand all nine identities later.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Turón",
+          "fr": "Martyrs de Turón"
+        },
+        "context": {
+          "en": "Nine Lasallian Brothers were killed in Asturias, Spain, during the upheavals of 1934.",
+          "fr": "Neuf frères des Écoles chrétiennes furent tués dans les Asturies, en Espagne, lors des troubles de 1934."
+        },
+        "whyHonoured": {
+          "en": "Honoured for fidelity to their religious vocation despite persecution.",
+          "fr": "Honorés pour leur fidélité à leur vocation religieuse malgré la persécution."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1999.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "martyrs-mexico-1927",
@@ -2208,7 +2371,41 @@
       "namedLead": [
         "Cristóbal Magallanes"
       ],
-      "note": "Full cohort of 25: founder Cristóbal is independently named in master; 24 companions still unexpanded. Do not count 25+Cristóbal as 26."
+      "note": "Full cohort of 25: founder Cristóbal is independently named in master; 24 companions still unexpanded. Do not count 25+Cristóbal as 26.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Mexico",
+          "fr": "Martyrs du Mexique"
+        },
+        "context": {
+          "en": "Priests and lay Catholics were killed during anti-Catholic persecution in Mexico in the 1920s.",
+          "fr": "Des prêtres et des fidèles furent tués pendant les persécutions antichrétiennes au Mexique dans les années 1920."
+        },
+        "whyHonoured": {
+          "en": "Honoured for continuing their Christian witness despite threats and violence.",
+          "fr": "Honorés pour leur témoignage chrétien maintenu malgré la violence."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.cristobal-magallanes"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "martyrs-china-1648-1930",
@@ -2232,7 +2429,50 @@
         "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/10/01/0568/01964.html",
         "https://www.causesanti.va/it/santi-e-beati/luigi-versigliae-e-callisto-caravario.html",
         "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/09/22/0550/01911.html"
-      ]
+      ],
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of China",
+          "fr": "Martyrs de Chine"
+        },
+        "context": {
+          "en": "Chinese Catholics and missionaries were killed during successive waves of persecution spanning several centuries.",
+          "fr": "Des catholiques chinois et des missionnaires furent tués lors de persécutions successives pendant plusieurs siècles."
+        },
+        "whyHonoured": {
+          "en": "Honoured for bearing witness to Christ across many generations.",
+          "fr": "Honorés pour leur témoignage rendu au Christ à travers les générations."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.agostino-zhao-rong"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "07-09",
+            "kind": "OPTIONAL_MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "vietnamese-martyrs-117",
@@ -2247,7 +2487,50 @@
       "namedLead": [
         "Andrew Dung-Lac"
       ],
-      "note": "117 canonised people, of whom Andrew Dung-Lac is currently a canonical person row; other named martyrs in source still require reconciliation to avoid duplication."
+      "note": "117 canonised people, of whom Andrew Dung-Lac is currently a canonical person row; other named martyrs in source still require reconciliation to avoid duplication.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Vietnam",
+          "fr": "Martyrs du Viêt Nam"
+        },
+        "context": {
+          "en": "Vietnamese Catholics and missionaries were executed under repeated persecutions in the eighteenth and nineteenth centuries.",
+          "fr": "Des catholiques vietnamiens et des missionnaires furent exécutés au cours de persécutions aux XVIIIe et XIXe siècles."
+        },
+        "whyHonoured": {
+          "en": "Honoured for steadfast faith despite imprisonment, torture and death.",
+          "fr": "Honorés pour leur persévérance dans la foi jusqu'à la mort."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.andrew-dung-lac"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "11-24",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "japan-martyrs-16-1987",
@@ -2266,7 +2549,50 @@
         "Domingo Ibáñez de Erquicia",
         "James Kyushei Tomonaga"
       ],
-      "note": "Sixteen saints total; 3 members named individually from official year page, 13 await expansion."
+      "note": "Sixteen saints total; 3 members named individually from official year page, 13 await expansion.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Saint Lorenzo Ruiz and the Martyrs of Japan",
+          "fr": "Saint Laurent Ruiz et les martyrs du Japon"
+        },
+        "context": {
+          "en": "Christians including the Filipino layman Lorenzo Ruiz and missionaries were killed in Japan during the seventeenth-century persecutions.",
+          "fr": "Des chrétiens, dont le laïc philippin Laurent Ruiz et des missionnaires, furent tués au Japon au XVIIe siècle."
+        },
+        "whyHonoured": {
+          "en": "Honoured for refusing to renounce Christ despite torture.",
+          "fr": "Honorés pour leur refus de renier le Christ malgré les tortures."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.lorenzo-ruiz"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "09-28",
+            "kind": "OPTIONAL_MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "paraguay-jesuit-martyrs-3",
@@ -2285,7 +2611,39 @@
         "Alfonso Rodríguez",
         "Juan del Castillo"
       ],
-      "note": "Three companions all individually identified from 1988 index."
+      "note": "Three companions all individually identified from 1988 index.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Jesuit Martyrs of Paraguay",
+          "fr": "Martyrs jésuites du Paraguay"
+        },
+        "context": {
+          "en": "Three Jesuit missionaries were killed in 1628 while evangelising in the Guaraní missions.",
+          "fr": "Trois missionnaires jésuites furent tués en 1628 au cours de leur apostolat auprès des Guaranis."
+        },
+        "whyHonoured": {
+          "en": "Honoured for giving their lives in service of the Gospel.",
+          "fr": "Honorés pour avoir donné leur vie au service de l'Évangile."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "korean-martyrs-103",
@@ -2302,7 +2660,51 @@
         "Andrew Kim Tae-gon",
         "Paul Chong Ha-sang"
       ],
-      "note": "103 canonical cohort, 2 named individually in index, 101 still unexpanded."
+      "note": "103 canonical cohort, 2 named individually in index, 101 still unexpanded.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Korean Martyrs",
+          "fr": "Martyrs de Corée"
+        },
+        "context": {
+          "en": "Korean converts, catechists and clergy were martyred during nineteenth-century persecution, including the first Korean-born priest.",
+          "fr": "Des convertis, catéchistes et prêtres coréens subirent le martyre au XIXe siècle, dont le premier prêtre coréen."
+        },
+        "whyHonoured": {
+          "en": "Honoured for sustaining the Church in Korea despite severe persecution.",
+          "fr": "Honorés pour leur fidélité et leur rôle dans la croissance de l'Église de Corée."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.andrew-kim-taegon",
+          "saint.paul-chong-hasang"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "09-20",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "forty-martyrs-england-wales",
@@ -2313,7 +2715,39 @@
       "individuallyIdentifiedPersonIds": [],
       "memberIdentityStatus": "UNEXPANDED_IN_THIS_BATCH",
       "namedLead": [],
-      "note": "Forty-person historic English/Welsh martyr cohort. Do not substitute this for 40 identified individual records until official membership source is reconciled."
+      "note": "Forty-person historic English/Welsh martyr cohort. Do not substitute this for 40 identified individual records until official membership source is reconciled.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Forty Martyrs of England and Wales",
+          "fr": "Quarante martyrs d'Angleterre et du pays de Galles"
+        },
+        "context": {
+          "en": "Catholic clergy and laypeople were executed amid post-Reformation religious persecution in England and Wales.",
+          "fr": "Des prêtres et des laïcs catholiques furent exécutés lors des persécutions religieuses après la Réforme."
+        },
+        "whyHonoured": {
+          "en": "Honoured for remaining faithful to their religion and conscience.",
+          "fr": "Honorés pour leur fidélité à leur foi et à leur conscience."
+        },
+        "featuredCanonicalPersonIds": [],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     },
     {
       "id": "uganda-martyrs-22",
@@ -2330,7 +2764,50 @@
         "Charles Lwanga",
         "Matthias Mulumba Kalemba"
       ],
-      "note": "22 Catholic martyrs canonised; Protestant Uganda martyrs must never be inserted into this Catholic canonisation cohort."
+      "note": "22 Catholic martyrs canonised; Protestant Uganda martyrs must never be inserted into this Catholic canonisation cohort.",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Uganda",
+          "fr": "Martyrs de l'Ouganda"
+        },
+        "context": {
+          "en": "Young Catholics, catechists and royal attendants were killed during persecution in the kingdom of Buganda in the 1880s.",
+          "fr": "De jeunes catholiques, catéchistes et serviteurs de la cour furent tués dans le royaume du Buganda dans les années 1880."
+        },
+        "whyHonoured": {
+          "en": "Honoured for fidelity to Christ despite threats and coercion.",
+          "fr": "Honorés pour leur fidélité au Christ malgré la menace et la contrainte."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.charles-lwanga"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "06-03",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      },
+      "individualMemberExpansionRequirement": "NONE_FOR_APP"
     }
   ],
   "persons": [
@@ -7295,5 +7772,17 @@
   ],
   "caveats": [
     "The 51-year index transcription does not imply that every person in martyr cohorts is named, or that missing index years contain no canonizations."
-  ]
+  ],
+  "scopePolicy": {
+    "module": "SAINTS_AND_GROUPS_NOT_MARTYROLOGY",
+    "collectiveSaintsOneCanonicalEntry": true,
+    "completeMemberNameResearch": "OUT_OF_SCOPE",
+    "memberCounts": "PROVENANCE_ONLY_NOT_RESEARCH_BACKLOG",
+    "individualProfiles": "ONLY_WHEN_CHURCH_HISTORY_DOCTRINE_OR_DEVOTIONAL_IMPORTANCE_JUSTIFIES",
+    "presentHistoricalReason": true,
+    "primaryImage": "APPROVED_SACRED_ART_ONLY",
+    "mapLink": "EXISTING_CANONICAL_PLACE_ID_ONLY",
+    "furtherReading": "EXISTING_REFERENCES_PARSER",
+    "sourceIdentityAndDates": "SEPARATE_CANONISATION_FROM_LITURGICAL_OBSERVANCE"
+  }
 }
