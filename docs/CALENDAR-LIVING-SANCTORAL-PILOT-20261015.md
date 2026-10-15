@@ -139,3 +139,16 @@ Four further Dicastery year pages were inspected: [1999](https://www.causesanti.
 - **Year 2000 intentionally remains pending**, notwithstanding that the Dicastery year page has been inspected. It separately lists the **120 Martyrs of China** as a cohort and the two named Salesian martyrs Luigi Versiglia and Callisto Caravario. Those may overlap the group's membership. **Do not naively add 120 group members plus two named individuals until the member crosswalk resolves the overlap.** A reliable group audit precedes import.
 
 The new source records have no universal feast dates; the optional Mass eligibility evaluator and production Calendar/Proper are unchanged. The source-year denominator measures pages, not all individuals or completed legal review. The existing focused CI workflow protects cardinalities, deduplication and the mixed exact/approximate martyr-group treatment.
+
+
+## 15 October — fourth intake: 2000, overlap resolved using Holy See evidence
+
+Additional independent [Dicastery year source](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html) and [Holy See briefing](https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/09/22/0550/01911.html), corroborated by the [Papal Canonisation Mass of 123 persons](https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/10/01/0568/01964.html), resolves the earlier 2000 cohort hold.
+
+- **1 October 2000:** the Chinese Martyrs are **one 120-person canonised cohort**, not 120 plus Luigi Versiglia and Callisto Caravario. Three members are directly represented as named person identities in the current intake: Agostino Zhao Rong, Luigi Versiglia and Callisto Caravario. The record retains the **full group size 120**, and only **117 as still-unexpanded**. Three *other* saints were canonised that day: María Josefa Sancho de Guerra, Katharine Drexel and Giuseppina Bakhita. Group 120 + other 3 = **123 total**. Do not infer a full 120-member list from this partial crosswalk.
+- **21 May 2000:** Cristóbal Magallanes belongs to a **25-person Mexican martyrs group**, with 24 names unexpanded, plus two other separately named saints. The single group member is not counted twice. **30 April:** Faustina Kowalska is a distinct individual.
+- **2000 all ceremonies:** the three events account for **151 canonised persons** as 1 + (25+2) + (120+3), but only **10** individuals are named in the current research corpus. The remaining **141** members from these two groups are not fabricated into person records.
+
+**Latest cumulative counts:** **25/51** source years staged; 26 indexed years outstanding; **54 canonisation events**; **179 named individual canonised persons**; **7 martyr groups**, with **207 precisely countable unexpanded members** (including 141 in 2000) and **Otranto c. 800 as a separate approximate cohort**; after the original six pilot records are merged and three existing names reused, **182 unique canonical research person IDs**.
+
+This is a source and identity inventory only; it does not certify new feast dates or change the 1962 Mass selection. Existing pure source-projection and eligibility tests remain in the CI pipeline.
