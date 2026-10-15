@@ -60,7 +60,7 @@ for(const language of ["en","fr"]){
   const html=renderExploreToString(vm);
   assert(html.includes('data-find-filter="saintScope"'),"Browse tabs not visible");
   assert(html.includes('aoSaintSourceIndexSheet'),"Selecting a reference must show a reference sheet");
-  assert(html.includes(subject.item_id),"Canonical source ID must survive list");
+  assert(html.includes('data-saint-source-id="'+subject.index_metadata.source_id+'"'),"Canonical source ID must survive the selected source sheet");
   assert(!html.includes("aoSaintLifeEvents"),"Do not invent historical birth and death");
   assert(!html.includes('data-calendar-mass'),"Do not invent a Mass");
   assert(html.includes(scope==="historical"?(language==="fr"?"307</strong><span>sujets des archives":"307</strong><span>archived source subjects")
