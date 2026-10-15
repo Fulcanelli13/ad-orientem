@@ -51,8 +51,8 @@ for(const entry of dossier.cases){
      const source=integration.updates.find(x=>x.id==="CSE031")?.sections.find(x=>x.role==="response");
      assert.ok(source?.text?.en&&source?.text?.fr,"CSE031 approved research overlay missing");
      assert.deepEqual(original[stage],[
-       row.stage_live_en+"\\n\\n"+source.text.en,
-       row.stage_live_fr+"\\n\\n"+source.text.fr
+       row.stage_live_en+"\n\n"+source.text.en,
+       row.stage_live_fr+"\n\n"+source.text.fr
      ],"CSE031 response may add only the precisely attributed bilingual overlay");
    }else{
      assert.deepEqual([row.stage_live_en,row.stage_live_fr],original[stage],entry.id+" "+stage+" EN/FR text drift");
