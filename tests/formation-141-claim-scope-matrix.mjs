@@ -2,6 +2,16 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 const read = path => JSON.parse(readFileSync(path, "utf8"));
 const report = read("data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json");
+const currentAudit=read("data/reference/formation-current-source-reconciliation.v2.json").historical_claim_scope_matrix_reconciliation;
+assert.equal(currentAudit.status,"VERSIONED_ONLY_NOT_REISSUED_PAST_CERTIFICATIONS");
+assert.equal(currentAudit.changed_roles.length,31);
+assert.equal(currentAudit.scope.prior_six_amendments_still_match,55);
+assert.equal(currentAudit.scope.prior_amendments_explicitly_superseded,8);
+assert.equal(currentAudit.scope.new_owner_role_count_changes,23);
+const rescopedRoles=new Map(currentAudit.changed_roles.map(x=>[x.owner+"|"+x.role,x]));
+assert.equal(rescopedRoles.size,31);
+const seenRescoped=new Set();
+let stillValidHistoricalAmendments=0;
 const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
 const a2=read("data/learn/formation-a2-20261010-source-role-amendment.v1.json");
 const priority=read("data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
@@ -60,11 +70,32 @@ for (const {path,data} of packs) {
       const expected = findingsByRole.get(actual.id+"|"+role.role) || [];
       assert.equal(role.role, s.role);
       const amendment=a1Changed.get(actual.id+"|"+role.role);
-      if(amendment){
-        assert.equal(s.source_id_count,amendment.previous_source_count,"dated source snapshot must not be rewritten");
-        assert.deepEqual(role.source_ids,amendment.current_source_ids,"A1 source change not justified");
+      const correction=rescopedRoles.get(actual.id+"|"+role.role);
+      if(correction){
+        seenRescoped.add(actual.id+"|"+role.role);
+        assert.equal(correction.historical_source_count,s.source_id_count,
+          "historical matrix must remain dated");
+        assert.equal(correction.current_source_count,role.source_ids.length,
+          "corrected citation count changed without new provenance");
+        assert.deepEqual(correction.current_source_ids,role.source_ids,
+          "corrected role source identities changed");
+        assert.equal(correction.new_claims_certified,0,
+          "reconciling a source identity is not certifying a claim");
+        if(amendment){
+          assert.equal(correction.disposition,"PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER");
+          assert.equal(correction.prior_amendment.amended_source_count,amendment.current_source_count);
+          assert.deepEqual(correction.prior_amendment.amended_source_ids,amendment.current_source_ids);
+        }else assert.equal(correction.disposition,
+          "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS");
+      }else if(amendment){
+        assert.equal(s.source_id_count,amendment.previous_source_count,
+          "dated source snapshot cannot be rewritten");
+        assert.deepEqual(role.source_ids,amendment.current_source_ids,
+          "earlier amendment changed without rescope record");
         assert.equal(role.source_ids.length,amendment.current_source_count);
-      }else assert.equal(s.source_id_count, role.source_ids.length);
+        stillValidHistoricalAmendments++;
+      }else assert.equal(s.source_id_count,role.source_ids.length,
+        actual.id+"|"+role.role+" changed source count without explicit disposition");
       assert.deepEqual(s.bounded_findings,expected,actual.id+":"+s.role+" review ledger mismatch");
       const missing = role.source_ids.filter(id=>!sources.has(id));
       assert.deepEqual(s.unresolved_source_ids,missing,actual.id+":"+s.role+" source registry mismatch");
@@ -85,6 +116,8 @@ for (const {path,data} of packs) {
     if (reviewedCount) ownersWithReview++;
   }
 }
+assert.equal(seenRescoped.size,31,"All 31 versioned changes must correspond to a live role");
+assert.equal(stillValidHistoricalAmendments,55,"All non-superseded amendment records must be preserved");
 const expectedMetrics = {
   canonical_dossiers:byId.size,
   substantive_sections: sections,

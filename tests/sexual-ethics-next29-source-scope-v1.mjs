@@ -26,7 +26,9 @@ for(const row of audit.cases){
  assert.equal(row.independent_human_theological_approval,false);
  assert.equal(row.independent_human_french_approval,false);
  assert.equal(row.whole_case_claim_by_claim_certified,false);
- assert.deepEqual(frozen.source_ids,live.refs.map(r=>r[0]),row.id+" changed sources without updating 150-question snapshot");
+ const current=live.refs.map(r=>r[0]);
+ assert.deepEqual(frozen.source_ids,row.id==="CSE068"?current.filter(id=>id!=="QUAEC"):current,row.id+" must retain original sources");
+ if(row.id==="CSE068")assert.ok(current.includes("QUAEC"),"Documented additional 1975 CDF source");
  assert.ok(row.source_passages.length>0,row.id+" no primary source");
  for(const source of row.source_passages){
    const known=CSE_SOURCE_MAP[source.source_id];

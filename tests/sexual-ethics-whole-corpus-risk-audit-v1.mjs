@@ -50,7 +50,10 @@ for(const [index,row] of audit.cases.entries()){
  assert.equal(row.canonical_owner,CSE_QUESTION_OWNER_MAP[row.id]);
  assert.equal(row.public,!archived.has(row.id));
  assert.equal(row.en_fr_question_and_answer_present,Boolean(item.q?.[0]&&item.q[1]&&item.a?.[0]&&item.a[1]));
- assert.deepEqual(row.source_ids,item.refs.map(r=>r[0]));
+ const currentSourceIds=item.refs.map(r=>r[0]);
+ assert.deepEqual(row.source_ids,row.id==="CSE068"?currentSourceIds.filter(id=>id!=="QUAEC"):currentSourceIds,
+   "Historical source declarations must be retained for "+row.id);
+ if(row.id==="CSE068")assert.ok(currentSourceIds.includes("QUAEC"),"New original CDF source should be appended");
  for(const id of row.source_ids)assert.ok(CSE_SOURCE_MAP[id],row.id+" has an unregistered citation "+id);
  assert.equal(row.kind,knownDebates.has(row.id)?"PRINCIPAL_EIGHT_STAGE_DEBATE":"SHORT_STANDARD_OR_EXPANDED");
  assert.equal(row.full_claim_by_claim_certified,false,"Do not fabricate full claim certification");

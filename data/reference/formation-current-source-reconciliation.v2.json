@@ -1,0 +1,3839 @@
+{
+  "schema": "AO_FORMATION_CURRENT_SOURCE_RECONCILIATION_V2",
+  "date": "2026-10-15",
+  "status": "CURRENT_CORRECTED_DRAFT_STRUCTURE__HISTORICAL_VERDICTS_RETAINED__NO_NEW_CLAIM_VERIFICATION",
+  "baseline": {
+    "source_index": "data/reference/formation-canonical-source-crosswalk.v1.json",
+    "evidence_ledger": "data/reference/formation-evidence-relationship-ledger.v1.json",
+    "prior_screen": "data/reference/formation-prior-audit-reconciliation.v1.json",
+    "historical_source_bindings": 408,
+    "historical_scoped_screen_sections": 332,
+    "historical_edges": 1541,
+    "untouched_original_baseline": true
+  },
+  "source_files": [
+    {
+      "scope": "FORM-SYN-01",
+      "path": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "dossiers": 10,
+      "sources_before": 32,
+      "sources_now": 47,
+      "source_ids_added": 15,
+      "evidence_edges_now": 94
+    },
+    {
+      "scope": "FORM-SYN-02",
+      "path": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "dossiers": 20,
+      "sources_before": 68,
+      "sources_now": 89,
+      "source_ids_added": 21,
+      "evidence_edges_now": 199
+    },
+    {
+      "scope": "FORM-SYN-03",
+      "path": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "dossiers": 23,
+      "sources_before": 84,
+      "sources_now": 116,
+      "source_ids_added": 32,
+      "evidence_edges_now": 269
+    },
+    {
+      "scope": "FORM-SYN-04",
+      "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+      "dossiers": 20,
+      "sources_before": 46,
+      "sources_now": 55,
+      "source_ids_added": 9,
+      "evidence_edges_now": 203
+    },
+    {
+      "scope": "FORM-SYN-05",
+      "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+      "dossiers": 26,
+      "sources_before": 76,
+      "sources_now": 78,
+      "source_ids_added": 2,
+      "evidence_edges_now": 286
+    },
+    {
+      "scope": "FORM-SYN-06",
+      "path": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "dossiers": 22,
+      "sources_before": 56,
+      "sources_now": 76,
+      "source_ids_added": 20,
+      "evidence_edges_now": 259
+    },
+    {
+      "scope": "FORM-SYN-07",
+      "path": "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "dossiers": 10,
+      "sources_before": 21,
+      "sources_now": 27,
+      "source_ids_added": 6,
+      "evidence_edges_now": 110
+    },
+    {
+      "scope": "FORM-SYN-08",
+      "path": "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json",
+      "dossiers": 10,
+      "sources_before": 25,
+      "sources_now": 39,
+      "source_ids_added": 14,
+      "evidence_edges_now": 109
+    }
+  ],
+  "metrics": {
+    "source_bindings": 527,
+    "url_witnesses": 332,
+    "current_evidence_edges": 1529,
+    "changed_reviewed_sections": 22,
+    "exact_reviewed_sections_retained": 310,
+    "screened_history_total": 332,
+    "unchanged_source_identity_changes": 0,
+    "missing_historical_sources": 0,
+    "original_edges_still_present": 1399,
+    "current_edges_not_in_legacy_ledger": 130,
+    "claim_locators": 347,
+    "scoped_source_bindings_added": 119,
+    "scoped_source_bindings_removed": 0,
+    "dossiers": 141,
+    "sections": 564,
+    "currently_independently_certified_new_claims": 0,
+    "published_apologetics_crisis_dossiers": 0,
+    "preexisting_primary_findings_total": 17,
+    "primary_findings_still_source_bound_to_current_role": 15,
+    "primary_findings_historical_or_superseded": 2,
+    "historical_pass4_findings": 31,
+    "historical_pass4_still_same_source_id": 24,
+    "historical_pass4_source_dispositions": 7,
+    "historical_eight_crisis_amendments": 16,
+    "historical_amendment_roles_still_same": 10,
+    "historical_amendment_role_reassignments": 6,
+    "crisis_editorial_historical_amendments": 12,
+    "crisis_editorial_role_corrections_requiring_rescope": 3,
+    "historical_preview_citation_count_changed_owners": 27,
+    "historical_preview_citation_count_unchanged_owners": 114,
+    "historical_pass5_findings": 25,
+    "historical_pass5_still_same_source_id": 22,
+    "historical_pass5_dispositions": 3,
+    "historical_cse_atomic_stage_total": 90,
+    "historical_cse_unchanged_atomic_stages_expected": 85,
+    "historical_cse_rewritten_stage_rescopes": 5,
+    "historical_pass7_total_findings": 88,
+    "historical_pass7_unchanged_source_role_links": 63,
+    "historical_pass7_prior_amendment_supersessions": 10,
+    "historical_pass7_newly_recorded_supersessions": 15,
+    "historical_pass7_existing_amendment_extensions": 1,
+    "historical_pass2_dispositions": 1,
+    "historical_pass3_dispositions": 6,
+    "historical_pass6_dispositions": 0,
+    "historical_pass8_dispositions": 4,
+    "historical_pass9_10_11_total_findings": 320,
+    "historical_pass9_10_11_still_same_source_id": 293,
+    "historical_pass9_10_11_amendment_dispositions": 4,
+    "historical_pass9_10_11_new_rescopes": 23
+  },
+  "added_source_bindings": [
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_ANSWE_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_ANSWE_1",
+      "title": "§§23–24,28–31 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§23–24,28–31",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_ANSWE_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_ANSWE_2",
+      "title": "§§23–24,28–31 French — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_fr.html",
+      "locator": "§§23–24,28–31 French",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_DOCUM_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_DOCUM_1",
+      "title": "§§24,28–30 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§24,28–30",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_DOCUM_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_DOCUM_2",
+      "title": "2018 original authored article, pp.520–542, original argument requires complete article collation — journals.sagepub.com",
+      "url": "https://journals.sagepub.com/doi/10.1177/0040563918784769",
+      "locator": "2018 original authored article, pp.520–542, original argument requires complete article collation",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_CRITI_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_CRITI_1",
+      "title": "CDF Doctrinal Commentary, three classes — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html",
+      "locator": "CDF Doctrinal Commentary, three classes",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_TRADI_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_TRADI_1",
+      "title": "§§22–31 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§22–31",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRDOC09_TRADI_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRDOC09_TRADI_2",
+      "title": "CDF Doctrinal Commentary and canon 752 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html",
+      "locator": "CDF Doctrinal Commentary and canon 752",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-09/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT04_DOCUM_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT04_DOCUM_1",
+      "title": "Papal act promulgating revised Missal — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "locator": "Papal act promulgating revised Missal",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-04/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT04_DOCUM_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT04_DOCUM_2",
+      "title": "University historian's original analysis of Consilium and 1969 rite — churchlifejournal.nd.edu",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "University historian's original analysis of Consilium and 1969 rite",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-04/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT04_CRITI_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT04_CRITI_1",
+      "title": "25 September 1969 signed letter, names authors separately — apr.sspx.org",
+      "url": "https://apr.sspx.org/en/letter-cardinal-ottaviani-pope-paul-vi-30144",
+      "locator": "25 September 1969 signed letter, names authors separately",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-04/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT04_CRITI_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT04_CRITI_2",
+      "title": "Reproduction including independent authored critique — smac.edu",
+      "url": "https://smac.edu/en/ottaviani-intervention-30257",
+      "locator": "Reproduction including independent authored critique",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-04/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT04_CRITI_3",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT04_CRITI_3",
+      "title": "Historical article, Ottaviani Intervention — churchlifejournal.nd.edu",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "Historical article, Ottaviani Intervention",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-04/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT05_DOCUM_1",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT05_DOCUM_1",
+      "title": "Cardinals' signed cover letter — apr.sspx.org",
+      "url": "https://apr.sspx.org/en/letter-cardinal-ottaviani-pope-paul-vi-30144",
+      "locator": "Cardinals' signed cover letter",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT05_DOCUM_2",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT05_DOCUM_2",
+      "title": "Short Critical Study separate authored text — smac.edu",
+      "url": "https://smac.edu/en/ottaviani-intervention-30257",
+      "locator": "Short Critical Study separate authored text",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-01::AO26_CRLIT05_DOCUM_3",
+      "scope": "FORM-SYN-01",
+      "local_id": "AO26_CRLIT05_DOCUM_3",
+      "title": "Historian on 1969 critique and subsequent 1970 clarification — churchlifejournal.nd.edu",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "Historian on 1969 critique and subsequent 1970 clarification",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_ANSWE_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_ANSWE_1",
+      "title": "Dei Filius chapter IV, faith and reason — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+      "locator": "Dei Filius chapter IV, faith and reason",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_ANSWE_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_ANSWE_2",
+      "title": "Fides et ratio introduction; §§34,43 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "Fides et ratio introduction; §§34,43",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_DOCUM_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_DOCUM_1",
+      "title": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession — www.gutenberg.org",
+      "url": "https://www.gutenberg.org/cache/epub/4583/pg4583-images.html",
+      "locator": "Dialogues parts IX–X; speakers' arguments, not a direct Hume confession",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_DOCUM_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_DOCUM_2",
+      "title": "Introduction; §§34,43 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "Introduction; §§34,43",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_CRITI_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_CRITI_1",
+      "title": "Chapter IV — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+      "locator": "Chapter IV",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_CRITI_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_CRITI_2",
+      "title": "Part IX — www.gutenberg.org",
+      "url": "https://www.gutenberg.org/cache/epub/4583/pg4583-images.html",
+      "locator": "Part IX",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_CRITI_3",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_CRITI_3",
+      "title": "§§9,34,43 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "§§9,34,43",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_TRADI_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_TRADI_2",
+      "title": "§§34,43 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html",
+      "locator": "§§34,43",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL002_TRADI_3",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL002_TRADI_3",
+      "title": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim — www.newadvent.org",
+      "url": "https://www.newadvent.org/summa/1002.htm",
+      "locator": "ST I q.2 a.2 on natural demonstration, limit to particular theological claim",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-002/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL053_ANSWE_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL053_ANSWE_1",
+      "title": "§§13–18,27–32 — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "locator": "§§13–18,27–32",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-053/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_APOL053_ANSWE_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_APOL053_ANSWE_2",
+      "title": "on two powers and public religious duty — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "locator": "on two powers and public religious duty",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-053/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRORG09_CRITI_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRORG09_CRITI_1",
+      "title": "original author research description — crhec.u-pec.fr",
+      "url": "https://crhec.u-pec.fr/publications/comment-notre-monde-a-cesse-d-etre-chretien",
+      "locator": "original author research description",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRORG09_CRITI_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRORG09_CRITI_2",
+      "title": "bounded book-review account of 1965/1968 French data — www.persee.fr",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2018_num_104_253_5072_t17_0432_0000_3",
+      "locator": "bounded book-review account of 1965/1968 French data",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_ANSWE_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_ANSWE_1",
+      "title": "Original 1962 Offertory Latin formulas — www.liturgiapapal.org",
+      "url": "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1712-ofertorio.html",
+      "locator": "Original 1962 Offertory Latin formulas",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_ANSWE_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_ANSWE_2",
+      "title": "Revised Mass and multiple Eucharistic Prayers — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "locator": "Revised Mass and multiple Eucharistic Prayers",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_ANSWE_3",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_ANSWE_3",
+      "title": "Historical liturgical reform treatment — churchlifejournal.nd.edu",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "Historical liturgical reform treatment",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_CRITI_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_CRITI_1",
+      "title": "Signed cardinals' letter — apr.sspx.org",
+      "url": "https://apr.sspx.org/en/letter-cardinal-ottaviani-pope-paul-vi-30144",
+      "locator": "Signed cardinals' letter",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_CRITI_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_CRITI_2",
+      "title": "Critique of 1969 General Instruction — smac.edu",
+      "url": "https://smac.edu/en/ottaviani-intervention-30257",
+      "locator": "Critique of 1969 General Instruction",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT07_CRITI_3",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT07_CRITI_3",
+      "title": "Historical account 1969 and 1970 changes — churchlifejournal.nd.edu",
+      "url": "https://churchlifejournal.nd.edu/articles/how-the-novus-ordo-mass-was-made/",
+      "locator": "Historical account 1969 and 1970 changes",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-07/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT08_ANSWE_1",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT08_ANSWE_1",
+      "title": "General Introduction to the Lectionary §§65–69 — origin.ewtn.com",
+      "url": "https://origin.ewtn.com/catholicism/library/general-introduction-to-the-lectionary-second-edition-28913",
+      "locator": "General Introduction to the Lectionary §§65–69",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-08/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-02::AO26_CRLIT08_ANSWE_2",
+      "scope": "FORM-SYN-02",
+      "local_id": "AO26_CRLIT08_ANSWE_2",
+      "title": "§§35,51 on Scripture and richer lectionary — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "locator": "§§35,51 on Scripture and richer lectionary",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-LIT-08/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRIDM05_ANSWE_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRIDM05_ANSWE_1",
+      "title": "§§108–115, 122–136 — www.christianunity.va",
+      "url": "https://www.christianunity.va/content/unitacristiani/en/documenti/testo-in-inglese.html",
+      "locator": "§§108–115, 122–136",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRIDM05_ANSWE_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRIDM05_ANSWE_2",
+      "title": "Index to exact numbered groups — ecumenism.net",
+      "url": "https://ecumenism.net/archive/docu/1993_dapne_index.php",
+      "locator": "Index to exact numbered groups",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRIDM05_CRITI_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRIDM05_CRITI_1",
+      "title": "§§122–136 — www.christianunity.va",
+      "url": "https://www.christianunity.va/content/unitacristiani/en/documenti/testo-in-inglese.html",
+      "locator": "§§122–136",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-05/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_ANSWE_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_ANSWE_1",
+      "title": "first-person Cassiciacum interview — www.sodalitium.eu",
+      "url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+      "locator": "first-person Cassiciacum interview",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_ANSWE_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_ANSWE_2",
+      "title": "FAQ on alternative electoral assembly and 1990 claimed election — www.vie-official.org",
+      "url": "https://www.vie-official.org/faq/",
+      "locator": "FAQ on alternative electoral assembly and 1990 claimed election",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_ANSWE_3",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_ANSWE_3",
+      "title": "chapters II–III on public Petrine succession — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "locator": "chapters II–III on public Petrine succession",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_DOCUM_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_DOCUM_1",
+      "title": "material/formal distinction and authority objection — www.sodalitium.eu",
+      "url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+      "locator": "material/formal distinction and authority objection",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_DOCUM_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_DOCUM_2",
+      "title": "first-person group FAQ, 'valid Pope' and 1990 election — www.vie-official.org",
+      "url": "https://www.vie-official.org/faq/",
+      "locator": "first-person group FAQ, 'valid Pope' and 1990 election",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_DOCUM_3",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_DOCUM_3",
+      "title": "original former participant account and subsequent renunciation — www.betrayedcatholics.com",
+      "url": "https://www.betrayedcatholics.com/i-was-an-elector-in-a-conclavist-election-attempt/",
+      "locator": "original former participant account and subsequent renunciation",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_CRITI_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_CRITI_1",
+      "title": "chapters II–III — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "locator": "chapters II–III",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_CRITI_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_CRITI_2",
+      "title": "§§10–13 — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html",
+      "locator": "§§10–13",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_CRITI_3",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_CRITI_3",
+      "title": "FAQ actual opposing theory — www.vie-official.org",
+      "url": "https://www.vie-official.org/faq/",
+      "locator": "FAQ actual opposing theory",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_CRITI_4",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_CRITI_4",
+      "title": "Cassiciacum proposal — www.sodalitium.eu",
+      "url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+      "locator": "Cassiciacum proposal",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC09_TRADI_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC09_TRADI_2",
+      "title": "visible unity and succession — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_29061896_satis-cognitum.html",
+      "locator": "visible unity and succession",
+      "role": "PR1198/formation-cr-ecc09-sedeprivationism-conclavism-overlay-20261014.v1.json/CR-ECC-09/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRORG05_ANSWE_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRORG05_ANSWE_1",
+      "title": "Original UPEC author/academic description of 2018 book — crhec.u-pec.fr",
+      "url": "https://crhec.u-pec.fr/publications/comment-notre-monde-a-cesse-d-etre-chretien",
+      "locator": "Original UPEC author/academic description of 2018 book",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRORG05_ANSWE_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRORG05_ANSWE_2",
+      "title": "2018 detailed historian's review pp.432–434 — www.persee.fr",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2018_num_104_253_5072_t17_0432_0000_3",
+      "locator": "2018 detailed historian's review pp.432–434",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRORG05_DOCUM_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRORG05_DOCUM_1",
+      "title": "UPEC publication synopsis — crhec.u-pec.fr",
+      "url": "https://crhec.u-pec.fr/publications/comment-notre-monde-a-cesse-d-etre-chretien",
+      "locator": "UPEC publication synopsis",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRORG05_DOCUM_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRORG05_DOCUM_2",
+      "title": "2018 Revue d'histoire de l'Église de France book review — www.persee.fr",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2018_num_104_253_5072_t17_0432_0000_3",
+      "locator": "2018 Revue d'histoire de l'Église de France book review",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ORG-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC12_ANSWE_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC12_ANSWE_1",
+      "title": "24 November 2024 accompanying note, paragraphs 1–4 — press.vatican.va",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/11/25/241125k.html",
+      "locator": "24 November 2024 accompanying note, paragraphs 1–4",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-12/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC12_ANSWE_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC12_ANSWE_2",
+      "title": "art.18 §1 — www.vatican.va",
+      "url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20180915_episcopalis-communio.html",
+      "locator": "art.18 §1",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-12/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC12_CRITI_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC12_CRITI_1",
+      "title": "2024 explicit dual qualification — press.vatican.va",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/11/25/241125k.html",
+      "locator": "2024 explicit dual qualification",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-12/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRECC12_CRITI_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRECC12_CRITI_2",
+      "title": "§22 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "locator": "Lumen gentium §22, episcopal college and primacy",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-12/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_ANSWE_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_ANSWE_1",
+      "title": "§§2–3,8,11 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_christus-dominus_en.html",
+      "locator": "§§2–3,8,11",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_ANSWE_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_ANSWE_2",
+      "title": "§§21–23,36 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "locator": "§§21–23,36",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_ANSWE_3",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_ANSWE_3",
+      "title": "1969 promulgation — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "locator": "1969 promulgation",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_DOCUM_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_DOCUM_1",
+      "title": "§§21–23 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "locator": "§§21–23",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_DOCUM_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_DOCUM_2",
+      "title": "3 April 1969; effective 30 Nov 1969 — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "locator": "3 April 1969; effective 30 Nov 1969",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_DOCUM_3",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_DOCUM_3",
+      "title": "§§8,11 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_christus-dominus_en.html",
+      "locator": "§§8,11",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_DOCUM_4",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_DOCUM_4",
+      "title": "Part II — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19660806_ecclesiae-sanctae.html",
+      "locator": "Part II",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_CRITI_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_CRITI_1",
+      "title": "legal promulgation — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "locator": "legal promulgation",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV01_TRADI_2",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV01_TRADI_2",
+      "title": "§§22–23 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "locator": "§§22–23",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-01/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-03::AO26_CRGOV06_DOCUM_1",
+      "scope": "FORM-SYN-03",
+      "local_id": "AO26_CRGOV06_DOCUM_1",
+      "title": "§§4,7–9,169–183 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html",
+      "locator": "§§4,7–9,169–183",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-06/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL001_DOCUM_1",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL001_DOCUM_1",
+      "title": "Parts II, IX, X — www.gutenberg.org",
+      "url": "https://www.gutenberg.org/cache/epub/4583/pg4583-images.html",
+      "locator": "Parts II, IX, X",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-001/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL001_DOCUM_2",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL001_DOCUM_2",
+      "title": "I q.2 a.3 five ways — www.newadvent.org",
+      "url": "https://www.newadvent.org/summa/1002.htm",
+      "locator": "I q.2 a.3 five ways",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-001/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL007_DOCUM_1",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL007_DOCUM_1",
+      "title": "Antiquities XX.9.1 / 20.200; original account in Whiston translation hosted by Tufts — www.perseus.tufts.edu",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=J.+AJ+20.9.1",
+      "locator": "Antiquities XX.9.1 / 20.200; original account in Whiston translation hosted by Tufts",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-007/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL007_DOCUM_2",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL007_DOCUM_2",
+      "title": "§§18–19 canonical Gospel historical authorship and literary form — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+      "locator": "§§18–19 canonical Gospel historical authorship and literary form",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-007/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL009_DOCUM_1",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL009_DOCUM_1",
+      "title": "2013 original blog essay, historian's methodological argument — ehrmanblog.org",
+      "url": "https://ehrmanblog.org/why-historians-can-talk-about-the-resurrection/",
+      "locator": "2013 original blog essay, historian's methodological argument",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-009/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL009_DOCUM_2",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL009_DOCUM_2",
+      "title": "June 2 2026 original author-hosted discussion, dated — www.bartehrman.com",
+      "url": "https://www.bartehrman.com/why-no-one-can-prove-the-resurrection/",
+      "locator": "June 2 2026 original author-hosted discussion, dated",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-009/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL009_CRITI_1",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL009_CRITI_1",
+      "title": "original historiographical method distinction — ehrmanblog.org",
+      "url": "https://ehrmanblog.org/why-historians-can-talk-about-the-resurrection/",
+      "locator": "original historiographical method distinction",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-009/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL009_CRITI_2",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL009_CRITI_2",
+      "title": "original 2026 analysis — www.bartehrman.com",
+      "url": "https://www.bartehrman.com/why-no-one-can-prove-the-resurrection/",
+      "locator": "original 2026 analysis",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-009/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-04::AO26_APOL009_CRITI_3",
+      "scope": "FORM-SYN-04",
+      "local_id": "AO26_APOL009_CRITI_3",
+      "title": "1 Corinthians 15:3–8, 12–19 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_epist-i-corinthios_lt.html",
+      "locator": "1 Corinthians 15:3–8, 12–19",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-009/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-05::AO26_APOL058_DOCUM_1",
+      "scope": "FORM-SYN-05",
+      "local_id": "AO26_APOL058_DOCUM_1",
+      "title": "Paul III 1537 original papal text, translation — www.papalencyclicals.net",
+      "url": "https://www.papalencyclicals.net/paul03/p3subli.htm",
+      "locator": "Paul III 1537 original papal text, translation",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-058/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-05::AO26_APOL058_DOCUM_2",
+      "scope": "FORM-SYN-05",
+      "local_id": "AO26_APOL058_DOCUM_2",
+      "title": "Joint Vatican statement 30 March 2023 §§5–8 — press.vatican.va",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/03/30/230330b.html",
+      "locator": "Joint Vatican statement 30 March 2023 §§5–8",
+      "role": "PR1198/formation-apologetics-six-owner-corrections-20261014.v1.json/APOL-058/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_ANSWE_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_ANSWE_1",
+      "title": "§§15–18 — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "locator": "§§15–18",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_ANSWE_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_ANSWE_2",
+      "title": "§§4–6,33–36 — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "locator": "§§4–6,33–36",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_DOCUM_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_DOCUM_1",
+      "title": "§§17–19 — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "locator": "§§17–19",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_DOCUM_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_DOCUM_2",
+      "title": "§36 — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "locator": "§36",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_DOCUM_3",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_DOCUM_3",
+      "title": "§§1–2,6 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "locator": "§§1–2,6",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_CRITI_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_CRITI_1",
+      "title": "§§33–36 — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "locator": "§§33–36",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_CRITI_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_CRITI_2",
+      "title": "§§1–2 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "locator": "§§1–2",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_TRADI_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_TRADI_1",
+      "title": "§§14–18 — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+      "locator": "§§14–18",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRDOC05_TRADI_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRDOC05_TRADI_2",
+      "title": "§§4–6,11,33–36 — www.vatican.va",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "locator": "§§4–6,11,33–36",
+      "role": "PR1198/formation-cr-doc05-doc09-owner-correction-20261014.v1.json/CR-DOC-05/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRECC11_CRITI_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRECC11_CRITI_1",
+      "title": "§22 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "locator": "§22",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-11/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRECC11_CRITI_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRECC11_CRITI_2",
+      "title": "Francis 2024 accompanying note — press.vatican.va",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/11/25/241125k.html",
+      "locator": "Francis 2024 accompanying note",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-11/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRECC11_CRITI_3",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRECC11_CRITI_3",
+      "title": "articles 17–18 — www.vatican.va",
+      "url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20180915_episcopalis-communio.html",
+      "locator": "articles 17–18",
+      "role": "PR1198/formation-final-23-crisis-owner-corrections-20261014.v1.json/CR-ECC-11/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_ANSWE_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_ANSWE_1",
+      "title": "§§23–31 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§23–31",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_ANSWE_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_ANSWE_2",
+      "title": "canon 212 §§1–3 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+      "locator": "canon 212 §§1–3",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_DOCUM_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_DOCUM_1",
+      "title": "Curran signed public original, October 16 1986; exact opinion, not official view — www.latimes.com",
+      "url": "https://www.latimes.com/archives/la-xpm-1986-10-16-me-5584-story.html",
+      "locator": "Curran signed public original, October 16 1986; exact opinion, not official view",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_DOCUM_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_DOCUM_2",
+      "title": "§§24,28–31 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§24,28–31",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_CRITI_2",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_CRITI_2",
+      "title": "canon 212 §§2–3 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+      "locator": "canon 212 §§2–3",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_CRITI_3",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_CRITI_3",
+      "title": "CDF 1998 three levels of assent — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html",
+      "locator": "CDF 1998 three levels of assent",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_TRADI_1",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_TRADI_1",
+      "title": "II–II q.104 a.5 — www.newadvent.org",
+      "url": "https://www.newadvent.org/summa/3104.htm",
+      "locator": "II–II q.104 a.5",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-06::AO26_CRAUT05_TRADI_3",
+      "scope": "FORM-SYN-06",
+      "local_id": "AO26_CRAUT05_TRADI_3",
+      "title": "§§28–31 — www.vatican.va",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+      "locator": "§§28–31",
+      "role": "PR1198/formation-cr-aut05-practical-response-overlay-20261014.v1.json/CR-AUT-05/traditional_catholic_argument",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR01_ANSWE_1",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR01_ANSWE_1",
+      "title": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale » — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+      "locator": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale »",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-01/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR01_ANSWE_2",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR01_ANSWE_2",
+      "title": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only — academic.oup.com",
+      "url": "https://academic.oup.com/book/50107/chapter-abstract/422700434",
+      "locator": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-01/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR01_DOCUM_1",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR01_DOCUM_1",
+      "title": "1952 address, « La morale de situation » — www.vatican.va",
+      "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+      "locator": "1952 address, « La morale de situation »",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR01_DOCUM_2",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR01_DOCUM_2",
+      "title": "scholarly book abstract, preconciliar historical attribution, full text not accessed — academic.oup.com",
+      "url": "https://academic.oup.com/book/50107/chapter-abstract/422700434",
+      "locator": "scholarly book abstract, preconciliar historical attribution, full text not accessed",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-01/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR06_ANSWE_1",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR06_ANSWE_1",
+      "title": "§17 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "locator": "§17",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-06/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-07::AO26_CRMOR06_ANSWE_2",
+      "scope": "FORM-SYN-07",
+      "local_id": "AO26_CRMOR06_ANSWE_2",
+      "title": "§§65–70 — www.vatican.va",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "locator": "§§65–70",
+      "role": "PR1198/formation-33-marriage-moral-editorial-overlays-20261014.v1.json/CR-MOR-06/answer",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRIDM06_DOCUM_1",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRIDM06_DOCUM_1",
+      "title": "11 January 2023 General Audience — www.vatican.va",
+      "url": "https://www.vatican.va/content/francesco/en/audiences/2023/documents/20230111-udienza-generale.html",
+      "locator": "11 January 2023 General Audience",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-06/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRIDM06_DOCUM_2",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRIDM06_DOCUM_2",
+      "title": "§22 — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19751208_evangelii-nuntiandi.html",
+      "locator": "§22",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-06/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRIDM06_DOCUM_3",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRIDM06_DOCUM_3",
+      "title": "§§13–14 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_ad-gentes_en.html",
+      "locator": "§§13–14",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-06/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRIDM06_CRITI_2",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRIDM06_CRITI_2",
+      "title": "11 January 2023 — www.vatican.va",
+      "url": "https://www.vatican.va/content/francesco/en/audiences/2023/documents/20230111-udienza-generale.html",
+      "locator": "11 January 2023",
+      "role": "PR1198/formation-35-marriage-mission-editorial-overlays-20261014.v1.json/CR-IDM-06/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV02_DOCUM_1",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV02_DOCUM_1",
+      "title": "US clergy, 1965 and 2025 columns — cara.georgetown.edu",
+      "url": "https://cara.georgetown.edu/testing-page",
+      "locator": "US clergy, 1965 and 2025 columns",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-02/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV02_DOCUM_2",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV02_DOCUM_2",
+      "title": "CARA methodology — cara.georgetown.edu",
+      "url": "https://cara.georgetown.edu/faqs",
+      "locator": "CARA methodology",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-02/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV02_DOCUM_3",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV02_DOCUM_3",
+      "title": "§§4–10,15–18 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_optatam-totius_en.html",
+      "locator": "§§4–10,15–18",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-02/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV03_DOCUM_1",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV03_DOCUM_1",
+      "title": "US religious sisters/brothers 1965 and 2025 columns — cara.georgetown.edu",
+      "url": "https://cara.georgetown.edu/testing-page",
+      "locator": "US religious sisters/brothers 1965 and 2025 columns",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-03/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV03_DOCUM_2",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV03_DOCUM_2",
+      "title": "CARA scope — cara.georgetown.edu",
+      "url": "https://cara.georgetown.edu/faqs",
+      "locator": "CARA scope",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-03/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV03_DOCUM_3",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV03_DOCUM_3",
+      "title": "§2 — www.vatican.va",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_perfectae-caritatis_en.html",
+      "locator": "§2",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-03/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV03_DOCUM_4",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV03_DOCUM_4",
+      "title": "Part II — www.vatican.va",
+      "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19660806_ecclesiae-sanctae.html",
+      "locator": "Part II",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-03/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV09_DOCUM_1",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV09_DOCUM_1",
+      "title": "Council of Europe, 28 May 2024 rating summary — www.coe.int",
+      "url": "https://www.coe.int/en/web/moneyval/-/the-holy-see-including-vatican-city-state-improved-anti-money-laundering-and-combating-the-financing-of-terrorism-measures-with-respect-to-banking-and-legal-persons",
+      "locator": "Council of Europe, 28 May 2024 rating summary",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV09_DOCUM_2",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV09_DOCUM_2",
+      "title": "May 2024 follow-up report entry — www.coe.int",
+      "url": "https://www.coe.int/en/web/moneyval/jurisdictions/holy_see",
+      "locator": "May 2024 follow-up report entry",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-09/documented_position",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    },
+    {
+      "key": "FORM-SYN-08::AO26_CRGOV09_CRITI_1",
+      "scope": "FORM-SYN-08",
+      "local_id": "AO26_CRGOV09_CRITI_1",
+      "title": "rating of three standards and 35/39 totals — www.coe.int",
+      "url": "https://www.coe.int/en/web/moneyval/-/the-holy-see-including-vatican-city-state-improved-anti-money-laundering-and-combating-the-financing-of-terrorism-measures-with-respect-to-banking-and-legal-persons",
+      "locator": "rating of three standards and 35/39 totals",
+      "role": "PR1198/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json/CR-GOV-09/critical_response",
+      "original_passage_status": null,
+      "original_context_approved": false,
+      "scope_status": "ADDED_IN_EXISTING_CORRECTION_PR__NOT_NEWLY_VERIFIED"
+    }
+  ],
+  "old_identity_changes": [],
+  "missing_historical_bindings": [],
+  "changed_previous_screened_sections": [
+    {
+      "owner": "CR-LIT-04",
+      "role": "documented_position",
+      "scope": "FORM-SYN-01",
+      "section_key": "FORM-SYN-01::CR-LIT-04::01",
+      "previous_fingerprint": "2992b2a6",
+      "current_fingerprint": "750c4302",
+      "old_source_ids": [
+        "JLG1966",
+        "MR69"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT04_DOCUM_1",
+        "AO26_CRLIT04_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-LIT-04",
+      "role": "critical_response",
+      "scope": "FORM-SYN-01",
+      "section_key": "FORM-SYN-01::CR-LIT-04::02",
+      "previous_fingerprint": "e8584d07",
+      "current_fingerprint": "c87bc043",
+      "old_source_ids": [
+        "NOT67",
+        "MR69"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT04_CRITI_1",
+        "AO26_CRLIT04_CRITI_2",
+        "AO26_CRLIT04_CRITI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "scope": "FORM-SYN-01",
+      "section_key": "FORM-SYN-01::CR-LIT-05::01",
+      "previous_fingerprint": "b1cdbc07",
+      "current_fingerprint": "1c7da26e",
+      "old_source_ids": [
+        "BEN07",
+        "TC21",
+        "FR21",
+        "OTT69-CR"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-002",
+      "role": "answer",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::APOL-002::00",
+      "previous_fingerprint": "65023025",
+      "current_fingerprint": "8c23c1b0",
+      "old_source_ids": [
+        "HG1950",
+        "DA1943"
+      ],
+      "new_source_ids": [
+        "AO26_APOL002_ANSWE_1",
+        "AO26_APOL002_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-002",
+      "role": "documented_position",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::APOL-002::01",
+      "previous_fingerprint": "41c9de18",
+      "current_fingerprint": "649ec4dc",
+      "old_source_ids": [
+        "BIOLOGOS2014",
+        "HG1950"
+      ],
+      "new_source_ids": [
+        "AO26_APOL002_DOCUM_1",
+        "AO26_APOL002_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-002",
+      "role": "critical_response",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::APOL-002::02",
+      "previous_fingerprint": "99effd46",
+      "current_fingerprint": "96ba01f9",
+      "old_source_ids": [
+        "HG1950",
+        "BIOLOGOS2014"
+      ],
+      "new_source_ids": [
+        "AO26_APOL002_CRITI_1",
+        "AO26_APOL002_CRITI_2",
+        "AO26_APOL002_CRITI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-002",
+      "role": "traditional_catholic_argument",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::APOL-002::03",
+      "previous_fingerprint": "8503481c",
+      "current_fingerprint": "93fd16e8",
+      "old_source_ids": [
+        "HG1950",
+        "DA1943"
+      ],
+      "new_source_ids": [
+        "AO26_APOL002_CRITI_1",
+        "AO26_APOL002_TRADI_2",
+        "AO26_APOL002_TRADI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-053",
+      "role": "answer",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::APOL-053::00",
+      "previous_fingerprint": "bb238ed8",
+      "current_fingerprint": "7c57aa3c",
+      "old_source_ids": [
+        "IMM1885",
+        "WAR2309"
+      ],
+      "new_source_ids": [
+        "AO26_APOL053_ANSWE_1",
+        "AO26_APOL053_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ORG-09",
+      "role": "critical_response",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::CR-ORG-09::02",
+      "previous_fingerprint": "24015916",
+      "current_fingerprint": "a3b43d20",
+      "old_source_ids": [
+        "BERTH22",
+        "CUCHET"
+      ],
+      "new_source_ids": [
+        "AO26_CRORG09_CRITI_1",
+        "AO26_CRORG09_CRITI_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-LIT-07",
+      "role": "answer",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::CR-LIT-07::00",
+      "previous_fingerprint": "41df230b",
+      "current_fingerprint": "6a9a9d12",
+      "old_source_ids": [
+        "JOHNXIII1962",
+        "MR69",
+        "MD47"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT07_ANSWE_1",
+        "AO26_CRLIT07_ANSWE_2",
+        "AO26_CRLIT07_ANSWE_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-LIT-07",
+      "role": "critical_response",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::CR-LIT-07::02",
+      "previous_fingerprint": "baf5a197",
+      "current_fingerprint": "82772a4c",
+      "old_source_ids": [
+        "IGMR69_ORIGINAL",
+        "GIRM75",
+        "MR69"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT07_CRITI_1",
+        "AO26_CRLIT07_CRITI_2",
+        "AO26_CRLIT07_CRITI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-LIT-08",
+      "role": "answer",
+      "scope": "FORM-SYN-02",
+      "section_key": "FORM-SYN-02::CR-LIT-08::00",
+      "previous_fingerprint": "130d19ca",
+      "current_fingerprint": "de44cf1d",
+      "old_source_ids": [
+        "SC63",
+        "LEC81"
+      ],
+      "new_source_ids": [
+        "AO26_CRLIT08_ANSWE_1",
+        "AO26_CRLIT08_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ORG-05",
+      "role": "answer",
+      "scope": "FORM-SYN-03",
+      "section_key": "FORM-SYN-03::CR-ORG-05::00",
+      "previous_fingerprint": "6ce38a81",
+      "current_fingerprint": "1bafbbd4",
+      "old_source_ids": [
+        "CUCHET",
+        "BERTH22",
+        "CUCHET26"
+      ],
+      "new_source_ids": [
+        "AO26_CRORG05_ANSWE_1",
+        "AO26_CRORG05_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ORG-05",
+      "role": "documented_position",
+      "scope": "FORM-SYN-03",
+      "section_key": "FORM-SYN-03::CR-ORG-05::01",
+      "previous_fingerprint": "d49ad666",
+      "current_fingerprint": "48e4ec39",
+      "old_source_ids": [
+        "CUCHET",
+        "BERTH22"
+      ],
+      "new_source_ids": [
+        "AO26_CRORG05_DOCUM_1",
+        "AO26_CRORG05_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ECC-12",
+      "role": "answer",
+      "scope": "FORM-SYN-03",
+      "section_key": "FORM-SYN-03::CR-ECC-12::00",
+      "previous_fingerprint": "a508815a",
+      "current_fingerprint": "7e131cd8",
+      "old_source_ids": [
+        "EPICOM18",
+        "SYN2018"
+      ],
+      "new_source_ids": [
+        "AO26_CRECC12_ANSWE_1",
+        "AO26_CRECC12_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ECC-12",
+      "role": "critical_response",
+      "scope": "FORM-SYN-03",
+      "section_key": "FORM-SYN-03::CR-ECC-12::02",
+      "previous_fingerprint": "aa863f3c",
+      "current_fingerprint": "621dce78",
+      "old_source_ids": [
+        "SYN2023-DUBIA-DIRECT",
+        "EPICOM18",
+        "SYN2018",
+        "V1"
+      ],
+      "new_source_ids": [
+        "AO26_CRECC12_CRITI_1",
+        "AO26_CRECC12_CRITI_2",
+        "AO26_CRECC12_ANSWE_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-001",
+      "role": "documented_position",
+      "scope": "FORM-SYN-04",
+      "section_key": "FORM-SYN-04::APOL-001::01",
+      "previous_fingerprint": "a2e42bc1",
+      "current_fingerprint": "9ced9b40",
+      "old_source_ids": [
+        "WCF",
+        "CCC-GOD"
+      ],
+      "new_source_ids": [
+        "AO26_APOL001_DOCUM_1",
+        "AO26_APOL001_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-007",
+      "role": "documented_position",
+      "scope": "FORM-SYN-04",
+      "section_key": "FORM-SYN-04::APOL-007::01",
+      "previous_fingerprint": "0a3c8c78",
+      "current_fingerprint": "e2938da4",
+      "old_source_ids": [
+        "BIBLE-COR",
+        "BIBLE-MT28",
+        "DEIV"
+      ],
+      "new_source_ids": [
+        "AO26_APOL007_DOCUM_1",
+        "AO26_APOL007_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-009",
+      "role": "documented_position",
+      "scope": "FORM-SYN-04",
+      "section_key": "FORM-SYN-04::APOL-009::01",
+      "previous_fingerprint": "bf167a85",
+      "current_fingerprint": "4a5178a4",
+      "old_source_ids": [
+        "BIBLE-MT28",
+        "BIBLE-COR"
+      ],
+      "new_source_ids": [
+        "AO26_APOL009_DOCUM_1",
+        "AO26_APOL009_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-009",
+      "role": "critical_response",
+      "scope": "FORM-SYN-04",
+      "section_key": "FORM-SYN-04::APOL-009::02",
+      "previous_fingerprint": "d8eb1afb",
+      "current_fingerprint": "f44dfdc7",
+      "old_source_ids": [
+        "CCC-RES",
+        "BIBLE-COR"
+      ],
+      "new_source_ids": [
+        "AO26_APOL009_CRITI_1",
+        "AO26_APOL009_CRITI_2",
+        "AO26_APOL009_CRITI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "APOL-058",
+      "role": "documented_position",
+      "scope": "FORM-SYN-05",
+      "section_key": "FORM-SYN-05::APOL-058::01",
+      "previous_fingerprint": "abd32b25",
+      "current_fingerprint": "2b78fcb1",
+      "old_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP"
+      ],
+      "new_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP",
+        "AO26_APOL058_DOCUM_1",
+        "AO26_APOL058_DOCUM_2"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    },
+    {
+      "owner": "CR-ECC-11",
+      "role": "critical_response",
+      "scope": "FORM-SYN-06",
+      "section_key": "FORM-SYN-06::CR-ECC-11::02",
+      "previous_fingerprint": "c88d7fdb",
+      "current_fingerprint": "77dd0f94",
+      "old_source_ids": [
+        "SYN2018",
+        "LG64",
+        "ES66"
+      ],
+      "new_source_ids": [
+        "AO26_CRECC11_CRITI_1",
+        "AO26_CRECC11_CRITI_2",
+        "AO26_CRECC11_CRITI_3"
+      ],
+      "previous_assessment": "PRESERVED_AS_HISTORICAL_EDITORIAL_SCREEN_ONLY",
+      "current_assessment": "ALTERED_ROLE_REQUIRES_SCOPED_EDITORIAL_RECONCILIATION_NOT_WHOLE_CORPUS_RECHECK"
+    }
+  ],
+  "policy": [
+    "Baseline index and eight historical manual checks are prior-version evidence, not a statement that updated argument text is certified.",
+    "Exact previously screened wording and source ID combinations may reuse the previously recorded editorial screen; changed roles are explicitly superseded without alleging that no previous work was done.",
+    "Do not automatically transfer historical source-to-claim verdicts from superseded roles; preserve their original record and source URL as historical audit evidence.",
+    "Added registry sources are existing correction references, not new independently verified claims; keep approval flags unchanged.",
+    "The document is solely structural provenance reconciliation: it does not independently assess the accuracy of corrected Q&A arguments.",
+    "A retained original-opponent source inspected in an older role cannot be transferred to a newly rewritten magisterial position; retain original findings PSV1-002 and PSV1-016 as historical.",
+    "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim.",
+    "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim.",
+    "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications.",
+    "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046.",
+    "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files.",
+    "Previously superseded finding PSV7-045 retains its existing 2015/2022 survivor-source replacement, with two additional 2026 correction pointers separately versioned; the historical original-source check does not certify those additions.",
+    "Earlier Pass 2, 3, 6 and 8 bounded original-source findings remain frozen: 124 historical findings, 11 source-role relationships changed by later corrections, 113 original IDs still cited in the same role. No old finding certifies replacement prose.",
+    "Historical Passes 9–11 contain 320 bounded findings, of which 293 retain their exact old source-in-role link, 4 have existing amendment dispositions and 23 now have explicit new historical source-role dispositions. None is certified onto replacement text."
+  ],
+  "historical_bounded_primary_findings_superseded": [
+    {
+      "finding_id": "PSV1-002",
+      "owner": "CR-DOC-05",
+      "role": "documented_position",
+      "historic_source_id": "RLFSSPX",
+      "historic_source_url": "https://fsspx.org/en/religious-liberty-30946",
+      "current_source_ids": [
+        "AO26_CRDOC05_DOCUM_1",
+        "AO26_CRDOC05_DOCUM_2",
+        "AO26_CRDOC05_DOCUM_3"
+      ],
+      "status": "HISTORICAL_SSPX_POSITION_NOT_CARRIED_BY_REWRITTEN_PAPAL_POSITION__PRESERVED_AS_OLD_AUDIT__NO_NEW_VERDICT"
+    },
+    {
+      "finding_id": "PSV1-016",
+      "owner": "CR-MOR-05",
+      "role": "documented_position",
+      "historic_source_id": "",
+      "status": "ALREADY_SUPERSEDED_IN_PRIOR_MERGED_REVIEW__NO_REAPPLICATION"
+    }
+  ],
+  "historical_pass4_source_dispositions": [
+    {
+      "id": "PSV4-011",
+      "owner": "CR-IDM-05",
+      "role": "critical_response",
+      "old": "ECUM1993",
+      "current": "AO26_CRIDM05_CRITI_1",
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_NEW_NARROWER_SECTION_LOCATOR__HISTORICAL_VERDICT_NOT_AUTOTRANSFERRED"
+    },
+    {
+      "id": "PSV4-018",
+      "owner": "CR-GOV-01",
+      "role": "documented_position",
+      "old": "PIUSCHINA",
+      "current": null,
+      "disposition": "FORMER_CHINA_CASE_MOVED_TO_RETAINED_HISTORICAL_RESEARCH__NOT_CURRENT_OWNER_EVIDENCE"
+    },
+    {
+      "id": "PSV4-019",
+      "owner": "CR-GOV-01",
+      "role": "documented_position",
+      "old": "CHINA2024",
+      "current": null,
+      "disposition": "FORMER_CHINA_CASE_MOVED_TO_RETAINED_HISTORICAL_RESEARCH__NOT_CURRENT_OWNER_EVIDENCE"
+    },
+    {
+      "id": "PSV4-020",
+      "owner": "CR-GOV-01",
+      "role": "critical_response",
+      "old": "CHINA2026",
+      "current": null,
+      "disposition": "FORMER_CHINA_CASE_MOVED_TO_RETAINED_HISTORICAL_RESEARCH__NOT_CURRENT_OWNER_EVIDENCE"
+    },
+    {
+      "id": "PSV4-025",
+      "owner": "CR-ECC-12",
+      "role": "critical_response",
+      "old": "EPICOM18",
+      "current": "AO26_CRECC12_ANSWE_2",
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_RELOCATED_TO_REWRITTEN_SECTION__HISTORICAL_VERDICT_NOT_AUTOTRANSFERRED"
+    },
+    {
+      "id": "PSV4-030",
+      "owner": "CR-ECC-09",
+      "role": "documented_position",
+      "old": "GUERARD-FR",
+      "current": "AO26_CRECC09_DOCUM_1",
+      "disposition": "SAME_ORIGINAL_OPPONENT_URL_NEW_SCOPED_SOURCE_ID__HISTORICAL_VERDICT_NOT_AUTOTRANSFERRED"
+    },
+    {
+      "id": "PSV4-031",
+      "owner": "CR-ECC-09",
+      "role": "critical_response",
+      "old": "PIUS1945",
+      "current": null,
+      "disposition": "ORIGINAL_1945_JURIDICAL_CITATION_NO_LONGER_ATTACHED_TO_NEW_CRITICAL_ROLE__REVIEW_RETAINED_HISTORICALLY"
+    }
+  ],
+  "historical_crisis_amendment_reassignments": [
+    {
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "BEN07",
+        "TC21",
+        "FR21",
+        "OTT69-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "RP84",
+        "VS93",
+        "FUCHS71-FIRSTPERSON-REPRINT"
+      ],
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "status": "FORMER_FIRST_PERSON_FUCHS_POSITION_NO_LONGER_CITED__CURRENT_MAGISTERIAL_SUMMARY_EXPLICITLY_NOT_FIRST_PERSON__OPPONENT_ATTRIBUTION_UNRESOLVED"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "EN75",
+        "AG65",
+        "FRANCIS-AUD23-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_1",
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_DOCUM_3"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "role": "critical_response",
+      "historical_source_ids": [
+        "EN75",
+        "AG65",
+        "DOMJES",
+        "FRANCIS-AUD23-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_CRITI_2"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "role": "documented_position",
+      "historical_source_ids": [
+        "CICADMIN",
+        "CICFIN",
+        "MONEYVAL-CR-2024"
+      ],
+      "current_source_ids": [
+        "AO26_CRGOV09_DOCUM_1",
+        "AO26_CRGOV09_DOCUM_2"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "role": "critical_response",
+      "historical_source_ids": [
+        "CICADMIN",
+        "CICFIN",
+        "MONEYVAL-CR-2024"
+      ],
+      "current_source_ids": [
+        "AO26_CRGOV09_CRITI_1"
+      ],
+      "status": "EDITED_ROLE_HAS_DIFFERENT_CITATIONS__PRESERVE_HISTORICAL_VERDICT__CURRENT_ARGUMENT_NEEDS_SCOPED_REVIEW"
+    }
+  ],
+  "historical_crisis_editorial_amendment_reassignments": [
+    {
+      "owner": "CR-AUT-05",
+      "role": "answer",
+      "historic_source_ids": null,
+      "current_source_ids": [
+        "AO26_CRAUT05_ANSWE_1",
+        "AO26_CRAUT05_ANSWE_2"
+      ],
+      "status": "CURRENT_ANSWER_RESOURCED_AFTER_PREVIOUS_BASELINE__NO_NEW_CLAIM_CERTIFICATION"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "role": "documented_position",
+      "historic_source_ids": [
+        "CCC212",
+        "DV90",
+        "CURRAN86-ORIGINAL-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRAUT05_DOCUM_1",
+        "AO26_CRAUT05_DOCUM_2"
+      ],
+      "original_proponent_successor": "AO26_CRAUT05_DOCUM_1",
+      "status": "SAME_ORIGINAL_CURRAN_ARTICLE_URL_UNDER_NEW_SCOPED_CITATION__NOT_CLAIM_CERTIFIED"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "role": "critical_response",
+      "historic_source_ids": [
+        "DV90",
+        "PF98",
+        "CCC212",
+        "CURRAN86-ORIGINAL-CR"
+      ],
+      "current_source_ids": [
+        "AO26_CRAUT05_DOCUM_2",
+        "AO26_CRAUT05_CRITI_2",
+        "AO26_CRAUT05_CRITI_3"
+      ],
+      "status": "SCOPED_CRITICAL_RESPONSE_REWRITTEN__HISTORICAL_SOURCES_PRESERVED_NOT_AUTOTRANSFERRED"
+    }
+  ],
+  "historical_preview_citation_count_changes": [
+    {
+      "owner": "CR-LIT-04",
+      "source_edges_before": 8,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-05",
+      "source_edges_before": 13,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-DOC-09",
+      "source_edges_before": 10,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-002",
+      "source_edges_before": 8,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-053",
+      "source_edges_before": 9,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 7,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ORG-09",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-07",
+      "source_edges_before": 13,
+      "source_edges_now": 13,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 11,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-LIT-08",
+      "source_edges_before": 10,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ORG-05",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-09",
+      "source_edges_before": 13,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 11,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-12",
+      "source_edges_before": 12,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-IDM-05",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-01",
+      "source_edges_before": 14,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 6,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-06",
+      "source_edges_before": 11,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-001",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-007",
+      "source_edges_before": 12,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-009",
+      "source_edges_before": 10,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "APOL-058",
+      "source_edges_before": 11,
+      "source_edges_now": 13,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-DOC-05",
+      "source_edges_before": 13,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 9,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-ECC-11",
+      "source_edges_before": 11,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-AUT-05",
+      "source_edges_before": 13,
+      "source_edges_now": 10,
+      "distinct_local_sources_before": 5,
+      "distinct_local_sources_now": 8,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-MOR-01",
+      "source_edges_before": 8,
+      "source_edges_now": 8,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-MOR-06",
+      "source_edges_before": 10,
+      "source_edges_now": 9,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-IDM-06",
+      "source_edges_before": 13,
+      "source_edges_now": 11,
+      "distinct_local_sources_before": 4,
+      "distinct_local_sources_now": 7,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-02",
+      "source_edges_before": 9,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-03",
+      "source_edges_before": 8,
+      "source_edges_now": 12,
+      "distinct_local_sources_before": 2,
+      "distinct_local_sources_now": 6,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    },
+    {
+      "owner": "CR-GOV-09",
+      "source_edges_before": 10,
+      "source_edges_now": 7,
+      "distinct_local_sources_before": 3,
+      "distinct_local_sources_now": 5,
+      "scope": "STRUCTURAL_CORRECTION_ONLY__PREVIOUS_QA_SNAPSHOT_PRESERVED"
+    }
+  ],
+  "historical_pass5_source_dispositions": [
+    {
+      "finding_id": "PSV5-001",
+      "owner": "CR-ORG-05",
+      "role": "documented_position",
+      "historic_source_id": "BERTH22",
+      "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+      "current_source_ids": [
+        "AO26_CRORG05_DOCUM_1",
+        "AO26_CRORG05_DOCUM_2"
+      ],
+      "matching_url_successor_id": null,
+      "disposition": "HISTORICAL_BERTHE_ABSTRACT_SCOPE_RETAINED__CURRENT_DOCUMENTED_POSITION_USES_CUCHET_UNIVERSITY_DESCRIPTION_AND_INDEPENDENT_REVIEW__NO_VERDICT_TRANSFER"
+    },
+    {
+      "finding_id": "PSV5-024",
+      "owner": "CR-GOV-06",
+      "role": "documented_position",
+      "historic_source_id": "RS2004",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20040423_redemptionis-sacramentum_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV06_DOCUM_1"
+      ],
+      "matching_url_successor_id": "AO26_CRGOV06_DOCUM_1",
+      "disposition": "SAME_ORIGINAL_INSTRUCTION_URL_WITH_NARROWER_CURRENT_LOCATOR__PREVIOUS_BOUNDED_REVIEW_PRESERVED_NOT_CLAIM_CERTIFICATION"
+    },
+    {
+      "finding_id": "PSV5-025",
+      "owner": "CR-GOV-06",
+      "role": "documented_position",
+      "historic_source_id": "GIRM",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV06_DOCUM_1"
+      ],
+      "matching_url_successor_id": null,
+      "disposition": "GIRM_REMAINS_AN_ANSWER_LEVEL_RULEBOOK__NO_LONGER_CITED_AS_THE_CURRENT_ORIGINAL_SPEAKER_DOCUMENTED_POSITION"
+    }
+  ],
+  "historical_cse_atomic_stage_rescopes": [
+    {
+      "owner": "CSE045",
+      "stage": "concession",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "8461a584",
+      "current_en_fr_fingerprint": "7c68ef39",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "breakpoint",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "6248357b",
+      "current_en_fr_fingerprint": "1960e474",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "catholicCase",
+      "historic_atomic_claim_source_id": "CIC",
+      "old_en_fr_fingerprint": "3a77db2b",
+      "current_en_fr_fingerprint": "1e33f8bd",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "response",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "c594a60d",
+      "current_en_fr_fingerprint": "f5ca37fc",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    },
+    {
+      "owner": "CSE045",
+      "stage": "bottom",
+      "historic_atomic_claim_source_id": "CASTI",
+      "old_en_fr_fingerprint": "22592e5f",
+      "current_en_fr_fingerprint": "19b4a7e8",
+      "disposition": "PREVIOUS_MARRIAGE_ENDS_ARGUMENT_PRESERVED_AS_HISTORICAL_ATOMIC_REVIEW__CURRENT_STAGE_REWRITTEN_TO_ADDRESS_PAPAL_HEADSHIP_VS_MUTUAL_SUBJECTION__NOT_AUTO_CERTIFIED",
+      "related_canonical_owner": "CSE046",
+      "whole_stage_certified": false,
+      "independent_french_certified": false
+    }
+  ],
+  "historical_pass7_additional_source_dispositions": [
+    {
+      "finding_id": "PSV7-004",
+      "owner": "CR-LIT-04",
+      "role": "documented_position",
+      "historic_source_id": "JLG1966",
+      "historic_url": "https://jlg.org.uk/the-birth-of-jlg/",
+      "current_source_ids": [
+        "AO26_CRLIT04_DOCUM_1",
+        "AO26_CRLIT04_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-005",
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historic_source_id": "BEN07",
+      "historic_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-006",
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historic_source_id": "TC21",
+      "historic_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html",
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-009",
+      "owner": "CR-DOC-09",
+      "role": "documented_position",
+      "historic_source_id": "MPF25",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+      "current_source_ids": [
+        "AO26_CRDOC09_DOCUM_1",
+        "AO26_CRDOC09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-010",
+      "owner": "CR-DOC-09",
+      "role": "documented_position",
+      "historic_source_id": "PIUSX1904",
+      "historic_url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "current_source_ids": [
+        "AO26_CRDOC09_DOCUM_1",
+        "AO26_CRDOC09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-011",
+      "owner": "APOL-002",
+      "role": "documented_position",
+      "historic_source_id": "BIOLOGOS2014",
+      "historic_url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics",
+      "current_source_ids": [
+        "AO26_APOL002_DOCUM_1",
+        "AO26_APOL002_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-012",
+      "owner": "APOL-002",
+      "role": "documented_position",
+      "historic_source_id": "HG1950",
+      "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+      "current_source_ids": [
+        "AO26_APOL002_DOCUM_1",
+        "AO26_APOL002_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-025",
+      "owner": "CR-LIT-07",
+      "role": "critical_response",
+      "historic_source_id": "MR69",
+      "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "current_source_ids": [
+        "AO26_CRLIT07_CRITI_1",
+        "AO26_CRLIT07_CRITI_2",
+        "AO26_CRLIT07_CRITI_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-030",
+      "owner": "APOL-001",
+      "role": "documented_position",
+      "historic_source_id": "CCC-GOD",
+      "historic_url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_one/ii_ways_of_coming_to_know_god.index.html",
+      "current_source_ids": [
+        "AO26_APOL001_DOCUM_1",
+        "AO26_APOL001_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-052",
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historic_source_id": "RP84",
+      "historic_url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-053",
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historic_source_id": "VS93",
+      "historic_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRMOR06_ANSWE_2"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-054",
+      "owner": "CR-IDM-06",
+      "role": "documented_position",
+      "historic_source_id": "EN75",
+      "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19751208_evangelii-nuntiandi.html",
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_1",
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRIDM06_DOCUM_2"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-063",
+      "owner": "CR-GOV-09",
+      "role": "documented_position",
+      "historic_source_id": "CICFIN",
+      "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV09_DOCUM_1",
+        "AO26_CRGOV09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-071",
+      "owner": "APOL-007",
+      "role": "documented_position",
+      "historic_source_id": "BIBLE-COR",
+      "historic_url": "https://bible.usccb.org/bible/1corinthians/15",
+      "current_source_ids": [
+        "AO26_APOL007_DOCUM_1",
+        "AO26_APOL007_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-072",
+      "owner": "APOL-009",
+      "role": "documented_position",
+      "historic_source_id": "BIBLE-MT28",
+      "historic_url": "https://bible.usccb.org/bible/matthew/28",
+      "current_source_ids": [
+        "AO26_APOL009_DOCUM_1",
+        "AO26_APOL009_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    }
+  ],
+  "historical_pass7_preexisting_amendment_extensions": [
+    {
+      "finding_id": "PSV7-045",
+      "owner": "APOL-058",
+      "role": "documented_position",
+      "historic_source_id": "VATS2023",
+      "prior_amendment_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP"
+      ],
+      "current_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP",
+        "AO26_APOL058_DOCUM_1",
+        "AO26_APOL058_DOCUM_2"
+      ],
+      "newly_attached_source_ids": [
+        "AO26_APOL058_DOCUM_1",
+        "AO26_APOL058_DOCUM_2"
+      ],
+      "disposition": "PRIOR_SURVIVOR_SOURCE_AMENDMENT_REMAINS_ACTIVE__TWO_ADDITIONAL_ORIGINAL_SOURCE_RECORDS_PRESENT__HISTORICAL_VERDICT_NOT_EXTENDED_TO_NEW_CLAIMS",
+      "current_claims_independently_certified": false
+    }
+  ],
+  "historical_primary_source_dispositions_by_pass": {
+    "2": {
+      "historical_findings": 18,
+      "unchanged_current_source_links": 17,
+      "dispositions": [
+        {
+          "finding_id": "PSV2-006",
+          "owner": "CR-MOR-01",
+          "role": "documented_position",
+          "historic_source_id": "FUCHS71-FIRSTPERSON-REPRINT",
+          "historic_url": "https://www.scribd.com/document/939033418/Readings-in-Moral-Theology-Edited-by-Charles-E-Curran-and-Edited-by-Charles-E-Curran-and-Richard-A-McCormick-Readings-in-Moral-Theology",
+          "current_source_ids": [
+            "AO26_CRMOR01_DOCUM_1",
+            "AO26_CRMOR01_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "3": {
+      "historical_findings": 30,
+      "unchanged_current_source_links": 24,
+      "dispositions": [
+        {
+          "finding_id": "PSV3-001",
+          "owner": "CR-DOC-05",
+          "role": "answer",
+          "historic_source_id": "LIB1888",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_ANSWE_1",
+            "AO26_CRDOC05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-002",
+          "owner": "CR-DOC-05",
+          "role": "answer",
+          "historic_source_id": "DH1965",
+          "historic_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_ANSWE_1",
+            "AO26_CRDOC05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-003",
+          "owner": "CR-DOC-05",
+          "role": "critical_response",
+          "historic_source_id": "SSPX2012-FOUR",
+          "historic_url": "https://sspx.org/en/sspx-heretical-31303",
+          "current_source_ids": [
+            "AO26_CRDOC05_CRITI_1",
+            "AO26_CRDOC05_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-004",
+          "owner": "CR-DOC-05",
+          "role": "critical_response",
+          "historic_source_id": "RLFSSPX",
+          "historic_url": "https://fsspx.org/en/religious-liberty-30946",
+          "current_source_ids": [
+            "AO26_CRDOC05_CRITI_1",
+            "AO26_CRDOC05_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-022",
+          "owner": "CR-AUT-05",
+          "role": "documented_position",
+          "historic_source_id": "CCC212",
+          "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_1",
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-023",
+          "owner": "CR-AUT-05",
+          "role": "documented_position",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_1",
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "disposition": "SAME_DOCUMENT_URL_UNDER_SCOPED_ID__HISTORICAL_FINDING_NOT_AUTOMATICALLY_TRANSFERRED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "6": {
+      "historical_findings": 26,
+      "unchanged_current_source_links": 26,
+      "dispositions": []
+    },
+    "8": {
+      "historical_findings": 50,
+      "unchanged_current_source_links": 46,
+      "dispositions": [
+        {
+          "finding_id": "PSV8-017",
+          "owner": "CR-DOC-05",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "LIB1888",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_TRADI_1",
+            "AO26_CRDOC05_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-026",
+          "owner": "CR-AUT-05",
+          "role": "critical_response",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_2",
+            "AO26_CRAUT05_CRITI_2",
+            "AO26_CRAUT05_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "disposition": "SAME_DOCUMENT_URL_UNDER_SCOPED_ID__HISTORICAL_FINDING_NOT_AUTOMATICALLY_TRANSFERRED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-027",
+          "owner": "CR-AUT-05",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "AQU104",
+          "historic_url": "https://www.newadvent.org/summa/3104.htm#article5",
+          "current_source_ids": [
+            "AO26_CRAUT05_TRADI_1",
+            "AO26_CRAUT05_ANSWE_2",
+            "AO26_CRAUT05_TRADI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-044",
+          "owner": "CR-IDM-06",
+          "role": "critical_response",
+          "historic_source_id": "DOMJES",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "current_source_ids": [
+            "AO26_CRIDM06_DOCUM_2",
+            "AO26_CRIDM06_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    }
+  },
+  "historical_late_primary_source_dispositions": {
+    "9": {
+      "historical_findings": 60,
+      "unchanged_source_role_links": 52,
+      "historical_prior_amendment_links": [
+        "PSV9-015",
+        "PSV9-016",
+        "PSV9-017"
+      ],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV9-012",
+          "owner": "APOL-002",
+          "role": "answer",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_ANSWE_1",
+            "AO26_APOL002_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-013",
+          "owner": "APOL-002",
+          "role": "critical_response",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_CRITI_1",
+            "AO26_APOL002_CRITI_2",
+            "AO26_APOL002_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-014",
+          "owner": "APOL-002",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_CRITI_1",
+            "AO26_APOL002_TRADI_2",
+            "AO26_APOL002_TRADI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-022",
+          "owner": "CR-LIT-07",
+          "role": "answer",
+          "historic_source_id": "MD47",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+          "current_source_ids": [
+            "AO26_CRLIT07_ANSWE_1",
+            "AO26_CRLIT07_ANSWE_2",
+            "AO26_CRLIT07_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-024",
+          "owner": "CR-LIT-08",
+          "role": "answer",
+          "historic_source_id": "SC63",
+          "historic_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+          "current_source_ids": [
+            "AO26_CRLIT08_ANSWE_1",
+            "AO26_CRLIT08_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRLIT08_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "10": {
+      "historical_findings": 188,
+      "unchanged_source_role_links": 174,
+      "historical_prior_amendment_links": [],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV10-010",
+          "owner": "CR-DOC-09",
+          "role": "answer",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_ANSWE_1",
+            "AO26_CRDOC09_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-011",
+          "owner": "CR-DOC-09",
+          "role": "critical_response",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_CRITI_1",
+            "AO26_CRDOC09_ANSWE_1"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-012",
+          "owner": "CR-DOC-09",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_TRADI_1",
+            "AO26_CRDOC09_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-023",
+          "owner": "CR-ORG-09",
+          "role": "critical_response",
+          "historic_source_id": "BERTH22",
+          "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+          "current_source_ids": [
+            "AO26_CRORG09_CRITI_1",
+            "AO26_CRORG09_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-030",
+          "owner": "CR-ORG-05",
+          "role": "answer",
+          "historic_source_id": "BERTH22",
+          "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+          "current_source_ids": [
+            "AO26_CRORG05_ANSWE_1",
+            "AO26_CRORG05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-039",
+          "owner": "CR-ECC-09",
+          "role": "answer",
+          "historic_source_id": "GUERARD-FR",
+          "historic_url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+          "current_source_ids": [
+            "AO26_CRECC09_ANSWE_1",
+            "AO26_CRECC09_ANSWE_2",
+            "AO26_CRECC09_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRECC09_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-040",
+          "owner": "CR-ECC-09",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "PIUS1945",
+          "historic_url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html",
+          "current_source_ids": [
+            "AO26_CRECC09_CRITI_1",
+            "AO26_CRECC09_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-041",
+          "owner": "CR-ECC-12",
+          "role": "answer",
+          "historic_source_id": "EPICOM18",
+          "historic_url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20180915_episcopalis-communio.html",
+          "current_source_ids": [
+            "AO26_CRECC12_ANSWE_1",
+            "AO26_CRECC12_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRECC12_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-061",
+          "owner": "CR-GOV-01",
+          "role": "answer",
+          "historic_source_id": "PIUSCHINA",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061958_ad-apostolorum-principis.html",
+          "current_source_ids": [
+            "AO26_CRGOV01_ANSWE_1",
+            "AO26_CRGOV01_ANSWE_2",
+            "AO26_CRGOV01_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-062",
+          "owner": "CR-GOV-01",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "PIUSCHINA",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061958_ad-apostolorum-principis.html",
+          "current_source_ids": [
+            "AO26_CRGOV01_ANSWE_1",
+            "AO26_CRGOV01_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-157",
+          "owner": "CR-AUT-05",
+          "role": "answer",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_ANSWE_1",
+            "AO26_CRAUT05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-159",
+          "owner": "CR-MOR-01",
+          "role": "answer",
+          "historic_source_id": "VS93",
+          "historic_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+          "current_source_ids": [
+            "AO26_CRMOR01_ANSWE_1",
+            "AO26_CRMOR01_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-163",
+          "owner": "CR-MOR-06",
+          "role": "answer",
+          "historic_source_id": "RP84",
+          "historic_url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+          "current_source_ids": [
+            "AO26_CRMOR06_ANSWE_1",
+            "AO26_CRMOR06_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRMOR06_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-186",
+          "owner": "CR-GOV-09",
+          "role": "critical_response",
+          "historic_source_id": "CICFIN",
+          "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html",
+          "current_source_ids": [
+            "AO26_CRGOV09_CRITI_1"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "11": {
+      "historical_findings": 72,
+      "unchanged_source_role_links": 67,
+      "historical_prior_amendment_links": [
+        "PSV11-011"
+      ],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV11-005",
+          "owner": "CR-LIT-04",
+          "role": "critical_response",
+          "historic_source_id": "MR69",
+          "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+          "current_source_ids": [
+            "AO26_CRLIT04_CRITI_1",
+            "AO26_CRLIT04_CRITI_2",
+            "AO26_CRLIT04_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-013",
+          "owner": "APOL-053",
+          "role": "answer",
+          "historic_source_id": "IMM1885",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+          "current_source_ids": [
+            "AO26_APOL053_ANSWE_1",
+            "AO26_APOL053_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_APOL053_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-030",
+          "owner": "APOL-009",
+          "role": "critical_response",
+          "historic_source_id": "CCC-RES",
+          "historic_url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html",
+          "current_source_ids": [
+            "AO26_APOL009_CRITI_1",
+            "AO26_APOL009_CRITI_2",
+            "AO26_APOL009_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-072",
+          "owner": "CR-ECC-11",
+          "role": "critical_response",
+          "historic_source_id": "SYN2018",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_cti_20180302_sinodalita_en.html",
+          "current_source_ids": [
+            "AO26_CRECC11_CRITI_1",
+            "AO26_CRECC11_CRITI_2",
+            "AO26_CRECC11_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        }
+      ]
+    }
+  },
+  "historical_claim_scope_matrix_reconciliation": {
+    "original_snapshot": "data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json",
+    "dated_amendment_files": [
+      "data/learn/formation-a1-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-a2-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json",
+      "data/learn/formation-priority-six-20261010-source-role-amendment.v1.json",
+      "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+      "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json"
+    ],
+    "status": "VERSIONED_ONLY_NOT_REISSUED_PAST_CERTIFICATIONS",
+    "scope": {
+      "current_role_snapshot_reconciliations": 31,
+      "prior_six_amendments_still_match": 55,
+      "prior_amendments_explicitly_superseded": 8,
+      "new_owner_role_count_changes": 23
+    },
+    "changed_roles": [
+      {
+        "owner": "CR-LIT-04",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRLIT04_CRITI_1",
+          "AO26_CRLIT04_CRITI_2",
+          "AO26_CRLIT04_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-LIT-05",
+        "role": "documented_position",
+        "historical_source_count": 3,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRLIT05_DOCUM_1",
+          "AO26_CRLIT05_DOCUM_2",
+          "AO26_CRLIT05_DOCUM_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "BEN07",
+            "TC21",
+            "FR21",
+            "OTT69-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-09",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC09_CRITI_1",
+          "AO26_CRDOC09_ANSWE_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-09",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC09_TRADI_1",
+          "AO26_CRDOC09_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-002",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL002_CRITI_1",
+          "AO26_APOL002_CRITI_2",
+          "AO26_APOL002_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-002",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL002_CRITI_1",
+          "AO26_APOL002_TRADI_2",
+          "AO26_APOL002_TRADI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ORG-05",
+        "role": "answer",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRORG05_ANSWE_1",
+          "AO26_CRORG05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ECC-09",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRECC09_CRITI_1",
+          "AO26_CRECC09_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-ECC-12",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRECC12_CRITI_1",
+          "AO26_CRECC12_CRITI_2",
+          "AO26_CRECC12_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-05",
+        "role": "answer",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRIDM05_ANSWE_1",
+          "AO26_CRIDM05_ANSWE_2",
+          "ECUM1993"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-05",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRIDM05_CRITI_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-01",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV01_CRITI_1",
+          "AO26_CRGOV01_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-01",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV01_ANSWE_1",
+          "AO26_CRGOV01_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRGOV06_DOCUM_1"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-007",
+        "role": "documented_position",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_APOL007_DOCUM_1",
+          "AO26_APOL007_DOCUM_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-009",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_APOL009_CRITI_1",
+          "AO26_APOL009_CRITI_2",
+          "AO26_APOL009_CRITI_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "APOL-058",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 4,
+        "current_source_ids": [
+          "TRC-2015-OPP",
+          "NCTR-2022-OPP",
+          "AO26_APOL058_DOCUM_1",
+          "AO26_APOL058_DOCUM_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "answer",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_ANSWE_1",
+          "AO26_CRDOC05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRDOC05_DOCUM_1",
+          "AO26_CRDOC05_DOCUM_2",
+          "AO26_CRDOC05_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "critical_response",
+        "historical_source_count": 4,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_CRITI_1",
+          "AO26_CRDOC05_CRITI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-DOC-05",
+        "role": "traditional_catholic_argument",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRDOC05_TRADI_1",
+          "AO26_CRDOC05_TRADI_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "answer",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRAUT05_ANSWE_1",
+          "AO26_CRAUT05_ANSWE_2"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRAUT05_DOCUM_1",
+          "AO26_CRAUT05_DOCUM_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CCC212",
+            "DV90",
+            "CURRAN86-ORIGINAL-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-AUT-05",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRAUT05_DOCUM_2",
+          "AO26_CRAUT05_CRITI_2",
+          "AO26_CRAUT05_CRITI_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "DV90",
+            "PF98",
+            "CCC212",
+            "CURRAN86-ORIGINAL-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-MOR-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRMOR06_ANSWE_2",
+          "AO26_CRMOR06_ANSWE_1"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "RP84",
+            "VS93",
+            "FUCHS71-FIRSTPERSON-REPRINT"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-06",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 3,
+        "current_source_ids": [
+          "AO26_CRIDM06_DOCUM_1",
+          "AO26_CRIDM06_DOCUM_2",
+          "AO26_CRIDM06_DOCUM_3"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "EN75",
+            "AG65",
+            "FRANCIS-AUD23-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-IDM-06",
+        "role": "critical_response",
+        "historical_source_count": 3,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRIDM06_DOCUM_2",
+          "AO26_CRIDM06_CRITI_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 4,
+          "amended_source_ids": [
+            "EN75",
+            "AG65",
+            "DOMJES",
+            "FRANCIS-AUD23-CR"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-02",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 5,
+        "current_source_ids": [
+          "OT65",
+          "PDV92",
+          "AO26_CRGOV02_DOCUM_1",
+          "AO26_CRGOV02_DOCUM_2",
+          "AO26_CRGOV02_DOCUM_3"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-03",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 6,
+        "current_source_ids": [
+          "PC65",
+          "ES66",
+          "AO26_CRGOV03_DOCUM_1",
+          "AO26_CRGOV03_DOCUM_2",
+          "AO26_CRGOV03_DOCUM_3",
+          "AO26_CRGOV03_DOCUM_4"
+        ],
+        "disposition": "CURRENT_OWNER_ADDITION_NOT_LISTED_IN_EARLIER_SIX_AMENDMENT_REGISTERS",
+        "prior_amendment": null,
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-09",
+        "role": "documented_position",
+        "historical_source_count": 2,
+        "current_source_count": 2,
+        "current_source_ids": [
+          "AO26_CRGOV09_DOCUM_1",
+          "AO26_CRGOV09_DOCUM_2"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ]
+        },
+        "new_claims_certified": 0
+      },
+      {
+        "owner": "CR-GOV-09",
+        "role": "critical_response",
+        "historical_source_count": 2,
+        "current_source_count": 1,
+        "current_source_ids": [
+          "AO26_CRGOV09_CRITI_1"
+        ],
+        "disposition": "PRIOR_AMENDMENT_SUPERSEDED_BY_LATER_CORRECTED_OWNER",
+        "prior_amendment": {
+          "source_path": "data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json",
+          "amended_source_count": 3,
+          "amended_source_ids": [
+            "CICADMIN",
+            "CICFIN",
+            "MONEYVAL-CR-2024"
+          ]
+        },
+        "new_claims_certified": 0
+      }
+    ],
+    "revision_policy": "Original 2026-10-09 141-owner review counts remain a historical snapshot; later corrected reader sources use the exact scoped references shown. A role rescope does not prove new claims."
+  }
+}
