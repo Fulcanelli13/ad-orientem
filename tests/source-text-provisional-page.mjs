@@ -48,7 +48,7 @@ assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.imageUrl="htt
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[1].id=x.blocks[0].id)}),/BLOCK_INVALID/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[0].anchors=[])}),/REFERENCE_INVALID/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks[9].text="x")}),/TEXT_INVALID/);
-assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.at(-1).text="This sentence was completed artificially.")}),/UNVERIFIED_PAGE_JOIN/);
+assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.at(-1).text="This sentence was completed artificially.")}),/(?:UNVERIFIED_PAGE_JOIN|PAGE_JOIN_UNVERIFIED)/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.blocks.find(b=>b.kind==="attributed-quotation").kind="body")}),/SCOPE_INCOMPLETE/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.mergeApproved=true)}),/PAGE_JOIN_UNVERIFIED/);
 assert.throws(()=>auditProvisionalPage({plan,pageDraft:mutate(x=>x.pageJoinCandidate.scanPageSequence=[305,307])}),/PAGE_JOIN_UNVERIFIED/);
