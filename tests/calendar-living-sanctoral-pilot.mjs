@@ -20,6 +20,11 @@ for (const person of registry.persons) {
   assert.ok(person.name.en && person.name.fr, person.id + " missing translations");
   assert.ok(["SAINT", "BLESSED"].includes(person.recognition.rank), person.id);
   assert.ok(person.recognition.sourceIds.length, person.id + " has no primary recognition witness");
+  assert.ok(person.presentation?.whyHonoured?.en && person.presentation?.whyHonoured?.fr, person.id + " missing reason for holiness");
+  assert.ok(person.presentation?.historicalContribution?.en && person.presentation?.historicalContribution?.fr, person.id + " missing contributions");
+  assert.ok(person.presentation?.verifiedFurtherReadingUrls?.some(u=>u.startsWith("https://www.vatican.va/")), person.id + " missing authoritative deeper reading");
+  assert.equal(person.presentation.approvedArtworkId,null);
+  assert.equal(person.presentation.canonicalPlaceId,null);
   if (person.recognition.canonizedOn) assert.match(person.recognition.canonizedOn, iso);
   if (person.recognition.doctorDeclaredOn) assert.match(person.recognition.doctorDeclaredOn, iso);
   for (const id of person.recognition.sourceIds) assert.ok(registry.sources[id]?.url, person.id + " missing " + id);
