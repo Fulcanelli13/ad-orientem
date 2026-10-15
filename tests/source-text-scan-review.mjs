@@ -61,7 +61,7 @@ assert.throws(()=>validatePrintPagePlan({...plan,scanPageBaseUrl:"http://example
 // Only existing 1913 scanned excerpt paragraphs qualify for real-source
 // excerpt packaging; no bulk OCR or synthetic text is promoted.
 const realCandidates=sample.records.map((r,i)=>({id:"PRINT-"+(i+1),
- locator:r.locator,pages:[r.printedPage],kind:"body",column:r.column??"right",
+ locator:r.locator,pages:[r.printedPage],kind:"body",column:r.column??"right",sourceExtent:r.sourceExtent,
  articleStatus:"CONFIRMED_IN_SCOPE",text:r.text}));
 const realQueue=buildScanReviewQueue({plan,candidates:realCandidates});
 const approvals=realQueue.items.map((item,i)=>({
@@ -74,6 +74,7 @@ const prepared=prepareReviewedScanDocument({
  plan,candidates:realCandidates,approvals,profile:witness,work:sample.work,
  review:sample.review,heading:sample.heading});
 assert.equal(prepared.selectedCount,4);
+assert.equal(prepared.document.passages[3].sourceExtent,"PARAGRAPH_OPENING_FRAGMENT");
 assert.equal(prepared.heldCount,0);
 assert.equal(prepared.productionPublishApproved,false);
 assert.equal(prepared.document.passages[0].sourcePages[0].printedPage,255);
