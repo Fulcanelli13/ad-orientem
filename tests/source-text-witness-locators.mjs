@@ -75,13 +75,23 @@ const variant={...work,editionId:"ED-ANOTHER-2026"};
 assert.notEqual(editionQualifiedCitation({work:variant,passageId:parsed.passages[0].id,
  sourceAnchor:"md-en-p023"}),parsed.passages[0].editionQualifiedCitation);
 const pack=packageSourceDocument(parsed,{chunkSize:1});
+assert.equal(pack.manifest.passages[0].sourceLocator,"§23");
+assert.equal(pack.manifest.passages[0].sourcePage,p.witnessUrl);
+assert.ok(pack.manifest.passages[0].editionQualifiedCitation.includes("ED-AO-DEMO-2026"));
 let loads=0;
 const reader=createSourceTextReader({manifest:pack.manifest,loadChunk:async path=>{
  loads++;return pack.chunks[path];
 }});
 assert.equal(loads,0);
+assert.equal(reader.searchMetadata("§23").length,1,"Source paragraph lookup should not fetch text");
+assert.equal(loads,0);
 assert.equal((await reader.open(reader.firstId)).passage.sourceLocator,"§23");
 assert.equal(loads,1);
+const metadataForged=createSourceTextReader({manifest:pack.manifest,loadChunk:async path=>{
+ const chunk=JSON.parse(pack.chunks[path]);chunk.passages[0].sourceLocator="§999";
+ return chunk;
+}});
+await assert.rejects(metadataForged.open(metadataForged.firstId),/CHUNK_IDENTITY_MISMATCH/);
 assert.throws(()=>extractReviewedWitnessDocument({profile:md,work,review,
  hostUrl:md.witnessUrl,heading:"Wrong",records:rows}),/WORK_IDENTITY_MISMATCH/);
 assert.throws(()=>extractReviewedWitnessDocument({profile:p,work,review,
