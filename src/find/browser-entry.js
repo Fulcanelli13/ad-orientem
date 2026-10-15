@@ -554,6 +554,10 @@ export function createFindOwner(win=globalThis){
       state.lens=value;state.calendarKey=null;nearbyResults=null;
       if(value==="saints")state.view="list";
        else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
+    }else if(key==="saintScope"&&["profiles","historical","later"].includes(value)){
+      // Each source scope has a different identity and search vocabulary.
+      // Clearing old searches avoids a correct index looking empty.
+      state.saintScope=value;state.query="";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
@@ -802,6 +806,21 @@ export function createFindOwner(win=globalThis){
         chapter.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth"});
       }
       return;
+    }
+    const saintCrosslink=target?.closest?.("[data-saint-crosslink-target]");
+    if(saintCrosslink&&state.lens==="saints"&&dataset){
+      event.preventDefault?.();event.stopPropagation?.();
+      const scope=saintCrosslink.dataset.saintCrosslinkScope;
+      const id=saintCrosslink.dataset.saintCrosslinkTarget;
+      if(!["profiles","historical","later"].includes(scope))return;
+      const candidates=scope==="profiles"?projectSaintCatalogueItems(dataset):projectSaintSourceIndexItems(dataset,scope);
+      // Verify against the current canonical source projection, not arbitrary
+      // DOM-provided person IDs. This cannot create unknown people or pins.
+      if(!candidates.some(item=>item.item_id===id))return;
+      state.view="list";state.saintScope=scope;state.saintCategory="ALL";
+      state.query="";state.selectedId=id;state.selectedPlaceId=null;
+      state.expandPlace=false;state.expandDetail=false;state.displayLimit=24;
+      void paint();return;
     }
     const openPlace=target?.closest?.("[data-explore-open-place]");
     if(openPlace){
