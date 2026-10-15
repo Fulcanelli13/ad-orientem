@@ -36,6 +36,39 @@ try{
    await page.locator('[data-ao-app-surface="find"]').click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready"
       &&globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage",null,{timeout:70000});
+   if(config.name==="phone390"){
+     const crosswalk=JSON.parse(await readFile(resolve(root,"data/saints/1962-observed-identity-crosswalk-pilot.v1.json"),"utf8"));
+     assert.equal(crosswalk.candidate_general_1962.length,2);
+     assert.equal(crosswalk.not_assigned_general_1962.length,4);
+     const observations=await page.evaluate(async entries=>{
+       const {observedCycle}=await import("/src/calendar/observed-cycle.js");
+       const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+       assert: {
+         if(typeof resolver?.resolveDay!=="function")throw Error("Canonical Calendar resolver unavailable");
+       }
+       const results=[];
+       for(const entry of entries){
+         const date="2026-"+entry.month_day;
+         const result=await resolver.resolveDay(date);
+         const main=result?.day?.main??{},proper=result?.proper?.data??{};
+         const titles=[proper.name,proper.nameFr,main.title,main.titleFr].filter(Boolean).map(String);
+         results.push({saint_id:entry.saint_id,date,status:result?.status??"unknown",
+           mainId:main.id??null,cycle:observedCycle(result),titles,
+           commemorations:(result?.day?.commemorations??[]).map(x=>typeof x==="string"?x:x?.title||x?.name||"")});
+       }
+       return results;
+     },crosswalk.candidate_general_1962);
+     for(const row of observations){
+       assert.notEqual(row.status,"failed",row.date+" Calendar resolver failed");
+       assert(row.mainId,"Canonical observed day must include an identity "+row.date);
+       const cue=crosswalk.candidate_general_1962.find(x=>x.saint_id===row.saint_id);
+       const labels=[...row.titles,...row.commemorations].join(" ").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
+       const match=cue.expected_title_tokens.some(token=>labels.includes(token.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase()));
+       assert(match,"Candidate must actually appear in principal or commemorations: "+JSON.stringify(row));
+       assert.equal(row.cycle,"sanctorale","1962 date candidate displaced by a temporal day; do not bind automatically: "+row.date);
+     }
+     console.log("Observed two source-resolved Calendar identity candidates without modifying Calendar: "+JSON.stringify(observations));
+   }
    const nav=page.locator('#ao-find-modular-root .aoHeritageCategories [data-find-filter="lens"][data-find-filter-value="saints"]');
    assert.equal(await nav.count(),1,"Native Heritage must expose a single Saints map filter");
    const rect=await nav.boundingBox();
