@@ -97,5 +97,23 @@ const first=chunks.chunks.find(x=>x.gospel==="matthew"&&x.firstChapter===1);
 assert.throws(()=>validateCatenaChunkManifest({...chunks,totals:{...chunks.totals,fragments:100}}),/CATENA_SOURCE_INTEGRITY_MISMATCH/);
 const firstPack=JSON.parse(rawByUrl.get(CATENA_CHUNK_BASE+first.file));
 assert.throws(()=>validateCatenaChapterPack({...firstPack,pericopes:firstPack.pericopes.slice(1)},"matthew",first),/CATENA_SOURCE_INTEGRITY_MISMATCH/);
+// Previously read offline full-Gospel packs remain usable if a user has
+// updated app code but does not yet have the smaller chapter chunks cached.
+const markPassage={book:"Mark",chapter:2,verseStart:1,verseEnd:3};
+const oldMarkCache={open:async()=>({match:async url=>url===CATENA_LOCAL_BASE+"mark.json"
+ ?{ok:true,json:async()=>data.mark}:null})};
+const offline=await loadCatenaForPassage(markPassage,{
+ fetcher:async()=>{throw new Error("OFFLINE")},cacheStorage:oldMarkCache
+});
+assert.deepEqual(offline.map(x=>x.id),selectCatenaPericopes(data.mark.pericopes,markPassage).map(x=>x.id));
+const johnRow=chunks.chunks.find(x=>x.gospel==="john"&&x.firstChapter===1);
+const tampered=rawByUrl.get(CATENA_CHUNK_BASE+johnRow.file).replace("Catena Aurea,","Catena Altered,");
+await assert.rejects(loadCatenaForPassage({book:"John",chapter:1,verseStart:1,verseEnd:1},{
+ cacheStorage:null,cryptoProvider:webcrypto,fetcher:async url=>({
+  ok:true,clone(){return{text:async()=>url.endsWith("manifest.v1.json")
+   ?rawByUrl.get(url):tampered}}
+ })
+}),/CATENA_SOURCE_INTEGRITY_MISMATCH/,
+ "Modified chapter text must not be accepted as the reviewed Git source");
 assert.ok(packedBytes<originalBytes*1.02,"Pack metadata overhead must remain small");
 console.log("PASS source-identical Catena: 23 lazy 4-chapter packs, 814 pericopes, 12,692 fragments, exact Git hashes, 3,766 verse keys and cached selective loading");
