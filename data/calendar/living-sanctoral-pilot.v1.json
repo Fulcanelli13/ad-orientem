@@ -60,6 +60,11 @@
       "type": "REPOSITORY_IDENTITY",
       "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/calendar/observance-title.js",
       "establishes": "Source-identity-linked title alias for sancti:10-03; display alias alone does not certify feast precedence."
+    },
+    "ao-full-year-audit-20261009": {
+      "type": "ARCHIVED_APP_DAYRESOLVER_AUDIT",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+      "establishes": "Recorded 1962 principal/displaced source identities across 2024 and 2027; not independent original-Missal certification."
     }
   },
   "persons": [
@@ -223,8 +228,8 @@
         }
       ],
       "calendar1962": {
-        "principalId": "sancti:10-15",
-        "identityStatus": "MUST_CONFIRM_RESOLVER_ID",
+        "principalId": "sancti:10-15:3:w",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
         "protectedThirdClass": true
       },
       "laterTraditionalMass": {
@@ -246,19 +251,25 @@
         ],
         "doctorTitle": "Doctor unitatis"
       },
-      "observances": [],
+      "observances": [
+        {
+          "calendar": "1962_GENERAL",
+          "monthDay": "07-03",
+          "kind": "THIRD_CLASS_FEAST",
+          "sourceIds": [
+            "ao-full-year-audit-20261009"
+          ]
+        }
+      ],
       "calendar1962": {
-        "principalId": null,
-        "identityStatus": "MUST_CONFIRM_RESOLVER_ID_AND_DATE",
+        "principalId": "sancti:07-03r:3:r",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
         "protectedThirdClass": false
       },
       "laterTraditionalMass": {
         "status": "NOT_APPLICABLE_ALREADY_OLDER_SAINT",
         "lawSourceIds": []
-      },
-      "openQuestions": [
-        "Confirm 1962 liturgical date/identity and its distinct modern-calendar date before projecting either."
-      ]
+      }
     }
   ],
   "completion": {
