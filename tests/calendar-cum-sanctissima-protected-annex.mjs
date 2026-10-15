@@ -13,17 +13,20 @@ for (const f of annex.feasts) {
   if (f.resolverIdentity) {
     assert.match(f.resolverIdentity, /^sancti:\\d{2}-\\d{2}(?:r)?$/);
     assert.ok(f.evidence?.path, f.monthDay + " attestation not grounded");
-    assert.match(f.identityMatchStatus, /^REPOSITORY_ATTESTED_/);
+    assert.equal(f.identityMatchStatus, "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER");
+    assert.deepEqual(f.evidence.years, [2024, 2027]);
+    assert.match(f.resolverIdentity, /:3:[wr]$/);
   } else {
     assert.equal(f.identityMatchStatus, "SOURCE_ID_UNVERIFIED");
     assert.equal(f.candidateResolverStem, "sancti:" + f.monthDay);
   }
 }
-assert.equal(annex.crosswalk.attestedExact, 10);
-assert.equal(annex.crosswalk.unresolved, 60);
-assert.equal(annex.feasts.filter(f => f.resolverIdentity).length, 10);
+assert.equal(annex.crosswalk.attestedExact, 70);
+assert.equal(annex.crosswalk.unresolved, 0);
+assert.equal(annex.feasts.filter(f => f.resolverIdentity).length, 70);
+assert.equal(annex.crosswalk.independentlyLiturgicallyCertified, false);
 assert.ok(ids.includes("10-03"));
 assert.ok(ids.includes("10-15"));
 assert.ok(ids.includes("06-30"));
 assert.ok(!ids.includes("09-23"), "Ember Wednesday rule is from the resolver, not the 70-feast annex");
-console.log("Cum sanctissima 70-feast transcription and documented source-ID matches: PASS (10 attested / 60 pending)");
+console.log("Cum sanctissima 70-feast transcription and documented source-ID matches: PASS (70 source IDs attested in 2024/2027)");
