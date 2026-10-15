@@ -85,3 +85,32 @@ assert.equal(cross.not_in_legacy_shrine_names.sacred_art_subjects.length+artSubj
 assert.equal(cross.not_in_legacy_shrine_names.relic_subjects.length+relicMatchedIds.size,relicSot.subjects.length);
 assert(!cross.rows.some(x=>x.sacred_art_subjects.some(a=>a.approval==="APPROVED")||x.calendar_semantics.some(s=>s.role==="1962_RANK_VERIFIED")));
 console.log("PASS: saint cross-module references, no invented feast/art/relic approvals");
+
+
+const previewHtml=readFileSync(new URL("../previews/saints-map-holiness-first-20261015.html",import.meta.url),"utf8");
+const previewJson=previewHtml.match(/<script type="application\\/json" id="preview-source">([\\s\\S]*?)<\\/script>/);
+assert(previewJson,"A source-embedded preview must be portable and auditable");
+const preview=JSON.parse(previewJson[1]);
+assert.deepEqual(preview.people,pilot.people,"Preview must not change canonical research profile text");
+assert.equal(preview.schema,"ao.saints.map-review.v1");
+assert.equal(preview.people.length,6);
+const geoSot=read("data/geography/seed-registry.v1.json");
+const geoById=new Map(geoSot.places.map(x=>[x.place_id,x]));
+const expectedPreviewIds=new Set(pilot.people.flatMap(p=>p.place_links.map(l=>l.place_id)));
+assert.equal(preview.place_preview.length,expectedPreviewIds.size,"One preview coordinate record per physical place, never one invented pin per saint");
+for(const loc of preview.place_preview){
+ assert(expectedPreviewIds.has(loc.id));
+ const source=geoById.get(loc.id);
+ assert(source,"Place must exist in canonical geography registry");
+ assert.equal(loc.lat,source.geo.lat);
+ assert.equal(loc.lng,source.geo.lng);
+ assert.equal(loc.indicative,!!source.geo.indicative_only);
+ assert.equal(loc.geo_source,source.geo.source_url);
+}
+assert.equal(preview.place_preview.filter(p=>p.indicative).length,1);
+assert(preview.place_preview.find(p=>p.id==="place:NZ:st-peter-chanel-russell")?.indicative,"Peter Chanel's indicative Russell coordinate cannot become an ordinary pin");
+assert(previewHtml.includes("Artwork awaiting")||previewHtml.includes("artwork approval"),"Must clearly distinguish source-linked biographies from unapproved portrait imagery");
+const jsBody=previewHtml.match(/<script type="module">([\\s\\S]*?)<\\/script>/)?.[1];
+assert(jsBody,"Optional preview must include working client-side interactions");
+new Function("return (async function(){"+jsBody+"})");
+console.log("PASS: portable map preview syntax, existing place geometry, held indicative site, unchanged original profiles");
