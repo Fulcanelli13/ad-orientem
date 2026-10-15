@@ -23,6 +23,11 @@ on:
       - 'src/learn/browser-entry.js'
       - 'src/learn/lazy-module-registry.js'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'data/learn/research/mystery-mass-39-to-curated65-67-source-author-handoff-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
+      - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
   pull_request:
@@ -37,6 +42,11 @@ on:
       - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
       - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
       - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'data/learn/research/mystery-mass-39-to-curated65-67-source-author-handoff-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
+      - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
       - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
 
@@ -54,6 +64,8 @@ jobs:
           node-version: '22'
       - name: Verify baseline Formation route is unchanged
         run: node tests/mass-formation.mjs
+      - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
+        run: node tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs
       - name: Validate source-first editorial inventory and deduplication
         run: node tests/mystery-mass-editorial-inventory.mjs
       - name: Validate full Phase 2 bilingual research manuscript
