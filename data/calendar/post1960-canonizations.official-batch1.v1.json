@@ -9,6 +9,21 @@
   },
   "coverage": {
     "scopeYears": [
+      1982,
+      1983,
+      1984,
+      1986,
+      1987,
+      1988,
+      1989,
+      1990,
+      1991,
+      1992,
+      1993,
+      1995,
+      1996,
+      1997,
+      1998,
       1999,
       2000,
       2001,
@@ -35,11 +50,11 @@
       2024,
       2025
     ],
-    "reviewedYears": 25,
+    "reviewedYears": 40,
     "completeGlobal1960To2026": false,
-    "namedIndividualRecords": 179,
-    "unexpandedGroupRecords": 7,
-    "unexpandedGroupMembers": 207,
+    "namedIndividualRecords": 229,
+    "unexpandedGroupRecords": 11,
+    "unexpandedGroupMembers": 437,
     "knownCanonicalPersonIdReuse": [
       "saint.carlo-acutis",
       "saint.john-henry-newman",
@@ -47,9 +62,9 @@
     ],
     "unverifiedApproximateGroupMembers": 800,
     "groupsWithApproximateCounts": 1,
-    "knownGroupMembersAlreadyIncludedInNamedRecords": 4
+    "knownGroupMembersAlreadyIncludedInNamedRecords": 13
   },
-  "countingRule": "Individually named persons are counted once, even when members of martyr cohorts. For verified groups, count only unexpandedMemberCount where supplied; otherwise memberCount. Otranto's approximate 800 is kept separate and is not added as an exact number.",
+  "countingRule": "Individually named saint IDs count once even when in martyr groups. Every cohort with explicit crosswalk uses unexpandedMemberCount=memberCount-named member IDs. Approximate Otranto count is separate. Source-listed ceremonial form may be unresolved; no feast date inferred.",
   "liturgicalRule": "No individual record in this batch asserts universal feast date, 1962 optional mass eligibility, mass texts, or a change to the principal observed 1962 mass.",
   "years": [
     {
@@ -266,6 +281,126 @@
       "eventCount": 3,
       "namedIndividuals": 7,
       "unexpandedGroupMemberships": 9
+    },
+    {
+      "year": 1998,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1998.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1997,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 2,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1996,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 3,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1995,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 6,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1993,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1992,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 2,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1991,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1991.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1990,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1990.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1989,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 4,
+      "namedIndividuals": 6,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1988,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 6,
+      "namedIndividuals": 9,
+      "unexpandedGroupMemberships": 116
+    },
+    {
+      "year": 1987,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 13
+    },
+    {
+      "year": 1986,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 2,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1984,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 101
+    },
+    {
+      "year": 1983,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1983.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1982,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0
     }
   ],
   "events": [
@@ -1108,6 +1243,484 @@
         "canon-group.martyrs-china-1648-1930"
       ],
       "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1998-10-11",
+      "date": "1998-10-11",
+      "year": 1998,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1998.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.teresa-benedicta-cross-stein"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1997-06-08",
+      "date": "1997-06-08",
+      "year": 1997,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jadwiga-queen-poland"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1997-06-10",
+      "date": "1997-06-10",
+      "year": 1997,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.john-duckla"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1996-06-02",
+      "date": "1996-06-02",
+      "year": 1996,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jean-gabriel-perboyre",
+        "saint.egidio-maria-san-giuseppe",
+        "saint.juan-grande-roman"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1995-05-21",
+      "date": "1995-05-21",
+      "year": 1995,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jan-sarkander",
+        "saint.zdislava-lemberk"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1995-07-02",
+      "date": "1995-07-02",
+      "year": 1995,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.marko-krizevcanin",
+        "saint.stefan-pongracz",
+        "saint.melchior-grodziecki"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1995-12-03",
+      "date": "1995-12-03",
+      "year": 1995,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.eugene-de-mazenod"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1993-03-21",
+      "date": "1993-03-21",
+      "year": 1993,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.claudine-thevenet",
+        "saint.teresa-los-andes"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1993-06-16",
+      "date": "1993-06-16",
+      "year": 1993,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.enrique-de-osso"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1993-09-08",
+      "date": "1993-09-08",
+      "year": 1993,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.meinhard-latvia"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1992-05-31",
+      "date": "1992-05-31",
+      "year": 1992,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.claude-la-colombiere"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1992-10-11",
+      "date": "1992-10-11",
+      "year": 1992,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.ezequiel-moreno"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1991-11-17",
+      "date": "1991-11-17",
+      "year": 1991,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1991.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.raphael-kalinowski"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1990-12-09",
+      "date": "1990-12-09",
+      "year": 1990,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1990.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.marguerite-dyouville"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1989-04-09",
+      "date": "1989-04-09",
+      "year": 1989,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.clelia-barbieri"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1989-11-01",
+      "date": "1989-11-01",
+      "year": 1989,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.gaspare-bertoni",
+        "saint.riccardo-pampuri"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1989-11-12",
+      "date": "1989-11-12",
+      "year": 1989,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.agnes-bohemia",
+        "saint.albert-chmielowski"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1989-12-10",
+      "date": "1989-12-10",
+      "year": 1989,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.mutien-marie-wiaux"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-05-16",
+      "date": "1988-05-16",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.roque-gonzalez",
+        "saint.alfonso-rodriguez-paraguay",
+        "saint.juan-del-castillo"
+      ],
+      "groupIds": [
+        "canon-group.paraguay-jesuit-martyrs-3"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-06-11",
+      "date": "1988-06-11",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.eustochia-calafato"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-06-19",
+      "date": "1988-06-19",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.andrew-dung-lac"
+      ],
+      "groupIds": [
+        "canon-group.vietnamese-martyrs-117"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-07-03",
+      "date": "1988-07-03",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.simon-de-rojas",
+        "saint.rose-philippine-duchesne"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-10-02",
+      "date": "1988-10-02",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.magdalene-of-canossa"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1988-12-11",
+      "date": "1988-12-11",
+      "year": 1988,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.maria-rosa-molas-vallve"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1987-10-18",
+      "date": "1987-10-18",
+      "year": 1987,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.lorenzo-ruiz",
+        "saint.domingo-ibanez-de-erquicia",
+        "saint.james-kyushei-tomonaga"
+      ],
+      "groupIds": [
+        "canon-group.japan-martyrs-16-1987"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1987-10-25",
+      "date": "1987-10-25",
+      "year": 1987,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.giuseppe-moscati"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1986-04-13",
+      "date": "1986-04-13",
+      "year": 1986,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.francesco-antonio-fasani"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1986-10-12",
+      "date": "1986-10-12",
+      "year": 1986,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.giuseppe-maria-tomasi"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1984-03-11",
+      "date": "1984-03-11",
+      "year": 1984,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.paola-frassinetti"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1984-05-06",
+      "date": "1984-05-06",
+      "year": 1984,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.andrew-kim-taegon",
+        "saint.paul-chong-hasang"
+      ],
+      "groupIds": [
+        "canon-group.korean-martyrs-103"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1984-10-21",
+      "date": "1984-10-21",
+      "year": 1984,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.miguel-febres-cordero"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1983-10-16",
+      "date": "1983-10-16",
+      "year": 1983,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1983.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.leopold-mandic"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1982-06-20",
+      "date": "1982-06-20",
+      "year": 1982,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.crispin-viterbo"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1982-10-10",
+      "date": "1982-10-10",
+      "year": 1982,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.maximilian-kolbe"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1982-10-31",
+      "date": "1982-10-31",
+      "year": 1982,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.marguerite-bourgeoys",
+        "saint.jeanne-delanoue"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
     }
   ],
   "groups": [
@@ -1211,6 +1824,76 @@
         "https://www.causesanti.va/it/santi-e-beati/luigi-versigliae-e-callisto-caravario.html",
         "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/09/22/0550/01911.html"
       ]
+    },
+    {
+      "id": "vietnamese-martyrs-117",
+      "eventId": "canon-1988-06-19",
+      "label": "Andrew Dung-Lac and 116 Vietnamese Martyrs",
+      "memberCount": 117,
+      "unexpandedMemberCount": 116,
+      "individuallyIdentifiedPersonIds": [
+        "saint.andrew-dung-lac"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Andrew Dung-Lac"
+      ],
+      "note": "117 canonised people, of whom Andrew Dung-Lac is currently a canonical person row; other named martyrs in source still require reconciliation to avoid duplication."
+    },
+    {
+      "id": "japan-martyrs-16-1987",
+      "eventId": "canon-1987-10-18",
+      "label": "Lorenzo Ruiz and 15 companions, Martyrs of Japan",
+      "memberCount": 16,
+      "unexpandedMemberCount": 13,
+      "individuallyIdentifiedPersonIds": [
+        "saint.lorenzo-ruiz",
+        "saint.domingo-ibanez-de-erquicia",
+        "saint.james-kyushei-tomonaga"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Lorenzo Ruiz",
+        "Domingo Ibáñez de Erquicia",
+        "James Kyushei Tomonaga"
+      ],
+      "note": "Sixteen saints total; 3 members named individually from official year page, 13 await expansion."
+    },
+    {
+      "id": "paraguay-jesuit-martyrs-3",
+      "eventId": "canon-1988-05-16",
+      "label": "Roque González, Alfonso Rodríguez and Juan del Castillo",
+      "memberCount": 3,
+      "unexpandedMemberCount": 0,
+      "individuallyIdentifiedPersonIds": [
+        "saint.roque-gonzalez",
+        "saint.alfonso-rodriguez-paraguay",
+        "saint.juan-del-castillo"
+      ],
+      "memberIdentityStatus": "ALL_MEMBERS_NAMED_IN_THIS_BATCH",
+      "namedLead": [
+        "Roque González de Santa Cruz",
+        "Alfonso Rodríguez",
+        "Juan del Castillo"
+      ],
+      "note": "Three companions all individually identified from 1988 index."
+    },
+    {
+      "id": "korean-martyrs-103",
+      "eventId": "canon-1984-05-06",
+      "label": "Andrew Kim Tae-gon, Paul Chong Ha-sang and 101 companions, Korean Martyrs",
+      "memberCount": 103,
+      "unexpandedMemberCount": 101,
+      "individuallyIdentifiedPersonIds": [
+        "saint.andrew-kim-taegon",
+        "saint.paul-chong-hasang"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Andrew Kim Tae-gon",
+        "Paul Chong Ha-sang"
+      ],
+      "note": "103 canonical cohort, 2 named individually in index, 101 still unexpanded."
     }
   ],
   "persons": [
@@ -4625,6 +5308,987 @@
       ],
       "canonizationGroupIds": [
         "canon-group.martyrs-china-1648-1930"
+      ]
+    },
+    {
+      "id": "saint.teresa-benedicta-cross-stein",
+      "name": "Teresa Benedetta della Croce (Edith Stein)",
+      "canonizedOn": "1998-10-11",
+      "canonizationEventId": "canon-1998-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1998-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1998.html"
+      ]
+    },
+    {
+      "id": "saint.jadwiga-queen-poland",
+      "name": "Jadwiga (Edwige), Queen of Poland",
+      "canonizedOn": "1997-06-08",
+      "canonizationEventId": "canon-1997-06-08",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1997-06-08"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html"
+      ],
+      "reviewFlags": [
+        "OFFICIAL_1997_TITLE_VS_BODY_HEDWIG_SILESIA_CONFLATION_REVIEW_REQUIRED"
+      ],
+      "publicationHold": "IDENTITY_DESCRIPTION_REQUIRES_INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "saint.john-duckla",
+      "name": "Giovanni da Dukla",
+      "canonizedOn": "1997-06-10",
+      "canonizationEventId": "canon-1997-06-10",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1997-06-10"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html"
+      ]
+    },
+    {
+      "id": "saint.jean-gabriel-perboyre",
+      "name": "Jean Gabriel Perboyre",
+      "canonizedOn": "1996-06-02",
+      "canonizationEventId": "canon-1996-06-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1996-06-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html"
+      ]
+    },
+    {
+      "id": "saint.egidio-maria-san-giuseppe",
+      "name": "Egidio Maria di San Giuseppe",
+      "canonizedOn": "1996-06-02",
+      "canonizationEventId": "canon-1996-06-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1996-06-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html"
+      ]
+    },
+    {
+      "id": "saint.juan-grande-roman",
+      "name": "Juan Grande Román",
+      "canonizedOn": "1996-06-02",
+      "canonizationEventId": "canon-1996-06-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1996-06-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html"
+      ]
+    },
+    {
+      "id": "saint.jan-sarkander",
+      "name": "Jan Sarkander",
+      "canonizedOn": "1995-05-21",
+      "canonizationEventId": "canon-1995-05-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-05-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.zdislava-lemberk",
+      "name": "Zdislava di Lembert",
+      "canonizedOn": "1995-05-21",
+      "canonizationEventId": "canon-1995-05-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-05-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.marko-krizevcanin",
+      "name": "Marco Križevčanin",
+      "canonizedOn": "1995-07-02",
+      "canonizationEventId": "canon-1995-07-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-07-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.stefan-pongracz",
+      "name": "Stefano Pongracz",
+      "canonizedOn": "1995-07-02",
+      "canonizationEventId": "canon-1995-07-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-07-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.melchior-grodziecki",
+      "name": "Melchiorre Grodziecki",
+      "canonizedOn": "1995-07-02",
+      "canonizationEventId": "canon-1995-07-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-07-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.eugene-de-mazenod",
+      "name": "Eugène de Mazenod",
+      "canonizedOn": "1995-12-03",
+      "canonizationEventId": "canon-1995-12-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1995-12-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html"
+      ]
+    },
+    {
+      "id": "saint.claudine-thevenet",
+      "name": "Claudine Thévenet",
+      "canonizedOn": "1993-03-21",
+      "canonizationEventId": "canon-1993-03-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1993-03-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html"
+      ]
+    },
+    {
+      "id": "saint.teresa-los-andes",
+      "name": "Teresa de Jesús de los Andes",
+      "canonizedOn": "1993-03-21",
+      "canonizationEventId": "canon-1993-03-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1993-03-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html"
+      ]
+    },
+    {
+      "id": "saint.enrique-de-osso",
+      "name": "Enrique de Ossó",
+      "canonizedOn": "1993-06-16",
+      "canonizationEventId": "canon-1993-06-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1993-06-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html"
+      ]
+    },
+    {
+      "id": "saint.meinhard-latvia",
+      "name": "Meinhard, first Bishop of Latvia",
+      "canonizedOn": "1993-09-08",
+      "canonizationEventId": "canon-1993-09-08",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1993-09-08"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html"
+      ]
+    },
+    {
+      "id": "saint.claude-la-colombiere",
+      "name": "Claude La Colombière",
+      "canonizedOn": "1992-05-31",
+      "canonizationEventId": "canon-1992-05-31",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1992-05-31"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html"
+      ]
+    },
+    {
+      "id": "saint.ezequiel-moreno",
+      "name": "Ezequiel Moreno y Díaz",
+      "canonizedOn": "1992-10-11",
+      "canonizationEventId": "canon-1992-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1992-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html"
+      ]
+    },
+    {
+      "id": "saint.raphael-kalinowski",
+      "name": "Raffaele (Giuseppe) Kalinowski",
+      "canonizedOn": "1991-11-17",
+      "canonizationEventId": "canon-1991-11-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1991-11-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1991.html"
+      ]
+    },
+    {
+      "id": "saint.marguerite-dyouville",
+      "name": "Marie Marguerite d’Youville",
+      "canonizedOn": "1990-12-09",
+      "canonizationEventId": "canon-1990-12-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1990-12-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1990.html"
+      ]
+    },
+    {
+      "id": "saint.clelia-barbieri",
+      "name": "Clelia Barbieri",
+      "canonizedOn": "1989-04-09",
+      "canonizationEventId": "canon-1989-04-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-04-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.gaspare-bertoni",
+      "name": "Gaspare Bertoni",
+      "canonizedOn": "1989-11-01",
+      "canonizationEventId": "canon-1989-11-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-11-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.riccardo-pampuri",
+      "name": "Riccardo Pampuri",
+      "canonizedOn": "1989-11-01",
+      "canonizationEventId": "canon-1989-11-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-11-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.agnes-bohemia",
+      "name": "Agnese di Boemia",
+      "canonizedOn": "1989-11-12",
+      "canonizationEventId": "canon-1989-11-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-11-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.albert-chmielowski",
+      "name": "Alberto Adamo Chmielowski",
+      "canonizedOn": "1989-11-12",
+      "canonizationEventId": "canon-1989-11-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-11-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.mutien-marie-wiaux",
+      "name": "Muziano Maria Wiaux",
+      "canonizedOn": "1989-12-10",
+      "canonizationEventId": "canon-1989-12-10",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1989-12-10"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html"
+      ]
+    },
+    {
+      "id": "saint.roque-gonzalez",
+      "name": "Roque González de Santa Cruz",
+      "canonizedOn": "1988-05-16",
+      "canonizationEventId": "canon-1988-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.paraguay-jesuit-martyrs-3"
+      ]
+    },
+    {
+      "id": "saint.alfonso-rodriguez-paraguay",
+      "name": "Alfonso Rodríguez (Paraguay Martyr)",
+      "canonizedOn": "1988-05-16",
+      "canonizationEventId": "canon-1988-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.paraguay-jesuit-martyrs-3"
+      ]
+    },
+    {
+      "id": "saint.juan-del-castillo",
+      "name": "Juan del Castillo",
+      "canonizedOn": "1988-05-16",
+      "canonizationEventId": "canon-1988-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.paraguay-jesuit-martyrs-3"
+      ]
+    },
+    {
+      "id": "saint.eustochia-calafato",
+      "name": "Eustochia Smeralda Calafato",
+      "canonizedOn": "1988-06-11",
+      "canonizationEventId": "canon-1988-06-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-06-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ]
+    },
+    {
+      "id": "saint.andrew-dung-lac",
+      "name": "Andrea Dung-Lac",
+      "canonizedOn": "1988-06-19",
+      "canonizationEventId": "canon-1988-06-19",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-06-19"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.vietnamese-martyrs-117"
+      ]
+    },
+    {
+      "id": "saint.simon-de-rojas",
+      "name": "Simón de Rojas",
+      "canonizedOn": "1988-07-03",
+      "canonizationEventId": "canon-1988-07-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-07-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ]
+    },
+    {
+      "id": "saint.rose-philippine-duchesne",
+      "name": "Rose-Philippine Duchesne",
+      "canonizedOn": "1988-07-03",
+      "canonizationEventId": "canon-1988-07-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-07-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ]
+    },
+    {
+      "id": "saint.magdalene-of-canossa",
+      "name": "Maddalena di Canossa",
+      "canonizedOn": "1988-10-02",
+      "canonizationEventId": "canon-1988-10-02",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-10-02"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ]
+    },
+    {
+      "id": "saint.maria-rosa-molas-vallve",
+      "name": "Maria Rosa Molas y Vallvé",
+      "canonizedOn": "1988-12-11",
+      "canonizationEventId": "canon-1988-12-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1988-12-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+      ]
+    },
+    {
+      "id": "saint.lorenzo-ruiz",
+      "name": "Lorenzo Ruiz",
+      "canonizedOn": "1987-10-18",
+      "canonizationEventId": "canon-1987-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1987-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.japan-martyrs-16-1987"
+      ]
+    },
+    {
+      "id": "saint.domingo-ibanez-de-erquicia",
+      "name": "Domenico Ibáñez de Erquicia",
+      "canonizedOn": "1987-10-18",
+      "canonizationEventId": "canon-1987-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1987-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.japan-martyrs-16-1987"
+      ]
+    },
+    {
+      "id": "saint.james-kyushei-tomonaga",
+      "name": "Giacomo Kyushei Gorobioye Tomonaga",
+      "canonizedOn": "1987-10-18",
+      "canonizationEventId": "canon-1987-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1987-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.japan-martyrs-16-1987"
+      ]
+    },
+    {
+      "id": "saint.giuseppe-moscati",
+      "name": "Giuseppe Moscati",
+      "canonizedOn": "1987-10-25",
+      "canonizationEventId": "canon-1987-10-25",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1987-10-25"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+      ]
+    },
+    {
+      "id": "saint.francesco-antonio-fasani",
+      "name": "Francesco Antonio Fasani",
+      "canonizedOn": "1986-04-13",
+      "canonizationEventId": "canon-1986-04-13",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1986-04-13"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html"
+      ]
+    },
+    {
+      "id": "saint.giuseppe-maria-tomasi",
+      "name": "Giuseppe Maria Tomasi",
+      "canonizedOn": "1986-10-12",
+      "canonizationEventId": "canon-1986-10-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1986-10-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html"
+      ]
+    },
+    {
+      "id": "saint.paola-frassinetti",
+      "name": "Paola Frassinetti",
+      "canonizedOn": "1984-03-11",
+      "canonizationEventId": "canon-1984-03-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1984-03-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+      ]
+    },
+    {
+      "id": "saint.andrew-kim-taegon",
+      "name": "Andrea Kim Tae-gon",
+      "canonizedOn": "1984-05-06",
+      "canonizationEventId": "canon-1984-05-06",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1984-05-06"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.korean-martyrs-103"
+      ]
+    },
+    {
+      "id": "saint.paul-chong-hasang",
+      "name": "Paolo Chong Ha-sang",
+      "canonizedOn": "1984-05-06",
+      "canonizationEventId": "canon-1984-05-06",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1984-05-06"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.korean-martyrs-103"
+      ]
+    },
+    {
+      "id": "saint.miguel-febres-cordero",
+      "name": "Miguel Febres Cordero",
+      "canonizedOn": "1984-10-21",
+      "canonizationEventId": "canon-1984-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1984-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+      ]
+    },
+    {
+      "id": "saint.leopold-mandic",
+      "name": "Leopoldo da Castelnovo (Leopold Mandić)",
+      "canonizedOn": "1983-10-16",
+      "canonizationEventId": "canon-1983-10-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1983-10-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1983.html"
+      ]
+    },
+    {
+      "id": "saint.crispin-viterbo",
+      "name": "Crispino da Viterbo",
+      "canonizedOn": "1982-06-20",
+      "canonizationEventId": "canon-1982-06-20",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1982-06-20"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html"
+      ]
+    },
+    {
+      "id": "saint.maximilian-kolbe",
+      "name": "Massimiliano Maria Kolbe",
+      "canonizedOn": "1982-10-10",
+      "canonizationEventId": "canon-1982-10-10",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1982-10-10"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html"
+      ]
+    },
+    {
+      "id": "saint.marguerite-bourgeoys",
+      "name": "Marguerite Bourgeoys",
+      "canonizedOn": "1982-10-31",
+      "canonizationEventId": "canon-1982-10-31",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1982-10-31"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html"
+      ]
+    },
+    {
+      "id": "saint.jeanne-delanoue",
+      "name": "Jeanne Delanoue",
+      "canonizedOn": "1982-10-31",
+      "canonizationEventId": "canon-1982-10-31",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1982-10-31"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html"
       ]
     }
   ]
