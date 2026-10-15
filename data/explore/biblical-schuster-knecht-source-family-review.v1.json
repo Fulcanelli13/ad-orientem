@@ -358,6 +358,12 @@
       "scope": "1925 B. Herder nineteenth English edition, Internet Archive DLI",
       "status": "SCAN_LOCATED_AUTO_OCR_NOT_IMAGE_PROOFREAD",
       "remedy": "Verify physical title and 8 Origins chapter boundaries from scanned page images, record print-page/image offsets, then collate complete paragraphs; do not use raw OCR directly as published text."
+    },
+    {
+      "code": "EDITION_ROMAN_NUMERAL_COLLISIONS",
+      "scope": "Knecht 1910 chapter pointers vs Schuster 32nd 2014 TOC and 1925 original",
+      "status": "35_TENTATIVE_LATER_EDITION_NUMBER_DIVERGENCES",
+      "remedy": "Maintain separate edition-specific chapter selectors and compare printed source-text paragraphs before translating or claiming identity; never reuse bare Roman numerals across editions."
     }
   ],
   "counts": {
@@ -402,5 +408,17 @@
       "usage": "Optional existing-author short reading path only after exact edition textual collation, not AI abridgement",
       "importEligibility": "HOLD"
     }
-  ]
+  ],
+  "relatedSourceConcordance": {
+    "path": "data/explore/biblical-schuster-182-to-atlas-151-source-concordance.v1.json",
+    "evidenceEdition": "SCHUSTER-EN-1950-32ND-TAN-2014_TABLE_OF_CONTENTS_ONLY",
+    "indexedSourceChapters": 182,
+    "canonEventKeys": 151,
+    "tentativeTopicMatchEventCount": 106,
+    "heldWithoutTopicMatchEventCount": 45,
+    "sourceChaptersWithCandidateEvent": 92,
+    "sourceChaptersWithoutCandidateEvent": 90,
+    "knechtNumberMayNotTransferAcrossEditions": 35,
+    "release": "RESEARCH_ONLY_NO_HISTORICAL_TEXT_COLLATED"
+  }
 }
