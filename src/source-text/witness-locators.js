@@ -39,7 +39,7 @@ export function normalizeWitnessLocator(profile,raw){
    // Printed-page identity is distinct from the DjVu scan sequence number.
    const m=loc.match(/^p([1-9][0-9]{0,3}):s([0-9]{3})$/);
    if(!m)throw new Error("SOURCE_WITNESS_PRINT_PAGE_INVALID");
-   key="ce1908-v3-p"+m[1]+"-s"+m[2];
+   key="ce1913-v3-p"+m[1]+"-s"+m[2];
    label="p"+m[1]+":s"+m[2];break;
   }
   default:throw new Error("SOURCE_WITNESS_LOCATOR_UNREVIEWED");
