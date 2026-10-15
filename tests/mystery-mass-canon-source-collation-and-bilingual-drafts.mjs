@@ -52,7 +52,12 @@ for(const a of col.sixPairTranscriptionCollations){
  assert(knownPairs.has(a.ids.join('|')),'Existing comparison not found: '+a.ids);
  assert(a.retainedBothEvidenceIDs && !a.publicationApproved);
  assert(a.url.startsWith('https://'));
- assert(!a.matchingPrintedPageImageIndependentlyInspected);
+ if(a.ids[0]==="VER-032"){
+   assert.equal(a.matchingPrintedPageImageIndependentlyInspected,true);
+   assert.equal(a.printImage?.printedPage,46);
+ }else{
+   assert.equal(a.matchingPrintedPageImageIndependentlyInspected,false);
+ }
 }
 const knownIssues=new Set(adjudication.interpretativeIssueDossiers.map(x=>x.id));
 for(const issue of col.fiveInterpretativeIssueReconciliations){
