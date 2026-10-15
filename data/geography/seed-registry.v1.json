@@ -998,6 +998,134 @@
       "codes": {
         "iso_alpha2": "PY"
       }
+    },
+    {
+      "geo_area_id": "geo:country:HN",
+      "name": {
+        "official": "Honduras",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "HN"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CR",
+      "name": {
+        "official": "Costa Rica",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MY",
+      "name": {
+        "official": "Malaysia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MY"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SK",
+      "name": {
+        "official": "Slovakia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SK"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:DO",
+      "name": {
+        "official": "Dominican Republic",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "DO"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CU",
+      "name": {
+        "official": "Cuba",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SI",
+      "name": {
+        "official": "Slovenia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SI"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LV",
+      "name": {
+        "official": "Latvia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LV"
+      }
     }
   ],
   "places": [
@@ -9930,6 +10058,373 @@
       "source_ids": [
         "SG-R72-SITE-SG-INV-0527",
         "SG-R72-GEO-SG-INV-0527"
+      ]
+    },
+    {
+      "place_id": "place:HN:suyapa-basilica",
+      "name": {
+        "official": "Basílica de Nuestra Señora de Suyapa",
+        "aliases": [
+          "Basilica of Suyapa",
+          "Basílica de Suyapa",
+          "Basilique Notre-Dame de Suyapa"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:HN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.08041,
+        "lng": -87.15727,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1207066140",
+        "source_ref": "osm:way:1207066140",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HN",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tegucigalpa",
+        "region": null,
+        "country_code": "HN",
+        "country": "Honduras",
+        "formatted": "Basílica de Nuestra Señora de Suyapa, Tegucigalpa, Honduras"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0450",
+        "SG-R73-GEO-SG-INV-0450"
+      ]
+    },
+    {
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "name": {
+        "official": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+        "aliases": [
+          "Basilica of Our Lady of the Angels, Cartago",
+          "Basílica de los Ángeles",
+          "Basilique Notre-Dame-des-Anges de Cartago"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 9.8641,
+        "lng": -83.91288,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/102243517",
+        "source_ref": "osm:way:102243517",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CR",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Cartago",
+        "region": null,
+        "country_code": "CR",
+        "country": "Costa Rica",
+        "formatted": "Basílica de Nuestra Señora de los Ángeles, Cartago, Cartago, Costa Rica"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0457",
+        "SG-R73-GEO-SG-INV-0457"
+      ]
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "name": {
+        "official": "Minor Basilica of Saint Anne, Bukit Mertajam",
+        "aliases": [
+          "St Anne's Shrine, Bukit Mertajam",
+          "Minor Basilica of St Anne",
+          "Basilique mineure Sainte-Anne de Bukit Mertajam"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:MY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 5.440325,
+        "lng": 100.387715,
+        "precision": "complex_anchor",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.mbsp.gov.my/map/tengah.pdf",
+        "source_ref": "municipal:MBSP:booklet-st-annes",
+        "matched_country_code": "MY",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bukit Mertajam",
+        "region": null,
+        "country_code": "MY",
+        "country": "Malaysia",
+        "formatted": "Minor Basilica of Saint Anne, Bukit Mertajam, Bukit Mertajam, Malaysia"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0675",
+        "SG-R73-GEO-SG-INV-0675"
+      ]
+    },
+    {
+      "place_id": "place:SK:levoca-marianska-hora-basilica",
+      "name": {
+        "official": "Bazilika Navštívenia Panny Márie — Mariánska hora, Levoča",
+        "aliases": [
+          "Basilica of the Visitation, Levoča",
+          "Marian Hill Levoča",
+          "Basilique de la Visitation de Levoča"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:SK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.04331,
+        "lng": 20.59776,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/118725714",
+        "source_ref": "osm:way:118725714",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "SK",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Levoča",
+        "region": null,
+        "country_code": "SK",
+        "country": "Slovakia",
+        "formatted": "Bazilika Navštívenia Panny Márie — Mariánska hora, Levoča, Levoča, Slovakia"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0296",
+        "SG-R73-GEO-SG-INV-0296"
+      ]
+    },
+    {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "name": {
+        "official": "Sanktuarium Matki Jedności Chrześcijan — Święta Lipka",
+        "aliases": [
+          "Święta Lipka Sanctuary",
+          "Holy Linden Marian Shrine",
+          "Sanctuaire marial de Święta Lipka"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 54.02469,
+        "lng": 21.21818,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/173495845",
+        "source_ref": "osm:way:173495845",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Święta Lipka",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Sanktuarium Matki Jedności Chrześcijan — Święta Lipka, Święta Lipka, Poland"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0201",
+        "SG-R73-GEO-SG-INV-0201"
+      ]
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "name": {
+        "official": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+        "aliases": [
+          "Basilica of Our Lady of Altagracia",
+          "Catedral Basílica de Higüey",
+          "Basilique-cathédrale Notre-Dame de l'Altagracia"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:DO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 18.61551,
+        "lng": -68.71687,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/191929310",
+        "source_ref": "osm:way:191929310",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DO",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Higüey",
+        "region": null,
+        "country_code": "DO",
+        "country": "Dominican Republic",
+        "formatted": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey, Higüey, Dominican Republic"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0467",
+        "SG-R73-GEO-SG-INV-0467"
+      ]
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "name": {
+        "official": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+        "aliases": [
+          "Our Lady of Charity of El Cobre",
+          "National Shrine of Our Lady of Charity",
+          "Basilique Notre-Dame-de-Charité d'El Cobre"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 20.05075,
+        "lng": -75.94906,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/236331992",
+        "source_ref": "osm:way:236331992",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CU",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "El Cobre",
+        "region": null,
+        "country_code": "CU",
+        "country": "Cuba",
+        "formatted": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre, El Cobre, Cuba"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0462",
+        "SG-R73-GEO-SG-INV-0462"
+      ]
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "name": {
+        "official": "Bazilika Marije Pomagaj — Brezje",
+        "aliases": [
+          "Basilica of Mary Help of Christians, Brezje",
+          "Slovenian National Marian Shrine, Brezje",
+          "Basilique Marie-Auxiliatrice de Brezje"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:SI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.32876,
+        "lng": 14.23224,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/674712939",
+        "source_ref": "osm:way:674712939",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "SI",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Brezje",
+        "region": null,
+        "country_code": "SI",
+        "country": "Slovenia",
+        "formatted": "Bazilika Marije Pomagaj — Brezje, Brezje, Slovenia"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0304",
+        "SG-R73-GEO-SG-INV-0304"
+      ]
+    },
+    {
+      "place_id": "place:LV:aglona-assumption-basilica",
+      "name": {
+        "official": "Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika",
+        "aliases": [
+          "Aglona Basilica",
+          "Basilica of the Assumption, Aglona",
+          "Basilique de l'Assomption d'Aglona"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:LV"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 56.1271,
+        "lng": 27.0166,
+        "precision": "complex_anchor",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.latvia.travel/en/sight/aglona-basilica",
+        "source_ref": "latvia.travel:aglona-basilica",
+        "matched_country_code": "LV",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Aglona",
+        "region": null,
+        "country_code": "LV",
+        "country": "Latvia",
+        "formatted": "Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika, Aglona, Latvia"
+      },
+      "source_ids": [
+        "SG-R73-SITE-SG-INV-0340",
+        "SG-R73-GEO-SG-INV-0340"
       ]
     }
   ],
