@@ -29,8 +29,18 @@ for(const row of review.cases){
   assert.ok(["ORIGINAL_PASSAGE_CONTEXT_CHECKED","ORIGINAL_ISSUER_SUMMARY_ONLY","ORIGINAL_PDF_TEXT_AND_PAGE_2_IMAGE_CHECKED","BIBLIOGRAPHIC_RECORD_ONLY"].includes(p.verification));
  }
 }
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/§§19–25/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/§§19–25/);
+// Existing corrected source text targets the distinct issue of domestic
+// primacy and limits on obedience: Pius XI, Casti connubii §§26–29.
+// The prior §§19–25 locator discusses conjugal fidelity/charity and is
+// retained in historic audit materials, not imposed on this revised claim.
+for(const content of CSE_DEBATE_MAP.CSE045.catholicCase){
+ assert.match(content,/§§26–29/,"CSE045 uses the accurate domestic-authority passage");
+ assert.match(content,/Mulieris dignitatem/);
+ assert.doesNotMatch(content,/§§19–25/,"Obsolete source locator must not replace the corrected one");
+}
+assert.ok(CSE_SOURCE_MAP.CASTI?.canonical_url?.startsWith("https://www.vatican.va/"),
+ "Updated argument must still cite the original papal document");
+
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/USCCB Committee on Doctrine's 2010 statement/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[1],/Comité doctrinal des évêques américains de 2010/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/CDF\'s 2009 clarification explicitly distinguishes/);
