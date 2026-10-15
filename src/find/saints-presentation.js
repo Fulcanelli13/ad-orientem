@@ -1,0 +1,72 @@
+// Compact, image-approval-aware Saints cards inside the existing Explore sheet.
+// Sources remain folded; figures can share one physical Place/map marker.
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const arr=value=>Array.isArray(value)?value:[];
+const L=(lang,en,fr)=>lang==="fr"?fr:en;
+const translated=(obj,lang,key)=>String(obj?.[key+"_"+lang]??obj?.[key+"_en"]??"").trim();
+const sourceUrl=s=>{
+  try{const u=new URL(s?.url);return u.protocol==="https:"&&u.hostname==="www.vatican.va"?u.href:null;}catch{return null;}
+};
+
+/** Display all source-linked people at a single Place, without unapproved portraits. */
+export function renderSaintPlaceSheet(vm){
+  const item=vm?.selected;if(item?.lens!=="saints")return "";
+  const language=vm.language,people=arr(item.saints),floating=vm.view==="map";
+  if(!people.length)return "";
+  let html='<div class="aoFindSheetBackdrop aoSaintPlaceLayer'+(floating?' aoExploreQuickPreviewLayer':'')+'" data-find-close-detail>'
+    +'<section class="aoFindSheet aoSaintPlaceSheet" role="dialog" aria-modal="'+String(!floating)+'" aria-label="'+esc(L(language,"Lives of saints","Vies des saints"))+'">';
+  html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
+  html+='<header><div><small>'+esc(L(language,"SAINTS · EXPLORATORY COLLECTION","SAINTS · COLLECTION EN COURS"))+'</small>'
+    +'<h2>'+esc(item.subtitle||item.title)+'</h2>'
+    +'<p>'+esc(L(language,"Holy lives connected with this physical place","Vies saintes associées à ce lieu'))+'</p></div>'
+    +'<button type="button" data-find-close-detail aria-label="'+esc(L(language,"Close","Fermer"))+'">×</button></header>';
+  for(const [index,saint] of people.entries()){
+    html+='<article class="aoSaintBiography" data-saint-id="'+esc(saint.saint_id)+'">';
+    // Empty artwork frame rather than misattributed shrine photography or candidate art.
+    html+='<div class="aoSaintPortraitHold" role="note"><span>'+esc(L(language,"Art portrait pending curatorial approval","Portrait en attente de validation"))+'</span></div>';
+    html+='<small class="aoSaintStatus">'+esc(saint.recognition_status==="BEATIFIED_NOT_CANONIZED"
+      ?L(language,"Blessed · not canonized","Bienheureux · non canonisé")
+      :L(language,"Canonized saint","Saint canonisé"))+'</small>';
+    html+='<h3>'+esc(translated(saint,language,"name"))+'</h3>';
+    html+='<p class="aoSaintWhy">'+esc(translated(saint,language,"why"))+'</p>';
+    html+='<ul class="aoSaintFacts">'+arr(saint.biography_facts).map(f=>
+      '<li>'+esc(String(f?.[language]??f?.en??""))+'</li>').join("")+'</ul>';
+    const sources=arr(saint.sources).map(s=>{const url=sourceUrl(s);return url
+      ?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.id)+'</a>':""}).filter(Boolean);
+    if(sources.length)html+='<details class="aoSaintReading"><summary>'+esc(L(language,"Sources & further reading","Sources et lectures complémentaires"))+'</summary>'
+      +'<div>'+sources.join("")+'</div></details>';
+    if(index<people.length-1)html+='<div class="aoSaintPersonDivider"></div>';
+    html+='</article>';
+  }
+  html+='<div class="aoFindActions"><button type="button" data-explore-open-place="'+esc(item.place_id)+'">'
+    +esc(L(language,"View the associated place","Voir le lieu associé"))+'</button></div>';
+  html+='<p class="aoSaintGeoNote">'+esc(L(language,
+    "Association with a shrine does not establish a saint’s birthplace, residence, death, or relic location. All map points reuse verified physical Place records.",
+    "L’association à un sanctuaire ne prouve ni naissance, ni résidence, ni décès, ni présence de reliques. Les repères reprennent les lieux physiques existants."))+'</p>';
+  if(!item.map_publishable)html+='<p class="aoSaintGeoNote">'+esc(L(language,
+    "This site is listed without a publishable map pin until its exact location is verified.",
+    "Ce lieu reste accessible en liste sans repère jusqu’à la vérification de sa localisation."))+'</p>';
+  html+='</section></div>';
+  return html;
+}
+
+export const SAINTS_SHEET_CSS=`
+.aoSaintPlaceSheet{background:linear-gradient(155deg,#15202b,#080d14 62%);padding-bottom:max(25px,env(safe-area-inset-bottom));max-height:82dvh}
+.aoSaintPlaceSheet header{align-items:start}.aoSaintPlaceSheet header small{color:#cbb587;font:650 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}
+.aoSaintPlaceSheet header h2{font:550 clamp(20px,4vw,26px)/1.2 var(--ao-font-display,Georgia,serif)}
+.aoSaintPlaceSheet header p{font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#b4afa2}
+.aoSaintBiography{padding:16px 0}.aoSaintPortraitHold{min-height:90px;display:flex;justify-content:center;align-items:center;border:1px solid rgba(217,197,154,.12);background:#0f1720;border-radius:10px;color:#a89b84;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);text-align:center;padding:12px}
+.aoSaintStatus{display:block;margin:14px 0 4px;color:#c1aa7e;font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
+.aoSaintBiography h3{font:550 clamp(22px,4vw,28px)/1.22 var(--ao-font-display,Georgia,serif);margin:5px 0;color:#efe4d1}
+.aoSaintWhy{font:17px/1.52 var(--ao-font-body,Georgia,serif);color:#ece2d3;margin:12px 0 16px}
+.aoSaintFacts{padding-left:22px;margin:12px 0 16px}.aoSaintFacts li{font:14px/1.56 var(--ao-font-ui,system-ui,sans-serif);color:#d4cbbd;padding-left:3px;margin:9px 0}
+.aoSaintReading{border-top:1px solid rgba(217,197,154,.17);padding:11px 0;margin:12px 0}
+.aoSaintReading summary{cursor:pointer;min-height:40px;color:#e1c895;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSaintReading>div{display:grid;gap:6px}.aoSaintReading a{display:block;padding:8px 0;color:#dec89f;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px;font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSaintPersonDivider{border-bottom:1px solid rgba(217,197,154,.22);margin:8px 0}
+.aoSaintGeoNote{font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#a99e8b;padding-bottom:6px}
+.aoSaintPlaceSheet button:focus-visible,.aoSaintPlaceSheet a:focus-visible,.aoSaintPlaceSheet summary:focus-visible{outline:2px solid #d9c59a;outline-offset:3px}
+.aoSaintScopeNote{margin:0 16px 8px;padding:8px 12px;border:1px solid rgba(217,197,154,.16);border-radius:9px;color:#afa48f;background:#111925;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+@media(min-width:800px){.aoSaintPlaceSheet{max-width:690px;margin:0 auto}}
+@media(max-width:520px){.aoSaintPlaceSheet{padding:14px 15px calc(18px + env(safe-area-inset-bottom))}.aoSaintWhy{font-size:17px}.aoSaintFacts li{font-size:14px}.aoSaintPortraitHold{min-height:80px}}
+`;
