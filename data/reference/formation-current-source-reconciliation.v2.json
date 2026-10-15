@@ -126,7 +126,11 @@
     "historical_pass7_unchanged_source_role_links": 63,
     "historical_pass7_prior_amendment_supersessions": 10,
     "historical_pass7_newly_recorded_supersessions": 15,
-    "historical_pass7_existing_amendment_extensions": 1
+    "historical_pass7_existing_amendment_extensions": 1,
+    "historical_pass2_dispositions": 1,
+    "historical_pass3_dispositions": 6,
+    "historical_pass6_dispositions": 0,
+    "historical_pass8_dispositions": 4
   },
   "added_source_bindings": [
     {
@@ -1990,7 +1994,8 @@
     "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications.",
     "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046.",
     "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files.",
-    "Previously superseded finding PSV7-045 retains its existing 2015/2022 survivor-source replacement, with two additional 2026 correction pointers separately versioned; the historical original-source check does not certify those additions."
+    "Previously superseded finding PSV7-045 retains its existing 2015/2022 survivor-source replacement, with two additional 2026 correction pointers separately versioned; the historical original-source check does not certify those additions.",
+    "Earlier Pass 2, 3, 6 and 8 bounded original-source findings remain frozen: 113 historical findings, 11 source-role relationships changed by later corrections, 102 original IDs still cited in the same role. No old finding certifies replacement prose."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2763,5 +2768,190 @@
       "disposition": "PRIOR_SURVIVOR_SOURCE_AMENDMENT_REMAINS_ACTIVE__TWO_ADDITIONAL_ORIGINAL_SOURCE_RECORDS_PRESENT__HISTORICAL_VERDICT_NOT_EXTENDED_TO_NEW_CLAIMS",
       "current_claims_independently_certified": false
     }
-  ]
+  ],
+  "historical_primary_source_dispositions_by_pass": {
+    "2": {
+      "historical_findings": 18,
+      "unchanged_current_source_links": 17,
+      "dispositions": [
+        {
+          "finding_id": "PSV2-006",
+          "owner": "CR-MOR-01",
+          "role": "documented_position",
+          "historic_source_id": "FUCHS71-FIRSTPERSON-REPRINT",
+          "historic_url": "https://www.scribd.com/document/939033418/Readings-in-Moral-Theology-Edited-by-Charles-E-Curran-and-Edited-by-Charles-E-Curran-and-Richard-A-McCormick-Readings-in-Moral-Theology",
+          "current_source_ids": [
+            "AO26_CRMOR01_DOCUM_1",
+            "AO26_CRMOR01_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "3": {
+      "historical_findings": 30,
+      "unchanged_current_source_links": 24,
+      "dispositions": [
+        {
+          "finding_id": "PSV3-001",
+          "owner": "CR-DOC-05",
+          "role": "answer",
+          "historic_source_id": "LIB1888",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_ANSWE_1",
+            "AO26_CRDOC05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-002",
+          "owner": "CR-DOC-05",
+          "role": "answer",
+          "historic_source_id": "DH1965",
+          "historic_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_ANSWE_1",
+            "AO26_CRDOC05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-003",
+          "owner": "CR-DOC-05",
+          "role": "critical_response",
+          "historic_source_id": "SSPX2012-FOUR",
+          "historic_url": "https://sspx.org/en/sspx-heretical-31303",
+          "current_source_ids": [
+            "AO26_CRDOC05_CRITI_1",
+            "AO26_CRDOC05_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-004",
+          "owner": "CR-DOC-05",
+          "role": "critical_response",
+          "historic_source_id": "RLFSSPX",
+          "historic_url": "https://fsspx.org/en/religious-liberty-30946",
+          "current_source_ids": [
+            "AO26_CRDOC05_CRITI_1",
+            "AO26_CRDOC05_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-022",
+          "owner": "CR-AUT-05",
+          "role": "documented_position",
+          "historic_source_id": "CCC212",
+          "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_1",
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV3-023",
+          "owner": "CR-AUT-05",
+          "role": "documented_position",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_1",
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "disposition": "SAME_DOCUMENT_URL_UNDER_SCOPED_ID__HISTORICAL_FINDING_NOT_AUTOMATICALLY_TRANSFERRED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "6": {
+      "historical_findings": 26,
+      "unchanged_current_source_links": 26,
+      "dispositions": []
+    },
+    "8": {
+      "historical_findings": 50,
+      "unchanged_current_source_links": 46,
+      "dispositions": [
+        {
+          "finding_id": "PSV8-017",
+          "owner": "CR-DOC-05",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "LIB1888",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+          "current_source_ids": [
+            "AO26_CRDOC05_TRADI_1",
+            "AO26_CRDOC05_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-026",
+          "owner": "CR-AUT-05",
+          "role": "critical_response",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_DOCUM_2",
+            "AO26_CRAUT05_CRITI_2",
+            "AO26_CRAUT05_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_DOCUM_2"
+          ],
+          "disposition": "SAME_DOCUMENT_URL_UNDER_SCOPED_ID__HISTORICAL_FINDING_NOT_AUTOMATICALLY_TRANSFERRED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-027",
+          "owner": "CR-AUT-05",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "AQU104",
+          "historic_url": "https://www.newadvent.org/summa/3104.htm#article5",
+          "current_source_ids": [
+            "AO26_CRAUT05_TRADI_1",
+            "AO26_CRAUT05_ANSWE_2",
+            "AO26_CRAUT05_TRADI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV8-044",
+          "owner": "CR-IDM-06",
+          "role": "critical_response",
+          "historic_source_id": "DOMJES",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+          "current_source_ids": [
+            "AO26_CRIDM06_DOCUM_2",
+            "AO26_CRIDM06_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    }
+  }
 }
