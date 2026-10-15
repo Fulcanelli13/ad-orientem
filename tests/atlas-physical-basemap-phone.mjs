@@ -50,7 +50,11 @@ try{
  assert.ok([...sourceResponses.values()].every(status=>status===200),
   "Physical GeoJSON must load successfully (not CDN political tiles): "+JSON.stringify([...sourceResponses]));
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-map] canvas').count(),1);
- assert.match(await page.locator("#ao-find-modular-root .aoBibleAtlasEraHeader").innerText(),/Physical map/);
+ const physicalNote=page.locator("#ao-find-modular-root [data-bible-physical-note]");
+ assert.equal(await physicalNote.isVisible(),true);
+ assert.match(await physicalNote.innerText(),/PHYSICAL MAP/);
+ const headerHeight=await page.locator("#ao-find-modular-root .aoBibleAtlasEraHeader").evaluate(el=>el.getBoundingClientRect().height);
+ assert.ok(headerHeight<120,"Phone chronology header too tall: "+headerHeight);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-step]").count(),151);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-chapter]").count(),11);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-map]").count(),1);
