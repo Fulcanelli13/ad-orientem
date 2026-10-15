@@ -557,6 +557,8 @@ export function renderExploreToString(vm){
   ?L(vm.language,"Historic sanctoral source subjects, not 307 distinct biographies or certified present-day feast observances.","Sujets des archives du sanctoral, non 307 biographies ni fêtes actuelles certifiées.")
   :f.saintScope==="later"
   ?L(vm.language,"Post-1960 canonization index: named persons and collective groups, not yet complete biographies or assigned 1962 feasts.","Index des canonisations postérieures à 1960 : personnes et groupes, sans biographies complètes ni fêtes de 1962.")
+  :f.saintScope==="doctors"
+  ?L(vm.language,"38 Doctors of the Church from the Calendar owner roster. Later declarations are not retrospective 1962 titles.","38 Docteurs de l’Église recensés par le calendrier. Les proclamations ultérieures ne modifient pas rétroactivement les titres de 1962.")
   :L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation."))+"</p>";
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
@@ -578,7 +580,8 @@ export function renderExploreToString(vm){
     html+='<nav class="aoSaintCatalogueScopes" aria-label="'+esc(L(vm.language,"Saints catalogue sections","Sections du catalogue des saints"))+'">';
     for(const [code,en,fr] of [
       ["profiles","30 biographies","30 biographies"],["historical","Historical sanctoral","Sanctoral historique"],
-      ["later","Later canonizations","Canonisations récentes"]
+      ["later","Later canonizations","Canonisations récentes"],
+      ["doctors","Doctors (38)","Docteurs (38)"]
     ])html+=pill("saintScope",code,L(vm.language,en,fr),f.saintScope||"profiles");
     html+='</nav>';
   }
@@ -596,6 +599,7 @@ export function renderExploreToString(vm){
   const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?(vm.view==="list"
   ?(f.saintScope==="historical"?L(vm.language,"archived source subjects","sujets des archives")
     :f.saintScope==="later"?L(vm.language,"later canonization records","références des canonisations")
+    :f.saintScope==="doctors"?L(vm.language,"Doctor source records","références des Docteurs")
     :L(vm.language,"saint profiles","notices de saints"))
   :L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
