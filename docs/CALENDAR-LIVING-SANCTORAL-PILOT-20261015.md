@@ -233,3 +233,26 @@ The worldwide default displays **only five explicitly Vatican-decreed General Ro
 - New tests/calendar-reviewed-sanctoral-day-integration.mjs checks the 14-entry source model against all upstream registries and geo/photo evidence, compact delivery, five global dates, publication-gated historical display, hidden US-specific dates in the worldwide default, French/English text, robust HTML escaping, permitted external reference URLs, no invented painting or image, and no Mass/Proper actions.
 - The older tests remain in place for historical 1962 principal identity and source-date reconciliation.
 - **Still required:** current full GitHub suite, on-device Calendar visual/interaction QA, art selection from its own owner, then separate Home and Map of Saints consumption. Do not report these as completed or merge the draft prematurely.
+
+## 15 October — real phone acceptance, 320 / 390 / 430 px
+
+**Accepted in scoped automated Chromium browser checks, with three screenshot artifacts visually inspected.** On the branch head `622e9073272948e90549851ad30efcf3b7d7ec2a`, dedicated [GitHub Actions run #38731911594](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731911594) passed and uploaded artifact `calendar-sanctoral-phone-evidence` (artifact ID `11971306336`).
+
+The test opens the **real Today → Read & reflect → Day** path (there is no Day tab in Today's Day/Month/Year tab row), selects **9 October 2026**, and confirms:
+
+- Canonical 1962 principal is **St John Leonardi**, actual resolver ID `sancti:10-09:3:w`; the modern secondary card is **St John Henry Newman**. `day.main` and the original single Mass control are unchanged.
+- At widths **320 / 390 / 430 px**, the secondary card widths are **248 / 306 / 346 px**, within visible viewport boundaries; **0 px document horizontal overflow**, no JavaScript page errors, and no duplicated supplementary card.
+- Disclosure's touch area is **44 px** at each viewport. Further-reading content remains collapsed until tapped, with an actual Vatican URL, `target=_blank`, and `rel=noopener noreferrer`.
+- Exactly **one** lazy read-model network response (HTTP 200) is made per Calendar session.
+- Navigating to **9 October 2025** removes Newman's *2026-inscribed* memorial while leaving the 1962 principal feast UI.
+- Screenshots at all three widths were examined: restrained dark treatment, clear textual hierarchy, no clipping or overpaint. The screenshots are viewport crops after opening the source disclosure, not proofs of full-page accessibility or final editorial/artwork approval.
+
+**Phone test source:** `tests/calendar-sanctoral-phone-acceptance.mjs`; **workflow:** `.github/workflows/calendar-sanctoral-phone.yml`. This is an additive test, distinct from the already existing Month picker phone suite. The Calendar's source disclosure CSS was raised from 32 px to a 44 px min-height for touch accessibility.
+
+On the accepted commit, **all nine GitHub Actions workflows associated with the PR finished successfully or were intentionally skipped (the general visual capture job)**: sanctoral source integrity, app convergence, required main gate, 1962 year audit, Calendar convergence (Today/Mass embedding), calendar phone month controls, directory foundation, and the new actual phone-sanctoral test. Vercel's separate build-rate-limit status is not a passed preview. The branch remains **draft, unmerged and not on GitHub Pages**.
+
+### Parallel-owner handoff
+
+- [Map of Saints PR #1227](https://github.com/Fulcanelli13/ad-orientem/pull/1227) already has its own native Explore lens and a source-grounded `saint:therese-of-lisieux` ↔ `saint.therese-lisieux` identity bridge. We provided five existing Place IDs and source scopes in a PR comment; **do not create or mutate a second Map of Saints** in this Calendar branch. Distinguish Blessed Jacques-Désiré Laval (Mauritius) from canonised François de Montmorency-Laval (Quebec).
+- [Sacred Art research PR #1231](https://github.com/Fulcanelli13/ad-orientem/pull/1231) owns physical originals, person/subject mappings and approval; no unapproved painting is assigned by Calendar. The five Vatican-inscribed modern memorial subjects were sent to the artwork owner for exact, user-rated physical-artwork matching.
+- Next: wait for cross-owner approved painting IDs/Map profile handoff; then plan discreet Home and Explore references with independent native owners. No saint-group member enumeration.
