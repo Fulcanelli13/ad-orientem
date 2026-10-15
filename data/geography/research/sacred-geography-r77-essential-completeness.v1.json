@@ -1,0 +1,209 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R77_ESSENTIAL_IDENTITY_AND_COMPLETENESS_V1",
+  "as_of": "2026-10-15",
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0431",
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "shrine_id": "shrine:MX:guadalupe-zacatecas-historic-sanctuary",
+      "pilgrimage_id": "pilgrimage:MX:guadalupe-zacatecas-historic-sanctuary-destination",
+      "country": "MX",
+      "name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "latitude": 22.74656,
+      "longitude": -102.51787,
+      "coordinate_precision": "site",
+      "site_source": "https://catalogonacionalmhi.inah.gob.mx/consulta_publica/detalle/79623",
+      "geo_source": "https://www.openstreetmap.org/node/4046916240"
+    },
+    {
+      "candidate_id": "SG-INV-0449",
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "shrine_id": "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "pilgrimage_id": null,
+      "country": "BZ",
+      "name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "latitude": 17.24867,
+      "longitude": -88.7635,
+      "coordinate_precision": "site",
+      "site_source": "https://www.catholicdiocesebelize.org/en/parishes",
+      "geo_source": "https://www.openstreetmap.org/way/294567114"
+    },
+    {
+      "candidate_id": "SG-INV-0459",
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "shrine_id": "shrine:CR:montes-oca-our-lady-lourdes-parish",
+      "pilgrimage_id": null,
+      "country": "CR",
+      "name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "latitude": 9.93288,
+      "longitude": -84.04176,
+      "coordinate_precision": "site",
+      "site_source": "https://jesuitascam.org/parroquia-jesuita-n-s-de-lourdes-fe-resiliencia-y-espiritu-misionero-en-costa-rica/",
+      "geo_source": "https://www.openstreetmap.org/way/372659552"
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "shrine_id": "shrine:PK:karachi-our-lady-fatima-parish",
+      "pilgrimage_id": null,
+      "country": "PK",
+      "name": "Our Lady of Fatima Catholic Church, Karachi",
+      "latitude": 24.86672,
+      "longitude": 67.02199,
+      "coordinate_precision": "complex_anchor",
+      "site_source": "https://www.ucanews.com/directory/parishes-stations/pakistan-karachi/379",
+      "geo_source": "https://en.wikipedia.org/wiki/Our_Lady_of_Fatima_Church%2C_Karachi"
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0248",
+      "name": "Anglican Shrine of Our Lady of Walsingham",
+      "country": "GB",
+      "research_status": "UNMATCHED",
+      "disposition": "EXCLUDE_NON_CATHOLIC",
+      "reason": "Anglican shrine is physically and ecclesially distinct from existing published Catholic National Shrine at Walsingham."
+    },
+    {
+      "candidate_id": "SG-INV-0415",
+      "name": "Shrine of Our Lady of Fatima, Quebec",
+      "country": "CA",
+      "research_status": "UNMATCHED",
+      "disposition": "HOLD_AMBIGUOUS_DEMOLISHED",
+      "reason": "Quebec Notre-Dame-de-Fatima parish at Longueuil was demolished in 2016; other Québec Fatima dedications exist and this bare research title cannot identify a currently visitable sanctuary."
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "name": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "country": "NI",
+      "research_status": "UNMATCHED",
+      "disposition": "HOLD_CATHOLIC_INSTITUTION_UNCONFIRMED",
+      "reason": "Named Guadalupe shrine in Matagalpa not independently resolved; no reliable exact-site correspondence."
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "name": "Our Lady of Lourdes Shrine, Tianjin",
+      "country": "CN",
+      "research_status": "UNMATCHED",
+      "disposition": "HOLD_CATHOLIC_INSTITUTION_UNCONFIRMED",
+      "reason": "Tianjin Lourdes shrine not corroborated with original Catholic identity or credible physical point."
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "name": "Shrine of Our Lady of Fátima, Dili",
+      "country": "TL",
+      "research_status": "UNMATCHED",
+      "disposition": "HOLD_WRONG_LOCATION",
+      "reason": "A Fatima church at Railaco is not evidence of a Dili shrine and should not inherit an invented Dili pin."
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "name": "Saint Peter Chanel Memorial, Russell",
+      "country": "NZ",
+      "research_status": "TEXT_HINT_REVIEW",
+      "disposition": "HOLD_INDICATIVE_ONLY_PIN",
+      "reason": "Existing National Shrine of St Peter Chanel in Russell is documented at Chapel Street but its Place currently uses a nearby school point; need exact shrine coordinate, do not mark as verified."
+    }
+  ],
+  "unmatched_country_priorities": [
+    {
+      "country": "IT",
+      "unmatched": 39,
+      "confirmed": 5,
+      "essential": 0
+    },
+    {
+      "country": "ES",
+      "unmatched": 35,
+      "confirmed": 4,
+      "essential": 0
+    },
+    {
+      "country": "PH",
+      "unmatched": 32,
+      "confirmed": 6,
+      "essential": 0
+    },
+    {
+      "country": "US",
+      "unmatched": 28,
+      "confirmed": 5,
+      "essential": 0
+    },
+    {
+      "country": "FR",
+      "unmatched": 26,
+      "confirmed": 3,
+      "essential": 0
+    },
+    {
+      "country": "GB",
+      "unmatched": 20,
+      "confirmed": 1,
+      "essential": 1
+    },
+    {
+      "country": "DE",
+      "unmatched": 17,
+      "confirmed": 1,
+      "essential": 0
+    },
+    {
+      "country": "MX",
+      "unmatched": 15,
+      "confirmed": 3,
+      "essential": 0
+    },
+    {
+      "country": "PL",
+      "unmatched": 14,
+      "confirmed": 6,
+      "essential": 0
+    },
+    {
+      "country": "PT",
+      "unmatched": 14,
+      "confirmed": 2,
+      "essential": 0
+    },
+    {
+      "country": "AT",
+      "unmatched": 14,
+      "confirmed": 1,
+      "essential": 0
+    },
+    {
+      "country": "CZ",
+      "unmatched": 14,
+      "confirmed": 1,
+      "essential": 0
+    }
+  ],
+  "summary": {
+    "geoAreas": 72,
+    "places": 258,
+    "shrines": 254,
+    "pilgrimages": 237,
+    "sources": 443,
+    "countries": 69,
+    "candidate_counts": {
+      "confirmed": 106,
+      "tentative": 70,
+      "unresolved": 574,
+      "explicit": 104,
+      "review": 70,
+      "unmatched": 576,
+      "essential": 6
+    }
+  },
+  "next_phase": {
+    "goal": "Review remaining research candidates by original institutional evidence, site identity and deduplication; not raw unmatched totals",
+    "rules": [
+      "Never treat six essential holds as six genuinely missing Catholic physical sites.",
+      "Reconcile first against all canonical published Places and existing R70 confirmations.",
+      "A Catholic parish dedication is not proof of a juridical sanctuary or apparition.",
+      "Do not assume demised church or non-Catholic shrine should be published.",
+      "Do not promote Russell nearby school point to shrine GPS precision."
+    ]
+  }
+}
