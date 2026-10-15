@@ -1,4 +1,5 @@
 import { loadDirectoryDataset } from "./data-service.js";
+import { ACTIVE_SAINTS_CHANNEL, isResearchSaintsChannel, applySaintsReleaseBoundary } from "./saints-release-policy.js";
 
 function safeArray(value){return Array.isArray(value)?value:[];}
 async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
@@ -40,7 +41,8 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   illustratedFrenchR67:moduleUrl("../../data/shrines/illustrated-place-guides-france-r67.v1.json"),
 });
 
-export async function loadExploreDataset({fetchImpl=fetch}={}){
+export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
+  const research=isResearchSaintsChannel(saintsChannel);
   const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
@@ -61,11 +63,11 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.biblePlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.saintsPilot,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.saintsCalendarBridge,{fetchImpl,optional:true}),
-    fetchJson(EXPLORE_DATA_URLS.saintsDoctors,{fetchImpl,optional:true}),
-    fetchJson(EXPLORE_DATA_URLS.saintsVocations,{fetchImpl,optional:true}),
-    fetchJson(EXPLORE_DATA_URLS.saintsOwnerIndex,{fetchImpl,optional:true}),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsDoctors,{fetchImpl,optional:true}):Promise.resolve(null),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsVocations,{fetchImpl,optional:true}):Promise.resolve(null),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsOwnerIndex,{fetchImpl,optional:true}):Promise.resolve(null),
   ]);
-  return Object.freeze({
+  return applySaintsReleaseBoundary({
     directory,
     biblePlaces:Object.freeze({entries:safeArray(biblePlaces?.entries)}),
     saints:saintsPilot?.schema==="ao.saints.holiness-first-editorial-pilot.v1"&&saintsPilot?.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE"?saintsPilot:null,
@@ -106,5 +108,5 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       sources:safeArray(novenaBridge?.sources),
       researchStatus:novenaBridge?.research_status??null,
     }),
-  });
+  },saintsChannel);
 }
