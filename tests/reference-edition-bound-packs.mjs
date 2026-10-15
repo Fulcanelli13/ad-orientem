@@ -164,10 +164,9 @@ assert.throws(()=>createSourcePackReader(metadataForged,{
 const identityForged={...reviewed.manifest,editionIdentity:{
  ...reviewed.manifest.editionIdentity,editionId:"ED-OTHER"
 }};
-const wrongReader=createSourcePackReader(identityForged,{
+assert.throws(()=>createSourcePackReader(identityForged,{
  cryptoProvider:webcrypto,loadChunk:async()=>reviewed.chunks[0].raw
-});
-await assert.rejects(wrongReader.open(id1),/CHUNK_EDITION_MISMATCH/);
+}),/CITATION_IDENTITY_INVALID/,"A forged edition fails at manifest validation, before downloading a chunk");
 
 // Legacy project-authored demo manifest and chunk bytes remain unchanged.
 const legacyManifest=JSON.parse(readFileSync(new URL("../data/reference/source-demo/manifest.v1.json",import.meta.url),"utf8"));
