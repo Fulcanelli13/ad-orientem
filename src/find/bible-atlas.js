@@ -184,10 +184,36 @@ export function buildBibleAtlas(records){
   throw new Error("Atlas stable event key collision");
  return stops;
 }
-export function atlasMapItems(stops,index){
+// Labels are editorial *aliases of already-pinned settlements*, not geocoding.
+// Traditional event-site pins, uncertain sites, and geographic regions are
+// intentionally absent. Provenance is the matching ATLAS_GEO source URL/ID.
+export const ATLAS_SETTLEMENT_LABELS=Object.freeze({
+ hebron:["Hebron","Hébron"],jerusalem:["Jerusalem","Jérusalem"],
+ jericho:["Jericho","Jéricho"],nazareth:["Nazareth","Nazareth"],
+ capernaum:["Capernaum","Capharnaüm"],samaria:["Samaria","Samarie"],
+ "caesarea-maritima":["Caesarea Maritima","Césarée maritime"],
+ joppa:["Joppa","Joppé"],nineveh:["Nineveh","Ninive"],
+ babylon:["Babylon","Babylone"],damascus:["Damascus","Damas"],
+ "antioch-syria":["Antioch","Antioche"],tarsus:["Tarsus","Tarse"],
+ athens:["Athens","Athènes"],ephesus:["Ephesus","Éphèse"],
+ philippi:["Philippi","Philippes"],corinth:["Corinth","Corinthe"],
+ rome:["Rome","Rome"],lystra:["Lystra","Lystres"],
+ thessalonica:["Thessalonica","Thessalonique"],
+ troas:["Troas","Troade"],miletus:["Miletus","Milet"]
+});
+export function atlasSourceSettlementLabel(geo,language="en"){
+ const pair=ATLAS_SETTLEMENT_LABELS[geo?.key];
+ if(!pair||!["settlement","city_context"].includes(geo?.kind)||
+    !geo?.url||!Number.isFinite(geo?.lat)||!Number.isFinite(geo?.lng))return null;
+ return language==="fr"?pair[1]:pair[0];
+}
+export function atlasMapItems(stops,index,{cinematic=false,language="en"}={}){
  const active=stops[index],seen=new Map();if(!active)return [];
  for(const s of stops.slice(0,index+1)){if(s.era===active.era&&s.geo)seen.set(s.geo.key,s);}
  return [...seen.values()].map(s=>({item_id:"atlas:"+s.geo.key,lens:"heritage",title:s.place_en||s.title_en,map_publishable:true,
+ ...(cinematic&&atlasSourceSettlementLabel(s.geo,language)?{
+  atlas_label:atlasSourceSettlementLabel(s.geo,language),
+  atlas_label_basis:"existing_settlement_anchor"}:{}),
  geo:{lat:s.geo.lat,lng:s.geo.lng,approximate:s.geo.kind!=="settlement",precision:s.geo.kind,source_url:s.geo.url}}));
 }
 export function atlasIndexForPin(stops,index,pin){
