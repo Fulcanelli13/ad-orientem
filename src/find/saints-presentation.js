@@ -162,5 +162,11 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintLife,.aoSaintWitness{font:15px/1.6 var(--ao-font-body,Georgia,serif);color:#e9decd;margin:12px 0}
 .aoSaintWitness{margin-top:0}
 .aoSaintRoles{margin:12px 0 10px}
+.aoSaintCatalogueFacets{display:flex;gap:6px;overflow-x:auto;padding:7px 13px 12px;scrollbar-width:thin}
+.aoSaintCatalogueFacets button{flex:none;min-height:38px;white-space:nowrap;border-radius:999px;padding:7px 12px;
+ background:#101a24;color:#d1c2a9;border:1px solid rgba(217,197,154,.21);
+ font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSaintCatalogueFacets button.active{color:#f4e3c7;background:#29301e;border-color:#a78f60}
+.aoSaintCatalogueFacets button:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}
 @media(max-width:390px){.aoSaintIdentity{grid-template-columns:94px minmax(0,1fr);gap:10px}.aoSaintBiography h3{font-size:21px}.aoSaintLifeEvents dd{font-size:11px}}
 `;
