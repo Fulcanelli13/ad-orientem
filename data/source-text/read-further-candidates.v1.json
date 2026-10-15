@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SOURCE_TEXT_READ_FURTHER_CANDIDATES_V1",
+  "date": "2026-10-15",
+  "status": "SOURCE_CHAPTER_LOCATORS_IDENTIFIED__NO_FORMATION_CLAIM_BINDING_OR_LITURGICAL_CUE_MODIFICATION",
+  "origin": "Three complete machine-readable whole-work staging witnesses; canonical source module owners remain authoritative.",
+  "rules": [
+    "A source work may serve many modules but has a single work ID and distinct edition witness IDs.",
+    "These are editorial read-further leads based on original chapter titles, not verified support for a specific doctrinal claim.",
+    "Do not create new prayer cards, Mass gestures, formation answers, or citations from B-graded electronic paragraphs.",
+    "Do not reuse modern English translations for historic French witnesses or change prior source bindings by title match alone.",
+    "The existing Formation source index contains no explicitly titled bindings for these exact whole-book editions; do not invent completed crosswalk edges."
+  ],
+  "formationExactTitleMatchingBindingsFound": 0,
+  "linkedCanonicalClaimsApproved": 0,
+  "candidateLinks": [
+    {
+      "id": "RF-FSALES-MASS",
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "editionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "sourceLocator": "part-02-ch-14",
+      "sourceTheme": "De la très-sainte messe, et de la manière de l'entendre",
+      "targetOwner": "mass",
+      "targetModule": "Mass / Mystery of the Mass",
+      "placement": "READ_FURTHER_LEAD_ONLY",
+      "status": "REVIEW_SOURCE_CHAPTER_BEFORE_BINDING_SPECIFIC_CARD",
+      "targetCardId": null
+    },
+    {
+      "id": "RF-FSALES-CONFESSION",
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "editionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "sourceLocator": "part-02-ch-19",
+      "sourceTheme": "De la sainte confession",
+      "targetOwner": "pray",
+      "targetModule": "Confession",
+      "placement": "READ_FURTHER_LEAD_ONLY",
+      "status": "REVIEW_BEFORE_DISPLAY"
+    },
+    {
+      "id": "RF-FSALES-COMMUNION",
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "editionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "sourceLocator": "part-02-ch-20",
+      "sourceTheme": "De la fréquente communion",
+      "targetOwner": "pray",
+      "targetModule": "Before and After Mass",
+      "placement": "READ_FURTHER_LEAD_ONLY",
+      "status": "REVIEW_BEFORE_DISPLAY"
+    },
+    {
+      "id": "RF-FSALES-ROSARY",
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "editionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "sourceLocator": "appendix-rosary",
+      "sourceTheme": "Manière de réciter dévotement le chapelet",
+      "targetOwner": "pray",
+      "targetModule": "Rosary",
+      "placement": "HISTORICAL_READ_FURTHER_LEAD_ONLY",
+      "status": "DO_NOT_OVERRIDE_EXISTING_ROSARY_SOURCE_IDS_OR_BEAD_MAPPING"
+    },
+    {
+      "id": "RF-KEMPIS-EUCHARIST",
+      "sourceWorkId": "WORK-THOMAS-KEMPIS-IMITATION-CHRIST",
+      "editionId": "ED-BENHAM-EN-PG1653-GITENBERG2018",
+      "sourceLocator": "book-04-intro",
+      "sourceTheme": "Of the Sacrament of the Altar",
+      "targetOwner": "pray",
+      "targetModule": "Eucharistic Adoration / Before and After Mass",
+      "placement": "READ_FURTHER_LEAD_ONLY",
+      "status": "REVIEW_BEFORE_DISPLAY"
+    },
+    {
+      "id": "RF-KEMPIS-ADORATION",
+      "sourceWorkId": "WORK-THOMAS-KEMPIS-IMITATION-CHRIST",
+      "editionId": "ED-BENHAM-EN-PG1653-GITENBERG2018",
+      "sourceLocator": "book-04-ch-01",
+      "sourceTheme": "With how great reverence Christ must be received",
+      "targetOwner": "pray",
+      "targetModule": "Adoration / Communion Preparation",
+      "placement": "READ_FURTHER_LEAD_ONLY",
+      "status": "REVIEW_BEFORE_DISPLAY"
+    }
+  ],
+  "duplicateImportPrevented": true,
+  "productionDisplayed": false
+}
