@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const out=resolve(root,"artifacts/curated65-phone");
+await mkdir(out,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
   ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
   ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",
@@ -83,6 +85,7 @@ try{
     assert.equal(result.overflow,false,"Reader introduced horizontal phone overflow");
     assert.ok(result.rootWidth<=width+1);
     assert.deepEqual(errors,[],"JavaScript errors during actual conditional Sequence navigation");
+    await page.screenshot({path:resolve(out,"conditional-sequence-"+width+"-"+language+(optional?"-confiteor":"")+".png"),animations:"disabled"});
     console.log("PASS conditional Sequence production phone "+width+"px "+language+
       (optional?" optional Confiteor":"")+": 66 model / "+(optional?66:65)+" visible, real navigation and bilingual source");
     await context.close();
