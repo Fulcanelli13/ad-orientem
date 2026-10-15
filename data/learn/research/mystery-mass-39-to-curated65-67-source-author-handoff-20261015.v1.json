@@ -7,7 +7,9 @@
     "existingMysteryOwners": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json (PR #1193)",
     "archiveBridge": "data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json (PR #1193)",
     "referencePilot": "data/reference/canonical-works-pilot.v1.json (main, PR #1212)",
-    "parsingOwner": "src/reference/passage-packs.js (main, PRs #1222/#1233/#1234)"
+    "parsingOwner": "src/reference/passage-packs.js (main, PRs #1222/#1233/#1234)",
+    "originalSectionTitleRegistry": "data/presentation/reader-section-map.v0.13.1.json (main)",
+    "originalCanonTitleRegistry": "data/presentation/reader-canon-source-map.v1.json (main)"
   },
   "verifiedCounts": {
     "canonicalSourceOwners": 39,
@@ -18,14 +20,14 @@
       67
     ],
     "normallyVisibleOrdinaryBaseCardsWithoutOptionalSecondConfiteor": 64,
-    "conditionalIntroItEntryCards": [
+    "historicalEvidenceRows": 422,
+    "macroOwnerAssignedEvidenceRows": 402,
+    "macroOwnerUnassignedEvidenceRows": 20,
+    "conditionalIntroitEntryModelCards": [
       61,
       62,
       63
-    ],
-    "historicalEvidenceRows": 422,
-    "macroOwnerAssignedEvidenceRows": 402,
-    "macroOwnerUnassignedEvidenceRows": 20
+    ]
   },
   "compatibility": {
     "exact65SourceModel": "Original 39 certified source-first moments. Stable base 65 curated IDs are constructed using projectCuratedOrdinaryLiveCards sectionId rule, source and ordinal.",
@@ -67,7 +69,8 @@
     },
     "visibleVariants": "Optional second Confiteor can be hidden; pre-Mass special rite may suppress first 4 opening cards; forms need their own owner and must not inherit uniform 65 assumption.",
     "preMassProcessionsAndAsperges": "External/conditional events are not forced into a 39-owner slot.",
-    "fixedReaderSeparation": "Do not replace the 65–67-card LIVE reader, existing 48-card rollback, independent study course or original 1962 liturgical texts."
+    "fixedReaderSeparation": "Do not replace the 65–67-card LIVE reader, existing 48-card rollback, independent study course or original 1962 liturgical texts.",
+    "verifiedTitleParity": "All 39 owner canonicalTitle values match their original source-first title registries (30-section map or 14 Canon map, as applicable); custom split titles match reader-live-curated-cards.js. Browser output still untested."
   },
   "owners": [
     {
