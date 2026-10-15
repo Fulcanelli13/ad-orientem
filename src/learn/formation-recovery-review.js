@@ -1,5 +1,6 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import {formationSourceBibleMarkup} from "./formation-scripture-source.js";
+import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
 // Canonical study preview and full editorial QA share one source; draft is not certified teaching.
 // The records load from their canonical research JSON files; this view does not duplicate the answer corpus.
 export const RECOVERY_REVIEW_VERSION = "FORMATION_RECOVERY_REVIEW_V1";
@@ -82,6 +83,9 @@ const css = [
   "#ao-formation-recovery-review .rrList small{display:block;font:.7rem var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}",
   "#ao-formation-recovery-review .rrSources{display:flex;gap:5px 12px;flex-wrap:wrap;font:.72rem/1.6 var(--ao-font-ui,system-ui);margin:4px 0 15px}",
   "#ao-formation-recovery-review .rrSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}",
+  "#ao-formation-recovery-review .rrCitedWitness{display:flex;flex-direction:column;gap:2px;width:100%;margin:0 0 8px}",
+  "#ao-formation-recovery-review .rrSourceLocator{font:400 max(13px,.8125rem)/1.48 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0);overflow-wrap:anywhere}",
+
 
   "#ao-formation-recovery-review .rrEvidenceDisclosure{margin:23px 0 14px;border-top:1px solid var(--ao-rule,#3d3d40);padding-top:9px;font:400 max(13px,.8125rem)/1.55 var(--ao-font-ui,system-ui,sans-serif)}",
   "#ao-formation-recovery-review .rrEvidenceDisclosure>summary{min-height:44px;display:flex;align-items:center;color:var(--ao-text-muted,#a9a5a0);cursor:pointer;font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}",
@@ -237,8 +241,12 @@ export function createFormationRecoveryReview(win=globalThis) {
     if(!seen.length)return '<p class="rrMuted">Editorial source review required</p>';
     return '<nav class="rrSources" aria-label="Original sources">'+seen.map(id=>{
       const s=map.get(id);
-      if(!s?.url?.startsWith("https://"))return '<span class="rrMuted">Unresolved source '+esc(id)+'</span>';
-      return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title||id)+'">'+esc(s.title||id)+'</a>'+formationSourceBibleMarkup(s,{french:isFr(win)});
+      const link=sourceReferenceSafeUrl(s?.url);
+      if(!link)return '<span class="rrMuted">Unresolved source '+esc(id)+'</span>';
+      return '<span class="rrCitedWitness" data-rr-source-local-id="'+esc(id)+'">'+
+        '<a href="'+esc(link)+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title||id)+'">'+esc(s.title||id)+'</a>'+
+        (s.locator?'<small class="rrSourceLocator">'+esc(s.locator)+'</small>':"")+
+        formationSourceBibleMarkup(s,{french:isFr(win)})+'</span>';
     }).join("")+'</nav>';
   };
   // Claim links remain pack-scoped. Collapse only their presentation; each
