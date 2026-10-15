@@ -16,6 +16,15 @@ assert.equal(handoff.scopedEdgeReview.counts.withClaimLocator,3);
 assert.equal(handoff.scopedEdgeReview.counts.noHistoricalClaimLocator,18);
 assert.equal(handoff.scopedEdgeReview.counts.supersededEdges,1);
 assert.equal(handoff.scopedEdgeReview.counts.ownerCurrentClaimCertifications,0);
+assert.equal(handoff.scopedEdgeReview.ownerChangedPreviouslyScreenedSections,22);
+assert.equal(handoff.scopedEdgeReview.linkTargets.mediatorDei.deepFragmentStatus,
+ "UNVERIFIED__KEEP_ORIGINAL_DOCUMENT_URL");
+assert.equal(handoff.scopedEdgeReview.linkTargets.hume.deepFragmentStatus,
+ "UNVERIFIED__KEEP_SECTION_X_DOCUMENT_URL");
+assert.ok(handoff.scopedEdgeReview.linkTargets.mediatorDei.caveat.includes("superseded"));
+assert.equal(handoff.scopedEdgeReview.oneEditorialException.mustNotRestoreOldBinding,true);
+assert.deepEqual(handoff.scopedEdgeReview.oneEditorialException.replacementSourceIds,
+ ["AO26_CRLIT07_ANSWE_1","AO26_CRLIT07_ANSWE_2","AO26_CRLIT07_ANSWE_3"]);
 assert.equal(handoff.scopedEdgeReview.immutableLimits.publicCitationApprovals,0);
 const staged=handoff.scopedEdgeReview.historicalSectionSourceEdges.map(record=>
  prepareScopedSourceLink({formation,evidenceLedger:historicalEvidence,handoff,edgeKey:record.edgeKey}));
