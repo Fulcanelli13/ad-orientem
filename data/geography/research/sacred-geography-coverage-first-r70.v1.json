@@ -20,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 247,
-    "existing_published_shrines": 243,
-    "linked_pilgrimages": 230,
-    "existing_country_coverage": 63,
-    "published_sites_bilingual": 243,
-    "source_registry_sites": 243,
-    "existing_physical_pins": 243,
+    "existing_production_places": 251,
+    "existing_published_shrines": 247,
+    "linked_pilgrimages": 234,
+    "existing_country_coverage": 65,
+    "published_sites_bilingual": 247,
+    "source_registry_sites": 247,
+    "existing_physical_pins": 247,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 95,
+      "CONFIRMED_EXISTING_PROMOTION": 99,
       "POTENTIAL_EXISTING_ID_REVIEW": 70,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 585
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 581
     },
     "priorities": {
       "Essential": 64,
@@ -169,10 +169,10 @@
     {
       "country": "BR",
       "curated_candidates": 13,
-      "published_shrines": 3,
-      "confirmed_promotions": 1,
+      "published_shrines": 4,
+      "confirmed_promotions": 2,
       "possible_reuses": 2,
-      "unresolved": 10
+      "unresolved": 9
     },
     {
       "country": "CA",
@@ -233,10 +233,10 @@
     {
       "country": "AR",
       "curated_candidates": 8,
-      "published_shrines": 2,
-      "confirmed_promotions": 2,
+      "published_shrines": 3,
+      "confirmed_promotions": 3,
       "possible_reuses": 0,
-      "unresolved": 6
+      "unresolved": 5
     },
     {
       "country": "CO",
@@ -393,10 +393,10 @@
     {
       "country": "UY",
       "curated_candidates": 5,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 5
+      "unresolved": 4
     },
     {
       "country": "VE",
@@ -897,10 +897,10 @@
     {
       "country": "MZ",
       "curated_candidates": 1,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 1
+      "unresolved": 0
     },
     {
       "country": "NO",
@@ -1081,14 +1081,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:MZ:namaacha-fatima-sanctuary",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 8,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R75_SITE_SOURCE_AND_COORDINATE_EVIDENCE"
     },
     {
       "candidate_id": "SG-INV-0456",
@@ -1245,14 +1246,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 18,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R75_SITE_SOURCE_AND_COORDINATE_EVIDENCE"
     },
     {
       "candidate_id": "SG-INV-0372",
@@ -1559,14 +1561,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:AR:alta-gracia-lourdes-sanctuary",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 37,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R75_SITE_SOURCE_AND_COORDINATE_EVIDENCE"
     },
     {
       "candidate_id": "SG-INV-0482",
@@ -1575,14 +1578,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:BR:fortaleza-fatima-sanctuary",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 38,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R75_SITE_SOURCE_AND_COORDINATE_EVIDENCE"
     },
     {
       "candidate_id": "SG-INV-0415",

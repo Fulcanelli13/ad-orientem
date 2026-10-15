@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 247,
-    "places_with_linked_records": 245,
+    "places": 251,
+    "places_with_linked_records": 249,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 202,
-    "shrines": 243,
-    "pilgrimages": 230,
+    "multicategory_heritage_places": 206,
+    "shrines": 247,
+    "pilgrimages": 234,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -143,6 +143,19 @@
     "Places with null latitude/longitude are pending coordinates, not false claims that a known coordinate lacks attribution."
   ],
   "place_crosswalk": [
+    {
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "display_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "record_ids": {
+        "shrines": [
+          "shrine:AR:alta-gracia-lourdes-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AR:alta-gracia-lourdes-sanctuary-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
     {
       "place_id": "place:AR:basilica-of-our-lady-of-lujan",
       "display_name": "Basilica of Our Lady of Luján",
@@ -306,6 +319,19 @@
         ],
         "customs": [
           "att:DEV-007:APARECIDA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "display_name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "record_ids": {
+        "shrines": [
+          "shrine:BR:fortaleza-fatima-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BR:fortaleza-fatima-sanctuary-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2987,6 +3013,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "display_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "record_ids": {
+        "shrines": [
+          "shrine:MZ:namaacha-fatima-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MZ:namaacha-fatima-sanctuary-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:NG:nne-enyemaka-umuaka",
       "display_name": "Nne Enyemaka Shrine, Umuaka",
       "record_ids": {
@@ -3858,6 +3897,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "display_name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "record_ids": {
+        "shrines": [
+          "shrine:UY:montevideo-gruta-lourdes-national-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:UY:montevideo-gruta-lourdes-national-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:VA:saint-peter-vatican",
       "display_name": "St Peter's Basilica — Vatican",
       "record_ids": {
@@ -3917,8 +3969,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 243,
-    "pilgrimages": 202,
+    "shrines": 247,
+    "pilgrimages": 206,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,

@@ -1,0 +1,135 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R75_ESSENTIAL_SITES_V1",
+  "as_of": "2026-10-15",
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0482",
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "shrine_id": "shrine:BR:fortaleza-fatima-sanctuary",
+      "pilgrimage_id": "pilgrimage:BR:fortaleza-fatima-sanctuary-destination",
+      "name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "country": "BR",
+      "lat": -3.752494,
+      "lng": -38.526609,
+      "precision": "site",
+      "site_url": "https://igrejadefatima.com.br/contato/",
+      "geo_url": "https://www.openstreetmap.org/way/1161529959",
+      "geo_ref": "osm:way:1161529959"
+    },
+    {
+      "candidate_id": "SG-INV-0494",
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "shrine_id": "shrine:AR:alta-gracia-lourdes-sanctuary",
+      "pilgrimage_id": "pilgrimage:AR:alta-gracia-lourdes-sanctuary-destination",
+      "name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "country": "AR",
+      "lat": -31.648889,
+      "lng": -64.457222,
+      "precision": "complex_anchor",
+      "site_url": "https://santuariolourdesal.wixsite.com/grutadealtagracia",
+      "geo_url": "https://fr.wikipedia.org/wiki/R%C3%A9pliques_de_la_grotte_de_Lourdes",
+      "geo_ref": "frwiki:replicas-lourdes:alta-gracia"
+    },
+    {
+      "candidate_id": "SG-INV-0532",
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "shrine_id": "shrine:UY:montevideo-gruta-lourdes-national-shrine",
+      "pilgrimage_id": "pilgrimage:UY:montevideo-gruta-lourdes-national-shrine-destination",
+      "name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "country": "UY",
+      "lat": -34.825556,
+      "lng": -56.181667,
+      "precision": "complex_anchor",
+      "site_url": "https://iglesiacatolica.org.uy/virgen-de-lourdes-montevideo/",
+      "geo_url": "https://fr.wikipedia.org/wiki/R%C3%A9pliques_de_la_grotte_de_Lourdes",
+      "geo_ref": "frwiki:replicas-lourdes:montevideo"
+    },
+    {
+      "candidate_id": "SG-INV-0721",
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "shrine_id": "shrine:MZ:namaacha-fatima-sanctuary",
+      "pilgrimage_id": "pilgrimage:MZ:namaacha-fatima-sanctuary-destination",
+      "name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "country": "MZ",
+      "lat": -25.988282,
+      "lng": 32.014878,
+      "precision": "complex_anchor",
+      "site_url": "https://www.fatima.pt/pt/locations/santuario-n-s-fatima-namaacha",
+      "geo_url": "https://www.info4camper.com/santuario_de_nossa_senhora_de_fatima_namaacha_maputo_11618.html?lg=pt",
+      "geo_ref": "info4camper:namaacha-gps"
+    }
+  ],
+  "existing_confirmed": [
+    {
+      "candidate_id": "SG-INV-0680",
+      "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "shrine_id": "shrine:SG:church-our-lady-of-lourdes-ophir",
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0680",
+        "SG-R70-CUSTODIAN-SG-INV-0680",
+        "SG-R70-GEO-SG-INV-0680"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0681",
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "shrine_id": "shrine:SG:nativity-blessed-virgin-mary-hougang",
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0681",
+        "SG-R70-CUSTODIAN-SG-INV-0681",
+        "SG-R70-GEO-SG-INV-0681"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0705",
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "shrine_id": "shrine:MA:cathedrale-saint-pierre-rabat",
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0705",
+        "SG-R70-CUSTODIAN-SG-INV-0705",
+        "SG-R70-GEO-SG-INV-0705"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0706",
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "shrine_id": "shrine:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "source_ids": [
+        "SG-R70-SITE-SG-INV-0706",
+        "SG-R70-CUSTODIAN-SG-INV-0706",
+        "SG-R70-GEO-SG-INV-0706"
+      ]
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0746",
+      "note": "Saint Peter Chanel Russell remains an indicative nearby-school coordinate, not a validated shrine pin."
+    },
+    {
+      "candidate_id": "SG-INV-0248",
+      "note": "Anglican Walsingham distinct from published Catholic Walsingham; do not collapse."
+    }
+  ],
+  "counts": {
+    "places": 251,
+    "shrines": 247,
+    "pilgrimages": 234,
+    "sources": 429,
+    "countries": 65,
+    "candidate_status": {
+      "confirmed": 99,
+      "tentative": 70,
+      "unresolved": 581,
+      "explicit": 97,
+      "review": 70,
+      "unmatched": 583,
+      "essential": 13
+    }
+  },
+  "qualifiers": [
+    "No invented apparitions, relic claims, route geometry, event timetables or images.",
+    "Fortaleza coordinates reference an OSM building way; other three pins are explicitly approximate sanctuary complex points.",
+    "Four existing churches already documented in R70 are reconciled only in the independent worldwide queue."
+  ]
+}
