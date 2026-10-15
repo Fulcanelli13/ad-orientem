@@ -1,0 +1,23 @@
+name: Source-text parser pilot
+on:
+  pull_request:
+    paths:
+      - "src/source-text/**"
+      - "data/source-text/**"
+      - "tests/source-text-pilot.mjs"
+      - "previews/source-text-parsing-pilot.html"
+      - "docs/source-text-parsing-pilot.md"
+      - ".github/workflows/source-text-pilot.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  parser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check source, edition, rights and lazy loading
+        run: node tests/source-text-pilot.mjs
