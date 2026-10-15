@@ -10,7 +10,7 @@ Every LIVE card has a `sourceSectionId` and derived `AO.LIVECURATED.….ordinal`
 
 ### Machine-derived base model map
 
-The table below is derived from the actual grouped card titles in `main` and the 39 source-first inventory in PR #1193. Titles of **ungrouped** cards are inherited inventory labels pending a runtime title parity check. Conditional pre-Gospel variants are specified in the JSON and must be generated from actual Proper data.
+The table below is derived from the actual grouped card titles in `main` and the 39 source-first inventory in PR #1193. Titles of the **23 ungrouped** cards were independently checked against the original 30-section/14-Canon source title registries: **39/39 original source-owner titles match**; compiled browser parity still awaits acceptance. Conditional pre-Gospel variants are specified in the JSON and must be generated from actual Proper data.
 
 | Source owner | Owner name | Base LIVE cards | Reader presentations |
 |---|---|---:|---|
@@ -54,7 +54,7 @@ The table below is derived from the actual grouped card titles in `main` and the
 | `AO.CARD.029` | Placeat & Final Blessing | 2 | Placeat tibi · Closing Prayer; Final Blessing |
 | `AO.CARD.030` | Last Gospel | 2 | Last Gospel · Prologue of St John; Last Gospel · The Word Made Flesh |
 
-Base reader presentation count: **65**. Canon source owners: **14**. Total original archival evidence: **422**; 402 macro-owned, 20 held for precise cue/external event placement. These macro assignments **do not** prove every source locator, quote, rite condition, or interpretation.
+Base reader presentation count: **65**. Canon source owners: **14**. Total original archival evidence: **422**; 402 macro-owned, 20 held for precise cue/external event placement. The old archive contains **15 distinct contributor labels** (led by John Walsh, O’Connell, Holy See witnesses, Lasance and Guéranger). This is **not** the full author census across subsequent research branches. These macro assignments **do not** prove every source locator, quote, rite condition, or interpretation.
 
 ## Granularity and attribution
 
