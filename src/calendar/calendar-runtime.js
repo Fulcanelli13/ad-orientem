@@ -11,6 +11,8 @@ import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper
 import { observedCycle } from "./observed-cycle.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import { calendarObservanceAlias } from "./observance-title.js";
+import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
+import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -39,6 +41,8 @@ const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
 let pilgrimageCorpus=null,pilgrimageLoad=null;
+let secondarySaintModel=null,secondarySaintLoad=null;
+const secondarySaintModelUrl=new URL("../../data/calendar/living-sanctoral-read-model.v1.json",import.meta.url).href;
 const pilgrimageDataUrl=new URL("../../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url).href;
 function loadCalendarPilgrimagePlaces(){
   if(pilgrimageCorpus||pilgrimageLoad||typeof globalThis.fetch!=="function")return;
@@ -49,6 +53,21 @@ function loadCalendarPilgrimagePlaces(){
     .finally(()=>{pilgrimageLoad=null});
 }
 
+// Calendar-only lazy, source-derived data; Home and Mass startup unaffected.
+function loadCalendarSecondarySaints(){
+  if(secondarySaintModel||secondarySaintLoad||typeof globalThis.fetch!=="function")return;
+  secondarySaintLoad=globalThis.fetch(secondarySaintModelUrl,{headers:{accept:"application/json"}})
+    .then(response=>response.ok?response.json():null)
+    .then(json=>{
+      if(json?.schema==="AO_LIVING_SANCTORAL_READ_MODEL_V1" &&
+         json.status==="READ_ONLY_SECONDARY_CALENDAR" &&
+         Array.isArray(json.observanceRegistry?.observances) &&
+         Array.isArray(json.visualCrosswalk?.links))secondarySaintModel=json;
+      if(root()&&calendarView==="day")paint();
+    })
+    .catch(error=>console.warn("Supplementary saint cards unavailable",error))
+    .finally(()=>{secondarySaintLoad=null});
+}
 function weekStart(id){const d=dateOf(id);d.setDate(d.getDate()-d.getDay());return iso(d)}
 function weekIds(id){const s=weekStart(id);return Array.from({length:7},(_,i)=>addDays(s,i))}
 function weekReady(id){return weekIds(id).every(x=>weekCache.has(x))}
@@ -601,6 +620,17 @@ async function openCalendarScripture(button){
 }
 function calendarScriptureStyles(){
  return `.aoCalDayScripture{margin:12px auto 0;max-width:580px;text-align:left}.aoCalDayScripture>small{display:block;color:var(--ao-text-muted,#a6a198);font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em}.aoCalDayScriptureActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.aoCalDayScriptureActions button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.22))!important;background:var(--ao-surface-1,rgba(16,24,33,.94))!important;border-radius:999px!important;color:var(--ao-text-primary,#e9e4d9)!important;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important}.aoCalDayScriptureActions button strong{font-weight:650}.aoCalDayScriptureActions button span{color:var(--ao-text-muted,#a6a198)}.aoCalDayScriptureActions button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoCalDayScriptureActions button:disabled{opacity:.55}.aoCalDayScriptureError:not([hidden]){color:#d9b99a;margin:8px 0 0;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}`;
+}
+function supplementaryDayMarkup(selected,r){
+  if(!secondarySaintModel||!r?.day?.main?.id)return "";
+  try{
+    const cards=buildReviewedSanctoralCards({
+      date:selected,language:fr()?"fr":"en",jurisdiction:"UNSPECIFIED",
+      observedPrincipalId:r.day.main.id,
+      ...secondarySaintModel
+    });
+    return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
+  }catch(error){console.warn("Supplementary saints projection unavailable",error);return ""}
 }
 function daySurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
