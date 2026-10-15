@@ -13,6 +13,16 @@ assert.equal(owner.observed_2026.named_commemoration_occurrences,117);
 assert.equal(owner.observed_2026.days_with_named_commemorations,112);
 assert.equal(owner.observed_2026.distinct_named_commemoration_strings,115);
 assert.equal(owner.observed_2026.distinct_principal_source_ids,297);
+assert.equal(owner.subject_demand_review.review_days,365);
+assert.equal(owner.subject_demand_review.total_source_title_mentions_not_unique_saints,165+117);
+assert.equal(owner.subject_demand_review.days_with_source_title_mentions,222);
+assert.equal(owner.subject_demand_review.lexical_hint_individual_or_person+
+ owner.subject_demand_review.lexical_hint_collective_or_group+
+ owner.subject_demand_review.lexical_hint_marian+
+ owner.subject_demand_review.lexical_hint_other,282);
+assert.equal(owner.subject_demand_review.canonical_person_id_promotions,0);
+assert.equal(owner.subject_demand_review.approved_artwork_promotions,0);
+
 const idmap=new Map(pilot.people.map(p=>[p.saint_id,p]));
 assert.equal(idmap.size,6,"Duplicate person identities are never allowed");
 const crossIds=new Map(cycle.candidate_general_1962.map(x=>[x.saint_id,x.observed_2026_source_id]));
