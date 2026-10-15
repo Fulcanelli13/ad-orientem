@@ -3,19 +3,44 @@ import {readFileSync} from "node:fs";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const one=read("data/learn/formation-primary-context-review-2026-10-09.v1.json");
 const two=read("data/learn/formation-primary-context-review-2-2026-10-09.v1.json");
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const historicPass=delta.historical_primary_source_dispositions_by_pass["2"];
+assert.equal(historicPass.dispositions.length,1);
+const historicByFinding=new Map(historicPass.dispositions.map(row=>[row.finding_id,row]));
+assert.equal(historicByFinding.size,historicPass.dispositions.length);
+const assertRetained=(x,section,registry)=>{
+ const row=historicByFinding.get(x.id);
+ if(section?.source_ids.includes(x.source_id)){
+  assert.ok(!row,x.id+" original source still cited; incorrect supersession");
+  return;
+ }
+ assert.ok(row,x.id+" original source moved without an explicitly preserved historical finding");
+ assert.equal(row.owner,x.owner);assert.equal(row.role,x.role);
+ assert.equal(row.historic_source_id,x.source_id);
+ assert.equal(row.historic_url,x.url);
+ assert.equal(registry.get(x.source_id)?.url,x.url,
+  x.id+" previous exact original document removed from its source registry");
+ assert.deepEqual(row.current_source_ids,section.source_ids);
+ assert.deepEqual(row.matching_original_url_successor_ids,
+   section.source_ids.filter(id=>registry.get(id)?.url===x.url));
+ assert.equal(row.current_claim_independently_certified,false);
+ assert.match(row.disposition,/NOT_AUTOMATICALLY_TRANSFERRED|NOT_CERTIFIED/);
+};
 const a=read("data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"),b=read("data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json");
 const byId=new Map([...a.dossiers,...b.dossiers].map(x=>[x.id,x]));
 const bySource=new Map([...a.source_registry,...b.source_registry].map(x=>[x.id,x]));
 assert.equal(one.findings.length,17);assert.equal(two.findings.length,18);
 assert.equal(two.version,"FORMATION_PRIMARY_CONTEXT_EDITORIAL_PASS2_20261009_V1");
 assert.equal(two.scope.revised_existing_dossiers.length,6);
-assert.equal(two.published,false);assert.equal(two.any_theological_signoff,false);assert.equal(two.any_native_french_approval,false);
+assert.equal(two.published,false);
+assert.equal(historicPass.historical_findings,18);
+assert.equal(historicPass.unchanged_current_source_links,17);assert.equal(two.any_theological_signoff,false);assert.equal(two.any_native_french_approval,false);
 assert.equal(new Set(two.findings.map(x=>x.id)).size,18);
 for(const x of two.findings){
  const owner=byId.get(x.owner);
  assert.ok(owner,x.id+" unknown canonical owner");
  const section=owner.sections.find(y=>y.role===x.role);
- assert.ok(section?.source_ids.includes(x.source_id),x.id+" original citation missing");
+ assertRetained(x,section,bySource);
  assert.ok(section.text.en.length>=185&&section.text.fr.length>=160,x.id+" bilingual substance missing");
  assert.ok(bySource.get(x.source_id)?.url===x.url,x.id+" source link differs from registry");
  assert.match(x.url,/^https:\/\/[^/\s]+\/\S+/);
