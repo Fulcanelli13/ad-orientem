@@ -81,6 +81,7 @@ assert.equal(census.groups.find(g=>g.id==="vietnamese-martyrs-117").unexpandedMe
 assert.equal(census.groups.find(g=>g.id==="japan-martyrs-16-1987").unexpandedMemberCount,13);
 assert.equal(census.groups.find(g=>g.id==="forty-martyrs-england-wales").unexpandedMemberCount,40);
 assert.equal(census.groups.find(g=>g.id==="paraguay-jesuit-martyrs-3").unexpandedMemberCount,0);
-assert.ok(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").publicationHold);
+assert.equal(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").identityAdjudication.status,"CERTIFIED_IDENTITY_BY_PAPAL_CANONIZATION_HOMILY");
+assert.equal(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").publicationHold,undefined);
 assert.equal(census.persons.find(p=>p.id==="saint.john-avila").canonizedOn,"1970-05-31");
 console.log("Post-1960 official canonization census: PASS (51 official index years, 112 events, 258 named persons, 13 cohorts, 497 unexpanded exact + Otranto approximate)");
