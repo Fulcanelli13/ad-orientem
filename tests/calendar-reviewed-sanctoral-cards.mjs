@@ -55,6 +55,11 @@ for(const link of artMap.links){
 assert.deepEqual(get("2026-10-09").map(x=>x.id),["saint.john-henry-newman"]);
 assert.deepEqual(get("2025-10-09").map(x=>x.id),[]);
 assert.deepEqual(get("2026-09-05").map(x=>x.id),["saint.teresa-calcutta"]);
+assert.ok(get("2026-09-05")[0].whyHonoured.includes("poorest"));
+assert.ok(get("2026-02-27")[0].whyHonoured.includes("Armenian"));
+assert.ok(get("2026-05-10")[0].whyHonoured.includes("priest"));
+assert.ok(get("2026-09-17",{language:"fr"})[0].whyHonoured.includes("bénédictine"));
+assert.ok(get("2026-10-09")[0].whyHonoured.includes("theologian"));
 assert.deepEqual(get("2024-09-05").map(x=>x.id),[]);
 assert.deepEqual(get("2026-02-27").map(x=>x.id),["saint.gregory-narek"]);
 assert.deepEqual(get("2020-02-27").map(x=>x.id),[]);
