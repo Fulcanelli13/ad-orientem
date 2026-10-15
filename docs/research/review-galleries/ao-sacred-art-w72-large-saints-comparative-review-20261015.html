@@ -100,7 +100,7 @@ function showCard(c){
  info.append(flag);
  if(c.score===null){info.append(elem("div","questions","Aesthetic rating (0 = reject; 5 = selected)"));
  const buttons=elem("div","stars");for(let n=0;n<=5;n++){const b=elem("button",score===n?"active":"",String(n)+"★");b.setAttribute("aria-label",n+" stars");
- b.addEventListener("click",()=>{if(!loaded&&!db.viewedSource[c.candidateId]){window.alert("First inspect the artwork image. If it failed to load, open the original source and use the 'I viewed at source' checkbox.");return}db.newRatings[c.candidateId]=n;save();render()});buttons.append(b)}info.append(buttons);
+ b.addEventListener("click",()=>{if(!loaded&&!db.viewedSource[c.candidateId]){window.alert("First inspect the artwork image. If it failed to load, open the original source and use the 'I viewed at source' checkbox.");return}db.newRatings[c.candidateId]=n;if(n<4&&db.preferredArtwork[c.subjectId]===c.candidateId)delete db.preferredArtwork[c.subjectId];save();render()});buttons.append(b)}info.append(buttons);
  const sourceConfirm=elem("label","foot");const cb=elem("input");cb.type="checkbox";cb.checked=!!db.viewedSource[c.candidateId];cb.addEventListener("change",()=>{db.viewedSource[c.candidateId]=cb.checked;save()});sourceConfirm.append(cb,document.createTextNode(" I viewed the image at its original source"));info.append(sourceConfirm)
  }else if(c.score===4){const approve=elem("button","approve"+(db.explicitFiveApprovals[c.candidateId]?" active":""),db.explicitFiveApprovals[c.candidateId]?"New 5★ approval recorded — undo":"Approve as final 5★ (explicit decision)");
  approve.addEventListener("click",()=>{if(!db.explicitFiveApprovals[c.candidateId]&&!window.confirm("Record a NEW explicit aesthetic approval of 5★ for this exact artwork? Previous 4★ stays intact in its historical record."))return;db.explicitFiveApprovals[c.candidateId]=!db.explicitFiveApprovals[c.candidateId];save();render()});info.append(approve)}
@@ -108,7 +108,7 @@ function showCard(c){
  info.append(elem("div","questions","Placement for this saint (separate from aesthetic score)"));
  const fit=elem("div","choice"),fitVal=db.placementFit[key(c)]??c.fitAsPreviouslyRecorded;
  for(const [name,title]of [["perfect","Perfect for this saint"],["elsewhere","Suitable elsewhere"],["unsuitable","Not for this saint"]]){const b=elem("button",fitVal===name?"active":"",title);
- b.addEventListener("click",()=>{db.placementFit[key(c)]=name;save();render()});fit.append(b)}
+ b.addEventListener("click",()=>{db.placementFit[key(c)]=name;if(name!=="perfect"&&db.preferredArtwork[c.subjectId]===c.candidateId)delete db.preferredArtwork[c.subjectId];save();render()});fit.append(b)}
  info.append(fit);
  const canPrefer=(current(c)!==null&&current(c)>=4&&fitVal!=="unsuitable"&&fitVal!=="elsewhere");
  const isPrefer=db.preferredArtwork[c.subjectId]===c.candidateId;
@@ -176,7 +176,7 @@ $("importFile").addEventListener("change",async e=>{
  for(const row of x.scores||[]){const c=origin.get(row.candidateId);if(!c||c.score!==null||c.image!==row.originalPhoto||!Number.isInteger(row.newScore)||row.newScore<0||row.newScore>5)throw Error("Invalid or changed source score "+row.candidateId);next.newRatings[row.candidateId]=row.newScore;next.viewedSource[row.candidateId]=true}
  for(const row of x.explicitFiveApprovals||[]){const c=origin.get(row.candidateId);if(!c||c.score!==4||row.previousScore!==4||row.newExplicitlyApprovedScore!==5||row.originalPhoto!==c.image)throw Error("Invalid final approval "+row.candidateId);next.explicitFiveApprovals[row.candidateId]=true}
  for(const row of x.placementFit||[]){const c=cards.find(v=>v.candidateId===row.candidateId&&v.subjectId===row.subjectId);if(!c||!validFit.has(row.decision))throw Error("Invalid placement decision");next.placementFit[key(c)]=row.decision}
- for(const row of x.subjectPreferences||[]){if(!subjects.has(row.subjectId)||!cards.some(c=>c.subjectId===row.subjectId&&c.candidateId===row.candidateId))throw Error("Unknown subject preference");next.preferredArtwork[row.subjectId]=row.candidateId}
+ for(const row of x.subjectPreferences||[]){if(!subjects.has(row.subjectId)||!cards.some(c=>c.subjectId===row.subjectId&&c.candidateId===row.candidateId))throw Error("Unknown subject preference");const preferred=cards.find(c=>c.subjectId===row.subjectId&&c.candidateId===row.candidateId);const finalScore=next.explicitFiveApprovals[row.candidateId]?5:preferred.score===null?next.newRatings[row.candidateId]??null:preferred.score;const suitability=next.placementFit[key(preferred)]??preferred.fitAsPreviouslyRecorded;if(finalScore===null||finalScore<4||suitability==="unsuitable"||suitability==="elsewhere")throw Error("Invalid preference for a nonapproved candidate");next.preferredArtwork[row.subjectId]=row.candidateId}
  for(const row of x.notes||[]){if(typeof row.note==="string"&&row.note.trim())next.notes[row.key]=row.note.slice(0,4000)}
  db=next;save();render();window.alert("Decisions restored. Previously scored ratings remain intact.")
  }catch(err){window.alert("Import failed: "+err.message)}finally{e.target.value=""}
