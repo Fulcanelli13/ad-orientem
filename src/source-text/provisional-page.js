@@ -2,7 +2,7 @@ import {validatePrintPagePlan,buildScanReviewQueue} from "./scan-review.js";
 
 const CONTENT_STATES=new Set(["COMPLETE_PARAGRAPH_PRELIMINARY","PARAGRAPH_OPENING_PRELIMINARY",
  "CONTINUATION_CANDIDATE","PARAGRAPH_CANDIDATE","CROSSES_COLUMN_BREAK",
- "LATIN_QUOTATION_CANDIDATE","CONTINUES_ON_PRINTED_PAGE_258"]);
+ "LATIN_QUOTATION_CANDIDATE","CONTINUES_ON_NEXT_PRINTED_PAGE"]);
 const BLOCK_KIND=new Set(["body","attributed-quotation"]);
 const PAGE_ID=/^P[1-9][0-9]{0,3}-[0-9]{2}[a-z]?$/;
 // Safe research metadata from a draft full-page OCR transcription.
@@ -45,15 +45,15 @@ export function auditProvisionalPage({plan,pageDraft}={}){
   const words=b.text.trim().split(/\s+/).length;
   wordCount+=words;
   if(b.kind==="attributed-quotation")latinQuotes++;
-  if(b.extent==="CONTINUES_ON_PRINTED_PAGE_258"){
+  if(b.extent==="CONTINUES_ON_NEXT_PRINTED_PAGE"){
    crossPage++;
-   if(!b.text.trim().endsWith("He also says that at"))
+   if(b!==pageDraft.blocks.at(-1))
     throw new Error("SOURCE_PROVISIONAL_UNVERIFIED_PAGE_JOIN");
   }
   const reviewFlags=["NOT_INDEPENDENTLY_PROOFREAD","NO_AUTHORIAL_PARAGRAPH_CERTIFICATION"];
   if(b.kind==="attributed-quotation")reviewFlags.push("PRIMARY_LATIN_QUOTATION_REQUIRES_COLLATION");
   if(b.column==="left-to-right")reviewFlags.push("COLUMN_BREAK_REQUIRES_COLLATION");
-  if(b.extent==="CONTINUES_ON_PRINTED_PAGE_258")reviewFlags.push("PAGE_JOIN_REQUIRES_COLLATION");
+  if(b.extent==="CONTINUES_ON_NEXT_PRINTED_PAGE")reviewFlags.push("PAGE_JOIN_REQUIRES_COLLATION");
   flags.push(...reviewFlags);
   heldItems.push({id:b.id,scope:b.kind==="attributed-quotation"?
    "EMBEDDED_PATRISTIC_QUOTE_NOT_EDITED_OR_PUBLISHED":"PRELIMINARY_ORIGINAL_ARTICLE_TEXT",
@@ -74,11 +74,12 @@ export function auditProvisionalPage({plan,pageDraft}={}){
     !Array.isArray(join.scanPageSequence)||
     join.scanPageSequence[0]!==page.scanPage||
     join.scanPageSequence[1]!==pages.get(page.printedPage+1)?.scanPage||
-    join.lastWordsOnPage257!=="He also says that at"||
-    !pageDraft.blocks.at(-1).text.endsWith(join.lastWordsOnPage257)||
+    typeof join.lastWordsOnCurrentPage!=="string"||join.lastWordsOnCurrentPage.length<8||
+    !pageDraft.blocks.at(-1).text.endsWith(join.lastWordsOnCurrentPage)||
     typeof join.continuedTextDraft!=="string"||
-    !join.continuedTextDraft.startsWith(join.firstWordsOnPage258)||
-    !join.continuedTextDraft.trim().endsWith("approved by him.")||
+    typeof join.firstWordsOnNextPage!=="string"||join.firstWordsOnNextPage.length<12||
+    !join.continuedTextDraft.startsWith(join.firstWordsOnNextPage)||
+    join.continuedTextDraft.length<join.firstWordsOnNextPage.length+20||
     join.mergeApproved!==false||
     join.independentImageProofread!==false||
     join.reviewStatus!=="PROVISIONAL_IMAGE_ASSISTED_NOT_WORD_BY_WORD_COLLATED")
