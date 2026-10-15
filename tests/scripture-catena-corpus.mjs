@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createHash,webcrypto} from "node:crypto";
 import {
- CATENA_SOURCE_COMMIT,CATENA_LOCAL_BASE,validateCatenaPack,
+ CATENA_SOURCE_COMMIT,CATENA_LOCAL_BASE,CATENA_CHUNK_BASE,validateCatenaPack,
+ validateCatenaChunkManifest,validateCatenaChapterPack,
  selectCatenaPericopes,loadCatenaForPassage
 } from "../src/scripture/catena-inline.js";
 
@@ -38,13 +40,80 @@ assert.ok(matched.every(n=>n.source.url.startsWith("https://www.ecatholic2000.co
 assert.equal(selectCatenaPericopes(data.luke.pericopes,{...citation,chapter:24,verseStart:999,verseEnd:999}).length,0);
 assert.throws(()=>validateCatenaPack({...data.luke,provenance:{...data.luke.provenance,originBlobSha:"tampered"}},"luke"),/Unverified local Catena/);
 assert.throws(()=>validateCatenaPack({...data.luke,pericopes:data.luke.pericopes.slice(1)},"luke"),/Unverified local Catena/);
-let opened=0;
-const fetched=await loadCatenaForPassage(citation,{cacheStorage:null,fetcher:async url=>{
- opened++;
- assert.equal(url,CATENA_LOCAL_BASE+"luke.json");
- return {ok:true,clone(){return {json:async()=>data.luke}}};
-}});
-assert.deepEqual(fetched.map(n=>n.id),matched.map(n=>n.id));
-await loadCatenaForPassage(citation,{cacheStorage:null,fetcher:()=>{throw new Error("Unexpected duplicate download")}});
-assert.equal(opened,1,"Each Gospel needs only one local load");
-console.log("PASS in-app Catena: 814 pericopes, 12,692 original fragments, 3,766 covered verse keys; same-origin, source-gated and cached");
+
+const chunks=JSON.parse(readFileSync(new URL("../data/scripture/catena/chunks/manifest.v1.json",import.meta.url),"utf8"));
+assert.equal(validateCatenaChunkManifest(chunks),true);
+assert.equal(chunks.totals.packs,23);
+assert.equal(chunks.totals.pericopes,814);
+assert.equal(chunks.totals.fragments,12692);
+const rawByUrl=new Map();
+rawByUrl.set(CATENA_CHUNK_BASE+"manifest.v1.json",JSON.stringify(chunks,null,2)+"\n");
+let packedBytes=0,originalBytes=0;
+for(const original of manifest.books) {
+ const gospel=original.gospel;
+ const current=chunks.chunks.filter(x=>x.gospel===gospel);
+ const ids=new Set(),keys=new Set();
+ for(const row of current) {
+   const file=new URL("../data/scripture/catena/chunks/"+row.file,import.meta.url);
+   const raw=readFileSync(file,"utf8"),pack=JSON.parse(raw);
+   const bytes=Buffer.byteLength(raw);
+   assert.equal(bytes,row.bytes,"Manifest and raw pack bytes must match");
+   const actualSha=createHash("sha1").update("blob "+bytes+"\0").update(raw).digest("hex");
+   assert.equal(actualSha,row.blobSha,"Exact Git object integrity must be reproducible");
+   assert.equal(validateCatenaChapterPack(pack,gospel,row),true);
+   for(const record of pack.pericopes) {
+     assert.ok(!ids.has(record.id),"No cross-pack duplicate pericope IDs");
+     ids.add(record.id);
+     const unchanged=data[gospel].pericopes.find(x=>x.id===record.id);
+     assert.deepEqual(record,unchanged,"Every fragment, attribution, verse and URL is byte-semantically preserved");
+     for(const k of record.verse_keys)keys.add(k);
+   }
+   rawByUrl.set(CATENA_CHUNK_BASE+row.file,raw);
+   packedBytes+=bytes;
+ }
+ assert.equal(ids.size,original.pericopes);
+ assert.equal(keys.size,original.commentedVerseKeys);
+ originalBytes+=readFileSync(new URL("../data/scripture/catena/"+gospel+".json",import.meta.url)).length;
+}
+let fetches=[];
+const fetcher=async url=>{
+ fetches.push(url);
+ assert.ok(rawByUrl.has(url),"No full-Gospel request is allowed on a fresh reader");
+ const raw=rawByUrl.get(url);
+ return {ok:true,clone(){return{text:async()=>raw}}};
+};
+const opened=await loadCatenaForPassage(citation,{cacheStorage:null,fetcher,cryptoProvider:webcrypto});
+assert.deepEqual(opened.map(n=>n.id),matched.map(n=>n.id));
+assert.equal(fetches.length,2,"One manifest plus one requested chapter-range pack");
+assert.ok(fetches[1].endsWith("luke-01-04.json"));
+await loadCatenaForPassage({...citation,chapter:3,verseStart:1,verseEnd:2},
+ {cacheStorage:null,fetcher:()=>{throw Error("Expected cached same-chunk access")},cryptoProvider:webcrypto});
+assert.equal(fetches.length,2);
+const later={book:"Luke",chapter:6,verseStart:20,verseEnd:22};
+assert.deepEqual((await loadCatenaForPassage(later,{cacheStorage:null,fetcher,cryptoProvider:webcrypto}))
+ .map(x=>x.id),selectCatenaPericopes(data.luke.pericopes,later).map(x=>x.id));
+assert.equal(fetches.length,3,"A new chapter-range downloads only one new pack");
+const first=chunks.chunks.find(x=>x.gospel==="matthew"&&x.firstChapter===1);
+assert.throws(()=>validateCatenaChunkManifest({...chunks,totals:{...chunks.totals,fragments:100}}),/CATENA_SOURCE_INTEGRITY_MISMATCH/);
+const firstPack=JSON.parse(rawByUrl.get(CATENA_CHUNK_BASE+first.file));
+assert.throws(()=>validateCatenaChapterPack({...firstPack,pericopes:firstPack.pericopes.slice(1)},"matthew",first),/CATENA_SOURCE_INTEGRITY_MISMATCH/);
+// Previously read offline full-Gospel packs remain usable if a user has
+// updated app code but does not yet have the smaller chapter chunks cached.
+const markPassage={book:"Mark",chapter:2,verseStart:1,verseEnd:3};
+const oldMarkCache={open:async()=>({match:async url=>url===CATENA_LOCAL_BASE+"mark.json"
+ ?{ok:true,json:async()=>data.mark}:null})};
+const offline=await loadCatenaForPassage(markPassage,{
+ fetcher:async()=>{throw new Error("OFFLINE")},cacheStorage:oldMarkCache
+});
+assert.deepEqual(offline.map(x=>x.id),selectCatenaPericopes(data.mark.pericopes,markPassage).map(x=>x.id));
+const johnRow=chunks.chunks.find(x=>x.gospel==="john"&&x.firstChapter===1);
+const tampered=rawByUrl.get(CATENA_CHUNK_BASE+johnRow.file).replace("Catena Aurea,","Catena Altered,");
+await assert.rejects(loadCatenaForPassage({book:"John",chapter:1,verseStart:1,verseEnd:1},{
+ cacheStorage:null,cryptoProvider:webcrypto,fetcher:async url=>({
+  ok:true,clone(){return{text:async()=>url.endsWith("manifest.v1.json")
+   ?rawByUrl.get(url):tampered}}
+ })
+}),/CATENA_SOURCE_INTEGRITY_MISMATCH/,
+ "Modified chapter text must not be accepted as the reviewed Git source");
+assert.ok(packedBytes<originalBytes*1.02,"Pack metadata overhead must remain small");
+console.log("PASS source-identical Catena: 23 lazy 4-chapter packs, 814 pericopes, 12,692 fragments, exact Git hashes, 3,766 verse keys and cached selective loading");

@@ -10,7 +10,7 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),seed=read("data/shrines/shrines-pilgrimages-seed.v1.json"),
  sources=read("data/shrines/source-registry.v1.json"),guideData=read("data/shrines/illustrated-place-guides-ireland.v1.json"),
  media=read("data/geography/approved-place-media.v1.json"),featured=read("data/geography/major-places-editorial.v1.json");
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[229,225,211,384]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[246,242,228,419]);
 assert.equal(seed.routes.length,20);assert.equal(seed.temporalLinks.length,77);
 assert.equal(featured.items.length,20);assert.equal(media.items.length,18);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
@@ -59,9 +59,9 @@ const dataset={
  media:{approved:media.items}
 };
 const projection=projectExploreDataset(dataset),features=exploreMapFeatures(projection.byLens.shrines);
-assert.equal(features.length,225,"Exactly one pin per shrine physical Place");
+assert.equal(features.length,242,"Exactly one pin per shrine physical Place");
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-11"});
-assert.equal(profiles.length,229);
+assert.equal(profiles.length,246);
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,5);
 for(const row of recordSet){
  const profile=explorePlaceProfile(profiles,row.id);

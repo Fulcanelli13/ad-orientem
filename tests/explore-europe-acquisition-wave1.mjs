@@ -7,6 +7,12 @@ const publishedAfterFreeze=new Set(JSON.parse(readFileSync("data/geography/resea
 for(const p of JSON.parse(readFileSync("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json","utf8")).promoted)publishedAfterFreeze.add(p.place_id);
 // Post-freeze Ireland R65 promotions must not rewrite this 10 October research snapshot.
 for(const c of JSON.parse(readFileSync("data/shrines/illustrated-place-guides-ireland.v1.json","utf8")).candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
+// R71 major-site releases occurred after this historical Europe research freeze.
+for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r71-major-site-reconciliation.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
+// R72 seven-site publication also postdates these historical source-acquisition snapshots.
+for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r72-world-anchors.v1.json","utf8")).sites)publishedAfterFreeze.add(row.place_id);
+// R73 promotions postdate the frozen European discovery snapshots.
+for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r73-major-shrines.v1.json","utf8")).sites)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const oldPlaces=new Map(historicalPlaces.map(x=>[x.place_id,x]));
 const names=new Set(R.place_candidates.map(x=>x.lead_id));

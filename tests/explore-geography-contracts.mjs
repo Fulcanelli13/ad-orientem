@@ -30,7 +30,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY", "HN", "CR", "MY", "SK", "DO", "CU", "SI", "LV"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -244,6 +244,23 @@ assert.deepEqual(
     "place:AR:san-nicolas-virgen-rosario",
     "place:EG:zeitoun-coptic-saint-mary",
     "place:IT:santa-croce-gerusalemme-rome",
+    "place:BA:medjugorje-st-james-parish",
+    "place:IT:lanciano-eucharistic-miracle",
+    "place:PT:santarem-santissimo-milagre",
+    "place:HU:mariapocs-greek-catholic-basilica",
+    "place:CN:sheshan-our-lady-help-christians",
+    "place:PH:manaoag-rosary-basilica",
+    "place:GT:esquipulas-black-christ-basilica",
+    "place:PY:caacupe-our-lady-miracles",
+    "place:HN:suyapa-basilica",
+    "place:CR:cartago-virgen-angeles",
+    "place:MY:st-anne-bukit-mertajam",
+    "place:SK:levoca-marianska-hora-basilica",
+    "place:PL:swieta-lipka-jesuit-shrine",
+    "place:DO:higuey-altagracia-basilica",
+    "place:CU:el-cobre-caridad-basilica",
+    "place:SI:brezje-mary-help-basilica",
+    "place:LV:aglona-assumption-basilica",
     ...launch.promoted.map(item=>item.place_id),
     ...exceptions.promoted.map(item=>item.place_id),
   ].sort(),
@@ -303,8 +320,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 54,
-  places: 230,
+  geoAreas: 66,
+  places: 247,
   directoryPlaceLinks: 1,
 });
 
