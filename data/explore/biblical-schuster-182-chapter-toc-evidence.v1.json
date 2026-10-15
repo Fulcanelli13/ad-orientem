@@ -27,7 +27,9 @@
     "displayedLastOldPage": 210,
     "displayedFirstNewPage": 213,
     "displayedLastNewPage": 385,
-    "appendixBegins": 386
+    "appendixBegins": 386,
+    "samePrintedPageAdjacentChapterTransitions": 1,
+    "lastChapterPageEndUnverified": true
   },
   "textOwnership": {
     "authorialNarrative": "Ignaz Schuster",
@@ -322,7 +324,7 @@
       "romanChapter": "XVI",
       "topicHeading": "Jacob's Flight and His Sojourn with Laban",
       "printedStartPage": 32,
-      "printedEndPageEstimate": 31,
+      "printedEndPageEstimate": null,
       "headingKind": "TRANSCRIBED_CONDENSED_TOC_HEADING",
       "evidence": {
         "url": "https://tanbooks.com/content/IllustratedBibleHistory_Preview.pdf",
@@ -3321,5 +3323,11 @@
       },
       "contentImportStatus": "NOT_ALLOWED_FROM_MODERN_REPRINT"
     }
+  ],
+  "notes": [
+    "TOC chapter titles transcribed in slightly condensed form to aid indexing; not verbatim source prose or certified historical paragraph text.",
+    "A chapter's TOC page start is not a proofread page boundary. Repeated same-page starts or gaps cannot establish end-of-chapter positions.",
+    "Modern TAN typeset 2014 reproduction must not be copied into Ad Orientem; source text review targets historical 1925 print and corresponding pre-modern French.",
+    "The modern publisher preview does not establish the original 1925/1887 editions' identical full TOC or wording."
   ]
 }
