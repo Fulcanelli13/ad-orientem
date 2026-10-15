@@ -46,3 +46,18 @@ The next pass should take the other **18** held biographies through source-level
 The approved native compact layout remains the model: portrait area, formal name and vocation, born/date/place, died/date/place, appropriately scoped celebration, continuous 110–150-word holiness-first biography, and external-only 'Read further'. Do not create empty topical panels.
 
 This phase affects only research and QA on draft PR #1227. Public GitHub Pages and other owner pipelines are untouched.
+
+
+## Phase 14 — all remaining 18 biographies expanded, source-anchored research (15 Oct 2026)
+
+This section supersedes the **six revised / 19 under-target** *length* figures in the historical Phase 13 snapshot above. It does not retroactively turn a desk review into editorial acceptance.
+
+- The remaining **6 Doctors** and **12 cross-vocation Saints** have now been revised in the original two research source files; **all 24/24** English biographies meet the 110–150-word working target when the holiness-led paragraph and three recorded concrete facts are read together. The French accounts have also been expanded and are protected by bilingual minimum-length tests.
+- Each of the 18 new substantive revisions carries a person-specific `editorial_expansion` field with existing source IDs/URLs and an explicit **not approved** review state. The first six revised in Phase 13 retain their prior review entries, likewise still not approved.
+- Source-linked new details include Gregory sending Augustine to England; Chrysostom's exile and support for the poor; Alphonsus's evening chapels; Augustine's ongoing conversion and *Revisions*; Bonaventure's *Journey of the Mind into God*; Francis Xavier's India/Moluccas/Japan mission and unrealised mainland-China plan; Vianney's Eucharistic life and long confessional ministry; Louise's supervision of the Daughters of Charity; Faustina's *Diary* presented distinctly from doctrine; and Edith Stein's deportation with her sister Rosa.
+- Quality guard: **meeting a word-count target is not source verification, human editorial acceptance, or an instruction to pad text.** The current joined `why_honoured` + three fact claims must still be copyedited for repetitions, precise source-to-clause match and natural EN/FR prose. The 13 previously held for deeper source adjudication stay held. Earlier uncertain dates/places and any historical 1962 versus later feast disagreements remain unresolved unless their respective owner approves.
+- No changes to Calendar, 1962 rubrics, Mass selection, app-visible Saints, map pins, individual artwork ratings, art licenses, or public Pages.
+
+Dedicated 8-Doctor, 16-vocation and 30-person QA asserts the expanded records and keeps all 24 profiles `NOT_APP_VISIBLE` / `eligible_for_publication:false`.
+
+**Next substantive editorial gate:** settle sentence-level source and translation issues, resolve high-priority chronology exceptions (especially disputed birth/death facts), and eliminate overlapping claims before any of the 24 profiles reaches the native reader. The native six-person card layout remains the implementation reference.
