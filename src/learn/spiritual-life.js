@@ -46,6 +46,11 @@ function css(){
 .aoSLSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin:24px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLSources summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted,#9ba5b1);font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoSLSource{margin:11px 0;padding-left:10px;border-left:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));font-size:.76rem;line-height:1.45}.aoSLSource a{color:var(--liturgical,#c9ad78);text-decoration:none}.aoSLSource em{display:block;margin-top:2px;color:var(--muted,#9ba5b1);font-style:normal}.aoSLSourceLoc{margin-top:4px;color:var(--muted,#9ba5b1);font-size:.71rem}
 .aoSLInlineSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin-top:10px;color:var(--muted,#9ba5b1);font-size:max(13px,.8125rem);line-height:1.5}.aoSLInlineSources span{color:var(--muted,#9ba5b1)}.aoSLInlineSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:3px;overflow-wrap:anywhere}.aoSLInlineSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoSLSourceHold{font-style:italic}
 .aoSLSourceIntro{margin:5px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLFurtherReading h3{margin:12px 0 5px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLFurtherReading ul{margin:4px 0 14px;padding-left:20px}.aoSLFurtherReading li{margin:9px 0}.aoSLFurtherReading a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-underline-offset:3px}
+.aoSLWorks{margin:12px 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:4px}
+.aoSLWorks summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+
 .aoSLEvidence{margin:15px 0 4px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:7px}
 .aoSLEvidence summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLEvidence summary:focus-visible,.aoSLSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
@@ -127,10 +132,38 @@ function lessonEvidenceMarkup(win,lesson){
     '</summary><ol>'+sections+practice+'</ol></details>';
 }
 
+// Explicit, conservative reading selections; an evidence citation never
+// becomes a reading recommendation merely because a link exists.
+const SPIRITUAL_LIFE_FURTHER_READING=Object.freeze({
+ SL01:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL02:["SL-FRANCIS-SALES-DEVOUT-LIFE","SL-TANQUEREY-1930"],
+ SL03:["SL-TANQUEREY-1930","SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL04:["SL-TANQUEREY-1930"],
+ SL05:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL06:["SL-IGNATIUS-EXERCISES"],SL07:["SL-IGNATIUS-EXERCISES"],
+ SL08:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL09:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL10:["SL-TANQUEREY-1930"],SL11:[],
+ SL12:["SL-PIUS-XI-MISERENTISSIMUS","SL-PAUL-VI-INDULGENTIARUM"],
+ SL13:[],SL14:["SL-FRANCIS-SALES-DEVOUT-LIFE"]
+});
+function lessonReadingMarkup(win,lesson,sources){
+ const selected=SPIRITUAL_LIFE_FURTHER_READING[lesson.id]||[];
+ const approved=selected.filter(id=>sources.some(s=>s.id===id)).slice(0,4);
+ if(!approved.length)return "";
+ return '<div class="aoSLFurtherReading"><h3>'+esc(L(win,"Further reading","Pour approfondir"))+'</h3><ul>'+
+   approved.map(id=>{
+    const source=sources.find(s=>s.id===id);
+    const url=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
+    return /^https:\/\//.test(url)
+      ?'<li><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.title)+' ↗</a></li>'
+      :'';
+   }).join("")+'</ul></div>';
+}
 function sourceMarkup(win,lesson){
   const sources=lessonSources(lesson);
   if(!sources.length)return "";
-  return `<details class="aoSLSources" data-ao-sl-source-disclosure><summary>${esc(L(win,"Sources & further reading","Sources et lectures complémentaires"))} ▾</summary><p class="aoSLSourceIntro">${esc(L(win,"Works and editions cited in this lesson (not a curated reading list).","Ouvrages et éditions cités dans cette leçon (sans sélection de lecture supplémentaire)."))}</p>${sources.map(source=>{
+  return `<details class="aoSLSources" data-ao-sl-source-disclosure><summary>${esc(L(win,"Sources & further reading","Sources et lectures complémentaires"))} ▾</summary>${lessonReadingMarkup(win,lesson,sources)}<details class="aoSLWorks"><summary>${esc(L(win,"Sources & provenance","Sources et provenance"))} · ${sources.length}</summary><p class="aoSLSourceIntro">${esc(L(win,"Works and editions cited in this lesson (not a curated reading list).","Ouvrages et éditions cités dans cette leçon (sans sélection de lecture supplémentaire)."))}</p>${sources.map(source=>{
     const locators=Array.isArray(source.locators)?source.locators:(source.locator?[source.locator]:[]);
     const meta=[source.authority_type?String(source.authority_type).replaceAll("_"," "):"",source.role?String(source.role).replaceAll("_"," "):""].filter(Boolean).join(" · ");
     const target=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
@@ -144,7 +177,7 @@ function sourceMarkup(win,lesson){
       ?`<a href="${esc(target)}" target="_blank" rel="noopener noreferrer"><strong>${esc(source.title)}</strong> ↗</a>`
       :`<strong>${esc(source.title)}</strong> · ${esc(L(win,"Direct source link not verified","Lien direct non vérifié"))}`;
     return `<div class="aoSLSource">${linked}${meta?`<em>${esc(meta)}</em>`:""}${applicable.length?`<div class="aoSLSourceLoc">${applicable.map(esc).join("<br>")}</div>`:""}</div>`;
-  }).join("")}${lessonEvidenceMarkup(win,lesson)}</details>`;
+  }).join("")}</details>${lessonEvidenceMarkup(win,lesson)}</details>`;
 }
 
 // Contextual actions extend the existing sourced lesson's practical exit.
