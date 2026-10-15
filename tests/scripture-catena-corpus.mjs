@@ -47,7 +47,7 @@ assert.equal(chunks.totals.packs,23);
 assert.equal(chunks.totals.pericopes,814);
 assert.equal(chunks.totals.fragments,12692);
 const rawByUrl=new Map();
-rawByUrl.set(CATENA_CHUNK_BASE+"manifest.v1.json",JSON.stringify(chunks,null,2)+"\\n");
+rawByUrl.set(CATENA_CHUNK_BASE+"manifest.v1.json",JSON.stringify(chunks,null,2)+"\n");
 let packedBytes=0,originalBytes=0;
 for(const original of manifest.books) {
  const gospel=original.gospel;
@@ -58,7 +58,7 @@ for(const original of manifest.books) {
    const raw=readFileSync(file,"utf8"),pack=JSON.parse(raw);
    const bytes=Buffer.byteLength(raw);
    assert.equal(bytes,row.bytes,"Manifest and raw pack bytes must match");
-   const actualSha=createHash("sha1").update("blob "+bytes+"\\0").update(raw).digest("hex");
+   const actualSha=createHash("sha1").update("blob "+bytes+"\0").update(raw).digest("hex");
    assert.equal(actualSha,row.blobSha,"Exact Git object integrity must be reproducible");
    assert.equal(validateCatenaChapterPack(pack,gospel,row),true);
    for(const record of pack.pericopes) {
