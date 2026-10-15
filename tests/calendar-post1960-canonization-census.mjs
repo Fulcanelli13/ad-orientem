@@ -7,6 +7,10 @@ assert.equal(census.publicationStatus,"RESEARCH_ONLY_NOT_RUNTIME");
 assert.equal(census.coverage.completeGlobal1960To2026,false);
 assert.deepEqual(census.coverage.scopeYears, [...census.years.map(y=>y.year)].sort((a,b)=>a-b));
 assert.equal(census.coverage.all51OfficialIndexYearsTranscribed,true);
+assert.equal(census.scopePolicy.module,"SAINTS_AND_GROUPS_NOT_MARTYROLOGY");
+assert.equal(census.scopePolicy.completeMemberNameResearch,"OUT_OF_SCOPE");
+assert.equal(census.coverage.openMartyrMembershipBacklog,0);
+assert.equal(census.coverage.collectiveEntriesReadyForEditorialReview,13);
 assert.equal(census.years.length,51);
 assert.equal(census.events.length,112);
 assert.equal(census.persons.length,258);
@@ -43,6 +47,8 @@ for(const g of census.groups){
   if(g.memberIdentityStatus==="ALL_MEMBERS_NAMED_IN_THIS_BATCH")assert.equal(g.unexpandedMemberCount,0);
   if(g.memberIdentityStatus==="PARTIAL_IDENTITIES_NEED_EXPANSION")assert.ok(g.individuallyIdentifiedPersonIds?.length>0 && g.unexpandedMemberCount>0);
   assert.ok(!pIds.has("saint."+g.id),"Do not count a group as a single saint");
+  assert.equal(g.individualMemberExpansionRequirement,"NONE_FOR_APP");
+  assert.ok(g.presentation?.whyHonoured?.en,"Every group must explain why it is honoured");
 }
 assert.equal(census.events.filter(e=>e.date==="2025-09-07")[0].namedIndividualIds.length,2);
 assert.equal(census.events.filter(e=>e.date==="2025-10-19")[0].namedIndividualIds.length,7);
@@ -84,4 +90,4 @@ assert.equal(census.groups.find(g=>g.id==="paraguay-jesuit-martyrs-3").unexpande
 assert.equal(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").identityAdjudication.status,"CERTIFIED_IDENTITY_BY_PAPAL_CANONIZATION_HOMILY");
 assert.equal(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").publicationHold,undefined);
 assert.equal(census.persons.find(p=>p.id==="saint.john-avila").canonizedOn,"1970-05-31");
-console.log("Post-1960 official canonization census: PASS (51 official index years, 112 events, 258 named persons, 13 cohorts, 497 unexpanded exact + Otranto approximate)");
+console.log("Post-1960 official canonization census: PASS (51 official index years, 112 events, 258 named persons, 13 collective profiles; cohort counts only retained for provenance)");
