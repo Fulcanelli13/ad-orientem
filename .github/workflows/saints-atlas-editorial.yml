@@ -6,6 +6,8 @@ on:
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
       - 'tests/saints-catalogue-native.mjs'
+      - 'tests/saints-release-boundary.mjs'
+      - 'src/find/saints-release-policy.js'
       - 'tests/saints-source-index.mjs'
       - 'src/find/saints-source-index.js'
       - 'data/saints/read-only-calendar-art-index-20261015.v1.json'
@@ -31,6 +33,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Gate public Saints pilot to six profiles and zero research indexes
+        run: node tests/saints-release-boundary.mjs
       - name: Verify 30-person Saints reading catalogue and unchanged 8 physical pins
         run: node tests/saints-catalogue-native.mjs
       - name: Verify source-only historical and post-1960 Saints reference indexes
@@ -43,6 +47,7 @@ jobs:
         run: |
           node --check src/find/saints-lens.js
           node --check src/find/saints-catalogue.js
+          node --check src/find/saints-release-policy.js
           node --check src/find/saints-source-index.js
           node --check src/find/saints-calendar-context.js
           node --check src/find/saints-presentation.js
