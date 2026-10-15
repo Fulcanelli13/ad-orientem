@@ -25,23 +25,22 @@ Primary images: https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volum
 
 These checks constitute **targeted corrections and structural progress**, not a claim of a fully verified Latin quotation or completed first page.
 
-## Page-257 paragraph audit and bounded proofing handoff — next review pass
+## Consolidated printed-page structure and final proofing handoff
 
-The [1913 printed page 257 / image 305](https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305) has **two physical columns**. To prevent the 12 OCR editing blocks from creating false authorial paragraphs, the working JSON now contains **nine provisional print-paragraph groups**, each with member-block IDs and the status `PROVISIONAL_PRINT_INDENT_CENSUS_NOT_HUMAN_CERTIFIED`.
+After inspecting the original printed [p.257 / scan image 305](https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305), the earlier inference of **nine printed paragraphs was corrected**. The page has **three identifiable original paragraph starts**:
 
-The most important joins to retain are **P257-02a + P257-02b** (one opening early-liturgy paragraph split between the short excerpt and its OCR draft continuation), **P257-06 + P257-07** (the discussion of Latin continues around the physical column break), and provisionally **P257-08 + P257-09** (Damasus and the ensuing Pseudo-Ambrose quotation). That last grouping is **not a certified original paragraph boundary**: it requires a larger image/indentation check, along with the transition from the long quotation to P257-10. Group 9/P257-11 continues to **printed page 258 / image 306**, with that join still unapproved. The nine groups are a **review target**, not nine certified source-text paragraphs. The parser now refuses duplicated, reordered, unmapped, automatically certified, or cross-page-approved candidate groupings.
+1. **P257-01:** Fortescue's conjecture beginning “It is very possible …”
+2. **P257-02a:** “In the first century …”; this typeset paragraph runs continuously through our workbench blocks **P257-02a, 02b, 03, 04, 05**. The artificial blocks were created to edit source evidence, not to mark five original paragraphs.
+3. **P257-06:** “The first great turning-point …”; this paragraph starts near the foot of the *left column*, resumes at the *top of the right column*, and runs through **P257-06, 07, 08, 09, 10, 11**, continuing onto printed [p.258 / scan image 306](https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/306).
 
-A further correction in the **second embedded Latin quotation** preserves the printed/secondary-witness spelling **`adscensionis`** rather than the earlier draft's normalized `ascensionis`. It has been corrected *only in the provisional transcription*; the adjoining `cœlum` versus `cælum` print ligature remains **unresolved**, so the phrase and the passage are not editorially certified.
+Of **11 boundaries between the 12 editing blocks**, the scanned print shows **two new-paragraph starts** and **nine intra-paragraph editing joins**. Examples of continuous printed wording include the join across “prayers were said. It is also known”, “(xl). From this it is evident”, “left in Greek. The Creed was sometimes said”, and the end of the long Latin citation followed by “It will be seen”. See `printParagraphBoundaryChecks` and `printParagraphGroups` in the provisional transcription JSON; each boundary has an explicit original-page reference, a decision and `humanEditorialSignoff:false`.
 
-Remaining high-priority decisions for an independent editor:
+This is a **corrected physical print-layout reading, not independent human acceptance or verbatim text certification**. The original print signature `III.—17`, running headings and page number are not part of the text. The Latin quotation still requires a separate exhaustive character-by-character collation. The final typeset paragraph's continuation onto p.258 is located, but the whole original paragraph is not independently proofread.
 
-1. Magnify and compare each Latin letter in P257-09 against the printed 1913 image, including `coelum/cælum`, `adscensionis`, `hanc panem`, `Fac nos`, quotation punctuation, references and typographic ligatures.
-2. Check **all nine tentative paragraph groups** against original printed indentation, including P257-08→09 and P257-09→10; record *yes/no/uncertain* for every block boundary.
-3. Verify physical left/right column continuity and the p257→p258 break without inserting a synthetic paragraph or punctuation.
-4. Confirm every historical book/chapter reference and separate Fortescue's conjectural analysis from quoted patristic material.
-5. Provide an independent reviewer ID, dated collation record, residual uncertainty count and explicitly bounded rights approval before changing `fullTextProofread:false` or the four-excerpt whitelist.
+A single consolidated review record now tracks what has and has not been checked:
+`data/source-text/fortescue-1913-p257-consolidated-editorial-review.v1.json`. Its **six open editorial gates** are full two-column proofreading, secondary paragraph-structure confirmation, the complete *De sacramentis* quotation, source-citation reconciliation, p.258 continuation collation, and dated independent editorial/rights approval. None may be inferred from passing CI.
 
-**Independent full-page certifications remain zero.** This audit does not approve public display of the OCR-assisted transcription.
+The provisional Latin draft retains `hanc panem` and `adscensionis` on targeted scanned-image comparison, but the exact form of `cœlum/cælum`, ligatures, quotation punctuation, and whole-text transcription remain unapproved. **Fully independently certified complete printed pages: zero.**
 
 ## Technical record and review model
 
