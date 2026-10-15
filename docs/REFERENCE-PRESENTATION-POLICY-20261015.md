@@ -46,3 +46,12 @@ The scoped pilot work registry at `data/reference/canonical-works-pilot.v1.json`
 - Third-party HTML works opened: EWTN Tanquerey primary and continuation excerpts, CCEL St Francis de Sales and St Ignatius. **Successful access verifies reachability only**, not textual accuracy or license.
 - Third-party PDFs and Archive.org facsimiles remain uninspected. No local reproduction, parsing or PDF rights clearance has been authorized. Their source link can remain in the evidence drawer while reading recommendations await editorial clearance.
 - Remaining scope: claim-level page numbers/paragraphs, full link durability audit, local passage parsing rights and translation policy, and church-shrine/map source triage.
+
+## Full Formation editorial reader integration — 15 October 2026
+- The existing `src/learn/formation-recovery-review.js` owns all 60 Apologetics and 81 Church Crisis canonical dossiers; it is **internal draft content, not a released doctrinal module**. No competing public route is introduced.
+- The default 141-dossier reading now keeps its `answer`, `documented_position`, `critical_response` and `traditional_catholic_argument` blocks uninterrupted by link lists. Original attributed speakers and positions remain visible.
+- The same reader retains a folded **Sources & original texts** section with one source group for each original canonical synthesis section. Claim sources resolve within that owner's existing `sourceRegistry` Map, not by globally flattening short IDs that collide between packs.
+- The 123 distinct recovered/editorial research records remain in the historical library and connected to their original dossier owners where available. Their question provenance, original wording, supporting links, and internal Bible-capsule handoffs are retained under the appropriate nested evidence section.
+- The article/disputation citations are **evidence only**. No opposing theologian or contested source is automatically labeled recommended further reading; that requires explicit editor review.
+- `tests/formation-recovery-review.mjs` now checks the collapsed evidence presentation and original hyperlinks for each canonical dossier in addition to preexisting coverage/ownership checks. Any failed legacy test blocks merging.
+- Source-work deduplication is intentionally *not* performed globally here. The 13-work pilot is incomplete and must not be represented as the complete bibliography for the 141 dossiers. The 141 dossier-specific source registries remain authoritative until safely crosswalked.
