@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 246,
-    "places_with_linked_records": 244,
+    "places": 247,
+    "places_with_linked_records": 245,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 200,
-    "shrines": 242,
-    "pilgrimages": 228,
+    "multicategory_heritage_places": 202,
+    "shrines": 243,
+    "pilgrimages": 230,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -405,6 +405,19 @@
         "relics": [
           "relic:CA:brother-andre-heart-montreal",
           "relic:CA:brother-andre-tomb-montreal"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "display_name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:rigaud-notre-dame-lourdes"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:rigaud-notre-dame-lourdes-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3882,6 +3895,9 @@
       "record_ids": {
         "shrines": [
           "shrine:VN:our-lady-la-vang-national-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:VN:our-lady-la-vang-national-shrine-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3901,8 +3917,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 242,
-    "pilgrimages": 200,
+    "shrines": 243,
+    "pilgrimages": 202,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,

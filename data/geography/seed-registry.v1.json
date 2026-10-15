@@ -10426,6 +10426,46 @@
         "SG-R73-SITE-SG-INV-0340",
         "SG-R73-GEO-SG-INV-0340"
       ]
+    },
+    {
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "name": {
+        "official": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+        "aliases": [
+          "Our Lady of Lourdes Sanctuary, Rigaud",
+          "Sanctuaire Notre-Dame-de-Lourdes (Québec)"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.46996,
+        "lng": -74.31088,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1023406024",
+        "source_ref": "osm:way:1023406024",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CA",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "18 rue Bourget",
+        "line2": null,
+        "postal_code": "J0P 1P0",
+        "city": "Rigaud",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "Sanctuaire Notre-Dame-de-Lourdes, 18 rue Bourget, Rigaud, QC J0P 1P0, Canada"
+      },
+      "source_ids": [
+        "SG-R74-SITE-SG-INV-0414",
+        "SG-R74-GEO-SG-INV-0414"
+      ]
     }
   ],
   "directoryPlaceLinks": [
