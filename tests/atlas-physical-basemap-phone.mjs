@@ -52,7 +52,7 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-map] canvas').count(),1);
  const physicalNote=page.locator("#ao-find-modular-root [data-bible-physical-note]");
  assert.equal(await physicalNote.isVisible(),true);
- assert.match(await physicalNote.innerText(),/PHYSICAL MAP/);
+ assert.match(await physicalNote.innerText(),/MODERN PHYSICAL RELIEF · PRESENT-DAY COASTLINES/);
  const headerHeight=await page.locator("#ao-find-modular-root .aoBibleAtlasEraHeader").evaluate(el=>el.getBoundingClientRect().height);
  assert.ok(headerHeight<120,"Phone chronology header too tall: "+headerHeight);
  assert.equal(await page.locator("#ao-find-modular-root [data-bible-step]").count(),151);
