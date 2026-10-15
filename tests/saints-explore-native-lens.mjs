@@ -34,6 +34,8 @@ assert.equal(exploreMapFeatures(items).length,8,"MapLibre feature count must equ
 assert(items.every(x=>x.kind==="SAINTS_AT_PHYSICAL_PLACE"&&x.lens==="saints"));
 assert(items.every(x=>x.saints.every(s=>s.name_en&&s.why_en&&s.name_fr&&s.why_fr&&s.biography_facts.length===3)));
 assert(items.every(x=>x.saints.every(s=>s.artwork_id===null)),"No art without curated approval");
+assert(items.every(x=>x.saints.every(s=>s.life?.birth?.date&&s.life?.death?.date&&s.life?.celebration?.month_day)),
+  "Every six-profile pilot biography should show provenance-bound dates and scoped celebration");
 const distinct=new Map(items.flatMap(i=>i.saints).map(p=>[p.saint_id,p]));
 assert.equal(distinct.size,6,"The person taxonomy is identity-owned, not duplicated per shrine");
 assert.equal(distinct.get("saint:therese-of-lisieux").calendar_context?.observed1962?.civilDate,"2026-10-03");
@@ -81,15 +83,16 @@ for(const lang of ["en","fr"]){
   assert(html.includes("aoSaintPlaceSheet"),"Selection uses first-party Explore sheet");
   assert(html.includes('data-explore-open-place="place:FR:sanctuaire-sacre-coeur-paray"'));
   assert(html.includes(lang==="fr"?"Sainte Marguerite-Marie Alacoque":"Saint Margaret Mary Alacoque"));
-  assert(html.includes("aoSaintFacts"),"Meaning-first bullet biographies must render");
+  assert(html.includes("aoSaintLife"),"Holiness-first biography must be continuous, not a bullet list");
+  assert(html.includes("aoSaintLifeEvents"),"Birth and death must be visible beside the reserved portrait");
+  assert(html.includes("aoSaintFeasts"),"Celebration dates must be source-scoped and visible");
   assert(html.includes('data-saint-category="MYSTIC"'),"Descriptive spiritual categories missing from bilingual biography");
-  assert(html.includes("aoSaintExtraordinary"),"One documented Christ appearance account must be progressively disclosed");
-  assert(html.includes("aoSaintEventRefs"),"Extraordinary experience account must have its own source");
-  assert(html.includes(lang==="fr"?"Expériences extraordinaires rapportées":"Reported extraordinary experiences"));
+  assert(html.includes("aoSaintWitness"),"Source-attributed extraordinary testimony should appear in the narrative, without a redundant drawer");
+  assert(!html.includes("aoSaintExtraordinary"),"Do not split the biography into repetitive topic sections");
   assert(html.includes('data-saint-event="event:margaret-mary:paray-sacred-heart"'));
 
   assert(html.includes("aoSaintReading"),"Further reading should remain folded");
-  assert(html.includes("Art portrait pending")||html.includes("Portrait en attente"));
+  assert(html.includes("Portrait awaiting approval")||html.includes("Portrait en attente"));
   assert(!html.includes("<img"),"No borrowed sacred art/saint imagery in editorial pilot");
   assert(!html.includes("2026-10-15T"),"Do not manufacture feast dates");
 }
