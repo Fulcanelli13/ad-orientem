@@ -1,0 +1,33 @@
+name: Critical UI UX phone matrix
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "tests/ui-ux-critical-review-capture.mjs"
+      - ".github/workflows/ui-ux-critical-review.yml"
+      - "docs/design/UI-UX-CRITICAL-REVIEW-20261011.md"
+  workflow_dispatch:
+
+jobs:
+  bilingual-phone-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Capture 320/390/430 EN/FR real-app screens
+        run: node tests/ui-ux-critical-review-capture.mjs
+      - name: Preserve screenshots and defect measurements even on failures
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: critical-ui-ux-review-matrix
+          path: artifacts/ui-ux-critical-review/
+          if-no-files-found: warn
+          retention-days: 30

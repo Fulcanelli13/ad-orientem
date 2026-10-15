@@ -43,7 +43,13 @@ assert.deepEqual(mapConfigs[0].maxBounds,EXPLORE_WORLD_BOUNDS);
 assert.deepEqual(mapViewport(mounted.map),{center:[179.99,85],zoom:0});
 const mapSource=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 assert.equal((mapSource.match(/spreadBoundedWorldNeverUsed/g)||[]).length,0);
-assert.equal((mapSource.match(/\.\.\.boundedWorldMapOptions\(/g)||[]).length,2,
-  "both the traditional Mass map and the Sacred Geography map must apply one-world options");
+const directOneWorldUses=(mapSource.match(/\.\.\.boundedWorldMapOptions\(/g)||[]).length;
+const phoneAwareOneWorldUses=(mapSource.match(/const camera=boundedWorldMapOptions\(/g)||[]).length;
+assert.equal(directOneWorldUses+phoneAwareOneWorldUses,2,
+  "both Mass and Sacred Geography map must inherit canonical one-world options");
+assert.match(mapSource,/\.\.\.camera,/,
+  "phone camera modifications must extend, never replace, one-world options");
+assert.match(mapSource,/camera\.minZoom=-2/,
+  "negative zoom is limited to a phone world overview");
 mounted.destroy();
 console.log("PASS bounded Explore world: one longitude span, no repeated copies, finite restored viewport");

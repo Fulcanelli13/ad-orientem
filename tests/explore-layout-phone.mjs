@@ -80,7 +80,10 @@ try{
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
-    assert.deepEqual(initial.bounds,[[-179.99,-85.051129],[179.99,85.051129]]);
+    assert.deepEqual(initial.bounds,width<=430
+      ?[[-259.99,-89],[259.99,89]]
+      :[[-179.99,-85.051129],[179.99,85.051129]],
+      width+"px phone camera must only widen its finite bound to allow one-world overview");
     await page.locator('.aoHeritageNearby').tap();
     await page.locator('.aoHeritageNearbyPanel').waitFor({state:"visible"});
     const nearby=await page.locator('.aoHeritageNearbyResult').count();

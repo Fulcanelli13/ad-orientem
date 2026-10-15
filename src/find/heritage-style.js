@@ -512,6 +512,23 @@ export const HERITAGE_STYLE = String.raw`
   .aoFindMap>.aoExploreMapLoading{left:9px;right:9px;bottom:10px}
 }
 
+/* Phone-only map edge and copyright layout. Keep the map canvas,
+   provider attribution, world control and search in their canonical owners. */
+@media(max-width:430px){
+  .aoHeritageSurface .aoFindMap .maplibregl-ctrl-bottom-left{
+    left:8px;bottom:5px;max-width:calc(100% - 104px);
+  }
+  .aoHeritageSurface .aoFindMap .maplibregl-ctrl-bottom-left .maplibregl-ctrl-attrib{
+    max-width:100%;
+  }
+  .aoHeritageSurface .aoHeritageMapHint{
+    left:12px;bottom:67px;max-width:min(220px,calc(100% - 24px));
+  }
+  .aoHeritageSurface .aoHeritageNearby{
+    right:12px;bottom:13px;min-height:44px;
+  }
+}
+
 /* R60: a reading sequence of independently sourced canonical witnesses,
    not an unsourced manufactured pilgrimage narrative. */
 .aoExplorePlaceSheet .aoExploreSourcedStory{
