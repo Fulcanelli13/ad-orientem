@@ -35,6 +35,7 @@ export function supplementarySaintsForDate(date, persons, {
   const seen = new Set();
   for (const person of persons) {
     if (!person?.id || seen.has(person.id)) continue;
+    if (person.publicationHold) continue; // Independent identity adjudication required.
     const recognition = saintRecognitionAt(person, date);
     if (!recognition.recognizedAsSaint) continue;
     for (const observance of person.observances || []) {
