@@ -1,0 +1,352 @@
+{
+  "schema": "AO_MYSTERY_MASS_P1_SEVEN_PRAYER_P2_PREP_COMMUNION_REVIEW_V1",
+  "date": "2026-10-15",
+  "status": "EDITORIAL_CLASSIFICATION_ONLY_NOT_SOURCE_OR_PUBLICATION_APPROVAL",
+  "inputs": [
+    "data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json",
+    "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json",
+    "Ad_Orientem_Mass_Master_Reference_Matrix_P1_Dedup_P2_Grouped_2026-10-15.xlsx"
+  ],
+  "outputConversationWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_P1_P2_Editorial_2026-10-15.xlsx",
+  "workbookGitHubCommitted": false,
+  "metrics": {
+    "p1AdditionalClausePointers": 10,
+    "p1ExistingPrayerOwners": 7,
+    "p2NewlyReviewedClausePointers": 58,
+    "p2OriginalBatchPrep": 27,
+    "p2OriginalBatchCommunion": 31,
+    "p2RemainingFamilyClassifiedButNotReviewed": 122,
+    "sourceWorkLookupOnly": 1,
+    "scriptureCrossReferenceOnly": 1,
+    "leadingCommaFragments": 7,
+    "approvedPublicationCount": 0
+  },
+  "p1SevenExistingPrayerOwners": [
+    {
+      "id": "AO.V3.0038",
+      "owner": "AO.CARD.001",
+      "name": "Oramus te, Domine",
+      "micro": [
+        "U001"
+      ],
+      "topic": "At the altar's relics: prayer and shared petition",
+      "old": [
+        "MM-PRIMARY-MB02"
+      ],
+      "decision": "OPTIONAL_DETAIL_EXISTING_OWNER",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0038.U001"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0110",
+      "owner": "AO.CARD.010",
+      "name": "Suscipe, sancte Pater",
+      "micro": [
+        "U003"
+      ],
+      "topic": "Beneficiaries of the offering: those present, living and deceased; priest's confession separate",
+      "old": [
+        "MM-PRIMARY-MB09",
+        "MM-PRIMARY-N03",
+        "MM-PRIMARY-N04"
+      ],
+      "decision": "OPTIONAL_DETAIL_EXISTING_OWNER",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0110.U003"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0114",
+      "owner": "AO.CARD.010",
+      "name": "Offerimus tibi, Domine",
+      "micro": [
+        "U001",
+        "U002"
+      ],
+      "topic": "Chalice oblation anticipates consecration; not a distinct sacramental consecration",
+      "old": [
+        "MM-PRIMARY-MB09",
+        "MM-PRIMARY-N03",
+        "MM-PRIMARY-N04"
+      ],
+      "decision": "ONE_DETAIL_FOR_TWO_CLAUSES",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0114.U001",
+        "AO.V3.0114.U002"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0118",
+      "owner": "AO.CARD.010",
+      "name": "Veni, sanctificator",
+      "micro": [
+        "U001"
+      ],
+      "topic": "Invocation and accompanying blessing distinguished from consecratory words",
+      "old": [
+        "MM-PRIMARY-MB09",
+        "MM-PRIMARY-N03",
+        "MM-PRIMARY-N04"
+      ],
+      "decision": "OPTIONAL_DETAIL_EXISTING_OWNER",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0118.U001"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0120",
+      "owner": "AO.CARD.010",
+      "name": "Per intercessionem beati Michaelis",
+      "micro": [
+        "U001"
+      ],
+      "topic": "Liturgical Michael vs unnamed Revelation incense angel; no conflation of witnesses",
+      "old": [
+        "MM-PRIMARY-N04"
+      ],
+      "scriptureScope": [
+        "Revelation 8:3-4"
+      ],
+      "decision": "OPTIONAL_DETAIL_EXISTING_OWNER",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0120.U001"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0128",
+      "owner": "AO.CARD.010",
+      "name": "Suscipe, sancta Trinitas",
+      "micro": [
+        "U002",
+        "U004"
+      ],
+      "topic": "Honour of the saints and their intercession within the offertory prayer",
+      "old": [
+        "MM-PRIMARY-MB09",
+        "MM-PRIMARY-N03",
+        "MM-PRIMARY-N04"
+      ],
+      "decision": "ONE_DETAIL_FOR_TWO_CLAUSES",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0128.U002",
+        "AO.V3.0128.U004"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    },
+    {
+      "id": "AO.V3.0226",
+      "owner": "AO.CARD.022",
+      "name": "Domine Iesu Christe, Fili Dei vivi",
+      "micro": [
+        "U004",
+        "U005"
+      ],
+      "topic": "Distinct private Communion prayer: deliverance and perseverance; not the Church-peace petition",
+      "old": [
+        "MM-PRIMARY-MB24",
+        "MM-PRIMARY-N05"
+      ],
+      "decision": "ONE_DETAIL_FOR_TWO_CLAUSES",
+      "sourceAuthor": "Dom Prosper Guéranger, 1885 posthumous conference notes",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceStatus": "SOURCE-LED CANDIDATE: NOT A NEW AUTHORED STUDY OR APPROVED QUOTATION",
+      "latinUnits": [
+        "AO.V3.0226.U004",
+        "AO.V3.0226.U005"
+      ],
+      "review": "NO_PUBLICATION_APPROVAL"
+    }
+  ],
+  "p2Classifications": {
+    "SCRIPTURE_ALREADY_OWNED": [
+      "AO.V3.0004.U002",
+      "AO.V3.0005.U001",
+      "AO.V3.0006.U001",
+      "AO.V3.0007.U002",
+      "AO.V3.0008.U001",
+      "AO.V3.0008.U002",
+      "AO.V3.0009.U001",
+      "AO.V3.0009.U002",
+      "AO.V3.0010.U001",
+      "AO.V3.0011.U001",
+      "AO.V3.0011.U002",
+      "AO.V3.0012.U001",
+      "AO.V3.0013.U001"
+    ],
+    "REPEATED_RESPONSE": [
+      "AO.V3.0014.U001",
+      "AO.V3.0015.U001",
+      "AO.V3.0028.U001",
+      "AO.V3.0029.U001",
+      "AO.V3.0030.U001",
+      "AO.V3.0031.U001",
+      "AO.V3.0032.U001",
+      "AO.V3.0033.U001",
+      "AO.V3.0034.U001",
+      "AO.V3.0035.U001"
+    ],
+    "CONFITEOR_ROLE_VARIANT": [
+      "AO.V3.0021.U003",
+      "AO.V3.0022.U001"
+    ],
+    "SHARED_CONCLUSION": [
+      "AO.V3.0037.U003"
+    ],
+    "P1_EXISTING_OWNER_ADDITION": [
+      "AO.V3.0039.U002"
+    ],
+    "ALREADY_COVERED": [
+      "AO.V3.0223.U001",
+      "AO.V3.0223.U002",
+      "AO.V3.0224.U001",
+      "AO.V3.0225.U003",
+      "AO.V3.0225.U004",
+      "AO.V3.0225.U005",
+      "AO.V3.0225.U006",
+      "AO.V3.0225.U007",
+      "AO.V3.0229.U001",
+      "AO.V3.0229.U002",
+      "AO.V3.0229.U003",
+      "AO.V3.0230.U001",
+      "AO.V3.0230.U002",
+      "AO.V3.0230.U003",
+      "AO.V3.0231.U001",
+      "AO.V3.0231.U002",
+      "AO.V3.0231.U003",
+      "AO.V3.0233.U002",
+      "AO.V3.0243.U001",
+      "AO.V3.0243.U002",
+      "AO.V3.0243.U003",
+      "AO.V3.0244.U001",
+      "AO.V3.0244.U002",
+      "AO.V3.0244.U003",
+      "AO.V3.0245.U001",
+      "AO.V3.0245.U002",
+      "AO.V3.0245.U003"
+    ],
+    "TARGETED_SOURCE_COLLATION": [
+      "AO.V3.0227.U001"
+    ],
+    "SCRIPTURE_CROSS_REF": [
+      "AO.V3.0233.U003"
+    ],
+    "OPTIONAL_SECOND_CONFITEOR": [
+      "AO.V3.0235.U003",
+      "AO.V3.0236.U001"
+    ]
+  },
+  "p2ExistingStudyLinks": [
+    {
+      "sourceCueRange": [
+        4,
+        13
+      ],
+      "study": "MM-PRIMARY-MB02",
+      "conditional": "PSALM_42_NOT_IN_ALL_1962_MASSES"
+    },
+    {
+      "sourceCueRange": [
+        223,
+        224
+      ],
+      "study": "MM-PRIMARY-MB23",
+      "conditional": "REQUIEM_PETITIONS_AND_GESTURES_DIFFER"
+    },
+    {
+      "sourceCueRange": [
+        225,
+        225
+      ],
+      "study": "MM-PRIMARY-N05",
+      "conditional": "PRAYER_OMITTED_AT_REQUIEM"
+    },
+    {
+      "sourceCueRange": [
+        229,
+        231
+      ],
+      "study": "MM-PRIMARY-MB24",
+      "conditional": "PRIEST_PRIVATE_TRIPLE_RESPONSE_NOT_FAITHFUL"
+    },
+    {
+      "sourceCueRange": [
+        233,
+        233
+      ],
+      "study": "MM-PRIMARY-MB25",
+      "conditional": "SOURCE_PSALMS_115_AND_17_DISTINCT"
+    },
+    {
+      "sourceCueRange": [
+        235,
+        236
+      ],
+      "study": "MM-NEW-19",
+      "conditional": "SECOND_CONFITEOR_NOT_UNIVERSAL_1962"
+    },
+    {
+      "sourceCueRange": [
+        243,
+        245
+      ],
+      "study": "MM-NEW-19",
+      "conditional": "FAITHFUL_RESPONSE_NOT_PRIEST_RESPONSE"
+    }
+  ],
+  "twoNarrowAdditionalChecks": [
+    {
+      "unitId": "AO.V3.0227.U001",
+      "topic": "Perceptio Corporis tui",
+      "action": "Collate an exact primary historical author exposition of this separate private priest prayer; the present studies explain centurion and peace prayers, not this one's actual wording.",
+      "notApproved": true
+    },
+    {
+      "unitId": "AO.V3.0233.U003",
+      "topic": "Laudans invocabo Dominum",
+      "action": "Add Scripture cross-reference to Vulgate Psalm 17:4 (modern Psalm 18:3) with current Missal text; do not turn the reference into a new author claim.",
+      "notApproved": true
+    }
+  ],
+  "sourceSpanFlags": [
+    "AO.V3.0225.U003",
+    "AO.V3.0229.U002",
+    "AO.V3.0230.U002",
+    "AO.V3.0231.U002",
+    "AO.V3.0243.U002",
+    "AO.V3.0244.U002",
+    "AO.V3.0245.U002"
+  ],
+  "sourceSpanFlagPolicy": "Leading comma belongs to source phrase segmentation; check donor offsets before adjusting 435-unit spreadsheet. Never normalize/rewrite 1962 source text from the split fragments.",
+  "otherNonPromotion": [
+    "No 7 new Mass cards, no seven user-facing AI-written essays; reuse existing 44 source studies.",
+    "Don't overwrite any 42 author/Scripture column pairs or 955 evidence attachments.",
+    "Do not auto-copy priest's threefold Domine non sum dignus to congregation; respect speaker and timing.",
+    "Second Confiteor is conditional/historic practice, not a universally required 1962 rite.",
+    "Old Guéranger posthumous notes explain prayer meaning, never overwrite normative 1962 priest actions.",
+    "Raw P2 source cue number existence does not prove exact clause-to-text offsets, rubric or theatrical reader status."
+  ]
+}
