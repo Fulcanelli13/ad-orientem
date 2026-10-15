@@ -95,3 +95,22 @@ Related scanned pages were separately inspected or matched to the corresponding 
 ### Additional original-page check — St Alphonsus's editorial Notice
 
 The [1887 Grimm edition's Notice, unnumbered printed page, DjVu image 17](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/17) and its [original page image](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Complete_ascetical_works_of_St_Alphonsus_v6.djvu/page17-1280px-Complete_ascetical_works_of_St_Alphonsus_v6.djvu.jpg) have now **also been visually inspected**. The editor discusses Condren/Quesnel parallels but doubts that he has identified the actual earlier French source. The source is therefore **historically uncertain**, not a proved work-to-work derivation. This newly inspected prefatory page is an **additional printed witness**, not an additional one of the six passage pairs; the six-pair count remains **1 verified / 5 pending**.
+
+
+## Phase G — remaining five facsimile checks: independently sourced, not yet visually certified
+
+**No additional original passage image** has been accepted in this pass. The confirmed baseline remains **one of six**, St Alphonsus p.46 / scan image 48. The two Guéranger and three Gihr printed-page images are still unavailable for direct inspection through the current source-access channel; do not inflate the verification count.
+
+**Guéranger — two genuinely independent institutional copies of 1885:**
+- [KU Leuven volume digitized in Google Books](https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C), digitized 15 April 2024; printed contents put *Memento des vivants* at p.126, *Quam oblationem* at p.140. These are **chapter opening pages**, not yet established exact paragraph pages. The Google Books pages are navigable by `pg=PA126` and `pg=PA140` but were not available as inspectable scanned pixels through this pass.
+- [University of Pennsylvania/Yarnall 1885 copy](https://colenda.library.upenn.edu/catalog/81431-p3vd6q69w), 271 pages, university IIIF presentation catalogued. The repository announced October 2026 migration and the old Colenda source timed out. Its current image manifest access is not certified.
+
+**New explicit text-integrity finding:** the [1885 French-text online transcription of Guéranger's *Memento*](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) has `quorum tibi rides cognita est` in its first quotation, whereas a later quotation in the same section gives the right word `fides`. The canonical 1962 Mass source `AO.SM.C0156` rightly gives `quorum tibi fides cógnita est`. This is a clear transcription/OCR defect in the historical web witness. **Never propagate `rides` into the reader, bilingual commentary or source-quotations matrix.** The author’s explanation of faithful attendance remains meaningful, but text witnesses must not be conflated.
+
+**Gihr — original printed 1902 edition located:**
+- [Wikimedia Commons / Internet Archive 1902 PDF](https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf), 788 scanned pages, approximately 72 MB. The cover scan is visible. However the full source document exceeds the retrieval size limit, and the necessary **target page images** could not be requested successfully in this pass.
+- [Google Books Columbia University 1902 digitization](https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ) independently lists the *First Prayer of the Canon after the Consecration* starting on printed p.646 and the next prayer starting p.667. The three existing Gihr claims at printed pp.659–660 lie in the right section, but **that confirms location rather than verbatim source-page equivalence**.
+
+**Targeted unresolved image list**: `VER-045/I006` (Guéranger, *Memento*), `VER-049/I016` (Guéranger, *Quam oblationem*), `VER-057/I054` (Gihr, Abel), `VER-058/I056` (Gihr, Abraham), `VER-059/I058` (Gihr, Melchisedech). Each remains `imageVerification: PENDING`.
+
+These five holds are **limited to facsimile verification of previously identified overlaps**: they do not undo the edition-identified transcription collation, require a second author/work register, or justify reopening the 422-case study. After gaining direct page access, certify each page *once* and then use the same canonical author/source evidence across Mass and Mystery. 
