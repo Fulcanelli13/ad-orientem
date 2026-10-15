@@ -12,6 +12,7 @@ import { buildExploreViewModel, renderExploreToString } from "./explore-presenta
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
 import { ATLAS_PHYSICAL_STYLE } from "./atlas-physical-style.js";
+import { readAtlasReadingPlace, saveAtlasReadingPlace } from "./bible-atlas-reading-place.js";
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
@@ -122,6 +123,8 @@ export function createFindOwner(win=globalThis){
   const bibleCinemaPreview=query.get("atlasCinema")!=="0";
   const bibleHistoricalPreview=bibleCinemaPreview&&query.get("atlasHistory")!=="0";
   let bibleCinemaFollow=true,bibleCinemaSheetExpanded=false,bibleCinemaPlateTimer=null;
+  let bibleProgrammaticScrollUntil=0;
+  const atlasDeviceStorage=()=>{try{return win?.localStorage??null;}catch{return null;}};
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
@@ -326,7 +329,7 @@ export function createFindOwner(win=globalThis){
           styleOverride:bibleCinemaPreview?ATLAS_PHYSICAL_STYLE:null,
           onSelect:id=>{
             const index=atlasIndexForPin(atlasStops,state.bibleIndex,id);
-            updateBibleIndex(index,{center:true});
+            updateBibleIndex(index,{center:true,remember:true});
             const detail=getRoot(win)?.querySelector?.("[data-bible-detail]");
             if(detail)detail.insertAdjacentHTML("beforeend",atlasPinEpisodes(
               atlasStops,data?.biblePlaces?.entries??[],String(id).replace(/^atlas:/,""),index,language(win)));
@@ -597,20 +600,31 @@ export function createFindOwner(win=globalThis){
   }
 
   // Update pins and camera *in place* as the timeline scrubs; never remount map on each stop.
-  function updateBibleIndex(next,{center=false}={}){
+  function updateBibleIndex(next,{center=false,remember=false}={}){
     if(!openState||!state.bibleAtlas||!dataset)return;
     const stops=buildBibleAtlas(dataset.biblePlaces?.entries??[]);
     const index=Math.max(0,Math.min(stops.length-1,Math.floor(Number(next)||0)));
     const previous=stops[state.bibleIndex],active=stops[index];
     if(!active)return;
     state.bibleIndex=index;
+    // Commit only deliberate chapter selections and actual timeline gestures.
+    // Never overwrite a saved scene during initial rendering or Follow recenter.
+    if(remember&&index!==previous?.index)saveAtlasReadingPlace(atlasDeviceStorage(),active);
     const root=getRoot(win),lang=language(win);
     root?.querySelectorAll?.("[data-bible-step]")?.forEach(button=>{
       const selected=Number(button.dataset.bibleStep)===index;
       button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));
     });
     const detail=root?.querySelector?.("[data-bible-detail]");
-    if(detail)detail.innerHTML=atlasDetail(active,lang,{historicalPreview:bibleHistoricalPreview});
+    if(detail){
+      detail.innerHTML=atlasDetail(active,lang,{historicalPreview:bibleHistoricalPreview});
+      if(index!==previous?.index){
+        // A long source note in a previous scene must not leave the next
+        // scene scrolled into the middle of unrelated evidence.
+        const sheet=detail.closest?.(".aoBibleAtlasDetail");
+        if(sheet)sheet.scrollTop=0;
+      }
+    }
     const contextShortcut=root?.querySelector?.("[data-bible-context-open]");
     if(contextShortcut){
       const extra=Boolean(detail?.querySelector?.("[data-bible-history-note],[data-bible-landscape]"));
@@ -681,11 +695,12 @@ export function createFindOwner(win=globalThis){
     const target=getRoot(win)?.querySelector?.('[data-bible-step="'+index+'"]');
     // Exact Scripture jumps must arrive at one stable scene, not sweep the interim cards.
     // User-driven swipes retain their native scrolling behaviour.
+    bibleProgrammaticScrollUntil=Date.now()+250;
     target?.scrollIntoView?.({block:"nearest",inline:"center",behavior:"instant"});
   }
   let bibleScrollFrame=0;
   function onBibleTimelineScroll(event){
-    if(!openState||!state.bibleAtlas||!event?.target?.matches?.("[data-bible-track]"))return;
+    if(!openState||!state.bibleAtlas||!event?.target?.matches?.("[data-bible-track]")||Date.now()<bibleProgrammaticScrollUntil)return;
     if(bibleScrollFrame)return;
     const track=event.target;
     const update=()=>{
@@ -696,7 +711,7 @@ export function createFindOwner(win=globalThis){
         const rect=button.getBoundingClientRect(),diff=Math.abs(rect.left+rect.width/2-middle);
         if(diff<distance){distance=diff;best=Number(button.dataset.bibleStep);}
       });
-      if(best>=0&&best!==state.bibleIndex)updateBibleIndex(best);
+      if(best>=0&&best!==state.bibleIndex)updateBibleIndex(best,{remember:true});
     };
     bibleScrollFrame=win.requestAnimationFrame?win.requestAnimationFrame(update):1;
     if(!win.requestAnimationFrame){bibleScrollFrame=0;update();}
@@ -711,15 +726,14 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-bible-atlas-open]")&&state.lens==="heritage"){
       event.preventDefault?.();
       if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
-      state.bibleAtlas=true;state.bibleIndex=0;
-      // This review is explicitly map-first: begin at the earliest
-      // source-qualified geographic event rather than a blank Creation map.
-      // Creation remains at index zero in the unchanged 151-event chronology.
-      if(bibleCinemaPreview){
-        const firstMapped=buildBibleAtlas(dataset.biblePlaces?.entries??[])
-          .find(stop=>Boolean(stop.geo));
-        if(firstMapped)state.bibleIndex=firstMapped.index;
-      }
+      state.bibleAtlas=true;
+      const stops=buildBibleAtlas(dataset.biblePlaces?.entries??[]);
+      const saved=readAtlasReadingPlace(atlasDeviceStorage(),stops);
+      // A reader returns to their last explicitly selected Scripture episode.
+      // With no saved place, start at the earliest source-qualified map stop,
+      // retaining Creation as selectable event zero in the 151-event corpus.
+      const firstMapped=bibleCinemaPreview?stops.find(stop=>Boolean(stop.geo)):null;
+      state.bibleIndex=saved??firstMapped?.index??0;
       bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;
       lastMapView=null;lastMapLens=null;
       void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(state.bibleIndex);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
@@ -734,7 +748,7 @@ export function createFindOwner(win=globalThis){
       if(chapter){
         event.preventDefault?.();
         const index=Number(chapter.dataset.bibleChapter);
-        if(Number.isInteger(index)){updateBibleIndex(index,{center:true});}
+        if(Number.isInteger(index)){updateBibleIndex(index,{center:true,remember:true});}
         return;
       }
       if(target?.closest?.("[data-bible-chapter-dismiss]")){
@@ -751,11 +765,12 @@ export function createFindOwner(win=globalThis){
         if(sheet){
           sheet.dataset.bibleSheet="expanded";
           sheet.querySelector?.("[data-bible-sheet-toggle]")?.setAttribute?.("aria-expanded","true");
-          const contextNote=sheet.querySelector?.("[data-bible-history-note],[data-bible-landscape]");
-          if(contextNote){
-            contextNote.open=true;
-            contextNote.scrollIntoView?.({block:"nearest",behavior:"instant"});
-          }
+          const notes=sheet.querySelectorAll?.("[data-bible-history-note],[data-bible-landscape]")??[];
+          // Context includes both independently sourced ancient-name and
+          // landscape evidence, not just the first research card.
+          notes.forEach(note=>{note.open=true;});
+          if(notes.length)notes[0].scrollIntoView?.({block:"nearest",behavior:"instant"});
+          else sheet.scrollTop=0;
         }
         return;
       }
@@ -770,7 +785,7 @@ export function createFindOwner(win=globalThis){
       }
     }
     const atlasStep=target?.closest?.("[data-bible-step]");
-    if(atlasStep&&state.bibleAtlas){event.preventDefault?.();updateBibleIndex(Number(atlasStep.dataset.bibleStep),{center:true});return;}
+    if(atlasStep&&state.bibleAtlas){event.preventDefault?.();updateBibleIndex(Number(atlasStep.dataset.bibleStep),{center:true,remember:true});return;}
     if(target?.closest?.("[data-bible-follow]")&&state.bibleAtlas){
       event.preventDefault?.();
       if(bibleCinemaPreview){

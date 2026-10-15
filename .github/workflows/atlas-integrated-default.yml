@@ -7,6 +7,8 @@ on:
       - "src/find/bible-atlas.js"
       - "src/find/atlas-physical-style.js"
       - "tests/atlas-default-integrated-phone.mjs"
+      - "src/find/bible-atlas-reading-place.js"
+      - "tests/atlas-reading-place.mjs"
       - "tests/atlas-physical-basemap.mjs"
       - "tests/explore-bible-atlas-151-phone.mjs"
       - ".github/workflows/atlas-integrated-default.yml"
@@ -28,6 +30,7 @@ jobs:
           node --check src/find/browser-entry.js
           node --check src/find/bible-atlas.js
           node tests/atlas-physical-basemap.mjs
+          node tests/atlas-reading-place.mjs
           node tests/explore-atlas-cinematic-151.mjs
           node tests/atlas-landscape-context.mjs
           node tests/atlas-source-place-labels.mjs
