@@ -6,6 +6,7 @@ on:
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
       - 'tests/saints-parallel-owner-bridge.mjs'
+      - 'tests/saints-calendar-context-integration.mjs'
       - 'previews/saints-map-holiness-first-20261015.html'
       - 'tests/saints-atlas-editorial-pilot.mjs'
       - '.github/workflows/saints-atlas-editorial.yml'
@@ -24,9 +25,12 @@ jobs:
         run: node tests/saints-explore-native-lens.mjs
       - name: Reconcile Calendar, Relics and Sacred Art identities without merging owners
         run: node tests/saints-parallel-owner-bridge.mjs
+      - name: Check observed 2026 Calendar context in native Saints lens
+        run: node tests/saints-calendar-context-integration.mjs
       - name: Check native module syntax
         run: |
           node --check src/find/saints-lens.js
+          node --check src/find/saints-calendar-context.js
           node --check src/find/saints-presentation.js
           node --check src/find/explore-presentation.js
           node --check src/find/browser-entry.js
