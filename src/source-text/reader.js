@@ -37,16 +37,14 @@ export function createSourceTextReader({manifest,loadChunk}={}){
      const p=parsed.passages[i];
      const expectedIndex=ids.get(expected[i]);
      validateSourcePageSpan(p);
-     if(expectedIndex.sourcePages!==undefined){
-      validateSourcePageSpan(expectedIndex);
-      if(JSON.stringify(p.sourcePages)!==JSON.stringify(expectedIndex.sourcePages))
-       throw new Error("SOURCE_SCAN_PAGE_SPAN_IDENTITY_MISMATCH");
-     }
+     if(expectedIndex.sourcePages!==undefined)validateSourcePageSpan(expectedIndex);
+     if(JSON.stringify(p.sourcePages)!==JSON.stringify(expectedIndex.sourcePages))
+      throw new Error("SOURCE_SCAN_PAGE_SPAN_IDENTITY_MISMATCH");
      if(p?.id!==expected[i]||p.workId!==manifest.work.id||
        p.editionId!==manifest.work.editionId||p.witnessId!==manifest.work.witnessId||
        typeof p.text!=="string"||
        ["sourceLocator","editionQualifiedCitation","sourcePage"].some(field=>
-        expectedIndex[field]!==undefined&&p[field]!==expectedIndex[field]))
+        p[field]!==expectedIndex[field]))
       throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
     }
     assertPassageReproductionScope(manifest.work,parsed.passages);
