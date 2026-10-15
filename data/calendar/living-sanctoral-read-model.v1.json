@@ -9,7 +9,8 @@
       "data/calendar/living-sanctoral-pilot.v1.json",
       "data/calendar/post1960-canonizations.official-batch1.v1.json",
       "data/calendar/doctors-of-church-roster.review.v1.json",
-      "data/geography/approved-place-media.v1.json"
+      "data/geography/approved-place-media.v1.json",
+      "data/geography/seed-registry.v1.json"
     ],
     "regenerateWhenSourcesChange": true,
     "paintingsSelectionOwner": "https://github.com/Fulcanelli13/ad-orientem/pull/887"
@@ -718,31 +719,36 @@
         "canonicalId": "saint.therese-lisieux",
         "placeId": "place:FR:carmel-lisieux",
         "role": "SAINT_ASSOCIATED_RELIGIOUS_SITE",
-        "placePhotoAsset": null
+        "placePhotoAsset": null,
+        "placeName": "Chapelle du Carmel de Lisieux"
       },
       {
         "canonicalId": "saint.therese-lisieux",
         "placeId": "place:FR:basilique-sainte-therese-lisieux",
         "role": "SAINT_ASSOCIATED_BASILICA",
-        "placePhotoAsset": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp"
+        "placePhotoAsset": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp",
+        "placeName": "Basilique Sainte-Thérèse de Lisieux"
       },
       {
         "canonicalId": "saint.pio-pietrelcina",
         "placeId": "place:IT:santuario-san-pio-rotondo",
         "role": "SAINT_ASSOCIATED_SANCTUARY",
-        "placePhotoAsset": null
+        "placePhotoAsset": null,
+        "placeName": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo"
       },
       {
         "canonicalId": "canon-group.uganda-martyrs-22",
         "placeId": "place:UG:namugongo-martyrs",
         "role": "MARTYRS_COMMEMORATIVE_SHRINE",
-        "placePhotoAsset": "assets/approved/place-media/UG-namugongo-martyrs.webp"
+        "placePhotoAsset": "assets/approved/place-media/UG-namugongo-martyrs.webp",
+        "placeName": "Uganda Martyrs Catholic Shrine, Namugongo"
       },
       {
         "canonicalId": "canon-group.uganda-martyrs-22",
         "placeId": "place:UG:munyonyo-martyrs",
         "role": "MARTYRS_RELATED_SHRINE",
-        "placePhotoAsset": null
+        "placePhotoAsset": null,
+        "placeName": "Munyonyo Martyrs Shrine"
       }
     ]
   },
