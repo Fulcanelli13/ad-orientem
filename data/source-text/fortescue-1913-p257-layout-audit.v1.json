@@ -37,11 +37,13 @@
     "untranscribedTextBlocks": "PROVISIONAL_TEXT_CANDIDATES_EXIST_BUT_NOT_A_SINGLE_PRINTED_PAGE_FULLY_PROOFREAD",
     "appReady": false,
     "reason": "Physical page segmentation and a few existing passages were compared to the image; full orthographic and bibliographic verification is not complete.",
-    "completePrintedParagraphCensus": "NOT_YET_VERIFIED",
+    "completePrintedParagraphCensus": "THREE_PRINT_IMAGE_PARAGRAPH_STARTS_PRELIMINARY__HUMAN_REVIEW_PENDING",
     "candidateDraftBlocks": 10,
     "independentlyProofreadPages": 0,
     "longLatinQuoteHumanReview": "PENDING",
-    "interpageJoinHumanReview": "PENDING"
+    "interpageJoinHumanReview": "PENDING",
+    "provisionalPrintParagraphGroups": 3,
+    "independentlyCertifiedPrintParagraphGroups": 0
   },
   "reviewDependencies": [
     "Manually proofread entirety of p257 from original printed image, including source Latin, proper names, references, ligatures and punctuation",
@@ -50,8 +52,8 @@
     "Verify P257-03 right-column end",
     "Collate P257-04 across printed p257→p258 with both scans, no guessed join",
     "Independent editor signs off actual complete page, all footnotes and boundaries before editorial promotion",
-    "Determine exact printed paragraph indentation inside both right-column historical territories before assigning additional passage IDs",
-    "Resolve all provisional candidate inconsistencies against 1913 source image; any New Advent/Wikisource reading is merely a lead"
+    "Resolve all provisional candidate inconsistencies against 1913 source image; any New Advent/Wikisource reading is merely a lead",
+    "Confirm by second human visual examination the three identified paragraph starts and nine continuous typographic joins without treating OCR block IDs as canonical paragraphs."
   ],
   "reviewerKind": "MODEL_IMAGE_STRUCTURAL_ASSESSMENT_NOT_HUMAN_EDITION_CERTIFICATION",
   "notCanonicalMassRubrics": true,
@@ -113,6 +115,32 @@
       "internalParagraphBreaks": "UNRESOLVED_FROM_CURRENT_PAGE_IMAGE_REVIEW"
     }
   ],
-  "scopeClarification": "The four source territories are reading-order macro segments, not a certified census of exactly four printed paragraphs.",
-  "provisionalTranscription": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
+  "scopeClarification": "Four research subject territories are independent of the three apparent typeset paragraphs. Software blocks (12) are editing units; the original scan indicates three page-257 paragraphs, with the third continuing onto printed page 258. None is word-for-word proofread.",
+  "provisionalTranscription": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json",
+  "printParagraphReview": {
+    "page": 257,
+    "image": 305,
+    "visualNewParagraphStarts": [
+      {
+        "workingStart": "P257-01",
+        "opening": "It is very possible that at some unknown period"
+      },
+      {
+        "workingStart": "P257-02a",
+        "opening": "In the first century, as known"
+      },
+      {
+        "workingStart": "P257-06",
+        "opening": "The first great turning-point in the history of the Roman Canon"
+      }
+    ],
+    "provisionalPrintedParagraphs": 3,
+    "transcriptionEditingBlocks": 12,
+    "editingSplitsThatAreNotParagraphBreaks": 9,
+    "physicalColumnSpan": "Third paragraph begins low in left column, continues at right-column top after printer signature and crosses printed p257→p258.",
+    "externalImageUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+    "finalEditorialSignoff": false,
+    "stage": "ORIGINAL_IMAGE_STRUCTURE_PRELIMINARY_NOT_FULL_TEXT_CERTIFICATION",
+    "correctiveNote": "Previous nine tentative paragraph groups were incorrect: several block boundaries occur in the middle of one continuous typeset line. Three distinct paragraph starts are identifiable in the printed p257 scan."
+  }
 }
