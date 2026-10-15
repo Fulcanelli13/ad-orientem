@@ -147,8 +147,31 @@ function blocksInRange(card,first,last){
   }
   return included;
 }
+// A Sequence is a distinct source-owned B022 prayer only when this day's
+// resolved Proper actually contains it. B021 may still carry Gradual and
+// Alleluia/Tract in one translated source paragraph: do not invent an
+// unverified internal text boundary. Unlike a fixed 66-card scheme, ordinary
+// days with no Sequence retain the certified 65-card presentation.
+function conditionalPreGospelSpec(card){
+  if(sourceId(card)!=="AO.CARD.006")return null;
+  const gradual=(card.blocks??[]).find(b=>b.blockId==="AO.SM.B021");
+  const sequence=(card.blocks??[]).find(b=>b.blockId==="AO.SM.B022");
+  if(!gradual||!sequence)throw new Error("PRE_GOSPEL_CERTIFIED_BLOCKS_MISSING");
+  if(!sequence.paragraphCount)return null; // NOT_APPLICABLE, never a phantom card.
+  if(!gradual.paragraphCount || gradual.firstParagraphIndex==null ||
+     sequence.firstParagraphIndex==null ||
+     gradual.firstParagraphIndex+gradual.paragraphCount!==sequence.firstParagraphIndex ||
+     sequence.firstParagraphIndex+sequence.paragraphCount!==card.paragraphs.length){
+    throw new Error("PRE_GOSPEL_SEQUENCE_SOURCE_BOUNDARY_UNVERIFIED");
+  }
+  return Object.freeze({
+    titles:Object.freeze(["Gradual · Alleluia / Tract","Sequence"]),
+    after:Object.freeze([{block:"B021"}]),
+  });
+}
+
 function curated(card){
-  const spec=GROUPS[sourceId(card)];
+  const spec=GROUPS[sourceId(card)]??conditionalPreGospelSpec(card);
   if(!spec)return [Object.freeze({title:card.title,paragraphs:card.paragraphs,
     blocks:card.blocks,ordinal:1})];
   if(spec.titles.length!==spec.after.length+1)throw new Error(sourceId(card)+": bad card specification");
@@ -211,7 +234,11 @@ export function projectCuratedOrdinaryLiveCards(model){
   for(const key of Object.keys(GROUPS)){
     if(!visited.has(key))throw new Error("Curated section not found: "+key);
   }
-  if(result.length!==65)throw new Error("Ordinary curated LIVE expected 65 cards; found "+result.length);
+  const sequenceIsSeparate=result.some(card=>
+    card.sourceSectionId==="AO.CARD.006"&&card.title==="Sequence");
+  const expectedCards=65+(sequenceIsSeparate?1:0);
+  if(result.length!==expectedCards)throw new Error(
+    "Ordinary curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));
   if(lookup.size!==cards.length)throw new Error("Curated cards have duplicate IDs");
@@ -249,7 +276,7 @@ export const CURATED_LIVE_GROUPS=GROUPS;
 // not renumber, synthesize or mutate their underlying canonical 39 steps.
 export function projectCuratedIntroitEntryLiveCards(curated){
   if(curated?.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
-     curated?.totalCards!==65||curated?.sourceModelTotalCards!==39)
+     ![65,66].includes(curated?.totalCards)||curated?.sourceModelTotalCards!==39)
     throw new Error("CURATED_INTROIT_ENTRY_REQUIRES_SOURCE_CURATED_65");
   const opening=curated.cards.filter(card=>card.sourceSectionId==="AO.CARD.001");
   const introit=opening.find(card=>card.title==="Introit" &&
@@ -269,10 +296,12 @@ export function projectCuratedIntroitEntryLiveCards(curated){
       openingOmission:"ORDINARY_FOOT_CLUSTER_BY_PRECEDING_RITE",
     }),
   })));
-  if(cards.length!==61||cards[0].title!=="Introit")
-    throw new Error("CURATED_INTROIT_ENTRY_EXPECTED_61_STEPS");
+  const expectedVisible=curated.totalCards-omitted.length;
+  if(![61,62].includes(expectedVisible)||cards.length!==expectedVisible||
+     cards[0].title!=="Introit")
+    throw new Error("CURATED_INTROIT_ENTRY_EXPECTED_SOURCE_STEPS");
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));
-  if(lookup.size!==61)throw new Error("CURATED_INTROIT_ENTRY_DUPLICATE_IDS");
+  if(lookup.size!==expectedVisible)throw new Error("CURATED_INTROIT_ENTRY_DUPLICATE_IDS");
   const bySequence=n=>Number.isInteger(Number(n))?cards[Number(n)-1]??null:null;
   const neighbor=(id,delta)=>{
     const card=lookup.get(String(id));
@@ -285,8 +314,8 @@ export function projectCuratedIntroitEntryLiveCards(curated){
     throw new Error("CURATED_INTROIT_ENTRY_SOURCE_CUE_DUPLICATION");
   return Object.freeze({
     ...curated,
-    structureOwner:"SOURCE_FIRST_LIVE_CURATED_INTROIT_61",
-    cards,totalCards:61,
+    structureOwner:"SOURCE_FIRST_LIVE_CURATED_INTROIT_"+String(expectedVisible),
+    cards,totalCards:expectedVisible,
     cardBySequence:bySequence,
     previousCard:id=>neighbor(id,-1),
     nextCard:id=>neighbor(id,1),
