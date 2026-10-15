@@ -65,9 +65,13 @@ try{
   const geometry=await page.evaluate(()=>{
    const panel=document.querySelector("#ao-find-modular-root [data-bible-reading-panel]");
    return {viewport:innerWidth,docWidth:document.documentElement.scrollWidth,
-    panelWidth:panel?.getBoundingClientRect().width,panelHeight:panel?.getBoundingClientRect().height};
+    panelWidth:panel?.getBoundingClientRect().width,panelHeight:panel?.getBoundingClientRect().height,
+    storyButton:document.querySelector("[data-bible-reading-toggle]")?.getBoundingClientRect().toJSON(),
+    eraNav:document.querySelector("[data-bible-chapters]")?.getBoundingClientRect().toJSON()};
   });
   assert.ok(geometry.docWidth<=geometry.viewport+1,"horizontal document overflow "+JSON.stringify(geometry));
+  assert.ok(geometry.storyButton.right<=geometry.eraNav.left+1,
+   "Story selector must not cover the first scrolling era shortcut "+JSON.stringify(geometry));
   assert.ok(geometry.panelHeight>100&&geometry.panelHeight<320,"reading chooser must not displace whole map "+JSON.stringify(geometry));
   await page.screenshot({path:resolve(folder,"reading-chapters-"+width+".png"),animations:"disabled"});
  }
