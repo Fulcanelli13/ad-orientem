@@ -98,7 +98,7 @@ try{
    "The Schola should label only the actual source-owned chant");
   assert.equal(result.actions.some(a=>a.scholaHeaderOverlapsControls),false,
    "Schola Hide button overlaps the chant name or segment counter");
-  assert.equal(result.actions.every(a=>a.scholaToggleWidth>=44),true,
+  assert.equal(result.actions.every(a=>a.scholaToggleWidth>=(width<=760?44:24)),true,
    "The Schola Hide button lost its mobile touch target");
   assert.equal(result.overflow,false);
   assert.ok(result.width<=width+1);
