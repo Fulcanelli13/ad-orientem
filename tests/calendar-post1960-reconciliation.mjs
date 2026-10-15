@@ -5,8 +5,8 @@ import {saintRecognitionAt,supplementarySaintsForDate} from "../src/calendar/liv
 const pilot=JSON.parse(readFileSync(new URL("../data/calendar/living-sanctoral-pilot.v1.json",import.meta.url),"utf8"));
 const census=JSON.parse(readFileSync(new URL("../data/calendar/post1960-canonizations.official-batch1.v1.json",import.meta.url),"utf8"));
 const people=reconcileSaintPersonRecords(pilot.persons,census);
-assert.equal(people.length,71,"Six pilot people + 67 official named, 2 shared identities");
-const ids=new Set(people.map(x=>x.id));assert.equal(ids.size,71);
+assert.equal(people.length,136,"Six pilot people + 132 official named, 2 shared identities");
+const ids=new Set(people.map(x=>x.id));assert.equal(ids.size,136);
 assert.equal(people.filter(x=>x.sourceReconciliation?.existingRecordKept).length,2);
 for(const id of ["saint.john-henry-newman","saint.carlo-acutis"]){
  const x=people.find(p=>p.id===id);
@@ -14,6 +14,8 @@ for(const id of ["saint.john-henry-newman","saint.carlo-acutis"]){
  assert.equal(x.recognition.canonizedOn,census.persons.find(p=>p.id===id).canonizedOn);
 }
 assert.ok(census.groups.every(g=>!ids.has("saint."+g.id)));
+assert.ok(ids.has("saint.louis-martin") && ids.has("saint.zelie-guerin"));
+assert.ok(ids.has("saint.hildegard-bingen"));
 assert.equal(people.find(p=>p.id==="saint.francisco-marto").recognition.canonizedOn,"2017-05-13");
 assert.equal(saintRecognitionAt(people.find(p=>p.id==="saint.teresa-calcutta"),"2015-09-05").recognizedAsSaint,false);
 assert.equal(saintRecognitionAt(people.find(p=>p.id==="saint.teresa-calcutta"),"2017-09-05").recognizedAsSaint,true);
@@ -23,4 +25,4 @@ const mutated=structuredClone(census);
 mutated.persons.find(x=>x.id==="saint.john-henry-newman").canonizedOn="2018-10-13";
 assert.throws(()=>reconcileSaintPersonRecords(pilot.persons,mutated),/source conflict|identity conflict/);
 assert.equal(Object.isFrozen(people),true);
-console.log("Living sanctoral source reconciliation: PASS (71 canonical people, 2 reused IDs, 3 groups kept separate)");
+console.log("Living sanctoral source reconciliation: PASS (136 canonical people, 2 reused IDs, 4 groups kept separate)");
