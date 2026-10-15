@@ -30,7 +30,20 @@ const verifyHistoricLink=(finding,liveUrl)=>{
  assert.equal(repaired.new_claim_certified,false);
 };
 
-const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded,...priority.original_findings_superseded].map(x=>[x.finding_id,x]));
+const integrationDispositions=read(root+"formation-291-integration-historic-claim-dispositions-20261015.v1.json");
+assert.equal(integrationDispositions.entries.length,12,"historic primary claims must have explicit dispositions");
+for(const row of integrationDispositions.entries){
+ assert.equal(row.historical_finding_retained,true,row.finding_id+" old review cannot be erased");
+ assert.equal(row.historic_source_still_in_registry,true,row.finding_id+" old source must remain");
+ assert.equal(row.new_citation_claims_independently_certified,false,row.finding_id+" cannot claim automatic certification");
+ assert.equal(row.publication_allowed,false,row.finding_id+" cannot publish unapproved text");
+}
+const a1Superseded=new Map([
+ ...a1.original_findings_superseded,
+ ...a2.original_findings_superseded,
+ ...priority.original_findings_superseded,
+ ...integrationDispositions.entries
+].map(x=>[x.finding_id,x]));
 const validateReassigned=(f,section,sources)=>{
  const change=a1Superseded.get(f.id);
  assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
