@@ -43,3 +43,45 @@ for(const p of pilot.people){
 assert.equal(pilot.people.length,6);
 assert.equal(pilot.people.filter(p=>p.recognition_status==="BEATIFIED_NOT_CANONIZED").length,1);
 console.log("PASS: source-preserving saint census and six holiness-first editorial pilot profiles");
+
+
+const cross=read("data/saints/cross-module-source-reconciliation-20261015.v1.json");
+const relicSot=read("data/explore/worldwide-relic-subject-census.research.v1.json");
+const novenaSot=read("data/pray/novena-sot.v1.json");
+const relicIds=new Set(relicSot.subjects.map(x=>x.subject_id));
+const novenaIds=new Set(novenaSot.novenas.map(x=>x.id));
+assert.equal(cross.schema,"ao.saints.cross-module-source-reconciliation.v1");
+assert.equal(cross.rows.length,audit.mentions.length);
+assert.equal(cross.counts.shrine_name_strings,cross.rows.length);
+assert.equal(cross.counts.shrine_source_edges,originalEdges.length);
+const namesInAudit=new Set(audit.mentions.map(m=>m.name_literal));
+const pilotIds=new Set(pilot.people.map(p=>p.saint_id));
+const artSubjectIds=new Set();
+const relicMatchedIds=new Set();
+for(const row of cross.rows){
+ assert(namesInAudit.has(row.legacy_name),"No invented legacy name");
+ const original=audit.mentions.find(m=>m.name_literal===row.legacy_name);
+ assert.deepEqual(
+ row.shrine_places.map(x=>JSON.stringify([x.shrine_id,x.place_id,[...x.source_ids].sort()])).sort(),
+ original.shrine_associations.map(x=>JSON.stringify([x.shrine_id,x.place_id,[...x.source_ids].sort()])).sort()
+ );
+ if(row.pilot_identity_id)assert(pilotIds.has(row.pilot_identity_id));
+ for(const a of row.sacred_art_subjects){
+  assert(/^SNT-(AP|EV|DC|OT)-\d\d$/.test(a.subject_id));
+  assert.equal(a.approval,"RESEARCH_ONLY_NOT_SELECTED_FOR_SAINT_PROFILE");
+  artSubjectIds.add(a.subject_id);
+ }
+ for(const x of row.relic_subjects){
+  assert(relicIds.has(x.subject_id),"Relic crosslink not present in current canonical research corpus");
+  relicMatchedIds.add(x.subject_id);
+ }
+ for(const n of row.novenas)assert(novenaIds.has(n.novena_id),"No invented novena target");
+ for(const s of row.calendar_semantics)assert.equal(s.role,"SEMANTIC_CONTEXT_NOT_CERTIFIED_1962_OBSERVANCE");
+}
+assert.equal(artSubjectIds.size,cross.counts.distinct_art_subject_ids);
+assert.equal(relicMatchedIds.size,cross.counts.distinct_relic_subject_ids);
+assert.equal(cross.calendar_resolver_boundary.formal_feast_mapping_complete,false);
+assert.equal(cross.not_in_legacy_shrine_names.sacred_art_subjects.length+artSubjectIds.size,75);
+assert.equal(cross.not_in_legacy_shrine_names.relic_subjects.length+relicMatchedIds.size,relicSot.subjects.length);
+assert(!cross.rows.some(x=>x.sacred_art_subjects.some(a=>a.approval==="APPROVED")||x.calendar_semantics.some(s=>s.role==="1962_RANK_VERIFIED")));
+console.log("PASS: saint cross-module references, no invented feast/art/relic approvals");
