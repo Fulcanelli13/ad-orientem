@@ -26,7 +26,7 @@ assert.equal(report.summary.curated_physical_candidates,report.candidates.length
 assert.equal(report.summary.existing_production_places,251);
 assert.equal(report.summary.existing_published_shrines,247);
 assert.equal(report.summary.linked_pilgrimages,234);
-assert.equal(report.summary.existing_country_coverage,63);
+assert.equal(report.summary.existing_country_coverage,65);
 assert.equal(report.summary.priorities.Essential,64);
 assert.equal(report.summary.priorities.Strong,576);
 assert.equal(report.summary.priorities.Review,110);
