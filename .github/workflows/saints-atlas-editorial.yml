@@ -1,0 +1,18 @@
+name: Saints identity and holiness-first editorial pilot
+on:
+  pull_request:
+    paths:
+      - 'data/saints/**'
+      - 'tests/saints-atlas-editorial-pilot.mjs'
+      - '.github/workflows/saints-atlas-editorial.yml'
+  workflow_dispatch:
+jobs:
+  verify-saints-research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check preserved shrine links and holiness-first profiles
+        run: node tests/saints-atlas-editorial-pilot.mjs
