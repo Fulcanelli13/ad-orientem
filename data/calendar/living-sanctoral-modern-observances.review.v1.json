@@ -1,0 +1,190 @@
+{
+  "schema": "AO_LIVING_SANCTORAL_MODERN_OBSERVANCE_SOURCE_CROSSWALK_V1",
+  "asOf": "2026-10-15",
+  "publicationStatus": "REVIEW_NOT_RUNTIME",
+  "policies": {
+    "modernAnd1962Separate": true,
+    "actualDayMainAndMassUnchanged": true,
+    "neverInventLiturgicalDate": true,
+    "grant1962OptionalPermission": false,
+    "sourceScopesDistinct": true,
+    "verifiedUniversalOnlyOnVaticanDecree": true,
+    "usccbExamplesRequireLocalScopeLabel": true,
+    "olderUsccbDatesNotBackProjected": true
+  },
+  "observances": [
+    {
+      "subjectId": "saint.gregory-narek",
+      "monthDay": "02-27",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2021-02-02",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/02/02/210202b.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.john-avila",
+      "monthDay": "05-10",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2021-02-02",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/02/02/210202b.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.hildegard-bingen",
+      "monthDay": "09-17",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2021-02-02",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/02/02/210202b.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.teresa-calcutta",
+      "monthDay": "09-05",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2025-02-11",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.john-henry-newman",
+      "monthDay": "10-09",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2026-02-03",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.pio-pietrelcina",
+      "monthDay": "09-23",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/092326.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.therese-lisieux",
+      "monthDay": "10-01",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/100126.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.teresa-avila",
+      "monthDay": "10-15",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/101526.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.irenaeus-lyon",
+      "monthDay": "06-28",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/062824.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.uganda-martyrs-22",
+      "monthDay": "06-03",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.martyrs-china-1648-1930",
+      "monthDay": "07-09",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.korean-martyrs-103",
+      "monthDay": "09-20",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.japan-martyrs-16-1987",
+      "monthDay": "09-28",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.vietnamese-martyrs-117",
+      "monthDay": "11-24",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    }
+  ],
+  "openQuestions": [
+    "Independent global General Roman Calendar standing for USCCB example dates has not yet been cross-certified.",
+    "Particular observances, diocesan/Oratory/Institute calendars, transfers and historical year-of-inscription remain separate.",
+    "Not every added saint has a ready-reviewed portrait or map place; no placeholder image will be treated as sacred art."
+  ]
+}
