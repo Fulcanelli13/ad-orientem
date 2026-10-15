@@ -7,7 +7,9 @@ assert.equal(taxonomy.schema,"AO_BIBLICAL_NARRATIVE_JOURNEYS_REVIEW_V1");
 assert.equal(taxonomy.status,"RESEARCH_NOT_PRODUCTION_CERTIFIED");
 // Product-owner editorial rule: do not reintroduce AI-written Bible narration.
 assert.equal(taxonomy.policy.noAiAuthoredNarrative,true);
-assert.equal(taxonomy.policy.noAiNarrativeTranslation,true);
+assert.equal(taxonomy.policy.aiFaithfulTranslationOfVerifiedExistingAuthorAllowed,true);
+assert.equal(taxonomy.policy.aiOriginalNarrativeProhibited,true);
+assert.equal(taxonomy.policy.translationRequiresEditorialReviewBeforePublication,true);
 assert.equal(taxonomy.policy.existingAuthorProseOnly,true);
 assert.equal(taxonomy.policy.historicalSourceWitnessRequired,true);
 assert.equal(taxonomy.policy.noPermissionRequests,true);
