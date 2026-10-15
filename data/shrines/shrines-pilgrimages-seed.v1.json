@@ -4079,6 +4079,70 @@
         "SG-R74-GEO-SG-INV-0414"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:BR:fortaleza-fatima-sanctuary",
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Fátima",
+      "origin_summary": "Catholic parish and Marian sanctuary in Fortaleza, documented by its custodians and the archdiocese as a centre of devotion to Our Lady of Fátima. This is distinct from the apparitions in Portugal.",
+      "origin_summary_fr": "Paroisse et sanctuaire marial catholique de Fortaleza, attestés par les responsables du lieu et l'archidiocèse comme centre de dévotion à Notre-Dame de Fátima, distinct des apparitions au Portugal.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0482",
+        "SG-R75-GEO-SG-INV-0482"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:AR:alta-gracia-lourdes-sanctuary",
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Lourdes",
+      "origin_summary": "Marian pilgrimage sanctuary and grotto at Alta Gracia, Argentina, served by Discalced Carmelites. The custodian and the municipality confirm its historical pilgrimage devotion. Coordinates describe the sanctuary complex, not a surveyed entrance or grotto point.",
+      "origin_summary_fr": "Sanctuaire marial et grotte de Lourdes à Alta Gracia, en Argentine, desservis par les carmes déchaux. Les gardiens et la municipalité confirment le pèlerinage historique. Les coordonnées désignent approximativement le complexe, non son entrée exacte.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0494",
+        "SG-R75-GEO-SG-INV-0494"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:UY:montevideo-gruta-lourdes-national-shrine",
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Our Lady of Lourdes",
+      "origin_summary": "The national Marian grotto shrine in Montevideo. The bishops of Uruguay declared this site a national sanctuary in 1958. Its devotion recalls Lourdes in France, rather than any reported local apparition.",
+      "origin_summary_fr": "Sanctuaire marial national de la grotte de Lourdes à Montevideo. Les évêques uruguayens l'ont déclaré sanctuaire national en 1958. Sa dévotion rappelle Lourdes en France, sans revendiquer d'apparition locale.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0532",
+        "SG-R75-GEO-SG-INV-0532"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:MZ:namaacha-fatima-sanctuary",
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Fátima",
+      "origin_summary": "Marian sanctuary in Namaacha, Mozambique, inaugurated in 1944 and documented by the international Sanctuary of Fátima and Vatican News. The map point is a visitor GPS anchor at complex precision, not a surveyed church entrance.",
+      "origin_summary_fr": "Sanctuaire marial de Namaacha, au Mozambique, inauguré en 1944 et documenté par le sanctuaire de Fátima et Vatican News. Le repère GPS provient d'un visiteur et représente approximativement le complexe, non une entrée relevée.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0721",
+        "SG-R75-GEO-SG-INV-0721"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -7559,6 +7623,62 @@
       "scope_note_fr": "Destination de pèlerinage catholique au sanctuaire marial de Rigaud ; la grotte, l'autel ou la chapelle du complexe, ainsi que les activités et horaires saisonniers, ne sont pas localisés séparément.",
       "source_ids": [
         "SG-R74-SITE-SG-INV-0414"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BR:fortaleza-fatima-sanctuary-destination",
+      "name": "Pilgrimage to Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BR:fortaleza-fatima-sanctuary",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented pilgrimage to the physical sanctuary; no invented procession, Mass schedule, route, relic or private apparition claim.",
+      "scope_note_fr": "Pèlerinage attesté au sanctuaire ; aucun horaire, parcours, relique ou récit d'apparition nouvelle n'est déduit.",
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0482"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:AR:alta-gracia-lourdes-sanctuary-destination",
+      "name": "Pilgrimage to Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:AR:alta-gracia-lourdes-sanctuary",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented pilgrimage to the physical sanctuary; no invented procession, Mass schedule, route, relic or private apparition claim.",
+      "scope_note_fr": "Pèlerinage attesté au sanctuaire ; aucun horaire, parcours, relique ou récit d'apparition nouvelle n'est déduit.",
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0494"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:UY:montevideo-gruta-lourdes-national-shrine-destination",
+      "name": "Pilgrimage to Santuario Nacional Gruta de Lourdes, Montevideo",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:UY:montevideo-gruta-lourdes-national-shrine",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented pilgrimage to the physical sanctuary; no invented procession, Mass schedule, route, relic or private apparition claim.",
+      "scope_note_fr": "Pèlerinage attesté au sanctuaire ; aucun horaire, parcours, relique ou récit d'apparition nouvelle n'est déduit.",
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0532"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MZ:namaacha-fatima-sanctuary-destination",
+      "name": "Pilgrimage to Santuário de Nossa Senhora de Fátima da Namaacha",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MZ:namaacha-fatima-sanctuary",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented pilgrimage to the physical sanctuary; no invented procession, Mass schedule, route, relic or private apparition claim.",
+      "scope_note_fr": "Pèlerinage attesté au sanctuaire ; aucun horaire, parcours, relique ou récit d'apparition nouvelle n'est déduit.",
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0721"
       ],
       "confidence": "HIGH"
     }

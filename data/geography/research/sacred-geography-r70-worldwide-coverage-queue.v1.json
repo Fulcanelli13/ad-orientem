@@ -5,14 +5,14 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 89,
+    "explicit_promoted": 97,
     "text_hint_review": 70,
-    "unmatched": 591,
+    "unmatched": 583,
     "zero_crosslist": 485,
-    "essential_remaining": 21,
-    "published_places": 247,
-    "published_shrines": 243,
-    "published_pilgrimages": 230
+    "essential_remaining": 13,
+    "published_places": 251,
+    "published_shrines": 247,
+    "published_pilgrimages": 234
   },
   "countries": [
     {
@@ -72,28 +72,28 @@
     {
       "country": "BR",
       "candidates": 13,
-      "promoted": 1,
+      "promoted": 2,
       "text_hint": 2,
-      "unmatched": 10,
-      "essential_review": 1,
+      "unmatched": 9,
+      "essential_review": 0,
       "no_crosslist": 11
     },
     {
       "country": "SG",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 2,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 2,
+      "unmatched": 0,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
       "country": "MA",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 2,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 2,
+      "unmatched": 0,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
@@ -162,19 +162,19 @@
     {
       "country": "AR",
       "candidates": 8,
-      "promoted": 2,
+      "promoted": 3,
       "text_hint": 0,
-      "unmatched": 6,
-      "essential_review": 1,
+      "unmatched": 5,
+      "essential_review": 0,
       "no_crosslist": 3
     },
     {
       "country": "UY",
       "candidates": 5,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 5,
-      "essential_review": 1,
+      "unmatched": 4,
+      "essential_review": 0,
       "no_crosslist": 5
     },
     {
@@ -288,10 +288,10 @@
     {
       "country": "MZ",
       "candidates": 1,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 1,
-      "essential_review": 1,
+      "unmatched": 0,
+      "essential_review": 0,
       "no_crosslist": 1
     },
     {
@@ -6341,10 +6341,10 @@
       "country": "BR",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0483",
@@ -6474,10 +6474,10 @@
       "country": "AR",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0495",
@@ -6892,10 +6892,10 @@
       "country": "UY",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0533",
@@ -8521,10 +8521,10 @@
       "country": "SG",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_EXISTING_CANONICAL_ID_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0681",
@@ -8532,10 +8532,10 @@
       "country": "SG",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_EXISTING_CANONICAL_ID_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0682",
@@ -8797,10 +8797,10 @@
       "country": "MA",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_EXISTING_CANONICAL_ID_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0706",
@@ -8808,10 +8808,10 @@
       "country": "MA",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_EXISTING_CANONICAL_ID_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0707",
@@ -8973,10 +8973,10 @@
       "country": "MZ",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R75",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0722",

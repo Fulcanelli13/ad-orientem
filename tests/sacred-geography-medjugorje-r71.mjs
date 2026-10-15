@@ -18,7 +18,7 @@ const pilgrimId="pilgrimage:BA:medjugorje-destination";
 const reportId="apparition:BA:medjugorje";
 
 assert.deepEqual([geography.places.length,corpus.shrines.length,corpus.pilgrimages.length,
-  phenomena.apparitions.length,sources.sources.length],[247,243,230,33,421]);
+  phenomena.apparitions.length,sources.sources.length],[251,247,234,33,429]);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({
   shrines:corpus.shrines,pilgrimages:corpus.pilgrimages,routes:corpus.routes,
@@ -57,7 +57,7 @@ for(const entry of r71.rejected_wrong_physical_alias){
   assert.equal(candidate.possible_existing_place_id,null,"Do not conflate distinct sanctuaries");
 }
 const q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json");
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[89,70,591]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[97,70,583]);
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0317").canonical_place_id,venueId);
 const projection=projectExploreDataset({
  directory:{records:[],communities:[]},

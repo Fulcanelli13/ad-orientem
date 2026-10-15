@@ -30,7 +30,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY", "HN", "CR", "MY", "SK", "DO", "CU", "SI", "LV"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY", "HN", "CR", "MY", "SK", "DO", "CU", "SI", "LV", "UY", "MZ"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -61,7 +61,10 @@ for(const id of r70PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id
 const r74=readJson("../data/geography/research/sacred-geography-r74-essential-sites.v1.json");
 const r74PublishedPlaces=new Set(r74.published_new.map(row=>row.place_id));
 for(const id of r74PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R74 Place lost");
-const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces]);
+const r75=readJson("../data/geography/research/sacred-geography-r75-essential-sites.v1.json");
+const r75PublishedPlaces=new Set(r75.published_new.map(row=>row.place_id));
+for(const id of r75PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R75 Place lost");
+const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces,...r75PublishedPlaces]);
 assert.deepEqual(
   seed.places.filter(place=>!laterPublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [
@@ -323,7 +326,7 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 66,
+  geoAreas: 68,
   places: seed.places.length + 1,
   directoryPlaceLinks: 1,
 });
