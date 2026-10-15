@@ -121,7 +121,11 @@
     "historical_pass5_dispositions": 3,
     "historical_cse_atomic_stage_total": 90,
     "historical_cse_unchanged_atomic_stages_expected": 85,
-    "historical_cse_rewritten_stage_rescopes": 5
+    "historical_cse_rewritten_stage_rescopes": 5,
+    "historical_pass7_total_findings": 88,
+    "historical_pass7_unchanged_source_role_links": 63,
+    "historical_pass7_prior_amendment_supersessions": 10,
+    "historical_pass7_newly_recorded_supersessions": 15
   },
   "added_source_bindings": [
     {
@@ -1983,7 +1987,8 @@
     "Seven old Pass 4 findings are retained exactly; some original URLs survive under new scoped IDs and others pertain solely to superseded case material. None is automatically credited to a rewritten claim.",
     "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim.",
     "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications.",
-    "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046."
+    "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046.",
+    "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2509,6 +2514,228 @@
       "related_canonical_owner": "CSE046",
       "whole_stage_certified": false,
       "independent_french_certified": false
+    }
+  ],
+  "historical_pass7_additional_source_dispositions": [
+    {
+      "finding_id": "PSV7-004",
+      "owner": "CR-LIT-04",
+      "role": "documented_position",
+      "historic_source_id": "JLG1966",
+      "historic_url": "https://jlg.org.uk/the-birth-of-jlg/",
+      "current_source_ids": [
+        "AO26_CRLIT04_DOCUM_1",
+        "AO26_CRLIT04_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-005",
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historic_source_id": "BEN07",
+      "historic_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html",
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-006",
+      "owner": "CR-LIT-05",
+      "role": "documented_position",
+      "historic_source_id": "TC21",
+      "historic_url": "https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html",
+      "current_source_ids": [
+        "AO26_CRLIT05_DOCUM_1",
+        "AO26_CRLIT05_DOCUM_2",
+        "AO26_CRLIT05_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-009",
+      "owner": "CR-DOC-09",
+      "role": "documented_position",
+      "historic_source_id": "MPF25",
+      "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+      "current_source_ids": [
+        "AO26_CRDOC09_DOCUM_1",
+        "AO26_CRDOC09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-010",
+      "owner": "CR-DOC-09",
+      "role": "documented_position",
+      "historic_source_id": "PIUSX1904",
+      "historic_url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "current_source_ids": [
+        "AO26_CRDOC09_DOCUM_1",
+        "AO26_CRDOC09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-011",
+      "owner": "APOL-002",
+      "role": "documented_position",
+      "historic_source_id": "BIOLOGOS2014",
+      "historic_url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics",
+      "current_source_ids": [
+        "AO26_APOL002_DOCUM_1",
+        "AO26_APOL002_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-012",
+      "owner": "APOL-002",
+      "role": "documented_position",
+      "historic_source_id": "HG1950",
+      "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+      "current_source_ids": [
+        "AO26_APOL002_DOCUM_1",
+        "AO26_APOL002_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-025",
+      "owner": "CR-LIT-07",
+      "role": "critical_response",
+      "historic_source_id": "MR69",
+      "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+      "current_source_ids": [
+        "AO26_CRLIT07_CRITI_1",
+        "AO26_CRLIT07_CRITI_2",
+        "AO26_CRLIT07_CRITI_3"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-030",
+      "owner": "APOL-001",
+      "role": "documented_position",
+      "historic_source_id": "CCC-GOD",
+      "historic_url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_one/ii_ways_of_coming_to_know_god.index.html",
+      "current_source_ids": [
+        "AO26_APOL001_DOCUM_1",
+        "AO26_APOL001_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-052",
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historic_source_id": "RP84",
+      "historic_url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-053",
+      "owner": "CR-MOR-06",
+      "role": "documented_position",
+      "historic_source_id": "VS93",
+      "historic_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "current_source_ids": [
+        "AO26_CRMOR06_ANSWE_2",
+        "AO26_CRMOR06_ANSWE_1"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRMOR06_ANSWE_2"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-054",
+      "owner": "CR-IDM-06",
+      "role": "documented_position",
+      "historic_source_id": "EN75",
+      "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19751208_evangelii-nuntiandi.html",
+      "current_source_ids": [
+        "AO26_CRIDM06_DOCUM_1",
+        "AO26_CRIDM06_DOCUM_2",
+        "AO26_CRIDM06_DOCUM_3"
+      ],
+      "matching_original_url_successor_ids": [
+        "AO26_CRIDM06_DOCUM_2"
+      ],
+      "disposition": "SAME_ORIGINAL_DOCUMENT_URL_PRESENT_UNDER_CURRENT_SCOPED_ID__ORIGINAL_FINDING_REMAINS_HISTORICAL_NOT_TRANSFERRED_TO_REWRITTEN_CLAIM",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-063",
+      "owner": "CR-GOV-09",
+      "role": "documented_position",
+      "historic_source_id": "CICFIN",
+      "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html",
+      "current_source_ids": [
+        "AO26_CRGOV09_DOCUM_1",
+        "AO26_CRGOV09_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-071",
+      "owner": "APOL-007",
+      "role": "documented_position",
+      "historic_source_id": "BIBLE-COR",
+      "historic_url": "https://bible.usccb.org/bible/1corinthians/15",
+      "current_source_ids": [
+        "AO26_APOL007_DOCUM_1",
+        "AO26_APOL007_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
+    },
+    {
+      "finding_id": "PSV7-072",
+      "owner": "APOL-009",
+      "role": "documented_position",
+      "historic_source_id": "BIBLE-MT28",
+      "historic_url": "https://bible.usccb.org/bible/matthew/28",
+      "current_source_ids": [
+        "AO26_APOL009_DOCUM_1",
+        "AO26_APOL009_DOCUM_2"
+      ],
+      "matching_original_url_successor_ids": [],
+      "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
+      "independently_certified_current_claim": false
     }
   ]
 }
