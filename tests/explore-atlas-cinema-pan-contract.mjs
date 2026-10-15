@@ -72,7 +72,7 @@ try{
    addLayer(){}
    getLayer(){return null}
    getCanvas(){return this.canvas}
-   setPaintProperty(){}
+   setPaintProperty(id,property,value){(this.toneChanges??=[]).push({id,property,value})}
    getStyle(){return {layers:[
     {id:"country_label",type:"symbol"},
     {id:"admin-country-boundary",type:"line"},
@@ -116,7 +116,7 @@ try{
   return {active:m!=null,camera:m?.center,sequence:m?.calls.map(c=>c.kind),
     easing:m?.calls.filter(c=>c.kind==="ease").length,
     sourceUpdates:m?.getSource("ao-explore-items")?.updates??0,
-    hiddenLayers:m?.hiddenLayers??[],
+    hiddenLayers:m?.hiddenLayers??[],tones:m?.toneChanges??[],
     pinCount:m?.getSource("ao-explore-items")?.data?.features?.length??0,
     following:document.querySelector("[data-bible-follow]")?.getAttribute("aria-pressed"),
     current:window.AO_FIND_APP_V1?.status?.().bibleIndex};
@@ -130,6 +130,8 @@ try{
   "Review suppresses modern country labels and administrative boundaries");
  assert.ok(!hidden.has("terrain-water")&&!hidden.has("ao-explore-points"),
   "Review preserves the land/water context and all source-backed application pins");
+ assert.ok(opened.tones.some(x=>x.id==="terrain-water"&&x.property==="fill-color"),
+  "Review makes land/water legible without adding contemporary labels");
  assert.deepEqual(opened.camera,[firstMapped.geo.lng,firstMapped.geo.lat]);
  const canvas=page.locator("#ao-find-modular-root [data-bible-map] canvas");
  await canvas.scrollIntoViewIfNeeded();
