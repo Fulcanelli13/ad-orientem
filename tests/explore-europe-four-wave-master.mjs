@@ -18,6 +18,7 @@ for(const row of read("data/geography/research/sacred-geography-r71-major-site-r
 for(const row of read("data/geography/research/sacred-geography-r72-world-anchors.v1.json").sites)publishedAfterFreeze.add(row.place_id);
 // R73 promotions postdate the frozen European discovery snapshots.
 for(const row of read("data/geography/research/sacred-geography-r73-major-shrines.v1.json").sites)publishedAfterFreeze.add(row.place_id);
+for(const row of read("data/geography/research/sacred-geography-r75-essential-sites.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(A.schema,"AO_EXPLORE_EUROPE_FOUR_WAVE_MASTER_REVIEW_V1");
 assert.equal(A.status,"REGISTRY_RESEARCH_IN_PROGRESS_NONE_COMPLETE");
