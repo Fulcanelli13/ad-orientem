@@ -1,0 +1,67 @@
+{
+  "schema": "AO_SOURCE_TEXT_PRINT_EXCERPT_FIXTURE_V1",
+  "date": "2026-10-15",
+  "purpose": "First independently inspected original-print sample in isolated source parsing tests; this is not an edition-wide transcription, a production route, or content for the Mass reader.",
+  "work": {
+    "id": "WORK-CE1908-FORTESCUE-CANON-MASS",
+    "title": "Canon of the Mass",
+    "author": "Adrian Fortescue",
+    "editionId": "ED-CE1908-VOL3-APPLETON",
+    "witnessId": "WIT-CE1908-V3-PRINT-FORTESCUE",
+    "language": "en",
+    "demoOnly": true,
+    "rights": {
+      "status": "REPRODUCTION_CLEARED",
+      "reviewId": "AO-PRINT1908-TWO-EXCERPTS-20261015",
+      "scope": "REVIEWED_EXCERPTS_ONLY",
+      "copyrightBasis": "Original article in 1908 printed edition, author died 1923. Public-domain original typography and selected words, independently transcribed from scan images; no reuse of modern editorial apparatus or transcription.",
+      "approvedExcerpts": [
+        {
+          "anchor": "ce1908-v3-p255-s001",
+          "text": "Our Canon is the Consecration prayer, the great Eucharistic prayer in the Mass of the Faithful."
+        },
+        {
+          "anchor": "ce1908-v3-p256-s001",
+          "text": "Since the seventh century our Canon has remained unchanged."
+        }
+      ]
+    }
+  },
+  "review": {
+    "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+    "editionId": "ED-CE1908-VOL3-APPLETON",
+    "witnessId": "WIT-CE1908-V3-PRINT-FORTESCUE",
+    "reproductionReviewId": "AO-PRINT1908-TWO-EXCERPTS-20261015",
+    "sourceDocumentId": "CATHOLIC-ENCYCLOPEDIA-V3-1908-APPLETON-DJVU-SCAN",
+    "collationReviewId": "AO-SCAN-P255-256-TWO-SENTENCES-20261015"
+  },
+  "heading": "Canon of the Mass",
+  "records": [
+    {
+      "locator": "p255:s001",
+      "hostUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/303",
+      "text": "Our Canon is the Consecration prayer, the great Eucharistic prayer in the Mass of the Faithful.",
+      "printedPage": 255,
+      "djvuPage": 303,
+      "section": "I. Name and Place of the Canon",
+      "reliability": "MANUALLY_CHECKED_AGAINST_PRINTED_PAGE_IMAGE"
+    },
+    {
+      "locator": "p256:s001",
+      "hostUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/304",
+      "text": "Since the seventh century our Canon has remained unchanged.",
+      "printedPage": 256,
+      "djvuPage": 304,
+      "section": "II. History of the Canon",
+      "reliability": "MANUALLY_CHECKED_AGAINST_PRINTED_PAGE_IMAGE"
+    }
+  ],
+  "bibliographicEvidence": [
+    "https://www.newadvent.org/cathen/03255c.htm",
+    "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/303",
+    "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/304"
+  ],
+  "originalEdition": "The Catholic Encyclopedia, vol. III, New York: Robert Appleton Company, 1908",
+  "rightsNote": "This restricted test fixture approves only the exact two sentences. The complete Catholic Encyclopedia article, its electronic transcription and other jurisdictions still require their own approved acquisition record before broader production import.",
+  "productionImportAllowed": false
+}
