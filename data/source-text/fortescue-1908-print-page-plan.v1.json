@@ -55,7 +55,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "imageReviewBatch": "data/source-text/fortescue-1913-print-batch-258-260.v1.json",
+      "imageReviewState": "ORIGINAL_SCAN_PAGE_VISUALLY_INDEXED__FULL_TEXT_UNCOLLATED",
+      "humanEditorialSignoff": false
     },
     {
       "printedPage": 259,
@@ -64,7 +67,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "imageReviewBatch": "data/source-text/fortescue-1913-print-batch-258-260.v1.json",
+      "imageReviewState": "ORIGINAL_SCAN_PAGE_VISUALLY_INDEXED__FULL_TEXT_UNCOLLATED",
+      "humanEditorialSignoff": false
     },
     {
       "printedPage": 260,
@@ -73,7 +79,10 @@
       "externalTranscriptionState": "PAGE_MARKED_NEEDS_PROOFREADING",
       "articleBoundary": "FULL_PAGE_ARTICLE_SPAN_TO_BE_COLLATED",
       "selectedExcerptApproval": "NONE",
-      "fullPageTextApproved": false
+      "fullPageTextApproved": false,
+      "imageReviewBatch": "data/source-text/fortescue-1913-print-batch-258-260.v1.json",
+      "imageReviewState": "ORIGINAL_SCAN_PAGE_VISUALLY_INDEXED__FULL_TEXT_UNCOLLATED",
+      "humanEditorialSignoff": false
     },
     {
       "printedPage": 261,
@@ -159,5 +168,15 @@
   "scanTitlePage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/11",
   "p257PageAudit": "data/source-text/fortescue-1913-p257-layout-audit.v1.json",
   "fullPageCensus": "NOT_COMPLETE",
-  "page257DraftStatus": "ONE_PAGE_PROVISIONAL_WORKBENCH__NOT_VERIFIED_OR_RELEASED"
+  "page257DraftStatus": "ONE_PAGE_PROVISIONAL_WORKBENCH__NOT_VERIFIED_OR_RELEASED",
+  "nextReviewBatch": [
+    261,
+    262,
+    263
+  ],
+  "reviewedBatchPageRange": [
+    258,
+    259,
+    260
+  ]
 }
