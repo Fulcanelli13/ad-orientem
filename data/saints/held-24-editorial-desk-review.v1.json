@@ -2,12 +2,14 @@
   "schema": "ao.saints.held-24-editorial-desk-review.v1",
   "as_of": "2026-10-15",
   "publication": "EDITORIAL_REVIEW_ONLY",
-  "method": "Link-level and selected direct-source spot checks; no independent human second editor; profile facts remain in canonical existing source files and are NOT duplicated here.",
+  "method": "Link-level and selected direct-source spot checks; no independent human second editor; profile facts remain in canonical existing source files and are NOT duplicated here. Combined why+three-facts EN/FR word counts expose remaining substance gap against the user-approved moderately substantial card; these are editorial targets, not generic AI padding.",
   "scope": {
     "people": 24,
     "source_spot_checked": 11,
     "source_pending_deeper_check": 13,
-    "released_people": 0
+    "released_people": 0,
+    "bios_below_compact_target": 24,
+    "fact_corrections_applied": 2
   },
   "records": [
     {
@@ -26,7 +28,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 70,
+        "fr": 79
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.john-chrysostom",
@@ -44,7 +56,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 71,
+        "fr": 80
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.thomas-aquinas",
@@ -62,7 +84,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 83,
+        "fr": 91
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.catherine-siena",
@@ -80,7 +112,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 91,
+        "fr": 99
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.francis-sales",
@@ -98,7 +140,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 83,
+        "fr": 98
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.alphonsus-liguori",
@@ -116,7 +168,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 74,
+        "fr": 90
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.augustine-hippo",
@@ -134,7 +196,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 81,
+        "fr": 84
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.bonaventure",
@@ -152,7 +224,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 80,
+        "fr": 89
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.ignatius-antioch",
@@ -171,7 +253,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 66,
+        "fr": 66
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.francis-xavier",
@@ -189,7 +281,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 69,
+        "fr": 74
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.vincent-de-paul",
@@ -207,7 +309,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 67,
+        "fr": 70
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.john-bosco",
@@ -225,7 +337,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 61,
+        "fr": 69
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.john-mary-vianney",
@@ -243,7 +365,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 59,
+        "fr": 71
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.rose-of-lima",
@@ -261,7 +393,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 68,
+        "fr": 75
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.francis-assisi",
@@ -272,14 +414,24 @@
       "editorial_priority": "HIGH",
       "profile_emphasis": "Conversion and evangelical poverty, service to leprosy sufferers, Franciscan foundation, stigmata tradition.",
       "publication_blocks": [
-        "Do not duplicate the reported 1224 stigmata account in both biography sentence and second unrelated paragraph.",
+        "Confirmed distinct source-backed 1219 encounter with Sultan al-Kamil is now included; maintain separate attribution for 1224 stigmata tradition.",
         "Birth remains circa 1181/82; maintain attribution for mystical account."
       ],
       "claim_count": 3,
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 70,
+        "fr": 81
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.charles-borromeo",
@@ -297,7 +449,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 58,
+        "fr": 65
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.maximilian-kolbe",
@@ -308,14 +470,24 @@
       "editorial_priority": "HIGH",
       "profile_emphasis": "Marian apostolate, missionary print work, substitution for condemned prisoner, death at Auschwitz.",
       "publication_blocks": [
-        "A substantial final biography should mention the starvation bunker and lethal injection precisely with suitable source.",
+        "A sourced 14 August 1941 phenol-injection detail is now in the bilingual draft; verify historical tone and prevent graphic embellishment.",
         "Distinguish his voluntary act of charity from details of Auschwitz execution procedure."
       ],
       "claim_count": 3,
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 74,
+        "fr": 83
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.maria-goretti",
@@ -334,7 +506,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 70,
+        "fr": 72
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.damien-de-veuster",
@@ -352,7 +534,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 61,
+        "fr": 67
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.louise-de-marillac",
@@ -370,7 +562,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 71,
+        "fr": 84
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.faustina-kowalska",
@@ -388,7 +590,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 67,
+        "fr": 72
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.teresa-benedicta-cross-stein",
@@ -406,7 +618,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 69,
+        "fr": 75
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.elizabeth-ann-seton",
@@ -424,7 +646,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 65,
+        "fr": 67
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     },
     {
       "person_id": "saint.jeanne-jugan",
@@ -443,7 +675,17 @@
       "life_event_review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
       "user_rated_artwork_in_this_file": false,
       "calendar_1962_feast_certified_here": false,
-      "eligible_for_publication": false
+      "eligible_for_publication": false,
+      "current_combined_biography_words": {
+        "en": 74,
+        "fr": 75
+      },
+      "compact_reader_narrative_target": {
+        "min_words": 110,
+        "max_words": 150,
+        "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
+      },
+      "needs_biography_expansion": true
     }
   ]
 }
