@@ -75,3 +75,38 @@ node tests/source-text-references.mjs
 ```
 
 No runtime deployment is included. This remains a narrow draft infrastructure contribution; source binding coordination with other active research branches must occur before integration.
+
+## Phase 18 — Existing-reader presentation boundary
+
+The shared **production-facing** reader presentation already exists at
+`src/learn/source-reference-panel.js`: an unobtrusive `<details>` disclosure
+with evidence by paragraph, an optional explicitly curated further-reading list,
+accessible focus styles and English/French strings. The current Mass Formation,
+Spiritual Life, and internal Formation readers already have reader-owned source
+presentations. **Do not introduce another reference viewer or replace their
+source registries.** The liturgical Mass MISSAL/SIMPLE/LIVE ritual display
+continues to exclude research citations.
+
+`src/source-text/reference-presentation.js` adds only a narrow guard for the
+21 historical Formation section/source edges in the Phase 17 owner handoff.
+The output is **editorial review metadata**, never public panel input:
+`publicEvidenceRow`, `publicSourceRegistryEntry`, `publicInlineCitation`
+and `publicFurtherReadingId` are all `null`. The guard rejects attempted
+public approval or invented inline citations, retains original section scope,
+locator and opponent perspective, allows the original HTTPS document URL only
+as an editorial lead for the 20 held cases, and returns no URL for the
+superseded `FORM-SYN-02::CR-LIT-07::00::MD47` edge. The correct three replacement
+citations belong to Formation and are not replicated here. No guessed URL
+fragments, imported books or new citation verdicts.
+
+The existing panel remains the sole reader implementation; the Formation/Mass
+owners must explicitly decide if and where reviewed source references should be
+displayed using their **current** source memberships. This pilot never calls the
+panel with a draft row, nor changes its runtime, and the dedicated regression
+test checks that the historical projections yield zero public evidence rows.
+
+**Integration note:** this draft feature branch is significantly behind active
+`main` development. Reconcile and retest against the latest owner datasets and
+reader interfaces before any merge; do not rebase by overwriting in-flight
+Formation/Mass changes or interpreting a green reference unit test as content or
+visual acceptance.
