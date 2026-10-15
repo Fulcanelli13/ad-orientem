@@ -5,6 +5,7 @@ on:
     paths:
       - 'data/calendar/living-sanctoral-pilot.v1.json'
       - 'data/calendar/post1960-canonizations.official-batch1.v1.json'
+      - 'data/calendar/post1960-canonizations.source-year-coverage.v1.json'
       - 'data/calendar/doctors-of-church-roster.review.v1.json'
       - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
       - 'src/calendar/living-sanctoral.js'
@@ -36,3 +37,4 @@ jobs:
           node tests/calendar-living-sanctoral-projection.mjs
           node tests/calendar-post1960-canonization-census.mjs
           node tests/calendar-post1960-optional-eligibility.mjs
+          node tests/calendar-post1960-year-coverage.mjs
