@@ -554,7 +554,7 @@ export function createFindOwner(win=globalThis){
       state.lens=value;state.calendarKey=null;nearbyResults=null;
       if(value==="saints")state.view="list";
        else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
-    }else if(key==="saintScope"&&["profiles","historical","later"].includes(value)){
+    }else if(key==="saintScope"&&["profiles","historical","later","doctors"].includes(value)){
       // Each source scope has a different identity and search vocabulary.
       // Clearing old searches avoids a correct index looking empty.
       state.saintScope=value;state.query="";
@@ -812,7 +812,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       const scope=saintCrosslink.dataset.saintCrosslinkScope;
       const id=saintCrosslink.dataset.saintCrosslinkTarget;
-      if(!["profiles","historical","later"].includes(scope))return;
+      if(!["profiles","historical","later","doctors"].includes(scope))return;
       const candidates=scope==="profiles"?projectSaintCatalogueItems(dataset):projectSaintSourceIndexItems(dataset,scope);
       // Verify against the current canonical source projection, not arbitrary
       // DOM-provided person IDs. This cannot create unknown people or pins.
