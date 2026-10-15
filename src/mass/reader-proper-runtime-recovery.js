@@ -181,7 +181,13 @@ export async function recoverReaderProperOmissions(proper,{
   // that reconstruct the FLATTENED host text in la/en/fr may add cue-safe
   // reader navigation. Never change an existing Proper's printed text.
   let recoveredChants=null;
-  if(!data.preGospelChants && hasThreeLanguages(data.gradual)){
+  // The host resolver is remote/cache-backed. Do not refetch a bare
+  // Gradual with no second-chant evidence. This is a discovery filter ONLY:
+  // a label match cannot authorize a split without trilingual source parity.
+  const chantDiscoveryCandidate=/(?:allel[uú]ia|tr[áa]ctus|tract|alléluia)/iu
+    .test(String(data.gradual?.lat??data.gradual?.la??""));
+  if(!data.preGospelChants && chantDiscoveryCandidate &&
+     hasThreeLanguages(data.gradual)){
     try{
       const sources={};
       for(const lang of ["la","en","fr"]){
