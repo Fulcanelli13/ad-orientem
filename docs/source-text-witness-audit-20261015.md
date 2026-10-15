@@ -1,3 +1,5 @@
+> **AUTHORITATIVE EDITION CORRECTION — 15 OCT 2026:** The Fortescue article first appeared in 1908, but this Wikisource/Commons DJVU is the **1913 Knights of Columbus special edition**. Any references below to the scanned images as "original 1908 printed pages" are superseded. The correct scanned edition and witness IDs are `ED-CE1913-V3-KOC-SPECIAL` and `WIT-CE1913-V3-KOC-PRINT-FORTESCUE`. See [Phase 6 edition and p257 correction](source-text-edition-correction-and-p257-20261015.md). Historical staging statistics below are not the current totals: current fixture has **four excerpts across three printed pages**, zero complete pages independently collated.
+
 # Source-text Phase 3 — real witness structure audit (15 October 2026)
 
 This is an evidence and locator audit, **not** approval of a downloaded source body or any translation. The independent source parser belongs to draft PR #1229. Module-specific Scripture, Mass, Formation and Prayer owners retain their content and canonical work IDs.
