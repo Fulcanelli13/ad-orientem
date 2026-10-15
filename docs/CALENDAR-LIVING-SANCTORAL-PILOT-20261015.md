@@ -110,3 +110,19 @@ No calendar/Proper/Office calculation or celebrant choice has been changed. CI c
 **Acceptance tests:** the `calendar-living-sanctoral.yml` workflow now executes eight structural/reconciliation/rubrical tests, preserving the historical source audit. Success verifies schema and conservative logic only, not a theological or legal attestation.
 
 **Remaining scope:** full coverage of the 42 years, group-member expansion, audit of modern universal vs particular dates and promulgation dates, review of special Mass/Office cases under *Cum sanctissima* and subsequent norms, and then non-invasive visual integration with saints profiles and artwork. No live Calendar/Proper/reader files have been modified.
+
+
+## 15 October — second Vatican-source census batch (eleven more years)
+
+The **original Dicastery canonisation-year pages** were inspected and eleven previously unprocessed years transcribed into the existing census: **2004–2013 inclusive (ten years), plus 2015**. This brought the cumulative source-intake coverage to **20/51 indexed post-cutoff years** (31 indexed years pending), with **38 calendar-dated canonisation events** and **132 individually named saint records**. Six pilot identities and 132 intake people reconcile to **136 unique canonical person IDs** (Newman and Carlo Acutis occur in both and retain the same identity).
+
+Research details requiring preserved distinctions:
+
+- **2015-10-18:** Ludovico/Louis Martin and Maria Azelia/Zélie Guérin each receive their own canonical person ID although the Dicastery publishes them under one jointly named couple; that ceremony's named individual count is four, not three. [2015 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html).
+- **2013-05-12:** Antonio Primaldo and the Martyrs of Otranto are described by the Dicastery as **approximately 800**; there is **no certified exact individual count or full named list**. Store `memberCount:null`, `estimatedMemberCount:800` and a separate count precision. The 57 *exact* unexpanded members from Damascus, Compiègne and Brazil remain counted separately. [2013 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html).
+- **2012-05-10:** Hildegard of Bingen's canonisation is independently recorded; her Doctor title is a separate 7 October 2012 event in the Doctors roster. A single canonical identity (`saint.hildegard-bingen`) is reused, never two saints. [2012 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html).
+- Spot rechecking prior intake against [2014](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html), [2017](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html) and [2024](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html) supports the existing event date and jointly canonised group structures; further line-by-line review remains open.
+
+Every newly staged person has a source-year URL and canonisation event ID. **No** newly staged person has an inferred universal feast date, optional traditional Mass, approved proper text or change to the 1962 principal observance. Groups remain unexpanded rather than being flattened into a fictitious single saint or unverified people. Reconciliation and source-year tests enforce these distinctions.
+
+This is an auditable source-intake batch, **not** 20/51 of all persons or a claim that all indexed events are completely verified against primary decree images. The 31 remaining year-level entries and full member-name expansion are open.
