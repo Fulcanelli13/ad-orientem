@@ -199,6 +199,17 @@ export function atlasIndexForPin(stops,index,pin){
 }
 // For review only: remove modern political/transport annotation from the
 // present-day basemap. This is NOT a verified historical coastline.
+// High-contrast sea/land silhouette for the opt-in atlas visual study.
+// The same contemporary coastline data remain; no claim of period accuracy.
+export function atlasCinemaBasemapTone(layer){
+ const id=String(layer?.id??"");
+ if(!id||id.startsWith("ao-"))return null;
+ if(layer.type==="background")return Object.freeze({property:"background-color",value:"#172532"});
+ if(layer.type==="fill")
+  return Object.freeze({property:"fill-color",
+   value:/(water|ocean|lake|river|marine)/i.test(id)?"#172532":"#40433e"});
+ return null;
+}
 export function atlasCinemaHideModernBasemapLayer(layer){
  const id=String(layer?.id??"");
  if(!id||id.startsWith("ao-"))return false; // never suppress app-owned qualified pins
