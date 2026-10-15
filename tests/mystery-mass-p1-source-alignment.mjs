@@ -6,7 +6,6 @@ const d=get('data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-al
 const p=get('data/learn/research/mystery-mass-priority1-88-clause-triage-20261015.v1.json');
 const live=get('data/presentation/reader-text-sung.v1.json');
 const lookup=new Map(live.blocks.flatMap(b=>b.units.map(u=>[u.cue_id,u.latin])));
-const norm=x=>String(x).normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 assert.equal(p.counts.reviewedOriginalP1ClauseRows,88);
 assert.equal(p.counts.byDisposition.COLLATE_PARENT_EVIDENCE,32);
 assert.equal(p.counts.byDisposition.TARGETED_SOURCE_LOOKUP,6);
@@ -22,7 +21,7 @@ assert.equal(allUnits.length,38);
 assert.equal(new Set(allUnits).size,38,'do not duplicate phrase ownership');
 const counts={};
 for(const c of d.parentEvidenceThirtyTwo){
- assert.equal(c.parentId,c.unitId.replace(/\\.U\\d{3}$/,''));
+ assert.equal(c.parentId,c.unitId.replace(/\.U\d{3}$/,''));
  assert.equal(c.sourceCueId,'AO.SM.C'+c.parentId.split('.').at(-1));
  assert(lookup.has(c.sourceCueId),'missing reader cue '+c.sourceCueId);
  assert(c.sourceUrl.startsWith('https://'));
@@ -34,7 +33,7 @@ for(const c of d.parentEvidenceThirtyTwo){
 assert.deepEqual(counts,d.counts.assessmentCounts);
 for(const group of d.focusedSix){
  assert(lookup.has(group.cueId),'missing target cue '+group.cueId);
- assert(group.ids.every(id=>/^AO\\.V3\\.\\d{4}\\.U\\d{3}$/.test(id)));
+ assert(group.ids.every(id=>/^AO\.V3\.\d{4}\.U\d{3}$/.test(id)));
  assert.equal(group.latinCueVerified,true);
  assert(group.primary.startsWith('https://'));
  assert(group.action.length>=12);
