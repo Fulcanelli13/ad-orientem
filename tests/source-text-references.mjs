@@ -8,6 +8,34 @@ const canonical=json("data/reference/canonical-works-pilot.v1.json");
 const formation=json("data/reference/formation-canonical-source-crosswalk.v1.json");
 const profiles=json("data/source-text/witness-profiles.v1.json");
 const audit=inspectReferenceInventory({canonical,formation,profiles});
+const handoff=json("data/source-text/reference-owner-handoff.v1.json");
+assert.equal(handoff.schema,"AO_REFERENCE_SOURCE_OWNER_HANDOFF_V1");
+assert.equal(handoff.baseline.formationBindings,408);
+assert.equal(handoff.baseline.urlWitnesses,304);
+assert.equal(handoff.current.formationBindings,527);
+assert.equal(handoff.current.urlWitnesses,332);
+assert.equal(handoff.current.addedByExistingOwner,119);
+assert.equal(handoff.current.existingBindingsRemoved,0);
+assert.equal(handoff.current.currentClaimCertificationsNew,0);
+assert.equal(handoff.mass.historicalNormativeComparisonRows,15);
+assert.equal(handoff.mass.addedReferenceClaims,0);
+assert.equal(handoff.assessment.missingHistoricalFormationSourceBindings,0);
+assert.equal(handoff.assessment.historicalUncitedRegistryLeads,12);
+assert.equal(handoff.assessment.formationRefsWithoutInspectedProfileAreNotAutomaticallyGaps,true);
+assert.equal(handoff.exactUrlMatches.length,4);
+const matchedKeys=new Set(handoff.exactUrlMatches.map(x=>x.bindingKey));
+assert.equal(matchedKeys.size,4);
+for(const match of handoff.exactUrlMatches){
+ const ref=resolveFormationReference({formation,key:match.bindingKey});
+ const meta=prepareReferencePresentation({formation,key:match.bindingKey,profiles});
+ assert.equal(ref.contextApproved,false);
+ assert.equal(meta.publicDisplayApproved,false);
+ assert.ok(meta.potentialWitnessProfiles.includes(match.profileId));
+ assert.equal(meta.witnessMatchStatus,"EXACT_URL_ONLY_NOT_VERIFIED_PASSAGE");
+}
+assert.equal(handoff.displayPolicy.defaultSurface,"NONE_UNTIL_OWNER_APPROVED");
+assert.equal(handoff.assessment.newBookImports,0);
+assert.equal(handoff.assessment.newMassCardChanges,0);
 assert.equal(audit.canonicalWorks,13);
 assert.equal(audit.formationScopedBindings,408);
 assert.equal(audit.formationUrlWitnesses,304);
@@ -86,6 +114,11 @@ if(existsSync(currentOwnerPath)){
  const v2=JSON.parse(readFileSync(currentOwnerPath,"utf8"));
  const current=inspectCurrentFormationRevision({formation,revision:v2,profiles});
  assert.equal(current.currentSourceBindings,527);
+ assert.equal(current.currentSourceBindings,handoff.current.formationBindings);
+ assert.equal(current.currentUrlWitnesses,handoff.current.urlWitnesses);
+ assert.deepEqual(
+  current.existingProfileUrlMatches.map(x=>x.bindingKey).sort(),
+  [...matchedKeys].sort());
  assert.equal(current.currentUrlWitnesses,332);
  assert.equal(current.newlyAddedByOwner,119);
  assert.equal(current.originalHistoricalBindingsRemoved,0);
