@@ -108,7 +108,7 @@ const mexicanGuadalupe=geography.places.find(p=>p.place_id==="place:MX:basilica-
 assert.equal(mexicanGuadalupe?.geo?.source_ref,"osm:way:120733641","Guadalupe must point to the modern 1976 Basilica");
 assert.equal(geography.places.filter(p=>p.place_id===mexicanGuadalupe.place_id).length,1,"Guadalupe must not duplicate canonical identity");
 
-assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
+assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
   shrines:250,
@@ -116,6 +116,7 @@ assert.deepEqual(projection.counts,{
   relics:122,
   traditions:89,
   pilgrimages:236,
+  saints:0, // This existing regression fixture intentionally has no Saints pilot payload.
 });
 
 for(const lens of EXPLORE_LENSES){
