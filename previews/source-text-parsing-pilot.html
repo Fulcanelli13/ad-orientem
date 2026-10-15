@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem · Source text parsing pilot</title>
+<style>
+:root{color-scheme:dark;font-family:Georgia,serif;background:#080c12;color:#e6ded0}
+body{margin:0 auto;padding:24px 16px;max-width:720px;line-height:1.65}
+header{padding:12px 0 24px;border-bottom:1px solid #5b5244}
+h1{font-size:1.4rem;font-weight:normal;letter-spacing:.06em}h2{font-size:1.25rem}
+small,.aoStMeta,.aoStLocator,.aoStNotice{color:#a7a19a}
+.aoStPassage{margin:26px 0;border-top:1px solid #544d44;padding-top:16px;min-height:220px}
+.aoStBody{font-size:1.15rem;line-height:1.75}
+.aoStNav,.aoStSearch,.aoStResults{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+button,input{font:inherit;padding:10px 12px;border:1px solid #736c63;border-radius:6px;background:#161c26;color:#e6ded0}
+input{min-width:180px;flex:1}button:disabled{opacity:.4}button:focus-visible,input:focus-visible{outline:2px solid #e1c28c;outline-offset:3px}
+.aoStResult{text-align:left;width:100%}
+</style></head><body>
+<header><small>ISOLATED SOURCE PARSING DEMONSTRATION · NOT LIVE APP</small>
+<h1>Original texts as navigable passages</h1>
+<p>This technical sample is project-authored. No third-party text or content from another module has been imported.</p></header>
+<main id="source-text-demo">Loading the demonstration…</main>
+<script type="module">
+import {mountSourceTextPilot} from "../src/source-text/demo-browser.js";
+mountSourceTextPilot(document.getElementById("source-text-demo"),{
+ manifestUrl:"../data/source-text/pilot/manifest.json"
+}).catch(error=>{document.getElementById("source-text-demo").textContent="Reader unavailable: "+error.message});
+</script></body></html>

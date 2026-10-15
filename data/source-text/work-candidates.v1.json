@@ -1,0 +1,138 @@
+{
+  "schema": "AO_SOURCE_TEXT_CANDIDATE_INVENTORY_V1",
+  "owner": "source-text parsing pipeline",
+  "snapshotSource": "Fulcanelli13/ad-orientem PR #1212 canonical work pilot, SHA a37af0f077403c9da2d8eadd31a581f070407a07",
+  "policy": "Read-only inventory pointers, NOT a competing canon or approval of any source text, edition, translation or copyright.",
+  "works": [
+    {
+      "sourceWorkId": "WORK-MISSALE-ROMANUM-1962",
+      "title": "Missale Romanum, editio typica (1962)",
+      "rightsStatus": "UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-MEDIATOR-DEI-1947",
+      "title": "Mediator Dei",
+      "rightsStatus": "REPRODUCTION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-OCONNELL-CELEBRATION-1962",
+      "title": "The Celebration of Mass",
+      "rightsStatus": "UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-CAMPION-MISSAL-1954",
+      "title": "Know Your Mass / Saint Edmund Campion Children's Missal",
+      "rightsStatus": "UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-TANQUEREY-SPIRITUAL-LIFE",
+      "title": "The Spiritual Life",
+      "rightsStatus": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "title": "Introduction to the Devout Life",
+      "rightsStatus": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-IGNATIUS-EXERCISES",
+      "title": "Spiritual Exercises",
+      "rightsStatus": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-CHAUTARD-SOUL-APOSTOLATE",
+      "title": "The Soul of the Apostolate",
+      "rightsStatus": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-PIUS-X-CATECHISM",
+      "title": "Catechism attributed to St Pius X",
+      "rightsStatus": "REPRODUCTION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-MISERENTISSIMUS-1928",
+      "title": "Miserentissimus Redemptor",
+      "rightsStatus": "REPRODUCTION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-INDULGENTIARUM-1967",
+      "title": "Indulgentiarum Doctrina",
+      "rightsStatus": "REPRODUCTION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-CODE-CANON-LAW-1983",
+      "title": "Code of Canon Law (1983)",
+      "rightsStatus": "REPRODUCTION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    },
+    {
+      "sourceWorkId": "WORK-CATHOLIC-BIBLE",
+      "title": "Holy Bible, Catholic canon",
+      "rightsStatus": "BIBLE_EDITION_RIGHTS_AND_COLLATION_UNREVIEWED",
+      "extraction": "METADATA_ONLY__NOT_PARSED",
+      "importPermission": "NOT_GRANTED",
+      "canonicalReference": "data/reference/canonical-works-pilot.v1.json"
+    }
+  ],
+  "parseableFamilies": [
+    "papal_documents",
+    "councils",
+    "denzinger",
+    "catechisms",
+    "fathers",
+    "doctors_spiritual_authors",
+    "apologetics",
+    "moral_theology",
+    "canon_law",
+    "liturgical_commentaries",
+    "scripture_commentaries",
+    "saints_lives",
+    "historical_works",
+    "apparitions",
+    "shrines",
+    "relics",
+    "devotions",
+    "hymns",
+    "latin_lexica",
+    "customs",
+    "correspondence",
+    "biographies",
+    "artwork_provenance"
+  ],
+  "publishedFullTextCount": 0
+}
