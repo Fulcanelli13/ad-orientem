@@ -23,11 +23,16 @@
     "multipleJourneyMembershipAllowed": true,
     "onePrimaryStoryPerResearchScene": true,
     "noAiAuthoredNarrative": true,
-    "noAiNarrativeTranslation": true,
     "existingAuthorProseOnly": true,
     "noPermissionRequests": true,
     "historicalSourceWitnessRequired": true,
-    "narrativeTextRule": "VERBATIM_PREEXISTING_CATHOLIC_AUTHORED_TEXT_ONLY. Narrative body may consist solely of properly attributed verified historical/public-domain (or already licensed) source prose or direct source-edition Scripture. No AI-written, AI-paraphrased, AI-translated or AI-composed connecting narration; metadata and indexes may still be algorithmically generated. If no suitable historical prose is available, present the original Scripture passage, not invented bridging text. No permission requests."
+    "narrativeTextRule": "Existing authored Catholic biblical-history narrative or native Scripture only. AI may faithfully translate the exact original author text when no suitable historical translation exists; disclose translation method and record original-language witness/paragraph anchors and bilingual human editorial review. No AI-composed Bible history, abridgement, added linking/bridging prose, embellishment, invented geography, theological interpolation or silent harmonization. Keep commentary distinct from narrative. No permission requests.",
+    "aiFaithfulTranslationOfVerifiedExistingAuthorAllowed": true,
+    "aiOriginalNarrativeProhibited": true,
+    "translationMustReferenceExactSourceWitness": true,
+    "translationMustPreserveAuthorStructure": true,
+    "translationRequiresEditorialReviewBeforePublication": true,
+    "preferExistingHumanTranslation": true
   },
   "eraKeys": [
     "ORIGINS",
