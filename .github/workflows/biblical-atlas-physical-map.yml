@@ -1,0 +1,54 @@
+name: Biblical Atlas physical-map review
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/explore/atlas-physical-*.geojson"
+      - "src/find/atlas-physical-style.js"
+      - "src/find/browser-entry.js"
+      - "src/find/bible-atlas.js"
+      - "src/find/map-runtime.js"
+      - "tests/atlas-physical-basemap*.mjs"
+      - ".github/workflows/biblical-atlas-physical-map.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  provenance-and-geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Local physical source validity / canonical milestone integrity
+        run: |
+          node --check src/find/atlas-physical-style.js
+          node --check src/find/map-runtime.js
+          node --check src/find/browser-entry.js
+          node --check src/find/bible-atlas.js
+          node tests/atlas-physical-basemap.mjs
+          node tests/explore-bible-atlas-151.mjs
+          node tests/explore-bible-atlas-151-scope.mjs
+  phone:
+    needs: provenance-and-geometry
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real MapLibre browser and three-width physical map captures
+        run: node tests/atlas-physical-basemap-phone.mjs
+      - name: Original default Atlas and Scripture reader
+        run: node tests/explore-bible-atlas-151-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-physical-map-review-320-390-768
+          path: test-output/atlas-physical/*.png
+          if-no-files-found: warn

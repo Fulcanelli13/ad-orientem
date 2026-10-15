@@ -11,6 +11,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
+import { ATLAS_PHYSICAL_STYLE } from "./atlas-physical-style.js";
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
@@ -318,6 +319,7 @@ export function createFindOwner(win=globalThis){
       try{
         const handle=await mountExploreMap(mapNode,atlasMapItems(atlasStops,state.bibleIndex),{
           win,allowEmpty:true,initialViewport:{center:[35,31],zoom:3.6},
+          styleOverride:bibleCinemaPreview?ATLAS_PHYSICAL_STYLE:null,
           onSelect:id=>{
             const index=atlasIndexForPin(atlasStops,state.bibleIndex,id);
             updateBibleIndex(index,{center:true});
