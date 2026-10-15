@@ -1,0 +1,1312 @@
+{
+  "schema": "AO_MYSTERY_MASS_39_TO_CURATED_65_67_RECONCILIATION_V1",
+  "preparedOn": "2026-10-15",
+  "reviewState": "RESEARCH_ONLY_NOT_APPROVED",
+  "inputs": {
+    "currentProductionReader": "src/mass/reader-live-curated-cards.js (main, blob 6972ed41adc50e12a71ca8ad9d93c4b14fedc6f0)",
+    "existingMysteryOwners": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json (PR #1193)",
+    "archiveBridge": "data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json (PR #1193)",
+    "referencePilot": "data/reference/canonical-works-pilot.v1.json (main, PR #1212)",
+    "parsingOwner": "src/reference/passage-packs.js (main, PRs #1222/#1233/#1234)"
+  },
+  "verifiedCounts": {
+    "canonicalSourceOwners": 39,
+    "curatedOrdinaryBaseModelCards": 65,
+    "curatedProperDependentModelCards": [
+      65,
+      66,
+      67
+    ],
+    "normallyVisibleOrdinaryBaseCardsWithoutOptionalSecondConfiteor": 64,
+    "conditionalIntroItEntryCards": [
+      61,
+      62,
+      63
+    ],
+    "historicalEvidenceRows": 422,
+    "macroOwnerAssignedEvidenceRows": 402,
+    "macroOwnerUnassignedEvidenceRows": 20
+  },
+  "compatibility": {
+    "exact65SourceModel": "Original 39 certified source-first moments. Stable base 65 curated IDs are constructed using projectCuratedOrdinaryLiveCards sectionId rule, source and ordinal.",
+    "conditionalPreGospel": {
+      "sourceOwner": "AO.CARD.006",
+      "base": {
+        "titles": [
+          "Gradual · Alleluia / Tract / Sequence"
+        ],
+        "count": 1
+      },
+      "sourcedTwoCardVariants": [
+        [
+          "Gradual · Alleluia / Tract",
+          "Sequence"
+        ],
+        [
+          "Gradual",
+          "Alleluia"
+        ],
+        [
+          "Gradual",
+          "Tract"
+        ]
+      ],
+      "sourcedThreeCardVariants": [
+        [
+          "Gradual",
+          "Alleluia",
+          "Sequence"
+        ],
+        [
+          "Gradual",
+          "Tract",
+          "Sequence"
+        ]
+      ],
+      "gate": "Only source-certified B021/B022 and selected Proper boundaries, never inferred splits"
+    },
+    "visibleVariants": "Optional second Confiteor can be hidden; pre-Mass special rite may suppress first 4 opening cards; forms need their own owner and must not inherit uniform 65 assumption.",
+    "preMassProcessionsAndAsperges": "External/conditional events are not forced into a 39-owner slot.",
+    "fixedReaderSeparation": "Do not replace the 65–67-card LIVE reader, existing 48-card rollback, independent study course or original 1962 liturgical texts."
+  },
+  "owners": [
+    {
+      "sourceOwnerId": "AO.CARD.001",
+      "sourceTitle": "Introit & Preparatory Prayers",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.001.1",
+          "ordinal": 1,
+          "title": "At the Foot of the Altar · Opening and Psalm 42",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.001.2",
+          "ordinal": 2,
+          "title": "Confiteor of the Celebrant",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.001.3",
+          "ordinal": 3,
+          "title": "Confiteor of the Servers",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.001.4",
+          "ordinal": 4,
+          "title": "Versicles and Ascent of the Altar",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.001.5",
+          "ordinal": 5,
+          "title": "Introit",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.002",
+      "sourceTitle": "Kyrie",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.002.1",
+          "ordinal": 1,
+          "title": "Kyrie",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.003",
+      "sourceTitle": "Gloria",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.003.1",
+          "ordinal": 1,
+          "title": "Gloria · The Celebrant's Intonation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.003.2",
+          "ordinal": 2,
+          "title": "Gloria · Praise and Supplication",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.003.3",
+          "ordinal": 3,
+          "title": "Gloria · Doxology",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "GLORIA_ONLY_WHEN_PRESCRIBED"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.004",
+      "sourceTitle": "Collect",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.004.1",
+          "ordinal": 1,
+          "title": "Collect",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.005",
+      "sourceTitle": "Epistle / Lesson",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.005.1",
+          "ordinal": 1,
+          "title": "Epistle / Lesson",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.006",
+      "sourceTitle": "Gradual · Alleluia / Tract / Sequence",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.006.1",
+          "ordinal": 1,
+          "title": "Gradual · Alleluia / Tract / Sequence",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "PROPER_AND_SEASON_SPECIFIC_CHANT_OWNER"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.007",
+      "sourceTitle": "Holy Gospel",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.007.1",
+          "ordinal": 1,
+          "title": "Preparation for the Gospel",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.007.2",
+          "ordinal": 2,
+          "title": "Proclamation of the Holy Gospel",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "VARIABLE_GOSPEL_AND_LITURGICAL_FORM_CHECK"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.008",
+      "sourceTitle": "Sermon / Homily",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.008.1",
+          "ordinal": 1,
+          "title": "Sermon / Homily",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "HOMILY_CONTENT_NOT_FIXED_IN_THE_MISSAL"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.009",
+      "sourceTitle": "Credo",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF01",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.009.1",
+          "ordinal": 1,
+          "title": "Credo · The Celebrant's Intonation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.009.2",
+          "ordinal": 2,
+          "title": "Credo · The Father and the Son",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.009.3",
+          "ordinal": 3,
+          "title": "Credo · Incarnation, Passion and Resurrection",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.009.4",
+          "ordinal": 4,
+          "title": "Credo · The Holy Spirit, Church and Life Eternal",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "CREDO_ONLY_WHEN_PRESCRIBED"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.010",
+      "sourceTitle": "Offertory",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF03",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.010.1",
+          "ordinal": 1,
+          "title": "Offertory · Invitation and Antiphon",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.010.2",
+          "ordinal": 2,
+          "title": "Offertory · Offering of the Bread and Chalice",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.010.3",
+          "ordinal": 3,
+          "title": "Offertory · Humility and Invocation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.010.4",
+          "ordinal": 4,
+          "title": "Offertory · Incensation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.010.5",
+          "ordinal": 5,
+          "title": "Offertory · Lavabo and Offering to the Trinity",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.011",
+      "sourceTitle": "Orate fratres & Secret",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF03",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.011.1",
+          "ordinal": 1,
+          "title": "Orate, fratres · Prayer and Response",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.011.2",
+          "ordinal": 2,
+          "title": "Secret Prayer and Conclusion",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.012",
+      "sourceTitle": "Preface",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.012.1",
+          "ordinal": 1,
+          "title": "Preface",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "PREFACE_VARIABLE_SOURCE_GATED"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.013",
+      "sourceTitle": "Sanctus · Benedictus",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.013.1",
+          "ordinal": 1,
+          "title": "Sanctus",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.013.2",
+          "ordinal": 2,
+          "title": "Benedictus",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.01",
+      "sourceTitle": "Te igitur",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.01.1",
+          "ordinal": 1,
+          "title": "Te igitur",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.02",
+      "sourceTitle": "Memento, Domine — Living",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.02.1",
+          "ordinal": 1,
+          "title": "Memento, Domine — Living",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.03",
+      "sourceTitle": "Communicantes",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.03.1",
+          "ordinal": 1,
+          "title": "Communicantes",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "ST_JOSEPH_INSERTION_EFFECTIVE_1962_12_08"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.04",
+      "sourceTitle": "Hanc igitur",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.04.1",
+          "ordinal": 1,
+          "title": "Hanc igitur",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.05",
+      "sourceTitle": "Quam oblationem",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF04",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.05.1",
+          "ordinal": 1,
+          "title": "Quam oblationem",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.06",
+      "sourceTitle": "Consecration of the Sacred Host",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF05",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.06.1",
+          "ordinal": 1,
+          "title": "Consecration of the Host · Preparation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.06.2",
+          "ordinal": 2,
+          "title": "Words of Consecration and Elevation · Host",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "CONSECRATION_BREAD_NOT_COMBINED_WITH_CHALICE"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.07",
+      "sourceTitle": "Consecration of the Chalice",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF05",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.07.1",
+          "ordinal": 1,
+          "title": "Consecration of the Chalice · Preparation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.07.2",
+          "ordinal": 2,
+          "title": "Words of Consecration and Elevation · Chalice",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "CONSECRATION_CHALICE_NOT_COMBINED_WITH_BREAD"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.08",
+      "sourceTitle": "Unde et memores",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.08.1",
+          "ordinal": 1,
+          "title": "Unde et memores",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.09",
+      "sourceTitle": "Supra quae",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.09.1",
+          "ordinal": 1,
+          "title": "Supra quae",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.10",
+      "sourceTitle": "Supplices te rogamus",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.10.1",
+          "ordinal": 1,
+          "title": "Supplices te rogamus",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "SUPPLICES_ANGEL_IDENTITY_DISPUTED_NOT_DOGMA"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.11",
+      "sourceTitle": "Memento etiam, Domine — Dead",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.11.1",
+          "ordinal": 1,
+          "title": "Memento etiam, Domine — Dead",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.12",
+      "sourceTitle": "Nobis quoque peccatoribus",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.12.1",
+          "ordinal": 1,
+          "title": "Nobis quoque peccatoribus",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.13",
+      "sourceTitle": "Per quem haec omnia",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.13.1",
+          "ordinal": 1,
+          "title": "Per quem haec omnia",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CANON.14",
+      "sourceTitle": "Per ipsum · Minor Elevation",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "formationChapter": "MF06",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CANON.14.1",
+          "ordinal": 1,
+          "title": "Per ipsum · Minor Elevation",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.019",
+      "sourceTitle": "Pater noster",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.019.1",
+          "ordinal": 1,
+          "title": "Pater noster",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.020",
+      "sourceTitle": "Libera nos · Fraction · Pax Domini",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.020.1",
+          "ordinal": 1,
+          "title": "Libera nos · Prayer and Conclusion",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.020.2",
+          "ordinal": 2,
+          "title": "Pax Domini",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.020.3",
+          "ordinal": 3,
+          "title": "Commingling of the Sacred Species",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.021",
+      "sourceTitle": "Agnus Dei",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.021.1",
+          "ordinal": 1,
+          "title": "Agnus Dei",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.022",
+      "sourceTitle": "Prayers before Communion",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.022.1",
+          "ordinal": 1,
+          "title": "Prayers before the Priest's Communion",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.022.2",
+          "ordinal": 2,
+          "title": "Domine, non sum dignus · Celebrant",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "PRIEST_DOMINE_NON_SUM_DIGNUS_NOT_FAITHFUL_RESPONSE"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.023",
+      "sourceTitle": "Communion of the Priest",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.023.1",
+          "ordinal": 1,
+          "title": "The Priest receives the Sacred Host",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.023.2",
+          "ordinal": 2,
+          "title": "The Priest receives the Precious Blood",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.024",
+      "sourceTitle": "Ecce Agnus Dei & Faithful Preparation",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.024.1",
+          "ordinal": 1,
+          "title": "Second Confiteor · Optional Local Custom",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.024.2",
+          "ordinal": 2,
+          "title": "Ecce Agnus Dei · Preparation of the Faithful",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "SECOND_CONFITEOR_OLDER_OR_LOCAL_CUSTOM_NOT_UNIVERSALLY_MANDATORY"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.025",
+      "sourceTitle": "Communion of the Faithful",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF07",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.025.1",
+          "ordinal": 1,
+          "title": "Communion of the Faithful",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "FAITHFUL_COMMUNION_MAY_NOT_TAKE_PLACE"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.026",
+      "sourceTitle": "Ablutions & Communion Antiphon",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF08",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.026.1",
+          "ordinal": 1,
+          "title": "Ablutions",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.026.2",
+          "ordinal": 2,
+          "title": "Communion Antiphon",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.027",
+      "sourceTitle": "Postcommunion",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF08",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.027.1",
+          "ordinal": 1,
+          "title": "Postcommunion",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.028",
+      "sourceTitle": "Dismissal",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF08",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.028.1",
+          "ordinal": 1,
+          "title": "Dismissal",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "DISMISSAL_VARIANT_BY_MASS_TYPE_OR_FOLLOWING_ACTION"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.029",
+      "sourceTitle": "Placeat & Final Blessing",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF08",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.029.1",
+          "ordinal": 1,
+          "title": "Placeat tibi · Closing Prayer",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.029.2",
+          "ordinal": 2,
+          "title": "Final Blessing",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "FINAL_BLESSING_CAN_BE_SUPPRESSED_BY_SPECIAL_RITE_OR_REQUIEM"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    },
+    {
+      "sourceOwnerId": "AO.CARD.030",
+      "sourceTitle": "Last Gospel",
+      "sourceKind": "ORDINARY_MACRO",
+      "formationChapter": "MF08",
+      "base65Cards": [
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.030.1",
+          "ordinal": 1,
+          "title": "Last Gospel · Prologue of St John",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        },
+        {
+          "liveCardId": "AO.LIVECURATED.AO.CARD.030.2",
+          "ordinal": 2,
+          "title": "Last Gospel · The Word Made Flesh",
+          "derivedFrom": "src/mass/reader-live-curated-cards.js"
+        }
+      ],
+      "conditionalSourceFlags": [
+        "LAST_GOSPEL_NOT_UNIVERSALLY_PRESENT"
+      ],
+      "editorialStatus": "LEGACY_EVIDENCE_RETAINED_GRANULAR_ANCHORS_NOT_VERIFIED"
+    }
+  ],
+  "targetedPhraseAndGestureResearchCandidates": [
+    {
+      "owner": "AO.CARD.001",
+      "prayer": "Psalm 42 / Confiteor / ascent",
+      "targets": [
+        "Introibo ad altare Dei",
+        "Confiteor of celebrant",
+        "Confiteor of servers",
+        "Aufer a nobis"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CARD.003",
+      "prayer": "Gloria",
+      "targets": [
+        "introduction",
+        "Adoramus te",
+        "Jesu Christe bow",
+        "Qui tollis",
+        "doxology"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CARD.006",
+      "prayer": "Proper chants",
+      "targets": [
+        "Gradual",
+        "Alleluia or Tract",
+        "Sequence if source-selected"
+      ],
+      "cueIds": "PROPER_DEPENDENT_NO_UNSOURCED_SPLITS"
+    },
+    {
+      "owner": "AO.CARD.009",
+      "prayer": "Credo",
+      "targets": [
+        "Et incarnatus est",
+        "Et homo factus est",
+        "Crucifixus etiam pro nobis",
+        "Et exspecto"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CARD.010",
+      "prayer": "Offertory",
+      "targets": [
+        "Suscipe sancte Pater",
+        "Deus qui humanae substantiae",
+        "In spiritu humilitatis",
+        "Veni sanctificator",
+        "Lavabo",
+        "Suscipe sancta Trinitas"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.05",
+      "prayer": "Quam oblationem",
+      "targets": [
+        "benedictam",
+        "adscriptam",
+        "ratam",
+        "rationabilem",
+        "acceptabilem",
+        "Corpus et Sanguis"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.06",
+      "prayer": "Consecration Host",
+      "targets": [
+        "Qui pridie",
+        "Hoc est enim Corpus meum",
+        "genuflection",
+        "elevation"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.07",
+      "prayer": "Consecration Chalice",
+      "targets": [
+        "Simili modo",
+        "Hic est enim Calix Sanguinis mei",
+        "genuflection",
+        "elevation"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.09",
+      "prayer": "Supra quae",
+      "targets": [
+        "Abel",
+        "Abraham",
+        "Melchisedech"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.10",
+      "prayer": "Supplices te rogamus",
+      "targets": [
+        "angelum sanctum tuum",
+        "sublime altare tuum",
+        "profound bow",
+        "heavenly altar interpretation"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    },
+    {
+      "owner": "AO.CANON.11",
+      "prayer": "Memento etiam",
+      "targets": [
+        "N. et N.",
+        "somno pacis",
+        "locum refrigerii lucis et pacis"
+      ],
+      "cueIds": "AO.SM.C0194_REQUIRES_CHECK"
+    },
+    {
+      "owner": "AO.CARD.030",
+      "prayer": "Last Gospel",
+      "targets": [
+        "In principio erat Verbum",
+        "Et Verbum caro factum est",
+        "genuflection"
+      ],
+      "cueIds": "REQUIRES_EXACT_READER_SOURCE_CHECK"
+    }
+  ],
+  "bibliographyIdentityHandoff": [
+    {
+      "candidateKey": "JUSTIN",
+      "authorOrCorporateEntity": "St Justin Martyr",
+      "representativeWork": "First Apology 65–67",
+      "role": "PATRISTIC_EARLY_WITNESS",
+      "priorityTopics": "Eucharistic assembly, readings, prayers",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "CYRIL",
+      "authorOrCorporateEntity": "St Cyril of Jerusalem",
+      "representativeWork": "Mystagogical Catecheses IV–V",
+      "role": "PATRISTIC_CATECHESIS",
+      "priorityTopics": "Eucharist and prayer",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "AMBROSE",
+      "authorOrCorporateEntity": "St Ambrose",
+      "representativeWork": "De sacramentis / De mysteriis",
+      "role": "PATRISTIC_CATECHESIS",
+      "priorityTopics": "Consecration and Eucharistic theology",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "AUGUSTINE",
+      "authorOrCorporateEntity": "St Augustine",
+      "representativeWork": "City of God X; Eucharistic sermons",
+      "role": "PATRISTIC_THEOLOGY",
+      "priorityTopics": "Sacrifice and ecclesial participation",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "GREGORY_GREAT",
+      "authorOrCorporateEntity": "St Gregory the Great",
+      "representativeWork": "Registrum epistularum; historical Gregorian claims",
+      "role": "HISTORICAL_PATRISTIC",
+      "priorityTopics": "Roman Canon history; distinguish attribution from proof",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "AQUINAS",
+      "authorOrCorporateEntity": "St Thomas Aquinas",
+      "representativeWork": "Summa Theologiae III qq.73–83",
+      "role": "SCHOLASTIC_THEOLOGY",
+      "priorityTopics": "Eucharistic doctrine, causality and ritual meaning",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "INNOCENT_III",
+      "authorOrCorporateEntity": "Pope Innocent III",
+      "representativeWork": "De sacro altaris mysterio",
+      "role": "MEDIEVAL_MYSTAGOGY",
+      "priorityTopics": "Prayer and ritual symbolism",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "DURANDUS",
+      "authorOrCorporateEntity": "William Durandus",
+      "representativeWork": "Rationale divinorum officiorum",
+      "role": "MEDIEVAL_SYMBOLISM",
+      "priorityTopics": "Ceremonial allegory vs proven origins",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "TRENT",
+      "authorOrCorporateEntity": "Council of Trent",
+      "representativeWork": "Session XXII decree and canons; Roman Catechism",
+      "role": "MAGISTERIAL_PRIMARY",
+      "priorityTopics": "Sacrifice, Mass, doctrinal boundaries",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "PIUS_V",
+      "authorOrCorporateEntity": "St Pius V",
+      "representativeWork": "Quo primum; Roman Missal 1570",
+      "role": "HISTORICAL_LEGISLATIVE",
+      "priorityTopics": "Codification, not origin of full Roman rite",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "BENEDICT_XIV",
+      "authorOrCorporateEntity": "Benedict XIV",
+      "representativeWork": "De sacrosancto Missae sacrificio",
+      "role": "PAPAL_LITURGICAL_TREATISE",
+      "priorityTopics": "Historical/doctrinal commentary",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "PIUS_XII",
+      "authorOrCorporateEntity": "Pius XII",
+      "representativeWork": "Mediator Dei (1947)",
+      "role": "MAGISTERIAL_PRIMARY_EXISTING_WORK",
+      "priorityTopics": "Participation, worship, historicism",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "GUARDINI",
+      "authorOrCorporateEntity": "Romano Guardini",
+      "representativeWork": "The Spirit of the Liturgy; Sacred Signs; The Mass",
+      "role": "20C_LITURGICAL_THEOLOGY",
+      "priorityTopics": "Meaning of liturgical action and participation",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "JUNGMANN",
+      "authorOrCorporateEntity": "Josef A. Jungmann",
+      "representativeWork": "The Mass of the Roman Rite",
+      "role": "20C_HISTORICAL_SCHOLARSHIP",
+      "priorityTopics": "Development of Roman prayers and rite",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "CASEL",
+      "authorOrCorporateEntity": "Odo Casel",
+      "representativeWork": "The Mystery of Christian Worship",
+      "role": "20C_MYSTERY_THEOLOGY",
+      "priorityTopics": "Mystery and sacramental participation",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "BOUYER",
+      "authorOrCorporateEntity": "Louis Bouyer",
+      "representativeWork": "Eucharist: Theology and Spirituality of the Eucharistic Prayer",
+      "role": "20C_HISTORICAL_THEOLOGY",
+      "priorityTopics": "Anaphora, Jewish prayer parallels, tested historical derivation",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "RATZINGER",
+      "authorOrCorporateEntity": "Joseph Ratzinger / Benedict XVI",
+      "representativeWork": "The Spirit of the Liturgy; Feast of Faith; Sacramentum Caritatis",
+      "role": "THEOLOGIAN_AND_PAPAL_TEACHING",
+      "priorityTopics": "Orientation, sacrifice, active participation; preserve capacity/context",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "HAHN",
+      "authorOrCorporateEntity": "Scott Hahn",
+      "representativeWork": "The Lamb's Supper; Consuming the Word",
+      "role": "CONTEMPORARY_BIBLICAL_TYPOLOGY",
+      "priorityTopics": "Revelation, heavenly liturgy, Scripture",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "PITRE",
+      "authorOrCorporateEntity": "Brant Pitre",
+      "representativeWork": "Jesus and the Jewish Roots of the Eucharist",
+      "role": "CONTEMPORARY_BIBLICAL_TYPOLOGY",
+      "priorityTopics": "Passover, manna, Jewish setting; distinguish typology from ritual genealogy",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "LEFEBVRE",
+      "authorOrCorporateEntity": "Archbishop Marcel Lefebvre",
+      "representativeWork": "The Mass of All Time; selected sermons",
+      "role": "TRADITIONALIST_COMMENTARY",
+      "priorityTopics": "Sacrifice, priesthood; reform critique separately attributed",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "SSPX",
+      "authorOrCorporateEntity": "SSPX institutional authors",
+      "representativeWork": "Identify exact author, work and edition before use",
+      "role": "TRADITIONALIST_INSTITUTIONAL",
+      "priorityTopics": "Do not treat all SSPX writing as one author",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "DAVIES",
+      "authorOrCorporateEntity": "Michael Davies",
+      "representativeWork": "Pope Paul's New Mass",
+      "role": "TRADITIONALIST_HISTORICAL_CRITIQUE",
+      "priorityTopics": "Separate critique from primary rite-text evidence",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "REID",
+      "authorOrCorporateEntity": "Alcuin Reid",
+      "representativeWork": "The Organic Development of the Liturgy",
+      "role": "CONTEMPORARY_HISTORIOGRAPHY",
+      "priorityTopics": "Organic development and history",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    },
+    {
+      "candidateKey": "DENZINGER",
+      "authorOrCorporateEntity": "Heinrich Denzinger (compilation)",
+      "representativeWork": "Enchiridion symbolorum (version/number required)",
+      "role": "MAGISTERIAL_TEXT_INDEX",
+      "priorityTopics": "Use exact underlying council/papal document, index not independent doctrinal author",
+      "status": "CANDIDATE_COMPARE_SHARED_SOURCE_REGISTRY_BEFORE_CREATING_WORK_ID",
+      "fullTextCollated": false,
+      "exactPassageVerified": false,
+      "publicationApproved": false
+    }
+  ],
+  "sourceAndClaimRules": [
+    "One canonical source owner may supply several LIVE presentation cards; interpretation attaches first to the exact prayer/phrase/gesture, then inherits the owner.",
+    "Before entering any source identity, compare canonical work+edition+witness and existing Mass, Guéranger, Lanslots, Formation, Reference/Parsing registers.",
+    "Joseph Ratzinger and Pope Benedict XVI are one person but pre-papal theological works and papal magisterial documents retain separate work/document status.",
+    "Denzinger is a reference collection; cite the underlying magisterial instrument and original numbered passage where practicable.",
+    "Gregory the Great and Pius V historical claims are not proof of a particular 1962 rubric's origin.",
+    "Scott Hahn and Brant Pitre biblical parallels require a TYPOLOGY versus DOCUMENTED_HISTORICAL_DEPENDENCE distinction.",
+    "Lefebvre/SSPX critiques are attributed commentary, not normative Roman Missal text or independent magisterial authority.",
+    "Original printed page and translation/rights approval must be tracked separately from OCR link existence.",
+    "No new source text published; no in-app change; all proposed fine-grained cue anchors require exact ID collation."
+  ],
+  "releaseGates": [
+    "Confirm derived IDs against actual LIVE model in node/browser for all source-certified variants",
+    "Build precise sourceCueIds for phrase and gesture anchors rather than guessing",
+    "Handoff novel book identities to shared reference pipeline, do not duplicate 26 outstanding source-identity requests",
+    "Preserve and review 20 historical unassigned claims and 32 same-author overlaps",
+    "Review text, doctrine, bilingual editorial quality, URLs, copyright/rights and UI before publication"
+  ]
+}
