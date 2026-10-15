@@ -61,10 +61,21 @@ try{
      const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
      return !!map&&(!!map.querySelector("canvas")||(map.textContent||"").trim().length>=15);
    },null,{timeout:25000});
-   const mapMode=await page.evaluate(()=>({
-     canvas:!!document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map] canvas'),
-     mapState:document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]')?.dataset?.aoMapState||"",
-   }));
+   // A canvas or initial fallback can appear before style and tiles have loaded.
+   // Screenshot only once MapLibre declares ready or offers a real stalled/error notice.
+   await page.waitForFunction(()=>{
+     const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
+     return ["ready","stalled","unavailable","empty"].includes(map?.dataset?.aoMapState);
+   },null,{timeout:30000});
+   const mapMode=await page.evaluate(()=>{
+     const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
+     return {canvas:!!map?.querySelector("canvas"),
+       mapState:map?.dataset?.aoMapState||"",
+       fallback:(map?.querySelector(".aoExploreMapStalled,.aoFindMapFallback")?.textContent||"").trim()};
+   });
+   if(mapMode.mapState!=="ready"){
+     assert(mapMode.fallback.length>=20,"Delayed/unavailable map must show useful user-facing recovery text");
+   }
    await page.screenshot({path:resolve(destination,config.name+"-01-native-map.png"),fullPage:false});
 
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').click();
