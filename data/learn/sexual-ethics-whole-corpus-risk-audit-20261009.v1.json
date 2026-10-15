@@ -1278,12 +1278,19 @@
       "source_ids": [
         "MIDWIVES",
         "HEMATOLOGY",
-        "HV"
+        "HV",
+        "CDFSTER1975"
       ],
       "stage_or_source_scope_review": "BOUNDED_ORIGINAL_PARAGRAPH_SCOPE_CHECK",
       "full_claim_by_claim_certified": false,
       "independent_fr_signed": false,
-      "independent_theology_signed": false
+      "independent_theology_signed": false,
+      "source_change_20261015": {
+        "added": "CDFSTER1975",
+        "source": "CDF Quaecumque sterilizatio (1975)",
+        "review_scope": "Bounded original statement, no whole-book requirement, no full claim certification",
+        "citation_registry": "src/learn/sexual-ethics-data/sources.js"
+      }
     },
     {
       "id": "CSE069",
