@@ -1,0 +1,71 @@
+{
+  "schema": "ao-canonical-works-pilot-v1",
+  "state": "PARTIAL_FOUNDATION_NOT_GLOBAL_MIGRATION",
+  "selection_policy": "Stable work identity independent of URLs; edition and passage needed for exact citations; link target is a witness, not evidence of editorial certification.",
+  "rights_policy": "Do not parse, bundle or reproduce modern editions, OCR or translations without an explicit rights review.",
+  "works": [
+    {
+      "id": "WORK-MISSALE-ROMANUM-1962",
+      "title": "Missale Romanum, editio typica (1962)",
+      "type": "liturgical_primary",
+      "edition": "1962",
+      "language": "la",
+      "display_locator": null,
+      "internal_reader": "mass_missal_only",
+      "rights": "UNREVIEWED",
+      "witness_ids": [
+        "SRC-MR62"
+      ]
+    },
+    {
+      "id": "WORK-MEDIATOR-DEI-1947",
+      "author": "Pius XII",
+      "title": "Mediator Dei",
+      "type": "magisterial_primary",
+      "date": "1947-11-20",
+      "language": "la/en",
+      "display_locator": "paragraph required per claim",
+      "internal_reader": null,
+      "rights": "REPRODUCTION_UNREVIEWED",
+      "witness_ids": [
+        "SRC-MEDIATOR-DEI"
+      ]
+    },
+    {
+      "id": "WORK-OCONNELL-CELEBRATION-1962",
+      "author": "J. B. O'Connell",
+      "title": "The Celebration of Mass",
+      "type": "ceremonial_manual",
+      "edition": "1962",
+      "language": "en",
+      "display_locator": "page required per claim",
+      "internal_reader": null,
+      "rights": "UNREVIEWED",
+      "witness_ids": [
+        "SRC-OCONNELL-1962"
+      ]
+    },
+    {
+      "id": "WORK-CAMPION-MISSAL-1954",
+      "author": "Demetrius Manousos, O.F.M. Cap.",
+      "title": "Know Your Mass / Saint Edmund Campion Children's Missal",
+      "type": "catechetical_manual",
+      "edition": "1954",
+      "language": "en",
+      "display_locator": "page required per claim",
+      "internal_reader": null,
+      "rights": "UNREVIEWED",
+      "witness_ids": [
+        "SRC-CAMPION-1954"
+      ]
+    }
+  ],
+  "witnessed_in": "data/learn/mass-formation-campion.v1.json",
+  "pending": [
+    "Set precise page/paragraph locators",
+    "Verify URLs and fallback witnesses",
+    "Research edition/public domain and OCR/translation rights",
+    "Crosswalk duplicate work IDs across Formation, PRAY, Mass and geography",
+    "Keep original claim-to-source IDs immutable until an audited migration"
+  ]
+}
