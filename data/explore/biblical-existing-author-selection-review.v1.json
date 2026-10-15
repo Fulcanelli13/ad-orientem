@@ -1,0 +1,4866 @@
+{
+  "schema": "AO_BIBLICAL_EXISTING_AUTHOR_SELECTION_REVIEW_V1",
+  "status": "RESEARCH_ONLY_NO_PROSE_IMPORTED",
+  "date": "2026-10-15",
+  "owners": {
+    "narrativeIndex": "Atlas PR #1069",
+    "sourceTextParsing": "PR #1229"
+  },
+  "policy": {
+    "noAiNarrative": true,
+    "noAiTranslation": true,
+    "noAiBridges": true,
+    "verbatimExistingAuthorOnly": true,
+    "noPermissionRequests": true,
+    "actualPublicationRequiresPrintWitnessAndRightsReview": true,
+    "metadataOnly": true,
+    "keepScriptureFallback": true
+  },
+  "works": [
+    {
+      "id": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "language": "en",
+      "author": "Frederick Justus Knecht",
+      "title": "A Practical Commentary on Holy Scripture",
+      "edition": "1910 third English revised, B. Herder",
+      "catalogue": "https://openlibrary.org/books/OL7238387M/A_practical_commentary_on_Holy_Scripture_for_the_use_of_those_who_teach_Bible_history",
+      "onlineToc": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "sourceStatus": "CHAPTER_INDEX_VERIFIED; PRINT_NOT_COLLATED",
+      "reproductionStatus": "NOT_APPROVED_FOR_APP_IMPORT",
+      "permissionsRequested": false
+    },
+    {
+      "id": "WORK-GILMOUR-BIBLE-HISTORY",
+      "language": "en",
+      "author": "Richard Gilmour",
+      "title": "Bible History",
+      "edition": "1894 Benziger Brothers",
+      "catalogue": "https://openlibrary.org/books/OL7069753M/Bible_history",
+      "sourceStatus": "DIGITIZED_1894_EDITION_IDENTIFIED; CHAPTER_TEXT_NOT_COLLATED",
+      "reproductionStatus": "NOT_APPROVED_FOR_APP_IMPORT",
+      "permissionsRequested": false
+    },
+    {
+      "id": "WORK-LESETRE-HISTOIRE-SAINTE",
+      "language": "fr",
+      "author": "Abbé Henri Lesêtre",
+      "title": "Histoire sainte",
+      "edition": "1903 P. Lethielleux, 248 pages",
+      "catalogue": "https://lasource.diocese85.org/index.php?id=155651&lvl=notice_display",
+      "sourceStatus": "1903_FRENCH_EDITION_VERIFIED; SECTION_TEXT_NOT_COLLATED",
+      "reproductionStatus": "NOT_APPROVED_FOR_APP_IMPORT",
+      "permissionsRequested": false
+    },
+    {
+      "id": "WORK-DRIOUX-HISTOIRE-SAINTE",
+      "language": "fr",
+      "author": "Abbé Claude-Joseph Drioux",
+      "title": "Histoire sainte",
+      "edition": "1875 fifth edition, E. Belin, 348 pages",
+      "catalogue": "https://books.google.com/books/about/Histoire_sainte.html?id=vV6s0QEACAAJ",
+      "sourceStatus": "FRENCH_BIBLIOGRAPHIC_LEAD; NO_VALIDATED_DIGITAL_TEXT",
+      "reproductionStatus": "NOT_APPROVED_FOR_APP_IMPORT",
+      "permissionsRequested": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "KNECHT-OT-1",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "I",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-09.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-4",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "IV",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-12.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-5",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "V",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-13.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-6",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "VI",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-14.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-7",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "VII",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-15.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-8",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "VIII",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-16.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-9",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "IX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-10",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "X",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-11",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-13",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-16",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-17",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-18",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-21",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-26",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-29",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-31",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-32",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-33",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-34",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-35",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-36",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-37",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-38",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XXXVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-44",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XLIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-45",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XLV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-48",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XLVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-49",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "XLIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-51",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LI",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-59.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-54",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-59",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LIX",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-67.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-61",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-63",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-62",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-72",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-67",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-77",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-75",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXV",
+      "locatorEvidence": "ONLINE_CHAPTER_OPENED",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-83.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-74",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-81",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-80",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-76",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-78",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-82",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXXII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-84",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-OT-85",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "OLD_TESTAMENT",
+      "chapterRoman": "LXXXV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-2",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "II",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-3",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "III",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-5",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "V",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-7",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "VII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-8",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "VIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-9",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "IX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-10",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "X",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-12",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-13",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-14",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-15",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-19",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-18",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-20",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-21",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-29",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-33",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-31",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-16",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-26",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-23",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-34",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-36",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-37",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XXXVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-48",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XLVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-54",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-43",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XLIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-55",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-56",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-65",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-64",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-69",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-70",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-73",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-74",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-75",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-76",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-77",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-78",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-80",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-81",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-82",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-83",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-84",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-85",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-88",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-89",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "LXXXIX",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-90",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XC",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-91",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-92",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-94",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCIV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-95",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCV",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-96",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCVI",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-97",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCVII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    },
+    {
+      "id": "KNECHT-NT-98",
+      "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+      "part": "NEW_TESTAMENT",
+      "chapterRoman": "XCVIII",
+      "locatorEvidence": "TABLE_OF_CONTENTS_HEADING_CANDIDATE",
+      "url": "https://www.ecatholic2000.com/knecht/untitled-198.shtml",
+      "originalPrintWitnessCollated": false,
+      "proseApproved": false
+    }
+  ],
+  "eventSelections": [
+    {
+      "eventKey": "biblical:passage:genesis-1-1-31",
+      "era": "ORIGINS",
+      "reference": "Genesis 1:1–31",
+      "readingChapterId": "reading-chapter:beginnings-creation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-1",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 1:1–31"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-3-1-24",
+      "era": "ORIGINS",
+      "reference": "Genesis 3:1–24",
+      "readingChapterId": "reading-chapter:beginnings-creation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-4",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 3:1–24"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-4-1-16",
+      "era": "ORIGINS",
+      "reference": "Genesis 4:1–16",
+      "readingChapterId": "reading-chapter:beginnings-creation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-5",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 4:1–16"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-7-1-24",
+      "era": "ORIGINS",
+      "reference": "Genesis 7:1–24",
+      "readingChapterId": "reading-chapter:beginnings-flood",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-6",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 7:1–24"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-9-8-17",
+      "era": "ORIGINS",
+      "reference": "Genesis 9:8–17",
+      "readingChapterId": "reading-chapter:beginnings-flood",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-7",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 9:8–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-11-1-9",
+      "era": "ORIGINS",
+      "reference": "Genesis 11:1–9",
+      "readingChapterId": "reading-chapter:beginnings-flood",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-8",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 11:1–9"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-11-31",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 11:31",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-9",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 11:31"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-12-1-9",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 12:1–9",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-9",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 12:1–9"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-14-18-20",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 14:18–20",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-10",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 14:18–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-15-1-21",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 15:1–21",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-11",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 15:1–21"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-18-1-8",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 18:1–8",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-11",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 18:1–8"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-21-1-7",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 21:1–7",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-13",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 21:1–7"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-22-1-19",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 22:1–19",
+      "readingChapterId": "reading-chapter:patriarchs-abraham",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-13",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 22:1–19"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-28-10-22",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 28:10–22",
+      "readingChapterId": "reading-chapter:patriarchs-jacob",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-16",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 28:10–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-32-24-32",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 32:24–32",
+      "readingChapterId": "reading-chapter:patriarchs-jacob",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-17",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 32:24–32"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-37-18-36",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 37:18–36",
+      "readingChapterId": "reading-chapter:patriarchs-joseph",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-18",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 37:18–36"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-41-37-45",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 41:37–45",
+      "readingChapterId": "reading-chapter:patriarchs-joseph",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-21",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 41:37–45"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:genesis-46-1-7",
+      "era": "PATRIARCHS",
+      "reference": "Genesis 46:1–7",
+      "readingChapterId": "reading-chapter:patriarchs-joseph",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-26",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Genesis 46:1–7"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-2-1-10",
+      "era": "EXODUS",
+      "reference": "Exodus 2:1–10",
+      "readingChapterId": "reading-chapter:exodus-calling",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-29",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 2:1–10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-3-1-15",
+      "era": "EXODUS",
+      "reference": "Exodus 3:1–15",
+      "readingChapterId": "reading-chapter:exodus-calling",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-31",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 3:1–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-7-14-25",
+      "era": "EXODUS",
+      "reference": "Exodus 7:14–25",
+      "readingChapterId": "reading-chapter:exodus-calling",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-32",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 7:14–25"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-12-1-28",
+      "era": "EXODUS",
+      "reference": "Exodus 12:1–28",
+      "readingChapterId": "reading-chapter:exodus-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-33",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 12:1–28"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-12-31-42",
+      "era": "EXODUS",
+      "reference": "Exodus 12:31–42",
+      "readingChapterId": "reading-chapter:exodus-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-33",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 12:31–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-14-15-31",
+      "era": "EXODUS",
+      "reference": "Exodus 14:15–31",
+      "readingChapterId": "reading-chapter:exodus-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-34",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 14:15–31"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-16-1-36",
+      "era": "EXODUS",
+      "reference": "Exodus 16:1–36",
+      "readingChapterId": "reading-chapter:exodus-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-35",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 16:1–36"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-19-16-20",
+      "era": "EXODUS",
+      "reference": "Exodus 19:16–20",
+      "readingChapterId": "reading-chapter:exodus-sinai",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-36",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 19:16–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-20-1-17",
+      "era": "EXODUS",
+      "reference": "Exodus 20:1–17",
+      "readingChapterId": "reading-chapter:exodus-sinai",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-36",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 20:1–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-32-1-35",
+      "era": "EXODUS",
+      "reference": "Exodus 32:1–35",
+      "readingChapterId": "reading-chapter:exodus-sinai",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-37",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 32:1–35"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:exodus-40-1-38",
+      "era": "EXODUS",
+      "reference": "Exodus 40:1–38",
+      "readingChapterId": "reading-chapter:exodus-sinai",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-38",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Exodus 40:1–38"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:deuteronomy-34-1-6",
+      "era": "EXODUS",
+      "reference": "Deuteronomy 34:1–6",
+      "readingChapterId": "reading-chapter:exodus-land",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-44",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Deuteronomy 34:1–6"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:joshua-3-1-17",
+      "era": "EXODUS",
+      "reference": "Joshua 3:1–17",
+      "readingChapterId": "reading-chapter:exodus-land",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-45",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Joshua 3:1–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:joshua-6-1-27",
+      "era": "EXODUS",
+      "reference": "Joshua 6:1–27",
+      "readingChapterId": "reading-chapter:exodus-land",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-45",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Joshua 6:1–27"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1samuel-1-9-20",
+      "era": "ISRAEL",
+      "reference": "1Samuel 1:9–20",
+      "readingChapterId": "reading-chapter:israel-samuel-david",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-48",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Samuel 1:9–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1samuel-10-1-8",
+      "era": "ISRAEL",
+      "reference": "1Samuel 10:1–8",
+      "readingChapterId": "reading-chapter:israel-samuel-david",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-49",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Samuel 10:1–8"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1samuel-17-1-54",
+      "era": "ISRAEL",
+      "reference": "1Samuel 17:1–54",
+      "readingChapterId": "reading-chapter:israel-samuel-david",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-51",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Samuel 17:1–54"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2samuel-2-1-4",
+      "era": "ISRAEL",
+      "reference": "2Samuel 2:1–4",
+      "readingChapterId": "reading-chapter:israel-kingdom",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-54",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Samuel 2:1–4"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2samuel-5-6-10",
+      "era": "ISRAEL",
+      "reference": "2Samuel 5:6–10",
+      "readingChapterId": "reading-chapter:israel-kingdom",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-54",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Samuel 5:6–10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1kings-8-1-66",
+      "era": "ISRAEL",
+      "reference": "1Kings 8:1–66",
+      "readingChapterId": "reading-chapter:israel-kingdom",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-59",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Kings 8:1–66"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1kings-12-1-24",
+      "era": "ISRAEL",
+      "reference": "1Kings 12:1–24",
+      "readingChapterId": "reading-chapter:israel-kingdom",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-61",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Kings 12:1–24"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1kings-18-19-39",
+      "era": "ISRAEL",
+      "reference": "1Kings 18:19–39",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-63",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Kings 18:19–39"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1kings-19-1-18",
+      "era": "ISRAEL",
+      "reference": "1Kings 19:1–18",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-62",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Kings 19:1–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:isaiah-6-1-13",
+      "era": "ISRAEL",
+      "reference": "Isaiah 6:1–13",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-72",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Isaiah 6:1–13"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2kings-17-1-18",
+      "era": "ISRAEL",
+      "reference": "2Kings 17:1–18",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-67",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Kings 17:1–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2kings-23-1-25",
+      "era": "ISRAEL",
+      "reference": "2Kings 23:1–25",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Kings 23:1–25"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:jeremiah-7-1-15",
+      "era": "ISRAEL",
+      "reference": "Jeremiah 7:1–15",
+      "readingChapterId": "reading-chapter:israel-prophets",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Jeremiah 7:1–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:tobit-1-10",
+      "era": "EXILE",
+      "reference": "Tobit 1:10",
+      "readingChapterId": "reading-chapter:exile-experience",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-67",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Tobit 1:10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:daniel-1-1-21",
+      "era": "EXILE",
+      "reference": "Daniel 1:1–21",
+      "readingChapterId": "reading-chapter:exile-experience",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-77",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Daniel 1:1–21"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:ezekiel-1-1-28",
+      "era": "EXILE",
+      "reference": "Ezekiel 1:1–28",
+      "readingChapterId": "reading-chapter:exile-experience",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Ezekiel 1:1–28"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2kings-25-1-12",
+      "era": "EXILE",
+      "reference": "2Kings 25:1–12",
+      "readingChapterId": "reading-chapter:exile-experience",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-75",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Kings 25:1–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2kings-25-8-12",
+      "era": "EXILE",
+      "reference": "2Kings 25:8–12",
+      "readingChapterId": "reading-chapter:exile-experience",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-75",
+        "status": "ONLINE_CHAPTER_OPENED_NOT_COLLATED",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Kings 25:8–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:judith-13-1-20",
+      "era": "EXILE",
+      "reference": "Judith 13:1–20",
+      "readingChapterId": "reading-chapter:exile-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-74",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Judith 13:1–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:esther-4-1-17",
+      "era": "EXILE",
+      "reference": "Esther 4:1–17",
+      "readingChapterId": "reading-chapter:exile-deliverance",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-81",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Esther 4:1–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:ezra-1-1-11",
+      "era": "EXILE",
+      "reference": "Ezra 1:1–11",
+      "readingChapterId": "reading-chapter:exile-restoration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-80",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Ezra 1:1–11"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:ezra-6-13-22",
+      "era": "EXILE",
+      "reference": "Ezra 6:13–22",
+      "readingChapterId": "reading-chapter:exile-restoration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-80",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Ezra 6:13–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:nehemiah-8-1-12",
+      "era": "EXILE",
+      "reference": "Nehemiah 8:1–12",
+      "readingChapterId": "reading-chapter:exile-restoration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-80",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Nehemiah 8:1–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:esther-14-1-19",
+      "era": "EXILE",
+      "reference": "Esther 14:1–19",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-81",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Esther 14:1–19"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:baruch-5-1-9",
+      "era": "EXILE",
+      "reference": "Baruch 5:1–9",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Baruch 5:1–9"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:daniel-3-24-90",
+      "era": "EXILE",
+      "reference": "Daniel 3:24–90",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-77",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Daniel 3:24–90"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:daniel-13-1-64",
+      "era": "EXILE",
+      "reference": "Daniel 13:1–64",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-76",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Daniel 13:1–64"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:daniel-14-1-22",
+      "era": "EXILE",
+      "reference": "Daniel 14:1–22",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-78",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Daniel 14:1–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:daniel-14-23-42",
+      "era": "EXILE",
+      "reference": "Daniel 14:23–42",
+      "readingChapterId": "reading-chapter:exile-sacred-texts",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-78",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Daniel 14:23–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:sirach-24-1-22",
+      "era": "EXILE",
+      "reference": "Sirach 24:1–22",
+      "readingChapterId": "reading-chapter:exile-wisdom-a",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-82",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Sirach 24:1–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:2maccabees-7-1-42",
+      "era": "EXILE",
+      "reference": "2Maccabees 7:1–42",
+      "readingChapterId": "reading-chapter:exile-maccabees",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-84",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "2Maccabees 7:1–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1maccabees-2-1-5",
+      "era": "EXILE",
+      "reference": "1Maccabees 2:1–5",
+      "readingChapterId": "reading-chapter:exile-maccabees",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-85",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Maccabees 2:1–5"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:1maccabees-4-36-59",
+      "era": "EXILE",
+      "reference": "1Maccabees 4:36–59",
+      "readingChapterId": "reading-chapter:exile-maccabees",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-OT-85",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "1Maccabees 4:36–59"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:wisdom-7-7-14",
+      "era": "EXILE",
+      "reference": "Wisdom 7:7–14",
+      "readingChapterId": "reading-chapter:exile-wisdom-b",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Wisdom 7:7–14"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:nazareth-e1",
+      "era": "INFANCY",
+      "reference": "Luke 1:26–38",
+      "readingChapterId": "reading-chapter:infancy-annunciation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-2",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 1:26–38"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:nazareth-additional-001",
+      "era": "INFANCY",
+      "reference": "Matthew 1:18–25",
+      "readingChapterId": "reading-chapter:infancy-annunciation",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 1:18–25"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:ein-karem-e1",
+      "era": "INFANCY",
+      "reference": "Luke 1:39–56",
+      "readingChapterId": "reading-chapter:infancy-annunciation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-3",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 1:39–56"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethlehem-e1",
+      "era": "INFANCY",
+      "reference": "Luke 2:1–20",
+      "readingChapterId": "reading-chapter:infancy-annunciation",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-5",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 2:1–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethlehem-additional-002",
+      "era": "INFANCY",
+      "reference": "Luke 2:21–21",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 2:21–21"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jerusalem-temple-e1",
+      "era": "INFANCY",
+      "reference": "Luke 2:22–38",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-7",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 2:22–38"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethlehem-e2",
+      "era": "INFANCY",
+      "reference": "Matthew 2:1–12",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-8",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 2:1–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethlehem-additional-003",
+      "era": "INFANCY",
+      "reference": "Matthew 2:16–18",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-9",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 2:16–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:egypt-e1",
+      "era": "INFANCY",
+      "reference": "Matthew 2:13–15",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-9",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 2:13–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:egypt-e2",
+      "era": "INFANCY",
+      "reference": "Matthew 2:19–23",
+      "readingChapterId": "reading-chapter:infancy-holy-family",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-9",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 2:19–23"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jerusalem-temple-e2",
+      "era": "INFANCY",
+      "reference": "Luke 2:41–52",
+      "readingChapterId": "reading-chapter:infancy-hidden",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-10",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 2:41–52"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:nazareth-additional-006",
+      "era": "INFANCY",
+      "reference": "Luke 2:51–52",
+      "readingChapterId": "reading-chapter:infancy-hidden",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-10",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 2:51–52"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jordan-baptism-e1",
+      "era": "PUBLIC",
+      "reference": "Matthew 3:13–17",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-12",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 3:13–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jordan-east-bank-additional-008",
+      "era": "PUBLIC",
+      "reference": "John 1:35–51",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-13",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 1:35–51"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:judean-wilderness-e1",
+      "era": "PUBLIC",
+      "reference": "Matthew 4:1–11",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-12",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 4:1–11"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:cana-e1",
+      "era": "PUBLIC",
+      "reference": "John 2:1–11",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-14",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 2:1–11"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jerusalem-temple-e3",
+      "era": "PUBLIC",
+      "reference": "John 2:13–22",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-15",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 2:13–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:galilee-sea-e1",
+      "era": "PUBLIC",
+      "reference": "Mark 1:16–20",
+      "readingChapterId": "reading-chapter:public-beginnings",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-19",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 1:16–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:capernaum-e1",
+      "era": "PUBLIC",
+      "reference": "Mark 1:21–28",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-18",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 1:21–28"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:capernaum-miracle-04",
+      "era": "PUBLIC",
+      "reference": "Mark 1:29–31",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-18",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 1:29–31"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:capernaum-e2",
+      "era": "PUBLIC",
+      "reference": "Mark 2:1–12",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-20",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 2:1–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:beatitudes-e2",
+      "era": "PUBLIC",
+      "reference": "Matthew 5:13–48",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-21",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 5:13–48"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:galilee-sea-e2",
+      "era": "PUBLIC",
+      "reference": "Mark 4:35–41",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-29",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 4:35–41"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:galilee-sea-e3",
+      "era": "PUBLIC",
+      "reference": "Matthew 14:22–33",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-33",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 14:22–33"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:beatitudes-additional-021",
+      "era": "PUBLIC",
+      "reference": "Luke 6:12–16",
+      "readingChapterId": "reading-chapter:public-teaching",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-31",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 6:12–16"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:sychar-e1",
+      "era": "PUBLIC",
+      "reference": "John 4:4–26",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-16",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 4:4–26"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:sychar-additional-013",
+      "era": "PUBLIC",
+      "reference": "John 4:39–42",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-16",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 4:39–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:cana-miracle-02",
+      "era": "PUBLIC",
+      "reference": "John 4:46–54",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-16",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 4:46–54"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethesda-miracle-18",
+      "era": "PUBLIC",
+      "reference": "John 5:1–15",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-26",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 5:1–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:nain-e1",
+      "era": "PUBLIC",
+      "reference": "Luke 7:11–17",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-23",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 7:11–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:tabgha-e1",
+      "era": "PUBLIC",
+      "reference": "John 6:1–15",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-33",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 6:1–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:capernaum-e3",
+      "era": "PUBLIC",
+      "reference": "John 6:24–59",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-34",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 6:24–59"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethsaida-miracle-25",
+      "era": "PUBLIC",
+      "reference": "Mark 8:22–26",
+      "readingChapterId": "reading-chapter:public-encounters",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Mark 8:22–26"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:caesarea-philippi-e1",
+      "era": "PUBLIC",
+      "reference": "Matthew 16:13–20",
+      "readingChapterId": "reading-chapter:public-transfiguration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-36",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 16:13–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:caesarea-philippi-additional-044",
+      "era": "PUBLIC",
+      "reference": "Matthew 16:21–28",
+      "readingChapterId": "reading-chapter:public-transfiguration",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 16:21–28"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:transfiguration-e1",
+      "era": "PUBLIC",
+      "reference": "Matthew 17:1–8",
+      "readingChapterId": "reading-chapter:public-transfiguration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-37",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 17:1–8"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:transfiguration-additional-045",
+      "era": "PUBLIC",
+      "reference": "Matthew 17:9–13",
+      "readingChapterId": "reading-chapter:public-transfiguration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-37",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 17:9–13"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:siloam-miracle-26",
+      "era": "PUBLIC",
+      "reference": "John 9:1–12",
+      "readingChapterId": "reading-chapter:public-transfiguration",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-48",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 9:1–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethany-e1",
+      "era": "PUBLIC",
+      "reference": "John 11:1–44",
+      "readingChapterId": "reading-chapter:public-toward-jerusalem",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-54",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 11:1–44"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethany-additional-057",
+      "era": "PUBLIC",
+      "reference": "Luke 10:38–42",
+      "readingChapterId": "reading-chapter:public-toward-jerusalem",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-43",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 10:38–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethany-e2",
+      "era": "PUBLIC",
+      "reference": "John 12:1–8",
+      "readingChapterId": "reading-chapter:public-toward-jerusalem",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-55",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 12:1–8"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jericho-e1",
+      "era": "PUBLIC",
+      "reference": "Luke 18:35–43",
+      "readingChapterId": "reading-chapter:public-toward-jerusalem",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 18:35–43"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jericho-e2",
+      "era": "PUBLIC",
+      "reference": "Luke 19:1–10",
+      "readingChapterId": "reading-chapter:public-toward-jerusalem",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 19:1–10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:bethphage-e1",
+      "era": "PASSION",
+      "reference": "Matthew 21:1–7",
+      "readingChapterId": "reading-chapter:passion-entry-supper",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-56",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 21:1–7"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:olives-e1",
+      "era": "PASSION",
+      "reference": "Luke 19:37–44",
+      "readingChapterId": "reading-chapter:passion-entry-supper",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-56",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 19:37–44"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:cenacle-e1",
+      "era": "PASSION",
+      "reference": "Luke 22:7–20",
+      "readingChapterId": "reading-chapter:passion-entry-supper",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-65",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 22:7–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:cenacle-e2",
+      "era": "PASSION",
+      "reference": "John 13:1–17",
+      "readingChapterId": "reading-chapter:passion-entry-supper",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-64",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 13:1–17"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:gethsemane-e1",
+      "era": "PASSION",
+      "reference": "Matthew 26:36–46",
+      "readingChapterId": "reading-chapter:passion-arrest-trial",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-69",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 26:36–46"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:gethsemane-e2",
+      "era": "PASSION",
+      "reference": "Matthew 26:47–56",
+      "readingChapterId": "reading-chapter:passion-arrest-trial",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-70",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 26:47–56"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jerusalem-trial-e2",
+      "era": "PASSION",
+      "reference": "Matthew 27:11–26",
+      "readingChapterId": "reading-chapter:passion-arrest-trial",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-73",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 27:11–26"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:jerusalem-trial-e3",
+      "era": "PASSION",
+      "reference": "John 19:1–16",
+      "readingChapterId": "reading-chapter:passion-arrest-trial",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-74",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 19:1–16"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:golgotha-e2",
+      "era": "PASSION",
+      "reference": "John 19:17–30",
+      "readingChapterId": "reading-chapter:passion-calvary",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-75",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 19:17–30"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:golgotha-e3",
+      "era": "PASSION",
+      "reference": "Luke 23:39–43",
+      "readingChapterId": "reading-chapter:passion-calvary",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-76",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 23:39–43"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:christ-tomb-e1",
+      "era": "PASSION",
+      "reference": "John 19:38–42",
+      "readingChapterId": "reading-chapter:passion-calvary",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-77",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 19:38–42"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:christ-tomb-e2",
+      "era": "RESURRECTION",
+      "reference": "John 20:1–18",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-78",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 20:1–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:christ-tomb-e3",
+      "era": "RESURRECTION",
+      "reference": "Matthew 28:1–10",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-78",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Matthew 28:1–10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:emmaus-e1",
+      "era": "RESURRECTION",
+      "reference": "Luke 24:13–35",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-80",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Luke 24:13–35"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:cenacle-e3",
+      "era": "RESURRECTION",
+      "reference": "John 20:19–29",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-81",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 20:19–29"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:galilee-sea-e4",
+      "era": "RESURRECTION",
+      "reference": "John 21:1–14",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-82",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "John 21:1–14"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:event:olives-e3",
+      "era": "RESURRECTION",
+      "reference": "Acts 1:6–12",
+      "readingChapterId": "reading-chapter:resurrection",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-83",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 1:6–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-2-1-41",
+      "era": "APOSTLES",
+      "reference": "Acts 2:1–41",
+      "readingChapterId": "reading-chapter:apostles-church",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-84",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 2:1–41"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-3-1-10",
+      "era": "APOSTLES",
+      "reference": "Acts 3:1–10",
+      "readingChapterId": "reading-chapter:apostles-church",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-85",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 3:1–10"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-7-54-60",
+      "era": "APOSTLES",
+      "reference": "Acts 7:54–60",
+      "readingChapterId": "reading-chapter:apostles-church",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-88",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 7:54–60"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-8-26-40",
+      "era": "APOSTLES",
+      "reference": "Acts 8:26–40",
+      "readingChapterId": "reading-chapter:apostles-church",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-89",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 8:26–40"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-9-1-22",
+      "era": "APOSTLES",
+      "reference": "Acts 9:1–22",
+      "readingChapterId": "reading-chapter:apostles-conversion",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-90",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 9:1–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-9-29-30",
+      "era": "APOSTLES",
+      "reference": "Acts 9:29–30",
+      "readingChapterId": "reading-chapter:apostles-conversion",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-90",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 9:29–30"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-9-36-43",
+      "era": "APOSTLES",
+      "reference": "Acts 9:36–43",
+      "readingChapterId": "reading-chapter:apostles-conversion",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-91",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 9:36–43"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-10-1-48",
+      "era": "APOSTLES",
+      "reference": "Acts 10:1–48",
+      "readingChapterId": "reading-chapter:apostles-conversion",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-92",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 10:1–48"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-11-19-26",
+      "era": "APOSTLES",
+      "reference": "Acts 11:19–26",
+      "readingChapterId": "reading-chapter:apostles-conversion",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-94",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 11:19–26"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-14-8-18",
+      "era": "APOSTLES",
+      "reference": "Acts 14:8–18",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-94",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 14:8–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-15-1-29",
+      "era": "APOSTLES",
+      "reference": "Acts 15:1–29",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-95",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 15:1–29"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-16-11-15",
+      "era": "APOSTLES",
+      "reference": "Acts 16:11–15",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-96",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 16:11–15"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-17-1-9",
+      "era": "APOSTLES",
+      "reference": "Acts 17:1–9",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-96",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 17:1–9"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-17-16-34",
+      "era": "APOSTLES",
+      "reference": "Acts 17:16–34",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-96",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 17:16–34"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-18-1-18",
+      "era": "APOSTLES",
+      "reference": "Acts 18:1–18",
+      "readingChapterId": "reading-chapter:apostles-first-missions",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-96",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 18:1–18"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-19-1-20",
+      "era": "APOSTLES",
+      "reference": "Acts 19:1–20",
+      "readingChapterId": "reading-chapter:apostles-rome",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-97",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 19:1–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-20-7-12",
+      "era": "APOSTLES",
+      "reference": "Acts 20:7–12",
+      "readingChapterId": "reading-chapter:apostles-rome",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-97",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 20:7–12"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-20-17-38",
+      "era": "APOSTLES",
+      "reference": "Acts 20:17–38",
+      "readingChapterId": "reading-chapter:apostles-rome",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-97",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 20:17–38"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-27-13-44",
+      "era": "APOSTLES",
+      "reference": "Acts 27:13–44",
+      "readingChapterId": "reading-chapter:apostles-rome",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-98",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 27:13–44"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:acts-28-16-31",
+      "era": "APOSTLES",
+      "reference": "Acts 28:16–31",
+      "readingChapterId": "reading-chapter:apostles-rome",
+      "english": {
+        "workId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+        "sectionId": "KNECHT-NT-98",
+        "status": "TOC_TOPIC_CANDIDATE_ONLY",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Acts 28:16–31"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:revelation-1-9-20",
+      "era": "REVELATION",
+      "reference": "Revelation 1:9–20",
+      "readingChapterId": "reading-chapter:revelation-letters",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Revelation 1:9–20"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:revelation-2-1-29",
+      "era": "REVELATION",
+      "reference": "Revelation 2:1–29",
+      "readingChapterId": "reading-chapter:revelation-letters",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Revelation 2:1–29"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:revelation-3-1-22",
+      "era": "REVELATION",
+      "reference": "Revelation 3:1–22",
+      "readingChapterId": "reading-chapter:revelation-letters",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Revelation 3:1–22"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:revelation-4-1-11",
+      "era": "REVELATION",
+      "reference": "Revelation 4:1–11",
+      "readingChapterId": "reading-chapter:revelation-heavenly",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Revelation 4:1–11"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    },
+    {
+      "eventKey": "biblical:passage:revelation-21-1-27",
+      "era": "REVELATION",
+      "reference": "Revelation 21:1–27",
+      "readingChapterId": "reading-chapter:revelation-heavenly",
+      "english": {
+        "workId": null,
+        "sectionId": null,
+        "status": "NO_SELECTED_AUTHORED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "french": {
+        "workId": null,
+        "sectionId": null,
+        "status": "WORK_IDENTIFIED_NO_VERIFIED_SECTION",
+        "approvedParagraphs": [],
+        "importedText": false
+      },
+      "fallback": {
+        "nativeCatholicScriptureReader": true,
+        "reference": "Revelation 21:1–27"
+      },
+      "authorship": "EXISTING_CATHOLIC_AUTHOR_OR_SCRIPTURE_ONLY"
+    }
+  ],
+  "counts": {
+    "canonicalEvents": 151,
+    "sourceSections": 101,
+    "english": {
+      "ONLINE_CHAPTER_OPENED_NOT_COLLATED": 10,
+      "TOC_TOPIC_CANDIDATE_ONLY": 125,
+      "NO_SELECTED_AUTHORED_SECTION": 16
+    },
+    "frenchVerifiedEventSections": 0,
+    "approvedAuthorTextPassages": 0
+  }
+}
