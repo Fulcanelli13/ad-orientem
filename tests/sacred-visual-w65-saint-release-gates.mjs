@@ -12,6 +12,7 @@ assert.equal(release.publishedPortraitAssets,0);
 assert.equal(release.guardrails.singleCanonicalArtId,true);
 assert.equal(release.guardrails.noNewPaintingOrNewRating,true);
 assert.equal(release.guardrails.neverReleaseWhenRightsUnknown,true);
+const canonicalFive=read("data/research/sacred-visual-w64-explicit-user-5star-physical-record-authority-20261015.v1.json");
 const ids=new Set();
 for(const r of release.entries){
  const original=prior.saintPilotPortraitArtworkCandidates.find(x=>x.canonicalSaintId===r.saintId);
@@ -24,6 +25,11 @@ for(const r of release.entries){
  assert.equal(r.releaseAllowed,false);
  assert.equal(r.provenance.ratedImageMatched,false);
  assert.equal(r.provenance.originalObjectId,null);
+ const w64=canonicalFive.personAndSubjectOwnedRating5Records.find(x=>x.recordId===r.artworkId);
+ assert.ok(w64,"Technical gate must reference originally rated physical record");
+ assert.equal(r.provenance.ratedSourceLandingPageUrl,w64.museumSourceURL);
+ assert.equal(r.provenance.ratedSourceLandingPageMatchesW64,true);
+ assert.equal(r.provenance.ratedFileSha256,null,"Matching webpage must not be misreported as exact original pixels");
  assert.equal(r.media.localAsset,null);
  assert.equal(r.media.rightsVerified,false);
  assert.equal(r.media.phoneVisualQA,false);
@@ -42,6 +48,9 @@ assert.equal(margaret.media.originalListedHeight,600);
 assert.equal(margaret.provenance.claimedMuseum,"Vatican Museums");
 assert.match(margaret.source,/commons\.wikimedia\.org\/wiki\/File:/);
 assert.equal(margaret.rights.permissionProof,null);
+assert.equal(margaret.provenance.primaryMuseumAccessionVerified,false);
+assert.equal(margaret.provenance.independentPublishedObjectAttribution.status,
+"SECONDARY_SCHOLARLY_CORROBORATION_OF_ARTIST_AND_COLLECTION_NOT_PRIMARY_ACCESSION_CERTIFICATION");
 assert.deepEqual(prior.saintPilotWithoutMatchedFiveStarInThisPass.map(x=>x.saintId).sort(),
 ["blessed:jacques-desire-laval","saint:bernadette-soubirous","saint:claude-la-colombiere","saint:peter-chanel"].sort());
 console.log("PASS: W65 two existing user-five saint artworks retain aesthetic approval, exact original rights/file/mobile holds, no publication");
