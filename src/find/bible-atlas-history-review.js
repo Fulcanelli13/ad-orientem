@@ -40,33 +40,34 @@ export const ATLAS_HISTORY_REVIEW_NOTES=Object.freeze([
   {
     "key": "joppa",
     "era": "APOSTLES",
-    "en": "Ioppe is a Greek-form name for Joppa in ancient geographical records; older Near Eastern records preserve other forms. The map keeps the familiar Biblical name.",
-    "fr": "Ioppé est une forme grecque du nom de Joppé dans les sources géographiques anciennes ; des formes plus anciennes sont aussi attestées. La carte conserve le nom biblique familier.",
+    "en": "Acts 9:36 uses Greek Ἰόππη for Joppa; the Latin Vulgate reads Ioppe. These are language forms of the same place, not evidence of a city being renamed.",
+    "fr": "En Actes 9,36, le grec écrit Ἰόππη pour Joppé ; la Vulgate latine écrit Ioppe. Ce sont des formes linguistiques d’un même lieu, non la preuve d’un changement de nom de la ville.",
     "pleiades": "https://pleiades.stoa.org/places/687931/ioppe",
     "sources": [
-      "https://pleiades.stoa.org/places/687931"
+      "https://jerihna.sourceschretiennes.org/en/bible-names/forms/17205",
+      "https://jerihna.sourceschretiennes.org/en/bible-names/lemmas/2579"
     ]
   },
   {
     "key": "nineveh",
     "era": "EXILE",
-    "en": "Ninuwā is an ancient Mesopotamian form of Nineveh’s name. It is a linguistic reference, not a precise date or archaeological location for Jonah’s account.",
-    "fr": "Ninuwā est une forme mésopotamienne ancienne du nom de Ninive. Elle indique une tradition linguistique, non une date précise ni le lieu exact du récit de Jonas.",
+    "en": "Ninuwā is a scholarly transcription of an ancient name for Nineveh; cuneiform catalogues also normalize related forms as Ninua. Neither spelling establishes the date of Jonah’s account.",
+    "fr": "Ninuwā est une transcription savante d’un ancien nom de Ninive ; les catalogues cunéiformes normalisent aussi des formes apparentées en Ninua. Aucune de ces graphies ne permet de dater le récit de Jonas.",
     "pleiades": "https://pleiades.stoa.org/places/874621/ninuwa",
     "sources": [
-      "https://oracc2.museum.upenn.edu/epsd2/cbd/sux/o0047097.html",
-      "https://pleiades.stoa.org/places/874621"
+      "https://oracc.museum.upenn.edu/atae/cbd/qpn/x000001080.html",
+      "https://oracc2.museum.upenn.edu/epsd2/cbd/sux/o0047097.html"
     ]
   },
   {
     "key": "babylon",
     "era": "EXILE",
-    "en": "Bābili is an ancient name for Babylon recorded in Mesopotamian sources. The English and French Biblical names remain the primary map labels.",
-    "fr": "Bābili est un ancien nom de Babylone attesté dans les sources mésopotamiennes. Les noms bibliques français et anglais restent ceux de la carte.",
+    "en": "Bābili is an attested scholarly form of Babylon’s ancient name, recorded in cuneiform catalogues. It identifies the city, not a particular palace or an exact date for the exile.",
+    "fr": "Bābili est une forme savante attestée de l’ancien nom de Babylone dans les catalogues cunéiformes. Elle désigne la ville, non un palais précis ni une date exacte de l’Exil.",
     "pleiades": "https://pleiades.stoa.org/places/893951/name.2018-01-06.8890273340",
     "sources": [
-      "https://oracc.museum.upenn.edu/geonames/cbd/qpn/x000000440.html",
-      "https://pleiades.stoa.org/places/893951"
+      "https://oracc.museum.upenn.edu/cmawro/cmawr3/cbd/qpn/x000000100.html",
+      "https://oracc.museum.upenn.edu/ribo/babylon7/cbd/qpn/x000000070.html"
     ]
   },
   {
@@ -94,11 +95,12 @@ export const ATLAS_HISTORY_REVIEW_NOTES=Object.freeze([
   {
     "key": "philippi",
     "era": "APOSTLES",
-    "en": "The settlement was called Krenides before Philip II renamed it Philippi in 356 BC. St Paul visited a later Roman colony of the same name.",
-    "fr": "La ville s’appelait Krénidès avant que Philippe II ne la renomme Philippes en 356 av. J.-C. Saint Paul visita ensuite une colonie romaine.",
+    "en": "The city was known as Krenides until Philip II renamed it Philippi in 356 BC. St Paul later visited Philippi as a Roman colony; the earlier name is historical context, not the Acts-era name.",
+    "fr": "La cité s’appelait Krénidès jusqu’à ce que Philippe II la renomme Philippes en 356 av. J.-C. Saint Paul visita ensuite la colonie romaine : l’ancien nom éclaire son histoire, mais n’est pas celui des Actes.",
     "pleiades": "https://pleiades.stoa.org/places/501482/krenides",
     "sources": [
-      "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aentry%3Dphilippi"
+      "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aentry%3Dphilippi",
+      "https://whc.unesco.org/en/list/1517"
     ]
   },
   {
