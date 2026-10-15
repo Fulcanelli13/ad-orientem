@@ -49,3 +49,14 @@ Two [cross-owner review comments](https://github.com/Fulcanelli13/ad-orientem/pu
 ## 4. Hard publication rules
 
 1962 Calendar and modern saint discovery remain independent; no silent modern feast insertion. Recognized collective saints remain one group profile unless individually historically significant. Source reference links stay compact and expandable; texts are not copied into oversized profiles. No new physical pins, no duplicate artwork masters and no portrait without current art approval. Neither the 365 source-run JSON nor its raw counts is a certified 365-day independent rubrical audit.
+
+## 5. New: 365-date person/group/artwork demand triage
+
+The existing 365-day extractor now drives a **second reproducible CI-generated JSON**:
+- [Passing CI source + triage run](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221)
+- [Two original JSON files in one artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221/artifacts/11970800681): `saints-calendar-2026-observed-owner-census.json` plus `saints-2026-daily-subject-demand-review.json`.
+- Deterministic transformation code: `tools/saints/project-observed-day-subject-demand.mjs`. It contains six specific lexical regression examples (Saint Hilary, Fabian/Sebastian group, Lourdes Marian celebration, Mary Magdalene person, John the Baptist Nativity vigil event, Michael archangel dedication). These **hints are editorial search aids, not certified identity classifications**.
+
+Every one of the **365 dates** has an explicit source-ID record and both `calendar_artwork_daily_coverage: NOT_YET_AUDITED` and `saint_of_day_artwork_coverage: NOT_YET_AUDITED`. Within those days, 165 observed Sanctoral main titles and 117 named commemorations yield **282 unadjudicated title occurrences on 222 dates**. Their purely lexical *review queue* yields 187 individual/person-looking titles, 41 collective/group-looking, 17 Marian/contextual and 37 other source-title hints. **These are neither person counts nor suitable/approved picture counts.** Every proposed person ID and artwork binding is null; not a single new person or picture has been promoted.
+
+The other **143 dates** with zero such source-title mentions are *not* proven to have missing artwork: many contain Temporale Masses, Sundays, seasonal ferias and devotions with separate imagery needs owned by W61/W62. Thus neither 222/365 nor 282/311 is a genuine "image coverage" percentage. Art research should join exact physical-artwork subject IDs and existing user approvals before computing date-level coverage.
