@@ -1,0 +1,89 @@
+{
+  "schema": "AO_REFERENCE_SOURCE_OWNER_HANDOFF_V1",
+  "date": "2026-10-15",
+  "purpose": "Non-destructive exact-URL link audit and compact read-further review, not a source corpus or new authority.",
+  "owners": {
+    "canonical": "data/reference/canonical-works-pilot.v1.json",
+    "formationBaseline": "data/reference/formation-canonical-source-crosswalk.v1.json",
+    "formationCurrent": "data/reference/formation-current-source-reconciliation.v2.json",
+    "formationCurrentSourceBlobSha": "ba73286fa26f8564f0dc33048551ee527b597c27",
+    "massComparison": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
+    "massGate": "data/mass/source-reconciliation-gates.v1.json"
+  },
+  "baseline": {
+    "formationBindings": 408,
+    "urlWitnesses": 304
+  },
+  "current": {
+    "formationBindings": 527,
+    "urlWitnesses": 332,
+    "existingBindingsRemoved": 0,
+    "addedByExistingOwner": 119,
+    "currentClaimCertificationsNew": 0,
+    "formationEvidenceEdges": 1529,
+    "formationScopedDossiers": 141
+  },
+  "mass": {
+    "historicalNormativeComparisonRows": 15,
+    "existingSources": 3,
+    "newNormativeActionsAllowed": 0,
+    "original1962Authority": "RITUS_SERVANDUS_ONLY",
+    "addedReferenceClaims": 0
+  },
+  "exactUrlMatches": [
+    {
+      "bindingKey": "FORM-SYN-02::HUME-MIRACLE-X",
+      "profileId": "WIT-HUME-E10-ONLINE",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY_OPPONENT_ROLE_PRESERVED__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-02::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-03::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-06::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    }
+  ],
+  "assessment": {
+    "missingHistoricalFormationSourceBindings": 0,
+    "historicalUncitedRegistryLeads": 12,
+    "historicalUncitedRegistryLeadsAreNotMissingClaims": true,
+    "formationRefsWithoutInspectedProfileAreNotAutomaticallyGaps": true,
+    "deepSourceLocatorsNotGloballyVerified": true,
+    "publicationApproved": false,
+    "newExactPassageCertifications": 0,
+    "newBookImports": 0,
+    "newModuleContent": 0,
+    "newMassCardChanges": 0
+  },
+  "displayPolicy": {
+    "defaultSurface": "NONE_UNTIL_OWNER_APPROVED",
+    "optionalSurfaceAfterOwnerReview": "READ_FURTHER_EXTERNAL_LINK",
+    "inlineAttributionRule": "ONLY_IF_EXISTING_OWNER_APPROVES_CLAIM_LEVEL_SOURCE_CONTEXT",
+    "deepLocatorRule": "PRESERVE_EXISTING_ORIGINAL_LOCATOR_VERBATIM_AND_EDITION_QUALIFY_WHEN_VERIFIED",
+    "doNotAssume": "URL_EQUALITY_IS_NOT_CITATION_OR_AUTHORIAL_QUOTE_CERTIFICATION",
+    "bibliographyStyle": "NO_HARVARD_OR_APA_CLUTTER",
+    "sourceRole": "PRESERVE_HISTORICAL_OPPONENT_VS_CATHOLIC_PRIMARY_ROLE",
+    "noFullWorks": true
+  },
+  "nextOwnerActions": [
+    "Formation source owner: confirm applicability of only four possible URL-profile matches before any user-facing citations; no blanket source reverification.",
+    "Formation source owner: decide whether its 12 historical uncited registry entries are intentional further-reading resources, not automatically missing evidence.",
+    "Mass owner: retain existing 15 source comparison rows and 1962 governing authority; only integrate a verified deep link if needed.",
+    "Reader/UI owner: compact inline citation where context approved, optional Read further links, no large reference cards or downloadable books."
+  ],
+  "currentOwnerDatasetPresentOnSourceTextFeatureBranch": false,
+  "note": "The 527/332 current owner metrics are from main v2, created after the source-text feature branch fork. The old 408/304 crosswalk remains historical. This handoff records pointers and counts only, not 119 duplicated source records."
+}
