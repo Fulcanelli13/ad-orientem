@@ -41,3 +41,21 @@ The full Explore regression fixture was updated **only** to add the new lens wit
 ## Observed unrelated baseline concern
 
 The existing content architecture census historically assumed 182 geographical Places while main now owns 258. That static assertion needs synchronization in the owning Content pipeline. This feature does **not** change geographic Place counts or modify that unrelated census test. All Explore-source projection and Saints-owner checks must still pass.
+
+## Phase 5: identity classification, extraordinary phenomena, and observed Calendar matching
+
+**Canonical profile data remains in** `data/saints/holiness-first-editorial-pilot-20261015.v1.json`, not in a new directory of duplicate biographies. The additive structure is documented by `data/saints/classification-taxonomy.v1.json` and validated in `src/find/saints-classification.js`.
+
+The first six biographies carry **one formal Doctor title**, **16 separately sourced descriptive role assignments**, and **two source-identified reported apparitions**, with EN/FR labels and specific primary references. Roles currently represented include contemplative religious, religious, spiritual writer, priest, spiritual director, missionary, martyr, mystic, visionary witness and pastoral charity. This is not a comprehensive taxonomy census. Doctor of the Church has a formal papal basis, not merely a theologian descriptor. The two extraordinary accounts are **Bernadette’s Marian apparition testimony** (Benedict XVI 2007) and **Margaret Mary’s Christ/Sacred Heart experience** (Francis, *Dilexit nos* 2024 §§119–121). They are deliberately presented as source-described reports, with nuances on discernment, not as every detail independently proved.
+
+**No source-vetted personal cures, stigmata, bilocations or levitation entries are assigned to these six.** That means *not yet established by the sources used here*, not that these things never happened. Neither Lourdes healing testimonies nor canonization/intercessory miracles are attached as miracles physically performed by Bernadette. Lived holiness, miraculous claims, beatification/canonization and sanctioned shrine cult remain separate concepts. Avoid promoting 0 miracles as a quantitative claim.
+
+UI: concise documented role labels under names; an additional closed **Reported extraordinary experiences** section where a qualifying account actually exists, with immediate sources. Category words are indexed in the existing native search (Doctor, Mystic, Martyr, etc.) and do not create a competing Browse service. Empty sections stay hidden. Existing image approval holds remain.
+
+The source-backed **1962 Calendar crosswalk** is in `data/saints/1962-observed-identity-crosswalk-pilot.v1.json`. The existing `AO_RUNTIME_V8.resolver.resolveDay` and `observedCycle` verified, for **2026**:
+- 3 October 2026: **Thérèse of Lisieux** principal source `sancti:10-03:3:w`.
+- 17 October 2026: **Margaret Mary Alacoque** principal source `sancti:10-17:3:w`.
+
+This verifies exactly those two **observed 2026 days**. It does not certify every future year's precedence/transfer or locally approved feasts. Bernadette, Peter Chanel, Claude La Colombière and Blessed Père Laval are **not automatically inserted into the general 1962 Calendar**; the latter two had their canonization/beatification after 1962, and local/religious propers may cover other figures. Calendar source resolver, commemorations, rubrics, rank and output have **not been modified** in this PR.
+
+Validation adds classification checks in `tests/saints-explore-native-lens.mjs` and date-source checks against the **actual browser runtime resolver** within `tests/saints-native-visual-acceptance.mjs`, not a claimed exhaustive full-year static mapping. Further source and art sign-off remain separate owning pipelines.
