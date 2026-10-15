@@ -950,6 +950,54 @@
       "codes": {
         "iso_alpha2": "BA"
       }
+    },
+    {
+      "geo_area_id": "geo:country:CN",
+      "name": {
+        "official": "China",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CN"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GT",
+      "name": {
+        "official": "Guatemala",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PY",
+      "name": {
+        "official": "Paraguay",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PY"
+      }
     }
   ],
   "places": [
@@ -9594,6 +9642,294 @@
         "SG-R71-MEDJUGORJE-PARISH",
         "SG-R71-MEDJUGORJE-GEO",
         "SG-R71-MEDJUGORJE-DDF"
+      ]
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "name": {
+        "official": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+        "aliases": [
+          "Sanctuary of the Eucharistic Miracle, Lanciano",
+          "Church of San Francesco, Lanciano",
+          "Sanctuaire du Miracle eucharistique de Lanciano"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.23045,
+        "lng": 14.39031,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/28525201",
+        "source_ref": "osm:way:28525201",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Lanciano",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Chiesa di San Francesco, Corso Roma 1, 66034 Lanciano, Italy"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0054",
+        "SG-R72-GEO-SG-INV-0054"
+      ]
+    },
+    {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "name": {
+        "official": "Igreja de Santo Estêvão — Santuário do Santíssimo Milagre, Santarém",
+        "aliases": [
+          "Church of the Holy Miracle, Santarém",
+          "Igreja do Santíssimo Milagre",
+          "Sanctuaire du Très-Saint Miracle de Santarém"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:PT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 39.233463,
+        "lng": -8.681835,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/166962185",
+        "source_ref": "osm:way:166962185",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Santarém",
+        "region": null,
+        "country_code": "PT",
+        "country": "Portugal",
+        "formatted": "Largo do Milagre, Santarém, Portugal"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0152",
+        "SG-R72-GEO-SG-INV-0152"
+      ]
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "name": {
+        "official": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+        "aliases": [
+          "Shrine of Máriapócs",
+          "Basilica of St Michael, Máriapócs",
+          "Sanctuaire grec-catholique de Máriapócs"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:HU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.8782,
+        "lng": 22.02413,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/374198364",
+        "source_ref": "osm:way:374198364",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HU",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Máriapócs",
+        "region": null,
+        "country_code": "HU",
+        "country": "Hungary",
+        "formatted": "Kossuth Lajos tér 25, 4326 Máriapócs, Hungary"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0320",
+        "SG-R72-GEO-SG-INV-0320"
+      ]
+    },
+    {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "name": {
+        "official": "Basilica of Our Lady Help of Christians — Sheshan",
+        "aliases": [
+          "Sheshan Basilica",
+          "National Shrine of Our Lady of Sheshan",
+          "佘山进教之佑圣母大殿",
+          "Basilique de Notre-Dame de Sheshan"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.09631,
+        "lng": 121.18795,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/164102861",
+        "source_ref": "osm:way:164102861",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CN",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Sheshan, Shanghai",
+        "region": null,
+        "country_code": "CN",
+        "country": "China",
+        "formatted": "Huan Shan Road, Songjiang District, Shanghai 201620, China"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0610",
+        "SG-R72-GEO-SG-INV-0610"
+      ]
+    },
+    {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "name": {
+        "official": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+        "aliases": [
+          "Our Lady of Manaoag Shrine",
+          "Nuestra Señora del Santísimo Rosario de Manaoag",
+          "Basilique Notre-Dame du Rosaire de Manaoag"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 16.04398,
+        "lng": 120.48887,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/43416663",
+        "source_ref": "osm:way:43416663",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Manaoag",
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "Poblacion, Manaoag, Pangasinan, Philippines"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0633",
+        "SG-R72-GEO-SG-INV-0633"
+      ]
+    },
+    {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "name": {
+        "official": "Basílica del Santo Cristo Crucificado de Esquipulas",
+        "aliases": [
+          "Basilica of the Black Christ of Esquipulas",
+          "Cathedral Basilica of Esquipulas",
+          "Basilique du Christ noir d’Esquipulas"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:GT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.56175,
+        "lng": -89.35078,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/201148890",
+        "source_ref": "osm:way:201148890",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "GT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Esquipulas",
+        "region": null,
+        "country_code": "GT",
+        "country": "Guatemala",
+        "formatted": "Basílica de Esquipulas, Esquipulas, Chiquimula, Guatemala"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0444",
+        "SG-R72-GEO-SG-INV-0444"
+      ]
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "name": {
+        "official": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+        "aliases": [
+          "Basilica of Our Lady of Caacupé",
+          "Virgen de Caacupé Basilica",
+          "Basilique Notre-Dame des Miracles de Caacupé"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -25.38609,
+        "lng": -57.1411,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/164571720",
+        "source_ref": "osm:way:164571720",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PY",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Caacupé",
+        "region": null,
+        "country_code": "PY",
+        "country": "Paraguay",
+        "formatted": "Basílica Nuestra Señora de los Milagros, Caacupé 030103, Paraguay"
+      },
+      "source_ids": [
+        "SG-R72-SITE-SG-INV-0527",
+        "SG-R72-GEO-SG-INV-0527"
       ]
     }
   ],
