@@ -1,3 +1,5 @@
+> **PAGE 257 COMPLETENESS CORRECTION:** The two selected p257 extracts are NOT two complete paragraphs. The first is a complete paragraph awaiting human proofing; the second is only an 87-word opening fragment of a substantially longer paragraph. The page has four current **working source territories**, not a verified census of four printed paragraphs. It has two columns, a printer's signature `III.—17` (not a footnote), inline citations and a discussion continuing to p258. Full-page collation remains **zero**. See `data/source-text/fortescue-1913-p257-layout-audit.v1.json`.
+
 # Phase 6 — Fortescue edition correction and first complete paragraphs (15 October 2026)
 
 Status: **DRAFT PR #1229 / PRELIMINARY TEXT COLLATION, HUMAN EDITORIAL APPROVAL PENDING.**
@@ -21,8 +23,8 @@ The 13 scan images corresponding to printed pp. 255–267 (DJVU images 303–315
 |---|---:|---|---|
 | 255 | 303 | One previously selected sentence | Preliminary image comparison |
 | 256 | 304 | One previously selected sentence | Preliminary image comparison |
-| 257 | 305 | First complete paragraph of the page: Fortescue speculates on a past reordering of the Canon | Preliminary comparison to the image, human sign-off pending |
-| 257 | 305 | Second complete paragraph: Fortescue's reconstruction of early Roman Eucharistic practice | Preliminary comparison to the image, human sign-off pending |
+| 257 | 305 | First complete printed paragraph on page, preliminarily checked: Fortescue speculates on a past reordering of the Canon | Preliminary comparison to the image, human sign-off pending |
+| 257 | 305 | Opening fragment ONLY, not full paragraph: Fortescue's reconstruction of early Roman Eucharistic practice | Preliminary comparison to the image, human sign-off pending |
 
 Printed p.257: https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305 (page is marked **Not proofread** on Wikisource). Two-column order and the authorial transition into historical speculation are deliberate. The new paragraphs are not recast as controlling 1962 instructions, nor are they a completed article/chapter/full-page approval.
 
