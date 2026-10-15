@@ -58,9 +58,9 @@ for(const doc of roster.doctors){
   assert.equal(hold.historical_identity_id,claimedId);
   assert.equal(hold.nominal_mm_dd,date);
   assert(oldSources.includes(hold.historical_source_id),"Declared original-version source evidence is missing");
-  assert.equal(hold.historical_source_id.split(":").slice(0,3).join(":").replace(/:r$/,":w"),
-    hold.historical_source_id.split(":").slice(0,3).join(":"),
-    "Historic source-ID prefix unexpectedly changed");
+  assert.equal(hold.historical_source_id.split(":").slice(0,3).join(":"),
+    source.split(":").slice(0,3).join(":"),"Different feast/rank, not merely colour revision");
+  assert(hold.historical_source_id.endsWith(":r")&&source.endsWith(":w"),"Expected explicit red/white difference");
  }else assert(!hold,"Held historical source unexpectedly matches after owner change");
  if(alias?.expected_review==="SOURCE_COLOUR_DISCREPANCY_HOLD")assert(!compatible,"Held Ephrem source difference disappeared, requires owner review");
  else if(!hold)assert(compatible,"Exact Sanctoral source identity missing: "+doc.canonicalPersonId);
