@@ -282,6 +282,54 @@ for(const [owner,caseId] of [
     owner+" uncollapsed prior-research evidence leaked into main reading");
   node.listeners.click(makeClick({back:true}));
 }
+// Preserve Formation's current answer sources without erasing a distinct
+// historical MD47 reference in the traditional Catholic argument.
+const liturgicalOwner=coverage.dossiers.find(d=>d.id==="CR-LIT-07");
+assert.ok(liturgicalOwner?.synthesis?.sourceRegistry instanceof Map);
+const litSections=liturgicalOwner.synthesis.sections;
+const litAnswer=litSections.find(s=>s.role==="answer");
+const litTradition=litSections.find(s=>s.role==="traditional_catholic_argument");
+assert.ok(litAnswer&&litTradition);
+const formationCurrent=JSON.parse(readFileSync("data/reference/formation-current-source-reconciliation.v2.json","utf8"));
+const litChange=formationCurrent.changed_previous_screened_sections.find(s=>
+  s.section_key==="FORM-SYN-02::CR-LIT-07::00");
+assert.equal(litChange.role,"answer");
+assert.ok(litChange.old_source_ids.includes("MD47"));
+assert.deepEqual(litChange.new_source_ids,
+  ["AO26_CRLIT07_ANSWE_1","AO26_CRLIT07_ANSWE_2","AO26_CRLIT07_ANSWE_3"]);
+assert.deepEqual(litAnswer.source_ids,litChange.new_source_ids,
+  "The current CR-LIT-07 answer must use Formation's replacement source IDs");
+assert.ok(!litAnswer.source_ids.includes("MD47"),
+  "Superseded Mediator Dei source restored to the rewritten answer");
+assert.ok(litTradition.source_ids.includes("MD47"),
+  "MD47 must not be globally removed from the separate traditional argument");
+for(const id of litAnswer.source_ids)
+  assert.ok(liturgicalOwner.synthesis.sourceRegistry.get(id)?.url?.startsWith("https://"),
+    "Replacement answer source missing from its owning pack: "+id);
+
+// Verify the actual generated disclosure, not just the JSON. The four
+// synthesis roles can legitimately cite some of the same works, so isolate
+// each section-specific evidence row before inspecting source attribution.
+node.listeners.click(makeClick({dossier:"CR-LIT-07"}));
+assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="CR-LIT-07"'));
+const litEvidenceRow=index=>{
+  const match=node.innerHTML.match(new RegExp(
+    '<li data-rr-evidence-row="CR-LIT-07-s'+index+'">([\\s\\S]*?)<\\/li>'));
+  assert.ok(match,"Missing scoped CR-LIT-07 evidence row "+index);
+  return match[1];
+};
+const answerRow=litEvidenceRow(0),traditionRow=litEvidenceRow(3);
+for(const id of litAnswer.source_ids)
+  assert.ok(answerRow.includes('data-rr-source-local-id="'+id+'"'),
+    "Rewritten answer's source missing from reference disclosure: "+id);
+assert.ok(!answerRow.includes('data-rr-source-local-id="MD47"'),
+  "Historical MD47 link leaked into rewritten answer disclosure");
+assert.ok(traditionRow.includes('data-rr-source-local-id="MD47"'),
+  "Unchanged separate traditional argument lost its historical MD47 link");
+assert.ok(node.innerHTML.includes('data-rr-source-panel="CR-LIT-07"'),
+  "CR-LIT-07 must retain a folded source-evidence panel");
+node.listeners.click(makeClick({back:true}));
+
 for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
                  "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
   node.listeners.click(makeClick({dossier:id}));
