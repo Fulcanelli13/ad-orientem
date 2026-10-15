@@ -1,3 +1,4 @@
+import {extractReviewedEdition} from "./edition-adapters.js";
 // Witness-level canonical locator parsing. Does not fetch or reproduce body text.
 // The profile registry is research metadata, not a rights or editorial certificate.
 const NAT=/^[1-9][0-9]{0,5}$/;
@@ -40,7 +41,8 @@ export function normalizeWitnessLocator(profile,raw){
   sourceLocator:label,sourceAnchor:key,locatorAudit:"SHAPE_VALID_ONLY_NOT_TEXT_COLLATED",
   externalPage:profile.witnessUrl??null});
 }
-export function validateExternalLocatorBinding({profile,locator,hostUrl}={}){
+export function validateExternalLocatorBinding({profile,locator,hostUrl,nodeKind="body"}={}){
+ if(nodeKind!=="body")throw new Error("SOURCE_WITNESS_NONBODY_LOCATOR_REFUSED");
  const record=normalizeWitnessLocator(profile,locator);
  if(typeof hostUrl!=="string"||!hostUrl.startsWith("https://"))
   throw new Error("SOURCE_WITNESS_LINK_REQUIRED");
@@ -77,4 +79,24 @@ export function createAnchoredWitnessFixture({profile,hostUrl,heading,records}={
  return Object.freeze({adapter:"numbered-paragraphs-v1",
   headedText:"# "+heading.trim()+"\n"+rows.join("\n"),
   locators:Object.freeze(bindings)});
+}
+
+export function extractReviewedWitnessDocument({profile,work,review,hostUrl,heading,records}={}){
+ if(profile?.sourceWorkId!==work?.id||profile?.id!==work?.witnessId)
+  throw new Error("SOURCE_WITNESS_WORK_IDENTITY_MISMATCH");
+ const prepared=createAnchoredWitnessFixture({profile,hostUrl,heading,records});
+ const selectedReview={...review,adapter:prepared.adapter};
+ const parsed=extractReviewedEdition({work,review:selectedReview,sourceText:prepared.headedText});
+ if(parsed.passages.length!==prepared.locators.length)
+  throw new Error("SOURCE_WITNESS_EXTRACT_ALIGNMENT_FAILED");
+ const passages=parsed.passages.map((passage,i)=>{
+  const source=prepared.locators[i];
+  if(!passage.id.endsWith("/"+source.sourceAnchor))
+   throw new Error("SOURCE_WITNESS_EXTRACT_ANCHOR_MISMATCH");
+  return Object.freeze({...passage,sourceLocator:source.sourceLocator,
+   sourcePage:source.externalPage,
+   editionQualifiedCitation:editionQualifiedCitation({work,passageId:passage.id,
+    sourceAnchor:source.sourceAnchor})});
+ });
+ return Object.freeze({...parsed,passages:Object.freeze(passages)});
 }
