@@ -1158,6 +1158,38 @@
       "codes": {
         "iso_alpha2": "MZ"
       }
+    },
+    {
+      "geo_area_id": "geo:country:TT",
+      "name": {
+        "official": "Trinidad and Tobago",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GH",
+      "name": {
+        "official": "Ghana",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GH"
+      }
     }
   ],
   "places": [
@@ -10654,6 +10686,124 @@
       "source_ids": [
         "SG-R75-SITE-SG-INV-0721",
         "SG-R75-GEO-SG-INV-0721"
+      ]
+    },
+    {
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "name": {
+        "official": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+        "aliases": [
+          "National Shrine of Our Lady of Guadalupe, Allentown",
+          "Immaculate Conception BVM Church, Allentown"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.destinationes.com/pilgrimage/allentown-pennsylvania",
+        "source_ref": "destinationes:allentown-national-shrine-gps",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "501 Ridge Avenue",
+        "line2": null,
+        "postal_code": "18102",
+        "city": "Allentown",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "501 Ridge Avenue, Allentown, PA 18102, United States"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0377",
+        "SG-R76-GEO-SG-INV-0377"
+      ]
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "name": {
+        "official": "Our Lady of Fatima Church and Shrine, Laventille",
+        "aliases": [
+          "National Marian Shrine of Our Lady of Laventille",
+          "Sanctuaire Notre-Dame de Laventille"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:TT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.6556583,
+        "lng": -61.4949787,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame_de_Laventille",
+        "source_ref": "frwiki:sanctuaire-notre-dame-laventille-coordinate",
+        "matched_country_code": "TT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "Upper Picton Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Laventille",
+        "region": "San Juan–Laventille",
+        "country_code": "TT",
+        "country": "Trinidad and Tobago",
+        "formatted": "Upper Picton Road, Laventille, San Juan–Laventille, Trinidad and Tobago"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0474",
+        "SG-R76-GEO-SG-INV-0474"
+      ]
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "name": {
+        "official": "St Peter's Cathedral Basilica, Kumasi",
+        "aliases": [
+          "Cathedral Basilica of Saint Peter, Kumasi",
+          "St Peter's Catholic Cathedral, Kumasi"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.69536,
+        "lng": -1.61775,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/819917453",
+        "source_ref": "osm:way:819917453",
+        "matched_country_code": "GH",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kumasi",
+        "region": "Ashanti Region",
+        "country_code": "GH",
+        "country": "Ghana",
+        "formatted": "St Peter's Cathedral Basilica, Kumasi, Ashanti Region, Ghana"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0726",
+        "SG-R76-GEO-SG-INV-0726"
       ]
     }
   ],

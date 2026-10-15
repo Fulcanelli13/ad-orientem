@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 251,
-    "places_with_linked_records": 249,
+    "places": 254,
+    "places_with_linked_records": 252,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 206,
-    "shrines": 247,
-    "pilgrimages": 234,
+    "multicategory_heritage_places": 208,
+    "shrines": 250,
+    "pilgrimages": 236,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -1850,6 +1850,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "display_name": "St Peter's Cathedral Basilica, Kumasi",
+      "record_ids": {
+        "shrines": [
+          "shrine:GH:kumasi-st-peter-cathedral-basilica"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:GR:saint-titus-heraklion",
       "display_name": "Church of Saint Titus, Heraklion",
       "record_ids": {
@@ -3551,6 +3561,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "display_name": "Our Lady of Fatima Church and Shrine, Laventille",
+      "record_ids": {
+        "shrines": [
+          "shrine:TT:laventille-our-lady-fatima-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:TT:laventille-our-lady-fatima-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:UG:munyonyo-martyrs",
       "display_name": "Munyonyo Martyrs Shrine",
       "record_ids": {
@@ -3578,6 +3601,19 @@
         ],
         "customs": [
           "att:DEV-007:NAMUGONGO-MARTYRS-DAY"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "display_name": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:allentown-guadalupe-national-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:allentown-guadalupe-national-shrine-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3969,8 +4005,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 247,
-    "pilgrimages": 206,
+    "shrines": 250,
+    "pilgrimages": 208,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,
