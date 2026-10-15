@@ -77,5 +77,25 @@ export function projectSaintSourceIndexItems(dataset={},scope="historical"){
     });
     return Object.freeze([...named,...groups].sort((a,b)=>a.title.localeCompare(b.title)));
   }
+  if(scope==="doctors"){
+    return Object.freeze(arr(index.doctors_roster).filter(x=>x.calendar_person_id&&x.name).map(x=>{
+      const later=Boolean(x.declared_after_1962);
+      const date=later?str(x.declaration_date):"";
+      const day=str(x.nominal_day_1962);
+      return item("saints:doctor:"+x.calendar_person_id,x.name,x.name,
+        later?"Declared Doctor: "+date:"Doctor of the Church · source roster",
+        later?"Proclamé Docteur : "+date:"Docteur de l’Église · registre des sources",
+        later
+          ?"This Doctor designation was declared after 1962. The historical Missal cannot retrospectively include that title."
+          :"Recorded in the Calendar owner's Doctor-of-the-Church roster. The historical day is not proof of a current observed celebration.",
+        later
+          ?"Ce titre de Docteur a été proclamé après 1962 et ne peut être attribué rétroactivement au missel historique."
+          :"Inscrit dans le registre des Docteurs du calendrier. Le jour historique ne prouve pas une célébration observée actuellement.",
+        [],{scope:"DOCTORS_OWNER_ROSTER",source_id:x.calendar_person_id,
+          date:date||day,precision:later?"DOCTOR_DECLARATION_NOT_1962_TITLE":"OWNER_ROSTER_HISTORICAL_DAY_UNVERIFIED",
+          declared_after_1962:later,nominal_day_1962:day,record_type:x.role,
+          related_profile_item_id:linkExactPerson(x.calendar_person_id)});
+    }).sort((a,b)=>a.title.localeCompare(b.title)));
+  }
   return Object.freeze([]);
 }
