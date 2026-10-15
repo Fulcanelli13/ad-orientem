@@ -4,7 +4,11 @@
   "sources": {
     "pleiadesRevision": "d8c06f28656312eee6b7a0f76415b34a89e3c728",
     "openBibleRevision": "7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f",
-    "openBibleModernBlob": "9da83575127fc5aa1dab7aff61e01d4bc5ac9fdc"
+    "openBibleModernBlob": "9da83575127fc5aa1dab7aff61e01d4bc5ac9fdc",
+    "pleiadesLicense": "Pleiades contributors, CC BY 3.0",
+    "openBibleLicense": "openbibleinfo/Bible-Geocoding-Data, CC BY 4.0",
+    "pleiadesDatasetUrl": "https://github.com/isawnyu/pleiades.datasets",
+    "openBibleDatasetUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data"
   },
   "records": [
     {
@@ -5303,5 +5307,23 @@
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     }
-  ]
+  ],
+  "counts": {
+    "candidatePlaceObjectsChecked": 28,
+    "placeUriTitleRepresentativePointChecksPassed": 28,
+    "originalModernGeocodingRecordsMatched": 28,
+    "selectedPleiadesNameRecords": 128,
+    "subordinatePleiadesLocationRecords": 45,
+    "unattestedEinKaremNameCount": 0,
+    "placeObjectsWithoutSubordinateLocations": 2,
+    "unpublishedMapChanges": 0
+  },
+  "reviewGates": {
+    "readyForRuntimeImport": false,
+    "biblicalEventPositionCertified": false,
+    "sourcePeriodAutomaticallyApproved": false,
+    "allowCoordinateUpgrade": false,
+    "requiresIndependentHistoricalTimeCollation": true,
+    "sourceObjectIdentityIsNotHistoricalEventVerification": true
+  }
 }
