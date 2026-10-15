@@ -197,6 +197,16 @@ const compact={
 };
 assert.equal(compact.rows.length,252);
 assert.equal(compact.rows.reduce((n,x)=>n+x.components.length,0),311);
+// Historical extracted IDs are now committed as a frozen source snapshot.
+const committedPath=resolve(root,"data/saints/historical-v4333-311-components.recovered.v1.json");
+const committed=JSON.parse(readFileSync(committedPath,"utf8"));
+assert.deepEqual(JSON.parse(JSON.stringify(compact)),committed,
+ "Frozen v43.33 source-derived 311-entry snapshot differs from committed historical inventory");
+assert.equal(new Set(compact.rows.flatMap(r=>r.components.map(c=>c.historical_component_id))).size,311);
+assert.equal(new Set(compact.rows.flatMap(r=>r.components.map(c=>c.historical_identity_id))).size,307);
+assert.equal(hist.scopeExcludedOccurrences,38);
+assert.equal(hist.explicitOverridesApplied,27);
+assert.equal(hist.countReconciliationPending.length,0);
 const compactSerialized=JSON.stringify(compact);
 writeFileSync(resolve(artifact,"v4333-original-311-components-compact.json"),JSON.stringify(compact,null,2)+"\n");
 const frameSize=6000,totalFrames=Math.ceil(compactSerialized.length/frameSize);
