@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'data/saints/**'
+      - 'src/find/**'
+      - 'tests/saints-explore-native-lens.mjs'
+      - 'previews/saints-map-holiness-first-20261015.html'
       - 'tests/saints-atlas-editorial-pilot.mjs'
       - '.github/workflows/saints-atlas-editorial.yml'
   workflow_dispatch:
@@ -16,3 +19,11 @@ jobs:
           node-version: '22'
       - name: Check preserved shrine links and holiness-first profiles
         run: node tests/saints-atlas-editorial-pilot.mjs
+      - name: Check native Explore Saints lens and biography sheets
+        run: node tests/saints-explore-native-lens.mjs
+      - name: Check native module syntax
+        run: |
+          node --check src/find/saints-lens.js
+          node --check src/find/saints-presentation.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/browser-entry.js
