@@ -28,9 +28,27 @@ export function renderSaintPlaceSheet(vm){
       ?L(language,"Blessed · not canonized","Bienheureux · non canonisé")
       :L(language,"Canonized saint","Saint canonisé"))+'</small>';
     html+='<h3>'+esc(translated(saint,language,"name"))+'</h3>';
+    const classifications=saint.classification??{};
+    const tags=[...arr(classifications.honours),...arr(classifications.roles)];
+    if(tags.length)html+='<div class="aoSaintRoles" aria-label="'+esc(L(language,"Spiritual roles and titles","Rôles et titres spirituels"))+'">'+
+      tags.map(c=>'<span data-saint-category="'+esc(c.code)+'">'+esc(String(c?.[language]??c?.en??""))+'</span>').join("")+'</div>';
     html+='<p class="aoSaintWhy">'+esc(translated(saint,language,"why"))+'</p>';
     html+='<ul class="aoSaintFacts">'+arr(saint.biography_facts).map(f=>
       '<li>'+esc(String(f?.[language]??f?.en??""))+'</li>').join("")+'</ul>';
+    const witnessed=arr(classifications.extraordinary);
+    if(witnessed.length){
+      html+='<details class="aoSaintExtraordinary"><summary>'+esc(L(language,"Reported extraordinary experiences","Expériences extraordinaires rapportées"))+'</summary>';
+      html+='<p class="aoSaintCaution">'+esc(L(language,
+       "These are documented accounts, not proof of every reported detail or miracles personally performed by this saint.",
+       "Il s’agit de récits documentés, non d’une preuve de chaque détail rapporté ni de miracles personnellement accomplis par ce saint."))+'</p>';
+      for(const e of witnessed){
+        html+='<section class="aoSaintAccount" data-saint-event="'+esc(e.id)+'"><strong>'+esc(String(e?.["label_"+language]??e?.label_en??""))+'</strong>';
+        html+='<p>'+esc(String(e?.[language]??e.en??""))+'</p>';
+        const refs=arr(saint.sources).filter(s=>arr(e.source_ids).includes(s.id)).filter(s=>sourceUrl(s));
+        html+='<div class="aoSaintEventRefs">'+refs.map(s=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(sourceUrl(s))+'">'+esc(s.title)+'</a>').join("")+'</div></section>';
+      }
+      html+='</details>';
+    }
     const sources=arr(saint.sources).map(s=>{const url=sourceUrl(s);return url
       ?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title||s.id)+'</a>':""}).filter(Boolean);
     if(sources.length)html+='<details class="aoSaintReading"><summary>'+esc(L(language,"Sources & further reading","Sources et lectures complémentaires"))+'</summary>'
@@ -58,6 +76,14 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintBiography{padding:16px 0}.aoSaintPortraitHold{min-height:90px;display:flex;justify-content:center;align-items:center;border:1px solid rgba(217,197,154,.12);background:#0f1720;border-radius:10px;color:#a89b84;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);text-align:center;padding:12px}
 .aoSaintStatus{display:block;margin:14px 0 4px;color:#c1aa7e;font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
 .aoSaintBiography h3{font:550 clamp(22px,4vw,28px)/1.22 var(--ao-font-display,Georgia,serif);margin:5px 0;color:#efe4d1}
+.aoSaintRoles{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 6px}
+.aoSaintRoles span{font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#d7c19d;padding:5px 9px;border:1px solid rgba(215,193,157,.27);border-radius:999px;background:rgba(215,193,157,.065)}
+.aoSaintExtraordinary{border-top:1px solid rgba(217,197,154,.2);padding:10px 0;margin:14px 0}
+.aoSaintExtraordinary summary{font:600 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#ddc699;cursor:pointer;min-height:40px;padding-top:10px}
+.aoSaintCaution{color:#b7ad9d;font:12px/1.55 var(--ao-font-ui,system-ui,sans-serif);margin:10px 0}
+.aoSaintAccount strong{color:#e7d6b6;font:600 13px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSaintAccount p{color:#e0d4c2;font:14px/1.5 var(--ao-font-ui,system-ui,sans-serif);margin:7px 0}
+.aoSaintEventRefs{display:grid;gap:8px;margin:8px 0}.aoSaintEventRefs a{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#ddc699;overflow-wrap:anywhere;text-decoration:underline}
 .aoSaintWhy{font:17px/1.52 var(--ao-font-body,Georgia,serif);color:#ece2d3;margin:12px 0 16px}
 .aoSaintFacts{padding-left:22px;margin:12px 0 16px}.aoSaintFacts li{font:14px/1.56 var(--ao-font-ui,system-ui,sans-serif);color:#d4cbbd;padding-left:3px;margin:9px 0}
 .aoSaintReading{border-top:1px solid rgba(217,197,154,.17);padding:11px 0;margin:12px 0}
