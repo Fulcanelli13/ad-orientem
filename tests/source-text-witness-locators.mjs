@@ -8,7 +8,7 @@ import {createSourceTextReader} from "../src/source-text/reader.js";
 
 const readJSON=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const data=readJSON("data/source-text/witness-profiles.v1.json");
-assert.equal(data.profiles.length,8);
+assert.equal(data.profiles.length,9);
 assert.equal(data.metrics.reproductionCleared,0);
 assert.equal(data.metrics.thirdPartyTextImported,0);
 const by=id=>{const p=data.profiles.find(p=>p.id===id);assert.ok(p);return p;};
@@ -98,7 +98,7 @@ assert.throws(()=>extractReviewedWitnessDocument({profile:p,work,review,
  hostUrl:p.witnessUrl,heading:"Synthetic",records:[...rows,rows[0]]}),/LOCATOR_DUPLICATE/);
 assert.throws(()=>extractReviewedWitnessDocument({profile:p,work:{...work,rights:{status:"UNREVIEWED"}},review,
  hostUrl:p.witnessUrl,heading:"Synthetic",records:rows}),/REPRODUCTION_NOT_CLEARED/);
-console.log("PASS inspected witness locator grammar: 8 profiles, 4 inspected HTML families, 3 catalogue/held profiles; no external text imported");
+console.log("PASS inspected witness locator grammar: 9 profiles, 4 HTML citation families, 1 printed-scan family, 3 catalogue/held profiles; no unapproved external text imported");
 console.log(JSON.stringify({witnessProfiles:data.profiles.length,approvedReproductions:0,
  sourceBodiesImported:0,syntheticReviewedAdapterPassages:parsed.passages.length,
  firstOpenChunkRequests:1,editionScopedCitationsDistinct:true}));
