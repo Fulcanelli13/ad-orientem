@@ -20,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 254,
-    "existing_published_shrines": 250,
-    "linked_pilgrimages": 236,
-    "existing_country_coverage": 67,
-    "published_sites_bilingual": 250,
-    "source_registry_sites": 250,
-    "existing_physical_pins": 250,
+    "existing_production_places": 258,
+    "existing_published_shrines": 254,
+    "linked_pilgrimages": 237,
+    "existing_country_coverage": 69,
+    "published_sites_bilingual": 254,
+    "source_registry_sites": 254,
+    "existing_physical_pins": 254,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 102,
+      "CONFIRMED_EXISTING_PROMOTION": 106,
       "POTENTIAL_EXISTING_ID_REVIEW": 70,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 578
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 574
     },
     "priorities": {
       "Essential": 64,
@@ -129,10 +129,10 @@
     {
       "country": "MX",
       "curated_candidates": 18,
-      "published_shrines": 2,
-      "confirmed_promotions": 2,
+      "published_shrines": 3,
+      "confirmed_promotions": 3,
       "possible_reuses": 0,
-      "unresolved": 16
+      "unresolved": 15
     },
     {
       "country": "IN",
@@ -473,10 +473,10 @@
     {
       "country": "CR",
       "curated_candidates": 3,
-      "published_shrines": 1,
-      "confirmed_promotions": 1,
+      "published_shrines": 2,
+      "confirmed_promotions": 2,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 1
     },
     {
       "country": "DO",
@@ -625,10 +625,10 @@
     {
       "country": "PK",
       "curated_candidates": 2,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 1
     },
     {
       "country": "PR",
@@ -745,10 +745,10 @@
     {
       "country": "BZ",
       "curated_candidates": 1,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 1
+      "unresolved": 0
     },
     {
       "country": "CD",
@@ -984,14 +984,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 2,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R77_INDEPENDENT_PHYSICAL_IDENTITY_AND_SITE_PROVENANCE"
     },
     {
       "candidate_id": "SG-INV-0612",
@@ -1016,14 +1017,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 4,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R77_INDEPENDENT_PHYSICAL_IDENTITY_AND_SITE_PROVENANCE"
     },
     {
       "candidate_id": "SG-INV-0726",
@@ -1131,14 +1133,15 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:PK:karachi-our-lady-fatima-parish",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 11,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R77_INDEPENDENT_PHYSICAL_IDENTITY_AND_SITE_PROVENANCE"
     },
     {
       "candidate_id": "SG-INV-0566",
@@ -1712,15 +1715,16 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 46,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Zacatecas is not Mexico City"
+      "identity_warning": "Zacatecas is not Mexico City",
+      "reconciliation_evidence": "R77_INDEPENDENT_PHYSICAL_IDENTITY_AND_SITE_PROVENANCE"
     },
     {
       "candidate_id": "SG-INV-0681",
