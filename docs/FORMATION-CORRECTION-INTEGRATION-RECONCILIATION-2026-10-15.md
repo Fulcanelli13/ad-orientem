@@ -33,3 +33,7 @@ Do not paste all overlays again: that would recreate repeated sections and undo 
 **Branch content incorporation is not live release.** The research JSON batches still explicitly mark `publication_allowed: false`, and individual section editorial-context and French approvals remain pending. Release therefore requires a focused final review of affected EN/FR sections, their link targets, their opponent attributions, and the application's actual consumption/build path. Then the correct approved fields can be applied to the live Formation presentation and regression-tested without merging research draft flags or duplicate editorial ledgers wholesale.
 
 Keep PR #1198 as a **draft** until that release path is verified. No production deployment or merge is claimed by this reconciliation.
+
+## PR changed-file verification
+
+The 15 October GitHub changed-file list contains **64 files**. Six touch the current Sexual Ethics app data under `src/learn/sexual-ethics-data/`; **no corresponding Apologetics or Church Crisis runtime module is modified by this PR**. Those two sets of corrections are contained in `data/learn/formation-*` unpublished research files, so merging the draft by itself must not be described as displaying all corrections in the live Ad Orientem Formation screens. Release implementation must find and update the actual runtime data loader/content format, with regression tests and separate editorial approvals. The seven included `tests/` research files are not evidence that the live route has been exercised.
