@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem — Structured Sources Pilot</title>
+<style>
+:root{color-scheme:dark;font-family:Georgia,"Iowan Old Style",serif;background:#080c12;color:#eee7da}
+*{box-sizing:border-box}body{margin:0}main{width:min(720px,100%);margin:0 auto;padding:clamp(18px,5vw,36px)}
+h1{font-size:clamp(28px,6vw,40px);font-weight:400;letter-spacing:.02em}h2{font-size:26px;font-weight:400}
+p{line-height:1.7}.eyebrow,small,label,.measure,.aoSourceReaderLocator{font:12px/1.5 system-ui,sans-serif;letter-spacing:.06em;color:#b8b0a2}
+.panel{border-top:1px solid #3a3a38;margin-top:26px;padding-top:20px}
+button,select,input{background:#171d27;color:#ede5d6;border:1px solid #4a4745;border-radius:6px;padding:12px;font:14px system-ui,sans-serif}
+button:hover,button:focus-visible{border-color:#c7ae79;outline-offset:2px}button:disabled{opacity:.35}
+.aoSourceReaderHeader{display:flex;gap:14px;align-items:center;justify-content:space-between}
+.aoSourceReaderActions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0}
+.aoSourceReaderSearch{display:flex;gap:8px}.aoSourceReaderSearch input{flex:1;min-width:0}
+.aoSourceReaderLocator{margin-top:25px}.aoSourceReaderPassage{font-size:clamp(20px,4.5vw,26px);line-height:1.75;min-height:120px}
+.aoSourceReaderResults{display:grid;gap:6px}.aoSourceReaderResults button{text-align:left;line-height:1.5}
+a{color:#d2b783}.caption{opacity:.76;font:13px/1.6 system-ui,sans-serif}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">AD ORIENTEM · SOURCE PARSING PILOT</div>
+  <h1>Read the source, not a screenshot</h1>
+  <p class="caption">A self-contained demonstration of structured paragraphs, exact locators and lazy section loading. Its four passages are original test copy, not excerpts from a Catholic book.</p>
+  <section id="intro" class="panel">
+    <p>Only the 712-byte source index is read at first. The passage files are fetched on demand, verified against SHA-256 and kept in a bounded cache.</p>
+    <button type="button" id="openReader">Open source reader</button>
+    <p class="measure" id="measure" aria-live="polite"></p>
+  </section>
+  <section id="reading" class="panel" hidden></section>
+</main>
+<script type="module">
+import {createSourcePackReader} from "../src/reference/passage-packs.js";
+import {mountSourcePassageReader} from "../src/reference/passage-reader.js";
+const base=new URL("../data/reference/source-demo/",import.meta.url);
+const manifest=await fetch(new URL("manifest.v1.json",base)).then(r=>{
+ if(!r.ok)throw new Error("Source index unavailable");
+ return r.json();
+});
+const intro=document.getElementById("intro"),area=document.getElementById("reading");
+const measure=document.getElementById("measure");
+let downloaded=0,requests=0,previous=null,viewer=null;
+const service=createSourcePackReader(manifest,{
+ loadChunk:async file=>{
+  const r=await fetch(new URL(file,base));
+  if(!r.ok)throw new Error("Section file unavailable");
+  const raw=await r.text();requests++;downloaded+=new TextEncoder().encode(raw).length;
+  measure.textContent="Sections fetched: "+requests+" · Body bytes: "+downloaded;
+  return raw;
+ }
+});
+measure.textContent="Sections fetched: 0 · Body bytes: 0";
+document.getElementById("openReader").addEventListener("click",()=>{
+ intro.hidden=true;area.hidden=false;
+ viewer=mountSourcePassageReader(area,{
+  reader:service,title:"A Note on Sources",language:"en",initialPassageId:previous,
+  onReturn:({passageId})=>{
+   previous=passageId;viewer?.destroy();area.hidden=true;intro.hidden=false;
+  }
+ });
+});
+</script>
+</body>
+</html>
