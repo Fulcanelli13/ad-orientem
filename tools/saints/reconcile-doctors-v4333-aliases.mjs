@@ -15,6 +15,8 @@ assert.equal(roster.doctors.length,38);
 const byDate=new Map(hist.rows.map(r=>[r.date,r]));
 const byCurrent=new Map(roster.doctors.map(d=>[d.canonicalPersonId,d]));
 const sourceId=id=>typeof id==="string"&&/^sancti:\d\d-\d\d[a-z]*:[1-4]:[wr]$/.test(id);
+const holdByDoctor=new Map((aliases.source_colour_revision_holds||[]).map(x=>[x.calendar_person_id,x]));
+assert.equal(holdByDoctor.size,3,"Three known liturgical-colour revisions must remain visible to editors");
 const matching=new Map();
 const oldIdentitySet=new Set();
 for(const entry of aliases.proposed_pairs){
@@ -49,10 +51,19 @@ for(const doc of roster.doctors){
  assert(claimedId.startsWith("saint."),"Doctor counterpart is not a person namespace");
  const oldSources=row.original_source_observances.map(x=>x.id);
  const compatible=oldSources.includes(source);
- if(!compatible)assert.equal(doc.canonicalPersonId,"saint.ephrem",
-   "Unexpected source revision; do not promote an identity despite differing source IDs: "+doc.canonicalPersonId);
- if(alias?.expected_review==="SOURCE_COLOUR_DISCREPANCY_HOLD")assert(!compatible,"Ephrem conflict must not be normalized away without owner review");
- else assert(compatible,"Exact sanctioned source identity missing: "+doc.canonicalPersonId);
+ const hold=holdByDoctor.get(doc.canonicalPersonId)??null;
+ if(!compatible){
+  assert(hold,"Unexpected source revision; do not promote an identity despite differing source IDs: "+doc.canonicalPersonId);
+  assert.equal(hold.calendar_source_id,source);
+  assert.equal(hold.historical_identity_id,claimedId);
+  assert.equal(hold.nominal_mm_dd,date);
+  assert(oldSources.includes(hold.historical_source_id),"Declared original-version source evidence is missing");
+  assert.equal(hold.historical_source_id.split(":").slice(0,3).join(":").replace(/:r$/,":w"),
+    hold.historical_source_id.split(":").slice(0,3).join(":"),
+    "Historic source-ID prefix unexpectedly changed");
+ }else assert(!hold,"Held historical source unexpectedly matches after owner change");
+ if(alias?.expected_review==="SOURCE_COLOUR_DISCREPANCY_HOLD")assert(!compatible,"Held Ephrem source difference disappeared, requires owner review");
+ else if(!hold)assert(compatible,"Exact Sanctoral source identity missing: "+doc.canonicalPersonId);
  const other=row.components.filter(c=>c.historical_identity_id!==claimedId).map(c=>c.historical_identity_id);
  const status=!compatible?"DIFFERING_OLD_NEW_LITURGICAL_SOURCE_ID_HOLD":
    alias?"EXPLICIT_ALIAS_SOURCE_AND_DATE_COMPATIBLE_PENDING_OWNER_REVIEW":
@@ -70,14 +81,17 @@ for(const doc of roster.doctors){
 }
 const byStatus=Object.fromEntries([...new Set(outcomes.map(x=>x.match_status))].map(s=>[s,outcomes.filter(x=>x.match_status===s).length]));
 assert.deepEqual(byStatus,{
- EXACT_ID_SOURCE_AND_DATE_COMPATIBLE:13,
+ EXACT_ID_SOURCE_AND_DATE_COMPATIBLE:11,
  EXPLICIT_ALIAS_SOURCE_AND_DATE_COMPATIBLE_PENDING_OWNER_REVIEW:20,
- DIFFERING_OLD_NEW_LITURGICAL_SOURCE_ID_HOLD:1,
+ DIFFERING_OLD_NEW_LITURGICAL_SOURCE_ID_HOLD:3,
  NO_1962_SOURCE_ID_IN_CURRENT_OWNER:4,
 });
 const ephrem=outcomes.find(x=>x.doctor_id==="saint.ephrem");
 assert.equal(ephrem.match_status,"DIFFERING_OLD_NEW_LITURGICAL_SOURCE_ID_HOLD");
 assert(ephrem.historical_source_ids.includes("sancti:06-18:3:r"));
+for(const id of ["saint.augustine-hippo","saint.alphonsus-liguori","saint.ephrem"]){
+ assert.equal(outcomes.find(x=>x.doctor_id===id)?.match_status,"DIFFERING_OLD_NEW_LITURGICAL_SOURCE_ID_HOLD");
+}
 assert.equal(ephrem.calendar_1962_source_id,"sancti:06-18:3:w");
 assert(outcomes.every(x=>!x.creates_1962_title));
 assert(outcomes.filter(x=>x.other_historical_identities_on_same_date?.length).every(x=>
@@ -99,7 +113,7 @@ const result={
  "Four post-1962 Doctor-roster entries without nominal source are not historical-calendar omission claims",
  "No mass option, proper, saint record, physical map pin, relic authenticity, artwork or canonical Calendar owner changed"
  ],
- counts:{all_doctors:38,...byStatus,source_compatible_exact_or_explicit_alias:33,
+ counts:{all_doctors:38,...byStatus,source_compatible_exact_or_explicit_alias:31,
   currently_promoted_canonical_person_links:0,legacy_calendars_mutated:0},
  rows:outcomes
 };
