@@ -8,8 +8,9 @@
     "source_spot_checked": 11,
     "source_pending_deeper_check": 13,
     "released_people": 0,
-    "bios_below_compact_target": 24,
-    "fact_corrections_applied": 2
+    "bios_below_compact_target": 19,
+    "fact_corrections_applied": 2,
+    "bios_with_sourced_longer_draft": 6
   },
   "records": [
     {
@@ -86,15 +87,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 83,
-        "fr": 91
+        "en": 115,
+        "fr": 126
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": false,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     },
     {
       "person_id": "saint.catherine-siena",
@@ -114,15 +116,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 91,
-        "fr": 99
+        "en": 128,
+        "fr": 138
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": false,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     },
     {
       "person_id": "saint.francis-sales",
@@ -255,15 +258,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 66,
-        "fr": 66
+        "en": 108,
+        "fr": 109
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": true,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     },
     {
       "person_id": "saint.francis-xavier",
@@ -423,15 +427,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 70,
-        "fr": 81
+        "en": 116,
+        "fr": 130
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": false,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     },
     {
       "person_id": "saint.charles-borromeo",
@@ -479,15 +484,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 74,
-        "fr": 83
+        "en": 125,
+        "fr": 144
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": false,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     },
     {
       "person_id": "saint.maria-goretti",
@@ -677,15 +683,16 @@
       "calendar_1962_feast_certified_here": false,
       "eligible_for_publication": false,
       "current_combined_biography_words": {
-        "en": 74,
-        "fr": 75
+        "en": 115,
+        "fr": 121
       },
       "compact_reader_narrative_target": {
         "min_words": 110,
         "max_words": 150,
         "editorial_scope": "EN_FR_SOURCE_SUPPORTED_EXPANSION_REQUIRED_BEFORE_PUBLICATION"
       },
-      "needs_biography_expansion": true
+      "needs_biography_expansion": false,
+      "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"
     }
   ]
 }
