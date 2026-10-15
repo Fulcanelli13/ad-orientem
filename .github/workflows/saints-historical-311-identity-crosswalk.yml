@@ -8,6 +8,9 @@ on:
       - 'data/saints/1962-doctors-historical-id-alias-review.v1.json'
       - 'data/saints/holiness-first-eight-doctors-research-20261015.v1.json'
       - 'tests/saints-eight-doctors-research.mjs'
+      - 'data/saints/holiness-first-sixteen-cross-vocation-research.v1.json'
+      - 'tests/saints-sixteen-vocations-research.mjs'
+      - 'data/saints/classification-taxonomy.v1.json'
       - 'data/saints/historical-v4333-311-components.recovered.v1.json'
       - 'data/saints/parallel-owner-identity-bridge-20261015.v1.json'
       - 'data/explore/worldwide-relic-subject-census.research.v1.json'
@@ -36,6 +39,8 @@ jobs:
         run: node tools/saints/reconcile-doctors-v4333-aliases.mjs
       - name: Verify eight new English/French Doctor biographies and extraordinary source handling
         run: node tests/saints-eight-doctors-research.mjs
+      - name: Verify 16 diverse bilingual saint lives and their 48 sourced facts
+        run: node tests/saints-sixteen-vocations-research.mjs
       - name: Retain identity review artifact
         if: always()
         uses: actions/upload-artifact@v4
