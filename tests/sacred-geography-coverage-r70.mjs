@@ -9,6 +9,7 @@ const r70=read("data/geography/research/sacred-geography-r70-global-six-site-evi
 const r71=read("data/geography/research/sacred-geography-r71-major-site-reconciliation.v1.json");
 const r72=read("data/geography/research/sacred-geography-r72-world-anchors.v1.json");
 const r73=read("data/geography/research/sacred-geography-r73-major-shrines.v1.json");
+const r74=read("data/geography/research/sacred-geography-r74-essential-sites.v1.json");
 const geography=read("data/geography/seed-registry.v1.json");
 const shrines=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const sources=read("data/shrines/source-registry.v1.json");
@@ -36,7 +37,7 @@ assert.equal(report.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,95);
 assert.equal(report.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,70);
 assert.equal(report.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,585);
 const existing=new Set(geography.places.map(x=>x.place_id));
-const promoted=new Map([...launch.promoted,...exceptions.promoted,...r70.sites.map(row=>({candidate_id:row.candidate,place_id:row.id})),...r71.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r71.reviewed_existing.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r72.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id}))].map(row=>[row.candidate_id,row.place_id]));
+const promoted=new Map([...launch.promoted,...exceptions.promoted,...r70.sites.map(row=>({candidate_id:row.candidate,place_id:row.id})),...r71.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r71.reviewed_existing.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r72.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id}))].map(row=>[row.candidate_id,row.place_id]));
 for(const [i,row] of report.candidates.entries()){
  assert.equal(row.review_order,i+1);
  assert.equal(row.review_wave,Math.floor(i/75)+1);
