@@ -7,7 +7,7 @@ const books=j("data/explore/biblical-73-book-event-denominator-audit.v1.json");
 const sels=j("data/explore/biblical-existing-author-selection-review.v1.json");
 assert.equal(fam.sourceFamilies[0].workId,"WORK-SCHUSTER-BIBLE-HISTORY");
 assert.equal(fam.openingEnglishTocSections.length,8);
-assert.equal(fam.witnesses.length,5);
+assert.equal(fam.witnesses.length,6);
 const schuster1925=fam.witnesses.find(w=>w.id==="SCHUSTER-EN-1925-HERDER-LONDON-19TH");
 assert.ok(schuster1925);
 assert.equal(schuster1925.tocReadFromArchiveOCR,true);
@@ -158,5 +158,28 @@ assert.equal(historical.alternativeWitnesses[0].permittedRole,"HISTORICAL_COMPAR
 assert.equal(historical.sourceParagraphsCertifiedNew,0);
 assert.equal(historical.appReleaseAffected,false);
 assert.ok(historical.primaryWitnessAccess.every(x=>x.originalPrintedPagesNewlyRead===0&&x.completeVerbatimParagraphsCertified===0));
+
+const spanish1908=fam.spanish1908ReadingAndSourceReview;
+assert.ok(spanish1908);
+assert.equal(spanish1908.witnessId,"SCHUSTER-ES-1908-HERDER-ORTI-12TH");
+assert.ok(fam.witnesses.some(w=>w.id===spanish1908.witnessId && w.physicalPageImagesDirectlyInspected===false));
+assert.equal(fam.witnesses.length,6);
+assert.equal(spanish1908.openingTocNineSpanishUnits.length,9);
+assert.deepEqual(spanish1908.openingTocNineSpanishUnits.map(x=>x.spanishNumber),[1,2,3,4,5,6,7,8,9]);
+assert.deepEqual(spanish1908.openingTocNineSpanishUnits.map(x=>x.printedPage),[1,2,3,4,5,6,8,10,12]);
+assert.deepEqual(spanish1908.openingTocNineSpanishUnits.map(x=>x.english32ndCandidateIds[0]),["schuster:chapter:OT-I","schuster:chapter:OT-II","schuster:chapter:OT-III","schuster:chapter:OT-IV","schuster:chapter:OT-IV","schuster:chapter:OT-V","schuster:chapter:OT-VI","schuster:chapter:OT-VII","schuster:chapter:OT-VIII"]);
+assert.equal(new Set(spanish1908.openingTocNineSpanishUnits.flatMap(x=>x.english32ndCandidateIds)).size,8);
+assert.deepEqual(spanish1908.historicalLevelPolicy.rawSourceParagraphMarkers.map(x=>x.marker),["NONE","**","*","CROSS"]);
+assert.equal(spanish1908.historicalLevelPolicy.levelsCumulative,true);
+assert.equal(spanish1908.historicalLevelPolicy.notAnInvitationToAiAbridgement,true);
+assert.equal(spanish1908.historicalLevelPolicy.originalSourceMarkerTypographyIndependentlyCertified,false);
+assert.equal(spanish1908.historicalLevelPolicy.wholeParagraphMarkersVerifiedInPrint,0);
+assert.equal(spanish1908.sourceTextCopiedIntoRepository,false);
+assert.equal(spanish1908.fullyPrintCertifiedParagraphs,0);
+assert.equal(spanish1908.eligibleEnglishTranslationsNow,0);
+assert.equal(spanish1908.releasedReaderSourceParagraphs,0);
+assert.equal(fam.counts.spanish1908OriginalPrintedImagesInspected,0);
+assert.equal(fam.counts.spanish1908ParagraphsPrintCertified,0);
+assert.equal(fam.counts.spanish1908OpeningTocUnitsReadFromOCR,9);
 
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
