@@ -125,7 +125,8 @@
     "historical_pass7_total_findings": 88,
     "historical_pass7_unchanged_source_role_links": 63,
     "historical_pass7_prior_amendment_supersessions": 10,
-    "historical_pass7_newly_recorded_supersessions": 15
+    "historical_pass7_newly_recorded_supersessions": 15,
+    "historical_pass7_existing_amendment_extensions": 1
   },
   "added_source_bindings": [
     {
@@ -1988,7 +1989,8 @@
     "The historic Charles Curran original proponent citation is retained in the source registry and same original article URL is still linked in the current documented-position role, but this does not certify the rewritten claim.",
     "All 25 bounded Pass 5 editorial original-source findings remain historical records; three changed section-to-source relationships are precisely versioned, without inferred doctrinal certifications.",
     "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046.",
-    "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files."
+    "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files.",
+    "Previously superseded finding PSV7-045 retains its existing 2015/2022 survivor-source replacement, with two additional 2026 correction pointers separately versioned; the historical original-source check does not certify those additions."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2736,6 +2738,30 @@
       "matching_original_url_successor_ids": [],
       "disposition": "PREVIOUS_EDITORIAL_SOURCE_FINDING_RETAINED_IN_ORIGINAL_REGISTRY__REMOVED_FROM_REWRITTEN_ROLE__NOT_A_CURRENT_CLAIM_CERTIFICATION",
       "independently_certified_current_claim": false
+    }
+  ],
+  "historical_pass7_preexisting_amendment_extensions": [
+    {
+      "finding_id": "PSV7-045",
+      "owner": "APOL-058",
+      "role": "documented_position",
+      "historic_source_id": "VATS2023",
+      "prior_amendment_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP"
+      ],
+      "current_source_ids": [
+        "TRC-2015-OPP",
+        "NCTR-2022-OPP",
+        "AO26_APOL058_DOCUM_1",
+        "AO26_APOL058_DOCUM_2"
+      ],
+      "newly_attached_source_ids": [
+        "AO26_APOL058_DOCUM_1",
+        "AO26_APOL058_DOCUM_2"
+      ],
+      "disposition": "PRIOR_SURVIVOR_SOURCE_AMENDMENT_REMAINS_ACTIVE__TWO_ADDITIONAL_ORIGINAL_SOURCE_RECORDS_PRESENT__HISTORICAL_VERDICT_NOT_EXTENDED_TO_NEW_CLAIMS",
+      "current_claims_independently_certified": false
     }
   ]
 }
