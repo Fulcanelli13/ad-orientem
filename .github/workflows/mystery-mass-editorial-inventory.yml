@@ -17,6 +17,9 @@ on:
       - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
       - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
       - 'tests/mystery-mass-review-app-route.mjs'
+      - 'data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json'
+      - 'docs/review/mystery-mass-editorial-batch-review-44-20261015.html'
+      - 'tests/mystery-mass-full-editorial-44-review.mjs'
       - 'src/learn/mystery-mass-review-data.js'
       - 'src/learn/mystery-mass-review.js'
       - 'src/learn/mystery-mass-canon-precision-review.js'
@@ -60,6 +63,9 @@ on:
       - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
       - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
+      - 'data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json'
+      - 'docs/review/mystery-mass-editorial-batch-review-44-20261015.html'
+      - 'tests/mystery-mass-full-editorial-44-review.mjs'
       - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
       - 'tests/mystery-mass-creed-source-and-nobis.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
@@ -103,6 +109,8 @@ jobs:
         run: node tests/mystery-mass-creed-source-and-nobis.mjs
       - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
         run: node tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs
+      - name: Guard full 44-study offline editorial review, source identity, and four review batches
+        run: node tests/mystery-mass-full-editorial-44-review.mjs
       - name: Validate source-first editorial inventory and deduplication
         run: node tests/mystery-mass-editorial-inventory.mjs
       - name: Validate full Phase 2 bilingual research manuscript
