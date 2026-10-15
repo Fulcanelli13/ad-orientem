@@ -136,4 +136,5 @@ for(const p of draft.people.filter(p=>newExpanded.has(p.person_id))){
  assert(joined("fr")>=110);
 }
 
+assert.equal(draft.people.filter(x=>x.reader_biography).length,8);
 console.log("PASS 16 distinct EN/FR holiness-first saint drafts, 48 sourced facts, 2 qualified extraordinary accounts, 7 historic and 5 official post-1960 owner links; 0 published changes");
