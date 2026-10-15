@@ -11,7 +11,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
-import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, atlasCinemaHideModernBasemapLayer, atlasCinemaBasemapTone, renderBibleAtlasToString } from "./bible-atlas.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
@@ -329,20 +329,6 @@ export function createFindOwner(win=globalThis){
         if(token!==paintToken||!openState||!state.bibleAtlas){handle?.destroy?.();return false;}
         mapHandle=handle;
         if(bibleCinemaPreview){
-          // Suppress only modern political/cartographic labelling on this
-          // opt-in review; preserve physical coastlines and all AO source pins.
-          const quietHistoricContext=()=>{
-            const layers=handle?.map?.getStyle?.()?.layers??[];
-            for(const layer of layers){
-              if(atlasCinemaHideModernBasemapLayer(layer)){
-                try{handle.map.setLayoutProperty(layer.id,"visibility","none");}catch{}
-              }
-              const tone=atlasCinemaBasemapTone(layer);
-              if(tone)try{handle.map.setPaintProperty(layer.id,tone.property,tone.value);}catch{}
-            }
-          };
-          handle?.map?.on?.("load",quietHistoricContext);
-          if(handle?.map?.loaded?.()===true)quietHistoricContext();
           // Manual map drag suspends camera follow. Timeline selection keeps
           // updating source-backed pins without seizing the viewport.
           handle?.map?.on?.("dragstart",()=>{
