@@ -2,7 +2,7 @@
   "schema": "ao.saints.held-24-editorial-desk-review.v1",
   "as_of": "2026-10-15",
   "publication": "EDITORIAL_REVIEW_ONLY",
-  "method": "Link-level and selected direct-source spot checks; no independent human second editor; profile facts remain in canonical existing source files and are NOT duplicated here. Combined why+three-facts EN/FR word counts expose remaining substance gap against the user-approved moderately substantial card; these are editorial targets, not generic AI padding.",
+  "method": "Link-level and selected direct-source spot checks; no independent human second editor; profile facts remain in canonical existing source files and are NOT duplicated here. Combined why+three-facts EN/FR word counts expose remaining substance gap against the user-approved moderately substantial card; these are editorial targets, not generic AI padding. All 24 research people now include an independent continuous bilingual reader text. This is content coverage, not editorial certification.",
   "scope": {
     "people": 24,
     "source_spot_checked": 11,
@@ -15,7 +15,9 @@
     "approved_by_second_editor": 0,
     "primary_documents_checked_for_held_subjects": 13,
     "primary_documents_need_additional_line_by_line_audit": 13,
-    "people_with_nonrepetitive_reader_biography": 13
+    "people_with_nonrepetitive_reader_biography": 24,
+    "standalone_reader_biographies_ready_for_second_editor": 24,
+    "reader_biographies_remaining": 0
   },
   "records": [
     {
@@ -46,7 +48,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080528.html",
+        "secondary_reference_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080604.html",
+        "finding": "Civil prefect, monastic life, care for the poor, Lombard diplomacy, pastoral governance.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.john-chrysostom",
@@ -84,7 +101,9 @@
         "finding": "Exile was imposed, not chosen; 14 Sep 407 at Comana in Pontus is independently corroborated.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -119,7 +138,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+        "secondary_reference_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100616.html",
+        "finding": "Dominican vocation, synthesis of reason and revelation, Scripture teaching, Corpus Christi liturgical compositions.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.catherine-siena",
@@ -149,7 +183,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html",
+        "secondary_reference_url": null,
+        "finding": "Care for the sick, Dominican tertiary, spiritual guidance, appeals to Gregory XI and reform, Dialogue.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.francis-sales",
@@ -187,7 +236,9 @@
         "finding": "Theological crisis, 1593 ordination, 1602 Geneva episcopacy in Annecy, Visitation and lay holiness are documented.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -230,7 +281,9 @@
         "finding": "Evening chapels and Redemptorist mission are documented; Marianella/Pagani chronology independently confirmed.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -273,7 +326,9 @@
         "finding": "Benedict XVI explicitly distinguishes ongoing lifelong conversion from a single 387 baptism event.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -316,7 +371,9 @@
         "finding": "Journey of the Mind into God, Franciscan contemplation and death during the Council of Lyon supported; uncertain birth remains.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -352,7 +409,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070314.html",
+        "secondary_reference_url": null,
+        "finding": "Martyrdom during journey to Rome, seven authentic letters, Eucharist and episcopal unity.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.francis-xavier",
@@ -382,7 +454,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/francesco/en/audiences/2023/documents/20230517-udienza-generale.html",
+        "secondary_reference_url": null,
+        "finding": "Jesuit missionary journeys India to Japan and attempted entry to China; catechesis and care of sick.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.vincent-de-paul",
@@ -420,7 +507,9 @@
         "finding": "Pastoral charity and priestly formation directly supported; scholarly chronology disputes 1576/1580/1581 birth dating.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -464,7 +553,9 @@
         "finding": "Pope Francis directly reports street-founded moving oratory; Salesian chronology supports Castelnuovo birth and Turin death.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -499,7 +590,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090616_anno-sacerdotale.html",
+        "secondary_reference_url": null,
+        "finding": "Eucharistic devotion, long hours in confessional, parish renewal and poor relief.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.rose-of-lima",
@@ -529,7 +635,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/francesco/en/speeches/2016/june/documents/papa-francesco_20160602_giubileo-sacerdoti-terza-meditazione.html",
+        "secondary_reference_url": null,
+        "finding": "Dominican tertiary, prayer and direct care of sick and poor in Lima.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.francis-assisi",
@@ -559,7 +680,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100127.html",
+        "secondary_reference_url": null,
+        "finding": "Conversion and evangelical poverty, service to leprosy sufferers, Franciscan foundation, stigmata tradition.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.charles-borromeo",
@@ -597,7 +733,9 @@
         "finding": "Tridentine reforms, catechism, seminary training, 1576 plague assistance and Arona/Milan life dates corroborated.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -640,7 +778,9 @@
         "finding": "Substitution for Franciszek Gajowniczek, starvation bunker and lethal phenol injection on 14 Aug 1941 independently supported.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -676,7 +816,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/john-paul-ii/en/speeches/2002/july/documents/hf_jp-ii_spe_20020708_santa-maria-goretti.html",
+        "secondary_reference_url": null,
+        "finding": "Christian forgiveness and courage after an attempted sexual assault, life of faith in poverty.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.damien-de-veuster",
@@ -714,7 +869,9 @@
         "finding": "Volunteered 10 May 1873, stayed on Kalaupapa by request and served until death 15 Apr 1889.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -757,7 +914,9 @@
         "finding": "1657 letter and separate leadership of Daughters of Charity documented; Paris versus Le Meux birthplace still disputed.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -801,7 +960,9 @@
         "finding": "2000 canonization homily references Diary and private visions while emphasizing Gospel mercy; 1962 feast not inferred.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -836,7 +997,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/content/john-paul-ii/en/homilies/1998/documents/hf_jp-ii_hom_11101998_stein.html",
+        "secondary_reference_url": null,
+        "finding": "Philosopher, convert, Carmelite and Holocaust martyr; testimony of solidarity and faith.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     },
     {
       "person_id": "saint.elizabeth-ann-seton",
@@ -874,7 +1050,9 @@
         "finding": "Paul VI explicitly recognizes wife, mother, widow, religious founder; the Daughters of Charity archives hold original family records.",
         "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
         "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
-        "second_editor_certified": false
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
       },
       "claim_level_followup": [
         "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
@@ -910,7 +1088,22 @@
       },
       "needs_biography_expansion": false,
       "first_source_supported_narrative_expansion": "BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED",
-      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance."
+      "editorial_scope_note": "Expanded narrative is source-anchored research paraphrase; prior why+three facts still require sentence-level fact/source verification, elimination of repeated statements and EN/FR editorial acceptance.",
+      "reader_biography_review": {
+        "status": "ONE_CONTINUOUS_BILINGUAL_READER_DRAFT_NONPUBLIC",
+        "primary_source_url": "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html",
+        "secondary_reference_url": null,
+        "finding": "Sheltering an elderly woman, founding Little Sisters of the Poor and accepting hidden service after removal.",
+        "scope": "PRIMARY_TEXT_CONSULTED_AND_PARAPHRASED_NOT_ALL_CLAUSES_INDEPENDENTLY_CERTIFIED",
+        "bibliography_policy": "EXTERNAL_LINK_ONLY_NO_SOURCE_TEXT_COPIED",
+        "second_editor_certified": false,
+        "nonrepetitive_reader_verified": true,
+        "source_scope_note": "Claim-to-source line-level review remains required. Existing why+three facts are research audit only, not separate reader sections."
+      },
+      "claim_level_followup": [
+        "REVIEW_EN_FR_CLAUSE_TO_SOURCE",
+        "FINAL_COPYEDIT_REMOVE_REPEATED_HOLINESS_PARAGRAPH_AND_FACT_CLAIMS"
+      ]
     }
   ]
 }
