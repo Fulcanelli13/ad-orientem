@@ -31,3 +31,4 @@ jobs:
           node tests/source-text-print-followon.mjs
           node tests/source-text-bulk-whole-work.mjs
           node tests/source-text-bulk-reconciliation.mjs
+          node scripts/source-text-bulk-ingest.mjs data/source-text/bulk-jobs.v1.json
