@@ -10,6 +10,7 @@ on:
       - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
       - 'src/calendar/living-sanctoral.js'
       - 'src/calendar/optional-post1960-saint-review.js'
+      - 'src/calendar/sanctoral-person-reconciliation.js'
       - 'tests/calendar-living-sanctoral-*.mjs'
       - 'tests/calendar-post1960-*.mjs'
       - 'tests/calendar-doctors-roster-review.mjs'
@@ -38,3 +39,4 @@ jobs:
           node tests/calendar-post1960-canonization-census.mjs
           node tests/calendar-post1960-optional-eligibility.mjs
           node tests/calendar-post1960-year-coverage.mjs
+          node tests/calendar-post1960-reconciliation.mjs
