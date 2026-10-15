@@ -13,6 +13,7 @@ const r74=read("data/geography/research/sacred-geography-r74-essential-sites.v1.
 const r75=read("data/geography/research/sacred-geography-r75-essential-sites.v1.json");
 const r76=read("data/geography/research/sacred-geography-r76-essential-audit.v1.json");
 const r77=read("data/geography/research/sacred-geography-r77-essential-completeness.v1.json");
+const r78=read("data/geography/research/sacred-geography-r78-identity-adjudication.v1.json");
 const geography=read("data/geography/seed-registry.v1.json");
 const shrines=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const sources=read("data/shrines/source-registry.v1.json");
@@ -36,11 +37,11 @@ assert.equal(report.candidates.filter(x=>x.priority==="Essential").length,64);
 assert.ok(report.candidates.slice(0,64).every(x=>x.priority==="Essential"));
 assert.ok(report.candidates.slice(64,640).every(x=>x.priority==="Strong"));
 assert.ok(report.candidates.slice(640).every(x=>x.priority==="Review"));
-assert.equal(report.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,106);
-assert.equal(report.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,70);
-assert.equal(report.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,574);
+assert.equal(report.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,163);
+assert.equal(report.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,6);
+assert.equal(report.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,581);
 const existing=new Set(geography.places.map(x=>x.place_id));
-const promoted=new Map([...launch.promoted,...exceptions.promoted,...r70.sites.map(row=>({candidate_id:row.candidate,place_id:row.id})),...r71.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r71.reviewed_existing.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r72.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r75.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r75.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r76.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r77.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id}))].map(row=>[row.candidate_id,row.place_id]));
+const promoted=new Map([...launch.promoted,...exceptions.promoted,...r70.sites.map(row=>({candidate_id:row.candidate,place_id:row.id})),...r71.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r71.reviewed_existing.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r72.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.sites.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r73.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r74.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r75.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r75.existing_confirmed.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r76.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r77.published_new.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id})),...r78.confirmed_existing.map(row=>({candidate_id:row.candidate_id,place_id:row.place_id}))].map(row=>[row.candidate_id,row.place_id]));
 for(const [i,row] of report.candidates.entries()){
  assert.equal(row.review_order,i+1);
  assert.equal(row.review_wave,Math.floor(i/75)+1);
