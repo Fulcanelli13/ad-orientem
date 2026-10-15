@@ -80,7 +80,8 @@ export function auditProvisionalPage({plan,pageDraft}={}){
   if(!g||typeof g.id!=="string"||!/^PRINT[0-9]+-PPG-[0-9]{2}$/.test(g.id)||
     !Array.isArray(g.memberBlockIds)||!g.memberBlockIds.length||
     g.imagePage!==page.scanPage||g.printedPage!==page.printedPage||
-    g.status!=="PROVISIONAL_PRINT_INDENT_CENSUS_NOT_HUMAN_CERTIFIED")
+    g.status!=="ORIGINAL_IMAGE_PARAGRAPH_STARTS_PRELIMINARY__HUMAN_EDITORIAL_CHECK_PENDING"||
+    g.firstBlockId!==g.memberBlockIds[0]||typeof g.imageEvidence!=="string"||g.imageEvidence.length<20)
    throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_GROUP_INVALID");
   for(const blockId of g.memberBlockIds){
    const index=byBlock.get(blockId);
@@ -88,7 +89,7 @@ export function auditProvisionalPage({plan,pageDraft}={}){
     throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_ORDER_INVALID");
    assigned.add(blockId);previous=index;
    if(pageDraft.blocks[index].printParagraphGroupId!==g.id||
-      pageDraft.blocks[index].printParagraphStatus!=="IMAGE_STRUCTURE_PROVISIONAL__NOT_INDEPENDENTLY_CERTIFIED")
+      pageDraft.blocks[index].printParagraphStatus!=="ORIGINAL_IMAGE_PARAGRAPH_STARTS_PRELIMINARY__HUMAN_EDITORIAL_CHECK_PENDING")
     throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_GROUP_MISMATCH");
   }
   if(g.continuesToPrintedPage!==undefined &&
@@ -98,6 +99,30 @@ export function auditProvisionalPage({plan,pageDraft}={}){
  }
  if(assigned.size!==pageDraft.blocks.length)
   throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_UNMAPPED");
+ // A workbench split is NOT an authorial paragraph; review every adjacent
+ // block in the actual image, recording both joins and true paragraph starts.
+ const boundaries=pageDraft.printParagraphBoundaryChecks;
+ if(!Array.isArray(boundaries)||boundaries.length!==pageDraft.blocks.length-1||
+    census.boundaryDecisions!==boundaries.length||
+    census.tentativeNewParagraphStarts!==groups.length-1||
+    census.humanProofreadStatus!=="NOT_INDEPENDENTLY_CERTIFIED")
+  throw new Error("SOURCE_PROVISIONAL_BOUNDARY_CENSUS_INVALID");
+ let paragraphStarts=0;
+ for(let i=0;i<boundaries.length;i++){
+  const bound=boundaries[i],a=pageDraft.blocks[i],b=pageDraft.blocks[i+1];
+  const newParagraph=a.printParagraphGroupId!==b.printParagraphGroupId;
+  if(bound?.fromBlock!==a.id||bound.toBlock!==b.id||
+     bound.printedPage!==page.printedPage||bound.sourceImage!==page.url||
+     bound.humanEditorialSignoff!==false||
+     typeof bound.evidence!=="string"||bound.evidence.length<30||
+     bound.decision!==(newParagraph?
+      "NEW_PRINTED_PARAGRAPH_PRELIMINARY_IMAGE_REVIEW":
+      "SAME_PRINTED_PARAGRAPH_VISUAL_LINE_CONTINUITY"))
+   throw new Error("SOURCE_PROVISIONAL_BOUNDARY_MAPPING_INVALID");
+  if(newParagraph)paragraphStarts++;
+ }
+ if(paragraphStarts!==groups.length-1)
+  throw new Error("SOURCE_PROVISIONAL_BOUNDARY_GROUP_MISMATCH");
  const join=pageDraft.pageJoinCandidate;
  if(!join||join.sourceBlockId!==pageDraft.blocks.at(-1)?.id||
     !Array.isArray(join.printedPageSequence)||
@@ -125,6 +150,7 @@ export function auditProvisionalPage({plan,pageDraft}={}){
   eligibleForProduction:false,pageWordCountProvisional:wordCount,
   existingExcerptReferences:referencedExisting,transcribedDraftBlocks:candidates.length,
   provisionalPrintParagraphGroups:groups.length,independentlyCertifiedPrintParagraphGroups:0,
+  tentativeNewParagraphStarts:paragraphStarts,visualBoundaryChecks:boundaries.length,
   pageJoinStatus:"HELD_AND_UNPROOFREAD",nextPrintedPage:page.printedPage+1,
   embeddedPrimaryQuoteBlocks:latinQuotes,crossPageContinuations:crossPage,
   heldItems,reviewQueueMetrics:{candidateCount:reviewQueue.candidateCount,
