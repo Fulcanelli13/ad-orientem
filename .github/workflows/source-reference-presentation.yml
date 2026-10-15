@@ -5,7 +5,9 @@ on:
       - 'src/learn/source-reference-panel.js'
       - 'src/learn/formation-research-preview.js'
       - 'src/learn/mass-formation.js'
+      - 'src/learn/spiritual-life.js'
       - 'tests/reference-presentation-pilot.mjs'
+      - 'tests/reference-spiritual-life-pilot.mjs'
       - 'data/reference/canonical-works-pilot.v1.json'
       - '.github/workflows/source-reference-presentation.yml'
   workflow_dispatch:
@@ -25,8 +27,14 @@ jobs:
           node --check src/learn/source-reference-panel.js
           node --check src/learn/formation-research-preview.js
           node --check src/learn/mass-formation.js
+          node --check src/learn/spiritual-life.js
       - name: Verify compact references and original claim evidence
         run: node tests/reference-presentation-pilot.mjs
+      - name: Verify Spiritual Life reference disclosure in English and French
+        run: |
+          node tests/reference-spiritual-life-pilot.mjs
+          node tests/spiritual-life-runtime.mjs
+          node tests/spiritual-life-course.mjs
       - name: Protect published Mass Formation source and Scripture contexts
         run: node tests/mass-formation.mjs
       - name: Protect unpublished Formation provenance and publication gate
