@@ -8,10 +8,12 @@ import {renderHeritageToString} from "../src/find/heritage-presentation.js";
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const saints=read("data/saints/holiness-first-editorial-pilot-20261015.v1.json");
+const saintsCalendarBridge=read("data/saints/parallel-owner-identity-bridge-20261015.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const shrine=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const dataset={
   saints,
+  saintsCalendarBridge,
   geography:{places:geo.places,geoAreas:geo.geoAreas||[],placeRelationships:[]},
   shrines:{shrines:shrine.shrines,pilgrimages:[],routes:[],temporalLinks:[],sources:[]},
   directory:{records:[],communities:[]},
@@ -34,6 +36,11 @@ assert(items.every(x=>x.saints.every(s=>s.name_en&&s.why_en&&s.name_fr&&s.why_fr
 assert(items.every(x=>x.saints.every(s=>s.artwork_id===null)),"No art without curated approval");
 const distinct=new Map(items.flatMap(i=>i.saints).map(p=>[p.saint_id,p]));
 assert.equal(distinct.size,6,"The person taxonomy is identity-owned, not duplicated per shrine");
+assert.equal(distinct.get("saint:therese-of-lisieux").calendar_context?.observed1962?.civilDate,"2026-10-03");
+assert.equal(distinct.get("saint:therese-of-lisieux").calendar_context?.observed1962?.principalSourceId,"sancti:10-03:3:w");
+assert.equal(distinct.get("saint:claude-la-colombiere").calendar_context?.observed1962,null,"Canonization date is not 1962 feast");
+assert.equal(distinct.get("blessed:jacques-desire-laval").calendar_context,null,"Do not conflate different Laval saints");
+assert.equal([...distinct.values()].filter(x=>x.calendar_context?.observed1962).length,1,"Only one actually observed 2026 principal day is cross-certified");
 const canonicalHonours=[...distinct.values()].flatMap(p=>p.classification.honours);
 assert.deepEqual(canonicalHonours.map(h=>h.code),["DOCTOR_OF_CHURCH"],"Only formally declared Doctor of Church is classified as such");
 assert.equal(distinct.get("saint:therese-of-lisieux").classification.honours[0].en,"Doctor of the Church");
@@ -89,6 +96,22 @@ for(const lang of ["en","fr"]){
 const search=items.filter(x=>x.search_text.includes("lisieux"));
 assert(items.some(x=>x.search_text.includes("thérèse")&&x.search_text.includes("therese")),"Search must support French accents and their ASCII equivalents");
 assert.equal(search.length,2,"A saint with two shrine sites appears at two locations, not as two identities");
+
+for(const language of ["en","fr"]){
+ const lisieux=items.find(x=>x.place_id==="place:FR:carmel-lisieux");
+ assert(lisieux,"Verified Lisieux Carmel must exist");
+ const vm=buildExploreViewModel({language,lens:"saints",items,view:"map",filters:{query:""},
+    selectedId:lisieux.item_id,placeProfiles:[]});
+ const html=renderExploreToString(vm);
+ assert(html.includes("aoSaintCalendarContext"),"Exact observed Calendar context missing from Saints sheet");
+ assert(html.includes(language==="fr"?"3 octobre 2026":"3 October 2026"));
+ assert(html.includes(language==="fr"?"Observé dans le calendrier de 1962":"Observed in the 1962-calendar cycle"));
+ assert(html.includes(language==="fr"?"non d’une date de fête valable pour toute année":"not a timeless feast date"));
+ assert(!html.includes("data-calendar-mass"),"No new Mass selection action");
+}
+const noBridge=projectSaintPlaceItems({...dataset,saintsCalendarBridge:null});
+assert(noBridge.every(p=>p.saints.every(s=>s.calendar_context===null)),"No context without owner bridge");
+
 const noSites=projectSaintPlaceItems({...dataset,shrines:{shrines:[]}});
 assert.equal(noSites.length,0,"Cannot publish person pin without corresponding source shrine edge");
 const noPilot=projectSaintPlaceItems({...dataset,saints:{...saints,publication:"PUBLISHED"}});
