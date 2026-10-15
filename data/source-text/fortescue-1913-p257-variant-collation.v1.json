@@ -106,11 +106,12 @@
       "id": "SC257-011",
       "blockId": "P257-09",
       "field": "latin_noun_case",
-      "witnessReading": null,
+      "witnessReading": "hanc panem sanctum",
       "secondaryReading": "hanc panem sanctum",
-      "status": "UNRESOLVED_NEEDS_MAGNIFIED_ORIGINAL",
-      "decision": "HOLD_HUNC_VS_HANC",
-      "note": "Current draft has hunc panem sanctum; New Advent gives hanc panem sanctum. Do not use grammar alone to determine 1913 reading."
+      "status": "PRINT_IMAGE_AND_NEW_ADVENT_AGREE_PRELIMINARY",
+      "decision": "PRESERVE_HANC_PANEM_NO_GRAMMATICAL_EMENDATION",
+      "note": "The 1913 original image appears to print hanc panem sanctum, agreeing with the New Advent transcription; the prior provisional hunc was a silent grammatical normalization and has now been corrected. Original scan image remains controlling, final letter-by-letter editorial signoff pending.",
+      "scanImageUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305"
     },
     {
       "id": "SC257-012",
@@ -165,16 +166,43 @@
       "status": "DISTINCT_AUTHORIAL_QUOTATION_VS_PATRISTIC_TEXT_WITNESSES",
       "decision": "KEEP_DISTINCT_DO_NOT_AUTONORMALIZE",
       "note": "Fortescue 1913 prints 'Fac nos' as a quotation, while versions of De Sacramentis IV print 'Fac nobis'. Never correct a historical author's quoted form merely because another textual edition differs; keep text and provenance separate."
+    },
+    {
+      "id": "SC257-017",
+      "blockId": "P257-09",
+      "field": "critical_patristic_text_opening_cluster",
+      "witnessReading": "Fac nos hanc oblationem adscriptam, ratam, rationabilem, acceptabilem, quod figura est",
+      "primaryWitnessReading": "Fac nobis, inquit, hanc oblationem scriptam, rationabilem, acceptabilem, quod est figura",
+      "primarySource": "De sacramentis IV.5.21, O. Faller edition (CSEL 73, 1955), cited by liturgical study",
+      "primarySourceUrl": "https://www.lascuolacattolica.it/ojs/index.php/lsc/article/download/3891/2231",
+      "status": "BIBLIOGRAPHICALLY_IDENTIFIED_DISTINCT_EDITION_READING_NOT_DIRECTLY_COLLATED",
+      "decision": "PRESERVE_DISTINCT_SOURCE_TEXTS_NO_CONFLATION",
+      "note": "A published study quoting O. Faller CSEL 73 (1955), p.55 gives Fac nobis/scriptam/quod est figura. Fortescue's 1913 printed quotation differs. Do not infer palaeographic corruption or correct either witness solely from the other. Direct inspection of the 1955 critical apparatus remains an independent future task."
+    },
+    {
+      "id": "SC257-018",
+      "blockId": "P257-09",
+      "field": "same_author_later_monograph_reading_lead",
+      "witnessReading": "hanc panem sanctum",
+      "secondaryReading": "hunc panem sanctum",
+      "secondary": "Later electronically prepared text of Fortescue The Mass: A Study of the Roman Liturgy, original book 1912, p.67",
+      "secondaryUrl": "https://gorettipub.org/fortescue_mass_study_liturgy.pdf",
+      "status": "SEPARATE_WORK_AND_EDITION_UNCOLLATED_LEAD",
+      "decision": "DO_NOT_MERGE_BOOK_WITH_ENCYCLOPEDIA_ARTICLE",
+      "note": "A digital monograph text has hunc, while the scanned encyclopedia article p257 appears to print hanc. Separate works, editions and publishing history; a hosted modern PDF is not evidence of original 1912 printed pagination without facsimile collation. Not a correction licence."
     }
   ],
   "metrics": {
-    "comparisonCount": 15,
+    "comparisonCount": 17,
     "primaryPatristicCrossChecks": 1,
     "printEditionIdentityResolved": true,
     "completePageWordByWordProofed": false,
     "allLatinCharactersCompared": false,
     "clearanceForProduction": false,
-    "patristicTextWitnessCrossChecks": 1
+    "patristicTextWitnessCrossChecks": 1,
+    "directlyInspected1912MonographPages": 0,
+    "directlyInspectedCSEL1955PageImages": 0,
+    "comparisonsResolvedPrintPreliminary": 1
   },
   "publicationApproved": false,
   "originalDraftFile": "data/source-text/fortescue-1913-p257-provisional-transcription.v1.json"
