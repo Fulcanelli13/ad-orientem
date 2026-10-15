@@ -12,7 +12,8 @@
     "personalStatusIsNotCalendarRank": true,
     "modernMissalTextsNeverImportedAutomatically": true,
     "localAndInstituteApprovals": "REQUIRE_EVIDENCE",
-    "historicalRecognition": "DO_NOT_DISPLAY_PRE_CANONISATION_OR_PRE_DOCTOR_AS_ALREADY_RECOGNISED"
+    "historicalRecognition": "DO_NOT_DISPLAY_PRE_CANONISATION_OR_PRE_DOCTOR_AS_ALREADY_RECOGNISED",
+    "historicalCalendarEntries": "OBSERVANCE_PUBLICATION_DATE_WHEN_DOCUMENTED; CANONISATION_AND_DOCTOR_DECLARATION_ARE_INDEPENDENT"
   },
   "sources": {
     "cum-sanctissima-2020": {
@@ -84,7 +85,8 @@
           "kind": "OPTIONAL_MEMORIAL",
           "sourceIds": [
             "newman-decree-2026"
-          ]
+          ],
+          "publishedOn": "2026-02-03"
         }
       ],
       "calendar1962": {
@@ -119,7 +121,8 @@
           "kind": "OBLIGATORY_MEMORIAL",
           "sourceIds": [
             "padre-pio-2002"
-          ]
+          ],
+          "publishedOn": "2002-06-16"
         }
       ],
       "calendar1962": {
