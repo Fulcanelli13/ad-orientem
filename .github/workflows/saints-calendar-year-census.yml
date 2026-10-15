@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'tests/saints-calendar-year-census.mjs'
+      - 'tools/saints/project-observed-day-subject-demand.mjs'
       - '.github/workflows/saints-calendar-year-census.yml'
   workflow_dispatch:
 jobs:
@@ -19,6 +20,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Read all 365 observed days from existing Calendar resolver
         run: node tests/saints-calendar-year-census.mjs
+      - name: Derive source-name and sacred-art demand triage (no identity promotion)
+        run: node tools/saints/project-observed-day-subject-demand.mjs
       - name: Keep auditable source-owner census
         uses: actions/upload-artifact@v4
         if: always()
