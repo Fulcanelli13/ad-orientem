@@ -29,7 +29,7 @@ for(const e of historical.edges){
  const binding=oldReferences.get(e.source_binding);
  assert.ok(binding,"Historical binding lost "+e.source_binding);
  assert.equal(e.witness_id,binding.witness_id);
- assert.equal(e.source_binding,e.section_key.split("::")[0]+"::"+e.source_id);
+ assert.equal(e.source_binding,e.section_key.split("::")[0]+"::"+e.edge_key.split("::").at(-1));
  assert.ok(witness.get(e.witness_id)?.url?.startsWith("https://"));
  assert.ok(["PASSAGE_OPENED_AND_CLAIM_CORROBORATED",
  "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER"].includes(e.verification));
