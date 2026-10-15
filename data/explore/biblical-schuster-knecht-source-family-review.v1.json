@@ -387,11 +387,12 @@
     "wikisource1910ApplicationSubspanHeadingsConfirmed": 9,
     "wikisource1910CommentaryEnvelopesWithUnreviewedApplication": 0,
     "wikisource1910OriginsRoleSpansExcludingFootnotes": 27,
-    "wikisource1910OriginalPrintedImagePagesInspected": 23,
+    "wikisource1910OriginalPrintedImagePagesInspected": 25,
     "wikisource1910CommentaryBoundariesVisuallyVerified": 9,
     "wikisource1910ApplicationStartsVisuallyVerified": 9,
-    "wikisource1910NarrativeStartsVisuallyVerified": 8,
-    "wikisource1910TranscriptionDefectsConfirmedAgainstPrint": 2
+    "wikisource1910NarrativeStartsVisuallyVerified": 9,
+    "wikisource1910TranscriptionDefectsConfirmedAgainstPrint": 2,
+    "wikisource1910NarrativeParagraphsPreliminarilyCompared": 7
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -433,7 +434,7 @@
     "release": "RESEARCH_ONLY_NO_HISTORICAL_TEXT_COLLATED"
   },
   "wikisource1910TerritoryReview": {
-    "status": "NINE_NARRATIVE_NINE_COMMENTARY_TRANSCRIPTION_TERRITORIES_NOT_IMAGE_COLLATED",
+    "status": "NINE_NARRATIVE_NINE_COMMENTARY_TRANSCRIPTION_TERRITORIES_ALL_OPENING_SECTION_HEADING_BOUNDARIES_IMAGE_SPOT_CHECKED_NOT_AUTHOR_TEXT_CERTIFIED",
     "scanFile": "https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu",
     "transcriptionIndex": "https://en.wikisource.org/wiki/Index:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu",
     "sourceEditionId": "KNECHT-EN-1910-HERDER",
@@ -1478,11 +1479,11 @@
     },
     "originalPrintImageSpotAudit": {
       "date": "2026-10-15",
-      "status": "23_ORIGINAL_SCANNED_IMAGE_PAGES_VISUALLY_SPOT_INSPECTED;_ALL_9_NARRATIVE_COMMENTARY_BOUNDARIES_AND_9_APPLICATION_STARTS_VISIBLE",
+      "status": "25_ORIGINAL_SCANNED_IMAGE_PAGES_VISUALLY_SPOT_INSPECTED_ALL_9_NARRATIVE_STARTS_AND_9_EACH_COMMENTARY_APPLICATION_BOUNDARIES_VISIBLE",
       "evidenceSource": "Wikimedia Commons 1910 B. Herder DJVU print page thumbnail, linked per original Wikisource page",
       "method": "Opened individual original 1280px DJVU page raster images in research environment; checked typographic headings, source note separation and limited printed words against existing transcriptions; NOT a page-by-page character proofread of any full chapter.",
       "imageResolutionLabel": "1280px source-raster thumbnails, displayed and human-readable",
-      "imageInspectedCount": 23,
+      "imageInspectedCount": 25,
       "originalPrintedPages": [
         {
           "sourceWorkId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
@@ -1494,6 +1495,20 @@
           "imageActuallyDisplayed": true,
           "roleConfirmedFromPrintedTypography": "CREATION_NARRATIVE_START",
           "observation": "The Creation of the World and footnotes are visibly distinct",
+          "fullPageVerbatimTranscriptionCertified": false,
+          "fullNarrativeParagraphProofread": false,
+          "eligibleToImportText": false
+        },
+        {
+          "sourceWorkId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "sourceDjvuPage": 42,
+          "printedPage": 4,
+          "wikisourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/42",
+          "inspectionMethod": "VISUALLY_READ_1280PX_THUMBNAIL_OF_ORIGINAL_1910_PRINT_IMAGE_THROUGH_SOURCE_PAGE_IMAGE_LINK",
+          "imageActuallyDisplayed": true,
+          "roleConfirmedFromPrintedTypography": "CREATION_NARRATIVE_CONTINUED_WITH_NUMBERED_FOOTNOTES",
+          "observation": "Printed page 4 continues Creation day-unit paragraphs two through four; body and ten numbered source footnotes are physically distinct.",
           "fullPageVerbatimTranscriptionCertified": false,
           "fullNarrativeParagraphProofread": false,
           "eligibleToImportText": false
@@ -1606,6 +1621,20 @@
           "imageActuallyDisplayed": true,
           "roleConfirmedFromPrintedTypography": "COMMENTARY_TO_APPLICATION",
           "observation": "Centered APPLICATION begins following Adam/Eve commentary",
+          "fullPageVerbatimTranscriptionCertified": false,
+          "fullNarrativeParagraphProofread": false,
+          "eligibleToImportText": false
+        },
+        {
+          "sourceWorkId": "WORK-KNECHT-PRACTICAL-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "sourceDjvuPage": 57,
+          "printedPage": 19,
+          "wikisourcePageUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/57",
+          "inspectionMethod": "VISUALLY_READ_1280PX_THUMBNAIL_OF_ORIGINAL_1910_PRINT_IMAGE_THROUGH_SOURCE_PAGE_IMAGE_LINK",
+          "imageActuallyDisplayed": true,
+          "roleConfirmedFromPrintedTypography": "APPLICATION_TO_FALL_PART_I_NARRATIVE",
+          "observation": "Printed page 19 ends the previous Application and opens Chapter IV, Part I, with distinct title, Genesis 3 citation, narrative body and numbered source footnotes.",
           "fullPageVerbatimTranscriptionCertified": false,
           "fullNarrativeParagraphProofread": false,
           "eligibleToImportText": false
@@ -1834,6 +1863,7 @@
           41,
           47,
           51,
+          57,
           62,
           66,
           72,
@@ -1841,9 +1871,7 @@
           84
         ]
       },
-      "remainingNarrativeStartUnobserved": [
-        57
-      ],
+      "remainingNarrativeStartUnobserved": [],
       "defectsAgainstUnproofreadTranscription": [
         {
           "id": "KNECHT1910-PRINT-COLLATION-NOAH-P79-AND",
@@ -1880,11 +1908,84 @@
       "originalSourceProseApprovedForApp": 0,
       "imageRastersReuploadedOrCopiedToRepo": false,
       "editionTextReproductionCleared": false,
-      "appProductionChanges": false
+      "appProductionChanges": false,
+      "narrativeParagraphVisualComparisonPilot": {
+        "status": "PRELIMINARY_VISUAL_BODY_TEXT_COMPARISON_NOT_FULL_CHARACTER_CERTIFICATION_NOT_IMPORTABLE",
+        "sourceEditionId": "KNECHT-EN-1910-HERDER",
+        "chapter": "knecht:OT-I",
+        "scope": "Seven day-unit narrative body paragraphs in Creation, excluding every numbered source footnote and all Knecht COMMENTARY. Cross-page continuation of day four checked. No author prose copied into the register.",
+        "comparedDayUnits": [
+          {
+            "day": 1,
+            "scanPages": [
+              41
+            ],
+            "note": "First day opening and separate notes visible"
+          },
+          {
+            "day": 2,
+            "scanPages": [
+              42
+            ],
+            "note": "Second-day body and reference numerals visually compared"
+          },
+          {
+            "day": 3,
+            "scanPages": [
+              42
+            ],
+            "note": "Third-day body and reference numerals visually compared"
+          },
+          {
+            "day": 4,
+            "scanPages": [
+              42,
+              43
+            ],
+            "note": "Fourth-day paragraph spans a scan-page boundary"
+          },
+          {
+            "day": 5,
+            "scanPages": [
+              43
+            ],
+            "note": "Fifth-day body visually compared"
+          },
+          {
+            "day": 6,
+            "scanPages": [
+              43
+            ],
+            "note": "Sixth-day body visually compared"
+          },
+          {
+            "day": 7,
+            "scanPages": [
+              43
+            ],
+            "note": "Seventh-day body ends immediately before separate COMMENTARY heading"
+          }
+        ],
+        "preliminaryComparedCount": 7,
+        "originalPagesIndependentlyDisplayed": [
+          41,
+          42,
+          43
+        ],
+        "sourceTextCopiedToRepository": false,
+        "fullParagraphWordByWordCertification": false,
+        "originalSourceTextApprovedForPublication": false,
+        "originalEnglishSchuster1925Verified": false,
+        "sourcePageImageUrls": [
+          "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/41",
+          "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/42",
+          "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43"
+        ]
+      }
     }
   },
   "wikisource1910SourceQualityReview": {
-    "status": "23_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL",
+    "status": "25_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL",
     "sourceEdition": "KNECHT-EN-1910-HERDER",
     "printScanSource": "https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu",
     "printScanSourceRights": "WIKIMEDIA_COMMONS_DECLARED_PUBLIC_DOMAIN_WITH_ORIGINAL_TRANSLATOR_UNKNOWN; JURISDICTION_AND_SCANNED_WITNESS_EDITORIAL_CHECK_NOT_REPLACED_BY_DECLARATION",
@@ -2014,9 +2115,9 @@
       "HEADING_OR_CHAPTER_REFERENCE",
       "EDITORIAL_SOURCE_CONTEXT"
     ],
-    "importGate": "NO_APP_SOURCE_TEXT_UNTIL_SOURCE_TEXT_PARSER_PR_1229_CONFIRMS_ORIGINAL_WITNESS_AND_RIGHTS",
+    "importGate": "NO_APP_SOURCE_TEXT_UNTIL_EXISTING_PARSER_INFRASTRUCTURE_AND_EDITORIAL_OWNER_CONFIRM_ORIGINAL_WITNESS_PARAGRAPHS_AND_RIGHTS; PR_1229_WAS_MERGED_2026-10-15",
     "initialImageFetchFailuresNowSuperseded": true,
     "subsequentSuccessfulImageAuditPath": "wikisource1910TerritoryReview.originalPrintImageSpotAudit",
-    "printedImagePagesChecked": 23
+    "printedImagePagesChecked": 25
   }
 }
