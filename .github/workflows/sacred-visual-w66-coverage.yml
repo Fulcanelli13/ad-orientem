@@ -1,4 +1,4 @@
-name: Sacred Art W66-W67 coverage and source media
+name: Sacred Art W66-W68 coverage, site media and selector
 
 on:
   pull_request:
@@ -9,6 +9,8 @@ on:
       - ".github/workflows/sacred-visual-w66-coverage.yml"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
       - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
+      - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
+      - "tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs"
   workflow_dispatch:
 
 permissions:
@@ -27,3 +29,4 @@ jobs:
         run: |
           node tests/sacred-visual-w66-visual-demand-preaudit.mjs
           node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
+          node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
