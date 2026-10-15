@@ -9,6 +9,17 @@
   },
   "coverage": {
     "scopeYears": [
+      1961,
+      1962,
+      1963,
+      1964,
+      1967,
+      1969,
+      1970,
+      1974,
+      1975,
+      1976,
+      1977,
       1982,
       1983,
       1984,
@@ -50,11 +61,11 @@
       2024,
       2025
     ],
-    "reviewedYears": 40,
+    "reviewedYears": 51,
     "completeGlobal1960To2026": false,
-    "namedIndividualRecords": 229,
-    "unexpandedGroupRecords": 11,
-    "unexpandedGroupMembers": 437,
+    "namedIndividualRecords": 258,
+    "unexpandedGroupRecords": 13,
+    "unexpandedGroupMembers": 497,
     "knownCanonicalPersonIdReuse": [
       "saint.carlo-acutis",
       "saint.john-henry-newman",
@@ -62,7 +73,9 @@
     ],
     "unverifiedApproximateGroupMembers": 800,
     "groupsWithApproximateCounts": 1,
-    "knownGroupMembersAlreadyIncludedInNamedRecords": 13
+    "knownGroupMembersAlreadyIncludedInNamedRecords": 15,
+    "all51OfficialIndexYearsTranscribed": true,
+    "remainingEventIdentityAndGroupWork": "OPEN"
   },
   "countingRule": "Individually named saint IDs count once even when in martyr groups. Every cohort with explicit crosswalk uses unexpandedMemberCount=memberCount-named member IDs. Approximate Otranto count is separate. Source-listed ceremonial form may be unresolved; no feast date inferred.",
   "liturgicalRule": "No individual record in this batch asserts universal feast date, 1962 optional mass eligibility, mass texts, or a change to the principal observed 1962 mass.",
@@ -400,6 +413,94 @@
       "status": "YEAR_INDEX_REVIEWED",
       "eventCount": 3,
       "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1977,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 3,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1976,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 2,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1975,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 4,
+      "namedIndividuals": 5,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1974,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1974.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1970,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 6,
+      "namedIndividuals": 8,
+      "unexpandedGroupMemberships": 40
+    },
+    {
+      "year": 1969,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1969.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1967,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1967.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1964,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 2,
+      "unexpandedGroupMemberships": 20
+    },
+    {
+      "year": 1963,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1963.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1962,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 1961,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1961.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 1,
       "unexpandedGroupMemberships": 0
     }
   ],
@@ -1721,6 +1822,314 @@
       ],
       "groupIds": [],
       "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1977-01-23",
+      "date": "1977-01-23",
+      "year": 1977,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.rafaela-porras-ayllon"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1977-06-19",
+      "date": "1977-06-19",
+      "year": 1977,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.john-neumann-philadelphia"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1977-10-09",
+      "date": "1977-10-09",
+      "year": 1977,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.charbel-makhlouf"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1976-10-03",
+      "date": "1976-10-03",
+      "year": 1976,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.beatrice-de-silva"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1976-10-17",
+      "date": "1976-10-17",
+      "year": 1976,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.john-ogilvie"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1975-05-25",
+      "date": "1975-05-25",
+      "year": 1975,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.juan-bautista-concepcion",
+        "saint.vicenta-maria-lopez-vicuna"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1975-09-14",
+      "date": "1975-09-14",
+      "year": 1975,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.elizabeth-ann-seton"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1975-09-28",
+      "date": "1975-09-28",
+      "year": 1975,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.juan-macias"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1975-10-26",
+      "date": "1975-10-26",
+      "year": 1975,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.giustino-de-jacobis"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1974-01-27",
+      "date": "1974-01-27",
+      "year": 1974,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1974.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.teresa-jornet-ibars"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-01-25",
+      "date": "1970-01-25",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.maria-soledad-torres-acosta"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-05-03",
+      "date": "1970-05-03",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.leonardo-murialdo"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-05-10",
+      "date": "1970-05-10",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.teresa-couderc"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-05-31",
+      "date": "1970-05-31",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.john-avila"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-06-21",
+      "date": "1970-06-21",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.nikola-tavelic",
+        "saint.stefano-da-cuneo",
+        "saint.deodat-da-ruticinio",
+        "saint.pietro-da-narbona"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1970-10-25",
+      "date": "1970-10-25",
+      "year": 1970,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [],
+      "groupIds": [
+        "canon-group.forty-martyrs-england-wales"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1969-06-22",
+      "date": "1969-06-22",
+      "year": 1969,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1969.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.julie-billiart"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1967-10-29",
+      "date": "1967-10-29",
+      "year": 1967,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1967.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.benilde-romancon"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1964-10-18",
+      "date": "1964-10-18",
+      "year": 1964,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.charles-lwanga",
+        "saint.matthias-kalemba"
+      ],
+      "groupIds": [
+        "canon-group.uganda-martyrs-22"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1963-01-20",
+      "date": "1963-01-20",
+      "year": 1963,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1963.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.vincent-pallotti"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1962-05-06",
+      "date": "1962-05-06",
+      "year": 1962,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.martin-de-porres"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1962-12-09",
+      "date": "1962-12-09",
+      "year": 1962,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.francesco-maria-camporosso",
+        "saint.pierre-julien-eymard",
+        "saint.antonio-maria-pucci"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-1961-05-11",
+      "date": "1961-05-11",
+      "year": 1961,
+      "kind": "DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1961.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.maria-bertilla-boscardin"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
     }
   ],
   "groups": [
@@ -1894,6 +2303,34 @@
         "Paul Chong Ha-sang"
       ],
       "note": "103 canonical cohort, 2 named individually in index, 101 still unexpanded."
+    },
+    {
+      "id": "forty-martyrs-england-wales",
+      "eventId": "canon-1970-10-25",
+      "label": "Forty Martyrs of England and Wales",
+      "memberCount": 40,
+      "unexpandedMemberCount": 40,
+      "individuallyIdentifiedPersonIds": [],
+      "memberIdentityStatus": "UNEXPANDED_IN_THIS_BATCH",
+      "namedLead": [],
+      "note": "Forty-person historic English/Welsh martyr cohort. Do not substitute this for 40 identified individual records until official membership source is reconciled."
+    },
+    {
+      "id": "uganda-martyrs-22",
+      "eventId": "canon-1964-10-18",
+      "label": "Charles Lwanga, Matthias Mulumba Kalemba and twenty companions, Martyrs of Uganda",
+      "memberCount": 22,
+      "unexpandedMemberCount": 20,
+      "individuallyIdentifiedPersonIds": [
+        "saint.charles-lwanga",
+        "saint.matthias-kalemba"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Charles Lwanga",
+        "Matthias Mulumba Kalemba"
+      ],
+      "note": "22 Catholic martyrs canonised; Protestant Uganda martyrs must never be inserted into this Catholic canonisation cohort."
     }
   ],
   "persons": [
@@ -6290,6 +6727,566 @@
       "sources": [
         "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html"
       ]
+    },
+    {
+      "id": "saint.rafaela-porras-ayllon",
+      "name": "Rafaela Porras y Ayllón",
+      "canonizedOn": "1977-01-23",
+      "canonizationEventId": "canon-1977-01-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1977-01-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html"
+      ]
+    },
+    {
+      "id": "saint.john-neumann-philadelphia",
+      "name": "Giovanni Nepomuceno Neumann",
+      "canonizedOn": "1977-06-19",
+      "canonizationEventId": "canon-1977-06-19",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1977-06-19"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html"
+      ]
+    },
+    {
+      "id": "saint.charbel-makhlouf",
+      "name": "Charbel Makhluf",
+      "canonizedOn": "1977-10-09",
+      "canonizationEventId": "canon-1977-10-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1977-10-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html"
+      ]
+    },
+    {
+      "id": "saint.beatrice-de-silva",
+      "name": "Beatrice de Silva Meneses",
+      "canonizedOn": "1976-10-03",
+      "canonizationEventId": "canon-1976-10-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1976-10-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html"
+      ]
+    },
+    {
+      "id": "saint.john-ogilvie",
+      "name": "John Ogilvie",
+      "canonizedOn": "1976-10-17",
+      "canonizationEventId": "canon-1976-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1976-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html"
+      ]
+    },
+    {
+      "id": "saint.juan-bautista-concepcion",
+      "name": "Giovanni Battista della Concezione",
+      "canonizedOn": "1975-05-25",
+      "canonizationEventId": "canon-1975-05-25",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1975-05-25"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html"
+      ]
+    },
+    {
+      "id": "saint.vicenta-maria-lopez-vicuna",
+      "name": "Vicenta María López y Vicuña",
+      "canonizedOn": "1975-05-25",
+      "canonizationEventId": "canon-1975-05-25",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1975-05-25"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html"
+      ]
+    },
+    {
+      "id": "saint.elizabeth-ann-seton",
+      "name": "Elizabeth Ann Bayley Seton",
+      "canonizedOn": "1975-09-14",
+      "canonizationEventId": "canon-1975-09-14",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1975-09-14"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html"
+      ]
+    },
+    {
+      "id": "saint.juan-macias",
+      "name": "Juan Macías",
+      "canonizedOn": "1975-09-28",
+      "canonizationEventId": "canon-1975-09-28",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1975-09-28"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html"
+      ]
+    },
+    {
+      "id": "saint.giustino-de-jacobis",
+      "name": "Giustino de Jacobis",
+      "canonizedOn": "1975-10-26",
+      "canonizationEventId": "canon-1975-10-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1975-10-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html"
+      ]
+    },
+    {
+      "id": "saint.teresa-jornet-ibars",
+      "name": "Teresa Jornet e Ibars",
+      "canonizedOn": "1974-01-27",
+      "canonizationEventId": "canon-1974-01-27",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1974-01-27"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1974.html"
+      ]
+    },
+    {
+      "id": "saint.maria-soledad-torres-acosta",
+      "name": "María Soledad Torres Acosta",
+      "canonizedOn": "1970-01-25",
+      "canonizationEventId": "canon-1970-01-25",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-01-25"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.leonardo-murialdo",
+      "name": "Leonardo Murialdo",
+      "canonizedOn": "1970-05-03",
+      "canonizationEventId": "canon-1970-05-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-05-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.teresa-couderc",
+      "name": "Teresa Couderc",
+      "canonizedOn": "1970-05-10",
+      "canonizationEventId": "canon-1970-05-10",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-05-10"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.john-avila",
+      "name": "Giovanni d’Avila (John of Ávila)",
+      "canonizedOn": "1970-05-31",
+      "canonizationEventId": "canon-1970-05-31",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-05-31"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.nikola-tavelic",
+      "name": "Nicola Tavelić",
+      "canonizedOn": "1970-06-21",
+      "canonizationEventId": "canon-1970-06-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-06-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.stefano-da-cuneo",
+      "name": "Stefano da Cuneo",
+      "canonizedOn": "1970-06-21",
+      "canonizationEventId": "canon-1970-06-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-06-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.deodat-da-ruticinio",
+      "name": "Deodato da Ruticinio",
+      "canonizedOn": "1970-06-21",
+      "canonizationEventId": "canon-1970-06-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-06-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.pietro-da-narbona",
+      "name": "Pietro da Narbona",
+      "canonizedOn": "1970-06-21",
+      "canonizationEventId": "canon-1970-06-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1970-06-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html"
+      ]
+    },
+    {
+      "id": "saint.julie-billiart",
+      "name": "Giulia Billiart",
+      "canonizedOn": "1969-06-22",
+      "canonizationEventId": "canon-1969-06-22",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1969-06-22"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1969.html"
+      ]
+    },
+    {
+      "id": "saint.benilde-romancon",
+      "name": "Benildo Romançon",
+      "canonizedOn": "1967-10-29",
+      "canonizationEventId": "canon-1967-10-29",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1967-10-29"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1967.html"
+      ]
+    },
+    {
+      "id": "saint.charles-lwanga",
+      "name": "Carlo Lwanga",
+      "canonizedOn": "1964-10-18",
+      "canonizationEventId": "canon-1964-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1964-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.uganda-martyrs-22"
+      ]
+    },
+    {
+      "id": "saint.matthias-kalemba",
+      "name": "Mattia Maulumba Kalemba",
+      "canonizedOn": "1964-10-18",
+      "canonizationEventId": "canon-1964-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1964-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.uganda-martyrs-22"
+      ]
+    },
+    {
+      "id": "saint.vincent-pallotti",
+      "name": "Vincenzo Pallotti",
+      "canonizedOn": "1963-01-20",
+      "canonizationEventId": "canon-1963-01-20",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1963-01-20"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1963.html"
+      ]
+    },
+    {
+      "id": "saint.martin-de-porres",
+      "name": "Martino de Porres",
+      "canonizedOn": "1962-05-06",
+      "canonizationEventId": "canon-1962-05-06",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1962-05-06"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html"
+      ]
+    },
+    {
+      "id": "saint.francesco-maria-camporosso",
+      "name": "Francesco Maria da Camporosso",
+      "canonizedOn": "1962-12-09",
+      "canonizationEventId": "canon-1962-12-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1962-12-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html"
+      ]
+    },
+    {
+      "id": "saint.pierre-julien-eymard",
+      "name": "Pierre-Julien Eymard",
+      "canonizedOn": "1962-12-09",
+      "canonizationEventId": "canon-1962-12-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1962-12-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html"
+      ]
+    },
+    {
+      "id": "saint.antonio-maria-pucci",
+      "name": "Antonio Maria Pucci",
+      "canonizedOn": "1962-12-09",
+      "canonizationEventId": "canon-1962-12-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1962-12-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html"
+      ]
+    },
+    {
+      "id": "saint.maria-bertilla-boscardin",
+      "name": "Maria Bertilla Boscardin",
+      "canonizedOn": "1961-05-11",
+      "canonizationEventId": "canon-1961-05-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "1961-05-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1961.html"
+      ]
     }
+  ],
+  "caveats": [
+    "The 51-year index transcription does not imply that every person in martyr cohorts is named, or that missing index years contain no canonizations."
   ]
 }
