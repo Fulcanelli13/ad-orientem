@@ -116,7 +116,10 @@ function installStyle(win){
 
 export function createFindOwner(win=globalThis){
   // Opt-in cinematic design review, using the *real* 151 canonical events.
-  const bibleCinemaPreview=new URLSearchParams(String(win?.location?.search??"")).get("atlasCinema")==="1";
+  const query=new URLSearchParams(String(win?.location?.search??""));
+  const bibleCinemaPreview=query.get("atlasCinema")==="1";
+  // Second flag keeps historical-name research off the ordinary and cinematic-only experiences.
+  const bibleHistoricalPreview=bibleCinemaPreview&&query.get("atlasHistory")==="1";
   let bibleCinemaFollow=true,bibleCinemaSheetExpanded=false,bibleCinemaPlateTimer=null;
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
@@ -306,7 +309,7 @@ export function createFindOwner(win=globalThis){
     if(state.bibleAtlas){
       const atlasStops=buildBibleAtlas(data?.biblePlaces?.entries??[]);
       node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex,
-       cinematicPreview:bibleCinemaPreview,cinemaFollow:bibleCinemaFollow,
+       cinematicPreview:bibleCinemaPreview,historicalPreview:bibleHistoricalPreview,cinemaFollow:bibleCinemaFollow,
        cinemaSheetExpanded:bibleCinemaSheetExpanded});
       // Place the selected source stop under the timeline cursor before async map
       // loading; the initial scroll origin must never nominate Creation by mistake.
@@ -606,7 +609,7 @@ export function createFindOwner(win=globalThis){
       button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));
     });
     const detail=root?.querySelector?.("[data-bible-detail]");
-    if(detail)detail.innerHTML=atlasDetail(active,lang);
+    if(detail)detail.innerHTML=atlasDetail(active,lang,{historicalPreview:bibleHistoricalPreview});
     if(bibleCinemaPreview){
       const sheetTitle=root?.querySelector?.("[data-bible-sheet-title]");
       if(sheetTitle)sheetTitle.textContent=lang==="fr"?active.title_fr:active.title_en;
