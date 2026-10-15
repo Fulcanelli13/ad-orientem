@@ -241,7 +241,7 @@
     "test:priest-entrance-phone": "node tests/reader-priest-entrance-phone.mjs",
     "test:mass-form-ceremonial-batch2": "node tests/mass-form-ceremonial-batch2.mjs",
     "test:reader-live-rails-phone": "node tests/reader-live-rails-phone.mjs",
-    "test:phone-curated65": "node tests/reader-phone-curated65.mjs",
+    "test:phone-curated65": "node tests/reader-phone-curated65.mjs && node tests/reader-phone-conditional-sequence.mjs",
     "test:mass-speaking-roles": "node tests/reader-speaker-roles.mjs && node tests/reader-chant-line-layout.mjs && node tests/reader-mode-switch.mjs && node tests/reader-schola.mjs && node tests/reader-schola-curated.mjs && node tests/reader-live-liturgical-acceptance.mjs && node tests/reader-priest-event-alignment.mjs",
     "test:mass-batch4-release": "node tests/mass-batch4-release-acceptance.mjs && node tests/mass-phase12-curated65-contract.mjs && node tests/mass-phase12-sequence-cards.mjs",
     "test:1962-form-commemorations": "node tests/mass-1962-form-source-selection.mjs",
