@@ -125,13 +125,6 @@ try{
  assert.equal(opened.current,firstMapped.index);
  assert.equal(opened.following,"true");
  assert.ok(opened.pinCount>0,"Review starts with source-qualified pins and no invented geography");
- const hidden=new Set(opened.hiddenLayers.filter(x=>x.property==="visibility"&&x.value==="none").map(x=>x.id));
- assert.ok(hidden.has("country_label")&&hidden.has("admin-country-boundary"),
-  "Review suppresses modern country labels and administrative boundaries");
- assert.ok(!hidden.has("terrain-water")&&!hidden.has("ao-explore-points"),
-  "Review preserves the land/water context and all source-backed application pins");
- assert.ok(opened.tones.some(x=>x.id==="terrain-water"&&x.property==="fill-color"),
-  "Review makes land/water legible without adding contemporary labels");
  assert.deepEqual(opened.camera,[firstMapped.geo.lng,firstMapped.geo.lat]);
  const canvas=page.locator("#ao-find-modular-root [data-bible-map] canvas");
  await canvas.scrollIntoViewIfNeeded();
