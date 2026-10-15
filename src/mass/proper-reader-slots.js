@@ -1,3 +1,4 @@
+import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
@@ -254,17 +255,44 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     });
   }
 
-  // Divinum/Missale source normalization frequently carries Gradual/Tract/Alleluia
-  // together in proper.gradual. Only a genuinely separate Sequence gets a second block.
+  // Preserve flattened donor text unless all named [Graduale] and
+  // [Alleluia]/[Tractus] originals reconstruct the SAME full la/en/fr Proper.
+  // A separately sourced Sequence remains independent, not a phantom chant.
+  const parts=validatedPreGospelChantParts(proper);
   const sequenceRows=values(proper.sequence,locale);
-  slots.ALLELUIA_TRACT_SEQUENCE=sequenceRows.length
-    ? readyEnvelope("ALLELUIA_TRACT_SEQUENCE",proper.sequence,opts)
+  if(parts){
+    const gradual=readyEnvelope("GRADUAL",parts[0],opts);
+    slots.GRADUAL=Object.freeze({...gradual,data:Object.freeze({
+      paragraphs:Object.freeze(gradual.data.paragraphs.map(row=>Object.freeze({
+        ...row,liturgicalGroup:"AO.CHANT.GRADUAL",
+        sourcePath:parts[0].sourceRef,
+      }))),
+    })});
+  }
+  const nextChants=parts?[parts[1],...sequenceRows]:sequenceRows;
+  const namedChants=parts?nextChants.map((row,index)=>Object.freeze({
+    ...row,
+    chantKind:index===0?parts[1].kind:"SEQUENCE",
+    sourceRef:index===0?parts[1].sourceRef:
+      String(row.sourceRef??row.sourcePath??proper.sourcePath+":Sequentia"),
+  })):null;
+  const chantSlot=nextChants.length
+    ? readyEnvelope("ALLELUIA_TRACT_SEQUENCE",nextChants,opts)
     : Object.freeze({
         status:"NOT_APPLICABLE",
         slot:"ALLELUIA_TRACT_SEQUENCE",
-        reason:"No separate Sequence; Gradual/Tract/Alleluia remains in GRADUAL.",
+        reason:"No separately sourced Alleluia/Tract or Sequence.",
         data:null,
       });
+  slots.ALLELUIA_TRACT_SEQUENCE=parts&&chantSlot.status==="READY"
+    ?Object.freeze({...chantSlot,data:Object.freeze({
+      paragraphs:Object.freeze(chantSlot.data.paragraphs.map((row,index)=>
+        Object.freeze({...row,
+          liturgicalGroup:"AO.CHANT."+namedChants[index].chantKind,
+          sourcePath:namedChants[index].sourceRef,
+        }))),
+      })})
+    :chantSlot;
 
   const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(slots[slot].status));
   return Object.freeze({
