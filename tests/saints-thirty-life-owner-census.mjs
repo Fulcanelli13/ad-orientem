@@ -61,6 +61,14 @@ assert(deskReview.records.every(x=>x.publication_blocks?.length>=1 && x.profile_
 assert.equal(deskReview.scope.source_spot_checked,11);
 assert.equal(deskReview.scope.source_pending_deeper_check,13);
 assert.equal(deskReview.scope.released_people,0);
+assert.equal(deskReview.scope.bios_with_sourced_longer_draft,6);
+assert.equal(deskReview.scope.bios_below_compact_target,19);
+assert(deskReview.records.every(row=>row.current_combined_biography_words.en>0
+ && row.current_combined_biography_words.fr>0),"No empty bilingual review text");
+assert(deskReview.records.filter(x=>x.first_source_supported_narrative_expansion).every(x=>x.current_combined_biography_words.en>=105
+ && x.first_source_supported_narrative_expansion==="BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"),
+ "Expanded drafts require substantive English text while retaining the approval hold");
+
 assert(!entries.some(x=>x.id==="saint.francois-de-montmorency-laval"),
   "Do not replace Blessed Jacques-Désiré Laval with François de Montmorency-Laval");
 const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESEARCH_CENSUS_NOT_A_30_PERSON_PUBLIC_APP",
@@ -69,6 +77,8 @@ const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESE
  held_profiles_with_editorial_issue_register:deskReview.records.length,
  source_spot_checked_desk_review:deskReview.scope.source_spot_checked,
  desk_review_is_not_publication_approval:true,
+ bilingual_reader_narrative_revisions:deskReview.scope.bios_with_sourced_longer_draft,
+ held_reader_narratives_below_110_words:deskReview.scope.bios_below_compact_target,
  drafts_with_an_existing_map_lens_surface:6,public_pages_released_from_this_pr:0,
  individually_approved_new_portraits:0,additional_map_pins_created:0,
  native_six_life_date_records:entries.filter(x=>x.life_data_status==="NATIVE_DATES_SOURCED_EDITORIAL_REVIEW").length,
