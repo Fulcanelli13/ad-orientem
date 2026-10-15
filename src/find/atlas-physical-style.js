@@ -12,12 +12,22 @@ export const ATLAS_PHYSICAL_STYLE=Object.freeze({
  sources:{
   "ao-physical-land":{type:"geojson",data:URLS.land,attribution},
   "ao-physical-lakes":{type:"geojson",data:URLS.lakes,attribution},
-  "ao-physical-rivers":{type:"geojson",data:URLS.rivers,attribution}
+  "ao-physical-rivers":{type:"geojson",data:URLS.rivers,attribution},
+  // Modern elevation, NOT a reconstruction of Biblical-period terrain.
+  // Public Mapzen/Tilezen Terrarium terrain archive, hosted as AWS open data.
+  "ao-physical-elevation":{type:"raster-dem",
+   tiles:["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],
+   tileSize:256,maxzoom:12,encoding:"terrarium",
+   attribution:'Terrain: <a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noopener noreferrer">Mapzen/Tilezen source credits</a> (modern elevation)'}
  },
  layers:[
   {id:"ao-physical-sea",type:"background",paint:{"background-color":"#102634"}},
   {id:"ao-physical-landfill",type:"fill",source:"ao-physical-land",
    paint:{"fill-color":"#454e42","fill-opacity":1}},
+  {id:"ao-physical-shaded-relief",type:"hillshade",source:"ao-physical-elevation",
+   paint:{"hillshade-exaggeration":0.28,
+    "hillshade-shadow-color":"#101b20","hillshade-highlight-color":"#c6caac",
+    "hillshade-accent-color":"#596755","hillshade-illumination-direction":315}},
   {id:"ao-physical-coastline",type:"line",source:"ao-physical-land",
    paint:{"line-color":"#a4ad9a","line-opacity":0.72,
     "line-width":["interpolate",["linear"],["zoom"],0,0.35,5,0.85,10,1.25]}},
