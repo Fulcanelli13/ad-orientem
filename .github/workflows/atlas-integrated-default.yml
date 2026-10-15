@@ -1,0 +1,54 @@
+name: Biblical Atlas integrated default and relief
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/browser-entry.js"
+      - "src/find/bible-atlas.js"
+      - "src/find/atlas-physical-style.js"
+      - "tests/atlas-default-integrated-phone.mjs"
+      - "tests/atlas-physical-basemap.mjs"
+      - "tests/explore-bible-atlas-151-phone.mjs"
+      - ".github/workflows/atlas-integrated-default.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Exact physical DEM, 151-story and context source invariants
+        run: |
+          node --check src/find/atlas-physical-style.js
+          node --check src/find/browser-entry.js
+          node --check src/find/bible-atlas.js
+          node tests/atlas-physical-basemap.mjs
+          node tests/explore-atlas-cinematic-151.mjs
+          node tests/atlas-landscape-context.mjs
+          node tests/atlas-source-place-labels.mjs
+  browser:
+    needs: contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Normal app URL opens complete Atlas and real terrain
+        run: node tests/atlas-default-integrated-phone.mjs
+      - name: Explicit legacy test stays available
+        run: node tests/explore-bible-atlas-151-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-integrated-default-mobile-320-390-768
+          path: test-output/atlas-default-integrated/*.png
+          if-no-files-found: warn
