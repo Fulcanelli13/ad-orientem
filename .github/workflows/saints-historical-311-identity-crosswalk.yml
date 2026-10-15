@@ -1,0 +1,38 @@
+name: Saints historical 311 person/group/art identity reconciliation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/saints/reconcile-311-historical-person-owners.mjs'
+      - 'data/saints/historical-v4333-311-components.recovered.v1.json'
+      - 'data/saints/parallel-owner-identity-bridge-20261015.v1.json'
+      - 'data/explore/worldwide-relic-subject-census.research.v1.json'
+      - '.github/workflows/saints-historical-311-identity-crosswalk.yml'
+  workflow_dispatch:
+jobs:
+  exact-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download pinned Calendar and Art research inputs as read-only
+        run: |
+          mkdir -p artifacts/saints-owner-inputs
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/07516f7ecf96ec2bef6c0746966bd3442496f4ef/data/calendar/doctors-of-church-roster.review.v1.json" -o artifacts/saints-owner-inputs/calendar-doctors-38.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/07516f7ecf96ec2bef6c0746966bd3442496f4ef/data/calendar/living-sanctoral-pilot.v1.json" -o artifacts/saints-owner-inputs/calendar-living-6.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/07516f7ecf96ec2bef6c0746966bd3442496f4ef/data/calendar/post1960-canonizations.official-batch1.v1.json" -o artifacts/saints-owner-inputs/calendar-post1960-258.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/c61b6531a8bead35746e8a7cf1f7503fde643480/data/research/sacred-visual-w62-live-route-and-saint-identity-inputs-20261015.v1.json" -o artifacts/saints-owner-inputs/art-w62-historical-expectations.json
+          curl --fail --location --retry 3 --silent --show-error "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/c61b6531a8bead35746e8a7cf1f7503fde643480/data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json" -o artifacts/saints-owner-inputs/art-w64-rated5-saints-pilot-candidates.json
+      - name: Verify exact 311 original instances against existing owners
+        run: node tools/saints/reconcile-311-historical-person-owners.mjs
+      - name: Retain identity review artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saints-311-person-group-art-owner-triage
+          path: artifacts/saints-calendar-census/saints-v4333-311-owner-identity-and-art-review.json
+          if-no-files-found: warn
+          retention-days: 14
