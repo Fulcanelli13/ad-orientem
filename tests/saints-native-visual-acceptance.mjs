@@ -75,6 +75,10 @@ try{
    });
    if(mapMode.mapState!=="ready"){
      assert(mapMode.fallback.length>=20,"Delayed/unavailable map must show useful user-facing recovery text");
+   }else{
+     // Style-load can precede painting the GeoJSON source by several frames.
+     // Capture the real cluster layer rather than a momentarily empty basemap.
+     await page.waitForTimeout(1200);
    }
    await page.screenshot({path:resolve(destination,config.name+"-01-native-map.png"),fullPage:false});
 
