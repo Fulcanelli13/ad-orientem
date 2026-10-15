@@ -5,10 +5,10 @@ import {saintRecognitionAt,supplementarySaintsForDate} from "../src/calendar/liv
 const pilot=JSON.parse(readFileSync(new URL("../data/calendar/living-sanctoral-pilot.v1.json",import.meta.url),"utf8"));
 const census=JSON.parse(readFileSync(new URL("../data/calendar/post1960-canonizations.official-batch1.v1.json",import.meta.url),"utf8"));
 const people=reconcileSaintPersonRecords(pilot.persons,census);
-assert.equal(people.length,136,"Six pilot people + 132 official named, 2 shared identities");
-const ids=new Set(people.map(x=>x.id));assert.equal(ids.size,136);
-assert.equal(people.filter(x=>x.sourceReconciliation?.existingRecordKept).length,2);
-for(const id of ["saint.john-henry-newman","saint.carlo-acutis"]){
+assert.equal(people.length,172,"Six pilot people + 169 official named, 3 shared identities");
+const ids=new Set(people.map(x=>x.id));assert.equal(ids.size,172);
+assert.equal(people.filter(x=>x.sourceReconciliation?.existingRecordKept).length,3);
+for(const id of ["saint.john-henry-newman","saint.carlo-acutis","saint.pio-pietrelcina"]){
  const x=people.find(p=>p.id===id);
  assert.equal(x.sourceReconciliation.existingRecordKept,true);
  assert.equal(x.recognition.canonizedOn,census.persons.find(p=>p.id===id).canonizedOn);
@@ -25,4 +25,4 @@ const mutated=structuredClone(census);
 mutated.persons.find(x=>x.id==="saint.john-henry-newman").canonizedOn="2018-10-13";
 assert.throws(()=>reconcileSaintPersonRecords(pilot.persons,mutated),/source conflict|identity conflict/);
 assert.equal(Object.isFrozen(people),true);
-console.log("Living sanctoral source reconciliation: PASS (136 canonical people, 2 reused IDs, 4 groups kept separate)");
+console.log("Living sanctoral source reconciliation: PASS (172 canonical people, 3 reused IDs, 5 groups kept separate)");
