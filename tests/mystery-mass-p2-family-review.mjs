@@ -19,18 +19,18 @@ assert(oneStudy('AO.CARD.003').includes('MM-PRIMARY-MB05'));
 assert(oneStudy('AO.CARD.009').includes('MM-PRIMARY-MB08'));
 assert(oneStudy('AO.CARD.030').includes('MM-PRIMARY-MB26'));
 assert(oneStudy('AO.CANON.14').includes('MM-NEW-17'));
-const numberedCues=new Set(reader.blocks.flatMap(b=>b.units.map(u=>u.cue_id)).filter(x=>/^AO\\.SM\\.C\\d{4}$/.test(x)));
+const numberedCues=new Set(reader.blocks.flatMap(b=>b.units.map(u=>u.cue_id)).filter(x=>/^AO\.SM\.C\d{4}$/.test(x)));
 const families=Object.entries(c.families);
 assert.equal(families.length,10);
 const units=families.flatMap(([family,v])=>{
- assert(/^\\d{2}$/.test(family)&&v.microUnitIds.length>0);
+ assert(/^\d{2}$/.test(family)&&v.microUnitIds.length>0);
  return v.microUnitIds;
 });
 assert.equal(units.length,122);
 assert.equal(new Set(units).size,122);
 for(const id of units){
- assert(/^AO\\.V3\\.\\d{4}\\.U\\d{3}$/.test(id),id);
- const cue='AO.SM.C'+id.match(/AO\\.V3\\.(\\d{4})/)[1];
+ assert(/^AO\.V3\.\d{4}\.U\d{3}$/.test(id),id);
+ const cue='AO.SM.C'+id.match(/AO\.V3\.(\d{4})/)[1];
  assert(numberedCues.has(cue),cue);
 }
 assert.equal(c.families['04'].microUnitIds.length,25);
@@ -38,7 +38,7 @@ assert.equal(c.scope.creedNeedDoctrinalCrosslink+c.scope.creedReuseIncarnationSt
 assert(c.families['04'].microUnitIds.includes('AO.V3.0099.U002'));
 assert.equal(c.crossPhaseMicroSpanHoldIds.length,10);
 assert.equal(new Set(c.crossPhaseMicroSpanHoldIds).size,10);
-assert(c.crossPhaseMicroSpanHoldIds.every(x=>/^AO\\.V3\\.\\d{4}\\.U\\d{3}$/.test(x)));
+assert(c.crossPhaseMicroSpanHoldIds.every(x=>/^AO\.V3\.\d{4}\.U\d{3}$/.test(x)));
 assert.equal(c.existingPublishedPriestEventIds.length,6);
 for(const eventId of c.existingPublishedPriestEventIds){
  const x=actions.items.find(e=>e.id===eventId);
