@@ -184,3 +184,34 @@ The official [Dicastery year index](https://www.causesanti.va/it/celebrazioni/ca
 **Formal limitations:** No newly transcribed individual has an inferred universal 1962/modern feast date, liturgical class, Proper, independently approved celebrant option or artwork assignment. `Cum sanctissima` gate remains fail-closed; this research census is not wired to live Calendar, the homepage, or the Mass reader.
 
 **Next acceptance sequence (do not restart the same year audit):** (1) expand 497 exactly enumerated martyr identities where authoritative member lists exist and retain Otranto approximate status; (2) align identities with the established historical saints/art and Doctors registries; (3) independently certify *universal vs particular vs devotional* saint dates and required local authorities, beginning with well-supported current-calendar dates; (4) inspect legal precedence/permission and available approved traditional formularies; (5) add a small reviewed supplementary visual Calendar panel without changing the principal 1962 Mass. Maintain one GitHub source-of-truth PR, not a second calendar.
+
+
+## 15 October — date authority + approved geography crosswalk (third phase)
+
+This addition is **source verification and reviewable secondary-card data**, not live Calendar/Home/Map activation. Preserve the 1962 `day.main`, Proper selection, commemorations and `today.saint` route.
+
+### Dates (14 explicit researched records)
+
+`data/calendar/living-sanctoral-modern-observances.review.v1.json` now has 14 date entries, separately scoped:
+
+- **5 certified universal Roman memorial inscriptions from Vatican decrees:** Gregory of Narek (27 February, optional), John of Ávila (10 May, optional), Hildegard of Bingen (17 September, optional), Teresa of Calcutta (5 September, optional) and John Henry Newman (9 October, optional). The first three derive from [the 2 February 2021 publication](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/02/02/210202b.html); Teresa from [11 February 2025](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html); Newman from [3 February 2026](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html). Each has an inscription publication gate so the app cannot falsely back-project it.
+- **9 USCCB contemporary/historical date witnesses, not universal decrees established by this evidence set:** Padre Pio (23 September), Thérèse (1 October), Teresa of Ávila (15 October), Irenaeus (28 June, historical 2024 witness), and five collective martyr groups—Uganda (3 June), China (9 July), Korea (20 September), Lorenzo Ruiz/Japan (28 September), Vietnam (24 November). The 2024 Irenaeus witness is deliberately **not** projected as an independently checked 2026 U.S. item. These are secondary date labels, not the Mass actually celebrated on a Sunday, Ember Day or other higher feast.
+- Carlo Acutis remains **without a certified universal Roman-calendar date** in this reviewed subset. No date is invented.
+
+`src/calendar/reviewed-sanctoral-cards.js` is a **pure composition function** joining the vetted dates with existing person, Doctor, group and place records. Its worldwide/default setting exposes **only Vatican-certified universal inscriptions**; an explicit `jurisdiction:"US"` allows the U.S. witness examples in **2026 only**. A person already owning the principal 1962 source ID is not duplicated as an “also honoured” card. No outputs include an executable Mass/Proper choice, new liturgical rank, or celebration authority. Source dates and saint titles are historically gated independently.
+
+### Physical places and photographs versus sacred paintings
+
+`data/calendar/living-sanctoral-place-art-crosswalk.review.v1.json` links **five existing canonical geography IDs** for three subjects:
+
+- Thérèse: `place:FR:carmel-lisieux` and `place:FR:basilique-sainte-therese-lisieux`, with one genuinely approved *basilica site photograph*;
+- Padre Pio: `place:IT:santuario-san-pio-rotondo` (verified place, **no** claimed approved image);
+- Ugandan Martyrs: `place:UG:namugongo-martyrs` (one genuinely approved *shrine site photograph*) and `place:UG:munyonyo-martyrs`.
+
+All the place IDs are reused from `data/geography/seed-registry.v1.json`; the two photos have existing subject, licence and crop approvals in `data/geography/approved-place-media.v1.json`. **A photo of a shrine is not a sacred painting**, and must not be substituted in the sacred-art/saint-portrait collection. The separate sacred-art pipeline, [draft PR #887](https://github.com/Fulcanelli13/ad-orientem/pull/887), still owns approval of subject-appropriate artwork. The Lisieux *Thérèse aux roses* painting in that pipeline is a **research lead, not an approved artwork**. The artwork ID therefore remains **null**, not a synthetic or guessed image. Geographic links denote related devotional sites, not necessarily death or canonisation locations.
+
+### New CI tests and remaining gates
+
+`tests/calendar-reviewed-sanctoral-cards.mjs` verifies: exact owner IDs against the existing geography/saints/Doctors registries, two approved photo paths and rights review, separation of photographs from sacred paintings, Vatican versus U.S. date scope, 2021/2025/2026 publication gating, historical date protection, suppression of a duplicate 1962 principal saint, and preservation of `selectedFormularyId:null`. All 13 collective martyr profiles remain one entry per group, **not** a martyrology.
+
+**Still open:** independent modern General Calendar authority for the nine USCCB date witnesses, additional exact artwork approval and canonical place/site coverage, editorial final review of explanations, and a phone/desktop presentation acceptance pass before wiring the new read-only secondary layer into production Calendar/Home/Map. Do not claim this stage already displays in the deployed app.
