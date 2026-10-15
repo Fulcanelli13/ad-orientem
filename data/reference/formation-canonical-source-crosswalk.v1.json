@@ -9,7 +9,8 @@
     "Only exactly identical HTTPS destination strings share a witness ID; this is a URL identity, NOT a verified common author/work/edition/passage.",
     "Preserve each binding title, printed passage locator, provenance role and original_context_approved state as they were in the source files.",
     "External websites are not assumed available; hosts of opposing arguments must be attributed accurately and never imply editorial endorsement.",
-    "No canonical source file is rewritten or merged. No publication gate is changed. Different URLs for the same possible work require a human-reviewed work-edition crosswalk."
+    "No canonical source file is rewritten or merged. No publication gate is changed. Different URLs for the same possible work require a human-reviewed work-edition crosswalk.",
+    "A source listed in a registry but not attached to a substantive section is an uncited lead, not evidence for any canonical argument. Retain and flag; do not silently drop."
   ],
   "source_files": [
     {
@@ -70,7 +71,9 @@
     "reused_short_ids": 45,
     "short_ids_unsafe_to_flatten": 1,
     "unresolved_section_references": 0,
-    "unapproved_context_bindings": 408
+    "unapproved_context_bindings": 408,
+    "evidence_edges": 1541,
+    "uncited_source_bindings": 12
   },
   "witness_index": [
     {
@@ -8808,6 +8811,80 @@
           "FORM-SYN-06::V1"
         ],
         "status": "MANUAL_WORK_EDITION_CONFIRMATION_REQUIRED__DO_NOT_AUTOMERGE"
+      }
+    ],
+    "uncited_sources": [
+      {
+        "key": "FORM-SYN-02::CDFVAC",
+        "title": "CDF, Covid-19 vaccine morality note (2020), §§1–6",
+        "witness_id": "FW-0293",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-02::FATIMA00",
+        "title": "CDF, The Message of Fatima, official manuscript and theological commentary (2000)",
+        "witness_id": "FW-0285",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-02::FATIMASSEDEV",
+        "title": "Bishop Bernard Fellay, Fatima and Church crisis interview",
+        "witness_id": "FW-0062",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-02::HPLUS2009",
+        "title": "Humanity+ Transhumanist Declaration, adopted 2009; enhancement, alleviation of suffering, potential moral consideration of artificial sentience",
+        "witness_id": "FW-0128",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-03::CCC1753",
+        "title": "Catechism §§1753–1756, intention and moral object",
+        "witness_id": "FW-0206",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-03::CIC1245",
+        "title": "Code of Canon Law, canons 1245, 1247 and 1248 on dispensations and Sunday obligation",
+        "witness_id": "FW-0172",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-03::DUBIA2016",
+        "title": "Four cardinals' five dubia reprinted verbatim, September 2016",
+        "witness_id": "FW-0064",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-03::SYN5CARD23",
+        "title": "Five cardinals' 2023 dubia including Question 3 on synodality and papal reply, published by DDF",
+        "witness_id": "FW-0295",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-05::CCC-ISRAEL",
+        "title": "Catechism, Church and Jewish people",
+        "witness_id": "FW-0201",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-06::BIB-ROM11-SOURCE",
+        "title": "Paul, Romans 11, Catholic Scripture",
+        "witness_id": "FW-0043",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-07::CDF2007-RESP",
+        "title": "CDF 2007 Responses to questions on Church",
+        "witness_id": "FW-0288",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
+      },
+      {
+        "key": "FORM-SYN-07::NAZ1992",
+        "title": "CDF Communionis notio (1992)",
+        "witness_id": "FW-0294",
+        "action": "RETAIN_BUT_CHECK_WHETHER_LEGACY_LEAD_OR_NO_LONGER_USED"
       }
     ]
   }
