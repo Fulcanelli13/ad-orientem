@@ -15,18 +15,32 @@ const src=(text)=>String(text??"").trim();
 const hint=title=>{
  const name=src(title).toLowerCase();
  if(!name)return "TITLE_UNAVAILABLE_REVIEW";
- if(/\b(?:blessed virgin|virgin mary|our lady|immaculate|mary|marian|assumption|purification|annunciation|visitation|rosary)\b/.test(name))
-   return "MARIAN_OR_MARIAN_CONTEXT_REVIEW";
- if(/\b(?:of our lord|of the lord|christ|jesus|saviour|precious blood|transfiguration|eucharist|epiphany)\b/.test(name))
-   return "CHRISTOLOGICAL_OR_EVENT_REVIEW";
- if(/\b(?:saints|sts\.|martyrs|brothers|companions|seven holy|holy innocents)\b/.test(name))
+ // Lexical triage, never a canonical saint/martyr/person declaration.
+ if(/(?:^|\W)(?:sts\.|saints\b|martyrs\b|companions|seven holy brothers|seven holy servite founders|holy innocents|forty holy)/.test(name))
    return "COLLECTIVE_OR_GROUP_REVIEW";
- if(/\b(?:st\.|saint|holy)\b/.test(name))
+ if(/\b(?:archangel|angels|guardian angels)\b/.test(name))
+   return "ANGELIC_FIGURE_OR_FEAST_REVIEW";
+ if(/^(?:st\.|saint\b|sainte\b|s\.)\s|^\s*in commemoratione sancti\b/.test(name))
    return "INDIVIDUAL_OR_PERSON_TITLE_REVIEW";
- if(/\b(?:feria|sunday|saturday|vigil|octave)\b/.test(name))
+ if(/\b(?:our lady|blessed virgin|virgin mary|immaculate heart|assumption|purification|annunciation|visitation|rosary|seven sorrows|most holy name of mary)\b/.test(name))
+   return "MARIAN_OR_MARIAN_CONTEXT_REVIEW";
+ if(/\b(?:our lord|of the lord|christ|jesus|saviour|precious blood|transfiguration|eucharist|epiphany)\b/.test(name))
+   return "CHRISTOLOGICAL_OR_EVENT_REVIEW";
+ if(/\b(?:feria|sunday|saturday|vigil|octave|nativity|dedication|beheading|presentation|commemoration)\b/.test(name))
    return "LITURGICAL_DAY_OR_EVENT_REVIEW";
+ if(/\bst\.\s|\bsaint\s/.test(name))
+   return "PERSON_ASSOCIATED_WITH_EVENT_REVIEW";
  return "UNCLASSIFIED_SOURCE_TITLE_REVIEW";
 };
+const examples=new Map([
+ ["St. Hilary","INDIVIDUAL_OR_PERSON_TITLE_REVIEW"],
+ ["Sts. Fabian & Sebastian","COLLECTIVE_OR_GROUP_REVIEW"],
+ ["Our Lady of Lourdes","MARIAN_OR_MARIAN_CONTEXT_REVIEW"],
+ ["St. Mary Magdalene","INDIVIDUAL_OR_PERSON_TITLE_REVIEW"],
+ ["Vigil of the Nativity of St. John the Baptist","LITURGICAL_DAY_OR_EVENT_REVIEW"],
+ ["Dedication of St. Michael the Archangel","ANGELIC_FIGURE_OR_FEAST_REVIEW"]
+]);
+for(const [title,expected] of examples)assert.equal(hint(title),expected,"Subject lexical review guard: "+title);
 const rows=audit.days.map(day=>{
  const p=day.principal,comm=day.commemorations;
  const main=p.observed_cycle==="sanctorale"?{
