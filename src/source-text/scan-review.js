@@ -113,7 +113,8 @@ export function prepareReviewedScanDocument({
   // Only exact approved text from the existing rights ledger may be packaged.
   const text=normalizePassageText(a.approvedText);
   assertPassageReproductionScope(work,[{locator:"page#"+normalizeWitnessLocator(profile,c.locator).sourceAnchor,text}]);
-  records.push({locator:c.locator,text,hostUrl:scanned[0].url});
+  records.push({locator:c.locator,text,hostUrl:scanned[0].url,
+   ...(c.sourceExtent===undefined?{}:{sourceExtent:c.sourceExtent})});
   pageLinks.push(scanned.map(p=>({printedPage:p.printedPage,
     scanPage:p.scanPage,url:p.url})));
  }
