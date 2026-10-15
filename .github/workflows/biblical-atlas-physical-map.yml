@@ -9,6 +9,7 @@ on:
       - "src/find/bible-atlas.js"
       - "src/find/map-runtime.js"
       - "tests/atlas-physical-basemap*.mjs"
+      - "tests/atlas-source-place-labels.mjs"
       - ".github/workflows/biblical-atlas-physical-map.yml"
   workflow_dispatch:
 permissions:
@@ -29,6 +30,7 @@ jobs:
           node --check src/find/browser-entry.js
           node --check src/find/bible-atlas.js
           node tests/atlas-physical-basemap.mjs
+          node tests/atlas-source-place-labels.mjs
           node tests/explore-bible-atlas-151.mjs
           node tests/explore-bible-atlas-151-scope.mjs
   phone:
