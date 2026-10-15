@@ -102,7 +102,10 @@
     "dossiers": 141,
     "sections": 564,
     "currently_independently_certified_new_claims": 0,
-    "published_apologetics_crisis_dossiers": 0
+    "published_apologetics_crisis_dossiers": 0,
+    "preexisting_primary_findings_total": 17,
+    "primary_findings_still_source_bound_to_current_role": 15,
+    "primary_findings_historical_or_superseded": 2
   },
   "added_source_bindings": [
     {
@@ -1959,6 +1962,29 @@
     "Exact previously screened wording and source ID combinations may reuse the previously recorded editorial screen; changed roles are explicitly superseded without alleging that no previous work was done.",
     "Do not automatically transfer historical source-to-claim verdicts from superseded roles; preserve their original record and source URL as historical audit evidence.",
     "Added registry sources are existing correction references, not new independently verified claims; keep approval flags unchanged.",
-    "The document is solely structural provenance reconciliation: it does not independently assess the accuracy of corrected Q&A arguments."
+    "The document is solely structural provenance reconciliation: it does not independently assess the accuracy of corrected Q&A arguments.",
+    "A retained original-opponent source inspected in an older role cannot be transferred to a newly rewritten magisterial position; retain original findings PSV1-002 and PSV1-016 as historical."
+  ],
+  "historical_bounded_primary_findings_superseded": [
+    {
+      "finding_id": "PSV1-002",
+      "owner": "CR-DOC-05",
+      "role": "documented_position",
+      "historic_source_id": "RLFSSPX",
+      "historic_source_url": "https://fsspx.org/en/religious-liberty-30946",
+      "current_source_ids": [
+        "AO26_CRDOC05_DOCUM_1",
+        "AO26_CRDOC05_DOCUM_2",
+        "AO26_CRDOC05_DOCUM_3"
+      ],
+      "status": "HISTORICAL_SSPX_POSITION_NOT_CARRIED_BY_REWRITTEN_PAPAL_POSITION__PRESERVED_AS_OLD_AUDIT__NO_NEW_VERDICT"
+    },
+    {
+      "finding_id": "PSV1-016",
+      "owner": "CR-MOR-05",
+      "role": "documented_position",
+      "historic_source_id": "",
+      "status": "ALREADY_SUPERSEDED_IN_PRIOR_MERGED_REVIEW__NO_REAPPLICATION"
+    }
   ]
 }
