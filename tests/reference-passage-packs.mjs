@@ -25,6 +25,12 @@ assert.equal(document.sections[1].paragraphs[1].text,
 // Strong/italic HTML is not copied as executable markup.
 const italic=parsePinnedSourceHtml({...opts,text:"<article><h2>Heading</h2><p id='x'>This <em>is</em> a &amp; b.</p></article>"});
 assert.equal(italic.sections[0].paragraphs[0].text,"This is a & b.");
+const prefaced=parsePinnedSourceHtml({...opts,
+ text:"<article><p id='preface'>Introductory text.</p><h2 id='chapter'>Main chapter</h2><p>Body.</p></article>"});
+assert.equal(prefaced.sections[0].title,"Text");
+assert.equal(prefaced.sections[0].sourceAnchor,null);
+assert.equal(prefaced.sections[0].paragraphs[0].sourceAnchor,"preface");
+assert.equal(prefaced.sections[1].sourceAnchor,"chapter");
 for(const forbidden of [
  "<article><script>alert(1)</script></article>",
  "<article><p onclick='evil()'>Unsafe</p></article>",
@@ -91,6 +97,10 @@ assert.throws(()=>createSourcePackReader({...manifest,rights:"UNREVIEWED"},
  {loadChunk:async()=>"",cryptoProvider:webcrypto}),/RIGHTS_OR_TEXT_NOT_CLEARED/);
 assert.throws(()=>createSourcePackReader({...manifest,
  sections:[{...manifest.sections[0],file:"../../other-site.json"}]},
+ {loadChunk:async()=>"",cryptoProvider:webcrypto}),/SECTION_INVALID/);
+assert.throws(()=>createSourcePackReader({...manifest,
+ sections:[{...manifest.sections[0],passageIds:[
+  manifest.sections[0].passageIds[0],manifest.sections[0].passageIds[0]]}]},
  {loadChunk:async()=>"",cryptoProvider:webcrypto}),/SECTION_INVALID/);
 const altered=createSourcePackReader(manifest,{cryptoProvider:webcrypto,
  loadChunk:async file=>read("data/reference/source-demo/"+file).replace("A reliable","A forged")});
