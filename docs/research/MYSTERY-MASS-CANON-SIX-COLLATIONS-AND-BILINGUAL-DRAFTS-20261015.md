@@ -50,8 +50,25 @@ The content is not a new standalone module, and no content was copied directly f
 
 - Verify actual printed pages and the 1887 English editor's source note against primary scans before claiming original-edition facsimile certification.
 - Investigate whether the earlier French model underlying Alphonsus can be identified *independently*; do not register de Condren, Quesnel or any other conjecture as confirmed.
-- Check the exact 1962 rubrical gesture event for `Hanc igitur` separately from its prayer cue, and recheck the author's historical inference about Gregory the Great rather than presenting it as fact.
+- The **1962 rubrical event for `Hanc igitur` has been resolved**: already-published priest event `AO.RUB.C0161.01`, source cue `AO.SM.C0161`; independent behavioral/user-handset acceptance remains distinct. Do not create a duplicate. Recheck historical assertions about Gregory the Great before presenting them as fact.
 - Resolve Source/Reference edition, witness, rights, and reliable deep links in the existing pipeline.
 - Collate and proofread bilingual new text, check overlap with 44 pre-existing bilingual research dossiers and obtain in-app editorial approval. Do not change production `Mass` or publish `learn.mystery_mass` until those independent gates pass.
 
 [Machine-readable six/five source record](../../data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json) · [Eleven EN/FR micro-explanations](../../data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json).
+
+## Phase E — existing 1962 action and in-app gated micro-commentary (15 Oct)
+
+**Ritus servandus VIII.4 is now resolved against a visually inspected Latin PDF page:** [the Latin Ritus, PDF page 12](https://aomoi.net/odv/tlm/ritus_servandus_lat.pdf#page=12), corroborated by the printed-1962 Missal OCR witness. The celebrant extends both hands over the offerings with palms open towards the chalice and host at *Hanc igitur*, keeping them until *Per Christum, Dominum nostrum*, at which point he joins them. The printed original 1962 facsimile page itself is **not claimed visually collated**.
+
+The published Mass registry **already** contains `AO.RUB.C0161.01` (`PRIEST`, `HANDS OVER OBLATIONS` on `AO.SM.C0161`), gated in `src/mass/reader-canon-published-rubrics.js`. The server warning bell (`AO.RUB.C0161.02`) is separate minister timing and must never be inferred as exactly synchronous from the prayer syllables. No new gesture code or Mass engine changes are necessary.
+
+The eleven bilingual phrase interpretations have been **integrated only into the existing unpublished Mystery review route**, by adding `src/learn/mystery-mass-canon-precision-review.js` to `src/learn/mystery-mass-review.js`. Review route stays gated by `?mysteryReview=1`. Under Mass chronology, each affected Canon owner now has one native expandable section titled *Prayer phrases / Expressions de la prière*. Short reading shows its concise editorial candidates; detailed study additionally shows deeper author comparisons. The previous **44 bilingual study dossiers**, **14 Canon studies**, existing source IDs and biblical chronological journey are untouched. The review does not imply publication or replace the production 65–67 LIVE reader.
+
+The new CI gate checks 11 compiled review records **byte-for-byte as values against** their original research JSON and the Latin cue/canonical owner mapping. The original-only scans still need attention:
+- Gihr's **1902 scan** is identified at [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf), 788 image pages / 72MB. Target printed pp.658–660, but scan page offset was **not established**, and direct file retrieval failed.
+- Guéranger's **1885 second edition** is catalogued as a scanned [KU Leuven original in Google Books](https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C); published contents place *Memento des vivants* at p.126 and *Quam oblationem* p.140. Individual original pages **not inspected**.
+- St Alphonsus **1887 English Centenary volume VI** is [catalogued with scan download options](https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus); exact volume match and pp.56–57 remain **unverified by an original page image**.
+
+These are **three acquisition candidates, not three completed book collation sets**. Source transcription comparisons remain six; independently visually inspected original author-book passage pages remain **zero**. The standalone Ritus's readable retypeset page is a genuine visual control for the liturgical rule but does not certify the separate six author passages.
+
+Next work is therefore narrowly limited to printed-page collation of those originals and user/editorial acceptance of the gated English/French refinements. Do not restart the 422-claim audit.
