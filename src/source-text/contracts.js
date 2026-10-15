@@ -57,3 +57,21 @@ export function assertPassageReproductionScope(work,passages){
    throw new Error("SOURCE_TEXT_OUTSIDE_APPROVED_EXCERPTS");
  }
 }
+
+export function validateSourcePageSpan(p){
+ if(p?.sourcePages===undefined)return;
+ const pages=p.sourcePages;
+ if(!Array.isArray(pages)||pages.length<1||pages.length>12||
+    typeof p.sourcePage!=="string"||p.sourcePage!==pages[0]?.url)
+  throw new Error("SOURCE_SCAN_PAGE_SPAN_INVALID");
+ for(let i=0;i<pages.length;i++){
+  const page=pages[i];
+  if(!Number.isInteger(page?.printedPage)||page.printedPage<1||
+     !Number.isInteger(page?.scanPage)||page.scanPage<1||
+     typeof page.url!=="string"||!page.url.startsWith("https://"))
+   throw new Error("SOURCE_SCAN_PAGE_SPAN_INVALID");
+  if(i&&(page.printedPage!==pages[i-1].printedPage+1||
+     page.scanPage!==pages[i-1].scanPage+1))
+   throw new Error("SOURCE_SCAN_PAGE_SPAN_NONCONTIGUOUS");
+ }
+}
