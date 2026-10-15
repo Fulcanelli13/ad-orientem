@@ -65,3 +65,10 @@ No duplicate saints library, separate frontend or replacement Mass engine should
 `data/calendar/doctors-of-church-roster.review.v1.json` now enumerates **38 candidate Doctor identities**, reconciled to the six-person pilot IDs where they overlap. Eight Doctor declarations after 1962 have dated Holy See witnesses or index entries: Teresa of Ávila (1970), Catherine of Siena (1970), Thérèse of Lisieux (1997), John of Ávila (2012), Hildegard of Bingen (2012), Gregory of Narek (2015), Irenaeus of Lyon (2022), and John Henry Newman (2025).
 
 **Status distinction:** The list is an identity census corroborated by a published July 2026 38-Doctor compilation plus USCCB's 38th Doctor report; it is **not** a primary-source certification of all 38 entries. Pre-1962 doctor records still require canonical ID reconciliation against the source resolver. No invented dates or feast ranks are published. See `node tests/calendar-doctors-roster-review.mjs`.
+
+
+## Protected-feast annex transcription
+
+`data/calendar/cum-sanctissima-protected-third-class.review.v1.json` enumerates **all 70** protected third-class feasts from the Vatican decree annex, grouped across 12 months. Titles are explanatory English review labels; **resolver IDs remain null pending source-ID crosswalk**. Never apply a date-only rule to change a liturgical day. The Calendar must match the actual observed feast and source identity. Test: `node tests/calendar-cum-sanctissima-protected-annex.mjs`.
+
+This is a completed source-list transcription, **not** a certified rubrical evaluator, day override or permission to celebrate an alternate Mass.
