@@ -73,7 +73,13 @@ try{
    getLayer(){return null}
    getCanvas(){return this.canvas}
    setPaintProperty(){}
-   setLayoutProperty(){}
+   getStyle(){return {layers:[
+    {id:"country_label",type:"symbol"},
+    {id:"admin-country-boundary",type:"line"},
+    {id:"terrain-water",type:"fill"},
+    {id:"ao-explore-points",type:"circle"}
+   ]}}
+   setLayoutProperty(id,property,value){(this.hiddenLayers??=[]).push({id,property,value})}
    hasImage(){return true}
    addImage(){}
    loadImage(url,cb){cb(new Error("stubbed image"))}
@@ -110,6 +116,7 @@ try{
   return {active:m!=null,camera:m?.center,sequence:m?.calls.map(c=>c.kind),
     easing:m?.calls.filter(c=>c.kind==="ease").length,
     sourceUpdates:m?.getSource("ao-explore-items")?.updates??0,
+    hiddenLayers:m?.hiddenLayers??[],
     pinCount:m?.getSource("ao-explore-items")?.data?.features?.length??0,
     following:document.querySelector("[data-bible-follow]")?.getAttribute("aria-pressed"),
     current:window.AO_FIND_APP_V1?.status?.().bibleIndex};
@@ -118,6 +125,11 @@ try{
  assert.equal(opened.current,firstMapped.index);
  assert.equal(opened.following,"true");
  assert.ok(opened.pinCount>0,"Review starts with source-qualified pins and no invented geography");
+ const hidden=new Set(opened.hiddenLayers.filter(x=>x.property==="visibility"&&x.value==="none").map(x=>x.id));
+ assert.ok(hidden.has("country_label")&&hidden.has("admin-country-boundary"),
+  "Review suppresses modern country labels and administrative boundaries");
+ assert.ok(!hidden.has("terrain-water")&&!hidden.has("ao-explore-points"),
+  "Review preserves the land/water context and all source-backed application pins");
  assert.deepEqual(opened.camera,[firstMapped.geo.lng,firstMapped.geo.lat]);
  const canvas=page.locator("#ao-find-modular-root [data-bible-map] canvas");
  await canvas.scrollIntoViewIfNeeded();
