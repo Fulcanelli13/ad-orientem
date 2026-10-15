@@ -1,0 +1,680 @@
+{
+  "schema": "ao.saints.holiness-first-eight-doctors-research-batch.v1",
+  "publication": "RESEARCH_ONLY_NO_APP_VISIBILITY",
+  "as_of": "2026-10-15",
+  "purpose": "Eight additional fully bilingual holiness-first short life drafts sourced from individual Vatican/Benedict XVI General Audience catecheses; no data duplicated from Calendar living six-person short-card source.",
+  "source_owner": "Original existing 38-Doctor Calendar roster and 311 frozen historical identity component ledger",
+  "editorial_policy": [
+    "Why holy precedes titles and dates; show acts of charity, pastoral courage and prayer rather than a miracle count.",
+    "Vatican General Audience catechesis is the direct source; original book text is not reproduced.",
+    "Source URLs are Holy See originals; bilingual text is Ad Orientem editorial paraphrase.",
+    "Extraordinary private experiences are explicitly reported, not counted as canonization miracles or obligatory Catholic beliefs.",
+    "Doctor of Church is a formal present title; Catherine's was declared in 1970, not retroactive 1962 title.",
+    "Augustine and Alphonsus remain in exact person ID but original-versus-current colour source differences stay independently held.",
+    "No artworks, Places, canonizations, new 1962 celebrations or Mass options are promoted from these research drafts."
+  ],
+  "totals": {
+    "new_person_drafts": 8,
+    "bilingual_lives": 8,
+    "fact_claims": 24,
+    "source_backed_extraordinary_reports": 2,
+    "photographs_approved": 0,
+    "people_added_to_app": 0
+  },
+  "people": [
+    {
+      "calendar_person_id": "saint.gregory-great",
+      "historical_identity_id": "saint.gregory-the-great",
+      "nominal_1962_date": "03-12",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Gregory the Great",
+        "fr": "Grégoire le Grand"
+      },
+      "why_honoured": {
+        "en": "He united contemplative discipline with the demanding work of governing the Church: he treated the poor as a pastoral priority, sought peace amid war, and taught bishops to serve rather than seek honour.",
+        "fr": "Il unit la discipline contemplative aux lourdes charges du gouvernement de l’Église : il fit des pauvres une priorité pastorale, rechercha la paix au milieu des conflits et enseigna aux évêques à servir plutôt qu’à rechercher les honneurs."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.gregory-great.fact.01",
+          "en": "He used Church resources to supply food, help the poor and ransom captives.",
+          "fr": "Il employa les ressources de l’Église pour nourrir les nécessiteux, secourir les pauvres et racheter des captifs.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080528.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080604.html"
+          ]
+        },
+        {
+          "claim_id": "saint.gregory-great.fact.02",
+          "en": "He sought a peaceful settlement with the Lombards while promoting their evangelization.",
+          "fr": "Il rechercha la paix avec les Lombards tout en favorisant leur évangélisation.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080528.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080604.html"
+          ]
+        },
+        {
+          "claim_id": "saint.gregory-great.fact.03",
+          "en": "His Pastoral Rule describes the responsibility, humility and example demanded of bishops.",
+          "fr": "Sa Règle pastorale expose la responsabilité, l’humilité et l’exemple exigés des évêques.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080528.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080604.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "POPE",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080528.html",
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080604.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.john-chrysostom",
+      "historical_identity_id": "saint.john-chrysostom",
+      "nominal_1962_date": "01-27",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "John Chrysostom",
+        "fr": "Jean Chrysostome"
+      },
+      "why_honoured": {
+        "en": "His preaching demanded practical conversion and protection of the poor. As bishop, he joined rigorous personal simplicity to charitable institutions and a courageous defence of pastoral duty, even when this led to exile.",
+        "fr": "Sa prédication appelait à une conversion concrète et à la protection des pauvres. Évêque, il unit la simplicité personnelle aux œuvres de charité et à une défense courageuse du devoir pastoral, même au prix de l’exil."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.john-chrysostom.fact.01",
+          "en": "He preached extensively in Antioch, teaching Scripture and urging repentance.",
+          "fr": "À Antioche, il prononça de nombreuses homélies pour enseigner l’Écriture et appeler au repentir.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070926.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070919.html"
+          ]
+        },
+        {
+          "claim_id": "saint.john-chrysostom.fact.02",
+          "en": "As Bishop of Constantinople he demanded sobriety in episcopal life and supported institutions for the poor.",
+          "fr": "Évêque de Constantinople, il exigea la sobriété dans la vie épiscopale et soutint des institutions au service des pauvres.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070926.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070919.html"
+          ]
+        },
+        {
+          "claim_id": "saint.john-chrysostom.fact.03",
+          "en": "He endured two periods of exile rather than cease his pastoral witness.",
+          "fr": "Il subit deux périodes d’exil sans renoncer à son témoignage pastoral.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070926.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070919.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "BISHOP",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070926.html",
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070919.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.thomas-aquinas",
+      "historical_identity_id": "saint.thomas-aquinas",
+      "nominal_1962_date": "03-07",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Thomas Aquinas",
+        "fr": "Thomas d’Aquin"
+      },
+      "why_honoured": {
+        "en": "He pursued truth as a service to the Church, uniting disciplined reason with reverent faith and prayer. His theological work was not merely intellectual: it arose from contemplation of God and a desire to teach others faithfully.",
+        "fr": "Il rechercha la vérité pour servir l’Église, unissant la raison rigoureuse à la foi et à la prière. Son œuvre théologique ne fut pas seulement intellectuelle : elle naquit de la contemplation de Dieu et du désir d’enseigner fidèlement."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.thomas-aquinas.fact.01",
+          "en": "A Dominican, he studied philosophy and theology with Albert the Great and examined Aristotle in light of Revelation.",
+          "fr": "Dominicain, il étudia la philosophie et la théologie auprès d’Albert le Grand et examina Aristote à la lumière de la Révélation.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100616.html"
+          ]
+        },
+        {
+          "claim_id": "saint.thomas-aquinas.fact.02",
+          "en": "He defended the harmony of faith and reason while distinguishing their proper methods.",
+          "fr": "Il défendit l’harmonie de la foi et de la raison tout en distinguant leurs méthodes propres.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100616.html"
+          ]
+        },
+        {
+          "claim_id": "saint.thomas-aquinas.fact.03",
+          "en": "He was known for prayerful devotion and died while travelling to the Council of Lyon.",
+          "fr": "Il fut reconnu pour sa dévotion et mourut en route vers le concile de Lyon.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100616.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "THEOLOGIAN",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "id": "saint.thomas-aquinas.event.01",
+          "kind": "CHRIST_APPARITION_ACCOUNT",
+          "status": "ANCIENT_HAGIOGRAPHIC_ACCOUNT_RECOUNTED_IN_PAPAL_CATECHESIS",
+          "subject": "JESUS_CHRIST",
+          "en": "An early biographical tradition, retold in a papal catechesis, recounts words addressed to Thomas from a crucifix while he prayed about his writings. It is a devotional report, not proof that the episode occurred exactly as told.",
+          "fr": "Une tradition biographique ancienne, rapportée dans une catéchèse pontificale, relate des paroles adressées à Thomas depuis un crucifix alors qu’il priait au sujet de ses écrits. Il s’agit d’un récit de dévotion, non d’une preuve que l’épisode s’est déroulé exactement ainsi.",
+          "source": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+          "attribution": "REPORTED_IN_HAGIOGRAPHY_NOT_VERIFIED_BY_AD_ORIENTEM"
+        }
+      ],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html",
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100616.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.catherine-siena",
+      "historical_identity_id": "saint.catherine-of-siena",
+      "nominal_1962_date": "04-30",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Catherine of Siena",
+        "fr": "Catherine de Sienne"
+      },
+      "why_honoured": {
+        "en": "Her love of Christ impelled her to care for the sick, guide souls and plead for peace and reform in the Church. Her courage in addressing rulers and the pope sprang from prayer and fidelity to the Church, not factional ambition.",
+        "fr": "Son amour du Christ la poussa à soigner les malades, guider les âmes et demander la paix et la réforme dans l’Église. Son courage auprès des gouvernants et du pape naissait de la prière et de sa fidélité à l’Église, non d’une ambition partisane."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.catherine-siena.fact.01",
+          "en": "She entered the Dominican Third Order and combined prayer and penance with service to the sick.",
+          "fr": "Elle entra dans le tiers ordre dominicain et unit prière et pénitence au service des malades.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html"
+          ]
+        },
+        {
+          "claim_id": "saint.catherine-siena.fact.02",
+          "en": "She urged Gregory XI to return from Avignon to Rome and worked for peace and ecclesial reform.",
+          "fr": "Elle pressa Grégoire XI de revenir d’Avignon à Rome et œuvra pour la paix et la réforme ecclésiale.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html"
+          ]
+        },
+        {
+          "claim_id": "saint.catherine-siena.fact.03",
+          "en": "Her Dialogue, letters and prayers convey her Christ-centred spiritual teaching; she was declared a Doctor in 1970.",
+          "fr": "Son Dialogue, ses lettres et ses prières transmettent son enseignement centré sur le Christ ; elle fut proclamée Docteur en 1970.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "MYSTIC",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "REFORMER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "id": "saint.catherine-siena.event.01",
+          "kind": "CHRIST_APPARITION_ACCOUNT",
+          "status": "VISION_ACCOUNT_ATTRIBUTED_TO_RAYMOND_OF_CAPUA_IN_PAPAL_CATECHESIS",
+          "subject": "JESUS_CHRIST",
+          "en": "Raymond of Capua's biography, cited in a papal catechesis, describes Catherine's mystical espousal to Christ and an exchange-of-hearts vision. These are attributed private mystical accounts, not universally binding articles of faith.",
+          "fr": "La biographie de Raymond de Capoue, citée dans une catéchèse pontificale, décrit les noces mystiques de Catherine avec le Christ et une vision de l’échange des cœurs. Ce sont des récits mystiques privés attribués, non des articles de foi obligatoires.",
+          "source": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html",
+          "attribution": "REPORTED_IN_HAGIOGRAPHY_NOT_VERIFIED_BY_AD_ORIENTEM"
+        }
+      ],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.francis-sales",
+      "historical_identity_id": "saint.francis-de-sales",
+      "nominal_1962_date": "01-29",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Francis de Sales",
+        "fr": "François de Sales"
+      },
+      "why_honoured": {
+        "en": "He taught ordinary Christians that holiness is lived through their daily duties and a loving trust in God's mercy. His pastoral gentleness did not exclude theological clarity or painstaking service to people divided by religious conflict.",
+        "fr": "Il enseigna aux chrétiens ordinaires que la sainteté se vit dans les devoirs quotidiens et dans la confiance aimante en la miséricorde de Dieu. Sa douceur pastorale n’excluait ni la clarté doctrinale ni le service patient de ceux que divisaient les conflits religieux."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.francis-sales.fact.01",
+          "en": "A deep trial about salvation led him to renew his trust in God's love rather than fear.",
+          "fr": "Une grave épreuve au sujet du salut le conduisit à renouveler sa confiance dans l’amour de Dieu plutôt que dans la peur.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110302.html"
+          ]
+        },
+        {
+          "claim_id": "saint.francis-sales.fact.02",
+          "en": "As Bishop of Geneva resident in Annecy, he exercised patient preaching and pastoral direction.",
+          "fr": "Évêque de Genève résidant à Annecy, il se consacra à la prédication patiente et à la direction spirituelle.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110302.html"
+          ]
+        },
+        {
+          "claim_id": "saint.francis-sales.fact.03",
+          "en": "He wrote Introduction to the Devout Life and, with Jane Frances de Chantal, founded the Visitation.",
+          "fr": "Il écrivit l’Introduction à la vie dévote et fonda la Visitation avec Jeanne-Françoise de Chantal.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110302.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "BISHOP",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_DIRECTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110302.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.alphonsus-liguori",
+      "historical_identity_id": "saint.alphonsus-liguori",
+      "nominal_1962_date": "08-02",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Alphonsus Liguori",
+        "fr": "Alphonse de Liguori"
+      },
+      "why_honoured": {
+        "en": "He left a prosperous legal career to evangelize neglected people, teaching them to pray and trust the mercy of God. His moral theology joined fidelity to conscience and Church teaching with a compassionate approach to sinners.",
+        "fr": "Il quitta une brillante carrière juridique pour évangéliser des populations délaissées, leur apprenant à prier et à se fier à la miséricorde de Dieu. Sa théologie morale unit la fidélité à la conscience et à l’enseignement de l’Église à la compassion envers les pécheurs."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.alphonsus-liguori.fact.01",
+          "en": "He organized evening prayer and catechesis among poor neighbourhoods around Naples.",
+          "fr": "Il organisa des rencontres de prière et de catéchèse dans les quartiers pauvres de Naples.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110330.html"
+          ]
+        },
+        {
+          "claim_id": "saint.alphonsus-liguori.fact.02",
+          "en": "In 1732 he founded the Redemptorists to minister particularly to neglected rural communities.",
+          "fr": "En 1732, il fonda les Rédemptoristes pour servir notamment les populations rurales abandonnées.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110330.html"
+          ]
+        },
+        {
+          "claim_id": "saint.alphonsus-liguori.fact.03",
+          "en": "His writings on moral theology, Confession, prayer and Eucharistic adoration shaped Catholic pastoral practice.",
+          "fr": "Ses ouvrages sur la théologie morale, la confession, la prière et l’adoration eucharistique ont marqué la pastorale catholique.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110330.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "BISHOP",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PRIEST",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "FOUNDER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "THEOLOGIAN",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110330.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_NEW_SOURCE_COLOUR_DIFFERENCE_REVIEW_HOLD",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.augustine-hippo",
+      "historical_identity_id": "saint.augustine-hippo",
+      "nominal_1962_date": "08-28",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Augustine of Hippo",
+        "fr": "Augustin d’Hippone"
+      },
+      "why_honoured": {
+        "en": "His gradual conversion joined an unrelenting search for truth to humility before Christ and the Church. As pastor and author he continued to examine his own life and teaching rather than regard holiness as a finished intellectual achievement.",
+        "fr": "Sa conversion progressive unit la recherche passionnée de la vérité à l’humilité devant le Christ et l’Église. Pasteur et écrivain, il continua d’examiner sa vie et son enseignement sans considérer la sainteté comme un acquis intellectuel."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.augustine-hippo.fact.01",
+          "en": "Through Scripture and the preaching of Ambrose, he moved toward baptism at Milan in 387.",
+          "fr": "Grâce à l’Écriture et à la prédication d’Ambroise, il chemina vers le baptême à Milan en 387.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080227.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"
+          ]
+        },
+        {
+          "claim_id": "saint.augustine-hippo.fact.02",
+          "en": "He developed a common life of prayer, study and ministry and served the Church at Hippo.",
+          "fr": "Il développa une vie commune de prière, d’étude et de ministère, puis servit l’Église à Hippone.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080227.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"
+          ]
+        },
+        {
+          "claim_id": "saint.augustine-hippo.fact.03",
+          "en": "His later Revisions revisited his writings with unusual intellectual and spiritual humility.",
+          "fr": "Dans ses Révisions tardives, il réexamina ses écrits avec une rare humilité intellectuelle et spirituelle.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080227.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "BISHOP",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "THEOLOGIAN",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080227.html",
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_NEW_SOURCE_COLOUR_DIFFERENCE_REVIEW_HOLD",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    },
+    {
+      "calendar_person_id": "saint.bonaventure",
+      "historical_identity_id": "saint.bonaventure",
+      "nominal_1962_date": "07-14",
+      "recognition_status": "SAINT",
+      "name": {
+        "en": "Bonaventure of Bagnoregio",
+        "fr": "Bonaventure de Bagnoregio"
+      },
+      "why_honoured": {
+        "en": "His Franciscan scholarship was inseparable from prayer, poverty and service. He helped the Church understand faith as a path of love and contemplation while governing his religious family with prudence amid tensions.",
+        "fr": "Sa science franciscaine était inséparable de la prière, de la pauvreté et du service. Il aida l’Église à comprendre la foi comme un chemin d’amour et de contemplation, tout en gouvernant sa famille religieuse avec prudence au milieu des tensions."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.bonaventure.fact.01",
+          "en": "He joined the Franciscans and brought theological learning into dialogue with the spiritual inheritance of Francis of Assisi.",
+          "fr": "Il entra chez les franciscains et mit sa science théologique en dialogue avec l’héritage spirituel de François d’Assise.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100303.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100317.html"
+          ]
+        },
+        {
+          "claim_id": "saint.bonaventure.fact.02",
+          "en": "He became Minister General of the Franciscans and sought to preserve the Order's unity and evangelical spirit.",
+          "fr": "Il devint ministre général des franciscains et s’efforça de préserver l’unité et l’esprit évangélique de l’Ordre.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100303.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100317.html"
+          ]
+        },
+        {
+          "claim_id": "saint.bonaventure.fact.03",
+          "en": "He combined contemplative theology, practical leadership and a profound attachment to the Church.",
+          "fr": "Il unit la théologie contemplative, les responsabilités de gouvernement et un profond attachement à l’Église.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100303.html",
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100317.html"
+          ]
+        }
+      ],
+      "classifications": {
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "CALENDAR_DOCTORS_38_SOURCE_ROSTER_VATICAN_CATECHESIS"
+          }
+        ],
+        "roles": [
+          {
+            "code": "THEOLOGIAN",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          },
+          {
+            "code": "CONTEMPLATIVE_RELIGIOUS",
+            "basis": "VATICAN_CATECHESIS_PERSON_SPECIFIC"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100303.html",
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100317.html"
+      ],
+      "editorial_status": "RESEARCHED_DRAFT_NEEDS_SECOND_PERSON_LEVEL_REVIEW",
+      "person_identity_1962_status": "HISTORICAL_AND_CALENDAR_CROSSWALK_SEPARATE",
+      "approved_artwork_id": null,
+      "canonical_place_ids": [],
+      "map_pin_count": 0,
+      "publication": "NOT_APP_VISIBLE"
+    }
+  ]
+}
