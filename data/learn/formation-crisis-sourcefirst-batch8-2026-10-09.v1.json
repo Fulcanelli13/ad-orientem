@@ -244,16 +244,32 @@
         {
           "role": "answer",
           "text": {
-            "en": "Seminary formation after Vatican II combined legitimate calls for pastoral, biblical and human formation with disparate local implementations. The Council's Optatam totius did not instruct seminaries to abandon doctrine, priestly identity or spiritual discipline. Judging claims of collapse needs enrolment, staffing, curriculum, ordination and safeguarding evidence for named seminaries and years.",
-            "fr": "La formation des séminaires après Vatican II associa appels légitimes à la formation pastorale, biblique et humaine et applications locales diverses. Optatam totius ne commandait pas l'abandon de la doctrine, de l'identité sacerdotale ou de la discipline spirituelle. Évaluer l'effondrement allégué exige effectifs, professeurs, programmes, ordinations et protection pour des séminaires et dates déterminés."
+            "en": "Seminary formation after Vatican II combined legitimate calls for pastoral, biblical and human formation with disparate local implementations. The Council's Optatam totius did not instruct seminaries to abandon doctrine, priestly identity or spiritual discipline. Judging claims of collapse needs enrolment, staffing, curriculum, ordination and safeguarding evidence for named seminaries and years.\n\nFor the United States, Georgetown University's CARA longitudinal compilation records approximately 59,426 priests in 1965 and 33,462 in 2025. This is evidence of a substantial decline in that jurisdiction, not a controlled demonstration that a particular seminary curriculum, conciliar text or episcopal policy caused it. Enrollment, ordination, age structure and diocesan differences need separate treatment. *Optatam totius* establishes the Council's intended ideals, not a measure of whether each seminary implemented them.",
+            "fr": "La formation des séminaires après Vatican II associa appels légitimes à la formation pastorale, biblique et humaine et applications locales diverses. Optatam totius ne commandait pas l'abandon de la doctrine, de l'identité sacerdotale ou de la discipline spirituelle. Évaluer l'effondrement allégué exige effectifs, professeurs, programmes, ordinations et protection pour des séminaires et dates déterminés.\n\nAux États-Unis, les séries historiques du centre CARA de l'université Georgetown recensent environ 59 426 prêtres en 1965 et 33 462 en 2025. Cette évolution établit une diminution importante dans cette juridiction, mais ne démontre pas de manière causale qu'un programme particulier de séminaire, un texte conciliaire ou une politique épiscopale en soit responsable. Les inscriptions, les ordinations, la structure par âge et les différences entre diocèses doivent être examinées séparément. *Optatam totius* expose les objectifs du Concile ; il ne mesure pas la manière dont chaque séminaire les a appliqués."
           },
           "source_ids": [
             "OT65",
-            "PDV92"
+            "PDV92",
+            "INT_CR_GOV_02_1",
+            "INT_CR_GOV_02_2",
+            "INT_CR_GOV_02_3"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_GOV_02_1": "US clergy, 1965 and 2025 columns",
+            "INT_CR_GOV_02_2": "CARA methodology",
+            "INT_CR_GOV_02_3": "§§4–10,15–18"
+          },
+          "integrated_addenda": [
+            {
+              "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+              "original_role": "historical_empirical_addendum",
+              "claim_scope": "contextual_addendum_not_replacement",
+              "date": "2026-10-15"
+            }
+          ]
         },
         {
           "role": "documented_position",
@@ -323,16 +339,34 @@
         {
           "role": "answer",
           "text": {
-            "en": "Religious communities after the Council faced changed discipline, adaptation of apostolic works and sometimes loss of vocations or departure of members. Perfectae caritatis called for renewal in fidelity to each institute's founding charism and Gospel life, not destruction of religious vows. The effects of any adaptation should be examined institute by institute.",
-            "fr": "Les communautés religieuses après le Concile connurent changements de discipline, adaptation d'œuvres et parfois baisse des vocations ou départs. Perfectae caritatis demandait le renouveau fidèle au charisme fondateur et à la vie évangélique, non la destruction des vœux religieux. Les effets des adaptations doivent être examinés institut par institut."
+            "en": "Religious communities after the Council faced changed discipline, adaptation of apostolic works and sometimes loss of vocations or departure of members. Perfectae caritatis called for renewal in fidelity to each institute's founding charism and Gospel life, not destruction of religious vows. The effects of any adaptation should be examined institute by institute.\n\nIn the United States, CARA's comparative series records approximately 178,740 religious sisters in 1965 and 33,135 in 2025; it also shows a decrease in religious brothers. These are serious demographic changes requiring an account of vocations, aging, departures, communities' local histories and changing apostolic institutions. They neither prove that Vatican II mandated abandonment of religious vows nor demonstrate that every local adaptation was prudent. *Perfectae caritatis* §2 and *Ecclesiae sanctae* specify the officially authorised aims and procedures, which must be compared with each institute's documented practice.",
+            "fr": "Les communautés religieuses après le Concile connurent changements de discipline, adaptation d'œuvres et parfois baisse des vocations ou départs. Perfectae caritatis demandait le renouveau fidèle au charisme fondateur et à la vie évangélique, non la destruction des vœux religieux. Les effets des adaptations doivent être examinés institut par institut.\n\nAux États-Unis, la série comparative du CARA dénombre environ 178 740 religieuses en 1965 et 33 135 en 2025 ; elle relève également une diminution du nombre de frères religieux. Ces évolutions démographiques importantes demandent l'examen des vocations, du vieillissement, des départs, de l'histoire propre aux communautés et des changements institutionnels. Elles ne prouvent ni que Vatican II aurait ordonné l'abandon des vœux religieux ni que chaque adaptation locale ait été prudente. *Perfectae caritatis* (§2) et *Ecclesiae sanctae* précisent les objectifs et procédures officiellement autorisés, qu'il faut confronter aux pratiques documentées de chaque institut."
           },
           "source_ids": [
             "PC65",
-            "ES66"
+            "ES66",
+            "INT_CR_GOV_03_2",
+            "INT_CR_GOV_03_3",
+            "INT_CR_GOV_03_4",
+            "INT_CR_GOV_03_5"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "INT_CR_GOV_03_2": "US religious sisters/brothers 1965 and 2025 columns",
+            "INT_CR_GOV_03_3": "CARA scope",
+            "INT_CR_GOV_03_4": "§2",
+            "INT_CR_GOV_03_5": "Part II"
+          },
+          "integrated_addenda": [
+            {
+              "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+              "original_role": "historical_empirical_addendum",
+              "claim_scope": "contextual_addendum_not_replacement",
+              "date": "2026-10-15"
+            }
+          ]
         },
         {
           "role": "documented_position",
@@ -1004,6 +1038,46 @@
       "title": "CARA US religious sisters, 1965–2025, original historical series",
       "url": "https://cara.georgetown.edu/testing-page",
       "locator": "United States CARA longitudinal religious sisters: 178,740 (1965), 33,135 (2025); national totals only, not a causal study",
+      "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_GOV_02_3",
+      "title": "§§4–10,15–18",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_optatam-totius_en.html",
+      "locator": "§§4–10,15–18",
+      "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_GOV_03_2",
+      "title": "US religious sisters/brothers 1965 and 2025 columns",
+      "url": "https://cara.georgetown.edu/testing-page",
+      "locator": "US religious sisters/brothers 1965 and 2025 columns",
+      "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_GOV_03_3",
+      "title": "CARA scope",
+      "url": "https://cara.georgetown.edu/faqs",
+      "locator": "CARA scope",
+      "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_GOV_03_4",
+      "title": "§2",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_perfectae-caritatis_en.html",
+      "locator": "§2",
+      "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "INT_CR_GOV_03_5",
+      "title": "Part II",
+      "url": "https://www.vatican.va/content/paul-vi/en/motu_proprio/documents/hf_p-vi_motu-proprio_19660806_ecclesiae-sanctae.html",
+      "locator": "Part II",
       "provenance": "data/learn/formation-gov01-gov02-gov03-gov06-gov09-corrections-20261014.v1.json",
       "original_context_approved": false
     }
