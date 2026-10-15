@@ -49,10 +49,10 @@ assert.throws(()=>validatePrintPagePlan({...plan,pages:[plan.pages[0],plan.pages
 assert.throws(()=>validatePrintPagePlan({...plan,pages:[{...plan.pages[0],url:"https://fake.invalid/303"}]}),/PAGE_INVALID/);
 assert.throws(()=>validatePrintPagePlan({...plan,scanPageBaseUrl:"http://example.invalid"}),/PLAN_INVALID/);
 
-// Only pre-existing short 1908 scanned sentences qualify for real-source
+// Only existing 1913 scanned excerpt paragraphs qualify for real-source
 // excerpt packaging; no bulk OCR or synthetic text is promoted.
 const realCandidates=sample.records.map((r,i)=>({id:"PRINT-"+(i+1),
- locator:r.locator,pages:[r.printedPage],kind:"body",column:"right",
+ locator:r.locator,pages:[r.printedPage],kind:"body",column:r.column??"right",
  articleStatus:"CONFIRMED_IN_SCOPE",text:r.text}));
 const realQueue=buildScanReviewQueue({plan,candidates:realCandidates});
 const approvals=realQueue.items.map((item,i)=>({
@@ -64,7 +64,7 @@ const approvals=realQueue.items.map((item,i)=>({
 const prepared=prepareReviewedScanDocument({
  plan,candidates:realCandidates,approvals,profile:witness,work:sample.work,
  review:sample.review,heading:sample.heading});
-assert.equal(prepared.selectedCount,2);
+assert.equal(prepared.selectedCount,4);
 assert.equal(prepared.heldCount,0);
 assert.equal(prepared.productionPublishApproved,false);
 assert.equal(prepared.document.passages[0].sourcePages[0].printedPage,255);
@@ -134,5 +134,5 @@ assert.throws(()=>prepareReviewedScanDocument({plan:testPlan,candidates:cross,
 console.log("PASS 13 original scan-page entries + 325 synthetic OCR review candidates; no unreviewed text released");
 console.log(JSON.stringify({scanPagesIndexed:13,originalFullPagesCollated:0,
  stagedSyntheticCandidates:325,stagedTextExported:false,
- realApprovedShortExcerpts:2,reviewRequired:true,
+ realApprovedShortExcerpts:4,reviewRequired:true,
  crossPageContinuationTestedSynthetic:true,productionPublishApproved:false}));
