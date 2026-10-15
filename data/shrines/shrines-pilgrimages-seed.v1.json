@@ -4063,6 +4063,22 @@
         "SG-R73-GEO-SG-INV-0340"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:CA:rigaud-notre-dame-lourdes",
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Lourdes / Immaculate Conception",
+      "origin_summary": "This Catholic Marian sanctuary on the slopes of Rigaud Mountain in Québec has received pilgrims since 1874. It commemorates the Lourdes devotion and is a distinct Canadian place, not the sanctuary in Lourdes, France.",
+      "origin_summary_fr": "Ce sanctuaire marial catholique situé sur le flanc de la montagne de Rigaud, au Québec, accueille les pèlerins depuis 1874. Il prolonge la dévotion à Notre-Dame de Lourdes et constitue un lieu canadien distinct du sanctuaire français.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R74-SITE-SG-INV-0414",
+        "SG-R74-GEO-SG-INV-0414"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -7515,6 +7531,34 @@
       "scope_note_fr": "Pèlerinage catholique attesté vers Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika ; aucun horaire, parcours, caractère surnaturel ni rattachement au calendrier universel n'est déduit.",
       "source_ids": [
         "SG-R73-SITE-SG-INV-0340"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:VN:our-lady-la-vang-national-shrine-destination",
+      "name": "Pilgrimage to the National Marian Shrine of Our Lady of La Vang",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Source-attested Catholic pilgrimage to the existing National Marian Shrine at La Vang; does not authenticate a reported apparition, add a separate martyr shrine, or imply current procession schedule.",
+      "scope_note_fr": "Pèlerinage catholique attesté au sanctuaire marial national de La Vang déjà référencé ; sans authentification d'une apparition rapportée, création d'un sanctuaire des martyrs distinct ou horaire de procession.",
+      "source_ids": [
+        "SG-MAJOR2-SITE-VN"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:rigaud-notre-dame-lourdes-destination",
+      "name": "Pilgrimage to Notre-Dame-de-Lourdes, Rigaud",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:rigaud-notre-dame-lourdes",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Catholic pilgrimage destination at Rigaud's Marian hillside sanctuary; the precise grotto, altar or chapel within the complex, seasonal activities and schedules are not individually mapped.",
+      "scope_note_fr": "Destination de pèlerinage catholique au sanctuaire marial de Rigaud ; la grotte, l'autel ou la chapelle du complexe, ainsi que les activités et horaires saisonniers, ne sont pas localisés séparément.",
+      "source_ids": [
+        "SG-R74-SITE-SG-INV-0414"
       ],
       "confidence": "HIGH"
     }
