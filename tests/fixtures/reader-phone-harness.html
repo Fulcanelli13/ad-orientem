@@ -20,12 +20,37 @@ const lang=params.get("lang")==="fr"?"fr":"en";
 const requestedMode=String(params.get("mode")||"LIVE").toUpperCase();
 const mode=["MISSAL","SIMPLE","LIVE"].includes(requestedMode)?requestedMode:"LIVE";
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
+// Test-only source proof; deliberately distinct from production Proper.
+const separatelyNamedChants=params.get("sourceChants")==="1";
+const alternateIsTract=params.get("tract")==="1";
+const altKind=alternateIsTract?"TRACT":"ALLELUIA";
+const altSection=alternateIsTract?"Tractus":"Alleluia";
+const gradualSource={
+  lat:"Propter veritátem",en:"Because of truth",fr:"À cause de la vérité",
+};
+const altSource=alternateIsTract
+  ?{lat:"Tractus · Qui confídunt",en:"Tract · They that trust",fr:"Trait · Ceux qui mettent leur confiance"}
+  :{lat:"Alleluia · Ave Maria",en:"Alleluia · Hail Mary",fr:"Alléluia · Je vous salue, Marie"};
+const gradualCombined=Object.fromEntries(["lat","en","fr"].map(lang=>[
+  lang,gradualSource[lang]+"\n"+altSource[lang],
+]));
+const preGospelChants=separatelyNamedChants?{
+  status:"SOURCE_VERIFIED_EXACT",sourcePath:"Sancti/10-07",
+  sourceOrder:["Graduale",altSection],
+  aggregateVerifiedLanguages:["la","en","fr"],
+  parts:[
+    {kind:"GRADUAL",sourceSectionId:"Graduale",sourceRef:"Sancti/10-07:Graduale",...gradualSource},
+    {kind:altKind,sourceSectionId:altSection,sourceRef:"Sancti/10-07:"+altSection,...altSource},
+  ],
+}:null;
 const proper={
   sourcePath:"Sancti/10-07",
+  ...(separatelyNamedChants?{preGospelChants}:{}),
   introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord","Réjouissons-nous ensemble dans le Seigneur"),
   collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son","Ô Dieu, dont le Fils unique")],
   epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world","Dès le commencement et avant les siècles"),
-  gradual:t("Propter veritátem","Because of truth","À cause de la vérité"),
+  gradual:separatelyNamedChants?gradualCombined:
+    t("Propter veritátem","Because of truth","À cause de la vérité"),
   // This variant exists only for browser verification of a separately sourced Sequence.
   // Production text continues to come exclusively from the selected day\u0027s Proper.
   sequence:params.get("sequence")==="1"
