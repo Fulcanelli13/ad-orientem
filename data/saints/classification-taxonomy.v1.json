@@ -1,0 +1,55 @@
+{
+  "schema": "ao.saints.classification-taxonomy.v1",
+  "status": "EDITORIAL_DRAFT",
+  "families": {
+    "formal_honours": [
+      "DOCTOR_OF_CHURCH",
+      "CHURCH_FATHER",
+      "DECLARED_PATRON"
+    ],
+    "roles": [
+      "THEOLOGIAN",
+      "SPIRITUAL_WRITER",
+      "CONTEMPLATIVE_RELIGIOUS",
+      "RELIGIOUS",
+      "PRIEST",
+      "BISHOP",
+      "POPE",
+      "PASTOR",
+      "MISSIONARY",
+      "MARTYR",
+      "MYSTIC",
+      "VISIONARY_WITNESS",
+      "SPIRITUAL_DIRECTOR",
+      "FOUNDER",
+      "MONASTIC",
+      "HERMIT",
+      "APOLOGIST",
+      "TEACHER",
+      "CHARITY_TO_POOR",
+      "PASTORAL_CARITY",
+      "REFORMER"
+    ],
+    "extraordinary_accounts": [
+      "MIRACULOUS_HEALING_ACCOUNT",
+      "MARIAN_APPARITION_ACCOUNT",
+      "CHRIST_APPARITION_ACCOUNT",
+      "ANGELIC_APPARITION_ACCOUNT",
+      "OTHER_VISION_ACCOUNT",
+      "STIGMATA_ACCOUNT",
+      "BILOCATION_ACCOUNT",
+      "LEVITATION_ACCOUNT",
+      "PROPHECY_ACCOUNT",
+      "INCORRUPTIBILITY_ACCOUNT",
+      "EUCHARISTIC_PHENOMENON_ACCOUNT",
+      "OTHER_MIRACLE_ACCOUNT"
+    ]
+  },
+  "rules": [
+    "Use exact sourced categories for each canonical saint. Doctor is a formal title; theologian and mystic are descriptive roles.",
+    "An empty extraordinary list means not verified in our research, not an assertion of no events.",
+    "Separate lifetime claims, after-death intercession, and shrine events. Never transfer claims between them.",
+    "Private apparition accounts are described as reported experiences, not required beliefs.",
+    "Do not change the 1962 Calendar, physical Places or sacred art owner."
+  ]
+}
