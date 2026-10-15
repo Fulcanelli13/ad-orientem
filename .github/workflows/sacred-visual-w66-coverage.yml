@@ -1,4 +1,4 @@
-name: Sacred Art W66 source-demand reconciliation
+name: Sacred Art W66-W67 coverage and source media
 
 on:
   pull_request:
@@ -7,6 +7,8 @@ on:
       - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
       - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
       - ".github/workflows/sacred-visual-w66-coverage.yml"
+      - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
+      - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
   workflow_dispatch:
 
 permissions:
@@ -22,4 +24,6 @@ jobs:
         with:
           node-version: "22"
       - name: Check counts, non-promotion and no-permission policy
-        run: node tests/sacred-visual-w66-visual-demand-preaudit.mjs
+        run: |
+          node tests/sacred-visual-w66-visual-demand-preaudit.mjs
+          node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
