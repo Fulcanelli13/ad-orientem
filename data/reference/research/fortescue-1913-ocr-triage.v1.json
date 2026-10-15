@@ -1,0 +1,70 @@
+{
+  "schema": "AO_SOURCE_TEXT_OCR_CORRECTION_TRIAGE_V1",
+  "date": "2026-10-15",
+  "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
+  "sourcePage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+  "printedPage": 257,
+  "scanImagePage": 305,
+  "scope": "Wikisource unproofread OCR comparison against printed scan. A few short variants only; not complete original article text or automatic transcription approval.",
+  "cases": [
+    {
+      "id": "OCR257-001",
+      "ocrExcerpt": "fifth eentury",
+      "proposedReading": "fifth century",
+      "classification": "OCR_CHARACTER_SUBSTITUTION",
+      "status": "PRELIMINARY_IMAGE_COMPARED",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    },
+    {
+      "id": "OCR257-002",
+      "ocrExcerpt": "frill be Been",
+      "proposedReading": "will be seen",
+      "classification": "OCR_WORD_RECOGNITION",
+      "status": "PRELIMINARY_IMAGE_COMPARED",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    },
+    {
+      "id": "OCR257-003",
+      "ocrExcerpt": "spoken by them in Home",
+      "proposedReading": "spoken by them in Rome",
+      "classification": "OCR_PROPER_NOUN",
+      "status": "PRELIMINARY_IMAGE_COMPARED",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    },
+    {
+      "id": "OCR257-004",
+      "ocrExcerpt": "the Sanetus from Is.",
+      "proposedReading": "the Sanctus from Is.",
+      "classification": "OCR_LATIN_WORD",
+      "status": "PRELIMINARY_IMAGE_COMPARED",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    },
+    {
+      "id": "OCR257-005",
+      "ocrExcerpt": "Pope Victot an African",
+      "proposedReading": "Pope Victor, an African",
+      "classification": "OCR_PROPER_NAME_AND_PUNCTUATION",
+      "status": "PRELIMINARY_IMAGE_COMPARED",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    },
+    {
+      "id": "OCR257-006",
+      "ocrExcerpt": "at any ■ it side Palestine",
+      "proposedReading": null,
+      "classification": "OCR_UNRESOLVED_MULTITOKEN_SEGMENT",
+      "status": "HELD_FOR_DETAILED_IMAGE_REVIEW",
+      "humanRecheckRequired": true,
+      "automaticSubstitutionAllowed": false
+    }
+  ],
+  "uncertaintyCount": 1,
+  "productionPromotionAllowed": false,
+  "citationPolicy": "Modern Wikisource OCR is a lead; 1913 scan is the cited physical witness. Never conflate print 1913 edition with article 1908 first publication or state 1908-to-1913 text parity without collation."
+}
