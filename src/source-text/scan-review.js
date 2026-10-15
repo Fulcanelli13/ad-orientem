@@ -10,6 +10,7 @@ const nonblank=x=>typeof x==="string"&&x.trim().length>0;
 export function validatePrintPagePlan(plan){
  if(plan?.schema!=="AO_SOURCE_TEXT_PRINT_PAGE_PLAN_V1"||
     !nonblank(plan.articleWorkId)||!nonblank(plan.editionId)||!nonblank(plan.witnessId)||
+    !nonblank(plan.scanPageBaseUrl)||!plan.scanPageBaseUrl.startsWith("https://")||
     !Array.isArray(plan.pages)||!plan.pages.length||plan.pages.length>2000)
   throw new Error("SOURCE_SCAN_PLAN_INVALID");
  const byPage=new Map(),seenScan=new Set();
@@ -17,7 +18,7 @@ export function validatePrintPagePlan(plan){
   const p=plan.pages[i];
   if(!Number.isInteger(p?.printedPage)||p.printedPage<1||
      !Number.isInteger(p.scanPage)||p.scanPage<1||
-     !nonblank(p.url)||!p.url.startsWith("https://")||
+     !nonblank(p.url)||p.url!==plan.scanPageBaseUrl+"/"+p.scanPage||
      byPage.has(p.printedPage)||seenScan.has(p.scanPage))
    throw new Error("SOURCE_SCAN_PAGE_INVALID");
   if(i>0&&(p.printedPage!==plan.pages[i-1].printedPage+1||
