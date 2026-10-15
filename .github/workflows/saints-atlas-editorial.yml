@@ -6,6 +6,9 @@ on:
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
       - 'tests/saints-catalogue-native.mjs'
+      - 'tests/saints-source-index.mjs'
+      - 'src/find/saints-source-index.js'
+      - 'data/saints/read-only-calendar-art-index-20261015.v1.json'
       - 'src/find/saints-catalogue.js'
       - 'src/find/explore-data-service.js'
       - 'data/saints/holiness-first-eight-doctors-research-20261015.v1.json'
@@ -30,6 +33,8 @@ jobs:
         run: node tests/saints-explore-native-lens.mjs
       - name: Verify 30-person Saints reading catalogue and unchanged 8 physical pins
         run: node tests/saints-catalogue-native.mjs
+      - name: Verify source-only historical and post-1960 Saints reference indexes
+        run: node tests/saints-source-index.mjs
       - name: Reconcile Calendar, Relics and Sacred Art identities without merging owners
         run: node tests/saints-parallel-owner-bridge.mjs
       - name: Check observed 2026 Calendar context in native Saints lens
@@ -38,6 +43,7 @@ jobs:
         run: |
           node --check src/find/saints-lens.js
           node --check src/find/saints-catalogue.js
+          node --check src/find/saints-source-index.js
           node --check src/find/saints-calendar-context.js
           node --check src/find/saints-presentation.js
           node --check src/find/explore-presentation.js
