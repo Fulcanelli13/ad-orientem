@@ -1,0 +1,183 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R74_ESSENTIAL_RECONCILIATION_V1",
+  "as_of": "2026-10-15",
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0414",
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "shrine_id": "shrine:CA:rigaud-notre-dame-lourdes",
+      "pilgrimage_id": "pilgrimage:CA:rigaud-notre-dame-lourdes-destination",
+      "name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "country": "CA",
+      "source_url": "https://lourdesrigaud.ca/visit-us/",
+      "geo_source_url": "https://www.openstreetmap.org/way/1023406024",
+      "lat": 45.46996,
+      "lng": -74.31088,
+      "precision": "complex_anchor",
+      "geo_source_ref": "osm:way:1023406024"
+    }
+  ],
+  "existing_confirmed": [
+    {
+      "candidate_id": "SG-INV-0001",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "name": "Sanctuary of Our Lady of Lourdes",
+      "shrine_id": "shrine:FR:lourdes-our-lady",
+      "evidence_source_ids": [
+        "SHR-LOURDES-CONTACT",
+        "SHR-LOURDES-PILGRIMAGE"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0002",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "name": "Sanctuary of Our Lady of La Salette",
+      "shrine_id": "shrine:20261009:FR:notre-dame-la-salette-fallavaux",
+      "evidence_source_ids": [
+        "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0080",
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "name": "Sanctuary of Saint Pio of Pietrelcina, San Giovanni Rotondo",
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "evidence_source_ids": [
+        "SHR-PIL-BULK-IT-santuario-san-pio-rotondo"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0121",
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "name": "Cathedral of Santiago de Compostela",
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "evidence_source_ids": [
+        "SHR-PIL-ES-santiago-compostela-cathedral"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0145",
+      "place_id": "place:PT:fatima-sanctuary",
+      "name": "Sanctuary of Our Lady of Fátima",
+      "shrine_id": "shrine:PT:fatima",
+      "evidence_source_ids": [
+        "SHR-FATIMA-CONTACT",
+        "PIL-FATIMA-MAY13"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0183",
+      "place_id": "place:AT:mariazell-basilica",
+      "name": "Basilica of Mariazell",
+      "shrine_id": "shrine:AT:mariazell-our-lady",
+      "evidence_source_ids": [
+        "SHR-MARIAZELL-CONTACT",
+        "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0235",
+      "place_id": "place:IE:knock-shrine",
+      "name": "Shrine of Our Lady of Knock",
+      "shrine_id": "shrine:IE:knock",
+      "evidence_source_ids": [
+        "SHR-KNOCK-IDENTITY",
+        "PIL-KNOCK-ANNIVERSARY"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0247",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "name": "National Shrine of Our Lady of Walsingham (Catholic)",
+      "shrine_id": "shrine:GB:walsingham-our-lady",
+      "evidence_source_ids": [
+        "SHR-WALSINGHAM-CONTACT",
+        "PIL-WALSINGHAM-FEAST",
+        "PIL-WALSINGHAM-LMS"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0376",
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "name": "Shrine of Our Lady of Guadalupe, La Crosse",
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "evidence_source_ids": [
+        "SHR-GUADALUPE-SCHEDULE",
+        "SHR-GUADALUPE-PILGRIMAGE"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0382",
+      "place_id": "place:US:czestochowa-doylestown",
+      "name": "National Shrine of Our Lady of Czestochowa, Doylestown",
+      "shrine_id": "shrine:US:czestochowa-doylestown",
+      "evidence_source_ids": [
+        "SHR-CZESTOCHOWA-US",
+        "PIL-CZESTOCHOWA-US-WALK"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0708",
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "name": "Sanctuary of Our Lady of Kibeho",
+      "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
+      "evidence_source_ids": [
+        "SHR-PIL-BULK-RW-sanctuaire-kibeho"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0710",
+      "place_id": "place:UG:namugongo-martyrs",
+      "name": "Uganda Martyrs' Catholic Shrine, Namugongo",
+      "shrine_id": "shrine:UG:namugongo-martyrs",
+      "evidence_source_ids": [
+        "SHR-NAMUGONGO-OFFICIAL",
+        "PIL-NAMUGONGO-MARTYRS-DAY"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0673",
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "name": "National Marian Shrine of Our Lady of La Vang",
+      "shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "evidence_source_ids": [
+        "SG-MAJOR2-SITE-VN",
+        "SG-MAJOR2-GEO-VN"
+      ],
+      "identity_correction": "Marian shrine; not Vietnamese Martyrs shrine"
+    }
+  ],
+  "existing_pilgrimage_enrichment": [
+    {
+      "candidate_id": "SG-INV-0673",
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "pilgrimage_id": "pilgrimage:VN:our-lady-la-vang-national-shrine-destination",
+      "source_url": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html"
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0746",
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "reason": "Published shrine exists but current pin is marked indicative_only and references Russell School, not the shrine; preserve pending exact-site coordinate and provenance review."
+    }
+  ],
+  "publication_counts": {
+    "places": 247,
+    "shrines": 243,
+    "pilgrimages": 230,
+    "sources": 421,
+    "published_shrine_countries": 63,
+    "confirmed_ids": 95,
+    "tentative_ids": 70,
+    "unresolved_ids": 585,
+    "essential_remaining": 21
+  },
+  "qualifiers": [
+    "No additional La Vang Place or Shrine was created: canonical identity was already published.",
+    "La Vang is a Marian shrine, not the Vietnamese Martyrs shrine named by obsolete research row.",
+    "The Rigaud anchor identifies the sanctuary complex rather than an individual cave or chapel.",
+    "No apparition claim, relic claim, timetable, itinerary, calendar date, route or photograph is created."
+  ]
+}
