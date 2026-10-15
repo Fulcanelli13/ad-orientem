@@ -43,9 +43,9 @@ const domains=fam.wikisource1910TerritoryReview;
 assert.equal(domains.unproofreadTranscriptions,true);
 assert.equal(domains.scanImagesUnavailableToReview,true);
 assert.equal(domains.authorProseCertified,0);
-assert.equal(domains.territories.length,6);
-assert.equal(domains.territories.filter(t=>t.kind==="HISTORICAL_NARRATIVE").length,3);
-assert.equal(domains.territories.filter(t=>t.kind==="KNECHT_COMMENTARY").length,3);
+assert.equal(domains.territories.length,18);
+assert.equal(domains.territories.filter(t=>t.kind==="HISTORICAL_NARRATIVE").length,9);
+assert.equal(domains.territories.filter(t=>t.kind==="KNECHT_COMMENTARY").length,9);
 for(const t of domains.territories){
   assert.equal(t.originalPageImagesIndependentlyInspected,false);
   assert.equal(t.printedPageWordsCertified,false);
@@ -54,5 +54,11 @@ for(const t of domains.territories){
   assert.ok(t.startPageTranscriptionUrl.includes("/"+t.djvuStart));
   assert.ok(t.endPageTranscriptionUrl.includes("/"+t.djvuEnd));
 }
-assert.deepEqual(domains.territories.map(t=>[t.djvuStart,t.djvuEnd]),[[41,43],[43,47],[57,59],[59,62],[62,64],[64,66]]);
+assert.deepEqual(domains.territories.map(t=>[t.djvuStart,t.djvuEnd]),[[41,43],[43,47],[47,48],[48,51],[51,53],[53,57],[57,59],[59,62],[62,64],[64,66],[66,69],[69,72],[72,76],[76,79],[79,82],[82,84],[84,86],[86,89]]);
+assert.equal(domains.chapterRange.count,8);
+assert.equal(domains.chapterRange.narrativeParts,9);
+assert.equal(domains.chapterRange.commentaryParts,9);
+assert.equal(new Set(domains.territories.map(t=>t.id)).size,18);
+assert.ok(domains.prohibitedAutoMetadataImport.length>=4);
+for(const page of domains.sampledWikisourceProofreadingStates){assert.ok(["PROOFREAD_NOT_VALIDATED","NOT_PROOFREAD"].includes(page.status));}
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
