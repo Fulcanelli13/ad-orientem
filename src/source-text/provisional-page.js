@@ -66,6 +66,23 @@ export function auditProvisionalPage({plan,pageDraft}={}){
     pageDraft.draftTextBlocks!==candidates.length||
     latinQuotes<1||crossPage!==1||referencedExisting<1)
   throw new Error("SOURCE_PROVISIONAL_SCOPE_INCOMPLETE");
+ const join=pageDraft.pageJoinCandidate;
+ if(!join||join.sourceBlockId!==pageDraft.blocks.at(-1)?.id||
+    !Array.isArray(join.printedPageSequence)||
+    join.printedPageSequence[0]!==page.printedPage||
+    join.printedPageSequence[1]!==page.printedPage+1||
+    !Array.isArray(join.scanPageSequence)||
+    join.scanPageSequence[0]!==page.scanPage||
+    join.scanPageSequence[1]!==pages.get(page.printedPage+1)?.scanPage||
+    join.lastWordsOnPage257!=="He also says that at"||
+    !pageDraft.blocks.at(-1).text.endsWith(join.lastWordsOnPage257)||
+    typeof join.continuedTextDraft!=="string"||
+    !join.continuedTextDraft.startsWith(join.firstWordsOnPage258)||
+    !join.continuedTextDraft.trim().endsWith("approved by him.")||
+    join.mergeApproved!==false||
+    join.independentImageProofread!==false||
+    join.reviewStatus!=="PROVISIONAL_IMAGE_ASSISTED_NOT_WORD_BY_WORD_COLLATED")
+  throw new Error("SOURCE_PROVISIONAL_PAGE_JOIN_UNVERIFIED");
  const reviewQueue=buildScanReviewQueue({plan,candidates});
  // Guardrail: export only metadata, and exclude all raw draft text.
  return Object.freeze({schema:"AO_SOURCE_TEXT_PROVISIONAL_PAGE_AUDIT_V1",
@@ -74,6 +91,7 @@ export function auditProvisionalPage({plan,pageDraft}={}){
   sourceUrl:page.url,reviewOnly:true,publicationApproved:false,
   eligibleForProduction:false,pageWordCountProvisional:wordCount,
   existingExcerptReferences:referencedExisting,transcribedDraftBlocks:candidates.length,
+  pageJoinStatus:"HELD_AND_UNPROOFREAD",nextPrintedPage:page.printedPage+1,
   embeddedPrimaryQuoteBlocks:latinQuotes,crossPageContinuations:crossPage,
   heldItems,reviewQueueMetrics:{candidateCount:reviewQueue.candidateCount,
    flagCounts:reviewQueue.flagCounts},humanReviewRequired:true});
