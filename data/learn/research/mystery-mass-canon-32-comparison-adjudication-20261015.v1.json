@@ -1,0 +1,594 @@
+{
+  "schema": "AO_MYSTERY_MASS_CANON_32_SAME_AUTHOR_PASSAGE_ADJUDICATION_V1",
+  "preparedDate": "2026-10-15",
+  "scope": "Existing 32 comparison pairs from prior Passage Deduplication & Source Handoff; not the total evidence archive.",
+  "inheritedInput": {
+    "name": "ad_orientem_mass_passage_dedup_handoff_2026-10-15.json",
+    "sourceSha256": "6fd84b323120e23a9000c1190c07d1fd895fc80a0215fc16e360d093e1e61342",
+    "arrays": "same_author_same_owner_comparisons",
+    "provenance": "Previous user-owned ChatGPT Library artifact"
+  },
+  "statuses": "CASE_LEVEL_SEMANTIC_ADJUDICATION_OF_CLAIM_SUMMARIES_WITH_TARGETED_ONLINE_SOURCE_TEXT_CHECKS_NOT_PRINT_FACSIMILE_CERTIFICATION",
+  "totalPairs": 32,
+  "originalTriageCountByType": {
+    "THEMATIC_OVERLAP_CANDIDATE": 4,
+    "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION": 27,
+    "STRONG_PARAPHRASE_CANDIDATE": 1
+  },
+  "semanticDispositionCount": {
+    "RELATED_COMPLEMENTARY": 10,
+    "DIFFERENT_SUBPASSAGE": 15,
+    "SAME_ARGUMENT_SUMMARY": 6,
+    "ATTRIBUTION_CORRECTION": 1
+  },
+  "interpretation": "SAME_ARGUMENT_SUMMARY means a shared user-facing explanation is sensible; neither source record is deleted. RELATED_COMPLEMENTARY are partly aligned, not demonstrably duplicates. DIFFERENT_SUBPASSAGE share an author and source owner but are distinct explanations. ATTRIBUTION_CORRECTION blocks a misleading attribution.",
+  "directTextChecks": [
+    {
+      "author": "Guéranger",
+      "work": "Explication des prières de la sainte messe",
+      "owner": "AO.CANON.10",
+      "cases": [
+        "VER-051",
+        "I033"
+      ],
+      "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "section": "SUPPLICES TE ROGAMUS; per manus sancti Angeli tui",
+      "finding": "The author expressly interprets the holy Angel Christologically, as Christ the sent Son/Angel of Great Counsel, rather than a separate created angel.",
+      "status": "PUBLISHED_FRENCH_WEB_TRANSCRIPTION_READ_NOT_PRINT_FACSIMILE_COLLATED",
+      "displayAction": "CORRECT_GUERANGER_ATTRIBUTION"
+    },
+    {
+      "author": "Guéranger",
+      "work": "Explication des prières de la sainte messe",
+      "owner": "AO.CANON.05",
+      "cases": [
+        "VER-049",
+        "I016"
+      ],
+      "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "section": "QUAM OBLATIONEM; rationabilem",
+      "finding": "Explains rational/spiritual worship with Romans 12:1, alongside additional interpretation about offering to become Christ's body and blood.",
+      "status": "PUBLISHED_FRENCH_WEB_TRANSCRIPTION_READ_NOT_PRINT_FACSIMILE_COLLATED",
+      "displayAction": "SYNTHESIZE_WITH_EXACT_WORD_ANCHOR"
+    },
+    {
+      "author": "St Alphonsus de Liguori",
+      "work": "Short Explanation of the Prayers of Mass (English translation)",
+      "owner": "AO.CANON.10",
+      "cases": [
+        "VER-032",
+        "I062"
+      ],
+      "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+      "section": "Supplices te rogamus",
+      "finding": "Explicitly discusses both Christological and angelic readings; favors the account he ascribes to Thomas of angelic presentation of the prayers of priest and people.",
+      "status": "ENGLISH_TRANSLATION_WEB_TRANSCRIPTION_READ_NOT_ORIGINAL_LANGUAGE_OR_FACSIMILE_COLLATED",
+      "displayAction": "ATTRIBUTE_MULTIPLE_READINGS"
+    },
+    {
+      "author": "St Alphonsus de Liguori",
+      "work": "Short Explanation of the Prayers of Mass (English translation)",
+      "owner": "AO.CANON.07",
+      "cases": [
+        "VER-023",
+        "VER-024",
+        "VER-025",
+        "VER-026"
+      ],
+      "url": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass",
+      "section": "Consecration of the chalice",
+      "finding": "Treats formula as composite from Luke, Matthew, Hebrews and tradition for Mysterium fidei; preserves pro multis theological gloss.",
+      "status": "ENGLISH_TRANSLATION_WEB_TRANSCRIPTION_READ_NOT_ORIGINAL_LANGUAGE_OR_FACSIMILE_COLLATED",
+      "displayAction": "KEEP_INDIVIDUAL_PHRASE_ANCHORS"
+    },
+    {
+      "author": "Nicholas Gihr",
+      "work": "The Holy Sacrifice of the Mass, English from sixth German edition, 1902",
+      "owner": "AO.CANON.09",
+      "cases": [
+        "VER-057",
+        "I054",
+        "VER-058",
+        "I056",
+        "VER-059",
+        "I058"
+      ],
+      "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "section": "§61 printed pp.659–660",
+      "finding": "Abel's faith and innocent death, Abraham's obedience with Isaac spared, and Melchisedech's offering each explained as a distinct Eucharistic figure; proposed celestial fire for Abel is conjectural, not biblical reportage.",
+      "status": "1902_ENGLISH_EDITION_OCR_READ_NOT_PRINT_FACSIMILE_COLLATED",
+      "displayAction": "THREE_DISTINCT_SUBANCHORS_WITH_NO_DUPLICATE_PARAGRAPHS"
+    }
+  ],
+  "crossEvidenceDistinction": "Original 32 cases were detected by same-author/same-owner joins and summary wording, not pairwise printed-source collation; review statuses must not be misreported as 32 original-source certifications.",
+  "cases": [
+    {
+      "verifiedClaimId": "VER-018",
+      "historicalClaimId": "I046",
+      "canonicalOwner": "AO.CANON.04",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.04.1"
+      ],
+      "phraseOrTopic": "Extended hands at Hanc igitur",
+      "originalTriageTier": "THEMATIC_OVERLAP_CANDIDATE",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Combine the explanation of prayer for acceptance with gesture typology; Levitical origin remains unproven.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-019",
+      "historicalClaimId": "I046",
+      "canonicalOwner": "AO.CANON.04",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.04.1"
+      ],
+      "phraseOrTopic": "diesque nostros / petition for peace",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Different word-level petition from I046's imposition-of-hands analogy.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-022",
+      "historicalClaimId": "I069",
+      "canonicalOwner": "AO.CANON.06",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.06.2"
+      ],
+      "phraseOrTopic": "Hoc est enim Corpus meum",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Specific consecratory formula vs broad Eucharistic institution; keep phrase analysis distinct.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-023",
+      "historicalClaimId": "I068",
+      "canonicalOwner": "AO.CANON.07",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "phraseOrTopic": "Chalice institution composite formula",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Specific biblical composition vs general sacrificial presence.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-024",
+      "historicalClaimId": "I068",
+      "canonicalOwner": "AO.CANON.07",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "phraseOrTopic": "aeterni",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Specific Hebrews echo; not duplicated by broad institution summary.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-025",
+      "historicalClaimId": "I068",
+      "canonicalOwner": "AO.CANON.07",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "phraseOrTopic": "mysterium fidei",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Distinct reception by liturgical tradition; do not silently identify with a Gospel phrase.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-026",
+      "historicalClaimId": "I068",
+      "canonicalOwner": "AO.CANON.07",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "phraseOrTopic": "pro multis",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Distinct sufficiency/application explanation; retain exact attribution.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-027",
+      "historicalClaimId": "I068",
+      "canonicalOwner": "AO.CANON.07",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "phraseOrTopic": "in mei memoriam",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Institutional mandate vs generic Eucharistic presence; keep exact phrasing.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-030",
+      "historicalClaimId": "I057",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Abel, Abraham and Melchisedech typology",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "One broad three-type reading and a narrower Abraham example, not exact summary equivalence.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-031",
+      "historicalClaimId": "I059",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Melchisedech",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Shared typology; one record adds Christ's priesthood and all-three sacrifice context.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-032",
+      "historicalClaimId": "I062",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "sancti Angeli / interpretations",
+      "originalTriageTier": "THEMATIC_OVERLAP_CANDIDATE",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Both represent Alphonsus's preference for angelic prayer-presentation while reporting a Christological variant.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-039",
+      "historicalClaimId": "I001",
+      "canonicalOwner": "AO.CANON.01",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.01.1"
+      ],
+      "phraseOrTopic": "Te igitur transition",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Transition from preceding oblation vs general silent petition through Christ.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-040",
+      "historicalClaimId": "I002",
+      "canonicalOwner": "AO.CANON.01",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.01.1"
+      ],
+      "phraseOrTopic": "haec dona/munera + three crosses",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Three crosses and reference to future consecration; preserve no-effect-on-consecration doctrinal qualifier.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-041",
+      "historicalClaimId": "I001",
+      "canonicalOwner": "AO.CANON.01",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.01.1"
+      ],
+      "phraseOrTopic": "in primis pro Ecclesia",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Universal Church intercession is a separate clause, not a duplicate of Canon opening.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-042",
+      "historicalClaimId": "I001",
+      "canonicalOwner": "AO.CANON.01",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.01.1"
+      ],
+      "phraseOrTopic": "adunare / Una est columba",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Scriptural typology for Church unity; unrelated to silent beginning.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-043",
+      "historicalClaimId": "I004",
+      "canonicalOwner": "AO.CANON.01",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.01.1"
+      ],
+      "phraseOrTopic": "Pope and local bishop",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Specific visible-communion names and broader Church-in-public-prayer theme.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-044",
+      "historicalClaimId": "I005",
+      "canonicalOwner": "AO.CANON.02",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.02.1"
+      ],
+      "phraseOrTopic": "Memento of the Living",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Particular intentions and remembrance concern the same prayer; preserve exact phrase differentiation.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-045",
+      "historicalClaimId": "I006",
+      "canonicalOwner": "AO.CANON.02",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.02.1"
+      ],
+      "phraseOrTopic": "circumstantium / faith and devotion",
+      "originalTriageTier": "THEMATIC_OVERLAP_CANDIDATE",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Same Guéranger explanation of the faithful present; one concise claim with both provenance IDs.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-046",
+      "historicalClaimId": "I017",
+      "canonicalOwner": "AO.CANON.05",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "phraseOrTopic": "Quam oblationem introduction",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Immediate preparation for consecration and acceptance of offering; same section but different emphasis.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-047",
+      "historicalClaimId": "I017",
+      "canonicalOwner": "AO.CANON.05",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "phraseOrTopic": "adscripta",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Lexical 'entered or accounted' nuance absent from broad historical summary; retain word anchor.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-048",
+      "historicalClaimId": "I016",
+      "canonicalOwner": "AO.CANON.05",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "phraseOrTopic": "rata",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Word 'ratified' vs historical record specifically analyzing rationabilem.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-049",
+      "historicalClaimId": "I016",
+      "canonicalOwner": "AO.CANON.05",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "phraseOrTopic": "rationabilem / spiritual worship",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Guéranger directly connects rationabilem to spiritual/rational oblation; align same word while retaining cross symbolism separately.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-050",
+      "historicalClaimId": "I029",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Abel and older figures",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "RELATED_COMPLEMENTARY",
+      "rationale": "Typological accepted offerings vs safeguarding sufficiency of Christ's sacrifice.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-051",
+      "historicalClaimId": "I033",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "sanctus Angelus in Guéranger",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "ATTRIBUTION_CORRECTION",
+      "rationale": "The Guéranger source explicitly identifies the Angel as Christ (Envoy / Angel of Great Counsel). VER-051 ministering-angel wording must not be published as Guéranger's position.",
+      "action": "HOLD_AND_CORRECT_AUTHOR_ATTRIBUTION",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-057",
+      "historicalClaimId": "I054",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Gihr on Abel",
+      "originalTriageTier": "STRONG_PARAPHRASE_CANDIDATE",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Same printed p.659 Abel passage: faith, innocent death, typology; one statement with two evidence IDs.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-058",
+      "historicalClaimId": "I056",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Gihr on Abraham / Isaac",
+      "originalTriageTier": "THEMATIC_OVERLAP_CANDIDATE",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Same p.659 passage: Abraham's faith and obedience; Isaac is spared; avoid implying Isaac was literally slain.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-059",
+      "historicalClaimId": "I058",
+      "canonicalOwner": "AO.CANON.09",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "phraseOrTopic": "Gihr on Melchisedech",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "SAME_ARGUMENT_SUMMARY",
+      "rationale": "Same §61/pp.659–660 typological explanation; retain author caveat on interpreting Genesis 14 as an instituted sacrifice.",
+      "action": "ONE_SYNTHESIZED_SUMMARY_PRESERVE_TWO_EVIDENCE_IDS",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-068",
+      "historicalClaimId": "I064",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "Aquinas on three crosses",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Passion significance of signs differs from heavenly-alter/angel petition explanation; never declare equivalence.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-107",
+      "historicalClaimId": "I065",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "Le Brun profound inclination",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Precise documented action vs historical author methodological caveat about theatrical explanations.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-108",
+      "historicalClaimId": "I065",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "Le Brun angel Christology",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Christological and alternative angel interpretation vs method-only historical record.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-109",
+      "historicalClaimId": "I065",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "Le Brun sublime altare",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Heavenly altar theology vs methodological caution, not a repeated claim.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    },
+    {
+      "verifiedClaimId": "VER-110",
+      "historicalClaimId": "I065",
+      "canonicalOwner": "AO.CANON.10",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "phraseOrTopic": "Le Brun earthly altar participation",
+      "originalTriageTier": "SAME_AUTHOR_SAME_OWNER_REQUIRES_PASSAGE_COLLATION",
+      "semanticDisposition": "DIFFERENT_SUBPASSAGE",
+      "rationale": "Sacramental participation and earthly/heavenly altar distinction vs methodological caution.",
+      "action": "KEEP_DISTINCT_GRANULAR_CLAIMS_SAME_OWNER",
+      "sourcePassageStatus": "REQUIRE_EDITION_AND_PRINT_COLLATION",
+      "runtimePublicationApproved": false
+    }
+  ],
+  "unresolvedBeforePublication": [
+    "Check edition/witness registration against shared src/reference (PRs #1212/#1222/#1233/#1234)",
+    "Verify exact sourceCueIds and passage ranges against current LIVE source before attaching commentary to words/gestures",
+    "Collate original printed passages, particularly Gihr p.659, Guéranger's French edition and Le Brun/Aquinas source selections",
+    "Resolve doctrinal interpretation differences without imposing one scholar's mystical gloss as rubrical authority",
+    "Complete bilingual EN/FR editorial and rights review"
+  ],
+  "runtimeChanges": 0
+}
