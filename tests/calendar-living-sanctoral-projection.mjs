@@ -24,6 +24,11 @@ const oct2026 = supplementarySaintsForDate("2026-10-09", people, {language:"fr",
 assert.deepEqual(oct2026.map(x => x.personId), ["saint.john-henry-newman"]);
 assert.equal(oct2026[0].title, "Saint John Henry Newman");
 assert.equal(oct2026[0].doctorOfChurch, true);
+assert.ok(oct2026[0].whyHonoured.includes("vérité"));
+assert.ok(oct2026[0].historicalContribution.includes("éducation"));
+assert.ok(oct2026[0].furtherReadingUrls[0].startsWith("https://www.vatican.va/"));
+assert.equal(oct2026[0].artworkId,null,"Only approved existing art may be linked");
+assert.equal(oct2026[0].canonicalPlaceId,null,"Do not invent a map place");
 assert.equal(oct2026[0].optional1962MassStatus, "NOT_EVALUATED");
 assert.equal(oct2026[0].changesPrincipalDay, false);
 assert.equal(supplementarySaintsForDate("2025-10-09", people).length, 0, "2026 calendar inscription not retrojected");
