@@ -1,5 +1,7 @@
 # Biblical Theatre — existing Catholic author sources, 151-event selection (15 October 2026)
 
+**Revised 15 October 2026 translation rule:** AI may translate an identifiable, faithfully verified historical Catholic author's original chapter if an appropriate existing human translation is unavailable, with source-anchored original-language records, attribution, clearly labelled AI-assisted translation, and editorial review before publication. AI still must never create, abridge, combine, fictionalize, summarize as a new Bible history, or invent connective narrative. This supersedes earlier no-AI-translation language. No permission requests.
+
 **Editorial decision:** existing, correctly attributed Catholic-authored prose or original Scripture only. No AI-generated Bible stories, AI abridgements, translations, added transitions or fabricated Gospel harmonies. The withdrawn 11 AI narratives remain excluded. No permissions requested.
 
 ## Substantive findings
