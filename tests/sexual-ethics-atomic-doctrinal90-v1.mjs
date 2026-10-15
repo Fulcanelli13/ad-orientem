@@ -44,7 +44,19 @@ for(const entry of dossier.cases){
    assert.ok(snapshot.stage_source_ids[stage].includes(sid),entry.id+" "+stage+" frozen source not synced");
    assert.ok(certification.stages.find(x=>x.stage===stage).selected_source_ids.includes(sid),entry.id+" "+stage+" cert source ledger not synced");
    assert.equal(CSE_SOURCE_MAP[sid]?.canonical_url,row.source_url,entry.id+" "+stage+" original source URL drift");
-   assert.deepEqual([row.stage_live_en,row.stage_live_fr],original[stage],entry.id+" "+stage+" EN/FR text drift");
+   if(entry.id==="CSE031"&&stage==="response"){
+     // Preserve the 2026-10-09 atomic snapshot and prove that the only addition
+     // is the sourced EN/FR matrimonial-consent correction, not silent drift.
+     const integration=JSON.parse(readFileSync("data/learn/formation-33-marriage-moral-editorial-overlays-20261014.v1.json","utf8"));
+     const source=integration.updates.find(x=>x.id==="CSE031")?.sections.find(x=>x.role==="response");
+     assert.ok(source?.text?.en&&source?.text?.fr,"CSE031 approved research overlay missing");
+     assert.deepEqual(original[stage],[
+       row.stage_live_en+"\n\n"+source.text.en,
+       row.stage_live_fr+"\n\n"+source.text.fr
+     ],"CSE031 response may add only the precisely attributed bilingual overlay");
+   }else{
+     assert.deepEqual([row.stage_live_en,row.stage_live_fr],original[stage],entry.id+" "+stage+" EN/FR text drift");
+   }
    const actual=paragraphRefsFor(item,"debate",stage).map(x=>x[0]);
    assert.ok(actual.includes(sid),entry.id+" "+stage+" citation lost by reader fallback");
    assert.deepEqual(actual,stageRegistry[entry.id][stage],entry.id+" "+stage+" source substitute");

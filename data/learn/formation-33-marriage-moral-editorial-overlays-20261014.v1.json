@@ -1,0 +1,161 @@
+{
+  "schema": "AO_FORMATION_33_BATCH_TARGETED_BILINGUAL_EDITORIAL_OVERLAY_V1",
+  "date": "2026-10-14",
+  "status": "DRAFT_RESEARCH_ONLY_NOT_PROMOTED_NOT_CERTIFIED",
+  "description": "Selected improvements only; no change to underlying canonical question/draft/live file; do not conflate source comparisons with demonstrated authorship agreement.",
+  "count": {
+    "owners": 4,
+    "sections": 7
+  },
+  "updates": [
+    {
+      "id": "CR-MOR-01",
+      "owner_question": "Did the crisis in moral theology begin before Vatican II?",
+      "update_type": "ADD_CHRONOLOGICAL_PRIMARY_WITNESS_TO_EXISTING_FOUR_SECTION_DRAFT",
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The debate over Catholic moral methodology demonstrably predates the Second Vatican Council. On 18 April 1952, Pius XII publicly criticised what he called 'situation ethics': accounts in which a concrete decision of conscience no longer receives the governing force of universal moral law. This is a dated, first-party preconciliar witness, not a judgment inferred from the subsequent disputes of 1968 or 1971. The broader renewal of moral theology also had preconciliar strands, including Bernard Häring's *The Law of Christ* (1954), though the complete book has not been collated in this audit.",
+            "fr": "La controverse sur les méthodes de théologie morale est clairement antérieure au concile Vatican II. Le 18 avril 1952, Pie XII critiqua publiquement ce qu'il appelait la « morale de situation » : des conceptions dans lesquelles la décision concrète de la conscience ne se laisse plus guider par la loi morale universelle. Il s'agit d'un témoignage préconciliaire précis, et non d'une conclusion tirée des débats ultérieurs de 1968 ou 1971. Le renouveau de la théologie morale avait aussi commencé avant le Concile, notamment avec *La Loi du Christ* de Bernhard Häring (1954), dont l'ouvrage intégral n'a toutefois pas été collationné dans cet audit."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+              "locator": "Sections « La morale de situation » / « Les obligations fondamentales de la loi morale »"
+            },
+            {
+              "url": "https://academic.oup.com/book/50107/chapter-abstract/422700434",
+              "locator": "Siker, historical chapter abstract, publication of The Law of Christ in 1954; secondary history only"
+            }
+          ]
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Pius XII's April 1952 address records his own criticism of moral approaches that make the concrete situation the decisive rule instead of universal negative precepts. His presentation describes these views from an official critic's perspective, not the verified words of a named supporter. To establish a full adversarial history, the original articles of preconciliar proponents and the 1954 Häring text must be reviewed on their own terms; Josef Fuchs's 1971 article cannot supply evidence of what an individual author wrote before 1962.",
+            "fr": "Le discours d'avril 1952 expose la critique de Pie XII contre des approches qui feraient de la situation concrète la règle déterminante, au détriment des préceptes moraux négatifs universels. Il décrit ces positions du point de vue d'une autorité qui les critique, et non dans les termes directement vérifiés d'un défenseur nommé. Pour établir l'histoire contradictoire complète, il faudra examiner les écrits originaux des auteurs d'avant 1962 ainsi que l'ouvrage de Häring de 1954 ; l'article de Josef Fuchs paru en 1971 ne prouve pas ce qu'un auteur aurait soutenu avant le Concile."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/pius-xii/fr/speeches/1952/documents/hf_p-xii_spe_19520418_soyez-bienvenues.html",
+              "locator": "1952 address, « La morale de situation »"
+            },
+            {
+              "url": "https://academic.oup.com/book/50107/chapter-abstract/422700434",
+              "locator": "scholarly book abstract, preconciliar historical attribution, full text not accessed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CR-MOR-06",
+      "owner_question": "Fundamental option, mortal sin and intrinsically evil acts",
+      "update_type": "REPAIR_ORIGINAL_OPPONENT_ATTRIBUTION_RESEARCH_ONLY",
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "A person's fundamental orientation toward God is of real spiritual importance, but it does not nullify responsibility for freely chosen grave acts. *Reconciliatio et paenitentia* §17 and *Veritatis splendor* §§65–70 teach that a gravely wrong action committed with sufficient knowledge and deliberate consent may constitute mortal sin without a separate explicit act of rejecting God. The subjective conditions of culpability must still be assessed, and they cannot be presumed from the outward action alone.",
+            "fr": "L'orientation fondamentale d'une personne vers Dieu possède une véritable importance spirituelle, mais elle n'annule pas la responsabilité des actes gravement mauvais librement choisis. *Reconciliatio et paenitentia* (§17) et *Veritatis splendor* (§§65–70) enseignent qu'un acte grave commis avec connaissance suffisante et consentement délibéré peut constituer un péché mortel sans un acte distinct de rejet explicite de Dieu. Il faut néanmoins considérer les conditions subjectives de culpabilité, qu'on ne peut déduire automatiquement du seul acte extérieur."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+              "locator": "§17"
+            },
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+              "locator": "§§65–70"
+            }
+          ]
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "*Veritatis splendor* §§65–70 presents and criticises theories that so separate a person's fundamental choice from particular acts that particular grave choices would not, as such, change that person's relation to God. This is an identifiable magisterial description of the disputed thesis, not a first-person statement by Josef Fuchs. Fuchs's 1971 argument about the moral specification of concrete actions is related but not identical. Attribution of the stronger fundamental-option thesis to a named advocate remains unresolved until an original text can be quoted in context.",
+            "fr": "*Veritatis splendor* (§§65–70) expose et critique des théories séparant à tel point l'option fondamentale des actes particuliers que des choix concrètement graves ne modifieraient pas, en eux-mêmes, le rapport de la personne à Dieu. Il s'agit d'une présentation magistérielle identifiable de la thèse contestée, non d'une prise de position personnelle vérifiée de Josef Fuchs. L'argument de Fuchs publié en 1971 sur la qualification morale des actes concrets est apparenté, mais n'est pas identique. L'attribution de la thèse plus forte à un auteur déterminé reste à établir par son propre texte intégral."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+              "locator": "§§65–70"
+            },
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+              "locator": "§17"
+            }
+          ],
+          "opponent_primary_proponent_verified": false
+        }
+      ]
+    },
+    {
+      "id": "CSE045",
+      "owner_question": "What are the purposes and duties of Christian marriage, including headship and submission?",
+      "update_type": "EXPAND_DEBATE_TO_ACTUAL_CROSS_ERA_FORMULATION",
+      "sections": [
+        {
+          "role": "opposition",
+          "text": {
+            "en": "Pius XI says in *Casti connubii* §§26–29 that the domestic order includes a husband's primacy and a wife's willing subjection, expressly denying that this makes her a minor or servant. John Paul II says in *Mulieris dignitatem* §24 that the Ephesians exhortation must be understood as mutual submission between spouses, rather than a one-sided subjection. Do those texts prescribe the same domestic authority, describe different forms of one moral order, or require acknowledging a genuine development in how spousal duties are expressed?",
+            "fr": "Pie XI affirme dans *Casti connubii* (§§26–29) que l'ordre familial comporte la primauté du mari et la soumission volontaire de l'épouse, tout en excluant qu'elle soit traitée comme une mineure ou une servante. Jean-Paul II enseigne dans *Mulieris dignitatem* (§24) que l'exhortation aux Éphésiens doit être comprise comme une soumission réciproque des époux et non comme une soumission à sens unique. Les deux textes prescrivent-ils la même autorité domestique, décrivent-ils deux expressions d'un même ordre moral ou exigent-ils de reconnaître une véritable évolution dans la formulation des devoirs conjugaux ?"
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§26–29"
+            },
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+              "locator": "§24"
+            }
+          ],
+          "argument_type": "direct_internal_magisterial_comparison_not_an_external_secular_opponent"
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "*Casti connubii* explicitly affirms personal dignity, free action and the limits of spousal obedience, while *Mulieris dignitatem* grounds the reciprocity of subjection in Christ's sacrificial love and the Pauline imperative of Ephesians 5:21. Their emphasis differs and must not be presented as verbally identical. Determining whether a juridical asymmetry in family governance can stand with fully reciprocal submission requires further theological argument; it is not settled by erasing either original formulation. Abuse, humiliation and coercion are not justified by either text.",
+            "fr": "*Casti connubii* affirme explicitement la dignité personnelle, la liberté d'action et les limites de l'obéissance conjugale, tandis que *Mulieris dignitatem* fonde la réciprocité de la soumission dans l'amour sacrificiel du Christ et l'exhortation paulinienne d'Éphésiens 5,21. Leurs accents diffèrent et l'on ne saurait prétendre qu'ils s'expriment dans les mêmes termes. Déterminer comment une éventuelle asymétrie juridique de gouvernement familial s'accorde avec la soumission pleinement réciproque exige encore un argument théologique ; supprimer l'une des deux formulations ne résout rien. Ni l'un ni l'autre texte ne justifie les abus, l'humiliation ou la contrainte."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§26–29"
+            },
+            {
+              "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+              "locator": "§24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CSE031",
+      "owner_question": "Why is premarital sex wrong if two people genuinely love each other?",
+      "update_type": "REFINE_ARGUMENT_WITH_MATRIMONIAL_CONSENT",
+      "sections": [
+        {
+          "role": "response",
+          "text": {
+            "en": "The issue is not that a ceremony magically makes an identical relationship morally good. In canon law, marriage is brought about by the spouses' freely given matrimonial consent, legitimately manifested between persons capable of marrying (can. 1057). That consent establishes a public, permanent covenant with obligations which affection or plans to marry alone do not create. Christian sexual morality evaluates intercourse in the light of that actually existing bond and its goods, not by whether the celebration is elaborate or inexpensive.",
+            "fr": "La question n'est pas de savoir si une cérémonie transforme magiquement une relation identique en bien moral. En droit canonique, le mariage naît du consentement matrimonial librement donné, légitimement manifesté par des personnes aptes à se marier (can. 1057). Ce consentement établit une alliance publique et durable, assortie d'obligations qu'une affection ou un projet de mariage ne crée pas à lui seul. La morale sexuelle chrétienne considère l'union corporelle à la lumière de ce lien effectivement constitué et de ses biens, non selon le faste ou la simplicité de la célébration."
+          },
+          "sources": [
+            {
+              "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+              "locator": "can. 1055–1057"
+            },
+            {
+              "url": "https://www.newadvent.org/summa/3154.htm",
+              "locator": "II-II q.154 a.2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

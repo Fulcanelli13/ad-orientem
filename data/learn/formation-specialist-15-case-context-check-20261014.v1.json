@@ -1,0 +1,232 @@
+{
+  "schema": "AO_FORMATION_SPECIALIST_SAMPLE_CONTEXT_REVIEW_V1",
+  "date": "2026-10-14",
+  "status": "PARTIAL_ORIGINAL_CONTEXT_CHECKS_ONLY_NO_CERTIFICATION",
+  "base": "data/learn/formation-specialist-source-layer-20261014.v1.json",
+  "method": "Read current JS questions for CSE and canonical titles for CR; compared specific original texts where accessible. CR full draft paragraphs were not reviewed in this batch. Spot-check records are not systematic examination of each evidence claim.",
+  "count": {
+    "cases": 15,
+    "current_CSE_answers_read": 12,
+    "CR_titles_only": 3,
+    "question_answers_certified": 0,
+    "production_edits": 0
+  },
+  "findings": [
+    {
+      "id": "CSE008",
+      "existing_answer_read": "yes",
+      "source_locator": "Veritatis splendor §§78–80",
+      "observation": "The existing concise answer correctly distinguishes intention and the chosen moral object; the cited document supplies direct doctrinal support.",
+      "next_step": "Keep; enhance a deep debate only if supported by original consequentialist argument, e.g. Mill chap. II; do not assert Mill discusses this specific sexual case.",
+      "review_status": "pass_source_alignment_not_certification",
+      "source_ids": [
+        "S21",
+        "S34"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE010",
+      "existing_answer_read": "yes",
+      "source_locator": "Veritatis splendor §§79–82",
+      "observation": "Existing answer correctly distinguishes intrinsic wrongness from actor culpability; the supplied source explicitly addresses objects and exceptions.",
+      "next_step": "Keep current short answer; test opposition section for a genuinely attributed proportionalist formulation.",
+      "review_status": "pass_source_alignment_not_certification",
+      "source_ids": [
+        "S21",
+        "S34"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE016",
+      "existing_answer_read": "yes",
+      "source_locator": "Veritatis splendor §§54–64; Curran 2018 pp. 520–522",
+      "observation": "The current concise conscience answer is substantively compatible with VS; Curran's own article provides a real contemporary dissenting view for a deeper treatment.",
+      "next_step": "Check exact scope of magisterial assent and whether disagreement is presented accurately; do not conflate conscience with permission for all dissent.",
+      "review_status": "partially_checked_deeper_opposition_needed",
+      "source_ids": [
+        "S21",
+        "S33"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE019",
+      "existing_answer_read": "yes",
+      "source_locator": "Slater, Book I chs I–III",
+      "observation": "Existing distinction between grave matter and subjective guilt is consistent with Slater on deliberation and voluntariness.",
+      "next_step": "Need distinct modern safeguarding/clinical context before applying principles to coercion cases.",
+      "review_status": "supporting_classical_perspective",
+      "source_ids": [
+        "S27"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE061",
+      "existing_answer_read": "yes",
+      "source_locator": "Humanae vitae §§11–16; Curran 2018 p. 521ff",
+      "observation": "Current text identifies intentional choice and the separate issue of responsible parenthood. Curran's essay supplies an authored dissenting argument, rather than a generic strawman.",
+      "next_step": "Add Curran only where deeper objection is required; preserve distinction between formal papal teaching and dissent.",
+      "review_status": "pass_baseline_opponent_needs_context",
+      "source_ids": [
+        "S19",
+        "S20",
+        "S33"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE063",
+      "existing_answer_read": "yes",
+      "source_locator": "Humanae vitae §16; Curran 2018 p. 521ff",
+      "observation": "Existing NFP explanation correctly distinguishes periodic abstinence from acting to render intercourse infertile. Both cases can share a remote pregnancy-avoidance intention.",
+      "next_step": "Retain precise means/end distinction; avoid implying all NFP use is justified without sufficient reasons.",
+      "review_status": "pass_source_alignment_not_certification",
+      "source_ids": [
+        "S20",
+        "S33"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE081",
+      "existing_answer_read": "yes",
+      "source_locator": "Persona humana; Dignitas infinita §§55–60",
+      "observation": "Existing answer distinguishes involuntary inclination and voluntary action.",
+      "next_step": "Original 1986 CDF pastoral letter already cited by existing answer needs exact direct text retrieval and paragraph check before independent certification.",
+      "review_status": "primary_original_gap",
+      "source_ids": [
+        "S25",
+        "S24"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE091",
+      "existing_answer_read": "yes",
+      "source_locator": "Dignitas infinita §§55–60",
+      "observation": "Existing summary correctly identifies sex difference as relevant to embodied Catholic anthropology.",
+      "next_step": "Maintain explicit distinction between theological claims and independent empirical science.",
+      "review_status": "pass_doctrinal_alignment_only",
+      "source_ids": [
+        "S24"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE096",
+      "existing_answer_read": "yes",
+      "source_locator": "Dignitas infinita §60",
+      "observation": "Text accurately preserves the explicit exception for treatment of genital abnormalities and requires individualized risk-benefit clinical assessment.",
+      "next_step": "Clinical comparisons require independent competent medical evidence; doctrinal text alone cannot certify clinical safety/efficacy.",
+      "review_status": "pass_document_alignment_empirical_gap",
+      "source_ids": [
+        "S24"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE101",
+      "existing_answer_read": "yes",
+      "source_locator": "Donum vitae II.B.5 (direct text opened during this audit); Dignitas personae §§12–16",
+      "observation": "The app's claim about a hypothetical homologous IVF without embryo loss is directly supported by Donum vitae II.B.5, which expressly discusses the simple case. The app's statement that IVF-conceived children retain full dignity is also supported.",
+      "next_step": "Preserve current answer; still independently review its expanded opponent section and French wording.",
+      "review_status": "pass_precise_original_locator_not_full_certification",
+      "source_ids": [
+        "S23",
+        "S35"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE112",
+      "existing_answer_read": "yes",
+      "source_locator": "Slater Book I; existing 2024 scoping review",
+      "observation": "Existing distinction between involuntary genital response and consent is supported conceptually by voluntariness doctrine. The cited 2024 empirical review was not independently re-examined in this batch.",
+      "next_step": "Do not imply frequency estimates or infer survivor consent; retrieve and assess the exact scoping review before certification.",
+      "review_status": "high_stakes_empirical_still_unchecked",
+      "source_ids": [
+        "S27"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CSE113",
+      "existing_answer_read": "yes",
+      "source_locator": "Slater Book I; existing 2024 scoping review",
+      "observation": "Existing answer correctly says bodily experience alone cannot establish culpability, but the empirical foundation remains separately unreviewed.",
+      "next_step": "Perform independent original empirical review and trauma-aware editorial check.",
+      "review_status": "high_stakes_empirical_still_unchecked",
+      "source_ids": [
+        "S27"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CR-DOC-04",
+      "existing_answer_read": "title_only",
+      "source_locator": "Dignitatis humanae §§1–2; Quanta cura original Latin; SSPX state of necessity",
+      "observation": "Verified both Vatican II's own stated immunity-from-coercion framework and the SSPX's explicit assertion of contradiction. These are genuine divergent texts, not a claim of two corroborating witnesses.",
+      "next_step": "Collate original condemned propositions and contextual meanings; do not decide continuity/rupture from labels alone. Retrieve existing unpublished dossier drafts separately.",
+      "review_status": "original_opposing_position_pair_assembled",
+      "source_ids": [
+        "S01",
+        "S08",
+        "S15",
+        "S31"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CR-DOC-06",
+      "existing_answer_read": "title_only",
+      "source_locator": "Lumen gentium §8; Unitatis redintegratio §§1–4; Mortalium animos; 1974 Lefebvre declaration",
+      "observation": "Full texts show relevant original Church unity / ecumenism vocabulary and explicit SSPX criticism. No per-claim synthesis certification performed.",
+      "next_step": "Distinguish ecclesial identification, elements of sanctification, missionary duty and practical ecumenism; then compare exact formulations.",
+      "review_status": "thematic_originals_collected_only",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S09",
+        "S14"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    },
+    {
+      "id": "CR-ECC-07",
+      "existing_answer_read": "title_only",
+      "source_locator": "Ecclesia Dei §3; SSPX 1999 state-of-necessity study",
+      "observation": "Both sides' first-party characterization of 1988 consecrations are directly accessible: official schismatic-act judgment and SSPX necessity defence.",
+      "next_step": "Do not conflate 1988 historical condemnation with present clerical/organizational legal status; add subsequent Holy See acts and canonical scholarship before conclusion.",
+      "review_status": "original_opposing_position_pair_assembled",
+      "source_ids": [
+        "S10",
+        "S16"
+      ],
+      "independent_q_and_a_certified": false,
+      "edit_applied": false
+    }
+  ],
+  "remaining_gates": [
+    "Retrieve and cross-check original 1986 CDF letter, 2024 empirical scoping review, modern clinical/epidemiological original sources where scientific claims are made",
+    "Review entire per-question deep debate source context and actual opponent text, not just concise CSE answers",
+    "For CR validate actual 141 unpublished drafts, modern canon law chronology, and each historical assertion",
+    "For original 25 books do exact edition/chapter pinning before counting the books as independent supports"
+  ]
+}

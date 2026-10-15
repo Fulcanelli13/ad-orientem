@@ -26,7 +26,7 @@
     "unverified_literally_attributed_debate_stages": 55,
     "stage_specific_mapping_debates": 55,
     "stage_specific_mapping_records": 440,
-    "stage_specific_mapping_references": 640,
+    "stage_specific_mapping_references": 652,
     "stage_full_text_certified": 0,
     "stage_specific_mapping_pending": 0,
     "original_author_excerpts_via_secondary": 3,
@@ -1222,29 +1222,37 @@
       "priority": "NORMAL",
       "opponent_provenance": [
         {
-          "source_id": "PEW_CO2019",
-          "locator": "original survey: respondents cite love/companionship in marriage; no claim procreation is morally obsolete",
-          "title": "Pew Research Center · Marriage and Cohabitation in the U.S. (2019), full report with relationship-testing motive",
-          "url": "https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/",
-          "role": "empirical",
-          "source_type": "ORIGINAL_TEXT_OR_PRIMARY_EMPIRICAL_CONTEXT"
+          "source_id": "KEENER2016",
+          "locator": "Craig Keener (2016), first-person Protestant egalitarian exegesis of Ephesians 5:21–22 and mutual submission",
+          "title": "Craig Keener · The Case for Mutual Submission in Ephesians 5 (2016)",
+          "url": "https://www.cbeinternational.org/resource/case-mutual-submission-ephesians-5-0/",
+          "role": "opposing_position",
+          "source_type": "FIRSTPERSON_AUTHOR_BOUNDED_ESSAY"
         },
         {
-          "source_id": "FARLEY2008",
-          "locator": "marriage, family and just love",
-          "title": "Margaret A. Farley · Just Love: A Framework for Christian Sexual Ethics",
-          "url": "https://books.google.com/books?id=L6p9ZVblRNwC",
-          "role": "opposing_position",
-          "source_type": "BOOK_CATALOG_OR_PREVIEW"
+          "source_id": "CASTI",
+          "locator": "Pius XI, Casti connubii §§26–29: domestic primacy explicitly qualified by wife’s dignity",
+          "title": "Pius XI · Casti Connubii (1930)",
+          "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+          "role": "primary",
+          "source_type": "CATHOLIC_CONTEXT_NOT_OPPOSING_AUTHOR"
+        },
+        {
+          "source_id": "MULIERIS",
+          "locator": "John Paul II, Mulieris dignitatem §24: reciprocal submission in Christ",
+          "title": "John Paul II · Mulieris Dignitatem (1988) §24",
+          "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_15081988_mulieris-dignitatem.html",
+          "role": "later_application",
+          "source_type": "CATHOLIC_CONTEXT_NOT_OPPOSING_AUTHOR"
         }
       ],
       "opposition_passage_status": "SELECTED_ORIGINAL_EVIDENCE_SCOPE_CHECKED_FULL_STAGES_NOT_VERIFIED",
       "verified_primary_source_ids": [
-        "PEW_CO2019"
+        "KEENER2016"
       ],
       "verified_finding": null,
-      "stage_precision": "Opposition, appeal and counter stages are editorial reconstructions; shared source links support the general proponent position, NOT necessarily each stage's literal wording.",
-      "correction_needed": "Sources demonstrate the bounded historical/empirical position indicated in verification_batch_4, not the entire reconstructed debate. Do not present as a literal quotation or a certified stage-by-stage exchange.",
+      "stage_precision": "Craig Keener is an actual Protestant advocate of a mutual-submission interpretation; each of the eight cards remains a distinctly editorial argument, not a literal interview with him or a summary of only one papal document.",
+      "correction_needed": "Existing pre-integration 2019 Pew survey and Farley citations describe marriage motives, not the actual objection on authority and submission; superseded in the current provenance by Keener's published argument and original papal/CIC witnesses.",
       "not_a_direct_quotation": true,
       "new_primary_evidence": null,
       "verification_batch_4": {
@@ -1256,20 +1264,67 @@
         "findings": "Pew respondents name love and companionship among marriage motives. It does not conclude the procreative end is obsolete; the contrast is an authored challenge, not an attributed Pew claim.",
         "claim_to_source_stage_reviewed": false,
         "source_scope_checked": true,
-        "not_necessarily_authored_opposition": true
+        "not_necessarily_authored_opposition": true,
+        "historical_superseded_for_CSE045": true
       },
       "stage_evidence_review": {
         "file": "data/learn/sexual-ethics-stage-evidence-remaining31.v1.json",
         "version": "CSE_STAGE_EVIDENCE_REMAINING_31_V1",
         "stage_count": 8,
         "status": "CITATION_SELECTION_PER_STAGE_COMPLETED_ORIGINAL_PASSAGE_VERIFICATION_NOT_COMPLETE",
-        "caveat": "Pew reports marriage motives; no statement by Pew about the Catholic procreative end."
+        "caveat": "Craig Keener (2016), a named Protestant egalitarian interpreter, argues for reciprocal Pauline marital submission; *Casti connubii* §§26–29, *Mulieris dignitatem* §24 and CIC 1135 are separately attributed Catholic witnesses. The eight debate stages are editorial synthesis based on bounded original positions, not direct quotations or a claim that the interpretations are doctrinally identical.",
+        "date": "2026-10-15"
       },
       "certification_audit_v1": {
         "file": "data/learn/sexual-ethics-certification-audit.v1.json",
         "review_status": "PARTIAL_ORIGINAL_EVIDENCE_CHECKED_FULL_CERTIFICATION_OPEN",
         "fully_certified": false,
         "primary_normative_anchor": "CASTI"
+      },
+      "stage_source_ids": {
+        "opposition": [
+          "KEENER2016",
+          "CASTI",
+          "MULIERIS"
+        ],
+        "appeal": [
+          "KEENER2016",
+          "SCRIPT_EPH5"
+        ],
+        "concession": [
+          "CASTI",
+          "MULIERIS"
+        ],
+        "breakpoint": [
+          "CASTI",
+          "MULIERIS",
+          "CIC"
+        ],
+        "catholicCase": [
+          "CASTI",
+          "MULIERIS",
+          "CIC"
+        ],
+        "counter": [
+          "KEENER2016",
+          "MULIERIS"
+        ],
+        "response": [
+          "CASTI",
+          "MULIERIS",
+          "CIC"
+        ],
+        "bottom": [
+          "CASTI",
+          "MULIERIS",
+          "CIC"
+        ]
+      },
+      "original_source_reconciliation_20261015": {
+        "status": "BOUNDED_ORIGINAL_PROTESTANT_AUTHOR_PLUS_TWO_PAPAL_WITNESSES",
+        "changed_role": "headship_mutual_submission",
+        "source_scope": "Craig Keener (2016), a named Protestant egalitarian interpreter, argues for reciprocal Pauline marital submission; *Casti connubii* §§26–29, *Mulieris dignitatem* §24 and CIC 1135 are separately attributed Catholic witnesses. The eight debate stages are editorial synthesis based on bounded original positions, not direct quotations or a claim that the interpretations are doctrinally identical.",
+        "full_debate_certified": false
       }
     },
     {
@@ -3890,6 +3945,13 @@
     ],
     "policy": "Synchronizes the source ledger with the current in-app reference IDs, locators, registry URLs, titles and roles. Original passage verification, theological approval, prior checked evidence and all 440 stage-specific editorial assessments are unchanged. The source list may include contextual Catholic legal or magisterial texts for illustrative objections: these are not opponents.",
     "full_passage_certified": false,
-    "stage_specific_certification_unchanged": true
+    "stage_specific_certification_unchanged": true,
+    "follow_up_20261015": {
+      "cases_with_reference_changes": [
+        "CSE045"
+      ],
+      "owner": "src/learn/sexual-ethics-data/provenance.js",
+      "caveat": "Original 2026-10-11 count of 22 stays dated history; 2026-10-15 changed CSE045 separately."
+    }
   }
 }

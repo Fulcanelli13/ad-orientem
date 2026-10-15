@@ -1,0 +1,1145 @@
+{
+  "schema": "AO_FORMATION_INDEPENDENT_35_DIGITAL_ETHICS_ECCLESIOLOGY_AUDIT_V1",
+  "date": "2026-10-14",
+  "status": "PROPORTIONATE_SOURCE_AND_CONTENT_REVIEW_NOT_COMPLETE_CERTIFICATION",
+  "base_source_blob_shas": {
+    "src/learn/sexual-ethics-data/questions-051-100.js": "c44823177d9e152d2e40a036de41c80195b772c8",
+    "src/learn/sexual-ethics-data/debates-070-104.js": "1f6ea95bd6ae099507f31d9df8375c2aa6ea097b",
+    "src/learn/sexual-ethics-data/debates-practical.js": "8fbe9ebf62e261bd3919020a0c62e4dc6e9f9e4c",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json": "29444ee1bab994f27e96e6bd879e8236c9ceec41",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json": "552072cc4f3bb246d79f168a6309cc22b9f022a1"
+  },
+  "scope": "CSE076–100 and CR-ECC-01–10; Catechism module excluded",
+  "evidence_policy": "When author, work, exact page/section and original or trustworthy bounded excerpt support a claim, accept it. Do not require full-book access or make repeated source-hunting a universal gate. High-stakes medical and current canonical statuses require specifically relevant original authorities.",
+  "stats": {
+    "total": 35,
+    "distinct": 35,
+    "cse": 25,
+    "cr": 10,
+    "cr_sections": 40,
+    "deep_opposition_present": 10,
+    "critical_issue": [
+      "CR-ECC-09"
+    ],
+    "caution": [
+      "CSE094",
+      "CSE095",
+      "CSE096",
+      "CR-ECC-05",
+      "CR-ECC-06"
+    ],
+    "production_changes": 0
+  },
+  "rows": [
+    {
+      "id": "CSE076",
+      "module": "sexual-ethics",
+      "question_en": "What about pornography or erotic material used by married couples?",
+      "answer_en": "Third-party pornography remains pornography even when a married couple uses it together: marriage does not make the sexual display of other people legitimate. Private material made only by the spouses is a different case, and the Church has not issued a specific ruling covering every digital form. It should therefore not simply be treated as identical to third-party pornography—or automatically declared harmless.",
+      "french_answer_present": true,
+      "detail_en": "For the private-spousal case, the relevant questions are whether the material remains genuinely within marital intimacy, whether it turns the spouse into an object of consumption, and whether the permanence and risk of disclosure make creating it seriously imprudent. This is an application of established principles, not a separately defined doctrine.",
+      "deep_debate_opposition_en": "The Catechism §2354 defines pornography by displaying real or simulated sexual acts to third parties. Private material created exclusively by spouses poses a different question: does recording intimacy remain prudent and respectful if it is never shared?",
+      "cited_reference_ids": [
+        [
+          "CCC",
+          "§2354"
+        ]
+      ],
+      "disposition": "pass_limited_claim",
+      "assessment": "Differentiates third-party pornography from private couple material. Avoid asserting private recording always harmless; both partners’ consent, security and future disclosure must be considered. CCC §2354 is a bounded definition, not exhaustive technological rule.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE077",
+      "module": "sexual-ethics",
+      "question_en": "What about AI-generated pornography where no performer exists?",
+      "answer_en": "The Catechism's explicit definition of pornography (§2354) concerns exhibiting real or simulated sexual acts to third parties; it does not specifically address AI-generated images. Nevertheless, deliberately choosing synthetic sexual material to cultivate lust can be judged by established principles of chastity. This is a reasoned application, not a new explicit magisterial ruling about AI.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "ST151",
+          "a.1"
+        ]
+      ],
+      "disposition": "pass_reasoned_extension",
+      "assessment": "Explicitly labels AI-generated erotic media a reasoned application rather than an express magisterial ruling. Keep distinction between synthetic performer absence and voluntary cultivation of lust; avoid invented empirical harms.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE078",
+      "module": "sexual-ethics",
+      "question_en": "When does provocative social-media content become an occasion of sin?",
+      "answer_en": "When a person knowingly uses or follows it in a way that predictably provokes serious temptation and repeatedly leads to voluntary lust. The same content may be a remote danger for one person and a proximate occasion for another.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "SACRA",
+          "§58 (clergy formation context)"
+        ]
+      ],
+      "disposition": "pass_personal_occasion",
+      "assessment": "Prudential notion of proximate occasion depends on actual person and use; no universal social-media ban is inferred. More precise moral-manual locator would improve but not block bounded answer.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE079",
+      "module": "sexual-ethics",
+      "question_en": "How should erotic fiction or other explicit media be judged?",
+      "answer_en": "By object, intention, content and danger. Material deliberately sought for sexual arousal is morally different from exposure required for proportionate artistic, medical, legal or educational reasons.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "ST18",
+          "aa.2–11"
+        ]
+      ],
+      "disposition": "pass_distinction",
+      "assessment": "Distinguishes intended sexual stimulation from proportionate literary/artistic/legal/clinical exposure; scope is practical moral reasoning not censorship law.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE080",
+      "module": "sexual-ethics",
+      "question_en": "How should someone practically fight habitual pornography or masturbation?",
+      "answer_en": "Use both spiritual and practical means: regular Confession and prayer, removal of predictable occasions, concrete digital barriers, disciplined routines, accountability where prudent, and patient rebuilding of habits rather than despair after a fall.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "SACRA",
+          "§§58–62"
+        ]
+      ],
+      "disposition": "pass_pastoral_practical",
+      "assessment": "Brief spiritual/practical habit advice coherent. No implied guarantee of treatment success; clinical claims need qualified source if added.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE081",
+      "module": "sexual-ethics",
+      "question_en": "Is same-sex attraction itself a sin?",
+      "answer_en": "An unchosen attraction is not the same thing as a voluntary sinful act. Catholic teaching distinguishes inclination, temptation, deliberate consent and chosen sexual acts.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§3"
+        ]
+      ],
+      "disposition": "pass_exact_primary",
+      "assessment": "CDF 1986 §3 explicitly distinguishes unchosen homosexual inclination from chosen acts; source supports bounded proposition. Avoid equating 'objective disorder' of inclination in theology with psychiatric illness or culpable sin.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE082",
+      "module": "sexual-ethics",
+      "question_en": "What is the difference between an inclination and a chosen act?",
+      "answer_en": "An inclination or attraction can arise without consent. A chosen act proceeds from the will. Catholic morality therefore does not infer personal guilt merely from an orientation or temptation.",
+      "french_answer_present": true,
+      "detail_en": "This distinction protects both moral clarity and the dignity of the person. The moral evaluation of acts does not require treating the mere existence of an unchosen inclination as a personal sin.",
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§§3, 11"
+        ]
+      ],
+      "disposition": "pass_voluntariness",
+      "assessment": "Actual inclination versus voluntary act distinction grounded in CDF and Aquinas; no psychiatric causal theory claimed.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE083",
+      "module": "sexual-ethics",
+      "question_en": "What is wrong with a faithful, loving same-sex relationship?",
+      "answer_en": "Catholic teaching can recognize real goods such as affection, loyalty and sacrifice without concluding that every sexual expression of those goods is morally ordered. Marriage is held to include male-female sexual complementarity and the natural ordering toward generation.",
+      "french_answer_present": true,
+      "detail_en": "Fidelity, affection and sacrifice are genuine moral goods, but they are not exhaustive of sexual morality. The bodily form of sexual union and its relation to marriage and generation also matter; fidelity can remove additional wrongs such as promiscuity without changing the moral species of the sexual act itself.",
+      "deep_debate_opposition_en": "Margaret Farley argues that same-sex relationships and sexual activity may be evaluated by the same relational criteria as heterosexual ones (Just Love, p. 295, quoted in the CDF's 2012 Notification). If mutual love, fidelity and justice matter, why exclude a faithful same-sex couple?",
+      "cited_reference_ids": [
+        [
+          "PH",
+          "§8"
+        ]
+      ],
+      "disposition": "pass_opponent_real",
+      "assessment": "Margaret Farley excerpt within CDF 2012 Notification is sufficient for bounded proponent attribution; distinct Church's sexual morality and recognition of genuine relational goods.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE084",
+      "module": "sexual-ethics",
+      "question_en": "If infertile heterosexual couples may marry, why can’t same-sex couples?",
+      "answer_en": "Because Catholic reasoning distinguishes actual fertility from the kind of union involved. An infertile man and woman still form the same male-female conjugal union naturally ordered to generation, even when conception is impossible in their particular case.",
+      "french_answer_present": true,
+      "detail_en": "Actual childbearing cannot be the criterion for marriage. The Catholic distinction is structural: sterility is the absence of an outcome within a generative kind of male-female union, whereas a same-sex union is not that kind of bodily union in the first place.",
+      "deep_debate_opposition_en": "Infertile heterosexual spouses can marry although they cannot conceive. If successful procreation is not required for marriage, why must the man–woman distinction remain essential to its definition?",
+      "cited_reference_ids": [
+        [
+          "CIC",
+          "can. 1084 §§1–3; 1098"
+        ]
+      ],
+      "disposition": "pass_canonic_cross_reference",
+      "assessment": "Canon 1084 §3 explicitly reads sterility does not prohibit marriage WITHOUT prejudice to can. 1098; 1098 is relevant to fraud about serious quality and correctly cited. No correction.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE085",
+      "module": "sexual-ethics",
+      "question_en": "Does fidelity change the morality of homosexual acts?",
+      "answer_en": "Fidelity is a genuine good and removes additional wrongs associated with betrayal or promiscuity. Catholic teaching nevertheless judges the sexual acts themselves separately, so good relational circumstances do not by themselves change the moral object.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "PH",
+          "§8"
+        ]
+      ],
+      "disposition": "pass_object_relational",
+      "assessment": "Fidelity is valuable yet does not by itself change the Catholic moral object; avoids declaring a person unworthy.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE086",
+      "module": "sexual-ethics",
+      "question_en": "Does condemning an act amount to condemning the person?",
+      "answer_en": "No. Catholic morality routinely distinguishes the dignity of the person from the moral evaluation of particular acts. A person must never be reduced to an inclination, temptation or sin.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§§10, 16"
+        ]
+      ],
+      "disposition": "pass_person_act_distinction",
+      "assessment": "Moral evaluation of an act does not license reducing person to an inclination or denying dignity; CDF and Dignitas infinita both original supports.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE087",
+      "module": "sexual-ethics",
+      "question_en": "Is Catholic teaching on homosexuality hateful or discriminatory?",
+      "answer_en": "A moral judgment about sexual acts does not justify contempt, violence or unjust discrimination against persons. Catholic sources explicitly require respect for dignity while maintaining the moral teaching.",
+      "french_answer_present": true,
+      "detail_en": "The distinction between acts and persons becomes morally empty if teaching is communicated with contempt or if persons are socially reduced to their sexuality. The 1986 CDF letter explicitly condemns violent malice and insists on respect for personal dignity while also refusing to identify a person’s fundamental identity with sexual orientation.",
+      "deep_debate_opposition_en": "The American Psychological Association condemns stigma, discrimination and violence against sexual minorities and reports that such prejudice can harm mental health. If religious language is used to stigmatize gay people, is the Church sufficiently confronting the consequences of that language?",
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§§10–12"
+        ]
+      ],
+      "disposition": "pass_dual_evidence",
+      "assessment": "Distinguishes condemning chosen acts from protecting people against contempt, discrimination or violence. Need APA original if quoting specific mental-health effect; existing debate cites actual association position.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE088",
+      "module": "sexual-ethics",
+      "question_en": "What if modern psychology understands homosexuality differently from older theology?",
+      "answer_en": "The American Psychological Association states that same-sex orientation is not a psychiatric disorder. Catholic teaching need not and should not claim otherwise: the Church's moral judgment addresses voluntary sexual acts and marriage, not a diagnosis of mental illness or a claim that attraction itself is a chosen sin.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": "The American Psychological Association explicitly says same-sex orientation is not a mental disorder and opposes efforts that promise to change orientation. Does a traditional moral account need to change if it once depended on assumptions that homosexuality is a psychiatric disease or that orientation is freely chosen?",
+      "cited_reference_ids": [
+        [
+          "APA_LGB_POLICY",
+          "official APA resolution · homosexuality is not a mental disorder; clinical facts distinct from moral conclusions"
+        ]
+      ],
+      "disposition": "pass_clinical_distinction",
+      "assessment": "American Psychological Association classifies same-sex orientation as non-pathological. Catholic moral assessment cannot be treated as diagnosis; good necessary distinction.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE089",
+      "module": "sexual-ethics",
+      "question_en": "What about civil same-sex marriage?",
+      "answer_en": "Civil same-sex marriage does not directly damage a particular heterosexual marriage merely by existing. The Catholic claim is institutional: marriage law publicly defines what marriage is. The CDF argued in 2003 that removing sexual difference and its reference to procreation from that legal definition changes the institution the state recognizes, rather than merely extending private benefits to another relationship.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": "Margaret Farley argued that legal recognition of civil unions and same-sex marriage could help combat stigma and provide comparable social recognition (Just Love, p. 293, quoted in the CDF's 2012 Notification). Why should a civil state with citizens of different religions reject that equal-recognition case?",
+      "cited_reference_ids": [
+        [
+          "CDF2003",
+          "§§2–4, 6–8"
+        ]
+      ],
+      "disposition": "pass_state_church_distinction",
+      "assessment": "Civil equality arguments from Farley deserve actual attribution; Catholic legal definition argument given as institutional claim not assertion that each heterosexual marriage is materially harmed by mere civil recognition.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE090",
+      "module": "sexual-ethics",
+      "question_en": "Can Catholics with same-sex attraction have deep, celibate friendships?",
+      "answer_en": "Yes. Chastity does not forbid friendship, affection, loyalty or community. Deep non-sexual friendship can be a genuine human and Christian good, provided it is lived prudently and does not become a deliberately sexual relationship.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§§12–15"
+        ]
+      ],
+      "disposition": "pass_friendship",
+      "assessment": "Chaste intimate friendship positively affirmed; avoids stigma or falsely equating affection with sexual acts.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE091",
+      "module": "sexual-ethics",
+      "question_en": "What does Catholic theology mean by male and female?",
+      "answer_en": "Catholic anthropology treats sexual difference as a real dimension of the embodied human person, not merely a label imposed from outside. Male and female are equal in dignity while bodily sex has significance for marriage, generation and family.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "SCR",
+          "Gen 1:27; Mt 19:4–6"
+        ]
+      ],
+      "disposition": "pass_anthropology",
+      "assessment": "Clearly theological account of sexual embodiment and equality, not proof of chromosome universality or biomedical intervention outcome.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE092",
+      "module": "sexual-ethics",
+      "question_en": "How are biological sex and culturally variable gender roles different?",
+      "answer_en": "Social expectations associated with men and women can vary and may contain unjust stereotypes. That variability does not by itself make bodily sex socially constructed or morally irrelevant.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "§§55–59"
+        ]
+      ],
+      "disposition": "pass_stereotype_distinction",
+      "assessment": "Correctly distinguishes contingent gender-role conventions from biological sex. APA Psychiatric Association defines gender identity/expression as distinct, and differences of sex development require accurate description.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE093",
+      "module": "sexual-ethics",
+      "question_en": "Is sex socially constructed?",
+      "answer_en": "Catholic teaching distinguishes real biological sexual embodiment from the many cultural meanings and roles societies attach to it. Cultural interpretation can change; the bodily reality itself is not created simply by social agreement.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": "The APA distinguishes biological sex from culturally variable gender roles and recognizes atypical development of sex characteristics. If these concepts differ, which parts of the traditional account describe bodily reality and which merely describe social expectations?",
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "§§55–59"
+        ]
+      ],
+      "disposition": "pass_bounded_disagreement",
+      "assessment": "APA distinction offered as serious objection; no false claim that all social or medical aspects are identical with Church metaphysics. Broader contested sex-development claims require specialist science only if asserted.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE094",
+      "module": "sexual-ethics",
+      "question_en": "How should Catholics understand gender dysphoria?",
+      "answer_en": "Gender dysphoria can involve serious distress and deserves respectful, competent, noncoercive clinical care. Dignitas Infinita §§55–60 teaches that the body participates in personal dignity; the ethical appraisal of interventions is distinct from determining whether distress is real or whether treatment produces particular clinical benefits.",
+      "french_answer_present": true,
+      "detail_en": "Catholic anthropology affirms the unity of body and person. Clinical medicine assesses an individual's distress, possible associated conditions, development, interventions and outcomes. Evidence about distress or treatment results does not alone decide the moral object of an intervention.",
+      "deep_debate_opposition_en": "The American Psychological Association's February 2024 policy supports access to affirming, evidence-based healthcare for transgender and gender-diverse people and challenges stigmatizing misinformation. How should this clinical-policy position be weighed against Catholic anthropology of the sexed body?",
+      "cited_reference_ids": [
+        [
+          "APA_TRANSCARE",
+          "APA 2024 · noncoercive clinical care and acknowledged limits of knowledge"
+        ]
+      ],
+      "disposition": "watch_pediatric_clinical_scope",
+      "assessment": "APA Psychological Association 2024 affirmative care policy is properly identifiable original opposing position, not an independent clinical outcome study. Avoid diagnosing or recommending procedures; original short answer already separates real distress from moral teaching.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE095",
+      "module": "sexual-ethics",
+      "question_en": "Does compassion require affirming someone’s claimed gender identity?",
+      "answer_en": "Compassion requires respect, patience and serious care for distress; it does not require a Catholic to affirm every underlying claim about the relation between identity and bodily sex. Truth and charity must be held together.",
+      "french_answer_present": true,
+      "detail_en": "Avoid cruelty, needless confrontation and revealing a person's private health information. A specific form of address must be judged by its meaning, intention and context, including the person's vulnerability; Dignitas Infinita §§55–60 does not itself set a universal rule about pronouns or every social accommodation.",
+      "deep_debate_opposition_en": "The American Psychological Association's 2024 policy links gender-related rejection and discrimination to psychological harm and calls for respectful, individualized care. In ordinary conversation, could refusing a person's requested form of address deepen distress even when the speaker disputes the underlying view of gender identity?",
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "§§55–60"
+        ]
+      ],
+      "disposition": "watch_conversational_harm",
+      "assessment": "Actual APA Psychological Association policy concerns stigma and care; claim about an individual's requested name or pronouns is a practical/pastoral question not directly resolved by Dignitas infinita. No universal social-language protocol should be invented.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE096",
+      "module": "sexual-ethics",
+      "question_en": "How should transition-related medical interventions be evaluated?",
+      "answer_en": "Dignitas Infinita §60 teaches that interventions intended to change bodily sex, as ordinarily understood there, risk undermining bodily dignity, while expressly distinguishing appropriate treatment of genital abnormalities evident at birth or developed later. Each proposed clinical intervention still requires accurate diagnosis, individualized risks and benefits, and competent ethical assessment.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": "WPATH's Standards of Care 8 recommends individualized assessment, informed decision-making and clinical options intended to relieve persistent gender-related distress. Where a patient reports serious suffering and potential treatment benefits, what evidence and moral reasons justify withholding a particular intervention?",
+      "cited_reference_ids": [
+        [
+          "WPATH8_FULL",
+          "clinical guidelines SOC8 for comparison, not a magisterial moral judgment"
+        ]
+      ],
+      "disposition": "pass_primary_with_medical_gate",
+      "assessment": "Dignitas infinita §60 says interventions as a rule risk threatening bodily dignity and expressly distinguishes treatment of genital abnormalities. WPATH SOC8 is genuine proponent guidance, but benefits/risks of particular interventions need current clinical outcomes, not doctrinal text.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE097",
+      "module": "sexual-ethics",
+      "question_en": "What about congenital abnormalities of sexual development?",
+      "answer_en": "Dignitas Infinita §60 expressly distinguishes sex-change interventions as there understood from medical care to resolve genital abnormalities present at birth or arising later. Such treatment requires individualized clinical and ethical evaluation; neither a diagnosis of atypical development nor the declaration's distinction decides every procedure automatically.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "§60"
+        ]
+      ],
+      "disposition": "pass_original_explicit_exception",
+      "assessment": "Dignitas infinita §60 expressly contains abnormal genital development exception; no automatic permission or refusal of a concrete clinical procedure.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE098",
+      "module": "sexual-ethics",
+      "question_en": "How can Catholics disagree while respecting the person’s dignity?",
+      "answer_en": "By refusing ridicule, contempt and reduction of the person to sexuality or gender while speaking truthfully about the moral or anthropological claim at issue. Dignity is not conditional on agreement.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "human dignity"
+        ]
+      ],
+      "disposition": "pass_dignity",
+      "assessment": "Opposing an anthropological claim does not remove inviolable human dignity; condemn ridicule and unjust treatment.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE099",
+      "module": "sexual-ethics",
+      "question_en": "Should people define themselves primarily through sexual or gender labels?",
+      "answer_en": "Catholic anthropology resists reducing personal identity to sexual attraction, behaviour or a gender category. A person is more fundamental than any one inclination, struggle or social label.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "HOMO86",
+          "§16"
+        ]
+      ],
+      "disposition": "pass_nonreduction",
+      "assessment": "Person not reducible to label; support theological, don't label identities as disorders.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CSE100",
+      "module": "sexual-ethics",
+      "question_en": "How should parents respond when a child raises gender-identity questions?",
+      "answer_en": "First listen and find out what the child actually means, avoid ridicule, panic or forcing a public dispute, and offer stable parental care. Where distress is persistent or significant, seek qualified clinical assessment suited to the child's age and circumstances. Dignitas Infinita discusses anthropology; it does not provide a pediatric diagnostic or treatment algorithm.",
+      "french_answer_present": true,
+      "detail_en": null,
+      "deep_debate_opposition_en": null,
+      "cited_reference_ids": [
+        [
+          "DI2024",
+          "§§55–60"
+        ]
+      ],
+      "disposition": "pass_pediatric_safeguard",
+      "assessment": "Listen first, avoid ridicule, identify child's actual concern and seek appropriately qualified assessment for significant distress. No instructions for particular medical treatment; Dignitas infinita is not pediatric clinical guideline.",
+      "review_scope": "current concise EN + actual cited source ids + existing opposition where present, selected original texts proportionally",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-01",
+      "module": "church-crisis",
+      "question_en": "What does indefectibility actually guarantee?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "Indefectibility promises that Christ's Church will not cease to possess her essential identity and saving mission; it does not promise infallibility for every administrative or pastoral act. Grave scandals and erroneous prudential choices remain possible. A charge of actual defection needs a doctrinal object, not merely a painful event.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LG64",
+            "CCC860"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "A sedevacantist position published by Novus Ordo Watch argues that a manifestly heretical claimant cannot remain head of the visible Church, appealing to Bellarmine's treatment of the hypothetical heretical pope. Its ecclesiological challenge is serious: if heresy and invalid public governance can become pervasive, where are the limits of the Church's indefectibility? But indefectibility is not the claim that every bishop, liturgical reform or administrative judgment will be sound. Vatican I sets conditions for papal infallibility, and Lumen gentium §8 recognises that the Church includes sinners and needs purification.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LG64",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": "Novus Ordo Watch, published sedevacantist use of Bellarmine, contrasted with Vatican I and Lumen gentium §8"
+        },
+        {
+          "role": "critical_response",
+          "en": "The objection requires distinguishing a proven public and pertinacious rupture with faith from an observer's judgment that particular teaching or governance is gravely defective. A theological hypothesis concerning a manifest heretical pope is not by itself an ecclesiastical judgment concerning a named living claimant. The Church's enduring apostolic and sacramental identity does not absolve bishops of misconduct; still less does a dossier of abuses establish that all visible successors have disappeared. The question must remain anchored in Vatican I, Catholic ecclesiology and verifiable cases rather than factional certainty.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LG64",
+            "NAZ1992",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Christ remains faithful when ministers sin. Catholics can protect received doctrine, seek correction and maintain communion with the visible Church without canonising every administrative act. Indefectibility encourages patient courage rather than either institutional self-exoneration or claims of the Church's disappearance.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LG64",
+            "CCC860"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_indefectibility_scope",
+      "assessment": "Actual indeﬁectibility is not administrative perfection; first-person sedevacantist case given as the advocate's position, not as proof of contemporary public heresy.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-02",
+      "module": "church-crisis",
+      "question_en": "Can the Church undergo catastrophic institutional failure without defecting?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "Whole dioceses or religious institutions can endure grave breakdowns in formation, worship and accountability without establishing that the universal Church has ceased to exist. The divine promise attaches to the Church's essential mission and sacramental means, not the uninterrupted competence of every generation of officeholders.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "LG64",
+            "V1",
+            "NAZ1992"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The sedevacantist argument made publicly by Novus Ordo Watch invokes Bellarmine's claim about a manifestly heretical pope: if public heresy disqualifies the visible head, then severe Roman doctrinal failure allegedly demonstrates that the contemporary institution cannot be exercising authentic ecclesiastical authority. This supplies an actual opposing argument to the claim that the Church may endure devastating local or administrative failures without disappearing. The conclusion goes further than the premise: it requires proof of manifest heresy, not only evidence of abuses or demographic collapse, and it must explain the remaining visible apostolic structure.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "LG64",
+            "NAZ1992",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": "Novus Ordo Watch, original sedevacantist argument; Bellarmine II.30 distinguished from modern applications"
+        },
+        {
+          "role": "critical_response",
+          "en": "Evidence of closed seminaries, abuse, confused catechesis or defective administration can prove grave institutional failure, but it cannot by itself prove the extinction of the Church's public apostolic succession or of the sacraments. Lumen gentium §8 expressly joins ecclesial holiness to the need for purification, and Communionis notio distinguishes each local church from universal communion. The opposing theory would need to establish its concrete juridical and doctrinal premises without privately declaring itself the universal tribunal. These distinctions never lessen the Church's duty to investigate and remedy real harm.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "LG64",
+            "V1",
+            "NAZ1992",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Reform must defend the faithful's safety, sound teaching and worthy sacraments without conferring on private critics supreme jurisdiction over every bishop. Serious public failings call for truthful reporting and lawful correction, not despair or factional claims that visibility itself was extinguished.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "CCC860",
+            "LG64"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_local_global_distinction",
+      "assessment": "Grave local/sectoral institutional failure does not prove universal extinction; no demographic data claimed, so none needed.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-03",
+      "module": "church-crisis",
+      "question_en": "Can Church authority impose harmful discipline or a seriously deficient liturgical reform?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "A pope and bishops have genuine authority over ecclesiastical discipline and liturgical law, but the exercise of authority is not thereby guaranteed to be optimally prudent, historically continuous or pastorally harmless. The Church's indefectibility does not mean every governing decision carries infallibility. The question is whether a particular act is within lawful competence, remains valid, and nevertheless may merit responsible criticism.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CIC4",
+            "SC63",
+            "TCL21"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In his 2021 letter accompanying Traditionis custodes, Francis linked restrictions on the earlier Missal to his judgement that some communities had used it to reject the Council and damage communion. Superiors of former Ecclesia Dei communities separately expressed concern about the effect on faithful groups attached to the old books. Both positions are documentary claims about pastoral governance, not automatic dogmatic definitions.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "TCL21",
+            "COURT21"
+          ],
+          "authored_opposition": "Francis 2021 and Ecclesia Dei superiors, original documents"
+        },
+        {
+          "role": "critical_response",
+          "en": "A documented abuse by some adherents does not establish that every community is harmful; nor does a community's good fruit prove a legislator lacks all competence to alter its permissions. Assessment should consider legal scope, legitimate expectations, actual diocesan evidence and predictable harms. A claim that the Mass itself is invalid requires evidence of a different order from an objection to its pastoral regulation.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "TCL21",
+            "CIC2",
+            "SC63"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Authority exists to safeguard worship and the salvation of souls, not to elevate arbitrary preference into doctrine. Catholics can question disproportionate discipline and request lawful remedy while preserving communion and distinguishing reverent adherence to tradition from defiance of legitimate governance. No command contrary to divine law can oblige, but personal dislike of a regulation is not itself proof of such conflict.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "AQU104",
+            "CIC1752",
+            "SC63"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_law_vs_prudence",
+      "assessment": "Competence, validity, prudence and possible harm remain separate; 2021 Traditionis custodes and community reactions represented as dated historical primary voices, not current one-size-fits-all law.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-04",
+      "module": "church-crisis",
+      "question_en": "Can a pope become a heretic, and what follows if he does?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "St Robert Bellarmine explicitly examines the hypothetical case of a manifestly heretical pope and favours the opinion that he would cease to hold office of himself, not only after a later judicial deposition. To deny that Bellarmine wrote this misstates an important traditional theologian. His conditional thesis, however, does not by itself prove that a named modern pope fulfils its premises.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "BEL30",
+            "P12"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The sedevacantist argument reproduced by Novus Ordo Watch relies on Bellarmine II.30: a person outside the Church by manifest heresy cannot remain her visible head. Its force depends on the category 'manifest heresy' and on whether the condition is established as fact, rather than merely suspected from controversial statements.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "BEL30",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": "Novus Ordo Watch, argument for loss of office"
+        },
+        {
+          "role": "critical_response",
+          "en": "Bellarmine's fifth opinion in De Romano Pontifice II.30 addresses a manifestly heretical pope as a hypothetical theological case. Mystici corporis §§22–23 distinguishes public members of the Church from those separated by heresy or schism. Neither text supplies a procedural judicial finding that a particular recent pope has personally and pertinaciously defected from Catholic faith. The stronger objection cannot be dismissed merely because Bellarmine was not a pope, yet identifying doctrinal error, determining public pertinacity, judging the loss of office and establishing the Church's visible succession are different problems. The Church's divinely instituted public unity cannot be dissolved by equating a private theological allegation with a binding judgment of the Apostolic See.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "P12",
+            "BEL30",
+            "V1"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "No Christian is above divine revelation; even papal claims can be tested against what the Church has definitively taught. But the Church's public unity cannot safely rest on each private individual's unreviewable determination that a disputed theological threshold has been crossed. Catholics may identify real errors and seek correction without converting the act of criticism itself into proof that the Apostolic See is vacant.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LEO",
+            "AQUINAS"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_authored_hypothesis",
+      "assessment": "Bellarmine fifth opinion accurately attributed as theological conditional argument; avoid using a translated text published by an interested party as an official legal declaration against a named claimant.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-05",
+      "module": "church-crisis",
+      "question_en": "What is the canonical and ecclesial status of the SSPX?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "The SSPX's canonical situation changed decisively after the episcopal consecrations without pontifical mandate on 1 July 2026. On 2 July the Dicastery for the Doctrine of the Faith declared excommunications for the six bishops and, in its explanatory note, treated Society ministers as in schism, their ministry as illicit, and their confessions and assisted marriages as invalid. That current Roman determination supersedes descriptions based solely on the pre-2026 irregular situation.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "DDFDEC26",
+            "DDFNOTE26"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The Society's General House reported a preliminary recourse filed on 11 July 2026 and asserted that canons 1734 and 1353 suspend execution of the decree. Its own published chronology states that the consecrations were undertaken as an extraordinary measure to preserve priestly formation and the sacraments, not to establish a rival ecclesiastical jurisdiction. These are the Society's real claims; their juridical effects require independent canonical determination.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "SSPXREC26",
+            "SSPXTIMELINE26",
+            "CIC1752"
+          ],
+          "authored_opposition": "FSSPX General House, July 2026 original appeal and explanation"
+        },
+        {
+          "role": "critical_response",
+          "en": "The 2 July 2026 explanatory note attaches lay penalties to formal adherence under the 1996 conditions; attending an SSPX Mass does not by itself establish the facts required for an individual lay excommunication. The Society's 11 July preliminary petition likewise does not amount to an official withdrawal of the Roman decree. Canon 1353 gives suspensive effect to appeal or recourse against a decree imposing or declaring a penalty, but canon 1736 distinguishes cases in which a preliminary request under canon 1734 itself suspends execution from those requiring an additional decision. How these provisions apply to this particular decree and its explanatory note remains a contested canonical question, not a conclusion established by either party's communiqué. Particular confessions, marriages and personal status questions need competent canonical advice under the applicable acts.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "DDFNOTE26",
+            "DDFDEC26",
+            "SSPXREC26",
+            "CIC1353",
+            "CIC1752"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The desire to preserve the older Mass, sound doctrine and priestly formation is worthy of serious attention, but sacramental life also belongs to the Church's visible communion and juridical order. Fidelity to Tradition cannot ignore the actual decrees of ecclesial authority; neither can disagreement justify indiscriminate moral judgement about the laity. Catholics should pursue truth, reconciliation and reliable sacramental certainty without pretending contested legal questions are already settled in their own favour.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "DDFNOTE26",
+            "SSPXREC26",
+            "V1"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_current_events_with_legal_gate",
+      "assessment": "Vatican original July 2, 2026 decree and explanatory note confirm July 1 consecrations, excommunications, ministry/sacramental claims. SSPX July 11/13 recourse is an original opposite procedural claim, not official revocation. Existing draft correctly distinguishes case-specific lay status; check authoritative subsequent acts if legal status is updated.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-06",
+      "module": "church-crisis",
+      "question_en": "Supplied jurisdiction and a claimed state of necessity: how strong is the SSPX case?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "Canon 144 supplies executive governance or certain listed faculties in cases of common error or positive and probable doubt; it is not a standing faculty arising whenever an individual asserts necessity. The DDF's decree and explanatory note of 2 July 2026 concern the SSPX's new unauthorized episcopal consecrations and sacramental ministry. The Society's subsequent recourse invokes canon 1353; the effect of a challenge to a penalty must be distinguished from the separate issue of jurisdiction or faculties for each sacrament.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CIC144",
+            "DDFNOTE26",
+            "DDFDEC26",
+            "CIC1353"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "The DDF's 2 July 2026 decree declares latae sententiae excommunications for the named consecrating and newly consecrated bishops, and its separate note states that SSPX sacramental ministry is illicit and that the confessions it administers and marriages it assists are invalid. The SSPX announced a preliminary recourse filed on 11 July and argued that canon 1353 suspends execution of the penal decree. Canon 1353 does indeed address the suspensive effect of appeals against penalties; neither that text nor the Society's announcement is, by itself, an authoritative withdrawal of the DDF's findings concerning faculties.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "DDFDEC26",
+            "DDFNOTE26",
+            "SSPXREC26",
+            "CIC1353"
+          ],
+          "authored_opposition": "DDF 2 July 2026 note versus SSPX General House 13 July recourse"
+        },
+        {
+          "role": "critical_response",
+          "en": "Four distinct questions must be examined: validity of episcopal ordination, exercise of orders under censure, canonical penalties and the faculties required for Penance or marriage assistance. Canon 1353 concerns penalties, not a general grant of the faculties listed under canon 144. Whether recourse has affected a particular legal consequence, and whether a particular marriage or confession was validly celebrated, requires competent determination under the rules for administrative recourse in canons 1734–1737 rather than an assumption based on either party's press statement.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CIC144",
+            "CIC1353",
+            "DDFNOTE26",
+            "CIC1078",
+            "CIC1752"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The salvation of souls is the supreme law of ecclesiastical governance, but urgent pastoral care must not substitute personal conjecture for sacramental certainty. Catholics ought to consult competent canonical authority about disputed faculties and observe what the Holy See has actually stated, while also reporting accurately the Society's arguments and procedural rights. The traditional Mass's spiritual value is not a substitute for lawful jurisdiction.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CIC1752",
+            "CIC144",
+            "CIC1353",
+            "DDFNOTE26"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_canonic_distinctions",
+      "assessment": "Canon 144 supplied faculties, canon 1353 suspensive penalty appeals, canons 1734–1737 recourse, and 2026 DDF determination must not be conflated. Document reports the legal dispute rather than asserting resolved faculties.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-07",
+      "module": "church-crisis",
+      "question_en": "Were Archbishop Lefebvre’s 1988 consecrations schismatic?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "On 30 June 1988 Archbishop Marcel Lefebvre consecrated four bishops without papal mandate. In Ecclesia Dei adflicta of 2 July, John Paul II characterised the act as schismatic and stated that Lefebvre and the four named recipients had incurred excommunication under the law; it did not newly impose a penalty through the wording of that letter. The SSPX-hosted SiSiNoNo defence, originally published in 1999, argues that necessity excused the act. This retrospective defence must not be passed off as a contemporaneous 1988 decree or substituted for the pope's juridical finding.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "ECAD88",
+            "SSPX88"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "Ecclesia Dei adflicta §3 held that proceeding against the pope's express prohibition practically rejected Roman primacy and constituted a schismatic act. The SSPX-hosted SiSiNoNo study, published in 1999, advances the counterargument that extraordinary necessity can excuse an episcopal consecration without mandate and without schismatic intent. The latter is an attributed later apologia, not a contemporaneous official SSPX General House legal decree.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "ECAD88",
+            "SSPX88"
+          ],
+          "authored_opposition": "John Paul II, Ecclesia Dei adflicta; SSPX original defence"
+        },
+        {
+          "role": "critical_response",
+          "en": "The 1988 consecrations' sacramental validity, papal mandate, alleged state of necessity, canonical imputability and subsequent penalties are different legal questions. The 1999 apologia acknowledges that no pontifical mandate was granted and contests the canonical consequences; the 1988 papal letter documents the opposite judgement. A later remission of censures does not retroactively produce a mandate or make the historical positions identical.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "SSPX88",
+            "ECAD88",
+            "CIC1382"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Continuity of priestly formation and ancient worship is a serious good, but exceptional acts still answer to the Church's visible sacramental and canonical order. Fidelity requires acknowledging both Lefebvre's documented motives and the authoritative judgement actually made, while working for lawful reconciliation.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "ECAD88",
+            "SSPX88",
+            "V1"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_original_1988_original_opponent",
+      "assessment": "1988 papal act vs 1999 SSPX-hosted defense are chronologically distinct; don't present 1999 as 1988 contemporaneous statement.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-08",
+      "module": "church-crisis",
+      "question_en": "What is the strongest sedevacantist argument, and where does it fail or remain disputed?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "The serious sedevacantist argument is cumulative: it alleges public doctrinal contradictions, draws on theological arguments about a manifest heretic in papal office, and argues that the Church's indefectibility makes some postconciliar acts impossible for a true pope. These components must be separated: a contested doctrine, an allegation of personal heresy and a conclusion about loss of office are not the same proposition.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "BEL30",
+            "NOWHERETIC",
+            "V1"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "A sedevacantist reading of Bellarmine can consistently argue that a manifestly heretical person is no longer a member of the Church and therefore cannot be its head. This represents a real externally advocated position; it should not be dismissed as if Bellarmine required the Church to depose an unalteredly reigning pope first. The decisive burden is demonstrating the concrete premise and its public ecclesial consequences.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "BEL30",
+            "NOWHERETIC"
+          ],
+          "authored_opposition": "Novus Ordo Watch, proponent reading of Bellarmine"
+        },
+        {
+          "role": "critical_response",
+          "en": "Pastor aeternus teaches the perpetual Petrine office and its continuation in the Roman bishops; Satis cognitum treats visible communion as constitutive of the Church. These doctrines do not supply an arithmetical maximum interval between pontificates, but a proposed many-decade vacancy must explain public succession, episcopal authority and how the Church's visible unity remains recognizable. An assertion of divine indefectibility cannot by itself resolve those historical and juridical questions.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "V1",
+            "LEO"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Pastor aeternus chapters II–III teaches that Christ established a perpetual Petrine primacy exercised through a visible successor and binding ecclesial communion; Satis cognitum §§10–13 further rejects reducing the Church to an invisible association of believers. This objective ecclesial claim is not refuted simply by identifying grave problems in a pontificate. On the other hand, obedience can never demand sin, and Aquinas II–II q.33 a.4 allows fraternal correction of superiors under stated circumstances. A sedevacantist who alleges public defection must therefore meet the burden of showing the relevant teaching, pertinacity and consequences for succession; a Catholic who disputes the allegation must answer the alleged contradiction rather than assume every papal utterance is infallible.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "AQUINAS",
+            "V1",
+            "LEO"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_advocate_burden",
+      "assessment": "Sedevacantist cumulative case separated into doctrinal allegation, pertinacity, juridical office and public continuity; original advocate voices present.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-09",
+      "module": "church-crisis",
+      "question_en": "Sedeprivationism and conclavism: do they solve the visibility problem?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "Sedeprivationism, especially the Cassiciacum Thesis, distinguishes material designation to the papacy from formal possession of papal authority; conclavist solutions assert or attempt an alternative election. Both seek to answer how papal continuity is possible during a claimed vacancy. Neither theory becomes established Catholic doctrine simply by resolving one difficulty within its own assumptions.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "GUERARD-FR",
+            "NOWMATERIAL",
+            "V1"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "In a first-person French interview reprinted by Sodalitium, Bishop Michel-Louis Guérard des Lauriers sets out the Cassiciacum Thesis with two explicitly different concepts: a person chosen by a presumed valid conclave may possess a material designation to the Roman See, yet lack formal papal authority if an impediment prevents reception of Christ's promised assistance. He applies this thesis to postconciliar claimants, whom he calls material occupants rather than formal popes. He even argues against persons who declare that a claimant is not pope in any sense unless they can identify the authority entitled to call a new conclave. This is his own speculative thesis, not a judgement issued by the Holy See.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "GUERARD-FR",
+            "PIUS1945",
+            "V1"
+          ],
+          "authored_opposition": "Mgr Michel-Louis Guérard des Lauriers, original French Sodalitium interview on thesis C, materialiter/formaliter distinctions and conclave authority"
+        },
+        {
+          "role": "critical_response",
+          "en": "The material/formal distinction does not by itself solve the public-law question of who is competent to establish an alleged inner impediment and the juridical moment when a publicly accepted pontiff is said to lack authority. Guérard recognises that no self-appointed critic can casually assemble a new conclave, but he treats the Roman See as materially occupied while denying effective formal governance. Pastor aeternus and Satis cognitum emphasise visible apostolic communion; Pius XII's Vacantis Apostolicae Sedis governed a genuine vacancy, not a universal power given to lay theorists to identify and fill an alleged vacancy. The proposal remains a disputed theological explanation rather than binding Catholic ecclesiology.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "GUERARD-FR",
+            "V1",
+            "PIUS1945",
+            "LEO"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "Apostolic succession and visible unity are not private constructs to be rebuilt whenever Catholics judge official acts gravely mistaken. Legitimate warnings against heresy must be heard, but speculative theories of papal designation cannot replace the recognisable public bonds of communion. The faithful owe the truth serious examination without converting an unresolved hypothesis into a new norm of ecclesial membership.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "LEO",
+            "V1",
+            "PIUS1945"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "substantive_conclavist_omission",
+      "assessment": "Four sections chiefly discuss Guérard's Cassiciacum thesis; do not equally substantiate first-person conclavism. Add actual Bawden-group original rationale and an elector's retrospective account as bounded party testimonies; note separate arguments and limits.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    },
+    {
+      "id": "CR-ECC-10",
+      "module": "church-crisis",
+      "question_en": "What does una cum signify, and what can legitimately be inferred from it?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "draft_roles": [
+        {
+          "role": "answer",
+          "en": "Una cum in the Roman Canon identifies the pope and the local bishop in prayerful ecclesial communion. It is not a statement that each of their policies or opinions is morally or doctrinally perfect. Questions of contested papal recognition cannot be settled by alleging that every participant thereby endorses every disputed act.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "NAZ1992",
+            "LG64",
+            "V1"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "documented_position",
+          "en": "A named sedevacantist critic, Fr Martin Stepanich OFM, wrote in 2009 against attendance at 'una cum Benedicto' Masses because naming the contested claimant in the Canon is, in his view, religious communion with one falsely regarded as pope. However, Bishop Mark Pivarunas of the sedevacantist CMRI explicitly rejected the inference that lay attendance at such a Mass is necessarily mortal sin and reproduced a 2002 CMRI statement permitting petition of sacraments from certain 'una cum' priests. These genuinely divergent original sedevacantist positions show why a sweeping assertion of unanimous condemnation misstates the debate.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CMRI-UNA-STEP",
+            "CMRI-UNA-PIV",
+            "NAZ1992"
+          ],
+          "authored_opposition": "Fr Martin Stepanich OFM (2009), 'Attendance at Una Cum ...', versus CMRI Bishop Mark Pivarunas's own pastoral/legal distinction and 2002 CMRI statement"
+        },
+        {
+          "role": "critical_response",
+          "en": "A liturgical mention of the pope expresses public ecclesial communion but is not an unlimited endorsement of his every act or teaching. A disputed theory that a claimant has forfeited the papacy cannot alone establish that all priests naming him are formal schismatics or that every lay attendee sins mortally. Bishop Pivarunas's contrary sedevacantist caution demonstrates that these additional inferences are contested even among those rejecting the claimant. The applicable questions are the priest's actual canonical status, public communion, the faithful's knowledge and the objective character of the celebration—not mere syllables detached from their context.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "CMRI-UNA-PIV",
+            "CMRI-UNA-STEP",
+            "NAZ1992",
+            "V1"
+          ],
+          "authored_opposition": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "en": "The Canon is a prayer of the visible Church, so communion with her real pastors should never be trivialised; the faithful also owe charity and justice when a complicated dispute is alleged. The assertion that an ordinary worshipper automatically shares every error attributed to the named bishop is a grave charge requiring proof. Catholic fidelity should neither deny the liturgy's ecclesial meaning nor erect private disputes about papal recognition into arbitrary judgements of other souls.",
+          "fr_present": true,
+          "cited_source_ids": [
+            "NAZ1992",
+            "V1",
+            "CMRI-UNA-PIV"
+          ],
+          "authored_opposition": null
+        }
+      ],
+      "disposition": "pass_firstperson_divergence",
+      "assessment": "Stepanich condemns una cum attendance in his own article, whereas Pivarunas rejects blanket mortal-sin inference; both first-person sedevacantist texts, demonstrating actual disagreement. Do not generalize to all adherents.",
+      "review_scope": "all four original English draft sections read; primary/first-person source roles checked, French quality not independently approved",
+      "whole_book_needed": false,
+      "full_QA_certification": false,
+      "production_edited": false
+    }
+  ]
+}

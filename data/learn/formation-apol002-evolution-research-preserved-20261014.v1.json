@@ -1,0 +1,119 @@
+{
+  "schema": "AO_FORMATION_OWNER_MISPLACED_RESEARCH_ARCHIVE_V1",
+  "date": "2026-10-14",
+  "former_owner": "APOL-002",
+  "canonical_question": "Are faith and reason opposed?",
+  "actual_research_topic": "Evolution, body-soul origins, Adam, monogenism/polygenism",
+  "source_file": "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+  "source_commit_sha": "cde2a5eab976af02f99181cc371b8ff874537004",
+  "retention": "Preserve unmodified four bilingual draft sections for linked faith-and-science case; not a new canonical APOL owner and not publishable under APOL-002.",
+  "source_registry": [
+    {
+      "id": "HG1950",
+      "title": "Humani generis §§35–36",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+      "locator": "Humani generis §§35–38: science/evolution of the body (§36), spiritual soul (§36), polygenism and original sin (§37), Genesis history (§38)",
+      "provenance": "data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "DA1943",
+      "title": "Scripture and literary/philological interpretation",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html",
+      "locator": "Scripture and literary/philological interpretation",
+      "provenance": "data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIOLOGOS2014",
+      "title": "BioLogos editorial research article, original 2014 with 2021 corrections, effective breeding population versus literal unique progenitor pair in genetic ancestry",
+      "url": "https://biologos.org/series/genetics-and-the-historical-adam-responses-to-popular-arguments/articles/adam-eve-and-human-population-genetics",
+      "locator": "BioLogos editorial research article, original 2014 with 2021 corrections, effective breeding population versus literal unique progenitor pair in genetic ancestry",
+      "provenance": "data/learn/contemporary-controversies-bulk-21-debates-2026-10-08.v1.json",
+      "original_context_approved": false
+    }
+  ],
+  "original_dossier": {
+    "id": "APOL-002",
+    "canonical_owner": "APOLOGETICS",
+    "question_provenance": "CANONICAL_EDITORIAL_TITLE_NOT_LEGACY_VERBATIM",
+    "research_anchor": [
+      "evolution",
+      "adam-monogenism",
+      "conspiracy"
+    ],
+    "sections": [
+      {
+        "role": "answer",
+        "text": {
+          "en": "Humani generis §36 permits competent specialists to investigate the origin of the human body from pre-existing living matter, while requiring Catholics to hold that each spiritual soul is immediately created by God. That limited permission neither makes a literalist account of every biological mechanism Catholic dogma nor grants automatic doctrinal approval to every scientific reconstruction. Section 37 separately refuses the faithful permission to embrace the stated forms of polygenism because their reconciliation with original sin originating from an individual Adam is not apparent. Scientific explanations of genetic population sizes and theological claims concerning original sin are not interchangeable propositions.",
+          "fr": "Humani generis §36 permet aux spécialistes compétents d'étudier l'origine du corps humain à partir d'une matière vivante préexistante, tout en imposant la création immédiate de chaque âme spirituelle par Dieu. Cette permission limitée ne transforme ni le littéralisme de chaque mécanisme biologique en dogme ni les reconstructions scientifiques en approbations doctrinales automatiques. Le §37 refuse séparément aux fidèles d'admettre les formes de polygénisme qui y sont définies, faute de conciliation apparente avec le péché originel issu d'un Adam individuel. Les modèles scientifiques de populations génétiques et les propositions théologiques sur le péché originel ne sont pas des énoncés interchangeables."
+        },
+        "source_ids": [
+          "HG1950",
+          "DA1943"
+        ],
+        "attribution": null,
+        "original_context_approved": false,
+        "french_final_approved": false,
+        "source_claim_locators": {
+          "HG1950": "Humani generis §§35–37: discussion of bodily evolution, immediate creation of soul, distinct polygenism restriction"
+        }
+      },
+      {
+        "role": "documented_position",
+        "text": {
+          "en": "The BioLogos research article, first published in 2014 and substantially revised in 2021, argues that genetic evidence supports a historically large ancestral human breeding population. It also explicitly says population genetics cannot establish or exclude the historicity of any particular individual such as Adam. Pius XII's Humani generis §36 allowed scholarly discussion of biological evolution of the human body while insisting on immediate divine creation of souls; §37 separately warned that polygenism, as there described, had not been reconciled with the doctrine of original sin. The scientific population model and the specified theological problem must not be falsely equated or quietly collapsed into a revision of dogma.",
+          "fr": "L'article scientifique de BioLogos, paru en 2014 et substantiellement révisé en 2021, soutient que les données génétiques indiquent une population ancestrale humaine reproductrice importante. Il précise lui-même que la génétique des populations ne peut confirmer ni exclure l'existence historique d'un individu particulier tel qu'Adam. Humani generis (§36) de Pie XII permet l'étude de l'évolution du corps humain en maintenant la création immédiate des âmes par Dieu ; son §37 met séparément en garde contre un polygénisme qui n'est pas concilié avec la doctrine du péché originel. Le modèle scientifique et la question théologique précise ne doivent être ni confondus ni présentés comme une révision tacite du dogme."
+        },
+        "source_ids": [
+          "BIOLOGOS2014",
+          "HG1950"
+        ],
+        "attribution": "BioLogos, population-genetics analysis",
+        "original_context_approved": false,
+        "french_final_approved": false,
+        "source_claim_locators": {
+          "BIOLOGOS2014": "BioLogos, 'Adam, Eve, and Human Population Genetics', original 2014, revision 2021, introductory genetics vs individual historicity",
+          "HG1950": "Pius XII Humani generis §§36–37, bodily evolution and problem of polygenism"
+        }
+      },
+      {
+        "role": "critical_response",
+        "text": {
+          "en": "The encyclical does not say simply that 'evolution is forbidden', nor does it declare that all theories grouped today as polygenism are harmless. Humani generis §36 provides conditional freedom to examine bodily origins, and §37 specifically rejects embracing either later true humans wholly unrelated to Adam by natural generation or Adam understood as a plurality of first parents. Pius XII gives an explicit theological reason: he cannot see how those claims fit the transmitted doctrine of original sin. A modern population-genetic inference may be scientifically relevant but cannot, without further reasoning, dissolve the separate doctrinal proposition or prove the historicity of any named individual.",
+          "fr": "L'encyclique ne dit pas simplement que « l'évolution est interdite », ni que toutes les théories aujourd'hui classées comme polygénistes seraient indifférentes. Humani generis §36 autorise sous conditions la discussion sur l'origine corporelle ; son §37 refuse précisément d'admettre des humains véritables n'ayant aucun lien de génération naturelle avec Adam ou un Adam représentant plusieurs premiers parents. Pie XII formule une raison théologique explicite : il ne voit pas comment concilier ces thèses avec la transmission du péché originel. Une inférence de génétique des populations peut être scientifiquement pertinente, mais ne résout pas à elle seule la proposition dogmatique distincte ni ne prouve l'historicité d'un individu nommé."
+        },
+        "source_ids": [
+          "HG1950",
+          "BIOLOGOS2014"
+        ],
+        "attribution": null,
+        "original_context_approved": false,
+        "french_final_approved": false,
+        "source_claim_locators": {
+          "HG1950": "Humani generis §§36–37, distinct formulations and explicitly stated original-sin difficulty",
+          "BIOLOGOS2014": "BioLogos population genetics article; scientific model not papal doctrinal declaration"
+        }
+      },
+      {
+        "role": "traditional_catholic_argument",
+        "text": {
+          "en": "Reason can examine nature precisely because creation is ordered and intelligible; faith must also guard truths that laboratory methods cannot decide, particularly the spiritual soul, the fall and redemption in Christ. Catholic reasoning neither invents scientific facts to save an interpretation nor sacrifices defined doctrines to a provisional empirical theory.",
+          "fr": "La raison peut étudier la nature parce que la création est ordonnée et intelligible ; la foi doit préserver les vérités que le laboratoire ne saurait trancher, spécialement l'âme spirituelle, la chute et la Rédemption dans le Christ. Le raisonnement catholique n'invente pas des faits scientifiques pour sauver une lecture, ni ne sacrifie des doctrines définies à une théorie empirique provisoire."
+        },
+        "source_ids": [
+          "HG1950",
+          "DA1943"
+        ],
+        "attribution": null,
+        "original_context_approved": false,
+        "french_final_approved": false
+      }
+    ],
+    "original_claim_by_claim_source_context_certified": false,
+    "independent_theological_canonical_approval": false,
+    "native_french_copyapproval": false,
+    "publication_allowed": false
+  }
+}

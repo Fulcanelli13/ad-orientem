@@ -601,6 +601,14 @@
       "url": "https://www.gutenberg.org/cache/epub/43296/pg43296-images.html",
       "locator": "Author's Preface; Book I chs III–IV on conversos, coercion, and Inquisition's institutional formation; interpretation based on archives, not a contemporary victim testimony",
       "original_context_approved": false
+    },
+    {
+      "id": "INT_APOL_058_1",
+      "title": "Paul III 1537 original papal text, translation",
+      "url": "https://www.papalencyclicals.net/paul03/p3subli.htm",
+      "locator": "Paul III 1537 original papal text, translation",
+      "provenance": "formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -2548,14 +2556,15 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Papal declarations supporting Indigenous freedom cannot cancel harms committed by Christian institutions or explain away documented violations of language, family integrity and conscience. The Canadian Commission's findings require distinct institutional accountability and reconciliation measures, not just a theoretical distinction between doctrine and misconduct. Conversely, historical responsibility must be established for particular acts and authorities; it should neither erase genuine anti-enslavement teaching nor turn every Indigenous experience into an identical history. The Vatican's 2023 repudiation of the Doctrine of Discovery is one response to demands that predated it.",
-            "fr": "Les déclarations pontificales en faveur de la liberté des peuples autochtones n'effacent pas les torts commis par des institutions chrétiennes ni les atteintes documentées aux langues, aux familles et aux consciences. Les conclusions de la commission canadienne exigent responsabilité institutionnelle et mesures concrètes de réconciliation, au-delà de la distinction théorique entre doctrine et fautes humaines. Inversement, la responsabilité historique se démontre acte par acte et autorité par autorité : elle ne supprime ni les enseignements authentiques contre l'esclavage ni la diversité des expériences autochtones. La déclaration vaticane de 2023 rejetant la « doctrine de la découverte » répond notamment à des demandes plus anciennes."
+            "en": "Papal declarations supporting Indigenous freedom cannot cancel harms committed by Christian institutions or explain away documented violations of language, family integrity and conscience. The Canadian Commission's findings require distinct institutional accountability and reconciliation measures, not just a theoretical distinction between doctrine and misconduct. Conversely, historical responsibility must be established for particular acts and authorities; it should neither erase genuine anti-enslavement teaching nor turn every Indigenous experience into an identical history. The Vatican's 2023 repudiation of the Doctrine of Discovery is one response to demands that predated it.\n\nPaul III's 1537 *Sublimis Deus* explicitly denied that Indigenous peoples outside the Christian faith could rightfully be deprived of liberty or property and directed that their conversion be sought by preaching and holy example. This is a concrete papal original against enslavement, not evidence that Catholic colonizers uniformly obeyed. The Holy See's joint statement of 30 March 2023 expressly recognizes both that defense and the existence of papal documents exploited to justify colonial domination; it repudiates the so-called Doctrine of Discovery and acknowledges serious failures. Neither text cancels the independently documented harms described by Indigenous survivors and Canada's Truth and Reconciliation Commission.",
+            "fr": "Les déclarations pontificales en faveur de la liberté des peuples autochtones n'effacent pas les torts commis par des institutions chrétiennes ni les atteintes documentées aux langues, aux familles et aux consciences. Les conclusions de la commission canadienne exigent responsabilité institutionnelle et mesures concrètes de réconciliation, au-delà de la distinction théorique entre doctrine et fautes humaines. Inversement, la responsabilité historique se démontre acte par acte et autorité par autorité : elle ne supprime ni les enseignements authentiques contre l'esclavage ni la diversité des expériences autochtones. La déclaration vaticane de 2023 rejetant la « doctrine de la découverte » répond notamment à des demandes plus anciennes.\n\nLa bulle *Sublimis Deus* de Paul III (1537) refuse expressément que les peuples autochtones extérieurs à la foi chrétienne soient légitimement privés de liberté ou de propriété ; elle prescrit de rechercher leur conversion par la prédication et le bon exemple. C'est un véritable document pontifical contre l'esclavage, non la preuve que tous les colonisateurs catholiques y obéirent. La déclaration conjointe du Saint-Siège du 30 mars 2023 reconnaît à la fois cette défense et l'existence de documents pontificaux exploités pour légitimer la domination coloniale ; elle rejette la prétendue « doctrine de la découverte » et admet des défaillances graves. Aucun de ces textes n'efface les atteintes indépendamment documentées par des survivants autochtones et la Commission de vérité et réconciliation du Canada."
           },
           "source_ids": [
             "TRC-2015-OPP",
             "NCTR-2022-OPP",
             "VATS2023",
-            "ITC2000"
+            "ITC2000",
+            "INT_APOL_058_1"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -2564,7 +2573,8 @@
             "TRC-2015-OPP": "2015 commission's Church apology/education and Doctrine of Discovery calls",
             "NCTR-2022-OPP": "2022 historically outstanding calls",
             "VATS2023": "2023 Vatican repudiation",
-            "ITC2000": "Church's historical responsibility"
+            "ITC2000": "Church's historical responsibility",
+            "INT_APOL_058_1": "Paul III, Sublimis Deus (1537), original papal text on Indigenous liberty and property"
           }
         },
         {
@@ -2586,14 +2596,22 @@
       "original_claim_by_claim_source_context_certified": false,
       "independent_theological_canonical_approval": false,
       "native_french_copyapproval": false,
-      "publication_allowed": false
+      "publication_allowed": false,
+      "integration_status": "SOURCE_LINKED_BILINGUAL_CORRECTION_STAGED_REVIEW_PENDING",
+      "correction_overlay": "data/learn/formation-apologetics-six-owner-corrections-20261014.v1.json",
+      "source_role_reconciliation_20261015": {
+        "reason": "Historical Vatican self-assessment is Catholic response/context, not an independent opposing Indigenous speaker.",
+        "documented_original_speaker": "Canadian Truth and Reconciliation Commission and National Centre for Truth and Reconciliation",
+        "papal_original_relocated_to": "critical_response",
+        "release_approval": false
+      }
     }
   ],
   "metrics": {
     "canonical_dossiers": 26,
     "english_substantive_paragraphs": 104,
     "french_substantive_paragraphs": 104,
-    "source_registry_entries": 76,
+    "source_registry_entries": 77,
     "public_routes_added": 0,
     "independent_approvals": 0
   }

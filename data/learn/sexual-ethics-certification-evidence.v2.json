@@ -58,11 +58,12 @@
     "substantive_case_reviews": 55,
     "individually_assessed_stages": 440,
     "stage_verdict_counts": {
-      "ILLUSTRATIVE_CHALLENGE": 95,
+      "ILLUSTRATIVE_CHALLENGE": 93,
       "REASONED_INFERENCE_FROM_DOCUMENT": 277,
       "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 45,
       "DIGITIZED_ORIGINAL_AUTHOR_PASSAGE_BOUNDED": 6,
       "ORIGINAL_OPPONENT_POSITION": 11,
+      "FIRSTPERSON_AUTHOR_ARGUMENT_BOUNDED": 2,
       "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 3,
       "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 1,
       "DIRECT_ORIGINAL_CLINICAL_CONTEXT": 2
@@ -3466,44 +3467,50 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "PEW_CO2019"
+            "KEENER2016",
+            "CASTI",
+            "MULIERIS"
           ],
-          "assessment": "ILLUSTRATIVE_CHALLENGE",
-          "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
-          "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
+          "assessment": "FIRSTPERSON_AUTHOR_ARGUMENT_BOUNDED",
+          "explanation_en": "Craig Keener's own 2016 argument interprets Ephesians 5 through reciprocal submission; papal accounts are separately cited for their qualified but different formulations.",
+          "explanation_fr": "L'argument original de Craig Keener (2016) interprète Éphésiens 5 selon la soumission réciproque ; les textes pontificaux sont cités distinctement pour leurs formulations différentes et nuancées.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "PEW_CO2019"
+            "KEENER2016",
+            "SCRIPT_EPH5"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
-          "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
+          "explanation_en": "Keener's published exegesis gives the reciprocal-submission challenge substantive force, beyond a hypothetical survey preference.",
+          "explanation_fr": "L'exégèse publiée de Keener donne un véritable fondement à la difficulté de la soumission réciproque, au-delà d'une préférence exprimée dans un sondage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "concession",
           "selected_source_ids": [
-            "CASTI"
+            "CASTI",
+            "MULIERIS"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
-          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
+          "explanation_en": "Both Pius XI and John Paul II actually protect spouses' dignity while using different forms of ecclesial language about submission and domestic ordering.",
+          "explanation_fr": "Pie XI et Jean-Paul II protègent réellement la dignité conjugale tout en employant des formulations différentes sur la soumission et l'ordre domestique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "breakpoint",
           "selected_source_ids": [
-            "CASTI"
+            "CASTI",
+            "MULIERIS",
+            "CIC"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
-          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+          "explanation_en": "Compare the precise texts and canonical equality of spouses; neither a declaration of word-for-word identity nor a proof of contradiction follows from a slogan.",
+          "explanation_fr": "Il faut confronter les textes précis et l'égalité canonique des époux ; ni l'identité littérale ni une contradiction démontrée ne découle d'un slogan.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3511,125 +3518,144 @@
           "stage": "catholicCase",
           "selected_source_ids": [
             "CASTI",
+            "MULIERIS",
             "CIC"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage. CIC can.1084 §3 confirms sterility by itself does not invalidate marriage.",
-          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative. Le CIC can.1084 §3 confirme que la stérilité n'invalide pas le mariage à elle seule.",
+          "explanation_en": "Casti connubii §§26–29, Mulieris dignitatem §24 and canon 1135 together frame the actual theological and juridical question; no humiliation or coercion follows from either papal text.",
+          "explanation_fr": "Casti connubii (§§26–29), Mulieris dignitatem (§24) et le canon 1135 précisent la véritable question théologique et juridique ; aucune humiliation ou contrainte ne découle des textes pontificaux.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "counter",
           "selected_source_ids": [
-            "PEW_CO2019"
+            "KEENER2016",
+            "MULIERIS"
           ],
-          "assessment": "ILLUSTRATIVE_CHALLENGE",
-          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
-          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+          "assessment": "FIRSTPERSON_AUTHOR_ARGUMENT_BOUNDED",
+          "explanation_en": "Keener's first-person mutual-submission reading poses the narrower question whether an asymmetrical headship claim retains substantive authority.",
+          "explanation_fr": "L'interprétation personnelle de la soumission réciproque chez Keener pose la question plus précise de la portée réelle d'une primauté asymétrique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "response",
           "selected_source_ids": [
-            "CASTI"
+            "CASTI",
+            "MULIERIS",
+            "CIC"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
-          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+          "explanation_en": "Pius XI's limits on domestic authority, John Paul II's reciprocal Christological account and canon 1135 remain distinct witnesses; reconciliation requires argument, not erasure.",
+          "explanation_fr": "Les limites posées par Pie XI, l'enseignement christologique réciproque de Jean-Paul II et le canon 1135 restent des témoignages distincts ; leur conciliation exige une argumentation, non un effacement.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
         {
           "stage": "bottom",
           "selected_source_ids": [
-            "CASTI"
+            "CASTI",
+            "MULIERIS",
+            "CIC"
           ],
           "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
-          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
-          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
+          "explanation_en": "Qualified domestic primacy and reciprocal submission cannot responsibly be reduced to a procreation-versus-love debate.",
+          "explanation_fr": "La primauté domestique nuancée et la soumission réciproque ne se réduisent pas au débat entre procréation et amour.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
       ],
       "case_substantive_review_v3": {
         "status": "CASE_LEVEL_CLAIM_SCOPE_ASSESSED_NOT_PRIMARY_PASSAGE_CERTIFIED",
-        "critical_finding": "Pew describes love and companionship as marriage motives, not a normative rejection of procreation.",
-        "source_collation_state": "EXACT_ORIGINAL_CLAIM_SUPPORT_STILL_PENDING_FOR_ONE_OR_MORE_STAGES",
+        "critical_finding": "Pius XI describes qualified domestic primacy, John Paul II teaches reciprocal submission, and Keener is a named opposing interpreter; no survey citation can substitute for the actual doctrinal disagreement.",
+        "source_collation_state": "BOUNDED_ORIGINAL_NAMED_OPPONENT_AND_PAPAL_TEXTS_CHECKED_EIGHT_STAGE_EDITORIAL_NOT_CERTIFIED",
         "french_editorial_approval": false,
         "stage_role_notes": [
           {
             "stage": "opposition",
             "role": "PROPOSED_OPPONENT_POSITION_OR_ILLUSTRATIVE",
             "selected_source_ids": [
-              "PEW_CO2019"
+              "KEENER2016",
+              "CASTI",
+              "MULIERIS"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "appeal",
             "role": "WHY_OBJECTION_APPEALS",
             "selected_source_ids": [
-              "PEW_CO2019"
+              "KEENER2016",
+              "SCRIPT_EPH5"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "concession",
             "role": "VALID_LIMITED_CONCESSION",
             "selected_source_ids": [
-              "CASTI"
+              "CASTI",
+              "MULIERIS"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "breakpoint",
             "role": "PROPOSED_ARGUMENTATIVE_WEAKNESS",
             "selected_source_ids": [
-              "CASTI"
+              "CASTI",
+              "MULIERIS",
+              "CIC"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "catholicCase",
             "role": "MAGISTERIAL_OR_MORAL_THEOLOGY_REPLY",
             "selected_source_ids": [
-              "CASTI"
+              "CASTI",
+              "MULIERIS",
+              "CIC"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "counter",
             "role": "ILLUSTRATIVE_COUNTERQUESTION",
             "selected_source_ids": [
-              "PEW_CO2019"
+              "KEENER2016",
+              "MULIERIS"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "response",
             "role": "CATHOLIC_ANALYTIC_RESPONSE",
             "selected_source_ids": [
-              "CASTI"
+              "CASTI",
+              "MULIERIS",
+              "CIC"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           },
           {
             "stage": "bottom",
             "role": "SUMMARY_NORMATIVE_SYNTHESIS",
             "selected_source_ids": [
-              "CASTI"
+              "CASTI",
+              "MULIERIS",
+              "CIC"
             ],
             "source_document_checked_for_this_specific_stage": false,
-            "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
+            "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
           }
         ]
       },
@@ -3637,6 +3663,192 @@
         "evidence_is_partial": true,
         "opposing_position_exact_verbatim_validated": false,
         "case_original_passage_completed": false
+      },
+      "prior_CSE045_review_20261009": {
+        "stages": [
+          {
+            "stage": "opposition",
+            "selected_source_ids": [
+              "PEW_CO2019"
+            ],
+            "assessment": "ILLUSTRATIVE_CHALLENGE",
+            "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
+            "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "appeal",
+            "selected_source_ids": [
+              "PEW_CO2019"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
+            "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "concession",
+            "selected_source_ids": [
+              "CASTI"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
+            "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "breakpoint",
+            "selected_source_ids": [
+              "CASTI"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+            "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "catholicCase",
+            "selected_source_ids": [
+              "CASTI",
+              "CIC"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage. CIC can.1084 §3 confirms sterility by itself does not invalidate marriage.",
+            "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative. Le CIC can.1084 §3 confirme que la stérilité n'invalide pas le mariage à elle seule.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "counter",
+            "selected_source_ids": [
+              "PEW_CO2019"
+            ],
+            "assessment": "ILLUSTRATIVE_CHALLENGE",
+            "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+            "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "response",
+            "selected_source_ids": [
+              "CASTI"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+            "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          },
+          {
+            "stage": "bottom",
+            "selected_source_ids": [
+              "CASTI"
+            ],
+            "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+            "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
+            "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
+            "author_quote_verified": false,
+            "exact_full_passage_collated": false
+          }
+        ],
+        "case_substantive_review_v3": {
+          "status": "CASE_LEVEL_CLAIM_SCOPE_ASSESSED_NOT_PRIMARY_PASSAGE_CERTIFIED",
+          "critical_finding": "Pius XI describes qualified domestic primacy, John Paul II teaches reciprocal submission, and Keener is a named opposing interpreter; no survey citation can substitute for the actual doctrinal disagreement.",
+          "source_collation_state": "BOUNDED_ORIGINAL_NAMED_OPPONENT_AND_PAPAL_TEXTS_CHECKED_EIGHT_STAGE_EDITORIAL_NOT_CERTIFIED",
+          "french_editorial_approval": false,
+          "stage_role_notes": [
+            {
+              "stage": "opposition",
+              "role": "PROPOSED_OPPONENT_POSITION_OR_ILLUSTRATIVE",
+              "selected_source_ids": [
+                "KEENER2016",
+                "CASTI",
+                "MULIERIS"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "appeal",
+              "role": "WHY_OBJECTION_APPEALS",
+              "selected_source_ids": [
+                "KEENER2016",
+                "SCRIPT_EPH5"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "concession",
+              "role": "VALID_LIMITED_CONCESSION",
+              "selected_source_ids": [
+                "CASTI",
+                "MULIERIS"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "breakpoint",
+              "role": "PROPOSED_ARGUMENTATIVE_WEAKNESS",
+              "selected_source_ids": [
+                "CASTI",
+                "MULIERIS",
+                "CIC"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "catholicCase",
+              "role": "MAGISTERIAL_OR_MORAL_THEOLOGY_REPLY",
+              "selected_source_ids": [
+                "CASTI",
+                "MULIERIS",
+                "CIC"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "counter",
+              "role": "ILLUSTRATIVE_COUNTERQUESTION",
+              "selected_source_ids": [
+                "KEENER2016",
+                "MULIERIS"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "response",
+              "role": "CATHOLIC_ANALYTIC_RESPONSE",
+              "selected_source_ids": [
+                "CASTI",
+                "MULIERIS",
+                "CIC"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            },
+            {
+              "stage": "bottom",
+              "role": "SUMMARY_NORMATIVE_SYNTHESIS",
+              "selected_source_ids": [
+                "CASTI",
+                "MULIERIS",
+                "CIC"
+              ],
+              "source_document_checked_for_this_specific_stage": false,
+              "notes": "2026-10-15: CSE045 now cites Craig Keener's actual first-person Ephesians argument plus qualified original Catholic sources for the reciprocal-submission dispute. This is a bounded sourced paraphrase, not a direct quotation or certified whole-stage transcript."
+            }
+          ]
+        }
       }
     },
     {

@@ -1,0 +1,4803 @@
+{
+  "schema": "AO_FORMATION_APOLOGETIC_REFERENCE_COVERAGE_MATRIX_V1",
+  "date": "2026-10-14",
+  "status": "PRELIMINARY_RESEARCH_DISCOVERY_ONLY_NOT_QA_AUDIT_OR_CERTIFICATION",
+  "base_branch": "main",
+  "sources_of_truth": [
+    "data/learn/apologetics-canonical.v1.json",
+    "data/learn/church-crisis-canonical.v1.json",
+    "data/app/content-items-sexual-ethics.v1.json"
+  ],
+  "base_blob_shas": {
+    "data/learn/apologetics-canonical.v1.json": "7a24a14387af3b2f74226a0f37f41265d4c6c873",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/app/content-items-sexual-ethics.v1.json": "85a19bd522ae8c837f59bfa0ca8713d742782725"
+  },
+  "scope": "291 canonical Q&A owners; no Catechism; indexed research records and overlapping debate expansions are not counted as separate questions",
+  "methodology": [
+    "Candidate books assigned from author/title/subject and module topic fit only, without validating chapters, exact passages or Q&A claims",
+    "Historical apologetics never satisfies postconciliar Church Crisis primary-evidence requirements on its own",
+    "CSE historical natural-law or marriage references do not verify contemporary clinical, scientific, digital, biological or pastoral claims",
+    "Source-role independence is by authorship/original publisher, not URL count; repeated works by Newman and Chesterton are not additional independent witnesses",
+    "Proponent positions and historical factual claims require original opponent documents and independent scholarly corroboration",
+    "This is a separate research mapping; it does not alter live answers, existing source register, canonical ownership, or release gates"
+  ],
+  "statistics": {
+    "total_owners": 291,
+    "by_module": {
+      "apologetics": 60,
+      "church-crisis": 81,
+      "sexual-ethics": 150
+    },
+    "zero_candidate_books": 62,
+    "zero_candidate_by_module": {
+      "apologetics": 1,
+      "church-crisis": 26,
+      "sexual-ethics": 35
+    },
+    "historical_context_only": 231,
+    "unique_book_count": 25,
+    "unique_author_groups": 22,
+    "answers_audited": 0,
+    "answers_certified": 0,
+    "catechism_included": 0
+  },
+  "books": [
+    {
+      "id": "B01",
+      "author": "Francis de Sales",
+      "title": "The Catholic Controversy",
+      "url": "https://archive.org/stream/catholiccontrove00sain/catholiccontrove00sain_djvu.txt",
+      "source_role": "catholic_historical",
+      "access": "full_text_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Francis de Sales",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B02",
+      "author": "James Gibbons",
+      "title": "The Faith of Our Fathers",
+      "url": "https://www.gutenberg.org/ebooks/27435",
+      "source_role": "catholic_historical",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "James Gibbons",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B03",
+      "author": "Leslie Rumble and Charles Carty",
+      "title": "Radio Replies",
+      "url": "https://www.radioreplies.info/",
+      "source_role": "catholic_historical",
+      "access": "volume_index_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Leslie Rumble and Charles Carty",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B04",
+      "author": "Michael Peter Hill",
+      "title": "The Catholic's Ready Answer",
+      "url": "https://archive.org/details/catholicsreadyan00hill",
+      "source_role": "catholic_historical",
+      "access": "archive_catalog_opened_text_link_unresolved",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Michael Peter Hill",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B05",
+      "author": "John Milner",
+      "title": "The End of Religious Controversy",
+      "url": "https://archive.org/details/endofreligiousco00miln_3",
+      "source_role": "catholic_historical",
+      "access": "archive_catalog_opened_text_link_unresolved",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "John Milner",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B06",
+      "author": "Henry G. Graham",
+      "title": "Where We Got the Bible",
+      "url": "https://www.catholicapologetics.info/apologetics/protestantism/wbible.htm",
+      "source_role": "catholic_historical",
+      "access": "full_text_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Henry G. Graham",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B07",
+      "author": "Thomas Aquinas",
+      "title": "Summa Contra Gentiles",
+      "url": "https://isidore.co/aquinas/english/ContraGentiles.htm",
+      "source_role": "catholic_classical_theology",
+      "access": "multivolume_text_index_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Thomas Aquinas",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B08",
+      "author": "Augustine of Hippo",
+      "title": "City of God",
+      "url": "https://www.gutenberg.org/ebooks/45304",
+      "source_role": "catholic_patristic_theology",
+      "access": "online_reading_available_vol1_other_volumes_to_pin",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Augustine of Hippo",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B09",
+      "author": "Blaise Pascal",
+      "title": "Pensées",
+      "url": "https://www.gutenberg.org/ebooks/18269",
+      "source_role": "catholic_philosophy",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Blaise Pascal",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B10",
+      "author": "Girolamo Savonarola",
+      "title": "Triumph of the Cross",
+      "url": "https://www.gutenberg.org/ebooks/74508",
+      "source_role": "catholic_historical",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Girolamo Savonarola",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B11",
+      "author": "John Henry Newman",
+      "title": "An Essay on the Development of Christian Doctrine",
+      "url": "https://www.gutenberg.org/cache/epub/35110/pg35110-images.html",
+      "source_role": "catholic_doctrinal_development",
+      "access": "full_text_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "John Henry Newman",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B12",
+      "author": "John Henry Newman",
+      "title": "An Essay in Aid of a Grammar of Assent",
+      "url": "https://www.gutenberg.org/ebooks/34022",
+      "source_role": "catholic_philosophy",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "John Henry Newman",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B13",
+      "author": "Joseph Rickaby",
+      "title": "Moral Philosophy: Ethics, Deontology and Natural Law",
+      "url": "https://www.gutenberg.org/ebooks/8103",
+      "source_role": "catholic_moral_philosophy",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Joseph Rickaby",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B14",
+      "author": "G. K. Chesterton",
+      "title": "The Everlasting Man",
+      "url": "https://www.gutenberg.org/ebooks/65688",
+      "source_role": "catholic_apologetics",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "G. K. Chesterton",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B15",
+      "author": "G. K. Chesterton",
+      "title": "Orthodoxy",
+      "url": "https://www.gutenberg.org/ebooks/16769",
+      "source_role": "christian_apologetics_before_author_conversion",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "G. K. Chesterton",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B16",
+      "author": "G. K. Chesterton",
+      "title": "The Catholic Church and Conversion",
+      "url": "https://www.gutenberg.org/ebooks/76305",
+      "source_role": "catholic_apologetics",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "G. K. Chesterton",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B17",
+      "author": "Robert Hugh Benson",
+      "title": "Paradoxes of Catholicism",
+      "url": "https://www.gutenberg.org/ebooks/16309",
+      "source_role": "catholic_apologetics",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Robert Hugh Benson",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B18",
+      "author": "Hilaire Belloc",
+      "title": "The Catholic Church and History",
+      "url": "https://www.gutenberg.org/ebooks/78085",
+      "source_role": "catholic_history_polemic",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Hilaire Belloc",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B19",
+      "author": "James MacCaffrey",
+      "title": "History of the Catholic Church from the Renaissance to the French Revolution",
+      "url": "https://www.gutenberg.org/ebooks/2396",
+      "source_role": "catholic_historical_scholarship",
+      "access": "online_reading_available_selected_volume",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "James MacCaffrey",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B20",
+      "author": "Simon Greenleaf",
+      "title": "An Examination of the Testimony of the Four Evangelists",
+      "url": "https://www.gutenberg.org/ebooks/34989",
+      "source_role": "noncatholic_christian_analysis",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Simon Greenleaf",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B21",
+      "author": "William Sanday",
+      "title": "The Gospels in the Second Century",
+      "url": "https://www.gutenberg.org/cache/epub/10955/pg10955.html",
+      "source_role": "noncatholic_biblical_scholarship",
+      "access": "full_text_opened",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "William Sanday",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B22",
+      "author": "Adolf von Harnack",
+      "title": "History of Dogma",
+      "url": "https://www.gutenberg.org/ebooks/19612",
+      "source_role": "noncatholic_historical_analysis",
+      "access": "online_reading_available_vol1_other_volumes_to_pin",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Adolf von Harnack",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B23",
+      "author": "W. H. Turton",
+      "title": "The Truth of Christianity",
+      "url": "https://www.gutenberg.org/ebooks/42460",
+      "source_role": "noncatholic_christian_apologetics",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "W. H. Turton",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B24",
+      "author": "Carl Heinrich Becker",
+      "title": "Christianity and Islam",
+      "url": "https://www.gutenberg.org/ebooks/11198",
+      "source_role": "noncatholic_historical_comparative",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "Carl Heinrich Becker",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    },
+    {
+      "id": "B25",
+      "author": "James Freeman Clarke",
+      "title": "Ten Great Religions",
+      "url": "https://www.gutenberg.org/ebooks/14674",
+      "source_role": "noncatholic_comparative_religion_historical",
+      "access": "online_reading_available",
+      "verification_level": "discovery_only_not_chapter_checked",
+      "independence_group": "James Freeman Clarke",
+      "corpus_role": "historical_secondary_or_argument_witness_not_substitute_for_original_primary_text"
+    }
+  ],
+  "owners": [
+    {
+      "id": "APOL-001",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "Does God exist?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-002",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "Are faith and reason opposed?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-003",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "If God is good, why is there evil and suffering?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-004",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "Are miracles possible and credible?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-005",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "Why do we need revelation at all?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-006",
+      "module": "apologetics",
+      "family": "god-revelation",
+      "title": "How can anyone know which religion is true?",
+      "candidate_book_ids": [
+        "B07",
+        "B09",
+        "B10",
+        "B12",
+        "B14",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-007",
+      "module": "apologetics",
+      "family": "christ",
+      "title": "Can we trust what we know about the historical Jesus?",
+      "candidate_book_ids": [
+        "B20",
+        "B21",
+        "B23",
+        "B14"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_biblical_historical_scholarship"
+    },
+    {
+      "id": "APOL-008",
+      "module": "apologetics",
+      "family": "christ",
+      "title": "Did Jesus really claim to be divine?",
+      "candidate_book_ids": [
+        "B07",
+        "B14",
+        "B20",
+        "B21",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_biblical_historical_scholarship"
+    },
+    {
+      "id": "APOL-009",
+      "module": "apologetics",
+      "family": "christ",
+      "title": "Did Jesus really rise from the dead?",
+      "candidate_book_ids": [
+        "B20",
+        "B23",
+        "B14"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_biblical_historical_scholarship"
+    },
+    {
+      "id": "APOL-010",
+      "module": "apologetics",
+      "family": "christ",
+      "title": "Do the Trinity and Incarnation make sense?",
+      "candidate_book_ids": [
+        "B07",
+        "B14",
+        "B20",
+        "B21",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_biblical_historical_scholarship"
+    },
+    {
+      "id": "APOL-011",
+      "module": "apologetics",
+      "family": "christ",
+      "title": "Why is Christ the unique Saviour and mediator?",
+      "candidate_book_ids": [
+        "B07",
+        "B14",
+        "B20",
+        "B21",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_biblical_historical_scholarship"
+    },
+    {
+      "id": "APOL-012",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Is the Bible inspired and trustworthy?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-013",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "How do we know which books belong in the Bible?",
+      "candidate_book_ids": [
+        "B06",
+        "B21",
+        "B22",
+        "B02"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-014",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Is sola Scriptura biblical or historically credible?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B05",
+        "B06"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-015",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "What is Apostolic Tradition, and why is it authoritative?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-016",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Why did Christ establish a visible Church?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-017",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "How can the Church be holy when Catholics and clergy sin so badly?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-018",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Did Christ give Peter a unique office?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-019",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Why believe in apostolic succession?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B06",
+        "B11",
+        "B19",
+        "B21",
+        "B22"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-020",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "What does papal and ecclesial infallibility actually mean?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B05",
+        "B11"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-021",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Can doctrine develop without changing the faith?",
+      "candidate_book_ids": [
+        "B11",
+        "B22",
+        "B02"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-022",
+      "module": "apologetics",
+      "family": "scripture-church-authority",
+      "title": "Is Anglicanism a branch of the Catholic Church, and are Anglican Orders valid?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-023",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Why did Christ give the Church sacraments?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-024",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Does Baptism really regenerate, and why baptise infants?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-025",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "What does Confirmation actually do?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-026",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Why confess sins to a priest?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-027",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "What is Anointing / Extreme Unction, and is it biblical?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-028",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Why is Christian marriage sacramental and indissoluble?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-029",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Why does the Church need a sacramental priesthood?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-030",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Is Christ really present in the Eucharist?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05",
+        "B07"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-031",
+      "module": "apologetics",
+      "family": "sacraments-worship",
+      "title": "Is the Mass really a sacrifice—and does it re-sacrifice Christ?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-032",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Why call Mary Mother of God, and was she perpetually virgin?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-033",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Why believe in the Immaculate Conception and Assumption?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-034",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Do Catholics worship Mary?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-035",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Why ask saints to pray for us?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-036",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Are statues, icons and sacred images idolatry?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-037",
+      "module": "apologetics",
+      "family": "mary-saints",
+      "title": "Why venerate relics and other sacred things?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-038",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "Are we saved by faith, works, grace—or all three?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B07",
+        "B08"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-039",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "Is there salvation outside the Catholic Church?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B07",
+        "B08"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-040",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "Why believe in Purgatory and pray for the dead?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B07",
+        "B08"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-041",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "Is Hell real, eternal and compatible with a loving God?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B07",
+        "B08"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-042",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "What does Christianity actually mean by Heaven, resurrection and eternal life?",
+      "candidate_book_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B07",
+        "B08"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-043",
+      "module": "apologetics",
+      "family": "salvation-last-things",
+      "title": "Predestination, free will and assurance: can a Catholic know he is saved?",
+      "candidate_book_ids": [
+        "B07",
+        "B08",
+        "B03"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-044",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "What is the relationship between biblical Israel, Judaism and the Catholic Church?",
+      "candidate_book_ids": [
+        "B08",
+        "B14",
+        "B25"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-045",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "Did the Old Covenant end, continue or change in Christ?",
+      "candidate_book_ids": [
+        "B08",
+        "B14"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-046",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "Christianity and Islam: where do they agree and fundamentally differ?",
+      "candidate_book_ids": [
+        "B24",
+        "B25"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-047",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "Can people in non-Christian religions be saved?",
+      "candidate_book_ids": [
+        "B07",
+        "B08",
+        "B25"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-048",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "Are all religions different paths to the same God?",
+      "candidate_book_ids": [
+        "B14",
+        "B25"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-049",
+      "module": "apologetics",
+      "family": "religions-pluralism",
+      "title": "What is the Catholic answer to atheism and secular humanism?",
+      "candidate_book_ids": [
+        "B09",
+        "B12",
+        "B15",
+        "B23"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_comparative_religion_and_relevant_original_texts"
+    },
+    {
+      "id": "APOL-050",
+      "module": "apologetics",
+      "family": "moral-social",
+      "title": "Is morality objective, and what is natural law?",
+      "candidate_book_ids": [
+        "B07",
+        "B08",
+        "B13",
+        "B18"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-051",
+      "module": "apologetics",
+      "family": "moral-social",
+      "title": "What is conscience, and can conscience be wrong?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-052",
+      "module": "apologetics",
+      "family": "moral-social",
+      "title": "Can a good end justify a bad means?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-053",
+      "module": "apologetics",
+      "family": "moral-social",
+      "title": "Does Catholicism claim anything about society and political authority?",
+      "candidate_book_ids": [
+        "B07",
+        "B08",
+        "B13",
+        "B18"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "primary_magisterial_scriptural_patristic_and_opponent_texts"
+    },
+    {
+      "id": "APOL-054",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "Were the Crusades simply wars of Catholic aggression?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-055",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "What was the Inquisition, and was it uniquely cruel?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-056",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "Did the Church persecute science?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-057",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "Does corruption, abuse or scandal disprove Catholicism?",
+      "candidate_book_ids": [
+        "B17",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-058",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "What is the Catholic record on slavery, colonialism and treatment of other peoples?",
+      "candidate_book_ids": [
+        "B08",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-059",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "Why has the Church opposed Communism, radical secularism and certain modern ideologies?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "APOL-060",
+      "module": "apologetics",
+      "family": "history-objections",
+      "title": "Why has the Church condemned Freemasonry and secret-society ideology?",
+      "candidate_book_ids": [],
+      "matching_level": "subject_level_not_book_passage_verified",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "modern_critical_history_and_primary_archives"
+    },
+    {
+      "id": "CR-ORG-01",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Was there already a crisis before Vatican II?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-02",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Why did John XXIII call Vatican II?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-03",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Modernism, nouvelle théologie and ressourcement: renewal or return of errors?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-04",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Was the Liturgical Movement already divided before the Council?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-05",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Was Europe already dechristianising before Vatican II? — the French case",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-06",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "How did war, technology, democracy and decolonisation change the Church’s situation?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-07",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Why were major preparatory schemas rejected or rewritten?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-08",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Was Vatican II captured, hijacked or legitimately redirected?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ORG-09",
+      "module": "church-crisis",
+      "family": "origins",
+      "title": "Did Vatican II cause, expose, accelerate or fail to cure an existing crisis?",
+      "candidate_book_ids": [
+        "B04",
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-01",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "How far had Roman liturgical reform already gone before Vatican II?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-02",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "What did Sacrosanctum Concilium actually require—and what did it not require?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-03",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "What changed in the 1964–1967 transitional reforms and experiments?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-04",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Who produced the postconciliar reform? — Consilium, Bugnini, Missa normativa and Protestant observers",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-05",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Is the 1969/70 Missal an organic development of the Roman Rite or a substantial reconstruction?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-06",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "What changed in the Offertory, Roman Canon and Eucharistic Prayers?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-07",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Did sacrificial, propitiatory, penitential and ascetical language become less explicit?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-08",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Did the new lectionary simply give Catholics more Scripture, or did selection and omission matter?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-09",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "What happened to Latin, vernacular worship and Gregorian chant?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-10",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Did Vatican II require Mass facing the people? — orientation and ad populum",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-11",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "What happened to Communion discipline? — hand/tongue, kneeling, rails and tabernacle practice",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-LIT-12",
+      "module": "church-crisis",
+      "family": "liturgical",
+      "title": "Which postconciliar practices were law, permission, experiment, custom, toleration or abuse?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-01",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "What was Modernism, and did it really disappear after its condemnation?",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-02",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Can doctrine develop without contradicting earlier doctrine?",
+      "candidate_book_ids": [
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-03",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Did Vatican II change doctrine, language, pastoral method—or all three?",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-04",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Religious liberty: development, correction or contradiction?",
+      "candidate_book_ids": [
+        "B11",
+        "B18"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-05",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Church and State, Social Kingship and the postconciliar settlement",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-06",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Ecumenism and the claim that the Catholic Church is the one true Church",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-07",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Extra Ecclesiam nulla salus: did Catholic teaching on salvation outside the Church change?",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-08",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Judaism, the Old Covenant and the mission of the Church",
+      "candidate_book_ids": [
+        "B08",
+        "B14"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-09",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "How may ambiguous or non-definitive magisterial teaching be questioned, clarified or corrected?",
+      "candidate_book_ids": [
+        "B11",
+        "B07"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-DOC-10",
+      "module": "church-crisis",
+      "family": "doctrinal",
+      "title": "Continuity and rupture: what is the right method for judging disputed teaching?",
+      "candidate_book_ids": [
+        "B04",
+        "B11",
+        "B22"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-01",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "What does indefectibility actually guarantee?",
+      "candidate_book_ids": [
+        "B01",
+        "B05",
+        "B11"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-02",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Can the Church undergo catastrophic institutional failure without defecting?",
+      "candidate_book_ids": [
+        "B01",
+        "B05",
+        "B11"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-03",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Can Church authority impose harmful discipline or a seriously deficient liturgical reform?",
+      "candidate_book_ids": [
+        "B01",
+        "B05",
+        "B11"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-04",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Can a pope become a heretic, and what follows if he does?",
+      "candidate_book_ids": [
+        "B01",
+        "B05",
+        "B11"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-05",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "What is the canonical and ecclesial status of the SSPX?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-06",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Supplied jurisdiction and a claimed state of necessity: how strong is the SSPX case?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-07",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Were Archbishop Lefebvre’s 1988 consecrations schismatic?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-08",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "What is the strongest sedevacantist argument, and where does it fail or remain disputed?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-09",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Sedeprivationism and conclavism: do they solve the visibility problem?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-10",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "What does una cum signify, and what can legitimately be inferred from it?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-11",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "From collegiality to synodality: organic development or new ecclesiology?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-ECC-12",
+      "module": "church-crisis",
+      "family": "ecclesiological",
+      "title": "Does modern synodality change who teaches, governs or decides in the Church?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-01",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "What is Catholic obedience—and what is it not?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-02",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "When may or must a Catholic refuse an order?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-03",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "When may Catholics resist, correct or publicly criticise ecclesiastical superiors?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-04",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "What levels of assent are owed to different kinds of magisterial teaching?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-05",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "What should a Catholic do when he has serious difficulty with non-definitive teaching?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-06",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "How much authority does the Pope have over the liturgy and ancient rites?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-07",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "Can Church authority restrict a rite that was not juridically abrogated?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-08",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "Is ‘recognise and resist’ a coherent Catholic position?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-09",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "When does criticism become contempt, factionalism or private judgment?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-AUT-10",
+      "module": "church-crisis",
+      "family": "authority",
+      "title": "How should an ordinary Catholic live faithfully during an ecclesial crisis?",
+      "candidate_book_ids": [
+        "B07",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-01",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Did the crisis in moral theology begin before Vatican II?",
+      "candidate_book_ids": [
+        "B13",
+        "B04"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-02",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Conscience: judge of moral truth or creator of moral truth?",
+      "candidate_book_ids": [
+        "B13",
+        "B04"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-03",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Why did Humanae vitae become a crisis of authority and moral method?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-04",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Is ‘responsible dissent’ from non-infallible moral teaching legitimate?",
+      "candidate_book_ids": [
+        "B13",
+        "B04"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-05",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+      "candidate_book_ids": [
+        "B13",
+        "B04"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-06",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Fundamental option, mortal sin and intrinsically evil acts",
+      "candidate_book_ids": [
+        "B13",
+        "B04"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-07",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Did Veritatis splendor settle the postconciliar moral-theology crisis?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-MOR-08",
+      "module": "church-crisis",
+      "family": "moral",
+      "title": "Amoris laetitia: continuity, qualification or conflict with prior sacramental and moral discipline?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-01",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Did Catholic mission change from conversion to dialogue?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-02",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Did Vatican II abandon the conversion of non-Catholic Christians?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-03",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Mortalium animos and Vatican II: contradiction or development in ecumenism?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-04",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Imperfect communion, subsistit in and ‘sister Churches’: what do these expressions mean?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-05",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Common prayer, ecumenical cooperation and sacramental sharing: what changed?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-06",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "What does ‘proselytism’ mean, and does rejecting it weaken missionary conversion?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-07",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Assisi 1986: legitimate peace witness or objectively indifferentist sign?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-08",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Inculturation versus syncretism: where is the boundary?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-09",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Why have some Catholic schools, universities and institutions lost a distinct Catholic identity?",
+      "candidate_book_ids": [
+        "B01",
+        "B16",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-IDM-10",
+      "module": "church-crisis",
+      "family": "identity-mission",
+      "title": "Did the postconciliar missionary strategy slow or accelerate secularisation?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-01",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Who was actually responsible when the postconciliar crisis unfolded?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-02",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "What happened to seminaries and priestly formation?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-03",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "What happened to religious orders, discipline and charism?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-04",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Why was theological dissent so difficult to control?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-05",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Did episcopal conferences and bureaucracy diffuse personal responsibility?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-06",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Why did liturgical abuse persist despite Roman prohibitions?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-07",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Why were canon law and ecclesiastical discipline so often under-enforced?",
+      "candidate_book_ids": [
+        "B18",
+        "B19"
+      ],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-08",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "The abuse crisis: what failed in episcopal governance and accountability?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-09",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Financial, institutional and personnel oversight: where did governance fail?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CR-GOV-10",
+      "module": "church-crisis",
+      "family": "governance",
+      "title": "Does synodality repair weak governance or diffuse responsibility further?",
+      "candidate_book_ids": [],
+      "matching_level": "historical_context_only_not_contemporary_question_evidence",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "postconciliar_original_documents_actual_proponent_arguments_canons_institutional_and_historical_sources"
+    },
+    {
+      "id": "CSE001",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Why does the Church teach about sexuality?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE002",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Isn’t sexuality a private matter?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE003",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Is Catholic sexual morality just a collection of Church rules?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE004",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What is natural law?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE005",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "If something is natural, does that automatically make it morally good?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE006",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "If nobody is harmed, why is it wrong?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE007",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Isn’t consent all that matters?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE008",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Can a good intention justify a sexual act?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE009",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Can circumstances make an otherwise wrong act right?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE010",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What does “intrinsically evil” mean?",
+      "candidate_book_ids": [
+        "B07",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE011",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Why should I trust the Church on sexual morality?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE012",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Jesus never mentioned many of these sexual sins. Why should Christians accept them?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE013",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Was St Paul simply repeating the sexual prejudices of his culture?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE014",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Hasn’t Catholic sexual teaching changed throughout history?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE015",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Can Catholic sexual doctrine develop?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE016",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What if my conscience tells me the Church is wrong?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE017",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What if I sincerely believe a sexual act is morally acceptable?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE018",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What if Catholic theologians disagree?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE019",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What is the difference between grave matter and personal guilt?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE020",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Does habit or addiction reduce responsibility?",
+      "candidate_book_ids": [
+        "B03",
+        "B11",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE021",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Is chastity just sexual repression?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE022",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Is sexual desire itself sinful?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE023",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "What is the difference between temptation and sin?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE024",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Are involuntary bodily sexual reactions sinful?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE025",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Are unwanted sexual thoughts sinful?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE026",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "When does a sexual thought become voluntary consent?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE027",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Are erotic dreams or nocturnal emissions sinful?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE028",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "If virginity is higher, does that devalue marriage?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE029",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Is lifelong celibacy psychologically unhealthy?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE030",
+      "module": "sexual-ethics",
+      "family": "foundations",
+      "title": "Is modesty objective or merely cultural?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE031",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Why is premarital sex wrong if two people genuinely love each other?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE032",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Is engagement morally equivalent to marriage?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE033",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "How far is “too far” physically before marriage?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE034",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "When can kissing or touching become sinful?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE035",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Is cohabitation a sensible way to test compatibility?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE036",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Can an unmarried couple live together chastely?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE037",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "What is a proximate occasion of sin?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE038",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Is it sinful to keep looking at attractive women or men for sexual pleasure?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE039",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "When does flirting become sinful or disloyal?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE040",
+      "module": "sexual-ethics",
+      "family": "relationships",
+      "title": "Does avoiding intercourse make other sexual acts acceptable before marriage?",
+      "candidate_book_ids": [
+        "B03",
+        "B04",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE041",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "What is marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE042",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Is marriage just a social construct?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE043",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Why must marriage be between a man and a woman?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE044",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "If infertile couples can marry, why is procreation essential?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE045",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "What are the purposes and duties of Christian marriage, including headship and submission?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE046",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "What are the ends and goods of marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE047",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "May infertile or post-menopausal spouses have marital relations?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE048",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "How can marriage change the morality of the same physical sexual act?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE049",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Why must marriage be indissoluble?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE050",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Why can’t someone remarry after a marriage has completely failed?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE051",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Is everything spouses mutually consent to sexually permissible?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE052",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "What does the traditional “marital debt” mean?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE053",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "When may a spouse legitimately refuse marital relations?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE054",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Can sexual coercion exist within marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE055",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Are oral stimulation, manual stimulation or sex toys permitted within marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE056",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Are threesomes, partner-swapping or inviting a third person into marital sex ever allowed if both spouses consent?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE057",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "What principles determine the limits of sexual acts within marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE058",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Is anal sex permitted within marriage?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE059",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "How do illness, disability or age affect marital obligations?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE060",
+      "module": "sexual-ethics",
+      "family": "marriage",
+      "title": "Does permanent infertility change marital sexual ethics?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE061",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "Why is contraception wrong?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE062",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "May spouses have serious reasons to avoid pregnancy?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE063",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "Why is NFP morally different from contraception?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE064",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "Is NFP simply “Catholic contraception”?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE065",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "What counts as a sufficiently serious reason to postpone pregnancy?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE066",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "Must spouses try to conceive every time they have relations?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE067",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "May spouses deliberately use infertile periods?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE068",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "Why is direct sterilization wrong?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE069",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "May medical treatment be used when infertility is a side effect?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE070",
+      "module": "sexual-ethics",
+      "family": "fertility",
+      "title": "What if only one spouse insists on contraception?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE071",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "Masturbation hurts nobody—why is it wrong?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE072",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "How does habit affect culpability for masturbation?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE073",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "If masturbation is common during puberty, does that change its morality?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE074",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "Why is pornography wrong if all the adults involved consent?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE075",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "Does private pornography use really harm anyone?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE076",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "What about pornography or erotic material used by married couples?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE077",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "What about AI-generated pornography where no performer exists?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE078",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "When does provocative social-media content become an occasion of sin?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE079",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "How should erotic fiction or other explicit media be judged?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE080",
+      "module": "sexual-ethics",
+      "family": "pornography_and_masturbation",
+      "title": "How should someone practically fight habitual pornography or masturbation?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE081",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "Is same-sex attraction itself a sin?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE082",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "What is the difference between an inclination and a chosen act?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE083",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "What is wrong with a faithful, loving same-sex relationship?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE084",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "If infertile heterosexual couples may marry, why can’t same-sex couples?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE085",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "Does fidelity change the morality of homosexual acts?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE086",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "Does condemning an act amount to condemning the person?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE087",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "Is Catholic teaching on homosexuality hateful or discriminatory?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE088",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "What if modern psychology understands homosexuality differently from older theology?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE089",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "What about civil same-sex marriage?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE090",
+      "module": "sexual-ethics",
+      "family": "same_sex",
+      "title": "Can Catholics with same-sex attraction have deep, celibate friendships?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE091",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "What does Catholic theology mean by male and female?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE092",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "How are biological sex and culturally variable gender roles different?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE093",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "Is sex socially constructed?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE094",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "How should Catholics understand gender dysphoria?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE095",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "Does compassion require affirming someone’s claimed gender identity?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE096",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "How should transition-related medical interventions be evaluated?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE097",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "What about congenital abnormalities of sexual development?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE098",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "How can Catholics disagree while respecting the person’s dignity?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE099",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "Should people define themselves primarily through sexual or gender labels?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE100",
+      "module": "sexual-ethics",
+      "family": "gender_and_sex",
+      "title": "How should parents respond when a child raises gender-identity questions?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE101",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "If IVF gives an infertile couple a child, why is it wrong?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE102",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "What is the difference between assisting and replacing the marital act?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE103",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "Why are donor sperm or donor eggs morally problematic?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE104",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "Is altruistic surrogacy still wrong when nobody is exploited for money?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE105",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "What is wrong with selecting embryos to avoid serious disease?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE106",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "Are fertility drugs and restorative fertility surgery permissible?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE107",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "How should Catholics evaluate a new fertility technology the Church has never specifically mentioned?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE108",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "How may reproductive specimens legitimately be obtained for diagnosis?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE109",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "Why is embryo freezing morally problematic?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE110",
+      "module": "sexual-ethics",
+      "family": "assisted_reproduction",
+      "title": "What should be done about embryos that have already been frozen?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE111",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "Why does sexual assault have a distinct moral gravity?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE112",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "If someone’s body responds during sexual assault, does that mean they consented?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE113",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "Can a victim who experiences physical pleasure or orgasm during assault be morally guilty for it?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE114",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "How do fear, threats and coercion affect culpability?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE115",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "How does abuse of authority or spiritual power aggravate sexual wrongdoing?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE116",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "Why is incest a distinct moral wrong?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE117",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "Can someone meaningfully consent to sexual activity while seriously intoxicated or incapacitated?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE118",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "How should grooming and manipulation be understood morally?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE119",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "What should an abuse survivor say in Confession if troubled by what happened?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE120",
+      "module": "sexual-ethics",
+      "family": "coercion_and_assault",
+      "title": "Can freezing, failing to resist or complying under fear constitute consent?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE121",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "Should Catholic children receive sexual education?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE122",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "Who has the primary responsibility for teaching children about sexuality?",
+      "candidate_book_ids": [
+        "B03",
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE123",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "Why does the Church oppose abortion even very early in pregnancy?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE124",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "What about abortion after rape or incest?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE125",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "What if continuing a pregnancy seriously threatens the mother’s life?",
+      "candidate_book_ids": [
+        "B13"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE126",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "How should parents respond when children encounter pornography online?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE127",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "Is sexting outside marriage seriously sinful even when both people consent?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE128",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "What about intimate images exchanged privately between spouses?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE129",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "Can virtual sexual activity constitute infidelity?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE130",
+      "module": "sexual-ethics",
+      "family": "children_abortion_and_digital",
+      "title": "How should sexual interaction with an AI be judged?",
+      "candidate_book_ids": [],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "current_moral_magisterium_competent_empirical_sources_and_representative_opponents"
+    },
+    {
+      "id": "CSE131",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "How should sexual sins be confessed?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE132",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "What does confessing sins by “kind and number” mean?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE133",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "Must embarrassing sexual details be given in Confession?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE134",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "How should habitual sins be counted?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE135",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "What is a firm purpose of amendment when someone repeatedly falls?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE136",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "Should doubtful sexual thoughts always be confessed?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE137",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "How can a scrupulous person distinguish temptation from consent?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE138",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "How should someone respond to repeated falls without becoming lax or despairing?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE139",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "When should someone refrain from Holy Communion after sexual sin?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE140",
+      "module": "sexual-ethics",
+      "family": "confession",
+      "title": "What practical Catholic programme helps someone grow in chastity?",
+      "candidate_book_ids": [
+        "B02",
+        "B03",
+        "B05"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE141",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Why is the Catholic Church so obsessed with sex?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE142",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Is Catholic sexual morality simply impossible to live today?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE143",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Does Catholic sexual teaching create harmful guilt and shame?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE144",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Doesn’t mercy require exceptions in difficult cases?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE145",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Why isn’t “love is love” enough?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE146",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "If almost everyone does something, can it really be seriously wrong?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE147",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Why should a non-Catholic accept any of this?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE148",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "How can I explain Catholic sexual morality without sounding judgmental?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE149",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "Doesn’t modern science contradict traditional sexual morality?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    },
+    {
+      "id": "CSE150",
+      "module": "sexual-ethics",
+      "family": "popular_objections",
+      "title": "What is the positive Catholic vision of sexuality—not merely the prohibitions?",
+      "candidate_book_ids": [
+        "B13",
+        "B14",
+        "B15",
+        "B17"
+      ],
+      "matching_level": "general_historical_moral_context_only_not_specific_question_support",
+      "primary_source_required": true,
+      "answer_audited": false,
+      "claim_certified": false,
+      "specialized_gap": "original_moral_teaching_moral_theology_and_practical_case_sources"
+    }
+  ],
+  "nonadditive_research_layers": {
+    "indexed_research_records": 123,
+    "sexual_ethics_expanded_debates": 55,
+    "sexual_ethics_browse_topics": 50,
+    "historical_A_originals_not_verified": 318,
+    "historical_C_originals_not_verified": 233
+  },
+  "followup_priorities": [
+    {
+      "priority": 1,
+      "scope": "CR 81",
+      "required": "Vatican II documents, promulgated legislation, official statements, SSPX, sedevacantist, and critical primary historical sources"
+    },
+    {
+      "priority": 2,
+      "scope": "CSE 150",
+      "required": "Casti connubii, Humanae vitae, Veritatis splendor, Familiaris consortio, Donum vitae, Dignitas personae, relevant contemporary bioethics and empirical evidence with accurate date-specific qualification"
+    },
+    {
+      "priority": 3,
+      "scope": "APOL religion topics",
+      "required": "original Jewish and Islamic texts and modern scholarship; comparative works B24/B25 are century-old and not enough"
+    },
+    {
+      "priority": 4,
+      "scope": "APOL Church history and Scripture",
+      "required": "modern specialist historiography and textual scholarship; document exact critical editions and counterpositions"
+    }
+  ]
+}

@@ -16,7 +16,10 @@ for(const id of ["CSE040","CSE058","CSE083","CSE101","CSE104","CSE112","CSE123",
 }
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,640);
+// 640 was the earlier snapshot; extra direct-source links were reconciled after it.
+// Keep this an exact regression count so a silently lost link is still detected.
+assert.equal(audit.summary.stage_specific_mapping_references,652);
+assert.ok(audit.source_registry_alignment?.follow_up_20261015?.cases_with_reference_changes.includes("CSE045"));
 
 const ids=["CSE055","CSE070","CSE071","CSE125"];
 for(const id of ids){

@@ -1,0 +1,294 @@
+{
+  "schema": "AO_FORMATION_CORRECTION_INTEGRATION_RECONCILIATION_V1",
+  "date": "2026-10-15",
+  "status": "RECONCILED_NOT_PUBLICATION_CERTIFIED",
+  "source_policy": "Accept precise well-attributed passages, never automatically demand full books. Do not duplicate bilingual overlays already integrated in current drafts.",
+  "summary": {
+    "owners": 30,
+    "overlay_sections": 59,
+    "draft_owners": 27,
+    "cse_source_owners": 3,
+    "unresolved_local_source_ids": 0,
+    "duplicate_long_paragraphs_in_141_research_dossiers_after_cleanup": 0,
+    "reconciled_canonical_questions_total": 291,
+    "full_bilingual_certifications_conferred": 0
+  },
+  "owners": [
+    {
+      "id": "CR-DOC-05",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-DOC-09",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-MOR-01",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-MOR-06",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CSE045",
+      "overlay_sections": 2,
+      "target": "app_js_source",
+      "incorporation": "Reworded as a substantive named-opponent Ephesians 5 debate rather than copied verbatim",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": null
+    },
+    {
+      "id": "CSE031",
+      "overlay_sections": 1,
+      "target": "app_js_source",
+      "incorporation": "Bilingual response included in the JS debate",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": null
+    },
+    {
+      "id": "CR-IDM-05",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-IDM-06",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CSE068",
+      "overlay_sections": 1,
+      "target": "app_js_source",
+      "incorporation": "1975 CDF reference already listed in current CSE source registry",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": null
+    },
+    {
+      "id": "CR-ECC-09",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-AUT-05",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-GOV-01",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-GOV-02",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Statistics retained once in answer; duplicate second paragraph removed",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-GOV-03",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Statistics retained once in answer; duplicate second paragraph removed",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-GOV-06",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-GOV-09",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-ORG-05",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-ORG-09",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-LIT-04",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-LIT-05",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-LIT-07",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-LIT-08",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-ECC-11",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "CR-ECC-12",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "bilingual_content_present_in_matching_draft_role",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-002",
+      "overlay_sections": 4,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Already corrected in current draft, no further application",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-001",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Already revised to Hume's objection in current draft",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-007",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Appended within existing documented_position rather than overwriting earlier argument",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-009",
+      "overlay_sections": 2,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Original argument retained and overlay material incorporated in existing four-role draft",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-053",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Public social Kingship passage appended to answer",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    },
+    {
+      "id": "APOL-058",
+      "overlay_sections": 1,
+      "target": "unpublished_canonical_research_draft",
+      "incorporation": "Overlay paragraph incorporated in critical_response, preserving Indigenous original opposition",
+      "material_present": true,
+      "full_editorial_certification": false,
+      "published_in_live_app": false
+    }
+  ],
+  "release_gates": [
+    "Approve final doctrinal claims and French translations for affected drafts",
+    "Confirm original opposition and current canonical owner assignments",
+    "Validate app's build/presentation and map research drafts to published content",
+    "Keep existing draft PR unmerged until release signoff"
+  ]
+}

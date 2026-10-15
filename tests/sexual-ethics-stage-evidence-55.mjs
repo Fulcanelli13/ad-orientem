@@ -49,10 +49,10 @@ for(const id of CSE_DEBATE_IDS){
  }
 }
 assert.equal(stageCount,440);
-assert.equal(referenceCount,640);
+assert.equal(referenceCount,652);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,640);
+assert.equal(audit.summary.stage_specific_mapping_references,652);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.remaining_full_passage_review,55);
@@ -61,4 +61,4 @@ for(const id of ["CSE029","CSE035","CSE038","CSE045","CSE093","CSE095","CSE143",
 const close=raw.CSE125.source_scope_caveat;
 assert.match(close,/Original CDF clarification .*distinguishes direct abortion from non-abortive maternal treatment/);
 assert.match(close,/NCBC 2022 classifications are non-magisterial and contested/);
-console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 640 original source references, no invented locators, 0 claimed certified.");
+console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 652 original source references, no invented locators, 0 claimed certified.");

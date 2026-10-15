@@ -1,0 +1,1093 @@
+{
+  "schema": "AO_FORMATION_35_REPRODUCTIVE_AUTHORITY_REVIEW_V1",
+  "date": "2026-10-14",
+  "status": "TARGETED_ORIGINAL_CITATION_AND_QUESTION_AUDIT_NOT_FULL_QA_CERTIFICATION",
+  "scope": "CSE101–125 and CR-AUT-01–10; Catechism excluded",
+  "source_blob_shas": {
+    "src/learn/sexual-ethics-data/questions-101-150.js": "be0ffc3f1b121a56cb76d3e8c7117edf198d7f02",
+    "src/learn/sexual-ethics-data/debates-practical.js": "8fbe9ebf62e261bd3919020a0c62e4dc6e9f9e4c",
+    "data/learn/church-crisis-canonical.v1.json": "67476d576ae500d363773ef383ae48f8952d507f",
+    "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json": "850b90144d010b631664f8949103dd9f796ce705",
+    "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json": "552072cc4f3bb246d79f168a6309cc22b9f022a1"
+  },
+  "evidence_rule": "Accurate original sections and reliably attributed excerpts suffice for bounded claims; whole books never mandatory. For clinical emergencies do not substitute moral analysis for clinician assessment.",
+  "counts": {
+    "total": 35,
+    "unique": 35,
+    "cse": 25,
+    "cr": 10,
+    "cr_roles": 40,
+    "genuine_owner_overlap": [
+      "CR-AUT-05",
+      "CR-DOC-09"
+    ],
+    "originals_verified": [
+      "CSE104",
+      "CSE112",
+      "CSE125"
+    ],
+    "completed_question_certification": 0
+  },
+  "rows": [
+    {
+      "id": "CSE101",
+      "module": "sexual-ethics",
+      "title_en": "If IVF gives an infertile couple a child, why is it wrong?",
+      "answer_en": "The desire for a child is good, but not every means of conception is morally permissible. Donum Vitae II.B.5 rejects even a hypothetical IVF procedure using only the spouses’ gametes and destroying no embryos, because laboratory fertilization replaces rather than assists the conjugal act. Existing and future children conceived through IVF retain their full dignity and must be welcomed with love.",
+      "french_present": true,
+      "detail_en": "The couple’s good intention and the suffering of infertility are morally significant, but they do not settle what kind of act brings the child into being. Donum Vitae distinguishes even hypothetical homologous IVF without embryo destruction from medicine that assists intercourse, because laboratory fertilization substitutes for the conjugal act rather than helping it attain its natural end.",
+      "opponent_en": null,
+      "source_ids": [
+        "DONUMV",
+        "DP",
+        "LBM"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Original Donum vitae II.B.5 rejects even hypothetical homologous IVF without embryo destruction: current concise distinction is sound.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE102",
+      "module": "sexual-ethics",
+      "title_en": "What is the difference between assisting and replacing the marital act?",
+      "answer_en": "A treatment assists when it heals or removes an obstacle so conception can result from the spouses’ own conjugal act. It replaces the act when conception is produced by a technical procedure instead of by that act.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Donum vitae II.B.6 and Dignitas personae §§12–13 separate medical assistance to procreation from replacement of conjugal act.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE103",
+      "module": "sexual-ethics",
+      "title_en": "Why are donor sperm or donor eggs morally problematic?",
+      "answer_en": "Catholic teaching holds that spouses should become father and mother through one another. Donor gametes deliberately introduce a third person into the generative origin of the child and divide genetic parenthood from the marital union.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Third-party gametes directly addressed by Donum vitae II.A.1–2; do not imply lesser dignity for child.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE104",
+      "module": "sexual-ethics",
+      "title_en": "Is altruistic surrogacy still wrong when nobody is exploited for money?",
+      "answer_en": "Catholic objections to surrogacy do not depend on payment or on proving exploitation in an individual case. Donum Vitae II.A.3 objects to the planned separation of gestation and parental responsibility and to the transfer of a child pursuant to an arrangement. The 2023 ASRM Ethics Committee, by contrast, defends gestational-carrier arrangements subject to informed consent, independent counsel and safeguards against coercion; the dispute concerns the arrangement’s moral nature even when safeguards work.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DONUMV",
+        "DI2024",
+        "ASRM_GC"
+      ],
+      "disposition": "real_opponent_verified",
+      "assessment": "First-person 2023 ASRM ethics opinion genuinely argues surrogate arrangements can be ethical given informed consent, independent legal counsel and safeguards; the opposed Donum vitae argument turns on the arrangement itself.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE105",
+      "module": "sexual-ethics",
+      "title_en": "What is wrong with selecting embryos to avoid serious disease?",
+      "answer_en": "Diagnosis intended to help a patient is not the same as selecting which embryonic human lives may continue. Catholic teaching objects when testing becomes a filter leading to exclusion, destruction or abandonment of embryos judged undesirable.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Dignitas personae §§22–23 objects to selecting and discarding embryos; do not claim every diagnostic procedure is ipso facto wrongful.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE106",
+      "module": "sexual-ethics",
+      "title_en": "Are fertility drugs and restorative fertility surgery permissible?",
+      "answer_en": "They can be. Treatments that restore or support normal reproductive function so conception still results from marital intercourse are morally different from techniques that replace intercourse as the cause of conception.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Fertility-restoring surgery/drugs may assist conjugal acts; treatment label alone is not sufficient to determine moral character.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE107",
+      "module": "sexual-ethics",
+      "title_en": "How should Catholics evaluate a new fertility technology the Church has never specifically mentioned?",
+      "answer_en": "Start with what the technique actually does, not whether it is “natural” or “artificial.” Ask whether it heals or bypasses a pathology, assists or replaces the conjugal act, uses third-party gametes, and creates, selects, freezes or destroys embryos.",
+      "french_present": true,
+      "detail_en": "Dignitas Personae explicitly says technologies are not rejected merely because they are artificial. Moral evaluation therefore identifies the pathology and the human act, asks whether fertility is restored or replaced, traces the handling of gametes and embryos, distinguishes intended from merely foreseen effects, and then applies the established moral principles.",
+      "opponent_en": null,
+      "source_ids": [
+        "DP",
+        "DONUMV"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Original Dignitas personae specifically rejects automatic artificial=immoral equation. Keep precise causal analysis of a technique.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE108",
+      "module": "sexual-ethics",
+      "title_en": "How may reproductive specimens legitimately be obtained for diagnosis?",
+      "answer_en": "A legitimate diagnostic aim does not make every collection method legitimate when obtaining reproductive specimens. Persona Humana §9 supplies the general norm concerning masturbation, but neither it nor Donum Vitae offers a detailed approval list of every modern collection method. Particular cases require competent moral analysis of both the clinical purpose and the actual means used.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "PH",
+        "DONUMV",
+        "ST18"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "No fabricated universal approval list for reproductive specimen collection; case-specific moral means distinct from clinical aim.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE109",
+      "module": "sexual-ethics",
+      "title_en": "Why is embryo freezing morally problematic?",
+      "answer_en": "Because it subjects embryonic human beings to suspended development, storage and decisions about transfer, abandonment or destruction. Catholic teaching holds that embryos must be treated as human lives, not inventory.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Cryopreservation treatment of embryos subject to original protection of embryonic life.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE110",
+      "module": "sexual-ethics",
+      "title_en": "What should be done about embryos that have already been frozen?",
+      "answer_en": "Dignitas Personae §19 rejects destroying existing frozen embryos for research and transferring them to other couples as an infertility treatment. It regards proposals for prenatal adoption intended only to save an embryo's life as praiseworthy in intention yet beset by serious difficulties. It explicitly recognizes an unresolved injustice, not an approved universal procedure for disposing of existing embryos.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DP"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Dignitas personae §19 regards possible adoption intended to rescue frozen embryos as commendably motivated yet beset by serious problems; unresolved plight acknowledged without invented definitive solution.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE111",
+      "module": "sexual-ethics",
+      "title_en": "Why does sexual assault have a distinct moral gravity?",
+      "answer_en": "Because it combines sexual wrongdoing with violence, coercion and grave injustice against another person. The absence of consent is not a minor circumstance; it adds a distinct violation of personal freedom and bodily integrity.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST6",
+        "ST154"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Sexual wrongdoing plus involuntariness/coercion is distinct aggravated violation of freedom and bodily integrity.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE112",
+      "module": "sexual-ethics",
+      "title_en": "If someone’s body responds during sexual assault, does that mean they consented?",
+      "answer_en": "No. Physiological sexual response is not consent. Erection, lubrication, ejaculation or orgasm can occur involuntarily during non-consensual stimulation; moral responsibility belongs to voluntary choice, not an automatic bodily mechanism.",
+      "french_present": true,
+      "detail_en": "Aquinas locates voluntariness in what proceeds from the will and treats violence as producing involuntariness insofar as the act occurs against the will. A 2024 scoping review screened 13,894 records and retained eight articles and one book. Its findings establish that genital responses can occur during non-consensual experiences, but the heterogeneous, often retrospective studies do not yield a reliable prevalence estimate or identify the circumstances in which responses are more likely. An involuntary bodily response therefore neither retroactively creates consent nor creates personal sin.",
+      "opponent_en": "If a victim experienced genital arousal, lubrication, erection or even orgasm during an assault, that response seems to show some level of desire or consent.",
+      "source_ids": [
+        "ST6",
+        "ASSAULT2024"
+      ],
+      "disposition": "evidence_gap_closed",
+      "assessment": "2024 Vandervoort et al original PubMed abstract confirms 13,894 screened, 8 articles and 1 book retained, involuntary genital arousal can occur in assault, no reliable frequency estimate. Confirms existing English explanation.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE113",
+      "module": "sexual-ethics",
+      "title_en": "Can a victim who experiences physical pleasure or orgasm during assault be morally guilty for it?",
+      "answer_en": "Not merely because the sensation occurred. Physical pleasure can be involuntary; guilt requires a voluntary act of the will. A survivor should not infer consent or sin from physiology alone.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST6",
+        "ST151",
+        "ASSAULT2024"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Bodily physiological response is not voluntary guilt. 2024 empirical review and Thomistic voluntariness answer different questions; preserve separation.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE114",
+      "module": "sexual-ethics",
+      "title_en": "How do fear, threats and coercion affect culpability?",
+      "answer_en": "They can reduce voluntariness and therefore reduce or even remove culpability, depending on severity and the freedom that remains. Fear does not operate by a simple formula; the concrete pressure on the will matters.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST6",
+        "ST77"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Aquinas' fear/violence distinctions properly qualify responsibility; no one-size-fits-all impairment threshold.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE115",
+      "module": "sexual-ethics",
+      "title_en": "How does abuse of authority or spiritual power aggravate sexual wrongdoing?",
+      "answer_en": "Because the offender can exploit trust, dependency, obedience or spiritual vulnerability in addition to committing the sexual wrong itself. The misuse of office or authority adds injustice and can impair the victim’s freedom.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST18",
+        "ST6"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Abuse of spiritual or professional power aggravates injustice and impairs victim freedom; never invoke lawful obedience to excuse coercion.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE116",
+      "module": "sexual-ethics",
+      "title_en": "Why is incest a distinct moral wrong?",
+      "answer_en": "Because it violates not only sexual chastity but also the natural and social order of family relationships, duties and trust. Family proximity can also involve serious power and dependency concerns.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST154"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Incest includes familial duty and power violations; ancient moral taxonomy is not full child-safeguarding protocol.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE117",
+      "module": "sexual-ethics",
+      "title_en": "Can someone meaningfully consent to sexual activity while seriously intoxicated or incapacitated?",
+      "answer_en": "Severe intoxication, unconsciousness or comparable impairment can remove or seriously diminish the capacity for a free and sufficiently deliberate choice. The absence of resistance is not by itself consent when the person lacks the practical ability to choose.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": "If someone says yes while drunk or impaired, adults should still be responsible for their choices. Otherwise intoxication could become an excuse whenever sex is regretted later.",
+      "source_ids": [
+        "ST6",
+        "ST76"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Severe incapacitation is not equivalent to merely consuming alcohol; lack of resistance doesn't establish valid choice.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE118",
+      "module": "sexual-ethics",
+      "title_en": "How should grooming and manipulation be understood morally?",
+      "answer_en": "As strategies that can deliberately weaken another person’s judgment, boundaries or freedom in order to obtain sexual access. They can therefore involve deception, abuse of trust and coercive preparation in addition to later sexual wrongdoing.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST18",
+        "ST6"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Grooming manipulates trust and choices; case-specific, avoid a generic accusation of every contact.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE119",
+      "module": "sexual-ethics",
+      "title_en": "What should an abuse survivor say in Confession if troubled by what happened?",
+      "answer_en": "A survivor does not have to confess abuse suffered involuntarily as though it were a personal sin. Canon 988 requires confession of one's own grave sins, not wrongs committed against oneself. If uncertainty about a genuinely voluntary choice remains, it may be discussed calmly with a confessor, without presuming guilt from fear, freezing, bodily reactions or failure to resist.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST6",
+        "ST151",
+        "PIUSX",
+        "CIC_PENANCE"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Can.988 concerns penitent's own grave sins, not abuse suffered; no presumed personal guilt from freezing or unwanted physical response.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE120",
+      "module": "sexual-ethics",
+      "title_en": "Can freezing, failing to resist or complying under fear constitute consent?",
+      "answer_en": "Not necessarily. Free consent is not established by a failure to resist. Freezing, compliance under threat and actions taken to reduce immediate danger can occur without freely agreeing to sexual activity. Responsibility for coercion rests with the perpetrator, not with an involuntary survival response.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "ST6",
+        "RAINN_CONSENT101"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Threat-compliance and freezing do not imply freely willed participation. No unsupported prevalence estimate.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE121",
+      "module": "sexual-ethics",
+      "title_en": "Should Catholic children receive sexual education?",
+      "answer_en": "Yes, but in a manner suited to age, maturity, modesty and real need. Traditional teaching opposed indiscriminate or prematurely explicit instruction, not all truthful education about the body, puberty, chastity and reproduction.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DIVINI",
+        "SACRA"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Divini illius magistri condemns indiscriminate premature methods; existing answer rightly affirms age-appropriate truthful education.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE122",
+      "module": "sexual-ethics",
+      "title_en": "Who has the primary responsibility for teaching children about sexuality?",
+      "answer_en": "Catholic teaching gives parents the primary educational responsibility. Schools, clergy and professionals can assist, but they should not treat parents as irrelevant to a child’s moral and sexual formation.",
+      "french_present": true,
+      "detail_en": null,
+      "opponent_en": null,
+      "source_ids": [
+        "DIVINI"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Primary parental education role maintained without implying professionals can never be involved in safeguarding.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE123",
+      "module": "sexual-ethics",
+      "title_en": "Why does the Church oppose abortion even very early in pregnancy?",
+      "answer_en": "Because direct abortion deliberately ends the life developing from conception. Catholic teaching does not make the protection of that life depend on whether the embryo looks recognizably human, can feel pain, is viable outside the womb, or whether theologians agree on the exact moment of ensoulment. When human life is already present and developing, one may not deliberately kill it because its capacities are still immature.",
+      "french_present": true,
+      "detail_en": "Early embryos lack mature consciousness, sensation and developed organs, but those facts describe a developmental stage rather than a different kind of organism. The 1974 CDF declaration also notes that the moral prohibition did not historically depend on one theory of the timing of ensoulment. Severe fetal disability likewise changes the burdens and duties of care without creating a right to direct killing of innocent life.",
+      "opponent_en": "In the earliest weeks there is no consciousness, pain, viability or developed brain. Calling an embryo morally equivalent to a born child seems to ignore enormous developmental differences.",
+      "source_ids": [
+        "CASTI",
+        "ABORT74"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "CDF 1974 statement and original argument do not turn morality on exact theory of ensoulment or fetal pain.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE124",
+      "module": "sexual-ethics",
+      "title_en": "What about abortion after rape or incest?",
+      "answer_en": "Rape and incest are grave injustices, and the woman may bear trauma for which she has no responsibility. Catholic teaching nevertheless distinguishes the guilty aggressor from the child conceived: the child is not the attacker and may not be directly killed for the crime of another person. The moral response must defend the mother, punish the offender and provide serious material and psychological support without directing violence toward the unborn child.",
+      "french_present": true,
+      "detail_en": "Continuation of a pregnancy after rape can intensify trauma and impose a grave burden on the victim; that burden must not be minimized. Catholic moral reasoning nevertheless holds that suffering caused by one person’s crime cannot create a right intentionally to kill a second innocent human being. This does not imply that the woman must raise the child herself; adoption and other forms of support can address later parental obligations.",
+      "opponent_en": "Pregnancy caused by rape can force a woman to carry the physical consequences of a violent crime for months. Requiring that pregnancy to continue can seem like making the victim sacrifice herself for a child she never chose to conceive.",
+      "source_ids": [
+        "CASTI",
+        "ABORT74",
+        "ABORTCLAR"
+      ],
+      "disposition": "bounded_claim_consistent",
+      "assessment": "Acknowledges serious trauma following rape/incest and opposing bodily-autonomy argument rather than caricature; doctrinal position separated from victims' culpability.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CSE125",
+      "module": "sexual-ethics",
+      "title_en": "What if continuing a pregnancy seriously threatens the mother’s life?",
+      "answer_en": "A dangerous pregnancy calls for prompt medical care: Catholic morality does not require letting the mother die. The CDF's 2009 clarification explicitly distinguishes direct abortion from proportionate treatment of serious maternal pathology with unintended fetal death, quoting Pius XII; the USCCB Committee on Doctrine explains the same distinction in 2010. Ectopic pregnancies can cause fatal hemorrhage. Particular treatments such as tubal surgery and methotrexate are clinically different, and their Catholic moral classification is not decided merely by an obstetric treatment list.",
+      "french_present": true,
+      "detail_en": "The 2009 CDF clarification expressly contrasts an intervention that directly ends fetal life with treatment directed at maternal disease whose collateral effect is an unintended fetal death (quoting Pius XII, 27 November 1951). The USCCB Committee on Doctrine's 2010 statement separately expounds the distinction, citing health-care directives 45 and 47. For a tubal ectopic pregnancy, Catholic bioethicists commonly defend removal of the affected tube (salpingectomy), while the morality of methotrexate and salpingostomy remains debated among Catholic moralists. This latter classification is not independently settled by ACOG's medical recommendations or by a single bioethics commentator. Suspected rupture, severe abdominal pain, weakness or shoulder pain require emergency assessment, not postponed care while an ethical consultation is arranged.",
+      "opponent_en": "If pregnancy will probably kill the mother, refusing abortion seems to prefer the fetus over the woman and may result in two deaths instead of one.",
+      "source_ids": [
+        "CASTI",
+        "ABORTCLAR",
+        "USCCB_DIRECT2010",
+        "NCBC_ECTOPIC",
+        "NCBC_ECTOPIC_FAQ"
+      ],
+      "disposition": "high_stakes_primary_verified",
+      "assessment": "CDF July 2009 distinguishes direct abortion from non-abortive care with unintended fetal death; USCCB 2010 separately confirms; ACOG specifies ectopic emergencies. Correct not to prescribe methotrexate/salpingectomy categorically via theology and never delay urgent assessment.",
+      "evidence_scope": "Existing EN short answer and cited source declarations read; relevant direct firstparty/empirical excerpts checked; FR presence and available opposition, not full bilingual signoff",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-01",
+      "module": "church-crisis",
+      "title_en": "What is Catholic obedience—and what is it not?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Catholic obedience is a virtue by which legitimate superiors are obeyed within the bounds of the authority entrusted to them, not the erasure of conscience or a licence to command sin. Canon 212 requires Christian obedience to pastors acting as representatives of Christ and also recognises the faithful's responsibility to express needs and concerns. Neither uncritical servility nor habitual distrust expresses the whole duty.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "AQU104"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Aquinas, Summa theologiae II–II q.104 a.5, rejects the idea that every superior is to be obeyed in every matter; a lower authority cannot command contrary to God, and a person is not bound in matters outside the superior's competence. This is a real traditional theological limit to obedience, not a twentieth-century innovation invented to justify criticism of bishops.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104"
+          ],
+          "attribution": "St Thomas Aquinas, Summa theologiae II–II, q.104 a.5"
+        },
+        {
+          "role": "critical_response",
+          "english": "The claim that obedience has limits does not make every unwelcome administrative decision a command to sin. The faithful must identify the alleged unlawful requirement, the superior's competence and the available avenues of respectful challenge. Conversely, describing a concern as 'disobedience' does not answer a well-founded objection that a particular order exceeds lawful authority.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "AQU104",
+            "CIC1752"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "A humble Catholic obeys lawful commands without demanding private certainty about every prudential judgement, while refusing what would truly violate divine law. Such obedience protects communion, charity and ecclesial order; fraternal correction protects truth when a superior acts wrongly. Both acts require proportion, honesty and freedom from contempt or self-appointed jurisdiction.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "CCC212",
+            "OBED08"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "appropriate_obedience",
+      "assessment": "Aquinas q104 a5 and canon212: lawful obedience limited by competence and divine law; no universal licence to defy.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-02",
+      "module": "church-crisis",
+      "title_en": "When may or must a Catholic refuse an order?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "A Catholic must refuse an order whose very object is sinful or contrary to divine law, but may have a duty to obey a legitimate rule that imposes hardship or that he considers imprudent. During the pandemic, public-health directives, dispensations from Sunday obligations, access to confession and the intrinsic necessity of the sacraments raised distinct canonical and moral questions. Their answers depend on precise laws and circumstances.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "CAN1247",
+            "CDW20"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Roman instructions in March 2020 authorised specific extraordinary Holy Week arrangements and the Apostolic Penitentiary published measures concerning confession. SSPX statements challenged restrictions that, in its judgement, left Catholics unjustly deprived of Mass and sacramental ministry. Those are identifiable, competing responses to a concrete emergency, not proof that all restrictions everywhere had one legal character.",
+          "fr_present": true,
+          "source_ids": [
+            "CDW20",
+            "PEN20",
+            "PANDEMSSPX"
+          ],
+          "attribution": "Roman liturgical and penitential decrees; SSPX 2020 pastoral criticism"
+        },
+        {
+          "role": "critical_response",
+          "english": "A dispensation from the Sunday obligation is not a declaration that the Eucharist is dispensable in the life of the Church; a temporary public-health limitation is not necessarily a prohibition of belief or private prayer. Yet blanket restrictions without attention to the dying, confession or proportional alternatives may raise serious questions of religious freedom and pastoral care. An analysis must name jurisdiction, date, law and actual remedies.",
+          "fr_present": true,
+          "source_ids": [
+            "CAN1247",
+            "CDW20",
+            "PEN20"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The salvation of souls remains the supreme law and the sacraments are not mere optional public events; pastors must seek lawful ways to provide them even in danger. Equally, Christian charity forbids reckless endangerment of neighbours and contempt for legitimate duties. Resistance is justified by the real object of an unlawful command, not by imagining that all inconvenient safeguards are a denial of faith.",
+          "fr_present": true,
+          "source_ids": [
+            "CIC1752",
+            "AQU104",
+            "PEN20"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "context_sensitive",
+      "assessment": "Pandemic restrictions require law, date and sacramental context; draft does not generalise all measures as illicit.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-03",
+      "module": "church-crisis",
+      "title_en": "When may Catholics resist, correct or publicly criticise ecclesiastical superiors?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Canon 212 §3 recognises the faithful's right, and at times duty, to make concerns for the good of the Church known to pastors and other faithful, according to their knowledge, competence and standing. The same canon explicitly requires integrity of faith and morals, reverence for pastors, attention to the common good and respect for persons' dignity. Aquinas allows public correction of a prelate when a public danger to the faith makes it necessary; this does not confer jurisdiction to depose superiors or permission for unsupported accusations and permanent confrontation.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "AQUINAS"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Aquinas states that a prelate may need to be corrected publicly when a public danger to the faith requires public witness, recalling Paul's correction of Peter. Sedevacantist authors such as Novus Ordo Watch argue, further, that some apparent papal errors establish a loss of office rather than merely justifying correction. These are distinct claims, and the former cannot simply be cited as proof of the latter.",
+          "fr_present": true,
+          "source_ids": [
+            "AQUINAS",
+            "NOWRNR",
+            "V1"
+          ],
+          "attribution": "Aquinas II–II q.33 a.4; Novus Ordo Watch's stronger papal-office claim"
+        },
+        {
+          "role": "critical_response",
+          "english": "A lay critic should state the exact disputed sentence, its authority, the allegedly conflicting teaching and the level of certainty that can be claimed. A pastor likewise ought to answer the merits rather than dismiss all conscientious questions as disloyalty. The burden of public accusation rises with the seriousness of its effect on a person's good name and the Church's unity.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "AQUINAS",
+            "LEO"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Charity is not silence before error; it is the form in which truth is served without hatred or self-exaltation. Correction should pursue the superior's amendment and the faithful's good, use reliable evidence and maintain the limits of one's own office. In a crisis the combination of fortitude, lawful obedience and humility matters more than the satisfaction of belonging to the loudest faction.",
+          "fr_present": true,
+          "source_ids": [
+            "AQUINAS",
+            "CCC212",
+            "OBED08"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "appropriate_correction",
+      "assessment": "Aquinas q33 a4 provides public correction in real danger to faith, not unilateral power of deposition.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-04",
+      "module": "church-crisis",
+      "title_en": "What levels of assent are owed to different kinds of magisterial teaching?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Revealed truths proposed as such require assent of divine and Catholic faith; definitively proposed doctrines require firm acceptance; non-definitive authentic teaching calls for religious submission of intellect and will. A policy decision or interview is not thereby an infallible dogmatic definition. The level turns on the text's object and authoritative intention.",
+          "fr_present": true,
+          "source_ids": [
+            "PF98",
+            "DV90",
+            "LG64"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "The 1998 CDF doctrinal commentary on Professio fidei differentiates three specified modes of assent: truths directly revealed to be believed with divine and Catholic faith; teachings definitively proposed as necessarily connected with revelation to be firmly accepted; and authentic non-definitive teachings calling for religious submission of will and intellect. Donum veritatis §§23–31 explains that difficulties with non-irreformable interventions do not automatically license a parallel teaching office. The distinctions are real without reducing non-definitive instruction to an optional personal preference.",
+          "fr_present": true,
+          "source_ids": [
+            "PF98",
+            "DV90"
+          ],
+          "attribution": "CDF doctrinal commentary on Professio fidei (1998), nos. 5–11; Donum veritatis (1990), nos. 23–31"
+        },
+        {
+          "role": "critical_response",
+          "english": "The 1998 Doctrinal Commentary on the Professio fidei distinguishes revealed teachings to be believed with divine and Catholic faith, doctrines definitively held because necessary to guard or expound revelation, and non-definitive teachings requiring religious submission of intellect and will. Donum veritatis §§23–31 does not equate difficulties with license for public, systematic dissent; it also acknowledges that particular non-definitive interventions can present difficulties and counsels patient examination within ecclesial communion. A precise critic must identify which doctrinal proposition is at issue, whether it was proposed definitively and whether an apparent contradiction is substantive rather than an administrative preference.",
+          "fr_present": true,
+          "source_ids": [
+            "PF98",
+            "DV90",
+            "LG64"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The Magisterium serves the deposit and cannot create contrary revelations. Fidelity means giving each proposition exactly its due assent, rejecting both habitual dissent and exaggerated papal positivism. Catholic doctrine is anchored in Christ rather than in the personality or changing preferences of a pastor.",
+          "fr_present": true,
+          "source_ids": [
+            "PF98",
+            "DV90",
+            "V1"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "separate_authority_owner",
+      "assessment": "Three categories of assent from 1998 CDF commentary are this dossier's unique taxonomy; crosslink rather than repeat elsewhere.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-05",
+      "module": "church-crisis",
+      "title_en": "What should a Catholic do when he has serious difficulty with non-definitive teaching?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "A serious difficulty with non-definitive teaching calls for reading its precise text, checking earlier authoritative sources and seeking competent advice. Canon 212 permits respectful communication of concerns without conferring private jurisdiction to issue rival doctrinal definitions. A prudential doubt differs from declaring permanent public contempt for the teaching office.",
+          "fr_present": true,
+          "source_ids": [
+            "DV90",
+            "CCC212",
+            "AQU104"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "In his signed 16 October 1986 essay, the Catholic moral theologian Charles E. Curran argued that a theologian may sometimes dissent from non-infallible hierarchical teaching for serious reasons while retaining Catholic commitment, and that honest theological debate can expose earlier mistakes. Curran expressly distinguished fallible teaching from doctrines he regarded as infallible and argued for responsible rather than unqualified public disagreement. This is an identifiable original position, not the Church's final disciplinary judgment. The CDF's Donum veritatis §§28–31 treats genuine intellectual difficulties differently from pressure campaigns or self-authorized denial of assent.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "DV90",
+            "CURRAN86-ORIGINAL-CR"
+          ],
+          "attribution": "Charles E. Curran, signed 1986 essay on dissent, contrasted with CDF Donum veritatis"
+        },
+        {
+          "role": "critical_response",
+          "english": "Curran is right that a non-definitive judgment and an irreformable revealed dogma are not identical. It does not follow that an individual theologian is the final judge of doctrine or that a campaign to repudiate an authentic teaching has the same standing as respectfully presenting a precise difficulty. Donum veritatis requires continued dialogue, serious consideration of magisterial reasons and fidelity to communion; canon 212 recognises both the duty of obedience and the right to express concerns within proper limits. Pastors likewise owe reasons and fair procedures rather than treating all inquiries as disloyalty.",
+          "fr_present": true,
+          "source_ids": [
+            "DV90",
+            "PF98",
+            "CCC212",
+            "CURRAN86-ORIGINAL-CR"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "St Thomas requires obedience to lawful superiors within their competence but excludes compliance against God's command (Summa II–II q.104 a.5). Canon 212 §§1–3 joins Christian obedience to the rights and sometimes duty of informed faithful to raise concerns with reverence and regard for the common good. Donum veritatis §§28–31 describes honest difficulties with non-definitive teaching without making a personal objection an alternate Magisterium. The practical Catholic course is therefore to preserve ordinary sacramental and family duties, study the exact proposition, petition competent authority respectfully and refuse only what is genuinely sinful—not what is merely unwelcome.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "DV90",
+            "CCC212"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "substantive_cross_owner_overlap",
+      "assessment": "CR-DOC-09 now owns legitimacy/method of questioning non-definitive teachings; CR-AUT-05 should provide concrete faithful personal steps, not repeat abstract doctrinal controversy and entire Curran case.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-06",
+      "module": "church-crisis",
+      "title_en": "How much authority does the Pope have over the liturgy and ancient rites?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "The Roman Pontiff has real supreme authority in the Church, and ecclesiastical law gives the Apostolic See competence for ordering the sacred liturgy. Power over discipline does not, however, mean authority to alter the substance of the sacraments or to claim that every historical liturgical decision was perfectly prudent. A restriction's legal scope and doctrinal limits must be examined separately.",
+          "fr_present": true,
+          "source_ids": [
+            "CIC4",
+            "V1",
+            "SC63"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Benedict XVI broadly authorised the 1962 books through Summorum Pontificum and described the older Missal as never juridically abrogated. Francis later restricted their use through Traditionis custodes on stated grounds of ecclesial unity. These were successive papal acts of legislation and explanation, not proof that any previous positive-law permission had become immutable.",
+          "fr_present": true,
+          "source_ids": [
+            "SP07",
+            "SPL07",
+            "TC21",
+            "TCL21"
+          ],
+          "attribution": "Benedict XVI, 2007 legislation; Francis, 2021 legislation"
+        },
+        {
+          "role": "critical_response",
+          "english": "The historical worth of the ancient Roman rite does not of itself establish legal immunity from every restriction: such a claim must identify its juridical foundation. Equally, an argument defending restrictions should answer the rights and legitimate expectations of faithful communities rather than equate all attachment to the older form with rejection of the Church.",
+          "fr_present": true,
+          "source_ids": [
+            "CIC4",
+            "SPL07",
+            "TCL21"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "The pope is the servant of the deposit of faith and must regulate worship for the salvation of souls. Catholics can ask that inherited rites be preserved and can criticise restrictions with evidence, proportion and charity while remaining in visible communion. Lawful obedience is required unless an actual command contrary to divine law has been shown.",
+          "fr_present": true,
+          "source_ids": [
+            "V1",
+            "SC63",
+            "AQU104",
+            "CIC1752"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "liturgical_law_distinction",
+      "assessment": "2007 and 2021 acts are historically different valid texts; liturgical competence does not guarantee prudent result.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-07",
+      "module": "church-crisis",
+      "title_en": "Can Church authority restrict a rite that was not juridically abrogated?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Finding that the 1962 Missal had not been abrogated in 2007 does not establish that a later pope lacked competence to regulate its use. Summorum Pontificum and Traditionis custodes are successive laws with differing permissions and conditions. The present legal situation must be reconstructed from the actual legislation, particular concessions and subsequent authoritative clarifications.",
+          "fr_present": true,
+          "source_ids": [
+            "SP07",
+            "TC21",
+            "CIC4"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Francis restricted use of the 1962 Missal through Traditionis custodes in 2021. The 2021 Responsa supplied implementation rules, and the 20 February 2023 rescript expressly reserved two categories of dispensation to the Apostolic See: use of parish churches or erection of personal parishes, and permission for priests ordained after Traditionis custodes to celebrate with the former Missal. The FSSP also published a particular papal decree in 2022 confirming its own use of the 1962 books. These are distinct legal acts: an institute's specific permission is not a universal exemption for every parish and priest.",
+          "fr_present": true,
+          "source_ids": [
+            "TC21",
+            "RESP21",
+            "RES23",
+            "FSSP22"
+          ],
+          "attribution": "Vatican 2021–23 provisions; FSSP particular decree (2022)"
+        },
+        {
+          "role": "critical_response",
+          "english": "Claims that most bishops wanted restrictions should be tested against the full 2020 consultation, distinguishing selected leaked summaries from verified complete evidence. Equally, a celebration's legality under a former rule does not alone answer the requirements of later legislation. Administrative recourse offers a genuine juridical avenue but private dissent cannot of itself repeal an unwanted norm.",
+          "fr_present": true,
+          "source_ids": [
+            "MONT25",
+            "BRUNI25",
+            "CIC1752",
+            "TC21"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Inherited liturgical practice deserves pastoral consideration, particularly where it sustains reverence and vocations. Its defence should invoke accurate law and available procedures rather than grant oneself an unrecognised private exemption. Unity likewise requires bishops to examine the faithful's actual needs rather than dismiss the desire for the older books as inherently disloyal.",
+          "fr_present": true,
+          "source_ids": [
+            "SPL07",
+            "CIC2",
+            "FSSP22",
+            "AQU104"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "historical_legal_scope",
+      "assessment": "2021 regulations, 2023 rescript and specific FSSP privilege need distinct treatment rather than treating old law as permanent.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-08",
+      "module": "church-crisis",
+      "title_en": "Is ‘recognise and resist’ a coherent Catholic position?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "The 'recognise and resist' position distinguishes legitimate recognition of the Roman Pontiff's office from opposition to individual errors or commands that exceed lawful authority. Catholic theology does allow correction of superiors and refusal of commands against divine law; it does not thereby permit a standing immunity from all governance. Every alleged act of resistance needs its own theological and canonical justification.",
+          "fr_present": true,
+          "source_ids": [
+            "AQUINAS",
+            "AQU104",
+            "CCC212"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Sedevacantist writers, including Novus Ordo Watch, argue that 'recognise and resist' is inconsistent: in their view the extent of alleged papal doctrinal errors would be incompatible with possession of the papal office. This is an identifiable external criticism and should be presented in its own terms rather than dismissed as a complaint about one pope's personality.",
+          "fr_present": true,
+          "source_ids": [
+            "NOWRNR",
+            "NOWHERETIC"
+          ],
+          "attribution": "Novus Ordo Watch, published critique of 'recognise and resist'"
+        },
+        {
+          "role": "critical_response",
+          "english": "This criticism highlights a tension if resistance becomes a permanent repudiation of normal papal rule. But Bellarmine's conditional account of a manifest heretical pope does not turn every imprudent discipline or disputed statement into proven loss of office. The correct analysis distinguishes errors, public evidence, authority, and the church's recognisable communion.",
+          "fr_present": true,
+          "source_ids": [
+            "NOWRNR",
+            "BEL-2-30",
+            "V1",
+            "AQU104"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "A Catholic owes lawful obedience to the visible pastors and must refuse a genuine command to sin. Fraternal correction seeks amendment within communion rather than conferring on private persons the jurisdiction to decide apostolic succession. Charity and humility matter most when real ecclesiastical difficulties make obedience, evidence and discernment burdensome.",
+          "fr_present": true,
+          "source_ids": [
+            "AQUINAS",
+            "AQU104",
+            "LEO",
+            "CCC212"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "attributed_real_objection",
+      "assessment": "Sedevacantist critique of recognise/resist is actual proponent argument, not fact of proved vacancy.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-09",
+      "module": "church-crisis",
+      "title_en": "When does criticism become contempt, factionalism or private judgment?",
+      "source_file": "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "Criticism becomes factionalism when group loyalty supplants concern for doctrinal truth, or when hidden motives, inferiority or guilt are imputed without evidence. Catholics may dispute policies and identify grave errors without turning adherence to one liturgical circle into a measure of holiness. Accuracy, attribution, proportionality and charity remain moral obligations even in justified controversy.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC_JUD",
+            "CCC212",
+            "AQUINAS"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "The Catechism distinguishes rash judgement, detraction and calumny, and canon 212 requires concern for reverence and the common good when faithful state their opinions. These are identifiable ecclesial standards applying to polemicists, pastors, liturgical traditionalists and their critics alike. They do not shield clergy from fair scrutiny or excuse false allegations by their supporters.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC_JUD",
+            "CCC212"
+          ],
+          "attribution": "Catechism §2477; CIC canon 212 §3"
+        },
+        {
+          "role": "critical_response",
+          "english": "Veils, a preference for the traditional Mass or conservative political views are not evidence of pride, misogyny or hatred. Conversely, retaining an older custom does not excuse contempt for other Catholics, hostility to bishops or claims of superior holiness. Criticism must attach to identifiable acts and statements rather than caricatures of large communities.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC_JUD",
+            "CCC212",
+            "SC63"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "Truth should be confessed with fortitude, but sanctity is not measured by the severity of polemics or the purity of a faction. Humility accepts legitimate correction, charity avoids invented motives and justice reproduces even opponents' words accurately. Fidelity to the Church demands more than defeating fellow Catholics in a dispute.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC_JUD",
+            "AQUINAS",
+            "CCC212"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "unfounded_examples_caution",
+      "assessment": "Anecdotes about veils, communities or attitudes do not prove motive; retain focus on rash judgment, slander and documented acts.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    },
+    {
+      "id": "CR-AUT-10",
+      "module": "church-crisis",
+      "title_en": "How should an ordinary Catholic live faithfully during an ecclesial crisis?",
+      "source_file": "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "roles": [
+        {
+          "role": "answer",
+          "english": "An ordinary Catholic in an ecclesial crisis should obey legitimate commands, practise prayer and charity, receive lawful sacraments and learn the faith. Grave abuses deserve reporting and correction, not self-appointed universal jurisdiction over popes and bishops. Divine law never requires obedience to an objectively sinful command.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "CCC212",
+            "DV90"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "documented_position",
+          "english": "Aquinas II-II q.104 a.5 expressly denies obedience where a subordinate superior commands against God, while canon 212 also requires obedience and recognises respectful petition. These original sources reject both unlimited servility and the claim that personal criticism cancels all church authority.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "CCC212"
+          ],
+          "attribution": "St Thomas II-II q.104 a.5 and CIC canon 212"
+        },
+        {
+          "role": "critical_response",
+          "english": "Attending a reverent lawful liturgy is a prudent choice, but a preference does not settle contested episcopal orders, penalties or faculties. Distinguish verifiable documents from factional rumours and avoid verdicts on the souls of strangers. Real abuse must be presented to competent church or civil authorities.",
+          "fr_present": true,
+          "source_ids": [
+            "CCC212",
+            "CIC1752",
+            "DV90"
+          ],
+          "attribution": null
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "english": "A crisis in Church governance cannot cancel either divine law or the everyday virtues. Aquinas II–II q.104 a.5 makes divine commands superior to human superiors while preserving rightful obedience; canon 212 §3 demands that objections respect faith, morals, pastors and the dignity of persons. Donum veritatis §§28–31 refuses the substitution of publicity and pressure for sustained theological examination. Thus a Catholic may reject a genuinely sinful command, report proven abuse, pray and seek lawful correction, but must not treat partisan certainty, an alleged hidden motive or a contested canonical theory as a license to abandon family duties, charity or ecclesial communion.",
+          "fr_present": true,
+          "source_ids": [
+            "AQU104",
+            "CCC212",
+            "DV90"
+          ],
+          "attribution": null
+        }
+      ],
+      "disposition": "pastoral_synthesis_distinct",
+      "assessment": "Practical life advice remains distinct from office/jurisdiction debates: prayer, charity, ordinary duties, sacramental and lawful correction.",
+      "evidence_scope": "Full four English draft role texts examined, original context spot-check only, French not signed off",
+      "whole_book_required": false,
+      "fully_certified": false,
+      "production_modified": false
+    }
+  ]
+}
