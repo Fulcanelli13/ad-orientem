@@ -414,6 +414,7 @@ const sacredFamilyNames=Object.freeze({
 });
 const sacredStatusNames=Object.freeze({
   HISTORICALLY_APPROVED:"Historic ecclesiastical recognition",
+  NIHIL_OBSTAT_PUBLIC_DEVOTION_2024:"2024 nihil obstat for public devotion; alleged apparitions not declared supernatural",
   SHRINE_ATTESTED:"Shrine-documented account",
   HISTORICAL_TRADITION:"Historical devotional tradition",
   DIOCESAN_TRADITION:"Diocesan devotional tradition",

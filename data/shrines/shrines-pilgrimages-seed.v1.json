@@ -3788,6 +3788,25 @@
         "SG-R70-GEO-SG-INV-0724"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "name": "St James Parish Church — Međugorje pilgrimage centre",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "St James Apostle; international Queen of Peace pilgrimage and prayer centre",
+      "origin_summary": "St James is the parish church and central gathering place for pilgrimages to Međugorje. The Holy See's 2024 nihil obstat permits public devotion associated with the spiritual experience but does not declare the alleged Marian apparitions supernatural.",
+      "origin_summary_fr": "L'église paroissiale Saint-Jacques constitue le centre de rassemblement des pèlerinages à Međugorje. Le nihil obstat du Saint-Siège en 2024 permet la dévotion publique liée à cette expérience spirituelle, sans déclarer surnaturelles les apparitions mariales alléguées.",
+      "associated_saints": [
+        "Saint James the Greater"
+      ],
+      "source_ids": [
+        "SG-R71-MEDJUGORJE-PARISH",
+        "SG-R71-MEDJUGORJE-DDF",
+        "SG-R71-MEDJUGORJE-GEO"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -7003,6 +7022,21 @@
         "SG-R70-CUSTODIAN-SG-INV-0724"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:BA:medjugorje-destination",
+      "name": "Pilgrimage to Međugorje — Queen of Peace",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "International destination for parish-centred pilgrimages, Mass, reconciliation and prayer. The 2024 nihil obstat concerns the spiritual experience and public devotion; alleged apparitions are not declared supernatural. Apparition Hill and Cross Mountain are separate geographic places requiring distinct sourcing.",
+      "scope_note_fr": "Destination internationale de pèlerinage autour de la paroisse, de la messe, de la réconciliation et de la prière. Le nihil obstat de 2024 concerne l'expérience spirituelle et la dévotion publique ; il ne reconnaît pas les apparitions alléguées comme surnaturelles. La Colline des Apparitions et le mont Križevac doivent être recensés séparément et documentés.",
+      "source_ids": [
+        "SG-R71-MEDJUGORJE-PARISH",
+        "SG-R71-MEDJUGORJE-DDF"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [
