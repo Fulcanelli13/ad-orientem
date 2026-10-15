@@ -16,7 +16,7 @@ assert.equal(sample.work.rights.scope,"REVIEWED_EXCERPTS_ONLY");
 assert.equal(sample.work.rights.approvedExcerpts.length,2);
 assert.equal(sample.records[0].djvuPage-sample.records[0].printedPage,48);
 assert.equal(sample.records[1].djvuPage-sample.records[1].printedPage,48);
-assert.equal(normalizeWitnessLocator(profile,"p255:s001").sourceAnchor,"ce1908-v3-p255-s001");
+assert.equal(normalizeWitnessLocator(profile,"p255:s001").sourceAnchor,"ce1913-v3-p255-s001");
 assert.throws(()=>normalizeWitnessLocator(profile,"p255:s1"),/PRINT_PAGE_INVALID/);
 const parsed=extractReviewedWitnessDocument({
  profile,work:sample.work,review:sample.review,
@@ -76,8 +76,8 @@ assert.throws(()=>extractReviewedWitnessDocument({
  profile,work:wrongWork.work,review:wrongWork.review,
  heading:wrongWork.heading,records:wrongWork.records
 }),/REVIEW_IDENTITY_REQUIRED/);
-console.log("PASS scanned 1908 Fortescue original: 2 approved short excerpts, printed pages 255-256, scan pages 303-304, lazy 2 chunks");
-console.log(JSON.stringify({realPrintedEdition:"Catholic Encyclopedia III (1908)",
+console.log("PASS scanned 1913 Fortescue print witness: 2 approved short excerpts, printed pages 255-256, scan pages 303-304, lazy 2 chunks");
+console.log(JSON.stringify({realPrintedEdition:"Catholic Encyclopedia III (1913 special edition)",
  excerptPassages:2,originalScanPagesChecked:2,
  metadataOnlyFetches:0,firstOpenChunkFetches:1,secondOpenChunkFetches:2,
  entireWorkCleared:false,productionImportAllowed:false}));
