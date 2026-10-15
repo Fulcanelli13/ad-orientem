@@ -121,7 +121,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm" aria-label="'+L(vm.language,"Find a traditional Mass","Trouver une messe traditionnelle")+'">'+L(vm.language,"Mass","Messe")+'</button>';
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Explore other sections","Explorer d’autres rubriques")+'">'+L(vm.language,"More","Plus")+'</summary><div><strong>'+L(vm.language,"Explore further","Pour approfondir")+'</strong><nav class="aoHeritageSecondary">';
   html+='<button type="button" data-bible-atlas-open>'+L(vm.language,"Biblical Atlas · map through time","Atlas biblique · carte et chronologie")+'</button>';
-  for(const [key,en,fr] of [["saints","Saints · preview","Saints · aperçu"],["traditions","Living traditions","Traditions vivantes"],["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"]]){
+  for(const [key,en,fr] of [["traditions","Living traditions","Traditions vivantes"],["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"]]){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+key+'">'+L(vm.language,en,fr)+'</button>';
   }
   html+='</nav>';
@@ -137,6 +137,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div><button type="button" class="aoHeritageGlossaryButton" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></div>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints" aria-label="'+esc(L(vm.language,"Open Map of Saints","Ouvrir la carte des saints"))+'">'+esc(L(vm.language,"Saints","Saints"))+"</button>";
   html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
   for(const key of Object.keys(CATEGORY_LABELS))html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(active.length===1&&active.includes(key)?"active":"")+'" aria-pressed="'+String(active.length===1&&active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
   html+='</nav>';
