@@ -2386,7 +2386,7 @@ export async function mountNativeReaderPreview({
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
     // LIVE mode switches. No hidden 65-card ordinary opening can reappear.
     readerModel=ready.curatedEligible && ready.presentationModel?.preMassHandoff==="INTROIT" &&
-      rebuilt.mode==="LIVE" && [65,66].includes(rebuilt.presentationModel.totalCards)
+      rebuilt.mode==="LIVE" && [65,66,67].includes(rebuilt.presentationModel.totalCards)
       ? projectCuratedIntroitEntryLiveCards(rebuilt.presentationModel)
       : rebuilt.presentationModel;
 
