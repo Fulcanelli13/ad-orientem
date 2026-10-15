@@ -53,7 +53,12 @@ const live=new Set(geography.places.map(x=>x.place_id));
 for(const entry of r71.reviewed_existing)assert.ok(live.has(entry.place_id));
 for(const entry of r71.rejected_wrong_physical_alias){
   const candidate=r70.candidates.find(x=>x.candidate_id===entry.candidate_id);
-  assert.equal(candidate.reconciliation_status,"PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW");
+  // R71 rejects an incorrect alias to a different sanctuary, not later independent site research.
+  if(entry.candidate_id==="SG-INV-0377"){
+    assert.equal(candidate.reconciliation_status,"CONFIRMED_EXISTING_PROMOTION");
+    assert.equal(candidate.confirmed_place_id,"place:US:allentown-guadalupe-national-shrine");
+    assert.notEqual(candidate.confirmed_place_id,"place:US:guadalupe-shrine-la-crosse","Allentown must never be conflated with La Crosse");
+  }else assert.equal(candidate.reconciliation_status,"PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW");
   assert.equal(candidate.possible_existing_place_id,null,"Do not conflate distinct sanctuaries");
 }
 const q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json");
