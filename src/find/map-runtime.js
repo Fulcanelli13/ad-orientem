@@ -340,6 +340,7 @@ export function mapViewport(map){
 }
 export async function mountExploreMap(container,items,{
   win=globalThis,onSelect=()=>{},initialViewport=null,allowEmpty=false,
+  styleOverride=null,
 }={}){
   let features=exploreMapFeatures(items);
   if(!container||(!features.length&&!allowEmpty)||!win?.document)return null;
@@ -349,7 +350,7 @@ export async function mountExploreMap(container,items,{
   const reducedMotion=win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
   const map=new maplibre.Map({
     container,
-    style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
+    style:styleOverride??win.AO_EXPLORE_MAP_STYLE_URL??win.AO_DIRECTORY_MAP_STYLE_URL??DEFAULT_STYLE,
     ...boundedWorldMapOptions(initialViewport),
     attributionControl:true,
   });

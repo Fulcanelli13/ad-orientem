@@ -281,7 +281,8 @@ export function renderBibleAtlasToString(vm){
  '<div><small>'+esc(L(lang,"EXPLORE · SCRIPTURE PREVIEW","EXPLORER · ÉCRITURE · APERÇU"))+'</small><h1>'+esc(L(lang,"Biblical Atlas","Atlas biblique"))+'</h1></div>'+
  '<button type="button" data-bible-follow aria-label="'+esc(L(lang,"Centre selected event","Recentrer l’étape sélectionnée"))+'"'+(cinematic?' aria-pressed="'+String(vm.cinemaFollow!==false)+'"':"")+'>⌖</button></header>'+
  '<div class="aoBibleAtlasEraHeader"><span data-bible-era-name>'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+'</span>'+
- '<small>'+esc(L(lang,"Swipe events · selected reading sequence, not a dated history","Parcourez les épisodes · parcours choisi, non une chronologie datée"))+'</small></div>'+
+ '<small>'+esc(L(lang,"Swipe events · selected reading sequence, not a dated history","Parcourez les épisodes · parcours choisi, non une chronologie datée"))+
+ (cinematic?' · '+esc(L(lang,"Physical map · modern shorelines, no political borders","Carte physique · littoraux actuels, sans frontières politiques")):'')+'</small></div>'+
  (cinematic?'<nav class="aoBibleCinemaChapters" data-bible-chapters aria-label="'+esc(L(lang,"Journey shortcuts","Raccourcis par période"))+'">'+atlasCinemaChapters(steps).map(ch=>
   '<button type="button" data-bible-chapter="'+ch.index+'" aria-pressed="'+String(ch.era===s.era)+'">'+esc(L(lang,ch.title_en,ch.title_fr))+'</button>').join("")+'</nav>':"")+
  '<div class="aoBibleAtlasTimeline"><div class="aoBibleAtlasCursor" aria-hidden="true"></div><div class="aoBibleAtlasTrack" data-bible-track aria-label="'+esc(L(lang,"Continuous biblical chronology","Chronologie biblique continue"))+'"><div class="aoBibleAtlasTrackPad" aria-hidden="true"></div>';
