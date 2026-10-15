@@ -364,7 +364,21 @@
       ],
       "scanPageOffsetEstablished": false,
       "imageChecked": false,
-      "blocker": "The full 72MB scan could not be fetched through the available access path; do not infer PDF page index."
+      "blocker": "Scanned original is 72MB and full PDF fetch exceeded source tool maximum; Commons exposes thumbnails, but target-page thumbnail could not be accessed by permitted direct page selection. A cover thumbnail is not proof for printed pp.659–660.",
+      "independentPageWitness": {
+        "catalog": "https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf",
+        "physicalTotalPages": 788,
+        "pdfBytesApprox": 75610603,
+        "edition": "B. Herder 1902 / IA holysacrificeofm00gihriala",
+        "imagePreviewExamined": "COVER_ONLY_PAGE_1",
+        "targetAuthorPassagesVisuallyExamined": false,
+        "otherCatalog": "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "chapter": "First Prayer of Canon after Consecration starts p.646; second starts p.667",
+        "targetPrintedPages": [
+          659,
+          660
+        ]
+      }
     },
     {
       "work": "Guéranger",
@@ -372,12 +386,31 @@
       "scanMetadataUrl": "https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C",
       "scanKind": "KU_LEUVEN_DIGITIZED_BOOK_LISTED_2024",
       "targetPrintedChapters": [
-        "Memento des vivants p.126",
-        "Quam oblationem p.140",
-        "Supplices te rogamus (verify page)"
+        "Memento des vivants — printed chapter start p.126 (specific phrase page unknown)",
+        "Quam oblationem — printed chapter start p.140 (specific phrase page unknown)"
       ],
       "imageChecked": false,
-      "blocker": "Digitized edition landing page available; exact original page scans have not been inspected."
+      "blocker": "Individual 1885 scan page images and specific paragraph page numbers could not be opened; Google Books catalog/page links and Penn IIIF metadata alone are not visual collation.",
+      "independentDigitizations": [
+        {
+          "institution": "KU Leuven Libraries",
+          "edition": "Solesmes second edition 1885",
+          "digitized": "2024-04-15",
+          "catalogUrl": "https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C",
+          "scope": "ENTIRE_BOOK_DIGITIZED_CATALOG_AND_PAGE_LINKS",
+          "manifestImageInspected": false
+        },
+        {
+          "institution": "University of Pennsylvania Libraries (Yarnall theological pamphlets)",
+          "edition": "Solesmes 1885",
+          "catalogUrl": "https://colenda.library.upenn.edu/catalog/81431-p3vd6q69w",
+          "physicalPages": 271,
+          "scope": "INDEPENDENT_1885_DIGITIZED_BOOK_METADATA_WITH_IIIF_ADVERTISED",
+          "manifestImageInspected": false,
+          "caveat": "Repository announces migration to digitalcollections.library.upenn.edu around October 2026; old Colenda page timed out when fetching this turn"
+        }
+      ],
+      "exactScanImagePageMatched": false
     },
     {
       "work": "St Alphonsus",
@@ -456,5 +489,95 @@
     "kind": "ORIGINAL_EDITORS_PRINTED_NOTE_VISUALLY_INSPECTED",
     "conclusion": "The 1887 editor notes close verbal parallels with a 1677 Oratorian publication linked to Pierre de Condren and edited by Pasquier Quesnel, but explicitly doubts that this was Alphonsus's exact earlier French source; does not provide enough evidence to assign a canonical contributor or claim exact borrowing from this book.",
     "distinction": "This verifies editorial uncertainty on an original scan and does NOT increase the 1/6 side-by-side matching author-passage count. Guéranger cannot be the cited earlier author by chronology."
+  },
+  "phaseGTargetedPassageReview": {
+    "date": "2026-10-15",
+    "purpose": "Resolve remaining 5 facsimile targets without reopening 422 evidence records",
+    "crossSourceTranscriptionQa": [
+      {
+        "claimIds": [
+          "VER-045",
+          "I006"
+        ],
+        "work": "Gueranger 1885",
+        "massCue": "AO.SM.C0156",
+        "witness": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "location": "MEMENTO DES VIVANTS; first occurrence of quotation",
+        "transcriptionAsSeen": "quorum tibi rides cognita est et nota devotio",
+        "referenceMissalCorrectText": "quorum tibi fides cógnita est et nota devótio",
+        "assessment": "OBVIOUS_TRANSCRIPTION_OR_OCR_ERROR_IN_ONLINE_HISTORICAL_TEXT_NOT_IN_1962_MISSAL",
+        "action": "NEVER IMPORT transcribed 'rides'; keep 1962 Latin source, exact claim still source-supported by subsequent correct 'fides' in same historic text."
+      },
+      {
+        "claimIds": [
+          "VER-049",
+          "I016"
+        ],
+        "work": "Gueranger 1885",
+        "massCue": "AO.SM.C0164",
+        "witness": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "location": "QUAM OBLATIONEM, paragraphs after Latin prayer",
+        "transcriptionAsSeen": "rationabilem ... Rm 12,1",
+        "assessment": "EXACT_INFERENTIAL_LINK_ROMANS_12_1_PRESENT_IN_EDITED_FRENCH_TRANSCRIPTION",
+        "action": "PASS_CLAIM_TEXT_BUT_HOLD_1885_PRINTED_PAGE_IMAGE"
+      }
+    ],
+    "reviewerGuard": "An online historical transcription with typos is not a replacement Latin Missal witness, and any reproduced words must be matched against the canonical 1962 prayer unit. An original page-image verification requires examining the target physical book's target printed page, not seeing a book's cover, catalog, PDF metadata or a separate edition.",
+    "remainingImageTargets": [
+      {
+        "claimIds": [
+          "VER-045",
+          "I006"
+        ],
+        "edition": "Gueranger 1885",
+        "chapterStartPrintedPage": 126,
+        "exactParagraphPrintedPage": null,
+        "scanImagePage": null,
+        "imageVerification": "PENDING"
+      },
+      {
+        "claimIds": [
+          "VER-049",
+          "I016"
+        ],
+        "edition": "Gueranger 1885",
+        "chapterStartPrintedPage": 140,
+        "exactParagraphPrintedPage": null,
+        "scanImagePage": null,
+        "imageVerification": "PENDING"
+      },
+      {
+        "claimIds": [
+          "VER-057",
+          "I054"
+        ],
+        "edition": "Gihr 1902 English",
+        "printedPage": 659,
+        "scanImagePage": null,
+        "imageVerification": "PENDING"
+      },
+      {
+        "claimIds": [
+          "VER-058",
+          "I056"
+        ],
+        "edition": "Gihr 1902 English",
+        "printedPage": 659,
+        "scanImagePage": null,
+        "imageVerification": "PENDING"
+      },
+      {
+        "claimIds": [
+          "VER-059",
+          "I058"
+        ],
+        "edition": "Gihr 1902 English",
+        "printedPage": 660,
+        "scanImagePage": null,
+        "imageVerification": "PENDING"
+      }
+    ],
+    "publicationStatus": "NO_NEW_PUBLICATION_APPROVAL",
+    "additionalOriginalPageImagesCertifiedThisPass": 0
   }
 }
