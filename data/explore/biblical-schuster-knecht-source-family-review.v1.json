@@ -384,8 +384,9 @@
     "wikisource1910NarrativeTerritoriesLocated": 9,
     "wikisource1910CommentaryTerritoriesLocated": 9,
     "wikisource1910OriginalPrintedParagraphsApproved": 0,
-    "wikisource1910ApplicationSubspanHeadingsConfirmed": 6,
-    "wikisource1910CommentaryEnvelopesWithUnreviewedApplication": 3
+    "wikisource1910ApplicationSubspanHeadingsConfirmed": 9,
+    "wikisource1910CommentaryEnvelopesWithUnreviewedApplication": 0,
+    "wikisource1910OriginsRoleSpansExcludingFootnotes": 27
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -868,9 +869,21 @@
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
         "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
-        "containsDistinctApplication": null,
-        "homogeneousCommentary": null,
-        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 79,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 79,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-NOAH-COVENANT-NARRATIVE",
@@ -917,9 +930,21 @@
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
         "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
-        "containsDistinctApplication": null,
-        "homogeneousCommentary": null,
-        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 84,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 84,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-BABEL-NARRATIVE",
@@ -966,12 +991,24 @@
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
         "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
-        "containsDistinctApplication": null,
-        "homogeneousCommentary": null,
-        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 88,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 88,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       }
     ],
-    "boundaryPrecisionNote": "18 original enclosing section records are NOT 18 homogeneous textual spans. Six commentary envelopes contain a distinct Application section, separated by exact heading markers on scan pages 46, 50, 56, 61, 66, 72. The other three commentary envelopes have Application presence UNREVIEWED. Every in-page marker requires printed-image or source-text-owner collation before paragraph certification.",
+    "boundaryPrecisionNote": "Eight authored Chapters I–VIII contain nine narrative parts (Chapter IV in two parts), nine commentary parts and nine separately headed Applications: 27 text-role subspans beyond separate footnotes. Application boundary pages: 46, 50, 56, 61, 66, 72, 79, 84, 88. These are historical unproofread Wikisource transcriptions, not original print-image certification.",
     "chapterRange": {
       "firstRoman": "I",
       "lastRoman": "VIII",
@@ -1030,11 +1067,11 @@
       }
     ],
     "roleSubspanOverlays": {
-      "status": "SIX_APPLICATION_HEADINGS_VERIFIED_BY_WIKISOURCE_TEXT_NOT_PRINT_IMAGES",
+      "status": "NINE_APPLICATION_HEADINGS_IDENTIFIED_IN_UNPROOFREAD_WIKISOURCE_PAGES_NOT_PRINT_IMAGE_CERTIFIED",
       "totalParentEnvelopes": 18,
       "originalNarrativeEnvelopes": 9,
-      "commentaryEnvelopesContainingApplication": 6,
-      "commentaryEnvelopesApplicationNotYetReviewed": 3,
+      "commentaryEnvelopesContainingApplication": 9,
+      "commentaryEnvelopesApplicationNotYetReviewed": 0,
       "overlays": [
         {
           "id": "APPLICATION-KNECHT1910-CREATION",
@@ -1287,6 +1324,132 @@
           "translationPermittedNow": false,
           "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
           "topic": "Cain"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-FLOOD",
+          "sourceParentId": "KNECHT1910-FLOOD-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            76,
+            79
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 76,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 79,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 79,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 79,
+              "heading": "Chapter VII.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/79",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/79",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "The Deluge"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-NOAH-COVENANT",
+          "sourceParentId": "KNECHT1910-NOAH-COVENANT-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            82,
+            84
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 82,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 84,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 84,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 84,
+              "heading": "Chapter VIII.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/84",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/84",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Noe's Offering"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-BABEL",
+          "sourceParentId": "KNECHT1910-BABEL-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            86,
+            89
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 86,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 88,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 88,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 89,
+              "heading": "Chapter IX.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/88",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/89",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Tower of Babel"
         }
       ],
       "sourceTextCopied": false,
@@ -1297,9 +1460,14 @@
         56,
         61,
         66,
-        72
+        72,
+        79,
+        84,
+        88
       ],
-      "sourceEditionAuthority": "Source edition is Knecht English 1910; do not equate with historical Schuster 1925 or French 1887 edition."
+      "sourceEditionAuthority": "Source edition is Knecht English 1910; do not equate with historical Schuster 1925 or French 1887 edition.",
+      "distinctTextRolesCountExcludingFootnotes": 27,
+      "note": "Nine narrative, nine commentary and nine Application spans, but original 18 envelope records are retained and decorated with role splits. This count does not imply certified exact words or completed footnote segmentation."
     }
   },
   "wikisource1910SourceQualityReview": {
