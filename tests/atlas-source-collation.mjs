@@ -14,6 +14,9 @@ assert.equal(collation.sources.pleiadesRevision,old.source.revision);
 assert.equal(collation.sources.openBibleRevision,"7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f");
 assert.equal(collation.sources.openBibleModernBlob,"9da83575127fc5aa1dab7aff61e01d4bc5ac9fdc");
 assert.equal(collation.records.length,28);
+assert.equal(collation.counts.originalModernGeocodingCoordinatesExact,24);
+assert.equal(collation.counts.originalModernGeocodingCoordinatesDiffer,4);
+const coordinateExceptions=new Set(["bethlehem","capernaum","nazareth","tabor"]);
 assert.equal(new Set(collation.records.map(x=>x.anchorKey)).size,28);
 assert.equal(phase2.records.length,35);
 const matchByKey=new Map(collation.records.map(x=>[x.anchorKey,x]));
@@ -53,11 +56,20 @@ for(const original of old.records){
  const modern=match.openBible;
  assert.equal(modern.id,original.canonicalLocationEvidence.sourceRecordId);
  assert.ok(modern.hasOriginalRecord);
- assert.ok(modern.sourceUrl===original.canonicalLocationEvidence.url);
+ assert.equal(modern.currentAtlasSourceUrl,original.canonicalLocationEvidence.url);
  assert.ok(Number.isFinite(modern.precisionMeters));
  const [lng,lat]=modern.coordinates.split(",").map(Number);
- assert.ok(owners.some(g=>g.key===original.anchorKey&&Math.abs(g.lat-lat)<1e-6&&Math.abs(g.lng-lng)<1e-6),
-   "OpenBible and current pin diverged "+original.anchorKey);
+ const current=owners.find(g=>g.key===original.anchorKey);
+ assert.ok(current,"Missing original Atlas coordinate owner "+original.anchorKey);
+ const diff=111195*Math.hypot(lat-current.lat,(lng-current.lng)*Math.cos((lat+current.lat)*Math.PI/360));
+ assert.ok(Math.abs(diff-modern.coordinateDifferenceMeters)<0.1);
+ if(coordinateExceptions.has(original.anchorKey)){
+  assert.ok(diff>0.1&&diff<50,"Existing separately sourced pin discrepancy changed "+original.anchorKey);
+  assert.equal(modern.coordinateRelationship,"EXISTING_PIN_HAS_SEPARATE_COORDINATE_AUTHORITY");
+ }else{
+  assert.ok(diff<0.1,"Unexpected original source coordinate difference "+original.anchorKey);
+  assert.equal(modern.coordinateRelationship,"EXACT_SOURCE_COORDINATE");
+ }
  assert.equal(match.editorial,"CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED");
 }
 assert.equal(names,128);
