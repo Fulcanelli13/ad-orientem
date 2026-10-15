@@ -45,6 +45,17 @@ function css(){
 .aoSLHandoffs{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLHandoffs small{display:block;margin-bottom:9px;color:var(--muted,#9ba5b1);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}.aoSLHandoffButtons{display:flex;flex-wrap:wrap;gap:8px}.aoSLBtn{font-size:.78rem}
 .aoSLSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin:24px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLSources summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted,#9ba5b1);font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoSLSource{margin:11px 0;padding-left:10px;border-left:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));font-size:.76rem;line-height:1.45}.aoSLSource a{color:var(--liturgical,#c9ad78);text-decoration:none}.aoSLSource em{display:block;margin-top:2px;color:var(--muted,#9ba5b1);font-style:normal}.aoSLSourceLoc{margin-top:4px;color:var(--muted,#9ba5b1);font-size:.71rem}
 .aoSLInlineSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin-top:10px;color:var(--muted,#9ba5b1);font-size:max(13px,.8125rem);line-height:1.5}.aoSLInlineSources span{color:var(--muted,#9ba5b1)}.aoSLInlineSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:3px;overflow-wrap:anywhere}.aoSLInlineSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoSLSourceHold{font-style:italic}
+.aoSLSourceIntro{margin:5px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLFurtherReading h3{margin:12px 0 5px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLFurtherReading ul{margin:4px 0 14px;padding-left:20px}.aoSLFurtherReading li{margin:9px 0}.aoSLFurtherReading a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-underline-offset:3px}
+.aoSLWorks{margin:12px 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:4px}
+.aoSLWorks summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+
+.aoSLEvidence{margin:15px 0 4px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:7px}
+.aoSLEvidence summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLEvidence summary:focus-visible,.aoSLSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
+.aoSLEvidence ol{margin:4px 0;padding-left:22px}.aoSLEvidence li{margin:13px 0}.aoSLEvidence li strong{display:block;font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+
 .aoSLNav{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:25px}.aoSLNav button{min-height:48px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));border-radius:12px;background:var(--ao-surface-1,var(--surface-1,#101821));color:inherit;padding:10px 12px;text-align:left}.aoSLNav button:last-child{text-align:right}.aoSLNav button:disabled{opacity:.35}.aoSLNav small{display:block;color:var(--muted,#9ba5b1);font-size:.64rem;text-transform:uppercase;letter-spacing:.07em}.aoSLNav strong{display:block;margin-top:3px;font-size:.8rem;line-height:1.25}
 @media(max-width:430px){.aoSLWrap{padding-left:13px;padding-right:13px}.aoSLBlock p{font-size:.98rem}.aoSLHero h1{font-size:2.25rem}.aoSLHandoffButtons{display:grid}.aoSLBtn{width:100%}}
 /* Semantic reading hierarchy: paragraphs and practice text, not compact labels. */
@@ -111,10 +122,48 @@ function claimSourceMarkup(win,claimIds){
   return `<div class="aoSLInlineSources" data-ao-sl-claim-sources="${esc((claimIds||[]).join(" "))}"><span>${esc(L(win,"Sources","Sources"))}:</span> ${links.join(" · ")}</div>`;
 }
 
+function lessonEvidenceMarkup(win,lesson){
+  const sections=lesson.blocks.map(block=>'<li data-ao-sl-evidence-block="'+esc(pick(win,block.h))+'"><strong>'+esc(pick(win,block.h))+'</strong>'+
+    claimSourceMarkup(win,block.claims)+'</li>').join("");
+  const practice='<li data-ao-sl-evidence-block="practice"><strong>'+esc(L(win,"Practice","Mise en pratique"))+'</strong>'+
+    claimSourceMarkup(win,lesson.practice.claims)+'</li>';
+  return '<details class="aoSLEvidence"><summary>'+
+    esc(L(win,"Evidence by section","Sources par section"))+' · '+(lesson.blocks.length+1)+
+    '</summary><ol>'+sections+practice+'</ol></details>';
+}
+
+// Explicit, conservative reading selections; an evidence citation never
+// becomes a reading recommendation merely because a link exists.
+const SPIRITUAL_LIFE_FURTHER_READING=Object.freeze({
+ SL01:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL02:["SL-FRANCIS-SALES-DEVOUT-LIFE","SL-TANQUEREY-1930"],
+ SL03:["SL-TANQUEREY-1930","SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL04:["SL-TANQUEREY-1930"],
+ SL05:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL06:["SL-IGNATIUS-EXERCISES"],SL07:["SL-IGNATIUS-EXERCISES"],
+ SL08:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL09:["SL-FRANCIS-SALES-DEVOUT-LIFE"],
+ SL10:["SL-TANQUEREY-1930"],SL11:[],
+ SL12:["SL-PIUS-XI-MISERENTISSIMUS","SL-PAUL-VI-INDULGENTIARUM"],
+ SL13:[],SL14:["SL-FRANCIS-SALES-DEVOUT-LIFE"]
+});
+function lessonReadingMarkup(win,lesson,sources){
+ const selected=SPIRITUAL_LIFE_FURTHER_READING[lesson.id]||[];
+ const approved=selected.filter(id=>sources.some(s=>s.id===id)).slice(0,4);
+ if(!approved.length)return "";
+ return '<div class="aoSLFurtherReading"><h3>'+esc(L(win,"Further reading","Pour approfondir"))+'</h3><ul>'+
+   approved.map(id=>{
+    const source=sources.find(s=>s.id===id);
+    const url=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
+    return /^https:\/\//.test(url)
+      ?'<li><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.title)+' ↗</a></li>'
+      :'';
+   }).join("")+'</ul></div>';
+}
 function sourceMarkup(win,lesson){
   const sources=lessonSources(lesson);
   if(!sources.length)return "";
-  return `<details class="aoSLSources"><summary>${esc(L(win,"Sources & provenance","Sources & provenance"))} ▾</summary>${sources.map(source=>{
+  return `<details class="aoSLSources" data-ao-sl-source-disclosure><summary>${esc(L(win,"Sources & further reading","Sources et lectures complémentaires"))} ▾</summary>${lessonReadingMarkup(win,lesson,sources)}<details class="aoSLWorks"><summary>${esc(L(win,"Sources & provenance","Sources et provenance"))} · ${sources.length}</summary><p class="aoSLSourceIntro">${esc(L(win,"Works and editions cited in this lesson (not a curated reading list).","Ouvrages et éditions cités dans cette leçon (sans sélection de lecture supplémentaire)."))}</p>${sources.map(source=>{
     const locators=Array.isArray(source.locators)?source.locators:(source.locator?[source.locator]:[]);
     const meta=[source.authority_type?String(source.authority_type).replaceAll("_"," "):"",source.role?String(source.role).replaceAll("_"," "):""].filter(Boolean).join(" · ");
     const target=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
@@ -128,7 +177,7 @@ function sourceMarkup(win,lesson){
       ?`<a href="${esc(target)}" target="_blank" rel="noopener noreferrer"><strong>${esc(source.title)}</strong> ↗</a>`
       :`<strong>${esc(source.title)}</strong> · ${esc(L(win,"Direct source link not verified","Lien direct non vérifié"))}`;
     return `<div class="aoSLSource">${linked}${meta?`<em>${esc(meta)}</em>`:""}${applicable.length?`<div class="aoSLSourceLoc">${applicable.map(esc).join("<br>")}</div>`:""}</div>`;
-  }).join("")}</details>`;
+  }).join("")}</details>${lessonEvidenceMarkup(win,lesson)}</details>`;
 }
 
 // Contextual actions extend the existing sourced lesson's practical exit.
@@ -157,7 +206,7 @@ function lessonHtml(win,lesson){
   const index=SPIRITUAL_LIFE_LESSONS.findIndex(item=>item.id===lesson.id);
   const prev=index>0?SPIRITUAL_LIFE_LESSONS[index-1]:null;
   const next=index<SPIRITUAL_LIFE_LESSONS.length-1?SPIRITUAL_LIFE_LESSONS[index+1]:null;
-  return `${top(win,pick(win,lesson.title),index+1)}<main class="aoSLWrap"><section class="aoSLLessonHead"><div class="aoSLKicker">${esc(L(win,"Spiritual Life","Vie spirituelle"))}</div><h1>${esc(pick(win,lesson.title))}</h1><p>${esc(pick(win,lesson.summary))}</p>${({SL01:"G001",SL03:"G324",SL06:"G328",SL07:"G328",SL12:"G044"})[lesson.id]?'<div class="aoSLContextTerm">'+glossaryContextCapsule(({SL01:"G001",SL03:"G324",SL06:"G328",SL07:"G328",SL12:"G044"})[lesson.id],{french:isFr(win)})+'</div>':''}</section><div class="aoSLBlocks">${lesson.blocks.map(block=>`<section class="aoSLBlock"><h2>${esc(pick(win,block.h))}</h2><p>${esc(pick(win,block.t))}</p>${claimSourceMarkup(win,block.claims)}</section>`).join("")}</div><section class="aoSLPractice"><small>${esc(L(win,"Practice · not scored","Mise en pratique · sans score"))}</small><strong>${esc(pick(win,lesson.practice.prompt))}</strong><p>${esc(pick(win,lesson.practice.guidance))}</p>${claimSourceMarkup(win,lesson.practice.claims)}</section>${handoffMarkup(win,lesson)}${sourceMarkup(win,lesson)}<nav class="aoSLNav" aria-label="${esc(L(win,"Lesson navigation","Navigation des leçons"))}"><button type="button" data-ao-sl-prev ${prev?"":"disabled"}><small>${esc(L(win,"Previous","Précédente"))}</small><strong>${prev?esc(pick(win,prev.title)):"—"}</strong></button><button type="button" data-ao-sl-next ${next?"":"disabled"}><small>${esc(L(win,"Next","Suivante"))}</small><strong>${next?esc(pick(win,next.title)):"—"}</strong></button></nav></main>`;
+  return `${top(win,pick(win,lesson.title),index+1)}<main class="aoSLWrap"><section class="aoSLLessonHead"><div class="aoSLKicker">${esc(L(win,"Spiritual Life","Vie spirituelle"))}</div><h1>${esc(pick(win,lesson.title))}</h1><p>${esc(pick(win,lesson.summary))}</p>${({SL01:"G001",SL03:"G324",SL06:"G328",SL07:"G328",SL12:"G044"})[lesson.id]?'<div class="aoSLContextTerm">'+glossaryContextCapsule(({SL01:"G001",SL03:"G324",SL06:"G328",SL07:"G328",SL12:"G044"})[lesson.id],{french:isFr(win)})+'</div>':''}</section><div class="aoSLBlocks">${lesson.blocks.map(block=>`<section class="aoSLBlock"><h2>${esc(pick(win,block.h))}</h2><p>${esc(pick(win,block.t))}</p></section>`).join("")}</div><section class="aoSLPractice"><small>${esc(L(win,"Practice · not scored","Mise en pratique · sans score"))}</small><strong>${esc(pick(win,lesson.practice.prompt))}</strong><p>${esc(pick(win,lesson.practice.guidance))}</p></section>${handoffMarkup(win,lesson)}${sourceMarkup(win,lesson)}<nav class="aoSLNav" aria-label="${esc(L(win,"Lesson navigation","Navigation des leçons"))}"><button type="button" data-ao-sl-prev ${prev?"":"disabled"}><small>${esc(L(win,"Previous","Précédente"))}</small><strong>${prev?esc(pick(win,prev.title)):"—"}</strong></button><button type="button" data-ao-sl-next ${next?"":"disabled"}><small>${esc(L(win,"Next","Suivante"))}</small><strong>${next?esc(pick(win,next.title)):"—"}</strong></button></nav></main>`;
 }
 
 export function createSpiritualLifeRuntime(win=globalThis){

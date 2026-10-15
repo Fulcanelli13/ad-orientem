@@ -78,7 +78,9 @@ for(const row of failures){
 }
 const runtime=readFileSync(new URL("../src/learn/formation-recovery-review.js",import.meta.url),"utf8");
 assert.match(runtime,/formationSourceBibleMarkup\(s,\{french:isFr\(win\)\}\)/);
-assert.match(runtime,/href="'\+esc\(s.url\)\+'"/,
- "Original source hyperlink must remain visible alongside the in-app reader");
+assert.match(runtime,/const link=sourceReferenceSafeUrl\(s\?\.url\)/,
+ "Source link must be derived from the original source URL through shared HTTPS validation");
+assert.match(runtime,/href="'\+esc\(link\)\+'"/,
+ "The original HTTPS source hyperlink must remain visible alongside the in-app Scripture reader");
 console.log("PASS Formation Bible handoff: "+linked+" exact source-bound passages across "+eligiblePackets+
  " packets from "+encountered+" total source identities; other citations left external");
