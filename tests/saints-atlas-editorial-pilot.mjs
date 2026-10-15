@@ -91,7 +91,21 @@ const previewHtml=readFileSync(new URL("../previews/saints-map-holiness-first-20
 const previewJson=previewHtml.split('<script type="application/json" id="preview-source">')[1]?.split("</script>")[0];
 assert(previewJson,"A source-embedded preview must be portable and auditable");
 const preview=JSON.parse(previewJson);
-assert.deepEqual(preview.people,pilot.people,"Preview must not change canonical research profile text");
+// The standalone review HTML is a frozen phase-2 snapshot; the canonical
+// pilot may gain *additive* typed roles without rewriting or relabeling
+// earlier biography and physical Place evidence.
+assert.equal(preview.people.length,pilot.people.length);
+for(const oldProfile of preview.people){
+  const current=pilot.people.find(p=>p.saint_id===oldProfile.saint_id);
+  assert(current,"Standalone preview profile identity has disappeared");
+  for(const key of ["legacy_source_name","display_name","recognition_status","why_honoured",
+    "biography_facts","source_ids","place_links","calendar_1962_keys",
+    "later_calendar_keys","approved_artwork_ids","image_state","publication"])
+    assert.deepEqual(current[key],oldProfile[key],
+      "Additive taxonomy must preserve old source-owned biography and Place: "+key+" "+current.saint_id);
+  assert(oldProfile.further_reading_source_ids.every(id=>current.further_reading_source_ids.includes(id)),
+    "New research must not erase previously reviewed source links");
+}
 assert.equal(preview.schema,"ao.saints.map-review.v1");
 assert.equal(preview.people.length,6);
 const geoSot=read("data/geography/seed-registry.v1.json");
