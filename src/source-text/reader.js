@@ -43,7 +43,7 @@ export function createSourceTextReader({manifest,loadChunk}={}){
      if(p?.id!==expected[i]||p.workId!==manifest.work.id||
        p.editionId!==manifest.work.editionId||p.witnessId!==manifest.work.witnessId||
        typeof p.text!=="string"||
-       ["sourceLocator","editionQualifiedCitation","sourcePage"].some(field=>
+       ["sourceLocator","editionQualifiedCitation","sourcePage","sourceExtent"].some(field=>
         p[field]!==expectedIndex[field]))
       throw new Error("SOURCE_TEXT_CHUNK_IDENTITY_MISMATCH");
     }
