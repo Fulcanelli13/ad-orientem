@@ -1,6 +1,10 @@
 # Biblical Theatre — continuous reading and coverage crosswalk
 **15 October 2026 · research-only addition to existing draft PR #1069. No production data owner altered.**
 
+## Binding narrative authorship policy (15 October 2026)
+
+**AI-written biblical narrative is rejected.** The 11 AI-authored bilingual pilot episodes were withdrawn from this draft PR. Biblical Theatre must display only **verbatim existing historical Catholic-author prose** from a verified public-domain or already licensed textual witness, or **the original Scripture text** from the native Catholic Bible reader. Do not create AI paraphrases, AI translations, AI-written summaries, transitions or synthetic prose blends. Different language editions must have their own verified authored witness; do not manufacture a French translation. No permission requests are to be made. If no suitable authored narrative covers a scene or connection, keep it source-only and mark the coverage gap. AI may assist with indexing and source metadata, but never as an uncredited Bible-history author.
+
 ## Completed Phase 2 source reconciliation
 Using the actual `src/find/bible-atlas.js` construction logic, all `151/151` canonical selected milestones were reconstructed from the existing compact Bible Places data, the expanded pre/post milestones, and the six source-defined within-Gospel precedence rules. Each resulting `eventKey` is unique, and all 151 era/title/reference/position tuples agree with the existing 151↔183 ledger. The derived data file contains these **actual canonical event keys**; no guessed IDs and no duplicate event records.
 
@@ -22,7 +26,7 @@ The main result is `data/explore/biblical-reading-continuity-review.v1.json`: **
 - `Continue Reading`: per-journey `eventKey/sceneKey`, stable paragraph anchor, translation/edition ID and scroll restoration, stored persistently on device. Free exploration, thematic jumps and opening a full Scripture chapter must preserve each journey's bookmark.
 - Source-critical passages with no adequate mapped location remain Scripture-first; Gospel parallel chronology remains qualified; Wisdom/prophecy/Revelation retain their literary genre and are not turned into GPS-dated scenes.
 
-## Connecting prose still to be written
+## Existing-author source passages still to be selected
 There are **150 neighbouring milestone pairs** in the selected canon path. The machine-readable register classifies them as: `PASSAGE_GAP` 35; `WITHIN_BOOK` 53; `ERA_TRANSITION` 10; `BOOK_TRANSITION` 52. These represent possible editorial transitions, **not 150 automatically required paragraphs or resolved omissions**. Each has `BRIDGE_AND_NARRATIVE_CONTINUITY_NOT_REVIEWED` and `bridgeProse:null` until a real source-checked narrative is written.
 
 At present **none of the 37 proposed reader chapters contains an approved abridged source text in this addition**. Assigning a chapter ID must never be mistaken for finishing the literary work. Scripture passages remain available in the existing native reader.
@@ -44,4 +48,4 @@ US public-domain general term reference: https://guides.library.cornell.edu/copy
 `tests/biblical-reading-continuity-review.mjs` independently rebuilds the 151 canonical stops through `buildBibleAtlas`, checks **exact event-key and reference identity**, 1:1 reading chapter coverage, source candidate relation validity, 150 chained transitions and absence of unauthorized invented narrative/art/coordinates. Run with Node in CI after the file lands. No new production map/reader, source text or images have been shipped; no claim of browser/device acceptance. Approval **HOLD**.
 
 ## Next work
-Collate the exact Knecht/Gilmour editions against a manageable 4–5-event sample in Creation, Exodus, David, Nativity and Resurrection. Mark which source actually supplies bridging narration, Scripture-only coverage or interpretative commentary. Then author/review short continuous paragraphs, with paragraph anchors, first in the uncovered Creation → Flood → Babel unit and the monarchy/exile segments. Only when coherent story text exists should reader-chapter cards display actual reading times. Follow this with one-screen UI integration and persistent-bookmark device tests; no production merge before editorial approval.
+Collate the exact Knecht/Gilmour editions against a manageable 4–5-event sample in Creation, Exodus, David, Nativity and Resurrection. Mark which source actually supplies bridging narration, Scripture-only coverage or interpretative commentary. Then select, collate and review existing authors' exact passages, with paragraph anchors, first in Creation → Flood → Babel and the monarchy/exile segments. Where a suitable source passage is absent, show Scripture itself rather than writing a substitute. Only when coherent story text exists should reader-chapter cards display actual reading times. Follow this with one-screen UI integration and persistent-bookmark device tests; no production merge before editorial approval.
