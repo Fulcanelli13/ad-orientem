@@ -92,6 +92,7 @@ const css = [
   "#ao-formation-recovery-review .rrEvidenceRole{display:block;font-weight:600;color:var(--ao-text-primary,#e9e4da)}",
   "#ao-formation-recovery-review .rrEvidenceExcerpt{display:block;margin:3px 0;color:var(--ao-text-muted,#a9a5a0)}",
   "#ao-formation-recovery-review .rrEvidenceList .rrSources{margin:4px 0 9px;font-size:max(13px,.8125rem)}",
+  "#ao-formation-recovery-review .rrArticle .rrEvidenceDisclosure>summary{font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif);padding:0;color:var(--ao-text-muted,#a9a5a0)}",
 
   "#ao-formation-recovery-review .rrBibleHandoff{display:inline-flex;flex-direction:column;gap:4px;max-width:100%;vertical-align:middle}.rrBibleHandoff .aoScriptureContextCapsule{min-height:44px}.rrBibleHandoff small{max-width:270px;color:var(--muted,#9ba5b1);font:400 .7rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}",
   "#ao-formation-recovery-review .rrNode{margin:12px 0 17px}",
@@ -413,8 +414,8 @@ export function createFormationRecoveryReview(win=globalThis) {
         pick(win,"No indexed research or article here. Check existing Formation owners and historical sources before drafting new claims.","Aucune recherche ou rédaction liée ici. Examiner les autres dossiers et sources historiques avant de rédiger."))+'</p>';
     return intro+synthesisReading(d)+'<h2>'+esc(pick(win,"Source-linked dossier reading","Lecture des recherches sourcées"))+' ('+d.research.length+')</h2>'+
       '<p class="rrMuted">'+esc(pick(win,
-        "Expand each case to read its documented answer, opposed positions, critical replies and traditional Catholic argument, wherever those sections actually exist. Source links accompany each original paragraph.",
-        "Déplier chaque cas pour lire les réponses, positions adverses, répliques et arguments catholiques traditionnels qui existent effectivement, avec les liens de source de chaque paragraphe."))+'</p>'+
+        "Expand each case to read its documented answer, opposed positions, critical replies and traditional Catholic argument, wherever those sections actually exist. The original references for every paragraph are available in the folded Sources & original texts section.",
+        "Déplier chaque cas pour lire les réponses, positions adverses, répliques et arguments catholiques traditionnels qui existent effectivement, avec les références originales de chaque paragraphe dans « Sources et textes originaux »."))+'</p>'+
       d.research.map(dossierCase).join("");
   };
   // The original nine/eight topic families, not an independently invented index.
