@@ -2,6 +2,7 @@
 // the shrine registry owns saint/place source edges; saints data owns brief lives.
 // This module adds no liturgical observances or new physical Place identities.
 import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
+import { sourceBoundSaintClassifications } from "./saints-classification.js";
 
 const arr=value=>Array.isArray(value)?value:[];
 const txt=value=>String(value??"").trim();
@@ -44,9 +45,12 @@ export function projectSaintPlaceItems(dataset={}){
   const records=new Map();
   for(const person of arr(pilot.people)){
     if(!validProfile(person))continue;
+    const classification=sourceBoundSaintClassifications(person,pilot.sources);
+    if(!classification)continue;
     const named=Object.freeze({
       saint_id:person.saint_id,
       recognition_status:person.recognition_status,
+      classification,
       name_en:txt(person.display_name?.en),
       name_fr:txt(person.display_name?.fr),
       why_en:txt(person.why_honoured.en),
@@ -98,6 +102,9 @@ export function projectSaintPlaceItems(dataset={}){
       associated_shrine_ids:Object.freeze([...row.shrine_ids]),
       search_text:(()=>{const phrase=[display,displayFr,p.name?.official,addr(p),...people.flatMap(s=>[
         s.why_en,s.why_fr,...s.biography_facts.map(b=>b.en),...s.biography_facts.map(b=>b.fr),
+        ...s.classification.honours.flatMap(c=>[c.en,c.fr]),
+        ...s.classification.roles.flatMap(c=>[c.en,c.fr]),
+        ...s.classification.extraordinary.flatMap(e=>[e.en,e.fr,e.label_en,e.label_fr]),
       ])].join(" ");return norm(phrase)+" "+folded(phrase)})(),
       editorial_status:"SMALL_SOURCE_BOUND_PILOT_NO_APPROVED_ART",
     });
