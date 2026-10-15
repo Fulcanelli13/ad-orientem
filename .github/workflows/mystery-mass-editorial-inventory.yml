@@ -31,6 +31,8 @@ on:
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
+      - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
       - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
       - 'tests/mystery-mass-p1-dedup-p2-family-routing.mjs'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
@@ -54,6 +56,8 @@ on:
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
+      - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
       - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
       - 'tests/mystery-mass-p1-dedup-p2-family-routing.mjs'
       - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
@@ -75,6 +79,8 @@ jobs:
         run: node tests/mass-formation.mjs
       - name: Reconcile P1 bilingual duplicate claims and P2 12 prayer groups
         run: node tests/mystery-mass-p1-dedup-p2-family-routing.mjs
+      - name: Verify P1 seven owner details and P2 58 clause release holds
+        run: node tests/mystery-mass-p1-p2-review-ownership.mjs
       - name: Check P1 source-backed six lookups and 32 micro-unit alignments
         run: node tests/mystery-mass-p1-source-alignment.mjs
       - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
