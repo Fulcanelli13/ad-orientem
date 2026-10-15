@@ -148,4 +148,15 @@ assert.equal(quality.issueCases.find(x=>x.id==="WITNESS-RACIST-PATRIARCHAL-COMME
 assert.equal(quality.issueCases.find(x=>x.id==="WITNESS-FOOTNOTE-MARKER-LOSS").severity,"BLOCK_IMPORT");
 assert.ok(quality.physicalScanImageAttemptLog.every(x=>x.status==="BLOCKED_NO_PRINT_VERIFICATION"));
 
+const historical=fam.historicalAccessAndProvenanceReview;
+assert.equal(historical.authorIdentity.canonicalPerson,"Ignaz Schuster");
+assert.equal(historical.authorIdentity.authorityIdentifier,"GND:117321656");
+assert.equal(historical.authorIdentity.knownCatalogueMisattribution.catalogueLabel,"Ildefonso Schuster");
+assert.equal(historical.alternativeWitnesses.length,2);
+assert.equal(historical.primaryWitnessAccess.length,2);
+assert.equal(historical.alternativeWitnesses[0].permittedRole,"HISTORICAL_COMPARATIVE_REFERENCE_ONLY");
+assert.equal(historical.sourceParagraphsCertifiedNew,0);
+assert.equal(historical.appReleaseAffected,false);
+assert.ok(historical.primaryWitnessAccess.every(x=>x.originalPrintedPagesNewlyRead===0&&x.completeVerbatimParagraphsCertified===0));
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
