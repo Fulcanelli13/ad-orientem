@@ -6,7 +6,7 @@ on:
       - "data/source-text/**"
       - "tests/source-text-*.mjs"
       - "previews/source-text-parsing-pilot.html"
-      - "docs/source-text-parsing-pilot.md"
+      - "docs/source-text-*.md"
       - ".github/workflows/source-text-pilot.yml"
   workflow_dispatch:
 permissions:
