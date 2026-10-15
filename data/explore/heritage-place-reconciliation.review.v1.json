@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 254,
-    "places_with_linked_records": 252,
+    "places": 258,
+    "places_with_linked_records": 256,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 208,
-    "shrines": 250,
-    "pilgrimages": 236,
+    "multicategory_heritage_places": 209,
+    "shrines": 254,
+    "pilgrimages": 237,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -373,6 +373,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "display_name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "record_ids": {
+        "shrines": [
+          "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
       "display_name": "Bishop Velychkovsky National Martyr's Shrine",
       "record_ids": {
@@ -589,6 +599,16 @@
         ],
         "pilgrimages": [
           "pilgrimage:CR:cartago-virgen-angeles-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "display_name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "record_ids": {
+        "shrines": [
+          "shrine:CR:montes-oca-our-lady-lourdes-parish"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3010,6 +3030,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "display_name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "record_ids": {
+        "shrines": [
+          "shrine:MX:guadalupe-zacatecas-historic-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MX:guadalupe-zacatecas-historic-sanctuary-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MY:st-anne-bukit-mertajam",
       "display_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
       "record_ids": {
@@ -3228,6 +3261,16 @@
       "record_ids": {
         "shrines": [
           "shrine:PH:padre-pio-shrine-santo-tomas-batangas"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "display_name": "Our Lady of Fatima Catholic Church, Karachi",
+      "record_ids": {
+        "shrines": [
+          "shrine:PK:karachi-our-lady-fatima-parish"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -4005,8 +4048,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 250,
-    "pilgrimages": 208,
+    "shrines": 254,
+    "pilgrimages": 209,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,

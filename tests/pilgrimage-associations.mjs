@@ -21,12 +21,12 @@ const dataset={
   customs:{...customs,sources:customSources.sources},
   novenas:{records:novenas.novenas,links:bridge.links,sources:bridge.sources},
 };
-assert.equal(shrines.shrines.length,250);
-assert.equal(shrines.pilgrimages.length,236);
+assert.equal(shrines.shrines.length,254);
+assert.equal(shrines.pilgrimages.length,237);
 assert.equal(shrines.routes.length,20);
 assert.equal(shrines.temporalLinks.length,77);
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.pilgrimages.length,236);
+assert.equal(projection.byLens.pilgrimages.length,237);
 const allShrineIds=new Set(shrines.shrines.map(shrine=>shrine.shrine_id));
 assert.ok(shrines.pilgrimages.every(p=>allShrineIds.has(p.destination_shrine_id)),
   "a pilgrimage lost its actual destination shrine");

@@ -5,14 +5,14 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 100,
+    "explicit_promoted": 104,
     "text_hint_review": 70,
-    "unmatched": 580,
+    "unmatched": 576,
     "zero_crosslist": 485,
-    "essential_remaining": 10,
-    "published_places": 254,
-    "published_shrines": 250,
-    "published_pilgrimages": 236
+    "essential_remaining": 6,
+    "published_places": 258,
+    "published_shrines": 254,
+    "published_pilgrimages": 237
   },
   "countries": [
     {
@@ -54,10 +54,10 @@
     {
       "country": "MX",
       "candidates": 18,
-      "promoted": 2,
+      "promoted": 3,
       "text_hint": 0,
-      "unmatched": 16,
-      "essential_review": 1,
+      "unmatched": 15,
+      "essential_review": 0,
       "no_crosslist": 10
     },
     {
@@ -198,10 +198,10 @@
     {
       "country": "CR",
       "candidates": 3,
-      "promoted": 1,
+      "promoted": 2,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 1,
+      "unmatched": 1,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
@@ -225,10 +225,10 @@
     {
       "country": "PK",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 2,
-      "essential_review": 1,
+      "unmatched": 1,
+      "essential_review": 0,
       "no_crosslist": 2
     },
     {
@@ -270,10 +270,10 @@
     {
       "country": "BZ",
       "candidates": 1,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 1,
-      "essential_review": 1,
+      "unmatched": 0,
+      "essential_review": 0,
       "no_crosslist": 1
     },
     {
@@ -5779,10 +5779,10 @@
       "country": "MX",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_SITE_R77",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "publish_approved": true,
       "identity_warning": "Zacatecas is not Mexico City"
     },
     {
@@ -5978,10 +5978,10 @@
       "country": "BZ",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R77",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0450",
@@ -6088,10 +6088,10 @@
       "country": "CR",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R77",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0460",
@@ -7740,10 +7740,10 @@
       "country": "PK",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R77",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0610",
