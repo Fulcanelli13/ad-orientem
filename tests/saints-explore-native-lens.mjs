@@ -4,6 +4,7 @@ import {projectSaintPlaceItems} from "../src/find/saints-lens.js";
 import {projectExploreDataset} from "../src/find/explore-projection.js";
 import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
+import {renderHeritageToString} from "../src/find/heritage-presentation.js";
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const saints=read("data/saints/holiness-first-editorial-pilot-20261015.v1.json");
@@ -18,6 +19,8 @@ const dataset={
   sacredPhenomena:{apparitions:[],relics:[]},
   novenas:{links:[],records:[],sources:[]}
 };
+const heritageHome=renderHeritageToString({language:"en",items:[],filters:{heritageCategories:["shrines","relics","pilgrimages","apparitions","traditions"]}}, {placeSheet:()=>"",detailSheet:()=>"",itemPreview:()=>""});
+assert(heritageHome.includes('data-find-filter-value="saints"'),"Saints map must be visibly accessible from the existing Heritage map");
 const items=projectSaintPlaceItems(dataset);
 const lens=projectExploreDataset(dataset);
 assert.equal(lens.byLens.saints.length,items.length,"Native projection must use Saints Place owner");
