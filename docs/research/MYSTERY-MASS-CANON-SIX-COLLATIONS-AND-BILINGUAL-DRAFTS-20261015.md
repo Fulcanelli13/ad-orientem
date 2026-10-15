@@ -28,7 +28,7 @@ The Guéranger volume's own foreword calls its material notes collected from con
 | `VER-058 / I056` (Gihr) | `AO.SM.C0186` | Abraham's offering typology; **Isaac was not killed** |
 | `VER-059 / I058` (Gihr) | `AO.SM.C0186` | Melchisedech priestly typology; do **not** claim Genesis 14 says bread and wine were ritually sacrificed |
 
-These are comparisons of original/translated editions as online transcriptions. **Printed-page image collations completed: zero.** No original claim ID was deleted, merged or registered again.
+These are comparisons of original/translated editions as online transcriptions. **Printed-page image collations completed: one of six — St Alphonsus printed p.46 / scan 48.** No original claim ID was deleted, merged or registered again.
 
 ## Five interpretative dossiers
 
@@ -67,8 +67,26 @@ The eleven bilingual phrase interpretations have been **integrated only into the
 The new CI gate checks 11 compiled review records **byte-for-byte as values against** their original research JSON and the Latin cue/canonical owner mapping. The original-only scans still need attention:
 - Gihr's **1902 scan** is identified at [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf), 788 image pages / 72MB. Target printed pp.658–660, but scan page offset was **not established**, and direct file retrieval failed.
 - Guéranger's **1885 second edition** is catalogued as a scanned [KU Leuven original in Google Books](https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C); published contents place *Memento des vivants* at p.126 and *Quam oblationem* p.140. Individual original pages **not inspected**.
-- St Alphonsus **1887 English Centenary volume VI** is [catalogued with scan download options](https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus); exact volume match and pp.56–57 remain **unverified by an original page image**.
+- St Alphonsus **1887 English Centenary volume VI** is [catalogued with scan download options](https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus); the exact passage is now **original printed p.46 / scan image 48, visually verified**; previous pp.56–57 locator is incorrect.
 
-These are **three acquisition candidates, not three completed book collation sets**. Source transcription comparisons remain six; independently visually inspected original author-book passage pages remain **zero**. The standalone Ritus's readable retypeset page is a genuine visual control for the liturgical rule but does not certify the separate six author passages.
+These are **three acquisition candidates, not three completed book collation sets**. Source transcription comparisons remain six; independently visually inspected matching original author-book pair pages are **one of six**. The standalone Ritus's readable retypeset page is a genuine visual control for the liturgical rule but does not certify the separate six author passages.
 
 Next work is therefore narrowly limited to printed-page collation of those originals and user/editorial acceptance of the gated English/French refinements. Do not restart the 422-claim audit.
+
+
+## Phase F — exact printed-image correction (15 October, later pass)
+
+**Significant error corrected:** the old `St Alphonsus / VER-032 / I062` locator of **printed pp.56–57** is false; those pages contain final post-Communion material and the Last Gospel. Direct inspection of the authentic original **1887 Benziger/Grimm Volume VI scan** establishes *Supplices te rogamus* on **printed p.46**, **DjVu image page 48**: [scanned and proofread page](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/48), [original image](https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Complete_ascetical_works_of_St_Alphonsus_v6.djvu/page48-1280px-Complete_ascetical_works_of_St_Alphonsus_v6.djvu.jpg). Both readings and the anonymous French-source attribution are visible on the paper page. This **certifies one of the six previously overlapping author-pair passages** against a printed-page image, not all six.
+
+Related scanned pages were separately inspected or matched to the corresponding **printed pagination** (DjVu image number = printed p. +2):
+
+| Topic | Printed page | Scanned page / checked content |
+|---|---:|---|
+| *Memento* and *Hanc igitur* opening | 40 | [42](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/42) |
+| *Hanc igitur* symbolic imposition and *Quam oblationem* opening | 41 | [43](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/43) |
+| Five adjectives including *rationabilem* | 42 | [44](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/44) |
+| Chalice formula: Luke, Matthew, Hebrews and tradition | 43 | [45](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/45) |
+| *pro multis* application | 44 | [46](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/46) (page-level text, not separately image-verified) |
+| *Supplices*, Angel, earlier French predecessor | 46 | [48](https://en.wikisource.org/wiki/Page:Complete_ascetical_works_of_St_Alphonsus_v6.djvu/48) |
+
+**Status: 1/6 source overlap pairs verified by original printed-image inspection; 5/6 remain.** Guéranger's two and Gihr's three original page-image collations are still outstanding; catalogue or OCR links are not substitutes. The German and Italian originals also remain outside this narrow scan certification. All findings remain research-only; no theological or rights release gate changed.
