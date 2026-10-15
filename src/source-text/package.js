@@ -1,8 +1,9 @@
-import {SOURCE_TEXT_SCHEMA,SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork} from "./contracts.js";
+import {SOURCE_TEXT_SCHEMA,SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope} from "./contracts.js";
 export function packageSourceDocument(document,{chunkSize=5}={}){
  if(document?.schema!==SOURCE_TEXT_SCHEMA||!Array.isArray(document.passages))
   throw new Error("SOURCE_TEXT_DOCUMENT_INVALID");
  const work=validateSourceWork(document.work,{requireReproduction:true});
+ assertPassageReproductionScope(work,document.passages);
  if(!Number.isInteger(chunkSize)||chunkSize<1||chunkSize>100)
   throw new Error("SOURCE_TEXT_CHUNK_SIZE_INVALID");
  const chunks={},files=[],index=[];
