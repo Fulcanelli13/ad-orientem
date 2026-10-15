@@ -35,6 +35,13 @@ export function normalizeWitnessLocator(profile,raw){
    key="sales-part-"+m[1].toLowerCase()+"-ch"+m[2].padStart(2,"0");
    label="Part "+m[1].toUpperCase()+", ch. "+Number(m[2]);break;
   }
+  case "PRINTED_PAGE_EXCERPT":{
+   // Printed-page identity is distinct from the DjVu scan sequence number.
+   const m=loc.match(/^p([1-9][0-9]{0,3}):s([0-9]{3})$/);
+   if(!m)throw new Error("SOURCE_WITNESS_PRINT_PAGE_INVALID");
+   key="ce1908-v3-p"+m[1]+"-s"+m[2];
+   label="p"+m[1]+":s"+m[2];break;
+  }
   default:throw new Error("SOURCE_WITNESS_LOCATOR_UNREVIEWED");
  }
  return Object.freeze({workId:profile.sourceWorkId,witnessProfileId:profile.id,
@@ -76,7 +83,7 @@ export function createAnchoredWitnessFixture({profile,hostUrl,heading,records}={
   if(typeof record.text!=="string"||!record.text.trim()||
      /[\u0000-\u001f]/.test(record.text))
    throw new Error("SOURCE_WITNESS_TEXT_INVALID");
-  const binding=validateExternalLocatorBinding({profile,locator:record.locator,hostUrl});
+  const binding=validateExternalLocatorBinding({profile,locator:record.locator,hostUrl:record.hostUrl??hostUrl});
   if(seen.has(binding.sourceAnchor))throw new Error("SOURCE_WITNESS_LOCATOR_DUPLICATE");
   seen.add(binding.sourceAnchor);bindings.push(binding);
   rows.push("["+binding.sourceAnchor+"] "+record.text);
