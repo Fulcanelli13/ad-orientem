@@ -21,6 +21,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   relatedPlaces:moduleUrl("../../data/geography/related-places.v1.json"),
   biblePlaces:moduleUrl("../../data/explore/bible-places-compact.v1.json"),
   saintsPilot:moduleUrl("../../data/saints/holiness-first-editorial-pilot-20261015.v1.json"),
+  saintsCalendarBridge:moduleUrl("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
@@ -37,7 +38,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -56,11 +57,13 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchR67,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.biblePlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.saintsPilot,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.saintsCalendarBridge,{fetchImpl,optional:true}),
   ]);
   return Object.freeze({
     directory,
     biblePlaces:Object.freeze({entries:safeArray(biblePlaces?.entries)}),
     saints:saintsPilot?.schema==="ao.saints.holiness-first-editorial-pilot.v1"&&saintsPilot?.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE"?saintsPilot:null,
+    saintsCalendarBridge:saintsCalendarBridge?.schema==="ao.saints.parallel-owner-identity-bridge.v1" && saintsCalendarBridge?.status==="EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES"?saintsCalendarBridge:null,
     geography:Object.freeze({
       geoAreas:safeArray(geography?.geoAreas),
       places:safeArray(geography?.places),
