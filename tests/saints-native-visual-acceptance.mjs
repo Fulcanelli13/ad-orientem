@@ -68,10 +68,21 @@ try{
      console.log("Observed two source-resolved Calendar identity candidates without modifying Calendar: "+JSON.stringify(observations));
    }
    const nav=page.locator('#ao-find-modular-root .aoHeritageCategories [data-find-filter="lens"][data-find-filter-value="saints"]');
-   assert.equal(await nav.count(),1,"Native Heritage must expose a single Saints map filter");
+   assert.equal(await nav.count(),1,"Single native Saints entry required");
    const rect=await nav.boundingBox();
    assert(rect?.height>=39&&rect.width>=44,"Saints filter too small for touch");
    await nav.click();
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="saints"]')
+     &&document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30",null,{timeout:30000});
+   assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),24,
+     "List should show first 24 of 30 canonical people");
+   assert((await page.locator('#ao-find-modular-root .aoSaintScopeNote').innerText()).includes("One profile per saint"));
+   await page.screenshot({path:resolve(destination,config.name+"-00-catalogue-list.png"),fullPage:false});
+   await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"][data-find-filter-value="DOCTOR_OF_CHURCH"]').click();
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="9");
+   await page.locator('#ao-find-modular-root [data-find-filter="saintCategory"][data-find-filter-value="ALL"]').click();
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
+   await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').click();
    await page.waitForFunction(()=>{
      const s=globalThis.AO_FIND_APP_V1?.status?.();
      return s?.lens==="saints"&&s?.counts?.saints===9
@@ -81,110 +92,80 @@ try{
      const find=document.querySelector("#ao-find-modular-root");
      const box=find?.querySelector("[data-find-map]")?.getBoundingClientRect();
      return {status:globalThis.AO_FIND_APP_V1.status(),mapWidth:box?.width,mapHeight:box?.height,
-        overflow:document.documentElement.scrollWidth-innerWidth,scope:find?.querySelector(".aoSaintScopeNote")?.textContent||""};
+       overflow:document.documentElement.scrollWidth-innerWidth,scope:find?.querySelector(".aoSaintScopeNote")?.textContent||""};
    });
-   assert(initial.scope.includes("Six source-linked pilot biographies"),"Unfinished atlas is not editorially labelled");
+   assert(initial.scope.includes("Map shows verified physical places"),"Map scope should identify physical Place pins");
    assert(initial.mapWidth>250&&initial.mapHeight>=300,"Saints map collapsed");
-   assert(initial.overflow<=1,"Saints map causes horizontal viewport overflow");
-   // A blocked external tile/CDN is not proof of coordinate failure:
-   // maps must have an explicit fallback, never an unexplained blank region.
+   assert(initial.overflow<=1,"Saints map causes horizontal overflow");
    await page.waitForFunction(()=>{
      const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
      return !!map&&(!!map.querySelector("canvas")||(map.textContent||"").trim().length>=15);
    },null,{timeout:25000});
-   // A canvas or initial fallback can appear before style and tiles have loaded.
-   // Screenshot only once MapLibre declares ready or offers a real stalled/error notice.
    await page.waitForFunction(()=>{
      const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
      return ["ready","stalled","unavailable","empty"].includes(map?.dataset?.aoMapState);
    },null,{timeout:30000});
    const mapMode=await page.evaluate(()=>{
      const map=document.querySelector('#ao-find-modular-root [data-explore-lens="saints"] [data-find-map]');
-     return {canvas:!!map?.querySelector("canvas"),
-       mapState:map?.dataset?.aoMapState||"",
+     return {canvas:!!map?.querySelector("canvas"),mapState:map?.dataset?.aoMapState||"",
        fallback:(map?.querySelector(".aoExploreMapStalled,.aoFindMapFallback")?.textContent||"").trim()};
    });
-   if(mapMode.mapState!=="ready"){
-     assert(mapMode.fallback.length>=20,"Delayed/unavailable map must show useful user-facing recovery text");
-   }else{
-     // Style-load can precede painting the GeoJSON source by several frames.
-     // Capture the real cluster layer rather than a momentarily empty basemap.
-     await page.waitForTimeout(1200);
-   }
+   if(mapMode.mapState!=="ready")assert(mapMode.fallback.length>=20,"Map fallback missing");
+   else await page.waitForTimeout(1200);
    await page.screenshot({path:resolve(destination,config.name+"-01-native-map.png"),fullPage:false});
-
    await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').click();
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="saints"]'));
-   assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),9,"List has not retained nine physical Places");
-   await page.screenshot({path:resolve(destination,config.name+"-02-places-list.png"),fullPage:false});
-
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="30");
    const query=page.locator('#ao-find-modular-root [data-find-query]');
-   await query.fill("Doctor of the Church");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2",null,{timeout:10000});
-   await query.fill("Martyr");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1",null,{timeout:10000});
    await query.fill("Stigmata");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="0",null,{timeout:10000});
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await query.fill("Therese");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2",null,{timeout:10000});
-   assert.equal(await page.locator('#ao-find-modular-root .aoFindList [data-explore-item]').count(),2,"Accented/unaccented French saint search regressed");
-
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first().click();
    const thSheet=page.locator("#ao-find-modular-root .aoSaintPlaceSheet");
    await thSheet.waitFor({state:"visible",timeout:12000});
-   assert.equal(await thSheet.locator('[data-saint-id="saint:therese-of-lisieux"] .aoSaintCalendarContext').count(),1,
-     "Saint Thérèse must display exact Calendar-owner observed date in native Explore");
-   const thCalendar=await thSheet.locator(".aoSaintCalendarContext").innerText();
-   assert.match(thCalendar,/3 October 2026/);
+   assert.equal(await thSheet.locator('[data-saint-id="saint:therese-of-lisieux"] .aoSaintCalendarContext').count(),1);
+   assert.match(await thSheet.locator(".aoSaintCalendarContext").innerText(),/3 October 2026/);
    assert.match(await thSheet.locator(".aoSaintCalendarCaution").innerText(),/not a timeless feast date/);
-   assert.equal(await thSheet.locator("img").count(),0,"No unapproved portrait may be inferred from the Calendar link");
-   await page.screenshot({path:resolve(destination,config.name+"-02b-therese-calendar-context.png"),fullPage:false});
+   assert.equal(await thSheet.locator("img").count(),0,"No unapproved portrait");
+   await page.screenshot({path:resolve(destination,config.name+"-02-therese-calendar.png"),fullPage:false});
    await thSheet.locator("button[data-find-close-detail]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
-
-   await page.locator('#ao-find-modular-root [data-find-query]').fill("Paray");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1",null,{timeout:10000});
-   const paray=page.locator('#ao-find-modular-root .aoFindList [data-explore-item]');
-   assert.equal(await paray.count(),1,"Two Paray saint lives must share one physical Place");
-   await paray.first().click();
-   await page.locator("#ao-find-modular-root .aoSaintPlaceSheet").waitFor({state:"visible",timeout:12000});
-   assert.equal(await page.locator("#ao-find-modular-root .aoSaintPlaceSheet .aoSaintBiography").count(),2,"Both saint biographies must survive one shared pin");
+   await query.fill("Paray");
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="2");
+   await page.locator('#ao-find-modular-root [data-explore-item="saints:person:saint:margaret-mary-alacoque"]').click();
    const sheet=page.locator("#ao-find-modular-root .aoSaintPlaceSheet");
-   const text=await sheet.innerText();
-   assert.match(text,/Margaret Mary/);
-   assert.match(text,/Claude/);
-   assert.match(text,/Read further/);
-   assert.equal(await sheet.locator(".aoSaintLifeEvents").count(),2,"Both people should show birth and death beside portrait");
-   assert.equal(await sheet.locator(".aoSaintLife").count(),2,"Each saint should have a complete inline biography");
-   assert.equal(await sheet.locator('[data-saint-category="MYSTIC"]').count(),1,"Source-backed Mystic category absent");
-   assert.equal(await sheet.locator(".aoSaintExtraordinary").count(),0,"Do not add a repetitive extraordinary-account drawer");
-   assert.equal(await sheet.locator('[data-saint-event="event:margaret-mary:paray-sacred-heart"]').count(),1,
-     "Source-attributed event should be readable inline without opening a separate section");
-   assert.equal(await sheet.locator("img").count(),0,"Non-approved artwork must not be published in a saint biography");
+   await sheet.waitFor({state:"visible",timeout:12000});
+   assert.equal(await sheet.locator(".aoSaintBiography").count(),1,"Canonical person is a single catalogue profile");
+   assert.match(await sheet.innerText(),/Margaret Mary/);
+   assert.equal(await sheet.locator(".aoSaintLifeEvents").count(),1);
+   assert.equal(await sheet.locator(".aoSaintLife").count(),1);
+   assert.equal(await sheet.locator('[data-saint-category="MYSTIC"]').count(),1);
+   assert.equal(await sheet.locator('[data-saint-event="event:margaret-mary:paray-sacred-heart"]').count(),1);
+   assert.equal(await sheet.locator("img").count(),0);
    const reading=sheet.locator("details.aoSaintReading");
-   assert.equal(await reading.count(),2);
-   assert.equal(await reading.first().getAttribute("open"),null,"Dense sources must be collapsed by default");
-   await reading.first().locator("summary").click();
-   const links=await reading.first().locator('a[href]').evaluateAll(nodes=>nodes.map(x=>({href:x.href,target:x.target,rel:x.rel})));
-   assert(links.length>0,"Opening Further reading should give actual links");
+   assert.equal(await reading.count(),1);
+   assert.equal(await reading.getAttribute("open"),null);
+   await reading.locator("summary").click();
+   const links=await reading.locator('a[href]').evaluateAll(nodes=>nodes.map(x=>({href:x.href,target:x.target,rel:x.rel})));
+   assert(links.length>0);
    for(const source of links){
      assert.match(source.href,/^https:\/\/www\.vatican\.va\//);
      assert.equal(source.target,"_blank");
      assert(source.rel.split(/\s+/).includes("noopener"));
    }
-   assert((await sheet.boundingBox())?.height<config.height*0.88,"Saints sheet obscures excessive viewport space");
-   await page.screenshot({path:resolve(destination,config.name+"-03-paray-two-saints.png"),fullPage:false});
+   assert((await sheet.boundingBox())?.height<config.height*0.88);
+   await page.screenshot({path:resolve(destination,config.name+"-03-margaret-profile.png"),fullPage:false});
    await sheet.locator("[data-explore-open-place]").click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview, #ao-find-modular-root .aoExplorePlaceSheet").first().waitFor({state:"visible",timeout:15000});
-   await page.screenshot({path:resolve(destination,config.name+"-04-existing-place-return.png"),fullPage:false});
+   await page.screenshot({path:resolve(destination,config.name+"-04-original-place.png"),fullPage:false});
    await page.locator("#ao-find-modular-root [data-find-close-place]").first().click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheet"),null,{timeout:10000});
    await page.locator('#ao-find-modular-root [data-find-query]').fill("Laval");
-   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1",null,{timeout:10000});
+   await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first().click();
    const laval=page.locator("#ao-find-modular-root .aoSaintPlaceSheet");
    await laval.waitFor({state:"visible"});
-   assert((await laval.innerText()).includes("Blessed · not canonized"),"Beatification has been confused with canonization");
+   assert((await laval.innerText()).includes("Blessed · not canonized"),"Blessed Laval remains beatified");
    await page.screenshot({path:resolve(destination,config.name+"-05-blessed-laval.png"),fullPage:false});
    await page.locator("#ao-find-modular-root button[data-find-close-detail]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
