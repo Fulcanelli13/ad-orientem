@@ -21,18 +21,18 @@ assert.equal(release.schema,"AO_SACRED_GEOGRAPHY_R72_WORLD_ANCHORS_V1");
 assert.equal(release.sites.length,7);
 assert.deepEqual(new Set(release.sites.map(x=>x.country)),new Set(["IT","PT","HU","CN","PH","GT","PY"]));
 assert.equal(new Set(release.sites.map(x=>x.place_id)).size,7);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[237,233,219,401]);
-assert.equal(new Set(g.places.map(x=>x.place_id)).size,237);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[246,242,228,419]);
+assert.equal(new Set(g.places.map(x=>x.place_id)).size,246);
 assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,233);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.deepEqual([r70.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
 r70.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,
-r70.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[60,93,597]);
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[54,93,603]);
+r70.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[81,82,587]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[75,82,593]);
 assert.equal(r70.candidates.length,750);
-assert.equal(heritage.place_crosswalk.length,237);
-assert.equal(heritage.counts.places,237);
+assert.equal(heritage.place_crosswalk.length,246);
+assert.equal(heritage.counts.places,246);
 assert.deepEqual(release.governance,{no_duplicate_place_ids:true,source_links_direct:true,
 identity_verified_separately_from_geo:true,description_level:"BASIC_BILINGUAL",images_added:0,
 calendar_dates_added:0,route_geometries_added:0,apparition_records_added:0,relic_records_added:0});
@@ -49,7 +49,7 @@ const profiles=buildExplorePlaceProfiles({
   novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},
   media:{approved:[],gallery:[]}
 },projected,{today:"2026-10-15"});
-assert.equal(profiles.length,237);
+assert.equal(profiles.length,246);
 for(const entry of release.sites){
  const place=g.places.find(x=>x.place_id===entry.place_id);
  assert.ok(place,"missing canonical site "+entry.place_id);
