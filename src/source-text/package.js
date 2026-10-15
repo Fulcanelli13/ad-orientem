@@ -31,6 +31,11 @@ export function packageSourceDocument(document,{chunkSize=5}={}){
      throw new Error("SOURCE_TEXT_SOURCE_URL_INVALID");
     entry.sourcePage=p.sourcePage;
    }
+   if(p.sourceExtent!==undefined){
+    if(!["SENTENCE_ONLY","COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY","PARAGRAPH_OPENING_FRAGMENT"].includes(p.sourceExtent))
+     throw new Error("SOURCE_TEXT_EXTENT_INVALID");
+    entry.sourceExtent=p.sourceExtent;
+   }
    if(p.sourcePages!==undefined){
     validateSourcePageSpan(p);
     entry.sourcePages=p.sourcePages;
