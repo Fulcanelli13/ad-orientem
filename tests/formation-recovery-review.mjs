@@ -340,6 +340,40 @@ for(const d of coverage.dossiers.filter(d=>d.research.length)){
   assert.ok(node.innerHTML.includes('https://'),d.id+" lost paragraph source hyperlinks");
   node.listeners.click(makeClick({back:true}));
 }
+// Compact citation presentation covers all 141 canonical answers, preserving
+// exact source-to-paragraph mapping in a closed, pack-scoped disclosure.
+for(const dossier of coverage.dossiers){
+  assert.ok(dossier.synthesis,dossier.id+" synthesis absent");
+  node.listeners.click(makeClick({dossier:dossier.id}));
+  const markup=node.innerHTML;
+  const start=markup.indexOf('data-rr-canonical-synthesis="'+dossier.id+'"');
+  const panel=markup.indexOf('data-rr-source-panel="'+dossier.id+'"',start);
+  const end=markup.indexOf('</ol></details>',panel);
+  assert.ok(start>=0&&panel>start&&end>panel,dossier.id+" missing linked source drawer");
+  const visibleAnswer=markup.slice(start,panel);
+  assert.ok(!visibleAnswer.includes('class="rrSources"'),dossier.id+" inline source clutter not removed");
+  const evidenceMarkup=markup.slice(panel,end);
+  const expectedRows=dossier.synthesis.sections.length;
+  assert.equal((evidenceMarkup.match(/data-rr-evidence-row=/g)||[]).length,expectedRows,
+    dossier.id+" has missing or doubled paragraph evidence rows");
+  const expectedLinks=dossier.synthesis.sections.reduce((sum,section)=>
+    sum+new Set(section.source_ids).size,0);
+  assert.ok((evidenceMarkup.match(/href="https:\/\//g)||[]).length>=expectedLinks,
+    dossier.id+" lost original source hyperlinks");
+  for(const part of dossier.synthesis.sections){
+    assert.ok(visibleAnswer.includes('data-rr-synthesis-role="'+part.role+'"'),dossier.id+" missing argumentative role "+part.role);
+    if(part.attribution)assert.ok(visibleAnswer.includes(String(part.attribution).replace(/[&<>"\']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#39;"}[ch]))),
+      dossier.id+" failed to show original speaker attribution");
+  }
+  node.listeners.click(makeClick({back:true}));
+}
+node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
+assert.ok(node.innerHTML.includes('data-rr-source-panel="TLM026"'),
+  "Historical research article must preserve separate provenance drawer");
+assert.ok(node.innerHTML.includes('data-rr-evidence-row='),
+  "Historical source-bearing paragraphs disappeared");
+node.listeners.click(makeClick({back:true}));
+
 node.listeners.click(makeClick({mode:"records"}));
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"record search tab lost existing records");
 node.listeners.click(makeClick({id:"TLM026"}));
