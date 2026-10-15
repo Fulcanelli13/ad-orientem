@@ -30,7 +30,7 @@ tamper.identity_links[0].observed_date="2025-10-03";
 assert.equal(sourceBoundCalendarContext("saint:therese-of-lisieux",tamper).observed1962,null,"No historic date projection");
 tamper.identity_links[0].observed_date="2026-10-03";
 tamper.identity_links[0].observed_calendar_2026_principal_id="sancti:10-99:3:w";
-assert.equal(sourceBoundCalendarContext("saint:therese-of-lisieux",tamper).observed1962.civilDate,"2026-10-03","Identity matcher does not resolve mass; source ID is structurally valid only");
+assert.equal(sourceBoundCalendarContext("saint:therese-of-lisieux",tamper).observed1962,null,"Impossible liturgical month/day must be rejected");
 tamper.identity_links[0].observed_calendar_2026_principal_id="sancti:10-03:3:w";
 tamper.identity_links.push(structuredClone(tamper.identity_links[0]));
 assert.equal(sourceBoundCalendarContext("saint:therese-of-lisieux",tamper),null,"Duplicate or conflicting identity links fail closed");
