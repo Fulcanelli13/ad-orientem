@@ -1,6 +1,6 @@
 import {SOURCE_TEXT_SCHEMA,validateSourceWork,slugLocator,normalizePassageText} from "./contracts.js";
 const BLOCKS=new Set(["h1","h2","h3","p","li","blockquote"]);
-const INLINE=/^\/?(?:em|strong|i|b|span|a|code|br)\b/i;
+const INLINE_TAGS=new Set(["em","strong","i","b","span","a","code"]);
 const ENTITY=/&(#x[0-9a-f]+|#[0-9]+|amp|lt|gt|quot|apos|nbsp);/gi;
 const ENTITIES={amp:"&",lt:"<",gt:">",quot:'"',apos:"'",nbsp:" "};
 function decodeEntities(value){
@@ -19,13 +19,25 @@ function decodeEntities(value){
  return decoded;
 }
 function safeInline(value){
- const replaced=value.replace(/<br\s*\/?>/gi," ");
- const noInline=replaced.replace(/<[^<>]+>/g,tag=>{
-  if(!INLINE.test(tag.slice(1,-1).trim()))throw new Error("SOURCE_HTML_INLINE_UNSUPPORTED");
-  return "";
- });
- if(/[<>]/.test(noInline))throw new Error("SOURCE_HTML_MARKUP_UNBALANCED");
- return normalizePassageText(decodeEntities(noInline));
+ const opened=[];let text="",offset=0;
+ for(const part of value.matchAll(/<([^<>]+)>/g)){
+  text+=value.slice(offset,part.index);
+  const tag=part[1].trim();
+  if(/^br\s*\/?$/i.test(tag)){text+=" ";}
+  else{
+   const close=tag.match(/^\/([a-z]+)\s*$/i);
+   const open=tag.match(/^([a-z]+)(?:\s+[^<>]*)?$/i);
+   const name=(close??open)?.[1]?.toLowerCase();
+   if(!name||!INLINE_TAGS.has(name))throw new Error("SOURCE_HTML_INLINE_UNSUPPORTED");
+   if(close){
+    if(opened.pop()!==name)throw new Error("SOURCE_HTML_INLINE_UNBALANCED");
+   }else opened.push(name);
+  }
+  offset=part.index+part[0].length;
+ }
+ text+=value.slice(offset);
+ if(opened.length||/[<>]/.test(text))throw new Error("SOURCE_HTML_MARKUP_UNBALANCED");
+ return normalizePassageText(decodeEntities(text));
 }
 function buildDocument(work,blocks,format){
  validateSourceWork(work,{requireReproduction:true});
