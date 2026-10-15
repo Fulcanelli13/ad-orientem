@@ -57,7 +57,21 @@ const validateReassigned=(f,section,sources)=>{
    assert.deepEqual(row.matching_original_url_successor_ids,sameCurrentURL);
    assert.equal(row.independently_certified_current_claim,false);
  }else{
-   assert.deepEqual(row.replacement_source_ids,section.source_ids,"replacement original-source pointers drifted: "+f.id);
+   const extra=delta.historical_pass7_preexisting_amendment_extensions.find(x=>x.finding_id===f.id);
+   if(extra){
+     assert.equal(extra.owner,f.owner);assert.equal(extra.role,f.role);
+     assert.equal(extra.historic_source_id,f.source_id);
+     assert.deepEqual(extra.prior_amendment_source_ids,row.replacement_source_ids,
+       "Previously audited source replacement was changed");
+     assert.deepEqual(extra.current_source_ids,section.source_ids);
+     assert.deepEqual(section.source_ids.slice(0,row.replacement_source_ids.length),
+       row.replacement_source_ids,"Original opponent references must stay first");
+     assert.deepEqual(section.source_ids.slice(row.replacement_source_ids.length),
+       extra.newly_attached_source_ids,"Only explicitly registered later corrections may extend this role");
+     assert.equal(extra.current_claims_independently_certified,false);
+     assert.match(extra.disposition,/NOT_EXTENDED_TO_NEW_CLAIMS/);
+   } else assert.deepEqual(row.replacement_source_ids,section.source_ids,
+     "replacement original-source pointers drifted: "+f.id);
    assert.equal(row.new_citation_claims_independently_certified,false);
  }
  verifyHistoricLink(f,sources.get(f.source_id)?.url);
@@ -104,6 +118,7 @@ assert.equal(delta.metrics.historical_pass7_total_findings,88);
 assert.equal(delta.metrics.historical_pass7_unchanged_source_role_links,63);
 assert.equal(delta.metrics.historical_pass7_prior_amendment_supersessions,10);
 assert.equal(delta.metrics.historical_pass7_newly_recorded_supersessions,15);
+assert.equal(delta.metrics.historical_pass7_existing_amendment_extensions,1);
 assert.deepEqual(seven.findings.filter(f=>f.status==="LIMITED_BIBLIOGRAPHIC_ABSTRACT_ONLY").map(f=>f.owner),["CR-ORG-09"]);
 const role=(id,r)=>records.get(id).dossier.sections.find(x=>x.role===r);
 assert.match(role("CR-LIT-11","documented_position").text.en,/597.*1,233.*315.*20/);
