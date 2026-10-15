@@ -1,5 +1,9 @@
 # Biblical Theatre — Story, Arc and Theme Classification (15 October 2026)
 
+## Binding narrative authorship policy (15 October 2026)
+
+**AI-written biblical narrative is rejected.** The 11 AI-authored bilingual pilot episodes were withdrawn from this draft PR. Biblical Theatre must display only **verbatim existing historical Catholic-author prose** from a verified public-domain or already licensed textual witness, or **the original Scripture text** from the native Catholic Bible reader. Do not create AI paraphrases, AI translations, AI-written summaries, transitions or synthetic prose blends. Different language editions must have their own verified authored witness; do not manufacture a French translation. No permission requests are to be made. If no suitable authored narrative covers a scene or connection, keep it source-only and mark the coverage gap. AI may assist with indexing and source metadata, but never as an uncredited Bible-history author.
+
 **Status: research-only overlay in existing draft PR #1069. Not deployed, not an alternative chronology.**
 
 ## Governing decision
@@ -44,7 +48,7 @@ These columns count **canonical events**. Separately, among **183 scene records*
 **P2:** fill the remaining patriarchal/Exodus and Gospel/Apostolic narrative gaps, source-check synoptic order and Catholic verse-number exceptions.
 **P3:** handle Revelation as inspired prophetic visions, not an earthly chronological travel itinerary.
 
-In addition, a continuous reading path needs original connecting prose or a rights-cleared historical Catholic narrative. Selected milestone coverage is not equivalent to a full retelling of all 73 books. Compare Knecht and Gilmour editions as *sources of structure* and possible rights-cleared wording only after edition and rights verification. Schuster's commercially published text is not licensed by this research.
+In addition, a continuous reading path needs verified existing Catholic-authored source text, or the biblical text itself where no suitable authored prose exists. Selected milestone coverage is not equivalent to a full retelling of all 73 books. Compare Knecht and Gilmour editions as *sources of structure* and possible rights-cleared wording only after edition and rights verification. Schuster's commercially published text is not licensed by this research.
 
 ## Interface and persistence contract
 
@@ -66,4 +70,4 @@ The Stories library has three entry points: **Stories**, **Historical arcs**, **
 
 ## Phase 2 next
 
-Build the prose continuity matrix: for every canonical event, assign one approved narrative paragraph range, a reading-journey place, a Scripture witness and a bridge to the next passage; mark uncovered or uncertain records as gaps, not complete stories. Extend the taxonomy only through existing stable identifiers. No duplicate scriptural scene database.
+Build the source-text continuity matrix: for every canonical event, assign one verified existing-author passage range or Scripture-only fallback, a reading-journey place, a Scripture witness and a documented connection to the next passage; mark uncovered or uncertain records as gaps, not complete stories. Extend the taxonomy only through existing stable identifiers. No duplicate scriptural scene database.
