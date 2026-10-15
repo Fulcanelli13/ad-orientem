@@ -10,6 +10,7 @@ const dataset={
  saintsDoctors:read("data/saints/holiness-first-eight-doctors-research-20261015.v1.json"),
  saintsVocations:read("data/saints/holiness-first-sixteen-cross-vocation-research.v1.json"),
  saintsCalendarBridge:read("data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
+ saintsOwnerIndex:read("data/saints/read-only-calendar-art-index-20261015.v1.json"),
  geography:{places:read("data/geography/seed-registry.v1.json").places},
  shrines:{shrines:read("data/shrines/shrines-pilgrimages-seed.v1.json").shrines}
 };
@@ -52,6 +53,28 @@ for(const language of ["en","fr"]){
  assert(!html.includes("data-calendar-mass"),"No auto-created 1962 Mass");
  assert(html.includes(language==="fr"?"30</strong><span>notices de saints":"30</strong><span>saint profiles"),
  "Reader list must count people, not pins");
+}
+const chrys=people.find(x=>x.saint_id==="saint:john-chrysostom");
+assert.equal(chrys.source_index_links.length,2,"Historical and Doctor exact identity");
+assert(chrys.source_index_links.some(x=>x.item_id==="saints:historic:saint.john-chrysostom"));
+assert(chrys.source_index_links.some(x=>x.item_id==="saints:doctor:saint.john-chrysostom"));
+for(const language of ["en","fr"]){
+ const screen=renderExploreToString(buildExploreViewModel({
+  language,lens:"saints",view:"list",items:people,selectedId:chrys.item_id,
+  filters:{query:"",saintScope:"profiles"}
+ }));
+ assert(screen.includes('data-saint-crosslink-scope="historical"'));
+ assert(screen.includes('data-saint-crosslink-scope="doctors"'));
+ assert(screen.includes('data-saint-crosslink-target="saints:doctor:saint.john-chrysostom"'));
+ const therese=people.find(x=>x.saint_id==="saint:therese-of-lisieux");
+ const observedHtml=renderExploreToString(buildExploreViewModel({
+   language,lens:"saints",view:"list",items:people,selectedId:therese.item_id,
+   filters:{query:"",saintScope:"profiles"}
+ }));
+ assert(observedHtml.includes('data-explore-calendar-date="2026-10-03"'),
+   "Only an exact source-bound 2026 observed day may open Calendar");
+ assert(!screen.includes("data-explore-calendar-date"),
+   "A nominal feast candidate must not turn into a Calendar handoff");
 }
 const kolbe=people.find(x=>x.saint_id==="saint:maximilian-kolbe");
 assert(kolbe.saints[0].why_en.includes("Franciszek Gajowniczek"),"Personal sacrifice central to biography");
