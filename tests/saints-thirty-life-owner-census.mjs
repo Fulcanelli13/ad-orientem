@@ -7,6 +7,7 @@ const read=f=>JSON.parse(readFileSync(resolve(root,f),"utf8"));
 const six=read("data/saints/holiness-first-editorial-pilot-20261015.v1.json");
 const eight=read("data/saints/holiness-first-eight-doctors-research-20261015.v1.json");
 const sixteen=read("data/saints/holiness-first-sixteen-cross-vocation-research.v1.json");
+const deskReview=read("data/saints/held-24-editorial-desk-review.v1.json");
 assert.equal(six.people.length,6);
 assert.equal(eight.people.length,8);
 assert.equal(sixteen.people.length,16);
@@ -45,11 +46,29 @@ assert(entries.every(x=>!x.visible_on_public_pages&&!x.artwork_ready));
 assert.equal(entries.reduce((s,x)=>s+x.facts,0),6*3+8*3+16*3);
 assert.equal(entries.reduce((s,x)=>s+x.extraordinary_reports,0),2+2+2);
 assert(entries.some(x=>x.id==="blessed.jacques-desire-laval"&&x.subject_kind==="BEATIFIED_NOT_CANONIZED"));
+assert.equal(deskReview.schema,"ao.saints.held-24-editorial-desk-review.v1");
+assert.equal(deskReview.publication,"EDITORIAL_REVIEW_ONLY");
+assert.equal(deskReview.records.length,24);
+const heldIds=new Set(entries.filter(x=>x.owner!=="NATIVE_SIX_PROFILE_PILOT").map(x=>x.id));
+const reviewedIds=deskReview.records.map(x=>x.person_id);
+assert.equal(new Set(reviewedIds).size,24,"The same saint must not consume two review slots");
+assert(reviewedIds.every(id=>heldIds.has(id)),"Desk review may not invent or duplicate saint identities");
+assert([...heldIds].every(id=>reviewedIds.includes(id)),"Each of 24 held lives needs its own review decision");
+assert(deskReview.records.every(x=>x.review_stage==="ASSISTANT_DESK_REVIEW_NOT_SECOND_PERSON_CERTIFICATION"
+ && !x.eligible_for_publication && !x.calendar_1962_feast_certified_here && !x.user_rated_artwork_in_this_file));
+assert(deskReview.records.every(x=>x.publication_blocks?.length>=1 && x.profile_emphasis?.length>30
+ && x.claim_count===3),"Every held saint requires a specific editorial point and three unmodified source claims");
+assert.equal(deskReview.scope.source_spot_checked,11);
+assert.equal(deskReview.scope.source_pending_deeper_check,13);
+assert.equal(deskReview.scope.released_people,0);
 assert(!entries.some(x=>x.id==="saint.francois-de-montmorency-laval"),
   "Do not replace Blessed Jacques-Désiré Laval with François de Montmorency-Laval");
 const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESEARCH_CENSUS_NOT_A_30_PERSON_PUBLIC_APP",
  counts:{distinct_person_profiles:30,existing_native_six_profiles:6,additional_held_doctors:8,
  additional_held_other_vocations:16,not_yet_individually_editorially_signed_off:24,
+ held_profiles_with_editorial_issue_register:deskReview.records.length,
+ source_spot_checked_desk_review:deskReview.scope.source_spot_checked,
+ desk_review_is_not_publication_approval:true,
  drafts_with_an_existing_map_lens_surface:6,public_pages_released_from_this_pr:0,
  individually_approved_new_portraits:0,additional_map_pins_created:0,
  native_six_life_date_records:entries.filter(x=>x.life_data_status==="NATIVE_DATES_SOURCED_EDITORIAL_REVIEW").length,
