@@ -5,6 +5,8 @@ export const LIVING_SANCTORAL_VERSION = "ao-living-sanctoral-projection-v1";
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const isDate = value => DATE.test(String(value || "")) && !Number.isNaN(Date.parse(String(value) + "T12:00:00Z"));
 const monthDay = date => String(date).slice(5);
+const normalizeResolverId = value => String(value || "").replace(/:[1-4]:[a-z]{1,3}$/i, "");
+const samePrincipal = (a, b) => Boolean(a && b && normalizeResolverId(a) === normalizeResolverId(b));
 const personLabel = (person, language) => person?.name?.[language === "fr" ? "fr" : "en"] || person?.name?.en || "";
 
 export function saintRecognitionAt(person, date) {
@@ -42,7 +44,7 @@ export function supplementarySaintsForDate(date, persons, {
       if (!current && !older) continue;
       if (!Array.isArray(observance.sourceIds) || !observance.sourceIds.length) continue;
       if (observance.publishedOn && observance.publishedOn > date) continue;
-      if (person.calendar1962?.principalId && person.calendar1962.principalId === observedPrincipalId) continue;
+      if (person.calendar1962?.principalId && samePrincipal(person.calendar1962.principalId, observedPrincipalId)) continue;
       result.push(Object.freeze({
         personId: person.id,
         title: personLabel(person, language),
