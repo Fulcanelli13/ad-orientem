@@ -88,9 +88,9 @@ console.log("PASS: saint cross-module references, no invented feast/art/relic ap
 
 
 const previewHtml=readFileSync(new URL("../previews/saints-map-holiness-first-20261015.html",import.meta.url),"utf8");
-const previewJson=previewHtml.match(/<script type="application\\/json" id="preview-source">([\\s\\S]*?)<\\/script>/);
+const previewJson=previewHtml.split('<script type="application/json" id="preview-source">')[1]?.split("</script>")[0];
 assert(previewJson,"A source-embedded preview must be portable and auditable");
-const preview=JSON.parse(previewJson[1]);
+const preview=JSON.parse(previewJson);
 assert.deepEqual(preview.people,pilot.people,"Preview must not change canonical research profile text");
 assert.equal(preview.schema,"ao.saints.map-review.v1");
 assert.equal(preview.people.length,6);
@@ -110,7 +110,7 @@ for(const loc of preview.place_preview){
 assert.equal(preview.place_preview.filter(p=>p.indicative).length,1);
 assert(preview.place_preview.find(p=>p.id==="place:NZ:st-peter-chanel-russell")?.indicative,"Peter Chanel's indicative Russell coordinate cannot become an ordinary pin");
 assert(previewHtml.includes("Artwork awaiting")||previewHtml.includes("artwork approval"),"Must clearly distinguish source-linked biographies from unapproved portrait imagery");
-const jsBody=previewHtml.match(/<script type="module">([\\s\\S]*?)<\\/script>/)?.[1];
+const jsBody=previewHtml.split('<script type="module">')[1]?.split("</script>")[0];
 assert(jsBody,"Optional preview must include working client-side interactions");
 new Function("return (async function(){"+jsBody+"})");
 console.log("PASS: portable map preview syntax, existing place geometry, held indicative site, unchanged original profiles");
