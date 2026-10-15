@@ -715,7 +715,10 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-controls{grid-template-columns:36px 54px 36px minmax(66px,1fr);gap:5px}
   .ao-schola-control{min-height:28px;padding:4px 6px;font-size:7px}
   .ao-schola-speed{min-width:54px;padding:0}
-  .ao-schola-toggle{position:absolute;top:3px;left:70%;transform:translateX(-50%);right:auto}
+  .ao-schola-title{padding-right:62px;gap:6px}
+  .ao-schola-kicker{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ao-schola-page{flex:0 0 auto}
+  .ao-schola-toggle{position:absolute;top:3px;right:9px;left:auto;transform:none}
   .ao-reader-nav button{top:auto;bottom:calc(10px + var(--ao-schola-reserve));width:44px;height:44px;border-radius:50%;font-size:20px;opacity:.34;background:transparent}
   .ao-reader-nav button::before{inset:5px;background:rgba(11,16,13,.38)}
   .ao-reader-nav button[data-reader-nav="previous"]{left:51px}.ao-reader-nav button[data-reader-nav="next"]{right:51px}
@@ -1986,7 +1989,16 @@ export function createReaderDomAdapter({
       translationTrigger.tabIndex=schola?.english?0:-1;
     }
     const title=root.querySelector(".ao-schola-kicker");
-    if(title)title.textContent=schola ? scholaTitle(schola.trackId) : "SCHOLA";
+    if(title){
+      // The source-authenticated B022 subcard gives a precise chant title.
+      // Do not repeat the generic three-chant heading over a 320px phone.
+      const exactPreGospel=/^(?:Gradual|Alleluia|Tract|Sequence)$/.test(
+        String(current?.cardTitle??""))?String(current.cardTitle):null;
+      title.textContent=schola
+        ? (schola.trackId==="ALLELUIA_TRACT_SEQUENCE"&&exactPreGospel
+          ? exactPreGospel.toUpperCase():scholaTitle(schola.trackId))
+        : "SCHOLA";
+    }
     setText(root,"schola",schola
       ? (scholaTranslationVisible && schola.english
           ? schola.english
