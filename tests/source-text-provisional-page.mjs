@@ -6,6 +6,32 @@ const json=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"ut
 const plan=json("data/source-text/fortescue-1908-print-page-plan.v1.json");
 const draft=json("data/source-text/fortescue-1913-p257-provisional-transcription.v1.json");
 const excerpt=json("data/source-text/fortescue-1908-print-excerpts.v1.json");
+const variants=json("data/source-text/fortescue-1913-p257-variant-collation.v1.json");
+assert.equal(variants.editionId,plan.editionId);
+assert.equal(variants.witnessId,plan.witnessId);
+assert.equal(variants.publicationApproved,false);
+assert.equal(variants.metrics.completePageWordByWordProofed,false);
+assert.equal(variants.metrics.allLatinCharactersCompared,false);
+assert.equal(variants.comparisons.length,14);
+const named=new Set(variants.comparisons.map(x=>x.id));
+assert.equal(named.size,variants.comparisons.length);
+const byId=new Map(draft.blocks.map(b=>[b.id,b]));
+for(const v of variants.comparisons){
+ assert.ok(byId.has(v.blockId),`Orphan collation block ${v.id}`);
+ assert.ok(typeof v.note==="string"&&v.note.length>12);
+ assert.ok(v.status!=="HUMAN_CERTIFIED"&&v.decision!=="AUTO_PROMOTE");
+}
+const clement=variants.comparisons.find(x=>x.field==="patristic_reference");
+assert.equal(clement.blockId,"P257-03");
+assert.equal(clement.witnessReading,"(xl)");
+assert.equal(clement.secondaryReading,"(xi)");
+assert.ok(byId.get(clement.blockId).text.includes("(xl)"));
+assert.ok(clement.independentCheck.includes("clement_rome"));
+const latin=variants.comparisons.filter(x=>x.blockId==="P257-09");
+assert.ok(latin.length>=3);
+assert.ok(latin.some(x=>x.status.startsWith("UNRESOLVED")));
+assert.ok(variants.comparisons.some(x=>x.field==="original_witness_wording"&&x.secondaryReading==="before the service"));
+
 const audit=auditProvisionalPage({plan,pageDraft:draft});
 assert.equal(audit.printedPage,257);
 assert.equal(audit.scanImagePage,305);
