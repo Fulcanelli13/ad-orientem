@@ -126,3 +126,16 @@ Research details requiring preserved distinctions:
 Every newly staged person has a source-year URL and canonisation event ID. **No** newly staged person has an inferred universal feast date, optional traditional Mass, approved proper text or change to the 1962 principal observance. Groups remain unexpanded rather than being flattened into a fictitious single saint or unverified people. Reconciliation and source-year tests enforce these distinctions.
 
 This is an auditable source-intake batch, **not** 20/51 of all persons or a claim that all indexed events are completely verified against primary decree images. The 31 remaining year-level entries and full member-name expansion are open.
+
+
+## 15 October — third Vatican-source intake: 1999 and 2001–2003
+
+Four further Dicastery year pages were inspected: [1999](https://www.causesanti.va/it/celebrazioni/canonizzazioni/1999.html), [2001](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2001.html), [2002](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2002.html), and [2003](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2003.html).
+
+**Cumulative published intake:** **24/51** indexed years; **27** indexed years untranscribed. **51** canonisation events, **169** individually named saint records, **5** unexpanded martyr groups with **66 exactly enumerated members**, and a *separate unverified approximate* 800-person Otranto cohort. The six-person historical pilot and 169 named source persons converge on **172 unique canonical person IDs**, reusing Newman, Carlo Acutis and (now) **Padre Pio** by the exact stable `saint.pio-pietrelcina` ID.
+
+- **16 June 2002:** Padre Pio's canonisation is now anchored to the Dicastery and cross-checked against the pilot source; do not generate an extra saint, change the September 23 Ember Wednesday rule or import a modern Proper.
+- **21 November 1999:** `Cirilo Bertrán e 8 compagni` is recorded as a Lasallian nine-martyr group, distinct from the separately named Passionist priest Innocencio de la Inmaculada. Individual identities await expansion.
+- **Year 2000 intentionally remains pending**, notwithstanding that the Dicastery year page has been inspected. It separately lists the **120 Martyrs of China** as a cohort and the two named Salesian martyrs Luigi Versiglia and Callisto Caravario. Those may overlap the group's membership. **Do not naively add 120 group members plus two named individuals until the member crosswalk resolves the overlap.** A reliable group audit precedes import.
+
+The new source records have no universal feast dates; the optional Mass eligibility evaluator and production Calendar/Proper are unchanged. The source-year denominator measures pages, not all individuals or completed legal review. The existing focused CI workflow protects cardinalities, deduplication and the mixed exact/approximate martyr-group treatment.
