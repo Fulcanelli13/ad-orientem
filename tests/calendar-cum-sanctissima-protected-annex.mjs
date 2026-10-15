@@ -12,7 +12,7 @@ for (const f of annex.feasts) {
   assert.equal(f.protectedUnder, "CUM_SANCTISSIMA_2020_ANNEX_8");
   if (f.resolverIdentity) {
     assert.match(f.resolverIdentity, /^sancti:\d{2}-\d{2}(?:[a-z]+)?:3:[wr]$/);
-    assert.ok(f.evidence?.path, f.monthDay + " attestation not grounded");
+    assert.ok(f.evidence?.source && f.evidence?.workflowRun, f.monthDay + " attestation not grounded");
     assert.equal(f.identityMatchStatus, "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER");
     assert.deepEqual(f.evidence.years, [2024, 2027]);
     assert.match(f.resolverIdentity, /:3:[wr]$/);
