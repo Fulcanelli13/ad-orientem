@@ -130,7 +130,11 @@
     "historical_pass2_dispositions": 1,
     "historical_pass3_dispositions": 6,
     "historical_pass6_dispositions": 0,
-    "historical_pass8_dispositions": 4
+    "historical_pass8_dispositions": 4,
+    "historical_pass9_10_11_total_findings": 320,
+    "historical_pass9_10_11_still_same_source_id": 293,
+    "historical_pass9_10_11_amendment_dispositions": 4,
+    "historical_pass9_10_11_new_rescopes": 23
   },
   "added_source_bindings": [
     {
@@ -1995,7 +1999,8 @@
     "Five historic CSE045 eight-stage debate paragraphs concerned the goods of marriage; current rewrite treats headship/mutual submission under the same broader question. Preserve the original atomic review as history, not a certification of the new text. The purposes/goods topic remains canonically linked to CSE046.",
     "Fifteen more original Pass 7 bounded findings are explicitly retained as historical rather than automatically transferred to replacement Q&A roles. Ten earlier source amendments remain owned by their original governance files.",
     "Previously superseded finding PSV7-045 retains its existing 2015/2022 survivor-source replacement, with two additional 2026 correction pointers separately versioned; the historical original-source check does not certify those additions.",
-    "Earlier Pass 2, 3, 6 and 8 bounded original-source findings remain frozen: 124 historical findings, 11 source-role relationships changed by later corrections, 113 original IDs still cited in the same role. No old finding certifies replacement prose."
+    "Earlier Pass 2, 3, 6 and 8 bounded original-source findings remain frozen: 124 historical findings, 11 source-role relationships changed by later corrections, 113 original IDs still cited in the same role. No old finding certifies replacement prose.",
+    "Historical Passes 9–11 contain 320 bounded findings, of which 293 retain their exact old source-in-role link, 4 have existing amendment dispositions and 23 now have explicit new historical source-role dispositions. None is certified onto replacement text."
   ],
   "historical_bounded_primary_findings_superseded": [
     {
@@ -2949,6 +2954,376 @@
           ],
           "matching_original_url_successor_ids": [],
           "disposition": "SOURCE_ONLY_IN_HISTORICAL_REVIEW_AND_REGISTRY__SUPERSEDED_SECTION_ARGUMENT_NOT_CERTIFIED",
+          "current_claim_independently_certified": false
+        }
+      ]
+    }
+  },
+  "historical_late_primary_source_dispositions": {
+    "9": {
+      "historical_findings": 60,
+      "unchanged_source_role_links": 52,
+      "historical_prior_amendment_links": [
+        "PSV9-015",
+        "PSV9-016",
+        "PSV9-017"
+      ],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV9-012",
+          "owner": "APOL-002",
+          "role": "answer",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_ANSWE_1",
+            "AO26_APOL002_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-013",
+          "owner": "APOL-002",
+          "role": "critical_response",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_CRITI_1",
+            "AO26_APOL002_CRITI_2",
+            "AO26_APOL002_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-014",
+          "owner": "APOL-002",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "HG1950",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+          "current_source_ids": [
+            "AO26_APOL002_CRITI_1",
+            "AO26_APOL002_TRADI_2",
+            "AO26_APOL002_TRADI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-022",
+          "owner": "CR-LIT-07",
+          "role": "answer",
+          "historic_source_id": "MD47",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+          "current_source_ids": [
+            "AO26_CRLIT07_ANSWE_1",
+            "AO26_CRLIT07_ANSWE_2",
+            "AO26_CRLIT07_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV9-024",
+          "owner": "CR-LIT-08",
+          "role": "answer",
+          "historic_source_id": "SC63",
+          "historic_url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+          "current_source_ids": [
+            "AO26_CRLIT08_ANSWE_1",
+            "AO26_CRLIT08_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRLIT08_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "10": {
+      "historical_findings": 188,
+      "unchanged_source_role_links": 174,
+      "historical_prior_amendment_links": [],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV10-010",
+          "owner": "CR-DOC-09",
+          "role": "answer",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_ANSWE_1",
+            "AO26_CRDOC09_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-011",
+          "owner": "CR-DOC-09",
+          "role": "critical_response",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_CRITI_1",
+            "AO26_CRDOC09_ANSWE_1"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-012",
+          "owner": "CR-DOC-09",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "MPF25",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html",
+          "current_source_ids": [
+            "AO26_CRDOC09_TRADI_1",
+            "AO26_CRDOC09_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-023",
+          "owner": "CR-ORG-09",
+          "role": "critical_response",
+          "historic_source_id": "BERTH22",
+          "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+          "current_source_ids": [
+            "AO26_CRORG09_CRITI_1",
+            "AO26_CRORG09_CRITI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-030",
+          "owner": "CR-ORG-05",
+          "role": "answer",
+          "historic_source_id": "BERTH22",
+          "historic_url": "https://signal.sciencespo-lyon.fr/article/839132/La-chute-de-la-pratique-catholique-en-France-autour-de-1965-le-precepte-dominical-malmene",
+          "current_source_ids": [
+            "AO26_CRORG05_ANSWE_1",
+            "AO26_CRORG05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-039",
+          "owner": "CR-ECC-09",
+          "role": "answer",
+          "historic_source_id": "GUERARD-FR",
+          "historic_url": "https://www.sodalitium.eu/interview-de-monseigneur-guerard-lauriers/",
+          "current_source_ids": [
+            "AO26_CRECC09_ANSWE_1",
+            "AO26_CRECC09_ANSWE_2",
+            "AO26_CRECC09_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRECC09_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-040",
+          "owner": "CR-ECC-09",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "PIUS1945",
+          "historic_url": "https://www.vatican.va/content/pius-xii/la/apost_constitutions/documents/hf_p-xii_apc_19451208_vacantis-apostolicae-sedis.html",
+          "current_source_ids": [
+            "AO26_CRECC09_CRITI_1",
+            "AO26_CRECC09_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-041",
+          "owner": "CR-ECC-12",
+          "role": "answer",
+          "historic_source_id": "EPICOM18",
+          "historic_url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20180915_episcopalis-communio.html",
+          "current_source_ids": [
+            "AO26_CRECC12_ANSWE_1",
+            "AO26_CRECC12_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRECC12_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-061",
+          "owner": "CR-GOV-01",
+          "role": "answer",
+          "historic_source_id": "PIUSCHINA",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061958_ad-apostolorum-principis.html",
+          "current_source_ids": [
+            "AO26_CRGOV01_ANSWE_1",
+            "AO26_CRGOV01_ANSWE_2",
+            "AO26_CRGOV01_ANSWE_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-062",
+          "owner": "CR-GOV-01",
+          "role": "traditional_catholic_argument",
+          "historic_source_id": "PIUSCHINA",
+          "historic_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_29061958_ad-apostolorum-principis.html",
+          "current_source_ids": [
+            "AO26_CRGOV01_ANSWE_1",
+            "AO26_CRGOV01_TRADI_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-157",
+          "owner": "CR-AUT-05",
+          "role": "answer",
+          "historic_source_id": "DV90",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_en.html",
+          "current_source_ids": [
+            "AO26_CRAUT05_ANSWE_1",
+            "AO26_CRAUT05_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRAUT05_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-159",
+          "owner": "CR-MOR-01",
+          "role": "answer",
+          "historic_source_id": "VS93",
+          "historic_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+          "current_source_ids": [
+            "AO26_CRMOR01_ANSWE_1",
+            "AO26_CRMOR01_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-163",
+          "owner": "CR-MOR-06",
+          "role": "answer",
+          "historic_source_id": "RP84",
+          "historic_url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_02121984_reconciliatio-et-paenitentia.html",
+          "current_source_ids": [
+            "AO26_CRMOR06_ANSWE_1",
+            "AO26_CRMOR06_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_CRMOR06_ANSWE_1"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV10-186",
+          "owner": "CR-GOV-09",
+          "role": "critical_response",
+          "historic_source_id": "CICFIN",
+          "historic_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html",
+          "current_source_ids": [
+            "AO26_CRGOV09_CRITI_1"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        }
+      ]
+    },
+    "11": {
+      "historical_findings": 72,
+      "unchanged_source_role_links": 67,
+      "historical_prior_amendment_links": [
+        "PSV11-011"
+      ],
+      "additional_source_dispositions": [
+        {
+          "finding_id": "PSV11-005",
+          "owner": "CR-LIT-04",
+          "role": "critical_response",
+          "historic_source_id": "MR69",
+          "historic_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html",
+          "current_source_ids": [
+            "AO26_CRLIT04_CRITI_1",
+            "AO26_CRLIT04_CRITI_2",
+            "AO26_CRLIT04_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-013",
+          "owner": "APOL-053",
+          "role": "answer",
+          "historic_source_id": "IMM1885",
+          "historic_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+          "current_source_ids": [
+            "AO26_APOL053_ANSWE_1",
+            "AO26_APOL053_ANSWE_2"
+          ],
+          "matching_original_url_successor_ids": [
+            "AO26_APOL053_ANSWE_2"
+          ],
+          "disposition": "ORIGINAL_DOCUMENT_URL_RETAINED_UNDER_NEW_ID__HISTORIC_BOUNDED_FINDING_NOT_CURRENT_CLAIM_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-030",
+          "owner": "APOL-009",
+          "role": "critical_response",
+          "historic_source_id": "CCC-RES",
+          "historic_url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html",
+          "current_source_ids": [
+            "AO26_APOL009_CRITI_1",
+            "AO26_APOL009_CRITI_2",
+            "AO26_APOL009_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
+          "current_claim_independently_certified": false
+        },
+        {
+          "finding_id": "PSV11-072",
+          "owner": "CR-ECC-11",
+          "role": "critical_response",
+          "historic_source_id": "SYN2018",
+          "historic_url": "https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_cti_20180302_sinodalita_en.html",
+          "current_source_ids": [
+            "AO26_CRECC11_CRITI_1",
+            "AO26_CRECC11_CRITI_2",
+            "AO26_CRECC11_CRITI_3"
+          ],
+          "matching_original_url_successor_ids": [],
+          "disposition": "ORIGINAL_FINDING_SOURCE_RETAINED_IN_REGISTRY__REWRITTEN_ROLE_DOES_NOT_CITE_IT__NO_TRANSFER_OF_CERTIFICATION",
           "current_claim_independently_certified": false
         }
       ]
