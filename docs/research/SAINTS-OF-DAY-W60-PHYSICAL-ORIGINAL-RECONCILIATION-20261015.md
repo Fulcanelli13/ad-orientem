@@ -21,7 +21,7 @@
 | Rules with named files | 17 | 18 file directives, of which one ('Pietà') is not a usable Commons file reference |
 | Category-only rules | 69 | Search prompts only; no identified painting guaranteed |
 | No usable file/category | 1 | Cornelius & Cyprian group |
-| Proper originals / liturgical assignments | 49 / 50 | 15 Sancti, 35 Tempora assignments — **not** 49 saints |
+| Proper originals / liturgical assignments | 49 / 50 rows | 49 actual painting assignments + 1 explicit NO_ART row, distributed 15 Sancti / 35 Tempora; **not** 49 saints |
 | W59 Proper artist-excluded originals | 4 | Fra Angelico 1, El Greco 3 |
 | W59 Proper physically cross-linked to known earlier original | 3 | AO012, AO073, AO109; preserve 5/4/5 ratings |
 | W59 Proper wrongly mergeable by broad title | 1 | AO021 Prado Murillo ≠ CMA Murillo; keep distinct |
@@ -31,7 +31,9 @@
 | Breviarium title+artist overlaps with W48 | 6 | Still require matching Commons original/object ID |
 | Breviarium excluded-artist plates | 7 | No reuse under current user preferences |
 
-### Verified identity decisions
+#**Accounting correction:** 50 legacy Proper rows = 49 painting assignments plus 1 NO_ART row (Sixteenth Sunday after Pentecost). The historical NO_ART status says no painting was cleared at the time; it is not an aesthetic rejection of that feast for all time.
+
+## Verified identity decisions
 
 - **AO012** Caravaggio, *Incredulity of Saint Thomas*, Sanssouci: reuses W48 **W07-014**, existing **5/5**; do not re-rate.
 - **AO109** Caravaggio, *Crucifixion of Saint Peter*, Santa Maria del Popolo/Cerasi Chapel: reuses W48 **W05-027**, existing **5/5**. [Rome tourism authority](https://www.turismoroma.it/en/node/18610) identifies the original and location.
