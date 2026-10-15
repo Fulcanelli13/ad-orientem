@@ -1126,6 +1126,70 @@
       "codes": {
         "iso_alpha2": "LV"
       }
+    },
+    {
+      "geo_area_id": "geo:country:UY",
+      "name": {
+        "official": "Uruguay",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "UY"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MZ",
+      "name": {
+        "official": "Mozambique",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TT",
+      "name": {
+        "official": "Trinidad and Tobago",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GH",
+      "name": {
+        "official": "Ghana",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GH"
+      }
     }
   ],
   "places": [
@@ -10425,6 +10489,321 @@
       "source_ids": [
         "SG-R73-SITE-SG-INV-0340",
         "SG-R73-GEO-SG-INV-0340"
+      ]
+    },
+    {
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "name": {
+        "official": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+        "aliases": [
+          "Our Lady of Lourdes Sanctuary, Rigaud",
+          "Sanctuaire Notre-Dame-de-Lourdes (Québec)"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.46996,
+        "lng": -74.31088,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1023406024",
+        "source_ref": "osm:way:1023406024",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CA",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "18 rue Bourget",
+        "line2": null,
+        "postal_code": "J0P 1P0",
+        "city": "Rigaud",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "Sanctuaire Notre-Dame-de-Lourdes, 18 rue Bourget, Rigaud, QC J0P 1P0, Canada"
+      },
+      "source_ids": [
+        "SG-R74-SITE-SG-INV-0414",
+        "SG-R74-GEO-SG-INV-0414"
+      ]
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "name": {
+        "official": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+        "aliases": [
+          "Sanctuary of Our Lady of Fátima, Fortaleza",
+          "Igreja Nossa Senhora de Fátima"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:BR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -3.752494,
+        "lng": -38.526609,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1161529959",
+        "source_ref": "osm:way:1161529959",
+        "matched_country_code": "BR",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Avenida 13 de Maio, 200",
+        "line2": null,
+        "postal_code": "60040-530",
+        "city": "Fortaleza",
+        "region": "Ceará",
+        "country_code": "BR",
+        "country": "Brazil",
+        "formatted": "Av. 13 de Maio, 200, Fátima, Fortaleza, Ceará 60040-530, Brazil"
+      },
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0482",
+        "SG-R75-GEO-SG-INV-0482"
+      ]
+    },
+    {
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "name": {
+        "official": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+        "aliases": [
+          "Gruta de Lourdes, Alta Gracia",
+          "Sanctuary of Our Lady of Lourdes, Alta Gracia"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:AR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -31.648889,
+        "lng": -64.457222,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/R%C3%A9pliques_de_la_grotte_de_Lourdes",
+        "source_ref": "frwiki:replicas-lourdes:alta-gracia",
+        "matched_country_code": "AR",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "Concejal Caglianone 0",
+        "line2": null,
+        "postal_code": null,
+        "city": "Alta Gracia",
+        "region": "Córdoba",
+        "country_code": "AR",
+        "country": "Argentina",
+        "formatted": "Concejal Caglianone 0, Alta Gracia, Córdoba, Argentina"
+      },
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0494",
+        "SG-R75-GEO-SG-INV-0494"
+      ]
+    },
+    {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "name": {
+        "official": "Santuario Nacional Gruta de Lourdes, Montevideo",
+        "aliases": [
+          "Santuario Nacional de la Gruta de Lourdes",
+          "Shrine of Our Lady of Lourdes, Montevideo"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:UY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -34.825556,
+        "lng": -56.181667,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/R%C3%A9pliques_de_la_grotte_de_Lourdes",
+        "source_ref": "frwiki:replicas-lourdes:montevideo",
+        "matched_country_code": "UY",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "Avenida de las Instrucciones 2223",
+        "line2": null,
+        "postal_code": "12400",
+        "city": "Montevideo",
+        "region": null,
+        "country_code": "UY",
+        "country": "Uruguay",
+        "formatted": "Av. de las Instrucciones 2223, Montevideo 12400, Uruguay"
+      },
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0532",
+        "SG-R75-GEO-SG-INV-0532"
+      ]
+    },
+    {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "name": {
+        "official": "Santuário de Nossa Senhora de Fátima da Namaacha",
+        "aliases": [
+          "Sanctuary of Our Lady of Fátima, Namaacha",
+          "Santuário de Fátima, Namaacha"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:MZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -25.988282,
+        "lng": 32.014878,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.info4camper.com/santuario_de_nossa_senhora_de_fatima_namaacha_maputo_11618.html?lg=pt",
+        "source_ref": "info4camper:namaacha-gps",
+        "matched_country_code": "MZ",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Namaacha",
+        "region": "Maputo Province",
+        "country_code": "MZ",
+        "country": "Mozambique",
+        "formatted": "Santuário Nossa Senhora de Fátima, Namaacha, Maputo Province, Mozambique"
+      },
+      "source_ids": [
+        "SG-R75-SITE-SG-INV-0721",
+        "SG-R75-GEO-SG-INV-0721"
+      ]
+    },
+    {
+      "place_id": "place:US:allentown-guadalupe-national-shrine",
+      "name": {
+        "official": "National Shrine of Our Lady of Guadalupe, Mother of the Americas",
+        "aliases": [
+          "National Shrine of Our Lady of Guadalupe, Allentown",
+          "Immaculate Conception BVM Church, Allentown"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.613235,
+        "lng": -75.461138,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.destinationes.com/pilgrimage/allentown-pennsylvania",
+        "source_ref": "destinationes:allentown-national-shrine-gps",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "501 Ridge Avenue",
+        "line2": null,
+        "postal_code": "18102",
+        "city": "Allentown",
+        "region": "Pennsylvania",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "501 Ridge Avenue, Allentown, PA 18102, United States"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0377",
+        "SG-R76-GEO-SG-INV-0377"
+      ]
+    },
+    {
+      "place_id": "place:TT:laventille-our-lady-fatima-shrine",
+      "name": {
+        "official": "Our Lady of Fatima Church and Shrine, Laventille",
+        "aliases": [
+          "National Marian Shrine of Our Lady of Laventille",
+          "Sanctuaire Notre-Dame de Laventille"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:TT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.6556583,
+        "lng": -61.4949787,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame_de_Laventille",
+        "source_ref": "frwiki:sanctuaire-notre-dame-laventille-coordinate",
+        "matched_country_code": "TT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "Upper Picton Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Laventille",
+        "region": "San Juan–Laventille",
+        "country_code": "TT",
+        "country": "Trinidad and Tobago",
+        "formatted": "Upper Picton Road, Laventille, San Juan–Laventille, Trinidad and Tobago"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0474",
+        "SG-R76-GEO-SG-INV-0474"
+      ]
+    },
+    {
+      "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+      "name": {
+        "official": "St Peter's Cathedral Basilica, Kumasi",
+        "aliases": [
+          "Cathedral Basilica of Saint Peter, Kumasi",
+          "St Peter's Catholic Cathedral, Kumasi"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.69536,
+        "lng": -1.61775,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/819917453",
+        "source_ref": "osm:way:819917453",
+        "matched_country_code": "GH",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kumasi",
+        "region": "Ashanti Region",
+        "country_code": "GH",
+        "country": "Ghana",
+        "formatted": "St Peter's Cathedral Basilica, Kumasi, Ashanti Region, Ghana"
+      },
+      "source_ids": [
+        "SG-R76-SITE-SG-INV-0726",
+        "SG-R76-GEO-SG-INV-0726"
       ]
     }
   ],

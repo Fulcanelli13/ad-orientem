@@ -13,6 +13,7 @@ for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geograp
 for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r72-world-anchors.v1.json","utf8")).sites)publishedAfterFreeze.add(row.place_id);
 // R73 promotions postdate the frozen European discovery snapshots.
 for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r73-major-shrines.v1.json","utf8")).sites)publishedAfterFreeze.add(row.place_id);
+for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r75-essential-sites.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const oldPlaces=new Map(historicalPlaces.map(x=>[x.place_id,x]));
 const names=new Set(R.place_candidates.map(x=>x.lead_id));
