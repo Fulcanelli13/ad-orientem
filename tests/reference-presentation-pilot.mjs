@@ -9,12 +9,23 @@ const data=JSON.parse(readFileSync("data/learn/mass-formation-campion.v1.json","
 const pilot=JSON.parse(readFileSync("data/reference/canonical-works-pilot.v1.json","utf8"));
 assert.equal(SOURCE_REFERENCE_PANEL_VERSION,"source-reference-panel-v1");
 assert.equal(pilot.state,"PARTIAL_FOUNDATION_NOT_GLOBAL_MIGRATION");
-assert.equal(pilot.works.length,4);
+assert.equal(pilot.works.length,13);
+const triage=JSON.parse(readFileSync("data/reference/source-witness-triage-pilot.v1.json","utf8"));
+assert.equal(triage.sources.length,16);
+assert.equal(new Set(triage.sources.map(x=>x.source_id)).size,16);
+const massIDs=data.sources.map(x=>x.id);
 assert.deepEqual(
- pilot.works.flatMap(x=>x.witness_ids).sort(),
- data.sources.map(x=>x.id).sort(),
- "Pilot work IDs must preserve every published Mass Formation source identity."
+ pilot.works.flatMap(x=>x.witness_ids).filter(id=>massIDs.includes(id)).sort(),
+ massIDs.sort(),
+ "Work identities must preserve every published Mass Formation source ID."
 );
+const allIds=pilot.works.flatMap(x=>x.witness_ids).sort();
+assert.deepEqual(allIds,triage.sources.map(x=>x.source_id).sort(),
+ "Every work witness must have exactly one pilot source triage record.");
+assert.ok(triage.sources.every(x=>x.rights.includes("REVIEW_REQUIRED")),
+ "No third-party edition may be silently approved for full-text embedding.");
+assert.equal(triage.direct_link_exception.source_id,"SL-CIC83-992-997");
+
 assert.match(sourceReferencePanelCss(),/focus-visible/);
 assert.match(sourceReferencePanelCss(),/44px/);
 assert.equal(sourceReferenceSafeUrl("javascript:alert(1)"),"");
