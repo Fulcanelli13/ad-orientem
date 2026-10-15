@@ -4,7 +4,7 @@ on:
     paths:
       - "src/source-text/**"
       - "data/source-text/**"
-      - "tests/source-text-pilot.mjs"
+      - "tests/source-text-*.mjs"
       - "previews/source-text-parsing-pilot.html"
       - "docs/source-text-parsing-pilot.md"
       - ".github/workflows/source-text-pilot.yml"
@@ -20,4 +20,6 @@ jobs:
         with:
           node-version: "22"
       - name: Check source, edition, rights and lazy loading
-        run: node tests/source-text-pilot.mjs
+        run: |
+          node tests/source-text-pilot.mjs
+          node tests/source-text-acquisition-scale.mjs
