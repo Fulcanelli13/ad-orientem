@@ -1,0 +1,24 @@
+name: Catechism original-source presentation
+on:
+  pull_request:
+    paths:
+      - 'src/learn/catechism-guided-reader.js'
+      - 'src/learn/source-reference-panel.js'
+      - 'tests/catechism-guided-source-presentation.mjs'
+      - '.github/workflows/catechism-source-presentation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reference-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate reader syntax
+        run: node --check src/learn/catechism-guided-reader.js
+      - name: Check bilingual source labels, original witnesses and unreleased status
+        run: node tests/catechism-guided-source-presentation.mjs
