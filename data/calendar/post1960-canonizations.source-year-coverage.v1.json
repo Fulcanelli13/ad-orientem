@@ -18,22 +18,23 @@
     "yearsWithDetailedEventsStaged": 51,
     "yearsAwaitingSourceTranscription": 0,
     "namedIndividualRecordsStaged": 258,
-    "groupMembershipsStillToExpand": 497,
-    "groupsWithApproximateCountsStillToExpand": 1,
-    "approximateUnidentifiedMartyrsOtranto": 800,
-    "knownIndividualMembersIncludedInGroupCounts": 15,
-    "groupRecordsStaged": 13
+    "collectiveMartyrEntries": 13,
+    "collectiveProfilesDrafted": 13,
+    "historicalGroupCountsRecordedForProvenance": true,
+    "martyrMemberExpansionTasksRequired": 0,
+    "approvedCanonicalArtworkLinks": 0,
+    "canonicalMapPlaceLinks": 0,
+    "currentCalendarGroupDatesWithSourceWires": 5
   },
   "caveats": [
     "Liturgical day authority, year of inclusion in the Roman calendar, local institute permission and approved 1962 Propers are not established by the canonisation-year index.",
-    "All 51 *listed* source-year pages have now been transcribed. This does not certify an exhaustive post-1960 list of unique saints, since cohorts are unexpanded, 1997 Jadwiga identity has a source-description conflict, and years absent from the web index may still contain relevant equivalent canonisations.",
     "Index years are event-bearing entries, not a complete count of individual persons.",
     "Absent year in index is not proof no canonization or equivalent declaration took place.",
     "A named saint event is not evidence of a universal Roman feast date.",
     "2026 absent from current index must be checked as-of-date independently before negative claim.",
-    "The ca. 800 Martyrs of Otranto are not a precise enumerated person count; keep the estimated group separate from 57 exactly quantified unexpanded group members.",
     "2002 Padre Pio is the same individual as the existing pilot saint.pio-pietrelcina. Distinct source rows must reconcile into one canonical person ID.",
-    "In year 2000, the 120 Martyrs of China group contains the named martyrs Augustine Zhao Rong, Luigi Versiglia and Callisto Caravario. Count only 117 unexpanded members, not 120 additional people. The 25 Mexican martyrs include one individually named leader, leaving 24 unexpanded."
+    "Superseded earlier enumeration backlog: group member numbers are provenance, NOT work items; completion requires one concise contextual group card, not identifying every martyr.",
+    "Five dates are USCCB contemporary-calendar witnesses, not independently certified universal 1962 observances or permissions."
   ],
   "years": [
     {
@@ -354,5 +355,15 @@
       "status": "NOT_LISTED_DO_NOT_INFER_NO_CANONIZATION"
     }
   ],
-  "publicationStatus": "RESEARCH_ONLY_NOT_CALENDAR_RUNTIME"
+  "publicationStatus": "RESEARCH_ONLY_NOT_CALENDAR_RUNTIME",
+  "scopePolicy": {
+    "notAMartyrology": true,
+    "oneProfilePerMartyrGroup": true,
+    "noFullMartyrMembershipResearch": true,
+    "significantIndividualMartyrsOnly": true,
+    "groupCardWhyHonouredRequired": true,
+    "actual1962MassUnchanged": true,
+    "mapArtworkUseExistingCanonicalRecords": true,
+    "parsingAndReferencesForDeeperExploration": true
+  }
 }
