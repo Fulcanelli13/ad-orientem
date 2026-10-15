@@ -1,0 +1,595 @@
+{
+  "schema": "AO_MYSTERY_MASS_P1_DEDUP_P2_12_WAVES_V1",
+  "prepared": "2026-10-15",
+  "scope": "Existing PR #1193 source-first Mass study: compare 32 P1 author-text findings with 44 inherited bilingual studies and route 180 P2 clauses by canonical prayer family, no text generation.",
+  "inputRecords": [
+    "data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json",
+    "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json"
+  ],
+  "userWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_P1_Dedup_P2_Grouped_2026-10-15.xlsx",
+  "githubWorkbookCommitted": false,
+  "counts": {
+    "inheritedBilingualStudies": 44,
+    "p1SourceClauses": 32,
+    "p1Outcomes": {
+      "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER": 10,
+      "REFERENCE_ONLY_NO_NEW_TEXT": 6,
+      "REUSE_44_BILINGUAL_STUDIES": 12,
+      "UPSTREAM_TEXT_BOUNDARY_REPAIR": 2,
+      "SHARED_FORMULA_NO_NEW_TEXT": 2
+    },
+    "distinctPrayerOwnersWithOptionalDetail": 7,
+    "p2Clauses": 180,
+    "p2DistinctSourceParents": 121,
+    "p2NamedPrayerTitles": 49,
+    "p2Waves": 12,
+    "additionalPublicationsApproved": 0
+  },
+  "p1ClauseDecisions": [
+    {
+      "unitId": "AO.V3.0038.U001",
+      "prayer": "Oramus te, Domine",
+      "sourceCueId": "AO.SM.C0038",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Altar relics & Oramus te plural",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Oramus te, Domine, lines 113–114",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0040.U001",
+      "prayer": "Ab illo benedicaris",
+      "sourceCueId": "AO.SM.C0040",
+      "sourceFit": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Ab illo benedicaris, lines 340–342",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0079.U001",
+      "prayer": "Munda cor meum",
+      "sourceCueId": "AO.SM.C0079",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-PRIMARY-N01"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Munda cor meum, lines 195–196",
+      "authorDiscussionScripture": [
+        "Isaiah 6:5-7"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0079.U002",
+      "prayer": "Munda cor meum",
+      "sourceCueId": "AO.SM.C0079",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-PRIMARY-N01"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Munda cor meum, lines 195–196",
+      "authorDiscussionScripture": [
+        "Isaiah 6:5-7"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0110.U002",
+      "prayer": "Suscipe sancte Pater",
+      "sourceCueId": "AO.SM.C0110",
+      "sourceFit": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Suscipe sancte Pater, lines 301–305",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0110.U003",
+      "prayer": "Suscipe sancte Pater",
+      "sourceCueId": "AO.SM.C0110",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Suscipe sancte Pater beneficiaries",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Suscipe sancte Pater, lines 301–305",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0114.U001",
+      "prayer": "Offerimus tibi",
+      "sourceCueId": "AO.SM.C0114",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Offerimus tibi chalice and fragrant offering",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Offerimus tibi, lines 325–326",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0114.U002",
+      "prayer": "Offerimus tibi",
+      "sourceCueId": "AO.SM.C0114",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Offerimus tibi chalice and fragrant offering",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Offerimus tibi, lines 325–326",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0116.U001",
+      "prayer": "In spiritu humilitatis",
+      "sourceCueId": "AO.SM.C0116",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-PRIMARY-N03"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to In spiritu humilitatis, lines 330–331",
+      "authorDiscussionScripture": [
+        "Daniel 3:39-40"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0116.U002",
+      "prayer": "In spiritu humilitatis",
+      "sourceCueId": "AO.SM.C0116",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-PRIMARY-N03"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to In spiritu humilitatis, lines 330–331",
+      "authorDiscussionScripture": [
+        "Daniel 3:39-40"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0118.U001",
+      "prayer": "Veni sanctificator",
+      "sourceCueId": "AO.SM.C0118",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Veni sanctificator invocation",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Veni sanctificator, lines 332–334",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0120.U001",
+      "prayer": "Per intercessionem beati Michaelis",
+      "sourceCueId": "AO.SM.C0120",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Michael and unnamed incense angel distinction",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Per intercessionem beati Michaelis, lines 340–342",
+      "authorDiscussionScripture": [
+        "Revelation 8:4"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0120.U002",
+      "prayer": "Per intercessionem beati Michaelis",
+      "sourceCueId": "AO.SM.C0120",
+      "sourceFit": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Per intercessionem beati Michaelis, lines 340–342",
+      "authorDiscussionScripture": [
+        "Revelation 8:4"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0128.U002",
+      "prayer": "Suscipe sancta Trinitas",
+      "sourceCueId": "AO.SM.C0128",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Saints' memorial and intercession in Suscipe Trinitas",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Suscipe sancta Trinitas, lines 367–375",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0128.U004",
+      "prayer": "Suscipe sancta Trinitas",
+      "sourceCueId": "AO.SM.C0128",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Saints' memorial and intercession in Suscipe Trinitas",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Suscipe sancta Trinitas, lines 367–375",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0208.U002",
+      "prayer": "Praeceptis salutaribus moniti",
+      "sourceCueId": "AO.SM.C0208",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-PRIMARY-MB21"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Praeceptis salutaribus moniti, lines 674–678",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0212.U001",
+      "prayer": "Libera nos",
+      "sourceCueId": "AO.SM.C0212",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-18"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Libera nos, lines 694–696",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0212.U002",
+      "prayer": "Libera nos",
+      "sourceCueId": "AO.SM.C0212",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-18"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Libera nos, lines 694–696",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0221.U001",
+      "prayer": "Haec commixtio",
+      "sourceCueId": "AO.SM.C0221",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION_WITH_SYMBOLIC_CAVEAT",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-18"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Haec commixtio, lines 702–705",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0226.U003",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceCueId": "AO.SM.C0226",
+      "sourceFit": "CLAUSE_BOUNDARY_HOLD",
+      "editorialOutcome": "UPSTREAM_TEXT_BOUNDARY_REPAIR",
+      "existingBilingualStudyIds": [],
+      "reason": "Clause starts with orphan comma; original text owner must repair source offsets.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0226.U004",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceCueId": "AO.SM.C0226",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Priest's private pre-Communion deliverance/perseverance",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0226.U005",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceCueId": "AO.SM.C0226",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "OPTIONAL_MICRO_DETAIL_IN_EXISTING_OWNER",
+      "existingBilingualStudyIds": [],
+      "reason": "Priest's private pre-Communion deliverance/perseverance",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0226.U006",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceCueId": "AO.SM.C0226",
+      "sourceFit": "SHARED_CONCLUSION_REUSE",
+      "editorialOutcome": "SHARED_FORMULA_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Shared conclusion: original liturgical text suffices.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0227.U003",
+      "prayer": "Perceptio Corporis tui",
+      "sourceCueId": "AO.SM.C0227",
+      "sourceFit": "CLAUSE_BOUNDARY_HOLD",
+      "editorialOutcome": "UPSTREAM_TEXT_BOUNDARY_REPAIR",
+      "existingBilingualStudyIds": [],
+      "reason": "Clause starts with orphan comma; original text owner must repair source offsets.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "authorDiscussionScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0227.U004",
+      "prayer": "Perceptio Corporis tui",
+      "sourceCueId": "AO.SM.C0227",
+      "sourceFit": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "authorDiscussionScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0227.U005",
+      "prayer": "Perceptio Corporis tui",
+      "sourceCueId": "AO.SM.C0227",
+      "sourceFit": "SHARED_CONCLUSION_REUSE",
+      "editorialOutcome": "SHARED_FORMULA_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Shared conclusion: original liturgical text suffices.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "authorDiscussionScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0247.U001",
+      "prayer": "Quod ore sumpsimus",
+      "sourceCueId": "AO.SM.C0247",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-21"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Quod ore sumpsimus, lines 741–742",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0248.U001",
+      "prayer": "Corpus tuum Domine",
+      "sourceCueId": "AO.SM.C0248",
+      "sourceFit": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Corpus tuum Domine, lines 743–745",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0248.U003",
+      "prayer": "Corpus tuum Domine",
+      "sourceCueId": "AO.SM.C0248",
+      "sourceFit": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "editorialOutcome": "REFERENCE_ONLY_NO_NEW_TEXT",
+      "existingBilingualStudyIds": [],
+      "reason": "Source supports prayer context or quotation, not independent explanatory claim.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Corpus tuum Domine, lines 743–745",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0261.U001",
+      "prayer": "Placeat tibi",
+      "sourceCueId": "AO.SM.C0261",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-24"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0261.U003",
+      "prayer": "Placeat tibi",
+      "sourceCueId": "AO.SM.C0261",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-24"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    },
+    {
+      "unitId": "AO.V3.0261.U004",
+      "prayer": "Placeat tibi",
+      "sourceCueId": "AO.SM.C0261",
+      "sourceFit": "DIRECT_AUTHOR_EXPOSITION",
+      "editorialOutcome": "REUSE_44_BILINGUAL_STUDIES",
+      "existingBilingualStudyIds": [
+        "MM-NEW-24"
+      ],
+      "reason": "Substance already covered by inherited bilingual study.",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "authorDiscussionScripture": [],
+      "review": "UNPUBLISHED_INHERITED_OWNER_ONLY"
+    }
+  ],
+  "p2FamilyPlan": [
+    {
+      "name": "01 Preparatory rites",
+      "count": 27,
+      "parentPrayers": 24,
+      "reviewPolicy": "Scripture/foot-of-altar rubrics",
+      "scope": "Judica me, repeated versicles, local conditions",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "02 Kyrie, Gloria, Collect",
+      "count": 23,
+      "parentPrayers": 20,
+      "reviewPolicy": "Reuse Kyrie & Gloria studies",
+      "scope": "Gloria clauses and Kyrie repeated responses",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "03 Lessons and Gospel",
+      "count": 11,
+      "parentPrayers": 9,
+      "reviewPolicy": "Proper Scripture + Gospel prep",
+      "scope": "Variable readings; Isaiah and Munda cor meum",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "04 Credo",
+      "count": 25,
+      "parentPrayers": 12,
+      "reviewPolicy": "Creed study + precise genuflection cues",
+      "scope": "One Creed owner, not twenty-five essays",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "05 Offertory and incensation",
+      "count": 21,
+      "parentPrayers": 11,
+      "reviewPolicy": "Source-led prayer family",
+      "scope": "Lavabo, offerings, conditional incensation",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "06 Preface and Sanctus",
+      "count": 6,
+      "parentPrayers": 6,
+      "reviewPolicy": "Reuse Preface and Sanctus owners",
+      "scope": "Proper Preface must remain variable",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "07 Roman Canon doxology",
+      "count": 1,
+      "parentPrayers": 1,
+      "reviewPolicy": "AO.CANON.14",
+      "scope": "Per ipsum belongs to 14th Canon owner",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "08 Pater, fraction, Pax",
+      "count": 11,
+      "parentPrayers": 7,
+      "reviewPolicy": "Pater/Libera/Pax existing owners",
+      "scope": "Scripture, rubric and prayer are distinct",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "09 Priest and faithful Communion",
+      "count": 31,
+      "parentPrayers": 13,
+      "reviewPolicy": "Speaker and form gates",
+      "scope": "Domine non sum dignus, local second Confiteor",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "10 Ablutions and Postcommunion",
+      "count": 4,
+      "parentPrayers": 4,
+      "reviewPolicy": "Purification + response reuse",
+      "scope": "Quod ore / Corpus tuum, repeated greeting",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "11 Dismissal and blessing",
+      "count": 6,
+      "parentPrayers": 6,
+      "reviewPolicy": "Final action + Requiem gates",
+      "scope": "Ite, Placeat, omissions depend on rite",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    },
+    {
+      "name": "12 Last Gospel",
+      "count": 14,
+      "parentPrayers": 8,
+      "reviewPolicy": "John 1 + conditional final lifecycle",
+      "scope": "Use Scripture reader; no invented universal omission",
+      "certainty": "FAMILY_TRIAGE_NOT_AUTHOR_QUOTATION_CERTIFICATION"
+    }
+  ],
+  "gate": [
+    "Retain 44 original bilingual studies and 139 verified claims unchanged.",
+    "Ten candidate new details are ten micro-units under seven existing prayers, not ten new mini-articles.",
+    "An author discussing a prayer does not automatically certify each derived microphrase or Scripture reference.",
+    "All 180 P2 actions in the conversation workbook remain preliminary family routing, not 180 individually collated sources.",
+    "Second Confiteor, processional Last Gospel, proper readings and priest/deacon cue ownership remain conditionally gated.",
+    "No Mass reader text, UI publication, rubrics or main app changes."
+  ],
+  "status": "EDITORIAL_REVIEW_ONLY_NO_PUBLICATION"
+}
