@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_VISUAL_W65_SAINT_ARTWORK_TECHNICAL_REVIEW_V1",
+  "asOf": "2026-10-15",
+  "sourceOwner": "data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json",
+  "releaseRule": "User rating 5 is an aesthetic selection, never automatic reproduction rights, attribution, correct original-photo ID, acceptable resolution, or production approval.",
+  "nativePilotCount": 6,
+  "currentAestheticFiveCandidates": 2,
+  "publishedPortraitAssets": 0,
+  "entries": [
+    {
+      "saintId": "saint:therese-of-lisieux",
+      "artworkId": "carmel-lisieux-1925-therese-aux-roses",
+      "artist": "Celine Martin (Soeur Genevieve de la Sainte-Face)",
+      "artworkTitle": "Therese aux roses (1925)",
+      "subjectType": "DEVOTIONAL_PORTRAIT",
+      "aestheticRating": 5,
+      "noAestheticRerating": true,
+      "primaryArtistEvidence": "https://archives.carmeldelisieux.fr/personnage/celine-martin/",
+      "artistDied": 1959,
+      "archiveLead": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "rights": {
+        "state": "HOLD_CHECK_COPYRIGHT_AND_REPRODUCTION_PERMISSION",
+        "note": "Creator died in 1959; ordinary life+70 rights may run through 2029 in applicable jurisdictions, subject to local legal rules. Do not assert global public-domain status.",
+        "permissionProof": null
+      },
+      "provenance": {
+        "originalObjectId": null,
+        "exactReproductionUrl": null,
+        "hash": null,
+        "ratedImageMatched": false
+      },
+      "media": {
+        "localAsset": null,
+        "rightsVerified": false,
+        "phoneVisualQA": false,
+        "cropVerified": false
+      },
+      "releaseAllowed": false,
+      "nextAction": "Confirm the exact original and rated image with Carmel, secure permission or legal clearance, then record the actual reproducible file and phone crop."
+    },
+    {
+      "saintId": "saint:margaret-mary-alacoque",
+      "artworkId": "podesti-margaret-mary-source",
+      "artist": "Francesco Podesti (Commons attribution; museum object verification pending)",
+      "artworkTitle": "Apparizione a Marguerite Marie Alacoque",
+      "subjectType": "MYSTICAL_APPARITION_SCENE_NOT_SOLO_PORTRAIT",
+      "aestheticRating": 5,
+      "noAestheticRerating": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "rights": {
+        "state": "COMMONS_LICENSE_DECLARED_BUT_EXACT_MEDIA_RELEASE_REVIEW_PENDING",
+        "notes": [
+          "Commons states public-domain faithful reproduction and uploader CC BY-SA 4.0.",
+          "Author died 1895, so the underlying old painting is widely public domain.",
+          "File photographer/source described as uploader own work; verify the original object and rights/attribution for the exact reproduced file."
+        ],
+        "permissionProof": null
+      },
+      "provenance": {
+        "originalObjectId": null,
+        "exactReproductionUrl": null,
+        "hash": null,
+        "ratedImageMatched": false,
+        "claimedMuseum": "Vatican Museums"
+      },
+      "media": {
+        "originalListedWidth": 800,
+        "originalListedHeight": 600,
+        "originalListedBytes": 49529,
+        "localAsset": null,
+        "rightsVerified": false,
+        "phoneVisualQA": false,
+        "cropVerified": false
+      },
+      "releaseAllowed": false,
+      "nextAction": "Verify Vatican object attribution/origin, match the specific rated image, obtain a sufficiently resolved reproduction of the same physical original, record licence/credit, then test crop."
+    }
+  ],
+  "guardrails": {
+    "singleCanonicalArtId": true,
+    "noShrinePhotoAsPortrait": true,
+    "noNewPaintingOrNewRating": true,
+    "noMapPinFromArt": true,
+    "no1962MassChange": true,
+    "neverReleaseWhenRightsUnknown": true,
+    "keepSourceMapPortraitNullUntilCertified": true
+  }
+}
