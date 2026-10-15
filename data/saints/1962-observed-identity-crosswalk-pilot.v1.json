@@ -27,10 +27,15 @@
         "Teresa",
         "Theresa"
       ],
-      "status": "CANDIDATE_PENDING_OBSERVED_RESOLVER_AND_LITURGICAL_RECONCILIATION",
+      "status": "OBSERVED_SOURCE_ID_VERIFIED_FOR_2026_NOT_ALL_YEAR_PRECEDENCE",
       "source_ids": [
         "1962-ordo-reference"
-      ]
+      ],
+      "observed_2026_source_id": "sancti:10-03:3:w",
+      "observed_2026_date": "2026-10-03",
+      "observed_2026_cycle": "sanctorale",
+      "observed_2026_role": "PRINCIPAL",
+      "evidence": "Actual existing AO_RUNTIME_V8.resolver.resolveDay 2026-10-03/17, observedCycle, tested in scoped Playwright CI 38728173784"
     },
     {
       "saint_id": "saint:margaret-mary-alacoque",
@@ -39,11 +44,16 @@
         "Margaret Mary",
         "Marguerite-Marie"
       ],
-      "status": "CANDIDATE_PENDING_OBSERVED_RESOLVER_AND_LITURGICAL_RECONCILIATION",
+      "status": "OBSERVED_SOURCE_ID_VERIFIED_FOR_2026_NOT_ALL_YEAR_PRECEDENCE",
       "source_ids": [
         "1962-ordo-reference",
         "1962-original-propers"
-      ]
+      ],
+      "observed_2026_source_id": "sancti:10-17:3:w",
+      "observed_2026_date": "2026-10-17",
+      "observed_2026_cycle": "sanctorale",
+      "observed_2026_role": "PRINCIPAL",
+      "evidence": "Actual existing AO_RUNTIME_V8.resolver.resolveDay 2026-10-03/17, observedCycle, tested in scoped Playwright CI 38728173784"
     }
   ],
   "not_assigned_general_1962": [
@@ -66,5 +76,6 @@
   ],
   "after_1962_policy": "Later recognized saints, Doctors and Blesseds belong in a supplementary searchable lives/saints layer, not silently inserted into the historical 1962 rite calendar.",
   "transfer_policy": "Never claim a date is observed if a higher-rank celebration displaces it; include principal + commemorations from actual Calendar resolution, and distinct local propers only when available.",
-  "note": "This file is a small identity crosswalk pilot, not a certified exhaustive 1962 sanctoral."
+  "note": "Direct observed principal and canonical source IDs verified on 2026-10-03/17, but transfer/precedence in other years, local/religious proper additions, and full sanctoral calendar remain separate Calendar-owner work.",
+  "provenance_status": "2_SOURCE_RESOLVER_OBSERVATIONS_CONFIRMED_2026_ONLY"
 }
