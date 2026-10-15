@@ -27,6 +27,11 @@ a{color:#d2b783}.caption{opacity:.76;font:13px/1.6 system-ui,sans-serif}
   <p class="caption">A self-contained demonstration of structured paragraphs, exact locators and lazy section loading. Its four passages are original test copy, not excerpts from a Catholic book.</p>
   <section id="intro" class="panel">
     <p>Only the 712-byte source index is read at first. The passage files are fetched on demand, verified against SHA-256 and kept in a bounded cache.</p>
+    <label for="interfaceLanguage">Interface language </label>
+    <select id="interfaceLanguage" aria-label="Interface language">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
     <button type="button" id="openReader">Open source reader</button>
     <p class="measure" id="measure" aria-live="polite"></p>
   </section>
@@ -56,7 +61,7 @@ measure.textContent="Sections fetched: 0 · Body bytes: 0";
 document.getElementById("openReader").addEventListener("click",()=>{
  intro.hidden=true;area.hidden=false;
  viewer=mountSourcePassageReader(area,{
-  reader:service,title:"A Note on Sources",language:"en",initialPassageId:previous,
+  reader:service,title:"A Note on Sources",language:document.getElementById("interfaceLanguage").value,initialPassageId:previous,
   onReturn:({passageId})=>{
    previous=passageId;viewer?.destroy();area.hidden=true;intro.hidden=false;
   }
