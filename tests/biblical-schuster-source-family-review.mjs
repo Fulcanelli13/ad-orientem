@@ -62,6 +62,31 @@ assert.equal(new Set(domains.territories.map(t=>t.id)).size,18);
 assert.ok(domains.prohibitedAutoMetadataImport.length>=4);
 for(const page of domains.sampledWikisourceProofreadingStates){assert.ok(["PROOFREAD_NOT_VALIDATED","NOT_PROOFREAD"].includes(page.status));}
 
+
+const roleAudit=domains.roleSubspanOverlays;
+assert.equal(roleAudit.commentaryEnvelopesContainingApplication,9);
+assert.equal(roleAudit.commentaryEnvelopesApplicationNotYetReviewed,0);
+assert.equal(roleAudit.distinctTextRolesCountExcludingFootnotes,27);
+assert.equal(roleAudit.overlays.length,9);
+assert.deepEqual(roleAudit.overlays.map(x=>x.applicationSubspan.from.djvuPage),[46,50,56,61,66,72,79,84,88]);
+assert.equal(new Set(roleAudit.overlays.map(x=>x.sourceParentId)).size,9);
+for(const span of roleAudit.overlays){
+ const parent=domains.territories.find(x=>x.id===span.sourceParentId);
+ assert.ok(parent);
+ assert.equal(parent.kind,"KNECHT_COMMENTARY");
+ assert.equal(parent.containsDistinctApplication,true);
+ assert.equal(parent.homogeneousCommentary,false);
+ assert.equal(span.status,"DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED");
+ assert.equal(span.textImported,false);
+ assert.equal(span.translationPermittedNow,false);
+ assert.equal(span.commentarySubspan.until.heading,"Application.");
+ assert.equal(span.applicationSubspan.from.heading,"Application.");
+ assert.equal(span.commentarySubspan.until.djvuPage,span.applicationSubspan.from.djvuPage);
+ assert.ok(span.sourceHeadingEvidenceUrl.endsWith("/"+span.applicationSubspan.from.djvuPage));
+}
+assert.equal(fam.counts.wikisource1910OriginsRoleSpansExcludingFootnotes,27);
+assert.equal(fam.counts.wikisource1910OriginalPrintedParagraphsApproved,0);
+
 const quality=fam.wikisource1910SourceQualityReview;
 assert.equal(quality.status,"REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED");
 assert.equal(quality.displayedPrimaryNarrativeTextApproved,false);
