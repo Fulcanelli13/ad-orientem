@@ -61,13 +61,13 @@ assert(deskReview.records.every(x=>x.publication_blocks?.length>=1 && x.profile_
 assert.equal(deskReview.scope.source_spot_checked,11);
 assert.equal(deskReview.scope.source_pending_deeper_check,13);
 assert.equal(deskReview.scope.released_people,0);
-assert.equal(deskReview.scope.bios_with_sourced_longer_draft,6);
-assert.equal(deskReview.scope.bios_below_compact_target,19);
+assert.equal(deskReview.scope.bios_with_sourced_longer_draft,24);
+assert.equal(deskReview.scope.bios_below_compact_target,0);
 assert(deskReview.records.every(row=>row.current_combined_biography_words.en>0
  && row.current_combined_biography_words.fr>0),"No empty bilingual review text");
-assert(deskReview.records.filter(x=>x.first_source_supported_narrative_expansion).every(x=>x.current_combined_biography_words.en>=105
+assert(deskReview.records.filter(x=>x.first_source_supported_narrative_expansion).every(x=>x.current_combined_biography_words.en>=110
  && x.first_source_supported_narrative_expansion==="BILINGUAL_DRAFT_REVISED_NOT_HUMAN_APPROVED"),
- "Expanded drafts require substantive English text while retaining the approval hold");
+ "All 24 drafts require substantive English text while retaining the approval hold");
 
 assert(!entries.some(x=>x.id==="saint.francois-de-montmorency-laval"),
   "Do not replace Blessed Jacques-Désiré Laval with François de Montmorency-Laval");
