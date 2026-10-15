@@ -30,10 +30,26 @@ const ROLES=Object.freeze({
 const role=c=>({code:c,en:(ROLES[c]??[c,c])[0],fr:(ROLES[c]??[c,c])[1]});
 const readLinks=urls=>Object.freeze([...new Set(arr(urls).filter(trusted))]
   .map((url,i)=>Object.freeze({id:"BIO-"+i,title:new URL(url).hostname.replace(/^www\./,"")+" · "+(i+1),url})));
+// Cross-links are UI references only. Resolve by exact owner IDs, never
+// normalized names, feast-day coincidence, archive art subjects or likely aliases.
+const exactOwnerLinks=(person,index)=>{
+  if(index?.schema!=="ao.saints.read-only-owner-index-20261015.v1"||
+     index?.status!=="READ_ONLY_DERIVED_CROSS_OWNER_SNAPSHOT_NOT_PRIMARY_IDENTITY_OR_LITURGICAL_OWNER")return Object.freeze([]);
+  const id=tidy(person.saint_id);
+  if(!/^saint:[a-z0-9-]+$/.test(id))return Object.freeze([]);
+  const owner="saint."+id.slice(6),links=[];
+  if(arr(index.historical_subjects).some(x=>x.source_identity_id===owner))
+    links.push(Object.freeze({scope:"historical",item_id:"saints:historic:"+owner,
+      label_en:"Historical sanctoral source",label_fr:"Source du sanctoral historique",identity_policy:"EXACT_SOURCE_ID_ONLY"}));
+  if(arr(index.post1960_named_persons).some(x=>x.calendar_person_id===owner))
+    links.push(Object.freeze({scope:"later",item_id:"saints:modern:"+owner,
+      label_en:"Official canonization record",label_fr:"Référence officielle de canonisation",identity_policy:"EXACT_SOURCE_ID_ONLY"}));
+  return Object.freeze(links);
+};
 const vocabulary=person=>[person.name_en,person.name_fr,person.why_en,person.why_fr,
   ...arr(person.classification?.roles).flatMap(r=>[r.en,r.fr]),
   ...arr(person.classification?.honours).flatMap(r=>[r.en,r.fr])].join(" ");
-const itemFor=(person,siteNames=[],placeId=null)=>{
+const itemFor=(person,siteNames=[],placeId=null,ownerIndex=null)=>{
   const phrase=[vocabulary(person),...siteNames].join(" ");
   return Object.freeze({
     item_id:"saints:person:"+person.saint_id,lens:"saints",kind:"SAINT_CATALOGUE_PROFILE",
@@ -44,6 +60,7 @@ const itemFor=(person,siteNames=[],placeId=null)=>{
     // A person without an independently documented associated site gets NO map pin.
     map_publishable:false,geo:null,place_id:placeId,
     saints:Object.freeze([person]),
+    source_index_links:exactOwnerLinks(person,ownerIndex),
     search_text:fold(phrase)+" "+tidy(phrase).toLowerCase(),
     editorial_status:"RESEARCH_PREVIEW_NOT_RELEASE_APPROVAL"
   });
@@ -101,6 +118,6 @@ export function projectSaintCatalogueItems(dataset={}){
   }
   return Object.freeze([...people.values()].map(person=>{
     const s=sites.get(person.saint_id)??[];
-    return itemFor(person,s.map(x=>x.name),s[0]?.place_id??null);
+    return itemFor(person,s.map(x=>x.name),s[0]?.place_id??null,dataset.saintsOwnerIndex);
   }).sort((a,b)=>a.title.localeCompare(b.title)));
 }
