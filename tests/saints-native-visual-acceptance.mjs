@@ -43,9 +43,7 @@ try{
      const observations=await page.evaluate(async entries=>{
        const {observedCycle}=await import("/src/calendar/observed-cycle.js");
        const resolver=globalThis.AO_RUNTIME_V8?.resolver;
-       assert: {
-         if(typeof resolver?.resolveDay!=="function")throw Error("Canonical Calendar resolver unavailable");
-       }
+       if(typeof resolver?.resolveDay!=="function")throw Error("Canonical Calendar resolver unavailable");
        const results=[];
        for(const entry of entries){
          const date="2026-"+entry.month_day;
@@ -62,8 +60,8 @@ try{
        assert.notEqual(row.status,"failed",row.date+" Calendar resolver failed");
        assert(row.mainId,"Canonical observed day must include an identity "+row.date);
        const cue=crosswalk.candidate_general_1962.find(x=>x.saint_id===row.saint_id);
-       const labels=[...row.titles,...row.commemorations].join(" ").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
-       const match=cue.expected_title_tokens.some(token=>labels.includes(token.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase()));
+       const labels=[...row.titles,...row.commemorations].join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+       const match=cue.expected_title_tokens.some(token=>labels.includes(token.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase()));
        assert(match,"Candidate must actually appear in principal or commemorations: "+JSON.stringify(row));
        assert.equal(row.cycle,"sanctorale","1962 date candidate displaced by a temporal day; do not bind automatically: "+row.date);
      }
