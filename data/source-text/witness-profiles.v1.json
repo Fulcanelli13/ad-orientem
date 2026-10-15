@@ -1,0 +1,151 @@
+{
+  "schema": "AO_SOURCE_TEXT_WITNESS_PROFILES_V1",
+  "date": "2026-10-15",
+  "policy": "Observed external locator shapes only; not a canonical edition, licensed import, factual passage collation or permission to render third-party text. Profiles cannot clear any reproduction-rights gate.",
+  "profiles": [
+    {
+      "id": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceWorkId": "WORK-MEDIATOR-DEI-1947",
+      "sourceTitle": "Mediator Dei (English Vatican page)",
+      "locatorFamily": "PAPAL_EN_NUMBERED_PARAGRAPH",
+      "language": "en",
+      "editionLabel": "Vatican English HTML, translator/edition undetermined",
+      "witnessUrl": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "observedLocators": [
+        "23",
+        "24",
+        "210"
+      ],
+      "separateFootnotes": true,
+      "verified": "HTML_CONTENT_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "INDEX_AND_LINK_ONLY",
+      "warning": "Printed/superscript footnote labels must never be confused with paragraph numbers; no English/Latin automated paragraph alignment"
+    },
+    {
+      "id": "WIT-MEDIATOR-DEI-LA-VATICAN",
+      "sourceWorkId": "WORK-MEDIATOR-DEI-1947",
+      "sourceTitle": "Mediator Dei (Latin Vatican page)",
+      "locatorFamily": "DOCUMENT_SECTION_UNREVIEWED",
+      "language": "la",
+      "editionLabel": "Vatican Latin HTML witness; segment crosswalk pending",
+      "witnessUrl": "https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "observedLocators": [
+        "INTRODUCTIO"
+      ],
+      "verified": "HTML_CONTENT_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "INDEX_AND_LINK_ONLY",
+      "warning": "Do not infer Latin-to-English 1:1 paragraphs"
+    },
+    {
+      "id": "WIT-TANQUEREY-EN-EWTN",
+      "sourceWorkId": "WORK-TANQUEREY-SPIRITUAL-LIFE",
+      "sourceTitle": "The Spiritual Life (EWTN English transcription)",
+      "locatorFamily": "TANQUEREY_NUMBERED_SECTION",
+      "language": "en",
+      "editionLabel": "EWTN online English transcription, printed translation edition not yet collated",
+      "witnessUrls": [
+        "https://www.ewtn.com/catholicism/library/spiritual-life-12632",
+        "https://www.ewtn.com/catholicism/library/spiritual-life-12636"
+      ],
+      "observedLocators": [
+        "407",
+        "409",
+        "643"
+      ],
+      "verified": "HTML_CONTENT_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "INDEX_AND_LINK_ONLY",
+      "warning": "One work is distributed across multiple EWTN URLs; preserve printed section number and per-section host page"
+    },
+    {
+      "id": "WIT-HUME-E10-ONLINE",
+      "sourceWorkId": "WORK-HUME-ENQUIRY-HUMAN-UNDERSTANDING",
+      "sourceTitle": "First Enquiry, Section X, Of Miracles",
+      "locatorFamily": "HUME_ENQUIRY_SECTION_PARAGRAPH",
+      "language": "en",
+      "editionLabel": "Hume Texts Online edited version with variants; underlying copy-text unverified",
+      "witnessUrl": "https://davidhume.org/texts/e/10",
+      "observedLocators": [
+        "E 10.1",
+        "E 10.12",
+        "E 10.25"
+      ],
+      "printLocatorExample": "SBN 114-5",
+      "verified": "HTML_CONTENT_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "INDEX_AND_LINK_ONLY",
+      "warning": "E 10.12 is textual locator; SBN 114-5 is a separate pagination reference; site toggles edited version"
+    },
+    {
+      "id": "WIT-DESA-EN-CCEL",
+      "sourceWorkId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "sourceTitle": "Introduction to the Devout Life (CCEL English transcription)",
+      "locatorFamily": "SALES_PART_CHAPTER",
+      "language": "en",
+      "editionLabel": "CCEL English transcription/translation; translator and printing not fully collated",
+      "witnessUrl": "https://ccel.org/ccel/desales/devout_life.all.html",
+      "observedLocators": [
+        "II.1",
+        "II.17",
+        "V.3"
+      ],
+      "verified": "HTML_CONTENT_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "INDEX_AND_LINK_ONLY",
+      "warning": "Separate English translation from French original; Roman-numeral chapter headings repeat across five parts"
+    },
+    {
+      "id": "WIT-DENZINGER-31-1960-CATALOGUE",
+      "sourceWorkId": "WORK-DENZINGER-ENCHIRIDION",
+      "sourceTitle": "Enchiridion symbolorum, editio 31 (1960)",
+      "locatorFamily": "DENZINGER_EDITIONED_REFERENCE",
+      "referencePrefix": "D",
+      "language": "la",
+      "editionLabel": "Herder editio 31, 1960, catalogue record only",
+      "witnessUrl": "https://openlibrary.org/books/OL16574303M/Enchiridion_symbolorum",
+      "observedLocators": [],
+      "verified": "EDITION_CATALOGUE_REVIEWED_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "CATALOGUE_ONLY_NO_TEXT",
+      "warning": "Precise old-number assignment still requires original printing; do not infer D/DS/DH equivalence"
+    },
+    {
+      "id": "WIT-DENZINGER-32-1963-CATALOGUE",
+      "sourceWorkId": "WORK-DENZINGER-ENCHIRIDION",
+      "sourceTitle": "Enchiridion symbolorum, editio 32 (1963)",
+      "locatorFamily": "DENZINGER_EDITIONED_REFERENCE",
+      "referencePrefix": "DS",
+      "language": "la",
+      "editionLabel": "Herder editio 32, 1963, catalogue record only",
+      "witnessUrl": "https://openlibrary.org/books/OL16574303M/Enchiridion_symbolorum",
+      "observedLocators": [],
+      "verified": "EDITION_CATALOGUE_REVIEWED_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "CATALOGUE_ONLY_NO_TEXT",
+      "warning": "New Schönmetzer numbering not automatically interchangeable with earlier editions"
+    },
+    {
+      "id": "WIT-FORTESCUE-MASS-CATALOGUE",
+      "sourceWorkId": "WORK-FORTESCUE-MASS-STUDY",
+      "sourceTitle": "The Mass: A Study of the Roman Liturgy",
+      "locatorFamily": "PRINTED_PAGE_PENDING",
+      "language": "en",
+      "editionLabel": "Original historical printed scan, precise issue/page collation outstanding",
+      "witnessUrl": "https://commons.wikimedia.org/wiki/File:The_Mass_-_a_study_of_the_roman_liturgy_(IA_cu31924029398553).pdf",
+      "observedLocators": [],
+      "verified": "FACSIMILE_METADATA_READ_2026-10-15",
+      "rights": "NOT_CLEARED",
+      "handling": "CATALOGUE_ONLY_NO_TEXT",
+      "warning": "Do not confuse PDF image page with printed book pagination; earlier Mass research links another Archive.org witness"
+    }
+  ],
+  "metrics": {
+    "profiles": 8,
+    "htmlContentRead": 5,
+    "catalogueOnly": 3,
+    "thirdPartyTextImported": 0,
+    "reproductionCleared": 0
+  }
+}
