@@ -1,0 +1,655 @@
+{
+  "schema": "AO_SACRED_ART_W73_W72_LARGE_REVIEW_NEW_USER_DECISION_OVERLAY_V1",
+  "asOf": "2026-10-15",
+  "ownerPR": 887,
+  "ownerBranch": "platform/885-sacred-art-candidates",
+  "batchId": "AO-W72-75-SAINTS-243-IMAGE-COMPARISON-20261015",
+  "sourceExportedAt": "2026-10-15T16:35:14.703Z",
+  "sourceUploadedFileSha256": "26e8512cb7a0975fc85b7d6a88c55fe4dc73422b1dd70b41339816358db21392",
+  "sourceAuthority": {
+    "w72ManifestPath": "data/research/sacred-art-w72-saints-large-comparison-manifest-20261015.v1.json",
+    "w72ManifestGitBlobSHA": "f192d00accb8320975af12359bb0f8cea7b84af2",
+    "w49Path": "data/calendar/sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json",
+    "w49GitBlobSHA": "86acb3686c6b2eeeb34c2aee197f97fce2fe84d3",
+    "w68PermanentRejectionsPath": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+    "w68BansGitBlobSHA": "33f5fb680164469d96e9c2e2369ea6ab5286e842"
+  },
+  "counts": {
+    "sourceSubjectRequirements": 75,
+    "submittedUnratedNumeric": 4,
+    "newUserFiveForPreviouslyUnrated": 4,
+    "explicitOldFourPromotedToNewFive": 13,
+    "totalNewFiveDecisions": 17,
+    "unratedPreviewItemsRemaining": 42,
+    "subjectPreferences": 6,
+    "explicitNewFit": 1,
+    "subjectsWithSomeHistoricalOrNewFive": 71,
+    "subjectRequirementsWithoutAnyKnownHistoricalOrNewFive": 4,
+    "subjectsWithNoUsablePhoto": 10,
+    "subjectsWithOnlyOneUsablePhoto": 22,
+    "subjectsWithAtLeastTwoOptions": 43,
+    "additionalUsablePhotoSlotsForTwoPerCoreSubject": 42,
+    "knownPermanentBlockedIDRecords": 103,
+    "technicalPublicationAssetsClearedByThisOverlay": 0
+  },
+  "humanScoreAuthorityRules": [
+    "Every newly scored work was null-rated in pinned W72; every 4->5 was an explicit human approval recorded in W72 export.",
+    "This is a new layer; do not modify W48/W49/W68 historical score rows. Ratings attach to exactly viewed photographic source IDs until exact physical original equivalence verified.",
+    "Rejections remain 103 known banned original record IDs. No de-banning or old score replacement.",
+    "User preferred six existing artwork IDs for particular saint subjects; preference is not a new numeric score or approved production placement.",
+    "Where images are thumbnails, copies, reproductions or ambiguous links, keep approval as aesthetic judgment of viewed image and do not presume original painting/photograph match.",
+    "No museums or archives contacts, no permission requests or paid licences, no release and no edits to calendar/saints/map/atlas owners."
+  ],
+  "newFiveScoreAndUpgradeRecords": [
+    {
+      "candidateId": "italy-0900119548",
+      "canonicalSourceObjectKey": "italy-0900119548",
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "artistAsRecorded": "Antonio Marini",
+      "titleAsRecorded": "Sant'Alfonso Maria de Liguori",
+      "originalSourcePage": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+      "exactReviewedPhotograph": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROd2X1elPDEnJznexwO-x0Q8lEf2ECUj8e_nVbu21ZwR0bdgwVHr_MVdzc&s=10",
+      "sourceGroup": null,
+      "previousScore": null,
+      "userDecisionScore": 5,
+      "type": "NEW_NUMERIC_SCORE_ON_PREVIOUSLY_UNRATED",
+      "userSelectedFit": "perfect",
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "G28-003",
+      "canonicalSourceObjectKey": "G28-003",
+      "subjectId": "SNT-DC-11",
+      "subject": "Saint Alphonsus Liguori",
+      "artistAsRecorded": "Michele Lenzi",
+      "titleAsRecorded": "Sant'Alfonso Maria de Liguori",
+      "originalSourcePage": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1500005082",
+      "exactReviewedPhotograph": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStgJ6jomd2WbDOzP_KNRxsBBBvz1T7BrhiZxIUMP1tZ_DEDvgXbdjGwM0C&s=10",
+      "sourceGroup": null,
+      "previousScore": null,
+      "userDecisionScore": 5,
+      "type": "NEW_NUMERIC_SCORE_ON_PREVIOUSLY_UNRATED",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:guidoreni042jpg",
+      "canonicalSourceObjectKey": "C32:guidoreni042jpg",
+      "subjectId": "SNT-OT-01",
+      "subject": "Saint Joseph",
+      "artistAsRecorded": "Guido Reni (verify exact iconography)",
+      "titleAsRecorded": "Guido Reni 042.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Guido_Reni_042.jpg?width=960",
+      "sourceGroup": null,
+      "previousScore": null,
+      "userDecisionScore": 5,
+      "type": "NEW_NUMERIC_SCORE_ON_PREVIOUSLY_UNRATED",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C34:franciscodezurbaran046jpg",
+      "canonicalSourceObjectKey": "C34:franciscodezurbaran046jpg",
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "artistAsRecorded": "Attribution not established",
+      "titleAsRecorded": "Francisco de Zurbarán 046.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Francisco_de_Zurbar%C3%A1n_046.jpg?width=960",
+      "sourceGroup": null,
+      "previousScore": null,
+      "userDecisionScore": 5,
+      "type": "NEW_NUMERIC_SCORE_ON_PREVIOUSLY_UNRATED",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "met-441971",
+      "canonicalSourceObjectKey": "met-441971",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "artistAsRecorded": "Jusepe de Ribera",
+      "titleAsRecorded": "The Tears of Saint Peter",
+      "originalSourcePage": "https://www.metmuseum.org/art/collection/search/441971",
+      "exactReviewedPhotograph": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/The_Tears_of_Saint_Peter_MET_DP286357.jpg/960px-The_Tears_of_Saint_Peter_MET_DP286357.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "W05-012",
+      "canonicalSourceObjectKey": "W05-012",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "artistAsRecorded": "Peter Paul Rubens",
+      "titleAsRecorded": "Saint Paul",
+      "originalSourcePage": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+      "exactReviewedPhotograph": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Saint_Paul%2C_by_Peter_Paul_Rubens_%28Museo_del_Prado%29.jpg/960px-Saint_Paul%2C_by_Peter_Paul_Rubens_%28Museo_del_Prado%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "G30-010",
+      "canonicalSourceObjectKey": "G30-010",
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "artistAsRecorded": "Roman school, anonymous",
+      "titleAsRecorded": "Ritratto del cardinale Roberto Bellarmino",
+      "originalSourcePage": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+      "exactReviewedPhotograph": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Portret_van_kardinaal_Robertus_Bellarminus%2C_onbekend%2C_schilderij%2C_Museum_Plantin-Moretus_%28Antwerpen%29_-_MPM_V_IV_110_%28cropped%29.jpg/960px-Portret_van_kardinaal_Robertus_Bellarminus%2C_onbekend%2C_schilderij%2C_Museum_Plantin-Moretus_%28Antwerpen%29_-_MPM_V_IV_110_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "sdma-48-3-pittoni-anthony",
+      "canonicalSourceObjectKey": "sdma-48-3-pittoni-anthony",
+      "subjectId": "SNT-OT-06",
+      "subject": "Saint Anthony of Padua",
+      "artistAsRecorded": "Giovanni Battista Pittoni",
+      "titleAsRecorded": "The Vision of Saint Anthony of Padua",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "G17-009",
+      "canonicalSourceObjectKey": "G17-009",
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "artistAsRecorded": "Baronne Girod de l'Ain (Émilie Sivard de Beaulieu)",
+      "titleAsRecorded": "Episode de la vie de saint Denis",
+      "originalSourcePage": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+      "exactReviewedPhotograph": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/StDenis.jpg/1280px-StDenis.jpg?utm_source=fr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:francescounterpergersantateresadavilatiff",
+      "canonicalSourceObjectKey": "C32:francescounterpergersantateresadavilatiff",
+      "subjectId": "SNT-DC-08",
+      "subject": "Saint Teresa of Ávila",
+      "artistAsRecorded": "Francesco Unterperger",
+      "titleAsRecorded": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "canonicalSourceObjectKey": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "artistAsRecorded": "Bernardino Mei",
+      "titleAsRecorded": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+      "canonicalSourceObjectKey": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "artistAsRecorded": "Giambattista Tiepolo",
+      "titleAsRecorded": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:rubensathanasiusjpg",
+      "canonicalSourceObjectKey": "C32:rubensathanasiusjpg",
+      "subjectId": "SNT-DC-13",
+      "subject": "Saint Athanasius",
+      "artistAsRecorded": "Peter Paul Rubens (file attribution unresolved)",
+      "titleAsRecorded": "RubensAthanasius.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:RubensAthanasius.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:RubensAthanasius.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "canonicalSourceObjectKey": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "artistAsRecorded": "follower of Anthony van Dyck",
+      "titleAsRecorded": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+      "canonicalSourceObjectKey": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "artistAsRecorded": "Attribution not established",
+      "titleAsRecorded": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+      "canonicalSourceObjectKey": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "artistAsRecorded": "Attribution not established",
+      "titleAsRecorded": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    },
+    {
+      "candidateId": "C35:jeannedarcenprisonbylouiscrignier1824jpg",
+      "canonicalSourceObjectKey": "C35:jeannedarcenprisonbylouiscrignier1824jpg",
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "artistAsRecorded": "Attribution not established",
+      "titleAsRecorded": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+      "originalSourcePage": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+      "exactReviewedPhotograph": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg?width=960",
+      "previousScore": 4,
+      "userDecisionScore": 5,
+      "type": "EXPLICIT_4_TO_5_CURATORIAL_UPGRADE_ADDITIVE_ONLY",
+      "userSelectedFit": null,
+      "publicationReady": false,
+      "reviewedPhotoToPhysicalOriginalMatchCertified": false,
+      "curatorialArtworkApproved": true,
+      "needsProductionMaster": true
+    }
+  ],
+  "preferences": [
+    {
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "preferredCandidateId": "W05-027",
+      "artworkTitle": "The Crucifixion of Saint Peter",
+      "currentRating": 5,
+      "sourcePhoto": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Crucifixion_of_Saint_Peter-Caravaggio_%28c.1600%29FXD.jpg/960px-Crucifixion_of_Saint_Peter-Caravaggio_%28c.1600%29FXD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePage": "https://turismoroma.it/en/node/18610",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    },
+    {
+      "subjectId": "SNT-EV-02",
+      "subject": "Saint Luke the Evangelist",
+      "preferredCandidateId": "C34:luketheevangelistbyjanjanszdestommejpg",
+      "artworkTitle": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+      "currentRating": 5,
+      "sourcePhoto": "https://commons.wikimedia.org/wiki/Special:FilePath/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg?width=960",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    },
+    {
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "preferredCandidateId": "W02-017",
+      "artworkTitle": "St Ambrose barring Theodosius from Milan Cathedral",
+      "currentRating": 5,
+      "sourcePhoto": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Anthonis_van_Dyck_005.jpg/960px-Anthonis_van_Dyck_005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePage": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    },
+    {
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "preferredCandidateId": "W07-007",
+      "artworkTitle": "Saint Jerome Writing (Borghese original)",
+      "currentRating": 5,
+      "sourcePhoto": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Saint_Jerome_Writing-Caravaggio_%281605-6%29.jpg/960px-Saint_Jerome_Writing-Caravaggio_%281605-6%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePage": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    },
+    {
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "preferredCandidateId": "ART-arlo-rivelli-aint-homas-quinas",
+      "artworkTitle": "Saint Thomas Aquinas",
+      "currentRating": 5,
+      "sourcePhoto": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg/960px-Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    },
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "preferredCandidateId": "prado-rubens-p001647",
+      "artworkTitle": "Saint John the Evangelist",
+      "currentRating": 5,
+      "sourcePhoto": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Rubens_apostel_johannes_grt.jpg/960px-Rubens_apostel_johannes_grt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "sourcePage": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+      "fitDecisionInThisExport": null,
+      "technicalReleaseApproved": false
+    }
+  ],
+  "fitDecisions": [
+    {
+      "subjectId": "SNT-DC-11",
+      "candidateId": "italy-0900119548",
+      "decision": "perfect"
+    }
+  ],
+  "remainingNoFiveAcrossHistoricalAndW72Core": [
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "group": "EV",
+      "legacyResearchCandidateCount": 3,
+      "legacyUnratedCount": 3,
+      "legacyFourCount": 0
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "legacyResearchCandidateCount": 0,
+      "legacyUnratedCount": 0,
+      "legacyFourCount": 0
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "legacyResearchCandidateCount": 0,
+      "legacyUnratedCount": 0,
+      "legacyFourCount": 0
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "legacyResearchCandidateCount": 2,
+      "legacyUnratedCount": 2,
+      "legacyFourCount": 0
+    }
+  ],
+  "noPreviewSubjectIDs": [
+    {
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-EV-01",
+      "subject": "Saint Mark the Evangelist",
+      "category": "Evangelists"
+    },
+    {
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-04",
+      "subject": "Saint Gregory the Great",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-25",
+      "subject": "Saint Cyril of Alexandria",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-26",
+      "subject": "Saint Cyril of Jerusalem",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-OT-09",
+      "subject": "Saint Patrick",
+      "category": "Other Saints"
+    }
+  ],
+  "singlePreviewSubjectIDs": [
+    {
+      "subjectId": "SNT-AP-04",
+      "subject": "Saint John",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-AP-06",
+      "subject": "Saint Bartholomew",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-AP-09",
+      "subject": "Saint James the Less",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-AP-10",
+      "subject": "Saint Simon",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "category": "Apostles"
+    },
+    {
+      "subjectId": "SNT-DC-10",
+      "subject": "Saint John of the Cross",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-15",
+      "subject": "Saint Gregory Nazianzen",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-16",
+      "subject": "Saint John Chrysostom",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-19",
+      "subject": "Saint Anselm",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-20",
+      "subject": "Saint Peter Damian",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-22",
+      "subject": "Saint Robert Bellarmine",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-23",
+      "subject": "Saint Peter Canisius",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-24",
+      "subject": "Saint Lawrence of Brindisi",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-DC-27",
+      "subject": "Saint Ephrem",
+      "category": "Doctors of the Church"
+    },
+    {
+      "subjectId": "SNT-OT-05",
+      "subject": "Saint Thérèse of Lisieux",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-17",
+      "subject": "Saint Margaret Mary Alacoque",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-18",
+      "subject": "Saint Jean Vianney",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-27",
+      "subject": "Saint Denis of Paris",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "category": "Other Saints"
+    },
+    {
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "category": "Other Saints"
+    }
+  ],
+  "qualityAndIdentityPriorityHolds": {
+    "twoNewSaintAlphonsusGoogleThumbnailCandidateIDs": [
+      "italy-0900119548",
+      "G28-003"
+    ],
+    "additionalUnresolvedPhotoToOriginalMappings": [
+      {
+        "candidateId": "G30-010",
+        "reason": "W72 reviewed photo URL names Museum Plantin-Moretus MPM_V_IV_110 in Antwerp, while the owner's sourceURL is an unrelated Italian MiC property ID 1200225121; no demonstrated same physical painting. Keep score attached to viewed photo, not automatically to owner database source original."
+      },
+      {
+        "candidateId": "C32:guidoreni042jpg",
+        "reason": "Bare Commons file name Guido_Reni_042.jpg lacks subject identity and user source record itself says verify exact iconography; must confirm St Joseph is depicted before subject-specific use."
+      },
+      {
+        "candidateId": "C34:franciscodezurbaran046jpg",
+        "reason": "Bare Commons file name Francisco de Zurbarán 046.jpg and no maker on owner's data card; Saint Luke's depicted identity unverified."
+      },
+      {
+        "candidateId": "C32:rubensathanasiusjpg",
+        "reason": "Existing file attribution unresolved in W72; do not assume a Rubens original or authenticated Athanasius portrait."
+      }
+    ],
+    "originalScoreNotRevoked": true,
+    "technicalReleaseFalse": true
+  },
+  "publicationApproved": false
+}
