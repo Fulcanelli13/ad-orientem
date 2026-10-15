@@ -66,7 +66,7 @@ for(const entry of r71.rejected_wrong_physical_alias){
   assert.equal(candidate.possible_existing_place_id,null,"Do not conflate distinct sanctuaries");
 }
 const q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json");
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[104,70,576]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[161,6,583]);
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0317").canonical_place_id,venueId);
 const projection=projectExploreDataset({
  directory:{records:[],communities:[]},

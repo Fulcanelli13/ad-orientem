@@ -1,0 +1,99 @@
+name: Historic GitHub Pages baseline fingerprint
+
+on:
+  push:
+    branches:
+      - mass/phase12-curated65-reconciliation-20261015
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fingerprint-public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Inspect deployed Pages and compare canonical main
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/pages-fingerprint
+          echo "Historic Pages source fingerprint — $(date -u +'%Y-%m-%dT%H:%M:%SZ')" | tee artifacts/pages-fingerprint/report.txt
+          git fetch --no-tags origin main
+          echo "MAIN_COMMIT=$(git rev-parse origin/main)" | tee -a artifacts/pages-fingerprint/report.txt
+          echo "BRANCH_COMMIT=$(git rev-parse HEAD)" | tee -a artifacts/pages-fingerprint/report.txt
+          echo "All requests bypass the browser's service worker and use a unique cache-busting query." | tee -a artifacts/pages-fingerprint/report.txt
+
+          for file in index.html sw.js src/mass/browser-entry.js src/mass/reader-live-curated-cards.js; do
+            local_file="artifacts/pages-fingerprint/$(basename "$file").main"
+            git show "origin/main:$file" > "$local_file"
+            local_hash=$(sha256sum "$local_file" | cut -d' ' -f1)
+            url="https://fulcanelli13.github.io/ad-orientem/$file?ao_pages_fingerprint=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+            remote_file="artifacts/pages-fingerprint/$(basename "$file").remote"
+            headers="artifacts/pages-fingerprint/$(basename "$file").headers"
+            set +e
+            status=$(curl -sSL --retry 2 --max-time 45 -o "$remote_file" -D "$headers" -w "%{http_code}" "$url")
+            exit_code=$?
+            set -e
+            if [[ $exit_code -ne 0 || "$status" != "200" ]]; then
+              echo "$file: REMOTE_UNVERIFIED http=$status curl_exit=$exit_code local_main_sha256=$local_hash" | tee -a artifacts/pages-fingerprint/report.txt
+              continue
+            fi
+            remote_hash=$(sha256sum "$remote_file" | cut -d' ' -f1)
+            if [[ "$remote_hash" == "$local_hash" ]]; then match="MATCHES_MAIN"; else match="DIFFERS_FROM_MAIN"; fi
+            echo "$file: $match http=$status remote_sha256=$remote_hash local_main_sha256=$local_hash remote_bytes=$(wc -c < "$remote_file")" | tee -a artifacts/pages-fingerprint/report.txt
+          done
+
+          if [[ -f artifacts/pages-fingerprint/index.html.remote ]]; then
+            remote_hash=$(sha256sum artifacts/pages-fingerprint/index.html.remote | cut -d' ' -f1)
+            latest_match="none among inspected last 300 index-changing commits"
+            while read -r sha; do
+              s=$(git show "$sha:index.html" 2>/dev/null | sha256sum | cut -d' ' -f1)
+              if [[ "$s" == "$remote_hash" ]]; then
+                latest_match="$sha"
+                break
+              fi
+            done < <(git log --all --format='%H' -300 -- index.html)
+            echo "DEPLOYED_INDEX_MATCHING_CHANGE_COMMIT=$latest_match" | tee -a artifacts/pages-fingerprint/report.txt
+          fi
+
+          {
+            echo "## Historic Pages fingerprint (read-only)"
+            echo '~~~'
+            cat artifacts/pages-fingerprint/report.txt
+            echo '~~~'
+            echo ""
+            echo "The local browser may still serve an older CacheStorage snapshot via the service worker; this probe tests the network-served files, not the active tab."
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Archive evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: historic-pages-network-fingerprint
+          path: artifacts/pages-fingerprint/
+          retention-days: 14
+
+  capture-public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Capture actual historic Pages Home at 320, 390, 768 and 1280 px
+        run: node tests/historic-pages-browser-baseline.mjs
+      - name: Retain screenshots and browser diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historic-pages-four-width-screenshots
+          path: artifacts/historic-pages-visual/
+          retention-days: 14

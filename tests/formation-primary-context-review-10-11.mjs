@@ -9,6 +9,17 @@ const eleven=read(root+"formation-primary-context-review-11-2026-10-09.v1.json")
 const packs=m.source_packs.map(p=>({path:p,data:read(p)}));
 const amendments=read(root+"formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
 const superseded=new Map(amendments.original_findings_superseded.map(x=>[x.finding_id,x]));
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const waves=delta.historical_late_primary_source_dispositions;
+assert.equal(waves["10"].historical_findings,188);
+assert.equal(waves["10"].unchanged_source_role_links,174);
+assert.equal(waves["10"].additional_source_dispositions.length,14);
+assert.equal(waves["11"].historical_findings,72);
+assert.equal(waves["11"].unchanged_source_role_links,67);
+assert.deepEqual(waves["11"].historical_prior_amendment_links,["PSV11-011"]);
+assert.equal(waves["11"].additional_source_dispositions.length,4);
+const moved=new Map([...waves["10"].additional_source_dispositions,...waves["11"].additional_source_dispositions].map(x=>[x.finding_id,x]));
+assert.equal(moved.size,18);
 const owners=new Map(packs.flatMap(p=>p.data.dossiers.map(d=>[d.id,{d,reg:new Map(p.data.source_registry.map(s=>[s.id,s]))}])));
 const linkRepair=read(root+"formation-vatican-i-original-link-repair-2026-10-10.v1.json");
 const linkRepairFindings=new Map(linkRepair.findings.map(z=>[z.finding_id,z]));
@@ -47,12 +58,24 @@ function check(f,method){
   const section=obj.d.sections.find(s=>s.role===f.role);
   assert.ok(section,"historical review has no corresponding original role "+f.id);
   if(!section.source_ids.includes(f.source_id)){
-    const old=superseded.get(f.id);
-    assert.ok(old,"original citation replaced without explicit historical amendment "+f.id);
-    assert.equal(old.owner,f.owner);assert.equal(old.role,f.role);assert.equal(old.previous_source_id,f.source_id);
-    assert.deepEqual(old.replacement_source_ids,section.source_ids);
-    assert.equal(old.historical_finding_retained,true);
-    assert.equal(old.new_citation_claims_independently_certified,false);
+    const old=superseded.get(f.id),current=moved.get(f.id);
+    assert.ok(old||current,"original citation replaced without explicit historical disposition "+f.id);
+    assert.ok(!(old&&current),"Duplicate previous source disposition "+f.id);
+    const row=old||current;
+    assert.equal(row.owner,f.owner);assert.equal(row.role,f.role);
+    assert.equal(old?row.previous_source_id:row.historic_source_id,f.source_id);
+    if(old){
+      assert.deepEqual(row.replacement_source_ids,section.source_ids);
+      assert.equal(row.historical_finding_retained,true);
+      assert.equal(row.new_citation_claims_independently_certified,false);
+    }else{
+      assert.equal(row.historic_url,f.url);
+      assert.deepEqual(row.current_source_ids,section.source_ids);
+      assert.deepEqual(row.matching_original_url_successor_ids,
+        section.source_ids.filter(id=>obj.reg.get(id)?.url===f.url));
+      assert.equal(row.current_claim_independently_certified,false);
+      assert.match(row.disposition,/NOT_CURRENT_CLAIM_CERTIFICATION|NO_TRANSFER_OF_CERTIFICATION/);
+    }
   }
   const orig=obj.reg.get(f.source_id);assert.ok(orig,"missing canonical registry source "+f.id);
   verifyHistoricLink(f,orig.url);
@@ -87,7 +110,7 @@ for(const [id,role,term] of [
  ["CR-ECC-04","critical_response","Bellarmine"],
  ["CR-ECC-08","traditional_catholic_argument","Pastor aeternus"],
  ["CR-DOC-04","answer","Libertas"],
- ["CR-DOC-09","critical_response","Mater Populi Fidelis"],
+ ["CR-DOC-09","critical_response","Donum veritatis"],
  ["APOL-020","answer","Pastor aeternus"],
  ["APOL-021","traditional_catholic_argument","Vincent"],
  ["APOL-022","answer","Apostolicae curae"],
@@ -106,4 +129,4 @@ for(const pack of packs){assert.equal(pack.data.publication_allowed,false);for(c
   for(const flag of ["publication_allowed","original_claim_by_claim_source_context_certified","independent_theological_canonical_approval","native_french_copyapproval"])assert.equal(d[flag],false,d.id+" illegally approved");
   for(const section of d.sections)for(const src of Object.keys(section.source_claim_locators||{}))assert.ok(section.source_ids.includes(src),d.id+" unsupported source locator");
 }}
-console.log(JSON.stringify({status:"PASS",dossiers:141,sections:564,priorBounded:345,sourceReuse:188,newSourceChecks:72,documentaryHolds:5,expertApprovals:0,published:0}));
+console.log(JSON.stringify({status:"PASS",dossiers:141,sections:564,priorBounded:345,sourceReuse:188,newSourceChecks:72,unchangedHistoricSourceEdges:241,explicitNewRoleDispositions:18,documentaryHolds:5,expertApprovals:0,published:0}));

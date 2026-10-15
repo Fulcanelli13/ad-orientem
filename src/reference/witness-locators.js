@@ -1,8 +1,5 @@
-import {extractReviewedEdition} from "./edition-adapters.js";
-// Witness-level canonical locator parsing. Does not fetch or reproduce body text.
+// Canonical source-witness locator grammar; no fetching or text import.\n// Witness-level canonical locator parsing. Does not fetch or reproduce body text.
 // The profile registry is research metadata, not a rights or editorial certificate.
-const NAT=/^[1-9][0-9]{0,5}$/;
-const ROMAN=["I","II","III","IV","V"];
 const PROFILE_ID=/^WIT-[A-Z0-9]+(?:-[A-Z0-9]+)*$/;
 export function normalizeWitnessLocator(profile,raw){
  if(!profile||!PROFILE_ID.test(profile.id??"")||typeof raw!=="string")
@@ -71,48 +68,4 @@ export function editionQualifiedCitation({work,passageId,sourceAnchor}={}){
     !/^[a-z0-9][a-z0-9-]{0,79}$/.test(sourceAnchor??""))
   throw new Error("SOURCE_CITATION_QUALIFICATION_INVALID");
  return [work.id,work.editionId,work.witnessId,sourceAnchor].map(encodeURIComponent).join("::");
-}
-// Reshape a manually inspected, cleared excerpt into the existing edition adapter.
-// No publisher-specific scraping, automatic footnote splitting or rights changes.
-export function createAnchoredWitnessFixture({profile,hostUrl,heading,records}={}){
- if(!Array.isArray(records)||!records.length||records.length>10000||
-    typeof heading!=="string"||!heading.trim())
-  throw new Error("SOURCE_WITNESS_EXTRACT_INVALID");
- const seen=new Set(),rows=[],bindings=[];
- for(const record of records){
-  if(typeof record.text!=="string"||!record.text.trim()||
-     /[\u0000-\u001f]/.test(record.text))
-   throw new Error("SOURCE_WITNESS_TEXT_INVALID");
-  const binding=validateExternalLocatorBinding({profile,locator:record.locator,hostUrl:record.hostUrl??hostUrl});
-  if(seen.has(binding.sourceAnchor))throw new Error("SOURCE_WITNESS_LOCATOR_DUPLICATE");
-  seen.add(binding.sourceAnchor);bindings.push(binding);
-  rows.push("["+binding.sourceAnchor+"] "+record.text);
- }
- return Object.freeze({adapter:"numbered-paragraphs-v1",
-  headedText:"# "+heading.trim()+"\n"+rows.join("\n"),
-  locators:Object.freeze(bindings)});
-}
-
-export function extractReviewedWitnessDocument({profile,work,review,hostUrl,heading,records}={}){
- if(profile?.sourceWorkId!==work?.id||profile?.id!==work?.witnessId)
-  throw new Error("SOURCE_WITNESS_WORK_IDENTITY_MISMATCH");
- const prepared=createAnchoredWitnessFixture({profile,hostUrl,heading,records});
- const selectedReview={...review,adapter:prepared.adapter};
- const parsed=extractReviewedEdition({work,review:selectedReview,sourceText:prepared.headedText});
- if(parsed.passages.length!==prepared.locators.length)
-  throw new Error("SOURCE_WITNESS_EXTRACT_ALIGNMENT_FAILED");
- const passages=parsed.passages.map((passage,i)=>{
-  const source=prepared.locators[i];
-  if(!passage.id.endsWith("/"+source.sourceAnchor))
-   throw new Error("SOURCE_WITNESS_EXTRACT_ANCHOR_MISMATCH");
-  const extent=records[i]?.sourceExtent;
-  if(extent!==undefined&&!["SENTENCE_ONLY","COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY","PARAGRAPH_OPENING_FRAGMENT"].includes(extent))
-   throw new Error("SOURCE_WITNESS_EXTENT_INVALID");
-  return Object.freeze({...passage,sourceLocator:source.sourceLocator,
-   ...(extent===undefined?{}:{sourceExtent:extent}),
-   sourcePage:source.externalPage,
-   editionQualifiedCitation:editionQualifiedCitation({work,passageId:passage.id,
-    sourceAnchor:source.sourceAnchor})});
- });
- return Object.freeze({...parsed,passages:Object.freeze(passages)});
 }

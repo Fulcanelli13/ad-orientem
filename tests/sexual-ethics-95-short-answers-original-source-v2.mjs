@@ -19,7 +19,9 @@ let verified=0,pending=0,sourceCount=0;
 for(const row of data.records){
  const q=CSE_QUESTION_MAP[row.id];assert.ok(q);
  assert.deepEqual([row.question_en,row.question_fr],q.q);
- assert.deepEqual(row.all_cited_sources.map(x=>[x.source_id,x.locator]),q.refs,row.id+" source list drift");
+ const historical=row.all_cited_sources.map(x=>[x.source_id,x.locator]);
+ assert.deepEqual(historical,row.id==="CSE068"?q.refs.filter(([id])=>id!=="QUAEC"):q.refs,row.id+" original source snapshot lost");
+ if(row.id==="CSE068")assert.ok(q.refs.some(([id])=>id==="QUAEC"),"New CDF primary is included");
  assert.equal(row.english_answer_present,q.a[0].length>30);
  assert.equal(row.french_answer_present,q.a[1].length>30);
  assert.equal(row.detail_present,Boolean(q.d));

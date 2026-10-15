@@ -321,12 +321,12 @@ function renderDyingCompanion(){
         ["foundations_hail_mary",L("Hail Mary","Je vous salue Marie"),L("At the hour of our death","À l’heure de notre mort")],
         ["adoration_anima_christi","Anima Christi",L("Passion of Christ, strengthen me","Passion du Christ, fortifiez-moi")]
       ])}
-      ${sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr))}
+      ${sourcedPrayerCard(d.aspirations,L(d.aspirations.title,d.aspirations.titleFr),{focusParagraphs:true})}
       <div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.st_joseph"><span><b>${esc(L("St Joseph","Saint Joseph"))}</b><small>${esc(L("Patron of the dying · open the existing St Joseph module","Patron des mourants · ouvrir le module existant de saint Joseph"))}</small></span><i aria-hidden="true">→</i></button></div>
       ${source(L("French customary invocations","Invocations usuelles françaises"),GOOD_DEATH_DYING_SOURCES_V384.frenchInvocations)}`;
   }else if(tab==="commend"){
-    body=`<p class="aoTP381Intro">${esc(L("The Commendation of the Soul is a traditional prayer of the Church as death approaches. These prayers may be prayed at the bedside; they do not imitate absolution, Anointing, Viaticum or the Apostolic Blessing, which belong to the priestly sacramental ministry.","La recommandation de l’âme est une prière traditionnelle de l’Église à l’approche de la mort. Ces prières peuvent être récitées au chevet du mourant; elles n’imitent ni l’absolution, ni l’Onction, ni le Viatique, ni la Bénédiction apostolique, qui relèvent du ministère sacramentel du prêtre."))}</p>
-      ${sourcedPrayerCard(d.proficiscere,L(d.proficiscere.title,d.proficiscere.titleFr))}
+    body=`${sourcedPrayerCard(d.proficiscere,L(d.proficiscere.title,d.proficiscere.titleFr),{focusParagraphs:true})}
+      <p class="aoTP381Intro">${esc(L("The Commendation of the Soul is a traditional prayer of the Church as death approaches. These prayers may be prayed at the bedside; they do not imitate absolution, Anointing, Viaticum or the Apostolic Blessing, which belong to the priestly sacramental ministry.","La recommandation de l’âme est une prière traditionnelle de l’Église à l’approche de la mort. Ces prières peuvent être récitées au chevet du mourant; elles n’imitent ni l’absolution, ni l’Onction, ni le Viatique, ni la Bénédiction apostolique, qui relèvent du ministère sacramentel du prêtre."))}</p>
       ${source("Traditional Roman Commendation · Latin",GOOD_DEATH_DYING_SOURCES_V384.latinProficiscere)}
       ${source(L("Historical French Catholic witness","Témoin catholique français historique"),GOOD_DEATH_DYING_SOURCES_V384.frenchProficiscere)}
       <section class="aoTP381Section"><h2>${esc(L("If the person has died","Si la personne est décédée"))}</h2><p>${esc(L("Move from prayers for the dying to suffrage for the departed; do not continue presenting the person as still in the agony of death.","Passez des prières pour le mourant aux suffrages pour le défunt; ne continuez pas à présenter la personne comme encore dans l’agonie."))}</p></section>
@@ -341,7 +341,17 @@ function renderDyingCompanion(){
       <details class="aoTP381Source"><summary>${esc(L("At the point of death · current indulgence","À l’article de la mort · indulgence actuelle"))}</summary><p>${esc(isFr()?d.currentIndulgence.fr:d.currentIndulgence.en)}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
       <details class="aoTP381Source"><summary>${esc(L("Why Viaticum matters","Pourquoi le Viatique est important"))}</summary><p>${esc(L("The Church gives the Eucharist as Viaticum to those about to leave this life. Together with Penance and Anointing of the Sick, it belongs to the sacraments that complete the Christian’s earthly pilgrimage.","L’Église donne l’Eucharistie en Viatique à ceux qui sont sur le point de quitter cette vie. Avec la Pénitence et l’Onction des malades, il appartient aux sacrements qui achèvent le pèlerinage terrestre du chrétien."))}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.viaticum)}" target="_blank" rel="noopener">${esc(L("Catechism · Viaticum","Catéchisme · Viatique"))} ↗</a></p></details>`;
   }
-  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${body}${dyingCompanionStepNav(tab)}</main>`;
+  // The initial card is a real-world pastoral action. The guide is not a
+  // simulated sacramental rite and its later cards are optional bedside help.
+  const titles={
+    now:L("Call a priest now","Appelez un prêtre maintenant"),
+    pray:L("Pray quietly","Priez paisiblement"),
+    commend:L("Commend the soul","Recommandez l’âme")
+  };
+  const card=`<section class="aoDevoCard" data-ao-devo-card="dying-${tab}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(titles[tab])}">${body}</div></section>`;
+  const steps=`<div class="aoTP381Tabs" role="group" aria-label="${esc(L("Bedside stages","Étapes au chevet"))}"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>`;
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-dying-companion-options><summary>${esc(L("About this bedside companion","À propos de cet accompagnement"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p>${steps}${dyingCompanionStepNav(tab)}</div></details>`;
+  return `${head(L("Dying Companion","Accompagnement du mourant"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
@@ -365,7 +375,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.good_death"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -450,6 +460,21 @@ function render(){
     });
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
+  if(S.screen==="module"&&S.route==="pray.dying_companion"){
+    const chapters=[
+      {id:"dying-now",title:L("Call priest","Appeler le prêtre")},
+      {id:"dying-pray",title:L("Pray","Prier")},
+      {id:"dying-commend",title:L("Commend","Recommander")}
+    ];
+    const reader=installSequentialDevotionalReader({
+      mount:m,kind:"dyingCompanion",chapters,
+      activeIndex:DYING_COMPANION_STAGES.indexOf(S.dying),
+      paragraphSelector:".aoTP381Section>p,.aoTP381Intro,.aoTP381TextParagraph",
+      onNavigate:i=>{S.dying=DYING_COMPANION_STAGES[i];render()},
+      timelineLabel:L("Bedside companion stages","Étapes de l’accompagnement au chevet")
+    });
+    if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
+  }
   injectGlossaryAction();
   m.scrollTop=0;
   queueMicrotask(()=>{const focus=m.querySelector("[data-ao-guided-focus]")||m.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])");focus?.focus?.({preventScroll:true})});
@@ -489,7 +514,9 @@ function back(){
   });
 }
 function goHome(){
-  BASE_CLOSE();
+  // Explicit Home overrides any deep-link return owner. A normal close may
+  // asynchronously restore the previous Prayer context and reopen this sheet.
+  BASE_CLOSE({silent:true});
   const p=window.AO_APP_SHELL_V1?.navigate?.("home");
   if(p&&typeof p.catch==="function")p.catch(()=>window.AO_NAV_V362?.openHome?.());
   else if(!p)window.AO_NAV_V362?.openHome?.();

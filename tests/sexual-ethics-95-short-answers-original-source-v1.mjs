@@ -22,7 +22,10 @@ for(const r of doc.records){
  assert.equal(r.french_answer_present,q.a[1].length>30);
  assert.equal(r.detail_present,!!q.d);
  if(q.d)withDetail++;
- assert.deepEqual(r.all_cited_sources.map(x=>[x.source_id,x.locator]),q.refs,"source snapshot must match current canonical original references "+r.id);
+ const historicallyCited=r.all_cited_sources.map(x=>[x.source_id,x.locator]);
+ const currentRefs=r.id==="CSE068"?q.refs.filter(([id])=>id!=="QUAEC"):q.refs;
+ assert.deepEqual(historicallyCited,currentRefs,"Original cited sources must survive "+r.id);
+ if(r.id==="CSE068")assert.ok(q.refs.some(([id])=>id==="QUAEC"),"Keep appended 1975 CDF source");
  for(const link of r.all_cited_sources){
   const entry=CSE_SOURCE_MAP[link.source_id];assert.ok(entry,r.id+" missing source "+link.source_id);
   assert.equal(link.original_full_text_url,entry.canonical_url);

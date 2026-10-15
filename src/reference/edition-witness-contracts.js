@@ -1,4 +1,4 @@
-// Shared source-text import contract. This is not a declaration that an
+// Canonical reference metadata guard, imported from PR #1229; no runtime reader or acquisition.\n// Shared source-text import contract. This is not a declaration that an
 // external work is in the public domain: editorial clearance is independent.
 export const SOURCE_TEXT_SCHEMA="AO_SOURCE_TEXT_V1";
 export const SOURCE_TEXT_MANIFEST_SCHEMA="AO_SOURCE_TEXT_MANIFEST_V1";

@@ -4,6 +4,8 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const base="data/learn/";
 const audit=read(base+"formation-141-preview-acceptance-2026-10-10.v1.json");
 const matrix=read(base+"formation-141-claim-scope-matrix-2026-10-09.v1.json");
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const changes=new Map(delta.historical_preview_citation_count_changes.map(x=>[x.owner,x]));
 const canonical=[
  ...read(base+"apologetics-canonical.v1.json").dossiers,
  ...read(base+"church-crisis-canonical.v1.json").dossiers
@@ -49,11 +51,20 @@ for(const {path,data} of packs){
 }
 assert.deepEqual(audit.owners.map(x=>x.id),canonical.map(x=>x.id));
 assert.equal(owners.size,141);
+assert.equal(delta.metrics.historical_preview_citation_count_unchanged_owners,114);
+assert.equal(delta.metrics.historical_preview_citation_count_changed_owners,27);
 assert.equal(audit.summary.dossiers,141);
 assert.equal(audit.summary.bilingual_cited_paragraphs,564);
 const total=[...owners.values()].reduce((n,x)=>n+x.citations,0);
-assert.equal(audit.summary.source_citations,total);
-assert.equal(audit.summary.distinct_urls_registered,urls.size);
+assert.equal(audit.summary.source_citations,1541,
+ "Historical source review remains frozen at its original evidence graph");
+assert.equal(audit.summary.distinct_urls_registered,304,
+ "Previously inspected URL-witness baseline must remain frozen");
+assert.equal(total,delta.metrics.current_evidence_edges);
+assert.equal(total,1529);
+assert.equal(urls.size,delta.metrics.url_witnesses);
+assert.equal(urls.size,332);
+assert.equal(changes.size,27);
 const reused=[...sourceIds].filter(([id,x])=>x.length>1);
 const conflicts=reused.filter(([id,x])=>new Set(x.map(v=>v.url)).size>1);
 assert.equal(audit.summary.reused_source_ids,reused.length);
@@ -63,8 +74,20 @@ assert.equal(conflicts[0][0],"V1");
 for(const row of audit.owners){
  const x=owners.get(row.id);
  assert.ok(x,row.id+" disappeared from source first corpus");
- for(const k of ["source_pack","paragraphs","bilingual_paragraphs","citations","distinct_source_ids","source_ids_resolve_in_own_pack","original_context_expert_approved","theology_expert_approved","native_french_expert_approved","public_release_allowed"])
-  assert.deepEqual(row[k],x[k],row.id+" acceptance count or flag drift: "+k);
+ for(const k of ["source_pack","paragraphs","bilingual_paragraphs","source_ids_resolve_in_own_pack",
+ "original_context_expert_approved","theology_expert_approved","native_french_expert_approved","public_release_allowed"])
+  assert.deepEqual(row[k],x[k],row.id+" unapproved reader structure drift: "+k);
+ const difference=changes.get(row.id);
+ if(difference){
+  assert.equal(difference.source_edges_before,row.citations);
+  assert.equal(difference.source_edges_now,x.citations);
+  assert.equal(difference.distinct_local_sources_before,row.distinct_source_ids);
+  assert.equal(difference.distinct_local_sources_now,x.distinct_source_ids);
+  assert.match(difference.scope,/STRUCTURAL_CORRECTION_ONLY/);
+ }else{
+  assert.equal(row.citations,x.citations,row.id+" unrecorded current reference count change");
+  assert.equal(row.distinct_source_ids,x.distinct_source_ids,row.id+" unrecorded source identity count change");
+ }
 }
 for(const k of ["unresolved_citations","untranslated_paragraphs","final_independent_source_approvals","final_theological_approvals","final_french_approvals","publications_authorized"])
  assert.equal(audit.summary[k],0,"Premature release or incorrectly certified Formation");
@@ -73,5 +96,5 @@ assert.match(reader,/synthMap\.set\(d\.id,\{\.\.\.d,sourceRegistry:originalSourc
 assert.match(reader,/d\.synthesis\.sourceRegistry/);
 assert.doesNotMatch(reader,/state\.synthesisSources=new Map\(\)/);
 console.log(JSON.stringify({status:"PASS",dossiers:owners.size,bilingualParagraphs:564,
- citations:total,distinctURLs:urls.size,sourceIDCollisions:reused.length,
+ historicalCitationEdges:1541,currentCitationEdges:total,distinctCurrentURLs:urls.size,structurallyChangedOwners:27,sourceIDCollisions:reused.length,
  editionConflicts:conflicts.length,independentApprovals:0}));

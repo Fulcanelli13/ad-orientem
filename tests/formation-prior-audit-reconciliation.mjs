@@ -4,6 +4,7 @@ import {readFileSync} from "node:fs";
 const read=x=>JSON.parse(readFileSync(x,"utf8"));
 const index=read("data/reference/formation-prior-audit-reconciliation.v1.json");
 const cross=read("data/reference/formation-canonical-source-crosswalk.v1.json");
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
 const history=read("data/learn/formation-123-source-claim-gates-2026-10-09.v1.json");
 const primary=read("data/learn/formation-primary-context-review-2026-10-09.v1.json");
 const tlm=read("data/learn/traditional-mass-objections-026-050-recovered.v1.json");
@@ -23,7 +24,8 @@ assert.equal(index.metrics.exact_matched_screen_sections,332);
 assert.equal(index.metrics.new_claim_verifications,0);
 assert.equal(index.metrics.fully_certified_owners,0);
 const seen=new Set(),screened=new Set(),linkedRoles=new Set();
-let matchedSections=0,screenedOwners=0,linkedPrimary=0;
+let matchedSections=0,screenedOwners=0,linkedPrimary=0,currentlyExact=0,currentlySuperseded=0;
+const supersededRoles=new Map(delta.changed_previous_screened_sections.map(x=>[x.owner+"::"+x.role,x]));
 for(const row of index.owners){
  assert.ok(!seen.has(row.owner),"Duplicate canonical owner "+row.owner);seen.add(row.owner);
  const current=corpus.get(row.owner);assert.ok(current,"Invented dossier owner "+row.owner);
@@ -43,10 +45,22 @@ for(const row of index.owners){
   for(const role of source.role_fingerprints){
    const section=current.d.sections.find(s=>s.role===role.role);
    assert.ok(section,row.owner+" historical role missing: "+role.role);
-   assert.deepEqual(role.source_ids,section.source_ids,row.owner+" previous citations changed");
-   assert.equal(role.text_source_fingerprint,
-    hash(norm(section.text.en)+"\n"+section.source_ids.join("|")),
-    row.owner+" original audited English text changed; rescope prior assessment instead of inheriting it");
+   const actual=hash(norm(section.text.en)+"\n"+section.source_ids.join("|"));
+   const changed=supersededRoles.get(row.owner+"::"+role.role);
+   if(changed){
+    currentlySuperseded++;
+    assert.equal(changed.previous_fingerprint,role.text_source_fingerprint);
+    assert.equal(changed.current_fingerprint,actual);
+    assert.deepEqual(changed.old_source_ids,role.source_ids);
+    assert.deepEqual(changed.new_source_ids,section.source_ids);
+    assert.notEqual(actual,role.text_source_fingerprint,
+      row.owner+" historical screen should not be marked superseded after restoration");
+   }else{
+    currentlyExact++;
+    assert.deepEqual(role.source_ids,section.source_ids,row.owner+" historical source attribution changed");
+    assert.equal(role.text_source_fingerprint,actual,
+      row.owner+" exact prior screen changed but was not explicitly rescope-labelled");
+   }
    matchedSections++;linkedRoles.add(row.owner+"::"+role.role);
   }
  }else assert.equal(row.coverage_interpretation,
@@ -54,6 +68,11 @@ for(const row of index.owners){
 }
 assert.equal(screenedOwners,83);assert.equal(matchedSections,332);
 assert.equal(linkedRoles.size,332);
+assert.equal(currentlyExact,310);
+assert.equal(currentlySuperseded,22);
+assert.equal(supersededRoles.size,currentlySuperseded);
+assert.equal(delta.metrics.exact_reviewed_sections_retained,currentlyExact);
+assert.equal(delta.metrics.changed_reviewed_sections,currentlySuperseded);
 assert.equal(index.metrics.other_owners_not_in_two_specific_screens,58);
 assert.equal(index.merged_primary_context_findings.length,primary.findings.length);
 for(const reviewed of index.merged_primary_context_findings){
@@ -64,13 +83,23 @@ for(const reviewed of index.merged_primary_context_findings){
  assert.equal(reviewed.status,original.status);
  assert.equal(reviewed.final_approved,false);
  const matched=corpus.get(reviewed.owner).d.sections.find(s=>s.role===reviewed.role);
- assert.equal(reviewed.current_section_source_match,!!matched?.source_ids.includes(reviewed.source_id));
- if(reviewed.current_section_source_match)linkedPrimary++;
+ // Historical review verdict refers to the earlier source/role snapshot.
+ // Separately recognize whether that identical source remains in the
+ // latest rewritten role; never move the historical verdict automatically.
+ const now=!!matched?.source_ids.includes(reviewed.source_id);
+ if(now)linkedPrimary++;
+ else assert.ok(delta.historical_bounded_primary_findings_superseded.some(
+  x=>x.finding_id===reviewed.finding_id),
+  reviewed.finding_id+" source moved without recorded historical disposition");
 }
-assert.equal(linkedPrimary,16);
+assert.equal(linkedPrimary,15);
+assert.equal(delta.metrics.primary_findings_still_source_bound_to_current_role,15);
 const superseded=index.merged_primary_context_findings.filter(x=>!x.current_section_source_match);
 assert.deepEqual(superseded.map(x=>x.finding_id),["PSV1-016"]);
 assert.match(superseded[0].status,/SUPERSEDED/);
+assert.deepEqual(delta.historical_bounded_primary_findings_superseded.map(x=>x.finding_id),
+ ["PSV1-002","PSV1-016"]);
+assert.equal(delta.metrics.primary_findings_historical_or_superseded,2);
 assert.equal(index.legacy_research_QA_gate_references.length,123);
 assert.equal(index.legacy_research_QA_gate_references.length,history.entries.length);
 for(const ref of index.legacy_research_QA_gate_references){
@@ -100,6 +129,6 @@ assert.deepEqual(index.metrics.legacy_TLM_status_counts,counts);
 assert.equal(index.metrics.legacy_TLM_paragraphs,74);
 console.log(JSON.stringify({
  status:"PASS_PRIOR_AUDIT_REUSE",canonicalOwners:141,exactPreviousFourRoleScreens:83,
- matchedEnglishSourceSections:332,boundedPrimaryFindings:17,stillLinkedPrimaryFindings:16,
+ historicScreenedSections:332,currentExactScreenedSections:310,supersededScreens:22,boundedPrimaryFindings:17,stillLinkedPrimaryFindings:15,
  supersededPrimaryFinding:"PSV1-016",legacyQARecords:123,
  legacyTLMParagraphs:74,priorAuditCertifiedAsWhole:0,newSourceReview:0},null,2));

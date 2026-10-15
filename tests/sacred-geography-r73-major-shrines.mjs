@@ -22,8 +22,8 @@ assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,plac
 assert.equal(h.place_crosswalk.length,258);
 assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
  r.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,
- r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[106,70,574]);
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[104,70,576]);
+ r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[163,6,581]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched],[161,6,583]);
 assert.equal(r.candidates.length,750,"Original candidate universe must be preserved");
 const p=new Map(g.places.map(x=>[x.place_id,x]));
 const ids=new Set(sources.sources.map(x=>x.id));

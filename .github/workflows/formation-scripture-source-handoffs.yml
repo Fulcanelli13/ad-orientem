@@ -27,5 +27,6 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: node tests/formation-scripture-source-handoff.mjs
       - run: node tests/formation-recovery-review.mjs
+      - run: node tests/formation-integrated-owner-corrections.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/formation-scripture-source-phone.mjs

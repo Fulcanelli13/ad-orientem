@@ -3,8 +3,6 @@ import {prepareScopedReferenceDisplay} from "../src/source-text/reference-presen
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory,inspectCurrentFormationRevision,prepareReferencePresentation,prepareScopedSourceLink} from "../src/source-text/reference-crosswalk.js";
-import {normalizeWitnessLocator,validateExternalLocatorBinding,
- editionQualifiedCitation,extractReviewedWitnessDocument} from "../src/source-text/witness-locators.js";
 const json=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const canonical=json("data/reference/canonical-works-pilot.v1.json");
 const formation=json("data/reference/formation-canonical-source-crosswalk.v1.json");
@@ -122,39 +120,8 @@ const missal=resolveCanonicalWork({canonical,workId:"WORK-MISSALE-ROMANUM-1962"}
 assert.equal(missal.textImported,false);
 assert.equal(missal.productionCitationApproved,false);
 assert.equal(missal.canonicalOwner,"data/reference/canonical-works-pilot.v1.json");
-const vatican=profiles.profiles.find(x=>x.id==="WIT-MEDIATOR-DEI-EN-VATICAN");
-assert.equal(normalizeWitnessLocator(vatican,"§23").sourceAnchor,"md-en-p023");
-assert.throws(()=>normalizeWitnessLocator(vatican,"footnote 23"),/PARAGRAPH_INVALID/);
-const tan=profiles.profiles.find(x=>x.id==="WIT-TANQUEREY-EN-EWTN");
-assert.equal(validateExternalLocatorBinding({profile:tan,locator:"#643",
- hostUrl:"https://www.ewtn.com/catholicism/library/spiritual-life-12636"}).sourceLocator,"§643");
-assert.throws(()=>validateExternalLocatorBinding({profile:tan,locator:"#643",
- hostUrl:"https://wrong.invalid"}),/URL_NOT_REGISTERED/);
-const den31=profiles.profiles.find(x=>x.id==="WIT-DENZINGER-31-1960-CATALOGUE");
-const den32=profiles.profiles.find(x=>x.id==="WIT-DENZINGER-32-1963-CATALOGUE");
-assert.notEqual(den31.referencePrefix,den32.referencePrefix);
-assert.throws(()=>normalizeWitnessLocator(den31,"DS 1234"),/CONTENT_NOT_INSPECTED/);
-// Project-authored synthetic excerpt only, not a historical passage or app text.
-const p={...vatican,id:"WIT-AO-SYNTHETIC",sourceWorkId:"WORK-AO-SYNTHETIC",
- witnessUrl:"https://example.invalid/review"};
-const work={id:p.sourceWorkId,title:"Synthetic source",editionId:"ED-AO-TEST",
- witnessId:p.id,language:"en",demoOnly:true,
- rights:{status:"PROJECT_AUTHORED_DEMO",reviewId:"TEST-ONLY"}};
-const review={workId:work.id,editionId:work.editionId,witnessId:work.witnessId,
- sourceDocumentId:"SYNTHETIC",collationReviewId:"SYNTHETIC",
- reproductionReviewId:work.rights.reviewId};
-const passage=extractReviewedWitnessDocument({profile:p,work,review,
- heading:"Synthetic section",hostUrl:p.witnessUrl,
- records:[{locator:"23",text:"This is a project-authored test sentence."}]});
-assert.equal(passage.passages.length,1);
-assert.equal(passage.passages[0].sourceAnchor,undefined);
-assert.equal(passage.passages[0].editionQualifiedCitation,
- editionQualifiedCitation({work,passageId:passage.passages[0].id,
- sourceAnchor:"md-en-p023"}));
-assert.throws(()=>extractReviewedWitnessDocument({profile:p,work:{...work,rights:{status:"UNREVIEWED"}},review,
- heading:"Synthetic",hostUrl:p.witnessUrl,records:[{locator:"23",text:"Synthetic sentence."}]}),
- /REPRODUCTION_NOT_CLEARED/);
-
+// Locator shape validation is owned by src/reference/witness-locators.js
+// and its tests on main, not duplicated in this reconciliation PR.
 const md=prepareReferencePresentation({formation,key:"FORM-SYN-02::MD47",profiles});
 assert.equal(md.publicDisplayApproved,false);
 assert.equal(md.inlineCitation,null);

@@ -103,8 +103,10 @@ assert.match(dom,/\.ao-schola-controls\{grid-row:2;width:100%;display:grid;grid-
   "desktop Schola controls no longer match v1.76\/v1.77 definitive grid");
 assert.match(dom,/@media\(max-width:760px\)[\s\S]*?\.ao-schola-controls\{grid-template-columns:36px 54px 36px minmax\(66px,1fr\);gap:5px\}/,
   "mobile Schola controls no longer match v1.77 FINAL authority");
-assert.match(dom,/\.ao-schola-toggle\{position:absolute;top:3px;left:70%;transform:translateX\(-50%\);right:auto\}/,
-  "mobile Schola toggle no longer owns the isolated non-overlapping touch lane");
+assert.match(dom,/\.ao-schola-toggle\{position:absolute;top:3px;right:9px;left:auto;transform:none\}/,
+  "mobile Schola toggle must be right-anchored outside the live chant label and counter");
+assert.match(dom,/\.ao-schola-title\{padding-right:62px;gap:6px\}/,
+  "Schola title must reserve the non-overlapping Hide control touch lane");
 assert.match(dom,/touch-action:pan-y/,"vertical text scrolling must remain native");
 assert.match(dom,/Math\.abs\(dx\)>70&&Math\.abs\(dx\)>Math\.abs\(dy\)\*1\.25/,"horizontal swipe/card threshold missing");
 assert.match(dom,/wheelIntent\.amount>=105/,"vertical edge-to-card handoff threshold missing");

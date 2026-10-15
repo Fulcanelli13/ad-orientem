@@ -8,7 +8,7 @@
 - `data/reference/formation-canonical-source-crosswalk.v1.json` is Formation's **historical baseline** with 408 scoped source bindings and 304 exact-URL witnesses. **It is not the latest inventory**: the current owner reconciliation `data/reference/formation-current-source-reconciliation.v2.json` on `main` records **527 bindings and 332 URL witnesses**, including 119 additions made by the existing Formation pipelines; no historical binding removals and no newly independently certified claims. The resolver reads them *as-is*, preserving source scope, titles, roles, existing locators and URL identities. A URL is not proof of passage/edition identity.
 - `data/source-text/witness-profiles.v1.json` records **nine** external edition-specific locator patterns (official document paragraph, witnessed section, chapter, separately printed scan locator, etc.). It is metadata for linking to external editions, not a copied text corpus.
 - `src/source-text/reference-crosswalk.js` resolves existing references and returns link/display metadata. Its conservative default is an external **Read further** link; it never upgrades original-context approval, publishes source text, or infers claim-level citation verification.
-- `src/source-text/{contracts,parse,edition-adapters,witness-locators}.js` remain **selected-excerpt helpers** for records that a content-owning pipeline has actually inspected and explicitly cleared. They do not crawl, acquire, store or serve whole books.
+- Parsing, excerpt rights gates, section-pack delivery and locator-shape validation belong to the already-merged `src/reference/*` infrastructure; **#1229 does not duplicate those helpers**.
 
 ## Removed as outside scope
 
@@ -110,3 +110,24 @@ test checks that the historical projections yield zero public evidence rows.
 reader interfaces before any merge; do not rebase by overwriting in-flight
 Formation/Mass changes or interpreting a green reference unit test as content or
 visual acceptance.
+
+## Phase 19 — Reconciled with current main
+
+The parsing foundation from #1222 and reference-panel infrastructure from #1212
+are **already merged into main**. This PR's effective scope is therefore
+limited to the original source-owner handoff, nine *external metadata-only*
+witness profiles, current Formation read-only reference crosswalk, one
+fail-closed editorial-display bridge, regression tests and this document.
+
+The duplicate parser/edition-adapter/text-import/witness-locator implementations
+formerly staged under `src/source-text/` are **excluded from the final PR diff**.
+Canonical parser and witness-locator implementations remain in
+`src/reference/`; canonical reader presentation remains
+`src/learn/source-reference-panel.js` and the existing module owners.
+No runtime changes are included.
+
+Current Formation v2 and the historical source ledger were checked on
+`main` at their existing owner blob SHAs. The 21 historical edges remain
+20 owner-held, one `CR-LIT-07` superseded and blocked, with zero new citations.
+The reference-only tests must run against the joined latest-main tree.
+This is a read-only compatibility integration, **not editorial approval**.

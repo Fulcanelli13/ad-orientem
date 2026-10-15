@@ -1,0 +1,25 @@
+name: Biblical Atlas historical toponym research
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/explore/biblical-atlas-toponym-audit.research.v1.json"
+      - "tests/atlas-historical-toponym-audit.mjs"
+      - ".github/workflows/atlas-historical-toponym-research.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          node tests/atlas-historical-toponym-audit.mjs
+          node tests/atlas-pleiades-reconciliation.mjs
+          node tests/atlas-source-place-labels.mjs
+          node tests/explore-bible-atlas-151.mjs

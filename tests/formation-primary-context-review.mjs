@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const read=path=>JSON.parse(readFileSync(path,"utf8"));
 const f=read("data/learn/formation-primary-context-review-2026-10-09.v1.json");
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
 const a=read("data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"),b=read("data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json");
 assert.equal(f.version,"FORMATION_PRIMARY_CONTEXT_EDITORIAL_PASS_20261009_V1");
 assert.equal(f.findings.length,17);
@@ -20,6 +21,16 @@ for(const x of f.findings){
   assert.equal(x.superseded_by,"PSV2-002");
   assert.equal(x.current_role,"critical_response");
   assert.ok(owner.sections.find(y=>y.role===x.current_role).source_ids.includes(x.source_id),x.id+" source was lost rather than moved to Catholic reply");
+ }else if(x.id==="PSV1-002"){
+  const historic=delta.historical_bounded_primary_findings_superseded.find(z=>z.finding_id===x.id);
+  assert.ok(historic,"Original SSPX bounded finding must have its own retained provenance record");
+  assert.equal(historic.owner,x.owner);assert.equal(historic.role,x.role);
+  assert.equal(historic.historic_source_id,x.source_id);
+  assert.equal(historic.historic_source_url,x.url);
+  assert.deepEqual(historic.current_source_ids,p.source_ids);
+  assert.ok(!p.source_ids.includes(x.source_id),
+    "Do not automatically attribute a superseded SSPX objection to the new papal text");
+  assert.match(historic.status,/PRESERVED_AS_OLD_AUDIT/);
  }else{
   assert.ok(p.source_ids.includes(x.source_id),x.id+" no claim citation");
  }
@@ -40,6 +51,8 @@ assert.match(sec("CR-ECC-07","documented_position").text.en,/1999/);
 assert.ok(sec("CR-MOR-04","documented_position").source_ids.includes("CURRAN86-FIRSTPERSON"));
 assert.ok(sec("CR-MOR-03","documented_position").source_ids.includes("CURRAN86-FIRSTPERSON"));
 assert.match(sec("CR-LIT-01","answer").text.en,/25 March 1956/);
-assert.match(sec("CR-DOC-05","documented_position").text.en,/civil religious indifferentism/);
+assert.match(sec("CR-DOC-05","documented_position").text.en,/Quas primas.*Immortale Dei.*Dignitatis humanae/);
+assert.deepEqual(sec("CR-DOC-05","documented_position").source_ids,
+ ["AO26_CRDOC05_DOCUM_1","AO26_CRDOC05_DOCUM_2","AO26_CRDOC05_DOCUM_3"]);
 const key=new Set(dossiers.map(x=>x.id));assert.equal(key.size,dossiers.length);
-console.log(JSON.stringify({qa:"PASS",boundedPrimaryPassageFindings:f.findings.length,correctedOwners:f.scope.dossiers_with_new_wording.length,reviewPending:f.findings.filter(x=>x.status==="PARTIAL_REQUIRES_ORIGINAL_OPPONENT_OR_ARCHIVE").length,approved:0,published:0}));
+console.log(JSON.stringify({qa:"PASS",boundedPrimaryPassageFindings:f.findings.length,correctedOwners:f.scope.dossiers_with_new_wording.length,historicalSSPXFindingRetained:1,reviewPending:f.findings.filter(x=>x.status==="PARTIAL_REQUIRES_ORIGINAL_OPPONENT_OR_ARCHIVE").length,approved:0,published:0}));

@@ -1,0 +1,671 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R78_RECONCILIATION_V1",
+  "as_of": "2026-10-15",
+  "stage": "RESEARCH_IDENTITY_ADJUDICATION_NO_NEW_PINS",
+  "base_corpus": {
+    "places": 258,
+    "shrines": 254,
+    "pilgrimages": 237
+  },
+  "reviewed": 70,
+  "decisions": {
+    "confirmed_same_physical_place": 57,
+    "rejected_false_link": 7,
+    "held_scope_or_geometry": 6
+  },
+  "policy": "Original source and canonical physical place identity take precedence over name similarity. No new Place, map coordinate, pilgrim route, supernatural approval, or duplicated sanctuary is inferred.",
+  "confirmed_existing": [
+    {
+      "candidate_id": "SG-INV-0003",
+      "candidate_name": "Sanctuary of Our Lady of Pontmain",
+      "place_id": "place:FR:pontmain",
+      "live_name": "Sanctuaire Notre-Dame de Pontmain",
+      "country": "FR",
+      "identity_source_url": "https://sanctuaire-pontmain.fr/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0004",
+      "candidate_name": "Sanctuary of Our Lady of Laus",
+      "place_id": "place:FR:notre-dame-du-laus",
+      "live_name": "Sanctuaire Notre-Dame du Laus",
+      "country": "FR",
+      "identity_source_url": "https://www.sanctuaire-notredamedulaus.com/le-message/histoire",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0005",
+      "candidate_name": "Sanctuary of Our Lady of Pellevoisin",
+      "place_id": "place:FR:pellevoisin",
+      "live_name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+      "country": "FR",
+      "identity_source_url": "https://www.pellevoisin.net/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0007",
+      "candidate_name": "Shrine of Our Lady of the Miraculous Medal (Rue du Bac)",
+      "place_id": "place:FR:rue-du-bac",
+      "live_name": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+      "country": "FR",
+      "identity_source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/contact/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0019",
+      "candidate_name": "Basilica of Saint-Martin, Tours",
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "live_name": "Basilique Saint-Martin de Tours",
+      "country": "FR",
+      "identity_source_url": "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0020",
+      "candidate_name": "Basilica of the Holy Tunic, Argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "live_name": "Basilique Saint-Denys d’Argenteuil",
+      "country": "FR",
+      "identity_source_url": "https://saintetunique.com/contact/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0024",
+      "candidate_name": "Basilica of Saint Thérèse, Lisieux",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "live_name": "Basilique Sainte-Thérèse de Lisieux",
+      "country": "FR",
+      "identity_source_url": "https://www.therese-de-lisieux.catholique.fr/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0025",
+      "candidate_name": "Carmel of Lisieux",
+      "place_id": "place:FR:carmel-lisieux",
+      "live_name": "Chapelle du Carmel de Lisieux",
+      "country": "FR",
+      "identity_source_url": "https://carmeldelisieux.fr/contact/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0027",
+      "candidate_name": "Sanctuary of Ars, Saint-Jean-Marie-Vianney",
+      "place_id": "place:FR:basilique-ars",
+      "live_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "country": "FR",
+      "identity_source_url": "https://www.arsnet.org/pelerins/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0028",
+      "candidate_name": "Basilica of Saint Mary Magdalene, Vézelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "live_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "country": "FR",
+      "identity_source_url": "https://www.basiliquedevezelay.org/samedi-saint/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0029",
+      "candidate_name": "Sainte-Marie-Madeleine basilica, Saint-Maximin-la-Sainte-Baume",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "live_name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "country": "FR",
+      "identity_source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0034",
+      "candidate_name": "Cathedral of Notre-Dame de Paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "live_name": "Cathédrale Notre-Dame de Paris",
+      "country": "FR",
+      "identity_source_url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0035",
+      "candidate_name": "Cathedral of Notre-Dame de Chartres",
+      "place_id": "place:FR:chartres-notre-dame",
+      "live_name": "Cathédrale Notre-Dame de Chartres",
+      "country": "FR",
+      "identity_source_url": "https://www.chartres-cathedrale.fr/visiter/informations-pratiques",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0036",
+      "candidate_name": "Abbey of Mont-Saint-Michel",
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "live_name": "Abbaye du Mont-Saint-Michel",
+      "country": "FR",
+      "identity_source_url": "https://don.diocese50.fr/sanctuaire-msm/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0039",
+      "candidate_name": "Basilica of Saint-Denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "live_name": "Basilique cathédrale de Saint-Denis",
+      "country": "FR",
+      "identity_source_url": "https://www.saintdenis.fr/basilique-cathedrale",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0040",
+      "candidate_name": "Cathedral of Notre-Dame d'Amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "live_name": "Cathédrale Notre-Dame d’Amiens",
+      "country": "FR",
+      "identity_source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0046",
+      "candidate_name": "Basilica of Saint Sernin, Toulouse",
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "live_name": "Basilique Saint-Sernin de Toulouse",
+      "country": "FR",
+      "identity_source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0050",
+      "candidate_name": "Basilica of Saint Mary Major, Rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "live_name": "Basilica Papale di Santa Maria Maggiore",
+      "country": "IT",
+      "identity_source_url": "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE",
+      "wrong_previous_place_id": "place:IT:chiesa-gesu-rome",
+      "previous_false_match_reason": "Santa Maria Maggiore is a distinct Roman papal basilica; the linked Chiesa del Gesù is a different church."
+    },
+    {
+      "candidate_id": "SG-INV-0052",
+      "candidate_name": "Scala Sancta, Rome",
+      "place_id": "place:IT:scala-santa-rome",
+      "live_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "country": "IT",
+      "identity_source_url": "https://www.scala-santa.com/info-eng/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0053",
+      "candidate_name": "Basilica of Santa Croce in Gerusalemme, Rome",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "live_name": "Basilica di Santa Croce in Gerusalemme",
+      "country": "IT",
+      "identity_source_url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0059",
+      "candidate_name": "Sanctuary of the Holy Face, Manoppello",
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "live_name": "Basilica del Volto Santo di Manoppello",
+      "country": "IT",
+      "identity_source_url": "https://www.voltosanto.it/volto-santo.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0060",
+      "candidate_name": "Basilica of the Holy Shroud, Turin",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "live_name": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+      "country": "IT",
+      "identity_source_url": "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0061",
+      "candidate_name": "Basilica of the Holy House, Loreto",
+      "place_id": "place:IT:loreto-santa-casa",
+      "live_name": "Santuario Pontificio della Santa Casa di Loreto",
+      "country": "IT",
+      "identity_source_url": "https://www.santuarioloreto.va/en/contatti.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0062",
+      "candidate_name": "Sanctuary of Our Lady of Pompeii",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "live_name": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+      "country": "IT",
+      "identity_source_url": "https://santuario.it/?catid=2&id=122%3Acontatti&view=article",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0077",
+      "candidate_name": "Basilica of Saint Clare, Assisi",
+      "place_id": "place:IT:santa-chiara-assisi",
+      "live_name": "Basilica di Santa Chiara, Assisi",
+      "country": "IT",
+      "identity_source_url": "https://www.assisisantachiara.it/la-cripta-e-le-reliquie/il-corpo-di-santa-chiara/?print=pdf",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0081",
+      "candidate_name": "Sanctuary of Saint Michael the Archangel, Monte Sant'Angelo",
+      "place_id": "place:IT:san-michele-gargano",
+      "live_name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "country": "IT",
+      "identity_source_url": "https://www.santuariosanmichele.it/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0082",
+      "candidate_name": "Basilica of Saint Nicholas, Bari",
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "live_name": "Basilica di San Nicola, Bari",
+      "country": "IT",
+      "identity_source_url": "https://www.basilicasannicola.it/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0084",
+      "candidate_name": "Basilica of Saint Dominic, Bologna",
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "live_name": "Basilica di San Domenico, Bologna",
+      "country": "IT",
+      "identity_source_url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0085",
+      "candidate_name": "Basilica of Saint Rita, Cascia",
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "live_name": "Basilica di Santa Rita da Cascia",
+      "country": "IT",
+      "identity_source_url": "https://santaritadacascia.org/santuario/basilica/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0090",
+      "candidate_name": "Basilica of Saint Ambrose, Milan",
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "live_name": "Basilica Sant'Ambrogio, Milan",
+      "country": "IT",
+      "identity_source_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0095",
+      "candidate_name": "Abbey of Monte Cassino",
+      "place_id": "place:IT:montecassino-abbey",
+      "live_name": "Abbazia di Montecassino — Tomb of Saints Benedict and Scholastica",
+      "country": "IT",
+      "identity_source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0143",
+      "candidate_name": "Monastery of Santo Toribio de Liébana",
+      "place_id": "place:ES:santo-toribio-liebana",
+      "live_name": "Monasterio de Santo Toribio de Liébana",
+      "country": "ES",
+      "identity_source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0147",
+      "candidate_name": "Sanctuary of Our Lady of Sameiro, Braga",
+      "place_id": "place:PT:sameiro-braga",
+      "live_name": "Santuário de Nossa Senhora do Sameiro",
+      "country": "PT",
+      "identity_source_url": "https://santuariodosameiro.pt/contatos-e-horarios/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0162",
+      "candidate_name": "Chapel of Grace, Altötting",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "live_name": "Gnadenkapelle Altötting",
+      "country": "DE",
+      "identity_source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0167",
+      "candidate_name": "Pilgrimage church of Maria Vesperbild",
+      "place_id": "place:DE:maria-vesperbild",
+      "live_name": "Wallfahrtskirche Maria Vesperbild",
+      "country": "DE",
+      "identity_source_url": "https://maria-vesperbild.de/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0185",
+      "candidate_name": "Sanctuary of Maria Taferl",
+      "place_id": "place:AT:maria-taferl-basilica",
+      "live_name": "Wallfahrtsbasilika Maria Taferl",
+      "country": "AT",
+      "identity_source_url": "https://basilika.at/kontakt/index.php",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0212",
+      "candidate_name": "Wawel Cathedral, Kraków",
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "live_name": "Wawel Cathedral, Kraków",
+      "country": "PL",
+      "identity_source_url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0220",
+      "candidate_name": "Sanctuary of Our Lady of Banneux",
+      "place_id": "place:BE:banneux",
+      "live_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "country": "BE",
+      "identity_source_url": "https://banneux-nd.be/en/contacts/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0221",
+      "candidate_name": "Sanctuary of Our Lady of Beauraing",
+      "place_id": "place:BE:beauraing",
+      "live_name": "Sanctuaire Notre-Dame de Beauraing",
+      "country": "BE",
+      "identity_source_url": "https://sanctuairedebeauraing.be/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0238",
+      "candidate_name": "Saint Patrick's Purgatory, Lough Derg",
+      "place_id": "place:IE:lough-derg-station-island",
+      "live_name": "Lough Derg — Sanctuary of Saint Patrick",
+      "country": "IE",
+      "identity_source_url": "https://www.loughderg.org/contact.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0253",
+      "candidate_name": "Saint Winefride's Well, Holywell",
+      "place_id": "place:GB:holywell-st-winefride",
+      "live_name": "St Winefride's Shrine & Well",
+      "country": "GB",
+      "identity_source_url": "https://www.stwinefrideswell.org.uk/contact.html",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0270",
+      "candidate_name": "Abbey of Einsiedeln",
+      "place_id": "place:CH:einsiedeln-monastery",
+      "live_name": "Kloster Einsiedeln",
+      "country": "CH",
+      "identity_source_url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0271",
+      "candidate_name": "Abbey of Mariastein, Solothurn",
+      "place_id": "place:CH:kloster-mariastein",
+      "live_name": "Kloster Mariastein",
+      "country": "CH",
+      "identity_source_url": "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0276",
+      "candidate_name": "Abbey of Saint Maurice",
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "live_name": "Abbaye de Saint-Maurice d'Agaune",
+      "country": "CH",
+      "identity_source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0366",
+      "candidate_name": "Basilica of Saint Willibrord, Echternach",
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "live_name": "Basilica of Saint Willibrord, Echternach",
+      "country": "LU",
+      "identity_source_url": "https://basilika.lu/en/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0379",
+      "candidate_name": "National Shrine of Our Lady of Good Help, Champion",
+      "place_id": "place:US:champion-shrine",
+      "live_name": "National Shrine of Our Lady of Champion",
+      "country": "US",
+      "identity_source_url": "https://championshrine.org/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0389",
+      "candidate_name": "National Shrine of Saint Elizabeth Ann Seton, Emmitsburg",
+      "place_id": "place:US:seton-emmitsburg",
+      "live_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "country": "US",
+      "identity_source_url": "https://setonshrine.org/hours-directions/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0390",
+      "candidate_name": "National Shrine of Saint John Neumann, Philadelphia",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "live_name": "National Shrine of St. John Neumann",
+      "country": "US",
+      "identity_source_url": "https://www.stjohnneumann.org/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0401",
+      "candidate_name": "National Shrine of Divine Mercy, Stockbridge",
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "live_name": "The National Shrine of The Divine Mercy",
+      "country": "US",
+      "identity_source_url": "https://shrineofdivinemercy.org/visiting",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0413",
+      "candidate_name": "Shrine of Our Lady of the Cape, Cap-de-la-Madeleine",
+      "place_id": "place:CA:notre-dame-du-cap",
+      "live_name": "Sanctuaire Notre-Dame-du-Cap",
+      "country": "CA",
+      "identity_source_url": "https://www.sanctuaire-ndc.ca/nous-joindre/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0417",
+      "candidate_name": "Basilica of Sainte-Anne-de-Beaupré",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "live_name": "Sanctuaire Sainte-Anne-de-Beaupré",
+      "country": "CA",
+      "identity_source_url": "https://sanctuairesainteanne.org/en/pages/contact-us",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0418",
+      "candidate_name": "Martyrs' Shrine, Midland",
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "live_name": "Martyrs' Shrine",
+      "country": "CA",
+      "identity_source_url": "https://martyrs-shrine.com/contact-us/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0477",
+      "candidate_name": "Sanctuary of Our Lady of Nazareth, Belém",
+      "place_id": "place:BR:nazare-belem",
+      "live_name": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro",
+      "country": "BR",
+      "identity_source_url": "https://www.basilicadenazare.com.br/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0580",
+      "candidate_name": "Monastery of Saint Maron, Annaya",
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "live_name": "Monastery of Saint Maron — Annaya",
+      "country": "LB",
+      "identity_source_url": "https://saintcharbel.com/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0711",
+      "candidate_name": "Munyonyo Martyrs' Shrine",
+      "place_id": "place:UG:munyonyo-martyrs",
+      "live_name": "Munyonyo Martyrs Shrine",
+      "country": "UG",
+      "identity_source_url": "https://munyonyo-shrine.ug/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    },
+    {
+      "candidate_id": "SG-INV-0714",
+      "candidate_name": "National Shrine of Our Mother of Perpetual Help, Enugu",
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "live_name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "country": "NG",
+      "identity_source_url": "https://nationalmarianshrine.org.ng/",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE",
+      "wrong_previous_place_id": "place:NG:nne-enyemaka-umuaka",
+      "previous_false_match_reason": "Enugu and Umuaka are geographically distinct shrines; Umuaka is not the Enugu National Shrine."
+    },
+    {
+      "candidate_id": "SG-INV-0733",
+      "candidate_name": "Shrine of Blessed Jacques-Désiré Laval, Sainte-Croix",
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "live_name": "Centre Père Laval",
+      "country": "MU",
+      "identity_source_url": "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp",
+      "decision": "VERIFIED_CANONICAL_PLACE_REUSE"
+    }
+  ],
+  "rejected_false_links": [
+    {
+      "candidate_id": "SG-INV-0163",
+      "candidate_name": "Basilica of Our Lady of Kevelaer",
+      "rejected_place_id": "place:DE:kevelaer-gnadenkapelle",
+      "live_site_name": "Gnadenkapelle Kevelaer",
+      "reason": "The Kevelaer Basilica and the Gnadenkapelle are distinct buildings in the same pilgrimage precinct.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0283",
+      "candidate_name": "Marian shrine at Stará Boleslav",
+      "rejected_place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "live_site_name": "Bazilika svatého Václava — Stará Boleslav",
+      "reason": "Stará Boleslav Marian pilgrimage church and Basilica of St Wenceslas are not the same physical church.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0488",
+      "candidate_name": "Sanctuary of Blessed José de Anchieta, Anchieta",
+      "rejected_place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "live_site_name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+      "reason": "Anchieta sanctuary in Espírito Santo is not Pateo do Collegio in São Paulo.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0385",
+      "candidate_name": "Shrine of Our Lady of the Miraculous Medal, Perryville",
+      "rejected_place_id": "place:US:miraculous-medal-philadelphia",
+      "live_site_name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "reason": "Perryville, Missouri and the Philadelphia Miraculous Medal shrine are different institutions and cities.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0033",
+      "candidate_name": "Saint Vincent de Paul birthplace sanctuary, Pouy",
+      "rejected_place_id": "place:FR:chapelle-saint-vincent-paris",
+      "live_site_name": "Chapelle Saint-Vincent-de-Paul, Paris",
+      "reason": "St Vincent de Paul's birthplace sanctuary in Pouy (Landes) is not Chapelle Saint-Vincent-de-Paul, Paris.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0264",
+      "candidate_name": "Westminster Cathedral",
+      "rejected_place_id": "place:GB:westminster-abbey-st-edward",
+      "live_site_name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+      "reason": "Westminster Cathedral (Catholic) is not Westminster Abbey (Anglican). Distinct buildings and confessions.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    },
+    {
+      "candidate_id": "SG-INV-0403",
+      "candidate_name": "Basilica of the Assumption, Baltimore",
+      "rejected_place_id": "place:US:st-alphonsus-baltimore",
+      "live_site_name": "National Shrine of Saint Alphonsus Liguori",
+      "reason": "Baltimore Basilica of the Assumption is distinct from the National Shrine of St Alphonsus in Baltimore.",
+      "decision": "WRONG_PHYSICAL_PLACE_MATCH"
+    }
+  ],
+  "held_records": [
+    {
+      "candidate_id": "SG-INV-0746",
+      "candidate_name": "Saint Peter Chanel Memorial, Russell",
+      "held_place_id": "place:NZ:st-peter-chanel-russell",
+      "review_reason": "St Peter Chanel Russell pin is currently indicative; verify the exact memorial physical site before claiming site-level parity.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    },
+    {
+      "candidate_id": "SG-INV-0332",
+      "candidate_name": "Sanctuary of Our Lady of Šiluva",
+      "held_place_id": "place:LT:siluva-apparition-chapel",
+      "review_reason": "Šiluva Marian sanctuary refers to a pilgrimage complex; existing pin is specifically the Apparition Chapel. Resolve physical unit and site relations.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    },
+    {
+      "candidate_id": "SG-INV-0017",
+      "candidate_name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "held_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "review_reason": "The Paray-le-Monial Sacred Heart sanctuary spans multiple devotional buildings; verify that existing anchored physical Place corresponds to the claimed basilica.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    },
+    {
+      "candidate_id": "SG-INV-0701",
+      "candidate_name": "Shrine of Our Lady of Zeitoun (Coptic Orthodox)",
+      "held_place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "review_reason": "Zeitoun belongs to a Coptic Orthodox original ecclesiastical custody, not a Catholic sanctuary. Keep scholarly tradition record separately; do not certify it as a Catholic pilgrimage destination.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    },
+    {
+      "candidate_id": "SG-INV-0577",
+      "candidate_name": "Shrine of Saint Charbel, Annaya",
+      "held_place_id": "place:LB:monastery-saint-maron-annaya",
+      "review_reason": "Shrine of Saint Charbel / monastery of Saint Maron in Annaya share a complex; adjudicate tomb/shrine sub-site without duplicate main pin.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    },
+    {
+      "candidate_id": "SG-INV-0373",
+      "candidate_name": "Vatican Necropolis",
+      "held_place_id": "place:VA:saint-peter-vatican",
+      "review_reason": "Vatican Necropolis is under St Peter’s Basilica, not identical to the full basilica; needs sub-site identity and access policy.",
+      "decision": "HOLD_UNRESOLVED_PHYSICAL_UNIT_OR_SCOPE"
+    }
+  ],
+  "independent_new_publication_priorities": [
+    {
+      "candidate_id": "SG-INV-0264",
+      "name": "Westminster Cathedral",
+      "reason": "Distinct Catholic cathedral, not Westminster Abbey."
+    },
+    {
+      "candidate_id": "SG-INV-0163",
+      "name": "Marienbasilika Kevelaer",
+      "reason": "Distinct from the Gnadenkapelle already pinned."
+    },
+    {
+      "candidate_id": "SG-INV-0403",
+      "name": "Baltimore Basilica of the Assumption",
+      "reason": "Distinct from St Alphonsus."
+    },
+    {
+      "candidate_id": "SG-INV-0488",
+      "name": "Santuário Nacional de São José de Anchieta",
+      "reason": "Distinct from Pateo do Collegio, São Paulo."
+    }
+  ],
+  "outside_catholic_scope_holds": [
+    {
+      "candidate_id": "SG-INV-0701",
+      "name": "Zeitoun (Coptic Orthodox)"
+    },
+    {
+      "candidate_id": "SG-INV-0248",
+      "name": "Anglican Shrine of Walsingham"
+    }
+  ],
+  "review_correction": "Santa Maria Maggiore and Enugu shrine already had distinct correct canonical Place records with original site identity links. Their previous false aliases are recorded and replaced by valid links; no new pins created."
+}

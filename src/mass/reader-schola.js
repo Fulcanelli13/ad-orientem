@@ -157,7 +157,17 @@ export function createNativeScholaController(args={}){
     const card=cardOrSequence;
     const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
-    if(current&&matches.some(t=>t.id===current.id))return state();
+    if(current&&matches.some(t=>t.id===current.id)){
+      // When a verified Alleluia/Tract and Sequence occupy separate
+      // navigable B022 paragraphs, show the exact selected paragraph;
+      // other Schola tracks still keep their independent progression.
+      if(current.id==="ALLELUIA_TRACT_SEQUENCE"){
+        const ids=new Set((card.paragraphs??[]).map(p=>String(p.id)));
+        const at=current.segments.findIndex(segment=>ids.has(segment.id));
+        if(at>=0&&at!==index){index=at;complete=false;lastSyncedCueId=null}
+      }
+      return state();
+    }
     if(matches.length)return activate(matches[0].id);
 
     // The Benedictus may continue while the priest prays silently in
