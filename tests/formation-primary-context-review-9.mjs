@@ -9,14 +9,33 @@ const packs = matrix.source_packs.map(p=>read(p));
 const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
 const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
 const a1Superseded=new Map(a1.original_findings_superseded.map(x=>[x.finding_id,x]));
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const version=delta.historical_late_primary_source_dispositions["9"];
+assert.equal(version.historical_findings,60);
+assert.equal(version.unchanged_source_role_links,52);
+assert.deepEqual(version.historical_prior_amendment_links,["PSV9-015","PSV9-016","PSV9-017"]);
+const newer=new Map(version.additional_source_dispositions.map(x=>[x.finding_id,x]));
+assert.equal(newer.size,5);
+
 const validateReassigned=(f,section,sources)=>{
- const change=a1Superseded.get(f.id);
- assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
- assert.equal(change.owner,f.owner);assert.equal(change.role,f.role);
- assert.equal(change.previous_source_id,f.source_id);
+ const change=a1Superseded.get(f.id),later=newer.get(f.id);
+ assert.ok(change||later,f.id+": original citation removed without an explicit source-review disposition");
+ assert.ok(!(change&&later),f.id+": duplicate findings are not allowed");
+ const r=change||later;
+ assert.equal(r.owner,f.owner);assert.equal(r.role,f.role);
+ assert.equal(change?r.previous_source_id:r.historic_source_id,f.source_id);
  assert.equal(sources.get(f.source_id)?.url,f.url,"original dated source evidence was destroyed: "+f.id);
- assert.deepEqual(change.replacement_source_ids,section.source_ids,"replacement original-source pointers drifted: "+f.id);
- assert.equal(change.new_citation_claims_independently_certified,false);
+ if(change){
+  assert.deepEqual(r.replacement_source_ids,section.source_ids,"previously validated amendment drifted: "+f.id);
+  assert.equal(r.new_citation_claims_independently_certified,false);
+ } else {
+  assert.equal(r.historic_url,f.url);
+  assert.deepEqual(r.current_source_ids,section.source_ids);
+  assert.deepEqual(r.matching_original_url_successor_ids,
+   section.source_ids.filter(id=>sources.get(id)?.url===f.url));
+  assert.equal(r.current_claim_independently_certified,false);
+  assert.match(r.disposition,/NOT_CURRENT_CLAIM_CERTIFICATION|NO_TRANSFER_OF_CERTIFICATION/);
+ }
 };
 const owners = new Map(packs.flatMap(p=>p.dossiers.map(d=>[d.id,{d,reg:new Map(p.source_registry.map(s=>[s.id,s]))}])));
 assert.equal(earlier.findings.length,50);
@@ -91,4 +110,4 @@ for(const pack of packs)for(const d of pack.dossiers){
   for(const flag of ["publication_allowed","original_claim_by_claim_source_context_certified","independent_theological_canonical_approval","native_french_copyapproval"])
     assert.equal(d[flag],false,d.id+" had an unjustified certification/release flag");
 }
-console.log(JSON.stringify({status:"PASS",sourceFindings:60,distinctSections:60,bilingualRevisions:16,unreviewedRemaining:260,expertApprovals:0,published:0}));
+console.log(JSON.stringify({status:"PASS",sourceFindings:60,distinctSections:60,unchangedHistoricSourceEdges:52,rescopedByEarlierAmendments:3,additionalHistoricRescopes:5,bilingualRevisions:16,unreviewedRemaining:260,expertApprovals:0,published:0}));
