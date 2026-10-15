@@ -54,4 +54,22 @@ for(const s of stops){
 const exception=stops.find(s=>s.era==="ORIGINS");
 assert.equal(atlasHistoricalNameReview(exception,"fr"),"");
 assert.ok(stops.every(s=>!s.geo||Object.values(ATLAS_GEO).some(g=>g.key===s.geo.key&&g.lat===s.geo.lat&&g.lng===s.geo.lng)));
+const precise={
+ joppa:{en:"Latin Vulgate reads Ioppe",fr:"Vulgate latine écrit Ioppe",url:"https://jerihna.sourceschretiennes.org/en/bible-names/forms/17205"},
+ nineveh:{en:"as Ninua",fr:"en Ninua",url:"https://oracc.museum.upenn.edu/atae/cbd/qpn/x000001080.html"},
+ babylon:{en:"Bābili is an attested",fr:"Bābili est une forme",url:"https://oracc.museum.upenn.edu/cmawro/cmawr3/cbd/qpn/x000000100.html"},
+ philippi:{en:"in 356 BC",fr:"en 356 av. J.-C.",url:"https://whc.unesco.org/en/list/1517"}
+};
+for(const [key,expect] of Object.entries(precise)){
+ const source=proposals.records.find(x=>x.anchorKey===key);
+ const note=ATLAS_HISTORY_REVIEW_NOTES.find(x=>x.key===key);
+ assert.ok(source&&note);
+ assert.equal(source.claimSourceReview?.doesNotAssignEventDate,true);
+ assert.equal(source.claimSourceReview?.noPublicationApproval,true);
+ assert.ok(note.en.includes(expect.en),"Exact historical wording missing: "+key);
+ assert.ok(note.fr.includes(expect.fr),"Exact French wording missing: "+key);
+ assert.ok(note.sources.includes(expect.url),"Original source citation must match source review: "+key);
+}
+assert.equal(proposals.reviewUpdate?.userVisibleMapChanges,0);
+assert.equal(proposals.reviewUpdate?.editorialHoldStillRequired,true);
 console.log("PASS 11 source-exact EN/FR historical notes, 11 suppressed, 151 canonical events, unchanged default & cinematic-only");
