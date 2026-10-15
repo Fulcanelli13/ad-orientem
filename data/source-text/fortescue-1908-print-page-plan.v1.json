@@ -2,11 +2,11 @@
   "schema": "AO_SOURCE_TEXT_PRINT_PAGE_PLAN_V1",
   "date": "2026-10-15",
   "articleWorkId": "WORK-CE1908-FORTESCUE-CANON-MASS",
-  "editionId": "ED-CE1908-VOL3-APPLETON",
-  "witnessId": "WIT-CE1908-V3-PRINT-FORTESCUE",
+  "editionId": "ED-CE1913-V3-KOC-SPECIAL",
+  "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
   "title": "Canon of the Mass",
   "author": "Adrian Fortescue",
-  "publication": "The Catholic Encyclopedia, volume III (1908), Robert Appleton Company",
+  "publication": "Scan edition: Knights of Columbus special edition, The Encyclopedia Press (1913), original Fortescue article 1908",
   "status": "13_SCAN_PAGE_URLS_INSPECTED__NO_BULK_TEXT_APPROVED",
   "coverage": {
     "printedStart": 255,
@@ -16,7 +16,7 @@
     "sharedFirstAndLastPage": true
   },
   "licenseGate": "ORIGINAL_1908_TEXT_PUBLIC_DOMAIN_ASSESSMENT_SEPARATE_FROM_PROOFREADING_AND_WEB_TRANSCRIPTION_LICENSE",
-  "policy": "Metadata-only page map. Wiki Page: OCR is explicitly unproofread; no article-boundary or OCR text clearance is inferred from opening a scan page. Do not mix the preceding Canon entries or following Canon of Holy Scriptures entry into this article.",
+  "policy": "Metadata-only page map. Wiki Page: OCR is explicitly unproofread; no article-boundary or OCR text clearance is inferred from opening a scan page. Do not mix the preceding Canon entries or following Canon of Holy Scriptures entry into this article. Original 1908 publication and actual 1913 scanned witness are distinct; previous 1908 scan description superseded.",
   "pages": [
     {
       "printedPage": 255,
@@ -150,5 +150,7 @@
     "Authorial historical statements remain attributed and not normative 1962 rubrics",
     "Human editorial release signoff"
   ],
-  "scanPageBaseUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu"
+  "scanPageBaseUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu",
+  "scanEdition": "1913_SPECIAL_EDITION",
+  "scanTitlePage": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/11"
 }
