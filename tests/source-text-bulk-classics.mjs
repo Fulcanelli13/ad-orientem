@@ -24,6 +24,25 @@ for(const [kind,path] of Object.entries(files)){
  assert.equal(stage.metrics.passages>250,true);
  assert.ok(stage.metrics.words>10000);
  assert.equal(stage.productionPublished,false);
+ const indexFile=kind==="imitation"?"data/source-text/staging/imitation-benham-pg1653-index.v1.json":
+   "data/source-text/staging/francis-sales-vie-devote-pg53540-index.v1.json";
+ const index=JSON.parse(load(indexFile));
+ assert.equal(index.workId,work.id);
+ assert.equal(index.editionId,work.editionId);
+ assert.equal(index.witnessId,work.witnessId);
+ assert.equal(index.chapterCount,chapters.length);
+ assert.equal(index.paragraphs,stage.metrics.passages);
+ assert.equal(index.words,stage.metrics.words);
+ assert.equal(index.gradeA,0);
+ assert.equal(index.gradeB,stage.metrics.gradeB);
+ assert.equal(index.gradeC,0);
+ assert.equal(index.reviewExceptions.length,stage.metrics.exceptions);
+ assert.equal(index.publicationApproved,false);
+ assert.equal(index.rightsProductionCleared,false);
+ assert.deepEqual(index.chapters.map(x=>x.id),expected);
+ assert.deepEqual(index.passages.map(x=>[x.id,x.locator,x.checksum,x.grade,x.wordCount]),
+  stage.passages.map(x=>[x.id,x.locator,x.checksum,x.grade,x.wordCount]));
+ assert.ok(index.passages.every(x=>!Object.hasOwn(x,"text")&&!x.quoteEligible));
  assert.equal(stage.sourceContentStored,false);
  assert.ok(stage.passages.every(x=>!Object.hasOwn(x,"text")&&!x.quoteEligible&&!x.publicReleaseApproved));
  assert.throws(()=>stageBulkWork({work,chapters,mode:"LOCAL_REVIEW",review:{expectedChapterIds:expected}}),/REPRODUCTION_NOT_CLEARED/);
