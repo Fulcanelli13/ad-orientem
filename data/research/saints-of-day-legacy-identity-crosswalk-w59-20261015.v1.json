@@ -1,0 +1,354 @@
+{
+  "schema": "AO_SANCTORAL_LEGACY_IDENTITY_SALVAGE_W59_V1",
+  "asOf": "2026-10-15",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "path": "legacy/v43.33.parts/chunk-010-p00.txt",
+    "blobSha": "4400ff4725e77a224ed5d7a54106eb47b8eb70db"
+  },
+  "counts": {
+    "canonicalDisplayAliases": 79,
+    "calendarDateOverrides": 27,
+    "overriddenComponents": 47,
+    "dateIdentityLocks": 36
+  },
+  "canonicalDisplayAliases": {
+    "saint.augustine-canterbury": "Augustine of Canterbury",
+    "saint.augustine-hippo": "Augustine of Hippo",
+    "saint.ignatius-antioch": "Ignatius of Antioch",
+    "saint.ignatius-loyola": "Ignatius of Loyola",
+    "saint.boniface-tarsus": "Boniface of Tarsus",
+    "saint.boniface-mainz": "Boniface (Winfrid) of Mainz",
+    "saint.agapitus-praeneste": "Agapitus of Praeneste",
+    "saint.eusebius-rome": "Eusebius of Rome",
+    "saint.eusebius-vercelli": "Eusebius of Vercelli",
+    "saint.martin-tours": "Martin of Tours",
+    "saint.martin-i-pope": "Martin I, Pope",
+    "saint.thomas-apostle": "Thomas the Apostle",
+    "saint.thomas-becket": "Thomas Becket",
+    "saint.therese-lisieux": "Thérèse of Lisieux",
+    "saint.teresa-avila": "Teresa of Ávila",
+    "saint.hyacinth-poland": "Hyacinth of Poland",
+    "saint.agapitus-sixtus-companion": "Agapitus, companion of Sixtus II",
+    "saint.timothy-rome-martyr": "Timothy, Roman martyr",
+    "saint.hippolytus-aug22": "Hippolytus (22 August commemoration)",
+    "saint.symphorian-autun": "Symphorian of Autun",
+    "saint.euphemia-chalcedon": "Euphemia of Chalcedon",
+    "saint.pancras-rome": "Pancras of Rome",
+    "saint.erasmus-formia": "Erasmus of Formia",
+    "saint.victor-i-pope": "Victor I, Pope",
+    "saint.innocent-i-pope": "Innocent I, Pope",
+    "saint.martha-bethany": "Martha of Bethany",
+    "saint.felix-ii": "Felix II",
+    "saint.juvenal-narni": "Juvenal of Narni",
+    "saint.giles": "Giles",
+    "saint.thomas-villanova": "Thomas of Villanova",
+    "saint.joseph-cupertino": "Joseph of Cupertino",
+    "group.domitilla-nereus-achilleus": "Domitilla, Nereus and Achilleus",
+    "group.marcellinus-peter": "Marcellinus and Peter",
+    "group.seven-holy-brothers": "Seven Holy Brothers",
+    "group.rufina-secunda": "Rufina and Secunda",
+    "group.nazarius-celsus": "Nazarius and Celsus",
+    "group.simplicius-faustinus-beatrice": "Simplicius, Faustinus and Beatrice",
+    "group.sixtus-ii-felicissimus-agapitus": "Sixtus II, Felicissimus and Agapitus",
+    "group.tiburtius-susanna": "Tiburtius and Susanna",
+    "group.hippolytus-cassian": "Hippolytus and Cassian",
+    "group.twelve-holy-brothers": "Twelve Holy Brothers",
+    "group.cornelius-cyprian-carthage": "Cornelius and Cyprian of Carthage",
+    "group.lucy-geminianus": "Lucy and Geminianus",
+    "group.januarius-companions": "Januarius and Companions",
+    "group.eustace-family": "Eustace, Theopista, Agapitus and Theopistus",
+    "group.maurice-theban-legion": "Maurice and the Theban Legion",
+    "group.placidus-companions": "Placidus and Companions",
+    "group.sergius-bacchus": "Sergius and Bacchus",
+    "group.marcellus-apuleius": "Marcellus and Apuleius",
+    "group.tryphon-respicius-nympha": "Tryphon, Respicius and Nympha",
+    "group.four-crowned-martyrs": "Four Crowned Martyrs",
+    "group.alexander-eventius-theodulus": "Alexander, Eventius and Theodulus",
+    "group.protus-hyacinth": "Protus and Hyacinth",
+    "group.cyprian-justina": "Cyprian and Justina",
+    "group.nabor-felix": "Nabor and Felix",
+    "group.felix-adauctus": "Felix and Adauctus",
+    "group.tiburtius-valerian-maximus": "Tiburtius, Valerian and Maximus",
+    "saint.thomas-aquinas": "Thomas Aquinas",
+    "saint.camillus-de-lellis": "Camillus de Lellis",
+    "saint.paul-apostle": "Paul the Apostle",
+    "saint.peter-apostle": "Peter the Apostle",
+    "saint.peter-chrysologus": "Peter Chrysologus",
+    "saint.barbara-nicomedia": "Barbara of Nicomedia",
+    "saint.anastasia-sirmium": "Anastasia of Sirmium",
+    "group.vitus-modestus-crescentia": "Vitus, Modestus and Crescentia",
+    "group.basilides-cyrinus-nabor-nazarius": "Basilides, Cyrinus, Nabor and Nazarius",
+    "group.holy-innocents": "Holy Innocents",
+    "group.peter-paul-apostles": "Peter and Paul, Apostles",
+    "angel.gabriel": "Gabriel the Archangel",
+    "angel.raphael": "Raphael the Archangel",
+    "event.conversion-paul": "Conversion of St Paul",
+    "event.chair-peter": "Chair of St Peter",
+    "event.nativity-john-baptist": "Nativity of St John the Baptist",
+    "event.beheading-john-baptist": "Beheading of St John the Baptist",
+    "event.stigmata-francis": "Stigmata of St Francis",
+    "event.dedication-michael": "Dedication of St Michael",
+    "event.joseph-worker": "St Joseph the Workman",
+    "event.transfiguration-christ": "Transfiguration of Our Lord",
+    "tradition.immaculate-heart-mary": "Immaculate Heart of Mary"
+  },
+  "calendarDateOverrides": {
+    "05-03": [
+      "group.alexander-eventius-theodulus",
+      "saint.juvenal-narni"
+    ],
+    "05-12": [
+      "group.domitilla-nereus-achilleus",
+      "saint.pancras-rome"
+    ],
+    "06-02": [
+      "group.marcellinus-peter",
+      "saint.erasmus-formia"
+    ],
+    "06-12": [
+      "saint.john-san-facundo",
+      "group.basilides-cyrinus-nabor-nazarius"
+    ],
+    "06-15": [
+      "group.vitus-modestus-crescentia"
+    ],
+    "06-30": [
+      "saint.paul-apostle",
+      "saint.peter-apostle"
+    ],
+    "07-10": [
+      "group.seven-holy-brothers",
+      "group.rufina-secunda"
+    ],
+    "07-28": [
+      "group.nazarius-celsus",
+      "saint.victor-i-pope",
+      "saint.innocent-i-pope"
+    ],
+    "07-29": [
+      "saint.martha-bethany",
+      "saint.felix-ii",
+      "group.simplicius-faustinus-beatrice"
+    ],
+    "08-06": [
+      "group.sixtus-ii-felicissimus-agapitus"
+    ],
+    "08-11": [
+      "group.tiburtius-susanna"
+    ],
+    "08-13": [
+      "group.hippolytus-cassian"
+    ],
+    "08-22": [
+      "saint.timothy-rome-martyr",
+      "saint.hippolytus-aug22",
+      "saint.symphorian-autun"
+    ],
+    "09-01": [
+      "saint.giles",
+      "group.twelve-holy-brothers"
+    ],
+    "09-11": [
+      "group.protus-hyacinth"
+    ],
+    "09-16": [
+      "group.cornelius-cyprian-carthage",
+      "saint.euphemia-chalcedon",
+      "group.lucy-geminianus"
+    ],
+    "09-19": [
+      "group.januarius-companions"
+    ],
+    "09-20": [
+      "group.eustace-family"
+    ],
+    "09-22": [
+      "saint.thomas-villanova",
+      "group.maurice-theban-legion"
+    ],
+    "09-26": [
+      "group.cyprian-justina"
+    ],
+    "10-05": [
+      "group.placidus-companions"
+    ],
+    "10-08": [
+      "saint.bridget-sweden",
+      "group.sergius-bacchus",
+      "group.marcellus-apuleius"
+    ],
+    "11-08": [
+      "group.four-crowned-martyrs"
+    ],
+    "11-10": [
+      "saint.andrew-avellino",
+      "group.tryphon-respicius-nympha"
+    ],
+    "11-18": [
+      "group.peter-paul-apostles"
+    ],
+    "12-04": [
+      "saint.peter-chrysologus",
+      "saint.barbara-nicomedia"
+    ],
+    "12-25": [
+      "saint.anastasia-sirmium"
+    ]
+  },
+  "dateIdentityLocks": [
+    {
+      "date": "01-14",
+      "canonicalId": "saint.felix-nola"
+    },
+    {
+      "date": "01-24",
+      "canonicalId": "saint.timothy-apostle"
+    },
+    {
+      "date": "01-25",
+      "canonicalId": "event.conversion-paul"
+    },
+    {
+      "date": "01-25",
+      "canonicalId": "saint.peter-apostle"
+    },
+    {
+      "date": "02-01",
+      "canonicalId": "saint.ignatius-antioch"
+    },
+    {
+      "date": "02-22",
+      "canonicalId": "event.chair-peter"
+    },
+    {
+      "date": "02-22",
+      "canonicalId": "saint.paul-apostle"
+    },
+    {
+      "date": "03-07",
+      "canonicalId": "saint.thomas-aquinas"
+    },
+    {
+      "date": "04-14",
+      "canonicalId": "group.tiburtius-valerian-maximus"
+    },
+    {
+      "date": "05-01",
+      "canonicalId": "event.joseph-worker"
+    },
+    {
+      "date": "05-14",
+      "canonicalId": "saint.boniface-tarsus"
+    },
+    {
+      "date": "05-28",
+      "canonicalId": "saint.augustine-canterbury"
+    },
+    {
+      "date": "05-30",
+      "canonicalId": "saint.felix-i-pope"
+    },
+    {
+      "date": "06-05",
+      "canonicalId": "saint.boniface-mainz"
+    },
+    {
+      "date": "06-24",
+      "canonicalId": "event.nativity-john-baptist"
+    },
+    {
+      "date": "06-29",
+      "canonicalId": "group.peter-paul-apostles"
+    },
+    {
+      "date": "07-12",
+      "canonicalId": "group.nabor-felix"
+    },
+    {
+      "date": "07-18",
+      "canonicalId": "saint.camillus-de-lellis"
+    },
+    {
+      "date": "07-31",
+      "canonicalId": "saint.ignatius-loyola"
+    },
+    {
+      "date": "08-14",
+      "canonicalId": "saint.eusebius-rome"
+    },
+    {
+      "date": "08-17",
+      "canonicalId": "saint.hyacinth-poland"
+    },
+    {
+      "date": "08-18",
+      "canonicalId": "saint.agapitus-praeneste"
+    },
+    {
+      "date": "08-28",
+      "canonicalId": "saint.augustine-hippo"
+    },
+    {
+      "date": "08-29",
+      "canonicalId": "event.beheading-john-baptist"
+    },
+    {
+      "date": "08-30",
+      "canonicalId": "group.felix-adauctus"
+    },
+    {
+      "date": "09-17",
+      "canonicalId": "event.stigmata-francis"
+    },
+    {
+      "date": "09-18",
+      "canonicalId": "saint.joseph-cupertino"
+    },
+    {
+      "date": "09-29",
+      "canonicalId": "event.dedication-michael"
+    },
+    {
+      "date": "10-03",
+      "canonicalId": "saint.therese-lisieux"
+    },
+    {
+      "date": "10-15",
+      "canonicalId": "saint.teresa-avila"
+    },
+    {
+      "date": "11-11",
+      "canonicalId": "saint.martin-tours"
+    },
+    {
+      "date": "11-12",
+      "canonicalId": "saint.martin-i-pope"
+    },
+    {
+      "date": "11-20",
+      "canonicalId": "saint.felix-valois"
+    },
+    {
+      "date": "12-16",
+      "canonicalId": "saint.eusebius-vercelli"
+    },
+    {
+      "date": "12-21",
+      "canonicalId": "saint.thomas-apostle"
+    },
+    {
+      "date": "12-29",
+      "canonicalId": "saint.thomas-becket"
+    }
+  ],
+  "originalIdentityLockJs": "[\n ['01-14',/felic/i,'saint.felix-nola'],['01-24',/timothy/i,'saint.timothy-apostle'],['01-25',/conversion/i,'event.conversion-paul'],['01-25',/^St\\.?\\s+Peter$/i,'saint.peter-apostle'],\n ['02-01',/ignatius/i,'saint.ignatius-antioch'],['02-22',/chair/i,'event.chair-peter'],['02-22',/^St\\.?\\s+Paul$/i,'saint.paul-apostle'],['03-07',/thomas aquinas/i,'saint.thomas-aquinas'],\n ['04-14',/tiburtius|valerian|maximus/i,'group.tiburtius-valerian-maximus'],\n ['05-01',/joseph/i,'event.joseph-worker'],['05-14',/boniface/i,'saint.boniface-tarsus'],['05-28',/augustine/i,'saint.augustine-canterbury'],['05-30',/felix/i,'saint.felix-i-pope'],\n ['06-05',/boniface/i,'saint.boniface-mainz'],['06-24',/john.*baptist/i,'event.nativity-john-baptist'],['06-29',/Peter\\s*(?:&|and)\\s*Paul/i,'group.peter-paul-apostles'],\n ['07-12',/nabor|felic/i,'group.nabor-felix'],['07-18',/camillus/i,'saint.camillus-de-lellis'],['07-31',/ignatius/i,'saint.ignatius-loyola'],\n ['08-14',/eusebius/i,'saint.eusebius-rome'],['08-17',/hyacinth/i,'saint.hyacinth-poland'],['08-18',/agapitus/i,'saint.agapitus-praeneste'],['08-28',/augustine/i,'saint.augustine-hippo'],['08-29',/beheading/i,'event.beheading-john-baptist'],['08-30',/felix|adauctus/i,'group.felix-adauctus'],\n ['09-17',/stigmata/i,'event.stigmata-francis'],['09-18',/joseph.*cupertino/i,'saint.joseph-cupertino'],['09-29',/michael/i,'event.dedication-michael'],\n ['10-03',/theresa|therese|infant jesus/i,'saint.therese-lisieux'],['10-15',/teresa/i,'saint.teresa-avila'],\n ['11-11',/martin/i,'saint.martin-tours'],['11-12',/martin/i,'saint.martin-i-pope'],['11-20',/felix/i,'saint.felix-valois'],\n ['12-16',/eusebius/i,'saint.eusebius-vercelli'],['12-21',/thomas/i,'saint.thomas-apostle'],['12-29',/thomas/i,'saint.thomas-becket']\n]",
+  "originalComponentOverrideJs": "{\n '05-03':['group.alexander-eventius-theodulus','saint.juvenal-narni'],\n '05-12':['group.domitilla-nereus-achilleus','saint.pancras-rome'],\n '06-02':['group.marcellinus-peter','saint.erasmus-formia'],\n '06-12':['saint.john-san-facundo','group.basilides-cyrinus-nabor-nazarius'],\n '06-15':['group.vitus-modestus-crescentia'],\n '06-30':['saint.paul-apostle','saint.peter-apostle'],\n '07-10':['group.seven-holy-brothers','group.rufina-secunda'],\n '07-28':['group.nazarius-celsus','saint.victor-i-pope','saint.innocent-i-pope'],\n '07-29':['saint.martha-bethany','saint.felix-ii','group.simplicius-faustinus-beatrice'],\n '08-06':['group.sixtus-ii-felicissimus-agapitus'],\n '08-11':['group.tiburtius-susanna'],\n '08-13':['group.hippolytus-cassian'],\n '08-22':['saint.timothy-rome-martyr','saint.hippolytus-aug22','saint.symphorian-autun'],\n '09-01':['saint.giles','group.twelve-holy-brothers'],\n '09-11':['group.protus-hyacinth'],\n '09-16':['group.cornelius-cyprian-carthage','saint.euphemia-chalcedon','group.lucy-geminianus'],\n '09-19':['group.januarius-companions'],\n '09-20':['group.eustace-family'],\n '09-22':['saint.thomas-villanova','group.maurice-theban-legion'],\n '09-26':['group.cyprian-justina'],\n '10-05':['group.placidus-companions'],\n '10-08':['saint.bridget-sweden','group.sergius-bacchus','group.marcellus-apuleius'],\n '11-08':['group.four-crowned-martyrs'],\n '11-10':['saint.andrew-avellino','group.tryphon-respicius-nympha'],\n '11-18':['group.peter-paul-apostles'],\n '12-04':['saint.peter-chrysologus','saint.barbara-nicomedia'],\n '12-25':['saint.anastasia-sirmium']\n}",
+  "policy": {
+    "groupHandling": "Keep historical group identity distinct from person identities; never flatten a martyr group to one saint",
+    "homonymHandling": "Differentiate names such as Augustine Canterbury/Hippo, Ignatius Antioch/Loyola, Boniface Mainz/Tarsus, Timothy apostle/Roman martyr",
+    "calendarHandling": "Old identity index is supporting evidence, not a replacement of 1962 calendar engine",
+    "reviewHandling": "Old art terminal states must not be silently promoted to current user 5-stars",
+    "newSaintsHandling": "Post-1962 saints separate supplementary information layer"
+  }
+}
