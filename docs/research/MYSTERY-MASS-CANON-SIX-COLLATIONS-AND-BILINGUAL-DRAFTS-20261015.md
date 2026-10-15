@@ -9,7 +9,7 @@ The prior [32 same-author case ledger](../../data/learn/research/mystery-mass-ca
 | Author or corpus | Text consulted | What is **verified** | What is **not** yet verified |
 |---|---|---|---|
 | Guéranger, *Explication des prières de la sainte messe* | [1885 second-edition online French transcription](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) | French source passages for Memento, Hanc igitur, Quam oblationem, Supra quae, Supplices | Comparison with original paper pages, autograph of the lectures, accuracy of stenographic notes |
-| St Alphonsus, *Short Explanation of the Prayers of Mass* | [1887 Grimm-edited English Centenary edition vol. VI](https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass) and [1887 edition notice](https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ) | Accessible English passage and editor's historical source uncertainty | Complete original Italian and French source collation, printed-page line-by-line verification |
+| St Alphonsus, *Short Explanation of the Prayers of Mass* | [1887 Grimm-edited English Centenary edition vol. VI](https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ/Short_Explanation_of_the_Prayers_of_Mass) and [1887 edition notice](https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ) | Accessible English passage and editor's historical source uncertainty | Complete original Italian and French source collation (printed p.46 / scan 48 of English edition now visually confirmed; no Italian autograph checked) |
 | Nicholas Gihr, *The Holy Sacrifice of the Mass* | [1902 English translation/OCR](https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt), §61 pp.658–660 | Accessible OCR at internally marked printed pages for Abel, Abraham and Melchisedech | Original German sixth edition, original paper-page image proof and OCR character-by-character certification |
 | St Thomas Aquinas, *Summa Theologiae* III q.83 a.4 ad 7–9 | [Parallel Latin and English edition/transcription](https://www.logicmuseum.com/wiki/Authors/Thomas_Aquinas/Summa_Theologiae/Part_III/Q83) | Latin and translated passages distinguish fruitful consecration, devotion of patriarchs and angel interpretations | Critical Latin manuscript/edition collation |
 
@@ -48,7 +48,7 @@ The content is not a new standalone module, and no content was copied directly f
 
 ## Remaining narrow release work
 
-- Verify actual printed pages and the 1887 English editor's source note against primary scans before claiming original-edition facsimile certification.
+- Check remaining Guéranger and Gihr printed pages, and separately verify the 1887 English editor's anonymous-French-source notice against its printed image; Alphonsus *Supplices* printed p.46 has already been visually certified.
 - Investigate whether the earlier French model underlying Alphonsus can be identified *independently*; do not register de Condren, Quesnel or any other conjecture as confirmed.
 - The **1962 rubrical event for `Hanc igitur` has been resolved**: already-published priest event `AO.RUB.C0161.01`, source cue `AO.SM.C0161`; independent behavioral/user-handset acceptance remains distinct. Do not create a duplicate. Recheck historical assertions about Gregory the Great before presenting them as fact.
 - Resolve Source/Reference edition, witness, rights, and reliable deep links in the existing pipeline.
@@ -69,9 +69,9 @@ The new CI gate checks 11 compiled review records **byte-for-byte as values agai
 - Guéranger's **1885 second edition** is catalogued as a scanned [KU Leuven original in Google Books](https://books.google.com/books/about/Explication_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9mo.html?id=7Dl_LJtRf78C); published contents place *Memento des vivants* at p.126 and *Quam oblationem* p.140. Individual original pages **not inspected**.
 - St Alphonsus **1887 English Centenary volume VI** is [catalogued with scan download options](https://openlibrary.org/books/OL7036414M/The_complete_ascetical_works_of_St._Alphonsus); the exact passage is now **original printed p.46 / scan image 48, visually verified**; previous pp.56–57 locator is incorrect.
 
-These are **three acquisition candidates, not three completed book collation sets**. Source transcription comparisons remain six; independently visually inspected matching original author-book pair pages are **one of six**. The standalone Ritus's readable retypeset page is a genuine visual control for the liturgical rule but does not certify the separate six author passages.
+These are **three identified scanned editions, of which only the Alphonsus target page has been visually collated**. Source transcription comparisons remain six; independently visually inspected matching original author-book pair pages are **one of six**. The standalone Ritus's readable retypeset page is a genuine visual control for the liturgical rule but does not certify the separate six author passages.
 
-Next work is therefore narrowly limited to printed-page collation of those originals and user/editorial acceptance of the gated English/French refinements. Do not restart the 422-claim audit.
+Next work is therefore narrowly limited to the five remaining Guéranger/Gihr overlapping passage image collations and user/editorial acceptance of the gated English/French refinements. Do not restart the 422-claim audit.
 
 
 ## Phase F — exact printed-image correction (15 October, later pass)
