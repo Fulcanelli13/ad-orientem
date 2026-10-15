@@ -9,6 +9,13 @@ const sample=json("data/source-text/fortescue-1908-print-excerpts.v1.json");
 const reg=json("data/source-text/witness-profiles.v1.json");
 const profile=reg.profiles.find(x=>x.id===sample.work.witnessId);
 assert.ok(profile);
+assert.equal(profile.scanEditionIdentification,"1913_SPECIAL_EDITION_CONFIRMED_COMMONS_AND_PRINTED_TITLE");
+assert.equal(sample.work.editionId,"ED-CE1913-V3-KOC-SPECIAL");
+assert.equal(sample.work.witnessId,"WIT-CE1913-V3-KOC-PRINT-FORTESCUE");
+assert.ok(sample.originalEdition.includes("1913"));
+assert.ok(profile.scanTitleImage.endsWith("/11"));
+assert.equal(sample.work.rights.editorialPublicationApproval,"NOT_GRANTED");
+
 assert.equal(profile.originalFacsimilePageIndexOffset,48);
 assert.equal(sample.productionImportAllowed,false);
 assert.equal(sample.records.length,4);
