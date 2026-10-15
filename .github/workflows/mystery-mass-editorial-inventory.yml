@@ -29,6 +29,8 @@ on:
       - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
       - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
+      - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
+      - 'tests/mystery-mass-creed-source-and-nobis.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
       - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
@@ -58,6 +60,8 @@ on:
       - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
       - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
       - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
+      - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
+      - 'tests/mystery-mass-creed-source-and-nobis.mjs'
       - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
       - 'tests/mystery-mass-p1-source-alignment.mjs'
       - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
@@ -95,6 +99,8 @@ jobs:
         run: node tests/mystery-mass-p1-source-alignment.mjs
       - name: Verify P3 57 clause classifications and existing priest cue reuse
         run: node tests/mystery-mass-p3-full-triage.mjs
+      - name: Check Creed historical-source accuracy and the existing Nobis quoque rubric
+        run: node tests/mystery-mass-creed-source-and-nobis.mjs
       - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
         run: node tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs
       - name: Validate source-first editorial inventory and deduplication
