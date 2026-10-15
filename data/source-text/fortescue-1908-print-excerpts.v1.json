@@ -1,7 +1,7 @@
 {
   "schema": "AO_SOURCE_TEXT_PRINT_EXCERPT_FIXTURE_V1",
   "date": "2026-10-15",
-  "purpose": "Four limited excerpts from the 1913 Knights of Columbus special-edition scan of the 1908 Fortescue article; not a full-page collation or production pack.",
+  "purpose": "Four limited excerpts from the 1913 Knights of Columbus special-edition scan of the 1908 Fortescue article; not a full-page collation or production pack. Extent classes are explicit; p257:s002 is only the beginning of a longer paragraph.",
   "work": {
     "id": "WORK-CE1908-FORTESCUE-CANON-MASS",
     "title": "Canon of the Mass",
@@ -55,7 +55,9 @@
       "printedPage": 255,
       "djvuPage": 303,
       "section": "I. Name and Place of the Canon",
-      "reliability": "AI_VISUAL_COMPARISON_WITH_PRINTED_PAGE_IMAGE__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+      "reliability": "AI_VISUAL_COMPARISON_WITH_PRINTED_PAGE_IMAGE__HUMAN_EDITORIAL_SIGNOFF_PENDING",
+      "sourceExtent": "SENTENCE_ONLY",
+      "publicationStatus": "TECHNICAL_REVIEW_ONLY_NOT_APPROVED"
     },
     {
       "locator": "p256:s001",
@@ -64,7 +66,9 @@
       "printedPage": 256,
       "djvuPage": 304,
       "section": "II. History of the Canon",
-      "reliability": "AI_VISUAL_COMPARISON_WITH_PRINTED_PAGE_IMAGE__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+      "reliability": "AI_VISUAL_COMPARISON_WITH_PRINTED_PAGE_IMAGE__HUMAN_EDITORIAL_SIGNOFF_PENDING",
+      "sourceExtent": "SENTENCE_ONLY",
+      "publicationStatus": "TECHNICAL_REVIEW_ONLY_NOT_APPROVED"
     },
     {
       "locator": "p257:s001",
@@ -75,7 +79,10 @@
       "section": "II. History of the Canon",
       "column": "left",
       "editorialAttribution": "FORTESCUE_HISTORICAL_ANALYSIS_NOT_1962_RUBRIC_AUTHORITY",
-      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING",
+      "sourceExtent": "COMPLETE_PRINTED_PARAGRAPH_PRELIMINARY",
+      "publicationStatus": "TECHNICAL_REVIEW_ONLY_NOT_APPROVED",
+      "humanProofreadStatus": "NOT_INDEPENDENTLY_SIGNED_OFF"
     },
     {
       "locator": "p257:s002",
@@ -86,7 +93,11 @@
       "section": "II. History of the Canon",
       "column": "left",
       "editorialAttribution": "FORTESCUE_HISTORICAL_ANALYSIS_NOT_1962_RUBRIC_AUTHORITY",
-      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING",
+      "sourceExtent": "PARAGRAPH_OPENING_FRAGMENT",
+      "publicationStatus": "TECHNICAL_REVIEW_ONLY_NOT_APPROVED",
+      "incompleteTextEndsAt": "before this service lessons were read from the Bible, litanies and prayers were said.",
+      "remainderStatus": "REST_OF_PRINTED_PARAGRAPH_IS_NOT_STORED_IN_THIS_FIXTURE"
     }
   ],
   "bibliographicEvidence": [
@@ -98,5 +109,6 @@
   ],
   "originalEdition": "Examined witness: 1913 Knights of Columbus special edition, The Encyclopedia Press (printed text). Fortescue article originally published in Catholic Encyclopedia vol. III (Robert Appleton, 1908); textual equivalence between editions not yet checked.",
   "rightsNote": "Precisely four limited, preliminarily image-compared original-print excerpts only; complete article and editorial publication remain held.",
-  "productionImportAllowed": false
+  "productionImportAllowed": false,
+  "auditCrosswalk": "data/source-text/fortescue-1913-p257-layout-audit.v1.json"
 }
