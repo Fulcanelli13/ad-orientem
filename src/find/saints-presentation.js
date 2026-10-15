@@ -113,6 +113,49 @@ export function renderSaintPlaceSheet(vm){
   return html;
 }
 
+
+/**
+ * A source reference is not a finished saint biography. A source index row
+ * must never acquire a portrait, feast, physical pin or invented holiness text.
+ */
+export function renderSaintSourceIndexSheet(vm){
+  const item=vm?.selected;
+  if(item?.kind!=="SAINT_SOURCE_INDEX_ENTRY")return "";
+  const lang=vm.language==="fr"?"fr":"en",say=(en,fr)=>lang==="fr"?fr:en;
+  const meta=item.index_metadata??{};
+  const historical=meta.scope==="ARCHIVED_SOURCE_SUBJECT";
+  const collective=meta.scope==="COLLECTIVE_CANONIZATION";
+  const title=lang==="fr"?item.title_fr:item.title;
+  const summary=lang==="fr"?item.summary_fr:item.summary;
+  const subtitle=lang==="fr"?item.subtitle_fr:item.subtitle;
+  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoSaintSourceIndexSheet" role="dialog" aria-modal="true" aria-label="'+esc(title)+'">';
+  html+='<header><div><small>'+esc(say("SAINTS · SOURCE INDEX","SAINTS · INDEX DES SOURCES"))+'</small><h2>'+esc(title)+'</h2></div>'
+   +'<button type="button" data-find-close-detail aria-label="'+esc(say("Close","Fermer"))+'">×</button></header>';
+  html+='<p class="aoSaintIndexScope">'+esc(historical
+    ?say("Historical sanctoral archive · research reference","Archives historiques du sanctoral · référence de recherche")
+    :collective?say("Collective canonization · group record","Canonisation collective · fiche de groupe")
+    :say("Later canonization · official index","Canonisation ultérieure · index officiel"))+'</p>';
+  if(subtitle)html+='<p class="aoSaintIndexDate">'+esc(subtitle)+'</p>';
+  if(summary)html+='<p class="aoSaintIndexSynopsis">'+esc(summary)+'</p>';
+  if(collective){
+    const count=Number.isInteger(meta.members)?String(meta.members):
+      Number.isInteger(meta.estimated_members)?say("approximately ","environ ")+String(meta.estimated_members):"";
+    if(count)html+='<p class="aoSaintIndexCount">'+esc(say("Group members: ","Membres du groupe : ")+count)+'</p>';
+  }
+  html+='<p class="aoSaintGeoNote">'+esc(historical
+    ?say("Archived subject identification is not a certified individual saint biography, current feast, or Mass assignment.",
+      "L’identification archivistique ne vaut ni biographie individuelle certifiée, ni fête actuelle, ni choix de messe.")
+    :collective?say("This group is one index entry, not one person or a list of unnamed individual biographies.",
+       "Ce groupe constitue une seule entrée de l’index, et non une personne ou une série de biographies individuelles.")
+    :say("Canonization date is not a liturgical feast date. A complete sourced life is not available in this index.",
+       "La date de canonisation n’est pas une fête liturgique. Cet index ne contient pas encore de biographie complète et sourcée."))+'</p>';
+  const links=arr(item.source_links).filter(x=>sourceUrl(x));
+  if(links.length)html+='<div class="aoSaintIndexReferences"><strong>'+esc(say("Original source","Source d’origine"))+'</strong>'
+    +links.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(sourceUrl(x))+'">'+esc(x.issuer||x.title||say("Source","Source"))+' ↗</a>').join("")+'</div>';
+  html+='</section></div>';
+  return html;
+}
+
 export const SAINTS_SHEET_CSS=`
 .aoSaintPlaceSheet{background:linear-gradient(155deg,#15202b,#080d14 62%);padding-bottom:max(25px,env(safe-area-inset-bottom));max-height:82dvh}
 .aoSaintPlaceSheet header{align-items:start}.aoSaintPlaceSheet header small{color:#cbb587;font:650 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em}
@@ -162,6 +205,12 @@ export const SAINTS_SHEET_CSS=`
 .aoSaintLife,.aoSaintWitness{font:15px/1.6 var(--ao-font-body,Georgia,serif);color:#e9decd;margin:12px 0}
 .aoSaintWitness{margin-top:0}
 .aoSaintRoles{margin:12px 0 10px}
+.aoSaintSourceIndexSheet{max-width:640px;background:linear-gradient(155deg,#15202b,#080d14 62%)}
+.aoSaintSourceIndexSheet header h2{font:550 clamp(22px,5vw,28px)/1.2 var(--ao-font-display,Georgia,serif)}
+.aoSaintIndexScope,.aoSaintIndexDate,.aoSaintIndexCount{color:#d6c3a0;font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);margin:12px 0}
+.aoSaintIndexSynopsis{font:16px/1.6 var(--ao-font-body,Georgia,serif);color:#ecdfcb;margin:15px 0}
+.aoSaintIndexReferences{display:grid;gap:12px;border-top:1px solid #78684b55;padding:15px 0;color:#e4d3b6}
+.aoSaintIndexReferences a{color:#e5c98b;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .aoSaintCatalogueFacets{display:flex;gap:6px;overflow-x:auto;padding:7px 13px 12px;scrollbar-width:thin}
 .aoSaintCatalogueFacets button{flex:none;min-height:38px;white-space:nowrap;border-radius:999px;padding:7px 12px;
  background:#101a24;color:#d1c2a9;border:1px solid rgba(217,197,154,.21);
