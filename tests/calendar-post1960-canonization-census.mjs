@@ -5,18 +5,19 @@ const pilot=JSON.parse(readFileSync(new URL("../data/calendar/living-sanctoral-p
 assert.equal(census.schema,"AO_POST1960_CANONIZATION_EVENT_CENSUS_BATCH1_V1");
 assert.equal(census.publicationStatus,"RESEARCH_ONLY_NOT_RUNTIME");
 assert.equal(census.coverage.completeGlobal1960To2026,false);
-assert.deepEqual(census.coverage.scopeYears,[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2024,2025]);
-assert.equal(census.years.length,25);
-assert.equal(census.events.length,54);
-assert.equal(census.persons.length,179);
-assert.equal(census.groups.length,7);
-assert.equal(census.groups.reduce((n,g)=>n+(g.unexpandedMemberCount??g.memberCount??0),0),207);
+assert.deepEqual(census.coverage.scopeYears, [...census.years.map(y=>y.year)].sort((a,b)=>a-b));
+assert.equal(census.coverage.all51OfficialIndexYearsTranscribed,true);
+assert.equal(census.years.length,51);
+assert.equal(census.events.length,112);
+assert.equal(census.persons.length,258);
+assert.equal(census.groups.length,13);
+assert.equal(census.groups.reduce((n,g)=>n+(g.unexpandedMemberCount??g.memberCount??0),0),497);
 assert.equal(census.coverage.unverifiedApproximateGroupMembers,800);
 assert.equal(census.coverage.groupsWithApproximateCounts,1);
 const pIds=new Set(census.persons.map(p=>p.id));
 const eIds=new Set(census.events.map(e=>e.id));
 const gIds=new Set(census.groups.map(g=>"canon-group."+g.id));
-assert.equal(pIds.size,179);assert.equal(eIds.size,54);assert.equal(gIds.size,7);
+assert.equal(pIds.size,258);assert.equal(eIds.size,112);assert.equal(gIds.size,13);
 for(const p of census.persons){
   assert.match(p.id,/^saint\.[a-z0-9-]+$/);
   assert.equal(p.liturgicalDate.monthDay,null,"Never invent a universal memorial date");
@@ -30,7 +31,7 @@ for(const p of census.persons){
 for(const e of census.events){
   assert.match(e.date,/^(?:19|20)\d\d-\d\d-\d\d$/);
   assert.equal(e.year,Number(e.date.slice(0,4)));
-  assert.ok(["ORDINARY","EQUIVALENT_CANONIZATION"].includes(e.kind));
+  assert.ok(["ORDINARY","EQUIVALENT_CANONIZATION","DICASTERY_LISTED_FORM_NOT_INDEPENDENTLY_CHECKED"].includes(e.kind));
   assert.ok(e.namedIndividualIds.every(id=>pIds.has(id)));
   assert.ok(e.groupIds.every(id=>gIds.has(id)));
   assert.equal(new Set(e.namedIndividualIds).size,e.namedIndividualIds.length);
@@ -38,7 +39,8 @@ for(const e of census.events){
 for(const g of census.groups){
   assert.ok(eIds.has(g.eventId));
   assert.ok(g.memberCount>1 || (g.memberCount===null && g.estimatedMemberCount>1 && g.countPrecision==="APPROXIMATELY_PER_DICASTERY_NOT_EXACT"));
-  assert.ok(["UNEXPANDED_IN_THIS_BATCH","PARTIAL_IDENTITIES_NEED_EXPANSION"].includes(g.memberIdentityStatus));
+  assert.ok(["UNEXPANDED_IN_THIS_BATCH","PARTIAL_IDENTITIES_NEED_EXPANSION","ALL_MEMBERS_NAMED_IN_THIS_BATCH"].includes(g.memberIdentityStatus));
+  if(g.memberIdentityStatus==="ALL_MEMBERS_NAMED_IN_THIS_BATCH")assert.equal(g.unexpandedMemberCount,0);
   if(g.memberIdentityStatus==="PARTIAL_IDENTITIES_NEED_EXPANSION")assert.ok(g.individuallyIdentifiedPersonIds?.length>0 && g.unexpandedMemberCount>0);
   assert.ok(!pIds.has("saint."+g.id),"Do not count a group as a single saint");
 }
@@ -71,5 +73,14 @@ assert.equal(census.events.find(e=>e.date==="2000-10-01").namedIndividualIds.len
 assert.equal(census.years.find(y=>y.year===2000).sourceEventTotalPeople,151);
 assert.equal(census.groups.find(g=>g.id==="martyrs-china-1648-1930").unexpandedMemberCount,117);
 assert.equal(census.groups.find(g=>g.id==="martyrs-mexico-1927").unexpandedMemberCount,24);
-assert.equal(census.coverage.knownGroupMembersAlreadyIncludedInNamedRecords,4);
-console.log("Post-1960 official canonization census: PASS (54 events, 179 named persons, 7 groups; 207 unexpanded exact and ~800 estimated martyrs)");
+assert.equal(census.coverage.knownGroupMembersAlreadyIncludedInNamedRecords,15);
+assert.equal(census.events.find(e=>e.date==="1964-10-18").groupIds.length,1);
+assert.equal(census.groups.find(g=>g.id==="uganda-martyrs-22").unexpandedMemberCount,20);
+assert.equal(census.groups.find(g=>g.id==="korean-martyrs-103").unexpandedMemberCount,101);
+assert.equal(census.groups.find(g=>g.id==="vietnamese-martyrs-117").unexpandedMemberCount,116);
+assert.equal(census.groups.find(g=>g.id==="japan-martyrs-16-1987").unexpandedMemberCount,13);
+assert.equal(census.groups.find(g=>g.id==="forty-martyrs-england-wales").unexpandedMemberCount,40);
+assert.equal(census.groups.find(g=>g.id==="paraguay-jesuit-martyrs-3").unexpandedMemberCount,0);
+assert.ok(census.persons.find(p=>p.id==="saint.jadwiga-queen-poland").publicationHold);
+assert.equal(census.persons.find(p=>p.id==="saint.john-avila").canonizedOn,"1970-05-31");
+console.log("Post-1960 official canonization census: PASS (51 official index years, 112 events, 258 named persons, 13 cohorts, 497 unexpanded exact + Otranto approximate)");
