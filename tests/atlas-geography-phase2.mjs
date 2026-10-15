@@ -74,7 +74,7 @@ const blockedByPeriod=new Map([
 assert.equal(phase.metrics.independentlyAttestedNamingGuards,8);
 assert.equal(phase.policy.noAutomaticHistoricAliasPromotionAfterAttestation,true);
 assert.deepEqual(
- [...new Set(phase.records.filter(p=>p.attestedNamingGuard).map(p=>p.anchorKey))].sort(),
+ [...new Set(phase.records.filter(p=>p.attestedNamingGuard?.status==="SOURCE_CORROBORATED_EDITORIAL_HOLD").map(p=>p.anchorKey))].sort(),
  [...blockedByPeriod.keys()].sort(),
  "One in-place owner for exactly eight independently corroborated naming cases"
 );
@@ -116,6 +116,62 @@ for(const p of ["src/find/bible-atlas.js","src/find/browser-entry.js","src/find/
  assert.ok(!content.includes("attestedNamingGuard"),
   "Research gate must never be silently treated as a runtime name/date decision in "+p);
 }
+
+const secondBatchKeys=new Set([
+ "hebron","jericho","nazareth","capernaum","joppa",
+ "nineveh","babylon","damascus","antioch-syria","athens",
+ "ephesus","rome","lystra","thessalonica","miletus"
+]);
+assert.equal(secondBatchKeys.size,15);
+assert.equal(phase.metrics.narrativeAndArchaeologicalNamingGuards,15);
+assert.equal(phase.metrics.totalNamingGuards,23);
+assert.equal(phase.metrics.labelKeysWithGuard,22);
+assert.equal(phase.policy.noAutomaticAncientSpellingFromTranslatedScripture,true);
+assert.equal(phase.policy.geographicContextDoesNotLocateEvent,true);
+const newOwners=phase.records.filter(x=>x.attestedNamingGuard?.status==="NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD");
+assert.equal(newOwners.length,15);
+assert.deepEqual(new Set(newOwners.map(x=>x.anchorKey)),secondBatchKeys);
+assert.equal(new Set(phase.records.filter(x=>x.attestedNamingGuard).map(x=>x.anchorKey)).size,23);
+assert.ok(phase.records.filter(x=>x.labelReview).every(x=>x.attestedNamingGuard),
+ "All 22 original bilingual label owners must now have name/period evidence guards");
+for(const p of newOwners){
+ const gate=p.attestedNamingGuard;
+ const old=baseByKey.get(p.anchorKey);
+ assert.ok(old?.pleiades,"Attested label must preserve original pinned Pleiades candidate identity");
+ assert.ok(labels.includes(p.anchorKey),"No non-display owner can be introduced in this batch");
+ assert.equal(gate.existingDisplayLabelPreserved,true);
+ assert.equal(gate.publication,"NO_AUTOMATIC_NAME_SUBSTITUTION");
+ assert.equal(gate.eventCoordinatesChanged,false);
+ assert.equal(gate.cityIdentityIsNotExactEventLocation,true);
+ assert.equal(gate.historicalSpellingVerifiedFromTheseSources,false);
+ assert.equal(gate.philologicalCollationStillRequired,true);
+ assert.equal(gate.independentSourceComparedToPleiades,true);
+ assert.ok(gate.reviewedNarrativeContext.length>2);
+ assert.ok(gate.contextualQualification.length>85);
+ assert.ok(Array.isArray(gate.independentEvidence)&&gate.independentEvidence.length>0);
+ for(const e of gate.independentEvidence){
+  const host=new URL(e.url).hostname;
+  assert.ok(["bible.usccb.org","whc.unesco.org","www.biblegateway.com",
+   "www.osservatoreromano.va","www.miletgrabung.uni-hamburg.de"].includes(host),
+   "Only a reviewed direct scripture/archaeology source in this batch: "+e.url);
+  assert.ok(e.locator.length>=8);
+  assert.ok(e.establishes.length>=65,"Source claim needs a scope limitation");
+  assert.ok(e.category.length>=15);
+ }
+}
+assert.ok(newOwners.find(x=>x.anchorKey==="hebron").attestedNamingGuard.contextualQualification.includes("Kiriath-arba"));
+assert.ok(newOwners.find(x=>x.anchorKey==="miletus").attestedNamingGuard.contextualQualification.includes("modern coastline"));
+assert.ok(newOwners.find(x=>x.anchorKey==="jericho").attestedNamingGuard.contextualQualification.includes("Tell es-Sultan"));
+assert.ok(newOwners.find(x=>x.anchorKey==="rome").attestedNamingGuard.contextualQualification.includes("ROUGH"));
+const sourceStrings=["attestedNamingGuard","noAutomaticAncientSpellingFromTranslatedScripture",
+ "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD"];
+for(const path of ["src/find/bible-atlas.js","src/find/browser-entry.js","src/find/map-runtime.js"]){
+ const runtime=readFileSync(root(path),"utf8");
+ for(const term of sourceStrings)assert.ok(!runtime.includes(term),
+  "Keep editorial source/period fields unimported by active app "+path);
+}
+console.log("PASS all 15 remaining bilingual settlement labels: contextual scripture/site guards, 22/22 owner coverage, zero coordinate/label change");
+
 console.log("PASS eight independent name attestations: Josephus/Strabo/academic/archaeology, two GIS date conflicts, 0 runtime promotions");
 
 console.log("PASS Phase 2 research: 35 keyed / 22 label holds / 7 site exceptions / 6 distinct caveats / 0 promotions");
