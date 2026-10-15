@@ -7,6 +7,8 @@ The user returned `Ad_Orientem_Sacred_Art_W67_Saints_R1_Ratings_2026-10-15.json`
 
 Canonical score overlay: [W68 new user decisions](../../data/calendar/sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json). The existing W49/W46 ratings are retained and **no prior rated source ID overlapped any of the new 70**. The original W49 95-ID rejection snapshot is immutable; **eight new exact-ID rejects are an additive delta**, not silently merged into a 2026-10-14 source file.
 
+**Active future-gallery filter:** [W68 combined permanent rejection register](../../data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json), containing **103 distinct rejected record IDs** (95 historical + eight new). This is not a count of distinct physical paintings, and should be reconciled by accession and exact photographed image before propagating alias bans.
+
 | Score | User decisions | Policy |
 |---|---:|---|
 | 5 | 0 | No new five-star approved original |
