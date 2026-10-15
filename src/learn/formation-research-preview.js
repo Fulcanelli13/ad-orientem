@@ -89,7 +89,7 @@ export function createFormationResearchPreview(win=globalThis){
     const records=evidenceRows;
     if(!records.length)return "";
     const rows=records.map((record,i)=>{
-      const excerpt=record.passage.replace(/\\s+/g," ").trim().slice(0,110);
+      const excerpt=record.passage.replace(/\s+/g," ").trim().slice(0,110);
       return '<li data-ao-fr-evidence-paragraph="'+(i+1)+'"><span class="aoFRExcerpt">'+esc(excerpt)+(record.passage.length>110?"…":"")+'</span>'+
         links(record.ids,record.group)+'</li>';
     }).join("");
