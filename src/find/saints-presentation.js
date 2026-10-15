@@ -18,7 +18,7 @@ export function renderSaintPlaceSheet(vm){
   html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
   html+='<header><div><small>'+esc(L(language,"SAINTS · EXPLORATORY COLLECTION","SAINTS · COLLECTION EN COURS"))+'</small>'
     +'<h2>'+esc(item.subtitle||item.title)+'</h2>'
-    +'<p>'+esc(L(language,"Holy lives connected with this physical place","Vies saintes associées à ce lieu'))+'</p></div>'
+    +'<p>'+esc(L(language,"Holy lives connected with this physical place","Vies saintes associées à ce lieu"))+'</p></div>'
     +'<button type="button" data-find-close-detail aria-label="'+esc(L(language,"Close","Fermer"))+'">×</button></header>';
   for(const [index,saint] of people.entries()){
     html+='<article class="aoSaintBiography" data-saint-id="'+esc(saint.saint_id)+'">';
