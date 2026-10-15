@@ -110,7 +110,7 @@ export function certifyPreGospelChantParts(proper,{sources,normalizeRows}={}){
 }
 
 export function validatedPreGospelChantParts(proper){
-  const proof=proper?.preGospelChants;
+  const proof=proper?.readerChantSourceProof;
   if(!proof)return null;
   if(proof.status!=="SOURCE_VERIFIED_EXACT"||
     proof.sourcePath!==proper.sourcePath ||
