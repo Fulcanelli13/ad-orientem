@@ -11,6 +11,59 @@ const rowsOf=(source,id)=>{
   return Array.isArray(raw)?raw:null;
 };
 function meaningful(text){return Boolean(cleaned(text)&&!/(^|\n)\s*[$@]/m.test(String(text)));}
+// Some authentic Divinum [Graduale] sections contain two chants. A
+// recognized liturgical separator must be found independently in all three
+// originals; its exact source text must reconstruct the host's flattened
+// Proper. A mere occurrence of 'Alleluia' later in a verse is insufficient.
+const DOUBLE_ALLELUIA=/(?:Allel[úu]ja|Allel[úu]ia|Alléluia),?\s+(?:Allel[úu]ja|Allel[úu]ia|Alléluia)\.?/giu;
+function separateWithinGraduale(rows,language,normalizeRows){
+  const raw=(rows??[]).map(String);
+  const tractIndex=raw.findIndex(line=>/^!\s*Tractus\.?\s*$/iu.test(line));
+  if(tractIndex>=0){
+    const first=normalizeRows(raw.slice(0,tractIndex),language);
+    const second=normalizeRows(raw.slice(tractIndex),language);
+    if(meaningful(first)&&meaningful(second))return {kind:"TRACT",texts:[first,second]};
+    return null;
+  }
+  const text=normalizeRows(raw,language);
+  const hits=[...text.matchAll(DOUBLE_ALLELUIA)];
+  if(hits.length!==1)return null;
+  const at=hits[0].index;
+  const gradual=text.slice(0,at).trimEnd(),alleluia=text.slice(at).trimStart();
+  if(!meaningful(gradual)||!meaningful(alleluia))return null;
+  return {kind:"ALLELUIA",texts:[gradual,alleluia]};
+}
+function certifyWithinOneSection(proper,{sources,normalizeRows,path}){
+  const languages={},types=[];
+  for(const language of LANGUAGES){
+    const parsed=sources[language];
+    const order=orderOf(parsed).filter(id=>Object.hasOwn(NAMES,id));
+    if(order.length!==1||order[0]!=="Graduale")return null;
+    const rows=rowsOf(parsed,"Graduale");
+    if(!rows?.length)return null;
+    const original=normalizeRows(rows,language);
+    if(!meaningful(original)||
+      cleaned(original)!==cleaned(textOf(proper.gradual,language)))return null;
+    const split=separateWithinGraduale(rows,language,normalizeRows);
+    if(!split)return null;
+    if(cleaned(split.texts.join(" "))!==cleaned(original))return null;
+    types.push(split.kind);languages[language]=split.texts;
+  }
+  if(types.some(type=>type!==types[0]))return null;
+  const kinds=["GRADUAL",types[0]];
+  const ids=kinds.map(kind=>"Graduale#"+kind);
+  return Object.freeze({
+    status:"SOURCE_VERIFIED_EXACT",sourceMode:"INTRA_SECTION_TRILINGUAL_BOUNDARY",
+    sourcePath:path,sourceOrder:Object.freeze(ids),
+    aggregateVerifiedLanguages:LANGUAGES,
+    parts:Object.freeze(kinds.map((kind,i)=>Object.freeze({
+      kind,sourceSectionId:ids[i],
+      sourceRef:path+":"+ids[i],
+      lat:languages.la[i],en:languages.en[i],fr:languages.fr[i],
+    }))),
+  });
+}
+
 export function certifyPreGospelChantParts(proper,{sources,normalizeRows}={}){
   if(!proper||!sources||typeof normalizeRows!=="function")return null;
   const path=String(proper.sourcePath??"").trim();
@@ -19,7 +72,9 @@ export function certifyPreGospelChantParts(proper,{sources,normalizeRows}={}){
   // Indexed extended-lesson GradualeL... uses a separate sequence model;
   // do not compact it into the single ordinary-Mass Gradual.
   if(baseOrder.length!==2||baseOrder[0]!=="Graduale"||
-    !["Alleluia","Tractus"].includes(baseOrder[1]))return null;
+    !["Alleluia","Tractus"].includes(baseOrder[1])){
+    return certifyWithinOneSection(proper,{sources,normalizeRows,path});
+  }
   const order=Object.freeze(baseOrder);
   const languages={};
   for(const language of LANGUAGES){
@@ -66,9 +121,15 @@ export function validatedPreGospelChantParts(proper){
       JSON.stringify(LANGUAGES) ||
     proof.parts[0].kind!=="GRADUAL"||
     !["ALLELUIA","TRACT"].includes(proof.parts[1].kind) ||
-    proof.parts[0].sourceSectionId!=="Graduale" ||
-    proof.parts[1].sourceSectionId!==
-      (proof.parts[1].kind==="ALLELUIA"?"Alleluia":"Tractus")){
+    !(
+      (proof.parts[0].sourceSectionId==="Graduale"&&
+       proof.parts[1].sourceSectionId===
+         (proof.parts[1].kind==="ALLELUIA"?"Alleluia":"Tractus"))
+      ||
+      (proof.sourceMode==="INTRA_SECTION_TRILINGUAL_BOUNDARY"&&
+       proof.parts[0].sourceSectionId==="Graduale#GRADUAL"&&
+       proof.parts[1].sourceSectionId==="Graduale#"+proof.parts[1].kind)
+    )){
     throw new Error("PRE_GOSPEL_UNVERIFIED_SOURCE_PARTS");
   }
   for(const part of proof.parts){
