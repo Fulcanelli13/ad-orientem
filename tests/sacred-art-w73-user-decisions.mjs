@@ -1,0 +1,32 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const base=new URL("../data/calendar/",import.meta.url);
+const get=file=>JSON.parse(readFileSync(new URL(file,base),"utf8"));
+const newr=get("sacred-art-w73-w72-large-saints-review-user-decisions-20261015.v1.json");
+const oldr=get("sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json");
+const bans=get("sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json");
+let n=0;const test=(a,b)=>{assert.ok(a,b);n++};
+test(newr.schema==="AO_SACRED_ART_W73_W72_LARGE_REVIEW_NEW_USER_DECISION_OVERLAY_V1","schema");
+test(newr.newFiveScoreAndUpgradeRecords.length===17,"17 user approvals");
+test(newr.newFiveScoreAndUpgradeRecords.filter(x=>x.previousScore===null).length===4,"4 genuinely new numeric scores");
+test(newr.newFiveScoreAndUpgradeRecords.filter(x=>x.previousScore===4).length===13,"13 explicit 4-to-5");
+test(new Set(newr.newFiveScoreAndUpgradeRecords.map(x=>x.candidateId)).size===17,"unique reviewed IDs");
+test(newr.newFiveScoreAndUpgradeRecords.every(x=>x.userDecisionScore===5&&x.curatorialArtworkApproved),"human five decisions");
+test(newr.newFiveScoreAndUpgradeRecords.every(x=>x.exactReviewedPhotograph&&x.originalSourcePage),"exact photo and source retained");
+test(newr.newFiveScoreAndUpgradeRecords.every(x=>x.publicationReady===false&&x.reviewedPhotoToPhysicalOriginalMatchCertified===false),"no publication");
+test(newr.preferences.length===6&&new Set(newr.preferences.map(x=>x.subjectId)).size===6,"6 distinct favoured subjects");
+test(newr.fitDecisions.length===1&&newr.fitDecisions[0].decision==="perfect","1 explicit fit");
+test(newr.counts.unratedPreviewItemsRemaining===42,"42 new ratings still pending");
+test(newr.counts.subjectsWithSomeHistoricalOrNewFive===71,"71 core 5-scores");
+test(newr.counts.subjectRequirementsWithoutAnyKnownHistoricalOrNewFive===4,"4 true missing 5");
+test(newr.remainingNoFiveAcrossHistoricalAndW72Core.map(x=>x.subject).sort().join(";")===[
+"Saint Cyril of Alexandria","Saint Cyril of Jerusalem","Saint Hilary of Poitiers","Saint Mark the Evangelist"
+].sort().join(";"),"exact missing subjects");
+test(newr.counts.additionalUsablePhotoSlotsForTwoPerCoreSubject===42,"42 visual alternatives min");
+test(bans.items.length===103,"old reject set not altered");
+const old4=new Set(oldr.pending4.map(x=>x.candidateId));
+test(newr.newFiveScoreAndUpgradeRecords.filter(x=>x.previousScore===4).every(x=>old4.has(x.candidateId)),"every promoted score was old W49 four");
+test(!newr.newFiveScoreAndUpgradeRecords.some(x=>bans.items.some(b=>b.artworkId===x.candidateId)),"no rejected work returned");
+test(newr.qualityAndIdentityPriorityHolds.twoNewSaintAlphonsusGoogleThumbnailCandidateIDs.length===2,"two Alfonsus source thumbnail holds");
+test(newr.publicationApproved===false,"no released artwork");
+console.log("W73 Saints review approval overlay integrity "+n+"/"+n+" passed");
