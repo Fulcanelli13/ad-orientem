@@ -5782,12 +5782,19 @@
         "saintFrom": "1997-06-08"
       },
       "sources": [
-        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html"
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html",
+        "https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19970608_cracovia.html"
       ],
       "reviewFlags": [
-        "OFFICIAL_1997_TITLE_VS_BODY_HEDWIG_SILESIA_CONFLATION_REVIEW_REQUIRED"
+        "DICASTERY_1997_BIOGRAPHY_APPARENTLY_CONFLATES_HEDWIG_SILESIA"
       ],
-      "publicationHold": "IDENTITY_DESCRIPTION_REQUIRES_INDEPENDENT_REVIEW"
+      "identityAdjudication": {
+        "status": "CERTIFIED_IDENTITY_BY_PAPAL_CANONIZATION_HOMILY",
+        "date": "1997-06-08",
+        "name": "Queen Jadwiga (Hedwig) of Poland",
+        "sourceUrl": "https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19970608_cracovia.html",
+        "editorialNote": "Papal homily establishes queen of Poland, Wawel, Jagiellonian dynasty and canonical ceremony; Dicastery year page body has content of Hedwig of Silesia. Retain discrepancy as source QA, not identity block."
+      }
     },
     {
       "id": "saint.john-duckla",
