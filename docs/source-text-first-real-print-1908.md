@@ -1,3 +1,5 @@
+> **PAGE 257 EXTENT UPDATE:** The current historical fixture contains four excerpts over pp.255–257, but only the first p257 excerpt is a complete printed paragraph. The second p257 excerpt is a partial opening; full page 257 and the exact printed paragraph census remain unapproved. Details: `data/source-text/fortescue-1913-p257-layout-audit.v1.json`.
+
 > **AUTHORITATIVE EDITION CORRECTION — 15 OCT 2026:** The Fortescue article first appeared in 1908, but this Wikisource/Commons DJVU is the **1913 Knights of Columbus special edition**. Any references below to the scanned images as "original 1908 printed pages" are superseded. The correct scanned edition and witness IDs are `ED-CE1913-V3-KOC-SPECIAL` and `WIT-CE1913-V3-KOC-PRINT-FORTESCUE`. See [Phase 6 edition and p257 correction](source-text-edition-correction-and-p257-20261015.md). Historical staging statistics below are not the current totals: current fixture has **four excerpts across three printed pages**, zero complete pages independently collated.
 
 # First original-print extraction fixture: Adrian Fortescue, *Canon of the Mass* (1908)
