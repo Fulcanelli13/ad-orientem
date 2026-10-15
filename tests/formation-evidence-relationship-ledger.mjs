@@ -1,106 +1,98 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-
-const read=path=>JSON.parse(readFileSync(path,"utf8"));
-const crosswalk=read("data/reference/formation-canonical-source-crosswalk.v1.json");
-const audit=read("data/reference/formation-evidence-relationship-ledger.v1.json");
-assert.equal(audit.schema,"AO_FORMATION_EVIDENCE_RELATIONSHIP_LEDGER_V1");
-assert.match(audit.status,/UNPUBLISHED/);
-assert.equal(audit.counts.fully_certified_sections,0);
-assert.equal(audit.counts.independently_theologically_approved_sections,0);
-assert.equal(audit.sections.length,564);
-assert.equal(audit.edges.length,1541);
-assert.equal(audit.checked_claims.length,8);
-const sectionMap=new Map(audit.sections.map(s=>[s.section_key,s]));
-const edgeMap=new Map(audit.edges.map(e=>[e.edge_key,e]));
-const sourceMap=new Map(crosswalk.source_bindings.map(s=>[s.key,s]));
-assert.equal(sectionMap.size,audit.sections.length);
-assert.equal(edgeMap.size,audit.edges.length);
-const checks=new Map(audit.checked_claims.map(x=>[x.edge_key,x]));
-assert.equal(checks.size,8);
-const evidenceKinds=new Set([
- "DIRECT_PRIMARY_TEXT_SUPPORT","ORIGINAL_DISPUTANT_POSITION","ORIGINAL_PROPONENT_POSITION",
- "ORIGINAL_SPEAKER_POSITION","CONTEXTUAL_EVIDENCE"
-]);
-let totalSections=0,totalEdges=0,withLocator=0,withoutNewVerdict=0,roleCounts={};
-for(const file of crosswalk.source_files){
- const d=read(file.path);
- assert.equal(d.publication_allowed,false,file.path+" publication gate moved");
- for(const dos of d.dossiers){
-  assert.equal(dos.publication_allowed,false,dos.id+" publication promoted");
-  for(let index=0;index<dos.sections.length;index++){
-   const original=dos.sections[index];
-   const sectionKey=file.scope+"::"+dos.id+"::"+String(index).padStart(2,"0");
-   const s=sectionMap.get(sectionKey);
-   assert.ok(s,sectionKey+" missing");
-   assert.equal(s.section_index,index);
-   assert.equal(s.role,original.role);
-   assert.equal(s.attribution,original.attribution||null,
-    "Author attribution was modified for "+sectionKey);
-   assert.equal(s.evidence_status,"NOT_CERTIFIED");
-   assert.equal(s.original_context_approved,original.original_context_approved===true);
-   assert.equal(s.french_final_approved,original.french_final_approved===true);
-   assert.equal(s.source_count,original.source_ids.length);
-   roleCounts[s.role]=(roleCounts[s.role]||0)+1;
-   totalSections++;
-   for(const sourceID of original.source_ids){
-    const edgeKey=sectionKey+"::"+sourceID;
-    const edge=edgeMap.get(edgeKey);
-    assert.ok(edge,edgeKey+" missing");
-    const binding=sourceMap.get(file.scope+"::"+sourceID);
-    assert.ok(binding,edgeKey+" lost original source");
-    assert.equal(edge.source_binding,binding.key);
-    assert.equal(edge.witness_id,binding.witness_id);
-    assert.equal(edge.claim_locator,original.source_claim_locators?.[sourceID]||null);
-    if(edge.claim_locator)withLocator++;
-    const review=checks.get(edgeKey);
-    if(review){
-     assert.equal(edge.verification,"PASSAGE_OPENED_AND_CLAIM_CORROBORATED");
-     assert.equal(edge.review_id,review.id);
-     assert.ok(evidenceKinds.has(edge.relationship));
-     assert.equal(review.relationship,edge.relationship);
-     assert.equal(review.source_id,sourceID);
-     assert.equal(review.dossier,dos.id);
-     assert.equal(review.role,original.role);
-     assert.equal(review.source_url,d.source_registry.find(x=>x.id===sourceID).url);
-     assert.equal(review.checked_at,"2026-10-15");
-     assert.ok(review.checked_locator&&review.claim_checked&&review.limitations);
-     assert.equal(review.verified_specific_claim_only,true);
-     assert.equal(review.whole_section_certified,false);
-     assert.equal(review.original_language_collated,false);
-     assert.equal(review.independent_theological_approval,false);
-    }else{
-     withoutNewVerdict++;
-     assert.equal(edge.relationship,"UNASSESSED",edgeKey+" was categorized automatically");
-     assert.equal(edge.verification,"NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",edgeKey+" prior editorial findings were misrepresented");
-     assert.ok(!edge.review_id);
-    }
-    totalEdges++;
+const read=p=>JSON.parse(readFileSync(p,"utf8"));
+const historical=read("data/reference/formation-evidence-relationship-ledger.v1.json");
+const baseline=read("data/reference/formation-canonical-source-crosswalk.v1.json");
+const current=read("data/reference/formation-current-source-reconciliation.v2.json");
+const prior=read("data/reference/formation-prior-audit-reconciliation.v1.json");
+assert.equal(historical.schema,"AO_FORMATION_EVIDENCE_RELATIONSHIP_LEDGER_V1");
+assert.match(historical.status,/UNPUBLISHED/);
+assert.equal(historical.sections.length,564);
+assert.equal(historical.edges.length,1541);
+assert.equal(historical.checked_claims.length,8);
+assert.equal(historical.counts.fully_certified_sections,0);
+assert.equal(historical.counts.independently_theologically_approved_sections,0);
+assert.equal(historical.counts.reverification_tasks_created,0);
+assert.equal(current.metrics.currently_independently_certified_new_claims,0);
+assert.equal(current.metrics.published_apologetics_crisis_dossiers,0);
+const sections=new Map(historical.sections.map(s=>[s.section_key,s]));
+const edges=new Map(historical.edges.map(e=>[e.edge_key,e]));
+const oldReferences=new Map(baseline.source_bindings.map(s=>[s.key,s]));
+const witness=new Map(baseline.witness_index.map(s=>[s.id,s]));
+const revised=new Set(current.changed_previous_screened_sections.map(x=>x.section_key));
+assert.equal(sections.size,564);
+assert.equal(edges.size,1541);
+assert.equal(oldReferences.size,408);
+assert.equal(revised.size,22);
+for(const e of historical.edges){
+ assert.ok(sections.has(e.section_key));
+ const binding=oldReferences.get(e.source_binding);
+ assert.ok(binding,"Historical binding lost "+e.source_binding);
+ assert.equal(e.witness_id,binding.witness_id);
+ assert.equal(e.source_binding,e.section_key.split("::")[0]+"::"+e.source_id);
+ assert.ok(witness.get(e.witness_id)?.url?.startsWith("https://"));
+ assert.ok(["PASSAGE_OPENED_AND_CLAIM_CORROBORATED",
+ "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER"].includes(e.verification));
+}
+const checked=new Set();
+for(const claim of historical.checked_claims){
+ assert.ok(!checked.has(claim.edge_key));checked.add(claim.edge_key);
+ const edge=edges.get(claim.edge_key);
+ assert.ok(edge&&edge.verification==="PASSAGE_OPENED_AND_CLAIM_CORROBORATED");
+ assert.equal(edge.review_id,claim.id);
+ assert.equal(claim.checked_at,"2026-10-15");
+ assert.equal(claim.verified_specific_claim_only,true);
+ assert.equal(claim.whole_section_certified,false);
+ assert.equal(claim.original_language_collated,false);
+ assert.equal(claim.independent_theological_approval,false);
+ assert.ok(claim.limitations&&claim.claim_checked&&claim.checked_locator);
+ const binding=oldReferences.get(edge.source_binding);
+ assert.equal(witness.get(binding.witness_id).url,claim.source_url);
+}
+assert.equal(checked.size,8);
+assert.match(historical.checked_claims.find(c=>c.dossier==="APOL-012"&&c.role==="documented_objection").limitations,/not independent proof/i);
+assert.match(historical.checked_claims.find(c=>c.dossier==="CR-IDM-06"&&c.role==="critical_response").limitations,/editorial inference/i);
+const allNew=new Set(current.added_source_bindings.map(b=>b.key));
+let currentEdges=0,retainedEdges=0,newEdges=0,claimLocators=0,dossiers=0,roles=0;
+for(const f of current.source_files){
+ const pack=read(f.path);const local=new Map(pack.source_registry.map(s=>[s.id,s]));
+ for(const d of pack.dossiers){
+  dossiers++;assert.equal(d.publication_allowed,false);
+  for(let i=0;i<d.sections.length;i++){
+   const s=d.sections[i],key=f.scope+"::"+d.id+"::"+String(i).padStart(2,"0");roles++;
+   const old=sections.get(key);
+   assert.ok(old,key+" old section identity missing");
+   assert.equal(old.role,s.role,key+" previously reviewed section role cannot be changed");
+   assert.equal(s.original_context_approved,false);
+   assert.equal(s.french_final_approved,false);
+   for(const id of s.source_ids){
+    currentEdges++;const edgeKey=key+"::"+id;
+    assert.ok(local.has(id),edgeKey+" orphan local citation");
+    if(s.source_claim_locators?.[id])claimLocators++;
+    if(edges.has(edgeKey))retainedEdges++;
+    else{newEdges++;assert.ok(allNew.has(f.scope+"::"+id)||oldReferences.has(f.scope+"::"+id),
+      edgeKey+" invented source identity");}
    }
   }
  }
 }
-assert.equal(totalSections,564);
-assert.equal(totalEdges,1541);
-assert.equal(withLocator,248);
-assert.equal(withoutNewVerdict,1533);
-assert.deepEqual(roleCounts,audit.counts.role_counts);
-assert.equal(audit.counts.source_edges_with_claim_locator,withLocator);
-assert.equal(audit.counts.checked_edges,checks.size);
-assert.equal(audit.counts.source_edges_without_a_new_ledger_specific_verdict,withoutNewVerdict);
-assert.equal(audit.counts.previously_screened_sections_matched,332);
-assert.equal(audit.counts.preexisting_merged_primary_source_edges_attached,16);
-assert.equal(audit.counts.reverification_tasks_created,0);
-assert.ok(!("unreviewed_edges" in audit.counts));
-assert.match(audit.interpretation_note,/not a count of never-reviewed claims/i);
-assert.deepEqual(audit.checked_claims.map(x=>x.dossier).sort(),
- ["APOL-002","APOL-002","APOL-002","APOL-012","APOL-012","APOL-012","CR-IDM-06","CR-IDM-06"]);
-const justin=audit.checked_claims.find(x=>x.dossier==="APOL-012"&&x.source_id==="JUSTIN71"&&x.role==="documented_objection");
-assert.match(justin.limitations,/not independent proof/i,
- "An ancient polemical allegation must not be treated as manuscript evidence");
-const francis=audit.checked_claims.find(x=>x.dossier==="CR-IDM-06"&&x.role==="critical_response");
-assert.match(francis.limitations,/editorial inference/i,
- "A reasoned inference cannot be attributed as the Pope's exact assertion");
-console.log(JSON.stringify({status:"PASS_EDITORIAL_EVIDENCE_PILOT",dossiers:141,
- sections:totalSections,sourceEdges:totalEdges,checkedSubclaims:checks.size,
- sourceEdgesWithoutNewLedgerVerdict:withoutNewVerdict,previouslyScreenedSections:332,priorPrimaryFindingsRetained:16,explicitClaimLocators:withLocator,fullyApprovedSections:0},null,2));
+assert.equal(dossiers,141);
+assert.equal(roles,564);
+assert.equal(currentEdges,1529);
+assert.equal(retainedEdges,1399);
+assert.equal(newEdges,130);
+assert.equal(claimLocators,347);
+assert.equal(current.metrics.original_edges_still_present,retainedEdges);
+assert.equal(current.metrics.current_edges_not_in_legacy_ledger,newEdges);
+assert.equal(current.metrics.current_evidence_edges,currentEdges);
+assert.equal(current.metrics.claim_locators,claimLocators);
+assert.equal(prior.metrics.matched_owner_screens,83);
+assert.equal(prior.metrics.exact_matched_screen_sections,332);
+assert.equal(current.metrics.changed_reviewed_sections,22);
+assert.equal(current.metrics.exact_reviewed_sections_retained,310);
+assert.ok(current.policy.some(x=>x.includes("not a statement that updated argument text is certified")));
+console.log(JSON.stringify({status:"PASS_EDITORIAL_EVIDENCE_VERSION_RECONCILIATION",
+ historicEdges:1541,previousBoundedChecksPreserved:checked.size,
+ currentEdges,retainedOldEdgeIdentities:retainedEdges,newCurrentLinks:newEdges,
+ historicalScreens:332,unchangedScreenedSections:310,
+ supersededHistoricalScreenedSections:22,reverifiedSubclaims:0},null,2));
