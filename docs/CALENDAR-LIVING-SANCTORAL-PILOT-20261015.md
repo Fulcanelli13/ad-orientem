@@ -93,3 +93,20 @@ Source identity recovery must **not** be misreported as permission for an option
 `src/calendar/living-sanctoral.js` now provides a pure date-aware presentation projection, with no imports into `calendar-runtime.js` or `src/home`. It enforces saint canonisation date, Doctor declaration date, publication date of documented new General Calendar entries, source-presence, and suppression of a secondary duplicate when the principal 1962 source ID matches even if rank/colour suffixes differ.
 
 No calendar/Proper/Office calculation or celebrant choice has been changed. CI checks are isolated in `.github/workflows/calendar-living-sanctoral.yml`. Four tests must pass, but CI passing would **not** constitute independent theological certification.
+
+
+## 15 October — official post-1960 canonisation intake, batch 1
+
+**Canonical source:** [Dicastery year index](https://www.causesanti.va/it/celebrazioni/canonizzazioni.html). The index identifies **51 post-cutoff years with entries from 1961–2025**; absence of a year (especially 2026) is not a claim that no canonisation occurred. The 1960 index has canonisations in May and June, both before the 26 July 1960 threshold.
+
+**Year progress: 9/51 sources transcribed.** Staged 2014, 2016, 2017, 2018, 2019, 2021, 2022, 2024 and 2025. Remaining 42 indexed years appear individually in `data/calendar/post1960-canonizations.source-year-coverage.v1.json`.
+
+**Event census:** `data/calendar/post1960-canonizations.official-batch1.v1.json` now has 19 documented canonisation events, **67 individually named saints**, and three **unexpanded** canonisation groups comprising **57 persons** (eleven Martyrs of Damascus, sixteen Carmelites of Compiègne, thirty Martyrs of Brazil). Group counts do *not* count as completed person-level saint records. The ordinary vs equivalent canonisation event type is separately preserved; no memorial date is assumed from canonisation.
+
+**Canonical person reconciliation:** `src/calendar/sanctoral-person-reconciliation.js` combines the pilot six with the 67 source-indexed named saints by one stable person ID; exactly **71 unique canonical people** in the current *research* input, since Newman and Carlo Acutis are shared. The source records are not published as a competing saints registry or automatically included on homepage. If an event date conflicts with a prior recognised date, reconciliation throws rather than silently overwriting.
+
+**Conservative rubrical review:** `src/calendar/optional-post1960-saint-review.js` classifies an individually canonised post-26-July-1960 saint's optional 1962 Mass as blocked (I/II class or an exactly matched protected III-class feast), unresolved (missing universal memorial, rank, verified day or annex), or **candidate requiring review** (III/IV class with no established blocker). It does not presume a celebrant's actual Mass, select propers, grant competence/permissions, settle votive Mass provisions, or modify commemorations. For the test cases: Newman on 9 October 2026 is a candidate only; Padre Pio on 23 September 2026 is blocked by Ember Wednesday II class; Carlo's universal memorial remains unresolved.
+
+**Acceptance tests:** the `calendar-living-sanctoral.yml` workflow now executes seven structural/reconciliation/rubrical tests, preserving the historical source audit. Success verifies schema and conservative logic only, not a theological or legal attestation.
+
+**Remaining scope:** full coverage of the 42 years, group-member expansion, audit of modern universal vs particular dates and promulgation dates, review of special Mass/Office cases under *Cum sanctissima* and subsequent norms, and then non-invasive visual integration with saints profiles and artwork. No live Calendar/Proper/reader files have been modified.
