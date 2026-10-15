@@ -6,7 +6,9 @@
     "Bilingual paraphrased biographies, at least three sourced concrete claims each.",
     "Hist 311 ID refers to historical visual component, not guaranteed observed 1962 feast.",
     "Saints and miracles are distinct; extraordinary claims must be attributed and remain research only.",
-    "Calendar, physical Places, relics and Sacred Art remain other owners."
+    "Calendar, physical Places, relics and Sacred Art remain other owners.",
+    "The individual formally canonized before 1962 but absent from an old saint-ART component is not thereby absent from the old Missal; date check belongs to Calendar.",
+    "For later official canonizations, use the connected Calendar owner entry where recorded; never invent a 1962 feast."
   ],
   "people": [
     {
@@ -584,6 +586,588 @@
       "artwork_master_id": null,
       "place_ids": [],
       "new_pins": 0
+    },
+    {
+      "person_id": "saint.maximilian-kolbe",
+      "name": {
+        "en": "Maximilian Maria Kolbe",
+        "fr": "Maximilien-Marie Kolbe"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": "saint.maximilian-kolbe",
+      "why_honoured": {
+        "en": "At Auschwitz he gave his life to save another prisoner, offering the clearest possible rejection of a regime built on hatred. His Marian devotion also inspired vigorous evangelization.",
+        "fr": "À Auschwitz, il donna sa vie pour sauver un autre détenu, opposant ainsi la charité à un système fondé sur la haine. Sa dévotion mariale inspira aussi une intense activité d’évangélisation."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.maximilian-kolbe.fact.01",
+          "en": "He served as a Franciscan priest dedicated to evangelization.",
+          "fr": "Il servit comme prêtre franciscain voué à l’évangélisation.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080813.html"
+          ]
+        },
+        {
+          "claim_id": "saint.maximilian-kolbe.fact.02",
+          "en": "He volunteered to take the place of another prisoner condemned to death.",
+          "fr": "Il se proposa pour prendre la place d’un autre prisonnier condamné à mort.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080813.html"
+          ]
+        },
+        {
+          "claim_id": "saint.maximilian-kolbe.fact.03",
+          "en": "He died in Auschwitz in 1941 after confinement in the starvation bunker.",
+          "fr": "Il mourut à Auschwitz en 1941 après avoir été enfermé dans le bunker de la faim.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080813.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "MARTYR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "PRIEST",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080813.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.maria-goretti",
+      "name": {
+        "en": "Maria Goretti",
+        "fr": "Maria Goretti"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": null,
+      "why_honoured": {
+        "en": "She is remembered for courage and forgiveness after fatal violence. Her holiness is not the violence done to her, but the Christian faith and freedom with which she refused hatred.",
+        "fr": "Elle est honorée pour son courage et son pardon après une violence mortelle. Sa sainteté ne se réduit pas à la violence subie, mais à la foi chrétienne avec laquelle elle refusa la haine."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.maria-goretti.fact.01",
+          "en": "She grew up in poverty in a farming family near Nettuno.",
+          "fr": "Elle grandit dans une famille d’agriculteurs pauvres près de Nettuno.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/speeches/2002/july/documents/hf_jp-ii_spe_20020708_santa-maria-goretti.html"
+          ]
+        },
+        {
+          "claim_id": "saint.maria-goretti.fact.02",
+          "en": "She died in July 1902 after an assault.",
+          "fr": "Elle mourut en juillet 1902 après une agression.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/speeches/2002/july/documents/hf_jp-ii_spe_20020708_santa-maria-goretti.html"
+          ]
+        },
+        {
+          "claim_id": "saint.maria-goretti.fact.03",
+          "en": "John Paul II singled out her forgiveness of her assailant as central to her witness.",
+          "fr": "Jean-Paul II souligna le pardon accordé à son agresseur comme central dans son témoignage.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/speeches/2002/july/documents/hf_jp-ii_spe_20020708_santa-maria-goretti.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "MARTYR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "VIRGIN",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/john-paul-ii/en/speeches/2002/july/documents/hf_jp-ii_spe_20020708_santa-maria-goretti.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.damien-de-veuster",
+      "name": {
+        "en": "Damien of Molokai",
+        "fr": "Damien de Molokaï"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": "saint.damien-de-veuster",
+      "why_honoured": {
+        "en": "He freely joined people with leprosy who had been isolated from society, sharing their daily lives and ultimately their illness. His pastoral mission became steadfast solidarity with abandoned people.",
+        "fr": "Il rejoignit librement les personnes atteintes de la lèpre qui vivaient à l’écart de la société, partageant leur quotidien puis leur maladie. Sa mission pastorale devint une solidarité persévérante avec des personnes abandonnées."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.damien-de-veuster.fact.01",
+          "en": "He left his native Belgium for mission in the Hawaiian Islands.",
+          "fr": "Il quitta sa Belgique natale pour les missions des îles Hawaï.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20091011_canonizzazioni.html"
+          ]
+        },
+        {
+          "claim_id": "saint.damien-de-veuster.fact.02",
+          "en": "He chose to work among people with leprosy on Molokai.",
+          "fr": "Il choisit d’œuvrer auprès des personnes atteintes de la lèpre à Molokaï.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20091011_canonizzazioni.html"
+          ]
+        },
+        {
+          "claim_id": "saint.damien-de-veuster.fact.03",
+          "en": "He contracted the disease and remained among the people he served.",
+          "fr": "Il contracta la maladie et demeura auprès des personnes qu’il servait.",
+          "source_urls": [
+            "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20091011_canonizzazioni.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "PASTOR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20091011_canonizzazioni.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.louise-de-marillac",
+      "name": {
+        "en": "Louise de Marillac",
+        "fr": "Louise de Marillac"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": null,
+      "why_honoured": {
+        "en": "In collaboration with Vincent de Paul she organized lasting care for sick and impoverished people, especially through the vocation of women serving outside convent walls. Her faith expressed itself through practical service and attention to dignity.",
+        "fr": "En collaboration avec Vincent de Paul, elle organisa des soins durables pour les malades et les pauvres, notamment par des femmes au service de personnes hors des couvents. Sa foi se manifesta par le service concret et le respect de la dignité."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.louise-de-marillac.fact.01",
+          "en": "She helped found the Daughters of Charity with Vincent de Paul.",
+          "fr": "Elle contribua à fonder les Filles de la Charité avec Vincent de Paul.",
+          "source_urls": [
+            "https://press.vatican.va/content/francesco/en/messages/pont-messages/2017/documents/papa-francesco_20170927_messaggio-famiglia-vincenziana.html",
+            "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/10/09/251009h.html"
+          ]
+        },
+        {
+          "claim_id": "saint.louise-de-marillac.fact.02",
+          "en": "She formed women to serve sick and poor people in their communities.",
+          "fr": "Elle forma des femmes au service des malades et des pauvres dans leurs communautés.",
+          "source_urls": [
+            "https://press.vatican.va/content/francesco/en/messages/pont-messages/2017/documents/papa-francesco_20170927_messaggio-famiglia-vincenziana.html",
+            "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/10/09/251009h.html"
+          ]
+        },
+        {
+          "claim_id": "saint.louise-de-marillac.fact.03",
+          "en": "Her example continues in Catholic service to patients in hospitals and homes.",
+          "fr": "Son exemple se prolonge dans le service catholique des malades à l’hôpital et à domicile.",
+          "source_urls": [
+            "https://press.vatican.va/content/francesco/en/messages/pont-messages/2017/documents/papa-francesco_20170927_messaggio-famiglia-vincenziana.html",
+            "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/10/09/251009h.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "FOUNDER",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "RELIGIOUS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "PASTORAL_CARITY",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://press.vatican.va/content/francesco/en/messages/pont-messages/2017/documents/papa-francesco_20170927_messaggio-famiglia-vincenziana.html",
+        "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/10/09/251009h.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.faustina-kowalska",
+      "name": {
+        "en": "Faustina Kowalska",
+        "fr": "Faustine Kowalska"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": null,
+      "why_honoured": {
+        "en": "Her testimony to God's mercy urged Christians not only to trust the risen Christ but also to practice mercy toward neighbours who suffer. Her private spiritual accounts remain subordinate to the Gospel.",
+        "fr": "Son témoignage de la miséricorde divine invita les chrétiens non seulement à faire confiance au Christ ressuscité, mais aussi à pratiquer la miséricorde envers ceux qui souffrent. Ses récits spirituels privés demeurent subordonnés à l’Évangile."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.faustina-kowalska.fact.01",
+          "en": "She belonged to a community of religious sisters in Poland.",
+          "fr": "Elle appartenait à une communauté de religieuses en Pologne.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000430_faustina.html"
+          ]
+        },
+        {
+          "claim_id": "saint.faustina-kowalska.fact.02",
+          "en": "Her Diary recorded experiences interpreted through the message of Divine Mercy.",
+          "fr": "Son Petit Journal rapporta des expériences interprétées à la lumière de la Miséricorde divine.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000430_faustina.html"
+          ]
+        },
+        {
+          "claim_id": "saint.faustina-kowalska.fact.03",
+          "en": "John Paul II canonized her on 30 April 2000 and emphasized works of mercy.",
+          "fr": "Jean-Paul II la canonisa le 30 avril 2000 en soulignant les œuvres de miséricorde.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000430_faustina.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "RELIGIOUS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "MYSTIC",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "VISIONARY_WITNESS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "event_id": "saint.faustina-kowalska.event.01",
+          "kind": "CHRIST_APPARITION_ACCOUNT",
+          "en": "At her canonization John Paul II described Faustina's Diary account of the merciful Christ and two rays symbolizing blood and water. This is a reported private experience, not a further dogma of the Church.",
+          "fr": "À sa canonisation, Jean-Paul II évoqua le récit du Petit Journal sur le Christ miséricordieux et deux rayons symbolisant le sang et l’eau. Il s’agit d’une expérience privée rapportée, non d’un nouveau dogme de l’Église.",
+          "status": "PAPAL_CANONIZATION_HOMILY_RECOUNTS_PRIVATE_VISION",
+          "attribution": "REPORTED_PRIVATE_ACCOUNT_NOT_PUBLIC_FAITH",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000430_faustina.html"
+          ]
+        }
+      ],
+      "source_urls": [
+        "https://www.vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000430_faustina.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.teresa-benedicta-cross-stein",
+      "name": {
+        "en": "Teresa Benedicta of the Cross (Edith Stein)",
+        "fr": "Thérèse-Bénédicte de la Croix (Edith Stein)"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": "saint.teresa-benedicta-cross-stein",
+      "why_honoured": {
+        "en": "Her intellectual search for truth led toward Christian faith and a contemplative vocation. Her life and murder under Nazi persecution witness to the dignity of persons, the Cross and solidarity with the persecuted.",
+        "fr": "Sa recherche intellectuelle de la vérité la conduisit vers la foi chrétienne et une vocation contemplative. Sa vie et son meurtre sous la persécution nazie témoignent de la dignité humaine, de la Croix et de la solidarité avec les persécutés."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.teresa-benedicta-cross-stein.fact.01",
+          "en": "She was a philosopher before becoming a Catholic.",
+          "fr": "Elle était philosophe avant de devenir catholique.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/1998/documents/hf_jp-ii_hom_11101998_stein.html"
+          ]
+        },
+        {
+          "claim_id": "saint.teresa-benedicta-cross-stein.fact.02",
+          "en": "She entered the Discalced Carmelites, taking the name Teresa Benedicta of the Cross.",
+          "fr": "Elle entra au Carmel déchaussé et prit le nom de Thérèse-Bénédicte de la Croix.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/1998/documents/hf_jp-ii_hom_11101998_stein.html"
+          ]
+        },
+        {
+          "claim_id": "saint.teresa-benedicta-cross-stein.fact.03",
+          "en": "She was killed at Auschwitz in 1942 and canonized by John Paul II in 1998.",
+          "fr": "Elle fut tuée à Auschwitz en 1942 et canonisée par Jean-Paul II en 1998.",
+          "source_urls": [
+            "https://www.vatican.va/content/john-paul-ii/en/homilies/1998/documents/hf_jp-ii_hom_11101998_stein.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "MARTYR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "CONTEMPLATIVE_RELIGIOUS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "THEOLOGIAN",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/john-paul-ii/en/homilies/1998/documents/hf_jp-ii_hom_11101998_stein.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.elizabeth-ann-seton",
+      "name": {
+        "en": "Elizabeth Ann Seton",
+        "fr": "Élisabeth-Anne Seton"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": "saint.elizabeth-ann-seton",
+      "why_honoured": {
+        "en": "A wife, mother and widow before founding a religious community, she united family responsibility, faith and social service. Her educational work helped children and the poor gain care and hope.",
+        "fr": "Épouse, mère et veuve avant de fonder une communauté religieuse, elle unit les responsabilités familiales, la foi et le service social. Son œuvre éducative apporta aux enfants et aux pauvres attention et espérance."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.elizabeth-ann-seton.fact.01",
+          "en": "She founded a community of Sisters of Charity in the United States.",
+          "fr": "Elle fonda une communauté des Sœurs de la Charité aux États-Unis.",
+          "source_urls": [
+            "https://www.vatican.va/content/paul-vi/en/homilies/1975/documents/hf_p-vi_hom_19750914.html"
+          ]
+        },
+        {
+          "claim_id": "saint.elizabeth-ann-seton.fact.02",
+          "en": "Her work supported schools and assistance to poor people.",
+          "fr": "Son œuvre soutint des écoles et l’aide aux pauvres.",
+          "source_urls": [
+            "https://www.vatican.va/content/paul-vi/en/homilies/1975/documents/hf_p-vi_hom_19750914.html"
+          ]
+        },
+        {
+          "claim_id": "saint.elizabeth-ann-seton.fact.03",
+          "en": "Paul VI canonized her in 1975, recalling her witness as a mother and founder.",
+          "fr": "Paul VI la canonisa en 1975, rappelant son témoignage de mère et de fondatrice.",
+          "source_urls": [
+            "https://www.vatican.va/content/paul-vi/en/homilies/1975/documents/hf_p-vi_hom_19750914.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "FOUNDER",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "RELIGIOUS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "TEACHER",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/content/paul-vi/en/homilies/1975/documents/hf_p-vi_hom_19750914.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
+    },
+    {
+      "person_id": "saint.jeanne-jugan",
+      "name": {
+        "en": "Jeanne Jugan (Mary of the Cross)",
+        "fr": "Jeanne Jugan (Marie de la Croix)"
+      },
+      "recognition_status": "SAINT",
+      "historical_311_id": null,
+      "historical_311_nominal_month_day": null,
+      "calendar_1962_relation": "NOT_IN_311_ART_COMPONENTS_DOES_NOT_MEAN_NOT_IN_1962_CALENDAR",
+      "official_post1960_calendar_owner_id": "saint.jeanne-jugan",
+      "why_honoured": {
+        "en": "She cared for elderly people whom society abandoned, beginning with the simple gift of her own bed. When others took credit for the congregation she founded, she accepted obscurity rather than abandon its poor beneficiaries.",
+        "fr": "Elle prit soin des personnes âgées abandonnées par la société, commençant par leur offrir son propre lit. Lorsque d’autres s’attribuèrent la fondation de sa congrégation, elle accepta l’effacement plutôt que d’abandonner les pauvres."
+      },
+      "biography_facts": [
+        {
+          "claim_id": "saint.jeanne-jugan.fact.01",
+          "en": "In 1839 she welcomed a poor, blind elderly woman into her home.",
+          "fr": "En 1839, elle accueillit chez elle une femme âgée, aveugle et pauvre.",
+          "source_urls": [
+            "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html"
+          ]
+        },
+        {
+          "claim_id": "saint.jeanne-jugan.fact.02",
+          "en": "Her work grew into the Little Sisters of the Poor and homes across continents.",
+          "fr": "Son œuvre devint celle des Petites Sœurs des Pauvres et des maisons sur plusieurs continents.",
+          "source_urls": [
+            "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html"
+          ]
+        },
+        {
+          "claim_id": "saint.jeanne-jugan.fact.03",
+          "en": "For about 27 years she lived quietly after losing leadership of her community.",
+          "fr": "Pendant environ vingt-sept ans, elle vécut discrètement après avoir perdu la direction de sa communauté.",
+          "source_urls": [
+            "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html"
+          ]
+        }
+      ],
+      "classification": {
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "FOUNDER",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "RELIGIOUS",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          },
+          {
+            "code": "CHARITY_TO_POOR",
+            "basis": "PERSON_SPECIFIC_HOLY_SEE_SOURCE"
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "source_urls": [
+        "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html"
+      ],
+      "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+      "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
+      "artwork_master_id": null,
+      "place_ids": [],
+      "new_pins": 0
     }
-  ]
+  ],
+  "counts": {
+    "new_bilingual_life_drafts": 16,
+    "new_fact_claims": 48,
+    "extraordinary_accounts": 2,
+    "historical_311_exact_date_links": 7,
+    "official_post1960_index_links": 5,
+    "new_app_visible": 0,
+    "new_approved_artworks": 0,
+    "new_place_pins": 0
+  }
 }
