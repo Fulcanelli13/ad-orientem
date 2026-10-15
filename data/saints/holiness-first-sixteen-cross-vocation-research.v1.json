@@ -80,7 +80,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "Unknown",
+            "fr": "Inconnue"
+          },
+          "date_precision": "UNKNOWN",
+          "iso_date": null,
+          "place": {
+            "en": "Unknown; associated with Antioch as bishop, not attested birthplace",
+            "fr": "Inconnu ; évêque d’Antioche, sans preuve de naissance sur place"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070314.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "traditionally c. AD 107",
+            "fr": "traditionnellement vers 107 apr. J.-C."
+          },
+          "date_precision": "APPROXIMATE_TRADITIONAL_YEAR",
+          "iso_date": null,
+          "place": {
+            "en": "Rome, Roman Empire (martyrdom tradition)",
+            "fr": "Rome, Empire romain (tradition du martyre)"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070314.html"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.francis-xavier",
@@ -143,7 +174,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "7 April 1506",
+            "fr": "7 avril 1506"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1506-04-07",
+          "place": {
+            "en": "Castle of Xavier, Navarre (modern Spain)",
+            "fr": "Château de Javier, Navarre (Espagne actuelle)"
+          },
+          "source_url": "https://www.newadvent.org/cathen/06233b.htm"
+        },
+        "death": {
+          "date_label": {
+            "en": "2 or 3 December 1552",
+            "fr": "2 ou 3 décembre 1552"
+          },
+          "date_precision": "CONFLICTING_DAY",
+          "iso_date": null,
+          "place": {
+            "en": "Shangchuan (Sancian) Island, off China",
+            "fr": "Île de Shangchuan (Sancian), au large de la Chine"
+          },
+          "source_url": "https://www.vatican.va/content/francesco/en/audiences/2023/documents/20230517-udienza-generale.html",
+          "editorial_note": "Pius XII and Catholic Encyclopedia give 2 December; Pope Francis's 2023 address gives 3 December. Preserve both until reconciled."
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.vincent-de-paul",
@@ -218,7 +281,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "traditionally 24 April 1581 (contested)",
+            "fr": "traditionnellement le 24 avril 1581 (date discutée)"
+          },
+          "date_precision": "CONTESTED_DATE_OR_YEAR",
+          "iso_date": null,
+          "place": {
+            "en": "Pouy, Gascony, France",
+            "fr": "Pouy, Gascogne, France"
+          },
+          "source_url": "https://www.vatican.va/content/john-paul-ii/fr/letters/1981/documents/hf_jp-ii_let_19810724_mc-cullen.html",
+          "editorial_note": "John Paul II cited 24 April 1581; older Catholic Encyclopedia records a different birth year. Do not assert a certified exact ISO birth date."
+        },
+        "death": {
+          "date_label": {
+            "en": "27 September 1660",
+            "fr": "27 septembre 1660"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1660-09-27",
+          "place": {
+            "en": "Paris, France",
+            "fr": "Paris, France"
+          },
+          "source_url": "https://www.vaticanstate.va/en/component/content/article/27-september-saint-vincent-de-paul.html?Itemid=216&catid=51"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.john-bosco",
@@ -293,7 +388,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "16 August 1815",
+            "fr": "16 août 1815"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1815-08-16",
+          "place": {
+            "en": "Castelnuovo d’Asti, Piedmont",
+            "fr": "Castelnuovo d’Asti, Piémont"
+          },
+          "source_url": "https://salesians.org/calendar/st-john-bosco"
+        },
+        "death": {
+          "date_label": {
+            "en": "31 January 1888",
+            "fr": "31 janvier 1888"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1888-01-31",
+          "place": {
+            "en": "Turin, Italy",
+            "fr": "Turin, Italie"
+          },
+          "source_url": "https://salesians.org/calendar/st-john-bosco"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.john-mary-vianney",
@@ -364,7 +490,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "8 May 1786",
+            "fr": "8 mai 1786"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1786-05-08",
+          "place": {
+            "en": "Dardilly, France",
+            "fr": "Dardilly, France"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090805.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "4 August 1859",
+            "fr": "4 août 1859"
+          },
+          "date_precision": "EXACT_DATE_PLACE_REVIEW",
+          "iso_date": "1859-08-04",
+          "place": {
+            "en": "Ars-sur-Formans, France",
+            "fr": "Ars-sur-Formans, France"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090805.html",
+          "editorial_note": "Confirm exact death location in independent Ars shrine records; Vatican audience establishes the year and biography."
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.rose-of-lima",
@@ -431,7 +589,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "20 April 1586",
+            "fr": "20 avril 1586"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1586-04-20",
+          "place": {
+            "en": "Lima, Viceroyalty of Peru",
+            "fr": "Lima, vice-royauté du Pérou"
+          },
+          "source_url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/153737/imprimir"
+        },
+        "death": {
+          "date_label": {
+            "en": "24 August 1617",
+            "fr": "24 août 1617"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1617-08-24",
+          "place": {
+            "en": "Lima, Viceroyalty of Peru",
+            "fr": "Lima, vice-royauté du Pérou"
+          },
+          "source_url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/153737/imprimir"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.francis-assisi",
@@ -514,7 +703,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "c. 1181 or 1182",
+            "fr": "vers 1181 ou 1182"
+          },
+          "date_precision": "APPROXIMATE_YEAR_RANGE",
+          "iso_date": null,
+          "place": {
+            "en": "Assisi, Italy",
+            "fr": "Assise, Italie"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100127.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "3 October 1226",
+            "fr": "3 octobre 1226"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1226-10-03",
+          "place": {
+            "en": "Portiuncula, near Assisi, Italy",
+            "fr": "Portioncule, près d’Assise, Italie"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100127.html"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.charles-borromeo",
@@ -585,7 +805,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "2 October 1538",
+            "fr": "2 octobre 1538"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1538-10-02",
+          "place": {
+            "en": "Arona Castle, Duchy of Milan",
+            "fr": "Château d’Arona, duché de Milan"
+          },
+          "source_url": "https://www.newadvent.org/cathen/03619a.htm"
+        },
+        "death": {
+          "date_label": {
+            "en": "3 November 1584",
+            "fr": "3 novembre 1584"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1584-11-03",
+          "place": {
+            "en": "Milan, Italy",
+            "fr": "Milan, Italie"
+          },
+          "source_url": "https://www.newadvent.org/cathen/03619a.htm"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.maximilian-kolbe",
@@ -653,7 +904,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "8 January 1894",
+            "fr": "8 janvier 1894"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1894-01-08",
+          "place": {
+            "en": "Zduńska Wola, Russian-partition Poland",
+            "fr": "Zduńska Wola, Pologne sous domination russe"
+          },
+          "source_url": "https://www.auschwitz.org/en/museum/news/sixty-ninth-anniversary-of-the-death-of-st-maximilian-kolbe%2C723.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "14 August 1941",
+            "fr": "14 août 1941"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1941-08-14",
+          "place": {
+            "en": "Auschwitz concentration camp, occupied Poland",
+            "fr": "Camp de concentration d’Auschwitz, Pologne occupée"
+          },
+          "source_url": "https://www.auschwitz.org/en/museum/news/sixty-ninth-anniversary-of-the-death-of-st-maximilian-kolbe%2C723.html"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.maria-goretti",
@@ -717,7 +999,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "16 October 1890",
+            "fr": "16 octobre 1890"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1890-10-16",
+          "place": {
+            "en": "Corinaldo, Italy",
+            "fr": "Corinaldo, Italie"
+          },
+          "source_url": "https://www.vatican.va/roman_curia/pontifical_academies/cult-martyrum/martiri/010.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "6 July 1902",
+            "fr": "6 juillet 1902"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1902-07-06",
+          "place": {
+            "en": "Hospital in Nettuno, Italy",
+            "fr": "Hôpital de Nettuno, Italie"
+          },
+          "source_url": "https://www.vatican.va/roman_curia/pontifical_academies/cult-martyrum/martiri/010.html",
+          "editorial_note": "The attack occurred 5 July at Ferriere di Conca; death was 6 July in Nettuno hospital. Do not substitute attack site for death site."
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.damien-de-veuster",
@@ -789,7 +1103,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "3 January 1840",
+            "fr": "3 janvier 1840"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1840-01-03",
+          "place": {
+            "en": "Tremelo, Belgium",
+            "fr": "Tremelo, Belgique"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_de-veuster_en.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "15 April 1889",
+            "fr": "15 avril 1889"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1889-04-15",
+          "place": {
+            "en": "Kalaupapa, Molokai, Hawaiian Islands",
+            "fr": "Kalaupapa, Molokaï, îles Hawaï"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_de-veuster_en.html"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.louise-de-marillac",
@@ -865,7 +1210,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "12 August 1591",
+            "fr": "12 août 1591"
+          },
+          "date_precision": "EXACT_DATE_PLACE_DISPUTED",
+          "iso_date": "1591-08-12",
+          "place": {
+            "en": "France — disputed: Paris or Le Meux",
+            "fr": "France — lieu discuté : Paris ou Le Meux"
+          },
+          "source_url": "https://filles-de-la-charite.org/en/family/saint-louise-de-marillac/",
+          "editorial_note": "Daughters of Charity sources disagree on Paris vs Le Meux; birthplace must not be treated as certified."
+        },
+        "death": {
+          "date_label": {
+            "en": "15 March 1660",
+            "fr": "15 mars 1660"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1660-03-15",
+          "place": {
+            "en": "Paris, France",
+            "fr": "Paris, France"
+          },
+          "source_url": "https://filles-de-la-charite.org/en/family/saint-louise-de-marillac/"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.faustina-kowalska",
@@ -949,7 +1326,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "25 August 1905",
+            "fr": "25 août 1905"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1905-08-25",
+          "place": {
+            "en": "Głogowiec, Poland",
+            "fr": "Głogowiec, Pologne"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20000430_faustina_en.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "5 October 1938",
+            "fr": "5 octobre 1938"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1938-10-05",
+          "place": {
+            "en": "Kraków, Poland",
+            "fr": "Cracovie, Pologne"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20000430_faustina_en.html"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.teresa-benedicta-cross-stein",
@@ -1017,7 +1425,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "12 October 1891",
+            "fr": "12 octobre 1891"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1891-10-12",
+          "place": {
+            "en": "Breslau, German Empire (now Wrocław, Poland)",
+            "fr": "Breslau, Empire allemand (aujourd’hui Wrocław, Pologne)"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "probably 9 August 1942",
+            "fr": "probablement le 9 août 1942"
+          },
+          "date_precision": "PROBABLE_EXACT_DAY",
+          "iso_date": null,
+          "place": {
+            "en": "Auschwitz-Birkenau, occupied Poland",
+            "fr": "Auschwitz-Birkenau, Pologne occupée"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html",
+          "editorial_note": "Holy See biography says 'probably on 9 August'; do not convert to categorically certain date."
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.elizabeth-ann-seton",
@@ -1089,7 +1529,38 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "28 August 1774",
+            "fr": "28 août 1774"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1774-08-28",
+          "place": {
+            "en": "New York City, British colonial America",
+            "fr": "New York, Amérique britannique coloniale"
+          },
+          "source_url": "https://www.newadvent.org/cathen/13739a.htm"
+        },
+        "death": {
+          "date_label": {
+            "en": "4 January 1821",
+            "fr": "4 janvier 1821"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1821-01-04",
+          "place": {
+            "en": "Emmitsburg, Maryland, United States",
+            "fr": "Emmitsburg, Maryland, États-Unis"
+          },
+          "source_url": "https://www.newadvent.org/cathen/13739a.htm"
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     },
     {
       "person_id": "saint.jeanne-jugan",
@@ -1157,7 +1628,39 @@
       "editorial_status": "SECOND_PERSON_LEVEL_REVIEW_REQUIRED",
       "artwork_master_id": null,
       "place_ids": [],
-      "new_pins": 0
+      "new_pins": 0,
+      "life_events_review": {
+        "birth": {
+          "date_label": {
+            "en": "25 October 1792",
+            "fr": "25 octobre 1792"
+          },
+          "date_precision": "EXACT_DATE",
+          "iso_date": "1792-10-25",
+          "place": {
+            "en": "Cancale, Brittany, France",
+            "fr": "Cancale, Bretagne, France"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html"
+        },
+        "death": {
+          "date_label": {
+            "en": "29 August 1879",
+            "fr": "29 août 1879"
+          },
+          "date_precision": "EXACT_DATE_PLACE_REVIEW",
+          "iso_date": "1879-08-29",
+          "place": {
+            "en": "Little Sisters of the Poor motherhouse, Saint-Pern, Brittany",
+            "fr": "Maison-mère des Petites Sœurs des Pauvres, Saint-Pern, Bretagne"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/2009/ns_lit_doc_20091011_jugan_en.html",
+          "editorial_note": "Holy See biography gives date and motherhouse setting; exact geographical location of the house requires separate corroboration."
+        },
+        "review_status": "RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED",
+        "feast_scope": "CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE",
+        "artwork_scope": "SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION"
+      }
     }
   ],
   "counts": {
