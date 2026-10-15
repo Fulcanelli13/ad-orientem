@@ -1,0 +1,35 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const j=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const fam=j("data/explore/biblical-schuster-knecht-source-family-review.v1.json");
+const canon=j("data/explore/biblical-reading-continuity-review.v1.json");
+const books=j("data/explore/biblical-73-book-event-denominator-audit.v1.json");
+const sels=j("data/explore/biblical-existing-author-selection-review.v1.json");
+assert.equal(fam.sourceFamilies[0].workId,"WORK-SCHUSTER-BIBLE-HISTORY");
+assert.equal(fam.openingEnglishTocSections.length,8);
+assert.equal(fam.witnesses.length,4);
+assert.equal(fam.counts.sourceParagraphsApproved,0);
+assert.equal(fam.policy.faithfulAITranslationAllowedAfterExactOriginalTextVerified,true);
+assert.equal(fam.policy.noAiCreatedRetelling,true);
+assert.equal(fam.policy.doNotTreatKnechtAsIndependentNarrative,true);
+assert.equal(sels.sourceFamilyReconciliation.primaryNarrativeWorkId,"WORK-SCHUSTER-BIBLE-HISTORY");
+for(const x of [canon.policy,sels.policy]){
+ assert.equal(x.aiOriginalNarrativeProhibited,true);
+ assert.equal(x.aiFaithfulTranslationOfVerifiedExistingAuthorAllowed,true);
+ assert.equal(x.translationRequiresEditorialReviewBeforePublication,true);
+}
+const real=fam.openingEnglishTocSections;
+assert.deepEqual(real.map(x=>x.originalEnglishChapterNumber),["I","II","III","IV","V","VI","VII","VIII"]);
+assert.deepEqual(real.map(x=>x.englishEditionPrintPageFromPublisherPreview),[1,3,4,5,8,10,13,15]);
+assert.equal(real.filter(x=>x.atlasEventKeys.length===0).length,2);
+assert.equal(new Set(real.flatMap(x=>x.atlasEventKeys)).size,6);
+for(const x of real)for(const key of x.atlasEventKeys)assert.ok(canon.events.slice(0,6).some(e=>e.eventKey===key));
+assert.equal(books.books.length,73);
+assert.equal(books.atlasMilestones,151);
+assert.equal(books.booksDirectlyRepresentedBySelectedEventReferences,28);
+assert.equal(books.booksWithoutDirectSelectedEventReference,45);
+assert.equal(books.books.reduce((sum,b)=>sum+b.selectedAtlasMilestoneCount,0),151);
+assert.equal(books.books.filter(x=>x.testament==="OLD").length,46);
+assert.equal(books.books.filter(x=>x.testament==="NEW").length,27);
+assert.equal(books.policy.doNotConflateNarrativeHistoryWithInspiredScripture,true);
+console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
