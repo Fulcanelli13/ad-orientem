@@ -172,3 +172,47 @@ export function prepareReferencePresentation({formation,key,profiles}={}){
   reviewNeeded:"SOURCE_OWNER_CONTEXT_AND_EXACT_LOCATOR_IF_CLAIM_CITATION",
   htmlOrBookTextImported:false});
 }
+
+// Inspect one existing historical source-to-section edge against the owning
+// Formation correction record. No modification of canonical source content,
+// automatic exact quote, invented deep fragment or user-facing publication.
+export function prepareScopedSourceLink({formation,evidenceLedger,handoff,edgeKey}={}){
+ const review=handoff?.scopedEdgeReview;
+ if(!valid(edgeKey)||evidenceLedger?.schema!=="AO_FORMATION_EVIDENCE_RELATIONSHIP_LEDGER_V1"||
+    review?.status!=="EXACT_SOURCE_BINDING_EDGES_REVIEWED_READ_ONLY__NO_NEW_CITATION_VERDICTS"||
+    !Array.isArray(review.historicalSectionSourceEdges))
+  throw new Error("REF_SECTION_EDGE_REVIEW_INVALID");
+ const edge=evidenceLedger.edges.find(e=>e.edge_key===edgeKey);
+ const record=review.historicalSectionSourceEdges.find(e=>e.edgeKey===edgeKey);
+ if(!edge||!record||record.bindingKey!==edge.source_binding||
+    record.sectionKey!==edge.section_key||
+    record.historicalClaimLocator!==edge.claim_locator||
+    record.historicalReviewStatus!==edge.verification||
+    record.publicDisplayApproved!==false)
+  throw new Error("REF_SECTION_EDGE_REVIEW_MISMATCH");
+ const source=resolveFormationReference({formation,key:edge.source_binding});
+ const superseded=record.currentRoleStatus===
+   "SUPERSEDED_REFERENCE_IN_CURRENT_OWNER_RECONCILIATION";
+ if(!superseded &&
+    record.currentRoleStatus!==
+    "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY")
+  throw new Error("REF_SECTION_EDGE_CURRENT_STATUS_UNKNOWN");
+ return Object.freeze({
+  sourceBindingKey:source.bindingKey,
+  sectionKey:edge.section_key,
+  oldEvidenceEdgeKey:edge.edge_key,
+  sectionRole:record.historicalSectionRole,
+  originalSourceRole:record.historicalOriginalBindingRole,
+  originalClaimLocator:record.historicalClaimLocator,
+  sourceWorkTitle:source.title,
+  sourceDocumentLocator:source.locator,
+  status:superseded?"SUPPRESSED_SUPERSEDED_OWNER_CITATION":"DRAFT_OWNER_REVIEW_ONLY",
+  ownerReviewSource:"data/reference/formation-current-source-reconciliation.v2.json",
+  externalLink:superseded?null:Object.freeze({label:"Read further",url:source.url}),
+  inlineCitation:null,exactPassageQuote:null,
+  publicDisplayApproved:false,
+  sourceContextApproved:false,
+  scopeValidatedByOwner:false,
+  historicalEdgeIsCurrentClaim: false
+ });
+}
