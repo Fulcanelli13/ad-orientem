@@ -327,7 +327,6 @@
       "openBible": {
         "id": "mbe432b",
         "name": "Antioch on the Orontes",
-        "sourceUrl": "https://www.openbible.info/geo/modern/mbe432b/antioch-on-the-orontes",
         "coordinates": "36.171743,36.226691",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -342,7 +341,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/mbe432b/antioch-on-the-orontes",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -439,7 +441,6 @@
       "openBible": {
         "id": "md70ac9",
         "name": "Athens",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "23.726738,37.971851",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -454,7 +455,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -713,7 +717,6 @@
       "openBible": {
         "id": "md561de",
         "name": "Babylon",
-        "sourceUrl": "https://www.openbible.info/geo/modern/md561de/babylon",
         "coordinates": "44.422222,32.543333",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -748,7 +751,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/md561de/babylon",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -895,7 +901,6 @@
       "openBible": {
         "id": "m518f8e",
         "name": "Banias",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "35.693333,33.246111",
         "precisionMeters": 50,
         "precisionStatement": "50 m",
@@ -906,7 +911,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -965,7 +973,6 @@
       "openBible": {
         "id": "m9b8daa",
         "name": "Bethlehem",
-        "sourceUrl": "https://www.wikidata.org/wiki/Q194504",
         "coordinates": "35.207639,31.704306",
         "precisionMeters": 250,
         "precisionStatement": "archaeological site in modern settlement",
@@ -988,7 +995,11 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.wikidata.org/wiki/Q194504",
+        "coordinateDifferenceMeters": 5.3,
+        "coordinateRelationship": "EXISTING_PIN_HAS_SEPARATE_COORDINATE_AUTHORITY",
+        "coordinateDifferenceExplanation": "Existing Atlas geocode already uses separate original pin reference; candidate Pleiades record cannot silently override it."
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -1129,7 +1140,6 @@
       "openBible": {
         "id": "m11da12",
         "name": "Caesarea Maritima",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "34.891667,32.500000",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -1140,7 +1150,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -1253,7 +1266,6 @@
       "openBible": {
         "id": "m66efd0",
         "name": "Tell Hum",
-        "sourceUrl": "https://www.octagonproject.org/news/the-modern-church-at-capernaum",
         "coordinates": "35.575000,32.881111",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -1264,7 +1276,11 @@
             "score": 842
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.octagonproject.org/news/the-modern-church-at-capernaum",
+        "coordinateDifferenceMeters": 36.8,
+        "coordinateRelationship": "EXISTING_PIN_HAS_SEPARATE_COORDINATE_AUTHORITY",
+        "coordinateDifferenceExplanation": "Existing Atlas geocode already uses separate original pin reference; candidate Pleiades record cannot silently override it."
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -1356,7 +1372,6 @@
       "openBible": {
         "id": "mf9b7d7",
         "name": "Mount Carmel",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "35.023333,32.672500",
         "precisionMeters": 1000,
         "precisionStatement": "point on mountain",
@@ -1367,7 +1382,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -1610,7 +1628,6 @@
       "openBible": {
         "id": "me0518f",
         "name": "Corinth",
-        "sourceUrl": "https://www.openbible.info/geo/modern/me0518f/corinth",
         "coordinates": "22.878741,37.905785",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -1621,7 +1638,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/me0518f/corinth",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -1924,7 +1944,6 @@
       "openBible": {
         "id": "m878978",
         "name": "Damascus",
-        "sourceUrl": "https://www.openbible.info/geo/modern/m878978/damascus",
         "coordinates": "36.306390,33.511112",
         "precisionMeters": 10,
         "precisionStatement": "historical site in modern settlement",
@@ -1951,7 +1970,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/m878978/damascus",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -2052,13 +2074,15 @@
       "openBible": {
         "id": "mc853b5",
         "name": "Ein Karim",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "35.159454,31.764483",
         "precisionMeters": 50,
         "precisionStatement": "point on tel",
         "coordinateSourceType": "iaa",
         "ancientAssociations": [],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -2296,7 +2320,6 @@
       "openBible": {
         "id": "m84025e",
         "name": "Ephesus",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "27.340700,37.939125",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -2307,7 +2330,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -2407,7 +2433,6 @@
       "openBible": {
         "id": "m86f941",
         "name": "Tel Rumeida",
-        "sourceUrl": "https://www.openbible.info/geo/modern/m86f941/tel-rumeida",
         "coordinates": "35.102220,31.525087",
         "precisionMeters": 50,
         "precisionStatement": "point on tel",
@@ -2426,7 +2451,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/m86f941/tel-rumeida",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -2716,7 +2744,6 @@
       "openBible": {
         "id": "m95349d",
         "name": "Tell es Sultan",
-        "sourceUrl": "https://www.openbible.info/geo/modern/m95349d/tell-es-sultan",
         "coordinates": "35.444564,31.871719",
         "precisionMeters": 50,
         "precisionStatement": "point on tel",
@@ -2739,7 +2766,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/m95349d/tell-es-sultan",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -2988,7 +3018,6 @@
       "openBible": {
         "id": "m66c5b8",
         "name": "Jerusalem",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "35.234167,31.776667",
         "precisionMeters": 250,
         "precisionStatement": "point in modern settlement",
@@ -3027,7 +3056,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -3266,7 +3298,6 @@
       "openBible": {
         "id": "mcb49f3",
         "name": "Jaffa",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "34.753039,32.054481",
         "precisionMeters": 10,
         "precisionStatement": "historical site in modern settlement",
@@ -3277,7 +3308,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -3382,7 +3416,6 @@
       "openBible": {
         "id": "ma6f6dc",
         "name": "Tel Lystra",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "32.338400,37.601700",
         "precisionMeters": 50,
         "precisionStatement": "point on tel",
@@ -3393,7 +3426,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -3733,7 +3769,6 @@
       "openBible": {
         "id": "mcf7752",
         "name": "Miletus",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "27.275556,37.531111",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -3744,7 +3779,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -3819,7 +3857,6 @@
       "openBible": {
         "id": "mb3f688",
         "name": "Nazareth",
-        "sourceUrl": "https://www.openstreetmap.org/way/97417380",
         "coordinates": "35.297690,32.702140",
         "precisionMeters": 10,
         "precisionStatement": "traditional site in modern settlement",
@@ -3830,7 +3867,11 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openstreetmap.org/way/97417380",
+        "coordinateDifferenceMeters": 10.9,
+        "coordinateRelationship": "EXISTING_PIN_HAS_SEPARATE_COORDINATE_AUTHORITY",
+        "coordinateDifferenceExplanation": "Existing Atlas geocode already uses separate original pin reference; candidate Pleiades record cannot silently override it."
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -3996,7 +4037,6 @@
       "openBible": {
         "id": "m52bd87",
         "name": "Nineveh",
-        "sourceUrl": "https://www.openbible.info/geo/modern/m52bd87/nineveh",
         "coordinates": "43.152800,36.359400",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -4015,7 +4055,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/m52bd87/nineveh",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -4179,7 +4222,6 @@
       "openBible": {
         "id": "mec5201",
         "name": "Philippi",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "24.284576,41.012072",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -4190,7 +4232,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -4297,7 +4342,6 @@
       "openBible": {
         "id": "mb083bc",
         "name": "Rome",
-        "sourceUrl": "https://www.openbible.info/geo/modern/mb083bc/rome",
         "coordinates": "12.485200,41.892200",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -4320,7 +4364,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/mb083bc/rome",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -4575,7 +4622,6 @@
       "openBible": {
         "id": "me64af8",
         "name": "Samaria",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "35.195000,32.276111",
         "precisionMeters": 250,
         "precisionStatement": "point in modern settlement",
@@ -4590,7 +4636,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -4665,7 +4714,6 @@
       "openBible": {
         "id": "m12f296",
         "name": "Khirbet Seilun",
-        "sourceUrl": "https://www.openbible.info/geo/modern/m12f296/khirbet-seilun",
         "coordinates": "35.289536,32.055703",
         "precisionMeters": 50,
         "precisionStatement": "point on tel",
@@ -4676,7 +4724,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openbible.info/geo/modern/m12f296/khirbet-seilun",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -4743,7 +4794,6 @@
       "openBible": {
         "id": "m8e169f",
         "name": "Jebel et Tur",
-        "sourceUrl": "https://www.openstreetmap.org/way/255793567",
         "coordinates": "35.392917,32.686250",
         "precisionMeters": 1000,
         "precisionStatement": "point on mountain",
@@ -4754,7 +4804,11 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://www.openstreetmap.org/way/255793567",
+        "coordinateDifferenceMeters": 46.6,
+        "coordinateRelationship": "EXISTING_PIN_HAS_SEPARATE_COORDINATE_AUTHORITY",
+        "coordinateDifferenceExplanation": "Existing Atlas geocode already uses separate original pin reference; candidate Pleiades record cannot silently override it."
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -5012,7 +5066,6 @@
       "openBible": {
         "id": "mc9df1a",
         "name": "Tarsus",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "34.892056,36.913028",
         "precisionMeters": 250,
         "precisionStatement": "archaeological site in modern settlement",
@@ -5031,7 +5084,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -5153,7 +5209,6 @@
       "openBible": {
         "id": "mdadcc0",
         "name": "Thessaloniki",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "22.945767,40.637771",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -5164,7 +5219,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     },
@@ -5292,7 +5350,6 @@
       "openBible": {
         "id": "mf8cbc7",
         "name": "Alexandria Troas",
-        "sourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
         "coordinates": "26.158611,39.751944",
         "precisionMeters": 5,
         "precisionStatement": "point in visible remains",
@@ -5303,7 +5360,10 @@
             "score": 1000
           }
         ],
-        "hasOriginalRecord": true
+        "hasOriginalRecord": true,
+        "currentAtlasSourceUrl": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl",
+        "coordinateDifferenceMeters": 0,
+        "coordinateRelationship": "EXACT_SOURCE_COORDINATE"
       },
       "editorial": "CANDIDATE_IDENTITY_AND_NAME_METADATA_CHECKED_NOT_BIBLICAL_EVENT_CERTIFIED"
     }
@@ -5316,7 +5376,9 @@
     "subordinatePleiadesLocationRecords": 45,
     "unattestedEinKaremNameCount": 0,
     "placeObjectsWithoutSubordinateLocations": 2,
-    "unpublishedMapChanges": 0
+    "unpublishedMapChanges": 0,
+    "originalModernGeocodingCoordinatesExact": 24,
+    "originalModernGeocodingCoordinatesDiffer": 4
   },
   "reviewGates": {
     "readyForRuntimeImport": false,
