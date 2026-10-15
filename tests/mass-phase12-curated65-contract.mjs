@@ -30,4 +30,4 @@ assert.match(properSlots,/const sequenceRows=values\(proper\.sequence,locale\)/)
 assert.match(properSlots,/No separate Sequence;/,"Missing Sequence must not create invented content");
 assert.match(packageJson.scripts["test:mass-batch4-release"],/mass-phase12-curated65-contract/);
 assert.ok(packageJson.scripts.test.includes("test:mass-batch4-release"));
-console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback, pre-Gospel source ownership. Independent visible chant navigation remains unimplemented.");
+console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");
