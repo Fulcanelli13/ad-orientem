@@ -65,7 +65,10 @@ assert.equal(bindingByKey.size,entries);
 assert.equal(witnessById.size,304);
 assert.ok([...witnessById.values()].every(w=>
  w.source_bindings.length&&w.inspection==="URL_NOT_INDEPENDENTLY_TESTED_IN_THIS_PASS"));
-assert.ok([...used.values()].every(n=>n>0),"Found unlinked witness record: keep it but flag before approval");
+const unused=[...used.entries()].filter(([_,n])=>n===0).map(([key])=>key).sort();
+assert.equal(unused.length,12,"Registry-only leads changed: preserve rather than erase them");
+assert.deepEqual(unused,manifest.review_queue.uncited_sources.map(x=>x.key).sort(),
+ "All uncited source leads must be flagged without deleting their original records");
 const counts=new Map();
 for(const [id,items] of allSourceIDs)if(items.length>1)counts.set(id,items);
 assert.equal(counts.size,45);
@@ -79,6 +82,9 @@ assert.equal(manifest.metrics.sections,sections);
 assert.equal(manifest.metrics.scoped_source_bindings,entries);
 assert.equal(manifest.metrics.exact_url_witnesses,witnessById.size);
 assert.equal(manifest.metrics.unresolved_section_references,0);
+assert.equal(manifest.metrics.uncited_source_bindings,unused.length);
+assert.equal(manifest.metrics.evidence_edges,[...used.values()].reduce((a,b)=>a+b,0));
+assert.equal(manifest.metrics.evidence_edges,1541);
 assert.equal(manifest.metrics.unapproved_context_bindings,
  manifest.source_bindings.filter(x=>!x.original_context_approved).length);
 assert.ok(manifest.rules.some(x=>x.includes("NOT a verified common author/work/edition/passage")));
