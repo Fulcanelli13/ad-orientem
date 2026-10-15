@@ -58,6 +58,7 @@ for(const lang of ["en","fr"]){
   assert(!html.includes("2026-10-15T"),"Do not manufacture feast dates");
 }
 const search=items.filter(x=>x.search_text.includes("lisieux"));
+assert(items.some(x=>x.search_text.includes("thérèse")&&x.search_text.includes("therese")),"Search must support French accents and their ASCII equivalents");
 assert.equal(search.length,2,"A saint with two shrine sites appears at two locations, not as two identities");
 const noSites=projectSaintPlaceItems({...dataset,shrines:{shrines:[]}});
 assert.equal(noSites.length,0,"Cannot publish person pin without corresponding source shrine edge");
