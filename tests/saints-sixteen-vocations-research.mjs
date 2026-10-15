@@ -89,4 +89,36 @@ assert.equal(draft.counts.official_post1960_index_links,5);
 assert.equal(draft.counts.new_app_visible,0);
 assert.equal(draft.counts.new_place_pins,0);
 assert.equal(draft.counts.new_approved_artworks,0);
+// Research chronology is attached separately from the existing fact-level biographies.
+// It cannot imply a Calendar feast, an original map location or a new artwork.
+const precisions=new Set(["EXACT_DATE","EXACT_DATE_PLACE_REVIEW",
+ "EXACT_DATE_PLACE_DISPUTED","UNKNOWN","APPROXIMATE_TRADITIONAL_YEAR",
+ "CONFLICTING_DAY","CONTESTED_DATE_OR_YEAR","APPROXIMATE_YEAR_RANGE","PROBABLE_EXACT_DAY"]);
+let uncertainLifeEvents=0;
+for(const p of draft.people){
+ const review=p.life_events_review;
+ assert.equal(review?.review_status,"RESEARCH_SOURCED_BIRTH_DEATH_NOT_SECOND_EDITOR_SIGNED");
+ assert.equal(review.feast_scope,"CALENDAR_OWNER_PENDING_NO_INFERRED_LITURGICAL_OBSERVANCE");
+ assert.equal(review.artwork_scope,"SACRED_ART_OWNER_PENDING_NO_IMAGE_PROMOTION");
+ for(const key of ["birth","death"]){
+   const e=review[key];
+   assert(precisions.has(e?.date_precision),"Unknown precision: "+p.person_id+" "+key);
+   for(const lang of ["en","fr"]){
+     assert(e.date_label?.[lang]?.length>=3,p.person_id+" "+key+" missing "+lang+" date");
+     assert(e.place?.[lang]?.length>=5,p.person_id+" "+key+" missing "+lang+" place");
+   }
+   const u=new URL(e.source_url);assert.equal(u.protocol,"https:");
+   if(e.iso_date)assert(/^\d{4}-\d{2}-\d{2}$/.test(e.iso_date),"Invalid exact ISO date");
+   if(["UNKNOWN","APPROXIMATE_TRADITIONAL_YEAR","CONFLICTING_DAY","CONTESTED_DATE_OR_YEAR","APPROXIMATE_YEAR_RANGE","PROBABLE_EXACT_DAY"].includes(e.date_precision)){
+     uncertainLifeEvents++;assert.equal(e.iso_date,null,"Uncertain historical life date must not be fake exact ISO");
+   }
+ }
+}
+assert.equal(uncertainLifeEvents,6,"Preserve six explicit uncertain birth/death events");
+assert.equal(draft.people.find(x=>x.person_id==="saint.maria-goretti").life_events_review.death.iso_date,
+ "1902-07-06","Do not confuse assault day/location with hospital death");
+assert.equal(draft.people.find(x=>x.person_id==="saint.ignatius-antioch").life_events_review.birth.date_precision,
+ "UNKNOWN","Do not invent Ignatius's birth");
+assert.equal(draft.people.find(x=>x.person_id==="saint.louise-de-marillac").life_events_review.birth.date_precision,
+ "EXACT_DATE_PLACE_DISPUTED","Paris/Le Meux birthplace disagreement must remain flagged");
 console.log("PASS 16 distinct EN/FR holiness-first saint drafts, 48 sourced facts, 2 qualified extraordinary accounts, 7 historic and 5 official post-1960 owner links; 0 published changes");
