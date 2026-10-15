@@ -20,6 +20,8 @@ for(const c of read("data/shrines/illustrated-place-guides-ireland.v1.json").can
 for(const row of read("data/geography/research/sacred-geography-r71-major-site-reconciliation.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 // R72 seven-site publication also postdates these historical source-acquisition snapshots.
 for(const row of read("data/geography/research/sacred-geography-r72-world-anchors.v1.json").sites)publishedAfterFreeze.add(row.place_id);
+// R73 promotions postdate the frozen European discovery snapshots.
+for(const row of read("data/geography/research/sacred-geography-r73-major-shrines.v1.json").sites)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W7.schema,"AO_EXPLORE_EUROPE_WAVE7_SPARSE_COUNTRY_SOURCE_RESEARCH_V1");
 assert.equal(W7.status,"RESEARCH_ONLY_NO_NEW_PUBLIC_PLACES");

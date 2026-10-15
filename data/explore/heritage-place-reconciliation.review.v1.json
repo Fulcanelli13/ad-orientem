@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 237,
-    "places_with_linked_records": 235,
+    "places": 246,
+    "places_with_linked_records": 244,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 191,
-    "shrines": 233,
-    "pilgrimages": 219,
+    "multicategory_heritage_places": 200,
+    "shrines": 242,
+    "pilgrimages": 228,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -542,6 +542,32 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "display_name": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+      "record_ids": {
+        "shrines": [
+          "shrine:CR:cartago-virgen-angeles"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CR:cartago-virgen-angeles-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "display_name": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+      "record_ids": {
+        "shrines": [
+          "shrine:CU:el-cobre-caridad-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CU:el-cobre-caridad-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CZ:stara-boleslav-st-wenceslas",
       "display_name": "Bazilika svatého Václava — Stará Boleslav",
       "record_ids": {
@@ -786,6 +812,19 @@
         ],
         "directory_links": [
           "link:directory-place:DE:wigratzbad-suehnekirche"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "display_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+      "record_ids": {
+        "shrines": [
+          "shrine:DO:higuey-altagracia-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DO:higuey-altagracia-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1801,6 +1840,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:HN:suyapa-basilica",
+      "display_name": "Basílica de Nuestra Señora de Suyapa",
+      "record_ids": {
+        "shrines": [
+          "shrine:HN:suyapa-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:HN:suyapa-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
       "display_name": "National Shrine of Our Lady of Marija Bistrica",
       "record_ids": {
@@ -2810,6 +2862,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LV:aglona-assumption-basilica",
+      "display_name": "Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika",
+      "record_ids": {
+        "shrines": [
+          "shrine:LV:aglona-assumption-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LV:aglona-assumption-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MA:cathedrale-saint-pierre-rabat",
       "display_name": "Cathédrale Saint-Pierre de Rabat",
       "record_ids": {
@@ -2891,6 +2956,19 @@
         ],
         "routes": [
           "route:MX:guadalajara-zapopan-romeria"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "display_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
+      "record_ids": {
+        "shrines": [
+          "shrine:MY:st-anne-bukit-mertajam"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MY:st-anne-bukit-mertajam-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3209,6 +3287,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "display_name": "Sanktuarium Matki Jedności Chrześcijan — Święta Lipka",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:swieta-lipka-jesuit-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:swieta-lipka-jesuit-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PL:wawel-cathedral-stanislaus",
       "display_name": "Wawel Cathedral, Kraków",
       "record_ids": {
@@ -3351,6 +3442,32 @@
       "record_ids": {
         "shrines": [
           "shrine:SG:nativity-blessed-virgin-mary-hougang"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "display_name": "Bazilika Marije Pomagaj — Brezje",
+      "record_ids": {
+        "shrines": [
+          "shrine:SI:brezje-mary-help-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:SI:brezje-mary-help-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SK:levoca-marianska-hora-basilica",
+      "display_name": "Bazilika Navštívenia Panny Márie — Mariánska hora, Levoča",
+      "record_ids": {
+        "shrines": [
+          "shrine:SK:levoca-marianska-hora-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:SK:levoca-marianska-hora-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3784,8 +3901,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 233,
-    "pilgrimages": 191,
+    "shrines": 242,
+    "pilgrimages": 200,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,
@@ -3829,5 +3946,33 @@
       "place:PY:caacupe-our-lady-miracles"
     ],
     "rule": "One sourced physical pin per distinct major pilgrimage sanctuary; no religious authenticity inference."
+  },
+  "georeference_tranche_20261015_r73": {
+    "new_sites": [
+      "place:HN:suyapa-basilica",
+      "place:CR:cartago-virgen-angeles",
+      "place:MY:st-anne-bukit-mertajam",
+      "place:SK:levoca-marianska-hora-basilica",
+      "place:PL:swieta-lipka-jesuit-shrine",
+      "place:DO:higuey-altagracia-basilica",
+      "place:CU:el-cobre-caridad-basilica",
+      "place:SI:brezje-mary-help-basilica",
+      "place:LV:aglona-assumption-basilica"
+    ],
+    "confirmed_existing": [
+      "place:PL:jasna-gora",
+      "place:MX:basilica-guadalupe-mexico-city",
+      "place:JP:our-lady-akita-convent",
+      "place:CZ:svata-hora-pribram",
+      "place:MX:basilica-zapopan",
+      "place:IN:basilica-bom-jesus-old-goa",
+      "place:PL:kalwaria-zebrzydowska",
+      "place:BR:aparecida-national-shrine",
+      "place:CO:las-lajas-ipiales",
+      "place:AR:san-nicolas-virgen-rosario",
+      "place:CO:chiquinquira-basilica",
+      "place:PL:gietrzwald-basilica"
+    ],
+    "scope": "No additional asserted apparition or relic authenticity; no dates/routes or media."
   }
 }

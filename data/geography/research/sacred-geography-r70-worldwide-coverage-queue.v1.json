@@ -5,14 +5,14 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 54,
-    "text_hint_review": 93,
-    "unmatched": 603,
+    "explicit_promoted": 75,
+    "text_hint_review": 82,
+    "unmatched": 593,
     "zero_crosslist": 485,
-    "essential_remaining": 38,
-    "published_places": 237,
-    "published_shrines": 233,
-    "published_pilgrimages": 219
+    "essential_remaining": 35,
+    "published_places": 246,
+    "published_shrines": 242,
+    "published_pilgrimages": 228
   },
   "countries": [
     {
@@ -54,8 +54,8 @@
     {
       "country": "MX",
       "candidates": 18,
-      "promoted": 0,
-      "text_hint": 2,
+      "promoted": 2,
+      "text_hint": 0,
       "unmatched": 16,
       "essential_review": 2,
       "no_crosslist": 10
@@ -72,8 +72,8 @@
     {
       "country": "BR",
       "candidates": 13,
-      "promoted": 0,
-      "text_hint": 3,
+      "promoted": 1,
+      "text_hint": 2,
       "unmatched": 10,
       "essential_review": 2,
       "no_crosslist": 11
@@ -108,9 +108,9 @@
     {
       "country": "PL",
       "candidates": 21,
-      "promoted": 2,
-      "text_hint": 3,
-      "unmatched": 16,
+      "promoted": 6,
+      "text_hint": 1,
+      "unmatched": 14,
       "essential_review": 1,
       "no_crosslist": 7
     },
@@ -162,8 +162,8 @@
     {
       "country": "AR",
       "candidates": 8,
-      "promoted": 1,
-      "text_hint": 1,
+      "promoted": 2,
+      "text_hint": 0,
       "unmatched": 6,
       "essential_review": 1,
       "no_crosslist": 3
@@ -198,9 +198,9 @@
     {
       "country": "CR",
       "candidates": 3,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 3,
+      "unmatched": 2,
       "essential_review": 1,
       "no_crosslist": 2
     },
@@ -324,8 +324,8 @@
     {
       "country": "CZ",
       "candidates": 16,
-      "promoted": 0,
-      "text_hint": 2,
+      "promoted": 1,
+      "text_hint": 1,
       "unmatched": 14,
       "essential_review": 0,
       "no_crosslist": 11
@@ -333,8 +333,8 @@
     {
       "country": "IN",
       "candidates": 17,
-      "promoted": 2,
-      "text_hint": 1,
+      "promoted": 3,
+      "text_hint": 0,
       "unmatched": 14,
       "essential_review": 0,
       "no_crosslist": 12
@@ -342,9 +342,9 @@
     {
       "country": "SK",
       "candidates": 9,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 9,
+      "unmatched": 8,
       "essential_review": 0,
       "no_crosslist": 4
     },
@@ -387,8 +387,8 @@
     {
       "country": "JP",
       "candidates": 8,
-      "promoted": 0,
-      "text_hint": 1,
+      "promoted": 1,
+      "text_hint": 0,
       "unmatched": 7,
       "essential_review": 0,
       "no_crosslist": 6
@@ -450,8 +450,8 @@
     {
       "country": "CO",
       "candidates": 8,
-      "promoted": 0,
-      "text_hint": 2,
+      "promoted": 2,
+      "text_hint": 0,
       "unmatched": 6,
       "essential_review": 0,
       "no_crosslist": 4
@@ -468,9 +468,9 @@
     {
       "country": "SI",
       "candidates": 5,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 5,
+      "unmatched": 4,
       "essential_review": 0,
       "no_crosslist": 3
     },
@@ -486,9 +486,9 @@
     {
       "country": "CU",
       "candidates": 5,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 5,
+      "unmatched": 4,
       "essential_review": 0,
       "no_crosslist": 4
     },
@@ -612,9 +612,9 @@
     {
       "country": "DO",
       "candidates": 3,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 3,
+      "unmatched": 2,
       "essential_review": 0,
       "no_crosslist": 2
     },
@@ -657,9 +657,9 @@
     {
       "country": "LV",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 2,
+      "unmatched": 1,
       "essential_review": 0,
       "no_crosslist": 1
     },
@@ -720,9 +720,9 @@
     {
       "country": "MY",
       "candidates": 2,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 2,
+      "unmatched": 1,
       "essential_review": 0,
       "no_crosslist": 1
     },
@@ -837,9 +837,9 @@
     {
       "country": "HN",
       "candidates": 1,
-      "promoted": 0,
+      "promoted": 1,
       "text_hint": 0,
-      "unmatched": 1,
+      "unmatched": 0,
       "essential_review": 0,
       "no_crosslist": 0
     },
@@ -3223,10 +3223,10 @@
       "country": "PL",
       "priority": "Essential",
       "discovery_sources_count": 3,
-      "match_class": "STRONG_NAME_SIMILARITY",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:PL:jasna-gora",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0200",
@@ -3245,10 +3245,10 @@
       "country": "PL",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0202",
@@ -3256,10 +3256,10 @@
       "country": "PL",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:PL:gietrzwald-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0203",
@@ -3267,10 +3267,10 @@
       "country": "PL",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "STRONG_NAME_SIMILARITY",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:PL:kalwaria-zebrzydowska",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0204",
@@ -4105,10 +4105,10 @@
       "country": "CZ",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:CZ:svata-hora-pribram",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0280",
@@ -4292,10 +4292,10 @@
       "country": "SK",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:SK:levoca-marianska-hora-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0297",
@@ -4380,10 +4380,10 @@
       "country": "SI",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:SI:brezje-mary-help-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0305",
@@ -4777,10 +4777,10 @@
       "country": "LV",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "STRONG_NAME_SIMILARITY",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:LV:aglona-assumption-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0341",
@@ -5724,10 +5724,10 @@
       "country": "MX",
       "priority": "Essential",
       "discovery_sources_count": 3,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:MX:basilica-guadalupe-mexico-city",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0427",
@@ -5735,10 +5735,10 @@
       "country": "MX",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "EXACT_TEXT_NAME",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:MX:basilica-zapopan",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0428",
@@ -5989,10 +5989,10 @@
       "country": "HN",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:HN:suyapa-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0451",
@@ -6066,10 +6066,10 @@
       "country": "CR",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:CR:cartago-virgen-angeles",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0458",
@@ -6121,10 +6121,10 @@
       "country": "CU",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:CU:el-cobre-caridad-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0463",
@@ -6176,10 +6176,10 @@
       "country": "DO",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:DO:higuey-altagracia-basilica",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0468",
@@ -6275,10 +6275,10 @@
       "country": "BR",
       "priority": "Essential",
       "discovery_sources_count": 1,
-      "match_class": "EXACT_TEXT_NAME",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:BR:aparecida-national-shrine",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0477",
@@ -6440,10 +6440,10 @@
       "country": "AR",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:AR:san-nicolas-virgen-rosario",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0492",
@@ -6573,10 +6573,10 @@
       "country": "CO",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:CO:las-lajas-ipiales",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0504",
@@ -6584,10 +6584,10 @@
       "country": "CO",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "match_class": "STRONG_NAME_SIMILARITY",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:CO:chiquinquira-basilica",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0505",
@@ -7519,10 +7519,10 @@
       "country": "IN",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "EXACT_TEXT_NAME",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0590",
@@ -7806,10 +7806,10 @@
       "country": "JP",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "POSSIBLE_NAME_MATCH",
-      "status": "TEXT_HINT_REVIEW",
+      "match_class": "VERIFIED_REUSE_R73",
+      "status": "EXPLICIT_PROMOTED",
       "canonical_place_id": "place:JP:our-lady-akita-convent",
-      "publish_approved": false
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0616",
@@ -8466,10 +8466,10 @@
       "country": "MY",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_SITE_R73",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:MY:st-anne-bukit-mertajam",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0676",
