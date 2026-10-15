@@ -429,22 +429,36 @@ try{
   await assertNoMass("Spiritual Life Lesson 1");
   await assertFocusSafe("Spiritual Life Lesson 1");
 
-  // Every explanation and exercise must link the exact authority records
-  // assigned to its frozen claims, not just list sources in a distant drawer.
+  // The compact user-facing reader now keeps its exact source witnesses
+  // under "Evidence by section". Audit every section independently, rather
+  // than requiring four repeated citation panels among the lesson paragraphs.
+  // Never relax the canonical claim-ID or direct-link parity checks below.
   const inlineAudit=await page.evaluate(ids=>ids.map(id=>{
     globalThis.AO_SPIRITUAL_LIFE_V1.openLesson(id);
     const root=document.getElementById("ao-spiritual-life-root");
-    return {id,scopeLinks:[...root.querySelectorAll(".aoSLBlock,.aoSLPractice")].map(node=>({
-      ids:node.querySelector("[data-ao-sl-claim-sources]")?.dataset?.aoSlClaimSources?.split(" ")||[],
-      links:[...node.querySelectorAll(".aoSLInlineSources a[href]")].map(a=>a.href),
-    })),bibliography:[...root.querySelectorAll(".aoSLSources a[href]")].map(a=>a.href),
+    const disclosure=root.querySelector("details.aoSLEvidence");
+    // Opening a disclosure is also an accessibility smoke check: the
+    // citations are truly available to readers, not hidden metadata.
+    if(disclosure)disclosure.open=true;
+    return {id,disclosure:!!disclosure,
+      disclosureSummary:disclosure?.querySelector("summary")?.textContent?.trim()??"",
+      scopeLinks:[...root.querySelectorAll(
+        "details.aoSLEvidence li[data-ao-sl-evidence-block]")].map(node=>({
+        label:node.dataset.aoSlEvidenceBlock??"",
+        ids:node.querySelector("[data-ao-sl-claim-sources]")?.dataset?.aoSlClaimSources?.split(" ")||[],
+        links:[...node.querySelectorAll(".aoSLInlineSources a[href]")].map(a=>a.href),
+      })),bibliography:[...root.querySelectorAll(".aoSLSources > .aoSLWorks > .aoSLSource > a[href]")].map(a=>a.href),
       overflow:root.scrollWidth-root.clientWidth};
   }),SPIRITUAL_LIFE_LESSONS.map(x=>x.id));
   assert.equal(inlineAudit.length,14,"Spiritual Life source audit missed a lesson");
   for(const audit of inlineAudit){
     const lesson=SPIRITUAL_LIFE_LESSONS.find(x=>x.id===audit.id);
     const scopes=[...lesson.blocks,lesson.practice];
-    assert.equal(audit.scopeLinks.length,scopes.length,audit.id+": inline source block coverage");
+    assert.equal(audit.disclosure,true,audit.id+": source evidence disclosure missing");
+    assert.match(audit.disclosureSummary,/Evidence by section/i,
+      audit.id+": named source evidence control missing");
+    assert.equal(audit.scopeLinks.length,scopes.length,
+      audit.id+": source evidence must cover all three blocks and practice");
     for(let i=0;i<scopes.length;i++){
       const actual=audit.scopeLinks[i],expected=scopes[i];
       assert.deepEqual(actual.ids,expected.claims,audit.id+": wrong source claims at section "+i);
