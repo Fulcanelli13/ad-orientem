@@ -130,7 +130,13 @@ export function validatedPreGospelChantParts(proper){
        proof.parts[0].sourceSectionId==="Graduale#GRADUAL"&&
        proof.parts[1].sourceSectionId==="Graduale#"+proof.parts[1].kind)
     )){
-    throw new Error("PRE_GOSPEL_UNVERIFIED_SOURCE_PARTS");
+    throw new Error("PRE_GOSPEL_UNVERIFIED_SOURCE_PARTS:"+JSON.stringify({
+      currentSourcePath:proper?.sourcePath,proofSourcePath:proof?.sourcePath,
+      proofStatus:proof?.status,proofMode:proof?.sourceMode,
+      names:proof?.parts?.map(p=>[p.kind,p.sourceSectionId,p.sourceRef]),
+      sourceOrder:proof?.sourceOrder,
+      languages:proof?.aggregateVerifiedLanguages,
+    }));
   }
   for(const part of proof.parts){
     if(part.sourceRef!==proper.sourcePath+":"+part.sourceSectionId)
