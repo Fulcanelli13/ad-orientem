@@ -30,3 +30,24 @@ The demo is small. Manifest and chunk byte counts are reported to show the separ
 Run: node tests/source-text-pilot.mjs
 
 The dedicated source-text pilot workflow executes that check in Node 22. Required tests cover deterministic IDs across equivalent clean HTML/plain-text, CRLF normalisation, byte-identical generated chunks, rights gate, malformed HTML rejection, chunk/edition integrity, precise passage opening and lazy loading. Do not merge or connect to live routes before source-owner agreement, user review and browser/mobile acceptance.
+
+
+## Phase 2 — acquisition discovery and synthetic scale validation (15 October 2026)
+
+**Work discovery is not text acquisition.** `data/source-text/acquisition-expansion.v1.json` references the existing 13-work candidate inventory without overwriting it and nominates ten *additional* works for canonical-owner review. The ten are prospective IDs only, not certified common work IDs or full texts. Evidence pointers refer to existing Mass, Formation and reference research. Proposed Denzinger work identity deliberately leaves its edition, revised numbering and DS/DH concordance unresolved. The two Hume works remain distinct opponent originals. Fortescue's historical study must not be confused with his ceremonial handbook.
+
+Four **reuse** decisions prohibit duplicate packs: (1) Scripture and its 73-book edition-specific system, (2) existing Catena Aurea pericope/father chunks, (3) 200 Rosary source references with collation holds and (4) Formation's existing scoped source/witness crosswalk. Formation's 304 URL witnesses are *not* 304 distinct books, textual editions or authorised reproductions. No existing owner module, production route, or prayer body is modified.
+
+`src/source-text/edition-adapters.js` is a strict preparation layer for **human-inspected local extracts**, not a general web scraper and not PDF/OCR. All adapters require a matching, explicit work+edition+witness identity, rights review ID, source document ID and passage collation review ID. They are:
+
+- `numbered-paragraphs-v1`: named headings plus explicit `[paragraph-key] Text` lines, with stable section-relative source anchors.
+- `anchored-clean-html-v1`: curated clean HTML where every passage element has a reviewed `data-source-anchor`.
+- `reviewed-plain-sections-v1`: headed text, explicitly acknowledging `ORDINAL_REVIEWED` locator stability (IDs may move if lines are inserted).
+
+None of these names confers approval on a particular publisher's edition. A proposed papal original, Denzinger printing, Thomas Aquinas question/article translation, Guéranger volume or scanned ceremonial manual requires a separate acquisition and rights/collation decision from its owning pipeline **before** loading its actual body text. The parser itself cannot grant that decision. Keep a printed page/paragraph/Q&A locator separate from a host URL, and never merge translations or versioned doctrinal numbering under one textual witness.
+
+### Synthetic scale regression and limits
+
+Run both `node tests/source-text-pilot.mjs` and `node tests/source-text-acquisition-scale.mjs` (dedicated Node 22 PR workflow). The added suite generates **1,200 entirely synthetic passages** across **24 logical sections** and packages them into 24 chunks. It tests stable explicitly anchored IDs after an insertion, metadata search with zero chunk loads, first passage with one chunk load, first chunk reuse, opt-in full-text requests, mismatched review/edition rejection, denied rights, unsafe markup and missing anchor failure. The test prints actual uncompressed metadata and passage-body byte counts at runtime.
+
+These tests do **not** certify actual larger works, support for raw Vatican/CCEL HTML structures, OCR, scholarly apparatus, browser rendering, low-memory phones, full-text indexing at corpus scale, offline caching or production app performance. Browser/mobile acceptance, real edition adapter fixtures (only after rights clearance), gzip/network cold-start profiling and provenance review are still required. Do not merge this draft PR on synthetic tests alone.
