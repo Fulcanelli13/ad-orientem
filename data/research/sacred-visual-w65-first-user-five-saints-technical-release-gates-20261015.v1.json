@@ -21,7 +21,14 @@
       "rights": {
         "state": "HOLD_CHECK_COPYRIGHT_AND_REPRODUCTION_PERMISSION",
         "note": "Creator died in 1959; ordinary life+70 rights may run through 2029 in applicable jurisdictions, subject to local legal rules. Do not assert global public-domain status.",
-        "permissionProof": null
+        "permissionProof": null,
+        "outreach": {
+          "recipient": "Archives du Carmel de Lisieux",
+          "email": "archives.carmel.lisieux@orange.fr",
+          "contactSource": "https://archives.carmeldelisieux.fr/",
+          "requestPurpose": "Permission and archival reproducible image of exact original 1925 oil painting for a freely accessible worldwide Catholic mobile/web app; ask about future paid app distribution and attribution",
+          "emailSent": false
+        }
       },
       "provenance": {
         "originalObjectId": null,
@@ -30,13 +37,41 @@
         "ratedImageMatched": false,
         "ratedSourceLandingPageUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
         "ratedSourceLandingPageMatchesW64": true,
-        "ratedFileSha256": null
+        "ratedFileSha256": null,
+        "physicalOriginal": {
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "workTitle": "Thérèse aux roses",
+          "year": 1925,
+          "medium": "PAINTING",
+          "dimensionsCm": {
+            "height": 86,
+            "width": 65
+          },
+          "custodian": "Carmel of Lisieux",
+          "authoritativeOriginalDescription": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "exactPhotoOfThisOriginalCertified": false,
+          "warning": "The Lisieux archives document numerous copies, engravings and derivative interpretations. Identical titles or iconography are not proof of matching the 1925 physical painting."
+        }
       },
       "media": {
         "localAsset": null,
         "rightsVerified": false,
         "phoneVisualQA": false,
-        "cropVerified": false
+        "cropVerified": false,
+        "alternateSourceCandidate": {
+          "vendor": "Bridgeman Images",
+          "assetNumber": "PCT4295048",
+          "url": "https://www.bridgemanimages.com/en-US/cartier-patrice/portrait-of-saint-therese-of-the-child-jesus-by-his-sister-celine-martin-engraving/engraving/asset/4295048",
+          "widthPx": 3498,
+          "heightPx": 4750,
+          "sourceMedium": "ENGRAVING",
+          "credit": "Patrice Cartier / Bridgeman Images",
+          "licensing": "PAID_DIGITAL_APP_LICENSE",
+          "relationToUserRatedOriginal": "DERIVATIVE_REPRODUCTION_NOT_CERTIFIED_PHOTO_OF_PAINTING",
+          "maySubstituteForFiveRatedPainting": false,
+          "releaseAllowed": false,
+          "note": "Do not use as automatically equivalent to Céline's 86x65cm oil painting. Its licensing page offers digital/app usage but a new medium requires original-identity confirmation; no purchase authorised."
+        }
       },
       "releaseAllowed": false,
       "nextAction": "Confirm the exact original and rated image with Carmel, secure permission or legal clearance, then record the actual reproducible file and phone crop."
@@ -57,7 +92,14 @@
           "Author died 1895, so the underlying old painting is widely public domain.",
           "File photographer/source described as uploader own work; verify the original object and rights/attribution for the exact reproduced file."
         ],
-        "permissionProof": null
+        "permissionProof": null,
+        "outreach": {
+          "recipient": "Musei Vaticani — Ufficio Immagini e Diritti",
+          "email": "id.musei@scv.va",
+          "contactSource": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/immagini-e-diritti.html",
+          "requestPurpose": "Confirm primary object inventory for attributed Podesti apparition painting and obtain high-resolution image with exact attribution/digital app licence; ask whether this work is in Vatican collection",
+          "emailSent": false
+        }
       },
       "provenance": {
         "originalObjectId": null,
@@ -75,7 +117,26 @@
           "citedImageDescription": "Francesco Podesti, Apparition of Jesus to Marguerite-Marie Alacoque, before 1864, Vatican Museums",
           "status": "SECONDARY_SCHOLARLY_CORROBORATION_OF_ARTIST_AND_COLLECTION_NOT_PRIMARY_ACCESSION_CERTIFICATION"
         },
-        "primaryMuseumAccessionVerified": false
+        "primaryMuseumAccessionVerified": false,
+        "commonsExactFile": {
+          "fileDescriptionUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+          "originalPublishedPixels": {
+            "width": 800,
+            "height": 600
+          },
+          "bytes": 49529,
+          "sha1AsDeclaredByCommons": "8274c6a9570d4ab8941874933989f0d50e175dc1",
+          "sourceFileSha1IndependentlyRehashed": false,
+          "fileUploadedOn": "2016-06-09",
+          "originalImageReproductionQuality": "ONLY_800x600_NO_HIGHER_RESOLUTION_ON_THIS_COMMONS_RECORD",
+          "licensesDeclared": [
+            "PD-ART_FAITHFUL_2D_PHOTOGRAPH",
+            "CC-BY-SA-4.0_FROM_UPLOADER"
+          ],
+          "rightsLegalReviewComplete": false,
+          "creditLicensePage": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        "officialMuseumSiteRightNotice": "https://www.museivaticani.va/content/museivaticani/en/copyright.html"
       },
       "media": {
         "originalListedWidth": 800,
@@ -99,5 +160,24 @@
     "neverReleaseWhenRightsUnknown": true,
     "keepSourceMapPortraitNullUntilCertified": true
   },
-  "validationNote": "Compared both W65 source landing URLs with W64's exact user-five-rated canonical physical record museumSourceURL. Matching landing pages are corroborated; actual uploaded pixels, hash, collection accession and release rights remain unverified."
+  "validationNote": "Compared both W65 source landing URLs with W64's exact user-five-rated canonical physical record museumSourceURL. Matching landing pages are corroborated; actual uploaded pixels, hash, collection accession and release rights remain unverified.",
+  "sourceVerificationUpdate": {
+    "asOf": "2026-10-15",
+    "sources": [
+      "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/copies-de-therese-aux-roses/",
+      "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/immagini-e-diritti.html",
+      "https://www.bridgemanimages.com/en-US/cartier-patrice/portrait-of-saint-therese-of-the-child-jesus-by-his-sister-celine-martin-engraving/engraving/asset/4295048"
+    ],
+    "verifiedFacts": [
+      "Original Céline 1925 portrait is a painting measuring 86x65 cm and held at the Carmel of Lisieux",
+      "Lisieux archives record widespread copies, so derivatives are not equivalent to original",
+      "Commons Podesti file states exactly 800x600, 49,529 bytes, and an SHA1 checksum",
+      "Vatican official image-rights office takes reproduction requests",
+      "A high-resolution commercial Thérèse engraving exists but does not establish a photograph of the five-star original"
+    ],
+    "verifiedExactImageFiles": 0,
+    "releaseApprovals": 0
+  }
 }
