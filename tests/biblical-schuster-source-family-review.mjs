@@ -89,13 +89,13 @@ assert.equal(fam.counts.wikisource1910OriginalPrintedParagraphsApproved,0);
 
 
 const images=domains.originalPrintImageSpotAudit;
-assert.equal(images.imageInspectedCount,23);
-assert.equal(images.originalPrintedPages.length,23);
-assert.equal(new Set(images.originalPrintedPages.map(x=>x.sourceDjvuPage)).size,23);
+assert.equal(images.imageInspectedCount,25);
+assert.equal(images.originalPrintedPages.length,25);
+assert.equal(new Set(images.originalPrintedPages.map(x=>x.sourceDjvuPage)).size,25);
 assert.equal(images.imageVerifiedBoundarySets.narrativeToCommentary.length,9);
 assert.equal(images.imageVerifiedBoundarySets.commentaryToApplication.length,9);
-assert.equal(images.imageVerifiedBoundarySets.narrativeStarts.length,8);
-assert.deepEqual(images.remainingNarrativeStartUnobserved,[57]);
+assert.equal(images.imageVerifiedBoundarySets.narrativeStarts.length,9);
+assert.deepEqual(images.remainingNarrativeStartUnobserved,[]);
 assert.equal(images.defectsAgainstUnproofreadTranscription.length,2);
 assert.equal(images.originalSourceProseApprovedForApp,0);
 assert.equal(images.sourceParagraphsFullyProofread,0);
@@ -115,9 +115,23 @@ for(const defect of images.defectsAgainstUnproofreadTranscription){
 assert.ok(images.defectsAgainstUnproofreadTranscription.some(x=>x.djvuPage===79&&x.confirmedPrintExcerpt==="and after a hundred and fifty days"));
 assert.ok(images.defectsAgainstUnproofreadTranscription.some(x=>x.djvuPage===84&&x.transcribedExcerpt.includes("Gen. xx")));
 
+
+const preliminary=images.narrativeParagraphVisualComparisonPilot;
+assert.equal(preliminary.status,"PRELIMINARY_VISUAL_BODY_TEXT_COMPARISON_NOT_FULL_CHARACTER_CERTIFICATION_NOT_IMPORTABLE");
+assert.equal(preliminary.preliminaryComparedCount,7);
+assert.deepEqual(preliminary.comparedDayUnits.map(x=>x.day),[1,2,3,4,5,6,7]);
+assert.deepEqual(preliminary.comparedDayUnits[3].scanPages,[42,43]);
+assert.equal(preliminary.fullParagraphWordByWordCertification,false);
+assert.equal(preliminary.sourceTextCopiedToRepository,false);
+assert.equal(preliminary.originalSourceTextApprovedForPublication,false);
+assert.deepEqual(images.imageVerifiedBoundarySets.narrativeStarts,[41,47,51,57,62,66,72,79,84]);
+assert.equal(fam.counts.wikisource1910NarrativeStartsVisuallyVerified,9);
+assert.equal(fam.counts.wikisource1910NarrativeParagraphsPreliminarilyCompared,7);
+assert.equal(fam.counts.wikisource1910OriginalPrintedImagePagesInspected,25);
+
 const quality=fam.wikisource1910SourceQualityReview;
-assert.equal(quality.status,"23_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL");
-assert.equal(quality.printedImagePagesChecked,23);
+assert.equal(quality.status,"25_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL");
+assert.equal(quality.printedImagePagesChecked,25);
 assert.equal(quality.initialImageFetchFailuresNowSuperseded,true);
 assert.equal(quality.displayedPrimaryNarrativeTextApproved,false);
 assert.equal(quality.sourceTextBytesImported,0);
