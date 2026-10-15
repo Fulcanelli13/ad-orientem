@@ -258,6 +258,30 @@ node.listeners.click(makeClick({dossier:"CR-ECC-04"}));
 assert.ok(node.innerHTML.includes("First Vatican Council, Pastor aeternus (1870), Latin"),"CR-ECC-04 must retain its different primary-source title");
 
 node.listeners.click(makeClick({back:true}));
+// The previously authored evolution and China case studies are preserved as
+// separately labelled, unpublished research. The new compact reference policy
+// must apply to their original citations as well as to canonical synthesis.
+for(const [owner,caseId] of [
+  ["APOL-002","APOL-002-RETAINED-CASE"],
+  ["CR-GOV-01","CR-GOV-01-RETAINED-CASE"]
+]){
+  const c=packs.find(x=>x.label==="Retained owner cases").doc.cases.find(x=>x.id===caseId);
+  assert.equal(c.former_owner,owner);
+  assert.equal(c.original_draft.length,4);
+  const original=new Map(c.source_registry.map(x=>[x.id,x]));
+  for(const section of c.original_draft)
+    for(const id of section.source_ids)
+      assert.ok(original.get(id)?.url?.startsWith("https://"),owner+" retained citation unresolved: "+id);
+  node.listeners.click(makeClick({dossier:owner}));
+  assert.ok(node.innerHTML.includes('data-rr-retained-case="'+caseId+'"'),owner+" historical research lost");
+  assert.ok(node.innerHTML.includes('data-rr-source-panel="'+caseId+'-retained"'),
+    owner+" original sources not presented in the compact evidence drawer");
+  assert.ok(node.innerHTML.includes("not been certified for publication"),
+    owner+" source material misrepresented as finally approved");
+  assert.ok(node.innerHTML.includes('<details class="rrEvidenceDisclosure"'),
+    owner+" uncollapsed prior-research evidence leaked into main reading");
+  node.listeners.click(makeClick({back:true}));
+}
 for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
                  "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
   node.listeners.click(makeClick({dossier:id}));
