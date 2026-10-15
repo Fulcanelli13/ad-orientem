@@ -71,9 +71,14 @@ function evaluateSource(sourceId,md){
 }
 const protectedRows=protectedFeasts.feasts.map(f=>{
  const base=evaluateSource(f.resolverIdentity,f.monthDay);
+ const isUnobserved=base.source_match_status==="NOT_VISIBLE_AS_EXACT_ID_IN_THIS_YEAR_OBSERVED_OWNER";
+ const observedOverrideType=isUnobserved?
+   (/\bsunday\b/i.test(base.observed_main_title)?"OBSERVED_SUNDAY_MAIN":
+   base.observed_main_cycle==="temporale"?"OBSERVED_NON_SUNDAY_TEMPORA_MAIN":"OTHER_SOURCE_MAIN_REVIEW"):null;
  return {nominal_mm_dd:f.monthDay,title_for_review:f.titleForReview,
    source_owner_status:f.identityMatchStatus,
    source_owner_2024_2027_archived_evidence:f.evidence?.source??null,
+   observed_override_type:observedOverrideType,
    ...base};
 });
 const doctorsRows=doctors.doctors.map(d=>{
@@ -116,6 +121,12 @@ const artDateRows=snapshot.days.map(d=>{
 });
 const counts=rows=>Object.fromEntries([...new Set(rows.map(r=>r.source_match_status))].map(k=>[k,rows.filter(r=>r.source_match_status===k).length]));
 const all=artDateRows.filter(x=>x.source_id_conflict);
+assert.equal(all.length,0,"Art source evidence disagrees with the real observed principal source ID; owner review required");
+const nonobservedProtected=protectedRows.filter(x=>x.source_match_status==="NOT_VISIBLE_AS_EXACT_ID_IN_THIS_YEAR_OBSERVED_OWNER");
+const mainTypeCount=Object.fromEntries([...new Set(nonobservedProtected.map(x=>x.observed_override_type))].map(
+ key=>[key,nonobservedProtected.filter(x=>x.observed_override_type===key).length]));
+const doctorStatusCount=Object.fromEntries([...new Set(doctorsRows.map(x=>x.observation?.source_match_status??"NO_1962_SOURCE_ID_IN_OWNER"))].map(
+ key=>[key,doctorsRows.filter(x=>(x.observation?.source_match_status??"NO_1962_SOURCE_ID_IN_OWNER")===key).length]));
 const out={
  schema:"ao.saints.2026-cross-owner-source-reconciliation.v1",
  publication:"RESEARCH_ONLY_NO_CALENDAR_OR_ART_OWNER_MUTATION",
@@ -137,6 +148,7 @@ const out={
  ],
  counts:{
   protected_total:protectedRows.length,protected_statuses:counts(protectedRows),
+  protected_nonobserved_main_types:mainTypeCount,doctor_statuses:doctorStatusCount,
   doctors_total:doctorsRows.length,
   doctors_with_1962_source_id:doctorsRows.filter(x=>x.observation).length,
   doctors_with_observed_principal_on_2026_nominal_day:doctorsRows.filter(x=>x.observation?.source_match_status==="OBSERVED_PRINCIPAL_ON_NOMINAL_DATE").length,
