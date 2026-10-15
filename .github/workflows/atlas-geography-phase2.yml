@@ -1,0 +1,27 @@
+name: Biblical Atlas historical-geography phase 2 (research)
+on:
+  push:
+    paths:
+      - "data/explore/biblical-atlas-geography-phase2.research.v1.json"
+      - "tests/atlas-geography-phase2.mjs"
+      - ".github/workflows/atlas-geography-phase2.yml"
+  pull_request:
+    paths:
+      - "data/explore/biblical-atlas-geography-phase2.research.v1.json"
+      - "tests/atlas-geography-phase2.mjs"
+      - ".github/workflows/atlas-geography-phase2.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase2-research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify source crosswalk and Phase 2 holds
+        run: |
+          node tests/atlas-pleiades-reconciliation.mjs
+          node tests/atlas-geography-phase2.mjs
