@@ -4,6 +4,7 @@ import {fileURLToPath} from "node:url";
 import {dirname,resolve} from "node:path";
 import {mysteryMassReviewMarkup,mysteryMassReviewEnabled,createMysteryMassReviewRuntime} from "../src/learn/mystery-mass-review.js";
 import {MYSTERY_MASS_REVIEW_DATA as data} from "../src/learn/mystery-mass-review-data.js";
+import {MYSTERY_CANON_PRECISION_REVIEW as precision} from "../src/learn/mystery-mass-canon-precision-review.js";
 import {LEARN_LAYOUT} from "../src/learn/presentation.js";
 import {parseScriptureContext} from "../src/scripture/context.js";
 
@@ -50,6 +51,23 @@ assert.match(mass,/Lire en contexte/);
 const canon=mysteryMassReviewMarkup({mode:"liturgical",index:manifest.liturgicalStudySelections.findIndex(x=>x.owner==="AO.CANON.10"),language:"en",deep:true});
 assert.match(canon,/Supplices te rogamus/);
 assert.match(canon,/Angelic|Angel|angel/i);
+assert.equal(precision.length,11);
+assert.equal(new Set(precision.map(x=>x.id)).size,11);
+assert.ok(precision.every(x=>!x.approved && data.liturgical.some(m=>m.id===x.owner)));
+const canonFrench=mysteryMassReviewMarkup({mode:"liturgical",index:data.liturgical.findIndex(x=>x.id==="AO.CANON.10"),language:"fr",deep:true});
+assert.match(canonFrench,/data-mm-precision-owner="AO.CANON.10"/);
+assert.match(canonFrench,/saint Ange|saint Ange|Ange/);
+assert.match(canonFrench,/MM-CAN-D-006/);
+assert.match(canonFrench,/MM-CAN-D-011/);
+const abel=data.liturgical.findIndex(x=>x.id==="AO.CANON.09");
+const abelShort=mysteryMassReviewMarkup({mode:"liturgical",index:abel,language:"en",deep:false});
+assert.match(abelShort,/MM-CAN-D-003/);
+assert.doesNotMatch(abelShort,/MM-CAN-D-007/);
+const abelDeep=mysteryMassReviewMarkup({mode:"liturgical",index:abel,language:"en",deep:true});
+assert.match(abelDeep,/MM-CAN-D-007/);
+const biblicalWithoutCanon=mysteryMassReviewMarkup({mode:"biblical",index:0,language:"en"});
+assert.doesNotMatch(biblicalWithoutCanon,/data-mm-precision-owner=/);
+
 
 function fakeWindow(query){
  const nodes=new Map(),body={classList:{add(){},remove(){}},append(node){nodes.set(node.id,node);}};
