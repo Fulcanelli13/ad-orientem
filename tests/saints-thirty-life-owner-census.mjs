@@ -31,7 +31,9 @@ const entries=[
  biography_state:x.editorial_status,visible_on_public_pages:false,subject_kind:x.recognition_status,
  facts:x.biography_facts.length,extraordinary_reports:x.extraordinary_accounts.length,
  artwork_ready:!!x.artwork_master_id,map_location_scope:"NONE",
- life_data_status:"MISSING_LIFE_DATES",birth_date_precision:null,death_date_precision:null,
+ life_data_status:x.life_events_review?.review_status?"HISTORICAL_DATES_RESEARCHED_NOT_APPROVED":"MISSING_LIFE_DATES",
+ birth_date_precision:x.life_events_review?.birth?.date_precision??null,
+ death_date_precision:x.life_events_review?.death?.date_precision??null,
  celebration_scope:"CALENDAR_OWNER_PENDING"}))
 ];
 assert.equal(entries.length,30);
@@ -51,7 +53,7 @@ const output={schema:"ao.saints.30-holiness-first-person-census.v1",status:"RESE
  drafts_with_an_existing_map_lens_surface:6,public_pages_released_from_this_pr:0,
  individually_approved_new_portraits:0,additional_map_pins_created:0,
  native_six_life_date_records:entries.filter(x=>x.life_data_status==="NATIVE_DATES_SOURCED_EDITORIAL_REVIEW").length,
- held_doctor_life_date_records:entries.filter(x=>x.life_data_status==="HISTORICAL_DATES_RESEARCHED_NOT_APPROVED").length,
+ held_researched_life_date_records:entries.filter(x=>x.life_data_status==="HISTORICAL_DATES_RESEARCHED_NOT_APPROVED").length,
  missing_life_dates:entries.filter(x=>x.life_data_status==="MISSING_LIFE_DATES").length,
  sourced_fact_summaries:entries.reduce((s,x)=>s+x.facts,0),
  historically_attributed_extraordinary_accounts:entries.reduce((s,x)=>s+x.extraordinary_reports,0)},
@@ -61,6 +63,6 @@ const path=resolve(root,"artifacts/saints-calendar-census/saints-30-holiness-fir
 mkdirSync(resolve(root,"artifacts/saints-calendar-census"),{recursive:true});
 writeFileSync(path,JSON.stringify(output,null,2)+"\n");
 assert.equal(output.counts.native_six_life_date_records,6);
-assert.equal(output.counts.held_doctor_life_date_records,8);
-assert.equal(output.counts.missing_life_dates,16);
+assert.equal(output.counts.held_researched_life_date_records,24);
+assert.equal(output.counts.missing_life_dates,0);
 console.log("PASS consolidated no-duplicate 30-person holiness-first research census: "+JSON.stringify(output.counts));
