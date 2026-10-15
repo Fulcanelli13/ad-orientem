@@ -42,7 +42,8 @@ try{
    await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:50000});
    await page.waitForFunction(()=>Boolean(window.AO_RUNTIME_V8?.resolver?.resolveDay) &&
      Boolean(window.AO_APP_SHELL_V1?.status?.().visibleOwner),null,{timeout:45000});
-   const dayTab=page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]');
+   const dayTab=page.locator('.homeScreen .aoTodayV2ReadReflect [data-home-calendar-view="day"]');
+   await dayTab.waitFor({state:"visible",timeout:20000});
    await dayTab.click();
    const host=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await host.waitFor({state:"visible",timeout:40000});
