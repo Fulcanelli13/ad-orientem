@@ -3,6 +3,7 @@
 // This module adds no liturgical observances or new physical Place identities.
 import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
 import { sourceBoundSaintClassifications } from "./saints-classification.js";
+import { sourceBoundCalendarContext } from "./saints-calendar-context.js";
 
 const arr=value=>Array.isArray(value)?value:[];
 const txt=value=>String(value??"").trim();
@@ -60,6 +61,7 @@ export function projectSaintPlaceItems(dataset={}){
       }))),
       sources:sourceLinks(person,pilot.sources),
       artwork_id:null, // Do not promote candidate paintings or shrine photos.
+      calendar_context:sourceBoundCalendarContext(person.saint_id,dataset?.saintsCalendarBridge),
     });
     if(!named.name_en||!named.name_fr)continue;
     for(const link of arr(person.place_links)){
