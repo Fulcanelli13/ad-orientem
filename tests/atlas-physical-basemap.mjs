@@ -23,7 +23,16 @@ for(const [name,minimum,geometry] of kinds){
 assert.ok(total<1_500_000,"Physical source download budget exceeded");
 assert.equal(ATLAS_PHYSICAL_STYLE.version,8);
 assert.deepEqual(Object.keys(ATLAS_PHYSICAL_STYLE.sources).sort(),
- ["ao-physical-lakes","ao-physical-land","ao-physical-rivers"].sort());
+ ["ao-physical-lakes","ao-physical-land","ao-physical-rivers","ao-physical-elevation"].sort());
+const terrain=ATLAS_PHYSICAL_STYLE.sources["ao-physical-elevation"];
+assert.equal(terrain.type,"raster-dem");
+assert.equal(terrain.encoding,"terrarium");
+assert.equal(terrain.tileSize,256);
+assert.deepEqual(terrain.tiles,["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"]);
+assert.match(terrain.attribution,/Mapzen\/Tilezen/);
+const shaded=ATLAS_PHYSICAL_STYLE.layers.find(l=>l.id==="ao-physical-shaded-relief");
+assert.ok(shaded&&shaded.type==="hillshade"&&shaded.source==="ao-physical-elevation");
+assert.ok(shaded.paint["hillshade-exaggeration"]<=0.4,"Restrained real elevation shading only");
 assert.ok(ATLAS_PHYSICAL_STYLE.layers.some(l=>l.type==="background"));
 assert.ok(ATLAS_PHYSICAL_STYLE.layers.some(l=>l.type==="fill"));
 assert.ok(ATLAS_PHYSICAL_STYLE.layers.some(l=>l.type==="line"));
@@ -32,9 +41,11 @@ assert.ok(ATLAS_PHYSICAL_STYLE.layers.every(l=>l.type!=="symbol"),
 assert.ok(ATLAS_PHYSICAL_STYLE.layers.every(l=>!/country|boundary|administrative|road/i.test(l.id)),
  "Physical review cannot secretly reproduce administrative/road boundaries");
 assert.ok(ATLAS_PHYSICAL_STYLE.layers.every(l=>!l.source||ATLAS_PHYSICAL_STYLE.sources[l.source]));
-assert.ok(Object.values(ATLAS_PHYSICAL_STYLE.sources).every(s=>s.type==="geojson"&&
+assert.ok(Object.values(ATLAS_PHYSICAL_STYLE.sources).filter(s=>s.type==="geojson").every(s=>
  s.data.startsWith("file:")||s.data.startsWith("https:")),
- "Physical sources must be resolvable local URLs");
+ "Physical GeoJSON sources must resolve to local URLs");
+assert.ok(Object.values(ATLAS_PHYSICAL_STYLE.sources).filter(s=>s.type!=="geojson").every(s=>s.type==="raster-dem"),
+ "Only independently attributed raster elevation, no new geographic data owner");
 const owner=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
 const map=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 assert.match(owner,/styleOverride:bibleCinemaPreview\?ATLAS_PHYSICAL_STYLE:null/,
