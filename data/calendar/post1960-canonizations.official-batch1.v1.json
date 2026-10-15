@@ -10,6 +10,7 @@
   "coverage": {
     "scopeYears": [
       1999,
+      2000,
       2001,
       2002,
       2003,
@@ -34,20 +35,21 @@
       2024,
       2025
     ],
-    "reviewedYears": 24,
+    "reviewedYears": 25,
     "completeGlobal1960To2026": false,
-    "namedIndividualRecords": 169,
-    "unexpandedGroupRecords": 5,
-    "unexpandedGroupMembers": 66,
+    "namedIndividualRecords": 179,
+    "unexpandedGroupRecords": 7,
+    "unexpandedGroupMembers": 207,
     "knownCanonicalPersonIdReuse": [
       "saint.carlo-acutis",
       "saint.john-henry-newman",
       "saint.pio-pietrelcina"
     ],
     "unverifiedApproximateGroupMembers": 800,
-    "groupsWithApproximateCounts": 1
+    "groupsWithApproximateCounts": 1,
+    "knownGroupMembersAlreadyIncludedInNamedRecords": 4
   },
-  "countingRule": "Only individually named people count as person records. Exact known group member counts and approximate group estimates are separate; approximate Otranto ~800 is NEVER counted as 800 identified persons. Canonization ceremonies remain events, not persons.",
+  "countingRule": "Individually named persons are counted once, even when members of martyr cohorts. For verified groups, count only unexpandedMemberCount where supplied; otherwise memberCount. Otranto's approximate 800 is kept separate and is not added as an exact number.",
   "liturgicalRule": "No individual record in this batch asserts universal feast date, 1962 optional mass eligibility, mass texts, or a change to the principal observed 1962 mass.",
   "years": [
     {
@@ -244,6 +246,18 @@
       "eventCount": 2,
       "namedIndividuals": 9,
       "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 2000,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 10,
+      "unexpandedGroupMemberships": 141,
+      "sourceEventTotalPeople": 151,
+      "sourceEventTotalEvidence": [
+        "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/10/01/0568/01964.html"
+      ]
     },
     {
       "year": 1999,
@@ -1044,6 +1058,56 @@
         "canon-group.martyrs-turon-lasallian-1934"
       ],
       "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2000-04-30",
+      "date": "2000-04-30",
+      "year": 2000,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.maria-faustyna-kowalska"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2000-05-21",
+      "date": "2000-05-21",
+      "year": 2000,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.cristobal-magallanes",
+        "saint.jose-maria-de-yermo-y-parres",
+        "saint.maria-de-jesus-sacramentado-venegas"
+      ],
+      "groupIds": [
+        "canon-group.martyrs-mexico-1927"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2000-10-01",
+      "date": "2000-10-01",
+      "year": 2000,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.agostino-zhao-rong",
+        "saint.maria-josefa-sancho-de-guerra",
+        "saint.katharine-drexel",
+        "saint.giuseppina-bakhita",
+        "saint.luigi-versiglia",
+        "saint.callisto-caravario"
+      ],
+      "groupIds": [
+        "canon-group.martyrs-china-1648-1930"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
     }
   ],
   "groups": [
@@ -1108,6 +1172,45 @@
         "Cirilo Bertrán"
       ],
       "note": "Nine Lasallian martyrs form one cohort, distinct from Passionist Inocencio de la Inmaculada who is individually listed in this ceremony. Expand all nine identities later."
+    },
+    {
+      "id": "martyrs-mexico-1927",
+      "eventId": "canon-2000-05-21",
+      "label": "Cristóbal Magallanes and 24 Companions, Martyrs of Mexico",
+      "memberCount": 25,
+      "unexpandedMemberCount": 24,
+      "individuallyIdentifiedPersonIds": [
+        "saint.cristobal-magallanes"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Cristóbal Magallanes"
+      ],
+      "note": "Full cohort of 25: founder Cristóbal is independently named in master; 24 companions still unexpanded. Do not count 25+Cristóbal as 26."
+    },
+    {
+      "id": "martyrs-china-1648-1930",
+      "eventId": "canon-2000-10-01",
+      "label": "Augustine Zhao Rong and 119 Companions, Martyrs of China",
+      "memberCount": 120,
+      "unexpandedMemberCount": 117,
+      "individuallyIdentifiedPersonIds": [
+        "saint.agostino-zhao-rong",
+        "saint.luigi-versiglia",
+        "saint.callisto-caravario"
+      ],
+      "memberIdentityStatus": "PARTIAL_IDENTITIES_NEED_EXPANSION",
+      "namedLead": [
+        "Agostino Zhao Rong",
+        "Luigi Versiglia",
+        "Callisto Caravario"
+      ],
+      "note": "Vatican Oct 2000 Mass canonized 123 total: 120 Chinese Martyrs including these two Salesian martyrs, and 3 distinct other saints; 117 cohort identities remain unexpanded.",
+      "overlapEvidenceUrls": [
+        "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/10/01/0568/01964.html",
+        "https://www.causesanti.va/it/santi-e-beati/luigi-versigliae-e-callisto-caravario.html",
+        "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/09/22/0550/01911.html"
+      ]
     }
   ],
   "persons": [
@@ -4320,6 +4423,208 @@
       },
       "sources": [
         "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1999.html"
+      ]
+    },
+    {
+      "id": "saint.maria-faustyna-kowalska",
+      "name": "Maria Faustyna Kowalska",
+      "canonizedOn": "2000-04-30",
+      "canonizationEventId": "canon-2000-04-30",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-04-30"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.cristobal-magallanes",
+      "name": "Cristóbal Magallanes",
+      "canonizedOn": "2000-05-21",
+      "canonizationEventId": "canon-2000-05-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-05-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.martyrs-mexico-1927"
+      ]
+    },
+    {
+      "id": "saint.jose-maria-de-yermo-y-parres",
+      "name": "José María de Yermo y Parres",
+      "canonizedOn": "2000-05-21",
+      "canonizationEventId": "canon-2000-05-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-05-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.maria-de-jesus-sacramentado-venegas",
+      "name": "María de Jesús Sacramentado Venegas de la Torre",
+      "canonizedOn": "2000-05-21",
+      "canonizationEventId": "canon-2000-05-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-05-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.agostino-zhao-rong",
+      "name": "Agostino Zhao Rong",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.martyrs-china-1648-1930"
+      ]
+    },
+    {
+      "id": "saint.maria-josefa-sancho-de-guerra",
+      "name": "María Josefa del Corazón de Jesús Sancho de Guerra",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.katharine-drexel",
+      "name": "Katharine Drexel",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.giuseppina-bakhita",
+      "name": "Giuseppina Bakhita",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ]
+    },
+    {
+      "id": "saint.luigi-versiglia",
+      "name": "Luigi Versiglia",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.martyrs-china-1648-1930"
+      ]
+    },
+    {
+      "id": "saint.callisto-caravario",
+      "name": "Callisto Caravario",
+      "canonizedOn": "2000-10-01",
+      "canonizationEventId": "canon-2000-10-01",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2000-10-01"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+      ],
+      "canonizationGroupIds": [
+        "canon-group.martyrs-china-1648-1930"
       ]
     }
   ]
