@@ -11,7 +11,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
-import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
@@ -114,6 +114,9 @@ function installStyle(win){
 }
 
 export function createFindOwner(win=globalThis){
+  // Opt-in cinematic design review, using the *real* 151 canonical events.
+  const bibleCinemaPreview=new URLSearchParams(String(win?.location?.search??"")).get("atlasCinema")==="1";
+  let bibleCinemaFollow=true,bibleCinemaSheetExpanded=false,bibleCinemaPlateTimer=null;
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
@@ -301,7 +304,9 @@ export function createFindOwner(win=globalThis){
     // replace the bounded-world map or recreate it on every timeline event.
     if(state.bibleAtlas){
       const atlasStops=buildBibleAtlas(data?.biblePlaces?.entries??[]);
-      node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex});
+      node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex,
+       cinematicPreview:bibleCinemaPreview,cinemaFollow:bibleCinemaFollow,
+       cinemaSheetExpanded:bibleCinemaSheetExpanded});
       // Place the selected source stop under the timeline cursor before async map
       // loading; the initial scroll origin must never nominate Creation by mistake.
       centerBibleMilestone(state.bibleIndex);
@@ -323,6 +328,15 @@ export function createFindOwner(win=globalThis){
         });
         if(token!==paintToken||!openState||!state.bibleAtlas){handle?.destroy?.();return false;}
         mapHandle=handle;
+        if(bibleCinemaPreview){
+          // Manual map drag suspends camera follow. Timeline selection keeps
+          // updating source-backed pins without seizing the viewport.
+          handle?.map?.on?.("dragstart",()=>{
+            if(!openState||!state.bibleAtlas)return;
+            bibleCinemaFollow=false;
+            getRoot(win)?.querySelector?.("[data-bible-follow]")?.setAttribute?.("aria-pressed","false");
+          });
+        }
         updateBibleIndex(state.bibleIndex);
       }catch(error){
         try{win?.console?.error?.("Biblical Atlas map unavailable",error)}catch{}
@@ -591,13 +605,29 @@ export function createFindOwner(win=globalThis){
     });
     const detail=root?.querySelector?.("[data-bible-detail]");
     if(detail)detail.innerHTML=atlasDetail(active,lang);
+    if(bibleCinemaPreview){
+      const sheetTitle=root?.querySelector?.("[data-bible-sheet-title]");
+      if(sheetTitle)sheetTitle.textContent=lang==="fr"?active.title_fr:active.title_en;
+      root?.querySelectorAll?.("[data-bible-chapter]")?.forEach(button=>{
+        const chapter=stops[Number(button.dataset.bibleChapter)];
+        button.setAttribute("aria-pressed",String(chapter?.era===active.era));
+      });
+    }
     const title=root?.querySelector?.("[data-bible-era-name]");
     if(title)title.textContent=lang==="fr"?
       ({ORIGINS:"Les origines",PATRIARCHS:"Les Patriarches",EXODUS:"L'Exode",ISRAEL:"Israël et les Prophètes",EXILE:"Exil et restauration",INFANCY:"L'Incarnation",PUBLIC:"La Vie publique",PASSION:"La Passion",RESURRECTION:"La Résurrection",APOSTLES:"L'Église apostolique",REVELATION:"L'Apocalypse"})[active.era]:
       ({ORIGINS:"The Beginnings",PATRIARCHS:"The Patriarchs",EXODUS:"The Exodus",ISRAEL:"Israel and the Prophets",EXILE:"Exile and Restoration",INFANCY:"The Incarnation",PUBLIC:"The Public Ministry",PASSION:"The Passion",RESURRECTION:"The Resurrection",APOSTLES:"The Apostolic Church",REVELATION:"The Apocalypse"})[active.era];
     if(previous?.era!==active.era&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true){
       const overlay=root?.querySelector?.("[data-bible-era-overlay]");
-      if(overlay)overlay.innerHTML=atlasEraOverlay(active.era,lang);
+      if(overlay){
+        overlay.innerHTML=bibleCinemaPreview?atlasCinemaPlate(active.era,lang):atlasEraOverlay(active.era,lang);
+        if(bibleCinemaPreview){
+          if(bibleCinemaPlateTimer)win.clearTimeout?.(bibleCinemaPlateTimer);
+          bibleCinemaPlateTimer=win.setTimeout?.(()=>{
+            if(overlay.isConnected)overlay.replaceChildren();
+          },2400);
+        }
+      }
     }
     const mapStage=root?.querySelector?.(".aoBibleAtlasMapStage");
     const unlocated=atlasMapItems(stops,index).length===0;
@@ -615,14 +645,15 @@ export function createFindOwner(win=globalThis){
       if(!active.geo){
         try{map.setPaintProperty?.("ao-explore-points","circle-color","#79909f");}catch{}
       }
-      if(!active.geo&&previous?.era!==active.era){
+      if((!bibleCinemaPreview||bibleCinemaFollow)&&!active.geo&&previous?.era!==active.era){
         try{map.easeTo?.({center:[35,31],zoom:3.6,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});}catch{}
       }
       if(active.geo){
         const key="atlas:"+active.geo.key;
         try{
           map.setPaintProperty?.("ao-explore-points","circle-color",["case",["==",["get","item_id"],key],"#edcb86","#79909f"]);
-          map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
+          if(!bibleCinemaPreview||bibleCinemaFollow)
+           map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
         }catch{}
       }
     };
@@ -665,16 +696,48 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
       state.bibleAtlas=true;state.bibleIndex=0;
+      bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;
       lastMapView=null;lastMapLens=null;
-      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
+      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&!bibleCinemaPreview&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
     }
     if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
-      event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
+      event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;
+      if(bibleCinemaPlateTimer)win.clearTimeout?.(bibleCinemaPlateTimer);
+      bibleCinemaFollow=true;bibleCinemaSheetExpanded=false;mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
+    }
+    if(bibleCinemaPreview&&state.bibleAtlas){
+      const chapter=target?.closest?.("[data-bible-chapter]");
+      if(chapter){
+        event.preventDefault?.();
+        const index=Number(chapter.dataset.bibleChapter);
+        if(Number.isInteger(index)){updateBibleIndex(index,{center:true});}
+        return;
+      }
+      if(target?.closest?.("[data-bible-chapter-dismiss]")){
+        event.preventDefault?.();
+        if(bibleCinemaPlateTimer)win.clearTimeout?.(bibleCinemaPlateTimer);
+        getRoot(win)?.querySelector?.("[data-bible-era-overlay]")?.replaceChildren?.();
+        return;
+      }
+      const toggle=target?.closest?.("[data-bible-sheet-toggle]");
+      if(toggle){
+        event.preventDefault?.();
+        bibleCinemaSheetExpanded=!bibleCinemaSheetExpanded;
+        toggle.setAttribute("aria-expanded",String(bibleCinemaSheetExpanded));
+        const sheet=toggle.closest?.(".aoBibleAtlasDetail");
+        if(sheet)sheet.dataset.bibleSheet=bibleCinemaSheetExpanded?"expanded":"collapsed";
+        return;
+      }
     }
     const atlasStep=target?.closest?.("[data-bible-step]");
     if(atlasStep&&state.bibleAtlas){event.preventDefault?.();updateBibleIndex(Number(atlasStep.dataset.bibleStep),{center:true});return;}
     if(target?.closest?.("[data-bible-follow]")&&state.bibleAtlas){
-      event.preventDefault?.();centerBibleMilestone(state.bibleIndex);updateBibleIndex(state.bibleIndex);return;
+      event.preventDefault?.();
+      if(bibleCinemaPreview){
+        bibleCinemaFollow=true;
+        target.closest("[data-bible-follow]")?.setAttribute("aria-pressed","true");
+      }
+      centerBibleMilestone(state.bibleIndex);updateBibleIndex(state.bibleIndex);return;
     }
     const retry=target?.closest?.("[data-find-retry]");
     if(retry){
