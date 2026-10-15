@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {Buffer} from "node:buffer";
+import {gzipSync} from "node:zlib";
 import {readFileSync} from "node:fs";
 import {extractReviewedEdition} from "../src/source-text/edition-adapters.js";
 import {packageSourceDocument} from "../src/source-text/package.js";
@@ -44,6 +45,8 @@ const bundle=packageSourceDocument(doc,{chunkSize:50});
 assert.equal(bundle.manifest.chunks.length,24);
 const manifestBytes=Buffer.byteLength(JSON.stringify(bundle.manifest),"utf8");
 const textBytes=Object.values(bundle.chunks).reduce((sum,s)=>sum+Buffer.byteLength(s,"utf8"),0);
+const metadataGzipBytes=gzipSync(JSON.stringify(bundle.manifest)).byteLength;
+const chunkGzipBytes=Object.values(bundle.chunks).reduce((sum,s)=>sum+gzipSync(s).byteLength,0);
 let requests=0;
 const reader=createSourceTextReader({manifest:bundle.manifest,loadChunk:async path=>{
  requests++;return bundle.chunks[path];
@@ -84,5 +87,6 @@ assert.equal(extractReviewedEdition({work:demo,review:{...ordinal,locatorStabili
  sourceText:"# Title\n\nOne."}).passages.length,1);
 console.log("PASS source-text edition adapter and large synthetic corpus: 23 total metadata work IDs (13 inherited + 10 candidates); 1,200 passages; 24 chunks");
 console.log(JSON.stringify({syntheticPassages:1200,syntheticChunks:24,metadataBytes:manifestBytes,
- syntheticBodyBytes:textBytes,metadataOnlyChunkRequests:0,firstOpenChunkRequests:1,
+ syntheticBodyBytes:textBytes,metadataGzipBytes,syntheticChunkGzipBytes:chunkGzipBytes,
+ metadataOnlyChunkRequests:0,firstOpenChunkRequests:1,
  fullTextChunkRequests:24,thirdPartyTextImported:0,productionSavings:"NOT_MEASURED"}));
