@@ -123,7 +123,9 @@
     "updatedSaintFeastGap": "NOT_MEASURABLE_FROM_RECOVERED_W59_MANIFEST_ALONE",
     "manualCorroboratedExistingProperOriginals": 2,
     "sameObjectMuseumAccessionProperOriginals": 1,
-    "verifiedFalsePositiveObjectLinks": 1
+    "verifiedFalsePositiveObjectLinks": 1,
+    "historicProperArtAssignedRows": 49,
+    "historicProperRowsWithoutArtwork": 1
   },
   "physicalProperArtworks": [
     {
@@ -3290,7 +3292,7 @@
   ],
   "coverageRecalculationBlocker": {
     "priorReportedMissingSaintFeastEntries": 149,
-    "reason": "W59 contains only historical summary 311 components/252 dates, legacy 87 rule identities, and 27 date overrides. It does NOT serialize an exhaustive 1962 authoritative 149-row feast coverage list nor a crosswalk from 2026 date IDs to current artwork IDs; W57/W58 and 83 Breviarium plates are not available as complete machine-readable source files in examined branches.",
+    "reason": "W59 contains only historical summary 311 components/252 dates, legacy 87 rule identities, and 27 date overrides. It does NOT serialize an exhaustive 1962 authoritative 149-row feast coverage list nor a crosswalk from 2026 date IDs to current artwork IDs; W57/W58 and 83 Breviarium plates are not available as complete machine-readable source files in examined branches. Also, W59's 50 Proper rows include one legacy NO_ART status, not 50 painting assignments; this old no-art state is not a permanent current rejection.",
     "minimumRequired": [
       "authoritative date/feast identity rows for the baseline 149",
       "current W57/W58 dated approved placement ledger and exact artwork IDs",
@@ -3299,5 +3301,17 @@
     ],
     "safestCurrentClaim": "Number of 149 genuinely still uncovered is INDETERMINATE, not 149 and not 149 minus historical rules. No new certified feast coverage from mere categories or old resolver approval."
   },
-  "noNewScoringSheetYet": "Unmatched proper records and named-file leads are research candidates only; any may already be covered by W55/W56/Breviarium or user-reviewed images with different source aliases. Do not show another user rating sheet before exhaustive physical matching."
+  "noNewScoringSheetYet": "Unmatched proper records and named-file leads are research candidates only; any may already be covered by W55/W56/Breviarium or user-reviewed images with different source aliases. Do not show another user rating sheet before exhaustive physical matching.",
+  "legacyProperUnassignedRows": [
+    {
+      "properPath": "Tempora/Pent16-0",
+      "label": "Sixteenth Sunday after Pentecost",
+      "status": "NO_ART",
+      "relationship": "DAY_ART",
+      "decisionSource": "PM7/PM8",
+      "note": "Intentional NO_ART: no painting cleared at the required standard; weak prints remain excluded.",
+      "currentUserRating": null,
+      "reviewStatus": "LEGACY_MAPPING_NOT_CURRENT_USER_APPROVAL"
+    }
+  ]
 }
