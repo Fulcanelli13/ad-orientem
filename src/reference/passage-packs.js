@@ -29,6 +29,7 @@ function assertManifest(manifest){
      !FILE.test(s.file)||!HASH.test(s.sha256)||files.has(s.file)||ids.has(s.id)||
      !Number.isSafeInteger(s.byteSize)||s.byteSize<1||
      !Array.isArray(s.passageIds)||!s.passageIds.length||
+     new Set(s.passageIds).size!==s.passageIds.length||
      !s.passageIds.every(id=>PASSAGE.test(id)&&id.startsWith(s.id+":p")&&!ids.has(id)))
    throw new Error("SOURCE_PACK_SECTION_INVALID");
   files.add(s.file);ids.add(s.id);
