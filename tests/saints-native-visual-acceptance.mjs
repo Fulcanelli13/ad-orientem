@@ -118,7 +118,7 @@ try{
    const query=page.locator('#ao-find-modular-root [data-find-query]');
    await query.fill("Stigmata");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
-   await query.fill("Therese");
+   await query.fill("Lisieux");
    await page.waitForFunction(()=>document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent==="1");
    await page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first().click();
    const thSheet=page.locator("#ao-find-modular-root .aoSaintPlaceSheet");
