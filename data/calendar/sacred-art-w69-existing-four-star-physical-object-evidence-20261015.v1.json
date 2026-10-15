@@ -1,0 +1,187 @@
+{
+  "schema": "AO_SACRED_ART_W69_FOUR_EXISTING_4STAR_OBJECT_EVIDENCE_V1",
+  "date": "2026-10-15",
+  "status": "EXISTING_REVIEW_IDS_EVIDENCE_ONLY_NOT_NEW_CATALOGUE_OR_CURATORIAL_RATINGS",
+  "authoritativeOwnerPR": 887,
+  "branch": "platform/885-sacred-art-candidates",
+  "pinnedInputs": {
+    "w49": {
+      "path": "data/calendar/sacred-art-w49-post-w48-ratings-and-gaps-20261014.v1.json",
+      "blobSHA": "86acb3686c6b2eeeb34c2aee197f97fce2fe84d3"
+    },
+    "w48": {
+      "path": "data/calendar/sacred-art-w48-user-full-snapshot-20261014.v1.json",
+      "blobSHA": "eaa5cf63418bd988931f4873522b613b29fc43ed"
+    },
+    "w68": {
+      "path": "data/calendar/sacred-art-w68-w67-r1-explicit-user-scores-20261015.v1.json",
+      "blobSHA": "a88220b38a3d90a3cdeb9552ea93b9bf9f853537"
+    }
+  },
+  "purpose": "Before researching replacements for the two W67 Saints subjects without 5-star placements, identify the physical original of the FOUR ALREADY RATED FOUR-STAR source cards; these are NOT newly rated or approved.",
+  "records": [
+    {
+      "candidateId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "previousHumanRating": 4,
+      "previousRank": 1,
+      "originalPainting": {
+        "artist": "Domenico Antonio Vaccaro",
+        "subject": "The Immaculate Virgin appearing to Saint Bonaventure",
+        "displayName": "Visione mistica di San Bonaventura",
+        "year": 1696,
+        "material": "oil on canvas",
+        "dimensionsCm": {
+          "height": 200,
+          "width": 240
+        },
+        "holder": "Museo dell'Opera di San Lorenzo Maggiore, Naples",
+        "accession": null,
+        "exactMuseumInventoryNumberConfirmed": false,
+        "originalSource": "https://www.treccani.it/enciclopedia/domenico-antonio-vaccaro_%28Dizionario-Biografico%29/"
+      },
+      "viewedFile": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+      "externalSupportingEvidence": [
+        "https://arte.it/opera/visione-mistica-di-san-bonaventura-5081",
+        "https://www.treccani.it/enciclopedia/domenico-antonio-vaccaro_%28Dizionario-Biografico%29/"
+      ],
+      "sourceFacts": "Treccani records 1696 and original at San Lorenzo Maggiore; Arte.it describes oil on canvas 200×240cm, located in its museum, formerly in the church's St Bonaventure chapel.",
+      "reviewedPhotographMatchesExactPhysicalObject": false,
+      "photographLicenseVerified": false,
+      "physicalRelationState": "STRONG_TITLE_ARTIST_CUSTODIAN_CORROBORATION_BUT_EXACT_REVIEWED_FILE_AND_INVENTORY_UNVERIFIED",
+      "reviewReuse": false,
+      "whyHeld": "Commons file URL inaccessible in this check; cannot verify whether original work, reproduction and crop on scored card are the same; no accession yet."
+    },
+    {
+      "candidateId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "previousHumanRating": 4,
+      "previousRank": 2,
+      "originalPainting": {
+        "artist": "Bernardino Mei",
+        "subject": "Saint Catherine of Siena",
+        "displayName": "Santa Caterina da Siena",
+        "year": 1641,
+        "material": "painting",
+        "dimensionsCm": null,
+        "holder": "Pinacoteca, Certosa del Galluzzo, Florence",
+        "accession": null,
+        "exactMuseumInventoryNumberConfirmed": false,
+        "originalSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg"
+      },
+      "viewedFile": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+      "commons": {
+        "sizePx": {
+          "width": 2592,
+          "height": 3208
+        },
+        "fileSizeBytes": 4215747,
+        "sha1Declared": "af3346742122c50872645bf47f06b5661e40d87d",
+        "photographer": "Sailko",
+        "photoLicense": "CC BY 3.0",
+        "photoLicenseURL": "https://creativecommons.org/licenses/by/3.0/",
+        "metadataSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg"
+      },
+      "reviewedPhotographMatchesExactPhysicalObject": false,
+      "photographLicenseVerifiedAsFilePageClaim": true,
+      "physicalRelationState": "COMMONS_OBJECT_DESCRIPTION_NO_MUSEUM_ACCESSION_AND_NO_INDEPENDENT_PIXEL_CHECK",
+      "reviewReuse": false,
+      "whyHeld": "Commons page records location/creator and a CC BY 3.0 photographer file; no independently checked museum accession or exact reviewed screenshot pixel hash. Need credit and license conditions before use."
+    },
+    {
+      "candidateId": "C32:cristofanoallorisaintcatherineofsienajpg",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "previousHumanRating": 4,
+      "previousRank": 3,
+      "originalPainting": {
+        "artist": "attributed to Cristofano Allori (NOT unconditional autograph)",
+        "subject": "Saint Catherine of Siena in prayer",
+        "displayName": "Sainte Catherine de Sienne en prière",
+        "period": "1620–1630 per POP museum notice",
+        "material": "oil on canvas",
+        "dimensionsCm": {
+          "height": 125,
+          "width": 96.6
+        },
+        "holder": "Musée de Picardie, Amiens",
+        "accession": "M.P.2004.17.34",
+        "historicalAccessionAliases": [
+          "M.P.D.134",
+          "Campana 602",
+          "148"
+        ],
+        "exactMuseumInventoryNumberConfirmed": true,
+        "originalSource": "https://pop.culture.gouv.fr/notice/joconde/08120003397"
+      },
+      "viewedFile": "https://commons.wikimedia.org/wiki/File:Cristofano_Allori%2C_Saint_Catherine_of_Siena.jpg",
+      "commons": {
+        "sizePx": {
+          "width": 3328,
+          "height": 3982
+        },
+        "fileSizeBytesApprox": 3550000,
+        "photographer": "Dguendel",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseURL": "https://creativecommons.org/licenses/by/4.0/",
+        "metadataSource": "https://commons.wikimedia.org/wiki/File:Cristofano_Allori%2C_Saint_Catherine_of_Siena.jpg"
+      },
+      "replicaGuard": "POP treats Amiens picture as possible autograph replica of distinct Dallas version; numerous copies and prior Zurbarán attribution documented. Never merge Amiens object with Dallas/other variants by title or photo.",
+      "reviewedPhotographMatchesExactPhysicalObject": false,
+      "photographLicenseVerifiedAsFilePageClaim": true,
+      "physicalRelationState": "EXACT_MUSEUM_ACCESSION_AND_SEPARATE_COMMONS_FILE_IDENTIFIED_PIXEL_EQUIVALENCE_STILL_HELD",
+      "reviewReuse": false,
+      "whyHeld": "Official POP catalogue credits painting as 'attribué à' Allori, not authenticated autograph; multiple copies, and Commons file uploader differs from museum credited photograph. Exact historical reviewed pixels still unverified."
+    },
+    {
+      "candidateId": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "previousHumanRating": 4,
+      "previousRank": 1,
+      "originalPainting": {
+        "artist": "Giambattista Tiepolo",
+        "subject": "St Catherine of Siena",
+        "displayName": "Hl. Katharina von Siena",
+        "material": "painting",
+        "holder": "Kunsthistorisches Museum, Vienna",
+        "accession": "GG 348",
+        "officialObjectId": "414e773d5b",
+        "exactMuseumInventoryNumberConfirmed": true,
+        "originalSource": "https://www.khm.at/de/object/414e773d5b/"
+      },
+      "viewedFile": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+      "commons": {
+        "sizePx": {
+          "width": 1239,
+          "height": 1573
+        },
+        "fileSizeBytesApprox": 643000,
+        "source": "Kunsthistorisches Museum",
+        "photoLicense": "Public Domain Mark / faithful PD-Art reproduction on Commons",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "metadataSource": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg"
+      },
+      "reviewedPhotographMatchesExactPhysicalObject": false,
+      "photographLicenseVerifiedAsFilePageClaim": true,
+      "physicalRelationState": "EXACT_MUSEUM_ACCESSION_IDENTIFIED_REVIEWED_IMAGE_PIXELS_AND_CROP_UNVERIFIED",
+      "reviewReuse": false,
+      "whyHeld": "KHM official object URL returned a 403 in the present check, but Commons carries GG 348 and museum official object ID. Source image is only 1239×1573; inspect quality/crop before publication and keep jurisdictional PD-Art caveat."
+    }
+  ],
+  "globalConstraints": {
+    "scoresUnchanged": true,
+    "artistExclusions": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "noPermissionRequests": true,
+    "noPaidLicenses": true,
+    "noProductionMediaReleased": true,
+    "noSuitabilityInferred": true,
+    "noNewCanonicalPhysicalArtDatabase": true
+  },
+  "next": "Resolve prior rating-card preview versus physical-object file identity; maintain four-star status until the user's explicit final aesthetic decision. Reconcile existing five-star ownership before commissioning new discovery for subjects."
+}
