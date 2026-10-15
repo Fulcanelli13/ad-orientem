@@ -324,7 +324,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 66,
-  places: 247,
+  places: seed.places.length + 1,
   directoryPlaceLinks: 1,
 });
 
