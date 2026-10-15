@@ -1,0 +1,50 @@
+name: Biblical Atlas 37 Scripture reading chapters
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/bible-atlas-reading-chapters.js"
+      - "src/find/bible-atlas.js"
+      - "src/find/browser-entry.js"
+      - "tests/atlas-scripture-reading-chapters.mjs"
+      - "tests/atlas-scripture-reading-chapters-phone.mjs"
+      - ".github/workflows/atlas-scripture-reading-chapters.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate source links, cardinalities and syntax
+        run: |
+          node --check src/find/bible-atlas-reading-chapters.js
+          node --check src/find/bible-atlas.js
+          node --check src/find/browser-entry.js
+          node tests/atlas-scripture-reading-chapters.mjs
+          node tests/explore-atlas-cinematic-151.mjs
+          node tests/explore-bible-atlas-151.mjs
+  phone:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Confirm unflagged app entry, 37 contents, Scripture and resume
+        run: node tests/atlas-scripture-reading-chapters-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-37-reading-chapters-phone-review
+          path: test-output/atlas-reading-chapters/*.png
+          if-no-files-found: warn
