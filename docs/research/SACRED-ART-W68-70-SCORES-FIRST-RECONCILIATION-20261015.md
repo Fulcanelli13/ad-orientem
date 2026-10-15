@@ -29,7 +29,7 @@ No 'perfect for theme' choice is recorded.
 
 **31 of the 33 reviewed saint subjects already have at least one W49 5/5 candidate placement**. This does not certify physical-art image identity, saint-specific iconography, nor technical release, but means immediately asking for another broad round for these saints would duplicate established aesthetic curation.
 
-The two subjects among these 33 with **no existing W49 5/5 placement** are **Saint Bonaventure** and **Saint Catherine of Siena**. Their newly reviewed candidates were both scored 3/5 (two candidates each); neither has a new four or five. Prioritize *actual new research* for genuinely uncovered subjects **after** reconciling parallel selected-artwork records and visual identity; no obligation to settle with those three-star works.
+The two subjects among these 33 with **no existing W49 5/5 placement** are **Saint Bonaventure** and **Saint Catherine of Siena**. Their newly reviewed candidates were scored 3/5 (two candidates each); neither has a new four or five. **Do not launch new research yet:** W49 already retains **one previously rated 4/5 candidate for Bonaventure** (Domenico Vaccaro's *Vision of St Bonaventura*, `C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum`) and **three previously rated 4/5 candidates for Catherine of Siena** (Bernardino Mei, Cristofano Allori and Giambattista Tiepolo). Preserve these four existing scores; reconcile their exact photographed paintings and suitability before concluding the subjects need additional discovery. A four is pending user selection, not a five-star approval.
 
 ## New rejected originals (add to global exact-object exclusion union)
 
@@ -106,7 +106,7 @@ Earlier five placements are not proven unique physical paintings or correct solo
 1. **Lock recorded scores** as a new explicit W68 authority and add the eight rejected source IDs to *all future candidate filters*; do not overwrite previous score ledgers.
 2. **Apply the user's sourceIssue flags** to exact photo/object technical holds; identify Commons source objects, original-photo mismatch, provenance, available licence status and actual bytes.
 3. **Defer 28 four-star alternates:** these are not approvals; keep them for user-choice comparison only when needed against the existing already-approved five-star selections. Do not automatically re-display them simply to achieve five.
-4. **Target actual missing iconography** (not raw date counts), with initial scrutiny of Bonaventure/Catherine of Siena among these reviewed subjects. Avoid a broad second 70-image gallery until all existing five-star records and module links are reconciled.
+4. **Target actual missing iconography** (not raw date counts), after reconciling the one existing Bonaventure four-star and three Catherine of Siena four-star candidates before searching for replacement works. Avoid a broad second 70-image gallery until existing artwork IDs and cross-module reuse have been reconciled.
 5. **Repair the gallery progress semantics** for any next batch: show *numeric scores recorded* and *optional suitability choices recorded* separately. The old conjunction misreported 70 scored images as 2 complete.
 
 No imagery published, no licence sought, no permission outreach, no score altered and no live app change.
