@@ -31,11 +31,29 @@
       "edition": "W. H. Sadlier, 1889, 404 pages",
       "witnessKind": "HISTORICAL_PRINT_BIBLIOGRAPHIC",
       "url": "https://books.google.com/books/about/Illustrated_Bible_History_of_the_Old_and.html?id=C3L8zwEACAAJ",
-      "physicalScan": "NOT_LOCATED_OR_EXAMINED",
+      "physicalScan": "NOT_LOCATED_OR_EXAMINED; ALTERNATE 1925 HISTORICAL ENGLISH SCAN NOW AVAILABLE",
       "titlePageRead": false,
       "tocRead": false,
       "textRead": false,
       "importEligibility": "HOLD"
+    },
+    {
+      "id": "SCHUSTER-EN-1925-HERDER-LONDON-19TH",
+      "language": "en",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "Nineteenth edition, B. Herder, 33 Queen Square London, 1925, 410 scanned pages, Digital Library of India physical paper copy",
+      "witnessKind": "HISTORICAL_SCAN_FOUND_WITH_RAW_OCR_AND_PRINTED_TOC_IN_OCR",
+      "sourceUrl": "https://archive.org/details/in.ernet.dli.2015.49638",
+      "sourceTextUrl": "https://archive.org/stream/in.ernet.dli.2015.49638/2015.49638.1373-The-Illustrated-Bible-History-1925_djvu.txt",
+      "archiveItemIdentifier": "in.ernet.dli.2015.49638",
+      "observedTitleViaRawOCR": "The Illustrated Bible History of the Old and New Testaments, Rev. I. Schuster, Nineteenth Edition, B. Herder, London",
+      "observedPrefatoryStructure": "Publisher preface says the school history presents biblical narratives and leaves explanations to teachers, referring readers to Bishop Knecht's Practical Commentary.",
+      "observedFirstEightTOC": "I Creation; II Creation and Fall of Angels; III Creation of First Man, Paradise, Eve; IV Fall; V Cain and Abel; VI Deluge; VII Noe's Offering; VIII Tower of Babel. Matches topic/order in modern 32nd-edition publisher preview.",
+      "physicalImagesDirectlyInspected": false,
+      "tocReadFromArchiveOCR": true,
+      "ocrStatus": "UNCHECKED_AUTO_OCR_WITH_VISIBLE ERRORS_NO_SOURCE_PARAGRAPH_CERTIFICATION",
+      "importEligibility": "HOLD_HISTORICAL_PAGE_IMAGE_COLLATION_AND_TRANSLATION_RIGHTS_REVIEW",
+      "rightsRemark": "1925 printed historical edition, original English translator/adaptor identity must be established; Internet Archive dc.rights is not a universal worldwide release certificate."
     },
     {
       "id": "SCHUSTER-EN-1950-32ND-TAN-2014",
@@ -298,7 +316,7 @@
       "code": "SCHUSTER_EN_PREVIEW_COPYRIGHT",
       "scope": "TAN 2014 32nd edition, 1950 imprimatur and modern typographical rights",
       "status": "MODERN_COPY_NOT_APP_IMPORTABLE_AS_IS",
-      "remedy": "Work from independently examined historic eligible publication, not the current publisher's typeset PDF."
+      "remedy": "Use 1925 Herder historic edition as primary candidate print-image witness (not TAN 2014 reprint). Do not copy modern TAN typesetting."
     },
     {
       "code": "FR_SCAN",
@@ -329,6 +347,12 @@
       "scope": "New AI-assisted EN/FR translation from verified source",
       "status": "PERMITTED_NOT_STARTED",
       "remedy": "Prefer historic human editions; where translation needed, preserve source author's exact meaning/structure, cite source segments, label as AI-assisted and require manual review."
+    },
+    {
+      "code": "SCHUSTER_HISTORICAL_1925_OCR",
+      "scope": "1925 B. Herder nineteenth English edition, Internet Archive DLI",
+      "status": "SCAN_LOCATED_AUTO_OCR_NOT_IMAGE_PROOFREAD",
+      "remedy": "Verify physical title and 8 Origins chapter boundaries from scanned page images, record print-page/image offsets, then collate complete paragraphs; do not use raw OCR directly as published text."
     }
   ],
   "counts": {
@@ -339,7 +363,10 @@
     "historicEnglish1889PagesRead": 0,
     "modernPreviewContentsPagesInspected": 1,
     "sourceParagraphsApproved": 0,
-    "aiNarrativeWords": 0
+    "aiNarrativeWords": 0,
+    "historicEnglish1925ScansLocated": 1,
+    "historicEnglish1925RawOcrTocsRead": 1,
+    "historicEnglish1925PageImagesProofread": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
