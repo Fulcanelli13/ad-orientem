@@ -14,6 +14,22 @@ An actual **1925 nineteenth English edition** of Schuster, printed by **B. Herde
 
 This historical 1925 print is a much stronger candidate witness than TAN's modern 2014 preview, though the 1889 Sadlier original remains catalogued but not scanned in this research. **Raw OCR is full of visible errors; the 1925 printed images have NOT been independently checked at paragraph level.** Image-based proofreading, printed pagination, edition/translation lineage and territorial rights must be reviewed before any source passage is accepted.
 
+## Source-boundary advance — 1910 Knecht page-linked transcription
+
+The **1910 Knecht original scan is page-indexed on Wikimedia Commons/Wikisource**: https://commons.wikimedia.org/wiki/File:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu . Its Wikisource individual page transcriptions are explicitly **not proofread**. Nevertheless, they permit precise source-territory locations that can be verified against physical printed images by the existing source parser.
+
+| Original section | Narrative territory in scan | Separate commentary territory | Scriptural chapter tag |
+|---|---|---|---|
+| Chapter I, Creation | DJVU pp. 41–43; the **COMMENTARY** heading starts mid-page 43 | DJVU pp. 43–47; Chapter II starts mid-page 47 | Genesis 1:1–2:3 |
+| Chapter IV Part I, the Fall | DJVU pp. 57–59; **COMMENTARY** starts mid-page 59 | DJVU pp. 59–62; Chapter IV Part II starts mid-page 62 | Genesis 3:1–13 |
+| Chapter IV Part II, punishment and promise | DJVU pp. 62–64; **COMMENTARY** starts mid-page 64 | DJVU pp. 64–66; Chapter V starts mid-page 66 | Genesis 3:14–24 |
+
+Direct source page checks: [Creation starts /41](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/41), [Creation switches to commentary /43](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43); [Fall Part I /57](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/57), [its commentary /59](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/59); [Fall Part II /62](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/62), [its commentary /64](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/64), [new chapter /66](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/66).
+
+**Specific parsing implication:** separate narrative and commentary at the correct headings **inside a printed page**, never by page number alone or by taking all HTML between two chapter-number headings. Printed-page footnotes are a third type of territory. Source identity remains **Knecht 1910**, not a declaration that its English narrative wording equals Schuster 1925 or Couissinier 1887 word for word.
+
+**Current evidence tier:** original-scanned-book page IDs and independently readable *unproofread transcriptions*, not print-image proofreading. 3 narrative + 3 commentary territories located; **0 fully proofread paragraphs and 0 approved author prose**, and no artwork or modern-edition text imported. Follow-up image/word collation belongs to **PR #1229**. No permission requests.
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
