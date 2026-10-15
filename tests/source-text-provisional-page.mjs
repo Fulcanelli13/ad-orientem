@@ -51,6 +51,11 @@ assert.equal(ambroseWitness.decision,"KEEP_DISTINCT_DO_NOT_AUTONORMALIZE");
 assert.ok(byId.get("P257-09").text.includes(ambroseWitness.witnessReading));
 assert.ok(!byId.get("P257-09").text.includes(ambroseWitness.primaryWitnessReading));
 assert.ok(variants.comparisons.some(x=>x.field==="original_witness_wording"&&x.secondaryReading==="before the service"));
+const justin=variants.comparisons.find(x=>x.id==="SC257-005");
+assert.equal(justin.witnessReading,"(lxv–lxvi)");
+assert.equal(justin.status,"PRELIMINARY_PRINT_IMAGE_AND_SECONDARY_CORROBORATION");
+assert.ok(byId.get("P257-04").text.includes("(lxv–lxvi)"));
+assert.ok(!byId.get("P257-04").text.includes("(lxv–lxvii)"));
 
 const audit=auditProvisionalPage({plan,pageDraft:draft});
 assert.equal(audit.printedPage,257);
