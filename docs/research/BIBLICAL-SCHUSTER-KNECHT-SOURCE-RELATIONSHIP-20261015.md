@@ -30,6 +30,30 @@ Direct source page checks: [Creation starts /41](https://en.wikisource.org/wiki/
 
 **Current evidence tier:** original-scanned-book page IDs and independently readable *unproofread transcriptions*, not print-image proofreading. 3 narrative + 3 commentary territories located; **0 fully proofread paragraphs and 0 approved author prose**, and no artwork or modern-edition text imported. Follow-up image/word collation belongs to **PR #1229**. No permission requests.
 
+### Complete first eight source chapters — 18 checked heading territories
+
+A later targeted transcription audit followed the **actual original 1910 Knecht printed chapter order from Genesis through Babel** and extends the initial six records into **18 alternating textual territories** (nine narrative, nine commentary, because Chapter IV has two separately narrated parts). The original 1910 edition's printed-pagina offset is `DJVU_page - 38` throughout the opening book.
+
+| Source chapter | Narrative DJVU scan-page territory | Separate commentary territory | Evidence source |
+|---|---|---|---|
+| I — Creation | 41–43 | 43–47 | [p43](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/43) |
+| II — The Angels | 47–48 | 48–51 | [p48](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/48) |
+| III — Adam and Paradise | 51–53 | 53–57 | [p53](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/53) |
+| IV.I — The Fall | 57–59 | 59–62 | [p59](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/59) |
+| IV.II — Punishment and promise | 62–64 | 64–66 | [p64](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/64) |
+| V — Cain and Abel | 66–69 | 69–72 | [p69](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/69) |
+| VI — The Flood | 72–76 | 76–79 | [p76](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/76) |
+| VII — Noah's Offering | 79–82 | 82–84 | [p82](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/82) |
+| VIII — Babel | 84–86 | 86–89 | [p86](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/86) |
+
+**Do not count the boundaries as approved source paragraphs.** The Wikisource page-linked transcription establishes the *location* of heading changes, frequently **within the same page**, but most pages are not proofread. Pages 75, 80 and 85 bear Wikisource's *proofread but not validated* status; that is not our independent character-by-character printed-image review. Attempts to retrieve the full 1910 DJVU's rendered images or the separate 1925 English Schuster historic scan were unsuccessful, and the 1887 French Couissinier original has only been located as a free digital-book listing. **Confirmed original printed-page images inspected: zero.**
+
+Textual layers to keep distinct in the source parser: **historical narrative body, Knecht's explanatory commentary, in-page source footnotes, and the “Application” moral exhortations**. For example, the specific commentary heading within p.48 follows the Chapter II angelic narrative on the same image page; p.69 opens the Cain commentary; p.76 opens Flood commentary. Never map an in-page footnote to its parent narrated paragraph as though the author stated both in the same voice.
+
+Historical-author assertions are not automatically verified facts for Ad Orientem's synced map or genealogy. The Flood narrative bears an unsupported BC-year parenthesis (source page 72); the Cain commentary includes a form of collective blame rejected by *Nostra aetate* and Catechism §597; notes to the Noah/Babel episodes assign global peoples geographically to three sons, and the Babel image caption proposes Birs Nimrud as the ancient Tower. These are historically attributable to the source but **must not silently become app chronology, theological conclusions, ethnic genealogy or precise pins**. Where original authored text is eventually reproduced under proper source rights, preserve fidelity and use a distinguishable editorial apparatus when context is necessary—do not let AI rewrite the author as a cure.
+
+Data: `wikisource1910TerritoryReview.territories` in `data/explore/biblical-schuster-knecht-source-family-review.v1.json`. The source parser PR #1229 is the only owner of eventual text packaging and print-image collation. Original source passages accepted: **0**; production source text: **0**; new AI narrative: **0**.
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
