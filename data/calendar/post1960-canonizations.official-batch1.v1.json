@@ -9,7 +9,18 @@
   },
   "coverage": {
     "scopeYears": [
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
       2014,
+      2015,
       2016,
       2017,
       2018,
@@ -19,17 +30,19 @@
       2024,
       2025
     ],
-    "reviewedYears": 9,
+    "reviewedYears": 20,
     "completeGlobal1960To2026": false,
-    "namedIndividualRecords": 67,
-    "unexpandedGroupRecords": 3,
+    "namedIndividualRecords": 132,
+    "unexpandedGroupRecords": 4,
     "unexpandedGroupMembers": 57,
     "knownCanonicalPersonIdReuse": [
       "saint.john-henry-newman",
       "saint.carlo-acutis"
-    ]
+    ],
+    "unverifiedApproximateGroupMembers": 800,
+    "groupsWithApproximateCounts": 1
   },
-  "countingRule": "Person records represent individually named saints only; group units store their true member count, are never one person; named individual counts exclude unexpanded group members. Canonization ceremonies are events, not persons.",
+  "countingRule": "Only individually named people count as person records. Exact known group member counts and approximate group estimates are separate; approximate Otranto ~800 is NEVER counted as 800 identified persons. Canonization ceremonies remain events, not persons.",
   "liturgicalRule": "No individual record in this batch asserts universal feast date, 1962 optional mass eligibility, mass texts, or a change to the principal observed 1962 mass.",
   "years": [
     {
@@ -97,12 +110,111 @@
       "unexpandedGroupMemberships": 0
     },
     {
+      "year": 2015,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 4,
+      "namedIndividuals": 10,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
       "year": 2014,
       "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html",
       "status": "YEAR_INDEX_REVIEWED",
       "eventCount": 3,
       "namedIndividuals": 11,
       "unexpandedGroupMemberships": 0
+    },
+    {
+      "year": 2013,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 3,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 800
+    },
+    {
+      "year": 2012,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 8,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2011,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 3,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2010,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 6,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2009,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 10,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2008,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2007,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 2,
+      "namedIndividuals": 5,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2006,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 4,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2005,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 5,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
+    },
+    {
+      "year": 2004,
+      "url": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html",
+      "status": "YEAR_INDEX_REVIEWED",
+      "eventCount": 1,
+      "namedIndividuals": 6,
+      "unexpandedGroupMemberships": 0,
+      "approximateGroupMembers": 0
     }
   ],
   "events": [
@@ -405,6 +517,301 @@
       ],
       "groupIds": [],
       "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2015-01-14",
+      "date": "2015-01-14",
+      "year": 2015,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.giuseppe-vaz"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2015-05-17",
+      "date": "2015-05-17",
+      "year": 2015,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jeanne-emilie-de-villeneuve",
+        "saint.mariam-baouardy",
+        "saint.marie-alphonsine-danil-ghattas",
+        "saint.maria-cristina-brando"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2015-09-23",
+      "date": "2015-09-23",
+      "year": 2015,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.junipero-serra"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2015-10-18",
+      "date": "2015-10-18",
+      "year": 2015,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.vincenzo-grossi",
+        "saint.louis-martin",
+        "saint.zelie-guerin",
+        "saint.maria-salvat-y-romero"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2013-05-12",
+      "date": "2013-05-12",
+      "year": 2013,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.laura-montoya-upergui",
+        "saint.maria-guadalupe-garcia-zavala"
+      ],
+      "groupIds": [
+        "canon-group.martyrs-otranto-1480"
+      ],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2013-10-09",
+      "date": "2013-10-09",
+      "year": 2013,
+      "kind": "EQUIVALENT_CANONIZATION",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.angela-da-foligno"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2013-12-17",
+      "date": "2013-12-17",
+      "year": 2013,
+      "kind": "EQUIVALENT_CANONIZATION",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.pierre-favre"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2012-05-10",
+      "date": "2012-05-10",
+      "year": 2012,
+      "kind": "EQUIVALENT_CANONIZATION",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.hildegard-bingen"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2012-10-21",
+      "date": "2012-10-21",
+      "year": 2012,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jacques-berthieu",
+        "saint.pedro-calungsod",
+        "saint.giovanni-battista-piamarta",
+        "saint.carmen-salles-y-barangueras",
+        "saint.marianne-cope",
+        "saint.kateri-tekakwitha",
+        "saint.anna-schaeffer"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2011-10-23",
+      "date": "2011-10-23",
+      "year": 2011,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.guido-maria-conforti",
+        "saint.luigi-guanella",
+        "saint.bonifacia-rodriguez-de-castro"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2010-10-17",
+      "date": "2010-10-17",
+      "year": 2010,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.candida-maria-de-jesus",
+        "saint.mary-of-the-cross-mackillop",
+        "saint.battista-camilla-da-varano",
+        "saint.stanislaw-kazimierczyk",
+        "saint.giulia-salzano",
+        "saint.andre-bessette"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2009-04-26",
+      "date": "2009-04-26",
+      "year": 2009,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.arcangelo-tadini",
+        "saint.bernardo-tolomei",
+        "saint.nuno-alvares-pereira",
+        "saint.geltrude-comensoli",
+        "saint.caterina-volpicelli"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2009-10-11",
+      "date": "2009-10-11",
+      "year": 2009,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.zygmunt-szczesny-felinski",
+        "saint.francisco-coll-y-guitart",
+        "saint.damien-de-veuster",
+        "saint.rafael-arnaiz-baron",
+        "saint.jeanne-jugan"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2008-10-12",
+      "date": "2008-10-12",
+      "year": 2008,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.gaetano-errico",
+        "saint.maria-bernarda-butler",
+        "saint.alphonsa-immaculate-conception",
+        "saint.narcisa-de-jesus-martillo-moran"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2007-05-11",
+      "date": "2007-05-11",
+      "year": 2007,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.antonio-de-santanna-galvao"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2007-06-03",
+      "date": "2007-06-03",
+      "year": 2007,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.george-preca",
+        "saint.simon-of-lipnica",
+        "saint.charles-of-mount-argus",
+        "saint.marie-eugenie-milleret"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2006-10-15",
+      "date": "2006-10-15",
+      "year": 2006,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.rafael-guizar-valencia",
+        "saint.filippo-smaldone",
+        "saint.rosa-venerini",
+        "saint.theodore-guerin"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2005-10-23",
+      "date": "2005-10-23",
+      "year": 2005,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.jozef-bilczewski",
+        "saint.gaetano-catanoso",
+        "saint.zygmunt-gorazdowski",
+        "saint.alberto-hurtado",
+        "saint.felice-da-nicosia"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
+    },
+    {
+      "id": "canon-2004-05-16",
+      "date": "2004-05-16",
+      "year": 2004,
+      "kind": "ORDINARY",
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html",
+      "sourceRole": "DICASTERY_OFFICIAL_CANONIZATION_YEAR_INDEX",
+      "namedIndividualIds": [
+        "saint.luigi-orione",
+        "saint.annibale-maria-di-francia",
+        "saint.jose-manyanet-y-vives",
+        "saint.nimatullah-kassab-al-hardini",
+        "saint.paola-elisabetta-cerioli",
+        "saint.gianna-beretta-molla"
+      ],
+      "groupIds": [],
+      "eventStatus": "RECORDED_IN_OFFICIAL_INDEX"
     }
   ],
   "groups": [
@@ -445,6 +852,19 @@
         "Mateus Moreira"
       ],
       "note": "Thirty individual martyrs, not one saint. Expand named person records before individual map/art publication."
+    },
+    {
+      "id": "martyrs-otranto-1480",
+      "eventId": "canon-2013-05-12",
+      "label": "Antonio Primaldo and companions, Martyrs of Otranto",
+      "memberCount": null,
+      "estimatedMemberCount": 800,
+      "countPrecision": "APPROXIMATELY_PER_DICASTERY_NOT_EXACT",
+      "memberIdentityStatus": "UNEXPANDED_IN_THIS_BATCH",
+      "namedLead": [
+        "Antonio Primaldo"
+      ],
+      "note": "Dicastery says circa ottocento martyrs. Approximate group size; do not add 800 as certified identified persons."
     }
   ],
   "persons": [
@@ -1719,6 +2139,1241 @@
       },
       "sources": [
         "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      ]
+    },
+    {
+      "id": "saint.giuseppe-vaz",
+      "name": "Giuseppe Vaz",
+      "canonizedOn": "2015-01-14",
+      "canonizationEventId": "canon-2015-01-14",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-01-14"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.jeanne-emilie-de-villeneuve",
+      "name": "Jeanne Émilie de Villeneuve",
+      "canonizedOn": "2015-05-17",
+      "canonizationEventId": "canon-2015-05-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-05-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.mariam-baouardy",
+      "name": "Maria di Gesù Crocifisso Baouardy",
+      "canonizedOn": "2015-05-17",
+      "canonizationEventId": "canon-2015-05-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-05-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.marie-alphonsine-danil-ghattas",
+      "name": "Marie Alphonsine Danil Ghattas",
+      "canonizedOn": "2015-05-17",
+      "canonizationEventId": "canon-2015-05-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-05-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.maria-cristina-brando",
+      "name": "Maria Cristina Brando",
+      "canonizedOn": "2015-05-17",
+      "canonizationEventId": "canon-2015-05-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-05-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.junipero-serra",
+      "name": "Junípero Serra",
+      "canonizedOn": "2015-09-23",
+      "canonizationEventId": "canon-2015-09-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-09-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.vincenzo-grossi",
+      "name": "Vincenzo Grossi",
+      "canonizedOn": "2015-10-18",
+      "canonizationEventId": "canon-2015-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.louis-martin",
+      "name": "Ludovico (Louis) Martin",
+      "canonizedOn": "2015-10-18",
+      "canonizationEventId": "canon-2015-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.zelie-guerin",
+      "name": "Maria Azelia (Zélie) Guérin",
+      "canonizedOn": "2015-10-18",
+      "canonizationEventId": "canon-2015-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.maria-salvat-y-romero",
+      "name": "Maria dell’Immacolata Concezione Salvat y Romero",
+      "canonizedOn": "2015-10-18",
+      "canonizationEventId": "canon-2015-10-18",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2015-10-18"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      ]
+    },
+    {
+      "id": "saint.laura-montoya-upergui",
+      "name": "Laura di Santa Caterina da Siena (Laura Montoya Upegui)",
+      "canonizedOn": "2013-05-12",
+      "canonizationEventId": "canon-2013-05-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2013-05-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      ]
+    },
+    {
+      "id": "saint.maria-guadalupe-garcia-zavala",
+      "name": "María Guadalupe García Zavala",
+      "canonizedOn": "2013-05-12",
+      "canonizationEventId": "canon-2013-05-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2013-05-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      ]
+    },
+    {
+      "id": "saint.angela-da-foligno",
+      "name": "Angela da Foligno",
+      "canonizedOn": "2013-10-09",
+      "canonizationEventId": "canon-2013-10-09",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2013-10-09"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      ]
+    },
+    {
+      "id": "saint.pierre-favre",
+      "name": "Pierre Favre (Peter Faber)",
+      "canonizedOn": "2013-12-17",
+      "canonizationEventId": "canon-2013-12-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2013-12-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      ]
+    },
+    {
+      "id": "saint.hildegard-bingen",
+      "name": "Ildegarda di Bingen (Hildegard of Bingen)",
+      "canonizedOn": "2012-05-10",
+      "canonizationEventId": "canon-2012-05-10",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-05-10"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.jacques-berthieu",
+      "name": "Giacomo (Jacques) Berthieu",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.pedro-calungsod",
+      "name": "Pietro (Pedro) Calungsod",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.giovanni-battista-piamarta",
+      "name": "Giovanni Battista Piamarta",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.carmen-salles-y-barangueras",
+      "name": "Maria del Monte Carmelo (Carmen Sallés)",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.marianne-cope",
+      "name": "Marianna (Marianne) Cope",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.kateri-tekakwitha",
+      "name": "Kateri Tekakwitha",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.anna-schaeffer",
+      "name": "Anna Schäffer",
+      "canonizedOn": "2012-10-21",
+      "canonizationEventId": "canon-2012-10-21",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2012-10-21"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html"
+      ]
+    },
+    {
+      "id": "saint.guido-maria-conforti",
+      "name": "Guido Maria Conforti",
+      "canonizedOn": "2011-10-23",
+      "canonizationEventId": "canon-2011-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2011-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html"
+      ]
+    },
+    {
+      "id": "saint.luigi-guanella",
+      "name": "Luigi Guanella",
+      "canonizedOn": "2011-10-23",
+      "canonizationEventId": "canon-2011-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2011-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html"
+      ]
+    },
+    {
+      "id": "saint.bonifacia-rodriguez-de-castro",
+      "name": "Bonifacia Rodríguez de Castro",
+      "canonizedOn": "2011-10-23",
+      "canonizationEventId": "canon-2011-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2011-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html"
+      ]
+    },
+    {
+      "id": "saint.candida-maria-de-jesus",
+      "name": "Cándida María de Jesús",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.mary-of-the-cross-mackillop",
+      "name": "Maria della Croce MacKillop",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.battista-camilla-da-varano",
+      "name": "Battista Camilla da Varano",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.stanislaw-kazimierczyk",
+      "name": "Stanisław Kazimierczyk",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.giulia-salzano",
+      "name": "Giulia Salzano",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.andre-bessette",
+      "name": "André (Alfred) Bessette",
+      "canonizedOn": "2010-10-17",
+      "canonizationEventId": "canon-2010-10-17",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2010-10-17"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html"
+      ]
+    },
+    {
+      "id": "saint.arcangelo-tadini",
+      "name": "Arcangelo Tadini",
+      "canonizedOn": "2009-04-26",
+      "canonizationEventId": "canon-2009-04-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-04-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.bernardo-tolomei",
+      "name": "Bernardo Tolomei",
+      "canonizedOn": "2009-04-26",
+      "canonizationEventId": "canon-2009-04-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-04-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.nuno-alvares-pereira",
+      "name": "Nuno de Santa Maria Álvares Pereira",
+      "canonizedOn": "2009-04-26",
+      "canonizationEventId": "canon-2009-04-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-04-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.geltrude-comensoli",
+      "name": "Geltrude Comensoli",
+      "canonizedOn": "2009-04-26",
+      "canonizationEventId": "canon-2009-04-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-04-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.caterina-volpicelli",
+      "name": "Caterina Volpicelli",
+      "canonizedOn": "2009-04-26",
+      "canonizationEventId": "canon-2009-04-26",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-04-26"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.zygmunt-szczesny-felinski",
+      "name": "Zygmunt Szczęsny Feliński",
+      "canonizedOn": "2009-10-11",
+      "canonizationEventId": "canon-2009-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.francisco-coll-y-guitart",
+      "name": "Francisco Coll y Guitart",
+      "canonizedOn": "2009-10-11",
+      "canonizationEventId": "canon-2009-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.damien-de-veuster",
+      "name": "Damiano (Damien) de Veuster",
+      "canonizedOn": "2009-10-11",
+      "canonizationEventId": "canon-2009-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.rafael-arnaiz-baron",
+      "name": "Rafael Arnáiz Barón",
+      "canonizedOn": "2009-10-11",
+      "canonizationEventId": "canon-2009-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.jeanne-jugan",
+      "name": "Marie de la Croix (Jeanne) Jugan",
+      "canonizedOn": "2009-10-11",
+      "canonizationEventId": "canon-2009-10-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2009-10-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html"
+      ]
+    },
+    {
+      "id": "saint.gaetano-errico",
+      "name": "Gaetano Errico",
+      "canonizedOn": "2008-10-12",
+      "canonizationEventId": "canon-2008-10-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2008-10-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html"
+      ]
+    },
+    {
+      "id": "saint.maria-bernarda-butler",
+      "name": "María Bernarda (Verena) Bütler",
+      "canonizedOn": "2008-10-12",
+      "canonizationEventId": "canon-2008-10-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2008-10-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html"
+      ]
+    },
+    {
+      "id": "saint.alphonsa-immaculate-conception",
+      "name": "Alfonsa dell’Immacolata Concezione",
+      "canonizedOn": "2008-10-12",
+      "canonizationEventId": "canon-2008-10-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2008-10-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html"
+      ]
+    },
+    {
+      "id": "saint.narcisa-de-jesus-martillo-moran",
+      "name": "Narcisa de Jesús Martillo Morán",
+      "canonizedOn": "2008-10-12",
+      "canonizationEventId": "canon-2008-10-12",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2008-10-12"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html"
+      ]
+    },
+    {
+      "id": "saint.antonio-de-santanna-galvao",
+      "name": "Antonio de Sant’Anna Galvão",
+      "canonizedOn": "2007-05-11",
+      "canonizationEventId": "canon-2007-05-11",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2007-05-11"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html"
+      ]
+    },
+    {
+      "id": "saint.george-preca",
+      "name": "Giorgio Preca",
+      "canonizedOn": "2007-06-03",
+      "canonizationEventId": "canon-2007-06-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2007-06-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html"
+      ]
+    },
+    {
+      "id": "saint.simon-of-lipnica",
+      "name": "Simone da Lipnica",
+      "canonizedOn": "2007-06-03",
+      "canonizationEventId": "canon-2007-06-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2007-06-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html"
+      ]
+    },
+    {
+      "id": "saint.charles-of-mount-argus",
+      "name": "Carlo di Sant’Andrea (Charles of Mount Argus)",
+      "canonizedOn": "2007-06-03",
+      "canonizationEventId": "canon-2007-06-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2007-06-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html"
+      ]
+    },
+    {
+      "id": "saint.marie-eugenie-milleret",
+      "name": "Maria Eugenia di Gesù Milleret",
+      "canonizedOn": "2007-06-03",
+      "canonizationEventId": "canon-2007-06-03",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2007-06-03"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html"
+      ]
+    },
+    {
+      "id": "saint.rafael-guizar-valencia",
+      "name": "Rafael Guízar Valencia",
+      "canonizedOn": "2006-10-15",
+      "canonizationEventId": "canon-2006-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2006-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html"
+      ]
+    },
+    {
+      "id": "saint.filippo-smaldone",
+      "name": "Filippo Smaldone",
+      "canonizedOn": "2006-10-15",
+      "canonizationEventId": "canon-2006-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2006-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html"
+      ]
+    },
+    {
+      "id": "saint.rosa-venerini",
+      "name": "Rosa Venerini",
+      "canonizedOn": "2006-10-15",
+      "canonizationEventId": "canon-2006-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2006-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html"
+      ]
+    },
+    {
+      "id": "saint.theodore-guerin",
+      "name": "Theodore Guérin",
+      "canonizedOn": "2006-10-15",
+      "canonizationEventId": "canon-2006-10-15",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2006-10-15"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html"
+      ]
+    },
+    {
+      "id": "saint.jozef-bilczewski",
+      "name": "Józef Bilczewski",
+      "canonizedOn": "2005-10-23",
+      "canonizationEventId": "canon-2005-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2005-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html"
+      ]
+    },
+    {
+      "id": "saint.gaetano-catanoso",
+      "name": "Gaetano Catanoso",
+      "canonizedOn": "2005-10-23",
+      "canonizationEventId": "canon-2005-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2005-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html"
+      ]
+    },
+    {
+      "id": "saint.zygmunt-gorazdowski",
+      "name": "Zygmunt Gorazdowski",
+      "canonizedOn": "2005-10-23",
+      "canonizationEventId": "canon-2005-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2005-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html"
+      ]
+    },
+    {
+      "id": "saint.alberto-hurtado",
+      "name": "Alberto Hurtado Cruchaga",
+      "canonizedOn": "2005-10-23",
+      "canonizationEventId": "canon-2005-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2005-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html"
+      ]
+    },
+    {
+      "id": "saint.felice-da-nicosia",
+      "name": "Felice da Nicosia",
+      "canonizedOn": "2005-10-23",
+      "canonizationEventId": "canon-2005-10-23",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2005-10-23"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html"
+      ]
+    },
+    {
+      "id": "saint.luigi-orione",
+      "name": "Luigi Orione",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
+      ]
+    },
+    {
+      "id": "saint.annibale-maria-di-francia",
+      "name": "Annibale Maria Di Francia",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
+      ]
+    },
+    {
+      "id": "saint.jose-manyanet-y-vives",
+      "name": "José Manyanet y Vives",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
+      ]
+    },
+    {
+      "id": "saint.nimatullah-kassab-al-hardini",
+      "name": "Nimatullah Kassab Al-Hardini",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
+      ]
+    },
+    {
+      "id": "saint.paola-elisabetta-cerioli",
+      "name": "Paola Elisabetta Cerioli",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
+      ]
+    },
+    {
+      "id": "saint.gianna-beretta-molla",
+      "name": "Gianna Beretta Molla",
+      "canonizedOn": "2004-05-16",
+      "canonizationEventId": "canon-2004-05-16",
+      "recognitionStatus": "CANONIZATION_ATTESTED_OFFICIAL_YEAR_INDEX",
+      "calendar1962SourceId": null,
+      "liturgicalDate": {
+        "calendar": "UNIVERSAL_ROMAN",
+        "monthDay": null,
+        "status": "UNVERIFIED_NO_INFERENCE"
+      },
+      "historicalDisplay": {
+        "saintFrom": "2004-05-16"
+      },
+      "sources": [
+        "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html"
       ]
     }
   ]
