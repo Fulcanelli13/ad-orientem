@@ -11,14 +11,16 @@
     "certifyExactEvent": false,
     "automaticPeriodBoundApproval": false,
     "ancientNameSourceIsNotEventEvidence": true,
-    "sourcePeriodFieldsRequireIndependentCollation": true
+    "sourcePeriodFieldsRequireIndependentCollation": true,
+    "noAutomaticHistoricAliasPromotionAfterAttestation": true
   },
   "metrics": {
     "records": 35,
     "provisionalPleiadesCandidates": 28,
     "existingBilingualAliasReviews": 22,
     "siteSpecificNonPleiadesHolds": 7,
-    "otherDistinctions": 6
+    "otherDistinctions": 6,
+    "independentlyAttestedNamingGuards": 8
   },
   "records": [
     {
@@ -83,7 +85,27 @@
       "geographicalStatus": "candidate_or_feature_qualification",
       "labelReview": null,
       "siteReview": null,
-      "otherHold": "Caesarea Philippi/Pan(e)as: the Gospel uses Caesarea Philippi; town identity does not localize Peter's confession to an individual feature."
+      "otherHold": "Caesarea Philippi/Pan(e)as: the Gospel uses Caesarea Philippi; town identity does not localize Peter's confession to an individual feature.",
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "PUBLIC",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [],
+        "contextualQualification": "Treat Caesarea Philippi as a Gospel-period city/district reference, without relabelling the precise place of the Confession or assigning a new public map label.",
+        "independentEvidence": [
+          {
+            "title": "William Smith, Dictionary of Greek and Roman Geography (1854), Paneas",
+            "locator": null,
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aentry%3Dpaneas-geo",
+            "establishes": "Paneas / Caesarea Philippi refer to the city; Matthew 16:13 describes the district, not a pinpoint cave",
+            "category": "Historical reference work citing Josephus and New Testament"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     },
     {
       "anchorKey": "bethesda",
@@ -155,7 +177,29 @@
         "additionalIndependentSource": null
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Stratonos Pyrgos"
+        ],
+        "contextualQualification": "An apostolic-era event near Caesarea cannot be labelled by the city's pre-Herodian name; 'Maritima' remains the app's geographic disambiguator.",
+        "independentEvidence": [
+          {
+            "title": "Flavius Josephus, Jewish Antiquities XV.293, 331",
+            "locator": "Antiquities XV §§293,331",
+            "url": "https://www.attalus.org/old/aj_15b.html",
+            "establishes": "Earlier Strato's Tower became Herod's Caesarea",
+            "category": "Translated ancient historical account"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     },
     {
       "anchorKey": "capernaum",
@@ -201,7 +245,27 @@
         "additionalIndependentSource": "https://www.corinthcomputerproject.org/corinth-timeline/"
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [],
+        "contextualQualification": "The apostolic city is Roman-colonial Corinth; retain readable Corinth/Korinthos, and do not present Classical Greek architecture as unchanged first-century urban fabric.",
+        "independentEvidence": [
+          {
+            "title": "American School of Classical Studies at Athens, History of Corinth",
+            "locator": null,
+            "url": "https://www.ascsa.org/excavations/ancient-corinth/about-the-excavations-1/history-timeline",
+            "establishes": "Roman sack in 146 BCE, refoundation as Caesar's colony in 44 BCE, and St Paul's first-century visit",
+            "category": "Excavating institution's archaeological and historical timeline"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     },
     {
       "anchorKey": "damascus",
@@ -345,7 +409,31 @@
         "additionalIndependentSource": "https://academic.oup.com/reference/62341/reference-article-abstract/554104460?login=false"
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "INFANCY|PUBLIC|PASSION|RESURRECTION",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Aelia Capitolina",
+          "Col. Aelia Capitolina"
+        ],
+        "contextualQualification": "Gospel-era city name is Jerusalem; Pleiades broad Aelia date records are not automatically defensible.",
+        "independentEvidence": [
+          {
+            "title": "Oxford Classical Dictionary / Aelia Capitolina",
+            "locator": null,
+            "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554104460?login=false",
+            "establishes": "Hadrian refounded Jerusalem c. AD 130; not a Gospel-period name",
+            "category": "Scholarly historical synthesis"
+          }
+        ],
+        "independentSourceComparedToPleiades": true,
+        "pinnedGISDateCaveat": "Pleiades source-name dates for Aelia Capitolina extend implausibly into pre-Hadrian history; independent c. AD 130 foundation evidence takes priority for this exclusion."
+      }
     },
     {
       "anchorKey": "joppa",
@@ -497,7 +585,29 @@
         "additionalIndependentSource": null
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Krenides"
+        ],
+        "contextualQualification": "Krenides refers to the earlier settlement, not St Paul's visit; preserve distinction between city identity and Roman colony status.",
+        "independentEvidence": [
+          {
+            "title": "UNESCO World Heritage Centre, Archaeological Site of Philippi",
+            "locator": null,
+            "url": "https://whc.unesco.org/en/list/1517",
+            "establishes": "Philip II refounded the city 356 BCE; it became a Roman colony after the battle of 42 BCE and St Paul visited c. AD 49–50",
+            "category": "Archaeological heritage and chronology summary"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     },
     {
       "anchorKey": "rome",
@@ -533,7 +643,30 @@
         "additionalIndependentSource": "https://lexundria.com/j_aj/15.267-15.298/wst"
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "ISRAEL|APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Sebaste"
+        ],
+        "contextualQualification": "For Israelite-period settings do not project Herod's later city name; apostolic-era name remains context-dependent, not a global replacement for 'Samaria' region.",
+        "independentEvidence": [
+          {
+            "title": "Flavius Josephus, Jewish Antiquities XV.292–298",
+            "locator": "Antiquities XV §§292–298",
+            "url": "https://www.attalus.org/old/aj_15b.html",
+            "establishes": "Herod renamed the city Samaria Sebaste; the city and region are not interchangeable",
+            "category": "Translated ancient historical account"
+          }
+        ],
+        "independentSourceComparedToPleiades": true,
+        "pinnedGISDateCaveat": "Pleiades source-name date range for Sebaste begins later than Josephus's Herodian renaming; the GIS field is not a first-attestation boundary."
+      }
     },
     {
       "anchorKey": "shiloh",
@@ -593,7 +726,29 @@
         "additionalIndependentSource": null
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Antiochia ad Cydnum"
+        ],
+        "contextualQualification": "Temporary Seleucid Antioch is inappropriate as the automatic name of Paul's first-century city.",
+        "independentEvidence": [
+          {
+            "title": "Oxford Classical Dictionary, Tarsus",
+            "locator": null,
+            "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548214595",
+            "establishes": "Tarsus was temporarily called Antioch on the Cydnus under Antiochus IV (175–164 BCE); old name later prevailed",
+            "category": "Scholarly classical geography reference"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     },
     {
       "anchorKey": "thessalonica",
@@ -629,7 +784,29 @@
         "additionalIndependentSource": null
       },
       "siteReview": null,
-      "otherHold": null
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Antigoneia"
+        ],
+        "contextualQualification": "Apostolic Troas should not use the earlier Antigoneia name as its default.",
+        "independentEvidence": [
+          {
+            "title": "Strabo, Geography XIII.1.26",
+            "locator": "Geography XIII.1.26",
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0239%3Abook%3D13",
+            "establishes": "Lysimachus changed Antigoneia to Alexandria (Troas) before the Roman period",
+            "category": "Ancient geographical work in translation"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
     }
   ]
 }
