@@ -8,6 +8,12 @@ Canon M. F. Glancey's **preface to the first English edition** of Knecht's *Prac
 
 **Revised catalogue ownership:** Schuster is narrative source author; Knecht's genuine doctrinal/moral commentary is the linked study layer. Existing 101 Knecht chapter selectors remain source-location hints, but are **not 101 independently written Knecht stories**, nor 101 verified Schuster English paragraphs. Gilmour is a possible separate narrative source for gaps only after historical witness collation.
 
+### Historical English scan found — nineteenth edition, 1925
+
+An actual **1925 nineteenth English edition** of Schuster, printed by **B. Herder, London**, is digitized as a **410-page physical-book scan** by the Digital Library of India and accessible on Internet Archive: https://archive.org/details/in.ernet.dli.2015.49638 . The scanned book's **raw OCR** shows the title/imprint, editorial preface, and the original eight opening chapter headings. Its publisher's preface describes the book as the narrative of Bible history and directs teachers requiring fuller explanation to Knecht.
+
+This historical 1925 print is a much stronger candidate witness than TAN's modern 2014 preview, though the 1889 Sadlier original remains catalogued but not scanned in this research. **Raw OCR is full of visible errors; the 1925 printed images have NOT been independently checked at paragraph level.** Image-based proofreading, printed pagination, edition/translation lineage and territorial rights must be reviewed before any source passage is accepted.
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
@@ -38,7 +44,7 @@ The user allows **faithful AI-assisted EN↔FR translation of an actual existing
 
 ## Next large batch
 
-1. Locate an actually readable pre-modern *Schuster English* original (Sadlier 1889 or another old eligible print) and *Schuster French Couissinier 1887* (or verified old alternative); inspect printed original title page and complete TOC before alignment.
+1. Collate the newly located historical 1925 *Schuster English* source print images and *Schuster French Couissinier 1887* (or verified old alternative); inspect printed original title page and complete TOC before alignment.
 2. Compare 8 Origins chapters at **printed-page paragraph level** in both languages. Use Knecht's narrative segments for evidence only, with its commentary territory excluded.
 3. Batch-map the original Schuster chapters **through the entire Old and New Testaments** to our 37 Atlas reader groups without creating new canonical scene IDs, and separately flag narrative-vs-73-book limitations.
 4. Begin translation **only** from a verified historical original and only where an existing French/English authorial translation is inadequate, with source-stable paragraph anchors and a no-fabrication QA gate.
