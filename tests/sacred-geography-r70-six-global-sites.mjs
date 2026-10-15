@@ -25,9 +25,9 @@ assert.equal(hero.items.length,18);
 assert.equal(gallery.items.length,6);
 assert.equal(illustrated.length,14);
 assert.equal(board.candidates.length,750);
-assert.equal(board.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,106);
-assert.equal(board.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,70);
-assert.equal(board.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,574);
+assert.equal(board.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,161);
+assert.equal(board.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,6);
+assert.equal(board.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW,583);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
  temporalLinks:seed.temporalLinks,sources:source.sources,places:geo.places}).pass,true);
 const src=new Map(source.sources.map(x=>[x.id,x]));
