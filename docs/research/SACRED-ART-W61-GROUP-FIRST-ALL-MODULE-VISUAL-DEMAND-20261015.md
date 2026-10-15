@@ -72,3 +72,12 @@ The calendar audit comes **after** this common vocabulary and categories, not be
 4. Keep the 183 cinematic Bible research scenes separate from the 151 live events and adjudicate links before deduplicating their image slots.
 
 **No missing-image percentage, new 'approved art', release changes, merged app branch, or new rating gallery has been claimed.**
+
+
+## Final W61 grouping additions and validation
+
+The separate grouped-originals register now also indexes all **481** W48 user review placements, with **73** observed person-subject IDs and **93** editorially selected artwork research records from the 235-subject index. They remain *placements/source identities*, not an extra 481 + 93 physical originals. Exactly **24** W48 candidate IDs match 281 canonical registry IDs by unchanged ID; other aliases need physical-object identity matching before they can inherit original-file or rating status. Of the 481 W48 placements, W49 resolves **86 as five-star placements**, **66 as four-star**, and **7 as 0–2**. These are placements, not unique distinct original paintings.
+
+**Source-backed Atlas classification:** after reading the actual live 151-event sequence, all 151 have both EN titles and Scripture references, grouped by 11 eras: Origins 6; Patriarchs 12; Exodus 14; Israel and Prophets 13; Exile 21; Infancy 12; Public Ministry 31; Passion 11; Resurrection 6; Apostles 20; Revelation 5. The 183 separately researched cinematic scenes remain organised in 14 chapters; they must not be appended to the 151 as though those were 334 separately certified live timeline events.
+
+**Validation:** 25 checked classification invariants passed, including 281 unique canonical artwork IDs and a one-to-one 281-family assignment, 481 review placements independently held, 235 editorial subjects, 207 research targets, 48 prayers, 16 novenas, 20 mysteries, 14 stations, 151 fully named timeline events, 183 research scenes, 258 place seeds and 750 unpublished candidate sites. No current per-date or per-route visual-ready coverage claims have been made.
