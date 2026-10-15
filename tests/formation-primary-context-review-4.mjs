@@ -60,8 +60,13 @@ assert.ok(P("CR-MOR-08","critical_response").source_ids.includes("BA2016-ORIGINA
 assert.match(P("CR-MOR-08","critical_response").text.en,/Familiaris consortio/);
 assert.ok(P("CR-IDM-07","documented_position").source_ids.includes("ASSISILEF86"));
 assert.match(P("CR-IDM-07","answer").text.en,/separately/);
-assert.match(P("CR-IDM-05","critical_response").text.en,/129–132|130–132/);
-assert.ok(P("CR-ECC-09","documented_position").source_ids.includes("GUERARD-FR"));
+assert.match(P("CR-IDM-05","critical_response").text.en,/122–128/,
+ "1993 Directory Eastern-Church distinctions must remain explicit");
+assert.match(P("CR-IDM-05","critical_response").text.en,/129–136/,
+ "1993 Directory other ecclesial-community restrictions must remain explicit");
+assert.ok(P("CR-ECC-09","documented_position").source_ids.includes("AO26_CRECC09_DOCUM_1"));
+assert.equal(src.get("AO26_CRECC09_DOCUM_1").url,src.get("GUERARD-FR").url,
+ "Historical Guérard des Lauriers original text should remain the identical original source");
 assert.match(P("CR-GOV-01","critical_response").text.en,/promulga|legisl|juridical|bishops|authority/i,
  "Revised owner must address its canonical Church governance question, not duplicate the retained China case");
 assert.ok(P("CR-GOV-07","documented_position").source_ids.includes("RATZ2004"));
