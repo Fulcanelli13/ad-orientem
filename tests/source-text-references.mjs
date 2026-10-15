@@ -1,3 +1,5 @@
+import {sourceReferenceSafeUrl,sourceReferencePanelHtml} from "../src/learn/source-reference-panel.js";
+import {prepareScopedReferenceDisplay} from "../src/source-text/reference-presentation.js";
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {resolveFormationReference,resolveCanonicalWork,inspectReferenceInventory,inspectCurrentFormationRevision,prepareReferencePresentation,prepareScopedSourceLink} from "../src/source-text/reference-crosswalk.js";
@@ -34,6 +36,31 @@ assert.equal(staged.filter(x=>x.status==="SUPPRESSED_SUPERSEDED_OWNER_CITATION")
 assert.equal(staged.filter(x=>x.originalClaimLocator!==null).length,3);
 assert.ok(staged.every(x=>x.publicDisplayApproved===false&&x.inlineCitation===null&&x.exactPassageQuote===null));
 assert.ok(staged.every(x=>x.historicalEdgeIsCurrentClaim===false));
+// Phase 18: reuse the shipped source-panel contract, but never put
+// unapproved section associations in its user-facing evidence input.
+const display=staged.map(scopedLink=>prepareScopedReferenceDisplay({scopedLink}));
+assert.equal(display.length,21);
+assert.equal(display.filter(x=>x.reviewState==="SUPERSEDED_BLOCKED").length,1);
+assert.equal(display.filter(x=>x.reviewState==="OWNER_REVIEW_REQUIRED").length,20);
+assert.ok(display.every(x=>x.editorialPreviewOnly===true&&x.publicDisplayApproved===false));
+assert.ok(display.every(x=>x.publicEvidenceRow===null&&x.publicSourceRegistryEntry===null&&
+ x.publicInlineCitation===null&&x.publicFurtherReadingId===null));
+assert.equal(sourceReferencePanelHtml({rows:display.map(x=>x.publicEvidenceRow).filter(Boolean)}),"");
+assert.equal(display.filter(x=>x.historicalClaimLocator!==null).length,3);
+assert.equal(display.find(x=>x.reviewState==="SUPERSEDED_BLOCKED").editorialSourceUrl,null);
+assert.ok(display.filter(x=>x.sourcePerspective==="OPPOSING_PHILOSOPHICAL_SOURCE").length===2);
+assert.ok(display.filter(x=>x.sourcePerspective==="OPPOSING_PHILOSOPHICAL_SOURCE")
+ .every(x=>x.editorialSourceUrl==="https://davidhume.org/texts/e/10"));
+assert.equal(prepareScopedReferenceDisplay({scopedLink:staged[0],french:true}).perspectiveLabel,
+ "Position philosophique opposée");
+assert.equal(sourceReferenceSafeUrl("javascript:alert(1)"),"");
+assert.throws(()=>prepareScopedReferenceDisplay({scopedLink:
+ {...staged[0],publicDisplayApproved:true}}),/HELD_SCOPED_EDGE/);
+assert.throws(()=>prepareScopedReferenceDisplay({scopedLink:
+ {...staged[0],externalLink:{label:"Read further",url:"http://example.test/"}}}),/INVALID_EDITORIAL_LINK/);
+assert.throws(()=>prepareScopedReferenceDisplay({scopedLink:
+ {...staged[0],inlineCitation:"Invented endorsement"}}),/HELD_SCOPED_EDGE/);
+
 const blocked=staged.find(x=>x.status==="SUPPRESSED_SUPERSEDED_OWNER_CITATION");
 assert.equal(blocked.oldEvidenceEdgeKey,"FORM-SYN-02::CR-LIT-07::00::MD47");
 assert.equal(blocked.externalLink,null);
@@ -200,5 +227,6 @@ assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
 assert.throws(()=>inspectCurrentFormationRevision({formation,revision:
  {...mock,added_source_bindings:[{...mock.added_source_bindings[0],original_context_approved:true}]},profiles}),/REVISION_ADDITION_INVALID/);
 console.log("PASS existing Formation citations: 4 exact URL-to-witness matches only, no invented editions or approved quotes; latest owner v2 checked="+currentTested);
+console.log("PASS Phase 18 source-panel bridge: 21 editorial-only projections, zero public evidence rows, 1 blocked supersession");
 console.log("PASS owner-specific section links: 21 historical section edges, 20 held, 1 superseded and blocked, zero public citations");
 console.log("PASS reference-only scope: 13 canonical works, 408 existing Formation links, 304 URLs, 9 profiles; no books imported or fabricated citations");
