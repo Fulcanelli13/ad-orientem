@@ -1,0 +1,33 @@
+name: Saints frozen v43.33 historical Sanctoral source extraction
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/saints/extract-v4333-original-sanctoral.mjs'
+      - '.github/workflows/saints-v4333-original-sanctoral.yml'
+  workflow_dispatch:
+jobs:
+  historical-sanctoral:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Retrieve pinned original 1962 Calendar source exactly as v43.33 expects
+        run: |
+          mkdir -p artifacts/saints-historical-v4333/pinned-source
+          curl --fail --location --retry 3 --silent --show-error 'https://raw.githubusercontent.com/mmolenda/missalemeum/f43359b7a79a5a299158651eedf75cdaf0e43c94/backend/api/constants/common.py' -o artifacts/saints-historical-v4333/pinned-source/common.py
+          curl --fail --location --retry 3 --silent --show-error 'https://raw.githubusercontent.com/mmolenda/missalemeum/f43359b7a79a5a299158651eedf75cdaf0e43c94/backend/api/constants/la/blocks.py' -o artifacts/saints-historical-v4333/pinned-source/blocks.py
+          curl --fail --location --retry 3 --silent --show-error 'https://raw.githubusercontent.com/mmolenda/missalemeum/f43359b7a79a5a299158651eedf75cdaf0e43c94/backend/api/constants/en/translation.py' -o artifacts/saints-historical-v4333/pinned-source/translation.py
+      - name: Verify frozen v43.33 SHA and parse its authentic fixed SANCTI source
+        run: node tools/saints/extract-v4333-original-sanctoral.mjs
+      - name: Upload actual source-component inventory and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saints-historical-original-v4333-source-rows
+          path: artifacts/saints-historical-v4333/*.json
+          if-no-files-found: warn
+          retention-days: 14
