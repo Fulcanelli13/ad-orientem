@@ -29,8 +29,8 @@ for(const row of review.cases){
   assert.ok(["ORIGINAL_PASSAGE_CONTEXT_CHECKED","ORIGINAL_ISSUER_SUMMARY_ONLY","ORIGINAL_PDF_TEXT_AND_PAGE_2_IMAGE_CHECKED","BIBLIOGRAPHIC_RECORD_ONLY"].includes(p.verification));
  }
 }
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/§§19–25/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/§§19–25/);
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/§§26–29/);
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/§§26–29/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/USCCB Committee on Doctrine's 2010 statement/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[1],/Comité doctrinal des évêques américains de 2010/);
 assert.match(CSE_DEBATE_MAP.CSE125.catholicCase[0],/CDF\'s 2009 clarification explicitly distinguishes/);
