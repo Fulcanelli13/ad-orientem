@@ -8,6 +8,24 @@ const catena=load("data/scripture/catena/manifest.v1.json");
 const formation=load("data/reference/formation-canonical-source-crosswalk.v1.json");
 const opportunities=load("data/reference/parsing-opportunities.v1.json");
 const index=load("data/source-text/staging/brother-lawrence-pg13871-index.v1.json");
+const leads=load("data/source-text/read-further-candidates.v1.json");
+const imitation=load("data/source-text/staging/imitation-benham-pg1653-index.v1.json");
+const sales=load("data/source-text/staging/francis-sales-vie-devote-pg53540-index.v1.json");
+assert.equal(leads.schema,"AO_SOURCE_TEXT_READ_FURTHER_CANDIDATES_V1");
+assert.equal(leads.candidateLinks.length,6);
+assert.equal(leads.linkedCanonicalClaimsApproved,0);
+assert.equal(leads.productionDisplayed,false);
+assert.equal(leads.formationExactTitleMatchingBindingsFound,0);
+assert.equal(new Set(leads.candidateLinks.map(l=>l.id)).size,leads.candidateLinks.length);
+for(const link of leads.candidateLinks){
+ const source=link.sourceWorkId===sales.workId?sales:imitation;
+ assert.equal(link.sourceWorkId,source.workId);
+ assert.equal(link.editionId,source.editionId);
+ assert.ok(source.chapters.some(c=>c.id===link.sourceLocator),"Missing whole-book chapter for read-further lead");
+ assert.ok(link.placement.includes("LEAD_ONLY"));
+ assert.notEqual(link.status,"APPROVED_FOR_PUBLIC_DISPLAY");
+ assert.ok(!Object.hasOwn(link,"text"));
+}
 assert.equal(registry.schema,"AO_SOURCE_TEXT_BULK_RECONCILIATION_V1");
 assert.equal(registry.inventory.canonicalWorkIdentities,works.works.length);
 assert.equal(registry.inventory.newWorkCandidateIdentities,candidates.proposedWorks.length);
