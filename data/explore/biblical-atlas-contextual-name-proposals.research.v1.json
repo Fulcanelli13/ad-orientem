@@ -1,0 +1,389 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_CONTEXTUAL_NAME_PROPOSALS_V1",
+  "created": "2026-10-15",
+  "status": "RESEARCH_AND_BILINGUAL_EDITORIAL_PREVIEW_ONLY",
+  "canonicalAliasOwner": "src/find/bible-atlas.js:ATLAS_SETTLEMENT_LABELS",
+  "crosswalk": "data/explore/biblical-atlas-pleiades-crosswalk.research.v1.json",
+  "toponymAudit": "data/explore/biblical-atlas-toponym-audit.research.v1.json",
+  "pinnedIndividualRecords": "data/explore/biblical-atlas-source-collation.research.v1.json",
+  "policy": {
+    "noAutoEraToYearConversion": true,
+    "defaultPublicMapUnchanged": true,
+    "allAnnotationsHeld": true,
+    "neverReplaceExistingEnglishFrenchLabel": true,
+    "neverMovePins": true,
+    "neverTreatPlaceIdentityAsEventSite": true,
+    "showOnlyAfterEditorialApproval": true,
+    "doNotGenerateNarrativeTextFromPlaceNames": true
+  },
+  "counts": {
+    "existingLabelKeys": 22,
+    "distinctContextNoteProposals": 11,
+    "suppressedAsNoValue": 11,
+    "publishedRuntimeAnnotations": 0,
+    "changedPins": 0
+  },
+  "records": [
+    {
+      "anchorKey": "hebron",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "PATRIARCHS",
+      "representativeScripture": "Genesis 18:1–8",
+      "periodIsNotExactYear": true,
+      "reason": "Hebron is a city context for Mamre, not an exact patriarchal event point.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "jerusalem",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "PASSION",
+      "representativeScripture": "John 19:17–42",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/687928/col-aelia-capitolina",
+      "secondaryName": "Col. Aelia Capitolina",
+      "relationToNarrativeEra": "LATER_NAME_ANACHRONISTIC",
+      "contextNote": {
+        "en": "Aelia Capitolina was founded under Hadrian around AD 130. That name must not be projected onto Jerusalem during Christ’s Passion.",
+        "fr": "Aelia Capitolina est le nom de la ville refondée sous Hadrien, vers 130 apr. J.-C. Il ne convient pas pour la Jérusalem de la Passion."
+      },
+      "independentEvidenceURLs": [
+        "https://academic.oup.com/reference/62341/reference-article-abstract/554104460?login=false",
+        "https://academic.oup.com/book/55960/chapter-abstract/439440969"
+      ],
+      "sourceCaveat": "Hadrianic refoundation chronology, not Pleiades broad name date.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "jericho",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "PUBLIC",
+      "representativeScripture": "Luke 19:1–10",
+      "periodIsNotExactYear": true,
+      "reason": "Multiple occupation periods and settlement positions; a transliteration adds no useful historical distinction here.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "nazareth",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "INFANCY",
+      "representativeScripture": "Luke 1:26–38",
+      "periodIsNotExactYear": true,
+      "reason": "The existing Biblical form suffices; the source does not justify a new historically distinct public label.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "capernaum",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "PUBLIC",
+      "representativeScripture": "Mark 1:21–28",
+      "periodIsNotExactYear": true,
+      "reason": "Kefar Nahum and Kapharnaoum are language variants, not a demonstrated chronological change in place identity.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "samaria",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "ISRAEL",
+      "representativeScripture": "1 Kings 16:24",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/678370/sebaste",
+      "secondaryName": "Sebaste",
+      "relationToNarrativeEra": "LATER_NAME_ANACHRONISTIC",
+      "contextNote": {
+        "en": "Samaria was the capital established by Omri. Herod later rebuilt the city and called it Sebaste; that later name must not label the Israelite kingdom.",
+        "fr": "Samarie fut la capitale fondée par Omri. Hérode reconstruisit plus tard la ville et l’appela Sébaste : ce nom ne convient pas à l’époque du royaume d’Israël."
+      },
+      "independentEvidenceURLs": [
+        "https://www.attalus.org/old/aj_15b.html",
+        "https://helios.eie.gr/helios/bitstream/10442/7398/2/A01.017.0.pdf"
+      ],
+      "sourceCaveat": "Samaria the city and Samaria the region are distinct; Sebaste date evidence supersedes narrow Pleiades export.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "caesarea-maritima",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 10:1",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/678401/stratonos-pyrgos",
+      "secondaryName": "Stratonos Pyrgos",
+      "relationToNarrativeEra": "FORMER_NAME",
+      "contextNote": {
+        "en": "Herod transformed the older Strato’s Tower into Caesarea. The Caesarea of Acts is the rebuilt Roman-period port, not the earlier settlement under its former name.",
+        "fr": "Hérode transforma l’ancienne tour de Straton en Césarée. La Césarée des Actes est le port reconstruit à l’époque romaine, non l’établissement ancien sous son premier nom."
+      },
+      "independentEvidenceURLs": [
+        "https://www.attalus.org/old/aj_15b.html",
+        "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/604AAEDE98D9000F03DB78614AFA82EB/9781139013833c7_p170-191_CBO.pdf"
+      ],
+      "sourceCaveat": "Caesarea Maritima is retained as bilingual disambiguator, not a literal Gospel/Acts quotation.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "joppa",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 9:36–43",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/687931/ioppe",
+      "secondaryName": "Ioppe",
+      "relationToNarrativeEra": "CONTEMPORARY_LANGUAGE_FORM",
+      "contextNote": {
+        "en": "Ioppe is a Greek-form name for Joppa in ancient geographical records; older Near Eastern records preserve other forms. The map keeps the familiar Biblical name.",
+        "fr": "Ioppé est une forme grecque du nom de Joppé dans les sources géographiques anciennes ; des formes plus anciennes sont aussi attestées. La carte conserve le nom biblique familier."
+      },
+      "independentEvidenceURLs": [
+        "https://pleiades.stoa.org/places/687931"
+      ],
+      "sourceCaveat": "Language variants are not evidence of a formal city renaming or exact event site.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "nineveh",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "EXILE",
+      "representativeScripture": "Jonah 3:1–3",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/874621/ninuwa",
+      "secondaryName": "Ninuwā",
+      "relationToNarrativeEra": "OLDER_LANGUAGE_FORM",
+      "contextNote": {
+        "en": "Ninuwā is an ancient Mesopotamian form of Nineveh’s name. It is a linguistic reference, not a precise date or archaeological location for Jonah’s account.",
+        "fr": "Ninuwā est une forme mésopotamienne ancienne du nom de Ninive. Elle indique une tradition linguistique, non une date précise ni le lieu exact du récit de Jonas."
+      },
+      "independentEvidenceURLs": [
+        "https://oracc2.museum.upenn.edu/epsd2/cbd/sux/o0047097.html",
+        "https://pleiades.stoa.org/places/874621"
+      ],
+      "sourceCaveat": "Source corpus attests Ninua; Pleiades supplies different romanization Ninuwā. No assumed exact year for Jonah.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "babylon",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "EXILE",
+      "representativeScripture": "2 Kings 25:8–12",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/893951/name.2018-01-06.8890273340",
+      "secondaryName": "Bābili",
+      "relationToNarrativeEra": "OLDER_LANGUAGE_FORM",
+      "contextNote": {
+        "en": "Bābili is an ancient name for Babylon recorded in Mesopotamian sources. The English and French Biblical names remain the primary map labels.",
+        "fr": "Bābili est un ancien nom de Babylone attesté dans les sources mésopotamiennes. Les noms bibliques français et anglais restent ceux de la carte."
+      },
+      "independentEvidenceURLs": [
+        "https://oracc.museum.upenn.edu/geonames/cbd/qpn/x000000440.html",
+        "https://pleiades.stoa.org/places/893951"
+      ],
+      "sourceCaveat": "Linguistic evidence is not an exact dating of the events of exile.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "damascus",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 9:1–19",
+      "periodIsNotExactYear": true,
+      "reason": "The established name already identifies the Acts setting; older Semitic variants are unnecessary on the map.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "antioch-syria",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 11:19–26",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/658381/theoupolis",
+      "secondaryName": "Theoupolis",
+      "relationToNarrativeEra": "LATER_NAME_ANACHRONISTIC",
+      "contextNote": {
+        "en": "Antioch on the Orontes was called Theoupolis only from AD 528, centuries after the Apostles. The New Testament setting retains Antioch.",
+        "fr": "Antioche sur l’Oronte reçut le nom de Théoupolis en 528, plusieurs siècles après les Apôtres. Pour le Nouveau Testament, on conserve Antioche."
+      },
+      "independentEvidenceURLs": [
+        "https://insaph.kcl.ac.uk/ala2004/narrative/sec-VI.html",
+        "https://www.persee.fr/doc/anata_1018-1946_2013_num_21_1_1344"
+      ],
+      "sourceCaveat": "Later sixth-century Christian name must not be projected into the apostolic narrative.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "tarsus",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 22:3",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/648789/antiochia-ad-cydnum",
+      "secondaryName": "Antiochia ad Cydnum",
+      "relationToNarrativeEra": "EARLIER_ALTERNATE_NAME",
+      "contextNote": {
+        "en": "The city had the Seleucid-era name Antioch on the Cydnus. Acts identifies St Paul’s birthplace as Tarsus, which remains the appropriate principal label.",
+        "fr": "La cité porta à l’époque séleucide le nom d’Antioche du Cydnus. Les Actes désignent la ville natale de saint Paul comme Tarse : ce nom reste principal."
+      },
+      "independentEvidenceURLs": [
+        "https://www.livius.org/articles/place/tarsus/",
+        "https://www1.ku.de/ggf/ag/tabula_peutingeriana/trefferanzeige_en.php?id=1441"
+      ],
+      "sourceCaveat": "Older secondary designation need not imply that a first-century speaker would use it.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "athens",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 17:16–34",
+      "periodIsNotExactYear": true,
+      "reason": "Athenae adds little beyond translated Athens, and the source coordinate is rough.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "ephesus",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 19:1–10",
+      "periodIsNotExactYear": true,
+      "reason": "Arsinoeia belongs to other naming contexts; no proven need to replace Ephesus.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "philippi",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 16:12",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/501482/krenides",
+      "secondaryName": "Krenides",
+      "relationToNarrativeEra": "FORMER_NAME",
+      "contextNote": {
+        "en": "The settlement was called Krenides before Philip II renamed it Philippi in 356 BC. St Paul visited a later Roman colony of the same name.",
+        "fr": "La ville s’appelait Krénidès avant que Philippe II ne la renomme Philippes en 356 av. J.-C. Saint Paul visita ensuite une colonie romaine."
+      },
+      "independentEvidenceURLs": [
+        "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aentry%3Dphilippi"
+      ],
+      "sourceCaveat": "The place of Acts was already Philippi, not Krenides; colony status is Roman-period contextual information.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "corinth",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 18:1–18",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/570182/colonia-laus-iulia-corinthus",
+      "secondaryName": "Colonia Laus Iulia Corinthus",
+      "relationToNarrativeEra": "ROMAN_REFOUNDATION",
+      "contextNote": {
+        "en": "The Greek city was destroyed by Rome in 146 BC and refounded as a Roman colony in 44 BC. St Paul’s Corinth belongs to this later urban phase.",
+        "fr": "La cité grecque fut détruite par Rome en 146 av. J.-C., puis refondée en colonie romaine en 44 av. J.-C. La Corinthe de saint Paul appartient à cette seconde phase."
+      },
+      "independentEvidenceURLs": [
+        "https://www.perseus.tufts.edu/hopper/artifact?name=Corinth&object=Site",
+        "https://www.cambridge.org/core/books/abs/destruction-of-cities-in-the-ancient-greek-world/from-the-destruction-of-corinth-to-colonia-laus-iulia-corinthiensis/B98CF9F29432FC7C3650835BD56B9CBA"
+      ],
+      "sourceCaveat": "Roman refoundation is a settlement-history claim, not evidence of a unique event point.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "rome",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 28:16–31",
+      "periodIsNotExactYear": true,
+      "reason": "Roma adds no meaningful context to Rome; Pleiades city point is rough.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "lystra",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 14:8–18",
+      "periodIsNotExactYear": true,
+      "reason": "Existing Lystra name is appropriate; colonial title is not necessary for this event.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "thessalonica",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 17:1–9",
+      "periodIsNotExactYear": true,
+      "reason": "The existing translation is period-appropriate, so no extra name note is justified.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "troas",
+      "decision": "PROPOSE_CONTEXT_NOTE_NOT_MAP_RELABEL",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 20:5–12",
+      "periodIsNotExactYear": true,
+      "secondaryNameSourceURI": "https://pleiades.stoa.org/places/550434/antigoneia",
+      "secondaryName": "Antigoneia",
+      "relationToNarrativeEra": "FORMER_NAME",
+      "contextNote": {
+        "en": "Founded as Antigoneia about 310 BC, the city became Alexandria Troas after Lysimachus renamed it. Acts refers to it as Troas.",
+        "fr": "Fondée sous le nom d’Antigonéia vers 310 av. J.-C., la ville devint Alexandrie de Troade après son changement de nom par Lysimaque. Les Actes l’appellent Troade."
+      },
+      "independentEvidenceURLs": [
+        "https://academic.oup.com/edited-volume/61673/chapter-abstract/548074847",
+        "https://www.livius.org/articles/place/alexandria-in-troas/"
+      ],
+      "sourceCaveat": "Antigoneia must not be used as first-century primary map label.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    },
+    {
+      "anchorKey": "miletus",
+      "decision": "SUPPRESS_REDUNDANT_NOTE",
+      "narrativeEra": "APOSTLES",
+      "representativeScripture": "Acts 20:17–38",
+      "periodIsNotExactYear": true,
+      "reason": "Earlier settlement names are not appropriate as a primary Acts-era map label.",
+      "editorialState": "HOLD_REVIEW_ONLY",
+      "pinChange": false,
+      "mapLabelChange": false
+    }
+  ]
+}
