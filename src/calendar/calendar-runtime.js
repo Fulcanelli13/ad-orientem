@@ -648,6 +648,7 @@ function daySurface(selected,r){
       ${printReady?`<button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p>`:""}
     </section>
     ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
+    ${supplementaryDayMarkup(selected,r)}
     <section class="aoCalV2Context">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div></div>
       ${next?`<button class="aoCalV2NextMajor" type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:nextMajorStatusMarkup(selected,"day")}
@@ -916,6 +917,7 @@ function paint(){
   // disclosure. Preserve it only on a same-date Day repaint.
   const oldDiscipline=isSameDay?body.querySelector(".aoCalPracticeDiscipline"):null;
   const wasDisciplineOpen=oldDiscipline?.open===true;
+  const previousSources=isSameDay?[...body.querySelectorAll(".aoCalSecondarySaintCard details")].map(x=>x.open):[];
   const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
   body.innerHTML=bodyMarkup();
@@ -923,6 +925,7 @@ function paint(){
     const next=body.querySelector(".aoCalPracticeDiscipline");
     if(next){next.open=true;if(hadDisciplineFocus)next.querySelector("summary")?.focus?.({preventScroll:true})}
   }
+  if(isSameDay&&previousSources.length)body.querySelectorAll(".aoCalSecondarySaintCard details").forEach((node,index)=>{node.open=previousSources[index]===true});
   if(editing){const input=body.querySelector("[data-cal-input]");if(input){input.value=value;input.focus({preventScroll:true});if(start!==null&&end!==null)input.setSelectionRange(start,end)}}
   r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;r.dataset.aoCalendarPaintView=calendarView;r.dataset.aoCalendarPaintDate=selected;
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
@@ -1045,7 +1048,7 @@ function open({embeddedIn=null,onClose=null}={}){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();
   // Embedding the Calendar in Today or Mass must be observational when the
   // selected 1962 day is already resolved. revealDate() dispatches
