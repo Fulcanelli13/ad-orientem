@@ -22,12 +22,13 @@ for(const p of census.persons){
   assert.equal(p.liturgicalDate.monthDay,null,"Never invent a universal memorial date");
   assert.equal(p.liturgicalDate.status,"UNVERIFIED_NO_INFERENCE");
   assert.equal(p.calendar1962SourceId,null);
-  assert.match(p.canonizedOn,/^20\d\d-\d\d-\d\d$/);
+  assert.match(p.canonizedOn,/^(?:19|20)\d\d-\d\d-\d\d$/);
+  assert.ok(p.canonizedOn>"1960-07-26");
   assert.ok(eIds.has(p.canonizationEventId));
   assert.ok(p.sources.some(s=>s.startsWith("https://www.causesanti.va/")));
 }
 for(const e of census.events){
-  assert.match(e.date,/^20\d\d-\d\d-\d\d$/);
+  assert.match(e.date,/^(?:19|20)\d\d-\d\d-\d\d$/);
   assert.equal(e.year,Number(e.date.slice(0,4)));
   assert.ok(["ORDINARY","EQUIVALENT_CANONIZATION"].includes(e.kind));
   assert.ok(e.namedIndividualIds.every(id=>pIds.has(id)));
