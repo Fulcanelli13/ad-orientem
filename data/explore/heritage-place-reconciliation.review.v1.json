@@ -1,6 +1,6 @@
 {
   "schema": "AO_EXPLORE_PLACE_RECONCILIATION_REVIEW_V1",
-  "created_at": "2026-10-10",
+  "created_at": "2026-10-15",
   "status": "EDITORIAL_REVIEW_ONLY_NOT_PRODUCTION_DATA",
   "purpose": "Lossless crosswalk of source-owned heritage evidence to canonical Places; never grants relic authenticity, apparition approval, custom distribution, or publishable coordinate status.",
   "ownership": {
@@ -11,14 +11,14 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 229,
-    "places_with_linked_records": 227,
+    "places": 251,
+    "places_with_linked_records": 249,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 183,
-    "shrines": 225,
-    "pilgrimages": 211,
+    "multicategory_heritage_places": 206,
+    "shrines": 247,
+    "pilgrimages": 234,
     "relic_claims": 122,
-    "apparition_accounts": 32,
+    "apparition_accounts": 33,
     "canonical_customs": 13,
     "custom_attestations": 71,
     "novena_context_links": 18,
@@ -144,6 +144,19 @@
   ],
   "place_crosswalk": [
     {
+      "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
+      "display_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
+      "record_ids": {
+        "shrines": [
+          "shrine:AR:alta-gracia-lourdes-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AR:alta-gracia-lourdes-sanctuary-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:AR:basilica-of-our-lady-of-lujan",
       "display_name": "Basilica of Our Lady of Luján",
       "record_ids": {
@@ -225,6 +238,22 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "display_name": "St James Parish Church — Međugorje",
+      "record_ids": {
+        "shrines": [
+          "shrine:BA:medjugorje-queen-of-peace"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BA:medjugorje-destination"
+        ],
+        "apparitions": [
+          "apparition:BA:medjugorje"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:BE:banneux",
       "display_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
       "record_ids": {
@@ -290,6 +319,19 @@
         ],
         "customs": [
           "att:DEV-007:APARECIDA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "display_name": "Paróquia e Santuário Nossa Senhora de Fátima, Fortaleza",
+      "record_ids": {
+        "shrines": [
+          "shrine:BR:fortaleza-fatima-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BR:fortaleza-fatima-sanctuary-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -394,6 +436,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
+      "display_name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:rigaud-notre-dame-lourdes"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:rigaud-notre-dame-lourdes-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CA:sainte-anne-de-beaupre",
       "display_name": "Sanctuaire Sainte-Anne-de-Beaupré",
       "record_ids": {
@@ -481,6 +536,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CN:sheshan-our-lady-help-christians",
+      "display_name": "Basilica of Our Lady Help of Christians — Sheshan",
+      "record_ids": {
+        "shrines": [
+          "shrine:CN:sheshan-our-lady-help-christians"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CN:sheshan-our-lady-help-christians-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CO:chiquinquira-basilica",
       "display_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
       "record_ids": {
@@ -508,6 +576,32 @@
         ],
         "customs": [
           "att:DEV-007:LAS-LAJAS"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CR:cartago-virgen-angeles",
+      "display_name": "Basílica de Nuestra Señora de los Ángeles, Cartago",
+      "record_ids": {
+        "shrines": [
+          "shrine:CR:cartago-virgen-angeles"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CR:cartago-virgen-angeles-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CU:el-cobre-caridad-basilica",
+      "display_name": "Basílica Santuario Nacional de Nuestra Señora de la Caridad del Cobre",
+      "record_ids": {
+        "shrines": [
+          "shrine:CU:el-cobre-caridad-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CU:el-cobre-caridad-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -757,6 +851,19 @@
         ],
         "directory_links": [
           "link:directory-place:DE:wigratzbad-suehnekirche"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DO:higuey-altagracia-basilica",
+      "display_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
+      "record_ids": {
+        "shrines": [
+          "shrine:DO:higuey-altagracia-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DO:higuey-altagracia-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1759,6 +1866,32 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GT:esquipulas-black-christ-basilica",
+      "display_name": "Basílica del Santo Cristo Crucificado de Esquipulas",
+      "record_ids": {
+        "shrines": [
+          "shrine:GT:esquipulas-black-christ-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GT:esquipulas-black-christ-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HN:suyapa-basilica",
+      "display_name": "Basílica de Nuestra Señora de Suyapa",
+      "record_ids": {
+        "shrines": [
+          "shrine:HN:suyapa-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:HN:suyapa-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
       "display_name": "National Shrine of Our Lady of Marija Bistrica",
       "record_ids": {
@@ -1774,6 +1907,19 @@
       "record_ids": {
         "shrines": [
           "shrine:HR:national-shrine-of-saint-joseph-karlovac"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HU:mariapocs-greek-catholic-basilica",
+      "display_name": "Máriapócs Kegytemplom — Greek Catholic Pilgrimage Basilica",
+      "record_ids": {
+        "shrines": [
+          "shrine:HU:mariapocs-greek-catholic-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:HU:mariapocs-greek-catholic-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2199,6 +2345,19 @@
         ],
         "relics": [
           "relic:IT:duomo-torino-sindone"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:lanciano-eucharistic-miracle",
+      "display_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:lanciano-eucharistic-miracle"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:lanciano-eucharistic-miracle-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2742,6 +2901,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LV:aglona-assumption-basilica",
+      "display_name": "Aglonas Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas bazilika",
+      "record_ids": {
+        "shrines": [
+          "shrine:LV:aglona-assumption-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LV:aglona-assumption-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MA:cathedrale-saint-pierre-rabat",
       "display_name": "Cathédrale Saint-Pierre de Rabat",
       "record_ids": {
@@ -2823,6 +2995,32 @@
         ],
         "routes": [
           "route:MX:guadalajara-zapopan-romeria"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "display_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
+      "record_ids": {
+        "shrines": [
+          "shrine:MY:st-anne-bukit-mertajam"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MY:st-anne-bukit-mertajam-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "display_name": "Santuário de Nossa Senhora de Fátima da Namaacha",
+      "record_ids": {
+        "shrines": [
+          "shrine:MZ:namaacha-fatima-sanctuary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MZ:namaacha-fatima-sanctuary-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2957,6 +3155,19 @@
         ],
         "relics": [
           "relic:PE:convento-santo-domingo-lima"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:manaoag-rosary-basilica",
+      "display_name": "Minor Basilica of Our Lady of the Rosary of Manaoag",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:manaoag-rosary-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PH:manaoag-rosary-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3128,6 +3339,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PL:swieta-lipka-jesuit-shrine",
+      "display_name": "Sanktuarium Matki Jedności Chrześcijan — Święta Lipka",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:swieta-lipka-jesuit-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:swieta-lipka-jesuit-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PL:wawel-cathedral-stanislaus",
       "display_name": "Wawel Cathedral, Kraków",
       "record_ids": {
@@ -3213,6 +3437,32 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PT:santarem-santissimo-milagre",
+      "display_name": "Igreja de Santo Estêvão — Santuário do Santíssimo Milagre, Santarém",
+      "record_ids": {
+        "shrines": [
+          "shrine:PT:santarem-santissimo-milagre"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PT:santarem-santissimo-milagre-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PY:caacupe-our-lady-miracles",
+      "display_name": "Basílica Santuario Nuestra Señora de los Milagros de Caacupé",
+      "record_ids": {
+        "shrines": [
+          "shrine:PY:caacupe-our-lady-miracles"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PY:caacupe-our-lady-miracles-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:RW:sanctuaire-kibeho",
       "display_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
       "record_ids": {
@@ -3244,6 +3494,32 @@
       "record_ids": {
         "shrines": [
           "shrine:SG:nativity-blessed-virgin-mary-hougang"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SI:brezje-mary-help-basilica",
+      "display_name": "Bazilika Marije Pomagaj — Brezje",
+      "record_ids": {
+        "shrines": [
+          "shrine:SI:brezje-mary-help-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:SI:brezje-mary-help-basilica-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SK:levoca-marianska-hora-basilica",
+      "display_name": "Bazilika Navštívenia Panny Márie — Mariánska hora, Levoča",
+      "record_ids": {
+        "shrines": [
+          "shrine:SK:levoca-marianska-hora-basilica"
+        ],
+        "pilgrimages": [
+          "pilgrimage:SK:levoca-marianska-hora-basilica-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3621,6 +3897,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:UY:montevideo-gruta-lourdes-national-shrine",
+      "display_name": "Santuario Nacional Gruta de Lourdes, Montevideo",
+      "record_ids": {
+        "shrines": [
+          "shrine:UY:montevideo-gruta-lourdes-national-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:UY:montevideo-gruta-lourdes-national-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:VA:saint-peter-vatican",
       "display_name": "St Peter's Basilica — Vatican",
       "record_ids": {
@@ -3658,6 +3947,9 @@
       "record_ids": {
         "shrines": [
           "shrine:VN:our-lady-la-vang-national-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:VN:our-lady-la-vang-national-shrine-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3677,10 +3969,10 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 225,
-    "pilgrimages": 183,
+    "shrines": 247,
+    "pilgrimages": 206,
     "relics": 92,
-    "apparitions": 29,
+    "apparitions": 30,
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
@@ -3698,5 +3990,57 @@
       "St Winefride's parish church georeference comes from an OSGB36 national grid source transformed to WGS84, distinct from Holy Well/Chapel.",
       "Martyrs' Shrine and St Alphonsus coordinates come from non-OSM published site listings; independently confirm doors/entrances before asserting navigation precision."
     ]
+  },
+  "georeference_tranche_20261015": {
+    "release": "R71",
+    "places_added": [
+      "place:BA:medjugorje-st-james-parish"
+    ],
+    "relationship_ids": [
+      "shrine:BA:medjugorje-queen-of-peace",
+      "pilgrimage:BA:medjugorje-destination",
+      "apparition:BA:medjugorje"
+    ],
+    "scope": "Review ledger refreshed after a source-anchored canonical Place release; no unqualified relic, apparition-authenticity or TLM inference."
+  },
+  "georeference_tranche_20261015_r72": {
+    "new_sites": [
+      "place:IT:lanciano-eucharistic-miracle",
+      "place:PT:santarem-santissimo-milagre",
+      "place:HU:mariapocs-greek-catholic-basilica",
+      "place:CN:sheshan-our-lady-help-christians",
+      "place:PH:manaoag-rosary-basilica",
+      "place:GT:esquipulas-black-christ-basilica",
+      "place:PY:caacupe-our-lady-miracles"
+    ],
+    "rule": "One sourced physical pin per distinct major pilgrimage sanctuary; no religious authenticity inference."
+  },
+  "georeference_tranche_20261015_r73": {
+    "new_sites": [
+      "place:HN:suyapa-basilica",
+      "place:CR:cartago-virgen-angeles",
+      "place:MY:st-anne-bukit-mertajam",
+      "place:SK:levoca-marianska-hora-basilica",
+      "place:PL:swieta-lipka-jesuit-shrine",
+      "place:DO:higuey-altagracia-basilica",
+      "place:CU:el-cobre-caridad-basilica",
+      "place:SI:brezje-mary-help-basilica",
+      "place:LV:aglona-assumption-basilica"
+    ],
+    "confirmed_existing": [
+      "place:PL:jasna-gora",
+      "place:MX:basilica-guadalupe-mexico-city",
+      "place:JP:our-lady-akita-convent",
+      "place:CZ:svata-hora-pribram",
+      "place:MX:basilica-zapopan",
+      "place:IN:basilica-bom-jesus-old-goa",
+      "place:PL:kalwaria-zebrzydowska",
+      "place:BR:aparecida-national-shrine",
+      "place:CO:las-lajas-ipiales",
+      "place:AR:san-nicolas-virgen-rosario",
+      "place:CO:chiquinquira-basilica",
+      "place:PL:gietrzwald-basilica"
+    ],
+    "scope": "No additional asserted apparition or relic authenticity; no dates/routes or media."
   }
 }

@@ -1,0 +1,151 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {mkdir,readFile} from "node:fs/promises";
+import {resolve,sep,extname} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const out=resolve(root,"artifacts/visual-acceptance/source-references");
+await mkdir(out,{recursive:true});
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
+ ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
+ ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
+ ".webp":"image/webp",".jpg":"image/jpeg"};
+const fixture='<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1">'+
+'<style>:root{color-scheme:dark;--ao-bg-canvas:#080c12;--ao-surface-1:#101821;'+
+'--ao-text-primary:#e9e4da;--ao-text-muted:#a9a5a0;--ao-rule:#444048;'+
+'--liturgical:#c9ad78;--ao-global-ribbon-h:0px;--safe-bottom:0px;--safe-top:0px;'+
+'--ao-font-body:Georgia,serif;--ao-font-display:Georgia,serif;--ao-font-ui:system-ui,sans-serif}'+
+'html,body{margin:0;min-height:100%;background:var(--ao-bg-canvas);'+
+'color:var(--ao-text-primary);font:16px/1.6 var(--ao-font-body)}'+
+'a{color:var(--liturgical)}button{font-family:inherit}</style></head><body></body></html>';
+const server=http.createServer(async(req,res)=>{
+ try{
+  const pathname=new URL(req.url,"http://127.0.0.1").pathname;
+  if(pathname==="/__reference_qa__"){
+   res.writeHead(200,{"content-type":mime[".html"],"cache-control":"no-store"});
+   res.end(fixture);return;
+  }
+  const absolute=resolve(root,"."+decodeURIComponent(pathname));
+  if(absolute!==root&&!absolute.startsWith(root+sep)){
+   res.writeHead(403);res.end("blocked");return;
+  }
+  const contents=await readFile(absolute);
+  res.writeHead(200,{"content-type":mime[extname(absolute)]||"application/octet-stream","cache-control":"no-store"});
+  res.end(contents);
+ }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error));}
+});
+await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok);});
+const base="http://127.0.0.1:"+server.address().port;
+let browser;
+const failures=[];
+const results=[];
+try{
+ browser=await chromium.launch({headless:true});
+ for(const device of [{name:"phone",width:390,height:844,isMobile:true,hasTouch:true},
+  {name:"desktop",width:1280,height:900,isMobile:false,hasTouch:false}]){
+  for(const lang of ["en","fr"]){
+   const context=await browser.newContext({
+    viewport:{width:device.width,height:device.height},
+    deviceScaleFactor:device.isMobile?2:1,isMobile:device.isMobile,hasTouch:device.hasTouch
+   });
+   const page=await context.newPage();
+   const fatal=[];
+   page.on("pageerror",error=>fatal.push(String(error)));
+   try{
+    async function setup(surface){
+     await page.goto(base+"/__reference_qa__",{waitUntil:"domcontentloaded"});
+     await page.evaluate(locale=>{
+      document.documentElement.lang=locale;
+      window.AO_RUNTIME_V8={store:{getState:()=>({language:locale})}};
+     },lang);
+     const info=await page.evaluate(async name=>{
+      if(name==="mass"){
+       const m=await import("/src/learn/mass-formation.js");
+       const app=m.createMassFormationRuntime(window,{fetchImpl:fetch.bind(window)});
+       window.__referenceRuntime=app;
+       return {opened:await app.open({stageId:"MF01"}),root:"#ao-mass-formation-root",
+        disclosure:".aoReferencePanel",evidence:".aoRefEvidence",minRows:2};
+      }
+      if(name==="spiritual"){
+       const m=await import("/src/learn/spiritual-life.js");
+       const data=await import("/src/learn/spiritual-life-data.js");
+       const app=m.createSpiritualLifeRuntime(window);
+       window.__referenceRuntime=app;
+       return {opened:app.open({lessonId:data.SPIRITUAL_LIFE_LESSONS[0].id}),
+        root:"#ao-spiritual-life-root",disclosure:".aoSLSources",
+        evidence:".aoSLEvidence",minRows:4};
+      }
+      const m=await import("/src/learn/formation-recovery-review.js");
+      const app=m.createFormationRecoveryReview(window);
+      window.__referenceRuntime=app;
+      const opened=await app.open({corpus:"apologetics",studyPreview:true});
+      return {opened,root:"#ao-formation-recovery-review",disclosure:".rrEvidenceDisclosure",
+       evidence:".rrEvidenceList",minRows:4};
+     },surface);
+     assert.equal(info.opened,true,surface+" runtime failed to open");
+     if(surface==="formation"){
+      await page.locator('[data-rr-theme="god-revelation"]').click();
+      await page.locator('[data-rr-dossier="APOL-001"]').click();
+      assert.equal(await page.locator('[data-rr-canonical-synthesis="APOL-001"]').count(),1);
+     }
+     return info;
+    }
+    for(const surface of ["mass","spiritual","formation"]){
+     const info=await setup(surface);
+     const label=device.name+"-"+lang+"-"+surface;
+     const node=page.locator(info.root);
+     assert.equal(await node.count(),1,label+" missing canonical reader root");
+     const drawer=page.locator(info.disclosure).first();
+     await drawer.waitFor({state:"attached",timeout:20000});
+     assert.equal(await drawer.getAttribute("open"),null,label+" sources should start folded");
+     const before=await page.evaluate(({root,disclosure})=>{
+      const node=document.querySelector(root),drawer=document.querySelector(disclosure);
+      return {linksBefore:drawer.querySelectorAll("a[href]").length,
+       rootWidth:node.getBoundingClientRect().width,rootOverflow:node.scrollWidth-node.clientWidth};
+     },info);
+     assert.ok(before.rootWidth<=device.width+2,label+" root exceeds viewport");
+     assert.ok(before.rootOverflow<=3,label+" horizontal overflow before sources opened: "+before.rootOverflow);
+     await page.screenshot({path:resolve(out,label+"-reading.png"),fullPage:false});
+     await drawer.locator("summary").first().click();
+     assert.notEqual(await drawer.getAttribute("open"),null,label+" drawer cannot be opened");
+     const evidence=page.locator(info.evidence).first();
+     await evidence.waitFor({state:"attached"});
+     if(surface!=="formation"){
+      const sub=evidence.locator("summary").first();
+      assert.ok(await sub.count(),label+" nested evidence summary absent");
+      await sub.click();
+     }
+     const linkCount=await drawer.locator('a[href^="https://"]').count();
+     assert.ok(linkCount>0,label+" lost original source hyperlinks");
+     const rows=await page.evaluate(({surface,evidence})=>{
+      const block=document.querySelector(evidence);
+      return surface==="mass"?block.querySelectorAll("[data-ao-evidence-row]").length:
+       surface==="spiritual"?block.querySelectorAll("[data-ao-sl-evidence-block]").length:
+       block.querySelectorAll("[data-rr-evidence-row]").length;
+     },{surface,evidence:info.evidence});
+     assert.ok(rows>=info.minRows,label+" missing source-to-paragraph links: "+rows);
+     const metrics=await page.evaluate(({root,disclosure})=>{
+      const reader=document.querySelector(root),panel=document.querySelector(disclosure);
+      const rect=panel.getBoundingClientRect();
+      const badLinks=[...panel.querySelectorAll("a[href]")].filter(a=>
+       a.protocol!=="https:"||a.target!=="_blank"||!a.rel.includes("noopener")).length;
+      return {scrollOverflow:reader.scrollWidth-reader.clientWidth,
+       panelWidth:rect.width,viewport:innerWidth,linksBad:badLinks};
+     },info);
+     assert.equal(metrics.linksBad,0,label+" unsafe or malformed external source links");
+     assert.ok(metrics.scrollOverflow<=3,label+" horizontal overflow with open sources: "+metrics.scrollOverflow);
+     assert.ok(metrics.panelWidth<=device.width+2,label+" drawer wider than viewport");
+     await drawer.scrollIntoViewIfNeeded();
+     await page.screenshot({path:resolve(out,label+"-sources.png"),fullPage:false});
+     results.push({label,rows,sourceLinks:linkCount,horizontalOverflowPx:metrics.scrollOverflow});
+    }
+    assert.equal(fatal.length,0,device.name+" "+lang+" runtime JS errors:\n"+fatal.join("\n"));
+   }catch(error){failures.push({device:device.name,lang,error:String(error?.stack||error),pageerrors:fatal});}
+   finally{await page.close();await context.close();}
+  }
+ }
+ assert.deepEqual(failures,[],"Source reference browser acceptance regressions");
+ console.log(JSON.stringify({status:"PASS_SOURCE_REFERENCE_BROWSER",surfaces:results.length,screenshots:results.length*2,results},null,2));
+}finally{await browser?.close();await new Promise(ok=>server.close(ok));}

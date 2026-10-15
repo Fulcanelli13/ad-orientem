@@ -1,4 +1,5 @@
 import { buildCatechismGuidedStudy, findGuidedLessonForQuestion } from "./catechism-guided-study.js";
+import { sourceReferenceSafeUrl } from "./source-reference-panel.js";
 
 // Embeddable reader for the existing Catechism surface. Never mounts itself or adds a public route.
 // Production callers must supply the certified crosswalk and overlays and must not set preview.
@@ -46,9 +47,22 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
   if (inputs.frenchIndex && frenchByQuestion.size !== 433)
     throw new Error("Incomplete original 1913 French page index");
   const renderSource = source => {
-    const links = [`<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.ref)}</a>`];
-    if (source.originalLanguageUrl)
-      links.push(`<a href="${escapeHtml(source.originalLanguageUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(text("Italian 1912 transcription", "Transcription italienne de 1912", lang))}">IT</a>`);
+    // Source identities and page-review verdicts are inherited from the existing
+    // Catechism registries. A safe hyperlink is not independent claim approval.
+    const primaryUrl = sourceReferenceSafeUrl(source.url);
+    const unavailable = ref => '<span class="aoCatechismGuidedSourceHold" data-ao-cate-source-hold="'+escapeHtml(ref)+'">'+
+      escapeHtml(text("Link unavailable — source retained", "Lien indisponible — source conservée", lang))+
+      ' ('+escapeHtml(ref)+')</span>';
+    const links = [primaryUrl
+      ? '<a data-ao-cate-source-kind="witness" href="'+escapeHtml(primaryUrl)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(source.ref)+'</a>'
+      : unavailable(source.ref)];
+    if (source.originalLanguageUrl) {
+      const italianUrl = sourceReferenceSafeUrl(source.originalLanguageUrl);
+      const italianLabel = text("Italian 1912 transcription", "Transcription italienne de 1912", lang);
+      links.push(italianUrl
+        ? '<a data-ao-cate-source-kind="italian-transcription" href="'+escapeHtml(italianUrl)+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHtml(italianLabel)+'">IT 1912</a>'
+        : unavailable("IT 1912"));
+    }
     const match = /^PX1912-Q(\d{3})$/.exec(source.ref);
     const french = match ? frenchByQuestion.get(Number(match[1])) : null;
     if (french?.scanUrl) {
@@ -56,9 +70,15 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
       const label = checked
         ? text("French printed 1913 original, answer visually checked", "Original français imprimé de 1913, réponse contrôlée visuellement", lang)
         : text("French printed 1913 original, provisional page locator", "Original français imprimé de 1913, page provisoire non collationnée", lang);
-      links.push(`<a href="${escapeHtml(french.scanUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">FR 1913</a>`);
+      const visible = checked
+        ? text("FR 1913 · answer checked", "FR 1913 · réponse vérifiée", lang)
+        : text("FR 1913 · locator provisional", "FR 1913 · repère provisoire", lang);
+      const frenchUrl = sourceReferenceSafeUrl(french.scanUrl);
+      links.push(frenchUrl
+        ? '<a data-ao-cate-source-kind="french-print" data-ao-cate-source-review="'+(checked?"visually-checked":"provisional")+'" href="'+escapeHtml(frenchUrl)+'" target="_blank" rel="noopener noreferrer" aria-label="'+escapeHtml(label)+'" title="'+escapeHtml(label)+'">'+escapeHtml(visible)+'</a>'
+        : unavailable("FR 1913"));
     }
-    return links.join(" ");
+    return links.join(" · ");
   };
   const onQuestion = typeof options.onQuestion === "function" ? options.onQuestion : () => {};
   let current = options.questionNumber

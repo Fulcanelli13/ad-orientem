@@ -13,7 +13,14 @@ const EXPECTED=Object.freeze({
  luke:Object.freeze({pericopes:245,fragments:3660,sourceSha:"57cad8bab1624b2fc3559868513a963622eae492"}),
  john:Object.freeze({pericopes:187,fragments:2756,sourceSha:"cc99fe62a303aadfd3fcfea79429103cf80b5acd"})
 });
+// A chapter-range pack is fetched only on explicit commentary demand.
 const memory=new Map();
+let manifestPromise=null;
+export const CATENA_CHUNK_BASE=CATENA_LOCAL_BASE+"chunks/";
+const CHAPTERS=Object.freeze({matthew:28,mark:16,luke:24,john:21});
+const PACK_COUNTS=Object.freeze({matthew:7,mark:4,luke:6,john:6});
+const INTEGRITY="CATENA_SOURCE_INTEGRITY_MISMATCH";
+const bad=()=>{throw new Error(INTEGRITY)};
 const URL_HOST="www.ecatholic2000.com";
 const CACHE="ao-scripture-catena-local-v1";
 export function isCatenaGospel(p) {
@@ -77,25 +84,130 @@ async function fetchWithOfflineFallback(url,fetcher,cacheStorage) {
  }
  throw networkError||new Error("Local Catena unavailable");
 }
+export function validateCatenaChunkManifest(manifest){
+ if(manifest?.schema!=="ao.catena-aurea.chapter-packs-manifest.v1"||
+    manifest.sourceCommit!==CATENA_SOURCE_COMMIT||
+    manifest.license!=="public-domain"||
+    !Array.isArray(manifest.chunks)||manifest.chunks.length!==23||
+    manifest.totals?.packs!==23||manifest.totals?.pericopes!==814||
+    manifest.totals?.fragments!==12692)bad();
+ for(const [gospel,limit] of Object.entries(CHAPTERS)){
+   const book=manifest.books?.[gospel],expected=EXPECTED[gospel];
+   if(book?.chapters!==limit||book.pericopes!==expected.pericopes||
+     book.fragments!==expected.fragments||book.originBlobSha!==expected.sourceSha)bad();
+   const rows=manifest.chunks.filter(x=>x.gospel===gospel);
+   if(rows.length!==PACK_COUNTS[gospel]||
+     rows.reduce((a,x)=>a+x.pericopes,0)!==expected.pericopes||
+     rows.reduce((a,x)=>a+x.fragments,0)!==expected.fragments)bad();
+   for(let i=0;i<rows.length;i++){
+     const row=rows[i],from=1+i*4,to=from+3;
+     const filename=gospel+"-"+String(from).padStart(2,"0")+"-"+String(to).padStart(2,"0")+".json";
+     if(row.firstChapter!==from||row.lastChapter!==to||
+       row.file!==filename||!/^[a-f0-9]{40}$/.test(row.blobSha)||
+       !Number.isInteger(row.bytes)||row.bytes<1000||
+       !Number.isInteger(row.pericopes)||row.pericopes<1||
+       !Number.isInteger(row.fragments)||row.fragments<row.pericopes)bad();
+   }
+ }
+ return true;
+}
+export function validateCatenaChapterPack(packet,gospel,row){
+ const expected=EXPECTED[gospel],p=packet?.provenance;
+ if(!expected||!row||packet?.schema!=="ao.catena-aurea.chapter-pack.v1"||
+  packet.gospel!==gospel||packet.firstChapter!==row.firstChapter||
+  packet.lastChapter!==row.lastChapter||
+  p?.commit!==CATENA_SOURCE_COMMIT||p?.origin!=="AlvaroBalbin/catena"||
+  p?.originBlobSha!==expected.sourceSha||p?.license!=="public-domain"||
+  !Array.isArray(packet.pericopes)||packet.pericopes.length!==row.pericopes)bad();
+ const ids=new Set();let count=0;
+ for(const item of packet.pericopes){
+  if(typeof item?.id!=="string"||!item.id.startsWith("catena."+gospel+".")||
+   ids.has(item.id)||!Array.isArray(item.verse_keys)||!item.verse_keys.length||
+   !item.verse_keys.every(k=>{
+      const x=/^([a-z]+)\/(\d+)\/(\d+)$/.exec(String(k));
+      return x?.[1]===gospel&&Number(x[2])>=row.firstChapter&&
+         Number(x[2])<=Math.min(CHAPTERS[gospel],row.lastChapter)&&Number(x[3])>=1;
+   })||!Array.isArray(item.segments)||!item.segments.length||
+   !item.citation?.startsWith("Catena Aurea, ")||!safeSourceUrl(item.source_url))bad();
+  ids.add(item.id);
+  for(const seg of item.segments){
+   if(typeof seg?.father!=="string"||!seg.father.trim()||
+      typeof seg?.text!=="string"||!seg.text.trim())bad();
+   count++;
+  }
+ }
+ if(count!==row.fragments)bad();
+ return true;
+}
+async function verifyGitBlob(raw,expectedSha,cryptoProvider){
+ if(!cryptoProvider?.subtle||typeof TextEncoder==="undefined")bad();
+ const enc=new TextEncoder(),bytes=enc.encode(raw),header=enc.encode("blob "+bytes.length+"\0");
+ const input=new Uint8Array(header.length+bytes.length);
+ input.set(header);input.set(bytes,header.length);
+ const digest=await cryptoProvider.subtle.digest("SHA-1",input);
+ const sha=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,"0")).join("");
+ if(sha!==expectedSha)bad();
+}
+async function getManifest(fetcher,cacheStorage){
+ if(!manifestPromise){
+  manifestPromise=(async()=>{
+   const url=CATENA_CHUNK_BASE+"manifest.v1.json";
+   const {response,cacheStorage:storage}=await fetchWithOfflineFallback(url,fetcher,cacheStorage);
+   const raw=await response.clone().text(),data=JSON.parse(raw);
+   validateCatenaChunkManifest(data);
+   if(storage?.open)try{await(await storage.open(CACHE)).put(url,response)}catch{}
+   return data;
+  })().catch(error=>{manifestPromise=null;throw error});
+ }
+ return manifestPromise;
+}
+async function legacyCachedGospel(gospel,cacheStorage){
+ if(!cacheStorage?.open)return null;
+ try{
+  const cache=await cacheStorage.open(CACHE);
+  const response=await cache.match(CATENA_LOCAL_BASE+gospel+".json");
+  if(!response?.ok)return null;
+  const old=await response.json();
+  validateCatenaPack(old,gospel);
+  return old.pericopes;
+ }catch{return null}
+}
+/**
+ * Loads and verifies only the four-chapter pack containing the requested
+ * verse, retaining the Gospel-level legacy cache solely as an offline fallback.
+ * Never fetches 4–6 MB of unrelated commentary for a single passage.
+ */
 export async function loadCatenaForPassage(p,{
  fetcher=globalThis.fetch?.bind(globalThis),
- cacheStorage=globalThis.caches
+ cacheStorage=globalThis.caches,
+ cryptoProvider=globalThis.crypto
 }={}) {
  if(!isCatenaGospel(p))return [];
  if(typeof fetcher!=="function")throw new Error("Catena transport unavailable");
- const gospel=BOOKS[p.book];
- if(!memory.has(gospel)){
-   const loading=(async()=>{
-     const url=CATENA_LOCAL_BASE+gospel+".json";
-     const {response,cacheStorage:storage}=await fetchWithOfflineFallback(url,fetcher,cacheStorage);
-     const payload=await response.clone().json();
-     validateCatenaPack(payload,gospel);
-     if(storage?.open) {
-       try {const cache=await storage.open(CACHE);await cache.put(url,response);}catch{}
-     }
-     return payload.pericopes;
-   })().catch(e=>{memory.delete(gospel);throw e;});
-   memory.set(gospel,loading);
+ const gospel=BOOKS[p.book],from=1+4*Math.floor((p.chapter-1)/4);
+ if(p.chapter>CHAPTERS[gospel])return [];
+ const key=gospel+":"+from;
+ if(!memory.has(key)){
+  memory.set(key,(async()=>{
+   try{
+    const manifest=await getManifest(fetcher,cacheStorage);
+    const row=manifest.chunks.find(x=>x.gospel===gospel&&x.firstChapter===from);
+    if(!row)bad();
+    const url=CATENA_CHUNK_BASE+row.file;
+    const {response,cacheStorage:storage}=await fetchWithOfflineFallback(url,fetcher,cacheStorage);
+    const raw=await response.clone().text();
+    await verifyGitBlob(raw,row.blobSha,cryptoProvider);
+    const packet=JSON.parse(raw);
+    validateCatenaChapterPack(packet,gospel,row);
+    if(storage?.open)try{await(await storage.open(CACHE)).put(url,response)}catch{}
+    return packet.pericopes;
+   }catch(error){
+    if(String(error?.message||"").includes(INTEGRITY))throw error;
+    const legacy=await legacyCachedGospel(gospel,cacheStorage);
+    if(legacy)return legacy;
+    throw error;
+   }
+  })().catch(error=>{memory.delete(key);throw error}));
  }
- return selectCatenaPericopes(await memory.get(gospel),p);
+ return selectCatenaPericopes(await memory.get(key),p);
 }

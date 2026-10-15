@@ -22,7 +22,7 @@ const CSS=`
 .aoFRWrap{max-width:780px;padding:18px 15px 55px;margin:0 auto}.aoFRWrap h1{font:500 clamp(1.7rem,6vw,2.4rem)/1.2 var(--ao-font-display,Georgia,serif);margin:8px 0 22px}.aoFRWrap h2{font:600 1.22rem var(--ao-font-display,Georgia,serif);margin:27px 0 12px}
 .aoFRWrap p{margin:0 0 12px;line-height:1.65}.aoFRMeta{font:.7rem system-ui;letter-spacing:.06em;color:var(--ao-text-muted,#a9a5a0)}
 .aoFRNotice{border-left:2px solid var(--liturgical,#c9ad78);margin:14px 0;padding:12px;color:var(--ao-text-muted,#bdb6ab);font:.8rem/1.5 system-ui}
-.aoFRSources{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 21px;font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoFRSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}.aoFRSourceHold{color:var(--ao-text-muted,#bdb6ab);font-style:italic;overflow-wrap:anywhere}
+.aoFRSources{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 21px;font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoFRSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;overflow-wrap:anywhere}.aoFRSourceHold{color:var(--ao-text-muted,#bdb6ab);font-style:italic;overflow-wrap:anywhere}.aoFRReferencePanel{margin:26px 0 16px;padding-top:12px;border-top:1px solid var(--ao-rule,#3d3d40);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoFRReferencePanel>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0)}.aoFRReferencePanel>summary:focus-visible,.aoFRReferencePanel a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoFRReferencePanel[open]>summary{color:var(--liturgical,#c9ad78)}.aoFRReferencePanel ol{padding-left:22px;margin:6px 0}.aoFRReferencePanel li{margin:13px 0}.aoFRReferencePanel .aoFRExcerpt{display:block;color:var(--ao-text-muted,#a9a5a0);margin-bottom:4px}.aoFRReferencePanel .aoFRSources{margin:3px 0 10px}
 .aoFRList{display:grid;gap:8px;margin-top:18px}.aoFRList button,.aoFRSub button{display:block;width:100%;padding:13px;text-align:left;border:1px solid var(--ao-rule,#3d3d40);border-radius:12px;background:var(--ao-surface-1,#101821);color:inherit;font:1rem/1.4 var(--ao-font-body,Georgia,serif)}
 .aoFRList small{display:block;font:.7rem/1.4 system-ui;color:var(--ao-text-muted,#a9a5a0);margin-bottom:5px}
 .aoFRSearch{display:block;width:100%;padding:12px;border:1px solid var(--ao-rule,#3d3d40);border-radius:12px;background:var(--ao-surface-1,#101821);color:inherit;font:1rem system-ui}
@@ -78,8 +78,25 @@ export function createFormationResearchPreview(win=globalThis){
   const series=()=>state.questionId?.startsWith("TLM")?TLM.questions:DATA.questions;
   const title=q=>fr(win)?q?.title_fr:q?.title_en;
   const links=(ids,group)=>formationResearchSourceLinks(win,ids,group);
-  const para=(p,kind)=>!p?"":`<p>${inline(body(win,p))}</p>${links(p.source_ids,kind)}`;
+  let evidenceRows=[];
+  const captureEvidence=(ids,group,passage)=>{
+    evidenceRows.push({ids:[...new Set(ids||[])],group,passage:String(passage||"")});
+    return "";
+  };
+  const para=(p,kind)=>!p?"":`<p>${inline(body(win,p))}</p>${captureEvidence(p.source_ids,kind,body(win,p))}`;
   const paragraphs=(ps,kind)=>(ps||[]).map(p=>para(p,kind)).join("");
+  function sourceFooter(){
+    const records=evidenceRows;
+    if(!records.length)return "";
+    const rows=records.map((record,i)=>{
+      const excerpt=record.passage.replace(/\s+/g," ").trim().slice(0,110);
+      return '<li data-ao-fr-evidence-paragraph="'+(i+1)+'"><span class="aoFRExcerpt">'+esc(excerpt)+(record.passage.length>110?"…":"")+'</span>'+
+        links(record.ids,record.group)+'</li>';
+    }).join("");
+    return '<details class="aoFRReferencePanel" data-ao-fr-aggregated-sources><summary>'+
+      esc(L(win,"Sources & original texts","Sources et textes originaux"))+' · '+records.length+'</summary>'+
+      '<ol>'+rows+'</ol></details>';
+  }
   function argumentsView(items,kind){
     if(!items?.length)return "";
     return `<h2>${esc(L(win,"Objections & replies","Objections et réponses"))}</h2>`+items.map(x=>`<div class="aoFRPart">
@@ -110,7 +127,7 @@ export function createFormationResearchPreview(win=globalThis){
       const notice=p.role==="editorial_followup_question"
         ? `<p class="aoFRMeta">${esc(L(win,"This is an internal follow-up question, not an objection attributed to an external author. Source links provide topic context only.","Cette question interne n’est attribuée à aucun auteur extérieur. Les liens indiquent seulement le contexte documentaire."))}</p>`
         : "";
-      return `<section class="aoFRPart"><div class="aoFRLead">${esc(L(win,...label))}</div><p>${inline(body(win,p))}</p>${notice}${links(p.source_ids,q.source_group)}</section>`;
+      return `<section class="aoFRPart"><div class="aoFRLead">${esc(L(win,...label))}</div><p>${inline(body(win,p))}</p>${notice}${captureEvidence(p.source_ids,q.source_group,body(win,p))}</section>`;
     }).join("");
     const note=q.editorial_stage?.includes("NORMALIZED")
       ? L(win,"Normalized research summary, not a verbatim recovery of the earlier draft.","Synthèse de recherche, non reproduction intégrale de la version antérieure.")
@@ -122,12 +139,14 @@ export function createFormationResearchPreview(win=globalThis){
   }
   function debateView(){
     const d=debateMap.get(state.debateId);if(!d)return "";
-    return `<div class="aoFRMeta">${esc(d.id)}</div><h1>${esc(fr(win)?d.title_fr:d.title)}</h1>
+    evidenceRows=[];
+    const html=`<div class="aoFRMeta">${esc(d.id)}</div><h1>${esc(fr(win)?d.title_fr:d.title)}</h1>
     <h2>${esc(L(win,"Answer","Réponse"))}</h2>${paragraphs(d.short_answer,"sedevacantism")}
     <h2>${esc(L(win,"Sedevacantist argument","Argument sédévacantiste"))}</h2><div class="aoFRLead">${esc(d.sedevacantist_case.attributed_to)}</div>${paragraphs(d.sedevacantist_case.paragraphs,"sedevacantism")}
     <h2>${esc(L(win,"Critical assessment","Examen critique"))}</h2>${paragraphs(d.critical_assessment,"sedevacantism")}
     ${argumentsView(d.objections,"sedevacantism")}
     <h2>${esc(L(win,"Traditional Catholic argument","Argument catholique traditionnel"))}</h2>${paragraphs(d.traditional_argument,"sedevacantism")}`;
+    return html+sourceFooter();
   }
   function available(){
     return allQuestions.filter(q=>{
@@ -167,8 +186,11 @@ export function createFormationResearchPreview(win=globalThis){
     const currentSeries=series(),i=currentSeries.findIndex(x=>x.id===q.id),prev=i>0,next=i<currentSeries.length-1;
     const owner=TLM.canonical_owners?.[q.owner];
     const ownerLine=owner&&q.id.startsWith("TLM")?`<p class="aoFRMeta">${esc(L(win,"Church Crisis owner","Dossier Crise de l’Église"))}: ${esc(owner.title)}</p>`:"";
+    evidenceRows=[];
+    const answer=answerView();
+    const references=sourceFooter();
     return `<div class="aoFRMeta">${esc(q.id)} · ${esc(q.owner)}</div>${ownerLine}<h1>${esc(title(q))}</h1>
-    <div class="aoFRNotice">${esc(L(win,"Unpublished editorial draft","Projet éditorial non publié"))}</div>${answerView()}
+    <div class="aoFRNotice">${esc(L(win,"Unpublished editorial draft","Projet éditorial non publié"))}</div>${answer}${references}
     ${q.debate_ids?.length?`<h2>${esc(L(win,"Complete debates","Débats complets"))}</h2><div class="aoFRSub">${q.debate_ids.map(id=>{const d=debateMap.get(id);return d?`<button type="button" data-ao-fr-debate="${esc(id)}">${esc(fr(win)?d.title_fr:d.title)}</button>`:""}).join("")}</div>`:""}
     <nav class="aoFRPrevNext"><button type="button" data-ao-fr-move="-1"${prev?"":" disabled"}>${esc(L(win,"Previous","Précédente"))}</button>
     <button type="button" data-ao-fr-move="1"${next?"":" disabled"}>${esc(L(win,"Next","Suivante"))}</button></nav>`;

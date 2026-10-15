@@ -1,0 +1,271 @@
+{
+  "schema": "ao.catena-aurea.chapter-packs-manifest.v1",
+  "sourceCommit": "efe1bd084d918a34ca22ffeef2ecf711c593b392",
+  "license": "public-domain",
+  "edition": "Catena Aurea (Oxford, 1841–45), tr. John Henry Newman",
+  "format": "four-chapter-shards",
+  "chapterCount": 89,
+  "books": {
+    "matthew": {
+      "chapters": 28,
+      "pericopes": 278,
+      "fragments": 4825,
+      "originBlobSha": "7c19218587120dd9cf8efb51826fca8d13bb884e"
+    },
+    "mark": {
+      "chapters": 16,
+      "pericopes": 104,
+      "fragments": 1451,
+      "originBlobSha": "efeb0ee731a0631c8d15bc1a41891a6178210272"
+    },
+    "luke": {
+      "chapters": 24,
+      "pericopes": 245,
+      "fragments": 3660,
+      "originBlobSha": "57cad8bab1624b2fc3559868513a963622eae492"
+    },
+    "john": {
+      "chapters": 21,
+      "pericopes": 187,
+      "fragments": 2756,
+      "originBlobSha": "cc99fe62a303aadfd3fcfea79429103cf80b5acd"
+    }
+  },
+  "chunks": [
+    {
+      "gospel": "matthew",
+      "firstChapter": 1,
+      "lastChapter": 4,
+      "file": "matthew-01-04.json",
+      "pericopes": 41,
+      "fragments": 713,
+      "blobSha": "761ba186a4d94eaada250345c2980a14c3985d85",
+      "bytes": 312172
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 5,
+      "lastChapter": 8,
+      "file": "matthew-05-08.json",
+      "pericopes": 60,
+      "fragments": 905,
+      "blobSha": "841d411a0ae771a5793c895c7d0bb4db9aa4f981",
+      "bytes": 427562
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 9,
+      "lastChapter": 12,
+      "file": "matthew-09-12.json",
+      "pericopes": 46,
+      "fragments": 722,
+      "blobSha": "2c8d288673cd8a836c9ce70908f8ea40f9bfdd23",
+      "bytes": 329955
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 13,
+      "lastChapter": 16,
+      "file": "matthew-13-16.json",
+      "pericopes": 32,
+      "fragments": 528,
+      "blobSha": "62e68bbb7c27d4fb79be04dd8582b806c28d7be6",
+      "bytes": 255824
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 17,
+      "lastChapter": 20,
+      "file": "matthew-17-20.json",
+      "pericopes": 26,
+      "fragments": 519,
+      "blobSha": "2df08819c716bb70926c95b5a8e4e84c700fe25f",
+      "bytes": 228810
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 21,
+      "lastChapter": 24,
+      "file": "matthew-21-24.json",
+      "pericopes": 36,
+      "fragments": 668,
+      "blobSha": "4ec952458feed298e97bbe0842edff754b348c9a",
+      "bytes": 308744
+    },
+    {
+      "gospel": "matthew",
+      "firstChapter": 25,
+      "lastChapter": 28,
+      "file": "matthew-25-28.json",
+      "pericopes": 37,
+      "fragments": 770,
+      "blobSha": "c04908b4715e73a12a9cfa7d2dc2880a4be25508",
+      "bytes": 327074
+    },
+    {
+      "gospel": "mark",
+      "firstChapter": 1,
+      "lastChapter": 4,
+      "file": "mark-01-04.json",
+      "pericopes": 28,
+      "fragments": 339,
+      "blobSha": "caff0c3cef28f59d31fa033a6aad2588398fa32d",
+      "bytes": 174734
+    },
+    {
+      "gospel": "mark",
+      "firstChapter": 5,
+      "lastChapter": 8,
+      "file": "mark-05-08.json",
+      "pericopes": 20,
+      "fragments": 320,
+      "blobSha": "439ad35d6c582a4b06a401b4744f02b9dd6f58fd",
+      "bytes": 150293
+    },
+    {
+      "gospel": "mark",
+      "firstChapter": 9,
+      "lastChapter": 12,
+      "file": "mark-09-12.json",
+      "pericopes": 25,
+      "fragments": 378,
+      "blobSha": "19b2528aed15d43a2f18da3e28aae1a19131408c",
+      "bytes": 185766
+    },
+    {
+      "gospel": "mark",
+      "firstChapter": 13,
+      "lastChapter": 16,
+      "file": "mark-13-16.json",
+      "pericopes": 31,
+      "fragments": 414,
+      "blobSha": "9a80e9050f5196016008341be106e867562e978f",
+      "bytes": 199264
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 1,
+      "lastChapter": 4,
+      "file": "luke-01-04.json",
+      "pericopes": 69,
+      "fragments": 857,
+      "blobSha": "3bbf837847027fff81771f8ab8fd1bbfcd62c4d6",
+      "bytes": 370877
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 5,
+      "lastChapter": 8,
+      "file": "luke-05-08.json",
+      "pericopes": 33,
+      "fragments": 594,
+      "blobSha": "06345c98c616fe12501f0dd8aec939de629f39d1",
+      "bytes": 273984
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 9,
+      "lastChapter": 12,
+      "file": "luke-09-12.json",
+      "pericopes": 49,
+      "fragments": 804,
+      "blobSha": "4f96cb649b70055e0cb7661ae730d1b7785a275e",
+      "bytes": 384874
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 13,
+      "lastChapter": 16,
+      "file": "luke-13-16.json",
+      "pericopes": 24,
+      "fragments": 427,
+      "blobSha": "f5e6cd1822073613fba41acb786fb6f2e069f003",
+      "bytes": 215397
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 17,
+      "lastChapter": 20,
+      "file": "luke-17-20.json",
+      "pericopes": 29,
+      "fragments": 408,
+      "blobSha": "afbe3bf1bcf843924aaf269a94a847daf78b3b9f",
+      "bytes": 197280
+    },
+    {
+      "gospel": "luke",
+      "firstChapter": 21,
+      "lastChapter": 24,
+      "file": "luke-21-24.json",
+      "pericopes": 41,
+      "fragments": 570,
+      "blobSha": "c461114a7fe524857a20a2513557a52d36a2583a",
+      "bytes": 264540
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 1,
+      "lastChapter": 4,
+      "file": "john-01-04.json",
+      "pericopes": 50,
+      "fragments": 685,
+      "blobSha": "4a1c5333ae0e0f139b2fbb32792b684b362f4a3e",
+      "bytes": 381869
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 5,
+      "lastChapter": 8,
+      "file": "john-05-08.json",
+      "pericopes": 42,
+      "fragments": 698,
+      "blobSha": "b63f7ea2eef22806b148fa259714daa771f4adec",
+      "bytes": 346889
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 9,
+      "lastChapter": 12,
+      "file": "john-09-12.json",
+      "pericopes": 29,
+      "fragments": 462,
+      "blobSha": "2c0cd17c657e7af684f2643eb3fc88e0bdc4a161",
+      "bytes": 192359
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 13,
+      "lastChapter": 16,
+      "file": "john-13-16.json",
+      "pericopes": 28,
+      "fragments": 413,
+      "blobSha": "46ffaa607b161ab29d358f161e408640750b20cb",
+      "bytes": 224748
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 17,
+      "lastChapter": 20,
+      "file": "john-17-20.json",
+      "pericopes": 32,
+      "fragments": 427,
+      "blobSha": "de9a1ab952289c520cb025d0f9fa8aae7d9e0335",
+      "bytes": 196391
+    },
+    {
+      "gospel": "john",
+      "firstChapter": 21,
+      "lastChapter": 24,
+      "file": "john-21-24.json",
+      "pericopes": 6,
+      "fragments": 71,
+      "blobSha": "089c238dd9f9d1c009841210a220cf2027f281ef",
+      "bytes": 38979
+    }
+  ],
+  "totals": {
+    "packs": 23,
+    "pericopes": 814,
+    "fragments": 12692
+  }
+}

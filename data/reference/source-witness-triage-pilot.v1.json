@@ -1,0 +1,323 @@
+{
+  "schema": "ao-source-witness-triage-pilot-v1",
+  "date": "2026-10-15",
+  "status": "INITIAL_LINK_TRIAGE_NOT_COMPLETE_SOURCE_CERTIFICATION",
+  "scope": [
+    "learn.mass",
+    "learn.spiritual_life"
+  ],
+  "count": {
+    "works": 13,
+    "sourceWitnesses": 16,
+    "webpagesOpenedThisReview": 6
+  },
+  "precedence": [
+    "Official original text",
+    "Original printed edition with inspected passage",
+    "Named scholarly edition",
+    "Clearly labelled third-party transcription",
+    "Catalogue-level lead"
+  ],
+  "guidelines": [
+    "Do not call a third-party transcription an official edition",
+    "Never infer copyright permission from old author, HTTP 200, PDF availability or public GitHub file",
+    "Never show an automatically generated further-reading list",
+    "Preserve full original source IDs and exact claim-to-source edges until a verified crosswalk exists",
+    "For source links, prefer stable works/pages over unverified deep URLs, but retain exact printed locator separately"
+  ],
+  "direct_link_exception": {
+    "source_id": "SL-CIC83-992-997",
+    "canonical_index_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+    "preferred_exact_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+    "status": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+    "note": "Use precise Book IV reference, not generic code index. Existing runtime already resolves this source specifically."
+  },
+  "continuation": {
+    "source_id": "SL-TANQUEREY-1930",
+    "url": "https://www.ewtn.com/catholicism/library/spiritual-life-12636",
+    "status": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+    "note": "Sections 643-700 require this continuation; preserve claim-target mapping."
+  },
+  "sources": [
+    {
+      "owner": "learn.mass",
+      "source_id": "SRC-MR62",
+      "work_id": "WORK-MISSALE-ROMANUM-1962",
+      "title": "Missale Romanum — Editio typica 1962",
+      "source_url": "https://archive.org/details/sp07mr62-editio-typica",
+      "source_kind": "DIGITIZED_FACSIMILE_LANDING_PAGE",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "NO_CLAIM_PASSAGE_LOCATORS",
+      "locators": [],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.mass",
+      "source_id": "SRC-MEDIATOR-DEI",
+      "work_id": "WORK-MEDIATOR-DEI-1947",
+      "title": "Pius XII — Mediator Dei",
+      "source_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "source_kind": "HOLY_SEE_OFFICIAL_PRIMARY_TEXT",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "NO_CLAIM_PASSAGE_LOCATORS",
+      "locators": [],
+      "authoritativeness_note": "Official Holy See-hosted document; claim-to-paragraph precision still requires collation",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": true,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.mass",
+      "source_id": "SRC-OCONNELL-1962",
+      "work_id": "WORK-OCONNELL-CELEBRATION-1962",
+      "title": "J. B. O'Connell — The Celebration of Mass (1962)",
+      "source_url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "source_kind": "THIRD_PARTY_PDF_EDITION_OR_SCAN",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "NO_CLAIM_PASSAGE_LOCATORS",
+      "locators": [],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.mass",
+      "source_id": "SRC-CAMPION-1954",
+      "work_id": "WORK-CAMPION-MISSAL-1954",
+      "title": "Fr. Demetrius Manousos, O.F.M. Cap. — Know Your Mass / Saint Edmund Campion Children's Missal (1954)",
+      "source_url": "https://archive.ccwatershed.org/media/pdfs/14/06/26/12-34-30_0.pdf",
+      "source_kind": "THIRD_PARTY_PDF_EDITION_OR_SCAN",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "NO_CLAIM_PASSAGE_LOCATORS",
+      "locators": [],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-TANQUEREY-1930",
+      "work_id": "WORK-TANQUEREY-SPIRITUAL-LIFE",
+      "title": "Adolphe Tanquerey · The Spiritual Life: A Treatise on Ascetical and Mystical Theology",
+      "source_url": "https://www.ewtn.com/catholicism/library/spiritual-life-12632",
+      "source_kind": "THIRD_PARTY_BOOK_TRANSCRIPTION",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "#421–423 desire for perfection",
+        "#446–447 presence of God",
+        "#466–468 general and particular examination",
+        "#510–527 prayer, daily exercises and ordinary actions",
+        "#558–567 rule of life",
+        "#579–582 spiritual reading",
+        "#643–700 prayer of beginners and methods of mental prayer; especially #688–700"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-FRANCIS-SALES-DEVOUT-LIFE",
+      "work_id": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "title": "St Francis de Sales · Introduction to the Devout Life",
+      "source_url": "https://www.ccel.org/ccel/desales/devout_life.all.html",
+      "source_kind": "CLASSIC_BOOK_DIGITAL_TRANSCRIPTION",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Part I, ch. 3: devotion in differing states of life",
+        "Part II, chs. 1–13: mental prayer, presence of God, meditation, dryness, morning/evening prayer, aspirations",
+        "Part II, ch. 17: hearing and reading God's word",
+        "Part IV, chs. 13–14: consolations, dryness and barrenness",
+        "Part V, chs. 3–7: examination of progress"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-IGNATIUS-EXERCISES",
+      "work_id": "WORK-IGNATIUS-EXERCISES",
+      "title": "St Ignatius of Loyola · Spiritual Exercises",
+      "source_url": "https://ccel.org/ccel/ignatius/exercises.all.html",
+      "source_kind": "CLASSIC_BOOK_DIGITAL_TRANSCRIPTION",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Annotations 1, 18–19: exercises adapted to the person",
+        "Particular and Daily Examen",
+        "General Examen: five points"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-CHAUTARD-APOSTOLATE",
+      "work_id": "WORK-CHAUTARD-SOUL-APOSTOLATE",
+      "title": "Dom Jean-Baptiste Chautard · The Soul of the Apostolate",
+      "source_url": "https://www.mountsaintbernard.org/wp-content/uploads/2017/12/Dom-Chautard-The-Soul-of-the-Apostolate.pdf",
+      "source_kind": "THIRD_PARTY_PDF_EDITION_OR_SCAN",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Part II: priority and overflow of the interior life",
+        "Part IV: action made fruitful by interior life",
+        "Part V, pp. 95–100: principles for active workers and mental prayer",
+        "Part V, pp. 129–134: custody of heart and presence of God"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-PIUS-X-CATECHISM",
+      "work_id": "WORK-PIUS-X-CATECHISM",
+      "title": "Catechism of St Pius X",
+      "source_url": "https://laportelatine.org/wp-content/uploads/2020/06/idx-catechisme-saint-pie-x.pdf",
+      "source_kind": "THIRD_PARTY_PDF_EDITION_OR_SCAN",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "First Commandment: external/internal worship, superstition, sacred images",
+        "Virtues and Christian life"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-PIUS-XI-MISERENTISSIMUS",
+      "work_id": "WORK-MISERENTISSIMUS-1928",
+      "title": "Pius XI · Miserentissimus Redemptor",
+      "source_url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html",
+      "source_kind": "HOLY_SEE_OFFICIAL_PRIMARY_TEXT",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "8 May 1928 · especially §§6–7, 11–12, 20"
+      ],
+      "authoritativeness_note": "Official Holy See-hosted document; claim-to-paragraph precision still requires collation",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": true,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-PAUL-VI-INDULGENTIARUM",
+      "work_id": "WORK-INDULGENTIARUM-1967",
+      "title": "Paul VI · Indulgentiarum Doctrina",
+      "source_url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+      "source_kind": "HOLY_SEE_OFFICIAL_PRIMARY_TEXT",
+      "link_check": "PUBLIC_WEBPAGE_OPENED_2026_10_15",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "1 January 1967 · norms and doctrinal introduction"
+      ],
+      "authoritativeness_note": "Official Holy See-hosted document; claim-to-paragraph precision still requires collation",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": true,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-CIC83-992-997",
+      "work_id": "WORK-CODE-CANON-LAW-1983",
+      "title": "Code of Canon Law (1983) · Indulgences",
+      "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_index_en.html",
+      "source_kind": "HOLY_SEE_OFFICIAL_PRIMARY_TEXT",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "cann. 992–997"
+      ],
+      "authoritativeness_note": "Official Holy See-hosted document; claim-to-paragraph precision still requires collation",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "NO_NEW_IMPORTED_TEXT"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-SCRIPTURE-MT5-48",
+      "work_id": "WORK-CATHOLIC-BIBLE",
+      "title": "Matthew 5:48",
+      "source_url": "https://www.drbo.org/chapter/47005.htm",
+      "source_kind": "THIRD_PARTY_SCRIPTURE_WITNESS",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Call to perfection"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "EXISTING_CANONICAL_SCRIPTURE_READER"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-SCRIPTURE-JN15",
+      "work_id": "WORK-CATHOLIC-BIBLE",
+      "title": "John 15",
+      "source_url": "https://www.drbo.org/chapter/50015.htm",
+      "source_kind": "THIRD_PARTY_SCRIPTURE_WITNESS",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Abiding in Christ and fruitfulness"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "EXISTING_CANONICAL_SCRIPTURE_READER"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-SCRIPTURE-1COR10-31",
+      "work_id": "WORK-CATHOLIC-BIBLE",
+      "title": "1 Corinthians 10:31",
+      "source_url": "https://www.drbo.org/chapter/53010.htm",
+      "source_kind": "THIRD_PARTY_SCRIPTURE_WITNESS",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "Do all to the glory of God"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "EXISTING_CANONICAL_SCRIPTURE_READER"
+    },
+    {
+      "owner": "learn.spiritual_life",
+      "source_id": "SL-SCRIPTURE-COL3-17",
+      "work_id": "WORK-CATHOLIC-BIBLE",
+      "title": "Colossians 3:17",
+      "source_url": "https://www.drbo.org/chapter/58003.htm",
+      "source_kind": "THIRD_PARTY_SCRIPTURE_WITNESS",
+      "link_check": "NOT_VERIFIED_IN_THIS_PASS",
+      "locator_status": "WORK_LEVEL_LOCATORS_ONLY_CLAIM_PAIRING_PENDING",
+      "locators": [
+        "All in word or work in the name of the Lord Jesus Christ"
+      ],
+      "authoritativeness_note": "Host accessibility does not imply definitive edition or right to reproduce.",
+      "rights": "REPRODUCTION_OR_TRANSLATION_RIGHTS_REVIEW_REQUIRED",
+      "further_reading_approved": false,
+      "internal_reader": "EXISTING_CANONICAL_SCRIPTURE_READER"
+    }
+  ]
+}

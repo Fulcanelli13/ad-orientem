@@ -1,0 +1,83 @@
+name: Source reference presentation pilot
+on:
+  pull_request:
+    paths:
+      - 'src/learn/source-reference-panel.js'
+      - 'src/learn/formation-research-preview.js'
+      - 'src/learn/formation-recovery-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/spiritual-life.js'
+      - 'tests/reference-presentation-pilot.mjs'
+      - 'tests/reference-spiritual-life-pilot.mjs'
+      - 'tests/formation-recovery-review.mjs'
+      - 'tests/source-reference-browser-acceptance.mjs'
+      - 'tests/formation-source-crosswalk.mjs'
+      - 'tests/formation-evidence-relationship-ledger.mjs'
+      - 'tests/formation-prior-audit-reconciliation.mjs'
+      - 'data/reference/canonical-works-pilot.v1.json'
+      - 'data/reference/formation-canonical-source-crosswalk.v1.json'
+      - 'data/reference/formation-evidence-relationship-ledger.v1.json'
+      - 'data/reference/formation-prior-audit-reconciliation.v1.json'
+      - 'data/learn/formation-canonical-*.json'
+      - 'data/learn/formation-crisis-sourcefirst-*.json'
+      - '.github/workflows/source-reference-presentation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reference-display:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source UI module syntax
+        run: |
+          node --check src/learn/source-reference-panel.js
+          node --check src/learn/formation-research-preview.js
+          node --check src/learn/formation-recovery-review.js
+          node --check src/learn/mass-formation.js
+          node --check src/learn/spiritual-life.js
+      - name: Verify compact references and original claim evidence
+        run: node tests/reference-presentation-pilot.mjs
+      - name: Verify Spiritual Life reference disclosure in English and French
+        run: |
+          node tests/reference-spiritual-life-pilot.mjs
+          node tests/spiritual-life-runtime.mjs
+          node tests/spiritual-life-course.mjs
+      - name: Protect published Mass Formation source and Scripture contexts
+        run: node tests/mass-formation.mjs
+      - name: Protect unpublished Formation provenance, 141 dossiers and publication gate
+        run: |
+          node tests/formation-research-preview.mjs
+          node tests/formation-recovery-review.mjs
+      - name: Audit 408 Formation sources against eight canonical batches
+        run: node tests/formation-source-crosswalk.mjs
+      - name: Audit 1,541 claim-source edges without premature certification
+        run: node tests/formation-evidence-relationship-ledger.mjs
+      - name: Reuse merged and independent editorial audits without new claim verifications
+        run: node tests/formation-prior-audit-reconciliation.mjs
+
+  reference-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium acceptance dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Capture source presentation, open/closed, English/French and phone/desktop
+        run: node tests/source-reference-browser-acceptance.mjs
+      - name: Upload source-panel acceptance screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-reference-visual-acceptance
+          path: artifacts/visual-acceptance/source-references
+          if-no-files-found: warn

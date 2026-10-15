@@ -1,0 +1,34 @@
+name: Live Learn source-reference acceptance
+on:
+  pull_request:
+    paths:
+      - 'tests/source-reference-app-lifecycle.mjs'
+      - 'src/learn/source-reference-panel.js'
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/spiritual-life.js'
+      - '.github/workflows/source-reference-app-lifecycle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Verify published readers through the actual Formation navigation
+        run: node tests/source-reference-app-lifecycle.mjs
+      - name: Preserve phone and desktop source-reference screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-source-reference-acceptance
+          path: artifacts/visual-acceptance/reference-app-lifecycle
+          if-no-files-found: warn
