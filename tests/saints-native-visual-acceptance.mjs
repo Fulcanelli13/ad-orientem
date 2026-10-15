@@ -114,7 +114,7 @@ try{
    await laval.waitFor({state:"visible"});
    assert((await laval.innerText()).includes("Blessed · not canonized"),"Beatification has been confused with canonization");
    await page.screenshot({path:resolve(destination,config.name+"-05-blessed-laval.png"),fullPage:false});
-   await page.locator("#ao-find-modular-root [data-find-close-detail]").first().click();
+   await page.locator("#ao-find-modular-root button[data-find-close-detail]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
    await page.locator('#ao-find-modular-root .aoFindHeader [data-find-close]').click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage",null,{timeout:15000});
