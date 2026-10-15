@@ -1,7 +1,7 @@
 {
   "schema": "AO_SOURCE_TEXT_PRINT_EXCERPT_FIXTURE_V1",
   "date": "2026-10-15",
-  "purpose": "Two short excerpt fixtures from the 1913 special-edition scan of Fortescue's originally 1908 article; not a complete edition, production route, or Mass-reader content.",
+  "purpose": "Four limited excerpts from the 1913 Knights of Columbus special-edition scan of the 1908 Fortescue article; not a full-page collation or production pack.",
   "work": {
     "id": "WORK-CE1908-FORTESCUE-CANON-MASS",
     "title": "Canon of the Mass",
@@ -12,7 +12,7 @@
     "demoOnly": true,
     "rights": {
       "status": "REPRODUCTION_CLEARED",
-      "reviewId": "AO-CE1913-PRINT-EXCERPTS-20261015",
+      "reviewId": "AO-CE1913-PRINT-FOUR-EXCERPTS-20261015",
       "scope": "REVIEWED_EXCERPTS_ONLY",
       "copyrightBasis": "Original Fortescue article first published 1908 (author died 1923). Examined scan is a distinct 1913 special edition; limited text reproduction assessed only for selected old printed words, not for online OCR/editorial additions.",
       "approvedExcerpts": [
@@ -23,6 +23,14 @@
         {
           "anchor": "ce1908-v3-p256-s001",
           "text": "Since the seventh century our Canon has remained unchanged."
+        },
+        {
+          "anchor": "ce1913-v3-p257-s001",
+          "text": "It is very possible that at some unknown period — perhaps in the fifth century — the Canon went through a complete alteration in its order and that its component prayers, without being changed in themselves, were turned round and re-arranged. This theory, as will be seen, would account for many difficulties."
+        },
+        {
+          "anchor": "ce1913-v3-p257-s002",
+          "text": "In the first century, as known, the Church of Rome, like all other Christian Churches, celebrated the Holy Eucharist by obeying Christ's direction and doing as He had done the night before He died. There were the bread and wine brought up at the Offertory and consecrated by the words of Institution and by an invocation of the Holy Ghost; the bread was broken and Communion was given to the faithful. Undoubtedly, too, before this service lessons were read from the Bible, litanies and prayers were said."
         }
       ],
       "editorialPublicationApproval": "NOT_GRANTED",
@@ -33,10 +41,10 @@
     "workId": "WORK-CE1908-FORTESCUE-CANON-MASS",
     "editionId": "ED-CE1913-V3-KOC-SPECIAL",
     "witnessId": "WIT-CE1913-V3-KOC-PRINT-FORTESCUE",
-    "reproductionReviewId": "AO-CE1913-PRINT-EXCERPTS-20261015",
+    "reproductionReviewId": "AO-CE1913-PRINT-FOUR-EXCERPTS-20261015",
     "sourceDocumentId": "CE-V3-1913-KOC-ENCYCLOPEDIA-PRESS-DJVU",
-    "collationReviewId": "AO-SCAN-P255-256-TWO-SENTENCES-20261015",
-    "reviewType": "TECHNICAL_PRELIMINARY_VISUAL_COLLATION_NOT_HUMAN_EDITION_CERTIFICATION"
+    "collationReviewId": "AO-SCAN-P255-257-FOUR-EXCERPTS-20261015",
+    "reviewType": "AI_PRELIMINARY_VISUAL_TRANSCRIPTION_ONLY__HUMAN_EDITORIAL_SIGNOFF_REQUIRED"
   },
   "heading": "Canon of the Mass",
   "records": [
@@ -57,14 +65,38 @@
       "djvuPage": 304,
       "section": "II. History of the Canon",
       "reliability": "AI_VISUAL_COMPARISON_WITH_PRINTED_PAGE_IMAGE__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+    },
+    {
+      "locator": "p257:s001",
+      "hostUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+      "text": "It is very possible that at some unknown period — perhaps in the fifth century — the Canon went through a complete alteration in its order and that its component prayers, without being changed in themselves, were turned round and re-arranged. This theory, as will be seen, would account for many difficulties.",
+      "printedPage": 257,
+      "djvuPage": 305,
+      "section": "II. History of the Canon",
+      "column": "left",
+      "editorialAttribution": "FORTESCUE_HISTORICAL_ANALYSIS_NOT_1962_RUBRIC_AUTHORITY",
+      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING"
+    },
+    {
+      "locator": "p257:s002",
+      "hostUrl": "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+      "text": "In the first century, as known, the Church of Rome, like all other Christian Churches, celebrated the Holy Eucharist by obeying Christ's direction and doing as He had done the night before He died. There were the bread and wine brought up at the Offertory and consecrated by the words of Institution and by an invocation of the Holy Ghost; the bread was broken and Communion was given to the faithful. Undoubtedly, too, before this service lessons were read from the Bible, litanies and prayers were said.",
+      "printedPage": 257,
+      "djvuPage": 305,
+      "section": "II. History of the Canon",
+      "column": "left",
+      "editorialAttribution": "FORTESCUE_HISTORICAL_ANALYSIS_NOT_1962_RUBRIC_AUTHORITY",
+      "reliability": "PRELIMINARY_PRINTED_PAGE_IMAGE_COMPARISON__HUMAN_EDITORIAL_SIGNOFF_PENDING"
     }
   ],
   "bibliographicEvidence": [
     "https://www.newadvent.org/cathen/03255c.htm",
     "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/303",
-    "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/304"
+    "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/304",
+    "https://en.wikisource.org/wiki/Page:Catholic_Encyclopedia,_volume_3.djvu/305",
+    "WIT-CE1913-V3-KOC-PRINT-FORTESCUE"
   ],
   "originalEdition": "Examined witness: 1913 Knights of Columbus special edition, The Encyclopedia Press (printed text). Fortescue article originally published in Catholic Encyclopedia vol. III (Robert Appleton, 1908); textual equivalence between editions not yet checked.",
-  "rightsNote": "Examined printing is 1913 special edition, not 1908 facsimile. Scoped public-domain assumption and two excerpts only; all general or online editions remain held.",
+  "rightsNote": "Precisely four limited, preliminarily image-compared original-print excerpts only; complete article and editorial publication remain held.",
   "productionImportAllowed": false
 }
