@@ -39,8 +39,8 @@ assert.equal(russell.saints[0].saint_id,"saint:peter-chanel");
 assert.equal(items.flatMap(x=>x.saints).filter(x=>x.recognition_status==="BEATIFIED_NOT_CANONIZED").length,1);
 const mauritius=items.find(x=>x.place_id==="place:MU:pere-laval-sainte-croix");
 assert.equal(mauritius?.saints[0]?.saint_id,"blessed:jacques-desire-laval");
-const compare=items.map(x=>x.item_id);
-assert.deepEqual([...compare].sort(),compare,"Deterministic sorted items required for stable list/map");
+const compare=items.map(x=>x.title);
+assert.deepEqual([...compare].sort((a,b)=>a.localeCompare(b)),compare,"Deterministic name-sorted items required for stable list/map");
 for(const lang of ["en","fr"]){
   const vm=buildExploreViewModel({
     language:lang,lens:"saints",items,view:"map",filters:{query:""},
