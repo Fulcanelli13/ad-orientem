@@ -1,0 +1,496 @@
+{
+  "schema": "ao.saints.holiness-first-editorial-pilot.v1",
+  "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+  "guiding_question": "Why is this person honoured as holy? Answer before offering dates, writings or geography.",
+  "exclusions": [
+    "No duplicate shrine/place owner",
+    "No unverified new pins",
+    "No copied full hagiographies",
+    "No unapproved art",
+    "No false canonization of Blesseds",
+    "No promotion of modern saints into the 1962 sanctoral"
+  ],
+  "sources": {
+    "THER": {
+      "id": "THER",
+      "title": "John Paul II, Divini Amoris Scientia (1997)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN": {
+      "id": "BERN",
+      "title": "Benedict XVI, Lourdes homily (2008)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080913_lourdes-processione.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG1": {
+      "id": "MARG1",
+      "title": "Pius XII, Haurietis aquas, §95 (1956)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15051956_haurietis-aquas.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG2": {
+      "id": "MARG2",
+      "title": "Francis, Dilexit nos, §§119–120 (2024)",
+      "url": "https://www.vatican.va/content/francesco/en/encyclicals/documents/20241024-enciclica-dilexit-nos.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "CLAUDE": {
+      "id": "CLAUDE",
+      "title": "Holy See, biography of Claude La Colombière (1992)",
+      "url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19920531_la-colombiere_en.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER": {
+      "id": "PETER",
+      "title": "John Paul II, address to Pacific bishops (1986)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/november/documents/hf_jp-ii_spe_19861121_vescovi-fiji.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "LAVAL": {
+      "id": "LAVAL",
+      "title": "John Paul II, beatification homily of Jacques-Désiré Laval (1979)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/1979/documents/hf_jp-ii_hom_19790429_beat-laval-coll.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    }
+  },
+  "people": [
+    {
+      "saint_id": "saint:therese-of-lisieux",
+      "legacy_source_name": "Saint Thérèse of Lisieux",
+      "display_name": {
+        "en": "Saint Thérèse of Lisieux",
+        "fr": "Sainte Thérèse de Lisieux"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "She showed that everyone can grow in holiness through ordinary acts done with extraordinary love and confidence in God.",
+        "fr": "Elle a montré que chacun peut grandir en sainteté par des actes ordinaires accomplis avec un amour et une confiance extraordinaires en Dieu.",
+        "source_ids": [
+          "THER"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "She lived a hidden Carmelite life, practising charity and self-giving in everyday duties.",
+          "fr": "Elle a vécu une vie cachée au Carmel, pratiquant la charité et le don de soi dans les devoirs quotidiens.",
+          "source_ids": [
+            "THER"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "She taught the Little Way of spiritual childhood, putting love and trust at the heart of Christian life.",
+          "fr": "Elle a enseigné la petite voie de l'enfance spirituelle, plaçant l'amour et la confiance au cœur de la vie chrétienne.",
+          "source_ids": [
+            "THER"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "Her teaching inspired Christians worldwide; the Church proclaimed her a Doctor in 1997.",
+          "fr": "Son enseignement a inspiré des chrétiens du monde entier ; l'Église l'a proclamée docteur en 1997.",
+          "source_ids": [
+            "THER"
+          ]
+        }
+      ],
+      "source_ids": [
+        "THER"
+      ],
+      "further_reading_source_ids": [
+        "THER"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:basilique-sainte-therese-lisieux",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:FR:carmel-lisieux",
+          "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-carmel-lisieux"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "saint_id": "saint:bernadette-soubirous",
+      "legacy_source_name": "Saint Bernadette Soubirous",
+      "display_name": {
+        "en": "Saint Bernadette Soubirous",
+        "fr": "Sainte Bernadette Soubirous"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "Her humble, persevering faith through poverty and rejection made her a witness to the call to prayer and conversion at Lourdes.",
+        "fr": "Sa foi humble et persévérante, au milieu de la pauvreté et du rejet, a fait d'elle un témoin de l'appel à la prière et à la conversion à Lourdes.",
+        "source_ids": [
+          "BERN"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "She remained steadfast despite poverty, sickness, scepticism and misunderstanding.",
+          "fr": "Elle est restée ferme malgré la pauvreté, la maladie, le scepticisme et l'incompréhension.",
+          "source_ids": [
+            "BERN"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "She reported the 1858 apparitions and faithfully relayed a message of prayer, penance and conversion.",
+          "fr": "Elle a témoigné des apparitions de 1858 et transmis fidèlement un message de prière, de pénitence et de conversion.",
+          "source_ids": [
+            "BERN"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "Her example of simplicity and faith continues to console pilgrims, especially those who suffer.",
+          "fr": "Son exemple de simplicité et de foi continue de réconforter les pèlerins, particulièrement ceux qui souffrent.",
+          "source_ids": [
+            "BERN"
+          ]
+        }
+      ],
+      "source_ids": [
+        "BERN"
+      ],
+      "further_reading_source_ids": [
+        "BERN"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:espace-bernadette-nevers",
+          "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-espace-bernadette-nevers"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+          "shrine_id": "shrine:FR:lourdes-our-lady",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-LOURDES-CONTACT",
+            "SHR-LOURDES-PILGRIMAGE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:US:lourdes-grotto-emmitsburg",
+          "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-GROTTO-LOURDES-EMMITSBURG",
+            "PIL-GROTTO-LOURDES-FEAST"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "saint_id": "saint:margaret-mary-alacoque",
+      "legacy_source_name": "Saint Margaret Mary Alacoque",
+      "display_name": {
+        "en": "Saint Margaret Mary Alacoque",
+        "fr": "Sainte Marguerite-Marie Alacoque"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "Her life of prayer, love and reparation helped renew devotion to the Sacred Heart of Jesus.",
+        "fr": "Sa vie de prière, d'amour et de réparation a contribué au renouveau de la dévotion au Sacré-Cœur de Jésus.",
+        "source_ids": [
+          "MARG1",
+          "MARG2"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "She lived her Visitation vocation in a spirituality centred on Christ's love.",
+          "fr": "Elle a vécu sa vocation à la Visitation dans une spiritualité centrée sur l'amour du Christ.",
+          "source_ids": [
+            "MARG1"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "She reported revelations at Paray-le-Monial concerning the love of the Heart of Jesus.",
+          "fr": "Elle a rapporté des révélations à Paray-le-Monial concernant l'amour du Cœur de Jésus.",
+          "source_ids": [
+            "MARG1"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "With Claude La Colombière's support, her witness helped deepen and spread Sacred Heart devotion.",
+          "fr": "Avec l'appui de Claude La Colombière, son témoignage a contribué à approfondir et diffuser la dévotion au Sacré-Cœur.",
+          "source_ids": [
+            "MARG1"
+          ]
+        }
+      ],
+      "source_ids": [
+        "MARG1",
+        "MARG2"
+      ],
+      "further_reading_source_ids": [
+        "MARG1",
+        "MARG2"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "saint_id": "saint:claude-la-colombiere",
+      "legacy_source_name": "Saint Claude La Colombière",
+      "display_name": {
+        "en": "Saint Claude La Colombière",
+        "fr": "Saint Claude La Colombière"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "His Jesuit fidelity and pastoral charity, tested through imprisonment and illness, exemplified trust in Christ's merciful love.",
+        "fr": "Sa fidélité de jésuite et sa charité pastorale, éprouvées par la prison et la maladie, ont manifesté la confiance dans l'amour miséricordieux du Christ.",
+        "source_ids": [
+          "CLAUDE"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "He persevered in priestly service despite serious illness, false accusation and imprisonment.",
+          "fr": "Il a persévéré dans son ministère malgré une grave maladie, une accusation injuste et la prison.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "He accompanied Margaret Mary Alacoque and supported her mission concerning the Sacred Heart.",
+          "fr": "Il a accompagné Marguerite-Marie Alacoque et soutenu sa mission relative au Sacré-Cœur.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "He led souls toward God along a path of trust, Gospel love and mercy.",
+          "fr": "Il a conduit les âmes vers Dieu par la confiance, l'amour évangélique et la miséricorde.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "CLAUDE"
+      ],
+      "further_reading_source_ids": [
+        "CLAUDE"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "saint_id": "saint:peter-chanel",
+      "legacy_source_name": "Saint Peter Chanel",
+      "display_name": {
+        "en": "Saint Peter Chanel",
+        "fr": "Saint Pierre Chanel"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "A gentle and courageous Marist missionary, he persevered on Futuna and died for the Gospel, becoming Oceania's first martyr.",
+        "fr": "Missionnaire mariste doux et courageux, il a persévéré à Futuna et est mort pour l'Évangile, devenant le premier martyr d'Océanie.",
+        "source_ids": [
+          "PETER"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "He served amid hardship, isolation and opposition with remarkable patience.",
+          "fr": "Il a servi au milieu des épreuves, de l'isolement et de l'opposition avec une patience remarquable.",
+          "source_ids": [
+            "PETER"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "He was killed in 1841 while carrying out his missionary vocation on Futuna.",
+          "fr": "Il a été tué en 1841 dans l'exercice de sa vocation missionnaire à Futuna.",
+          "source_ids": [
+            "PETER"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "His witness inspired the growing Church in Oceania and its missionary spirit.",
+          "fr": "Son témoignage a inspiré l'Église naissante d'Océanie et son esprit missionnaire.",
+          "source_ids": [
+            "PETER"
+          ]
+        }
+      ],
+      "source_ids": [
+        "PETER"
+      ],
+      "further_reading_source_ids": [
+        "PETER"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:NZ:st-peter-chanel-russell",
+          "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-ST-PETER-CHANEL-NZ",
+            "PIL-NGA-TAPUWAE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    },
+    {
+      "saint_id": "blessed:jacques-desire-laval",
+      "legacy_source_name": "Blessed Jacques-Désiré Laval",
+      "display_name": {
+        "en": "Blessed Jacques-Désiré Laval",
+        "fr": "Bienheureux Jacques-Désiré Laval"
+      },
+      "recognition_status": "BEATIFIED_NOT_CANONIZED",
+      "why_honoured": {
+        "en": "He dedicated his ministry to the poorest and socially excluded people of Mauritius with outstanding charity and faith.",
+        "fr": "Il a consacré son ministère aux plus pauvres et aux exclus de la société mauricienne avec une charité et une foi remarquables.",
+        "source_ids": [
+          "LAVAL"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "He left his medical career to become a priest and serve people in need.",
+          "fr": "Il a quitté sa carrière de médecin pour devenir prêtre et servir les personnes dans le besoin.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "He placed the evangelization and dignity of the poorest at the heart of his missionary work in Mauritius.",
+          "fr": "Il a placé l'évangélisation et la dignité des plus pauvres au cœur de son œuvre missionnaire à Maurice.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "John Paul II beatified him in 1979, praising his heroic virtues and missionary witness.",
+          "fr": "Jean-Paul II l'a béatifié en 1979, saluant ses vertus héroïques et son témoignage missionnaire.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        }
+      ],
+      "source_ids": [
+        "LAVAL"
+      ],
+      "further_reading_source_ids": [
+        "LAVAL"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:MU:pere-laval-sainte-croix",
+          "shrine_id": "shrine:MU:pere-laval",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PERE-LAVAL-CENTRE",
+            "PIL-PERE-LAVAL-ANNUAL"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY"
+    }
+  ]
+}
