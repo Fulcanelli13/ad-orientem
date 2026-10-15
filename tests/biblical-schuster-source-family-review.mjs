@@ -41,7 +41,7 @@ assert.equal(books.policy.doNotConflateNarrativeHistoryWithInspiredScripture,tru
 // Page-linked Knecht 1910 transcriptions: boundaries only, not approved historical words.
 const domains=fam.wikisource1910TerritoryReview;
 assert.equal(domains.unproofreadTranscriptions,true);
-assert.equal(domains.scanImagesUnavailableToReview,true);
+assert.equal(domains.scanImagesUnavailableToReview,false);
 assert.equal(domains.authorProseCertified,0);
 assert.equal(domains.territories.length,18);
 assert.equal(domains.territories.filter(t=>t.kind==="HISTORICAL_NARRATIVE").length,9);
@@ -87,8 +87,38 @@ for(const span of roleAudit.overlays){
 assert.equal(fam.counts.wikisource1910OriginsRoleSpansExcludingFootnotes,27);
 assert.equal(fam.counts.wikisource1910OriginalPrintedParagraphsApproved,0);
 
+
+const images=domains.originalPrintImageSpotAudit;
+assert.equal(images.imageInspectedCount,23);
+assert.equal(images.originalPrintedPages.length,23);
+assert.equal(new Set(images.originalPrintedPages.map(x=>x.sourceDjvuPage)).size,23);
+assert.equal(images.imageVerifiedBoundarySets.narrativeToCommentary.length,9);
+assert.equal(images.imageVerifiedBoundarySets.commentaryToApplication.length,9);
+assert.equal(images.imageVerifiedBoundarySets.narrativeStarts.length,8);
+assert.deepEqual(images.remainingNarrativeStartUnobserved,[57]);
+assert.equal(images.defectsAgainstUnproofreadTranscription.length,2);
+assert.equal(images.originalSourceProseApprovedForApp,0);
+assert.equal(images.sourceParagraphsFullyProofread,0);
+for(const x of images.originalPrintedPages){
+ assert.equal(x.imageActuallyDisplayed,true);
+ assert.equal(x.printedPage,x.sourceDjvuPage-38);
+ assert.ok(x.wikisourcePageUrl.endsWith("/"+x.sourceDjvuPage));
+ assert.equal(x.fullPageVerbatimTranscriptionCertified,false);
+ assert.equal(x.fullNarrativeParagraphProofread,false);
+ assert.equal(x.eligibleToImportText,false);
+}
+for(const defect of images.defectsAgainstUnproofreadTranscription){
+ assert.equal(defect.printImageVerified,true);
+ assert.equal(defect.fullParagraphCertified,false);
+ assert.ok(images.originalPrintedPages.some(x=>x.sourceDjvuPage===defect.djvuPage));
+}
+assert.ok(images.defectsAgainstUnproofreadTranscription.some(x=>x.djvuPage===79&&x.confirmedPrintExcerpt==="and after a hundred and fifty days"));
+assert.ok(images.defectsAgainstUnproofreadTranscription.some(x=>x.djvuPage===84&&x.transcribedExcerpt.includes("Gen. xx")));
+
 const quality=fam.wikisource1910SourceQualityReview;
-assert.equal(quality.status,"REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED");
+assert.equal(quality.status,"23_ORIGINAL_PRINT_PAGE_IMAGES_SPOT_CHECKED_TWO_TRANSCRIPTION_DEFECTS_NO_WHOLE_PARAGRAPH_APPROVAL");
+assert.equal(quality.printedImagePagesChecked,23);
+assert.equal(quality.initialImageFetchFailuresNowSuperseded,true);
 assert.equal(quality.displayedPrimaryNarrativeTextApproved,false);
 assert.equal(quality.sourceTextBytesImported,0);
 assert.equal(quality.aiAuthoredNarrativeWords,0);
