@@ -7,6 +7,7 @@ on:
       - 'tests/reference-passage-packs.mjs'
       - 'tests/reference-parsing.mjs'
       - 'tests/fixtures/source-passage-original.html'
+      - 'tools/reference/build-source-packs.mjs'
       - '.github/workflows/reference-source-passage-packs.yml'
   workflow_dispatch:
 
@@ -26,8 +27,11 @@ jobs:
         run: node tests/reference-parsing.mjs
       - name: HTML, integrity, lazy-loading and rights acceptance
         run: node tests/reference-passage-packs.mjs
+      - name: Deterministic local-only pack build check
+        run: node tools/reference/build-source-packs.mjs --check data/reference/source-demo/build-config.v1.json
       - name: Source files parse as native JavaScript modules
         run: |
           node --check src/reference/html-parser.js
           node --check src/reference/passage-packs.js
           node --check src/reference/passage-reader.js
+          node --check tools/reference/build-source-packs.mjs
