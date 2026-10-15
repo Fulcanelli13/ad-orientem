@@ -383,7 +383,9 @@
     "modernEnglishTocChaptersVisual": 182,
     "wikisource1910NarrativeTerritoriesLocated": 9,
     "wikisource1910CommentaryTerritoriesLocated": 9,
-    "wikisource1910OriginalPrintedParagraphsApproved": 0
+    "wikisource1910OriginalPrintedParagraphsApproved": 0,
+    "wikisource1910ApplicationSubspanHeadingsConfirmed": 6,
+    "wikisource1910CommentaryEnvelopesWithUnreviewedApplication": 3
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -507,7 +509,22 @@
         "originalPageImagesIndependentlyInspected": false,
         "printedPageWordsCertified": false,
         "sourceTextImported": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 46,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 46,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-ANGELS-NARRATIVE",
@@ -553,7 +570,22 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 50,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 50,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-ADAM-PARADISE-NARRATIVE",
@@ -599,7 +631,22 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 56,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 56,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-FALL-PART1-NARRATIVE",
@@ -641,7 +688,22 @@
         "originalPageImagesIndependentlyInspected": false,
         "printedPageWordsCertified": false,
         "sourceTextImported": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 61,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 61,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-FALL-PART2-NARRATIVE",
@@ -683,7 +745,22 @@
         "originalPageImagesIndependentlyInspected": false,
         "printedPageWordsCertified": false,
         "sourceTextImported": false,
-        "publicationApproved": false
+        "publicationApproved": false,
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 66,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 66,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-CAIN-NARRATIVE",
@@ -729,7 +806,22 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": true,
+        "homogeneousCommentary": false,
+        "roleBoundaryStatus": "CONFIRMED_WIKISOURCE_HEADING_WITHIN_PARENT_ENVELOPE_NOT_IMAGE_VERIFIED",
+        "commentaryEndAt": {
+          "djvuPage": 72,
+          "exactHeading": "Application.",
+          "inclusive": false,
+          "withinPage": true
+        },
+        "applicationStartAt": {
+          "djvuPage": 72,
+          "exactHeading": "Application.",
+          "inclusive": true,
+          "withinPage": true
+        }
       },
       {
         "id": "KNECHT1910-FLOOD-NARRATIVE",
@@ -775,7 +867,10 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": null,
+        "homogeneousCommentary": null,
+        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
       },
       {
         "id": "KNECHT1910-NOAH-COVENANT-NARRATIVE",
@@ -821,7 +916,10 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": null,
+        "homogeneousCommentary": null,
+        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
       },
       {
         "id": "KNECHT1910-BABEL-NARRATIVE",
@@ -867,10 +965,13 @@
         "sourceTextImported": false,
         "publicationApproved": false,
         "inheritedChapterFootnotes": "NOT_PART_OF_NARRATIVE; ISOLATE_AS_NOTES",
-        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source."
+        "editorialCaution": "Do not infer original Schuster 1925 wording, or certified geographic/historical facts, from the 1910 Knecht source.",
+        "containsDistinctApplication": null,
+        "homogeneousCommentary": null,
+        "roleBoundaryStatus": "APPLICATION_PRESENCE_UNREVIEWED_ON_REMAINING_PARENT"
       }
     ],
-    "boundaryPrecisionNote": "18 source territories organized in nine interleaved narrative/commentary pairs; heading changes occur within DJVU scanned-page numbers including 43,47,48,51,53,57,59,62,64,66,69,72,76,79,82,84,86 and 89. Transcribed text is predominantly NOT PROOFREAD. Some individual pages marked proofread but not validated; no original scanned page images were independently checked and no complete author text is approved.",
+    "boundaryPrecisionNote": "18 original enclosing section records are NOT 18 homogeneous textual spans. Six commentary envelopes contain a distinct Application section, separated by exact heading markers on scan pages 46, 50, 56, 61, 66, 72. The other three commentary envelopes have Application presence UNREVIEWED. Every in-page marker requires printed-image or source-text-owner collation before paragraph certification.",
     "chapterRange": {
       "firstRoman": "I",
       "lastRoman": "VIII",
@@ -927,7 +1028,279 @@
         "risk": "UNPROVEN_ANCIENT_IDENTIFICATION",
         "handling": "NO_PRECISE_PIN"
       }
-    ]
+    ],
+    "roleSubspanOverlays": {
+      "status": "SIX_APPLICATION_HEADINGS_VERIFIED_BY_WIKISOURCE_TEXT_NOT_PRINT_IMAGES",
+      "totalParentEnvelopes": 18,
+      "originalNarrativeEnvelopes": 9,
+      "commentaryEnvelopesContainingApplication": 6,
+      "commentaryEnvelopesApplicationNotYetReviewed": 3,
+      "overlays": [
+        {
+          "id": "APPLICATION-KNECHT1910-CREATION",
+          "sourceParentId": "KNECHT1910-CREATION-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            43,
+            47
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 43,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 46,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 46,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 47,
+              "heading": "Chapter II.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/46",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/47",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Creation"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-ANGELS",
+          "sourceParentId": "KNECHT1910-ANGELS-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            48,
+            51
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 48,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 50,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 50,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 51,
+              "heading": "Chapter III.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/50",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/51",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Angels"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-ADAM-PARADISE",
+          "sourceParentId": "KNECHT1910-ADAM-PARADISE-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            53,
+            57
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 53,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 56,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 56,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 57,
+              "heading": "Chapter IV.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/56",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/57",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Adam and Eve"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-FALL-PART1",
+          "sourceParentId": "KNECHT1910-FALL-PART1-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            59,
+            62
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 59,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 61,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 61,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 62,
+              "heading": "Chapter IV. PART II.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/61",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/62",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Fall Part I"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-FALL-PART2",
+          "sourceParentId": "KNECHT1910-FALL-PART2-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            64,
+            66
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 64,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 66,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 66,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 66,
+              "heading": "Chapter V.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/66",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/66",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Fall Part II"
+        },
+        {
+          "id": "APPLICATION-KNECHT1910-CAIN",
+          "sourceParentId": "KNECHT1910-CAIN-COMMENTARY",
+          "sourceEditionId": "KNECHT-EN-1910-HERDER",
+          "language": "en",
+          "parentEnvelopeDjvuPages": [
+            69,
+            72
+          ],
+          "commentarySubspan": {
+            "from": {
+              "djvuPage": 69,
+              "heading": "COMMENTARY.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 72,
+              "heading": "Application.",
+              "inclusive": false
+            }
+          },
+          "applicationSubspan": {
+            "from": {
+              "djvuPage": 72,
+              "heading": "Application.",
+              "inclusive": true
+            },
+            "until": {
+              "djvuPage": 72,
+              "heading": "Chapter VI.",
+              "inclusive": false
+            }
+          },
+          "sourceHeadingEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/72",
+          "nextNarrativeTransitionEvidenceUrl": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/72",
+          "evidence": "EXPLICIT_APPLICATION_HEADING_READ_IN_UNPROOFREAD_WIKISOURCE_PAGE_TRANSCRIPTION",
+          "status": "DETECTED_SOURCE_ROLE_ONLY_NOT_TRANSCRIBED_NOT_PRINT_IMAGE_CERTIFIED",
+          "textImported": false,
+          "translationPermittedNow": false,
+          "warning": "Some transitions occupy the same printed page. A page-range alone cannot isolate commentary from Application or next narrative.",
+          "topic": "Cain"
+        }
+      ],
+      "sourceTextCopied": false,
+      "printedImagesProofread": false,
+      "pagesScopedForApplications": [
+        46,
+        50,
+        56,
+        61,
+        66,
+        72
+      ],
+      "sourceEditionAuthority": "Source edition is Knecht English 1910; do not equate with historical Schuster 1925 or French 1887 edition."
+    }
   },
   "wikisource1910SourceQualityReview": {
     "status": "REVIEWABLE_TRANSCRIPTION_NOT_PRINT_IMAGE_VERIFIED",
