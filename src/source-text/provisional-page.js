@@ -66,6 +66,38 @@ export function auditProvisionalPage({plan,pageDraft}={}){
     pageDraft.draftTextBlocks!==candidates.length||
     latinQuotes<1||crossPage!==1||referencedExisting<1)
   throw new Error("SOURCE_PROVISIONAL_SCOPE_INCOMPLETE");
+ // Editing blocks are not paragraphs. Enforce a monotone provisional map,
+ // without automatically upgrading a visual indentation judgement to a
+ // certified source passage or stable public citation.
+ const groups=pageDraft.printParagraphGroups, census=pageDraft.printParagraphCensus;
+ if(!Array.isArray(groups)||!groups.length||groups.length>pageDraft.blocks.length||
+    census?.provisionalGroups!==groups.length||
+    census.confirmedByIndependentEditor!==0)
+  throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_CENSUS_INVALID");
+ const byBlock=new Map(pageDraft.blocks.map((b,i)=>[b.id,i]));
+ const assigned=new Set();let previous=-1;
+ for(const g of groups){
+  if(!g||typeof g.id!=="string"||!/^PRINT[0-9]+-PPG-[0-9]{2}$/.test(g.id)||
+    !Array.isArray(g.memberBlockIds)||!g.memberBlockIds.length||
+    g.imagePage!==page.scanPage||g.printedPage!==page.printedPage||
+    g.status!=="PROVISIONAL_PRINT_INDENT_CENSUS_NOT_HUMAN_CERTIFIED")
+   throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_GROUP_INVALID");
+  for(const blockId of g.memberBlockIds){
+   const index=byBlock.get(blockId);
+   if(index===undefined||assigned.has(blockId)||index!==previous+1)
+    throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_ORDER_INVALID");
+   assigned.add(blockId);previous=index;
+   if(pageDraft.blocks[index].printParagraphGroupId!==g.id||
+      pageDraft.blocks[index].printParagraphStatus!=="IMAGE_STRUCTURE_PROVISIONAL__NOT_INDEPENDENTLY_CERTIFIED")
+    throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_GROUP_MISMATCH");
+  }
+  if(g.continuesToPrintedPage!==undefined &&
+    (g.memberBlockIds.at(-1)!==pageDraft.blocks.at(-1).id||
+     g.continuesToPrintedPage!==page.printedPage+1||g.joinApproved!==false))
+   throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_CROSS_PAGE_INVALID");
+ }
+ if(assigned.size!==pageDraft.blocks.length)
+  throw new Error("SOURCE_PROVISIONAL_PARAGRAPH_UNMAPPED");
  const join=pageDraft.pageJoinCandidate;
  if(!join||join.sourceBlockId!==pageDraft.blocks.at(-1)?.id||
     !Array.isArray(join.printedPageSequence)||
@@ -92,6 +124,7 @@ export function auditProvisionalPage({plan,pageDraft}={}){
   sourceUrl:page.url,reviewOnly:true,publicationApproved:false,
   eligibleForProduction:false,pageWordCountProvisional:wordCount,
   existingExcerptReferences:referencedExisting,transcribedDraftBlocks:candidates.length,
+  provisionalPrintParagraphGroups:groups.length,independentlyCertifiedPrintParagraphGroups:0,
   pageJoinStatus:"HELD_AND_UNPROOFREAD",nextPrintedPage:page.printedPage+1,
   embeddedPrimaryQuoteBlocks:latinQuotes,crossPageContinuations:crossPage,
   heldItems,reviewQueueMetrics:{candidateCount:reviewQueue.candidateCount,
