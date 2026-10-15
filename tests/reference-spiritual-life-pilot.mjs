@@ -35,7 +35,7 @@ for(const lang of ["en","fr"]){
   assert.ok(!defaultContent.includes("data-ao-sl-claim-sources="),
    lesson.id+" visible teaching block still contains inline source links");
   const inside=markup.slice(disclosure);
-  assert.ok(inside.includes(lang==="fr"?"Sources et lectures complémentaires":"Sources & further reading"));
+  assert.ok(inside.includes(lang==="fr"?"Sources et lectures complémentaires":"Sources &amp; further reading"));
   assert.ok(inside.includes(lang==="fr"?"Sources par section":"Evidence by section"));
   assert.ok(inside.includes('<details class="aoSLEvidence">'));
   assert.equal((inside.match(/data-ao-sl-evidence-block=/g)||[]).length,4);
