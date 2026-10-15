@@ -1,0 +1,33 @@
+name: Source passage packs
+on:
+  pull_request:
+    paths:
+      - 'src/reference/**'
+      - 'data/reference/source-demo/**'
+      - 'tests/reference-passage-packs.mjs'
+      - 'tests/reference-parsing.mjs'
+      - 'tests/fixtures/source-passage-original.html'
+      - '.github/workflows/reference-source-passage-packs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  passage-packs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source parser and published baseline
+        run: node tests/reference-parsing.mjs
+      - name: HTML, integrity, lazy-loading and rights acceptance
+        run: node tests/reference-passage-packs.mjs
+      - name: Source files parse as native JavaScript modules
+        run: |
+          node --check src/reference/html-parser.js
+          node --check src/reference/passage-packs.js
+          node --check src/reference/passage-reader.js
