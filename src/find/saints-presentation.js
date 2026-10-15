@@ -5,7 +5,7 @@ const arr=value=>Array.isArray(value)?value:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
 const translated=(obj,lang,key)=>String(obj?.[key+"_"+lang]??obj?.[key+"_en"]??"").trim();
 const sourceUrl=s=>{
-  try{const u=new URL(s?.url);return u.protocol==="https:"&&u.hostname==="www.vatican.va"?u.href:null;}catch{return null;}
+  try{const u=new URL(s?.url);return u.protocol==="https:"&&["www.vatican.va","www.causesanti.va"].includes(u.hostname)?u.href:null;}catch{return null;}
 };
 
 /** Compact bilingual Saints profile in the existing Explore Place sheet.
