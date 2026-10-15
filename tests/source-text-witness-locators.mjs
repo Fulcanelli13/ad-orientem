@@ -41,6 +41,10 @@ const tBound=validateExternalLocatorBinding({profile:tan,locator:"#643",
  hostUrl:"https://www.ewtn.com/catholicism/library/spiritual-life-12636"});
 assert.equal(tBound.externalPage,"https://www.ewtn.com/catholicism/library/spiritual-life-12636");
 assert.throws(()=>validateExternalLocatorBinding({profile:tan,locator:"#643",
+ hostUrl:"https://www.ewtn.com/catholicism/library/spiritual-life-12632"}),/LOCATOR_WRONG_PAGE/);
+assert.throws(()=>validateExternalLocatorBinding({profile:tan,locator:"#644",
+ hostUrl:"https://www.ewtn.com/catholicism/library/spiritual-life-12636"}),/LOCATOR_PAGE_UNVERIFIED/);
+assert.throws(()=>validateExternalLocatorBinding({profile:tan,locator:"#643",
  hostUrl:"https://other.invalid/"}),/URL_NOT_REGISTERED/);
 assert.throws(()=>validateExternalLocatorBinding({profile:md,locator:"23",
  hostUrl:md.witnessUrl,nodeKind:"footnote"}),/NONBODY_LOCATOR_REFUSED/);
