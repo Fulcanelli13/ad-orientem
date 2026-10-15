@@ -16,6 +16,22 @@ const validLink=url=>{
   }catch{return false;}
 };
 const addr=place=>place?.address?.formatted||[place?.address?.city,place?.address?.country].filter(Boolean).join(", ");
+const sourceBoundLife=life=>{
+  // Birth/death are person events, never inferred from an associated shrine.
+  // Celebration is informational: never a Mass, rank, or 1962 source claim.
+  const validEvent=event=>/^\d{4}-\d{2}-\d{2}$/.test(event?.date||"")&&
+    txt(event?.place?.en)&&txt(event?.place?.fr)&&/^https:\/\//.test(event?.source_url||"");
+  const celebration=life?.celebration;
+  if(!validEvent(life?.birth)||!validEvent(life?.death)||
+    !/^\d{2}-\d{2}$/.test(celebration?.month_day||"")||
+    !txt(celebration?.label?.en)||!txt(celebration?.label?.fr)||
+    !/^https:\/\//.test(celebration?.source_url||""))return null;
+  return Object.freeze({
+    birth:Object.freeze({...life.birth,place:Object.freeze({...life.birth.place})}),
+    death:Object.freeze({...life.death,place:Object.freeze({...life.death.place})}),
+    celebration:Object.freeze({...celebration,label:Object.freeze({...celebration.label})})
+  });
+};
 const validProfile=person=>
   person?.publication==="EDITORIAL_REVIEW_ONLY"&&
   /^((saint|blessed):)/.test(txt(person?.saint_id))&&
@@ -52,6 +68,7 @@ export function projectSaintPlaceItems(dataset={}){
       saint_id:person.saint_id,
       recognition_status:person.recognition_status,
       classification,
+      life:sourceBoundLife(person.life),
       name_en:txt(person.display_name?.en),
       name_fr:txt(person.display_name?.fr),
       why_en:txt(person.why_honoured.en),
