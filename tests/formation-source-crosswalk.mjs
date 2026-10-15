@@ -64,7 +64,14 @@ assert.equal(entries,408);
 assert.equal(bindingByKey.size,entries);
 assert.equal(witnessById.size,304);
 assert.ok([...witnessById.values()].every(w=>
- w.source_bindings.length&&w.inspection==="URL_NOT_INDEPENDENTLY_TESTED_IN_THIS_PASS"));
+ w.source_bindings.length&&["URL_NOT_INDEPENDENTLY_TESTED_IN_THIS_PASS",
+ "OFFICIAL_PAGE_OPENED_2026_10_15__SAME_DOCUMENT_IDENTITY_ONLY"].includes(w.inspection)));
+const manuallyOpened=[...witnessById.values()].filter(w=>w.inspection.startsWith("OFFICIAL_PAGE_OPENED"));
+assert.equal(manuallyOpened.length,2);
+assert.ok(manuallyOpened.every(w=>w.host==="www.vatican.va"));
+assert.equal(manifest.metrics.cross_url_work_identities_verified,1);
+assert.equal(manifest.review_queue.named_cross_url_candidate[0].work_candidate_id,
+ "WORK-PASTOR-AETERNUS-1870");
 const unused=[...used.entries()].filter(([_,n])=>n===0).map(([key])=>key).sort();
 assert.equal(unused.length,12,"Registry-only leads changed: preserve rather than erase them");
 assert.deepEqual(unused,manifest.review_queue.uncited_sources.map(x=>x.key).sort(),
