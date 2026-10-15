@@ -121,4 +121,19 @@ assert.equal(draft.people.find(x=>x.person_id==="saint.ignatius-antioch").life_e
  "UNKNOWN","Do not invent Ignatius's birth");
 assert.equal(draft.people.find(x=>x.person_id==="saint.louise-de-marillac").life_events_review.birth.date_precision,
  "EXACT_DATE_PLACE_DISPUTED","Paris/Le Meux birthplace disagreement must remain flagged");
+
+const newExpanded=new Set(["saint.francis-xavier","saint.vincent-de-paul","saint.john-bosco",
+ "saint.john-mary-vianney","saint.rose-of-lima","saint.charles-borromeo","saint.maria-goretti",
+ "saint.damien-de-veuster","saint.louise-de-marillac","saint.faustina-kowalska",
+ "saint.teresa-benedicta-cross-stein","saint.elizabeth-ann-seton"]);
+assert.equal(draft.people.filter(p=>p.editorial_expansion).length,12);
+for(const p of draft.people.filter(p=>newExpanded.has(p.person_id))){
+ assert.equal(p.editorial_expansion.status,"SOURCE_ANCHORED_BILINGUAL_RESEARCH_REVISION_NOT_APPROVED");
+ assert(p.editorial_expansion.source_urls.length>0);
+ assert(p.editorial_expansion.source_urls.every(u=>p.source_urls.includes(u)));
+ const joined=lang=>[p.why_honoured[lang],...p.biography_facts.map(x=>x[lang])].join(" ").trim().split(/\s+/).length;
+ assert(joined("en")>=110&&joined("en")<=150);
+ assert(joined("fr")>=110);
+}
+
 console.log("PASS 16 distinct EN/FR holiness-first saint drafts, 48 sourced facts, 2 qualified extraordinary accounts, 7 historic and 5 official post-1960 owner links; 0 published changes");
