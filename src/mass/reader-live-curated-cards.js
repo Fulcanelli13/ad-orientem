@@ -1,7 +1,10 @@
 import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
-// Opt-in review only: source-first production 48 remains the default.
+// The real production browser entry requests curated 65 by default (64 visible
+// unless the optional second Confiteor is enabled); 48 is explicit rollback.
+// The direct native fixture separately keeps its 65-card review activation.
+// Pre-Gospel chant subnavigation requires a source-backed follow-up.
 //
 // A "block" cut ends after the entire canonical block. A "cue" cut ends
 // after the specified exact paragraph, never in the middle of a cue.
