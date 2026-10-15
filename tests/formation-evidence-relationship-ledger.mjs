@@ -22,7 +22,7 @@ const evidenceKinds=new Set([
  "DIRECT_PRIMARY_TEXT_SUPPORT","ORIGINAL_DISPUTANT_POSITION","ORIGINAL_PROPONENT_POSITION",
  "ORIGINAL_SPEAKER_POSITION","CONTEXTUAL_EVIDENCE"
 ]);
-let totalSections=0,totalEdges=0,withLocator=0,unreviewed=0,roleCounts={};
+let totalSections=0,totalEdges=0,withLocator=0,withoutNewVerdict=0,roleCounts={};
 for(const file of crosswalk.source_files){
  const d=read(file.path);
  assert.equal(d.publication_allowed,false,file.path+" publication gate moved");
@@ -70,9 +70,9 @@ for(const file of crosswalk.source_files){
      assert.equal(review.original_language_collated,false);
      assert.equal(review.independent_theological_approval,false);
     }else{
-     unreviewed++;
+     withoutNewVerdict++;
      assert.equal(edge.relationship,"UNASSESSED",edgeKey+" was categorized automatically");
-     assert.equal(edge.verification,"NOT_CHECKED",edgeKey+" was falsely certified");
+     assert.equal(edge.verification,"NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",edgeKey+" prior editorial findings were misrepresented");
      assert.ok(!edge.review_id);
     }
     totalEdges++;
@@ -83,11 +83,16 @@ for(const file of crosswalk.source_files){
 assert.equal(totalSections,564);
 assert.equal(totalEdges,1541);
 assert.equal(withLocator,248);
-assert.equal(unreviewed,1533);
+assert.equal(withoutNewVerdict,1533);
 assert.deepEqual(roleCounts,audit.counts.role_counts);
 assert.equal(audit.counts.source_edges_with_claim_locator,withLocator);
 assert.equal(audit.counts.checked_edges,checks.size);
-assert.equal(audit.counts.unreviewed_edges,unreviewed);
+assert.equal(audit.counts.source_edges_without_a_new_ledger_specific_verdict,withoutNewVerdict);
+assert.equal(audit.counts.previously_screened_sections_matched,332);
+assert.equal(audit.counts.preexisting_merged_primary_source_edges_attached,16);
+assert.equal(audit.counts.reverification_tasks_created,0);
+assert.ok(!("unreviewed_edges" in audit.counts));
+assert.match(audit.interpretation_note,/not a count of never-reviewed claims/i);
 assert.deepEqual(audit.checked_claims.map(x=>x.dossier).sort(),
  ["APOL-002","APOL-002","APOL-002","APOL-012","APOL-012","APOL-012","CR-IDM-06","CR-IDM-06"]);
 const justin=audit.checked_claims.find(x=>x.dossier==="APOL-012"&&x.source_id==="JUSTIN71"&&x.role==="documented_objection");
@@ -98,4 +103,4 @@ assert.match(francis.limitations,/editorial inference/i,
  "A reasoned inference cannot be attributed as the Pope's exact assertion");
 console.log(JSON.stringify({status:"PASS_EDITORIAL_EVIDENCE_PILOT",dossiers:141,
  sections:totalSections,sourceEdges:totalEdges,checkedSubclaims:checks.size,
- unreviewedEdges:unreviewed,explicitClaimLocators:withLocator,fullyApprovedSections:0},null,2));
+ sourceEdgesWithoutNewLedgerVerdict:withoutNewVerdict,previouslyScreenedSections:332,priorPrimaryFindingsRetained:16,explicitClaimLocators:withLocator,fullyApprovedSections:0},null,2));
