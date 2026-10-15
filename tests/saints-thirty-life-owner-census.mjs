@@ -80,7 +80,7 @@ for(const p of readerBios){
  for(const lang of ["en","fr"]){
    const biography=p.reader_biography[lang];
    assert(biography.length>300,"A readout is missing or trivial");
-   const n=biography.trim().split(/\\s+/).length;
+   const n=biography.trim().split(/\s+/).length;
    assert(n>=100 && n<=165,"A polished inline biography is poorly sized: "+(p.person_id||p.calendar_person_id)+" "+lang+" "+n);
  }
  assert(!p.approved_artwork_id&&!p.artwork_master_id);
