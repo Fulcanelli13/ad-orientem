@@ -6,15 +6,21 @@
   "inventory": {
     "canonicalWorkIdentities": 13,
     "newWorkCandidateIdentities": 10,
-    "newCompleteElectronicWitnessStaged": 1,
-    "totalDistinctWorkIdsInThisSnapshot": 24,
+    "newCompleteElectronicWitnessStaged": 3,
+    "totalDistinctWorkIdsInThisSnapshot": 25,
     "rawParsingOpportunities": 37,
     "formationDossiers": 141,
     "formationScopedBindings": 408,
     "formationExactUrlWitnesses": 304,
     "formationOriginallyApprovedContextBindings": 0,
     "catenaExistingPericopes": 814,
-    "catenaExistingFragments": 12692
+    "catenaExistingFragments": 12692,
+    "completeElectronicallyStagedSections": 268,
+    "completeElectronicallyStagedParagraphs": 1911,
+    "completeElectronicallyStagedWords": 166441,
+    "completeElectronicallyStagedGradeA": 0,
+    "completeElectronicallyStagedGradeB": 1911,
+    "stagedExceptionCandidates": 325
   },
   "reuse": [
     {
@@ -107,9 +113,11 @@
       "workId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
       "title": "Introduction to the Devout Life",
       "owner": "reference-canonical",
-      "action": "REUSE_OR_LINK_ONLY",
+      "action": "REUSE_CANONICAL_WORK_WITH_NEW_1832_FRENCH_WITNESS_STAGED",
       "rights": "TRANSLATION_AND_DIGITAL_RIGHTS_UNREVIEWED",
-      "source": "data/reference/canonical-works-pilot.v1.json"
+      "source": "data/reference/canonical-works-pilot.v1.json",
+      "newWitnessEditionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "newWitnessPath": "data/source-text/staging/francis-sales-vie-devote-pg53540-full.txt"
     },
     {
       "workId": "WORK-IGNATIUS-EXERCISES",
@@ -254,6 +262,14 @@
       "action": "COMPLETE_ELECTRONIC_WITNESS_STAGED_METADATA_ONLY",
       "rights": "PG13871_US_PUBLIC_DOMAIN_BUT_TEXTUAL_EDITION_AND_DISTRIBUTION_REVIEW_PENDING",
       "source": "data/source-text/staging/brother-lawrence-pg13871-full.txt"
+    },
+    {
+      "workId": "WORK-THOMAS-KEMPIS-IMITATION-CHRIST",
+      "title": "The Imitation of Christ",
+      "owner": "source-text-bulk-pilot",
+      "action": "COMPLETE_ELECTRONIC_WITNESS_STAGED_METADATA_ONLY",
+      "rights": "PG1653_US_PUBLIC_DOMAIN_BENHAM_PRINT_SOURCE_ALIGNMENT_AND_PRODUCTION_REVIEW_PENDING",
+      "source": "data/source-text/staging/imitation-benham-pg1653-full.txt"
     }
   ],
   "policy": {
@@ -265,6 +281,52 @@
     "preserveOriginalModuleOwner": true,
     "passageVerificationByExceptionsNotEveryPage": true,
     "reproductionRightsIndependentFromParsing": true,
-    "pendingPassageLinks": "NO_NEW_CROSSMODULE_CLAIMS_VERIFIED_IN_THIS_PASS"
-  }
+    "pendingPassageLinks": "NO_NEW_CROSSMODULE_CLAIMS_VERIFIED_IN_THIS_PASS",
+    "crossModuleLinking": "DISCOVERY_LEADS_ONLY_UNTIL_EXISTING_OWNER_ACCEPTS_EXACT_SOURCE_CLAIMS",
+    "preExistingWorkReuse": "St Francis de Sales is one canonical work with the additional 1832 French edition witness, not a second canonical work"
+  },
+  "newBulkWitnesses": [
+    {
+      "workId": "WORK-BROTHER-LAWRENCE-PRACTICE-PRESENCE",
+      "editionId": "ED-REVELL-GUTENBERG13871-GITENBERG2018",
+      "witnessId": "WIT-PG13871-GITENBERG-A2C7FD57",
+      "source": "https://raw.githubusercontent.com/GITenberg/The-Practice-of-the-Presence-of-God-the-Best-Rule-of-a-Holy-Life_13871/a2c7fd571d9abbd9f35fa6e40eef2590630505a0/13871.txt",
+      "pinnedGitCommit": "a2c7fd571d9abbd9f35fa6e40eef2590630505a0",
+      "projectGutenbergId": 13871,
+      "sourceTextStagedFile": "data/source-text/staging/brother-lawrence-pg13871-full.txt",
+      "licenseNoticeRetained": true,
+      "quality": "B_PARSED_MACHINE_READABLE_NOT_INDEPENDENTLY_PROOFREAD",
+      "expectedSections": 22,
+      "status": "STAGED_NOT_PRODUCTION",
+      "caveat": "This is the older public-domain USA Revell translation; NOT the separately copyrighted PG #5657 edited by Lightheart. Printed original/edition alignment, territorial rights and on-screen reproduction require dedicated approval before release."
+    },
+    {
+      "workId": "WORK-THOMAS-KEMPIS-IMITATION-CHRIST",
+      "editionId": "ED-BENHAM-EN-PG1653-GITENBERG2018",
+      "witnessId": "WIT-PG1653-GITENBERG-A15DFC4B",
+      "sourceTextStagedFile": "data/source-text/staging/imitation-benham-pg1653-full.txt",
+      "metadataIndexFile": "data/source-text/staging/imitation-benham-pg1653-index.v1.json",
+      "expectedSections": 119,
+      "passages": 786,
+      "words": 61769,
+      "language": "en",
+      "status": "STAGED_NOT_PRODUCTION",
+      "licenseNoticeRetained": true,
+      "note": "Benham English translation; printed copy-text not independently collated"
+    },
+    {
+      "workId": "WORK-FRANCIS-SALES-DEVOUT-LIFE",
+      "editionId": "ED-PERISSE-1832-FR-PG53540-GITENBERG2018",
+      "witnessId": "WIT-PG53540-GITENBERG-6AD311EC",
+      "sourceTextStagedFile": "data/source-text/staging/francis-sales-vie-devote-pg53540-full.txt",
+      "metadataIndexFile": "data/source-text/staging/francis-sales-vie-devote-pg53540-index.v1.json",
+      "expectedSections": 127,
+      "passages": 943,
+      "words": 93648,
+      "language": "fr",
+      "status": "STAGED_NOT_PRODUCTION",
+      "licenseNoticeRetained": true,
+      "note": "Périsse 1832 French historical print, original Francois de Sales work; rosary appendix and feast prayer preserved; rights/printed copy checking remains independent"
+    }
+  ]
 }
