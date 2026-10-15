@@ -1190,6 +1190,38 @@
       "codes": {
         "iso_alpha2": "GH"
       }
+    },
+    {
+      "geo_area_id": "geo:country:BZ",
+      "name": {
+        "official": "Belize",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PK",
+      "name": {
+        "official": "Pakistan",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PK"
+      }
     }
   ],
   "places": [
@@ -10804,6 +10836,165 @@
       "source_ids": [
         "SG-R76-SITE-SG-INV-0726",
         "SG-R76-GEO-SG-INV-0726"
+      ]
+    },
+    {
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "name": {
+        "official": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+        "aliases": [
+          "Santuario de Guadalupe, Guadalupe, Zacatecas",
+          "Templo de Nuestra Señora de Guadalupe, Zacatecas"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:MX"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 22.74656,
+        "lng": -102.51787,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4046916240",
+        "source_ref": "osm:node/4046916240",
+        "matched_country_code": "MX",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Calle Luis Moya esquina Independencia",
+        "line2": null,
+        "postal_code": null,
+        "city": "Guadalupe",
+        "region": "Zacatecas",
+        "country_code": "MX",
+        "country": "Mexico",
+        "formatted": "Calle Luis Moya esquina Independencia, Centro, Guadalupe, Zacatecas, México"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0431",
+        "SG-R77-GEO-SG-INV-0431"
+      ]
+    },
+    {
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "name": {
+        "official": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+        "aliases": [
+          "Concatedral de Nuestra Señora de Guadalupe, Belmopán",
+          "Our Lady of Guadalupe Roman Catholic Church, Belmopan"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:BZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.24867,
+        "lng": -88.7635,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/294567114",
+        "source_ref": "osm:way/294567114",
+        "matched_country_code": "BZ",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "East Ring Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Belmopan",
+        "region": "Cayo District",
+        "country_code": "BZ",
+        "country": "Belize",
+        "formatted": "East Ring Road, Belmopan, Cayo District, Belize"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0449",
+        "SG-R77-GEO-SG-INV-0449"
+      ]
+    },
+    {
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "name": {
+        "official": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+        "aliases": [
+          "Iglesia Nuestra Señora de Lourdes, San Pedro de Montes de Oca",
+          "Shrine of Our Lady of Lourdes, San José (research name; parish only)"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:CR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 9.93288,
+        "lng": -84.04176,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/372659552",
+        "source_ref": "osm:way/372659552",
+        "matched_country_code": "CR",
+        "verified_at": "2026-10-15",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Calle 77, Lourdes",
+        "line2": null,
+        "postal_code": null,
+        "city": "San Pedro de Montes de Oca",
+        "region": "San José",
+        "country_code": "CR",
+        "country": "Costa Rica",
+        "formatted": "Calle 77, Lourdes, San Pedro de Montes de Oca, San José, Costa Rica"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0459",
+        "SG-R77-GEO-SG-INV-0459"
+      ]
+    },
+    {
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "name": {
+        "official": "Our Lady of Fatima Catholic Church, Karachi",
+        "aliases": [
+          "Our Lady of Fatima Parish, Karachi",
+          "Fatima Shrine Church, Karachi (map label)"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:PK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 24.86672,
+        "lng": 67.02199,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://en.wikipedia.org/wiki/Our_Lady_of_Fatima_Church%2C_Karachi",
+        "source_ref": "wiki:Our_Lady_of_Fatima_Church_Karachi:approx_site_coordinate",
+        "matched_country_code": "PK",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": "73 Randle Road",
+        "line2": null,
+        "postal_code": null,
+        "city": "Karachi",
+        "region": "Sindh",
+        "country_code": "PK",
+        "country": "Pakistan",
+        "formatted": "73 Randle Road, Karachi 74400, Sindh, Pakistan"
+      },
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0609",
+        "SG-R77-GEO-SG-INV-0609"
       ]
     }
   ],

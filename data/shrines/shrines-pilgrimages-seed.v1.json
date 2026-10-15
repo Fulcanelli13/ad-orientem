@@ -4193,6 +4193,70 @@
         "SG-R76-GEO-SG-INV-0726"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:MX:guadalupe-zacatecas-historic-sanctuary",
+      "place_id": "place:MX:guadalupe-zacatecas-historic-sanctuary",
+      "name": "Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Guadalupe",
+      "origin_summary": "Seventeenth-century Guadalupe sanctuary in the city of Guadalupe, Zacatecas. Mexico's INAH identifies its historical foundation, Catholic devotion and church on Calle Luis Moya, adjacent to the former Franciscan convent and museum. Distinct from the Basilica of Guadalupe in Mexico City.",
+      "origin_summary_fr": "Sanctuaire guadalupéen du XVIIe siècle dans la ville de Guadalupe, Zacatecas. L'INAH atteste sa fondation, sa dévotion catholique et le temple rue Luis Moya, voisin de l'ancien couvent franciscain et du musée. Il est distinct de la basilique de Guadalupe de Mexico.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0431",
+        "SG-R77-GEO-SG-INV-0431"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+      "name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Guadalupe",
+      "origin_summary": "Roman Catholic co-cathedral of the Diocese of Belize City–Belmopan on East Ring Road. The diocese designated it among its Jubilee 2025 sacred sites. It is a Marian co-cathedral, not a separately verified canonically erected shrine or automatically ongoing Jubilee pilgrimage.",
+      "origin_summary_fr": "Cocathédrale catholique romaine du diocèse de Belize City–Belmopan, sur East Ring Road. Le diocèse l'a désignée comme lieu sacré pour le Jubilé 2025. C'est une cocathédrale mariale, non un sanctuaire canoniquement érigé indépendamment ni un pèlerinage jubilaire permanent.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0449",
+        "SG-R77-GEO-SG-INV-0449"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:CR:montes-oca-our-lady-lourdes-parish",
+      "place_id": "place:CR:montes-oca-our-lady-lourdes-parish",
+      "name": "Parroquia Nuestra Señora de Lourdes, Montes de Oca",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Lourdes",
+      "origin_summary": "Historic Jesuit-associated parish dedicated to Our Lady of Lourdes in Montes de Oca, San José Province. The Jesuits document its foundation and continuing parish life; local Catholic parish sources corroborate the same building. Its historical devotion does not establish juridical shrine status or a Lourdes apparition in Costa Rica.",
+      "origin_summary_fr": "Paroisse historique liée aux jésuites et dédiée à Notre-Dame de Lourdes, dans le canton de Montes de Oca, province de San José. Les jésuites attestent son histoire et sa vie paroissiale. Cette dévotion ne signifie ni statut juridique de sanctuaire ni apparition de Lourdes au Costa Rica.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0459",
+        "SG-R77-GEO-SG-INV-0459"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:PK:karachi-our-lady-fatima-parish",
+      "place_id": "place:PK:karachi-our-lady-fatima-parish",
+      "name": "Our Lady of Fatima Catholic Church, Karachi",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Fátima",
+      "origin_summary": "Catholic Marian parish at 73 Randle Road in the Archdiocese of Karachi. Catholic directories confirm its existence and dedication; site coordinates come from a secondary geographic reference and are approximate. No decree establishing a juridical Marian shrine or recurring pilgrimage is verified.",
+      "origin_summary_fr": "Paroisse mariale catholique au 73 Randle Road dans l'archidiocèse de Karachi. Les annuaires catholiques attestent l'église et sa dédicace ; la localisation secondaire reste approximative. Aucun décret de sanctuaire canonique ni pèlerinage régulier n'est établi.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0609",
+        "SG-R77-GEO-SG-INV-0609"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -7757,6 +7821,20 @@
       "scope_note_fr": "Destination de pèlerinage catholique attestée ; aucun récit d'apparition locale, itinéraire, horaire de messe ni événement du calendrier n'est présumé.",
       "source_ids": [
         "SG-R76-SITE-SG-INV-0474"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:MX:guadalupe-zacatecas-historic-sanctuary-destination",
+      "name": "Pilgrimage to Santuario de Nuestra Señora de Guadalupe, Zacatecas",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:MX:guadalupe-zacatecas-historic-sanctuary",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Historically documented Catholic Marian shrine in Guadalupe, Zacatecas, not Mexico City; no invented routes, Mass times or new apparition.",
+      "scope_note_fr": "Sanctuaire marial historique de Guadalupe, Zacatecas, distinct de Mexico ; aucun itinéraire, horaire ou apparition nouvelle n'est présumé.",
+      "source_ids": [
+        "SG-R77-SITE-SG-INV-0431"
       ],
       "confidence": "HIGH"
     }
