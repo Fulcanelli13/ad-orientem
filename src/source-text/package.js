@@ -12,8 +12,26 @@ export function packageSourceDocument(document,{chunkSize=5}={}){
    throw new Error("SOURCE_TEXT_MIXED_EDITIONS_FORBIDDEN");
   chunks[path]=JSON.stringify({schema:SOURCE_TEXT_SCHEMA,workId:work.id,passages:slice})+"\n";
   files.push({path,count:slice.length});
-  for(const p of slice)index.push({id:p.id,section:p.section,heading:p.heading,
-   kind:p.kind,locator:p.locator,chunk:path});
+  for(const p of slice){
+   const entry={id:p.id,section:p.section,heading:p.heading,
+    kind:p.kind,locator:p.locator,chunk:path};
+   if(p.sourceLocator!==undefined){
+    if(typeof p.sourceLocator!=="string"||!p.sourceLocator.trim())
+     throw new Error("SOURCE_TEXT_SOURCE_LOCATOR_INVALID");
+    entry.sourceLocator=p.sourceLocator;
+   }
+   if(p.editionQualifiedCitation!==undefined){
+    if(typeof p.editionQualifiedCitation!=="string"||!p.editionQualifiedCitation.trim())
+     throw new Error("SOURCE_TEXT_CITATION_ID_INVALID");
+    entry.editionQualifiedCitation=p.editionQualifiedCitation;
+   }
+   if(p.sourcePage!==undefined){
+    if(typeof p.sourcePage!=="string"||!p.sourcePage.startsWith("https://"))
+     throw new Error("SOURCE_TEXT_SOURCE_URL_INVALID");
+    entry.sourcePage=p.sourcePage;
+   }
+   index.push(entry);
+  }
  }
  const manifest={schema:SOURCE_TEXT_MANIFEST_SCHEMA,work,chunkSize,
   passages:index,chunks:files,loadedAtStartup:false,searchPolicy:"metadata-first; explicit full-text only"};
