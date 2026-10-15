@@ -154,6 +154,7 @@ export function createFindOwner(win=globalThis){
     if(state.lens==="shrines")return ["G336","G334","G338","G321"];
     if(state.lens==="apparitions")return ["G336","G321","G233"];
     if(state.lens==="relics")return ["G321","G336"];
+    if(state.lens==="saints")return ["G336","G321"];
     if(state.lens==="traditions")return ["G322","G233","G095","G339"];
     if(state.lens==="pilgrimages")return ["G334","G335","G336","G233"];
     return ["G334","G336"];
@@ -537,7 +538,7 @@ export function createFindOwner(win=globalThis){
         state.query=queryByLens.get(value)??"";
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
-      if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
+      if(value==="heritage"||value==="traditions"||value==="tlm"||value==="saints")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
