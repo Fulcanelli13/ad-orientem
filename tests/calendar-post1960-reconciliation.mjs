@@ -18,11 +18,13 @@ assert.ok(ids.has("saint.louis-martin") && ids.has("saint.zelie-guerin"));
 assert.ok(ids.has("saint.hildegard-bingen"));
 assert.ok(ids.has("saint.john-avila"),"1970 saint reuses the 2012 Doctor identity");
 const conflicted=people.find(p=>p.id==="saint.jadwiga-queen-poland");
-assert.equal(conflicted.publicationHold,"IDENTITY_DESCRIPTION_REQUIRES_INDEPENDENT_REVIEW");
-assert.ok(conflicted.reviewFlags.includes("OFFICIAL_1997_TITLE_VS_BODY_HEDWIG_SILESIA_CONFLATION_REVIEW_REQUIRED"));
+assert.equal(conflicted.publicationHold,undefined,"Papal homily has resolved Queen Jadwiga identity");
+assert.ok(conflicted.reviewFlags.includes("DICASTERY_1997_BIOGRAPHY_APPARENTLY_CONFLATES_HEDWIG_SILESIA"));
+assert.equal(conflicted.identityAdjudication.status,"CERTIFIED_IDENTITY_BY_PAPAL_CANONIZATION_HOMILY");
+assert.equal(conflicted.identityAdjudication.sourceUrl,"https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19970608_cracovia.html");
 const hypotheticalConflict=structuredClone(conflicted);
 hypotheticalConflict.observances=[{calendar:"CURRENT_ROMAN_GENERAL",monthDay:"06-08",sourceIds:["example-only"],publishedOn:"1997-06-08"}];
-assert.equal(supplementarySaintsForDate("2026-06-08",[hypotheticalConflict]).length,0,"Publication-held saints cannot appear even when an observance date is proposed");
+assert.deepEqual(supplementarySaintsForDate("2026-06-08",[hypotheticalConflict]).map(x=>x.personId),["saint.jadwiga-queen-poland"],"Papal-homily-adjudicated identity can be presented when an independently sourced memorial is later added");
 
 assert.equal(people.find(p=>p.id==="saint.francisco-marto").recognition.canonizedOn,"2017-05-13");
 assert.equal(saintRecognitionAt(people.find(p=>p.id==="saint.teresa-calcutta"),"2015-09-05").recognizedAsSaint,false);
