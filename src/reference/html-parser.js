@@ -113,7 +113,12 @@ export function parsePinnedSourceHtml({text,...meta}={}){
  if(!blocks.length)throw new Error("PINNED_HTML_EMPTY_SOURCE");
  const markup=blocks.map(b=>/^h[1-3]$/.test(b.tag)?"# "+b.text:b.text).join("\n\n");
  const parsed=parsePinnedSourceText({...meta,text:markup,format:"plain-paragraphs"});
- const headings=blocks.filter(b=>/^h[1-3]$/.test(b.tag));
+ const sectionOrigins=[];
+ let started=false;
+ for(const b of blocks){
+  if(/^h[1-3]$/.test(b.tag)){sectionOrigins.push(b);started=true}
+  else if(!started){sectionOrigins.push(null);started=true}
+ }
  const paragraphs=blocks.filter(b=>!/^h[1-3]$/.test(b.tag));
  let paragraphIndex=0;
  const sections=parsed.sections.map((section,i)=>{
@@ -122,7 +127,7 @@ export function parsePinnedSourceHtml({text,...meta}={}){
    if(!b||b.text!==p.text)throw new Error("PINNED_HTML_LOSSY_CONVERSION");
    return Object.freeze({...p,sourceLine:b.sourceLine,sourceAnchor:b.sourceAnchor});
   });
-  return Object.freeze({...section,sourceAnchor:headings[i]?.sourceAnchor??null,
+  return Object.freeze({...section,sourceAnchor:sectionOrigins[i]?.sourceAnchor??null,
    paragraphs:Object.freeze(mapped)});
  });
  if(paragraphIndex!==paragraphs.length)throw new Error("PINNED_HTML_LOSSY_CONVERSION");
