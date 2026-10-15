@@ -273,7 +273,7 @@ try{
  }
  assert.deepEqual(reached.map(x=>x.lens),lenses);
  assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the six tested details");
- assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),6);
+ assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),7,"Six established Explore links and the new Saints doorway must remain discoverable");
  await page.locator("#ao-find-modular-root [data-find-close]").tap({timeout:10000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
   &&globalThis.AO_FIND_APP_V1?.status?.().open===false,null,{timeout:12000});
