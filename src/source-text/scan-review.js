@@ -1,5 +1,5 @@
 import {normalizePassageText,assertPassageReproductionScope} from "./contracts.js";
-import {extractReviewedWitnessDocument} from "./witness-locators.js";
+import {extractReviewedWitnessDocument,normalizeWitnessLocator} from "./witness-locators.js";
 
 // OCR candidates and proofing metadata never imply an import licence.
 // This is an intermediate in-memory review queue, not a fetcher or a runtime route.
@@ -111,7 +111,7 @@ export function prepareReviewedScanDocument({
   // OCR may differ from approved transcription; never silently repair.
   // Only exact approved text from the existing rights ledger may be packaged.
   const text=normalizePassageText(a.approvedText);
-  assertPassageReproductionScope(work,[{locator:"page#"+c.locator,text}]);
+  assertPassageReproductionScope(work,[{locator:"page#"+normalizeWitnessLocator(profile,c.locator).sourceAnchor,text}]);
   records.push({locator:c.locator,text,hostUrl:scanned[0].url});
   pageLinks.push(scanned.map(p=>({printedPage:p.printedPage,
     scanPage:p.scanPage,url:p.url})));
