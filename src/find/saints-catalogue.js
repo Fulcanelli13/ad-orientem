@@ -44,6 +44,9 @@ const exactOwnerLinks=(person,index)=>{
   if(arr(index.post1960_named_persons).some(x=>x.calendar_person_id===owner))
     links.push(Object.freeze({scope:"later",item_id:"saints:modern:"+owner,
       label_en:"Official canonization record",label_fr:"Référence officielle de canonisation",identity_policy:"EXACT_SOURCE_ID_ONLY"}));
+  if(arr(index.doctors_roster).some(x=>x.calendar_person_id===owner))
+    links.push(Object.freeze({scope:"doctors",item_id:"saints:doctor:"+owner,
+      label_en:"Doctor of the Church record",label_fr:"Référence du titre de Docteur de l’Église",identity_policy:"EXACT_SOURCE_ID_ONLY"}));
   return Object.freeze(links);
 };
 const vocabulary=person=>[person.name_en,person.name_fr,person.why_en,person.why_fr,
