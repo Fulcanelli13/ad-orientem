@@ -1,7 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
-import { renderSaintPlaceSheet } from "./saints-presentation.js";
+import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
@@ -551,7 +551,13 @@ export function renderExploreToString(vm){
   }
   html+='</div></details></nav>';
   if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
-  if(vm.lens==="saints")html+='<p class="aoSaintScopeNote">'+esc(vm.view==="list"?L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation."):L(vm.language,"Map shows verified physical places only. Switch to List for the 30-profile Saints catalogue.","La carte ne montre que des lieux vérifiés. Passez en Liste pour consulter les 30 notices."))+"</p>";
+  if(vm.lens==="saints")html+='<p class="aoSaintScopeNote">'+esc(vm.view==="map"
+  ?L(vm.language,"Map shows verified physical places only. Switch to List for Saints and source indexes.","La carte ne montre que les lieux vérifiés. Passez en Liste pour les saints et les index de sources.")
+  :f.saintScope==="historical"
+  ?L(vm.language,"Historic sanctoral source subjects, not 307 distinct biographies or certified present-day feast observances.","Sujets des archives du sanctoral, non 307 biographies ni fêtes actuelles certifiées.")
+  :f.saintScope==="later"
+  ?L(vm.language,"Post-1960 canonization index: named persons and collective groups, not yet complete biographies or assigned 1962 feasts.","Index des canonisations postérieures à 1960 : personnes et groupes, sans biographies complètes ni fêtes de 1962.")
+  :L(vm.language,"One profile per saint. 24 additional lives are research previews; portraits and feast assignments await their source owners.","Une notice par saint. Les 24 vies supplémentaires sont des aperçus de recherche ; portraits et fêtes attendent validation."))+"</p>";
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
   if(vm.lens==="tlm")html+='<div class="aoTlmToolbar">';
@@ -569,6 +575,14 @@ export function renderExploreToString(vm){
   if(vm.lens==="tlm")html+='</div>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
   if(vm.lens==="saints"&&vm.view==="list"){
+    html+='<nav class="aoSaintCatalogueScopes" aria-label="'+esc(L(vm.language,"Saints catalogue sections","Sections du catalogue des saints"))+'">';
+    for(const [code,en,fr] of [
+      ["profiles","30 biographies","30 biographies"],["historical","Historical sanctoral","Sanctoral historique"],
+      ["later","Later canonizations","Canonisations récentes"]
+    ])html+=pill("saintScope",code,L(vm.language,en,fr),f.saintScope||"profiles");
+    html+='</nav>';
+  }
+  if(vm.lens==="saints"&&vm.view==="list"&&(!f.saintScope||f.saintScope==="profiles")){
     html+='<nav class="aoSaintCatalogueFacets" aria-label="'+esc(L(vm.language,"Saint categories","Catégories de saints"))+'">';
     for(const [code,en,fr] of [
       ["ALL","All","Tous"],["DOCTOR_OF_CHURCH","Doctors","Docteurs"],
@@ -579,7 +593,11 @@ export function renderExploreToString(vm){
     html+='</nav>';
   }
 
-  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?(vm.view==="list"?L(vm.language,"saint profiles","notices de saints"):L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
+  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="saints"?(vm.view==="list"
+  ?(f.saintScope==="historical"?L(vm.language,"archived source subjects","sujets des archives")
+    :f.saintScope==="later"?L(vm.language,"later canonization records","références des canonisations")
+    :L(vm.language,"saint profiles","notices de saints"))
+  :L(vm.language,"places connected to saints","lieux associés aux saints")):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
@@ -622,6 +640,6 @@ export function renderExploreToString(vm){
     +'<a href="https://www.latinmass.com/find-latin-mass" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Mass of the Ages map ↗","Carte Mass of the Ages ↗"))+'</a>'
     +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Latin Mass Directory ↗","Latin Mass Directory ↗"))+'</a>'
     +'</details>';
-  html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?.lens==="saints"?renderSaintPlaceSheet(vm):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):"")))+'</section>';
+  html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?.kind==="SAINT_SOURCE_INDEX_ENTRY"?renderSaintSourceIndexSheet(vm):vm.selected?.lens==="saints"?renderSaintPlaceSheet(vm):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):"")))+'</section>';
   return html;
 }
