@@ -1,0 +1,28 @@
+name: Source-reference owner reconciliation checks
+on:
+  push:
+    branches:
+      - feature/source-text-parsing-infrastructure-20261015
+    paths:
+      - 'src/source-text/reference-*.js'
+      - 'data/source-text/**'
+      - 'tests/source-text-references.mjs'
+      - 'docs/source-text-reference-scope.md'
+      - '.github/workflows/source-text-pilot.yml'
+  pull_request:
+    paths:
+      - 'src/source-text/reference-*.js'
+      - 'data/source-text/**'
+      - 'tests/source-text-references.mjs'
+      - '.github/workflows/source-text-pilot.yml'
+  workflow_dispatch:
+jobs:
+  reference-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Source-owner handoff and current-Formation reconciliation
+        run: node tests/source-text-references.mjs

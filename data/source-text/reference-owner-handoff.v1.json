@@ -1,0 +1,387 @@
+{
+  "schema": "AO_REFERENCE_SOURCE_OWNER_HANDOFF_V1",
+  "date": "2026-10-15",
+  "purpose": "Non-destructive exact-URL link audit and compact read-further review, not a source corpus or new authority.",
+  "owners": {
+    "canonical": "data/reference/canonical-works-pilot.v1.json",
+    "formationBaseline": "data/reference/formation-canonical-source-crosswalk.v1.json",
+    "formationCurrent": "data/reference/formation-current-source-reconciliation.v2.json",
+    "formationCurrentSourceBlobSha": "ba73286fa26f8564f0dc33048551ee527b597c27",
+    "massComparison": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
+    "massGate": "data/mass/source-reconciliation-gates.v1.json"
+  },
+  "baseline": {
+    "formationBindings": 408,
+    "urlWitnesses": 304
+  },
+  "current": {
+    "formationBindings": 527,
+    "urlWitnesses": 332,
+    "existingBindingsRemoved": 0,
+    "addedByExistingOwner": 119,
+    "currentClaimCertificationsNew": 0,
+    "formationEvidenceEdges": 1529,
+    "formationScopedDossiers": 141
+  },
+  "mass": {
+    "historicalNormativeComparisonRows": 15,
+    "existingSources": 3,
+    "newNormativeActionsAllowed": 0,
+    "original1962Authority": "RITUS_SERVANDUS_ONLY",
+    "addedReferenceClaims": 0
+  },
+  "exactUrlMatches": [
+    {
+      "bindingKey": "FORM-SYN-02::HUME-MIRACLE-X",
+      "profileId": "WIT-HUME-E10-ONLINE",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY_OPPONENT_ROLE_PRESERVED__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-02::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-03::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    },
+    {
+      "bindingKey": "FORM-SYN-06::MD47",
+      "profileId": "WIT-MEDIATOR-DEI-EN-VATICAN",
+      "sourceContextApproved": false,
+      "status": "EXACT_URL_ONLY__PASSAGE_NOT_CERTIFIED"
+    }
+  ],
+  "assessment": {
+    "missingHistoricalFormationSourceBindings": 0,
+    "historicalUncitedRegistryLeads": 12,
+    "historicalUncitedRegistryLeadsAreNotMissingClaims": true,
+    "formationRefsWithoutInspectedProfileAreNotAutomaticallyGaps": true,
+    "deepSourceLocatorsNotGloballyVerified": true,
+    "publicationApproved": false,
+    "newExactPassageCertifications": 0,
+    "newBookImports": 0,
+    "newModuleContent": 0,
+    "newMassCardChanges": 0
+  },
+  "displayPolicy": {
+    "defaultSurface": "NONE_UNTIL_OWNER_APPROVED",
+    "optionalSurfaceAfterOwnerReview": "READ_FURTHER_EXTERNAL_LINK",
+    "inlineAttributionRule": "ONLY_IF_EXISTING_OWNER_APPROVES_CLAIM_LEVEL_SOURCE_CONTEXT",
+    "deepLocatorRule": "PRESERVE_EXISTING_ORIGINAL_LOCATOR_VERBATIM_AND_EDITION_QUALIFY_WHEN_VERIFIED",
+    "doNotAssume": "URL_EQUALITY_IS_NOT_CITATION_OR_AUTHORIAL_QUOTE_CERTIFICATION",
+    "bibliographyStyle": "NO_HARVARD_OR_APA_CLUTTER",
+    "sourceRole": "PRESERVE_HISTORICAL_OPPONENT_VS_CATHOLIC_PRIMARY_ROLE",
+    "noFullWorks": true
+  },
+  "nextOwnerActions": [
+    "Formation source owner: confirm applicability of only four possible URL-profile matches before any user-facing citations; no blanket source reverification.",
+    "Formation source owner: decide whether its 12 historical uncited registry entries are intentional further-reading resources, not automatically missing evidence.",
+    "Mass owner: retain existing 15 source comparison rows and 1962 governing authority; only integrate a verified deep link if needed.",
+    "Reader/UI owner: compact inline citation where context approved, optional Read further links, no large reference cards or downloadable books."
+  ],
+  "currentOwnerDatasetPresentOnSourceTextFeatureBranch": false,
+  "note": "The 527/332 current owner metrics are from main v2, created after the source-text feature branch fork. The old 408/304 crosswalk remains historical. This handoff records pointers and counts only, not 119 duplicated source records.",
+  "scopedEdgeReview": {
+    "sourceOwnerRevisionFile": "data/reference/formation-current-source-reconciliation.v2.json",
+    "sourceOwnerRevisionGitBlob": "ba73286fa26f8564f0dc33048551ee527b597c27",
+    "historicalEvidenceLedger": "data/reference/formation-evidence-relationship-ledger.v1.json",
+    "ownerChangedPreviouslyScreenedSections": 22,
+    "status": "EXACT_SOURCE_BINDING_EDGES_REVIEWED_READ_ONLY__NO_NEW_CITATION_VERDICTS",
+    "counts": {
+      "historicalEdges": 21,
+      "distinctHistoricalSections": 21,
+      "withClaimLocator": 3,
+      "supersededEdges": 1,
+      "noHistoricalClaimLocator": 18,
+      "ownerCurrentClaimCertifications": 0
+    },
+    "historicalSectionSourceEdges": [
+      {
+        "edgeKey": "FORM-SYN-02::APOL-004::01::HUME-MIRACLE-X",
+        "sectionKey": "FORM-SYN-02::APOL-004::01",
+        "bindingKey": "FORM-SYN-02::HUME-MIRACLE-X",
+        "historicalSectionRole": "documented_position",
+        "historicalOriginalBindingRole": "First 25 dossier source audit 2026-10-10, original philosophical opponent",
+        "historicalClaimLocator": "Enquiry X.1–X.2, treatment of testimony and regular experience",
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::APOL-004::02::HUME-MIRACLE-X",
+        "sectionKey": "FORM-SYN-02::APOL-004::02",
+        "bindingKey": "FORM-SYN-02::HUME-MIRACLE-X",
+        "historicalSectionRole": "critical_response",
+        "historicalOriginalBindingRole": "First 25 dossier source audit 2026-10-10, original philosophical opponent",
+        "historicalClaimLocator": "Section X, Hume's argument about proportional evidence",
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-ORG-09::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-ORG-09::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-02::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-02::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-06::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-06::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-07::00::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-07::00",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "answer",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": "Mediator Dei §§48–50, 63–65, liturgical doctrinal witness, mutable parts and anti-antiquarianism",
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "SUPERSEDED_REFERENCE_IN_CURRENT_OWNER_RECONCILIATION",
+        "currentChangedSourceIds": [
+          "AO26_CRLIT07_ANSWE_1",
+          "AO26_CRLIT07_ANSWE_2",
+          "AO26_CRLIT07_ANSWE_3"
+        ],
+        "priorSourceIds": [
+          "JOHNXIII1962",
+          "MR69",
+          "MD47"
+        ],
+        "editorialAction": "DO_NOT_RESTORE_MD47_ON_REWRITTEN_CR_LIT_07_ANSWER",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-07::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-07::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-11::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-11::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-02::CR-LIT-12::03::MD47",
+        "sectionKey": "FORM-SYN-02::CR-LIT-12::03",
+        "bindingKey": "FORM-SYN-02::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-03::CR-ORG-05::03::MD47",
+        "sectionKey": "FORM-SYN-03::CR-ORG-05::03",
+        "bindingKey": "FORM-SYN-03::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-03::CR-GOV-06::03::MD47",
+        "sectionKey": "FORM-SYN-03::CR-GOV-06::03",
+        "bindingKey": "FORM-SYN-03::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-01::02::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-01::02",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "critical_response",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-01::03::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-01::03",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-04::00::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-04::00",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "answer",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-04::01::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-04::01",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "documented_position",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-04::02::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-04::02",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "critical_response",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-ORG-04::03::MD47",
+        "sectionKey": "FORM-SYN-06::CR-ORG-04::03",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-LIT-01::00::MD47",
+        "sectionKey": "FORM-SYN-06::CR-LIT-01::00",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "answer",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-LIT-01::01::MD47",
+        "sectionKey": "FORM-SYN-06::CR-LIT-01::01",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "documented_position",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-LIT-01::02::MD47",
+        "sectionKey": "FORM-SYN-06::CR-LIT-01::02",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "critical_response",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      },
+      {
+        "edgeKey": "FORM-SYN-06::CR-LIT-01::03::MD47",
+        "sectionKey": "FORM-SYN-06::CR-LIT-01::03",
+        "bindingKey": "FORM-SYN-06::MD47",
+        "historicalSectionRole": "traditional_catholic_argument",
+        "historicalOriginalBindingRole": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
+        "historicalClaimLocator": null,
+        "historicalReviewStatus": "NO_CLAIM_VERDICT_RECORDED_IN_THIS_NEW_LEDGER",
+        "currentRoleStatus": "NOT_IDENTIFIED_AS_REWRITTEN_IN_22_CHANGED_SECTIONS__DO_NOT_ASSUME_PRESENT_CURRENTLY",
+        "publicDisplayApproved": false
+      }
+    ],
+    "oneEditorialException": {
+      "sectionKey": "FORM-SYN-02::CR-LIT-07::00",
+      "sourceBinding": "FORM-SYN-02::MD47",
+      "oldSourceId": "MD47",
+      "replacementSourceIds": [
+        "AO26_CRLIT07_ANSWE_1",
+        "AO26_CRLIT07_ANSWE_2",
+        "AO26_CRLIT07_ANSWE_3"
+      ],
+      "oldEvidenceEdgeKey": "FORM-SYN-02::CR-LIT-07::00::MD47",
+      "issue": "HISTORICAL_SOURCE_EDGE_SUPERSEDED_BY_CURRENT_FORMATION_ANSWER_CORRECTION",
+      "mustNotRestoreOldBinding": true,
+      "requiresFurtherSourceTextResearch": false
+    },
+    "linkTargets": {
+      "mediatorDei": {
+        "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+        "documentParagraphsVisible": "46–49 and other referenced paragraphs appear in official English document",
+        "deepFragmentStatus": "UNVERIFIED__KEEP_ORIGINAL_DOCUMENT_URL",
+        "caveat": "The historical CR-LIT-07 answer's larger 48–50, 63–65 range differs from baseline MD47 label 46–49 and is superseded in the current Formation owner."
+      },
+      "hume": {
+        "url": "https://davidhume.org/texts/e/10",
+        "pageLabel": "Section X, Of Miracles, Parts I–II",
+        "sourceParagraphLocatorsVisible": [
+          "E 10.1",
+          "E 10.2"
+        ],
+        "deepFragmentStatus": "UNVERIFIED__KEEP_SECTION_X_DOCUMENT_URL",
+        "sourceRole": "HISTORICAL_PHILOSOPHICAL_OPPONENT_NOT_CATHOLIC_AUTHORITY"
+      }
+    },
+    "immutableLimits": {
+      "newClaimLinksApproved": 0,
+      "publicCitationApprovals": 0,
+      "applicationChanges": 0,
+      "newResearchClaims": 0,
+      "booksImported": 0
+    }
+  }
+}
