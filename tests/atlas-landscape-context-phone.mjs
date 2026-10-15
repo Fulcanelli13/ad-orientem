@@ -102,6 +102,11 @@ try{
   assert.ok(stop,"Apostolic source stop missing for "+key);
   await page.locator('#ao-find-modular-root [data-bible-step="'+stop.index+'"]').tap({timeout:15000});
   await page.waitForFunction(index=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===index,stop.index,{timeout:15000});
+  // The preceding drag exercise may have switched to free-pan: the preview
+  // must reframe the selected source-qualified stop when Follow is pressed.
+  await page.locator("#ao-find-modular-root [data-bible-follow]").tap({timeout:15000});
+  assert.equal(await page.locator("#ao-find-modular-root [data-bible-follow]").getAttribute("aria-pressed"),"true");
+  await page.waitForTimeout(650);
   const card=page.locator('#ao-find-modular-root [data-bible-landscape="'+key+'"]');
   await card.waitFor({state:"attached",timeout:15000});
   assert.equal(await card.getAttribute("data-bible-landscape-status"),"SOURCE_ATTESTED_TOPOGRAPHIC_CHANGE_NO_GEOMETRY");
