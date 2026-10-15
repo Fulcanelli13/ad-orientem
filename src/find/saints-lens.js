@@ -6,6 +6,7 @@ import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
 const arr=value=>Array.isArray(value)?value:[];
 const txt=value=>String(value??"").trim();
 const norm=value=>txt(value).toLocaleLowerCase();
+const folded=value=>norm(value).normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const validLink=url=>{
   try{
     const parsed=new URL(url);
@@ -95,9 +96,9 @@ export function projectSaintPlaceItems(dataset={}){
       map_state:mapPublishable?"MAPPED":"LIST_ONLY_GEO_HOLD",
       saints:people,
       associated_shrine_ids:Object.freeze([...row.shrine_ids]),
-      search_text:norm([display,displayFr,p.name?.official,addr(p),...people.flatMap(s=>[
+      search_text:(()=>{const phrase=[display,displayFr,p.name?.official,addr(p),...people.flatMap(s=>[
         s.why_en,s.why_fr,...s.biography_facts.map(b=>b.en),...s.biography_facts.map(b=>b.fr),
-      ])].join(" ")),
+      ])].join(" ");return norm(phrase)+" "+folded(phrase)})(),
       editorial_status:"SMALL_SOURCE_BOUND_PILOT_NO_APPROVED_ART",
     });
   }).sort((a,b)=>a.title.localeCompare(b.title)));
