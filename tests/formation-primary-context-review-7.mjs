@@ -124,8 +124,14 @@ const role=(id,r)=>records.get(id).dossier.sections.find(x=>x.role===r);
 assert.match(role("CR-LIT-11","documented_position").text.en,/597.*1,233.*315.*20/);
 assert.match(role("CR-LIT-10","documented_position").text.en,/expedit/);
 assert.match(role("CR-LIT-07","documented_position").text.en,/25 September 1969/);
-assert.match(role("CR-DOC-09","documented_position").text.en,/John Paul II/);
-assert.match(role("APOL-002","documented_position").text.en,/§37/);
+assert.match(role("CR-DOC-09","documented_position").text.en,/Donum veritatis.*Charles Curran/,
+ "Post-correction position must identify actual magisterial text and original theological opponent");
+assert.deepEqual(role("CR-DOC-09","documented_position").source_ids,
+ ["AO26_CRDOC09_DOCUM_1","AO26_CRDOC09_DOCUM_2"]);
+assert.match(role("APOL-002","documented_position").text.en,/David Hume.*Fides et ratio/,
+ "Faith/reason question must retain the named Hume objection and its Catholic counterpart");
+assert.deepEqual(role("APOL-002","documented_position").source_ids,
+ ["AO26_APOL002_DOCUM_1","AO26_APOL002_DOCUM_2"]);
 assert.match(role("APOL-052","documented_position").text.en,/John Stuart Mill/);
 assert.match(role("APOL-060","documented_position").text.en,/1983/);
 assert.match(role("CR-GOV-05","documented_position").text.en,/two-thirds/);
