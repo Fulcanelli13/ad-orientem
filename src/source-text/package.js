@@ -1,4 +1,4 @@
-import {SOURCE_TEXT_SCHEMA,SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope} from "./contracts.js";
+import {SOURCE_TEXT_SCHEMA,SOURCE_TEXT_MANIFEST_SCHEMA,validateSourceWork,assertPassageReproductionScope,validateSourcePageSpan} from "./contracts.js";
 export function packageSourceDocument(document,{chunkSize=5}={}){
  if(document?.schema!==SOURCE_TEXT_SCHEMA||!Array.isArray(document.passages))
   throw new Error("SOURCE_TEXT_DOCUMENT_INVALID");
@@ -30,6 +30,10 @@ export function packageSourceDocument(document,{chunkSize=5}={}){
     if(typeof p.sourcePage!=="string"||!p.sourcePage.startsWith("https://"))
      throw new Error("SOURCE_TEXT_SOURCE_URL_INVALID");
     entry.sourcePage=p.sourcePage;
+   }
+   if(p.sourcePages!==undefined){
+    validateSourcePageSpan(p);
+    entry.sourcePages=p.sourcePages;
    }
    index.push(entry);
   }
