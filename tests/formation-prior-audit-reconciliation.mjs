@@ -94,7 +94,8 @@ for(const x of index.legacy_TLM_paragraph_verdicts){
  assert.equal(x.final_approved,false);
  counts[x.verdict]=(counts[x.verdict]||0)+1;
 }
-assert.deepEqual(counts,tlm.claim_level_audit.status_counts);
+assert.deepEqual({...counts,BLOCKED:0},tlm.claim_level_audit.status_counts);
+assert.equal(tlm.claim_level_audit.status_counts.BLOCKED,0);
 assert.deepEqual(index.metrics.legacy_TLM_status_counts,counts);
 assert.equal(index.metrics.legacy_TLM_paragraphs,74);
 console.log(JSON.stringify({
