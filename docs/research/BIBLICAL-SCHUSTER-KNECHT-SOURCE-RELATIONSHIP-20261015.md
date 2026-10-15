@@ -85,6 +85,30 @@ A future proper text import needs exact **work ID, edition ID, language, printed
 
 **New passages approved:** 0. **Original scanned pages newly visually verified:** 0. **App runtime affected:** none. This is a stronger evidence-based parser gate, not a hidden release milestone.
 
+## Complete separation of Knecht's Application layer (15 October 2026)
+
+**Correction to the previous "18 sections" shorthand:** the 18 page-range records were *envelopes*, not 18 homogeneous authorial text types. Each of the nine commentary envelopes contains a separately headed **Application**, so the first eight Knecht 1910 chapters actually have **27 distinct narrative, commentary and Application roles** (nine of each), in addition to per-page explanatory footnotes and editorial framing.
+
+This is now proved at the *unproofread page-transcription heading level* for all nine Application start pages:
+
+| Underlying narrative unit | Application starts (DJVU scan page) | Next narrative begins (DJVU scan page) |
+|---|---:|---:|
+| Creation (chapter I) | [46](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/46) | 47 |
+| Angels (II) | [50](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/50) | 51 |
+| Adam, Paradise (III) | [56](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/56) | 57 |
+| Fall, part I (IV.I) | [61](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/61) | 62 |
+| Fall, part II (IV.II) | [66](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/66) | 66, same page |
+| Cain (V) | [72](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/72) | 72, same page |
+| The Deluge (VI) | [79](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/79) | 79, same page |
+| Noe's Offering (VII) | [84](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/84) | 84, same page |
+| Babel (VIII) | [88](https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/88) | 89 |
+
+A direct source link and heading delimiters for each are persisted in `wikisource1910TerritoryReview.roleSubspanOverlays` in `data/explore/biblical-schuster-knecht-source-family-review.v1.json`. All nine original source envelopes remain for backwards-compatible historical research references; each commentary envelope explicitly declares it is **not homogeneous**, and its text-role subspans stop at **Application**. A strict regression guard checks all nine starts, parent identities and no unauthorized passage approval.
+
+This is **not** a claim to have compared against rendered historical page images: all nine headings were read in publicly accessible, mostly *not proofread*, Wikisource transcription pages. Neither this result nor its 27-span denominator authorizes new source-text publication or a faithful translation yet. No AI-created Bible narrative. The 1925 Schuster English and 1887 French Couissinier historical passages still need image-level examination. The scanned 1910 PDF is also available as a 61 MB independent archival file, but its direct download exceeded the present fetch limits. No publisher or rights owner is being contacted.
+
+This correction has a direct code-owner implication for Source Parsing PR #1229: the upcoming extraction must preserve **historical narrative**, **Knecht commentary**, **catechetical Application**, **footnotes**, and **source headers** as separate node types, including cases where commentary→Application→new narrative share the same single printed page. **0 certified original paragraphs, 0 source body imported.**
+
 ## Physical source/edition distinction
 
 | Witness | Observed | Current gate |
