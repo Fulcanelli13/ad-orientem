@@ -12,6 +12,7 @@ import { buildExploreViewModel, renderExploreToString } from "./explore-presenta
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
+import { projectSaintSourceIndexItems } from "./saints-source-index.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
@@ -131,6 +132,7 @@ export function createFindOwner(win=globalThis){
     directoryGroup:"ALL",
     query:"",
     saintCategory:"ALL",
+    saintScope:"profiles",
     day:"ANY",
     affiliations:[],
     unaCum:"ANY",
@@ -256,6 +258,7 @@ export function createFindOwner(win=globalThis){
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
     if(state.lens==="saints"&&state.view==="list"){
+      if(state.saintScope!=="profiles")return filterExploreItems(projectSaintSourceIndexItems(dataset,state.saintScope),{query:state.query});
       const people=filterExploreItems(projectSaintCatalogueItems(dataset),{query:state.query});
       if(state.saintCategory==="ALL")return people;
       return people.filter(item=>{
