@@ -1,0 +1,33 @@
+name: Public Saints six-profile release gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/saints-public-pilot.yml'
+      - 'src/find/browser-entry.js'
+      - 'src/find/explore-data-service.js'
+      - 'src/find/explore-projection.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/heritage-presentation.js'
+      - 'src/find/saints-*.js'
+      - 'data/saints/holiness-first-editorial-pilot-20261015.v1.json'
+      - 'data/saints/parallel-owner-identity-bridge-20261015.v1.json'
+      - 'tests/saints-public-pilot.mjs'
+  workflow_dispatch:
+jobs:
+  release-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate public Saints module syntax
+        run: |
+          for f in src/find/saints-*.js src/find/browser-entry.js src/find/explore-data-service.js src/find/explore-projection.js src/find/explore-presentation.js src/find/heritage-presentation.js; do node --check "$f"; done
+      - name: Six profiles only; unpublished research absent
+        run: node tests/saints-public-pilot.mjs
+      - name: Preserve canonical Explore behaviour
+        run: |
+          node tests/explore-surface.mjs
+          node tests/sacred-geography-atlas.mjs
