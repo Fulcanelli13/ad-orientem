@@ -2467,7 +2467,10 @@
         },
         "readOnlyDeepLinkRoute": null,
         "formularyReadyForNewSaint": false,
-        "sourceInheritancePending": true
+        "sourceInheritancePending": false,
+        "sourceInheritanceVerified": true,
+        "inheritedSectionsCount": 18,
+        "sourceInheritanceResolver": "src/calendar/p1-doctor-common-inheritance.js"
       }
     },
     {
@@ -3666,6 +3669,8 @@
   "importPolicy": "No new Missal text store, no app deep links invented; canonical existing Proper and reader section IDs are source of truth.",
   "sourceOwnedCommonPathsMapped": 7,
   "directTrilingualSevenSectionCommonRows": 6,
-  "partialInheritedLanguageCommonRows": 1,
-  "internalCommonSourceCrosswalkPath": "data/calendar/p1-canonical-common-source-crosswalk.v1.json"
+  "partialInheritedLanguageCommonRows": 0,
+  "internalCommonSourceCrosswalkPath": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+  "completeSevenCoreSectionMappedCommonRows": 7,
+  "doctorCommonInheritedVernacularRows": 18
 }
