@@ -232,3 +232,24 @@ The single integrated 119-row W78 evidence record now includes `curated_variant_
 Within the **38-name residual source-key queue**, 21 already have relic-research subject links and six have Sacred Art research subject links; these are overlapping source pointers, not verified identity or authenticated relic/approved image. Two are explicitly Blessed, two are group/composite names and one is an angelic subject. In particular **Saint Joseph**, **Saint John the Baptist** and their liturgical titles must not be confused with source records representing feasts or devotional contexts. **Louis de Montfort / Louis-Marie de Montfort** names require one person/alias owner decision rather than automatic identity creation.
 
 **Next owner action:** batch sign-off of the 25 curated/prior-alias proposals, adjudication of the six exact-name collisions (retaining the approved Thérèse bridge), and a focused source-owner lookup for 38 remaining source-name records. Link existing source IDs before researching additional lives. No canonical `saint_id`, historical calendar equivalence, geographic life-event relationship, art licensing/promotion or public deployment is authorized by these results.
+
+
+## W79 — navigable source-owner alias settlement (16 October 2026)
+
+**Implementation, not a new saints database:** existing derived register `data/saints/w78-shrine-person-source-evidence-20261016.v1.json` now carries explicit source-family provenance and a typed cross-owner research reference for all **25** formerly unmatched names with a documented or curated existing-key lead. The native research-only Saints map sheet can open the actual original indexed historical, Doctor, later-canonization or collective source record through existing Explore navigation, rather than exposing only opaque IDs. The original source index performs target existence checks. This is **source-record navigation**, not an approved alias in the canonical person namespace.
+
+| W79 source-reference disposition | Name cases | Behaviour |
+| --- | ---: | --- |
+| Individual subject: one original existing-key lookup | **23** | Browse existing source record, identity signoff remains false |
+| Collective subject: one group-source lookup | **2** | Browse original group record without inventing persons |
+| Historical 1962 ↔ Doctor keys, exact nominal date and archived source ID | **4** | Browse/compare *both* original source records; Calendar–Saints same-person certification pending |
+| Thérèse historical/Doctor ↔ existing Saints pilot | **1** | Preserve pre-existing explicit cross-owner bridge; no rename |
+| Francis of Assisi historical ↔ vocational research biography | **1** | Contextual collision held without automatic cross-index navigation |
+| Other shrine-name cases | **88** | Original exact/other evidence unchanged |
+| **Total** | **119** | **No new canonical `saint_id`, biography, liturgical observance, pin or artwork** |
+
+The four Calendar/Doctor owner pairs awaiting one bulk answer are **Anthony of Padua (13 June)**, **Catherine of Siena (30 April)**, **Francis de Sales (29 January)**, and **John of the Cross (24 November)**. Their four nominal-day pairs are traceable to original archived Sanctoral IDs and the distinct Doctors roster; matching dates support comparison but do not authorize a new title, commemoration or Mass. Catherine's 1970 Doctor declaration cannot be made a historical 1962 Doctor designation.
+
+The original **six-name** collision file and **608-key** ledger remain immutable. The Saints presentation fetches the owner index and W78 evidence only in `RESEARCH_PREVIEW`. All source-reference buttons navigate through the existing `data-saint-crosslink-target` action, whose handler independently validates that the target exists in the projected owner index and checks `researchEnabled`. The existing public `PILOT_SIX` channel receives neither W78 evidence nor the research index. Dedicated Saints source evidence tests enforce the **23 + 2 + 4 + 1 + 1** partition, all 25 source destinations (including original Uganda Martyrs and Theban Legion collectives), both source destinations of the four competing pairs, Francis' disabled navigation, and public isolation. These tests are committed but must not be represented as GitHub Actions **passing** until a run is observed.
+
+**Subsequent source-owner batch:** retain the 38 no-key-lead cases as a *source coverage exception list*, not a fabricated list of absent Catholic saints: 21 existing relic-research subject links; six artwork subject research links; two Blessed subject names, two composite/group names, one angel. These overlapping categories are not additive and still require authoritative person/subject naming resolution before promotion.
