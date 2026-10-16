@@ -129,7 +129,7 @@ export function validateMassTransitionReadingPilot(pilot,sung,formation,guide){
  for(const entry of pilot.entries){
   const expectedRow=expected[entry?.block_id];
   if(!expectedRow||ids.has(entry.id)||selected.has(entry.block_id)||
-     !/^AO\\.FORM\\.PRAYER\\.TRANSITION\\.0[1-6]$/.test(entry.id||"")||
+     !/^AO\.FORM\.PRAYER\.TRANSITION\.0[1-6]$/.test(entry.id||"")||
      entry.moment_id!==expectedRow[1]||entry.stage_id!==expectedRow[2]||
      !guide.entries[entry.moment_id]||
      !formation.stages.some(stage=>stage.id===entry.stage_id))return fail("INVALID_OR_DUPLICATE_TRANSITION_LINK");
@@ -137,7 +137,7 @@ export function validateMassTransitionReadingPilot(pilot,sung,formation,guide){
   if(!original||original.Macro_ID!==expectedRow[0]||original.Proper_Slot||
      original.Branch_Status!=="NORMATIVE_1962"||!original.units?.length)return fail("MISSING_FIXED_MASS_TEXT");
   const originalText=original.units.filter(u=>u.clock!=="PRIEST_ACTION")
-     .map(u=>String(u.english||"")).join("\\n");
+     .map(u=>String(u.english||"")).join("\n");
   if(typeof entry.text_anchor_en!=="string"||
      !originalText.includes(entry.text_anchor_en)||
      !Array.isArray(entry.scripture_within_text)||
