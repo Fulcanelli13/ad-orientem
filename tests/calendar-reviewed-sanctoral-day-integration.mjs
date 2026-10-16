@@ -13,7 +13,7 @@ const geo=load("data/geography/seed-registry.v1.json");
 const read=load("data/calendar/living-sanctoral-read-model.v1.json");
 assert.equal(read.schema,"AO_LIVING_SANCTORAL_READ_MODEL_V1");
 assert.equal(read.status,"READ_ONLY_SECONDARY_CALENDAR");
-assert.equal(read.observanceRegistry.observances.length,16);
+assert.equal(read.observanceRegistry.observances.length,18);
 assert.ok(JSON.stringify(read).length<45000,"Lazy read model should remain compact");
 assert.deepEqual(read.observanceRegistry.observances,full.observances,"Snapshot source dates drift");
 assert.equal(read.martyrGroups.length,5);
@@ -70,4 +70,4 @@ assert.ok(home.includes('reviewed-sanctoral-cards.js'),"Home uses Calendar's exa
 assert.ok(home.includes('living-sanctoral-read-model.js'),"Home shares the source-owned lazy Calendar dataset");
 assert.ok(!home.includes('sanctoral-day-ui.js'),"Do not duplicate the full Calendar panel on Home");
 
-console.log("Secondary Calendar saints: PASS (16-source read-model, 1962 isolation, safe EN/FR text and links)");
+console.log("Secondary Calendar saints: PASS (18-source read-model, 1962 isolation, safe EN/FR text and links)");
