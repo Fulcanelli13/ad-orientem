@@ -1175,6 +1175,17 @@
     ],
     "gate": "Repo witness availability and slot completeness does not constitute full human edition collation or approve final excerpt ranges",
     "noFinalApprovedExcerptRanges": true,
-    "noAppChanges": true
+    "noAppChanges": true,
+    "latestReviewVersion": "v2",
+    "latestWitnessDataOwner": "data/explore/biblical-story-scripture-three-edition-witness-collation.v2.json",
+    "latestReviewUI": "data/explore/biblical-story-scripture-review-offline.v2.html",
+    "reviewDefaultEnglish": "cpdv-2009",
+    "traditionalEnglishOption": "dr-challoner",
+    "frenchEdition": "crampon-1923",
+    "productCatalogueSettingsChanged": false,
+    "editionSourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+    "threeEditionChapterExtracts": 39,
+    "threeEditionVerseCells": 1701,
+    "note": "v1 bilingual review is archived; CPDV contemporary English was already approved as an alternative in src/scripture/catalogue.js. v2 restores it as the reviewer default. Does not modify the catalogue traditional default."
   }
 }
