@@ -79,11 +79,13 @@ def main():
     spec=json.loads(INPUT.read_text())
     attempts=[];records=[]
     for row in spec["items"]:
+        if row.get("alreadyAcquiredOrPreviouslyChecked"):
+            continue
         urls=list(row.get("candidateImageUrls",[]))
         if row.get("commonsFile"):
             try:
                 v=lib.commons_info(row["commonsFile"])
-                urls.extend([v["url"],v["display"]])
+                urls.extend(([v["display"]] if row["commonsFile"].lower().endswith((".tif",".tiff")) else [v["url"],v["display"]]))
                 attempts.append({"category":row["categoryIndex"],"commonsRightsMetadata":v["license"],"photoPage":v["sourcePage"]})
             except Exception as e:attempts.append({"category":row["categoryIndex"],"commonsHold":str(e)[:180]})
         if row["categoryIndex"]==41:
