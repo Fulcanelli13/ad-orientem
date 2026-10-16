@@ -117,6 +117,7 @@ try{
     borrowedSections:result.borrowedSections.map(x=>x.language+":"+x.section),
     nonPontiffOrationsPreserved:result.nonPontiffOrationsPreserved===true,
     allSharedSections:["Introitus","Oratio","Lectio","Graduale","GradualeP","Tractus","Evangelium","Offertorium","Communio"],
+    collectLatinRows:{target:(target.la?.map?.get("Oratio")??[]).map(x=>String(x).slice(0,450)),shared:(shared.la?.map?.get("Oratio")??[]).map(x=>String(x).slice(0,450))},
     latinSharedDiagnostics:["Introitus","Oratio","Lectio","Graduale","GradualeP","Tractus","Evangelium","Offertorium","Communio"].map(section=>{
       const a=target.la?.map?.get(section)??[],b=shared.la?.map?.get(section)??[];
       const norm=rows=>rows.join("\\n").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/[^A-Za-z0-9]+/g," ").trim().toLowerCase();
