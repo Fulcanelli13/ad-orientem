@@ -1,5 +1,8 @@
 # Ad Orientem — Bilingual Bible witness collation and offline story-review tool
 
+> **Current combined reviewer — v3 (16 October 2026):** v3 adds 16 new stories to the existing 14 without changing the agreed editions. Use `data/explore/biblical-story-scripture-review-offline.v3.html` and `data/explore/biblical-story-scripture-three-edition-witness-collation.v3.json`: **30 stories, 92 excerpt options, 29 chapters, 87 three-edition extracts**, CPDV first, Challoner optional, French Crampon, with Judith 13 and Daniel 13 warnings. Earlier v1 and v2 files remain archived for provenance. Governing details: `docs/research/BIBLICAL-STORY-OFFLINE-REVIEW-V3-20261016.md`.
+
+
 > **Current corrected reviewer — v2 (16 October 2026):** The earlier v1 HTML incorrectly exposed only Challoner English and Crampon French. The already agreed English **Catholic Public Domain Version (CPDV)** contemporary alternative is restored as the first review display. Use `data/explore/biblical-story-scripture-review-offline.v2.html` and `data/explore/biblical-story-scripture-three-edition-witness-collation.v2.json`. Challoner remains the traditional English comparison, Crampon remains the French default and Clementine Vulgate remains the Latin reference in the product catalogue. **The product edition roles have not been changed.** v1 is retained as historical research only.
 
 **16 October 2026 | 14-story first cohort | research-only; not certified or published**
