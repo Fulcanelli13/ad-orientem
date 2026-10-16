@@ -6,7 +6,7 @@ import {chromium} from "@playwright/test";
 const root=fileURLToPath(new URL("..",import.meta.url));
 const path=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 const html=await readFile(path,"utf8");
-assert.equal((html.match(/class="entry" id=/g)||[]).length,61);
+assert.equal((html.match(/class="entry" id=/g)||[]).length,84);
 assert.equal((html.match(/<em class="optional"/g)||[]).length,3);
 const browser=await chromium.launch({headless:true});
 try{
@@ -22,9 +22,20 @@ try{
   await page.addStyleTag({content:"html{scroll-behavior:auto!important}"});
   assert.equal(await page.locator("details.entry").count(),61);
   assert.equal(await page.locator('details.entry summary .optional').count(),3);
-  assert.equal(await page.locator(".held li").count(),4);
+  assert.equal(await page.locator(".held li").count(),11);
   assert.equal(await page.locator("[data-conclusion-condition]").count(),6);
+  assert.equal(await page.locator("[data-opening-condition]").count(),5);
   assert.equal(await page.locator('details.entry[open]').count(),1);
+  await page.locator('a[href="#AO.SM.B003"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B003 summary').innerText(),/PSALM MAY BE OMITTED/);
+  await page.locator('a[href="#AO.SM.B013"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B013 summary').innerText(),/INCENSE CONDITION/);
+  await page.locator('a[href="#AO.SM.B016"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B016 summary').innerText(),/GLORIA DEPENDS ON MASS/);
+  await page.locator('a[href="#AO.SM.B025"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B025 summary').innerText(),/GOSPEL HEADING VARIES/);
+  await page.locator('a[href="#AO.SM.B027"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B027 summary').innerText(),/CREDO DEPENDS ON MASS/);
   await page.locator('a[href="#AO.SM.B063"]').click();
   const pater=page.locator('#AO\\.SM\\.B063');
   assert.equal(await pater.getAttribute("open"),"",
@@ -65,7 +76,7 @@ try{
   assert.deepEqual(errors,[],width+"px script runtime exceptions");
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
   assert.ok(overflow<=2,width+"px horizontal overflow: "+overflow);
-  console.log("PASS P2 editorial HTML browser: "+width+"px; 61 text blocks, 3 optional customs, 4 held Propers and conditional finales, bilingual toggle, exact speaking roles");
+  console.log("PASS P2 editorial HTML browser: "+width+"px; 84 text blocks, 3 optional customs, 11 held Propers, 5 opening conditions and conditional finales, bilingual toggle, exact speaking roles");
   await context.close();
  }
 }finally{await browser.close()}
