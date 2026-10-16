@@ -202,7 +202,7 @@
       "printedFamilyId": "commune-print:doctorum",
       "variant": "DOCTOR_NON_PONTIFF",
       "candidateCanonicalSourcePath": "Commune/C5a",
-      "inAppSourceStatus": "LATIN_FULL_EN_FR_DISTINCTIVE_ORATIONS_ONLY_SHARED_DOCTOR_INHERITANCE_REQUIRED",
+      "inAppSourceStatus": "INTERNAL_VIRTUAL_COMMON_SOURCE_COMPOSITION_VERIFIED_LATIN_PARITY",
       "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
       "sourceSections": [
         "Introitus",
@@ -224,18 +224,41 @@
       "approvedForNewSaintMass": false,
       "actualSaintChoice": null,
       "sourceIdentityCertified": true,
-      "remainingGate": "Before use resolve shared C4a Introitus/Oratio/Lectio/Evangelium/Communio and other necessary sections in EN/FR by source-owned inheritance with Latin identity parity; never fabricate translated lines or treat only two sections as a complete Proper. Formulary selection/law/interpolation/router remain held.",
+      "remainingGate": "Reader integration must consume derived source-map aliases rather than import duplicate text. No Newman Mass selected; 1962 print/legal coverage and permission still require adjudication.",
       "directLanguageSectionCoverage": {
         "la": 7,
         "en": 2,
         "fr": 2
       },
-      "vernacularCompletenessCertified": false,
+      "vernacularCompletenessCertified": true,
       "sharedFamilyForIncompleteLanguageSections": "Commune/C4a",
       "legitimateVariantSections": [
         "Secreta",
         "Postcommunio"
-      ]
+      ],
+      "verifiedLatinInheritedSharedSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Graduale",
+        "GradualeP",
+        "Tractus",
+        "Evangelium",
+        "Offertorium",
+        "Communio"
+      ],
+      "verifiedBorrowedVernacularCount": 18,
+      "verifiedBorrowedLanguages": [
+        "en",
+        "fr"
+      ],
+      "sourceCompositionOwner": "src/calendar/p1-doctor-common-inheritance.js",
+      "sourceCompositionTest": "tests/calendar-p1-doctor-common-inheritance.mjs",
+      "liveCompositionEvidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907380467",
+      "inheritedLanguageSectionsComplete": true,
+      "languageCompletenessCertainty": "SOURCE_COMPOSITION_ONLY_NOT_LITURGICAL_FORMULARY_APPROVAL",
+      "nonPontiffVariantPrayersPreserved": true,
+      "collectDuplicationException": "Pinned C5a Latin Collect prints identical second occurrence after exact '(sed communi Summorum Pontificum)' rubric, with cœlis/cælis variation; the source-verified inherited C4a Collect is identical to the genuine first Collect. Other unknown extra prayer held."
     },
     {
       "researchId": "p1:index:1962:abbots",
@@ -283,14 +306,18 @@
     ],
     "permittedFormularyChoice": null,
     "validDateSpecificMass": false,
-    "reason": "No Common may be auto-selected from a saint's later Doctor title alone."
+    "reason": "No Common may be auto-selected from a saint's later Doctor title alone.",
+    "venacularSourceCompositionReady": true
   },
   "notSourceOfLaw": true,
   "notRuntimeImport": true,
   "allSevenSourcePathsFound": true,
   "sourcePathsVerified": 7,
   "directTrilingualSevenSectionPaths": 6,
-  "sourcePathsNeedingInheritedLanguageSections": 1,
+  "sourcePathsNeedingInheritedLanguageSections": 0,
   "keyDifference": "Original Commune Doctorum uses C4a Bishop-Doctor and C5a non-Bishop Doctor; C5a shares readings/collect/chants with C4a but differs in Secret and Postcommunion. The app's direct English/French C5a sources only expose those distinct orations.",
-  "status": "SEVEN_APP_SOURCE_PATHS_VERIFIED_SIX_COMPLETE_LANGUAGE_DIRECT_ONE_REQUIRES_SHARED_DOCTOR_RECOVERY"
+  "status": "SEVEN_COMMON_APP_SOURCES_CONFIRMED_SEVEN_COMPLETE_AFTER_SOURCE_PARITY_INHERITANCE",
+  "allSevenSectionSourceCompletenessVerified": 7,
+  "sourcePathsWithVerifiedInheritance": 1,
+  "distinctSharedDoctorVernacularRecoveries": 18
 }
