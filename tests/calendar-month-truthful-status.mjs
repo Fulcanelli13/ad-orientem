@@ -20,8 +20,8 @@ const francisOmitted={
 };
 
 const omissionBatch2026=[
-  ["2026-07-05","tempora:Pent6-0:2:g","Sancti/07-05","SAINT_ANTHONY_MARY_ZACCARIA","RG 111(b)"],
-  ["2026-07-12","tempora:Pent7-0:2:g","Sancti/07-12","SAINT_JOHN_GUALBERT","RG 111(b)"],
+  ["2026-07-05","tempora:Pent06-0:2:g","Sancti/07-05","SAINT_ANTHONY_MARY_ZACCARIA","RG 111(b)"],
+  ["2026-07-12","tempora:Pent07-0:2:g","Sancti/07-12","SAINT_JOHN_GUALBERT","RG 111(b)"],
   ["2026-08-30","tempora:Pent14-0:2:g","Sancti/08-30","SAINT_ROSE_OF_LIMA","RG 111(b)"],
   ["2026-11-22","tempora:Pent24-0:2:g","Sancti/11-22","SAINT_CECILIA","RG 111(b)"],
   ["2026-12-06","tempora:Adv2-0:1:v","Sancti/12-06","SAINT_NICHOLAS_MYRA","RG 111(a)"]
