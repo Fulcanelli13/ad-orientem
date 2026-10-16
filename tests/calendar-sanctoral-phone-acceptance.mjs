@@ -142,6 +142,25 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-rubric-claim]").count(),0,
        "No date-specific clauses may survive when another observance is selected");
    }
+   if(width===390){
+     // Check the observed source-verified Annunciation and original Holy Thursday.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-04-05")),true);
+     const transfer=page.locator('.aoTodayV2CalendarInline [data-cal-transfer-claim="ANNUNCIATION_2027"]');
+     await transfer.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await transfer.waitFor({state:"visible",timeout:12000});
+     assert.match(await transfer.innerText(),/RG 96\(a\)/);
+     assert.equal(await transfer.locator('time[datetime="2027-03-25"]').count(),1);
+     assert.equal(await transfer.locator('time[datetime="2027-04-05"]').count(),1);
+     assert.match(await transfer.locator("a").getAttribute("href"),
+       /^https:\/\/missale\.online\/festkalender\/en\/2027$/);
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-03-25")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-03-25",
+       null,{timeout:50000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-transfer-claim]").count(),0,
+       "Holy Thursday must not falsely claim to be the transferred Annunciation");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
