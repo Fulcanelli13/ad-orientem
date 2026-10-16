@@ -14,7 +14,7 @@ const from = html.indexOf(open), to = html.indexOf('</script>',from);
 assert.ok(from >= 0 && to > from, 'Embedded 168-category curator model exists');
 const current = JSON.parse(html.slice(from+open.length,to));
 
-assert.ok(html.includes("const fallback=commonsFile?original.split('?')[0]+'?width=640'"),
+assert.ok(html.includes("const fallback=commonsFile?original.split('?')[0]+'?width=500'"),
   'Mobile image load must never auto-retry an unbounded full-resolution Commons original');
 assert.ok(html.includes('Research only · not selectable (identity, image or rights hold)'),
   'Ineligible artworks require a neutral research hold label, not a misleading wrong-saint diagnosis');
@@ -23,6 +23,12 @@ assert.equal(baseline.categories.length,168);
 assert.equal(current.categories.length,168);
 assert.deepEqual(current.seed,baseline.seed,'Human decisions and locked score seeds cannot change');
 assert.deepEqual(current.meta,baseline.meta,'Human review provenance cannot change');
+const commonsPreviews=current.categories.flatMap(c=>c.works.flatMap(w=>w.photos.map(p=>p.preview).filter(u=>u?.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/'))));
+assert.ok(commonsPreviews.length>200,'Research Commons previews unexpectedly absent');
+for(const url of commonsPreviews){
+ const width=new URL(url).searchParams.get('width');
+ assert.ok(['500','960','1280','1920'].includes(width),'Wikimedia unsupported direct thumbnail width: '+url);
+}
 const byId = new Map(current.categories.map(c=>[c.id,c]));
 assert.equal(byId.size,168,'Unique category IDs');
 for(const old of baseline.categories){
