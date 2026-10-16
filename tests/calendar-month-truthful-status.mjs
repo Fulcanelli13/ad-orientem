@@ -174,8 +174,8 @@ for(const marker of [
   "loadCalendarColourClaims();",
   "calendarTransferRubricalClaimsForDay(r,transferLedger)",
   "data-cal-transfer-claim",
-  "Why this feast was transferred",
-  "Pourquoi cette fête a été reportée",
+  "Why this observance was transferred",
+  "Pourquoi cette célébration a été reportée",
   "loadCalendarTransferClaims();",
 ])assert.ok(runtime.includes(marker),
   "Calendar lost a required rubrical source-bound UI contract: "+marker);
