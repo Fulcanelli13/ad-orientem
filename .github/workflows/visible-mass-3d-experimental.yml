@@ -1,0 +1,41 @@
+name: Visible Mass 3D experimental HTML
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - "previews/visible-mass-3d/**"
+      - "tools/build-visible-mass-standalone.mjs"
+      - "tests/visible-mass-3d-contract.mjs"
+      - "data/glossary/concepts-*.v1.json"
+      - ".github/workflows/visible-mass-3d-experimental.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-portable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax and source contract
+        run: |
+          node --check previews/visible-mass-3d/viewer.js
+          node --check tools/build-visible-mass-standalone.mjs
+          node tests/visible-mass-3d-contract.mjs
+      - name: Generate portable HTML
+        run: node tools/build-visible-mass-standalone.mjs
+      - name: Basic artifact checks
+        run: |
+          test -s dist/visible-mass/The_Visible_Mass_P0.html
+          grep -q 'ao-glossary-entries' dist/visible-mass/The_Visible_Mass_P0.html
+          grep -q 'G190' dist/visible-mass/The_Visible_Mass_P0.html
+      - name: Downloadable research prototype
+        uses: actions/upload-artifact@v4
+        with:
+          name: Visible-Mass-3D-P0-HTML
+          path: dist/visible-mass/The_Visible_Mass_P0.html
+          if-no-files-found: error
