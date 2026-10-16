@@ -16,8 +16,8 @@ assert.deepEqual(labels.map(x=>x.name),["St Felix of Nola"],
  "Same source identity (different colour suffix) must appear only once");
 assert.equal(labels[0].sourceId,"sancti:01-14b");
 assert.deepEqual(observedCommemorationLabels(mixed,{language:"fr"}).map(x=>x.name),
- ["Saint Félix de Nole","St Felix of Nola"],
- "Unidentified bare names cannot be automatically cross-reconciled with a named source ID");
+ ["Saint Félix de Nole"],
+ "An identical bare English alias must not duplicate an identified French saint");
 const references=value(["tempora:Quad1-2:4:v","10-11","commune:C4:3:w"]);
 assert.deepEqual(observedCommemorationLabels(references),[],"Raw source IDs are not public titles");
 assert.deepEqual(observedCommemorationLabels({
