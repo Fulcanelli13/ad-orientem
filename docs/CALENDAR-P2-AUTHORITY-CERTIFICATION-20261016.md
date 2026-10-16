@@ -65,7 +65,7 @@ The Wales online summary still calls Newman Blessed with optional rank; the year
 
 Four scoped evidence edges have a different day/month than the old 1962 source for the same saint: Catherine (England and Wales) 29 vs 30 April, Bede (England) 25 vs 27 May, Gregory (England) 3 September vs 12 March. These do not change Ad Orientem's 1962 observances.
 
-The existing 329-edge authority audit is preserved as its immutable first-pass source evaluation. Nine additional individual decisions are stored in `living-sanctoral-england-wales-authority-extension.v1.json`, joined by evidenceEdgeId in the integrity tests to certify **338/338** date edges. The principal research ledger, canonical person links, effective-date relationships, queue, compatibility export and authority rules all include the nine new records. P2 now has 338 date edges (312 researched since the original 26), still 293 canonical individuals and 13 collective groups. Every new record remains `RESEARCH_ONLY`; no modern national rule is promoted to universal or 1962 authority.
+The authoritative `living-sanctoral-authority-audit.v1.json` now includes all **338/338** distinct source-edge decisions directly, without a duplicate overlay or second authority registry. The principal research ledger, canonical person links, effective-date relationships, queue, compatibility export and authority rules all include the nine new records. P2 now has 338 date edges (312 researched since the original 26), still 293 canonical individuals and 13 collective groups. Every new record remains `RESEARCH_ONLY`; no modern national rule is promoted to universal or 1962 authority.
 
 Official primary-source records:
 - https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml

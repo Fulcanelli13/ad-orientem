@@ -2,13 +2,12 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const read=(name)=>JSON.parse(readFileSync(new URL("../data/calendar/research/living-sanctoral-"+name+".v1.json",import.meta.url),"utf8"));
 const edges=read("date-evidence").dateEdges, audit=read("authority-audit"), acts=read("modern-general-acts"), queue=read("authority-adjudication-queue");
-const british=read("england-wales-authority-extension"), scoped=read("england-wales-propers-certified");
-const verdicts=[...audit.edgeDecisions,...british.edgeDecisions], byId=new Map(verdicts.map(v=>[v.evidenceEdgeId,v]));
+const scoped=read("england-wales-propers-certified");
+const verdicts=audit.edgeDecisions, byId=new Map(verdicts.map(v=>[v.evidenceEdgeId,v]));
 assert.equal(edges.length,338);assert.equal(verdicts.length,338);assert.equal(byId.size,edges.length);
-assert.equal(audit.summary.totalEvidenceEdges,329);
+assert.equal(audit.summary.totalEvidenceEdges,338);
 assert.equal(queue.counts.totalEvidenceEdges,338);
-assert.equal(british.baseAuditEdgeCount,329);
-assert.equal(british.completeAggregateEdgeCount,338);
+assert.equal(audit.summary.approvedNationalProperCoveredIndividuals,19);
 for(const edge of edges){
  const result=byId.get(edge.edgeId);assert.ok(result,"Missing edge verdict "+edge.edgeId);
  assert.equal(result.subjectId,edge.subjectId);assert.equal(result.monthDay,edge.monthDay);
@@ -85,7 +84,7 @@ assert.equal(cv("saint.marianne-cope","US").celebrationMonthDay,"01-23");
 assert.equal(cv("saint.damien-de-veuster","US").celebrationMonthDay,"05-10");
 assert.equal(cv("saint.marguerite-dyouville","CA").celebrationMonthDay,"10-16");
 assert.ok(audit.edgeDecisions.every(x=>x.runtimeImportAuthorized===false));
-assert.equal(scoped.observances.length,9);assert.equal(british.edgeDecisions.length,9);
+assert.equal(scoped.observances.length,9);
 assert.equal(new Set(scoped.observances.map(x=>x.subjectId)).size,6);
 assert.equal(scoped.observances.filter(x=>x.jurisdiction==="ENGLAND").length,6);
 assert.equal(scoped.observances.filter(x=>x.jurisdiction==="WALES").length,3);
@@ -107,4 +106,4 @@ for(const country of ["ENGLAND","WALES"]){
  assert.ok(newman.sourceUrl.endsWith("/2026/Oct.shtml"));
 }
 assert.equal(queue.nationalProperDivergences.length,11);
-console.log("P2 authority audit PASS: 338/338 source edges with 9 England/Wales extension verdicts; zero 1962 permissions");
+console.log("P2 authority audit PASS: 338/338 source edges with 9 England/Wales native audit verdicts; zero 1962 permissions");
