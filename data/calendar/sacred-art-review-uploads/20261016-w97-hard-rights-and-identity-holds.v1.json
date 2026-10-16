@@ -1,0 +1,56 @@
+{
+  "schema": "AO_SACRED_ART_W97_HARD_RIGHTS_AND_IDENTITY_BLOCKER_RECOVERY_V1",
+  "created": "2026-10-16",
+  "researchOnly": true,
+  "strictCoveredCategories": "146/168",
+  "records": [
+    {
+      "categoryIndex": 30,
+      "originalId": "G30-004",
+      "painting": "Giuseppe Franchi, Portrait of Gregory Nazianzen",
+      "holder": "Pinacoteca Ambrosiana, Milan",
+      "source": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0070-00118/",
+      "copyrightPolicy": "https://www.ambrosiana.it/en/pinacoteca-collections/",
+      "status": "ORIGINAL_IDENTIFIED_NOT_OPEN_PHOTO; institutional policy explicitly bars saving, download and reproduction without prior permission",
+      "permittedAction": "Seek genuinely independent already openly licensed file; do not download protected Ambrosiana site images; no direct rights-holder requests"
+    },
+    {
+      "categoryIndex": 52,
+      "originalId": "G27-002",
+      "painting": "Vincenzo Valdrè, St Patrick's Hall preparatory oil (1787)",
+      "holder": "Royal Dublin Society",
+      "source": "https://digitalarchive.rds.ie/items/show/3978",
+      "status": "ORIGINAL_IDENTIFIED_INSTITUTIONAL_PUBLISHING_PROHIBITED; RDS explicitly forbids publication or display without formal written approval",
+      "permittedAction": "Look only for separately authorized open-licence photos; do not infer rights from historical artwork age; no permission outreach"
+    },
+    {
+      "categoryIndex": 41,
+      "originalId": null,
+      "painting": "Saint Cyril of Jerusalem",
+      "holder": "Not yet selected; 1748–49 Johann Lossau ceiling depiction photographic record",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/XOD2TJQJHLNFDYUSHSVEJKQJOVOYNNUW",
+      "status": "IMAGE_UNUSABLE_COMMERCIALLY; 1943-44 photograph explicitly CC BY-NC-SA 4.0; subject still has no authenticated approved physical painting in registry",
+      "permittedAction": "Preserve independent candidate identity, do not convert ceiling-tempera subject to selected oil without curator approval"
+    },
+    {
+      "categoryIndex": 43,
+      "originalId": "G29-001",
+      "painting": "Jérôme-Martin Langlois, Saint Hilary of Poitiers Writing Against Arianism",
+      "holder": "Bordeaux Cathedral",
+      "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+      "status": "EXACT_SUBJECT_AND_ORIGINAL_INVENTORY_CONFIRMED; no current verified high-resolution open-licence photograph",
+      "permittedAction": "Research public open-source photo of this exact original, not a copy or an unrelated Russian icon"
+    },
+    {
+      "categoryIndex": 129,
+      "originalId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "painting": "Giandomenico Tiepolo Burial of Christ",
+      "holder": "Museo Nacional del Prado",
+      "accession": "P000362",
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "status": "EXACT_ORIGINAL_CONFIRMED; publicly indexed 2646x2291 reproduction on Gallerix gives 403 direct download and commercial reuse not established",
+      "permittedAction": "Find independently open-licensed exact original photo; do not substitute separate Tiepolo Via Crucis Station XIV in Venice"
+    }
+  ],
+  "countingRule": "Only original-object identity, complete painted surface, usable resolution, demonstrably compatible photo terms and curator identity handoff can close strict gap; no score or runtime mutation."
+}
