@@ -65,10 +65,19 @@ try{
     const offertory=page.locator('#ao-mass-explorer-root [data-ao-mx-stop="AO.CARD.010"]');
     await offertory.locator("summary").click();
     await offertory.locator('[data-ao-mx-map-block="AO.SM.B031"]').click();
+    const savedMapScroll=await page.evaluate(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexScrollTop);
+    assert.ok(savedMapScroll>300,"Map should retain the actual deeply scrolled Offertory origin");
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.010"]').count(),1);
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"][aria-current="true"]').count(),1);
     await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-map="sung"]').count(),1);
+    const mapReturn=await page.locator("#ao-mass-explorer-root").evaluate(node=>({
+      scrollTop:node.scrollTop,
+      selected:document.activeElement?.getAttribute("data-ao-mx-moment")
+    }));
+    assert.ok(Math.abs(mapReturn.scrollTop-savedMapScroll)<=3,
+      "Map Back lost previous study position: "+JSON.stringify({savedMapScroll,mapReturn}));
+    assert.equal(mapReturn.selected,"AO.CARD.010","Map Back lost keyboard focus on visited moment");
   }
   assert.equal(baseline.shell,"learn.mass_explorer");
   assert.equal(baseline.explorer?.sourceBlocks,96);
@@ -96,6 +105,8 @@ try{
   // Suscipe's approved biblical comparison is in the existing Formation MF03
   // lesson, NOT an unverified direct prayer-to-verse attribution.
   if(width===390||width===768){
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-study="MF03"]').scrollIntoViewIfNeeded();
+    const studyScrollBefore=await page.locator("#ao-mass-explorer-root").evaluate(node=>node.scrollTop);
     await page.locator('#ao-mass-explorer-root [data-ao-mx-study="MF03"]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId==="MF03",null,{timeout:15000});
     const indirect=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
@@ -112,6 +123,12 @@ try{
     await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.blockId==="AO.SM.B031"&&
       globalThis.AO_MASS_EXPLORER_V1?.status?.()?.momentKey==="AO.CARD.010",null,{timeout:12000});
     assert.match(await page.locator("#ao-mass-explorer-root .aoMXText").innerText(),/Suscipe, sancte Pater/);
+    const studyReturn=await page.locator("#ao-mass-explorer-root").evaluate(node=>({
+      scrollTop:node.scrollTop, focused:document.activeElement?.getAttribute("data-ao-mx-study")
+    }));
+    assert.ok(Math.abs(studyReturn.scrollTop-studyScrollBefore)<=4,
+      "Formation Back lost precise Explorer article reading position: "+JSON.stringify({studyScrollBefore,studyReturn}));
+    assert.equal(studyReturn.focused,"MF03","Formation Back lost the originating study link");
   }
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.locator('#ao-mass-explorer-root [data-ao-mx-moment="AO.CARD.013"]').click();
@@ -163,7 +180,7 @@ try{
  assert.notEqual(await handoff.evaluate(()=>globalThis.AO_R17_ACTIVE_MASS?.readerPosition?.sectionId||null),
     "AO.CARD.010","Map must never invent an exact reader jump");
  await handoff.close();
- console.log("PASS Mass Map + Explorer canonical app: five phases, 32 moments, 96 source blocks, direct prayer navigation, source return, 320/390/430/768/1280px, Mass-preparation handoff");
+ console.log("PASS Mass Map + Explorer: canonical Map/List scroll+focus restoration, Formation→Bible→exact Explorer return, 32 moments, 96 source blocks, 320/390/430/768/1280px, Mass-preparation handoff");
 }finally{
  await browser?.close();await new Promise(ok=>server.close(ok));
 }
