@@ -162,6 +162,7 @@ export function createFindOwner(win=globalThis){
     calendarKey:null,
     selectedId:null,
     selectedPlaceId:null,
+    saintCalendarReturn:null,
     displayLimit:24,
     bibleAtlas:false,
     bibleIndex:0,
@@ -407,6 +408,7 @@ export function createFindOwner(win=globalThis){
       view:state.view,
       filters:state,
       saintsRelease:dataset?.saintsRelease??null,
+      saintCalendarReturn:state.saintCalendarReturn,
       selectedId:state.selectedId,
       selectedOverride,
       displayLimit:state.displayLimit,
@@ -545,10 +547,23 @@ export function createFindOwner(win=globalThis){
       row?.kind==="SAINT_CATALOGUE_PROFILE");
     return matches.length===1?matches[0]:null;
   }
-  async function openSaintProfile(saintsId){
+  async function openSaintProfile(saintsId,{calendarReturn=null}={}){
     try{
       if(!await verifiedSaintProfileItem(saintsId))return false;
-      const result=await open({lens:"saints",view:"list",saintProfileId:saintsId});
+      // Only an exact observed Calendar principal may supply a return receipt.
+      // Never infer one from a saint's name, date candidate or modern memorial.
+      const selected=win?.AO_RUNTIME_V8?.store?.getState?.();
+      const observed=selected?.resolution?.day?.main?.id;
+      const returnContext=calendarReturn?.saintsId===saintsId &&
+        calendarReturn?.readOnly===true && calendarReturn?.massSelectionAuthority==="NONE" &&
+        /^\d{4}-\d{2}-\d{2}$/.test(calendarReturn.selectedDate||"") &&
+        /^sancti:\d{2}-\d{2}[a-z]?:[1-4]:[wr]$/.test(calendarReturn.observedSourceId||"") &&
+        selected?.selectedDate===calendarReturn.selectedDate &&
+        selected?.resolution?.date===calendarReturn.selectedDate &&
+        observed===calendarReturn.observedSourceId
+          ?{date:calendarReturn.selectedDate,saintsId,sourceId:observed}:null;
+      const result=await open({lens:"saints",view:"list",saintProfileId:saintsId,
+        saintCalendarReturn:returnContext});
       return result===true&&state.selectedId==="saints:person:"+saintsId&&
         state.lens==="saints"&&state.saintScope==="profiles";
     }catch(error){
@@ -573,6 +588,7 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
+    state.saintCalendarReturn=exactSaintProfile?options?.saintCalendarReturn??null:null;
     if(exactSaintProfile){
       state.lens="saints";state.view="list";state.saintScope="profiles";
       state.saintCategory="ALL";state.query="";state.selectedPlaceId=null;
@@ -640,7 +656,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     atlasScriptureReturn=null;
-    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
+    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.saintCalendarReturn=null;state.expandPlace=false;state.expandDetail=false;
     state.bibleAtlas=false;state.bibleIndex=0;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     nearbyResults=null;
@@ -663,7 +679,7 @@ export function createFindOwner(win=globalThis){
       (value==="profiles"||dataset?.saintsRelease?.researchEnabled)){
       state.saintScope=value;state.query="";
     }else if(Object.hasOwn(state,key))state[key]=value;
-    state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
+    state.selectedId=null;state.selectedPlaceId=null;state.saintCalendarReturn=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
     if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;state.bibleAtlas=false;state.bibleIndex=0;}
     void paint();
@@ -1085,6 +1101,20 @@ export function createFindOwner(win=globalThis){
       state.selectedPlaceId=null;
       state.selectedId=placeItem.dataset.explorePlaceItem||null;state.expandDetail=false;
       void paint();return;
+    }
+    const returnToCalendar=target?.closest?.("[data-saint-return-calendar]");
+    if(returnToCalendar){
+      event.preventDefault?.();event.stopPropagation?.();
+      const receipt=state.saintCalendarReturn;
+      const date=returnToCalendar.dataset.saintReturnCalendar;
+      if(receipt?.date===date &&
+         state.selectedId==="saints:person:"+receipt.saintsId &&
+         state.lens==="saints"){
+        void handoff("calendar",()=>win?.AO_CALENDAR_APP_V1?.select?.(date),
+          language(win)==="fr"?"Impossible de retrouver le jour consulté. Réessayez.":
+          "Could not restore the selected Calendar day. Please retry.");
+      }
+      return;
     }
     const calendarDate=target?.closest?.("[data-explore-calendar-date]");
     if(calendarDate){
