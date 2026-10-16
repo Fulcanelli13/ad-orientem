@@ -121,5 +121,64 @@
     "noNewReaderOrAtlasAppChanges": true,
     "noCanonical151EventChanges": true
   },
-  "nextWork": "Continue the source reference harvest across all 151 events and all 37 reading sections, especially Catholic deuterocanonical, Prophets/Wisdom and late Apostolic/Revelation gaps. Review publisher-original provenance of MISSAL62 and 152 Famous Bible Stories. Only AFTER source comparison completion, editorially select brief coherent actual-scripture excerpts."
+  "nextWork": "Continue the source reference harvest across all 151 events and all 37 reading sections, especially Catholic deuterocanonical, Prophets/Wisdom and late Apostolic/Revelation gaps. Review publisher-original provenance of MISSAL62 and 152 Famous Bible Stories. Only AFTER source comparison completion, editorially select brief coherent actual-scripture excerpts.",
+  "secondSourceHarvest20261016": {
+    "schema": "AO_COMPARATIVE_BIBLICAL_PERICOPE_SOURCE_MATRIX_HARVEST_V2",
+    "researchOnly": true,
+    "sourceIndexPrimaryWeekday": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+    "sourceIndexDeuterocanon": "https://church.catholic-resources.org/Lectionary/Index-Deuterocanonicals.htm",
+    "danielStudyCompilerIndex": "https://church.catholic-resources.org/Bible/Daniel.htm",
+    "method": "Original editorial publisher Scripture citations captured verbatim by church season/date and lectionary number. Source edition not confused with existing AO Atlas anchor. 1981/1998 weekday Sunday and deuterocanonical lectionaries one existing Roman Catholic Lectionary editorial family. Do not count multiple citations as independent votes.",
+    "inputSourceFamilyCountsUnchanged": 9,
+    "qualifiedPrimaryIndependentSourceFamiliesUnchanged": 7,
+    "existingAdOrientemAtlasEvents": 151,
+    "existingReadingSections": 37,
+    "qualifyingSourceCoverageEventsBefore": 78,
+    "qualifyingSourceCoverageEventsAfter": 127,
+    "qualifyingSourceUncoveredEventsAfter": 24,
+    "qualifyingSourceCoverageReadingSections": 37,
+    "totalEvidenceRecordsBefore": 180,
+    "totalEvidenceRecordsAfter": 281,
+    "newRecords": 101,
+    "LEC98EvidenceRecordsAfter": 171,
+    "eventsWithTwoOrMoreIndependentQualifiedSourceFamiliesAfter": 38,
+    "eventsWithThreeOrMoreIndependentQualifiedSourceFamiliesAfter": 12,
+    "excludedSourceToEventMismatches": [
+      {
+        "event": "Conversion of Cornelius",
+        "source": "Acts 11:1–18",
+        "reason": "Not the Acts 10 episode."
+      },
+      {
+        "event": "St John's vision",
+        "source": "Rev 1:1–4; 2:1–5",
+        "reason": "Not Revelation 1:9–20."
+      }
+    ],
+    "requiresCatholicVerseNumberingCrosswalk": [
+      "Greek Esther C vs Vulgate Esther 14",
+      "Sirach liturgical parenthetical numbering",
+      "Daniel Greek chapter additions"
+    ],
+    "originalBibleBooksOrTranslationsChanged": false,
+    "SchusterTextUsed": false,
+    "shortSelectionApprovedCount": 0,
+    "newProductionReaderLinks": 0,
+    "outputFiles": [
+      {
+        "name": "AO_Biblical_Excerpt_Master_Matrix_v2.xlsx",
+        "sha256": "1407d998abc59454c4ba5ad459c57527a8d6e751acceffb34e050918191a8631"
+      },
+      {
+        "name": "AO_Biblical_Excerpt_Master_Data_v2.json",
+        "sha256": "728750ebca300b02226f6f7fd30ab84c3a44c46e04397c5209d6ed3ac7d5ea51"
+      },
+      {
+        "name": "AO_Biblical_Excerpt_Master_Weekday_Harvest_v2.csv",
+        "sha256": "3f2befc6c6f7cf41d7c3e0bec984329497a0cffd0f6aca62c55a3986ce55175d"
+      }
+    ],
+    "nextWork": "Seek genuinely independent published selections for 24 missing events, especially short narrative texts of Judith, Daniel, Passion, Acts; full harvest all nine existing source families then independent consensus/editorial choice. Avoid adding another source from the same lectionary to vote totals."
+  },
+  "latestResearchHarvest": "2026-10-16-v2"
 }
