@@ -931,7 +931,6 @@ function openSelectedScriptureReading(target,{onCloseReturn=null}={}){
  if(!button)return false;
  selectedScriptureReturn={onCloseReturn};
  button.focus?.({preventScroll:true});
- button.scrollIntoView?.({block:"nearest",behavior:"instant"});
  return true;
 }
 function returnToSelectedScripture(){
