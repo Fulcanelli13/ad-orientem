@@ -4,6 +4,10 @@ on:
     paths:
       - 'src/learn/mass-formation.js'
       - 'src/learn/mass-explorer.js'
+      - 'src/learn/mass-reader-study-bridge.js'
+      - 'src/mass/browser-entry.js'
+      - 'tests/mass-reader-explorer-phone-e2e.mjs'
+      - 'tests/mass-reader-study-contract.mjs'
       - 'tests/mass-explorer-phone-e2e.mjs'
       - 'src/learn/mass-moments-study.js'
       - 'src/learn/mass-formation-scripture-context.js'
@@ -40,10 +44,13 @@ jobs:
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
+      - run: node tests/mass-reader-explorer-phone-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: mass-explorer-p1-visuals
-          path: artifacts/mass-explorer-p1/
+          path: |
+            artifacts/mass-explorer-p1/
+            artifacts/mass-reader-explorer/
           if-no-files-found: warn
           retention-days: 14
