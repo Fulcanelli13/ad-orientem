@@ -122,10 +122,10 @@
       "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
       "bestPhoto": "The selected Prado P001300 panel is Saint Hilary THE HERMIT on verso, not the Doctor; cannot be used regardless of photo quality. Langlois Bordeaux original 1823 remains a valid exact-person art subject, but image file is not acquired.",
       "bestObject": "Prado Juan Correa de Vivar P001300; Saint Hilary is reverse side",
-      "image": "Do not acquire Prado verso as a fix: wrong saint. Exact Langlois Saint Hilaire de Poitiers écrivant contre l'arianisme Palissy IM33002267 source confirmed, photo missing.",
+      "image": "Original Langlois 1823 oil in Bordeaux (IM33002267 / PM33001691) has NO certified full-painting photograph, and monument archive expressly notes photo missing. Dubourdieu 1846 painted copy at Paillet photographed only as altar/site context, not adequate painting reproduction.",
       "rights": "Prado commercial photo terms require investigation",
       "identity": "SOURCE-CORRECTED SUBJECT MISMATCH: Prado Spanish catalogue identifies SAN HILARIO ERMITAÑO, a different saint from Hilary of Poitiers. Historical 12 October user choice remains archived but is NOT eligible for this category.",
-      "action": "Mark Prado selected object INELIGIBLE for Saint Hilary of Poitiers; preserve selected-choice audit. Prioritize one rights-compatible photograph of real Doctor original (Langlois 1823 Bordeaux) or seek explicit alternative artistic selection; never substitute an image of St Lawrence or the hermit.",
+      "action": "Keep historical Prado P001300 (Hilary the HERMIT) excluded, preserve score/audit. Investigate a clean legal photograph of Langlois or Dubourdieu copy. Existing generic 'Tableau 2' Commons photo is a woman with a sword, a WRONG subject. Do not substitute.",
       "nextOwner": "Exact saint identity repaired; image source for correct Doctor",
       "subject": "Saint Hilary of Poitiers",
       "priorHumanChoice": {
@@ -146,7 +146,24 @@
         "https://www.museodelprado.es/coleccion/obra-de-arte/la-anunciacion/88f0c430-0d2c-46b1-9ab6-f712457b7e20",
         "https://pop.culture.gouv.fr/notice/palissy/IM33002267"
       ],
-      "legacySelectedChoicePreservedForAudit": true
+      "legacySelectedChoicePreservedForAudit": true,
+      "verifiedImageAcquisitionBlocker": {
+        "officialMonumentNotice": "https://pop.culture.gouv.fr/notice/palissy/PM33001691",
+        "officialMonumentStatus": "The State monument notice explicitly states: 'Fiche CAOA et photographie manquante à la MPP' (photograph missing at the Médiathèque du patrimoine et de la photographie).",
+        "originalWork": "Jérôme-Martin Langlois, Saint Hilaire de Poitiers écrivant contre l'arianisme, 1823, Bordeaux cathedral, Palissy IM33002267",
+        "originalWorkPhotographFound": false,
+        "knownSameCompositionCopy": "Jean-Baptiste Dubourdieu, 1846, painting in Saint-Hilaire de Paillet church, documented as a distinct painted COPY of Langlois",
+        "copyHistoricalSource": "https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Hilaire_de_Paillet",
+        "licenseBearingSitePhotograph": "https://commons.wikimedia.org/wiki/File:Paillet_%C3%A9glise_Saint-Hilaire_Retable_1.JPG",
+        "license": "Photograph William Ellison 2015 CC BY-SA 4.0, source claims. Photographer attribution / SA effects apply.",
+        "framingAndQuality": "Site photo of entire church retable; saint Hilaire painting occupies small central portion, dark; NOT acceptable as an independently uncropped clean full-artwork image for app or reviewed reproductions.",
+        "explicitlyRejectedLookalike": "https://commons.wikimedia.org/wiki/File:Paillet_%C3%A9glise_Saint-Hilaire_Tableau_2.JPG",
+        "rejectedLookalikeReason": "Visually inspected: Tableau 2 depicts a woman with a sword, NOT Saint Hilary. Wikimedia's generic church file naming is not a reliable painting identity crosswalk.",
+        "nextAction": "Obtain a legitimate, separately captioned and license-bearing painted-surface photograph of the 1823 original or 1846 copy, OR offer the distinct copy/period engraving as an explicitly lower-fidelity editorial fallback; do not count the current altar-context file as painting image acquisition.",
+        "originalRatingChanged": false,
+        "selectedOriginalReplaced": false,
+        "doesNotCountAsCertifiedPaintingSource": true
+      }
     },
     {
       "index": 51,
