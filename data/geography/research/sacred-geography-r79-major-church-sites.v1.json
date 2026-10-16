@@ -1,0 +1,96 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R79_MAJOR_CHURCH_COVERAGE_V1",
+  "date": "2026-10-15",
+  "parent": "R78",
+  "status": "SOURCE_BACKED_PUBLISHABLE_STAGED",
+  "reason": "Distinguish missing major pilgrimage churches from previously mislinked neighboring Place records.",
+  "new_sites": [
+    {
+      "candidate_id": "SG-INV-0264",
+      "place_id": "place:GB:westminster-cathedral",
+      "shrine_id": "shrine:GB:westminster-cathedral",
+      "pilgrimage_id": "pilgrimage:GB:westminster-cathedral-destination",
+      "country": "GB",
+      "name": "Westminster Cathedral — Most Precious Blood",
+      "identity_source_url": "https://westminstercathedral.org.uk/the-cathedral/",
+      "geo_source_url": "https://www.openstreetmap.org/way/10810446",
+      "lat": 51.49582,
+      "lng": -0.13952,
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0264",
+        "SG-R79-GEO-SG-INV-0264"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0018",
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "shrine_id": "shrine:FR:sacre-coeur-montmartre",
+      "pilgrimage_id": "pilgrimage:FR:sacre-coeur-montmartre-destination",
+      "country": "FR",
+      "name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "identity_source_url": "https://www.sacre-coeur-montmartre.com/decouvrir/un-lieu-unique/le-sanctuaire/",
+      "geo_source_url": "https://www.openstreetmap.org/way/23762981",
+      "lat": 48.8868,
+      "lng": 2.34303,
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0018",
+        "SG-R79-GEO-SG-INV-0018"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0056",
+      "place_id": "place:IT:duomo-orvieto",
+      "shrine_id": "shrine:IT:duomo-orvieto",
+      "pilgrimage_id": "pilgrimage:IT:duomo-orvieto-destination",
+      "country": "IT",
+      "name": "Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+      "identity_source_url": "https://duomoorvieto.it/en/",
+      "geo_source_url": "https://www.openstreetmap.org/way/44184811",
+      "lat": 42.71701,
+      "lng": 12.1136,
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0056",
+        "SG-R79-GEO-SG-INV-0056"
+      ]
+    }
+  ],
+  "previously_mislinked_but_already_published": [
+    {
+      "candidate_id": "SG-INV-0050",
+      "place_id": "place:IT:santa-maria-maggiore-rome"
+    },
+    {
+      "candidate_id": "SG-INV-0714",
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine"
+    }
+  ],
+  "governance": {
+    "one_pin_per_physical_church": true,
+    "images_added": 0,
+    "calendar_dates_added": 0,
+    "routes_added": 0,
+    "new_authenticity_claims": 0
+  },
+  "counts": {
+    "places": 261,
+    "shrines": 257,
+    "pilgrimages": 240,
+    "source_records": 449,
+    "after_canonical_review": {
+      "CONFIRMED_EXISTING_PROMOTION": 166,
+      "POTENTIAL_EXISTING_ID_REVIEW": 6,
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 578
+    },
+    "queue": {
+      "candidates": 750,
+      "explicit_promoted": 164,
+      "text_hint_review": 6,
+      "unmatched": 580,
+      "zero_crosslist": 485,
+      "essential_remaining": 6,
+      "published_places": 261,
+      "published_shrines": 257,
+      "published_pilgrimages": 240
+    }
+  }
+}

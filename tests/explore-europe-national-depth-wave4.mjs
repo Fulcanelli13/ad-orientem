@@ -16,6 +16,8 @@ for(const row of read("data/geography/research/sacred-geography-r72-world-anchor
 for(const row of read("data/geography/research/sacred-geography-r73-major-shrines.v1.json").sites)publishedAfterFreeze.add(row.place_id);
 for(const row of read("data/geography/research/sacred-geography-r75-essential-sites.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
 for(const row of read("data/geography/research/sacred-geography-r77-essential-completeness.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
+// Post-freeze R79 three new cathedral/basilica Place publications preserve historical research denominators.
+for(const row of read("data/geography/research/sacred-geography-r79-major-church-sites.v1.json").new_sites)publishedAfterFreeze.add(row.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const W1=read("data/explore/europe-acquisition.wave1.research.v1.json");
 const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");

@@ -4257,6 +4257,54 @@
         "SG-R77-GEO-SG-INV-0609"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:GB:westminster-cathedral",
+      "place_id": "place:GB:westminster-cathedral",
+      "name": "Westminster Cathedral — Most Precious Blood",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Most Precious Blood of Our Lord Jesus Christ",
+      "origin_summary": "Westminster Cathedral is the Roman Catholic metropolitan cathedral of the Archdiocese of Westminster and an important national church of England and Wales. It is not Westminster Abbey, a physically distinct Anglican church.",
+      "origin_summary_fr": "La cathédrale de Westminster est la cathédrale catholique de l'archidiocèse de Westminster et un important lieu de culte pour les fidèles d'Angleterre et du pays de Galles. Elle ne doit pas être confondue avec l'abbaye anglicane de Westminster.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0264",
+        "SG-R79-GEO-SG-INV-0264"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:sacre-coeur-montmartre",
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Sacred Heart of Jesus; perpetual Eucharistic adoration",
+      "origin_summary": "The Basilica of Sacré-Cœur on Montmartre is a Parisian Catholic sanctuary dedicated to the Sacred Heart of Jesus and Eucharistic adoration. It is a distinct physical pilgrimage site from the Sacred Heart sanctuary in Paray-le-Monial.",
+      "origin_summary_fr": "La basilique du Sacré-Cœur de Montmartre est un sanctuaire catholique parisien consacré au Sacré-Cœur de Jésus et à l'adoration eucharistique. C'est un lieu de pèlerinage physiquement distinct du sanctuaire de Paray-le-Monial.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0018",
+        "SG-R79-GEO-SG-INV-0018"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-orvieto",
+      "place_id": "place:IT:duomo-orvieto",
+      "name": "Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+      "shrine_kind": "CHRISTOLOGICAL",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Assumption of the Blessed Virgin Mary; Chapel of the Corporal",
+      "origin_summary": "Orvieto Cathedral, dedicated to the Assumption of the Blessed Virgin Mary, houses the Chapel of the Corporal associated with the traditional account of the Eucharistic miracle at Bolsena. The site and devotional history are recorded without independent miracle authentication.",
+      "origin_summary_fr": "La cathédrale d'Orvieto, dédiée à l'Assomption de la Vierge Marie, abrite la chapelle du Corporal, liée au récit traditionnel du miracle eucharistique de Bolsena. Le lieu et son histoire dévotionnelle sont documentés sans authentification indépendante du miracle.",
+      "associated_saints": [],
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0056",
+        "SG-R79-GEO-SG-INV-0056"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -7835,6 +7883,48 @@
       "scope_note_fr": "Sanctuaire marial historique de Guadalupe, Zacatecas, distinct de Mexico ; aucun itinéraire, horaire ou apparition nouvelle n'est présumé.",
       "source_ids": [
         "SG-R77-SITE-SG-INV-0431"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:GB:westminster-cathedral-destination",
+      "name": "Pilgrimage destination — Westminster Cathedral — Most Precious Blood",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:GB:westminster-cathedral",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented Catholic cathedral/basilica pilgrimage and prayer destination. No route, mass schedule, devotional authenticity or liturgical calendar binding is inferred.",
+      "scope_note_fr": "Lieu catholique de pèlerinage et de prière. Aucun itinéraire, horaire de messe, authenticité dévotionnelle ni rattachement au calendrier n'est déduit.",
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0264"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:sacre-coeur-montmartre-destination",
+      "name": "Pilgrimage destination — Basilique du Sacré-Cœur de Montmartre — Paris",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:sacre-coeur-montmartre",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented Catholic cathedral/basilica pilgrimage and prayer destination. No route, mass schedule, devotional authenticity or liturgical calendar binding is inferred.",
+      "scope_note_fr": "Lieu catholique de pèlerinage et de prière. Aucun itinéraire, horaire de messe, authenticité dévotionnelle ni rattachement au calendrier n'est déduit.",
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0018"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:duomo-orvieto-destination",
+      "name": "Pilgrimage destination — Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:duomo-orvieto",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented Catholic cathedral/basilica pilgrimage and prayer destination. No route, mass schedule, devotional authenticity or liturgical calendar binding is inferred.",
+      "scope_note_fr": "Lieu catholique de pèlerinage et de prière. Aucun itinéraire, horaire de messe, authenticité dévotionnelle ni rattachement au calendrier n'est déduit.",
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0056"
       ],
       "confidence": "HIGH"
     }
