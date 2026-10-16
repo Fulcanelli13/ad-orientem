@@ -1,0 +1,30 @@
+name: Sacred Art closeout integrity
+
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - 'docs/research/review-galleries/ao-sacred-art-unified-curator-20261016.html'
+      - 'data/calendar/sacred-art-review-uploads/**'
+      - 'tests/sacred-art-acquisition-gallery-integrity.mjs'
+      - '.github/workflows/sacred-art-closeout-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-gallery:
+    name: Historical rating and exact-object integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce immutable human ratings and 158-category source links
+        run: node tests/sacred-art-acquisition-gallery-integrity.mjs
+      - name: Check earlier immutable Saints review decisions
+        run: node tests/sacred-art-w73-user-decisions.mjs
