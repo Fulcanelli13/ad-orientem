@@ -1,4 +1,5 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { sourceReferenceSafeUrl } from "./source-reference-panel.js";
 import {
@@ -257,7 +258,9 @@ export function createSpiritualLifeRuntime(win=globalThis){
     return true;
   }
 
+  let entryOrigin=null,lessonFromList=false;
   function open(opts={}){
+    entryOrigin=captureObservedModuleOrigin(win,"learn");lessonFromList=false;
     if(!SPIRITUAL_LIFE_RUNTIME_AUDIT.bilingual||!SPIRITUAL_LIFE_RUNTIME_AUDIT.allClaimsResolved||!SPIRITUAL_LIFE_RUNTIME_AUDIT.allSourcesResolved)return false;
     if(opts.lessonId&&SPIRITUAL_LIFE_LESSON_MAP[opts.lessonId]){state.view="lesson";state.lessonId=opts.lessonId;}
     else{state.view="list";state.lessonId=null;}
@@ -267,6 +270,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
 
   function openLesson(id){
     if(!SPIRITUAL_LIFE_LESSON_MAP[id])return false;
+    if(state.view==="list")lessonFromList=true;
     state.view="lesson";state.lessonId=id;render();root()?.scrollTo?.(0,0);return true;
   }
 
@@ -278,7 +282,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
   }
 
   function back(){
-    if(state.view==="lesson"){state.view="list";state.lessonId=null;render();root()?.scrollTo?.(0,0);return true;}
+    if(state.view==="lesson"&&lessonFromList){state.view="list";state.lessonId=null;lessonFromList=false;render();root()?.scrollTo?.(0,0);return true;}
     return close(true);
   }
 
@@ -309,7 +313,8 @@ export function createSpiritualLifeRuntime(win=globalThis){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}
     node?.remove?.();win?.document?.body?.classList?.remove?.("aoSpiritualLifeOpen");
     state.view="list";state.lessonId=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    if(returnToLearn&&win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)return true;
+    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});
     return true;
   }
 

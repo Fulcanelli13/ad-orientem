@@ -53,7 +53,10 @@ try {
    const status=await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1?.status?.());
    assert.equal(status.stageId,"MF04");
    await root.locator("[data-ao-mf-back]").tap();
-   await root.locator("[data-ao-mf-open-moments]").tap();
+   await root.locator('[data-ao-mf-moment-detail="AO.CARD.017"]').waitFor();
+   assert.equal(await root.locator('[data-ao-mf-moment-detail="AO.CARD.017"]').count(),1,
+     "Study Back must restore the actually visited Mass moment, not invent a list");
+   await root.locator("[data-ao-mf-moments-list]").tap();
    await root.locator('[data-ao-mf-moment="AO.CARD.030"]').tap();
    assert.equal(await root.locator('[data-ao-mf-moment-detail="AO.CARD.030"]').count(),1);
    assert.equal(await root.locator('[data-ao-mass-formation-anchor="MFS16"]').count(),1);

@@ -555,7 +555,7 @@ try{
   // The legacy phone suite already covered Spiritual Life, Glossary and all
   // eight traditional guides. These five cold entry cards were only listed,
   // not actually tapped. Exercise their public launchers and the Back/Close
-  // path before claiming all 16 current Formation module entry points.
+  // path before claiming 15/15 Formation module reachability.
   const remainingFormation=[
     {id:"learn.catechism.daily",family:"foundations",root:"#ao-daily-cate-root",exit:"daily"},
     {id:"learn.catechism",family:"foundations",root:"#ao-cate-root",exit:"catechism"},
@@ -597,12 +597,22 @@ try{
     }else{
       await page.locator(spec.root+" "+spec.exit).first().tap({timeout:10000});
     }
-    await page.waitForFunction(family=>{
-      const s=globalThis.AO_LEARN_APP_V1?.status?.();
-      return s?.open===true&&s?.child==null&&s?.family===family
-        &&!!document.getElementById("ao-learn-modular-root")
-        &&!document.getElementById("ao-learn-modular-root")?.hidden;
-    },spec.family,{timeout:14000});
+    try{
+      await page.waitForFunction(family=>{
+        const s=globalThis.AO_LEARN_APP_V1?.status?.();
+        return s?.open===true&&s?.child==null&&s?.family===family
+          &&!!document.getElementById("ao-learn-modular-root")
+          &&!document.getElementById("ao-learn-modular-root")?.hidden;
+      },spec.family,{timeout:14000});
+    }catch(error){
+      console.error("Observed Formation Back diagnostics",spec.id,await page.evaluate(()=>({
+        learn:globalThis.AO_LEARN_APP_V1?.status?.(),
+        surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+        familyVisible:!document.getElementById("ao-learn-modular-root")?.hidden,
+        active:document.activeElement?.outerHTML?.slice(0,180)
+      })));
+      throw error;
+    }
     assert.equal(await page.locator(spec.root).isVisible().catch(()=>false),false,"Closed Formation child remains visible: "+spec.id);
     await assertFocusSafe("Formation "+spec.id+" returned");
     entered.push(spec.id);
