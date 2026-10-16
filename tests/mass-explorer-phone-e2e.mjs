@@ -47,6 +47,29 @@ try{
       rootBottom:root?.getBoundingClientRect()?.bottom};
   });
   assert.equal(baseline.count,32,width+" cannot navigate all 32 original Guide moments");
+  assert.equal(baseline.explorer?.indexView,"map",width+" must open the visual Map by default");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-phase]").count(),5,
+    width+" missing one of five phase navigation controls");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
+    width+" lost a canonical text in expanded map ownership");
+  if(width===390){
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-phase="2"]').click();
+    const phase=page.locator('#ao-mx-phase-canon h2');
+    assert.equal(await phase.evaluate(el=>el===document.activeElement),true,
+      "Five-phase jump must put keyboard focus in the chosen phase");
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-view="list"]').click();
+    assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map]").count(),0);
+    assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-moment]").count(),32);
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-view="map"]').click();
+    assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map]").count(),1);
+    const offertory=page.locator('#ao-mass-explorer-root [data-ao-mx-stop="AO.CARD.010"]');
+    await offertory.locator("summary").click();
+    await offertory.locator('[data-ao-mx-map-block="AO.SM.B031"]').click();
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.010"]').count(),1);
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"][aria-current="true"]').count(),1);
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-map="sung"]').count(),1);
+  }
   assert.equal(baseline.shell,"learn.mass_explorer");
   assert.equal(baseline.explorer?.sourceBlocks,96);
   assert.ok(baseline.overflow<=1,width+" px Explorer has unwanted horizontal overflow");
@@ -106,6 +129,8 @@ try{
   }
   await page.locator('#ao-mass-explorer-root [data-ao-mx-back]').click();
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-moment]").count(),32);
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map]").count(),1,
+    "Back must restore the original Map rather than invent a new Mass route");
   // Test the already supported French UI fallback without synthesising any
   // missing French prayer or English-only Guide commentary.
   await page.evaluate(()=>{document.documentElement.lang="fr"});
@@ -121,7 +146,21 @@ try{
   assert.equal(errors.length,0,width+" px JavaScript errors: "+errors.join(" | "));
   await context.close();
  }
- console.log("PASS Mass Explorer canonical app: 320/390/430/768/1280px, 32 moments, B031 Latin/EN/FR, Scripture links, original family return");
+ // A separate browser journey confirms Map → real Mass preparation.
+ // It must not launch or reposition an active ritual card.
+ const handoff=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ await handoff.goto("http://127.0.0.1:4211/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await handoff.locator('[data-ao-app-surface="learn"]').click();
+ await handoff.locator('[data-ao-learn-family="liturgy-tradition"]').first().click();
+ await handoff.locator('[data-ao-learn-module="learn.mass_explorer"]').click();
+ await handoff.locator('#ao-mass-explorer-root [data-ao-mx-open-mass]').click();
+ await handoff.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:15000});
+ assert.equal(await handoff.locator("#ao-mass-explorer-root").count(),0,
+    "Mass shell handoff left an orphan Explorer overlay");
+ assert.notEqual(await handoff.evaluate(()=>globalThis.AO_R17_ACTIVE_MASS?.readerPosition?.sectionId||null),
+    "AO.CARD.010","Map must never invent an exact reader jump");
+ await handoff.close();
+ console.log("PASS Mass Map + Explorer canonical app: five phases, 32 moments, 96 source blocks, direct prayer navigation, source return, 320/390/430/768/1280px, Mass-preparation handoff");
 }finally{
  await browser?.close();await new Promise(ok=>server.close(ok));
 }
