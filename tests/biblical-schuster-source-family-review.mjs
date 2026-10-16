@@ -507,4 +507,30 @@ assert.equal(fam.counts.earlyEnglishSadlierAtlasTopicCandidatesExpanded,87);
 assert.equal(fam.counts.earlyEnglishSadlierAtlasTopicCandidateChaptersExpanded,81);
 assert.equal(fam.counts.earlyEnglishSadlierConfirmedVerseAlignedNew,0);
 
+// A physical scan lacuna is not merely a failed Roman-numeral OCR boundary.
+const physicalMissing=fam.english1908MissingPrintedLeaves;
+assert.deepEqual(physicalMissing.PDFPagesObserved,[398,399]);
+assert.deepEqual(physicalMissing.printedPagesObserved,[383,386]);
+assert.deepEqual(physicalMissing.missingOriginalPrintedPages,[384,385]);
+assert.equal(physicalMissing.knownSourceScanGap,true);
+assert.deepEqual(physicalMissing.affectedChapterIds,["SCHUSTER-EN-1908-NT-LXXXVIII","SCHUSTER-EN-1908-NT-LXXXIX"]);
+assert.equal(physicalMissing.humanReconstructionForbidden,true);
+const v3Reader=fam.english1908BulkReaderV3PhysicalGapAndLayout;
+assert.equal(v3Reader.mixedHeuristicChaptersExamined,13);
+assert.equal(v3Reader.exactRecognizedPageRunningHeadersRemovedFromResearchDisplay,13);
+assert.equal(v3Reader.chapterDraftTextLexicalCorrections,0);
+assert.equal(v3Reader.rawSourceTextChanged,false);
+assert.equal(v3Reader.otherNonMixedOCRChaptersChanged,false);
+assert.equal(v3Reader.prototypeSHA256.length,64);
+assert.equal(v3Reader.workingDataSHA256.length,64);
+assert.equal(v3Reader.diagnosticSHA256.length,64);
+assert.equal(v3Reader.preservesProgressStorageKey,"AO_SCHUSTER_1908_PREVIEW_READING_STATE_v1");
+assert.equal(v3Reader.originalSourceProseAddedToGitHub,false);
+assert.equal(v3Reader.appDeployed,false);
+assert.equal(v3Reader.rightsGateRemainsClosed,true);
+assert.equal(fam.counts.earlyEnglishSadlierOriginalPrintedPagesMissingFromScan,2);
+assert.equal(fam.counts.earlyEnglishSadlierMixedOCRChaptersLayoutExamined,13);
+assert.equal(fam.counts.earlyEnglishSadlierMixedOCRRunningHeadingsRemoved,13);
+assert.equal(fam.counts.earlyEnglishSadlierMixedOCRLiteralWordCorrections,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
