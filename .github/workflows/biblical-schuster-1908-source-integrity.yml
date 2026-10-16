@@ -1,0 +1,29 @@
+name: Biblical Schuster historical source integrity (research only)
+
+on:
+  push:
+    branches:
+      - feature/biblical-atlas-current-main-convergence-20261012
+    paths:
+      - data/explore/biblical-schuster-knecht-source-family-review.v1.json
+      - data/explore/biblical-reading-continuity-review.v1.json
+      - data/explore/biblical-73-book-event-denominator-audit.v1.json
+      - data/explore/biblical-existing-author-selection-review.v1.json
+      - tests/biblical-schuster-source-family-review.mjs
+      - .github/workflows/biblical-schuster-1908-source-integrity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-edition-source-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate original 1908 source boundaries and editorial holds
+        run: node tests/biblical-schuster-source-family-review.mjs
