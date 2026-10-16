@@ -27,10 +27,11 @@ try {
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:45000});
    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"))).ok,true);
-   assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.mass")),true);
+   assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.mass",{view:"moments"})),true);
    const root=page.locator("#ao-mass-formation-root");
    await root.waitFor({state:"visible",timeout:15000});
-   await root.locator("[data-ao-mf-open-moments]").tap();
+   // Explicit older Guide view remains available for research/deep-link
+   // parity, even though the ordinary public button now uses Mass Explorer.
    await root.locator("[data-ao-mf-moment]").first().waitFor({state:"visible",timeout:15000});
    assert.equal(await root.locator("[data-ao-mf-moment]").count(),32);
    await root.locator('[data-ao-mf-moment="AO.CARD.017"]').tap();
@@ -60,6 +61,17 @@ try {
    await root.locator('[data-ao-mf-moment="AO.CARD.030"]').tap();
    assert.equal(await root.locator('[data-ao-mf-moment-detail="AO.CARD.030"]').count(),1);
    assert.equal(await root.locator('[data-ao-mass-formation-anchor="MFS16"]').count(),1);
+   // Backward compatible source-owner route is not the public duplicate:
+   // verify the same old Formation page now leads to the canonical Mass Map.
+   await root.locator('[data-ao-mf-close]').tap();
+   assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.mass")),true);
+   await root.locator("[data-ao-mf-open-moments]").tap();
+   await page.locator("#ao-mass-explorer-root").waitFor({state:"visible",timeout:15000});
+   assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-moment]').count(),32);
+   assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-map-block]').count(),96);
+   assert.equal(await page.locator('#ao-mass-formation-root').count(),0,
+     "Redundant legacy Guide overlay must be retired when public Map opens");
+   await page.locator('#ao-mass-explorer-root [data-ao-mx-close]').tap();
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=2,"Phone horizontal overflow "+overflow+" at "+width);
    assert.deepEqual(errors.filter(e=>/TypeError|SyntaxError|ReferenceError/.test(e)),[]);
