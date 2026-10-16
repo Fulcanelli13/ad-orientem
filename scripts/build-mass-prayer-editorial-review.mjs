@@ -28,7 +28,11 @@ const chapter=(rec,index)=>{
  const original=source.units.map(unit=>{
   if(!unit.latin&&!unit.english)return "";
   const action=unit.clock==="PRIEST_ACTION";
-  return '<div class="sourceLine'+(action?" action":"")+'" data-cue="'+esc(unit.cue_id)+'">'+
+  const voiceLabels={PRIEST_PRIVATE:"Priest · quiet",PUBLIC_TEXT:"Public text",USER_RESPONSE:"Response",
+      SCHOLA_PUBLIC:"Schola",PRIEST_ACTION:"Priest action"};
+  return '<div class="sourceLine'+(action?" action":"")+'" data-cue="'+esc(unit.cue_id)+
+    '" data-source-voice="'+esc(unit.clock)+'">'+
+     '<small class="voiceLabel">'+esc(voiceLabels[unit.clock]||unit.clock)+'</small>'+
      '<p lang="la">'+esc(unit.latin||"")+'</p><p lang="en">'+esc(unit.english||"")+'</p>'+
      '</div>';
  }).join("");
@@ -70,7 +74,7 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '.entryContent{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:17px;padding:9px 0 25px}'+
  '.original,.commentary{border:1px solid var(--line);padding:14px;border-radius:10px;min-width:0}.original{background:var(--panel)}'+
  '.original h3{font:.74rem/1.5 system-ui;color:var(--gold);margin:0 0 15px}.sourceLine{margin:0 0 13px;border-bottom:1px solid var(--line);padding-bottom:7px}'+
- '.sourceLine p{margin:0 0 5px;overflow-wrap:anywhere}.sourceLine p[lang=en]{color:var(--muted);font-size:.91rem}.sourceLine.action{opacity:.76}'+
+ '.voiceLabel{display:block;margin-bottom:6px;color:var(--gold);font:600 .67rem/1.35 system-ui;letter-spacing:.04em}.sourceLine p{margin:0 0 5px;overflow-wrap:anywhere}.sourceLine p[lang=en]{color:var(--muted);font-size:.91rem}.sourceLine.action{opacity:.76}'+
  '.commentary h3{font-size:1.35rem;line-height:1.3;margin:9px 0}.commentary h4{font:600 .8rem/1.5 system-ui;color:var(--gold);margin:17px 0 5px}'+
  '.commentary p{margin:7px 0 12px}.commentary .direct{border-top:1px solid var(--line);padding-top:12px;color:var(--gold);font-size:.8rem}'+
  '.held{margin-top:25px;padding:17px;border:1px solid var(--line);border-radius:10px}.held h2{margin:0}.held li{padding:5px 0}.held code{color:var(--gold)}'+
@@ -103,6 +107,9 @@ assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,0);
 assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,52);
 assert.equal((html.match(/OPTIONAL LOCAL CUSTOM/g)||[]).length,3);
 assert.equal((html.match(/<li><strong>/g)||[]).length,3);
+assert.ok(html.includes('data-source-voice="USER_RESPONSE"'));
+assert.ok(html.includes('data-source-voice="PRIEST_PRIVATE"'));
+assert.ok(html.includes('data-source-voice="SCHOLA_PUBLIC"'));
 const out=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 mkdirSync(dirname(out),{recursive:true});
 writeFileSync(out,html);
