@@ -54,14 +54,14 @@ try{
    await page.locator('#ao-find-modular-root .aoSaintPlaceSheet [data-saint-id="saint:therese-of-lisieux"]')
      .waitFor({state:"visible",timeout:80000});
    const after=await page.evaluate(()=>({
-     selected:AO_FIND_APP_V1.status().selectedSaintProfileId,
+     renderedSaintId:document.querySelector("#ao-find-modular-root .aoSaintPlaceSheet [data-saint-id]")?.getAttribute("data-saint-id"),
      lens:AO_FIND_APP_V1.status().lens,
      day:AO_RUNTIME_V8.store.getState().selectedDate,
      main:AO_RUNTIME_V8.store.getState().resolution.day.main.id,
      properPath:AO_RUNTIME_V8.store.getState().resolution.proper?.data?.sourcePath??null,
      shown:!!document.querySelector('#ao-find-modular-root .aoSaintPlaceSheet [data-saint-id="saint:therese-of-lisieux"]')
    }));
-   assert.equal(after.selected,"saint:therese-of-lisieux");
+   assert.equal(after.renderedSaintId,"saint:therese-of-lisieux");
    assert.equal(after.lens,"saints");
    assert.equal(after.day,before.day);
    assert.equal(after.main,before.main,"The profile must not override the canonical 1962 principal");
