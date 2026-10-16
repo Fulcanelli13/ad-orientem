@@ -1,0 +1,33 @@
+name: Sacred Art Protected Selection Photo Recovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - tools/calendar/acquire-sacred-art-protected-oct12-photos.py
+      - .github/workflows/sacred-art-protected-oct12-photo-recovery.yml
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow requests
+      - name: Acquire genuine source-image bytes for protected selections
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-protected-oct12-photos.py
+          python tools/calendar/acquire-sacred-art-protected-oct12-photos.py
+      - name: Save SHA-backed image proofs and unverified identity holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-protected-oct12-image-recovery
+          path: |
+            artifacts/sacred-art-oct12-image-recovery/
+            docs/research/review-galleries/acquired/
+          retention-days: 30
+          if-no-files-found: warn
