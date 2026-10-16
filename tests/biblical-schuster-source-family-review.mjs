@@ -558,4 +558,30 @@ assert.equal(narrativeEvidence.counts.activeAppAtlasLinks,0);
 assert.equal(narrativeEvidence.policy.noAppChanges,true);
 assert.equal(narrativeEvidence.policy.noAIAuthoredNarrative,true);
 
+
+const loci=j("data/explore/biblical-schuster-1908-scripture-episode-anchors.v1.json");
+const approvedAtlasKeys=new Set(canon.events.map(e=>e.eventKey));
+assert.equal(loci.counts.sourceChaptersExamined,14);
+assert.equal(loci.counts.episodeLociExamined,20);
+assert.equal(loci.records.length,20);
+assert.equal(loci.counts.ocrBodyMarkersLocated,40);
+assert.equal(new Set(loci.records.map(r=>r.schusterChapterId)).size,14);
+assert.equal(loci.records.reduce((n,r)=>n+r.verseAnchors.length,0),40);
+assert.equal(loci.counts.canonicalAtlasEventsTouched,15);
+assert.equal(loci.counts.distinctAtlasEventKeys,15);
+assert.equal(loci.counts.supplementaryNonCanonicalOrHarmonyLoci,5);
+assert.equal(loci.counts.atlasEventRangeMismatches,1);
+assert.equal(loci.rangeMismatchCases[0].chapter,"SCHUSTER-EN-1908-NT-XXXVII");
+assert.ok(loci.records.every(r=>r.verseAnchors.every(a=>a.sourceMatch==="EXACT_NORMALIZED_OCR_TERM_PRESENT"&&a.sourcePdfPage>0)));
+assert.ok(loci.records.every(r=>r.fullVerseCoverageCertified===false&&r.wordingCharacterProofread===false&&r.appNavigationEnabled===false));
+assert.ok(loci.records.every(r=>!r.canonicalEventKey||approvedAtlasKeys.has(r.canonicalEventKey)));
+assert.ok(loci.records.some(r=>r.schusterChapterId==="SCHUSTER-EN-1908-OT-I"&&r.scripturePassage==="Genesis 2:1–3"));
+assert.ok(loci.records.some(r=>r.schusterChapterId==="SCHUSTER-EN-1908-NT-LXVII"&&r.scripturePassage==="Luke 22:43–44"));
+assert.ok(loci.records.some(r=>r.schusterChapterId==="SCHUSTER-EN-1908-NT-LXXXII"&&r.scripturePassage==="Acts 1:12–26"));
+assert.ok(loci.records.some(r=>r.schusterChapterId==="SCHUSTER-EN-1908-NT-XC"&&r.scripturePassage==="Acts 11:19–26"));
+assert.equal(loci.counts.fullyCertifiedVerseCoverage,0);
+assert.equal(loci.counts.activatedProductionReaderLinks,0);
+assert.equal(loci.constraints.noProductionRelease,true);
+assert.equal(loci.constraints.missingSchusterPrintedPages384_385RemainUnresolved,true);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
