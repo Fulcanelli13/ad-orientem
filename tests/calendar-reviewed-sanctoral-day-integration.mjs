@@ -66,7 +66,8 @@ assert.ok(!cal.includes("jurisdiction:\"US\""),"Cannot silently infer user's jur
 
 const home=readFileSync(new URL("../src/home/today-v2-sections.js",import.meta.url),"utf8");
 assert.ok(home.includes('data-home-calendar data-home-calendar-view="day"'),"Home must keep canonical Calendar day entry");
-assert.ok(!home.includes('reviewed-sanctoral-cards.js'),"Do not compute a second, conflicting saint calendar on Home");
-assert.ok(!home.includes('sanctoral-day-ui.js'),"Do not duplicate the supplementary Calendar panel on Home");
+assert.ok(home.includes('reviewed-sanctoral-cards.js'),"Home uses Calendar's exact reviewed modern-saint projection, not a parallel resolver");
+assert.ok(home.includes('living-sanctoral-read-model.js'),"Home shares the source-owned lazy Calendar dataset");
+assert.ok(!home.includes('sanctoral-day-ui.js'),"Do not duplicate the full Calendar panel on Home");
 
 console.log("Secondary Calendar saints: PASS (16-source read-model, 1962 isolation, safe EN/FR text and links)");
