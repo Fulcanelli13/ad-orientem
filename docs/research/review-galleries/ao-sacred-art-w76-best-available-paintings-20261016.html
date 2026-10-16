@@ -99,7 +99,7 @@ function render(){
   const approved=all.filter(c=>cardValue(c)===5 && c.rating!==null).sort((a,b)=>Number(b.preferred)-Number(a.preferred));
   const sourceLeads=leads.filter(c=>c.sid===s.id);
   if(group!=="all"&&s.group!==group)continue;
-  if(mode==="review"&&!newCards.some(isPending))continue;
+  if(mode==="review"&&!newCards.length)continue;
   if(mode==="weak"&&s.previewBaseline>=2)continue;
   if(mode==="nofive"&&!["SNT-EV-01","SNT-DC-25","SNT-DC-26","SNT-DC-28"].includes(s.id))continue;
   if(!matches(s,all,sourceLeads,q))continue;
