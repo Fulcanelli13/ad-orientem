@@ -161,3 +161,41 @@ This bulk tranche added **124 first-party exact Scripture-reference-to-existing-
 - All original source references and original source URLs remain in the research metadata. Existing Bible editions, 37/151 registry, native Bible reader, Schuster research and deployed app remain unchanged. **0 final approved excerpts, 0 imported Scripture verse prose, 0 release.**
 
 **Next:** stop indiscriminate collecting. Target additional independent 3rd-family confirmations for the **68 events with fewer than two families**; prioritize Catholic-specific references, the 3 remaining gaps, then source-by-source passage boundary/shortening comparison. Popularity/editorial selection comes after that qualification pass.
+
+
+## Phase 6 — ABS curated editorial source harvest + strict verse-boundary audit (v6 current)
+
+**Canonical master:** `data/explore/biblical-pericope-comparative-full-master.v6.json` — **460** rows, 151 existing Atlas event IDs, 37 existing reading sections. The earlier v5 is retained as a historical snapshot, **not** an independent data owner. Secondary analysis: `data/explore/biblical-pericope-exact-boundary-agreement.v6.json` (151 per-event exact-range comparisons).
+
+**Publisher-original source additions (28 rows):**
+- **25** [American Bible Society *Start Here* with Deuterocanonicals/Apocrypha](https://www.americanbible.org/uploads/resources/Start-Here-Deutercanonicals.pdf), revised 2017 edition, ISBN 978-1-941448-49-6, expressly selected named-story and famous-passage tables, printed pp.26–31. Publisher-original reading boundaries retained, including broader than event and verse-shorter-than-event cases.
+- **1** Catholic Roman Lectionary [Fifth Sunday of Easter, Year B, Lectionary 53](https://bible.usccb.org/bible/readings/050315.cfm): exact *Acts 9:26-31*, which explicitly narrates Saul being sent to Tarsus. This directly resolves the previous zero-source Atlas event index 131 without counting another liturgical family.
+- **1** [ABS 22 January 2026 publisher-selected daily reading](https://www.americanbible.org/engage/daily-bible-reading/articles/acts-31-10-2/): *Acts 3:1–10*, direct Peter healing passage.
+- **1** [ABS *Seven Female Heroes in the Bible*](https://www.americanbible.org/engage/bible-blog/articles/7-female-heroes-in-the-bible/): author explicitly lists *Acts 9:36–43*, Tabitha.
+
+**Family independence:** `ABS45`, `ABS_START`, `ABS_DAILY` and `ABS_WOMEN` are FOUR named publisher publications, but **one independent editorial publisher family**, `American Bible Society Deuterocanon`. Do not count multiple ABS URLs or independently formatted historical publications as additional votes. `CHRON152` excluded as unverified; `MISSAL62` remains provisional and is not counted as an independent published-editor selection. No Bible translation reopened and no Bible text imported.
+
+**Recomputed event-family coverage** (supersedes v5):
+
+| Metric | v5 | v6 |
+| --- | ---: | ---: |
+| Published source event / variant records | 432 | **460** |
+| Events with ≥1 qualified independently edited source | 148 /151 | **149 /151** |
+| Events with ≥2 independent editorial families | 83 /151 | **107 /151** |
+| Events with ≥3 independent editorial families | 56 /151 | **57 /151** |
+| Events with 0 qualified original-publisher reference | 3 | **2** |
+
+**Two actual remaining source-harvest gaps:** Daniel 14:1–22 *Bel*, and Daniel 14:23–42 *the dragon*. *Start Here* briefly mentions Bel and the Dragon in its book-description section, but has no **purpose-selected publisher passage** for either event; an automatically generated Daniel text page or reference chapter heading is not selection evidence. `Prayer of Azariah 23–68` is held for Greek/Douay/Vulgate Daniel chapter-and-verse crosswalk and canticle versus furnace-event distinction. Do not fill the two gaps from whole-Bible schedules or editorial inference.
+
+**New strict verse-boundary analysis (NO final editorial choices):**
+- **107** events have general story subject consensus across two or more independent original editors.
+- **27** events have at least two qualified original editors selecting an **identical, unambiguously parsed, simple same-book/same-chapter start–end verse range**.
+- **23** of those have publisher ranges also **exactly matching the pre-existing canonical Atlas anchor**. This matching does **not** certify that the Atlas range is the correct short reading; it establishes only literal agreement.
+- **257** qualified published rows could be conservatively parsed as simple same-book/same-chapter verse ranges. *Chapter-only, cross-chapter, disjoint published liturgical cuts, verse-letter boundaries not literally identical, Gospel parallels and numbering-crosswalk held* cannot be silently treated as boundary agreements. This makes **27 a conservative lower-bound research count**, not a final estimate of quality or actual abridgements.
+
+One key impact: the new family consensus counts cannot be misrepresented as source-by-source short-verse agreement. Even for an event selected by six editors, the shortest faithful exact passage requires subsequent editorial review.
+
+**Research validations:** `tests/biblical-pericope-source-master-v6.mjs` asserts 460 original publisher records, row/section identity for canonical 37/151 registry, exact ABS source-family identity, qualification totals, 2 held Daniel 14 events, 27 conservative common range groups, 23 atlas-range matches, no prose or production changes. Execution in a complete repository checkout / CI remains an independent confirmation gate.
+
+**Current decision:** Source harvesting has nearly universal general-event coverage and strong 2-family coverage. Next step should focus **editorial scope coherence/short/long boundaries on the 107 already plural-source events**, not unbounded new family proliferation or deciding a winner by source frequency. Later compose user-editable short/extended/full *reference* choices, subject to the existing Bible reader, translation and Catholic textual fidelity gates; no public app changes yet.
+
