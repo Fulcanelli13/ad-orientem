@@ -8,12 +8,14 @@ import {massMomentExistingGuideSections,massMomentStudyLinks} from "./mass-momen
 import {massFormationScriptureHtmlForAnchorIds} from "./mass-formation-scripture-context.js";
 import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
 import {massMapHtml,massMapCss,projectMassMap,MASS_MAP_PHASES,massMapPhaseIndex} from "./mass-map.js";
+import {massStudyStages,massStudyPathsHtml,massStudyPathsCss} from "./mass-study-paths.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
 export const MASS_EXPLORER_ROOT="ao-mass-explorer-root";
 const TEXT_URL=new URL("../../data/presentation/reader-text-sung.v1.json",import.meta.url);
 const FRENCH_URL=new URL("../../data/presentation/reader-french-ordinary.v1.json",import.meta.url);
+const FORMATION_URL=new URL("../../data/learn/mass-formation-campion.v1.json",import.meta.url);
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick=(fr,en,french)=>fr?french:en;
 const keys=["PRE.ASPERGES",...Array.from({length:30},(_,i)=>"AO.CARD."+String(i+1).padStart(3,"0")),"POST.MASS"];
@@ -26,7 +28,7 @@ function assertCorpus(corpus,french){
 }
 
 /** No new Mass IDs: Guide macro identity and AO.SM source blocks stay distinct. */
-export function buildMassExplorerCatalog(guideRegistry,corpus,french){
+export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=null){
   validateGuideRegistry(guideRegistry);
   assertCorpus(corpus,french);
   const byKey=new Map(),byBlock=new Map();
@@ -48,7 +50,10 @@ export function buildMassExplorerCatalog(guideRegistry,corpus,french){
   }
   if(!byBlock.size)throw new Error("Missing canonical source blocks");
   for(const entry of byKey.values())Object.freeze(entry.blocks);
-  return Object.freeze({byKey,byBlock,frenchByCue:french.byCue,sequence:Object.freeze([...keys]),source:"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT",crosswalkStatus:"P0_PENDING"});
+  const formationStages=formation?massStudyStages(formation):Object.freeze([]);
+  return Object.freeze({byKey,byBlock,frenchByCue:french.byCue,formationStages,
+    sequence:Object.freeze([...keys]),source:"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT",
+    crosswalkStatus:"P0_PENDING"});
 }
 
 /**
@@ -72,12 +77,13 @@ async function fetchJson(url,fetchImpl){
   return response.json();
 }
 export async function loadMassExplorerCatalog({fetchImpl=globalThis.fetch}={}){
-  const [guides,text,fr]=await Promise.all([
+  const [guides,text,fr,formation]=await Promise.all([
     loadGuideRegistry({fetchImpl}),
     fetchJson(TEXT_URL,fetchImpl),
-    fetchJson(FRENCH_URL,fetchImpl)
+    fetchJson(FRENCH_URL,fetchImpl),
+    fetchJson(FORMATION_URL,fetchImpl)
   ]);
-  return buildMassExplorerCatalog(guides.registry,text,fr);
+  return buildMassExplorerCatalog(guides.registry,text,fr,formation);
 }
 
 function guideSources(guide,fr){
@@ -86,7 +92,7 @@ function guideSources(guide,fr){
   const urls=String(guide.sourceLinks||"").split(";").map(x=>x.trim())
     .filter(x=>sourceReferenceSafeUrl(x)).slice(0,10);
   if(!urls.length)return "";
-  return '<details class="aoMXDetails"><summary>'+pick(fr,"Guide bibliography","Bibliographie du Guide")+'</summary>'+
+  return '<details id="ao-mx-sources" class="aoMXDetails" data-ao-mx-anchor="sources"><summary>'+pick(fr,"Guide bibliography","Bibliographie du Guide")+'</summary>'+
     '<p>'+esc(guide.sourceLine)+'</p><p class="aoMXQuiet">'+pick(fr,
     "Contextual document links only; exact passage, edition and author claims require separate review.",
     "Liens documentaires contextuels ; le passage exact, l’édition et les attributions demandent une vérification distincte.")+'</p>'+
@@ -96,7 +102,7 @@ function guideSources(guide,fr){
 
 function sourceBlockHtml(catalog,source,fr){
   if(!source)return "";
-  if(source.Proper_Slot)return '<section class="aoMXText"><h2>'+esc(source.Title)+'</h2><p class="aoMXQuiet">'+esc(pick(fr,
+  if(source.Proper_Slot)return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer"><h2>'+esc(source.Title)+'</h2><p class="aoMXQuiet">'+esc(pick(fr,
     "This is a variable Proper text. It must be supplied by the selected Mass; no generic text is substituted.",
     "Ce texte du Propre varie selon la Messe choisie ; aucun texte générique n’est substitué."))+'</p></section>';
   const rows=(source.units||[]).filter(unit=>unit?.latin||unit?.english).map(unit=>{
@@ -116,7 +122,7 @@ function sourceBlockHtml(catalog,source,fr){
        '<p class="aoMXQuiet">'+pick(fr,"Translation unavailable for this cue.","Traduction indisponible pour ce segment.")+'</p>')+
     '</div>';
   }).join("");
-  return '<section class="aoMXText" aria-label="'+esc(pick(fr,"Canonical liturgical text","Texte liturgique canonique"))+'">'+
+  return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer" aria-label="'+esc(pick(fr,"Canonical liturgical text","Texte liturgique canonique"))+'">'+
     '<h2>'+esc(source.Title)+'</h2>'+
     (source.Branch_Status&&source.Branch_Status!=="NORMATIVE_1962"?
       '<p class="aoMXQuiet">'+esc(pick(fr,"Conditional ceremonial branch · ","Branche cérémonielle conditionnelle · ")+source.Branch_Status)+'</p>':"")+
@@ -140,7 +146,8 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
   return '<main class="aoMXWrap"><div class="aoMXHero"><small>'+pick(french,"UNDERSTAND THE MASS","COMPRENDRE LA MESSE")+'</small>'+
     '<h1>'+pick(french,"Mass Explorer","Explorer la Messe")+'</h1><p>'+pick(french,"Follow the Mass in its proper order, then open the original prayers and existing approved Guide explanations. This study reader does not change LIVE, Simple or Missal.",
      "Parcourez la Messe dans son ordre liturgique, puis ouvrez les prières originales et les explications du Guide existant. Ce lecteur d’étude ne modifie pas les modes LIVE, Simple ou Missel.")+
-    '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+rows+'</main>';
+    '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+
+    rows+massStudyPathsHtml(catalog.formationStages,{french})+'</main>';
 }
 export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={}){
   const moment=getMassExplorerMoment(catalog,key,{form:"SUNG"});
@@ -150,25 +157,44 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
   const positions=catalog.sequence,idx=positions.indexOf(key);
   const guideSections=massMomentExistingGuideSections(guide);
   const links=massMomentStudyLinks(key);
+  const relatedStage=catalog.formationStages.find(x=>x.id===links.stageId);
+  const relatedName=relatedStage?
+    (french?relatedStage.title.fr:relatedStage.title.en):links.stageId;
+  const hasBibliography=String(guide.sourceLinks||"").split(";").some(x=>sourceReferenceSafeUrl(x.trim()));
+  const available=[
+    ["prayer",pick(french,"Prayer","Prière")],
+    ["guide",pick(french,"Explanation","Explication")],
+    ...(links.scriptureAnchorIds.length?[["scripture",pick(french,"Scripture","Écritures")]]:[]),
+    ...(hasBibliography?[["sources",pick(french,"References","Références")]]:[]),
+    ...(links.stageId?[["course",pick(french,"Thematic study","Étude thématique")]]:[])
+  ];
+  const readingNav='<nav class="aoMXReadingNav" aria-label="'+pick(french,"Explore this Mass moment","Explorer cette étape de la Messe")+'">'+
+    available.map(([id,title])=>'<button type="button" data-ao-mx-jump="'+id+'">'+title+'</button>').join("")+'</nav>';
   return '<main class="aoMXWrap aoMXMoment" data-ao-mx-current="'+esc(key)+'">'+
    '<small class="aoMXKicker">'+esc(pick(french,"SUNG MASS · ORIGINAL GUIDE","MESSE CHANTÉE · GUIDE D’ORIGINE"))+'</small>'+
    '<h1>'+esc(guide.moment)+'</h1><p class="aoMXLead">'+esc(guide.short)+'</p>'+
+   readingNav+
    (blocks.length?'<nav class="aoMXBlockIndex" aria-label="'+esc(pick(french,"Prayers and ceremonies","Prières et cérémonies"))+'">'+
      blocks.map(b=>'<button type="button" data-ao-mx-block="'+esc(b.Block_ID)+'" aria-current="'+(b===selected?"true":"false")+'">'+esc(b.Title)+'</button>').join("")+
      '</nav>':'<p class="aoMXQuiet">'+pick(french,"This Guide moment has no ordinary Sung source block; ceremony depends on the selected rite.","Cette étape du Guide ne comporte pas de texte ordinaire de la Messe chantée ; la cérémonie dépend du rite choisi.")+'</p>')+
    sourceBlockHtml(catalog,selected,french)+
-   '<details class="aoMXDetails" open><summary>'+pick(french,"Guide explanation","Explication du Guide")+'</summary>'+
+   '<details id="ao-mx-guide" class="aoMXDetails" data-ao-mx-anchor="guide" open><summary>'+pick(french,"Guide explanation","Explication du Guide")+'</summary>'+
      (french?'<p class="aoMXQuiet" lang="fr">Le commentaire du Guide est actuellement disponible en anglais ; aucune traduction française n’est inventée.</p>':"")+
      '<p class="aoMXQuiet">'+pick(french,"Existing Guide commentary for the broader Mass moment, not an independently certified commentary on every individual prayer.",
      "Commentaire existant du Guide pour l’ensemble de l’étape, non une analyse distinctement certifiée de chaque prière.")+'</p>'+
      guideSections.map(x=>'<section><h2>'+esc(x.heading)+'</h2><p>'+esc(x.text)+'</p></section>').join("")+'</details>'+
-   (links.scriptureAnchorIds.length?'<section class="aoMXRelated"><p class="aoMXQuiet">'+pick(french,
+   (links.scriptureAnchorIds.length?'<section id="ao-mx-scripture" data-ao-mx-anchor="scripture" class="aoMXRelated"><h2>'+pick(french,"Scripture in context","Écritures en contexte")+'</h2><p class="aoMXQuiet">'+pick(french,
      "Curated Scripture parallels for this broader Guide moment; relationship labels appear with each passage.",
      "Rapprochements bibliques étudiés pour l’étape entière du Guide ; chaque lien précise son rapport au texte.")+'</p>'+
      massFormationScriptureHtmlForAnchorIds(links.scriptureAnchorIds,{french})+'</section>':"")+
    guideSources(guide,french)+
-   (links.stageId?'<section class="aoMXFormationLink"><button type="button" data-ao-mx-study="'+esc(links.stageId)+'">'+
-     esc(pick(french,"Open related Formation lesson · ","Ouvrir la leçon de Formation · ")+links.stageId)+' →</button></section>':"")+
+   (links.stageId?'<section id="ao-mx-course" data-ao-mx-anchor="course" class="aoMXFormationLink">'+
+     '<h2>'+pick(french,"Explore the theme in depth","Approfondir le thème")+'</h2>'+
+     '<p class="aoMXQuiet">'+pick(french,
+       "This existing source-backed Formation lesson contains the theological study, Scripture comparisons and its own cited sources.",
+       "Cette leçon de Formation déjà sourcée contient l’étude théologique, les rapprochements bibliques et ses références.")+'</p>'+
+     '<button type="button" data-ao-mx-study="'+esc(links.stageId)+'">'+
+     esc(relatedName)+' →</button></section>':"")+
    '<nav class="aoMXPreviousNext">'+
      '<button type="button" data-ao-mx-prev '+(idx<=0?"disabled":"")+'>'+pick(french,"Previous","Précédent")+'</button>'+
      '<button type="button" data-ao-mx-index>'+pick(french,"All moments","Toutes les étapes")+'</button>'+
@@ -190,7 +216,8 @@ export function massExplorerCss(){
   ".aoMXText{margin:8px 0 25px;padding:8px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXText h2,.aoMXDetails h2{font:500 1.2rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXTextRow{padding:12px 0;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXLatin{font:400 1.15rem/1.7 var(--ao-font-body,Georgia,serif);margin:0 0 9px}.aoMXTranslation{font:400 .99rem/1.6 var(--ao-font-body,Georgia,serif);margin:0;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXAction{margin:8px 0;padding:12px 14px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-surface-1,#101821);color:var(--ao-text-muted,#adb2b7)}.aoMXAction small{display:block;margin:0 0 5px;color:var(--liturgical,#c9ad78);font:600 .65rem/1.4 var(--ao-font-ui,system-ui);letter-spacing:.06em;text-transform:uppercase}.aoMXAction p{margin:0;font:400 .9rem/1.55 var(--ao-font-body,Georgia,serif);white-space:pre-line}",
   ".aoMXIndexSwitch button{min-height:44px;padding:9px 13px;border:1px solid var(--liturgical,#c9ad78);background:transparent;color:var(--liturgical,#c9ad78);border-radius:9px;cursor:pointer}",
-  massMapCss(),
+  massMapCss(),massStudyPathsCss(),
+  ".aoMXReadingNav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;margin:12px 0 18px;padding:7px 0}.aoMXReadingNav button{flex:0 0 auto;min-height:40px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:9px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.75rem/1.35 var(--ao-font-ui,system-ui);cursor:pointer}#ao-mass-explorer-root [data-ao-mx-anchor]{scroll-margin-top:85px}.aoMXFormationLink{margin:22px 0}.aoMXFormationLink h2,.aoMXRelated>h2{font:500 1.35rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXFormationLink p{line-height:1.6;margin:7px 0 11px}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
   ".aoMXFormationLink button{width:100%;min-height:48px;padding:12px 15px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);border:1px solid var(--ao-rule,#393c40);border-radius:10px;text-align:left;font:500 .85rem/1.5 system-ui;cursor:pointer}",
@@ -217,7 +244,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       '<div><small>FORMATION</small><strong>'+pick(fr,"Mass Explorer","Explorer la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
-        indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
+        indexView==="map"?massMapHtml(catalog,{french:fr,
+          studyHtml:massStudyPathsHtml(catalog.formationStages,{french:fr})}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
       restoreMoment?safeScroll(momentScrollTop):0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
@@ -233,7 +261,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     const returnToIndex=restoreIndex&&indexFocusKey?
       [...node.querySelectorAll("[data-ao-mx-moment]")].find(button=>button.dataset.aoMxMoment===indexFocusKey):null;
     const returnToStudy=restoreMoment?
-      node.querySelector('[data-ao-mx-study]'):null;
+      node.querySelector('[data-ao-mx-study],[data-ao-mx-stage]'):null;
     (returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
     return true;
   }
@@ -319,9 +347,21 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         return;
       }
       if(t.dataset.aoMxBlock){event.preventDefault();setMoment(momentKey,t.dataset.aoMxBlock);return;}
-      if(t.dataset.aoMxStudy){
+      if(t.dataset.aoMxJump){
         event.preventDefault();
-        const stageId=t.dataset.aoMxStudy;
+        const selected=[...node.querySelectorAll("[data-ao-mx-anchor]")].find(x=>x.dataset.aoMxAnchor===t.dataset.aoMxJump);
+        if(selected){
+          if(selected.tagName==="DETAILS")selected.open=true;
+          selected.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+          const heading=selected.querySelector("h2,summary")??selected;
+          heading.setAttribute?.("tabindex","-1");
+          heading.focus?.({preventScroll:true});
+        }
+        return;
+      }
+      if(t.dataset.aoMxStudy||t.dataset.aoMxStage){
+        event.preventDefault();
+        const stageId=t.dataset.aoMxStudy||t.dataset.aoMxStage;
         const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,
           momentScrollTop:safeScroll(root()?.scrollTop)};
         close(false);
@@ -357,7 +397,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
+    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,
+    sourceBlocks:catalog?.byBlock.size??0,formationLessons:catalog?.formationStages.length??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }
