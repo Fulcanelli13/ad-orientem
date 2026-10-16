@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Only seven source-partial index rows remain: four original source records are office/plural variants without standalone [Missa], C1v has three named rubrical orations and a suspect English second translation, and C3p/C3ap share six genuinely absent French Paschal Mass sections. Verify printed 1962 family identities and source-owned translation rather than force extra Masses.",
+      "nextAction": "Review and certify six editorial French sections against Latin C3p and independent historical French witnesses, then amend the existing canonical C3p source (C3ap inherits it). Review the English C1v second Collect against its different Latin and the proper first/second/Evangelist rubrics before correcting existing source. Do not count as complete until actually imported and tested.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -157,7 +157,13 @@
         "originalC3pFrenchTextAbsent": true,
         "twoPapalMartyrSharedC4bComplete": true,
         "sourceProof": "data/calendar/p1-papal-martyr-source-proof.v1.json",
-        "fourSourceOfficeVariantsNotIndependentMissa": true
+        "fourSourceOfficeVariantsNotIndependentMissa": true,
+        "conditionalFrenchCandidateDraftSections": 6,
+        "originalFrenchSourceMissing": true,
+        "independentHistoricalFrenchWitnessFound": true,
+        "editorialTranslationDraft": "docs/research/P1-PASCHAL-MARTYRS-FRENCH-EDITORIAL-CANDIDATES-20261016.md",
+        "apostolicVigilSecondEnglishCollectDraft": "docs/research/P1-APOSTLES-VIGIL-SECOND-COLLECT-ENGLISH-20261016.md",
+        "secondEnglishVigilCollectSourceDuplicateConfirmed": true
       }
     },
     {
@@ -348,6 +354,11 @@
     "appPapalMartyrSourceCompositionVerified": 2,
     "papalMartyrC4bSharedSectionReferences": 32,
     "nonStandaloneOfficeOrDerivedSourceFiles": 4,
-    "sourceStructures": "data/calendar/p1-office-versus-mass-source-structure.v1.json"
+    "sourceStructures": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+    "editorialFrenchDraftsPrepared": 6,
+    "originalCommonSourcesImportedFromDrafts": 0,
+    "englishCollectSourceCorrectionsDrafted": 1,
+    "englishCollectSourceCorrectionsImported": 0,
+    "reviewHoldsStillOpen": 22
   }
 }
