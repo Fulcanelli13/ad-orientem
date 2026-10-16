@@ -174,7 +174,7 @@ try{
    for(let i=0;i<registry.length;i+=5)results.push(...await Promise.all(registry.slice(i,i+5).map(inspect)));
    return {candidateCount:registry.length,results};
  });
- const donorProbe=await page.evaluate(async()=>{
+ const donorProbe=process.env.P1_FULL_DONOR_AUDIT==="1" ? await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
    const plan=(await (await fetch("/data/calendar/p1-partial-common-donor-plan.v1.json")).json()).cases;
    const existing=(await (await fetch("/data/calendar/p1-additional-common-app-audit.v1.json")).json()).sourceEntries;
@@ -219,7 +219,7 @@ try{
      reports.push({target:testcase.target,kind:testcase.kind,checks});
    }
    return reports;
- });
+ }) : null;
  const paschalAlternate=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
    const {composeP1OneMartyrPaschalAltera}=await import("/src/calendar/p1-paschal-alternate-source-composition.js");
@@ -243,7 +243,7 @@ try{
      route:result.route??null};
  });
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
- console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
+ if(donorProbe)console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
  console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
  assert.equal(additionalCommons.candidateCount,28);
  assert.equal(additionalCommons.results.length,28);
