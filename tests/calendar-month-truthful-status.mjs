@@ -91,7 +91,7 @@ for(const [date,principal,saintPath,id,cap,kind] of omissionBatch2027_2028){
   w=>{w.impeded.saint="SAINT_OTHER"},
   w=>{w.sourceReview="UNVERIFIED"},
   w=>{w.observedWitness="javascript:alert(1)"},
-  w=>{w.principal.kind="II_CLASS_SUNDAY"},
+  w=>{w.principal.kind=kind==="II_CLASS_SUNDAY"?"I_CLASS_ADVENT_SUNDAY":"II_CLASS_SUNDAY"},
  ]){
   const edited=structuredClone(adjudicated2027);
   poison(edited.nonCommemorationWitnesses.find(w=>w.date===date));
