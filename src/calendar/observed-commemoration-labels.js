@@ -46,14 +46,27 @@ export function observedCommemorationLabels(resolution,{language="en"}={}){
    resolution?.commemorations
  ]){
    const items=Array.isArray(raw)?raw:raw==null?[]:[raw];
-   const entries=[],seen=new Set();
+   const entries=[],seen=new Set(),aliases=new Set();
+   const normalize=text=>String(text).trim().toLocaleLowerCase(language==="fr"?"fr":"en");
+   // A mixed legacy array can hold both a sourced saint object and an
+   // unsourced vernacular title for the *same* commemoration. Suppress the
+   // duplicate bare title using the sourced item's actual EN/FR aliases.
+   for(const item of items){
+     if(!item||typeof item!=="object")continue;
+     const id=sourceIdentity(item.id||item.sourceId||item.resolverIdentity);
+     if(!id)continue;
+     for(const lang of ["en","fr"]){
+       const name=resolvedLabel(item,lang);
+       if(name)aliases.add(normalize(name));
+     }
+   }
    for(const item of items){
      const name=resolvedLabel(item,language);
      if(!name)continue;
      const id=sourceIdentity(typeof item==="string"?item:item?.id||item?.sourceId||item?.resolverIdentity);
-     const key=id||"title:"+name.toLocaleLowerCase(language==="fr"?"fr":"en");
-     if(seen.has(key))continue;
-     seen.add(key);
+     const labelKey="title:"+normalize(name);
+     if((!id&&aliases.has(normalize(name)))||seen.has(id||labelKey))continue;
+     seen.add(id||labelKey);
      entries.push(Object.freeze({sourceId:id,name}));
    }
    if(entries.length)return Object.freeze(entries);
