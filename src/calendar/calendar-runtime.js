@@ -17,7 +17,7 @@ import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
 import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
-import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay } from "./rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay } from "./rubrical-claim-citations.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
@@ -477,6 +477,7 @@ function daySourceDetails(r){
  const p=properOf(r),path=String(p?.sourcePath||p?.source?.path||p?.sourceFile||"").trim();
  const claims=rubricClaimLedger?calendarRubricalClaimsForDay(r,rubricClaimLedger):[];
  const colourClaims=colourClaimLedger?calendarColourRubricalClaimsForDay(r,colourClaimLedger):[];
+ const observedClaims=colourClaimLedger?calendarObservedCommemorationClaimsForDay(r,colourClaimLedger):[];
  const transferClaims=transferLedger?calendarTransferRubricalClaimsForDay(r,transferLedger):[];
  const claimMarkup=claims.map(c=>`<li data-cal-rubric-claim="${esc(c.claimId)}">
     <p><strong>${esc(c.clauses.join(" · "))}</strong> · ${esc(c.explanation[fr()?"fr":"en"])}</p>
@@ -492,6 +493,10 @@ function daySourceDetails(r){
   <p>${esc(c.explanation[fr()?"fr":"en"])}</p>
   <a href="${esc(c.witnessUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("Independent 1962 calendar witness","Témoin indépendant du calendrier de 1962"))} ↗</a>
  </li>`).join("");
+ const observedMarkup=observedClaims.map(c=>`<li data-cal-observed-commemoration="${esc(c.claimId)}">
+  <p><strong>${esc(c.clauses.join(" · "))}</strong> · ${esc(c.explanation[fr()?"fr":"en"])}</p>
+  <a href="${esc(c.witnessUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("Dated 1962 ordo reference","Référence d’ordo 1962 daté"))} ↗</a>
+ </li>`).join("");
  return `<details class="aoCalDaySources"><summary>${esc(L("Sources & scope","Sources et portée"))}</summary>
   <p>${esc(L("General Roman Calendar (1962); local diocesan, religious and church propers may differ. Retrieved texts have not thereby been independently certified.","Calendrier romain général (1962) ; les propres diocésains, religieux et des églises peuvent différer. La récupération des textes ne constitue pas une certification indépendante."))}</p>
   <a href="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597" target="_blank" rel="noopener noreferrer">${esc(L("Normative: 1960 Code of Rubrics · AAS 52 (1960), pp. 597 onward","Normatif : Code des rubriques de 1960 · AAS 52 (1960), p. 597 et suiv."))} ↗</a>
@@ -499,6 +504,7 @@ function daySourceDetails(r){
   ${claimMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Source-matched rubric clauses","Articles des rubriques liés aux sources"))}"><h3>${esc(L("Why this commemoration is shown","Pourquoi cette commémoraison figure ici"))}</h3><ul>${claimMarkup}</ul><p>${esc(L("These clauses explain the observed 1962 case; they do not authorize a different Mass, extra prayers or a local observance.","Ces articles éclairent le cas observé dans le calendrier de 1962 ; ils n’autorisent pas une autre messe, des oraisons supplémentaires ou une célébration locale."))}</p></section>`:""}
   ${colourMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Exact 1960 colour clauses","Articles précis de 1960 sur les couleurs"))}"><h3>${esc(L("Why this Mass colour is shown","Pourquoi cette couleur liturgique figure ici"))}</h3><ul>${colourMarkup}</ul><p>${esc(L("A recorded source adjudication, not a new colour calculation or local Mass permission.","Arbitrage de sources enregistré, et non nouveau calcul des couleurs ni autorisation d’une messe locale."))}</p></section>`:""}
   ${transferMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Source-verified transfer clauses","Articles de transfert attestés par les sources"))}"><h3>${esc(L("Why this observance was transferred","Pourquoi cette célébration a été reportée"))}</h3><ul>${transferMarkup}</ul><p>${esc(L("This explains an observed 1962 transfer; it does not alter the Mass of the day or establish a local exception.","Cette mention explique le report constaté dans le calendrier de 1962 ; elle ne modifie pas la messe du jour ni n’établit une exception locale."))}</p></section>`:""}
+  ${observedMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Verified commemorated observance clauses","Articles des commémoraisons constatées"))}"><h3>${esc(L("Why this observance is commemorated","Pourquoi cette célébration est commémorée"))}</h3><ul>${observedMarkup}</ul><p>${esc(L("Source evidence for the observed day, not permission to add orations to a different Mass form.","Témoignage du jour observé, et non autorisation d’ajouter des oraisons à une autre forme de messe."))}</p></section>`:""}
   ${path?`<p class="aoCalSourceWitness">${esc(L("Digital text witness","Témoin textuel numérique"))}: <code>${esc(path)}</code></p>`:""}
  </details>`;
 }

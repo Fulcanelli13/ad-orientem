@@ -228,7 +228,24 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "XIII Sunday after Pentecost commemoration missing under first-class Assumption.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Sunday or Advent feria is supplied as a resolved commemoration with Collect, Secret, and Postcommunion from an existing temporal Mass Proper per §§108–114."
+      "implementation": "Privileged Sunday or Advent feria is supplied as a resolved commemoration with Collect, Secret, and Postcommunion from an existing temporal Mass Proper per §§108–114.",
+      "rubricalClaim": {
+        "id": "ASSUMPTION_SUNDAY_2027",
+        "sourcePath": "Sancti/08-15",
+        "principalClass": 1,
+        "commemorationPath": "Tempora/Pent13-0",
+        "commemorationClass": 2,
+        "kind": "PRIVILEGED_SUNDAY",
+        "clauses": [
+          "RG 108(a)",
+          "RG 111(a)"
+        ],
+        "en": "The first-class Assumption takes precedence; the occurring thirteenth Sunday after Pentecost remains a privileged commemoration in the Mass.",
+        "fr": "L’Assomption, de première classe, a préséance ; le treizième dimanche après la Pentecôte est néanmoins commémoré à titre privilégié à la messe.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     },
     {
       "dates": [
@@ -237,7 +254,25 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under St Andrew.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria.",
+      "rubricalClaim": {
+        "id": "ST_ANDREW_ADVENT_FERIA_2027",
+        "sourcePath": "Sancti/11-30",
+        "principalClass": 2,
+        "commemorationPath": "Tempora/Adv1-2",
+        "commemorationClass": 3,
+        "kind": "PRIVILEGED_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(c)"
+        ],
+        "en": "The second-class feast of St Andrew takes precedence over the Tuesday of Advent I; the observed Advent feria is privileged and commemorated.",
+        "fr": "La fête de deuxième classe de saint André a préséance sur le mardi de la première semaine de l’Avent ; la férie constatée est commémorée à titre privilégié.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     },
     {
       "dates": [
@@ -246,7 +281,25 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under Immaculate Conception.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria.",
+      "rubricalClaim": {
+        "id": "IMMACULATE_CONCEPTION_ADVENT_FERIA_2027",
+        "sourcePath": "Sancti/12-08",
+        "principalClass": 1,
+        "commemorationPath": "Tempora/Adv2-3",
+        "commemorationClass": 3,
+        "kind": "PRIVILEGED_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(a)"
+        ],
+        "en": "The first-class Immaculate Conception takes precedence over the Wednesday of Advent II; the Advent feria is commemorated as privileged.",
+        "fr": "L’Immaculée Conception, de première classe, a préséance sur le mercredi de la deuxième semaine de l’Avent ; la férie de l’Avent fait l’objet d’une commémoraison privilégiée.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     }
   ],
   "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified"
