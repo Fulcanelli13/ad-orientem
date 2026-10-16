@@ -1,0 +1,52 @@
+{
+  "schema": "AO_SACRED_ART_W97_FULL_PICTURE_VISUAL_QA_V1",
+  "date": "2026-10-16",
+  "branch": "platform/885-sacred-art-candidates",
+  "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38911657267",
+  "artifactId": 12050651743,
+  "visualReview": "Original-source overall compositions inspected side by side at native aspect; no artificial square crop.",
+  "records": [
+    {
+      "categoryIndex": 145,
+      "physicalOriginal": "NGA 1958.4.1",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of Abraham and Melchizedek",
+      "originalPixels": [
+        4000,
+        3193
+      ],
+      "sourceSha256": "ab4ee01c970a499b6229f1127a31fed178096fb1311649caf0a31a61da38da02",
+      "fullPaintingSurfaceVisible": true,
+      "exteriorFrameVisible": false,
+      "fullPictureStatus": "PASS_VISUAL",
+      "rightsStatus": "CC0_NGA",
+      "sourceUrl": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "legacySelectedPaintingAccessionConfirmed": false,
+      "categoryCoveragePromotion": false
+    },
+    {
+      "categoryIndex": 142,
+      "physicalOriginal": "Courtauld P.1978.PG.353",
+      "artist": "Peter Paul Rubens",
+      "title": "Cain Slaying Abel",
+      "originalPixels": [
+        7045,
+        9694
+      ],
+      "sourceSha256": "9b296e2362185a230f22c980a33c702cf599cb589e83aa118a56bccb74af16f3",
+      "fullPaintingSurfaceVisible": true,
+      "exteriorFrameVisible": false,
+      "fullPictureStatus": "PASS_VISUAL",
+      "rightsStatus": "BLOCKED_FOR_COMMERCIAL_REUSE_BY_COURTAULD_CC_BY_NC_4_0",
+      "sourceUrl": "https://gallerycollections.courtauld.ac.uk/object-p-1978-pg-353",
+      "legacySelectedPaintingAccessionConfirmed": false,
+      "categoryCoveragePromotion": false
+    }
+  ],
+  "policyNotes": [
+    "NGA source passes image-file and painted-edge QA, but has no completed user selection of physical original for Category 145.",
+    "Courtauld source passes image-file and painted-edge QA, but official CC BY-NC photo conditions conflict with commercial app usage; PD-Art Commons assertion is separate and not presumed decisive.",
+    "User historical paintings ratings not modified.",
+    "Category gaps stay 22 under strict release gate; no app publication."
+  ]
+}
