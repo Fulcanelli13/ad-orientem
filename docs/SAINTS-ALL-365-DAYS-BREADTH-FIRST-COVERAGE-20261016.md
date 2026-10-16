@@ -159,3 +159,29 @@ The Sacred Art owner's W65 technical release register still shows **zero** publi
 Calendar and Saints identity owners should jointly close the four existing nominal-date alias proposals in a single decision and separately adjudicate Francis of Assisi. Sacred Geography should affirm the *shrine-name association* relation for bulk matched IDs, without upgrading it to a birth/death place. Sacred Art should deliver already certified reproduction assets keyed by approved identity only; no fresh reviewer galleries of previously rejected artworks.
 
 Native map and alias tests are in the existing Saints editorial CI. PR #1227 remains draft and PR #1256 is separate, review-ready and not merged.
+
+
+## W78 — full bulk 113-name shrine source reconciliation (16 October 2026)
+
+The **50** original single-exact-name keys and **63** original no-exact-name keys are now processed together in `data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json`. This is a reproducible read-only source handoff, **not 113 certified people**.
+
+| Evidence position | Record count |
+| --- | ---: |
+| Original full-name key matches | **50** |
+| Already source-linked to original native Saints pilot | **5** |
+| Truncated original keys held (John and Luke the Evangelists) | **2** |
+| Other single-name person key candidates pending owner signoff | **43** |
+| No original exact key | **63** |
+| Curated variant-name or group-title candidate leads | **24** |
+| Still without supported canonical key candidates | **39** |
+| Source-backed shrine/name association edges for these 113 names | **137** |
+| Original citation/provenance records on those edges | **209** |
+| Distinct original physical Place IDs on these edges | **114** |
+
+The six W77 colliding-name cases retain **eight other original shrine edges**, making **145 total** across the complete original **119 shrine-name strings** and **121 original physical sites**. All 137 W78 links have been checked against original `shrine_id`, `place_id`, the shrine's exact `associated_saints` name and the exact original `source_ids`. Original URLs, issuers and institutional directness are retained: 104 of the 113 name records have at least one official or primary institutional source on **every** associated site.
+
+The 24 curated variant leads include *Jean-Marie Vianney* / *John Mary Vianney*, *Josephine Bakhita* / *Giuseppina Bakhita*, *Charbel Makhlouf* / *Charbel Makhluf* and the original **Uganda Martyrs group**, but **none** is merged automatically. Historical-event homonyms such as Joseph the Worker versus St Joseph and Nativity/Beheading of John the Baptist versus St John the Baptist are **not** person identities. Multi-person source strings, angelic figures and martyr groups remain distinct from individual Saints.
+
+The native **research-only** map now verifies the source name/ID against the original shrine registry and surfaces clickable original HTTPS institutional source links in its research detail sheets. With the existing original source registry available, all 145 shrine/name associations have at least one such link. The public pilot remains **six biographies / nine physical Places / eight precise pins**, and does not load the W78 research file.
+
+Next: obtain batch owner decisions on 43 single-name person-key candidates, 24 variant leads and the remaining 39 source-name items; require independently verified identity and relationship before promotion. This does **not** demand 39 AI-authored biographies, additional geocoding, artwork re-rating or new rightsholder outreach. No Calendar, Art, Mass, Geography owner source or public app was modified.
