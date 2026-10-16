@@ -9,6 +9,8 @@ on:
       - 'tools/saints/join-historic-components-to-observed-year.mjs'
       - 'tools/saints/build-2026-full-calendar-coverage-matrix.mjs'
       - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
+      - 'data/saints/observed-2026-twelve-person-source-reconciliation.v1.json'
+      - 'tests/saints-twelve-observed-source-resolution.mjs'
       - 'data/saints/historical-v4333-311-components.recovered.v1.json'
       - '.github/workflows/saints-calendar-year-census.yml'
   workflow_dispatch:
@@ -40,6 +42,8 @@ jobs:
         run: node tools/saints/join-historic-components-to-observed-year.mjs
       - name: Compile deduplicated all-365-day Calendar coverage and 42 reference gaps
         run: node tools/saints/build-2026-full-calendar-coverage-matrix.mjs
+      - name: Validate twelve archive identity candidates against the generated 42 raw-source gaps
+        run: node tests/saints-twelve-observed-source-resolution.mjs
       - name: Keep auditable source-owner census
         uses: actions/upload-artifact@v4
         if: always()
