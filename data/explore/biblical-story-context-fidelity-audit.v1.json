@@ -1152,5 +1152,29 @@
     }
   ],
   "publicationChanges": [],
-  "approvalRegister": []
+  "approvalRegister": [],
+  "followOnWitnessInspection": {
+    "phase": "FOURTEEN_STORY_PAIRWISE_SOURCE_WITNESS_EXTRACTION_DONE_NOT_PRINTED_EDITION_CERTIFIED",
+    "witnessDataOwner": "data/explore/biblical-story-scripture-bilingual-witness-collation.v1.json",
+    "reviewUI": "data/explore/biblical-story-scripture-review-offline.v1.html",
+    "sourceWitnessSchema": "ao.scripture.source-witness.v1",
+    "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+    "witnessEditionIds": [
+      "dr-challoner",
+      "crampon-1923"
+    ],
+    "scopedChapterCount": 13,
+    "scopedChapterEditionChecks": 26,
+    "indexedVerseCellsChecked": 1133,
+    "blankOrMissingVerseCellsInReviewedChapters": 0,
+    "keyIssues": [
+      "John 6:51–52 Challoner merged into Crampon 6:51; downstream numbering differs by 1",
+      "John 6 Peter confession has meaningful witness text variant",
+      "Genesis 3:15 has textual/traditional variation",
+      "Published partial verses Genesis 22:9a and John 11:33b cannot be extracted exactly from whole-verse source cells"
+    ],
+    "gate": "Repo witness availability and slot completeness does not constitute full human edition collation or approve final excerpt ranges",
+    "noFinalApprovedExcerptRanges": true,
+    "noAppChanges": true
+  }
 }
