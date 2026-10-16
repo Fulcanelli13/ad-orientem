@@ -263,8 +263,6 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
         indexView==="themes"?themesPage:
         indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
-    node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
-      restoreMoment?safeScroll(momentScrollTop):0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
     const rail=selected?.closest?.(".aoMXBlockIndex");
     if(rail){
@@ -280,6 +278,10 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     const returnToBlock=restoreIndex&&indexFocusBlockId?
       [...node.querySelectorAll("[data-ao-mx-map-block]")].find(button=>button.dataset.aoMxMapBlock===indexFocusBlockId):null;
     if(returnToBlock)returnToBlock.closest("details")?.setAttribute("open","");
+    // Restore the expanded source drawer BEFORE applying scroll position,
+    // otherwise the collapsed Map's shorter height can clamp scrollTop.
+    node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
+      restoreMoment?safeScroll(momentScrollTop):0;
     const returnToIndex=restoreIndex&&indexFocusKey?
       [...node.querySelectorAll("[data-ao-mx-moment]")].find(button=>button.dataset.aoMxMoment===indexFocusKey):null;
     const returnToStudy=restoreMoment?
