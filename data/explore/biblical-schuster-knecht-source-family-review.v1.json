@@ -494,7 +494,12 @@
     "earlyEnglishSadlierPrintedFootnoteMarkersRecovered": 5,
     "earlyEnglishSadlierLiterallyCharacterCertifiedUnits": 0,
     "earlyEnglishSadlierEleventhSecondVisualWordingCheckedUnits": 47,
-    "earlyEnglishSadlierEleventhRecoveredOriginalFootnoteAnchors": 10
+    "earlyEnglishSadlierEleventhRecoveredOriginalFootnoteAnchors": 10,
+    "earlyEnglishSadlierEleventhWholeVolumePagesRawIndexed": 402,
+    "earlyEnglishSadlierEleventhWholeVolumeChapterSlotsIndexed": 182,
+    "earlyEnglishSadlierEleventhOCRHeadingCandidates": 128,
+    "earlyEnglishSadlierEleventhOCRHeadingsRequiringVerification": 53,
+    "earlyEnglishSadlierEleventhImprovedOCRSampleOriginalPages": 13
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4105,5 +4110,148 @@
     },
     "nextGate": "INDEPENDENT_FULL_DIPLOMATIC_LITERAL_PROOFREAD_AND_NOTE_BODIES_47_UNITS_SOURCE_RIGHTS_AND_EDITORIAL_SIGNOFF",
     "reviewAccuracyBoundary": "Second visual wording pass establishes that printed units and note anchors were compared but does NOT certify all original spelling, punctuation, superscripts, page layouts or edited contents."
+  },
+  "english1908WholeVolumeBulkSourceIndex": {
+    "date": "2026-10-16",
+    "schema": "AO_SCHUSTER_1908_COMPLETE_VOLUME_BULK_SOURCE_INDEX_V1",
+    "editionWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "originalPdfSourceSHA256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+    "status": "ALL_HISTORICAL_BOOK_PAGES_EXTRACTED_SOURCE_ANCHORED_RAW_OCR_NOT_READER_APPROVED",
+    "fullOriginalPdfPages": 419,
+    "extractedPageRecords": 402,
+    "mainBookPdfRanges": {
+      "oldTestament": [
+        16,
+        234
+      ],
+      "newTestament": [
+        236,
+        415
+      ],
+      "appendix": [
+        416,
+        417
+      ],
+      "interstitialBlank": [
+        235
+      ]
+    },
+    "originalEditionChapterDenominator": {
+      "OT": 86,
+      "NT": 96,
+      "total": 182
+    },
+    "distinctChapterIndexRecords": 182,
+    "strictInOrderOriginalPdfOcrHeadingCandidates": 128,
+    "knownOriginalPrintOpeningPagesReusedFromEarlierImageChecks": 8,
+    "slotsWithNeitherReliableOcrHeadingNorPriorImageVerifiedOpening": 53,
+    "originalSourceTextOCRCharactersExtracted": 701196,
+    "bulkBatches": [
+      {
+        "id": "SET-A",
+        "section": "OT",
+        "pdfPageRange": [
+          16,
+          85
+        ],
+        "pageCount": 70,
+        "strictOcrHeadingCandidates": 25
+      },
+      {
+        "id": "SET-B",
+        "section": "OT",
+        "pdfPageRange": [
+          86,
+          155
+        ],
+        "pageCount": 70,
+        "strictOcrHeadingCandidates": 20
+      },
+      {
+        "id": "SET-C",
+        "section": "OT",
+        "pdfPageRange": [
+          156,
+          234
+        ],
+        "pageCount": 79,
+        "strictOcrHeadingCandidates": 18
+      },
+      {
+        "id": "SET-D",
+        "section": "NT",
+        "pdfPageRange": [
+          236,
+          295
+        ],
+        "pageCount": 60,
+        "strictOcrHeadingCandidates": 26
+      },
+      {
+        "id": "SET-E",
+        "section": "NT",
+        "pdfPageRange": [
+          296,
+          355
+        ],
+        "pageCount": 60,
+        "strictOcrHeadingCandidates": 21
+      },
+      {
+        "id": "SET-F",
+        "section": "NT",
+        "pdfPageRange": [
+          356,
+          415
+        ],
+        "pageCount": 60,
+        "strictOcrHeadingCandidates": 18
+      },
+      {
+        "id": "SET-G",
+        "section": "NT_APPENDIX",
+        "pdfPageRange": [
+          416,
+          417
+        ],
+        "pageCount": 2,
+        "strictOcrHeadingCandidates": 0
+      }
+    ],
+    "privateWorkingArtifacts": {
+      "sourceIndex": {
+        "name": "Schuster_1908_Full_Volume_Source_Index.json",
+        "sha256": "708862c1fa93de3d50cbc41ed630d3549181dcbe0caa2afb5eb212810e2da8b4"
+      },
+      "fullSourcePageOcr": {
+        "name": "Schuster_1908_Full_Volume_Raw_OCR_Page_Corpus.json.gz",
+        "sha256": "eed5c04432ef0bb00a5362348e16ed9900b1ef01f3bdfbf2f7f0bb48d484e186"
+      },
+      "bulkProgress": {
+        "name": "Schuster_1908_Bulk_Source_Progress.md",
+        "sha256": "dd43dfdf5a4392dfbfa7887b1c2bb31d3bddbe78ce74f9d219cd67df72e21c6e"
+      },
+      "alternativeOriginalImageOcrSample": {
+        "name": "Schuster_1908_Original_English_OT_IX_to_XV_Improved_OCR.json",
+        "pdfPageRange": [
+          33,
+          45
+        ],
+        "imagePages": 13,
+        "sha256": "1735a6212fe01a28e1df8799063900fd3a722eb970cd5468b7901d4671a0f2fa",
+        "status": "BETTER_OPTICAL_RECOGNITION_ON_HIGH_RES_1908_SCAN_NOT_VERBATIM_CERTIFIED"
+      }
+    },
+    "sourceTextImportGate": "RAW_OCR_ONLY_SOURCE_LINKED_NOT_CERTIFIED_NOT_PUBLISHABLE",
+    "originalReaderOutlineAndAtlas151Unmodified": true,
+    "incompleteOCRHeadingNotEvidenceOfMissingOriginalChapter": true,
+    "uncorrectedOcrIsNotAnAiNarrative": true,
+    "originalHistoricalSourceNarrativeCopiedToGitHub": false,
+    "newParagraphsCharacterCertified": 0,
+    "publishedAppNarrativeWords": 0,
+    "originalFootnotesAndQuestionsStillSeparate": true,
+    "chapterToAtlasLinksAutoGenerated": false,
+    "sourceEditionRightsStillRequiresReview": true,
+    "artifactDurability": "Private research conversation files; source-of-truth stores manifests only"
   }
 }
