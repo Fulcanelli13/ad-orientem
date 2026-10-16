@@ -1,5 +1,10 @@
 name: Sacred Art closeout integrity
 
+# Avoid overlapping 224-image remote audits on rapid research-branch pushes.
+concurrency:
+  group: sacred-art-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
