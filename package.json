@@ -126,7 +126,7 @@
     "test:pray-traditional": "node tests/pray-traditional-life.mjs",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
     "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
-    "test:calendar": "node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs && node tests/calendar-print-proper.mjs && node tests/calendar-editorial-reconciliation.mjs && node tests/calendar-source-feria-projection.mjs",
+    "test:calendar": "node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs && node tests/calendar-print-proper.mjs && node tests/calendar-editorial-reconciliation.mjs && node tests/calendar-source-feria-projection.mjs && npm run test:calendar-coverage",
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
@@ -253,7 +253,8 @@
     "test:explore-bible-atlas-151": "node tests/explore-bible-atlas-151.mjs",
     "test:explore-bible-atlas-151-phone": "node tests/explore-bible-atlas-151-phone.mjs",
     "test:reader-cinematic-scenes": "node tests/reader-cinematic-scenes.mjs",
-    "test:reader-cinematics-phone": "node tests/reader-cinematic-scenes-phone.mjs"
+    "test:reader-cinematics-phone": "node tests/reader-cinematic-scenes-phone.mjs",
+    "test:calendar-coverage": "node tests/calendar-rubrical-coverage-audit.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
