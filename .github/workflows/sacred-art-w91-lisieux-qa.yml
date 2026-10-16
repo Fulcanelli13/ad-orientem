@@ -1,0 +1,31 @@
+name: Sacred Art W91 Lisieux Private Photo QA
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - tools/calendar/research-sacred-art-w91-images.py
+      - .github/workflows/sacred-art-w91-lisieux-qa.yml
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow requests
+      - name: Verify exact copyrighted-source research originals without public release
+        run: |
+          python -m py_compile tools/calendar/research-sacred-art-w91-images.py
+          python tools/calendar/research-sacred-art-w91-images.py
+      - name: Research-only archive; permission and painter rights pending
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w91-lisieux-private-image-proofs
+          path: artifacts/sacred-art-w91-private-source-evidence/
+          retention-days: 7
+          if-no-files-found: warn
