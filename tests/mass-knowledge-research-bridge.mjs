@@ -375,7 +375,7 @@ const gospelCue=donorByCue.get("AO.SM.C0084")?.latin;
 assert.ok(gospelCue?.includes("secúndum Matthǽum"));
 assert.equal(discrepancyDecisions.decisions.find(x=>
   x.family==="GOSPEL_HEADING_VARIABLE_EVANGELIST")?.P0Decision,
-  "OPEN_FORM_CONDITIONAL_PRODUCTION_TEXT_RISK");
+  "CONFIRMED_SOURCE_FIRST_MODEL_ANNOUNCEMENT_PROPER_MISMATCH_REQUIRES_OWNER_FIX");
 assert.equal(discrepancyDecisions.release,
   "FAIL_CLOSED_UNTIL_FORM_CORRECT_GOSPEL_HEADING_RUNTIME_CHECK");
 console.log("Mass P0 Latin Adjudication: PASS — two accent variants, one unresolved Proper header risk.");
@@ -436,7 +436,7 @@ const p0StaticMatthew=p0HeadingText.includes("Matthǽum");
 if(p0StaticMatthew){
   assert.equal(discrepancyDecisions.decisions.find(x=>
     x.family==="GOSPEL_HEADING_VARIABLE_EVANGELIST")?.P0Decision,
-    "OPEN_FORM_CONDITIONAL_PRODUCTION_TEXT_RISK");
+    "CONFIRMED_SOURCE_FIRST_MODEL_ANNOUNCEMENT_PROPER_MISMATCH_REQUIRES_OWNER_FIX");
 }
 console.log("Mass P0 John Gospel heading source-first diagnostic: "+
   (p0StaticMatthew?"CONFIRMED_STATIC_MATTHEW_HEADING_OWNER_RISK":"NO_STATIC_MATTHEW_HEADING_DETECTED")+" (no runtime mutation).");
