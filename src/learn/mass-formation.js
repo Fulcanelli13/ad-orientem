@@ -3,6 +3,7 @@ import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/o
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { massFormationScriptureHtml } from "./mass-formation-scripture-context.js";
 import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-reference-panel.js";
+import {massSourceStudyRecord,massSourceStudyHtml,massSourceStudyCss} from "./mass-source-reading.js";
 import { loadGuideRegistry } from "../mass/reader-guide.js";
 import {massMomentsStudyCss,massMomentsStudyListHtml,massMomentStudyDetailHtml,massMomentStudyKeys} from "./mass-moments-study.js";
 import {loadMassMomentEvidenceCatalog,massMomentEvidencePreviewEnabled,
@@ -79,7 +80,8 @@ function stageHtml(win,data,stage){
   const evidence=stage.claims.map(claim=>({id:claim.id,text:pick(win,claim.text),sourceIds:claim.sources}));
   const references=sourceReferencePanelHtml({
     rows:evidence,registry:sources,french:isFr(win),idPrefix:stage.id,
-    furtherReadingIds:MASS_FORMATION_FURTHER_READING[stage.id]||[]
+    furtherReadingIds:MASS_FORMATION_FURTHER_READING[stage.id]||[],
+    enableStudySource:true
   });
   return top(win,pick(win,stage.title))+'<main class="aoMFWrap aoMFStage"><div class="aoMFQuestion">'+esc(pick(win,stage.question))+'</div><h1>'+esc(pick(win,stage.title))+'</h1><p class="aoMFStageLead">'+esc(pick(win,stage.summary))+'</p>'+claims+
     massFormationScriptureHtml(stage.id,{french:isFr(win)})+references+
@@ -91,6 +93,48 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     guideError:false,returnFocus:null,loading:null,guideLoading:null,
     evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{},sourceBatches:null,batchLoading:null,batchError:false,first10Audit:null,first10Loading:null,first10Error:false};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
+  let sourceReading=null;
+  function closeSourceReading({restoreFocus=true}={}){
+    if(!sourceReading)return false;
+    const {layer,trigger,previousInert,underlying}=sourceReading;
+    sourceReading=null;layer.remove();
+    if(underlying?.isConnected)underlying.inert=previousInert;
+    if(restoreFocus&&trigger?.isConnected)trigger.focus?.({preventScroll:true});
+    return true;
+  }
+  function showSourceReading(sourceId,trigger){
+    const stage=state.view==="stage"&&state.data?.stages?.some(s=>s.id===state.stageId);
+    if(!stage||sourceReading)return false;
+    const entry=massSourceStudyRecord(state.data,state.stageId,sourceId);
+    const underlying=root(),doc=win?.document;
+    if(!entry||!underlying?.isConnected||!doc?.body)return false;
+    const layer=doc.createElement("div");
+    layer.id="ao-mf-source-reading-layer";
+    layer.innerHTML='<style data-ao-mf-source-style>'+massSourceStudyCss()+'</style>'+
+      massSourceStudyHtml(entry,{french:isFr(win)});
+    const previousInert=Boolean(underlying.inert);
+    sourceReading={layer,trigger,previousInert,underlying};
+    underlying.inert=true;
+    doc.body.append(layer);
+    layer.addEventListener("click",event=>{
+      if(event.target?.closest?.("[data-ao-mf-source-close]")){
+        event.preventDefault();closeSourceReading();
+      }
+    });
+    layer.addEventListener("keydown",event=>{
+      if(event.key==="Escape"){
+        event.preventDefault();closeSourceReading();return;
+      }
+      if(event.key!=="Tab")return;
+      const focusable=[...layer.querySelectorAll("button:not([disabled]),a[href]")];
+      if(!focusable.length)return;
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(event.shiftKey&&doc.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&doc.activeElement===last){event.preventDefault();first.focus();}
+    });
+    layer.querySelector("h1")?.focus?.({preventScroll:true});
+    return true;
+  }
   async function ensureData(){
     if(state.data)return state.data;
     if(!state.loading)state.loading=loadData(fetchImpl).then(data=>{state.data=data;return data}).finally(()=>{state.loading=null});
@@ -173,6 +217,11 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     node=doc.createElement("section");node.id=MASS_FORMATION_ROOT_ID;node.dataset.aoMassFormationOwner=MASS_FORMATION_VERSION;node.setAttribute("role","region");node.setAttribute("aria-label","Understand the Mass");
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button");if(!target)return;
+      if(target.dataset.aoReferenceStudySource){
+        event.preventDefault();
+        showSourceReading(target.dataset.aoReferenceStudySource,target);
+        return;
+      }
       if(target.matches("[data-ao-mf-evidence-export]")){
         event.preventDefault();try{exportEvidenceDecisions();}catch(error){
           try{win.console?.warn?.("Source triage export failed",error);}catch{}
@@ -242,6 +291,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     doc.body.append(node);return node;
   }
   function render(){
+    closeSourceReading({restoreFocus:false});
     const node=ensureRoot();if(!node||!state.data)return false;
     const stage=state.data.stages.find(x=>x.id===state.stageId);
     const fr=isFr(win);
@@ -333,6 +383,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     render();return true;
   }
   function close(returnToLearn=false){
+    closeSourceReading({restoreFocus:false});
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;state.momentKey=null;
     const previousExplorer=returnToLearn?state.explorerReturn:null;
@@ -348,7 +399,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
-  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data),evidenceReview:massMomentEvidencePreviewEnabled(win)&&Boolean(state.evidenceCatalog),evidenceTriageCount:Object.keys(state.evidenceChoices).length,sourceBatches:state.sourceBatches?.loci?.length??0,sourceContextsLocated:state.first10Audit?.rows?.length??0});}
+  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),
+    sourceReading:sourceReading?.layer?.querySelector?.("[data-ao-mf-source-reader]")?.dataset?.aoMfSourceReader??null,
+    view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data),evidenceReview:massMomentEvidencePreviewEnabled(win)&&Boolean(state.evidenceCatalog),evidenceTriageCount:Object.keys(state.evidenceChoices).length,sourceBatches:state.sourceBatches?.loci?.length??0,sourceContextsLocated:state.first10Audit?.rows?.length??0});}
   return Object.freeze({version:MASS_FORMATION_VERSION,open,close,render,status});
 }
 
