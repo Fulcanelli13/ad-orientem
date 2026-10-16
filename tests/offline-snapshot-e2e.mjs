@@ -282,6 +282,7 @@ try{
  assert.equal(failed.ok,false,"Broken update unexpectedly committed");
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");
+ console.log("OFFLINE_RETRY_DIAGNOSTIC="+JSON.stringify({failedHits,failed,failedPath,assetHits:assetHits.slice(-8)}));
  assert.ok(failedHits>=3,"Transient HTTP 503 must receive three bounded attempts");
  await page.waitForSelector("#ao-offline-check-failed",{timeout:10000});
  assert.match(await page.locator("#ao-offline-check-failed").innerText(),/Could not check for an app update/);
