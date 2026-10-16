@@ -233,3 +233,14 @@ A further **author-text role distinction** is visible in Chapter V *Cain and Abe
 **What is now actually unblocked:** printed-source visual comparison and systematic English paragraph verification for the **1908 eleventh edition**, no longer dependent on online 23 MB PDF download or 1925 archive access. Next large batch: complete second-character verification of the six Creation units, followed by each full original authorial unit across Chapters II–VIII (printed 3–17), retaining original punctuation, footnotes, epigraph, Question headings, image positions and original-vs-OCR divergences. The whole book may then be processed in substantial contiguous source-page batches. This 1908 copy does **not** by itself authenticate the distinct 1925 English nineteenth edition or the 1887 Couissinier French edition.
 
 **Release boundary remains unchanged:** research-only, 0 editorially certified original author paragraphs released into app, 0 new public prose, 0 synthetic AI-written Bible narrative, 0 production runtime changes. The printed source copy is not uploaded to the repository.
+
+
+### 16 October: historical scan job successfully retrieved two primary-edition PDFs
+
+[GitHub Actions run 38847148541](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38847148541) completed **successfully**. Its temporary, seven-day [research preview artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38847148541/artifacts) identifies each download by source and SHA-256 and contains extracted provisional text plus page images (not certified). The workflow obtained:
+
+- **1908 English Sadlier eleventh edition** directly from Catholic Apologetics, **23,008,160 bytes, 419 PDF pages**, SHA-256 `79b281e7de0e27cad9ab449bc5732d369ac54073693a298820e9fe3402a7e900`; valid original-page PDF with first 45 PDF pages rendered as separate research previews.
+- **1908 Spanish Schuster–Ortí edition** from Internet Archive, **36,488,394 bytes, 294 PDF pages**, SHA-256 `5efc1269eabb1eac6f2e38962962c860c83d45d1354e5c7b12b52b0b8432e77c`; valid original-page PDF with first 45 images rendered as research previews.
+- The **1925 nineteenth-edition English** Internet Archive PDF failed after three approximately 190-second download attempts; full print pages remain unavailable from that URL.
+
+The successful downloadable **uncompressed English PDF** has 419 pages and matches the uploaded compressed copy on original Acrobat metadata, PDF creation date and first-page dimensions; compressed file SHA-256 differs. Exact page-by-page identity has not been certified, so retain both provenance hashes and do not assume byte equivalence. This resolves the direct English page-acquisition problem for the eleventh-edition reading source without conflating it with 1925 English or 1887 French edition identities. Research previews are not paragraph proofreading or rights approval.
