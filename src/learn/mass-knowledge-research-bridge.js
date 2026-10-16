@@ -207,12 +207,19 @@ export function massP1ApprovedLinkIds(reconciliation,{cueId,approvals=[]}={}){
   invariant(nonempty(cueId),"canonical cue ID required");
   const row=list(reconciliation.canonicalReverse).find(x=>x.cueId===cueId);
   if(!row)return Object.freeze([]);
+  // A relationship approval cannot bypass an unresolved research-unit identity.
+  const eligibleUnitIds=new Set(list(reconciliation.units).filter(u=>
+    u.disposition==="EXACT_MATCH"&&u.evidence==="FULL_CUE_LATIN_EQUAL"&&
+    u.latinWitnessProvided===true
+  ).map(u=>u.unitId));
   const unitSet=new Set(row.unitIds);
   const approved=list(approvals).filter(x=>
-    unitSet.has(x?.unitId)&&nonempty(x?.targetId)&&nonempty(x?.targetOwner)&&
+    unitSet.has(x?.unitId)&&eligibleUnitIds.has(x?.unitId)&&
+    nonempty(x?.targetId)&&nonempty(x?.targetOwner)&&
     nonempty(x?.evidenceLocator)&&
     x?.editorialDecision==="APPROVED_FOR_PUBLICATION"&&
     x?.ownerAccepted===true&&x?.publicationAllowed===true&&
+    x?.sourceTextCertified===true&&x?.ritualApplicabilityCertified===true&&
     x?.sourceRevision===reconciliation.basis.sungDonorHash
   ).map(x=>Object.freeze({
     unitId:x.unitId,targetOwner:x.targetOwner,targetId:x.targetId,
