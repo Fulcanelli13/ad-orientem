@@ -134,7 +134,7 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
        }).join("")+'</section>';
   }).join("");
   return '<main class="aoMXWrap"><div class="aoMXHero"><small>'+pick(french,"UNDERSTAND THE MASS","COMPRENDRE LA MESSE")+'</small>'+
-    '<h1>Mass Explorer</h1><p>'+pick(french,"Follow the Mass in its proper order, then open the original prayers and existing approved Guide explanations. This study reader does not change LIVE, Simple or Missal.",
+    '<h1>'+pick(french,"Mass Explorer","Explorer la Messe")+'</h1><p>'+pick(french,"Follow the Mass in its proper order, then open the original prayers and existing approved Guide explanations. This study reader does not change LIVE, Simple or Missal.",
      "Parcourez la Messe dans son ordre liturgique, puis ouvrez les prières originales et les explications du Guide existant. Ce lecteur d’étude ne modifie pas les modes LIVE, Simple ou Missel.")+
     '</p></div>'+rows+'</main>';
 }
@@ -202,9 +202,10 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
   function paint(){
     const node=root();if(!node||!catalog)return false;
     const fr=french();
+    node.setAttribute("aria-label",pick(fr,"Mass Explorer","Explorer la Messe"));
     node.innerHTML='<style>'+massExplorerCss()+'</style>'+
       '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
-      '<div><small>FORMATION</small><strong>Mass Explorer</strong></div>'+
+      '<div><small>FORMATION</small><strong>'+pick(fr,"Mass Explorer","Explorer la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=0;
@@ -231,7 +232,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     let node=root();if(node)return node;
     if(!win?.document?.body)return null;
     node=win.document.createElement("section");node.id=MASS_EXPLORER_ROOT;
-    node.setAttribute("role","region");node.setAttribute("aria-label","Mass Explorer");
+    node.setAttribute("role","region");node.setAttribute("aria-label",french()?"Explorer la Messe":"Mass Explorer");
     node.dataset.aoMassExplorerOwner=MASS_EXPLORER_VERSION;
     node.addEventListener("click",event=>{
       const t=event.target?.closest?.("button");if(!t)return;
