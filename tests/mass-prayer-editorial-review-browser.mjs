@@ -16,11 +16,11 @@ try{
   const page=await context.newPage(),errors=[];
   page.on("pageerror",err=>errors.push(String(err)));
   await page.goto(pathToFileURL(path).href,{waitUntil:"load"});
-  // Review TOC includes 61 collapsed chapters. Suppress long-distance smooth
+  // Review TOC includes 84 collapsed chapters. Suppress long-distance smooth
   // scroll animation, which otherwise makes automated click-stability waits
   // grow with the distance and number of repeated checks.
   await page.addStyleTag({content:"html{scroll-behavior:auto!important}"});
-  assert.equal(await page.locator("details.entry").count(),61);
+  assert.equal(await page.locator("details.entry").count(),84);
   assert.equal(await page.locator('details.entry summary .optional').count(),3);
   assert.equal(await page.locator(".held li").count(),11);
   assert.equal(await page.locator("[data-conclusion-condition]").count(),6);
