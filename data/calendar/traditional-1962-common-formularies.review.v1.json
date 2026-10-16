@@ -1,0 +1,124 @@
+{
+  "schema": "AO_TRADITIONAL_1962_COMMON_FORMULARY_CANDIDATES_V1",
+  "asOf": "2026-10-16",
+  "status": "SOURCE_IDENTIFIED_NO_PRIMARY_1962_TEXT_COLLATION_OR_APP_PUBLICATION",
+  "useRestriction": "Reference index for authorized 1962 Common fallback only; never automatically inserted in Mass or substitute for source-approved particular Proper.",
+  "sourceWitness": "https://missale.online/",
+  "hierarchyReference": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+  "candidates": [
+    {
+      "id": "commune:1962:doctor_non_pontiff",
+      "latinTitle": "Commune Doctoris non Pontificis",
+      "forClass": "CONFESSOR_DOCTOR_NOT_BISHOP",
+      "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis",
+      "introitLabel": "In medio Ecclesiae",
+      "readingReference": "2 Timothy 4:1–8",
+      "gospelReference": "Matthew 5:13–19",
+      "orationsWitnessedInLatin": [
+        "collect",
+        "secret",
+        "postcommunion"
+      ],
+      "saintNamePlaceholder": "N.",
+      "evidencedComponents": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "tract",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "type": "COMMON_1962",
+      "primaryEditionCollated": false,
+      "completeBilingualTextImported": false,
+      "applicableOnlyIfNoSourceSpecificProper": true,
+      "candidateSaintIds": [
+        "saint.john-henry-newman"
+      ],
+      "applicability": "CANDIDATE_NOT_ACTUAL_SELECTED_FORMULARY"
+    },
+    {
+      "id": "commune:1962:doctor_pontiff",
+      "latinTitle": "Commune Doctoris Pontificis",
+      "forClass": "CONFESSOR_DOCTOR_BISHOP",
+      "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis",
+      "introitLabel": "In medio Ecclesiae",
+      "readingReference": null,
+      "gospelReference": null,
+      "orationsWitnessedInLatin": [
+        "collect",
+        "secret",
+        "postcommunion"
+      ],
+      "saintNamePlaceholder": "N.",
+      "evidencedComponents": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "type": "COMMON_1962",
+      "primaryEditionCollated": false,
+      "completeBilingualTextImported": false,
+      "applicableOnlyIfNoSourceSpecificProper": true,
+      "candidateSaintIds": [],
+      "applicability": "DOCTOR_BISHOP_ONLY_NEWMAN_NOT_A_BISHOP"
+    },
+    {
+      "id": "commune:1962:confessor_non_pontiff",
+      "latinTitle": "Commune Confessoris non Pontificis",
+      "forClass": "CONFESSOR_NOT_BISHOP",
+      "sourceUrl": "https://1962missal.com/commune/commune-confessoris-non-pontificis/",
+      "introitLabel": "Os iusti",
+      "readingReference": null,
+      "gospelReference": null,
+      "orationsWitnessedInLatin": [
+        "collect",
+        "secret",
+        "postcommunion"
+      ],
+      "saintNamePlaceholder": "N.",
+      "evidencedComponents": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "type": "COMMON_1962",
+      "primaryEditionCollated": false,
+      "completeBilingualTextImported": false,
+      "applicableOnlyIfNoSourceSpecificProper": true,
+      "candidateSaintIds": [
+        "saint.john-henry-newman"
+      ],
+      "applicability": "ALTERNATIVE_NON_BISHOP_CLASS_REQUIRES_CELEBRANT_AND_RUBRICAL_REVIEW"
+    }
+  ],
+  "canonicalSourceSelectionRule": "First 1962 pro aliquibus locis, second approved 1962 Holy See Supplement, third appropriate 1962 Common, with celebrant choice among approved Commons when multiple are available.",
+  "interpolationRule": "Only placeholders actually present in the authorized Latin edition (e.g. N.) may be resolved to the subject and grammatical case; no free rewrite or automatic back-projection of a modern Missal proper.",
+  "liturgicalCommemorationRule": "A later-saint optional commemoration under Cum sanctissima §6 requires actual saint/date source entry in pro aliquibus locis or Supplement; fallback Common alone is insufficient.",
+  "importGate": [
+    "PRIMARY_LATIN_1962_MISSAL_COLLATION",
+    "COPYRIGHT_AND_LANGUAGE_PROVENANCE",
+    "SEMANTIC_ID_ALIGNMENT",
+    "COMMEMORATION_ORATION_FORM_AND_ORDER",
+    "COMPLETE_MASS_FORMULARY_REVIEW",
+    "AUTHORITATIVE_DECISION_FOR_ANY_1970S_PROPER"
+  ]
+}

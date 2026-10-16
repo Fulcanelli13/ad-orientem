@@ -1,0 +1,271 @@
+# Current editorial decision — Saints of the Day, not a martyrology
+
+**15 October 2026. Supersedes the earlier cohort-member enumeration TODOs in this historical log.** The user's scope decision is explicit: **one martyr group = one public saint profile**, regardless of whether the group has 2 or 2,000 members. Publish separate individual martyrs **only when historically or devotionally significant**. Never schedule additional member-name expansion work just to complete a numerical cohort.
+
+**Work committed on PR #1226:** the same 13 pre-existing cohort IDs now have short **English/French** group stories and direct explanations of *why* they are honoured, plus sources and selective significant-saint links; 5 modern USCCB calendar date **witnesses** (Uganda 3 June; China 9 July; Korea 20 September; Lorenzo Ruiz/Japan 28 September; Vietnam 24 November). None is automatically treated as a universal 1962 feast or a selected Mass. All remain editorial review, and those dates cannot retroject into historical calendars without further evidence. The original six individual pilot saints now also explain **why** they are saints, and direct to Vatican primary sources.
+
+The cohort counts (including exact historical group sizes and approximately 800 at Otranto) are retained **only for context and provenance**. There are **zero required individual-member research tasks**. No saints/artwork/geo IDs have been invented: approved image and existing canonical Map place matches are pending from their proper owners. The presentation projections are pure, tested functions, **not yet wired to production**. The 1962 principal Mass, its proper and historical Observance rules remain unchanged.
+
+**Next priority is date + asset + place reconciliation**, not martyrology, not another census. Confirm universal/particular memorial dates for high-value saints and groups; match existing artwork and sacred-geography records, then integrate as a visually led secondary Calendar/Home/Map layer without displacing the traditional observance.
+
+---
+
+# Living Sanctoral — Phase 2 source-bound pilot (15 October 2026)
+
+**Canonical issue:** [#1224](https://github.com/Fulcanelli13/ad-orientem/issues/1224)  
+**Status (15 Oct):** 70/70 protected 1962 feast IDs; 34/38 Doctors matched to old resolver; **51/51 official source-year pages transcribed** (258 named post-1960 saints, 13 cohorts); **NOT** an exhaustive person/feast-day or liturgical certification, and **NOT** wired to runtime.  
+**Canonical baseline:** `main` 1962 Calendar and shared day/Proper resolver. No mass-text, rank, colour, commemoration or selected-formulary override in this pilot.
+
+## Existing production ownership discovered
+
+- `src/calendar/calendar-runtime.js`: Day/Month/Year UI and Month Sanctorale listing, presently projected from resolved 1962 principal entries, not a complete contemporary saints catalogue.
+- `src/calendar/observance-title.js`: specific bilingual source-ID aliases; contains `sancti:10-03` for St Thérèse. This is a display alias, not a saint-master registry.
+- `src/calendar/intelligence.js` and `src/calendar/devotional-registry.js`: recurring practices, novenas, other devotional/semantic date links. Do not append newly canonised saints to this practice register as a substitute for an authoritative saints table.
+- Calendar currently routes principal `today.saint` detail via the existing module. Any new living-sanctoral profile should resolve canonical saint IDs without displacing the principal calendar date.
+- `src/home/`: consume Calendar projections and the existing sacred-art registry. Do not make a second date engine.
+- `docs/CALENDAR-1962-EDITORIAL-CROSSWALK-20261009.md`: 132 historical crosswalk flags already dispositioned. Do not reopen them as new sanctoral bugs.
+
+## Documents and interpretation
+
+1. [*Cum sanctissima*, CDF decree of 22 February 2020](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html): post-26-July-1960 saint rule, optional festive Mass, protected list, other rubrical conditions.
+2. [CDF explanatory note](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html): the older calendar may continue unchanged; optional alternatives must meet the rules and pastoral judgment.
+3. [Newman's addition to the *current* Roman General Calendar](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html): 9 October optional memorial. This is **not** itself an approved 1962 proper-text supplement.
+4. [General 1960 rubrics](https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf): precedence, commemoration, temporal and sanctoral rules.
+5. [*Traditionis custodes*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html): later legal context. Any claimed permission under a particular diocesan/institute practice must be independently documented, not inferred from a client-side app.
+
+## First pilot
+
+`data/calendar/living-sanctoral-pilot.v1.json` contains six source-linked exemplars:
+
+| Person | Purpose | Provisional state |
+|---|---|---|
+| John Henry Newman | 2019 canonisation, 2025 Doctor, 2026 published general-calendar decree | Universal date witnessed; *1962* optional-Mass eligibility NOT computed |
+| Pio of Pietrelcina | 2002 canonisation; 23 September modern memorial | No override of 2026 Ember Wednesday |
+| Carlo Acutis | 2025 canonisation | A universal-calendar memorial date has **not** been verified by this pass; not automatically eligible on an assumed date |
+| Thérèse of Lisieux | Protected 3 October 1962 feast, 1997 Doctor | Update title/profile only; feast retained |
+| Teresa of Ávila | Protected 15 October 1962 feast, 1970 Doctor | Principal identity `sancti:10-15:3:w` recovered from both archived resolver years; title/profile addition remains unimplemented |
+| Irenaeus of Lyon | 2022 Doctor title | 1962 identity `sancti:07-03r:3:r` recovered from both archived resolver years; Doctor title remains a separate later status |
+
+Every asserted status has a linked source ID; missing material remains flagged rather than invented. One canonical person ID can later serve Calendar, Saint of the Day, image registry and Map of Saints.
+
+## Acceptance gates before promotion
+
+- Inventory and reconcile the *actual* resolved 1962 saint identities and cross-references. Determine baseline counts independently; no completeness percentages until both numerator and denominator exist.
+- Assemble the full post-1960 canonisations list and full Doctors roster as of the review date, recording decree date, original source, universal/particular date authority, and any merge with existing saint.
+- Curate the exact 70 protected third-class observances from the *Cum sanctissima* annex, with source IDs, aliases and collision tests.
+- Build a **pure** eligibility function that consumes the already resolved date/rank: legal eligibility ≠ local authorisation ≠ actual celebrant selection. No date-only override.
+- Date-aware sainthood and doctor-title displays; do not retroject a later recognition into historical years.
+- Run special cases (9 Oct Newman/Leonardi, 15 Oct Teresa, 3 Oct Thérèse, 23 Sep 2026 Padre Pio/Ember Wednesday, local Blessed, Sundays, vigils, Lent, transfers).
+- Integrate only as a separate secondary visual/list layer first; Mass/Proper unchanged until its own certified crosswalk and approved text sources exist.
+- Independent liturgical review and phone/CI acceptance required prior to merging any runtime integration.
+
+## Tests
+
+`node tests/calendar-living-sanctoral-pilot.mjs` verifies unique IDs, present primary source links, correctly segregated 1962/current calendar dates and a hard guard against inferred Mass selection. It does **not** certify every factual claim or prove that the full app UI works.
+
+## Cross-pipeline dependencies
+
+- Existing calendar cycle identity [#721](https://github.com/Fulcanelli13/ad-orientem/issues/721)
+- Commemoration applicability [#1076](https://github.com/Fulcanelli13/ad-orientem/issues/1076)
+- Sacred-art calendars [#885](https://github.com/Fulcanelli13/ad-orientem/issues/885) and [#944](https://github.com/Fulcanelli13/ad-orientem/issues/944)
+
+No duplicate saints library, separate frontend or replacement Mass engine should arise from this workstream.
+
+
+## Additional Doctor-title census gate (same branch)
+
+`data/calendar/doctors-of-church-roster.review.v1.json` now enumerates **38 candidate Doctor identities**, reconciled to the six-person pilot IDs where they overlap. Eight Doctor declarations after 1962 have dated Holy See witnesses or index entries: Teresa of Ávila (1970), Catherine of Siena (1970), Thérèse of Lisieux (1997), John of Ávila (2012), Hildegard of Bingen (2012), Gregory of Narek (2015), Irenaeus of Lyon (2022), and John Henry Newman (2025).
+
+**Status distinction:** The list is an identity census corroborated by a published July 2026 38-Doctor compilation plus USCCB's 38th Doctor report; it is **not** a primary-source certification of all 38 entries. The archived 2024/2027 production day resolver now directly attests **34 of 38** Doctor source identities, including displaced observances; four have no matched older-calendar entry in this audit. This does not certify the original printed books or the entire Doctors recognition source corpus. See `node tests/calendar-doctors-roster-review.mjs`.
+
+
+## Protected-feast annex transcription
+
+`data/calendar/cum-sanctissima-protected-third-class.review.v1.json` enumerates **all 70** protected third-class feasts from the Vatican decree annex, grouped across 12 months. Titles are explanatory English review labels; **all 70 exact class-III resolver IDs have now been recovered from the archived 2024/2027 day-sweep**. Never apply a date-only rule to change a liturgical day. The Calendar must match the actual observed feast and source identity. Test: `node tests/calendar-cum-sanctissima-protected-annex.mjs`.
+
+This is a completed source-list transcription, **not** a certified rubrical evaluator, day override or permission to celebrate an alternate Mass.
+
+## 15 October — source-ID reconciliation with the archived full-year audit
+
+Recovered the original CI evidence from the [9 October full-year calendar audit](https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423), artifact `calendar-1962-full-year-comparison`, `calendar-1962-full-year-audit.json`, **731 dated rows** (366 in 2024, 365 in 2027). Each record exposes production `day.main`, its exact rank-bearing ID, and where relevant a `displaced` list of recorded source candidates. Archive audit itself states **AUDITED_NOT_CERTIFIED**.
+
+**Protected annex: 70/70 identities matched**, each as one III-class `sancti:...` identity attested in **both** years. Examples:
+- 25 January: `sancti:01-25r:3:w` (Conversion of St Paul; separate Peter commemoration retained)
+- 3 October: `sancti:10-03:3:w` (St Thérèse)
+- 15 October: `sancti:10-15:3:w` (St Teresa)
+- 18 November: `sancti:11-18r:3:w` (Dedication of the two Basilicas)
+- 13 December: `sancti:12-13r:3:r` (St Lucy)
+
+**Doctors: 34/38 older-calendar source identities recovered** in those same dated 2024/2027 principal/displaced rows. The four without such an entry are John of Ávila, Hildegard of Bingen, Gregory of Narek and John Henry Newman. This is an audit finding for this 1962 dataset, not an assertion that those saints lack legitimate modern feasts, particular calendars, or cults. Example: `sancti:07-03r:3:r` is St Irenaeus (traditional 3 July); `sancti:02-23r:3:w` is St Peter Damian even where displaced by the Lenten feria.
+
+Source identity recovery must **not** be misreported as permission for an optional Mass or liturgical certification. The ongoing review is: comprehensive post-1960 canonisation register; correct general vs particular liturgical dates; approved text availability; 2020 decree eligibility (with protected-feast and temporal collisions); and finally a reviewed Calendar secondary display.
+
+### Presentation logic staged but not activated
+
+`src/calendar/living-sanctoral.js` now provides a pure date-aware presentation projection, with no imports into `calendar-runtime.js` or `src/home`. It enforces saint canonisation date, Doctor declaration date, publication date of documented new General Calendar entries, source-presence, and suppression of a secondary duplicate when the principal 1962 source ID matches even if rank/colour suffixes differ.
+
+No calendar/Proper/Office calculation or celebrant choice has been changed. CI checks are isolated in `.github/workflows/calendar-living-sanctoral.yml`. Four tests must pass, but CI passing would **not** constitute independent theological certification.
+
+
+## 15 October — official post-1960 canonisation intake, batch 1
+
+**Canonical source:** [Dicastery year index](https://www.causesanti.va/it/celebrazioni/canonizzazioni.html). The index identifies **51 post-cutoff years with entries from 1961–2025**; absence of a year (especially 2026) is not a claim that no canonisation occurred. The 1960 index has canonisations in May and June, both before the 26 July 1960 threshold.
+
+**Year progress: 9/51 sources transcribed.** Staged 2014, 2016, 2017, 2018, 2019, 2021, 2022, 2024 and 2025. Remaining 42 indexed years appear individually in `data/calendar/post1960-canonizations.source-year-coverage.v1.json`.
+
+**Event census:** `data/calendar/post1960-canonizations.official-batch1.v1.json` now has 19 documented canonisation events, **67 individually named saints**, and three **unexpanded** canonisation groups comprising **57 persons** (eleven Martyrs of Damascus, sixteen Carmelites of Compiègne, thirty Martyrs of Brazil). Group counts do *not* count as completed person-level saint records. The ordinary vs equivalent canonisation event type is separately preserved; no memorial date is assumed from canonisation.
+
+**Canonical person reconciliation:** `src/calendar/sanctoral-person-reconciliation.js` combines the pilot six with the 67 source-indexed named saints by one stable person ID; exactly **71 unique canonical people** in the current *research* input, since Newman and Carlo Acutis are shared. The source records are not published as a competing saints registry or automatically included on homepage. If an event date conflicts with a prior recognised date, reconciliation throws rather than silently overwriting.
+
+**Conservative rubrical review:** `src/calendar/optional-post1960-saint-review.js` classifies an individually canonised post-26-July-1960 saint's optional 1962 Mass as blocked (I/II class or an exactly matched protected III-class feast), unresolved (missing universal memorial, rank, verified day or annex), or **candidate requiring review** (III/IV class with no established blocker). It does not presume a celebrant's actual Mass, select propers, grant competence/permissions, settle votive Mass provisions, or modify commemorations. For the test cases: Newman on 9 October 2026 is a candidate only; Padre Pio on 23 September 2026 is blocked by Ember Wednesday II class; Carlo's universal memorial remains unresolved.
+
+**Acceptance tests:** the `calendar-living-sanctoral.yml` workflow now executes eight structural/reconciliation/rubrical tests, preserving the historical source audit. Success verifies schema and conservative logic only, not a theological or legal attestation.
+
+**Remaining scope:** full coverage of the 42 years, group-member expansion, audit of modern universal vs particular dates and promulgation dates, review of special Mass/Office cases under *Cum sanctissima* and subsequent norms, and then non-invasive visual integration with saints profiles and artwork. No live Calendar/Proper/reader files have been modified.
+
+
+## 15 October — second Vatican-source census batch (eleven more years)
+
+The **original Dicastery canonisation-year pages** were inspected and eleven previously unprocessed years transcribed into the existing census: **2004–2013 inclusive (ten years), plus 2015**. This brought the cumulative source-intake coverage to **20/51 indexed post-cutoff years** (31 indexed years pending), with **38 calendar-dated canonisation events** and **132 individually named saint records**. Six pilot identities and 132 intake people reconcile to **136 unique canonical person IDs** (Newman and Carlo Acutis occur in both and retain the same identity).
+
+Research details requiring preserved distinctions:
+
+- **2015-10-18:** Ludovico/Louis Martin and Maria Azelia/Zélie Guérin each receive their own canonical person ID although the Dicastery publishes them under one jointly named couple; that ceremony's named individual count is four, not three. [2015 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html).
+- **2013-05-12:** Antonio Primaldo and the Martyrs of Otranto are described by the Dicastery as **approximately 800**; there is **no certified exact individual count or full named list**. Store `memberCount:null`, `estimatedMemberCount:800` and a separate count precision. The 57 *exact* unexpanded members from Damascus, Compiègne and Brazil remain counted separately. [2013 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html).
+- **2012-05-10:** Hildegard of Bingen's canonisation is independently recorded; her Doctor title is a separate 7 October 2012 event in the Doctors roster. A single canonical identity (`saint.hildegard-bingen`) is reused, never two saints. [2012 official year](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html).
+- Spot rechecking prior intake against [2014](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html), [2017](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html) and [2024](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html) supports the existing event date and jointly canonised group structures; further line-by-line review remains open.
+
+Every newly staged person has a source-year URL and canonisation event ID. **No** newly staged person has an inferred universal feast date, optional traditional Mass, approved proper text or change to the 1962 principal observance. Groups remain unexpanded rather than being flattened into a fictitious single saint or unverified people. Reconciliation and source-year tests enforce these distinctions.
+
+This is an auditable source-intake batch, **not** 20/51 of all persons or a claim that all indexed events are completely verified against primary decree images. The 31 remaining year-level entries and full member-name expansion are open.
+
+
+## 15 October — third Vatican-source intake: 1999 and 2001–2003
+
+Four further Dicastery year pages were inspected: [1999](https://www.causesanti.va/it/celebrazioni/canonizzazioni/1999.html), [2001](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2001.html), [2002](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2002.html), and [2003](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2003.html).
+
+**Cumulative published intake:** **24/51** indexed years; **27** indexed years untranscribed. **51** canonisation events, **169** individually named saint records, **5** unexpanded martyr groups with **66 exactly enumerated members**, and a *separate unverified approximate* 800-person Otranto cohort. The six-person historical pilot and 169 named source persons converge on **172 unique canonical person IDs**, reusing Newman, Carlo Acutis and (now) **Padre Pio** by the exact stable `saint.pio-pietrelcina` ID.
+
+- **16 June 2002:** Padre Pio's canonisation is now anchored to the Dicastery and cross-checked against the pilot source; do not generate an extra saint, change the September 23 Ember Wednesday rule or import a modern Proper.
+- **21 November 1999:** `Cirilo Bertrán e 8 compagni` is recorded as a Lasallian nine-martyr group, distinct from the separately named Passionist priest Innocencio de la Inmaculada. Individual identities await expansion.
+- **Year 2000 intentionally remains pending**, notwithstanding that the Dicastery year page has been inspected. It separately lists the **120 Martyrs of China** as a cohort and the two named Salesian martyrs Luigi Versiglia and Callisto Caravario. Those may overlap the group's membership. **Do not naively add 120 group members plus two named individuals until the member crosswalk resolves the overlap.** A reliable group audit precedes import.
+
+The new source records have no universal feast dates; the optional Mass eligibility evaluator and production Calendar/Proper are unchanged. The source-year denominator measures pages, not all individuals or completed legal review. The existing focused CI workflow protects cardinalities, deduplication and the mixed exact/approximate martyr-group treatment.
+
+
+## 15 October — fourth intake: 2000, overlap resolved using Holy See evidence
+
+Additional independent [Dicastery year source](https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html) and [Holy See briefing](https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/09/22/0550/01911.html), corroborated by the [Papal Canonisation Mass of 123 persons](https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2000/10/01/0568/01964.html), resolves the earlier 2000 cohort hold.
+
+- **1 October 2000:** the Chinese Martyrs are **one 120-person canonised cohort**, not 120 plus Luigi Versiglia and Callisto Caravario. Three members are directly represented as named person identities in the current intake: Agostino Zhao Rong, Luigi Versiglia and Callisto Caravario. The record retains the **full group size 120**, and only **117 as still-unexpanded**. Three *other* saints were canonised that day: María Josefa Sancho de Guerra, Katharine Drexel and Giuseppina Bakhita. Group 120 + other 3 = **123 total**. Do not infer a full 120-member list from this partial crosswalk.
+- **21 May 2000:** Cristóbal Magallanes belongs to a **25-person Mexican martyrs group**, with 24 names unexpanded, plus two other separately named saints. The single group member is not counted twice. **30 April:** Faustina Kowalska is a distinct individual.
+- **2000 all ceremonies:** the three events account for **151 canonised persons** as 1 + (25+2) + (120+3), but only **10** individuals are named in the current research corpus. The remaining **141** members from these two groups are not fabricated into person records.
+
+**Latest cumulative counts:** **25/51** source years staged; 26 indexed years outstanding; **54 canonisation events**; **179 named individual canonised persons**; **7 martyr groups**, with **207 precisely countable unexpanded members** (including 141 in 2000) and **Otranto c. 800 as a separate approximate cohort**; after the original six pilot records are merged and three existing names reused, **182 unique canonical research person IDs**.
+
+This is a source and identity inventory only; it does not certify new feast dates or change the 1962 Mass selection. Existing pure source-projection and eligibility tests remain in the CI pipeline.
+
+
+## 15 October — final source-year intake: **51/51 Dicastery-listed post-cutoff years**
+
+The official [Dicastery year index](https://www.causesanti.va/it/celebrazioni/canonizzazioni.html) was rechecked as of 15 October 2026. The 26 remaining listed years (1961–1977 and 1982–1998, for years actually enumerated in that index) have been transcribed from their respective original Vatican year pages. The census intake now has:
+
+- **51/51 indexed years recorded**; no remaining *indexed year-page* transcription tasks.
+- **112 recorded canonisation event dates** and **258 individually named canonised persons** in `data/calendar/post1960-canonizations.official-batch1.v1.json`.
+- **13 martyr/group cohort records**, with **497 precisely countable but as-yet-unexpanded individuals** after excluding 15 already named cohort members. The **approximately 800 Martyrs of Otranto** remain a separate, expressly approximate cohort and are not treated as 800 individually verified identities.
+- Reconciliation with the six-person original pilot gives **261 distinct canonical research person IDs** (Newman, Carlo Acutis and Padre Pio appear in both sources and are counted once).
+
+**Critical distinction:** This closes **the 51 source-year-page intake**, *not* the entire global person inventory, every equivalent canonisation, or all liturgical observance metadata. Years absent from the public directory, including 2026 at the audit timestamp, have not been certified empty; future canonisations are a maintenance input.
+
+**Cohort boundaries:** Year 1984's 103 Korean martyrs (2 individually named, 101 still unexpanded); 1987's 16 Japanese martyrs (3 identified, 13 unexpanded); 1988's 117 Vietnamese martyrs (1 linked, 116 unexpanded) and three Paraguay Jesuit martyrs (all 3 named); 1970's Forty Martyrs of England and Wales (40 unexpanded), and 1964's 22 Ugandan Catholic martyrs (2 named, 20 unexpanded) are stored separately. `memberCount` must never be added to individually named members again, and other Christian martyrs must not be silently included in a Catholic canonisation cohort.
+
+**1997 source correction:** [The Dicastery's 1997 year page](https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html) names Edwige di Polonia / Jadwiga, but its descriptive paragraph describes a duchess and Cistercian connections consistent with an earlier different St Hedwig. The [8 June 1997 papal canonisation homily](https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19970608_cracovia.html) explicitly names **Queen Hedwig of Poland**, Wawel and the Jagiellonians, settling the identity. Canonical ID `saint.jadwiga-queen-poland` is now tagged as adjudicated by a primary papal document, with the erroneous secondary description recorded as a source discrepancy. **Do not link her to Hedwig of Silesia.**
+
+**Formal limitations:** No newly transcribed individual has an inferred universal 1962/modern feast date, liturgical class, Proper, independently approved celebrant option or artwork assignment. `Cum sanctissima` gate remains fail-closed; this research census is not wired to live Calendar, the homepage, or the Mass reader.
+
+**Next acceptance sequence (do not restart the same year audit):** (1) expand 497 exactly enumerated martyr identities where authoritative member lists exist and retain Otranto approximate status; (2) align identities with the established historical saints/art and Doctors registries; (3) independently certify *universal vs particular vs devotional* saint dates and required local authorities, beginning with well-supported current-calendar dates; (4) inspect legal precedence/permission and available approved traditional formularies; (5) add a small reviewed supplementary visual Calendar panel without changing the principal 1962 Mass. Maintain one GitHub source-of-truth PR, not a second calendar.
+
+
+## 15 October — date authority + approved geography crosswalk (third phase)
+
+This addition is **source verification and reviewable secondary-card data**, not live Calendar/Home/Map activation. Preserve the 1962 `day.main`, Proper selection, commemorations and `today.saint` route.
+
+### Dates (14 explicit researched records)
+
+`data/calendar/living-sanctoral-modern-observances.review.v1.json` now has 14 date entries, separately scoped:
+
+- **5 certified universal Roman memorial inscriptions from Vatican decrees:** Gregory of Narek (27 February, optional), John of Ávila (10 May, optional), Hildegard of Bingen (17 September, optional), Teresa of Calcutta (5 September, optional) and John Henry Newman (9 October, optional). The first three derive from [the 2 February 2021 publication](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/02/02/210202b.html); Teresa from [11 February 2025](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html); Newman from [3 February 2026](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html). Each has an inscription publication gate so the app cannot falsely back-project it.
+- **9 USCCB contemporary/historical date witnesses, not universal decrees established by this evidence set:** Padre Pio (23 September), Thérèse (1 October), Teresa of Ávila (15 October), Irenaeus (28 June, historical 2024 witness), and five collective martyr groups—Uganda (3 June), China (9 July), Korea (20 September), Lorenzo Ruiz/Japan (28 September), Vietnam (24 November). The 2024 Irenaeus witness is deliberately **not** projected as an independently checked 2026 U.S. item. These are secondary date labels, not the Mass actually celebrated on a Sunday, Ember Day or other higher feast.
+- Carlo Acutis remains **without a certified universal Roman-calendar date** in this reviewed subset. No date is invented.
+
+`src/calendar/reviewed-sanctoral-cards.js` is a **pure composition function** joining the vetted dates with existing person, Doctor, group and place records. Its worldwide/default setting exposes **only Vatican-certified universal inscriptions**; an explicit `jurisdiction:"US"` allows the U.S. witness examples in **2026 only**. A person already owning the principal 1962 source ID is not duplicated as an “also honoured” card. No outputs include an executable Mass/Proper choice, new liturgical rank, or celebration authority. Source dates and saint titles are historically gated independently.
+
+### Physical places and photographs versus sacred paintings
+
+`data/calendar/living-sanctoral-place-art-crosswalk.review.v1.json` links **five existing canonical geography IDs** for three subjects:
+
+- Thérèse: `place:FR:carmel-lisieux` and `place:FR:basilique-sainte-therese-lisieux`, with one genuinely approved *basilica site photograph*;
+- Padre Pio: `place:IT:santuario-san-pio-rotondo` (verified place, **no** claimed approved image);
+- Ugandan Martyrs: `place:UG:namugongo-martyrs` (one genuinely approved *shrine site photograph*) and `place:UG:munyonyo-martyrs`.
+
+All the place IDs are reused from `data/geography/seed-registry.v1.json`; the two photos have existing subject, licence and crop approvals in `data/geography/approved-place-media.v1.json`. **A photo of a shrine is not a sacred painting**, and must not be substituted in the sacred-art/saint-portrait collection. The separate sacred-art pipeline, [draft PR #887](https://github.com/Fulcanelli13/ad-orientem/pull/887), still owns approval of subject-appropriate artwork. The Lisieux *Thérèse aux roses* painting in that pipeline is a **research lead, not an approved artwork**. The artwork ID therefore remains **null**, not a synthetic or guessed image. Geographic links denote related devotional sites, not necessarily death or canonisation locations.
+
+### New CI tests and remaining gates
+
+`tests/calendar-reviewed-sanctoral-cards.mjs` verifies: exact owner IDs against the existing geography/saints/Doctors registries, two approved photo paths and rights review, separation of photographs from sacred paintings, Vatican versus U.S. date scope, 2021/2025/2026 publication gating, historical date protection, suppression of a duplicate 1962 principal saint, and preservation of `selectedFormularyId:null`. All 13 collective martyr profiles remain one entry per group, **not** a martyrology.
+
+**Still open:** independent modern General Calendar authority for the nine USCCB date witnesses, additional exact artwork approval and canonical place/site coverage, editorial final review of explanations, and a phone/desktop presentation acceptance pass before wiring the new read-only secondary layer into production Calendar/Home/Map. Do not claim this stage already displays in the deployed app.
+
+
+## 15 October — native Calendar Day supplementary integration (draft #1226)
+
+The earlier read-only projection now connects to the **Calendar Day screen in the draft branch**. It is not yet merged or deployed. It renders a quiet **Also honoured / Également honorés** section below a resolved 1962 principal feast, without changing the original rank, colour, Mass buttons, Proper, commemorations or existing saint-detail action.
+
+The worldwide default displays **only five explicitly Vatican-decreed General Roman Calendar memorials**: Gregory of Narek (27 February), John of Ávila (10 May), Hildegard of Bingen (17 September), Teresa of Calcutta (5 September) and John Henry Newman (9 October). All are gated to source publication; USCCB witnesses are available in the research projection only with an explicit US jurisdiction and are **not auto-enabled in the global UI**. No local jurisdiction inference.
+
+### Small, source-derived model
+- The new data/calendar/living-sanctoral-read-model.v1.json is a **~31 KB filtered projection** of the existing 14 date witness records, relevant canonical person/group/Doctor records and approved place metadata; its source files originally total ~345 KB. This is not a new authoritative saints database. CI compares the derived fields with the original registries and requires regeneration if they diverge.
+- Calendar runtime performs one lazy data fetch **only when Calendar opens**, then refreshes the current Day screen. Its new secondary UI comes from src/calendar/sanctoral-day-ui.js. Safe source links are presented under a closed Further reading disclosure; copy is short EN/FR and escaped.
+- No image is inserted in the saint portrait slot until the sacred-art owner approves an exact painting. Approved shrine photos remain classified as physical-site images, not paintings. Sacred art research PR #887 retains artwork ownership.
+- The previously provisional Vatican 2021 Doctors decree URL was replaced with the verified canonical decree: https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html .
+
+### QA
+- New tests/calendar-reviewed-sanctoral-day-integration.mjs checks the 14-entry source model against all upstream registries and geo/photo evidence, compact delivery, five global dates, publication-gated historical display, hidden US-specific dates in the worldwide default, French/English text, robust HTML escaping, permitted external reference URLs, no invented painting or image, and no Mass/Proper actions.
+- The older tests remain in place for historical 1962 principal identity and source-date reconciliation.
+- **Still required:** current full GitHub suite, on-device Calendar visual/interaction QA, art selection from its own owner, then separate Home and Map of Saints consumption. Do not report these as completed or merge the draft prematurely.
+
+## 15 October — real phone acceptance, 320 / 390 / 430 px
+
+**Accepted in scoped automated Chromium browser checks, with three screenshot artifacts visually inspected.** On the branch head `622e9073272948e90549851ad30efcf3b7d7ec2a`, dedicated [GitHub Actions run #38731911594](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731911594) passed and uploaded artifact `calendar-sanctoral-phone-evidence` (artifact ID `11971306336`).
+
+The test opens the **real Today → Read & reflect → Day** path (there is no Day tab in Today's Day/Month/Year tab row), selects **9 October 2026**, and confirms:
+
+- Canonical 1962 principal is **St John Leonardi**, actual resolver ID `sancti:10-09:3:w`; the modern secondary card is **St John Henry Newman**. `day.main` and the original single Mass control are unchanged.
+- At widths **320 / 390 / 430 px**, the secondary card widths are **248 / 306 / 346 px**, within visible viewport boundaries; **0 px document horizontal overflow**, no JavaScript page errors, and no duplicated supplementary card.
+- Disclosure's touch area is **44 px** at each viewport. Further-reading content remains collapsed until tapped, with an actual Vatican URL, `target=_blank`, and `rel=noopener noreferrer`.
+- Exactly **one** lazy read-model network response (HTTP 200) is made per Calendar session.
+- Navigating to **9 October 2025** removes Newman's *2026-inscribed* memorial while leaving the 1962 principal feast UI.
+- Screenshots at all three widths were examined: restrained dark treatment, clear textual hierarchy, no clipping or overpaint. The screenshots are viewport crops after opening the source disclosure, not proofs of full-page accessibility or final editorial/artwork approval.
+
+**Phone test source:** `tests/calendar-sanctoral-phone-acceptance.mjs`; **workflow:** `.github/workflows/calendar-sanctoral-phone.yml`. This is an additive test, distinct from the already existing Month picker phone suite. The Calendar's source disclosure CSS was raised from 32 px to a 44 px min-height for touch accessibility.
+
+On the accepted commit, **all nine GitHub Actions workflows associated with the PR finished successfully or were intentionally skipped (the general visual capture job)**: sanctoral source integrity, app convergence, required main gate, 1962 year audit, Calendar convergence (Today/Mass embedding), calendar phone month controls, directory foundation, and the new actual phone-sanctoral test. Vercel's separate build-rate-limit status is not a passed preview. The branch remains **draft, unmerged and not on GitHub Pages**.
+
+### Parallel-owner handoff
+
+- [Map of Saints PR #1227](https://github.com/Fulcanelli13/ad-orientem/pull/1227) already has its own native Explore lens and a source-grounded `saint:therese-of-lisieux` ↔ `saint.therese-lisieux` identity bridge. We provided five existing Place IDs and source scopes in a PR comment; **do not create or mutate a second Map of Saints** in this Calendar branch. Distinguish Blessed Jacques-Désiré Laval (Mauritius) from canonised François de Montmorency-Laval (Quebec).
+- [Sacred Art research PR #1231](https://github.com/Fulcanelli13/ad-orientem/pull/1231) owns physical originals, person/subject mappings and approval; no unapproved painting is assigned by Calendar. The five Vatican-inscribed modern memorial subjects were sent to the artwork owner for exact, user-rated physical-artwork matching.
+- Next: wait for cross-owner approved painting IDs/Map profile handoff; then plan discreet Home and Explore references with independent native owners. No saint-group member enumeration.
+
+
+## 15 October — Home/Map owner handoff and 1962 commemoration guard
+
+**No duplicate Home panel or Map of Saints frontend.** Existing `src/home/today-v2-sections.js` already links **Read & reflect → Saint of the Day** to canonical Calendar Day using `data-home-calendar-view="day"`; the real phone acceptance test opens that existing route and reaches the secondary Calendar saint panel. This is the Home integration: a single 1962-calendar owner and a single secondary saint presentation, not two independently computed dates.
+
+The native [Map of Saints PR #1227](https://github.com/Fulcanelli13/ad-orientem/pull/1227) already owns `src/find/saints-lens.js`, `src/find/saints-presentation.js` and its `data/saints/parallel-owner-identity-bridge-20261015.v1.json`. In the Map owner's evidence, only two current exact Calendar↔Map person aliases are independently adjudicated: `saint:therese-of-lisieux` → `saint.therese-lisieux` (observed `sancti:10-03:3:w` in 2026) and `saint:claude-la-colombiere` → `saint.claude-la-colombiere` (1992 canonisation). The unverified or different-person names are not inferred into these two identities, notably **Blessed Jacques-Désiré Laval of Mauritius ≠ canonised François de Montmorency-Laval of Quebec**. No second map, fabricated pin or unverified deep link is introduced into Calendar. Map owner was sent verified canonical Place IDs and source constraints.
+
+The [W63 sacred-art year-index PR #1231](https://github.com/Fulcanelli13/ad-orientem/pull/1231) explicitly reports **zero** calendar-date scoped artwork source associations approved for production and **zero** physically inspected published visuals in that index. The new saints panel therefore remains **text-first**. No site photograph is misrepresented as an approved saint portrait, and the 281 research physical-original records / 365 day obligations do not imply 281 approved images or 365 portraits. The art owner received an exact five-subject Vatican-memorial request; source gallery selections and rating exclusions stay theirs.
+
+**Additional regression protection:** `buildReviewedSanctoralCards` now accepts observed 1962 **commemoration IDs**, supplied from `r.day.commemorations` by the native Calendar. Any modern saint matching the principal **or a named commemoration** is omitted from “Also honoured.” Tests cover both bare ID strings and resolver objects, retaining unrelated modern saints. This fixes a one-person/one-surface duplication risk without changing the resolved 1962 calendar.
+
+**Release status:** Calendar still lives on the existing draft #1226; source-index and phone CI regression checks must pass on the new commit. No merge, Home rewrite, Map duplicate, new artwork selector or martyrology expansion is authorised by this coordination.

@@ -1,0 +1,211 @@
+{
+  "schema": "AO_TRADITIONAL_CALENDAR_ADJUDICATION_MATRIX_V1",
+  "asOf": "2026-10-16",
+  "status": "SOURCE_BOUND_IMPLEMENTATION_BASELINE_NOT_LITURGICAL_APPROVAL",
+  "owner": "existing Calendar #1224 / PR #1226",
+  "canonicalBasis": "1962_ROMAN_CALENDAR_AND_APPLICABLE_TRADITIONAL_PARTICULAR_CALENDARS",
+  "notBase": "POSTCONCILIAR_GENERAL_ROMAN_CALENDAR",
+  "sources": {
+    "RUBRICS_1960": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "MISSALE_1962": "https://la.wikisource.org/wiki/Pagina:Missale_Romanum_1962.pdf/24",
+    "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+    "CUM_SANCTISSIMA_NOTE": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html"
+  },
+  "legalCaveat": "The 2020 decree is an additional source-bound traditional rubric; applicable later law/local permissions and exact formulary must be independently established. No software decision can substitute for a competent celebrant/ordinary.",
+  "outputSurfaces": {
+    "home": [
+      "1962_PRINCIPAL",
+      "1962_MASS_COMMEMORATION",
+      "SOURCE_ATTESTED_OPTIONAL_TRADITIONAL_CELEBRATION",
+      "PARTICULAR_OBSERVANCE",
+      "MODERN_OR_DEVOTIONAL_RECOGNITION"
+    ],
+    "calendar": "Explain why an observance is displayed, omitted, transferred, only potentially eligible, or locally scoped.",
+    "mass": "Only a positively sourced and independently checked local selection may change the Mass; unreviewed advisory alternatives never enter the reader or ICS."
+  },
+  "rules": [
+    {
+      "id": "BASE_1962",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 2-8, 35-62, 91-102",
+      "trigger": "source_resolved_day",
+      "outcome": "The observed 1962 principal observance and commemoration schedule remain the default. No modern sainthood record replaces the day main or its Mass Proper.",
+      "classification": "PRESERVE",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "OCCURRENCE_TRANSFER",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 92-102",
+      "trigger": "multiple_liturgical_days_same_date",
+      "outcome": "Decide precedence, omission, commemoration, first-class accidental transfer and permanent reassignment by actual source/rubrics; a weekday feast does not automatically transfer to Sunday.",
+      "classification": "SOURCE_REQUIRED",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "PRIVILEGED",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 106-110",
+      "trigger": "mass_or_office_commemoration",
+      "outcome": "Distinguish privileged from ordinary commemorations; St Peter and St Paul have an inseparable commemoration under one conclusion.",
+      "classification": "SOURCE_REQUIRED",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "FIRST_CLASS_AND_SUNG",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 111(a)",
+      "trigger": "day_class_I_or_sung_nonconventual_mass",
+      "outcome": "Only privileged commemorations are admitted; the number, precedence and any further restrictions must be resolved with the full Mass rubrics.",
+      "classification": "NO_AUTOMATIC_EXTRA",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "SUNDAY_SECOND_CLASS",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 111(b)",
+      "trigger": "sunday_class_II",
+      "outcome": "Only one commemoration, of a second-class feast, unless a privileged commemoration must instead be made. Ordinary weekday saints are not eligible merely because their feast fell that week.",
+      "classification": "MAX_ONE_CONDITIONAL",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "OTHER_SECOND_CLASS",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 111(c)",
+      "trigger": "other_day_class_II",
+      "outcome": "Only one commemoration, privileged or ordinary, subject to precedence and exclusions.",
+      "classification": "MAX_ONE_CONDITIONAL",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "THIRD_FOURTH_CLASS",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 111(d)",
+      "trigger": "day_class_III_or_IV",
+      "outcome": "At most two commemorations, subject to exclusions, priority and any sung Mass restrictions.",
+      "classification": "MAX_TWO_CONDITIONAL",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "SAME_IDENTITY_AND_ORDER",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 112-114",
+      "trigger": "all_masses_and_offices",
+      "outcome": "Prevent prayers to the same saint twice or incompatible mysteries; season comes first, then order of precedence; omit excess under the actual cap.",
+      "classification": "STRICT",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "AFTER_1960_SAINT_MASS",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 1-2; RGMR 302",
+      "trigger": "post_1960_canonized_saint",
+      "outcome": "After effective date 2020-03-19 and only on an independently established universal-church liturgical memorial date, consider a festive Mass on permitted III-class days or III-class saint vigils (and applicable IV-class provisions); require just cause and no contrary rubrical obstacle.",
+      "classification": "ELIGIBILITY_ONLY",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "PROTECTED_70",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 8 and annex",
+      "trigger": "protected_III_class_festival",
+      "outcome": "The 70 named III-class feasts cannot be impeded by the decree; compare exact canonical source identities, not titles or date alone.",
+      "classification": "BLOCKS_NEW_ALTERNATIVE",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "OMITTED_OLDER_FEAST",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 4; RG 111(d)",
+      "trigger": "optional_new_saint_mass_omits_old_III_class_feast_or_vigil",
+      "outcome": "Commemorate the omitted traditional feast/vigil and other required observances within applicable numerical and ritual rules.",
+      "classification": "REQUIRES_PROPER_ORATIONS",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "FORMULARY_CHOICE",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 5",
+      "trigger": "authorized_alternative_mass",
+      "outcome": "Choose 1962 Proprium pro aliquibus locis first, then approved Holy See Supplement, then 1962 Common. Never import the postconciliar lectionary/formulary.",
+      "classification": "SOURCE_REQUIRED",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "OPTIONAL_ORDINARY_COMM",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 6; RG 111(d)",
+      "trigger": "day_class_III_or_IV",
+      "outcome": "Optional commemoration is limited to a saint or mystery on the date listed in approved Proprium pro aliquibus locis or Supplement; modern calendar mention alone is insufficient.",
+      "classification": "ELIGIBILITY_ONLY",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "RELIGIOUS_SUPERIOR",
+      "primaryWitness": "CUM_SANCTISSIMA",
+      "paragraphs": "Cum sanctissima 7",
+      "trigger": "conventual_community_mass_or_choir_office",
+      "outcome": "The house superior, not an individual celebrant, decides the application of these options in common celebrations.",
+      "classification": "AUTHORITY_REQUIRED",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "PARTICULAR_CALENDAR",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "RG 38-58",
+      "trigger": "diocese_church_institute_locality",
+      "outcome": "Include documented titular, dedication, patronal, order and local observances only for the applicable location/community; preserve 1962 precedence and valid indults.",
+      "classification": "LOCAL_SCOPE",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "EXTERNAL_SOLEMNITY",
+      "primaryWitness": "MISSALE_1962",
+      "paragraphs": "RGMR 356-361, as amended 1962",
+      "trigger": "weekday_feast_on_sunday_or_authorized_other_day",
+      "outcome": "A permitted external solemnity is a specific votive Mass of the feast, without changing the Office, governed by entitlement by law or indult, day restrictions and the prescribed Mass count; not a blanket weekday commemoration.",
+      "classification": "SEPARATE_MASS_OPTION",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "DOCTOR_RECOGNITION",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "identity_and_historical_effective_dates",
+      "trigger": "doctor_title_added_to_existing_saint",
+      "outcome": "A later Doctor proclamation updates one existing person profile as of its declaration date; does not create a second person or second feast.",
+      "classification": "IDENTITY_ONLY",
+      "autoChanges1962Mass": false
+    },
+    {
+      "id": "HOMEPAGE_HONOUR",
+      "primaryWitness": "RUBRICS_1960",
+      "paragraphs": "editorial_policy_not_missal_rubric",
+      "trigger": "all_attested_day_associations",
+      "outcome": "Show historic principal, actual 1962 commemorations, eligible alternatives, supplementary saints and devotional observances under distinct labels without duplicate canonical identities.",
+      "classification": "NOT_MASS_INSTRUCTION",
+      "autoChanges1962Mass": false
+    }
+  ],
+  "blockingUnknowns": [
+    "Exact principal day/rank/source ID unavailable",
+    "Exact liturgical person identity not reconciled",
+    "Universal modern memorial date not evidenced",
+    "Protected 70-feast status unresolved",
+    "Required Mass orations unavailable",
+    "Particular locality or authority not evidenced",
+    "Mass-form-dependent commemorations not verified"
+  ],
+  "testFixtures": [
+    "2026-10-09 Newman/Leonardi",
+    "2026-10-03 Thérèse traditional",
+    "2026-10-01 Thérèse modern date",
+    "2026-10-15 Teresa of Ávila",
+    "2026-09-23 Padre Pio/Ember Wednesday",
+    "2026-06-01 St Kevin local St Philip Neri transfer as case study, not global rule",
+    "class-II Sunday weekday-saint negative",
+    "RGMR 358 patronal external solemnity source requirement",
+    "one genuine two-commemoration day",
+    "string- and object-form 1962 commemoration IDs"
+  ]
+}
