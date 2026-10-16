@@ -122,7 +122,10 @@ export function mountScriptureLibrary(root,{
        if(!prev)return;
        location=prev.location;context=prev.context;contextDepth=prev.contextDepth;
        commentaryVisible=prev.commentaryVisible;relatedExpanded=prev.relatedExpanded;
-       browseExpanded=prev.browseExpanded;draw();
+       browseExpanded=prev.browseExpanded;
+       segmentSet=prev.segmentSet??null;
+       activeSegmentIndex=prev.activeSegmentIndex??-1;
+       draw();
        root.scrollTop=prev.scrollTop;
        queueMicrotask(()=>wrap.querySelector(".aoScriptureRelated summary")?.focus?.({preventScroll:true}));
      });
@@ -402,7 +405,10 @@ export function mountScriptureLibrary(root,{
      try{
        const module=await import("./related-objects.js");
        if(!related.isConnected||!related.open)return;
-       const hits=await module.scriptureLinkedObjectsForPassageWithAtlas(location,{limit:40});
+       const selectedCalendarState=globalThis.AO_RUNTIME_V8?.store?.getState?.()??null;
+       const hits=await module.scriptureLinkedObjectsForPassageWithAtlas(location,{
+         limit:40,selectedCalendarState
+       });
        if(!related.isConnected||!related.open)return;
        relatedBody.replaceChildren();
        if(!hits.length){relatedBody.append(element("p",lang==="fr"?"Aucun autre objet lié à ces versets.":"No documented cross-module connections for these verses.","aoScriptureNotice"));return;}
@@ -422,11 +428,13 @@ export function mountScriptureLibrary(root,{
          read.addEventListener("click",()=>{
            relatedTrail.push({
              location,context,contextDepth,commentaryVisible,relatedExpanded,
-             browseExpanded,scrollTop:root.scrollTop
+             segmentSet,activeSegmentIndex,browseExpanded,scrollTop:root.scrollTop
            });
-           leaveSourceSegments();
-           location=scripturePassage(hit.passage);
-           context=Object.freeze({reference:hit.reference,passage:location});
+           segmentSet=hit.segments?scriptureSegments(hit.segments):null;
+           activeSegmentIndex=segmentSet?0:-1;
+           location=segmentSet?segmentSet[0]:scripturePassage(hit.passage);
+           context=Object.freeze({reference:hit.reference,passage:location,
+             ...(segmentSet?{segments:segmentSet}:{})});
            contextDepth="selected";commentaryVisible=false;
            relatedExpanded=false;browseExpanded=false;
            draw();root.scrollTop=0;
