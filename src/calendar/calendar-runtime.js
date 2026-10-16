@@ -16,6 +16,7 @@ import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
 import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
+import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
@@ -407,23 +408,7 @@ function profileOf(r){
 // day.main.commemorations, which can contain only opaque date codes. Choose
 // the first collection with human titles, not the first truthy array.
 export function calendarCommemorationNames(r,{language="en"}={}){
-  const french=String(language).toLowerCase().startsWith("fr");
-  for(const raw of [r?.day?.commemorations,r?.day?.main?.commemorations,r?.commemorations]){
-    const entries=Array.isArray(raw)?raw:raw==null?[]:[raw];
-    const names=entries.map(item=>{
-      if(typeof item==="string")return item.trim();
-      const title=item?.title;
-      const candidates=french?
-        [item?.titleFr,item?.nameFr,typeof title==="object"?title?.fr:null,
-         typeof title==="string"?title:null,item?.name,typeof title==="object"?title?.en:null]:
-        [typeof title==="string"?title:null,typeof title==="object"?title?.en:null,
-         item?.titleEn,item?.nameEn,typeof title==="object"?title?.fr:null,item?.name];
-      return candidates.map(x=>String(x??"").trim()).find(Boolean)||"";
-    }).filter(name=>name&&/[A-Za-zÀ-ÿ]/.test(name)&&
-      !/^\d{1,2}[-_/]\d{1,4}$/.test(name));
-    if(names.length)return [...new Set(names)];
-  }
-  return [];
+  return observedCommemorationLabels(r,{language}).map(x=>x.name);
 }
 function commemorations(r){return calendarCommemorationNames(r,{language:fr()?"fr":"en"});}
 
