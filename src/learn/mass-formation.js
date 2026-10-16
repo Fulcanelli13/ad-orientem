@@ -86,7 +86,7 @@ function stageHtml(win,data,stage){
 }
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,
+  const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,explorerReturn:null,
     guideError:false,returnFocus:null,loading:null,guideLoading:null,
     evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{},sourceBatches:null,batchLoading:null,batchError:false,first10Audit:null,first10Loading:null,first10Error:false};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
@@ -275,6 +275,10 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   }
   async function open(opts={}){
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
+    // Only a visited Explorer → Formation handoff establishes this return.
+    // Ordinary Formation entry never acquires a synthetic Explorer parent.
+    state.explorerReturn=opts.explorerReturn&&typeof opts.explorerReturn==="object"?
+      {momentKey:String(opts.explorerReturn.momentKey||""),blockId:opts.explorerReturn.blockId||null}:null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
       return false;
@@ -302,7 +306,10 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;state.momentKey=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    const previousExplorer=returnToLearn?state.explorerReturn:null;
+    state.explorerReturn=null;
+    if(previousExplorer)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.openModule?.("learn.mass_explorer",previousExplorer));
+    else if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
