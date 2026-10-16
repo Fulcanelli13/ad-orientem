@@ -122,7 +122,25 @@ assert.equal(archiveJoin.summary.source_exactly_commemorated,99);
 assert.equal(archiveJoin.summary.source_no_exact_same_date_match,73);
 assert.equal(archiveJoin.summary.unique_historical_ids,307);
 assert.equal(Object.values(monthStats).reduce((s,m)=>s+m.resolved_days,0),365);
-const gaps=[...missing.values()].sort((a,b)=>a.source_id.localeCompare(b.source_id));
+// One bulk classification pass. Explicit lexical corrections ONLY recognize
+// source-heading forms; they do not assign any person identity or canonical ID.
+const lexicalOverride=new Map([
+ ["commemoration:12-04-barbara:4:r","INDIVIDUAL_OR_PERSON_TITLE_REVIEW"],
+ ["inseparable:sancti:06-29-petrus","INDIVIDUAL_OR_PERSON_TITLE_REVIEW"],
+ ["sancti:07-18:3:w","INDIVIDUAL_OR_PERSON_TITLE_REVIEW"],
+ ["sancti:09-14:2:r","LITURGICAL_DAY_OR_EVENT_REVIEW"]
+]);
+const rawHints=new Map(days.flatMap(day=>day.candidate_source_subjects.map(x=>[x.source_id,x.provisional_title_hint])));
+const gaps=[...missing.values()].sort((a,b)=>a.source_id.localeCompare(b.source_id)).map(entry=>{
+ const titleHint=lexicalOverride.get(entry.source_id)??rawHints.get(entry.source_id);
+ assert(titleHint,"Unclassified source-ID exception "+entry.source_id);
+ return {...entry,provisional_kind:titleHint,
+   provisional_kind_status:"LEXICAL_OR_EXACT_TITLE_TRIAGE_ONLY_NOT_CANONICAL_PERSON",
+   exact_source_title_override:Boolean(lexicalOverride.has(entry.source_id))};
+});
+const gapKinds=Object.fromEntries([...new Set(gaps.map(x=>x.provisional_kind))].sort().map(kind=>[
+ kind,gaps.filter(x=>x.provisional_kind===kind).length
+]));
 const summary={
  year:2026,days_observed:365,observed_sanctoral_principals:165,
  observed_named_commemoration_occurrences:117,
@@ -165,6 +183,7 @@ const gapQueue={schema:"ao.saints.2026-observed-source-id-gap-queue.v1",
  status:"SOURCE_OBSERVANCE_RECONCILIATION_NOT_MISSING_SAINT_PROOF",
  source_provenance:sourceProvenance,
  summary:{distinct_observed_ids_not_in_archive:gaps.length,
+  provisional_type_counts:gapKinds,
   warning:"These include event/Marian/group observances. Do not create people from missing source IDs."},
  missing_ids:gaps};
 mkdirSync(dir,{recursive:true});
@@ -182,9 +201,13 @@ const report=[
  "",
  "## 42 missing raw observed-source references",
  "",
+ "Provisional triage by source heading (not canonical identities):",
+ "",
+ ...Object.entries(gapKinds).map(([k,v])=>"- "+k+": **"+v+"**"),
+ "",
  "The 42 IDs are absent from the *frozen historical artwork-source register*. They are **not** 42 proven missing saints. Classify event, group and person source slots before setting biography requirements.",
  "",
- ...gaps.map(x=>"- \`"+x.source_id+"\` · "+x.dates.join(", ")+" · "+x.titles.join(" / ")),
+ ...gaps.map(x=>"- `"+x.source_id+"` · "+x.dates.join(", ")+" · "+x.provisional_kind+" · "+x.titles.join(" / ")),
  "",
  "## Identity and art boundary",
  "",
