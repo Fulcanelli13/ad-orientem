@@ -327,6 +327,26 @@ try{
    assert.equal(card.scroll,"auto","Rosary prayer text does not have its own vertical scroll");
    assert.ok(card.title?.length>3&&card.flip&&card.next,
      "Rosary card lost title, source-owned translation toggle or bead controls");
+   // Language switch must relight one paragraph on the newly displayed face.
+   const faceBefore=await player.locator(".aoRosaryPrayerScroll").evaluate(root=>({
+     latin:root.querySelector("[data-pb-latin]")?.hidden,
+     vern:root.querySelector("[data-pb-vern]")?.hidden
+   }));
+   if(typeof faceBefore.latin==="boolean"&&typeof faceBefore.vern==="boolean"){
+    await player.locator(".aoRosaryPrayerScroll[data-pb-flip]").click();
+    await page.waitForFunction(previous=>{
+      const root=document.querySelector("#aoPrayerBookRoot.open .aoRosaryPrayerScroll");
+      return root?.querySelector("[data-pb-latin]")?.hidden!==previous;
+    },faceBefore.latin,{timeout:7000});
+    await page.waitForFunction(()=>{
+      const root=document.querySelector("#aoPrayerBookRoot.open .aoRosaryPrayerScroll");
+      const face=[...root.querySelectorAll("[data-pb-latin],[data-pb-vern]")]
+        .find(x=>!x.hidden);
+      return !!face&&face.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length===1;
+    },null,{timeout:7000});
+    assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),card.rawStep,
+      "Rosary language flip changed the canonical bead");
+   }
    const gesture=async(dx,dy)=>{
      await player.locator(".aoRosaryPrayerScroll").evaluate((node,{dx,dy})=>{
        const t=(x,y)=>new Touch({identifier:24,target:node,clientX:x,clientY:y});
