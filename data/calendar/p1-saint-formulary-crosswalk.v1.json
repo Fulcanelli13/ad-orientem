@@ -414,7 +414,16 @@
         }
       ],
       "printSourceStructureStatus": "PRINTED_FAMILY_AND_VARIANT_VERIFIED_ON_FACSIMILE_IMAGES",
-      "primaryLatinFormularyTextApproval": false
+      "primaryLatinFormularyTextApproval": false,
+      "proposedMissalFormularyTarget": {
+        "kind": "FORMULARY",
+        "canonicalResearchFormularyId": "commune:1962:doctor_non_pontiff",
+        "printedFamilyId": "commune-print:doctorum",
+        "requiredVariant": "DOCTOR_NON_PONTIFF",
+        "resolvedSourcePath": null,
+        "route": null,
+        "status": "NOT_YET_RESOLVED_IN_CANONICAL_APP_MISSAL"
+      }
     },
     {
       "saintId": "saint.giuseppina-vannini",
@@ -4407,5 +4416,7 @@
   "approvedFormularyCount": 0,
   "annotation": "No parallel saint identities; P2 owns date evidence. Collective groups not expanded; source candidates never auto-selected.",
   "printedFamilyResearchOwner": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
-  "doctorsOnePrintedFamilyPolicy": "Both existing Pontiff and non-Pontiff Doctor index IDs refer to the one printed Commune Doctorum with specific oration variant; never create a second independent Common identity."
+  "doctorsOnePrintedFamilyPolicy": "Both existing Pontiff and non-Pontiff Doctor index IDs refer to the one printed Commune Doctorum with specific oration variant; never create a second independent Common identity.",
+  "internalMissalNavigationContract": "data/calendar/p1-internal-missal-navigation.v1.json",
+  "userFacingFormularyLinks": "INTERNAL_RESOLVER_BACKED_ONLY_NO_EXTERNAL_PDF_PAGES"
 }
