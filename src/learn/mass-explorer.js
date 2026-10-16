@@ -254,7 +254,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         (availableThemes?"":" disabled")+'>'+
         pick(fr,"Study by theme","Étudier par thème")+'</button></nav>';
     const themesPage='<main class="aoMXWrap aoMXThemePage">'+
-      massStudyPathsHtml(catalog.formationStages,{french:fr})+'</main>';
+      massStudyPathsHtml(catalog.formationStages,{french:fr,standalone:true})+'</main>';
     node.innerHTML='<style>'+massExplorerCss()+'</style>'+
       '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
       '<div><small>FORMATION</small><strong>'+pick(fr,"Understand the Mass","Comprendre la Messe")+'</strong></div>'+
