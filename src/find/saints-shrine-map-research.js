@@ -57,6 +57,20 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
     recorded_alias_source_keys:Object.freeze(arr(caseEvidence?.prior_documented_alias_candidates).flatMap(x=>arr(x.existing_exact_source_key_candidates))),
     entity_guard:caseEvidence?.person_kind_guard??"ENTITY_KIND_NOT_REVIEWED",
+    cross_source_review_status:caseEvidence?.cross_owner_reference_reconciliation?.status??"NOT_REVIEWED",
+    cross_source_index_links:Object.freeze(arr(caseEvidence?.cross_owner_reference_reconciliation?.source_references)
+      .flatMap(ref=>arr(ref.family_source_provenance).map(f=>({
+        key:ref.existing_source_key,
+        scope:f.family==="archived_1962"?"historical":
+          ["later_named","post1960_collectives"].includes(f.family)?"later":
+          f.family==="doctor"?"doctors":null,
+        item_id:f.family==="archived_1962"?"saints:historic:"+ref.existing_source_key:
+          f.family==="later_named"?"saints:modern:"+ref.existing_source_key:
+          f.family==="post1960_collectives"?"saints:group:"+ref.existing_source_key:
+          f.family==="doctor"?"saints:doctor:"+ref.existing_source_key:null
+      })))
+      .filter(x=>x.scope&&x.item_id&&caseEvidence?.cross_owner_reference_reconciliation?.lookup_scope!=="NONE")
+      .filter((x,i,a)=>a.findIndex(y=>y.item_id===x.item_id)===i)),
     interpretation:"SHRINE_SOURCE_NAME_ONLY_NOT_CERTIFIED_PERSON_PLACE"
    }));
   }
@@ -77,7 +91,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
    map_state:precise?"MAPPED_EXISTING_SITE_RESEARCH_ONLY":"LIST_ONLY_GEO_HOLD",
    associated_saint_name_sources:associations,saints:Object.freeze([]),artwork_id:null,
    search_text:fold([title,p.address?.formatted,...associations.flatMap(a=>[
-     a.source_saint_name,...a.exact_name_candidate_keys,...a.recorded_alias_source_keys,...a.curated_variant_source_key_leads
+     a.source_saint_name,...a.exact_name_candidate_keys,...a.recorded_alias_source_keys,...a.curated_variant_source_key_leads,...a.cross_source_index_links.map(x=>x.key)
    ])].join(" ")),
    editorial_status:"RESEARCH_SHRINE_ASSOCIATION_NO_PERSON_IDENTITY_CERTIFIED"
   });
@@ -111,6 +125,11 @@ export function renderSaintResearchShrineSheet(vm){
     ?'<small>'+esc(say("Previously recorded alias candidate(s), unapproved: ","Alias antérieurs proposés, non approuvés : ")+x.recorded_alias_source_keys.join(" · "))+"</small>":"")
   +(arr(x.curated_variant_source_key_leads).length
     ?'<small>'+esc(say("Existing source-key variant lead(s), unapproved: ","Variantes de clés de source proposées, non approuvées : ")+x.curated_variant_source_key_leads.join(" · "))+"</small>":"")
+  +(arr(x.cross_source_index_links).length
+    ?'<nav class="aoSaintSourceLookups" aria-label="'+esc(say("Research source records","Références de recherche"))+'">'
+      +arr(x.cross_source_index_links).map(link=>'<button type="button" data-saint-crosslink-scope="'+esc(link.scope)+'" data-saint-crosslink-target="'+esc(link.item_id)+'">'
+        +esc(say("Inspect source: ","Consulter la source : ")+link.key)+' →</button>').join("")
+      +'</nav>':"")
   +(arr(x.external_relic_subject_ids).length
     ?'<small>'+esc(say("Relic registry subjects (not authenticated): ","Sujets du registre des reliques (non authentifiées) : ")+x.external_relic_subject_ids.join(" · "))+'</small>':"")
   +(arr(x.external_art_research_subject_ids).length
@@ -132,5 +151,6 @@ export const SAINTS_SHRINE_RESEARCH_CSS=[
  ".aoSaintSourceShrinePeople strong{color:#e8d6b4;font-size:15px}",
  ".aoSaintSourceShrinePeople p,.aoSaintSourceShrinePeople small{display:block;color:#c4b69c;font-size:12px}",
  ".aoSaintSourceEvidenceStatus{margin:8px 0;color:#ceb994;font-size:12px}",
+ ".aoSaintSourceLookups{display:grid;gap:6px;margin:8px 0}.aoSaintSourceLookups button{min-height:40px;border:1px solid rgba(217,197,154,.26);background:rgba(217,197,154,.06);border-radius:8px;color:#e5d0a8;text-align:left;padding:8px 10px;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;overflow-wrap:anywhere}",
  ".aoSaintSourceShrineGeoSource,.aoSaintSourceShrineInstitution{display:inline-block;margin-right:12px;color:#e3c999;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}"
 ].join("");
