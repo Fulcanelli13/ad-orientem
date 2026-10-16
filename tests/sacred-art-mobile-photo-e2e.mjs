@@ -18,7 +18,7 @@ assert.ok(from>=0&&to>from,'Source gallery embeds model-data');
 const data=JSON.parse(html.slice(from+marker.length,to));
 const categories=data.categories,photos=categories.flatMap(c=>c.works.flatMap(w=>w.photos.map(p=>({
   categoryIndex:c.index,categoryId:c.id,subject:c.label,workId:w.id,photoId:p.id,
-  preview:p.preview,sourcePage:p.page,sourceStatus:p.status||'',sourceRights:p.rights||''
+  preview:p.preview,original:p.original,sourcePage:p.page,sourceStatus:p.status||'',sourceRights:p.rights||''
 }))));
 const distinct=[...new Map(photos.map(p=>[p.preview,p])).values()];
 const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
@@ -104,8 +104,8 @@ try {
         im.src=url;
       });
       const primary=await decode(row.preview);
-      const commons=row.preview.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/');
-      const fallback=commons?row.preview.replace(/([?&]width=)\d+(?=&|$)/,'$1'+'500'):null;
+      const commons=(row.original||row.preview).startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/');
+      const fallback=commons?(row.original||row.preview).split('?')[0]+'?width=500':null;
       const retryEligible=!primary.ok && fallback && fallback!==row.preview;
       const retry=retryEligible?await decode(fallback):null;
       const actual=primary.ok?primary:(retry?.ok?retry:primary);
