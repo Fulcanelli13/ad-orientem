@@ -45,6 +45,19 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2ArtMissing .aoTodayV2HeroActions{max-width:700px;margin-inline:auto}
 }
 @media(min-width:700px){.aoTodayV2Art{height:410px}.aoTodayV2Frontispiece{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr)}.aoTodayV2Art{height:410px}.aoTodayV2HeroActions{display:grid;align-content:center;padding:20px 30px}.aoTodayV2ArtOverlay h1{font-size:42px}}
+/* Desktop no-art state: typography replaces the absent painting instead of
+   leaving a 410px empty billboard above the Mass action. Real approved art
+   retains the generous split frontispiece. */
+@media(min-width:700px){
+.aoTodayV2 .aoTodayV2Frontispiece.aoTodayV2ArtMissing{display:block!important}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2Art{height:clamp(165px,17vw,205px)!important}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2ArtOverlay{inset:19px 24px 15px}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2ArtOverlay h1{font-size:clamp(29px,3vw,42px);line-height:1.12;max-width:760px;margin:6px auto 0}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2HeroActions{display:block!important;max-width:760px;margin-inline:auto;padding:7px 24px 13px!important}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2Mass{padding:6px 0 9px!important;border-bottom:0}
+.aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2NoArt{background:radial-gradient(ellipse at 50% 25%,var(--liturgical-soft,rgba(143,154,165,.07)),transparent 65%),var(--surface-1,#101720)}
+}
+
 @media(max-width:370px){.aoTodayV2Art{height:225px}.aoTodayV2ArtOverlay h1{font-size:27px}.aoTodayV2Mass .phaseButton b{font-size:10px}}
 
 .aoTodayV2Tabs button[aria-current="page"]{border-bottom-color:var(--liturgical,#939fa8);color:var(--text,#eee9df)}
