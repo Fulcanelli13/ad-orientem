@@ -54,6 +54,9 @@ try{
     panel.dataset.open="true";
     const scroll=preview.root.querySelector(".ao-prayer-card");
     if(scroll)scroll.scrollTop=Math.min(63,Math.max(0,scroll.scrollHeight-scroll.clientHeight));
+    // R17's cue focus tracker resolves asynchronously after a genuine card
+    // jump; measure the settled live cue, not an uninitialised intermediate.
+    await new Promise(resolve=>setTimeout(resolve,350));
     const target=currentMassExplorerStudyTarget(preview,prepared);
     return {sectionId:preview.getCurrentCard()?.sectionId,
       mode:preview.getPresentationMode(),cueId:preview.getActiveCue(),
