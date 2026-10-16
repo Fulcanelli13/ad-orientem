@@ -27,7 +27,9 @@
     "wordAnchorsWithPreexistingSourceActionOrRubricOwners": 53,
     "wordAnchorsWithoutCueLevelGestureOwner": 13,
     "wordAnchorsIndependentlyCeremoniallyCertified": 0,
-    "runtimeGospelNameFixtureConfirmedMismatch": 1
+    "runtimeGospelNameFixtureConfirmedMismatch": 1,
+    "gospelAuthorDisplayOwnerFixMerged": 1,
+    "canonicalMassDonorModifiedByP0": 0
   },
   "cases": [
     {
@@ -654,16 +656,24 @@
     },
     {
       "issueId": "P0-LATIN-AO.V3.0084.U001",
-      "priority": "P0_RUNTIME_OWNER_CHECK",
+      "priority": "P2_RESEARCH_SOURCE_VARIANT_REVIEW",
       "classification": "CONDITIONAL_VARIANT",
       "canonicalOwner": "data/presentation/reader-text-sung.v1.json",
       "canonicalObjectId": "AO.SM.C0084",
       "researchObjectId": "AO.V3.0084.U001",
       "evidence": "Original workbook uses generic Gospel-name placeholder 'secúndum N.' while frozen canonical source instantiates 'secúndum Matthǽum'; CI diagnostic (run 38876627431) builds an actual reader model with synthetic John Gospel and still renders Matthew heading.",
-      "recommendedAction": "Mass/Proper owner to derive heading from validated selected Gospel author, preserve 1962 form/actor and all locale modes; add two-evangelist regression across LIVE/SIMPLE/MISSAL; retain P0 research-only.",
-      "status": "REPRODUCED_SOURCE_FIRST_MATTHEW_HEADER_WITH_JOHN_GOSPEL_FIXTURE",
+      "recommendedAction": "Display mismatch fixed in canonical runtime PR #1297. Retain literal frozen Matthew donor and generic N. research variance as edition-vs-projection evidence; no additional runtime change required in P0. Review unresolved Gospel readings separately.",
+      "status": "CANONICAL_RUNTIME_GOSPEL_HEADER_FIXED_MAIN_SOURCE_VARIANT_RETAINS_EDITORIAL_HOLD",
       "mutationAllowed": false,
-      "sourceDecision": "Research 'secúndum N.' means evangelist selected by Proper, but frozen C0084 says 'secúndum Matthǽum'; source-first model uses holyThursdayCanonVariantsForProper as ordinary variants, so selected evangelist may be out of sync. Test-only John fixture added in PR #1270. Do not rewrite canon in P0."
+      "sourceDecision": "Research 'secúndum N.' means evangelist selected by Proper, but frozen C0084 says 'secúndum Matthǽum'; source-first model uses holyThursdayCanonVariantsForProper as ordinary variants, so selected evangelist may be out of sync. Test-only John fixture added in PR #1270. Do not rewrite canon in P0.",
+      "ownerFix": {
+        "pullRequest": 1297,
+        "mergedMainCommit": "e198a0a65536180830dbf0d6cb1c198abcf480d5",
+        "outcome": "LIVE_SIMPLE_MISSAL_DISPLAY_DERIVES_AUTHOR_FROM_RESOLVED_PROPER_VIA_EXISTING_SCRIPTURE_WITNESS",
+        "acceptance": "ALL_FOUR_GOSPEL_AUTHORS_AND_PHONE_R17_GREEN",
+        "newPublicationAuthority": false,
+        "sourceEditionCertification": false
+      }
     },
     {
       "issueId": "P0-LATIN-AO.V3.0237.U002",
