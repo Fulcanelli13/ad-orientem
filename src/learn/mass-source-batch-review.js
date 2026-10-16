@@ -7,7 +7,7 @@ export const MASS_SOURCE_BATCH_VERSION="mass-source-first69-locus-batches-v1";
 export const MASS_SOURCE_BATCH_SCHEMA="AO_MASS_SOURCE_69_BATCH_REVIEW_V1";
 const dataUrl=new URL("../../data/learn/research/mass-source-first69-locus-batches-20261016.v1.json",import.meta.url);
 const choices=Object.freeze(["HOLD","PRIORITIZE_COLLATION","QUESTION_SCOPE","DO_NOT_USE"]);
-const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;',"'":"&#39;"}[c]));
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tr=(fr,en,french)=>fr?french:en;
 const invariant=(test,error)=>{if(!test)throw new Error("MASS_SOURCE_BATCH_"+error)};
 const unique=a=>new Set(a).size===a.length;
