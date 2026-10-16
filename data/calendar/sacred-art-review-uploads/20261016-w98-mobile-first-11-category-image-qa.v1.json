@@ -50,9 +50,10 @@
     {
       "categoryIndex": 60,
       "subject": "Saint Margaret Mary Alacoque",
-      "visual": "SOURCE_IMAGE_TO_INSPECT",
-      "evidence": "Commons Podesti-attributed 800x600 photo exists, CC BY-SA 4.0; original subject/object independently unverified",
-      "next": "Download original file, inspect 390px visual legibility and check Vatican object identity"
+      "visual": "MOBILE_CANDIDATE",
+      "evidence": "W98 actual download 800x600: clear balanced colour, depiction instantly legible at 390 CSS px, no noticeable mobile pixel deficit. Commons photographic credits include uploader CC BY-SA 4.0 despite the auto API reporting public domain; exact Podesti/Vatican inventory still unverified.",
+      "next": "Confirm physical painting attribution/custodian and record CC BY-SA 4.0 conditions; no more resolution hunting",
+      "sourceSha256": "7bf7d8e0287423666939c515f5f115d3d75d66f119270249bcec3070f77d3286"
     },
     {
       "categoryIndex": 70,
@@ -64,9 +65,10 @@
     {
       "categoryIndex": 81,
       "subject": "Our Lady of Perpetual Help",
-      "visual": "CLOSEUP_SOURCE_TO_INSPECT",
-      "evidence": "Two Commons original icon closeups (781x1024, 500x609), rights labelled PD-Art; W93 context photographs show small icon and cannot serve as icon master",
-      "next": "Download and visually inspect exact original-icon closeups instead of searching greater pixel dimensions"
+      "visual": "MOBILE_CANDIDATE",
+      "evidence": "W98 source file PerpetualExact.jpg 397x499 explicitly reports self-photographed actual original Roman icon 2009, renders recognisably at 390 CSS px; CC BY-SA 3.0. Alternative Perpetual help original icon.jpg 500x609 renders softer/more attractive but physical original provenance weaker. The previously cited 781x1024 'original' is a monochrome mosaic depiction and must be excluded.",
+      "next": "Keep both colour images separate; verify full icon identity and quality/rights; block 781x1024 mosaic from selected original master",
+      "originalPhotographSha256": "25b3b89d739c"
     },
     {
       "categoryIndex": 135,
@@ -99,10 +101,24 @@
   ],
   "counts": {
     "ACQUIRED_GOOD_VISUAL": 4,
-    "MOBILE_CANDIDATE": 2,
-    "REPLACE_SOURCE": 3,
-    "SOURCE_IMAGE_TO_INSPECT": 1,
-    "CLOSEUP_SOURCE_TO_INSPECT": 1
+    "MOBILE_CANDIDATE": 4,
+    "REPLACE_SOURCE": 3
   },
-  "conclusion": "11 previously pending categories now triaged by phone visual suitability. Four already acquire quality photographs; two mobile candidates regardless of pixels; three need better colour photography; two require first closeup visual download. NO automatic category promotions pending separate checks."
+  "conclusion": "Completed phone-size visual triage on all 11 photo-available gaps. 8 have mobile-suitable pictures worth working from (4 previously acquired high-quality originals, 4 smaller mobile-adequate candidates); 3 require a better colour photograph. All strict source/rights/curator gates remain independent.",
+  "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38916442751",
+  "mobileBatchResult": {
+    "categoriesFullyVisuallyInspected": 11,
+    "photosDownloadedInCurrentStep": 3,
+    "photographsMobileLegible": 8,
+    "photographsVisuallyInadequate": 3,
+    "strictReleaseApprovalsNew": 0,
+    "warning": "Visual legibility is NOT equivalent to original-identity or reuse-rights clearance"
+  },
+  "visualExclusions": [
+    {
+      "categoryIndex": 81,
+      "sourceFile": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+      "reason": "Black-and-white mosaic-style image, not original Byzantine painted panel. Never count despite 781x1024."
+    }
+  ]
 }
