@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const screenshotDir=resolve(root,"artifacts/mass-explorer-p1");
+await mkdir(screenshotDir,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
@@ -55,6 +57,7 @@ try{
   assert.match(await prayer.innerText(),/Suscipe, sancte Pater/);
   assert.ok((await prayer.locator(".aoMXLatin").count())>=1,width+" lost original Latin");
   assert.ok((await prayer.locator(".aoMXTranslation").count())>=1,width+" lost published English");
+  await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-en.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.locator('#ao-mass-explorer-root [data-ao-mx-moment="AO.CARD.013"]').click();
   assert.ok(await page.locator("#ao-mass-explorer-root [data-ao-scripture-context]").count()>0,
@@ -69,6 +72,7 @@ try{
   assert.match(await page.locator("#ao-mass-explorer-root .aoMXText").innerText(),/Suscipe, sancte Pater/);
   assert.ok(await page.locator("#ao-mass-explorer-root .aoMXTextRow [lang=fr]").count()>0,
     width+" missing source-owned French by-cue witness");
+  await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
   await page.locator("#ao-mass-explorer-root [data-ao-mx-close]").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.()?.child===null&&
      document.getElementById("ao-learn-modular-root")?.hidden===false,null,{timeout:12000});
