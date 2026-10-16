@@ -1,0 +1,43 @@
+{
+  "schema": "AO_SACRED_ART_W98_TWO_REMAINING_PHONE_PHOTO_PROBES_V1",
+  "date": "2026-10-16",
+  "purpose": "Obtain and inspect exact-source mobile-fit photos for the two unresolved W98 visual judgments, rather than reject files due to size",
+  "galleryPreservation": "Preserve historical ratings and app selections without modification",
+  "sourcePhotos": [
+    {
+      "categoryIndex": 60,
+      "workId": "podesti-margaret-mary-source",
+      "label": "Margaret Mary Alacoque apparition; Podesti attributed",
+      "commonsFile": "Apparizione a Marguerite Marie Alacoque.jpg",
+      "physicalStatus": "COMMONS_ATTRIBUTION_WITHOUT_SECOND_INSTITUTIONAL_CONFIRMATION",
+      "licenseExpectation": "CC BY-SA 4.0 / PD-Art, follow photographer terms",
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg"
+    },
+    {
+      "categoryIndex": 81,
+      "workId": "B02-HELP-ICON-BYZ",
+      "label": "Original Roman icon, 781x1024 complete icon",
+      "commonsFile": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+      "physicalStatus": "COMMONS_SAYS_ORIGINAL_IN_SANT_ALFONSO_ROMA",
+      "licenseExpectation": "PD-Art / public domain reproduction with jurisdiction checks",
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant%27Alfonso_di_Liguori_(Rome).jpg"
+    },
+    {
+      "categoryIndex": 81,
+      "workId": "B02-HELP-ICON-BYZ",
+      "label": "Original Roman icon, 500x609 secondary source",
+      "commonsFile": "Perpetual help original icon.jpg",
+      "physicalStatus": "IDENTITY_CONDITIONAL_ORIGINAL_ICON_REPRO",
+      "licenseExpectation": "PD-Art public domain reproduction, jurisdiction checks",
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg"
+    }
+  ],
+  "allDecisionsResearchOnly": true,
+  "mobileTarget": {
+    "widthCSSpx": 390,
+    "fit": "contain",
+    "maxHeightCSSpx": 500
+  },
+  "hardMinimumNativeImagePixels": null,
+  "note": "If source image depicts complete icon at mobile display size, do not reject based on 500- or 781-pixel source width."
+}
