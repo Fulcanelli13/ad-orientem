@@ -36,6 +36,16 @@ const batch=evidence.summary.source_reference_batch_20261016;
 assert.deepEqual([batch.individual_alias_reference_lookups,batch.collective_alias_reference_lookups,batch.doctor_archived_owner_pairs_for_comparison,batch.existing_bridge_preserved,batch.collision_context_hold,batch.unchanged_source_cases],[23,2,4,1,1,88]);
 assert.equal(batch.person_identity_certifications_added,0);
 assert.equal(batch.geographic_pins_added,0);
+assert.deepEqual(evidence.summary.residual_source_owner_38_tiers,{
+ SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY:2,
+ RELIC_OWNER_SUBJECT_NO_LEDGER_KEY:19,
+ ART_RESEARCH_ONLY_NO_LEDGER_KEY:2,
+ SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY:15,
+ duplicated_relic_owner_subjects_across_all_119:3,
+ duplicated_louis_de_montfort_name_strings:2,
+ distinct_relic_subject_ids_total:92,
+ relational_person_identity_approvals:0
+});
 assert.equal(evidence.summary.distinct_original_physical_site_ids,121);
 assert.equal(evidence.summary.original_shrine_association_edges,145);
 assert.equal(evidence.summary.source_reconciliation_tiers.TRUNCATED_HISTORICAL_SOURCE_KEY_CHECK,2);
@@ -73,6 +83,15 @@ for(const x of evidence.records){
  assert.deepEqual(x.original_shrine_relationships.map(x=>x.place_id),old.physical_place_associations.map(x=>x.place_id));
  assert(x.unique_cross_source_key_candidates.every(x=>keys.has(x)));
  assert(Array.isArray(x.curated_variant_existing_key_leads));
+ assert(Array.isArray(x.shared_original_relic_subject_name_references));
+ for(const peer of x.shared_original_relic_subject_name_references){
+  const other=evidence.records.find(y=>y.legacy_shrine_person_or_group_name===peer.other_shrine_name);
+  assert(other&&other.external_owner_evidence.relic_subjects.some(y=>y.subject_id===peer.shared_owner_subject_id));
+  assert(x.external_owner_evidence.relic_subjects.some(y=>y.subject_id===peer.shared_owner_subject_id));
+  assert.equal(peer.relation,"SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS");
+ }
+ if(x.source_key_review_bucket==="NO_SUPPORTED_LEDGER_KEY_LEAD")assert(x.residual_source_owner_research_tier);
+ else assert.equal(x.residual_source_owner_research_tier,null);
  assert.deepEqual(x.curated_variant_existing_key_leads.map(y=>y.source_key),priorVariants.has(x.legacy_shrine_person_or_group_name)?[priorVariants.get(x.legacy_shrine_person_or_group_name)]:[]);
  assert(x.curated_variant_existing_key_leads.every(y=>keys.has(y.source_key)&&y.canonical_person_identity_approved===false&&y.shrine_person_relation_certified===false));
  bucketTotals[x.source_key_review_bucket]=(bucketTotals[x.source_key_review_bucket]??0)+1;
@@ -112,6 +131,14 @@ for(const record of evidence.records){
 assert(siteNameRelations.get("Uganda Martyrs").cross_source_index_links.some(x=>x.item_id==="saints:group:uganda-martyrs-22"));
 assert(siteNameRelations.get("Saint Maurice and the Theban martyrs").cross_source_index_links.some(x=>x.item_id==="saints:historic:group.maurice-theban-legion"));
 assert.equal(siteNameRelations.get("Saint Francis of Assisi").cross_source_index_links.length,0);
+for(const name of ["Saint Louis de Montfort","Saint Louis-Marie de Montfort"]){
+ const relation=siteNameRelations.get(name);
+ assert.equal(relation.shared_relic_subject_other_shrine_names.length,1);
+ assert.notEqual(relation.shared_relic_subject_other_shrine_names[0],name);
+ assert.equal(relation.cross_source_index_links.length,0,"Same relic research subject cannot invent a 608-ledger source key");
+}
+assert(siteNameRelations.get("Saint Dominic").shared_relic_subject_other_shrine_names.includes("Saint Dominic de Guzmán"));
+assert(siteNameRelations.get("Saint Nicholas of Myra").shared_relic_subject_other_shrine_names.includes("Saint Nicholas"));
 assert.equal(siteNameRelations.get("Saint Anthony of Padua").cross_source_index_links.length,2);
 assert.equal(projected.length,121);
 assert.equal(projected.filter(x=>x.map_publishable).length,119);
@@ -133,6 +160,8 @@ for(const lang of ["en","fr"]){
  assert(navHtml.includes("saint.giuseppina-bakhita"));
  assert(navHtml.includes("data-saint-crosslink-scope=\"later\""));
  assert(navHtml.includes("data-saint-crosslink-target=\"saints:modern:saint.giuseppina-bakhita\""));
+ const montfortPlace=projected.find(x=>x.associated_saint_name_sources.some(n=>n.source_saint_name==="Saint Louis de Montfort"));
+ assert(renderSaintResearchShrineSheet({language:lang,selected:montfortPlace}).includes("Saint Louis-Marie de Montfort"));
  assert(!html.includes("<img"));
  assert(!html.includes("data-calendar-mass"));
 }
