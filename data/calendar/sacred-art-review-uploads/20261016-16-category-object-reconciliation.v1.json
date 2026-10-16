@@ -1,0 +1,371 @@
+{
+  "schema": "AO_SACRED_ART_16_ORIGINAL_ASSIGNMENTS_RECONCILED_V1",
+  "date": "2026-10-16",
+  "authority": {
+    "masterLedger": "data/calendar/sacred-art-review-uploads/20261016-mobile-first-acquisition-consolidated.v1.json",
+    "selectedWorks": "data/calendar/sacred-art-w78-oct12-preferred-paintings-recovery-20261016.v1.json",
+    "additionalFit": "data/calendar/sacred-art-w73-w72-large-saints-review-user-decisions-20261015.v1.json",
+    "publicRelease": false
+  },
+  "counts": {
+    "legacyCovered": 146,
+    "exactImageRecoveredSinceBaseline": 7,
+    "photographicImageAcquisitionCovered": 153,
+    "totalCategories": 168,
+    "remainingOriginal22GapImageAssignments": 15,
+    "unresolvedGroupSize": 16,
+    "byDisposition": {
+      "RESEARCH_CANDIDATE_READY": 10,
+      "USER_SELECTED_ORIGINAL_BLOCKED": 4,
+      "USER_SELECTED_EXACT_IMAGE_RECOVERED": 2
+    },
+    "oct12ProtectedSelectedWorks": 6,
+    "earlierSelectedExactImageNowMatched": 2,
+    "otherSelectedUnresolved": 4,
+    "researchOnlyWithViableCandidates": 10
+  },
+  "policy": [
+    "User art selections and numeric star ratings are distinct and must not be conflated.",
+    "User-selected works KMSKA 403 and 314 are uniquely accession-matched to the acquired photograph; never show unrelated physical original as identical.",
+    "No new visual/artwork selection was made by automation.",
+    "Rights clearance and user selection remain independent from acquisition and mobile visual quality.",
+    "No minimum source resolution requirement; 344px and 397px phone-sized images can be adequate.",
+    "Modern saints may use authentic historical photographs; no need to force an oil painting.",
+    "No live app or ratings touched.",
+    "Excluded artists Fra Angelico and El Greco remain excluded."
+  ],
+  "rows": [
+    {
+      "index": 26,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Marini 1045x1280 historical selected-as-perfect fit; W100 alternate colour portraits are only leads",
+      "bestObject": "Antonio Marini 0900119548, separate Lenzi G28-003",
+      "image": "W95 originals and W100 colour alternative files",
+      "rights": "Italian official catalogue photography not cleared; new colour files may have independent terms",
+      "identity": "Marini work object established; W100 colour original identities unknown",
+      "action": "Retain user's W73 'perfect fit' for Marini; compare original small B&W against W100 colour works; do not conflate 0–5 star with fit rating",
+      "nextOwner": "Curator + provenance",
+      "subject": "Saint Alphonsus Liguori",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": {
+        "candidateId": "italy-0900119548",
+        "decision": "perfect",
+        "authority": "15 October W73 fitDecisions; suitability decision, not a five-star image-quality score"
+      },
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 30,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Rubens Saint Gregory of Nazianzus, Gotha, 3840x2911 mobile strong",
+      "bestObject": "Rubens 1621 Gotha (different from Franchi L0070-00118)",
+      "image": "Artifact 12061907353",
+      "rights": "Commons PD-Art; Gotha territorial/object terms unchecked; Franchi Ambrosiana rights not cleared",
+      "identity": "Rubens Gotha separately authenticated; historical Franchi selected photograph inaccessible",
+      "action": "Offer Rubens as an unselected exact-subject original, preserving Franchi research record",
+      "nextOwner": "Curator",
+      "subject": "Saint Gregory Nazianzen",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 35,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Andrea Barbiani Saint Peter Damian colour 521x768 fits mobile",
+      "bestObject": "Ravenna Biblioteca Classense Barbiani; different from Italian G30-006/G30-007",
+      "image": "W99 artwork, source checksum recorded",
+      "rights": "Commons PD-Art claim; object-level licence pending",
+      "identity": "Barbiani original identified as alternative; not G30-006 or G30-007",
+      "action": "Present Barbiani as new physical original; do not inherit previous rating or confuse detail crop",
+      "nextOwner": "Curator",
+      "subject": "Saint Peter Damian",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 37,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Plantin-Moretus MPM.V.IV.110 oil colour, whole and frame-trimmed files W99",
+      "bestObject": "Museum Plantin-Moretus 1622–23 original; not older Roman school G30-010",
+      "image": "Artifact 12053099082",
+      "rights": "Commons CC0 claims; museum reproduction terms to verify",
+      "identity": "Identified different physical original",
+      "action": "Prefer phone quality while retaining old Roman-school entry separately; no auto-selection",
+      "nextOwner": "Curator",
+      "subject": "Saint Robert Bellarmine",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 43,
+      "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
+      "bestPhoto": "Historical selected P001300 reverse Saint Hilary image not yet acquired; anonymous colour Hilary is different painting",
+      "bestObject": "Prado Juan Correa de Vivar P001300; Saint Hilary is reverse side",
+      "image": "Prado Commons image currently Saint Lawrence recto, unsuitable",
+      "rights": "Prado commercial photo terms require investigation",
+      "identity": "Exact selected painting identified; WRONG SIDE photographed",
+      "action": "Acquire or identify Hilary verso image only, or request explicit different-original selection; never promote St Lawrence recto",
+      "nextOwner": "Exact-source research",
+      "subject": "Saint Hilary of Poitiers",
+      "priorHumanChoice": {
+        "subjectId": "SNT-DC-28",
+        "selectedOriginalId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+        "artist": "Juan Correa de Vivar",
+        "title": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+        "sourceLocation": "Museo del Prado, P001300",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 51,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Official Louvre/Nancy L'Apothéose de saint Louis 999x1500, complete frame visible",
+      "bestObject": "Louvre owner inventory 520/Nancy, uncertain attribution to Fragonard",
+      "image": "W93 artefact research photograph",
+      "rights": "Official photograph commercial permission not established",
+      "identity": "Exact institutional original; attribution conflict documented",
+      "action": "Mark phone presentation good, preserve external frame for separate derivative, verify rights",
+      "nextOwner": "Rights + source",
+      "subject": "Saint Louis IX",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 52,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "James Barry Baptism of the King of Cashel NGI.4623, 344x332 and colour legible on mobile",
+      "bestObject": "NGI.4623 Barry distinct from Valdrè RDS G27-002",
+      "image": "Artifact 12061592533",
+      "rights": "NGI/Commons CC BY 4.0 attribution terms; RDS Valdrè image restricted",
+      "identity": "Museum physical-original identity established for Barry",
+      "action": "Offer Barry original for human selection; no automatic replacement of RDS oil",
+      "nextOwner": "Curator",
+      "subject": "Saint Patrick",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 60,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Apparizione a Marguerite Marie Alacoque Commons 800x600, good mobile colour",
+      "bestObject": "Work attributed to Francesco Podesti on Commons; actual attribution/owner not confirmed",
+      "image": "W98 Commons file artifact",
+      "rights": "Commons uploader CC BY-SA 4.0, retain photographer attribution/sharealike",
+      "identity": "Subject good but specific physical-object source uncertain",
+      "action": "Keep as provisional photo and research attribution independently; do not label Podesti certified",
+      "nextOwner": "Provenance",
+      "subject": "Saint Margaret Mary Alacoque",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 70,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Émilie Sivard de Beaulieu St Denis 609x700 full colour and legible",
+      "bestObject": "Palissy PM01002382",
+      "image": "W95 native-source photo",
+      "rights": "French heritage photographic reuse not cleared",
+      "identity": "Source-linked exact painting documented",
+      "action": "Keep mobile-suitable photograph; rights check, no resolution hunting",
+      "nextOwner": "Rights",
+      "subject": "Saint Denis of Paris",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 81,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "PerpetualExact.jpg original Roman icon photo 397x499, or alternate 500x609",
+      "bestObject": "Our Lady of Perpetual Help original icon, Sant'Alfonso, Rome",
+      "image": "W98 corrected package",
+      "rights": "CC BY-SA 3.0 on actual-icon photo; provenance on alternative 500x609 weaker",
+      "identity": "Photographer explicitly identifies in-situ Roman original; exclude 781x1024 mosaic image",
+      "action": "Maintain exact photo and alt as separate images; select after side-by-side mobile proof",
+      "nextOwner": "Curator",
+      "subject": "Our Lady of Perpetual Help",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 83,
+      "stage": "RESEARCH_CANDIDATE_READY",
+      "bestPhoto": "Gaulli Christ in Glory naturalistic 1500x2000",
+      "bestObject": "Gaulli Christ in Glory, auction-source original unlocated",
+      "image": "W100 mobile visual pass",
+      "rights": "Auction reproduction image rights not established",
+      "identity": "Christ in Glory thematic, not explicitly selected Christ the King painting",
+      "action": "One artistic/iconography decision, do not reuse Batoni Sacred Heart or style-held Mehoffer automatically",
+      "nextOwner": "Curator",
+      "subject": "Christ the King",
+      "priorHumanChoice": {
+        "state": "NO_12_OCT_EXPLICIT_SELECTION",
+        "authority": "Research record may still have scores/fit decisions, do not equate absence of Oct12 selection with no user opinion"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 135,
+      "stage": "USER_SELECTED_EXACT_IMAGE_RECOVERED",
+      "bestPhoto": "Van Dyck KMSKA 403 Lamentation, 3840x5206 full painting, verified phone proof",
+      "bestObject": "KMSKA Antwerp 403 selected on Oct12",
+      "image": "GitHub artifact 12062157122; SHA 6e55849609b8517d45d6fc4e53eb8a3074815df227268dc0b6ba44b3dfaef9b3",
+      "rights": "Flemish Art Collection and Commons CC0; app legal checklist not signed",
+      "identity": "CONFIRMED physical selected original no.403; reject previous Munich, Bilbao, Antwerp 404 and 598 substitutions",
+      "action": "Mark exact photo acquisition complete; do not ask user to reselect original",
+      "nextOwner": "Release gate",
+      "subject": "Seven Sorrows of Mary",
+      "priorHumanChoice": {
+        "subjectId": "DEV-09",
+        "selectedOriginalId": "ART-nthony-van-yck-amentation-of-hrist",
+        "artist": "Anthony van Dyck",
+        "title": "Lamentation of Christ",
+        "sourceLocation": "KMSKA Antwerp, 403",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 136,
+      "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
+      "bestPhoto": "Van Dyck Brera 'Madonna and Child with St Anthony', 750x901, visually strong DIFFERENT original",
+      "bestObject": "Historical selected purported Rubens St Anthony with Child lacks physical inventory",
+      "image": "W99 Brera Van Dyck artifact",
+      "rights": "Brera Italian image terms to verify",
+      "identity": "Historical selected Rubens identity UNVERIFIED; Van Dyck is different painter and artwork",
+      "action": "Verify historical Rubens physical painting if possible; otherwise present Van Dyck as explicit alternative, no silent substitution",
+      "nextOwner": "Curator + provenance",
+      "subject": "Saint Anthony of Padua",
+      "priorHumanChoice": {
+        "subjectId": "DEV-14",
+        "selectedOriginalId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+        "artist": "Peter Paul Rubens",
+        "title": "Saint Anthony of Padua with the Christ Child",
+        "sourceLocation": "Prior research",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 139,
+      "stage": "USER_SELECTED_EXACT_IMAGE_RECOVERED",
+      "bestPhoto": "Rubens KMSKA 314 Holy Trinity, W92 3840x3949 full painting",
+      "bestObject": "KMSKA Antwerp 314 selected on Oct12",
+      "image": "W92 acquired source",
+      "rights": "Flemish Art Collection and Commons CC0; deployment/legal gate independent",
+      "identity": "CONFIRMED exact selected original no.314, not W96 Basel image",
+      "action": "Mark physical identity & image acquisition matched, no need for new curatorial selection",
+      "nextOwner": "Release gate",
+      "subject": "Most Holy Trinity",
+      "priorHumanChoice": {
+        "subjectId": "DEV-18",
+        "selectedOriginalId": "ART-eter-aul-ubens-he-oly-rinity",
+        "artist": "Peter Paul Rubens",
+        "title": "The Holy Trinity",
+        "sourceLocation": "KMSKA Antwerp, 314",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 142,
+      "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
+      "bestPhoto": "Rubens Courtauld Cain Slaying Abel 7045x9694 full oil",
+      "bestObject": "Courtauld P.1978.PG.353; 12 Oct selected generic Rubens Cain and Abel had no accession",
+      "image": "W97 original bytes",
+      "rights": "Courtauld CC BY-NC 4.0 conflicts with commercial app, Commons PD-Art claim differs",
+      "identity": "Actual Courtauld original distinct identity; no proof selected research lead mapped to it",
+      "action": "Resolve selected original accession and reusable image terms; no automatic approval",
+      "nextOwner": "Curator + rights",
+      "subject": "Cain and Abel",
+      "priorHumanChoice": {
+        "subjectId": "BIB-OR03",
+        "selectedOriginalId": "ART-eter-aul-ubens-ain-and-bel",
+        "artist": "Peter Paul Rubens",
+        "title": "Cain and Abel",
+        "sourceLocation": "Research lead",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    },
+    {
+      "index": 145,
+      "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
+      "bestPhoto": "Rubens NGA Meeting of Abraham and Melchizedek 4000x3193 source CC0",
+      "bestObject": "NGA 1958.4.1; 12 Oct selected work described Rubens workshop not linked to this accession",
+      "image": "W97 image source",
+      "rights": "NGA CC0 official image",
+      "identity": "NGA autograph original may be DIFFERENT from workshop record; not auto-linkable",
+      "action": "Confirm user's originally intended Rubens/workshop painting before linking NGA photo, or explicitly offer NGA alternative",
+      "nextOwner": "Curator",
+      "subject": "Melchizedek Blesses Abram",
+      "priorHumanChoice": {
+        "subjectId": "BIB-PA03",
+        "selectedOriginalId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+        "artist": "Peter Paul Rubens",
+        "title": "Meeting of Abraham and Melchizedek",
+        "sourceLocation": "Rubens workshop research",
+        "authority": "12 October explicit selected artwork; NOT automatically five stars"
+      },
+      "priorPerfectFit": null,
+      "noHistoricalRatingChanged": true,
+      "noAppPublicationChanged": true
+    }
+  ]
+}
