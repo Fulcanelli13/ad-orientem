@@ -13,6 +13,8 @@ def bilingual(obj):
 doc = read("data/learn/research/mass-formation-canon-deep-exemplar-20261016.v1.json")
 evidence = read("data/learn/research/mass-formation-canon-p0-evidence-bridge-20261016.v1.json")
 major = read("data/learn/research/mass-formation-canon-two-major-prayers-deep-20261016.v1.json")
+triage = read("data/learn/research/mass-formation-canon-quam-supra-32-claim-triage-20261016.v1.json")
+triage_by_id = {item["id"]:item for item in triage["claims"]}
 sung = read("data/presentation/reader-text-sung.v1.json")
 old = read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json")
 formation = read("data/learn/mass-formation-campion.v1.json")
@@ -44,7 +46,15 @@ assert major["status"]=="EDITORIAL_DRAFT_NOT_RELEASED"
 assert major["scope"]=="FORMATION_P2_EDITORIAL_ONLY"
 assert [x["id"] for x in major["studies"]]==["AO.FORM.CANON.DEEP.02","AO.FORM.CANON.DEEP.05"]
 assert [x["block_id"] for x in major["studies"]]==["AO.SM.B051","AO.SM.B055"]
-assert sum(len(x["chapters"]) for x in major["studies"])==9
+assert sum(len(x["chapters"]) for x in major["studies"])==11
+assert triage["schema"]=="ao-formation-canon-two-prayers-32-claim-collation-triage-v1"
+assert triage["status"]=="EDITORIAL_RESEARCH_ONLY_ALL_CLAIMS_HELD"
+assert triage["counts"]["total"]==32 and triage["counts"]["gihr"]==8
+assert triage["counts"]["primary_printed_gihr_collated"]==0
+assert triage["counts"]["author_citations_approved"]==0
+assert len(triage_by_id)==32
+assert all(not x["publication_allowed"] and not x["exact_printed_source_read_in_this_pass"] for x in triage["claims"])
+assert len(triage["identified_disputes"])==3
 assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==6
 for m in major["studies"]:
     assert m["level"]=="EXPANDED_PRIMARY_SOURCE_INTERPRETATION_EDITORIAL_DRAFT"
@@ -116,7 +126,11 @@ def research_docket(entry):
                 h(item["claim_id"])+'</code> · <strong>'+h(item["block_id"])+'</strong> · '+
                 h(item["source_locator"])+
                 '<small>'+h(item["research_grade"])+
-                ' · RESEARCH ONLY, NOT APPROVED FOR PUBLICATION</small></li>'
+                ' · RESEARCH ONLY, NOT APPROVED FOR PUBLICATION</small>'+
+                ('<p data-source-triage="'+h(item["claim_id"])+'"><strong>'+
+                 h(triage_by_id[item["claim_id"]]["collation_status"])+'</strong> · '+
+                 h(triage_by_id[item["claim_id"]]["editorial_observation"])+
+                 '</p>' if item["claim_id"] in triage_by_id else '')+'</li>'
             )
         groups.append('<details class="author-record"><summary>'+h(author)+' · '+
                       str(len(items))+' candidate references</summary><ol>'+
@@ -258,7 +272,8 @@ assert markup.count('class="lit-block"')==15
 assert markup.count('class="relation"')==8
 assert markup.count('class="research-docket"')==8
 assert markup.count('class="major-exegesis"')==2
-assert markup.count('class="detailed-chapter"')==9
+assert markup.count('class="detailed-chapter"')==11
+assert markup.count('data-source-triage=')==32
 assert markup.count('class="latin-item"')==5
 assert markup.count('class="source-link"')==6
 assert markup.count('data-p0-author-ref=')==88
@@ -268,4 +283,4 @@ assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 9 chapters, five Latin glosses, 6 direct primary source refs; 79 P0 units, 88 held author refs, no publication ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 11 chapters, 32 claim-specific triage notes, five Latin glosses, 6 direct primary source refs; 79 P0 units, 88 held author refs, no publication ->",out)
