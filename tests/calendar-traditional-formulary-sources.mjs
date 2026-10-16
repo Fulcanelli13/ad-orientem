@@ -36,7 +36,7 @@ const eligible={status:"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW"};
 const blocked={status:"BLOCKED",reason:"CLASS_I_OR_II_DAY"};
 const review=(x={})=>reviewTraditionalMassFormulary({
  date:"2026-10-09",saintId:"saint.john-henry-newman",
- observed1962Id:"sancti:10-09:3:w",eligibility:eligible,...x});
+ observed1962Id:"sancti:10-09:3:w",observed1962DayKind:"FEAST",eligibility:eligible,...x});
 assert.equal(review().status,"POTENTIALLY_ELIGIBLE_TEXTS_UNRESOLVED");
 assert.equal(review().selectedFormularyId,null);
 assert.equal(review().authorizedToChangeMass,false);
@@ -60,6 +60,10 @@ const proper=s("PRO_ALIQUIBUS_LOCIS_1962","local.1962");
 const supplement=s("HOLY_SEE_APPROVED_TRADITIONAL_SUPPLEMENT","supplement.1962");
 assert.equal(review({candidates:[common]}).status,"DISPLACED_1962_ORATIONS_MISSING",
  "Mass of Newman must retain the omitted Leonardi's three orations");
+assert.equal(review({candidates:[common],observed1962DayKind:null}).status,
+ "ORIGINAL_DAY_TYPE_UNVERIFIED","A date/source ID alone cannot prove a displaced feast");
+assert.equal(review({candidates:[common],observed1962DayKind:"FERIA"}).status,
+ "MASS_TYPE_REVIEW_REQUIRED","A feria does not require omitted-feast commemorative orations");
 assert.equal(review({candidates:[common],displaced1962Orations:prayers}).status,"MASS_TYPE_REVIEW_REQUIRED");
 const evaluated=review({candidates:[common,supplement,proper],
  displaced1962Orations:prayers,commemorationLimitReviewed:true});
