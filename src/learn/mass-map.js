@@ -44,7 +44,7 @@ export function projectMassMap(catalog){
    provenance:"PUBLISHED_SUNG_GUIDE_AND_SOURCE_ONLY",relationshipStatus:catalog.crosswalkStatus});
 }
 
-export function massMapHtml(catalog,{french=false}={}){
+export function massMapHtml(catalog,{french=false,readerContext=false}={}){
  const map=projectMassMap(catalog);
  const phaseButtons=map.phases.map(phase=>
    '<button type="button" data-ao-mx-phase="'+phase.index+'" aria-controls="ao-mx-phase-'+phase.id+'">'+
@@ -86,12 +86,13 @@ export function massMapHtml(catalog,{french=false}={}){
     '<button type="button" data-ao-mx-view="list">'+tr(french,"Text index","Index textuel")+'</button></div>'+
    '<nav class="aoMXMapPhases" aria-label="'+tr(french,"Jump to a Mass part","Accéder à une partie de la Messe")+'">'+phaseButtons+'</nav>'+
    '<div class="aoMXMapJourney">'+steps+'</div>'+
+   (readerContext?'<section class="aoMXMapRitualLink"><button type="button" data-ao-mx-return-mass>'+tr(french,"Return to Mass","Retourner à la Messe")+' →</button></section>':
    '<section class="aoMXMapRitualLink"><h2>'+tr(french,"Follow an actual Mass","Suivre une Messe réelle")+'</h2>'+
      '<p>'+tr(french,
        "The separate Mass reader selects the actual celebration and Proper. Opening it does not jump to a numbered study stop.",
        "Le lecteur de Messe distinct choisit la célébration et son Propre. Il ne passe pas automatiquement à une étape de cette carte.")+
      '</p><button type="button" data-ao-mx-open-mass>'+tr(french,"Open Mass preparation","Ouvrir la préparation de la Messe")+' ↗</button>'+
-   '</section></main>';
+   '</section>')+'</main>';
 }
 
 export function massMapCss(){
