@@ -7,7 +7,7 @@ const books=j("data/explore/biblical-73-book-event-denominator-audit.v1.json");
 const sels=j("data/explore/biblical-existing-author-selection-review.v1.json");
 assert.equal(fam.sourceFamilies[0].workId,"WORK-SCHUSTER-BIBLE-HISTORY");
 assert.equal(fam.openingEnglishTocSections.length,8);
-assert.equal(fam.witnesses.length,6);
+assert.equal(fam.witnesses.length,7);
 const schuster1925=fam.witnesses.find(w=>w.id==="SCHUSTER-EN-1925-HERDER-LONDON-19TH");
 assert.ok(schuster1925);
 assert.equal(schuster1925.tocReadFromArchiveOCR,true);
@@ -181,5 +181,26 @@ assert.equal(spanish1908.releasedReaderSourceParagraphs,0);
 assert.equal(fam.counts.spanish1908OriginalPrintedImagesInspected,0);
 assert.equal(fam.counts.spanish1908ParagraphsPrintCertified,0);
 assert.equal(fam.counts.spanish1908OpeningTocUnitsReadFromOCR,9);
+
+// Earlier historical English Sadlier witness is a scan acquisition candidate, not certified prose.
+const earlySadlier=fam.earlyEnglishSadlierScanAcquisitionReview;
+assert.ok(earlySadlier);
+const earlyWitness=fam.witnesses.find(w=>w.id===earlySadlier.newWitnessId);
+assert.ok(earlyWitness);
+assert.equal(earlyWitness.language,"en");
+assert.equal(earlyWitness.workId,"WORK-SCHUSTER-BIBLE-HISTORY");
+assert.equal(earlyWitness.sourcePdfContentBytesReportedByWeb,23008160);
+assert.equal(earlyWitness.scanImagePrintedPagesIndependentlyRead,0);
+assert.equal(earlyWitness.authorParagraphsCertified,0);
+assert.equal(earlyWitness.samePrintEditionAs1896Catalog,"NOT_VERIFIED");
+assert.equal(earlyWitness.samePrintEditionAs1925Nineteenth,"NOT_VERIFIED");
+assert.equal(earlySadlier.independentPublisherPrimarySource.cataloguePdfPageIndex0,26);
+assert.equal(earlySadlier.originalPrintedPagesCertifiedNow,0);
+assert.equal(earlySadlier.authorNarrativeParagraphsCertifiedNow,0);
+assert.equal(earlySadlier.automaticSourceImportAllowed,false);
+assert.equal(earlySadlier.appChanged,false);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhScansLocated,1);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhPagesPrintInspected,0);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhParagraphsCertified,0);
 
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
