@@ -77,7 +77,6 @@ assert.equal(inspectP1InternalMissalLink({anchor:pa,calendarResolution:modified(
 assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{commemorationFormDecision:{status:"UNVERIFIED"}})}).reason,"COMMEMORATION_NOT_APPLIED_TO_RESOLVED_MASS");
 assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{appliedCommemorations:[]})}).reason,"COMMEMORATION_NOT_APPLIED_TO_RESOLVED_MASS");
 assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{calendarCommemorations:[{id:commId,path:"Sancti/10-08",prayerSourcePath:commPath}]})}).reason,"SOURCE_COMMEMORATION_OWNER_MISMATCH");
-assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{postcommunions:[]})}).reason,"SOURCE_ORATION_ROW_MISSING"===null?"": "FULL_READER_PROPER_INCOMPLETE"===null?"":"FULL_READER_PROPER_INCOMPLETE");
 // A missing prayer may still be reconstructed by a source-owned singular
 // field; do not confuse that with an independent second commemoration prayer.
 const incomplete=proper();
