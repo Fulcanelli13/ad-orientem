@@ -75,7 +75,15 @@ for(const item of ledger.records){
   assert(r.cross_owner_identity_candidates.every(x=>x.source_reference_only===true && x.calendar_owner_approved===false));
 }
 assert.deepEqual([archivedContextRows,archivedNominalEdges,doctorRows,shrineLinkedKeys,shrineReferenceEdges,pairEnds],
-  [307,424,38,86,88,8]);
+  [307,424,34,86,88,8]);
+const laterWithout1962=["saint.gregory-narek","saint.hildegard-bingen","saint.john-avila","saint.john-henry-newman"];
+for(const key of laterWithout1962){
+ const item=ledger.records.find(x=>x.source_key===key);
+ assert(item&&item.family_sources.some(f=>f.family==="doctor"));
+ assert.equal(item.identity_source_reconciliation.calendar_doctor_original_source_id,null);
+ assert.equal(item.identity_source_reconciliation.calendar_doctor_nominal_day,null);
+}
+assert.equal(review.doctors_owner_key_rows,38);
 // Original archive exposes *both* 24 November observances as date-level
 // context for both subjects. Only the separately evidenced Doctors bridge
 // may propose a principal John of the Cross subject reference.
