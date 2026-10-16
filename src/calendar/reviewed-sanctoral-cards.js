@@ -37,8 +37,12 @@ export function buildReviewedSanctoralCards({
   const seen=new Set();
   for(const row of observanceRegistry.observances) {
     if(row.monthDay!==date.slice(5) || seen.has(row.subjectId))continue;
-    const general=row.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE" &&
-      row.universalStatus==="CERTIFIED_BY_DECREE" &&
+    const primaryDecree=row.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE" &&
+      row.universalStatus==="CERTIFIED_BY_DECREE";
+    const papalAnnouncement=row.authorityScope==="GENERAL_ROMAN_PAPAL_ANNOUNCEMENT" &&
+      row.universalStatus==="ATTESTED_BY_PAPAL_ANNOUNCEMENT" &&
+      row.sourceEvidenceType==="PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE";
+    const general=(primaryDecree||papalAnnouncement) &&
       /^https:\/\/(?:press|www)\.vatican\.va\//.test(row.sourceUrl) &&
       (!row.publishedOn || row.publishedOn<=date);
     const us=jurisdiction==="US" &&
@@ -69,7 +73,7 @@ export function buildReviewedSanctoralCards({
       id:row.subjectId,kind:isGroup?"COLLECTIVE_MARTYR_PROFILE":"INDIVIDUAL_SAINT_PROFILE",
       title,whyHonoured:rationale,context:shortHistory,
       currentCalendarDate:row.monthDay,currentCalendarKind:row.kind,
-      sourceScope:general?"GENERAL_ROMAN_VATICAN_DECREE":"USCCB_2026_WITNESS_ONLY",
+      sourceScope:general?row.authorityScope:"USCCB_2026_WITNESS_ONLY",
       universalDateCertified:general,
       sourceUrls:Object.freeze([...new Set(sources)]),
       site,approvedSacredPaintingId:null,
