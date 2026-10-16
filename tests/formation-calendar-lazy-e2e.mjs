@@ -115,7 +115,7 @@ try{
  assert.ok(yearSize.trackWidth>150,"Year timeline has no usable phone width");
  assert.ok(Math.abs(yearSize.partsWidth-yearSize.trackWidth)<5,"Period widths are not proportional inside track");
  assert.ok(yearSize.horizontalOverflow<=2,"Year view causes horizontal overflow on phone");
- for(const width of [320,360,390,430]){
+ for(const width of [320,360,390,430,1280]){
    await page.setViewportSize({width,height:844});
    const measure=await page.evaluate(()=>{
      const root=document.getElementById("ao-calendar-modular-root");
