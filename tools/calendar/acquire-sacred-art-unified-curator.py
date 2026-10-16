@@ -204,8 +204,17 @@ def process(w,canonical,allow_search=False):
     # Use original source if feasible; do not mistake downsized thumbnail for original.
     url=info.get("url")
     if not url:continue
-    raw,final=fetch(url)
-   else:final=info.get("url") or ""
+    try:
+     raw,final=fetch(url)
+     was_derivative=False
+    except Exception as original_error:
+     derivative=info.get("display") or ""
+     if not derivative or derivative==url:raise original_error
+     raw,final=fetch(derivative)
+     was_derivative=True
+   else:
+    final=info.get("url") or ""
+    was_derivative=False
    with Image.open(io.BytesIO(raw)) as check: check.verify()
    with Image.open(io.BytesIO(raw)) as original:
     original=ImageOps.exif_transpose(original)
@@ -221,7 +230,7 @@ def process(w,canonical,allow_search=False):
    (OUT/fn).write_bytes(preview)
    if idx==0 or kind.startswith("MUSEUM"): # Preserve one full original per record in artifact.
     (ARCHIVE/f"{fname(w['id'])}-{digest[:14]}.source").write_bytes(raw)
-   found.append({"file":"acquired/"+fn,"relativeToGallery":"acquired/"+fn,"originalSha256":digest,"reviewPreviewSha256":hashlib.sha256(preview).hexdigest(),"originalWidth":width,"originalHeight":height,"previewWidth":image.width,"previewHeight":image.height,"originalBytes":len(raw),"previewBytes":len(preview),"sourceUrl":final or info.get("url"),"sourcePage":info.get("sourcePage") or w.get("source"),"license":info.get("license"),"credit":info.get("artistCredit"),"basis":kind,"identityStatus":"MUSEUM_EXACT_OBJECT" if kind.startswith("MUSEUM") or kind=="CANONICAL_SHA_ARCHIVE" else ("EXISTING_OBJECT_LINKED_FILE" if kind=="COMMONS_SOURCE_LINK" else "UNVERIFIED_DISCOVERY_CANDIDATE"),"photoId":info.get("sourcePhotoId",None)})
+   found.append({"file":"acquired/"+fn,"relativeToGallery":"acquired/"+fn,"originalSha256":digest,"reviewPreviewSha256":hashlib.sha256(preview).hexdigest(),"originalWidth":width,"originalHeight":height,"previewWidth":image.width,"previewHeight":image.height,"originalBytes":len(raw),"previewBytes":len(preview),"sourceUrl":final or info.get("url"),"sourcePage":info.get("sourcePage") or w.get("source"),"license":info.get("license"),"credit":info.get("artistCredit"),"basis":kind,"identityStatus":"MUSEUM_EXACT_OBJECT" if kind.startswith("MUSEUM") or kind=="CANONICAL_SHA_ARCHIVE" else ("EXISTING_OBJECT_LINKED_FILE" if kind=="COMMONS_SOURCE_LINK" else "UNVERIFIED_DISCOVERY_CANDIDATE"),"photoId":info.get("sourcePhotoId",None),"downloadWasDerivative":was_derivative,"fullMuseumMasterVerified":not was_derivative,"masterUrl":info.get("url")})
    print("ACQUIRED",w["_index"],w["id"],kind,width,height,fn,flush=True)
   except Exception as e:
    result.setdefault("downloadFailures",[]).append({"source":info.get("sourcePage"),"reason":str(e)[:170]})
