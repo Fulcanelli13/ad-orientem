@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_PARTIAL_COMMON_DONOR_EVALUATION_V1",
   "asOf": "2026-10-16",
-  "status": "TWO_PARTIAL_INHERITANCE_RECOVERIES_VERIFIED_ONE_COMPLETE_EIGHT_MORE_PARTIAL_UNCHECKED",
+  "status": "TWO_SOURCE_COMPOSITIONS_VERIFIED_ONE_PARTIAL_RECOVERY_EIGHT_MORE_PARTIAL",
   "scope": "Compare 11 sparse Common sources to source-declared family donors; do not copy from web pages, substitute names or silently select a Mass",
   "coreSections": [
     "Introitus",
@@ -119,24 +119,22 @@
       "kind": "NON_VIRGIN_WOMAN_MARTYR",
       "caution": "Original single nonvirgin changes chants/prayers; do not conflate with Virgin",
       "allowAutoBorrow": false,
-      "checkStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
+      "checkStatus": "APP_RESOLVER_COMPOSITION_VERIFIED",
       "sourceIdentityMustBeVerified": true,
       "formularyApproved": false,
       "sourceCompositionModule": "src/calendar/p1-partial-common-source-reconciliation.js",
       "sourceEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
       "actualAppProof": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38919762315",
-      "borrowedSections": 7,
+      "borrowedSections": 10,
       "remainingMissing": {
-        "la": [
-          "Lectio"
-        ],
-        "en": [
-          "Lectio"
-        ],
-        "fr": [
-          "Lectio"
-        ]
-      }
+        "la": [],
+        "en": [],
+        "fr": []
+      },
+      "sourceCoverage": "ALL_NINE_SECTIONS_LA_EN_FR_AFTER_ORIGINAL_C6_LECTIO",
+      "extraParentSource": "Commune/C6",
+      "lessonBibleReference": "Eccli 51:1-8; 51:12",
+      "sourceEvidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867"
     },
     {
       "target": "Commune/C4c",
