@@ -22,6 +22,12 @@
       "path": "data/saints/six-duplicate-name-alias-evidence-20261016.v1.json",
       "ref": "saints/2026-10-15-identity-and-holiness-pilot",
       "blob_sha": "3d6384934d3fea93ef1bf600202e83eb70cd47cd"
+    },
+    {
+      "path": "data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "9e07d5488bd46ff2c05ac949593bfd8e85ffd736",
+      "relation": "DERIVED_W78_VARIANT_SOURCE_KEY_REVIEW_EVIDENCE_NOT_IDENTITY_CERTIFICATION"
     }
   ],
   "rules": [
@@ -30,7 +36,8 @@
     "Previously proposed aliases are not certified human identities.",
     "Artwork subjects and user five-star scores are not approved production images.",
     "Blessed remains distinct from Saint; groups and angels cannot be treated as single human biographies.",
-    "No new map pins, saints, Missal observances or image rights may be promoted from this registry."
+    "No new map pins, saints, Missal observances or image rights may be promoted from this registry.",
+    "The 24 curated variant leads overlap with eight of the nine previously documented aliases; Wenceslas is the additional prior alias. None creates a certified person identity."
   ],
   "summary": {
     "shrine_name_records": 119,
@@ -61,7 +68,20 @@
     },
     "created_new_saint_person_ids": 0,
     "created_new_physical_places": 0,
-    "licensed_images": 0
+    "licensed_images": 0,
+    "cross_w78_name_key_partition": {
+      "EXACT_FULL_NAME_SINGLE": 50,
+      "EXACT_FULL_NAME_COLLISION": 6,
+      "PREVIOUSLY_RECORDED_ALIAS_LEAD": 9,
+      "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED": 16,
+      "NO_SUPPORTED_LEDGER_KEY_LEAD": 38,
+      "original_no_exact_names": 63,
+      "curated_variant_leads_overlapping_previously_documented_aliases": 8,
+      "distinct_unmatched_names_with_existing_key_leads": 25,
+      "original_names_with_any_exact_or_existing_key_lead": 81,
+      "still_without_any_ledger_key_lead": 38,
+      "created_new_canonical_person_id": 0
+    }
   },
   "records": [
     {
@@ -99,7 +119,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Jacques-Désiré Laval",
@@ -139,7 +161,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Marie-Louise Trichet",
@@ -181,7 +205,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Adalbert of Prague",
@@ -222,7 +248,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Agatha of Sicily",
@@ -263,7 +291,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.agatha",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Alphonsus Liguori",
@@ -325,7 +366,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ambrose of Milan",
@@ -385,7 +428,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint André Bessette",
@@ -427,7 +472,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.andre-bessette",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "PARENTHETICAL_BAPTISMAL_NAME",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew Kaggwa",
@@ -462,7 +520,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew the Apostle",
@@ -519,7 +579,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.andrew",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "APOSTOLIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anne",
@@ -596,7 +669,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anthony of Padua",
@@ -673,7 +748,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Apollinaris",
@@ -718,7 +795,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Augustine of Hippo",
@@ -775,7 +854,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartholomew the Apostle",
@@ -832,7 +913,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.bartholomew",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "APOSTOLIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartolo Longo",
@@ -872,7 +966,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Benedict of Nursia",
@@ -942,7 +1038,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.benedict",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bernadette Soubirous",
@@ -1023,7 +1132,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Beuno",
@@ -1060,7 +1171,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Brigid of Kildare",
@@ -1105,7 +1218,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Casimir",
@@ -1150,7 +1265,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine Labouré",
@@ -1205,7 +1322,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine of Siena",
@@ -1266,7 +1385,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charbel Makhlouf",
@@ -1307,7 +1428,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.charbel-makhlouf",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "SPELLING_TRANSLITERATION",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Borromeo",
@@ -1352,7 +1486,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Lwanga",
@@ -1394,7 +1530,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.charles-lwanga",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "ITALIAN_FIRST_NAME_VARIANT",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Clare of Assisi",
@@ -1435,7 +1584,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.clare",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Claude La Colombière",
@@ -1475,7 +1637,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Columbanus",
@@ -1516,7 +1680,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Denis of Paris",
@@ -1574,7 +1740,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic",
@@ -1632,7 +1800,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic de Guzmán",
@@ -1683,7 +1853,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.dominic",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "SURNAME_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Edward the Confessor",
@@ -1724,7 +1907,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.edward",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "RECOGNITION_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Elizabeth Ann Seton",
@@ -1770,7 +1966,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Eusebius of Vercelli",
@@ -1815,7 +2013,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Faustina Kowalska",
@@ -1866,7 +2066,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis de Sales",
@@ -1927,7 +2129,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis of Assisi",
@@ -1988,7 +2192,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis Xavier",
@@ -2039,7 +2245,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francisco Marto",
@@ -2085,7 +2293,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Gervasius of Milan",
@@ -2126,7 +2336,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Helena",
@@ -2172,7 +2384,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Hilary of Poitiers",
@@ -2223,7 +2437,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ignatius of Loyola",
@@ -2274,7 +2490,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Isaac Jogues",
@@ -2323,7 +2541,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jacinta Marto",
@@ -2369,7 +2589,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint James the Greater",
@@ -2433,7 +2655,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jane Frances de Chantal",
@@ -2478,7 +2702,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean de Brébeuf",
@@ -2514,7 +2740,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean-Marie Vianney",
@@ -2567,7 +2795,21 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.john-mary-vianney",
+          "owner_families": [
+            "archived_1962",
+            "cross_vocation_research_bio"
+          ],
+          "source_reason": "FRENCH_ENGLISH_FIRST_NAME",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joachim",
@@ -2609,7 +2851,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joan of Arc",
@@ -2656,7 +2900,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Bosco",
@@ -2701,7 +2947,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John de Lalande",
@@ -2738,7 +2986,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Neumann",
@@ -2791,7 +3041,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John of the Cross",
@@ -2852,7 +3104,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Paul II",
@@ -2897,7 +3151,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Baptist",
@@ -2955,7 +3211,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Evangelist",
@@ -3018,7 +3276,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint José de Anchieta",
@@ -3063,7 +3323,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joseph",
@@ -3133,7 +3395,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Josephine Bakhita",
@@ -3174,7 +3438,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.giuseppina-bakhita",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "ITALIAN_ENGLISH_FIRST_NAME",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Juan Diego",
@@ -3228,7 +3505,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.juan-diego-cuauhtlatoatzin",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "BAPTISMAL_INDIGENOUS_NAME",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Julienne of Cornillon",
@@ -3263,7 +3553,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Junípero Serra",
@@ -3308,7 +3600,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kateri Tekakwitha",
@@ -3355,7 +3649,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Katharine Drexel",
@@ -3400,7 +3696,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kizito",
@@ -3441,7 +3739,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Leonard of Noblac",
@@ -3477,7 +3777,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis de Montfort",
@@ -3525,7 +3827,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis-Marie de Montfort",
@@ -3573,7 +3877,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louise de Marillac",
@@ -3620,7 +3926,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Lucy of Syracuse",
@@ -3677,7 +3985,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.lucy",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Luke the Evangelist",
@@ -3728,7 +4049,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Margaret Mary Alacoque",
@@ -3780,7 +4103,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mark the Evangelist",
@@ -3827,7 +4152,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.mark",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "EVANGELIST_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martha of Bethany",
@@ -3872,7 +4210,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin de Porres",
@@ -3913,7 +4253,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.martin-de-porres",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "ITALIAN_FIRST_NAME_VARIANT",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin of Tours",
@@ -3964,7 +4317,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mary Magdalene",
@@ -4026,7 +4381,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthew the Apostle",
@@ -4083,7 +4440,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.matthew",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "APOSTOLIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthias the Apostle",
@@ -4140,7 +4510,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.matthias",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "APOSTOLIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maurice and the Theban martyrs",
@@ -4181,7 +4564,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "group.maurice-theban-legion",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "COLLECTIVE_TITLE_VARIANT",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maximin",
@@ -4216,7 +4612,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Meinrad",
@@ -4252,7 +4650,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Michael the Archangel",
@@ -4315,7 +4715,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Monica",
@@ -4360,7 +4762,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas",
@@ -4417,7 +4821,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas of Myra",
@@ -4468,7 +4874,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.nicholas",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oliver Plunkett",
@@ -4505,7 +4924,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oscar Romero",
@@ -4546,7 +4967,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.oscar-arnulfo-romero",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "ADDITIONAL_GIVEN_NAME",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Patrick",
@@ -4611,7 +5045,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Paul the Apostle",
@@ -4668,7 +5104,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter Chanel",
@@ -4713,7 +5151,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter the Apostle",
@@ -4795,7 +5235,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Philip Neri",
@@ -4840,7 +5282,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Pio of Pietrelcina",
@@ -4881,7 +5325,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.pio-pietrelcina",
+          "owner_families": [
+            "later_named"
+          ],
+          "source_reason": "REGIONAL_TITLE_VARIANT",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Protasius of Milan",
@@ -4922,7 +5379,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Quentin",
@@ -4963,7 +5422,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint René Goupil",
@@ -5000,7 +5461,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rita of Cascia",
@@ -5041,7 +5504,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rose of Lima",
@@ -5086,7 +5551,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Saturninus",
@@ -5131,7 +5598,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Scholastica",
@@ -5176,7 +5645,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
@@ -5217,7 +5688,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stanislaus of Kraków",
@@ -5258,7 +5731,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "saint.stanislaus",
+          "owner_families": [
+            "archived_1962"
+          ],
+          "source_reason": "GEOGRAPHIC_EPITHET",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stephen of Hungary",
@@ -5303,7 +5789,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Teresa of Ávila",
@@ -5354,7 +5842,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thérèse of Lisieux",
@@ -5431,7 +5921,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas Aquinas",
@@ -5482,7 +5974,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas the Apostle",
@@ -5539,7 +6033,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Titus",
@@ -5584,7 +6080,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Turibius of Astorga",
@@ -5619,7 +6117,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Vincent de Paul",
@@ -5672,7 +6172,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Wenceslas",
@@ -5729,7 +6231,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Willibrord",
@@ -5770,7 +6274,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Winefride",
@@ -5812,7 +6318,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "The Three Magi",
@@ -5853,7 +6361,9 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [],
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
     },
     {
       "legacy_shrine_person_or_group_name": "Uganda Martyrs",
@@ -5900,7 +6410,20 @@
       ],
       "physical_relation_claim": "SHRINE_NAME_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_MARTYRDOM_OR_AUTHENTICATED_RELIC",
       "authorized_artwork_id": null,
-      "new_geographical_pin_created": false
+      "new_geographical_pin_created": false,
+      "curated_variant_existing_key_leads": [
+        {
+          "source_key": "uganda-martyrs-22",
+          "owner_families": [
+            "post1960_collectives"
+          ],
+          "source_reason": "COLLECTIVE_TITLE_ORDER",
+          "review_gate": "CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION",
+          "canonical_person_identity_approved": false,
+          "shrine_person_relation_certified": false
+        }
+      ],
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
     }
   ]
 }
