@@ -53,7 +53,7 @@ function selectedDate(){
 }
 function fmt(d){return formatDisplayDate(d)}
 function calStatus(n){const now=selectedDate(),key=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-'),c=novenaStatusFor(n,key,{fr:isFr()});const w={start:new Date(c.window.start+'T12:00:00'),end:new Date(c.window.end+'T12:00:00'),feast:new Date(c.window.feast+'T12:00:00')};return{kind:c.kind,day:c.day,label:c.label,w}}
-function head(title,sub=''){return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-n1-back aria-label="${esc(L('Back','Retour'))}">${n1UiIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY · NOVENAS','PRIER · NEUVAINES'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div><button type="button" class="aoP435930Home" data-n1-home aria-label="${esc(L('Home','Accueil'))}">${n1UiIcon('ao-nav-home')}</button></header>`}
+function head(title,sub=''){return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-n1-back aria-label="${esc(L('Back','Retour'))}">${n1UiIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY · NOVENAS','PRIER · NEUVAINES'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div><button type="button" class="aoP435930Home" data-n1-home aria-label="${esc(typeof OPEN_OPTS?.onCloseReturn==='function'?L('Return to Scripture','Retour à l’Écriture'):L('Home','Accueil'))}">${n1UiIcon('ao-nav-home')}</button></header>`}
 function modeNav(){return `<div class="aoP435930Seg" role="group" aria-label="${esc(L('Depth','Profondeur'))}"><button type="button" class="${N.mode==='simple'?'active':''}" aria-pressed="${N.mode==='simple'}" data-n1-mode="simple">${esc(L('Simple','Simple'))}</button><button type="button" class="${N.mode==='guided'?'active':''}" aria-pressed="${N.mode==='guided'}" data-n1-mode="guided">${esc(L('Guided','Guidé'))}</button></div>`}
 function sourceDetails(n){
  const s=n.source||{},section=novenaSourceAccess(n.id),url=String(s.url||'');
@@ -173,12 +173,21 @@ function open(opts={}){
  }
  BASE_OPEN('pray.hub',opts);render();return true
 }
+function returnToScripture(){
+ const restore=OPEN_OPTS?.onCloseReturn;
+ if(typeof restore!=="function")return false;
+ OPEN_OPTS={};OPEN_RECEIPT=null;
+ BASE_CLOSE({silent:true});
+ Promise.resolve().then(restore).catch(error=>console.error("Novena Scripture return failed",error));
+ return true;
+}
 function back(){
  if(N.screen==='day'){N.screen='detail';N.stage=0;N.showEnglish=false;return render()}
  // A direct Calendar/Today deep link has not visited the Novena overview.
  if(N.screen==='detail'&&detailFromOverview){
   N.screen='overview';N.id=null;detailFromOverview=false;return render()
  }
+ if(returnToScripture())return true;
  return returnToObservedModuleOrigin(window,OPEN_RECEIPT,{
   close:()=>BASE_CLOSE(),
   restoreParent:()=>{
@@ -188,7 +197,7 @@ function back(){
   }
  });
 }
-function goHome(){BASE_CLOSE();const p=window.AO_APP_SHELL_V1?.navigate?.('home');if(p&&typeof p.catch==='function')p.catch(()=>window.AO_NAV_V362?.openHome?.());else if(!p)window.AO_NAV_V362?.openHome?.();return true}
+function goHome(){if(returnToScripture())return true;BASE_CLOSE();const p=window.AO_APP_SHELL_V1?.navigate?.('home');if(p&&typeof p.catch==='function')p.catch(()=>window.AO_NAV_V362?.openHome?.());else if(!p)window.AO_NAV_V362?.openHome?.();return true}
 function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)return;if(!b.matches('[data-n1-open],[data-n1-back],[data-n1-home],[data-n1-select],[data-n1-day],[data-n1-begin],[data-n1-mode],[data-n1-show-en],[data-n1-flip],[data-n1-stage-prev],[data-n1-stage-next],[data-n1-day-prev],[data-n1-day-next],[data-n1-explore]'))return;e.preventDefault();e.stopImmediatePropagation();if(b.matches('[data-n1-open]'))return open({trigger:b});if(b.matches('[data-n1-home]'))return goHome();if(b.matches('[data-n1-back]'))return back();if(b.matches('[data-n1-explore]')){const id=b.dataset.n1Explore||N.id,n=CORPUS[id],query=txt(n?.title)||id;void Promise.resolve(window.AO_APP_SHELL_V1?.navigate?.('find')).then(result=>result?.ok===true?window.AO_FIND_APP_V1?.open?.({lens:'traditions',view:'list',query}):false).catch(error=>console.error('Novena Explore navigation failed',error));return}if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(CORPUS[N.id]).kind==='active'?calStatus(CORPUS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){N.showEnglish=!N.showEnglish;return render()}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=CORPUS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
 document.addEventListener('click',onClick,true);
 const oldOpen=PR.open.bind(PR);PR.open=function(id,opts={}){if(id==='pray.novenas'||id==='novenas'||id==='novena')return open(opts);return oldOpen(id,opts)};
