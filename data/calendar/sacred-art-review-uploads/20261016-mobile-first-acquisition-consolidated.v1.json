@@ -42,7 +42,28 @@
       "evidence": "Céline Martin 1894 original; Carmel source is not freely licensed",
       "nextAction": "Identify reusable exact artwork photo or hold, never copy archival image",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "CARMEL_TWO_ORIGINALS_ONE_PASS",
+        "status": "EXACT_PHYSICAL_ORIGINAL_SOURCE_PHOTO_ACQUIRED_NONPUBLIC_RIGHTS_HOLD",
+        "categoryIndex": 25,
+        "physicalOriginalId": "celine-1894-john-cross",
+        "name": "Céline Martin — Saint Jean de la Croix (1894)",
+        "sourceDimensions": [
+          1995,
+          2560
+        ],
+        "sha": "512980a67d770782f713bf77771d03423d773b1ab5419978501e7bf3d3beecd6",
+        "photoSource": "https://archives.carmeldelisieux.fr/wp-content/uploads/2022/10/N%C2%B0145-Saint-Jean-de-la-Croix-108x89-avec-cadre-scaled.jpg",
+        "rights": "CARMEL_COPYRIGHT_AND_REPRODUCTION_PERMISSION_REQUIRED",
+        "visual": "MOBILE_GOOD_COMPLETE_ORIGINAL",
+        "githubRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38934548471",
+        "privateArtifactId": 12060700572,
+        "paintedSurfaceVerifiedVisually": true,
+        "imageRightsClearedForPublicApp": false,
+        "noRatingOrRuntimeChange": true,
+        "notes": "Exact archival painting physically identified on Carmel original artwork catalogue. Full composition inspected on retrieved source derivative. Keep private research only; do not upload photograph to public GitHub Pages or distribute in app."
+      }
     },
     {
       "categoryIndex": 26,
@@ -218,7 +239,28 @@
       "evidence": "Céline Martin Thérèse aux roses (1925), original Carmel image rights held; same physical work as category 82",
       "nextAction": "Resolve once across 48 and 82 with compatible published original photo",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "CARMEL_TWO_ORIGINALS_ONE_PASS",
+        "status": "EXACT_PHYSICAL_ORIGINAL_SOURCE_PHOTO_ACQUIRED_NONPUBLIC_RIGHTS_HOLD",
+        "categoryIndex": 48,
+        "physicalOriginalId": "carmel-lisieux-1925-therese-aux-roses",
+        "name": "Céline Martin — Thérèse aux Roses (1925)",
+        "sourceDimensions": [
+          1871,
+          2560
+        ],
+        "sha": "ed6e0e41f24ffd8abdbad8ccf4c9beb51256095d83d1bfe483d1d189770c736b",
+        "photoSource": "https://archives.carmeldelisieux.fr/wp-content/uploads/2022/10/N%C2%B0109-Therese-aux-roses-1925-86x65-%C2%A9-Archives-du-Carmel-de-Lisieux-scaled.jpg",
+        "rights": "CARMEL_COPYRIGHT_AND_REPRODUCTION_PERMISSION_REQUIRED",
+        "visual": "MOBILE_GOOD_COMPLETE_ORIGINAL",
+        "githubRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38934548471",
+        "privateArtifactId": 12060700572,
+        "paintedSurfaceVerifiedVisually": true,
+        "imageRightsClearedForPublicApp": false,
+        "noRatingOrRuntimeChange": true,
+        "notes": "Exact archival painting physically identified on Carmel original artwork catalogue. Full composition inspected on retrieved source derivative. Keep private research only; do not upload photograph to public GitHub Pages or distribute in app."
+      }
     },
     {
       "categoryIndex": 51,
@@ -272,7 +314,28 @@
       "evidence": "Same 1925 Céline Martin painting as category 48; archival photo rights not open",
       "nextAction": "Do not double-acquire; share original work identity with category 48",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "CARMEL_TWO_ORIGINALS_ONE_PASS",
+        "status": "EXACT_PHYSICAL_ORIGINAL_SOURCE_PHOTO_ACQUIRED_NONPUBLIC_RIGHTS_HOLD",
+        "categoryIndex": 82,
+        "physicalOriginalId": "carmel-lisieux-1925-therese-aux-roses",
+        "name": "Céline Martin — Thérèse aux Roses (1925)",
+        "sourceDimensions": [
+          1871,
+          2560
+        ],
+        "sha": "ed6e0e41f24ffd8abdbad8ccf4c9beb51256095d83d1bfe483d1d189770c736b",
+        "photoSource": "https://archives.carmeldelisieux.fr/wp-content/uploads/2022/10/N%C2%B0109-Therese-aux-roses-1925-86x65-%C2%A9-Archives-du-Carmel-de-Lisieux-scaled.jpg",
+        "rights": "CARMEL_COPYRIGHT_AND_REPRODUCTION_PERMISSION_REQUIRED",
+        "visual": "MOBILE_GOOD_COMPLETE_ORIGINAL",
+        "githubRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38934548471",
+        "privateArtifactId": 12060700572,
+        "paintedSurfaceVerifiedVisually": true,
+        "imageRightsClearedForPublicApp": false,
+        "noRatingOrRuntimeChange": true,
+        "notes": "Exact archival painting physically identified on Carmel original artwork catalogue. Full composition inspected on retrieved source derivative. Keep private research only; do not upload photograph to public GitHub Pages or distribute in app."
+      }
     },
     {
       "categoryIndex": 83,
@@ -389,7 +452,7 @@
       "publicationApproved": false
     }
   ],
-  "lastReconciled": "2026-10-16 bulk mobile exact-original recovery",
+  "lastReconciled": "2026-10-16 Carmel 2 originals / 3 categories mobile QA",
   "w99Stats": {
     "attemptedPhotoFiles": 7,
     "downloadedAndDecoded": 7,
@@ -430,9 +493,12 @@
   },
   "mobilePhotoAcquisitionCheckpoint": {
     "priorLegacyStrictCoverage": "146/168 (not revised pending license/curatorial release gates)",
-    "newVerifiedFullPaintingPhotosExactSelectedOriginal": 2,
+    "newVerifiedFullPaintingPhotosExactSelectedOriginal": 5,
     "imageAcquisitionClosedCategories": [
+      25,
       42,
+      48,
+      82,
       129
     ],
     "separatelyNewDifferentOriginalCandidateCategory": [
@@ -443,6 +509,23 @@
     "shaManifest": "artifacts/sacred-art-bulk-mobile-source-recovery/bulk-acquisition-QA.json",
     "previousW100CountPreserved": true,
     "noRatingsOrRuntimeChanges": true,
-    "strictPublicationAndAcceptanceGatesUnchanged": true
+    "strictPublicationAndAcceptanceGatesUnchanged": true,
+    "physicalOriginalsAcquiredAcrossTheseCategories": 4,
+    "newCarmelCategoryClosures": [
+      25,
+      48,
+      82
+    ],
+    "newCarmelDistinctOriginals": 2,
+    "rightsBlockedCategories": [
+      25,
+      48,
+      82,
+      42,
+      129
+    ],
+    "strictBaseline": 146,
+    "totalCategories": 168,
+    "explanation": "Acquisition completed for five previously missing exact original categories but photo/publication rights remain separately unresolved, so 146/168 strict publication figure must not be incremented."
   }
 }
