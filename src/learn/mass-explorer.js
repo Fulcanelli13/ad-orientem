@@ -149,7 +149,7 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
     '<h1>'+pick(french,"Mass Explorer","Explorer la Messe")+'</h1><p>'+pick(french,"Follow the Mass in its proper order, then open the original prayers and existing approved Guide explanations. This study reader does not change LIVE, Simple or Missal.",
      "Parcourez la Messe dans son ordre liturgique, puis ouvrez les prières originales et les explications du Guide existant. Ce lecteur d’étude ne modifie pas les modes LIVE, Simple ou Missel.")+
     '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+
-    rows+massStudyPathsHtml(catalog.formationStages,{french})+'</main>';
+    rows+'</main>';
 }
 export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={}){
   const moment=getMassExplorerMoment(catalog,key,{form:"SUNG"});
@@ -219,6 +219,7 @@ export function massExplorerCss(){
   ".aoMXAction{margin:8px 0;padding:12px 14px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-surface-1,#101821);color:var(--ao-text-muted,#adb2b7)}.aoMXAction small{display:block;margin:0 0 5px;color:var(--liturgical,#c9ad78);font:600 .65rem/1.4 var(--ao-font-ui,system-ui);letter-spacing:.06em;text-transform:uppercase}.aoMXAction p{margin:0;font:400 .9rem/1.55 var(--ao-font-body,Georgia,serif);white-space:pre-line}",
   ".aoMXIndexSwitch button{min-height:44px;padding:9px 13px;border:1px solid var(--liturgical,#c9ad78);background:transparent;color:var(--liturgical,#c9ad78);border-radius:9px;cursor:pointer}",
   massMapCss(),massStudyPathsCss(),
+  ".aoMXStudySwitch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:min(820px,100%);margin:0 auto;padding:15px 16px 2px}.aoMXStudySwitch button{min-height:50px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:10px;color:inherit;background:var(--ao-surface-1,#101821);font:500 .88rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}.aoMXStudySwitch button[aria-current=page]{border-color:var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78)}.aoMXStudySwitch button:disabled{opacity:.35;cursor:default}.aoMXThemePage .aoMXStudyPaths{border-top:0;margin-top:0}.aoMXThemePage .aoMXThemeIntroduction{margin:0 0 6px;color:var(--ao-text-muted,#adb2b7);font:400 .86rem/1.6 var(--ao-font-body,Georgia,serif)}",
   ".aoMXReadingNav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;margin:12px 0 18px;padding:7px 0}.aoMXReadingNav button{flex:0 0 auto;min-height:40px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:9px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.75rem/1.35 var(--ao-font-ui,system-ui);cursor:pointer}#ao-mass-explorer-root [data-ao-mx-anchor]{scroll-margin-top:85px}.aoMXFormationLink{margin:22px 0}.aoMXFormationLink h2,.aoMXRelated>h2{font:500 1.35rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXFormationLink p{line-height:1.6;margin:7px 0 11px}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
@@ -232,7 +233,9 @@ export function massExplorerCss(){
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map";
-  let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0,studyStageId=null;
+  let indexScrollTop=0,indexFocusKey=null,indexFocusBlockId=null,momentScrollTop=0,studyStageId=null;
+  let chronologyView="map";
+  const indexScrollPositions={map:0,list:0,themes:0};
   const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
   const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
@@ -241,13 +244,27 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     const node=root();if(!node||!catalog)return false;
     const fr=french();
     node.setAttribute("aria-label",pick(fr,"Mass Explorer","Explorer la Messe"));
+    const availableThemes=catalog.formationStages.length===8;
+    const activePath=indexView==="themes"?"themes":"order";
+    const switcher=momentKey?"":'<nav class="aoMXStudySwitch" aria-label="'+
+      pick(fr,"Choose how to study the Mass","Choisir comment étudier la Messe")+'">'+
+      '<button type="button" data-ao-mx-path="order" aria-current="'+(activePath==="order"?"page":"false")+'">'+
+        pick(fr,"Follow the Mass in order","Suivre l’ordre de la Messe")+'</button>'+
+      '<button type="button" data-ao-mx-path="themes" aria-current="'+(activePath==="themes"?"page":"false")+'"'+
+        (availableThemes?"":" disabled")+'>'+
+        pick(fr,"Study by theme","Étudier par thème")+'</button></nav>';
+    const themesPage='<main class="aoMXWrap aoMXThemePage"><p class="aoMXThemeIntroduction">'+
+      pick(fr,"Eight existing source-backed Formation lessons, without duplicated commentary.",
+           "Huit leçons de Formation déjà sourcées, sans dédoublement des commentaires.")+'</p>'+
+      massStudyPathsHtml(catalog.formationStages,{french:fr})+'</main>';
     node.innerHTML='<style>'+massExplorerCss()+'</style>'+
       '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
-      '<div><small>FORMATION</small><strong>'+pick(fr,"Mass Explorer","Explorer la Messe")+'</strong></div>'+
+      '<div><small>FORMATION</small><strong>'+pick(fr,"Understand the Mass","Comprendre la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
+      switcher+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
-        indexView==="map"?massMapHtml(catalog,{french:fr,
-          studyHtml:massStudyPathsHtml(catalog.formationStages,{french:fr})}):massExplorerIndexHtml(catalog,{french:fr}));
+        indexView==="themes"?themesPage:
+        indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
       restoreMoment?safeScroll(momentScrollTop):0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
@@ -262,11 +279,14 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     heading?.setAttribute("tabindex","-1");
     const returnToStage=restoreIndex&&studyStageId?
       [...node.querySelectorAll("[data-ao-mx-stage]")].find(button=>button.dataset.aoMxStage===studyStageId):null;
+    const returnToBlock=restoreIndex&&indexFocusBlockId?
+      [...node.querySelectorAll("[data-ao-mx-map-block]")].find(button=>button.dataset.aoMxMapBlock===indexFocusBlockId):null;
+    if(returnToBlock)returnToBlock.closest("details")?.setAttribute("open","");
     const returnToIndex=restoreIndex&&indexFocusKey?
       [...node.querySelectorAll("[data-ao-mx-moment]")].find(button=>button.dataset.aoMxMoment===indexFocusKey):null;
     const returnToStudy=restoreMoment?
       node.querySelector('[data-ao-mx-study],[data-ao-mx-stage]'):null;
-    (returnToStage||returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
+    (returnToStage||returnToBlock||returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
     return true;
   }
   function setMoment(key,selectedBlockId=null){
@@ -304,18 +324,36 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       const t=event.target?.closest?.("button");if(!t)return;
       if(t.matches("[data-ao-mx-close]")){event.preventDefault();close(true);return;}
       if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey)showIndex();else close(true);return;}
-      if(t.dataset.aoMxMoment){event.preventDefault();setMoment(t.dataset.aoMxMoment);return;}
+      if(t.dataset.aoMxMoment){event.preventDefault();indexFocusBlockId=null;setMoment(t.dataset.aoMxMoment);return;}
       if(t.dataset.aoMxMapBlock){
         event.preventDefault();
         const target=catalog?.byBlock.get(t.dataset.aoMxMapBlock);
-        if(target)setMoment(target.key,t.dataset.aoMxMapBlock);
+        if(target){indexFocusBlockId=t.dataset.aoMxMapBlock;setMoment(target.key,t.dataset.aoMxMapBlock);}
+        return;
+      }
+      if(t.dataset.aoMxPath){
+        event.preventDefault();
+        const next=t.dataset.aoMxPath==="themes"?"themes":chronologyView;
+        if(next==="themes"&&catalog.formationStages.length!==8)return;
+        if(next!==indexView){
+          indexScrollPositions[indexView]=safeScroll(node.scrollTop);
+          indexView=next;momentKey=null;blockId=null;
+          indexFocusKey=null;indexFocusBlockId=null;studyStageId=null;
+          indexScrollTop=safeScroll(indexScrollPositions[next]);
+          paint({restoreIndex:true});
+          node.querySelector('[data-ao-mx-path="'+(next==="themes"?"themes":"order")+'"]')?.focus?.({preventScroll:true});
+        }
         return;
       }
       if(t.dataset.aoMxView){
         event.preventDefault();
         if(t.dataset.aoMxView==="map"||t.dataset.aoMxView==="list"){
-          indexView=t.dataset.aoMxView;momentKey=null;blockId=null;
-          indexScrollTop=0;indexFocusKey=null;studyStageId=null;paint();
+          indexScrollPositions[indexView]=safeScroll(node.scrollTop);
+          indexView=t.dataset.aoMxView;chronologyView=indexView;
+          momentKey=null;blockId=null;
+          indexScrollTop=safeScroll(indexScrollPositions[indexView]);
+          indexFocusKey=null;indexFocusBlockId=null;studyStageId=null;
+          paint({restoreIndex:true});
         }
         return;
       }
@@ -370,10 +408,10 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         if(!/^MF0[1-8]$/.test(stageId))return;
         if(!momentKey){
           indexScrollTop=safeScroll(root()?.scrollTop);
-          indexFocusKey=null;
+          indexFocusKey=null;indexFocusBlockId=null;
           studyStageId=stageId;
         }
-        const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,studyStageId,
+        const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,indexFocusBlockId,studyStageId,
           momentScrollTop:safeScroll(root()?.scrollTop)};
         close(false);
         void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass",{stageId,explorerReturn})
@@ -396,20 +434,26 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       try{await loading;}catch(error){win?.console?.error?.("Mass Explorer sources unavailable",error);return false;}
     }
     if(!ensureRoot())return false;
-    indexView=opts.indexView==="list"||opts.view==="list"?"list":"map";
+    indexView=(opts.indexView==="themes"||opts.view==="themes")&&catalog.formationStages.length===8?"themes":
+      opts.indexView==="list"||opts.view==="list"?"list":"map";
+    chronologyView=indexView==="themes"?"map":indexView;
     indexScrollTop=safeScroll(opts.indexScrollTop);
+    indexScrollPositions[indexView]=indexScrollTop;
     indexFocusKey=catalog.byKey.has(opts.indexFocusKey)?opts.indexFocusKey:null;
+    const originBlock=catalog.byBlock.get(opts.indexFocusBlockId);
+    indexFocusBlockId=originBlock&&originBlock.key===indexFocusKey?originBlock.source.Block_ID:null;
     studyStageId=catalog.formationStages.some(x=>x.id===opts.studyStageId)?opts.studyStageId:null;
     momentScrollTop=safeScroll(opts.momentScrollTop);
     const requested=opts.blockId&&catalog.byBlock.get(opts.blockId);
     momentKey=requested?.key??(catalog.byKey.has(opts.momentKey)?opts.momentKey:null);
     blockId=requested?.source.Block_ID??null;
     win?.document?.body?.classList?.add?.("aoMassExplorerOpen");
-    paint({restoreIndex:!momentKey&&indexScrollTop>0,restoreMoment:Boolean(momentKey&&opts.momentScrollTop!==undefined)});
+    paint({restoreIndex:!momentKey&&(opts.indexScrollTop!==undefined||Boolean(studyStageId)),
+      restoreMoment:Boolean(momentKey&&opts.momentScrollTop!==undefined)});
     return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,studyStageId,moments:catalog?.sequence.length??0,
+    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,indexFocusBlockId,studyStageId,moments:catalog?.sequence.length??0,
     sourceBlocks:catalog?.byBlock.size??0,formationLessons:catalog?.formationStages.length??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
