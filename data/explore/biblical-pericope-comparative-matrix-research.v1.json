@@ -1,0 +1,125 @@
+{
+  "schema": "AO_COMPARATIVE_BIBLICAL_PERICOPE_SOURCE_MATRIX_RESEARCH_V1",
+  "date": "2026-10-16",
+  "phase": "FIRST_SOURCE_HARVEST_NO_EDITORIAL_SELECTION",
+  "existingAdOrientemOwners": {
+    "sectionRegistry": "data/explore/biblical-reading-continuity-review.v1.json#readingChapters",
+    "eventRegistry": "data/explore/biblical-reading-continuity-review.v1.json#events",
+    "chapterCount": 37,
+    "canonicalEventCount": 151
+  },
+  "method": "One published original Scripture reference per source×canonical event×variant, retaining exact original reference syntax, independent editorial family and source page/occasion/day. Ad Orientem existing Atlas ranges are navigation anchors, NOT automatically selected abridgements.",
+  "sources": {
+    "LEC98": {
+      "title": "Roman Catholic Lectionary (1981 Latin / 1998 USA)",
+      "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+      "records": 70,
+      "qualification": "PRIMARY",
+      "family": "Roman Catholic Lectionary"
+    },
+    "MISSAL62": {
+      "title": "1962 Roman Missal",
+      "url": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light",
+      "records": 7,
+      "qualification": "PROVISIONAL_SOURCE_CROSSCHECK",
+      "family": "Roman Catholic Lectionary"
+    },
+    "E100": {
+      "title": "Scripture Union Essential 100",
+      "url": "https://www.bible.com/reading-plans/25-the-essential-100",
+      "records": 11,
+      "qualification": "PRIMARY",
+      "family": "Scripture Union"
+    },
+    "GUTHRIE": {
+      "title": "Reading God's Story: published Highlights column",
+      "url": "https://fbccola.com/wp-content/uploads/2023/12/The-Consumed-Plan-20231215.pdf",
+      "records": 13,
+      "qualification": "PRIMARY_AUTHORIZED_REPRINT",
+      "family": "George Guthrie"
+    },
+    "IBS_STORY": {
+      "title": "Reading the World's Greatest Story Get Started",
+      "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+      "records": 31,
+      "qualification": "PRIMARY_DOCUMENT_WITH_ISSUES",
+      "family": "IBS Bible Story"
+    },
+    "JACK_DAY": {
+      "title": "Jackson Day Key Bible Stories",
+      "url": "https://www.biblestorytelling.org/adults/bible-stories.html",
+      "records": 6,
+      "qualification": "PRIMARY_SOURCE_STORY_SCOPE_ONLY",
+      "family": "Jackson Day"
+    },
+    "AFLC": {
+      "title": "AFLC Ambassador Institute Bible Story Lessons",
+      "url": "https://www.aflcworldmissions.org/wp-content/uploads/archived_files/pdf/englishterm2.pdf",
+      "records": 5,
+      "qualification": "PRIMARY_MINISTRY_CURRICULUM",
+      "family": "AFLC"
+    },
+    "RIGHTNOW": {
+      "title": "RightNow God's Kids Scope & Sequence",
+      "url": "https://resources.rightnow.org/web/Gods-Kids-Scope-and-Sequence.pdf",
+      "records": 9,
+      "qualification": "PRIMARY_SOURCE_SOME_PARALLEL_TEXTS",
+      "family": "RightNow Kids"
+    },
+    "CHRON152": {
+      "title": "152 Famous Bible Stories",
+      "url": "https://www.coursesidekick.com/religion/28617333",
+      "records": 28,
+      "qualification": "SECONDARY_UNVERIFIED_NOT_AN_INDEPENDENT_VOTE",
+      "family": "152 Famous Bible Stories"
+    }
+  },
+  "counts": {
+    "candidateSourceFamilies": 9,
+    "primaryIndependentQualifiedSources": 7,
+    "provisionalMissalSources": 1,
+    "secondaryUnverifiedSources": 1,
+    "sourceSelectionRecords": 180,
+    "wrongOrUnsupportedMappingsExcluded": 6,
+    "existingEventsWithAnyHarvestedRecord": 83,
+    "existingEventsWithQualifiedIndependentReferences": 78,
+    "existingEventsWithoutQualifiedReferenceYet": 73,
+    "existingReadingSections": 37,
+    "sectionsWithSomeResearch": 32,
+    "publisherExplicitShortVariants": 12,
+    "eventsWithAtLeastTwoEligibleFamilyRecords": 35,
+    "eventsWithAtLeastThreeEligibleFamilyRecords": 15
+  },
+  "privateConversationOutputs": [
+    {
+      "filename": "AO_Biblical_Excerpt_Master_Matrix_v1.xlsx",
+      "sha256": "8430b98036878c1ae97d8167dce50e71333c91c3bd5c9e84214f373bcd3a0ac8"
+    },
+    {
+      "filename": "AO_Biblical_Excerpt_Master_Data_v1.json",
+      "sha256": "e4e2a2c7af9cd316166f84c8ad37c031d123084fc54c7b08ca2f9179e876fb68"
+    },
+    {
+      "filename": "AO_Biblical_Excerpt_Master_Coverage_v1.json",
+      "sha256": "cf7c59bea8c4ee3385b87da891c9628b71c9a23ace903428e400e65f8d2540e4"
+    }
+  ],
+  "documentaryReliability": {
+    "verifiedOrPublisherAccessible": true,
+    "secondaryChron152Held": true,
+    "missal62NeedsTextualCrosscheck": true,
+    "scriptureTranslationsNotReopened": true,
+    "schusterOCRExcluded": true,
+    "sourceVariantsDoNotImplyVerseEquality": true,
+    "absenceMeansNotYetHarvested": true
+  },
+  "explicitPublicationGates": {
+    "noFinalApprovedSelections": true,
+    "noVersePopularityEditorialScores": true,
+    "noAIAuthoredBibleNarrative": true,
+    "noScriptureTextReprinted": true,
+    "noNewReaderOrAtlasAppChanges": true,
+    "noCanonical151EventChanges": true
+  },
+  "nextWork": "Continue the source reference harvest across all 151 events and all 37 reading sections, especially Catholic deuterocanonical, Prophets/Wisdom and late Apostolic/Revelation gaps. Review publisher-original provenance of MISSAL62 and 152 Famous Bible Stories. Only AFTER source comparison completion, editorially select brief coherent actual-scripture excerpts."
+}
