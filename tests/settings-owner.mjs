@@ -19,6 +19,10 @@ assert.equal(canonicalSettingsAppVersion(fakeWin),"43.59.99");
 
 const vm=buildSettingsViewModel(fakeWin);
 assert.equal(vm.language,"en");
+assert.equal(vm.hostKind,"github_pages");
+assert.equal(vm.canonicalHost,true);
+assert.equal(vm.appAddress,"https://fulcanelli13.github.io/ad-orientem/");
+assert.equal(vm.standalone,false);
 assert.equal(vm.preferences.mass.defaultExperience,"simple");
 assert.equal(vm.preferences.prayer.stations.mode,"guided");
 
@@ -29,6 +33,10 @@ for(const route of ["/settings/general","/settings/accessibility","/settings/lan
 assert.match(landing,/Display &amp; Accessibility/);
 assert.match(landing,/Local Church &amp; Customs/);
 assert.match(landing,/Privacy &amp; Data/);
+assert.match(landing,/APP &amp; UPDATES/);
+assert.match(landing,/Installed app &amp; sources/);
+assert.equal((landing.match(/data-settings-route="\/settings\/about-sources"/g)||[]).length,1,
+  "Exactly one Settings entry to update and source diagnostics");
 assert.equal((landing.match(/data-settings-close/g)||[]).length,1);
 assert.doesNotMatch(landing,/43\.59\.99/,"version must appear in About only");
 
@@ -68,8 +76,8 @@ assert.match(about,/How source labels work/,"About lost collapsed source-methodo
 assert.match(about,/Official \/ governing source/,"About lost provenance vocabulary");
 assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a standalone Settings section");
 assert.match(about,/43\.59\.99/);
-assert.equal((about.match(/data-settings-info\b/g)||[]).length,9,
-  "Nine informational About rows must be static text, not dead buttons");
+assert.equal((about.match(/data-settings-info\b/g)||[]).length,10,
+  "Installed site, launch mode, release and sources are static text, not dead buttons");
 assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,3,
   "Only Privacy and explicit check/apply actions should be actionable");
 assert.match(about,/data-settings-apply-update(?!" disabled)/);
@@ -84,13 +92,29 @@ assert.doesNotMatch(renderSettingsToString(noCandidate,{route:"/settings/about-s
 assert.match(about,/data-settings-check-update/);
 assert.match(about,/abcde0123456/);
 assert.match(about,/New copy staged/);
-assert.match(about,/data-settings-canonical-site/);
+assert.match(about,/data-settings-active-site="github_pages"/);
+assert.match(about,/GitHub Pages/);
+assert.match(about,/Release label/);
+assert.match(about,/Launched from Home Screen|Opened in browser/);
+assert.doesNotMatch(about,/data-settings-canonical-site/,
+  "An already-canonical installation must not suggest migrating across origins");
 const unsupported={...fakeWin,AO_OFFLINE_APP_V1:{status:{supported:false,registered:false,ready:false}}};
 const unsupportedAbout=renderSettingsToString(unsupported,{route:"/settings/about-sources"});
 assert.match(unsupportedAbout,/data-settings-check-update disabled/);
 assert.doesNotMatch(unsupportedAbout,/data-settings-apply-update/);
 assert.match(unsupportedAbout,/Offline version tracking unavailable here/);
 assert.doesNotMatch(unsupportedAbout,/data-settings-snapshot-id/);
+const previewWin={...fakeWin,
+ location:{hostname:"ad-orientem.vercel.app",pathname:"/",origin:"https://ad-orientem.vercel.app"},
+ AO_OFFLINE_APP_V1:{status:{supported:false,registered:false,ready:false}}};
+const preview=renderSettingsToString(previewWin,{route:"/settings/about-sources"});
+assert.match(preview,/data-settings-active-site="vercel"/);
+assert.match(preview,/https:\/\/ad-orientem\.vercel\.app\//);
+assert.match(preview,/Vercel · separate network site/);
+assert.match(preview,/different sites|two sites|two sites do not share|two sites do not share offline snapshots/);
+assert.doesNotMatch(preview,/data-settings-check-update|data-settings-apply-update/,
+  "Network-only Vercel must not offer the GitHub Pages snapshot updater");
+assert.match(preview,/data-settings-canonical-site/);
 assert.match(about,/data-settings-route="\/settings\/privacy-data"/,
   "About must link to the real privacy controls");
 

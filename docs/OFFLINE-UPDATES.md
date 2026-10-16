@@ -19,6 +19,14 @@ The production application has one project-scoped service worker at `sw.js`, reg
 - Individual dynamic data URLs are not always content-addressed. If a domain asset was never cached, a later online fetch can come from a newer deploy. This v1 guarantees coherent *pre-cached bootstrap files*, not arbitrary deep-link transaction isolation.
 - The worker deliberately does not delete older completed snapshots automatically, because a long-lived Mass tab could still rely on them. Browser storage may eventually evict these caches. Follow-up: safe reference-counted cache retention and a storage quota/status panel.
 
+## Installed-version parity and two web addresses
+
+- **Installed pilot origin:** `https://fulcanelli13.github.io/ad-orientem/`. A Home Screen icon installed from this site remains on the GitHub Pages origin and its transactional service-worker snapshot. The current production `main` branch is deployed there by GitHub Pages, but a prior snapshot may stay active until the user explicitly installs the staged update.
+- **Separate Vercel web site:** `https://ad-orientem.vercel.app/`. It receives the same GitHub repository but runs as a network-based site, not as the GitHub Pages PWA's offline snapshot. Opening Vercel does **not** update, replace or migrate the GitHub Pages install or its origin-scoped local preferences.
+- On the existing GitHub Pages installed app, open **Settings → Installed app & sources**. Check the **This site** address, **Launch mode**, **Release label** (product version only), and **Offline snapshot** (12-character content fingerprint, *not* Git commit). Tap **Check for updates**, then **Install ready update** only if a newer completed snapshot is offered. This is explicit, safe update/reload, not a forced Mass interruption.
+- If the same origin already has an installed icon, **do not reinstall** merely to pick up a new Calendar/Home change. Never routinely clear site data: doing so may remove stored preferences/progress. Test one real handset before claiming installed-mobile parity; GitHub Actions browser emulation alone does not prove the user's Home Screen icon has updated.
+- On Vercel, the installed GitHub Pages update button is intentionally unavailable. Reopen Vercel online for its current network build; use the Home Screen icon's Settings for the original GitHub Pages installation.
+
 ## Operational recovery
 
 If the app cannot load while offline, reconnect once, open Home, and let the offline snapshot complete. If the browser reports repeated failed stages, check the console for `AO_OFFLINE_APP_V1.status.error`; the previous completed snapshot should remain usable. Reload online and accept the update if it appears. Site-data removal resets the offline snapshot and also removes other local data; it is **not** a normal update procedure.
