@@ -204,6 +204,7 @@ export function massExplorerCss(){
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map",origin="learn";
+  let underlyingReader=null,readerPreviouslyInert=false;
   let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0;
   const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
@@ -257,6 +258,12 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     const node=root();
     if(node?.contains?.(win?.document?.activeElement))win.document.activeElement?.blur?.();
     node?.remove();
+    // The modal temporarily excludes live reader controls from keyboard
+    // and touch focus; restore that exact owner before returning focus.
+    if(underlyingReader){
+      underlyingReader.inert=readerPreviouslyInert;
+      underlyingReader=null;readerPreviouslyInert=false;
+    }
     win?.document?.body?.classList?.remove?.("aoMassExplorerOpen");
     const massOrigin=origin==="mass";
     origin="learn";
@@ -353,7 +360,18 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       try{await loading;}catch(error){win?.console?.error?.("Mass Explorer sources unavailable",error);return false;}
     }
     if(!ensureRoot())return false;
-    origin=opts.origin==="mass"?"mass":"learn";
+    const requestedOrigin=opts.origin==="mass"?"mass":"learn";
+    const reader=opts.trigger?.closest?.("#ao-r17-native-reader-preview");
+    if(requestedOrigin==="mass"&&!reader?.isConnected)return false;
+    if(underlyingReader&&underlyingReader!==reader){
+      underlyingReader.inert=readerPreviouslyInert;
+      underlyingReader=null;readerPreviouslyInert=false;
+    }
+    origin=requestedOrigin;
+    if(origin==="mass"&&!underlyingReader){
+      underlyingReader=reader;readerPreviouslyInert=Boolean(reader.inert);
+      reader.inert=true;
+    }
     const overlay=root();
     overlay.dataset.aoMxOrigin=origin;
     overlay.setAttribute("role",origin==="mass"?"dialog":"region");
