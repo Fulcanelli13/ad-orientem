@@ -35,7 +35,7 @@ export async function loadLowGuideResearch({fetchImpl=globalThis.fetch,baseUrl=i
 export function lowGuideResearchCandidate(index,{massForm=null,guideId=null,allowResearchPreview=false}={}){
   validateLowGuideResearch(index);
   if(allowResearchPreview!==true || massForm!==LOW_GUIDE_MASS_FORM)return null;
-  if(typeof guideId!=="string"||!/^LOW\\.0(?:0[1-9]|[12][0-9]|3[0-5])$/.test(guideId))return null;
+  if(typeof guideId!=="string"||!/^LOW\.0(?:0[1-9]|[12][0-9]|3[0-5])$/.test(guideId))return null;
   const record=index.entries[guideId];
   if(!record)return null;
   return Object.freeze({
