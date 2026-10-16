@@ -1,0 +1,1168 @@
+{
+  "schema": "AO_LIVING_SANCTORAL_READ_MODEL_V1",
+  "asOf": "2026-10-16",
+  "derivation": {
+    "mode": "BUILD_TIME_FILTERED_SNAPSHOT_NOT_NEW_SOURCE_OF_TRUTH",
+    "sourcePaths": [
+      "data/calendar/living-sanctoral-modern-observances.review.v1.json",
+      "data/calendar/living-sanctoral-place-art-crosswalk.review.v1.json",
+      "data/calendar/living-sanctoral-pilot.v1.json",
+      "data/calendar/post1960-canonizations.official-batch1.v1.json",
+      "data/calendar/doctors-of-church-roster.review.v1.json",
+      "data/geography/approved-place-media.v1.json",
+      "data/geography/seed-registry.v1.json"
+    ],
+    "regenerateWhenSourcesChange": true,
+    "paintingsSelectionOwner": "https://github.com/Fulcanelli13/ad-orientem/pull/887"
+  },
+  "status": "READ_ONLY_SECONDARY_CALENDAR",
+  "observanceRegistry": {
+    "observances": [
+      {
+        "subjectId": "saint.giuseppina-bakhita",
+        "monthDay": "02-08",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2000-10-01",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Sudanese-born religious sister who survived enslavement and witnessed to Christian forgiveness and hope.",
+            "fr": "Religieuse née au Soudan, ancienne esclave, témoin du pardon et de l'espérance chrétienne."
+          },
+          "context": {
+            "en": "Canonised in 2000; the Dicastery records her memorial on 8 February.",
+            "fr": "Canonisée en 2000 ; le Dicastère indique sa mémoire au 8 février."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html"
+        }
+      },
+      {
+        "subjectId": "saint.gregory-narek",
+        "monthDay": "02-27",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "An Armenian monk and spiritual writer whose prayers express repentance, hope and confidence in God's mercy.",
+            "fr": "Moine arménien et écrivain spirituel dont les prières expriment le repentir, l'espérance et la confiance en la miséricorde de Dieu."
+          },
+          "context": {
+            "en": "His theological poetry, especially the Book of Lamentations, has nourished Christian prayer across traditions.",
+            "fr": "Sa poésie théologique, notamment le Livre des lamentations, a nourri la prière chrétienne au-delà des traditions."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      },
+      {
+        "subjectId": "saint.oscar-arnulfo-romero",
+        "monthDay": "03-24",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2018-10-14",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Archbishop of San Salvador, murdered while celebrating Mass, who bore witness to the faith among the oppressed.",
+            "fr": "Archevêque de San Salvador, assassiné pendant la messe, qui témoigna de la foi auprès des opprimés."
+          },
+          "context": {
+            "en": "Canonised in 2018; the Dicastery identifies 24 March as his liturgical memorial.",
+            "fr": "Canonisé en 2018 ; le Dicastère indique le 24 mars comme sa mémoire liturgique."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html"
+        }
+      },
+      {
+        "subjectId": "saint.kateri-tekakwitha",
+        "monthDay": "04-17",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2012-10-21",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Mohawk Catholic laywoman and virgin who remained faithful to prayer and Christ amid opposition.",
+            "fr": "Jeune laïque catholique mohawk et vierge, demeurée fidèle à la prière et au Christ malgré les oppositions."
+          },
+          "context": {
+            "en": "Canonised in 2012; 17 April is her Dicastery-listed liturgical memorial date.",
+            "fr": "Canonisée en 2012 ; le 17 avril est la date de mémoire indiquée par le Dicastère."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html"
+        }
+      },
+      {
+        "subjectId": "saint.gianna-beretta-molla",
+        "monthDay": "04-28",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2004-05-16",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "An Italian physician, wife and mother, honoured for her self-giving love and fidelity to her family.",
+            "fr": "Médecin italienne, épouse et mère, honorée pour son amour généreux et sa fidélité familiale."
+          },
+          "context": {
+            "en": "Canonised in 2004; her memorial date is recorded as 28 April.",
+            "fr": "Canonisée en 2004 ; sa date de mémoire est indiquée au 28 avril."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html"
+        }
+      },
+      {
+        "subjectId": "saint.john-avila",
+        "monthDay": "05-10",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest and preacher who devoted his life to evangelisation and the spiritual formation of clergy and laypeople.",
+            "fr": "Prêtre et prédicateur, il consacra sa vie à l'évangélisation et à la formation spirituelle des prêtres et des fidèles."
+          },
+          "context": {
+            "en": "His writings and guidance contributed to Catholic renewal in sixteenth-century Spain.",
+            "fr": "Ses écrits et sa direction spirituelle contribuèrent au renouveau catholique dans l'Espagne du XVIe siècle."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      },
+      {
+        "subjectId": "saint.paul-vi",
+        "monthDay": "05-29",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2019-02-06",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope from 1963 to 1978, remembered for his pastoral ministry and proclamation of the Gospel.",
+            "fr": "Pape de 1963 à 1978, connu pour son ministère pastoral et sa prédication de l'Évangile."
+          },
+          "context": {
+            "en": "Former archbishop of Milan, he guided the concluding sessions of the Second Vatican Council and promoted evangelisation.",
+            "fr": "Ancien archevêque de Milan, il guida les dernières sessions du deuxième concile du Vatican et promut l'évangélisation."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html"
+        }
+      },
+      {
+        "subjectId": "canon-group.uganda-martyrs-22",
+        "monthDay": "06-03",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.josemaria-escriva-de-balaguer",
+        "monthDay": "06-26",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2002-10-06",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest who taught the sanctification of ordinary work and founded Opus Dei.",
+            "fr": "Prêtre qui enseigna la sanctification du travail ordinaire et fonda l'Opus Dei."
+          },
+          "context": {
+            "en": "Canonised in 2002; the Dicastery lists his liturgical memorial on 26 June.",
+            "fr": "Canonisé en 2002 ; le Dicastère indique sa mémoire liturgique au 26 juin."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html"
+        }
+      },
+      {
+        "subjectId": "saint.irenaeus-lyon",
+        "monthDay": "06-28",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/062824.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.pier-giorgio-frassati",
+        "monthDay": "07-04",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2025-09-07",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A young Dominican tertiary and lay Catholic whose prayer and works of charity centred on the poor.",
+            "fr": "Jeune tertiaire dominicain et laïc catholique dont la prière et les œuvres de charité étaient tournées vers les pauvres."
+          },
+          "context": {
+            "en": "Canonised on 7 September 2025; the Dicastery identifies 4 July as his memorial date.",
+            "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 4 juillet comme date de mémoire."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html"
+        }
+      },
+      {
+        "subjectId": "canon-group.martyrs-china-1648-1930",
+        "monthDay": "07-09",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.teresa-calcutta",
+        "monthDay": "09-05",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2025-02-11",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "She served Christ among the poorest and most abandoned through the Missionaries of Charity.",
+            "fr": "Elle servit le Christ parmi les plus pauvres et les plus abandonnés par l'œuvre des Missionnaires de la Charité."
+          },
+          "context": {
+            "en": "Her life made works of mercy, personal dignity and care for the dying visible to the world.",
+            "fr": "Sa vie rendit visibles les œuvres de miséricorde, la dignité de chacun et le soin des mourants."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html"
+        }
+      },
+      {
+        "subjectId": "saint.hildegard-bingen",
+        "monthDay": "09-17",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Benedictine abbess and theologian who united profound prayer with teaching and sacred music.",
+            "fr": "Abbesse bénédictine et théologienne, elle unit une prière profonde à l'enseignement et à la musique sacrée."
+          },
+          "context": {
+            "en": "Her spiritual writings and compositions remain an important part of medieval Christian culture.",
+            "fr": "Ses écrits spirituels et ses compositions occupent une place importante dans la culture chrétienne médiévale."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      },
+      {
+        "subjectId": "canon-group.korean-martyrs-103",
+        "monthDay": "09-20",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.pio-pietrelcina",
+        "monthDay": "09-23",
+        "kind": "MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+        "publishedOn": "2002-06-16",
+        "sourceUrl": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "ATTESTED_BY_PAPAL_ANNOUNCEMENT",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "sourceEvidenceType": "PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE",
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Capuchin priest whose prayer, ministry of confession and care of the suffering drew many to Christ.",
+            "fr": "Prêtre capucin dont la prière, le ministère de la confession et le soin des malades conduisirent de nombreux fidèles au Christ."
+          },
+          "context": {
+            "en": "John Paul II expressly announced a Roman Calendar memorial for him on 23 September at his canonisation in 2002.",
+            "fr": "Jean-Paul II annonça expressément lors de sa canonisation en 2002 sa mémoire au Calendrier romain le 23 septembre."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html"
+        }
+      },
+      {
+        "subjectId": "canon-group.japan-martyrs-16-1987",
+        "monthDay": "09-28",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.therese-lisieux",
+        "monthDay": "10-01",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/100126.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.maria-faustyna-kowalska",
+        "monthDay": "10-05",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2020-05-18",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Polish religious sister who called the faithful to trust in Christ's mercy and practise mercy toward others.",
+            "fr": "Religieuse polonaise qui exhorta les fidèles à se confier à la miséricorde du Christ et à pratiquer la miséricorde."
+          },
+          "context": {
+            "en": "Her spiritual Diary inspired devotion to Divine Mercy; she was canonised in 2000.",
+            "fr": "Son Journal spirituel a inspiré la dévotion à la Miséricorde divine ; elle fut canonisée en 2000."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html"
+        }
+      },
+      {
+        "subjectId": "saint.john-henry-newman",
+        "monthDay": "10-09",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2026-02-03",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.john-xxiii",
+        "monthDay": "10-11",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2014-05-29",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope and former patriarch of Venice, remembered for pastoral charity, prayer and concern for the unity of Christians.",
+            "fr": "Pape et ancien patriarche de Venise, honoré pour sa charité pastorale, sa prière et son souci de l'unité des chrétiens."
+          },
+          "context": {
+            "en": "Convened the Second Vatican Council; canonised in 2014. His modern optional memorial does not modify the 1962 feast of the day.",
+            "fr": "Convoqua le deuxième concile du Vatican ; canonisé en 2014. Sa mémoire facultative actuelle ne modifie pas la fête de 1962 du jour."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html"
+        }
+      },
+      {
+        "subjectId": "saint.carlo-acutis",
+        "monthDay": "10-12",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2025-09-07",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A young layman who loved the Eucharist and used digital tools to share the faith.",
+            "fr": "Jeune laïc amoureux de l'Eucharistie, qui utilisa l'informatique pour faire connaître la foi."
+          },
+          "context": {
+            "en": "Canonised on 7 September 2025; the Dicastery records 12 October as his liturgical memorial date.",
+            "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 12 octobre comme date de mémoire liturgique."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html"
+        }
+      },
+      {
+        "subjectId": "saint.teresa-avila",
+        "monthDay": "10-15",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/101526.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.john-paul-ii",
+        "monthDay": "10-22",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2014-05-29",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope whose extensive apostolic journeys and teaching encouraged prayer, the dignity of human life and fidelity to Christ.",
+            "fr": "Pape dont les voyages apostoliques et l'enseignement encouragèrent la prière, la dignité humaine et la fidélité au Christ."
+          },
+          "context": {
+            "en": "Served as Bishop of Rome from 1978 to 2005; canonised in 2014.",
+            "fr": "Fut évêque de Rome de 1978 à 2005 ; canonisé en 2014."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html"
+        }
+      },
+      {
+        "subjectId": "canon-group.vietnamese-martyrs-117",
+        "monthDay": "11-24",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      },
+      {
+        "subjectId": "saint.charles-de-foucauld",
+        "monthDay": "12-01",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2022-05-15",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest and hermit whose life in the Sahara joined contemplation, hospitality and service.",
+            "fr": "Prêtre et ermite dont la vie au Sahara unit contemplation, hospitalité et service."
+          },
+          "context": {
+            "en": "Canonised in 2022; his memorial is listed as 1 December.",
+            "fr": "Canonisé en 2022 ; sa mémoire est indiquée au 1er décembre."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html"
+        }
+      }
+    ]
+  },
+  "pilotPersons": [
+    {
+      "id": "saint.john-henry-newman",
+      "name": {
+        "en": "St John Henry Newman",
+        "fr": "Saint John Henry Newman"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "canonizedOn": "2019-10-13",
+        "doctorDeclaredOn": "2025-11-01",
+        "sourceIds": [
+          "newman-canonization-2019",
+          "newman-decree-2026"
+        ]
+      },
+      "calendar1962": {
+        "principalId": null,
+        "identityStatus": "NO_MATCH_ASSERTED",
+        "protectedThirdClass": false
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A convert and theologian who sought religious truth through conscience, reason and fidelity to the Church.",
+          "fr": "Converti et théologien, il rechercha la vérité religieuse par la conscience, la raison et la fidélité à l'Église."
+        },
+        "historicalContribution": {
+          "en": "Anglican minister who entered the Catholic Church; influential defender of Christian education and the formation of conscience.",
+          "fr": "Ancien ministre anglican devenu catholique ; défenseur de l'éducation chrétienne et de la formation de la conscience."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20251101-messa-giubileo-formatori.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.pio-pietrelcina",
+      "name": {
+        "en": "St Pio of Pietrelcina (Padre Pio)",
+        "fr": "Saint Padre Pio de Pietrelcina"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "canonizedOn": "2002-06-16",
+        "sourceIds": [
+          "padre-pio-2002"
+        ]
+      },
+      "calendar1962": {
+        "principalId": null,
+        "identityStatus": "NO_MATCH_ASSERTED",
+        "protectedThirdClass": false
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A Capuchin priest whose life united prayer, the sacrament of confession and concrete charity.",
+          "fr": "Prêtre capucin, il unit la prière, le ministère de la confession et la charité concrète."
+        },
+        "historicalContribution": {
+          "en": "Guided countless penitents toward reconciliation; inspired prayer groups and care for the sick.",
+          "fr": "Conduisit de nombreux pénitents à la réconciliation ; inspira des groupes de prière et le soin des malades."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.therese-lisieux",
+      "name": {
+        "en": "St Thérèse of the Child Jesus",
+        "fr": "Sainte Thérèse de l'Enfant-Jésus"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "1997-10-19",
+        "sourceIds": [
+          "therese-doctor-1997"
+        ]
+      },
+      "calendar1962": {
+        "principalId": "sancti:10-03",
+        "identityStatus": "ID_PRESENT_IN_REPO",
+        "protectedThirdClass": true
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A Carmelite who taught the 'little way': trust in divine mercy and love shown in ordinary acts.",
+          "fr": "Carmélite qui enseigna la « petite voie » : confiance en la miséricorde divine et amour dans les actes ordinaires."
+        },
+        "historicalContribution": {
+          "en": "Her spiritual writings and missionary desire made her a teacher of Christian life, later proclaimed Doctor of the Church.",
+          "fr": "Ses écrits spirituels et son élan missionnaire firent d'elle une maîtresse de vie chrétienne, puis un Docteur de l'Église."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19101997.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.teresa-avila",
+      "name": {
+        "en": "St Teresa of Jesus (Ávila)",
+        "fr": "Sainte Thérèse de Jésus (d'Avila)"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "1970-09-27",
+        "sourceIds": [
+          "teresa-doctor-1970"
+        ]
+      },
+      "calendar1962": {
+        "principalId": "sancti:10-15:3:w",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
+        "protectedThirdClass": true
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A reformer of Carmel and spiritual teacher who witnessed to deep friendship with Christ through prayer.",
+          "fr": "Réformatrice du Carmel et maîtresse spirituelle, elle témoigna de l'amitié profonde avec le Christ dans la prière."
+        },
+        "historicalContribution": {
+          "en": "Reformed Carmelite religious life and taught the path of interior prayer in influential spiritual works.",
+          "fr": "Réforma la vie carmélitaine et enseigna l'oraison intérieure dans de grands écrits spirituels."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/paul-vi/en/apost_letters/documents/hf_p-vi_apl_19700927_multiformis-sapientia.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.irenaeus-lyon",
+      "name": {
+        "en": "St Irenaeus of Lyon",
+        "fr": "Saint Irénée de Lyon"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "2022-01-21",
+        "sourceIds": [
+          "irenaeus-doctor-2022"
+        ],
+        "doctorTitle": "Doctor unitatis"
+      },
+      "calendar1962": {
+        "principalId": "sancti:07-03r:3:r",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
+        "protectedThirdClass": false
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "An early bishop and defender of apostolic faith, renowned for helping preserve the Church's unity.",
+          "fr": "Évêque des premiers siècles et défenseur de la foi apostolique, célèbre pour son service de l'unité de l'Église."
+        },
+        "historicalContribution": {
+          "en": "His teaching bridged East and West; he was proclaimed Doctor of Unity, Doctor unitatis.",
+          "fr": "Son enseignement relia l'Orient et l'Occident ; il fut proclamé Docteur de l'unité, Doctor unitatis."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/francesco/en/events/event.dir.html/content/vaticanevents/en/2022/1/21/decreto-santireneo.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    }
+  ],
+  "censusPersons": [
+    {
+      "id": "saint.teresa-calcutta",
+      "name": "Teresa of Calcutta",
+      "canonizedOn": "2016-09-04",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.hildegard-bingen",
+      "name": "Ildegarda di Bingen (Hildegard of Bingen)",
+      "canonizedOn": "2012-05-10",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.john-avila",
+      "name": "Giovanni d’Avila (John of Ávila)",
+      "canonizedOn": "1970-05-31",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.maria-faustyna-kowalska",
+      "name": "Maria Faustyna Kowalska",
+      "canonizedOn": "2000-04-30",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.paul-vi",
+      "name": "Paul VI",
+      "canonizedOn": "2018-10-14",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.john-xxiii",
+      "name": "John XXIII",
+      "canonizedOn": "2014-04-27",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.john-paul-ii",
+      "name": "John Paul II",
+      "canonizedOn": "2014-04-27",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.carlo-acutis",
+      "name": "Carlo Acutis",
+      "canonizedOn": "2025-09-07",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.pier-giorgio-frassati",
+      "name": "Pier Giorgio Frassati",
+      "canonizedOn": "2025-09-07",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.gianna-beretta-molla",
+      "name": "Gianna Beretta Molla",
+      "canonizedOn": "2004-05-16",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.oscar-arnulfo-romero",
+      "name": "Óscar Arnulfo Romero",
+      "canonizedOn": "2018-10-14",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.kateri-tekakwitha",
+      "name": "Kateri Tekakwitha",
+      "canonizedOn": "2012-10-21",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.charles-de-foucauld",
+      "name": "Charles de Foucauld",
+      "canonizedOn": "2022-05-15",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.josemaria-escriva-de-balaguer",
+      "name": "Josemaría Escrivá de Balaguer",
+      "canonizedOn": "2002-10-06",
+      "publicationHold": null
+    },
+    {
+      "id": "saint.giuseppina-bakhita",
+      "name": "Giuseppina Bakhita",
+      "canonizedOn": "2000-10-01",
+      "publicationHold": null
+    }
+  ],
+  "doctorRoster": [
+    {
+      "canonicalPersonId": "saint.teresa-avila",
+      "name": "Teresa of Ávila",
+      "observanceSourceIdentity": "sancti:10-15:3:w",
+      "declarationDate": "1970-09-27"
+    },
+    {
+      "canonicalPersonId": "saint.therese-lisieux",
+      "name": "Thérèse of Lisieux",
+      "observanceSourceIdentity": "sancti:10-03:3:w",
+      "declarationDate": "1997-10-19"
+    },
+    {
+      "canonicalPersonId": "saint.john-avila",
+      "name": "John of Ávila",
+      "observanceSourceIdentity": null,
+      "declarationDate": "2012-10-07"
+    },
+    {
+      "canonicalPersonId": "saint.hildegard-bingen",
+      "name": "Hildegard of Bingen",
+      "observanceSourceIdentity": null,
+      "declarationDate": "2012-10-07"
+    },
+    {
+      "canonicalPersonId": "saint.gregory-narek",
+      "name": "Gregory of Narek",
+      "observanceSourceIdentity": null,
+      "declarationDate": "2015-04-12"
+    },
+    {
+      "canonicalPersonId": "saint.irenaeus-lyon",
+      "name": "Irenaeus of Lyon",
+      "observanceSourceIdentity": "sancti:07-03r:3:r",
+      "declarationDate": "2022-01-21"
+    },
+    {
+      "canonicalPersonId": "saint.john-henry-newman",
+      "name": "John Henry Newman",
+      "observanceSourceIdentity": null,
+      "declarationDate": "2025-11-01"
+    }
+  ],
+  "martyrGroups": [
+    {
+      "id": "martyrs-china-1648-1930",
+      "individualMemberExpansionRequirement": "NONE_FOR_APP",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of China",
+          "fr": "Martyrs de Chine"
+        },
+        "context": {
+          "en": "Chinese Catholics and missionaries were killed during successive waves of persecution spanning several centuries.",
+          "fr": "Des catholiques chinois et des missionnaires furent tués lors de persécutions successives pendant plusieurs siècles."
+        },
+        "whyHonoured": {
+          "en": "Honoured for bearing witness to Christ across many generations.",
+          "fr": "Honorés pour leur témoignage rendu au Christ à travers les générations."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.agostino-zhao-rong"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "07-09",
+            "kind": "OPTIONAL_MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      }
+    },
+    {
+      "id": "vietnamese-martyrs-117",
+      "individualMemberExpansionRequirement": "NONE_FOR_APP",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Vietnam",
+          "fr": "Martyrs du Viêt Nam"
+        },
+        "context": {
+          "en": "Vietnamese Catholics and missionaries were executed under repeated persecutions in the eighteenth and nineteenth centuries.",
+          "fr": "Des catholiques vietnamiens et des missionnaires furent exécutés au cours de persécutions aux XVIIIe et XIXe siècles."
+        },
+        "whyHonoured": {
+          "en": "Honoured for steadfast faith despite imprisonment, torture and death.",
+          "fr": "Honorés pour leur persévérance dans la foi jusqu'à la mort."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.andrew-dung-lac"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "11-24",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      }
+    },
+    {
+      "id": "japan-martyrs-16-1987",
+      "individualMemberExpansionRequirement": "NONE_FOR_APP",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Saint Lorenzo Ruiz and the Martyrs of Japan",
+          "fr": "Saint Laurent Ruiz et les martyrs du Japon"
+        },
+        "context": {
+          "en": "Christians including the Filipino layman Lorenzo Ruiz and missionaries were killed in Japan during the seventeenth-century persecutions.",
+          "fr": "Des chrétiens, dont le laïc philippin Laurent Ruiz et des missionnaires, furent tués au Japon au XVIIe siècle."
+        },
+        "whyHonoured": {
+          "en": "Honoured for refusing to renounce Christ despite torture.",
+          "fr": "Honorés pour leur refus de renier le Christ malgré les tortures."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.lorenzo-ruiz"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "09-28",
+            "kind": "OPTIONAL_MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      }
+    },
+    {
+      "id": "korean-martyrs-103",
+      "individualMemberExpansionRequirement": "NONE_FOR_APP",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Korean Martyrs",
+          "fr": "Martyrs de Corée"
+        },
+        "context": {
+          "en": "Korean converts, catechists and clergy were martyred during nineteenth-century persecution, including the first Korean-born priest.",
+          "fr": "Des convertis, catéchistes et prêtres coréens subirent le martyre au XIXe siècle, dont le premier prêtre coréen."
+        },
+        "whyHonoured": {
+          "en": "Honoured for sustaining the Church in Korea despite severe persecution.",
+          "fr": "Honorés pour leur fidélité et leur rôle dans la croissance de l'Église de Corée."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.andrew-kim-taegon",
+          "saint.paul-chong-hasang"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "09-20",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      }
+    },
+    {
+      "id": "uganda-martyrs-22",
+      "individualMemberExpansionRequirement": "NONE_FOR_APP",
+      "presentation": {
+        "entryType": "COLLECTIVE_MARTYR_PROFILE",
+        "editorialStatus": "SHORT_CARD_REVIEW_REQUIRED",
+        "title": {
+          "en": "Martyrs of Uganda",
+          "fr": "Martyrs de l'Ouganda"
+        },
+        "context": {
+          "en": "Young Catholics, catechists and royal attendants were killed during persecution in the kingdom of Buganda in the 1880s.",
+          "fr": "De jeunes catholiques, catéchistes et serviteurs de la cour furent tués dans le royaume du Buganda dans les années 1880."
+        },
+        "whyHonoured": {
+          "en": "Honoured for fidelity to Christ despite threats and coercion.",
+          "fr": "Honorés pour leur fidélité au Christ malgré la menace et la contrainte."
+        },
+        "featuredCanonicalPersonIds": [
+          "saint.charles-lwanga"
+        ],
+        "deeperReading": {
+          "mode": "CANONICAL_REFERENCES_AND_PARSING",
+          "entrySourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html"
+        },
+        "artwork": {
+          "canonicalArtworkId": null,
+          "status": "AWAIT_EXISTING_SACRED_ART_ID"
+        },
+        "geography": {
+          "canonicalPlaceId": null,
+          "status": "AWAIT_EXISTING_MAP_PLACE_CROSSWALK"
+        },
+        "dates": [
+          {
+            "calendar": "CURRENT_USCCB_WITNESS",
+            "monthDay": "06-03",
+            "kind": "MEMORIAL",
+            "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+            "universalRomanStatus": "NOT_SEPARATELY_CERTIFIED",
+            "appliesTo1962Mass": false
+          }
+        ],
+        "massEffect": "NONE"
+      }
+    }
+  ],
+  "visualCrosswalk": {
+    "links": [
+      {
+        "canonicalId": "saint.therese-lisieux",
+        "placeId": "place:FR:carmel-lisieux",
+        "role": "SAINT_ASSOCIATED_RELIGIOUS_SITE",
+        "placePhotoAsset": null,
+        "placeName": "Chapelle du Carmel de Lisieux"
+      },
+      {
+        "canonicalId": "saint.therese-lisieux",
+        "placeId": "place:FR:basilique-sainte-therese-lisieux",
+        "role": "SAINT_ASSOCIATED_BASILICA",
+        "placePhotoAsset": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp",
+        "placeName": "Basilique Sainte-Thérèse de Lisieux"
+      },
+      {
+        "canonicalId": "saint.pio-pietrelcina",
+        "placeId": "place:IT:santuario-san-pio-rotondo",
+        "role": "SAINT_ASSOCIATED_SANCTUARY",
+        "placePhotoAsset": null,
+        "placeName": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo"
+      },
+      {
+        "canonicalId": "canon-group.uganda-martyrs-22",
+        "placeId": "place:UG:namugongo-martyrs",
+        "role": "MARTYRS_COMMEMORATIVE_SHRINE",
+        "placePhotoAsset": "assets/approved/place-media/UG-namugongo-martyrs.webp",
+        "placeName": "Uganda Martyrs Catholic Shrine, Namugongo"
+      },
+      {
+        "canonicalId": "canon-group.uganda-martyrs-22",
+        "placeId": "place:UG:munyonyo-martyrs",
+        "role": "MARTYRS_RELATED_SHRINE",
+        "placePhotoAsset": null,
+        "placeName": "Munyonyo Martyrs Shrine"
+      }
+    ]
+  },
+  "approvedSiteMedia": [
+    {
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "place_id": "place:FR:basilique-sainte-therese-lisieux"
+    },
+    {
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/UG-namugongo-martyrs.webp",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "place_id": "place:UG:namugongo-martyrs"
+    }
+  ],
+  "limitations": [
+    "Modern optional memorial is informational only; principal 1962 feast and Mass are unchanged.",
+    "Site photos describe physical shrines and are not paintings.",
+    "USCCB witnesses require explicit U.S. context; global default only shows Vatican decrees.",
+    "The original reference source remains the source of truth, this is a lazily loaded subset."
+  ]
+}

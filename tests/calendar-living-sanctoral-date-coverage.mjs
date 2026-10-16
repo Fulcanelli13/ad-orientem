@@ -1,0 +1,128 @@
+// Research coverage ledger for the living traditional Calendar.
+// Canonization records certify who was enrolled among the saints, NOT feast dates.
+// Keeps groups as one collective profile and later Doctor titles on one person.
+import assert from "node:assert/strict";
+import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const census=read("data/calendar/post1960-canonizations.official-batch1.v1.json");
+const pilot=read("data/calendar/living-sanctoral-pilot.v1.json");
+const doctors=read("data/calendar/doctors-of-church-roster.review.v1.json");
+const dates=read("data/calendar/living-sanctoral-modern-observances.review.v1.json");
+assert.equal(census.coverage.namedIndividualRecords,census.persons.length);
+assert.equal(census.coverage.unexpandedGroupRecords,census.groups.length);
+const index=new Map();
+for(const person of census.persons){
+  assert.ok(person?.id&&/^saint\./.test(person.id));
+  assert.ok(!index.has(person.id),"Census duplicates the same canonized person "+person.id);
+  index.set(person.id,person);
+}
+for(const person of pilot.persons){
+  assert.ok(person?.id);
+  if(!index.has(person.id))index.set(person.id,person);
+}
+const dateMap=new Map(),doctorMap=new Map();
+for(const x of dates.observances){
+  assert.ok(index.has(x.subjectId)||doctors.doctors.some(d=>d.canonicalPersonId===x.subjectId)||
+    x.subjectId.startsWith("canon-group."),"Orphan date: "+x.subjectId);
+  const arr=dateMap.get(x.subjectId)||[];
+  arr.push({monthDay:x.monthDay,scope:x.authorityScope,
+    universalStatus:x.universalStatus,publishedOn:x.publishedOn,sourceUrl:x.sourceUrl});
+  dateMap.set(x.subjectId,arr);
+}
+for(const doctor of doctors.doctors){
+  assert.ok(doctor.canonicalPersonId,"Doctor without canonical ID");
+  assert.ok(!doctorMap.has(doctor.canonicalPersonId),"One Doctor is duplicated: "+doctor.canonicalPersonId);
+  doctorMap.set(doctor.canonicalPersonId,doctor);
+}
+const rows=[];
+for(const [id,person] of index){
+  const approved=dateMap.get(id)||[];
+  const vatican=approved.filter(x=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(x.scope));
+  const particular=approved.filter(x=>x.scope.startsWith("USCCB_"));
+  const dicastery=approved.filter(x=>x.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE");
+  const historical=pilot.persons.find(x=>x.id===id)?.calendar1962?.principalId||
+    doctorMap.get(id)?.observanceSourceIdentity||null;
+  const name=person.name?.en||person.name||null;
+  rows.push({
+    canonicalPersonId:id,name,
+    canonizedOn:person.recognition?.canonizedOn||person.canonizedOn||null,
+    historical1962SourceId:historical,
+    modernDates:approved,
+    doctorDeclaredOn:pilot.persons.find(x=>x.id===id)?.recognition?.doctorDeclaredOn||
+      doctorMap.get(id)?.declarationDate||null,
+    reviewPriority:vatican.length?"TRADITIONAL_MASS_ELIGIBILITY_AND_FORMULARY_REVIEW":
+      dicastery.length?"VERIFY_MEMORIAL_JURISDICTION_NO_UNIVERSAL_INFERENCE":
+      particular.length?"VERIFY_DATE_AUTHORITY_AND_JURISDICTION":"RESEARCH_UNIVERSAL_OR_PARTICULAR_FEAST_DATE",
+    neverInventMassAuthority:true
+  });
+}
+// Doctors already honoured in the 1962 calendar retain their original
+// identity. They are NOT additional post-1960 canonizations.
+const historicalDoctorOnly=doctors.doctors.filter(d=>!index.has(d.canonicalPersonId)).map(d=>({
+  canonicalPersonId:d.canonicalPersonId,name:d.name,
+  canonizedOn:null,historical1962SourceId:d.observanceSourceIdentity||null,
+  modernDates:dateMap.get(d.canonicalPersonId)||[],
+  doctorDeclaredOn:d.declarationDate||null,
+  reviewPriority:dateMap.has(d.canonicalPersonId)?"TRADITIONAL_DATE_IDENTITY_RECONCILIATION":"HISTORICAL_DOCTOR_IDENTITY_ONLY",
+  neverInventMassAuthority:true
+}));
+rows.push(...historicalDoctorOnly);
+rows.sort((a,b)=>a.reviewPriority.localeCompare(b.reviewPriority)||a.canonicalPersonId.localeCompare(b.canonicalPersonId));
+const groups=census.groups.map(group=>{
+ const id="canon-group."+group.id,entries=dateMap.get(id)||[];
+ return {
+   canonicalGroupId:id,
+   name:group.presentation?.title?.en||group.name||null,
+   knownDateWitnesses:entries,
+   reviewPriority:entries.length?"VERIFY_JURISDICTION_AND_DATE":"VERIFY_GROUP_FEAST_DATE",
+   enumerateIndividualMembers:false,
+   neverInventMassAuthority:true
+ }
+});
+const summary={
+ censusPost1960NamedPersons:census.persons.length,
+ additionalUniquePilotPersons:index.size-census.persons.length,
+ distinctNamedResearchPersons:index.size,
+ existingDoctorOnlyPersons:historicalDoctorOnly.length,
+ combinedCanonicalSaintAndDoctorPersons:rows.length,
+ groupProfiles:groups.length,
+ doctorCensus:doctorMap.size,
+ dateSourceRows:dates.observances.length,
+ datedIndividualPersonProfiles:rows.filter(x=>x.modernDates.length).length,
+ datedCollectiveProfiles:groups.filter(x=>x.knownDateWitnesses.length).length,
+ datedVaticanGeneralRomanPersonProfiles:rows.filter(x=>x.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope))).length,
+ datedDicasteryMemorialProfiles:rows.filter(x=>x.modernDates.some(d=>d.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE")).length,
+ individualsWithoutAnyAttestedDate:rows.filter(x=>x.modernDates.length===0).length,
+ individualProfilesWithDatesButNoUniversalStanding:rows.filter(x=>x.modernDates.length>0&&!x.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope))).length,
+ individualProfilesRequiringDateAuthority:rows.filter(x=>x.modernDates.length===0).length,
+ collectiveProfilesRequiringIndependentUniversalDate:groups.filter(x=>!x.knownDateWitnesses.some(d=>d.universalStatus==="CERTIFIED_BY_DECREE")).length,
+ worldwideComplete:false,year2026CensusComprehensive:false
+};
+const report={
+  schema:"AO_LIVING_TRADITIONAL_DATE_AUTHORITY_BACKLOG_V1",
+  asOf:"2026-10-16",publicationStatus:"RESEARCH_AND_PLANNING_ONLY",
+  sourceScope:"51 official indexed canonization year pages, not every saint/canonization worldwide",
+  legalBasis:"2020 Cum sanctissima and 1960 General Rubrics; source date does not authorize Mass",
+  summary,individuals:rows,collectives:groups
+};
+assert.equal(new Set(rows.map(x=>x.canonicalPersonId)).size,rows.length);
+assert.equal(new Set(groups.map(x=>x.canonicalGroupId)).size,groups.length);
+assert.ok(dates.observances.every(x=>x.subjectId.startsWith("canon-group.")||
+  rows.some(p=>p.canonicalPersonId===x.subjectId)),
+  "Every modern date witness must resolve to a canonical person or group");
+assert.equal(summary.dateSourceRows,26);
+assert.equal(summary.doctorCensus,38);
+const carlo=rows.find(x=>x.canonicalPersonId==="saint.carlo-acutis");
+assert.ok(carlo?.modernDates.some(d=>d.monthDay==="10-12"&&
+  d.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE"),
+  "Carlo's Dicastery feast date is now independently attested");
+assert.ok(!carlo?.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE",
+  "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope)),
+  "A sourced date must not be upgraded to universal General Roman Calendar standing");
+assert.ok(rows.find(x=>x.canonicalPersonId==="saint.john-henry-newman")?.modernDates
+  .some(x=>x.publishedOn==="2026-02-03"));
+assert.ok(rows.every(x=>x.neverInventMassAuthority));
+mkdirSync(new URL("../artifacts/calendar-oracle/",import.meta.url),{recursive:true});
+writeFileSync(new URL("../artifacts/calendar-oracle/living-traditional-date-authority-backlog.json",import.meta.url),
+  JSON.stringify(report,null,2)+"\n");
+console.log("LIVING_TRADITIONAL_DATE_AUTHORITY_GAPS="+JSON.stringify(summary));

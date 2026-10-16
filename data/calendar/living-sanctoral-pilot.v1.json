@@ -1,0 +1,379 @@
+{
+  "schema": "AO_LIVING_SANCTORAL_PILOT_V1",
+  "asOf": "2026-10-15",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "scope": "Six documented regression exemplars, not an exhaustive canonisation list or the complete Doctors roster.",
+  "policy": {
+    "traditionalBaseline": "1962_ROMAN_CALENDAR",
+    "actualMass": "NEVER_INFER_FROM_SAINT_ENTRY",
+    "optionalMass": "NEVER_AUTO_SELECT",
+    "eligibility": "REQUIRES_FULL_DATE_AND_RUBRICAL_EVALUATION",
+    "protectedFeasts": "REQUIRE_EXACT_70_FEAST_LIST_FROM_2020_DECREE",
+    "personalStatusIsNotCalendarRank": true,
+    "modernMissalTextsNeverImportedAutomatically": true,
+    "localAndInstituteApprovals": "REQUIRE_EVIDENCE",
+    "historicalRecognition": "DO_NOT_DISPLAY_PRE_CANONISATION_OR_PRE_DOCTOR_AS_ALREADY_RECOGNISED",
+    "historicalCalendarEntries": "OBSERVANCE_PUBLICATION_DATE_WHEN_DOCUMENTED; CANONISATION_AND_DOCTOR_DECLARATION_ARE_INDEPENDENT"
+  },
+  "sources": {
+    "cum-sanctissima-2020": {
+      "type": "HOLY_SEE_DECREE",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+      "establishes": "Rule for optional celebration of saints canonised after 26 July 1960; 70 protected feasts; rubrical constraints."
+    },
+    "newman-canonization-2019": {
+      "type": "PAPAL_CANONIZATION",
+      "url": "https://www.vatican.va/content/francesco/en/events/event.dir.html/content/vaticanevents/en/2019/10/13/messa-canonizzazione.html",
+      "establishes": "Newman canonised 13 October 2019."
+    },
+    "newman-decree-2026": {
+      "type": "HOLY_SEE_GENERAL_CALENDAR_DECREE",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+      "establishes": "Doctor declaration 1 November 2025 and current Roman General Calendar optional memorial on 9 October."
+    },
+    "padre-pio-2002": {
+      "type": "PAPAL_CANONIZATION_AND_MEMORIAL",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html",
+      "establishes": "Canonisation 16 June 2002; obligatory Roman-calendar memorial 23 September."
+    },
+    "carlo-acutis-2025": {
+      "type": "PAPAL_CANONIZATION",
+      "url": "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20250907-omelia-frassati-acutis.html",
+      "establishes": "Canonisation of Carlo Acutis on 7 September 2025; not evidence of a universal-calendar feast date."
+    },
+    "therese-doctor-1997": {
+      "type": "PAPAL_APOSTOLIC_LETTER",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+      "establishes": "Declared Doctor of the Universal Church on 19 October 1997."
+    },
+    "teresa-doctor-1970": {
+      "type": "PAPAL_APOSTOLIC_LETTER",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_letters/documents/hf_p-vi_apl_19700927_multiformis-sapientia.html",
+      "establishes": "Declared Doctor of the Church 27 September 1970."
+    },
+    "irenaeus-doctor-2022": {
+      "type": "PAPAL_DECREE",
+      "url": "https://www.vatican.va/content/francesco/en/events/event.dir.html/content/vaticanevents/en/2022/1/21/decreto-santireneo.html",
+      "establishes": "Declared Doctor of the Church, Doctor unitatis, 21 January 2022."
+    },
+    "ao-1962-title": {
+      "type": "REPOSITORY_IDENTITY",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/calendar/observance-title.js",
+      "establishes": "Source-identity-linked title alias for sancti:10-03; display alias alone does not certify feast precedence."
+    },
+    "ao-full-year-audit-20261009": {
+      "type": "ARCHIVED_APP_DAYRESOLVER_AUDIT",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+      "establishes": "Recorded 1962 principal/displaced source identities across 2024 and 2027; not independent original-Missal certification."
+    }
+  },
+  "persons": [
+    {
+      "id": "saint.john-henry-newman",
+      "name": {
+        "en": "St John Henry Newman",
+        "fr": "Saint John Henry Newman"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "canonizedOn": "2019-10-13",
+        "doctorDeclaredOn": "2025-11-01",
+        "sourceIds": [
+          "newman-canonization-2019",
+          "newman-decree-2026"
+        ]
+      },
+      "observances": [
+        {
+          "calendar": "CURRENT_ROMAN_GENERAL",
+          "monthDay": "10-09",
+          "kind": "OPTIONAL_MEMORIAL",
+          "sourceIds": [
+            "newman-decree-2026"
+          ],
+          "publishedOn": "2026-02-03"
+        }
+      ],
+      "calendar1962": {
+        "principalId": null,
+        "identityStatus": "NO_MATCH_ASSERTED",
+        "protectedThirdClass": false
+      },
+      "laterTraditionalMass": {
+        "status": "ELIGIBILITY_NOT_COMPUTED",
+        "lawSourceIds": [
+          "cum-sanctissima-2020"
+        ]
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A convert and theologian who sought religious truth through conscience, reason and fidelity to the Church.",
+          "fr": "Converti et théologien, il rechercha la vérité religieuse par la conscience, la raison et la fidélité à l'Église."
+        },
+        "historicalContribution": {
+          "en": "Anglican minister who entered the Catholic Church; influential defender of Christian education and the formation of conscience.",
+          "fr": "Ancien ministre anglican devenu catholique ; défenseur de l'éducation chrétienne et de la formation de la conscience."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20251101-messa-giubileo-formatori.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.pio-pietrelcina",
+      "name": {
+        "en": "St Pio of Pietrelcina (Padre Pio)",
+        "fr": "Saint Padre Pio de Pietrelcina"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "canonizedOn": "2002-06-16",
+        "sourceIds": [
+          "padre-pio-2002"
+        ]
+      },
+      "observances": [
+        {
+          "calendar": "CURRENT_ROMAN_GENERAL",
+          "monthDay": "09-23",
+          "kind": "OBLIGATORY_MEMORIAL",
+          "sourceIds": [
+            "padre-pio-2002"
+          ],
+          "publishedOn": "2002-06-16"
+        }
+      ],
+      "calendar1962": {
+        "principalId": null,
+        "identityStatus": "NO_MATCH_ASSERTED",
+        "protectedThirdClass": false
+      },
+      "laterTraditionalMass": {
+        "status": "ELIGIBILITY_NOT_COMPUTED",
+        "lawSourceIds": [
+          "cum-sanctissima-2020"
+        ]
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A Capuchin priest whose life united prayer, the sacrament of confession and concrete charity.",
+          "fr": "Prêtre capucin, il unit la prière, le ministère de la confession et la charité concrète."
+        },
+        "historicalContribution": {
+          "en": "Guided countless penitents toward reconciliation; inspired prayer groups and care for the sick.",
+          "fr": "Conduisit de nombreux pénitents à la réconciliation ; inspira des groupes de prière et le soin des malades."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020616_padre-pio.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.carlo-acutis",
+      "name": {
+        "en": "St Carlo Acutis",
+        "fr": "Saint Carlo Acutis"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "canonizedOn": "2025-09-07",
+        "sourceIds": [
+          "carlo-acutis-2025"
+        ]
+      },
+      "observances": [],
+      "calendar1962": {
+        "principalId": null,
+        "identityStatus": "NO_MATCH_ASSERTED",
+        "protectedThirdClass": false
+      },
+      "laterTraditionalMass": {
+        "status": "UNIVERSAL_MEMORIAL_DATE_UNVERIFIED",
+        "lawSourceIds": [
+          "cum-sanctissima-2020"
+        ]
+      },
+      "openQuestions": [
+        "Confirm any universal Roman Calendar inscription and date from a primary source; local celebration dates cannot be silently promoted to universal status."
+      ],
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A young Catholic known for Eucharistic devotion, an ordinary life of prayer and generous love of others.",
+          "fr": "Jeune catholique remarquable par son amour de l'Eucharistie, sa prière et sa charité."
+        },
+        "historicalContribution": {
+          "en": "Made daily Mass and Eucharistic adoration central to his life, together with study, friendship and charity.",
+          "fr": "Vécut la messe quotidienne et l'adoration eucharistique tout en cultivant ses études, ses amitiés et le service des autres."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20250907-omelia-frassati-acutis.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.therese-lisieux",
+      "name": {
+        "en": "St Thérèse of the Child Jesus",
+        "fr": "Sainte Thérèse de l'Enfant-Jésus"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "1997-10-19",
+        "sourceIds": [
+          "therese-doctor-1997"
+        ]
+      },
+      "observances": [
+        {
+          "calendar": "1962_GENERAL",
+          "monthDay": "10-03",
+          "kind": "PROTECTED_THIRD_CLASS",
+          "sourceIds": [
+            "cum-sanctissima-2020"
+          ]
+        }
+      ],
+      "calendar1962": {
+        "principalId": "sancti:10-03",
+        "identityStatus": "ID_PRESENT_IN_REPO",
+        "protectedThirdClass": true
+      },
+      "laterTraditionalMass": {
+        "status": "NOT_APPLICABLE_ALREADY_1962",
+        "lawSourceIds": []
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A Carmelite who taught the 'little way': trust in divine mercy and love shown in ordinary acts.",
+          "fr": "Carmélite qui enseigna la « petite voie » : confiance en la miséricorde divine et amour dans les actes ordinaires."
+        },
+        "historicalContribution": {
+          "en": "Her spiritual writings and missionary desire made her a teacher of Christian life, later proclaimed Doctor of the Church.",
+          "fr": "Ses écrits spirituels et son élan missionnaire firent d'elle une maîtresse de vie chrétienne, puis un Docteur de l'Église."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/john-paul-ii/en/homilies/1997/documents/hf_jp-ii_hom_19101997.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.teresa-avila",
+      "name": {
+        "en": "St Teresa of Jesus (Ávila)",
+        "fr": "Sainte Thérèse de Jésus (d'Avila)"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "1970-09-27",
+        "sourceIds": [
+          "teresa-doctor-1970"
+        ]
+      },
+      "observances": [
+        {
+          "calendar": "1962_GENERAL",
+          "monthDay": "10-15",
+          "kind": "PROTECTED_THIRD_CLASS",
+          "sourceIds": [
+            "cum-sanctissima-2020"
+          ]
+        }
+      ],
+      "calendar1962": {
+        "principalId": "sancti:10-15:3:w",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
+        "protectedThirdClass": true
+      },
+      "laterTraditionalMass": {
+        "status": "NOT_APPLICABLE_ALREADY_1962",
+        "lawSourceIds": []
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "A reformer of Carmel and spiritual teacher who witnessed to deep friendship with Christ through prayer.",
+          "fr": "Réformatrice du Carmel et maîtresse spirituelle, elle témoigna de l'amitié profonde avec le Christ dans la prière."
+        },
+        "historicalContribution": {
+          "en": "Reformed Carmelite religious life and taught the path of interior prayer in influential spiritual works.",
+          "fr": "Réforma la vie carmélitaine et enseigna l'oraison intérieure dans de grands écrits spirituels."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/paul-vi/en/apost_letters/documents/hf_p-vi_apl_19700927_multiformis-sapientia.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    },
+    {
+      "id": "saint.irenaeus-lyon",
+      "name": {
+        "en": "St Irenaeus of Lyon",
+        "fr": "Saint Irénée de Lyon"
+      },
+      "recognition": {
+        "rank": "SAINT",
+        "doctorDeclaredOn": "2022-01-21",
+        "sourceIds": [
+          "irenaeus-doctor-2022"
+        ],
+        "doctorTitle": "Doctor unitatis"
+      },
+      "observances": [
+        {
+          "calendar": "1962_GENERAL",
+          "monthDay": "07-03",
+          "kind": "THIRD_CLASS_FEAST",
+          "sourceIds": [
+            "ao-full-year-audit-20261009"
+          ]
+        }
+      ],
+      "calendar1962": {
+        "principalId": "sancti:07-03r:3:r",
+        "identityStatus": "ARCHIVED_RESOLVER_ATTESTED_2024_2027",
+        "protectedThirdClass": false
+      },
+      "laterTraditionalMass": {
+        "status": "NOT_APPLICABLE_ALREADY_OLDER_SAINT",
+        "lawSourceIds": []
+      },
+      "presentation": {
+        "status": "PILOT_SHORT_PROFILE_REVIEW_REQUIRED",
+        "whyHonoured": {
+          "en": "An early bishop and defender of apostolic faith, renowned for helping preserve the Church's unity.",
+          "fr": "Évêque des premiers siècles et défenseur de la foi apostolique, célèbre pour son service de l'unité de l'Église."
+        },
+        "historicalContribution": {
+          "en": "His teaching bridged East and West; he was proclaimed Doctor of Unity, Doctor unitatis.",
+          "fr": "Son enseignement relia l'Orient et l'Occident ; il fut proclamé Docteur de l'unité, Doctor unitatis."
+        },
+        "verifiedFurtherReadingUrls": [
+          "https://www.vatican.va/content/francesco/en/events/event.dir.html/content/vaticanevents/en/2022/1/21/decreto-santireneo.html"
+        ],
+        "approvedArtworkId": null,
+        "canonicalPlaceId": null
+      }
+    }
+  ],
+  "completion": {
+    "verifiedPilotPersons": 6,
+    "completePost1960Canonizations": false,
+    "completeDoctors": false,
+    "completeCalendar1962Crosswalk": false,
+    "fullRubricalEligibilityEngine": false,
+    "runtimeDisplayIntegrated": false
+  }
+}

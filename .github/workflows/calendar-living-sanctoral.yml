@@ -1,0 +1,78 @@
+name: Living sanctoral source integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/living-sanctoral-pilot.v1.json'
+      - 'data/calendar/living-sanctoral-modern-observances.review.v1.json'
+      - 'data/calendar/living-sanctoral-read-model.v1.json'
+      - 'data/calendar/living-sanctoral-place-art-crosswalk.review.v1.json'
+      - 'data/calendar/post1960-canonizations.official-batch1.v1.json'
+      - 'data/calendar/post1960-canonizations.source-year-coverage.v1.json'
+      - 'data/calendar/doctors-of-church-roster.review.v1.json'
+      - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
+      - 'data/calendar/particular-traditional-calendar-witnesses.review.v1.json'
+      - 'data/calendar/traditional-calendar-adjudication-matrix.v1.json'
+      - 'data/calendar/traditional-mass-formulary-review.v1.json'
+      - 'data/calendar/traditional-1962-common-formularies.review.v1.json'
+      - 'src/calendar/traditional-formulary-review.js'
+      - 'tests/calendar-traditional-formulary-sources.mjs'
+      - 'src/calendar/traditional-day-adjudication.js'
+      - 'tests/calendar-traditional-adjudication.mjs'
+      - 'tests/calendar-living-sanctoral-date-coverage.mjs'
+      - 'src/calendar/living-sanctoral-read-model.js'
+      - 'src/home/today-v2-sections.js'
+      - 'src/home/today-v2-styles.js'
+      - 'src/home/browser-entry.js'
+      - 'tests/calendar-home-living-observances.mjs'
+      - 'src/calendar/living-sanctoral.js'
+      - 'src/calendar/reviewed-sanctoral-cards.js'
+      - 'src/calendar/sanctoral-day-ui.js'
+      - 'src/calendar/calendar-runtime.js'
+      - 'src/calendar/optional-post1960-saint-review.js'
+      - 'src/calendar/sanctoral-person-reconciliation.js'
+      - 'tests/calendar-living-sanctoral-*.mjs'
+      - 'tests/calendar-post1960-*.mjs'
+      - 'tests/calendar-reviewed-sanctoral-cards.mjs'
+      - 'tests/calendar-reviewed-sanctoral-day-integration.mjs'
+      - 'tests/calendar-doctors-roster-review.mjs'
+      - 'tests/calendar-cum-sanctissima-protected-annex.mjs'
+      - '.github/workflows/calendar-living-sanctoral.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sanctoral-identity-guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source-bound registry and projection checks
+        run: |
+          node tests/calendar-living-sanctoral-pilot.mjs
+          node tests/calendar-doctors-roster-review.mjs
+          node tests/calendar-cum-sanctissima-protected-annex.mjs
+          node tests/calendar-living-sanctoral-projection.mjs
+          node tests/calendar-post1960-canonization-census.mjs
+          node tests/calendar-post1960-optional-eligibility.mjs
+          node tests/calendar-post1960-year-coverage.mjs
+          node tests/calendar-post1960-reconciliation.mjs
+          node tests/calendar-post1960-collective-cards.mjs
+          node tests/calendar-reviewed-sanctoral-cards.mjs
+          node tests/calendar-reviewed-sanctoral-day-integration.mjs
+          node tests/calendar-home-living-observances.mjs
+          node tests/calendar-traditional-adjudication.mjs
+          node tests/calendar-traditional-formulary-sources.mjs
+          node tests/calendar-living-sanctoral-date-coverage.mjs
+      - name: Preserve dated-authority research queue
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-traditional-date-authority-backlog
+          path: artifacts/calendar-oracle/living-traditional-date-authority-backlog.json
+          if-no-files-found: warn
