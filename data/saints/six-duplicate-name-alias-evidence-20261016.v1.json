@@ -39,7 +39,8 @@
     "already_exact_owner_identity_linked": 1,
     "doctor_alias_candidates_with_matching_nominal_day": 4,
     "source_context_ledgers_needing_owner_confirmation": 1,
-    "published_new_map_pin_links": 0
+    "published_new_map_pin_links": 0,
+    "canonical_key_merges_performed": 0
   },
   "policy": [
     "Even a valid display-name match is not proof that two independent canonical source IDs may be merged.",
@@ -58,7 +59,6 @@
       "preferred_existing_profile_source_key": "saint.anthony-padua",
       "preferred_is_existing_biography_owner": false,
       "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
-      "canonical_person_identity_merge_approved": false,
       "original_source_alias_proposal": true,
       "nominal_day_1962": "06-13",
       "raw_archive_observance_source_ids": [
@@ -75,7 +75,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE",
+      "existing_owner_same_person_crosslink_documented": false,
+      "canonical_key_rename_or_merge_performed": false
     },
     {
       "shrine_name_literal": "Saint Catherine of Siena",
@@ -86,7 +88,6 @@
       "preferred_existing_profile_source_key": "saint.catherine-siena",
       "preferred_is_existing_biography_owner": true,
       "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
-      "canonical_person_identity_merge_approved": false,
       "original_source_alias_proposal": true,
       "nominal_day_1962": "04-30",
       "raw_archive_observance_source_ids": [
@@ -102,7 +103,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE",
+      "existing_owner_same_person_crosslink_documented": false,
+      "canonical_key_rename_or_merge_performed": false
     },
     {
       "shrine_name_literal": "Saint Francis de Sales",
@@ -113,7 +116,6 @@
       "preferred_existing_profile_source_key": "saint.francis-sales",
       "preferred_is_existing_biography_owner": true,
       "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
-      "canonical_person_identity_merge_approved": false,
       "original_source_alias_proposal": true,
       "nominal_day_1962": "01-29",
       "raw_archive_observance_source_ids": [
@@ -129,7 +131,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE",
+      "existing_owner_same_person_crosslink_documented": false,
+      "canonical_key_rename_or_merge_performed": false
     },
     {
       "shrine_name_literal": "Saint Francis of Assisi",
@@ -140,7 +144,6 @@
       "preferred_existing_profile_source_key": "saint.francis-assisi",
       "preferred_is_existing_biography_owner": true,
       "preferred_selection_status": "SOURCE_NAME_AND_HISTORICAL_CONTEXT_LEAD_NOT_CERTIFIED",
-      "canonical_person_identity_merge_approved": false,
       "original_source_alias_proposal": false,
       "nominal_day_1962": "10-04",
       "raw_archive_observance_source_ids": [
@@ -156,7 +159,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE",
+      "existing_owner_same_person_crosslink_documented": false,
+      "canonical_key_rename_or_merge_performed": false
     },
     {
       "shrine_name_literal": "Saint John of the Cross",
@@ -167,7 +172,6 @@
       "preferred_existing_profile_source_key": "saint.john-cross",
       "preferred_is_existing_biography_owner": false,
       "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
-      "canonical_person_identity_merge_approved": false,
       "original_source_alias_proposal": true,
       "nominal_day_1962": "11-24",
       "raw_archive_observance_source_ids": [
@@ -184,7 +188,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE",
+      "existing_owner_same_person_crosslink_documented": false,
+      "canonical_key_rename_or_merge_performed": false
     },
     {
       "shrine_name_literal": "Saint Thérèse of Lisieux",
@@ -195,7 +201,6 @@
       "preferred_existing_profile_source_key": "saint.therese-of-lisieux",
       "preferred_is_existing_biography_owner": true,
       "preferred_selection_status": "ALREADY_SOURCE_OWNER_LINKED_NO_RENAME",
-      "canonical_person_identity_merge_approved": true,
       "original_source_alias_proposal": false,
       "nominal_day_1962": "10-03",
       "raw_archive_observance_source_ids": [
@@ -216,7 +221,9 @@
       "publication_authorized": false,
       "artwork_authorized": false,
       "map_pin_identity_authorized": false,
-      "owner_next_step": "REUSE_ALREADY_DOCUMENTED_SOURCE_IDENTITY_LINK_WITHOUT_RENAMING"
+      "owner_next_step": "REUSE_ALREADY_DOCUMENTED_SOURCE_IDENTITY_LINK_WITHOUT_RENAMING",
+      "existing_owner_same_person_crosslink_documented": true,
+      "canonical_key_rename_or_merge_performed": false
     }
   ]
 }
