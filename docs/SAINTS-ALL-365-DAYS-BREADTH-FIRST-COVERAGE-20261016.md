@@ -301,3 +301,40 @@ The old original Shrine source URL host `stwinefrideswell.org.uk` was found serv
 - Four historical/Doctors alias pairs remain submitted as one adjudication to Calendar PR #1226, *not silently approved*. Saints PR #1227 remains draft/unmerged and has been reported as conflicted against main.
 
 **Owner action:** correct central Holywell source URLs first; then certify source ID equivalences for four Doctor cases and targeted Leonhard patron epithet. No further biography round is needed to keep the 121 existing-place research map source-traceable.
+
+
+## W86 — P0/P1 convergence into the original 608-key ledger (16 October 2026)
+
+**Do not create a second Ultra Master matrix.** The existing `data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json` now has two research-only additions: `records[].identity_source_reconciliation` for each **original** one of 608 stable source keys, and `identity_resolution_owner_readiness` as the unique review queue on that same register. The original identities, source family memberships, 30 editorial biographies, existing associations and external Calendar and Geography registries remain intact.
+
+| Precise P0 evidence dimension | Distinct original source records or instances |
+| --- | ---: |
+| Original source keys retained | **608** |
+| Person candidate keys (*not certified distinct persons*) | **529** |
+| Collective/group source records | **70** |
+| Liturgical event source records | **7** |
+| Angelic source records | **2** |
+| Original archived historical subject keys with nominal-day context | **307** |
+| Original archived nominal-day observance edges (not individual ownership) | **424** |
+| Calendar Doctors roster entries | **38** |
+| Doctors roster entries with existing historical 1962 source IDs | **34** |
+| Later Doctors without historical original observance ID (Narek, Hildegard, John of Ávila, Newman) | **4** |
+| Shrine name records with source-key leads | **81/119** |
+| Distinct existing ledger keys mentioned by those 81 name records | **86** |
+| Shrine-name ↔ existing-source-key candidate reference edges | **88** |
+| Shrine names without an existing key lead, retained as actionable source-owner queue | **38** |
+| Pending four Doctor equivalence reviews represented bidirectionally | **8 key endpoints; 4 pairs** |
+| New canonical person IDs / 1962 Mass choices / artwork approvals | **0 / 0 / 0** |
+
+**Critical scope correction:** the historical v43.33 archive binds its `source_observance_ids` to a *nominal day of liturgical material*, not to each historical artwork subject on that day. Hence John of the Cross and Chrysogonus both inherit the original 24 November *day context* as candidates, but the original principal `sancti:11-24:3:w` and distinct Chrysogonus commemoration `sancti:11-24o:4:r` must never be conflated into the same *person*. The enhanced ledger deliberately names its field `archived_1962_nominal_day_observance_ids`, sets `exact_original_observance_to_person_identity_approved:false`, and reserves direct candidate-to-principal links for independently corroborated owner review, such as W82's four pairs.
+
+**P1 source coverage integration:** the *existing* `tools/saints/build-2026-full-calendar-coverage-matrix.mjs` generator, which runs within the established all-365-day Calendar census, now projects `original_1962_nominal_day_context_keys` and the mandatory `DAY_LEVEL_CANDIDATE_ONLY_NOT_PERSON_OWNER_ID` status on the already existing **282 observed candidate subject source occurrences**. The **240** exact original observed IDs have at least one nominal-day context; the other **42** retain their own typed exception queue (12 person-like, 30 other types). No source-day context is promoted to a certified personal saint ID; no 1962 resolver, Calendar rubrics, transfer, Mass Proper or historical commemoration is altered. This is the source-ID handoff for Calendar owner PR #1226, not an alternative Ordo.
+
+**CI and release separation:** `tests/saints-full-calendar-exact-key-ledger.mjs` now asserts these source-owner totals, the 38 gap cases, the four later Doctors without fabricated historical source IDs, and the 24 November John/Chrysogonus nonconflation guard. The ongoing research branch is PR #1227 (draft). The original **six-person-only public release candidate** PR #1256 has been separately updated with a two-parent reconciliation of current main and the 21 original pilot-only file changes; it is cleanly mergeable pending its own fresh acceptance and publication decision. No 608-key research JSON or 24 held biographies have been imported into that public candidate.
+
+### Next concrete owner decisions (do not repeat research)
+
+1. Calendar owner signs off or rejects W82's **four source-verified historical ↔ Doctors person pairs**, preserving `sancti:11-24o:4:r` for Chrysogonus. Calendar/feast/Proper decisions remain independently governed.
+2. Source identity owner adjudicates the **38 no-key shrine-name records**, prioritized by 21 relic-subject owner links, two art-only links and 15 now institutionally attested shrine-only links; special Angel/collective/Blessed flags remain separate.
+3. Editorial owner processes the **24 completed bilingual biography drafts** in one structured claim-review batch. They are researched but **zero** have second-editor approval; existing 6 release previews remain distinct.
+4. Resolve CI/release acceptance on the **six-profile pilot** PR #1256 and review its exact public copy, images and Calendar handoff. Do not merge PR #1227 merely because its technical conflicts are cleared.
