@@ -4,6 +4,8 @@ on:
     paths:
       - 'data/calendar/p1-*.json'
       - 'tests/calendar-p1-traditional-formulary-research.mjs'
+      - 'tests/calendar-p1-internal-missal-link-resolution.mjs'
+      - 'src/calendar/p1-internal-missal-link-resolution.js'
       - '.github/workflows/calendar-p1-traditional-formularies.yml'
   push:
     branches:
@@ -19,5 +21,6 @@ jobs:
         with:
           node-version: '22'
       - run: node tests/calendar-p1-traditional-formulary-research.mjs
+      - run: node tests/calendar-p1-internal-missal-link-resolution.mjs
       - run: node tests/calendar-traditional-formulary-sources.mjs
       - run: node tests/calendar-traditional-adjudication.mjs
