@@ -13,7 +13,7 @@
 3. `data/calendar/p1-three-oration-commemoration-matrix.v1.json` — source-located Leonardi and Dionysius/Rusticus/Eleutherius Collect, Secret, Postcommunion; four form-specific combinations, all held.
 4. `data/calendar/p1-saint-formulary-crosswalk.v1.json` — 293 deduplicated canonical person IDs (includes 258 already in canonical post-1960 census and 38 Doctors roster, with overlap) plus 13 collective groups. Candidate Common joins never become selected or permitted Masses.
 5. `data/calendar/p1-reference-cases.v1.json` — Newman, Padre Pio, Thérèse of Lisieux, Teresa of Ávila.
-6. `data/calendar/p1-exception-backlog.v1.json` — 20 outstanding certification and jurisdiction blockers.
+6. `data/calendar/p1-exception-backlog.v1.json` — 21 outstanding certification and jurisdiction blockers.
 7. `tests/calendar-p1-traditional-formulary-research.mjs` — preservation and fail-closed invariant tests.
 8. `.github/workflows/calendar-p1-traditional-formularies.yml` — branch PR CI.
 
@@ -30,7 +30,7 @@ Later Doctor title primary witnesses: [Teresa 1970](https://www.vatican.va/conte
 - 38/38 index entries mapped to all component slots; **0/38 print-1962 complete text collations**. The 35 provisional IDs are not ready for runtime.
 - 2/2 targeted pre-existing October 9 oration trios located in secondary traditional text; **0/2 printed-edition certified**.
 - 293 unique canonical people + 13 groups: identity-index coverage, **0/293 certified individual source-to-formulary authorization**. This is not a date-research result.
-- 4 reference cases, 20 unresolved approval blockers.
+- 4 reference cases, 21 unresolved approval blockers.
 - No Latin prayer text invented or imported, no modern Proper borrowed, no reader or Calendar principal altered.
 
 ## P0 integration contract
@@ -60,3 +60,11 @@ P2 remains independent. Its verified date evidence does not authorize Mass or co
 The normative audit is in `data/calendar/p1-primary-latin-and-oct9-source-audit.v1.json`, including exact printed AAS page numbers, secondary-witness discrepancy, and formal-interpretation hold for *Cum sanctissima* §4 vs RG108/111(a)/RGMR434(a). Original 1962 [CMAA 1962 facsimile](https://musicasacra.com/2007/10/missale-romanum-1962/) has been identified as the next physical-edition collation target. It is a large PDF, and **no printed-page collation has yet been completed**; do not misrepresent source discovery as certification.
 
 **CI:** The dedicated research test has been strengthened for the original Latin source and all 38 exact page URLs. The required broad regression check should be inspected independently before the PR is considered integration-ready; passing structural tests is not authority to merge/deploy or publish Latin texts.
+
+## Mandatory post-2020 legal overlay — added 16 October 2026
+
+A 1960 rubric + 2020 *Cum sanctissima* factual admissibility check **does not certify current lawful celebrant/venue authorization** in 2026. The Holy See's [*Traditionis custodes* (16 July 2021)](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/07/16/210716b.html), particularly arts 2, 3 §§2–3, 4, 5, 7 and 8, establishes diocesan competence over 1962 Missal use and abrogates earlier provisions **to the extent they do not conform**, not necessarily all legislation about the 1962 ritual. The [2021 *Responsa ad dubia*](https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html) clarify priest, time and territorial permission; the [February 2023 rescript](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html) reserves certain parish-church/personal-parish and post-2021 ordained-priest permissions to the Apostolic See. This does not by itself establish whether *Cum sanctissima*'s specific 2020 new-saint-formulary provisions remain applicable in every current jurisdiction. **Hold that legal evaluation rather than invent a blanket derogation or continuing permission.**
+
+The 2026 venue-specific Newman question has an additional authorization dimension (local/chaplaincy oratory framework, celebrant and actual Mass permission). A newsletter announcement is not a jurisdictional decree, and the legal authorization gate stays null.
+
+This overlay is now recorded explicitly in the normative matrix and exception `P1-E21`; the exception backlog contains **21 open items**, not 20. The revised P1 test verifies this release hold.
