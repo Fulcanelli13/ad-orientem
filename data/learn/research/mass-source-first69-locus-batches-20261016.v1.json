@@ -1,0 +1,760 @@
+{
+  "schema": "AO_MASS_SOURCE_69_BATCH_REVIEW_V1",
+  "date": "2026-10-16",
+  "status": "NO_SOURCE_TEXT_PUBLISHED_OR_CERTIFIED",
+  "source": "data/learn/research/mass-moment-author-evidence-review-20261016.v1.json",
+  "totalResearchClaims": 69,
+  "totalDistinctLoci": 37,
+  "originalWitnessPagesCollated": 0,
+  "publicationApproved": 0,
+  "reproductionApproved": 0,
+  "rightsApproved": 0,
+  "groupingRule": "Exact author + original research locator; one locus can carry multiple claims. This is not evidence that all claims share an identical passage or interpretive validity.",
+  "gates": [
+    "PRINTED_PAGE_OR_CRITICAL_TEXT_VISUALLY_CHECKED",
+    "EXACT_ORIGINAL_WORDING_AND_EDITION_VERIFIED",
+    "AUTHORSHIP_AND_INTERPRETATION_SCOPE",
+    "RIGHTS_AND_TRANSLATION_CHECK",
+    "EDITORIAL_PUBLICATION_APPROVAL",
+    "EXISTING_SOURCE_PACK_IDENTITY_AND_LOCATOR"
+  ],
+  "works": [
+    {
+      "id": "AO.MASS.WORK.ALPHONSUS",
+      "author": "St Alphonsus de Liguori",
+      "work": "Short Explanation of the Holy Mass",
+      "editionToVerify": "Original Italian or historically certified English witness required; current English work identity not pinned",
+      "sourceWitnessUrl": null,
+      "witnessStage": "NO_EXACT_EDITION_PINNED",
+      "scanExamined": false,
+      "editorialRisk": "Determine original-language work, edition, translator, relevant pages; title alone is not source certification.",
+      "claimCount": 36,
+      "locusCount": 15,
+      "publicationApproved": false,
+      "originalEditionVerified": false
+    },
+    {
+      "id": "AO.MASS.WORK.GUERANGER",
+      "author": "Dom Prosper Guéranger",
+      "work": "Explanation of the Prayers and Ceremonies of Holy Mass (conference notes)",
+      "editionToVerify": "Identify original French publication and the exact English/French expression and editor of posthumous notes",
+      "sourceWitnessUrl": "https://www.liturgialatina.org/benedictine/holymass.htm",
+      "witnessStage": "DERIVATIVE_TRANSCRIPTION_LEAD",
+      "scanExamined": false,
+      "editorialRisk": "Conference-note compilation and later translation must be distinguished from a verbatim signed author publication.",
+      "claimCount": 11,
+      "locusCount": 10,
+      "publicationApproved": false,
+      "originalEditionVerified": false
+    },
+    {
+      "id": "AO.MASS.WORK.GIHR",
+      "author": "Fr Nicholas Gihr",
+      "work": "The Holy Sacrifice of the Mass",
+      "editionToVerify": "1902 B. Herder English printing; compare exact sample's title/edition/page against that physical witness",
+      "sourceWitnessUrl": "https://archive.org/details/holysacrificeofm00gihriala",
+      "witnessStage": "ORIGINAL_EDITION_SCAN_LOCATED__PAGES_UNCOLLATED",
+      "scanExamined": false,
+      "editorialRisk": "Other 1902 and later editions may differ in pagination and translation; scan metadata alone does not certify the cited pp. 627–717.",
+      "claimCount": 12,
+      "locusCount": 8,
+      "publicationApproved": false,
+      "originalEditionVerified": false
+    },
+    {
+      "id": "AO.MASS.WORK.AQUINAS",
+      "author": "St Thomas Aquinas",
+      "work": "Summa Theologiae, tertia pars, question 83",
+      "editionToVerify": "Corpus Thomisticum web transcription based on the 1906 Leonine edition; exact article response text to collate separately",
+      "sourceWitnessUrl": "https://www.corpusthomisticum.org/sth4083.html",
+      "witnessStage": "DIGITIZED_CRITICAL_TEXT_LEAD__NO_PAIRED_PAGE_CERTIFICATION",
+      "scanExamined": false,
+      "editorialRisk": "Original medieval authorship and later Leonine critical text are distinct witnesses; no translated text is cleared.",
+      "claimCount": 6,
+      "locusCount": 2,
+      "publicationApproved": false,
+      "originalEditionVerified": false
+    },
+    {
+      "id": "AO.MASS.WORK.TRENT",
+      "author": "Roman Catechism (Council of Trent)",
+      "work": "Catechismus Romanus, Part II, Eucharist",
+      "editionToVerify": "Latin editio princeps/authorized historical edition and any English translation must be separately identified",
+      "sourceWitnessUrl": "https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_2:_The_Holy_Eucharist",
+      "witnessStage": "ENGLISH_TRANSCRIPTION_LEAD__ORIGINAL_LATIN_UNCOLLATED",
+      "scanExamined": false,
+      "editorialRisk": "Modern English transcription does not verify original Latin wording, specific translated edition, or copying rights.",
+      "claimCount": 4,
+      "locusCount": 2,
+      "publicationApproved": false,
+      "originalEditionVerified": false
+    }
+  ],
+  "loci": [
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, First Part",
+      "claimIds": [
+        "VER-002",
+        "VER-035"
+      ],
+      "momentIds": [
+        "AO.CARD.001"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L01",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, after consecration",
+      "claimIds": [
+        "VER-027"
+      ],
+      "momentIds": [
+        "AO.CARD.016"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L02",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, chalice institution",
+      "claimIds": [
+        "VER-023",
+        "VER-024",
+        "VER-025",
+        "VER-026"
+      ],
+      "momentIds": [
+        "AO.CARD.016"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L03",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Communicantes",
+      "claimIds": [
+        "VER-017"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L04",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, first Memento",
+      "claimIds": [
+        "VER-014",
+        "VER-015",
+        "VER-016"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L05",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Hanc igitur",
+      "claimIds": [
+        "VER-018",
+        "VER-019"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L06",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Quam oblationem",
+      "claimIds": [
+        "VER-020",
+        "VER-021",
+        "VER-074",
+        "VER-075",
+        "VER-076"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L07",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Qui pridie",
+      "claimIds": [
+        "VER-022"
+      ],
+      "momentIds": [
+        "AO.CARD.015"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L08",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, second Memento",
+      "claimIds": [
+        "VER-033"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L09",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Supplices",
+      "claimIds": [
+        "VER-032"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L10",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Supra quae",
+      "claimIds": [
+        "VER-030",
+        "VER-031"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L11",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Te igitur",
+      "claimIds": [
+        "VER-011",
+        "VER-012",
+        "VER-013"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L12",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Fourth Part, Unde et memores",
+      "claimIds": [
+        "VER-028",
+        "VER-029"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L13",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Last Part",
+      "claimIds": [
+        "VER-038"
+      ],
+      "momentIds": [
+        "AO.CARD.028"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L14",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.ALPHONSUS",
+      "locus": "Short Explanation, Third Part",
+      "claimIds": [
+        "VER-004",
+        "VER-005",
+        "VER-006",
+        "VER-007",
+        "VER-008",
+        "VER-009",
+        "VER-010"
+      ],
+      "momentIds": [
+        "AO.CARD.010",
+        "AO.CARD.011",
+        "AO.CARD.012",
+        "AO.CARD.013"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.ALPHONSUS.L15",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.AQUINAS",
+      "locus": "ST III q.83 a.5 ad 3",
+      "claimIds": [
+        "VER-064",
+        "VER-065",
+        "VER-066",
+        "VER-067",
+        "VER-068"
+      ],
+      "momentIds": [
+        "AO.CARD.014",
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.AQUINAS.L01",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.AQUINAS",
+      "locus": "ST III q.83 a.5 ad 4",
+      "claimIds": [
+        "VER-069"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.AQUINAS.L02",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§59, p. 628",
+      "claimIds": [
+        "VER-053",
+        "VER-054",
+        "VER-055"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": true,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L01",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§59, pp. 627–630",
+      "claimIds": [
+        "VER-052"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L02",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§59, pp. 629–630",
+      "claimIds": [
+        "VER-056"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L03",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§61 p. 660; earlier discussion pp. 75–76",
+      "claimIds": [
+        "VER-059"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": true,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L04",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§61, p. 659",
+      "claimIds": [
+        "VER-057",
+        "VER-058"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "hasEditorialCaution": true,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L05",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§68, p. 717",
+      "claimIds": [
+        "VER-063"
+      ],
+      "momentIds": [
+        "AO.CARD.024"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L06",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§68, pp. 715–716",
+      "claimIds": [
+        "VER-062"
+      ],
+      "momentIds": [
+        "AO.CARD.021"
+      ],
+      "hasEditorialCaution": true,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L07",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "locus": "§68, pp. 715–717",
+      "claimIds": [
+        "VER-060",
+        "VER-061"
+      ],
+      "momentIds": [
+        "AO.CARD.021"
+      ],
+      "hasEditorialCaution": true,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GIHR.L08",
+      "hasPrintedPageNumber": true
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "MEMENTO DES VIVANTS",
+      "claimIds": [
+        "VER-044",
+        "VER-045"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L01",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "QUAM OBLATIONEM",
+      "claimIds": [
+        "VER-046"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L02",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "QUAM OBLATIONEM, adscriptam",
+      "claimIds": [
+        "VER-047"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L03",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "QUAM OBLATIONEM, ratam",
+      "claimIds": [
+        "VER-048"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L04",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "QUAM OBLATIONEM, rationabilem",
+      "claimIds": [
+        "VER-049"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L05",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "TE IGITUR, adunare",
+      "claimIds": [
+        "VER-042"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L06",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "TE IGITUR, introductory paragraph",
+      "claimIds": [
+        "VER-039"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L07",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "TE IGITUR, offering and triple sign",
+      "claimIds": [
+        "VER-040"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L08",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "TE IGITUR, pro Ecclesia",
+      "claimIds": [
+        "VER-041"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L09",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GUERANGER",
+      "locus": "TE IGITUR, Una cum",
+      "claimIds": [
+        "VER-043"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.GUERANGER.L10",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.TRENT",
+      "locus": "Part II, Eucharist, form of chalice consecration",
+      "claimIds": [
+        "VER-071",
+        "VER-072",
+        "VER-073"
+      ],
+      "momentIds": [
+        "AO.CARD.016"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.TRENT.L01",
+      "hasPrintedPageNumber": false
+    },
+    {
+      "workId": "AO.MASS.WORK.TRENT",
+      "locus": "Part II, Eucharist, form of consecration",
+      "claimIds": [
+        "VER-070"
+      ],
+      "momentIds": [
+        "AO.CARD.015"
+      ],
+      "hasEditorialCaution": false,
+      "sourceImageChecked": false,
+      "editionCertified": false,
+      "quotationCleared": false,
+      "publicationApproved": false,
+      "id": "AO.MASS.WORK.TRENT.L02",
+      "hasPrintedPageNumber": false
+    }
+  ]
+}
