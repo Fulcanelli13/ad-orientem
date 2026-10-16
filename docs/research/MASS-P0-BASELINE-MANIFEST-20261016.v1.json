@@ -106,7 +106,15 @@
     "originalWorkbookWholeCueIdentityMatches": 153,
     "originalWorkbookSubspanIdentityMatches": 274,
     "independentlyCertifiedPrinted1962LatinSpans": 0,
-    "independentlyCertifiedExactWordTriggers": 0
+    "independentlyCertifiedExactWordTriggers": 0,
+    "exactWordTriggersLocatedInCanonicalSungSource": 66,
+    "exactWordTriggerActorRitualApprovals": 0,
+    "canonicalSourceOnlyEntriesStructurallyClassified": 34,
+    "publishedGuideSectionExceptionsClassified": 4,
+    "workbookMicroUnitsComparedDirectlyWithWorkbookCueMaster": 435,
+    "workbookInternalLatinExactWholeCues": 159,
+    "workbookInternalLatinContainedSubspans": 276,
+    "workbookInternalLatinDifferences": 0
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -120,6 +128,8 @@
     "Compiled reader card and paragraph IDs have not been independently reconciled for all 435 units",
     "Current guide field parity matches are asserted by the workbook's 32-field parity sheet, not independently recertified against this newer main commit",
     "Scripture and historical-author content remain individually held for editorial source certification",
-    "All results require rebasing/checking main if production advances after frozen SHA"
+    "All results require rebasing/checking main if production advances after frozen SHA",
+    "All 66 source-trigger offsets identify exact canonical Sung UTF-16 text spans, but actor, posture/gesture, 1962 authority and ritual applicability remain editorial holds; none is approved for new public binding.",
+    "All 435 research-unit Latin extracts are internally exact/substring-consistent with the workbook's own 279-cue source sheet (159 whole, 276 subspan); this does not override 3 donor differences and 5 dynamic source slots found against GitHub."
   ]
 }
