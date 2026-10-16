@@ -1,0 +1,57 @@
+{
+  "schema": "AO_SACRED_ART_REAL_IMAGE_ACQUISITION_GATE_20261016_V1",
+  "userDirection": "ACQUIRE_FULL_PAINTING_IMAGES_BEFORE_ASKING_FOR_ANY_FURTHER_RATING_OR_DELIVERING_UNIFIED_HTML",
+  "ownerPR": 887,
+  "branch": "platform/885-sacred-art-candidates",
+  "asOf": "2026-10-16",
+  "sourceRuns": [
+    {
+      "id": 38881782134,
+      "scope": "six source acquisition lanes covering categories 1–168",
+      "result": "success"
+    },
+    {
+      "id": 38882299843,
+      "scope": "October 12 selected-painting Wikimedia photo recovery",
+      "result": "success"
+    }
+  ],
+  "sourceArtifactConstraints": {
+    "originalSourceBytes": "GitHub Actions archives, SHA256-checked, 30-day retention",
+    "researchReviewCopies": "Uncropped 2200px-maximum longest-edge WEBP derivatives, separately SHA256 checked",
+    "productionReleased": 0
+  },
+  "counts": {
+    "requiredCategories": 168,
+    "categoriesWithAtLeastOneRetrievedPhoto": 104,
+    "categoriesWithoutAnyRetrievedPhoto": 64,
+    "activeFirst100WithPhoto": 74,
+    "activeFirst100WithoutPhoto": 26,
+    "additional68WithPhoto": 30,
+    "additional68WithoutPhoto": 38,
+    "initialBatchRecordsSubmitted": 253,
+    "sourceAcquiredPaintingRecordsFirstPass": 129,
+    "sourceAcquiredPhotoVersionsFirstPass": 157,
+    "additionalOctober12ResearchLeadRecordsAcquired": 31,
+    "distinctPreviewFilesBundledAfterOverlap": 186,
+    "checksumFailures": 0,
+    "visualArtAcceptedByCuratorDuringThisPass": 0
+  },
+  "strictDistinctions": [
+    "A source photograph successfully downloaded, decoded and hashed DOES NOT certify that it matches the exact historic original painting; conditional leads remain subject to accession/iconographic reconciliation.",
+    "A full-scene proportional derivative is not the museum original full pixel-size JPEG. Source bytes and SHA are in Actions archive, not app.",
+    "Rate/Keep/Primary and earlier October12 selected painting records are unchanged.",
+    "Earlier 5-star artistic and quality approvals do not transfer automatically to new recovered source files.",
+    "Do not send user a review HTML dominated by missing photos; final review release gate is image coverage plus browser checks."
+  ],
+  "reviewGalleryGate": {
+    "ready": false,
+    "reason": "64 of 168 categories have no acquired picture; user explicitly declines rating without complete visuals.",
+    "needs": [
+      "Acquire credible source images for remaining 64 categories, especially 26 of current 100 review categories.",
+      "Verify previews load at full artwork proportions and permit 1600px+ enlargement.",
+      "Reconcile exact physical-object identity for protected selected works before presenting as definitively same painting.",
+      "Preserve original 3★/4★/5★ user decisions independently from photo acquisition."
+    ]
+  }
+}
