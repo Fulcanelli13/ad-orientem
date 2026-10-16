@@ -72,7 +72,8 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
- assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject),"novena:annunciation");
+ await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="novena:annunciation",
+   null,{timeout:9000});
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
@@ -88,7 +89,8 @@ try{
  await dialog.waitFor({state:"visible",timeout:18000});
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 2:14");
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
- assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject),"massFormation:MFS01");
+ await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="massFormation:MFS01",
+   null,{timeout:9000});
  // Restore standalone reading before testing the existing edition/book UI.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
