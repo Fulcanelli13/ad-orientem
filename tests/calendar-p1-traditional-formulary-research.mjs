@@ -34,7 +34,7 @@ assert.deepEqual(law.commemorationCaps.map(c=>c.max),[1,1,1,1,2]);
 assert.equal(forms.forms.length,38);
 assert.equal(internalMissal.schema,"AO_P1_INTERNAL_MISSAL_NAVIGATION_CONTRACT_V1");
 assert.deepEqual(internalMissal.readerSlots,READER_PROPER_SLOTS,"App-owned reader must define prayer/section vocabulary");
-assert.equal(internalMissal.currentNavigationLimitation.includes("no verified programmatic"),true);
+assert.equal(internalMissal.currentNavigationLimitation.includes("not implemented"),true);
 assert.equal(internalMissal.oldMissalEvidencePolicy.publicLinkDestination,"INTERNAL_ONLY");
 assert.equal(internalMissal.contractValidation.currentDirectPrayerDeepLinksVerified,0);
 assert.equal(internalMissal.exampleInternalAnchors.length,6);
