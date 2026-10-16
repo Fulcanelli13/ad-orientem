@@ -473,7 +473,7 @@ export function createSexualEthicsRuntime(win=globalThis){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}
     node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");
     state.view="sections";state.familyId=null;state.dossierId=null;state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;visitedFrames.length=0;
-    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.open?.()});
+    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});
     return true;
   }
   function status(){return Object.freeze({version:SEXUAL_ETHICS_VERSION,installed:true,open:Boolean(root()),route:SEXUAL_ETHICS_ROUTE,view:state.view,sectionId:state.sectionId,questionId:state.questionId,questions:CSE_QUESTIONS.length,publicQuestions:CSE_PUBLIC_QUESTIONS.length,dossiers:CSE_CANONICAL_DOSSIERS.length,families:CSE_CANONICAL_FAMILIES.length,sections:CSE_SECTIONS.length,validation:CSE_VALIDATION});}
