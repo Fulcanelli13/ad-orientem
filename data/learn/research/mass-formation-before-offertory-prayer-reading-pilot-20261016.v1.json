@@ -1,0 +1,533 @@
+{
+  "schema": "ao-formation-before-offertory-prayer-reading-pilot-v1",
+  "scope": "FORMATION_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "profile": "ORDINARY_SUNG",
+  "study_level": "DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "guide_owner": "data/presentation/guide-registry.v1.json",
+  "curriculum_owner": "data/learn/mass-formation-campion.v1.json",
+  "editorial_note": "Text-anchored bilingual Formation draft. The 1962 Sung original is the authoritative text and ceremonial owner. Conditional rites and Proper readings are not resolved by this draft. The original Gospel announcement example mentions Matthew and needs dynamic selection. P0 owns historical/theological/scriptural certification; no publication until editorial review.",
+  "entries": [
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.01",
+      "block_id": "AO.SM.B001",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "In the Name of the Father, ✠",
+      "heading": {
+        "en": "In the name of the Trinity",
+        "fr": "Au nom de la Trinité"
+      },
+      "reading": {
+        "en": "The opening Sign of the Cross places the celebration under the name of the Father, the Son and the Holy Ghost. The spoken Amen completes this brief profession of faith.",
+        "fr": "Le signe de croix initial place la célébration sous le nom du Père, du Fils et du Saint-Esprit. L’Amen prononcé achève cette brève profession de foi."
+      },
+      "observe": {
+        "en": "This fixed invocation is distinct from the longer penitential dialogue that follows at the foot of the altar.",
+        "fr": "Cette invocation fixe se distingue du dialogue pénitentiel plus développé qui suit au bas de l’autel."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.02",
+      "block_id": "AO.SM.B002",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "I will go in unto the altar of God.",
+      "heading": {
+        "en": "Approaching the altar of God",
+        "fr": "S’approcher de l’autel de Dieu"
+      },
+      "reading": {
+        "en": "The priest announces his approach to God’s altar, and the response speaks of God who gives joy to youth. The brief exchange opens the prayers at the foot of the altar.",
+        "fr": "Le prêtre annonce son approche de l’autel de Dieu, et la réponse évoque Dieu qui réjouit la jeunesse. Ce bref échange ouvre les prières au bas de l’autel."
+      },
+      "observe": {
+        "en": "The verse and response form their own source block before the longer psalm; do not treat them as an Introit chant.",
+        "fr": "Le verset et la réponse forment un bloc distinct avant le psaume plus long ; il ne faut pas les confondre avec le chant d’entrée."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.03",
+      "block_id": "AO.SM.B003",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "Judge me, O God",
+      "heading": {
+        "en": "Psalm 42: longing for God’s altar",
+        "fr": "Psaume 42 : désir de l’autel de Dieu"
+      },
+      "reading": {
+        "en": "The psalm asks God for judgment, protection, light and truth, then returns to the hope of approaching His altar. It gives words to a soul moving from affliction to trust.",
+        "fr": "Le psaume demande à Dieu justice, protection, lumière et vérité, puis revient à l’espérance de s’approcher de son autel. Il fait passer l’âme de l’affliction à la confiance."
+      },
+      "observe": {
+        "en": "The source alternates priest and ministers. The psalm is omitted in certain liturgical circumstances; Formation must not claim it is always recited.",
+        "fr": "La source fait alterner prêtre et ministres. Le psaume est omis dans certaines circonstances liturgiques ; la Formation ne doit pas le présenter comme toujours récité."
+      },
+      "conditionality": "PSALM_42_MAY_BE_OMITTED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.04",
+      "block_id": "AO.SM.B004",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "Our help ✠ is in the Name of the Lord.",
+      "heading": {
+        "en": "Our help is in the Lord",
+        "fr": "Notre secours est dans le Seigneur"
+      },
+      "reading": {
+        "en": "Before confessing sins, the priest invokes the Lord’s name and receives the answer that He made heaven and earth. Trust in the Creator precedes the act of contrition.",
+        "fr": "Avant la confession des péchés, le prêtre invoque le nom du Seigneur et reçoit la réponse qu’Il a fait le ciel et la terre. La confiance dans le Créateur précède l’acte de contrition."
+      },
+      "observe": {
+        "en": "The cross indicated in this versicle is part of the existing published text; the gesture belongs to the Mass source, not to an independent Formation instruction.",
+        "fr": "La croix indiquée dans ce verset appartient au texte liturgique publié ; le geste relève de la source de la Messe et non d’une consigne autonome de Formation."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.05",
+      "block_id": "AO.SM.B005",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "I confess to almighty God",
+      "heading": {
+        "en": "The celebrant’s Confiteor",
+        "fr": "Le Confiteor du célébrant"
+      },
+      "reading": {
+        "en": "The celebrant admits sin before God and the named saints, striking his breast at the repeated confession of fault. He then asks for their intercession.",
+        "fr": "Le célébrant reconnaît ses péchés devant Dieu et les saints nommés, en se frappant la poitrine à la confession répétée de sa faute. Il demande ensuite leur intercession."
+      },
+      "observe": {
+        "en": "This first Confiteor belongs to the celebrant. Do not confuse it with the ministers’ corresponding Confiteor or the optional older Communion custom.",
+        "fr": "Ce premier Confiteor appartient au célébrant. Il ne faut le confondre ni avec celui des ministres ni avec l’ancien usage facultatif avant la communion."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.06",
+      "block_id": "AO.SM.B006",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "May Almighty God have mercy upon you",
+      "heading": {
+        "en": "Mercy requested for the celebrant",
+        "fr": "Miséricorde implorée pour le célébrant"
+      },
+      "reading": {
+        "en": "The ministers pray that almighty God have mercy on the celebrant, forgive his sins and bring him to everlasting life. The celebrant answers Amen.",
+        "fr": "Les ministres prient pour que Dieu tout-puissant fasse miséricorde au célébrant, lui pardonne ses péchés et le conduise à la vie éternelle. Le célébrant répond Amen."
+      },
+      "observe": {
+        "en": "The singular address to the celebrant distinguishes this response from the plural Misereatur later said for the ministers.",
+        "fr": "L’adresse au singulier distingue cette réponse du Misereatur au pluriel prononcé ensuite pour les ministres."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.07",
+      "block_id": "AO.SM.B007",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "I confess to Almighty God",
+      "heading": {
+        "en": "The ministers’ Confiteor",
+        "fr": "Le Confiteor des ministres"
+      },
+      "reading": {
+        "en": "The ministers in turn confess their sins, acknowledging personal fault and requesting the intercession of the Blessed Virgin and saints. The text mirrors the celebrant’s penitential prayer.",
+        "fr": "Les ministres confessent à leur tour leurs péchés, reconnaissent leur faute personnelle et demandent l’intercession de la Sainte Vierge et des saints. Le texte répond à la prière pénitentielle du célébrant."
+      },
+      "observe": {
+        "en": "The published block labels ministers or people, but this does not mean every attendee must recite it aloud at a Sung Mass.",
+        "fr": "Le bloc publié mentionne les ministres ou les fidèles, sans signifier que toute l’assemblée doive le réciter à haute voix à la Messe chantée."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.08",
+      "block_id": "AO.SM.B008",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "May Almighty God have mercy upon you, forgive you your sins",
+      "heading": {
+        "en": "Mercy asked for the ministers",
+        "fr": "Miséricorde demandée pour les ministres"
+      },
+      "reading": {
+        "en": "The celebrant asks that God forgive the sins of those who have confessed and bring them to everlasting life. The plural form answers the ministers’ Confiteor.",
+        "fr": "Le célébrant demande que Dieu pardonne les péchés de ceux qui viennent de se confesser et les conduise à la vie éternelle. Le pluriel répond au Confiteor des ministres."
+      },
+      "observe": {
+        "en": "The pronoun has changed from the earlier singular Misereatur; these two petitions should remain separate in a prayer-by-prayer guide.",
+        "fr": "Le pronom n’est plus celui du premier Misereatur au singulier ; ces deux demandes doivent rester distinctes dans le guide prière par prière."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.09",
+      "block_id": "AO.SM.B009",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "May the Almighty and merciful God grant us pardon",
+      "heading": {
+        "en": "Pardon and remission",
+        "fr": "Pardon et rémission des péchés"
+      },
+      "reading": {
+        "en": "The celebrant invokes the almighty and merciful Lord, asking for pardon, absolution and remission of sins. The prayer concludes with Amen.",
+        "fr": "Le célébrant invoque le Seigneur tout-puissant et miséricordieux pour demander pardon, absolution et rémission des péchés. La prière se termine par Amen."
+      },
+      "observe": {
+        "en": "Read these words as the liturgical petition actually printed here; do not present this formula as sacramental absolution in Confession.",
+        "fr": "Il faut lire ces paroles comme la supplication liturgique imprimée ici, sans assimiler cette formule à l’absolution sacramentelle de la confession."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.10",
+      "block_id": "AO.SM.B010",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "Thou wilt turn, O God",
+      "heading": {
+        "en": "Versicles before ascending the altar",
+        "fr": "Versets avant de monter à l’autel"
+      },
+      "reading": {
+        "en": "The dialogue asks God to revive His people, show mercy, grant salvation and hear the prayer offered. A final greeting and Let us pray lead toward the altar.",
+        "fr": "Le dialogue demande à Dieu de faire revivre son peuple, de manifester sa miséricorde, d’accorder le salut et d’écouter la prière. La salutation et le Prions final conduisent vers l’autel."
+      },
+      "observe": {
+        "en": "The several versicles and responses are one source block, yet they should remain visually distinguishable rather than reading as uninterrupted prose.",
+        "fr": "Les différents versets et réponses appartiennent à un même bloc, mais doivent rester visuellement distincts et non former une prose continue."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.11",
+      "block_id": "AO.SM.B011",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "Take away from us our iniquities",
+      "heading": {
+        "en": "Aufer a nobis: purification of the heart",
+        "fr": "Aufer a nobis : purification du cœur"
+      },
+      "reading": {
+        "en": "As he approaches the altar, the priest privately asks the Lord to take away iniquities so that he may enter the Holy of Holies with a pure mind.",
+        "fr": "En s’approchant de l’autel, le prêtre demande en privé au Seigneur d’ôter les iniquités, pour entrer dans le Saint des saints avec un esprit pur."
+      },
+      "observe": {
+        "en": "This is the priest’s quiet ascent prayer, not an audible congregational response. Its phrase Holy of Holies is already in the published text.",
+        "fr": "C’est la prière silencieuse du prêtre pendant sa montée à l’autel, non une réponse audible de l’assemblée. L’expression Saint des saints figure déjà dans le texte publié."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.12",
+      "block_id": "AO.SM.B012",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF01",
+      "text_anchor_en": "We beseech thee, O Lord",
+      "heading": {
+        "en": "Oramus te and the saints’ relics",
+        "fr": "Oramus te et les reliques des saints"
+      },
+      "reading": {
+        "en": "At the altar the priest asks pardon through the merits of the saints whose relics are present and of all the saints. The prayer joins reverence for the altar to a plea for forgiveness.",
+        "fr": "À l’autel, le prêtre demande le pardon par les mérites des saints dont les reliques sont présentes et de tous les saints. Cette prière unit la vénération de l’autel à une supplication de pardon."
+      },
+      "observe": {
+        "en": "The reference to relics is explicit in the prayer; any broader historical account of altar relics must come from P0’s certified evidence.",
+        "fr": "La mention des reliques est explicite ; toute explication historique plus large des reliques d’autel doit provenir des sources certifiées de P0."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.13",
+      "block_id": "AO.SM.B013",
+      "moment_id": "AO.CARD.001",
+      "stage_id": "MF02",
+      "text_anchor_en": "May you be blessed ✠",
+      "heading": {
+        "en": "Blessing the incense",
+        "fr": "La bénédiction de l’encens"
+      },
+      "reading": {
+        "en": "The priest blesses the incense with words addressed to Him in whose honour it will be burned. The accompanying source action describes incensing the Cross and altar.",
+        "fr": "Le prêtre bénit l’encens en invoquant Celui en l’honneur de qui il brûlera. L’action associée dans la source décrit l’encensement de la Croix et de l’autel."
+      },
+      "observe": {
+        "en": "This text belongs to an incensation branch, not to every form of Mass. Do not supply its gesture when no incense is used.",
+        "fr": "Ce texte appartient à une séquence d’encensement et non à toute forme de Messe. Ne pas attribuer ce geste aux célébrations sans encens."
+      },
+      "conditionality": "INCENSATION_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.14",
+      "block_id": "AO.SM.B015",
+      "moment_id": "AO.CARD.002",
+      "stage_id": "MF01",
+      "text_anchor_en": "Lord, have mercy.",
+      "heading": {
+        "en": "The ninefold Kyrie",
+        "fr": "Le Kyrie et ses neuf invocations"
+      },
+      "reading": {
+        "en": "The nine sung invocations alternate Lord, have mercy and Christ, have mercy, then return to Lord, have mercy. The repeated petition asks for divine mercy.",
+        "fr": "Les neuf invocations chantées alternent Seigneur, ayez pitié et Christ, ayez pitié, puis reviennent à Seigneur, ayez pitié. Cette répétition implore la miséricorde divine."
+      },
+      "observe": {
+        "en": "The published Sung source gives these lines to the schola. It should remain possible to follow the public chant without treating it as synchronized with the priest’s private pace.",
+        "fr": "La source chantée attribue ces lignes à la schola. On doit pouvoir suivre le chant public sans le synchroniser artificiellement avec la récitation du prêtre."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.15",
+      "block_id": "AO.SM.B016",
+      "moment_id": "AO.CARD.003",
+      "stage_id": "MF02",
+      "text_anchor_en": "Glory to God in the highest",
+      "heading": {
+        "en": "The Gloria’s movement of praise",
+        "fr": "La louange du Gloria"
+      },
+      "reading": {
+        "en": "The Gloria praises God, blesses and adores Him, gives thanks for His glory, and invokes Jesus Christ as the Lamb of God. Its closing words glorify the Holy Ghost with the Father and Son.",
+        "fr": "Le Gloria loue Dieu, Le bénit, L’adore, Le remercie pour sa gloire et invoque Jésus-Christ comme Agneau de Dieu. Sa conclusion glorifie le Saint-Esprit avec le Père et le Fils."
+      },
+      "observe": {
+        "en": "The celebrant’s intonation and schola continuation remain distinct in the Sung source. The Gloria is omitted when not appointed; phrase-linked gestures follow the actual sung words.",
+        "fr": "L’intonation du célébrant et la suite chantée par la schola restent distinctes. Le Gloria est omis lorsqu’il n’est pas prescrit ; les gestes liés aux mots suivent le texte effectivement chanté."
+      },
+      "conditionality": "GLORIA_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.16",
+      "block_id": "AO.SM.B017",
+      "moment_id": "AO.CARD.004",
+      "stage_id": "MF01",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "Greeting before the Collect",
+        "fr": "La salutation avant la Collecte"
+      },
+      "reading": {
+        "en": "Before the principal opening prayer the priest greets the assembly with The Lord be with you, and the response is And with thy spirit.",
+        "fr": "Avant la principale oraison d’ouverture, le prêtre salue l’assemblée par Le Seigneur soit avec vous, et reçoit la réponse Et avec votre esprit."
+      },
+      "observe": {
+        "en": "The same words recur elsewhere, but this particular greeting belongs to the Collect moment and must not be merged with later greetings.",
+        "fr": "Les mêmes mots reviennent ailleurs, mais cette salutation relève du moment de la Collecte et ne doit pas être fusionnée avec les suivantes."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.17",
+      "block_id": "AO.SM.B018",
+      "moment_id": "AO.CARD.004",
+      "stage_id": "MF01",
+      "text_anchor_en": "Let us pray.",
+      "heading": {
+        "en": "The invitation to pray before the Collect",
+        "fr": "L’invitation à la prière avant la Collecte"
+      },
+      "reading": {
+        "en": "The priest says Let us pray, introducing the Collect appointed for the celebration. This invitation is a fixed text, while the Collect itself varies.",
+        "fr": "Le prêtre dit Prions et introduit la Collecte prévue pour la célébration. Cette invitation est fixe, tandis que la Collecte elle-même varie."
+      },
+      "observe": {
+        "en": "The next source block is B019, a Mass-specific Collect set. Its wording and concluding responses cannot be supplied from this invitation.",
+        "fr": "Le bloc suivant B019 contient les Collectes propres à la Messe. Leur texte et leurs réponses finales ne peuvent être déduits de cette invitation."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.18",
+      "block_id": "AO.SM.B023",
+      "moment_id": "AO.CARD.007",
+      "stage_id": "MF01",
+      "text_anchor_en": "Cleanse my heart and my lips",
+      "heading": {
+        "en": "Munda cor meum: preparation for the Gospel",
+        "fr": "Munda cor meum : préparation à l’Évangile"
+      },
+      "reading": {
+        "en": "Before proclaiming the Gospel the priest privately asks God to cleanse his heart and lips, recalling the prophet Isaias, and prays to announce the Gospel worthily.",
+        "fr": "Avant de proclamer l’Évangile, le prêtre demande en privé à Dieu de purifier son cœur et ses lèvres, en rappelant le prophète Isaïe, afin d’annoncer dignement l’Évangile."
+      },
+      "observe": {
+        "en": "The existing source also records his movement toward the Gospel-side missal. The priest’s quiet prayer and visible movement are not congregational recitations.",
+        "fr": "La source décrit également son mouvement vers le missel du côté de l’Évangile. La prière silencieuse du prêtre et son déplacement ne sont pas des récitations de l’assemblée."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.19",
+      "block_id": "AO.SM.B024",
+      "moment_id": "AO.CARD.007",
+      "stage_id": "MF01",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "Greeting before the Gospel",
+        "fr": "La salutation avant l’Évangile"
+      },
+      "reading": {
+        "en": "The priest’s greeting and the response prepare the public proclamation of the Gospel. The familiar words mark a new liturgical moment, not a repetition without purpose.",
+        "fr": "La salutation du prêtre et sa réponse préparent la proclamation publique de l’Évangile. Ces paroles familières marquent un nouveau moment liturgique et non une répétition sans fonction."
+      },
+      "observe": {
+        "en": "Retain the priest’s verse and the response as separate speaking roles in their published order.",
+        "fr": "Conserver le verset du prêtre et la réponse comme deux rôles distincts, dans leur ordre publié."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.20",
+      "block_id": "AO.SM.B025",
+      "moment_id": "AO.CARD.007",
+      "stage_id": "MF01",
+      "text_anchor_en": "Continuation ✠ of the Holy Gospel according to Matthew.",
+      "heading": {
+        "en": "Announcing the holy Gospel",
+        "fr": "L’annonce du saint Évangile"
+      },
+      "reading": {
+        "en": "The priest announces the holy Gospel, and the response gives glory to the Lord. The small cross printed in the announcement is part of the liturgical source text.",
+        "fr": "Le prêtre annonce le saint Évangile, et la réponse rend gloire au Seigneur. La petite croix imprimée dans l’annonce appartient au texte liturgique."
+      },
+      "observe": {
+        "en": "The present source example names Matthew. The Evangelist and heading must instead be selected from the actual Gospel of the Mass, rather than permanently teaching Matthew.",
+        "fr": "L’exemple de la source actuelle nomme Matthieu. L’évangéliste et la formule doivent provenir de l’Évangile réellement proclamé, et non présenter Matthieu comme systématique."
+      },
+      "conditionality": "GOSPEL_HEADING_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.21",
+      "block_id": "AO.SM.B027",
+      "moment_id": "AO.CARD.009",
+      "stage_id": "MF02",
+      "text_anchor_en": "I believe",
+      "heading": {
+        "en": "The Credo and the Incarnation",
+        "fr": "Le Credo et l’Incarnation"
+      },
+      "reading": {
+        "en": "The Creed professes faith in one God, in Jesus Christ’s Incarnation, Passion and Resurrection, in the Holy Ghost, the Church, Baptism and life to come.",
+        "fr": "Le Credo professe la foi en un seul Dieu, en l’Incarnation, la Passion et la Résurrection de Jésus-Christ, au Saint-Esprit, à l’Église, au Baptême et à la vie future."
+      },
+      "observe": {
+        "en": "The priest begins while the schola continues; their recitations need not advance together. The gesture at Et incarnatus belongs to the sung phrase, and the Credo is not appointed at every Mass.",
+        "fr": "Le prêtre commence tandis que la schola poursuit ; leurs récitations ne doivent pas avancer ensemble. Le geste à Et incarnatus suit les paroles chantées, et le Credo n’est pas prévu à chaque Messe."
+      },
+      "conditionality": "CREDO_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.22",
+      "block_id": "AO.SM.B028",
+      "moment_id": "AO.CARD.010",
+      "stage_id": "MF01",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "Greeting before the Offertory",
+        "fr": "La salutation avant l’Offertoire"
+      },
+      "reading": {
+        "en": "The priest greets the assembly with The Lord be with you and receives the customary response. This exchange opens the transition toward the Offertory.",
+        "fr": "Le prêtre salue l’assemblée par Le Seigneur soit avec vous et reçoit la réponse habituelle. Cet échange ouvre la transition vers l’Offertoire."
+      },
+      "observe": {
+        "en": "This is the Offertory greeting, distinct from the Collect and Gospel greetings whose Latin words may be identical.",
+        "fr": "C’est la salutation de l’Offertoire, distincte de celles de la Collecte et de l’Évangile malgré des paroles latines identiques."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.23",
+      "block_id": "AO.SM.B029",
+      "moment_id": "AO.CARD.010",
+      "stage_id": "MF01",
+      "text_anchor_en": "Let us pray.",
+      "heading": {
+        "en": "Oremus before the Offertory chant",
+        "fr": "Prions avant le chant d’Offertoire"
+      },
+      "reading": {
+        "en": "The priest says Let us pray before the Offertory antiphon appointed for the day. The fixed invitation precedes a variable chant.",
+        "fr": "Le prêtre dit Prions avant l’antienne d’Offertoire prévue pour le jour. L’invitation fixe précède un chant variable."
+      },
+      "observe": {
+        "en": "The next block B030 contains the Mass-specific Offertory. Its text and any scriptural associations remain tied to the actual Proper.",
+        "fr": "Le bloc suivant B030 contient l’Offertoire propre de la Messe. Son texte et ses liens bibliques doivent provenir de ce Propre précis."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    }
+  ],
+  "withheld_variable_propers": [
+    {
+      "block_id": "AO.SM.B014",
+      "proper_slot": "INTROIT",
+      "reason": "The Introit belongs to the selected Mass Proper; its chant is not a universal fixed prayer."
+    },
+    {
+      "block_id": "AO.SM.B019",
+      "proper_slot": "COLLECT_SET",
+      "reason": "The Collect, any commemorations and responses must come from the selected Mass and applicable rubrics."
+    },
+    {
+      "block_id": "AO.SM.B020",
+      "proper_slot": "EPISTLE_OR_LESSON",
+      "reason": "The Epistle or Lesson varies with the Mass and sometimes comprises multiple readings; keep published order."
+    },
+    {
+      "block_id": "AO.SM.B021",
+      "proper_slot": "GRADUAL",
+      "reason": "The Gradual is proper to the Mass and must not be given a generic text."
+    },
+    {
+      "block_id": "AO.SM.B022",
+      "proper_slot": "ALLELUIA_TRACT_SEQUENCE",
+      "reason": "Alleluia, Tract and any Sequence depend on the day and season; do not assume they all occur."
+    },
+    {
+      "block_id": "AO.SM.B026",
+      "proper_slot": "GOSPEL",
+      "reason": "The proclaimed Gospel and evangelist announcement follow the selected liturgical readings; do not hardcode Matthew."
+    },
+    {
+      "block_id": "AO.SM.B030",
+      "proper_slot": "OFFERTORY",
+      "reason": "The Offertory antiphon belongs to the selected Mass Proper, not to the fixed invitation preceding it."
+    }
+  ]
+}
