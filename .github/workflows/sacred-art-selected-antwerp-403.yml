@@ -1,0 +1,30 @@
+name: Sacred Art Exact Selected Van Dyck KMSKA 403
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-antwerp-selected-403-identity.v1.json
+      - tools/calendar/acquire-selected-antwerp-403.py
+      - .github/workflows/sacred-art-selected-antwerp-403.yml
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - run: |
+          python -m py_compile tools/calendar/acquire-selected-antwerp-403.py
+          python tools/calendar/acquire-selected-antwerp-403.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-selected-vandyck-antwerp-403-reproduction
+          path: artifacts/sacred-art-antwerp-403-exact-selected/
+          retention-days: 30
+          if-no-files-found: warn
