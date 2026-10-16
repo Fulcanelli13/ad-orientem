@@ -280,8 +280,17 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   async function open(opts={}){
     entryOrigin=captureObservedModuleOrigin(win,"learn");stageFromList=false;stageFromMoment=false;momentsFromList=false;
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
-    state.explorerReturn=opts.explorerReturn&&typeof opts.explorerReturn==="object"?
-      {momentKey:String(opts.explorerReturn.momentKey||""),blockId:opts.explorerReturn.blockId||null}:null;
+    // A visited Explorer is the only permitted origin of this return token.
+    // Carry presentation position only; no Mass ritual/card state is changed.
+    const explorer=opts.explorerReturn;
+    const validPos=n=>Number.isFinite(n)&&n>=0?Math.min(n,100000):0;
+    state.explorerReturn=explorer&&typeof explorer==="object"?
+      {momentKey:String(explorer.momentKey||""),blockId:explorer.blockId||null,
+        indexView:explorer.indexView==="list"?"list":"map",
+        indexScrollTop:validPos(explorer.indexScrollTop),
+        indexFocusKey:/^(PRE\\.ASPERGES|POST\\.MASS|AO\\.CARD\\.0(?:[0-2][0-9]|30))$/.test(String(explorer.indexFocusKey||""))?
+          explorer.indexFocusKey:null,
+        momentScrollTop:validPos(explorer.momentScrollTop)}:null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
       return false;
