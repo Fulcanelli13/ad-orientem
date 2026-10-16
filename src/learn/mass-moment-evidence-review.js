@@ -81,8 +81,26 @@ const name=Object.freeze({
  QUESTION_SCOPE:["Check interpretation","Vérifier l'interprétation"],
  DO_NOT_USE:["Do not use","Ne pas utiliser"]
 });
+export function massMomentEvidenceSummaryHtml(catalog,{french=false}={}){
+ validateMassMomentEvidenceCatalog(catalog);
+ const moments=catalog.census.guideOwnersWithCandidates;
+ const count=catalog.census.claims;
+ const title=tr(french,"Historical evidence · editorial progress","Sources historiques · état de révision");
+ return '<section class="aoMFEvidenceSummary" data-ao-mf-evidence-summary>'+
+  '<h2>'+esc(title)+'</h2>'+
+  '<p>'+esc(tr(french,"Source candidates linked to Mass moments","Références candidates liées aux étapes"))+
+  ': <strong>'+moments+' / 32</strong></p>'+
+  '<progress value="'+moments+'" max="32">'+moments+' / 32</progress>'+
+  '<p>'+esc(tr(french,"Historical quotations cleared for publication","Citations historiques autorisées pour publication"))+
+  ': <strong>0 / '+count+'</strong></p>'+
+  '<progress value="0" max="'+count+'">0 / '+count+'</progress>'+
+  '<p class="aoMFEvidenceNote">'+esc(tr(french,
+   "Research coverage is not release readiness. Exported decisions prioritize verification only.",
+   "La couverture documentaire ne signifie pas une autorisation de publication."))+'</p></section>';
+}
 export function massMomentEvidenceReviewCss(){
  return [
+  ".aoMFEvidenceSummary{padding:12px 0 22px;border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.15));margin:0 0 14px}.aoMFEvidenceSummary h2{font:500 1.08rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMFEvidenceSummary p{font:.78rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoMFEvidenceSummary progress{display:block;width:100%;height:8px;accent-color:var(--liturgical,#c9ad78)}",
   ".aoMFEvidence{margin:25px 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.14));padding:17px 0;font:400 .88rem/1.55 var(--ao-font-ui,system-ui,sans-serif)}",
   ".aoMFEvidence>summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font-weight:600}",
   ".aoMFEvidenceNote{color:var(--ao-text-muted,var(--muted,#9ba5b1));font-size:.77rem;line-height:1.6}",
