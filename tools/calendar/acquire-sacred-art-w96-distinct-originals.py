@@ -31,7 +31,7 @@ def acquire(row):
     (OUT/photo).write_bytes(original);(OUT/thumbnail).write_bytes(preview.getvalue())
     return dict(categoryIndex=row["categoryIndex"],distinctArtworkId=row["distinctArtworkId"],
         title=row["painting"],artist=row["artist"],museum=row["museum"],accession=row["accession"],
-        sourceUrl=url,sourcePage=rights["sourcePage"],licenseMetadata=rights["license"],
+        sourceUrl=url,sourcePage=rights["sourcePage"],licenseMetadata=rights["license"],fileSpecificPhotoTerms=row.get("photoRights", rights["license"]),photoAttribution=row.get("photographer"),
         dimensions=[w,h],sha256=sha,sourceFile=photo,previewFile=thumbnail,
         status="DISTINCT_ORIGINAL_IMAGE_ACQUIRED_COMPARISON_ONLY",
         identityDoesNotInheritHistoricalArtworkRating=True,
