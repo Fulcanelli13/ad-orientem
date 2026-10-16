@@ -1,0 +1,30 @@
+name: Canonical Pages source and service-worker byte parity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/canonical-pages-live-parity.mjs"
+      - ".github/workflows/canonical-pages-live-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare-public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: node --check tests/canonical-pages-live-parity.mjs
+      - name: Fetch exact public Pages bytes with cache bypass
+        run: node tests/canonical-pages-live-parity.mjs
+      - name: Save evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-pages-live-source-parity
+          path: test-output/canonical-pages-parity/report.json
+          if-no-files-found: error
