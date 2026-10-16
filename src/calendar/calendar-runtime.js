@@ -703,7 +703,7 @@ function daySurface(selected,r){
       <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
-      ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémoraisons à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORAISONS"))}</small><h3>${esc(L("Commemorations","Commémoraisons"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
+      ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémorations à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORATIONS"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
       ${calendarScriptureControls(selected,r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
       <div class="aoCalV2Documentation">
