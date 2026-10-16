@@ -1,0 +1,3597 @@
+{
+  "schema": "AO_SACRED_ART_HISTORIA_CROSS_MODULE_ART_GAP_TRIAGE_V1",
+  "date": "2026-10-16",
+  "sourceAuthority": {
+    "needs": {
+      "path": "data/calendar/sacred-art-needs-cross-module-master-20261016.v3.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "849c5e2ee860cb48f37a373404defdc8972d45f7"
+    },
+    "decisions": {
+      "path": "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "67c6b75feb77c958b43c7bbf9430d0569f85640b"
+    },
+    "bible": {
+      "path": "data/calendar/sacred-art-bible-tiered-execution-20261013.v1.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "178b174a2afe49f9656a963a93fbd176dd651a6a"
+    },
+    "bridge": {
+      "path": "data/calendar/sacred-art-theatre-mass-genealogy-183-scene-demand-20261013.v1.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "8ab0c28f96e5aad4295bb7e8a5941b5ce51d9298"
+    },
+    "rejections": {
+      "path": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "33f5fb680164469d96e9c2e2369ea6ab5286e842"
+    },
+    "ledger": {
+      "path": "data/calendar/sacred-art-review-uploads/20261016-mobile-first-acquisition-consolidated.v1.json",
+      "ref": "platform/885-sacred-art-candidates",
+      "gitBlobSha": "1dcbf3912f05cd902d4b894123187e5b68867103"
+    },
+    "hist0": {
+      "path": "data/explore/historia-salutis-p0-master-crosswalk.v1.json",
+      "ref": "research/historia-salutis-p0-matrix-20261016",
+      "gitBlobSha": "704f490ca2af370bbaf4cb418ed787537b662060"
+    },
+    "hist2": {
+      "path": "data/explore/historia-salutis-p2-covenant-character-source-queue.v1.json",
+      "ref": "research/historia-salutis-p0-matrix-20261016",
+      "gitBlobSha": "523fc81bccf35b59d6440ffbe729b76c6a9cc367"
+    }
+  },
+  "readingRule": "Reference equality is a passage-level opportunity, NOT proof that an artwork depicts that precise instant, original is correct, image is acquired, rating suitable, or license cleared.",
+  "status": "SOURCE_LINKED_RESEARCH_ONLY_NO_NEW_ART_SELECTION",
+  "counts": {
+    "arcs": 12,
+    "covenantStages": 7,
+    "proposedPersonStories": 44,
+    "biblicalArtSubjects": 111,
+    "existingBibleArtResearchRows": 83,
+    "theatreScenes": 183,
+    "scenesWithEarlierArtTargets": 20,
+    "exactHistoriaReferenceMatchedBibleSubjectRowsAcrossArcs": 80,
+    "distinctBibleSubjectIdsMatchedAcrossArcs": 80,
+    "directReferenceMatchedStoryBibleArtSubjects": 26,
+    "storyDisposition": {
+      "ACQUIRED_BIBLE_RESEARCH_IMAGE_RECORD": 1,
+      "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH": 9,
+      "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK": 7,
+      "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE": 22,
+      "BRIDGE_SCENE_ART_CANDIDATE": 2,
+      "IDENTIFIED_BIBLE_ART_ORIGINAL_LEAD": 3
+    },
+    "arcDisposition": {
+      "EXISTING_ART_REFERENCE_ANCHORS_PRESENT": 9,
+      "BIBLE_ART_RESEARCH_SUBJECTS_PRESENT": 2,
+      "NO_EXACT_REFERENCE_ART_ANCHOR_DOCUMENTED": 1
+    },
+    "physicalArtworkGapsCertified": 0,
+    "artReleaseApprovals": 0
+  },
+  "priorityQueue": [
+    {
+      "priority": "P0",
+      "action": "Reconcile known chosen physical works and 0–5 ratings before any reuse; never substitute Rubens workshop picture by title",
+      "targets": [
+        "biblical:passage:genesis-4-1-16",
+        "biblical:passage:genesis-14-18-20"
+      ],
+      "source": "October 12 selected biblical subjects"
+    },
+    {
+      "priority": "P0",
+      "action": "Reuse flagship Gospel/Rosary/Calendar artwork where same scene reference and depiction are confirmed; maintain passage/subepisode distinction",
+      "targets": [
+        "historia-arc:incarnation",
+        "historia-arc:paschal-mystery",
+        "historia-arc:apostolic-church"
+      ],
+      "source": "Existing 20 theatre scenes with art placements"
+    },
+    {
+      "priority": "P1",
+      "action": "Identify signature narrative images for sparse Old Testament arc stories: Ruth, David and prophets, judges and deuterocanonical witnesses. Use existing images where strong, don't require one per event",
+      "targets": [
+        "historia-arc:land-first-kings",
+        "historia-arc:davidic-kingdom",
+        "historia-arc:prophets-exile-return"
+      ],
+      "source": "44 proposed Historia character stories"
+    },
+    {
+      "priority": "P1",
+      "action": "Audit covenant-stage imagery via linked passages and existing painting selections; no independent seven-image series",
+      "targets": [
+        "cv:first-promise",
+        "cv:noah",
+        "cv:abraham",
+        "cv:sinai",
+        "cv:david",
+        "cv:new-covenant-promised",
+        "cv:new-covenant-christ"
+      ],
+      "source": "PR 1310 covenant source matrix"
+    },
+    {
+      "priority": "P2",
+      "action": "Leave character stories with no direct artwork as text/map/genealogy where art would not improve understanding",
+      "targets": [
+        "person-story-candidate:ruth",
+        "person-story-candidate:deborah",
+        "person-story-candidate:gideon",
+        "person-story-candidate:samson",
+        "person-story-candidate:hannah",
+        "person-story-candidate:samuel",
+        "person-story-candidate:saul",
+        "person-story-candidate:david-anointing",
+        "person-story-candidate:david-jonathan",
+        "person-story-candidate:david-king",
+        "person-story-candidate:david-penitence",
+        "person-story-candidate:solomon",
+        "person-story-candidate:elijah",
+        "person-story-candidate:elisha",
+        "person-story-candidate:jeremiah",
+        "person-story-candidate:ezekiel",
+        "person-story-candidate:tobit-tobias",
+        "person-story-candidate:seven-martyrs",
+        "person-story-candidate:judas-maccabeus",
+        "person-story-candidate:john-baptist",
+        "person-story-candidate:john-disciple",
+        "person-story-candidate:thomas"
+      ],
+      "source": "Source-only story and Bible art joins"
+    }
+  ],
+  "restrictions": [
+    "Do not promote indirect title/saint-name matches",
+    "Keep independently rejected originals and banned artists excluded",
+    "Do not rewrite 151 original Atlas IDs or merge HISTORIA PR #1310",
+    "Keep source images separate from photo usage rights",
+    "One canonical artwork can serve many contexts only with credible actual depiction links",
+    "No image quota per covenant, character, 183-scene group or Scripture verse"
+  ],
+  "arcs": [
+    {
+      "arcId": "historia-arc:creation-first-promise",
+      "name": "Creation, Fall and the First Promise",
+      "order": 1,
+      "canonicalEventCount": 3,
+      "covenantIds": [
+        "cv:first-promise"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:adam-eve",
+        "person-story-candidate:cain-abel"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-OR01",
+          "title": "Creation",
+          "reference": "Genesis 1:1–31",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+          "selectedArtworkTitle": "Garden of Eden with the Fall",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-OR02",
+          "title": "The Fall",
+          "reference": "Genesis 3:1–24",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "cma-150046",
+            "met-458971"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-OR03",
+          "title": "Cain and Abel",
+          "reference": "Genesis 4:1–16",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-eter-aul-ubens-ain-and-bel",
+          "selectedArtworkTitle": "Cain and Abel",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 2,
+      "existingImageSourceResearchSubjectCount": 1,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:noah-nations",
+      "name": "Noah, Covenant and Nations",
+      "order": 2,
+      "canonicalEventCount": 3,
+      "covenantIds": [
+        "cv:noah"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:noah"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-OR04",
+          "title": "The Flood",
+          "reference": "Genesis 7:1–24",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "louvre-inv7306-poussin-winter"
+          ],
+          "unverifiedResearchOptionIds": [
+            "ART-icolas-oussin-he-eluge"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-OR05",
+          "title": "God’s Covenant with Noah",
+          "reference": "Genesis 9:8–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-OR06",
+          "title": "Tower of Babel",
+          "reference": "Genesis 11:1–9",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+          "selectedArtworkTitle": "Tower of Babel",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 1,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:abraham-patriarchs",
+      "name": "Abraham and the Patriarchs",
+      "order": 3,
+      "canonicalEventCount": 12,
+      "covenantIds": [
+        "cv:abraham"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:isaac",
+        "person-story-candidate:jacob",
+        "person-story-candidate:joseph-son-jacob"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-PA01",
+          "title": "Calling of Abram",
+          "reference": "Genesis 12:1–9",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA03",
+          "title": "Melchizedek Blesses Abram",
+          "reference": "Genesis 14:18–20",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+          "selectedArtworkTitle": "Meeting of Abraham and Melchizedek",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA04",
+          "title": "Covenant with Abraham",
+          "reference": "Genesis 15:1–21",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA02",
+          "title": "Abraham and Three Angels at Mamre",
+          "reference": "Genesis 18:1–8",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+          "selectedArtworkTitle": "Abraham and the Three Angels",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA05",
+          "title": "Birth of Isaac",
+          "reference": "Genesis 21:1–7",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA06",
+          "title": "Sacrifice of Isaac",
+          "reference": "Genesis 22:1–19",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-aravaggio-he-acrifice-of-saac",
+          "selectedArtworkTitle": "The Sacrifice of Isaac",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA07",
+          "title": "Jacob’s Dream",
+          "reference": "Genesis 28:10–22",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-os-de-ibera-acob-s-ream",
+          "selectedArtworkTitle": "Jacob’s Dream",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA08",
+          "title": "Jacob Wrestles with the Angel",
+          "reference": "Genesis 32:24–32",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+          "selectedArtworkTitle": "Jacob Wrestling with the Angel",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA09",
+          "title": "Joseph Is Sold",
+          "reference": "Genesis 37:18–36",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ontormo-oseph-old-to-otiphar"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA10",
+          "title": "Joseph Governs Egypt",
+          "reference": "Genesis 41:37–45",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ontormo-oseph-with-haraoh"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA12",
+          "title": "Israel Settles in Egypt",
+          "reference": "Genesis 46:1–7",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ontormo-oseph-with-acob-in-gypt"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 5,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:exodus-sinai",
+      "name": "The Exodus and Sinai Covenant",
+      "order": 4,
+      "canonicalEventCount": 11,
+      "covenantIds": [
+        "cv:sinai"
+      ],
+      "associatedCharacterStoryIds": [],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-EX01",
+          "title": "Birth of Moses",
+          "reference": "Exodus 2:1–10",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-bastien-ourdon-he-inding-of-oses",
+          "selectedArtworkTitle": "The Finding of Moses",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX02",
+          "title": "The Burning Bush",
+          "reference": "Exodus 3:1–15",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-omenico-etti-oses-before-the-urning-ush",
+          "selectedArtworkTitle": "Moses before the Burning Bush",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX03",
+          "title": "The Plagues Begin",
+          "reference": "Exodus 7:14–25",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX04",
+          "title": "First Passover",
+          "reference": "Exodus 12:1–28",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX05",
+          "title": "Departure from Egypt",
+          "reference": "Exodus 12:31–42",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX06",
+          "title": "Crossing of the Red Sea",
+          "reference": "Exodus 14:15–31",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261012-poussin-crossing-red-sea"
+          ],
+          "unverifiedResearchOptionIds": [
+            "ART-icolas-oussin-rossing-the-ed-ea"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX07",
+          "title": "Manna in the Wilderness",
+          "reference": "Exodus 16:1–36",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-icolas-oussin-he-sraelites-athering-anna"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX10",
+          "title": "The Golden Calf",
+          "reference": "Exodus 32:1–35",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261012-poussin-adoration-golden-calf"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX11",
+          "title": "The Tabernacle",
+          "reference": "Exodus 40:1–38",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 2,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:land-first-kings",
+      "name": "The Promised Land and First Kings",
+      "order": 5,
+      "canonicalEventCount": 6,
+      "covenantIds": [
+        "cv:sinai"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:ruth",
+        "person-story-candidate:rahab",
+        "person-story-candidate:deborah",
+        "person-story-candidate:gideon",
+        "person-story-candidate:samson",
+        "person-story-candidate:hannah",
+        "person-story-candidate:samuel",
+        "person-story-candidate:saul",
+        "person-story-candidate:david-anointing",
+        "person-story-candidate:david-jonathan"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-EX13",
+          "title": "Moses on Mount Nebo",
+          "reference": "Deuteronomy 34:1–6",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX14",
+          "title": "Joshua Crosses the Jordan",
+          "reference": "Joshua 3:1–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-EX15",
+          "title": "Fall of Jericho",
+          "reference": "Joshua 6:1–27",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 0,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "BIBLE_ART_RESEARCH_SUBJECTS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:davidic-kingdom",
+      "name": "The Davidic Kingdom",
+      "order": 6,
+      "canonicalEventCount": 4,
+      "covenantIds": [
+        "cv:david"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:david-king",
+        "person-story-candidate:david-penitence",
+        "person-story-candidate:solomon"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 0,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "NO_EXACT_REFERENCE_ART_ANCHOR_DOCUMENTED",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:prophets-exile-return",
+      "name": "Prophets, Exile and Return",
+      "order": 7,
+      "canonicalEventCount": 27,
+      "covenantIds": [
+        "cv:new-covenant-promised"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:elijah",
+        "person-story-candidate:elisha",
+        "person-story-candidate:isaiah",
+        "person-story-candidate:jeremiah",
+        "person-story-candidate:ezekiel",
+        "person-story-candidate:tobit-tobias",
+        "person-story-candidate:judith",
+        "person-story-candidate:esther",
+        "person-story-candidate:daniel",
+        "person-story-candidate:susanna",
+        "person-story-candidate:three-youths",
+        "person-story-candidate:seven-martyrs",
+        "person-story-candidate:judas-maccabeus"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-IS09",
+          "title": "Isaiah’s Calling",
+          "reference": "Isaiah 6:1–13",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-IS10",
+          "title": "Jeremiah Warns Jerusalem",
+          "reference": "Jeremiah 7:1–15",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL02",
+          "title": "Tobit at Nineveh",
+          "reference": "Tobit 1:10",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-erugino-aphael-and-obias"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL04",
+          "title": "Daniel in Babylon",
+          "reference": "Daniel 1:1–21",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-eter-aul-ubens-aniel-in-the-ions-en"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL06",
+          "title": "Ezekiel’s Vision",
+          "reference": "Ezekiel 1:1–28",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL07",
+          "title": "Judith and Holofernes",
+          "reference": "Judith 13:1–20",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-acopo-intoretto-udith-and-olofernes",
+          "selectedArtworkTitle": "Judith and Holofernes",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL08",
+          "title": "Esther Intercedes",
+          "reference": "Esther 4:1–17",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ebastiano-icci-sther-before-hasuerus",
+          "selectedArtworkTitle": "Esther before Ahasuerus",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL11",
+          "title": "Return from Exile",
+          "reference": "Ezra 1:1–11",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL12",
+          "title": "Rebuilding of the Temple",
+          "reference": "Ezra 6:13–22",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL10",
+          "title": "Song of the Three Youths",
+          "reference": "Daniel 3:24–90",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-lemish-school-hree-ouths-in-the-iery-urnace"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-XL09",
+          "title": "Susanna Vindicated",
+          "reference": "Daniel 13:1–64",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uido-eni-usannah-and-the-lders",
+          "selectedArtworkTitle": "Susannah and the Elders",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 3,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:incarnation",
+      "name": "The Incarnation and Holy Family",
+      "order": 8,
+      "canonicalEventCount": 12,
+      "covenantIds": [
+        "cv:new-covenant-christ"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:mary",
+        "person-story-candidate:joseph-husband"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-G02",
+          "title": "Joseph’s Dream",
+          "reference": "Matthew 1:18–25",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "selectedArtworkTitle": "The Dream of Saint Joseph",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G01",
+          "title": "Adoration of the Magi",
+          "reference": "Matthew 2:1–12",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+          "selectedArtworkTitle": "Adoration of the Magi",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G03",
+          "title": "Flight into Egypt",
+          "reference": "Matthew 2:13–15",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "met-437849",
+            "met-816629",
+            "cma-137195",
+            "cma-143138"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [
+        {
+          "sceneKey": "biblical:scene:christ:057",
+          "sceneTitle": "The Annunciation",
+          "matchedReference": "Luke 1:26–38",
+          "artworkId": "met-438724",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.joy1",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:059",
+          "sceneTitle": "The Visitation",
+          "matchedReference": "Luke 1:39–56",
+          "artworkId": "nga-505",
+          "artist": "Piero di Cosimo",
+          "title": "The Visitation with Saint Nicholas and Saint Anthony Abbot",
+          "sceneArtRelation": "COMPOSITE_ICONOGRAPHY_HOLD",
+          "relatedArtNeedId": "rosary.joy2",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:061",
+          "sceneTitle": "The Nativity",
+          "matchedReference": "Luke 2:1–20",
+          "artworkId": "cma-143784",
+          "artist": "Carlo Dolci",
+          "title": "Adoration of the Shepherds",
+          "sceneArtRelation": "DEPICTS_SUBEPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.joy3",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:064",
+          "sceneTitle": "The Presentation",
+          "matchedReference": "Luke 2:22–38",
+          "artworkId": "nga-46127",
+          "artist": "Master of the Prado \"Adoration of the Magi\"",
+          "title": "The Presentation in the Temple",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.joy4",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:063",
+          "sceneTitle": "The Magi come to adore",
+          "matchedReference": "Matthew 2:1–12",
+          "artworkId": "met-436984",
+          "artist": "Quinten Massys",
+          "title": "The Adoration of the Magi",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "calendar.epiphany",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:181",
+          "sceneTitle": "The massacre of the Holy Innocents",
+          "matchedReference": "Matthew 2:16–18",
+          "artworkId": "kress-k1782",
+          "artist": "Follower of Raphael",
+          "title": "The Massacre of the Innocents",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "calendar.holy-innocents",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:068",
+          "sceneTitle": "Jesus found in the Temple",
+          "matchedReference": "Luke 2:41–52",
+          "artworkId": "nga-41656",
+          "artist": "Master of the Catholic Kings",
+          "title": "Christ among the Doctors",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.joy5",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        }
+      ],
+      "selectedArtSubjectCount": 2,
+      "existingImageSourceResearchSubjectCount": 1,
+      "sceneArtLeadCount": 7,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:public-ministry",
+      "name": "The Public Ministry of Christ",
+      "order": 9,
+      "canonicalEventCount": 31,
+      "covenantIds": [
+        "cv:new-covenant-christ"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:john-baptist",
+        "person-story-candidate:peter",
+        "person-story-candidate:john-disciple",
+        "person-story-candidate:martha"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-G04",
+          "title": "Baptism of Christ",
+          "reference": "Matthew 3:13–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "cma-127746",
+            "met-437457",
+            "met-435755"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-eter-aul-ubens-he-aptism-of-hrist"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G05",
+          "title": "Temptation of Christ",
+          "reference": "Matthew 4:1–11",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "nga-50726"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G07",
+          "title": "Wedding at Cana",
+          "reference": "John 2:1–11",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "met-436801"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-aolo-eronese-edding-at-ana"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G09",
+          "title": "Healing the Paralytic",
+          "reference": "Mark 2:1–12",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "nga-12205"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G12",
+          "title": "Calming the Storm",
+          "reference": "Mark 4:35–41",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261012-delacroix-christ-asleep-tempest"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G13",
+          "title": "Walking on Water",
+          "reference": "Matthew 14:22–33",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "nga-30616-vellert-peter-walking-water"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G08",
+          "title": "Samaritan Woman",
+          "reference": "John 4:4–26",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "met-702752",
+            "met-437403",
+            "nga-42494"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-uccio-di-uoninsegna-hrist-and-the-amaritan-oman"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G11",
+          "title": "Raising the Widow’s Son at Nain",
+          "reference": "Luke 7:11–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "saint-roch-le-sueur-nain-1640"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G14",
+          "title": "Multiplication of Loaves",
+          "reference": "John 6:1–15",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+          "selectedArtworkTitle": "Miracle of Loaves and Fishes",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G20",
+          "title": "Peter’s Confession",
+          "reference": "Matthew 16:13–20",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "vatican-sistine-perugino-keys"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G27",
+          "title": "Healing of the Man Born Blind",
+          "reference": "John 9:1–12",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+          "selectedArtworkTitle": "Healing of the Man Born Blind",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G16",
+          "title": "Raising of Lazarus",
+          "reference": "John 11:1–44",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ean-ouvenet-aising-of-azarus",
+          "selectedArtworkTitle": "Raising of Lazarus",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G19",
+          "title": "Christ and Martha and Mary",
+          "reference": "Luke 10:38–42",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261012-beuckelaer-four-elements-fire",
+            "ART-research-20261013-velazquez-martha-mary-ng1375"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 3,
+      "existingImageSourceResearchSubjectCount": 5,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:paschal-mystery",
+      "name": "The New Covenant: Passion and Resurrection",
+      "order": 10,
+      "canonicalEventCount": 17,
+      "covenantIds": [
+        "cv:new-covenant-christ"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:mary-magdalene",
+        "person-story-candidate:thomas"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-G26",
+          "title": "Washing of the Feet",
+          "reference": "John 13:1–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261013-tintoretto-prado-washing-p002824"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G22",
+          "title": "Road to Emmaus",
+          "reference": "Luke 24:13–35",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "met-437871",
+            "cma-112626"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ltobello-elone-he-oad-to-mmaus"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [
+        {
+          "sceneKey": "biblical:scene:christ:123",
+          "sceneTitle": "Gethsemane",
+          "matchedReference": "Matthew 26:36–46",
+          "artworkId": "met-442488",
+          "artist": "Nicolas Poussin",
+          "title": "The Agony in the Garden",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.sor1",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:127",
+          "sceneTitle": "The scourging and thorns",
+          "matchedReference": "John 19:1–16",
+          "artworkId": "met-438466",
+          "artist": "Master of the Berswordt Altar",
+          "title": "The Flagellation",
+          "sceneArtRelation": "DEPICTS_SUBEPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.sor2",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:127",
+          "sceneTitle": "The scourging and thorns",
+          "matchedReference": "John 19:1–16",
+          "artworkId": "met-436721",
+          "artist": "Adriaen Isenbrant",
+          "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+          "sceneArtRelation": "COMPOSITE_ICONOGRAPHY_HOLD",
+          "relatedArtNeedId": "rosary.sor3",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:130",
+          "sceneTitle": "The burial of Christ",
+          "matchedReference": "John 19:38–42",
+          "artworkId": "met-437156",
+          "artist": "Moretto da Brescia",
+          "title": "The Entombment",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "calendar.holy-saturday",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:130",
+          "sceneTitle": "The burial of Christ",
+          "matchedReference": "John 19:38–42",
+          "artworkId": "met-437342",
+          "artist": "Scipione Pulzone",
+          "title": "The Lamentation",
+          "sceneArtRelation": "DIFFERENT_MOMENT_HOLD",
+          "relatedArtNeedId": "calendar.our-lady-sorrows",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:131",
+          "sceneTitle": "The empty tomb and Mary Magdalene",
+          "matchedReference": "John 20:1–18",
+          "artworkId": "cma-78982",
+          "artist": "Johann König",
+          "title": "The Resurrection of Christ",
+          "sceneArtRelation": "DIFFERENT_MOMENT_HOLD",
+          "relatedArtNeedId": "rosary.glo1",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        },
+        {
+          "sceneKey": "biblical:scene:christ:137",
+          "sceneTitle": "The Ascension",
+          "matchedReference": "Acts 1:6–12",
+          "artworkId": "met-436835",
+          "artist": "Hans Süss von Kulmbach",
+          "title": "The Ascension of Christ",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.glo2",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        }
+      ],
+      "selectedArtSubjectCount": 0,
+      "existingImageSourceResearchSubjectCount": 1,
+      "sceneArtLeadCount": 7,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:apostolic-church",
+      "name": "Pentecost and the Apostolic Church",
+      "order": 11,
+      "canonicalEventCount": 20,
+      "covenantIds": [
+        "cv:new-covenant-christ"
+      ],
+      "associatedCharacterStoryIds": [
+        "person-story-candidate:stephen",
+        "person-story-candidate:philip-evangelist",
+        "person-story-candidate:cornelius",
+        "person-story-candidate:lydia"
+      ],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-A01",
+          "title": "Pentecost",
+          "reference": "Acts 2:1–41",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ean-estout-entecost",
+          "selectedArtworkTitle": "Pentecost",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A02",
+          "title": "Peter Heals the Lame Man",
+          "reference": "Acts 3:1–10",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261013-poussin-met437330-healing-lame"
+          ],
+          "unverifiedResearchOptionIds": [
+            "ART-aphael-and-workshop-eter-ealing-the-ame-an-tapestry-cartoon"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A03",
+          "title": "Martyrdom of Stephen",
+          "reference": "Acts 7:54–60",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "selectedArtworkTitle": "Martyrdom of Saint Stephen",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A04",
+          "title": "Philip Baptises the Ethiopian",
+          "reference": "Acts 8:26–40",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "rijks-rp-p-1961-1043-eunuch-rembrandt"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A05",
+          "title": "Conversion of Saul",
+          "reference": "Acts 9:1–22",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+          "selectedArtworkTitle": "Conversion of Saint Paul",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A06",
+          "title": "Peter Raises Tabitha",
+          "reference": "Acts 9:36–43",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ng4573-brunswick-raising-tabitha"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A07",
+          "title": "Conversion of Cornelius",
+          "reference": "Acts 10:1–48",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "nga-54321-galle-cornelius-peter"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A08",
+          "title": "Disciples at Antioch",
+          "reference": "Acts 11:19–26",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A09",
+          "title": "Paul at Lystra",
+          "reference": "Acts 14:8–18",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "met-437351-jacob-pynas-lystra"
+          ],
+          "unverifiedResearchOptionIds": [
+            "ART-aphael-and-workshop-acrifice-at-ystra-tapestry-cartoon"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A10",
+          "title": "Council of Jerusalem",
+          "reference": "Acts 15:1–29",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A11",
+          "title": "Lydia at Philippi",
+          "reference": "Acts 16:11–15",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A12",
+          "title": "Paul in Thessalonica",
+          "reference": "Acts 17:1–9",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A13",
+          "title": "Paul at the Areopagus",
+          "reference": "Acts 17:16–34",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "vatican-raphael-athens-acts-tapestry"
+          ],
+          "unverifiedResearchOptionIds": [
+            "ART-aphael-and-workshop-aint-aul-reaching-at-thens-tapestry-cartoon"
+          ],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A14",
+          "title": "Paul at Corinth",
+          "reference": "Acts 18:1–18",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A15",
+          "title": "Paul at Ephesus",
+          "reference": "Acts 19:1–20",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+          "selectedArtworkTitle": "Saint Paul Preaching at Ephesus",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A16",
+          "title": "Paul at Troas — Eutychus",
+          "reference": "Acts 20:7–12",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A17",
+          "title": "Farewell at Miletus",
+          "reference": "Acts 20:17–38",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A18",
+          "title": "Shipwreck on Malta",
+          "reference": "Acts 27:13–44",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "nga-90938-basse-malta-shipwreck"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A19",
+          "title": "Paul Arrives in Rome",
+          "reference": "Acts 28:16–31",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [
+        {
+          "sceneKey": "biblical:scene:paul:182",
+          "sceneTitle": "Pentecost: the Holy Spirit descends",
+          "matchedReference": "Acts 2:1–41",
+          "artworkId": "commons-baroncelli-pentecost",
+          "artist": "Master of the Baroncelli Portraits",
+          "title": "Pentecost",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.glo3",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        }
+      ],
+      "selectedArtSubjectCount": 4,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 1,
+      "artPlanningStatus": "EXISTING_ART_REFERENCE_ANCHORS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    },
+    {
+      "arcId": "historia-arc:consummation",
+      "name": "Christ's Triumph and the New Jerusalem",
+      "order": 12,
+      "canonicalEventCount": 5,
+      "covenantIds": [
+        "cv:new-covenant-christ"
+      ],
+      "associatedCharacterStoryIds": [],
+      "exactReferenceMatchedBibleArtSubjects": [
+        {
+          "artSubjectId": "BIB-V01",
+          "title": "Vision of Saint John",
+          "reference": "Revelation 1:9–20",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-V02",
+          "title": "Heavenly Liturgy",
+          "reference": "Revelation 4:1–11",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-V03",
+          "title": "New Jerusalem",
+          "reference": "Revelation 21:1–27",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sameReferenceHistoricalSceneArtLeads": [],
+      "selectedArtSubjectCount": 0,
+      "existingImageSourceResearchSubjectCount": 0,
+      "sceneArtLeadCount": 0,
+      "artPlanningStatus": "BIBLE_ART_RESEARCH_SUBJECTS_PRESENT",
+      "quota": "SELECT_FEW_SIGNATURE_IMAGES; REUSE_CROSS_MODULE",
+      "publicationApproved": false
+    }
+  ],
+  "covenantContexts": [
+    {
+      "stageId": "cv:first-promise",
+      "title": "The First Promise",
+      "kind": "PROMISE_NOT_EXPLICIT_NAMED_COVENANT",
+      "passage": "Genesis 3:15",
+      "canonicalEventKey": "biblical:passage:genesis-3-1-24",
+      "anchorStatus": "PASSAGE_WITHIN_EVENT",
+      "linkedArtReferenceCandidates": [
+        "BIB-OR02"
+      ],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:noah",
+      "title": "Noahic Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "passage": "Genesis 9:8–17",
+      "canonicalEventKey": "biblical:passage:genesis-9-8-17",
+      "anchorStatus": "EXACT_EVENT",
+      "linkedArtReferenceCandidates": [
+        "BIB-OR05"
+      ],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:abraham",
+      "title": "Abrahamic Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "passage": "Genesis 15:1–21",
+      "canonicalEventKey": "biblical:passage:genesis-15-1-21",
+      "anchorStatus": "EXACT_EVENT",
+      "linkedArtReferenceCandidates": [
+        "BIB-PA04"
+      ],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:sinai",
+      "title": "Sinai Covenant",
+      "kind": "EXPLICIT_SCRIPTURAL_COVENANT",
+      "passage": "Exodus 19–24",
+      "canonicalEventKey": "biblical:passage:exodus-19-16-20",
+      "anchorStatus": "PARTIAL_EVENT_ONLY",
+      "linkedArtReferenceCandidates": [],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:david",
+      "title": "Davidic Royal Promise",
+      "kind": "ROYAL_PROMISE_SCRIPTURALLY_CALLED_COVENANT",
+      "passage": "2 Samuel 7:12–16; Psalm 89:3–4",
+      "canonicalEventKey": null,
+      "anchorStatus": "REFERENCE_GAP",
+      "linkedArtReferenceCandidates": [],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:new-covenant-promised",
+      "title": "Promised New Covenant",
+      "kind": "PROPHETIC_ANNOUNCEMENT_NOT_NEW_INSTITUTION",
+      "passage": "Jeremiah 31:31–34",
+      "canonicalEventKey": null,
+      "anchorStatus": "REFERENCE_GAP",
+      "linkedArtReferenceCandidates": [],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    },
+    {
+      "stageId": "cv:new-covenant-christ",
+      "title": "New and Eternal Covenant in Christ",
+      "kind": "NEW_COVENANT",
+      "passage": "Luke 22:20",
+      "canonicalEventKey": "biblical:event:cenacle-e1",
+      "anchorStatus": "PASSAGE_WITHIN_EVENT",
+      "linkedArtReferenceCandidates": [],
+      "covenantIllustrationPolicy": "NO_UNIQUE_PAINTING_MANDATE; USE_SCRIPTURAL_TYPICAL_SCENE_WHEN_DEPICTION_IS_ACCURATE",
+      "crossReferenceReviewed": false
+    }
+  ],
+  "individualCharacterStories": [
+    {
+      "storyId": "person-story-candidate:adam-eve",
+      "title": "Adam and Eve",
+      "arcId": "historia-arc:creation-first-promise",
+      "personLabels": [
+        "Adam",
+        "Eve"
+      ],
+      "scriptureRefs": [
+        "Genesis 2:7–25",
+        "Genesis 3:1–24"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-3-1-24"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-OR02",
+          "title": "The Fall",
+          "reference": "Genesis 3:1–24",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "cma-150046",
+            "met-458971"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "ACQUIRED_BIBLE_RESEARCH_IMAGE_RECORD",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:cain-abel",
+      "title": "Cain and Abel",
+      "arcId": "historia-arc:creation-first-promise",
+      "personLabels": [
+        "Cain",
+        "Abel"
+      ],
+      "scriptureRefs": [
+        "Genesis 4:1–16"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-4-1-16"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-OR03",
+          "title": "Cain and Abel",
+          "reference": "Genesis 4:1–16",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-eter-aul-ubens-ain-and-bel",
+          "selectedArtworkTitle": "Cain and Abel",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:noah",
+      "title": "Noah and his family",
+      "arcId": "historia-arc:noah-nations",
+      "personLabels": [
+        "Noah"
+      ],
+      "scriptureRefs": [
+        "Genesis 6:9–22",
+        "Genesis 9:8–17"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-9-8-17"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-OR05",
+          "title": "God’s Covenant with Noah",
+          "reference": "Genesis 9:8–17",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:isaac",
+      "title": "Isaac",
+      "arcId": "historia-arc:abraham-patriarchs",
+      "personLabels": [
+        "Isaac"
+      ],
+      "scriptureRefs": [
+        "Genesis 21:1–7",
+        "Genesis 22:1–19"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-21-1-7",
+        "biblical:passage:genesis-22-1-19"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-PA05",
+          "title": "Birth of Isaac",
+          "reference": "Genesis 21:1–7",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA06",
+          "title": "Sacrifice of Isaac",
+          "reference": "Genesis 22:1–19",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-aravaggio-he-acrifice-of-saac",
+          "selectedArtworkTitle": "The Sacrifice of Isaac",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:jacob",
+      "title": "Jacob (Israel)",
+      "arcId": "historia-arc:abraham-patriarchs",
+      "personLabels": [
+        "Jacob"
+      ],
+      "scriptureRefs": [
+        "Genesis 28:10–22",
+        "Genesis 32:24–32"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-28-10-22",
+        "biblical:passage:genesis-32-24-32"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-PA07",
+          "title": "Jacob’s Dream",
+          "reference": "Genesis 28:10–22",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-os-de-ibera-acob-s-ream",
+          "selectedArtworkTitle": "Jacob’s Dream",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA08",
+          "title": "Jacob Wrestles with the Angel",
+          "reference": "Genesis 32:24–32",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+          "selectedArtworkTitle": "Jacob Wrestling with the Angel",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:joseph-son-jacob",
+      "title": "Joseph, son of Jacob",
+      "arcId": "historia-arc:abraham-patriarchs",
+      "personLabels": [
+        "Joseph (patriarch)"
+      ],
+      "scriptureRefs": [
+        "Genesis 37:18–36",
+        "Genesis 41:37–45"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:genesis-37-18-36",
+        "biblical:passage:genesis-41-37-45"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-PA09",
+          "title": "Joseph Is Sold",
+          "reference": "Genesis 37:18–36",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ontormo-oseph-old-to-otiphar"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-PA10",
+          "title": "Joseph Governs Egypt",
+          "reference": "Genesis 41:37–45",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-ontormo-oseph-with-haraoh"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:ruth",
+      "title": "Ruth and Boaz",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Ruth",
+        "Boaz",
+        "Obed",
+        "Jesse",
+        "David"
+      ],
+      "scriptureRefs": [
+        "Ruth 1:1–22",
+        "Ruth 2:1–23",
+        "Ruth 4:13–22"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:rahab",
+      "title": "Rahab at Jericho",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Rahab"
+      ],
+      "scriptureRefs": [
+        "Joshua 2:1–24",
+        "Joshua 6:1–27"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:joshua-6-1-27"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-EX15",
+          "title": "Fall of Jericho",
+          "reference": "Joshua 6:1–27",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:deborah",
+      "title": "Deborah",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Deborah"
+      ],
+      "scriptureRefs": [
+        "Judges 4:4–24"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:gideon",
+      "title": "Gideon",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Gideon"
+      ],
+      "scriptureRefs": [
+        "Judges 6:11–24"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:samson",
+      "title": "Samson",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Samson"
+      ],
+      "scriptureRefs": [
+        "Judges 13:1–25",
+        "Judges 16:23–31"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:hannah",
+      "title": "Hannah",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Hannah"
+      ],
+      "scriptureRefs": [
+        "1Samuel 1:9–20"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1samuel-1-9-20"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:samuel",
+      "title": "Samuel",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Samuel"
+      ],
+      "scriptureRefs": [
+        "1Samuel 3:1–21",
+        "1Samuel 10:1–8"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1samuel-10-1-8"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:saul",
+      "title": "King Saul",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "Saul (king)"
+      ],
+      "scriptureRefs": [
+        "1Samuel 10:1–8",
+        "1Samuel 15:1–35"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1samuel-10-1-8"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:david-anointing",
+      "title": "David, anointed",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "David"
+      ],
+      "scriptureRefs": [
+        "1Samuel 16:1–13",
+        "1Samuel 17:1–54"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1samuel-17-1-54"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:david-jonathan",
+      "title": "David and Jonathan",
+      "arcId": "historia-arc:land-first-kings",
+      "personLabels": [
+        "David",
+        "Jonathan"
+      ],
+      "scriptureRefs": [
+        "1Samuel 20:1–42"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:david-king",
+      "title": "David and the royal promise",
+      "arcId": "historia-arc:davidic-kingdom",
+      "personLabels": [
+        "David"
+      ],
+      "scriptureRefs": [
+        "2Samuel 5:6–10",
+        "2Samuel 7:12–16"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:2samuel-5-6-10"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:david-penitence",
+      "title": "David and Nathan",
+      "arcId": "historia-arc:davidic-kingdom",
+      "personLabels": [
+        "David",
+        "Nathan"
+      ],
+      "scriptureRefs": [
+        "2Samuel 12:1–25"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:solomon",
+      "title": "Solomon",
+      "arcId": "historia-arc:davidic-kingdom",
+      "personLabels": [
+        "Solomon"
+      ],
+      "scriptureRefs": [
+        "1Kings 3:5–15",
+        "1Kings 8:1–66"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1kings-8-1-66"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:elijah",
+      "title": "Elijah",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Elijah"
+      ],
+      "scriptureRefs": [
+        "1Kings 18:19–39"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1kings-18-19-39"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:elisha",
+      "title": "Elisha",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Elisha"
+      ],
+      "scriptureRefs": [
+        "2Kings 4:8–37"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:isaiah",
+      "title": "Isaiah",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Isaiah"
+      ],
+      "scriptureRefs": [
+        "Isaiah 6:1–13",
+        "Isaiah 11:1–9"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:isaiah-6-1-13"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-IS09",
+          "title": "Isaiah’s Calling",
+          "reference": "Isaiah 6:1–13",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:jeremiah",
+      "title": "Jeremiah",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Jeremiah"
+      ],
+      "scriptureRefs": [
+        "Jeremiah 1:4–19",
+        "Jeremiah 31:31–34"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:ezekiel",
+      "title": "Ezekiel",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Ezekiel"
+      ],
+      "scriptureRefs": [
+        "Ezekiel 37:1–14"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:tobit-tobias",
+      "title": "Tobit and Tobias",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Tobit",
+        "Tobias",
+        "Raphael"
+      ],
+      "scriptureRefs": [
+        "Tobit 1:1–20",
+        "Tobit 12:1–22"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:judith",
+      "title": "Judith",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Judith"
+      ],
+      "scriptureRefs": [
+        "Judith 13:1–20"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:judith-13-1-20"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-XL07",
+          "title": "Judith and Holofernes",
+          "reference": "Judith 13:1–20",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-acopo-intoretto-udith-and-olofernes",
+          "selectedArtworkTitle": "Judith and Holofernes",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:esther",
+      "title": "Esther",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Esther"
+      ],
+      "scriptureRefs": [
+        "Esther 4:1–17"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:esther-4-1-17"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-XL08",
+          "title": "Esther Intercedes",
+          "reference": "Esther 4:1–17",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ebastiano-icci-sther-before-hasuerus",
+          "selectedArtworkTitle": "Esther before Ahasuerus",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:daniel",
+      "title": "Daniel",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Daniel"
+      ],
+      "scriptureRefs": [
+        "Daniel 1:1–21",
+        "Daniel 6:1–29"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:daniel-1-1-21"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-XL04",
+          "title": "Daniel in Babylon",
+          "reference": "Daniel 1:1–21",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-eter-aul-ubens-aniel-in-the-ions-en"
+          ],
+          "researchLane": "OT_LIGHT_CONTEXT",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:susanna",
+      "title": "Susanna",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Susanna",
+        "Daniel"
+      ],
+      "scriptureRefs": [
+        "Daniel 13:1–64"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:daniel-13-1-64"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-XL09",
+          "title": "Susanna Vindicated",
+          "reference": "Daniel 13:1–64",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uido-eni-usannah-and-the-lders",
+          "selectedArtworkTitle": "Susannah and the Elders",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:three-youths",
+      "title": "Three youths in the furnace",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Ananias",
+        "Azarias",
+        "Misael"
+      ],
+      "scriptureRefs": [
+        "Daniel 3:24–90"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:daniel-3-24-90"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-XL10",
+          "title": "Song of the Three Youths",
+          "reference": "Daniel 3:24–90",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [
+            "ART-lemish-school-hree-ouths-in-the-iery-urnace"
+          ],
+          "researchLane": "OT_ANCHOR_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:seven-martyrs",
+      "title": "Seven brothers and their mother",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Mother of seven martyrs"
+      ],
+      "scriptureRefs": [
+        "2Maccabees 7:1–42"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:2maccabees-7-1-42"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:judas-maccabeus",
+      "title": "Judas Maccabeus",
+      "arcId": "historia-arc:prophets-exile-return",
+      "personLabels": [
+        "Judas Maccabeus"
+      ],
+      "scriptureRefs": [
+        "1Maccabees 4:36–59"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:1maccabees-4-36-59"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:mary",
+      "title": "The Blessed Virgin Mary",
+      "arcId": "historia-arc:incarnation",
+      "personLabels": [
+        "Mary, Mother of Jesus"
+      ],
+      "scriptureRefs": [
+        "Luke 1:26–38",
+        "John 19:25–27",
+        "Acts 1:12–14"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:nazareth-e1"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [
+        {
+          "sceneKey": "biblical:scene:christ:057",
+          "sceneTitle": "The Annunciation",
+          "matchedReference": "Luke 1:26–38",
+          "artworkId": "met-438724",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "sceneArtRelation": "SAME_EPISODE_REVIEW",
+          "relatedArtNeedId": "rosary.joy1",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        }
+      ],
+      "state": "BRIDGE_SCENE_ART_CANDIDATE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:joseph-husband",
+      "title": "St Joseph, husband of Mary",
+      "arcId": "historia-arc:incarnation",
+      "personLabels": [
+        "Joseph, spouse of Mary"
+      ],
+      "scriptureRefs": [
+        "Matthew 1:18–25",
+        "Matthew 2:13–15"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:nazareth-additional-001",
+        "biblical:event:egypt-e1"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-G02",
+          "title": "Joseph’s Dream",
+          "reference": "Matthew 1:18–25",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "selectedArtworkTitle": "The Dream of Saint Joseph",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G03",
+          "title": "Flight into Egypt",
+          "reference": "Matthew 2:13–15",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [
+            "met-437849",
+            "met-816629",
+            "cma-137195",
+            "cma-143138"
+          ],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "SOURCE_IMAGES_RECORDED_NOT_SELECTION",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:john-baptist",
+      "title": "St John the Baptist",
+      "arcId": "historia-arc:public-ministry",
+      "personLabels": [
+        "John the Baptist"
+      ],
+      "scriptureRefs": [
+        "Luke 1:57–80",
+        "Mark 1:1–11"
+      ],
+      "exactHistoricalAtlasEventKeys": [],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:peter",
+      "title": "St Peter",
+      "arcId": "historia-arc:public-ministry",
+      "personLabels": [
+        "Peter"
+      ],
+      "scriptureRefs": [
+        "Matthew 16:13–20",
+        "Acts 10:1–48"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:caesarea-philippi-e1",
+        "biblical:passage:acts-10-1-48"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-G20",
+          "title": "Peter’s Confession",
+          "reference": "Matthew 16:13–20",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "vatican-sistine-perugino-keys"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-A07",
+          "title": "Conversion of Cornelius",
+          "reference": "Acts 10:1–48",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "nga-54321-galle-cornelius-peter"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "IDENTIFIED_BIBLE_ART_ORIGINAL_LEAD",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:john-disciple",
+      "title": "St John in the Gospel",
+      "arcId": "historia-arc:public-ministry",
+      "personLabels": [
+        "John, disciple"
+      ],
+      "scriptureRefs": [
+        "John 19:25–27",
+        "John 20:19–29"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:cenacle-e3"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:martha",
+      "title": "Martha of Bethany",
+      "arcId": "historia-arc:public-ministry",
+      "personLabels": [
+        "Martha"
+      ],
+      "scriptureRefs": [
+        "Luke 10:38–42",
+        "John 11:1–44"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:bethany-additional-057",
+        "biblical:event:bethany-e1"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-G19",
+          "title": "Christ and Martha and Mary",
+          "reference": "Luke 10:38–42",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "ART-research-20261012-beuckelaer-four-elements-fire",
+            "ART-research-20261013-velazquez-martha-mary-ng1375"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        },
+        {
+          "artSubjectId": "BIB-G16",
+          "title": "Raising of Lazarus",
+          "reference": "John 11:1–44",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-ean-ouvenet-aising-of-azarus",
+          "selectedArtworkTitle": "Raising of Lazarus",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:mary-magdalene",
+      "title": "St Mary Magdalene",
+      "arcId": "historia-arc:paschal-mystery",
+      "personLabels": [
+        "Mary Magdalene"
+      ],
+      "scriptureRefs": [
+        "John 20:1–18"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:christ-tomb-e2"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [
+        {
+          "sceneKey": "biblical:scene:christ:131",
+          "sceneTitle": "The empty tomb and Mary Magdalene",
+          "matchedReference": "John 20:1–18",
+          "artworkId": "cma-78982",
+          "artist": "Johann König",
+          "title": "The Resurrection of Christ",
+          "sceneArtRelation": "DIFFERENT_MOMENT_HOLD",
+          "relatedArtNeedId": "rosary.glo1",
+          "relationEvidence": "EXACT_SCRIPTURE_REFERENCE_BETWEEN_HISTORIA_AND_SCENE_BRIDGE; EXISTING_SCENE_ART_LINK_NOT_YET_VISUALLY_CERTIFIED",
+          "priorArtworkUserRating": null,
+          "historicallySelectedArtEligible": true,
+          "publicationApproved": false
+        }
+      ],
+      "state": "BRIDGE_SCENE_ART_CANDIDATE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:thomas",
+      "title": "St Thomas the Apostle",
+      "arcId": "historia-arc:paschal-mystery",
+      "personLabels": [
+        "Thomas"
+      ],
+      "scriptureRefs": [
+        "John 20:19–29"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:event:cenacle-e3"
+      ],
+      "referenceMatchedExistingBibleArt": [],
+      "sceneMatchedExistingArt": [],
+      "state": "NO_EXACT_REFERENCED_ART_SUBJECT_EVIDENCE",
+      "priorityForVisualCuratorialCheck": "P1",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:stephen",
+      "title": "St Stephen",
+      "arcId": "historia-arc:apostolic-church",
+      "personLabels": [
+        "Stephen"
+      ],
+      "scriptureRefs": [
+        "Acts 7:54–60"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:acts-7-54-60"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-A03",
+          "title": "Martyrdom of Stephen",
+          "reference": "Acts 7:54–60",
+          "curatorDecision": "selected",
+          "selectedArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "selectedArtworkTitle": "Martyrdom of Saint Stephen",
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": null,
+          "artworkLinkStatus": "EARLIER_SELECTED_ARTWORK_PASSAGE_MATCH_NEEDS_DEPICTION_QA",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "PREVIOUS_BIBLE_ARTWORK_SELECTED_REFERENCE_MATCH",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:philip-evangelist",
+      "title": "Philip the Evangelist",
+      "arcId": "historia-arc:apostolic-church",
+      "personLabels": [
+        "Philip the Evangelist"
+      ],
+      "scriptureRefs": [
+        "Acts 8:26–40"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:acts-8-26-40"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-A04",
+          "title": "Philip Baptises the Ethiopian",
+          "reference": "Acts 8:26–40",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "rijks-rp-p-1961-1043-eunuch-rembrandt"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "IDENTIFIED_BIBLE_ART_ORIGINAL_LEAD",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:cornelius",
+      "title": "Cornelius",
+      "arcId": "historia-arc:apostolic-church",
+      "personLabels": [
+        "Cornelius"
+      ],
+      "scriptureRefs": [
+        "Acts 10:1–48"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:acts-10-1-48"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-A07",
+          "title": "Conversion of Cornelius",
+          "reference": "Acts 10:1–48",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [
+            "nga-54321-galle-cornelius-peter"
+          ],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_DEEP_RESEARCH",
+          "artworkLinkStatus": "EXACT_ORIGINAL_SOURCE_LEAD_REVIEW",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "IDENTIFIED_BIBLE_ART_ORIGINAL_LEAD",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    },
+    {
+      "storyId": "person-story-candidate:lydia",
+      "title": "Lydia",
+      "arcId": "historia-arc:apostolic-church",
+      "personLabels": [
+        "Lydia"
+      ],
+      "scriptureRefs": [
+        "Acts 16:11–15"
+      ],
+      "exactHistoricalAtlasEventKeys": [
+        "biblical:passage:acts-16-11-15"
+      ],
+      "referenceMatchedExistingBibleArt": [
+        {
+          "artSubjectId": "BIB-A11",
+          "title": "Lydia at Philippi",
+          "reference": "Acts 16:11–15",
+          "curatorDecision": "research",
+          "selectedArtworkId": null,
+          "selectedArtworkTitle": null,
+          "rejectedPhysicalOriginalConflict": false,
+          "documentedExistingImageOrOriginalIds": [],
+          "authenticatedOrHistoricalSourceLeadIds": [],
+          "unverifiedResearchOptionIds": [],
+          "researchLane": "NT_SELECTIVE",
+          "artworkLinkStatus": "SCRIPTURE_SUBJECT_RESEARCH_ONLY",
+          "relationEvidence": "MATCHED_SCRIPTURE_REFERENCE_STRING_NOT_VERIFIED_ARTWORK_SCENE",
+          "autoPublicationAllowed": false
+        }
+      ],
+      "sceneMatchedExistingArt": [],
+      "state": "DOCUMENTED_BIBLE_ART_SUBJECT_NEEDS_WORK",
+      "priorityForVisualCuratorialCheck": "P2",
+      "editorialImageRequirement": "OPTIONAL_OR_REUSABLE_SIGNATURE_ART_NOT_ONE_PER_PERSON",
+      "automaticArtworkSelection": false,
+      "actualDepictionVerifiedForNewLink": false,
+      "exactPhysicalOriginalInReview": false
+    }
+  ]
+}
