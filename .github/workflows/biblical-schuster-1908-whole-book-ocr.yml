@@ -1,0 +1,73 @@
+name: Schuster 1908 complete source OCR (research only)
+
+on:
+  push:
+    branches:
+      - feature/biblical-atlas-current-main-convergence-20261012
+    paths:
+      - .github/workflows/biblical-schuster-1908-whole-book-ocr.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  entire-historical-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Install single-pass historical source OCR tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr ocrmypdf
+
+      - name: Retrieve independent original 1908 English print scan
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research
+          curl --fail --location --retry 3 --retry-delay 3 \
+            --connect-timeout 25 --max-time 300 \
+            --output /tmp/schuster-1908.pdf \
+            https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf
+          pdfinfo /tmp/schuster-1908.pdf > research/original-pdfinfo.txt
+          sha256sum /tmp/schuster-1908.pdf > research/original-pdf-sha256.txt
+          grep -q '^Pages: *419$' research/original-pdfinfo.txt
+
+      - name: One whole-book optical extraction, never certified automatically
+        shell: bash
+        run: |
+          set -euo pipefail
+          ocrmypdf --force-ocr --jobs 4 --optimize 0 \
+            --sidecar research/schuster-1908-full-volume-OCR-UNVERIFIED.txt \
+            /tmp/schuster-1908.pdf /tmp/schuster-1908-temp-searchable.pdf
+          sha256sum research/schuster-1908-full-volume-OCR-UNVERIFIED.txt \
+            > research/ocr-sha256.txt
+          python3 - <<'PY'
+          import json, pathlib
+          raw=pathlib.Path('research/schuster-1908-full-volume-OCR-UNVERIFIED.txt').read_text(errors='replace')
+          parts=raw.split('\f')
+          metrics=dict(
+              edition='1908 English 11th / Sadlier / Schuster',
+              pagesInOriginalPDF=419,
+              extractedCharacters=len(raw),
+              pageSeparatorCount=raw.count('\f'),
+              sourceStatus='UNVERIFIED_OCR_NOT_CHARACTER_CERTIFIED',
+              permissionToPublishOriginalProse=False,
+              contentEditedOrAuthoredByAI=False,
+              existingOrigins47UnitReviewUnaffected=True,
+              uiChanged=False,
+          )
+          pathlib.Path('research/ocr-metrics.json').write_text(json.dumps(metrics,indent=2)+'\n')
+          print(json.dumps(metrics,indent=2))
+          PY
+          rm -f /tmp/schuster-1908-temp-searchable.pdf /tmp/schuster-1908.pdf
+
+      - name: Upload temporary research text and provenance, not app prose
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schuster-1908-whole-book-ocr-unverified
+          path: research/
+          if-no-files-found: warn
+          retention-days: 14
