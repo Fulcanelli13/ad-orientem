@@ -27,6 +27,7 @@ export function sourceReferencePanelCss(){
     ".aoReferencePanel .aoRefSourceList{display:block;line-height:1.6}.aoReferencePanel .aoRefSourceList>a,.aoReferencePanel .aoRefSourceList>span{display:inline;overflow-wrap:anywhere}",
     ".aoReferencePanel .aoRefSourceList>span+span:before,.aoReferencePanel .aoRefSourceList>a+span:before,.aoReferencePanel .aoRefSourceList>span+a:before,.aoReferencePanel .aoRefSourceList>a+a:before{content:' · ';color:var(--ao-text-muted,#a9a5a0)}",
     ".aoReferencePanel .aoRefSourceIndex{list-style:none;padding:0;margin:6px 0 10px}.aoReferencePanel .aoRefSourceIndex li{margin:8px 0;overflow-wrap:anywhere}",
+    ".aoReferencePanel .aoRefStudyLink{display:block;margin:6px 0 3px;min-height:40px;padding:7px 9px;border:1px solid var(--ao-rule,rgba(255,255,255,.15));border-radius:8px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.8rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}.aoReferencePanel .aoRefStudyLink:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
     ".aoReferencePanel .aoRefReadingHint{display:inline-block;margin-inline-start:8px;font:.73rem/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}",
     ".aoReferencePanel .aoRefDocumentNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoReferencePanel .aoRefHold{color:var(--ao-text-muted,#a9a5a0);font-style:italic}",
@@ -51,7 +52,7 @@ function excerptText(input){
  * The evidence list is complete and maintains one-to-many row/source links.
  * Further reading is an optional, explicitly curated subset of cited sources.
  */
-export function sourceReferencePanelHtml({rows=[],registry={},french=false,furtherReadingIds=[],idPrefix="ao-ref"}={}){
+export function sourceReferencePanelHtml({rows=[],registry={},french=false,furtherReadingIds=[],idPrefix="ao-ref",enableStudySource=false}={}){
   if(!rows.length)return "";
   const full=rows.map((row,index)=>{
     const ids=unique(row.sourceIds);
@@ -72,6 +73,8 @@ export function sourceReferencePanelHtml({rows=[],registry={},french=false,furth
   const sourceIndex='<h3>'+esc(label(french,"Cited sources","Sources citées"))+'</h3>'+
     '<ul class="aoRefSourceIndex" data-ao-source-index>'+
     citedIds.map(id=>'<li>'+sourceMarkup(id,registry,french)+
+       (enableStudySource?'<button type="button" class="aoRefStudyLink" data-ao-reference-study-source="'+esc(id)+'">'+
+         esc(label(french,"View source context","Voir le contexte documentaire"))+'</button>':"")+
        (recommended.has(id)?'<span class="aoRefReadingHint" data-ao-curated-reading="'+esc(id)+'">'+
           esc(label(french,"Further reading","Pour approfondir"))+'</span>':"")+
        '</li>').join("")+'</ul>'+
