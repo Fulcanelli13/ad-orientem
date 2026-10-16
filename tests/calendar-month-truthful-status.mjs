@@ -1,5 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
-import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, calendarInseparableApostlesClaimForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -11,6 +11,47 @@ const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
 
 const adjudicated2027=JSON.parse(readFileSync("data/calendar/1962-ordo-corrections.v1.json","utf8"));
+
+const inseparableFixture=(date="2027-06-30")=>({
+ date,status:"ready",
+ day:{main:{id:"sancti:06-30:3:r",path:"Sancti/06-30",rank:3},
+  commemorations:[{id:"inseparable:sancti:06-29-petrus",inseparable:true}]},
+ proper:{status:"ready",data:{sourcePath:"Sancti/06-30"}}
+});
+const june30=inseparableFixture();
+const apostles=calendarInseparableApostlesClaimForDay(june30,adjudicated2027);
+assert.equal(apostles.length,1,"June 30 source-resolved apostolic inseparability missing");
+assert.deepEqual(apostles[0].clauses,["RG 110","RG 110(b)"]);
+assert.equal(apostles[0].commemorationId,"inseparable:sancti:06-29-petrus");
+assert.equal(apostles[0].massOrationsOwner,"src/mass/1962-inseparable-apostles-source.js");
+assert.equal(apostles[0].orationCertification,"EXISTING_MASS_OWNER_ONLY");
+assert.equal(apostles[0].automaticMassChange,false);
+assert.equal(apostles[0].normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+assert.equal(apostles[0].witnessUrl,"https://gcatholic.org/calendar/2027/Extraordinary-en");
+assert.ok(apostles[0].explanation.en&&apostles[0].explanation.fr);
+assert.ok(Object.isFrozen(apostles)&&Object.isFrozen(apostles[0])&&Object.isFrozen(apostles[0].clauses));
+for(const broken of [
+ {...june30,date:"2026-06-30"},
+ {...june30,date:"2027-06-29"},
+ {...june30,status:"failed"},
+ {...june30,proper:{status:"failed",data:{sourcePath:"Sancti/06-30"}}},
+ {...june30,proper:{status:"ready",data:{sourcePath:"Sancti/06-29"}}},
+ {...june30,day:{...june30.day,main:{id:"sancti:06-29:1:r",path:"Sancti/06-29"}}},
+ {...june30,day:{...june30.day,main:{id:"sancti:06-30:2:r",path:"Sancti/06-30"}}},
+ {...june30,day:{...june30.day,commemorations:[]}},
+ {...june30,day:{...june30.day,commemorations:[{id:"sancti:06-29:1:r"}]}},
+ {...june30,day:{...june30.day,commemorations:[{id:"inseparable:sancti:06-29-petrus",inseparable:false}]}},
+ {...june30,day:{...june30.day,commemorations:[...june30.day.commemorations,{id:"saint:other"}]}},
+])assert.deepEqual(calendarInseparableApostlesClaimForDay(broken,adjudicated2027),[],
+ "Never attribute Peter/Paul §110 to an unverified 1962 principal, date or oration");
+for(const mutation of [
+ ledger=>{ledger.outstandingSecondaryCases.find(x=>x.dates?.[0]==="2027-06-30").source="javascript:alert(1)"},
+ ledger=>{ledger.outstandingSecondaryCases.find(x=>x.dates?.[0]==="2027-06-30").rubricalClaim.orationCertification="CERTIFIED_BY_CALENDAR"},
+ ledger=>{ledger.outstandingSecondaryCases.find(x=>x.dates?.[0]==="2027-06-30").rubricalClaim.clauses=["RG 111(c)"]},
+]){const poisoned=structuredClone(adjudicated2027);mutation(poisoned);
+ assert.deepEqual(calendarInseparableApostlesClaimForDay(june30,poisoned),[],
+   "No unsafe source or invented Calendar oration certificate");}
+
 const observedFixture=(date,principalPath,principalRank,commPath,commRank=3)=>({
   date,status:"ready",
   day:{main:{id:principalPath.replace("/",":").toLowerCase()+":"+principalRank+":w"},
@@ -231,6 +272,10 @@ for(const marker of [
   "Pourquoi cette célébration a été reportée",
   "loadCalendarTransferClaims();",
   "calendarObservedCommemorationClaimsForDay(r,colourClaimLedger)",
+  "calendarInseparableApostlesClaimForDay(r,colourClaimLedger)",
+  "data-cal-apostles-inseparable",
+  "Why St Peter is remembered with St Paul",
+  "Pourquoi saint Pierre est uni à saint Paul",
   "data-cal-observed-commemoration",
   "Why this observance is commemorated",
   "Pourquoi cette célébration est commémorée",
