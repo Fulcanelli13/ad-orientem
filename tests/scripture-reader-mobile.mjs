@@ -118,6 +118,27 @@ try{
  await rosary.locator(".lab-back[data-pb-back],.lab-back").first().tap();
  await dialog.waitFor({state:"visible",timeout:25000});
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ // The exact Biblical Atlas scene opens through the original Explore owner.
+ // Its stable source key, rather than its 151-item screen index, is authoritative.
+ const atlasLink=dialog.locator('[data-scripture-open-related-object^="atlas:biblical:"]').first();
+ await atlasLink.waitFor({state:"visible",timeout:20000});
+ const atlasId=await atlasLink.getAttribute("data-scripture-open-related-object");
+ const expectedAtlasEvent=atlasId.slice("atlas:".length);
+ await atlasLink.tap();
+ await page.waitForFunction(eventKey=>{
+   const selected=document.querySelector("#ao-find-root [data-bible-event-key][aria-pressed='true']")||
+     document.querySelector("[data-bible-event-key][aria-pressed='true']");
+   return globalThis.AO_FIND_APP_V1?.status?.()?.bibleAtlas===true&&
+     selected?.dataset?.bibleEventKey===eventKey;
+ },expectedAtlasEvent,{timeout:30000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await page.locator("[data-bible-atlas-close]").tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ await page.waitForFunction(id=>document.activeElement?.dataset?.scriptureOpenRelatedObject===id,
+   atlasId,{timeout:9000});
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
