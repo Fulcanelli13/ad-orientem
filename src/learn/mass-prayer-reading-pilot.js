@@ -87,3 +87,100 @@ export function prayerReadingEditorialPreviewCss(){
  @media(max-width:430px){.aoFRPilot{padding:18px 14px 55px}.aoFRPilotArticle{padding-top:18px}}
  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}`;
 }
+
+/**
+ * The next published-text slice crosses three Guide moments. It contains
+ * exactly six fixed-text blocks. The Secret and Preface remain explicitly
+ * withheld as Mass-dependent Proper slots, never generic substitutions.
+ */
+export function validateMassTransitionReadingPilot(pilot,sung,formation,guide){
+ const fail=reason=>Object.freeze({ok:false,reason,readings:Object.freeze([]),withheld:Object.freeze([])});
+ const expected=Object.freeze({
+  "AO.SM.B039":Object.freeze(["AO.SM.M11","AO.CARD.011","MF03"]),
+  "AO.SM.B041":Object.freeze(["AO.SM.M11","AO.CARD.011","MF03"]),
+  "AO.SM.B042":Object.freeze(["AO.SM.M12","AO.CARD.012","MF01"]),
+  "AO.SM.B043":Object.freeze(["AO.SM.M12","AO.CARD.012","MF01"]),
+  "AO.SM.B044":Object.freeze(["AO.SM.M12","AO.CARD.012","MF01"]),
+  "AO.SM.B046":Object.freeze(["AO.SM.M13","AO.CARD.013","MF01"])
+ });
+ if(pilot?.schema!=="ao-formation-prayer-reading-transition-pilot-v1"||
+    pilot.scope!=="FORMATION_ONLY"||pilot.status!=="EDITORIAL_DRAFT_NOT_RELEASED"||
+    pilot.profile!=="ORDINARY_SUNG"||
+    pilot.study_level!=="DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT"||
+    !Array.isArray(pilot.entries)||pilot.entries.length!==6||
+    !Array.isArray(pilot.withheld_variable_propers)||pilot.withheld_variable_propers.length!==2)
+   return fail("INVALID_TRANSITION_ENVELOPE");
+ if(!Array.isArray(sung?.blocks)||formation?.schema!=="ao-mass-formation-campion-v1"||
+    !guide?.entries)return fail("MISSING_ORIGINAL_OWNERS");
+ const blockMap=new Map(sung.blocks.map(x=>[x.Block_ID,x]));
+ const withheldSlots=new Map([["AO.SM.B040","SECRET_SET"],["AO.SM.B045","PREFACE"]]);
+ const heldIDs=new Set();
+ for(const item of pilot.withheld_variable_propers){
+  const expectedSlot=withheldSlots.get(item.block_id);
+  const original=blockMap.get(item.block_id);
+  if(!expectedSlot||heldIDs.has(item.block_id)||item.proper_slot!==expectedSlot||
+     original?.Proper_Slot!==expectedSlot||
+     original.units?.some(unit=>unit.english||unit.latin)||
+     typeof item.reason!=="string"||item.reason.length<15)return fail("PROPER_HOLD_MISMATCH");
+  heldIDs.add(item.block_id);
+ }
+ if(heldIDs.size!==2)return fail("MISSING_VARIABLE_PROPER_HOLD");
+ const selected=new Set(),ids=new Set(),validated=[];
+ for(const entry of pilot.entries){
+  const expectedRow=expected[entry?.block_id];
+  if(!expectedRow||ids.has(entry.id)||selected.has(entry.block_id)||
+     !/^AO\\.FORM\\.PRAYER\\.TRANSITION\\.0[1-6]$/.test(entry.id||"")||
+     entry.moment_id!==expectedRow[1]||entry.stage_id!==expectedRow[2]||
+     !guide.entries[entry.moment_id]||
+     !formation.stages.some(stage=>stage.id===entry.stage_id))return fail("INVALID_OR_DUPLICATE_TRANSITION_LINK");
+  const original=blockMap.get(entry.block_id);
+  if(!original||original.Macro_ID!==expectedRow[0]||original.Proper_Slot||
+     original.Branch_Status!=="NORMATIVE_1962"||!original.units?.length)return fail("MISSING_FIXED_MASS_TEXT");
+  const originalText=original.units.filter(u=>u.clock!=="PRIEST_ACTION")
+     .map(u=>String(u.english||"")).join("\\n");
+  if(typeof entry.text_anchor_en!=="string"||
+     !originalText.includes(entry.text_anchor_en)||
+     !Array.isArray(entry.scripture_within_text)||
+     entry.scripture_within_text.some(v=>typeof v!=="string"||!originalText.includes(v)))
+    return fail("UNPUBLISHED_WORDING_OR_SCRIPTURE");
+  if(entry.block_id==="AO.SM.B046"&&!original.units.every(u=>u.clock==="SCHOLA_PUBLIC"))
+    return fail("SUNG_SCHOLA_OWNERSHIP_CHANGED");
+  for(const kind of ["heading","reading","observe"]){
+   for(const language of ["en","fr"]){
+    const t=entry[kind]?.[language];
+    if(typeof t!=="string"||t.trim()!==t||t.length<12||t.length>1500)
+      return fail("MISSING_OR_INVALID_BILINGUAL_DRAFT");
+   }
+  }
+  ids.add(entry.id);selected.add(entry.block_id);validated.push(Object.freeze({
+   ...entry,scripture_within_text:Object.freeze([...entry.scripture_within_text])
+  }));
+ }
+ if(selected.size!==Object.keys(expected).length)return fail("INCOMPLETE_FIXED_TRANSITION");
+ return Object.freeze({ok:true,reason:"EDITORIAL_PREVIEW_ONLY",
+   readings:Object.freeze(validated),
+   withheld:Object.freeze(pilot.withheld_variable_propers.map(item=>Object.freeze({...item})))});
+}
+
+export function massTransitionEditorialPreviewHtml(validation,{french=false}={}){
+ if(!validation?.ok)return "";
+ const title=french?"Du « Orate, fratres » au Sanctus":"From Orate, fratres to the Sanctus";
+ const intro=french?
+   "Six commentaires sur des textes fixes publiés. La Secrète et la Préface restent des textes variables, non reproduits ici.":
+   "Six readings of published fixed texts. The Secret and Preface remain variable Mass-specific texts and are not reproduced here.";
+ return '<main class="aoFRPilot" data-ao-formation-editorial-only>'+
+  '<header><small>'+(french?"FORMATION · ÉBAUCHE ÉDITORIALE":"FORMATION · EDITORIAL DRAFT")+'</small>'+
+   '<h1>'+title+'</h1><p>'+intro+'</p></header>'+
+  validation.readings.map(x=>
+    '<article class="aoFRPilotArticle" data-ao-formation-prayer-block="'+clean(x.block_id)+'">'+
+    '<small>'+clean(x.block_id)+' · '+clean(x.moment_id)+'</small>'+
+    '<h2>'+clean(langText(x.heading,french))+'</h2>'+
+    '<p>'+clean(langText(x.reading,french))+'</p>'+
+    '<h3>'+(french?"Observer les paroles":"Read the words")+'</h3>'+
+    '<p>'+clean(langText(x.observe,french))+'</p></article>').join("")+
+   '<section class="aoFRPilotHeld" aria-label="'+(french?"Textes variables non publiés":"Unpublished variable Propers")+'">'+
+   '<h2>'+(french?"Textes variables réservés":"Variable texts held")+'</h2>'+
+   '<ul>'+validation.withheld.map(item=>'<li data-ao-formation-proper-held="'+clean(item.block_id)+'">'+
+     clean(item.block_id)+' · '+clean(item.proper_slot)+'</li>').join("")+'</ul></section>'+
+  '</main>';
+}
