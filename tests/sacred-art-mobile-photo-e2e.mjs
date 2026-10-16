@@ -117,7 +117,7 @@ try {
   process.stdout.write(JSON.stringify({linked:outcome.categoryWithLinkedPreview,remote:outcome.browserLoadChecks,
     layoutFailures:badLayout.length,pageErrors:pageErrors.length,report:output+'/report.json'})+'\n');
   assert.equal(categories.length,168,'Category count drifted');
-  assert.ok(outcome.categoryWithLinkedPreview>=164,'Source-linked categories regressed');
+  assert.ok(outcome.categoryWithLinkedPreview===168,'Source-linked categories regressed');
   assert.deepEqual(badLayout,[],'390px contain-fit or frame overflow regression');
   assert.deepEqual(pageErrors,[],'Gallery runtime JavaScript errors');
   // External image failures are evidence, not a flaky CI failure: captured in report.
