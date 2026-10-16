@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_ART_W95_INSTITUTIONAL_SOURCE_BINARY_ACQUISITION_V1",
+  "created": "2026-10-16",
+  "status": "RESEARCH_DOWNLOAD_ONLY",
+  "knownTargetCategories": [
+    26,
+    35,
+    37,
+    43,
+    70
+  ],
+  "notCommercialRelease": true,
+  "preserveHistoricalRatings": true,
+  "items": [
+    {
+      "categoryIndex": 26,
+      "workId": "italy-0900119548",
+      "artist": "Antonio Marini",
+      "work": "Sant'Alfonso Maria de Liguori",
+      "catalogue": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+      "source": "https://sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5022564_236119.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 26,
+      "workId": "G28-003",
+      "artist": "Michele Lenzi",
+      "work": "Sant'Alfonso Maria de Liguori",
+      "catalogue": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1500005082",
+      "source": "https://sigecweb.beniculturali.it/images/fullsize/ICCD50007108/ICCD3912951_6260_S31.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-007",
+      "artist": "Local school",
+      "work": "Saint Peter Damian writing, angel indicates heaven",
+      "catalogue": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+      "source": "https://sigecweb.beniculturali.it/images/fullsize/ICCD1073995/ICCD16263097_20H110611__DSC7345.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-007",
+      "artist": "Local school",
+      "work": "Saint Peter Damian writing, second photograph",
+      "catalogue": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+      "source": "https://sigecweb.beniculturali.it/images/fullsize/ICCD1073995/ICCD16263098_20H110608__DSC7341.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-006",
+      "artist": "Emilian school",
+      "work": "Saint Peter Damian",
+      "catalogue": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
+      "source": "https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007109/ICCD2422822_00004771.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 37,
+      "workId": "G30-010",
+      "artist": "Roman school",
+      "work": "Portrait of Cardinal Robert Bellarmine",
+      "catalogue": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+      "source": "https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007114/ICCD4490558_SBAS%20RM%2076114.jpg",
+      "sourceMatch": "EXACT_INSTITUTIONAL_OBJECT_IMAGE_CAPTION"
+    },
+    {
+      "categoryIndex": 43,
+      "workId": "QCP-HILARY-LEDUC-1896-1900",
+      "artist": "Ozias Leduc",
+      "work": "St Hilary writes on the Trinity; church painted-decor image",
+      "catalogue": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=93184&methode=consulter&type=bien",
+      "source": "https://www.patrimoine-culturel.gouv.qc.ca/document/rpcq_bien_93184_198659.JPG?id=198659",
+      "sourceMatch": "INSTITUTIONAL_LINKED_SCENE_MAY_BE_WHOLE_CHURCH"
+    },
+    {
+      "categoryIndex": 70,
+      "workId": "G17-009",
+      "artist": "Émilie Sivard de Beaulieu",
+      "work": "Episode de la vie de Saint Denis; Palissy image 1",
+      "catalogue": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+      "source": "https://popcorn-prd-perf-assets.s3.gra.io.cloud.ovh.net/memoire/OA001_201201002300/201201002300.JPG",
+      "sourceMatch": "INSTITUTIONAL_OBJECT_GALLERY_IMAGE_VERIFY_CONTENT"
+    }
+  ]
+}
