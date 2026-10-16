@@ -511,7 +511,11 @@
     "earlyEnglishSadlierEpigraphLayerCandidates": 138,
     "earlyEnglishSadlierInlineCaptionsFlagged": 209,
     "earlyEnglishSadlierInlineNotesFlagged": 61,
-    "earlyEnglishSadlierLayerSeparationApprovedChapters": 0
+    "earlyEnglishSadlierLayerSeparationApprovedChapters": 0,
+    "earlyEnglishSadlierOfflineResearchReaderChapterSlots": 182,
+    "earlyEnglishSadlierOfflineReaderResearchTextPages": 180,
+    "earlyEnglishSadlierOfflineReaderTopicCandidates": 21,
+    "earlyEnglishSadlierOfflineReaderPublished": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4430,5 +4434,45 @@
     "newVerifiedAtlasToChapterLinks": 0,
     "sourceRightsReviewPending": true,
     "nextUsefulStage": "Use bulk review of structurally partitioned chapter OCR; use narrativeCandidate only for research, correct page furniture/inline illustrations and historical notes; link confirmed existing Scripture/Atlas references, then enable reader only after quality and rights review."
+  },
+  "english1908OfflineReaderResearchPrototype": {
+    "date": "2026-10-16",
+    "status": "STANDALONE_LOCAL_RESEARCH_UI_WORKING_NOT_PRODUCTION_INTEGRATED",
+    "editionWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "artifactName": "Schuster_1908_Offline_Research_Reader.html",
+    "artifactSHA256": "093c34ab8251798c521c303175b8436030fdcac3143fb4e39bbbb69e23fe60be",
+    "dataArtifactName": "Schuster_1908_Research_Reader_Data_v1.json",
+    "totalSourceChapters": 182,
+    "boundedSourceChaptersShown": 180,
+    "unsafeSourceChaptersHeld": 2,
+    "originalPrintFirstPassOriginsChaptersShown": 8,
+    "uncorrectedOCRChaptersShown": 172,
+    "candidateCanonicalAtlasSubjectLinks": 21,
+    "candidateLinksSource": "data/explore/biblical-schuster-1908-atlas-topic-candidates.v1.json",
+    "confirmedVerseAlignedAtlasLinksNew": 0,
+    "sourceTextPublicationApproved": 0,
+    "researchPrivacy": "Original historical source prose remains in user conversation artifacts, not published in GitHub",
+    "capabilities": [
+      "TESTAMENT_BROWSE",
+      "CHAPTER_SEARCH",
+      "READ_PREVIEW",
+      "RAW_OCR_TOGGLE",
+      "SEPARATE_ORIGINAL_QUESTIONS",
+      "SCRIPTURE_EPIGRAPH_OCR_WHERE_RESOLVED",
+      "ORIGINAL_SOURCE_PAGE_LINK",
+      "LOCAL_RESUME_AT_LAST_SCROLL",
+      "MARK_CHAPTER_READ",
+      "MOBILE_CHAPTER_DRAWER",
+      "ATLAS_TOPIC_CANDIDATES_ONLY",
+      "CHAPTER_EDITORIAL_HOLD_NOTICES"
+    ],
+    "browserRuntimeTest": "PLAYWRIGHT_CHROMIUM_DESKTOP_MOBILE_RENDERING_NAVIGATION_SEARCH_AND_READ_TOGGLE_PASSED",
+    "browserRuntimeExternalNetworkRequired": false,
+    "progressLocalStorageVersion": "AO_SCHUSTER_1908_PREVIEW_READING_STATE_v1",
+    "sourceDisplayTransform": "FIRST_EIGHT_CHAPTERS_PRIVATE_SOURCE_IMAGE_FIRST_PASS_TRANSCRIPTIONS; OTHER_172_MECHANICAL_WHITESPACE_REFLOW_ONLY_NO_WORD_SUBSTITUTION",
+    "libraryFilesUnderVersionControl": false,
+    "newSourceAuthoredBibleNarrativeWords": 0,
+    "productionAppChanged": false,
+    "nextProductStep": "Reconcile offline navigation/resume API with native Ad Orientem Bible reader while source rights and clean historic text quality remain gated; prefer large batch text-quality triage before publishing. Do not import 1908 OCR into production."
   }
 }
