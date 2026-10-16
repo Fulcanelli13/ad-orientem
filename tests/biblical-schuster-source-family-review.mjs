@@ -203,4 +203,37 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhScansLocated,1);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhPagesPrintInspected,0);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhParagraphsCertified,0);
 
+// User-supplied original 1908 English 11th-edition scan (print-based, not OCR).
+const original1908=fam.english1908EleventhUserPrintSourceAudit;
+assert.ok(original1908);
+assert.equal(original1908.sourcePDFPages,419);
+assert.equal(original1908.originalPrintScanSha256.length,64);
+assert.equal(original1908.sourceTitlePagePDF,1);
+assert.equal(original1908.printedImprimaturAndBHerder1908PDF,2);
+assert.deepEqual(original1908.originalFirstEightChapterPrintablePages,[1,17]);
+assert.deepEqual(original1908.correspondingPDFPages,[16,32]);
+assert.deepEqual(original1908.chapterStarts.map(c=>c.printedPage),[1,3,4,5,8,11,14,16]);
+assert.deepEqual(original1908.chapterStarts.map(c=>c.pdfPage),[16,18,19,20,23,26,29,31]);
+assert.ok(original1908.chapterStarts.every(c=>c.pdfPage===c.printedPage+15));
+assert.equal(original1908.imagePagesVisuallySpotChecked,17);
+assert.equal(new Set(original1908.imageSpotCheckPagesPDF).size,17);
+assert.equal(original1908.historicalCreation.originalNarrativeUnits,6);
+assert.equal(original1908.historicalCreation.includingSeventhDayInUnit,6);
+assert.equal(original1908.historicalCreation.firstPassHumanImageBasedTranscriptionsPrepared,6);
+assert.equal(original1908.historicalCreation.independentlySecondVerifiedNarrativeParagraphs,0);
+assert.equal(original1908.historicalSourceProsePublicationApproved,0);
+assert.equal(original1908.importedNarrativeTextBytes,0);
+assert.equal(original1908.authorialLevelMarkerClaimForEnglishEdition,"NOT_ESTABLISHED; SPANISH_1908_MARKER_SCHEME_MUST_NOT_BE_PROJECTED_ONTO_ENGLISH_1908");
+assert.equal(original1908.sourceTranscribedProseAddedToGithub,false);
+assert.equal(original1908.productionAppChanged,false);
+const originalWitness=fam.witnesses.find(w=>w.id===original1908.sourceEditionId);
+assert.ok(originalWitness);
+assert.equal(originalWitness.originalPrintedEditionYear,1908);
+assert.equal(originalWitness.physicalSourceTitlePageConfirmed,true);
+assert.equal(originalWitness.physicalSourceYearConfirmed,true);
+assert.equal(originalWitness.authorParagraphsCertified,0);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhOriginalPrintYearVerified,1908);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhNarrativeUnitsOnePassTranscribed,6);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhParagraphsCertified,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
