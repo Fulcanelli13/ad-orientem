@@ -9,7 +9,7 @@ import {scripturePassage} from "./catalogue.js";
 import {parseScriptureContext} from "./context.js";
 import {ROSARY_SCRIPTURE_LINKS} from "./links.js";
 import {NOVENA_SCRIPTURE_CONTEXT_V1} from "../pray/novena-scripture-context.js";
-import {MASS_FORMATION_SCRIPTURE_ANCHORS} from "../learn/mass-formation-scripture-context.js";
+import {MASS_FORMATION_SCRIPTURE_ANCHORS,MASS_FORMATION_SCRIPTURE_RELATIONSHIPS} from "../learn/mass-formation-scripture-context.js";
 import {PRAYER_SCRIPTURE_ORIGINS,STATION_SCRIPTURE_ORIGINS} from "../pray/scripture-origins.js";
 
 const rosaryGroups=Object.freeze({
@@ -60,7 +60,7 @@ for(const row of MASS_FORMATION_SCRIPTURE_ANCHORS){
   const parsed=parseScriptureContext(row.reference);
   if(!parsed)throw new Error("Invalid Mass Formation link: "+row.id);
   all.push(one("massFormation",row.id,parsed.passage,row.relationship,
-    row.title,null,{type:"massFormation",stageId:row.stageId}));
+    row.title,MASS_FORMATION_SCRIPTURE_RELATIONSHIPS[row.relationship],{type:"massFormation",stageId:row.stageId}));
 }
 for(const [id,row] of Object.entries(PRAYER_SCRIPTURE_ORIGINS)){
   if(!prayerTitles[id])throw new Error("Prayer title missing for "+id);
