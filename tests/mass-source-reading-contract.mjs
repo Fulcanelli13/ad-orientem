@@ -49,4 +49,31 @@ assert.equal((withStudy.match(/data-ao-reference-id="/g)||[]).length,
  (defaultPanel.match(/data-ao-reference-id="/g)||[]).length,
  "Original outbound citations and all claim-level documentary edges must be preserved");
 assert.match(massSourceStudyCss(),/\.aoMFSourceReading/);
-console.log("PASS source-study context: source metadata, explicit claim provenance, safe external original, bilingual, no invented excerpt or source relationship");
+let covered=0;
+for(const stage of formation.stages){
+ const sourceIds=[...new Set(stage.claims.flatMap(claim=>claim.sources))];
+ const evidenceRows=stage.claims.map(c=>({id:c.id,text:c.text.en,sourceIds:c.sources}));
+ const panel=sourceReferencePanelHtml({
+   rows:evidenceRows,registry:corpus,enableStudySource:true,idPrefix:stage.id
+ });
+ assert.equal((panel.match(/data-ao-reference-study-source="/g)||[]).length,sourceIds.length,
+   stage.id+" source context must be offered for each originally cited source");
+ for(const sourceId of sourceIds){
+  const record=massSourceStudyRecord(formation,stage.id,sourceId);
+  const expected=stage.claims.filter(claim=>claim.sources.includes(sourceId)).map(x=>x.id);
+  assert.deepEqual(record?.claims.map(x=>x.id),expected,
+   stage.id+" changed source-to-claim ownership for "+sourceId);
+  for(const language of [false,true]){
+   const html=massSourceStudyHtml(record,{french:language});
+   assert.equal((html.match(/data-ao-mf-source-original="/g)||[]).length,
+     record.canonicalUrl?1:0,"Document link appears multiple times");
+   assert.ok(html.includes("aoMFSourceAccess"),"Original link must be accessible before the long source claim list");
+   assert.ok(html.indexOf("aoMFSourceAccess")<html.indexOf("aoMFSourceClaimList"),
+     "Original link is unnecessarily buried below the lesson claims");
+   for(const claimId of expected)assert.ok(html.includes('data-ao-mf-source-claim="'+claimId+'"'));
+  }
+  covered++;
+ }
+}
+assert.equal(covered,23,"All 23 existing stage-source associations should be represented, with no new relationships");
+console.log("PASS source-study context: source metadata, explicit claim provenance, all 23 course source associations, safe original, bilingual, no invented excerpt or source relationship");
