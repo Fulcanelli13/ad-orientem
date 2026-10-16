@@ -287,4 +287,19 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhOriginalUnitSpansImageLocated
 assert.equal(fam.counts.earlyEnglishSadlierEleventhOriginalChaptersFullyUnitMapped,8);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhCompleteUnitTextCollations,0);
 
+const originalWorking=originSpans.workingTextBatch2;
+assert.equal(originalWorking.firstPassVisuallyTranscribedOriginalNumberedUnits,13);
+assert.equal(originalWorking.originalSourcePageOcrGeneratedOnce,17);
+assert.equal(originalWorking.remainingSourceUnitsNeedingVisualWordCollation,34);
+assert.deepEqual(originalWorking.firstPassChapters,["I","II","III"]);
+assert.equal(originalWorking.structuredWorkingTextSha256.length,64);
+assert.equal(originalWorking.provisionalOcrTextSha256.length,64);
+assert.equal(originalWorking.sourceWordingAddedToGitHub,false);
+assert.equal(originalWorking.independentlySecondCertifiedUnits,0);
+assert.equal(originalWorking.publicationApprovedUnits,0);
+assert.equal(originalWorking.noNewAiNarrative,true);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies,13);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhWorkingPageOcrGenerated,17);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining,34);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
