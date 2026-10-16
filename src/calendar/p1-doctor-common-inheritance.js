@@ -21,6 +21,26 @@ const canonical=value=>String(value??"").normalize("NFD")
 const exactLatinParity=(target,shared)=>Array.isArray(target)&&Array.isArray(shared)&&
   canonical(target.join("\n"))===canonical(shared.join("\n")) &&
   canonical(target.join("\n")).length>12;
+// The pinned C5a Latin inherited Collect repeats the SAME prayer beneath
+// the literal office rubric "(sed communi Summorum Pontificum)" and spells
+// the duplicate's cœlis as cælis. C4a contains the prayer once, with blank
+// lines. This is an edition layout alias, not a second or different Collect.
+// Recognize ONLY this strict shape. Any new extra Latin prayer remains HELD.
+const collectSignature=s=>canonical(String(s??"")
+  .replace(/c[œæ]lis/giu,"celis"));
+function exactSharedCollectParity(target,shared){
+  if(exactLatinParity(target,shared))return true;
+  if(!Array.isArray(target)||!Array.isArray(shared))return false;
+  const t=target.map(x=>String(x??"").trim()).filter(Boolean);
+  const d=shared.map(x=>String(x??"").trim()).filter(Boolean);
+  if(d.length!==2||t.length!==4)return false;
+  if(!/^\(sed communi Summorum Pontificum\)$/i.test(t[1]))return false;
+  if(!/^\$Per Dominum\.?$/i.test(d[1])||
+     !/^\$Per Dominum\.?$/i.test(t[3]))return false;
+  const signature=collectSignature(d[0]);
+  return signature.length>100 && signature===collectSignature(t[0]) &&
+    signature===collectSignature(t[2]);
+}
 const hold=(reason,section=null)=>Object.freeze({
   schema:"ao-p1-doctor-inheritance-v1",status:"HELD",reason,
   section,sourcePath:P1_DOCTOR_SOURCE_OWNER.target,
@@ -44,7 +64,9 @@ export function reconcileP1NonPontiffDoctorSources(
   for(const section of expected.sharedSections){
     if(!present(rows(targetLatin,section))||!present(rows(sharedLatin,section)))
       return hold("MISSING_SHARED_LATIN",section);
-    if(!exactLatinParity(rows(targetLatin,section),rows(sharedLatin,section)))
+    if(!(section==="Oratio"?
+      exactSharedCollectParity(rows(targetLatin,section),rows(sharedLatin,section)):
+      exactLatinParity(rows(targetLatin,section),rows(sharedLatin,section))))
       return hold("SHARED_LATIN_PARITY_MISMATCH",section);
     for(const lang of ["en","fr"]){
       if(!present(rows(shared[lang],section)))
