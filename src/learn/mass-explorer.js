@@ -106,6 +106,15 @@ function sourceBlockHtml(catalog,source,fr){
     "Ce texte du Propre varie selon la Messe choisie ; aucun texte générique n’est substitué."))+'</p></section>';
   const rows=(source.units||[]).filter(unit=>unit?.latin||unit?.english).map(unit=>{
     const translation=fr?catalog.frenchByCue[unit.cue_id]:unit.english;
+    // Canonical clock, not the legacy source field name, distinguishes
+    // English action rubrics from actual Latin liturgical prayer.
+    if(unit.clock==="PRIEST_ACTION"){
+      const value=translation||unit.english||unit.latin;
+      const lang=fr&&catalog.frenchByCue[unit.cue_id]?"fr":"en";
+      return '<aside class="aoMXAction" data-ao-mx-cue="'+esc(unit.cue_id||"")+'">'+
+        '<small>'+pick(fr,"Priest’s action","Action du prêtre")+'</small>'+
+        '<p lang="'+lang+'">'+esc(value)+'</p></aside>';
+    }
     return '<div class="aoMXTextRow" data-ao-mx-cue="'+esc(unit.cue_id||"")+'">'+
       (unit.latin?'<p lang="la" class="aoMXLatin">'+esc(unit.latin)+'</p>':"")+
       (translation?'<p lang="'+(fr?"fr":"en")+'" class="aoMXTranslation">'+esc(translation)+'</p>':
@@ -184,6 +193,7 @@ export function massExplorerCss(){
   ".aoMXRow{display:grid;grid-template-columns:38px 1fr;gap:8px;width:100%;min-height:56px;padding:13px 4px;align-items:center;text-align:left;border:0;border-bottom:1px solid var(--ao-rule,#393c40);background:transparent;color:inherit;cursor:pointer}.aoMXRow strong{font:500 1rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXRow small{display:block;color:var(--ao-text-muted,#adb2b7);font:400 .7rem/1.5 system-ui}.aoMXIndex{color:var(--liturgical,#c9ad78);font:400 .74rem/1 system-ui}",
   ".aoMXBlockIndex{display:flex;gap:8px;overflow:auto;scrollbar-width:thin;padding:12px 0 18px;scroll-snap-type:x proximity}.aoMXBlockIndex button{flex:0 0 auto;max-width:250px;min-height:44px;padding:10px 12px;border:1px solid var(--ao-rule,#393c40);border-radius:8px;background:var(--ao-surface-1,#101821);color:inherit;text-align:left;white-space:normal;font:400 .78rem/1.35 system-ui;scroll-snap-align:start}.aoMXBlockIndex button[aria-current=true]{border-color:var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78)}",
   ".aoMXText{margin:8px 0 25px;padding:8px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXText h2,.aoMXDetails h2{font:500 1.2rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXTextRow{padding:12px 0;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXLatin{font:400 1.15rem/1.7 var(--ao-font-body,Georgia,serif);margin:0 0 9px}.aoMXTranslation{font:400 .99rem/1.6 var(--ao-font-body,Georgia,serif);margin:0;color:var(--ao-text-muted,#adb2b7)}",
+  ".aoMXAction{margin:8px 0;padding:12px 14px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-surface-1,#101821);color:var(--ao-text-muted,#adb2b7)}.aoMXAction small{display:block;margin:0 0 5px;color:var(--liturgical,#c9ad78);font:600 .65rem/1.4 var(--ao-font-ui,system-ui);letter-spacing:.06em;text-transform:uppercase}.aoMXAction p{margin:0;font:400 .9rem/1.55 var(--ao-font-body,Georgia,serif);white-space:pre-line}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
   ".aoMXFormationLink button{width:100%;min-height:48px;padding:12px 15px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);border:1px solid var(--ao-rule,#393c40);border-radius:10px;text-align:left;font:500 .85rem/1.5 system-ui;cursor:pointer}",
