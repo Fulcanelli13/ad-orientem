@@ -73,7 +73,6 @@
     "historicalDoctorsInventory": 28,
     "currentReviewImageCategories": 168,
     "photographicCoverageCurrent": 153,
-    "strictPriorPublicationOrReleaseCoverage": 146,
     "originalGapCategoriesCurrent": 15,
     "classI2026ObservedDates": 53,
     "classIReusableThemes": 27,
@@ -88,7 +87,10 @@
     "sceneDonorGroups": 39,
     "rosaryTraditionalMysteries": 15,
     "rosarySupplementaryLuminousMysteries": 5,
-    "conservation": "Do not sum these overlapping counts as distinct artworks or new paintings. No comprehensive new unique-artwork target is certified."
+    "conservation": "Do not sum these overlapping counts as distinct artworks or new paintings. No comprehensive new unique-artwork target is certified.",
+    "legacyVerifiedExactOriginalImageSourceBaseline": 146,
+    "verifiedPublicationApprovedImageCount": null,
+    "publicationStatusNote": "No independently audited count of fully licensed, selected and app-approved artworks is established here; 146 was the original exact-source photographic coverage baseline, not a release-approved figure."
   },
   "supersedingProductRequirements": [
     {
@@ -153,7 +155,7 @@
     },
     {
       "id": "A13",
-      "requirement": "Keep image-photo provenance, museum accession, checksum, depiction view/side, completeness, attribution certainty, original-source licence/photographer terms, and app commercial-use permission separate. Acquisition or CC0 label in one context does not automatically prove permission for other photos.",
+      "requirement": "Keep image-photo provenance, museum accession, checksum, depiction view/side, completeness, attribution certainty, original-source licence/photographer terms, and app commercial-use permission separate. Acquisition or CC0 label in one context does not automatically prove permission for other photos. Keep verified rights status distinct from source-photo count; existing 146/168 baseline was photographic, not a proven commercial-release total.",
       "priority": "MUST"
     },
     {
@@ -6506,5 +6508,20 @@
     "genealogyWitnessNodesLuke": 76,
     "currentPhotoAcquisitionCoverage": 153,
     "note": "These are navigation/scene/biography sources, not artwork counts. Join to exact source IDs and assess art only if strong, never auto-create images."
+  },
+  "caveats": {
+    "documentaryBaselinesUnchanged": true,
+    "separateWorkstreamSourcesResearchOnly": [
+      "PR #1310 covenant/genealogy master",
+      "PR #887 art-source and rating ledger"
+    ],
+    "sharedSceneIdsMustNeverBeCloned": true,
+    "inferenceRestrictions": [
+      "No automatic exact identity match by saint-name/title, especially saint homonyms.",
+      "No assumption that a proposed character story implies original canonical Atlas event.",
+      "Atypical narratives in deuterocanonical books are eligible for selective source-backed illustration; no blanket Old Testament painting quota.",
+      "Liturgical date coverage derives from dynamic 1962-oriented calendar resolver, not fixed year 2026.",
+      "The interactive church glossary has its own object/3D registry, not part of this artwork inventory."
+    ]
   }
 }
