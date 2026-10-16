@@ -307,6 +307,21 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    const restoreToday=target?.closest?.("[data-home-restore-today]");
+    if(restoreToday){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      // Calendar navigation deliberately retains its selected date so users
+      // can inspect its Mass from Home. Reset only on this explicit command,
+      // never as a side effect of closing the embedded Calendar.
+      if(state(win)?.route==="home"){
+        const now=new Date();
+        const today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+          String(now.getDate()).padStart(2,"0")].join("-");
+        if(state(win)?.selectedDate!==today)
+          runtime(win)?.store?.dispatch?.({type:"set-date",date:today});
+      }
+      return;
+    }
     const backToday=target?.closest?.("[data-home-calendar-today]");
     if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");
