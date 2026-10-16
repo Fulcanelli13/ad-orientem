@@ -3,7 +3,6 @@
   "rules": [
     "For 33 Penrose auction painting, do not auto-bind as same original as Cambridge 1902 photograph; source/artist/year ambiguity remains.",
     "For 81 icon, authentic visual reference is low resolution and cannot be approved as final high-quality hero.",
-    "For 89 NGA, file title speculative; no claims or substitutions without exact page and accession.",
     "All earlier scores/readings unchanged."
   ],
   "items": [
@@ -62,14 +61,12 @@
       "identityStatus": "ORIGINAL_ICON_REFERENCE_LOW_RES",
       "evidence": "Authentic Roman original icon photograph; only 781x1024, no claim satisfactory hero resolution; review-only.",
       "reviewApproval": false
-    },
+    }
+  ],
+  "unresolved": [
     {
       "categoryIndex": 89,
-      "file": "Jacopo Bassano - The Miraculous Draught of Fishes - NGA 96688.jpg",
-      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_Bassano_-_The_Miraculous_Draught_of_Fishes_-_NGA_96688.jpg",
-      "identityStatus": "NGA_96688_FILE_UNCONFIRMED",
-      "evidence": "NGA Jacopo Bassano official photo candidate, file identity to validate",
-      "reviewApproval": false
+      "reason": "NGA official asset lookup required; proposed Commons filename not confirmed and intentionally excluded from download"
     }
   ]
 }
