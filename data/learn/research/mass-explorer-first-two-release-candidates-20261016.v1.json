@@ -1,0 +1,215 @@
+{
+  "schema": "ao-mass-explorer-first-two-release-candidates-v1",
+  "status": "EDITORIAL_CANDIDATES_NOT_HUMAN_APPROVED",
+  "scope": "FORMATION_ONLY",
+  "liturgical_profile": "ORDINARY_SUNG",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "published_claim_owner": "data/learn/mass-formation-campion.v1.json",
+  "release_manifest_owner": "data/learn/mass-explorer-approved-studies.v1.json",
+  "editorial_method": "Fresh original bilingual explanatory prose, grounded only in the original published Canon text and existing P1 published MF05/MF06 claims; no new attribution to historical authors and no new Scripture passage/approval.",
+  "release_ready_after_review": false,
+  "rights_classification": "APP_OWNED_ORIGINAL_PROSE_CANDIDATE_SUBJECT_TO_FINAL_REVIEW",
+  "research_exclusions": [
+    "Gihr and Le Brun grammar dispute",
+    "unverified authorship/Leo I interpolation",
+    "St Alphonsus and Le Brun disputed consecration theory",
+    "Abel heavenly-fire hypothesis",
+    "any new ceremonial gesture, bell or rubric",
+    "unreleased P0 quotations, new MFS Scripture IDs, invented official translations"
+  ],
+  "studies": [
+    {
+      "id": "AO.FORM.CANON.DEEP.02",
+      "stage_id": "MF05",
+      "block_ids": [
+        "AO.SM.B051"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF05-C01",
+        "MF05-C02"
+      ],
+      "title": {
+        "en": "Quam oblationem — before the Consecration",
+        "fr": "Quam oblationem — avant la Consécration"
+      },
+      "lead": {
+        "en": "This quiet prayer stands immediately before the words over the bread and wine. The priest asks the Father to accept and bless the offering so that it may become for us the Body and Blood of Christ. The petition prepares us to understand what follows; it is not an additional consecration.",
+        "fr": "Cette prière silencieuse précède immédiatement les paroles prononcées sur le pain et le vin. Le prêtre demande au Père d’agréer et de bénir l’offrande afin qu’elle devienne pour nous le Corps et le Sang du Christ. La supplication prépare à comprendre la suite ; elle n’est pas une consécration supplémentaire."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Why the prayer belongs immediately here",
+            "fr": "Pourquoi cette prière se trouve ici"
+          },
+          "body": {
+            "en": "The Canon has already presented the offering to God, prayed for the Church, and remembered those for whom the sacrifice is offered. Quam oblationem now approaches the heart of the action. Its request is addressed to the Father: may this offering be blessed and accepted, and may it become the Body and Blood of His beloved Son. Reading this prayer alongside the words of institution that follow helps distinguish a solemn petition from the sacramental Consecration itself. The prayer belongs to the received sequence; it neither replaces Christ’s words nor creates an independent ritual event.",
+            "fr": "Le Canon a déjà présenté l’offrande à Dieu, prié pour l’Église et fait mémoire des personnes pour lesquelles le sacrifice est offert. Quam oblationem nous conduit maintenant au cœur de l’action. La demande s’adresse au Père : que cette offrande soit bénie et agréée, et qu’elle devienne le Corps et le Sang de son Fils bien-aimé. Lire cette prière avec les paroles de l’institution qui suivent aide à distinguer une supplication solennelle de la Consécration sacramentelle elle-même. Elle appartient à la succession reçue des prières ; elle ne remplace ni les paroles du Christ ni ne constitue un rite indépendant."
+          },
+          "claim_ids": [
+            "MF05-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Five petitions, one offering",
+            "fr": "Cinq demandes, une seule offrande"
+          },
+          "body": {
+            "en": "The Latin accumulates five expressions: benedictam, adscriptam, ratam, rationabilem and acceptabilem. Their sequence gives the petition its solemn character: the priest is asking that the offering be blessed, acknowledged, confirmed, reasonable and acceptable before God. The words direct attention toward God's action, not toward five separate changes in the bread or wine. Nor should each sign of the Cross be explained as though it completed another consecration. The words of this prayer and the sacramental words over each species have different functions in the Roman liturgy. The Mass reader preserves their proper order.",
+            "fr": "Le latin réunit cinq termes : benedictam, adscriptam, ratam, rationabilem et acceptabilem. Leur succession donne à la demande son caractère solennel : le prêtre supplie que l’offrande soit bénie, reconnue, confirmée, raisonnable et agréable à Dieu. Ces paroles orientent l’attention vers l’action de Dieu ; elles ne décrivent pas cinq transformations distinctes du pain ou du vin. Il ne faut pas non plus expliquer chaque signe de croix comme s’il accomplissait une autre consécration. Cette prière et les paroles sacramentelles sur chacune des espèces remplissent des fonctions différentes dans la liturgie romaine. Le lecteur de Messe en conserve l’ordre propre."
+          },
+          "claim_ids": [
+            "MF05-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "What the Church means by the change",
+            "fr": "Ce que l’Église entend par le changement"
+          },
+          "body": {
+            "en": "The petition concludes by asking that the offering become the Body and Blood of Jesus Christ. Catholic teaching names the change at the Consecration transubstantiation: the substance of bread becomes Christ’s Body and the substance of wine becomes His Blood, while the appearances of bread and wine remain. The whole risen Christ is truly present under either species. Therefore the Eucharist cannot be reduced to a reminder or symbolic gesture. The quiet prayer prepares the mind for this reality, while the priest proceeds to the distinct sacramental words preserved in the Missal.",
+            "fr": "La demande s’achève en priant pour que l’offrande devienne le Corps et le Sang de Jésus-Christ. L’Église appelle transsubstantiation le changement accompli à la Consécration : la substance du pain devient le Corps du Christ et celle du vin son Sang, tandis que demeurent les apparences du pain et du vin. Le Christ ressuscité tout entier est réellement présent sous chacune des espèces. L’Eucharistie ne peut donc être réduite à un souvenir ou à un geste symbolique. Cette prière silencieuse prépare l’esprit à cette réalité, puis le prêtre poursuit avec les paroles sacramentelles distinctes du Missel."
+          },
+          "claim_ids": [
+            "MF05-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Why bread and chalice are consecrated separately",
+            "fr": "Pourquoi le pain et le calice sont consacrés séparément"
+          },
+          "body": {
+            "en": "In the Roman Mass, the priest pronounces the words over the Host and then over the chalice. This distinction matters: the separate sacramental appearances of Body and Blood represent Christ’s sacrificial death. It does not mean the risen Lord is divided between the two species, nor that He dies again upon the altar. The prayer Quam oblationem turns toward both Body and Blood before those two acts. Its place makes the unity of the sacrifice and the distinction of the following words intelligible without inventing an extra consecration between them.",
+            "fr": "Dans la Messe romaine, le prêtre prononce les paroles d’abord sur l’Hostie, puis sur le calice. Cette distinction est importante : la présence sacramentelle séparée du Corps et du Sang représente la mort sacrificielle du Christ. Elle ne signifie ni que le Seigneur ressuscité soit divisé entre les deux espèces, ni qu’Il meure une nouvelle fois sur l’autel. Quam oblationem oriente déjà la prière vers le Corps et le Sang avant ces deux actes. Sa place rend intelligibles l’unité du sacrifice et la distinction des paroles suivantes, sans imaginer une consécration supplémentaire."
+          },
+          "claim_ids": [
+            "MF05-C01",
+            "MF05-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "How to follow without interrupting the Canon",
+            "fr": "Comment suivre sans interrompre le Canon"
+          },
+          "body": {
+            "en": "Follow this quiet petition as the priest's prayer to the Father. Notice that its final purpose is expressed in relation to us: the offering is to become Christ’s Body and Blood for the good of the Church. The next moments are not detached ceremonies; they are the separate Consecrations of the Host and chalice within the same sacrifice. You may read the original Latin and its translation here, then continue to the next source block without any new posture or timed gesture being imposed by this explanation. All ceremonial cues remain governed by the actual Mass reader.",
+            "fr": "Suivez cette supplication silencieuse comme la prière du prêtre au Père. Remarquez que sa fin concerne aussi les fidèles : l’offrande doit devenir le Corps et le Sang du Christ pour le bien de l’Église. Les moments suivants ne sont pas des cérémonies isolées ; ce sont les consécrations distinctes de l’Hostie et du calice au sein du même sacrifice. Vous pouvez lire ici le latin original et sa traduction, puis passer à la prière suivante sans qu’aucune posture ni aucun geste chronométré soient ajoutés par ce commentaire. Les indications cérémonielles demeurent celles du véritable lecteur de Messe."
+          },
+          "claim_ids": [
+            "MF05-C01",
+            "MF05-C02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.05",
+      "stage_id": "MF06",
+      "block_ids": [
+        "AO.SM.B055"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF06-C01",
+        "MF06-C02",
+        "MF06-C03"
+      ],
+      "title": {
+        "en": "Supra quae — the sacrifices that point to Christ",
+        "fr": "Supra quae — les sacrifices qui annoncent le Christ"
+      },
+      "lead": {
+        "en": "After the Consecration, the Canon asks the Father to look favourably upon the offering, naming Abel, Abraham and Melchisedech. These are not three more sacrifices performed at Mass: they are biblical witnesses through whom the Church contemplates the one sacrifice of Christ.",
+        "fr": "Après la Consécration, le Canon demande au Père de regarder favorablement l’offrande et nomme Abel, Abraham et Melchisédech. Ce ne sont pas trois sacrifices supplémentaires célébrés à la Messe : ces figures bibliques aident l’Église à contempler l’unique sacrifice du Christ."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "What the prayer asks",
+            "fr": "Ce que demande la prière"
+          },
+          "body": {
+            "en": "Supra quae follows the Consecration and the Church’s remembrance of Christ’s Passion, Resurrection and Ascension. Now the priest asks the Father to regard the offering with favour, recalling earlier sacrifices that Scripture associates with acceptance before God. The prayer does not suggest the Eucharistic Victim is uncertain or lacking. The one offered is Christ Himself, and the Roman Canon places this offering within the history of salvation. Its language invites the faithful to see how the former signs find their fulfilment in Him rather than treating them as independent ceremonies inserted into the Mass.",
+            "fr": "Supra quae suit la Consécration et le mémorial de la Passion, de la Résurrection et de l’Ascension du Christ. Le prêtre demande maintenant au Père de regarder l’offrande avec faveur en rappelant des sacrifices anciens liés, dans l’Écriture, à l’agrément de Dieu. Cette prière ne suggère pas que la Victime eucharistique soit incertaine ou imparfaite. Celui qui est offert est le Christ Lui-même, et le Canon romain situe cette offrande dans l’histoire du salut. Ce langage invite les fidèles à voir comment les signes anciens trouvent leur accomplissement en Lui, plutôt qu’à les prendre pour des cérémonies indépendantes introduites dans la Messe."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Why Abel, Abraham and Melchisedech are named",
+            "fr": "Pourquoi Abel, Abraham et Melchisédech sont nommés"
+          },
+          "body": {
+            "en": "The three names are part of the received Latin prayer itself. Abel is remembered for an offering accepted by God; Abraham for faithful obedience amid a grave trial; Melchisedech for the figure of a priest offering to God. Each contributes something distinct to the Church’s remembrance of sacrifice. The Roman Canon gathers them into one petition, but does not claim that their offerings were equal to Christ’s. They direct our attention toward a reality greater than any ancient figure: the Eucharistic sacrifice of the Redeemer, which is being offered sacramentally in the Mass.",
+            "fr": "Ces trois noms figurent dans la prière latine reçue. Abel rappelle une offrande agréée de Dieu ; Abraham, l’obéissance fidèle au cours d’une grande épreuve ; Melchisédech, la figure d’un prêtre qui offre à Dieu. Chacun apporte une perspective distincte au souvenir du sacrifice dans l’Église. Le Canon romain les rassemble dans une seule supplication, mais ne prétend pas que leurs offrandes égalent celle du Christ. Ils orientent notre regard vers une réalité plus grande que toute figure ancienne : le sacrifice eucharistique du Rédempteur, offert sacramentellement dans la Messe."
+          },
+          "claim_ids": [
+            "MF06-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "One sacrifice, not a repetition of Calvary",
+            "fr": "Un sacrifice unique, non une répétition du Calvaire"
+          },
+          "body": {
+            "en": "The mention of these ancient sacrifices must be read together with the Church’s teaching on the Mass. Christ is the same divine Victim offered on Calvary; the Mass does not cause another death of Jesus. His one sacrifice is presented sacramentally and without bloodshed. The references to Abel, Abraham and Melchisedech therefore do not put Christ into a series of merely equivalent victims. Rather, they set the Eucharistic offering against the background of sacred history and help us understand why the Canon speaks of an acceptable sacrifice offered to the Father.",
+            "fr": "La mention de ces sacrifices anciens doit être lue à la lumière de l’enseignement de l’Église sur la Messe. Le Christ est la même Victime divine qu’au Calvaire ; la Messe ne provoque pas une nouvelle mort de Jésus. Son sacrifice unique est rendu présent sacramentellement et de manière non sanglante. Les références à Abel, Abraham et Melchisédech ne placent donc pas le Christ dans une succession de victimes simplement équivalentes. Elles situent l’offrande eucharistique dans l’histoire sainte et nous aident à comprendre pourquoi le Canon parle d’un sacrifice agréable présenté au Père."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "From sacrifice to Holy Communion",
+            "fr": "Du sacrifice à la sainte Communion"
+          },
+          "body": {
+            "en": "The Eucharistic sacrifice does not end as a remote event that the congregation merely observes. The same Victim offered to the Father is given to the faithful in Holy Communion. Sacrifice and sacred banquet express related aspects of a single mystery rather than two rival accounts of the Mass. Supra quae helps us perceive the continuity of worship throughout the Canon: offering and remembrance lead toward Communion with Christ. The biblical names are not there as decorative history; they prepare the mind to recognise the depth of the gift received.",
+            "fr": "Le sacrifice eucharistique ne s’achève pas comme un événement lointain que l’assemblée se contenterait de regarder. La même Victime offerte au Père est donnée aux fidèles dans la sainte Communion. Sacrifice et banquet sacré expriment deux aspects liés d’un même mystère, non deux explications rivales de la Messe. Supra quae aide à percevoir la continuité du culte tout au long du Canon : l’offrande et le mémorial conduisent vers la Communion au Christ. Les noms bibliques ne sont pas de simples ornements historiques ; ils disposent l’esprit à reconnaître la profondeur du don reçu."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "How to read this prayer in the Mass",
+            "fr": "Comment lire cette prière pendant la Messe"
+          },
+          "body": {
+            "en": "At this point the Consecration has already taken place. When you hear or read the names Abel, Abraham and Melchisedech, think of the long preparation for the sacrifice of Christ and of the Father’s acceptance of the offering. The Roman Canon does not introduce another procession, another consecration or an extra biblical reading at these words. Follow the priest’s original Latin text, and read the translation underneath if needed. Any additional discussion of exact Latin grammar or competing historical commentators belongs in an advanced research note, not in the directions given to those attending Mass.",
+            "fr": "À ce moment de la Messe, la Consécration a déjà eu lieu. En entendant ou en lisant les noms d’Abel, d’Abraham et de Melchisédech, songez à la longue préparation du sacrifice du Christ et à l’agrément de l’offrande par le Père. Le Canon romain n’ajoute ici ni procession, ni consécration nouvelle, ni lecture biblique supplémentaire. Suivez le texte latin original du prêtre et, si nécessaire, lisez la traduction au-dessous. Toute discussion supplémentaire sur la grammaire latine exacte ou les interprétations divergentes des auteurs anciens relève d’une note de recherche approfondie, non des indications destinées aux fidèles qui assistent à la Messe."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C02"
+          ]
+        }
+      ]
+    }
+  ],
+  "certification": {
+    "human_reviewed": false,
+    "formal_rights_reviewed": false,
+    "source_scope_checked_by_assistant": true,
+    "eligible_to_promote_to_release_manifest": false
+  }
+}
