@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Resolve source-owned missing original six French C3ap/C3p Paschal chant/reading sections and C7 nonvirgin martyr Lesson separately; remaining eight partial cases require inherited source graphs and variant checks. Do not borrow missing target Latin by similarity, mark provisional orations as published, or change LIVE Mass reader.",
+      "nextAction": "Reconcile the nine remaining partial Commons: C3ap needs six source-verified French texts absent from C3p French file; C1v has three distinct rubric-sensitive Collect options but English second variant appears mistranslated; other historical plural/Pope variants require canonical owner/rubric checking. Preserve no automatic Mass selection.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -128,8 +128,8 @@
         "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
         "furtherCommonCandidates": 28,
         "ambiguousUnmatchedIndexRows": 3,
-        "sourcePathsWithCompleteValidatedCore": 25,
-        "sourcePathCandidatesRequiringInheritance": 10,
+        "sourcePathsWithCompleteValidatedCore": 26,
+        "sourcePathCandidatesRequiringInheritance": 9,
         "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json",
         "paschalC2apCompletedFromSource": true,
         "paschalC2apSourceOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
@@ -150,7 +150,11 @@
           "Lectio"
         ],
         "remainingUncompletedSources": 10,
-        "sourceComplete": 25
+        "sourceComplete": 25,
+        "originalC7SourceLessonRecovered": true,
+        "originalC7SourceLessonOwner": "Commune/C6",
+        "incompleteVigilCollectVariantAudit": "data/calendar/p1-apostle-vigil-oration-variant-audit.v1.json",
+        "originalC3pFrenchTextAbsent": true
       }
     },
     {
@@ -315,10 +319,10 @@
   ],
   "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
   "appCommonSourceProgress": {
-    "canonicalAppSourceComplete": 25,
+    "canonicalAppSourceComplete": 26,
     "originalSevenComplete": 7,
     "newDirectComplete": 17,
-    "partialAppSourceCandidates": 10,
+    "partialAppSourceCandidates": 9,
     "ambiguousWebVariants": 3,
     "totalIndexRows": 38,
     "doctorC5aSourceInheritanceVerified": true,
@@ -331,6 +335,12 @@
     "paschalAlternativeBorrowedLanguageSections": 23,
     "partialSourceCompositionsValidated": 2,
     "recoveredSourceLanguageSectionLinks": 25,
-    "allUserFacingRoutesExternal": false
+    "allUserFacingRoutesExternal": false,
+    "c7ExplicitC6LessonVerified": true,
+    "c7LectureOriginal": "Eccli 51:1-8; 51:12",
+    "c7RejectedC6Alternate": "Eccli 51:13-17",
+    "c1vNamedCollectVariantsFound": 3,
+    "c1vEnglishSecondCollectUnderEditorialHold": true,
+    "c3pFrenchSourceMissingSixMassSections": true
   }
 }
