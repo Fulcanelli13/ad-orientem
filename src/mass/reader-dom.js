@@ -789,7 +789,6 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"]{
   --ao-missal-column-gap:clamp(16px,3.4vw,48px);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon,
 .ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
 .ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-progress,
@@ -1039,6 +1038,28 @@ button.ao-schola-control{cursor:pointer}
 
 
 
+/* Missal retains the source-owned posture/gesture and priest position/action
+   in one compact horizontal state ribbon, never the LIVE transient rails. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(74px,.56fr) minmax(0,1fr);
+  min-height:64px;height:64px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:5px;padding:4px 6px}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon){
+  width:35px;height:35px;flex:0 0 35px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-label{
+  max-width:120px;font-size:10px;line-height:1.17;
+}
+@media(max-width:360px){
+  .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon){
+    width:29px;height:29px;flex:0 0 29px;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-missal-gesture-icon{
+    width:27px;height:27px;flex:0 0 27px;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:3px;padding:3px}
+}
 /* Source-owned Missal prayer divisions. No in-Mass study links. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
   margin:26px 0 12px;padding:12px 0 8px;
