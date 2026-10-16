@@ -423,7 +423,30 @@
         "resolvedSourcePath": null,
         "route": null,
         "status": "NOT_YET_RESOLVED_IN_CANONICAL_APP_MISSAL"
-      }
+      },
+      "verifiedSourceCommonCandidates": [
+        {
+          "existingOwnerId": "commune:1962:doctor_non_pontiff",
+          "canonicalAppSourcePath": "Commune/C5a",
+          "printedFamilyId": "commune-print:doctorum",
+          "variant": "DOCTOR_NON_PONTIFF",
+          "latinSourceSectionsPresent": true,
+          "enFrOwnSecretaPostcommunioOnly": true,
+          "inheritedSharedDocSource": "Commune/C4a",
+          "sourceCompleteness": "SOURCE_PRESENT_NEEDS_VERNACULAR_SHARED_DOCTOR_INHERITANCE_AND_SELECTION_REVIEW",
+          "allowMass": false
+        },
+        {
+          "existingOwnerId": "commune:1962:confessor_non_pontiff",
+          "canonicalAppSourcePath": "Commune/C5",
+          "printedFamilyId": "commune-print:confessor-non-pontiff",
+          "variant": "FIRST_MASS",
+          "sourceCompleteness": "DIRECT_TRILINGUAL_SEVEN_CORE_SECTIONS_PRESENT",
+          "allowMass": false
+        }
+      ],
+      "canonicalAppSourceCrosswalk": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+      "liturgicalFormularyStillUnselected": true
     },
     {
       "saintId": "saint.giuseppina-vannini",
@@ -4418,5 +4441,6 @@
   "printedFamilyResearchOwner": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
   "doctorsOnePrintedFamilyPolicy": "Both existing Pontiff and non-Pontiff Doctor index IDs refer to the one printed Commune Doctorum with specific oration variant; never create a second independent Common identity.",
   "internalMissalNavigationContract": "data/calendar/p1-internal-missal-navigation.v1.json",
-  "userFacingFormularyLinks": "INTERNAL_RESOLVER_BACKED_ONLY_NO_EXTERNAL_PDF_PAGES"
+  "userFacingFormularyLinks": "INTERNAL_RESOLVER_BACKED_ONLY_NO_EXTERNAL_PDF_PAGES",
+  "doctorCommonNewmanStatus": "IN_APP_DOCTOR_NONPONTIFF_SOURCE_FOUND_C5A_BILINGUAL_INHERITANCE_AND_LEGAL_PERMISSIONS_UNRESOLVED"
 }
