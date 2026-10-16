@@ -1,0 +1,71 @@
+{
+  "schema": "AO_SACRED_ART_THREE_HARD_GAPS_SOURCE_RECOVERY_V1",
+  "created": "2026-10-16",
+  "userRule": "Mobile visual quality > file pixel size; keep paintings original, identity and rights separate; do not alter historical ratings.",
+  "researchOnly": true,
+  "strictBaseline": "146/168",
+  "items": [
+    {
+      "categoryIndex": 30,
+      "category": "St Gregory Nazianzen",
+      "workId": "G30-004",
+      "physicalOriginalId": "LOMBARDIA-L0070-00118",
+      "artist": "Giuseppe Franchi (attributed)",
+      "title": "Ritratto di San Gregorio Nazianzeno",
+      "date": "c. 1597",
+      "medium": "oil on canvas",
+      "museum": "Pinacoteca Ambrosiana",
+      "dimensionsCm": [
+        51,
+        65
+      ],
+      "catalogueUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/L0070-00118/",
+      "candidateImageUrls": [
+        "https://www.lombardiabeniculturali.it/assets/immagini/liv2/OA310RL/SC/OA/L0070/00/OA_L0070-00118_IMG-0000222844.jpg"
+      ],
+      "originalMatch": "EXACT_PREVIOUSLY_SELECTED_ORIGINAL",
+      "rights": "REGIONE_LOMBARDIA_AMBROSIANA_NO_APP_LICENSE; research-only",
+      "action": "Download exact image; assess 390px, whether complete painting and original versus frame"
+    },
+    {
+      "categoryIndex": 41,
+      "category": "St Cyril of Jerusalem",
+      "workId": "NANNONI-0900117888A-1",
+      "physicalOriginalId": "ICCD-0900117888A-1",
+      "artist": "Antonio Nannoni (attributed)",
+      "title": "San Cirillo di Gerusalemme",
+      "date": "1637",
+      "medium": "fresco",
+      "museum": "Church Carmelite fresco cycle, Tavarnelle Val di Pesa",
+      "dimensionsCm": [
+        74,
+        69
+      ],
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1",
+      "candidateImageUrls": [],
+      "originalMatch": "NEW_DISTINCT_EXACT_SUBJECT_ORIGINAL",
+      "rights": "ICCD metadata CC BY 4.0 does not grant PHOTO rights; source image research-only",
+      "action": "Parse institutional catalogue gallery and attached PDF for photographic source URL; inscription S.CYRILLUS H; photograph and image legal QA pending"
+    },
+    {
+      "categoryIndex": 52,
+      "category": "St Patrick",
+      "workId": "JAMES-BARRY-NGI-4623",
+      "physicalOriginalId": "NGI-4623",
+      "artist": "James Barry",
+      "title": "The Baptism of the King of Cashel by Saint Patrick",
+      "date": "c. 1800-1801",
+      "medium": "oil on paper laid on canvas",
+      "museum": "National Gallery of Ireland",
+      "dimensionsCm": [
+        62,
+        63
+      ],
+      "catalogueUrl": "https://onlinecollection.nationalgallery.ie/objects/8798",
+      "commonsFile": "The Baptism of the King of Cashel by Saint Patrick .PNG",
+      "originalMatch": "NEW_DISTINCT_VERIFIED_ORIGINAL_ALTERNATIVE_TO_RDS_VALDRE",
+      "rights": "National Gallery of Ireland CC BY 4.0, attribution required; Commons PD-Art also claimed",
+      "action": "Acquire 344x332 exact work; judge colour/full surface on phone; never replace previous RDS Valdre silently"
+    }
+  ]
+}
