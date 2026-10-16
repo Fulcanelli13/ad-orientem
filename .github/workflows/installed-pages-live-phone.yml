@@ -1,0 +1,101 @@
+name: Live installed GitHub Pages phone parity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/installed-pages-live-phone.mjs"
+      - "tests/canonical-pages-live-parity.mjs"
+      - ".github/workflows/installed-pages-live-phone.yml"
+  # GitHub's Pages "dynamic" deployment does not reliably emit workflow_run.
+  # Direct main pushes provide an independently observable release trigger.
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "sw.js"
+      - "src/app/offline-boot.js"
+      - "src/settings/**"
+      - "src/home/**"
+      - "src/calendar/**"
+      - "tests/installed-pages-live-phone.mjs"
+      - "tests/canonical-pages-live-parity.mjs"
+      - ".github/workflows/installed-pages-live-phone.yml"
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-live-installed-path:
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install site-test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Wait for public Pages to publish the committed source
+        shell: bash
+        run: |
+          for attempt in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            echo "Network byte comparison (attempt $attempt/12)"
+            node tests/canonical-pages-live-parity.mjs
+            if node --input-type=module -e '
+              import {readFileSync} from "node:fs";
+              const d=JSON.parse(readFileSync("test-output/canonical-pages-parity/report.json"));
+              const needed=["index.html","sw.js","src/app/offline-boot.js",
+                "src/settings/presentation.js","src/settings/browser-entry.js",
+                "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js"];
+              if(!needed.every(path=>d.files.find(row=>row.path===path)?.exact===true))
+                process.exit(1);
+            '; then
+              echo "P0: all seven production sources now match deployed release"
+              break
+            fi
+            if [ "$attempt" = 12 ]; then
+              echo "::error::GitHub Pages never served the expected main release within bounded retry"
+              exit 1
+            fi
+            sleep 20
+          done
+      - name: Verify deployed canonical app source matches this release
+        shell: bash
+        run: |
+          node --input-type=module <<'EOF'
+          import {readFileSync} from "node:fs";
+          import assert from "node:assert/strict";
+          const d=JSON.parse(readFileSync("test-output/canonical-pages-parity/report.json"));
+          for(const path of [
+            "index.html","sw.js","src/app/offline-boot.js",
+            "src/settings/presentation.js","src/settings/browser-entry.js",
+            "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js"
+          ]){
+            const entry=d.files.find(x=>x.path===path);
+            assert.ok(entry,"Public-file audit missing "+path);
+            assert.equal(entry.exact,true,"Public Pages is not serving expected release bytes: "+path);
+          }
+          console.log("P0_PAGES_SOURCE_EXACT_PASS="+JSON.stringify({
+            release:d.testedCommit,filesVerified:7,server:d.target,
+            physicalHandsetVerified:false
+          }));
+          EOF
+      - name: Fresh phone — stage, identify, reload offline and preserve version
+        run: node tests/installed-pages-live-phone.mjs
+      - name: Preserve network/browser/screenshots evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: installed-pages-live-phone-parity
+          path: |
+            test-output/canonical-pages-parity/report.json
+            test-output/installed-pages-phone/
+          if-no-files-found: warn
+          retention-days: 14
