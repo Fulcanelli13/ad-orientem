@@ -220,17 +220,33 @@
       "code": "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION",
       "kind": "INTERNAL_SOURCE_ID_AND_READER_DEEPLINK_HOLD",
       "status": "OPEN",
-      "nextAction": "For every approved celebrant/formulary and commemorative oration, resolve exact existing Proper.sourcePath plus source-owned oration row ID, then route into Ad Orientem read-only Missal at the appropriate reader slot. Do not invent calendar-to-reader deep links or navigate external Missale Romanum page images; P0/Mass reader owns routing and source parity.",
+      "nextAction": "Integrate exact six source-verified paragraph IDs into P0's read-only Missal deep-link API; keep historic prayer reference independent of whether commemoration is actually recited at any Mass form. Generalize after validating other Commons and genuine modern-saint Formulary IDs.",
       "referenceContract": "data/calendar/p1-internal-missal-navigation.v1.json",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "status": "SIX_OF_SIX_HISTORICAL_9_OCT_READ_ONLY_PARAGRAPHS_VERIFIED_BY_ACTUAL_PRODUCTION_RESOLVER",
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "verifiedCanonicalPath": "Sancti/10-09",
+        "verifiedCommemorationPath": "Sancti/10-09t",
+        "verifiedCommemorationId": "sancti:10-09t:4:r",
+        "verifiedParagraphs": [
+          "COLLECT_SET.1",
+          "SECRET_SET.1",
+          "POSTCOMMUNION_SET.1",
+          "COLLECT_SET.2",
+          "SECRET_SET.2",
+          "POSTCOMMUNION_SET.2"
+        ],
+        "remaining": "P0/reader to implement navigable READ_ONLY Missal paragraph target without touching active Mass or confounding reference with liturgical recitation"
+      }
     }
   ],
   "printImageFindingsCount": 5,
   "priorityNow": [
-    "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION",
+    "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION_ROUTER_ONLY",
+    "COMMON_DOCTORUM_CANONICAL_APP_SOURCE_LOOKUP",
     "PRIMARY_1962_COMMONS_COLLATION",
-    "NEWMAN_LEONARDI_THREE_ORATIONS",
-    "OCTOBER_9_DIONYSIUS_TRIO",
     "SUNG_MASS_SECTION4_VS_111A"
   ],
   "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus."
