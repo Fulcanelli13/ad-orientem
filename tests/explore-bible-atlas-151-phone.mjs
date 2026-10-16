@@ -55,7 +55,7 @@ try{
  }
 
  page.on("pageerror",error=>errors.push(String(error?.message??error)));
- await page.goto("http://127.0.0.1:4275/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.goto("http://127.0.0.1:4275/index.html?atlasCinema=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
  await page.locator('[data-ao-app-surface="find"]').tap();
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});

@@ -1,5 +1,6 @@
 import "./source-transport-compat.js";
 import "./offline-boot.js";
+import "./release-identity.js";
 import { installAppDesignSystem } from "./design-system.js";
 import { installAppLiturgicalTheme } from "./liturgical-theme.js";
 import { createScrollTapGuard } from "./scroll-tap-guard.js";

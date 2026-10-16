@@ -166,6 +166,8 @@ export function exploreMapFeatures(items){
         heritage_primary:String(item.heritage_primary??""),
         place_type:String(item.place_type??"other"),
         name:String(item.title??""),
+        ...(typeof item.atlas_label==="string"&&item.atlas_label.trim()&&item.atlas_label_basis==="existing_settlement_anchor"
+         ?{atlas_label:item.atlas_label.trim()}:{}),
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate),
         indicative_only:Boolean(g.indicative_only),
@@ -333,6 +335,33 @@ export function mapFitBounds(features){
   if(bounds[1][0]-bounds[0][0]>300||bounds[1][1]-bounds[0][1]>140)return null;
   return bounds;
 }
+// A phone cannot display an almost global Place corpus at zoom 1: clusters
+// at the sides become half-circles with no usable touch centre. Use a bounded,
+// one-copy geographic overview with explicit space for the largest 35px halo.
+// Coordinates and per-place publication authority are never changed.
+export function explorePhoneOverview(features,width){
+  if(!Number.isFinite(width)||width<250||width>430)return null;
+  const points=(Array.isArray(features)?features:[]).map(f=>f?.geometry?.coordinates)
+    .filter(p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite));
+  if(points.length<2)return null;
+  const west=Math.min(...points.map(p=>p[0])),east=Math.max(...points.map(p=>p[0]));
+  // Only wide-world collections need this exception; regional maps retain
+  // their existing automatic fit or previously restored camera.
+  if(east-west<=240)return null;
+  const south=Math.min(...points.map(p=>p[1])),north=Math.max(...points.map(p=>p[1]));
+  const edge=width<=350?52:width<=400?54:58;
+  // MapLibre fitBounds may choose the *short* route across the date line
+  // for a nearly global west/east pair. Compute a nonwrapping camera instead.
+  // 512 CSS pixels is the world width at zoom 0 in Web Mercator.
+  const usable=Math.max(1,width-2*edge);
+  const zoom=Math.log2(usable*360/(512*(east-west)));
+  return {
+    center:[(west+east)/2,(south+north)/2],
+    zoom:Math.max(-2,Math.min(10,zoom)),
+    edge,
+    west,east,
+  };
+}
 export function mapViewport(map){
   const center=map?.getCenter?.(),zoom=map?.getZoom?.();
   if(!center||!Number.isFinite(center.lng)||!Number.isFinite(center.lat)||!Number.isFinite(zoom))return null;
@@ -340,6 +369,7 @@ export function mapViewport(map){
 }
 export async function mountExploreMap(container,items,{
   win=globalThis,onSelect=()=>{},initialViewport=null,allowEmpty=false,
+  styleOverride=null,
 }={}){
   let features=exploreMapFeatures(items);
   if(!container||(!features.length&&!allowEmpty)||!win?.document)return null;
@@ -347,12 +377,33 @@ export async function mountExploreMap(container,items,{
   const maplibre=await loadMapLibre(win);
   container.innerHTML="";
   const reducedMotion=win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+  const phoneWidth=Number(container.getBoundingClientRect?.().width||container.clientWidth||0);
+  const phoneOverview=!initialViewport?explorePhoneOverview(features,phoneWidth):null;
+  const camera=boundedWorldMapOptions(initialViewport);
+  if(phoneOverview){
+    camera.minZoom=-2;
+    delete camera.maxBounds;
+    camera.center=phoneOverview.center;
+    camera.zoom=phoneOverview.zoom;
+  }
+  const compactAttribution=phoneWidth>0&&phoneWidth<=430&&typeof maplibre.AttributionControl==="function";
   const map=new maplibre.Map({
     container,
-    style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
-    ...boundedWorldMapOptions(initialViewport),
-    attributionControl:true,
+    style:styleOverride??win.AO_EXPLORE_MAP_STYLE_URL??win.AO_DIRECTORY_MAP_STYLE_URL??DEFAULT_STYLE,
+    ...camera,
+    attributionControl:!compactAttribution,
   });
+  if(compactAttribution)map.addControl?.(new maplibre.AttributionControl({compact:true}),"bottom-left");
+  if(phoneOverview){
+    map.on?.("moveend",()=>{
+      const position=map.getCenter?.();
+      if(!position)return;
+      const lng=clamp(position.lng,-179.99,179.99);
+      const lat=clamp(position.lat,-85,85);
+      if(Math.abs(lng-position.lng)>0.01||Math.abs(lat-position.lat)>0.01)
+        map.jumpTo?.({center:[lng,lat],zoom:map.getZoom?.()});
+    });
+  }
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
@@ -366,7 +417,8 @@ export async function mountExploreMap(container,items,{
     reset.addEventListener("click",()=>{
       const bounds=mapFitBounds(features);
       const duration=reducedMotion?0:360;
-      if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration});
+      if(phoneOverview)map.easeTo({center:phoneOverview.center,zoom:phoneOverview.zoom,duration});
+      else if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration});
       else map.easeTo({center:[0,16],zoom:1,duration});
     });
     container.append?.(reset);
@@ -427,6 +479,20 @@ export async function mountExploreMap(container,items,{
         "text-optional":true},
       paint:{"text-color":"#e9dfcc","text-halo-color":"#08121b",
         "text-halo-width":1.4,"text-opacity":0.92}});
+    // The review-only physical atlas labels its existing source-qualified
+    // settlements. Never label traditional event sites or create map points.
+    if(styleOverride){
+      map.addLayer({id:prefix+"-scripture-settlement-labels",type:"symbol",source:sourceId,
+        minzoom:4.5,
+        filter:["all",["!",["has","point_count"]],["has","atlas_label"]],
+        layout:{"text-field":["get","atlas_label"],
+          "text-size":["interpolate",["linear"],["zoom"],4.5,10,8,13],
+          "text-anchor":"top","text-offset":[0,1.1],
+          "text-allow-overlap":false,"text-ignore-placement":false,
+          "text-optional":true},
+        paint:{"text-color":"#efe0b8","text-halo-color":"#142631",
+          "text-halo-width":2,"text-halo-blur":0.35}});
+    }
     // Real affiliation insignia appear only for classified TLM venues.
     // Progressive loading keeps every existing pin usable when a source blocks CORS.
     if(features.some(feature=>feature.properties?.lens==="tlm")){
@@ -460,7 +526,7 @@ export async function mountExploreMap(container,items,{
     }
     if(!initialViewport){
       const bounds=mapFitBounds(features);
-      if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
+      if(!phoneOverview&&bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
       else if(features.length===1)map.jumpTo({center:features[0].geometry.coordinates,zoom:9});
     }
     map.on("click",prefix+"-points",event=>{

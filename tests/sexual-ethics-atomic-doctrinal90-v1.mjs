@@ -8,6 +8,12 @@ import { CSE_REMAINING_STAGE_SOURCE_IDS } from "../src/learn/sexual-ethics-data/
 
 const dossier=JSON.parse(readFileSync("data/learn/sexual-ethics-atomic-doctrinal90-20261009.v1.json","utf8"));
 const stageRegistry={...CSE_HIGH_STAGE_SOURCE_IDS,...CSE_REMAINING_STAGE_SOURCE_IDS};
+const historicalDelta=JSON.parse(readFileSync("data/reference/formation-current-source-reconciliation.v2.json","utf8"));
+const formerCSEStages=new Map(historicalDelta.historical_cse_atomic_stage_rescopes.map(x=>[x.owner+"::"+x.stage,x]));
+const fingerprint=value=>{let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(16).padStart(8,"0")};
+assert.equal(formerCSEStages.size,5);
+assert.equal(historicalDelta.metrics.historical_cse_atomic_stage_total,90);
+assert.equal(historicalDelta.metrics.historical_cse_unchanged_atomic_stages_expected,85);
 const questionMap=new Map(CSE_QUESTIONS.map(x=>[x.id,x]));
 const catholicStages=["concession","breakpoint","catholicCase","response","bottom"];
 const prior=JSON.parse(readFileSync("data/learn/sexual-ethics-atomic-claim-review-assault2024-cse112-117-020.v1.json","utf8"));
@@ -44,7 +50,19 @@ for(const entry of dossier.cases){
    assert.ok(snapshot.stage_source_ids[stage].includes(sid),entry.id+" "+stage+" frozen source not synced");
    assert.ok(certification.stages.find(x=>x.stage===stage).selected_source_ids.includes(sid),entry.id+" "+stage+" cert source ledger not synced");
    assert.equal(CSE_SOURCE_MAP[sid]?.canonical_url,row.source_url,entry.id+" "+stage+" original source URL drift");
-   assert.deepEqual([row.stage_live_en,row.stage_live_fr],original[stage],entry.id+" "+stage+" EN/FR text drift");
+   const former=formerCSEStages.get(entry.id+"::"+stage);
+   if(former){
+     assert.equal(entry.id,"CSE045","Only the documented owner may rescope historic stage text");
+     assert.equal(former.historic_atomic_claim_source_id,row.source_id);
+     assert.equal(former.old_en_fr_fingerprint,fingerprint(JSON.stringify([row.stage_live_en,row.stage_live_fr])));
+     assert.equal(former.current_en_fr_fingerprint,fingerprint(JSON.stringify(original[stage])));
+     assert.notDeepEqual([row.stage_live_en,row.stage_live_fr],original[stage],
+       "Current stage restored; historical supersession must be removed");
+     assert.equal(former.whole_stage_certified,false);
+     assert.equal(former.independent_french_certified,false);
+     assert.match(former.disposition,/NOT_AUTO_CERTIFIED/);
+   } else assert.deepEqual([row.stage_live_en,row.stage_live_fr],original[stage],
+     entry.id+" "+stage+" unrecorded EN/FR text drift");
    const actual=paragraphRefsFor(item,"debate",stage).map(x=>x[0]);
    assert.ok(actual.includes(sid),entry.id+" "+stage+" citation lost by reader fallback");
    assert.deepEqual(actual,stageRegistry[entry.id][stage],entry.id+" "+stage+" source substitute");
@@ -57,12 +75,21 @@ for(const entry of dossier.cases){
  }
 }
 assert.equal(verified,90);
+assert.deepEqual([...formerCSEStages.keys()].sort(),
+ ["CSE045::concession","CSE045::breakpoint","CSE045::catholicCase","CSE045::response","CSE045::bottom"].sort());
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[0],/cann\. 1116 and 1127 §2/);
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[1],/cann\. 1116 et 1127 §2/);
 assert.match(CSE_DEBATE_MAP.CSE044.catholicCase[0],/canon 1098/);
 assert.match(CSE_DEBATE_MAP.CSE044.catholicCase[1],/canon 1098/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/historical ordering of matrimonial ends/);
-assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/l'ordre traditionnel des fins/);
+const earlierCSE045=dossier.cases.find(x=>x.id==="CSE045").claims.find(x=>x.field==="catholicCase");
+assert.match(earlierCSE045.stage_live_en,/historical ordering of matrimonial ends/,
+  "Earlier marriage-goods answer must remain in the provenance ledger");
+assert.match(earlierCSE045.stage_live_fr,/l'ordre traditionnel des fins/);
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[0],/Casti connubii §§26–29.*Mulieris dignitatem §24/,
+  "Rewritten headship answer must name both original papal passages without pretending they say identical things");
+assert.match(CSE_DEBATE_MAP.CSE045.catholicCase[1],/Casti connubii.*Mulieris dignitatem/,
+  "Revised dispute must have a substantive French reading");
+assert.equal(formerCSEStages.get("CSE045::catholicCase").whole_stage_certified,false);
 assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[0],/None of this diminishes/);
 assert.match(CSE_DEBATE_MAP.CSE101.catholicCase[1],/Rien de cela ne diminue/);
 for(const [id,source] of [["CSE045","CIC"],["CSE064","MIDWIVES"]]){

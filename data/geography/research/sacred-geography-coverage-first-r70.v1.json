@@ -20,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 258,
-    "existing_published_shrines": 254,
-    "linked_pilgrimages": 237,
+    "existing_production_places": 261,
+    "existing_published_shrines": 257,
+    "linked_pilgrimages": 240,
     "existing_country_coverage": 69,
-    "published_sites_bilingual": 254,
-    "source_registry_sites": 254,
-    "existing_physical_pins": 254,
+    "published_sites_bilingual": 257,
+    "source_registry_sites": 257,
+    "existing_physical_pins": 257,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
-      "CONFIRMED_EXISTING_PROMOTION": 163,
+      "CONFIRMED_EXISTING_PROMOTION": 166,
       "POTENTIAL_EXISTING_ID_REVIEW": 6,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 581
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 578
     },
     "priorities": {
       "Essential": 64,
@@ -57,18 +57,18 @@
     {
       "country": "IT",
       "curated_candidates": 58,
-      "published_shrines": 39,
-      "confirmed_promotions": 19,
+      "published_shrines": 40,
+      "confirmed_promotions": 20,
       "possible_reuses": 0,
-      "unresolved": 39
+      "unresolved": 38
     },
     {
       "country": "FR",
       "curated_candidates": 48,
-      "published_shrines": 44,
-      "confirmed_promotions": 20,
+      "published_shrines": 45,
+      "confirmed_promotions": 21,
       "possible_reuses": 1,
-      "unresolved": 27
+      "unresolved": 26
     },
     {
       "country": "ES",
@@ -97,10 +97,10 @@
     {
       "country": "GB",
       "curated_candidates": 23,
-      "published_shrines": 3,
-      "confirmed_promotions": 2,
+      "published_shrines": 4,
+      "confirmed_promotions": 3,
       "possible_reuses": 0,
-      "unresolved": 21
+      "unresolved": 20
     },
     {
       "country": "IL",
@@ -6542,14 +6542,15 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:IT:duomo-orvieto",
       "possible_existing_place_id": null,
       "review_wave": 5,
       "review_order": 344,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
-      "publication": "NO_AUTOMATIC_CHANGE"
+      "pin_gate": "EXISTING_CANONICAL_PIN",
+      "publication": "NO_AUTOMATIC_CHANGE",
+      "reconciliation_evidence": "R79_ORIGINAL_INSTITUTION_OSM_BUILDING"
     },
     {
       "candidate_id": "SG-INV-0741",
@@ -7717,15 +7718,16 @@
       "category": "Christological / Eucharistic",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:FR:sacre-coeur-montmartre",
       "possible_existing_place_id": null,
       "review_wave": 6,
       "review_order": 417,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Montmartre is not Paray-le-Monial"
+      "identity_warning": "Montmartre is not Paray-le-Monial",
+      "reconciliation_evidence": "R79_ORIGINAL_INSTITUTION_OSM_BUILDING"
     },
     {
       "candidate_id": "SG-INV-0085",
@@ -11672,15 +11674,16 @@
       "category": "Great church / monastery",
       "priority": "Review",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:GB:westminster-cathedral",
       "possible_existing_place_id": null,
       "review_wave": 9,
       "review_order": 662,
       "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE",
-      "identity_warning": "Westminster Cathedral (Catholic) is not Westminster Abbey (Anglican). Distinct buildings and confessions."
+      "identity_warning": "Westminster Cathedral (Catholic) is not Westminster Abbey (Anglican). Distinct buildings and confessions.",
+      "reconciliation_evidence": "R79_ORIGINAL_INSTITUTION_OSM_BUILDING"
     },
     {
       "candidate_id": "SG-INV-0176",

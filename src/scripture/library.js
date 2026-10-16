@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -61,6 +61,8 @@ export function mountScriptureLibrary(root,{
  let section="read";
  let contextDepth="selected";
  let commentaryVisible=false;
+ let relatedExpanded=false;
+ const relatedTrail=[];
  let browseExpanded=!context?.reference;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
@@ -112,6 +114,23 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   if(relatedTrail.length){
+     const back=element("button",lang==="fr"?"Retour au passage précédent":"Back to previous passage");
+     back.type="button";back.dataset.scriptureRelatedBack="";
+     back.addEventListener("click",()=>{
+       const prev=relatedTrail.pop();
+       if(!prev)return;
+       location=prev.location;context=prev.context;contextDepth=prev.contextDepth;
+       commentaryVisible=prev.commentaryVisible;relatedExpanded=prev.relatedExpanded;
+       browseExpanded=prev.browseExpanded;
+       segmentSet=prev.segmentSet??null;
+       activeSegmentIndex=prev.activeSegmentIndex??-1;
+       draw();
+       root.scrollTop=prev.scrollTop;
+       queueMicrotask(()=>wrap.querySelector(".aoScriptureRelated summary")?.focus?.({preventScroll:true}));
+     });
+     wrap.append(back);
+   }
    // Citation reading is the primary surface. All-library navigation lives below it.
    const browse=element("details",null,"aoScriptureBrowse");
    browse.open=browseExpanded;
@@ -365,6 +384,99 @@ export function mountScriptureLibrary(root,{
    main.append(actions);
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
+   // Lazy reverse index from the exact same cited-object source registries.
+   // Presence here indicates intersecting verses, not an identical rite.
+   const related=element("details",null,"aoScriptureRelated");
+   related.dataset.scriptureRelatedObjects="";
+   related.open=relatedExpanded;
+   const relatedSummary=element("summary",lang==="fr"?"Liens dans Ad Orientem":"Connected in Ad Orientem");
+   const relatedBody=element("div",null,"aoScriptureRelatedList");
+   const relationText=Object.freeze({
+     COMPOSITE_DEVOTION:["Partly biblical prayer, not a verbatim whole prayer","Prière composée, non intégralement biblique"],
+     GOSPEL_PASSION_CONTEXT:["Gospel context for this station","Contexte évangélique de cette station"],
+     BIBLICAL_PSALM_TRADITIONAL_NUMBERING:["Psalm in traditional numbering","Psaume en numérotation traditionnelle"],
+     traditional_marian_typology:["Traditional Marian typology","Typologie mariale traditionnelle"],
+     related_scripture_for_doctrinal_mystery:["Supporting passage, not direct narrative","Passage associé, non récit direct"],
+     LITURGICAL_ADAPTATION:["Liturgical adaptation of biblical words","Adaptation liturgique de paroles bibliques"]
+   });
+   const paintRelated=async()=>{
+     if(!related.open||!related.isConnected)return;
+     relatedBody.replaceChildren(element("p",lang==="fr"?"Recherche des liens…":"Finding source-linked objects…","aoScriptureNotice"));
+     try{
+       const module=await import("./related-objects.js");
+       if(!related.isConnected||!related.open)return;
+       const selectedCalendarState=globalThis.AO_RUNTIME_V8?.store?.getState?.()??null;
+       const hits=await module.scriptureLinkedObjectsForPassageWithAtlas(location,{
+         limit:40,selectedCalendarState
+       });
+       if(!related.isConnected||!related.open)return;
+       relatedBody.replaceChildren();
+       if(!hits.length){relatedBody.append(element("p",lang==="fr"?"Aucun autre objet lié à ces versets.":"No documented cross-module connections for these verses.","aoScriptureNotice"));return;}
+       relatedBody.append(element("p",lang==="fr"
+         ?"Objets citant explicitement un verset commun. Ce recoupement ne prouve pas une identité de rites, d’événements ou d’interprétations."
+         :"Objects explicitly citing overlapping verses. Overlap does not establish identical rites, events or interpretations.","aoScriptureRelatedIntro"));
+       for(const hit of hits){
+         const row=element("article",null,"aoScriptureRelatedObject");
+         row.dataset.scriptureLinkedObject=hit.id;
+         row.append(element("strong",hit.title[lang]));
+         row.append(element("small",hit.reference,"aoScriptureRelatedReference"));
+         const explanation=hit.description?.[lang]||relationText[hit.relation]?.[lang==="fr"?1:0]||
+           (lang==="fr"?"Référence biblique liée à cet objet":"Source-linked biblical reference for this object");
+         row.append(element("p",explanation,"aoScriptureRelatedExplanation"));
+         const read=element("button",lang==="fr"?"Lire ce passage cité":"Read this cited passage");
+         read.type="button";read.dataset.scriptureReadLinkedObject=hit.id;
+         read.addEventListener("click",()=>{
+           relatedTrail.push({
+             location,context,contextDepth,commentaryVisible,relatedExpanded,
+             segmentSet,activeSegmentIndex,browseExpanded,scrollTop:root.scrollTop
+           });
+           segmentSet=hit.segments?scriptureSegments(hit.segments):null;
+           activeSegmentIndex=segmentSet?0:-1;
+           location=segmentSet?segmentSet[0]:scripturePassage(hit.passage);
+           context=Object.freeze({reference:hit.reference,passage:location,
+             ...(segmentSet?{segments:segmentSet}:{})});
+           contextDepth="selected";commentaryVisible=false;
+           relatedExpanded=false;browseExpanded=false;
+           draw();root.scrollTop=0;
+           queueMicrotask(()=>wrap.querySelector("[data-scripture-context-depth='selected']")?.focus?.({preventScroll:true}));
+         });
+         row.append(read);
+         if(hit.target&&typeof onOpenRelatedObject==="function"&&canOpenRelatedObject(hit)){
+           const launch=element("button",lang==="fr"?
+             "Ouvrir cet objet dans Ad Orientem":"Open this object in Ad Orientem");
+           launch.type="button";launch.dataset.scriptureOpenRelatedObject=hit.id;
+           launch.addEventListener("click",async()=>{
+             launch.disabled=true;
+             let ok=false;
+             try{ok=await onOpenRelatedObject(hit)}
+             catch(error){console.error("Scripture object handoff failed",error)}
+             // Only suppress duplicate taps during launch. A successful
+             // destination must remain keyboard-focusable on reciprocal Back.
+             launch.disabled=false;
+             if(!ok && row.isConnected){
+               launch.disabled=false;
+               let warning=row.querySelector("[data-scripture-related-launch-error]");
+               if(!warning){warning=element("p",null,"aoScriptureNotice");warning.dataset.scriptureRelatedLaunchError="";row.append(warning)}
+               warning.textContent=lang==="fr"
+                 ?"Cette fiche est indisponible ; la lecture biblique est conservée."
+                 :"The destination could not open; your Scripture reading is unchanged.";
+             }
+           });
+           row.append(launch);
+         }
+         relatedBody.append(row);
+       }
+     }catch{
+       if(relatedBody.isConnected)relatedBody.replaceChildren(element("p",lang==="fr"
+         ?"Index momentanément indisponible.":"Related-object index currently unavailable.","aoScriptureNotice"));
+     }
+   };
+   relatedSummary.addEventListener("click",e=>{
+     e.preventDefault();relatedExpanded=!related.open;related.open=relatedExpanded;
+     if(relatedExpanded)void paintRelated();
+   });
+   related.append(relatedSummary,relatedBody);wrap.append(related);
+   if(relatedExpanded)void paintRelated();
    wrap.append(browse);
    const searchSection=element("details",null,"aoScriptureSearch");
    searchSection.append(element("summary",t.search));
@@ -444,6 +556,12 @@ export function mountScriptureLibrary(root,{
       if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
     },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
+   resume(){
+     // Canonical shell transitions can detach the original reading subtree.
+     // Reattach it without resetting the selected passage or edition.
+     if(!root.contains(wrap)){root.replaceChildren(wrap);draw();}
+     return true;
+   },
    destroy(){root.replaceChildren();}
  });
 }

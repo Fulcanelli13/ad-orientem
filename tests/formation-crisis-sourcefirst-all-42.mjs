@@ -32,7 +32,8 @@ for(let i=0;i<3;i++){
  assert.equal(reg.size,pack.source_registry.length,"ambiguous original-document identifier");
  for(const s of reg.values()){
    assert.match(s.url,/^https:\/\/[^/\s]+\/\S+/,s.id+" has no direct HTTPS document");
-   assert.ok(s.locator?.length>=6,s.id+" original passage not scoped");
+   assert.ok(s.locator?.length>=6 || /^§{1,2}\d+(?:[–-]\d+)?(?:,\d+(?:[–-]\d+)?)?$/.test(s.locator||""),
+     s.id+" missing valid exact section or original passage locator");
    assert.equal(s.original_context_approved,false,"unverified source was silently marked approved");
  }
  for(const x of pack.dossiers){

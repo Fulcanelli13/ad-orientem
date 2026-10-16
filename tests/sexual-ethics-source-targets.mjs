@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { CSE_QUESTIONS, CSE_SOURCE_MAP } from "../src/learn/sexual-ethics-data/index.js";
 import { cseSourceTargets } from "../src/learn/sexual-ethics-data/source-targets.js";
+import { renderSexualEthicsQuestionMarkup } from "../src/learn/sexual-ethics.js";
+import { CSE_PUBLIC_QUESTIONS } from "../src/learn/sexual-ethics-data/index.js";
 
 const scriptureRows=CSE_QUESTIONS.flatMap(item=>item.refs
   .filter(([id])=>id==="SCR").map(([,locator])=>({question:item.id,locator})));
@@ -81,5 +83,49 @@ const unsupported=cseSourceTargets("SCR","Unverified 12:34",CSE_SOURCE_MAP.SCR);
 assert.equal(unsupported[0].scope,"index","Unknown biblical abbreviations must fail closed");
 assert.equal(unsupported[0].url,CSE_SOURCE_MAP.SCR.canonical_url);
 assert.equal(Object.isFrozen(unsupported),true);
+// First-tap source index: all 147 published questions in both languages.
+let indexed=0;
+for(const language of ["en","fr"]){
+ const win={document:{documentElement:{lang:language}},AO_RUNTIME_V8:{store:{getState:()=>({language})}}};
+ for(const item of CSE_PUBLIC_QUESTIONS){
+  const html=renderSexualEthicsQuestionMarkup(win,item,false);
+  const drawer=html.match(/<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure>[\s\S]*?<\/main>/)?.[0]||"";
+  assert.ok(drawer,item.id+" missing source drawer");
+  assert.match(drawer,/<ul class="aoCSESourceIndex" data-ao-cse-source-index>/);
+  const index=drawer.split('<details class="aoCSESourceDetail"')[0];
+  const originalIds=[...new Set(item.refs.map(ref=>ref[0]))];
+  assert.equal((index.match(/data-ao-cse-cited-source=/g)||[]).length,originalIds.length,
+   item.id+" "+language+" missing or duplicated cited source");
+  for(const id of originalIds)
+   assert.ok(index.includes('data-ao-cse-cited-source="'+id+'"'),item.id+" "+language+" lost "+id);
+  assert.match(drawer,/<details class="aoCSESourceDetail" data-ao-cse-source-detail>/);
+  assert.ok(!index.includes("Further reading")&&!index.includes("Pour approfondir"),
+   "Uncurated works must not become reading recommendations");
+  const expectedTargets=item.refs.reduce((n,[id,locator])=>n+cseSourceTargets(id,locator,CSE_SOURCE_MAP[id],{french:language==="fr"}).length,0);
+  const detail=drawer.split('<details class="aoCSESourceDetail"')[1];
+  assert.equal((detail.match(/class="aoCSESource"/g)||[]).length,expectedTargets,
+   item.id+" original locator/witness entries were lost");
+  if(item.depth==="DEBATE")assert.match(index,
+   language==="en"?/opposing positions remain in their respective argument stages/:/sources des positions adverses restent/);
+  for(const [sourceId,locator] of item.refs){
+   for(const target of cseSourceTargets(sourceId,locator,CSE_SOURCE_MAP[sourceId],{french:language==="fr"})){
+    const text=String(target.locator||locator);
+    const escaped=text.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    assert.ok(detail.includes(escaped),item.id+" resolved original locator disappeared: "+text);
+   }
+  }
+  indexed++;
+ }
+}
+assert.equal(indexed,294);
+// Limits must remain visible at the first tap, not be mistaken for authoritative full texts.
+const sampleWin={document:{documentElement:{lang:"en"}},AO_RUNTIME_V8:{store:{getState:()=>({language:"en"})}}};
+for(const item of CSE_PUBLIC_QUESTIONS){
+ const statuses=item.refs.flatMap(([id,locator])=>cseSourceTargets(id,locator,CSE_SOURCE_MAP[id]).map(t=>t.scope));
+ if(statuses.includes("catalogue")){
+  assert.match(renderSexualEthicsQuestionMarkup(sampleWin,item),/Catalogue \/ preview only · passage not verified/);
+  break;
+ }
+}
 console.log("PASS Sexual Ethics source destinations: "+scriptureRows.length+
   " Scripture citation rows, "+chapterCount/2+" chapter links per language; honest unresolved fallback");

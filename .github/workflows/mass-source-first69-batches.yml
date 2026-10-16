@@ -1,0 +1,41 @@
+name: Mass First 69 Source Witness Batches
+on:
+  pull_request:
+    paths:
+      - 'data/learn/research/mass-source-first69-locus-batches-20261016.v1.json'
+      - 'src/learn/mass-source-batch-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-source-first69-batches.mjs'
+      - 'tests/mass-source-first69-batches-phone.mjs'
+      - '.github/workflows/mass-source-first69-batches.yml'
+  push:
+    branches:
+      - 'research/mass-source-first69-batch-certification-20261016'
+    paths:
+      - 'data/learn/research/mass-source-first69-locus-batches-20261016.v1.json'
+      - 'src/learn/mass-source-batch-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-source-first69-batches.mjs'
+      - 'tests/mass-source-first69-batches-phone.mjs'
+      - '.github/workflows/mass-source-first69-batches.yml'
+permissions:
+  contents: read
+jobs:
+  source-batches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/learn/mass-source-batch-review.js
+      - run: node --check src/learn/mass-formation.js
+      - run: node tests/mass-source-first69-batches.mjs
+      - run: node tests/mass-moment-evidence-review.mjs
+      - run: node tests/mass-moments-study.mjs
+      - run: node tests/mass-formation.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-source-first69-batches-phone.mjs
+      - run: node tests/mass-moment-evidence-phone.mjs

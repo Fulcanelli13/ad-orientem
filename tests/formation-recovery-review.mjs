@@ -22,7 +22,8 @@ const names=[
   ["Canonical source-first V","formation-canonical-sourcefirst-batch5-2026-10-09.v1.json"],
   ["Church Crisis source-first VI","formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"],
   ["Church Crisis source-first VII","formation-crisis-sourcefirst-batch7-2026-10-09.v1.json"],
-  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"]
+  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"],
+  ["Retained owner cases","formation-retained-evolution-china-case-records-20261014.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const legacyRows=buildRecoveryReviewRows(packs);
@@ -257,6 +258,129 @@ node.listeners.click(makeClick({dossier:"CR-ECC-04"}));
 assert.ok(node.innerHTML.includes("First Vatican Council, Pastor aeternus (1870), Latin"),"CR-ECC-04 must retain its different primary-source title");
 
 node.listeners.click(makeClick({back:true}));
+// The previously authored evolution and China case studies are preserved as
+// separately labelled, unpublished research. The new compact reference policy
+// must apply to their original citations as well as to canonical synthesis.
+for(const [owner,caseId] of [
+  ["APOL-002","APOL-002-RETAINED-CASE"],
+  ["CR-GOV-01","CR-GOV-01-RETAINED-CASE"]
+]){
+  const c=packs.find(x=>x.label==="Retained owner cases").doc.cases.find(x=>x.id===caseId);
+  assert.equal(c.former_owner,owner);
+  assert.equal(c.original_draft.length,4);
+  const original=new Map(c.source_registry.map(x=>[x.id,x]));
+  for(const section of c.original_draft)
+    for(const id of section.source_ids)
+      assert.ok(original.get(id)?.url?.startsWith("https://"),owner+" retained citation unresolved: "+id);
+  node.listeners.click(makeClick({dossier:owner}));
+  assert.ok(node.innerHTML.includes('data-rr-retained-case="'+caseId+'"'),owner+" historical research lost");
+  assert.ok(node.innerHTML.includes('data-rr-source-panel="'+caseId+'-retained"'),
+    owner+" original sources not presented in the compact evidence drawer");
+  assert.ok(node.innerHTML.includes("not been certified for publication"),
+    owner+" source material misrepresented as finally approved");
+  assert.ok(node.innerHTML.includes('<details class="rrEvidenceDisclosure"'),
+    owner+" uncollapsed prior-research evidence leaked into main reading");
+  node.listeners.click(makeClick({back:true}));
+}
+// Preserve Formation's current answer sources without erasing a distinct
+// historical MD47 reference in the traditional Catholic argument.
+const liturgicalOwner=coverage.dossiers.find(d=>d.id==="CR-LIT-07");
+assert.ok(liturgicalOwner?.synthesis?.sourceRegistry instanceof Map);
+const litSections=liturgicalOwner.synthesis.sections;
+const litAnswer=litSections.find(s=>s.role==="answer");
+const litTradition=litSections.find(s=>s.role==="traditional_catholic_argument");
+assert.ok(litAnswer&&litTradition);
+const formationCurrent=JSON.parse(readFileSync("data/reference/formation-current-source-reconciliation.v2.json","utf8"));
+const litChange=formationCurrent.changed_previous_screened_sections.find(s=>
+  s.section_key==="FORM-SYN-02::CR-LIT-07::00");
+assert.equal(litChange.role,"answer");
+assert.ok(litChange.old_source_ids.includes("MD47"));
+assert.deepEqual(litChange.new_source_ids,
+  ["AO26_CRLIT07_ANSWE_1","AO26_CRLIT07_ANSWE_2","AO26_CRLIT07_ANSWE_3"]);
+assert.deepEqual(litAnswer.source_ids,litChange.new_source_ids,
+  "The current CR-LIT-07 answer must use Formation's replacement source IDs");
+assert.ok(!litAnswer.source_ids.includes("MD47"),
+  "Superseded Mediator Dei source restored to the rewritten answer");
+assert.ok(litTradition.source_ids.includes("MD47"),
+  "MD47 must not be globally removed from the separate traditional argument");
+for(const id of litAnswer.source_ids)
+  assert.ok(liturgicalOwner.synthesis.sourceRegistry.get(id)?.url?.startsWith("https://"),
+    "Replacement answer source missing from its owning pack: "+id);
+
+// Verify the actual generated disclosure, not just the JSON. The four
+// synthesis roles can legitimately cite some of the same works, so isolate
+// each section-specific evidence row before inspecting source attribution.
+node.listeners.click(makeClick({dossier:"CR-LIT-07"}));
+assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="CR-LIT-07"'));
+const litEvidenceRow=index=>{
+  const match=node.innerHTML.match(new RegExp(
+    '<li data-rr-evidence-row="CR-LIT-07-s'+index+'">([\\s\\S]*?)<\\/li>'));
+  assert.ok(match,"Missing scoped CR-LIT-07 evidence row "+index);
+  return match[1];
+};
+const answerRow=litEvidenceRow(0),traditionRow=litEvidenceRow(3);
+for(const id of litAnswer.source_ids)
+  assert.ok(answerRow.includes('data-rr-source-local-id="'+id+'"'),
+    "Rewritten answer's source missing from reference disclosure: "+id);
+assert.ok(!answerRow.includes('data-rr-source-local-id="MD47"'),
+  "Historical MD47 link leaked into rewritten answer disclosure");
+assert.ok(traditionRow.includes('data-rr-source-local-id="MD47"'),
+  "Unchanged separate traditional argument lost its historical MD47 link");
+assert.ok(node.innerHTML.includes('data-rr-source-panel="CR-LIT-07"'),
+  "CR-LIT-07 must retain a folded source-evidence panel");
+node.listeners.click(makeClick({back:true}));
+
+// All 22 current owner rewrites must reach their exact UI evidence row.
+// The prior-audit reconciliation test already validates the historical screen,
+// old/new role fingerprints and section source identities; this test checks
+// the separate presentation boundary without certifying passages or quotations.
+assert.equal(formationCurrent.changed_previous_screened_sections.length,22);
+const changedByDossier=new Map();
+for(const change of formationCurrent.changed_previous_screened_sections){
+  assert.equal(change.section_key,
+    change.scope+"::"+change.owner+"::"+change.section_key.split("::")[2],
+    "Rewritten section scope/owner identity mismatch");
+  const dossier=coverage.dossiers.find(d=>d.id===change.owner);
+  assert.ok(dossier?.synthesis?.sourceRegistry instanceof Map,
+    "Rewritten source owner missing from canonical reader: "+change.owner);
+  const index=Number(change.section_key.split("::")[2]);
+  assert.ok(Number.isInteger(index)&&index>=0&&index<dossier.synthesis.sections.length,
+    "Invalid rewritten section index "+change.section_key);
+  const section=dossier.synthesis.sections[index];
+  assert.equal(section.role,change.role,"Rewritten source role migrated: "+change.section_key);
+  assert.deepEqual(section.source_ids,change.new_source_ids,
+    "Current owner source assignment lost: "+change.section_key);
+  assert.notDeepEqual(section.source_ids,change.old_source_ids,
+    "Historical sources restored wholesale: "+change.section_key);
+  for(const id of change.new_source_ids)
+    assert.ok(dossier.synthesis.sourceRegistry.get(id)?.url?.startsWith("https://"),
+      "Current scoped witness unresolved: "+change.section_key+" "+id);
+  if(!changedByDossier.has(change.owner))changedByDossier.set(change.owner,[]);
+  changedByDossier.get(change.owner).push({change,index});
+}
+let renderedRewrittenRoles=0;
+for(const [owner,changes] of changedByDossier){
+  node.listeners.click(makeClick({dossier:owner}));
+  const html=node.innerHTML;
+  assert.ok(html.includes('data-rr-canonical-synthesis="'+owner+'"'));
+  assert.ok(html.includes('data-rr-source-panel="'+owner+'"'));
+  for(const {change,index} of changes){
+    const match=html.match(new RegExp(
+      '<li data-rr-evidence-row="'+owner+'-s'+index+'">([\\s\\S]*?)<\\/li>'));
+    assert.ok(match,"Missing rewritten section evidence row "+change.section_key);
+    assert.ok(match[1].includes('class="rrEvidenceRole">'+change.role),
+      "Evidence role attribution changed: "+change.section_key);
+    const displayed=[...match[1].matchAll(/data-rr-source-local-id="([^"]+)"/g)]
+      .map(x=>x[1]);
+    assert.deepEqual(displayed,change.new_source_ids,
+      "Stale or cross-role sources shown in reader: "+change.section_key);
+    renderedRewrittenRoles++;
+  }
+  node.listeners.click(makeClick({back:true}));
+}
+assert.equal(renderedRewrittenRoles,22,
+  "Not all current rewritten Formation sections are protected in the reader");
+
 for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
                  "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
   node.listeners.click(makeClick({dossier:id}));

@@ -83,6 +83,14 @@ export function installRosaryActiveCard({root,stepIndex,chapters,navigate}={}){
  };
  if(!mounted.has(flip)){
   flip.addEventListener("scroll",queue,{passive:true});
+  // A native Latin/vernacular toggle hides one face and reveals another
+  // without scrolling. Refresh the lit passage without changing prayer text.
+  const faces=flip.querySelectorAll("[data-pb-vern],[data-pb-latin]");
+  if(faces.length&&typeof MutationObserver==="function"){
+   const observer=new MutationObserver(queue);
+   faces.forEach(face=>observer.observe(face,{attributes:true,attributeFilter:["hidden","style","class"]}));
+   state.faceObserver=observer;
+  }
   flip.addEventListener("touchstart",event=>{
    const control=event.target.closest?.("button,a,summary");
    if(event.touches.length!==1||(control&&control!==flip)){

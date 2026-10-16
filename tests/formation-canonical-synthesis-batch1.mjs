@@ -11,8 +11,10 @@ const expected=["APOL-012","APOL-013","APOL-044","APOL-046","CR-ECC-04","CR-ECC-
 assert.deepEqual(d.dossiers.map(x=>x.id),expected);
 assert.equal(d.status,"NEW_EDITORIAL_DRAFT_UNPUBLISHED_NOT_INDEPENDENTLY_SOURCE_CERTIFIED");
 assert.equal(d.publication_allowed,false);
-assert.equal(d.source_registry.length,32);
-assert.equal(new Set(d.source_registry.map(x=>x.id)).size,32);
+// Preserve the original source inventory while permitting audited bilingual corrections.
+assert.equal(d.source_registry.filter(x=>!x.id.startsWith("AO26_")).length,32);
+assert.ok(d.source_registry.length>=32);
+assert.equal(new Set(d.source_registry.map(x=>x.id)).size,d.source_registry.length);
 const sources=new Map(d.source_registry.map(x=>[x.id,x]));
 for(const source of sources.values()){
  assert.match(source.url,/^https:\/\/[^/\s]+\/\S+/);

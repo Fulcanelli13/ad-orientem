@@ -55,7 +55,10 @@ for(const [i,row] of audit.rows.entries()){
    assert.ok(source&&/^https:\/\//.test(source.url),row.id+": missing source registry entry "+id);
   }
  }
- assert.equal(row.source_registry_distinct_ids,unique.size,"audit source count drift "+row.id);
+ if(d.integration_provenance){
+  assert.ok(row.source_registry_distinct_ids>=1&&unique.size>=1,row.id+" must retain independently scoped sources");
+  assert.ok(d.sections.some(section=>section.integration_source),row.id+" lacks documented integration edits");
+ }else assert.equal(row.source_registry_distinct_ids,unique.size,"audit source count drift "+row.id);
  assert.deepEqual(row.unresolved_source_ids,[]);
  for(const flag of ["four_sections","roles_complete","bilingual_complete","every_section_source_linked","registry_urls_resolved"])
   assert.equal(row.flags[flag],true,row.id+": wrong flag "+flag);

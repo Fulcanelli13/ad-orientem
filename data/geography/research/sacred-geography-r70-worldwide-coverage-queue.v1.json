@@ -5,14 +5,14 @@
   "policy": "Explicit promotion recorded as historical mapping; text-name matches are provisional; source cross-list counts do not prove church identity; never create a live pin from this queue automatically.",
   "counts": {
     "candidates": 750,
-    "explicit_promoted": 161,
+    "explicit_promoted": 164,
     "text_hint_review": 6,
-    "unmatched": 583,
+    "unmatched": 580,
     "zero_crosslist": 485,
     "essential_remaining": 6,
-    "published_places": 258,
-    "published_shrines": 254,
-    "published_pilgrimages": 237
+    "published_places": 261,
+    "published_shrines": 257,
+    "published_pilgrimages": 240
   },
   "countries": [
     {
@@ -27,27 +27,27 @@
     {
       "country": "IT",
       "candidates": 58,
-      "promoted": 19,
+      "promoted": 20,
       "text_hint": 0,
-      "unmatched": 39,
+      "unmatched": 38,
       "essential_review": 0,
       "no_crosslist": 28
     },
     {
       "country": "FR",
       "candidates": 48,
-      "promoted": 20,
+      "promoted": 21,
       "text_hint": 1,
-      "unmatched": 27,
+      "unmatched": 26,
       "essential_review": 0,
       "no_crosslist": 25
     },
     {
       "country": "GB",
       "candidates": 23,
-      "promoted": 2,
+      "promoted": 3,
       "text_hint": 0,
-      "unmatched": 21,
+      "unmatched": 20,
       "essential_review": 1,
       "no_crosslist": 15
     },
@@ -1227,10 +1227,10 @@
       "country": "FR",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R79",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:FR:sacre-coeur-montmartre",
+      "publish_approved": true,
       "identity_warning": "Montmartre is not Paray-le-Monial"
     },
     {
@@ -1650,10 +1650,10 @@
       "country": "IT",
       "priority": "Strong",
       "discovery_sources_count": 2,
-      "match_class": "NO_RELIABLE_TEXT_MATCH",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R79",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:IT:duomo-orvieto",
+      "publish_approved": true
     },
     {
       "candidate_id": "SG-INV-0057",
@@ -3943,10 +3943,10 @@
       "country": "GB",
       "priority": "Review",
       "discovery_sources_count": 0,
-      "match_class": "REJECTED_WRONG_PHYSICAL_PLACE_R78",
-      "status": "UNMATCHED",
-      "canonical_place_id": null,
-      "publish_approved": false,
+      "match_class": "REVIEWED_PHYSICAL_PLACE_ID_R79",
+      "status": "EXPLICIT_PROMOTED",
+      "canonical_place_id": "place:GB:westminster-cathedral",
+      "publish_approved": true,
       "identity_warning": "Westminster Cathedral (Catholic) is not Westminster Abbey (Anglican). Distinct buildings and confessions."
     },
     {

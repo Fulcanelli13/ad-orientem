@@ -141,6 +141,34 @@ try{
   await root.locator('[data-rr-theme="liturgical"]').tap();
   assert.equal(await root.locator("[data-rr-dossier]").count(),12,
     "Liturgical Crisis should list twelve questions");
+  // Returning from a long answer must not lose its list position or focus.
+  const longListTarget=root.locator("[data-rr-dossier]").last();
+  await longListTarget.scrollIntoViewIfNeeded();
+  const targetId=await longListTarget.getAttribute("data-rr-dossier");
+  const listScroll=await root.evaluate(el=>el.scrollTop);
+  assert.ok(listScroll>20,"Long Crisis theme did not exercise scrolling");
+  await longListTarget.tap();
+  await root.locator('[data-rr-canonical-synthesis="'+targetId+'"]').waitFor({state:"visible"});
+  assert.equal(await page.evaluate(()=>document.activeElement?.tagName),"H1",
+    "Answer heading must receive keyboard focus");
+  await root.evaluate(el=>el.scrollTo(0,el.scrollHeight));
+  await page.keyboard.press("Escape");
+  assert.equal(await root.locator('[data-rr-dossier="'+targetId+'"]').count(),1,
+    "Escape did not return to the originating list");
+  const escapeReturn=await root.evaluate(el=>({
+    scrollTop:el.scrollTop,focused:document.activeElement?.dataset?.rrDossier
+  }));
+  assert.ok(Math.abs(escapeReturn.scrollTop-listScroll)<=3,
+    "Escape lost list scroll position: "+JSON.stringify({escapeReturn,listScroll}));
+  assert.equal(escapeReturn.focused,targetId,"Escape lost originating question focus");
+  await root.locator('[data-rr-dossier="'+targetId+'"]').tap();
+  await root.evaluate(el=>el.scrollTo(0,el.scrollHeight));
+  await root.locator("[data-rr-back]").tap();
+  const backReturn=await root.evaluate(el=>({
+    scrollTop:el.scrollTop,focused:document.activeElement?.dataset?.rrDossier
+  }));
+  assert.ok(Math.abs(backReturn.scrollTop-listScroll)<=3,"Header Back lost list scroll position");
+  assert.equal(backReturn.focused,targetId,"Header Back lost originating question focus");
   const themeSearch=root.locator("[data-rr-search]");
   await themeSearch.fill("CR-LIT-05");
   assert.equal(await root.locator("[data-rr-dossier]").count(),1,

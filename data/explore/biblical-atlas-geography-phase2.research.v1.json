@@ -1,0 +1,1153 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_HISTORICAL_GEOGRAPHY_PHASE2_RESEARCH_V1",
+  "date": "2026-10-15",
+  "scope": "RESEARCH_ONLY_NO_RUNTIME_IMPORT",
+  "baseline": "data/explore/biblical-atlas-pleiades-crosswalk.research.v1.json",
+  "attribution": "Pleiades © contributors CC BY 3.0; retain upstream citation/records in baseline",
+  "policy": {
+    "publishedPinsUnchanged": true,
+    "publishedNameAliasesUnchanged": true,
+    "publishHistoricalNames": false,
+    "certifyExactEvent": false,
+    "automaticPeriodBoundApproval": false,
+    "ancientNameSourceIsNotEventEvidence": true,
+    "sourcePeriodFieldsRequireIndependentCollation": true,
+    "noAutomaticHistoricAliasPromotionAfterAttestation": true,
+    "noAutomaticAncientSpellingFromTranslatedScripture": true,
+    "geographicContextDoesNotLocateEvent": true
+  },
+  "metrics": {
+    "records": 35,
+    "provisionalPleiadesCandidates": 28,
+    "existingBilingualAliasReviews": 22,
+    "siteSpecificNonPleiadesHolds": 7,
+    "otherDistinctions": 6,
+    "independentlyAttestedNamingGuards": 8,
+    "narrativeAndArchaeologicalNamingGuards": 15,
+    "totalNamingGuards": 23,
+    "labelKeysWithGuard": 22
+  },
+  "records": [
+    {
+      "anchorKey": "antioch-syria",
+      "pleiadesPlaceId": "658381",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Antiochia",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Theoupolis is a later designation; avoid for apostolic context.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 11 attests Antioch in Syria as the mission community where Christians were first so called. Distinguish Syrian Antioch from Pisidian Antioch and reject the later Theoupolis title in apostolic scenes.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/11",
+            "locator": "Acts 11:19–26 and explanatory notes",
+            "establishes": "Acts distinguishes the Syrian Antiochene church in Barnabas/Saul narrative and the naming of Christians",
+            "category": "Scripture with Catholic biblical editorial context"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "athens",
+      "pleiadesPlaceId": "579885",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Athenae",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Pleiades point is ROUGH; no coordinate promotion or Acropolis event-pin inference.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 17 names Athens and the Areopagus without validating the precise speech position from a rough city representative point. Athenae is a separately evidenced classical form, not established by the English translation of Acts.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/17",
+            "locator": "Acts 17:16–22",
+            "establishes": "Athens and the Areopagus appear in Paul's narrative; these verses do not supply archaeologically precise map coordinates",
+            "category": "Scripture, apostolic urban-place testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "babylon",
+      "pleiadesPlaceId": "893951",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Bābili",
+        "relevantNarrativeEra": "EXILE",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Ancient Babylonian name relevant to exilic setting; the existing English/French Babyl(on/e) user label remains stable.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "EXILE",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "UNESCO independently documents Babylon's Neo-Babylonian capital phase (626–539 BCE), appropriate as physical context for Exile stories. Do not project the modern French/English spelling or the Pleiades transliteration Bābili as a verified word form from this archaeological page; never map a specific royal court room from city centroid.",
+        "independentEvidence": [
+          {
+            "url": "https://whc.unesco.org/en/list/278/",
+            "locator": "Babylon Outstanding Universal Value: Neo-Babylonian era",
+            "establishes": "Capital of Neo-Babylonian Empire 626–539 BCE with city walls, gates, palaces and temples",
+            "category": "UNESCO archaeological and dated heritage evidence"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "banias",
+      "pleiadesPlaceId": "678324",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "Caesarea Philippi/Pan(e)as: the Gospel uses Caesarea Philippi; town identity does not localize Peter's confession to an individual feature.",
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "PUBLIC",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [],
+        "contextualQualification": "Treat Caesarea Philippi as a Gospel-period city/district reference, without relabelling the precise place of the Confession or assigning a new public map label.",
+        "independentEvidence": [
+          {
+            "title": "William Smith, Dictionary of Greek and Roman Geography (1854), Paneas",
+            "locator": null,
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aentry%3Dpaneas-geo",
+            "establishes": "Paneas / Caesarea Philippi refer to the city; Matthew 16:13 describes the district, not a pinpoint cave",
+            "category": "Historical reference work citing Josephus and New Testament"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "bethesda",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "excavated_pool_complex_candidate",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "John 5:1–15"
+        ],
+        "summary": "The twin basin/pool complex near St Anne's coheres with the five-portico description; excavated urban hydraulic phases should be distinguished from the Gospel healing scene.",
+        "evidenceURLs": [
+          "https://www.academia.edu/22894959/The_Excavations_at_the_Bethesda_Pool_in_Jerusalem_Preliminary_Report_on_a_Project_of_Stratigraphic_and_Structural_Analysis_Text",
+          "https://www.biblicalarchaeology.org/daily/biblical-sites-places/jerusalem/the-bethesda-pool-site-of-one-of-jesus-miracles/"
+        ],
+        "publicationGate": "No exact healing position, no substitution with Jerusalem city center; verify the excavated layout and dating through primary excavation publication.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "bethlehem",
+      "pleiadesPlaceId": "687856",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "Ancient Bethlehem settlement record does not certify the Church of the Nativity as Christ's precise birth location."
+    },
+    {
+      "anchorKey": "bethphage",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "traditional_sanctuary_and_unfixed_village",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "Matthew 21:1–11",
+          "Mark 11:1–11",
+          "Luke 19:28–44"
+        ],
+        "summary": "Bethphage is a named village on the Mount of Olives approach to Jerusalem; the present Franciscan sanctuary preserves the tradition but does not settle the exact village's ancient limits.",
+        "evidenceURLs": [
+          "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Bethphage",
+          "https://www.custodia.org/en/sanctuaries/bethphage/"
+        ],
+        "publicationGate": "No claim that the specific church doorway or Palm Sunday procession origin is the Gospel's colt-location.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "caesarea-maritima",
+      "pleiadesPlaceId": "678401",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Caesarea",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "First-century city name Caesarea; 'Maritima' is a disambiguating modern map label, not claimed as ancient wording.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Stratonos Pyrgos"
+        ],
+        "contextualQualification": "An apostolic-era event near Caesarea cannot be labelled by the city's pre-Herodian name; 'Maritima' remains the app's geographic disambiguator.",
+        "independentEvidence": [
+          {
+            "title": "Flavius Josephus, Jewish Antiquities XV.293, 331",
+            "locator": "Antiquities XV §§293,331",
+            "url": "https://www.attalus.org/old/aj_15b.html",
+            "establishes": "Earlier Strato's Tower became Herod's Caesarea",
+            "category": "Translated ancient historical account"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "capernaum",
+      "pleiadesPlaceId": "678231",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Kapharnaoum",
+        "relevantNarrativeEra": "PUBLIC",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Ancient form for editorial review; individual synagogue or house remains independent.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "PUBLIC",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Mark names Capernaum for the roof-healing scene. Excavations document a first-century house and later devotional/synagogue constructions; an ancient town reference must not become a coordinate for the particular house or for the later surviving synagogue structure.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/mark/2",
+            "locator": "Mark 2:1–12",
+            "establishes": "Mark names Capernaum in the paralytic-healing narrative without fixing the house coordinate",
+            "category": "Scripture, narrative place testimony"
+          },
+          {
+            "url": "https://www.osservatoreromano.va/en/news/2026-08/ing-008/capernaum-the-town-of-jesus.html",
+            "locator": "Archaeological history section",
+            "establishes": "Franciscan excavation evidence distinguishes first-century domestic remains from the fourth-century domus ecclesia and later church",
+            "category": "Catholic archaeological reporting"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "carmel",
+      "pleiadesPlaceId": "678084",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "Mountain record covers a physical feature, not the position of Elijah's altar."
+    },
+    {
+      "anchorKey": "corinth",
+      "pleiadesPlaceId": "570182",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Korinthos",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Roman colony founded in 44 BCE; Corinth/Korinthos remains the narrative label. Do not present the earlier Greek city and rebuilt Roman colony as architecturally identical.",
+        "additionalIndependentSource": "https://www.corinthcomputerproject.org/corinth-timeline/"
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [],
+        "contextualQualification": "The apostolic city is Roman-colonial Corinth; retain readable Corinth/Korinthos, and do not present Classical Greek architecture as unchanged first-century urban fabric.",
+        "independentEvidence": [
+          {
+            "title": "American School of Classical Studies at Athens, History of Corinth",
+            "locator": null,
+            "url": "https://www.ascsa.org/excavations/ancient-corinth/about-the-excavations-1/history-timeline",
+            "establishes": "Roman sack in 146 BCE, refoundation as Caesar's colony in 44 BCE, and St Paul's first-century visit",
+            "category": "Excavating institution's archaeological and historical timeline"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "damascus",
+      "pleiadesPlaceId": "678106",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Damascus",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Acts-era alias; earlier Semitic city forms are not automatically the apostolic display form.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 9 names Damascus and explicitly places Saul's encounter on the road *near* the city, not at the city point. Historic pre-Christian Semitic spellings are independent philological problems, not automatic replacements for Acts's city label.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/9",
+            "locator": "Acts 9:1–20",
+            "establishes": "Saul approaches Damascus and later enters the city; conversion event is on the journey rather than the city centroid",
+            "category": "Scripture, place and event scope testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "ein-karem",
+      "pleiadesPlaceId": "601633374",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "Pleiades has no separate attested names in checked record; do not invent ancient first-century name or certify Visitation home."
+    },
+    {
+      "anchorKey": "ephesus",
+      "pleiadesPlaceId": "599612",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Ephesus",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Reject Arsinoeia as a blanket apostolic-era city name.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 19 explicitly places Paul's ministry in Ephesus. UNESCO attests multiple relocated settlements and substantial shoreline retreat; a present-day coast is not the geography of Paul's harbour. Do not substitute earlier Arsinoeia as a first-century label or equate the present Temple/House of Mary structures with biblical event locations.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/19",
+            "locator": "Acts 19:1–40",
+            "establishes": "Paul's Ephesus ministry and city/temple disturbance are explicit in the account",
+            "category": "Scripture, apostolic city name"
+          },
+          {
+            "url": "https://whc.unesco.org/en/list/1018/",
+            "locator": "Ephesus Outstanding Universal Value",
+            "establishes": "Hellenistic/Roman settlement shifts and shoreline sedimentation affected the harbour and present archaeological site",
+            "category": "UNESCO archaeology and palaeogeography"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "gethsemane",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "traditional_garden_with_adjacent_archaeology",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "Matthew 26:36–46",
+          "Mark 14:32–42",
+          "Luke 22:39–46"
+        ],
+        "summary": "Excavations near the traditional Gethsemane sanctuary uncovered a circa-2,000-year-old ritual bath and Byzantine church remains. These establish local history, not the exact boundaries of the Gospel garden.",
+        "evidenceURLs": [
+          "https://www.custodia.org/en/news/presentation-new-archaeological-finds-gethsemane/"
+        ],
+        "publicationGate": "Retain traditional-site qualification and separate archaeological finds from exact Agony location.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "hebron",
+      "pleiadesPlaceId": "687915",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Hebron",
+        "relevantNarrativeEra": "PATRIARCHS",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Pleiades attested name range starts in the Hellenistic period; it cannot independently date this spelling to Abraham.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "PATRIARCHS",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Hebron; Kiriath-arba is explicitly given as a retrospective name equivalence in Genesis 23. Do not infer that the narration fixes the contemporary spoken place name of Abraham, or that city-level Hebron pin identifies Mamre/Machpelah cave.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/genesis/23",
+            "locator": "Genesis 23:2,17–19",
+            "establishes": "Scriptural text identifies Kiriath-arba as Hebron and refers separately to the field and cave facing Mamre",
+            "category": "Scripture, translation of ancient testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "holy-sepulchre",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "traditional_golgotha_and_tomb_with_ancient_topography",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "John 19:17–42",
+          "John 20:1–18"
+        ],
+        "summary": "Sapienza/IAA excavations demonstrate quarrying, funerary and Constantinian/medieval phases at the present church. Topographic plausibility is not independent proof that this precise tomb and crucifixion spot are those of Christ.",
+        "evidenceURLs": [
+          "https://hadashot.iaa.org.il/Report_Detail_Eng.aspx?id=26542",
+          "https://iris.uniroma1.it/handle/11573/1763575"
+        ],
+        "publicationGate": "Keep Golgotha and tomb as distinct events using one qualified traditional-map anchor; no archaeological event certification.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "jericho",
+      "pleiadesPlaceId": "687917",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Ierichō",
+        "relevantNarrativeEra": "PUBLIC",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Do not conflate Tell es-Sultan, later Jericho settlement phases, and the precise Gospel encounter location.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "CONQUEST|PUBLIC",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Separate Bronze Age Tell es-Sultan archaeological occupation from Roman-era Jericho and later town context. The archaeologically identified tell is not the precise location of Gospel healing or any individual conquest event.",
+        "independentEvidence": [
+          {
+            "url": "https://whc.unesco.org/en/list/1687/",
+            "locator": "Ancient Jericho/Tell es-Sultan: description and stratigraphy",
+            "establishes": "Excavated Tell es-Sultan has Neolithic, Bronze Age and multiple occupation phases; this is an archaeological settlement context, not a Jesus-era event pin",
+            "category": "UNESCO archaeological site description"
+          },
+          {
+            "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Jericho",
+            "locator": "Jericho: OT and NT toponym / archaeology sections",
+            "establishes": "Reference distinguishes Hebrew and New Testament forms and the Tell es-Sultan identification",
+            "category": "Biblical historical geography reference"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "jerusalem",
+      "pleiadesPlaceId": "687928",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Ierusalem",
+        "relevantNarrativeEra": "INFANCY|PUBLIC|PASSION|RESURRECTION",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Keep the existing Jerusalem label. Aelia Capitolina is Hadrianic, c.130 CE; Pleiades' very broad name range is NOT authority to project it into the Gospels.",
+        "additionalIndependentSource": "https://academic.oup.com/reference/62341/reference-article-abstract/554104460?login=false"
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "INFANCY|PUBLIC|PASSION|RESURRECTION",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Aelia Capitolina",
+          "Col. Aelia Capitolina"
+        ],
+        "contextualQualification": "Gospel-era city name is Jerusalem; Pleiades broad Aelia date records are not automatically defensible.",
+        "independentEvidence": [
+          {
+            "title": "Oxford Classical Dictionary / Aelia Capitolina",
+            "locator": null,
+            "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554104460?login=false",
+            "establishes": "Hadrian refounded Jerusalem c. AD 130; not a Gospel-period name",
+            "category": "Scholarly historical synthesis"
+          }
+        ],
+        "independentSourceComparedToPleiades": true,
+        "pinnedGISDateCaveat": "Pleiades source-name dates for Aelia Capitolina extend implausibly into pre-Hadrian history; independent c. AD 130 foundation evidence takes priority for this exclusion."
+      }
+    },
+    {
+      "anchorKey": "joppa",
+      "pleiadesPlaceId": "687931",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Ioppe",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Older Jappû/Yapu forms should not be used automatically for Acts-era context.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 9 directly attests Joppa for Tabitha's restoration. The port was also named in Jonah, but the periods and event settings differ. The place centroid cannot locate Simon the tanner's house or Tabitha's upper room.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/9",
+            "locator": "Acts 9:36–43",
+            "establishes": "New Testament explicitly names Joppa for Tabitha and Simon the tanner",
+            "category": "Scripture, apostolic place testimony"
+          },
+          {
+            "url": "https://bible.usccb.org/bible/jonah/1",
+            "locator": "Jonah 1:3",
+            "establishes": "Jonah separately names Joppa as the embarkation port; does not give the Acts-era site's precise location",
+            "category": "Scripture, older narrative place testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "lystra",
+      "pleiadesPlaceId": "648699",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Lystra",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Settlement ID only, no precise location of individual miracles.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 14 names Lystra for the lame man's healing and subsequent hostility to Paul. Scripture's city identity does not fix the place of the miracle within its streets, nor certify a proposed excavated building.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/14",
+            "locator": "Acts 14:6–21",
+            "establishes": "Paul and Barnabas arrive at Lycaonian Lystra; healing and stoning episodes occur in city narrative",
+            "category": "Scripture, apostolic city and event testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "miletus",
+      "pleiadesPlaceId": "599799",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Miletus",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Acts-era settlement label; do not conflate ancient seaport and present shoreline.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 20 explicitly locates the elders' farewell at Miletus, but not at any precise shoreline point. University of Hamburg's excavation programme documents ancient Latmian Gulf and substantial siltation: modern coastline and river outlet must not be presented as the first-century harbour.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/20",
+            "locator": "Acts 20:15–38",
+            "establishes": "At Miletus Paul summons elders from Ephesus; distinct cities and travel legs",
+            "category": "Scripture, apostolic urban-place testimony"
+          },
+          {
+            "url": "https://www.miletgrabung.uni-hamburg.de/en/milet/milet-landschaft.html",
+            "locator": "The Milesian landscape: Latmian Gulf",
+            "establishes": "Excavation programme describes an ancient peninsula and former gulf/harbour areas subsequently filled by Menderes sediments",
+            "category": "University archaeological and palaeogeographic research"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "nain",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "probable_ancient_village_identification",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "Luke 7:11–17"
+        ],
+        "summary": "Modern Nein/Nain is a supported village-level identification, but the ancient settlement and city gate of Luke 7 are not excavated/located precisely. Pleiades absent is not a placeless Bible reference.",
+        "evidenceURLs": [
+          "https://www.custodia.org/en/sanctuaries/nain/",
+          "https://www.biblicaltraining.org/library/nain"
+        ],
+        "publicationGate": "Keep village pin as approximate; do not claim the modern Franciscan sanctuary locates the gate or miracle.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "nazareth",
+      "pleiadesPlaceId": "678299",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Nazareth",
+        "relevantNarrativeEra": "INFANCY|PUBLIC",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Settlement context only; no exact house or Annunciation-site claim.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "INFANCY|PUBLIC",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Luke attests Nazareth as the named Galilean town of the Annunciation. That textual toponym does not establish the archaeological identity or footprint of Mary's house or pinpoint the angelic event within the town.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/luke/1",
+            "locator": "Luke 1:26–27",
+            "establishes": "The Gospel expressly names Nazareth as a town of Galilee in the Annunciation narrative",
+            "category": "Scripture, narrative toponym testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "nineveh",
+      "pleiadesPlaceId": "874621",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Ninuwā",
+        "relevantNarrativeEra": "EXILE",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Assyrian-era written form; separate from later Greek Nȋnos and English Nineveh; no automatic visual renaming.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "ASSYRIA|EXILE",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Jonah attests Nineveh as its destination, while the independent Assyrian archaeological city on the Tigris has occupation and imperial phases. Do not derive the historic Akkadian form Ninuwā from the English Bible or treat an ancient city representative point as Jonah's precise preaching location.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/jonah/1",
+            "locator": "Jonah 1:2",
+            "establishes": "Scriptural narrative names the city Nineveh; not a dated epigraphic attestation of spelling Ninuwā",
+            "category": "Scripture, narrative city name"
+          },
+          {
+            "url": "https://whc.unesco.org/en/tentativelists/1465/",
+            "locator": "The Ancient City of Nineveh (Iraq tentative list)",
+            "establishes": "Archaeological city is on east bank of Tigris; Assyrian metropolitan phase before destruction in 612 BCE",
+            "category": "UNESCO tentative-list archaeological context"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "olives",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "topographic_ridge",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "2 Samuel 15:30",
+          "Luke 19:29",
+          "Luke 22:39",
+          "Acts 1:12"
+        ],
+        "summary": "The Mount of Olives is a north–south ridge east of Jerusalem beyond the Kidron Valley, not a single archaeological settlement or point site.",
+        "evidenceURLs": [
+          "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Mount-Olives"
+        ],
+        "publicationGate": "Use an approximate geographic label or future geometry footprint rather than a falsely exact site pin.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "philippi",
+      "pleiadesPlaceId": "501482",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Philippi",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Krenides is an earlier settlement name; Roman colony title may appear only in carefully dated contextual detail.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Krenides"
+        ],
+        "contextualQualification": "Krenides refers to the earlier settlement, not St Paul's visit; preserve distinction between city identity and Roman colony status.",
+        "independentEvidence": [
+          {
+            "title": "UNESCO World Heritage Centre, Archaeological Site of Philippi",
+            "locator": null,
+            "url": "https://whc.unesco.org/en/list/1517",
+            "establishes": "Philip II refounded the city 356 BCE; it became a Roman colony after the battle of 42 BCE and St Paul visited c. AD 49–50",
+            "category": "Archaeological heritage and chronology summary"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "rome",
+      "pleiadesPlaceId": "423025",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Roma",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Pleiades representative point is ROUGH; do not treat its centroid as the location of Paul's lodging.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 28 attests Rome as the city of Paul's house arrest, but gives no exact coordinates for his lodgings. Pleiades' point remains ROUGH; the city-level label must not become a pin of his rented residence or a verified early church building.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/28",
+            "locator": "Acts 28:14–31",
+            "establishes": "Paul arrived in Rome, lodged under guard and taught for two years; exact rented lodging remains unspecified",
+            "category": "Scripture, apostolic city testimony"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "samaria",
+      "pleiadesPlaceId": "678370",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Samaria",
+        "relevantNarrativeEra": "ISRAEL|APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Separate city Samaria/Sebaste from the wider Samaria region. Sebaste was renamed under Herod c.27–25 BCE; Pleiades' Sebaste field only covers 300–640 CE and is not exhaustive.",
+        "additionalIndependentSource": "https://lexundria.com/j_aj/15.267-15.298/wst"
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "ISRAEL|APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Sebaste"
+        ],
+        "contextualQualification": "For Israelite-period settings do not project Herod's later city name; apostolic-era name remains context-dependent, not a global replacement for 'Samaria' region.",
+        "independentEvidence": [
+          {
+            "title": "Flavius Josephus, Jewish Antiquities XV.292–298",
+            "locator": "Antiquities XV §§292–298",
+            "url": "https://www.attalus.org/old/aj_15b.html",
+            "establishes": "Herod renamed the city Samaria Sebaste; the city and region are not interchangeable",
+            "category": "Translated ancient historical account"
+          }
+        ],
+        "independentSourceComparedToPleiades": true,
+        "pinnedGISDateCaveat": "Pleiades source-name date range for Sebaste begins later than Josephus's Herodian renaming; the GIS field is not a first-attestation boundary."
+      }
+    },
+    {
+      "anchorKey": "shiloh",
+      "pleiadesPlaceId": "688028",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "The ancient Silo/Shiloh candidate is a settlement, not the exact location within the sanctuary."
+    },
+    {
+      "anchorKey": "siloam",
+      "pleiadesPlaceId": null,
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "excavated_second_temple_pool_context",
+      "labelReview": null,
+      "siteReview": {
+        "scripture": [
+          "John 9:1–12"
+        ],
+        "summary": "Excavated stepped Second-Temple-period pool and earlier water system are distinct chronological structures. Nearby late first-century CE plastered pool must not be silently conflated with the Gospel-era pool.",
+        "evidenceURLs": [
+          "https://cityofdavid.org.il/en/siloam-pool-opened-eng/",
+          "https://publications.iaa.org.il/atiqot/vol101/iss1/6/",
+          "https://doi.org/10.5325/j.ctv1bxgwc2.17"
+        ],
+        "publicationGate": "Keep site-level provisional pin; do not use later adjacent excavation to claim Jesus' particular action site.",
+        "editorialStatus": "HOLD"
+      },
+      "otherHold": null
+    },
+    {
+      "anchorKey": "tabor",
+      "pleiadesPlaceId": "678419",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "candidate_or_feature_qualification",
+      "labelReview": null,
+      "siteReview": null,
+      "otherHold": "The geographical mountain is identified; Scripture does not explicitly name Tabor as the mountain of the Transfiguration."
+    },
+    {
+      "anchorKey": "tarsus",
+      "pleiadesPlaceId": "648789",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Tarsus",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Do not use historical Antiochia ad Cydnum without proof it is appropriate to Paul's period.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Antiochia ad Cydnum"
+        ],
+        "contextualQualification": "Temporary Seleucid Antioch is inappropriate as the automatic name of Paul's first-century city.",
+        "independentEvidence": [
+          {
+            "title": "Oxford Classical Dictionary, Tarsus",
+            "locator": null,
+            "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548214595",
+            "establishes": "Tarsus was temporarily called Antioch on the Cydnus under Antiochus IV (175–164 BCE); old name later prevailed",
+            "category": "Scholarly classical geography reference"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "thessalonica",
+      "pleiadesPlaceId": "491741",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Thessalonica",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Retain existing bilingual narrative alias; transliteration not a historical GPS correction.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "NARRATIVE_OR_ARCHAEOLOGICAL_CORROBORATION_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "historicalSpellingVerifiedFromTheseSources": false,
+        "philologicalCollationStillRequired": true,
+        "contextualQualification": "Acts 17 names Thessalonica and a Jewish synagogue. This warrants an apostolic-city label but cannot geolocate the synagogue, Jason's house or the precise riot venue.",
+        "independentEvidence": [
+          {
+            "url": "https://bible.usccb.org/bible/acts/17",
+            "locator": "Acts 17:1–9",
+            "establishes": "Thessalonica named as site of Paul's preaching and a dispute involving Jason",
+            "category": "Scripture, apostolic city narrative"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    },
+    {
+      "anchorKey": "troas",
+      "pleiadesPlaceId": "550434",
+      "publishedCoordinateAuthority": "ATLAS_GEO",
+      "publishedCoordinateChanged": false,
+      "geographicalStatus": "place_identity_candidate_not_event_certified",
+      "labelReview": {
+        "existingAliasRetained": true,
+        "ancientFormForPossibleEditorialAnnotation": "Alexandria Troas",
+        "relevantNarrativeEra": "APOSTLES",
+        "sourceNameRecordPresent": true,
+        "decision": "HOLD_NO_RUNTIME_LABEL_CHANGE",
+        "caveat": "Apostolic-era site identity; avoid retrojecting the earlier Antigoneia designation.",
+        "additionalIndependentSource": null
+      },
+      "siteReview": null,
+      "otherHold": null,
+      "attestedNamingGuard": {
+        "status": "SOURCE_CORROBORATED_EDITORIAL_HOLD",
+        "reviewedNarrativeContext": "APOSTLES",
+        "existingDisplayLabelPreserved": true,
+        "publication": "NO_AUTOMATIC_NAME_SUBSTITUTION",
+        "eventCoordinatesChanged": false,
+        "cityIdentityIsNotExactEventLocation": true,
+        "excludedAutomaticAliases": [
+          "Antigoneia"
+        ],
+        "contextualQualification": "Apostolic Troas should not use the earlier Antigoneia name as its default.",
+        "independentEvidence": [
+          {
+            "title": "Strabo, Geography XIII.1.26",
+            "locator": "Geography XIII.1.26",
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0239%3Abook%3D13",
+            "establishes": "Lysimachus changed Antigoneia to Alexandria (Troas) before the Roman period",
+            "category": "Ancient geographical work in translation"
+          }
+        ],
+        "independentSourceComparedToPleiades": true
+      }
+    }
+  ]
+}

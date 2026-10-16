@@ -30,15 +30,51 @@ const verifyHistoricLink=(finding,liveUrl)=>{
  assert.equal(repaired.new_claim_certified,false);
 };
 
+const delta=read("data/reference/formation-current-source-reconciliation.v2.json");
+const recorded=delta.historical_pass7_additional_source_dispositions;
+assert.equal(recorded.length,15);
+const recordedById=new Map(recorded.map(x=>[x.finding_id,x]));
+assert.equal(recordedById.size,15);
 const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded,...priority.original_findings_superseded].map(x=>[x.finding_id,x]));
+for(const row of recorded){
+ assert.ok(!a1Superseded.has(row.finding_id),"Do not manufacture a duplicate verdict for a previously reconciled finding");
+ assert.equal(row.independently_certified_current_claim,false);
+ assert.equal(row.historic_url.startsWith("https://"),true);
+ assert.match(row.disposition,/HISTORICAL_NOT_TRANSFERRED|NOT_A_CURRENT_CLAIM_CERTIFICATION/);
+}
 const validateReassigned=(f,section,sources)=>{
  const change=a1Superseded.get(f.id);
- assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
- assert.equal(change.owner,f.owner);assert.equal(change.role,f.role);
- assert.equal(change.previous_source_id,f.source_id);
+ const newDisposition=recordedById.get(f.id);
+ assert.ok(change||newDisposition,f.id+": original citation removed without an explicit source-review disposition");
+ assert.ok(!(change&&newDisposition),f.id+": two competing editorial dispositions");
+ const row=change||newDisposition;
+ assert.equal(row.owner,f.owner);assert.equal(row.role,f.role);
+ assert.equal(change?row.previous_source_id:row.historic_source_id,f.source_id);
+ if(newDisposition){
+   assert.equal(row.historic_url,f.url);
+   assert.deepEqual(row.current_source_ids,section.source_ids);
+   const sameCurrentURL=section.source_ids.filter(id=>sources.get(id)?.url===f.url);
+   assert.deepEqual(row.matching_original_url_successor_ids,sameCurrentURL);
+   assert.equal(row.independently_certified_current_claim,false);
+ }else{
+   const extra=delta.historical_pass7_preexisting_amendment_extensions.find(x=>x.finding_id===f.id);
+   if(extra){
+     assert.equal(extra.owner,f.owner);assert.equal(extra.role,f.role);
+     assert.equal(extra.historic_source_id,f.source_id);
+     assert.deepEqual(extra.prior_amendment_source_ids,row.replacement_source_ids,
+       "Previously audited source replacement was changed");
+     assert.deepEqual(extra.current_source_ids,section.source_ids);
+     assert.deepEqual(section.source_ids.slice(0,row.replacement_source_ids.length),
+       row.replacement_source_ids,"Original opponent references must stay first");
+     assert.deepEqual(section.source_ids.slice(row.replacement_source_ids.length),
+       extra.newly_attached_source_ids,"Only explicitly registered later corrections may extend this role");
+     assert.equal(extra.current_claims_independently_certified,false);
+     assert.match(extra.disposition,/NOT_EXTENDED_TO_NEW_CLAIMS/);
+   } else assert.deepEqual(row.replacement_source_ids,section.source_ids,
+     "replacement original-source pointers drifted: "+f.id);
+   assert.equal(row.new_citation_claims_independently_certified,false);
+ }
  verifyHistoricLink(f,sources.get(f.source_id)?.url);
- assert.deepEqual(change.replacement_source_ids,section.source_ids,"replacement original-source pointers drifted: "+f.id);
- assert.equal(change.new_citation_claims_independently_certified,false);
 };
 const records = new Map(packs.flatMap(pack => pack.dossiers.map(d => [
   d.id, { dossier:d, sources:new Map(pack.source_registry.map(s=>[s.id,s])) }
@@ -72,13 +108,30 @@ for (const [i,f] of seven.findings.entries()){
   assert.equal(section.original_context_approved,false);
   assert.equal(section.french_final_approved,false);
 }
+assert.equal(recorded.filter(x=>!seven.findings.some(z=>z.id===x.finding_id)).length,0,"No invented original audit finding");
+const activeLinks=seven.findings.filter(z=>{
+ const rec=records.get(z.owner);
+ return rec.dossier.sections.find(x=>x.role===z.role).source_ids.includes(z.source_id);
+});
+assert.equal(activeLinks.length,63);
+assert.equal(delta.metrics.historical_pass7_total_findings,88);
+assert.equal(delta.metrics.historical_pass7_unchanged_source_role_links,63);
+assert.equal(delta.metrics.historical_pass7_prior_amendment_supersessions,10);
+assert.equal(delta.metrics.historical_pass7_newly_recorded_supersessions,15);
+assert.equal(delta.metrics.historical_pass7_existing_amendment_extensions,1);
 assert.deepEqual(seven.findings.filter(f=>f.status==="LIMITED_BIBLIOGRAPHIC_ABSTRACT_ONLY").map(f=>f.owner),["CR-ORG-09"]);
 const role=(id,r)=>records.get(id).dossier.sections.find(x=>x.role===r);
 assert.match(role("CR-LIT-11","documented_position").text.en,/597.*1,233.*315.*20/);
 assert.match(role("CR-LIT-10","documented_position").text.en,/expedit/);
 assert.match(role("CR-LIT-07","documented_position").text.en,/25 September 1969/);
-assert.match(role("CR-DOC-09","documented_position").text.en,/John Paul II/);
-assert.match(role("APOL-002","documented_position").text.en,/§37/);
+assert.match(role("CR-DOC-09","documented_position").text.en,/Donum veritatis.*Charles Curran/,
+ "Post-correction position must identify actual magisterial text and original theological opponent");
+assert.deepEqual(role("CR-DOC-09","documented_position").source_ids,
+ ["AO26_CRDOC09_DOCUM_1","AO26_CRDOC09_DOCUM_2"]);
+assert.match(role("APOL-002","documented_position").text.en,/David Hume.*Fides et ratio/,
+ "Faith/reason question must retain the named Hume objection and its Catholic counterpart");
+assert.deepEqual(role("APOL-002","documented_position").source_ids,
+ ["AO26_APOL002_DOCUM_1","AO26_APOL002_DOCUM_2"]);
 assert.match(role("APOL-052","documented_position").text.en,/John Stuart Mill/);
 assert.match(role("APOL-060","documented_position").text.en,/1983/);
 assert.match(role("CR-GOV-05","documented_position").text.en,/two-thirds/);
@@ -97,4 +150,4 @@ for(const pack of packs){
    }
  }
 }
-console.log(JSON.stringify({status:"PASS",newFindings:88,newOwnersReviewed:77,bilingualParagraphsRewritten:19,limitedAbstracts:1,approvals:0,published:0}));
+console.log(JSON.stringify({status:"PASS",newFindings:88,newOwnersReviewed:77,historicLinksStillActive:63,previouslyRecordedSupersessions:10,newlyRecordedHistoricRescopes:15,bilingualParagraphsRewritten:19,limitedAbstracts:1,approvals:0,published:0}));

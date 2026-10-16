@@ -9,6 +9,14 @@ const css=`
 #aoPray435930 .aoMercyControls button,#aoPray435930 .aoMercyOptions button,#aoPray435930 .aoMercyMethod button{min-height:44px;padding:10px 14px;color:inherit;border:1px solid rgba(205,185,150,.38);background:rgba(190,174,149,.07);border-radius:6px}
 #aoPray435930 .aoMercyControls button:disabled{opacity:.35}
 #aoPray435930 .aoMercyOptions{display:flex;flex-wrap:wrap;gap:8px}
+/* Settings stay subordinate to the canonical prayer/verse reading card. */
+#aoPray435930 .aoMercyOptional{margin:12px 0 5px;border:1px solid rgba(205,185,150,.24);border-radius:10px;background:rgba(190,174,149,.035)}
+#aoPray435930 .aoMercyOptional>summary{min-height:48px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;font:600 13px/1.4 system-ui,sans-serif}
+#aoPray435930 .aoMercyOptional>summary small{color:var(--liturgical,#d8bd7d);text-align:right;font:600 12px/1.4 system-ui,sans-serif}
+#aoPray435930 .aoMercyOptional>summary:focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px}
+#aoPray435930 .aoMercyOptional>.aoMercyOptions{padding:0 12px 12px}
+#aoPray435930 .aoMercyOptional:not([open])>.aoMercyOptions{display:none!important}
+
 #aoPray435930 .aoMercyOptions button[aria-pressed=true]{border-color:rgba(210,190,151,.85);background:rgba(210,190,151,.16)}
 #aoPray435930 .aoMercySource{margin-top:22px;font-size:.82rem}
 #aoPray435930 .aoMercySource a,#aoPray435930 .aoMercyMethods a{color:inherit;text-decoration:underline;text-underline-offset:3px}

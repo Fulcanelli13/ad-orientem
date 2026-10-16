@@ -1,0 +1,52 @@
+name: Biblical Atlas landscape context and historical-source review
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/bible-atlas-landscape-context.js"
+      - "src/find/bible-atlas.js"
+      - "tests/atlas-landscape-context.mjs"
+      - "tests/atlas-landscape-context-phone.mjs"
+      - ".github/workflows/atlas-landscape-context.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Source-scoped cultural geography, historic hold and exact 151-event gate
+        run: |
+          node --check src/find/bible-atlas-landscape-context.js
+          node --check src/find/bible-atlas.js
+          node tests/atlas-landscape-context.mjs
+          node tests/atlas-geography-phase2.mjs
+          node tests/explore-atlas-cinematic-151.mjs
+          node tests/explore-bible-atlas-151.mjs
+          node tests/atlas-source-place-labels.mjs
+  browser:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real mobile browser landscape source cards and 151-event Scripture round trip
+        run: node tests/atlas-landscape-context-phone.mjs
+      - name: Original non-landscape cinematic baseline
+        run: node tests/explore-atlas-cinematic-151-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-atlas-historic-harbour-320-390-768
+          path: test-output/atlas-landscape-151/*.png
+          if-no-files-found: warn

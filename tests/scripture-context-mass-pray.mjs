@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./scripture-related-objects.mjs";
 import "./extended-lesson-scripture-context.mjs";
 import "./september-ember-scripture-source.mjs";
 import "./seasonal-ember-scripture-source.mjs";

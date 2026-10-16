@@ -1,0 +1,49 @@
+name: Biblical Atlas optional historical-name disclosure
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/bible-atlas-history-review.js"
+      - "src/find/bible-atlas.js"
+      - "src/find/browser-entry.js"
+      - "tests/atlas-historical-name-disclosure.mjs"
+      - "tests/atlas-historical-name-disclosure-phone.mjs"
+      - ".github/workflows/atlas-historical-disclosure-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          node --check src/find/bible-atlas-history-review.js
+          node --check src/find/bible-atlas.js
+          node --check src/find/browser-entry.js
+          node tests/atlas-historical-name-disclosure.mjs
+          node tests/explore-atlas-cinematic-151.mjs
+          node tests/explore-bible-atlas-151.mjs
+          node tests/atlas-contextual-name-proposals.mjs
+  browser:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/atlas-historical-name-disclosure-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-atlas-historical-name-review
+          path: test-output/atlas-history-review/*.png
+          if-no-files-found: warn

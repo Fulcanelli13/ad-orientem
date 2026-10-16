@@ -47,11 +47,20 @@ for(const stage of data.stages){
   });
   assert.match(html,/<details class="aoReferencePanel"/);
   assert.equal((html.match(/data-ao-evidence-row=/g)||[]).length,rows.length);
+  const distinctCited=[...new Set(rows.flatMap(x=>x.sourceIds))];
+  const sourceIndex=html.match(/<ul class="aoRefSourceIndex" data-ao-source-index>([\s\S]*?)<\/ul>/)?.[1]||"";
+  assert.ok(sourceIndex.length,"One-tap source index missing");
+  assert.equal((sourceIndex.match(/<li>/g)||[]).length,distinctCited.length,
+   "Each cited source must appear once at top level.");
   assert.equal((html.match(/data-ao-reference-id=/g)||[]).length,
-   rows.reduce((n,x)=>n+x.sourceIds.length,0)+
-   (featured.length+Number(stage.claims.some(x=>x.sources.includes("SRC-OCONNELL-1962")))),
-   "Every evidence edge remains rendered, with only explicitly curated further links."
+   rows.reduce((n,x)=>n+x.sourceIds.length,0)+distinctCited.length,
+   "All claim evidence stays intact; first-tap index shows all unique sources once."
   );
+  const curated=distinctCited.filter(id=>[...featured,"SRC-OCONNELL-1962"].includes(id));
+  assert.equal((html.match(/data-ao-curated-reading=/g)||[]).length,curated.length,
+   "Only deliberately selected and actually cited sources may be highlighted.");
+  assert.match(html,/Document links do not by themselves verify|Ces liens ne vérifient pas/);
+  assert.match(html,/aoReferencePanel" data-ao-reference-panel=/);
   for(const row of rows)assert.ok(html.includes('data-ao-evidence-row="'+row.id+'"'),row.id+" lost");
   assert.ok(html.includes(french?"Justificatifs par paragraphe":"Evidence by paragraph"));
   assert.ok(!html.includes("NOT-CITED"),"Unrelated sources must not become further reading.");
@@ -65,6 +74,15 @@ const noSources=sourceReferencePanelHtml({rows:[{id:"HOLD",text:"Unverified <inp
 assert.match(noSources,/data-ao-reference-hold="missing"/);
 assert.match(noSources,/Unverified &lt;input&gt;/);
 assert.equal((noSources.match(/<a /g)||[]).length,0);
+// MF04 lacks a nominated further reading source. It must still show all
+// cited documents at the first tap, without fabricating recommendations.
+const noReading=sourceReferencePanelHtml({rows:[{id:"CLAIM",text:"Example",
+ sourceIds:["SRC-MR62","SRC-CAMPION-1954"]}],registry,
+ furtherReadingIds:["NOT-CITED","SRC-MEDIATOR-DEI"]});
+assert.equal((noReading.match(/data-ao-curated-reading=/g)||[]).length,0);
+assert.equal((noReading.match(/class="aoRefSourceIndex"/g)||[]).length,1);
+assert.equal((noReading.match(/data-ao-reference-id=/g)||[]).length,4);
+assert.match(noReading,/<summary>Sources · 2<\/summary>/);
 assert.equal(sourceReferencePanelHtml({rows:[]}),"");
 
 // Keep the source presentation change away from the native Missal, Simple and

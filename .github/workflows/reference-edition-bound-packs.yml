@@ -1,0 +1,28 @@
+name: Edition-bound source packs
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/reference/passage-packs.js"
+      - "src/reference/edition-witness-contracts.js"
+      - "tests/reference-edition-bound-packs.mjs"
+      - ".github/workflows/reference-edition-bound-packs.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  edition-packs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Source passage identity, rights and digest acceptance
+        run: |
+          node --check src/reference/passage-packs.js
+          node tests/reference-edition-bound-packs.mjs
+          node tests/reference-passage-packs.mjs
+          node tests/reference-witness-scan-gates.mjs
+          node tests/reference-parsing.mjs

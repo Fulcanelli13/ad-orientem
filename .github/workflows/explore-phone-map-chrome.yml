@@ -1,0 +1,39 @@
+name: Explore phone map chrome acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/find/map-runtime.js"
+      - "src/find/heritage-style.js"
+      - "tests/explore-phone-map-chrome.mjs"
+      - "tests/explore-phone-overview-visual.mjs"
+      - ".github/workflows/explore-phone-map-chrome.yml"
+  workflow_dispatch:
+
+jobs:
+  phone-map-chrome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Phone world fit and attribution contract
+        run: node tests/explore-phone-map-chrome.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Existing 320/390/430/768 phone and tablet Explore geometry
+        run: node tests/explore-layout-phone.mjs
+      - name: Real 320/390/430 EN/FR basemap, clusters and bottom controls
+        run: node tests/explore-phone-overview-visual.mjs
+      - name: Preserve actual map comparison screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-phone-overview
+          path: artifacts/explore-phone-overview/
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,40 @@
+name: Atlas public Pages byte parity (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/atlas-pages-live-parity.mjs"
+      - ".github/workflows/atlas-pages-live-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-pages-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check probe JavaScript syntax
+        run: node --check tests/atlas-pages-live-parity.mjs
+      - name: Fetch public Pages and compare three original JS files (diagnostic)
+        id: probe
+        continue-on-error: true
+        run: node tests/atlas-pages-live-parity.mjs
+      - name: Report exact audit verdict
+        if: always()
+        run: |
+          if [ -f test-output/atlas-pages-release/report.json ]; then
+            node -e 'const r=require("./test-output/atlas-pages-release/report.json");console.log("Exact public file parity verified:",r.publishedExact);console.log("Warnings:",r.errors.join(" | ")||"none")'
+          else
+            echo "Probe never produced a parity report; no release evidence."
+          fi
+      - name: Upload evidence JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-atlas-live-pages-parity
+          path: test-output/atlas-pages-release/report.json
+          if-no-files-found: warn

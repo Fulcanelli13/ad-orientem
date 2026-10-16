@@ -85,6 +85,7 @@ export function installCalendarBrowserOwner(win=globalThis){
   status,
   paint:(...a)=>real()?.paint?.(...a)??false,
   select:(...a)=>invoke(win,"select",...a),
+  openSelectedScriptureReading:(...a)=>invoke(win,"openSelectedScriptureReading",...a),
   setView:(view,...a)=>{requestedView=view;return real()?.setView?.(view,...a)??true},
   setMonthView:(view,...a)=>{requestedMonthView=view;return real()?.setMonthView?.(view,...a)??true},
   prepareMonth:(...a)=>invoke(win,"prepareMonth",...a),

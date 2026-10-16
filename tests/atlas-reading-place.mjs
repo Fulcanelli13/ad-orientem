@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {buildBibleAtlas} from "../src/find/bible-atlas.js";
+import {ATLAS_READING_PLACE_KEY,readAtlasReadingPlace,saveAtlasReadingPlace,clearAtlasReadingPlace}
+ from "../src/find/bible-atlas-reading-place.js";
+const json=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
+const stops=buildBibleAtlas(json.entries);
+assert.equal(stops.length,151);
+const values=new Map(),store={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
+assert.equal(readAtlasReadingPlace(store,stops),null);
+for(const stop of [stops[0],stops[10],stops[77],stops[150]]){
+ assert.equal(saveAtlasReadingPlace(store,stop),true);
+ assert.equal(readAtlasReadingPlace(store,stops),stop.index);
+ const entry=JSON.parse(values.get(ATLAS_READING_PLACE_KEY));
+ assert.deepEqual(Object.keys(entry).sort(),["eventKey","schema"]);
+ assert.equal(entry.eventKey,stop.eventKey);
+ assert.ok(!("lat" in entry)&&!("lng" in entry)&&!("title_en" in entry)&&!("reference" in entry));
+ const moved=[...stops].reverse();
+ assert.equal(readAtlasReadingPlace(store,moved),stop.index,"Stable key independent of display order");
+}
+const orphan=JSON.parse(values.get(ATLAS_READING_PLACE_KEY));orphan.eventKey="biblical:passage:not-in-the-corpus";values.set(ATLAS_READING_PLACE_KEY,JSON.stringify(orphan));
+assert.equal(readAtlasReadingPlace(store,stops),null,"Do not silently resume to wrong index");
+values.set(ATLAS_READING_PLACE_KEY,"{invalid");
+assert.equal(readAtlasReadingPlace(store,stops),null);
+values.set(ATLAS_READING_PLACE_KEY,"x".repeat(450));
+assert.equal(readAtlasReadingPlace(store,stops),null);
+assert.equal(saveAtlasReadingPlace(store,{eventKey:"bad:identifier"}),false);
+const broken={getItem(){throw Error("Blocked private storage")},setItem(){throw Error("Quota/private")},removeItem(){throw Error("Denied")}};
+assert.equal(readAtlasReadingPlace(broken,stops),null);
+assert.equal(saveAtlasReadingPlace(broken,stops[17]),false);
+assert.equal(clearAtlasReadingPlace(broken),false);
+assert.equal(readAtlasReadingPlace(null,stops),null);
+assert.equal(saveAtlasReadingPlace(null,stops[2]),false);
+assert.equal(saveAtlasReadingPlace(store,stops[8]),true);
+assert.equal(clearAtlasReadingPlace(store),true);
+assert.equal(readAtlasReadingPlace(store,stops),null);
+const owner=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
+assert.match(owner,/readAtlasReadingPlace\(atlasDeviceStorage\(\),stops\)/);
+assert.match(owner,/if\(remember&&index!==previous\?\.index\)saveAtlasReadingPlace/);
+assert.match(owner,/updateBibleIndex\(index,\{center:true,remember:true\}\)/);
+assert.match(owner,/bibleProgrammaticScrollUntil=Date\.now\(\)\+250/);
+console.log("PASS Bible Atlas 151 event-key resume, privacy-only device store, missing or blocked storage fallback, deliberate-gesture persistence");

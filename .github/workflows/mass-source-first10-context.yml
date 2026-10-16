@@ -1,0 +1,44 @@
+name: Mass First Ten Source Context Audit
+on:
+  pull_request:
+    paths:
+      - 'data/learn/research/mass-source-first10-transcription-context-audit-20261016.v1.json'
+      - 'src/learn/mass-source-first10-review.js'
+      - 'src/learn/mass-source-batch-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-source-first10-context-audit.mjs'
+      - 'tests/mass-source-first69-batches-phone.mjs'
+      - '.github/workflows/mass-source-first10-context.yml'
+  push:
+    branches:
+      - 'research/mass-first10-original-witness-context-20261016'
+    paths:
+      - 'data/learn/research/mass-source-first10-transcription-context-audit-20261016.v1.json'
+      - 'src/learn/mass-source-first10-review.js'
+      - 'src/learn/mass-source-batch-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-source-first10-context-audit.mjs'
+      - 'tests/mass-source-first69-batches-phone.mjs'
+      - '.github/workflows/mass-source-first10-context.yml'
+permissions:
+  contents: read
+jobs:
+  source-context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/learn/mass-source-first10-review.js
+      - run: node --check src/learn/mass-source-batch-review.js
+      - run: node --check src/learn/mass-formation.js
+      - run: node tests/mass-source-first10-context-audit.mjs
+      - run: node tests/mass-source-first69-batches.mjs
+      - run: node tests/mass-moment-evidence-review.mjs
+      - run: node tests/mass-formation.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-source-first69-batches-phone.mjs
+      - run: node tests/mass-moment-evidence-phone.mjs

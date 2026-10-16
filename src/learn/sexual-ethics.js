@@ -1,4 +1,5 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
@@ -14,6 +15,7 @@ import {
 import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
 import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS, CSE_CONTEXT_ONLY_POSITION_IDS } from "./sexual-ethics-data/provenance.js";
 import { cseSourceTargets } from "./sexual-ethics-data/source-targets.js";
+import { sourceReferenceSafeUrl } from "./source-reference-panel.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
@@ -77,8 +79,16 @@ function css(){
 .aoCSEDebate{display:grid;gap:0;padding:0;border-left:0;background:transparent}.aoCSEDebateStep{padding:14px 14px 15px;border-left:2px solid var(--border,rgba(255,255,255,.16));border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:var(--surface-1,#102235)}.aoCSEDebateStep:first-child{border-left-color:var(--liturgical,#c7ae6d);border-radius:12px 12px 0 0}.aoCSEDebateStep:last-child{border-left-color:var(--liturgical,#c7ae6d);border-bottom:0;border-radius:0 0 12px 12px}.aoCSEDebateStep small{display:block;margin-bottom:6px;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoCSEDebateStep p{margin:0;line-height:1.6}.aoCSEAttributionNote{padding:10px 12px;margin:0;color:var(--muted,rgba(238,233,223,.76));font:var(--ao-type-ui-sm,12px)/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEDebateStep[data-stage="opposition"] p,.aoCSEDebateStep[data-stage="counter"] p{font-style:italic}.aoCSEDebateStep[data-stage="bottom"] p{font-weight:600}
 .aoCSERelated{margin:17px 0 0;padding-top:11px;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERelated small{display:block;margin-bottom:8px;color:var(--muted);font-size:var(--ao-type-ui-xs,11px);text-transform:uppercase;letter-spacing:.08em}.aoCSERelatedButtons{display:flex;gap:8px;flex-wrap:wrap}.aoCSERelated .aoCSEBtn{font-size:var(--ao-type-ui-sm,12px)}
 .aoCSEInlineRefs{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:9px;font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEInlineRefs::before{content:attr(data-label);color:var(--muted);font-weight:500}.aoCSEInlineRef{display:inline-flex;align-items:center;max-width:100%;padding:2px 6px;border:1px solid var(--liturgical-border,rgba(199,174,109,.28));border-radius:999px;color:var(--liturgical,#c7ae6d);text-decoration:none;background:var(--liturgical-soft,rgba(199,174,109,.045))}.aoCSEInlineRef:hover,.aoCSEInlineRef:focus-visible{text-decoration:underline;outline:none}.aoCSEDetailText{margin:0}
-.aoCSESources{margin:17px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.13));padding-top:11px}.aoCSESources summary{cursor:pointer;color:var(--muted);font-size:var(--ao-type-ui-sm,12px)}.aoCSESource{margin:9px 0;padding-left:10px;border-left:1px solid var(--border,rgba(255,255,255,.14));font-size:var(--ao-type-ui-sm,12px);line-height:1.45}.aoCSESource a{color:var(--liturgical,#c7ae6d)}.aoCSESource em{color:var(--muted);font-style:normal}
+.aoCSESources{margin:17px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.13));padding-top:11px}.aoCSESources summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--muted);font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCSESources summary:focus-visible,.aoCSESources a:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:3px}.aoCSESource{margin:9px 0;padding-left:10px;border-left:1px solid var(--border,rgba(255,255,255,.14));font-size:var(--ao-type-ui-sm,12px);line-height:1.45}.aoCSESource a{color:var(--liturgical,#c7ae6d)}.aoCSESource em{color:var(--muted);font-style:normal}
 .aoCSESourceScope{display:inline-block;margin-left:5px;color:var(--muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}
+.aoCSESourceIndexHeading{margin:12px 0 7px;font:600 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCSESourceIndex{margin:0 0 10px;padding:0;list-style:none}.aoCSESourceIndex li{margin:9px 0;overflow-wrap:anywhere;font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCSESourceIndex a{color:var(--liturgical,#c7ae6d);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoCSESourceIndexScopes{display:block;color:var(--ao-text-muted,#a9a5a0);font:400 max(12px,.75rem)/1.5 var(--ao-font-ui,system-ui,sans-serif);margin-top:2px}
+.aoCSESourceIndexTargets{display:flex;flex-wrap:wrap;gap:7px;margin-top:5px}
+.aoCSESourceIndexTargets a{font:400 max(12px,.75rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCSESourceIndexNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:400 max(12px,.75rem)/1.55 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCSESourceDetail{margin:12px 0 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.14));padding-top:5px}
 .aoCSEAnswer,.aoCSEDebateStep p,.aoCSEIntro{font-size:max(15px,0.9375rem);line-height:1.6}.aoCSEInlineRefs{font-size:max(13px,.8125rem);line-height:1.5}.aoCSESource{font-size:max(13px,.8125rem);line-height:1.5}
 .aoCSEObjection{margin:13px 0 16px;padding:16px 17px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.16)));border-left:3px solid var(--liturgical,#c7ae6d);border-radius:12px;background:var(--ao-surface-1,var(--surface-1,#102235))}
 .aoCSEObjection small{display:block;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px}
@@ -160,10 +170,62 @@ function debateSourceDisclosure(win,item,kind,field=null,attribution=""){
     '</details>';
 }
 
+// One first-tap entry per cited work. Do not mix answer authorities with
+// opposing-position stage sources, and never promote a link to curated reading.
+function sourceAccessLabel(win,scope){
+  const labels={
+    "original-full-text":["Author-uploaded full article","Article intégral déposé par l’auteur"],
+    "author-excerpt-in-cdf":["Author quoted by CDF · complete book not checked","Auteur cité par la CDF · livre complet non vérifié"],
+    "digitized-original":["1966 original scan · pages not collated","Original numérisé de 1966 · pages non collationnées"],
+    "chapter":["Chapter text · locate the verses","Chapitre accessible · repérer les versets"],
+    "index":["Index only · passage not verified","Index seul · passage non vérifié"],
+    "catalogue":["Catalogue / preview only · passage not verified","Catalogue / aperçu seulement · passage non vérifié"],
+    "document":["Document link · exact passage not certified","Lien au document · passage exact non certifié"],
+    "unverified":["Link not verified","Lien non vérifié"]
+  };
+  const entry=labels[scope]||labels.unverified;
+  return L(win,entry[0],entry[1]);
+}
+function sourceIndexMarkup(win,item,refs){
+  const grouped=new Map();
+  for(const [id,locator] of refs){
+    const source=CSE_SOURCE_MAP[id];
+    if(!source)continue;
+    if(!grouped.has(id))grouped.set(id,{source,scopes:new Set(),destinations:new Map()});
+    const entry=grouped.get(id);
+    for(const target of cseSourceTargets(id,locator,source,{french:isFr(win)})){
+      entry.scopes.add(target.scope);
+      const url=sourceReferenceSafeUrl(target.url);
+      if(url&&!entry.destinations.has(url))entry.destinations.set(url,target.locator||locator);
+    }
+  }
+  const rows=[...grouped].map(([id,entry])=>{
+    const destinations=[...entry.destinations];
+    const title=esc(entry.source.title||id);
+    const sourceLink=destinations.length===1
+      ?'<a href="'+esc(destinations[0][0])+'" target="_blank" rel="noopener noreferrer">'+title+' ↗</a>'
+      :'<span>'+title+'</span>';
+    const multiple=destinations.length>1
+      ?'<div class="aoCSESourceIndexTargets">'+destinations.map(([url,locator])=>
+        '<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(locator)+' ↗</a>').join("")+'</div>':"";
+    const scope=[...entry.scopes].map(value=>sourceAccessLabel(win,value));
+    if(entry.source.role==="argument_lead")scope.push(L(win,"Research / argument lead · not a certified passage","Piste de recherche / argumentation · passage non certifié"));
+    return '<li data-ao-cse-cited-source="'+esc(id)+'">'+sourceLink+
+      '<span class="aoCSESourceIndexScopes">'+esc(scope.join(" · "))+'</span>'+multiple+'</li>';
+  }).join("");
+  const intro=item.depth==="DEBATE"
+    ?L(win,"These works support the answer. Sources for opposing positions remain in their respective argument stages.","Ces ouvrages étayent la réponse. Les sources des positions adverses restent dans les étapes correspondantes.")
+    :L(win,"These works are cited for this answer.","Ces ouvrages sont cités pour cette réponse.");
+  return '<h3 class="aoCSESourceIndexHeading">'+esc(L(win,"Cited sources","Sources citées"))+'</h3>'+
+    '<ul class="aoCSESourceIndex" data-ao-cse-source-index>'+rows+'</ul>'+
+    '<p class="aoCSESourceIndexNote">'+esc(intro+" "+L(win,
+      "A link alone does not certify the exact edition or passage; consult detailed provenance below.",
+      "Un lien ne certifie pas, à lui seul, l’édition ou le passage exact ; voir la provenance détaillée ci-dessous."))+'</p>';
+}
 function sourceDetails(win,item){
   const refs=item.refs||[];
   if(!refs.length)return "";
-  return `<details class="aoCSESources aoSourceDisclosure"><summary>${esc(L(win,"Sources & provenance","Sources & provenance"))} ▾</summary>${refs.map(([sourceId,locator])=>{
+  return `<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure><summary>${esc(L(win,"Sources","Sources"))} · ${new Set(refs.map(ref=>ref[0])).size}</summary>${sourceIndexMarkup(win,item,refs)}<details class="aoCSESourceDetail" data-ao-cse-source-detail><summary>${esc(L(win,"Sources & provenance · detailed locators","Sources et provenance · références précises"))} · ${refs.length}</summary>${refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     const authority=source.authority_type?String(source.authority_type).replaceAll("_"," "):"";
     return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).map(target=>{
@@ -176,7 +238,7 @@ function sourceDetails(win,item){
         :"";
       return `<div class="aoCSESource">${target.url?`<a data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(citation)}</strong> ↗</a>`:`<strong>${esc(citation)}</strong>`}<br><em>${esc(authority)}${target.witness?` · ${esc(target.witness)}`:""}${limit?` · ${esc(limit)}`:""}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em></div>`;
     }).join("");
-  }).join("")}</details>`;
+  }).join("")}</details></details>`;
 }
 
 function searchQuestions(query,win){
@@ -323,7 +385,11 @@ export function createSexualEthicsRuntime(win=globalThis){
     }
     return true;
   }
+  let entryOrigin=null;
+  const visitedFrames=[];
+  function rememberView(){visitedFrames.push({view:state.view,familyId:state.familyId,dossierId:state.dossierId,sectionId:state.sectionId,questionId:state.questionId,query:state.query,returnView:state.returnView});}
   function open(opts={}){
+    entryOrigin=captureObservedModuleOrigin(win,"learn");visitedFrames.length=0;
     if(!CSE_VALIDATION.ok){try{win?.console?.error?.("Catholic Sexual Ethics corpus invalid",CSE_VALIDATION.errors);}catch{}return false;}
     state.query="";state.reveal=false;
     if(opts.questionId&&CSE_PUBLIC_QUESTION_MAP[publicQuestionId(opts.questionId)]){
@@ -339,18 +405,18 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
   function openFamily(id){
     if(!CSE_FAMILY_MAP[id])return false;
-    state.familyId=id;state.dossierId=null;state.questionId=null;state.view="family";
+    rememberView();state.familyId=id;state.dossierId=null;state.questionId=null;state.view="family";
     state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;
   }
   function openDossier(id){
     const dossier=CSE_CANONICAL_DOSSIER_MAP[id];if(!dossier)return false;
-    state.familyId=dossier.family;state.dossierId=dossier.id;state.questionId=null;state.view="dossier";
+    rememberView();state.familyId=dossier.family;state.dossierId=dossier.id;state.questionId=null;state.view="dossier";
     state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;
   }
-  function openSection(id){if(!CSE_SECTION_MAP[id])return false;state.sectionId=id;state.questionId=null;state.view="section";state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;}
+  function openSection(id){if(!CSE_SECTION_MAP[id])return false;rememberView();state.sectionId=id;state.questionId=null;state.view="section";state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;}
   function openQuestion(id){
     const item=CSE_PUBLIC_QUESTION_MAP[publicQuestionId(id)];if(!item)return false;
-    const fromSearch=Boolean(state.query);
+    rememberView();const fromSearch=Boolean(state.query);
     state.returnView=fromSearch?"sections":state.view==="section"?"section":"dossier";
     state.questionId=item.id;state.sectionId=item.section;state.dossierId=CSE_QUESTION_OWNER_MAP[item.id];
     state.familyId=CSE_CANONICAL_DOSSIER_MAP[state.dossierId]?.family||null;
@@ -397,16 +463,20 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
 
   function back(){
-    if(state.view==="question"){
-      state.questionId=null;state.reveal=false;
-      state.view=state.returnView==="sections"?"sections":state.returnView==="section"?"section":"dossier";
-      render();return true;
+    if(visitedFrames.length){
+      Object.assign(state,visitedFrames.pop(),{reveal:false});
+      render();root()?.scrollTo?.(0,0);return true;
     }
-    if(state.view==="dossier"){state.view="family";state.dossierId=null;render();return true;}
-    if(state.view==="family"||state.view==="section"){state.view="sections";state.familyId=null;state.sectionId=null;render();return true;}
     return close(true);
   }
-  function close(returnToLearn=false){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");state.view="sections";state.familyId=null;state.dossierId=null;state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());return true;}
+  function close(returnToLearn=false){
+    const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}
+    node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");
+    state.view="sections";state.familyId=null;state.dossierId=null;state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;visitedFrames.length=0;
+    if(returnToLearn&&win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)return true;
+    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});
+    return true;
+  }
   function status(){return Object.freeze({version:SEXUAL_ETHICS_VERSION,installed:true,open:Boolean(root()),route:SEXUAL_ETHICS_ROUTE,view:state.view,sectionId:state.sectionId,questionId:state.questionId,questions:CSE_QUESTIONS.length,publicQuestions:CSE_PUBLIC_QUESTIONS.length,dossiers:CSE_CANONICAL_DOSSIERS.length,families:CSE_CANONICAL_FAMILIES.length,sections:CSE_SECTIONS.length,validation:CSE_VALIDATION});}
   return Object.freeze({version:SEXUAL_ETHICS_VERSION,open,openFamily,openDossier,openSection,openQuestion,handoffToApostolate,close,back,render,status});
 }
