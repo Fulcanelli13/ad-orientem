@@ -1,5 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
-import { calendarRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -9,6 +9,53 @@ import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
+const colourAudit=JSON.parse(readFileSync("data/calendar/1962-ordo-corrections.v1.json","utf8"));
+const colourFixture=(date,sourcePath,colour,classNo=4)=>({
+ date,status:"ready",day:{main:{id:sourcePath.replace("/",":").toLowerCase()+":"+classNo+":"+(colour==="White"?"w":"v"),color:colour}},
+ proper:{status:"ready",data:{sourcePath,color:colour}}
+});
+for(const [date,path,colour,clauses] of [
+ ["2024-01-08","Tempora/Epi1-1","White",["RG 119(a)","RG 127(a)"]],
+ ["2027-01-11","Tempora/Epi1-1","White",["RG 119(a)","RG 127(a)"]],
+ ["2024-12-24","Sancti/12-24","Violet",["RG 128(a)"]],
+ ["2027-12-24","Sancti/12-24","Violet",["RG 128(a)"]],
+]){
+ const observed=colourFixture(date,path,colour);
+ const claims=calendarColourRubricalClaimsForDay(observed,colourAudit);
+ assert.equal(claims.length,1,"Date-specific source colour decision absent for "+date);
+ assert.deepEqual(claims[0].clauses,clauses);
+ assert.equal(claims[0].expectedColour,colour);
+ assert.equal(claims[0].principalId,path.replace("/",":").toLowerCase());
+ assert.equal(claims[0].properSourcePath,path);
+ assert.equal(claims[0].automaticMassChange,false);
+ assert.equal(claims[0].authorityKind,"NORMATIVE_1960_RUBRICS");
+ assert.match(claims[0].historicalExplanationUrl,/^https:\/\/propria\.org\/.*\.pdf#page=20$/);
+ assert.equal(claims[0].normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+ assert.ok(claims[0].explanation.en&&claims[0].explanation.fr);
+ assert.ok(Object.isFrozen(claims)&&Object.isFrozen(claims[0]));
+ for(const modified of [
+   {...observed,date:"2026"+date.slice(4)},
+   {...observed,status:"failed"},
+   {...observed,proper:{status:"failed",data:{sourcePath:path,color:colour}}},
+   {...observed,proper:{status:"ready",data:{sourcePath:"Tempora/Adv1-1",color:colour}}},
+   {...observed,day:{main:{id:"tempora:unrelated:4:v",color:colour}}},
+   {...observed,day:{main:{id:observed.day.main.id.replace(/:[wv]$/i,":r"),color:colour}}},
+   {...observed,proper:{status:"ready",data:{sourcePath:path,color:colour==="White"?"Green":"White"}}},
+   {...observed,colourPlan:{massColor:colour,sequence:[["rite","Violet"],["Mass",colour]]}},
+ ])assert.deepEqual(calendarColourRubricalClaimsForDay(modified,colourAudit),[],
+   "Date/Proper/Mass colour change must fail closed for "+date);
+ const altered=structuredClone(colourAudit);
+ const row=altered.disputes.find(x=>x.date===date)??altered.secondaryAdjudications[0];
+ row.authority.url="https://example.com/forged-rubrics.pdf";
+ assert.deepEqual(calendarColourRubricalClaimsForDay(observed,altered),[],
+   "Untrusted external witness cannot certify the colour clause");
+}
+assert.deepEqual(calendarColourRubricalClaimsForDay(
+  colourFixture("2026-12-24","Sancti/12-24","Violet"),colourAudit),[],
+  "A dated archival witness may not be back-projected to every Christmas Eve");
+assert.deepEqual(calendarColourRubricalClaimsForDay(
+  colourFixture("2027-12-24","Sancti/12-24","Violet"),{}),[]);
+
 const rubricFixture=(date,sourcePath,rank,commem)=>({
   date,status:"ready",
   day:{main:{id:sourcePath.replace("/",":").toLowerCase()+":"+rank+":w",title:"Source text only"},
@@ -63,6 +110,10 @@ for(const marker of [
   "Why this commemoration is shown",
   "Pourquoi cette commémoraison figure ici",
   "previousRubricSourcesOpen",
+  "calendarColourRubricalClaimsForDay(r,colourClaimLedger)",
+  "Why this Mass colour is shown",
+  "data-cal-colour-claim",
+  "loadCalendarColourClaims();",
 ])assert.ok(runtime.includes(marker),
   "Calendar lost a required rubrical source-bound UI contract: "+marker);
 
