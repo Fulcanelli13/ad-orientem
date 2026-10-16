@@ -345,13 +345,19 @@ export function calendarInseparableApostlesClaimForDay(resolution,corrections){
 // A small reviewed identity manifest makes source-backed omissions extensible
 // in *one ledger*. These are audited examples, never an inferred rule that
 // all saints on Sundays are absent or that particular calendars have no feasts.
-const APPROVED_2026_OMISSION_IDENTITIES=Object.freeze({
+const APPROVED_OMISSION_IDENTITIES=Object.freeze({
   "2026-07-05":Object.freeze({id:"PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED",saint:"SAINT_ANTHONY_MARY_ZACCARIA",principal:"tempora:Pent06-0:2:g"}),
   "2026-07-12":Object.freeze({id:"PENT7_JOHN_GUALBERT_2026_OMITTED",saint:"SAINT_JOHN_GUALBERT",principal:"tempora:Pent07-0:2:g"}),
   "2026-08-30":Object.freeze({id:"PENT14_ROSE_LIMA_2026_OMITTED",saint:"SAINT_ROSE_OF_LIMA",principal:"tempora:Pent14-0:2:g"}),
   "2026-10-04":Object.freeze({id:"FRANCIS_ASSISI_2026_SUNDAY_OMISSION",saint:"SAINT_FRANCIS_OF_ASSISI",principal:"tempora:Pent19-0:2:g"}),
   "2026-11-22":Object.freeze({id:"PENT24_CECILIA_2026_OMITTED",saint:"SAINT_CECILIA",principal:"tempora:Pent24-0:2:g"}),
-  "2026-12-06":Object.freeze({id:"ADVENT2_NICHOLAS_2026_OMITTED",saint:"SAINT_NICHOLAS_MYRA",principal:"tempora:Adv2-0:1:v"})
+  "2026-12-06":Object.freeze({id:"ADVENT2_NICHOLAS_2026_OMITTED",saint:"SAINT_NICHOLAS_MYRA",principal:"tempora:Adv2-0:1:v"}),
+  "2027-03-07":Object.freeze({id:"LENT4_THOMAS_AQUINAS_2027_OMITTED",saint:"SAINT_THOMAS_AQUINAS",principal:"tempora:Quad4-0:1:pv",kind:"I_CLASS_LENT_SUNDAY"}),
+  "2027-06-13":Object.freeze({id:"PENT4_ANTHONY_PADUA_2027_OMITTED",saint:"SAINT_ANTHONY_PADUA",principal:"tempora:Pent04-0:2:g"}),
+  "2027-08-08":Object.freeze({id:"PENT12_JOHN_VIANNEY_2027_OMITTED",saint:"SAINT_JOHN_MARY_VIANNEY",principal:"tempora:Pent12-0:2:g"}),
+  "2028-06-11":Object.freeze({id:"TRINITY_BARNABAS_2028_OMITTED",saint:"SAINT_BARNABAS_APOSTLE",principal:"tempora:Pent01-0r:1:w",kind:"I_CLASS_TRINITY_SUNDAY"}),
+  "2028-08-20":Object.freeze({id:"PENT11_BERNARD_2028_OMITTED",saint:"SAINT_BERNARD_CLAIRVAUX",principal:"tempora:Pent11-0:2:g"}),
+  "2028-12-03":Object.freeze({id:"ADVENT1_FRANCIS_XAVIER_2028_OMITTED",saint:"SAINT_FRANCIS_XAVIER",principal:"tempora:Adv1-0:1:v"})
 });
 const OMISSION_CLASS_WITNESS="https://www.1962ordo.com/feast/";
 const OMISSION_INDEPENDENT_ORDO="https://gcatholic.org/calendar/2026/Extraordinary-en";
@@ -361,7 +367,7 @@ const historicFrancisWitness=Object.freeze({
   independent1962Contrast:"https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737"
 });
 export function calendarOmittedFeastClaimForDay(resolution,corrections){
-  const date=resolution?.date,approved=APPROVED_2026_OMISSION_IDENTITIES[date];
+  const date=resolution?.date,approved=APPROVED_OMISSION_IDENTITIES[date];
   if(!approved||corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
      resolution?.status!=="ready"||resolution?.proper?.status!=="ready"||
      resolution?.day?.main?.id!==approved.principal||
@@ -381,7 +387,7 @@ export function calendarOmittedFeastClaimForDay(resolution,corrections){
   if(w.id!==approved.id||w.scope!=="1962_GENERAL_ROMAN_CALENDAR"||
      p?.sourcePath!==path||p?.sourceId!==approved.principal||
      p?.class!==mainRank||
-     p?.kind!==(mainRank===1?"I_CLASS_ADVENT_SUNDAY":"II_CLASS_SUNDAY")||
+     p?.kind!==(approved.kind||(mainRank===1?"I_CLASS_ADVENT_SUNDAY":"II_CLASS_SUNDAY"))||
      excluded?.sourcePath!=="Sancti/"+date.slice(5)||
      excluded?.class!==3||excluded?.saint!==approved.saint||
      excluded?.fixedMonthDay!==date.slice(5)||
@@ -392,13 +398,20 @@ export function calendarOmittedFeastClaimForDay(resolution,corrections){
      w.explanationOnly!==true||w.changes1962Mass!==false||
      w.doesNotDetermineParticularCalendar!==true||
      !w.en?.trim()||!w.fr?.trim())return Object.freeze([]);
-  const witnesses=date==="2026-10-04"?historicFrancisWitness:{
+  const crossYear=Number(date.slice(0,4))>=2027;
+  const witnesses=date==="2026-10-04"?historicFrancisWitness:crossYear?{
+    observedWitness:"https://ordo.fsspx.org/calendar/"+date.slice(0,4)+"/"+Number(date.slice(5,7)),
+    feastClassWitness:"https://1962missal.com/feast",
+    independent1962Contrast:"https://gcatholic.org/calendar/"+date.slice(0,4)+"/Extraordinary-en"
+  }:{
     observedWitness:"https://ordo.fsspx.org/day/"+date+"?lang=en",
     feastClassWitness:OMISSION_CLASS_WITNESS,
     independent1962Contrast:OMISSION_INDEPENDENT_ORDO
   };
   if(Object.entries(witnesses).some(([k,url])=>w[k]!==url))return Object.freeze([]);
-  if(date!=="2026-10-04"&&
+  if(crossYear&&w.sourceReview!=="DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028")
+    return Object.freeze([]);
+  if(!crossYear&&date!=="2026-10-04"&&
      w.sourceReview!=="DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026")
     return Object.freeze([]);
   return Object.freeze([Object.freeze({

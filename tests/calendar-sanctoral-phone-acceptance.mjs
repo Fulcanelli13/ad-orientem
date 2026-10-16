@@ -265,6 +265,42 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
        "Disputed St Lucy/Advent III must remain without a certified omission claim");
    }
+   if(width===390){
+     const dates=["2027-03-07","2027-06-13","2027-08-08","2028-06-11","2028-08-20","2028-12-03"];
+     const observed=await page.evaluate(async dates=>{
+       const resolver=window.AO_RUNTIME_V8.resolver;
+       return Promise.all(dates.map(async date=>{
+         const r=await resolver.resolveDay(date);
+         return {date,status:r?.status,main:r?.day?.main?.id,path:r?.day?.main?.path,
+           comms:r?.day?.commemorations?.map(c=>c?.id),
+           properPath:r?.proper?.data?.sourcePath};
+       }));
+     },dates);
+     console.log("MULTI_YEAR_OMISSIONS_REAL_SOURCE",JSON.stringify(observed));
+     for(const [date,id,clause] of [
+      ["2027-03-07","LENT4_THOMAS_AQUINAS_2027_OMITTED","RG 111(a)"],
+      ["2027-06-13","PENT4_ANTHONY_PADUA_2027_OMITTED","RG 111(b)"],
+      ["2027-08-08","PENT12_JOHN_VIANNEY_2027_OMITTED","RG 111(b)"],
+      ["2028-06-11","TRINITY_BARNABAS_2028_OMITTED","RG 111(a)"],
+      ["2028-08-20","PENT11_BERNARD_2028_OMITTED","RG 111(b)"],
+      ["2028-12-03","ADVENT1_FRANCIS_XAVIER_2028_OMITTED","RG 111(a)"]
+     ]){
+       assert.equal(await page.evaluate(async d=>window.AO_CALENDAR_APP_V1.select(d),date),true);
+       await page.waitForFunction(d=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===d,
+         date,{timeout:55000});
+       const claim=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="'+id+'"]');
+       await claim.waitFor({state:"attached",timeout:30000});
+       assert.ok((await claim.textContent())?.includes(clause),date+" correct original clause");
+       assert.equal(await claim.locator("a").first().getAttribute("href"),
+        "https://ordo.fsspx.org/calendar/"+date.slice(0,4)+"/"+Number(date.slice(5,7)));
+       assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     }
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2028-12-04")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2028-12-04",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "Do not transfer the omitted Francis Xavier feast to 4 December");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
