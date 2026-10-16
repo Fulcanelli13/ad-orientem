@@ -1,0 +1,154 @@
+{
+  "schema": "AO_TRADITIONAL_MASS_FORMULARY_REVIEW_V1",
+  "asOf": "2026-10-16",
+  "status": "ADVISORY_SOURCE_AUDIT_NO_ACTUAL_MASS_TEXTS_INSERTED",
+  "ownership": "Calendar issue #1224 / PR #1226; no competing Mass engine",
+  "sources": {
+    "cumSanctissima": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+    "explanatoryNote": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/03/25/200325i.html",
+    "generalRubrics1960": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "missalRubrics1960": "https://www.divinumofficium.com/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+    "newmanGeneralRomanDecree": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+    "newmanModernEnglishTexts": "https://www.usccb.org/prayer-worship/liturgical-year/saint-john-henry-newman",
+    "stKevinsOfficial": "https://www.latinmassdublin.ie/calendar"
+  },
+  "precedence": [
+    {
+      "priority": 1,
+      "sourceKind": "PRO_ALIQUIBUS_LOCIS_1962",
+      "condition": "Approved, edition-matched 1962 proper assigned to date and saint",
+      "reference": "Cum sanctissima §5"
+    },
+    {
+      "priority": 2,
+      "sourceKind": "HOLY_SEE_APPROVED_TRADITIONAL_SUPPLEMENT",
+      "condition": "Authenticated supplement intended for the 1962 books, exact prayers and proper identity",
+      "reference": "Cum sanctissima §5"
+    },
+    {
+      "priority": 3,
+      "sourceKind": "COMMON_OF_SAINTS_1962",
+      "condition": "No applicable proper/supplement; identify saint's ecclesiastical class and select an actual 1962 Common formulary",
+      "reference": "Cum sanctissima §5"
+    }
+  ],
+  "liturgicalComponents": [
+    "introit",
+    "collect",
+    "epistle",
+    "gradual",
+    "alleluiaOrTract",
+    "gospel",
+    "offertory",
+    "secret",
+    "communion",
+    "postcommunion"
+  ],
+  "commemorationOrations": [
+    "collect",
+    "secret",
+    "postcommunion"
+  ],
+  "rules": [
+    {
+      "id": "PRINCIPAL_MASS",
+      "ref": "1962 RGMR, 2020 Cum sanctissima §1-2",
+      "requirement": "An eligible saint's festive Mass is distinct from a commemoration; no automatic replacement of principal 1962 observance."
+    },
+    {
+      "id": "REPLACE_FORMULARY",
+      "ref": "Cum sanctissima §5",
+      "requirement": "Use priority 1962 pro aliquibus locis, approved traditional Supplement, then 1962 Common. Do not transplant modern Roman Missal texts."
+    },
+    {
+      "id": "OMITTED_HISTORICAL_FEAST",
+      "ref": "Cum sanctissima §4; RG 111(d)",
+      "requirement": "When an eligible additional saint's festival Mass omits the prescribed 1962 feast or vigil, commemorate that omitted celebration with appropriate collect, secret and postcommunion, respecting precedence and class limits."
+    },
+    {
+      "id": "OPTIONAL_ADDITIONAL_COMMEMORATION",
+      "ref": "Cum sanctissima §6; RG 111(d)",
+      "requirement": "A separate ad libitum commemoration needs the named saint or mystery ON THAT DATE in 1962 pro aliquibus locis or an approved traditional Supplement; a modern calendar entry alone is insufficient."
+    },
+    {
+      "id": "SUNG_MASS_RESTRICTIONS",
+      "ref": "RG 111(a)-(d)",
+      "requirement": "Preserve Mass form, class, privileged commemoration and numerical limits. Do not import all Low Mass commemorations into sung nonconventual Mass."
+    },
+    {
+      "id": "ORATION_TEXT_INTEGRITY",
+      "ref": "1962 Missal; RGMR prayers",
+      "requirement": "Source-approved exact Latin collect, secret and postcommunion with rubrical conclusions/ordering. Placeholder 'N.' in an approved Common may be substituted as that source permits; otherwise no invented name interpolation."
+    },
+    {
+      "id": "DOCTORS",
+      "ref": "1962 Common of Doctors / Confessors; Cum sanctissima §5",
+      "requirement": "A later Doctor title does not create new traditional feast, proper or oration. Doctor classification aids Common lookup, but complete edition-appropriate choice must be verified."
+    }
+  ],
+  "knownCases": [
+    {
+      "saintId": "saint.john-henry-newman",
+      "date": "2026-10-09",
+      "modernRomanCalendarStatus": "UNIVERSAL_OPTIONAL_MEMORIAL_ESTABLISHED",
+      "traditionallyObservedId": "sancti:10-09:3:w",
+      "traditionallyObservedName": "St John Leonardi",
+      "modern2026Texts": "MODERN_PROPER_EXISTS_BUT_NOT_AUTO_ADMISSIBLE_IN_1962",
+      "formSourceEvidence": {
+        "proAliquibusLocis1962": "NOT_YET_VERIFIED",
+        "traditionalSupplement": "NOT_YET_VERIFIED",
+        "common1962": "RELEVANT_CATEGORY_AVAILABLE_EXACT_CANDIDATE_UNSELECTED",
+        "saintClass": "PRIEST_CONFESSOR_DOCTOR"
+      },
+      "historicalOrations": "THREE_ORATIONS_REQUIRED_IF_FESTIVE_MASS_DISPLACES_ELIGIBLE_TRADITIONAL_FEAST",
+      "traditionalSelectedFormularyId": null,
+      "authenticOriginalOrationsVerified": false,
+      "stKevinsEvent": {
+        "venue": "St Kevin's Church, Dublin Latin Mass Chaplaincy",
+        "reportedByUser": true,
+        "exactMassFormulary": "UNKNOWN_NO_FIRST_PARTY_PROGRAM_FOUND",
+        "datedProgram": "NOT_INDEPENDENTLY_RETRIEVED",
+        "scope": "NOT_UNIVERSAL",
+        "verificationNeeded": [
+          "ACTUAL_2026_10_09_MASS_PROGRAM",
+          "MISSAL_FORMULARY_SOURCE",
+          "COLLECT_SECRET_POSTCOMMUNION_AND_THEIR_ORDER",
+          "CELEBRANT_CHOICE"
+        ]
+      },
+      "status": "OPEN_TRADITIONAL_TEXT_AND_LOCAL_PRACTICE_REVIEW"
+    },
+    {
+      "saintId": "saint.pio-pietrelcina",
+      "date": "2026-09-23",
+      "traditionallyObservedId": "tempora:Pent17-3:2:v",
+      "traditionalSelectedFormularyId": null,
+      "status": "CLASS_II_EMBER_DAY_BLOCKS_OPTIONAL_SAINT_MASS"
+    },
+    {
+      "saintId": "saint.therese-lisieux",
+      "date": "2026-10-03",
+      "traditionalSelectedFormularyId": null,
+      "status": "EXISTING_1962_FEAST_DOCTOR_TITLE_ENRICHMENT_ONLY"
+    },
+    {
+      "saintId": "saint.teresa-avila",
+      "date": "2026-10-15",
+      "traditionalSelectedFormularyId": null,
+      "status": "EXISTING_1962_FEAST_DOCTOR_TITLE_ENRICHMENT_ONLY"
+    }
+  ],
+  "certificationRequiredBeforeMass": [
+    "ACTUAL_1962_DAY_CLASS_AND_PRESCRIBED_PROPER",
+    "SAINT_AND_MEMORIAL_SOURCE_AUTHORITY",
+    "NO_70_PROTECTED_FEAST_CONFLICT",
+    "JUST_CAUSE_AND_LOCAL_CELEBRANT_CHOICE",
+    "TRADITIONAL_1962_EDITION_MATCHED_FORMULARY_REFERENCE",
+    "COMPLETE_AUTHENTIC_LATIN_MASS_TEXT_COMPONENTS",
+    "COLLECT_SECRET_POSTCOMMUNION_FOR_DISPLACED_FEAST",
+    "MASS_TYPE_AND_NUMERIC_COMMEMORATION_LIMITS",
+    "OFFICE_AND_VOTIVE_RUBRICS",
+    "REGRESSION_TESTS"
+  ],
+  "publicationGate": "NO_MASS_ORATION_OR_FORMULARY_INSERTION_BEFORE_POSITIVE_SOURCE_VALIDATION"
+}
