@@ -117,6 +117,17 @@ try{
     borrowedSections:result.borrowedSections.map(x=>x.language+":"+x.section),
     nonPontiffOrationsPreserved:result.nonPontiffOrationsPreserved===true,
     allSharedSections:["Introitus","Oratio","Lectio","Graduale","GradualeP","Tractus","Evangelium","Offertorium","Communio"],
+    latinSharedDiagnostics:["Introitus","Oratio","Lectio","Graduale","GradualeP","Tractus","Evangelium","Offertorium","Communio"].map(section=>{
+      const a=target.la?.map?.get(section)??[],b=shared.la?.map?.get(section)??[];
+      const norm=rows=>rows.join("\\n").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/[^A-Za-z0-9]+/g," ").trim().toLowerCase();
+      const na=norm(a),nb=norm(b);let prefix=0;
+      while(prefix<na.length&&prefix<nb.length&&na[prefix]===nb[prefix])prefix++;
+      return {section,targetRows:a.length,donorRows:b.length,targetLength:na.length,donorLength:nb.length,
+        equality:na===nb,firstMismatch:prefix,
+        targetAtMismatch:na.slice(Math.max(0,prefix-45),prefix+115),
+        donorAtMismatch:nb.slice(Math.max(0,prefix-45),prefix+115),
+        targetLast:String(a[a.length-1]??"").slice(-100),donorLast:String(b[b.length-1]??"").slice(-100)};
+    }),
     variantLatinDistinct:["Secreta","Postcommunio"].map(section=>{
       const v=target.la?.map?.get?.(section),b=shared.la?.map?.get?.(section);
       return {section,different:JSON.stringify(v)!==JSON.stringify(b),
