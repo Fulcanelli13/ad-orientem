@@ -588,6 +588,13 @@ try{
       const heading=visualPage.locator('.ao-missal-prayer-heading[data-source-block-id="'+blockId+'"]');
       assert.equal(await heading.count(),1,
         "Missal visual target lacks exact source block "+blockId);
+      assert.equal(await visualPage.locator('.ao-state-cell[data-side="faithful"]').isVisible(),true,
+        "Missal "+name+" faithful ribbon hidden");
+      assert.equal(await visualPage.locator('.ao-state-cell[data-side="priest"]').isVisible(),true,
+        "Missal "+name+" priest ribbon hidden");
+      assert.equal(await visualPage.locator(".ao-state-source").isVisible(),false,
+        "Missal "+name+" has duplicate Canon source banner in the rubric ribbon");
+
       const horizontalOverflow=await visualPage.evaluate(()=>
         document.documentElement.scrollWidth>window.innerWidth+1);
       assert.equal(horizontalOverflow,false,
