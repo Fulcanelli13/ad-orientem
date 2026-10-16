@@ -29,7 +29,7 @@ assert.equal(master.counts.datedCollectiveGroups,master.collectives.filter(x=>x.
 assert.equal(master.counts.expresslyUniversalModernGeneralRomanIndividuals,master.persons.filter(x=>x.currentRomanUniversalClaim).length);
 assert.equal(master.persons.length,effective.records.length);
 assert.ok(master.persons.every(p=>p.runtimePublication==="BLOCKED_RESEARCH_ONLY"));
-assert.ok(compat.observances.every(x=>x.eligibleForRuntime===false&&x.mass1962Effect==="NONE"&&x.historyGate.includes("CANONIZATION")));
+assert.ok(compat.observances.every(x=>x.eligibleForRuntime===false&&x.mass1962Effect==="NONE"&&(x.historyGate.includes("CANONIZATION")||x.historyGate==="HISTORICAL_1962_BASELINE_NOT_MODERN_PROMULGATION")));
 assert.equal(authority.noRuntimeImport,true);assert.equal(aliases.noParallelSaintsCreated,true);
 assert.equal(batch.sourceYearCollections.length,51);assert.equal(queue.yearCollectionsToMine.length,0);
 assert.equal(master.counts.datedIndividuals,293);
@@ -61,7 +61,7 @@ assert.ok(queue.profileExceptions.some(x=>x.subjectId==="canon-group.forty-marty
 assert.equal(master.counts.canonizationYearCollectionsInspectedForDateFields,51);
 assert.ok(batch.collectionsInspectedWithoutMemoria?.some(x=>x.year===2021));
 assert.ok(!edges.some(x=>x.subjectId==="saint.jadwiga-queen-poland"&&x.monthDay==="10-16"));
-assert.ok(!edges.some(x=>x.subjectId==="saint.margherita-citta-di-castello"));
+assert.ok(edges.some(x=>x.subjectId==="saint.margherita-citta-di-castello"&&x.monthDay==="04-13"&&x.authorityScope==="DOMINICAN_ORDER_LOCAL_PARISH_FEAST_WITNESS"));
 assert.ok(edges.filter(x=>x.subjectId==="saint.leopold-mandic").some(x=>x.monthDay==="05-12"));
 assert.ok(edges.filter(x=>x.subjectId==="saint.leopold-mandic").some(x=>x.monthDay==="07-30"));
 assert.ok(edges.some(x=>x.subjectId==="saint.ludovico-da-casoria"&&x.monthDay==="06-17"&&x.jurisdiction==="SUORE_FRANCESCANE_ELISABETTINE"));
