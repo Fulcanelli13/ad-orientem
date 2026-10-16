@@ -34,6 +34,14 @@ export function renderSaintPlaceSheet(vm){
   html+='<header><div><small>'+esc(say("SAINTS","SAINTS"))+'</small>'
     +'<h2>'+esc(item.kind==="SAINT_CATALOGUE_PROFILE"?(language==="fr"?item.title_fr:item.title):(item.subtitle||item.title))+'</h2></div>'
     +'<button type="button" data-find-close-detail aria-label="'+esc(say("Close","Fermer"))+'">×</button></header>';
+  // This is the inspected Calendar date, not a timeless feast date.
+  const receipt=vm.saintCalendarReturn;
+  if(item.kind==="SAINT_CATALOGUE_PROFILE" &&
+     receipt?.saintsId===item.saint_id &&
+     /^\d{4}-\d{2}-\d{2}$/.test(receipt.date||"")){
+    html+='<button type="button" class="aoSaintCalendarReturn aoSaintCalendarOpen" data-saint-return-calendar="'+esc(receipt.date)+'">'+
+      esc(say("Return to selected Calendar day","Revenir au jour consulté dans le calendrier"))+' →</button>';
+  }
   for(const [index,saint] of people.entries()){
     const life=saint.life;
     html+='<article class="aoSaintBiography" data-saint-id="'+esc(saint.saint_id)+'">';
