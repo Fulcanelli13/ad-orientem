@@ -110,6 +110,17 @@ try{
      await page.screenshot({path:resolve(out,label+"-reading.png"),fullPage:false});
      await drawer.locator("summary").first().click();
      assert.notEqual(await drawer.getAttribute("open"),null,label+" drawer cannot be opened");
+     if(surface==="mass"||surface==="spiritual"){
+      const selector=surface==="mass"?"[data-ao-source-index]":"[data-ao-sl-source-index]";
+      const index=drawer.locator(selector).first();
+      assert.equal(await index.count(),1,label+" missing first-tap source index");
+      assert.equal(await index.isVisible(),true,label+" first-tap source list is hidden");
+      assert.ok(await index.locator("li").count()>0,label+" source index empty");
+      const nested=drawer.locator(info.evidence).first();
+      assert.equal(await nested.getAttribute("open"),null,label+" claim evidence should remain folded");
+      assert.ok(await index.locator('a[href^="https://"]').count()>0,
+       label+" existing citations not reachable on first tap");
+     }
      const evidence=page.locator(info.evidence).first();
      await evidence.waitFor({state:"attached"});
      if(surface!=="formation"){
