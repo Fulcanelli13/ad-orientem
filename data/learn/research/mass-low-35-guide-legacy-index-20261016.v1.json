@@ -1,0 +1,378 @@
+{
+  "schema": "ao-low-mass-guide-source-index-v1",
+  "asOf": "2026-10-16",
+  "status": "HISTORICAL_SOURCE_SHORT_TEXT_RESTORED_LONG_TEXT_ONLY_IN_FROZEN_WORKBOOK",
+  "authority": "RESEARCH_COPY_NO_PUBLICATION",
+  "massForm": "LOW_1962",
+  "sourceWorkbook": "Ad_Orientem_Full_Order_of_Mass_Master_Registry_2026-10-15.xlsx",
+  "sourceWorksheet": "05 GUIDE · APP COPY",
+  "frozenUltraMaster": "Ad_Orientem_Ultra_Master_Mass_Source_of_Truth_RECONCILED_2026-10-16.xlsx",
+  "frozenUltraMasterSha256": "8da826ec8306a1fa8925ece4832763becbe08f56efd5f368c87be166a34545f1",
+  "fixtureSha256": "4fc28fa80b8845ac464e863071434df2ad3912959dc8104f07427278657ae626",
+  "fixtureAlgorithm": "UTF-8 SHA256 of ordered key TAB moment TAB short LF for 35 entries",
+  "currentGuideRegistry": "data/presentation/guide-registry.v1.json",
+  "currentLowMassText": "data/presentation/reader-text-low.v1.json",
+  "preserveExactly32CurrentGuides": true,
+  "primaryClock": "PRIEST+SERVER",
+  "scholaTrackMustNotBeInvented": true,
+  "entryCount": 35,
+  "entries": {
+    "LOW.001": {
+      "key": "LOW.001",
+      "profile": "LOW_MASS",
+      "sequence": 1,
+      "moment": "Entrance / arrival",
+      "short": "Prepare for Mass and follow the local Low-Mass posture. The opening Sign of the Cross and Introibo at the foot of the altar are your first reliable landmarks.",
+      "originalWorkbookRow": 2,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.002": {
+      "key": "LOW.002",
+      "profile": "LOW_MASS",
+      "sequence": 2,
+      "moment": "Opening Sign of Cross / Introibo",
+      "short": "The priest begins the prayers at the foot of the altar. Remain recollected and follow the opening prayer sequence if you wish.",
+      "originalWorkbookRow": 3,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.003": {
+      "key": "LOW.003",
+      "profile": "LOW_MASS",
+      "sequence": 3,
+      "moment": "Psalm 42 / preparatory prayers",
+      "short": "The preparatory prayers continue at the foot of the altar. The Confiteor and the visible striking of the breast are the next clear landmarks.",
+      "originalWorkbookRow": 4,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.004": {
+      "key": "LOW.004",
+      "profile": "LOW_MASS",
+      "sequence": 4,
+      "moment": "Confiteors / absolution versicles",
+      "short": "The Confiteor sequence is ending. Watch for the priest to leave the foot of the altar and ascend the steps.",
+      "originalWorkbookRow": 5,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.005": {
+      "key": "LOW.005",
+      "profile": "LOW_MASS",
+      "sequence": 5,
+      "moment": "Ascent / altar prayers",
+      "short": "The priest ascends the altar and says the quiet altar prayers. Watch for him to move to the Epistle side for the Introit.",
+      "originalWorkbookRow": 6,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.006": {
+      "key": "LOW.006",
+      "profile": "LOW_MASS",
+      "sequence": 6,
+      "moment": "Introit",
+      "short": "The Introit begins the Proper of the Mass. Follow the text if you wish; the Kyrie and the priest’s movement toward the centre come next.",
+      "originalWorkbookRow": 7,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.007": {
+      "key": "LOW.007",
+      "profile": "LOW_MASS",
+      "sequence": 7,
+      "moment": "Kyrie",
+      "short": "Ordinary begins. Watch next for Gloria intonation if appointed; otherwise Dominus vobiscum for Collect.",
+      "originalWorkbookRow": 8,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.008": {
+      "key": "LOW.008",
+      "profile": "LOW_MASS",
+      "sequence": 8,
+      "moment": "Gloria (when appointed)",
+      "short": "Major Ordinary landmark. Watch next for Priest turns/says Dominus vobiscum, then goes to Epistle side for Collect.",
+      "originalWorkbookRow": 9,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.009": {
+      "key": "LOW.009",
+      "profile": "LOW_MASS",
+      "sequence": 9,
+      "moment": "Collect",
+      "short": "Opening oration. Watch next for Epistle begins with priest still at Epistle side.",
+      "originalWorkbookRow": 10,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.010": {
+      "key": "LOW.010",
+      "profile": "LOW_MASS",
+      "sequence": 10,
+      "moment": "Epistle / Lesson",
+      "short": "Scripture reading. Watch next for Server response / priest begins Gradual/Alleluia text.",
+      "originalWorkbookRow": 11,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.011": {
+      "key": "LOW.011",
+      "profile": "LOW_MASS",
+      "sequence": 11,
+      "moment": "Gradual / Alleluia / Tract / Sequence",
+      "short": "Transition toward Gospel. Watch next for Priest moves to center/Gospel side and begins Gospel preparation.",
+      "originalWorkbookRow": 12,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.012": {
+      "key": "LOW.012",
+      "profile": "LOW_MASS",
+      "sequence": 12,
+      "moment": "Gospel preparation / movement",
+      "short": "Gospel is imminent. Watch next for Dóminus vobíscum / Sequéntia sancti Evangélii.",
+      "originalWorkbookRow": 13,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.013": {
+      "key": "LOW.013",
+      "profile": "LOW_MASS",
+      "sequence": 13,
+      "moment": "Gospel",
+      "short": "Public Gospel. Watch next for Return toward center / Credo if appointed / Offertory if not.",
+      "originalWorkbookRow": 14,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.014": {
+      "key": "LOW.014",
+      "profile": "LOW_MASS",
+      "sequence": 14,
+      "moment": "Credo (when appointed)",
+      "short": "Creed landmark. Watch next for Dóminus vobíscum, then Orémus introducing Offertory.",
+      "originalWorkbookRow": 15,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.015": {
+      "key": "LOW.015",
+      "profile": "LOW_MASS",
+      "sequence": 15,
+      "moment": "Offertory opening",
+      "short": "Offertory begins. Watch next for Priest uncovers chalice / prepares bread and wine.",
+      "originalWorkbookRow": 16,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.016": {
+      "key": "LOW.016",
+      "profile": "LOW_MASS",
+      "sequence": 16,
+      "moment": "Offering / preparation",
+      "short": "Offertory prayers are underway. Watch next for Orate fratres turn.",
+      "originalWorkbookRow": 17,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.017": {
+      "key": "LOW.017",
+      "profile": "LOW_MASS",
+      "sequence": 17,
+      "moment": "Orate fratres",
+      "short": "Offertory is ending; Secret follows. Watch next for Quiet follows as Secret begins.",
+      "originalWorkbookRow": 18,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.018": {
+      "key": "LOW.018",
+      "profile": "LOW_MASS",
+      "sequence": 18,
+      "moment": "Secret",
+      "short": "Secret is not an audible navigation text/chant. Watch next for Public Per ómnia sæcula sæculórum / Amen, then Preface dialogue.",
+      "originalWorkbookRow": 19,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.019": {
+      "key": "LOW.019",
+      "profile": "LOW_MASS",
+      "sequence": 19,
+      "moment": "Preface dialogue / Preface",
+      "short": "One of the strongest auditory landmarks. Watch next for Sanctus begins; altar bell may sound.",
+      "originalWorkbookRow": 20,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.020": {
+      "key": "LOW.020",
+      "profile": "LOW_MASS",
+      "sequence": 20,
+      "moment": "Sanctus",
+      "short": "Canon is about to begin. Watch next for Sudden drop into silence / Canon + pre-Consecration warning.",
+      "originalWorkbookRow": 21,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.021": {
+      "key": "LOW.021",
+      "profile": "LOW_MASS",
+      "sequence": 21,
+      "moment": "Canon begins — Te igitur",
+      "short": "Silent Canon underway. Watch next for Warning bell shortly before Consecration.",
+      "originalWorkbookRow": 22,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.022": {
+      "key": "LOW.022",
+      "profile": "LOW_MASS",
+      "sequence": 22,
+      "moment": "Hanc igitur / warning",
+      "short": "Consecration is imminent; remain kneeling/recollected. Watch next for Host elevation bells.",
+      "originalWorkbookRow": 23,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.023": {
+      "key": "LOW.023",
+      "profile": "LOW_MASS",
+      "sequence": 23,
+      "moment": "Host Consecration / elevation",
+      "short": "You are exactly at the elevation of the Sacred Host. Watch next for Chalice elevation bell after the intervening consecration.",
+      "originalWorkbookRow": 24,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.024": {
+      "key": "LOW.024",
+      "profile": "LOW_MASS",
+      "sequence": 24,
+      "moment": "Chalice Consecration / elevation",
+      "short": "You are exactly at the elevation of the Precious Blood. Watch next for Canon returns to silence; later Nobis quoque can become audible.",
+      "originalWorkbookRow": 25,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.025": {
+      "key": "LOW.025",
+      "profile": "LOW_MASS",
+      "sequence": 25,
+      "moment": "Nobis quoque",
+      "short": "Useful mid/late-Canon landmark. Watch next for Public Per omnia at the end of Canon.",
+      "originalWorkbookRow": 26,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.026": {
+      "key": "LOW.026",
+      "profile": "LOW_MASS",
+      "sequence": 26,
+      "moment": "End of Canon / Pater noster",
+      "short": "Canon has ended; Communion rites begin. Watch next for Pax Domini / Agnus Dei.",
+      "originalWorkbookRow": 27,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.027": {
+      "key": "LOW.027",
+      "profile": "LOW_MASS",
+      "sequence": 27,
+      "moment": "Fraction / Pax / Agnus Dei",
+      "short": "Communion preparation. Watch next for Communion warning bell if faithful will receive.",
+      "originalWorkbookRow": 28,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.028": {
+      "key": "LOW.028",
+      "profile": "LOW_MASS",
+      "sequence": 28,
+      "moment": "Communion warning",
+      "short": "Communicants prepare/approach when directed. Watch next for Ecce Agnus Dei facing the people.",
+      "originalWorkbookRow": 29,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.029": {
+      "key": "LOW.029",
+      "profile": "LOW_MASS",
+      "sequence": 29,
+      "moment": "Ecce Agnus Dei / faithful Dnsd",
+      "short": "Faithful Communion rite is beginning. Watch next for Actual distribution at rail.",
+      "originalWorkbookRow": 30,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.030": {
+      "key": "LOW.030",
+      "profile": "LOW_MASS",
+      "sequence": 30,
+      "moment": "Distribution of Communion",
+      "short": "Distribution is in progress. Watch next for Priest returns to altar and begins ablutions.",
+      "originalWorkbookRow": 31,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.031": {
+      "key": "LOW.031",
+      "profile": "LOW_MASS",
+      "sequence": 31,
+      "moment": "Ablutions / Communion antiphon",
+      "short": "Communion section is closing. Watch next for Dóminus vobíscum before Postcommunion.",
+      "originalWorkbookRow": 32,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.032": {
+      "key": "LOW.032",
+      "profile": "LOW_MASS",
+      "sequence": 32,
+      "moment": "Postcommunion",
+      "short": "Closing prayer. Watch next for Final Dóminus vobíscum / dismissal.",
+      "originalWorkbookRow": 33,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.033": {
+      "key": "LOW.033",
+      "profile": "LOW_MASS",
+      "sequence": 33,
+      "moment": "Dismissal",
+      "short": "Mass is reaching formal conclusion. Watch next for Blessing if the rite includes it.",
+      "originalWorkbookRow": 34,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.034": {
+      "key": "LOW.034",
+      "profile": "LOW_MASS",
+      "sequence": 34,
+      "moment": "Blessing (when given)",
+      "short": "Kneel/sign yourself according to established practice. Watch next for Priest moves to Gospel side for Last Gospel if present.",
+      "originalWorkbookRow": 35,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    },
+    "LOW.035": {
+      "key": "LOW.035",
+      "profile": "LOW_MASS",
+      "sequence": 35,
+      "moment": "Last Gospel (when present)",
+      "short": "Last major landmark. Watch next for Priest leaves altar / recessional.",
+      "originalWorkbookRow": 36,
+      "longSourceOnly": true,
+      "releaseApproved": false
+    }
+  },
+  "editorialCautions": [
+    "These short texts are historical working copy and not independently approved for release.",
+    "35 Low Mass navigation stages are not one-to-one with 30 reader macro cards; cue mapping must be semantically certified.",
+    "Old long guides include visibly templated or awkward copy: preserve full text in Ultra Master workbook without publishing it.",
+    "No user or priest gesture can be inferred from a stage title; rubrics and posture profiles retain ownership.",
+    "Confiteor, Gloria, Credo, Communion and Last Gospel need explicit liturgical form / selected Proper / local-practice gates."
+  ]
+}
