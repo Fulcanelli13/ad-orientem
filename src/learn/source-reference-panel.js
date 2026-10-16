@@ -27,7 +27,8 @@ export function sourceReferencePanelCss(){
     ".aoReferencePanel .aoRefSourceList{display:block;line-height:1.6}.aoReferencePanel .aoRefSourceList>a,.aoReferencePanel .aoRefSourceList>span{display:inline;overflow-wrap:anywhere}",
     ".aoReferencePanel .aoRefSourceList>span+span:before,.aoReferencePanel .aoRefSourceList>a+span:before,.aoReferencePanel .aoRefSourceList>span+a:before,.aoReferencePanel .aoRefSourceList>a+a:before{content:' · ';color:var(--ao-text-muted,#a9a5a0)}",
     ".aoReferencePanel .aoRefSourceIndex{list-style:none;padding:0;margin:6px 0 10px}.aoReferencePanel .aoRefSourceIndex li{margin:8px 0;overflow-wrap:anywhere}",
-    ".aoReferencePanel .aoRefStudyLink{display:block;margin:6px 0 3px;min-height:40px;padding:7px 9px;border:1px solid var(--ao-rule,rgba(255,255,255,.15));border-radius:8px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.8rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}.aoReferencePanel .aoRefStudyLink:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
+    ".aoReferencePanel .aoRefSourceIndex li:has(.aoRefStudyLink){display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 10px;margin:6px 0 11px}.aoReferencePanel .aoRefSourceIndex li:has(.aoRefStudyLink)>a{min-width:0}.aoReferencePanel .aoRefStudyLink{display:inline-flex;align-items:center;justify-content:center;margin:0;min-height:40px;padding:6px 10px;border:1px solid var(--ao-rule,rgba(255,255,255,.15));border-radius:8px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.77rem/1.3 var(--ao-font-ui,system-ui);cursor:pointer}.aoReferencePanel .aoRefStudyLink:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoReferencePanel .aoRefSourceIndex li:has(.aoRefStudyLink)>.aoRefReadingHint{grid-column:1/-1;margin:0}",
+
     ".aoReferencePanel .aoRefReadingHint{display:inline-block;margin-inline-start:8px;font:.73rem/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}",
     ".aoReferencePanel .aoRefDocumentNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoReferencePanel .aoRefHold{color:var(--ao-text-muted,#a9a5a0);font-style:italic}",
@@ -73,8 +74,10 @@ export function sourceReferencePanelHtml({rows=[],registry={},french=false,furth
   const sourceIndex='<h3>'+esc(label(french,"Cited sources","Sources citées"))+'</h3>'+
     '<ul class="aoRefSourceIndex" data-ao-source-index>'+
     citedIds.map(id=>'<li>'+sourceMarkup(id,registry,french)+
-       (enableStudySource?'<button type="button" class="aoRefStudyLink" data-ao-reference-study-source="'+esc(id)+'">'+
-         esc(label(french,"View source context","Voir le contexte documentaire"))+'</button>':"")+
+       (enableStudySource?'<button type="button" class="aoRefStudyLink" data-ao-reference-study-source="'+esc(id)+'" aria-label="'+
+         esc(label(french,"Examine source in context: ","Examiner cette source en contexte : ")+
+         String(getSource(registry,id)?.display_title||getSource(registry,id)?.title||id))+'">'+
+         esc(label(french,"Context","Contexte"))+'</button>':"")+
        (recommended.has(id)?'<span class="aoRefReadingHint" data-ao-curated-reading="'+esc(id)+'">'+
           esc(label(french,"Further reading","Pour approfondir"))+'</span>':"")+
        '</li>').join("")+'</ul>'+
