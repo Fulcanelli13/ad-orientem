@@ -338,7 +338,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         if(next!==indexView){
           indexScrollPositions[indexView]=safeScroll(node.scrollTop);
           indexView=next;momentKey=null;blockId=null;
-          indexFocusKey=null;indexFocusBlockId=null;studyStageId=null;
+          // Keep each path's last source/lesson focus as a return marker.
+          // Only a new selection should replace these original targets.
           indexScrollTop=safeScroll(indexScrollPositions[next]);
           paint({restoreIndex:true});
           node.querySelector('[data-ao-mx-path="'+(next==="themes"?"themes":"order")+'"]')?.focus?.({preventScroll:true});
@@ -352,7 +353,6 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
           indexView=t.dataset.aoMxView;chronologyView=indexView;
           momentKey=null;blockId=null;
           indexScrollTop=safeScroll(indexScrollPositions[indexView]);
-          indexFocusKey=null;indexFocusBlockId=null;studyStageId=null;
           paint({restoreIndex:true});
         }
         return;
