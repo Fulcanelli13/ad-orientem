@@ -8,7 +8,7 @@ import {applySaintsReleaseBoundary,SAINTS_CHANNELS} from "../src/find/saints-rel
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const original={
  geography:read("data/geography/seed-registry.v1.json"),
- shrines:read("data/shrines/shrines-pilgrimages-seed.v1.json"),
+ shrines:{...read("data/shrines/shrines-pilgrimages-seed.v1.json"),sources:read("data/shrines/source-registry.v1.json").sources},
  saints:read("data/saints/holiness-first-editorial-pilot-20261015.v1.json"),
  saintsCalendarBridge:read("data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
  saintsShrineReadiness:read("data/saints/existing-shrine-geography-readiness-20261016.v1.json")
@@ -25,6 +25,9 @@ assert.equal(research.filter(x=>x.map_publishable).length,119);
 assert.equal(research.filter(x=>!x.map_publishable).length,2);
 assert.equal(research.filter(x=>x.geo===null).length,2);
 assert.equal(research.reduce((n,x)=>n+x.associated_saint_name_sources.length,0),145);
+assert(research.every(x=>x.associated_saint_name_sources.every(a=>a.official_source_links.length>=1)),
+ "Every original shrine-name relationship must expose at least one original HTTPS source");
+assert(research.flatMap(x=>x.associated_saint_name_sources).every(a=>a.official_source_links.every(s=>s.href.startsWith("https://"))));
 assert(research.every(x=>x.kind==="SAINTS_SOURCE_SHRINE_PLACE"&&x.saints.length===0));
 assert(research.every(x=>x.artwork_id===null&&x.editorial_status==="RESEARCH_SHRINE_ASSOCIATION_NO_PERSON_IDENTITY_CERTIFIED"));
 assert(research.every(x=>x.associated_saint_name_sources.every(a=>a.source_ids.length&&
@@ -48,6 +51,8 @@ for(const language of ["en","fr"]){
  assert(html.includes('aoSaintSourceShrineSheet'),"Research site must render a source-only detail sheet");
  assert(html.includes(sourceOnly.title));
  assert(html.includes(sourceOnly.associated_saint_name_sources[0].source_saint_name));
+ assert(html.includes("aoSaintSourceShrineInstitution"),"Original source URLs must be actionable from research map sheet");
+ assert(html.includes('rel="noopener noreferrer"'),"External shrine evidence must open safely");
  assert(!html.includes('data-calendar-mass'),"Source-name association must not invent a Mass");
  assert(!html.includes('data-explore-calendar-date'),"No feast inferred from shrine names");
  assert(!html.includes("aoSaintLifeEvents"),"No invented birth or death event");
