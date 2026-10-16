@@ -278,3 +278,15 @@ The printed source also proposes **4000–2000 BC** for the first epoch on p.1; 
 
 **Progress must be reported without false inflation:** 47/47 original *unit spans* located and source-role checked; only Creation’s **6/47 original unit bodies have a separately supplied first-pass transcription**. **0/47 are independently character-certified and 0 are approved for public display.** The next substantive batch is to collate the remaining 41 full original English unit bodies from the page images, then independently check all 47 character-for-character including footnotes; no new synthesized narrative or substitute Knecht commentary is permitted.
 
+
+
+### Working transcription package (47 original units) — 16 October, batch 02
+
+The direct user-provided **1908 eleventh-edition original English print PDF** has now supported a single research OCR pass over **all 17 original Origins print pages** and an image-based first-pass transcription of **13 numbered units**: Chapter I Creation **6**, Chapter II Angels **3**, and Chapter III Adam/Paradise **4**. All **47** original unit spans and their page indices have already been registered separately in this document and the data register. **34** unit bodies still require first-pass manual visual word checking. The source PDF's existing text layer was highly corrupted; the new *single-batch* OCR is a search/transcription aid, not a trusted witness.
+
+The user-facing, unpublished research files are:
+
+- `Schuster_1908_Origins_Batch02_Working_Text.json` — SHA-256 `9a56381f89d9e8effd66be327f171060beb2834ae753ac4f32a54d51e0972560`. Contains all 47 unit-page locators, 13 first-pass original-English transcriptions, page-level provisional OCR and editorial exclusion guards.
+- `Schuster_1908_Origins_17pp_Unverified_OCR.txt` — SHA-256 `a98ec6e473de2e07661ed2fed0e47289282805c3aedeb2820350460dd09d1169`. Source-page-separated working OCR, **not readable approved book text**.
+
+These files were delivered as private conversation artifacts, **not committed to the public GitHub repository**. The source-family JSON stores their provenance, hashes and gated progress only. The 13 working transcriptions normalize line wraps/quotation appearance and have **not** received a second independent character-level comparison or legal/editorial publication authorization. No artificial story additions, no authorial shortening, no new Atlas fact claims, no production reader changes. Next: visually correct the remaining 34 unit bodies in substantial source-page batches, preserving the author's wording and footnotes, then independently certify all 47 units.
