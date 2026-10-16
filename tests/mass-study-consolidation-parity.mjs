@@ -31,8 +31,15 @@ for(const stage of course.stages){
     for(const id of claim.sources||[])assert.ok(sourceSet.has(id),"Unresolved source reference: "+id);
   }
 }
-const mapHtml=massMapHtml(catalog,{studyHtml:massStudyPathsHtml(catalog.formationStages)});
-for(const id of stageIds)assert.ok(mapHtml.includes('data-ao-mx-stage="'+id+'"'),"Unreachable original Formation lesson "+id);
+const mapHtml=massMapHtml(catalog),themeHtml=massStudyPathsHtml(catalog.formationStages);
+for(const id of stageIds)
+  assert.ok(themeHtml.includes('data-ao-mx-stage="'+id+'"'),"Unreachable thematic lesson "+id);
+assert.equal((themeHtml.match(/data-ao-mx-stage="/g)||[]).length,8,
+  "Exactly eight existing lessons must be visible via the separate thematic path");
+assert.doesNotMatch(mapHtml,/data-ao-mx-stage="/,
+  "No duplicate thematic lesson list beneath the chronological Mass Map");
+assert.doesNotMatch(themeHtml,/data-ao-mx-moment="/,
+  "Thematic landing must not duplicate the long chronological Mass Map");
 assert.equal((mapHtml.match(/data-ao-mx-map-block="/g)||[]).length,96);
 assert.equal((mapHtml.match(/data-ao-mx-moment="/g)||[]).length,32);
 const legacy=massMomentsStudyListHtml(guide);
@@ -52,6 +59,23 @@ for(const key of catalog.sequence){
     const selected=massExplorerMomentHtml(catalog,key,{blockId:block.Block_ID});
     assert.ok(selected.includes('data-ao-mx-block="'+block.Block_ID+'"'),
       "Original source block unavailable through new Formation reader: "+block.Block_ID);
+    assert.ok(selected.includes(escapeHtml(block.Title)),
+      "Published block title no longer present in Formation: "+block.Block_ID);
+    if(block.Proper_Slot){
+      assert.ok(selected.includes("variable Proper text"),
+        "Variable Proper must remain explicit, not replaced by generic prose: "+block.Block_ID);
+    }else{
+      const first=(block.units||[]).find(unit=>unit?.latin||unit?.english);
+      if(first){
+        const original=first.clock==="PRIEST_ACTION"?
+          (first.english||first.latin):(first.latin||first.english);
+        assert.ok(selected.includes(escapeHtml(original)),
+          "Original published source wording not found in selected prayer: "+block.Block_ID);
+      }else{
+        assert.ok(selected.includes("No public text for this block."),
+          "Empty public source must not acquire invented prose: "+block.Block_ID);
+      }
+    }
   }
   const references=massMomentStudyLinks(key);
   for(const anchorId of references.scriptureAnchorIds){
@@ -72,4 +96,4 @@ assert.match(read("src/learn/mass-formation.js"),/openModule\?\.\("learn\.mass_e
  "Old public Guide entry not consolidated under Mass Map");
 assert.doesNotMatch(read("src/mass/browser-entry.js"),/mass-reader-study-bridge|Understand this Mass moment/,
  "Do not reintroduce Formation calls to action during liturgy");
-console.log("PASS Mass Formation non-loss: 32 Guide moments, 96 source blocks, 8 thematic lessons, 24 sourced claims, Scripture ownership, one public destination and legacy deep links");
+console.log("PASS Mass Formation non-loss: distinct 32-moment / 96-block chronology and 8-lesson thematic view, all published block text, 24 claims, Scripture edges and legacy deep links");
