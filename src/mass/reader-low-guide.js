@@ -47,3 +47,53 @@ export function lowGuideResearchCandidate(index,{massForm=null,guideId=null,allo
     sourceWorkbookRow:record.originalWorkbookRow
   });
 }
+
+
+/** Research-only bridge to the actual R17 source-cue clock. Not a new Mass sequence.
+ * It only selects an existing source index row, and never certifies its text,
+ * its exact handoff timing, priest gestures, or a condition for which the
+ * current resolved Mass has provided no explicit applicability.
+ */
+export function lowGuideForActiveCue(index,{
+  massForm=null,
+  activeCueId=null,
+  allowResearchPreview=false,
+  applicableConditionalGuideIds=[],
+  selectedObservationalGuideId=null,
+}={}){
+  validateLowGuideResearch(index);
+  if(allowResearchPreview!==true||massForm!==LOW_GUIDE_MASS_FORM)return null;
+  const allowed=new Set(Array.isArray(applicableConditionalGuideIds)?
+    applicableConditionalGuideIds.filter(x=>typeof x==="string") : []);
+  // The two explicitly observational Guides are never manufactured from a cue.
+  if(selectedObservationalGuideId!=null){
+    if(!["LOW.001","LOW.028"].includes(selectedObservationalGuideId))return null;
+    if(!allowed.has(selectedObservationalGuideId))return null;
+    const selected=lowGuideResearchCandidate(index,{
+      massForm,guideId:selectedObservationalGuideId,allowResearchPreview,
+    });
+    return selected ? Object.freeze({...selected,researchPreview:true,
+      sourceCueId:null,coverage:"EXPLICIT_OBSERVATIONAL_RESEARCH"}) : null;
+  }
+  if(!/^AO\.SM\.C\d{4}$/.test(String(activeCueId??"")))return null;
+  const cueNumber=Number(String(activeCueId).slice(-4));
+  let selected=null;
+  for(let i=1;i<=35;i++){
+    const e=index.entries["LOW."+String(i).padStart(3,"0")];
+    if(!e.anchorCueCandidate)continue;
+    const anchorNumber=Number(e.anchorCueCandidate.slice(-4));
+    if(anchorNumber<=cueNumber)selected=e;
+    else break;
+  }
+  if(!selected)return null;
+  // Conditional status is inferred from neither calendar date nor the
+  // presence of a candidate source anchor. The caller must establish that
+  // this particular liturgical feature occurs in the selected Mass.
+  if(selected.condition!=="ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE" &&
+     !allowed.has(selected.key))return null;
+  const candidate=lowGuideResearchCandidate(index,{
+    massForm,guideId:selected.key,allowResearchPreview,
+  });
+  return candidate ? Object.freeze({...candidate,researchPreview:true,
+    sourceCueId:activeCueId,coverage:"CUE_RANGE_RESEARCH_CANDIDATE_NOT_WORD_CERTIFIED"}) : null;
+}
