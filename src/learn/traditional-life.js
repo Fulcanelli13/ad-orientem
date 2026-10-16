@@ -1,4 +1,5 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import "../pray/canonical-data.js";
 import {
   LOW_MASS_RESPONSES_V381,
@@ -323,7 +324,9 @@ export function createTraditionalLearnRuntime(win=globalThis){
     else return false;
     node.scrollTop=0;installFormationNavigation(win,node);queueMicrotask(()=>node.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());return true;
   }
+  let entryOrigin=null;
   function open(id,opts={}){
+    entryOrigin=captureObservedModuleOrigin(win,"learn");
     const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;
     if(!TRADITIONAL_LEARN_ROUTES[canonical])return false;
     state.route=canonical;state.screen="module";state.prayerId=null;state.trainerIndex=0;state.trainerReveal=false;state.returnFocus=opts.trigger||win?.document?.activeElement||null;
@@ -352,7 +355,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
   }
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
-    if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else close();return}
+    if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else returnToObservedModuleOrigin(win,entryOrigin,{close:()=>close(),restoreParent:()=>win?.AO_LEARN_APP_V1?.open?.()});return}
     if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
