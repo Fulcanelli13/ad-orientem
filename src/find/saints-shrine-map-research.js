@@ -17,6 +17,10 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     audit?.schema!=="ao.saints.existing-shrine-geography-readiness-20261016.v1"||
     audit?.status!=="SOURCE_LINKED_PLACE_CANDIDATES_NO_NEW_SAINT_PINS_OR_PERSON_ID_APPROVAL")
     return Object.freeze([]);
+ const evidence=dataset?.saintsW78Evidence;
+ const evidenceByName=evidence?.schema==="ao.saints.w78-119-shrine-name-owner-source-evidence.v1"&&
+  evidence?.status==="READ_ONLY_SOURCE_MATCH_NOT_CANONICAL_IDENTITY_ART_OR_MAP_APPROVAL"
+  ?new Map(arr(evidence.records).map(r=>[r.legacy_shrine_person_or_group_name,r])):new Map();
  const places=new Map(arr(dataset.geography?.places).map(p=>[p?.place_id,p]));
  const originalShrines=new Map(arr(dataset.shrines?.shrines).map(s=>[s.shrine_id,s]));
  const originalSources=new Map(arr(dataset.shrines?.sources).map(source=>[source.id,source]));
@@ -32,6 +36,9 @@ export function projectSaintResearchShrinePlaces(dataset={}){
       link.identity_approved_for_pin!==false||
       link.observed_relation!=="SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION")continue;
    if(!groups.has(link.place_id))groups.set(link.place_id,{place:p,relations:[]});
+   const sourceCase=evidenceByName.get(row.legacy_name_literal);
+   const caseEvidence=sourceCase&&arr(sourceCase.original_shrine_relationships).some(x=>
+     x.place_id===link.place_id&&x.shrine_id===link.shrine_id)?sourceCase:null;
    groups.get(link.place_id).relations.push(Object.freeze({
     source_saint_name:row.legacy_name_literal,shrine_id:link.shrine_id,
     source_ids:Object.freeze([...link.provenance_source_ids]),
@@ -43,6 +50,11 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     }).filter(Boolean)),
     exact_name_candidate_keys:Object.freeze([...arr(row.candidate_source_keys)]),
     identity_match_status:row.identity_match_status,
+    source_reconciliation_tier:caseEvidence?.source_reconciliation_tier??"SHRINE_NAME_ONLY",
+    external_relic_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.relic_subjects).map(x=>x.subject_id)),
+    external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
+    recorded_alias_source_keys:Object.freeze(arr(caseEvidence?.prior_documented_alias_candidates).flatMap(x=>arr(x.existing_exact_source_key_candidates))),
+    entity_guard:caseEvidence?.person_kind_guard??"ENTITY_KIND_NOT_REVIEWED",
     interpretation:"SHRINE_SOURCE_NAME_ONLY_NOT_CERTIFIED_PERSON_PLACE"
    }));
   }
@@ -88,6 +100,13 @@ export function renderSaintResearchShrineSheet(vm){
  h+='<ul class="aoSaintSourceShrinePeople">'+arr(item.associated_saint_name_sources).map(x=>
   '<li><strong>'+esc(x.source_saint_name)+'</strong><p>'+esc(say("Associated source name; person identity unconfirmed","Nom associé ; identité non confirmée"))+'</p>'
   +'<small>'+esc(arr(x.source_ids).join(" · "))+'</small>'
+  +(x.source_reconciliation_tier!=="SHRINE_NAME_ONLY"
+    ?'<p class="aoSaintSourceEvidenceStatus">'+esc(say("Cross-source research: ","Recherche intersources : ")+x.source_reconciliation_tier.replaceAll("_"," ").toLowerCase())+'</p>'
+    :"")
+  +(arr(x.external_relic_subject_ids).length
+    ?'<small>'+esc(say("Relic registry subjects (not authenticated): ","Sujets du registre des reliques (non authentifiées) : ")+x.external_relic_subject_ids.join(" · "))+'</small>':"")
+  +(arr(x.external_art_research_subject_ids).length
+    ?'<small>'+esc(say("Unapproved art research subjects: ","Sujets de recherche artistique non approuvés : ")+x.external_art_research_subject_ids.join(" · "))+'</small>':"")
   +arr(x.official_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.href)+'" target="_blank" rel="noopener noreferrer">'+esc(link.issuer||say("Original site source","Source du site"))+' ↗</a>').join("")+'</li>').join("")+'</ul>';
  const url=safeUrl(item.geo?.source_url);
  if(url)h+='<a class="aoSaintSourceShrineGeoSource" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(
@@ -104,5 +123,6 @@ export const SAINTS_SHRINE_RESEARCH_CSS=[
  ".aoSaintSourceShrinePeople li{border-bottom:1px solid rgba(217,197,154,.16);padding-bottom:9px}",
  ".aoSaintSourceShrinePeople strong{color:#e8d6b4;font-size:15px}",
  ".aoSaintSourceShrinePeople p,.aoSaintSourceShrinePeople small{display:block;color:#c4b69c;font-size:12px}",
+ ".aoSaintSourceEvidenceStatus{margin:8px 0;color:#ceb994;font-size:12px}",
  ".aoSaintSourceShrineGeoSource,.aoSaintSourceShrineInstitution{display:inline-block;margin-right:12px;color:#e3c999;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}"
 ].join("");
