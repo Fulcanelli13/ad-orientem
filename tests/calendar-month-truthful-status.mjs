@@ -1,5 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
-import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -9,6 +9,64 @@ import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
+
+const transferOracle=JSON.parse(readFileSync("data/calendar/1962-transfer-oracle.v1.json","utf8"));
+const transferredDay=(date,sourcePath,colour="w")=>({
+  date,status:"ready",
+  day:{main:{id:sourcePath.replace("/",":").toLowerCase()+":1:"+colour}},
+  proper:{status:"ready",data:{sourcePath,color:colour==="b"?"Black":"White"}}
+});
+for(const [date,path,colour,original,clauses] of [
+  ["2024-04-08","Sancti/03-25","w","2024-03-25",["RG 95","RG 96(a)","RG 99"]],
+  ["2025-11-03","Sancti/11-02","b","2025-11-02",["RG 16(b)","RG 96(b)"]],
+  ["2027-04-05","Sancti/03-25","w","2027-03-25",["RG 95","RG 96(a)","RG 99"]],
+  ["2028-03-20","Sancti/03-19","w","2028-03-19",["RG 15","RG 95","RG 96","RG 99"]],
+]){
+  const r=transferredDay(date,path,colour);
+  const claims=calendarTransferRubricalClaimsForDay(r,transferOracle);
+  assert.equal(claims.length,1,"Missing exact transferred feast: "+date);
+  const c=claims[0];
+  assert.equal(c.originalDate,original);
+  assert.equal(c.observedDate,date);
+  assert.equal(c.properSourcePath,path);
+  assert.deepEqual(c.clauses,clauses);
+  assert.equal(c.authorityKind,"NORMATIVE_1960_RUBRICS");
+  assert.equal(c.normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+  assert.equal(c.changesMassResolver,false);
+  assert.ok(c.title.en&&c.title.fr&&c.explanation.en&&c.explanation.fr);
+  assert.match(c.witnessUrl,/^https:\/\/(?:gcatholic\.org\/calendar|missale\.online\/festkalender)/);
+  assert.ok(Object.isFrozen(claims)&&Object.isFrozen(c)&&Object.isFrozen(c.clauses));
+  for(const variant of [
+    {...r,date:original}, // no fictitious transfer attribution at the old date
+    {...r,status:"failed"},
+    {...r,proper:{status:"failed",data:{sourcePath:path}}},
+    {...r,proper:{status:"ready",data:{sourcePath:"Sancti/12-08"}}},
+    {...r,day:{main:{id:"sancti:12-08:1:w"}}},
+    {...r,day:{main:{id:r.day.main.id.replace(":1:",":2:")}}},
+    {...r,day:{main:{id:r.day.main.id.replace(/:[wb]$/,":v")}}},
+  ])assert.deepEqual(calendarTransferRubricalClaimsForDay(variant,transferOracle),[],
+      "Unverified transfer attribution must fail closed: "+date);
+  const forged=structuredClone(transferOracle);
+  const w=forged.witnesses.find(x=>x.observed===date);
+  w.source="javascript:alert(1)";
+  assert.deepEqual(calendarTransferRubricalClaimsForDay(r,forged),[],
+    "Unsafe witness must not produce source attribution");
+  const badDate=structuredClone(transferOracle);
+  badDate.witnesses.find(x=>x.observed===date).rubricalClaim.original="2020-03-25";
+  assert.deepEqual(calendarTransferRubricalClaimsForDay(r,badDate),[],
+    "Changed original assignment must not produce a rubrical claim");
+}
+for(const [date,path] of [
+  ["2026-03-25","Sancti/03-25"],   // Annunciation legitimately not transferred
+  ["2026-11-02","Sancti/11-02"],   // All Souls ordinarily stays on 2 November
+  ["2027-03-25","Tempora/Quad6-4"],// Holy Thursday cannot be attributed to Annunciation
+  ["2027-04-04","Tempora/Pasc0-0"],// Low Sunday has its own 1962 identity
+  ["2028-03-19","Tempora/Quad3-0"] // Lenten Sunday takes precedence over St Joseph
+])assert.deepEqual(calendarTransferRubricalClaimsForDay(transferredDay(date,path),transferOracle),[],
+  "Original date/principal must not receive invented transfer evidence");
+assert.deepEqual(calendarTransferRubricalClaimsForDay(
+  transferredDay("2027-04-05","Sancti/03-25"),{}),[]);
+
 const colourAudit=JSON.parse(readFileSync("data/calendar/1962-ordo-corrections.v1.json","utf8"));
 const colourFixture=(date,sourcePath,colour,classNo=4)=>({
  date,status:"ready",day:{main:{id:sourcePath.replace("/",":").toLowerCase()+":"+classNo+":"+(colour==="White"?"w":"v"),color:colour}},
@@ -114,6 +172,11 @@ for(const marker of [
   "Why this Mass colour is shown",
   "data-cal-colour-claim",
   "loadCalendarColourClaims();",
+  "calendarTransferRubricalClaimsForDay(r,transferLedger)",
+  "data-cal-transfer-claim",
+  "Why this observance was transferred",
+  "Pourquoi cette célébration a été reportée",
+  "loadCalendarTransferClaims();",
 ])assert.ok(runtime.includes(marker),
   "Calendar lost a required rubrical source-bound UI contract: "+marker);
 

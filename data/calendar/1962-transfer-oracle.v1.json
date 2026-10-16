@@ -8,14 +8,61 @@
       "name": "Annunciation of the Blessed Virgin Mary",
       "original": "2024-03-25",
       "observed": "2024-04-08",
-      "source": "https://gcatholic.org/calendar/2024/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2024/Extraordinary-en",
+      "rubricalClaim": {
+        "id": "ANNUNCIATION_2024",
+        "kind": "SOURCE_ATTESTED_1962_TRANSFER",
+        "principalClass": 1,
+        "original": "2024-03-25",
+        "observed": "2024-04-08",
+        "sourcePath": "Sancti/03-25",
+        "clauses": [
+          "RG 95",
+          "RG 96(a)",
+          "RG 99"
+        ],
+        "title": {
+          "en": "Annunciation transferred after the Easter octave",
+          "fr": "Annonciation reportée après l’octave de Pâques"
+        },
+        "explanation": {
+          "en": "The first-class Annunciation falls in Holy Week and is observed on the Monday after Low Sunday, as specifically provided by the 1960 rubrics.",
+          "fr": "L’Annonciation, fête de première classe, tombe pendant la Semaine sainte et se célèbre le lundi après le dimanche in albis, conformément aux rubriques de 1960."
+        },
+        "authorityId": "RUBRICS_1960",
+        "generalCalendarOnly": true,
+        "doesNotAuthorizeLocalMass": true
+      }
     },
     {
       "id": "all-souls-2025",
       "name": "Commemoration of All the Faithful Departed",
       "original": "2025-11-02",
       "observed": "2025-11-03",
-      "source": "https://gcatholic.org/calendar/2025/Extraordinary-en"
+      "source": "https://gcatholic.org/calendar/2025/Extraordinary-en",
+      "rubricalClaim": {
+        "id": "ALL_SOULS_2025",
+        "kind": "SOURCE_ATTESTED_1962_TRANSFER",
+        "principalClass": 1,
+        "original": "2025-11-02",
+        "observed": "2025-11-03",
+        "sourcePath": "Sancti/11-02",
+        "clauses": [
+          "RG 16(b)",
+          "RG 96(b)"
+        ],
+        "title": {
+          "en": "All Souls transferred from Sunday",
+          "fr": "Commémoraison des fidèles défunts reportée du dimanche"
+        },
+        "explanation": {
+          "en": "Because 2 November occurs on a Sunday, All Souls is observed on the following Monday under the express 1960 rubric.",
+          "fr": "Le 2 novembre tombant un dimanche, la commémoraison des fidèles défunts est célébrée le lundi suivant, selon la rubrique expresse de 1960."
+        },
+        "authorityId": "RUBRICS_1960",
+        "generalCalendarOnly": true,
+        "doesNotAuthorizeLocalMass": true
+      }
     },
     {
       "id": "joseph-2026",
@@ -29,7 +76,31 @@
       "name": "Annunciation of the Blessed Virgin Mary",
       "original": "2027-03-25",
       "observed": "2027-04-05",
-      "source": "https://missale.online/festkalender/en/2027"
+      "source": "https://missale.online/festkalender/en/2027",
+      "rubricalClaim": {
+        "id": "ANNUNCIATION_2027",
+        "kind": "SOURCE_ATTESTED_1962_TRANSFER",
+        "principalClass": 1,
+        "original": "2027-03-25",
+        "observed": "2027-04-05",
+        "sourcePath": "Sancti/03-25",
+        "clauses": [
+          "RG 95",
+          "RG 96(a)",
+          "RG 99"
+        ],
+        "title": {
+          "en": "Annunciation transferred after the Easter octave",
+          "fr": "Annonciation reportée après l’octave de Pâques"
+        },
+        "explanation": {
+          "en": "The fixed Annunciation falls on Holy Thursday; it is therefore observed on the Monday after Low Sunday, not during the Sacred Triduum or Easter octave.",
+          "fr": "L’Annonciation tombe le Jeudi saint ; elle est donc célébrée le lundi après le dimanche in albis, et non pendant le Triduum sacré ni l’octave de Pâques."
+        },
+        "authorityId": "RUBRICS_1960",
+        "generalCalendarOnly": true,
+        "doesNotAuthorizeLocalMass": true
+      }
     },
     {
       "id": "joseph-2028",
@@ -37,7 +108,32 @@
       "original": "2028-03-19",
       "observed": "2028-03-20",
       "source": "https://gcatholic.org/calendar/2028/Extraordinary-en",
-      "secondSource": "https://missale.online/festkalender/en/2028"
+      "secondSource": "https://missale.online/festkalender/en/2028",
+      "rubricalClaim": {
+        "id": "JOSEPH_2028",
+        "kind": "SOURCE_ATTESTED_1962_TRANSFER",
+        "principalClass": 1,
+        "original": "2028-03-19",
+        "observed": "2028-03-20",
+        "sourcePath": "Sancti/03-19",
+        "clauses": [
+          "RG 15",
+          "RG 95",
+          "RG 96",
+          "RG 99"
+        ],
+        "title": {
+          "en": "St Joseph transferred from a Lenten Sunday",
+          "fr": "Saint Joseph reporté du dimanche de Carême"
+        },
+        "explanation": {
+          "en": "A first-class Sunday of Lent takes precedence over the first-class feast of St Joseph, which retains its rank when observed on the following Monday.",
+          "fr": "Un dimanche de première classe du Carême a préséance sur la fête de première classe de saint Joseph, qui conserve son rang lorsqu’elle est célébrée le lundi suivant."
+        },
+        "authorityId": "RUBRICS_1960",
+        "generalCalendarOnly": true,
+        "doesNotAuthorizeLocalMass": true
+      }
     },
     {
       "id": "annunciation-2028",
