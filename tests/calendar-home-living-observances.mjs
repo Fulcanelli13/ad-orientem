@@ -27,6 +27,12 @@ assert.equal((leonardi.html.match(/class="aoTodayV2ObservedRow"/g)||[]).length,2
 assert.match(leonardi.html,/data-home-calendar-view="day"/);
 assert.doesNotMatch(leonardi.html,/data-cal-mass|data-home-mass-entry/);
 
+assert.deepEqual(view("2026-10-11","sancti:10-11:2:w",[]).model.modernHonours.map(x=>x.id),
+  ["saint.john-xxiii"],"Contemporary saint does not replace historical feast");
+assert.deepEqual(view("2026-10-22","sancti:10-22:3:w",[]).model.modernHonours.map(x=>x.id),
+  ["saint.john-paul-ii"]);
+assert.deepEqual(view("2026-09-23","tempora:Pent17-3:2:v",[]).model.modernHonours.map(x=>x.id),
+  ["saint.pio-pietrelcina"],"Historical Ember day survives, papal 2002 date visible as information");
 const names=view("2026-10-05","sancti:10-05:3:w",[]);
 assert.deepEqual(names.model.modernHonours.map(x=>x.id),["saint.maria-faustyna-kowalska"]);
 const paul=view("2026-05-29","sancti:05-29:3:w",[]);
@@ -55,6 +61,6 @@ const asFr=view("2026-10-09","sancti:10-09:3:w",
 assert.match(asFr.html,/Saint Nom/);
 assert.match(asFr.html,/Saint John Henry Newman|John Henry Newman/);
 assert.match(asFr.html,/Messe traditionnelle inchangée/);
-assert.ok(read.observanceRegistry.observances.length===16);
+assert.ok(read.observanceRegistry.observances.length===18);
 assert.equal(buildReviewedSanctoralCards({date:"2026-10-09",observedPrincipalId:"sancti:10-09:3:w",...read}).length,1);
-console.log("Home Living Traditional Calendar: PASS (1962 observances first, 7 Vatican dates, date history, bilingual, no added Mass)");
+console.log("Home Living Traditional Calendar: PASS (1962 observances first, 10 Holy See primary dates, date history, bilingual, no added Mass)");
