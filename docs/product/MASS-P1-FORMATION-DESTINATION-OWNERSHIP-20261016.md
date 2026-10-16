@@ -31,6 +31,13 @@ The originating study position, whether a Mass Map stop, precise prayer block or
 - `src/learn/mass-formation-scripture-context.js`: already curated independent Scripture relationships; use its exact relationship types.
 - Mystery of the Mass manuscript / Ultra Master research: **not a public P1 content owner**. No standalone Mystery route is assumed here. If the separate editorial pipeline clears content, ingest by reference, not duplicate a public source.
 
+## Public navigation consolidated (16 October 2026, follow-up)
+
+- `Formation → Mass & Liturgy` now shows only one Mass-study card, **Understand the Mass**. `learn.mass` stays registered with its original eight lessons/24 bilingual sourced claims, but is no longer duplicated as a second family-level card or generic search result. Original content-specific links remain valid.
+- `learn.mass`'s public “Explore the Mass in order” control now opens the canonical `learn.mass_explorer` Map. The original `view:"moments"` / `momentKey` deep-entry path and source-review mode retain the old Guide browser for historical parity and reviewers.
+- This is **link consolidation**, not deletion of the old content or new research certification. The P1 test `tests/mass-study-consolidation-parity.mjs` compares all original 32 Guide moment identities, 96 source blocks, all eight lessons/24 claims, certified Scripture-link identities and legacy deep entry. The phone suite tests both public redirect and explicit legacy entry.
+- Source reading remains deliberately scoped to the already functioning in-app Bible owner and the existing claim-level Formation source drawer. Contextual Guide bibliographies are external document links **without certified excerpt text**; no arbitrary PDF/website prose is pulled into app reader or labelled liturgically normative.
+
 ## Non-loss retirement gates (not passed yet)
 1. Prove every original published Guide moment (32) and every Sung source block (96) is available from the new Map.
 2. Prove all eight Formation lessons, claims, and their already-public source drawers are reachable without rewriting them.
