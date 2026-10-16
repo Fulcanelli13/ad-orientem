@@ -419,6 +419,7 @@ const p0TestModel=p0CreateModel({
   sectionMap:p0SectionMap,
   lowCorpus:p0TextLow,
   sungCorpus:p0TextSung,
+  canonSourceMap:readJson("../data/presentation/reader-canon-source-map.v1.json"),
 });
 const p0ModelCue=(id)=>p0TestModel.cards.flatMap(c=>c.paragraphs)
   .find(p=>p.sourceCueIds?.includes(id));
