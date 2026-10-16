@@ -505,7 +505,13 @@
     "earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented": 180,
     "earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented": 2,
     "earlyEnglishSadlierWholeBookOCRExactNumeralHeadings": 145,
-    "earlyEnglishSadlierWholeBookOCRUnresolvedChapterStartCount": 1
+    "earlyEnglishSadlierWholeBookOCRUnresolvedChapterStartCount": 1,
+    "earlyEnglishSadlierLayerSeparatedChapters": 180,
+    "earlyEnglishSadlierQuestionBlocksDetected": 180,
+    "earlyEnglishSadlierEpigraphLayerCandidates": 138,
+    "earlyEnglishSadlierInlineCaptionsFlagged": 209,
+    "earlyEnglishSadlierInlineNotesFlagged": 61,
+    "earlyEnglishSadlierLayerSeparationApprovedChapters": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4379,5 +4385,50 @@
       "originalWordingRewritten": false,
       "appUpdated": false
     }
+  },
+  "english1908WholeVolumeSourceLayerSeparation": {
+    "date": "2026-10-16",
+    "schema": "AO_SCHUSTER_1908_BULK_SOURCE_LAYER_SEPARATION_V2",
+    "editionWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "originalSourceOcrSHA256": "6c4c293ff96056bf0415bcf81307b39386fab4e83f916ae35aa4b41328541e1a",
+    "sourceChapterDrafts": "Schuster_1908_All182_Chapters_Provisional_Source_OCR.json.gz",
+    "sourceLayerRecordFile": "Schuster_1908_All182_Chapter_Source_Layers_Research.json.gz",
+    "sourceLayerRecordSHA256": "01d7b12b35831cc29b6afa1e62a86f12bd29c538447e569d75a0e2b5e1063db0",
+    "sourceLayerMetricsFile": "Schuster_1908_Source_Layer_Separation_Metrics.json",
+    "sourceLayerMetricsSHA256": "4ac9407254e377f6b22c97336cfc83375a647420c735fc517e6b88e9f34493b3",
+    "experimentalGeneratorFile": "schuster_1908_split_source_layers.py",
+    "experimentalGeneratorSHA256": "bc82e16b5cda512599a5302d2b91997c260cceeeccd1d0c8e35de7d18cf47879",
+    "totalOriginalChapterSlots": 182,
+    "safelySourceBoundedChapterDrafts": 180,
+    "chapterOCRPartitionedLosslessly": 180,
+    "historicalChapterQuestionsHeadingsLocated": 180,
+    "chapterHeadingAndScriptureEpigraphCandidateSplits": 138,
+    "chapterHeadingAndScriptureEpigraphStillCombined": 42,
+    "sourceNarrativeBodyBearingOCRCandidates": 180,
+    "candidateInlineIllustrationsOrPageCaptionsFlagged": 209,
+    "candidateInlineGlossariesOrFootnotesFlagged": 61,
+    "chaptersWithUnresolvedLayerWarnings": 143,
+    "unsafeSourceChaptersHeld": [
+      "SCHUSTER-EN-1908-NT-LXXXVIII",
+      "SCHUSTER-EN-1908-NT-LXXXIX"
+    ],
+    "partitionContract": "Full OCR original string is concatenation of headerAndPossibleEpigraph + narrativeBearingOCR + questionsAndTrailingSourceMatter, with exact original OCR character offsets, with sourcePDF page mapping inherited from earlier segmentation. The two unsafe source chapters are unpartitioned.",
+    "permittedApplication": "RESEARCH_ONLY_INDEPENDENT_STORY_EPIGRAPH_QUESTIONS_CANDIDATES_WITH_UNVERIFIED_SOURCE_LAYERS",
+    "prohibitedApplications": [
+      "PUBLISH_UNCORRECTED_OCR_AS_AUTHOR_BOOK_PROSE",
+      "ASSIGN_SOURCE_FOOTNOTE_TO_STORY",
+      "ASSUME_EVERY_UPPERCASE_LINE_IS_ILLUSTRATION",
+      "AUTO_JOIN_WITH_GENES_OR_GEOGRAPHY",
+      "CONFLATE_KNECHT_AND_SCHUSTER"
+    ],
+    "roleConfidence": "STRUCTURAL_CANDIDATES_ONLY_NARRATIVE_MAY_STILL_INCLUDE_PAGE_HEADERS_AND_ARTWORK_NOTES",
+    "originalOCRChanged": false,
+    "originalAuthorWordingModernized": false,
+    "sourceTextImportedIntoPublicGitHub": false,
+    "sourceTextImportedIntoProductionApp": false,
+    "chapterReaderPublicationApproved": 0,
+    "newVerifiedAtlasToChapterLinks": 0,
+    "sourceRightsReviewPending": true,
+    "nextUsefulStage": "Use bulk review of structurally partitioned chapter OCR; use narrativeCandidate only for research, correct page furniture/inline illustrations and historical notes; link confirmed existing Scripture/Atlas references, then enable reader only after quality and rights review."
   }
 }
