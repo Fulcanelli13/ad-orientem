@@ -3,7 +3,7 @@ import {readFileSync} from "node:fs";
 import {
  MASS_MOMENT_EVIDENCE_SCHEMA,MASS_MOMENT_EVIDENCE_DECISIONS,
  massMomentEvidencePreviewEnabled,validateMassMomentEvidenceCatalog,
- massMomentEvidenceForGuide,massMomentEvidencePanelHtml,
+ massMomentEvidenceForGuide,massMomentEvidencePanelHtml,massMomentEvidenceSummaryHtml,
  massMomentEvidenceChoiceIsSafe,sanitizeMassMomentEvidenceDecisions,
  massMomentEvidenceDecisionExport
 } from "../src/learn/mass-moment-evidence-review.js";
@@ -17,6 +17,10 @@ assert.equal(catalog.census.guideOwnersWithCandidates,16);
 assert.equal(catalog.census.publicationApproved,0);
 assert.equal(catalog.census.reproductionCleared,0);
 assert.equal(catalog.census.reviewedTextForRelease,0);
+const summary=massMomentEvidenceSummaryHtml(catalog);
+assert.ok(summary.includes("16 / 32"));
+assert.ok(summary.includes("0 / 139"));
+assert.ok(summary.includes('data-ao-mf-evidence-summary'));
 assert.equal(massMomentEvidenceForGuide(catalog,"AO.CARD.014").length,51);
 assert.equal(massMomentEvidenceForGuide(catalog,"AO.CARD.017").length,24);
 assert.equal(massMomentEvidenceForGuide(catalog,"AO.CARD.006").length,0);
