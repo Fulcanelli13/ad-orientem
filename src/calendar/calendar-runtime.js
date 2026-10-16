@@ -1216,6 +1216,7 @@ function open({embeddedIn=null,onClose=null}={}){
 .aoCalV2PrintOptions{margin:4px 0}
 .aoCalV2PrintOptions summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a6a198);font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
 .aoCalV2PrintOptions[open]{padding-bottom:8px}
+.aoCalV2PrintOptions:not([open]) [data-cal-print-proper],.aoCalV2PrintOptions:not([open]) [data-cal-print-feedback]{display:none!important}
 .aoCalV2PrintOptions .aoCalV2TextLink{margin-top:0!important;text-align:left}
 .aoCalV2PrintOptions summary:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px}
 @media(max-width:430px){.aoCalV2Hero .aoCalDayScriptureActions{grid-template-columns:1fr}.aoCalV2Hero .aoCalV2Commemorations{padding:12px}.aoCalV2Hero .aoCalDayScripture{padding:12px}}
