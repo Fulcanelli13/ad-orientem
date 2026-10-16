@@ -89,7 +89,7 @@ for(const language of ["en","fr"]){
  const win={document:{documentElement:{lang:language}},AO_RUNTIME_V8:{store:{getState:()=>({language})}}};
  for(const item of CSE_PUBLIC_QUESTIONS){
   const html=renderSexualEthicsQuestionMarkup(win,item,false);
-  const drawer=html.match(/<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure>[\\s\\S]*?<\/main>/)?.[0]||"";
+  const drawer=html.match(/<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure>[\s\S]*?<\/main>/)?.[0]||"";
   assert.ok(drawer,item.id+" missing source drawer");
   assert.match(drawer,/<ul class="aoCSESourceIndex" data-ao-cse-source-index>/);
   const index=drawer.split('<details class="aoCSESourceDetail"')[0];
