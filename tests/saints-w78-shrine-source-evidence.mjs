@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {applySaintsReleaseBoundary,SAINTS_CHANNELS} from "../src/find/saints-release-policy.js";
 import {projectSaintResearchShrinePlaces,renderSaintResearchShrineSheet} from "../src/find/saints-shrine-map-research.js";
+import {projectSaintSourceIndexItems} from "../src/find/saints-source-index.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const evidence=read("data/saints/w78-shrine-person-source-evidence-20261016.v1.json");
 const source=read("data/saints/existing-shrine-geography-readiness-20261016.v1.json");
@@ -10,6 +11,7 @@ const ledger=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1
 const priorCurated=read("data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json");
 const dataset={
  saintsShrineReadiness:source,saintsW78Evidence:evidence,
+ saintsOwnerIndex:read("data/saints/read-only-calendar-art-index-20261015.v1.json"),
  geography:read("data/geography/seed-registry.v1.json"),
  shrines:read("data/shrines/shrines-pilgrimages-seed.v1.json")
 };
@@ -30,6 +32,10 @@ assert.equal(evidence.summary.cross_w78_name_key_partition.distinct_unmatched_na
 assert.equal(evidence.summary.cross_w78_name_key_partition.curated_variant_leads_overlapping_previously_documented_aliases,8);
 assert.equal(evidence.summary.cross_w78_name_key_partition.original_names_with_any_exact_or_existing_key_lead,81);
 assert.equal(evidence.summary.cross_w78_name_key_partition.still_without_any_ledger_key_lead,38);
+const batch=evidence.summary.source_reference_batch_20261016;
+assert.deepEqual([batch.individual_alias_reference_lookups,batch.collective_alias_reference_lookups,batch.doctor_archived_owner_pairs_for_comparison,batch.existing_bridge_preserved,batch.collision_context_hold,batch.unchanged_source_cases],[23,2,4,1,1,88]);
+assert.equal(batch.person_identity_certifications_added,0);
+assert.equal(batch.geographic_pins_added,0);
 assert.equal(evidence.summary.distinct_original_physical_site_ids,121);
 assert.equal(evidence.summary.original_shrine_association_edges,145);
 assert.equal(evidence.summary.source_reconciliation_tiers.TRUNCATED_HISTORICAL_SOURCE_KEY_CHECK,2);
@@ -43,6 +49,19 @@ const priorVariants=new Map(priorCurated.no_exact_key.filter(x=>x.source_key_can
 assert.equal(priorVariants.size,24);
 const bucketTotals={};
 for(const x of evidence.records){
+ const originalStatus=x.source_key_review_bucket;
+ const resolution=x.cross_owner_reference_reconciliation;
+ assert(resolution&&resolution.source_identity_approved===false&&resolution.canonical_saint_id_created===false&&resolution.calendar_mass_authorized===false&&resolution.shrine_person_life_relation_approved===false);
+ if(["PREVIOUSLY_RECORDED_ALIAS_LEAD","OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"].includes(originalStatus)){
+  assert.equal(resolution.source_references.length,1);
+  assert(["PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE","GROUP_SOURCE_REFERENCE_LOOKUP_AVAILABLE"].includes(resolution.status));
+  assert.equal(resolution.lookup_scope,"RESEARCH_INDEX_ONLY");
+  assert(keys.has(resolution.source_references[0].existing_source_key));
+ }
+ if(originalStatus==="EXACT_FULL_NAME_COLLISION"){
+  assert.equal(resolution.source_references.length,2);
+  assert(resolution.status==="MATCHING_HISTORICAL_DOCTOR_SOURCE_PAIR_OWNER_SIGNOFF_PENDING"||resolution.status==="EXISTING_CROSS_OWNER_SOURCE_BRIDGE_CONFIRMED"||resolution.status==="HOLD_COMPETING_SOURCES_PENDING_OWNER_ATTESTATION");
+ }
  const old=originals.get(x.legacy_shrine_person_or_group_name);
  const owner=ownerSources.get(x.legacy_shrine_person_or_group_name);
  assert(old&&owner,"Original source owner record absent");
@@ -77,6 +96,23 @@ assert.equal(publicData.saintsShrineReadiness,null);
 assert.equal(projectSaintResearchShrinePlaces(publicData).length,0);
 const research=applySaintsReleaseBoundary(dataset,SAINTS_CHANNELS.RESEARCH_PREVIEW);
 const projected=projectSaintResearchShrinePlaces(research);
+const indexItems=new Map(["historical","later","doctors"].flatMap(scope=>projectSaintSourceIndexItems(research,scope).map(x=>[x.item_id,x])));
+const siteNameRelations=new Map(projected.flatMap(site=>site.associated_saint_name_sources.map(x=>[x.source_saint_name,x])));
+for(const record of evidence.records){
+ const source=siteNameRelations.get(record.legacy_shrine_person_or_group_name);
+ assert(source);
+ assert.equal(source.cross_source_review_status,record.cross_owner_reference_reconciliation.status);
+ for(const link of source.cross_source_index_links){
+  assert(indexItems.has(link.item_id),"Navigation to absent source index record "+link.item_id);
+  assert(["historical","later","doctors"].includes(link.scope));
+ }
+ if(record.cross_owner_reference_reconciliation.lookup_scope==="NONE")assert.equal(source.cross_source_index_links.length,0);
+ if(["PREVIOUSLY_RECORDED_ALIAS_LEAD","OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"].includes(record.source_key_review_bucket))assert(source.cross_source_index_links.length>=1);
+}
+assert(siteNameRelations.get("Uganda Martyrs").cross_source_index_links.some(x=>x.item_id==="saints:group:uganda-martyrs-22"));
+assert(siteNameRelations.get("Saint Maurice and the Theban martyrs").cross_source_index_links.some(x=>x.item_id==="saints:historic:group.maurice-theban-legion"));
+assert.equal(siteNameRelations.get("Saint Francis of Assisi").cross_source_index_links.length,0);
+assert.equal(siteNameRelations.get("Saint Anthony of Padua").cross_source_index_links.length,2);
 assert.equal(projected.length,121);
 assert.equal(projected.filter(x=>x.map_publishable).length,119);
 assert.equal(projected.reduce((n,x)=>n+x.associated_saint_name_sources.length,0),145);
@@ -93,7 +129,10 @@ for(const lang of ["en","fr"]){
  assert(html.includes(lang==="fr"?"non approuvés":"Unapproved art research subjects"));
  const variantLocation=projected.find(x=>x.associated_saint_name_sources.some(n=>n.curated_variant_source_key_leads.includes("saint.giuseppina-bakhita")));
  assert(variantLocation,"Expected an existing shrine association for Josephine Bakhita");
- assert(renderSaintResearchShrineSheet({language:lang,selected:variantLocation}).includes("saint.giuseppina-bakhita"));
+ const navHtml=renderSaintResearchShrineSheet({language:lang,selected:variantLocation});
+ assert(navHtml.includes("saint.giuseppina-bakhita"));
+ assert(navHtml.includes("data-saint-crosslink-scope=\"later\""));
+ assert(navHtml.includes("data-saint-crosslink-target=\"saints:modern:saint.giuseppina-bakhita\""));
  assert(!html.includes("<img"));
  assert(!html.includes("data-calendar-mass"));
 }
