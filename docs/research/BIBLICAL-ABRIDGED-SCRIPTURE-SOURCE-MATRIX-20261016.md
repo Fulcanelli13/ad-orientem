@@ -51,3 +51,29 @@ The matrix deliberately retains the publisher's references, punctuation, chapter
 3. Only then begin editorial selection of one essential reading / extended selection / full passage with fidelity/context checks and transparent gaps. No new Bible editions, no Schuster OCR, no UI changes in this phase.
 
 **This is a research-only matrix. No new Ad Orientem scripture excerpts have been approved, no source Bible words copied, and the production app is unchanged.**
+
+
+## Phase 2 — weekday and deuterocanonical index harvest (same date, supersedes v1 counts)
+
+Working directly from Felix Just SJ's original **Catholic Lectionary weekday Scripture index** (`https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm`), the matching **deuterocanonical index** (`https://church.catholic-resources.org/Lectionary/Index-Deuterocanonicals.htm`) and the compiler's **Daniel selection index** (`https://church.catholic-resources.org/Bible/Daniel.htm`), another **101 source-to-existing-event exact-reference evidence records** have been appended to the existing 180-row ledger. These 101 citations include distinct original liturgical days and explicit short/long alternatives. No biblical text has been transcribed, abbreviated or rewritten.
+
+| Metric | v1 | **v2 current** |
+|---|---:|---:|
+| Published-reference evidence records | 180 | **281** |
+| Existing Atlas events with >=1 qualified source reference | 78 | **127/151** |
+| Atlas events still lacking qualified evidence | 73 | **24** |
+| Existing reading groups touched | 32 | **37/37** |
+| Candidate source families | 9 | **9, unchanged** |
+| Qualified independent editorial families | 7 | **7, unchanged** |
+| Events with >=2 qualifying independent source families | 31 | **38** |
+| Events with >=3 qualifying independent source families | 11 | **12** |
+
+**Private deliverables:** `AO_Biblical_Excerpt_Master_Matrix_v2.xlsx` SHA-256 `1407d998abc59454c4ba5ad459c57527a8d6e751acceffb34e050918191a8631` (seven sheets: overview, 151-event comparison, exact evidence ledger, 37-section coverage, uncovered events, nine-source register, editorial QA holds); `AO_Biblical_Excerpt_Master_Data_v2.json` SHA-256 `728750ebca300b02226f6f7fd30ab84c3a44c46e04397c5209d6ed3ac7d5ea51`; `AO_Biblical_Excerpt_Master_Weekday_Harvest_v2.csv` SHA-256 `3f2befc6c6f7cf41d7c3e0bec984329497a0cffd0f6aca62c55a3986ce55175d` contains first-hand weekday page selections. These sources are stored outside the public repository; the GitHub file stores metadata and provenance only.
+
+**Meaningful examples of exact printed selections:** `Josh 3:7-10a, 11, 13-17` for Jordan crossing; `1 Kgs 8:1-7, 9-13` and separately `1 Kgs 8:22-23, 27-30` for the Temple; `2 Kgs 22:8-13; 23:1-3` for Josiah; `Nehemiah 8:1-4a, 5-6, 7b-12` for Ezra; `Acts 15:1-6`, `Acts 15:7-21`, and `Acts 15:22-31` on separate Easter weekdays for the Council; and `Daniel 13:1-9, 15-17, 19-30, 33-62 [or 13:41c-62]` (long and short printed options) for Susanna. The original references remain verbatim in the evidence ledger, while AO's existing Atlas anchor remains a *different field*.
+
+**QA exclusions:** The Acts 11:1–18 explanation of Cornelius' conversion is not a citation of the actual Acts 10 conversion episode. Rev 1:1–4; 2:1–5 does not cover Rev 1:9–20. Neither was promoted into the source-event comparison. Esther Greek C vs Vulgate Esther 14 is held for the existing Catholic numbering crosswalk. Judith responsorial canticle verses do not constitute a narrative excerpt of the story; likewise partial parallels across different Gospels do not establish identical verse selection. Some lectionary selections overlap only a subsection of an AO episode; no complete-episode certification is implied.
+
+The **24 research gaps** are: Abraham leaving Ur, David enthroned in Hebron, Tobit 1:10, Ezekiel 1, Judith 13 story, Esther 14, Daniel 3 canticle, Daniel 14 Bel/dragon, opening of Maccabean resistance 1 Macc 2:1–5, Jesus' growth (Luke 2:51–52), walking on water, first Passion prediction, descent from Transfiguration, entrance preparation/entry, foot washing, Gethsemane, scourging, good thief, Saul to Tarsus, Paul in Thessalonica, Paul in Troas, and the shipwreck. A lectionary's lack of a direct reading for one subject does **not** mean other existing sources omit it. Research those against the other six qualified independent families and new first-party curated indexes before declaring any source-internal omission.
+
+**Still forbidden:** verse-popularity ranking, final selection, Scripture paraphrasing, new Bible versions, Schuster OCR or any native Bible app change. Next step is further **comparative primary-source harvesting**, not editorial scoring. Do not turn 171 Roman Lectionary source records into 171 independent opinions; they remain one editorial family.
