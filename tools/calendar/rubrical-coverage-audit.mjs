@@ -145,7 +145,7 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
     caveats:Object.freeze([
       "The denominator of ALL historical 1962 concurrence cases is not established; never report percentage-complete from these counters.",
       "24 screening overlaps are NOT 24 certified omitted feasts; existing source-verified omissions are a separate cohort.",
-      "Cum sanctissima's 70 protected III-class days limit displacement by optional celebrations under that decree, not the normal 1962 I/II Sunday precedence.",
+      "Cum sanctissima's 2020 decree protects 70 III-class days against newly optional Mass choices, not against normal 1962 I/II Sunday precedence.",
       "A local or religious calendar, a new saint, a transferred Mass, or an unverified oration is not made universal by this inventory.",
       "Calendar–Scripture navigation does not certify edition, offline content, commentary and exact return parity on every special reading."
     ])
