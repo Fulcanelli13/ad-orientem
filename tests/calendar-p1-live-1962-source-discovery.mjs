@@ -293,6 +293,37 @@ try{
    }
    return {source:"Commune/C1v",sourceRows:rows};
  });
+ const papalCommonOwnerProbe=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const diag=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const langs=["la","en","fr"];
+   const sections=["Introitus","Oratio","Lectio","Graduale","Evangelium","Offertorium","Secreta","Communio","Postcommunio"];
+   const canonical=x=>String((x??[]).join("\\n")).normalize("NFD")
+     .replace(/[\\u0300-\\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
+     .replace(/[^A-Za-z0-9]+/g," ").toLowerCase().trim();
+   const present=x=>Array.isArray(x)&&x.some(v=>typeof v==="string"&&v.trim()&&!v.trim().startsWith("@"));
+   const get=async path=>{
+     const out={};
+     for(const lang of langs)out[lang]=(await resolver.resolveSource(path,lang,diag()))?.map;
+     return out;
+   };
+   const base=await get("Commune/C4b");
+   const out=[];
+   for(const path of ["Commune/C2b","Commune/C3b"]){
+     const target=await get(path),rows=[];
+     for(const lang of langs)for(const section of sections){
+       const own=target[lang]?.get(section),shared=base[lang]?.get(section);
+       rows.push({lang,section,targetPresent:present(own),donorPresent:present(shared),
+         latinEqual:present(target.la?.get(section))&&present(base.la?.get(section))&&
+           canonical(target.la.get(section))===canonical(base.la.get(section)),
+         targetLatinHead:canonical(target.la?.get(section)).slice(0,90),
+         donorLatinHead:canonical(base.la?.get(section)).slice(0,90)});
+     }
+     out.push({path,donor:"Commune/C4b",rows});
+   }
+   return out;
+ });
+ console.log("P1_PAPAL_COMMON_SOURCE_OWNERS="+JSON.stringify(papalCommonOwnerProbe));
  console.log("P1_C1V_ALT_ORATION_OWNERSHIP="+JSON.stringify(apostleVigilOrations));
  console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
  assert.equal(partialReconciliation.length,2);
