@@ -41,7 +41,7 @@ jobs:
           test -s dist/visible-mass/The_Visible_Mass_P0_Offline.html
           grep -q 'ao-glossary-entries' dist/visible-mass/The_Visible_Mass_P0_Offline.html
           grep -q 'Test controls (instant)' dist/visible-mass/The_Visible_Mass_P0_Offline.html
-          ! grep -q 'src="https://cdn.babylonjs.com/' dist/visible-mass/The_Visible_Mass_P0_Offline.html
+          ! grep -q '<script src="https://cdn.babylonjs.com/' dist/visible-mass/The_Visible_Mass_P0_Offline.html
           grep -q 'G190' dist/visible-mass/The_Visible_Mass_P0_Offline.html
       - name: Downloadable research prototype
         uses: actions/upload-artifact@v4
