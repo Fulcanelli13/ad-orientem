@@ -174,6 +174,53 @@ try{
    for(let i=0;i<registry.length;i+=5)results.push(...await Promise.all(registry.slice(i,i+5).map(inspect)));
    return {candidateCount:registry.length,results};
  });
+ const donorProbe=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const plan=(await (await fetch("/data/calendar/p1-partial-common-donor-plan.v1.json")).json()).cases;
+   const existing=(await (await fetch("/data/calendar/p1-additional-common-app-audit.v1.json")).json()).sourceEntries;
+   const audited=new Map(existing.map(x=>[x.sourcePath,x]));
+   const options=["la","en","fr"],core=["Introitus","Oratio","Lectio","Graduale","Evangelium","Offertorium","Secreta","Communio","Postcommunio"];
+   const normalized=lines=>String((lines??[]).join("\\n")).normalize("NFD")
+      .replace(/[\\u0300-\\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
+      .replace(/[^A-Za-z0-9]+/g," ").trim().toLowerCase();
+   const present=lines=>Array.isArray(lines)&&lines.some(s=>typeof s==="string"&&s.trim()&&!s.trim().startsWith("@"));
+   const diag=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const memo=new Map();
+   const load=async(path,lang)=>{
+     const k=path+"|"+lang;
+     if(memo.has(k))return memo.get(k);
+     let value=null;
+     try{value=(await resolver.resolveSource(path,lang,diag()))?.map??null}catch{}
+     memo.set(k,value);
+     return value;
+   };
+   const reports=[];
+   for(const testcase of plan){
+     const missing=audited.get(testcase.target)?.byLanguage??{};
+     const checks=[];
+     for(const donor of testcase.donors){
+       for(const lang of options){
+         const d=await load(donor,lang);
+         const t=await load(testcase.target,lang);
+         const lt=await load(testcase.target,"la");
+         const ld=await load(donor,"la");
+         for(const section of (missing[lang]?.missingSections??core)){
+           const donorLines=d?.get(section),latinTarget=lt?.get(section),latinDonor=ld?.get(section);
+           checks.push({donor,language:lang,section,donorPresent:present(donorLines),
+             targetLatinPresent:present(latinTarget),
+             donorLatinPresent:present(latinDonor),
+             latinEqual:present(latinTarget)&&present(latinDonor)&&normalized(latinTarget)===normalized(latinDonor),
+             targetLatinLength:normalized(latinTarget).length,donorLatinLength:normalized(latinDonor).length,
+             donorLatinBeginning:normalized(latinDonor).slice(0,48),
+             targetLatinBeginning:normalized(latinTarget).slice(0,48)});
+         }
+       }
+     }
+     reports.push({target:testcase.target,kind:testcase.kind,checks});
+   }
+   return reports;
+ });
+ console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
  console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
  assert.equal(additionalCommons.candidateCount,28);
  assert.equal(additionalCommons.results.length,28);
