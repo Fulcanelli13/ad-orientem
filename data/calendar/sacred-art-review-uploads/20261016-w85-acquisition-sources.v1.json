@@ -1,0 +1,60 @@
+{
+  "schema": "AO_SACRED_ART_W85_EXACT_MUSEUM_ORIGINAL_SOURCE_PHOTOS_20261016_V1",
+  "phase": "ACQUIRE_REAL_BYTES_BEFORE_HTML",
+  "policy": [
+    "Each entry describes original physical painting confirmed by accession or church mural; full-frame source, no art-score promotion.",
+    "Original photos and hashes downloaded by CI; licence, crop and appropriateness do not carry over to app automatically.",
+    "Prado P000361 NOT San Polo station 13 same composer different canvas.",
+    "Preserve original user scores and selections."
+  ],
+  "items": [
+    {
+      "categoryIndex": 109,
+      "file": "Titian, Christ Carrying the Cross. Oil on canvas, 67 x 77 cm, c. 1565. Madrid, Museo Nacional del Prado.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Titian%2C_Christ_Carrying_the_Cross._Oil_on_canvas%2C_67_x_77_cm%2C_c._1565._Madrid%2C_Museo_Nacional_del_Prado.jpg",
+      "identityStatus": "PRADO_P000438",
+      "evidence": "Titian Christ Carrying the Cross 67x77cm c1565 original Prado P000438",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 128,
+      "file": "Giovanni Domenico Tiepolo - El Descendimiento.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "identityStatus": "PRADO_P000361",
+      "evidence": "Giandomenico Tiepolo Descent from the Cross original Prado P000361 (1772), not San Polo Station 13",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 149,
+      "file": "Sébastien Bourdon, The Finding of Moses, c. 1655-1660, NGA 46164.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastien_Bourdon%2C_The_Finding_of_Moses%2C_c._1655-1660%2C_NGA_46164.jpg",
+      "identityStatus": "NGA_46164_CC0",
+      "evidence": "Bourdon Finding of Moses NGA 46164 official CC0 donation 4000x2751",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 156,
+      "file": "Sebastiano Ricci 025.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Sebastiano_Ricci_025.jpg",
+      "identityStatus": "LONDON_NG2101",
+      "evidence": "Sebastiano Ricci Esther before Ahasuerus 1733–34 NG2101 London, original 2024x2845",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 158,
+      "file": "Paris (75006) Église Saint-Sulpice - Intérieur - Héliodore chassé du Temple (Delacroix) - 05.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Paris_(75006)_%C3%89glise_Saint-Sulpice_-_Int%C3%A9rieur_-_H%C3%A9liodore_chass%C3%A9_du_Temple_(Delacroix)_-_05.jpg",
+      "identityStatus": "SAINT_SULPICE_MURAL",
+      "evidence": "Delacroix original Heliodorus expelled from Temple Saint-Sulpice Paris full scene in 6000x4000 photograph",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 168,
+      "file": "Duccio di buoninsegna, gesù apre gli occhi dell'uomo cieco, 1311.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Duccio_di_buoninsegna%2C_ges%C3%B9_apre_gli_occhi_dell'uomo_cieco%2C_1311.jpg",
+      "identityStatus": "NATIONAL_GALLERY_NG1140",
+      "evidence": "Duccio Healing Blind Man National Gallery NG1140 3402x3270, not 800px Art UK derivative",
+      "reviewApproval": false
+    }
+  ]
+}
