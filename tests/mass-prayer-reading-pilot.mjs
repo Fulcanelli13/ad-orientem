@@ -234,4 +234,30 @@ for(const [name,fn] of [
 }
 assert.equal(validateConclusionReadingPilot(conclusionDraft,{blocks:[]},formation,guide).ok,false);
 assert.equal(validateConclusionReadingPilot(conclusionDraft,sung,formation,{entries:{}}).ok,false);
-console.log("PASS P2 editorial pilot: 61 bilingual prayer readings, 4 held Propers, 3 optional Communion customs; nine closing texts retain dismissal/blessing/Last Gospel exceptions and John Incarnation wording");
+// Complete second-half coverage: every original B031–B095 source block must
+// be either a reviewed-only fixed-text draft or an explicit Mass-specific Proper
+// hold. No source block may disappear, duplicate, or become default Proper text.
+const publishedSourceBlocks=new Map(sung.blocks.map(b=>[b.Block_ID,b]));
+const studies=[...accepted.readings,...next.readings,...canonAccepted.readings,
+ ...communionValidated.readings,...conclusionValid.readings];
+const held=[...next.withheld,...communionValidated.withheld,...conclusionValid.withheld];
+const studyIds=studies.map(r=>r.block_id),heldIds=held.map(r=>r.block_id);
+assert.equal(studies.length,61);
+assert.equal(held.length,4);
+assert.equal(new Set(studyIds).size,61,"Duplicated prayer study source");
+assert.equal(new Set(heldIds).size,4,"Duplicated variable Proper hold");
+assert.equal(studyIds.filter(id=>heldIds.includes(id)).length,0,
+ "A variable Proper can never also be published as a fixed-text study");
+const total=Array.from({length:65},(_,i)=>"AO.SM.B"+String(i+31).padStart(3,"0"));
+assert.deepEqual([...studyIds,...heldIds].sort(),total.sort(),
+ "All B031–B095 originals must be accounted for without fabricating variable Proper text");
+for(const sourceId of heldIds){
+ assert.ok(publishedSourceBlocks.get(sourceId)?.Proper_Slot,
+  "Every hold must be an actual variable Proper slot: "+sourceId);
+}
+for(const sourceId of studyIds){
+ assert.equal(publishedSourceBlocks.get(sourceId)?.Proper_Slot,null,
+  "Fixed-text drafts cannot replace variable Proper: "+sourceId);
+}
+assert.equal(studies.filter(r=>r.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM").length,3);
+console.log("PASS P2 editorial pilot: 61 bilingual prayer readings, 4 held Propers, 3 optional Communion customs; complete B031–B095 coverage; closing texts retain dismissal/blessing/Last Gospel exceptions and John Incarnation wording");
