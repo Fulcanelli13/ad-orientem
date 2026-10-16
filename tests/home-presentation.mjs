@@ -83,6 +83,9 @@ assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2Approaching/);
+assert.match(en,/Life & sources|About this celebration|Calendar day & sources/,
+  "The Read & reflect entry must explain its destination instead of repeating the hero title");
+assert.doesNotMatch(en,/COMING SOON/,"Homepage must not duplicate upcoming celebrations in its season bar");
 assert.match(en,/data-home-calendar-view="picker"/);
 assert.match(en,/data-home-calendar-view="year"/);
 assert.match(en,/data-ao-home-enricher-owner=/);
@@ -104,6 +107,7 @@ assert.match(fr,/Évangile de la messe/);
 assert.match(fr,/Prier maintenant/);
 assert.match(fr,/Lire et méditer/);
 assert.match(fr,/À venir/);
+assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendrier et sources/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/data-home-settings/);
