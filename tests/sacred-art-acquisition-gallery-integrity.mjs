@@ -77,7 +77,7 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=130,'Acquisition-to-gallery linked photo coverage has regressed below verified closeout checkpoint');
+assert.ok(categoriesWithPhoto>=158,'Acquisition-to-gallery linked photo coverage has regressed below verified 158-category source-linked closeout checkpoint');
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
@@ -89,6 +89,38 @@ for(const n of [89,93,99]){
  const c=current.categories.find(c=>c.index===n);
  assert.ok(c.works.some(w=>w.photos.some(p=>p.id.startsWith('W87-SHA-'))),'W87 verified museum photo disappeared from gallery');
 }
+// Research images are not themselves rights-cleared, visually approved, or app-published.
+const protectedExact = (n,id,needle) => {
+ const w=at(n,id);
+ assert.ok(w.photos.some(p=>p.page.includes(needle)), 'Museum-source link missing '+id);
+};
+for(const n of [101,133])protectedExact(n,'ART-hilippe-de-hampaigne-he-nnunciation','The_Annunciation_MET_DT5656');
+for(const n of [113,130,164]){
+ protectedExact(n,'ART-ean-estout-entecost','Restout_-_La_Pentec');
+ assert.match(at(n,'ART-ean-estout-entecost').hold,/RIGHTS_HOLD/);
+}
+protectedExact(154,'ART-eter-aul-ubens-aniel-in-the-ions-en','Daniel_in_the_Lions');
+protectedExact(19,'met-437722','The_Mass_of_Saint_Gregory');
+protectedExact(110,'ART-nthony-van-yck-he-ance-hrust','Christ_on_the_cross_between_the_two_criminals');
+protectedExact(167,'ART-ustache-e-ueur-aint-aul-reaching-at-phesus','The_Preaching_of_St_Paul_at_Ephesus');
+for(const [idx,originalId,candidateId] of [
+ [103,'ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist','CLOSEOUT-NATIVITY-GEROME-AMIENS-FINISHED-1855'],
+ [131,'ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist','CLOSEOUT-NATIVITY-GEROME-AMIENS-FINISHED-1855'],
+ [114,'ART-eter-aul-ubens-ssumption-of-the-irgin','CLOSEOUT-ASSUMPTION-ANTWERP-CATHEDRAL-1626'],
+ [134,'ART-eter-aul-ubens-ssumption-of-the-irgin','CLOSEOUT-ASSUMPTION-ANTWERP-CATHEDRAL-1626'],
+ [111,'ART-eter-aul-ubens-esurrection-of-hrist','CLOSEOUT-RUBENS-RESURRECTION-ANTWERP-CATHEDRAL-1611']
+]){
+ assert.ok(at(idx,originalId).oct12Selected,'Historic unaccessioned selection remains protected');
+ const candidate=at(idx,candidateId);
+ assert.equal(candidate.oct12Selected,undefined,'A different physical painting must NOT inherit user selection');
+ assert.equal(candidate.historicalArtRating,undefined,'No historic rating inheritance on alternatives');
+ assert.equal(candidate.lockedArtRating,false);
+ assert.ok(candidate.photos.length);
+ assert.match(candidate.hold,/NO_HISTORIC|NO_SCORE/);
+}
+const holdCategories=[6,11,12,13,25,41,43,48,142,152];
+const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
+assert.deepEqual(missingNow,holdCategories,'Ten true unmatched category holds must remain explicit, not silently substituted');
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
