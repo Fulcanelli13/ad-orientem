@@ -1,14 +1,14 @@
 {
   "schema": "AO_P1_TRADITIONAL_LITURGY_EXCEPTION_BACKLOG_V1",
   "asOf": "2026-10-16",
-  "openCount": 21,
+  "openCount": 22,
   "items": [
     {
       "id": "P1-E01",
       "code": "PRIMARY_1962_COMMONS_COLLATION",
       "kind": "SOURCE_HOLD",
       "status": "OPEN",
-      "nextAction": "38 indexed Commons need complete original 1962 Latin and editions; section-by-section 11-part check.",
+      "nextAction": "First reconcile the existing in-app Missal's Common/Proper coverage, source IDs, variant identity and 11 source-owned components; use printed missal/external witnesses only to verify canonical app text, not as a second navigation or parallel publication corpus.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -22,7 +22,7 @@
       "code": "NEWMAN_LEONARDI_THREE_ORATIONS",
       "kind": "TEXT_HOLD",
       "status": "OPEN",
-      "nextAction": "Authenticate Collect, Secret, Postcommunion and conclusions in print.",
+      "nextAction": "Resolve the 1962 Leonardi Collect/Secret/Postcommunion as exact source-owned orations in the app Missal (sourcePath, row id, conclusion), compare with original textual sources; never link users to scanned book folios.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -36,7 +36,7 @@
       "code": "OCTOBER_9_DIONYSIUS_TRIO",
       "kind": "TEXT_HOLD",
       "status": "OPEN",
-      "nextAction": "Authenticate existing saints' commemorative orations, precedence and cap.",
+      "nextAction": "Resolve three historic martyrs' commemoration prayers as distinct app-Missal anchors with exact oration row IDs and correct ordering; page image metadata remains internal citation evidence.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -160,7 +160,7 @@
       "code": "COPYRIGHT_AND_TRANSLATION_PROVENANCE",
       "kind": "RIGHTS_HOLD",
       "status": "OPEN",
-      "nextAction": "Clear verbatim source use and selected translations before publishing.",
+      "nextAction": "Review the canonical in-app Missal's Latin/EN/FR provenance and publishing rights. No external facsimile photos or newly scraped text will be bundled or used for user-facing navigation.",
       "blocksRuntimeApproval": true
     },
     {
@@ -214,7 +214,24 @@
         "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html"
       ],
       "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E22",
+      "code": "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION",
+      "kind": "INTERNAL_SOURCE_ID_AND_READER_DEEPLINK_HOLD",
+      "status": "OPEN",
+      "nextAction": "For every approved celebrant/formulary and commemorative oration, resolve exact existing Proper.sourcePath plus source-owned oration row ID, then route into Ad Orientem read-only Missal at the appropriate reader slot. Do not invent calendar-to-reader deep links or navigate external Missale Romanum page images; P0/Mass reader owns routing and source parity.",
+      "referenceContract": "data/calendar/p1-internal-missal-navigation.v1.json",
+      "blocksRuntimeApproval": true
     }
   ],
-  "printImageFindingsCount": 5
+  "printImageFindingsCount": 5,
+  "priorityNow": [
+    "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION",
+    "PRIMARY_1962_COMMONS_COLLATION",
+    "NEWMAN_LEONARDI_THREE_ORATIONS",
+    "OCTOBER_9_DIONYSIUS_TRIO",
+    "SUNG_MASS_SECTION4_VS_111A"
+  ],
+  "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus."
 }
