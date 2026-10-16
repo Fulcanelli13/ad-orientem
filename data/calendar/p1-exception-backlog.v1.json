@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_TRADITIONAL_LITURGY_EXCEPTION_BACKLOG_V1",
   "asOf": "2026-10-16",
-  "openCount": 20,
+  "openCount": 21,
   "items": [
     {
       "id": "P1-E01",
@@ -170,6 +170,19 @@
       "kind": "DEPENDENCY",
       "status": "OPEN",
       "nextAction": "P0 must resolve canonical IDs by source records, not overwrite existing files.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E21",
+      "code": "POST2020_LEGISLATION_2021_2023_AUTHORITY",
+      "kind": "LEGAL_AND_JURISDICTION_HOLD",
+      "status": "OPEN",
+      "nextAction": "Check applicability and harmonization of 2020 Cum sanctissima with 2021 Traditionis custodes arts2-8, 2021 Responsa and 2023 reserved-dispensations rescript; identify current territorial, priest, venue and institutional permission for each proposed optional Mass; do not presume all 2020 rules abrogated or automatically valid.",
+      "sources": [
+        "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/07/16/210716b.html",
+        "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+        "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html"
+      ],
       "blocksRuntimeApproval": true
     }
   ]
