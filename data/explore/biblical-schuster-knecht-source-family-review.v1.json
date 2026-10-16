@@ -501,10 +501,11 @@
     "earlyEnglishSadlierEleventhOCRHeadingsRequiringVerification": 53,
     "earlyEnglishSadlierEleventhImprovedOCRSampleOriginalPages": 13,
     "earlyEnglishSadlierWholeBookOCRRunSuccess": 1,
-    "earlyEnglishSadlierWholeBookOCRChapterStartCandidates": 175,
-    "earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented": 168,
-    "earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented": 14,
-    "earlyEnglishSadlierWholeBookOCRExactNumeralHeadings": 145
+    "earlyEnglishSadlierWholeBookOCRChapterStartCandidates": 181,
+    "earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented": 180,
+    "earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented": 2,
+    "earlyEnglishSadlierWholeBookOCRExactNumeralHeadings": 145,
+    "earlyEnglishSadlierWholeBookOCRUnresolvedChapterStartCount": 1
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4313,6 +4314,70 @@
     "sourceTextPublishedInApp": false,
     "normalizedAIComposedAuthorNarrativeWords": 0,
     "sourceRightsAndLiteralTextReviewOutstanding": true,
-    "nextStep": "Resolve only 14 adjacent OCR boundary collisions in one image-contact-sheet pass, then perform batch chapter-level OCR cleanup/semantic layer separation. Do not restart historical chapter research."
+    "nextStep": "Resolve only 14 adjacent OCR boundary collisions in one image-contact-sheet pass, then perform batch chapter-level OCR cleanup/semantic layer separation. Do not restart historical chapter research.",
+    "followupOCRBoundaryRecovery": {
+      "date": "2026-10-16",
+      "method": "Single historical text-OCR pass; damaged CHAPTER numerals recovered by exact source-line matches, preserving PDF page and offset. No inference that Roman OCR is literally correct; provisional original-image check required.",
+      "recoveredDamagedOriginalOCRHeaderStrings": [
+        {
+          "chapter": "SCHUSTER-EN-1908-OT-LXIII",
+          "pdfPage": 163,
+          "rawOCRHeading": "CHAPTER LAXIII"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-OT-LXXXIII",
+          "pdfPage": 223,
+          "rawOCRHeading": "CHAPTER LXXAIII"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-NT-XXI",
+          "pdfPage": 274,
+          "rawOCRHeading": "CSTAPTER XXII"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-NT-XXII",
+          "pdfPage": 278,
+          "rawOCRHeading": "CHAPTER XXIL"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-NT-LXIII",
+          "pdfPage": 347,
+          "rawOCRHeading": "CHAPTER LAI"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-NT-LXVIII",
+          "pdfPage": 356,
+          "rawOCRHeading": "CHAPTER LXYVIII"
+        },
+        {
+          "chapter": "SCHUSTER-EN-1908-NT-LXXXV",
+          "pdfPage": 391,
+          "rawOCRHeading": "CHAPTER LKXXV"
+        }
+      ],
+      "recoveredOriginalOCRHeaderPageLocators": 7,
+      "chapterStartCandidatesNow": 181,
+      "draftsNowBoundedByTwoAdjacentOCRHeaders": 180,
+      "sourceChaptersNotSafelySplit": [
+        "SCHUSTER-EN-1908-NT-LXXXVIII",
+        "SCHUSTER-EN-1908-NT-LXXXIX"
+      ],
+      "remainingUnresolvedChapterStartId": "SCHUSTER-EN-1908-NT-LXXXIX",
+      "lateActsBoundaryCaution": "Original printed PDF p.398 bears Chapter LXXXVIII The Conversion of Saul; PDF p.399 begins Chapter XC The Conversion of Cornelius, with consecutive printed page numbers. Do not fabricate the intervening LXXXIX boundary; inspect the original 1908 contents and edition chapter enumeration before resolution.",
+      "validatedPageImageCountNew": 0,
+      "currentResearchArtifacts": {
+        "chapterIndex": {
+          "filename": "Schuster_1908_182_Chapter_Source_Reader_Index.json",
+          "sha256": "a65d6ad3ce4958c48bcc47847e754f51f76f15e78647612cf35cf4a460e61208"
+        },
+        "fullOCRSegments": {
+          "filename": "Schuster_1908_All182_Chapters_Provisional_Source_OCR.json.gz",
+          "sha256": "9b7c42a1f371a0df20d3430a4a48be1bee34be74786c404b7e4a62b5603ae599"
+        }
+      },
+      "chapterTextStillUnverified": true,
+      "originalWordingRewritten": false,
+      "appUpdated": false
+    }
   }
 }
