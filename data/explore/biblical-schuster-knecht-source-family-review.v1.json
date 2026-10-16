@@ -489,7 +489,10 @@
     "earlyEnglishSadlierEleventhWorkingPageOcrGenerated": 17,
     "earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining": 0,
     "earlyEnglishSadlierEleventhIndependentlyCertifiedUnitBodies": 0,
-    "earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished": 0
+    "earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished": 0,
+    "earlyEnglishSadlierSecondWordingImageReviewedUnits": 10,
+    "earlyEnglishSadlierPrintedFootnoteMarkersRecovered": 5,
+    "earlyEnglishSadlierLiterallyCharacterCertifiedUnits": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -3782,5 +3785,82 @@
       "editorialHoldsCount": 7,
       "conditionsForUse": "Independent literal character-level proofreading of all 47 units, separate notes/epigraphs questions, explicit historical editorial contexts and applicable rights review before public display"
     }
+  },
+  "english1908OriginsSecondPrintReviewBatch04": {
+    "date": "2026-10-16",
+    "status": "SECOND_VISUAL_WORDING_CHECK_PLUS_FIVE_SOURCE_FOOTNOTE_ANCHORS_NO_CHARACTER_CERTIFICATION",
+    "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "sourceUserPdfSHA256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+    "inputFirstPassWorkingTextSHA256": "ecb7bbb036a76d22f9a4e7a923f1052fff6423269527ac38fde274a0c9f79f19",
+    "privateSecondPassArtifact": "Schuster_1908_Origins_Batch04_Print_Review.json",
+    "privateSecondPassArtifactSHA256": "0b98ea3eb4afbaeaecec8e52f7a5009d6c04f655b85e63b08996d888403312bc",
+    "privateSummaryArtifact": "Schuster_1908_Origins_Batch04_Review_Summary.md",
+    "privateSummaryArtifactSHA256": "51d89474654f242fd940d7ac11842f119cb88bdf565616e1e372f0dffb8c476a",
+    "scopePrintedPages": [
+      1,
+      17
+    ],
+    "originalUnitBodiesAvailable": 47,
+    "secondImageWordingReviewCount": 10,
+    "secondImageWordingReviewIds": [
+      "SCHUSTER-EN-1908-OT-I-UNIT-01",
+      "SCHUSTER-EN-1908-OT-I-UNIT-02",
+      "SCHUSTER-EN-1908-OT-I-UNIT-03",
+      "SCHUSTER-EN-1908-OT-I-UNIT-04",
+      "SCHUSTER-EN-1908-OT-I-UNIT-05",
+      "SCHUSTER-EN-1908-OT-I-UNIT-06",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-01",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-02",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-03",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-04"
+    ],
+    "secondVisualWordingNotYetReviewed": 37,
+    "sourceFootnoteMarkerCases": [
+      {
+        "originalPDFPage": 29,
+        "sourceUnit": "VII.1",
+        "anchorWord": "Armenia",
+        "originalNoteNumberOnPage": 1
+      },
+      {
+        "originalPDFPage": 29,
+        "sourceUnit": "VII.2",
+        "anchorWord": "subsided",
+        "originalNoteNumberOnPage": 2
+      },
+      {
+        "originalPDFPage": 31,
+        "sourceUnit": "VIII.1",
+        "anchorWord": "frustrated",
+        "originalNoteNumberOnPage": 1
+      },
+      {
+        "originalPDFPage": 31,
+        "sourceUnit": "VIII.3",
+        "anchorWord": "Japhet",
+        "originalNoteNumberOnPage": 2
+      },
+      {
+        "originalPDFPage": 32,
+        "sourceUnit": "VIII.4",
+        "anchorWord": "divinities",
+        "originalNoteNumberOnPage": 1
+      }
+    ],
+    "sourceFootnoteMarkerCount": 5,
+    "wholeSourceFootnoteBodiesCertified": 0,
+    "independentlyCharacterCertifiedUnits": 0,
+    "editoriallyPublicationApprovedUnits": 0,
+    "originalNarrativeTextRewrittenOrImportedToGithub": false,
+    "correctiveHandling": "Record source note anchors in independent metadata only. Do not insert footnote numbers as narrative words; numbering is original-page-local.",
+    "lowOCRSimilarityResearchPriorityUnitIds": [
+      "SCHUSTER-EN-1908-OT-I-UNIT-04",
+      "SCHUSTER-EN-1908-OT-II-UNIT-03",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-04",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-03"
+    ],
+    "lowOCRSimilarityIsProofOfTextDefect": false,
+    "sourceContextHoldsRemain": true,
+    "applicationProductionChanged": false
   }
 }
