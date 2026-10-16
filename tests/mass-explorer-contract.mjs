@@ -23,7 +23,11 @@ const thematicHtml=massStudyPathsHtml(full.formationStages);
 assert.equal((thematicHtml.match(/data-ao-mx-stage="MF0[1-8]"/g)||[]).length,8);
 assert.match(thematicHtml,/id="ao-mx-themes"/);
 assert.match(massStudyPathsHtml(full.formationStages,{french:true}),/L’Offertoire et votre offrande/);
-assert.match(massMapHtml(full,{studyHtml:thematicHtml}),/data-ao-mx-stage="MF03"/);
+assert.doesNotMatch(massMapHtml(full),/data-ao-mx-stage="/,
+ "Map must not redundantly render the eight lessons below the journey");
+assert.match(thematicHtml,/data-ao-mx-stage="MF03"/);
+assert.doesNotMatch(thematicHtml,/data-ao-mx-moment="/,
+ "Dedicated thematic path must not duplicate the full Guide list");
 assert.throws(()=>massStudyStages({...formation,stages:formation.stages.slice(1)}),/eight published/);
 
 assert.equal(MASS_EXPLORER_ROUTE,"learn.mass_explorer");
@@ -108,6 +112,10 @@ assert.match(script,/MASS_EXPLORER_ROUTE_ID/);
 assert.match(lazy,/massExplorer:\(\)=>import\("\.\/mass-explorer\.js"\)/);
 assert.match(formationHome,/id:"learn.mass_explorer"/);
 assert.match(read("src/learn/mass-explorer.js"),/massStudyPathsHtml\(catalog\.formationStages/);
+assert.match(read("src/learn/mass-explorer.js"),/data-ao-mx-path="order"/);
+assert.match(read("src/learn/mass-explorer.js"),/data-ao-mx-path="themes"/);
+assert.match(read("src/learn/mass-explorer.js"),/indexFocusBlockId/,
+ "Returning to Map must preserve the exact originally selected source block");
 assert.match(read("src/learn/mass-formation.js"),/studyStageId:/);
 assert.match(formationHome,/id:"learn.mass"/,"existing Formation stays in service");
 console.log("Mass Map + Explorer: five visual phases, 32 Guide routes, 96 Sung source blocks, bilingual witness, Scripture capsules, legacy Formation and P0 hold passed");
