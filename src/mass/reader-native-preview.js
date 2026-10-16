@@ -2329,6 +2329,21 @@ export async function mountNativeReaderPreview({
       sectionTitle:visibleCard.title,
       cardTitle:visibleCard.title,
       cardUpdate:true,
+      missalRubric:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
+        ? (()=>{
+          const first=(visibleCard.paragraphs??[])
+            .flatMap(row=>row.sourceCueIds??[])
+            .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)));
+          const sourced=first&&ready.cueState.supported
+            ? ready.cueState.project(first):null;
+          return sourced?.supported ? {
+            sourceCueId:first,
+            priestAction:sourced.priestAction??null,
+            priestPosition:sourced.priestPosition??null,
+            faithfulGesture:sourced.gesture??null,
+          }:null;
+        })()
+        :null,
       missalHeadings:String(ready.prepared?.readerPreferences?.mode ??
         ready.prepared?.session?.resolvedMass?.presentationMode??"").toUpperCase()==="MISSAL" ||
         String(root.dataset.r17PresentationMode??"").toUpperCase()==="MISSAL"
