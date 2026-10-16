@@ -27,7 +27,7 @@ const report={
   schema:"AO_LIVING_TRADITIONAL_2026_SOURCE_RECONCILIATION_V1",
   year:2026,calendarBase:"PRODUCTION_1962_ROMAN_DAY_RESOLVER",
   assurance:"RUNTIME_RESOLVER_SWEEP_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION",
-  modernDateAuthority:"18_SOURCE_REVIEWED_RECORDS_ONLY",
+  modernDateAuthority:"26_SOURCE_REVIEWED_RECORDS_ONLY",
   massAuthority:"NONE_AUTOMATIC",
   rows:[],exceptions:[]
 };
@@ -138,6 +138,7 @@ try{
     worldwideVaticanDecreeRows:data.observances.filter(r=>r.universalStatus==="CERTIFIED_BY_DECREE").length,
     localOrHistoricalWitnessRows:data.observances.filter(r=>r.authorityScope.startsWith("USCCB_")).length,
     worldwideHolySeePrimaryRows:data.observances.filter(r=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(r.authorityScope)).length,
+    dicasteryLiturgicalDateWitnessRows:data.observances.filter(r=>r.authorityScope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE").length,
     duplicate1962CommemorationDays:repeats.length,
     suppressedIdentityCollisionDays:cross.length,
     erroneousGlobalScopeDays:badCards.length,
@@ -159,10 +160,12 @@ try{
   assert.equal(errors.length,0,"All 2026 historical resolver dates must resolve");
   assert.equal(badCards.length,0,"Unknown/local witnesses entered global calendar");
   assert.equal(repeats.length,0,"Duplicate historical commemoration source IDs require review");
-  assert.equal(report.summary.reviewedObservanceRegistryRows,18);
+  assert.equal(report.summary.reviewedObservanceRegistryRows,26);
   assert.equal(report.summary.worldwideVaticanDecreeRows,9);
   assert.equal(report.summary.localOrHistoricalWitnessRows,8);
   assert.equal(report.summary.worldwideHolySeePrimaryRows,10);
+  assert.equal(report.summary.dicasteryLiturgicalDateWitnessRows,8);
+  assert.deepEqual(report.rows.find(x=>x.date==="2026-10-12")?.globalHonourIds,["saint.carlo-acutis"]);
   assert.equal(report.rows.find(x=>x.date==="2026-10-09")?.mainId,"sancti:10-09:3:w");
   assert.deepEqual(report.rows.find(x=>x.date==="2026-10-09")?.globalHonourIds,["saint.john-henry-newman"]);
   assert.ok(report.rows.find(x=>x.date==="2026-10-09")?.optionalTraditionalMassReviews
