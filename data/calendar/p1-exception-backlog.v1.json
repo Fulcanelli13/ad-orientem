@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Bulk inspect 28 source-attested app C-code Common candidates and reconcile to master only when live source is present and identity matches; keep 3 extra Eastertide website variants ambiguous. Do not auto-select a saint Mass.",
+      "nextAction": "Resolve 11 incomplete Common candidate sources by exact source-owned inheritance and correct oration variants. Keep the 3 ambiguous Eastertide website entries outside canonical printed-family counts. Continue vetting legal/edition source constraints.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -127,7 +127,10 @@
         "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907380467",
         "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
         "furtherCommonCandidates": 28,
-        "ambiguousUnmatchedIndexRows": 3
+        "ambiguousUnmatchedIndexRows": 3,
+        "sourcePathsWithCompleteValidatedCore": 24,
+        "sourcePathCandidatesRequiringInheritance": 11,
+        "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json"
       }
     },
     {
@@ -282,13 +285,15 @@
   ],
   "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
   "appCommonSourceProgress": {
-    "mapped": 7,
+    "canonicalAppSourceComplete": 24,
+    "originalSevenComplete": 7,
+    "newDirectComplete": 17,
+    "partialAppSourceCandidates": 11,
+    "ambiguousWebVariants": 3,
     "totalIndexRows": 38,
-    "unmapped": 31,
-    "sevenSectionDirectTrilingual": 6,
-    "sharedDoctorInheritanceVerified": 1,
-    "sharedSectionsRecoveredInENFR": 18,
-    "additionalCandidateCodeChecksInFlight": 28,
-    "ambiguousIndexEntries": 3
+    "doctorC5aSourceInheritanceVerified": true,
+    "sharedDoctorComponents": 9,
+    "sharedENFRSectionsRecovered": 18,
+    "reviewGateOpen": true
   }
 }
