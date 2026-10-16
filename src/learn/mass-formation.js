@@ -307,6 +307,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;state.momentKey=null;
+    if(returnToLearn&&win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)return true;
     if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{
       close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()
     });
