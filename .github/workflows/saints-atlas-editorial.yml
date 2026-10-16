@@ -9,6 +9,10 @@ on:
       - 'tests/saints-full-calendar-exact-key-ledger.mjs'
       - 'tests/saints-twelve-observed-source-resolution.mjs'
       - 'tests/saints-existing-shrine-geography-readiness.mjs'
+      - 'tests/saints-six-name-alias-evidence.mjs'
+      - 'tests/saints-research-shrine-map.mjs'
+      - 'data/saints/six-duplicate-name-alias-evidence-20261016.v1.json'
+      - 'src/find/saints-shrine-map-research.js'
       - 'data/saints/existing-shrine-geography-readiness-20261016.v1.json'
       - 'data/saints/observed-2026-twelve-person-source-reconciliation.v1.json'
       - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
@@ -39,6 +43,10 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Verify six source-owner alias cases without canonical renames
+        run: node tests/saints-six-name-alias-evidence.mjs
+      - name: Verify 121-site gated Saints research map without new physical site IDs
+        run: node tests/saints-research-shrine-map.mjs
       - name: Protect existing source-backed Shrine and Geography candidate coverage
         run: node tests/saints-existing-shrine-geography-readiness.mjs
       - name: Verify all twelve observed personlike source gaps and held apostolic exception
@@ -59,6 +67,7 @@ jobs:
         run: |
           node --check src/find/saints-lens.js
           node --check src/find/saints-catalogue.js
+          node --check src/find/saints-shrine-map-research.js
           node --check src/find/saints-release-policy.js
           node --check src/find/saints-source-index.js
           node --check src/find/saints-calendar-context.js
