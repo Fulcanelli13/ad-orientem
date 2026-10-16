@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Research-only browser/mobile acquisition QA. NEVER infers photo licensing or user approval.
-// On CI: npm ci && npx playwright install --with-deps chromium && node tests/sacred-art-mobile-photo-e2e.mjs
+// On CI: npm install --no-package-lock --ignore-scripts --no-audit --no-fund && npx playwright install --with-deps chromium && node tests/sacred-art-mobile-photo-e2e.mjs
 // Output: artifacts/sacred-art-mobile-qa/report.json + small 390px mobile screenshots.
 import assert from 'node:assert/strict';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -56,9 +56,9 @@ try {
       const rect=image.getBoundingClientRect();
       const frame=image.closest('.imageframe').getBoundingClientRect();
       const grid=image.closest('.photogrid');
-      const gridCols=grid?getComputedStyle(grid).gridTemplateColumns.trim().split(/\\s+/).length:0;
+      const gridCols=grid?getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/).length:0;
       const fallback=image.dataset.fallback||'';
-      const fallbackIsBounded=!fallback || !/commons\\.wikimedia\\.org\\/wiki\\/Special:FilePath\\//i.test(fallback) || /[?&]width=640(?:&|$)/.test(fallback);
+      const fallbackIsBounded=!fallback || !fallback.includes('commons.wikimedia.org/wiki/Special:FilePath/') || /[?&]width=640(?:&|$)/.test(fallback);
       return {photoPresent:true,objectFit:getComputedStyle(image).objectFit,
         boundedPreviewFallback:fallbackIsBounded,
         photoGridColumns:gridCols,
