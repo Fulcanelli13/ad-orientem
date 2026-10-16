@@ -125,7 +125,14 @@
       "curatedCards": "UNCHANGED",
       "rollback48": "UNCHANGED",
       "rubricOverlay": "UNCHANGED"
-    }
+    },
+    "wordAnchorsLinkedToExistingRubricOrPriestActionOwners": 53,
+    "wordAnchorsWithoutMatchedCueLevelGestureOwner": 13,
+    "wordAnchorsWithExistingExactRubricTriggerSpan": 2,
+    "observedOriginalResearchLatinContentDifferenceRows": 3,
+    "latinDiscrepanciesClassifiedAsAccentVariations": 2,
+    "latinDiscrepanciesConditionalGospelName": 1,
+    "approvedNewCeremonialTriggers": 0
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -143,6 +150,8 @@
     "All 66 source-trigger offsets identify exact canonical Sung UTF-16 text spans, but actor, posture/gesture, 1962 authority and ritual applicability remain editorial holds; none is approved for new public binding.",
     "All 435 research-unit Latin extracts are internally exact/substring-consistent with the workbook's own 279-cue source sheet (159 whole, 276 subspan); this does not override 3 donor differences and 5 dynamic source slots found against GitHub.",
     "The workbook's 279 priest-event IDs now have one-to-one source-cue identities; exact actor/action/voice/ritual certification and conformity to printed 1962 rubrics remain separate gates.",
-    "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge."
+    "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge.",
+    "1960 Codex Rubricarum §518(b) requires position/form/feast checks for Et incarnatus est; an unconditional priest kneel from one Latin token would contradict seated-vs-standing distinction.",
+    "The frozen source-first model has a potentially static 'secúndum Matthǽum' donor at C0084 independent from the resolved Gospel Proper at B026; targeted John Gospel reproduction test is part of P0. Owner must certify and correct form-applicable runtime behavior before P1."
   ]
 }
