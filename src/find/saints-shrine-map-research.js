@@ -60,6 +60,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     external_relic_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.relic_subjects).map(x=>x.subject_id)),
     shared_relic_subject_other_shrine_names:Object.freeze(arr(caseEvidence?.shared_original_relic_subject_name_references).map(x=>x.other_shrine_name)),
     external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
+    subject_site_claim_status:caseEvidence?.institutional_subject_evidence_review?.subject_site_claim_status??null,
     institutional_subject_source_links:Object.freeze(arr(caseEvidence?.institutional_subject_evidence_review?.references)
       .filter(x=>/^https:\/\//i.test(txt(x.url))&&!quarantinedSourceHost(x.url))
       .map(x=>({url:x.url,issuer:txt(x.issuer),claim_scope:txt(x.claim_scope),evidence_mode:txt(x.evidence_mode)}))),
@@ -144,6 +145,11 @@ export function renderSaintResearchShrineSheet(vm){
     ?'<small>'+esc(say("Other shrine name using the same relic-research subject (not certified identity): ","Autre nom de sanctuaire utilisant le même sujet de recherche sur les reliques (identité non certifiée) : ")+x.shared_relic_subject_other_shrine_names.join(" · "))+"</small>":"")
   +(arr(x.external_art_research_subject_ids).length
     ?'<small>'+esc(say("Unapproved art research subjects: ","Sujets de recherche artistique non approuvés : ")+x.external_art_research_subject_ids.join(" · "))+'</small>':"")
+  +(x.subject_site_claim_status==="TRADITION_ATTESTED_NOT_LIFE_EVENT"
+    ?'<p class="aoSaintSourceEvidenceStatus">'+esc(say("Traditional association reported by the institution; not a verified historical life event.","Association traditionnelle rapportée par l’institution ; ce n’est pas un événement historique établi."))+'</p>'
+    :x.subject_site_claim_status==="LOCAL_PATRON_EPITHET_REVIEW"
+    ?'<p class="aoSaintSourceEvidenceStatus">'+esc(say("Local patronage documented; precise historical epithet still requires confirmation.","Patronage local documenté ; le titre historique précis reste à confirmer."))+'</p>'
+    :"")
   +(arr(x.institutional_subject_source_links).length
     ?'<div class="aoSaintSourceInstitutionalEvidence"><small>'+esc(say("Additional official subject sources (identity still unapproved)","Sources institutionnelles supplémentaires (identité non approuvée)"))+'</small>'
      +arr(x.institutional_subject_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.url)+'" target="_blank" rel="noopener noreferrer">'
