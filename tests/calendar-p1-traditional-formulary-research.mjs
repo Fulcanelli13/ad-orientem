@@ -14,6 +14,8 @@ const sourceStructures=load(root+"p1-office-versus-mass-source-structure.v1.json
 const partialRecovery=load(root+"p1-partial-common-source-recovery.v1.json");
 const apostleVigil=load(root+"p1-apostle-vigil-oration-variant-audit.v1.json");
 const originalSourceGaps=load(root+"p1-unresolved-original-source-analysis.v1.json");
+const paschalFrenchDraft=readFileSync(new URL("../docs/research/P1-PASCHAL-MARTYRS-FRENCH-EDITORIAL-CANDIDATES-20261016.md",import.meta.url),"utf8");
+const vigilEnglishDraft=readFileSync(new URL("../docs/research/P1-APOSTLES-VIGIL-SECOND-COLLECT-ENGLISH-20261016.md",import.meta.url),"utf8");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -106,6 +108,22 @@ assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="EVIDENCE_PENDING").lengt
 assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="PARTIAL_SOURCE_RECOVERY_VERIFIED").length,1);
 assert.equal(partialRecovery.schema,"AO_P1_PARTIAL_COMMON_SOURCE_RECOVERY_V1");
 assert.equal(apostleVigil.schema,"AO_P1_APOSTLE_VIGIL_VARIANT_SOURCE_AUDIT_V1");
+assert.equal(originalSourceGaps.frenchPaschalDraftSectionCount,6);
+assert.equal(originalSourceGaps.copyOfLatinProperIntoNewRuntimeLibrary,false);
+assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C3ap").editorialCandidateCount,6);
+assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C3ap").completeTranslationExistsInAdOrientemSource,false);
+assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C3ap").editorialCandidateStatus,"DRAFT_ONLY_NOT_IMPORTED_OR_SOURCE_CERTIFIED");
+assert.equal((paschalFrenchDraft.match(/^## [1-6] — /gm)??[]).length,6);
+for(const section of ["Introitus","Lectio","Graduale","Evangelium","Offertorium","Communio"])
+  assert.ok(paschalFrenchDraft.includes("— "+section),"Draft must address same canonical Latin C3p section");
+assert.ok(paschalFrenchDraft.includes("UNREVIEWED editorial translation"));
+assert.ok(paschalFrenchDraft.includes("not a certified official translation"));
+assert.ok(paschalFrenchDraft.includes("Do not use as a runtime fallback"));
+assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C1v").sourceTranslationMismatchVerified,true);
+assert.ok(vigilEnglishDraft.includes("Our offenses") || vigilEnglishDraft.includes("our offenses"));
+assert.ok(vigilEnglishDraft.includes("every danger"));
+assert.ok(vigilEnglishDraft.includes("not approved or imported"));
+assert.equal(forms.sourceOwnedCommonPathsMapped,28);
 assert.equal(apostleVigil.variants.length,3);
 assert.equal(apostleVigil.variants.find(x=>x.key==="Oratio 2 loco").certifiedEnglishTranslation,false);
 assert.equal(apostleVigil.runtimeSectionProblem.EnglishOratioDefaultPresent,false);
