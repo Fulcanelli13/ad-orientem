@@ -85,6 +85,10 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
 
   if(vm.route==="/settings"||vm.route==="main"){
     return shell(L("Settings","Réglages"),
+      section(L("APP & UPDATES","APPLICATION & MISES À JOUR"),
+        row(L("Installed app & sources","Application installée & sources"),
+          L("Version, site address, safe update and source information","Version, adresse du site, mise à jour et sources"),
+          icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources'))+
       section(L("APP","APPLICATION"),
         routeRow(L("General","Général"),L("Vibration, screen and resume options","Vibration, écran et reprise"),"/settings/general")+
         routeRow(L("Display & Accessibility","Affichage & accessibilité"),L("Text size, animations, contrast and artwork","Taille du texte, animations, contraste et œuvres"),"/settings/accessibility")+
@@ -93,11 +97,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         routeRow(L("Mass","Messe"),L("Choices used when you start a new Mass","Choix utilisés lorsque vous commencez une nouvelle Messe"),"/settings/mass")+
         routeRow(L("Local Church & Customs","Église locale & usages"),L("Save the usual practices at a particular church","Enregistrer les usages habituels d’une église"),"/settings/local-customs")+
         routeRow(L("Prayer & Devotions","Prière & dévotions"),L("Choose how the Rosary, Stations and Angelus behave","Choisir le comportement du Rosaire, du Chemin de Croix et de l’Angélus"),"/settings/prayer"))+
-      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data"))+
-      section(L("APP & UPDATES","APPLICATION & MISES À JOUR"),
-        row(L("Installed app & sources","Application installée & sources"),
-          L("Version, site address, safe update and source information","Version, adresse du site, mise à jour et sources"),
-          icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources')),true);
+      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data")),true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
