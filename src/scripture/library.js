@@ -402,7 +402,8 @@ export function mountScriptureLibrary(root,{
      try{
        const module=await import("./related-objects.js");
        if(!related.isConnected||!related.open)return;
-       const hits=module.scriptureLinkedObjectsForPassage(location,{limit:30});
+       const hits=await module.scriptureLinkedObjectsForPassageWithAtlas(location,{limit:40});
+       if(!related.isConnected||!related.open)return;
        relatedBody.replaceChildren();
        if(!hits.length){relatedBody.append(element("p",lang==="fr"?"Aucun autre objet lié à ces versets.":"No documented cross-module connections for these verses.","aoScriptureNotice"));return;}
        relatedBody.append(element("p",lang==="fr"
