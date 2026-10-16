@@ -453,6 +453,25 @@ try{
  }
  console.log("PASS Calendar and Sexual Ethics reading/source checks at 320/360/390/430px");
  assert.deepEqual(pageErrors.filter(s=>/SyntaxError|ReferenceError|TypeError|import.*failed|Cannot read/.test(s)),[], "Deferred Formation/Calendar caused errors");
+ // Navigation history: direct Home deep-links must not invent unvisited Formation pages.
+ assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home")))?.ok,true);
+ const deepEthics=await page.evaluate(()=>globalThis.AO_MODULES.open("learn.sexual_ethics",{questionId:"CSE001"}));
+ assert.equal(deepEthics?.ok,true,"Home to Ethics question did not open");
+ await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").waitFor({state:"visible",timeout:15000});
+ await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").click();
+ await page.locator("#ao-sexual-ethics-root").waitFor({state:"detached",timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:15000});
+ assert.equal(await page.locator("#ao-learn-modular-root:visible").count(),0,
+  "Direct Ethics Back invented an unvisited Formation parent");
+ // An actual Formation parent must be restored, including its chosen family.
+ assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn")))?.ok,true);
+ const family=await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family);
+ assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.sexual_ethics")),true);
+ await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").click();
+ await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().open===true,null,{timeout:15000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family),family,
+  "Formation child Back lost its visited parent family");
+ console.log("PASS observed Back from direct Ethics and visited Formation parent");
  console.log("PASS Home avoided Formation courses and Calendar runtime; first-use Formation child and Calendar navigation preserved");
  console.log("FORMATION_CALENDAR_LAZY="+JSON.stringify({coldMs,calMs,coldRequests:cold.length,coldBytes:cold.reduce((n,v)=>n+v.bytes,0),calendarInstalled:calendar.status.installed,deepLinks:["learn.spiritual_life","learn.sexual_ethics","learn.rites.sick"]}));
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
