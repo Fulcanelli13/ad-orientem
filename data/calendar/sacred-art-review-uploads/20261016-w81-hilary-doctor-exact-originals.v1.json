@@ -1,0 +1,92 @@
+{
+  "schema": "AO_SACRED_ART_HILARY_OF_POITIERS_IDENTITY_CORRECTION_W81_20261016_V1",
+  "governingPrinciple": "Do not conflate Hilarion the Hermit / Hilary the Hermit, Saint Hilary of Poitiers, or saint-name churches with the Doctor; owner research PR #887 only.",
+  "invalidPreviousChoice": {
+    "oldOct12OriginalId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+    "artist": "Juan Correa de Vivar",
+    "museum": "Museo del Prado",
+    "inventory": "P001300",
+    "officialTitle": "San Lorenzo / San Hilario ermitaño",
+    "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-lorenzo-san-hilario-ermitao/71cff54c-68c8-4be5-8704-15713fe411a8",
+    "reason": "Wrong saint: the verso saint is HILARY THE HERMIT not Doctor Saint Hilary of Poitiers. Preserve Oct12 historical choice as an invalid-for-category record, not deletion or new user rating."
+  },
+  "provenDistinctOriginals": [
+    {
+      "id": "G29-001",
+      "saint": "Saint Hilary of Poitiers",
+      "artist": "Jérôme-Martin Langlois",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "year": 1823,
+      "medium": "oil on canvas",
+      "location": "Saint-André Cathedral, Bordeaux, France",
+      "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+      "identityEvidence": "Iconography explicitly defines Poitiers Doctor, writing De Trinitate. Signed Langlois 1823 and inscription DE TRINITATE.",
+      "type": "FIRST_DISTINCT_PHYSICAL_ORIGINAL",
+      "photoMaster": "UNRESOLVED",
+      "photographicRights": "UNRESOLVED",
+      "originalSourceRegistry": "W29+W32"
+    },
+    {
+      "id": "QCP-HILARY-LEDUC-1896-1900",
+      "saint": "Saint Hilary of Poitiers",
+      "artist": "Ozias Leduc",
+      "title": "Saint Hilaire rédigeant son traité sur la Trinité",
+      "yearRange": "1896–1900",
+      "medium": "oil on canvas marouflaged onto wall",
+      "location": "Église Saint-Hilaire-de-Poitiers, Mont-Saint-Hilaire, Québec, Canada",
+      "sources": [
+        "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=93184&methode=consulter&type=bien",
+        "https://mbamsh.com/expositionsvirtuelles/oziasleduc/eglise_st_hilaire-st_hilaire_church-fra.html"
+      ],
+      "identityEvidence": "Québec provincial heritage register explicitly names Leduc's original Saint Hilary composing Treatise on Trinity; museum explicitly identifies patron as Saint-Hilaire de Poitiers. Original commissioned church mural paintings distinct from Bordeaux Langlois.",
+      "type": "SECOND_DISTINCT_PHYSICAL_ORIGINAL",
+      "photoMaster": "UNRESOLVED",
+      "photographicRights": "UNRESOLVED",
+      "curatorialAestheticFit": "NEEDS_USER_REVIEW_SYMBOLIST_PASTEL_PALETTE"
+    }
+  ],
+  "additionalConditionalLeads": [
+    {
+      "id": "FR-BEHOUST-HILARY",
+      "title": "Saint Hilaire",
+      "artist": "Unattributed 18th-century",
+      "source": "https://www.yvelines.fr/wp-content/uploads/2011/09/86_r1312967569573.pdf",
+      "evidence": "Yvelines departmental preservation report names 18th-century altarpiece and church titular saint Hilaire in Béhoust. Doctor-specific iconographic confirmation and direct museum/POP photographic master still pending.",
+      "countsAsCertifiedDoctorOriginal": false
+    },
+    {
+      "id": "FR-MER-HILARY",
+      "title": "Saint Hilaire",
+      "artist": "Unattributed",
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM41002658",
+      "evidence": "French Ministry culture lists original oil in Église Saint-Hilaire, Mer, 180×127 cm, but does not distinguish Poitiers Doctor vs homonymous saint.",
+      "countsAsCertifiedDoctorOriginal": false
+    }
+  ],
+  "rejectedAsSeparateOriginals": [
+    {
+      "artist": "Jean-Baptiste Dubourdieu",
+      "year": 1846,
+      "place": "Église Saint-Hilaire de Paillet",
+      "reason": "According to French inventory this is a copy of Langlois 1823 original, so cannot count as distinct composition."
+    },
+    {
+      "place": "Fargues-Saint-Hilaire",
+      "reason": "Also copy of Langlois original according to ministry source."
+    }
+  ],
+  "countReconciliation": {
+    "w32PreviousAtLeastTwo": 73,
+    "w32PreviousInsufficient": 2,
+    "w32AfterWrongHermitRemovedBeforeReplacement": 72,
+    "verifiedLeducDistinctRestoresTo": 73,
+    "doctorsWithoutTwoRemain": [
+      "Saint Cyril of Alexandria",
+      "Saint Cyril of Jerusalem"
+    ],
+    "masterPhotosNewlyAcquired": 0,
+    "productionApproved": 0
+  },
+  "userApproval": "NOT_REQUESTED; NO_RATING_CHANGED",
+  "selectionAction": "Hold invalid historic Hilary candidate as provenance; present Langlois and Leduc only as original research options with unverified reproduction."
+}
