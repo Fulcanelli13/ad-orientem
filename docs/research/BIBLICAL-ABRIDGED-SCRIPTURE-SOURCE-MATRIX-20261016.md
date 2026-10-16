@@ -132,3 +132,32 @@ The exact original **298-row v3 Excel and full JSON** were retrieved and reconci
 ### v4 full source-of-truth integration (same research branch)
 
 The complete canonical **308-row source selection master** (all 151 existing AO event keys, 37 sections, 20 total registered source IDs comprising the unchanged original 10-source comparison pool, 9 newly verified supplemental publishers and the excluded archival CHRON152) is now also committed in the existing research PR as `data/explore/biblical-pericope-comparative-full-master.v4.json`. This replaces any need to reconstruct the 298 historical rows from private workbook files or concatenate incremental harvests for research. The 10-row v4 evidence JSON remains a provenance addendum, not a competing master. The conversation Excel and JSON exports contain the same semantically reconciled selections; serialization may differ. This remains an unpublished, draft research artifact, not an application dependency.
+
+
+## Phase 5 — original editor story plan bulk harvest (v5, supersedes v4 metrics)
+
+**Current single canonical full comparative ledger:** `data/explore/biblical-pericope-comparative-full-master.v5.json` (432 rows). The `v4.json` file is an archival snapshot of the preceding harvest, **not** the current master. Do not merge a separate source ledger back into `v4`.
+
+This bulk tranche added **124 first-party exact Scripture-reference-to-existing-event records**, without composing or selecting Scripture prose:
+
+| First-party original editorial source | New source×event rows | Source witness |
+| --- | ---: | --- |
+| Life Bible / Tecarta, *100 Bible Stories* | 54 | https://lifebible.com/plan/100-bible-stories |
+| Mannora Bible, *100 Bible Stories* | 63 | https://mannora.com/events/ ; publisher editorial policy https://mannora.com/about/ |
+| Saint Mary's Press, *The Catholic Children's Bible* timeline | 7 | https://pages.smp.org/post/prayer-and-scripture/bible-timeline |
+| **TOTAL** | **124** | |
+
+**Validated aggregate source counts:** 151 unchanged Atlas event IDs, 37 unchanged reading sections, 432 published-reference evidence rows; **148/151** events have ≥1 independently qualified publisher selection, **83/151** ≥2 families, **56/151** ≥3 families; 21 independently qualified editorial families (historical source registry 23 entries, including provisional 1962 witness and excluded CHRON152).
+
+**Three gaps remain:** `Daniel 14:1–22` (Bel), `Daniel 14:23–42` (Dragon), `Acts 9:29–30` (Saul departs for Tarsus). Mannora's publisher-authored `2 Samuel 5:1–25` editorial article directly narrates David's capture of Zion, qualifying an independently edited **broader story scope** for the prior David/Jerusalem gap. The prior malformed `2 Samuel 5:1-` source is **still held** and was not silently fixed.
+
+**Integrity / qualification guards:**
+- These three publisher systems add genuinely separate editorial families; multiple rows within one family do not inflate counts.
+- Their full story/chapter assignments do **not** establish concise abbreviated Gospel or other Scripture verse cuts. `SOURCE_ORIGINAL_STORY_SCOPE` and `SELECTED_100_STORY_DAY_PASSAGE` remain separate from original Mass `SHORT` variants.
+- Different evangelists' narratives remain `PARALLEL_GOSPEL_REFERENCE_NOT_SAME_CANONICAL_PASSAGE`, not equivalently numbered passages.
+- Publisher titles that disagree with their selected Scripture reference, chapter-only overlaps unrelated to the event, and incidental subepisodes have been **held/excluded**. The separate v5 workbook `QA Holds` tab contains 20 candidate associations not imported as voting evidence.
+- Roman Catholic lectionary Sunday, weekday, deuterocanonical and USCCB witnesses are still **one Roman Catholic editorial family**. The 1962 Missal remains provisional rather than a separate qualified vote.
+- Both supplemental Protestant editorial collections cover the Protestant book set only; they **cannot** be evidence of neglected Catholic deuterocanonical passages. Saint Mary's Press provides a distinct Catholic reference lineage.
+- All original source references and original source URLs remain in the research metadata. Existing Bible editions, 37/151 registry, native Bible reader, Schuster research and deployed app remain unchanged. **0 final approved excerpts, 0 imported Scripture verse prose, 0 release.**
+
+**Next:** stop indiscriminate collecting. Target additional independent 3rd-family confirmations for the **68 events with fewer than two families**; prioritize Catholic-specific references, the 3 remaining gaps, then source-by-source passage boundary/shortening comparison. Popularity/editorial selection comes after that qualification pass.
