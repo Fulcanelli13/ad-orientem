@@ -2,9 +2,11 @@
 // The church is an external asset. Hotspots refer to existing canonical glossary IDs.
 const $ = id => document.getElementById(id);
 const A = window.BABYLON;
-if (!A) { $('status').textContent = 'Babylon.js CDN unavailable. Connect to the internet and reload.'; throw new Error('Babylon.js missing'); }
+if (!A) { $('status').textContent = '3D runtime unavailable. Use the standalone HTML release with embedded engine, not the unbundled source file.'; throw new Error('Babylon.js missing'); }
 const canvas = $('renderCanvas');
-const engine = new A.Engine(canvas, true, { preserveDrawingBuffer: false, stencil: true, adaptToDeviceRatio: true });
+let engine;
+try {engine = new A.Engine(canvas, true, { preserveDrawingBuffer: false, stencil: true, adaptToDeviceRatio: true });}
+catch(e){$('status').textContent='Your browser could not start WebGL. Enable hardware acceleration or use a newer browser. '+e.message;throw e;}
 const scene = new A.Scene(engine);
 scene.clearColor = new A.Color4(0.035,0.047,0.067,1);
 const ambient = new A.HemisphericLight('ambient', new A.Vector3(0,1,0),scene);
@@ -24,6 +26,7 @@ const entries = new Map();
 const markers = new Map();
 let source = null, loaded = [], loadedNodes=[], isLoaded=false, mode='survey', pending=null, entrance=null, floorY=null, busy=false;
 let draggingTouch = new Set();
+window.addEventListener('unhandledrejection',ev=>{status('3D error: '+String(ev.reason?.message||ev.reason).slice(0,240));});
 function status(message){$('status').textContent=message;}
 function enable(id, yes){$(id).disabled=!yes;}
 function setMode(next){
@@ -119,7 +122,7 @@ async function loadModel(item,label){
   busy=true;
   try{
     status('Importing 3D model. This may take a while…');
-    if(isLoaded){ for(const m of markers.values())m.dispose();markers.clear();
+    if(isLoaded){ setMode('survey'); for(const m of markers.values())m.dispose();markers.clear();
       loadedNodes.forEach(n=>n.dispose());loaded.forEach(m=>m.dispose());loaded=[];loadedNodes=[];entrance=null;floorY=null;
     }
     // Explicit .glb extension is necessary when the source URL ends in a query or the source is a File.
@@ -139,10 +142,24 @@ async function loadModel(item,label){
     $('empty').hidden=true;
     ['survey','start','place','save'].forEach(id=>enable(id,true));enable('walk',false);
     setMode('survey');
-    status('Loaded '+label+' · '+loaded.filter(m=>m.getTotalVertices()>0).length+' meshes. Set entrance to walk.');
-  }catch(e){isLoaded=loaded.length>0;status('Could not load GLB: '+(e?.message||e)+'. If remote, check CORS or use downloaded GLB.');}
+    if(label==='Built-in 3D test fixture'){
+      entrance=new A.Vector3(0,0,4.5);floorY=0;walk.position=new A.Vector3(0,1.65,4.5);
+      walk.rotation=new A.Vector3(0,Math.PI,0);enable('walk',true);
+      status('Test scene loaded. Click Walk and move with WASD. The blocks are test shapes, not church furnishings.');
+    }else{
+      status('Loaded '+label+' · '+loaded.filter(m=>m.getTotalVertices()>0).length+' meshes. Select Set entrance to walk.');
+    }
+  }catch(e){isLoaded=loaded.length>0;status('Unable to load the 3D file: '+String(e?.message||e).slice(0,260)+'. For remote links, try downloading the GLB and loading it through Choose File.');}
   finally{busy=false;}
 }
+$('demo').onclick=async()=>{
+  const node=document.getElementById('ao-demo-glb');
+  if(!node?.textContent?.trim()){status('Built-in test asset missing. Download the compiled standalone HTML from the GitHub artifact.');return;}
+  try{
+    const raw=atob(node.textContent.trim());const bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));
+    await loadModel(new File([bytes],'visible-mass-test.glb',{type:'model/gltf-binary'}),'Built-in 3D test fixture');
+  }catch(e){status('Unable to create demo GLB: '+e.message);}
+};
 $('modelFile').onchange=async e=>{const file=e.target.files?.[0];if(file)await loadModel(file,file.name);};
 $('loadUrl').onclick=()=>{const url=$('modelUrl').value.trim();if(!/^https:\/\//i.test(url))return status('Use a direct HTTPS .glb URL.');loadModel(url,url);};
 $('reference').onclick=()=>{if(!confirm('This is a 136.8 MB research-only scan. Its sanctuary is NOT approved for publication. Load it now?'))return; $('modelUrl').value=REFERENCE;loadModel(REFERENCE,'Giravolt — Nativitat de Durro (CC BY, test only)');};
