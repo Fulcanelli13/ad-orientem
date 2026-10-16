@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { latinCourseSourceHtml, latinCourseSourceLink, latinCourseSourceCss } from "../src/learn/latin-course-source-display.js";
 import {
   LATIN_COURSE_ROUTE_ID,
   canonicalChoiceValue,
@@ -72,6 +73,34 @@ for(let n=1;n<=40;n++){
     }
   }
 }
+// Source UI is documentary, not an online-verification claim.
+let sourceEntries=0,linked=0,unlinked=0;
+for(let n=1;n<=40;n++){
+ const j=lesson(n),ids=j.sources.map(source=>source.id);
+ for(const lang of ["en","fr"]){
+  const html=latinCourseSourceHtml(j,ids,lang);
+  assert.match(html,/class="aoL2Sources aoLatinWitnessDisclosure"/);
+  assert.match(html,/class="aoLatinWitnessList"/);
+  assert.equal((html.match(/data-ao-latin-source-id=/g)||[]).length,ids.length);
+  assert.equal((html.match(/data-ao-latin-link-kind=/g)||[]).length,
+   j.sources.filter(s=>latinCourseSourceLink(s)).length);
+  assert.ok(html.includes(lang==="fr"?"Les liens sont des témoins documentaires":"Links identify documentary witnesses"));
+ }
+ sourceEntries+=ids.length;
+ linked+=j.sources.filter(source=>latinCourseSourceLink(source)).length;
+ unlinked+=j.sources.filter(source=>!latinCourseSourceLink(source)).length;
+}
+assert.ok(sourceEntries>150 && unlinked>linked,"Bibliographic-only references were wrongly promoted to online links");
+assert.match(latinCourseSourceCss(),/44px/);
+assert.equal(latinCourseSourceLink({sourceUrl:"javascript:alert(1)"}),null);
+assert.equal(latinCourseSourceLink({sourceUrl:"https://user:pass@example.com"}),null);
+assert.equal(latinCourseSourceLink({sourceRepository:"DivinumOfficium/divinum-officium",sourceCommit:"x",sourcePath:"../secret.txt"}),null);
+assert.equal(latinCourseSourceLink({sourceUrl:"http://example.com"}),null);
+assert.match(latinCourseSourceHtml(lesson(35),lesson(35).sources.map(s=>s.id),"en"),/Pinned text witness/);
+assert.match(latinCourseSourceHtml(lesson(33),lesson(33).sources.map(s=>s.id),"en"),/Source page/);
+assert.match(readFileSync("src/learn/latin-course-v2.js","utf8"),/latinCourseSourceHtml\(lesson,ids,lang\)/,
+ "Live v2 course did not adopt the sourced reference disclosure");
+
 assert.equal(lessons,40);
 assert.equal(blocks,245);
 assert.equal(exercises,431);
