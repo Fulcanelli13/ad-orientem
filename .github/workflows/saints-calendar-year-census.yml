@@ -7,6 +7,8 @@ on:
       - 'tools/saints/project-observed-day-subject-demand.mjs'
       - 'tools/saints/reconcile-2026-cross-owner-evidence.mjs'
       - 'tools/saints/join-historic-components-to-observed-year.mjs'
+      - 'tools/saints/build-2026-full-calendar-coverage-matrix.mjs'
+      - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
       - 'data/saints/historical-v4333-311-components.recovered.v1.json'
       - '.github/workflows/saints-calendar-year-census.yml'
   workflow_dispatch:
@@ -36,11 +38,15 @@ jobs:
         run: node tools/saints/reconcile-2026-cross-owner-evidence.mjs
       - name: Join all 311 committed historical saint-art components to 2026 observed source evidence
         run: node tools/saints/join-historic-components-to-observed-year.mjs
+      - name: Compile deduplicated all-365-day Calendar coverage and 42 reference gaps
+        run: node tools/saints/build-2026-full-calendar-coverage-matrix.mjs
       - name: Keep auditable source-owner census
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: saints-2026-observed-source-owner-census
-          path: artifacts/saints-calendar-census/*.json
+          path: |
+            artifacts/saints-calendar-census/*.json
+            artifacts/saints-calendar-census/saints-2026-coverage-report.md
           if-no-files-found: warn
           retention-days: 14
