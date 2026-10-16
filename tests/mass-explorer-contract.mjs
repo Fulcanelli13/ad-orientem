@@ -34,6 +34,8 @@ assert.match(en,/Suscipe, sancte Pater/);
 assert.match(en,/Suscipe, sancte Pater, omnipotens/);
 assert.match(en,/Original Guide|SUNG MASS/);
 assert.match(en,/data-ao-mx-block="AO.SM.B031"/);
+assert.match(en,/class="aoMXAction" data-ao-mx-cue="AO.SM.C0111"/,"priestly action must have separate semantic presentation");
+assert.doesNotMatch(en,/<p lang="la" class="aoMXLatin">\[MAKES THE CROSS/,"English rubrics must not be marked as Latin");
 assert.doesNotMatch(en,/research-only manuscript|Ultra Master claim/);
 const fr=massExplorerMomentHtml(catalog,"AO.CARD.010",{blockId:"AO.SM.B031",french:true});
 assert.match(fr,/Guide d’origine|Guide d’ORIGINE|MESSE CHANTÉE/);
