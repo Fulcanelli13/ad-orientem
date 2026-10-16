@@ -62,6 +62,7 @@ export function mountScriptureLibrary(root,{
  let contextDepth="selected";
  let commentaryVisible=false;
  let relatedExpanded=false;
+ const relatedTrail=[];
  let browseExpanded=!context?.reference;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
@@ -113,6 +114,20 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   if(relatedTrail.length){
+     const back=element("button",lang==="fr"?"Retour au passage précédent":"Back to previous passage");
+     back.type="button";back.dataset.scriptureRelatedBack="";
+     back.addEventListener("click",()=>{
+       const prev=relatedTrail.pop();
+       if(!prev)return;
+       location=prev.location;context=prev.context;contextDepth=prev.contextDepth;
+       commentaryVisible=prev.commentaryVisible;relatedExpanded=prev.relatedExpanded;
+       browseExpanded=prev.browseExpanded;draw();
+       root.scrollTop=prev.scrollTop;
+       queueMicrotask(()=>wrap.querySelector(".aoScriptureRelated summary")?.focus?.({preventScroll:true}));
+     });
+     wrap.append(back);
+   }
    // Citation reading is the primary surface. All-library navigation lives below it.
    const browse=element("details",null,"aoScriptureBrowse");
    browse.open=browseExpanded;
@@ -401,9 +416,22 @@ export function mountScriptureLibrary(root,{
          const explanation=hit.description?.[lang]||relationText[hit.relation]?.[lang==="fr"?1:0]||
            (lang==="fr"?"Référence biblique liée à cet objet":"Source-linked biblical reference for this object");
          row.append(element("p",explanation,"aoScriptureRelatedExplanation"));
-         // A destination link must not be faked: currently the original
-         // destination does not guarantee a Back route to this passage.
-         relatedBody.append(row);
+         const read=element("button",lang==="fr"?"Lire ce passage cité":"Read this cited passage");
+         read.type="button";read.dataset.scriptureReadLinkedObject=hit.id;
+         read.addEventListener("click",()=>{
+           relatedTrail.push({
+             location,context,contextDepth,commentaryVisible,relatedExpanded,
+             browseExpanded,scrollTop:root.scrollTop
+           });
+           leaveSourceSegments();
+           location=scripturePassage(hit.passage);
+           context=Object.freeze({reference:hit.reference,passage:location});
+           contextDepth="selected";commentaryVisible=false;
+           relatedExpanded=false;browseExpanded=false;
+           draw();root.scrollTop=0;
+           queueMicrotask(()=>wrap.querySelector("[data-scripture-context-depth='selected']")?.focus?.({preventScroll:true}));
+         });
+         row.append(read);relatedBody.append(row);
        }
      }catch{
        if(relatedBody.isConnected)relatedBody.replaceChildren(element("p",lang==="fr"
