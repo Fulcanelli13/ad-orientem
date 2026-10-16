@@ -5,7 +5,7 @@
   "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38899362197",
   "sourceTest": "tests/calendar-p1-live-1962-source-discovery.mjs",
   "sourceOfTruth": "Existing Ad Orientem production resolver; browser output is a source identity and language-availability witness, not rights/permission or full printed-edition collation.",
-  "status": "LIVE_SOURCE_PATHS_VERIFIED_BUT_MASS_FORM_PRAYER_PROJECTION_NOT_TESTED",
+  "status": "ACTUAL_APP_1962_PATHS_AND_ALL_SIX_READ_ONLY_PARAGRAPH_TARGETS_VERIFIED_ROUTER_NOT_IMPLEMENTED",
   "observations": [
     {
       "date": "2026-10-09",
@@ -103,9 +103,10 @@
     "liveObservedOptionalNewmanFormulary": null,
     "liveCommonDoctorumResolvedPath": null,
     "runtimeReadOnlyExactParagraphNavigationImplemented": false,
-    "formSpecificAppliedCommemorations": "NOT_CERTIFIED_OR_SELECTED_BY_DAY_RESOLVER",
+    "formSpecificAppliedCommemorations": "INDEPENDENT_OF_READ_ONLY_REFERENCE; ACTIVE_MASS_SELECTION_PENDING",
     "establishedMassSourceRows": "ORIGINAL_DAY_RESOLVER_INCLUDES_COMMEMORATIONS_BUT_FORM_FILTER_MAY_OMIT_IN_SUNG_MASS",
-    "outputLinkPolicy": "AD_ORIENTEM_INTERNAL_MISSAL_ONLY"
+    "outputLinkPolicy": "AD_ORIENTEM_INTERNAL_MISSAL_ONLY",
+    "runtimeSourceToReaderParagraphsVerified": 6
   },
   "unverified": [
     "Exact 9 October reader-side deep-link API",
@@ -114,5 +115,35 @@
     "Newman proper or Doctorum Common source path",
     "Full printed 1962 prayer text parity and redistribution rights",
     "2020 vs 1960 and later legal permission rules"
-  ]
+  ],
+  "readOnlyReaderParagraphProof": {
+    "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630",
+    "adapter": "src/calendar/p1-internal-missal-link-resolution.js",
+    "sourcePath": "Sancti/10-09",
+    "principal": {
+      "id": "sancti:10-09:3:w",
+      "prayerParagraphIds": [
+        "COLLECT_SET.1",
+        "SECRET_SET.1",
+        "POSTCOMMUNION_SET.1"
+      ]
+    },
+    "historicalCommemoration": {
+      "id": "sancti:10-09t:4:r",
+      "prayerSourcePath": "Sancti/10-09t",
+      "prayerParagraphIds": [
+        "COLLECT_SET.2",
+        "SECRET_SET.2",
+        "POSTCOMMUNION_SET.2"
+      ]
+    },
+    "orderedSlots": [
+      "COLLECT_SET",
+      "SECRET_SET",
+      "POSTCOMMUNION_SET"
+    ],
+    "verifiedTargets": 6,
+    "status": "SOURCE_READY_ROUTER_NOT_IMPLEMENTED",
+    "liturgyStatement": "Historical Missal references; not evidence of which prayers are recited at a selected sung Mass."
+  }
 }
