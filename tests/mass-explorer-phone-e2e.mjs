@@ -65,6 +65,9 @@ try{
   assert.match(await prayer.innerText(),/Suscipe, sancte Pater/);
   assert.ok((await prayer.locator(".aoMXLatin").count())>=1,width+" lost original Latin");
   assert.ok((await prayer.locator(".aoMXTranslation").count())>=1,width+" lost published English");
+  const action=prayer.locator('[data-ao-mx-cue="AO.SM.C0111"]');
+  assert.equal(await action.locator("[lang=la]").count(),0,"Priset action must not falsely claim a Latin original");
+  assert.match(await action.innerText(),/Priest.s action|Makes the cross/i);
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-en.png")});
   // Suscipe's approved biblical comparison is in the existing Formation MF03
   // lesson, NOT an unverified direct prayer-to-verse attribution.
