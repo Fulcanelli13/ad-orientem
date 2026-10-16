@@ -760,6 +760,22 @@ export function createFindOwner(win=globalThis){
         }
         return;
       }
+      const readingTab=target?.closest?.("[data-bible-reading-tab]");
+      if(readingTab){
+        event.preventDefault?.();
+        const chosen=readingTab.dataset.bibleReadingTab;
+        if(["chapters","arcs","themes"].includes(chosen)){
+          const drawer=getRoot(win)?.querySelector?.("[data-bible-reading-panel]");
+          drawer?.querySelectorAll?.("[data-bible-reading-tab]")?.forEach(tab=>{
+            tab.setAttribute("aria-selected",String(tab.dataset.bibleReadingTab===chosen));
+          });
+          drawer?.querySelectorAll?.("[data-bible-reading-view]")?.forEach(view=>{
+            view.hidden=view.dataset.bibleReadingView!==chosen;
+          });
+          if(drawer)drawer.scrollTop=0;
+        }
+        return;
+      }
       const readingStart=target?.closest?.("[data-bible-reading-start]");
       if(readingStart){
         event.preventDefault?.();
