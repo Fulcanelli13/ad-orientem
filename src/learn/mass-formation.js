@@ -181,6 +181,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
       if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();
         if(state.view==="moment"){state.view="moments";state.momentKey=null;render();return;}
+        if(state.view==="stage"&&stageFromMoment){state.view="moment";state.stageId=null;stageFromMoment=false;render();return;}
         if(state.view==="stage"&&stageFromList){state.view="list";state.stageId=null;stageFromList=false;render();return;}
         if(state.view==="moments"&&momentsFromList){state.view="list";state.momentKey=null;momentsFromList=false;render();return;}
         close(true);return;
@@ -204,7 +205,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
         if(next>=0&&next<keys.length){state.momentKey=keys[next];render()}return;
       }
       if(target.dataset.aoMfRelatedStage&&state.data?.stages?.some(s=>s.id===target.dataset.aoMfRelatedStage)){
-        event.preventDefault();state.stageId=target.dataset.aoMfRelatedStage;state.view="stage";render();return;
+        event.preventDefault();stageFromMoment=state.view==="moment";stageFromList=state.view==="list";state.stageId=target.dataset.aoMfRelatedStage;state.view="stage";render();return;
       }
       if(target.dataset.aoMfStage){event.preventDefault();stageFromList=state.view==="list";state.view="stage";state.stageId=target.dataset.aoMfStage;state.momentKey=null;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
@@ -275,9 +276,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
-  let entryOrigin=null,stageFromList=false,momentsFromList=false;
+  let entryOrigin=null,stageFromList=false,stageFromMoment=false,momentsFromList=false;
   async function open(opts={}){
-    entryOrigin=captureObservedModuleOrigin(win,"learn");stageFromList=false;momentsFromList=false;
+    entryOrigin=captureObservedModuleOrigin(win,"learn");stageFromList=false;stageFromMoment=false;momentsFromList=false;
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
