@@ -25,12 +25,21 @@ const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usag
 const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
 const pageErrors=[];
 page.on('pageerror',err=>pageErrors.push(String(err).slice(0,500)));
+const remoteHTTPErrors=[],remoteRequestFailures=[];
+page.on('response',res=>{
+  const status=res.status(),url=res.url();
+  if(status>=400 && /^https?:/.test(url))remoteHTTPErrors.push({status,url});
+});
+page.on('requestfailed',request=>{
+  const url=request.url();
+  if(/^https?:/.test(url))remoteRequestFailures.push({url,reason:String(request.failure()||'unknown')});
+});
 const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,
   testedAt:new Date().toISOString(),viewport:{width:390,height:844},
   categories:categories.length,categoryWithLinkedPreview:categories.filter(c=>c.works.some(w=>w.photos.length)).length,
   photoEntries:photos.length,distinctPreviewURLs:distinct.length,
   owner:'draft PR #887 only',ratingOrSelectedStatusChanged:false,productionPhotoRightsCertified:false,
-  browserLoadChecks:{},layoutChecks:[],broken:[],primaryFailures:[],recoveredViaFallback:[],unavailable:[],pageErrors,notes:[
+  browserLoadChecks:{},networkDiagnostics:{httpErrors:remoteHTTPErrors,requestFailures:remoteRequestFailures},layoutChecks:[],broken:[],primaryFailures:[],recoveredViaFallback:[],unavailable:[],pageErrors,notes:[
     'A linked URL does not establish an image byte acquisition, complete painted surface or reusable app rights.',
     'Network errors from Commons or institutional servers require a human retry; never infer a painting rejection.',
     'All mobile images must be contain-fit and show the full painted surface, not clipped or stretched.'
@@ -141,7 +150,9 @@ try {
     'categoryIndex\tsubject\tphotoId\treason\tpreview\tsourcePage\n'+outcome.broken.map(p=>
       [p.categoryIndex,p.subject,p.photoId,p.reason,p.preview,p.sourcePage].join('\t')).join('\n')+'\n');
   process.stdout.write(JSON.stringify({linked:outcome.categoryWithLinkedPreview,remote:outcome.browserLoadChecks,
-    layoutFailures:badLayout.length,pageErrors:pageErrors.length,report:output+'/report.json'})+'\n');
+    layoutFailures:badLayout.length,pageErrors:pageErrors.length,
+    httpStatuses:remoteHTTPErrors.reduce((acc,x)=>(acc[x.status]=(acc[x.status]||0)+1,acc),{}),
+    report:output+'/report.json'})+'\n');
   assert.equal(categories.length,168,'Category count drifted');
   assert.ok(outcome.categoryWithLinkedPreview===168,'Source-linked categories regressed');
   assert.deepEqual(badLayout,[],'390px contain-fit or frame overflow regression');
