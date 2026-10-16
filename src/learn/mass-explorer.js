@@ -199,7 +199,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
   const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
        String(win?.document?.documentElement?.lang||"").startsWith("fr");
-  function paint(){
+  function paint({focusBlock=false}={}){
     const node=root();if(!node||!catalog)return false;
     const fr=french();
     node.setAttribute("aria-label",pick(fr,"Mass Explorer","Explorer la Messe"));
@@ -209,15 +209,24 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=0;
-    node.querySelector("main h1")?.setAttribute("tabindex","-1");
-    node.querySelector("main h1")?.focus?.({preventScroll:true});
+    const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
+    const rail=selected?.closest?.(".aoMXBlockIndex");
+    if(rail){
+      // Rebuilding the tab row resets its scrollLeft. Keep the selected
+      // canonical source block visible without scrolling the article itself.
+      const container=rail.getBoundingClientRect(),item=selected.getBoundingClientRect();
+      rail.scrollLeft+=(item.left-container.left)-(container.width-item.width)/2;
+    }
+    const heading=node.querySelector("main h1");
+    heading?.setAttribute("tabindex","-1");
+    (focusBlock&&selected?selected:heading)?.focus?.({preventScroll:true});
     return true;
   }
   function setMoment(key,selectedBlockId=null){
     if(!catalog?.byKey.has(key))return false;
     momentKey=key;
     blockId=selectedBlockId&&catalog.byBlock.get(selectedBlockId)?.key===key?selectedBlockId:null;
-    return paint();
+    return paint({focusBlock:Boolean(selectedBlockId)});
   }
   function close(toLearn=false){
     const node=root();
