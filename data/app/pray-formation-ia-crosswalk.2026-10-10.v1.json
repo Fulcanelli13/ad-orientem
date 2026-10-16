@@ -1626,10 +1626,10 @@
       },
       {
         "from": "apostolate:AQ01",
-        "to": "pray.marian",
+        "to": "pray.rosary",
         "surface": "pray",
         "kind": "owned-surface",
-        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
         "source": "src/apostolate/corpus.js"
       },
       {
@@ -1706,10 +1706,10 @@
       },
       {
         "from": "apostolate:AQ07",
-        "to": "pray.holy_souls",
+        "to": "pray.eternal_rest",
         "surface": "pray",
         "kind": "owned-surface",
-        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
         "source": "src/apostolate/corpus.js"
       },
       {
@@ -1802,10 +1802,10 @@
       },
       {
         "from": "apostolate:HS05",
-        "to": "pray.holy_souls",
+        "to": "pray.eternal_rest",
         "surface": "pray",
         "kind": "owned-surface",
-        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
         "source": "src/apostolate/hs-corpus.js"
       },
       {
@@ -1842,10 +1842,10 @@
       },
       {
         "from": "apostolate:HS06",
-        "to": "pray.holy_souls",
+        "to": "pray.eternal_rest",
         "surface": "pray",
         "kind": "owned-surface",
-        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
         "source": "src/apostolate/hs-corpus.js"
       },
       {
@@ -2341,20 +2341,22 @@
       "remediation": "Extend the existing handler to permit the calendar canonical route, preserving return state; validate in phone journey. Do not add new Calendar module."
     },
     {
-      "severity": "P1",
-      "issue": "Apostolate references a Marian Prayer route not present in the 23-route Prayer presentation registry.",
-      "target": "pray.marian",
+      "severity": "P2",
+      "issue": "Historical invalid Marian Prayer target corrected in current Apostolate source; real phone return still requires verification.",
+      "target": "pray.rosary",
       "reference_count": 1,
       "owner": "src/apostolate/corpus.js",
-      "remediation": "Resolve the intended canonical existing prayer/route (e.g. Rosary or Prayer Library detail) and verify return. Do not create a parallel Marian module."
+      "remediation": "Confirm source-owned Rosary state and exact Apostolate return in real phone test; do not create another Marian module.",
+      "resolution_state": "SOURCE_TARGET_REPAIRED_PHONE_NOT_VERIFIED"
     },
     {
-      "severity": "P1",
-      "issue": "Apostolate references a Holy Souls Prayer route not present in the 23-route Prayer presentation registry.",
-      "target": "pray.holy_souls",
+      "severity": "P2",
+      "issue": "Three historical invalid Holy Souls Prayer targets corrected to existing Eternal Rest route; phone return still requires verification.",
+      "target": "pray.eternal_rest",
       "reference_count": 3,
       "owner": "src/apostolate/{corpus,hs-corpus}.js",
-      "remediation": "Resolve to an existing specific Prayer Library item or registered route using canonical prayer ID; do not invent a new route."
+      "remediation": "Verify existing source-owned Eternal Rest route, Apostolate origin/return and no missing prayer details in real phone test.",
+      "resolution_state": "SOURCE_TARGET_REPAIRED_PHONE_NOT_VERIFIED"
     }
   ],
   "gates": {
@@ -2380,5 +2382,6 @@
       "no users exposed to research-only materials",
       "320/360/390/430px touch, keyboard, offline and back/scroll restoration"
     ]
-  }
+  },
+  "reconciliation_date": "2026-10-16"
 }
