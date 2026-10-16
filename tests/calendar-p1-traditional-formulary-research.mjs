@@ -128,7 +128,7 @@ assert.equal(apostleVigil.variants.length,3);
 assert.equal(apostleVigil.variants.find(x=>x.key==="Oratio 2 loco").certifiedEnglishTranslation,false);
 assert.equal(apostleVigil.runtimeSectionProblem.EnglishOratioDefaultPresent,false);
 assert.equal(apostleVigil.actualMissalChoiceNotSelected,true);
-assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C3ap").status,"HELD_SOURCE_LANGUAGE_TEXT_NOT_PRESENT");
+assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C3ap").status,"FRENCH_TRANSLATION_WITNESSES_LOCATED_SIX_EDITORIAL_CANDIDATES_REQUIRE_PARITY_REVIEW");
 assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C7").status,"CLOSED_SOURCE_COMPOSITION_VERIFIED_LA_EN_FR");
 assert.equal(partialRecovery.cases.length,2);
 assert.equal(partialRecovery.overall.borrowedLanguageSections,28);
