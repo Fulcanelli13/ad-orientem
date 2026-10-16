@@ -77,7 +77,8 @@ try{
             if(!saint)return {id:x.subjectId,status:"NOT_EVALUATED_NO_RECONCILED_PERSON"};
             try{
               const decision=reviewNewSaintMassChoice({
-                date,saint,observedDay:r,protectedFeasts:protectedList.feasts});
+                date,saint,observedDay:r,protectedFeasts:protectedList.feasts,
+                sourceObservance:x});
               return {id:x.subjectId,status:decision.status,reason:decision.reason,
                 massInsertionAuthorized:decision.massInsertionAuthorized,
                 selectedFormularyId:decision.selectedFormularyId};
