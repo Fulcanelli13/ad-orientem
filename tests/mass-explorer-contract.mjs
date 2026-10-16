@@ -5,6 +5,7 @@ import {
   massExplorerMomentHtml,MASS_EXPLORER_ROUTE
 } from "../src/learn/mass-explorer.js";
 import {MASS_MAP_PHASES,massMapPhaseIndex,projectMassMap,massMapHtml,massMapCss} from "../src/learn/mass-map.js";
+import {massStudyStages,massStudyPathsHtml} from "../src/learn/mass-study-paths.js";
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const data=path=>JSON.parse(read(path));
@@ -12,6 +13,19 @@ const guides=data("data/presentation/guide-registry.v1.json");
 const sung=data("data/presentation/reader-text-sung.v1.json");
 const french=data("data/presentation/reader-french-ordinary.v1.json");
 const catalog=buildMassExplorerCatalog(guides,sung,french);
+const formation=data("data/learn/mass-formation-campion.v1.json");
+const full=buildMassExplorerCatalog(guides,sung,french,formation);
+assert.equal(full.formationStages.length,8);
+assert.equal(massStudyStages(formation).length,8);
+assert.deepEqual(full.formationStages.map(x=>x.id),["MF01","MF02","MF03","MF04","MF05","MF06","MF07","MF08"]);
+assert.equal(full.formationStages[2].title.en,"The Offertory and your offering");
+const thematicHtml=massStudyPathsHtml(full.formationStages);
+assert.equal((thematicHtml.match(/data-ao-mx-stage="MF0[1-8]"/g)||[]).length,8);
+assert.match(thematicHtml,/id="ao-mx-themes"/);
+assert.match(massStudyPathsHtml(full.formationStages,{french:true}),/L’Offertoire et votre offrande/);
+assert.match(massMapHtml(full,{studyHtml:thematicHtml}),/data-ao-mx-stage="MF03"/);
+assert.throws(()=>massStudyStages({...formation,stages:formation.stages.slice(1)}),/eight published/);
+
 assert.equal(MASS_EXPLORER_ROUTE,"learn.mass_explorer");
 assert.equal(catalog.sequence.length,32,"every published Guide moment remains navigable");
 assert.equal(catalog.byBlock.size,sung.blocks.length,"no Sung source block omitted");
@@ -57,11 +71,17 @@ assert.equal(getMassExplorerMoment(catalog,"AO.SM.B031").selectedBlockId,"AO.SM.
 assert.equal(getMassExplorerMoment(catalog,"AO.SM.B031",{form:"LOW"}),null,
   "Sung witness must not masquerade as Low Mass");
 assert.equal(getMassExplorerMoment(catalog,"AO.SM.DOES_NOT_EXIST"),null);
-const en=massExplorerMomentHtml(catalog,"AO.CARD.010",{blockId:"AO.SM.B031"});
+const en=massExplorerMomentHtml(full,"AO.CARD.010",{blockId:"AO.SM.B031"});
 assert.match(en,/Suscipe, sancte Pater/);
 assert.match(en,/Suscipe, sancte Pater, omnipotens/);
 assert.match(en,/Original Guide|SUNG MASS/);
 assert.match(en,/data-ao-mx-block="AO.SM.B031"/);
+assert.match(en,/data-ao-mx-jump="prayer"/);
+assert.match(en,/data-ao-mx-jump="guide"/);
+assert.match(en,/data-ao-mx-jump="course"/);
+assert.match(en,/The Offertory and your offering/);
+assert.doesNotMatch(en,/data-ao-mx-jump="scripture"/,
+  "Original Offertory Guide has no approved direct Scripture capsule: keep Romans within MF03");
 assert.match(en,/class="aoMXAction" data-ao-mx-cue="AO.SM.C0111"/,"priestly action must have separate semantic presentation");
 assert.doesNotMatch(en,/<p lang="la" class="aoMXLatin">\[MAKES THE CROSS/,"English rubrics must not be marked as Latin");
 assert.doesNotMatch(en,/research-only manuscript|Ultra Master claim/);
@@ -87,5 +107,7 @@ const formationHome=read("src/learn/presentation.js");
 assert.match(script,/MASS_EXPLORER_ROUTE_ID/);
 assert.match(lazy,/massExplorer:\(\)=>import\("\.\/mass-explorer\.js"\)/);
 assert.match(formationHome,/id:"learn.mass_explorer"/);
+assert.match(read("src/learn/mass-explorer.js"),/massStudyPathsHtml\(catalog\.formationStages/);
+assert.match(read("src/learn/mass-formation.js"),/studyStageId:/);
 assert.match(formationHome,/id:"learn.mass"/,"existing Formation stays in service");
 console.log("Mass Map + Explorer: five visual phases, 32 Guide routes, 96 Sung source blocks, bilingual witness, Scripture capsules, legacy Formation and P0 hold passed");
