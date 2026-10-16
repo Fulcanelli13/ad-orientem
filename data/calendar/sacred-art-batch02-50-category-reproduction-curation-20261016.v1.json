@@ -20,12 +20,12 @@
     "subjectsWithFive": 29,
     "subjectsNoFive": 21,
     "fiveStarPaintingRecords": 39,
-    "researchOptions": 34,
-    "visibleSourceFileCount": 63,
+    "researchOptions": 31,
+    "visibleSourceFileCount": 62,
     "fiveStarOriginalsWith2PlusPhotos": 3,
     "fiveStarOriginalsWithoutPhoto": 4,
     "categoriesWithNoImage": 8,
-    "categoriesWith2PlusDistinctPaintingOptions": 15,
+    "categoriesWith2PlusDistinctPaintingOptions": 14,
     "categoriesWithImage": 42,
     "reviewableNewPaintingOptions": 18
   },
@@ -1289,39 +1289,6 @@
           "rights": "PUBLIC_DOMAIN_PD_ART_PDM",
           "releaseApproved": false,
           "reviewableArtwork": true
-        },
-        {
-          "paintingId": "commons-el-paso-sacred-heart-retablo",
-          "subjectId": "DEV-01",
-          "title": "The Sacred Heart of Jesus",
-          "artist": "Anonymous Mexican artist",
-          "rating": null,
-          "lockedRating": false,
-          "authority": "MUSEUM_SOURCE_CANDIDATE_NOT_FIVE_STAR",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%27The_Sacred_Heart_of_Jesus%27,_anonymous_Mexican_retablo,_oil_on_tin,_mid_19th_century,_El_Paso_Museum_of_Art.JPG",
-          "technicalHold": null,
-          "placementNote": "",
-          "files": [
-            {
-              "id": "'The Sacred Heart of Jesus', anonymous Mexican retablo, oil on tin, mid 19th century, El Paso Museum of Art.JPG",
-              "label": "Source file as indexed",
-              "pixels": "",
-              "sourcePage": "https://commons.wikimedia.org/wiki/File:'The_Sacred_Heart_of_Jesus'%2C_anonymous_Mexican_retablo%2C_oil_on_tin%2C_mid_19th_century%2C_El_Paso_Museum_of_Art.JPG",
-              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/'The_Sacred_Heart_of_Jesus'%2C_anonymous_Mexican_retablo%2C_oil_on_tin%2C_mid_19th_century%2C_El_Paso_Museum_of_Art.JPG",
-              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/'The_Sacred_Heart_of_Jesus'%2C_anonymous_Mexican_retablo%2C_oil_on_tin%2C_mid_19th_century%2C_El_Paso_Museum_of_Art.JPG?width=950",
-              "verification": "FILE_PAGE_SOURCE_EVIDENCE",
-              "rights": "CHECK_FILE_PAGE_BEFORE_APP_RELEASE"
-            }
-          ],
-          "acquisition": {
-            "width": 2360,
-            "height": 3064,
-            "sha256": "dc2bff1f0b3601394da268703bbd655e316bdf02e5d3471b49195967cf024681",
-            "localArchiveOriginal": "originals/commons-el-paso-sacred-heart-retablo.jpg"
-          },
-          "rights": "PUBLIC_DOMAIN_PD_ART_PDM",
-          "releaseApproved": false,
-          "reviewableArtwork": true
         }
       ],
       "leads": [],
@@ -1680,30 +1647,7 @@
       "subgroup": "Prayers & novenas",
       "family": "Devotions",
       "hasFive": false,
-      "works": [
-        {
-          "paintingId": "met-437578",
-          "subjectId": "DEV-15",
-          "title": "Christ in Glory",
-          "artist": "Russian (Novgorod?) Painter",
-          "rating": null,
-          "lockedRating": false,
-          "authority": "MUSEUM_SOURCE_CANDIDATE_NOT_FIVE_STAR",
-          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437578",
-          "technicalHold": null,
-          "placementNote": "",
-          "files": [],
-          "acquisition": {
-            "width": 2624,
-            "height": 3722,
-            "sha256": "9b937183a1b0b65db29b1fca25b3337fbcb0618d42050e7496d37c06d724ee33",
-            "localArchiveOriginal": "originals/met-437578.jpg"
-          },
-          "rights": "CC0",
-          "releaseApproved": false,
-          "reviewableArtwork": false
-        }
-      ],
+      "works": [],
       "leads": [],
       "scriptureOrContext": "Salvator Mundi depicts sovereignty, not necessarily the feast-specific devotional image.",
       "curationStatus": "ACQUISITION_GAP"
@@ -2204,28 +2148,6 @@
             "height": null,
             "sha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
             "localArchiveOriginal": "museum-originals/met-437403.jpg"
-          },
-          "rights": "CC0",
-          "releaseApproved": false,
-          "reviewableArtwork": false
-        },
-        {
-          "paintingId": "nga-42494",
-          "subjectId": "BIB-G08",
-          "title": "Christ and the Woman of Samaria",
-          "artist": "American 18th Century",
-          "rating": null,
-          "lockedRating": false,
-          "authority": "MUSEUM_SOURCE_CANDIDATE_NOT_FIVE_STAR",
-          "sourceUrl": "https://www.nga.gov/artworks/42494-christ-and-the-woman-of-samaria",
-          "technicalHold": null,
-          "placementNote": "",
-          "files": [],
-          "acquisition": {
-            "width": 4096,
-            "height": 3143,
-            "sha256": "1c6ff113797c015b4136a63a20fc2c1c45fc230c2aa463094f077c824f6eb73f",
-            "localArchiveOriginal": "originals/nga-42494.jpg"
           },
           "rights": "CC0",
           "releaseApproved": false,
@@ -2757,5 +2679,22 @@
     "Human-five works rated suitable elsewhere were intentionally excluded from their original subject; their scores remain recorded in W49.",
     "Only independently identified file pages count as actual image options, no fabricated variants.",
     "Image previews not re-reviewed in a browser and not production-approved."
-  ]
+  ],
+  "blocklistReconciliation": {
+    "authority": "W68 global rejected source ID register",
+    "removed20261016": [
+      {
+        "sid": "DEV-01",
+        "id": "commons-el-paso-sacred-heart-retablo"
+      },
+      {
+        "sid": "DEV-15",
+        "id": "met-437578"
+      },
+      {
+        "sid": "BIB-G08",
+        "id": "nga-42494"
+      }
+    ]
+  }
 }
