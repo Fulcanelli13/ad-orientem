@@ -140,7 +140,7 @@ try{
   assert.equal(await page.locator('[data-settings-snapshot-id="e1f2a3b4c5d6"]').count(),1);
   await page.locator("[data-settings-check-update]").click();
   await page.waitForFunction(()=>globalThis.__aoSettingsUpdateCheckCount===1);
-  await page.waitForFunction(()=>document.querySelector("#ao-settings-modular-root")?.textContent?.includes("Mise à jour disponible"));
+  await page.waitForFunction(()=>document.querySelector("#ao-settings-modular-root")?.textContent?.includes("Nouvelle copie prête"));
   assert.equal(await page.locator("[data-settings-snapshot-id]").getAttribute("data-settings-snapshot-id"),"e1f2a3b4c5d6",
     "An update check must not replace the active saved copy");
   assert.equal(await page.evaluate(()=>globalThis.__aoSettingsUpdateApplyCount),0,
