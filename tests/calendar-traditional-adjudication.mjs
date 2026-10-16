@@ -27,7 +27,10 @@ const r={day:{main:{id:"sancti:10-09:3:w",
   commemorations:[{id:"sancti:10-12:3:w"},{id:"sancti:10-13:3:r"}]};
 const copy=structuredClone(r);
 const ids=canonical1962Commemorations(r);
-assert.deepEqual(ids.map(x=>x.identity),["sancti:10-11","sancti:10-12","sancti:10-14","sancti:10-13"]);
+assert.deepEqual(ids.map(x=>x.identity),["sancti:10-11","sancti:10-12"],
+  "The resolved day must take priority; main/root fallback may contain candidates");
+assert.deepEqual(canonical1962Commemorations({day:{main:{commemorations:["sancti:10-14:3:w"]}}}).map(x=>x.identity),
+  ["sancti:10-14"],"Use main only if day-level commemorations are genuinely absent");
 assert.deepEqual(r,copy,"review must not edit the resolver");
 assert.deepEqual(canonical1962Commemorations({day:{commemorations:["10-11","St Someone"]}}),[],
   "Date-code-only and title-only aliases are not canonical IDs");
