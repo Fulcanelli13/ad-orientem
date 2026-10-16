@@ -20,7 +20,7 @@ At the landing screen, a compact `Pray now` focus selects an available canonical
 |---|---|
 | **Daily & Marian** (5) | `pray.morning_evening`, `pray.angelus_regina`, `pray.rosary`, `pray.meal_prayers`, `pray.nightly_examen` |
 | **Before the Blessed Sacrament** (4) | `pray.adoration`, `pray.benediction`, `pray.forty_hours`, `pray.communion_treasury` |
-| **Penance & the Passion** (5) | `pray.confession`, `pray.penitential_psalms`, `pray.litany_saints`, `pray.stations`, `pray.seven_words` |
+| **Penance & the Passion** (6) | `pray.confession`, `pray.penitential_psalms`, `pray.litany_saints`, `pray.stations`, `pray.seven_words`, `pray.tenebrae` |
 | **Novenas & Devotions** (6) | `pray.novenas`, `programme.first_friday`, `programme.first_saturday`, `pray.sacred_heart`, `pray.holy_name_litany`, `pray.sacred_hymns` |
 | **At Life's End (nested)** (2) | `pray.good_death`, `pray.dying_companion` |
 | **Prayer Library (search tool)** (1) | `pray.library` |
@@ -86,7 +86,7 @@ Priority pathways:
 
 | Scenario | Target | Finding |
 |---|---|---|
-| `AQ01` | `pray.marian` | No matching visible canonical Prayer module ID among the 23 public entrances; reconcile exact intended existing module before exposing |
+| `AQ01` | `pray.marian` | No matching visible canonical Prayer module ID among the 24 public entrances; reconcile exact intended existing module before exposing |
 | `AQ07`, `HS05`, `HS06` | `pray.holy_souls` | Same direct-route discrepancy; a suitable existing Prayer Library item may be preferable, but inspect canonical prayer keys first |
 | `DV04`, `DV05` | `calendar` | The Apostolate handler currently allows `learn`, `pray`, `find`, `mass` but excludes `calendar` and rejects it |
 
@@ -113,8 +113,8 @@ PRAY: one salient 'Pray now' focus and one featured devotion, then a compact fou
 
 ## 8. Implementation phases and acceptance gates
 
-1. **Link repair and ownership:** solve six identified Apostolate handoffs, add precise existing Prayer Library identities rather than creating modules. Complete 23/23, 15/15, 36/36 reachability (source and actual phone) and exhaustive outbound scenario checks. Route fixes require tests.
-2. **Pray IA migration:** change only the hub's presentation grouping/search, keeping the existing player components, saved prayer states, 23 IDs, source provenance and EN/FR copy.
+1. **Link repair and ownership:** solve six identified Apostolate handoffs, add precise existing Prayer Library identities rather than creating modules. Complete 24/24, 15/15, 36/36 reachability (source and actual phone) and exhaustive outbound scenario checks. Route fixes require tests.
+2. **Pray IA migration:** change only the hub's presentation grouping/search, keeping the existing player components, saved prayer states, 24 IDs, source provenance and EN/FR copy.
 3. **Formation IA migration:** implement Learn/Questions/Practice projections over current 15 modules and Apostolate. Make approved content-only index searchable; no APOL/CR release; keep retired aliases.
 4. **Content-level linking and guide refinement:** claim-verified links for catechism, sacraments, spiritual life, confession, Marian prayer and Apostolate; expand guide material only after existing audit reconciliation.
 5. **UX acceptance and coherent artwork:** 320/360/390/430px, keyboard, long French labels, offline/failed source states, search, deep-link aliases, focus and scroll restoration. Only merge after CI/phone tests.
