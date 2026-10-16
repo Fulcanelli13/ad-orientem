@@ -67,8 +67,23 @@ try{
    assert.equal(after.main,before.main,"The profile must not override the canonical 1962 principal");
    assert.equal(after.properPath,before.properPath,"Mass Proper source must not change");
    assert(after.shown);
+   const returnLink=page.locator('#ao-find-modular-root [data-saint-return-calendar="2026-10-03"]');
+   await returnLink.waitFor({state:"visible",timeout:12000});
+   await returnLink.click();
+   await page.waitForFunction(()=>{
+     const s=AO_RUNTIME_V8?.store?.getState?.();
+     const el=document.querySelector("#ao-calendar-modular-root");
+     return s?.selectedDate==="2026-10-03" && s?.resolution?.date==="2026-10-03" &&
+       el && el.getClientRects().length>0;
+   },null,{timeout:65000});
+   const returned=await page.evaluate(()=>({
+     day:AO_RUNTIME_V8.store.getState().selectedDate,
+     main:AO_RUNTIME_V8.store.getState().resolution.day.main.id,
+     properPath:AO_RUNTIME_V8.store.getState().resolution.proper?.data?.sourcePath??null
+   }));
+   assert.deepEqual(returned,before,"Returning to Calendar must restore the inspected date and identical 1962 Proper");
    assert.deepEqual(errors,[],"Runtime errors: "+errors.join(" | "));
-   console.log("PASS "+width+"px Calendar → original 1962 St Thérèse → exact native Explore biography, no Mass alteration");
+   console.log("PASS "+width+"px Calendar → original 1962 St Thérèse → exact native Explore biography → inspected Calendar date, 1962 Proper unchanged");
   }finally{await page.close()}
  }
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
