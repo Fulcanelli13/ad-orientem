@@ -57,7 +57,10 @@ try {
       const frame=image.closest('.imageframe').getBoundingClientRect();
       const grid=image.closest('.photogrid');
       const gridCols=grid?getComputedStyle(grid).gridTemplateColumns.trim().split(/\\s+/).length:0;
+      const fallback=image.dataset.fallback||'';
+      const fallbackIsBounded=!fallback || !/commons\\.wikimedia\\.org\\/wiki\\/Special:FilePath\\//i.test(fallback) || /[?&]width=640(?:&|$)/.test(fallback);
       return {photoPresent:true,objectFit:getComputedStyle(image).objectFit,
+        boundedPreviewFallback:fallbackIsBounded,
         photoGridColumns:gridCols,
         imageBoxWidth:Math.round(rect.width),frameWidth:Math.round(frame.width),
         imageBoxHeight:Math.round(rect.height),frameHeight:Math.round(frame.height),
@@ -107,7 +110,7 @@ try {
   outcome.browserLoadChecks={successful:distinct.length-outcome.broken.length,
     failures:outcome.broken.length,undersizeMobileCandidates:outcome.unavailable.length,
     note:'Failures may include external 403/429/network outages; retry before treating as an invalid artwork.'};
-  const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow));
+  const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow||!x.boundedPreviewFallback));
   outcome.layoutFailures=badLayout;
   if(pageErrors.length)outcome.notes.push('Gallery JavaScript raised errors; review pageErrors.');
   writeFileSync(output+'/report.json',JSON.stringify(outcome,null,2)+'\n');
