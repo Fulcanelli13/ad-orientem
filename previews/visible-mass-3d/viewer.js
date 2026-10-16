@@ -37,7 +37,7 @@ function setMode(next){
   status(next==='walk' ? 'Walking · WASD / touch arrows · click a gold marker to inspect' : 'Survey · drag to orbit · click markers to inspect');
 }
 async function readGlossary(){
-  const files=['concepts-001-150.v1.json','concepts-151-300.v1.json'];
+  const files=['concepts-001-150.v1.json','concepts-151-300.v1.json','concepts-301-450.v1.json'];
   try{
     const data=await Promise.all(files.map(f=>fetch('../../data/glossary/'+f).then(r=>{if(!r.ok)throw Error(r.status);return r.json();})));
     for(const file of data){for(const e of file.entries||[]){if(canonicalIDs.includes(e.id))entries.set(e.id,e);}}
