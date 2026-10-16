@@ -412,6 +412,7 @@ export function createFindOwner(win=globalThis){
       displayLimit:state.displayLimit,
       placeProfiles,
       selectedPlaceId:state.selectedPlaceId,
+      selectedSaintProfileId:state.lens==="saints"&&state.selectedId?.startsWith("saints:person:saint:")?state.selectedId.slice("saints:person:".length):null,
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
     });
@@ -534,7 +535,32 @@ export function createFindOwner(win=globalThis){
     return true;
   }
 
+  // Calendar may request ONLY an existing, release-visible Saints catalogue
+  // identity. Never synthesize a profile from a feast title or map marker.
+  async function verifiedSaintProfileItem(saintsId){
+    if(!/^saint:[a-z0-9-]+$/.test(saintsId??""))return null;
+    const data=await ensureData();
+    const matches=projectSaintCatalogueItems(data).filter(row=>
+      row?.saint_id===saintsId&&row?.item_id==="saints:person:"+saintsId&&
+      row?.kind==="SAINT_CATALOGUE_PROFILE");
+    return matches.length===1?matches[0]:null;
+  }
+  async function openSaintProfile(saintsId){
+    try{
+      if(!await verifiedSaintProfileItem(saintsId))return false;
+      const result=await open({lens:"saints",view:"list",saintProfileId:saintsId});
+      return result===true&&state.selectedId==="saints:person:"+saintsId&&
+        state.lens==="saints"&&state.saintScope==="profiles";
+    }catch(error){
+      try{win?.console?.error?.("Exact Saints profile unavailable",error)}catch{}
+      return false;
+    }
+  }
+
   async function open(options={}){
+    const exactSaintProfile=typeof options?.saintProfileId==="string"
+      ?await verifiedSaintProfileItem(options.saintProfileId):null;
+    if(options?.saintProfileId && !exactSaintProfile)return false;
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
@@ -547,6 +573,11 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
+    if(exactSaintProfile){
+      state.lens="saints";state.view="list";state.saintScope="profiles";
+      state.saintCategory="ALL";state.query="";state.selectedPlaceId=null;
+      state.selectedId=exactSaintProfile.item_id;state.expandDetail=false;
+    }
     state.expandPlace=false;state.expandDetail=false;
     state.bibleAtlas=false;state.bibleIndex=0;
     const node=ensureRoot(win);if(!node)return false;
@@ -1152,6 +1183,7 @@ export function createFindOwner(win=globalThis){
   return Object.freeze({
     version:VERSION,
     open,
+    openSaintProfile,
     openAtlasEvent,
     close,
     paint,
