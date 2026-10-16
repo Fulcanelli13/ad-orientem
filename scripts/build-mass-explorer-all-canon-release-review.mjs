@@ -69,6 +69,8 @@ for(const lang of ["en","fr"]){
   pages[lang][id]=raw.replace(anchor,noteHtml(study,id,lang)+anchor);
  }
 }
+const owners=Object.fromEntries(draft.flatMap(x=>x.block_ids.map(id=>[id,x.id])));
+const studies=draft.map(x=>({id:x.id,block_ids:x.block_ids}));
 const labels=Object.fromEntries(draft.map(x=>[x.block_ids[0],x.title]));
 const nav=draft.map(x=>x.block_ids[0]);
 const css=[
@@ -90,30 +92,27 @@ const css=[
  ".aoCanonEvidence{margin-top:18px;border-top:1px solid #3f4751}",
  ".aoCanonEvidence li{font:.82rem/1.5 system-ui;margin:9px 0}",
  ".aoCanonHeld{border-left:2px solid #a28a58;padding:9px 12px;font:.78rem/1.54 system-ui!important;color:#d1ba8a}",
+ ".aoCanonReview{background:#17222d;border-bottom:1px solid #514734;padding:13px 18px;display:grid;gap:8px;font:.8rem/1.5 system-ui}",
+ ".aoCanonReviewTop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}",
+ ".aoCanonReviewTop span{color:#cbb386}",
+ ".aoCanonReviewActions{display:flex;flex-wrap:wrap;gap:8px}",
+ ".aoCanonReview button{min-height:44px;border:1px solid #565e65;border-radius:8px;color:#eee5d7;background:#111b27;padding:9px 12px;font:.78rem system-ui}",
+ ".aoCanonReview button[aria-pressed=true]{border-color:#d4b783;color:#d4b783}",
+ ".aoCanonReview label{display:grid;gap:5px}",
+ ".aoCanonReview textarea,.aoCanonReview input{width:100%;box-sizing:border-box;background:#0c141d;border:1px solid #46515b;border-radius:8px;color:#eee8de;padding:10px;font:inherit}",
+ ".aoCanonReview p{font:.72rem/1.4 system-ui;color:#a6b0b8;margin:0}",
  "@media(max-width:430px){.aoCanonCandidate{padding:12px}.aoCanonToolbar{gap:5px;padding:6px}.aoCanonToolbar button{padding:8px}}"
 ].join("\n");
-const js=[
- "const pages=JSON.parse(document.getElementById('ao-canon-data').textContent);",
- "const nav=JSON.parse(document.getElementById('ao-canon-nav').textContent);",
- "const labels=JSON.parse(document.getElementById('ao-canon-labels').textContent);",
- "let lang='en',block=nav[0];const root=document.getElementById('ao-mass-explorer-root');",
- "function render(){const fr=lang==='fr';root.innerHTML='<nav class=\"aoCanonToolbar\">'+",
- "'<select aria-label=\"Roman Canon study\" data-canon-select>'+nav.map(id=>'<option value=\"'+id+'\" '+(id===block?'selected':'')+'>'+labels[id][lang]+'</option>').join('')+'</select>'+",
- "'<button data-canon-lang=\"en\" aria-pressed=\"'+(!fr)+'\">EN</button>'+",
- "'<button data-canon-lang=\"fr\" aria-pressed=\"'+fr+'\">FR</button></nav>'+pages[lang][block];root.scrollTop=0;}",
- "root.addEventListener('change',e=>{if(e.target.matches('[data-canon-select]')){block=e.target.value;render()}});",
- "root.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;",
- "if(t.dataset.canonLang){lang=t.dataset.canonLang;document.documentElement.lang=lang;render();return}",
- "if(t.dataset.aoMxBlock&&pages[lang][t.dataset.aoMxBlock]){block=t.dataset.aoMxBlock;render();return}",
- "if(t.dataset.aoMxJump){const x=root.querySelector('[data-ao-mx-anchor=\"'+t.dataset.aoMxJump+'\"]');if(x){if(x.tagName==='DETAILS')x.open=true;x.scrollIntoView({block:'start',behavior:'instant'})}}",
- "});render();"
-].join("\n");
+const js="const pages=JSON.parse(document.getElementById('ao-canon-data').textContent);\nconst nav=JSON.parse(document.getElementById('ao-canon-nav').textContent);\nconst labels=JSON.parse(document.getElementById('ao-canon-labels').textContent);\nconst owners=JSON.parse(document.getElementById('ao-canon-owners').textContent);\nconst studies=JSON.parse(document.getElementById('ao-canon-studies').textContent);\nlet lang='en',block=nav[0],reviewer='';\nconst decisions={};\nconst root=document.getElementById('ao-mass-explorer-root');\nconst escapeValue=value=>String(value||'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\nfunction render(){\n const fr=lang==='fr',owner=owners[block],current=decisions[owner]||{decision:'pending',note:''};\n const approved=Object.values(decisions).filter(d=>d.decision==='approve').length;\n const changes=Object.values(decisions).filter(d=>d.decision==='revise').length;\n root.innerHTML='<nav class=\"aoCanonToolbar\">'+\n '<select aria-label=\"Roman Canon study\" data-canon-select>'+nav.map(id=>'<option value=\"'+id+'\" '+(id===block?'selected':'')+'>'+labels[id][lang]+'</option>').join('')+'</select>'+\n '<button data-canon-lang=\"en\" aria-pressed=\"'+(!fr)+'\">EN</button>'+\n '<button data-canon-lang=\"fr\" aria-pressed=\"'+fr+'\">FR</button></nav>'+\n '<section class=\"aoCanonReview\" aria-label=\"Editorial review\">'+\n '<div class=\"aoCanonReviewTop\"><strong>'+(fr?'Décision pour cette étude':'Decision for this study')+'</strong>'+\n '<span data-canon-progress>'+approved+'/8 '+(fr?'approuvées':'approved')+' · '+changes+' '+(fr?'à modifier':'to revise')+'</span></div>'+\n '<div class=\"aoCanonReviewActions\"><button type=\"button\" data-canon-decision=\"approve\" aria-pressed=\"'+(current.decision==='approve')+'\">'+(fr?'Approuver le texte':'Approve wording')+'</button>'+\n '<button type=\"button\" data-canon-decision=\"revise\" aria-pressed=\"'+(current.decision==='revise')+'\">'+(fr?'Modifications demandées':'Request changes')+'</button></div>'+\n '<label>'+(fr?'Commentaires (facultatif)':'Reviewer notes (optional)')+\n '<textarea data-canon-note rows=\"2\" placeholder=\"'+(fr?'Modifications, réserves ou observations':'Edits, reservations or other observations')+'\"></textarea></label>'+\n '<label>'+(fr?'Nom du relecteur (facultatif)':'Reviewer name (optional)')+\n '<input data-canon-reviewer placeholder=\"'+(fr?'Relecteur':'Reviewer')+'\"></label>'+\n '<button type=\"button\" data-canon-export>'+(fr?'Exporter les décisions (.json)':'Export review decisions (.json)')+'</button>'+\n '<p>'+(fr?'Ces décisions seront seulement enregistrées dans un fichier à transmettre. Aucune publication automatique.':\n 'Decisions are saved only to a file you can send back. Nothing is automatically published.')+'</p></section>'+\n pages[lang][block];\n root.querySelector('[data-canon-note]').value=current.note||'';\n root.querySelector('[data-canon-reviewer]').value=reviewer;\n root.scrollTop=0;\n}\nfunction exportDecisions(){\n const records=studies.map(study=>{\n  const d=decisions[study.id]||{decision:'pending',note:''};\n  return {study_id:study.id,block_ids:study.block_ids,decision:d.decision,note:d.note||''};\n });\n const payload={schema:'ao-mass-explorer-canon-owner-decisions-v1',\n  scope:'EDITORIAL_WORDING_ONLY_NOT_PUBLICATION',reviewer:reviewer||null,\n  decisions:records,human_review_required:true,formal_rights_check_outstanding:true};\n const blob=new Blob([JSON.stringify(payload,null,2)+'\\n'],{type:'application/json'});\n const url=URL.createObjectURL(blob),link=document.createElement('a');\n link.href=url;link.download='ad-orientem-roman-canon-review-decisions.json';\n document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);\n}\nroot.addEventListener('change',e=>{\n if(e.target.matches('[data-canon-select]')){block=e.target.value;render();return}\n if(e.target.matches('[data-canon-note]')){const id=owners[block];decisions[id]=Object.assign({decision:'pending'},decisions[id]||{},{note:e.target.value});return}\n if(e.target.matches('[data-canon-reviewer]')){reviewer=e.target.value.trim();return}\n});\nroot.addEventListener('click',e=>{\n const t=e.target.closest('button');if(!t)return;\n if(t.dataset.canonLang){lang=t.dataset.canonLang;document.documentElement.lang=lang;render();return}\n if(t.dataset.aoMxBlock&&pages[lang][t.dataset.aoMxBlock]){block=t.dataset.aoMxBlock;render();return}\n if(t.dataset.canonDecision){\n  const id=owners[block],prev=decisions[id]||{note:''};\n  decisions[id]={decision:prev.decision===t.dataset.canonDecision?'pending':t.dataset.canonDecision,note:prev.note||''};\n  render();return\n }\n if(t.hasAttribute('data-canon-export')){exportDecisions();return}\n if(t.dataset.aoMxJump){const x=root.querySelector('[data-ao-mx-anchor=\"'+t.dataset.aoMxJump+'\"]');if(x){if(x.tagName==='DETAILS')x.open=true;x.scrollIntoView({block:'start',behavior:'instant'})}}\n});\nrender();";
 const json=obj=>JSON.stringify(obj).replace(/</g,"\\u003c");
 const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
  '<title>Ad Orientem · Roman Canon eight editorial studies</title><style>'+massExplorerCss()+css+'</style></head><body>'+
  '<main id="ao-mass-explorer-root"></main><script type="application/json" id="ao-canon-data">'+json(pages)+'</script>'+
  '<script type="application/json" id="ao-canon-nav">'+json(nav)+'</script>'+
- '<script type="application/json" id="ao-canon-labels">'+json(labels)+'</script><script>'+js+'</script></body></html>';
+ '<script type="application/json" id="ao-canon-labels">'+json(labels)+'</script>'+
+ '<script type="application/json" id="ao-canon-owners">'+json(owners)+'</script>'+
+ '<script type="application/json" id="ao-canon-studies">'+json(studies)+'</script>'+
+ '<script>'+js+'</script></body></html>';
 for(const lang of ["en","fr"])for(const id of blocks){
  assert.ok(pages[lang][id].includes('data-ao-candidate-block="'+id+'"'));
  assert.ok(pages[lang][id].includes('data-ao-mx-cue='));
