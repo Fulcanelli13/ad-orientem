@@ -132,7 +132,8 @@
     "observedOriginalResearchLatinContentDifferenceRows": 3,
     "latinDiscrepanciesClassifiedAsAccentVariations": 2,
     "latinDiscrepanciesConditionalGospelName": 1,
-    "approvedNewCeremonialTriggers": 0
+    "approvedNewCeremonialTriggers": 0,
+    "gospelEvangelistHeaderSourceFirstMismatchReproduced": 1
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -152,6 +153,7 @@
     "The workbook's 279 priest-event IDs now have one-to-one source-cue identities; exact actor/action/voice/ritual certification and conformity to printed 1962 rubrics remain separate gates.",
     "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge.",
     "1960 Codex Rubricarum §518(b) requires position/form/feast checks for Et incarnatus est; an unconditional priest kneel from one Latin token would contradict seated-vs-standing distinction.",
-    "The frozen source-first model has a potentially static 'secúndum Matthǽum' donor at C0084 independent from the resolved Gospel Proper at B026; targeted John Gospel reproduction test is part of P0. Owner must certify and correct form-applicable runtime behavior before P1."
+    "The frozen source-first model has a potentially static 'secúndum Matthǽum' donor at C0084 independent from the resolved Gospel Proper at B026; targeted John Gospel reproduction test is part of P0. Owner must certify and correct form-applicable runtime behavior before P1.",
+    "CI P0 research suite reproduced fixed 'secúndum Matthǽum' heading while a source-first test model renders synthetic Gospel according to John (run 38876627431); production deployment paths not exhaustively examined, owner correction required."
   ]
 }
