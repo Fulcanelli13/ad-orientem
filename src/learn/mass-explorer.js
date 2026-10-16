@@ -281,7 +281,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.dataset.aoMxView){
         event.preventDefault();
         if(t.dataset.aoMxView==="map"||t.dataset.aoMxView==="list"){
-          indexView=t.dataset.aoMxView;momentKey=null;blockId=null;paint();
+          indexView=t.dataset.aoMxView;momentKey=null;blockId=null;
+          indexScrollTop=0;indexFocusKey=null;paint();
         }
         return;
       }
