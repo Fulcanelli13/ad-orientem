@@ -10,7 +10,7 @@ export const P1_PARTIAL_SOURCE_RULES=Object.freeze({
     kind:"PASCAL_SEVERAL_MARTYRS_ALTERNATE_ORATIONS",
   }),
   "Commune/C7":Object.freeze({
-    target:"Commune/C7",base:"Commune/C6-1",
+    target:"Commune/C7",base:"Commune/C6-1",parentLesson:"Commune/C6",
     inheritedMass:Object.freeze(["Introitus","Evangelium","Offertorium","Communio"]),
     alternateOrations:Object.freeze([]),
     declaration:"https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Latin/Commune/C7.txt",
@@ -27,13 +27,22 @@ function held(reason,section=null){
   return Object.freeze({status:"HELD",reason,section,route:null,
     authorizedForSaintMass:false,borrowedSections:Object.freeze([]),maps:null});
 }
-export function reconcileP1PartialCommon({targetPath,target,base,orations}={}){
+export function reconcileP1PartialCommon({targetPath,target,base,orations,lessonSource}={}){
   const rule=P1_PARTIAL_SOURCE_RULES[targetPath];
   if(!rule)return held("UNKNOWN_COMMON_VARIANT");
   const sources={target,base,orations};
   for(const source of ["target","base",...(rule.alternateOrations.length?["orations"]:[])]){
     if(!langs.every(lang=>sources[source]?.[lang]?.map instanceof Map))
       return held("MISSING_SOURCE_OWNER",source);
+  }
+  if(rule.parentLesson){
+    if(!langs.every(lang=>lessonSource?.[lang]?.map instanceof Map))
+      return held("MISSING_EXPLICIT_PARENT_LESSON_SOURCE",rule.parentLesson);
+    const lesson=lessonSource.la.map.get("Lectio");
+    const existing=target.la.map.get("Lectio");
+    if(!has(lesson))return held("MISSING_ORIGINAL_PARENT_LATIN_LECTIO");
+    if(has(existing)&&norm(existing)!==norm(lesson))
+      return held("CONFLICTING_ORIGINAL_LATIN_LECTIO");
   }
   const out={},borrowed=[];
   // For the C3ap Paschal base inheritance, the declared *file parent*
@@ -60,6 +69,14 @@ export function reconcileP1PartialCommon({targetPath,target,base,orations}={}){
         map.set(section,parent);
         borrowed.push(Object.freeze({language:lang,section,from:rule.base,
           basis:targetPath==="Commune/C7"?"EXACT_LATIN_PARITY":"EXPLICIT_PARENT_SOURCE"}));
+      }
+    }
+    if(rule.parentLesson&&!has(map.get("Lectio"))){
+      const original=lessonSource[lang].map.get("Lectio");
+      if(has(original)){
+        map.set("Lectio",original);
+        borrowed.push(Object.freeze({language:lang,section:"Lectio",
+          from:rule.parentLesson,basis:"EXPLICIT_HORAS_SOURCE_PARENT"}));
       }
     }
     for(const section of rule.alternateOrations){
