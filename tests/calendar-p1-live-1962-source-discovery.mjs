@@ -137,7 +137,18 @@ try{
     approvedForMass:result.approvedForMass??false,
     route:result.route??null};
  });
- console.log("P1_DOCTOR_INHERITANCE_LIVE_WITNESS="+JSON.stringify(doctorInheritance));
+ console.log("P1_DOCTOR_INHERITANCE_LIVE_WITNESS="+JSON.stringify({
+   status:doctorInheritance.status,reason:doctorInheritance.reason,
+   borrowedSections:doctorInheritance.borrowedSections,
+   nonPontiffOrationsPreserved:doctorInheritance.nonPontiffOrationsPreserved,
+   variantLatinDistinct:doctorInheritance.variantLatinDistinct,
+ }));
+ assert.equal(doctorInheritance.status,"SOURCE_COMPOSITION_VERIFIED",doctorInheritance.reason+" "+doctorInheritance.section);
+ assert.equal(doctorInheritance.borrowedSections.length,18);
+ assert.equal(doctorInheritance.nonPontiffOrationsPreserved,true);
+ assert.ok(doctorInheritance.variantLatinDistinct.every(x=>x.different&&x.nonPontiffExists));
+ assert.equal(doctorInheritance.approvedForMass,false);
+ assert.equal(doctorInheritance.route,null);
  const additionalCommons=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
    const registry=(await (await fetch("/data/calendar/p1-additional-common-candidates.v1.json")).json()).provisionalRows;
