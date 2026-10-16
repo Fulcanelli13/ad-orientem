@@ -1,0 +1,33 @@
+name: Sacred Art W89 Uncropped National Gallery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - tools/calendar/acquire-sacred-art-w89-natural-ratio.py
+      - .github/workflows/sacred-art-w89-natural-ratio.yml
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow requests
+      - name: Enforce original art aspect ratio and minimum native source dimensions
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w89-natural-ratio.py
+          python tools/calendar/acquire-sacred-art-w89-natural-ratio.py
+      - name: Store photographic sources and unmanipulated full-surface previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w89-original-aspect-photos
+          path: |
+            artifacts/sacred-art-w89-native-ratio/
+            docs/research/review-galleries/acquired/
+          retention-days: 30
+          if-no-files-found: warn
