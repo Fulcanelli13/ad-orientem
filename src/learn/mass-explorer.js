@@ -81,7 +81,9 @@ export async function loadMassExplorerCatalog({fetchImpl=globalThis.fetch}={}){
     loadGuideRegistry({fetchImpl}),
     fetchJson(TEXT_URL,fetchImpl),
     fetchJson(FRENCH_URL,fetchImpl),
-    fetchJson(FORMATION_URL,fetchImpl)
+    // The optional learning-path index must never prevent reading the
+    // already-published Sung Mass if the separate Formation file is offline.
+    fetchJson(FORMATION_URL,fetchImpl).catch(()=>null)
   ]);
   return buildMassExplorerCatalog(guides.registry,text,fr,formation);
 }
