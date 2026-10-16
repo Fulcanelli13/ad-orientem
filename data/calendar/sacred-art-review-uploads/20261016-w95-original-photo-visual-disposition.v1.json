@@ -1,0 +1,107 @@
+{
+  "schema": "AO_SACRED_ART_W95_RESEARCH_QA_AND_GAP_DISPOSITION_V1",
+  "date": "2026-10-16",
+  "githubRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907188882",
+  "githubArtifactId": 12049085266,
+  "strictCoverage": {
+    "before": "146/168",
+    "after": "146/168",
+    "remainingCategories": 22
+  },
+  "fileEvidence": {
+    "imageDownloads": 8,
+    "distinctTargetCategories": 5,
+    "distinctOriginalPaintingsReferenced": 7,
+    "sourceFilesRetainedInWorkflowArtifact": 8,
+    "verifiedPublisherRightsForCommercialApp": 0,
+    "fullyCertifiedNewCategoryImages": 0
+  },
+  "safeguards": [
+    "The two views of Peter Damian G30-007 are one physical painting, not two artworks.",
+    "Photo G30-007 second view is a detail and cannot pass full painted surface.",
+    "Québec Leduc photograph depicts church interior, not full St Hilary canvas.",
+    "All photos belong to heritage providers; do not infer free commercial reuse or public domain from original painting date.",
+    "Each source file SHA is preserved for reproducibility.",
+    "Do not modify previous numeric ratings, artwork selections or runtime."
+  ],
+  "imageEvidence": [
+    {
+      "categoryIndex": 26,
+      "workId": "italy-0900119548",
+      "photo": "Antonio Marini, St Alphonsus",
+      "pixels": "1045×1280",
+      "qa": "Source image appears monochrome and framed; intact composition needs reference check; low resolution; photo rights not verified",
+      "sha256": "45c0673ef01195bbaa2abdba6fb3e50cf1ae6b7931e64dd3aad2b330e1942db9"
+    },
+    {
+      "categoryIndex": 26,
+      "workId": "G28-003",
+      "photo": "Michele Lenzi, St Alphonsus",
+      "pixels": "742×1065",
+      "qa": "Monochrome framed capture; too small for master; photo rights unresolved",
+      "sha256": "da7915c7059b2e6d4794d44301963de8f33924222a2de43168adb6102f77cfea"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-007",
+      "photo": "St Peter Damian with writing and angel, overall image",
+      "pixels": "853×1280",
+      "qa": "Colour framed reproduction; visible painting but 853-pixel width, no public rights",
+      "sha256": "44dea64934d4f1d7139fb2ede6f881a958e86b26b62e1410eb4027fa5661a365"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-007",
+      "photo": "St Peter Damian, second view",
+      "pixels": "1280×853",
+      "qa": "DETAIL CROP; fails mandatory whole-painted-surface rule",
+      "sha256": "f602a59be2c1abcafa24876fd87996cb5694cc46da3e2a36a4a85b823486adca"
+    },
+    {
+      "categoryIndex": 35,
+      "workId": "G30-006",
+      "photo": "Another St Peter Damian original",
+      "pixels": "989×1480",
+      "qa": "Monochrome and framed; photo rights unresolved; do not merge with G30-007",
+      "sha256": "e03ae2fef9414c7c532a40adda5e91a50eda8652635241f79ba3ce74288fe58d"
+    },
+    {
+      "categoryIndex": 37,
+      "workId": "G30-010",
+      "photo": "Roman school St Robert Bellarmine",
+      "pixels": "578×768",
+      "qa": "Low-resolution monochrome archival photo; unsuitable as production master",
+      "sha256": "1bd5e00c6d38a561e50ee85195cac5ae26338d4f5ebaf9f1343f7f4c0b6a2807"
+    },
+    {
+      "categoryIndex": 43,
+      "workId": "QCP-HILARY-LEDUC-1896-1900",
+      "photo": "Québec church interior including Ozias Leduc decoration",
+      "pixels": "1000×750",
+      "qa": "Entire church, not a clean or identifiable full-image reproduction of St Hilary painting; reject as category photo",
+      "sha256": "96e50ba4ebbc595cada1a5dafd7854c7e3f38a3ce18a75dafd5259c0803ce77c"
+    },
+    {
+      "categoryIndex": 70,
+      "workId": "G17-009",
+      "photo": "Émilie Sivard de Beaulieu Saint Denis work",
+      "pixels": "609×700",
+      "qa": "Colour work visible but insufficient resolution; image owner rights unresolved",
+      "sha256": "173e744c1cd73c5865ae74179bce1370e7b554afc798f083f08d22980bf955cc"
+    }
+  ],
+  "nonacquisitionSourceLead": {
+    "categoryIndex": 41,
+    "workId": "NEW-CYRIL-LOSSAU-1748-49",
+    "subject": "St Cyril of Jerusalem",
+    "artist": "Johann Lossau",
+    "date": "1748–1749",
+    "medium": "Tempera on primed wooden ceiling panel",
+    "place": "Stegmannsdorf pilgrimage church",
+    "source": "https://www.deutsche-digitale-bibliothek.de/item/XOD2TJQJHLNFDYUSHSVEJKQJOVOYNNUW",
+    "photoDate": "1943–1944",
+    "photoLicense": "CC BY-NC-SA 4.0",
+    "status": "EXACT_SAINT_ICONOGRAPHY_SOURCE_LEAD_NOT_MASTER_OR_CLEARED_LICENSE"
+  },
+  "next": "Continue search for large color full-composition sources for the 22 gap categories; keep rights/fidelity and any substitute object as separate certification gates."
+}
