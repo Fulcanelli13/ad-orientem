@@ -115,8 +115,6 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  focus.append(focusHeading,focusList);
  const order=node(doc,"details","aoMassJourneyOrder");
  order.dataset.massJourneyOrder="";
- // Chronology is the primary preparation content, not a closed optional drawer.
- order.open=true;
  order.append(node(doc,"summary","aoMassJourneyHeading",
   tr(fr,"Celebration details","Détails de la célébration")));
  const before=node(doc,"div","aoMassJourneyPrayer");
