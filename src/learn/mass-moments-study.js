@@ -38,7 +38,7 @@ for(const [guideId,row] of Object.entries(ed)){
  if(row.stageId&&!/^MF0[1-8]$/.test(row.stageId))throw new Error("Unrecognized Formation stage");
  if((row.scripture||[]).some(id=>!anchorIdSet.has(id)))throw new Error("Uncertified Scripture anchor in Mass moment");
 }
-const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;':"&quot;","'":"&#39;"}[c]));
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const label=(fr,en,french)=>fr?french:en;
 const order=registry=>[registry.entries["PRE.ASPERGES"],...Array.from({length:30},(_,i)=>registry.entries["AO.CARD."+String(i+1).padStart(3,"0")]),registry.entries["POST.MASS"]];
 const group=(n)=>n===0?0:n<=9?1:n<=18?2:n<=25?3:4;
