@@ -32,7 +32,9 @@
     "No minimum source resolution requirement; 344px and 397px phone-sized images can be adequate.",
     "Modern saints may use authentic historical photographs; no need to force an oil painting.",
     "No live app or ratings touched.",
-    "Excluded artists Fra Angelico and El Greco remain excluded."
+    "Excluded artists Fra Angelico and El Greco remain excluded.",
+    "New 16 October evidence: Prado P001300 is San Hilario ermitaño, not Hilary of Poitiers. This corrected iconographic identity is independent of 12 October historical user-selected record.",
+    "Historical selected artworks are preserved as archival decisions even if a subsequent institutional source proves the saint identity invalid; ineligible works cannot become category primary."
   ],
   "rows": [
     {
@@ -118,13 +120,13 @@
     {
       "index": 43,
       "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
-      "bestPhoto": "Historical selected P001300 reverse Saint Hilary image not yet acquired; anonymous colour Hilary is different painting",
+      "bestPhoto": "The selected Prado P001300 panel is Saint Hilary THE HERMIT on verso, not the Doctor; cannot be used regardless of photo quality. Langlois Bordeaux original 1823 remains a valid exact-person art subject, but image file is not acquired.",
       "bestObject": "Prado Juan Correa de Vivar P001300; Saint Hilary is reverse side",
-      "image": "Prado Commons image currently Saint Lawrence recto, unsuitable",
+      "image": "Do not acquire Prado verso as a fix: wrong saint. Exact Langlois Saint Hilaire de Poitiers écrivant contre l'arianisme Palissy IM33002267 source confirmed, photo missing.",
       "rights": "Prado commercial photo terms require investigation",
-      "identity": "Exact selected painting identified; WRONG SIDE photographed",
-      "action": "Acquire or identify Hilary verso image only, or request explicit different-original selection; never promote St Lawrence recto",
-      "nextOwner": "Exact-source research",
+      "identity": "SOURCE-CORRECTED SUBJECT MISMATCH: Prado Spanish catalogue identifies SAN HILARIO ERMITAÑO, a different saint from Hilary of Poitiers. Historical 12 October user choice remains archived but is NOT eligible for this category.",
+      "action": "Mark Prado selected object INELIGIBLE for Saint Hilary of Poitiers; preserve selected-choice audit. Prioritize one rights-compatible photograph of real Doctor original (Langlois 1823 Bordeaux) or seek explicit alternative artistic selection; never substitute an image of St Lawrence or the hermit.",
+      "nextOwner": "Exact saint identity repaired; image source for correct Doctor",
       "subject": "Saint Hilary of Poitiers",
       "priorHumanChoice": {
         "subjectId": "SNT-DC-28",
@@ -136,7 +138,15 @@
       },
       "priorPerfectFit": null,
       "noHistoricalRatingChanged": true,
-      "noAppPublicationChanged": true
+      "noAppPublicationChanged": true,
+      "identityStatus": "PRADO_1300_HILARY_THE_HERMIT_NOT_POITIERS_CERTIFIED",
+      "subjectIdentityEligible": false,
+      "identitySourceUrls": [
+        "https://www.museodelprado.es/coleccion/obra-de-arte/san-lorenzo-san-hilario/71cff54c-68c8-4be5-8704-15713fe411a8",
+        "https://www.museodelprado.es/coleccion/obra-de-arte/la-anunciacion/88f0c430-0d2c-46b1-9ab6-f712457b7e20",
+        "https://pop.culture.gouv.fr/notice/palissy/IM33002267"
+      ],
+      "legacySelectedChoicePreservedForAudit": true
     },
     {
       "index": 51,
@@ -327,7 +337,7 @@
       "bestPhoto": "Rubens Courtauld Cain Slaying Abel 7045x9694 full oil",
       "bestObject": "Courtauld P.1978.PG.353; 12 Oct selected generic Rubens Cain and Abel had no accession",
       "image": "W97 original bytes",
-      "rights": "Courtauld CC BY-NC 4.0 conflicts with commercial app, Commons PD-Art claim differs",
+      "rights": "Courtauld official image CC BY-NC 4.0, unsuitable for potential commercial app without separate licence. Commons faithful reproduction PD-Art claim does not resolve institutional reuse position.",
       "identity": "Actual Courtauld original distinct identity; no proof selected research lead mapped to it",
       "action": "Resolve selected original accession and reusable image terms; no automatic approval",
       "nextOwner": "Curator + rights",
@@ -342,14 +352,18 @@
       },
       "priorPerfectFit": null,
       "noHistoricalRatingChanged": true,
-      "noAppPublicationChanged": true
+      "noAppPublicationChanged": true,
+      "rightsSourceUrls": [
+        "https://gallerycollections.courtauld.ac.uk/object-p-1978-pg-353",
+        "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(1577-1640)_-_Cain_Slaying_Abel_-_P.1978.PG.353_-_Courtauld_Gallery.jpg"
+      ]
     },
     {
       "index": 145,
       "stage": "USER_SELECTED_ORIGINAL_BLOCKED",
       "bestPhoto": "Rubens NGA Meeting of Abraham and Melchizedek 4000x3193 source CC0",
       "bestObject": "NGA 1958.4.1; 12 Oct selected work described Rubens workshop not linked to this accession",
-      "image": "W97 image source",
+      "image": "NGA verified object ID 1958.4.1 and exact full painting Commons 4000×3193 CC0 (research alternative), not demonstrably 12 October historical workshop selection.",
       "rights": "NGA CC0 official image",
       "identity": "NGA autograph original may be DIFFERENT from workshop record; not auto-linkable",
       "action": "Confirm user's originally intended Rubens/workshop painting before linking NGA photo, or explicitly offer NGA alternative",
@@ -365,7 +379,11 @@
       },
       "priorPerfectFit": null,
       "noHistoricalRatingChanged": true,
-      "noAppPublicationChanged": true
+      "noAppPublicationChanged": true,
+      "provenanceSourceUrls": [
+        "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+        "https://commons.wikimedia.org/wiki/File:Sir_Peter_Paul_Rubens,_The_Meeting_of_Abraham_and_Melchizedek,_c._1626,_NGA_45640.jpg"
+      ]
     }
   ]
 }
