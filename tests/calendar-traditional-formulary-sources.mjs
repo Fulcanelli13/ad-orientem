@@ -6,6 +6,19 @@ import {
 } from "../src/calendar/traditional-formulary-review.js";
 const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const registry=load("data/calendar/traditional-mass-formulary-review.v1.json");
+const commons=load("data/calendar/traditional-1962-common-formularies.review.v1.json");
+assert.equal(commons.schema,"AO_TRADITIONAL_1962_COMMON_FORMULARY_CANDIDATES_V1");
+assert.equal(commons.candidates.length,3);
+assert.equal(commons.candidates[0].latinTitle,"Commune Doctoris non Pontificis");
+assert.deepEqual(commons.candidates[0].orationsWitnessedInLatin,
+ ["collect","secret","postcommunion"]);
+assert.equal(commons.candidates[0].saintNamePlaceholder,"N.");
+assert.ok(commons.candidates[0].candidateSaintIds.includes("saint.john-henry-newman"));
+assert.equal(commons.candidates[0].primaryEditionCollated,false,
+ "Source-identified online text cannot become a certified in-app Proper");
+assert.equal(commons.candidates[1].applicability,"DOCTOR_BISHOP_ONLY_NEWMAN_NOT_A_BISHOP");
+assert.ok(commons.candidates.every(x=>x.applicableOnlyIfNoSourceSpecificProper&&
+ !x.completeBilingualTextImported&&!x.primaryEditionCollated));
 assert.equal(registry.schema,"AO_TRADITIONAL_MASS_FORMULARY_REVIEW_V1");
 assert.deepEqual(registry.precedence.map(x=>x.sourceKind),[
  "PRO_ALIQUIBUS_LOCIS_1962",
