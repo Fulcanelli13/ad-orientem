@@ -73,6 +73,8 @@ try {
       const sourceReader=page.locator('[data-ao-mf-source-reader="'+sourceId+'"]');
       await sourceReader.waitFor({state:"visible",timeout:12000});
       assert.equal(await sourceReader.locator("[data-ao-mf-source-claim]").count(),count);
+      assert.equal(await sourceReader.locator("[data-ao-mf-approved-extract]").count(),0,
+        "No source quote may appear while the public passage manifest remains explicitly held");
       const url=sourceReader.locator("[data-ao-mf-source-original]");
       assert.equal(await url.getAttribute("href"),originalUrl);
       assert.equal(await url.getAttribute("target"),"_blank");
