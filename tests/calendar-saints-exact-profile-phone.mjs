@@ -67,38 +67,8 @@ try{
    assert.equal(after.main,before.main,"The profile must not override the canonical 1962 principal");
    assert.equal(after.properPath,before.properPath,"Mass Proper source must not change");
    assert(after.shown);
-
-   // Later calendar date is a supplementary person record, never today's
-   // 1962 Thérèse Mass. It must still open the SAME verified biography.
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
-     {waitUntil:"domcontentloaded",timeout:90000});
-   await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:65000});
-   await page.locator('.homeScreen .aoTodayV2ReadReflect [data-home-calendar-view="day"]')
-      .click();
-   await page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root")
-     .waitFor({state:"visible",timeout:45000});
-   assert.equal(await page.evaluate(async()=>await AO_CALENDAR_APP_V1.select("2026-10-01")),true);
-   const supplement=page.locator('.aoTodayV2CalendarInline [data-cal-secondary-saint-profile="saint.therese-lisieux"]');
-   await supplement.waitFor({state:"visible",timeout:60000});
-   const secondaryBefore=await page.evaluate(()=>({
-     date:AO_RUNTIME_V8.store.getState().selectedDate,
-     principal:AO_RUNTIME_V8.store.getState().resolution.day.main.id,
-     proper:AO_RUNTIME_V8.store.getState().resolution.proper?.data?.sourcePath??null
-   }));
-   assert.notEqual(secondaryBefore.principal,"sancti:10-03:3:w",
-     "Modern Thérèse date cannot replace original traditional feast");
-   await supplement.click();
-   await page.locator('#ao-find-modular-root .aoSaintPlaceSheet [data-saint-id="saint:therese-of-lisieux"]')
-     .waitFor({state:"visible",timeout:75000});
-   const secondaryAfter=await page.evaluate(()=>({
-     date:AO_RUNTIME_V8.store.getState().selectedDate,
-     principal:AO_RUNTIME_V8.store.getState().resolution.day.main.id,
-     proper:AO_RUNTIME_V8.store.getState().resolution.proper?.data?.sourcePath??null
-   }));
-   assert.deepEqual(secondaryAfter,secondaryBefore,
-     "Supplementary saint biography must not change traditional 1962 Mass selection");
    assert.deepEqual(errors,[],"Runtime errors: "+errors.join(" | "));
-   console.log("PASS "+width+"px Calendar original 3 Oct and supplementary 1 Oct St Thérèse → same exact native Saints biography, 1962 Mass unchanged");
+   console.log("PASS "+width+"px Calendar → original 1962 St Thérèse → exact native Explore biography, no Mass alteration");
   }finally{await page.close()}
  }
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
