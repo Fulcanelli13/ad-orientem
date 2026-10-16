@@ -20,7 +20,13 @@
     "canonicalSourceOnlyEntriesStructurallyExplained": 34,
     "guideSectionBindingsExplicitlyClassified": 4,
     "exactWordTriggerSpansSourceLocated": 66,
-    "exactWordTriggerLiturgicallyCertified": 0
+    "exactWordTriggerLiturgicallyCertified": 0,
+    "rawLatinDifferenceRows": 3,
+    "lexicalAccentDifferencesDispositioned": 2,
+    "gospelEvangelistProperRisksToReproduce": 1,
+    "wordAnchorsWithPreexistingSourceActionOrRubricOwners": 53,
+    "wordAnchorsWithoutCueLevelGestureOwner": 13,
+    "wordAnchorsIndependentlyCeremoniallyCertified": 0
   },
   "cases": [
     {
@@ -641,20 +647,22 @@
       "researchObjectId": "AO.V3.0023.U002",
       "evidence": "Original workbook writes 'orare' while canonical Sung donor has 'oráre' in the corresponding prayer",
       "recommendedAction": "Use verified 1962 text and approved textual corrections to adjudicate accented form; no automatic Mass player change",
-      "status": "OPEN_TEXTUAL_REVIEW",
-      "mutationAllowed": false
+      "status": "RESOLVED_ORTHOGRAPHIC_STRESS_ACCENT_VARIANT_NO_MASS_TEXT_CHANGE",
+      "mutationAllowed": false,
+      "sourceDecision": "Same lexical item 'orare'/'oráre'; canonical accented donor remains source owner; physical 1962 witness approval still pending for any new publication."
     },
     {
       "issueId": "P0-LATIN-AO.V3.0084.U001",
-      "priority": "P1",
+      "priority": "P0_RUNTIME_OWNER_CHECK",
       "classification": "CONDITIONAL_VARIANT",
       "canonicalOwner": "data/presentation/reader-text-sung.v1.json",
       "canonicalObjectId": "AO.SM.C0084",
       "researchObjectId": "AO.V3.0084.U001",
       "evidence": "Original workbook uses generic Gospel-name placeholder 'secúndum N.' while frozen canonical source instantiates 'secúndum Matthǽum'",
       "recommendedAction": "Identify selected Gospel/Proper applicability before classifying this as contradiction; do not force a static selection",
-      "status": "OPEN_RITUAL_CONDITION_REVIEW",
-      "mutationAllowed": false
+      "status": "OPEN_SOURCE_FIRST_GOSPEL_ANNOUNCEMENT_VARIABLE_AUTHOR_RISK",
+      "mutationAllowed": false,
+      "sourceDecision": "Research 'secúndum N.' means evangelist selected by Proper, but frozen C0084 says 'secúndum Matthǽum'; source-first model uses holyThursdayCanonVariantsForProper as ordinary variants, so selected evangelist may be out of sync. Test-only John fixture added in PR #1270. Do not rewrite canon in P0."
     },
     {
       "issueId": "P0-LATIN-AO.V3.0237.U002",
@@ -665,8 +673,9 @@
       "researchObjectId": "AO.V3.0237.U002",
       "evidence": "Second Confiteor variant workbook writes 'orare' while frozen canonical Sung cue contains 'oráre' (same accent variation as C0023). Verified via independent NFC dual-fingerprint mismatch and manual source inspection.",
       "recommendedAction": "Adjudicate both Confiteor accent differences once under canonical source corrections; do not auto-rewrite Latin player",
-      "status": "OPEN_TEXTUAL_REVIEW",
-      "mutationAllowed": false
+      "status": "RESOLVED_ORTHOGRAPHIC_STRESS_ACCENT_VARIANT_NO_MASS_TEXT_CHANGE",
+      "mutationAllowed": false,
+      "sourceDecision": "Same lexical item 'orare'/'oráre'; canonical accented donor remains source owner; physical 1962 witness approval still pending for any new publication."
     }
   ]
 }
