@@ -13,6 +13,14 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary button{cursor:pointer}
  .aoScriptureLibrary button:disabled{opacity:.45;cursor:not-allowed}
  .aoScriptureLibrary button:focus-visible,.aoScriptureLibrary input:focus-visible,.aoScriptureLibrary select:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
+ .aoScriptureRelated{margin:16px 0;border-top:1px solid #625744;border-bottom:1px solid #625744;padding:8px 0}
+ .aoScriptureRelated>summary{padding:8px 0;cursor:pointer;color:#e9dfc4;font:500 16px Georgia,"Garamond",serif}
+ .aoScriptureRelatedList{display:grid;gap:9px;padding:6px 0 12px}
+ .aoScriptureRelatedIntro{font:13px/1.5 system-ui,sans-serif;color:#bdb4a1;margin:0 0 5px}
+ .aoScriptureRelatedObject{display:grid;gap:3px;padding:11px 13px;background:#16202b;border-left:2px solid #a28b5e;border-radius:2px 7px 7px 2px}
+ .aoScriptureRelatedObject strong{font:500 15px/1.4 Georgia,"Garamond",serif;color:#f1e5c7}
+ .aoScriptureRelatedReference{font:12px/1.4 system-ui,sans-serif;color:#c3b79b}
+ .aoScriptureRelatedExplanation{font:13px/1.45 system-ui,sans-serif;color:#e0d9ca;margin:0}
  .aoScriptureLibrary label{display:flex;flex-direction:column;gap:5px;color:#d9d0bb;font-size:13px}
  .aoScriptureNav{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px;align-items:end}
  .aoScriptureNotice{color:#b4ac9c;font-family:system-ui,sans-serif;font-size:13px}
