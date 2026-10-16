@@ -484,7 +484,10 @@
     "historicEnglish1925WholePdfRetrieved": 0,
     "earlyEnglishSadlierEleventhOriginalUnitSpansImageLocated": 47,
     "earlyEnglishSadlierEleventhOriginalChaptersFullyUnitMapped": 8,
-    "earlyEnglishSadlierEleventhCompleteUnitTextCollations": 0
+    "earlyEnglishSadlierEleventhCompleteUnitTextCollations": 0,
+    "earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies": 13,
+    "earlyEnglishSadlierEleventhWorkingPageOcrGenerated": 17,
+    "earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining": 34
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -3714,6 +3717,32 @@
       }
     ],
     "productionAppChanged": false,
-    "newlyWrittenNarrativeProse": 0
+    "newlyWrittenNarrativeProse": 0,
+    "workingTextBatch2": {
+      "date": "2026-10-16",
+      "delivery": "Separate user-provided conversation artifact; research data not checked into GitHub",
+      "structuredWorkingTextFile": "Schuster_1908_Origins_Batch02_Working_Text.json",
+      "structuredWorkingTextSha256": "9a56381f89d9e8effd66be327f171060beb2834ae753ac4f32a54d51e0972560",
+      "provisionalOcrTextFile": "Schuster_1908_Origins_17pp_Unverified_OCR.txt",
+      "provisionalOcrTextSha256": "a98ec6e473de2e07661ed2fed0e47289282805c3aedeb2820350460dd09d1169",
+      "scopeOriginalPrintPages": [
+        1,
+        17
+      ],
+      "originalSourcePageOcrGeneratedOnce": 17,
+      "firstPassVisuallyTranscribedOriginalNumberedUnits": 13,
+      "firstPassChapters": [
+        "I",
+        "II",
+        "III"
+      ],
+      "remainingSourceUnitsNeedingVisualWordCollation": 34,
+      "independentlySecondCertifiedUnits": 0,
+      "publicationApprovedUnits": 0,
+      "sourceWordingAddedToGitHub": false,
+      "appRuntimeChanged": false,
+      "noNewAiNarrative": true,
+      "textSourceAuthenticityNote": "Single human-style reading of original scanned English paragraphs, with typographical quote/linebreak normalization; final literal OCR correction, footnote binding and separate editor approval remain outstanding. OCR output from one batch conversion is NOT source truth."
+    }
   }
 }
