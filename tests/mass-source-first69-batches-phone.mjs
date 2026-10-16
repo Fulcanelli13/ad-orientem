@@ -31,6 +31,12 @@ try{
    const batch=area.locator("[data-ao-source-batch-review]");
    await batch.waitFor({state:"visible",timeout:12000});
    assert.equal((await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1.status())).sourceBatches,37);
+   assert.equal((await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1.status())).sourceContextsLocated,10);
+   assert.equal(await batch.locator("[data-ao-source-context-summary]").count(),1);
+   assert.equal(await batch.locator("[data-ao-source-context-locus]").count(),10);
+   assert.match(await batch.locator("[data-ao-source-context-summary]").innerText(),/0 \/ 37/);
+   assert.equal(await batch.locator('[data-ao-source-context-locus="AO.MASS.WORK.AQUINAS.L01"]').count(),1);
+
    await batch.locator("summary").first().tap();
    const works=batch.locator("[data-ao-source-work]");
    assert.equal(await works.count(),5);
