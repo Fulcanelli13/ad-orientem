@@ -134,3 +134,75 @@ export function calendarColourRubricalClaimsForDay(resolution,sourceLedger){
     automaticMassChange:false
   })]);
 }
+
+
+// These are *dated source-witness explanations* of an observed transfer, not
+// a replacement for the Calendar's year algorithm or its actual 1962 resolver.
+import {annunciationObservanceDate,allSoulsObservanceDate,saintJosephObservanceDate} from "./liturgical-year.js";
+
+const TRANSFER_IDS=Object.freeze({
+  "annunciation-2024":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",project:annunciationObservanceDate}),
+  "all-souls-2025":Object.freeze({sourcePath:"Sancti/11-02",monthDay:"11-02",project:allSoulsObservanceDate}),
+  "annunciation-2027":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",project:annunciationObservanceDate}),
+  "joseph-2028":Object.freeze({sourcePath:"Sancti/03-19",monthDay:"03-19",project:saintJosephObservanceDate})
+});
+const TRANSFER_CLAUSES=new Set(["RG 15","RG 16(b)","RG 95","RG 96","RG 96(a)","RG 96(b)","RG 99"]);
+const transferWitnessUrl=value=>{
+  try{
+    const u=new URL(String(value||""));
+    if(u.protocol!=="https:"||u.username||u.password)return null;
+    if(u.hostname==="gcatholic.org"&&/^\/calendar\/20\d{2}\/Extraordinary-en$/.test(u.pathname))return u.href;
+    if(u.hostname==="missale.online"&&/^\/festkalender\/en\/20\d{2}$/.test(u.pathname))return u.href;
+    return null;
+  }catch{return null}
+};
+export function calendarTransferRubricalClaimsForDay(resolution,ledger){
+  if(ledger?.schema!=="ao-1962-observance-transfer-oracle-v1"||
+     resolution?.status==="failed"||resolution?.proper?.status!=="ready"||
+     !/^\d{4}-\d{2}-\d{2}$/.test(resolution?.date||"")||
+     !resolution?.day?.main?.id)return Object.freeze([]);
+  const source=resolution.proper.data?.sourcePath;
+  const actual=ownerId(resolution.day.main.id);
+  if(!actual||actual!==pathId(source)||
+     !/:1:[a-z]{1,3}$/i.test(String(resolution.day.main.id)))return Object.freeze([]);
+  const matches=(Array.isArray(ledger.witnesses)?ledger.witnesses:[])
+    .filter(w=>w?.observed===resolution.date&&w?.rubricalClaim);
+  // Never prefer an arbitrary witness when same-day identities conflict.
+  if(matches.length!==1)return Object.freeze([]);
+  const w=matches[0],c=w.rubricalClaim,known=TRANSFER_IDS[w.id];
+  if(!known||
+     w.original!==c.original||w.observed!==c.observed||
+     w.original.slice(0,4)!==w.observed.slice(0,4)||
+     w.original.slice(5)!==known.monthDay||
+     w.original>=w.observed||known.project(Number(w.original.slice(0,4)))!==w.observed||
+     c.sourcePath!==known.sourcePath||source!==known.sourcePath||
+     c.kind!=="ACTUALLY_TRANSFERRED_1962_FEAST"||c.principalClass!==1||
+     c.authorityId!=="RUBRICS_1960"||c.generalCalendarOnly!==true||
+     c.doesNotAuthorizeLocalMass!==true||
+     c.id!==w.id.toUpperCase().replace(/-/g,"_")||
+     !Array.isArray(c.clauses)||!c.clauses.length||
+     !c.clauses.every(x=>TRANSFER_CLAUSES.has(x))||
+     new Set(c.clauses).size!==c.clauses.length||
+     !c.title?.en?.trim()||!c.title?.fr?.trim()||
+     !c.explanation?.en?.trim()||!c.explanation?.fr?.trim())return Object.freeze([]);
+  // Require the case-specific *operative* transfer paragraph, not merely a
+  // generic occurrence or calendar-precedence citation.
+  if(w.id.startsWith("annunciation-")&&!c.clauses.includes("RG 96(a)"))return Object.freeze([]);
+  if(w.id==="all-souls-2025"&&!c.clauses.includes("RG 96(b)"))return Object.freeze([]);
+  if(w.id==="joseph-2028"&&(!c.clauses.includes("RG 95")||!c.clauses.includes("RG 96")))return Object.freeze([]);
+  const witnessUrl=transferWitnessUrl(w.source);
+  if(!witnessUrl)return Object.freeze([]);
+  return Object.freeze([Object.freeze({
+    claimId:c.id,claimKind:"SOURCE_ATTESTED_1962_TRANSFER",
+    originalDate:w.original,observedDate:w.observed,
+    principalId:actual,properSourcePath:source,
+    clauses:Object.freeze([...c.clauses]),
+    title:Object.freeze({en:c.title.en.trim(),fr:c.title.fr.trim()}),
+    explanation:Object.freeze({en:c.explanation.en.trim(),fr:c.explanation.fr.trim()}),
+    authorityKind:"NORMATIVE_1960_RUBRICS",
+    normativeUrl:GENERAL_RUBRICS_NORMATIVE_URL,
+    referenceUrl:GENERAL_RUBRICS_ENGLISH_REFERENCE_URL,
+    witnessKind:"INDEPENDENT_DATED_1962_CALENDAR",
+    witnessUrl,changesMassResolver:false,
+  })]);
+}
