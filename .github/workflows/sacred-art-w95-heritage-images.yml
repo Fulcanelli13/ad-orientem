@@ -1,0 +1,32 @@
+name: Sacred Art W95 Heritage Exact-Source Acquisition
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-w95-heritage-original-image-acquisition.v1.json
+      - tools/calendar/acquire-sacred-art-w95-heritage.py
+      - .github/workflows/sacred-art-w95-heritage-images.yml
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Download institutionally matched paintings without auto-certifying painted edges
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w95-heritage.py
+          python tools/calendar/acquire-sacred-art-w95-heritage.py
+      - name: Preserve full source bytes and review proofs privately
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w95-heritage-research-source-photos
+          path: artifacts/sacred-art-w95-heritage-image-evidence/
+          retention-days: 30
+          if-no-files-found: warn
