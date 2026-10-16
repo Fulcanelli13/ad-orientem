@@ -5,6 +5,7 @@ const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const root="data/calendar/";
 const law=load(root+"p1-rubrical-permission-matrix.v1.json");
 const forms=load(root+"p1-1962-formulary-master.v1.json");
+const commonCrosswalk=load(root+"p1-canonical-common-source-crosswalk.v1.json");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -54,7 +55,36 @@ assert.equal(internalMissal.contractValidation.currentDirectPrayerDeepLinksVerif
 assert.equal(liveWitness.readOnlyReaderParagraphProof.verifiedTargets,6);
 assert.equal(liveWitness.readOnlyReaderParagraphProof.status,"SOURCE_READY_ROUTER_NOT_IMPLEMENTED");
 assert.equal(internalMissal.missalReferenceVsCelebrantMass.activeCelebrationPrayer.allowedThroughThisP1Bridge,false);
-assert.ok(forms.forms.every(x=>x.internalMissalReference.route===null&&x.internalMissalReference.sourcePath===null));
+assert.ok(forms.forms.every(x=>x.internalMissalReference.route===null),"No Common URL route may be invented");
+assert.equal(commonCrosswalk.schema,"AO_P1_CANONICAL_COMMON_APP_SOURCE_CROSSWALK_V1");
+assert.equal(commonCrosswalk.rows.length,7);
+assert.equal(commonCrosswalk.sourcePathsVerified,7);
+assert.equal(commonCrosswalk.directTrilingualSevenSectionPaths,6);
+assert.equal(commonCrosswalk.sourcePathsNeedingInheritedLanguageSections,1);
+assert.equal(forms.sourceOwnedCommonPathsMapped,7);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).length,7);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath==null).length,31);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritancePending===true).length,1);
+assert.deepEqual(new Set(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).map(x=>x.internalMissalReference.sourcePath)),new Set(["Commune/C4","Commune/C4-1","Commune/C4a","Commune/C5","Commune/C5-1","Commune/C5a","Commune/C5b"]));
+for(const row of commonCrosswalk.rows){
+ const form=forms.forms.find(x=>x.id===row.researchId);
+ assert.ok(form,"Source row must own a preexisting Common research ID");
+ assert.equal(form.internalMissalReference.sourcePath,row.candidateCanonicalSourcePath);
+ assert.equal(form.internalMissalReference.formularyReadyForNewSaint,false);
+ assert.equal(form.internalMissalReference.readOnlyDeepLinkRoute,null);
+ assert.equal(form.approvedForRuntime,false);
+ assert.equal(row.actualSaintChoice,null);
+ assert.equal(row.route,null);
+}
+const doctorPontiff=commonCrosswalk.rows.find(x=>x.researchId==="commune:1962:doctor_pontiff");
+const doctorNonPontiff=commonCrosswalk.rows.find(x=>x.researchId==="commune:1962:doctor_non_pontiff");
+assert.equal(doctorPontiff.printedFamilyId,doctorNonPontiff.printedFamilyId);
+assert.equal(doctorPontiff.candidateCanonicalSourcePath,"Commune/C4a");
+assert.equal(doctorNonPontiff.candidateCanonicalSourcePath,"Commune/C5a");
+assert.deepEqual(doctorNonPontiff.directLanguageSectionCoverage,{la:7,en:2,fr:2});
+assert.equal(doctorNonPontiff.sharedFamilyForIncompleteLanguageSections,"Commune/C4a");
+assert.deepEqual(doctorNonPontiff.legitimateVariantSections,["Secreta","Postcommunio"]);
+assert.equal(commonCrosswalk.newmanExample.permittedFormularyChoice,null);
 assert.ok(forms.forms.every(x=>x.internalMissalReference.canonicalResearchFormularyId===x.id&&x.internalMissalReference.mustNotRedirectToExternalSource===true));
 assert.equal(forms.userFacingLinkPolicy,"IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK");
 
