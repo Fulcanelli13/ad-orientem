@@ -1,0 +1,32 @@
+name: Sacred Art Three Hard Subject Sources
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-final-three-hard-image-sources.v1.json
+      - tools/calendar/acquire-sacred-art-three-hard-subjects.py
+      - .github/workflows/sacred-art-three-hard-subjects.yml
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Bulk fetch physical-original image sources and mobile previews
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-three-hard-subjects.py
+          python tools/calendar/acquire-sacred-art-three-hard-subjects.py
+      - name: Archive original bytes and source evidence without app publication
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-three-hard-original-source-photographs
+          path: artifacts/sacred-art-three-hard-subjects/
+          retention-days: 30
+          if-no-files-found: warn
