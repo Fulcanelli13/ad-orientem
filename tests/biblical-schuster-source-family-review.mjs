@@ -322,4 +322,24 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemain
 assert.equal(fam.counts.earlyEnglishSadlierEleventhIndependentlyCertifiedUnitBodies,0);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished,0);
 
+const pass4=fam.english1908OriginsSecondPrintReviewBatch04;
+assert.equal(pass4.originalUnitBodiesAvailable,47);
+assert.equal(pass4.secondImageWordingReviewCount,10);
+assert.equal(pass4.secondImageWordingReviewIds.length,10);
+assert.equal(new Set(pass4.secondImageWordingReviewIds).size,10);
+assert.ok(pass4.secondImageWordingReviewIds.every(id=>originSpans.units.some(u=>u.id===id)));
+assert.equal(pass4.secondVisualWordingNotYetReviewed,37);
+assert.equal(pass4.sourceFootnoteMarkerCases.length,5);
+assert.equal(pass4.sourceFootnoteMarkerCount,5);
+assert.deepEqual(pass4.sourceFootnoteMarkerCases.map(x=>x.originalPDFPage),[29,29,31,31,32]);
+assert.deepEqual(pass4.sourceFootnoteMarkerCases.map(x=>x.anchorWord),["Armenia","subsided","frustrated","Japhet","divinities"]);
+assert.equal(pass4.wholeSourceFootnoteBodiesCertified,0);
+assert.equal(pass4.independentlyCharacterCertifiedUnits,0);
+assert.equal(pass4.editoriallyPublicationApprovedUnits,0);
+assert.equal(pass4.originalNarrativeTextRewrittenOrImportedToGithub,false);
+assert.equal(pass4.applicationProductionChanged,false);
+assert.equal(fam.counts.earlyEnglishSadlierSecondWordingImageReviewedUnits,10);
+assert.equal(fam.counts.earlyEnglishSadlierPrintedFootnoteMarkersRecovered,5);
+assert.equal(fam.counts.earlyEnglishSadlierLiterallyCharacterCertifiedUnits,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
