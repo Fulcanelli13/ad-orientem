@@ -65,6 +65,7 @@ export function installScriptureBrowserOwner(win=globalThis){
        doc.getElementById("ao-scripture-overlay")?.remove();
        doc.body?.append(node);
      }
+     reader?.resume?.();
      node.hidden=false;
      if(doc.body)doc.body.style.overflow="hidden";
      node.scrollTop=receipt.scrollTop;
