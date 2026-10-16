@@ -6,9 +6,9 @@ const review=read("data/saints/w82-four-historical-doctors-source-identity-revie
 const ledger=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json");
 const historical=read("data/saints/historical-v4333-311-components.recovered.v1.json");
 const collisions=read("data/saints/six-duplicate-name-alias-evidence-20261016.v1.json");
-const doctors=read("data/calendar/doctors-of-church-roster.review.v1.json");
+const doctors=read("data/saints/read-only-calendar-art-index-20261015.v1.json");
 const ledgerIds=new Set(ledger.records.map(x=>x.source_key));
-const calendarDoctors=new Map(doctors.doctors.map(x=>[x.canonicalPersonId,x]));
+const calendarDoctors=new Map(doctors.doctors_roster.map(x=>[x.calendar_person_id,x]));
 const nameCollisions=new Map(collisions.records.map(x=>[x.shrine_name_literal,x]));
 
 assert.equal(review.schema,"ao.saints.w82-four-historical-doctors-source-identity-review.2026.v1");
@@ -35,9 +35,9 @@ for(const row of review.records){
  assert(collision.raw_archive_observance_source_ids.includes(row.observance_primary_1962_source_id));
  const roster=calendarDoctors.get(row.calendar_doctor_roster_source_key);
  assert(roster);
- assert.equal(roster.liturgicalDate1962,row.nominal_1962_date_mm_dd);
- assert.equal(roster.observanceSourceIdentity,row.observance_primary_1962_source_id);
- if(row.doctor_declaration_after_1962)assert.equal(roster.declarationDate,row.doctor_declaration_after_1962);
+ assert.equal(roster.nominal_day_1962,row.nominal_1962_date_mm_dd);
+ assert.equal(roster.original_source_id,row.observance_primary_1962_source_id);
+ if(row.doctor_declaration_after_1962)assert.equal(roster.declaration_date,row.doctor_declaration_after_1962);
  const historicalDay=historical.rows.find(x=>x.date===row.nominal_1962_date_mm_dd);
  assert(historicalDay);
  assert(historicalDay.components.some(x=>x.historical_component_id===row.archived_component_id&&
