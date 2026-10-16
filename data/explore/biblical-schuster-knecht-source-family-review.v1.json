@@ -169,7 +169,11 @@
         33
       ],
       "originalNarrativeUnitsFirstPassTranscribed": 6,
-      "publicSourcePDFSameExactFileAsUpload": "NOT_PROVEN_UPLOAD_IS_COMPRESSED"
+      "publicSourcePDFSameExactFileAsUpload": "NOT_PROVEN_UPLOAD_IS_COMPRESSED",
+      "publicSourcePdfDownloadedAndPdfinfoValidated": true,
+      "publicOriginalPdfSha256": "79b281e7de0e27cad9ab449bc5732d369ac54073693a298820e9fe3402a7e900",
+      "publicOriginalPdfPages": 419,
+      "publicSourceFileByteIdenticalToCompressedUpload": false
     }
   ],
   "openingEnglishTocSections": [
@@ -474,7 +478,10 @@
     "earlyEnglishSadlierEleventhParagraphsCertified": 0,
     "earlyEnglishSadlierEleventhOriginalPrintYearVerified": 1908,
     "earlyEnglishSadlierEleventhImagesSpotChecked": 17,
-    "earlyEnglishSadlierEleventhNarrativeUnitsOnePassTranscribed": 6
+    "earlyEnglishSadlierEleventhNarrativeUnitsOnePassTranscribed": 6,
+    "earlyEnglishSadlierPublicOriginalPdfRetrieved": 1,
+    "spanish1908OriginalPdfRetrieved": 1,
+    "historicEnglish1925WholePdfRetrieved": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -2430,7 +2437,7 @@
       "specificEleventhEditionIdentityFromPublisher": "NOT_PROVEN"
     },
     "preliminaryScanDownloadOutcome": "SUPERSEDED_BY_USER_UPLOADED_COMPRESSED_PRINT_SCAN_FOR_1908_11TH; KEEP_GITHUB_BATCH_ACQUISITION_AS_OPTIONAL_FALLBACK",
-    "workflowStrategy": "Use a separately-scoped research-only batch PDF acquisition job to download scan, hash, record metadata, and render source-page previews as transient artifacts; no source prose to production and no auto-approval.",
+    "workflowStrategy": "SUCCESS: Github Actions downloaded public 11th English PDF, Spanish 1908 PDF, rendered source-preview artifacts. 1925 historical English download timed out. Source pages still require independent character collation and rights clearance.",
     "originalPrintedPagesCertifiedNow": 0,
     "authorNarrativeParagraphsCertifiedNow": 0,
     "automaticSourceImportAllowed": false,
@@ -2614,6 +2621,43 @@
     "status": "FIRST_PASS_ORIGINAL_IMAGE_VISUAL_STRUCTURE_CONFIRMED_CREATION_SIX_UNITS_TRANSCRIBED_EXTERNALLY_SECOND_CHARACTER_COLLATION_PENDING",
     "pdfOriginalFileAddedToGithub": false,
     "sourceTranscribedProseAddedToGithub": false,
-    "productionAppChanged": false
+    "productionAppChanged": false,
+    "publicHistoricalScanBatchAcquisition": {
+      "githubActionsRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38847148541",
+      "githubActionsRunId": 38847148541,
+      "runConclusion": "SUCCESS",
+      "workflowArtifactId": 12024405812,
+      "workflowArtifactName": "biblical-historical-witness-preview-unverified",
+      "artifactRetentionDays": 7,
+      "successfulFiles": [
+        {
+          "witnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+          "sourceUrl": "https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf",
+          "bytes": 23008160,
+          "pdfPageCount": 419,
+          "sha256": "79b281e7de0e27cad9ab449bc5732d369ac54073693a298820e9fe3402a7e900",
+          "validation": "PDFINFO_CONFIRMED_ORIGINAL_PDF_RETRIEVED_45_PAGE_PREVIEW_GENERATED_NOT_CERTIFIED"
+        },
+        {
+          "witnessId": "SCHUSTER-ES-1908-HERDER-ORTI-12TH",
+          "sourceUrl": "https://archive.org/download/historiasagradad00schu/historiasagradad00schu.pdf",
+          "bytes": 36488394,
+          "pdfPageCount": 294,
+          "sha256": "5efc1269eabb1eac6f2e38962962c860c83d45d1354e5c7b12b52b0b8432e77c",
+          "validation": "PDFINFO_CONFIRMED_ORIGINAL_PDF_RETRIEVED_45_PAGE_PREVIEW_GENERATED_NOT_CERTIFIED"
+        }
+      ],
+      "failedFiles": [
+        {
+          "witnessId": "SCHUSTER-EN-1925-HERDER-LONDON-19TH",
+          "status": "ARCHIVE_DOWNLOAD_TIMEOUT_AFTER_3_ATTEMPTS_NO_VALID_PDF",
+          "sourceUrl": "https://archive.org/download/in.ernet.dli.2015.49638/2015.49638.1373-The-Illustrated-Bible-History-1925.pdf"
+        }
+      ],
+      "reproducibilityNote": "Original public 1908 English 11th PDF and user-compressed 1908 PDF share 419 pages, Adobe Acrobat 7.05 creator, original source creation date May 18 2006 and first-page dimensions. They have different SHA256/byte lengths because compressed; exact per-page pixel equality not yet certified.",
+      "originalNarrativeTextAutomaticallyAccepted": false,
+      "printProofreadWordsFromBatchArtifact": 0,
+      "appChanges": false
+    }
   }
 }
