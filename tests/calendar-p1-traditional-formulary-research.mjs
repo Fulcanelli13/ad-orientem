@@ -8,6 +8,7 @@ const forms=load(root+"p1-1962-formulary-master.v1.json");
 const commonCrosswalk=load(root+"p1-canonical-common-source-crosswalk.v1.json");
 const additional=load(root+"p1-additional-common-candidates.v1.json");
 const additionalAudit=load(root+"p1-additional-common-app-audit.v1.json");
+const donorPlan=load(root+"p1-partial-common-donor-plan.v1.json");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -67,6 +68,12 @@ assert.equal(new Set(additional.provisionalRows.map(x=>x.candidateCanonicalSourc
 assert.ok(additional.provisionalRows.every(x=>x.route===null&&x.approvedForRuntime===false&&x.approvedForNewSaintMass===false));
 assert.ok(additional.provisionalRows.every(x=>forms.forms.some(f=>f.id===x.researchId)));
 assert.equal(additionalAudit.sourceCandidateCount,28);
+assert.equal(donorPlan.cases.length,11);
+assert.deepEqual(new Set(donorPlan.cases.map(x=>x.target)),
+ new Set(additionalAudit.sourceEntries.filter(x=>!x.directNineSectionTrilingual).map(x=>x.sourcePath)));
+assert.ok(donorPlan.cases.every(x=>x.allowAutoBorrow===false&&x.checkStatus==="EVIDENCE_PENDING"&&x.formularyApproved===false));
+assert.equal(donorPlan.cases.find(x=>x.target==="Commune/C1").donors.length,0);
+assert.deepEqual(donorPlan.cases.find(x=>x.target==="Commune/C3ap").donors,["Commune/C3p","Commune/C3a"]);
 assert.equal(additionalAudit.directTrilingualNineSectionCount,17);
 assert.equal(additionalAudit.partialSourceCount,11);
 assert.equal(additional.provisionalRows.filter(x=>x.nineSectionTrilingualReady===true).length,17);
