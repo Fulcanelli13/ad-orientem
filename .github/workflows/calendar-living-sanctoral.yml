@@ -11,6 +11,9 @@ on:
       - 'data/calendar/post1960-canonizations.source-year-coverage.v1.json'
       - 'data/calendar/doctors-of-church-roster.review.v1.json'
       - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
+      - 'data/calendar/traditional-calendar-adjudication-matrix.v1.json'
+      - 'src/calendar/traditional-day-adjudication.js'
+      - 'tests/calendar-traditional-adjudication.mjs'
       - 'src/calendar/living-sanctoral.js'
       - 'src/calendar/reviewed-sanctoral-cards.js'
       - 'src/calendar/sanctoral-day-ui.js'
@@ -51,3 +54,4 @@ jobs:
           node tests/calendar-post1960-collective-cards.mjs
           node tests/calendar-reviewed-sanctoral-cards.mjs
           node tests/calendar-reviewed-sanctoral-day-integration.mjs
+          node tests/calendar-traditional-adjudication.mjs
