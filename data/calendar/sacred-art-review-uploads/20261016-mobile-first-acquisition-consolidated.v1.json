@@ -101,7 +101,16 @@
       "evidence": "Franchi Ambrosiana exact original; unrelated Commons figure is not substitute",
       "nextAction": "Open-source exact photo only; no restricted Ambrosiana download",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "THREE_HARD_BULK",
+        "status": "EXACT_ORIGINAL_IDENTIFIED_IMAGE_DOWNLOAD_FAILED",
+        "selectedOriginal": "Giuseppe Franchi (attr.), Ritratto di San Gregorio Nazianzeno, L0070-00118, Pinacoteca Ambrosiana",
+        "linkedImage": "https://www.lombardiabeniculturali.it/assets/immagini/liv2/OA310RL/SC/OA/L0070/00/OA_L0070-00118_IMG-0000222844.jpg",
+        "sourceProblem": "Institutional photo endpoint timed out; no bytes acquired; image not usable until actually fetched.",
+        "imageAcquired": false,
+        "ratingChanged": false
+      }
     },
     {
       "categoryIndex": 35,
@@ -160,6 +169,28 @@
         "next": "Do not promote contextual scene as a St Cyril hero.",
         "ratingsUnchanged": true,
         "productionRightsApproved": false
+      },
+      "bulkSourceOutcome": {
+        "batch": "THREE_HARD_BULK",
+        "status": "EXACT_1637_FRESCO_PHOTOGRAPH_ACQUIRED_HISTORIC_MONOCHROME",
+        "sourcePaintingId": "ICCD-0900117888A-1",
+        "object": "Antonio Nannoni (attr), Saint Cyril of Jerusalem fresco 1637",
+        "imageUrl": "https://sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5047475_189881.jpg",
+        "imageSha256": "74d2fd8ab7ffe9f741abaf61a10ca7feaeb4afda63bb535080d7bf21e2fea102",
+        "sourcePixels": [
+          939,
+          1280
+        ],
+        "mobileVisual": "Full subject fresco and inscription S. CYRILLVS clearly present; monochrome archival photograph with condition issues, can serve as provisional archival depiction.",
+        "wrongImageFilesExcluded": [
+          "ICCD5047473_189865.jpg",
+          "ICCD5047477_189885.jpg"
+        ],
+        "originalSelectedIdentity": "No previous selected source; newly documented original; not automatically approved",
+        "photoRightsForApp": false,
+        "ratingChanged": false,
+        "provenanceQa": "data/calendar/sacred-art-review-uploads/20261016-three-hard-mobile-source-visual-QA.v1.json",
+        "artifactId": 12061592533
       }
     },
     {
@@ -278,7 +309,25 @@
       "evidence": "RDS Valdrè original oil photo publication restricted",
       "nextAction": "Search independently openly licensed exact physical painting photograph; no permissions outreach",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "THREE_HARD_BULK",
+        "status": "DIFFERENT_ORIGINAL_COLOR_PHOTOGRAPH_ACQUIRED_MOBILE_GOOD",
+        "physicalOriginalId": "NGI-4623",
+        "object": "James Barry, The Baptism of the King of Cashel by Saint Patrick, c.1800–1801",
+        "sourcePage": "https://onlinecollection.nationalgallery.ie/objects/8798",
+        "imageSHA256": "295f57db0d5719664e59500358dc833be0827461160b790ebfb3f152b5e2e82e",
+        "imagePixels": [
+          344,
+          332
+        ],
+        "mobileVisual": "Warm clear coloured narrative image, satisfactory on 390px mobile despite 344x332 source.",
+        "sourceRights": "National Gallery Ireland CC BY 4.0 with attribution, as on Commons file",
+        "replacesRdsValdreWithoutUserSelection": false,
+        "ratingChanged": false,
+        "provenanceQa": "data/calendar/sacred-art-review-uploads/20261016-three-hard-mobile-source-visual-QA.v1.json",
+        "artifactId": 12061592533
+      }
     },
     {
       "categoryIndex": 60,
@@ -452,7 +501,7 @@
       "publicationApproved": false
     }
   ],
-  "lastReconciled": "2026-10-16 Carmel 2 originals / 3 categories mobile QA",
+  "lastReconciled": "2026-10-16 Three Hard Bulk exact Cyril + Patrick alternate",
   "w99Stats": {
     "attemptedPhotoFiles": 7,
     "downloadedAndDecoded": 7,
@@ -493,9 +542,10 @@
   },
   "mobilePhotoAcquisitionCheckpoint": {
     "priorLegacyStrictCoverage": "146/168 (not revised pending license/curatorial release gates)",
-    "newVerifiedFullPaintingPhotosExactSelectedOriginal": 5,
+    "newVerifiedFullPaintingPhotosExactSelectedOriginal": 6,
     "imageAcquisitionClosedCategories": [
       25,
+      41,
       42,
       48,
       82,
@@ -510,7 +560,7 @@
     "previousW100CountPreserved": true,
     "noRatingsOrRuntimeChanges": true,
     "strictPublicationAndAcceptanceGatesUnchanged": true,
-    "physicalOriginalsAcquiredAcrossTheseCategories": 4,
+    "physicalOriginalsAcquiredAcrossTheseCategories": 5,
     "newCarmelCategoryClosures": [
       25,
       48,
@@ -526,6 +576,14 @@
     ],
     "strictBaseline": 146,
     "totalCategories": 168,
-    "explanation": "Acquisition completed for five previously missing exact original categories but photo/publication rights remain separately unresolved, so 146/168 strict publication figure must not be incremented."
+    "explanation": "Acquisition completed for five previously missing exact original categories but photo/publication rights remain separately unresolved, so 146/168 strict publication figure must not be incremented.",
+    "newlyResolvedExactFrescoCategory": 41,
+    "newDifferentOriginalPhotoCategory": 52,
+    "hardImageSourceRemainingCategory": 30,
+    "exactImageAcquisitionClosedCount": 6,
+    "countStillUnresolvedFromOriginal22": 16,
+    "rightsAndCuratorStrictCoverage": "146/168 unchanged under original stricter release convention",
+    "qaRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38937339059",
+    "batchArtifactId": 12061592533
   }
 }
