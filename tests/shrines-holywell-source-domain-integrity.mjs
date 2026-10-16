@@ -14,8 +14,10 @@ assert.equal(audit.status,"SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_A
 assert.equal(audit.records.length,2);
 assert.equal(audit.original_source_id_contract,"ORIGINAL_SOURCE_IDS_PRESERVED");
 assert.equal(audit.independent_ecclesial_confirmation,"https://www.cbcew.org.uk/jubilee-churches/");
-assert(reg.sources.every(x=>!/^https?:\\/\\/(?:www\\.)?stwinefrideswell\\.org\\.uk(?:[/?#]|$)/i.test(x.url)),
-  "Compromised or obsolete St Winefride host still appears in authoritative source URLs");
+assert(reg.sources.every(x=>{
+  try{return !["stwinefrideswell.org.uk","www.stwinefrideswell.org.uk"].includes(new URL(x.url).hostname.toLowerCase());}
+  catch{return true;}
+}),"Compromised or obsolete St Winefride host still appears in authoritative source URLs");
 
 const expected={
  "SHR-HOLYWELL-CONTACT":"https://www.stwinefridesshrine.org/blank-2",
