@@ -10,7 +10,9 @@
     "missalRubrics1960": "https://www.divinumofficium.com/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
     "newmanGeneralRomanDecree": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
     "newmanModernEnglishTexts": "https://www.usccb.org/prayer-worship/liturgical-year/saint-john-henry-newman",
-    "stKevinsOfficial": "https://www.latinmassdublin.ie/calendar"
+    "stKevinsOfficial": "https://www.latinmassdublin.ie/calendar",
+    "commonDoctorNonBishop1962": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis",
+    "commonConfessorNonBishop1962": "https://1962missal.com/commune/commune-confessoris-non-pontificis/"
   },
   "precedence": [
     {
@@ -97,8 +99,13 @@
       "formSourceEvidence": {
         "proAliquibusLocis1962": "NOT_YET_VERIFIED",
         "traditionalSupplement": "NOT_YET_VERIFIED",
-        "common1962": "RELEVANT_CATEGORY_AVAILABLE_EXACT_CANDIDATE_UNSELECTED",
-        "saintClass": "PRIEST_CONFESSOR_DOCTOR"
+        "common1962": "DOCTOR_NON_BISHOP_AND_CONFESSOR_COMMONS_IDENTIFIED_NOT_CERTIFIED",
+        "saintClass": "PRIEST_CONFESSOR_DOCTOR",
+        "commonCandidates": [
+          "commune:1962:doctor_non_pontiff",
+          "commune:1962:confessor_non_pontiff"
+        ],
+        "verifiedDoctorNonBishopWitnessUrl": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis"
       },
       "historicalOrations": "THREE_ORATIONS_REQUIRED_IF_FESTIVE_MASS_DISPLACES_ELIGIBLE_TRADITIONAL_FEAST",
       "traditionalSelectedFormularyId": null,
