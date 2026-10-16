@@ -485,9 +485,11 @@
     "earlyEnglishSadlierEleventhOriginalUnitSpansImageLocated": 47,
     "earlyEnglishSadlierEleventhOriginalChaptersFullyUnitMapped": 8,
     "earlyEnglishSadlierEleventhCompleteUnitTextCollations": 0,
-    "earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies": 13,
+    "earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies": 47,
     "earlyEnglishSadlierEleventhWorkingPageOcrGenerated": 17,
-    "earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining": 34
+    "earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining": 0,
+    "earlyEnglishSadlierEleventhIndependentlyCertifiedUnitBodies": 0,
+    "earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -3743,6 +3745,42 @@
       "appRuntimeChanged": false,
       "noNewAiNarrative": true,
       "textSourceAuthenticityNote": "Single human-style reading of original scanned English paragraphs, with typographical quote/linebreak normalization; final literal OCR correction, footnote binding and separate editor approval remain outstanding. OCR output from one batch conversion is NOT source truth."
+    },
+    "workingTextBatch3": {
+      "date": "2026-10-16",
+      "status": "ALL_47_FIRST_PASS_TRANSCRIPTIONS_PREPARED_FROM_HISTORICAL_1908_ENGLISH_PRINT_WITH_OCR_AID_NOT_SECOND_PROOFED",
+      "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+      "scopePdfPages": [
+        16,
+        32
+      ],
+      "scopePrintedPages": [
+        1,
+        17
+      ],
+      "scopeUnitCount": 47,
+      "priorFirstPassUnits": 13,
+      "additionalFirstPassUnits": 34,
+      "firstPassWorkingTranscriptionUnitsTotal": 47,
+      "firstPassEstimatedWordCount": 3305,
+      "untranscribedOriginalUnitBodies": 0,
+      "independentlyCharacterProofreadUnits": 0,
+      "editorialPublicationApprovedUnits": 0,
+      "sourceWorkUploadedToGitHub": false,
+      "newAuthorialTextPublishedToApplication": false,
+      "retainsHistoricalProblematicSourceStatements": true,
+      "standaloneArtifactName": "Schuster_1908_Origins_Batch03_All47_FirstPass_Working_Text.json",
+      "standaloneArtifactSHA256": "ecb7bbb036a76d22f9a4e7a923f1052fff6423269527ac38fde274a0c9f79f19",
+      "separateArtifactStoredInConversation": true,
+      "originalSourcePDFPrintCheck": "Printed chapter pages 1–17 / PDF pages 16–32; first-pass source image checking and OCR reconciliation completed, independent literal second proof still pending",
+      "exclusions": [
+        "CHAPTER_QUESTIONS",
+        "EPIGRAPHS",
+        "SOURCE_GLOSSARY_FOOTNOTES",
+        "HISTORICAL_ILLUSTRATIONS"
+      ],
+      "editorialHoldsCount": 7,
+      "conditionsForUse": "Independent literal character-level proofreading of all 47 units, separate notes/epigraphs questions, explicit historical editorial contexts and applicable rights review before public display"
     }
   }
 }
