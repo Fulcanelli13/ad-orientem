@@ -301,7 +301,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id!=="liturgy-tradition"||item.id!=="learn.mass").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
         :`<div class="aoLearnIntentLayout">
           <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Domaines de formation":"Formation subjects")}">
             <div class="aoLearnIntentHeading"><small>${esc(langFr?"LES DOMAINES":"SUBJECTS")}</small><h2>${esc(langFr?"Choisir un domaine":"Choose a subject")}</h2></div>
