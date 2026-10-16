@@ -236,4 +236,20 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhOriginalPrintYearVerified,190
 assert.equal(fam.counts.earlyEnglishSadlierEleventhNarrativeUnitsOnePassTranscribed,6);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhParagraphsCertified,0);
 
+const originalDownload=original1908.publicHistoricalScanBatchAcquisition;
+assert.equal(originalDownload.runConclusion,"SUCCESS");
+assert.equal(originalDownload.successfulFiles.length,2);
+assert.equal(originalDownload.failedFiles.length,1);
+assert.equal(originalDownload.successfulFiles[0].pdfPageCount,419);
+assert.equal(originalDownload.successfulFiles[1].pdfPageCount,294);
+assert.equal(originalDownload.successfulFiles[0].sha256.length,64);
+assert.equal(originalDownload.successfulFiles[1].sha256.length,64);
+assert.equal(originalDownload.failedFiles[0].witnessId,"SCHUSTER-EN-1925-HERDER-LONDON-19TH");
+assert.equal(originalDownload.originalNarrativeTextAutomaticallyAccepted,false);
+assert.equal(originalDownload.printProofreadWordsFromBatchArtifact,0);
+assert.equal(originalDownload.appChanges,false);
+assert.equal(fam.counts.earlyEnglishSadlierPublicOriginalPdfRetrieved,1);
+assert.equal(fam.counts.spanish1908OriginalPdfRetrieved,1);
+assert.equal(fam.counts.historicEnglish1925WholePdfRetrieved,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
