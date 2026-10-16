@@ -83,7 +83,8 @@
     "unpublishedGuideVariants": 122,
     "mysteryOwnerIds": 39,
     "formationStages": 8,
-    "sourceTypedScriptureResearchCandidates": 48
+    "sourceTypedScriptureResearchCandidates": 48,
+    "researchPriestEventRows": 279
   },
   "sourceCoverage": {
     "researchUnitsWithValidCanonicalSungCue": 435,
@@ -114,7 +115,17 @@
     "workbookMicroUnitsComparedDirectlyWithWorkbookCueMaster": 435,
     "workbookInternalLatinExactWholeCues": 159,
     "workbookInternalLatinContainedSubspans": 276,
-    "workbookInternalLatinDifferences": 0
+    "workbookInternalLatinDifferences": 0,
+    "priestEventIdsLinkedToCanonicalSungSourceCues": 279,
+    "priestEventActorGestureAndApplicabilityCertified": 0,
+    "productionSourceBlobParityCheckedOnAdvancingMain": {
+      "sungText": "UNCHANGED",
+      "lowText": "UNCHANGED",
+      "publishedGuide": "UNCHANGED",
+      "curatedCards": "UNCHANGED",
+      "rollback48": "UNCHANGED",
+      "rubricOverlay": "UNCHANGED"
+    }
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -130,6 +141,8 @@
     "Scripture and historical-author content remain individually held for editorial source certification",
     "All results require rebasing/checking main if production advances after frozen SHA",
     "All 66 source-trigger offsets identify exact canonical Sung UTF-16 text spans, but actor, posture/gesture, 1962 authority and ritual applicability remain editorial holds; none is approved for new public binding.",
-    "All 435 research-unit Latin extracts are internally exact/substring-consistent with the workbook's own 279-cue source sheet (159 whole, 276 subspan); this does not override 3 donor differences and 5 dynamic source slots found against GitHub."
+    "All 435 research-unit Latin extracts are internally exact/substring-consistent with the workbook's own 279-cue source sheet (159 whole, 276 subspan); this does not override 3 donor differences and 5 dynamic source slots found against GitHub.",
+    "The workbook's 279 priest-event IDs now have one-to-one source-cue identities; exact actor/action/voice/ritual certification and conformity to printed 1962 rubrics remain separate gates.",
+    "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge."
   ]
 }
