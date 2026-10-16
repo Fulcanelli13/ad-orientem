@@ -91,8 +91,9 @@ for(const lang of ["en","fr"]){
  const html=renderSaintResearchShrineSheet({language:lang,selected:withArt});
  assert(html.includes("aoSaintSourceEvidenceStatus"));
  assert(html.includes(lang==="fr"?"non approuvés":"Unapproved art research subjects"));
- const variantLocation=projected.find(x=>x.associated_saint_name_sources.some(n=>n.curated_variant_source_key_leads.length));
- assert(renderSaintResearchShrineSheet({language:lang,selected:variantLocation}).includes("saint."));
+ const variantLocation=projected.find(x=>x.associated_saint_name_sources.some(n=>n.curated_variant_source_key_leads.includes("saint.giuseppina-bakhita")));
+ assert(variantLocation,"Expected an existing shrine association for Josephine Bakhita");
+ assert(renderSaintResearchShrineSheet({language:lang,selected:variantLocation}).includes("saint.giuseppina-bakhita"));
  assert(!html.includes("<img"));
  assert(!html.includes("data-calendar-mass"));
 }
