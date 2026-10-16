@@ -594,6 +594,13 @@ try{
         "Missal "+name+" priest ribbon hidden");
       assert.equal(await visualPage.locator(".ao-state-source").isVisible(),false,
         "Missal "+name+" has duplicate Canon source banner in the rubric ribbon");
+      if(blockId==="AO.SM.B031"){
+        assert.match(
+          (await visualPage.locator('[data-role="missal-priest-action"]').textContent())??"",
+          /OFFERS HOST/,
+          "Missal rubric ribbon did not retrieve B031's exact C0110 action"
+        );
+      }
 
       const horizontalOverflow=await visualPage.evaluate(()=>
         document.documentElement.scrollWidth>window.innerWidth+1);
