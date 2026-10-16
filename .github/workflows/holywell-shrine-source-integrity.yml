@@ -1,0 +1,29 @@
+name: Holywell shrine official source URL integrity
+on:
+  push:
+    paths:
+      - 'data/shrines/source-registry.v1.json'
+      - 'data/shrines/research/holywell-source-url-drift-20261016.v1.json'
+      - 'tests/shrines-holywell-source-domain-integrity.mjs'
+      - '.github/workflows/holywell-shrine-source-integrity.yml'
+  pull_request:
+    paths:
+      - 'data/shrines/source-registry.v1.json'
+      - 'data/shrines/research/holywell-source-url-drift-20261016.v1.json'
+      - 'tests/shrines-holywell-source-domain-integrity.mjs'
+      - '.github/workflows/holywell-shrine-source-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-holywell-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert Holywell official-source drift repair and provenance
+        run: node tests/shrines-holywell-source-domain-integrity.mjs
+      - name: Verify existing shrine-pilgrimage source contracts
+        run: node tests/shrines-pilgrimages-contracts.mjs
