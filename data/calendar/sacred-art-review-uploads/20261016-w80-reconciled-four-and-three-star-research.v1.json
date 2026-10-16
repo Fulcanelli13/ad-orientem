@@ -8,7 +8,9 @@
     "threeStarUniquePhysicalIds": 13,
     "priorMuseumAlternativeRecords": 15,
     "threeStarBiblicalMuseumOptionsAdded": 6,
-    "fourStarItemsWithSourceReconNotes": 12
+    "fourStarItemsWithSourceReconNotes": 12,
+    "fourStarItemsWithAdditionalResearch": 13,
+    "fourStarOpenNotYetInvestigated": 11
   },
   "rules": [
     "Preserve source user-export files and all old ratings",
@@ -49,8 +51,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "TIFF_MASTER_EXISTS_DIFFERENT_PAINTING_NOT_AN_UPGRADE",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Estasi di Santa Teresa d'Avila.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Estasi_di_Santa_Teresa_d'Avila.jpg",
+        "claimedPixels": "3467×5465",
+        "note": "Independent 2019 photograph CC BY-SA 4.0, but painting Michelangelo Unterberger (Trento museum), whereas user rated file identified Francesco Unterperger. DIFFERENT PHYSICAL PAINTING; do not attach or count as 4★ reproduction upgrade. Existing TIFF 2974×3742 to inspect for color.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -61,8 +70,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "EXISTING_ORIGINAL_FILE_ONLY_SOURCE_SHOT",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+        "claimedPixels": "2592×3208",
+        "note": "Sailko self-shot of Florence Certosa 2019; no distinct source photo verified. Prioritize separate museum photo because user rated 4★.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -93,8 +109,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg",
       "physicalPaintingSource": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "FRENCH_PROTECTED_OBJECT_SOURCE_MASTER_PENDING",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Saint François de Sales.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg",
+        "claimedPixels": "UNKNOWN",
+        "note": "French official inventory PM75000591 documents 17th-century oil of Saint Francis de Sales by school of Philippe de Champaigne, in Saint-Jean-Saint-François Paris; ministry photo master unverified. Original rating unchanged.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -105,8 +128,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
       "physicalPaintingSource": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "SINGLE_CHURCH_PHOTOGRAPH_ONLY",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+        "claimedPixels": "1772×2468",
+        "note": "Commons uploader 2010 own Paris church photograph; national inventory PM75001042 lists ARCH. PHOT. MH56P1066, an archival separate candidate, rights/master unresolved. The archive is not a certified available digital image.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -117,8 +147,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg",
       "physicalPaintingSource": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "TWO_COMMONS_FILES_POSSIBLY_SAME_CAPTURE",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Orrente-crisostomo.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Orrente-crisostomo.jpg",
+        "claimedPixels": "2717×2226",
+        "note": "Compared with rated San Juan Crisóstomo Prado P07640 2850×2362. Near-cropped same view and different JPEG file; physical-object match yes, independent capture NOT proven; not counted as true photographic upgrade.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -129,7 +166,7 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
       "physicalPaintingSource": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "DUPLICATE_SMALL_CROP_DO_NOT_COUNT",
+      "photoResearchStatus": "HIGHER_PIXEL_ALTERNATE_LICENSE_CONFLICT",
       "photoQualityStar": 4,
       "candidateSource": {
         "file": "The Venerable Bede translates John 1902.jpg",
@@ -138,6 +175,13 @@
         "relationNote": "Crop of already scored 794×628 Penrose photo; seek new Cambridge University Library original master",
         "productionMasterApproved": false,
         "independentPhotoVerified": false
+      },
+      "supplementalPhotoResearch": {
+        "file": "The Last Chapter by James Doyle Penrose.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Last_Chapter_by_James_Doyle_Penrose.jpg",
+        "claimedPixels": "1024×813",
+        "note": "Alternative to 794×628 rated Commons photo. Credits Fine Art Photographic Library/CORBIS with Copyright holder © Corbis, all rights reserved in file metadata although Commons claims PD-Art. Not rights-certified or acceptable full-size hero, seek Cambridge originals.",
+        "isApprovedUpgrade": false
       }
     },
     {
@@ -173,8 +217,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "ONLY_YORCK_PROJECT_LOW_COMPRESSION_MASTER",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Guido Reni 042.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+        "claimedPixels": "2024×2399",
+        "note": "Identified Palazzo Barberini Rome Guido Reni 'Hl. Josef' oil c.1640–42, base image Yorck Project DVD-ROM 2002 (362KB), not high-quality modern museum source. Seek independent Barberini capture.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 1,
@@ -277,8 +328,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "SOTHEBYS_PHOTO_ONLY_CROP_NOT_ALTERNATIVE",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Saint Agnes by Cesare Dandini (cropped).jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini_(cropped).jpg",
+        "claimedPixels": "1190×1182",
+        "note": "Rated Sotheby's lot image 1591×2000; cropped version reproduces same file and is not an independent photograph.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
@@ -321,8 +379,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "ORIGINAL_ID_LOT_SOURCE_IDENTIFIED_IMAGE_PENDING",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Hippolyte Fournier Saint Cécile.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+        "claimedPixels": "UNKNOWN",
+        "note": "Auction catalog 2020 Millon lot 61 Sainte Cécile, Fournier oil canvas 233×132cm, Salon 1899 no.804; source existence verified. Single Commons photo not necessarily publication cleared; larger original image pending.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
@@ -333,8 +398,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "FULL_3199PX_SINGLE_ORIGINAL_FILE",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Claude Vignon - St Catherine refuses to sacrifice to the idols.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+        "claimedPixels": "3199×2224",
+        "note": "Current file already 3199×2224, Louvre collection oil. User 4★ requires better source/camera color or treatment, NOT upscaling.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
@@ -345,8 +417,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "SOTHEBYS_SOURCE_3072PX_CROP_DERIVATIVE",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Gustave Vanaise - Magdalene in Christ's tomb (cropped).jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb_(cropped).jpg",
+        "claimedPixels": "2391×1542",
+        "note": "Current Sotheby's source 3072×2232; second Commons (cropped) is derivative of SAME auction capture; private owner, better color/photo remains to acquire.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
@@ -357,8 +436,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "MUSEUM_MASTER_BELOW_1500PX",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "San Vicente de Paul - Juan Nepomuceno.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+        "claimedPixels": "1123×1465",
+        "note": "Commons museum source Museo de Arte e Historia de Guanajuato 1123×1465; acquire higher-resolution official museum image/permission",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
@@ -445,8 +531,15 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "ONLY_YORCK_PROJECT_LOW_COMPRESSION_MASTER",
+      "photoQualityStar": 4,
+      "supplementalPhotoResearch": {
+        "file": "Guido Reni 042.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+        "claimedPixels": "2024×2399",
+        "note": "Identified Palazzo Barberini Rome Guido Reni 'Hl. Josef' oil c.1640–42, base image Yorck Project DVD-ROM 2002 (362KB), not high-quality modern museum source. Seek independent Barberini capture.",
+        "isApprovedUpgrade": false
+      }
     },
     {
       "batch": 2,
