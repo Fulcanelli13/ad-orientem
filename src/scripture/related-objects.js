@@ -110,3 +110,26 @@ export function scriptureLinkedObjectsForPassage(passage,{limit=24}={}){
     x.passage.verseStart<=p.verseEnd&&x.passage.verseEnd>=p.verseStart
   ).slice(0,Math.max(0,Math.min(100,Number.isInteger(limit)?limit:24)));
 }
+/**
+ * Lazy Atlas backlinks: all 151 stable eventKeys come from the Explore owner.
+ * An inaccessible Atlas dataset cannot suppress existing Novena/Rosary edges.
+ */
+export async function scriptureLinkedObjectsForPassageWithAtlas(passage,{limit=40}={}){
+  const max=Math.max(0,Math.min(100,Number.isInteger(limit)?limit:40));
+  const p=scripturePassage(passage);
+  const established=scriptureLinkedObjectsForPassage(p,{limit:max});
+  try{
+    const {loadScriptureAtlasEventObjects}=await import("./atlas-related-events.js");
+    const events=await loadScriptureAtlasEventObjects();
+    const matches=events.filter(x=>
+      x.passage.book===p.book&&x.passage.chapter===p.chapter&&
+      x.passage.verseStart<=p.verseEnd&&x.passage.verseEnd>=p.verseStart
+    );
+    // Reserve room for Atlas when many other published objects cite the same
+    // verse, while keeping all 261 existing source-owner objects unchanged.
+    const room=Math.min(matches.length,8,max);
+    return Object.freeze([...established.slice(0,max-room),...matches.slice(0,room)]);
+  }catch{
+    return established;
+  }
+}
