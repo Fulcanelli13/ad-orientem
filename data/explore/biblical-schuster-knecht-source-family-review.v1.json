@@ -124,8 +124,8 @@
       "id": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
       "language": "en",
       "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
-      "edition": "Undated 11th English edition, revised by Mrs J. Sadlier and further improved by clergymen; do not assign exact publication year from unrelated 1896 catalogue",
-      "witnessKind": "HISTORICAL_ENGLISH_EDITION_SCANNED_PDF_IDENTIFIED_OCR_INDEXED_NOT_VISUALLY_COLLATED",
+      "edition": "Eleventh English edition, revised by Mrs J. Sadlier and improved by several clergymen, B. Herder Freiburg, printed 1908; verified against supplied original title and imprint pages",
+      "witnessKind": "ORIGINAL_1908_PRINT_SCAN_VISUALLY_VERIFIED_FROM_USER_UPLOADED_COMPRESSED_COPY_OCR_UNRELIABLE",
       "sourcePdfUrl": "https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf",
       "indexedTextView": "https://www.yumpu.com/en/document/view/11515293/illustrated-bible-history-catholic-apologetics-information",
       "sourcePdfContentBytesReportedByWeb": 23008160,
@@ -138,8 +138,38 @@
       "samePrintEditionAs1925Nineteenth": "NOT_VERIFIED",
       "scanImagePrintedPagesIndependentlyRead": 0,
       "authorParagraphsCertified": 0,
-      "publicationEligibility": "HOLD_EDITION_TITLE_PAGE_DATE_PAGE_IMAGES_FULL_PARAGRAPHS_TRANSLATOR_RIGHTS",
-      "researchUtility": "Earlier English source to collate directly; potential fallback to 1925 but ONLY if work/edition provenance and print images are authenticated, never copy OCR directly"
+      "publicationEligibility": "RESEARCH_FIRST_PASS_SOURCE_PHOTOS_AVAILABLE_FULL_TEXT_SECOND_COLLATION_AND_RIGHTS_REQUIRED",
+      "researchUtility": "Earlier English source to collate directly; potential fallback to 1925 but ONLY if work/edition provenance and print images are authenticated, never copy OCR directly",
+      "originalPrintedEditionYear": 1908,
+      "originalImprimaturDate": "24 March 1908",
+      "uploadedPrintScanSha256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+      "uploadedPrintScanPdfPages": 419,
+      "uploadedPrintScanBytes": 11590851,
+      "uploadedPrintScanDistinctFromPublicPdfBytes": true,
+      "physicalSourceTitlePageConfirmed": true,
+      "physicalSourceYearConfirmed": true,
+      "scanImagePagesVisuallySpotChecked": 17,
+      "scanImagePagesVisuallySpotCheckedPDFPages": [
+        1,
+        2,
+        7,
+        9,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        25,
+        26,
+        29,
+        31,
+        32,
+        33
+      ],
+      "originalNarrativeUnitsFirstPassTranscribed": 6,
+      "publicSourcePDFSameExactFileAsUpload": "NOT_PROVEN_UPLOAD_IS_COMPRESSED"
     }
   ],
   "openingEnglishTocSections": [
@@ -441,7 +471,10 @@
     "spanish1908ParagraphsPrintCertified": 0,
     "earlyEnglishSadlierEleventhScansLocated": 1,
     "earlyEnglishSadlierEleventhPagesPrintInspected": 0,
-    "earlyEnglishSadlierEleventhParagraphsCertified": 0
+    "earlyEnglishSadlierEleventhParagraphsCertified": 0,
+    "earlyEnglishSadlierEleventhOriginalPrintYearVerified": 1908,
+    "earlyEnglishSadlierEleventhImagesSpotChecked": 17,
+    "earlyEnglishSadlierEleventhNarrativeUnitsOnePassTranscribed": 6
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -2377,11 +2410,11 @@
   },
   "earlyEnglishSadlierScanAcquisitionReview": {
     "date": "2026-10-16",
-    "status": "DIRECT_23MB_HISTORICAL_ENGLISH_SOURCE_SCAN_LOCATED_BUT_PAGE_IMAGES_NOT_RETRIEVED_TO_RESEARCH_RUNTIME",
+    "status": "USER_ORIGINAL_PRINT_SCAN_ACQUIRED_AND_EDITION_VISUALLY_VERIFIED_1908",
     "newWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
     "sourceDigitalPdf": "https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf",
     "observedSearchIndexCitation": "https://www.yumpu.com/en/document/view/11515293/illustrated-bible-history-catholic-apologetics-information",
-    "sourceScanEvidence": "PDF is publicly indexed as 419-page Schuster Bible History; web PDF loader reports content 23,008,160 bytes exceeding its size limit. Title page OCR on Yumpu identifies eleventh edition, Mrs J. Sadlier revised; publication year and physical page alignment not yet independently inspected.",
+    "sourceScanEvidence": "Previously only public 23 MB PDF indexed. User uploaded a compressed 1908 eleventh edition physical scan (419 PDF leaves, 11,590,851 bytes); physical title and imprint date verified directly. Public PDF byte identity not claimed.",
     "independentPublisherPrimarySource": {
       "url": "https://dspace.ut.ee/bitstreams/096f7cef-1c7f-4458-8444-83cb68d5d2ba/download",
       "work": "Herder'scher Jahresbericht 1896",
@@ -2396,7 +2429,7 @@
       ],
       "specificEleventhEditionIdentityFromPublisher": "NOT_PROVEN"
     },
-    "preliminaryScanDownloadOutcome": "Direct PDF fetch returned content-length limit in web reader; container direct download failed. Do not assert printed page image inspection from a search-index extract.",
+    "preliminaryScanDownloadOutcome": "SUPERSEDED_BY_USER_UPLOADED_COMPRESSED_PRINT_SCAN_FOR_1908_11TH; KEEP_GITHUB_BATCH_ACQUISITION_AS_OPTIONAL_FALLBACK",
     "workflowStrategy": "Use a separately-scoped research-only batch PDF acquisition job to download scan, hash, record metadata, and render source-page previews as transient artifacts; no source prose to production and no auto-approval.",
     "originalPrintedPagesCertifiedNow": 0,
     "authorNarrativeParagraphsCertifiedNow": 0,
@@ -2437,5 +2470,150 @@
     "sourceTextImported": false,
     "nextAction": "Get original high-resolution print page images in batch through source parser; collate 41–43 first, then all Origins and original Schuster EN/FR.",
     "noAiNarrative": true
+  },
+  "english1908EleventhUserPrintSourceAudit": {
+    "auditDate": "2026-10-16",
+    "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "physicalCopyStatus": "USER_UPLOADED_HISTORICAL_ENGLISH_PRINT_SCAN_READABLE",
+    "originalPrintScanSha256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+    "sourcePDFPages": 419,
+    "extraPDFLeavesAfterPrinted404": 2,
+    "sourceTitlePagePDF": 1,
+    "printedImprimaturAndBHerder1908PDF": 2,
+    "sourcePrefacePDF": [
+      7,
+      8
+    ],
+    "originalTOCPDFPages": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "originalFirstEightChapterPrintablePages": [
+      1,
+      17
+    ],
+    "correspondingPDFPages": [
+      16,
+      32
+    ],
+    "sourceYears": [
+      "ELEVENTH_EDITION",
+      "PRINTED_1908"
+    ],
+    "sourcePageOffset": "Within PDF pages 16-33: printed page = PDF page - 15; do not extrapolate to entire scan.",
+    "imageSpotCheckPagesPDF": [
+      1,
+      2,
+      7,
+      9,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      25,
+      26,
+      29,
+      31,
+      32,
+      33
+    ],
+    "imagePagesVisuallySpotChecked": 17,
+    "imageSpotChecksFullCharacterPageCertified": 0,
+    "historicalCreation": {
+      "originalNarrativeUnits": 6,
+      "includingSeventhDayInUnit": 6,
+      "originalPrintedPages": [
+        1,
+        2
+      ],
+      "correspondingPdfPages": [
+        16,
+        17
+      ],
+      "separatelyLabelledQuestionsOnPdfPage": 18,
+      "firstPassHumanImageBasedTranscriptionsPrepared": 6,
+      "independentlySecondVerifiedNarrativeParagraphs": 0,
+      "sourceTextProseCopiedIntoPublicGitHub": false
+    },
+    "chapterStarts": [
+      {
+        "id": "schuster:chapter:OT-I",
+        "printedPage": 1,
+        "pdfPage": 16,
+        "title": "The Creation of the World"
+      },
+      {
+        "id": "schuster:chapter:OT-II",
+        "printedPage": 3,
+        "pdfPage": 18,
+        "title": "Creation and Fall of the Angels"
+      },
+      {
+        "id": "schuster:chapter:OT-III",
+        "printedPage": 4,
+        "pdfPage": 19,
+        "title": "Creation of the First Man, Paradise, First Commandment, Creation of Eve"
+      },
+      {
+        "id": "schuster:chapter:OT-IV",
+        "printedPage": 5,
+        "pdfPage": 20,
+        "title": "The Fall of Our First Parents"
+      },
+      {
+        "id": "schuster:chapter:OT-V",
+        "printedPage": 8,
+        "pdfPage": 23,
+        "title": "Cain and Abel"
+      },
+      {
+        "id": "schuster:chapter:OT-VI",
+        "printedPage": 11,
+        "pdfPage": 26,
+        "title": "The Deluge"
+      },
+      {
+        "id": "schuster:chapter:OT-VII",
+        "printedPage": 14,
+        "pdfPage": 29,
+        "title": "Noe's Offering, His Children"
+      },
+      {
+        "id": "schuster:chapter:OT-VIII",
+        "printedPage": 16,
+        "pdfPage": 31,
+        "title": "The Tower of Babel"
+      }
+    ],
+    "sourceSeparationGuards": [
+      "ORIGINAL_ENGLISH_NARRATIVE",
+      "NARRATIVE_INSERTED_AUTHORIAL_CATECHESIS",
+      "CHAPTER_QUESTIONS",
+      "SCRIPTURE_EPIGRAPH",
+      "FOOTNOTES",
+      "ILLUSTRATIONS"
+    ],
+    "distinctContentIssue": {
+      "chapter": "schuster:chapter:OT-V",
+      "pdfPage": 25,
+      "printedPage": 10,
+      "unit": "7",
+      "sourceRole": "AUTHORIAL_CATECHETICAL_EXPOSITION_ABOUT_ABEL_PREFIGURING_CHRIST_NOT_JUST_SCRIPTURE_NARRATIVE",
+      "handling": "SOURCE_AUTHORED_UNMODIFIED_WITH_ROLE_LABEL_AND_REVIEW_NOT_AS_NEW_ATLAS_GENEALOGY_FACT"
+    },
+    "authorialLevelMarkerClaimForEnglishEdition": "NOT_ESTABLISHED; SPANISH_1908_MARKER_SCHEME_MUST_NOT_BE_PROJECTED_ONTO_ENGLISH_1908",
+    "historicalSourceProsePublicationApproved": 0,
+    "importedNarrativeTextBytes": 0,
+    "status": "FIRST_PASS_ORIGINAL_IMAGE_VISUAL_STRUCTURE_CONFIRMED_CREATION_SIX_UNITS_TRANSCRIBED_EXTERNALLY_SECOND_CHARACTER_COLLATION_PENDING",
+    "pdfOriginalFileAddedToGithub": false,
+    "sourceTranscribedProseAddedToGithub": false,
+    "productionAppChanged": false
   }
 }
