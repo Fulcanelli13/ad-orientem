@@ -1,0 +1,316 @@
+{
+  "schema": "ao-mass-lanslots-1897-doctrinal-historical-critical-review-v1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_NOT_LITURGICAL_NORM_OR_PUBLISHED_TEXT",
+  "source": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+  "count": 10,
+  "independentAuthorities": {
+    "PD": {
+      "title": "Leo XIII, Providentissimus Deus (1893)",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html",
+      "role": "PRECONCILIAR_CANONICAL_SCRIPTURE_INSPIRATION"
+    },
+    "DAS": {
+      "title": "Pius XII, Divino afflante Spiritu (1943)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html",
+      "frenchUrl": "https://www.vatican.va/content/pius-xii/fr/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html",
+      "role": "PRECONCILIAR_CANONICAL_SCRIPTURE_INSPIRATION"
+    },
+    "DV": {
+      "title": "Second Vatican Council, Dei Verbum §11 (1965)",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+      "role": "POSTCONCILIAR_CANONICAL_SCRIPTURE_INSPIRATION"
+    },
+    "SRC62JOSEPH": {
+      "title": "Sacred Congregation of Rites, Novis hisce temporibus, 13 November 1962; effective 8 December 1962",
+      "url": "https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret",
+      "language": "French translation of contemporary original Latin decree",
+      "role": "SPECIFIC_1962_NORMATIVE_AMENDMENT_TO_ROMAN_CANON",
+      "supportingOfficialHistoricalNote": "https://www.usccb.org/prayer-and-worship/the-mass/order-of-mass/liturgy-of-the-eucharist/saint-joseph-in-the-eucharistic-prayers"
+    }
+  },
+  "records": [
+    {
+      "id": "L1897-DISC-01",
+      "chapter": "XIX",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 6353,
+        "webLineEnd": 6356,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": true
+      },
+      "topic": "Scripture's inspiration versus approved liturgical wording",
+      "authorArgument": "Lanslots describes nonbiblical Institution-text words as apostolic tradition equally inspired as Scripture.",
+      "criticalAnalysis": "The approved liturgy has ecclesiastical authority, but not every liturgical composition shares the special canonical inspiration of the biblical books.",
+      "frenchSubstantiveDraft": "Les paroles liturgiques approuvées possèdent une autorité ecclésiale, sans que toute composition liturgique bénéficie de l'inspiration propre aux livres canoniques.",
+      "classification": "DOCTRINAL_DISTINCTION",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "existingGuerangerOverlaps": [],
+      "independentAuthorityIds": [
+        "PD",
+        "DAS",
+        "DV"
+      ],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 245,
+        "printedPage": "211",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-DISC-02",
+      "chapter": "XX",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 7065,
+        "webLineEnd": 7138,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": true
+      },
+      "topic": "The holy Angel in Supplices te rogamus",
+      "authorArgument": "Lanslots attributes a Christological interpretation to Guéranger, then also sets out a created-angel reading and admits uncertainty about the angel's identity.",
+      "criticalAnalysis": "Attribute the respective readings and their reasons. Do not assert that an individual angel's identity is dogmatically settled or that the Host is physically transported to Heaven.",
+      "frenchSubstantiveDraft": "Guéranger interprète l'Ange comme le Christ envoyé par le Père; Lanslots expose aussi l'hypothèse d'un ange créé. L'identification précise n'est pas définie par cette prière.",
+      "classification": "CONTESTED_EXEGESIS",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.10"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG44"
+      ],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 270,
+        "printedPage": "234",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-DISC-03",
+      "chapter": "XXIII",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 8378,
+        "webLineEnd": 8418,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": true
+      },
+      "topic": "Consecratio at the commingling",
+      "authorArgument": "Lanslots explains Bellarmine's new consecration language as a renewed sacramental signification in the ritual union of the already consecrated Species.",
+      "criticalAnalysis": "This must never be described as another Eucharistic consecration or second transubstantiation. Compare FRG57 rather than creating a duplicate explanation.",
+      "frenchSubstantiveDraft": "La « nouvelle consécration » de cette explication désigne un sens sacramentel renouvelé et non une seconde transsubstantiation.",
+      "classification": "LEXICAL_AND_DOCTRINAL_QUALIFICATION",
+      "sourceFirstOwnerIds": [
+        "AO.CARD.020"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG57"
+      ],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 321,
+        "printedPage": "279",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-DISC-04",
+      "chapter": "VI",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 1619,
+        "webLineEnd": 1658,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "Apostolic Latin and liturgical language",
+      "authorArgument": "Lanslots says the Mass had been offered in Latin from apostolic times, while also discussing Eastern liturgical languages.",
+      "criticalAnalysis": "Do not promote an unverified apostolic Latin chronology. Discuss historical rationale for Latin separately from earliest Christian liturgical languages.",
+      "frenchSubstantiveDraft": "La défense du latin comme langue liturgique ne démontre pas que la Messe ait été célébrée exclusivement en latin depuis l'âge apostolique.",
+      "classification": "UNCERTIFIED_HISTORICAL_CHRONOLOGY",
+      "sourceFirstOwnerIds": [],
+      "existingGuerangerOverlaps": [],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-05",
+      "chapter": "XXI",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 7255,
+        "webLineEnd": 7314,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "Named intercessions for deceased outside ecclesial communion",
+      "authorArgument": "Lanslots discusses historical diptychs, public remembrance and the distinct possibility of private supplication.",
+      "criticalAnalysis": "Distinguish public liturgical naming, funerals, Mass intentions and private prayer. His 1897 canonical summaries are not universal current or 1962 directives.",
+      "frenchSubstantiveDraft": "Il faut distinguer la mention publique au Canon, les funérailles, l'intention de Messe et la prière privée; les conclusions disciplinaires de 1897 n'ont pas valeur de règle universelle actuelle.",
+      "classification": "HISTORICAL_DISCIPLINE",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.11"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG46",
+        "FRG47"
+      ],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-06",
+      "chapter": "XVIII",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 6120,
+        "webLineEnd": 6169,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "Leviticus 8:14 and hands extended over Hanc igitur",
+      "authorArgument": "Lanslots expressly applies the Old Testament laying-on-of-hands episode to the celebrant's prayer over the offerings.",
+      "criticalAnalysis": "This biblical typology does not establish the historical origin of the prescribed Roman gesture or change the 1962 action sequence.",
+      "frenchSubstantiveDraft": "Lv 8,14 offre une comparaison typologique; il ne prouve pas l'origine historique du geste prescrit par les rubriques romaines.",
+      "classification": "TYPOLOGY_NOT_RUBRICAL_ETYMOLOGY",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.04"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG34"
+      ],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-07",
+      "chapter": "XX",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 7022,
+        "webLineEnd": 7059,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "Melchisedech's bread and wine",
+      "authorArgument": "Lanslots treats Melchisedech's presentation of bread and wine as a sacrificial type and cites Psalm 109:4.",
+      "criticalAnalysis": "Keep the accepted Eucharistic typology, but distinguish Genesis 14:18's biblical account from added assumptions about the exact ancient liturgical rite.",
+      "frenchSubstantiveDraft": "La typologie eucharistique de Melchisédech ne permet pas de déduire de Gn 14,18 le détail d'un rite de consécration antique.",
+      "classification": "TYPOLOGY_SCRIPTURE_VERSUS_INTERPRETATION",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG43"
+      ],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-08",
+      "chapter": "XIX",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 6353,
+        "webLineEnd": 6372,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": true
+      },
+      "topic": "Alexander I and the history of Canon formulas",
+      "authorArgument": "Lanslots attributes a chronological Institution-narrative phrase to Pope Alexander I.",
+      "criticalAnalysis": "Record this as a dated historical attribution requiring independent early manuscripts, not an established fact about who authored a section of the Canon.",
+      "frenchSubstantiveDraft": "L'attribution d'une formule du Canon à Alexandre Ier doit être vérifiée dans les témoins liturgiques anciens avant publication.",
+      "classification": "UNVERIFIED_HISTORICAL_PROVENANCE",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.06"
+      ],
+      "existingGuerangerOverlaps": [],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 245,
+        "printedPage": "211",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-DISC-09",
+      "chapter": "XIII",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 3684,
+        "webLineEnd": 3706,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": false
+      },
+      "topic": "Eucharistic unity through one bread",
+      "authorArgument": "Lanslots quotes Psalm 103 and 1 Corinthians 10:17 on bread and wine, participation, and the unity of the Church.",
+      "criticalAnalysis": "An authentic theological theme, but this verse is absent from the actual Latin Offertory prayer at that moment; keep it in formation or thematic commentary, not invented in-text priest action.",
+      "frenchSubstantiveDraft": "Un seul pain et un seul corps éclairent la communion ecclésiale; cette explication n'ajoute ni parole ni geste à l'Offertoire.",
+      "classification": "FORMATIVE_CONTEXT_NOT_INLINE_RUBRIC",
+      "sourceFirstOwnerIds": [],
+      "existingGuerangerOverlaps": [],
+      "independentAuthorityIds": [],
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED"
+    },
+    {
+      "id": "L1897-DISC-10",
+      "chapter": "XVII",
+      "originalOcr": {
+        "url": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+        "webLineStart": 5451,
+        "webLineEnd": 5480,
+        "checkedWebOcr": true,
+        "printedPageImageChecked": true
+      },
+      "topic": "St Joseph omitted from the 1897 Communicantes, inserted in the Roman Canon in late 1962",
+      "authorArgument": "Lanslots transcribes the Communicantes names from the nineteenth-century Roman Canon, going directly from the Blessed Virgin to the apostles and martyrs without St Joseph.",
+      "criticalAnalysis": "The Sacred Congregation of Rites' Novis hisce temporibus (13 November 1962) directed the insertion of 'sed et beati Ioseph eiusdem Virginis Sponsi', effective 8 December 1962. Its absence in Lanslots or Guéranger is not evidence that the current 1962-form Mass should omit Joseph. The original 1962 Missal printing date and subsequent amendment must be distinguished.",
+      "frenchSubstantiveDraft": "Le Communicantes reproduit par Lanslots en 1897 ne nomme pas saint Joseph. Le décret Novis hisce temporibus du 13 novembre 1962 prescrivit son insertion, effective le 8 décembre 1962. Son absence dans un ouvrage antérieur n'est pas une rubrique pour la Messe célébrée selon l'usage romain de 1962 ainsi amendé.",
+      "classification": "EXACT_DATED_1962_PRAYER_TEXT_CORRECTION",
+      "sourceFirstOwnerIds": [
+        "AO.CANON.03"
+      ],
+      "existingGuerangerOverlaps": [
+        "FRG33"
+      ],
+      "independentAuthorityIds": [
+        "SRC62JOSEPH"
+      ],
+      "exactSourceCue": "AO.SM.C0159",
+      "requiredLatin": "sed et beati Ioseph",
+      "originalImageAndIndependentFrenchApproved": false,
+      "publication": "BLOCKED",
+      "visuallyCheckedSourcePage": {
+        "oneBasedPdfPage": 211,
+        "printedPage": "181",
+        "evidenceRecord": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    }
+  ],
+  "acceptanceRules": [
+    "The literal claim is attributed to Lanslots, while the critical analysis and counterclaim cite an independent source if used doctrinally.",
+    "Preconciliar Leo XIII and Pius XII already distinguish canonical biblical inspiration from ecclesiastical composition; this is not a Vatican II doctrinal invention.",
+    "Both interpretations of the holy Angel must be accurately presented, not turned into one settled identity.",
+    "1962 actions and roles must always be sourced separately from 1897 mystical interpretations.",
+    "Each paragraph of future published commentary requires linked original source evidence and French review.",
+    "No approval before scanned-page collation, claim-level deduplication and editorial release acceptance."
+  ],
+  "originalPdfPageImageSpotchecks": 11
+}

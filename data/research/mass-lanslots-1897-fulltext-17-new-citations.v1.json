@@ -1,0 +1,414 @@
+{
+  "schema": "ao-mass-lanslots-1897-direct-citation-omissions-v1",
+  "date": "2026-10-14",
+  "status": "SOURCE_EXACT_ORIGINAL_OCR_VERIFIED_NOT_PAGE_OR_SCRIPTURE_EDITION_CERTIFIED",
+  "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+  "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+  "previousEvidence": [
+    "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json",
+    "data/research/mass-lanslots-1897-ocr-scripture-batch02.v1.json"
+  ],
+  "candidateScreen": "data/research/mass-lanslots-1897-whole-ocr-parenthetical-screen.v1.json",
+  "newCitationOccurrences": 17,
+  "previousOccurrenceTotal": 69,
+  "combinedReviewableOccurrenceTotal": 86,
+  "scope": "Citations newly identified in downloaded full OCR and not recorded under the same chapter and Scripture reference in previous 69-item selective register. This is a new positive-evidence batch, not an exhaustive Bible reference certification.",
+  "records": [
+    {
+      "id": "L1897-OCR3-001",
+      "originalParentheticalScreenId": "L1897-PAREN-001",
+      "chapter": "INTRODUCTION",
+      "normalizedScriptureRef": "1 Peter 2:9",
+      "asPrintedCitationOrProse": "ii. 9",
+      "originalOcrRawLine": 248,
+      "originalOcrCharacterOffset": 6910,
+      "sourceMeaningInAuthor": "Baptized Christians are called a kingly priesthood and unite themselves spiritually to Christ's sacrifice, while the author distinguishes them from ordained priests.",
+      "authorCitationStatus": "VERSE_AND_CONTEXT_EXPLICIT_BOOK_IN_PRIOR_SENTENCE",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": true,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED",
+      "visuallyVerifiedOriginalScan": {
+        "oneBasedPdfPage": 16,
+        "printedPage": "10",
+        "source": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-OCR3-002",
+      "originalParentheticalScreenId": "L1897-PAREN-010",
+      "chapter": "II",
+      "normalizedScriptureRef": "Isaiah 11:10",
+      "asPrintedCitationOrProse": "Is. xi. 10",
+      "originalOcrRawLine": 591,
+      "originalOcrCharacterOffset": 21234,
+      "sourceMeaningInAuthor": "Isaiah's glorious root of Jesse is applied by Lanslots to the honour of the Saviour's burial and veneration of holy relics near the altar.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-003",
+      "originalParentheticalScreenId": "L1897-PAREN-020",
+      "chapter": "IV",
+      "normalizedScriptureRef": "Revelation 7:14",
+      "asPrintedCitationOrProse": "Ap. vii. 14",
+      "originalOcrRawLine": 947,
+      "originalOcrCharacterOffset": 37046,
+      "sourceMeaningInAuthor": "The white robes washed in the Lamb's Blood illuminate the symbolism of the priestly alb; the verse is not a rule for vestment tailoring.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-004",
+      "originalParentheticalScreenId": "L1897-PAREN-034",
+      "chapter": "IX",
+      "normalizedScriptureRef": "Romans 3:23",
+      "asPrintedCitationOrProse": "Rom. iii. 23",
+      "originalOcrRawLine": 2281,
+      "originalOcrCharacterOffset": 99059,
+      "sourceMeaningInAuthor": "Lanslots quotes Paul on all humanity's need of God's glory while explaining the Gloria's praise of the incarnate Son.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-005",
+      "originalParentheticalScreenId": "L1897-PAREN-035",
+      "chapter": "IX",
+      "normalizedScriptureRef": "John 16:23",
+      "asPrintedCitationOrProse": "John xvi. 23",
+      "originalOcrRawLine": 2429,
+      "originalOcrCharacterOffset": 105710,
+      "sourceMeaningInAuthor": "The Gospel promise of asking the Father in Christ's name explains how the Collects and orations address the Father through the Son.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-006",
+      "originalParentheticalScreenId": "L1897-PAREN-045",
+      "chapter": "XII",
+      "normalizedScriptureRef": "Philippians 2:7",
+      "asPrintedCitationOrProse": "Phil, ii. 7",
+      "originalOcrRawLine": 3222,
+      "originalOcrCharacterOffset": 141330,
+      "sourceMeaningInAuthor": "Paul's description of Christ's taking the form of a servant is used to explain the humility of the first Coming proclaimed in the Creed.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-007",
+      "originalParentheticalScreenId": "L1897-PAREN-052",
+      "chapter": "XIII",
+      "normalizedScriptureRef": "2 Peter 1:4",
+      "asPrintedCitationOrProse": "2 Pet. i. 4",
+      "originalOcrRawLine": 3795,
+      "originalOcrCharacterOffset": 167072,
+      "sourceMeaningInAuthor": "Participation in divine nature, in mixing water and wine",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0113",
+        "blockId": "AO.SM.B032",
+        "relationship": "INTERPRETIVE_ALIGNMENT_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": true,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED",
+      "visuallyVerifiedOriginalScan": {
+        "oneBasedPdfPage": 150,
+        "printedPage": "128",
+        "source": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-OCR3-008",
+      "originalParentheticalScreenId": "L1897-PAREN-053",
+      "chapter": "XV",
+      "normalizedScriptureRef": "1 Peter 2:9",
+      "asPrintedCitationOrProse": "1 Pet. ii. 9",
+      "originalOcrRawLine": 4362,
+      "originalOcrCharacterOffset": 193345,
+      "sourceMeaningInAuthor": "Orate fratres: the sacrifice is the priest's and the faithful's in distinct senses",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0131",
+        "blockId": "AO.SM.B039",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": true,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED",
+      "visuallyVerifiedOriginalScan": {
+        "oneBasedPdfPage": 173,
+        "printedPage": "147",
+        "source": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-OCR3-009",
+      "originalParentheticalScreenId": "L1897-PAREN-054",
+      "chapter": "XV",
+      "normalizedScriptureRef": "Lamentations 3:41",
+      "asPrintedCitationOrProse": "Lam. iii. 41",
+      "originalOcrRawLine": 4552,
+      "originalOcrCharacterOffset": 202426,
+      "sourceMeaningInAuthor": "Lift hearts and hands to God; Sursum corda invitation",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0139",
+        "blockId": "AO.SM.B043",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": true,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED",
+      "visuallyVerifiedOriginalScan": {
+        "oneBasedPdfPage": 179,
+        "printedPage": "153",
+        "source": "data/research/mass-lanslots-1897-original-pdf-11-page-visual-collation.v1.json"
+      }
+    },
+    {
+      "id": "L1897-OCR3-010",
+      "originalParentheticalScreenId": "L1897-PAREN-060",
+      "chapter": "XVI",
+      "normalizedScriptureRef": "2 Corinthians 1:3",
+      "asPrintedCitationOrProse": "2 Cor. i. 3",
+      "originalOcrRawLine": 5067,
+      "originalOcrCharacterOffset": 225883,
+      "sourceMeaningInAuthor": "The Father of mercies and consolation invoked in Te igitur",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0150",
+        "blockId": "AO.SM.B047",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-011",
+      "originalParentheticalScreenId": "L1897-PAREN-061",
+      "chapter": "XVI",
+      "normalizedScriptureRef": "Song of Songs 6:8",
+      "asPrintedCitationOrProse": "Cant. vi. 8",
+      "originalOcrRawLine": 5089,
+      "originalOcrCharacterOffset": 227018,
+      "sourceMeaningInAuthor": "One dove as image of the Church's unity",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0153",
+        "blockId": "AO.SM.B047",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-012",
+      "originalParentheticalScreenId": "L1897-PAREN-065",
+      "chapter": "XVIII",
+      "normalizedScriptureRef": "Genesis 9:6",
+      "asPrintedCitationOrProse": "Gen. ix. 6",
+      "originalOcrRawLine": 6061,
+      "originalOcrCharacterOffset": 271133,
+      "sourceMeaningInAuthor": "The author's discussion of acceptable sacrifice invokes God's prohibition of shedding human blood; this is not proof of a precise historic rubric.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-013",
+      "originalParentheticalScreenId": "L1897-PAREN-069",
+      "chapter": "XX",
+      "normalizedScriptureRef": "Revelation 5:10",
+      "asPrintedCitationOrProse": "Apoc. v. 10",
+      "originalOcrRawLine": 7089,
+      "originalOcrCharacterOffset": 317477,
+      "sourceMeaningInAuthor": "Heavenly priestly people at Supplices; spiritual altar, not physical relocation",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0187",
+        "blockId": "AO.SM.B056",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-014",
+      "originalParentheticalScreenId": "L1897-PAREN-070",
+      "chapter": "XXI",
+      "normalizedScriptureRef": "Psalms 72:26",
+      "asPrintedCitationOrProse": "Ps. lxxii. 26",
+      "originalOcrRawLine": 7361,
+      "originalOcrCharacterOffset": 330254,
+      "sourceMeaningInAuthor": "God as eternal portion in Nobis quoque",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0196",
+        "blockId": "AO.SM.B058",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-015",
+      "originalParentheticalScreenId": "L1897-PAREN-073",
+      "chapter": "XXIII",
+      "normalizedScriptureRef": "Colossians 1:20",
+      "asPrintedCitationOrProse": "Col. i. 20",
+      "originalOcrRawLine": 8329,
+      "originalOcrCharacterOffset": 375164,
+      "sourceMeaningInAuthor": "Peace through Christ's cross in Pax Domini",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0219",
+        "blockId": "AO.SM.B066",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-016",
+      "originalParentheticalScreenId": "L1897-PAREN-075",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Matthew 16:15",
+      "asPrintedCitationOrProse": "Matt. xvi. 15",
+      "originalOcrRawLine": 8675,
+      "originalOcrCharacterOffset": 391071,
+      "sourceMeaningInAuthor": "The disciples are asked who they say Christ is; the author uses Peter's profession as a model of faith before Communion.",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": null,
+        "blockId": null,
+        "relationship": "THEMATIC_CONTEXT_ONLY_NOT_INLINE_GUIDE"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR3-017",
+      "originalParentheticalScreenId": "L1897-PAREN-081",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Galatians 2:20",
+      "asPrintedCitationOrProse": "Gal. ii. 20",
+      "originalOcrRawLine": 9188,
+      "originalOcrCharacterOffset": 414982,
+      "sourceMeaningInAuthor": "Grace remains after Communion: Christ living in the believer",
+      "authorCitationStatus": "BOOK_OR_CONTEXT_EXPLICIT_IN_ORIGINAL_OCR",
+      "readerAssociation": {
+        "cueId": "AO.SM.C0248",
+        "blockId": "AO.SM.B084",
+        "relationship": "AUTHORIAL_PRAYER_EXPLANATION_NOT_VERBATIM"
+      },
+      "sourceFile": "data/research/archive/lanslots-1897-original-ocr.txt",
+      "sourceSha256": "7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312",
+      "pdfPageVisualCheck": false,
+      "independentBibleReview": "REQUIRED",
+      "frenchDoctrinalReview": "REQUIRED",
+      "runtimePromotion": "BLOCKED"
+    }
+  ],
+  "fullOriginalSourceAvailableLocallyInGitHub": true,
+  "sourceAssetPdfVisuallyInspectedPages": 11
+}

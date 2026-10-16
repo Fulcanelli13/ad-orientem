@@ -1,0 +1,594 @@
+{
+  "schema": "ao-mass-lanslots-1897-source-first39-topical-crosswalk-v1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_NOT_RENDERED",
+  "liveReaderAuthority": {
+    "source": "src/mass/reader-live-source.js",
+    "currentPresentationSteps": 39,
+    "baseMacros": 30,
+    "canonSourceSegments": 14,
+    "replacedCanonMacros": 5,
+    "historicalFrozen48": "NON_NORMATIVE_COMPATIBILITY_EVIDENCE",
+    "historicalGuideEntries": 32,
+    "sourceFirst39": "# of source-first LIVE is intentionally not 48; do not invent 48 display IDs"
+  },
+  "sources": {
+    "sectionMap": "data/presentation/reader-section-map.v0.13.1.json",
+    "canonSourceMap": "data/presentation/reader-canon-source-map.v1.json",
+    "canonicalSungBlocks": "data/presentation/reader-text-sung.v1.json",
+    "lanslotsChapterInventory": "docs/research/MASS-LANSLOTS-1897-CHAPTER-CROSSWALK-20261014.md",
+    "differential": "data/research/mass-lanslots-1897-claim-differential.v1.json"
+  },
+  "scope": {
+    "mappingType": "EDITORIAL_TOPIC_HYPOTHESIS_ONLY",
+    "originalPagesVerified": 0,
+    "originalBookFullTextRead": false,
+    "reason": "Chapters are provisional candidate locations; they are not verified passages or approved cue commentary.",
+    "exception": "Sermon/homily has no direct standalone Lanslots chapter; do not fabricate one."
+  },
+  "rowCount": 39,
+  "chaptersRepresented": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+    "XII",
+    "XIII",
+    "XIV",
+    "XV",
+    "XVI",
+    "XVII",
+    "XVIII",
+    "XIX",
+    "XX",
+    "XXI",
+    "XXII",
+    "XXIII",
+    "XXIV",
+    "XXV"
+  ],
+  "rows": [
+    {
+      "sequence": 1,
+      "sectionId": "AO.CARD.001",
+      "title": "Introit & Preparatory Prayers",
+      "baseGuideId": "AO.CARD.001",
+      "lanslotsChapterCandidates": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 2,
+      "sectionId": "AO.CARD.002",
+      "title": "Kyrie",
+      "baseGuideId": "AO.CARD.002",
+      "lanslotsChapterCandidates": [
+        "VIII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 3,
+      "sectionId": "AO.CARD.003",
+      "title": "Gloria",
+      "baseGuideId": "AO.CARD.003",
+      "lanslotsChapterCandidates": [
+        "IX"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 4,
+      "sectionId": "AO.CARD.004",
+      "title": "Collect",
+      "baseGuideId": "AO.CARD.004",
+      "lanslotsChapterCandidates": [
+        "IX"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 5,
+      "sectionId": "AO.CARD.005",
+      "title": "Epistle / Lesson",
+      "baseGuideId": "AO.CARD.005",
+      "lanslotsChapterCandidates": [
+        "X"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 6,
+      "sectionId": "AO.CARD.006",
+      "title": "Gradual · Alleluia / Tract / Sequence",
+      "baseGuideId": "AO.CARD.006",
+      "lanslotsChapterCandidates": [
+        "X"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 7,
+      "sectionId": "AO.CARD.007",
+      "title": "Holy Gospel",
+      "baseGuideId": "AO.CARD.007",
+      "lanslotsChapterCandidates": [
+        "XI"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 8,
+      "sectionId": "AO.CARD.008",
+      "title": "Sermon / Homily",
+      "baseGuideId": "AO.CARD.008",
+      "lanslotsChapterCandidates": [],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 9,
+      "sectionId": "AO.CARD.009",
+      "title": "Credo",
+      "baseGuideId": "AO.CARD.009",
+      "lanslotsChapterCandidates": [
+        "XII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 10,
+      "sectionId": "AO.CARD.010",
+      "title": "Offertory",
+      "baseGuideId": "AO.CARD.010",
+      "lanslotsChapterCandidates": [
+        "XIII",
+        "XIV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 11,
+      "sectionId": "AO.CARD.011",
+      "title": "Orate fratres & Secret",
+      "baseGuideId": "AO.CARD.011",
+      "lanslotsChapterCandidates": [
+        "XV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 12,
+      "sectionId": "AO.CARD.012",
+      "title": "Preface",
+      "baseGuideId": "AO.CARD.012",
+      "lanslotsChapterCandidates": [
+        "XV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 13,
+      "sectionId": "AO.CARD.013",
+      "title": "Sanctus · Benedictus",
+      "baseGuideId": "AO.CARD.013",
+      "lanslotsChapterCandidates": [
+        "XV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 14,
+      "sectionId": "AO.CANON.01",
+      "title": "Te igitur",
+      "baseGuideId": "AO.CARD.014",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B047"
+      ],
+      "sourceCues": [
+        "AO.SM.C0150",
+        "AO.SM.C0153"
+      ],
+      "lanslotsChapterCandidates": [
+        "XVI"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 15,
+      "sectionId": "AO.CANON.02",
+      "title": "Memento, Domine — Living",
+      "baseGuideId": "AO.CARD.014",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B048"
+      ],
+      "sourceCues": [
+        "AO.SM.C0154",
+        "AO.SM.C0156"
+      ],
+      "lanslotsChapterCandidates": [
+        "XVII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 16,
+      "sectionId": "AO.CANON.03",
+      "title": "Communicantes",
+      "baseGuideId": "AO.CARD.014",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B049"
+      ],
+      "sourceCues": [
+        "AO.SM.C0157",
+        "AO.SM.C0160"
+      ],
+      "lanslotsChapterCandidates": [
+        "XVII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 17,
+      "sectionId": "AO.CANON.04",
+      "title": "Hanc igitur",
+      "baseGuideId": "AO.CARD.014",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B050"
+      ],
+      "sourceCues": [
+        "AO.SM.C0161",
+        "AO.SM.C0162"
+      ],
+      "lanslotsChapterCandidates": [
+        "XVIII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 18,
+      "sectionId": "AO.CANON.05",
+      "title": "Quam oblationem",
+      "baseGuideId": "AO.CARD.014",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B051"
+      ],
+      "sourceCues": [
+        "AO.SM.C0163",
+        "AO.SM.C0167"
+      ],
+      "lanslotsChapterCandidates": [
+        "XVIII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 19,
+      "sectionId": "AO.CANON.06",
+      "title": "Consecration of the Sacred Host",
+      "baseGuideId": "AO.CARD.015",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B052"
+      ],
+      "sourceCues": [
+        "AO.SM.C0168",
+        "AO.SM.C0174"
+      ],
+      "lanslotsChapterCandidates": [
+        "XIX"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 20,
+      "sectionId": "AO.CANON.07",
+      "title": "Consecration of the Chalice",
+      "baseGuideId": "AO.CARD.016",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B053"
+      ],
+      "sourceCues": [
+        "AO.SM.C0175",
+        "AO.SM.C0181"
+      ],
+      "lanslotsChapterCandidates": [
+        "XIX"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 21,
+      "sectionId": "AO.CANON.08",
+      "title": "Unde et memores",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B054"
+      ],
+      "sourceCues": [
+        "AO.SM.C0182",
+        "AO.SM.C0185"
+      ],
+      "lanslotsChapterCandidates": [
+        "XX"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 22,
+      "sectionId": "AO.CANON.09",
+      "title": "Supra quae",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B055"
+      ],
+      "sourceCues": [
+        "AO.SM.C0186",
+        "AO.SM.C0186"
+      ],
+      "lanslotsChapterCandidates": [
+        "XX"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 23,
+      "sectionId": "AO.CANON.10",
+      "title": "Supplices te rogamus",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B056"
+      ],
+      "sourceCues": [
+        "AO.SM.C0187",
+        "AO.SM.C0191"
+      ],
+      "lanslotsChapterCandidates": [
+        "XX"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 24,
+      "sectionId": "AO.CANON.11",
+      "title": "Memento etiam, Domine — Dead",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B057"
+      ],
+      "sourceCues": [
+        "AO.SM.C0192",
+        "AO.SM.C0195"
+      ],
+      "lanslotsChapterCandidates": [
+        "XXI"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 25,
+      "sectionId": "AO.CANON.12",
+      "title": "Nobis quoque peccatoribus",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B058"
+      ],
+      "sourceCues": [
+        "AO.SM.C0196",
+        "AO.SM.C0198"
+      ],
+      "lanslotsChapterCandidates": [
+        "XXI"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 26,
+      "sectionId": "AO.CANON.13",
+      "title": "Per quem haec omnia",
+      "baseGuideId": "AO.CARD.017",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B059"
+      ],
+      "sourceCues": [
+        "AO.SM.C0199",
+        "AO.SM.C0200"
+      ],
+      "lanslotsChapterCandidates": [
+        "XXII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 27,
+      "sectionId": "AO.CANON.14",
+      "title": "Per ipsum · Minor Elevation",
+      "baseGuideId": "AO.CARD.018",
+      "sourceKind": "CANON_SOURCE_SEGMENT",
+      "sourceBlocks": [
+        "AO.SM.B060",
+        "AO.SM.B061"
+      ],
+      "sourceCues": [
+        "AO.SM.C0201",
+        "AO.SM.C0207"
+      ],
+      "lanslotsChapterCandidates": [
+        "XXII"
+      ],
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 28,
+      "sectionId": "AO.CARD.019",
+      "title": "Pater noster",
+      "baseGuideId": "AO.CARD.019",
+      "lanslotsChapterCandidates": [
+        "XXII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 29,
+      "sectionId": "AO.CARD.020",
+      "title": "Libera nos · Fraction · Pax Domini",
+      "baseGuideId": "AO.CARD.020",
+      "lanslotsChapterCandidates": [
+        "XXII",
+        "XXIII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 30,
+      "sectionId": "AO.CARD.021",
+      "title": "Agnus Dei",
+      "baseGuideId": "AO.CARD.021",
+      "lanslotsChapterCandidates": [
+        "XXIII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 31,
+      "sectionId": "AO.CARD.022",
+      "title": "Prayers before Communion",
+      "baseGuideId": "AO.CARD.022",
+      "lanslotsChapterCandidates": [
+        "XXIII"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 32,
+      "sectionId": "AO.CARD.023",
+      "title": "Communion of the Priest",
+      "baseGuideId": "AO.CARD.023",
+      "lanslotsChapterCandidates": [
+        "XXIV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 33,
+      "sectionId": "AO.CARD.024",
+      "title": "Ecce Agnus Dei & Faithful Preparation",
+      "baseGuideId": "AO.CARD.024",
+      "lanslotsChapterCandidates": [
+        "XXIV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 34,
+      "sectionId": "AO.CARD.025",
+      "title": "Communion of the Faithful",
+      "baseGuideId": "AO.CARD.025",
+      "lanslotsChapterCandidates": [
+        "XXIV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 35,
+      "sectionId": "AO.CARD.026",
+      "title": "Ablutions & Communion Antiphon",
+      "baseGuideId": "AO.CARD.026",
+      "lanslotsChapterCandidates": [
+        "XXV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 36,
+      "sectionId": "AO.CARD.027",
+      "title": "Postcommunion",
+      "baseGuideId": "AO.CARD.027",
+      "lanslotsChapterCandidates": [
+        "XXV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 37,
+      "sectionId": "AO.CARD.028",
+      "title": "Dismissal",
+      "baseGuideId": "AO.CARD.028",
+      "lanslotsChapterCandidates": [
+        "XXV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 38,
+      "sectionId": "AO.CARD.029",
+      "title": "Placeat & Final Blessing",
+      "baseGuideId": "AO.CARD.029",
+      "lanslotsChapterCandidates": [
+        "XXV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    },
+    {
+      "sequence": 39,
+      "sectionId": "AO.CARD.030",
+      "title": "Last Gospel",
+      "baseGuideId": "AO.CARD.030",
+      "lanslotsChapterCandidates": [
+        "XXV"
+      ],
+      "sourceKind": "ORDINARY_MACRO",
+      "historical48Parity": "NOT_OWNERSHIP"
+    }
+  ]
+}
