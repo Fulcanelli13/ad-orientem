@@ -146,7 +146,7 @@ def chapter(entry,ix):
             ('<div class="related"><h3>'+bilingual({"en":"Follow in Scripture","fr":"Approfondir dans l’Écriture"})+'</h3>'+
              '<p class="hint">Pre-existing, typed Formation study relationships · Bible passages and translation remain owned by the Scripture module.</p>'+rel+'</div>' if rel else '')+
             '<details class="sources"><summary>'+bilingual({"en":"Sources and attribution","fr":"Sources et attribution"})+
-            '</summary><ul>'+''.join(source_link(k) for k in entry["source_keys"])+'</ul></details></div>'+
+            '</summary><ul>'+''.join(source_link(k) for k in entry["source_keys"])+'</ul></details>'+research_docket(entry)+'</div>'+
             '<aside class="sourcepanel"><h3>'+bilingual({"en":"1962 Mass text · Latin / English","fr":"Texte de la Messe de 1962 · Latin / Anglais"})+
             '</h3><p class="hint">Original source words and priest/response voices retained. Open a prayer for the full text.</p>'+
             ''.join(source_block(id) for id in entry["block_ids"])+'</aside></div></article>')
@@ -171,6 +171,7 @@ a{color:var(--gold)}.wrap{max-width:1160px;margin:auto;padding:23px 20px 75px}.e
 .related{border-top:1px solid var(--line);margin-top:24px}.relation{border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin:9px 0}
 .relation .ref{font:.74rem system-ui;color:var(--gold);display:block}.relation strong{font-size:.97rem;font-weight:normal;display:block}.relation .hint{margin:5px 0}
 .sources{margin-top:24px;border-top:1px solid var(--line);padding-top:12px}.sources summary{font:.83rem system-ui;color:var(--gold);cursor:pointer}.sources li{margin:9px 0}.sources li small{display:block;color:var(--muted);font:.7rem system-ui}
+.research-docket{margin-top:21px;border:1px solid var(--line);border-radius:10px;background:#0e161f;padding:12px}.research-docket>summary{font:600 .82rem/1.5 system-ui;color:var(--gold);cursor:pointer}.docket-body{margin-top:14px}.docket-body h4{font:600 .78rem/1.5 system-ui;color:var(--gold);margin:16px 0 7px}.docket-body li{font-size:.82rem;margin:9px 0;overflow-wrap:anywhere}.docket-body li small{display:block;font:.69rem/1.55 system-ui;color:var(--muted)}.docket-warning{font:600 .72rem/1.5 system-ui;color:var(--gold)}.author-record{padding:10px 0;border-top:1px solid var(--line)}.author-record summary{font:.8rem/1.5 system-ui;cursor:pointer}.docket-body code{color:var(--gold);font:.73rem system-ui}
 .footer{padding-top:26px;font:.77rem/1.6 system-ui;color:var(--muted)}[hidden]{display:none!important}
 @media(max-width:800px){.study-grid{grid-template-columns:1fr}.wrap{padding:16px 13px 45px}.ribbon>span{display:none}.study{padding-top:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -179,8 +180,8 @@ layout="""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 <title>Ad Orientem · Roman Canon · Deep review</title><style>__CSS__</style></head><body><main class="wrap">
 <header class="hero"><p class="eyebrow">AD ORIENTEM · FORMATION P2 · DEEP EDITORIAL PROTOTYPE</p><h1>The Roman Canon</h1>
 <p>Eight connected, substantive studies across fifteen unchanged source prayers: their meaning, their theology, existing Scripture pathways, and original liturgical words with traceable sources.</p></header>
-<div class="ribbon"><span>8 themes · 15 source blocks · 7 existing Scripture anchors</span><div role="group" aria-label="Commentary language"><button type="button" data-select-lang="en" aria-pressed="true">English</button> <button type="button" data-select-lang="fr" aria-pressed="false">Français</button></div></div>
-<div class="notice">EDITORIAL DRAFT — NOT PUBLIC. This is the intended deeper layer of Mass Explorer, not a change to LIVE, Simple, or Missal. The P0 research candidates (48 Scripture and 139 author claims) have <strong>not</strong> been silently promoted. Additional Aquinas and Benedict XVI interpretations remain to be editorially approved.</div>
+<div class="ribbon"><span>8 themes · 15 source blocks · 88 held historical candidates · 7 Scripture anchors</span><div role="group" aria-label="Commentary language"><button type="button" data-select-lang="en" aria-pressed="true">English</button> <button type="button" data-select-lang="fr" aria-pressed="false">Français</button></div></div>
+<div class="notice">EDITORIAL DRAFT — NOT PUBLIC. This is the intended deeper layer of Mass Explorer, not a change to LIVE, Simple, or Missal. The eight theme dossiers map 79 P0 source units, 88 historical-author candidates and one held Scripture candidate; none is approved for publication. These research identities have <strong>not</strong> been converted to new public claims. Additional Aquinas and Benedict XVI interpretations remain to be editorially approved.</div>
 <nav class="toc" aria-label="Canon themes">__TOC__</nav>__STUDIES__
 <p class="footer">This file is a research-only editorial review. 1962 original prayers, priest voices and their precise order remain owned by the existing Mass reader; language switching changes commentary only. No release or merge authorization.</p>
 </main><script>
@@ -196,8 +197,12 @@ markup=layout.replace("__CSS__",css).replace("__TOC__",toc).replace("__STUDIES__
 assert markup.count('class="study" id=')==8
 assert markup.count('class="lit-block"')==15
 assert markup.count('class="relation"')==8
+assert markup.count('class="research-docket"')==8
+assert markup.count('data-p0-author-ref=')==88
+assert markup.count('data-primary-check=')==6
+assert markup.count('data-p0-scripture-held=')==1
 assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual thematic studies, 15 original prayers, 7 existing Scripture links; editorial only ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 79 P0 units, 88 held author references, one held P0 Scripture, six directly checked primary loci; no publication ->",out)
