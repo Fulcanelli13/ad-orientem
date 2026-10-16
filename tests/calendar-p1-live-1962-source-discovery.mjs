@@ -256,7 +256,7 @@ try{
    };
    const requests=[
      {targetPath:"Commune/C3ap",basePath:"Commune/C3p",orationPath:"Commune/C3a"},
-     {targetPath:"Commune/C7",basePath:"Commune/C6-1"},
+     {targetPath:"Commune/C7",basePath:"Commune/C6-1",lessonPath:"Commune/C6"},
    ];
    const reports=[];
    for(const request of requests){
@@ -265,6 +265,7 @@ try{
        target:await get(request.targetPath),
        base:await get(request.basePath),
        orations:request.orationPath?await get(request.orationPath):undefined,
+       lessonSource:request.lessonPath?await get(request.lessonPath):undefined,
      });
      reports.push({
        targetPath:request.targetPath,
@@ -278,16 +279,18 @@ try{
  });
  console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
  assert.equal(partialReconciliation.length,2);
- assert.ok(partialReconciliation.every(x=>x.status==="PARTIAL_SOURCE_RECOVERY_VERIFIED"&&
-   x.route===null&&x.authorizedForSaintMass===false));
+ assert.deepEqual(partialReconciliation.map(x=>x.status),
+   ["PARTIAL_SOURCE_RECOVERY_VERIFIED","SOURCE_COMPOSITION_COMPLETE"]);
+ assert.ok(partialReconciliation.every(x=>x.route===null&&x.authorizedForSaintMass===false));
  const c3ap=partialReconciliation.find(x=>x.targetPath==="Commune/C3ap");
  const c7=partialReconciliation.find(x=>x.targetPath==="Commune/C7");
  assert.equal(c3ap.borrowedSections.length,18);
  assert.deepEqual(c3ap.missingByLanguage,{la:[],en:[],
   fr:["Introitus","Lectio","Graduale","Evangelium","Offertorium","Communio"]});
- assert.equal(c7.borrowedSections.length,7);
- assert.deepEqual(c7.missingByLanguage,{la:["Lectio"],en:["Lectio"],fr:["Lectio"]});
- assert.ok(c7.borrowedSections.every(x=>!x.includes("Lectio")),"Never invent missing female martyr Lesson");
+ assert.equal(c7.borrowedSections.length,10);
+ assert.deepEqual(c7.missingByLanguage,{la:[],en:[],fr:[]});
+ assert.equal(c7.borrowedSections.filter(x=>x.includes(":Lectio:Commune/C6")).length,3,
+   "Only the explicitly inherited C6, not alternate C6-1, can own the Lesson");
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
  assert.equal(paschalAlternate.status,"SOURCE_COMPOSITION_VERIFIED",paschalAlternate.reason+" / "+paschalAlternate.section);
  assert.deepEqual(paschalAlternate.completeByLanguage,{la:true,en:true,fr:true});
