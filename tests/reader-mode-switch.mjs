@@ -7,6 +7,7 @@ import {
 } from "../src/mass/reader-mode-switch.js";
 import { guideForPresentationCard } from "../src/mass/reader-guide.js";
 import { auditOrdinarySungSourceOnlyCues } from "../src/mass/reader-source-only-cues.js";
+import { missalPrayerHeadingsForCard } from "../src/mass/reader-missal-granularity.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -286,9 +287,44 @@ assert.equal(simpleHost.sectionId,"AO.CARD.015","Host cue did not remain anchore
 assert.ok(simpleHost.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0174")));
 
 const missal=buildReaderModeModels({prepared,data,mode:"MISSAL"});
-assert.equal(missal.presentationModel.totalCards,30);
+assert.equal(missal.sourceModel.totalCards,30);
+assert.ok(missal.presentationModel.totalCards>missal.sourceModel.totalCards,
+  "Missal must expose additional source prayer pages, not reuse only 30 broad sections");
+assert.equal(missal.presentationModel.structureOwner,"CANONICAL_MISSAL_PRAYER_BLOCK_PRESENTATION");
+assert.equal(missal.presentationModel.sourceAuthorityModel,missal.sourceModel);
+const rawMissalParagraphs=missal.sourceModel.cards.flatMap(c=>c.paragraphs);
+const refinedMissalParagraphs=missal.presentationModel.cards.flatMap(c=>c.paragraphs);
+assert.deepEqual(refinedMissalParagraphs,rawMissalParagraphs,
+  "Missal refinement must preserve every original source prayer paragraph, including Proper text");
+assert.deepEqual(missal.presentationModel.cards.flatMap(c=>c.blocks.map(b=>b.blockId)),
+  missal.sourceModel.cards.flatMap(c=>c.blocks.map(b=>b.blockId)),
+  "No Missal prayer block may disappear, duplicate or change source order");
+for(const card of missal.presentationModel.cards){
+  for(const meta of card.blocks??[]){
+    if(meta.paragraphCount>0){
+      assert.equal(meta.firstParagraphIndex>=0,true,meta.blockId+" missing local first-paragraph offset");
+      assert.ok(meta.firstParagraphIndex+meta.paragraphCount<=card.paragraphs.length,
+        meta.blockId+" escaped split Missal card");
+    }
+  }
+}
+assert.equal(simple.presentationModel.totalCards,30,
+  "Simple mode must remain untouched by Missal-only expansion");
 const missalHost=findReaderModeAnchorCard(missal.presentationModel,anchor);
 assert.equal(missalHost.sectionId,"AO.CARD.015","Host cue did not remain anchored when switching LIVE -> MISSAL");
+const offertoryPage=missal.presentationModel.cards.find(c=>
+  c.blocks.some(b=>b.blockId==="AO.SM.B031"));
+assert.ok(offertoryPage&&offertoryPage.paragraphs.length,
+  "Prayer of the offering of bread requires its own Missal page");
+assert.equal(offertoryPage.blocks.length,1);
+const enHeadings=missalPrayerHeadingsForCard(offertoryPage,{language:"en"});
+const frHeadings=missalPrayerHeadingsForCard(offertoryPage,{language:"fr"});
+assert.equal(enHeadings[0].title,"Suscipe, sancte Pater");
+assert.equal(enHeadings[0].description,"The offering of the bread.");
+assert.equal(frHeadings[0].description,"Offrande du pain.");
+assert.equal(enHeadings[0].paragraphIndex,0);
+assert.equal(missal.sourceModel.cards.find(c=>c.blocks.some(b=>b.blockId==="AO.SM.B031")).sectionId,
+  "AO.CARD.010","canonical source section identity must remain the owner");
 
 const backLive=findReaderModeAnchorCard(live.presentationModel,captureReaderModeAnchor(simpleHost,{activeCueId:"AO.SM.C0174"}));
 assert.equal(backLive.sectionId,host.sectionId,"Host cue did not return to the exact LIVE card");
