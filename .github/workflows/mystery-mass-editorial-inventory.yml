@@ -24,6 +24,8 @@ on:
       - 'src/mass/reader-low-guide.js'
       - 'tests/mass-low-35-guide-research.mjs'
       - 'tests/mass-low-35-native-guide-preview.mjs'
+      - 'tests/mass-low-35-source-audit.mjs'
+      - 'data/learn/research/mass-low-35-guide-full-source-audit-20261016.v1.json'
       - 'src/mass/reader-dom.js'
       - 'src/learn/mystery-mass-review-data.js'
       - 'src/learn/mystery-mass-review.js'
@@ -75,6 +77,8 @@ on:
       - 'src/mass/reader-low-guide.js'
       - 'tests/mass-low-35-guide-research.mjs'
       - 'tests/mass-low-35-native-guide-preview.mjs'
+      - 'tests/mass-low-35-source-audit.mjs'
+      - 'data/learn/research/mass-low-35-guide-full-source-audit-20261016.v1.json'
       - 'src/mass/reader-dom.js'
       - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
       - 'tests/mystery-mass-creed-source-and-nobis.mjs'
@@ -125,6 +129,8 @@ jobs:
         run: node tests/mass-low-35-guide-research.mjs
       - name: Check native Low Mass research Guide drawer on 33 source cues and conditional gates
         run: node tests/mass-low-35-native-guide-preview.mjs
+      - name: Certify 35 Low Mass source-cue audit records and explicit form gates
+        run: node tests/mass-low-35-source-audit.mjs
       - name: Validate source-first editorial inventory and deduplication
         run: node tests/mystery-mass-editorial-inventory.mjs
       - name: Validate full Phase 2 bilingual research manuscript
