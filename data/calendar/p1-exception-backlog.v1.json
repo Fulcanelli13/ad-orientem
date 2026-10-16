@@ -22,7 +22,10 @@
         "fullyTrilingualDirectSevenSections": 6,
         "doctorNonPontiffNeedsInheritedVernacular": true,
         "evidence": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
-        "originalMissalTextEditionCertified": false
+        "originalMissalTextEditionCertified": false,
+        "sharedDoctorInheritanceCertifiedAtSourceLevel": true,
+        "appCommonSourceCandidateChecksInFlight": 28,
+        "printEditionCertified": false
       }
     },
     {
@@ -98,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Reconcile remaining 31 online-index Common entries to actual app ProperResolver identities. For C5a restore source-authorized language inheritance C4a for shared sections (never the bishop-specific Secret/Postcommunion); prove exact Latin match and translated owner identity before runtime.",
+      "nextAction": "Bulk inspect 28 source-attested app C-code Common candidates and reconcile to master only when live source is present and identity matches; keep 3 extra Eastertide website variants ambiguous. Do not auto-select a saint Mass.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -116,7 +119,15 @@
         "historicalPrintDoctorFamilyShared": true,
         "technicalBlocker": "C5a non-bishop Doctor 1962 source in app returns Latin core but English/French directly expose ONLY Secreta and Postcommunio; shared C4a sections must be resolved with verified source inheritance.",
         "fullTrilingualDirectSevenCore": 6,
-        "notAutomaticallyNewman": true
+        "notAutomaticallyNewman": true,
+        "verifiedDoctorC5aSourceComposition": true,
+        "sharedLatinSections": 9,
+        "translatedSharedSectionsRecovered": 18,
+        "nonPontiffSecretAndPostcommunionPreserved": true,
+        "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907380467",
+        "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
+        "furtherCommonCandidates": 28,
+        "ambiguousUnmatchedIndexRows": 3
       }
     },
     {
@@ -275,6 +286,9 @@
     "totalIndexRows": 38,
     "unmapped": 31,
     "sevenSectionDirectTrilingual": 6,
-    "sharedDoctorInheritancePending": 1
+    "sharedDoctorInheritanceVerified": 1,
+    "sharedSectionsRecoveredInENFR": 18,
+    "additionalCandidateCodeChecksInFlight": 28,
+    "ambiguousIndexEntries": 3
   }
 }
