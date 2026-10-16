@@ -1,0 +1,2232 @@
+{
+  "schema": "AO_SACRED_ART_BATCH_01_50_CATEGORIES_20261016",
+  "asOf": "2026-10-16",
+  "scope": "Existing Saints W49 ordered categories 1-50 only; source-based human 5-star selection and same-object reproduction curation",
+  "authority": {
+    "w49": "86acb3686c6b2eeeb34c2aee197f97fce2fe84d3",
+    "w73": "b811ebd1ec5fe3f176bdb1aa702a9e5da3efd03d",
+    "w36": "1ca868515e16c079953b837350a85960b2dec5a1",
+    "w68Blocklist": "33f5fb680164469d96e9c2e2369ea6ab5286e842",
+    "w32": "0fcaf9805cd24f03faedf22bc9bc651b83832e31"
+  },
+  "rules": [
+    "Show only recorded human-five-star paintings for a category that has one or more valid 5★ subject assignments.",
+    "When multiple 5★ paintings exist, show only those selected works and their photographed image versions.",
+    "When no 5★ exists, show non-approved painting candidates; do not pretend there are 4-5 where evidence is absent.",
+    "Different pixels derived by resizing a single file are NOT separate image versions; list distinct Commons files / independent photos only.",
+    "Human 5★ painting ratings are locked; user reviews the specific reproduction choice, or rates a new no-five painting.",
+    "Known misidentified historical image previews are blocked and retained as photograph-quality holds; never display the wrong photograph as selected art.",
+    "Original files are external references, not yet fetched and hashed into local production; linked Commons rights vary by file; museum page alone is not an open licence.",
+    "Permanent rejected paintings 0–2 and excluded artists remain excluded.",
+    "Do not touch production, calendar precedence or owners' original human-rating ledgers."
+  ],
+  "stats": {
+    "categories": 50,
+    "withApprovedFive": 46,
+    "withoutApprovedFive": 4,
+    "fiveStarArtworkRecords": 65,
+    "categoriesWithMultipleFive": 12,
+    "noFiveNewCandidatePaintings": 5,
+    "selectedPaintingRecordsWithTwoOrMoreVersions": 4,
+    "sourceImageFileVersions": 64,
+    "paintingRecordsWithoutAnyUsableImage": 16,
+    "sourceMasterOrIdentityHoldPaintings": 26
+  },
+  "subjects": [
+    {
+      "index": 1,
+      "subjectId": "SNT-AP-01",
+      "label": "Saint Peter",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W05-027",
+          "subjectId": "SNT-AP-01",
+          "artist": "Caravaggio",
+          "title": "The Crucifixion of Saint Peter",
+          "origin": "W49",
+          "source": "https://turismoroma.it/en/node/18610",
+          "versions": [
+            {
+              "id": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+              "label": "High-resolution painting scan",
+              "file": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+              "pixels": "8180 × 10537",
+              "verification": "SOURCE_PAGE_DIMENSIONS_VERIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+              "label": "Independent chapel photograph",
+              "file": "Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+              "pixels": "3456 × 5184",
+              "verification": "SOURCE_PAGE_DIMENSIONS_VERIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+              "label": "Earlier colour rendition / W49-reviewed",
+              "file": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+              "pixels": "",
+              "verification": "PREEXISTING_W49_PHOTO_VARIANT",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "met-441971",
+          "subjectId": "SNT-AP-01",
+          "artist": "Jusepe de Ribera",
+          "title": "The Tears of Saint Peter",
+          "origin": "W73",
+          "source": "https://www.metmuseum.org/art/collection/search/441971",
+          "versions": [],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+          "subjectId": "SNT-AP-01",
+          "artist": "follower of Anthony van Dyck",
+          "title": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+          "versions": [
+            {
+              "id": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 2,
+      "subjectId": "SNT-AP-02",
+      "label": "Saint Andrew",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W05-004",
+          "subjectId": "SNT-AP-02",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Andrew",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+          "versions": [],
+          "masterHold": "RUBENS_APOSTLE_ANDREW_CARD_PHOTO_MARTYRDOM",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 3,
+      "subjectId": "SNT-AP-03",
+      "label": "Saint James the Greater",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W36-SNT-AP-03-3e9d9be5f41a",
+          "subjectId": "SNT-AP-03",
+          "artist": "Guido Reni",
+          "title": "Guido Reni - Saint James the Greater - Google Art Project",
+          "origin": "W36",
+          "source": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+          "versions": [
+            {
+              "id": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 4,
+      "subjectId": "SNT-AP-04",
+      "label": "Saint John",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "prado-rubens-p001647",
+          "subjectId": "SNT-AP-04",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint John the Evangelist",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-the-evangelist/29bfd358-bfd3-43b4-a894-b57f6eb2d81f",
+          "versions": [
+            {
+              "id": "Rubens apostel johannes grt.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Rubens apostel johannes grt.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_johannes_grt.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_johannes_grt.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_johannes_grt.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 5,
+      "subjectId": "SNT-AP-05",
+      "label": "Saint Philip",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W01-001",
+          "subjectId": "SNT-AP-05",
+          "artist": "Jusepe de Ribera",
+          "title": "The Martyrdom of Saint Philip",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/the-martyrdom-of-saint-philip/a221ea0e-d38c-4018-be83-af9119458701",
+          "versions": [
+            {
+              "id": "José de Ribera 054.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "José de Ribera 054.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9_de_Ribera_054.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9_de_Ribera_054.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_Ribera_054.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "W38-006",
+          "subjectId": "SNT-AP-05",
+          "artist": "Anthony van Dyck",
+          "title": "Apostle Philip",
+          "origin": "W49",
+          "source": "https://www.khm.at/kunstwerke/apostel-philippus-636",
+          "versions": [
+            {
+              "id": "Anthonis van Dyck - Apostel Philippus - GG 9703 - Kunsthistorisches Museum.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Anthonis van Dyck - Apostel Philippus - GG 9703 - Kunsthistorisches Museum.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 6,
+      "subjectId": "SNT-AP-06",
+      "label": "Saint Bartholomew",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W02-001",
+          "subjectId": "SNT-AP-06",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Bartholomew (Apostolado series, 1630–35)",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/4818e314-6b68-4828-8397-57c5e051507e",
+          "versions": [],
+          "masterHold": "PHOTOGRAPH_OF_CIRCLE_OF_RIBERA_NOT_CATALOGUED_RIBERA_APOSTOLADO",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 7,
+      "subjectId": "SNT-AP-07",
+      "label": "Saint Thomas",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W07-014",
+          "subjectId": "SNT-AP-07",
+          "artist": "Caravaggio",
+          "title": "The Incredulity of Saint Thomas",
+          "origin": "W49",
+          "source": "https://www.spsg.de/en/press-material-paintings",
+          "versions": [
+            {
+              "id": "The_Incredulity_of_Saint_Thomas.jpg",
+              "label": "Original reviewed Sanssouci painting photo",
+              "file": "The_Incredulity_of_Saint_Thomas.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+              "pixels": "",
+              "verification": "PREEXISTING_W49_PHOTO",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+              "label": "Independent Commons image of Sanssouci original",
+              "file": "Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+              "pixels": "",
+              "verification": "SOURCE_IDENTIFIES_SANSSOUCI_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+              "label": "Additional Commons rendition of Sanssouci original",
+              "file": "The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+              "pixels": "",
+              "verification": "SOURCE_IDENTIFIES_SANSSOUCI_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 8,
+      "subjectId": "SNT-AP-08",
+      "label": "Saint Matthew",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C34:saintmatthewbyvalentindeboulognejpg",
+          "subjectId": "SNT-AP-08",
+          "artist": "Attribution not recorded",
+          "title": "Saint Matthew, by Valentin de Boulogne.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+          "versions": [
+            {
+              "id": "Saint Matthew, by Valentin de Boulogne.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Saint Matthew, by Valentin de Boulogne.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 9,
+      "subjectId": "SNT-AP-09",
+      "label": "Saint James the Less",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "prado-rubens-p001651",
+          "subjectId": "SNT-AP-09",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint James the Less",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-james-the-less/02ef9e0d-b544-48cb-bcd0-89611b37f55b",
+          "versions": [
+            {
+              "id": "Rubens apostel jakobus mindere grt.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Rubens apostel jakobus mindere grt.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_jakobus_mindere_grt.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_jakobus_mindere_grt.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_jakobus_mindere_grt.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 10,
+      "subjectId": "SNT-AP-10",
+      "label": "Saint Simon",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "prado-rubens-p001655",
+          "subjectId": "SNT-AP-10",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Simon",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-simon/0679cee8-ea16-47dc-81f8-179530faaa68",
+          "versions": [
+            {
+              "id": "Rubens apostel simon.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Rubens apostel simon.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_simon.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens_apostel_simon.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_simon.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 11,
+      "subjectId": "SNT-AP-11",
+      "label": "Saint Matthias",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W05-008",
+          "subjectId": "SNT-AP-11",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Matthias",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+          "versions": [],
+          "masterHold": "MATTHIAS_SHARED_WITH_MATTHEW_CARD",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 12,
+      "subjectId": "SNT-AP-12",
+      "label": "Saint Paul",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W05-012",
+          "subjectId": "SNT-AP-12",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Paul",
+          "origin": "W73",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+          "versions": [],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 13,
+      "subjectId": "SNT-AP-13",
+      "label": "Saint Jude Thaddeus",
+      "group": "AP",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W14-016",
+          "subjectId": "SNT-AP-13",
+          "artist": "Anthony van Dyck",
+          "title": "Apostle Judas Thaddeus (Böhler series)",
+          "origin": "W49",
+          "source": "https://www.khm.at/en/artworks/apostle-judas-thaddaeus-635",
+          "versions": [],
+          "masterHold": "VAN_DYCK_WORKSHOP_VERSUS_AUTOGRAPH",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 14,
+      "subjectId": "SNT-EV-01",
+      "label": "Saint Mark the Evangelist",
+      "group": "EV",
+      "hasFive": false,
+      "paintings": [
+        {
+          "id": "B01-MARK-MARATTA-THYSSEN",
+          "subjectId": "SNT-EV-01",
+          "artist": "Carlo Maratta",
+          "title": "Saint Mark the Evangelist (c. 1655–60)",
+          "origin": "NO_FIVE_NEW_PAINTING_CANDIDATE",
+          "source": "https://www.museothyssen.org/en/collection/artists/maratta-carlo/saint-mark-evangelist",
+          "versions": [
+            {
+              "id": "El_evangelista_san_Marcos_(Maratta).jpg",
+              "label": "Wikimedia Commons reproduction, Thyssen collection",
+              "file": "El_evangelista_san_Marcos_(Maratta).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/El_evangelista_san_Marcos_(Maratta).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/El_evangelista_san_Marcos_(Maratta).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:El_evangelista_san_Marcos_(Maratta).jpg",
+              "pixels": "2000 × 2693",
+              "verification": "VERIFIED_FILE_AND_MUSEUM_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": null,
+          "curatorRatingLocked": false,
+          "productionApproved": false
+        },
+        {
+          "id": "B01-MARK-RENI-GENOA",
+          "subjectId": "SNT-EV-01",
+          "artist": "Guido Reni",
+          "title": "Saint Mark the Evangelist — Palazzo Rosso",
+          "origin": "NO_FIVE_NEW_PAINTING_CANDIDATE",
+          "source": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+          "versions": [
+            {
+              "id": "Guido_Reni_San_Marco_Evangelista.jpg",
+              "label": "Frontal painting photograph",
+              "file": "Guido_Reni_San_Marco_Evangelista.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_San_Marco_Evangelista.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_San_Marco_Evangelista.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_San_Marco_Evangelista.jpg",
+              "pixels": "1309 × 1435",
+              "verification": "VERIFIED_SAME_GENOA_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Guido_reni,_san_marco_evangelista,_genova.JPG",
+              "label": "Alternate painting photograph",
+              "file": "Guido_reni,_san_marco_evangelista,_genova.JPG",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_reni%2C_san_marco_evangelista%2C_genova.JPG?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_reni%2C_san_marco_evangelista%2C_genova.JPG",
+              "url": "https://commons.wikimedia.org/wiki/File:Guido_reni%2C_san_marco_evangelista%2C_genova.JPG",
+              "pixels": "2154 × 2304",
+              "verification": "VERIFIED_SAME_GENOA_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Guido_reni,_san_marco.JPG",
+              "label": "Third original-object photograph",
+              "file": "Guido_reni,_san_marco.JPG",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_reni%2C_san_marco.JPG?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_reni%2C_san_marco.JPG",
+              "url": "https://commons.wikimedia.org/wiki/File:Guido_reni%2C_san_marco.JPG",
+              "pixels": "1504 × 1608",
+              "verification": "VERIFIED_SAME_GENOA_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": null,
+          "curatorRatingLocked": false,
+          "productionApproved": false
+        },
+        {
+          "id": "B01-MARK-RENI-BJU",
+          "subjectId": "SNT-EV-01",
+          "artist": "Guido Reni",
+          "title": "Saint Mark (1621) — Bob Jones University Museum & Gallery",
+          "origin": "NO_FIVE_NEW_PAINTING_CANDIDATE",
+          "source": "https://commons.wikimedia.org/wiki/File:Reni_-_Saint_Mark,_1621.jpg",
+          "versions": [
+            {
+              "id": "Reni_-_Saint_Mark,_1621.jpg",
+              "label": "Open-license full image",
+              "file": "Reni_-_Saint_Mark,_1621.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni_-_Saint_Mark%2C_1621.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni_-_Saint_Mark%2C_1621.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Reni_-_Saint_Mark%2C_1621.jpg",
+              "pixels": "2019 × 2445",
+              "verification": "VERIFIED_DISTINCT_WORK_NOT_GENOA",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": null,
+          "curatorRatingLocked": false,
+          "productionApproved": false
+        },
+        {
+          "id": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "subjectId": "SNT-EV-01",
+          "artist": "Jacopo Tintoretto",
+          "title": "Miracle of the Slave (Saint Mark intervenes)",
+          "origin": "NO_FIVE_NEW_PAINTING_CANDIDATE",
+          "source": "https://commons.wikimedia.org/wiki/File:Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+          "versions": [
+            {
+              "id": "Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+              "label": "Independent restoration-era photo",
+              "file": "Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+              "pixels": "6423 × 4912",
+              "verification": "VERIFIED_SAME_VENICE_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Tintoretto_-_Miracle_of_the_Slave.jpg",
+              "label": "Alternate clean frontal photo",
+              "file": "Tintoretto_-_Miracle_of_the_Slave.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto_-_Miracle_of_the_Slave.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto_-_Miracle_of_the_Slave.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Tintoretto_-_Miracle_of_the_Slave.jpg",
+              "pixels": "6358 × 4959",
+              "verification": "VERIFIED_SAME_VENICE_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+              "label": "Third source photograph",
+              "file": "Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+              "pixels": "3812 × 2975",
+              "verification": "VERIFIED_SAME_VENICE_OBJECT",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": null,
+          "curatorRatingLocked": false,
+          "productionApproved": false
+        }
+      ],
+      "leads": [
+        {
+          "subjectId": "SNT-EV-01",
+          "label": "Saint Mark and Saint Luke — Juan Ribalta (painting source; reproduction pending)",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-mark-and-saint-luke/074cca51-adc7-4a3f-9906-a66c933f12c5"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "subjectId": "SNT-EV-02",
+      "label": "Saint Luke the Evangelist",
+      "group": "EV",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "subjectId": "SNT-EV-02",
+          "artist": "Attribution not recorded",
+          "title": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+          "versions": [
+            {
+              "id": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C34:luketheevangelistbyjanjanszdestommejpg",
+          "subjectId": "SNT-EV-02",
+          "artist": "Attribution not recorded",
+          "title": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+          "versions": [
+            {
+              "id": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C34:franciscodezurbaran046jpg",
+          "subjectId": "SNT-EV-02",
+          "artist": "Attribution not established",
+          "title": "Francisco de Zurbarán 046.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg",
+          "versions": [
+            {
+              "id": "Francisco de Zurbarán 046.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Francisco de Zurbarán 046.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_046.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_046.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 16,
+      "subjectId": "SNT-DC-01",
+      "label": "Saint Ambrose",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W02-017",
+          "subjectId": "SNT-DC-01",
+          "artist": "Anthony van Dyck",
+          "title": "St Ambrose barring Theodosius from Milan Cathedral",
+          "origin": "W49",
+          "source": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
+          "versions": [
+            {
+              "id": "Anthonis_van_Dyck_005.jpg",
+              "label": "Earlier Commons reproduction",
+              "file": "Anthonis_van_Dyck_005.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis_van_Dyck_005.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis_van_Dyck_005.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_005.jpg",
+              "pixels": "",
+              "verification": "HUMAN_REVIEWED_EXISTING",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Antoon_van_dyck,_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano,_1619-20_ca.jpg",
+              "label": "Independent documented photograph",
+              "file": "Antoon_van_dyck,_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano,_1619-20_ca.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon_van_dyck%2C_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano%2C_1619-20_ca.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon_van_dyck%2C_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano%2C_1619-20_ca.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Antoon_van_dyck%2C_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano%2C_1619-20_ca.jpg",
+              "pixels": "3144 × 3876",
+              "verification": "SOURCE_PAGE_DIMENSIONS_VERIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+          "subjectId": "SNT-DC-01",
+          "artist": "Claude Vignon",
+          "title": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+          "versions": [
+            {
+              "id": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+          "subjectId": "SNT-DC-01",
+          "artist": "Andrey Ivanov",
+          "title": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+          "versions": [
+            {
+              "id": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 17,
+      "subjectId": "SNT-DC-02",
+      "label": "Saint Augustine",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G25-003",
+          "subjectId": "SNT-DC-02",
+          "artist": "Anonymous, possibly after Giovanni Lanfranco",
+          "title": "Saint Augustine",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-agustin/cf95015c-5744-4471-a529-84a3981719d6",
+          "versions": [],
+          "masterHold": "LANFRANCO_CORONATION_IMAGE_ON_ANONYMOUS_AUGUSTINE",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 18,
+      "subjectId": "SNT-DC-03",
+      "label": "Saint Jerome",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W07-007",
+          "subjectId": "SNT-DC-03",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Writing (Borghese original)",
+          "origin": "W49",
+          "source": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+          "versions": [
+            {
+              "id": "Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+              "label": "High-resolution Galleria Borghese painting image",
+              "file": "Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Jerome_Writing-Caravaggio_(1605-6).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+              "pixels": "8708 × 6212",
+              "verification": "SOURCE_PAGE_DIMENSIONS_VERIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            },
+            {
+              "id": "Caravaggio_-_Saint_Jerome_Writing,_c1606.jpg",
+              "label": "Separate Commons file rendition",
+              "file": "Caravaggio_-_Saint_Jerome_Writing,_c1606.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_Saint_Jerome_Writing%2C_c1606.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_Saint_Jerome_Writing%2C_c1606.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Saint_Jerome_Writing%2C_c1606.jpg",
+              "pixels": "",
+              "verification": "SAME_BORGHESE_WORK_SOURCE_PAGE_CHECKED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 19,
+      "subjectId": "SNT-DC-04",
+      "label": "Saint Gregory the Great",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "met-437722",
+          "subjectId": "SNT-DC-04",
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "origin": "W49",
+          "source": "https://www.metmuseum.org/art/collection/search/437722",
+          "versions": [],
+          "masterHold": "GOYA_GREGORY_PHOTO_NOT_MET_SPANISH_PAINTER_OBJECT",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 20,
+      "subjectId": "SNT-DC-05",
+      "label": "Saint Thomas Aquinas",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "ART-arlo-rivelli-aint-homas-quinas",
+          "subjectId": "SNT-DC-05",
+          "artist": "Carlo Crivelli",
+          "title": "Saint Thomas Aquinas",
+          "origin": "W49",
+          "source": "",
+          "versions": [
+            {
+              "id": "Saint Thomas Aquinas (Crivelli, 15th-century).jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Saint Thomas Aquinas (Crivelli, 15th-century).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 21,
+      "subjectId": "SNT-DC-06",
+      "label": "Saint Bonaventure",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+          "subjectId": "SNT-DC-06",
+          "artist": "Attribution not established",
+          "title": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+          "versions": [
+            {
+              "id": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+              "label": "Exact source-file painting reproduction",
+              "file": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+              "url": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 22,
+      "subjectId": "SNT-DC-07",
+      "label": "Saint Bernard of Clairvaux",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "prado-ribalta-p002804",
+          "subjectId": "SNT-DC-07",
+          "artist": "Francisco Ribalta",
+          "title": "Christ embracing Saint Bernard",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+          "versions": [
+            {
+              "id": "Francisco Ribalta 001.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Francisco Ribalta 001.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_Ribalta_001.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_Ribalta_001.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Francisco_Ribalta_001.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 23,
+      "subjectId": "SNT-DC-08",
+      "label": "Saint Teresa of Ávila",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C32:pompeobatoniestasidisantateresa1743circajpg",
+          "subjectId": "SNT-DC-08",
+          "artist": "Pompeo Batoni",
+          "title": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+          "versions": [
+            {
+              "id": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:francescounterpergersantateresadavilatiff",
+          "subjectId": "SNT-DC-08",
+          "artist": "Francesco Unterperger",
+          "title": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+          "versions": [
+            {
+              "id": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+              "label": "Exact source-file painting reproduction",
+              "file": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+              "url": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 24,
+      "subjectId": "SNT-DC-09",
+      "label": "Saint Catherine of Siena",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C32:bernardinomeisantacaterinadasiena1641jpg",
+          "subjectId": "SNT-DC-09",
+          "artist": "Bernardino Mei",
+          "title": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+          "versions": [
+            {
+              "id": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+          "subjectId": "SNT-DC-09",
+          "artist": "Giambattista Tiepolo",
+          "title": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+          "versions": [
+            {
+              "id": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 25,
+      "subjectId": "SNT-DC-10",
+      "label": "Saint John of the Cross",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "celine-1894-john-cross",
+          "subjectId": "SNT-DC-10",
+          "artist": "Céline Martin",
+          "title": "Saint John of the Cross",
+          "origin": "W49",
+          "source": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+          "versions": [],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 26,
+      "subjectId": "SNT-DC-11",
+      "label": "Saint Alphonsus Liguori",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "italy-0900119548",
+          "subjectId": "SNT-DC-11",
+          "artist": "Antonio Marini",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "origin": "W73",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+          "versions": [],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "G28-003",
+          "subjectId": "SNT-DC-11",
+          "artist": "Michele Lenzi",
+          "title": "Sant'Alfonso Maria de Liguori",
+          "origin": "W73",
+          "source": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1500005082",
+          "versions": [],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 27,
+      "subjectId": "SNT-DC-12",
+      "label": "Saint Francis de Sales",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G17-006",
+          "subjectId": "SNT-DC-12",
+          "artist": "School of Philippe de Champaigne",
+          "title": "Saint François de Sales",
+          "origin": "W49",
+          "source": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+          "versions": [
+            {
+              "id": "Saint François de Sales.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Saint François de Sales.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "paris-pm75001042-halle-sales",
+          "subjectId": "SNT-DC-12",
+          "artist": "Noël Hallé",
+          "title": "Saint François de Sales donnant la règle de la Visitation à sainte Jeanne de Chantal",
+          "origin": "W49",
+          "source": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+          "versions": [
+            {
+              "id": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg",
+          "subjectId": "SNT-DC-12",
+          "artist": "Attribution not recorded",
+          "title": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
+          "versions": [
+            {
+              "id": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 28,
+      "subjectId": "SNT-DC-13",
+      "label": "Saint Athanasius",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
+          "subjectId": "SNT-DC-13",
+          "artist": "Alonso Sánchez Coello",
+          "title": "San Basilio y San Atanasio, Alonso Sánchez Coello.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg",
+          "versions": [
+            {
+              "id": "San Basilio y San Atanasio, Alonso Sánchez Coello.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "San Basilio y San Atanasio, Alonso Sánchez Coello.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:rubensathanasiusjpg",
+          "subjectId": "SNT-DC-13",
+          "artist": "Peter Paul Rubens (file attribution unresolved)",
+          "title": "RubensAthanasius.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:RubensAthanasius.jpg",
+          "versions": [
+            {
+              "id": "RubensAthanasius.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "RubensAthanasius.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/RubensAthanasius.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/RubensAthanasius.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:RubensAthanasius.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 29,
+      "subjectId": "SNT-DC-14",
+      "label": "Saint Basil the Great",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+          "subjectId": "SNT-DC-14",
+          "artist": "Pierre Hubert Subleyras",
+          "title": "The Mass of Saint Basil — oil modello",
+          "origin": "W49",
+          "source": "",
+          "versions": [],
+          "masterHold": "SUBLEYRAS_BASIL_IDENTICAL_PHOTO_AS_SEPARATE_G28",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 30,
+      "subjectId": "SNT-DC-15",
+      "label": "Saint Gregory Nazianzen",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G30-004",
+          "subjectId": "SNT-DC-15",
+          "artist": "Giuseppe Franchi",
+          "title": "Ritratto di San Gregorio Nazianzeno",
+          "origin": "W49",
+          "source": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0070-00118_R03",
+          "versions": [
+            {
+              "id": "Gregor-Chora (cropped).jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Gregor-Chora (cropped).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Gregor-Chora_(cropped).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Gregor-Chora_(cropped).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Gregor-Chora_(cropped).jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 31,
+      "subjectId": "SNT-DC-16",
+      "label": "Saint John Chrysostom",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G17-003",
+          "subjectId": "SNT-DC-16",
+          "artist": "Pedro de Orrente",
+          "title": "Saint John Chrysostom",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
+          "versions": [
+            {
+              "id": "San Juan Crisóstomo, de Pedro de Orrente (Museo del Prado).jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "San Juan Crisóstomo, de Pedro de Orrente (Museo del Prado).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 32,
+      "subjectId": "SNT-DC-17",
+      "label": "Saint Isidore of Seville",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+          "subjectId": "SNT-DC-17",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Saint Isidore of Seville",
+          "origin": "W49",
+          "source": "",
+          "versions": [
+            {
+              "id": "Isidor von Sevilla.jpeg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Isidor von Sevilla.jpeg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Isidor_von_Sevilla.jpeg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Isidor_von_Sevilla.jpeg",
+              "url": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 33,
+      "subjectId": "SNT-DC-18",
+      "label": "Saint Bede the Venerable",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G32-001",
+          "subjectId": "SNT-DC-18",
+          "artist": "James Doyle Penrose",
+          "title": "The Last Chapter: Bede on his deathbed completing his translation of St John's Gospel",
+          "origin": "W49",
+          "source": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
+          "versions": [
+            {
+              "id": "The last chapter by J. Doyle Penrose (1902).jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "The last chapter by J. Doyle Penrose (1902).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_last_chapter_by_J._Doyle_Penrose_(1902).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 34,
+      "subjectId": "SNT-DC-19",
+      "label": "Saint Anselm",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "louvre-crespi-inv259",
+          "subjectId": "SNT-DC-19",
+          "artist": "Giuseppe Maria Crespi",
+          "title": "L'Immaculée Conception avec saint Anselme et saint Martin",
+          "origin": "W49",
+          "source": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "versions": [
+            {
+              "id": "The Immaculate Conception with St. Anselm and St. Martin - Giuseppe Maria Crespi - Louvre INV 259.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "The Immaculate Conception with St. Anselm and St. Martin - Giuseppe Maria Crespi - Louvre INV 259.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 35,
+      "subjectId": "SNT-DC-20",
+      "label": "Saint Peter Damian",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G30-007",
+          "subjectId": "SNT-DC-20",
+          "artist": "Local school, artist unidentified",
+          "title": "San Pier Damiano writing, angel indicates heaven",
+          "origin": "W49",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+          "versions": [
+            {
+              "id": "Pierodamiani2.JPG",
+              "label": "Previous human-reviewed photograph",
+              "file": "Pierodamiani2.JPG",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierodamiani2.JPG?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierodamiani2.JPG",
+              "url": "https://commons.wikimedia.org/wiki/File:Pierodamiani2.JPG",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 36,
+      "subjectId": "SNT-DC-21",
+      "label": "Saint Albert the Great",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C34:albertusmagnusparishofguayaquiljpg",
+          "subjectId": "SNT-DC-21",
+          "artist": "Attribution not recorded",
+          "title": "Albertus Magnus - Parish of Guayaquil.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Albertus_Magnus_-_Parish_of_Guayaquil.jpg",
+          "versions": [
+            {
+              "id": "Albertus Magnus - Parish of Guayaquil.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Albertus Magnus - Parish of Guayaquil.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Albertus_Magnus_-_Parish_of_Guayaquil.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Albertus_Magnus_-_Parish_of_Guayaquil.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Albertus_Magnus_-_Parish_of_Guayaquil.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 37,
+      "subjectId": "SNT-DC-22",
+      "label": "Saint Robert Bellarmine",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G30-010",
+          "subjectId": "SNT-DC-22",
+          "artist": "Roman school, anonymous",
+          "title": "Ritratto del cardinale Roberto Bellarmino",
+          "origin": "W73",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+          "versions": [],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 38,
+      "subjectId": "SNT-DC-23",
+      "label": "Saint Peter Canisius",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G31-001",
+          "subjectId": "SNT-DC-23",
+          "artist": "Anonymous Northern Netherlands",
+          "title": "Petrus Canisius (1521–97), portrait miniature",
+          "origin": "W49",
+          "source": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+          "versions": [
+            {
+              "id": "Saint Petrus Canisius.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Saint Petrus Canisius.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Petrus_Canisius.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Petrus_Canisius.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Saint_Petrus_Canisius.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 39,
+      "subjectId": "SNT-DC-24",
+      "label": "Saint Lawrence of Brindisi",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G20-004",
+          "subjectId": "SNT-DC-24",
+          "artist": "Anonymous 17th century (?)",
+          "title": "Portrait de saint Laurent de Brindisi",
+          "origin": "W49",
+          "source": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+          "versions": [
+            {
+              "id": "LABRUZZI san lorenzo da brindisi.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "LABRUZZI san lorenzo da brindisi.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/LABRUZZI_san_lorenzo_da_brindisi.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/LABRUZZI_san_lorenzo_da_brindisi.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:LABRUZZI_san_lorenzo_da_brindisi.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 40,
+      "subjectId": "SNT-DC-25",
+      "label": "Saint Cyril of Alexandria",
+      "group": "DC",
+      "hasFive": false,
+      "paintings": [
+        {
+          "id": "B01-CYRILALEX-BRAGA",
+          "subjectId": "SNT-DC-25",
+          "artist": "Unknown Portuguese painter",
+          "title": "Saint Cyril of Alexandria — Igreja do Carmo, Braga (18th c.)",
+          "origin": "NO_FIVE_NEW_PAINTING_CANDIDATE",
+          "source": "https://commons.wikimedia.org/wiki/File:Painting_of_Cyril_of_Alexandria.jpg",
+          "versions": [
+            {
+              "id": "Painting_of_Cyril_of_Alexandria.jpg",
+              "label": "In-situ oil painting photo, portrait view",
+              "file": "Painting_of_Cyril_of_Alexandria.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Painting_of_Cyril_of_Alexandria.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Painting_of_Cyril_of_Alexandria.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Painting_of_Cyril_of_Alexandria.jpg",
+              "pixels": "2376 × 2409",
+              "verification": "VERIFIED_PAINTING_INSCRIBED_CYRILLUS_ALEXANDRINUS",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": null,
+          "curatorRatingLocked": false,
+          "productionApproved": false
+        }
+      ],
+      "leads": [
+        {
+          "subjectId": "SNT-DC-25",
+          "label": "Other Cyril of Alexandria paintings: no independently verified open-quality photo yet",
+          "source": "https://commons.wikimedia.org/wiki/Category:Cyril_of_Alexandria"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "subjectId": "SNT-DC-26",
+      "label": "Saint Cyril of Jerusalem",
+      "group": "DC",
+      "hasFive": false,
+      "paintings": [],
+      "leads": [
+        {
+          "subjectId": "SNT-DC-26",
+          "label": "Cyril of Jerusalem — 1637 Nannoni attribution is identity-contested (possible Cyril of Constantinople); exclude from review until resolved",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900117888A-1"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "subjectId": "SNT-DC-27",
+      "label": "Saint Ephrem",
+      "group": "DC",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G32-002",
+          "subjectId": "SNT-DC-27",
+          "artist": "Francesco Netti",
+          "title": "Sant'Effremo",
+          "origin": "W49",
+          "source": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
+          "versions": [
+            {
+              "id": "Mor Ephrem icon.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Mor Ephrem icon.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Mor_Ephrem_icon.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Mor_Ephrem_icon.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Mor_Ephrem_icon.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 43,
+      "subjectId": "SNT-DC-28",
+      "label": "Saint Hilary of Poitiers",
+      "group": "DC",
+      "hasFive": false,
+      "paintings": [],
+      "leads": [
+        {
+          "subjectId": "SNT-DC-28",
+          "label": "Saint Hilaire writing against Arianism — Jérôme-Martin Langlois, authenticated French inventory, open-quality photo pending",
+          "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002267"
+        },
+        {
+          "subjectId": "SNT-DC-28",
+          "label": "Saint Lawrence / Saint Hilary — Juan Correa de Vivar, existing research object, clear photo pending",
+          "source": "https://github.com/Fulcanelli13/ad-orientem/blob/platform/885-sacred-art-candidates/data/calendar/sacred-art-two-options-matrix-wave32-20261014.v6.json"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "subjectId": "SNT-OT-01",
+      "label": "Saint Joseph",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W04-009",
+          "subjectId": "SNT-OT-01",
+          "artist": "Philippe de Champaigne",
+          "title": "Le songe de saint Joseph",
+          "origin": "W49",
+          "source": "https://collections.louvre.fr/ark:/53355/cl010060517",
+          "versions": [
+            {
+              "id": "The Dream of Saint Joseph.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "The Dream of Saint Joseph.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "W40-006",
+          "subjectId": "SNT-OT-01",
+          "artist": "Francisco Camilo",
+          "title": "San José con el Niño Jesús",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-jose-con-el-nio-jesus/a659fbad-c561-42bc-8249-042be39f4a72",
+          "versions": [],
+          "masterHold": "MURILLO_JOSEPH_PHOTO_ON_CAMILO_RECORD",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C32:guidoreni042jpg",
+          "subjectId": "SNT-OT-01",
+          "artist": "Guido Reni (verify exact iconography)",
+          "title": "Guido Reni 042.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+          "versions": [
+            {
+              "id": "Guido Reni 042.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Guido Reni 042.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_042.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_042.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 45,
+      "subjectId": "SNT-OT-02",
+      "label": "Saint Michael Archangel",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G26-005",
+          "subjectId": "SNT-OT-02",
+          "artist": "Raphael",
+          "title": "Saint Michael Vanquishing Satan (Grand Saint Michel)",
+          "origin": "W49",
+          "source": "https://collections.louvre.fr/ark:/53355/cl010060771",
+          "versions": [
+            {
+              "id": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 46,
+      "subjectId": "SNT-OT-03",
+      "label": "Saint Raphael Archangel",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+          "subjectId": "SNT-OT-03",
+          "artist": "Attribution not recorded",
+          "title": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+          "versions": [
+            {
+              "id": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 47,
+      "subjectId": "SNT-OT-04",
+      "label": "Saint John the Baptist",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "W08-009",
+          "subjectId": "SNT-OT-04",
+          "artist": "Caravaggio",
+          "title": "Saint John the Baptist in the Wilderness",
+          "origin": "W49",
+          "source": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+          "versions": [
+            {
+              "id": "Michelangelo Merisi, called Caravaggio - Saint John the Baptist in the Wilderness - Google Art Project.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Michelangelo Merisi, called Caravaggio - Saint John the Baptist in the Wilderness - Google Art Project.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 48,
+      "subjectId": "SNT-OT-05",
+      "label": "Saint Thérèse of Lisieux",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "carmel-lisieux-1925-therese-aux-roses",
+          "subjectId": "SNT-OT-05",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "title": "Thérèse aux roses (1925)",
+          "origin": "W49",
+          "source": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "versions": [],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 49,
+      "subjectId": "SNT-OT-06",
+      "label": "Saint Anthony of Padua",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "C34:colognavenetachiesadisantamarianascenteilmiracolodellamulajp",
+          "subjectId": "SNT-OT-06",
+          "artist": "Attribution not recorded",
+          "title": "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg",
+          "origin": "W49",
+          "source": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
+          "versions": [
+            {
+              "id": "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "CAVALLINO_ANTHONY_IMAGE_ON_COLOGNA_CHURCH_SOURCE",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "W38-009",
+          "subjectId": "SNT-OT-06",
+          "artist": "Claudio Coello",
+          "title": "Saint Anthony of Padua",
+          "origin": "W49",
+          "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-anthony-of-padua/94869cf9-4d95-443f-9372-4ad05440f8da",
+          "versions": [
+            {
+              "id": "Claudio coello-san antonio de padua.jpg",
+              "label": "Previous human-reviewed photograph",
+              "file": "Claudio coello-san antonio de padua.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudio_coello-san_antonio_de_padua.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudio_coello-san_antonio_de_padua.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Claudio_coello-san_antonio_de_padua.jpg",
+              "pixels": "",
+              "verification": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "sdma-48-3-pittoni-anthony",
+          "subjectId": "SNT-OT-06",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "The Vision of Saint Anthony of Padua",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+          "versions": [
+            {
+              "id": "The Vision of Saint Anthony of Padua painting by Giovanni Battista Pittoni, San Diego Museum of Art.JPG",
+              "label": "Exact source-file painting reproduction",
+              "file": "The Vision of Saint Anthony of Padua painting by Giovanni Battista Pittoni, San Diego Museum of Art.JPG",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni%2C_San_Diego_Museum_of_Art.JPG?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni%2C_San_Diego_Museum_of_Art.JPG",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni%2C_San_Diego_Museum_of_Art.JPG",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    },
+    {
+      "index": 50,
+      "subjectId": "SNT-OT-07",
+      "label": "Saint Joan of Arc",
+      "group": "OT",
+      "hasFive": true,
+      "paintings": [
+        {
+          "id": "G26-007",
+          "subjectId": "SNT-OT-07",
+          "artist": "Eugène Carrière",
+          "title": "Joan of Arc Listening to the Voices",
+          "origin": "W49",
+          "source": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
+          "versions": [],
+          "masterHold": "STILKE_JOAN_MARTYRDOM_IMAGE_ON_CARRIERE_ARTWORK",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+          "subjectId": "SNT-OT-07",
+          "artist": "Attribution not established",
+          "title": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+          "versions": [
+            {
+              "id": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        },
+        {
+          "id": "C35:jeannedarcenprisonbylouiscrignier1824jpg",
+          "subjectId": "SNT-OT-07",
+          "artist": "Attribution not established",
+          "title": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+          "origin": "W73",
+          "source": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+          "versions": [
+            {
+              "id": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+              "label": "Exact source-file painting reproduction",
+              "file": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+              "display": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg?width=1050",
+              "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+              "url": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+              "pixels": "",
+              "verification": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED",
+              "rights": "Consult this exact file page; no automatic production release"
+            }
+          ],
+          "masterHold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+          "curatorRating": 5,
+          "curatorRatingLocked": true,
+          "productionApproved": false
+        }
+      ],
+      "leads": []
+    }
+  ]
+}
