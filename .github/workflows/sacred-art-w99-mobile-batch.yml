@@ -1,0 +1,32 @@
+name: Sacred Art W99 Mobile Batch Acquisitions
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-w99-mobile-acquisition-batch.v1.json
+      - tools/calendar/acquire-sacred-art-w99-mobile-batch.py
+      - .github/workflows/sacred-art-w99-mobile-batch.yml
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Acquire and verify actual Commons source bytes; render contain-fit mobile images
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w99-mobile-batch.py
+          python tools/calendar/acquire-sacred-art-w99-mobile-batch.py
+      - name: Store research-only sources, phone views and SHA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w99-seven-mobile-batch-originals
+          path: artifacts/sacred-art-w99-mobile-comparison-originals/
+          retention-days: 30
+          if-no-files-found: warn
