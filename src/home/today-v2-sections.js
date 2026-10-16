@@ -111,7 +111,7 @@ export function renderTodayV2Sections(model,vm){
     return '<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(rowData.date)+'"><span class="aoTodayV2EventDate">'+esc(dateDisplay(rowData.date,language))+'</span><span><strong>'+esc(name)+'</strong><small>'+esc(txt("Calendar date · verify observance in Calendar","Date du calendrier · vérifier la célébration dans le calendrier"))+'</small></span><span aria-hidden="true">›</span></button>';
   }).join("");
   return `<div class="aoTodayV2Context">
-    <button type="button" ${yearLink}><small>${esc(txt("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><strong>${esc(language==="fr"?period.fr:period.en)}</strong></button>
+    <button type="button" ${yearLink}><small>${esc(txt("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><strong>${esc(language==="fr"?period.fr:period.en)}</strong><span aria-hidden="true">›</span></button>
   </div>
   ${honouredSection}
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
