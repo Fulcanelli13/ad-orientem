@@ -8,6 +8,7 @@ on:
       - 'docs/research/review-galleries/ao-sacred-art-unified-curator-20261016.html'
       - 'data/calendar/sacred-art-review-uploads/**'
       - 'tests/sacred-art-acquisition-gallery-integrity.mjs'
+      - 'tests/sacred-art-mobile-photo-e2e.mjs'
       - '.github/workflows/sacred-art-closeout-integrity.yml'
   workflow_dispatch:
 
@@ -28,3 +29,28 @@ jobs:
         run: node tests/sacred-art-acquisition-gallery-integrity.mjs
       - name: Check earlier immutable Saints review decisions
         run: node tests/sacred-art-w73-user-decisions.mjs
+
+  audit-mobile-images:
+    name: Mobile 390px full-gallery image-load audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install existing project test dependencies
+        run: npm ci --ignore-scripts
+      - name: Install Chromium for 390px phone simulation
+        run: npx playwright install --with-deps chromium
+      - name: Audit all linked image sources and mobile contain-fit
+        run: node tests/sacred-art-mobile-photo-e2e.mjs
+      - name: Archive research-only image audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-mobile-preview-audit
+          path: artifacts/sacred-art-mobile-qa/
+          retention-days: 7
+          if-no-files-found: warn
