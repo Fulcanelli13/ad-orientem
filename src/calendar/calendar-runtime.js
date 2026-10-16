@@ -12,6 +12,7 @@ import { observedCycle } from "./observed-cycle.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
+import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
@@ -627,7 +628,7 @@ function supplementaryDayMarkup(selected,r){
     const cards=buildReviewedSanctoralCards({
       date:selected,language:fr()?"fr":"en",jurisdiction:"UNSPECIFIED",
       observedPrincipalId:r.day.main.id,
-      observedCommemorationIds:(r.day.commemorations||[]).map(x=>x.id).filter(Boolean),
+      observedCommemorationIds:canonical1962Commemorations(r).map(x=>x.sourceId),
       ...secondarySaintModel
     });
     return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
@@ -649,6 +650,7 @@ function daySurface(selected,r){
       ${printReady?`<button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p>`:""}
     </section>
     ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
+    ${cm.length?`<section class="aoCalV2Commemorations"><small>${esc(L("ALSO OBSERVED","ÉGALEMENT"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
     ${supplementaryDayMarkup(selected,r)}
     <section class="aoCalV2Context">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div></div>
@@ -661,7 +663,6 @@ function daySurface(selected,r){
       ${compactWeek(selected)}
       <div class="aoCalV2WeekShift"><button data-cal-shift="-7">${assetIcon("ao-ui-previous")} ${esc(L("Previous week","Semaine précédente"))}</button><button data-cal-shift="7">${esc(L("Next week","Semaine suivante"))} ${assetIcon("ao-ui-next")}</button></div>
     </section>
-    ${cm.length?`<section class="aoCalV2Commemorations"><small>${esc(L("ALSO OBSERVED","ÉGALEMENT"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
   `;
 }
 function requestYearDailyColours(year){
