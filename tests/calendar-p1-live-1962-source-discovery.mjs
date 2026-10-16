@@ -80,6 +80,15 @@ try{
  assert.equal(october.dayDate,"2026-10-09");
  assert.ok(october.principal?.id?.startsWith("sancti:10-09:"),"The original day must remain traditional 1962");
  assert.ok(october.principal?.path&&october.proper?.path,"Source path discovery cannot be declared on title alone");
+ assert.equal(october.linkProbes?.length,6,"Every registered historical Missal prayer must be resolvable");
+ assert.ok(october.linkProbes.every(p=>p.status==="SOURCE_READY_ROUTER_NOT_IMPLEMENTED"&&
+  p.route===null&&p.readOnly===true), "The six real prayer targets must be exact, read-only and unrouted");
+ assert.deepEqual(october.linkProbes.map(p=>p.readerParagraphId),
+  ["COLLECT_SET.1","SECRET_SET.1","POSTCOMMUNION_SET.1",
+   "COLLECT_SET.2","SECRET_SET.2","POSTCOMMUNION_SET.2"]);
+ assert.deepEqual(october.proper.calendarCommemorations.map(c=>c.path),["Sancti/10-09t"]);
+ assert.deepEqual(october.calendarCommemorations.map(c=>c.id),["sancti:10-09t:4:r"]);
+
  console.log("P1 resolver live source identity PASS; witness is observation only, not an authorized alternative saint Mass.");
 }finally{
  await browser?.close();
