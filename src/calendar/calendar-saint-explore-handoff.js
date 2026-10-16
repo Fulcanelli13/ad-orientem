@@ -47,3 +47,26 @@ export function exactCalendarPrincipalSaintProfile({date,principalId,bridge}={})
      readOnly:true,massSelectionAuthority:"NONE",sourceOwner:"SAINTS_EXACT_EDITORIAL_BRIDGE",
   });
 }
+
+export function exactCalendarSupplementarySaintProfile({date,card,bridge}={}){
+  if(!iso(date)||!card||
+     card.currentCalendarDate!==date.slice(5)||
+     card.secondaryOnly!==true||
+     card.massSelectionAuthority!=="NONE"||
+     card.changes1962Principal!==false||
+     card.selectedFormularyId!==null||
+     !/^saint\\.[a-z0-9-]+$/.test(card.id||"")||
+     bridge?.schema!=="ao.saints.parallel-owner-identity-bridge.v1"||
+     bridge?.status!=="EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES")return null;
+  const forbidden=new Set((bridge.nonlinks??[])
+    .filter(x=>x?.relation==="DISTINCT_PERSON_DO_NOT_MERGE").map(x=>x.saints_id));
+  const links=(bridge.identity_links??[]).filter(x=>
+    x?.status==="EXACT_SUPPORTED_NO_OWNER_MUTATION"&&
+    /^saint:[a-z0-9-]+$/.test(x.saints_id||"")&&
+    x.calendar_person_id===card.id&&
+    !forbidden.has(x.saints_id));
+  if(links.length!==1)return null;
+  return Object.freeze({saintsId:links[0].saints_id,calendarPersonId:card.id,
+    selectedDate:date,readOnly:true,massSelectionAuthority:"NONE",
+    sourceOwner:"SAINTS_EXACT_EDITORIAL_BRIDGE"});
+}
