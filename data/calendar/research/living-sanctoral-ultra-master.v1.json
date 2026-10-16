@@ -9,18 +9,18 @@
     "canonicalPersons": 293,
     "collectiveGroups": 13,
     "existingDateEdges": 26,
-    "newDateEdges": 101,
-    "totalDateEdges": 127,
+    "newDateEdges": 145,
+    "totalDateEdges": 171,
     "existingDatedIndividuals": 21,
-    "datedIndividuals": 115,
-    "newlyDatedIndividuals": 94,
-    "remainingUndatedIndividuals": 178,
+    "datedIndividuals": 159,
+    "newlyDatedIndividuals": 138,
+    "remainingUndatedIndividuals": 134,
     "datedCollectiveGroups": 10,
-    "individuallyUnresolvedJurisdiction": 97,
+    "individuallyUnresolvedJurisdiction": 141,
     "expresslyUniversalModernGeneralRomanIndividuals": 10,
-    "yearCollectionsWithNewDateEvidence": 12,
+    "yearCollectionsWithNewDateEvidence": 20,
     "canonizationYearCollectionsIndexed": 51,
-    "unminedYearCollections": 39
+    "unminedYearCollections": 31
   },
   "persons": [
     {
@@ -63,11 +63,15 @@
       "canonizedOn": "2001-06-10",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-002"
+      ],
+      "attestedMonthDays": [
+        "05-07"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -127,11 +131,15 @@
       "canonizedOn": "2005-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-043"
+      ],
+      "attestedMonthDays": [
+        "08-13"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -179,11 +187,15 @@
       "canonizedOn": "2002-05-19",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-030"
+      ],
+      "attestedMonthDays": [
+        "09-19"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -263,11 +275,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-015"
+      ],
+      "attestedMonthDays": [
+        "01-06"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -371,11 +387,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-024"
+      ],
+      "attestedMonthDays": [
+        "10-05"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -387,11 +407,15 @@
       "canonizedOn": "2004-05-16",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-036"
+      ],
+      "attestedMonthDays": [
+        "06-01"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -599,11 +623,15 @@
       "canonizedOn": "2019-07-05",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-025"
+      ],
+      "attestedMonthDays": [
+        "07-16"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -631,11 +659,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-012"
+      ],
+      "attestedMonthDays": [
+        "05-31"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -679,11 +711,15 @@
       "canonizedOn": "2002-05-19",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-034"
+      ],
+      "attestedMonthDays": [
+        "03-21"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -743,11 +779,15 @@
       "canonizedOn": "2001-06-10",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-003"
+      ],
+      "attestedMonthDays": [
+        "01-12"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -795,11 +835,15 @@
       "canonizedOn": "2011-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-018"
+      ],
+      "attestedMonthDays": [
+        "08-08"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -831,11 +875,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-010"
+      ],
+      "attestedMonthDays": [
+        "08-09"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -887,11 +935,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-022"
+      ],
+      "attestedMonthDays": [
+        "07-25"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1231,11 +1283,15 @@
       "canonizedOn": "2019-10-13",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-029"
+      ],
+      "attestedMonthDays": [
+        "08-13"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1439,11 +1495,15 @@
       "canonizedOn": "2005-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-044"
+      ],
+      "attestedMonthDays": [
+        "05-31"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1599,11 +1659,15 @@
       "canonizedOn": "2005-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-041"
+      ],
+      "attestedMonthDays": [
+        "09-20"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1743,11 +1807,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-021"
+      ],
+      "attestedMonthDays": [
+        "04-25"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1795,11 +1863,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-014"
+      ],
+      "attestedMonthDays": [
+        "05-17"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1831,11 +1903,15 @@
       "canonizedOn": "2001-11-25",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-006"
+      ],
+      "attestedMonthDays": [
+        "05-30"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -1919,11 +1995,15 @@
       "canonizedOn": "2019-10-13",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-026"
+      ],
+      "attestedMonthDays": [
+        "02-23"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -2023,11 +2103,15 @@
       "canonizedOn": "2011-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-016"
+      ],
+      "attestedMonthDays": [
+        "11-05"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -2075,11 +2159,15 @@
       "canonizedOn": "2002-05-19",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-031"
+      ],
+      "attestedMonthDays": [
+        "09-22"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -2183,11 +2271,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-019"
+      ],
+      "attestedMonthDays": [
+        "06-08"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -2571,11 +2663,15 @@
       "canonizedOn": "2004-05-16",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-037"
+      ],
+      "attestedMonthDays": [
+        "12-17"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -2687,11 +2783,15 @@
       "canonizedOn": "2005-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-040"
+      ],
+      "attestedMonthDays": [
+        "03-20"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3023,11 +3123,15 @@
       "canonizedOn": "2001-11-25",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-008"
+      ],
+      "attestedMonthDays": [
+        "01-10"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3133,11 +3237,15 @@
       "canonizedOn": "2011-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-017"
+      ],
+      "attestedMonthDays": [
+        "10-24"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3169,11 +3277,15 @@
       "canonizedOn": "2004-05-16",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-035"
+      ],
+      "attestedMonthDays": [
+        "03-12"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3185,11 +3297,15 @@
       "canonizedOn": "2001-06-10",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-001"
+      ],
+      "attestedMonthDays": [
+        "04-03"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3289,11 +3405,15 @@
       "canonizedOn": "2019-10-13",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-028"
+      ],
+      "attestedMonthDays": [
+        "06-27"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3409,11 +3529,15 @@
       "canonizedOn": "2001-11-25",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-009"
+      ],
+      "attestedMonthDays": [
+        "04-05"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3697,11 +3821,15 @@
       "canonizedOn": "2019-10-13",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-027"
+      ],
+      "attestedMonthDays": [
+        "06-08"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3753,11 +3881,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-023"
+      ],
+      "attestedMonthDays": [
+        "08-09"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -3897,11 +4029,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-011"
+      ],
+      "attestedMonthDays": [
+        "08-08"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4081,11 +4217,15 @@
       "canonizedOn": "2004-05-16",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-038"
+      ],
+      "attestedMonthDays": [
+        "12-14"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4157,11 +4297,15 @@
       "canonizedOn": "2004-05-16",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-039"
+      ],
+      "attestedMonthDays": [
+        "12-24"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4189,11 +4333,15 @@
       "canonizedOn": "2002-05-19",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-033"
+      ],
+      "attestedMonthDays": [
+        "07-09"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4241,11 +4389,15 @@
       "canonizedOn": "2001-11-25",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-007"
+      ],
+      "attestedMonthDays": [
+        "02-26"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4257,11 +4409,15 @@
       "canonizedOn": "2012-10-21",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-020"
+      ],
+      "attestedMonthDays": [
+        "04-02"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4522,11 +4678,15 @@
       "canonizedOn": "2001-06-10",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-005"
+      ],
+      "attestedMonthDays": [
+        "03-23"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4686,11 +4846,15 @@
       "canonizedOn": "2010-10-17",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-013"
+      ],
+      "attestedMonthDays": [
+        "05-03"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4826,11 +4990,15 @@
       "canonizedOn": "2001-06-10",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-004"
+      ],
+      "attestedMonthDays": [
+        "03-03"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -4962,11 +5130,15 @@
       "canonizedOn": "2002-05-19",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-032"
+      ],
+      "attestedMonthDays": [
+        "11-26"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },
@@ -5146,11 +5318,15 @@
       "canonizedOn": "2005-10-23",
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
-      "dateEvidenceEdgeIds": [],
-      "attestedMonthDays": [],
+      "dateEvidenceEdgeIds": [
+        "p2-dicastery-b3-042"
+      ],
+      "attestedMonthDays": [
+        "01-01"
+      ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
-      "researchStatus": "NO_LITURGICAL_DATE_YET",
+      "researchStatus": "HAS_DATE_EVIDENCE",
       "massEligibility": "OWNED_BY_P1_NOT_INFERRED",
       "runtimePublication": "BLOCKED_RESEARCH_ONLY"
     },

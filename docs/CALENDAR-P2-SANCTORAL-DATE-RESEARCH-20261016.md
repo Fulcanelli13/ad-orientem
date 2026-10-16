@@ -6,11 +6,11 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **115** dated individual identities, leaving **178** undated (net backlog reduction **94**).
-- Evidence ledger now **127** edges including **101** newly researched edges.
+- After new, source-visited batches: **159** dated individual identities, leaving **134** undated (net backlog reduction **138**).
+- Evidence ledger now **171** edges including **145** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
 - **10** group IDs with a dated source witness.
-- New date-profile coverage: **12** canonisation-year collections, with 39 of the 51 already-indexed source-year collections still to harvest for dates.
+- New date-profile coverage: **20** canonisation-year collections, with 31 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
 
@@ -27,9 +27,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `living-sanctoral-authorities.v1.json`: source-competence and jurisdiction classes.
 - `living-sanctoral-effective-dates.v1.json`: date-effective and Doctor-declaration crosswalk.
 - `living-sanctoral-identity-reconciliation.v1.json`: aliases, group policy, evidence contradictions.
-- `living-sanctoral-review-queue.v1.json`: undated subjects and 39 unmined (for memorial dates) already-indexed source-year collections.
+- `living-sanctoral-review-queue.v1.json`: undated subjects and 31 untouched (for memorial dates) already-indexed source-year collections.
 - `living-sanctoral-compatible-export.v1.json`: non-published compatibility projection; every candidate `eligibleForRuntime=false`.
-- `living-sanctoral-new-source-batch.v1.json`: twelve-year Dicastery source batch for reproducibility.
+- `living-sanctoral-new-source-batch.v1.json`: twenty-year Dicastery source batch for reproducibility.
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
@@ -39,3 +39,13 @@ P0: ingest only after verifying authority, applicable jurisdiction and source ef
 29 new primary-source date edges from three already-indexed official canonisation-year collections: 28 new individually dated saints and 1 collective martyrs group. Luigi Versiglia and Callisto Caravario share the same official profile and memorial date but remain distinct canonical identities. The Mexico 1927 martyrs remain a collective profile. Józef Sebastian Pelczar has a header memorial date of 28 March and an older text reference to 19 January when beatified; this discrepancy is explicitly retained for historical adjudication, not projected as two universal feasts.
 
 **Updated cumulative metrics:** 115/293 dated individual subjects, 178 undated, 10/13 dated collective groups, 127 total source edges (101 newly acquired), 12 canonisation-year collections with new date evidence, 39 remaining. No new universal-calendar or 1962 Mass permission claims. Source effective dates still unverified where no decree is known.
+
+## Source-verified bulk batch 3: eight further year collections (16 October 2026)
+
+The Dicastery's own profile headers were visited and their `Memoria Liturgica` dates transcribed for **44 existing individual identities** from canonisation-year collections **2001 (9), 2002 (5), 2004 (5), 2005 (5), 2010 (6), 2011 (3), 2012 (6), and 2019 (5)**. These additions map directly to existing AO IDs, including distinct religious/birth/language names such as `saint.mary-of-the-cross-mackillop` → the `maria-della-croce` profile, `saint.carmen-salles-y-barangueras` → `maria-del-monte-carmelo`, and `saint.rafqa-ar-rayes` → `rebecca-rafqa-ar-rayes`.
+
+**Total measured backlog:** 21→159 people with attested date, 272→134 without; 26→171 date evidence records (145 acquired in P2); 10 of 13 collective groups with dates. **20 official year collections touched**, 31 not yet touched for date discovery; a touched collection may still require minority-item follow-up or particular-calendar promulgation verification. No new universal Roman inscription or traditional 1962 Mass permission is implied by a profile date.
+
+**New historical conflict:** the Zygmunt Gorazdowski profile header states `1 gennaio`, while the same document's biography reports a **26 June 2001** memorial assignment at beatification in Lviv. The historical/local authority and effective transition require separate documentation before calendar projection; do not substitute the beatification date for the profile date.
+
+All new entries are `RESEARCH_ONLY`; `eligibleForRuntime:false` remains set. New source URLs and field claims are in the ledger, linked to stable canonical subject IDs. P0 and P1 boundaries unchanged.
