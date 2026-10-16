@@ -6,14 +6,18 @@
     "fourStarUniquePhysicalIds": 33,
     "threeStarJudgments": 14,
     "threeStarUniquePhysicalIds": 13,
-    "priorMuseumAlternativeRecords": 15
+    "priorMuseumAlternativeRecords": 15,
+    "threeStarBiblicalMuseumOptionsAdded": 6,
+    "fourStarItemsWithSourceReconNotes": 12
   },
   "rules": [
     "Preserve source user-export files and all old ratings",
     "4star means improve photograph of exact painting, not replace artwork",
     "3star means provisional current painting pending better user-approved alternative",
     "Candidate original source is not equivalent to approved photo master",
-    "Do not auto-publish to production"
+    "Do not auto-publish to production",
+    "Do not mis-bind London NG6276 high-resolution Dream of Saint Joseph to Louvre INV20450; same artist/theme but different physical paintings.",
+    "Different Commons filenames or large EXIF original dimensions are not proof of independent master photo."
   ],
   "fourStarPhotoQueue": [
     {
@@ -25,8 +29,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "REMASTERED_DERIVATIVE_DO_NOT_COUNT",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Pompeo batoni, estasi di santa teresa, 1743 circaFXD.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circaFXD.jpg",
+        "pixelDimensions": "1855×2382",
+        "relationNote": "Uploader calls it remastered colour of rated Sailko file; no independent photo. Exact-source Italy heritage reuse caveat.",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 1,
@@ -61,8 +73,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "KHM_LOW_RES_FILE_MASTER_PENDING",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+        "pixelDimensions": "1239×1573",
+        "relationNote": "EXIF references upstream bitmap 5386×6840 but original Commons file 1239×1573; don't count metadata as available pixels",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 1,
@@ -109,8 +129,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
       "physicalPaintingSource": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "DUPLICATE_SMALL_CROP_DO_NOT_COUNT",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "The Venerable Bede translates John 1902.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Venerable_Bede_translates_John_1902.jpg",
+        "pixelDimensions": "336×314",
+        "relationNote": "Crop of already scored 794×628 Penrose photo; seek new Cambridge University Library original master",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 1,
@@ -121,8 +149,20 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
       "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060517",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "QUARANTINE_WRONG_PHYSICAL_ORIGINAL_MAPPING",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Philippe de Champaigne (1602-1674) - The Dream of Saint Joseph - NG6276 - National Gallery.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "pixelDimensions": "4421×6000",
+        "relationNote": "Scored photo The Dream of Saint Joseph.jpg is National Gallery London NG6276 (1642–43). Existing W04-009 physical source Louvre INV20450 (c1629) is NOT that canvas. Preserve rating linked to submitted file but not source object; no substitution.",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      },
+      "highRiskIdentityConflict": {
+        "louvre": "https://collections.louvre.fr/ark:/53355/cl010060517",
+        "nationalGallery": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph"
+      }
     },
     {
       "batch": 1,
@@ -145,8 +185,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
       "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060771",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "UNRETOUCHED_SAME_CAPTURE_OPTION",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF.jpg",
+        "pixelDimensions": "13049×21680",
+        "relationNote": "Original C2RMF image vs rated retouched version; same underlying photographic capture, so NOT independent reproduction",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 1,
@@ -241,8 +289,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
       "physicalPaintingSource": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "EXISTING_SECOND_PHOTO_TO_REVIEW",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Saint Agnes.JPG",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Agnes.JPG",
+        "pixelDimensions": "3000×4000",
+        "relationNote": "Already in Batch2 gallery; verify whether genuinely independent capture",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 2,
@@ -325,8 +381,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
       "physicalPaintingSource": null,
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "MUSEUM_OBJECT_CORRECTED_HIGH_RES_SEARCH",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Saint Rosalie Interceding for the Plague-stricken of Palermo MET DT2728.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+        "pixelDimensions": "2755×3722",
+        "relationNote": "Exact Met object 436257 accession 71.41, avoid confounding with 436235",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 2,
@@ -337,8 +401,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
       "physicalPaintingSource": null,
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "DUPLICATED_MASTER_DO_NOT_COUNT",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Peter Paul Rubens (Flemish - The Miracles of Saint Francis of Paola - Google Art Project.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(Flemish_-_The_Miracles_of_Saint_Francis_of_Paola_-_Google_Art_Project.jpg",
+        "pixelDimensions": "3141×4391",
+        "relationNote": "Getty 3140×4390 very close pixel array, likely same underlying scan; not independent source",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 2,
@@ -349,8 +421,20 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
       "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060517",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "QUARANTINE_WRONG_PHYSICAL_ORIGINAL_MAPPING",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Philippe de Champaigne (1602-1674) - The Dream of Saint Joseph - NG6276 - National Gallery.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "pixelDimensions": "4421×6000",
+        "relationNote": "Scored photo The Dream of Saint Joseph.jpg is National Gallery London NG6276 (1642–43). Existing W04-009 physical source Louvre INV20450 (c1629) is NOT that canvas. Preserve rating linked to submitted file but not source object; no substitution.",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      },
+      "highRiskIdentityConflict": {
+        "louvre": "https://collections.louvre.fr/ark:/53355/cl010060517",
+        "nationalGallery": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph"
+      }
     },
     {
       "batch": 2,
@@ -385,8 +469,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg",
       "physicalPaintingSource": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "EXISTING_SECOND_PHOTO_BELOW_HERO_TARGET",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant'Alfonso_di_Liguori_(Rome).jpg",
+        "pixelDimensions": "781×1024",
+        "relationNote": "Already in Batch2 gallery; not adequate resolution for hero",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 2,
@@ -397,8 +489,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_DT9354.jpg",
       "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/437457",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "EXISTING_HIGHER_RES_WITH_FRAME_TO_REVIEW",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "The Baptism of Christ MET 1981.186 1.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_1981.186_1.jpg",
+        "pixelDimensions": "5307×3684",
+        "relationNote": "Same Met original 1981.186; already in gallery; additional Met 1981.186 2 and 3 available; angle/framing differs",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     },
     {
       "batch": 2,
@@ -433,8 +533,16 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg",
       "physicalPaintingSource": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-disciples-feet",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "SECOND_SOURCE_CHANNEL_NOT_CERTIFIED_INDEPENDENT",
+      "photoQualityStar": 4,
+      "candidateSource": {
+        "file": "Jacopo Tintoretto - Christ washing the Feet of the Disciples - Google Art Project.jpg",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_Tintoretto_-_Christ_washing_the_Feet_of_the_Disciples_-_Google_Art_Project.jpg",
+        "pixelDimensions": "3000×1466",
+        "relationNote": "National Gallery NG1130, compare Google scan with existing 6935×3404 Commons; may be same master",
+        "productionMasterApproved": false,
+        "independentPhotoVerified": false
+      }
     }
   ],
   "threeStarAlternativeQueue": [
@@ -456,7 +564,8 @@
           "source": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 1,
@@ -483,7 +592,8 @@
           "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 1,
@@ -510,7 +620,8 @@
           "source": "https://www.fr.ch/dfac/sbc/recensement-des-biens-culturels-meubles/recensement-des-meubles",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 1,
@@ -530,7 +641,8 @@
           "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 1,
@@ -578,7 +690,8 @@
           "source": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 1,
@@ -605,7 +718,8 @@
           "source": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 2,
@@ -632,7 +746,8 @@
           "source": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
           "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
         }
-      ]
+      ],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL"
     },
     {
       "batch": 2,
@@ -644,7 +759,19 @@
         "The Flight into Egypt MET DT7231.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Carlo Maratti",
+          "title": "The Flight into Egypt",
+          "museumSource": "https://www.metmuseum.org/art/collection/search/816629",
+          "inventory": "2020.263.8",
+          "notes": "Met public-domain original, distinct from Cosmé Tura",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     },
     {
       "batch": 2,
@@ -656,7 +783,19 @@
         "The Baptism of Christ MET 1981.186 1.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Sébastien Bourdon",
+          "title": "The Baptism of Christ",
+          "museumSource": "https://www.metmuseum.org/art/collection/search/435755",
+          "inventory": "met-435755",
+          "notes": "Met work, distinct physical original",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     },
     {
       "batch": 2,
@@ -668,7 +807,19 @@
         "Juan de Flandes - The Marriage Feast at Cana - WGA12055.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Paolo Veronese",
+          "title": "The Wedding Feast at Cana",
+          "museumSource": "https://www.louvre.fr/en/explore/visitor-trails/the-louvre-s-masterpieces/a-superstar-and-a-wedding-crowd",
+          "inventory": "louvre-veronese-cana",
+          "notes": "Louvre original monumental oil; architecture/crowd scene",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     },
     {
       "batch": 2,
@@ -680,7 +831,19 @@
         "Netherlandish 16th Century, The Healing of the Paralytic, c. 1560-1590, NGA 12205.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Christ Healing the Paralytic at the Pool of Bethesda",
+          "museumSource": "https://www.nationalgallery.org.uk/paintings/bartolome-esteban-murillo-christ-healing-the-paralytic-at-the-pool-of-bethesda",
+          "inventory": "NG5931",
+          "notes": "National Gallery 1667–70, exact John 5 Bethesda; VERIFY CURRENT NGA artwork is same Bible episode",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     },
     {
       "batch": 2,
@@ -692,7 +855,19 @@
         "The Good Samaritan MET DP278746.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Alexandre-Gabriel Decamps",
+          "title": "The Good Samaritan",
+          "museumSource": "https://www.metmuseum.org/art/collection/search/436115",
+          "inventory": "29.160.36",
+          "notes": "Met 1853 oil public domain; different original from Fetti",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     },
     {
       "batch": 2,
@@ -705,7 +880,19 @@
         "Rembrandt Harmensz. van Rijn - The Return of the Prodigal Son.jpg"
       ],
       "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
-      "oldMatrixAlternatives": []
+      "oldMatrixAlternatives": [],
+      "researchStatus": "SOURCE_IDENTIFIED_PENDING_HUMAN_AESTHETIC_APPROVAL",
+      "bibleSceneNewMuseumCandidates": [
+        {
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "museumSource": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "inventory": "1948.12.1",
+          "notes": "NGA CC0 original 1667–70, distinct from Rembrandt",
+          "photoRelease": false,
+          "paintingRating": "UNRATED"
+        }
+      ]
     }
   ]
 }
