@@ -1,0 +1,46 @@
+name: Canonical Pages and PWA version diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/settings/presentation.js"
+      - "tests/settings-release-evidence.mjs"
+      - "tests/calendar-pages-live-parity.mjs"
+      - ".github/workflows/canonical-pages-release-evidence.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate source syntax
+        run: |
+          node --check src/settings/presentation.js
+          node --check tests/settings-release-evidence.mjs
+          node --check tests/calendar-pages-live-parity.mjs
+      - name: Settings version display contract
+        run: node tests/settings-release-evidence.mjs
+      - name: Check exact canonical Pages bytes (non-gating live diagnostic)
+        continue-on-error: true
+        run: node tests/calendar-pages-live-parity.mjs
+      - name: Report actual result, not only job status
+        if: always()
+        run: |
+          if [ -f test-output/calendar-pages-release/report.json ]; then
+            node -e 'const x=require("./test-output/calendar-pages-release/report.json"); console.log("CANONICAL CALENDAR PUBLIC PARITY =",x.exact);console.log("NOTES =",x.errors.join(" | ")||"none")'
+          else
+            echo "NO PUBLIC PARITY REPORT: not verified"
+          fi
+      - name: Save release evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-calendar-pages-release
+          path: test-output/calendar-pages-release/report.json
+          if-no-files-found: warn
