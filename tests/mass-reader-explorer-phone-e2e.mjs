@@ -45,9 +45,14 @@ try{
     const prepared={session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}},
       readerPreferences:{mode:preview.getPresentationMode(),language:isFrench?"fr":"en"}};
     window.__AO_MX_BRIDGE=installReaderMassExplorerStudy(preview,prepared,{win:window});
-    const card=preview.model.cards.find(card=>card.guideSequence===10&&
-      (card.blocks??[]).some(block=>block.blockId==="AO.SM.B031"));
-    if(!card)throw new Error("No reader card with published Suscipe source");
+    // LIVE, 48 rollback, Missal and Simple have different presentation
+    // splits: choose the canonical published Guide owner, never B031 by a
+    // hardcoded display-card number.
+    const card=preview.model.cards.find(card=>
+      card.sourceSectionId==="AO.CARD.010"||
+      card.sectionId==="AO.CARD.010"||
+      Number(card.guideSequence??card.sourceSequence)===10);
+    if(!card)throw new Error("No reader card with certified Offertory Guide owner");
     preview.showSection(card.sectionId);
     const panel=preview.root.querySelector('[data-role="mass-preferences"]');
     if(!panel)throw new Error("Reader preferences unavailable");
