@@ -6,11 +6,11 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **223** dated individual identities, leaving **70** undated (net backlog reduction **202**).
-- Evidence ledger now **239** edges including **213** newly researched edges.
+- After new, source-visited batches: **255** dated individual identities, leaving **38** undated (net backlog reduction **234**).
+- Evidence ledger now **273** edges including **247** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
 - **11** group IDs with a dated source witness.
-- New date-profile coverage: **32** canonisation-year collections, with 19 of the 51 already-indexed source-year collections still to harvest for dates.
+- New date-profile coverage: **51** canonisation-year collections inspected, with 0 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
 
@@ -27,9 +27,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `living-sanctoral-authorities.v1.json`: source-competence and jurisdiction classes.
 - `living-sanctoral-effective-dates.v1.json`: date-effective and Doctor-declaration crosswalk.
 - `living-sanctoral-identity-reconciliation.v1.json`: aliases, group policy, evidence contradictions.
-- `living-sanctoral-review-queue.v1.json`: undated subjects and 19 untouched (for memorial dates) already-indexed source-year collections.
+- `living-sanctoral-review-queue.v1.json`: undated subjects and 0 untouched (for memorial dates) already-indexed source-year collections.
 - `living-sanctoral-compatible-export.v1.json`: non-published compatibility projection; every candidate `eligibleForRuntime=false`.
-- `living-sanctoral-new-source-batch.v1.json`: thirty-two-year Dicastery source batch for reproducibility.
+- `living-sanctoral-new-source-batch.v1.json`: fifty-one-year Dicastery source batch for reproducibility.
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
@@ -65,3 +65,11 @@ This batch joins **39 newly date-attested canonical individuals** through **40 i
 **Conflicts withheld:** The Dicastery 1987 Japan martyrs page has `Memoria Liturgica: 6 febbraio`, while the existing USCCB source has **28 September** for Lorenzo Ruiz and companions. Date 6 February is NOT imported; 28 September is recorded as scoped USCCB evidence for the already named members and group. The Dicastery Forty Martyrs of England and Wales page explicitly says `Senza data (Celebrazioni singole)`; no group date is fabricated from the canonisation date.
 
 **Cumulative:** 223/293 named individuals with source-attested date associations, 70 undated, 239 separate source-to-date edges (213 new in P2), 11/13 dated collective groups, 32/51 canonisation-year collections harvested, 19 still untouched. Source publication dates and particular-calendar authority remain unresolved where not established in the record. No eligibility for a 1962 Mass is inferred.
+
+## Batch 6 — Completed 51-year profile-field sweep
+
+Further primary-source acquisition supplies **33 individual date edges for 32 newly dated individuals** from 18 distinct year collections and a corroborating group source for the 1964 Uganda martyrs. The St Leopold Mandić profile gives `12 maggio, 30 luglio`; retain both source date claims with unknown universal/institute jurisdiction. The St Pierre-Julien Eymard profile says `2 agosto (memoria facoltativa)`, but such wording alone does not grant a historical universal-1962 or modern General Roman promulgation.
+
+**51/51 already-indexed canonisation-year collections have now been inspected for dates.** Fifty contain newly harvested individual or group date evidence. The 2021 equipollent canonisation profile of Margherita di Città di Castello has no `Memoria Liturgica` field and is explicitly indexed as source-inspected/no field; she remains undated pending a Dominican/diocesan calendar witness. The 1997 Dicastery queen Jadwiga page has a biography apparently conflated with the different Hedwig of Silesia and lists `16 ottobre`; that date is **excluded** from Queen Jadwiga pending stronger identity-qualified liturgical authority. Saint John of Dukla's unambiguous date is added from the same source-year collection.
+
+**Cumulative:** 255/293 named individuals with one or more source-attested dates, 38 remaining undated, 273 source edges (247 new), 11/13 dated group profiles, 51/51 indexed source year collections visited (50 providing new usable date evidence). Next priority: the 38-subject residue—especially historical Doctor records, incompletely sourced particular calendars, group lead identities, and the deliberate Queen Jadwiga/Kinga/Margherita holds—not a repeat of calendar-year acquisition.
