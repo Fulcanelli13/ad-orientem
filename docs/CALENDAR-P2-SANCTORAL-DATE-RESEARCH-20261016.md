@@ -6,10 +6,10 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **255** dated individual identities, leaving **38** undated (net backlog reduction **234**).
-- Evidence ledger now **273** edges including **247** newly researched edges.
+- After new, source-visited batches: **293** dated individual identities, leaving **0** with no date evidence (net backlog reduction **272**).
+- Evidence ledger now **314** edges including **288** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
-- **11** group IDs with a dated source witness.
+- **13** group IDs with a dated source witness.
 - New date-profile coverage: **51** canonisation-year collections inspected, with 0 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
@@ -73,3 +73,15 @@ Further primary-source acquisition supplies **33 individual date edges for 32 ne
 **51/51 already-indexed canonisation-year collections have now been inspected for dates.** Fifty contain newly harvested individual or group date evidence. The 2021 equipollent canonisation profile of Margherita di Città di Castello has no `Memoria Liturgica` field and is explicitly indexed as source-inspected/no field; she remains undated pending a Dominican/diocesan calendar witness. The 1997 Dicastery queen Jadwiga page has a biography apparently conflated with the different Hedwig of Silesia and lists `16 ottobre`; that date is **excluded** from Queen Jadwiga pending stronger identity-qualified liturgical authority. Saint John of Dukla's unambiguous date is added from the same source-year collection.
 
 **Cumulative:** 255/293 named individuals with one or more source-attested dates, 38 remaining undated, 273 source edges (247 new), 11/13 dated group profiles, 51/51 indexed source year collections visited (50 providing new usable date evidence). Next priority: the 38-subject residue—especially historical Doctor records, incompletely sourced particular calendars, group lead identities, and the deliberate Queen Jadwiga/Kinga/Margherita holds—not a repeat of calendar-year acquisition.
+
+## Residual identity and date reconciliation — 16 October 2026
+
+The **31** formerly undated historical Doctors have exact corresponding 1962 feast dates and canonical source IDs *already recorded* in `data/calendar/doctors-of-church-roster.review.v1.json`. These are **archival 1962 resolver date witnesses, not independent original Missal juridical certifications**. Doctor declarations after 1962 remain separate effective-dated attributes, never retrojected into historical Mass labels.
+
+Four directly rechecked Dicastery saint profiles provide liturgical memorial associations: **Agostino Zhao Rong 9 July** (and a corroborating China martyrs group evidence edge); **Cristóbal Magallanes 25 May**, **Juan Diego 9 December**, **Pedro de San José Betancur 25 April**. All four reuse existing IDs.
+
+The three previously held identities now have specific but **local-only** date witnesses: Queen Jadwiga **8 June** (her Kraków patronal parish), Kinga **24 July** (a Wrocław Franciscan parish's 2026 liturgical notices), Margaret of Castello **13 April** (Dominican Order report of St Patrick's Columbus feast practice). The conflicting Dicastery profile entries are not treated as valid for Kinga/Jadwiga; Margaret's missing Dicastery field still remains a source gap. None establishes global General Roman Calendar inscription or 1962 Mass permission.
+
+Martyrs of Turón **9 October**: Lasallian Generalate explicitly attests liturgical feast with reference to approved liturgical text. Forty Martyrs of England and Wales **25 October**: historical Wrexham diocesan feast reference only; distinguish modern national calendars in England and Wales and the Dicastery's `Senza data` record. Both are group records, not inflated into new individual saints.
+
+**Total: 293/293 named canonical subjects and 13/13 collective martyr groups have at least one dated witness; 314 separate source-to-date edges (288 added in P2), 51/51 previously indexed official canonisation year collections inspected. These numbers report source date-association presence ONLY**. Jurisdiction, legal effectiveness, modern universal standing and independent 1962 source certification are not complete; all new compatibility rows have `eligibleForRuntime:false`. No runtime, Mass or Calendar source selected automatically.

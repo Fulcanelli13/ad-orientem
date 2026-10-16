@@ -32,6 +32,19 @@ assert.ok(master.persons.every(p=>p.runtimePublication==="BLOCKED_RESEARCH_ONLY"
 assert.ok(compat.observances.every(x=>x.eligibleForRuntime===false&&x.mass1962Effect==="NONE"&&x.historyGate.includes("CANONIZATION")));
 assert.equal(authority.noRuntimeImport,true);assert.equal(aliases.noParallelSaintsCreated,true);
 assert.equal(batch.sourceYearCollections.length,51);assert.equal(queue.yearCollectionsToMine.length,0);
+assert.equal(master.counts.datedIndividuals,293);
+assert.equal(master.counts.remainingUndatedIndividuals,0);
+assert.equal(master.counts.datedCollectiveGroups,13);
+assert.equal(master.counts.totalDateEdges,314);
+assert.equal(master.counts.traditional1962DoctorIdentityCrosswalkAdded,31);
+assert.equal(queue.historical1962InternalEvidenceOnly.length,31);
+assert.equal(queue.unknownPersonSubjects.length,0);
+assert.equal(queue.residualScopeAdjudication.length,4);
+assert.ok(ledger.dateEdges.filter(x=>x.authorityScope==="TRADITIONAL_1962_PRODUCTION_RESOLVER_IDENTITY_AUDIT").every(x=>x.effective.historicalCalendarBaseline==="1962"&&x.source.liturgicalCertificationStatus==="NOT_INDEPENDENTLY_CERTIFIED"));
+for(const id of ["saint.jadwiga-queen-poland","saint.kinga-poland","saint.margherita-citta-di-castello"])assert.ok(ledger.dateEdges.some(x=>x.subjectId===id&&x.universalRomanStatus==="NOT_ESTABLISHED_BY_THIS_SOURCE"));
+assert.ok(ledger.dateEdges.some(x=>x.subjectId==="canon-group.martyrs-turon-lasallian-1934"&&x.monthDay==="10-09"));
+assert.ok(ledger.dateEdges.some(x=>x.subjectId==="canon-group.forty-martyrs-england-wales"&&x.monthDay==="10-25"&&x.jurisdiction==="HISTORICAL_ENGLAND_WALES_WREXHAM_REFERENCE"));
+
 assert.ok(aliases.ambiguities.some(x=>x.subjectIds.includes("saint.louis-martin")));
 assert.ok(aliases.ambiguities.some(x=>x.subjectIds.includes("saint.francisco-marto")));
 assert.ok(edges.some(x=>x.subjectId==="canon-group.martyrs-mexico-1927"&&x.monthDay==="05-25"));
