@@ -28,6 +28,22 @@ The frozen v43.33 historical library has 311 physical artwork/component slots ac
 
 The 282 candidate mentions break down by a **lexical queue**, not by confirmed types: 187 person-title hints, 41 collective/group-title hints, 20 liturgical-event hints, 17 Marian-context hints, 10 other/unclassified hints, four angelic, two Christological and one person-associated event. The 42 missing raw source IDs include headings of different kinds: **do not call them 42 missing saints**, and do not create biography placeholders or map markers from those strings.
 
+### Forty-two source exceptions triaged together
+
+The 42 absent raw historical-art source IDs have now undergone a **source-title type triage in one batch**, without inventing saint identities. Provisional classes:
+
+| Exception source type | Source IDs |
+| --- | ---: |
+| Individual/person-like title requiring exact owner match | **12** |
+| Liturgical day, vigil, dedication or event | **16** |
+| Marian feast/context | **11** |
+| Christological event | **1** |
+| Angelic feast | **1** |
+| Collective group (*All Saints*) | **1** |
+| **Total** | **42** |
+
+The four previously unclassified heading formats (*St Barbara*, *St Peter*, *Camillus de Lellis*, *Exaltation of the Holy Cross*) were triaged by their **exact raw Calendar source IDs**; the first three are *person-like heading candidates*, and the last is a liturgical event. **This is not a person-ID or biography certification.** It narrows the manual owner review to 12 person-like source headings while the 30 other source entries require observance/art-coverage treatment, not invented lives.
+
 ## One bulk cross-owner source-key ledger
 
 Committed: `data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json`.
