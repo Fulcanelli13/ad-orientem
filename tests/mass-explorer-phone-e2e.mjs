@@ -58,10 +58,41 @@ try{
   assert.ok((await prayer.locator(".aoMXLatin").count())>=1,width+" lost original Latin");
   assert.ok((await prayer.locator(".aoMXTranslation").count())>=1,width+" lost published English");
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-en.png")});
+  // Suscipe's approved biblical comparison is in the existing Formation MF03
+  // lesson, NOT an unverified direct prayer-to-verse attribution.
+  if(width===390||width===768){
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-study="MF03"]').click();
+    await page.waitForFunction(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId==="MF03",null,{timeout:15000});
+    const indirect=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
+    await indirect.waitFor({state:"visible",timeout:10000});
+    await indirect.click();
+    const scripture=page.locator("#ao-scripture-overlay");
+    await scripture.waitFor({state:"visible",timeout:12000});
+    assert.match(await scripture.locator(".aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    await scripture.locator('[data-scripture-context-depth="chapter"]').click();
+    assert.ok(await scripture.locator(".aoScriptureVerse").count()>10,"MF03 biblical chapter unavailable");
+    await scripture.locator("[data-scripture-close]").click();
+    assert.equal(await indirect.evaluate(el=>el===document.activeElement),true,"Scripture must restore exact MF03 passage focus");
+    await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
+    await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.blockId==="AO.SM.B031"&&
+      globalThis.AO_MASS_EXPLORER_V1?.status?.()?.momentKey==="AO.CARD.010",null,{timeout:12000});
+    assert.match(await page.locator("#ao-mass-explorer-root .aoMXText").innerText(),/Suscipe, sancte Pater/);
+  }
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.locator('#ao-mass-explorer-root [data-ao-mx-moment="AO.CARD.013"]').click();
   assert.ok(await page.locator("#ao-mass-explorer-root [data-ao-scripture-context]").count()>0,
     width+" lost approved Scripture context links");
+  if(width===390){
+    const origin=page.locator('#ao-mass-explorer-root [data-ao-mass-formation-anchor="MFS02"]');
+    await origin.click();
+    const bible=page.locator("#ao-scripture-overlay");
+    await bible.waitFor({state:"visible",timeout:12000});
+    assert.match(await bible.locator(".aoScriptureContextTitle").innerText(),/Isaiah 6:3/);
+    await bible.locator("[data-scripture-close]").click();
+    assert.equal(await origin.evaluate(el=>el===document.activeElement),true,"Scripture source-owner must restore exact Explorer focus");
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.013"]').count(),1,
+      "Scripture return lost original Mass moment");
+  }
   await page.locator('#ao-mass-explorer-root [data-ao-mx-back]').click();
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-moment]").count(),32);
   // Test the already supported French UI fallback without synthesising any
