@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
@@ -550,6 +550,46 @@ try{
   }
   console.log("PASS Native source-first Mass text print on phone: 30 sections, 96 blocks, Canon B061, EN/FR, LIVE48 preserved");
 
+  // Missal-only visual QA: independently capture actual 320/390px source
+  // prayer pages and ribbon without perturbing the LIVE phone assertions.
+  // Captures are presentation evidence, not a claim of editorial approval.
+  await mkdir(resolve(repoRoot,"artifacts/missal-phone-review"),{recursive:true});
+  for(const width of [320,390]){
+    const visualContext=await browser.newContext({
+      viewport:{width,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,
+    });
+    const visualPage=await visualContext.newPage();
+    await visualPage.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html",
+      {waitUntil:"networkidle"});
+    await visualPage.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+      null,{timeout:20000});
+    await visualPage.locator("[data-reader-preferences]").click();
+    await visualPage.locator('[data-reader-mode="MISSAL"]').click();
+    await visualPage.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getPresentationMode()==="MISSAL");
+    await visualPage.locator('[data-reader-preferences-close]').click();
+    const pages=[
+      ["offertory-bread","AO.MISSAL.010.2","AO.SM.B031"],
+      ["canon-opening","AO.MISSAL.014.1","AO.SM.B047"],
+      ["canon-memento-dead","AO.MISSAL.017.4","AO.SM.B057"],
+      ["consecration-host","AO.CARD.015","AO.SM.B052"],
+    ];
+    for(const [name,sectionId,blockId] of pages){
+      await visualPage.evaluate(id=>window.__AO_PHONE_PREVIEW.showSection(id),sectionId);
+      await visualPage.waitForFunction(id=>
+        window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===id,sectionId,{timeout:5000});
+      const heading=visualPage.locator('.ao-missal-prayer-heading[data-source-block-id="'+blockId+'"]');
+      assert.equal(await heading.count(),1,
+        "Missal visual target lacks exact source block "+blockId);
+      const horizontalOverflow=await visualPage.evaluate(()=>
+        document.documentElement.scrollWidth>window.innerWidth+1);
+      assert.equal(horizontalOverflow,false,
+        "Missal "+name+" has horizontal page overflow at "+width+"px");
+      await visualPage.screenshot({
+        path:resolve(repoRoot,"artifacts/missal-phone-review",width+"-"+name+".png"),
+      });
+    }
+    await visualContext.close();
+  }
   console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, source-first Mass, plus native Asperges/Palm/Ash prelude handoffs.");
 }finally{
   await browser?.close();
