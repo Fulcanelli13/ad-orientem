@@ -7,6 +7,34 @@ import "./calendar-scripture-handoff.mjs";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
+// Calendar Day editorial hierarchy is presentation only. Commemorations are
+// actual observed source names, not supplementary modern saint projections.
+// The precise Scripture context continues to come from the published Proper.
+const dayStart=runtime.indexOf("function daySurface(selected,r){");
+const dayEnd=runtime.indexOf("function requestYearDailyColours(year){",dayStart);
+assert.ok(dayStart>=0&&dayEnd>dayStart,"Source-owned Calendar Day renderer missing");
+const dayUi=runtime.slice(dayStart,dayEnd);
+const dayPositions=[
+  'class="aoCalIdentityMeta"',
+  'cm.length?',
+  'calendarScriptureControls(selected,r)',
+  'data-cal-mass',
+  'class="aoCalV2Documentation"',
+  'daySourceDetails(r)',
+  'data-cal-print-proper',
+  'supplementaryDayMarkup(selected,r)'
+].map(k=>dayUi.indexOf(k));
+assert.ok(dayPositions.every(p=>p>=0),"Calendar Day missing one hierarchy layer: "+JSON.stringify(dayPositions));
+assert.ok(dayPositions.every((p,i)=>i===0||p>dayPositions[i-1]),
+  "Calendar Day must present 1962 identity → observed commemorations → readings → Mass → secondary sources/printing → additional saints");
+assert.equal((dayUi.match(/class="aoCalV2Commemorations"/g)||[]).length,1,
+  "Observed 1962 commemorations must have exactly one surface");
+assert.match(dayUi,/cm\.map\(x=>/,"Principal commemoration must use existing source-verified names");
+assert.match(dayUi,/esc\(x\)/,"Commemoration labels must be escaped");
+assert.match(dayUi,/aoCalV2PrintOptions/,"Printing should be secondary and collapsible");
+assert.match(runtime,/Appointed readings/);
+assert.match(runtime,/Lectures de la messe/);
+assert.match(runtime,/calendarScriptureContexts\(r\)/,"Never invent an Epistle or Gospel to fill missing sources");
 
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
 
