@@ -53,6 +53,10 @@ export function installScriptureBrowserOwner(win=globalThis){
      return /^MF0[1-8]$/.test(record.target.stageId);
    if(record.target.type==="novena")
      return /^[a-z0-9_]+$/.test(record.target.novenaId);
+   if(record.target.type==="rosary")
+     return /^(joy|lum|sor|glo)[1-5]$/.test(record.target.mysteryId)&&
+       (record.target.bead===undefined||
+        (Number.isInteger(record.target.bead)&&record.target.bead>=1&&record.target.bead<=10));
    return false;
  }
  async function openRelatedObject(record){
@@ -146,6 +150,14 @@ export function installScriptureBrowserOwner(win=globalThis){
        if(nav?.ok===true){
          const result=await win?.AO_MODULES?.open?.("pray.novenas",{
            novenaId:record.target.novenaId,returnContext:null,onCloseReturn:restore
+         });
+         accepted=result?.ok===true;
+       }
+     }else if(record.target.type==="rosary"){
+       const nav=await shell.navigate("pray");
+       if(nav?.ok===true){
+         const result=await win?.AO_MODULES?.open?.("pray.rosary",{
+           sourceObject:record.target,returnContext:null,onCloseReturn:restore
          });
          accepted=result?.ok===true;
        }
