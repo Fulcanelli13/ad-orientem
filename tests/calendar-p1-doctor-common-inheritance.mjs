@@ -7,7 +7,7 @@ const make=(language,kind)=>{
    const v=language==="la"?"Latín source verified phrase, Deus qui populo tuo vitam dedit "+section:
     language==="en"?"In English this is the verified common Doctor text "+section:
     "En français, le texte commun du docteur est authentifié "+section;
-   if(kind==="shared"||language==="la")map.set(section,[v]);
+   if(kind==="bishop"||language==="la")map.set(section,[v]);
  }
  for(const section of OWNER.distinctiveSections){
    const v="DISTINCTIVE "+kind+" "+language+" "+section+" de nostro Confessore Doctore";
