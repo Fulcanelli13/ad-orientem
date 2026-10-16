@@ -21,7 +21,7 @@
     "src/pray/lazy-module-registry.js"
   ],
   "counts": {
-    "prayer_landing_routes": 23,
+    "prayer_landing_routes": 24,
     "formation_landing_routes": 15,
     "apostolate_scenarios": 36,
     "apostolate_skills": 9,
@@ -370,6 +370,22 @@
       "secondary_contexts": [],
       "guide": {
         "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.tenebrae",
+      "title_en": "Office of Tenebrae",
+      "title_fr": "Office des Ténèbres",
+      "current_family": "passion",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
         "walkthrough": "CODE_PRESENT",
         "requirement": "BOTH"
       }
@@ -2355,7 +2371,7 @@
     ],
     "mass_scope": "DEFERRED",
     "required_qa": [
-      "23/23 Pray primary entrances",
+      "24/24 Pray primary entrances",
       "15/15 Formation cold entries and back",
       "36/36 Apostolate scenario access",
       "all declared Apostolate handoffs",
