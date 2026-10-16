@@ -66,7 +66,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Context button{text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:62px;border:0;color:inherit;background:transparent;padding:3px 8px}
 .aoTodayV2Context button+button{border-left:1px solid var(--border,rgba(230,230,230,.11));padding-left:17px}
 .aoTodayV2Context small,.aoTodayV2SectionHead small{display:block;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted,#aab0b4)}
-.aoTodayV2Context strong{font:400 17px/1.17 var(--ao-font-display,Georgia,serif);overflow-wrap:anywhere}
+.aoTodayV2Context strong{font:400 17px/1.17 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
 .aoTodayV2Context span{font:500 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
 .aoTodayV2Honoured{padding:18px 19px 8px;border-bottom:1px solid var(--border,rgba(235,235,235,.12));background:var(--surface-1,#101720)}
 .aoTodayV2HonouredHeading{margin:0 0 7px}
@@ -103,5 +103,5 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Event>span:last-child{font-size:20px;color:var(--liturgical,#c6b692)}
 .aoTodayV2 button:focus-visible{outline:2px solid var(--liturgical,#c6b692);outline-offset:3px}
 @media(min-width:700px){.aoTodayV2Mass{padding:12px 30px 20px!important}.aoTodayV2Below{max-width:750px;margin:auto}}
-@media(max-width:370px){.aoTodayV2Below{padding-inline:13px}.aoTodayV2Context{padding-inline:12px}.aoTodayV2PrayerFeature{grid-template-columns:31px minmax(0,1fr) auto;gap:8px;padding-inline:8px}.aoTodayV2PrayerGlyph{width:31px;height:31px}.aoTodayV2PrayerFeature strong{font-size:17px}}
+@media(max-width:370px){.aoTodayV2Below{padding-inline:13px}.aoTodayV2Context{padding-inline:12px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:6px}.aoTodayV2Context button{padding-inline:3px}.aoTodayV2Context button+button{padding-left:10px}.aoTodayV2Context strong{font-size:15px;overflow-wrap:normal;word-break:normal}.aoTodayV2PrayerFeature{grid-template-columns:31px minmax(0,1fr) auto;gap:8px;padding-inline:8px}.aoTodayV2PrayerGlyph{width:31px;height:31px}.aoTodayV2PrayerFeature strong{font-size:17px}}
 `;

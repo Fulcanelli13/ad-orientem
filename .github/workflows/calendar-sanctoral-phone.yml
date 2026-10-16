@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths:
       - "src/calendar/calendar-runtime.js"
+      - "src/calendar/observed-commemoration-labels.js"
+      - "src/home/today-v2-sections.js"
+      - "tests/calendar-p0-home-commemoration-phone.mjs"
       - "src/calendar/sanctoral-day-ui.js"
       - "src/calendar/reviewed-sanctoral-cards.js"
       - "data/calendar/living-sanctoral-read-model.v1.json"
@@ -31,10 +34,14 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Real mobile Day interface, 320 / 390 / 430px
         run: node tests/calendar-sanctoral-phone-acceptance.mjs
+      - name: Historic 1962 commemoration parity Home and Calendar
+        run: node tests/calendar-p0-home-commemoration-phone.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: calendar-sanctoral-phone-evidence
-          path: artifacts/calendar-sanctoral-phone/
+          path: |
+            artifacts/calendar-sanctoral-phone/
+            artifacts/p0-calendar-home/
           retention-days: 30
           if-no-files-found: warn

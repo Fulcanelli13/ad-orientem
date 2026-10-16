@@ -1,34 +1,13 @@
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations } from "../calendar/liturgical-year.js";
 import { observedCycle } from "../calendar/observed-cycle.js";
 import { canonical1962Commemorations } from "../calendar/traditional-day-adjudication.js";
+import { observedCommemorationLabels } from "../calendar/observed-commemoration-labels.js";
 import { buildReviewedSanctoralCards } from "../calendar/reviewed-sanctoral-cards.js";
 import { getSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const L = (language,en,fr) => language === "fr" ? fr : en;
-// Read only the resolved 1962 day's actual commemorations; never promote
-// displaced source candidates or opaque date codes to historical observances.
-function home1962Commemorations(resolution,language){
-  for(const value of [resolution?.day?.commemorations,resolution?.day?.main?.commemorations,resolution?.commemorations]){
-    const items=Array.isArray(value)?value:value==null?[]:[value];
-    const out=[],seen=new Set();
-    for(const item of items){
-      const raw=typeof item==="string"?item:
-        language==="fr"?
-          item?.titleFr||item?.nameFr||item?.title?.fr||item?.title?.en||item?.title||item?.name:
-          item?.title?.en||item?.titleEn||item?.title||item?.nameEn||item?.name;
-      const name=typeof raw==="string"?raw.trim():"";
-      if(!name||/^(?:\d{1,2}[-_/]\d{1,4}|(?:sancti|tempora):)/i.test(name))continue;
-      const key=typeof item==="object"&&item?.id?item.id.replace(/:[1-4]:[a-z]{1,3}$/i,""):name.toLowerCase();
-      if(seen.has(key))continue;
-      seen.add(key);
-      out.push(Object.freeze({id:key,name,authority:"1962_MASS_COMMEMORATION"}));
-    }
-    if(out.length)return Object.freeze(out);
-  }
-  return Object.freeze([]);
-}
 function homeReviewedHonours(observed,selected,language,readModel){
   if(!observed?.day?.main?.id||!readModel)return Object.freeze([]);
   try{
@@ -66,7 +45,7 @@ export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanct
   }
   const feature=enrichers?.visible?enrichers.comingUp?.rows?.[0]??null:null;
   const daily=enrichers?.visible?enrichers.dailyCatechism??null:null;
-  const historicalCommemorations=observed?home1962Commemorations(observed,language):Object.freeze([]);
+  const historicalCommemorations=observed?observedCommemorationLabels(observed,{language}):Object.freeze([]);
   const modernHonours=homeReviewedHonours(observed,selected,language,readModel);
   return Object.freeze({selected,language,period,upcoming:unique,feature,daily,
     saintOrFeast,hasObservedDay:!!observed,historicalCommemorations,modernHonours,
