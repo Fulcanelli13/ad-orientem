@@ -57,7 +57,7 @@ for(const [key,links] of Object.entries(MASS_MOMENTS_CURATED_LINKS)){
  assert.ok(!links.stageId||titles[links.stageId],key);
 }
 const js=readFileSync(new URL("../src/learn/mass-formation.js",import.meta.url),"utf8");
-for(const token of ["loadGuideRegistry({fetchImpl})","data-ao-mf-open-moments","data-ao-mf-related-stage",
+for(const token of ["loadGuideRegistry({fetchImpl})","data-ao-mf-open-moments","aoMfRelatedStage",
   "data-ao-mf-moment-prev","data-ao-mf-moment-next","massMomentsStudyListHtml","massMomentStudyDetailHtml"]){
  assert.ok(js.includes(token),"Mass Formation lost navigation wiring: "+token);
 }
