@@ -95,7 +95,12 @@
       ],
       "secondaryComparisonStatus": "ALL_THREE_ORATIONS_WITH_INCIPITS_FOUND_IN_BOTH_ONLINE_WITNESSES",
       "facsimileTextLayoutStatus": "ALL_THREE_PRAYERS_VISUALLY_LOCATED_IN_PRINTED_MISSAL_IMAGE_SAME_DAY",
-      "printedSourceAppearanceStatus": "1962_MISSALE_FACSIMILE_CLAIM_HOST_PROVENANCE_NOT_INDEPENDENTLY_VERIFIED"
+      "printedSourceAppearanceStatus": "1962_MISSALE_FACSIMILE_CLAIM_HOST_PROVENANCE_NOT_INDEPENDENTLY_VERIFIED",
+      "internalMissalAnchors": {
+        "collect": "p1:missal:leonardi:collect",
+        "secret": "p1:missal:leonardi:secret",
+        "postcommunion": "p1:missal:leonardi:postcommunion"
+      }
     },
     {
       "id": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
@@ -179,7 +184,12 @@
       ],
       "secondaryComparisonStatus": "ALL_THREE_ORATIONS_WITH_INCIPITS_FOUND_IN_BOTH_ONLINE_WITNESSES",
       "facsimileTextLayoutStatus": "ALL_THREE_PRAYERS_VISUALLY_LOCATED_IN_PRINTED_MISSAL_IMAGE_SAME_DAY",
-      "printedSourceAppearanceStatus": "1962_MISSALE_FACSIMILE_CLAIM_HOST_PROVENANCE_NOT_INDEPENDENTLY_VERIFIED"
+      "printedSourceAppearanceStatus": "1962_MISSALE_FACSIMILE_CLAIM_HOST_PROVENANCE_NOT_INDEPENDENTLY_VERIFIED",
+      "internalMissalAnchors": {
+        "collect": "p1:missal:dionysius-rusticus-eleutherius:collect",
+        "secret": "p1:missal:dionysius-rusticus-eleutherius:secret",
+        "postcommunion": "p1:missal:dionysius-rusticus-eleutherius:postcommunion"
+      }
     }
   ],
   "combinations": [
@@ -258,5 +268,8 @@
   "sourceDisagreementEscalation": "SSPX Oct 9 selected celebration view reproduces Sapientiam sanctorum, also seen under the separate printed Dionysius/Rusticus/Eleutherius Commemoratio at printed p.698; the URL's celebration parameter may choose secondary commemoration, so do not call it a source error without investigating which observance was selected. It is NOT a reliable witness of main Leonardi Proper.",
   "facsimileAuditPath": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
   "printedFaceVisualTrioCount": 2,
-  "originalEditionIndependentProvenanceCount": 0
+  "originalEditionIndependentProvenanceCount": 0,
+  "userFacingPrayerNavigation": "AD_ORIENTEM_INTERNAL_MISSAL_ONLY",
+  "sourcePhotoLinksPurpose": "RESEARCH_PROVENANCE_NOT_APP_DESTINATION",
+  "navigationContract": "data/calendar/p1-internal-missal-navigation.v1.json"
 }
