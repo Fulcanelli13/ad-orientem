@@ -73,6 +73,36 @@ try{
   }
   return reports;
  },["2026-10-09","2027-10-09","2026-10-15","2026-10-03","2026-09-23"]);
+
+ const commons=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const paths=["Commune/C4","Commune/C4a","Commune/C5","Commune/C5b"];
+   const languages=["la","en","fr"];
+   const slots=["Introitus","Oratio","Lectio","Evangelium","Secreta","Communio","Postcommunio"];
+   const diagnostic=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   if(typeof resolver?.resolveSource!=="function")return {error:"APP_PROPER_RESOLVER_SOURCE_API_ABSENT",paths:[]};
+   const summary=[];
+   for(const sourcePath of paths){
+     const languageProof={};
+     for(const language of languages){
+       try{
+         const parsed=await resolver.resolveSource(sourcePath,language,diagnostic());
+         const bySection={};
+         for(const section of slots){
+           const rows=parsed?.map?.get?.(section);
+           const useful=Array.isArray(rows)?rows.filter(row=>typeof row==="string"&&row.trim()&&!row.startsWith("@")):[];
+           bySection[section]={present:useful.length>0,
+             rowCount:Array.isArray(rows)?rows.length:0,
+             incipit:useful[0]?.replace(/\\s+/g," ").slice(0,100)??null};
+         }
+         languageProof[language]={status:"RESOLVED",bySection};
+       }catch(e){languageProof[language]={status:"ERROR",reason:String(e?.message??e).slice(0,150)}}
+     }
+     summary.push({sourcePath,languageProof});
+   }
+   return {paths:summary};
+ });
+ console.log("P1_REAL_COMMONS_SOURCE_WITNESS="+JSON.stringify(commons));
  console.log("P1_REAL_SOURCE_WITNESS="+JSON.stringify(results));
  const october=results[0];
  assert.equal(october.date,"2026-10-09");
