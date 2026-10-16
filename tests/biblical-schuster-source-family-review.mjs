@@ -302,4 +302,25 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitB
 assert.equal(fam.counts.earlyEnglishSadlierEleventhWorkingPageOcrGenerated,17);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining,34);
 
+// Complete 47-unit first-pass source transcription remains distinct from literal print certification.
+const originsBatch3=originSpans.workingTextBatch3;
+assert.ok(originsBatch3);
+assert.equal(originsBatch3.scopeUnitCount,47);
+assert.equal(originsBatch3.priorFirstPassUnits,13);
+assert.equal(originsBatch3.additionalFirstPassUnits,34);
+assert.equal(originsBatch3.firstPassWorkingTranscriptionUnitsTotal,47);
+assert.equal(originsBatch3.untranscribedOriginalUnitBodies,0);
+assert.equal(originsBatch3.firstPassEstimatedWordCount,3305);
+assert.equal(originsBatch3.independentlyCharacterProofreadUnits,0);
+assert.equal(originsBatch3.editorialPublicationApprovedUnits,0);
+assert.equal(originsBatch3.editorialHoldsCount,7);
+assert.equal(originsBatch3.sourceWorkUploadedToGitHub,false);
+assert.equal(originsBatch3.newAuthorialTextPublishedToApplication,false);
+assert.equal(originsBatch3.standaloneArtifactSHA256.length,64);
+assert.deepEqual(originsBatch3.scopePdfPages,[16,32]);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies,47);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining,0);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhIndependentlyCertifiedUnitBodies,0);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
