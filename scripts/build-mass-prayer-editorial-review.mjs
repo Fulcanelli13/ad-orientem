@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
-import {validatePrayerReadingPilot,validateMassTransitionReadingPilot,validateRomanCanonReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
+import {validatePrayerReadingPilot,validateMassTransitionReadingPilot,validateRomanCanonReadingPilot,validateCommunionReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
 const root=fileURLToPath(new URL("..",import.meta.url));
 const read=path=>JSON.parse(readFileSync(resolve(root,path),"utf8"));
 const corpus=read("data/presentation/reader-text-sung.v1.json");
@@ -17,9 +17,12 @@ assert.equal(second.ok,true,second.reason);
 const third=validateRomanCanonReadingPilot(
  read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json"),corpus,formation,guide);
 assert.equal(third.ok,true,third.reason);
+const fourth=validateCommunionReadingPilot(
+ read("data/learn/research/mass-formation-communion-prayer-reading-pilot-20261016.v1.json"),corpus,formation,guide);
+assert.equal(fourth.ok,true,fourth.reason);
 const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const blocks=new Map(corpus.blocks.map(x=>[x.Block_ID,x]));
-const records=[...first.readings,...second.readings,...third.readings];
+const records=[...first.readings,...second.readings,...third.readings,...fourth.readings];
 const chapter=(rec,index)=>{
  const source=blocks.get(rec.block_id);
  const original=source.units.map(unit=>{
@@ -32,7 +35,9 @@ const chapter=(rec,index)=>{
  return '<details class="entry" id="'+esc(rec.block_id)+'"'+(index===0?" open":"")+'>'+
    '<summary><span class="number">'+String(index+1).padStart(2,"0")+'</span>'+
    '<span><strong>'+esc(source.Title)+'</strong><small>'+esc(rec.block_id)+' · '+
-   esc(rec.moment_id)+' · '+esc(rec.stage_id)+'</small></span><span class="openHint">+</span></summary>'+
+   esc(rec.moment_id)+' · '+esc(rec.stage_id)+'</small>'+
+   (rec.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM"?'<em class="optional" aria-label="Older local Communion custom, optional">OPTIONAL LOCAL CUSTOM</em>':"")+
+   '</span><span class="openHint">+</span></summary>'+
    '<div class="entryContent"><section class="original" aria-label="Published Mass text">'+
     '<h3>Published Mass text · Latin / English</h3>'+original+'</section>'+
     '<section class="commentary" aria-label="Editorial commentary"><span class="eyebrow">EDITORIAL DRAFT — NOT PUBLISHED</span>'+
@@ -43,7 +48,7 @@ const chapter=(rec,index)=>{
       rec.scripture_within_text.map(esc).join(", ")+'</p>':"")+
     '</section></div></details>';
 };
-const held=second.withheld.map(item=>'<li><strong>'+esc(item.proper_slot)+'</strong>'+
+const held=[...second.withheld,...fourth.withheld].map(item=>'<li><strong>'+esc(item.proper_slot)+'</strong>'+
  ' <code>'+esc(item.block_id)+'</code> — '+esc(item.reason)+'</li>').join("");
 const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '<meta name="viewport" content="width=device-width,initial-scale=1">'+
@@ -61,7 +66,7 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '.entry{border-top:1px solid var(--line);scroll-margin-top:120px}.entry:last-of-type{border-bottom:1px solid var(--line)}'+
  '.entry>summary{display:flex;align-items:center;gap:12px;min-height:65px;padding:10px 0;cursor:pointer;list-style:none}.entry>summary::-webkit-details-marker{display:none}'+
  '.entry summary strong{display:block;font:500 1.12rem/1.38 Georgia,serif}.entry summary small{display:block;color:var(--muted);font:.68rem/1.4 system-ui;margin-top:5px}'+
- '.number{font:.79rem/1.3 system-ui;color:var(--gold)}.openHint{margin-left:auto;color:var(--gold)}.entry[open] .openHint{transform:rotate(45deg)}'+
+ '.optional{display:inline-block;margin-top:7px;padding:4px 8px;border:1px solid var(--gold);border-radius:6px;color:var(--gold);font:600 .66rem/1.2 system-ui;letter-spacing:.035em}.number{font:.79rem/1.3 system-ui;color:var(--gold)}.openHint{margin-left:auto;color:var(--gold)}.entry[open] .openHint{transform:rotate(45deg)}'+
  '.entryContent{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:17px;padding:9px 0 25px}'+
  '.original,.commentary{border:1px solid var(--line);padding:14px;border-radius:10px;min-width:0}.original{background:var(--panel)}'+
  '.original h3{font:.74rem/1.5 system-ui;color:var(--gold);margin:0 0 15px}.sourceLine{margin:0 0 13px;border-bottom:1px solid var(--line);padding-bottom:7px}'+
@@ -73,17 +78,18 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '@media(max-width:740px){.entryContent{grid-template-columns:1fr}.wrap{padding:15px 12px 50px}}'+
  '@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}'+
  '</style></head><body><main class="wrap"><span class="eyebrow">AD ORIENTEM · FORMATION P2 · EDITORIAL PREVIEW</span>'+
- '<h1>Prayer-by-prayer readings · first 29 fixed texts</h1>'+
- '<p class="deck">Eight Offertory prayers, six fixed texts from Orate, fratres to the Sanctus, and fifteen Roman Canon prayers. The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
+ '<h1>Prayer-by-prayer readings · 52 source-anchored texts</h1>'+
+ '<p class="deck">Eight Offertory prayers, six fixed texts from Orate, fratres to the Sanctus, fifteen Roman Canon prayers and twenty-three Communion text blocks (including three explicitly optional local/older custom prayers). The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
  '<div class="toolbar" role="group" aria-label="Editorial reading language"><button type="button" data-select-lang="en" aria-pressed="true">English commentary</button>'+
  '<button type="button" data-select-lang="fr" aria-pressed="false">Commentaires français</button>'+
- '<span class="eyebrow">29 DRAFTS · 2 PROPER HOLDS</span></div>'+
+ '<span class="eyebrow">52 DRAFTS · 3 PROPER HOLDS · 3 LOCAL CUSTOMS</span></div>'+
  '<nav class="toc" aria-label="Prayer list">'+records.map((r,i)=>'<a href="#'+esc(r.block_id)+'">'+String(i+1).padStart(2,"0")+
  ' '+esc(blocks.get(r.block_id).Title)+'</a>').join("")+'</nav>'+
  '<h2>Published Offertory fixed texts</h2>'+first.readings.map((r,i)=>chapter(r,i)).join("")+
  '<h2>Orate, Preface dialogue and Sanctus</h2>'+second.readings.map((r,i)=>chapter(r,i+8)).join("")+
  '<h2>The Roman Canon — original Guide divisions</h2>'+third.readings.map((r,i)=>chapter(r,i+14)).join("")+
- '<section class="held"><h2>Variable Propers — explicitly held</h2><p>These two source slots depend on the selected Mass. No generic text or per-prayer exposition has been invented.</p><ul>'+held+'</ul></section>'+
+ '<h2>The Lord’s Prayer and Communion rites</h2>'+fourth.readings.map((r,i)=>chapter(r,i+29)).join("")+
+ '<section class="held"><h2>Variable Propers — explicitly held</h2><p>These three source slots depend on the selected Mass. No generic text or per-prayer exposition has been invented.</p><ul>'+held+'</ul></section>'+
  '<footer>Review-only artifact; all editorial statements remain drafts. P0 certifies any deeper historical/doctrinal/scriptural research independently.</footer>'+
  '</main><script>'+
  'document.querySelectorAll("[data-select-lang]").forEach(button=>button.addEventListener("click",()=>{'+
@@ -92,10 +98,12 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  'document.documentElement.lang=language;}));'+
  'document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",()=>{const target=document.querySelector(a.getAttribute("href"));if(target)target.open=true;}));'+
  '</script></body></html>';
-assert.equal((html.match(/class="entry" id=/g)||[]).length,29);
+assert.equal((html.match(/class="entry" id=/g)||[]).length,52);
 assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,0);
-assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,29);
+assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,52);
+assert.equal((html.match(/OPTIONAL LOCAL CUSTOM/g)||[]).length,3);
+assert.equal((html.match(/<li><strong>/g)||[]).length,3);
 const out=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 mkdirSync(dirname(out),{recursive:true});
 writeFileSync(out,html);
-console.log("PASS Formation P2 editorial review: 29 published fixed-text witnesses, 29 bilingual draft notes, two expressly held variable Propers → "+out);
+console.log("PASS Formation P2 editorial review: 52 published text-block witnesses, 52 bilingual draft notes, three optional older/local custom blocks, three expressly held variable Propers → "+out);
