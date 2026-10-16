@@ -220,6 +220,29 @@ try{
    }
    return reports;
  });
+ const paschalAlternate=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const {composeP1OneMartyrPaschalAltera}=await import("/src/calendar/p1-paschal-alternate-source-composition.js");
+   const diagnostic=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const load=async path=>{
+     const result={};
+     for(const lang of ["la","en","fr"])result[lang]=await resolver.resolveSource(path,lang,diagnostic());
+     return result;
+   };
+   const target=await load("Commune/C2ap"),base=await load("Commune/C2p"),orations=await load("Commune/C2a");
+   const result=composeP1OneMartyrPaschalAltera({target,base,orations});
+   return {status:result.status,reason:result.reason??null,section:result.section??null,
+     sourcePath:result.sourcePath,baseSourcePath:result.baseSourcePath??null,
+     alternativeOrationsSourcePath:result.alternativeOrationsSourcePath??null,
+     borrowedSections:result.borrowedSections.map(x=>x.language+":"+x.section+":"+x.owner),
+     completeByLanguage:result.composition?Object.fromEntries(["la","en","fr"].map(lang=>
+       [lang,["Introitus","Oratio","Lectio","Graduale","Evangelium","Offertorium","Secreta","Communio","Postcommunio"].every(
+        section=>Array.isArray(result.composition[lang].map.get(section)) &&
+        result.composition[lang].map.get(section).length>0)])):null,
+     historicalSourceOnly:true,approvedForMass:result.approvedForMass??false,
+     route:result.route??null};
+ });
+ console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
  console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
  console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
  assert.equal(additionalCommons.candidateCount,28);
