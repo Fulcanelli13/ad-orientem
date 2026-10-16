@@ -73,7 +73,8 @@ try{
   assert.equal(measure.fontPrimary,measure.fontTranslation,"Missal typography changes between Latin and translation");
   assert.equal(measure.sizePrimary,measure.sizeTranslation,"Missal vernacular text uses an inconsistent size");
   assert.equal(measure.secondaryVisible,true,"Missal translation is not visible");
-  assert.equal(measure.stateRibbon,"none","Minimal Missal has the LIVE posture ribbon");
+  assert.equal(measure.stateRibbon,"grid",
+    "Missal must show its own persistent faithful/priest gesture ribbon");
   assert.equal(measure.readerProgress,"none","MISSAL book text is obscured by LIVE section progress overlay");
   assert.equal(measure.schola,"none","Minimal Missal has the Schola overlay");
   assert.ok(measure.viewportOverflow<=1,width+"px Missal overflows phone width");
@@ -87,7 +88,7 @@ try{
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
  }
- console.log("PASS minimal MISSAL two-column Latin/vernacular alignment, equal serif font, no Schola/ribbon, EN/FR at 320/390/768");
+ console.log("PASS minimal MISSAL two-column Latin/vernacular alignment, equal serif font, Missal state ribbon, no Schola, EN/FR at 320/390/768");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(r=>server.close(r));
