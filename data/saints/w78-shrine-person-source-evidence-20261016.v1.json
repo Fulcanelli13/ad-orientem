@@ -28,6 +28,18 @@
       "ref": "saints/2026-10-15-identity-and-holiness-pilot",
       "blob_sha": "9e07d5488bd46ff2c05ac949593bfd8e85ffd736",
       "relation": "DERIVED_W78_VARIANT_SOURCE_KEY_REVIEW_EVIDENCE_NOT_IDENTITY_CERTIFICATION"
+    },
+    {
+      "path": "data/saints/1962-doctors-historical-id-alias-review.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2be341a668ca2690e5cf85dd936afeb2cb645b2d",
+      "relation": "FOUR_DOCTOR_HISTORICAL_CANDIDATES_SOURCE_ID_OWNER_REVIEW"
+    },
+    {
+      "path": "data/saints/parallel-owner-identity-bridge-20261015.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2dc20e3d37dfb03431f2e38297e049732823ba86",
+      "relation": "PREEXISTING_THERESE_SOURCE_OWNER_BRIDGE"
     }
   ],
   "rules": [
@@ -37,7 +49,9 @@
     "Artwork subjects and user five-star scores are not approved production images.",
     "Blessed remains distinct from Saint; groups and angels cannot be treated as single human biographies.",
     "No new map pins, saints, Missal observances or image rights may be promoted from this registry.",
-    "The 24 curated variant leads overlap with eight of the nine previously documented aliases; Wenceslas is the additional prior alias. None creates a certified person identity."
+    "The 24 curated variant leads overlap with eight of the nine previously documented aliases; Wenceslas is the additional prior alias. None creates a certified person identity.",
+    "W78 sourced alias lookup navigation is research-only and links existing source-index records; it is NOT a certified person identity, feast, relic, person-to-site relationship or canonical key rename.",
+    "For four matching Doctor/archive key pairs, retain both source keys and require Calendar owner's precise source-ID equivalence approval; Francis of Assisi stays held, Thérèse's earlier owner bridge remains unchanged."
   ],
   "summary": {
     "shrine_name_records": 119,
@@ -81,6 +95,19 @@
       "original_names_with_any_exact_or_existing_key_lead": 81,
       "still_without_any_ledger_key_lead": 38,
       "created_new_canonical_person_id": 0
+    },
+    "source_reference_batch_20261016": {
+      "original_names": 119,
+      "individual_alias_reference_lookups": 23,
+      "collective_alias_reference_lookups": 2,
+      "doctor_archived_owner_pairs_for_comparison": 4,
+      "existing_bridge_preserved": 1,
+      "collision_context_hold": 1,
+      "unchanged_source_cases": 88,
+      "person_identity_certifications_added": 0,
+      "calendars_changed": 0,
+      "geographic_pins_added": 0,
+      "art_approvals_added": 0
     }
   },
   "records": [
@@ -121,7 +148,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Jacques-Désiré Laval",
@@ -163,7 +199,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Marie-Louise Trichet",
@@ -207,7 +252,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Adalbert of Prague",
@@ -250,7 +304,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Agatha of Sicily",
@@ -304,7 +367,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.agatha",
+            "original_source_names": [
+              "St. Agatha"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.agatha"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "02-05"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Agatha of Sicily",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Alphonsus Liguori",
@@ -368,7 +462,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ambrose of Milan",
@@ -430,7 +533,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint André Bessette",
@@ -485,7 +597,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.andre-bessette",
+            "original_source_names": [
+              "André (Alfred) Bessette"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.andre-bessette"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "2010-10-17"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint André Bessette",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew Kaggwa",
@@ -522,7 +665,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew the Apostle",
@@ -592,7 +744,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.andrew",
+            "original_source_names": [
+              "St. Andrew"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.andrew"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "11-30"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Andrew the Apostle",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anne",
@@ -671,7 +854,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anthony of Padua",
@@ -750,7 +942,51 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "MATCHING_HISTORICAL_DOCTOR_SOURCE_PAIR_OWNER_SIGNOFF_PENDING",
+        "lookup_scope": "RESEARCH_COMPARE_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.anthony-of-padua",
+            "original_source_names": [
+              "St. Anthony of Padua"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.anthony-of-padua"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          },
+          {
+            "existing_source_key": "saint.anthony-padua",
+            "original_source_names": [
+              "Anthony of Padua"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "doctor",
+                "owner_ref": "data/calendar/doctors-of-church-roster.review.v1.json",
+                "source_id": "saint.anthony-padua"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "original_nominal_1962_day": "06-13",
+        "source_observance_ids": [
+          "sancti:06-13:3:w"
+        ],
+        "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
+        "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Apollinaris",
@@ -797,7 +1033,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Augustine of Hippo",
@@ -856,7 +1101,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartholomew the Apostle",
@@ -926,7 +1180,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.bartholomew",
+            "original_source_names": [
+              "St. Bartholomew"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.bartholomew"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "08-24"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Bartholomew the Apostle",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartolo Longo",
@@ -968,7 +1253,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Benedict of Nursia",
@@ -1051,7 +1345,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.benedict",
+            "original_source_names": [
+              "St. Benedict"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.benedict"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "03-21"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Benedict of Nursia",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bernadette Soubirous",
@@ -1134,7 +1459,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Beuno",
@@ -1173,7 +1507,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Brigid of Kildare",
@@ -1220,7 +1563,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Casimir",
@@ -1267,7 +1619,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine Labouré",
@@ -1324,7 +1685,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine of Siena",
@@ -1387,7 +1757,56 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "MATCHING_HISTORICAL_DOCTOR_SOURCE_PAIR_OWNER_SIGNOFF_PENDING",
+        "lookup_scope": "RESEARCH_COMPARE_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.catherine-of-siena",
+            "original_source_names": [
+              "St. Catherine of Siena"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.catherine-of-siena"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          },
+          {
+            "existing_source_key": "saint.catherine-siena",
+            "original_source_names": [
+              "Catherine of Siena"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "doctor",
+                "owner_ref": "data/calendar/doctors-of-church-roster.review.v1.json",
+                "source_id": "saint.catherine-siena"
+              },
+              {
+                "family": "doctor_research_bio",
+                "owner_ref": "data/saints/holiness-first-eight-doctors-research-20261015.v1.json",
+                "source_id": "saint.catherine-siena"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "original_nominal_1962_day": "04-30",
+        "source_observance_ids": [
+          "sancti:04-30:3:w"
+        ],
+        "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
+        "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charbel Makhlouf",
@@ -1441,7 +1860,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.charbel-makhlouf",
+            "original_source_names": [
+              "Charbel Makhluf"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.charbel-makhlouf"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "1977-10-09"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Charbel Makhlouf",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Borromeo",
@@ -1488,7 +1938,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Lwanga",
@@ -1543,7 +2002,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.charles-lwanga",
+            "original_source_names": [
+              "Carlo Lwanga"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.charles-lwanga"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "1964-10-18"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Charles Lwanga",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Clare of Assisi",
@@ -1597,7 +2087,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.clare",
+            "original_source_names": [
+              "St. Clare"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.clare"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "08-12"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Clare of Assisi",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Claude La Colombière",
@@ -1639,7 +2160,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Columbanus",
@@ -1682,7 +2212,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Denis of Paris",
@@ -1742,7 +2281,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic",
@@ -1802,7 +2350,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic de Guzmán",
@@ -1866,7 +2423,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.dominic",
+            "original_source_names": [
+              "St. Dominic"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.dominic"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "08-04"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Dominic de Guzmán",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Edward the Confessor",
@@ -1920,7 +2508,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.edward",
+            "original_source_names": [
+              "St. Edward"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.edward"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "10-13"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Edward the Confessor",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Elizabeth Ann Seton",
@@ -1968,7 +2587,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Eusebius of Vercelli",
@@ -2015,7 +2643,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Faustina Kowalska",
@@ -2068,7 +2705,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis de Sales",
@@ -2131,7 +2777,56 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "MATCHING_HISTORICAL_DOCTOR_SOURCE_PAIR_OWNER_SIGNOFF_PENDING",
+        "lookup_scope": "RESEARCH_COMPARE_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.francis-de-sales",
+            "original_source_names": [
+              "St. Francis de Sales"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.francis-de-sales"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          },
+          {
+            "existing_source_key": "saint.francis-sales",
+            "original_source_names": [
+              "Francis de Sales"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "doctor",
+                "owner_ref": "data/calendar/doctors-of-church-roster.review.v1.json",
+                "source_id": "saint.francis-sales"
+              },
+              {
+                "family": "doctor_research_bio",
+                "owner_ref": "data/saints/holiness-first-eight-doctors-research-20261015.v1.json",
+                "source_id": "saint.francis-sales"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "original_nominal_1962_day": "01-29",
+        "source_observance_ids": [
+          "sancti:01-29:3:w"
+        ],
+        "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
+        "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis of Assisi",
@@ -2194,7 +2889,46 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "HOLD_COMPETING_SOURCES_PENDING_OWNER_ATTESTATION",
+        "lookup_scope": "NONE",
+        "source_references": [
+          {
+            "existing_source_key": "saint.francis-assisi",
+            "original_source_names": [
+              "Francis of Assisi"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "cross_vocation_research_bio",
+                "owner_ref": "data/saints/holiness-first-sixteen-cross-vocation-research.v1.json",
+                "source_id": "saint.francis-assisi"
+              }
+            ],
+            "identity_status": "SOURCE_CONTEXT_ONLY_NOT_SAME_PERSON_ATTESTATION"
+          },
+          {
+            "existing_source_key": "saint.francis-of-assisi",
+            "original_source_names": [
+              "St. Francis of Assisi"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.francis-of-assisi"
+              }
+            ],
+            "identity_status": "SOURCE_CONTEXT_ONLY_NOT_SAME_PERSON_ATTESTATION"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "relation": "SAME_NAME_HISTORICAL_AND_VOCATIONAL_RESEARCH_NOT_OWNER_APPROVED"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis Xavier",
@@ -2247,7 +2981,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francisco Marto",
@@ -2295,7 +3038,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Gervasius of Milan",
@@ -2338,7 +3090,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Helena",
@@ -2386,7 +3147,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Hilary of Poitiers",
@@ -2439,7 +3209,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ignatius of Loyola",
@@ -2492,7 +3271,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Isaac Jogues",
@@ -2543,7 +3331,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jacinta Marto",
@@ -2591,7 +3388,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint James the Greater",
@@ -2657,7 +3463,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jane Frances de Chantal",
@@ -2704,7 +3519,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean de Brébeuf",
@@ -2742,7 +3566,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean-Marie Vianney",
@@ -2809,7 +3642,44 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.john-mary-vianney",
+            "original_source_names": [
+              "St. John Mary Vianney",
+              "John Mary Vianney"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.john-mary-vianney"
+              },
+              {
+                "family": "cross_vocation_research_bio",
+                "owner_ref": "data/saints/holiness-first-sixteen-cross-vocation-research.v1.json",
+                "source_id": "saint.john-mary-vianney"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "08-08"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Jean-Marie Vianney",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joachim",
@@ -2853,7 +3723,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joan of Arc",
@@ -2902,7 +3781,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Bosco",
@@ -2949,7 +3837,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John de Lalande",
@@ -2988,7 +3885,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Neumann",
@@ -3043,7 +3949,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John of the Cross",
@@ -3106,7 +4021,52 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "MATCHING_HISTORICAL_DOCTOR_SOURCE_PAIR_OWNER_SIGNOFF_PENDING",
+        "lookup_scope": "RESEARCH_COMPARE_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.john-cross",
+            "original_source_names": [
+              "John of the Cross"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "doctor",
+                "owner_ref": "data/calendar/doctors-of-church-roster.review.v1.json",
+                "source_id": "saint.john-cross"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          },
+          {
+            "existing_source_key": "saint.john-of-the-cross",
+            "original_source_names": [
+              "St. John of the Cross"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.john-of-the-cross"
+              }
+            ],
+            "identity_status": "UNMERGED_ORIGINAL_OWNER_KEY"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "original_nominal_1962_day": "11-24",
+        "source_observance_ids": [
+          "sancti:11-24:3:w",
+          "sancti:11-24o:4:r"
+        ],
+        "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
+        "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Paul II",
@@ -3153,7 +4113,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Baptist",
@@ -3213,7 +4182,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Evangelist",
@@ -3278,7 +4256,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint José de Anchieta",
@@ -3325,7 +4312,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joseph",
@@ -3397,7 +4393,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Josephine Bakhita",
@@ -3451,7 +4456,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.giuseppina-bakhita",
+            "original_source_names": [
+              "Giuseppina Bakhita"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.giuseppina-bakhita"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "2000-10-01"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Josephine Bakhita",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Juan Diego",
@@ -3518,7 +4554,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.juan-diego-cuauhtlatoatzin",
+            "original_source_names": [
+              "Juan Diego Cuauhtlatoatzin"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.juan-diego-cuauhtlatoatzin"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "2002-07-31"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Juan Diego",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Julienne of Cornillon",
@@ -3555,7 +4622,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Junípero Serra",
@@ -3602,7 +4678,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kateri Tekakwitha",
@@ -3651,7 +4736,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Katharine Drexel",
@@ -3698,7 +4792,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kizito",
@@ -3741,7 +4844,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Leonard of Noblac",
@@ -3779,7 +4891,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis de Montfort",
@@ -3829,7 +4950,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis-Marie de Montfort",
@@ -3879,7 +5009,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louise de Marillac",
@@ -3928,7 +5067,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Lucy of Syracuse",
@@ -3998,7 +5146,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.lucy",
+            "original_source_names": [
+              "St. Lucy"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.lucy"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "12-13"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Lucy of Syracuse",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Luke the Evangelist",
@@ -4051,7 +5230,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Margaret Mary Alacoque",
@@ -4105,7 +5293,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mark the Evangelist",
@@ -4165,7 +5362,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.mark",
+            "original_source_names": [
+              "St. Mark"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.mark"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "04-25"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Mark the Evangelist",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martha of Bethany",
@@ -4212,7 +5440,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin de Porres",
@@ -4266,7 +5503,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.martin-de-porres",
+            "original_source_names": [
+              "Martino de Porres"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.martin-de-porres"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "1962-05-06"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Martin de Porres",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin of Tours",
@@ -4319,7 +5587,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mary Magdalene",
@@ -4383,7 +5660,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthew the Apostle",
@@ -4453,7 +5739,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.matthew",
+            "original_source_names": [
+              "St. Matthew"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.matthew"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "09-21"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Matthew the Apostle",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthias the Apostle",
@@ -4523,7 +5840,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.matthias",
+            "original_source_names": [
+              "St. Matthias"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.matthias"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "02-24"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Matthias the Apostle",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maurice and the Theban martyrs",
@@ -4577,7 +5925,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "GROUP_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "group.maurice-theban-legion",
+            "original_source_names": [
+              "Maurice and the Theban Legion"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "group.maurice-theban-legion"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "09-22"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Maurice and the Theban martyrs",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maximin",
@@ -4614,7 +5993,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Meinrad",
@@ -4652,7 +6040,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Michael the Archangel",
@@ -4717,7 +6114,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Monica",
@@ -4764,7 +6170,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas",
@@ -4823,7 +6238,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas of Myra",
@@ -4887,7 +6311,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.nicholas",
+            "original_source_names": [
+              "St. Nicholas"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.nicholas"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "12-06"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Nicholas of Myra",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oliver Plunkett",
@@ -4926,7 +6381,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oscar Romero",
@@ -4980,7 +6444,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.oscar-arnulfo-romero",
+            "original_source_names": [
+              "Óscar Arnulfo Romero"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.oscar-arnulfo-romero"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "2018-10-14"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Oscar Romero",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Patrick",
@@ -5047,7 +6542,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Paul the Apostle",
@@ -5106,7 +6610,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter Chanel",
@@ -5153,7 +6666,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter the Apostle",
@@ -5237,7 +6759,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Philip Neri",
@@ -5284,7 +6815,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Pio of Pietrelcina",
@@ -5338,7 +6878,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.pio-pietrelcina",
+            "original_source_names": [
+              "Pio da Pietrelcina (Padre Pio)"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "later_named",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "saint.pio-pietrelcina"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [
+              "2002-06-16"
+            ],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Pio of Pietrelcina",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Protasius of Milan",
@@ -5381,7 +6952,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Quentin",
@@ -5424,7 +7004,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint René Goupil",
@@ -5463,7 +7052,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rita of Cascia",
@@ -5506,7 +7104,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rose of Lima",
@@ -5553,7 +7160,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Saturninus",
@@ -5600,7 +7216,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Scholastica",
@@ -5647,7 +7272,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
@@ -5690,7 +7324,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stanislaus of Kraków",
@@ -5744,7 +7387,38 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.stanislaus",
+            "original_source_names": [
+              "St. Stanislaus"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.stanislaus"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "05-07"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Stanislaus of Kraków",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stephen of Hungary",
@@ -5791,7 +7465,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Teresa of Ávila",
@@ -5844,7 +7527,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thérèse of Lisieux",
@@ -5923,7 +7615,57 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION"
+      "source_key_review_bucket": "EXACT_FULL_NAME_COLLISION",
+      "cross_owner_reference_reconciliation": {
+        "status": "EXISTING_CROSS_OWNER_SOURCE_BRIDGE_CONFIRMED",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.therese-lisieux",
+            "original_source_names": [
+              "Thérèse of Lisieux"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.therese-lisieux"
+              },
+              {
+                "family": "doctor",
+                "owner_ref": "data/calendar/doctors-of-church-roster.review.v1.json",
+                "source_id": "saint.therese-lisieux"
+              }
+            ],
+            "identity_status": "PREVIOUS_EXISTING_OWNER_BRIDGE_NOT_NEW_CANONICAL_KEY"
+          },
+          {
+            "existing_source_key": "saint.therese-of-lisieux",
+            "original_source_names": [
+              "Saint Thérèse of Lisieux",
+              "Sainte Thérèse de Lisieux"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "pilot_bio",
+                "owner_ref": "data/saints/holiness-first-editorial-pilot-20261015.v1.json",
+                "source_id": "saint.therese-of-lisieux"
+              }
+            ],
+            "identity_status": "PREVIOUS_EXISTING_OWNER_BRIDGE_NOT_NEW_CANONICAL_KEY"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "existing_bridge": {
+          "saints_id": "saint:therese-of-lisieux",
+          "calendar_person_id": "saint.therese-lisieux",
+          "observed_source_id": "sancti:10-03:3:w"
+        },
+        "relation": "EXISTING_SOURCE_OWNER_BRIDGE_PRESERVED_NO_KEY_RENAME"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas Aquinas",
@@ -5976,7 +7718,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas the Apostle",
@@ -6035,7 +7786,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Titus",
@@ -6082,7 +7842,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Turibius of Astorga",
@@ -6119,7 +7888,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Vincent de Paul",
@@ -6174,7 +7952,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE"
+      "source_key_review_bucket": "EXACT_FULL_NAME_SINGLE",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Wenceslas",
@@ -6233,7 +8020,38 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD"
+      "source_key_review_bucket": "PREVIOUSLY_RECORDED_ALIAS_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "PERSON_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "saint.wenceslaus",
+            "original_source_names": [
+              "St. Wenceslaus"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "archived_1962",
+                "owner_ref": "data/saints/historical-v4333-311-components.recovered.v1.json",
+                "source_id": "saint.wenceslaus"
+              }
+            ],
+            "original_historical_nominal_dates": [
+              "09-28"
+            ],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Saint Wenceslas",
+        "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Willibrord",
@@ -6276,7 +8094,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Winefride",
@@ -6320,7 +8147,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "The Three Magi",
@@ -6363,7 +8199,16 @@
       "authorized_artwork_id": null,
       "new_geographical_pin_created": false,
       "curated_variant_existing_key_leads": [],
-      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD"
+      "source_key_review_bucket": "NO_SUPPORTED_LEDGER_KEY_LEAD",
+      "cross_owner_reference_reconciliation": {
+        "status": "NOT_IN_BATCH_ALIAS_REVIEW",
+        "lookup_scope": "NONE",
+        "source_references": [],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Uganda Martyrs",
@@ -6423,7 +8268,36 @@
           "shrine_person_relation_certified": false
         }
       ],
-      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED"
+      "source_key_review_bucket": "OTHER_CURATED_VARIANT_LEAD_UNAPPROVED",
+      "cross_owner_reference_reconciliation": {
+        "status": "GROUP_SOURCE_REFERENCE_LOOKUP_AVAILABLE",
+        "lookup_scope": "RESEARCH_INDEX_ONLY",
+        "source_references": [
+          {
+            "existing_source_key": "uganda-martyrs-22",
+            "original_source_names": [
+              "Martyrs of Uganda"
+            ],
+            "family_source_provenance": [
+              {
+                "family": "post1960_collectives",
+                "owner_ref": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+                "source_id": "uganda-martyrs-22"
+              }
+            ],
+            "original_historical_nominal_dates": [],
+            "canonization_dates_not_feast_dates": [],
+            "identity_status": "UNAPPROVED_SOURCE_REFERENCE_ALIAS"
+          }
+        ],
+        "source_identity_approved": false,
+        "canonical_saint_id_created": false,
+        "calendar_mass_authorized": false,
+        "shrine_person_life_relation_approved": false,
+        "candidate_alias": "Uganda Martyrs",
+        "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
+        "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
+      }
     }
   ]
 }
