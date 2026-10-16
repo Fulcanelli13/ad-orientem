@@ -62,16 +62,20 @@ function dateDisplay(date,language){
 export function renderTodayV2Sections(model,vm){
   const {language,period,feature,upcoming,daily,saintOrFeast}=model;
   const txt=(en,fr)=>L(language,en,fr);
-  const next=upcoming[0];
   const featureAttrs=feature?.kind==="dynamic"
     ? 'data-home-cu-dynamic="'+esc(feature.id)+'" data-home-cu-route="'+esc(feature.route||"pray.library")+'"'
     : 'data-home-cu-route="'+esc(feature?.route||"pray.library")+'"';
   const featureName=feature?.title||txt("Prayer Library","Livre de prières");
   const featureDetail=feature?.sub||txt("Choose a prayer for this moment","Choisir une prière pour ce moment");
   const featureRole=feature?.when||txt("Any time","À tout moment");
-  const saintTitle=saintOrFeast||txt("Saints and feasts of this day","Saints et fêtes de ce jour");
-  const saintDetail=saintOrFeast?txt("Observed feast · sources","Fête observée · sources")
-    :txt("Open the resolved calendar day","Ouvrir le jour liturgique résolu");
+  // The hero already names the observance; keep this link about its context.
+  // Preserve the Calendar Day owner; Saints handoff remains a separate PR.
+  const saintTitle=saintOrFeast?txt("Life & sources","Vie et sources")
+    :model.hasObservedDay?txt("About this celebration","À propos de cette célébration")
+      :txt("Calendar day & sources","Jour du calendrier et sources");
+  const saintDetail=saintOrFeast?txt("1962 observance · read the context","Observance de 1962 · découvrir le contexte")
+    :model.hasObservedDay?txt("Liturgical day · context and sources","Jour liturgique · contexte et sources")
+      :txt("Inspect the selected Calendar day","Consulter le jour choisi dans le calendrier");
   const gospelDetail=model.gospelReference||(
     model.gospelStatus==="ready"?txt("Read and explore the appointed Gospel","Lire et méditer l’Évangile du jour")
     :txt("Available when the Proper resolves","Disponible après résolution du Propre"));
@@ -108,7 +112,6 @@ export function renderTodayV2Sections(model,vm){
   }).join("");
   return `<div class="aoTodayV2Context">
     <button type="button" ${yearLink}><small>${esc(txt("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><strong>${esc(language==="fr"?period.fr:period.en)}</strong></button>
-    <button type="button" ${monthLink}><small>${esc(txt("COMING SOON","À VENIR"))}</small><strong>${esc(next?language==="fr"?next.fr:next.en:txt("Full calendar","Calendrier complet"))}</strong>${next?'<span>'+esc(dateDisplay(next.date,language))+'</span>':""}</button>
   </div>
   ${honouredSection}
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
@@ -126,7 +129,7 @@ export function renderTodayV2Sections(model,vm){
       ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
     </section>
-    <section class="aoTodayV2Zone aoTodayV2Approaching"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("THE COMING DAYS","LES PROCHAINS JOURS"))}</small><h2>${esc(txt("Approaching","À venir"))}</h2></div><button type="button" ${monthLink}>${esc(txt("Full calendar","Calendrier complet"))} →</button></div>
+    <section class="aoTodayV2Zone aoTodayV2Approaching"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("THE COMING DAYS","LES PROCHAINS JOURS"))}</small><h2>${esc(txt("Coming next","À venir"))}</h2></div><button type="button" ${monthLink}>${esc(txt("Full calendar","Calendrier complet"))} →</button></div>
       <div class="aoTodayV2Upcoming">${calendarDates||'<p>'+esc(txt("Browse the full calendar","Consulter le calendrier complet"))+'</p>'}</div>
     </section>
   </div>`;
