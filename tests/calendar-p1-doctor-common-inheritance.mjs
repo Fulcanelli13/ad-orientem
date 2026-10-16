@@ -45,4 +45,23 @@ const own=reconcileP1NonPontiffDoctorSources({target:bad,shared});
 assert.equal(own.status,"SOURCE_COMPOSITION_VERIFIED");
 assert.strictEqual(own.mappedSources.en.map.get("Oratio"),bad.en.map.get("Oratio"));
 assert.equal(own.borrowedSections.length,OWNER.sharedSections.length*2-1);
+// Exercise the exact documented live Latin C5a layout: repeated shared
+// Collect after a historical note, including the source's cœlis/cælis form.
+const sharedCollect="Deus, qui pópulo tuo ætérnæ salútis beátum N. minístrum tribuísti: præsta, quǽsumus; ut, quem Doctórem vitæ habúimus in terris, intercessórem habére mereámur in cœlis.";
+const inherited=clone(target), donor=clone(shared);
+donor.la.map.set("Oratio",[sharedCollect,"","","$Per Dominum."]);
+inherited.la.map.set("Oratio",[sharedCollect,"(sed communi Summorum Pontificum)",sharedCollect.replace("cœlis","cælis"),"$Per Dominum."]);
+const actualShape=reconcileP1NonPontiffDoctorSources({target:inherited,shared:donor});
+assert.equal(actualShape.status,"SOURCE_COMPOSITION_VERIFIED",actualShape.reason+":"+actualShape.section);
+assert.equal(actualShape.borrowedSections.length,OWNER.sharedSections.length*2);
+const otherCollect=clone(inherited);otherCollect.la.map.set("Oratio",[
+ sharedCollect,"(sed communi Summorum Pontificum)",
+ "Deus, beate magister, another unrelated Mass Collect beyond the first common prayer.",
+ "$Per Dominum."
+]);
+assert.equal(reconcileP1NonPontiffDoctorSources({target:otherCollect,shared:donor}).reason,"SHARED_LATIN_PARITY_MISMATCH");
+const unapprovedRubric=clone(inherited);unapprovedRubric.la.map.set("Oratio",[
+ sharedCollect,"(other unknown rubric)",sharedCollect,"$Per Dominum."
+]);
+assert.equal(reconcileP1NonPontiffDoctorSources({target:unapprovedRubric,shared:donor}).reason,"SHARED_LATIN_PARITY_MISMATCH");
 console.log("P1 Doctor Common source inheritance: 18 missing translated sections recovered by shared owner only after exact Latin parity; distinctive prayers preserved; negative gates pass.");
