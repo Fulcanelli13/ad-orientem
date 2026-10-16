@@ -563,7 +563,7 @@ export function createFindOwner(win=globalThis){
     try{
       const painted=await paint();
       const node=getRoot(win);
-      const button=[...node?.querySelectorAll?.("[data-bible-event-key]")??[]]
+      const button=[...(node?.querySelectorAll?.("[data-bible-event-key]")??[])]
         .find(item=>item.dataset.bibleEventKey===eventKey);
       if(!painted||!button)throw new Error("Atlas exact event was not rendered");
       // The source-linked visit is observational. Never replace the person's
