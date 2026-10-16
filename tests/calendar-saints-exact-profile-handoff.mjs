@@ -50,6 +50,16 @@ for(const language of ["en","fr"]){
  const html=renderExploreToString(vm);
  assert(html.includes('data-saint-id="saint:therese-of-lisieux"'),"Existing native Saints profile must render");
  assert(html.includes("data-explore-calendar-date=\"2026-10-03\""));
+ const contextualVm=buildExploreViewModel({language,items:pilot,view:"list",lens:"saints",
+   filters:{saintScope:"profiles",saintCategory:"ALL"},saintsRelease:dataset.saintsRelease,
+   saintCalendarReturn:{date:"2032-10-03",saintsId:link.saintsId},
+   selectedId:exact[0].item_id});
+ const contextualHtml=renderExploreToString(contextualVm);
+ assert(contextualHtml.includes('data-saint-return-calendar="2032-10-03"'),
+   "Exact Calendar entry must return to inspected future year, not hard-coded 2026");
+ assert(contextualHtml.includes(language==="fr"?"Revenir au jour consulté":"Return to selected Calendar day"));
+ assert(!html.includes('data-saint-return-calendar='),
+   "Ordinary Explore Saints browsing must not suggest a fictitious Calendar origin");
 }
 let fetched=0;
 const loaded=await loadCalendarSaintProfileBridge(async()=>{fetched++;return {ok:true,json:async()=>bridge}});
@@ -60,13 +70,17 @@ assert.equal(fetched,1);
 const calendar=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 const find=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
 assert(calendar.includes("exactCalendarPrincipalSaintProfile({date:target,principalId:observed,bridge})"));
-assert(calendar.includes("owner?.openSaintProfile?.(exact.saintsId)"));
+assert(calendar.includes("owner?.openSaintProfile?.(exact.saintsId,{calendarReturn:exact})"));
 assert(calendar.includes('globalThis.AO_MODULES?.open?.("today.saint"'),
   "Existing saint panel must remain the fallback on unmapped identities");
 assert(find.includes("async function verifiedSaintProfileItem(saintsId)"));
 assert(find.includes('row?.saint_id===saintsId'));
 assert(find.includes('state.saintScope="profiles"'));
 assert(find.includes("openSaintProfile,"));
+assert(find.includes("const returnContext=calendarReturn?.saintsId===saintsId"));
+assert(find.includes("receipt?.date===date"));
+assert(find.includes("saintCalendarReturn:null"));
+
 assert(!find.includes('saintProfileId)&&state.query'),
   "Do not deep-link by title or fuzzy search");
 console.log("Calendar -> Saints exact profile PASS: canonical 1962 identity, native profile, future-year source, rejection of collisions and safe fallback; no Mass selection.");
