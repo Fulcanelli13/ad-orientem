@@ -40,7 +40,7 @@ export function renderSecondarySaintSection(cards,{language="en",profileIds=[]}=
     if(c.context)html+="<p>"+esc(c.context)+"</p>";
     // A reviewed person-to-person identity edge is required; no title,
     // feast-date coincidence or unpublished biography may create this action.
-    if(allowedProfiles.has(c.id)&&/^saint\\.[a-z0-9-]+$/.test(c.id||""))
+    if(allowedProfiles.has(c.id)&&/^saint\.[a-z0-9-]+$/.test(c.id||""))
       html+='<button type="button" class="aoCalSaintProfileLink" data-cal-secondary-saint-profile="'+esc(c.id)+'">'+
         esc(loc(fr,"Life & sources","Vie & sources"))+' →</button>';
     if(siteName)html+='<p class="aoCalSaintPlace">'+esc(loc(fr,"Associated place: ","Lieu associé : "))+esc(siteName)+"</p>";
