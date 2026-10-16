@@ -278,3 +278,103 @@ export function romanCanonEditorialPreviewHtml(validation,{french=false}={}){
         row.mentioned_biblical_persons_in_text.map(clean).join(", ")+'</p>':"")+
     '</article>').join("")+'</main>';
 }
+
+/**
+ * Communion editorial projection: B062–B084 including three older/local
+ * optional blocks. Keeps this prayer-by-prayer Formation exercise independent
+ * of P0 certification and all ceremonial/ritual reader projections.
+ */
+export function validateCommunionReadingPilot(pilot,sung,formation,guide){
+ const fail=reason=>Object.freeze({ok:false,reason,readings:Object.freeze([]),withheld:Object.freeze([])});
+ if(pilot?.schema!=="ao-formation-communion-prayer-reading-pilot-v1"||
+    pilot.status!=="EDITORIAL_DRAFT_NOT_RELEASED"||
+    pilot.scope!=="FORMATION_ONLY"||pilot.profile!=="ORDINARY_SUNG"||
+    pilot.study_level!=="DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT"||
+    !Array.isArray(pilot.entries)||pilot.entries.length!==23||
+    !Array.isArray(pilot.withheld_variable_propers)||
+    pilot.withheld_variable_propers.length!==1)return fail("INVALID_COMMUNION_DRAFT");
+ if(!Array.isArray(sung?.blocks)||formation?.schema!=="ao-mass-formation-campion-v1"||
+    !guide?.entries)return fail("MISSING_ORIGINAL_OWNERS");
+ const lookup=new Map(sung.blocks.map(b=>[b.Block_ID,b]));
+ const held=pilot.withheld_variable_propers[0],antiphon=lookup.get("AO.SM.B085");
+ if(held?.block_id!=="AO.SM.B085"||held?.proper_slot!=="COMMUNION"||
+    typeof held.reason!=="string"||held.reason.length<15||
+    antiphon?.Proper_Slot!=="COMMUNION"||
+    antiphon?.units?.some(u=>u.english||u.latin))return fail("VARIABLE_COMMUNION_ANTIPHON_HOLD");
+ const seen=new Set(),validated=[];
+ for(let i=0;i<23;i++){
+  const number=i+62,rec=pilot.entries[i],
+    sourceId="AO.SM.B"+String(number).padStart(3,"0");
+  const expectedMacro=number<=63?"AO.SM.M19":number<=67?"AO.SM.M20":
+    number===68?"AO.SM.M21":number<=73?"AO.SM.M22":
+    number<=76?"AO.SM.M23":number<=81?"AO.SM.M24":
+    number===82?"AO.SM.M25":"AO.SM.M26";
+  const momentNumber=number<=63?19:number<=67?20:number===68?21:
+    number<=73?22:number<=76?23:number<=81?24:number===82?25:26;
+  const momentId="AO.CARD."+String(momentNumber).padStart(3,"0");
+  const stageId=number<=68?"MF01":number<=76?"MF07":
+    number<=82?"MF01":"MF08";
+  const optional=number>=77&&number<=79;
+  const expectedStatus=optional?"LOCAL_CUSTOM_PRE1960_SURVIVAL":"NORMATIVE_1962";
+  const expectedBranch=optional?"OPTIONAL_LOCAL_OLDER_CUSTOM":"NORMATIVE_FIXED_TEXT";
+  const source=lookup.get(sourceId);
+  if(!rec||rec.id!=="AO.FORM.PRAYER.COMMUNION."+String(i+1).padStart(2,"0")||
+     rec.block_id!==sourceId||rec.moment_id!==momentId||rec.stage_id!==stageId||
+     rec.source_status!==expectedStatus||rec.branch!==expectedBranch||
+     seen.has(rec.id)||!guide.entries[rec.moment_id]||
+     !formation.stages.some(stage=>stage.id===rec.stage_id))return fail("COMMUNION_BOUNDARY_OR_OPTIONAL_BRANCH");
+  if(!source||source.Macro_ID!==expectedMacro||source.Proper_Slot||
+     source.Branch_Status!==expectedStatus||!Array.isArray(source.units)||
+     source.units.length===0)return fail("PUBLISHED_COMMUNION_SOURCE_NOT_FOUND");
+  const wording=source.units.filter(x=>x.clock!=="PRIEST_ACTION").map(x=>String(x.english||"")).join("\n");
+  if(typeof rec.text_anchor_en!=="string"||!wording.includes(rec.text_anchor_en)||
+    !Array.isArray(rec.scripture_within_text)||
+    rec.scripture_within_text.length!==0)return fail("COMMUNION_UNPUBLISHED_WORDING_OR_SCRIPTURE");
+  // Keep the public response, thrice-repeated invocations, and older branch
+  // visibly distinguishable, not blended into one generic Communion stage.
+  if(number===63&&source.units.map(x=>x.clock).join("/")!=="PUBLIC_TEXT/USER_RESPONSE/PRIEST_PRIVATE")
+    return fail("PATERNOSTER_RESPONSES_CHANGED");
+  if(number===68&&(source.units.length!==3||!source.units.every(x=>x.clock==="SCHOLA_PUBLIC")))
+    return fail("AGNUS_DEI_SCHOLA_DISTINCTION");
+  if(number===73&&(source.units.length!==3||!source.units.every(x=>x.clock==="PRIEST_PRIVATE")))
+    return fail("PRIEST_DOMINE_THREEFOLD");
+  if(number===81&&(source.units.length!==3||!source.units.every(x=>x.clock==="PUBLIC_TEXT")))
+    return fail("FAITHFUL_DOMINE_THREEFOLD");
+  if((number===74||number===76||number===82)&&!source.units.some(u=>u.english?.includes("soul unto life everlasting")))
+    return fail("COMMUNION_RECEPTION_PRAYER_LOST");
+  if((number===78||number===79)&&!source.units.some(u=>u.clock==="USER_RESPONSE"))
+    return fail("OPTIONAL_RESPONSE_LOST");
+  for(const field of ["heading","reading","observe"]){
+   for(const lang of ["en","fr"]){
+    const prose=rec[field]?.[lang];
+    if(typeof prose!=="string"||prose.length<12||prose.length>1800||prose.trim()!==prose)
+      return fail("MISSING_COMMUNION_BILINGUAL_DRAFT");
+   }
+  }
+  seen.add(rec.id);
+  validated.push(Object.freeze({...rec,scripture_within_text:Object.freeze([])}));
+ }
+ return Object.freeze({ok:true,reason:"EDITORIAL_PREVIEW_ONLY",readings:Object.freeze(validated),
+   withheld:Object.freeze([Object.freeze({...held})])});
+}
+
+export function communionEditorialPreviewHtml(validation,{french=false}={}){
+ if(!validation?.ok)return "";
+ return '<main class="aoFRPilot" data-ao-formation-editorial-only>'+
+  '<header><small>'+(french?"FORMATION · ÉBAUCHE ÉDITORIALE":"FORMATION · EDITORIAL DRAFT")+'</small>'+
+  '<h1>'+(french?"Du Notre Père aux ablutions":"From the Lord’s Prayer to the ablutions")+'</h1>'+
+  '<p>'+(french?
+   "Vingt textes normatifs et trois textes facultatifs liés à un usage ancien ou local. L’antienne de communion propre à la Messe reste réservée.":
+   "Twenty normative fixed-text prayers and three optional older/local Communion Confiteor blocks. The variable Communion antiphon remains withheld.")+'</p></header>'+
+  validation.readings.map(rec=>'<article class="aoFRPilotArticle" data-ao-formation-prayer-block="'+clean(rec.block_id)+'">'+
+   '<small>'+clean(rec.block_id)+' · '+clean(rec.moment_id)+'</small>'+
+   (rec.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM"?
+    '<strong class="aoFRPilotOptional">'+(french?"USAGE LOCAL/ANCIEN FACULTATIF":"OPTIONAL OLDER/LOCAL CUSTOM")+'</strong>':"")+
+   '<h2>'+clean(langText(rec.heading,french))+'</h2>'+
+   '<p>'+clean(langText(rec.reading,french))+'</p>'+
+   '<h3>'+(french?"Observer le texte et ses attributions":"Read the words and speaking roles")+'</h3>'+
+   '<p>'+clean(langText(rec.observe,french))+'</p></article>').join("")+
+   '<p data-ao-formation-proper-held="'+clean(validation.withheld[0].block_id)+'">'+
+    (french?"Antienne variable réservée : ":"Variable antiphon held: ")+
+    clean(validation.withheld[0].block_id)+'</p></main>';
+}
