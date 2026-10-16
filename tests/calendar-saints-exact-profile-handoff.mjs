@@ -62,7 +62,7 @@ assert(!secondaryHtml.includes("data-cal-mass"));
 assert(renderSecondarySaintSection(supplementary,{language:"en"}).includes("Also honoured"));
 assert(!renderSecondarySaintSection(supplementary,{language:"en"}).includes("data-cal-secondary-saint-profile"));
 assert(renderSecondarySaintSection(supplementary,{language:"fr",
- profileIds:[modernTherese.id]}).includes("Vie &amp; sources")===false);
+ profileIds:[modernTherese.id]}).includes("Vie &amp; sources"));
 
 const exact=pilot.filter(x=>x.saint_id===link.saintsId);
 assert.equal(exact.length,1);
