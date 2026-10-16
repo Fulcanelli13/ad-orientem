@@ -42,6 +42,85 @@
         "SELECT_VENUE_ONLY_IF_USER_CHOOSES"
       ],
       "sourceQuotesNotReproduced": true
+    },
+    {
+      "id": "particular:IE:Dublin:StKevins:2026-Newman-High-Mass",
+      "sourceVenueName": "St Kevin's Church — Dublin Latin Mass Chaplaincy",
+      "sourceVenueIdentity": {
+        "country": "IE",
+        "city": "Dublin",
+        "parish": "Harrington Street",
+        "canonicalVenueId": null,
+        "identityStatus": "MATCH_TO_EXISTING_DIRECTORY_ID_REQUIRED"
+      },
+      "jurisdiction": "CHAPLAINCY_SPECIFIC_NOT_UNIVERSAL",
+      "sourceUrl": "https://static1.squarespace.com/static/5fc7d9f84168c7185c8793de/t/6abd27217199117f41002de4/1790781217379/2026%2BOctober%2BNews.pdf",
+      "sourcePublisher": "Dublin Latin Mass Chaplaincy",
+      "sourceDate": "2026-10",
+      "sourceKind": "CHAPLAINCY_NEWSLETTER_FIRST_PARTY",
+      "saintName": "St John Henry Newman",
+      "canonicalSaintId": "saint.john-henry-newman",
+      "feastDate": "2026-10-09",
+      "observanceKind": "SAINT_HIGH_MASS_ANNOUNCED_BY_CHAPLAINCY",
+      "massTimesAnnounced": [
+        "08:00",
+        "19:00"
+      ],
+      "extraHighMassAt": "19:00",
+      "highMassInSaintHonour": true,
+      "firstClassRelicBlessingAnnounced": true,
+      "formularySource": "UNIDENTIFIED",
+      "collectSecretPostcommunionSource": "UNIDENTIFIED",
+      "localRankReported": null,
+      "oldMissalSourceIdentity": "sancti:10-09:3:w",
+      "wouldDisplaceOldFeastIfFestiveMass": true,
+      "actualCelebrantSelectionVerified": false,
+      "historyGate": "2026_CHAPLAINCY_PROGRAM_ONLY",
+      "appliesTo1962UniversalCalendar": false,
+      "changesAnyOtherVenueOrMass": false,
+      "requiredBeforePublication": [
+        "VENUE_IDENTITY",
+        "TRADITIONAL_FORMULARY_IDENTIFICATION",
+        "OMITTED_ST_JOHN_LEONARDI_COMMEMORATIVE_ORATIONS",
+        "CELEBRATION_OUTCOME_IF_NEEDED"
+      ],
+      "sourceQuotesNotReproduced": true
+    },
+    {
+      "id": "particular:IE:Dublin:StKevins:2026-Luigi-Scrosoppi",
+      "sourceVenueName": "St Kevin's Church — Dublin Oratory in Formation",
+      "sourceVenueIdentity": {
+        "country": "IE",
+        "city": "Dublin",
+        "parish": "Harrington Street",
+        "canonicalVenueId": null,
+        "identityStatus": "MATCH_TO_EXISTING_DIRECTORY_ID_REQUIRED"
+      },
+      "jurisdiction": "ORATORIAN_LOCAL_CELEBRATION_NOT_UNIVERSAL",
+      "sourceUrl": "https://static1.squarespace.com/static/5fc7d9f84168c7185c8793de/t/6abd27217199117f41002de4/1790781217379/2026%2BOctober%2BNews.pdf",
+      "sourcePublisher": "Dublin Latin Mass Chaplaincy",
+      "sourceDate": "2026-10",
+      "sourceKind": "CHAPLAINCY_NEWSLETTER_FIRST_PARTY",
+      "saintName": "St Luigi Scrosoppi",
+      "canonicalSaintId": null,
+      "feastDate": "2026-10-05",
+      "observanceKind": "ORATORY_SAINT_CELEBRATION_ANNOUNCED",
+      "massTimesAnnounced": [],
+      "extraHighMassAt": null,
+      "highMassInSaintHonour": null,
+      "formularySource": "UNIDENTIFIED",
+      "collectSecretPostcommunionSource": "UNIDENTIFIED",
+      "canonizedOnFromSource": "2001",
+      "actualCelebrantSelectionVerified": false,
+      "historyGate": "2026_ORATORY_PROGRAM_ONLY",
+      "appliesTo1962UniversalCalendar": false,
+      "changesAnyOtherVenueOrMass": false,
+      "requiredBeforePublication": [
+        "CANONICAL_SAINT_ID_MATCH",
+        "VENUE_IDENTITY",
+        "DETAILS_OF_LITURGICAL_VS_DEVOTIONAL_CELEBRATION"
+      ],
+      "sourceQuotesNotReproduced": true
     }
   ],
   "nonEquivalenceRules": [
