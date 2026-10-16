@@ -472,7 +472,32 @@
       "evidence": "W92 Munich Van Dyck 3750x2736 and W96 Bilbao 6306x3784 are two separate originals",
       "nextAction": "Reconcile which physical original the existing curator record means; stop downloading more variants",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkSourceOutcome": {
+        "batch": "EXACT_PROTECTED_SELECTION_RECONCILIATION",
+        "status": "EXACT_OCT12_SELECTED_PHYSICAL_ORIGINAL_IMAGE_ACQUIRED",
+        "physicalOriginalId": "KMSKA-403",
+        "subjectId": "DEV-09",
+        "workId": "ART-nthony-van-yck-amentation-of-hrist",
+        "artist": "Anthony van Dyck",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Bewening_van_Christus_-_403_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+        "nativeAcquiredDimensions": [
+          3840,
+          5206
+        ],
+        "photoSha256": "6e55849609b8517d45d6fc4e53eb8a3074815df227268dc0b6ba44b3dfaef9b3",
+        "mobileFullSurfaceProof": true,
+        "rightsEvidence": "Museum/Commons CC0; release checklist not signed",
+        "sourceArchiveArtifact": 12062157122,
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38939068804",
+        "appOrRatingsChanged": false,
+        "neverSubstitute": [
+          "Munich Alte Pinakothek 606",
+          "Bilbao 85/221",
+          "Antwerp 404",
+          "Antwerp 598"
+        ]
+      }
     },
     {
       "categoryIndex": 136,
@@ -502,7 +527,19 @@
       "evidence": "W92 Rubens KMSKA 3840x3949 open source; W96 Basel 1160x1624 alternate",
       "nextAction": "Reconcile selected physical original; no more pixel hunting",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "exactHistoricalSelectionConvergence": {
+        "status": "EXACT_OCT12_SELECTED_PHYSICAL_ORIGINAL_PREVIOUSLY_ACQUIRED",
+        "museum": "KMSKA Antwerp",
+        "accession": "314",
+        "workId": "ART-eter-aul-ubens-he-oly-rinity",
+        "selectedSource": "data/calendar/sacred-art-w78-oct12-preferred-paintings-recovery-20261016.v1.json",
+        "acquiredIn": "W92",
+        "rightsEvidence": "Vlaamse Kunstcollectie/Commons CC0",
+        "releaseApproved": false,
+        "ratingsUnchanged": true,
+        "differentAlternateKept": "Basel G 1988.24"
+      }
     },
     {
       "categoryIndex": 142,
@@ -523,7 +560,7 @@
       "publicationApproved": false
     }
   ],
-  "lastReconciled": "2026-10-16 three hard subjects + Rubens Gregory colour alternate",
+  "lastReconciled": "2026-10-16 Full sixteen-category prior-selection reconciliation plus KMSKA 403 source proof",
   "w99Stats": {
     "attemptedPhotoFiles": 7,
     "downloadedAndDecoded": 7,
@@ -564,14 +601,14 @@
   },
   "mobilePhotoAcquisitionCheckpoint": {
     "priorLegacyStrictCoverage": "146/168 (not revised pending license/curatorial release gates)",
-    "newVerifiedFullPaintingPhotosExactSelectedOriginal": 6,
     "imageAcquisitionClosedCategories": [
       25,
       41,
       42,
       48,
       82,
-      129
+      129,
+      135
     ],
     "separatelyNewDifferentOriginalCandidateCategory": [
       43
@@ -606,7 +643,25 @@
     "countStillUnresolvedFromOriginal22": 16,
     "rightsAndCuratorStrictCoverage": "146/168 unchanged under original stricter release convention",
     "qaRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38937339059",
-    "batchArtifactId": 12061592533
+    "batchArtifactId": 12061592533,
+    "newlyRecoveredCategoryImagesFromInitialGapSet": 7,
+    "photoAcquisitionCategoryCoverage": 153,
+    "photoAcquisitionRatePct": 91.07,
+    "initialLegacyCoverage": 146,
+    "initialCategoryGapCount": 22,
+    "remainingFromInitial22Gaps": 15,
+    "distinction": "This is image acquisition coverage. Previous conservative source/curator/publication gate remains separate and cannot be inferred from photo counts.",
+    "exactPriorUserSelectionsPhotoMatched": [
+      135,
+      139
+    ],
+    "exactPriorUserSelectionsStillBlocked": [
+      43,
+      136,
+      142,
+      145
+    ],
+    "rightsApprovalsNotImplied": true
   },
   "threeHardSubjectBatch": {
     "targetedCategories": [
@@ -636,5 +691,19 @@
       12061907353
     ],
     "status": "ALL_3_SUBJECTS_HAVE_VISUALLY_INSPECTED_RESEARCH_IMAGES; CURATOR_AND_RIGHTS_GATES_REMAIN"
+  },
+  "selectedOriginalObjectReconciliation": {
+    "canonical": "data/calendar/sacred-art-review-uploads/20261016-16-category-object-reconciliation.v1.json",
+    "counts": {
+      "remainingAssignmentsAfter7Recoveries": 15,
+      "originalSixteenExamined": 16,
+      "protectedOct12Selections": 6,
+      "exactSelectedImageMatches": 2,
+      "protectedSelectedWorksStillWithIdentityOrImageHolds": 4,
+      "researchSubjectsWithExistingMobileCandidate": 10
+    },
+    "validatedAgainst": "data/calendar/sacred-art-w78-oct12-preferred-paintings-recovery-20261016.v1.json",
+    "perCategoryRatingsUnaffected": true,
+    "appUnaffected": true
   }
 }
