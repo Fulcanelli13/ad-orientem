@@ -7,6 +7,7 @@ const law=load(root+"p1-rubrical-permission-matrix.v1.json");
 const forms=load(root+"p1-1962-formulary-master.v1.json");
 const commonCrosswalk=load(root+"p1-canonical-common-source-crosswalk.v1.json");
 const additional=load(root+"p1-additional-common-candidates.v1.json");
+const additionalAudit=load(root+"p1-additional-common-app-audit.v1.json");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -65,7 +66,20 @@ assert.equal(new Set(additional.provisionalRows.map(x=>x.researchId)).size,28);
 assert.equal(new Set(additional.provisionalRows.map(x=>x.candidateCanonicalSourcePath)).size,28);
 assert.ok(additional.provisionalRows.every(x=>x.route===null&&x.approvedForRuntime===false&&x.approvedForNewSaintMass===false));
 assert.ok(additional.provisionalRows.every(x=>forms.forms.some(f=>f.id===x.researchId)));
-assert.equal(additional.provisionalRows.filter(x=>x.identityStatus==="UPSTREAM_CANDIDATE_NOT_YET_RUNTIME_VERIFIED").length,28);
+assert.equal(additionalAudit.sourceCandidateCount,28);
+assert.equal(additionalAudit.directTrilingualNineSectionCount,17);
+assert.equal(additionalAudit.partialSourceCount,11);
+assert.equal(additional.provisionalRows.filter(x=>x.nineSectionTrilingualReady===true).length,17);
+assert.equal(additional.provisionalRows.filter(x=>x.nineSectionTrilingualReady===false).length,11);
+for(const candidate of additional.provisionalRows){
+  const witness=additionalAudit.sourceEntries.find(x=>x.researchId===candidate.researchId);
+  const form=forms.forms.find(x=>x.id===candidate.researchId);
+  assert.equal(witness.sourcePath,candidate.candidateCanonicalSourcePath);
+  assert.equal(form.internalMissalReference.auditedSourcePath,witness.sourcePath);
+  assert.equal(form.internalMissalReference.sourcePath,witness.directNineSectionTrilingual?witness.sourcePath:null);
+  assert.equal(form.internalMissalReference.formularyReadyForNewSaint,false);
+  assert.equal(form.internalMissalReference.route,null);
+}
 assert.equal(additional.provisionalRows.length+commonCrosswalk.rows.length+additional.unmappedAmbiguousIndexRows.length,38);
 
 assert.equal(commonCrosswalk.sourcePathsVerified,7);
@@ -73,12 +87,14 @@ assert.equal(commonCrosswalk.directTrilingualSevenSectionPaths,6);
 assert.equal(commonCrosswalk.sourcePathsNeedingInheritedLanguageSections,0);
 assert.equal(commonCrosswalk.allSevenSectionSourceCompletenessVerified,7);
 assert.equal(commonCrosswalk.distinctSharedDoctorVernacularRecoveries,18);
-assert.equal(forms.sourceOwnedCommonPathsMapped,7);
-assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).length,7);
-assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath==null).length,31);
+assert.equal(forms.sourceOwnedCommonPathsMapped,24);
+assert.equal(forms.partialSourcePathsWithVerifiedCandidateCodes,11);
+assert.equal(forms.ambiguousUnmappedIndexRows,3);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).length,24);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath==null).length,14);
 assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritancePending===true).length,0);
 assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritanceVerified===true).length,1);
-assert.deepEqual(new Set(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).map(x=>x.internalMissalReference.sourcePath)),new Set(["Commune/C4","Commune/C4-1","Commune/C4a","Commune/C5","Commune/C5-1","Commune/C5a","Commune/C5b"]));
+assert.deepEqual(new Set(commonCrosswalk.rows.map(x=>x.candidateCanonicalSourcePath)),new Set(["Commune/C4","Commune/C4-1","Commune/C4a","Commune/C5","Commune/C5-1","Commune/C5a","Commune/C5b"]));
 for(const row of commonCrosswalk.rows){
  const form=forms.forms.find(x=>x.id===row.researchId);
  assert.ok(form,"Source row must own a preexisting Common research ID");
