@@ -404,20 +404,24 @@ try{
 
   const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
   await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:10000});
+  await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
     periods:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
     track:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
-    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect().width??0,
+    clockWidth:document.querySelector("#ao-calendar-modular-root .aoClockDial")?.getBoundingClientRect().width??0,
+    seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
+    obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
     selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
   assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
   assert.equal(inlineYear.track,1,"Liturgical Year must have one proportional timeline");
-  assert.ok(inlineYear.ringWidth>=105&&inlineYear.ringWidth<=160,"Year date ring is not phone-legible");
-  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone");
+  assert.ok(inlineYear.clockWidth>=250&&inlineYear.clockWidth<=390,"Interactive Clock is not phone-legible: "+JSON.stringify(inlineYear));
+  assert.ok(inlineYear.seasons>=8,"Year Clock did not expose interactive seasonal controls");
+  assert.equal(inlineYear.obsoleteRings,0,"The old mini-wheel still hides the interactive year");
+  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone: "+JSON.stringify(inlineYear));
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 
