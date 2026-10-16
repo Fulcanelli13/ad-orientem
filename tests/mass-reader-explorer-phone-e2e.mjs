@@ -90,6 +90,13 @@ try{
   assert.equal(overlay.moment,"AO.CARD.010");
   if(before.sourceBlock)assert.equal(overlay.selected,before.sourceBlock);
   assert.equal(overlay.hasLearnStage,false,"Active Mass cannot launch unavailable Formation hub");
+  if(choice.query.includes("lang=fr")){
+    assert.match(await page.locator("#ao-mass-explorer-root .aoMXTop").innerText(),/Explorer la Messe/);
+    assert.ok(await page.locator('#ao-mass-explorer-root .aoMXTranslation[lang="fr"]').count()>0,
+      "French reader must open approved French source translations, not English fallback");
+    assert.match(await page.locator("#ao-mass-explorer-root .aoMXDetails").first().innerText(),
+      /Commentaire existant du Guide/);
+  }
   assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-open-mass]').count(),0,
     "Reader study cannot offer another start-Mass button");
   await page.screenshot({path:resolve(out,choice.label+"-study.png"),animations:"disabled"});
