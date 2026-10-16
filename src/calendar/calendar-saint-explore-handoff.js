@@ -2,7 +2,7 @@
 // The Saints editorial bridge, not names or later feast dates, owns the link.
 // The canonical 1962 day resolver still owns rank, feast, Mass and Proper.
 export const CALENDAR_SAINT_PROFILE_HANDOFF_VERSION="ao-calendar-saints-exact-handoff-v1";
-const URL=new URL("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json",import.meta.url).href;
+const BRIDGE_URL=new URL("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json",import.meta.url).href;
 const iso=x=>typeof x==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&
   !Number.isNaN(Date.parse(x+"T12:00:00Z"))&&
   new Date(x+"T12:00:00Z").toISOString().slice(0,10)===x;
@@ -12,7 +12,7 @@ export async function loadCalendarSaintProfileBridge(fetcher=globalThis.fetch){
   if(cached)return cached;
   if(pending)return pending;
   if(typeof fetcher!=="function")return null;
-  pending=Promise.resolve().then(()=>fetcher(URL,{headers:{accept:"application/json"}}))
+  pending=Promise.resolve().then(()=>fetcher(BRIDGE_URL,{headers:{accept:"application/json"}}))
     .then(r=>r?.ok?r.json():null)
     .then(value=>{
       if(value?.schema!=="ao.saints.parallel-owner-identity-bridge.v1"||
