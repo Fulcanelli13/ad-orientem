@@ -12,6 +12,8 @@ on:
       - 'tests/calendar-p1-paschal-alternate-source-composition.mjs'
       - 'tests/calendar-p1-partial-common-source-reconciliation.mjs'
       - 'src/calendar/p1-partial-common-source-reconciliation.js'
+      - 'src/calendar/p1-papal-martyr-source-composition.js'
+      - 'tests/calendar-p1-papal-martyr-source-composition.mjs'
       - 'src/calendar/p1-internal-missal-link-resolution.js'
       - '.github/workflows/calendar-p1-traditional-formularies.yml'
   push:
@@ -32,6 +34,7 @@ jobs:
       - run: node tests/calendar-p1-doctor-common-inheritance.mjs
       - run: node tests/calendar-p1-paschal-alternate-source-composition.mjs
       - run: node tests/calendar-p1-partial-common-source-reconciliation.mjs
+      - run: node tests/calendar-p1-papal-martyr-source-composition.mjs
       - run: node tests/calendar-traditional-formulary-sources.mjs
       - run: node tests/calendar-traditional-adjudication.mjs
   app-source-discovery:
