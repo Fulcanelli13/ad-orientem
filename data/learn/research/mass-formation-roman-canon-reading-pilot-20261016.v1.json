@@ -1,0 +1,333 @@
+{
+  "schema": "ao-formation-canon-prayer-reading-pilot-v1",
+  "scope": "FORMATION_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "profile": "ORDINARY_SUNG",
+  "study_level": "DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "guide_owner": "data/presentation/guide-registry.v1.json",
+  "curriculum_owner": "data/learn/mass-formation-campion.v1.json",
+  "owner_note": "This is the existing 15-block Sung Guide Canon subdivision, not the 48-card LIVE reader or P0 Ultra Master canonical source segmentation.",
+  "editorial_note": "Descriptive English/French readings only. Biblical people named in Supra quae are not passage-level scriptural parallels. Doctrine and historical identifications beyond explicit words require separate P0 source certification and publication decision.",
+  "entries": [
+    {
+      "id": "AO.FORM.PRAYER.CANON.01",
+      "block_id": "AO.SM.B047",
+      "moment_id": "AO.CARD.014",
+      "stage_id": "MF04",
+      "text_anchor_en": "most merciful Father",
+      "heading": {
+        "en": "Prayer for the Church",
+        "fr": "Prière pour l’Église"
+      },
+      "reading": {
+        "en": "The Canon opens by addressing the merciful Father through Jesus Christ and asking Him to accept and bless the offerings. Its first named intention is for the Holy Catholic Church, followed by the Pope, the bishop, and those professing the Catholic and Apostolic faith.",
+        "fr": "Le Canon s’ouvre par une supplication au Père miséricordieux, par Jésus-Christ, pour qu’Il reçoive et bénisse les offrandes. Sa première intention nommée concerne la sainte Église catholique, puis le Pape, l’évêque et ceux qui professent la foi catholique et apostolique."
+      },
+      "observe": {
+        "en": "Notice the verbs requested for the Church: grant her peace, preserve, unite, and govern her. The paragraph concerns the whole Church rather than only the people physically present.",
+        "fr": "Observez les demandes pour l’Église : lui donner la paix, la garder, l’unir et la gouverner. Ce passage regarde l’Église entière, au-delà des seules personnes présentes."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.02",
+      "block_id": "AO.SM.B048",
+      "moment_id": "AO.CARD.014",
+      "stage_id": "MF04",
+      "text_anchor_en": "Remember, O Lord",
+      "heading": {
+        "en": "Remembering the living",
+        "fr": "Mémoire des vivants"
+      },
+      "reading": {
+        "en": "The prayer remembers named servants of God and all present, whose faith and devotion are known to Him. It extends the intention to their loved ones, the redemption of souls, and their hope of safety and salvation.",
+        "fr": "La prière fait mémoire de serviteurs de Dieu nommés, puis de tous les assistants dont Dieu connaît la foi et la dévotion. Elle étend l’intention à leurs proches, à la rédemption des âmes et à l’espérance de leur salut."
+      },
+      "observe": {
+        "en": "The Mass text records a silent commemoration between the named persons and the broader petition. It leaves names as placeholders; no private intentions are supplied by this study.",
+        "fr": "Le texte de la Messe indique une commémoration silencieuse entre les noms et la supplication plus large. Les noms restent des emplacements libres ; la présente étude n’invente aucune intention privée."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.03",
+      "block_id": "AO.SM.B049",
+      "moment_id": "AO.CARD.014",
+      "stage_id": "MF04",
+      "text_anchor_en": "In communion with",
+      "heading": {
+        "en": "In communion with the saints",
+        "fr": "En communion avec les saints"
+      },
+      "reading": {
+        "en": "This prayer venerates the memory of the ever-Virgin Mary and Saint Joseph, then names apostles, martyrs, and all the saints. It asks that God protect and help those praying through their merits and prayers.",
+        "fr": "Cette prière honore la mémoire de la toujours Vierge Marie et de saint Joseph, puis nomme les apôtres, les martyrs et tous les saints. Elle demande que Dieu protège et secoure ceux qui prient par leurs mérites et leurs prières."
+      },
+      "observe": {
+        "en": "The sequence is deliberately a list of persons named in the existing Roman text. It should not be silently shortened or replaced with another saints calendar; the words read here are the published ordinary witness.",
+        "fr": "La suite comporte une liste de personnes nommées dans le texte romain existant. Il ne faut pas la raccourcir discrètement ni la remplacer par un autre calendrier des saints : ce sont les paroles de l’ordinaire publié."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.04",
+      "block_id": "AO.SM.B050",
+      "moment_id": "AO.CARD.014",
+      "stage_id": "MF04",
+      "text_anchor_en": "Order our days in Thy peace",
+      "heading": {
+        "en": "Peace and deliverance",
+        "fr": "Paix et délivrance"
+      },
+      "reading": {
+        "en": "The prayer asks God to accept the oblation of the celebrant’s service and of the whole household. It seeks peace during earthly life, deliverance from eternal damnation, and inclusion among the elect.",
+        "fr": "La prière demande à Dieu de recevoir l’oblation du service du célébrant et de toute Sa famille. Elle demande la paix pendant la vie terrestre, la délivrance de la damnation éternelle et une place parmi les élus."
+      },
+      "observe": {
+        "en": "The movement goes from the present offering to the course of our days and finally to the hope expressed for eternity. These are the intentions named by the prayer itself.",
+        "fr": "Les paroles passent de l’offrande présente au cours de nos jours, puis à l’espérance exprimée pour l’éternité. Ce sont les intentions que nomme la prière elle-même."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.05",
+      "block_id": "AO.SM.B051",
+      "moment_id": "AO.CARD.014",
+      "stage_id": "MF04",
+      "text_anchor_en": "make blessed, approved",
+      "heading": {
+        "en": "A petition concerning the offering",
+        "fr": "Une demande concernant l’offrande"
+      },
+      "reading": {
+        "en": "The Canon petitions God to make the offering blessed, approved, ratified, reasonable, and acceptable, and asks that it become for us the Body and Blood of Jesus Christ.",
+        "fr": "Le Canon supplie Dieu de rendre l’offrande bénie, agréée, ratifiée, raisonnable et acceptable, et demande qu’elle devienne pour nous le Corps et le Sang de Jésus-Christ."
+      },
+      "observe": {
+        "en": "This prayer immediately precedes the words over the Host. Keep its preparatory petition distinct from the two following Consecration blocks rather than merging their texts.",
+        "fr": "Cette prière précède immédiatement les paroles sur l’Hostie. Il faut distinguer sa supplication préparatoire des deux blocs de la Consécration qui suivent."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.06",
+      "block_id": "AO.SM.B052",
+      "moment_id": "AO.CARD.015",
+      "stage_id": "MF05",
+      "text_anchor_en": "FOR THIS IS MY BODY.",
+      "heading": {
+        "en": "The words over the Sacred Host",
+        "fr": "Les paroles sur la sainte Hostie"
+      },
+      "reading": {
+        "en": "The published text recalls Christ taking bread before His Passion, raising His eyes, giving thanks, blessing, breaking, and giving it to His disciples. It then presents the words of Consecration over the Host.",
+        "fr": "Le texte publié rappelle que le Christ prit le pain avant Sa Passion, leva les yeux, rendit grâce, bénit, rompit le pain et le donna à Ses disciples. Viennent ensuite les paroles de la Consécration sur l’Hostie."
+      },
+      "observe": {
+        "en": "The source marks the priest’s subsequent genuflection, elevation of the Sacred Host, replacement of It, and second genuflection as a separate action. Its doctrinal significance belongs to the already sourced Consecration Formation lesson MF05.",
+        "fr": "La source distingue ensuite les gestes du prêtre : génuflexion, élévation de la sainte Hostie, repos de Celle-ci puis nouvelle génuflexion. La portée doctrinale est abordée dans la leçon de Formation MF05 déjà sourcée."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.07",
+      "block_id": "AO.SM.B053",
+      "moment_id": "AO.CARD.016",
+      "stage_id": "MF05",
+      "text_anchor_en": "FOR THIS IS THE CHALICE OF MY BLOOD",
+      "heading": {
+        "en": "The words over the Chalice",
+        "fr": "Les paroles sur le Calice"
+      },
+      "reading": {
+        "en": "The published prayer recalls Christ taking the Chalice after supper, giving thanks, blessing it, and presenting it to His disciples. It contains the words over the Chalice and the instruction to do these things in His memory.",
+        "fr": "La prière publiée rappelle que le Christ prit le Calice après le repas, rendit grâce, le bénit et le présenta à Ses disciples. Elle contient les paroles sur le Calice et l’instruction de faire ces choses en Sa mémoire."
+      },
+      "observe": {
+        "en": "As in the Host block, the genuflection, elevation and replacement of the Chalice are explicitly recorded as actions separate from the spoken text. The full theological exposition stays with MF05 and source-certified studies.",
+        "fr": "Comme pour l’Hostie, la génuflexion, l’élévation et le repos du Calice sont enregistrés comme des actions distinctes des paroles. L’explication théologique complète reste confiée à MF05 et aux études sourcées."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.08",
+      "block_id": "AO.SM.B054",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "calling to mind the blessed Passion",
+      "heading": {
+        "en": "The memorial and offering",
+        "fr": "Le mémorial et l’offrande"
+      },
+      "reading": {
+        "en": "The prayer recalls Christ’s Passion, Resurrection, and Ascension, then speaks of offering a pure, holy and immaculate Victim, the Bread of eternal life and the Chalice of everlasting salvation.",
+        "fr": "La prière rappelle la Passion, la Résurrection et l’Ascension du Christ, puis parle de l’offrande d’une Victime pure, sainte et immaculée, du Pain de la vie éternelle et du Calice du salut éternel."
+      },
+      "observe": {
+        "en": "The order of remembrance is stated explicitly in the text. This commentary identifies that order without creating additional links to biblical passages or independently certifying the vocabulary of sacrifice.",
+        "fr": "L’ordre des événements commémorés est explicite. Cette notice en relève la succession sans créer de nouveaux liens bibliques ni certifier indépendamment tout le vocabulaire du sacrifice."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.09",
+      "block_id": "AO.SM.B055",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "Abel",
+      "heading": {
+        "en": "The offerings of Abel, Abraham and Melchisedech",
+        "fr": "Les offrandes d’Abel, d’Abraham et de Melchisédech"
+      },
+      "reading": {
+        "en": "The text asks God to look favourably on the offerings and names the offerings of Abel, the sacrifice of Abraham, and what Melchisedech offered. These names and comparisons occur directly within the Canon prayer.",
+        "fr": "Le texte demande à Dieu de regarder favorablement les offrandes et nomme celles d’Abel, le sacrifice d’Abraham et ce que Melchisédech offrit. Ces noms et ces rapprochements figurent directement dans la prière du Canon."
+      },
+      "observe": {
+        "en": "This is an explicit biblical-person reference in the received Mass wording, but the source block does not supply precise book, chapter or verse citations. Those exact textual parallels should be added only after P0 certification.",
+        "fr": "Il s’agit de personnages bibliques explicitement nommés dans le texte reçu, mais ce bloc ne donne pas de références précises de livre, chapitre ou verset. Les parallèles exacts attendront leur certification par P0."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": [
+        "Abel",
+        "Abraham",
+        "Melchisedech"
+      ]
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.10",
+      "block_id": "AO.SM.B056",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "Thy holy Angel",
+      "heading": {
+        "en": "The heavenly altar and the communicants",
+        "fr": "L’autel céleste et les communiants"
+      },
+      "reading": {
+        "en": "The prayer asks that the offerings be carried by God’s holy Angel to His altar on high and petitions that those receiving the Body and Blood of His Son be filled with heavenly blessing and grace.",
+        "fr": "La prière demande que les offrandes soient portées par le saint Ange de Dieu à Son autel céleste et supplie que ceux qui reçoivent le Corps et le Sang de Son Fils soient remplis de bénédiction et de grâce."
+      },
+      "observe": {
+        "en": "The passage moves from a petition concerning the offering to a petition concerning its recipients. No speculative identification of the angel or historical explanation of the imagery is supplied.",
+        "fr": "Le passage va d’une demande concernant l’offrande à une demande concernant ceux qui la reçoivent. Aucune identification conjecturale de l’ange ni explication historique non vérifiée de l’image n’est ajoutée."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.11",
+      "block_id": "AO.SM.B057",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "a place of refreshment, light and peace",
+      "heading": {
+        "en": "Remembering the faithful departed",
+        "fr": "Mémoire des fidèles défunts"
+      },
+      "reading": {
+        "en": "The priest prays for departed servants of God, with placeholders for particular names, and extends the request to all who rest in Christ. The petition asks for refreshment, light and peace.",
+        "fr": "Le prêtre prie pour les serviteurs de Dieu défunts, en laissant des emplacements pour des noms particuliers, puis élargit la demande à tous ceux qui reposent dans le Christ. Il demande pour eux le rafraîchissement, la lumière et la paix."
+      },
+      "observe": {
+        "en": "The source also places a silent commemoration of the dead within this prayer. It corresponds structurally to the earlier remembrance of the living, without demanding that the user supply names.",
+        "fr": "La source insère aussi une commémoration silencieuse des défunts dans cette prière. Elle correspond, par sa place, à la mémoire antérieure des vivants, sans demander au lecteur de fournir des noms."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.12",
+      "block_id": "AO.SM.B058",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "thy sinful servants",
+      "heading": {
+        "en": "Sinners asking for mercy",
+        "fr": "Pécheurs qui implorent la miséricorde"
+      },
+      "reading": {
+        "en": "The prayer calls its speakers sinful servants trusting in God’s abundant mercy. It asks admission into the company of apostles, martyrs and all the saints through pardon rather than by reliance on their own merits.",
+        "fr": "La prière nomme ses locuteurs des serviteurs pécheurs qui mettent leur confiance dans l’abondante miséricorde de Dieu. Elle demande une place auprès des apôtres, des martyrs et de tous les saints, par le pardon plutôt qu’en s’appuyant sur leurs propres mérites."
+      },
+      "observe": {
+        "en": "Unlike the surrounding privately spoken source blocks, this block is marked PUBLIC_TEXT in the published Sung data. The original prayer’s contrast between merits and pardon is the focus of the reading.",
+        "fr": "Contrairement aux blocs privés voisins, cette section est marquée PUBLIC_TEXT dans la source publiée. L’opposition entre les mérites et le pardon constitue le centre de cette lecture."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.13",
+      "block_id": "AO.SM.B059",
+      "moment_id": "AO.CARD.017",
+      "stage_id": "MF04",
+      "text_anchor_en": "sanctify, quicken, bless",
+      "heading": {
+        "en": "All good things given through Christ",
+        "fr": "Tous ces biens donnés par le Christ"
+      },
+      "reading": {
+        "en": "The prayer speaks of God continually creating these good things and sanctifying, giving life to, blessing and bestowing them through Christ.",
+        "fr": "La prière dit que Dieu crée continuellement tous ces biens, les sanctifie, les vivifie, les bénit et nous les accorde par le Christ."
+      },
+      "observe": {
+        "en": "It is a short transitional prayer with its own words and block identity. Preserving it avoids collapsing the latter Canon into an undifferentiated paragraph.",
+        "fr": "C’est une brève prière de transition avec ses propres paroles et son identité. La conserver séparément évite de fondre la fin du Canon en un paragraphe indifférencié."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.14",
+      "block_id": "AO.SM.B060",
+      "moment_id": "AO.CARD.018",
+      "stage_id": "MF04",
+      "text_anchor_en": "Through him, and with him, and in him",
+      "heading": {
+        "en": "Through Him, with Him and in Him",
+        "fr": "Par Lui, avec Lui et en Lui"
+      },
+      "reading": {
+        "en": "The doxology directs all honour and glory to God the almighty Father, through, with and in Christ, in the unity of the Holy Ghost.",
+        "fr": "La doxologie adresse tout honneur et toute gloire à Dieu le Père tout-puissant, par le Christ, avec Lui et en Lui, dans l’unité du Saint-Esprit."
+      },
+      "observe": {
+        "en": "The existing block distinguishes the priest’s actions with Host and Chalice from the words of praise. It precedes, but is not identical to, the public concluding response.",
+        "fr": "Le bloc distingue les gestes du prêtre avec l’Hostie et le Calice des paroles de louange. Il précède la conclusion publique sans se confondre avec sa réponse."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CANON.15",
+      "block_id": "AO.SM.B061",
+      "moment_id": "AO.CARD.018",
+      "stage_id": "MF04",
+      "text_anchor_en": "World without end.",
+      "heading": {
+        "en": "The concluding Amen",
+        "fr": "L’Amen conclusif"
+      },
+      "reading": {
+        "en": "The publicly voiced conclusion says “World without end”, and the response is “Amen”. These are the closing exchange of the Canon before the next rite.",
+        "fr": "La conclusion audible se formule par « Dans tous les siècles des siècles » (l’anglais de la source dit « World without end »), et la réponse est « Amen ». Cet échange termine le Canon avant le rite suivant."
+      },
+      "observe": {
+        "en": "The source assigns the first part to the priest’s public text and the Amen to the response. No variable Proper is inserted and no ceremonial action is invented for this brief block.",
+        "fr": "La source attribue la première formule au texte public du prêtre et l’Amen à la réponse. Aucun Propre variable ni geste cérémoniel supplémentaire n’est inventé pour ce bref bloc."
+      },
+      "scripture_within_text": [],
+      "mentioned_biblical_persons_in_text": []
+    }
+  ]
+}
