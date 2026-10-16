@@ -27,7 +27,7 @@ export function massStudyStages(formation){
  * chronological map in this module and the existing topical course owner. */
 export function massStudyPathsHtml(stages,{french=false}={}){
  if(!Array.isArray(stages)||!stages.length)return "";
- return '<section class="aoMXStudyPaths" aria-label="'+tr(french,"Study the Mass by theme","Étudier la Messe par thème")+'">'+
+ return '<section id="ao-mx-themes" data-ao-mx-anchor="themes" class="aoMXStudyPaths" aria-label="'+tr(french,"Study the Mass by theme","Étudier la Messe par thème")+'">'+
   '<div class="aoMXStudyPathsHead"><small>'+tr(french,"ANOTHER WAY TO EXPLORE","UNE AUTRE FAÇON D’EXPLORER")+'</small>'+
   '<h2>'+tr(french,"Study by theme","Étudier par thème")+'</h2>'+
   '<p>'+tr(french,
