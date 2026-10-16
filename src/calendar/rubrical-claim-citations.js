@@ -342,45 +342,67 @@ export function calendarInseparableApostlesClaimForDay(resolution,corrections){
 
 // Source-certified absence is not proof by missing names alone. A negative
 // claim needs the explicit conflicting feast and *selected* 1962 Sunday.
+// A small reviewed identity manifest makes source-backed omissions extensible
+// in *one ledger*. These are audited examples, never an inferred rule that
+// all saints on Sundays are absent or that particular calendars have no feasts.
+const APPROVED_2026_OMISSION_IDENTITIES=Object.freeze({
+  "2026-07-05":Object.freeze({id:"PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED",saint:"SAINT_ANTHONY_MARY_ZACCARIA",principal:"tempora:Pent06-0:2:g"}),
+  "2026-07-12":Object.freeze({id:"PENT7_JOHN_GUALBERT_2026_OMITTED",saint:"SAINT_JOHN_GUALBERT",principal:"tempora:Pent07-0:2:g"}),
+  "2026-08-30":Object.freeze({id:"PENT14_ROSE_LIMA_2026_OMITTED",saint:"SAINT_ROSE_OF_LIMA",principal:"tempora:Pent14-0:2:g"}),
+  "2026-10-04":Object.freeze({id:"FRANCIS_ASSISI_2026_SUNDAY_OMISSION",saint:"SAINT_FRANCIS_OF_ASSISI",principal:"tempora:Pent19-0:2:g"}),
+  "2026-11-22":Object.freeze({id:"PENT24_CECILIA_2026_OMITTED",saint:"SAINT_CECILIA",principal:"tempora:Pent24-0:2:g"}),
+  "2026-12-06":Object.freeze({id:"ADVENT2_NICHOLAS_2026_OMITTED",saint:"SAINT_NICHOLAS_MYRA",principal:"tempora:Adv2-0:1:v"})
+});
+const OMISSION_CLASS_WITNESS="https://www.1962ordo.com/feast/";
+const OMISSION_INDEPENDENT_ORDO="https://gcatholic.org/calendar/2026/Extraordinary-en";
+const historicFrancisWitness=Object.freeze({
+  observedWitness:"https://ordo.fsspx.org/day/2026-10-04?lang=en",
+  feastClassWitness:"https://ordo.fsspx.org/day/2027-10-04",
+  independent1962Contrast:"https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737"
+});
 export function calendarOmittedFeastClaimForDay(resolution,corrections){
-  if(corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
-     resolution?.date!=="2026-10-04"||
+  const date=resolution?.date,approved=APPROVED_2026_OMISSION_IDENTITIES[date];
+  if(!approved||corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
      resolution?.status!=="ready"||resolution?.proper?.status!=="ready"||
-     resolution?.day?.main?.id!=="tempora:Pent19-0:2:g"||
-     resolution?.day?.main?.path!=="Tempora/Pent19-0"||
-     resolution?.proper?.data?.sourcePath!=="Tempora/Pent19-0"||
+     resolution?.day?.main?.id!==approved.principal||
      !Array.isArray(resolution.day.commemorations)||
      resolution.day.commemorations.length!==0||
-     canonical1962Commemorations(resolution).length!==0)return Object.freeze([]);
+     canonical1962Commemorations(resolution).length!==0||
+     new Date(date+"T12:00:00Z").getUTCDay()!==0)return Object.freeze([]);
+  const path=resolution.day.main.path;
+  if(path!=="Tempora/"+approved.principal.split(":")[1]||
+     resolution.proper.data?.sourcePath!==path)return Object.freeze([]);
   const entries=(Array.isArray(corrections.nonCommemorationWitnesses)?
-    corrections.nonCommemorationWitnesses:[]).filter(x=>x?.date===resolution.date);
-  if(entries.length!==1)return Object.freeze([]);
+    corrections.nonCommemorationWitnesses:[]).filter(x=>x?.date===date);
+  if(entries.length!==1)return Object.freeze([]); // Duplicate source claim is conflict.
   const w=entries[0],p=w.principal,excluded=w.impeded;
-  if(w.id!=="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"||
-     w.scope!=="1962_GENERAL_ROMAN_CALENDAR"||
-     p?.sourcePath!==resolution.proper.data.sourcePath||
-     p?.sourceId!==resolution.day.main.id||
-     p?.class!==2||p?.kind!=="II_CLASS_SUNDAY"||
-     excluded?.sourcePath!=="Sancti/10-04"||
-     excluded?.class!==3||
-     excluded?.saint!=="SAINT_FRANCIS_OF_ASSISI"||
-     excluded?.fixedMonthDay!=="10-04"||
+  const mainRank=Number(approved.principal.match(/:([1-4]):[a-z]{1,3}$/)?.[1]);
+  const clause=mainRank===1?"RG 111(a)":"RG 111(b)";
+  if(w.id!==approved.id||w.scope!=="1962_GENERAL_ROMAN_CALENDAR"||
+     p?.sourcePath!==path||p?.sourceId!==approved.principal||
+     p?.class!==mainRank||
+     p?.kind!==(mainRank===1?"I_CLASS_ADVENT_SUNDAY":"II_CLASS_SUNDAY")||
+     excluded?.sourcePath!=="Sancti/"+date.slice(5)||
+     excluded?.class!==3||excluded?.saint!==approved.saint||
+     excluded?.fixedMonthDay!==date.slice(5)||
      w.disposition!=="OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED"||
      !Array.isArray(w.clauses)||w.clauses.length!==3||
      w.clauses[0]!=="RG 91"||w.clauses[1]!=="RG 93"||
-     w.clauses[2]!=="RG 111(b)"||
+     w.clauses[2]!==clause||
      w.explanationOnly!==true||w.changes1962Mass!==false||
      w.doesNotDetermineParticularCalendar!==true||
      !w.en?.trim()||!w.fr?.trim())return Object.freeze([]);
-  const expected={
-    observedWitness:"https://ordo.fsspx.org/day/2026-10-04?lang=en",
-    feastClassWitness:"https://ordo.fsspx.org/day/2027-10-04",
-    independent1962Contrast:"https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737"
+  const witnesses=date==="2026-10-04"?historicFrancisWitness:{
+    observedWitness:"https://ordo.fsspx.org/day/"+date+"?lang=en",
+    feastClassWitness:OMISSION_CLASS_WITNESS,
+    independent1962Contrast:OMISSION_INDEPENDENT_ORDO
   };
-  if(Object.entries(expected).some(([k,url])=>w[k]!==url))return Object.freeze([]);
+  if(Object.entries(witnesses).some(([k,url])=>w[k]!==url))return Object.freeze([]);
+  if(date!=="2026-10-04"&&
+     w.sourceReview!=="DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026")
+    return Object.freeze([]);
   return Object.freeze([Object.freeze({
-    claimId:w.id,
-    date:resolution.date,
+    claimId:w.id,date,
     claimKind:"SOURCE_CERTIFIED_OMITTED_SAINT_FEAST",
     observedPrincipalId:resolution.day.main.id,
     impededFeastPath:excluded.sourcePath,

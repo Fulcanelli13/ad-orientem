@@ -222,6 +222,49 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
        "An omitted October 4 feast cannot be carried as a commemoration to October 5");
    }
+   if(width===390){
+     const sourceSurvey=await page.evaluate(async()=>{
+       const dates=["2026-07-05","2026-07-12","2026-08-30","2026-11-22","2026-12-06"];
+       const resolver=window.AO_RUNTIME_V8.resolver;
+       return Promise.all(dates.map(async date=>{
+         const r=await resolver.resolveDay(date);
+         return {date,status:r?.status,main:r?.day?.main?.id,mainPath:r?.day?.main?.path,
+           properPath:r?.proper?.data?.sourcePath,comms:r?.day?.commemorations?.map(x=>x.id)};
+       }));
+     });
+     console.log("BATCH_OMISSION_SOURCE_AUDIT",JSON.stringify(sourceSurvey));
+     for(const [date,id,clause] of [
+       ["2026-07-05","PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED","RG 111(b)"],
+       ["2026-07-12","PENT7_JOHN_GUALBERT_2026_OMITTED","RG 111(b)"],
+       ["2026-08-30","PENT14_ROSE_LIMA_2026_OMITTED","RG 111(b)"],
+       ["2026-11-22","PENT24_CECILIA_2026_OMITTED","RG 111(b)"],
+       ["2026-12-06","ADVENT2_NICHOLAS_2026_OMITTED","RG 111(a)"],
+     ]){
+       assert.equal(await page.evaluate(async d=>window.AO_CALENDAR_APP_V1.select(d),date),true);
+       await page.waitForFunction(d=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===d,
+         date,{timeout:55000});
+       const c=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="'+id+'"]');
+       const exists=await c.count();
+       if(!exists){
+         const source=await page.evaluate(()=>{
+           const r=window.AO_RUNTIME_V8?.store?.getState?.()?.resolution;
+           return {date:r?.date,status:r?.status,main:r?.day?.main,comms:r?.day?.commemorations,
+             properPath:r?.proper?.data?.sourcePath,properStatus:r?.proper?.status};
+         });
+         console.log("BATCH_OMISSION_MISMATCH",date,JSON.stringify(source));
+       }
+       await c.waitFor({state:"attached",timeout:30000});
+       assert.match(await c.textContent(),new RegExp(clause.replace(/[()]/g,x=>"\\"+x)));
+       assert.equal(await c.locator("a").first().getAttribute("href"),
+         "https://ordo.fsspx.org/day/"+date+"?lang=en");
+       assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     }
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-12-13")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-12-13",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "Disputed St Lucy/Advent III must remain without a certified omission claim");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
