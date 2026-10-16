@@ -72,8 +72,20 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
- await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="novena:annunciation",
-   null,{timeout:9000});
+ try{
+   await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="novena:annunciation",
+     null,{timeout:7000});
+ }catch(error){
+   console.error("Scripture return-focus diagnostics",await page.evaluate(()=>({
+     focused:document.activeElement?.outerHTML?.slice(0,300),
+     buttons:[...document.querySelectorAll("#ao-scripture-overlay [data-scripture-open-related-object]")].map(x=>x.dataset.scriptureOpenRelatedObject),
+     relatedOpen:document.querySelector("#ao-scripture-overlay .aoScriptureRelated")?.open,
+     surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+     pray:globalThis.AO_PRAY_APP_V1?.status?.()?.open,
+     reader:globalThis.AO_SCRIPTURE_APP_V1?.status?.()
+   })));
+   throw error;
+ }
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
