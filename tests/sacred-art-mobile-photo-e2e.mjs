@@ -55,7 +55,10 @@ try {
       if(!image)return {photoPresent:false};
       const rect=image.getBoundingClientRect();
       const frame=image.closest('.imageframe').getBoundingClientRect();
+      const grid=image.closest('.photogrid');
+      const gridCols=grid?getComputedStyle(grid).gridTemplateColumns.trim().split(/\\s+/).length:0;
       return {photoPresent:true,objectFit:getComputedStyle(image).objectFit,
+        photoGridColumns:gridCols,
         imageBoxWidth:Math.round(rect.width),frameWidth:Math.round(frame.width),
         imageBoxHeight:Math.round(rect.height),frameHeight:Math.round(frame.height),
         docWidth:document.documentElement.scrollWidth,windowWidth:innerWidth,
@@ -63,6 +66,8 @@ try {
     });
     outcome.layoutChecks.push({index,subject:c.label,...view,
       containFit:view.objectFit==='contain',
+      singlePhotoColumn:!view.photoPresent||view.photoGridColumns===1,
+      enoughMobilePaintingSpace:!view.photoPresent||view.frameHeight>=300,
       noImageFrameOverflow:!view.photoPresent||(view.imageBoxWidth<=view.frameWidth+2 &&
         view.imageBoxHeight<=view.frameHeight+2)});
     if([1,11,103,135,142,152].includes(index)){
@@ -102,7 +107,7 @@ try {
   outcome.browserLoadChecks={successful:distinct.length-outcome.broken.length,
     failures:outcome.broken.length,undersizeMobileCandidates:outcome.unavailable.length,
     note:'Failures may include external 403/429/network outages; retry before treating as an invalid artwork.'};
-  const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.noImageFrameOverflow));
+  const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow));
   outcome.layoutFailures=badLayout;
   if(pageErrors.length)outcome.notes.push('Gallery JavaScript raised errors; review pageErrors.');
   writeFileSync(output+'/report.json',JSON.stringify(outcome,null,2)+'\n');
