@@ -199,3 +199,23 @@ One key impact: the new family consensus counts cannot be misrepresented as sour
 
 **Current decision:** Source harvesting has nearly universal general-event coverage and strong 2-family coverage. Next step should focus **editorial scope coherence/short/long boundaries on the 107 already plural-source events**, not unbounded new family proliferation or deciding a winner by source frequency. Later compose user-editable short/extended/full *reference* choices, subject to the existing Bible reader, translation and Catholic textual fidelity gates; no public app changes yet.
 
+
+## Phase 7 — classify existing 460 published readings; zero new source rows
+
+**Authoritative active research master:** `data/explore/biblical-pericope-comparative-full-master.v7.json`. The v6 master and strict boundary audit remain the fixed source baseline; v7 preserves all 460 publisher-verbatim references, publisher URLs, original variant flags, the exact canonical 151/37 registry and adds a review classifier. Source harvest totals are **unchanged**.
+
+**Source evidence and editorial analysis are separate dimensions**: 149/151 with a qualifying source; 107/151 with at least two independent original editors; 57/151 with three or more. Strict publisher-identical contiguous pericope boundary agreement exists for 27/151 events (23 coincide with the Atlas anchor). A length heuristic of 18 or fewer verses splits those 27 into 20 compact and 7 extended/other; this **does not** mean a compact range is a publisher-sanctioned abridgement. Of 460 records, only **29** rows from **26** events explicitly carry a publisher SHORT/HIGHLIGHT type, including source-original mixed/noncontiguous lectionary cuts; these must retain omitted-verse notation and context review.
+
+**151-event triage queues:**
+- **20** strict same-boundary compact ranges, need context/fidelity review. Examples: Genesis 11:1–9 Babel (4 agreeing editor families), Luke 1:26–38 Annunciation (3), Matthew 4:1–11 Temptations (3).
+- **7** strict same-boundary longer/uncertain ranges, need shorter original editorial alternatives where available. Examples: Genesis 3:1–24 Fall, Genesis 22:1–19 Abraham/Isaac. Whole-story consensus ≠ concise abridgement.
+- **14** multisource events with different cuts and one or more explicit publisher SHORT/HIGHLIGHT rows.
+- **66** multisource events whose publishers have differing exact scopes but no explicit SHORT/HIGHLIGHT row.
+- **42** events with only one qualified independent source-family record, needing independent corroboration.
+- **2** no qualifying purpose-selected publisher source: Daniel 14 Bel and Dragon. Do not infer selection from general annual Bible assignments.
+
+**For manual editing (NOT an app selection):** `AO_Biblical_Excerpt_Master_Matrix_v7.xlsx` — 10 worksheets including 151 event triage, 107 multisource comparisons, 29 original short/highlight references, 27 exact agreeing ranges, all 460 reference annotations, targeted source queues, 37 sections and an intentionally unfilled 107-event editorial worksheet. Its dashboard values reconcile with the source JSON. Companion downloadable v7 JSON and CSVs contain the same record-level classification. No verse text copied. No automatic preferred excerpt selected.
+
+**Method and safety gates:** preserve each publisher's literal reference; do not equate length <=18 with true published shortened version; do not equate Gospel parallels or theological context with identical verses; no inferred Vulgate/Greek crosswalk for Esther/Sirach/Susanna/Daniel; no unverified editor families treated as votes; no AI-authored narrative. Existing Bible editions, native Bible reader, Atlas registry, Mass/Calendar and production app unchanged. `tests/biblical-pericope-source-classification-v7.mjs` locks canonical IDs, source count, independent-family counts, review buckets, provenance, explicit-short variants and zero publication approvals.
+
+**Next phase:** editorial readers should examine the **20 compact exact-boundary clusters first**, testing context and Catholic book/version compatibility, then the 14 competing-published-short cases and the 7 longer exact-boundary clusters. This prioritizes *quality of actual scripture selected*, not volume of citations; nothing yet approved for production.
