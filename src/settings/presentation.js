@@ -281,7 +281,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       updateButtons+
       (vm.canonicalHost?"":infoRow(L("Documented install site","Site d’installation documenté"),
         L("A separate site — not an update to this installation","Un site distinct — pas une mise à jour de cette installation"),
-        '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("GitHub Pages ↗","GitHub Pages ↗"))+'</a>'))) +
+        '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("GitHub Pages ↗","GitHub Pages ↗"))+'</a>')) +
       note(esc(updateExplanation)));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
