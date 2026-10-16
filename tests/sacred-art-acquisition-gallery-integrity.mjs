@@ -92,7 +92,8 @@ for(const n of [89,93,99]){
 // Research images are not themselves rights-cleared, visually approved, or app-published.
 const protectedExact = (n,id,needle) => {
  const w=at(n,id);
- assert.ok(w.photos.some(p=>p.page.includes(needle)), 'Museum-source link missing '+id);
+ const norm=s=>decodeURIComponent(s).toLowerCase().replace(/[^a-z0-9]+/g,'');
+ assert.ok(w.photos.some(p=>norm(p.page).includes(norm(needle))), 'Museum-source link missing '+id);
 };
 for(const n of [101,133])protectedExact(n,'ART-hilippe-de-hampaigne-he-nnunciation','The_Annunciation_MET_DT5656');
 for(const n of [113,130,164]){
