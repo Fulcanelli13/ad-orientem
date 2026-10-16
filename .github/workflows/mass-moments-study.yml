@@ -16,6 +16,8 @@ on:
       - 'data/learn/research/mass-formation-lebrun-1843-source-collation-20261016.v1.json'
       - 'data/learn/research/mass-formation-lebrun-epiclesis-tome-iii-20261016.v1.json'
       - 'scripts/build-mass-canon-deep-review.py'
+      - 'scripts/build-mass-explorer-editorial-bridge.mjs'
+      - 'tests/mass-explorer-editorial-bridge.mjs'
       - 'tests/mass-prayer-editorial-review-browser.mjs'
       - 'tests/mass-prayer-reading-pilot.mjs'
       - 'scripts/build-mass-prayer-editorial-review.mjs'
@@ -59,10 +61,12 @@ jobs:
       - run: node tests/mass-prayer-reading-pilot.mjs
       - run: node scripts/build-mass-prayer-editorial-review.mjs
       - run: python3 scripts/build-mass-canon-deep-review.py
+      - run: node scripts/build-mass-explorer-editorial-bridge.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/mass-prayer-editorial-review-browser.mjs
+      - run: node tests/mass-explorer-editorial-bridge.mjs
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
@@ -75,5 +79,6 @@ jobs:
             artifacts/mass-explorer-p1/
             artifacts/mass-source-context-p1/
             artifacts/p2-formation-prayer-review/
+            artifacts/p2-mass-explorer-bridge/
           if-no-files-found: warn
           retention-days: 14
