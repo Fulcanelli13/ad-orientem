@@ -51,7 +51,8 @@
     "No new map pins, saints, Missal observances or image rights may be promoted from this registry.",
     "The 24 curated variant leads overlap with eight of the nine previously documented aliases; Wenceslas is the additional prior alias. None creates a certified person identity.",
     "W78 sourced alias lookup navigation is research-only and links existing source-index records; it is NOT a certified person identity, feast, relic, person-to-site relationship or canonical key rename.",
-    "For four matching Doctor/archive key pairs, retain both source keys and require Calendar owner's precise source-ID equivalence approval; Francis of Assisi stays held, Thérèse's earlier owner bridge remains unchanged."
+    "For four matching Doctor/archive key pairs, retain both source keys and require Calendar owner's precise source-ID equivalence approval; Francis of Assisi stays held, Thérèse's earlier owner bridge remains unchanged.",
+    "The three shared relic owner-subject IDs are same-source-record references across literal shrine names, not authenticated relics or verified saint identity equivalences. Distinct saint subjects sharing a physical shrine remain distinct."
   ],
   "summary": {
     "shrine_name_records": 119,
@@ -108,6 +109,16 @@
       "calendars_changed": 0,
       "geographic_pins_added": 0,
       "art_approvals_added": 0
+    },
+    "residual_source_owner_38_tiers": {
+      "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY": 2,
+      "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY": 19,
+      "ART_RESEARCH_ONLY_NO_LEDGER_KEY": 2,
+      "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY": 15,
+      "duplicated_relic_owner_subjects_across_all_119": 3,
+      "duplicated_louis_de_montfort_name_strings": 2,
+      "distinct_relic_subject_ids_total": 92,
+      "relational_person_identity_approvals": 0
     }
   },
   "records": [
@@ -157,7 +168,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Jacques-Désiré Laval",
@@ -208,7 +221,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Marie-Louise Trichet",
@@ -261,7 +276,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Adalbert of Prague",
@@ -313,7 +330,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Agatha of Sicily",
@@ -398,7 +417,9 @@
         "candidate_alias": "Saint Agatha of Sicily",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Alphonsus Liguori",
@@ -471,7 +492,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ambrose of Milan",
@@ -542,7 +565,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint André Bessette",
@@ -628,7 +653,9 @@
         "candidate_alias": "Saint André Bessette",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew Kaggwa",
@@ -674,7 +701,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew the Apostle",
@@ -775,7 +804,9 @@
         "candidate_alias": "Saint Andrew the Apostle",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anne",
@@ -863,7 +894,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anthony of Padua",
@@ -986,7 +1019,9 @@
         ],
         "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Apollinaris",
@@ -1042,7 +1077,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Augustine of Hippo",
@@ -1110,7 +1147,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartholomew the Apostle",
@@ -1211,7 +1250,9 @@
         "candidate_alias": "Saint Bartholomew the Apostle",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartolo Longo",
@@ -1262,7 +1303,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Benedict of Nursia",
@@ -1376,7 +1419,9 @@
         "candidate_alias": "Saint Benedict of Nursia",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bernadette Soubirous",
@@ -1468,7 +1513,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Beuno",
@@ -1516,7 +1563,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Brigid of Kildare",
@@ -1572,7 +1621,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Casimir",
@@ -1628,7 +1679,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine Labouré",
@@ -1694,7 +1747,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine of Siena",
@@ -1806,7 +1861,9 @@
         ],
         "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charbel Makhlouf",
@@ -1891,7 +1948,9 @@
         "candidate_alias": "Saint Charbel Makhlouf",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Borromeo",
@@ -1947,7 +2006,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Lwanga",
@@ -2033,7 +2094,9 @@
         "candidate_alias": "Saint Charles Lwanga",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Clare of Assisi",
@@ -2118,7 +2181,9 @@
         "candidate_alias": "Saint Clare of Assisi",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Claude La Colombière",
@@ -2169,7 +2234,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Columbanus",
@@ -2221,7 +2288,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Denis of Paris",
@@ -2290,7 +2359,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic",
@@ -2359,7 +2430,15 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-dominic-de-guzman",
+          "other_shrine_name": "Saint Dominic de Guzmán",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic de Guzmán",
@@ -2454,7 +2533,15 @@
         "candidate_alias": "Saint Dominic de Guzmán",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-dominic-de-guzman",
+          "other_shrine_name": "Saint Dominic",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Edward the Confessor",
@@ -2539,7 +2626,9 @@
         "candidate_alias": "Saint Edward the Confessor",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Elizabeth Ann Seton",
@@ -2596,7 +2685,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Eusebius of Vercelli",
@@ -2652,7 +2743,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Faustina Kowalska",
@@ -2714,7 +2807,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis de Sales",
@@ -2826,7 +2921,9 @@
         ],
         "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis of Assisi",
@@ -2928,7 +3025,9 @@
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false,
         "relation": "SAME_NAME_HISTORICAL_AND_VOCATIONAL_RESEARCH_NOT_OWNER_APPROVED"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis Xavier",
@@ -2990,7 +3089,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francisco Marto",
@@ -3047,7 +3148,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Gervasius of Milan",
@@ -3099,7 +3202,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Helena",
@@ -3156,7 +3261,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Hilary of Poitiers",
@@ -3218,7 +3325,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ignatius of Loyola",
@@ -3280,7 +3389,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Isaac Jogues",
@@ -3340,7 +3451,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jacinta Marto",
@@ -3397,7 +3510,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint James the Greater",
@@ -3472,7 +3587,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jane Frances de Chantal",
@@ -3528,7 +3645,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean de Brébeuf",
@@ -3575,7 +3694,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean-Marie Vianney",
@@ -3679,7 +3800,9 @@
         "candidate_alias": "Saint Jean-Marie Vianney",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joachim",
@@ -3732,7 +3855,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joan of Arc",
@@ -3790,7 +3915,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Bosco",
@@ -3846,7 +3973,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John de Lalande",
@@ -3894,7 +4023,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Neumann",
@@ -3958,7 +4089,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John of the Cross",
@@ -4066,7 +4199,9 @@
         ],
         "requested_owner_acknowledgement": "CALENDAR_DOCTORS_AND_SAINTS_HISTORICAL_SOURCE_ID_AND_PERSON_EQUIVALENCE",
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Paul II",
@@ -4122,7 +4257,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Baptist",
@@ -4191,7 +4328,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Evangelist",
@@ -4265,7 +4404,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint José de Anchieta",
@@ -4321,7 +4462,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joseph",
@@ -4402,7 +4545,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Josephine Bakhita",
@@ -4487,7 +4632,9 @@
         "candidate_alias": "Saint Josephine Bakhita",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Juan Diego",
@@ -4585,7 +4732,9 @@
         "candidate_alias": "Saint Juan Diego",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Julienne of Cornillon",
@@ -4631,7 +4780,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Junípero Serra",
@@ -4687,7 +4838,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kateri Tekakwitha",
@@ -4745,7 +4898,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Katharine Drexel",
@@ -4801,7 +4956,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kizito",
@@ -4853,7 +5010,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Leonard of Noblac",
@@ -4900,7 +5059,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis de Montfort",
@@ -4959,7 +5120,15 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-louis-marie-grignion-de-montfort",
+          "other_shrine_name": "Saint Louis-Marie de Montfort",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis-Marie de Montfort",
@@ -5018,7 +5187,15 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-louis-marie-grignion-de-montfort",
+          "other_shrine_name": "Saint Louis de Montfort",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louise de Marillac",
@@ -5076,7 +5253,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Lucy of Syracuse",
@@ -5177,7 +5356,9 @@
         "candidate_alias": "Saint Lucy of Syracuse",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Luke the Evangelist",
@@ -5239,7 +5420,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Margaret Mary Alacoque",
@@ -5302,7 +5485,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mark the Evangelist",
@@ -5393,7 +5578,9 @@
         "candidate_alias": "Saint Mark the Evangelist",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martha of Bethany",
@@ -5449,7 +5636,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin de Porres",
@@ -5534,7 +5723,9 @@
         "candidate_alias": "Saint Martin de Porres",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin of Tours",
@@ -5596,7 +5787,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mary Magdalene",
@@ -5669,7 +5862,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthew the Apostle",
@@ -5770,7 +5965,9 @@
         "candidate_alias": "Saint Matthew the Apostle",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthias the Apostle",
@@ -5871,7 +6068,9 @@
         "candidate_alias": "Saint Matthias the Apostle",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maurice and the Theban martyrs",
@@ -5956,7 +6155,9 @@
         "candidate_alias": "Saint Maurice and the Theban martyrs",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maximin",
@@ -6002,7 +6203,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Meinrad",
@@ -6049,7 +6252,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Michael the Archangel",
@@ -6123,7 +6328,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Monica",
@@ -6179,7 +6386,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas",
@@ -6247,7 +6456,15 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-nicholas-of-myra",
+          "other_shrine_name": "Saint Nicholas of Myra",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas of Myra",
@@ -6342,7 +6559,15 @@
         "candidate_alias": "Saint Nicholas of Myra",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [
+        {
+          "shared_owner_subject_id": "subject:saint-nicholas-of-myra",
+          "other_shrine_name": "Saint Nicholas",
+          "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
+        }
+      ],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oliver Plunkett",
@@ -6390,7 +6615,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oscar Romero",
@@ -6475,7 +6702,9 @@
         "candidate_alias": "Saint Oscar Romero",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Patrick",
@@ -6551,7 +6780,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Paul the Apostle",
@@ -6619,7 +6850,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter Chanel",
@@ -6675,7 +6908,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter the Apostle",
@@ -6768,7 +7003,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Philip Neri",
@@ -6824,7 +7061,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Pio of Pietrelcina",
@@ -6909,7 +7148,9 @@
         "candidate_alias": "Saint Pio of Pietrelcina",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Protasius of Milan",
@@ -6961,7 +7202,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Quentin",
@@ -7013,7 +7256,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint René Goupil",
@@ -7061,7 +7306,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rita of Cascia",
@@ -7113,7 +7360,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rose of Lima",
@@ -7169,7 +7418,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Saturninus",
@@ -7225,7 +7476,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Scholastica",
@@ -7281,7 +7534,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
@@ -7333,7 +7588,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stanislaus of Kraków",
@@ -7418,7 +7675,9 @@
         "candidate_alias": "Saint Stanislaus of Kraków",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stephen of Hungary",
@@ -7474,7 +7733,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Teresa of Ávila",
@@ -7536,7 +7797,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thérèse of Lisieux",
@@ -7665,7 +7928,9 @@
           "observed_source_id": "sancti:10-03:3:w"
         },
         "relation": "EXISTING_SOURCE_OWNER_BRIDGE_PRESERVED_NO_KEY_RENAME"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas Aquinas",
@@ -7727,7 +7992,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas the Apostle",
@@ -7795,7 +8062,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Titus",
@@ -7851,7 +8120,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Turibius of Astorga",
@@ -7897,7 +8168,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Vincent de Paul",
@@ -7961,7 +8234,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Wenceslas",
@@ -8051,7 +8326,9 @@
         "candidate_alias": "Saint Wenceslas",
         "evidence_class": "PREVIOUSLY_RECORDED_EDITORIAL_ALIAS",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Willibrord",
@@ -8103,7 +8380,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Winefride",
@@ -8156,7 +8435,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "The Three Magi",
@@ -8208,7 +8489,9 @@
         "canonical_saint_id_created": false,
         "calendar_mass_authorized": false,
         "shrine_person_life_relation_approved": false
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
     },
     {
       "legacy_shrine_person_or_group_name": "Uganda Martyrs",
@@ -8297,7 +8580,9 @@
         "candidate_alias": "Uganda Martyrs",
         "evidence_class": "CURATED_VARIANT_FROM_PRIOR_W78_RESEARCH",
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
-      }
+      },
+      "shared_original_relic_subject_name_references": [],
+      "residual_source_owner_research_tier": null
     }
   ]
 }
