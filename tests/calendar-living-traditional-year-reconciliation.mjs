@@ -27,7 +27,7 @@ const report={
   schema:"AO_LIVING_TRADITIONAL_2026_SOURCE_RECONCILIATION_V1",
   year:2026,calendarBase:"PRODUCTION_1962_ROMAN_DAY_RESOLVER",
   assurance:"RUNTIME_RESOLVER_SWEEP_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION",
-  modernDateAuthority:"16_SOURCE_REVIEWED_RECORDS_ONLY",
+  modernDateAuthority:"18_SOURCE_REVIEWED_RECORDS_ONLY",
   massAuthority:"NONE_AUTOMATIC",
   rows:[],exceptions:[]
 };
@@ -70,7 +70,7 @@ try{
             resolution:r,secondaryCards:all,canonicalPersonForSourceId:identity});
           const sourceCardIds=new Set(all.map(x=>x.id));
           const originalProper=r?.proper?.data?.sourcePath||null;
-          const matched=allRecords.filter(x=>x.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE"&&
+          const matched=allRecords.filter(x=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(x.authorityScope)&&
             x.publishedOn<=date);
           const options=matched.map(x=>{
             const saint=[...read.pilotPersons,...read.censusPersons].find(p=>p.id===x.subjectId);
@@ -136,7 +136,8 @@ try{
     modernDistinctDates:allDates.length,
     reviewedObservanceRegistryRows:data.observances.length,
     worldwideVaticanDecreeRows:data.observances.filter(r=>r.universalStatus==="CERTIFIED_BY_DECREE").length,
-    localOrHistoricalWitnessRows:data.observances.filter(r=>r.universalStatus!=="CERTIFIED_BY_DECREE").length,
+    localOrHistoricalWitnessRows:data.observances.filter(r=>r.authorityScope.startsWith("USCCB_")).length,
+    worldwideHolySeePrimaryRows:data.observances.filter(r=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(r.authorityScope)).length,
     duplicate1962CommemorationDays:repeats.length,
     suppressedIdentityCollisionDays:cross.length,
     erroneousGlobalScopeDays:badCards.length,
@@ -158,14 +159,15 @@ try{
   assert.equal(errors.length,0,"All 2026 historical resolver dates must resolve");
   assert.equal(badCards.length,0,"Unknown/local witnesses entered global calendar");
   assert.equal(repeats.length,0,"Duplicate historical commemoration source IDs require review");
-  assert.equal(report.summary.reviewedObservanceRegistryRows,16);
-  assert.equal(report.summary.worldwideVaticanDecreeRows,7);
-  assert.equal(report.summary.localOrHistoricalWitnessRows,9);
+  assert.equal(report.summary.reviewedObservanceRegistryRows,18);
+  assert.equal(report.summary.worldwideVaticanDecreeRows,9);
+  assert.equal(report.summary.localOrHistoricalWitnessRows,8);
+  assert.equal(report.summary.worldwideHolySeePrimaryRows,10);
   assert.equal(report.rows.find(x=>x.date==="2026-10-09")?.mainId,"sancti:10-09:3:w");
   assert.deepEqual(report.rows.find(x=>x.date==="2026-10-09")?.globalHonourIds,["saint.john-henry-newman"]);
   assert.ok(report.rows.find(x=>x.date==="2026-10-09")?.optionalTraditionalMassReviews
     .every(x=>x.massInsertionAuthorized===false&&x.selectedFormularyId===null));
-  assert.equal(report.rows.find(x=>x.date==="2026-09-23")?.globalHonourIds.length,0);
+  assert.deepEqual(report.rows.find(x=>x.date==="2026-09-23")?.globalHonourIds,["saint.pio-pietrelcina"]);
   assert.equal(report.historicDates.find(x=>x.date==="2025-10-09").modernGlobalHonours.length,0);
   assert.ok(report.historicDates.every(x=>x.resolved));
 }finally{
