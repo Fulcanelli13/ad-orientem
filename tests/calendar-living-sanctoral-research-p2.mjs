@@ -35,7 +35,7 @@ assert.equal(batch.sourceYearCollections.length,51);assert.equal(queue.yearColle
 assert.equal(master.counts.datedIndividuals,293);
 assert.equal(master.counts.remainingUndatedIndividuals,0);
 assert.equal(master.counts.datedCollectiveGroups,13);
-assert.equal(master.counts.totalDateEdges,314);
+assert.equal(master.counts.totalDateEdges,329);
 assert.equal(master.counts.traditional1962DoctorIdentityCrosswalkAdded,31);
 assert.equal(queue.historical1962InternalEvidenceOnly.length,31);
 assert.equal(queue.unknownPersonSubjects.length,0);

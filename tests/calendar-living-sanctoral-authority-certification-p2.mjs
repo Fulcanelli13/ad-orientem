@@ -3,7 +3,7 @@ import {readFileSync} from "node:fs";
 const read=(name)=>JSON.parse(readFileSync(new URL("../data/calendar/research/living-sanctoral-"+name+".v1.json",import.meta.url),"utf8"));
 const edges=read("date-evidence").dateEdges, audit=read("authority-audit"), acts=read("modern-general-acts"), queue=read("authority-adjudication-queue");
 const verdicts=audit.edgeDecisions, byId=new Map(verdicts.map(v=>[v.evidenceEdgeId,v]));
-assert.equal(edges.length,314);assert.equal(verdicts.length,314);assert.equal(byId.size,edges.length);
+assert.equal(edges.length,329);assert.equal(verdicts.length,329);assert.equal(byId.size,edges.length);
 assert.deepEqual(Object.keys(audit.summary).sort(),Object.keys(queue.counts).sort());
 for(const edge of edges){
  const result=byId.get(edge.edgeId);assert.ok(result,"Missing edge verdict "+edge.edgeId);
@@ -21,7 +21,8 @@ assert.deepEqual(byDecision,{
  PAPAL_PARTICULAR_PLACES_PERMISSION:2,
  EPISCOPAL_LOCAL_CALENDAR_WITNESS:11,
  PARTICULAR_INSTITUTE_OR_CHAPEL_WITNESS:8,
- ARCHIVAL_1962_IDENTITY_REFERENCE:31
+ ARCHIVAL_1962_IDENTITY_REFERENCE:31,
+ EPISCOPAL_APPROVED_NATIONAL_PROPER_CALENDAR:15
 });
 const ins=acts.acts;
 assert.equal(ins.length,10);assert.equal(new Set(ins.map(a=>a.subjectId)).size,10);
@@ -50,6 +51,34 @@ assert.equal(audit.summary.modernGeneralJuridicalEffectiveDatesCertifiedByThisPa
 assert.equal(queue.particularBeatificationGrant.rankAtGrant,"BLESSED");
 const local=read("particular-source-verification");assert.equal(local.records.length,8);
 assert.ok(local.records.find(x=>x.subjectId==="saint.jadwiga-queen-poland").sourceUrl.includes("/chrystus-na-krowodrzy/"));
-assert.equal(queue.priorities.reduce((n,x)=>n+x.edgeIds.length,0),314);
+assert.equal(queue.priorities.reduce((n,x)=>n+x.edgeIds.length,0),329);
+const national=read("national-propers-certified");
+assert.equal(national.certifiedEntries.length,15);
+assert.equal(national.counts.uniqueCanonicalIndividuals,13);
+assert.equal(national.counts.scopedDifferencesFromPreexistingDateEvidence,7);
+assert.equal(national.certifiedEntries.filter(x=>x.jurisdictionCountry==="US").length,9);
+assert.equal(national.certifiedEntries.filter(x=>x.jurisdictionCountry==="CA").length,6);
+assert.equal(new Set(national.certifiedEntries.map(x=>x.sourceEvidenceId)).size,15);
+for(const cert of national.certifiedEntries){
+ const source=edges.find(x=>x.edgeId===cert.sourceEvidenceId);
+ assert.ok(source);
+ assert.equal(source.subjectId,cert.canonicalPersonId);
+ assert.equal(source.monthDay,cert.celebrationMonthDay);
+ assert.equal(source.universalRomanStatus,"PARTICULAR_NATIONAL_CALENDAR_ONLY");
+ assert.equal(source.effective.juridicalEffectiveFrom,null);
+ assert.equal(source.importPolicy,"RESEARCH_ONLY");
+ assert.equal(source.mass1962Effect,"NONE");
+ assert.equal(byId.get(source.edgeId).requiresJurisdictionReview,false);
+ assert.equal(byId.get(source.edgeId).runtimeImportAuthorized,false);
+}
+assert.equal(edges.filter(x=>["USCCB_2026_NATIONAL_PROPER_CALENDAR","CCCB_2025_APPROVED_NATIONAL_PROPER_CALENDAR"].includes(x.authorityScope)).length,15);
+const cv=(id,country)=>national.certifiedEntries.find(x=>x.canonicalPersonId===id&&x.jurisdictionCountry===country);
+assert.equal(cv("saint.kateri-tekakwitha","US").celebrationMonthDay,"07-14");
+assert.equal(cv("saint.kateri-tekakwitha","CA").celebrationMonthDay,"04-17");
+assert.equal(cv("saint.andre-bessette","US").celebrationMonthDay,"01-06");
+assert.equal(cv("saint.andre-bessette","CA").celebrationMonthDay,"01-07");
+assert.equal(cv("saint.marianne-cope","US").celebrationMonthDay,"01-23");
+assert.equal(cv("saint.damien-de-veuster","US").celebrationMonthDay,"05-10");
+assert.equal(cv("saint.marguerite-dyouville","CA").celebrationMonthDay,"10-16");
 assert.ok(audit.edgeDecisions.every(x=>x.runtimeImportAuthorized===false));
-console.log("P2 authority and jurisdiction audit PASS: 314/314 edges, 9 official decrees, 1 papal statement; no assumed legal effective dates or 1962 permissions");
+console.log("P2 authority and jurisdiction audit PASS: 329/329 edges incl. 15 national proper certifications; no assumed 1962 permissions");
