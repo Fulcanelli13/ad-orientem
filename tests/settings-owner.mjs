@@ -70,15 +70,25 @@ assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a stan
 assert.match(about,/43\.59\.99/);
 assert.equal((about.match(/data-settings-info\b/g)||[]).length,9,
   "Nine informational About rows must be static text, not dead buttons");
-assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,2,
-  "Only Privacy and existing offline-check control should be actionable");
+assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,3,
+  "Only Privacy and explicit check/apply actions should be actionable");
+assert.match(about,/data-settings-apply-update(?!" disabled)/);
+const activeMassAbout=renderSettingsToString(fakeWin,{route:"/settings/about-sources",live:true});
+assert.match(activeMassAbout,/data-settings-apply-update disabled/,
+  "A staged PWA must not be installable while Mass is live");
+assert.match(activeMassAbout,/Finish Mass before installing/);
+const noCandidate={...fakeWin,AO_OFFLINE_APP_V1:{status:{
+  supported:true,registered:true,ready:true,version:"abcde0123456f789",pendingVersion:null}}};
+assert.doesNotMatch(renderSettingsToString(noCandidate,{route:"/settings/about-sources"}),
+  /data-settings-apply-update/,"An unstaged update must not have an Install control");
 assert.match(about,/data-settings-check-update/);
 assert.match(about,/abcde0123456/);
-assert.match(about,/Update available/);
+assert.match(about,/New copy staged/);
 assert.match(about,/data-settings-canonical-site/);
 const unsupported={...fakeWin,AO_OFFLINE_APP_V1:{status:{supported:false,registered:false,ready:false}}};
 const unsupportedAbout=renderSettingsToString(unsupported,{route:"/settings/about-sources"});
 assert.match(unsupportedAbout,/data-settings-check-update disabled/);
+assert.doesNotMatch(unsupportedAbout,/data-settings-apply-update/);
 assert.match(unsupportedAbout,/Offline version tracking unavailable here/);
 assert.doesNotMatch(unsupportedAbout,/data-settings-snapshot-id/);
 assert.match(about,/data-settings-route="\/settings\/privacy-data"/,

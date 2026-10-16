@@ -26,7 +26,7 @@ export function createSettingsOwner(win=globalThis){
   const donor=createSettingsDonorState(win);
   win.AO_SETTINGS_DONOR_V4359=donor;
   let route="/settings",routeHistory=[],returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
-  let checkingUpdates=false,updateCheck="idle";
+  let checkingUpdates=false,applyingUpdate=false,updateCheck="idle";
 
   const root=()=>win?.document?.getElementById?.("ao-settings-modular-root")||null;
   const isLive=()=>Boolean(liveGuards()?.status?.().live);
@@ -49,7 +49,7 @@ export function createSettingsOwner(win=globalThis){
     // the *same preference* rather than silently dumping the user onto body.
     const previous=win.document?.activeElement;
     const focusFields=["prefPath","prefValue","prefToggle","prefSelect","settingsRoute",
-      "settingsBack","settingsClose","settingsCheckUpdate","profileId","profileKey","profileName"];
+      "settingsBack","settingsClose","settingsCheckUpdate","settingsApplyUpdate","profileId","profileKey","profileName"];
     const activeFields=previous&&r.contains(previous)
       ?focusFields.filter(key=>previous.dataset?.[key]!==undefined)
         .map(key=>[key,previous.dataset[key]]):[];
@@ -151,7 +151,7 @@ export function createSettingsOwner(win=globalThis){
       if(button.dataset.settingsRoute){event.preventDefault();go(button.dataset.settingsRoute);return;}
       if(button.dataset.settingsCheckUpdate!==undefined){
         event.preventDefault();
-        if(checkingUpdates)return;
+        if(checkingUpdates||applyingUpdate)return;
         const updater=win?.AO_OFFLINE_APP_V1;
         if(!updater?.status?.supported||!updater?.status?.registered)return;
         checkingUpdates=true;updateCheck="idle";paint();
@@ -159,6 +159,24 @@ export function createSettingsOwner(win=globalThis){
           updateCheck=result?.ok?(result?.updateAvailable?"ready":"current"):"error";
         }).catch(()=>{updateCheck="error";}).finally(()=>{
           checkingUpdates=false;
+          if(root()?.dataset?.aoSettingsRoute==="/settings/about-sources")paint();
+        });
+        return;
+      }
+      if(button.dataset.settingsApplyUpdate!==undefined){
+        event.preventDefault();
+        const updater=win?.AO_OFFLINE_APP_V1;
+        const status=updater?.status;
+        if(checkingUpdates||applyingUpdate||isLive()||!status?.supported||
+          !status?.registered||!status?.pendingVersion||
+          status.pendingVersion===status.version||typeof updater.apply!=="function")return;
+        applyingUpdate=true;updateCheck="applying";paint();
+        // The second deliberate tap invokes the existing transactional worker.
+        // Its apply() refuses a live Mass, and reloads only after activation.
+        Promise.resolve().then(()=>updater.apply()).then(ok=>{
+          updateCheck=ok?"applied":"applyError";
+        }).catch(()=>{updateCheck="applyError";}).finally(()=>{
+          applyingUpdate=false;
           if(root()?.dataset?.aoSettingsRoute==="/settings/about-sources")paint();
         });
         return;
