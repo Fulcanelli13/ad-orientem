@@ -58,6 +58,7 @@ for(const a of principal){
  assert.equal(r.readerParagraphId,a.slot+".1");
  assert.equal(r.route,null);assert.equal(r.externalUrl,null);
  assert.equal(r.readOnly,true);assert.equal(r.maySelectCelebrantMass,false);
+ assert.equal(r.liturgicalRecitationStatus,"NOT_ASSERTED_BY_THIS_LINK");
 }
 for(const a of commemorations){
  let r=inspectP1InternalMissalLink({anchor:{...a,calendarCommemorationId:null},calendarResolution:day(),proper:proper()});
@@ -68,6 +69,7 @@ for(const a of commemorations){
  assert.equal(r.prayerOwnerPath,commPath);
  assert.equal(r.prayerIndex,1);
  assert.equal(r.readerParagraphId,a.slot+".2");
+ assert.equal(r.referenceNotProofOfMassFormSelection,true);
 }
 const pa=principal[0],ca={...commemorations[0],calendarCommemorationId:commId};
 const modified=(p,props)=>({...p,...props});
@@ -75,8 +77,8 @@ assert.equal(inspectP1InternalMissalLink({anchor:pa,calendarResolution:{...day()
 assert.equal(inspectP1InternalMissalLink({anchor:pa,calendarResolution:{...day(),date:"2027-10-08"},proper:proper()}).reason,"SOURCE_DATE_NOT_VERIFIED");
 assert.equal(inspectP1InternalMissalLink({anchor:pa,calendarResolution:day(),proper:modified(proper(),{sourcePath:"Sancti/10-08"})}).reason,"PROPER_OWNER_PATH_MISMATCH");
 assert.equal(inspectP1InternalMissalLink({anchor:pa,calendarResolution:modified(day(),{day:{...day().day,main:{id:"fake",path:source}}}),proper:proper()}).reason,"PRINCIPAL_ID_MISMATCH");
-assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{commemorationFormDecision:{status:"UNVERIFIED"}})}).reason,"COMMEMORATION_NOT_APPLIED_TO_RESOLVED_MASS");
-assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{appliedCommemorations:[]})}).reason,"COMMEMORATION_NOT_APPLIED_TO_RESOLVED_MASS");
+assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{commemorationFormDecision:{status:"UNVERIFIED"}})}).status,"SOURCE_READY_ROUTER_NOT_IMPLEMENTED","Historical Missal reference survives unresolved Mass-form selection");
+assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{appliedCommemorations:[]})}).liturgicalRecitationStatus,"NOT_ASSERTED_BY_THIS_LINK","Read-only commemoration links must not claim prayer was recited");
 assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:modified(proper(),{calendarCommemorations:[{id:commId,path:"Sancti/10-08",prayerSourcePath:commPath}]})}).reason,"SOURCE_COMMEMORATION_OWNER_MISMATCH");
 // A missing prayer may still be reconstructed by a source-owned singular
 // field; do not confuse that with an independent second commemoration prayer.
@@ -85,5 +87,6 @@ incomplete.postcommunions=[incomplete.postcommunions[0]];
 assert.equal(inspectP1InternalMissalLink({anchor:ca,calendarResolution:day(),proper:incomplete}).reason,"FULL_READER_PROPER_INCOMPLETE");
 assert.equal(inspectP1InternalMissalLink({anchor:{...ca,calendarCommemorationId:"different"},calendarResolution:day(),proper:proper()}).reason,"CALENDAR_COMMEMORATION_ID_MISMATCH");
 assert.equal(inspectP1InternalMissalLink({anchor:{...pa,slot:"PDF_FOLIO"},calendarResolution:day(),proper:proper()}).reason,"NON_CANONICAL_ORATION_SLOT");
+assert.equal(inspectP1InternalMissalLink({anchor:{...pa,requestedSurface:"MASS_LIVE"},calendarResolution:day(),proper:proper()}).reason,"NOT_A_READ_ONLY_MISSAL_REQUEST");
 assert.ok(reference.contractValidation.currentDirectPrayerDeepLinksVerified===0,"No user-facing route is implemented");
-console.log("P1 internal Missal resolution PASS: 3 principal and 3 commemoration targets checked against exact 1962 source-owned slot projection; external/public URL prohibited; live lookup remains pending.");
+console.log("P1 internal Missal resolution PASS: 3 principal and 3 read-only commemoration targets checked against exact 1962 source-owned slot projection; external/public URL prohibited; live lookup remains pending.");
