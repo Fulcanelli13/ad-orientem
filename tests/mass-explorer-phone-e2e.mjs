@@ -112,6 +112,18 @@ try{
       "Map Back lost previous study position: "+JSON.stringify({savedMapScroll,mapReturn}));
     assert.equal(mapReturn.selected,"AO.SM.B031","Map Back lost exact originating prayer link");
     assert.equal(mapReturn.open,true,"Map Back must restore the original expanded source drawer");
+    // Switching between the two study approaches should not discard the
+    // reader's original chronological place or opened prayer drawer.
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-path="themes"]').click();
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-stage]').count(),8);
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-path="order"]').click();
+    const returnedAgain=await page.locator("#ao-mass-explorer-root").evaluate(node=>({
+      scrollTop:node.scrollTop,
+      open:node.querySelector('[data-ao-mx-map-block="AO.SM.B031"]')?.closest("details")?.open
+    }));
+    assert.ok(Math.abs(returnedAgain.scrollTop-savedMapScroll)<=4,
+      "Switching study paths discarded the Mass Map scroll "+JSON.stringify(returnedAgain));
+    assert.equal(returnedAgain.open,true,"Switching study paths must retain originating prayer drawer");
   }
   assert.equal(baseline.shell,"learn.mass_explorer");
   assert.equal(baseline.explorer?.sourceBlocks,96);
@@ -223,6 +235,10 @@ try{
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.screenshot({path:resolve(screenshotDir,"mass-map-"+width+"-fr.png")});
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-path="themes"]').click();
+  assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-stage]').count(),8);
+  assert.match(await page.locator('#ao-mass-explorer-root [data-ao-mx-stage="MF03"]').innerText(),/Offertoire/);
+  await page.screenshot({path:resolve(screenshotDir,"mass-themes-"+width+"-fr.png")});
   await page.locator("#ao-mass-explorer-root [data-ao-mx-close]").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.()?.child===null&&
      document.getElementById("ao-learn-modular-root")?.hidden===false,null,{timeout:12000});
