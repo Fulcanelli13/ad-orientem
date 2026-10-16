@@ -77,6 +77,62 @@ def source_link(key):
     status="Additional interpretative source · editorial review" if a["authority"].startswith("ADDITIONAL") else "Existing Formation source"
     return ('<li><a href="'+h(a["url"])+'" target="_blank" rel="noopener noreferrer">'+
             h(a["label"])+'</a><small>'+status+'</small></li>')
+
+def research_docket(entry):
+    group = next(x for x in evidence["studies"] if x["study_id"] == entry["id"])
+    rows = [x for x in evidence["blocks"] if x["block_id"] in entry["block_ids"]]
+    refs = [dict(x,block_id=row["block_id"]) for row in rows for x in row["historical_author_candidates"]]
+    candidates = [x for row in rows for x in row["scripture_candidates"]]
+    assert len(refs)==group["historical_author_candidate_count"]
+    assert len(candidates)==group["p0_scripture_candidate_count"]
+    assert sum(len(x["research_unit_ids"]) for x in rows)==group["unit_count"]
+    by_author={}
+    for ref in refs:
+        by_author.setdefault(ref["author"],[]).append(ref)
+    groups=[]
+    for author,items in sorted(by_author.items()):
+        references=[]
+        for item in items:
+            references.append(
+                '<li data-p0-author-ref="'+h(item["claim_id"])+'"><code>'+
+                h(item["claim_id"])+'</code> · <strong>'+h(item["block_id"])+'</strong> · '+
+                h(item["source_locator"])+
+                '<small>'+h(item["research_grade"])+
+                ' · RESEARCH ONLY, NOT APPROVED FOR PUBLICATION</small></li>'
+            )
+        groups.append('<details class="author-record"><summary>'+h(author)+' · '+
+                      str(len(items))+' candidate references</summary><ol>'+
+                      ''.join(references)+'</ol></details>')
+    if not groups:
+        groups.append('<p class="hint">No P0 historical-author candidates mapped here. No sources have been invented to fill the gap.</p>')
+    checked=[x for x in evidence["primary_source_spot_checks"] if x["study_id"]==entry["id"]]
+    source_checks=''.join(
+        '<li data-primary-check="'+h(x["locus"])+'"><a href="'+h(x["url"])+
+        '" rel="noopener noreferrer" target="_blank">'+h(x["locus"])+'</a>'+
+        '<small>'+h(x["finding"])+' · Direct text located, not an editorial publication approval</small></li>'
+        for x in checked
+    )
+    held=''.join(
+        '<p data-p0-scripture-held="'+h(x["unit_id"])+'"><strong>P0 Scripture held:</strong> '+
+        h(x["reference_as_received"])+' · '+h(x["relationship_type"])+
+        ' · original edition/versification still requires verification.</p>'
+        for x in candidates
+    )
+    return (
+        '<details class="research-docket"><summary>'+
+        bilingual({"en":"P0 source dossier and editorial gaps","fr":"Dossier des sources P0 et lacunes éditoriales"})+
+        ' · '+str(len(refs))+' candidate references</summary><div class="docket-body">'+
+        '<p class="docket-warning">SOURCE RESEARCH ONLY · NOT CERTIFIED FOR PUBLICATION</p>'+
+        '<p class="hint">'+str(group["unit_count"])+' mapped source units · '+
+        str(len(refs))+' author references · '+str(len(candidates))+' held P0 Scripture candidates</p>'+
+        '<h4>'+bilingual({"en":"Next editorial question","fr":"Question éditoriale prioritaire"})+'</h4>'+
+        '<p>'+bilingual(group["editorial_question"])+'</p>'+held+
+        ('<h4>'+bilingual({"en":"Direct primary-text checks","fr":"Vérifications directes des textes primaires"})+
+         '</h4><ul>'+source_checks+'</ul>' if source_checks else '')+
+        '<h4>'+bilingual({"en":"Historical locators by author","fr":"Références historiques par auteur"})+'</h4>'+
+        ''.join(groups)+'</div></details>'
+    )
+
 def chapter(entry,ix):
     rel=''.join(link_context(id) for id in entry["scripture_anchor_ids"])
     return ('<article class="study" id="'+h(entry["id"])+'">'+
