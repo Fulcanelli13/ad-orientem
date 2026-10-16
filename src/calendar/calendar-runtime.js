@@ -17,7 +17,7 @@ import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
 import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
-import { calendarRubricalClaimsForDay } from "./rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay } from "./rubrical-claim-citations.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
@@ -52,6 +52,17 @@ let pilgrimageCorpus=null,pilgrimageLoad=null;
 let secondarySaintModel=null,secondarySaintLoad=null;
 let rubricClaimLedger=null,rubricClaimLoad=null,rubricClaimAttempted=false;
 const rubricClaimUrl=new URL("../../data/calendar/1962-privileged-commemorations.v1.json",import.meta.url).href;
+let colourClaimLedger=null,colourClaimAttempted=false;
+const colourClaimUrl=new URL("../../data/calendar/1962-ordo-corrections.v1.json",import.meta.url).href;
+function loadCalendarColourClaims(){
+ if(colourClaimAttempted||typeof globalThis.fetch!=="function")return;
+ colourClaimAttempted=true;
+ void globalThis.fetch(colourClaimUrl,{headers:{accept:"application/json"}})
+  .then(response=>response.ok?response.json():null)
+  .then(json=>{if(json?.schema==="AO_1962_CALENDAR_CORRECTIONS_V1")colourClaimLedger=json;
+    if(colourClaimLedger&&root()&&calendarView==="day")paint();})
+  .catch(error=>console.warn("Calendar colour clause witnesses unavailable",error));
+}
 function loadCalendarRubricalClaims(){
   if(rubricClaimAttempted||typeof globalThis.fetch!=="function")return;
   rubricClaimAttempted=true;
@@ -452,15 +463,21 @@ function isGoodFridayLiturgy(r){return /^tempora:Quad6-5r:/.test(String(r?.day?.
 function daySourceDetails(r){
  const p=properOf(r),path=String(p?.sourcePath||p?.source?.path||p?.sourceFile||"").trim();
  const claims=rubricClaimLedger?calendarRubricalClaimsForDay(r,rubricClaimLedger):[];
+ const colourClaims=colourClaimLedger?calendarColourRubricalClaimsForDay(r,colourClaimLedger):[];
  const claimMarkup=claims.map(c=>`<li data-cal-rubric-claim="${esc(c.claimId)}">
     <p><strong>${esc(c.clauses.join(" · "))}</strong> · ${esc(c.explanation[fr()?"fr":"en"])}</p>
     <a href="${esc(c.witnessUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("Dated historical ordo witness","Témoin historique de l’ordo daté"))} ↗</a>
    </li>`).join("");
+ const colourMarkup=colourClaims.map(c=>`<li data-cal-colour-claim="${esc(c.claimId)}">
+   <p><strong>${esc(c.clauses.join(" · "))}</strong> · ${esc(c.explanation[fr()?"fr":"en"])}</p>
+   <a href="${esc(c.historicalExplanationUrl)}" target="_blank" rel="noopener noreferrer">${esc(L("1960 rubric translation · exact page","Traduction des rubriques de 1960 · page précise"))} ↗</a>
+  </li>`).join("");
  return `<details class="aoCalDaySources"><summary>${esc(L("Sources & scope","Sources et portée"))}</summary>
   <p>${esc(L("General Roman Calendar (1962); local diocesan, religious and church propers may differ. Retrieved texts have not thereby been independently certified.","Calendrier romain général (1962) ; les propres diocésains, religieux et des églises peuvent différer. La récupération des textes ne constitue pas une certification indépendante."))}</p>
   <a href="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597" target="_blank" rel="noopener noreferrer">${esc(L("Normative: 1960 Code of Rubrics · AAS 52 (1960), pp. 597 onward","Normatif : Code des rubriques de 1960 · AAS 52 (1960), p. 597 et suiv."))} ↗</a>
   <a href="https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html" target="_blank" rel="noopener noreferrer">${esc(L("Reference: English rubric translation","Référence : traduction anglaise des rubriques"))} ↗</a>
   ${claimMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Source-matched rubric clauses","Articles des rubriques liés aux sources"))}"><h3>${esc(L("Why this commemoration is shown","Pourquoi cette commémoraison figure ici"))}</h3><ul>${claimMarkup}</ul><p>${esc(L("These clauses explain the observed 1962 case; they do not authorize a different Mass, extra prayers or a local observance.","Ces articles éclairent le cas observé dans le calendrier de 1962 ; ils n’autorisent pas une autre messe, des oraisons supplémentaires ou une célébration locale."))}</p></section>`:""}
+  ${colourMarkup?`<section class="aoCalExactRubrics" aria-label="${esc(L("Exact 1960 colour clauses","Articles précis de 1960 sur les couleurs"))}"><h3>${esc(L("Why this Mass colour is shown","Pourquoi cette couleur liturgique figure ici"))}</h3><ul>${colourMarkup}</ul><p>${esc(L("A recorded source adjudication, not a new colour calculation or local Mass permission.","Arbitrage de sources enregistré, et non nouveau calcul des couleurs ni autorisation d’une messe locale."))}</p></section>`:""}
   ${path?`<p class="aoCalSourceWitness">${esc(L("Digital text witness","Témoin textuel numérique"))}: <code>${esc(path)}</code></p>`:""}
  </details>`;
 }
@@ -1158,7 +1175,7 @@ function open({embeddedIn=null,onClose=null}={}){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();loadCalendarRubricalClaims();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();loadCalendarRubricalClaims();loadCalendarColourClaims();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();
   // Embedding the Calendar in Today or Mass must be observational when the
   // selected 1962 day is already resolved. revealDate() dispatches
