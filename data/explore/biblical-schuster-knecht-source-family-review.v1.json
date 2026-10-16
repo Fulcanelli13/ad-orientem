@@ -533,7 +533,14 @@
     "earlyEnglishSadlierVerseLocatedDistinctPassages": 20,
     "earlyEnglishSadlierVerseLocatedSourceChapters": 14,
     "earlyEnglishSadlierVerseLocatedCanonicalEvents": 15,
-    "earlyEnglishSadlierVerseVerifiedCompleteLoci": 0
+    "earlyEnglishSadlierVerseVerifiedCompleteLoci": 0,
+    "earlyEnglishSadlierBatch02NarrativeCandidates": 45,
+    "earlyEnglishSadlierBatch02StoryChapters": 42,
+    "earlyEnglishSadlierBatch02StoryOCRTermsVerified": 90,
+    "earlyEnglishSadlierLaterEditionChapterMisjoinsCorrected": 3,
+    "earlyEnglishSadlierOfflineReaderV6EpisodeCandidates": 65,
+    "earlyEnglishSadlierOfflineReaderV6EpisodeChapters": 56,
+    "earlyEnglishSadlierNewVerifiedFullVerseLinks": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4661,5 +4668,64 @@
       384,
       385
     ]
+  },
+  "english1908EpisodeExpansionBatch02AndReaderV6": {
+    "date": "2026-10-16",
+    "witness": "SCHUSTER-EN-SADLIER-11TH-ORIGINAL_1908",
+    "originalScanSHA256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+    "additionalEpisodeSubjectCandidatesFromOriginalHistoricalNarrativeOCR": 45,
+    "additionalDistinctOriginalSourceChapters": 42,
+    "exactOriginalOCRBodyEvidenceTermsValidated": 90,
+    "historicalSourceMismatchCorrections": [
+      {
+        "sourceChapterWas": "OT-LXXV",
+        "sourceChapterNow": "OT-LXXIV",
+        "topic": "Judith",
+        "reason": "1908 original Ch LXXIV is Judith; LXXV is Babylonian Captivity"
+      },
+      {
+        "sourceChapterWas": "OT-LXXVII",
+        "sourceChapterNow": "OT-LXXVI",
+        "topic": "Susanna",
+        "reason": "1908 original Ch LXXVI is Susanna; LXXVII is Daniel and young men"
+      },
+      {
+        "sourceChapterWas": "OT-LXXVIII",
+        "sourceChapterNow": "OT-LXXVII",
+        "topic": "Three youths",
+        "reason": "1908 original Ch LXXVII includes furnace story; LXXVIII is Baltassar and Bel"
+      }
+    ],
+    "sourceOfTruthAtlasCandidateCorrectionFile": "data/explore/biblical-schuster-1908-atlas-topic-shortlist-corrected.v3.json",
+    "previouslySourceEpisodeAnchoredLoci": 20,
+    "newSourceEpisodeSubjectCorrespondenceCandidates": 45,
+    "combinedStandaloneReaderEpisodeCandidates": 65,
+    "combinedOriginalChaptersHavingEpisodeCandidates": 56,
+    "newOriginalNarrativeSourceTextCharacterCorrections": 0,
+    "readerPrivateResearchArtifacts": {
+      "originalSourceEvidence": {
+        "name": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json",
+        "sha256": "5d51d66a6fb63480cad1b1025cfcc79dedb6f56d3df236581cce08ce2693e356"
+      },
+      "data": {
+        "name": "Schuster_1908_Research_Reader_Data_v6.json",
+        "sha256": "16f735c973caf8f79617cb2a360a78fd1ce20c24db90f0cc7750d3e8e9fa43a2"
+      },
+      "html": {
+        "name": "Schuster_1908_Offline_Research_Reader_v6.html",
+        "sha256": "9419502c5a974725e9f6c5e38a038a536520b8d1a8024a35574a6655790f51f7"
+      }
+    },
+    "editionCorrectedCandidateCount": 3,
+    "remainingTitleOnlyResearchCandidatesPresent": true,
+    "bibleVerseCompleteCoverageCertified": 0,
+    "productionReaderLinksPromoted": 0,
+    "sourceHistoricNarrativesCommittedToPublicGitHub": false,
+    "sourceHistoricNarrativesPublishedInApp": false,
+    "canonical151AtlasUnchanged": true,
+    "userOriginalAuthorialWritingReplacedWithAI": false,
+    "authenticPrintPages384And385StillMissing": true,
+    "sourceRightsAndEditorialReviewStillRequired": true,
+    "nextPhase": "Group validation for additional genuine 1908 source passage spans; avoid automatically equating entire Schuster chapters with narrow Atlas events. Correct remaining cross-edition shifts before any publication."
   }
 }
