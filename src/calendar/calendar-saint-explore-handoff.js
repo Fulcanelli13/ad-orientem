@@ -4,6 +4,7 @@
 export const CALENDAR_SAINT_PROFILE_HANDOFF_VERSION="ao-calendar-saints-exact-handoff-v1";
 const URL=new URL("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json",import.meta.url).href;
 const iso=x=>typeof x==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&
+  !Number.isNaN(Date.parse(x+"T12:00:00Z"))&&
   new Date(x+"T12:00:00Z").toISOString().slice(0,10)===x;
 const originalId=x=>typeof x==="string"&&/^sancti:\d{2}-\d{2}[a-z]?:[1-4]:[wr]$/.test(x);
 let cached=null,pending=null;
