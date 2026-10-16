@@ -7,13 +7,16 @@
     "individualReverseCueGaps": 34,
     "publishedGuideLevelGaps": 4,
     "groupedCertificationHolds": 9,
-    "totalRegisterEntries": 49,
+    "totalRegisterEntries": 50,
     "confirmedDoctrinalOrRitualConflictsThisPass": "NOT_YET_ASSESSED",
     "actualMassEngineChanges": 0,
     "approvedNewResearchPublications": 0,
     "literalLatinWitnessComparisons": 288,
-    "literalLatinSourceDifferences": 2,
-    "uncollatedSourceUnits": 147
+    "literalLatinSourceDifferences": 3,
+    "uncollatedSourceUnits": 0,
+    "dualHashLatinWitnessComparisons": 147,
+    "sourceWitnessesCompared": 435,
+    "uncertifiedPrintedSourceSpans": 435
   },
   "cases": [
     {
@@ -609,6 +612,18 @@
       "evidence": "Original workbook uses generic Gospel-name placeholder 'secúndum N.' while frozen canonical source instantiates 'secúndum Matthǽum'",
       "recommendedAction": "Identify selected Gospel/Proper applicability before classifying this as contradiction; do not force a static selection",
       "status": "OPEN_RITUAL_CONDITION_REVIEW",
+      "mutationAllowed": false
+    },
+    {
+      "issueId": "P0-LATIN-AO.V3.0237.U002",
+      "priority": "P1",
+      "classification": "CONTENT_DIFFERENCE",
+      "canonicalOwner": "data/presentation/reader-text-sung.v1.json",
+      "canonicalObjectId": "AO.SM.C0237",
+      "researchObjectId": "AO.V3.0237.U002",
+      "evidence": "Second Confiteor variant workbook writes 'orare' while frozen canonical Sung cue contains 'oráre' (same accent variation as C0023). Verified via independent NFC dual-fingerprint mismatch and manual source inspection.",
+      "recommendedAction": "Adjudicate both Confiteor accent differences once under canonical source corrections; do not auto-rewrite Latin player",
+      "status": "OPEN_TEXTUAL_REVIEW",
       "mutationAllowed": false
     }
   ]
