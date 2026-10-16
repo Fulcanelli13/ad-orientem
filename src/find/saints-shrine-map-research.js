@@ -18,18 +18,29 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     audit?.status!=="SOURCE_LINKED_PLACE_CANDIDATES_NO_NEW_SAINT_PINS_OR_PERSON_ID_APPROVAL")
     return Object.freeze([]);
  const places=new Map(arr(dataset.geography?.places).map(p=>[p?.place_id,p]));
+ const originalShrines=new Map(arr(dataset.shrines?.shrines).map(s=>[s.shrine_id,s]));
+ const originalSources=new Map(arr(dataset.shrines?.sources).map(source=>[source.id,source]));
  const groups=new Map();
  for(const row of arr(audit.rows)){
   if(!txt(row.legacy_name_literal)||row.canonical_saint_id_approved!==null)continue;
   for(const link of arr(row.physical_place_associations)){
-   const p=places.get(link.place_id);
-   if(!p||!link.shrine_id||!arr(link.provenance_source_ids).length||
+   const p=places.get(link.place_id),shrine=originalShrines.get(link.shrine_id);
+   if(!p||!shrine||shrine.place_id!==link.place_id||
+      !arr(shrine.associated_saints).includes(row.legacy_name_literal)||
+      !arr(link.provenance_source_ids).every(id=>arr(shrine.source_ids).includes(id))||
+      !arr(link.provenance_source_ids).length||
       link.identity_approved_for_pin!==false||
       link.observed_relation!=="SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION")continue;
    if(!groups.has(link.place_id))groups.set(link.place_id,{place:p,relations:[]});
    groups.get(link.place_id).relations.push(Object.freeze({
     source_saint_name:row.legacy_name_literal,shrine_id:link.shrine_id,
     source_ids:Object.freeze([...link.provenance_source_ids]),
+    official_source_links:Object.freeze(arr(link.provenance_source_ids).map(id=>{
+      const source=originalSources.get(id);
+      const href=source?.url;
+      if(!href||!/^https:\/\//i.test(href))return null;
+      return Object.freeze({source_id:id,href,issuer:txt(source.issuer),directness:txt(source.directness)});
+    }).filter(Boolean)),
     exact_name_candidate_keys:Object.freeze([...arr(row.candidate_source_keys)]),
     identity_match_status:row.identity_match_status,
     interpretation:"SHRINE_SOURCE_NAME_ONLY_NOT_CERTIFIED_PERSON_PLACE"
@@ -76,7 +87,8 @@ export function renderSaintResearchShrineSheet(vm){
  h+='<h3>'+esc(say("Names given by the original shrine sources","Noms fournis par les sources des sanctuaires"))+'</h3>';
  h+='<ul class="aoSaintSourceShrinePeople">'+arr(item.associated_saint_name_sources).map(x=>
   '<li><strong>'+esc(x.source_saint_name)+'</strong><p>'+esc(say("Associated source name; person identity unconfirmed","Nom associé ; identité non confirmée"))+'</p>'
-  +'<small>'+esc(arr(x.source_ids).join(" · "))+'</small></li>').join("")+'</ul>';
+  +'<small>'+esc(arr(x.source_ids).join(" · "))+'</small>'
+  +arr(x.official_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.href)+'" target="_blank" rel="noopener noreferrer">'+esc(link.issuer||say("Original site source","Source du site"))+' ↗</a>').join("")+'</li>').join("")+'</ul>';
  const url=safeUrl(item.geo?.source_url);
  if(url)h+='<a class="aoSaintSourceShrineGeoSource" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(
   say("Original coordinate source","Source originale des coordonnées"))+' ↗</a>';
@@ -92,5 +104,5 @@ export const SAINTS_SHRINE_RESEARCH_CSS=[
  ".aoSaintSourceShrinePeople li{border-bottom:1px solid rgba(217,197,154,.16);padding-bottom:9px}",
  ".aoSaintSourceShrinePeople strong{color:#e8d6b4;font-size:15px}",
  ".aoSaintSourceShrinePeople p,.aoSaintSourceShrinePeople small{display:block;color:#c4b69c;font-size:12px}",
- ".aoSaintSourceShrineGeoSource{color:#e3c999;text-decoration:underline;text-underline-offset:3px}"
+ ".aoSaintSourceShrineGeoSource,.aoSaintSourceShrineInstitution{display:inline-block;margin-right:12px;color:#e3c999;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}"
 ].join("");
