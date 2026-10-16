@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {READER_PROPER_SLOTS} from "../src/mass/proper-reader-slots.js";
 const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const root="data/calendar/";
 const law=load(root+"p1-rubrical-permission-matrix.v1.json");
@@ -8,6 +9,7 @@ const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
 const audit=load(root+"p1-primary-latin-and-oct9-source-audit.v1.json");
+const internalMissal=load(root+"p1-internal-missal-navigation.v1.json");
 const photos=load(root+"p1-1962-missal-facsimile-collation.v1.json");
 const holds=load(root+"p1-exception-backlog.v1.json");
 const old=load(root+"traditional-1962-common-formularies.review.v1.json");
@@ -29,6 +31,18 @@ for(const name of ["R07_CLASS_II_EMBER","R12_SUNG_NONCONVENTUAL","R25_OMITTED_FE
 assert.equal(law.rules.find(r=>r.id==="R34_HIGH_MASS_TENSION").certification,"LEGAL_INTERPRETATION_UNRESOLVED");
 assert.deepEqual(law.commemorationCaps.map(c=>c.max),[1,1,1,1,2]);
 assert.equal(forms.forms.length,38);
+assert.equal(internalMissal.schema,"AO_P1_INTERNAL_MISSAL_NAVIGATION_CONTRACT_V1");
+assert.deepEqual(internalMissal.readerSlots,READER_PROPER_SLOTS,"App-owned reader must define prayer/section vocabulary");
+assert.equal(internalMissal.currentNavigationLimitation.includes("no verified programmatic"),true);
+assert.equal(internalMissal.oldMissalEvidencePolicy.publicLinkDestination,"INTERNAL_ONLY");
+assert.equal(internalMissal.contractValidation.currentDirectPrayerDeepLinksVerified,0);
+assert.equal(internalMissal.exampleInternalAnchors.length,6);
+assert.deepEqual(new Set(internalMissal.exampleInternalAnchors.map(x=>x.slot)),new Set(["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]));
+assert.ok(internalMissal.exampleInternalAnchors.every(x=>x.route===null&&x.resolvedSourcePath===null&&x.resolvedOrationId===null&&x.readerMode==="MISSAL"));
+assert.ok(forms.forms.every(x=>x.internalMissalReference.route===null&&x.internalMissalReference.sourcePath===null));
+assert.ok(forms.forms.every(x=>x.internalMissalReference.canonicalResearchFormularyId===x.id&&x.internalMissalReference.mustNotRedirectToExternalSource===true));
+assert.equal(forms.userFacingLinkPolicy,"IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK");
+
 assert.equal(photos.schema,"AO_P1_1962_MISSAL_FACSIMILE_VISUAL_COLLATION_V1");
 assert.equal(photos.uniqueImageScansVisuallyInspected.length,14);
 assert.equal(photos.distinctCommonPrintedFamiliesVisuallyReviewed,4);
@@ -62,6 +76,9 @@ assert.equal(forms.forms.filter(f=>f.canonicalIdStatus==="REUSE_EXISTING_OWNER_I
 assert.equal(forms.primaryPrintedEditionCollationCount,0);
 assert.deepEqual(comm.orations,["collect","secret","postcommunion"]);
 assert.equal(comm.trios.length,2);
+for(const t of comm.trios){for(const [name,id] of Object.entries(t.internalMissalAnchors)){assert.ok(["collect","secret","postcommunion"].includes(name));assert.ok(internalMissal.exampleInternalAnchors.some(a=>a.anchorId===id));}}
+assert.equal(comm.userFacingPrayerNavigation,"AD_ORIENTEM_INTERNAL_MISSAL_ONLY");
+
 assert.equal(comm.printedFaceVisualTrioCount,2);
 assert.ok(comm.trios.every(x=>x.facsimileTextLayoutStatus==="ALL_THREE_PRAYERS_VISUALLY_LOCATED_IN_PRINTED_MISSAL_IMAGE_SAME_DAY"));
 assert.ok(comm.trios.every(x=>comm.orations.every(k=>x.prayers[k].printedImageChecked&&x.prayers[k].latinText===null&&x.prayers[k].primaryPrintCollated===false)));
@@ -88,6 +105,10 @@ for(const d of doctors.doctors)assert.ok(saint.persons.some(x=>x.saintId===d.can
 assert.ok(saint.persons.every(x=>x.massAuthorization===false&&x.selected1962FormularyId===null));
 assert.ok(saint.groups.every(x=>x.massAuthorization===false&&x.selected1962FormularyId===null));
 assert.equal(saint.approvedFormularyCount,0);
+assert.equal(saint.internalMissalNavigationContract,"data/calendar/p1-internal-missal-navigation.v1.json");
+assert.equal(saint.persons.find(x=>x.saintId==="saint.john-henry-newman").proposedMissalFormularyTarget.route,null);
+assert.equal(saint.persons.find(x=>x.saintId==="saint.john-henry-newman").proposedMissalFormularyTarget.status,"NOT_YET_RESOLVED_IN_CANONICAL_APP_MISSAL");
+
 assert.equal(photos.independentPhysicalEditionCertification,false);
 assert.equal(photos.rightsCleared,false);
 assert.ok(photos.commonFamilies.every(f=>f.fullLatinVerified===false));
@@ -101,6 +122,9 @@ assert.ok(newman.otherHistoricCommemorationTrio.includes("denis-rusticus-eleuthe
 assert.equal(cases.cases.find(x=>x.id==="P1-PIO-2026").optionalFestiveMassStatus,"BLOCKED_ON_THIS_DAY");
 for(const x of cases.cases.filter(x=>x.id.includes("DOCTOR")))assert.match(x.effect,/NO_AUTOMATIC_1962_PROPER_REPLACEMENT/);
 assert.equal(holds.openCount,holds.items.length);
+assert.ok(holds.items.some(x=>x.code==="INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION"&&x.blocksRuntimeApproval&&x.status==="OPEN"));
+assert.ok(cases.cases.find(x=>x.id==="P1-NEWMAN-2026").internalMissalTargets.historicalLeonardiPrayerAnchors.every(id=>internalMissal.exampleInternalAnchors.some(a=>a.anchorId===id)));
+
 assert.ok(holds.items.some(x=>x.code==="POST2020_LEGISLATION_2021_2023_AUTHORITY"&&x.status==="OPEN"));
 assert.ok(holds.items.every(x=>x.blocksRuntimeApproval&&x.status==="OPEN"));
 console.log("P1 research invariants PASS: "+law.rules.length+" legal rules, "+forms.forms.length+" indexed Commons, "+comm.trios.length+" source-addressed commemoration trios, "+saint.persons.length+" unique persons, "+saint.groups.length+" groups, "+holds.items.length+" explicit blockers; zero liturgical or reader permission inferred.");
