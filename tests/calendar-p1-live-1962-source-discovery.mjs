@@ -291,7 +291,24 @@ try{
          firstRow:(Array.isArray(v)?v.find(t=>typeof t==="string"&&t.trim()):null)?.slice(0,165)??null};
      }
    }
-   return {source:"Commune/C1v",sourceRows:rows};
+   const normalise=value=>String((value??[]).join(" "))
+      .normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")
+      .replace(/[^A-Za-z0-9]+/g," ").toLowerCase().trim();
+   const variantTexts={};
+   for(const language of ["la","en","fr"]){
+     const src=await resolver.resolveSource("Commune/C1v",language,diag());
+     variantTexts[language]={
+       first:normalise(src?.map?.get("Oratio 1 loco")),
+       second:normalise(src?.map?.get("Oratio 2 loco"))
+     };
+   }
+   return {source:"Commune/C1v",sourceRows:rows,
+     variantParity:{
+       latinDifferent:variantTexts.la.first!==variantTexts.la.second,
+       englishDuplicated:variantTexts.en.first===variantTexts.en.second,
+       frenchDifferent:variantTexts.fr.first!==variantTexts.fr.second
+     }};
+
  });
  const papalCommonOwnerProbe=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
@@ -351,6 +368,9 @@ try{
    x.route===null&&x.approvedForMass===false));
  console.log("P1_PAPAL_COMMON_SOURCE_OWNERS="+JSON.stringify(papalCommonOwnerProbe));
  console.log("P1_C1V_ALT_ORATION_OWNERSHIP="+JSON.stringify(apostleVigilOrations));
+ assert.deepEqual(apostleVigilOrations.variantParity,
+   {latinDifferent:true,englishDuplicated:true,frenchDifferent:true},
+   "Confirm actual C1v source mismatch in production and keep editor hold");
  console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
  assert.equal(partialReconciliation.length,2);
  assert.deepEqual(partialReconciliation.map(x=>x.status),
