@@ -47,6 +47,7 @@ try{
       "Could not select source-independent historic commemoration date");
     await page.waitForFunction(d=>
       window.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate===d &&
+      document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.dataset.aoCalendarPaintDate===d &&
       Boolean(document.querySelector(".aoTodayV2CalendarInline .aoCalV2Hero")),date,{timeout:60000});
     await page.waitForFunction(()=>Boolean(document.querySelector(
       ".aoTodayV2CalendarInline .aoCalV2Commemorations p span")),null,{timeout:35000});
