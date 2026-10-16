@@ -59,6 +59,12 @@ export function installScriptureBrowserOwner(win=globalThis){
    node.hidden=true;
    if(doc.body)doc.body.style.overflow=previousOverflow??"";
    const reveal=()=>{
+     // A shell transition can replace Home's DOM. Keep the original reader
+     // subtree owned by the canonical Scripture overlay, not by that route.
+     if(!node.isConnected||doc.getElementById("ao-scripture-overlay")!==node){
+       doc.getElementById("ao-scripture-overlay")?.remove();
+       doc.body?.append(node);
+     }
      node.hidden=false;
      if(doc.body)doc.body.style.overflow="hidden";
      node.scrollTop=receipt.scrollTop;
@@ -67,13 +73,17 @@ export function installScriptureBrowserOwner(win=globalThis){
    };
    const restore=async()=>{
      if(journey!==receipt)return false;
-     journey=null;
+     // Do NOT clear the guard until after shell navigation. That navigation
+     // may request the Scripture owner to close; a suspended reader must
+     // survive and retain the original verse, edition and local trail.
      try{
        if(shell.getActive()!==receipt.surface){
          const returned=await shell.navigate(receipt.surface);
          if(returned?.ok!==true)win.console?.warn?.("Scripture source surface did not reopen");
        }
      }catch(error){win.console?.error?.("Scripture return route failed",error)}
+     if(journey!==receipt)return false;
+     journey=null;
      return reveal();
    };
    let accepted=false;
