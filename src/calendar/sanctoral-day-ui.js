@@ -15,11 +15,9 @@ export const SANCTORAL_DAY_CSS=[
 ".aoCalSecondarySaintCard summary{cursor:pointer;display:flex;align-items:center;padding:9px 0;min-height:44px;touch-action:manipulation}",
 ".aoCalSecondarySaintCard a{display:inline-block;color:#d6c4a6;padding:5px 0;overflow-wrap:anywhere}",
 ".aoCalSecondarySaintCard a:focus-visible,.aoCalSecondarySaintCard summary:focus-visible,.aoCalSecondarySaintCard button:focus-visible{outline:2px solid #bea77e;outline-offset:3px}",
- ".aoCalSecondarySaintCard .aoCalSaintProfileLink{display:inline-flex;align-items:center;min-height:44px;margin:4px 6px 4px 0;padding:8px 12px;border:1px solid rgba(215,194,153,.26);border-radius:999px;background:rgba(24,27,31,.48);color:#d6c4a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;touch-action:manipulation}.aoCalSecondarySaintCard .aoCalSaintProfileLink:disabled{opacity:.55}",
  ".aoCalSecondarySaintCard .aoCalSaintPlaceLink{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:4px 0 1px;padding:8px 12px;border:1px solid rgba(215,194,153,.26);border-radius:999px;background:transparent;color:#d6c4a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;touch-action:manipulation}.aoCalSecondarySaintCard .aoCalSaintPlaceLink:disabled{opacity:.55}"
 ].join("");
-export function renderSecondarySaintSection(cards,{language="en",profileIds=[]}={}) {
-  const allowedProfiles=new Set(profileIds);
+export function renderSecondarySaintSection(cards,{language="en"}={}) {
   if(!Array.isArray(cards)||!cards.length)return "";
   const fr=language==="fr",parts=[];
   for(const c of cards){
@@ -38,11 +36,6 @@ export function renderSecondarySaintSection(cards,{language="en",profileIds=[]}=
     const siteName=c.site?.placeName||"";
     let html='<article class="aoCalSecondarySaintCard"><small>'+esc(kind)+" · "+esc(scope)+"</small><h4>"+esc(c.title)+"</h4><p>"+esc(c.whyHonoured)+"</p>";
     if(c.context)html+="<p>"+esc(c.context)+"</p>";
-    // A reviewed person-to-person identity edge is required; no title,
-    // feast-date coincidence or unpublished biography may create this action.
-    if(allowedProfiles.has(c.id)&&/^saint\.[a-z0-9-]+$/.test(c.id||""))
-      html+='<button type="button" class="aoCalSaintProfileLink" data-cal-secondary-saint-profile="'+esc(c.id)+'">'+
-        esc(loc(fr,"Life & sources","Vie & sources"))+' →</button>';
     if(siteName)html+='<p class="aoCalSaintPlace">'+esc(loc(fr,"Associated place: ","Lieu associé : "))+esc(siteName)+"</p>";
     // The read-model's source-reviewed crosswalk is the only source of this Place
     // action. A place photograph is never substituted for a sacred portrait.
