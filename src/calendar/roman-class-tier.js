@@ -18,6 +18,7 @@ export function romanClassTier(label){
   if(!rank)return 0;
   // A compound source label is not a licence to invent one unambiguous class.
   if(/(?:[1-4]|iii|ii|iv|i)\s*[-–/]\s*(?:[1-4]|iii|ii|iv|i)(?![a-z])/u.test(rank))return 0;
+  if(/(?:\b(?:[1-4]|i|ii|iii|iv|1st|2nd|3rd|4th|first|second|third|fourth)\b)\s+(?:and|et|&)\s+(?:[1-4]|i|ii|iii|iv|1st|2nd|3rd|4th|first|second|third|fourth)\s+(?:classis|classe|class)\b/u.test(rank))return 0;
   const bare=rank.replace(/^(?:classis|class|classe)\s+|\s+(?:classis|class|classe)$/gu,"").trim();
   if(Object.hasOwn(TIERS,bare))return TIERS[bare];
   const found=new Set();
