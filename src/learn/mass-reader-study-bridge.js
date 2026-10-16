@@ -77,7 +77,9 @@ export function installReaderMassExplorerStudy(preview,prepared,{
         explorer=module.createMassExplorerRuntime(win);
         win.AO_MASS_EXPLORER_V1=explorer;
       }
-      const opened=await explorer.open({...context,origin:"mass",trigger:button});
+      const opened=await explorer.open({...context,origin:"mass",
+        language:String(prepared?.readerPreferences?.language||""),
+        trigger:button});
       if(opened!==true)throw new Error("MASS_EXPLORER_NOT_AVAILABLE");
       return true;
     }).catch(error=>{
