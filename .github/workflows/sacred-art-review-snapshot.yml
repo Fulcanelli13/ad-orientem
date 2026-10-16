@@ -1,0 +1,23 @@
+name: Sacred Art Review Source Snapshot
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - .github/workflows/sacred-art-review-snapshot.yml
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save original review model and preserved decisions
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-unified-review-source-snapshot
+          path: |
+            data/calendar/sacred-art-review-uploads/20261016-unified-review-embedded-data.v1.json
+            data/calendar/sacred-art-review-uploads/20261016-batch01-user-image-rankings-v2.json
+            data/calendar/sacred-art-review-uploads/20261016-batch02-user-image-rankings-v2.json
+            docs/research/review-galleries/ao-sacred-art-unified-curator-20261016.html
+          retention-days: 30
