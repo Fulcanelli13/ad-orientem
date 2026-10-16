@@ -7,6 +7,7 @@ const evidence=read("data/saints/w78-shrine-person-source-evidence-20261016.v1.j
 const source=read("data/saints/existing-shrine-geography-readiness-20261016.v1.json");
 const cross=read("data/saints/cross-module-source-reconciliation-20261015.v1.json");
 const ledger=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json");
+const priorCurated=read("data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json");
 const dataset={
  saintsShrineReadiness:source,saintsW78Evidence:evidence,
  geography:read("data/geography/seed-registry.v1.json"),
@@ -23,6 +24,12 @@ assert.equal(evidence.summary.formerly_unmatched_with_documented_alias_to_existi
 assert.equal(evidence.summary.formerly_unmatched_with_relic_subject_evidence,45);
 assert.equal(evidence.summary.formerly_unmatched_with_sacred_art_subject_evidence,14);
 assert.equal(evidence.summary.formerly_unmatched_without_exact_or_documented_alias_key,54);
+const reviewBuckets={EXACT_FULL_NAME_SINGLE:50,EXACT_FULL_NAME_COLLISION:6,PREVIOUSLY_RECORDED_ALIAS_LEAD:9,OTHER_CURATED_VARIANT_LEAD_UNAPPROVED:16,NO_SUPPORTED_LEDGER_KEY_LEAD:38};
+for(const [bucket,count] of Object.entries(reviewBuckets))assert.equal(evidence.summary.cross_w78_name_key_partition[bucket],count);
+assert.equal(evidence.summary.cross_w78_name_key_partition.distinct_unmatched_names_with_existing_key_leads,25);
+assert.equal(evidence.summary.cross_w78_name_key_partition.curated_variant_leads_overlapping_previously_documented_aliases,8);
+assert.equal(evidence.summary.cross_w78_name_key_partition.original_names_with_any_exact_or_existing_key_lead,81);
+assert.equal(evidence.summary.cross_w78_name_key_partition.still_without_any_ledger_key_lead,38);
 assert.equal(evidence.summary.distinct_original_physical_site_ids,121);
 assert.equal(evidence.summary.original_shrine_association_edges,145);
 assert.equal(evidence.summary.source_reconciliation_tiers.TRUNCATED_HISTORICAL_SOURCE_KEY_CHECK,2);
@@ -32,6 +39,9 @@ assert.equal(evidence.summary.entity_type_guards.ANGELIC_NOT_HUMAN,1);
 const originals=new Map(source.rows.map(x=>[x.legacy_name_literal,x]));
 const ownerSources=new Map(cross.rows.map(x=>[x.legacy_name,x]));
 const keys=new Set(ledger.records.map(x=>x.source_key));
+const priorVariants=new Map(priorCurated.no_exact_key.filter(x=>x.source_key_candidate).map(x=>[x.shrine_source_name,x.source_key_candidate]));
+assert.equal(priorVariants.size,24);
+const bucketTotals={};
 for(const x of evidence.records){
  const old=originals.get(x.legacy_shrine_person_or_group_name);
  const owner=ownerSources.get(x.legacy_shrine_person_or_group_name);
@@ -43,11 +53,17 @@ for(const x of evidence.records){
  assert.deepEqual(x.exact_existing_source_keys,old.candidate_source_keys);
  assert.deepEqual(x.original_shrine_relationships.map(x=>x.place_id),old.physical_place_associations.map(x=>x.place_id));
  assert(x.unique_cross_source_key_candidates.every(x=>keys.has(x)));
+ assert(Array.isArray(x.curated_variant_existing_key_leads));
+ assert.deepEqual(x.curated_variant_existing_key_leads.map(y=>y.source_key),priorVariants.has(x.legacy_shrine_person_or_group_name)?[priorVariants.get(x.legacy_shrine_person_or_group_name)]:[]);
+ assert(x.curated_variant_existing_key_leads.every(y=>keys.has(y.source_key)&&y.canonical_person_identity_approved===false&&y.shrine_person_relation_certified===false));
+ bucketTotals[x.source_key_review_bucket]=(bucketTotals[x.source_key_review_bucket]??0)+1;
  assert.deepEqual(x.external_owner_evidence.relic_subjects.map(s=>s.subject_id),owner.relic_subjects.map(s=>s.subject_id));
  assert.deepEqual(x.external_owner_evidence.sacred_art_subjects.map(s=>s.subject_id),owner.sacred_art_subjects.map(s=>s.subject_id));
  assert(x.original_shrine_relationships.every(p=>p.source_ids.length&&p.canonical_person_to_place_link_authorized===false));
  assert(x.external_owner_evidence.sacred_art_subjects.every(s=>s.image_release!=="PRODUCTION_APPROVED"));
 }
+assert.deepEqual(bucketTotals,reviewBuckets);
+assert.equal(evidence.records.find(x=>x.legacy_shrine_person_or_group_name==="Saint Wenceslas").source_key_review_bucket,"PREVIOUSLY_RECORDED_ALIAS_LEAD");
 for(const n of ["Saint John the Evangelist","Saint Luke the Evangelist"]){
  assert.equal(evidence.records.find(x=>x.legacy_shrine_person_or_group_name===n).source_reconciliation_tier,"TRUNCATED_HISTORICAL_SOURCE_KEY_CHECK");
 }
@@ -66,6 +82,8 @@ assert.equal(projected.filter(x=>x.map_publishable).length,119);
 assert.equal(projected.reduce((n,x)=>n+x.associated_saint_name_sources.length,0),145);
 assert(projected.flatMap(x=>x.associated_saint_name_sources).some(x=>x.external_relic_subject_ids.length));
 assert(projected.flatMap(x=>x.associated_saint_name_sources).some(x=>x.recorded_alias_source_keys.length));
+assert(projected.flatMap(x=>x.associated_saint_name_sources).some(x=>x.curated_variant_source_key_leads.includes("saint.giuseppina-bakhita")));
+assert(projected.flatMap(x=>x.associated_saint_name_sources).every(x=>Array.isArray(x.curated_variant_source_key_leads)));
 assert(projected.every(x=>x.artwork_id===null&&x.saints.length===0));
 const withArt=projected.find(x=>x.associated_saint_name_sources.some(n=>n.external_art_research_subject_ids.length));
 assert(withArt);
@@ -73,7 +91,9 @@ for(const lang of ["en","fr"]){
  const html=renderSaintResearchShrineSheet({language:lang,selected:withArt});
  assert(html.includes("aoSaintSourceEvidenceStatus"));
  assert(html.includes(lang==="fr"?"non approuvés":"Unapproved art research subjects"));
+ const variantLocation=projected.find(x=>x.associated_saint_name_sources.some(n=>n.curated_variant_source_key_leads.length));
+ assert(renderSaintResearchShrineSheet({language:lang,selected:variantLocation}).includes("saint."));
  assert(!html.includes("<img"));
  assert(!html.includes("data-calendar-mass"));
 }
-console.log("PASS W78 119 name cases, 50 exact, 6 ambiguous, 63 unmatched (9 alias/45 relic), 145 source site associations, zero published identity/pins/art");
+console.log("PASS W78 119 names: 50 exact, 6 ambiguous, 9 prior aliases, 16 other curated leads, 38 without existing key leads; source-linked 145 physical relations, zero new identities/pins/art");
