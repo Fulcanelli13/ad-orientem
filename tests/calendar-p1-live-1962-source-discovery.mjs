@@ -138,6 +138,34 @@ try{
     route:result.route??null};
  });
  console.log("P1_DOCTOR_INHERITANCE_LIVE_WITNESS="+JSON.stringify(doctorInheritance));
+ const additionalCommons=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const registry=(await (await fetch("/data/calendar/p1-additional-common-candidates.v1.json")).json()).provisionalRows;
+   const slots=["Introitus","Oratio","Lectio","Graduale","Evangelium","Offertorium","Secreta","Communio","Postcommunio"];
+   const diag=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const inspect=async row=>{
+     const languageProof={};
+     for(const lang of ["la","en","fr"]){
+       try{
+         const parsed=await resolver.resolveSource(row.candidateCanonicalSourcePath,lang,diag());
+         const sections=Object.fromEntries(slots.map(section=>{
+           const raw=parsed?.map?.get(section);
+           const usable=Array.isArray(raw)&&raw.some(v=>
+             typeof v==="string"&&v.trim()&&!String(v).trim().startsWith("@"));
+           return [section,Boolean(usable)];
+         }));
+         languageProof[lang]={status:"RESOLVED",sections};
+       }catch(e){languageProof[lang]={status:"ERROR",reason:String(e?.message??e).slice(0,130)}}
+     }
+     return {researchId:row.researchId,sourcePath:row.candidateCanonicalSourcePath,languageProof};
+   };
+   const results=[];
+   for(let i=0;i<registry.length;i+=5)results.push(...await Promise.all(registry.slice(i,i+5).map(inspect)));
+   return {candidateCount:registry.length,results};
+ });
+ console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
+ assert.equal(additionalCommons.candidateCount,28);
+ assert.equal(additionalCommons.results.length,28);
  console.log("P1_REAL_COMMONS_SOURCE_WITNESS="+JSON.stringify(commons));
  console.log("P1_REAL_SOURCE_WITNESS="+JSON.stringify(results));
  const october=results[0];
