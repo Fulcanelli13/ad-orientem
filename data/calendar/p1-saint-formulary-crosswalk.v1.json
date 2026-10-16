@@ -395,7 +395,26 @@
       "doctorDeclaredOn": "2025-11-01",
       "traditional1962FeastSourceId": null,
       "sourceSpecificProperStatus": "UNVERIFIED",
-      "caseId": "P1-NEWMAN-2026"
+      "caseId": "P1-NEWMAN-2026",
+      "printed1962CommonFamilyCandidates": [
+        {
+          "printedFamilyId": "commune-print:doctorum",
+          "requiredVariant": "DOCTOR_NON_PONTIFF",
+          "researchOwnerId": "commune:1962:doctor_non_pontiff",
+          "heading": "Commune Doctorum",
+          "basis": "Print-scanned 1962 Common p(23)-(24), subject not a bishop",
+          "formularyApplication": "CANDIDATE_ONLY_NOT_CELEBRANT_CHOICE"
+        },
+        {
+          "printedFamilyId": "commune-print:confessor-non-pontiff",
+          "requiredVariant": "FIRST_OR_ALTERA_MISSA_NOT_SELECTED",
+          "researchOwnerId": "commune:1962:confessor_non_pontiff",
+          "heading": "Commune Confessoris non Pontificis",
+          "formularyApplication": "ALTERNATIVE_CANDIDATE_ONLY"
+        }
+      ],
+      "printSourceStructureStatus": "PRINTED_FAMILY_AND_VARIANT_VERIFIED_ON_FACSIMILE_IMAGES",
+      "primaryLatinFormularyTextApproval": false
     },
     {
       "saintId": "saint.giuseppina-vannini",
@@ -4386,5 +4405,7 @@
     }
   ],
   "approvedFormularyCount": 0,
-  "annotation": "No parallel saint identities; P2 owns date evidence. Collective groups not expanded; source candidates never auto-selected."
+  "annotation": "No parallel saint identities; P2 owns date evidence. Collective groups not expanded; source candidates never auto-selected.",
+  "printedFamilyResearchOwner": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+  "doctorsOnePrintedFamilyPolicy": "Both existing Pontiff and non-Pontiff Doctor index IDs refer to the one printed Commune Doctorum with specific oration variant; never create a second independent Common identity."
 }
