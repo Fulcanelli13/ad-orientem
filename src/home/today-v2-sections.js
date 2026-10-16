@@ -19,7 +19,7 @@ function home1962Commemorations(resolution,language){
           item?.titleFr||item?.nameFr||item?.title?.fr||item?.title?.en||item?.title||item?.name:
           item?.title?.en||item?.titleEn||item?.title||item?.nameEn||item?.name;
       const name=typeof raw==="string"?raw.trim():"";
-      if(!name||/^(?:\\d{1,2}[-_/]\\d{1,4}|(?:sancti|tempora):)/i.test(name))continue;
+      if(!name||/^(?:\d{1,2}[-_/]\d{1,4}|(?:sancti|tempora):)/i.test(name))continue;
       const key=typeof item==="object"&&item?.id?item.id.replace(/:[1-4]:[a-z]{1,3}$/i,""):name.toLowerCase();
       if(seen.has(key))continue;
       seen.add(key);
