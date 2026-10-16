@@ -1,0 +1,1218 @@
+{
+  "schema": "AO_SACRED_ART_USER_CURATOR_FOLLOWUP_QUEUE_20261016_V1",
+  "authoredAt": "2026-10-16",
+  "preservedUserExports": [
+    "data/calendar/sacred-art-review-uploads/20261016-batch01-user-image-rankings-v2.json",
+    "data/calendar/sacred-art-review-uploads/20261016-batch02-user-image-rankings-v2.json"
+  ],
+  "sourceOfTruthForIndividualDecisions": "The two immutable uploaded JSON source files (linked by sourceRepoPath).",
+  "meaning": {
+    "0": "NO_NEW_AUTOMATIC_REJECTION",
+    "1": "NO_NEW_AUTOMATIC_REJECTION",
+    "2": "NO_NEW_AUTOMATIC_REJECTION",
+    "3": "RETAIN_PROVISIONALLY_AND_DISCOVER_ALTERNATIVE_PAINTINGS",
+    "4": "RETAIN_PAINTING_AND_FIND_BETTER_PHOTOGRAPH_OF_SAME_PHYSICAL_ORIGINAL",
+    "5": "VISUALLY_PERFECT_REPRODUCTION_PENDING_SOURCE_MASTER_AND_EXPLICIT_CHOICE",
+    "unrated": "NOT_ASSESSED_AND_NOT_REJECTED"
+  },
+  "counts": {
+    "scoredThree": 14,
+    "scoredFour": 35,
+    "scoredFive": 57,
+    "kept": 40,
+    "rejectedDuplicatePhotographs": 16,
+    "quality5NotExplicitKept": 17,
+    "noOct12Photo": 11,
+    "confirmedBrowserFailure": 1
+  },
+  "safeguards": [
+    "3-star quality asks for alternative paintings; do not reject the existing candidate until another is rated higher.",
+    "4-star photo quality asks for better quality images of same exact physical original painting, not unrelated paintings.",
+    "5-star photo quality denotes user-perceived perfect image; if status is not_reviewed do not infer an explicit primary selection. Verify physical original, file master and licence before production.",
+    "A protected old 12 October selected artwork remains valid even without five stars.",
+    "Image not reviewed does not prove image failed to load. Only explicit imageLoadFailures confirms browser errors; sourceMissingOct12 means no proper photo linked.",
+    "A duplicate choice excludes that file from the preferred shortlist but does not delete the source original.",
+    "Never alter the prior human 5-star painting ratings or publish automatically."
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "sourceExportAt": "2026-10-16T06:26:21.591Z",
+      "sourceRepoPath": "data/calendar/sacred-art-review-uploads/20261016-batch01-user-image-rankings-v2.json",
+      "score3_keepUntilBetter": [
+        {
+          "paintingId": "louvre-crespi-inv259",
+          "fileId": "The Immaculate Conception with St. Anselm and St. Martin - Giuseppe Maria Crespi - Louvre INV 259.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Immaculate_Conception_with_St._Anselm_and_St._Martin_-_Giuseppe_Maria_Crespi_-_Louvre_INV_259.jpg"
+        },
+        {
+          "paintingId": "G30-007",
+          "fileId": "Pierodamiani2.JPG",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pierodamiani2.JPG"
+        },
+        {
+          "paintingId": "G31-001",
+          "fileId": "Saint Petrus Canisius.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Petrus_Canisius.jpg"
+        },
+        {
+          "paintingId": "G20-004",
+          "fileId": "LABRUZZI san lorenzo da brindisi.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:LABRUZZI_san_lorenzo_da_brindisi.jpg"
+        },
+        {
+          "paintingId": "C34:colognavenetachiesadisantamarianascenteilmiracolodellamulajp",
+          "fileId": "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg"
+        },
+        {
+          "paintingId": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+          "fileId": "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg"
+        }
+      ],
+      "score4_reproduceSameOriginal": [
+        {
+          "paintingId": "C32:pompeobatoniestasidisantateresa1743circajpg",
+          "fileId": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg"
+        },
+        {
+          "paintingId": "C32:francescounterpergersantateresadavilatiff",
+          "fileId": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff"
+        },
+        {
+          "paintingId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+          "fileId": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg"
+        },
+        {
+          "paintingId": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+          "fileId": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg"
+        },
+        {
+          "paintingId": "G17-006",
+          "fileId": "Saint François de Sales.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg"
+        },
+        {
+          "paintingId": "paris-pm75001042-halle-sales",
+          "fileId": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg"
+        },
+        {
+          "paintingId": "G17-003",
+          "fileId": "San Juan Crisóstomo, de Pedro de Orrente (Museo del Prado).jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg"
+        },
+        {
+          "paintingId": "G32-001",
+          "fileId": "The last chapter by J. Doyle Penrose (1902).jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg"
+        },
+        {
+          "paintingId": "W04-009",
+          "fileId": "The Dream of Saint Joseph.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg"
+        },
+        {
+          "paintingId": "C32:guidoreni042jpg",
+          "fileId": "Guido Reni 042.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg"
+        },
+        {
+          "paintingId": "G26-005",
+          "fileId": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg"
+        },
+        {
+          "paintingId": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+          "fileId": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg"
+        },
+        {
+          "paintingId": "W38-009",
+          "fileId": "Claudio coello-san antonio de padua.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Claudio_coello-san_antonio_de_padua.jpg"
+        },
+        {
+          "paintingId": "C35:jeannedarcenprisonbylouiscrignier1824jpg",
+          "fileId": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg"
+        }
+      ],
+      "score5_visuallyPerfect": [
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg"
+        },
+        {
+          "paintingId": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+          "fileId": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_follower_-_Saint_Peter_2009_NYR_02135_0301.jpg"
+        },
+        {
+          "paintingId": "W36-SNT-AP-03-3e9d9be5f41a",
+          "fileId": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_James_the_Greater_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "prado-rubens-p001647",
+          "fileId": "Rubens apostel johannes grt.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_johannes_grt.jpg"
+        },
+        {
+          "paintingId": "W01-001",
+          "fileId": "José de Ribera 054.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_Ribera_054.jpg"
+        },
+        {
+          "paintingId": "W38-006",
+          "fileId": "Anthonis van Dyck - Apostel Philippus - GG 9703 - Kunsthistorisches Museum.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg"
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "The_Incredulity_of_Saint_Thomas.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg"
+        },
+        {
+          "paintingId": "C34:saintmatthewbyvalentindeboulognejpg",
+          "fileId": "Saint Matthew, by Valentin de Boulogne.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Matthew%2C_by_Valentin_de_Boulogne.jpg"
+        },
+        {
+          "paintingId": "prado-rubens-p001651",
+          "fileId": "Rubens apostel jakobus mindere grt.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_jakobus_mindere_grt.jpg"
+        },
+        {
+          "paintingId": "prado-rubens-p001655",
+          "fileId": "Rubens apostel simon.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_simon.jpg"
+        },
+        {
+          "paintingId": "B01-MARK-MARATTA-THYSSEN",
+          "fileId": "El_evangelista_san_Marcos_(Maratta).jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:El_evangelista_san_Marcos_(Maratta).jpg"
+        },
+        {
+          "paintingId": "B01-MARK-RENI-GENOA",
+          "fileId": "Guido_Reni_San_Marco_Evangelista.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_San_Marco_Evangelista.jpg"
+        },
+        {
+          "paintingId": "B01-MARK-RENI-BJU",
+          "fileId": "Reni_-_Saint_Mark,_1621.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Reni_-_Saint_Mark%2C_1621.jpg"
+        },
+        {
+          "paintingId": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "fileId": "Tintoretto_-_Miracle_of_the_Slave.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tintoretto_-_Miracle_of_the_Slave.jpg"
+        },
+        {
+          "paintingId": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "fileId": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_-_Saint_Luke_as_a_Painter_before_Christ_on_the_Cross_-_WGA26077.jpg"
+        },
+        {
+          "paintingId": "C34:luketheevangelistbyjanjanszdestommejpg",
+          "fileId": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg"
+        },
+        {
+          "paintingId": "C34:franciscodezurbaran046jpg",
+          "fileId": "Francisco de Zurbarán 046.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_046.jpg"
+        },
+        {
+          "paintingId": "W02-017",
+          "fileId": "Anthonis_van_Dyck_005.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_005.jpg"
+        },
+        {
+          "paintingId": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+          "fileId": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_Saint_Ambrose_-_68.43_-_Minneapolis_Institute_of_Arts.jpg"
+        },
+        {
+          "paintingId": "C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+          "fileId": "Andrey Ivanov, St. Ambrose Barring Theodosius from Milan Cathedral, 1829, Tretyakov Gallery Ж-560.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Andrey_Ivanov%2C_St._Ambrose_Barring_Theodosius_from_Milan_Cathedral%2C_1829%2C_Tretyakov_Gallery_%D0%96-560.jpg"
+        },
+        {
+          "paintingId": "W07-007",
+          "fileId": "Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg"
+        },
+        {
+          "paintingId": "ART-arlo-rivelli-aint-homas-quinas",
+          "fileId": "Saint Thomas Aquinas (Crivelli, 15th-century).jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg"
+        },
+        {
+          "paintingId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+          "fileId": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vision_of_St._Bonaventura_-_Domenico_Vaccaro_-_San_Lorenzo_Maggiore_(museum)_-_Naples_-_Italy_2015.JPG"
+        },
+        {
+          "paintingId": "prado-ribalta-p002804",
+          "fileId": "Francisco Ribalta 001.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_Ribalta_001.jpg"
+        },
+        {
+          "paintingId": "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg",
+          "fileId": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg"
+        },
+        {
+          "paintingId": "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
+          "fileId": "San Basilio y San Atanasio, Alonso Sánchez Coello.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg"
+        },
+        {
+          "paintingId": "C32:rubensathanasiusjpg",
+          "fileId": "RubensAthanasius.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:RubensAthanasius.jpg"
+        },
+        {
+          "paintingId": "G30-004",
+          "fileId": "Gregor-Chora (cropped).jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gregor-Chora_(cropped).jpg"
+        },
+        {
+          "paintingId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+          "fileId": "Isidor von Sevilla.jpeg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg"
+        },
+        {
+          "paintingId": "G32-002",
+          "fileId": "Mor Ephrem icon.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mor_Ephrem_icon.jpg"
+        },
+        {
+          "paintingId": "W08-009",
+          "fileId": "Michelangelo Merisi, called Caravaggio - Saint John the Baptist in the Wilderness - Google Art Project.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Michelangelo_Merisi%2C_called_Caravaggio_-_Saint_John_the_Baptist_in_the_Wilderness_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "sdma-48-3-pittoni-anthony",
+          "fileId": "The Vision of Saint Anthony of Padua painting by Giovanni Battista Pittoni, San Diego Museum of Art.JPG",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni%2C_San_Diego_Museum_of_Art.JPG"
+        }
+      ],
+      "otherImageJudgments": [
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+          "qualityScore": 0,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B01-MARK-RENI-GENOA",
+          "fileId": "Guido_reni,_san_marco_evangelista,_genova.JPG",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B01-MARK-RENI-GENOA",
+          "fileId": "Guido_reni,_san_marco.JPG",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "fileId": "Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "fileId": "Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "W02-017",
+          "fileId": "Antoon_van_dyck,_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano,_1619-20_ca.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "W07-007",
+          "fileId": "Caravaggio_-_Saint_Jerome_Writing,_c1606.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "C34:albertusmagnusparishofguayaquiljpg",
+          "fileId": "Albertus Magnus - Parish of Guayaquil.jpg",
+          "qualityScore": 2,
+          "status": "not_reviewed"
+        },
+        {
+          "paintingId": "B01-CYRILALEX-BRAGA",
+          "fileId": "Painting_of_Cyril_of_Alexandria.jpg",
+          "qualityScore": 1,
+          "status": "not_reviewed"
+        }
+      ],
+      "explicitKept": [
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600)FXD.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+          "fileId": "Anthony van Dyck follower - Saint Peter 2009 NYR 02135 0301.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W36-SNT-AP-03-3e9d9be5f41a",
+          "fileId": "Guido Reni - Saint James the Greater - Google Art Project.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "prado-rubens-p001647",
+          "fileId": "Rubens apostel johannes grt.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W01-001",
+          "fileId": "José de Ribera 054.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W38-006",
+          "fileId": "Anthonis van Dyck - Apostel Philippus - GG 9703 - Kunsthistorisches Museum.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "The_Incredulity_of_Saint_Thomas.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C34:saintmatthewbyvalentindeboulognejpg",
+          "fileId": "Saint Matthew, by Valentin de Boulogne.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "prado-rubens-p001651",
+          "fileId": "Rubens apostel jakobus mindere grt.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "prado-rubens-p001655",
+          "fileId": "Rubens apostel simon.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+          "fileId": "Francisco de Zurbarán - Saint Luke as a Painter before Christ on the Cross - WGA26077.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C34:luketheevangelistbyjanjanszdestommejpg",
+          "fileId": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W02-017",
+          "fileId": "Anthonis_van_Dyck_005.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+          "fileId": "Claude Vignon - Saint Ambrose - 68.43 - Minneapolis Institute of Arts.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W07-007",
+          "fileId": "Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "ART-arlo-rivelli-aint-homas-quinas",
+          "fileId": "Saint Thomas Aquinas (Crivelli, 15th-century).jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+          "fileId": "Vision of St. Bonaventura - Domenico Vaccaro - San Lorenzo Maggiore (museum) - Naples - Italy 2015.JPG",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "prado-ribalta-p002804",
+          "fileId": "Francisco Ribalta 001.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "G32-002",
+          "fileId": "Mor Ephrem icon.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W08-009",
+          "fileId": "Michelangelo Merisi, called Caravaggio - Saint John the Baptist in the Wilderness - Google Art Project.jpg",
+          "score": 5,
+          "rank": 1
+        }
+      ],
+      "explicitDuplicateImages": [
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "W05-027",
+          "fileId": "Crucifixion_of_Saint_Peter_-_Cerasi_Chapel_-_Santa_Maria_del_Popolo_-_Rome_2015.jpg",
+          "qualityScore": 0
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "W07-014",
+          "fileId": "The_Incredulity_of_Saint_Thomas_by_Caravaggio.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B01-MARK-RENI-GENOA",
+          "fileId": "Guido_reni,_san_marco_evangelista,_genova.JPG",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B01-MARK-RENI-GENOA",
+          "fileId": "Guido_reni,_san_marco.JPG",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "fileId": "Accademia_-_Miracle_of_the_Slave_by_Tintoretto.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B01-MARK-TINTORETTO-ACCADEMIA",
+          "fileId": "Miracle_of_the_Slave_by_Tintoretto_-_Accademia_-_Venice_2016.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "W02-017",
+          "fileId": "Antoon_van_dyck,_sant'ambrogio_impedisce_a_teodosio_di_entrare_nella_cattedrale_di_milano,_1619-20_ca.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "W07-007",
+          "fileId": "Caravaggio_-_Saint_Jerome_Writing,_c1606.jpg",
+          "qualityScore": null
+        }
+      ],
+      "explicitlySelectedOlderPaintingDecisions": {
+        "ART-usepe-de-ibera-aint-eter-postolate": "include",
+        "ART-aravaggio-nspiration-of-aint-atthew": "include",
+        "ART-eter-aul-ubens-aint-atthias-postolate": "include",
+        "ART-usepe-de-ibera-aint-aul-postolate": "include",
+        "ART-usepe-de-ibera-aint-udas-haddeus": "include",
+        "ART-uido-eni-rchangel-ichael-efeating-atan": "include"
+      },
+      "unresolvedSelectedOctober12": [
+        {
+          "selectedOriginalId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+          "selectedTitle": "Martyrdom of Saint Andrew",
+          "sourcePage": "https://www.fcamberes.org/en/-the-martyrdom-of-saint-andrew"
+        },
+        {
+          "selectedOriginalId": "ART-hilippe-de-hampaigne-aint-ugustine",
+          "selectedTitle": "Saint Augustine",
+          "sourcePage": null
+        },
+        {
+          "selectedOriginalId": "ART-usepe-de-ibera-aint-erome-riting",
+          "selectedTitle": "Saint Jerome Writing",
+          "sourcePage": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P005201"
+        },
+        {
+          "selectedOriginalId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+          "selectedTitle": "Saint Bonaventure at Council of Lyon",
+          "sourcePage": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20204"
+        },
+        {
+          "selectedOriginalId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+          "selectedTitle": "Saint Catherine of Siena",
+          "sourcePage": null
+        },
+        {
+          "selectedOriginalId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+          "selectedTitle": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+          "sourcePage": "https://www.museodelprado.es/en/the-collection/art-work/saint-lawrence-saint-hilary/71cff54c-68c8-4be5-8704-15713fe411a8"
+        },
+        {
+          "selectedOriginalId": "ART-ierre-ignard-aint-ohn-the-aptist",
+          "selectedTitle": "Saint John the Baptist",
+          "sourcePage": null
+        },
+        {
+          "selectedOriginalId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+          "selectedTitle": "Joan of Arc at Coronation of Charles VII",
+          "sourcePage": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20MI%20667"
+        }
+      ],
+      "browserConfirmedLoadFailures": []
+    },
+    {
+      "batch": 2,
+      "sourceExportAt": "2026-10-16T06:33:30.840Z",
+      "sourceRepoPath": "data/calendar/sacred-art-review-uploads/20261016-batch02-user-image-rankings-v2.json",
+      "score3_keepUntilBetter": [
+        {
+          "paintingId": "C32:antoniosicurezzacharityofstlaurencejpg",
+          "fileId": "Antonio Sicurezza-Charity of St Laurence.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Antonio_Sicurezza-Charity_of_St_Laurence.jpg"
+        },
+        {
+          "paintingId": "met-437849",
+          "fileId": "The Flight into Egypt MET DT7231.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Flight_into_Egypt_MET_DT7231.jpg"
+        },
+        {
+          "paintingId": "met-437457",
+          "fileId": "The Baptism of Christ MET 1981.186 1.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_1981.186_1.jpg"
+        },
+        {
+          "paintingId": "met-436801",
+          "fileId": "Juan de Flandes - The Marriage Feast at Cana - WGA12055.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg"
+        },
+        {
+          "paintingId": "nga-12205",
+          "fileId": "Netherlandish 16th Century, The Healing of the Paralytic, c. 1560-1590, NGA 12205.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg"
+        },
+        {
+          "paintingId": "met-436302",
+          "fileId": "The Good Samaritan MET DP278746.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Good_Samaritan_MET_DP278746.jpg"
+        },
+        {
+          "paintingId": "B02-PRODIGAL-REMBRANDT",
+          "fileId": "Rembrandt-The return of the prodigal son.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Rembrandt-The_return_of_the_prodigal_son.jpg"
+        },
+        {
+          "paintingId": "B02-PRODIGAL-REMBRANDT",
+          "fileId": "Rembrandt Harmensz. van Rijn - The Return of the Prodigal Son.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son.jpg"
+        }
+      ],
+      "score4_reproduceSameOriginal": [
+        {
+          "paintingId": "W02-015",
+          "fileId": "Francisco de Zurbarán 009.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg"
+        },
+        {
+          "paintingId": "W36-SNT-OT-13-5387d641cce6",
+          "fileId": "Claudio coello-santo domingo.JPG",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG"
+        },
+        {
+          "paintingId": "W44-006",
+          "fileId": "Saint Benoît en prière de Jean Restout.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg"
+        },
+        {
+          "paintingId": "C35:saintagnesbycesaredandinijpg",
+          "fileId": "Saint Agnes by Cesare Dandini.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg"
+        },
+        {
+          "paintingId": "W38-001",
+          "fileId": "Massimo Stanzione - Saint Agnes - Google Art Project.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "W42-NEW-002",
+          "fileId": "Francesco Furini - Saint Agnes of Rome.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg"
+        },
+        {
+          "paintingId": "C32:hippolytefourniersaintcecilejpg",
+          "fileId": "Hippolyte Fournier Saint Cécile.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg"
+        },
+        {
+          "paintingId": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+          "fileId": "Claude Vignon - St Catherine refuses to sacrifice to the idols.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg"
+        },
+        {
+          "paintingId": "C32:gustavevanaisemagdaleneinchriststombjpg",
+          "fileId": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg"
+        },
+        {
+          "paintingId": "W38-019",
+          "fileId": "San Vicente de Paul - Juan Nepomuceno.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg"
+        },
+        {
+          "paintingId": "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent",
+          "fileId": "La Educación de la Virgen (The Education of the Virgin), Workshop of Vicent López Portaña.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg"
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "fileId": "Saint Rosalie Interceding for the Plague-stricken of Palermo MET DT2728.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg"
+        },
+        {
+          "paintingId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+          "fileId": "Peter Paul Rubens - The Miracles of Saint Francis of Paola - 91.PB.50 - J. Paul Getty Museum.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg"
+        },
+        {
+          "paintingId": "W04-009",
+          "fileId": "The Dream of Saint Joseph.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg"
+        },
+        {
+          "paintingId": "C32:guidoreni042jpg",
+          "fileId": "Guido Reni 042.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg"
+        },
+        {
+          "paintingId": "met-437542",
+          "fileId": "Saint Teresa of Ávila Interceding for Souls in Purgatory MET DT206354.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg"
+        },
+        {
+          "paintingId": "B02-HELP-ICON-BYZ",
+          "fileId": "Perpetual help original icon.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg"
+        },
+        {
+          "paintingId": "met-437457",
+          "fileId": "The Baptism of Christ MET DT9354.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_DT9354.jpg"
+        },
+        {
+          "paintingId": "nga-50726",
+          "fileId": "Juan de Flandes, The Temptation of Christ, c. 1500-1504, NGA 50726.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg"
+        },
+        {
+          "paintingId": "met-702752",
+          "fileId": "Benedetto Luti - Christ and the Woman of Samaria - 2015.645 - Metropolitan Museum of Art.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg"
+        },
+        {
+          "paintingId": "B02-FOOTWASH-TINTORETTO",
+          "fileId": "Tintoretto, Jacopo - Christ washing the Feet of the Disciples - National Gallery London.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg"
+        }
+      ],
+      "score5_visuallyPerfect": [
+        {
+          "paintingId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "fileId": "Martirio de San Esteban, de Juan de Juanes (Museo del Prado).jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg"
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "fileId": "Anton van Dyck - Saint Francis of Assisi in Ecstasy.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg"
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "fileId": "St Francis in Ecstasy.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Francis_in_Ecstasy.jpg"
+        },
+        {
+          "paintingId": "C34:ambrosiusbensonsantodomingodeguzmanmuseodelpradomadridjpg",
+          "fileId": "Ambrosius Benson - Santo Domingo de Guzman, Museo del Prado, Madrid.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg"
+        },
+        {
+          "paintingId": "W39-014",
+          "fileId": "Juan rizi-san benito.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito.jpg"
+        },
+        {
+          "paintingId": "W44-005",
+          "fileId": "Juan rizi-san benito bendiciendo.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito_bendiciendo.jpg"
+        },
+        {
+          "paintingId": "W14-006",
+          "fileId": "Peter Paul Rubens - The miracles of St. Francis Xavier - Google Art Project.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "W14-004",
+          "fileId": "Peter Paul Rubens, , Kunsthistorisches Museum Wien, Gemäldegalerie - Wunder des Hl. Ignatius von Loyola - GG 517 - Kunsthistorisches Museum.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg"
+        },
+        {
+          "paintingId": "podesti-margaret-mary-source",
+          "fileId": "Apparizione a Marguerite Marie Alacoque.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg"
+        },
+        {
+          "paintingId": "france-PM01002671-vianney",
+          "fileId": "Jean-Marie Vianney.png",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean-Marie_Vianney.png"
+        },
+        {
+          "paintingId": "C32:eliseuviscontirecompensadesaosebastiaojpg",
+          "fileId": "Eliseu Visconti - Recompensa de São Sebastião.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg"
+        },
+        {
+          "paintingId": "C32:stnicholasofbaripresentstherovellistudentstomadonnaandchildb",
+          "fileId": "St Nicholas of Bari presents the Rovelli students to Madonna and Child, by Moretto da Brescia.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg"
+        },
+        {
+          "paintingId": "G17-010",
+          "fileId": "PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg"
+        },
+        {
+          "paintingId": "C32:cavalierarpinosantaceciliajpg",
+          "fileId": "Cavalier Arpino - santa cecilia.jpg",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg"
+        },
+        {
+          "paintingId": "W40-012",
+          "fileId": "Guido Reni - The Penitent Magdalene - Google Art ProjectFXD.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg"
+        },
+        {
+          "paintingId": "C35:saintegenevieve1821byelisabethvigeelebrunjpg",
+          "fileId": "Sainte Genevieve, 1821, by Elisabeth Vigee Le Brun.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg"
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "fileId": "Van Dyck, Anthony - St Martin Dividing his Cloak - 1620-1621.JPG",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG"
+        },
+        {
+          "paintingId": "commons-morlete-sacred-heart-1759",
+          "fileId": "Juan Patricio Morlete Ruiz - The Heart of Jesus - Google Art Project.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "B02-HEART-MARY-MORLETE",
+          "fileId": "Juan Patricio Morlete Ruiz - The Heart of Mary - Google Art Project.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
+        },
+        {
+          "paintingId": "met-438434",
+          "fileId": "The Virgin Adoring the Host.PNG",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Virgin_Adoring_the_Host.PNG"
+        },
+        {
+          "paintingId": "carmel-lisieux-1925-therese-aux-roses",
+          "fileId": "carmel-lisieux-thérèse-aux-roses-1925-archives-preview",
+          "currentReviewStatus": "not_reviewed",
+          "sourcePage": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/"
+        },
+        {
+          "paintingId": "nga-34956",
+          "fileId": "Return of the Prodigal Son 1667-1670 Murillo.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg"
+        },
+        {
+          "paintingId": "B02-MARTHA-VERMEER",
+          "fileId": "Johannes Vermeer - Christ in the House of Martha and Mary - NG 1670 - National Galleries of Scotland.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Christ_in_the_House_of_Martha_and_Mary_-_NG_1670_-_National_Galleries_of_Scotland.jpg"
+        },
+        {
+          "paintingId": "B02-THOMAS-CARAVAGGIO",
+          "fileId": "The Incredulity of Saint Thomas.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg"
+        },
+        {
+          "paintingId": "met-437871",
+          "fileId": "La cena de Emaús, by Diego Velázquez.jpg",
+          "currentReviewStatus": "keep",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg"
+        }
+      ],
+      "otherImageJudgments": [
+        {
+          "paintingId": "W38-001",
+          "fileId": "Saint Agnes.JPG",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B02-HELP-ICON-BYZ",
+          "fileId": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "met-436801",
+          "fileId": "The Marriage Feast at Cana MET DT1459.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "nga-34956",
+          "fileId": "Bartolomé Esteban Murillo, The Return of the Prodigal Son, 1667-1670, NGA 34956.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "B02-MARTHA-VERMEER",
+          "fileId": "Christ in the House of Martha and Mary attributed to Vermeer.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        },
+        {
+          "paintingId": "met-437871",
+          "fileId": "The Supper at Emmaus MET DP120945.jpg",
+          "qualityScore": null,
+          "status": "duplicate"
+        }
+      ],
+      "explicitKept": [
+        {
+          "paintingId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "fileId": "Martirio de San Esteban, de Juan de Juanes (Museo del Prado).jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "fileId": "St Francis in Ecstasy.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W39-014",
+          "fileId": "Juan rizi-san benito.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W44-005",
+          "fileId": "Juan rizi-san benito bendiciendo.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W14-006",
+          "fileId": "Peter Paul Rubens - The miracles of St. Francis Xavier - Google Art Project.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W14-004",
+          "fileId": "Peter Paul Rubens, , Kunsthistorisches Museum Wien, Gemäldegalerie - Wunder des Hl. Ignatius von Loyola - GG 517 - Kunsthistorisches Museum.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "podesti-margaret-mary-source",
+          "fileId": "Apparizione a Marguerite Marie Alacoque.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "france-PM01002671-vianney",
+          "fileId": "Jean-Marie Vianney.png",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C32:stnicholasofbaripresentstherovellistudentstomadonnaandchildb",
+          "fileId": "St Nicholas of Bari presents the Rovelli students to Madonna and Child, by Moretto da Brescia.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "G17-010",
+          "fileId": "PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "W40-012",
+          "fileId": "Guido Reni - The Penitent Magdalene - Google Art ProjectFXD.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "C35:saintegenevieve1821byelisabethvigeelebrunjpg",
+          "fileId": "Sainte Genevieve, 1821, by Elisabeth Vigee Le Brun.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "fileId": "Van Dyck, Anthony - St Martin Dividing his Cloak - 1620-1621.JPG",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "commons-morlete-sacred-heart-1759",
+          "fileId": "Juan Patricio Morlete Ruiz - The Heart of Jesus - Google Art Project.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "B02-HEART-MARY-MORLETE",
+          "fileId": "Juan Patricio Morlete Ruiz - The Heart of Mary - Google Art Project.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "met-438434",
+          "fileId": "The Virgin Adoring the Host.PNG",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "nga-34956",
+          "fileId": "Return of the Prodigal Son 1667-1670 Murillo.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "B02-MARTHA-VERMEER",
+          "fileId": "Johannes Vermeer - Christ in the House of Martha and Mary - NG 1670 - National Galleries of Scotland.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "B02-THOMAS-CARAVAGGIO",
+          "fileId": "The Incredulity of Saint Thomas.jpg",
+          "score": 5,
+          "rank": 1
+        },
+        {
+          "paintingId": "met-437871",
+          "fileId": "La cena de Emaús, by Diego Velázquez.jpg",
+          "score": 5,
+          "rank": 1
+        }
+      ],
+      "explicitDuplicateImages": [
+        {
+          "paintingId": "W38-001",
+          "fileId": "Saint Agnes.JPG",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B02-HELP-ICON-BYZ",
+          "fileId": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "met-436801",
+          "fileId": "The Marriage Feast at Cana MET DT1459.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "nga-34956",
+          "fileId": "Bartolomé Esteban Murillo, The Return of the Prodigal Son, 1667-1670, NGA 34956.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "B02-MARTHA-VERMEER",
+          "fileId": "Christ in the House of Martha and Mary attributed to Vermeer.jpg",
+          "qualityScore": null
+        },
+        {
+          "paintingId": "met-437871",
+          "fileId": "The Supper at Emmaus MET DP120945.jpg",
+          "qualityScore": null
+        }
+      ],
+      "explicitlySelectedOlderPaintingDecisions": {
+        "ART-laudio-oello-aint-ominic-of-uzm-n": "include",
+        "ART-ietro-da-ortona-aint-ecilia": "include",
+        "ART-uido-eni-aint-ary-agdalene": "include",
+        "ART-eter-aul-ubens-oly-amily-with-aint-nne": "include"
+      },
+      "unresolvedSelectedOctober12": [
+        {
+          "selectedOriginalId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+          "selectedTitle": "Martyrdom of Saint Lawrence",
+          "sourcePage": "https://www.nga.gov/artworks/103596-martyrdom-saint-lawrence"
+        },
+        {
+          "selectedOriginalId": "ART-eter-aul-ubens-aint-ebastian",
+          "selectedTitle": "Saint Sebastian",
+          "sourcePage": null
+        },
+        {
+          "selectedOriginalId": "ART-aravaggio-aint-atherine-of-lexandria",
+          "selectedTitle": "Saint Catherine of Alexandria",
+          "sourcePage": null
+        }
+      ],
+      "browserConfirmedLoadFailures": [
+        {
+          "alt": "Expulsion of Adam and Eve / Source identity still needs validation",
+          "source": "https://commons.wikimedia.org/wiki/Special:Redirect/file/John_Faed_-_Expulsion_of_Adam_and_Eve.jpg?width=600",
+          "painting": "Expulsion of Adam and Eve"
+        }
+      ]
+    }
+  ]
+}
