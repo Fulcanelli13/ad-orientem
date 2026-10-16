@@ -16,5 +16,6 @@ export function applySaintsReleaseBoundary(dataset,channel=ACTIVE_SAINTS_CHANNEL
     saintsDoctors:research?dataset?.saintsDoctors??null:null,
     saintsVocations:research?dataset?.saintsVocations??null:null,
     saintsOwnerIndex:research?dataset?.saintsOwnerIndex??null:null,
+    saintsShrineReadiness:research?dataset?.saintsShrineReadiness??null:null,
   });
 }
