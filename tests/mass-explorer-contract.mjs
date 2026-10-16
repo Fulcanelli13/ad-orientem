@@ -39,6 +39,9 @@ const fr=massExplorerMomentHtml(catalog,"AO.CARD.010",{blockId:"AO.SM.B031",fren
 assert.match(fr,/Guide d’origine|Guide d’ORIGINE|MESSE CHANTÉE/);
 assert.match(fr,/Suscipe, sancte Pater/);
 assert.match(fr,/data-ao-mx-current="AO.CARD.010"/);
+const study=massExplorerMomentHtml(catalog,"AO.CARD.003");
+assert.match(study,/data-ao-mx-study="MF01"/,"existing Formation owner must be reachable");
+assert.match(read("src/learn/mass-formation.js"),/state\.explorerReturn/,"return to actually visited Explorer must be supported");
 const sanctus=massExplorerMomentHtml(catalog,"AO.CARD.013");
 assert.match(sanctus,/data-ao-scripture-context/,"reuse existing Scripture click owner");
 assert.match(sanctus,/Isaiah|Matthew|Sanctus/);
