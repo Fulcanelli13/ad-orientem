@@ -11,7 +11,7 @@ const COPY={
   en:{
     brand:"AD ORIENTEM",subtitle:"1962 Roman Mass companion",prepare:"Prepare",followMass:"Follow Mass",
     giveThanks:"Give thanks",aroundMass:"Around the Mass",holyGospel:"Holy Gospel",exploreGospel:"Explore Gospel",
-    todaysMass:"Today’s Mass",todaysMassHint:"Propers · readings · liturgical information",openMass:"Open today’s Mass",
+    todaysMass:"Today’s Mass",todaysMassHint:"Propers · readings · liturgical information",openMass:"Open today’s Mass",openSelectedMass:"Open Mass for selected day",
     more:"More",moreHint:"Settings · preparation · thanksgiving",openMore:"Open more",rank:"Rank",colour:"Colour",
     properUnavailable:"Proper unavailable",properUnavailableBody:"The fixed Ordinary remains available. Feast-specific texts could not be loaded.",
     calendarUnavailable:"Calendar unavailable",calendarUnavailableBody:"The liturgical day could not be resolved. Try again when a source connection is available.",
@@ -22,7 +22,7 @@ const COPY={
   fr:{
     brand:"AD ORIENTEM",subtitle:"Compagnon de la Messe romaine de 1962",prepare:"Se préparer",followMass:"Suivre la Messe",
     giveThanks:"Action de grâces",aroundMass:"Autour de la Messe",holyGospel:"Saint Évangile",exploreGospel:"Explorer l’Évangile",
-    todaysMass:"Messe du jour",todaysMassHint:"Propres · lectures · informations liturgiques",openMass:"Ouvrir la Messe du jour",
+    todaysMass:"Messe du jour",todaysMassHint:"Propres · lectures · informations liturgiques",openMass:"Ouvrir la Messe du jour",openSelectedMass:"Ouvrir la Messe du jour choisi",
     more:"Plus",moreHint:"Réglages · préparation · action de grâces",openMore:"Ouvrir plus",rank:"Classe",colour:"Couleur",
     properUnavailable:"Propre indisponible",properUnavailableBody:"L’Ordinaire fixe reste disponible. Les textes propres à la fête n’ont pas pu être chargés.",
     calendarUnavailable:"Calendrier indisponible",calendarUnavailableBody:"Le jour liturgique n’a pas pu être résolu. Réessayez lorsqu’une source est disponible.",
@@ -96,7 +96,7 @@ export function buildHomeViewModel(state,win=globalThis){
   const gospelText=localizedText(proper?.gospel,language),reference=gospelRef(gospelText);
   const formularies=day?.massOptions?.length>1?day.massOptions.map(o=>({index:o.index,label:o.label||o.title||`${tr(language,"formulary")} ${o.index+1}`,selected:o.index===day.formularyIndex})):[];
   return{
-    language,dateIso:state.selectedDate,
+    language,dateIso:state.selectedDate,todayIso:iso(new Date()),isToday:state.selectedDate===iso(new Date()),
     weekday:new Intl.DateTimeFormat(locale,{weekday:"long"}).format(date),
     dateLong:formatDisplayDate(date),
     celebration,rank:rankValue?`${tr(language,"rank")} · ${rankValue}`:"",
@@ -122,6 +122,11 @@ export function renderHomeToString(state,win=globalThis){
   const enrichers=buildHomeEnrichers(state,win);
   const coverage=currentProper?.languageCoverage?.[vm.language];
   const translationStatus=coverage&&!coverage.complete?`<div class="statusCard warning contentIntegrity"><strong>${vm.language==="fr"?"Traduction du Propre incomplète":"Proper translation incomplete"}</strong><span>${esc(`${coverage.available}/${coverage.expected} · ${coverage.missing.join(", ")}`)}</span></div>`:"";
+  const browsingNotice=!vm.isToday
+    ?'<div class="aoTodayV2SelectedDayNotice" data-home-selected-day="'+esc(vm.dateIso)+'" role="status"><span>'+
+      esc(vm.language==="fr"?"Vous consultez le "+vm.dateLong+" · ce n’est pas aujourd’hui":"Viewing "+vm.dateLong+" · not today")+
+      '</span><button type="button" data-home-restore-today>'+esc(vm.language==="fr"?"Revenir à aujourd’hui":"Return to today")+'</button></div>'
+    :"";
   const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
   // Historic commemorations have ONE public surface: the source-labelled
   // "Also honoured today" section, not a repeated Mass-header meta line.
@@ -136,14 +141,14 @@ export function renderHomeToString(state,win=globalThis){
   ].filter(Boolean).join(" · "):"";
   return `<style data-ao-today-v2-style>${TODAY_V2_CSS}</style><main class="homeScreen aoTodayV2" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
 <header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
-<nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.language==="fr"?"Aujourd’hui":"Today")}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div><div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
+<nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.isToday?(vm.language==="fr"?"Aujourd’hui":"Today"):(vm.language==="fr"?"Jour choisi":"Selected day"))}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div>${browsingNotice}<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
 <section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div><div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">CALENDARIUM ROMANUM · 1962</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
 <div class="sectionLabel">${esc(t("aroundMass"))}</div>
 ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-resume-mass data-ao-resume-owner="${resume.source}">
 <span>${esc(vm.language==="fr"?"Messe en cours":"Mass in progress")}${resumeMeta?" · "+esc(resumeMeta):""}</span><b>${esc(vm.language==="fr"?"Reprendre la messe":"Resume Mass")} →</b></button>`:
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-home-mass-entry>
-<b>${esc(t("openMass"))} →</b></button>`}
+<b>${esc(vm.isToday?t("openMass"):t("openSelectedMass"))} →</b></button>`}
 <div class="aoTodayV2SecondaryMass"><button type="button" data-action="prepare">${esc(t("prepare"))}</button><button type="button" data-action="thanks">${esc(t("giveThanks"))}</button></div>
 </section></div></section>
 ${status}${translationStatus}

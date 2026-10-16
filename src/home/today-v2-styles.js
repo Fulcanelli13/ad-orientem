@@ -7,6 +7,11 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Tabs span{border-bottom-color:var(--liturgical,#929ba8);color:var(--text,#eee9df)}
 .aoTodayV2Tabs button:focus-visible{outline:2px solid var(--liturgical,#929ba8);outline-offset:-2px}
 .aoTodayV2 .dateRail{display:none!important}
+.aoTodayV2SelectedDayNotice{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:var(--surface-1,#101720);border-bottom:1px solid var(--border,rgba(238,238,238,.13));font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#eee9df)}
+.aoTodayV2SelectedDayNotice span{min-width:0;overflow-wrap:break-word}
+.aoTodayV2SelectedDayNotice button{flex:0 0 auto;min-height:44px;border:1px solid var(--border,rgba(238,238,238,.3));border-radius:7px;padding:7px 10px;background:transparent;color:var(--text,#eee9df);font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2SelectedDayNotice button:focus-visible{outline:2px solid var(--liturgical,#929ba8);outline-offset:2px}
+@media(max-width:370px){.aoTodayV2SelectedDayNotice{gap:6px;padding-inline:9px}.aoTodayV2SelectedDayNotice button{padding-inline:7px}}
 .aoTodayV2 .dateNavigator{margin:0;padding:6px 13px;background:var(--bg,#080c12);border-bottom:1px solid var(--border,rgba(238,238,238,.08))}
 .aoTodayV2 .aoHomeCalendarAccess{display:none}
 .aoTodayV2Frontispiece{position:relative;padding:0!important;border:0!important;background:var(--surface-1,#0c131b);overflow:hidden}
