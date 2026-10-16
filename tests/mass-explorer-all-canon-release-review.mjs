@@ -122,7 +122,7 @@ try{
      name:"valid-owner-decisions.json",mimeType:"application/json",
      buffer:Buffer.from(JSON.stringify(payload))
    });
-   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Decisions restored/);
+   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Decisions restored|Décisions restaurées/);
    assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
    assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
    // Tampering one digest cannot import a stale review or mutate existing decisions.
@@ -132,7 +132,7 @@ try{
      name:"stale-owner-decisions.json",mimeType:"application/json",
      buffer:Buffer.from(JSON.stringify(corrupted))
    });
-   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Import refused/);
+   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Import refused|Import refusé/);
    assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
    assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
    // The restored review can continue to the next pending study.
