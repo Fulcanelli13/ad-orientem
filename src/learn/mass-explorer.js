@@ -204,12 +204,13 @@ export function massExplorerCss(){
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map",origin="learn";
-  let underlyingReader=null,readerPreviouslyInert=false;
+  let underlyingReader=null,readerPreviouslyInert=false,presentationLanguage=null;
   let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0;
   const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
-  const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
-       String(win?.document?.documentElement?.lang||"").startsWith("fr");
+  const french=()=>presentationLanguage==="fr"||
+    (presentationLanguage===null&&(win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
+       String(win?.document?.documentElement?.lang||"").startsWith("fr")));
   function paint({focusBlock=false,restoreIndex=false,restoreMoment=false}={}){
     const node=root();if(!node||!catalog)return false;
     const fr=french();
@@ -266,7 +267,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     }
     win?.document?.body?.classList?.remove?.("aoMassExplorerOpen");
     const massOrigin=origin==="mass";
-    origin="learn";
+    origin="learn";presentationLanguage=null;
     if(toLearn&&!massOrigin)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{returnFocus?.focus?.({preventScroll:true});}catch{}
     returnFocus=null;return true;
@@ -368,6 +369,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       underlyingReader=null;readerPreviouslyInert=false;
     }
     origin=requestedOrigin;
+    presentationLanguage=/^fr(?:-|$)/i.test(String(opts.language||""))?"fr":
+      /^en(?:-|$)/i.test(String(opts.language||""))?"en":null;
     if(origin==="mass"&&!underlyingReader){
       underlyingReader=reader;readerPreviouslyInert=Boolean(reader.inert);
       reader.inert=true;
