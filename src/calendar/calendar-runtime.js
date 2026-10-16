@@ -169,7 +169,7 @@ function principalSaintContext(r,id){
   return {date:id,title,marian,label:marian?L("Marian feast","Fête mariale"):L("Saint / feast","Saint / fête")};
 }
 async function openSaintDetail(id){
-  const target=String(id||state()?.selectedDate||"");if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(target))return false;
+  const target=String(id||state()?.selectedDate||"");if(!/^\d{4}-\d{2}-\d{2}$/.test(target))return false;
   // Month-index entry first selects the actual canonical 1962 day. Do not
   // look up a saint on the basis of month/day, name or a modern supplement.
   const ok=await select(target,{closeAfter:false});if(!ok)return false;
