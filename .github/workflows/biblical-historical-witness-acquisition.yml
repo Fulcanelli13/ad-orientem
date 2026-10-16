@@ -1,0 +1,72 @@
+name: Biblical historical witness acquisition (research only)
+
+on:
+  push:
+    branches:
+      - feature/biblical-atlas-current-main-convergence-20261012
+    paths:
+      - .github/workflows/biblical-historical-witness-acquisition.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire-historical-scans:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Install PDF utilities
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+
+      - name: Download separately identified historical editions and render research preview pages
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p research-preview
+          total=0
+          for entry in \
+            'sadlier-english-11|https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf' \
+            'schuster-english-1925|https://archive.org/download/in.ernet.dli.2015.49638/2015.49638.1373-The-Illustrated-Bible-History-1925.pdf' \
+            'schuster-spanish-1908|https://archive.org/download/historiasagradad00schu/historiasagradad00schu.pdf'
+          do
+            label="${entry%%|*}"
+            url="${entry#*|}"
+            mkdir -p "research-preview/$label"
+            printf 'Source: %s\nEdition: %s\n' "$url" "$label" > "research-preview/$label/retrieval.txt"
+            if curl --fail --location --retry 2 --retry-delay 3 --connect-timeout 20 --max-time 190 --max-filesize 80000000 --output "/tmp/$label.pdf" "$url"; then
+              printf 'Downloaded bytes: ' >> "research-preview/$label/retrieval.txt"
+              stat -c '%s' "/tmp/$label.pdf" >> "research-preview/$label/retrieval.txt"
+              sha256sum "/tmp/$label.pdf" >> "research-preview/$label/retrieval.txt"
+              if pdfinfo "/tmp/$label.pdf" > "research-preview/$label/pdfinfo.txt"; then
+                echo 'PDF header validated' >> "research-preview/$label/retrieval.txt"
+                # Page raster previews are evidence for a subsequent manual image inspection.
+                # No text/illustrations are added to the application or checked into Git.
+                pdftoppm -f 1 -l 45 -jpeg -jpegopt quality=78 \
+                  -scale-to 1400 "/tmp/$label.pdf" "research-preview/$label/scan" >/dev/null 2>&1 || true
+                pdftotext -f 1 -l 45 -layout "/tmp/$label.pdf" "research-preview/$label/provisional-extraction-NOT-certified.txt" 2>/dev/null || true
+                total=$((total + 1))
+              else
+                echo 'INVALID_PDF_HEADER' >> "research-preview/$label/retrieval.txt"
+              fi
+            else
+              echo 'DOWNLOAD_FAILED_OR_TIMEOUT' >> "research-preview/$label/retrieval.txt"
+            fi
+            rm -f "/tmp/$label.pdf"
+          done
+          echo "Valid historic PDFs fetched: $total"
+          if [ "$total" -lt 1 ]; then
+            echo 'No print witness retrieved; do not claim any text was certified.'
+            exit 1
+          fi
+
+      - name: Retain only temporary research audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biblical-historical-witness-preview-unverified
+          path: research-preview/
+          if-no-files-found: warn
+          retention-days: 7
