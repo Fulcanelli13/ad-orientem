@@ -10,7 +10,8 @@
     "threeStarBiblicalMuseumOptionsAdded": 6,
     "fourStarItemsWithSourceReconNotes": 12,
     "fourStarItemsWithAdditionalResearch": 13,
-    "fourStarOpenNotYetInvestigated": 11
+    "fourStarOpenNotYetInvestigated": 0,
+    "fourStarWithHighResRevisionCandidate": 1
   },
   "rules": [
     "Preserve source user-export files and all old ratings",
@@ -19,7 +20,8 @@
     "Candidate original source is not equivalent to approved photo master",
     "Do not auto-publish to production",
     "Do not mis-bind London NG6276 high-resolution Dream of Saint Joseph to Louvre INV20450; same artist/theme but different physical paintings.",
-    "Different Commons filenames or large EXIF original dimensions are not proof of independent master photo."
+    "Different Commons filenames or large EXIF original dimensions are not proof of independent master photo.",
+    "For W02-015 National Gallery NG5655, the 2012 Commons historical 3554×4226 file is a same-painting higher resolution revision. A revision is not an independent camera photograph; user may rate as upgraded variant."
   ],
   "fourStarPhotoQueue": [
     {
@@ -256,8 +258,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "SOURCE_FILE_ONLY_INDEPENDENT_PHOTO_PENDING",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Commons source exact Seville civic Saint Raphael file; search municipal collection source/permission for distinct photo."
     },
     {
       "batch": 1,
@@ -268,8 +271,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-san_antonio_de_padua.jpg",
       "physicalPaintingSource": "https://www.museodelprado.es/en/the-collection/art-work/saint-anthony-of-padua/94869cf9-4d95-443f-9372-4ad05440f8da",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "PRADO_OBJECT_P07640_SEPARATE_MUSEUM_PHOTO_PENDING",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Prado Saint Anthony of Padua original 94869cf9-4d95-443f-9372-4ad05440f8da. Commons Coello single source; compare Prado institutional master."
     },
     {
       "batch": 1,
@@ -280,8 +284,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "COMMONS_ORIGINAL_SOURCE_ONLY_HIGH_RES",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Current file is already 3,234 × 4,359 px, independent better color capture not verified. User rated 4★ image needs color/framing, not upscaled copy."
     },
     {
       "batch": 2,
@@ -292,8 +297,18 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
       "physicalPaintingSource": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "HIGHER_NATIVE_RES_ARCHIVED_SAME_OBJECT_CANDIDATE_AVAILABLE",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "NG5655 Commons 2012 archived file is 3554×4226 px vs rated current 1237×1484; same physical canvas, not independent camera. Presented as second QA/ranking choice, awaiting user image-quality confirmation.",
+      "candidateHighResArchivedImage": {
+        "fileId": "Commons archive 2012 - Francisco de Zurbaran 009 NG5655 3554x4226.jpg",
+        "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/archive/8/8d/20180805141351%21Francisco_de_Zurbar%C3%A1n_009.jpg",
+        "fileHistoryPage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg#filehistory",
+        "pixelDimensions": "3554×4226",
+        "samePhysicalOriginal": "National Gallery NG5655",
+        "separatePhotoExposure": false,
+        "visuallyReviewedByUser": false
+      }
     },
     {
       "batch": 2,
@@ -304,8 +319,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "COMMONS_SOURCE_COOELLO_DOMINIC_CAPTURE_PENDING",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Existing Commons Claudio Coello Santo Domingo; attribution exact original needs Prado source/cat linkage before photographic upgrade."
     },
     {
       "batch": 2,
@@ -316,8 +332,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "COMMONS_RESTOUT_BENEDICT_SOURCE_ONLY",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Jean Restout Saint Benedict in Prayer Commons source: independent photograph and high-resolution museum master not found."
     },
     {
       "batch": 2,
@@ -367,8 +384,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "COMMONS_FURINI_AGNES_2935x3674_ONLY",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Existing Francesco Furini Saint Agnes 2935×3674 pixels; source photo original exact physical artwork, but no independent alternate photo or museum accession verified."
     },
     {
       "batch": 2,
@@ -455,8 +473,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
       "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "COMMONS_WORKSHOP_VICENT_LOPEZ_1733x2560",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Workshop of Vicente López Portaña Education of Virgin 1733×2560 px from Commons; alternative physical painting not permitted under 4★ photo rule."
     },
     {
       "batch": 2,
@@ -550,8 +569,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
       "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/437542",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "MET_17_190_19_2857x3722_BASE_PHOTO",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Workshop of Rubens Saint Teresa Purgatory MET 17.190.19 has 2857×3722 base Commons. Need independent Met digitization, not screenshot of same source."
     },
     {
       "batch": 2,
@@ -602,8 +622,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
       "physicalPaintingSource": "https://www.nga.gov/artworks/50726-temptation-christ",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "NGA_50726_3014x4000_BASE_PHOTO",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Juan de Flandes Temptation of Christ NGA 50726 current Commons is already 3014×4000 original high-res. Better reproduction requires distinct photo/color QA."
     },
     {
       "batch": 2,
@@ -614,8 +635,9 @@
       "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg",
       "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/702752",
       "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
-      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
-      "photoQualityStar": 4
+      "photoResearchStatus": "MET_2015_645_3116x3868_BASE_PHOTO",
+      "photoQualityStar": 4,
+      "sourceResearchNote": "Benedetto Luti Christ and the Woman of Samaria Met 2015.645 current Commons 3116×3868. Need independent photograph/corrected color reproduction; not upsampling."
     },
     {
       "batch": 2,
