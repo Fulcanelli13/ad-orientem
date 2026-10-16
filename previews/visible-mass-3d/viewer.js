@@ -39,9 +39,14 @@ function setMode(next){
 async function readGlossary(){
   const files=['concepts-001-150.v1.json','concepts-151-300.v1.json','concepts-301-450.v1.json'];
   try{
-    const data=await Promise.all(files.map(f=>fetch('../../data/glossary/'+f).then(r=>{if(!r.ok)throw Error(r.status);return r.json();})));
-    for(const file of data){for(const e of file.entries||[]){if(canonicalIDs.includes(e.id))entries.set(e.id,e);}}
-  }catch(e){status('Glossary JSON unavailable: serve from the Ad Orientem website, not file://.');}
+    const embedded=document.getElementById('ao-glossary-entries');
+    if(embedded){
+      for(const e of JSON.parse(embedded.textContent||'[]'))if(canonicalIDs.includes(e.id))entries.set(e.id,e);
+    }else{
+      const data=await Promise.all(files.map(f=>fetch('../../data/glossary/'+f).then(r=>{if(!r.ok)throw Error(r.status);return r.json();})));
+      for(const file of data){for(const e of file.entries||[]){if(canonicalIDs.includes(e.id))entries.set(e.id,e);}}
+    }
+  }catch(e){status('Glossary entries unavailable. You can still test walking and place markers.');}
   for(const id of canonicalIDs){
     const e=entries.get(id); const option=document.createElement('option');
     option.value=id;option.textContent=(e?.labels?.en||fallbackNames[id])+' · '+id;
