@@ -25,14 +25,14 @@ export function massStudyStages(formation){
 
 /** The two learning approaches are not two copies of source material:
  * chronological map in this module and the existing topical course owner. */
-export function massStudyPathsHtml(stages,{french=false}={}){
+export function massStudyPathsHtml(stages,{french=false,standalone=false}={}){
  if(!Array.isArray(stages)||!stages.length)return "";
  return '<section id="ao-mx-themes" data-ao-mx-anchor="themes" class="aoMXStudyPaths" aria-label="'+tr(french,"Study the Mass by theme","Étudier la Messe par thème")+'">'+
-  '<div class="aoMXStudyPathsHead"><small>'+tr(french,"ANOTHER WAY TO EXPLORE","UNE AUTRE FAÇON D’EXPLORER")+'</small>'+
-  '<h2>'+tr(french,"Study by theme","Étudier par thème")+'</h2>'+
+  '<div class="aoMXStudyPathsHead"><small>'+tr(french,"THEMATIC FORMATION","FORMATION THÉMATIQUE")+'</small>'+
+  '<h2>'+(standalone?tr(french,"Eight lessons","Huit leçons"):tr(french,"Study by theme","Étudier par thème"))+'</h2>'+
   '<p>'+tr(french,
-    "The Mass Map follows the order of the liturgy. These eight existing lessons explore its meaning, theology and participation. Both use their original source owners.",
-    "La carte suit l’ordre de la liturgie. Ces huit leçons existantes approfondissent son sens, sa théologie et la participation des fidèles. Chaque contenu garde sa source d’origine.")+'</p></div>'+
+    "Explore the theology, ceremonies and spiritual meaning of the Roman Mass through eight existing lessons.",
+    "Approfondissez la théologie, les cérémonies et le sens spirituel de la Messe romaine à travers huit leçons existantes.")+'</p></div>'+
   '<div class="aoMXStudyPathsList">'+stages.map(stage=>
      '<button type="button" class="aoMXStudyPath" data-ao-mx-stage="'+esc(stage.id)+'">'+
      '<span class="aoMXStudyPathN">'+String(stage.order).padStart(2,"0")+'</span>'+
