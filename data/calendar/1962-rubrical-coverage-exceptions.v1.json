@@ -1,0 +1,149 @@
+{
+  "schema": "AO_CALENDAR_1962_RUBRICAL_COVERAGE_EXCEPTIONS_V1",
+  "asOf": "2026-10-17",
+  "publicationStatus": "EDITORIAL_AND_CI_AUDIT_ONLY_NOT_RUNTIME_RULES",
+  "scope": {
+    "calendar": "GENERAL_ROMAN_1962",
+    "years": [
+      2026,
+      2027,
+      2028
+    ],
+    "jurisdiction": "GENERAL_ONLY",
+    "dateStatus": "EXPLICIT_DATED_WITNESS_REQUIRED",
+    "purpose": "Screen original-source claim coverage without manufacturing Mass authorizations, new precedence rules or automatic omissions"
+  },
+  "sourceOwners": {
+    "omissions": "data/calendar/1962-ordo-corrections.v1.json",
+    "transferWitnesses": "data/calendar/1962-transfer-oracle.v1.json",
+    "protectedAnnex": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+    "particularWitnesses": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+    "observedClaimAdapter": "src/calendar/rubrical-claim-citations.js",
+    "scriptureReturn": "tests/calendar-reciprocal-scripture-phone.mjs"
+  },
+  "authorities": {
+    "normativeRubrics1960": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597",
+    "rubricsEnglishReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "cumSanctissima": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+    "cumSanctissimaExplanatoryNote": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html"
+  },
+  "interpretation": {
+    "omission": "A certified date-specific absence in the 1962 General Roman Calendar; never implied by civil date, a missing name in the UI, or a third-class saint's fixed feast alone",
+    "protectedAnnex": "The 2020 decree protects seventy third-class feasts from optional celebration choices permitted by that decree. This alone does NOT establish precedence against a higher-class 1962 Sunday or override a historical omission. The 70-by-Sunday screening is a research shortlist, not certified omitted feasts.",
+    "particular": "An institute, chaplaincy, diocesan or local calendar requires separately authenticated venue, jurisdiction and oration sources. Do not promote one site's celebration to a universal 1962 Mass.",
+    "sourceDisagreement": "A disputed commemorated or omitted status must be left unclassified until original rubric and dated-orational witnesses are reconciled.",
+    "sourceSeparation": "Normative 1960 rubrics, official 2020 decrees, dated historical ordos and the app's observed Mass resolver are different evidence types and must not be collapsed."
+  },
+  "snapshotExpectations": {
+    "reviewedOmissionCases": 12,
+    "calendarYears": 3,
+    "protectedFeastsInAnnex": 70,
+    "protectedFeastSundayOverlaps": 33,
+    "protectedOverlapAlreadyReviewed": 9,
+    "protectedOverlapPendingClassification": 24,
+    "particularWitnessesOnHold": 3,
+    "transferWitnesses": 7,
+    "transferClaimsSourceCertified": 4
+  },
+  "exceptions": [
+    {
+      "id": "LUCY_ADVENT_III_2026",
+      "status": "SOURCE_CONFLICT_HOLD",
+      "dates": [
+        "2026-12-13"
+      ],
+      "relevantIdentity": "sancti:12-13r:3:r",
+      "sourceOwner": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+      "sourceUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+      "reason": "Conflicting external commemoration dispositions; the protected-annex entry does not itself certify a commemoration or omission on the first-class Advent Sunday.",
+      "gate": "ORIGINAL_1962_DAY_AND_COMMEMORATION_SOURCE_RECONCILIATION",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "PIUS_X_SSPX_2028",
+      "status": "PARTICULAR_SCOPE_HOLD",
+      "dates": [
+        "2028-09-03"
+      ],
+      "relevantIdentity": "sancti:09-03:3:w",
+      "sourceOwner": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+      "sourceUrl": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+      "reason": "Distinguish the General Roman Calendar from a possible institute-specific rank, patronal solemnity or local observed Mass on Sunday; SSPX-specific practice is not automatically universal.",
+      "gate": "VERIFY_INSTITUTE_RANK_JURISDICTION_AND_ORATIONS",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "ROGATIONS_DEFAULT_VOTIVE_CHOICE",
+      "status": "MASS_SELECTION_HOLD",
+      "dates": [
+        "2024-05-06",
+        "2027-05-03"
+      ],
+      "sourceOwner": "data/calendar/1962-ordo-corrections.v1.json",
+      "sourceUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "reason": "Ordinary Eastertide feria and optional Rogation procession/Mass are distinct selections; date does not automatically authorize or select the violet Rogation Proper.",
+      "gate": "ISSUE_694_EXPLICIT_CELEBRANT_SELECTION_AND_PROPER",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "ANNUNCIATION_2029_UNANNOTATED",
+      "status": "WITNESS_NOT_SOURCE_CLAIM",
+      "dates": [
+        "2029-03-25",
+        "2029-04-09"
+      ],
+      "sourceOwner": "data/calendar/1962-transfer-oracle.v1.json",
+      "sourceUrl": "https://gcatholic.org/calendar/2029/Extraordinary-en",
+      "reason": "An original-to-observed transfer exists as a dated witness beyond the current 2026–2028 audit window but is not a clause-certified Calendar citation.",
+      "gate": "EXTEND_SCOPE_AND_CERTIFY_CLAUSE_DATED_RESOLVER_BEFORE_PUBLICATION",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "DUBLIN_PHILIP_NERI_2026",
+      "status": "PARTICULAR_SCOPE_HOLD",
+      "dates": [
+        "2026-05-26",
+        "2026-06-01"
+      ],
+      "sourceOwner": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+      "sourceId": "particular:IE:Dublin:StKevins:2026-Philip-Neri",
+      "reason": "Observed local first-class transfer cannot establish General Roman Calendar precedence. Canonical venue and saint identities, customary permission and exact Mass form require certification.",
+      "gate": "VENUE_SAINT_IDENTITY_AND_LOCAL_FORMULARY",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "DUBLIN_NEWMAN_2026",
+      "status": "PARTICULAR_SCOPE_HOLD",
+      "dates": [
+        "2026-10-09"
+      ],
+      "sourceOwner": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+      "sourceId": "particular:IE:Dublin:StKevins:2026-Newman-High-Mass",
+      "reason": "Parish bulletin announces a saint-honouring Mass, not a certified universal 1962 calendar substitution or approved complete traditional formulary.",
+      "gate": "VENUE_MASS_FORMULARY_AND_OMITTED_1962_SAINT_REVIEW",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "DUBLIN_LUIGI_SCROSOPPI_2026",
+      "status": "PARTICULAR_SCOPE_HOLD",
+      "dates": [
+        "2026-10-05"
+      ],
+      "sourceOwner": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
+      "sourceId": "particular:IE:Dublin:StKevins:2026-Luigi-Scrosoppi",
+      "reason": "An Oratory saint's celebration is reported, but its liturgical versus devotional form, venue, saint identity and use of the older books remain unresolved.",
+      "gate": "VENUE_IDENTITY_CANONICAL_SAINT_AND_LITURGICAL_FORM",
+      "automaticallyAffectsMass": false
+    },
+    {
+      "id": "SCRIPTURE_EDITIONS_CONTEXT",
+      "status": "SEPARATE_ACCEPTANCE_NOT_COMPLETED_BY_RUBRICAL_CLAIMS",
+      "dates": [],
+      "sourceOwner": "tests/calendar-reciprocal-scripture-phone.mjs",
+      "sourceUrl": "https://github.com/Fulcanelli13/ad-orientem/issues/719",
+      "reason": "Existing reciprocal Calendar-to-Scripture navigation is not proof of chapter, supported edition, commentary and missing-offline-text parity for every Good Friday, Easter Vigil, Ember and commemorated reading.",
+      "gate": "EXACT_READING_SLOT_EDITION_COMMENTARY_OFFLINE_AND_SCROLL_RETURN_ACCEPTANCE",
+      "automaticallyAffectsMass": false
+    }
+  ]
+}
