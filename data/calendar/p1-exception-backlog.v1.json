@@ -9,7 +9,13 @@
       "kind": "SOURCE_HOLD",
       "status": "OPEN",
       "nextAction": "38 indexed Commons need complete original 1962 Latin and editions; section-by-section 11-part check.",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Facsimile images of four printed Common families were visually inspected (Doctorum, Confessor Pontiff, Confessor non Pontiff, Abbots); this verifies headings and variants, not complete 1962 edition text or other families.",
+        "releaseGateStillOpen": true
+      }
     },
     {
       "id": "P1-E02",
@@ -17,7 +23,13 @@
       "kind": "TEXT_HOLD",
       "status": "OPEN",
       "nextAction": "Authenticate Collect, Secret, Postcommunion and conclusions in print.",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Collect p.696, Secret p.697 and Postcommunion p.698 all directly located in scanned printed-page images; independent typical-edition provenance, exact text normalization, conclusions and reproduction rights pending.",
+        "releaseGateStillOpen": true
+      }
     },
     {
       "id": "P1-E03",
@@ -25,7 +37,13 @@
       "kind": "TEXT_HOLD",
       "status": "OPEN",
       "nextAction": "Authenticate existing saints' commemorative orations, precedence and cap.",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Commemorative Collect p.696-697, Secret p.697, Postcommunion p.698 directly located in printed images; same provenance, transcription and legal-order holds.",
+        "releaseGateStillOpen": true
+      }
     },
     {
       "id": "P1-E04",
@@ -73,7 +91,13 @@
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
       "nextAction": "Reconcile 35 indexed labels to owner IDs and primary-print genuine alternative forms.",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Printed (23)-(24) show one Commune Doctorum; two previously separate Doctor web-index IDs are source aliases for one printed Common with Pontiff vs non-Pontiff Secret/Postcommunion variants. Other print families and aliases still open.",
+        "releaseGateStillOpen": true
+      }
     },
     {
       "id": "P1-E10",
@@ -162,7 +186,13 @@
       "status": "OPEN",
       "nextAction": "SSPX digital 9-Oct-2026 Ordo heading Leonardi displays generic multiple Martyrs Mass (Sapiéntiam Sanctórum) rather than Leonardi Proper (In sermónibus Dómini) in two corroborating 1962-claiming sources; identify why and collate original 1962 print; also resolve any seasonal/variant mismatches.",
       "blocksRuntimeApproval": true,
-      "discrepantSourceUrl": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical"
+      "discrepantSourceUrl": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Printed p.698 introduces the separate Dionysius group commemorative Mass with Sapientiam sanctorum; SSPX Ordo celebration=403 may select that commemoration. Do not label source error without verifying its selected observance.",
+        "releaseGateStillOpen": true
+      }
     },
     {
       "id": "P1-E20",
@@ -185,5 +215,6 @@
       ],
       "blocksRuntimeApproval": true
     }
-  ]
+  ],
+  "printImageFindingsCount": 5
 }
