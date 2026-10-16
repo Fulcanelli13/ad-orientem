@@ -342,4 +342,31 @@ assert.equal(fam.counts.earlyEnglishSadlierSecondWordingImageReviewedUnits,10);
 assert.equal(fam.counts.earlyEnglishSadlierPrintedFootnoteMarkersRecovered,5);
 assert.equal(fam.counts.earlyEnglishSadlierLiterallyCharacterCertifiedUnits,0);
 
+// Complete repeat visual source-wording coverage, distinct from literal character certification.
+const fullRepeat=fam.english1908OriginsRepeatReviewCompletion;
+assert.ok(fullRepeat);
+assert.equal(fullRepeat.prerequisiteFirstPassUnits,47);
+assert.equal(fullRepeat.batch04SecondVisualWordingUnitCount,10);
+assert.equal(fullRepeat.batch05NewSecondVisualWordingUnitCount,17);
+assert.equal(fullRepeat.batch06NewSecondVisualWordingUnitCount,20);
+assert.equal(fullRepeat.cumulativeSecondVisualWordingUnitCount,47);
+assert.equal(fullRepeat.cumulativeSecondVisualWordingUnitIds.length,47);
+assert.equal(new Set(fullRepeat.cumulativeSecondVisualWordingUnitIds).size,47);
+assert.deepEqual(new Set(fullRepeat.cumulativeSecondVisualWordingUnitIds),new Set(originSpans.units.map(x=>x.id)));
+assert.equal(fullRepeat.sourceNoteAnchorsRecoveredCount,10);
+assert.equal(fullRepeat.sourceNoteAnchorsRecovered.length,10);
+assert.equal(fullRepeat.newSourceNoteAnchorsOnPrint.length,5);
+assert.deepEqual(fullRepeat.newSourceNoteAnchorsOnPrint.map(x=>[x.sourceUnit,x.anchorWord]),[["IV.7","enmity"],["IV.8","dominion"],["VI.3","Noe"],["VI.4","covenant"],["VI.8","deluge"]]);
+assert.ok(fullRepeat.sourceNoteAnchorsRecovered.every(x=>x.noteTextCertification==="NOT_CHARACTER_CERTIFIED"));
+assert.equal(fullRepeat.independentCharacterForCharacterCertifiedUnitCount,0);
+assert.equal(fullRepeat.sourceNoteBodiesCertifiedCount,0);
+assert.equal(fullRepeat.chapterQuestionBlocksExcluded,true);
+assert.equal(fullRepeat.fullAuthorTextCopiedToPublicGitHub,false);
+assert.equal(fullRepeat.textPublishedIntoAdOrientemApp,false);
+assert.equal(fullRepeat.noAiCreatedBibleNarrative,true);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhSecondVisualWordingCheckedUnits,47);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhRecoveredOriginalFootnoteAnchors,10);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhIndependentlyCertifiedUnitBodies,0);
+assert.equal(fam.counts.earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
