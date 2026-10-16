@@ -113,6 +113,31 @@ assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exp
 
 
 const historicalOnly=renderHomeToString(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
+// Calendar and Home intentionally share a selected date. When browsing away
+// from today's local date, presentation must never call it "Today's Mass".
+const now=new Date();
+const todayLocal=[now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+ String(now.getDate()).padStart(2,"0")].join("-");
+const historicalDate=todayLocal==="2026-10-07"?"2026-10-08":"2026-10-07";
+const historicalState={...base,selectedDate:historicalDate};
+const selectedView=buildHomeViewModel(historicalState,r17Win);
+assert.equal(selectedView.isToday,false);
+const selectedHtml=renderHomeToString(historicalState,{AO_DISPLAY_DATE:()=>historicalDate});
+assert.match(selectedHtml,/data-home-selected-day="/);
+assert.match(selectedHtml,/Selected day/);
+assert.match(selectedHtml,/Return to today/);
+assert.match(selectedHtml,/Open Mass for selected day/);
+assert.doesNotMatch(selectedHtml,/Open today’s Mass/);
+assert.equal((selectedHtml.match(/data-home-restore-today/g)||[]).length,1);
+const selectedFr=renderHomeToString({...historicalState,language:"fr"},
+  {AO_DISPLAY_DATE:()=>historicalDate});
+assert.match(selectedFr,/Jour choisi/);
+assert.match(selectedFr,/Revenir à aujourd’hui/);
+assert.match(selectedFr,/Ouvrir la Messe du jour choisi/);
+const realTodayHtml=renderHomeToString({...base,selectedDate:todayLocal},
+  {AO_DISPLAY_DATE:()=>todayLocal});
+assert.doesNotMatch(realTodayHtml,/data-home-restore-today/);
+assert.match(realTodayHtml,/Open today’s Mass/);
 assert.match(historicalOnly,/data-home-mass-entry/,"Without R17 checkpoint Home must offer Open Mass");
 assert.doesNotMatch(historicalOnly,/data-resume-mass/,"Home must not fabricate an active Mass from legacy state.resume");
 assert.doesNotMatch(historicalOnly,/data-resume-mass/,"historical state.resume regained production Resume ownership");
