@@ -72,7 +72,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
@@ -94,7 +94,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "COLLECT_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     },
     {
       "anchorId": "p1:missal:leonardi:secret",
@@ -109,7 +112,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
@@ -131,7 +134,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "SECRET_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     },
     {
       "anchorId": "p1:missal:leonardi:postcommunion",
@@ -146,7 +152,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
@@ -168,7 +174,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "POSTCOMMUNION_SET.1",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:collect",
@@ -183,7 +192,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "calendarCommemorationId": "sancti:10-09t:4:r",
@@ -206,7 +215,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "COLLECT_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:secret",
@@ -221,7 +233,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "calendarCommemorationId": "sancti:10-09t:4:r",
@@ -244,7 +256,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "SECRET_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:postcommunion",
@@ -259,7 +274,7 @@
       "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
+      "status": "LIVE_APP_READ_ONLY_SOURCE_AND_PARAGRAPH_VERIFIED_ROUTER_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "calendarCommemorationId": "sancti:10-09t:4:r",
@@ -282,7 +297,10 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate.",
+      "verifiedReaderParagraphId": "POSTCOMMUNION_SET.2",
+      "readerParagraphVerifiedBy": "ACTUAL_AO_RUNTIME_V8_PROPER_TO_READER_SLOTS",
+      "liveBrowserProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630"
     }
   ],
   "formExample": {
@@ -315,7 +333,8 @@
     "actualSourceIdentitiesVerified": 2,
     "actualPrayerRowsVerified": 6,
     "activeMassSelectionAllowedViaP1Bridge": false,
-    "referenceNavigationDependentOnForm": false
+    "referenceNavigationDependentOnForm": false,
+    "sourceOwnedParagraphTargetsVerified": 6
   },
   "runtimeResolutionModule": "src/calendar/p1-internal-missal-link-resolution.js",
   "runtimeResolutionModuleStatus": "RESEARCH_ONLY_NOT_IMPORTED_BY_PRODUCTION",
@@ -345,5 +364,21 @@
       "needsReaderP0Gate": true
     },
     "invariant": "The historical reference link does not assert Mass-form permissibility or applied status; the live Mass reader never uses P1 reference links for recitation."
+  },
+  "actualReaderParagraphTargetsVerified": 6,
+  "actualReadOnlyParagraphProofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630",
+  "navigationToImplementOnlyInReaderP0": {
+    "inputFields": [
+      "sourcePath",
+      "sourceIdentityId",
+      "readerMode",
+      "readerSlot",
+      "readerParagraphId",
+      "readOnly"
+    ],
+    "effect": "Navigate to existing Missal in read-only mode, focus exact verified paragraph, preserve active Live session state and actual Mass selection",
+    "allowedWithoutValidatedSource": false,
+    "route": null,
+    "status": "READER_OWNER_ACTION_REQUIRED"
   }
 }
