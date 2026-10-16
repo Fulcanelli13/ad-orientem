@@ -1,0 +1,130 @@
+{
+  "schema": "AO_SACRED_ART_W99_MOBILE_VISUAL_DECISIONS_V1",
+  "date": "2026-10-16",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38919721601",
+  "artifactId": 12053099082,
+  "counts": {
+    "fileDownloads": 7,
+    "uniquePhysicalPaintings": 6,
+    "distinctCategories": 5,
+    "visuallyPromisingSubjects": 3,
+    "conditionalSubjectCandidates": 1,
+    "needsReplacementOrApproval": 1,
+    "duplicateSourceViewsSamePainting": 1,
+    "strictNewCertified": 0
+  },
+  "strictCoverage": "146/168 unchanged because these are physically distinct from previous selected records or identity/rights still need review",
+  "visualDisposition": [
+    {
+      "categoryIndex": 37,
+      "subject": "Saint Robert Bellarmine",
+      "physicalPainting": "MPM.V.IV.110",
+      "sourceFileKeys": [
+        "bel-mpm110-whole",
+        "bel-mpm110-edge-derivative"
+      ],
+      "sourceSha256": [
+        "40ffe81a98e2d694f4948a62edced169a33acc154f8f6b638cb77d75d977f60b",
+        "e32bd9ad2c9b1099502715bc08f5f3ae6ff300889deef5c449bfb9fc0ac5484b"
+      ],
+      "mobileVisual": "STRONG",
+      "visibleEvidence": "Naturalistic oil portrait; good colour and tonal clarity at ~350px; whole source shows external frame and colour strip, second derivative avoids them.",
+      "identity": "Original at Plantin-Moretus MPM.V.IV.110, NOT previously selected Roman school portrait G30-010",
+      "rights": "Commons CC0 for both file records; validate object-level museum restrictions before release",
+      "selection": "UNSELECTED_ALTERNATIVE; old ratings unchanged",
+      "releaseEligible": false
+    },
+    {
+      "categoryIndex": 35,
+      "subject": "Saint Peter Damian",
+      "physicalPainting": "Andrea Barbiani, Biblioteca Classense Ravenna",
+      "sourceFileKeys": [
+        "peter-damian-barbiani"
+      ],
+      "sourceSha256": [
+        "66213fac32a91839501d6842727498746bb5600b60594d09fdaf5d4070b96611"
+      ],
+      "mobileVisual": "STRONG",
+      "visibleEvidence": "521x768 source looks like complete eighteenth-century full-colour painting at phone scale, subject distinguishable, no pixel-quality objection.",
+      "identity": "Distinct physical original from W95 G30-006 and G30-007; confirm museum accession.",
+      "rights": "Commons Public domain/PD-Art, country-specific photograph terms for final use",
+      "selection": "UNSELECTED_ALTERNATIVE",
+      "releaseEligible": false
+    },
+    {
+      "categoryIndex": 136,
+      "subject": "Saint Anthony of Padua",
+      "physicalPainting": "Antoon van Dyck, Madonna and Child with St Anthony, Brera",
+      "sourceFileKeys": [
+        "anthony-brera-vandyck"
+      ],
+      "sourceSha256": [
+        "9ed60b3e892d58b512be43ec95b50cf5e3241dadae8bf6da99726e67a854625b"
+      ],
+      "mobileVisual": "STRONG",
+      "visibleEvidence": "750x901 colour oil visually excellent at phone width; saint kneeling to receive Christ Child, no larger-image pursuit needed.",
+      "identity": "Museum inventory '87' conflicts with Commons structured inventory '701'; must compare registry and source accession. This is NOT a Rubens painting.",
+      "rights": "Commons Public domain faithful 2D reproduction claim; Italian cultural object rights separate.",
+      "selection": "Previously researched candidate; user ratings preserved and not inherited.",
+      "releaseEligible": false
+    },
+    {
+      "categoryIndex": 26,
+      "subject": "Saint Alphonsus Liguori",
+      "physicalPainting": "Madonna with St Alphonsus, church of Our Lady of Snow, Obra",
+      "sourceFileKeys": [
+        "alphonsus-obra-pozzo-attrib"
+      ],
+      "sourceSha256": [
+        "a3ab6891493286f17e07211470669f66f051ffc2800923e76686148a5778495d"
+      ],
+      "mobileVisual": "CONDITIONAL",
+      "visibleEvidence": "Colour shrine photograph has altar surround and frame; small saint figure, incomplete subject certainty for naturalistic hero image.",
+      "identity": "Commons attribution to Andrea Pozzo chronologically suspect (Pozzo died 1709, saint was born 1696); painting/date/saint iconography unresolved.",
+      "rights": "Syrio CC BY-SA 4.0 photo; photographer credit and share-alike conditions apply.",
+      "selection": "HOLD",
+      "releaseEligible": false
+    },
+    {
+      "categoryIndex": 83,
+      "subject": "Christ the King",
+      "physicalPainting": "Brooklyn Museum Triumph of Christ the King with Four Continents",
+      "sourceFileKeys": [
+        "christ-king-brooklyn"
+      ],
+      "sourceSha256": [
+        "c7b7e54747ffe6c8f12a6a0b417aa22e9c9e9ef25b37928262d3e23579e5c54c"
+      ],
+      "mobileVisual": "REJECT_AS_HERO_PHOTO",
+      "visibleEvidence": "Downloaded photo is monochrome and the central figure is very small in a dense allegorical composition; not an appropriate vivid mobile-sized hero image.",
+      "identity": "Unique Brooklyn original; inventory number not yet independently certified",
+      "rights": "Commons Public domain declaration",
+      "selection": "NOT_APPROVED",
+      "releaseEligible": false
+    },
+    {
+      "categoryIndex": 83,
+      "subject": "Christ the King",
+      "physicalPainting": "Józef Mehoffer, Serce Jezusa (Chrystus Król), 1930",
+      "sourceFileKeys": [
+        "christ-king-mehoffer"
+      ],
+      "sourceSha256": [
+        "24940f02b9c15302baf863493e7006f41ccd0c3dea86c38c6ec90063bc3ee7f9"
+      ],
+      "mobileVisual": "STYLISTIC_HOLD",
+      "visibleEvidence": "Technically clear and colourful at phone width, but highly stylised/decorative relative to user's preference for dignified naturalism; no unilateral curator rejection.",
+      "identity": "Historically precise titled work, private/auction location uncertain",
+      "rights": "Commons PD-Art claim; commercial auction photo evidence needs check",
+      "selection": "NO_RATING_OR_APPROVAL_IMPLIED",
+      "releaseEligible": false
+    }
+  ],
+  "nextActions": [
+    "Retain Bellarmine, Damian and Van Dyck alternatives; no further resolution-chasing",
+    "Reconcile selected originals/official inventory, especially Brera #87 versus Commons #701",
+    "Find a visually strong naturalistic Christ the King oil rather than promoting monochrome or highly stylised painting",
+    "Stop treating higher pixel count as source quality",
+    "St Alphonsus exact Marini/Lenzi source remains unresolved; protect attribution uncertainty"
+  ]
+}
