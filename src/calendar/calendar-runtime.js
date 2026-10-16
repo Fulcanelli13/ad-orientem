@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
+import { renderLiturgicalClock, liturgicalClockCss } from "./liturgical-clock.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
@@ -34,7 +35,7 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 
 const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new Map(),monthLoads=new Map(),monthStatus=new Map(),nextMajorResults=new Map(),nextMajorRequests=new Map();
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
-let yearColourLoad=null;
+let yearColourLoad=null,clockSelection=null;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
@@ -670,6 +671,21 @@ function hydrateYearColourWheel(year){
   const label=root()?.querySelector("[data-cal-year-colour-status]");
   if(label)label.textContent=L("Daily colours from the verified 1962 calendar", "Couleurs quotidiennes du calendrier 1962 vérifié")+
     " · "+projection.verified+"/"+projection.total;
+  // Refresh verified feast markers without displacing clock details or focus.
+  const clock=root()?.querySelector(".aoClock");
+  if(clock&&!clockSelection&&!clock.contains(globalThis.document?.activeElement)){
+    const selected=state()?.selectedDate||year.start;
+    if(buildLiturgicalYear(selected).start===year.start)clock.outerHTML=clockForYear(year,selected);
+  }
+}
+// Clock is a visual projection. The canonical day resolver and the existing
+// eleven-period journey / full-year day-colour projection remain untouched.
+function clockForYear(year,selected){
+  const getDay=id=>{const current=resolution();return current?.date===id?current:weekCache.get(id)??null;};
+  const next=nextResolvedMajorCelebration(selected);
+  return renderLiturgicalClock({year,selectedDate:selected,todayDate:iso(new Date()),
+    fr:fr(),getDay,titleFor:titleOf,rankFor:rankOf,massColourFor:colourOf,selection:clockSelection,
+    nextMajor:next?{date:next.date,title:celebrationName(next),verified:true}:null});
 }
 function yearSurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected);
@@ -677,6 +693,7 @@ function yearSurface(selected,r){
   queueMicrotask(()=>{if(calendarView==="year"&&root())requestYearDailyColours(y)});
   const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
   return `
+    ${clockForYear(y,selected)}
     <section class="aoCalV2YearHero">
       <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2></div>
       <div class="aoCalV2YearHeroGrid">
@@ -812,6 +829,9 @@ function css(){
 }
 /* Body-copy readability floor; do not enlarge dates, hierarchy captions or rubrical labels. */
 .aoCalV2Saint p,.aoCalMonthIndexHead p,.aoCalV2ComingGrid span,.aoCalV2Commemorations span,.aoCalPilgrimagePlaces>p,.aoCalPracticeIntro,.aoCalV2RingCore span{font-size:max(14px,.875rem);line-height:1.5}
+${liturgicalClockCss}
+#${ROOT_ID} .aoClock{--bg:var(--ao-bg-canvas,#080c12);--text:var(--ao-text-primary,#e9e4d9);--muted:var(--ao-text-muted,#a6a198);--liturgical:var(--ao-liturgical-accent,#c7ae6d);--liturgical-border:var(--ao-rule,rgba(226,214,190,.15))}
+#${ROOT_ID} .aoClock+.aoCalV2YearHero{margin-top:24px;padding-top:18px;border-top:1px solid var(--ao-rule,rgba(226,214,190,.15))}
 ${yearJourneyCss}
 #${ROOT_ID}[data-ao-calendar-embedded="true"]{position:relative!important;inset:auto!important;z-index:auto!important;width:100%;height:auto;max-height:none;min-height:0;overflow:visible!important;background:transparent;box-shadow:none}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModTop{position:relative;top:auto;padding:8px}
@@ -960,7 +980,43 @@ function openPrintableProper(){
   }
 }
 function bind(r){
+  r.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&clockSelection&&calendarView==="year"){
+      const previous=clockSelection;clockSelection=null;event.preventDefault();paint();
+      const attr=previous.type==="season"?"calClockSeason":previous.type==="cluster"?"calClockCluster":"calClockFeast";
+      for(const el of root()?.querySelectorAll("[data-cal-clock-season],[data-cal-clock-cluster],[data-cal-clock-feast]")||[]){
+        if(el.dataset[attr]===(previous.id||previous.date)){el.focus?.({preventScroll:true});break;}
+      }
+      return;
+    }
+    if((event.key==="Enter"||event.key===" ")&&event.target.closest?.("g[data-cal-clock-season],g[data-cal-clock-feast],g[data-cal-clock-cluster]")){
+      event.preventDefault();event.target.dispatchEvent(new MouseEvent("click",{bubbles:true}));
+    }
+  });
   r.addEventListener("click",event=>{
+    const clockControl=event.target.closest?.("[data-cal-clock-close],[data-cal-clock-season],[data-cal-clock-cluster],[data-cal-clock-feast],[data-cal-clock-open-day],[data-cal-clock-browse],[data-cal-clock-year],[data-cal-clock-today]");
+    if(clockControl){
+      event.preventDefault();
+      const d=clockControl.dataset;
+      if(d.calClockClose!==undefined){clockSelection=null;paint();return;}
+      if(d.calClockSeason!==undefined){clockSelection={type:"season",id:d.calClockSeason};paint();return;}
+      if(d.calClockCluster!==undefined){clockSelection={type:"cluster",date:d.calClockCluster};paint();return;}
+      if(d.calClockFeast!==undefined){clockSelection={type:"feast",date:d.calClockFeast};paint();return;}
+      if(d.calClockOpenDay!==undefined){
+        if(!/^\d{4}-\d{2}-\d{2}$/.test(d.calClockOpenDay))return;
+        clockSelection=null;calendarView="day";void select(d.calClockOpenDay);return;
+      }
+      if(d.calClockBrowse!==undefined){
+        if(!/^\d{4}-\d{2}$/.test(d.calClockBrowse))return;
+        clockSelection=null;calendarView="picker";pickerMonthId=d.calClockBrowse;calendarMonthView="calendar";paint();requestPickerMonth();return;
+      }
+      if(d.calClockYear!==undefined){
+        const step=Number(d.calClockYear);if(step!==1&&step!==-1)return;
+        const year=buildLiturgicalYear(state()?.selectedDate||iso(new Date()));
+        clockSelection=null;void select(step===1?addDaysIso(year.end,1):buildLiturgicalYear(addDaysIso(year.start,-1)).start);return;
+      }
+      if(d.calClockToday!==undefined){clockSelection=null;void select(iso(new Date()));return;}
+    }
     const reading=event.target.closest?.("[data-cal-scripture-slot]");
     if(reading){event.preventDefault();void openCalendarScripture(reading);return;}
     const yearPeriod=event.target.closest?.("[data-cal-year-period]");
