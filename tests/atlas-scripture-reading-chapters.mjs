@@ -34,7 +34,7 @@ assert.match(fr,/Récits · 37/);
 assert.match(fr,/Bible intégrale/);
 assert.match(en,/not an abridged or complete Bible/);
 assert.match(en,/data-bible-reading-panel hidden/);
-assert.equal((en.match(/data-bible-reading-start="/g)||[]).length,37);
+assert.equal((en.split('data-bible-reading-view="arcs"')[0].match(/data-bible-reading-start="/g)||[]).length,37);
 assert.equal((en.match(/data-bible-step="/g)||[]).length,151);
 assert.equal((en.match(/data-bible-chapter="/g)||[]).length,11);
 assert.equal((en.match(/data-bible-map/g)||[]).length,1);
