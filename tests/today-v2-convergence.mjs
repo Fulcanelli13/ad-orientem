@@ -38,7 +38,7 @@ assert.match(html,/data-home-calendar-view="year"/);
 assert.match(html,/data-home-calendar-view="picker"/);
 assert.match(html,/data-home-calendar-date="2026-10-25"/);
 assert.match(html,/data-home-calendar-date="2026-11-01"/);
-assert.match(html,/Life & sources/,"Observed saint must open context rather than repeat the hero title");
+assert.match(html,/Life &amp; sources/,"Observed saint must open context rather than repeat the hero title");
 assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat the principal saint's name below the hero");
 assert.equal((html.match(/data-home-calendar-view="year"/g)||[]).length,1,"One liturgical season Year entry");
 assert.equal((html.match(/data-home-calendar-view="picker"/g)||[]).length,1,"Only the Coming next section links to Month");
