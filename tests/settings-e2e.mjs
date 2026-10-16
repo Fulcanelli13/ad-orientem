@@ -133,7 +133,10 @@ try{
   assert.match(about,/Messe romaine de 1962/);
   assert.match(about,/Éditions de l’Écriture/);
   assert.match(about,/Version/);
-  assert.equal(await page.locator("#ao-settings-modular-root [data-settings-info]").count(),9,
+  assert.match(about,/Adresse inconnue|Adresse|Version affichée/);
+  assert.equal(await page.locator('[data-settings-active-site="other"]').count(),1,
+    "Testing on localhost must display its real origin, not claim GitHub Pages");
+  assert.equal(await page.locator("#ao-settings-modular-root [data-settings-info]").count(),11,
     "Informational About rows must not masquerade as clickable buttons");
   assert.equal(await page.locator("#ao-settings-modular-root button.aoSetRow").count(),2,
     "Only Privacy & Data and offline update check are actionable in About");

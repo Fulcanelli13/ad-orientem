@@ -10,6 +10,16 @@ export function canonicalSettingsAppVersion(win=globalThis){
 export function buildSettingsViewModel(win=globalThis,{route="/settings",live=false,updateCheck="idle"}={}){
   const donor=win?.AO_SETTINGS_DONOR_V4359?.snapshot?.()||{preferences:DEFAULT_PREFERENCES,profiles:[]};
   const language=donor.preferences?.general?.uiLanguage==="fr"?"fr":"en";
+  const location=win?.location??{};
+  const hostname=String(location.hostname||"").toLowerCase();
+  const pathname=String(location.pathname||"");
+  const githubPages=hostname==="fulcanelli13.github.io"&&(!pathname||pathname==="/ad-orientem"||pathname.startsWith("/ad-orientem/"));
+  const vercel=/\.vercel\.app$/i.test(hostname);
+  const hostKind=githubPages?"github_pages":vercel?"vercel":"other";
+  const origin=typeof location.origin==="string"&&/^https?:\/\//.test(location.origin)
+    ?location.origin:hostname?"https://"+hostname:"";
+  const appAddress=origin+(pathname|| (githubPages?"/ad-orientem/":"/"));
+  const standalone=Boolean(win?.matchMedia?.("(display-mode: standalone)")?.matches||win?.navigator?.standalone===true);
   return Object.freeze({
     route:String(route||"/settings"),
     language,
@@ -17,7 +27,8 @@ export function buildSettingsViewModel(win=globalThis,{route="/settings",live=fa
     version:canonicalSettingsAppVersion(win),
     updateCheck,
     offline:win?.AO_OFFLINE_APP_V1?.status||null,
-    canonicalHost:win?.location?.hostname==="fulcanelli13.github.io",
+    canonicalHost:githubPages,
+    hostKind,appAddress,standalone,
     preferences:donor.preferences||DEFAULT_PREFERENCES,
     profiles:Array.isArray(donor.profiles)?donor.profiles:[]
   });
@@ -34,6 +45,7 @@ html[data-ao-settings-surface="open"] #ao-global-ribbon{z-index:var(--ao-z-globa
 #${rootId}{position:fixed;z-index:var(--ao-z-modal,2147483200);isolation:isolate;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;pointer-events:auto;background:var(--ao-bg-canvas,var(--bg,#0b0f13));color:var(--ao-text-primary,var(--text,#f3efe8));overflow:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif));padding-bottom:24px}
 #${rootId},#${rootId} *{box-sizing:border-box}#${rootId}[hidden]{display:none!important}
 #${rootId} .aoSetTop{position:sticky;top:0;z-index:3;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:calc(9px + env(safe-area-inset-top,0px)) 10px 9px;background:color-mix(in srgb,var(--bg,#0b0f13) 94%,transparent);border-bottom:1px solid var(--border,rgba(255,255,255,.12));backdrop-filter:blur(16px)}
+#${rootId} .aoSetInstallAddress{display:block;max-width:100%;overflow-wrap:anywhere;word-break:normal;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-secondary,var(--muted,#b2ad9e))}
 #${rootId} .aoSetTop button{width:var(--ao-control-h,44px);height:var(--ao-control-h,44px);border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)));border-radius:var(--ao-pill-radius,999px);background:var(--ao-surface-1,var(--surface-1,#151a20));color:inherit;display:grid;place-items:center}
 #${rootId} .aoSetTopIcon{width:18px;height:18px}#${rootId} .aoSetTitle{min-width:0;text-align:center}#${rootId} .aoSetTitle small{display:block;color:var(--liturgical,#c6a66b);font:700 var(--ao-type-ui-xs,11px)/1.1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}#${rootId} .aoSetTitle strong{display:block;margin-top:3px;font:500 19px/1.18 var(--ao-font-display,var(--font-display,Georgia,serif));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #${rootId} .aoSetWrap{width:min(var(--ao-content-max,760px),100%);margin:0 auto;padding:16px var(--ao-page-gutter,14px) 32px}#${rootId} .aoSetIntro{padding:4px 4px 13px;color:var(--muted,#b8c0c7);font-size:.84rem;line-height:1.45}
@@ -73,6 +85,10 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
 
   if(vm.route==="/settings"||vm.route==="main"){
     return shell(L("Settings","Réglages"),
+      section(L("APP & UPDATES","APPLICATION & MISES À JOUR"),
+        row(L("Installed app & sources","Application installée & sources"),
+          L("Version, site address, safe update and source information","Version, adresse du site, mise à jour et sources"),
+          icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources'))+
       section(L("APP","APPLICATION"),
         routeRow(L("General","Général"),L("Vibration, screen and resume options","Vibration, écran et reprise"),"/settings/general")+
         routeRow(L("Display & Accessibility","Affichage & accessibilité"),L("Text size, animations, contrast and artwork","Taille du texte, animations, contraste et œuvres"),"/settings/accessibility")+
@@ -81,8 +97,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         routeRow(L("Mass","Messe"),L("Choices used when you start a new Mass","Choix utilisés lorsque vous commencez une nouvelle Messe"),"/settings/mass")+
         routeRow(L("Local Church & Customs","Église locale & usages"),L("Save the usual practices at a particular church","Enregistrer les usages habituels d’une église"),"/settings/local-customs")+
         routeRow(L("Prayer & Devotions","Prière & dévotions"),L("Choose how the Rosary, Stations and Angelus behave","Choisir le comportement du Rosaire, du Chemin de Croix et de l’Angélus"),"/settings/prayer"))+
-      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data"))+
-      section(L("ABOUT","À PROPOS"),row(L("About & Sources","À propos & sources"),L("Where the app’s texts, Scripture and artwork come from","Origine des textes, de l’Écriture et des œuvres"),icon("ao-ui-next"),'data-settings-route="/settings/about-sources" data-settings-sources')),true);
+      section(L("DATA","DONNÉES"),routeRow(L("Privacy & Data","Confidentialité & données"),L("Clear saved progress or restore defaults","Effacer la progression ou rétablir les réglages"),"/settings/privacy-data")),true);
   }
   if(vm.route==="/settings/general"){
     return shell(L("General","Général"),
@@ -232,20 +247,46 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const snapshotLabel=snapshotId
       ?'<span class="aoSetBadge" data-settings-snapshot-id="'+esc(snapshotId)+'">'+esc(snapshotId)+'</span>'
       :'<span class="aoSetBadge" data-settings-snapshot-empty>—</span>';
-    const updateBox=section(L("INSTALLED COPY","COPIE INSTALLÉE"),
-      infoRow(L("This device","Cet appareil"),offlineLabel,snapshotLabel)+
-      infoRow(L("App address","Adresse de l’application"),
-        vm.canonicalHost?L("Canonical GitHub Pages","GitHub Pages canonique"):L("Current site is not the canonical GitHub Pages address","Ce site n’est pas l’adresse canonique GitHub Pages"),
-        '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("Canonical site ↗","Site canonique ↗"))+'</a>')+
-      row(L("Check for updates","Vérifier les mises à jour"),checkLabel,
+    const hostName=vm.hostKind==="github_pages"
+      ?L("GitHub Pages · install address","GitHub Pages · adresse d’installation")
+      :vm.hostKind==="vercel"
+        ?L("Vercel · separate network site","Vercel · site en ligne distinct")
+        :L("Other app address · source unverified","Autre adresse · source non vérifiée");
+    const launchName=vm.standalone
+      ?L("Launched from Home Screen","Lancée depuis l’écran d’accueil")
+      :L("Opened in browser","Ouverte dans le navigateur");
+    const addressMarkup='<span class="aoSetInstallAddress" data-settings-active-site="'+
+      esc(vm.hostKind)+'">'+esc(vm.appAddress||L("Unknown address","Adresse inconnue"))+'</span>';
+    const updateButtons=(vm.hostKind==="github_pages"||offline?.supported)
+      ?row(L("Check for updates","Vérifier les mises à jour"),checkLabel,
         icon("ao-ui-next"),'data-settings-check-update'+(canCheck&&vm.updateCheck!=="checking"&&vm.updateCheck!=="applying"?"":" disabled"))+
-      (candidateId?row(L("Install ready update","Installer la mise à jour prête"),applyLabel,
-        icon("ao-ui-next"),'data-settings-apply-update'+(canApply?"":" disabled")):"")) +
-      note(esc(L("Checking only prepares a newer saved copy. Installing it is a separate action that reloads the app; never do this during Mass. Your saved preferences and progress are not cleared. The short ID is a snapshot fingerprint, not a Git commit.","La vérification ne fait que préparer une nouvelle copie. Son installation est une action distincte qui recharge l’application ; jamais pendant la Messe. Les préférences et la progression enregistrées ne sont pas effacées. L’identifiant court est une empreinte de copie, non un commit Git.")));
+        (candidateId?row(L("Install ready update","Installer la mise à jour prête"),applyLabel,
+          icon("ao-ui-next"),'data-settings-apply-update'+(canApply?"":" disabled")):"")
+      :"";
+    const updateExplanation=vm.hostKind==="github_pages"
+      ?L("This installed address receives new GitHub Pages versions. Checking prepares a new saved snapshot; installation requires your separate tap and reload. It never deletes your preferences or prayer progress, and must not interrupt Mass. The snapshot fingerprint is not a Git commit.",
+         "Cette adresse reçoit les nouvelles versions GitHub Pages. La vérification prépare une copie ; son installation nécessite un geste distinct et un rechargement. Elle ne supprime ni préférences ni progression et ne doit pas interrompre la Messe. L’empreinte n’est pas un commit Git.")
+      :vm.hostKind==="vercel"
+        ?L("Vercel loads its network version when reopened online. This address cannot update an app installed from GitHub Pages; those two sites do not share offline snapshots or saved preferences. For the previously installed icon, open its GitHub Pages Settings instead.",
+           "Vercel charge sa version en ligne lors d’une nouvelle ouverture. Cette adresse ne peut pas mettre à jour une application installée depuis GitHub Pages ; les deux sites ne partagent ni copies hors ligne ni préférences. Pour l’icône déjà installée, ouvrez ses réglages GitHub Pages.")
+        :L("Updates for this address are not verified. For the documented install use the GitHub Pages address; opening another website does not migrate installed data.",
+           "Les mises à jour de cette adresse ne sont pas vérifiées. Utilisez l’adresse GitHub Pages documentée pour l’installation ; ouvrir un autre site ne transfère pas les données.");
+    const updateBox=section(L("APP VERSION & UPDATES","VERSION & MISES À JOUR"),
+      infoRow(L("This site","Ce site"),hostName,addressMarkup)+
+      infoRow(L("Launch mode","Mode de lancement"),launchName,icon("ao-ui-info"))+
+      infoRow(L("Release label","Version affichée"),
+        L("App version · not the Git commit","Version de l’app · non le commit Git"),
+        '<span class="aoSetBadge" data-settings-app-version>'+esc(vm.version)+'</span>')+
+      infoRow(L("Offline snapshot","Copie hors ligne"),offlineLabel,snapshotLabel)+
+      updateButtons+
+      (vm.canonicalHost?"":infoRow(L("Documented install site","Site d’installation documenté"),
+        L("A separate site — not an update to this installation","Un site distinct — pas une mise à jour de cette installation"),
+        '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("GitHub Pages ↗","GitHub Pages ↗"))+'</a>')) +
+      note(esc(updateExplanation)));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
-      section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
       updateBox+
+      section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
       section(L("ABOUT","À PROPOS"),
         infoRow(L("1962 Roman Mass","Messe romaine de 1962"),L("The app keeps the 1962 Mass itself separate from local church practices and private prayers.","L’application garde la Messe de 1962 elle-même distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
         infoRow(L("Local church practices","Usages de l’église locale"),L("Saved churches help the app reflect what usually happens in a particular place. They do not change the Mass.","Les églises enregistrées aident l’application à refléter ce qui se fait habituellement dans un lieu précis. Elles ne changent pas la Messe."),icon("ao-ui-info"))+
@@ -253,7 +294,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         infoRow(L("Scripture editions","Éditions de l’Écriture"),L("English uses the Douay-Rheims tradition; French support includes Crampon 1923 where integrated; Latin liturgical Scripture follows the app’s source corpus.","L’anglais suit la tradition Douay-Rheims ; le français comprend Crampon 1923 là où il est intégré ; le latin liturgique suit le corpus de sources de l’application."),icon("ao-ui-sources"))+
         infoRow(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork keeps a record of where it came from and how it may be used.","Les œuvres gardent une indication de leur origine et de leurs conditions d’utilisation."),icon("ao-ui-info"))+
         infoRow(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual source/licence notices.","Les textes et œuvres tiers conservent leurs notices de source/licence propres."),icon("ao-ui-info"))+
-        infoRow(L("Version","Version"),"",`<span class="aoSetBadge" data-settings-app-version>${esc(vm.version)}</span>`)+
+
         routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data")));
   }
   return renderSettingsToString(win,{route:"/settings",live});
