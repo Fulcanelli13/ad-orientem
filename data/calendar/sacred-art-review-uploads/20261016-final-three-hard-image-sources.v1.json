@@ -25,7 +25,8 @@
       ],
       "originalMatch": "EXACT_PREVIOUSLY_SELECTED_ORIGINAL",
       "rights": "REGIONE_LOMBARDIA_AMBROSIANA_NO_APP_LICENSE; research-only",
-      "action": "Download exact image; assess 390px, whether complete painting and original versus frame"
+      "action": "Download exact image; assess 390px, whether complete painting and original versus frame",
+      "alreadyAcquiredOrPreviouslyChecked": true
     },
     {
       "categoryIndex": 41,
@@ -45,7 +46,8 @@
       "candidateImageUrls": [],
       "originalMatch": "NEW_DISTINCT_EXACT_SUBJECT_ORIGINAL",
       "rights": "ICCD metadata CC BY 4.0 does not grant PHOTO rights; source image research-only",
-      "action": "Parse institutional catalogue gallery and attached PDF for photographic source URL; inscription S.CYRILLUS H; photograph and image legal QA pending"
+      "action": "Parse institutional catalogue gallery and attached PDF for photographic source URL; inscription S.CYRILLUS H; photograph and image legal QA pending",
+      "alreadyAcquiredOrPreviouslyChecked": true
     },
     {
       "categoryIndex": 52,
@@ -65,7 +67,28 @@
       "commonsFile": "The Baptism of the King of Cashel by Saint Patrick .PNG",
       "originalMatch": "NEW_DISTINCT_VERIFIED_ORIGINAL_ALTERNATIVE_TO_RDS_VALDRE",
       "rights": "National Gallery of Ireland CC BY 4.0, attribution required; Commons PD-Art also claimed",
-      "action": "Acquire 344x332 exact work; judge colour/full surface on phone; never replace previous RDS Valdre silently"
+      "action": "Acquire 344x332 exact work; judge colour/full surface on phone; never replace previous RDS Valdre silently",
+      "alreadyAcquiredOrPreviouslyChecked": true
+    },
+    {
+      "categoryIndex": 30,
+      "category": "St Gregory Nazianzen",
+      "workId": "RUBENS-GOTHA-1621-ST-GREGORY",
+      "physicalOriginalId": "RUBENS-FRIEDENSTEIN-GOTHA-1621",
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Gregory of Nazianzus",
+      "date": "1621",
+      "medium": "oil on oak panel",
+      "museum": "Stiftung Friedenstein Gotha (returned 2024; formerly Buffalo AKG 1952:14)",
+      "dimensionsCm": [
+        48,
+        62
+      ],
+      "catalogueUrl": "https://www.stiftung-friedenstein.de/ausstellungen-und-veranstaltungen/auf-rubens",
+      "commonsFile": "Peter Paul Rubens - St. Gregory of Nazianzus - 1952-14 - Albright–Knox Art Gallery.tiff",
+      "originalMatch": "EXACT_SAINT_NEW_DISTINCT_ORIGINAL_CANDIDATE_NOT_FRANCHI",
+      "rights": "Wikimedia Commons public domain faithful 2D reproduction assertion; verify current Gotha institution reuse terms",
+      "action": "Acquire normal-proportion photographic Commons thumbnail, not 156MB TIFF. Inspect original depiction/painting edges/phone beauty. Preserve original-selection authority."
     }
   ]
 }
