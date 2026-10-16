@@ -1,0 +1,2003 @@
+{
+  "schema": "AO_HISTORIA_SALUTIS_P2_COVENANT_CHARACTER_SOURCE_QUEUE_V1",
+  "date": "2026-10-16",
+  "status": "RESEARCH_ONLY_VERSE_PRESENCE_NOT_TEXT_CERTIFICATION",
+  "upstream": {
+    "p0": "data/explore/historia-salutis-p0-master-crosswalk.v1.json",
+    "p1": "data/explore/historia-salutis-p1-person-story-scripture-links.v1.json",
+    "scriptureWitnessDirectory": "data/scripture/witness/crampon-1923"
+  },
+  "policy": {
+    "noNewCanonicalEvents": true,
+    "original151Unchanged": true,
+    "sourceReferenceIsNotSelectedAbbreviatedScripture": true,
+    "storyCandidateNotAcceptedCatholicAuthorNarrative": true,
+    "noAiAuthoredBiblicalProse": true,
+    "noUnverifiedTimelineOrToponym": true,
+    "motherAndLegalFatherDistinct": true,
+    "matthewAndLukeUnmerged": true,
+    "deuterocanonicalBooksRetained": true,
+    "noAutomaticInterpretiveTypologyPromotion": true,
+    "importedTranslationUncollated": true
+  },
+  "externalChurchReferences": [
+    {
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_1/ii_the_stages_of_revelation.html",
+      "supports": "Catechism 54–64 revelation, covenants and prophets"
+    },
+    {
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_1/in_brief.html",
+      "supports": "Catechism 68–73 Christ as definitive revelation"
+    },
+    {
+      "url": "https://bible.usccb.org/bible/ruth/4",
+      "supports": "Ruth 4:13–22 and Ruth/Boaz/Obed/Jesse/David lineage"
+    }
+  ],
+  "counts": {
+    "canonicalEventsStill151": 151,
+    "existingDonorStoryGroups": 39,
+    "additionalCharacterStoryTopics": 44,
+    "booksReferenced": 26,
+    "distinctWitnessedPassageAnchors": 73,
+    "covenantAndPromiseSourceRoles": 12,
+    "storyTopicsWithAtLeastOneExactAtlasKey": 33,
+    "storyTopicsWithoutExactAtlasKey": 11
+  },
+  "covenantScripturalCrossReferences": [
+    {
+      "stageId": "cv:first-promise",
+      "reading": {
+        "reference": "Genesis 3:1–24",
+        "book": "Genesis",
+        "chapter": 3,
+        "verseStart": 1,
+        "verseEnd": 24,
+        "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+        "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": "biblical:passage:genesis-3-1-24",
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "PRIMEVAL_PROMISE_IN_CONTEXT",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:noah",
+      "reading": {
+        "reference": "Genesis 9:8–17",
+        "book": "Genesis",
+        "chapter": 9,
+        "verseStart": 8,
+        "verseEnd": 17,
+        "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+        "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": "biblical:passage:genesis-9-8-17",
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "NOAHIC_COVENANT",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:abraham",
+      "reading": {
+        "reference": "Genesis 17:1–14",
+        "book": "Genesis",
+        "chapter": 17,
+        "verseStart": 1,
+        "verseEnd": 14,
+        "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+        "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "ADDITIONAL_ABRAHAMIC_COVENANT_PASSAGE",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:sinai",
+      "reading": {
+        "reference": "Exodus 24:3–8",
+        "book": "Exodus",
+        "chapter": 24,
+        "verseStart": 3,
+        "verseEnd": 8,
+        "witnessPath": "data/scripture/witness/crampon-1923/Exodus.json",
+        "witnessBlobSha": "49a299cc21b04ffcd5729e8df41327fa52c2806b",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "RATIFICATION_AND_BLOOD_OF_COVENANT",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:david",
+      "reading": {
+        "reference": "2Samuel 7:12–16",
+        "book": "2Samuel",
+        "chapter": 7,
+        "verseStart": 12,
+        "verseEnd": 16,
+        "witnessPath": "data/scripture/witness/crampon-1923/2Samuel.json",
+        "witnessBlobSha": "e18757556623ff583c6ff22ce9e5c67b6dfaf16a",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "DAVIDIC_ROYAL_PROMISE",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:david",
+      "reading": {
+        "reference": "Psalms 89:4–5",
+        "book": "Psalms",
+        "chapter": 89,
+        "verseStart": 4,
+        "verseEnd": 5,
+        "witnessPath": "data/scripture/witness/crampon-1923/Psalms.json",
+        "witnessBlobSha": "91c7c443b4c1c407789e1a6c0086ae8f902a7e21",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "DAVIDIC_COVENANT_EXPLICIT_LANGUAGE_MODERN_PSALTER_NUMBERING",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:david",
+      "reading": {
+        "reference": "Luke 1:32–33",
+        "book": "Luke",
+        "chapter": 1,
+        "verseStart": 32,
+        "verseEnd": 33,
+        "witnessPath": "data/scripture/witness/crampon-1923/Luke.json",
+        "witnessBlobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "CHRIST_DAVIDIC_KINGSHIP_LINK",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:new-covenant-promised",
+      "reading": {
+        "reference": "Jeremiah 31:31–34",
+        "book": "Jeremiah",
+        "chapter": 31,
+        "verseStart": 31,
+        "verseEnd": 34,
+        "witnessPath": "data/scripture/witness/crampon-1923/Jeremiah.json",
+        "witnessBlobSha": "84c4852919012462d6b55d38205b1794dce14d67",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "EXPLICIT_NEW_COVENANT_PROPHECY",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:new-covenant-promised",
+      "reading": {
+        "reference": "Ezekiel 36:25–27",
+        "book": "Ezekiel",
+        "chapter": 36,
+        "verseStart": 25,
+        "verseEnd": 27,
+        "witnessPath": "data/scripture/witness/crampon-1923/Ezekiel.json",
+        "witnessBlobSha": "9db589567fa310e9bbc0f7e5791a26fa3b501389",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "RELATED_SPIRIT_AND_NEW_HEART_PROPHECY_NOT_NEW_COVENANT_FORMULA",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:new-covenant-promised",
+      "reading": {
+        "reference": "Hebrews 8:8–12",
+        "book": "Hebrews",
+        "chapter": 8,
+        "verseStart": 8,
+        "verseEnd": 12,
+        "witnessPath": "data/scripture/witness/crampon-1923/Hebrews.json",
+        "witnessBlobSha": "aef6a6338d748019b80cce9ae0971cd4897a4f2d",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "NEW_TESTAMENT_QUOTATION_OF_NEW_COVENANT_PROPHECY",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:new-covenant-christ",
+      "reading": {
+        "reference": "Luke 22:7–20",
+        "book": "Luke",
+        "chapter": 22,
+        "verseStart": 7,
+        "verseEnd": 20,
+        "witnessPath": "data/scripture/witness/crampon-1923/Luke.json",
+        "witnessBlobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": "biblical:event:cenacle-e1",
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "NEW_COVENANT_LAST_SUPPER",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    },
+    {
+      "stageId": "cv:new-covenant-christ",
+      "reading": {
+        "reference": "Revelation 21:1–5",
+        "book": "Revelation",
+        "chapter": 21,
+        "verseStart": 1,
+        "verseEnd": 5,
+        "witnessPath": "data/scripture/witness/crampon-1923/Revelation.json",
+        "witnessBlobSha": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7",
+        "importedEdition": "crampon-1923",
+        "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+        "exactAtlasEventKey": null,
+        "textAuthorizedForPublication": false
+      },
+      "evidenceRole": "CONSUMMATION_NOT_INSTITUTION",
+      "relationshipStatus": "PRIMARY_TEXT_REFERENCED_THEOLOGICAL_LINK_REQUIRES_EDITORIAL_APPROVAL"
+    }
+  ],
+  "proposedCharacterStoryCoverage": [
+    {
+      "id": "person-story-candidate:adam-eve",
+      "order": 1,
+      "title_en": "Adam and Eve",
+      "primaryArcId": "historia-arc:creation-first-promise",
+      "subjects": [
+        "Adam",
+        "Eve"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 2:7–25",
+          "book": "Genesis",
+          "chapter": 2,
+          "verseStart": 7,
+          "verseEnd": 25,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Genesis 3:1–24",
+          "book": "Genesis",
+          "chapter": 3,
+          "verseStart": 1,
+          "verseEnd": 24,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-3-1-24",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-3-1-24"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:cain-abel",
+      "order": 2,
+      "title_en": "Cain and Abel",
+      "primaryArcId": "historia-arc:creation-first-promise",
+      "subjects": [
+        "Cain",
+        "Abel"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 4:1–16",
+          "book": "Genesis",
+          "chapter": 4,
+          "verseStart": 1,
+          "verseEnd": 16,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-4-1-16",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-4-1-16"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:noah",
+      "order": 3,
+      "title_en": "Noah and his family",
+      "primaryArcId": "historia-arc:noah-nations",
+      "subjects": [
+        "Noah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 6:9–22",
+          "book": "Genesis",
+          "chapter": 6,
+          "verseStart": 9,
+          "verseEnd": 22,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Genesis 9:8–17",
+          "book": "Genesis",
+          "chapter": 9,
+          "verseStart": 8,
+          "verseEnd": 17,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-9-8-17",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-9-8-17"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:isaac",
+      "order": 4,
+      "title_en": "Isaac",
+      "primaryArcId": "historia-arc:abraham-patriarchs",
+      "subjects": [
+        "Isaac"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 21:1–7",
+          "book": "Genesis",
+          "chapter": 21,
+          "verseStart": 1,
+          "verseEnd": 7,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-21-1-7",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Genesis 22:1–19",
+          "book": "Genesis",
+          "chapter": 22,
+          "verseStart": 1,
+          "verseEnd": 19,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-22-1-19",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-21-1-7",
+        "biblical:passage:genesis-22-1-19"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:jacob",
+      "order": 5,
+      "title_en": "Jacob (Israel)",
+      "primaryArcId": "historia-arc:abraham-patriarchs",
+      "subjects": [
+        "Jacob"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 28:10–22",
+          "book": "Genesis",
+          "chapter": 28,
+          "verseStart": 10,
+          "verseEnd": 22,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-28-10-22",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Genesis 32:24–32",
+          "book": "Genesis",
+          "chapter": 32,
+          "verseStart": 24,
+          "verseEnd": 32,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-32-24-32",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-28-10-22",
+        "biblical:passage:genesis-32-24-32"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:joseph-son-jacob",
+      "order": 6,
+      "title_en": "Joseph, son of Jacob",
+      "primaryArcId": "historia-arc:abraham-patriarchs",
+      "subjects": [
+        "Joseph (patriarch)"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Genesis 37:18–36",
+          "book": "Genesis",
+          "chapter": 37,
+          "verseStart": 18,
+          "verseEnd": 36,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-37-18-36",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Genesis 41:37–45",
+          "book": "Genesis",
+          "chapter": 41,
+          "verseStart": 37,
+          "verseEnd": 45,
+          "witnessPath": "data/scripture/witness/crampon-1923/Genesis.json",
+          "witnessBlobSha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:genesis-41-37-45",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:genesis-37-18-36",
+        "biblical:passage:genesis-41-37-45"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:ruth",
+      "order": 7,
+      "title_en": "Ruth and Boaz",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Ruth",
+        "Boaz",
+        "Obed",
+        "Jesse",
+        "David"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Ruth 1:1–22",
+          "book": "Ruth",
+          "chapter": 1,
+          "verseStart": 1,
+          "verseEnd": 22,
+          "witnessPath": "data/scripture/witness/crampon-1923/Ruth.json",
+          "witnessBlobSha": "319f0de20ca54f4adcd22dd9a2c69d98a8825cdf",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Ruth 2:1–23",
+          "book": "Ruth",
+          "chapter": 2,
+          "verseStart": 1,
+          "verseEnd": 23,
+          "witnessPath": "data/scripture/witness/crampon-1923/Ruth.json",
+          "witnessBlobSha": "319f0de20ca54f4adcd22dd9a2c69d98a8825cdf",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Ruth 4:13–22",
+          "book": "Ruth",
+          "chapter": 4,
+          "verseStart": 13,
+          "verseEnd": 22,
+          "witnessPath": "data/scripture/witness/crampon-1923/Ruth.json",
+          "witnessBlobSha": "319f0de20ca54f4adcd22dd9a2c69d98a8825cdf",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:rahab",
+      "order": 8,
+      "title_en": "Rahab at Jericho",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Rahab"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Joshua 2:1–24",
+          "book": "Joshua",
+          "chapter": 2,
+          "verseStart": 1,
+          "verseEnd": 24,
+          "witnessPath": "data/scripture/witness/crampon-1923/Joshua.json",
+          "witnessBlobSha": "08286a3278906b4e411e771f261d950832d818d2",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Joshua 6:1–27",
+          "book": "Joshua",
+          "chapter": 6,
+          "verseStart": 1,
+          "verseEnd": 27,
+          "witnessPath": "data/scripture/witness/crampon-1923/Joshua.json",
+          "witnessBlobSha": "08286a3278906b4e411e771f261d950832d818d2",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:joshua-6-1-27",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:joshua-6-1-27"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:deborah",
+      "order": 9,
+      "title_en": "Deborah",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Deborah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Judges 4:4–24",
+          "book": "Judges",
+          "chapter": 4,
+          "verseStart": 4,
+          "verseEnd": 24,
+          "witnessPath": "data/scripture/witness/crampon-1923/Judges.json",
+          "witnessBlobSha": "31748b8f3047af0fc1e689c8ac171b0ffbe43889",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:gideon",
+      "order": 10,
+      "title_en": "Gideon",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Gideon"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Judges 6:11–24",
+          "book": "Judges",
+          "chapter": 6,
+          "verseStart": 11,
+          "verseEnd": 24,
+          "witnessPath": "data/scripture/witness/crampon-1923/Judges.json",
+          "witnessBlobSha": "31748b8f3047af0fc1e689c8ac171b0ffbe43889",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:samson",
+      "order": 11,
+      "title_en": "Samson",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Samson"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Judges 13:1–25",
+          "book": "Judges",
+          "chapter": 13,
+          "verseStart": 1,
+          "verseEnd": 25,
+          "witnessPath": "data/scripture/witness/crampon-1923/Judges.json",
+          "witnessBlobSha": "31748b8f3047af0fc1e689c8ac171b0ffbe43889",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Judges 16:23–31",
+          "book": "Judges",
+          "chapter": 16,
+          "verseStart": 23,
+          "verseEnd": 31,
+          "witnessPath": "data/scripture/witness/crampon-1923/Judges.json",
+          "witnessBlobSha": "31748b8f3047af0fc1e689c8ac171b0ffbe43889",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:hannah",
+      "order": 12,
+      "title_en": "Hannah",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Hannah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Samuel 1:9–20",
+          "book": "1Samuel",
+          "chapter": 1,
+          "verseStart": 9,
+          "verseEnd": 20,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1samuel-1-9-20",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1samuel-1-9-20"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:samuel",
+      "order": 13,
+      "title_en": "Samuel",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Samuel"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Samuel 3:1–21",
+          "book": "1Samuel",
+          "chapter": 3,
+          "verseStart": 1,
+          "verseEnd": 21,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "1Samuel 10:1–8",
+          "book": "1Samuel",
+          "chapter": 10,
+          "verseStart": 1,
+          "verseEnd": 8,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1samuel-10-1-8",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1samuel-10-1-8"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:saul",
+      "order": 14,
+      "title_en": "King Saul",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "Saul (king)"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Samuel 10:1–8",
+          "book": "1Samuel",
+          "chapter": 10,
+          "verseStart": 1,
+          "verseEnd": 8,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1samuel-10-1-8",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "1Samuel 15:1–35",
+          "book": "1Samuel",
+          "chapter": 15,
+          "verseStart": 1,
+          "verseEnd": 35,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1samuel-10-1-8"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:david-anointing",
+      "order": 15,
+      "title_en": "David, anointed",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "David"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Samuel 16:1–13",
+          "book": "1Samuel",
+          "chapter": 16,
+          "verseStart": 1,
+          "verseEnd": 13,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "1Samuel 17:1–54",
+          "book": "1Samuel",
+          "chapter": 17,
+          "verseStart": 1,
+          "verseEnd": 54,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1samuel-17-1-54",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1samuel-17-1-54"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:david-jonathan",
+      "order": 16,
+      "title_en": "David and Jonathan",
+      "primaryArcId": "historia-arc:land-first-kings",
+      "subjects": [
+        "David",
+        "Jonathan"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Samuel 20:1–42",
+          "book": "1Samuel",
+          "chapter": 20,
+          "verseStart": 1,
+          "verseEnd": 42,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Samuel.json",
+          "witnessBlobSha": "a0c4cb90800951cdbc4527bc111f57ff01ac73b4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:david-king",
+      "order": 17,
+      "title_en": "David and the royal promise",
+      "primaryArcId": "historia-arc:davidic-kingdom",
+      "subjects": [
+        "David"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "2Samuel 5:6–10",
+          "book": "2Samuel",
+          "chapter": 5,
+          "verseStart": 6,
+          "verseEnd": 10,
+          "witnessPath": "data/scripture/witness/crampon-1923/2Samuel.json",
+          "witnessBlobSha": "e18757556623ff583c6ff22ce9e5c67b6dfaf16a",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:2samuel-5-6-10",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "2Samuel 7:12–16",
+          "book": "2Samuel",
+          "chapter": 7,
+          "verseStart": 12,
+          "verseEnd": 16,
+          "witnessPath": "data/scripture/witness/crampon-1923/2Samuel.json",
+          "witnessBlobSha": "e18757556623ff583c6ff22ce9e5c67b6dfaf16a",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:2samuel-5-6-10"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:david-penitence",
+      "order": 18,
+      "title_en": "David and Nathan",
+      "primaryArcId": "historia-arc:davidic-kingdom",
+      "subjects": [
+        "David",
+        "Nathan"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "2Samuel 12:1–25",
+          "book": "2Samuel",
+          "chapter": 12,
+          "verseStart": 1,
+          "verseEnd": 25,
+          "witnessPath": "data/scripture/witness/crampon-1923/2Samuel.json",
+          "witnessBlobSha": "e18757556623ff583c6ff22ce9e5c67b6dfaf16a",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:solomon",
+      "order": 19,
+      "title_en": "Solomon",
+      "primaryArcId": "historia-arc:davidic-kingdom",
+      "subjects": [
+        "Solomon"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Kings 3:5–15",
+          "book": "1Kings",
+          "chapter": 3,
+          "verseStart": 5,
+          "verseEnd": 15,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Kings.json",
+          "witnessBlobSha": "e52bf37f2c6e355d12d0758161ef8292293e9e9f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "1Kings 8:1–66",
+          "book": "1Kings",
+          "chapter": 8,
+          "verseStart": 1,
+          "verseEnd": 66,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Kings.json",
+          "witnessBlobSha": "e52bf37f2c6e355d12d0758161ef8292293e9e9f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1kings-8-1-66",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1kings-8-1-66"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:elijah",
+      "order": 20,
+      "title_en": "Elijah",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Elijah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Kings 18:19–39",
+          "book": "1Kings",
+          "chapter": 18,
+          "verseStart": 19,
+          "verseEnd": 39,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Kings.json",
+          "witnessBlobSha": "e52bf37f2c6e355d12d0758161ef8292293e9e9f",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1kings-18-19-39",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1kings-18-19-39"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:elisha",
+      "order": 21,
+      "title_en": "Elisha",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Elisha"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "2Kings 4:8–37",
+          "book": "2Kings",
+          "chapter": 4,
+          "verseStart": 8,
+          "verseEnd": 37,
+          "witnessPath": "data/scripture/witness/crampon-1923/2Kings.json",
+          "witnessBlobSha": "e443d5ddaf9606247faad23350a7951825da6dac",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:isaiah",
+      "order": 22,
+      "title_en": "Isaiah",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Isaiah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Isaiah 6:1–13",
+          "book": "Isaiah",
+          "chapter": 6,
+          "verseStart": 1,
+          "verseEnd": 13,
+          "witnessPath": "data/scripture/witness/crampon-1923/Isaiah.json",
+          "witnessBlobSha": "75657f2af2bcab3dffed74bfce2e825f6db44396",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:isaiah-6-1-13",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Isaiah 11:1–9",
+          "book": "Isaiah",
+          "chapter": 11,
+          "verseStart": 1,
+          "verseEnd": 9,
+          "witnessPath": "data/scripture/witness/crampon-1923/Isaiah.json",
+          "witnessBlobSha": "75657f2af2bcab3dffed74bfce2e825f6db44396",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:isaiah-6-1-13"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:jeremiah",
+      "order": 23,
+      "title_en": "Jeremiah",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Jeremiah"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Jeremiah 1:4–19",
+          "book": "Jeremiah",
+          "chapter": 1,
+          "verseStart": 4,
+          "verseEnd": 19,
+          "witnessPath": "data/scripture/witness/crampon-1923/Jeremiah.json",
+          "witnessBlobSha": "84c4852919012462d6b55d38205b1794dce14d67",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Jeremiah 31:31–34",
+          "book": "Jeremiah",
+          "chapter": 31,
+          "verseStart": 31,
+          "verseEnd": 34,
+          "witnessPath": "data/scripture/witness/crampon-1923/Jeremiah.json",
+          "witnessBlobSha": "84c4852919012462d6b55d38205b1794dce14d67",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:ezekiel",
+      "order": 24,
+      "title_en": "Ezekiel",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Ezekiel"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Ezekiel 37:1–14",
+          "book": "Ezekiel",
+          "chapter": 37,
+          "verseStart": 1,
+          "verseEnd": 14,
+          "witnessPath": "data/scripture/witness/crampon-1923/Ezekiel.json",
+          "witnessBlobSha": "9db589567fa310e9bbc0f7e5791a26fa3b501389",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:tobit-tobias",
+      "order": 25,
+      "title_en": "Tobit and Tobias",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Tobit",
+        "Tobias",
+        "Raphael"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Tobit 1:1–20",
+          "book": "Tobit",
+          "chapter": 1,
+          "verseStart": 1,
+          "verseEnd": 20,
+          "witnessPath": "data/scripture/witness/crampon-1923/Tobit.json",
+          "witnessBlobSha": "b02cb309015ae06e03d5782b50e6d20f898e213e",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Tobit 12:1–22",
+          "book": "Tobit",
+          "chapter": 12,
+          "verseStart": 1,
+          "verseEnd": 22,
+          "witnessPath": "data/scripture/witness/crampon-1923/Tobit.json",
+          "witnessBlobSha": "b02cb309015ae06e03d5782b50e6d20f898e213e",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:judith",
+      "order": 26,
+      "title_en": "Judith",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Judith"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Judith 13:1–20",
+          "book": "Judith",
+          "chapter": 13,
+          "verseStart": 1,
+          "verseEnd": 20,
+          "witnessPath": "data/scripture/witness/crampon-1923/Judith.json",
+          "witnessBlobSha": "2db84912265cf031f9988b277ce4e98b0391560b",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:judith-13-1-20",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:judith-13-1-20"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:esther",
+      "order": 27,
+      "title_en": "Esther",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Esther"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Esther 4:1–17",
+          "book": "Esther",
+          "chapter": 4,
+          "verseStart": 1,
+          "verseEnd": 17,
+          "witnessPath": "data/scripture/witness/crampon-1923/Esther.json",
+          "witnessBlobSha": "fea7d00571e4f23cf364dc32145ee8fa185b933b",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:esther-4-1-17",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:esther-4-1-17"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:daniel",
+      "order": 28,
+      "title_en": "Daniel",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Daniel"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Daniel 1:1–21",
+          "book": "Daniel",
+          "chapter": 1,
+          "verseStart": 1,
+          "verseEnd": 21,
+          "witnessPath": "data/scripture/witness/crampon-1923/Daniel.json",
+          "witnessBlobSha": "0247c8b413e7df7507466dd7021503aa4287c4bb",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:daniel-1-1-21",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Daniel 6:1–29",
+          "book": "Daniel",
+          "chapter": 6,
+          "verseStart": 1,
+          "verseEnd": 29,
+          "witnessPath": "data/scripture/witness/crampon-1923/Daniel.json",
+          "witnessBlobSha": "0247c8b413e7df7507466dd7021503aa4287c4bb",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:daniel-1-1-21"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:susanna",
+      "order": 29,
+      "title_en": "Susanna",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Susanna",
+        "Daniel"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Daniel 13:1–64",
+          "book": "Daniel",
+          "chapter": 13,
+          "verseStart": 1,
+          "verseEnd": 64,
+          "witnessPath": "data/scripture/witness/crampon-1923/Daniel.json",
+          "witnessBlobSha": "0247c8b413e7df7507466dd7021503aa4287c4bb",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:daniel-13-1-64",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:daniel-13-1-64"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:three-youths",
+      "order": 30,
+      "title_en": "Three youths in the furnace",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Ananias",
+        "Azarias",
+        "Misael"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Daniel 3:24–90",
+          "book": "Daniel",
+          "chapter": 3,
+          "verseStart": 24,
+          "verseEnd": 90,
+          "witnessPath": "data/scripture/witness/crampon-1923/Daniel.json",
+          "witnessBlobSha": "0247c8b413e7df7507466dd7021503aa4287c4bb",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:daniel-3-24-90",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:daniel-3-24-90"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:seven-martyrs",
+      "order": 31,
+      "title_en": "Seven brothers and their mother",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Mother of seven martyrs"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "2Maccabees 7:1–42",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "verseStart": 1,
+          "verseEnd": 42,
+          "witnessPath": "data/scripture/witness/crampon-1923/2Maccabees.json",
+          "witnessBlobSha": "872de94621c4cd992417feeefd6c3d10d860eedf",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:2maccabees-7-1-42",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:2maccabees-7-1-42"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:judas-maccabeus",
+      "order": 32,
+      "title_en": "Judas Maccabeus",
+      "primaryArcId": "historia-arc:prophets-exile-return",
+      "subjects": [
+        "Judas Maccabeus"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "1Maccabees 4:36–59",
+          "book": "1Maccabees",
+          "chapter": 4,
+          "verseStart": 36,
+          "verseEnd": 59,
+          "witnessPath": "data/scripture/witness/crampon-1923/1Maccabees.json",
+          "witnessBlobSha": "730aa9eb4c9117e2f30ab916742684dd843cf501",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:1maccabees-4-36-59",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:1maccabees-4-36-59"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:mary",
+      "order": 33,
+      "title_en": "The Blessed Virgin Mary",
+      "primaryArcId": "historia-arc:incarnation",
+      "subjects": [
+        "Mary, Mother of Jesus"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Luke 1:26–38",
+          "book": "Luke",
+          "chapter": 1,
+          "verseStart": 26,
+          "verseEnd": 38,
+          "witnessPath": "data/scripture/witness/crampon-1923/Luke.json",
+          "witnessBlobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:nazareth-e1",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "John 19:25–27",
+          "book": "John",
+          "chapter": 19,
+          "verseStart": 25,
+          "verseEnd": 27,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Acts 1:12–14",
+          "book": "Acts",
+          "chapter": 1,
+          "verseStart": 12,
+          "verseEnd": 14,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:nazareth-e1"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:joseph-husband",
+      "order": 34,
+      "title_en": "St Joseph, husband of Mary",
+      "primaryArcId": "historia-arc:incarnation",
+      "subjects": [
+        "Joseph, spouse of Mary"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Matthew 1:18–25",
+          "book": "Matthew",
+          "chapter": 1,
+          "verseStart": 18,
+          "verseEnd": 25,
+          "witnessPath": "data/scripture/witness/crampon-1923/Matthew.json",
+          "witnessBlobSha": "a73aecf7e76be1657b578390c23007b0cfa4981c",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:nazareth-additional-001",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Matthew 2:13–15",
+          "book": "Matthew",
+          "chapter": 2,
+          "verseStart": 13,
+          "verseEnd": 15,
+          "witnessPath": "data/scripture/witness/crampon-1923/Matthew.json",
+          "witnessBlobSha": "a73aecf7e76be1657b578390c23007b0cfa4981c",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:egypt-e1",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:nazareth-additional-001",
+        "biblical:event:egypt-e1"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:john-baptist",
+      "order": 35,
+      "title_en": "St John the Baptist",
+      "primaryArcId": "historia-arc:public-ministry",
+      "subjects": [
+        "John the Baptist"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Luke 1:57–80",
+          "book": "Luke",
+          "chapter": 1,
+          "verseStart": 57,
+          "verseEnd": 80,
+          "witnessPath": "data/scripture/witness/crampon-1923/Luke.json",
+          "witnessBlobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Mark 1:1–11",
+          "book": "Mark",
+          "chapter": 1,
+          "verseStart": 1,
+          "verseEnd": 11,
+          "witnessPath": "data/scripture/witness/crampon-1923/Mark.json",
+          "witnessBlobSha": "93c05664335f1d851ef0288fcd12a4015d380742",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:peter",
+      "order": 36,
+      "title_en": "St Peter",
+      "primaryArcId": "historia-arc:public-ministry",
+      "subjects": [
+        "Peter"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Matthew 16:13–20",
+          "book": "Matthew",
+          "chapter": 16,
+          "verseStart": 13,
+          "verseEnd": 20,
+          "witnessPath": "data/scripture/witness/crampon-1923/Matthew.json",
+          "witnessBlobSha": "a73aecf7e76be1657b578390c23007b0cfa4981c",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:caesarea-philippi-e1",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "Acts 10:1–48",
+          "book": "Acts",
+          "chapter": 10,
+          "verseStart": 1,
+          "verseEnd": 48,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:acts-10-1-48",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:caesarea-philippi-e1",
+        "biblical:passage:acts-10-1-48"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:john-disciple",
+      "order": 37,
+      "title_en": "St John in the Gospel",
+      "primaryArcId": "historia-arc:public-ministry",
+      "subjects": [
+        "John, disciple"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "John 19:25–27",
+          "book": "John",
+          "chapter": 19,
+          "verseStart": 25,
+          "verseEnd": 27,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": null,
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "John 20:19–29",
+          "book": "John",
+          "chapter": 20,
+          "verseStart": 19,
+          "verseEnd": 29,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:cenacle-e3",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:cenacle-e3"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:martha",
+      "order": 38,
+      "title_en": "Martha of Bethany",
+      "primaryArcId": "historia-arc:public-ministry",
+      "subjects": [
+        "Martha"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Luke 10:38–42",
+          "book": "Luke",
+          "chapter": 10,
+          "verseStart": 38,
+          "verseEnd": 42,
+          "witnessPath": "data/scripture/witness/crampon-1923/Luke.json",
+          "witnessBlobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:bethany-additional-057",
+          "textAuthorizedForPublication": false
+        },
+        {
+          "reference": "John 11:1–44",
+          "book": "John",
+          "chapter": 11,
+          "verseStart": 1,
+          "verseEnd": 44,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:bethany-e1",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:bethany-additional-057",
+        "biblical:event:bethany-e1"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:mary-magdalene",
+      "order": 39,
+      "title_en": "St Mary Magdalene",
+      "primaryArcId": "historia-arc:paschal-mystery",
+      "subjects": [
+        "Mary Magdalene"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "John 20:1–18",
+          "book": "John",
+          "chapter": 20,
+          "verseStart": 1,
+          "verseEnd": 18,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:christ-tomb-e2",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:christ-tomb-e2"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:thomas",
+      "order": 40,
+      "title_en": "St Thomas the Apostle",
+      "primaryArcId": "historia-arc:paschal-mystery",
+      "subjects": [
+        "Thomas"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "John 20:19–29",
+          "book": "John",
+          "chapter": 20,
+          "verseStart": 19,
+          "verseEnd": 29,
+          "witnessPath": "data/scripture/witness/crampon-1923/John.json",
+          "witnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:event:cenacle-e3",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:event:cenacle-e3"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:stephen",
+      "order": 41,
+      "title_en": "St Stephen",
+      "primaryArcId": "historia-arc:apostolic-church",
+      "subjects": [
+        "Stephen"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Acts 7:54–60",
+          "book": "Acts",
+          "chapter": 7,
+          "verseStart": 54,
+          "verseEnd": 60,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:acts-7-54-60",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:acts-7-54-60"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:philip-evangelist",
+      "order": 42,
+      "title_en": "Philip the Evangelist",
+      "primaryArcId": "historia-arc:apostolic-church",
+      "subjects": [
+        "Philip the Evangelist"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Acts 8:26–40",
+          "book": "Acts",
+          "chapter": 8,
+          "verseStart": 26,
+          "verseEnd": 40,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:acts-8-26-40",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:acts-8-26-40"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:cornelius",
+      "order": 43,
+      "title_en": "Cornelius",
+      "primaryArcId": "historia-arc:apostolic-church",
+      "subjects": [
+        "Cornelius"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Acts 10:1–48",
+          "book": "Acts",
+          "chapter": 10,
+          "verseStart": 1,
+          "verseEnd": 48,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:acts-10-1-48",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:acts-10-1-48"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    },
+    {
+      "id": "person-story-candidate:lydia",
+      "order": 44,
+      "title_en": "Lydia",
+      "primaryArcId": "historia-arc:apostolic-church",
+      "subjects": [
+        "Lydia"
+      ],
+      "candidateReadingAnchors": [
+        {
+          "reference": "Acts 16:11–15",
+          "book": "Acts",
+          "chapter": 16,
+          "verseStart": 11,
+          "verseEnd": 15,
+          "witnessPath": "data/scripture/witness/crampon-1923/Acts.json",
+          "witnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+          "importedEdition": "crampon-1923",
+          "witnessStatus": "UNCOLLATED_SOURCE_WITNESS",
+          "versePresenceAudit": "RANGE_NUMBERS_PRESENT",
+          "exactAtlasEventKey": "biblical:passage:acts-16-11-15",
+          "textAuthorizedForPublication": false
+        }
+      ],
+      "exactCanonicalEventKeys": [
+        "biblical:passage:acts-16-11-15"
+      ],
+      "editorialDisposition": "SOURCE_READING_PROPOSAL_NOT_AUTHORED_STORY",
+      "biblicalNarrativeProse": null
+    }
+  ],
+  "sourceBackedRuthToDavid": [
+    {
+      "parent": "Boaz",
+      "child": "Obed",
+      "relation": "FATHER_OF",
+      "primary": "Ruth 4:13–22",
+      "secondary": "Matthew 1:1–17",
+      "review": "SOURCE_RELATION_VERIFIED_TEXT_UNCOLLATED"
+    },
+    {
+      "parent": "Ruth",
+      "child": "Obed",
+      "relation": "MOTHER_OF",
+      "primary": "Ruth 4:13–22",
+      "secondary": "Matthew 1:1–17",
+      "review": "SOURCE_RELATION_VERIFIED_TEXT_UNCOLLATED"
+    },
+    {
+      "parent": "Obed",
+      "child": "Jesse",
+      "relation": "FATHER_OF",
+      "primary": "Ruth 4:13–22",
+      "secondary": "1Chronicles 2:11–15",
+      "review": "SOURCE_RELATION_VERIFIED_TEXT_UNCOLLATED"
+    },
+    {
+      "parent": "Jesse",
+      "child": "David",
+      "relation": "FATHER_OF",
+      "primary": "Ruth 4:13–22",
+      "secondary": "1Chronicles 2:11–15",
+      "review": "SOURCE_RELATION_VERIFIED_TEXT_UNCOLLATED"
+    }
+  ],
+  "editorialHolds": [
+    {
+      "id": "psalm-numbers",
+      "description": "Crampon Psalms 89:4–5 uses modern numbered Psalms, while Douay/Clementine Latin Psalter has alternate numbering; an edition crosswalk is required."
+    },
+    {
+      "id": "luke-genesis-cainan",
+      "description": "Luke 3:36 includes Cainan; preserve the Luke source witness instead of silently conforming to Genesis 11."
+    },
+    {
+      "id": "gospel-davidic-trajectories",
+      "description": "Matthew's Solomonic and Luke's Nathan line must not be silently merged into one biological sequence."
+    },
+    {
+      "id": "john-revelation",
+      "description": "No automatic identity assertion between the John named in Revelation and the son of Zebedee."
+    },
+    {
+      "id": "catholic-greek-additions",
+      "description": "Greek additions in Esther and Daniel are retained and require edition-aware verse identifiers."
+    }
+  ],
+  "next": "Source-aware independent collation of theological passages and narrative source author; confirm publication permissions and accepted Catholic historical narrative prose before reader UI."
+}
