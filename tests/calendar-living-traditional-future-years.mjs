@@ -64,7 +64,9 @@ try{
       return {
        date,resolved:Boolean(r?.date===date&&main?.id&&rank&&colour),
        mainId:main?.id||null,mainRank:rank,
-       colour,
+       colour,properStatus:r?.proper?.status||"UNAVAILABLE",
+       properSourcePath:r?.proper?.data?.sourcePath||null,
+       properTitle:r?.proper?.data?.name||r?.proper?.data?.title?.en||null,
        historicalCommemorationIds:comm.map(x=>x.identity),
        supplementaryIds:modern.map(x=>x.id),
        incorrectlySelectedMass:modern.some(x=>x.massSelectionAuthority!=="NONE"||x.changes1962Principal)
@@ -116,8 +118,12 @@ try{
  const duplicates=report.rows.filter(x=>
   new Set(x.historicalCommemorationIds).size!==x.historicalCommemorationIds.length);
  const incorrectlySelected=report.rows.filter(x=>x.incorrectlySelectedMass);
+ const properUnavailable=report.rows.filter(x=>x.properStatus!=="ready");
  report.summary={
   totalCivilDays:report.rows.length,
+  sourceProperReadyDays:report.rows.length-properUnavailable.length,
+  sourceProperNotReadyDays:properUnavailable.length,
+  sourceProperNotReadyDates:properUnavailable.slice(0,100).map(x=>x.date),
   resolvedDays:report.rows.length-unresolved.length,
   unresolvedDays:unresolved.length,
   years,leapDates:report.rows.filter(x=>x.date.endsWith("-02-29")).length,
@@ -130,6 +136,12 @@ try{
  console.log("LIVING_TRADITIONAL_FUTURE_YEAR_AUDIT="+JSON.stringify(report.summary));
  assert.equal(report.rows.length,years.reduce((sum,y)=>sum+(((y%4===0)&&(y%100!==0))||(y%400===0)?366:365),0));
  assert.equal(new Set(report.rows.map(x=>x.date)).size,report.rows.length);
+ assert.ok(report.rows.some(x=>x.properStatus==="ready"),
+  "Not one future Mass Proper source resolved; calendar must not be presented as fully formed");
+ // Record all unready future Mass Propers rather than claiming complete
+ // liturgical-text certification merely from year/day metadata.
+ assert.equal(report.summary.sourceProperReadyDays+report.summary.sourceProperNotReadyDays,
+   report.rows.length);
  assert.deepEqual(unresolved.map(x=>x.date),[],"Actual production resolver must cover every day, including 2028/2032 leap days");
  assert.deepEqual(duplicates,[],"No repeated 1962 commemoration source identities");
  assert.deepEqual(incorrectlySelected,[],"Modern-source cards never select a Mass");
