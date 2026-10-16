@@ -19,7 +19,7 @@ import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
-import {loadCalendarSaintProfileBridge,exactCalendarPrincipalSaintProfile,exactCalendarSupplementarySaintProfile} from "./calendar-saint-explore-handoff.js";
+import {loadCalendarSaintProfileBridge,exactCalendarPrincipalSaintProfile} from "./calendar-saint-explore-handoff.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -50,17 +50,6 @@ const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","pr
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
 let pilgrimageCorpus=null,pilgrimageLoad=null;
 let secondarySaintModel=null,secondarySaintLoad=null;
-let saintProfileBridge=null,saintProfileBridgeLoad=null;
-function loadCalendarReviewedProfileLinks(){
-  if(saintProfileBridge||saintProfileBridgeLoad)return;
-  saintProfileBridgeLoad=loadCalendarSaintProfileBridge()
-    .then(bridge=>{
-      if(bridge)saintProfileBridge=bridge;
-      if(bridge&&root()&&calendarView==="day")paint();
-    })
-    .catch(error=>console.warn("Reviewed saint identity bridge unavailable",error))
-    .finally(()=>{saintProfileBridgeLoad=null});
-}
 const pilgrimageDataUrl=new URL("../../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url).href;
 function loadCalendarPilgrimagePlaces(){
   if(pilgrimageCorpus||pilgrimageLoad||typeof globalThis.fetch!=="function")return;
@@ -640,28 +629,7 @@ function supplementaryDayCards(selected,r){
 }
 function supplementaryDayMarkup(selected,r){
   const cards=supplementaryDayCards(selected,r);
-  const profileIds=saintProfileBridge?cards.filter(card=>
-    exactCalendarSupplementarySaintProfile({date:selected,card,bridge:saintProfileBridge})
-  ).map(card=>card.id):[];
-  return renderSecondarySaintSection(cards,{language:fr()?"fr":"en",profileIds});
-}
-async function openSupplementarySaintProfile(button){
-  const current=state(),date=String(current?.selectedDate||""),r=resolution();
-  const personId=String(button?.dataset?.calSecondarySaintProfile||"");
-  if(!r||r.date!==date||calendarView!=="day")return false;
-  const card=supplementaryDayCards(date,r).find(x=>x?.id===personId);
-  if(!card)return false;
-  const bridge=saintProfileBridge||await loadCalendarSaintProfileBridge();
-  if(state()?.selectedDate!==date||resolution()?.day?.main?.id!==r?.day?.main?.id)return false;
-  const link=exactCalendarSupplementarySaintProfile({date,card,bridge});
-  if(!link)return false;
-  button.disabled=true;button.setAttribute("aria-busy","true");
-  try{
-    const owner=globalThis.AO_FIND_APP_V1||
-      (await import("../find/browser-entry.js")).installFindBrowserOwner(globalThis);
-    return await owner?.openSaintProfile?.(link.saintsId)===true;
-  }catch(error){console.error("Supplementary saint profile handoff unavailable",error);return false}
-  finally{if(button.isConnected){button.disabled=false;button.removeAttribute("aria-busy")}}
+  return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
 }
 // Revalidate date, observed 1962 day and the exact reviewed saint→Place edge.
 // Neither the browser's data attributes nor name similarity confer authority.
@@ -1167,8 +1135,6 @@ function bind(r){
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();requestPickerMonth();return}
     const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
-    const secondaryProfile=event.target.closest?.("[data-cal-secondary-saint-profile]");
-    if(secondaryProfile){event.preventDefault();event.stopPropagation?.();void openSupplementarySaintProfile(secondaryProfile);return;}
     const secondaryPlace=event.target.closest?.("[data-cal-secondary-place]");if(secondaryPlace){event.preventDefault();event.stopPropagation?.();void openSecondarySaintPlace(secondaryPlace);return}
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const intelligenceRoute=event.target.closest?.("[data-cal-intelligence-route]");if(intelligenceRoute){event.preventDefault();const route=intelligenceRoute.dataset.calIntelligenceRoute||"";if(route==="mass.current"){void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar practice Mass route failed",error));return}if(route==="today.calendar"){calendarView="day";paint();return}if(route.startsWith("find:")){const [lens,calendarKey]=route.slice(5).split(":");void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("find")).then(result=>result?.ok===true?globalThis.AO_FIND_APP_V1?.open?.({lens:lens||"pilgrimages",view:"map",calendarKey:calendarKey||null,query:""}):false).catch(error=>console.error("Calendar Explore route failed",error));return}void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"day",date:state()?.selectedDate||null}})).catch(error=>console.error("Calendar practice route failed",error));return}
@@ -1189,7 +1155,7 @@ function open({embeddedIn=null,onClose=null}={}){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();loadCalendarReviewedProfileLinks();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}${SANCTORAL_DAY_CSS}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();loadCalendarSecondarySaints();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();
   // Embedding the Calendar in Today or Mass must be observational when the
   // selected 1962 day is already resolved. revealDate() dispatches
