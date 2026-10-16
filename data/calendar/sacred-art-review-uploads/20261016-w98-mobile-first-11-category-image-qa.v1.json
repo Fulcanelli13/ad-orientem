@@ -1,0 +1,108 @@
+{
+  "schema": "AO_SACRED_ART_W98_MOBILE_FIRST_GAP_TRIAGE_V1",
+  "date": "2026-10-16",
+  "input": "Physical W93/W95/W96/W97 downloaded preview photos inspected on fixed ~390 CSS pixel width with object-fit:contain and vertical limit 500px",
+  "strictCoverageBefore": "146/168",
+  "methodology": {
+    "renderedPhoneWidthCssPx": 390,
+    "singleImageMaxHeightCssPx": 500,
+    "imageTreatment": "object-fit:contain; no crop, 100% painted composition if present",
+    "doesNotJudgeByMegapixels": true,
+    "distinctGates": [
+      "subject-original match",
+      "visual mobile legibility and colour",
+      "complete painted edges",
+      "photo/file reuse terms",
+      "user artwork selection"
+    ],
+    "noNewRatingInterface": true,
+    "noRatingOrProductionChanges": true
+  },
+  "statuses": [
+    {
+      "categoryIndex": 26,
+      "subject": "Saint Alphonsus Liguori",
+      "visual": "REPLACE_SOURCE",
+      "evidence": "W95: Marini 1045x1280 and Lenzi 742x1065 both monochrome and framed; visible but weak devotional colour/fidelity",
+      "next": "Colour source of same original(s), not more pixels"
+    },
+    {
+      "categoryIndex": 35,
+      "subject": "Saint Peter Damian",
+      "visual": "REPLACE_SOURCE",
+      "evidence": "W95: G30-007 overall 853x1280 framed, severe low exposure; G30-006 989x1480 monochrome; G30-007 second 1280x853 file is a detail crop and fails full-picture",
+      "next": "Correctly exposed colour image of exact selected painting"
+    },
+    {
+      "categoryIndex": 37,
+      "subject": "Saint Robert Bellarmine",
+      "visual": "REPLACE_SOURCE",
+      "evidence": "W95 578x768: figure readable at 390px but black-and-white, unsuitable if a colour painting reproduction can be found; pixel count is NOT rejection reason",
+      "next": "Find original full-colour photograph; B&W permitted only as explicit last-resort editorial exception"
+    },
+    {
+      "categoryIndex": 51,
+      "subject": "Saint Louis IX",
+      "visual": "MOBILE_CANDIDATE",
+      "evidence": "W93 Louvre/Nancy 999x1500: colour composition readable at 390px, despite prominent external frame and faded/soft rendition",
+      "next": "May prepare trim-to-painted-edge derivative, never crop painting; verify reuse rights and physical original attribution"
+    },
+    {
+      "categoryIndex": 60,
+      "subject": "Saint Margaret Mary Alacoque",
+      "visual": "SOURCE_IMAGE_TO_INSPECT",
+      "evidence": "Commons Podesti-attributed 800x600 photo exists, CC BY-SA 4.0; original subject/object independently unverified",
+      "next": "Download original file, inspect 390px visual legibility and check Vatican object identity"
+    },
+    {
+      "categoryIndex": 70,
+      "subject": "Saint Denis of Paris",
+      "visual": "MOBILE_CANDIDATE",
+      "evidence": "W95 609x700: full composition depicts kneeling bishop with executioner, readable and colour-visible at 390px; faded photo but no pixel issue",
+      "next": "Check full painting original accession and photo reuse rights, optional colour balance of derivative"
+    },
+    {
+      "categoryIndex": 81,
+      "subject": "Our Lady of Perpetual Help",
+      "visual": "CLOSEUP_SOURCE_TO_INSPECT",
+      "evidence": "Two Commons original icon closeups (781x1024, 500x609), rights labelled PD-Art; W93 context photographs show small icon and cannot serve as icon master",
+      "next": "Download and visually inspect exact original-icon closeups instead of searching greater pixel dimensions"
+    },
+    {
+      "categoryIndex": 135,
+      "subject": "Seven Sorrows of Mary",
+      "visual": "ACQUIRED_GOOD_VISUAL",
+      "evidence": "W92 Munich Van Dyck 3750x2736 and W96 Bilbao Van Dyck 6306x3784: two separate colourful full-scene works, mobile-legible",
+      "next": "Reconcile existing unaccessioned selection, do not acquire further copies just for resolution"
+    },
+    {
+      "categoryIndex": 139,
+      "subject": "Most Holy Trinity",
+      "visual": "ACQUIRED_GOOD_VISUAL",
+      "evidence": "W92 KMSKA Rubens 3840x3949 is full artwork; W96 Basel Rubens 1160x1624 mobile-legible, despite smaller pixels",
+      "next": "Reconcile physical artwork ID; museum/photographer terms tracked individually"
+    },
+    {
+      "categoryIndex": 142,
+      "subject": "Cain and Abel",
+      "visual": "ACQUIRED_GOOD_VISUAL",
+      "evidence": "W97 Courtauld Rubens 7045x9694 visually strong at 390px; Courtauld CC BY-NC versus Commons PD-Art unresolved for commercial app",
+      "next": "Resolve rights conflict and selected original, not image resolution"
+    },
+    {
+      "categoryIndex": 145,
+      "subject": "Melchizedek Blesses Abram",
+      "visual": "ACQUIRED_GOOD_VISUAL",
+      "evidence": "W97 NGA Rubens 4000x3193 vibrant/legible at phone width, CC0 museum original",
+      "next": "Only legacy physical original/curator selection reconciliation required"
+    }
+  ],
+  "counts": {
+    "ACQUIRED_GOOD_VISUAL": 4,
+    "MOBILE_CANDIDATE": 2,
+    "REPLACE_SOURCE": 3,
+    "SOURCE_IMAGE_TO_INSPECT": 1,
+    "CLOSEUP_SOURCE_TO_INSPECT": 1
+  },
+  "conclusion": "11 previously pending categories now triaged by phone visual suitability. Four already acquire quality photographs; two mobile candidates regardless of pixels; three need better colour photography; two require first closeup visual download. NO automatic category promotions pending separate checks."
+}
