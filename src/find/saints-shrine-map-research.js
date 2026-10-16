@@ -51,6 +51,8 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     exact_name_candidate_keys:Object.freeze([...arr(row.candidate_source_keys)]),
     identity_match_status:row.identity_match_status,
     source_reconciliation_tier:caseEvidence?.source_reconciliation_tier??"SHRINE_NAME_ONLY",
+    source_key_review_bucket:caseEvidence?.source_key_review_bucket??"SHRINE_NAME_ONLY",
+    curated_variant_source_key_leads:Object.freeze(arr(caseEvidence?.curated_variant_existing_key_leads).map(x=>x.source_key)),
     external_relic_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.relic_subjects).map(x=>x.subject_id)),
     external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
     recorded_alias_source_keys:Object.freeze(arr(caseEvidence?.prior_documented_alias_candidates).flatMap(x=>arr(x.existing_exact_source_key_candidates))),
@@ -75,7 +77,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
    map_state:precise?"MAPPED_EXISTING_SITE_RESEARCH_ONLY":"LIST_ONLY_GEO_HOLD",
    associated_saint_name_sources:associations,saints:Object.freeze([]),artwork_id:null,
    search_text:fold([title,p.address?.formatted,...associations.flatMap(a=>[
-     a.source_saint_name,...a.exact_name_candidate_keys
+     a.source_saint_name,...a.exact_name_candidate_keys,...a.recorded_alias_source_keys,...a.curated_variant_source_key_leads
    ])].join(" ")),
    editorial_status:"RESEARCH_SHRINE_ASSOCIATION_NO_PERSON_IDENTITY_CERTIFIED"
   });
@@ -103,6 +105,12 @@ export function renderSaintResearchShrineSheet(vm){
   +(x.source_reconciliation_tier!=="SHRINE_NAME_ONLY"
     ?'<p class="aoSaintSourceEvidenceStatus">'+esc(say("Cross-source research: ","Recherche intersources : ")+x.source_reconciliation_tier.replaceAll("_"," ").toLowerCase())+'</p>'
     :"")
+  +(arr(x.exact_name_candidate_keys).length
+    ?'<small>'+esc(say("Exact-name source key(s), not certified identity: ","Clé(s) de source au nom identique, identité non certifiée : ")+x.exact_name_candidate_keys.join(" · "))+"</small>":"")
+  +(arr(x.recorded_alias_source_keys).length
+    ?'<small>'+esc(say("Previously recorded alias candidate(s), unapproved: ","Alias antérieurs proposés, non approuvés : ")+x.recorded_alias_source_keys.join(" · "))+"</small>":"")
+  +(arr(x.curated_variant_source_key_leads).length
+    ?'<small>'+esc(say("Existing source-key variant lead(s), unapproved: ","Variantes de clés de source proposées, non approuvées : ")+x.curated_variant_source_key_leads.join(" · "))+"</small>":"")
   +(arr(x.external_relic_subject_ids).length
     ?'<small>'+esc(say("Relic registry subjects (not authenticated): ","Sujets du registre des reliques (non authentifiées) : ")+x.external_relic_subject_ids.join(" · "))+'</small>':"")
   +(arr(x.external_art_research_subject_ids).length
