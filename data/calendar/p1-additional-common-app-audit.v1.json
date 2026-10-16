@@ -3,7 +3,7 @@
   "asOf": "2026-10-16",
   "witnessRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
   "producer": "tests/calendar-p1-live-1962-source-discovery.mjs via AO_RUNTIME_V8.resolver.properResolver.resolveSource",
-  "status": "17_DIRECT_COMPLETE_1_SOURCE_COMPOSED_10_PARTIAL_APP_SOURCES_3_AMBIGUOUS",
+  "status": "17_DIRECT_1_COMPLETE_INHERITED_2_PARTIAL_RECOVERED_8_OTHER_PARTIAL_3_AMBIGUOUS",
   "coreSections": [
     "Introitus",
     "Oratio",
@@ -538,7 +538,12 @@
       "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "approvedForNewSaintMass": false,
       "canonical1962PrintedFamilyCertified": false,
-      "readOnlyMissalRoute": null
+      "readOnlyMissalRoute": null,
+      "sourceRecoveryStatus": "PARTIAL_RECOVERY_VERIFIED",
+      "recoveredLanguageSections": 18,
+      "recoveredSourceEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "completeViaReadOnlyInheritedSourceMap": false,
+      "recoveredReadOnlySectionsOnly": true
     },
     {
       "researchId": "p1:index:1962:several_martyrs_second_mass",
@@ -1056,7 +1061,12 @@
       "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "approvedForNewSaintMass": false,
       "canonical1962PrintedFamilyCertified": false,
-      "readOnlyMissalRoute": null
+      "readOnlyMissalRoute": null,
+      "sourceRecoveryStatus": "PARTIAL_RECOVERY_VERIFIED",
+      "recoveredLanguageSections": 7,
+      "recoveredSourceEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "completeViaReadOnlyInheritedSourceMap": false,
+      "recoveredReadOnlySectionsOnly": true
     },
     {
       "researchId": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
@@ -1654,5 +1664,7 @@
   "massSelectionMutation": false,
   "sourceComposedNineSectionCount": 1,
   "completeAfterCompositionCount": 18,
-  "partialsAfterCompositionCount": 10
+  "partialsAfterCompositionCount": 10,
+  "partialSourceReconciliationsVerified": 2,
+  "verifiedAdditionalPartialLanguageSections": 25
 }
