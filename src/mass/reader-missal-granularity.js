@@ -106,6 +106,7 @@ function subsections(card,groups){
   if(JSON.stringify(expected)!==JSON.stringify(specified))
     throw new Error("MISSAL_BLOCK_OWNERSHIP_MISMATCH:"+card.sectionId);
   const results=[];
+  let pendingEmptyBlocks=[];
   for(let index=0;index<groups.length;index++){
     let paragraphs=[],groupBlocks=[];
     for(const short of groups[index]){
@@ -122,11 +123,13 @@ function subsections(card,groups){
       // Preserve its block identity with the preceding page rather than
       // emitting a blank fake prayer or silently dropping its metadata.
       const preceding=results.at(-1);
-      if(preceding && groupBlocks.every(b=>b.paragraphCount===0)){
-        results[results.length-1]=Object.freeze({
-          ...preceding,
-          blocks:Object.freeze([...preceding.blocks,...groupBlocks]),
-        });
+      if(groupBlocks.every(b=>b.paragraphCount===0)){
+        if(preceding){
+          results[results.length-1]=Object.freeze({
+            ...preceding,
+            blocks:Object.freeze([...preceding.blocks,...groupBlocks]),
+          });
+        }else pendingEmptyBlocks.push(...groupBlocks);
         continue;
       }
       // Optional omitted branches are not invented as empty prayer cards.
@@ -143,8 +146,13 @@ function subsections(card,groups){
       }
       continue;
     }
-    const title=groupBlocks.length===1?labelFor(groupBlocks[0],"en"):
-      String(groupBlocks[0].title??card.title);
+    const titledBlock=groupBlocks[0];
+    if(pendingEmptyBlocks.length){
+      groupBlocks=[...pendingEmptyBlocks,...groupBlocks];
+      pendingEmptyBlocks=[];
+    }
+    const title=groupBlocks.length===1?labelFor(titledBlock,"en"):
+      String(titledBlock.title??card.title);
     results.push(Object.freeze({...card,
       sectionId:"AO.MISSAL."+card.sectionId.slice(-3)+"."+(index+1),
       sourceSectionId:card.sectionId,sourceSequence:card.sequence,
@@ -153,6 +161,13 @@ function subsections(card,groups){
       missalPresentation:true,
       provenance:Object.freeze({...card.provenance,displayOnly:true,canonicalTextMutation:false}),
     }));
+  }
+  if(pendingEmptyBlocks.length){
+    const previous=results.at(-1);
+    if(!previous)throw new Error("MISSAL_NO_DISPLAYABLE_PRAYER:"+card.sectionId);
+    results[results.length-1]=Object.freeze({
+      ...previous,blocks:Object.freeze([...previous.blocks,...pendingEmptyBlocks]),
+    });
   }
   return results;
 }
