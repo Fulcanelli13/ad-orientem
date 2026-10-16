@@ -1,0 +1,944 @@
+{
+  "schema": "AO_SACRED_ART_SOURCE_BYTES_MISSING_RETRY_V1",
+  "researchOnly": true,
+  "asOf": "2026-10-16",
+  "sourceRuns": [
+    38881782134,
+    38882299843
+  ],
+  "acquiredDistinctPaintingIds": 148,
+  "stillMissingPaintingIds": 93,
+  "ratePolicy": "Retry source files with lower concurrency, respect Retry-After, do not treat ambiguous painter/subject matches as authenticated physical originals",
+  "targets": [
+    {
+      "id": "W05-004",
+      "category": "Saint Andrew",
+      "index": 2,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Andrew",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W02-001",
+      "category": "Saint Bartholomew",
+      "index": 6,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-bartholomew/4818e314-6b68-4828-8397-57c5e051507e",
+      "artist": "Jusepe de Ribera",
+      "work": "Saint Bartholomew (Apostolado series, 1630–35)",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W05-008",
+      "category": "Saint Matthias",
+      "index": 11,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Matthias",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W05-012",
+      "category": "Saint Paul",
+      "index": 12,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Paul",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W14-016",
+      "category": "Saint Jude Thaddeus",
+      "index": 13,
+      "source": "https://www.khm.at/en/artworks/apostle-judas-thaddaeus-635",
+      "artist": "Anthony van Dyck",
+      "work": "Apostle Judas Thaddeus (Böhler series)",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "category": "Saint Jude Thaddeus",
+      "index": 13,
+      "source": null,
+      "artist": "Jusepe de Ribera",
+      "work": "Saint Judas Thaddeus",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "C34:luketheevangelistbyjanjanszdestommejpg",
+      "category": "Saint Luke the Evangelist",
+      "index": 15,
+      "source": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
+      "artist": "Attribution not recorded",
+      "work": "Luke the Evangelist, by Jan Jansz de Stomme.jpg",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "prado-ribalta-p002804",
+      "category": "Saint Bernard of Clairvaux",
+      "index": 22,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/christ-embracing-saint-bernard/f878e05f-b1b9-4cb0-b182-152e611bcec5",
+      "artist": "Francisco Ribalta",
+      "work": "Christ embracing Saint Bernard",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "C32:pompeobatoniestasidisantateresa1743circajpg",
+      "category": "Saint Teresa of Ávila",
+      "index": 23,
+      "source": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+      "artist": "Pompeo Batoni",
+      "work": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "category": "Saint Catherine of Siena",
+      "index": 24,
+      "source": null,
+      "artist": "Giambattista Tiepolo",
+      "work": "Saint Catherine of Siena",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "celine-1894-john-cross",
+      "category": "Saint John of the Cross",
+      "index": 25,
+      "source": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+      "artist": "Céline Martin",
+      "work": "Saint John of the Cross",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "italy-0900119548",
+      "category": "Saint Alphonsus Liguori",
+      "index": 26,
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+      "artist": "Antonio Marini",
+      "work": "Sant'Alfonso Maria de Liguori",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G28-003",
+      "category": "Saint Alphonsus Liguori",
+      "index": 26,
+      "source": "https://catalogo.cultura.gov.it/detail/HistoricOrArtisticProperty/1500005082",
+      "artist": "Michele Lenzi",
+      "work": "Sant'Alfonso Maria de Liguori",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G17-006",
+      "category": "Saint Francis de Sales",
+      "index": 27,
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+      "artist": "School of Philippe de Champaigne",
+      "work": "Saint François de Sales",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg",
+      "category": "Saint Francis de Sales",
+      "index": 27,
+      "source": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
+      "artist": "Attribution not recorded",
+      "work": "Marco Antonio Franceschini - Il S. Francesco di Sales nel deserto.jpg",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
+      "category": "Saint Athanasius",
+      "index": 28,
+      "source": "https://commons.wikimedia.org/wiki/File:San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg",
+      "artist": "Alonso Sánchez Coello",
+      "work": "San Basilio y San Atanasio, Alonso Sánchez Coello.jpg",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G30-004",
+      "category": "Saint Gregory Nazianzen",
+      "index": 30,
+      "source": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0070-00118_R03",
+      "artist": "Giuseppe Franchi",
+      "work": "Ritratto di San Gregorio Nazianzeno",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G32-001",
+      "category": "Saint Bede the Venerable",
+      "index": 33,
+      "source": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
+      "artist": "James Doyle Penrose",
+      "work": "The Last Chapter: Bede on his deathbed completing his translation of St John's Gospel",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G20-002",
+      "category": "Saint Anselm",
+      "index": 34,
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+      "artist": "Unidentified painter",
+      "work": "Saint Anselme",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G30-007",
+      "category": "Saint Peter Damian",
+      "index": 35,
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+      "artist": "Local school, artist unidentified",
+      "work": "San Pier Damiano writing, angel indicates heaven",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "zeri-45874-peter-damian",
+      "category": "Saint Peter Damian",
+      "index": 35,
+      "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+      "artist": "Venanzio l'Eremita",
+      "work": "San Pier Damiano",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G30-006",
+      "category": "Saint Peter Damian",
+      "index": 35,
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
+      "artist": "Emilian school, artist unidentified",
+      "work": "San Pier Damiano",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G30-010",
+      "category": "Saint Robert Bellarmine",
+      "index": 37,
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+      "artist": "Roman school, anonymous",
+      "work": "Ritratto del cardinale Roberto Bellarmino",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "G20-003",
+      "category": "Saint Peter Canisius",
+      "index": 38,
+      "source": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+      "artist": "Monogrammist AE von 1546",
+      "work": "Bildnis des Petrus Canisius",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G30-012",
+      "category": "Saint Peter Canisius",
+      "index": 38,
+      "source": "https://www.fr.ch/dfac/sbc/recensement-des-biens-culturels-meubles/recensement-des-meubles",
+      "artist": "Pierre Wuilleret",
+      "work": "Prédication de saint Pierre Canisius",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "italy-banchero-0700031704",
+      "category": "Saint Lawrence of Brindisi",
+      "index": 39,
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+      "artist": "Angelo Giacinto Banchero",
+      "work": "San Lorenzo da Brindisi",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G32-002",
+      "category": "Saint Ephrem",
+      "index": 42,
+      "source": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
+      "artist": "Francesco Netti",
+      "work": "Sant'Effremo",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "category": "Saint Hilary of Poitiers",
+      "index": 43,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/saint-lawrence-saint-hilary/71cff54c-68c8-4be5-8704-15713fe411a8",
+      "artist": "Juan Correa de Vivar",
+      "work": "Saint Lawrence / Saint Hilary — two-sided altarpiece panel",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "G29-001",
+      "category": "Saint Hilary of Poitiers",
+      "index": 43,
+      "source": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+      "artist": "Jérôme-Martin Langlois",
+      "work": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "from": "researchHilary",
+      "selectedOct12": false
+    },
+    {
+      "id": "QCP-HILARY-LEDUC-1896-1900",
+      "category": "Saint Hilary of Poitiers",
+      "index": 43,
+      "source": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=93184&methode=consulter&type=bien",
+      "artist": "Ozias Leduc",
+      "work": "Saint Hilaire rédigeant son traité sur la Trinité",
+      "from": "researchHilary",
+      "selectedOct12": false
+    },
+    {
+      "id": "W04-009",
+      "category": "Saint Joseph",
+      "index": 44,
+      "source": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "artist": "Philippe de Champaigne",
+      "work": "Le songe de saint Joseph",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W40-006",
+      "category": "Saint Joseph",
+      "index": 44,
+      "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-jose-con-el-nio-jesus/a659fbad-c561-42bc-8249-042be39f4a72",
+      "artist": "Francisco Camilo",
+      "work": "San José con el Niño Jesús",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "carmel-lisieux-1925-therese-aux-roses",
+      "category": "Saint Thérèse of Lisieux",
+      "index": 48,
+      "source": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+      "work": "Thérèse aux roses (1925)",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "sevilla-murillo-vision-san-antonio",
+      "category": "Saint Anthony of Padua",
+      "index": 49,
+      "source": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "La visión de san Antonio de Padua",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G17-012",
+      "category": "Saint Anthony of Padua",
+      "index": 49,
+      "source": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+      "artist": "Giuseppe Bazzani",
+      "work": "Saint Anthony of Padua with the Infant Christ",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "W07-006",
+      "category": "Saint Anthony of Padua",
+      "index": 49,
+      "source": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova/",
+      "artist": "Anthony van Dyck",
+      "work": "Madonna and Child with Saint Anthony of Padua",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G26-007",
+      "category": "Saint Joan of Arc",
+      "index": 50,
+      "source": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
+      "artist": "Eugène Carrière",
+      "work": "Joan of Arc Listening to the Voices",
+      "from": "batch1",
+      "selectedOct12": false
+    },
+    {
+      "id": "W10-009",
+      "category": "Saint Louis IX",
+      "index": 51,
+      "source": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+      "artist": "Jean-Honoré Fragonard (attributed)",
+      "work": "L'Apothéose de saint Louis",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "G27-002",
+      "category": "Saint Patrick",
+      "index": 52,
+      "source": "https://digitalarchive.rds.ie/items/show/3978",
+      "artist": "Vincenzo Valdrè",
+      "work": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "nga-106362",
+      "category": "Saint Lawrence",
+      "index": 54,
+      "source": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
+      "artist": "Jean Baptiste de Champaigne",
+      "work": "The Martyrdom of Saint Lawrence",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "G25-016",
+      "category": "Saint Lawrence",
+      "index": 54,
+      "source": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
+      "artist": "Valentin de Boulogne",
+      "work": "Martyrdom of Saint Lawrence",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "W44-006",
+      "category": "Saint Benedict",
+      "index": 57,
+      "source": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+      "artist": "Jean Restout (attribution in file name)",
+      "work": "Saint Benedict in Prayer",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "podesti-margaret-mary-source",
+      "category": "Saint Margaret Mary Alacoque",
+      "index": 60,
+      "source": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "artist": "Attributed on Commons to Francesco Podesti",
+      "work": "Apparizione a Marguerite Marie Alacoque",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "france-PM01002671-vianney",
+      "category": "Saint Jean Vianney",
+      "index": 61,
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+      "artist": "Unidentified 19th-century painter",
+      "work": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-eter-aul-ubens-aint-ebastian",
+      "category": "Saint Sebastian",
+      "index": 62,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Sebastian",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "BERLIN-RUBENS-798H",
+      "category": "Saint Sebastian",
+      "index": 62,
+      "source": "https://search.smb.museum/object/obj-871193",
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Sebastian (Berlin, c. 1618) — conditional identification",
+      "from": "researchSebastian",
+      "selectedOct12": false
+    },
+    {
+      "id": "G17-010",
+      "category": "Saint Lucy",
+      "index": 64,
+      "source": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+      "artist": "Paolo Veronese",
+      "work": "The Martyrdom and Last Communion of Saint Lucy",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-ietro-da-ortona-aint-ecilia",
+      "category": "Saint Cecilia",
+      "index": 66,
+      "source": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+      "artist": "Pietro da Cortona",
+      "work": "Saint Cecilia",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "G17-009",
+      "category": "Saint Denis of Paris",
+      "index": 70,
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+      "artist": "Baronne Girod de l'Ain (Émilie Sivard de Beaulieu)",
+      "work": "Episode de la vie de saint Denis",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "category": "Saint Martin of Tours",
+      "index": 72,
+      "source": "https://www.wga.hu/html/d/dyck_van/3other/s_martin.html",
+      "artist": "Anthony van Dyck",
+      "work": "Saint Martin Dividing His Cloak",
+      "from": "batch2",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "category": "Saint Anne",
+      "index": 73,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "Holy Family with Saint Anne",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "B02-HELP-ICON-BYZ",
+      "category": "Our Lady of Perpetual Help",
+      "index": 81,
+      "source": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
+      "artist": "Byzantine iconographer (unknown)",
+      "work": "Our Lady of Perpetual Help — traditional Roman icon",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "nga-96688",
+      "category": "Calling the Fishermen",
+      "index": 89,
+      "source": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "artist": "Jacopo Bassano",
+      "work": "The Miraculous Draught of Fishes",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "louvre-veronese-cana",
+      "category": "Wedding at Cana",
+      "index": 90,
+      "source": "https://www.louvre.fr/en/explore/visitor-trails/the-louvre-s-masterpieces/a-superstar-and-a-wedding-crowd",
+      "artist": "Paolo Veronese",
+      "work": "The Wedding Feast at Cana",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "NG5931",
+      "category": "Healing the Paralytic",
+      "index": 92,
+      "source": "https://www.nationalgallery.org.uk/paintings/bartolome-esteban-murillo-christ-healing-the-paralytic-at-the-pool-of-bethesda",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "Christ Healing the Paralytic at the Pool of Bethesda",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "kress-k2016",
+      "category": "Transfiguration",
+      "index": 93,
+      "source": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "artist": "Maestro Bartolomé",
+      "work": "The Transfiguration",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "1948.12.1",
+      "category": "The Prodigal Son",
+      "index": 95,
+      "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "The Return of the Prodigal Son",
+      "from": "research3",
+      "selectedOct12": false
+    },
+    {
+      "id": "kress-k2017",
+      "category": "Entry into Jerusalem",
+      "index": 99,
+      "source": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "artist": "Maestro Bartolomé",
+      "work": "The Entry into Jerusalem",
+      "from": "batch2",
+      "selectedOct12": false
+    },
+    {
+      "id": "ART-aphael-and-iulio-omano-he-isitation",
+      "category": "Visitation",
+      "index": 102,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/the-visitation/c02d195f-fdc4-4c61-bedf-e19216dd7335",
+      "artist": "Raphael and Giulio Romano",
+      "work": "The Visitation",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "category": "Nativity",
+      "index": 103,
+      "source": null,
+      "artist": "Jean-Léon Gérôme",
+      "work": "The Age of Augustus: Birth of Christ",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "category": "Presentation of Jesus",
+      "index": 104,
+      "source": null,
+      "artist": "Philippe de Champaigne",
+      "work": "Presentation of Jesus at the Temple",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "category": "Finding in the Temple",
+      "index": 105,
+      "source": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors",
+      "artist": "Ludovico Mazzolino",
+      "work": "Christ Disputing with the Doctors",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "category": "Scourging at the Pillar",
+      "index": 107,
+      "source": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "artist": "Peter Paul Rubens",
+      "work": "Scourging at the Pillar — Antwerp Rosary cycle",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-itian-hrist-arrying-the-ross",
+      "category": "Carrying of the Cross",
+      "index": 109,
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+      "artist": "Titian",
+      "work": "Christ Carrying the Cross",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+      "category": "Station 1: Christ Condemned to Death",
+      "index": 116,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+      "category": "Station 3: First Fall",
+      "index": 118,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 03: First Fall",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+      "category": "Station 7: Second Fall",
+      "index": 122,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 07: Second Fall",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+      "category": "Station 9: Third Fall",
+      "index": 124,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 09: Third Fall",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+      "category": "Station 10: Stripping of His Garments",
+      "index": 125,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 10: Stripping of His Garments",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+      "category": "Station 11: Nailing to the Cross",
+      "index": 126,
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "artist": "Giandomenico Tiepolo",
+      "work": "San Polo Via Crucis — Station 11: Nailing to the Cross",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "category": "Station 13: Descent from the Cross",
+      "index": 128,
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+      "artist": "Giandomenico Tiepolo",
+      "work": "Descent from the Cross — Prado Passion series",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "category": "Station 14: Burial of Christ",
+      "index": 129,
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+      "artist": "Giandomenico Tiepolo",
+      "work": "Burial of Christ — Prado Passion series",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-mmaculate-onception",
+      "category": "Immaculate Conception",
+      "index": 132,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+      "artist": "Peter Paul Rubens",
+      "work": "Immaculate Conception",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-nthony-van-yck-amentation-of-hrist",
+      "category": "Seven Sorrows of Mary",
+      "index": 135,
+      "source": null,
+      "artist": "Anthony van Dyck",
+      "work": "Lamentation of Christ",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "category": "Saint Anthony of Padua",
+      "index": 136,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "Saint Anthony of Padua with the Christ Child",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-he-oly-rinity",
+      "category": "Most Holy Trinity",
+      "index": 139,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "The Holy Trinity",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-ain-and-bel",
+      "category": "Cain and Abel",
+      "index": 142,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "Cain and Abel",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ieter-ruegel-the-lder-ower-of-abel",
+      "category": "Tower of Babel",
+      "index": 143,
+      "source": null,
+      "artist": "Pieter Bruegel the Elder",
+      "work": "Tower of Babel",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+      "category": "Melchizedek Blesses Abram",
+      "index": 145,
+      "source": null,
+      "artist": "Peter Paul Rubens",
+      "work": "Meeting of Abraham and Melchizedek",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-aravaggio-he-acrifice-of-saac",
+      "category": "Sacrifice of Isaac",
+      "index": 146,
+      "source": null,
+      "artist": "Caravaggio",
+      "work": "The Sacrifice of Isaac",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+      "category": "Jacob Wrestles with the Angel",
+      "index": 148,
+      "source": null,
+      "artist": "Eugène Delacroix",
+      "work": "Jacob Wrestling with the Angel",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-bastien-ourdon-he-inding-of-oses",
+      "category": "Birth of Moses",
+      "index": 149,
+      "source": "https://www.nga.gov/artworks/46164-finding-moses",
+      "artist": "Sébastien Bourdon",
+      "work": "The Finding of Moses",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-omenico-etti-oses-before-the-urning-ush",
+      "category": "The Burning Bush",
+      "index": 150,
+      "source": null,
+      "artist": "Domenico Fetti",
+      "work": "Moses before the Burning Bush",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-aspard-ughet-lijah-and-the-ngel",
+      "category": "Elijah at Horeb",
+      "index": 153,
+      "source": "https://www.nationalgallery.org.uk/paintings/gaspard-dughet-elijah-and-the-angel",
+      "artist": "Gaspard Dughet",
+      "work": "Elijah and the Angel",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-acopo-intoretto-udith-and-olofernes",
+      "category": "Judith and Holofernes",
+      "index": 155,
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000389",
+      "artist": "Jacopo Tintoretto",
+      "work": "Judith and Holofernes",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ebastiano-icci-sther-before-hasuerus",
+      "category": "Esther Intercedes",
+      "index": 156,
+      "source": "https://www.nationalgallery.org.uk/paintings/sebastiano-ricci-esther-before-ahasuerus",
+      "artist": "Sebastiano Ricci",
+      "work": "Esther before Ahasuerus",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-uido-eni-usannah-and-the-lders",
+      "category": "Susanna Vindicated",
+      "index": 157,
+      "source": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "artist": "Guido Reni",
+      "work": "Susannah and the Elders",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "category": "Heliodorus Expelled from Temple",
+      "index": 158,
+      "source": null,
+      "artist": "Eugène Delacroix",
+      "work": "Heliodorus Driven from the Temple",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-eter-aul-ubens-doration-of-the-agi",
+      "category": "Adoration of the Magi",
+      "index": 159,
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+      "artist": "Peter Paul Rubens",
+      "work": "Adoration of the Magi",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-ean-ouvenet-aising-of-azarus",
+      "category": "Raising of Lazarus",
+      "index": 162,
+      "source": null,
+      "artist": "Jean Jouvenet",
+      "work": "Raising of Lazarus",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-a-etite-ne",
+      "category": "Last Supper / Institution of Eucharist",
+      "index": 163,
+      "source": null,
+      "artist": "Philippe de Champaigne",
+      "work": "La Petite Cène",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "category": "Conversion of Saul",
+      "index": 166,
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000984",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "Conversion of Saint Paul",
+      "from": "oct12",
+      "selectedOct12": true
+    },
+    {
+      "id": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+      "category": "Healing of the Man Born Blind",
+      "index": 168,
+      "source": "https://www.nationalgallery.org.uk/paintings/catalogues/gordon-2011/the-healing-of-the-man-born-blind",
+      "artist": "Duccio di Buoninsegna",
+      "work": "Healing of the Man Born Blind",
+      "from": "oct12",
+      "selectedOct12": true
+    }
+  ]
+}
