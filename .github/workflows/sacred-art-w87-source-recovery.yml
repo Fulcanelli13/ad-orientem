@@ -1,0 +1,33 @@
+name: Sacred Art W87 Exact Museum Source Recovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - tools/calendar/acquire-sacred-art-w87-source-images.py
+      - .github/workflows/sacred-art-w87-source-recovery.yml
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow requests
+      - name: Recover exact recorded museum originals, enforce saved SHA256
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w87-source-images.py
+          python tools/calendar/acquire-sacred-art-w87-source-images.py
+      - name: Preserve official originals and uncropped research images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w87-source-evidence
+          path: |
+            artifacts/sacred-art-w87/
+            docs/research/review-galleries/acquired/
+          retention-days: 30
+          if-no-files-found: warn
