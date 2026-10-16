@@ -1,0 +1,868 @@
+{
+  "schema": "AO_DOCTORS_OF_CHURCH_RECONCILIATION_ROSTER_V1",
+  "asOf": "2026-10-15",
+  "status": "IDENTITY_CENSUS_FOR_REVIEW_NOT_CALENDAR_PUBLICATION",
+  "totalReported": 38,
+  "scope": "Full list of names for reconciliation; only declarations since 1962 have individual primary institutional links in this pilot. Earlier canonical IDs and liturgical dates remain to be reconciled against existing records.",
+  "listWitnesses": [
+    {
+      "publisher": "Aleteia",
+      "url": "https://aleteia.org/2026/07/19/heres-a-full-list-of-all-the-doctors-of-the-church/",
+      "role": "SECONDARY_COMPLETENESS_CROSSCHECK_38"
+    },
+    {
+      "publisher": "USCCB/Catholic News Service",
+      "url": "https://www.usccb.org/news/2025/education-jubilee-pope-names-st-john-henry-newman-doctor-church",
+      "role": "CONFIRMS_NEW_MAN_AS_38TH"
+    }
+  ],
+  "doctors": [
+    {
+      "canonicalPersonId": "saint.gregory-great",
+      "name": "Gregory the Great",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "03-12",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:03-12:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.ambrose-milan",
+      "name": "Ambrose of Milan",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "12-07",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:12-07:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.augustine-hippo",
+      "name": "Augustine of Hippo",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "08-28",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:08-28:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.jerome",
+      "name": "Jerome",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "09-30",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:09-30:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.thomas-aquinas",
+      "name": "Thomas Aquinas",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "03-07",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:03-07:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.john-chrysostom",
+      "name": "John Chrysostom",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "01-27",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:01-27:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.basil-great",
+      "name": "Basil the Great",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "06-14",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:06-14:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.gregory-nazianzen",
+      "name": "Gregory Nazianzen",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "05-09",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:05-09:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.athanasius",
+      "name": "Athanasius",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "05-02",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:05-02:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.bonaventure",
+      "name": "Bonaventure",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "07-14",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:07-14:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.anselm-canterbury",
+      "name": "Anselm of Canterbury",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "04-21",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:04-21:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.isidore-seville",
+      "name": "Isidore of Seville",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "04-04",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:04-04:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.peter-chrysologus",
+      "name": "Peter Chrysologus",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "12-04",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:12-04:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.leo-great",
+      "name": "Leo the Great",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "04-11",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:04-11:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.peter-damian",
+      "name": "Peter Damian",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "02-23",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:02-23r:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.bernard-clairvaux",
+      "name": "Bernard of Clairvaux",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "08-20",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:08-20:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.hilary-poitiers",
+      "name": "Hilary of Poitiers",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "01-14",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:01-14:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.alphonsus-liguori",
+      "name": "Alphonsus Liguori",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "08-02",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:08-02:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.francis-sales",
+      "name": "Francis de Sales",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "01-29",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:01-29:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.cyril-alexandria",
+      "name": "Cyril of Alexandria",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "02-09",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:02-09:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.cyril-jerusalem",
+      "name": "Cyril of Jerusalem",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "03-18",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:03-18:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.john-damascene",
+      "name": "John Damascene",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "03-27",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:03-27:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.bede-venerable",
+      "name": "Bede the Venerable",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "05-27",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:05-27:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.ephrem",
+      "name": "Ephrem the Syrian",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "06-18",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:06-18:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.peter-canisius",
+      "name": "Peter Canisius",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "04-27",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:04-27:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.john-cross",
+      "name": "John of the Cross",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "11-24",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:11-24:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.robert-bellarmine",
+      "name": "Robert Bellarmine",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "05-13",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:05-13:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.albert-great",
+      "name": "Albert the Great",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "11-15",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:11-15:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.anthony-padua",
+      "name": "Anthony of Padua",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "06-13",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:06-13:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.lawrence-brindisi",
+      "name": "Lawrence of Brindisi",
+      "recognitionAfter1962": false,
+      "declarationDate": null,
+      "declarationWitnessUrl": null,
+      "provenanceStatus": "ROSTER_WITNESS_PENDING_INDIVIDUAL_RECONCILIATION",
+      "liturgicalDate1962": "07-21",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:07-21r:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.teresa-avila",
+      "name": "Teresa of Ávila",
+      "recognitionAfter1962": true,
+      "declarationDate": "1970-09-27",
+      "declarationWitnessUrl": "https://www.vatican.va/content/paul-vi/en/apost_letters/documents/hf_p-vi_apl_19700927_multiformis-sapientia.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": "10-15",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:10-15:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.catherine-siena",
+      "name": "Catherine of Siena",
+      "recognitionAfter1962": true,
+      "declarationDate": "1970-10-04",
+      "declarationWitnessUrl": "https://www.vatican.va/roman_curia/pontifical_councils/laity/laity_en/uffici/donna_magistero_en.htm",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": "04-30",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:04-30:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.therese-lisieux",
+      "name": "Thérèse of Lisieux",
+      "recognitionAfter1962": true,
+      "declarationDate": "1997-10-19",
+      "declarationWitnessUrl": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": "10-03",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:10-03:3:w",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.john-avila",
+      "name": "John of Ávila",
+      "recognitionAfter1962": true,
+      "declarationDate": "2012-10-07",
+      "declarationWitnessUrl": "https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20121007_giovanni-avila.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": null,
+      "status1962": "NOT_ATTESTED_IN_TWO_YEAR_1962_RESOLVER_ARCHIVE",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": null,
+      "evidence": null
+    },
+    {
+      "canonicalPersonId": "saint.hildegard-bingen",
+      "name": "Hildegard of Bingen",
+      "recognitionAfter1962": true,
+      "declarationDate": "2012-10-07",
+      "declarationWitnessUrl": "https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20121007_ildegarda-bingen.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": null,
+      "status1962": "NOT_ATTESTED_IN_TWO_YEAR_1962_RESOLVER_ARCHIVE",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": null,
+      "evidence": null
+    },
+    {
+      "canonicalPersonId": "saint.gregory-narek",
+      "name": "Gregory of Narek",
+      "recognitionAfter1962": true,
+      "declarationDate": "2015-04-12",
+      "declarationWitnessUrl": "https://press.vatican.va/content/francesco/en/messages/pont-messages/2015/documents/papa-francesco_20150412_messaggio-armeni.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": null,
+      "status1962": "NOT_ATTESTED_IN_TWO_YEAR_1962_RESOLVER_ARCHIVE",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": null,
+      "evidence": null
+    },
+    {
+      "canonicalPersonId": "saint.irenaeus-lyon",
+      "name": "Irenaeus of Lyon",
+      "recognitionAfter1962": true,
+      "declarationDate": "2022-01-21",
+      "declarationWitnessUrl": "https://www.vatican.va/content/francesco/en/events/event.dir.html/content/vaticanevents/en/2022/1/21/decreto-santireneo.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": "07-03",
+      "status1962": "ATTESTED_IN_ARCHIVED_2024_2027_PRODUCTION_RESOLVER",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": "sancti:07-03r:3:r",
+      "evidence": {
+        "type": "EXACT_DAYRESOLVER_IDENTITY_AND_TITLE",
+        "years": [
+          2024,
+          2027
+        ],
+        "source": "calendar-1962-full-year-audit.json",
+        "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+        "role": "PRINCIPAL_OR_DISPLACED",
+        "notIndependentLiturgicalCertification": true
+      }
+    },
+    {
+      "canonicalPersonId": "saint.john-henry-newman",
+      "name": "John Henry Newman",
+      "recognitionAfter1962": true,
+      "declarationDate": "2025-11-01",
+      "declarationWitnessUrl": "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20251101-messa-giubileo-formatori.html",
+      "provenanceStatus": "LATER_DECLARATION_PRIMARY_OR_HOLY_SEE_INDEX",
+      "liturgicalDate1962": null,
+      "status1962": "NOT_ATTESTED_IN_TWO_YEAR_1962_RESOLVER_ARCHIVE",
+      "runtime": "NOT_CONNECTED",
+      "observanceSourceIdentity": null,
+      "evidence": null
+    }
+  ],
+  "gates": {
+    "universalRosterNamesEnumerated": true,
+    "saintsIdentityCrosswalkComplete": false,
+    "post1962DoctorDeclarationsDocumented": 8,
+    "calendar1962DatesVerified": 34,
+    "runtimeIntegrated": false,
+    "calendar1962DatesUnmatched": 4,
+    "attestationYears": [
+      2024,
+      2027
+    ],
+    "notLiturgicalCertification": true
+  }
+}

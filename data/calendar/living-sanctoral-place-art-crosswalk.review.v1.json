@@ -1,0 +1,81 @@
+{
+  "schema": "AO_SANCTORAL_CANONICAL_PLACE_AND_ART_CROSSWALK_REVIEW_V1",
+  "asOf": "2026-10-15",
+  "sourceOwners": {
+    "canonicalPlaces": "data/geography/seed-registry.v1.json",
+    "approvedPlacePhotos": "data/geography/approved-place-media.v1.json",
+    "approvedPlaceGallery": "data/geography/approved-place-gallery.v1.json",
+    "paintingResearch": "https://github.com/Fulcanelli13/ad-orientem/pull/887"
+  },
+  "rules": {
+    "placePhotoIsNotPainting": true,
+    "doNotImputeSacredArtworkApproval": true,
+    "onlyExistingCanonicalPlaceIDs": true,
+    "noRawCoordinatesInThisCrosswalk": true,
+    "noNewMapProvider": true,
+    "separateHistoricalEventFromPresentShrine": true,
+    "doNotOverridePrimary1962Calendar": true,
+    "draftOnly": true
+  },
+  "links": [
+    {
+      "ownerType": "SAINT",
+      "canonicalId": "saint.therese-lisieux",
+      "role": "SAINT_ASSOCIATED_RELIGIOUS_SITE",
+      "placeId": "place:FR:carmel-lisieux",
+      "placePhotoAsset": null,
+      "photoApproval": "NONE",
+      "paintingArtworkId": null,
+      "paintingApproval": "NOT_CERTIFIED"
+    },
+    {
+      "ownerType": "SAINT",
+      "canonicalId": "saint.therese-lisieux",
+      "role": "SAINT_ASSOCIATED_BASILICA",
+      "placeId": "place:FR:basilique-sainte-therese-lisieux",
+      "placePhotoAsset": "assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp",
+      "photoApproval": "APPROVED_SITE_PHOTO_NOT_SACRED_PAINTING",
+      "paintingArtworkId": null,
+      "paintingApproval": "NOT_CERTIFIED",
+      "candidatePainting": {
+        "reference": "https://github.com/Fulcanelli13/ad-orientem/pull/887",
+        "researchOnlyId": "carmel-lisieux-1925-therese-aux-roses",
+        "status": "ART_PIPELINE_RESEARCH_NOT_EDITORIALLY_APPROVED"
+      }
+    },
+    {
+      "ownerType": "SAINT",
+      "canonicalId": "saint.pio-pietrelcina",
+      "role": "SAINT_ASSOCIATED_SANCTUARY",
+      "placeId": "place:IT:santuario-san-pio-rotondo",
+      "placePhotoAsset": null,
+      "photoApproval": "NONE",
+      "paintingArtworkId": null,
+      "paintingApproval": "NOT_CERTIFIED"
+    },
+    {
+      "ownerType": "COLLECTIVE",
+      "canonicalId": "canon-group.uganda-martyrs-22",
+      "role": "MARTYRS_COMMEMORATIVE_SHRINE",
+      "placeId": "place:UG:namugongo-martyrs",
+      "placePhotoAsset": "assets/approved/place-media/UG-namugongo-martyrs.webp",
+      "photoApproval": "APPROVED_SITE_PHOTO_NOT_SACRED_PAINTING",
+      "paintingArtworkId": null,
+      "paintingApproval": "NOT_CERTIFIED"
+    },
+    {
+      "ownerType": "COLLECTIVE",
+      "canonicalId": "canon-group.uganda-martyrs-22",
+      "role": "MARTYRS_RELATED_SHRINE",
+      "placeId": "place:UG:munyonyo-martyrs",
+      "placePhotoAsset": null,
+      "photoApproval": "NONE",
+      "paintingArtworkId": null,
+      "paintingApproval": "NOT_CERTIFIED"
+    }
+  ],
+  "candidatePaintingCount": 1,
+  "approvedPaintingCount": 0,
+  "approvedPlacePhotographs": 2,
+  "unlinkedSaintAndGroupRecords": "No place/photo mapping claimed for other entries absent a verified existing canonical site or suitable approved photo."
+}
