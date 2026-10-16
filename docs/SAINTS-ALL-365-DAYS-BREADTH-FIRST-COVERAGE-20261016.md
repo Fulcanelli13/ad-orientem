@@ -253,3 +253,20 @@ The four Calendar/Doctor owner pairs awaiting one bulk answer are **Anthony of P
 The original **six-name** collision file and **608-key** ledger remain immutable. The Saints presentation fetches the owner index and W78 evidence only in `RESEARCH_PREVIEW`. All source-reference buttons navigate through the existing `data-saint-crosslink-target` action, whose handler independently validates that the target exists in the projected owner index and checks `researchEnabled`. The existing public `PILOT_SIX` channel receives neither W78 evidence nor the research index. Dedicated Saints source evidence tests enforce the **23 + 2 + 4 + 1 + 1** partition, all 25 source destinations (including original Uganda Martyrs and Theban Legion collectives), both source destinations of the four competing pairs, Francis' disabled navigation, and public isolation. These tests are committed but must not be represented as GitHub Actions **passing** until a run is observed.
 
 **Subsequent source-owner batch:** retain the 38 no-key-lead cases as a *source coverage exception list*, not a fabricated list of absent Catholic saints: 21 existing relic-research subject links; six artwork subject research links; two Blessed subject names, two composite/group names, one angel. These overlapping categories are not additive and still require authoritative person/subject naming resolution before promotion.
+
+
+### W79 residual 38 — exact existing research-owner coverage
+
+The remaining 38 literal shrine names have been classified **without creating new person or historic feast keys**:
+
+| Distinct residual category | Names |
+| --- | ---: |
+| Shared *existing* relic research subject under alternate source-name spellings | **2** |
+| Other existing relic-subject references | **19** |
+| Sacred Art research subject only (no relic key) | **2** |
+| Original shrine/other institutional sources only | **15** |
+| **Total** | **38** |
+
+Among all 119 names, **95** have relic owner-subject references to **92 distinct relic research subjects**. Exactly **three subject IDs** are reused across different literal shrine names: **Saint Dominic / Saint Dominic de Guzmán**, **Saint Nicholas / Saint Nicholas of Myra**, and **Saint Louis de Montfort / Saint Louis-Marie de Montfort**. These are **shared original source references**, *not* authentication of physical relics, certificate of identical canonical person IDs, or authority to consolidate map pins. The two Louis de Montfort shrine-name records now explicitly display the common `subject:saint-louis-marie-grignion-de-montfort` source connection in the gated research UI, without fabricating a missing 608-ledger person key. All three shared-subject pairs have a regression guard.
+
+**Residual source-owner work is now focused on the 15 shrine-only names**, while 21 of the 38 have original relic research pointers, two have only artwork research pointers, and the separate source-group/angel/saint status distinctions remain locked. This prioritization is for existing-source retrieval, not writing 15 speculative biographies. Original `145` shrine relations, `121` Place IDs, public six-profile pilot and art approval state remain unchanged.
