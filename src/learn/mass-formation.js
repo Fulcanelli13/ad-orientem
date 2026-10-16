@@ -19,6 +19,13 @@ export const MASS_FORMATION_ROUTE="learn.mass";
 export const MASS_FORMATION_ROOT_ID="ao-mass-formation-root";
 
 const DATA_URL=new URL("../../data/learn/mass-formation-campion.v1.json",import.meta.url);
+const PASSAGE_RELEASE_URL=new URL("../../data/learn/mass-formation-approved-passages.v1.json",import.meta.url);
+async function loadPublishedPassages(fetchImpl){
+  try {
+    const response=await fetchImpl(PASSAGE_RELEASE_URL);
+    return response?.ok?await response.json():null;
+  }catch{return null;} // Missing or corrupted approval manifest MUST fail closed.
+}
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const appState=win=>win?.AO_RUNTIME_V8?.store?.getState?.()??{};
 const isFr=win=>appState(win)?.language==="fr"||String(win?.document?.documentElement?.lang||"").toLowerCase().startsWith("fr");
@@ -90,7 +97,7 @@ function stageHtml(win,data,stage){
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,explorerReturn:null,
-    guideError:false,returnFocus:null,loading:null,guideLoading:null,
+    guideError:false,returnFocus:null,loading:null,guideLoading:null,passageManifest:null,
     evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{},sourceBatches:null,batchLoading:null,batchError:false,first10Audit:null,first10Loading:null,first10Error:false};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   let sourceReading=null;
@@ -105,7 +112,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function showSourceReading(sourceId,trigger){
     const stage=state.view==="stage"&&state.data?.stages?.some(s=>s.id===state.stageId);
     if(!stage||sourceReading)return false;
-    const entry=massSourceStudyRecord(state.data,state.stageId,sourceId);
+    const entry=massSourceStudyRecord(state.data,state.stageId,sourceId,{
+      passageManifest:state.passageManifest
+    });
     const underlying=root(),doc=win?.document;
     if(!entry||!underlying?.isConnected||!doc?.body)return false;
     const layer=doc.createElement("div");
@@ -137,7 +146,11 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   }
   async function ensureData(){
     if(state.data)return state.data;
-    if(!state.loading)state.loading=loadData(fetchImpl).then(data=>{state.data=data;return data}).finally(()=>{state.loading=null});
+    if(!state.loading)state.loading=loadData(fetchImpl).then(async data=>{
+      state.data=data;
+      state.passageManifest=await loadPublishedPassages(fetchImpl);
+      return data;
+    }).finally(()=>{state.loading=null});
     return state.loading;
   }
   async function ensureGuides(){
