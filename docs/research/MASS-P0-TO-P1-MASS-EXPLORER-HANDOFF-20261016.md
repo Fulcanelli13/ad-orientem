@@ -48,3 +48,10 @@ P1 can use the committed research crosswalk for editorial tooling only. **It mus
 ## Product decision
 
 The proposed **Mass Explorer** is P1's consolidated educational experience over approved existing explanations and relationships. Retirement of overlapping Mystery/Formation/Mass Guide UI is **not** authorised in P0. Retire or redirect only after P1 content parity, attribution, original manuscripts, stable deep links, rollback and user acceptance are independently verified. This handoff does not rename the separate Mystery of the Mass authoring pipeline.
+
+
+## First original-Latin comparison result (same P0 branch)
+
+The governed 41-tab workbook was read for the accessible first 288 micro-unit Latin extracts, and each was compared as NFC-preserving literal text with the frozen Sung donor: **112 whole-cue matches, 170 exact contained subspans, 2 differing text witnesses, 4 variable source slots**. The remaining **147** research units were not compared in this pass. See \`MASS-P0-PARTIAL-LATIN-WITNESS-COMPARISON-20261016.v1.json\`. These are **literal string checks, not printed 1962 liturgical source certification or paragraph/word-trigger approval**.
+
+The two explicit discrepancies are \`AO.V3.0023.U002\` (\`orare\` / \`oráre\`, accent and source correction decision) and \`AO.V3.0084.U001\` (generic \`secúndum N.\` research placeholder against selected canonical Gospel \`secúndum Matthǽum\`). Both stay editorial holds. The remaining 147 source units and all 66 exact word triggers require independent collation; a 435/435 valid cue reference alone does not meet the P0 text acceptance gate.
