@@ -7,6 +7,8 @@ on:
       - 'data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json'
       - 'data/learn/research/mass-formation-orate-preface-reading-pilot-20261016.v1.json'
       - 'data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-communion-prayer-reading-pilot-20261016.v1.json'
+      - 'tests/mass-prayer-editorial-review-browser.mjs'
       - 'tests/mass-prayer-reading-pilot.mjs'
       - 'scripts/build-mass-prayer-editorial-review.mjs'
       - 'src/learn/mass-explorer.js'
@@ -51,6 +53,7 @@ jobs:
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-prayer-editorial-review-browser.mjs
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
