@@ -13,7 +13,7 @@ const geo=load("data/geography/seed-registry.v1.json");
 const read=load("data/calendar/living-sanctoral-read-model.v1.json");
 assert.equal(read.schema,"AO_LIVING_SANCTORAL_READ_MODEL_V1");
 assert.equal(read.status,"READ_ONLY_SECONDARY_CALENDAR");
-assert.equal(read.observanceRegistry.observances.length,18);
+assert.equal(read.observanceRegistry.observances.length,26);
 assert.ok(JSON.stringify(read).length<45000,"Lazy read model should remain compact");
 assert.deepEqual(read.observanceRegistry.observances,full.observances,"Snapshot source dates drift");
 assert.equal(read.martyrGroups.length,5);
@@ -44,7 +44,7 @@ const newman=cards("2026-10-09");
 assert.deepEqual(newman.map(c=>c.id),["saint.john-henry-newman"]);
 assert.deepEqual(cards("2026-09-05").map(c=>c.id),["saint.teresa-calcutta"]);
 assert.deepEqual(cards("2026-02-27").map(c=>c.id),["saint.gregory-narek"]);
-for(const date of ["2020-02-27","2024-09-05","2025-10-09","2026-10-12","2026-06-03","2026-10-15"])assert.deepEqual(cards(date),[]);
+for(const date of ["2020-02-27","2024-09-05","2025-10-09","2024-10-12","2026-06-03","2026-10-15"])assert.deepEqual(cards(date),[]);
 const html=renderSecondarySaintSection(newman);
 assert.ok(html.includes("Also honoured")&&html.includes("1962 Missal"));
 assert.ok(html.includes("John Henry Newman")&&html.includes("<details>"));
@@ -70,4 +70,4 @@ assert.ok(home.includes('reviewed-sanctoral-cards.js'),"Home uses Calendar's exa
 assert.ok(home.includes('living-sanctoral-read-model.js'),"Home shares the source-owned lazy Calendar dataset");
 assert.ok(!home.includes('sanctoral-day-ui.js'),"Do not duplicate the full Calendar panel on Home");
 
-console.log("Secondary Calendar saints: PASS (18-source read-model, 1962 isolation, safe EN/FR text and links)");
+console.log("Secondary Calendar saints: PASS (26-source read-model, 1962 isolation, safe EN/FR text and links)");
