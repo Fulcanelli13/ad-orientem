@@ -1026,6 +1026,11 @@ function paint(){
   const wasDisciplineOpen=oldDiscipline?.open===true;
   const previousSources=isSameDay?[...body.querySelectorAll(".aoCalSecondarySaintCard details")].map(x=>x.open):[];
    const previousRubricSourcesOpen=isSameDay?body.querySelector(".aoCalDaySources")?.open===true:false;
+  // Preserve an intentionally expanded printing control through the same-day
+  // background cache/source re-paints, without leaking it to another date.
+  const previousPrintOptions=isSameDay?body.querySelector(".aoCalV2PrintOptions"):null;
+  const previousPrintOpen=previousPrintOptions?.open===true;
+  const hadPrintSummaryFocus=Boolean(previousPrintOptions?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
   body.innerHTML=bodyMarkup();
@@ -1035,6 +1040,10 @@ function paint(){
   }
   if(isSameDay&&previousSources.length)body.querySelectorAll(".aoCalSecondarySaintCard details").forEach((node,index)=>{node.open=previousSources[index]===true});
    if(previousRubricSourcesOpen){const sources=body.querySelector(".aoCalDaySources");if(sources)sources.open=true}
+  if(previousPrintOpen){
+    const print=body.querySelector(".aoCalV2PrintOptions");
+    if(print){print.open=true;if(hadPrintSummaryFocus)print.querySelector("summary")?.focus?.({preventScroll:true})}
+  }
   if(editing){const input=body.querySelector("[data-cal-input]");if(input){input.value=value;input.focus({preventScroll:true});if(start!==null&&end!==null)input.setSelectionRange(start,end)}}
   r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;r.dataset.aoCalendarPaintView=calendarView;r.dataset.aoCalendarPaintDate=selected;
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
