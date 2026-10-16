@@ -77,7 +77,7 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=166,'Acquisition-to-gallery linked photo coverage has regressed below verified 166-category source-linked closeout checkpoint');
+assert.ok(categoriesWithPhoto>=167,'Acquisition-to-gallery linked photo coverage has regressed below verified 167-category research-source closeout checkpoint');
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
@@ -165,9 +165,16 @@ for(const n of [113,130,164]){
  assert.equal(w.photoSourceEvidence.removeExternalFrameForFinalApp,true,'Painted-surface image needs exterior gilt-frame trimming');
  assert.equal(w.photoSourceEvidence.sourcePhotoRightsUnresolved,true);
 }
-const holdCategories=[41,43];
+const solimena=at(41,'CLOSEOUT-SOLIMENA-CYRIL-JERUSALEM-NAPLES-PROVISIONAL');
+assert.equal(solimena.notEligible,true,'Solimena museum accession and photographic rights not yet certified');
+assert.equal(solimena.lockedArtRating,false,'No 12 Oct human rating transfer to Solimena');
+assert.equal(solimena.photos.length,1,'Unselected mobile research source must remain linked');
+assert.match(solimena.hold,/MUSEO_DIOCESANO_NAPOLI/);
+assert.match(solimena.photos[0].rights,/NEVER app distribution/,'Photo reuse rights have not been cleared');
+assert.equal(solimena.photoSourceEvidence.browserInAppTested,false,'Source preview does not establish actual HTML browser QA');
+const holdCategories=[43];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
-assert.deepEqual(missingNow,holdCategories,'Two final unreconciled Doctor-subject categories must remain explicit, not silently substituted');
+assert.deepEqual(missingNow,holdCategories,'One original-source-unlinked Doctor category must remain explicit, not silently substituted');
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
