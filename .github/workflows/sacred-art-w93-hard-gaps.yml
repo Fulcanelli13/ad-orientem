@@ -1,0 +1,33 @@
+name: Sacred Art W93 Hard Gap Original Image Research
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-w93-hard-gaps-source-queue.v1.json
+      - tools/calendar/acquire-sacred-art-w93-hard-gaps.py
+      - .github/workflows/sacred-art-w93-hard-gaps.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Acquire source photographs and verify file decoding only
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w93-hard-gaps.py
+          python tools/calendar/acquire-sacred-art-w93-hard-gaps.py
+      - name: Upload research-only originals, previews, contact-sheet and QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w93-hard-gaps-research-files
+          path: artifacts/sacred-art-w93-hard-gap-evidence/
+          retention-days: 30
+          if-no-files-found: warn
