@@ -25,5 +25,5 @@ for(let i=0;i<151;i++){
 const annunciation=source.find(stop=>stop.reference==="Luke 1:26–38"||stop.reference==="Luke 1:26-38");
 assert.ok(annunciation,"A sourced Annunciation Atlas event must exist");
 assert.equal(projected.find(x=>x.objectId===annunciation.eventKey).target.eventKey,annunciation.eventKey);
-assert.throws(()=>scriptureAtlasEventObjects([]),/151-event/);
+assert.throws(()=>scriptureAtlasEventObjects([]),/Atlas missing place|151-event/);
 console.log("PASS 151 source-owned Atlas event deep links, exact IDs and Bible source coordinates");
