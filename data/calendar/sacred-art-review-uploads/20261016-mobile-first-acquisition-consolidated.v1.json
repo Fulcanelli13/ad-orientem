@@ -51,7 +51,19 @@
       "evidence": "W95 Marini 1045x1280 and Lenzi 742x1065 photos; monochrome/framed; rights unclear",
       "nextAction": "Reassess at phone size before requesting another image; rights still separate",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "latestImageAcquisition": {
+        "wave": "W99",
+        "state": "PHOTO_ACQUIRED_ATTRIBUTION_HOLD",
+        "physical": [
+          "OBRA-VALLARSA-CHURCH-MADONNA-ALPHONSUS"
+        ],
+        "message": "W99 photo colour but Andrea Pozzo attribution historically questionable; source photo includes frame and saint appears small. Earlier Marini/Lenzi exact originals still unresolved.",
+        "artifactId": 12053099082,
+        "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
+        "selectionChanged": false,
+        "commercialReleaseApproved": false
+      }
     },
     {
       "categoryIndex": 30,
@@ -69,7 +81,19 @@
       "evidence": "W95 complete-source photos 853x1280 and 989x1480; frames/monochrome; 1280x853 is detail only",
       "nextAction": "Inspect complete colour photo at 390px display; reject detail and confirm rights",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "latestImageAcquisition": {
+        "wave": "W99",
+        "state": "GOOD_COLOR_ALTERNATIVE_ACQUIRED",
+        "physical": [
+          "RAVENNA-CLASSENSE-BARBIANI-PETER-DAMIAN"
+        ],
+        "message": "W99 public-domain Commons photo 521x768 reads well at phone size; Andrea Barbiani differs from historical chosen records G30-006/G30-007.",
+        "artifactId": 12053099082,
+        "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
+        "selectionChanged": false,
+        "commercialReleaseApproved": false
+      }
     },
     {
       "categoryIndex": 37,
@@ -78,7 +102,19 @@
       "evidence": "W95 Roman-school 578x768 monochrome archival photo",
       "nextAction": "Test actual phone presentation; colour/contrast more important than pixel count; rights hold",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "latestImageAcquisition": {
+        "wave": "W99",
+        "state": "GOOD_COLOR_ALTERNATIVE_ACQUIRED",
+        "physical": [
+          "MUSEUM-PLANTIN-MORETUS-MPM.V.IV.110"
+        ],
+        "message": "W99 colour oil museum original complete and frame-trimmed source available, exact 1622-23 Bellarmine, Commons CC0. Different physical painting from G30-010.",
+        "artifactId": 12053099082,
+        "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
+        "selectionChanged": false,
+        "commercialReleaseApproved": false
+      }
     },
     {
       "categoryIndex": 41,
@@ -177,7 +213,20 @@
       "evidence": "No selected original painting in catalogue",
       "nextAction": "Find strong premodern or nineteenth-century Christ-in-Majesty subject, verify exact work; curator choice pending",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "latestImageAcquisition": {
+        "wave": "W99",
+        "state": "TWO_FILES_ACQUIRED_UNSUITABLE_OR_STYLE_HOLD",
+        "physical": [
+          "BROOKLYN-TRIUMPH-CHRIST-KING-CONTINENTS",
+          "MEHOFFER-1930-SERCE-JEZUSA-CHRIST-KING"
+        ],
+        "message": "W99 Brooklyn source monochrome and overcrowded; Mehoffer image colourful but highly stylized and unresolved auction-source usage. Continue looking for naturalistic oil.",
+        "artifactId": 12053099082,
+        "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
+        "selectionChanged": false,
+        "commercialReleaseApproved": false
+      }
     },
     {
       "categoryIndex": 129,
@@ -204,7 +253,19 @@
       "evidence": "Supposed Rubens original has no confirmed accession/source; cannot swap with other painters automatically",
       "nextAction": "Prove Rubens physical original or document authentic same-subject alternative for explicit curator consideration",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "latestImageAcquisition": {
+        "wave": "W99",
+        "state": "GOOD_COLOR_ALTERNATIVE_ACQUIRED",
+        "physical": [
+          "BRERA-INVENTORY-87-VANDYCK-ST-ANTHONY"
+        ],
+        "message": "W99 actual 750x901 colour Van Dyck reproduction excellent at phone width. Must NOT inherit unverified Rubens attribution; official inventory 87 differs from Commons 701.",
+        "artifactId": 12053099082,
+        "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
+        "selectionChanged": false,
+        "commercialReleaseApproved": false
+      }
     },
     {
       "categoryIndex": 139,
@@ -233,5 +294,16 @@
       "ratingChanged": false,
       "publicationApproved": false
     }
-  ]
+  ],
+  "lastReconciled": "2026-10-16 W99",
+  "w99Stats": {
+    "attemptedPhotoFiles": 7,
+    "downloadedAndDecoded": 7,
+    "distinctPhysicalOriginals": 6,
+    "subjectCategoriesInBatch": 5,
+    "mobilePromisingDifferentOriginalCandidates": 3,
+    "retainedButHeldSubjectCategories": 2,
+    "strictNewlyCertified": 0,
+    "baseline": "146/168"
+  }
 }
