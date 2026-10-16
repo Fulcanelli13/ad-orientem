@@ -813,11 +813,13 @@ function yearSurface(selected,r){
   const embedded=root()?.dataset.aoCalendarEmbedded==="true";
   const seasonGradient=yearSeasonGradient(y),daily=yearDailyProjection(y,id=>weekCache.get(id));
   queueMicrotask(()=>{if(calendarView==="year"&&root())requestYearDailyColours(y)});
-  // The small ring belongs to embedded Today/Mass; full Calendar owns the
-  // interactive Liturgical Clock. Never stack both representations.
+  // Home's Liturgical Year tab is an embedded Calendar too. Show the same
+  // interactive Clock there, not the obsolete mini-wheel. Only Mass preflight
+  // keeps its compact contextual ring, avoiding duplicate 600px instruments.
+  const embeddedHomeYear=embedded&&Boolean(root()?.closest(".aoTodayV2CalendarInline"));
   return `
-    ${embedded?"":clockForYear(y,selected)}
-    ${embedded?`
+    ${!embedded||embeddedHomeYear?clockForYear(y,selected):""}
+    ${embedded&&!embeddedHomeYear?`
     <section class="aoCalV2YearHero">
       <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2></div>
       <div class="aoCalV2YearHeroGrid">
