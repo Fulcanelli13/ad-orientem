@@ -10,6 +10,7 @@ const additional=load(root+"p1-additional-common-candidates.v1.json");
 const additionalAudit=load(root+"p1-additional-common-app-audit.v1.json");
 const donorPlan=load(root+"p1-partial-common-donor-plan.v1.json");
 const papalProof=load(root+"p1-papal-martyr-source-proof.v1.json");
+const sourceStructures=load(root+"p1-office-versus-mass-source-structure.v1.json");
 const partialRecovery=load(root+"p1-partial-common-source-recovery.v1.json");
 const apostleVigil=load(root+"p1-apostle-vigil-oration-variant-audit.v1.json");
 const originalSourceGaps=load(root+"p1-unresolved-original-source-analysis.v1.json");
@@ -73,6 +74,17 @@ assert.ok(additional.provisionalRows.every(x=>x.route===null&&x.approvedForRunti
 assert.ok(additional.provisionalRows.every(x=>forms.forms.some(f=>f.id===x.researchId)));
 assert.equal(additionalAudit.sourceCandidateCount,28);
 assert.equal(papalProof.schema,"AO_P1_PAPAL_MARTYR_COMMON_APP_SOURCE_PROOF_V1");
+assert.equal(sourceStructures.records.length,4);
+assert.equal(forms.sourceStructureNonStandaloneOfficeVariantCount,4);
+assert.deepEqual(new Set(sourceStructures.records.map(x=>x.sourcePath)),new Set(["Commune/C1","Commune/C4c","Commune/C5c","Commune/C7b"]));
+for(const r of sourceStructures.records){
+ const f=forms.forms.find(x=>x.internalMissalReference.auditedSourcePath===r.sourcePath);
+ assert.ok(f);
+ assert.equal(f.internalMissalReference.sourcePath,null);
+ assert.equal(f.internalMissalReference.originalSourceStructure,"NO_STANDALONE_MISSA_BLOCK_OFFICE_OR_DERIVED_VARIANT");
+ assert.equal(f.internalMissalReference.printedMassIndependenceUnverified,true);
+ assert.equal(f.internalMissalReference.formularyReadyForNewSaint,false);
+}
 assert.equal(papalProof.verifiedSourceCompleteTargets,2);
 assert.equal(papalProof.originalLatinIdentityCountPerTarget,8);
 assert.equal(papalProof.borrowedFrenchEnglishSectionsPerTarget,16);
