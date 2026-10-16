@@ -19,7 +19,7 @@ assert.equal((deepHtml.match(/class="detailed-chapter"/g)||[]).length,15);
 assert.equal((deepHtml.match(/data-source-triage=/g)||[]).length,32);
 assert.equal((deepHtml.match(/data-lebrun-held=/g)||[]).length,9);
 assert.equal((deepHtml.match(/class="latin-item"/g)||[]).length,5);
-assert.equal((deepHtml.match(/class="source-link"/g)||[]).length,10);
+assert.equal((deepHtml.match(/class="source-link"/g)||[]).length,12);
 assert.equal((html.match(/class="entry" id=/g)||[]).length,84);
 assert.equal((html.match(/<em class="optional"/g)||[]).length,3);
 const browser=await chromium.launch({headless:true});
