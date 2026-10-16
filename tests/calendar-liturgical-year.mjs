@@ -427,12 +427,22 @@ const visualClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",t
 assert.match(visualClock,/data-ao-liturgical-clock="v1"/);
 assert.match(visualClock,/data-cal-clock-season="advent"/);
 assert.match(visualClock,/aoClockDial/);
+assert.match(visualClock,/class="aoClockDailyTrack"/,"Clock must have one source-verified daily-colour ring");
+assert.match(visualClock,/data-verified-days="6"/,"Only six resolved sample dates may receive a colour");
+assert.match(visualClock,/--ao-clock-daily-gradient:conic-gradient\(from -90deg,/);
+assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.WHITE.accent),"A resolved white feast must not inherit its green season");
+assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.BLACK.accent),"A resolved black day must not inherit green");
+assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.NEUTRAL.panel),"Unresolved daily ring sectors must remain neutral");
+assert.doesNotMatch(visualClock,/aoClockTracery/,"The instrument dial must not reintroduce floral ornament");
+const unresolvedClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-16"});
+assert.match(unresolvedClock,/data-verified-days="0"/,"The dial must not manufacture daily liturgical colours");
 assert.equal(resolvedClockFeasts(rosary,()=>null,()=>"",()=>"",()=>"" ).length,0,
   "Unresolved projected candidate dates cannot produce a certified clock feast");
 const integratedCalendarSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 assert.match(integratedCalendarSource,/clockForYear\(y,selected\)/);
 assert.match(integratedCalendarSource,/renderYearJourney\(/,"Original eleven-period journey preserved");
 assert.match(integratedCalendarSource,/requestYearDailyColours\(/,"Full 1962 daily-colour projection preserved");
+assert.match(integratedCalendarSource,/dial\.style\.setProperty\("--ao-clock-daily-gradient",projection\.gradient\)/,"Clock ring must hydrate without displacing selected keyboard focus");
 assert.match(integratedCalendarSource,/calendarPracticeMonthEntries/,"Month Practices source owner preserved");
 assert.match(integratedCalendarSource,/serialize1962CalendarMonth/,"Month ICS export preserved");
 
