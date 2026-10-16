@@ -1,0 +1,222 @@
+{
+  "schema": "ao.saints.six-colliding-name-owner-alias-evidence.2026.v1",
+  "status": "READ_ONLY_ALIAS_CANDIDATES_NOT_MASS_ART_OR_MAP_RELEASE",
+  "as_of": "2026-10-16",
+  "source_owners": [
+    {
+      "path": "data/saints/existing-shrine-geography-readiness-20261016.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "f754fde77c84ce370f7842de7f01e4ab61d470bc"
+    },
+    {
+      "path": "data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2a933c6263989146fc7289bd38a954e72649cf0b"
+    },
+    {
+      "path": "data/saints/historical-v4333-311-components.recovered.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "c06c4294e07666c81b045a65e61317c851156715"
+    },
+    {
+      "path": "data/saints/1962-doctors-historical-id-alias-review.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2be341a668ca2690e5cf85dd936afeb2cb645b2d"
+    },
+    {
+      "path": "data/saints/parallel-owner-identity-bridge-20261015.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2dc20e3d37dfb03431f2e38297e049732823ba86"
+    },
+    {
+      "path": "data/saints/holiness-first-editorial-pilot-20261015.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "a3c03a84369ceed24011d40d79f4a22ab0af4beb"
+    }
+  ],
+  "counts": {
+    "source_name_collisions": 6,
+    "already_exact_owner_identity_linked": 1,
+    "doctor_alias_candidates_with_matching_nominal_day": 4,
+    "source_context_ledgers_needing_owner_confirmation": 1,
+    "published_new_map_pin_links": 0
+  },
+  "policy": [
+    "Even a valid display-name match is not proof that two independent canonical source IDs may be merged.",
+    "Only the explicit existing Saints/Calendar bridge for Thérèse is already owner-supported; no other proposed name alias is promoted.",
+    "Original observance IDs and same day are retained for owners to certify; a matching nominal day does not authorize a 1962 feast rank.",
+    "A shrine title is a source-backed association with an existing physical Place, not a birthplace/deathplace or authenticated relic.",
+    "No Sacred Art file, rating, copyright or reproduction status is changed."
+  ],
+  "records": [
+    {
+      "shrine_name_literal": "Saint Anthony of Padua",
+      "competing_source_keys": [
+        "saint.anthony-of-padua",
+        "saint.anthony-padua"
+      ],
+      "preferred_existing_profile_source_key": "saint.anthony-padua",
+      "preferred_is_existing_biography_owner": false,
+      "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
+      "canonical_person_identity_merge_approved": false,
+      "original_source_alias_proposal": true,
+      "nominal_day_1962": "06-13",
+      "raw_archive_observance_source_ids": [
+        "sancti:06-13:3:w"
+      ],
+      "historic_component_id": "cal.06-13.anthony-of-padua",
+      "historic_subject_id": "saint.anthony-of-padua",
+      "doctor_nominal_day_source_compatible": true,
+      "source_bound_liturgical_identity_bridge": null,
+      "geography_site_ids": [
+        "place:FR:grottes-saint-antoine-brive",
+        "place:IT:basilica-sant-antonio-padova"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+    },
+    {
+      "shrine_name_literal": "Saint Catherine of Siena",
+      "competing_source_keys": [
+        "saint.catherine-of-siena",
+        "saint.catherine-siena"
+      ],
+      "preferred_existing_profile_source_key": "saint.catherine-siena",
+      "preferred_is_existing_biography_owner": true,
+      "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
+      "canonical_person_identity_merge_approved": false,
+      "original_source_alias_proposal": true,
+      "nominal_day_1962": "04-30",
+      "raw_archive_observance_source_ids": [
+        "sancti:04-30:3:w"
+      ],
+      "historic_component_id": "cal.04-30.catherine-of-siena",
+      "historic_subject_id": "saint.catherine-of-siena",
+      "doctor_nominal_day_source_compatible": true,
+      "source_bound_liturgical_identity_bridge": null,
+      "geography_site_ids": [
+        "place:IT:santa-maria-minerva-rome"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+    },
+    {
+      "shrine_name_literal": "Saint Francis de Sales",
+      "competing_source_keys": [
+        "saint.francis-de-sales",
+        "saint.francis-sales"
+      ],
+      "preferred_existing_profile_source_key": "saint.francis-sales",
+      "preferred_is_existing_biography_owner": true,
+      "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
+      "canonical_person_identity_merge_approved": false,
+      "original_source_alias_proposal": true,
+      "nominal_day_1962": "01-29",
+      "raw_archive_observance_source_ids": [
+        "sancti:01-29:3:w"
+      ],
+      "historic_component_id": "cal.01-29.francis-de-sales",
+      "historic_subject_id": "saint.francis-de-sales",
+      "doctor_nominal_day_source_compatible": true,
+      "source_bound_liturgical_identity_bridge": null,
+      "geography_site_ids": [
+        "place:FR:basilique-visitation-annecy"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+    },
+    {
+      "shrine_name_literal": "Saint Francis of Assisi",
+      "competing_source_keys": [
+        "saint.francis-assisi",
+        "saint.francis-of-assisi"
+      ],
+      "preferred_existing_profile_source_key": "saint.francis-assisi",
+      "preferred_is_existing_biography_owner": true,
+      "preferred_selection_status": "SOURCE_NAME_AND_HISTORICAL_CONTEXT_LEAD_NOT_CERTIFIED",
+      "canonical_person_identity_merge_approved": false,
+      "original_source_alias_proposal": false,
+      "nominal_day_1962": "10-04",
+      "raw_archive_observance_source_ids": [
+        "sancti:10-04:3:w"
+      ],
+      "historic_component_id": "cal.10-04.francis-of-assisi",
+      "historic_subject_id": "saint.francis-of-assisi",
+      "doctor_nominal_day_source_compatible": false,
+      "source_bound_liturgical_identity_bridge": null,
+      "geography_site_ids": [
+        "place:IT:basilica-san-francesco-assisi"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+    },
+    {
+      "shrine_name_literal": "Saint John of the Cross",
+      "competing_source_keys": [
+        "saint.john-cross",
+        "saint.john-of-the-cross"
+      ],
+      "preferred_existing_profile_source_key": "saint.john-cross",
+      "preferred_is_existing_biography_owner": false,
+      "preferred_selection_status": "OWNER_PROPOSED_ALIAS_SAME_NOMINAL_DAY_SOURCE_ID_FINAL_CONFIRMATION_PENDING",
+      "canonical_person_identity_merge_approved": false,
+      "original_source_alias_proposal": true,
+      "nominal_day_1962": "11-24",
+      "raw_archive_observance_source_ids": [
+        "sancti:11-24:3:w",
+        "sancti:11-24o:4:r"
+      ],
+      "historic_component_id": "cal.11-24.john-of-the-cross",
+      "historic_subject_id": "saint.john-of-the-cross",
+      "doctor_nominal_day_source_compatible": true,
+      "source_bound_liturgical_identity_bridge": null,
+      "geography_site_ids": [
+        "place:ES:convento-san-juan-cruz-segovia"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "CALENDAR_AND_SAINTS_OWNERS_CERTIFY_EXACT_ORIGINAL_OBSERVANCE_LINK_AND_PERSON_EQUIVALENCE"
+    },
+    {
+      "shrine_name_literal": "Saint Thérèse of Lisieux",
+      "competing_source_keys": [
+        "saint.therese-lisieux",
+        "saint.therese-of-lisieux"
+      ],
+      "preferred_existing_profile_source_key": "saint.therese-of-lisieux",
+      "preferred_is_existing_biography_owner": true,
+      "preferred_selection_status": "ALREADY_SOURCE_OWNER_LINKED_NO_RENAME",
+      "canonical_person_identity_merge_approved": true,
+      "original_source_alias_proposal": false,
+      "nominal_day_1962": "10-03",
+      "raw_archive_observance_source_ids": [
+        "sancti:10-03:3:w"
+      ],
+      "historic_component_id": "cal.10-03.therese-lisieux",
+      "historic_subject_id": "saint.therese-lisieux",
+      "doctor_nominal_day_source_compatible": false,
+      "source_bound_liturgical_identity_bridge": {
+        "saints_id": "saint:therese-of-lisieux",
+        "calendar_id": "saint.therese-lisieux",
+        "observed_2026_source_id": "sancti:10-03:3:w"
+      },
+      "geography_site_ids": [
+        "place:FR:basilique-sainte-therese-lisieux",
+        "place:FR:carmel-lisieux"
+      ],
+      "publication_authorized": false,
+      "artwork_authorized": false,
+      "map_pin_identity_authorized": false,
+      "owner_next_step": "REUSE_ALREADY_DOCUMENTED_SOURCE_IDENTITY_LINK_WITHOUT_RENAMING"
+    }
+  ]
+}
