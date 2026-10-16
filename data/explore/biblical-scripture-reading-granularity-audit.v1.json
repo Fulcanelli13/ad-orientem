@@ -5866,5 +5866,15 @@
       "finalApprovedReadings": 0,
       "currentNewResearchStage": "BOOK_DEPTH_AND_SECOND_INDEPENDENT_SOURCE_REQUIREMENTS"
     }
+  },
+  "editorialSupersession": {
+    "policyOwner": "data/explore/biblical-story-first-editorial-policy.v1.json",
+    "effectiveDate": "2026-10-16",
+    "bookCompletenessAsCoreGoal": false,
+    "mandatory73BookCoverage": false,
+    "mandatoryCandidateUnitCount": false,
+    "archiveResearchNumbers": true,
+    "selectionBasis": "STORY_FIRST_COHERENT_CATHOLIC_BIBLICAL_EPISODES_WITH_CONTEXT_AND_OPTIONAL_FULL_TEXT",
+    "note": "Historical completeness metadata remains auditable but cannot mandate content in the core Scripture journey."
   }
 }
