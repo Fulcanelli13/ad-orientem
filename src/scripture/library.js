@@ -441,6 +441,9 @@ export function mountScriptureLibrary(root,{
              let ok=false;
              try{ok=await onOpenRelatedObject(hit)}
              catch(error){console.error("Scripture object handoff failed",error)}
+             // Only suppress duplicate taps during launch. A successful
+             // destination must remain keyboard-focusable on reciprocal Back.
+             launch.disabled=false;
              if(!ok && row.isConnected){
                launch.disabled=false;
                let warning=row.querySelector("[data-scripture-related-launch-error]");
