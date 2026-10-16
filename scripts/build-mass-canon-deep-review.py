@@ -12,6 +12,7 @@ def bilingual(obj):
     return '<span data-lang="en">'+h(obj["en"])+'</span><span data-lang="fr" hidden>'+h(obj["fr"])+'</span>'
 doc = read("data/learn/research/mass-formation-canon-deep-exemplar-20261016.v1.json")
 evidence = read("data/learn/research/mass-formation-canon-p0-evidence-bridge-20261016.v1.json")
+major = read("data/learn/research/mass-formation-canon-two-major-prayers-deep-20261016.v1.json")
 sung = read("data/presentation/reader-text-sung.v1.json")
 old = read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json")
 formation = read("data/learn/mass-formation-campion.v1.json")
@@ -38,6 +39,23 @@ assert [r["block_id"] for r in evidence["blocks"]]==["AO.SM.B"+str(n).zfill(3) f
 assert all(not v["publication_allowed"] for b in evidence["blocks"] for v in b["historical_author_candidates"])
 assert all(not v["publication_allowed"] for b in evidence["blocks"] for v in b["scripture_candidates"])
 assert len(evidence["primary_source_spot_checks"])==6
+assert major["schema"]=="ao-formation-canon-two-major-prayers-detailed-source-study-v1"
+assert major["status"]=="EDITORIAL_DRAFT_NOT_RELEASED"
+assert major["scope"]=="FORMATION_P2_EDITORIAL_ONLY"
+assert [x["id"] for x in major["studies"]]==["AO.FORM.CANON.DEEP.02","AO.FORM.CANON.DEEP.05"]
+assert [x["block_id"] for x in major["studies"]]==["AO.SM.B051","AO.SM.B055"]
+assert sum(len(x["chapters"]) for x in major["studies"])==9
+assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==6
+for m in major["studies"]:
+    assert m["level"]=="EXPANDED_PRIMARY_SOURCE_INTERPRETATION_EDITORIAL_DRAFT"
+    assert m["block_id"] in [b for x in doc["studies"] if x["id"]==m["id"] for b in x["block_ids"]]
+    assert all(isinstance(m["intro"][l],str) and len(m["intro"][l])>140 for l in ("en","fr"))
+    for ch in m["chapters"]:
+        assert all(len(ch["heading"][l])>10 for l in ("en","fr"))
+        for p in ch["paragraphs"]:
+            assert all(len(p[l])>200 for l in ("en","fr"))
+    assert all(x["url"].startswith("https://") and x["assessment"] for x in m["direct_primary_sources"])
+    assert not any(x.get("publication_allowed",False) for x in m["direct_primary_sources"])
 all_ids = [id for entry in doc["studies"] for id in entry["block_ids"]]
 assert all_ids == ["AO.SM.B"+str(n).zfill(3) for n in range(47,62)]
 assert len(set(all_ids))==15
@@ -133,6 +151,47 @@ def research_docket(entry):
         ''.join(groups)+'</div></details>'
     )
 
+
+def major_exegesis(entry):
+    match = next((x for x in major["studies"] if x["id"] == entry["id"]), None)
+    if match is None:
+        return ""
+    chapters = []
+    for index, chapter in enumerate(match["chapters"], 1):
+        paras = ''.join('<p>'+bilingual(p)+'</p>' for p in chapter["paragraphs"])
+        glosses = chapter.get("glosses", [])
+        glossary = ""
+        if glosses:
+            glossary = '<dl class="five-words">'+''.join(
+                '<div class="latin-item"><dt lang="la">'+h(g["latin"])+'</dt><dd>'+
+                bilingual(g)+'</dd></div>' for g in glosses
+            )+'</dl>'
+        chapters.append('<section class="detailed-chapter" data-major-chapter="'+str(index)+'"><h4>'+
+                        bilingual(chapter["heading"])+'</h4>'+paras+glossary+'</section>')
+    refs = ''.join('<li class="source-link"><a href="'+h(s["url"])+
+                   '" target="_blank" rel="noopener noreferrer">'+h(s["author"])+
+                   ' · '+h(s["locus"])+'</a><small>'+h(s["assessment"])+
+                   '</small></li>' for s in match["direct_primary_sources"])
+    parallels = ''.join(
+        '<li data-existing-scripture-owner="'+h(n["link_owner_id"])+'"><strong>'+
+        h(n["reference"])+'</strong> · '+h(n["relationship"])+
+        ' · existing Formation source '+h(n["link_owner_id"])+'</li>'
+        for n in match["study_navigation"]
+    )
+    return '<section class="major-exegesis" data-major-exegesis="'+h(match["block_id"])+'">'+(
+        '<div class="major-kicker">'+bilingual({"en":"Deeper study · two principal Canon prayers",
+                                                "fr":"Étude approfondie · deux prières majeures du Canon"})+'</div>'+
+        '<p class="major-intro">'+bilingual(match["intro"])+'</p>'+
+        ''.join(chapters)+
+        '<details class="major-sources"><summary>'+bilingual({"en":"Primary texts used for this study",
+                                                               "fr":"Textes primaires consultés"})+'</summary>'+
+        '<ul>'+refs+'</ul></details>'+
+        ('<div class="major-parallels"><h4>'+bilingual({"en":"Existing Scripture study pathway",
+                                                        "fr":"Parcours biblique existant"})+'</h4><ul>'+
+          parallels+'</ul></div>' if parallels else '')+
+        '<p class="docket-warning">'+h(match["held_source_warning"])+'</p></section>'
+    )
+
 def chapter(entry,ix):
     rel=''.join(link_context(id) for id in entry["scripture_anchor_ids"])
     return ('<article class="study" id="'+h(entry["id"])+'">'+
@@ -141,7 +200,7 @@ def chapter(entry,ix):
             '<div class="study-grid"><div class="prose"><h3>'+bilingual({"en":"At a glance","fr":"En bref"})+
             '</h3><p class="lead">'+bilingual(entry["overview"])+'</p><h3>'+
             bilingual({"en":"Understand the prayer","fr":"Comprendre la prière"})+'</h3><p>'+
-            bilingual(entry["deep"])+'</p><h3>'+bilingual({"en":"Within the Mass","fr":"Dans la Messe"})+
+            bilingual(entry["deep"])+'</p>'+major_exegesis(entry)+'<h3>'+bilingual({"en":"Within the Mass","fr":"Dans la Messe"})+
             '</h3><p>'+bilingual(entry["liturgical_note"])+'</p>'+
             ('<div class="related"><h3>'+bilingual({"en":"Follow in Scripture","fr":"Approfondir dans l’Écriture"})+'</h3>'+
              '<p class="hint">Pre-existing, typed Formation study relationships · Bible passages and translation remain owned by the Scripture module.</p>'+rel+'</div>' if rel else '')+
@@ -171,7 +230,7 @@ a{color:var(--gold)}.wrap{max-width:1160px;margin:auto;padding:23px 20px 75px}.e
 .related{border-top:1px solid var(--line);margin-top:24px}.relation{border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin:9px 0}
 .relation .ref{font:.74rem system-ui;color:var(--gold);display:block}.relation strong{font-size:.97rem;font-weight:normal;display:block}.relation .hint{margin:5px 0}
 .sources{margin-top:24px;border-top:1px solid var(--line);padding-top:12px}.sources summary{font:.83rem system-ui;color:var(--gold);cursor:pointer}.sources li{margin:9px 0}.sources li small{display:block;color:var(--muted);font:.7rem system-ui}
-.research-docket{margin-top:21px;border:1px solid var(--line);border-radius:10px;background:#0e161f;padding:12px}.research-docket>summary{font:600 .82rem/1.5 system-ui;color:var(--gold);cursor:pointer}.docket-body{margin-top:14px}.docket-body h4{font:600 .78rem/1.5 system-ui;color:var(--gold);margin:16px 0 7px}.docket-body li{font-size:.82rem;margin:9px 0;overflow-wrap:anywhere}.docket-body li small{display:block;font:.69rem/1.55 system-ui;color:var(--muted)}.docket-warning{font:600 .72rem/1.5 system-ui;color:var(--gold)}.author-record{padding:10px 0;border-top:1px solid var(--line)}.author-record summary{font:.8rem/1.5 system-ui;cursor:pointer}.docket-body code{color:var(--gold);font:.73rem system-ui}
+.major-exegesis{border-top:1px solid var(--line);margin:21px 0 28px;padding-top:12px}.major-kicker{font:600 .72rem/1.4 system-ui;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-top:10px}.major-intro{font-size:1.07rem!important;color:var(--soft)}.detailed-chapter{padding:9px 0 13px;border-bottom:1px solid var(--line)}.detailed-chapter h4{font:600 .98rem/1.45 Georgia,serif;margin:12px 0 10px;color:var(--gold)}.five-words{margin:14px 0}.latin-item{border-left:2px solid var(--gold);margin:0 0 10px;padding:9px 11px;background:var(--panel)}.latin-item dt{font:600 1rem/1.35 Georgia,serif;color:var(--gold)}.latin-item dd{margin:5px 0 0;font-size:.94rem}.major-sources{margin-top:21px}.major-sources summary{font:.86rem system-ui;color:var(--gold);cursor:pointer}.major-sources li{margin:10px 0;font-size:.8rem}.major-sources small{display:block;color:var(--muted);font:.69rem/1.5 system-ui}.major-parallels ul{margin-top:4px;padding-left:18px}.major-parallels li{font:.86rem/1.55 system-ui;margin:6px 0}.research-docket{margin-top:21px;border:1px solid var(--line);border-radius:10px;background:#0e161f;padding:12px}.research-docket>summary{font:600 .82rem/1.5 system-ui;color:var(--gold);cursor:pointer}.docket-body{margin-top:14px}.docket-body h4{font:600 .78rem/1.5 system-ui;color:var(--gold);margin:16px 0 7px}.docket-body li{font-size:.82rem;margin:9px 0;overflow-wrap:anywhere}.docket-body li small{display:block;font:.69rem/1.55 system-ui;color:var(--muted)}.docket-warning{font:600 .72rem/1.5 system-ui;color:var(--gold)}.author-record{padding:10px 0;border-top:1px solid var(--line)}.author-record summary{font:.8rem/1.5 system-ui;cursor:pointer}.docket-body code{color:var(--gold);font:.73rem system-ui}
 .footer{padding-top:26px;font:.77rem/1.6 system-ui;color:var(--muted)}[hidden]{display:none!important}
 @media(max-width:800px){.study-grid{grid-template-columns:1fr}.wrap{padding:16px 13px 45px}.ribbon>span{display:none}.study{padding-top:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -198,6 +257,10 @@ assert markup.count('class="study" id=')==8
 assert markup.count('class="lit-block"')==15
 assert markup.count('class="relation"')==8
 assert markup.count('class="research-docket"')==8
+assert markup.count('class="major-exegesis"')==2
+assert markup.count('class="detailed-chapter"')==9
+assert markup.count('class="latin-item"')==5
+assert markup.count('class="source-link"')==6
 assert markup.count('data-p0-author-ref=')==88
 assert markup.count('data-primary-check=')==6
 assert markup.count('data-p0-scripture-held=')==1
@@ -205,4 +268,4 @@ assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 79 P0 units, 88 held author references, one held P0 Scripture, six directly checked primary loci; no publication ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 9 chapters, five Latin glosses, 6 direct primary source refs; 79 P0 units, 88 held author refs, no publication ->",out)
