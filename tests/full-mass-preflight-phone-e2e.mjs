@@ -375,6 +375,14 @@ try{
  }
  await page.evaluate(()=>{__kind="REQUIEM";__lang="fr";__full.refresh()});
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Requiem/);
+ // The Form label is deliberately inside two user-controlled disclosures;
+ // open them rather than expecting innerText from hidden elements.
+ const requiemOrder=page.locator("[data-mass-journey-order]");
+ if(!(await requiemOrder.evaluate(el=>el.open)))
+  await requiemOrder.locator(":scope > summary").click();
+ const requiemForm=page.locator("[data-mass-journey-form-detail]");
+ if(!(await requiemForm.evaluate(el=>el.open)))
+  await requiemForm.locator(":scope > summary").click();
  assert.match(await page.locator("[data-full-mass-form-title]").innerText(),/Comment/);
  await page.evaluate(()=>{__kind="VOTIVE";__full.refresh()});
  assert.equal(await page.locator('[data-ao-special-phase="votive-proper"]').count(),1);
