@@ -1,0 +1,90 @@
+{
+  "schema": "AO_SACRED_ART_W96_AUTHENTIC_ORIGINAL_VARIANT_IMAGES_V1",
+  "created": "2026-10-16",
+  "scope": "Complete painted-surface photo candidates with unique museum accession; research only; no category closure without curator object reconciliation",
+  "guardrails": [
+    "Preserve human artwork choices and all 0–5 ratings unchanged",
+    "Different museums / accession numbers identify separate physical originals",
+    "Commons file rights and museum collection evidence must be separately retained",
+    "No automatic visual acceptance or promotion to production",
+    "Incorrect Saint Hilary source is Saint Lawrence front of two-sided panel P001300; exclude"
+  ],
+  "alreadyAcquiredWithAccessionEvidence": [
+    {
+      "categoryIndex": 135,
+      "artworkId": "ART-nthony-van-yck-amentation-of-hrist",
+      "sourceArt": "Van Dyck, Lamentation of Christ, Alte Pinakothek 606",
+      "source": "https://www.sammlung.pinakothek.de/en/artwork/53470Jpx9e/anthonis-van-dyck/die-beweinung-christi",
+      "commons": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_The_lamentation_of_Christ_(Alte_Pinakothek).jpg",
+      "photoDimensions": [
+        3750,
+        2736
+      ],
+      "status": "FULL_IMAGE_ACQUIRED_SEPARATE_EXACT_ARTWORK_ID_PENDING",
+      "legalStatus": "Wikimedia Commons PD-Art, local-law caveat"
+    },
+    {
+      "categoryIndex": 139,
+      "artworkId": "ART-eter-aul-ubens-he-oly-rinity",
+      "sourceArt": "Rubens, The Holy Trinity, KMSKA 314",
+      "source": "https://vlaamsekunstcollectie.be/en/collection/314",
+      "commons": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Heilige_Drievuldigheid_-_314_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+      "photoDimensions": [
+        3840,
+        3949
+      ],
+      "status": "FULL_IMAGE_ACQUIRED_CC0_MUSEUM_CONFIRMED_SEPARATE_EXACT_ARTWORK_ID_PENDING",
+      "legalStatus": "CC0 museum and Commons"
+    }
+  ],
+  "newAlternatives": [
+    {
+      "categoryIndex": 135,
+      "distinctArtworkId": "van-dyck-bilbao-85-221",
+      "painting": "Lamentation over the Dead Christ",
+      "artist": "Anthony van Dyck",
+      "museum": "Bilbao Fine Arts Museum",
+      "accession": "85/221",
+      "file": "Anthony van Dyck - Lamentation over the Dead Christ - Google Art Project.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Lamentation_over_the_Dead_Christ_-_Google_Art_Project.jpg",
+      "plannedDimensions": [
+        6306,
+        3784
+      ],
+      "usage": "DISTINCT ORIGINAL COMPARISON ONLY"
+    },
+    {
+      "categoryIndex": 139,
+      "distinctArtworkId": "rubens-trinity-1616-other",
+      "painting": "The Holy Trinity",
+      "artist": "Peter Paul Rubens",
+      "museum": "DIFFERENT ORIGINAL, to be established from Wikimedia object provenance",
+      "accession": "NOT_KMSKA_314",
+      "file": "Die Heilige Dreifaltigkeit - Peter Paul Rubens.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Die_Heilige_Dreifaltigkeit_-_Peter_Paul_Rubens.jpg",
+      "plannedDimensions": [
+        1160,
+        1624
+      ],
+      "usage": "DISTINCT ORIGINAL COMPARISON ONLY; BELOW PREFERRED RESOLUTION"
+    }
+  ],
+  "identityExclusions": [
+    {
+      "categoryIndex": 43,
+      "workId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "file": "San Lorenzo, de Juan Correa de Vivar (Museo del Prado).jpg",
+      "reason": "File represents Saint Lawrence front face, not Saint Hilary verso; requires distinct verso image",
+      "source": "https://commons.wikimedia.org/wiki/File:San_Lorenzo,_de_Juan_Correa_de_Vivar_(Museo_del_Prado).jpg"
+    },
+    {
+      "categoryIndex": 136,
+      "workId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "reason": "Rubens authorship and painting accession have no reliable identified institution in current source; do not search by title alone and assign works of Murillo, Pereda, Carreño or Pittoni"
+    }
+  ],
+  "verifiedSourceRefs": [
+    "https://www.sammlung.pinakothek.de/en/artwork/53470Jpx9e/anthonis-van-dyck/die-beweinung-christi",
+    "https://vlaamsekunstcollectie.be/en/collection/314"
+  ]
+}
