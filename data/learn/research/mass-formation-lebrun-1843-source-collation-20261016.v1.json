@@ -309,9 +309,10 @@
   ],
   "outstanding": [
     "Visual image check against scanned leaves for printed pp.397–400 and 435–440 (current original-edition OCR is examined, images not).",
-    "Find and read Le Brun's separate dissertation/volume on validity of consecration referenced by St Alphonsus; do not infer that controversy from vol.I glosses.",
     "Check independent manuscript/editorial evidence for alleged Leo I interpolation instead of endorsing Le Brun's late attribution.",
-    "Compare actual original P0 workbook claim proposition text and original editions for final approval; source context checking is not automatic publication signoff."
+    "Compare actual original P0 workbook claim proposition text and original editions for final approval; source context checking is not automatic publication signoff.",
+    "Collate original 1843 tome III against the available 1860 republication for the epiclesis and institution discussion; the original 1843 photographic pages are not visually verified.",
+    "Read Le Brun's distinct 1727 Defense in full; at present only bibliographical identity and secondary description checked."
   ],
   "no_runtime_import": true,
   "census": {
@@ -319,7 +320,9 @@
     "original_1843_ocr_loci_checked": 9,
     "printed_image_checked": 0,
     "quotations_approved": 0,
-    "publication_approved": 0
+    "publication_approved": 0,
+    "separate_tome_iii_1860_author_text_examined": 1,
+    "separate_tome_iii_1843_image_checked": 0
   },
   "key_resolutions": [
     {
@@ -342,9 +345,10 @@
     },
     {
       "issue": "LE_BRUN_FORM_OF_CONSECRATION",
-      "conclusion": "ST_ALPHONSUS_ATTRIBUTION_TO_OTHER_VOLUME_NOT_RESOLVED_BY_VOL_I",
+      "conclusion": "VOLUME_III_1860_AUTHOR_TEXT_EXAMINED_1843_ORIGINAL_FACSIMILE_AND_1727_DEFENSE_UNCOLLATED",
       "printed": "St Alphonsus cited volume/dissertation",
-      "description": "Le Brun's volume I comments on blessing and institution do not by themselves prove the exact historical validity position attributed by St Alphonsus; inspect separate cited dissertation."
+      "description": "Le Brun's own tome III preliminary Observations, as digitally transcribed in the 1860 reprint, expressly argues the sacramental form includes both Institution words and invocation, especially discussing Armenian post-Institution epiclesis. St Alphonsus reports the debated hypothesis. The 1843 tome III facsimile is identified but no comparison with 1860 transcription has been made; the distinct 1727 defense is bibliographically identified, not read."
     }
-  ]
+  ],
+  "separate_dissertation_dossier": "data/learn/research/mass-formation-lebrun-epiclesis-tome-iii-20261016.v1.json"
 }
