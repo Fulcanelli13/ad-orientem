@@ -13,7 +13,11 @@ const paths=[
  "src/calendar/calendar-runtime.js",
  "src/calendar/liturgical-clock.js",
  "src/home/today-v2-styles.js",
- "src/app/release-identity.js"
+ "src/app/release-identity.js",
+ "src/settings/presentation.js",
+ "src/settings/browser-entry.js",
+ "src/home/today-v2-sections.js",
+ "src/calendar/observed-commemoration-labels.js"
 ];
 const sha=b=>createHash("sha256").update(b).digest("hex");
 const run=String(process.env.GITHUB_RUN_ID||"local");
