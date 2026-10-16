@@ -1,0 +1,54 @@
+{
+  "schema": "AO_P1_MISSING_MASS_TEXT_SOURCE_ANALYSIS_V1",
+  "asOf": "2026-10-16",
+  "purpose": "Trace source-owned missing 1962 Common language rows into existing Missal, never external PDF paths",
+  "claims": [
+    {
+      "target": "Commune/C7",
+      "missingOriginal": "Lectio",
+      "originalLatinSourceDeclaration": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Latin/Commune/C7.txt",
+      "canonicalLatinParentPath": "Commune/C6",
+      "parentDeclaration": "@Commune/C6",
+      "bookReference": "Eccli 51:1-8; 51:12",
+      "rejectedAlternativePath": "Commune/C6-1",
+      "rejectedReadingReference": "Eccli 51:13-17",
+      "appSourceProof": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867",
+      "status": "CLOSED_SOURCE_COMPOSITION_VERIFIED_LA_EN_FR",
+      "note": "C6-1 may own some inherited chants, but not the original Lectio. All nine C7 core sections now available without new text assets."
+    },
+    {
+      "target": "Commune/C3ap",
+      "missingOriginal": "Six French Mass sections",
+      "actualBaseSourcePath": "Commune/C3p",
+      "missingSections": [
+        "Introitus",
+        "Lectio",
+        "Graduale",
+        "Evangelium",
+        "Offertorium",
+        "Communio"
+      ],
+      "upstreamFrenchDocument": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Francais/Commune/C3p.txt",
+      "upstreamFrenchContents": "Only [Officium] and [Missa] section headings; no prayer, chants or readings",
+      "knownLatinAndEnglishComplete": true,
+      "inheritedOrationsOwner": "Commune/C3a",
+      "completeTranslationExistsInAdOrientemSource": false,
+      "status": "HELD_SOURCE_LANGUAGE_TEXT_NOT_PRESENT",
+      "nextAction": "Search canonical app for source-equivalent French translation with original Latin identity; otherwise separate editorial translation/provenance and rights review. No blind borrowing from unlike Latin, no PDF linking."
+    },
+    {
+      "target": "Commune/C1v",
+      "missingOriginal": "French and English generic Oratio section",
+      "upstreamTextEvidence": "English and French sources have [Oratio 1 loco] and [Oratio 2 loco], while the default [Oratio] source key is absent; original Latin contains a rubric-sensitive default [Oratio] referring to these",
+      "status": "LIVE_APP_NAMED_ORATION_KEY_CHECK_PENDING",
+      "riskyFallback": "Do not automatically select 1 loco vs 2 loco or Evangelist variant as generic Collect without explicit rubric and canonically authenticated variant selection."
+    }
+  ],
+  "existingSourceRepository": "https://github.com/DivinumOfficium/divinum-officium",
+  "note": "External original source files serve metadata and textual parity verification only; every app navigation destination remains the existing internal Missal.",
+  "recognizedCompleteSources": 26,
+  "knownIncompleteSources": 9,
+  "ambiguousOnlineIndexEntries": 3,
+  "externalNavigationButtons": 0,
+  "liturgicalPermissionInferred": false
+}
