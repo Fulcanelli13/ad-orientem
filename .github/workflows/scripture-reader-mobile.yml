@@ -6,6 +6,7 @@ on:
       - 'data/scripture/catena/**'
       - 'src/home/presentation.js'
       - 'tests/scripture-reader-mobile.mjs'
+      - 'tests/calendar-reciprocal-scripture-phone.mjs'
       - '.github/workflows/scripture-reader-mobile.yml'
   push:
     branches: [main]
@@ -31,3 +32,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Native phone Scripture reader
         run: node tests/scripture-reader-mobile.mjs
+      - name: Reciprocal selected Calendar Mass Gospel
+        run: node tests/calendar-reciprocal-scripture-phone.mjs
