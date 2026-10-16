@@ -1062,6 +1062,10 @@ button.ao-schola-control{cursor:pointer}
   text-overflow:ellipsis;white-space:nowrap;color:var(--ao-mass-accent-text);
   font:400 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);
 }
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-gesture-icon{
+  width:33px;height:33px;flex:0 0 33px;color:var(--ao-mass-accent-text);
+}
+.ao-reader-shell:not([data-mode="MISSAL"]) .ao-missal-gesture-icon{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail[hidden]{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-prayer-title{display:none}
 `;
@@ -1398,6 +1402,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
+      <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
     <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
@@ -2658,6 +2663,7 @@ export function createReaderDomAdapter({
 
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
+    applyIcon(root,"faithful-gesture-top",mode==="MISSAL"?current.gestureIconKey:null,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
