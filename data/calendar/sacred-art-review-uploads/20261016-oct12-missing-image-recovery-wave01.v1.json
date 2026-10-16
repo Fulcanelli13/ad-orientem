@@ -16,7 +16,9 @@
     "Never substitute the recto Saint Lawrence image for the verso Saint Hilary.",
     "Rubens Saint Sebastian candidate in Berlin is an object lead, not established as the exact October 12 painting without accession reconciliation.",
     "Old review decisions remain immutable; new recovered files have no default quality rating or keep/primary status.",
-    "A Commons file page plus original-object identifier confirms a research candidate, not visual or production master quality."
+    "A Commons file page plus original-object identifier confirms a research candidate, not visual or production master quality.",
+    "Prado P001300's Saint Hilary is HILARY THE HERMIT, not Hilary of Poitiers. This is a wrong person, not merely an unavailable verso photo.",
+    "Saint Sebastian Gemäldegalerie Berlin 798H has multiple authentic file sources, but do not infer it is October 12's selected physical original until accession crosswalk is proven."
   ],
   "entries": [
     {
@@ -140,10 +142,14 @@
       "artist": "Juan Correa de Vivar",
       "work": "Saint Lawrence / Saint Hilary",
       "object": "Prado P001300; Lawrence on recto, Hilary on verso",
-      "status": "HELD_CORRECT_HILARY_SIDE_NOT_PHOTOGRAPHED",
+      "status": "HELD_WRONG_SAINT_IDENTITY_AND_WRONG_VISIBLE_FACE",
       "photos": [],
       "rejectedAsHilaryPhoto": "San Lorenzo, de Juan Correa de Vivar (Museo del Prado).jpg",
-      "institution": "https://www.museodelprado.es/en/the-collection/art-work/saint-lawrence-saint-hilary/71cff54c-68c8-4be5-8704-15713fe411a8"
+      "institution": "https://www.museodelprado.es/en/the-collection/art-work/saint-lawrence-saint-hilary/71cff54c-68c8-4be5-8704-15713fe411a8",
+      "actualPradoReverseIdentity": "Saint Hilary the Hermit (San Hilario ermitaño), NOT Saint Hilary of Poitiers the Doctor",
+      "proof": "https://www.museodelprado.es/coleccion/obra-de-arte/san-lorenzo-san-hilario-ermitao/71cff54c-68c8-4be5-8704-15713fe411a8",
+      "categoryAction": "REMOVE_AS_CANDIDATE_FOR_HILARY_OF_POITIERS_PENDING_EDITORIAL_SIGNOFF; retain October 12 historical decision as provenance; search source-proven exact Doctor instead",
+      "altDoctorPaintingLead": "https://pop.culture.gouv.fr/search/list?base=%5B%22Patrimoine%20mobilier%20(Palissy)%22%5D&ou=%5B%22saint%20Hilaire%20de%20Poitiers%22%5D"
     },
     {
       "batch": 1,
@@ -216,10 +222,25 @@
       "artist": "Peter Paul Rubens",
       "work": "Saint Sebastian",
       "object": "Possible Gemäldegalerie Berlin original c.1618, physical match to October 12 unspecified",
-      "status": "HELD_OLD_SELECTION_EXACT_OBJECT_NOT_PROVEN",
+      "status": "MUSEUM_IDENTIFIED_WITH_TWO_DISPLAYABLE_FILES_OLD_SELECTION_IDENTITY_NOT_CERTIFIED",
       "photos": [],
       "provisionalLead": "Peter Paul Rubens - Der heilige Sebastian - Google Art Project.jpg",
-      "institution": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Der_heilige_Sebastian_-_Google_Art_Project.jpg"
+      "institution": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Der_heilige_Sebastian_-_Google_Art_Project.jpg",
+      "berlinSourceAuthority": "https://search.smb.museum/object/obj-871193",
+      "berlinInventory": "798H",
+      "berlinCandidateFiles": [
+        {
+          "file": "Peter Paul Rubens - Der heilige Sebastian - Google Art Project.jpg",
+          "width": 4000,
+          "height": 6350
+        },
+        {
+          "file": "Peter Paul Rubens St. Sebastian - ca. 1618 - 2293.jpg",
+          "width": 4850,
+          "height": 7075
+        }
+      ],
+      "selectionHold": "2016/October12 record gave no institution/accession, so cannot declare Berlin 798H is that exact selected physical painting; may display as conditional research lead only"
     },
     {
       "batch": 2,
