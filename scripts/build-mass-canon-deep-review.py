@@ -50,8 +50,11 @@ assert [x["id"] for x in major["studies"]]==["AO.FORM.CANON.DEEP.02","AO.FORM.CA
 assert [x["block_id"] for x in major["studies"]]==["AO.SM.B051","AO.SM.B055"]
 assert sum(len(x["chapters"]) for x in major["studies"])==15
 assert lebrun["schema"]=="ao-formation-lebrun-1843-source-collation-v1"
-assert lebrun["status"]=="SOURCE_LOCATED_CLAIMS_UNCERTIFIED"
+assert lebrun["status"]=="ORIGINAL_1843_OCR_CONTEXTS_CORROBORATED_IMAGE_AND_RELEASE_HOLD"
 assert len(lebrun_by_id)==9
+assert lebrun["census"]["original_1843_ocr_loci_checked"]==9
+assert lebrun["census"]["printed_image_checked"]==0
+assert sum(1 for v in lebrun["claim_rows"] if v["original_1843_edition_ocr_context_checked"])==9
 assert all(not v["quotation_approved"] and not v["publication_approved"] and not v["printed_scan_image_checked"] for v in lebrun["claim_rows"])
 assert major["source_collation_constraints"]["lebrun_printed_original_text_checked"] is False
 assert triage["schema"]=="ao-formation-canon-two-prayers-32-claim-collation-triage-v1"
@@ -65,7 +68,7 @@ assert all(not r.get("printed_page_image_collated",False) for r in triage["claim
 assert len(triage_by_id)==32
 assert all(not x["publication_allowed"] and not x["exact_printed_source_read_in_this_pass"] for x in triage["claims"])
 assert len(triage["identified_disputes"])==3
-assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==10
+assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==12
 for m in major["studies"]:
     assert m["level"]=="EXPANDED_PRIMARY_SOURCE_INTERPRETATION_EDITORIAL_DRAFT"
     assert m["block_id"] in [b for x in doc["studies"] if x["id"]==m["id"] for b in x["block_ids"]]
@@ -290,7 +293,7 @@ assert markup.count('class="detailed-chapter"')==15
 assert markup.count('data-lebrun-held=')==9
 assert markup.count('data-source-triage=')==32
 assert markup.count('class="latin-item"')==5
-assert markup.count('class="source-link"')==10
+assert markup.count('class="source-link"')==12
 assert markup.count('data-p0-author-ref=')==88
 assert markup.count('data-primary-check=')==6
 assert markup.count('data-p0-scripture-held=')==1
@@ -298,4 +301,4 @@ assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 15 chapters, 8 checked Gihr OCR contexts, 9 held Le Brun facsimile loci, 32 claim-specific triage notes, five Latin glosses, 10 cited source records; 79 P0 units, 88 held author refs, no publication ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 15 chapters, 8 checked Gihr OCR contexts, 9 Le Brun original-edition OCR loci (images held), 32 claim-specific triage notes, five Latin glosses, 12 cited source records; 79 P0 units, 88 held author refs, no publication ->",out)
