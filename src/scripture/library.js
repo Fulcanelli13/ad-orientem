@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -431,7 +431,28 @@ export function mountScriptureLibrary(root,{
            draw();root.scrollTop=0;
            queueMicrotask(()=>wrap.querySelector("[data-scripture-context-depth='selected']")?.focus?.({preventScroll:true}));
          });
-         row.append(read);relatedBody.append(row);
+         row.append(read);
+         if(hit.target&&typeof onOpenRelatedObject==="function"&&canOpenRelatedObject(hit)){
+           const launch=element("button",lang==="fr"?
+             "Ouvrir cet objet dans Ad Orientem":"Open this object in Ad Orientem");
+           launch.type="button";launch.dataset.scriptureOpenRelatedObject=hit.id;
+           launch.addEventListener("click",async()=>{
+             launch.disabled=true;
+             let ok=false;
+             try{ok=await onOpenRelatedObject(hit)}
+             catch(error){console.error("Scripture object handoff failed",error)}
+             if(!ok && row.isConnected){
+               launch.disabled=false;
+               let warning=row.querySelector("[data-scripture-related-launch-error]");
+               if(!warning){warning=element("p",null,"aoScriptureNotice");warning.dataset.scriptureRelatedLaunchError="";row.append(warning)}
+               warning.textContent=lang==="fr"
+                 ?"Cette fiche est indisponible ; la lecture biblique est conservée."
+                 :"The destination could not open; your Scripture reading is unchanged.";
+             }
+           });
+           row.append(launch);
+         }
+         relatedBody.append(row);
        }
      }catch{
        if(relatedBody.isConnected)relatedBody.replaceChildren(element("p",lang==="fr"
