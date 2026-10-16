@@ -9,6 +9,7 @@ on:
       - 'src/calendar/calendar-saint-explore-handoff.js'
       - 'src/find/browser-entry.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
+      - 'tests/calendar-saints-exact-profile-phone.mjs'
       - '.github/workflows/calendar-saints-exact-profile.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'src/calendar/calendar-saint-explore-handoff.js'
       - 'src/find/browser-entry.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
+      - 'tests/calendar-saints-exact-profile-phone.mjs'
       - '.github/workflows/calendar-saints-exact-profile.yml'
 
 jobs:
@@ -31,3 +33,18 @@ jobs:
       - run: node --check src/find/browser-entry.js
       - run: node tests/calendar-saints-exact-profile-handoff.mjs
       - run: node tests/saints-public-pilot.mjs
+
+  phone-profile-route:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Actual 320px and 390px Calendar → Saints profile
+        run: node tests/calendar-saints-exact-profile-phone.mjs
