@@ -365,10 +365,12 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     const validPos=n=>Number.isFinite(n)&&n>=0?Math.min(n,100000):0;
     state.explorerReturn=explorer&&typeof explorer==="object"?
       {momentKey:String(explorer.momentKey||""),blockId:explorer.blockId||null,
-        indexView:explorer.indexView==="list"?"list":"map",
+        indexView:["map","list","themes"].includes(explorer.indexView)?explorer.indexView:"map",
         indexScrollTop:validPos(explorer.indexScrollTop),
         indexFocusKey:/^(PRE\.ASPERGES|POST\.MASS|AO\.CARD\.0(?:0[1-9]|[12][0-9]|30))$/.test(String(explorer.indexFocusKey||""))?
           explorer.indexFocusKey:null,
+        indexFocusBlockId:/^AO\.SM\.B\d{3}$/.test(String(explorer.indexFocusBlockId||""))?
+          explorer.indexFocusBlockId:null,
         studyStageId:/^MF0[1-8]$/.test(String(explorer.studyStageId||""))?explorer.studyStageId:null,
         momentScrollTop:validPos(explorer.momentScrollTop)}:null;
     try{await ensureData()}catch(error){
