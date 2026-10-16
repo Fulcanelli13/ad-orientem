@@ -11,6 +11,7 @@ import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-i
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
 import { observedCycle } from "./observed-cycle.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
+import {matchingSelectedCalendarScriptureObject} from "./selected-scripture-objects.js";
 import { calendarObservanceAlias } from "./observance-title.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
@@ -35,6 +36,7 @@ const addDays=(id,n)=>{const d=dateOf(id);d.setDate(d.getDate()+Number(n||0));re
 
 const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new Map(),monthLoads=new Map(),monthStatus=new Map(),nextMajorResults=new Map(),nextMajorRequests=new Map();
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
+let selectedScriptureReturn=null; // Ephemeral reciprocal-source journey only.
 let yearColourLoad=null,clockSelection=null;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
@@ -915,8 +917,37 @@ function paint(){
   r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;r.dataset.aoCalendarPaintView=calendarView;r.dataset.aoCalendarPaintDate=selected;
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
 }
+// Exact selection is revalidated *after* Calendar is reopened, not inferred
+// from today's date, feast title or a Scripture verse shared by other Masses.
+function openSelectedScriptureReading(target,{onCloseReturn=null}={}){
+ const origin=root();
+ if(!origin||origin.dataset.aoCalendarEmbedded==="true"||
+    selectedScriptureReturn||typeof onCloseReturn!=="function")return false;
+ const verified=matchingSelectedCalendarScriptureObject(state(),target);
+ if(!verified)return false;
+ setView("day");
+ const button=root()?.querySelector(
+   '[data-cal-scripture-date="'+target.date+'"][data-cal-scripture-slot="'+target.slot+'"]');
+ if(!button)return false;
+ selectedScriptureReturn={onCloseReturn};
+ button.focus?.({preventScroll:true});
+ button.scrollIntoView?.({block:"nearest",behavior:"instant"});
+ return true;
+}
+function returnToSelectedScripture(){
+ const receipt=selectedScriptureReturn;
+ if(!receipt)return false;
+ selectedScriptureReturn=null;
+ close({silent:true});
+ queueMicrotask(()=>{
+   try{void receipt.onCloseReturn()}catch(error){
+     console.error("Selected Calendar Scripture return failed",error);
+   }
+ });
+ return true;
+}
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
-function close({surface="home",silent=false}={}){cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
+function close({surface="home",silent=false}={}){selectedScriptureReturn=null;cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
   for(let i=0;i<attempts;i+=1){
     const s=state(),r=s?.resolution;
@@ -979,6 +1010,9 @@ function openPrintableProper(){
 }
 function bind(r){
   r.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&selectedScriptureReturn){
+      event.preventDefault();event.stopPropagation();returnToSelectedScripture();return;
+    }
     if(event.key==="Escape"&&clockSelection&&calendarView==="year"){
       const previous=clockSelection;clockSelection=null;event.preventDefault();paint();
       const attr=previous.type==="season"?"calClockSeason":previous.type==="cluster"?"calClockCluster":"calClockFeast";
@@ -1056,7 +1090,7 @@ function bind(r){
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
     const printButton=event.target.closest?.("[data-cal-print-proper]");if(printButton){event.preventDefault();openPrintableProper();return}
     const mass=event.target.closest?.("[data-cal-mass]");if(mass){event.preventDefault();void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar Mass entry failed",error));return}
-    const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();close();return}
+    const closeButton=event.target.closest?.("[data-cal-close]");if(closeButton){event.preventDefault();if(selectedScriptureReturn){returnToSelectedScripture();return;}close();return}
     const day=event.target.closest?.("[data-cal-date]");if(day){event.preventDefault();void select(day.dataset.calDate);return}
     const shift=event.target.closest?.("[data-cal-shift]");if(shift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(shift.dataset.calShift||0)));return}
     const today=event.target.closest?.("[data-cal-today]");if(today){event.preventDefault();calendarView="day";pickerMonthId=iso(new Date()).slice(0,7);void select(iso(new Date()));return}
@@ -1065,6 +1099,7 @@ function bind(r){
   r.addEventListener("keydown",event=>{const input=event.target.closest?.("[data-cal-input]");if(input&&event.key==="Enter"){event.preventDefault();const id=parseDisplayDate(input.value);if(id){calendarView="day";void select(id,{closeAfter:false})}}});
 }
 function open({embeddedIn=null,onClose=null}={}){
+  selectedScriptureReturn=null;
   const doc=globalThis.document;if(!doc?.body||!runtime()?.store||!runtime()?.resolver)return false;
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
@@ -1086,5 +1121,5 @@ function open({embeddedIn=null,onClose=null}={}){
   return true;
 }
 function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
-export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1&&!win.AO_CALENDAR_APP_V1.__aoCalendarLazyPlaceholder)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,openEmbedded:(embeddedIn,{view="day",onClose=null}={})=>{if(!embeddedIn?.isConnected)return false;if(root()?.parentElement===embeddedIn){setView(view);return true}if(root())close({silent:true});requestedView=view;return open({embeddedIn,onClose})},close,paint,status,select,setView,setMonthView,prepareMonth,monthGridIds,monthReady,monthIndexEntries});win.AO_CALENDAR_APP_V1=api;return api}
+export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1&&!win.AO_CALENDAR_APP_V1.__aoCalendarLazyPlaceholder)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,openSelectedScriptureReading,openEmbedded:(embeddedIn,{view="day",onClose=null}={})=>{if(!embeddedIn?.isConnected)return false;if(root()?.parentElement===embeddedIn){setView(view);return true}if(root())close({silent:true});requestedView=view;return open({embeddedIn,onClose})},close,paint,status,select,setView,setMonthView,prepareMonth,monthGridIds,monthReady,monthIndexEntries});win.AO_CALENDAR_APP_V1=api;return api}
 if(typeof window!=="undefined"&&typeof document!=="undefined"){installWeekCacheApi();installCalendarBrowserOwner(window);}
