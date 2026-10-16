@@ -25,6 +25,9 @@ on:
       - 'src/learn/mass-explorer-study-publication.js'
       - 'data/learn/mass-explorer-approved-studies.v1.json'
       - 'data/learn/research/mass-explorer-first-two-release-candidates-20261016.v1.json'
+      - 'data/learn/research/mass-explorer-remaining-six-release-candidates-20261016.v1.json'
+      - 'scripts/build-mass-explorer-all-canon-release-review.mjs'
+      - 'tests/mass-explorer-all-canon-release-review.mjs'
       - 'scripts/build-mass-explorer-first-two-release-review.mjs'
       - 'tests/mass-explorer-first-two-release-review.mjs'
       - 'tests/mass-explorer-study-publication.mjs'
@@ -70,12 +73,14 @@ jobs:
       - run: python3 scripts/build-mass-canon-deep-review.py
       - run: node scripts/build-mass-explorer-editorial-bridge.mjs
       - run: node scripts/build-mass-explorer-first-two-release-review.mjs
+      - run: node scripts/build-mass-explorer-all-canon-release-review.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/mass-prayer-editorial-review-browser.mjs
       - run: node tests/mass-explorer-editorial-bridge.mjs
       - run: node tests/mass-explorer-first-two-release-review.mjs
+      - run: node tests/mass-explorer-all-canon-release-review.mjs
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
@@ -90,5 +95,6 @@ jobs:
             artifacts/p2-formation-prayer-review/
             artifacts/p2-mass-explorer-bridge/
             artifacts/p2-first-two-review/
+            artifacts/p2-all-canon-candidates/
           if-no-files-found: warn
           retention-days: 14
