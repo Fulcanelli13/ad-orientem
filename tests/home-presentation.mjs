@@ -83,7 +83,7 @@ assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2Approaching/);
-assert.match(en,/Life & sources|About this celebration|Calendar day & sources/,
+assert.match(en,/Life &amp; sources|About this celebration|Calendar day &amp; sources/,
   "The Read & reflect entry must explain its destination instead of repeating the hero title");
 assert.doesNotMatch(en,/COMING SOON/,"Homepage must not duplicate upcoming celebrations in its season bar");
 assert.match(en,/data-home-calendar-view="picker"/);
