@@ -520,7 +520,12 @@
     "earlyEnglishSadlierWholeBookOCRMixedLegibilityHeuristic": 13,
     "earlyEnglishSadlierAtlasTopicCandidatesExpanded": 87,
     "earlyEnglishSadlierAtlasTopicCandidateChaptersExpanded": 81,
-    "earlyEnglishSadlierConfirmedVerseAlignedNew": 0
+    "earlyEnglishSadlierConfirmedVerseAlignedNew": 0,
+    "earlyEnglishSadlierOriginalPrintedPagesMissingFromScan": 2,
+    "earlyEnglishSadlierWholeBookPhysicalScanGapChapters": 2,
+    "earlyEnglishSadlierMixedOCRChaptersLayoutExamined": 13,
+    "earlyEnglishSadlierMixedOCRRunningHeadingsRemoved": 13,
+    "earlyEnglishSadlierMixedOCRLiteralWordCorrections": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4538,5 +4543,60 @@
     "policy": "Concentrate later cleanup on 13 mixed OCR chapters and actual chapter-boundary problems; do not conflate dictionary legibility with historically accurate words. Keep historical theological/ethnic editorial holds and external copyright review.",
     "originalAuthorTextModernized": false,
     "sourcePublicationApproved": false
+  },
+  "english1908MissingPrintedLeaves": {
+    "date": "2026-10-16",
+    "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "evidence": "User-uploaded original 1908 PDF, PDF page 398 visibly labelled printed page 383; the immediately following PDF page 399 visibly labelled printed page 386; original 1908 table of contents on PDF page 14 locates Chapter LXXXIX Peter Raises Tabitha at printed page 385 and Chapter XC Cornelius at printed 386.",
+    "PDFPagesObserved": [
+      398,
+      399
+    ],
+    "printedPagesObserved": [
+      383,
+      386
+    ],
+    "missingOriginalPrintedPages": [
+      384,
+      385
+    ],
+    "knownSourceScanGap": true,
+    "affectedChapterIds": [
+      "SCHUSTER-EN-1908-NT-LXXXVIII",
+      "SCHUSTER-EN-1908-NT-LXXXIX"
+    ],
+    "chapterLXXXVIII": "TRUNCATED_AFTER_PRINTED_P383",
+    "chapterLXXXIX": "SOURCE_PAGE_385_ABSENT_NO_PRINT_TEXT_IN_UPLOAD",
+    "correctionToOldStatus": "The Acts boundary is not merely damaged OCR: the scanned PDF has two original printed pages physically missing.",
+    "humanReconstructionForbidden": true,
+    "needAuthenticAlternativeWitnessToRecover": true,
+    "productionContentChanges": false
+  },
+  "english1908BulkReaderV3PhysicalGapAndLayout": {
+    "date": "2026-10-16",
+    "input": "Schuster_1908_Research_Reader_Data_v2.json",
+    "editionWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "mixedHeuristicChaptersExamined": 13,
+    "exactRecognizedPageRunningHeadersRemovedFromResearchDisplay": 13,
+    "chapterDraftTextLexicalCorrections": 0,
+    "rawSourceTextChanged": false,
+    "otherNonMixedOCRChaptersChanged": false,
+    "sourceNoteTextCertified": 0,
+    "displayTextPublicationApproved": false,
+    "prototype": "Schuster_1908_Offline_Research_Reader_v3.html",
+    "prototypeSHA256": "85fd8d1745393aad5972247d468ce10b1160c63bd7ecdf74dc6921ac12919dd7",
+    "workingDataFile": "Schuster_1908_Research_Reader_Data_v3.json",
+    "workingDataSHA256": "269fae0ba706f40f01b2644be514f9e76f4bf4133021a2fef646306a8e5ba36a",
+    "diagnosticFile": "Schuster_1908_13_Chapter_Bulk_Layout_Triage_v3.json",
+    "diagnosticSHA256": "e420cb8a4b9ded1c76733d70072f4f9ffe8f98637b4f5496cd58f9d9136c530f",
+    "preservesProgressStorageKey": "AO_SCHUSTER_1908_PREVIEW_READING_STATE_v1",
+    "readerChapterCount": 182,
+    "originalSourcePageGapWarningsForTwoChapters": true,
+    "sourceMaterialOnlyResearchArtifacts": true,
+    "jsSyntaxCheck": "NODE_CHECK_PASSED",
+    "embeddedSourceJSONParse": "182_RECORDS_PASSED",
+    "originalSourceProseAddedToGitHub": false,
+    "appDeployed": false,
+    "rightsGateRemainsClosed": true
   }
 }
