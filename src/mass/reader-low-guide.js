@@ -4,6 +4,13 @@
 export const LOW_GUIDE_RESEARCH_FILE="mass-low-35-guide-legacy-index-20261016.v1.json";
 export const LOW_GUIDE_RESEARCH_STATUS="HISTORICAL_SOURCE_SHORT_TEXT_RESTORED_LONG_TEXT_ONLY_IN_FROZEN_WORKBOOK";
 export const LOW_GUIDE_MASS_FORM="LOW_1962";
+// These are the only historic stages whose *presence* requires an affirmative
+// liturgical or observational decision. The silence of the Canon, elevation
+// timing and the customary pre-consecration bell are NOT optional prayers.
+export const LOW_GUIDE_EXPLICIT_APPLICABILITY_IDS=Object.freeze([
+  "LOW.003","LOW.008","LOW.014","LOW.028","LOW.029",
+  "LOW.030","LOW.033","LOW.034","LOW.035",
+]);
 
 export function validateLowGuideResearch(index){
   if(!index||index.schema!=="ao-low-mass-guide-source-index-v1")throw new TypeError("Exact Low Mass research schema required");
@@ -102,7 +109,7 @@ export function lowGuideForActiveCue(index,{
   // Conditional status is inferred from neither calendar date nor the
   // presence of a candidate source anchor. The caller must establish that
   // this particular liturgical feature occurs in the selected Mass.
-  if(selected.condition!=="ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE" &&
+  if(LOW_GUIDE_EXPLICIT_APPLICABILITY_IDS.includes(selected.key) &&
      !allowed.has(selected.key))return null;
   const candidate=lowGuideResearchCandidate(index,{
     massForm,guideId:selected.key,allowResearchPreview,
