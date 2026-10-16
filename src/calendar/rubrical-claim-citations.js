@@ -176,7 +176,7 @@ export function calendarTransferRubricalClaimsForDay(resolution,ledger){
      w.original.slice(5)!==known.monthDay||
      w.original>=w.observed||known.project(Number(w.original.slice(0,4)))!==w.observed||
      c.sourcePath!==known.sourcePath||source!==known.sourcePath||
-     c.kind!=="ACTUALLY_TRANSFERRED_1962_FEAST"||c.principalClass!==1||
+     c.kind!=="SOURCE_ATTESTED_1962_TRANSFER"||c.principalClass!==1||
      c.authorityId!=="RUBRICS_1960"||c.generalCalendarOnly!==true||
      c.doesNotAuthorizeLocalMass!==true||
      c.id!==w.id.toUpperCase().replace(/-/g,"_")||
