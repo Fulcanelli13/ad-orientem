@@ -39,7 +39,7 @@ export function renderSaintPlaceSheet(vm){
   if(item.kind==="SAINT_CATALOGUE_PROFILE" &&
      receipt?.saintsId===item.saint_id &&
      /^\d{4}-\d{2}-\d{2}$/.test(receipt.date||"")){
-    html+='<button type="button" class="aoSaintCalendarReturn" data-saint-return-calendar="'+esc(receipt.date)+'">'+
+    html+='<button type="button" class="aoSaintCalendarReturn aoSaintCalendarOpen" data-saint-return-calendar="'+esc(receipt.date)+'">'+
       esc(say("Return to selected Calendar day","Revenir au jour consulté dans le calendrier"))+' →</button>';
   }
   for(const [index,saint] of people.entries()){
