@@ -4,6 +4,7 @@ import {
   buildMassExplorerCatalog,getMassExplorerMoment,massExplorerIndexHtml,
   massExplorerMomentHtml,MASS_EXPLORER_ROUTE
 } from "../src/learn/mass-explorer.js";
+import {MASS_MAP_PHASES,massMapPhaseIndex,projectMassMap,massMapHtml,massMapCss} from "../src/learn/mass-map.js";
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const data=path=>JSON.parse(read(path));
@@ -17,6 +18,33 @@ assert.equal(catalog.byBlock.size,sung.blocks.length,"no Sung source block omitt
 assert.equal(catalog.byBlock.size,96,"pinned Sung source corpus contract");
 assert.equal(catalog.source,"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT");
 assert.equal(catalog.crosswalkStatus,"P0_PENDING");
+const map=projectMassMap(catalog);
+assert.equal(map.momentCount,32);
+assert.equal(map.blockCount,96);
+assert.equal(map.provenance,"PUBLISHED_SUNG_GUIDE_AND_SOURCE_ONLY");
+assert.equal(map.relationshipStatus,"P0_PENDING");
+assert.deepEqual(map.phases.map(p=>p.stops.length),[1,9,9,7,6]);
+assert.equal(MASS_MAP_PHASES.length,5);
+assert.equal(massMapPhaseIndex(0),0);
+assert.equal(massMapPhaseIndex(10),2);
+assert.equal(massMapPhaseIndex(31),4);
+assert.equal(massMapPhaseIndex(32),-1);
+assert.deepEqual(map.phases.flatMap(x=>x.stops.map(s=>s.key)),catalog.sequence);
+assert.equal(map.phases.flatMap(x=>x.stops).reduce((count,stop)=>count+stop.blocks.length,0),96);
+const mapEn=massMapHtml(catalog);
+const mapFr=massMapHtml(catalog,{french:true});
+assert.match(mapEn,/data-ao-mx-map="sung"/);
+assert.equal((mapEn.match(/data-ao-mx-moment="/g)||[]).length,32);
+assert.equal((mapEn.match(/data-ao-mx-map-block="/g)||[]).length,96);
+assert.equal((mapEn.match(/data-ao-mx-phase="/g)||[]).length,5);
+assert.match(mapEn,/data-ao-mx-moment="AO.CARD.010"/);
+assert.match(mapEn,/data-ao-mx-map-block="AO.SM.B031"/);
+assert.match(mapEn,/data-ao-mx-open-mass/);
+assert.match(mapFr,/Carte interactive de la Messe/);
+assert.match(mapEn,/This is a study map, not a live ceremonial timeline/);
+assert.doesNotMatch(mapEn,/unpublished Ultra Master|P0 draft bibliography/);
+assert.match(massMapCss(),/aoMXMapJourney/);
+assert.throws(()=>projectMassMap({...catalog,sequence:catalog.sequence.slice(1)}),/32 published Guide/);
 for(const [key,entry] of catalog.byKey){
   assert.equal(entry.guide.key,key);
   if(key.startsWith("AO.CARD."))assert.ok(entry.blocks.length,key+" needs canonical text block ownership");
@@ -60,4 +88,4 @@ assert.match(script,/MASS_EXPLORER_ROUTE_ID/);
 assert.match(lazy,/massExplorer:\(\)=>import\("\.\/mass-explorer\.js"\)/);
 assert.match(formationHome,/id:"learn.mass_explorer"/);
 assert.match(formationHome,/id:"learn.mass"/,"existing Formation stays in service");
-console.log("Mass Explorer: 32 Guide routes, 96 Sung source blocks, bilingual witness, Scripture capsules, legacy Formation and P0 hold passed");
+console.log("Mass Map + Explorer: five visual phases, 32 Guide routes, 96 Sung source blocks, bilingual witness, Scripture capsules, legacy Formation and P0 hold passed");
