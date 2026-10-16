@@ -60,6 +60,7 @@ export function lowGuideForActiveCue(index,{
   allowResearchPreview=false,
   applicableConditionalGuideIds=[],
   selectedObservationalGuideId=null,
+  lowCorpus=null,
 }={}){
   validateLowGuideResearch(index);
   if(allowResearchPreview!==true||massForm!==LOW_GUIDE_MASS_FORM)return null;
@@ -86,6 +87,18 @@ export function lowGuideForActiveCue(index,{
     else break;
   }
   if(!selected)return null;
+  // A numeric cue ordering is NOT proof of a shared source macro. Never keep
+  // an old Guide through the next distinct prayer/Canon section. If the
+  // canonical Low corpus has not been supplied, match the exact anchor only.
+  if(lowCorpus!=null){
+    if(lowCorpus.form!=="LOW"||!Array.isArray(lowCorpus.blocks))return null;
+    const cueMacro=new Map();
+    for(const block of lowCorpus.blocks){
+      for(const u of block.units??[])cueMacro.set(u.cue_id,block.Macro_ID);
+    }
+    const now=cueMacro.get(activeCueId),anchor=cueMacro.get(selected.anchorCueCandidate);
+    if(!now||!anchor||now!==anchor)return null;
+  }else if(activeCueId!==selected.anchorCueCandidate)return null;
   // Conditional status is inferred from neither calendar date nor the
   // presence of a candidate source anchor. The caller must establish that
   // this particular liturgical feature occurs in the selected Mass.
