@@ -3,6 +3,7 @@
  * One source locator can support multiple research claims but never automatically
  * qualifies a passage, quotation, edition, copyright claim or Mass rubric.
  */
+import {massFirst10ContextForLocus,massFirst10ContextStatusHtml,massFirst10ContextSummary} from "./mass-source-first10-review.js";
 export const MASS_SOURCE_BATCH_VERSION="mass-source-first69-locus-batches-v1";
 export const MASS_SOURCE_BATCH_SCHEMA="AO_MASS_SOURCE_69_BATCH_REVIEW_V1";
 const dataUrl=new URL("../../data/learn/research/mass-source-first69-locus-batches-20261016.v1.json",import.meta.url);
@@ -103,7 +104,7 @@ const decisionLabel={
  QUESTION_SCOPE:["Interpretation or locator disputed","Interprétation ou référence à vérifier"],
  DO_NOT_USE:["Do not use these claims","Ne pas utiliser ces assertions"]
 };
-export function massSourceBatchReviewHtml(data,{french=false,claimChoices={}}={}){
+export function massSourceBatchReviewHtml(data,{french=false,claimChoices={},contextAudit=null}={}){
  validateMassSourceLocusBatches(data);
  const workRows=data.works.map(work=>{
   const loci=data.loci.filter(l=>l.workId===work.id);
@@ -115,7 +116,7 @@ export function massSourceBatchReviewHtml(data,{french=false,claimChoices={}}={}
    const selected=massSourceBatchChoice(locus,claimChoices);
    const opts=selected==="MIXED"?'<option value="MIXED" selected disabled>'+esc(tr(french,"Mixed individual decisions","Décisions individuelles différentes"))+'</option>':"";
    return '<section class="aoSourceBatchLocus" data-ao-source-batch-locus="'+esc(locus.id)+'">'+
-    '<strong>'+esc(locus.locus)+'</strong>'+
+    '<strong>'+esc(locus.locus)+'</strong>'+ (contextAudit&&massFirst10ContextForLocus(contextAudit,locus.id)?massFirst10ContextStatusHtml(contextAudit,locus.id,{french}):'')+
     '<small>'+locus.claimIds.length+' '+esc(tr(french,"linked claim(s)","assertion(s) liée(s)"))+
     ' · '+esc(locus.momentIds.join(", "))+'</small>'+
     (locus.hasEditorialCaution?'<small>'+esc(tr(french,"Includes interpretation caution; examine claims individually before approving.","Comprend une réserve d'interprétation ; examiner chaque assertion."))+'</small>':"")+
@@ -133,7 +134,7 @@ export function massSourceBatchReviewHtml(data,{french=false,claimChoices={}}={}
  }).join("");
  return '<details class="aoSourceBatchIndex" data-ao-source-batch-review><summary>'+
   esc(tr(french,"Batch-check the 69 strongest research claims","Vérifier par lots les 69 assertions les mieux documentées"))+
-  '</summary><h3>'+esc(tr(french,"5 original works · 37 unique locators","5 ouvrages · 37 références distinctes"))+'</h3>'+
+  '</summary><h3>'+esc(tr(french,"5 original works · 37 unique locators","5 ouvrages · 37 références distinctes"))+'</h3>'+ (contextAudit?massFirst10ContextSummary(contextAudit,{french}):'')+
   '<p>'+esc(tr(french,"All 69 are research-grade candidates. Original printed-page and edition checks remain open; none is approved as an in-app quotation. A shared locator does not prove the interpretations are equivalent.",
   "Les 69 assertions sont des candidates de recherche. Les vérifications des pages et éditions restent à faire ; aucune citation n'est autorisée. Une même référence ne prouve pas des interprétations identiques."))+'</p>'+workRows+
   '<button type="button" class="aoMFEvidenceExport" data-ao-mf-evidence-export>'+
