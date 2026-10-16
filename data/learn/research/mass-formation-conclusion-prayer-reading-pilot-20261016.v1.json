@@ -1,0 +1,209 @@
+{
+  "schema": "ao-formation-conclusion-prayer-reading-pilot-v1",
+  "scope": "FORMATION_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "profile": "ORDINARY_SUNG",
+  "study_level": "DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "guide_owner": "data/presentation/guide-registry.v1.json",
+  "curriculum_owner": "data/learn/mass-formation-campion.v1.json",
+  "editorial_note": "Text-anchored bilingual Formation draft only. Normative Sung source block status does not override conditional dismissal/blessing/Last Gospel rubrics or other rites. No new Bible verse links, historical certifications or public releases.",
+  "entries": [
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.01",
+      "block_id": "AO.SM.B086",
+      "moment_id": "AO.CARD.027",
+      "stage_id": "MF08",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "The public greeting before Postcommunion",
+        "fr": "La salutation publique avant la Postcommunion"
+      },
+      "reading": {
+        "en": "Following Communion, the priest again says “The Lord be with you”, answered by “And with thy spirit”. This exchange resumes a shared audible prayer after the Communion rites.",
+        "fr": "Après la communion, le prêtre dit de nouveau « Le Seigneur soit avec vous », et la réponse est « Et avec votre esprit ». Cet échange reprend la prière publique commune après les rites de communion."
+      },
+      "observe": {
+        "en": "This is the first of three distinct closing greetings in the published sequence. The wording is identical in B086, B089 and B093, but their Guide moments and purposes differ.",
+        "fr": "C’est la première de trois salutations distinctes de cette fin de Messe. Les paroles sont les mêmes dans B086, B089 et B093, mais leurs moments du Guide et leur place diffèrent."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.02",
+      "block_id": "AO.SM.B087",
+      "moment_id": "AO.CARD.027",
+      "stage_id": "MF08",
+      "text_anchor_en": "Let us pray.",
+      "heading": {
+        "en": "The invitation to Postcommunion prayer",
+        "fr": "L’invitation à la Postcommunion"
+      },
+      "reading": {
+        "en": "The priest’s public “Let us pray” introduces the Postcommunion prayer. The block is a short invitation, not the text of the Mass-specific prayer itself.",
+        "fr": "Le « Prions » public du prêtre introduit la prière de Postcommunion. Ce bloc est une brève invitation et non le texte de la prière propre à la Messe célébrée."
+      },
+      "observe": {
+        "en": "The following B088 is a variable Proper. Its petitions and concluding Amen must be supplied by the selected Mass, not invented from this fixed invitation.",
+        "fr": "Le bloc suivant, B088, est un Propre variable. Ses demandes et son Amen conclusif doivent provenir de la Messe choisie, et non être inventés à partir de cette invitation fixe."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.03",
+      "block_id": "AO.SM.B089",
+      "moment_id": "AO.CARD.028",
+      "stage_id": "MF08",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "The greeting before dismissal",
+        "fr": "La salutation avant le renvoi"
+      },
+      "reading": {
+        "en": "The priest and responding voices exchange the familiar greeting immediately before the dismissal. In this source it remains its own public block.",
+        "fr": "Le prêtre et ceux qui répondent échangent la salutation familière juste avant le renvoi. Dans cette source, elle demeure un bloc public distinct."
+      },
+      "observe": {
+        "en": "The greeting should not be merged with B090; the Guide treats the subsequent dismissal as dependent on the actual form being celebrated.",
+        "fr": "La salutation ne doit pas être fusionnée avec B090 ; le Guide précise que la formule de renvoi qui suit dépend de la célébration effective."
+      },
+      "conditionality": "DISMISSAL_FORM_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.04",
+      "block_id": "AO.SM.B090",
+      "moment_id": "AO.CARD.028",
+      "stage_id": "MF08",
+      "text_anchor_en": "Go, the Mass is ended.",
+      "heading": {
+        "en": "The Ite, missa est response",
+        "fr": "Le renvoi et sa réponse"
+      },
+      "reading": {
+        "en": "The ordinary published dismissal says “Go, the Mass is ended” and receives “Thanks be to God” as the response.",
+        "fr": "La formule de renvoi ordinaire publiée dit « Allez, la Messe est finie » et reçoit pour réponse « Rendons grâces à Dieu »."
+      },
+      "observe": {
+        "en": "This is the Ite, missa est branch of the published Sung text, not a rule that every Mass ends with it. The existing Guide also identifies other conclusions such as Benedicamus Domino and Requiescant in pace in their appropriate contexts.",
+        "fr": "Il s’agit de la branche Ite, missa est du texte chanté publié, non d’une règle universelle. Le Guide existant signale aussi d’autres conclusions, dont Benedicamus Domino et Requiescant in pace selon les circonstances."
+      },
+      "conditionality": "DISMISSAL_FORM_DEPENDENT",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.05",
+      "block_id": "AO.SM.B091",
+      "moment_id": "AO.CARD.029",
+      "stage_id": "MF08",
+      "text_anchor_en": "May the homage of my service be pleasing",
+      "heading": {
+        "en": "A quiet petition after the dismissal",
+        "fr": "Une supplication silencieuse après le renvoi"
+      },
+      "reading": {
+        "en": "In Placeat tibi, the priest asks the Holy Trinity to accept the service and the Sacrifice offered by an unworthy minister, and prays that it benefit himself and those for whom he offered it.",
+        "fr": "Dans Placeat tibi, le prêtre demande à la Sainte Trinité d’agréer son service et le Sacrifice offert par un ministre indigne, et prie pour que celui-ci profite à lui-même et à ceux pour qui il l’a offert."
+      },
+      "observe": {
+        "en": "The published block separates this quiet private prayer from the priest’s action of kissing the altar. It is not the same as the following public final blessing.",
+        "fr": "Le bloc publié distingue cette prière privée et silencieuse du geste par lequel le prêtre baise l’autel. Ce n’est pas la bénédiction publique qui suit."
+      },
+      "conditionality": "STANDARD_FIXED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.06",
+      "block_id": "AO.SM.B092",
+      "moment_id": "AO.CARD.029",
+      "stage_id": "MF08",
+      "text_anchor_en": "May almighty God bless you",
+      "heading": {
+        "en": "The final blessing when given",
+        "fr": "La bénédiction finale lorsqu’elle est donnée"
+      },
+      "reading": {
+        "en": "The priest publicly invokes the blessing of almighty God, naming Father, Son and Holy Ghost, and the response is “Amen”.",
+        "fr": "Le prêtre invoque publiquement la bénédiction de Dieu tout-puissant en nommant le Père, le Fils et le Saint-Esprit ; la réponse est « Amen »."
+      },
+      "observe": {
+        "en": "The source records preceding actions of eyes, hands and inclination as a separate unit. The Guide explicitly warns that the ordinary blessing is omitted in some forms, so this entry must not imply it always occurs.",
+        "fr": "La source inscrit les gestes précédents des yeux, des mains et de l’inclination dans une unité distincte. Le Guide rappelle que la bénédiction ordinaire est omise dans certaines formes ; elle ne doit donc pas être présentée comme systématique."
+      },
+      "conditionality": "BLESSING_MAY_BE_OMITTED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.07",
+      "block_id": "AO.SM.B093",
+      "moment_id": "AO.CARD.030",
+      "stage_id": "MF08",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "The opening greeting of the Last Gospel",
+        "fr": "La salutation ouvrant le dernier Évangile"
+      },
+      "reading": {
+        "en": "When the Last Gospel takes place, the priest says the familiar greeting and receives the response “And with thy spirit”. It is the opening of a distinct concluding Gospel sequence.",
+        "fr": "Lorsque le dernier Évangile a lieu, le prêtre prononce la salutation habituelle et reçoit « Et avec votre esprit ». Elle ouvre une séquence évangélique finale distincte."
+      },
+      "observe": {
+        "en": "The existing Guide says that the Last Gospel can be omitted in specified cases. Do not assume this third greeting is heard in every 1962 celebration.",
+        "fr": "Le Guide existant indique que le dernier Évangile peut être omis dans des cas déterminés. Cette troisième salutation ne doit pas être supposée présente à toute Messe de 1962."
+      },
+      "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.08",
+      "block_id": "AO.SM.B094",
+      "moment_id": "AO.CARD.030",
+      "stage_id": "MF08",
+      "text_anchor_en": "The beginning ✠ of the holy Gospel",
+      "heading": {
+        "en": "Announcing the Gospel according to John",
+        "fr": "L’annonce de l’Évangile selon saint Jean"
+      },
+      "reading": {
+        "en": "The priest announces the beginning of the holy Gospel according to Saint John; the response is “Glory be to Thee, O Lord”. The source prints the cross sign in the announcement.",
+        "fr": "Le prêtre annonce le commencement du saint Évangile selon saint Jean ; la réponse est « Gloire à Vous, Seigneur ». Le signe de croix figure dans l’annonce publiée."
+      },
+      "observe": {
+        "en": "This is an explicit identification of the Gospel book within the liturgical text. Detailed verse-by-verse links should be managed by the established Scripture owner, not asserted independently in this P2 commentary.",
+        "fr": "L’identification de l’Évangile est explicite dans le texte liturgique. Les liens détaillés vers les versets relèveront du registre biblique existant, et non d’une affirmation indépendante de cette notice P2."
+      },
+      "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.CONCLUSION.09",
+      "block_id": "AO.SM.B095",
+      "moment_id": "AO.CARD.030",
+      "stage_id": "MF08",
+      "text_anchor_en": "AND THE WORD WAS MADE FLESH.",
+      "heading": {
+        "en": "The Word became flesh",
+        "fr": "Et le Verbe s’est fait chair"
+      },
+      "reading": {
+        "en": "The published Last Gospel speaks of the Word who was with God and was God, of life and light, of John’s witness, and of those receiving the Word. Its central acclamation says: “And the Word was made flesh.”",
+        "fr": "Le dernier Évangile publié parle du Verbe qui était auprès de Dieu et qui était Dieu, de la vie et de la lumière, du témoignage de Jean et de ceux qui accueillent le Verbe. Sa phrase centrale proclame : « Et le Verbe s’est fait chair »."
+      },
+      "observe": {
+        "en": "In this Sung source the Incarnation sentence is a separate public-text unit, followed by the rest of the passage and “Thanks be to God”. The Guide associates a genuflection with these words where the Last Gospel is celebrated; the sequence must not be appended to an ending that omits it.",
+        "fr": "Dans cette source chantée, la phrase de l’Incarnation forme une unité publique distincte, suivie de la fin du passage et de « Rendons grâces à Dieu ». Le Guide associe une génuflexion à ces mots là où le dernier Évangile est célébré ; cette séquence ne doit pas être ajoutée à une conclusion qui l’omet."
+      },
+      "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
+      "scripture_within_text": []
+    }
+  ],
+  "withheld_variable_propers": [
+    {
+      "block_id": "AO.SM.B088",
+      "proper_slot": "POSTCOMMUNION_SET",
+      "reason": "Postcommunion prayer or prayers and the corresponding responses are proper to the selected Mass. No generic substitute may be imported."
+    }
+  ]
+}
