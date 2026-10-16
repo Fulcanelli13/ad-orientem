@@ -52,12 +52,19 @@ try{
     width+" missing one of five phase navigation controls");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
     width+" lost a canonical text in expanded map ownership");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-stage]").count(),0,
+    width+" thematic study should not be buried after 32 Map moments");
+  assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-path]').count(),2,
+    width+" missing the two deliberate study paths");
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-path="themes"]').click();
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-stage]").count(),8,
-    width+" missing the eight original source-backed Formation lessons");
+    width+" missing eight original thematic lessons in dedicated view");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-moment]").count(),0,
+    width+" thematic view should not duplicate the entire Mass Map");
+  await page.screenshot({path:resolve(screenshotDir,"mass-themes-"+width+"-en.png")});
   if(width===390){
     // Formation-only alternate route. The lesson is the canonical owner for
     // Romans 12:1 (MF03), not a new unverified attribution to B031 itself.
-    await page.locator('#ao-mass-explorer-root [data-ao-mx-jump="themes"]').click();
     await page.locator('#ao-mass-explorer-root [data-ao-mx-stage="MF03"]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId==="MF03",null,{timeout:15000});
     assert.match(await page.locator("#ao-mass-formation-root h1").innerText(),/The Offertory and your offering/);
@@ -67,13 +74,16 @@ try{
     assert.match(await page.locator("#ao-scripture-overlay .aoScriptureContextTitle").innerText(),/Romans 12:1/);
     await page.locator('#ao-scripture-overlay [data-scripture-close]').click();
     await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
-    await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="map"&&
+    await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="themes"&&
        globalThis.AO_MASS_EXPLORER_V1?.status?.()?.momentKey===null,null,{timeout:12000});
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-stage="MF03"]').evaluate(el=>document.activeElement===el),true,
       "Thematic source roundtrip must restore focus to the actual visited lesson");
-    assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
-      "Formation roundtrip must return to intact 96-source map");
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-path="themes"]').getAttribute("aria-current"),"page",
+      "Formation roundtrip must return to thematic study, not the default Map");
   }
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-path="order"]').click();
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
+      "Switching back to chronological learning must restore 96 published source blocks");
   if(width===390){
     await page.locator('#ao-mass-explorer-root [data-ao-mx-phase="2"]').click();
     const phase=page.locator('#ao-mx-phase-canon h2');
@@ -95,11 +105,13 @@ try{
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-map="sung"]').count(),1);
     const mapReturn=await page.locator("#ao-mass-explorer-root").evaluate(node=>({
       scrollTop:node.scrollTop,
-      selected:document.activeElement?.getAttribute("data-ao-mx-moment")
+      selected:document.activeElement?.getAttribute("data-ao-mx-map-block"),
+      open:document.activeElement?.closest("details")?.open
     }));
     assert.ok(Math.abs(mapReturn.scrollTop-savedMapScroll)<=3,
       "Map Back lost previous study position: "+JSON.stringify({savedMapScroll,mapReturn}));
-    assert.equal(mapReturn.selected,"AO.CARD.010","Map Back lost keyboard focus on visited moment");
+    assert.equal(mapReturn.selected,"AO.SM.B031","Map Back lost exact originating prayer link");
+    assert.equal(mapReturn.open,true,"Map Back must restore the original expanded source drawer");
   }
   assert.equal(baseline.shell,"learn.mass_explorer");
   assert.equal(baseline.explorer?.sourceBlocks,96);
