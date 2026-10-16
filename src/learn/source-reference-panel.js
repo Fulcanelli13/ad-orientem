@@ -26,6 +26,9 @@ export function sourceReferencePanelCss(){
     ".aoReferencePanel .aoRefExcerpt{display:block;color:var(--ao-text-muted,#a9a5a0);margin:0 0 3px}",
     ".aoReferencePanel .aoRefSourceList{display:block;line-height:1.6}.aoReferencePanel .aoRefSourceList>a,.aoReferencePanel .aoRefSourceList>span{display:inline;overflow-wrap:anywhere}",
     ".aoReferencePanel .aoRefSourceList>span+span:before,.aoReferencePanel .aoRefSourceList>a+span:before,.aoReferencePanel .aoRefSourceList>span+a:before,.aoReferencePanel .aoRefSourceList>a+a:before{content:' · ';color:var(--ao-text-muted,#a9a5a0)}",
+    ".aoReferencePanel .aoRefSourceIndex{list-style:none;padding:0;margin:6px 0 10px}.aoReferencePanel .aoRefSourceIndex li{margin:8px 0;overflow-wrap:anywhere}",
+    ".aoReferencePanel .aoRefReadingHint{display:inline-block;margin-inline-start:8px;font:.73rem/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}",
+    ".aoReferencePanel .aoRefDocumentNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoReferencePanel .aoRefHold{color:var(--ao-text-muted,#a9a5a0);font-style:italic}",
     ".aoReferencePanel .aoRefEvidence{margin:12px 0}.aoReferencePanel .aoRefEvidence>summary{min-height:42px}",
     ".aoReferencePanel .aoRefEditorialNote{margin:7px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}"
@@ -59,16 +62,26 @@ export function sourceReferencePanelHtml({rows=[],registry={},french=false,furth
       '<span class="aoRefExcerpt">'+esc(excerptText(row.text))+'</span>'+
       '<div class="aoRefSourceList">'+refs+'</div></li>';
   }).join("");
-  const cited=new Set(rows.flatMap(row=>row.sourceIds||[]));
+  const citedIds=unique(rows.flatMap(row=>row.sourceIds||[])).filter(Boolean);
+  const cited=new Set(citedIds);
+  // Further reading is an explicitly curated subset, NOT another
+  // bibliography. Show each original source once in the top-level index;
+  // retain every source-to-claim edge in the nested evidence detail below.
   const featured=unique(furtherReadingIds).filter(id=>cited.has(id)&&sourceReferenceSafeUrl(getSource(registry,id)?.canonical_url||getSource(registry,id)?.url)).slice(0,4);
-  const reading=featured.length
-    ?'<h3>'+esc(label(french,"Further reading","Pour approfondir"))+'</h3><ul>'+
-       featured.map(id=>'<li>'+sourceMarkup(id,registry,french)+'</li>').join("")+'</ul>'
-    :"";
+  const recommended=new Set(featured);
+  const sourceIndex='<h3>'+esc(label(french,"Cited sources","Sources citées"))+'</h3>'+
+    '<ul class="aoRefSourceIndex" data-ao-source-index>'+
+    citedIds.map(id=>'<li>'+sourceMarkup(id,registry,french)+
+       (recommended.has(id)?'<span class="aoRefReadingHint" data-ao-curated-reading="'+esc(id)+'">'+
+          esc(label(french,"Further reading","Pour approfondir"))+'</span>':"")+
+       '</li>').join("")+'</ul>'+
+    '<p class="aoRefDocumentNote">'+esc(label(french,
+      "Document links do not by themselves verify an exact passage or edition.",
+      "Ces liens ne vérifient pas, à eux seuls, le passage ou l’édition exacte."))+'</p>';
   const count=rows.length;
   return '<details class="aoReferencePanel" data-ao-reference-panel="'+esc(idPrefix)+'"><summary>'+
-    esc(label(french,"Sources & further reading","Sources et lectures complémentaires"))+
-    '</summary>'+reading+
+    esc(label(french,"Sources","Sources"))+' · '+citedIds.length+
+    '</summary>'+sourceIndex+
     '<details class="aoRefEvidence"><summary>'+esc(label(french,"Evidence by paragraph","Justificatifs par paragraphe"))+
     ' · '+count+'</summary>'+
     '<p class="aoRefEditorialNote">'+esc(label(french,
