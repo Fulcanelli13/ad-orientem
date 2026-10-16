@@ -38,6 +38,15 @@ The originating study position, whether a Mass Map stop, precise prayer block or
 - This is **link consolidation**, not deletion of the old content or new research certification. The P1 test `tests/mass-study-consolidation-parity.mjs` compares all original 32 Guide moment identities, 96 source blocks, all eight lessons/24 claims, certified Scripture-link identities and legacy deep entry. The phone suite tests both public redirect and explicit legacy entry.
 - Source reading remains deliberately scoped to the already functioning in-app Bible owner and the existing claim-level Formation source drawer. Contextual Guide bibliographies are external document links **without certified excerpt text**; no arbitrary PDF/website prose is pulled into app reader or labelled liturgically normative.
 
+## Document and source context — original records only (16 October 2026)
+
+- The existing MF01–MF08 Formation **Sources** disclosure retains the same source-index hyperlinks and complete claim-by-paragraph evidence. For sources actually cited in that lesson, it now also offers a separate **View source context / Voir le contexte documentaire** action.
+- `src/learn/mass-source-reading.js` renders an in-app bilingual **documentary context** screen: original document title and source ID, existing registry authority/role, which **specific original lesson claims** cite this exact document, and a safe link to the recorded source URL. It does not manufacture a new document excerpt, historical quotation or independent authority status.
+- Demonstration in `MF03`: `SRC-MEDIATOR-DEI` is linked to original claims `MF03-C02` and `MF03-C03` but **not** `MF03-C01` (whose witness is `SRC-MR62`). `SRC-CAMPION-1954` is linked only to `MF03-C03`. A work present in the global registry but uncited by MF03 cannot be opened as if it supported that lesson.
+- The source-context view is optional, only inside Formation: it temporarily makes the underlying lesson inert and restores **the same lesson scroll position, source-button focus and source disclosure** when closed or Escape is pressed. It reuses the original vocabulary/provenance, does not affect native Mass, and does not navigate to a different Formation route.
+- Source URLs continue to open the original external site (no in-app re-hosting), with explicit warning that title/link alone does **not** certify a passage, edition or reproduction rights. The Scripture owner remains the sole in-app full biblical passage reader. Full historical documents/excerpts remain on **hold** pending the separate textual and rights/certification process.
+- Acceptance: source-context contract `tests/mass-source-reading-contract.mjs`, the complete Map → MF03 → Bible → Mediator Dei context → original lesson → selected prayer phone journey, and bilingual source-document screenshots in `tests/source-reference-browser-acceptance.mjs`.
+
 ## Non-loss retirement gates (not passed yet)
 1. Prove every original published Guide moment (32) and every Sung source block (96) is available from the new Map.
 2. Prove all eight Formation lessons, claims, and their already-public source drawers are reachable without rewriting them.
