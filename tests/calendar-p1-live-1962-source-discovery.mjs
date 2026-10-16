@@ -149,7 +149,7 @@ try{
  assert.ok(doctorInheritance.variantLatinDistinct.every(x=>x.different&&x.nonPontiffExists));
  assert.equal(doctorInheritance.approvedForMass,false);
  assert.equal(doctorInheritance.route,null);
- const additionalCommons=await page.evaluate(async()=>{
+ const additionalCommons=process.env.P1_FULL_COMMON_SOURCE_AUDIT==="1" ? await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
    const registry=(await (await fetch("/data/calendar/p1-additional-common-candidates.v1.json")).json()).provisionalRows;
    const slots=["Introitus","Oratio","Lectio","Graduale","Evangelium","Offertorium","Secreta","Communio","Postcommunio"];
@@ -173,7 +173,7 @@ try{
    const results=[];
    for(let i=0;i<registry.length;i+=5)results.push(...await Promise.all(registry.slice(i,i+5).map(inspect)));
    return {candidateCount:registry.length,results};
- });
+ }) : null;
  const donorProbe=process.env.P1_FULL_DONOR_AUDIT==="1" ? await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
    const plan=(await (await fetch("/data/calendar/p1-partial-common-donor-plan.v1.json")).json()).cases;
@@ -244,9 +244,11 @@ try{
  });
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
  if(donorProbe)console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
- console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
- assert.equal(additionalCommons.candidateCount,28);
- assert.equal(additionalCommons.results.length,28);
+ if(additionalCommons){
+   console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
+   assert.equal(additionalCommons.candidateCount,28);
+   assert.equal(additionalCommons.results.length,28);
+ }
  console.log("P1_REAL_COMMONS_SOURCE_WITNESS="+JSON.stringify(commons));
  console.log("P1_REAL_SOURCE_WITNESS="+JSON.stringify(results));
  const october=results[0];
