@@ -66,6 +66,21 @@ try{
       "Home and Calendar disagree on actual observed 1962 commemorations for "+date);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
     assert.ok(overflow<=1,"Home overflow with 1962 commemorations at "+width+"px: "+overflow);
+    const heroMeta=await page.locator(".aoTodayV2Frontispiece .metaLine").textContent();
+    assert.ok(!/Commemorations|Commémorations/i.test(heroMeta),
+      "Historic saints should not appear twice: the header and dedicated observed-day list");
+    if(width===320&&date==="2026-01-14"){
+      const word=await page.locator(".aoTodayV2Context button+button strong").evaluate(el=>{
+        const range=document.createRange();
+        const target=el.firstChild;
+        const len=Math.min(13,target?.textContent?.length||0);
+        if(!target||!len)return {text:el.textContent,fragments:0};
+        range.setStart(target,0);range.setEnd(target,len);
+        return {text:el.textContent,fragments:range.getClientRects().length};
+      });
+      assert.match(word.text,/Septuagesima/i);
+      assert.equal(word.fragments,1,"Septuagesima must not break mid-word at 320px");
+    }
     if(date==="2026-01-14")
       await page.screenshot({path:resolve(out,"home-1962-commemoration-"+width+".png"),animations:"disabled"});
     results.push({date,width,calendar:fromCalendar,home:fromHome,overflow});
