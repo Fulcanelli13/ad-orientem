@@ -63,6 +63,14 @@
         "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
         "selectionChanged": false,
         "commercialReleaseApproved": false
+      },
+      "bulkMobileDisposition": {
+        "batch": "W100",
+        "classification": "VISUALLY_USABLE_ALTERNATIVES_SOURCE_UNVERIFIED",
+        "evidence": "W100 completed 7/7 downloads; 1850 oil source at 481x613 and coloured portrait Liguori.jpg at 640x941 are both legible and visually suitable at mobile width. The PA02540 photograph is an engraving, not a painting. Exact physical attribution/accession and photography rights pending.",
+        "next": "No more resolution searching; validate one of the two colour painting originals and permissions.",
+        "ratingsUnchanged": true,
+        "productionRightsApproved": false
       }
     },
     {
@@ -123,7 +131,15 @@
       "evidence": "No certified selected original; Lossau ceiling candidate photograph noncommercial",
       "nextAction": "Find authentically depicted original and independent commercially compatible photo",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkMobileDisposition": {
+        "batch": "W100",
+        "classification": "NO_SUITABLE_DEDICATED_SUBJECT_PHOTO",
+        "evidence": "W100 Sano di Pietro Death of Jerome and apparition to Cyril, 2324x2052. Historical contextual painting, St Cyril is not a legible main subject; early-panel style also not aligned with curator preference.",
+        "next": "Do not promote contextual scene as a St Cyril hero.",
+        "ratingsUnchanged": true,
+        "productionRightsApproved": false
+      }
     },
     {
       "categoryIndex": 42,
@@ -132,7 +148,15 @@
       "evidence": "Netti G32-002 provenance/saint identity unresolved; old Commons icon is different",
       "nextAction": "Certify exact saint and source image; no icon mistaken for naturalistic selected painting",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkMobileDisposition": {
+        "batch": "W100",
+        "classification": "INSTITUTIONAL_ENDPOINT_FAILED",
+        "evidence": "W100 verified Netti Sant'Effremo page only offers website logo and flags; Bari official museum source denied (HTTP 403). No subject image acquired.",
+        "next": "Need independently accessible source photo of the exact Netti painting.",
+        "ratingsUnchanged": true,
+        "productionRightsApproved": false
+      }
     },
     {
       "categoryIndex": 43,
@@ -141,7 +165,15 @@
       "evidence": "Langlois Bordeaux source identified; Leduc church interior unsuitable; Prado Commons photo depicts Lawrence side",
       "nextAction": "Find exact front image of Langlois or true Hilary verso; do not reuse Lawrence front",
       "ratingChanged": false,
-      "publicationApproved": false
+      "publicationApproved": false,
+      "bulkMobileDisposition": {
+        "batch": "W100",
+        "classification": "INSTITUTIONAL_ENDPOINT_NOT_AN_ART_IMAGE",
+        "evidence": "W100 both French POP heritage pages return undefined image URL and institutional logo, not the Langlois painting. No image acquired.",
+        "next": "Do not accept undefined CDN URL; find exact original from an independent source.",
+        "ratingsUnchanged": true,
+        "productionRightsApproved": false
+      }
     },
     {
       "categoryIndex": 48,
@@ -226,6 +258,14 @@
         "qaPath": "data/calendar/sacred-art-review-uploads/20261016-w99-full-batch-mobile-QA-dispositions.v1.json",
         "selectionChanged": false,
         "commercialReleaseApproved": false
+      },
+      "bulkMobileDisposition": {
+        "batch": "W100",
+        "classification": "GOOD_MOBILE_THEMATIC_CANDIDATE_UNSELECTED",
+        "evidence": "W100 Gaulli Christ in Glory, 1500x2000, visually dignified and readable at phone width, but not explicitly identified as liturgical Christ the King; Yale Christ in Glory with Peter/Paul, 997x1920, is faded and crowded; Batoni Sacred Heart is thematically different and MUST NOT be substituted.",
+        "next": "Assess Gaulli iconographic suitability and photo rights; do not count Sacred Heart as literal Christ the King.",
+        "ratingsUnchanged": true,
+        "productionRightsApproved": false
       }
     },
     {
@@ -295,7 +335,7 @@
       "publicationApproved": false
     }
   ],
-  "lastReconciled": "2026-10-16 W99",
+  "lastReconciled": "2026-10-16 W100 one-pass image QA",
   "w99Stats": {
     "attemptedPhotoFiles": 7,
     "downloadedAndDecoded": 7,
@@ -305,5 +345,33 @@
     "retainedButHeldSubjectCategories": 2,
     "strictNewlyCertified": 0,
     "baseline": "146/168"
+  },
+  "w100Summary": {
+    "imageFilesDownloaded": 7,
+    "downloadSuccesses": 7,
+    "sourceProbePages": 4,
+    "sourceProbeAccessible": 3,
+    "probeEndpointsYieldingPaintingImages": 0,
+    "subjectCategoriesWithImageCandidates": [
+      26,
+      83
+    ],
+    "subjectsStillWithoutUsefulTargetImage": [
+      41,
+      42,
+      43
+    ],
+    "candidateWorksNotAutoApproved": true,
+    "artifactId": 12058060924,
+    "sourceEndpointArtifactId": 12058066340
+  },
+  "nextExecutionPolicy": {
+    "stopMicroWaves": true,
+    "consolidateArtifacts": true,
+    "reviewAtMobileSize": true,
+    "noFixedPixelThreshold": true,
+    "prioritizeCoveringRemainingSubjects": true,
+    "separateResearchImageAvailabilityFromRightsAndUserApproval": true,
+    "noAutomaticPhysicalArtworkSubstitutions": true
   }
 }
