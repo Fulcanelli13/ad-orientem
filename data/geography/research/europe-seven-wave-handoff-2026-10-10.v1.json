@@ -1,0 +1,274 @@
+{
+  "schema": "EXPLORE_CROSS_PIPELINE_HANDOFF_V1",
+  "as_of": "2026-10-10",
+  "status": "RESEARCH_COORDINATION_ONLY_NO_PRODUCTION_MUTATION",
+  "canonical_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/665",
+  "authority": {
+    "europe_wave7_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/919",
+    "europe_seven_wave_file": "data/explore/europe-acquisition.seven-wave-coverage.review.v1.json",
+    "europe_source_files": [
+      "data/explore/europe-acquisition.wave1.research.v1.json",
+      "data/explore/europe-acquisition.wave2.research.v1.json",
+      "data/explore/europe-acquisition.wave3.research.v1.json",
+      "data/explore/europe-acquisition.wave4-national-depth.research.v1.json",
+      "data/explore/europe-acquisition.wave5-diocesan-index.research.v1.json",
+      "data/explore/europe-acquisition.wave6-eparchy-sanctuaries.research.v1.json",
+      "data/explore/europe-acquisition.wave7-sparse-country.research.v1.json"
+    ],
+    "canonical_seed_file": "data/geography/seed-registry.v1.json"
+  },
+  "baseline": {
+    "european_research_site_leads": 232,
+    "european_matched_existing_places": 22,
+    "european_unmatched_place_candidates": 210,
+    "european_sources": 175,
+    "european_associations": 227,
+    "worldwide_canonical_places": 182,
+    "note": "All EU counts are seven-wave main baseline, superseding PR #923's obsolete five-wave 187/22/165 counts."
+  },
+  "scope": {
+    "italian_source_cases": 15,
+    "irish_reference_entries": 3,
+    "total_european_crosswalk_rows": 18,
+    "ireland_repeat_europe_research_leads": [
+      "EUROPE:PLACE:IE:knock-shrine-of-our-lady",
+      "EUROPE:PLACE:IE:croagh-patrick-saint-patrick-pilgrimage-mountain"
+    ],
+    "italian_legal_site_identity_checks": "Exact title against seven-wave Europe and canonical seed; not sufficient to rule out aliases/complex relationships"
+  },
+  "owner_contract": {
+    "EUROPE_COUNTRY_ACQUISITION": "data/explore/europe-acquisition.* — sole European country, site discovery, and category association owner; PR #923 offers sources, not independent European Place additions.",
+    "GLOBAL_REFERENCE_BIBLIOGRAPHY": "data/geography/research/reference-census* — collect source works, original metadata, access/rights, national coverage and source-denominator accounting, particularly outside Europe.",
+    "CANONICAL_PLACE_IDS": "data/geography/seed-registry.v1.json — only after evidence-backed one-physical-place identity adjudication in future dedicated reviewed integration.",
+    "SHRINE_AND_PILGRIMAGE_RELATIONS": "data/shrines/ — only after Place identity and significance/source gates.",
+    "CUSTOMS_RELICS_APPARITIONS": "Existing source owners; crosslink via existing Place when allowed, never infer recognition, custody or France-relevance.",
+    "MAP_EDITORIAL_ARTWORK": "Excluded from source acquisition; no pins or media without later certification."
+  },
+  "import_policy": [
+    "Crosswalk by country plus original place, city, municipality and building complex, not title alone.",
+    "Known European site source metadata may enrich existing European leads; never increment EU Place lead totals from duplicate source references.",
+    "Do not create independent Europe candidate IDs on the global research pipeline.",
+    "For Italian PAMI case titles not yet appearing exactly in seven waves, deliver source+locality to the European pipeline; classify proposed uniqueness only after detailed original list reconciliation.",
+    "Recent European seven-wave totals supersede all older five-wave 187/165 statements in handoff reporting.",
+    "Report source rows, sources and unique physical-site candidates separately; never sum 512 gross rows with 232 European site identities.",
+    "No release changes, coordinates, source text reproduction, calendars, TLM schedules, relic authenticity or supernatural approvals."
+  ],
+  "rows": [
+    {
+      "source_record_id": "IT-OPPIDO-001",
+      "country_code": "IT",
+      "source_title": "Santuario Mariano Diocesano Basilica Madonna dei Poveri",
+      "locality": "Seminara, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-002",
+      "country_code": "IT",
+      "source_title": "Santuario del Santissimo Crocifisso",
+      "locality": "Terranova Sappo Minulio, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-003",
+      "country_code": "IT",
+      "source_title": "Santuario di San Rocco",
+      "locality": "Acquaro di Cosoleto, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-004",
+      "country_code": "IT",
+      "source_title": "Santuario di San Bartolomeo Apostolo",
+      "locality": "Giffone, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-005",
+      "country_code": "IT",
+      "source_title": "Santuario di San Biagio",
+      "locality": "Plaesano, Feroleto della Chiesa, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-006",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima del Rosario",
+      "locality": "Cittanova, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-007",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima Annunziata",
+      "locality": "Oppido Mamertina, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-008",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima del Carmine",
+      "locality": "Palmi, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-009",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima dell'Itria",
+      "locality": "Polistena, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-010",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima di Patmos",
+      "locality": "Rosarno, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-OPPIDO-011",
+      "country_code": "IT",
+      "source_title": "Santuario Maria Santissima delle Grazie",
+      "locality": "Tresilico, Oppido Mamertina, Calabria",
+      "source_url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-TRICARICO-001",
+      "country_code": "IT",
+      "source_title": "Santa Maria Fonte delle Grazie",
+      "locality": "Contrada Fonti, Tricarico, Matera",
+      "source_url": "https://www.pami.info/santuari/i-santuari-della-diocesi-di-tricarico/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT-TRICARICO-002",
+      "country_code": "IT",
+      "source_title": "San Giuseppe Lavoratore",
+      "locality": "Contrada Parata, Garaguso, Matera",
+      "source_url": "https://www.pami.info/santuari/i-santuari-della-diocesi-di-tricarico/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "ICCD_MODI_8396884055071",
+      "country_code": "IT",
+      "source_title": "Santuario diocesano di San Giovanni Paolo II",
+      "locality": "Les Combes",
+      "source_url": "https://www.pami.info/censimento_santuari/schede/Santuario_San_Giovanni_Paolo_II_Aosta.pdf",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IT_TORINO_CONSOLATA",
+      "country_code": "IT",
+      "source_title": "Santuario della Beata Vergine Consolata",
+      "locality": "Torino, Piemonte",
+      "source_url": "https://www.diocesi.torino.it/site/festa-della-consolata-patrona-della-diocesi-programma-delle-celebrazioni/",
+      "europe_wave_1_to_7_exact_title_matches": [],
+      "existing_seed_exact_title_matches": [],
+      "handoff": "EUROPE_SOURCE_ENRICHMENT_QUEUE",
+      "disposition": "NO_EXACT_TITLE_MATCH_IN_EUROPE_OR_SEED_NEEDS_PHYSICAL_AND_ALIAS_REVIEW",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IE-CBC-2025-01",
+      "country_code": "IE",
+      "source_title": "Knock Shrine",
+      "locality": "Knock, Co Mayo",
+      "source_url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "existing_canonical_place_id": "place:IE:knock-shrine",
+      "existing_europe_research_id": "EUROPE:PLACE:IE:knock-shrine-of-our-lady",
+      "handoff": "DO_NOT_CREATE_NEW_PLACE",
+      "disposition": "EXISTING_CANONICAL_PLACE_AND_EUROPE_WAVE1",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IE-CBC-2025-02",
+      "country_code": "IE",
+      "source_title": "Croagh Patrick",
+      "locality": "Murrisk / Westport, Co Mayo",
+      "source_url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "existing_canonical_place_id": null,
+      "existing_europe_research_id": "EUROPE:PLACE:IE:croagh-patrick-saint-patrick-pilgrimage-mountain",
+      "handoff": "DO_NOT_CREATE_NEW_PLACE",
+      "disposition": "EXISTING_EUROPE_WAVE1_RESEARCH_LEAD_NO_CANONICAL_PLACE",
+      "new_place_counted": 0
+    },
+    {
+      "source_record_id": "IE-CBC-2025-03",
+      "country_code": "IE",
+      "source_title": "Saint Patrick's Purgatory, Lough Derg",
+      "locality": "Station Island, Co Donegal",
+      "source_url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "existing_canonical_place_id": "place:IE:lough-derg-station-island",
+      "existing_europe_research_id": null,
+      "handoff": "DO_NOT_CREATE_NEW_PLACE",
+      "disposition": "EXISTING_CANONICAL_PLACE_NOT_NEW",
+      "new_place_counted": 0
+    }
+  ]
+}

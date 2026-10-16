@@ -1,0 +1,129 @@
+{
+  "schema": "EXPLORE_WIKIPEDIA_HOLY_LAND_CONCEPTS_V1",
+  "source_url": "https://en.wikipedia.org/wiki/List_of_Christian_holy_places_in_the_Holy_Land",
+  "as_of": "2026-10-10",
+  "scope": "Selected 17 biblical geo concepts with distinct building/route/tradition qualifications, not complete Holy Land Wikipedia page",
+  "concepts": [
+    {
+      "name": "Holy Sepulchre",
+      "country_hint": "PS",
+      "relation": "PUBLISHED_SHARED_CHURCH",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Nativity Basilica",
+      "country_hint": "PS",
+      "relation": "PUBLISHED_SHARED_CHURCH",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Cenacle",
+      "country_hint": "PS",
+      "relation": "HISTORIC_ROOM_SUBSITE",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Golgotha",
+      "country_hint": "PS",
+      "relation": "SUBSITE_OF_HOLY_SEPULCHRE",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Gethsemane",
+      "country_hint": "PS",
+      "relation": "MULTI_FEATURE_COMPLEX",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Mount Tabor",
+      "country_hint": "IL",
+      "relation": "TRADITIONAL_TRANSFIGURATION",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Nazareth Annunciation",
+      "country_hint": "IL",
+      "relation": "ORIGINAL_CUSTODY_CHECK",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Ein Karem Visitation",
+      "country_hint": "PS",
+      "relation": "CATHOLIC_CUSTODIAN_LISTED",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Qasr al Yahud",
+      "country_hint": "PS",
+      "relation": "BAPTISM_WEST_BANK",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Al Maghtas",
+      "country_hint": "JO",
+      "relation": "BAPTISM_JORDAN_EAST_BANK",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Cana Kafr Kanna",
+      "country_hint": "IL",
+      "relation": "RIVAL_IDENTIFICATION",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Qana Lebanon",
+      "country_hint": "LB",
+      "relation": "RIVAL_IDENTIFICATION",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Emmaus El Qubeibeh",
+      "country_hint": "PS",
+      "relation": "RIVAL_IDENTIFICATION",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Emmaus Nicopolis",
+      "country_hint": "IL",
+      "relation": "RIVAL_IDENTIFICATION",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Mount Nebo",
+      "country_hint": "JO",
+      "relation": "MOSES_DEATH_SITE_NOT_TOMB",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Jacob Well",
+      "country_hint": "PS",
+      "relation": "BIBLICAL_WELL",
+      "canonical_place_id": null,
+      "published": false
+    },
+    {
+      "name": "Road to Damascus",
+      "country_hint": "SY",
+      "relation": "EVENT_REGION_NOT_POINT",
+      "canonical_place_id": null,
+      "published": false
+    }
+  ],
+  "canonical_pins_added": 0,
+  "source_gate": "Custodia Terrae Sanctae original directory first; archeology and custody for alternatives; each place/facility has separate physical identity. Administrative geography is a review hint only."
+}
