@@ -38,7 +38,22 @@ try{
    try{
     const r=await source.resolveDay(date);
     const d=r?.day??{},p=r?.proper?.data??{},comm=d.commemorations??[];
+    let linkProbes=null;
+    if(date==="2026-10-09"){
+      try{
+        const {inspectP1InternalMissalLink}=await import("/src/calendar/p1-internal-missal-link-resolution.js");
+        const anchors=(await (await fetch("/data/calendar/p1-internal-missal-navigation.v1.json")).json()).exampleInternalAnchors;
+        linkProbes=anchors.map(anchor=>{
+          const result=inspectP1InternalMissalLink({anchor,calendarResolution:r,proper:r.proper,language:"en"});
+          return {anchorId:anchor.anchorId,status:result.status,reason:result.reason??null,
+            sourcePath:result.sourcePath??null,readerParagraphId:result.readerParagraphId??null,
+            route:result.route,readOnly:result.readOnly};
+        });
+      }catch(e){linkProbes=[{importOrProjectionError:String(e?.message??e)}];}
+    }
+
     reports.push({
+      linkProbes,
       date,status:r?.status??null,dayDate:r?.date??null,
       principal:{id:d.main?.id??null,path:d.main?.path??null,rank:d.main?.rank??null,title:d.main?.title??null},
       proper:{status:r?.proper?.status??null,path:p.sourcePath??r?.proper?.sourcePath??null,
