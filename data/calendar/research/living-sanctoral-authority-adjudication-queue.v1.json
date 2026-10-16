@@ -3,7 +3,7 @@
   "asOf": "2026-10-16",
   "publicationStatus": "REVIEW_NOT_RUNTIME",
   "counts": {
-    "totalEvidenceEdges": 329,
+    "totalEvidenceEdges": 338,
     "modernGeneralFormalDecree": 9,
     "modernGeneralPapalAnnouncement": 1,
     "archived1962SourceIdentityNotLegalCertification": 31,
@@ -19,10 +19,12 @@
     "particularBlessedEraExplicitFromDateEdges": 2,
     "modernGeneralJuridicalEffectiveDatesCertifiedByThisPass": 0,
     "particularPermissionsStillNeedJurisdictionIdentification": 2,
-    "approvedNationalProperSourceEdges": 15,
-    "approvedNationalProperCoveredIndividuals": 13,
-    "approvedNationalProperSourceDocuments": 2,
-    "sourceQualifiedNationalDateDivergences": 7
+    "approvedNationalProperSourceEdges": 24,
+    "approvedNationalProperCoveredIndividuals": 19,
+    "approvedNationalProperSourceDocuments": 5,
+    "sourceQualifiedNationalDateDivergences": 11,
+    "englandWalesProperEdges": 9,
+    "englandWalesDifferent1962CalendarDateEdges": 4
   },
   "priorities": [
     {
@@ -392,7 +394,16 @@
         "p2-national-ca-003",
         "p2-national-ca-004",
         "p2-national-ca-005",
-        "p2-national-ca-006"
+        "p2-national-ca-006",
+        "p2-national-england-001",
+        "p2-national-england-002",
+        "p2-national-england-003",
+        "p2-national-england-004",
+        "p2-national-england-005",
+        "p2-national-england-006",
+        "p2-national-wales-001",
+        "p2-national-wales-002",
+        "p2-national-wales-003"
       ],
       "task": "Recognize as jurisdiction-specific modern national celebration and rank only. Historical effective dates and traditional Mass authorization stay unverified; never promote to universal or 1962."
     }
@@ -458,6 +469,25 @@
       "originalApprovalDate": "2016-01-27",
       "documentEditionLastUpdated": "2025-04-01",
       "effectiveFrom": "UNKNOWN",
+      "retrojectYears": false
+    },
+    {
+      "country": "ENGLAND",
+      "jurisdiction": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "entryCount": 6,
+      "rankVerified": true,
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml",
+      "effectiveFrom": null,
+      "retrojectYears": false
+    },
+    {
+      "country": "WALES",
+      "jurisdiction": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "entryCount": 3,
+      "rankVerified": true,
+      "sourceUrl": "https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml",
+      "currentOctober2026Source": "https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml",
+      "effectiveFrom": null,
       "retrojectYears": false
     }
   ],
@@ -531,6 +561,53 @@
       ],
       "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
       "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.catherine-siena",
+      "jurisdiction": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "certifiedDate": "04-29",
+      "existingOtherMonthDays": [
+        "04-30"
+      ],
+      "P0Outcome": "SEPARATE_1962_AND_MODERN_PROPER_SOURCE"
+    },
+    {
+      "subjectId": "saint.catherine-siena",
+      "jurisdiction": "DIOCESES_OF_WALES_MODERN_ROMAN",
+      "certifiedDate": "04-29",
+      "existingOtherMonthDays": [
+        "04-30"
+      ],
+      "P0Outcome": "SEPARATE_1962_AND_MODERN_PROPER_SOURCE"
+    },
+    {
+      "subjectId": "saint.bede-venerable",
+      "jurisdiction": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "certifiedDate": "05-25",
+      "existingOtherMonthDays": [
+        "05-27"
+      ],
+      "P0Outcome": "SEPARATE_1962_AND_MODERN_PROPER_SOURCE"
+    },
+    {
+      "subjectId": "saint.gregory-great",
+      "jurisdiction": "DIOCESES_OF_ENGLAND_MODERN_ROMAN",
+      "certifiedDate": "09-03",
+      "existingOtherMonthDays": [
+        "03-12"
+      ],
+      "P0Outcome": "SEPARATE_1962_AND_MODERN_PROPER_SOURCE"
+    }
+  ],
+  "staleSourceExceptions": [
+    {
+      "subjectId": "saint.john-henry-newman",
+      "olderUrl": "https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml",
+      "currentYearUrl": "https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml",
+      "year": 2026,
+      "status": "OLD_BLESSED_OPTIONAL_VS_CURRENT_SAINT_DOCTOR_FEAST",
+      "rule": "CURRENT_YEAR_SUPERSEDES_STALE_SUMMARY",
+      "historicalEffectiveDate": null
     }
   ]
 }

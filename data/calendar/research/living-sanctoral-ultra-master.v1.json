@@ -9,8 +9,8 @@
     "canonicalPersons": 293,
     "collectiveGroups": 13,
     "existingDateEdges": 26,
-    "newDateEdges": 303,
-    "totalDateEdges": 329,
+    "newDateEdges": 312,
+    "totalDateEdges": 338,
     "existingDatedIndividuals": 21,
     "datedIndividuals": 293,
     "newlyDatedIndividuals": 272,
@@ -479,7 +479,8 @@
       "doctorDeclaredOn": null,
       "traditional1962SourceId": "sancti:04-21:3:w",
       "dateEvidenceEdgeIds": [
-        "p2-residue-011"
+        "p2-residue-011",
+        "p2-national-england-001"
       ],
       "attestedMonthDays": [
         "04-21"
@@ -779,9 +780,11 @@
       "doctorDeclaredOn": null,
       "traditional1962SourceId": "sancti:05-27:3:w",
       "dateEvidenceEdgeIds": [
-        "p2-residue-023"
+        "p2-residue-023",
+        "p2-national-england-003"
       ],
       "attestedMonthDays": [
+        "05-25",
         "05-27"
       ],
       "currentRomanUniversalClaim": false,
@@ -1079,9 +1082,12 @@
       "doctorDeclaredOn": "1970-10-04",
       "traditional1962SourceId": "sancti:04-30:3:w",
       "dateEvidenceEdgeIds": [
-        "p2-residue-031"
+        "p2-residue-031",
+        "p2-national-england-002",
+        "p2-national-wales-001"
       ],
       "attestedMonthDays": [
+        "04-29",
         "04-30"
       ],
       "currentRomanUniversalClaim": false,
@@ -2285,10 +2291,12 @@
       "doctorDeclaredOn": null,
       "traditional1962SourceId": "sancti:03-12:3:w",
       "dateEvidenceEdgeIds": [
-        "p2-residue-001"
+        "p2-residue-001",
+        "p2-national-england-005"
       ],
       "attestedMonthDays": [
-        "03-12"
+        "03-12",
+        "09-03"
       ],
       "currentRomanUniversalClaim": false,
       "particularEvidence": false,
@@ -2805,7 +2813,9 @@
       "doctorDeclaredOn": "2025-11-01",
       "traditional1962SourceId": null,
       "dateEvidenceEdgeIds": [
-        "p2-existing-020"
+        "p2-existing-020",
+        "p2-national-england-006",
+        "p2-national-wales-003"
       ],
       "attestedMonthDays": [
         "10-09"
@@ -5465,7 +5475,9 @@
       "doctorDeclaredOn": null,
       "traditional1962SourceId": null,
       "dateEvidenceEdgeIds": [
-        "p2-dicastery-b6-033"
+        "p2-dicastery-b6-033",
+        "p2-national-england-004",
+        "p2-national-wales-002"
       ],
       "attestedMonthDays": [
         "08-09"

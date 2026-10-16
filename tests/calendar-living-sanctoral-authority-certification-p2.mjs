@@ -2,9 +2,13 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const read=(name)=>JSON.parse(readFileSync(new URL("../data/calendar/research/living-sanctoral-"+name+".v1.json",import.meta.url),"utf8"));
 const edges=read("date-evidence").dateEdges, audit=read("authority-audit"), acts=read("modern-general-acts"), queue=read("authority-adjudication-queue");
-const verdicts=audit.edgeDecisions, byId=new Map(verdicts.map(v=>[v.evidenceEdgeId,v]));
-assert.equal(edges.length,329);assert.equal(verdicts.length,329);assert.equal(byId.size,edges.length);
-assert.deepEqual(Object.keys(audit.summary).sort(),Object.keys(queue.counts).sort());
+const british=read("england-wales-authority-extension"), scoped=read("england-wales-propers-certified");
+const verdicts=[...audit.edgeDecisions,...british.edgeDecisions], byId=new Map(verdicts.map(v=>[v.evidenceEdgeId,v]));
+assert.equal(edges.length,338);assert.equal(verdicts.length,338);assert.equal(byId.size,edges.length);
+assert.equal(audit.summary.totalEvidenceEdges,329);
+assert.equal(queue.counts.totalEvidenceEdges,338);
+assert.equal(british.baseAuditEdgeCount,329);
+assert.equal(british.completeAggregateEdgeCount,338);
 for(const edge of edges){
  const result=byId.get(edge.edgeId);assert.ok(result,"Missing edge verdict "+edge.edgeId);
  assert.equal(result.subjectId,edge.subjectId);assert.equal(result.monthDay,edge.monthDay);
@@ -22,7 +26,7 @@ assert.deepEqual(byDecision,{
  EPISCOPAL_LOCAL_CALENDAR_WITNESS:11,
  PARTICULAR_INSTITUTE_OR_CHAPEL_WITNESS:8,
  ARCHIVAL_1962_IDENTITY_REFERENCE:31,
- EPISCOPAL_APPROVED_NATIONAL_PROPER_CALENDAR:15
+ EPISCOPAL_APPROVED_NATIONAL_PROPER_CALENDAR:24
 });
 const ins=acts.acts;
 assert.equal(ins.length,10);assert.equal(new Set(ins.map(a=>a.subjectId)).size,10);
@@ -51,7 +55,7 @@ assert.equal(audit.summary.modernGeneralJuridicalEffectiveDatesCertifiedByThisPa
 assert.equal(queue.particularBeatificationGrant.rankAtGrant,"BLESSED");
 const local=read("particular-source-verification");assert.equal(local.records.length,8);
 assert.ok(local.records.find(x=>x.subjectId==="saint.jadwiga-queen-poland").sourceUrl.includes("/chrystus-na-krowodrzy/"));
-assert.equal(queue.priorities.reduce((n,x)=>n+x.edgeIds.length,0),329);
+assert.equal(queue.priorities.reduce((n,x)=>n+x.edgeIds.length,0),338);
 const national=read("national-propers-certified");
 assert.equal(national.certifiedEntries.length,15);
 assert.equal(national.counts.uniqueCanonicalIndividuals,13);
@@ -81,4 +85,26 @@ assert.equal(cv("saint.marianne-cope","US").celebrationMonthDay,"01-23");
 assert.equal(cv("saint.damien-de-veuster","US").celebrationMonthDay,"05-10");
 assert.equal(cv("saint.marguerite-dyouville","CA").celebrationMonthDay,"10-16");
 assert.ok(audit.edgeDecisions.every(x=>x.runtimeImportAuthorized===false));
-console.log("P2 authority and jurisdiction audit PASS: 329/329 edges incl. 15 national proper certifications; no assumed 1962 permissions");
+assert.equal(scoped.observances.length,9);assert.equal(british.edgeDecisions.length,9);
+assert.equal(new Set(scoped.observances.map(x=>x.subjectId)).size,6);
+assert.equal(scoped.observances.filter(x=>x.jurisdiction==="ENGLAND").length,6);
+assert.equal(scoped.observances.filter(x=>x.jurisdiction==="WALES").length,3);
+assert.ok(scoped.constraints.historical1962Unchanged);
+assert.ok(scoped.constraints.NewmanWalesSummarySupersededFor2026);
+for(const x of scoped.observances){
+ const edge=edges.find(y=>y.edgeId===x.sourceEvidenceId);
+ assert.ok(edge && edge.subjectId===x.subjectId && edge.monthDay===x.monthDay);
+ assert.equal(edge.dateClaimKind,x.rank);
+ assert.equal(edge.mass1962Effect,"NONE");
+ assert.equal(edge.importPolicy,"RESEARCH_ONLY");
+ assert.equal(edge.effective.juridicalEffectiveFrom,null);
+ assert.equal(byId.get(edge.edgeId).liturgicalRank,x.rank);
+ assert.equal(byId.get(edge.edgeId).runtimeImportAuthorized,false);
+}
+for(const country of ["ENGLAND","WALES"]){
+ const newman=scoped.observances.find(x=>x.jurisdiction===country&&x.subjectId==="saint.john-henry-newman");
+ assert.ok(newman && newman.rank==="FEAST" && newman.monthDay==="10-09");
+ assert.ok(newman.sourceUrl.endsWith("/2026/Oct.shtml"));
+}
+assert.equal(queue.nationalProperDivergences.length,11);
+console.log("P2 authority audit PASS: 338/338 source edges with 9 England/Wales extension verdicts; zero 1962 permissions");

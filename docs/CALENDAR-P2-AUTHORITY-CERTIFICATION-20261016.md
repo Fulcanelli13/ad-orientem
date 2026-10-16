@@ -55,3 +55,21 @@ Seven certified **source-qualified date divergences** from existing date-profile
 The **15 additional evidence edges bring the single canonical ledger to 329** and the P2-researched edge count to **303**, with date coverage remaining 293/293 individuals, 13/13 groups. The new edges have competent national territory and rank established. They do **not** prove legal effective-from dates for earlier years, 1962 Mass eligibility, or worldwide universal inscription. All are `eligibleForRuntime:false`, and P0/P1 boundaries are unchanged. Structured certificates: `living-sanctoral-national-propers-certified.v1.json`.
 
 Source links: https://www.usccb.org/resources/2026cal.pdf and https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf. The national witnesses are separately corroborated by USCCB 2026 liturgical entries, the USCCB proper-calendar page and the CCCB's 2016 note identifying Kateri's Canadian feast day. These sources belong to the modern national Roman calendars only.
+
+
+## England and Wales national-proper reconciliation — 16 October 2026
+
+Nine official source-qualified observances are added for six existing canonical saint IDs: England Anselm 21 April (optional memorial), Catherine of Siena 29 April (Feast), Bede 25 May (Memorial), Teresa Benedicta/Edith Stein 9 August (Feast), Gregory the Great 3 September (Feast), and John Henry Newman 9 October (Feast); Wales Catherine 29 April (Feast), Edith Stein 9 August (Feast), and Newman 9 October (Feast).
+
+The Wales online summary still calls Newman Blessed with optional rank; the year-specific October 2026 calendar identifies him as Saint, Doctor of the Church, and Feast in both jurisdictions. Preserve the current 2026 witness without asserting when the new rank became legally effective.
+
+Four scoped evidence edges have a different day/month than the old 1962 source for the same saint: Catherine (England and Wales) 29 vs 30 April, Bede (England) 25 vs 27 May, Gregory (England) 3 September vs 12 March. These do not change Ad Orientem's 1962 observances.
+
+The existing 329-edge authority audit is preserved as its immutable first-pass source evaluation. Nine additional individual decisions are stored in `living-sanctoral-england-wales-authority-extension.v1.json`, joined by evidenceEdgeId in the integrity tests to certify **338/338** date edges. The principal research ledger, canonical person links, effective-date relationships, queue, compatibility export and authority rules all include the nine new records. P2 now has 338 date edges (312 researched since the original 26), still 293 canonical individuals and 13 collective groups. Every new record remains `RESEARCH_ONLY`; no modern national rule is promoted to universal or 1962 authority.
+
+Official primary-source records:
+- https://www.liturgyoffice.org.uk/Calendar/National/England1.shtml
+- https://www.liturgyoffice.org.uk/Calendar/National/Wales1.shtml
+- https://www.liturgyoffice.org.uk/Calendar/2026/Oct.shtml
+
+The source calendars include many saints beyond this P2 cohort (including George, Patrick, David and the English/Welsh martyrs). Reconcile them through the project's full Saints canonical registry, not by inventing duplicate P2 identities.
