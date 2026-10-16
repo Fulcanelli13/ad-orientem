@@ -9,7 +9,7 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 - After new, source-visited batches: **115** dated individual identities, leaving **178** undated (net backlog reduction **94**).
 - Evidence ledger now **127** edges including **101** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
-- **9** group IDs with a dated source witness.
+- **10** group IDs with a dated source witness.
 - New date-profile coverage: **12** canonisation-year collections, with 39 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
@@ -27,9 +27,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `living-sanctoral-authorities.v1.json`: source-competence and jurisdiction classes.
 - `living-sanctoral-effective-dates.v1.json`: date-effective and Doctor-declaration crosswalk.
 - `living-sanctoral-identity-reconciliation.v1.json`: aliases, group policy, evidence contradictions.
-- `living-sanctoral-review-queue.v1.json`: undated subjects and 42 unmined (for memorial dates) already-indexed source-year collections.
+- `living-sanctoral-review-queue.v1.json`: undated subjects and 39 unmined (for memorial dates) already-indexed source-year collections.
 - `living-sanctoral-compatible-export.v1.json`: non-published compatibility projection; every candidate `eligibleForRuntime=false`.
-- `living-sanctoral-new-source-batch.v1.json`: nine-year Dicastery source batch for reproducibility.
+- `living-sanctoral-new-source-batch.v1.json`: twelve-year Dicastery source batch for reproducibility.
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
