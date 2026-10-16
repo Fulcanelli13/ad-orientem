@@ -23,7 +23,16 @@
       "commemorationPathPattern": "^Tempora/Pent[0-9]+-0$",
       "commemoration": "XXIII Sunday after Pentecost",
       "source": "https://ordo.fsspx.org/day/2026-11-01?lang=en",
-      "correction": "One privileged Sunday commemoration in Mass orations; universal 1st-class sanctoral feast takes precedence"
+      "correction": "One privileged Sunday commemoration in Mass orations; universal 1st-class sanctoral feast takes precedence",
+      "rubricalClaim": {
+        "id": "ALL_SAINTS_OCCURRENT_SUNDAY",
+        "clauses": [
+          "RG 108(a)",
+          "RG 111(a)"
+        ],
+        "en": "The source-resolved Sunday is a privileged commemoration beneath the first-class feast of All Saints.",
+        "fr": "Le dimanche attesté par la source fait l’objet d’une commémoraison privilégiée sous la fête de première classe de la Toussaint."
+      }
     },
     {
       "date": "2026-11-30",
@@ -32,7 +41,17 @@
       "commemorationPathPattern": "^Tempora/Adv1-1$",
       "commemoration": "Monday after First Sunday of Advent",
       "source": "https://ordo.fsspx.org/day/2026-11-30?lang=en",
-      "correction": "Advent III-class feria is privileged when displaced by II-class sanctoral feast"
+      "correction": "Advent III-class feria is privileged when displaced by II-class sanctoral feast",
+      "rubricalClaim": {
+        "id": "ST_ANDREW_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(c)"
+        ],
+        "en": "The source-resolved Advent feria is commemorated as privileged beneath the second-class feast of St Andrew.",
+        "fr": "La férie de l’Avent attestée par la source est commémorée à titre privilégié sous la fête de deuxième classe de saint André."
+      }
     },
     {
       "date": "2026-12-08",
@@ -41,7 +60,17 @@
       "commemorationPathPattern": "^Tempora/Adv2-2$",
       "commemoration": "Tuesday of Second Week of Advent",
       "source": "https://missale.online/festkalender/en/2026/druck",
-      "correction": "Advent III-class feria is privileged when displaced by I-class sanctoral feast"
+      "correction": "Advent III-class feria is privileged when displaced by I-class sanctoral feast",
+      "rubricalClaim": {
+        "id": "IMMACULATE_CONCEPTION_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(a)"
+        ],
+        "en": "The source-resolved Advent feria is a privileged commemoration beneath the first-class Immaculate Conception.",
+        "fr": "La férie de l’Avent attestée par la source fait l’objet d’une commémoraison privilégiée sous l’Immaculée Conception, fête de première classe."
+      }
     }
   ],
   "guards": [
