@@ -1,0 +1,107 @@
+{
+  "schema": "ao.saints.parallel-owner-identity-bridge.v1",
+  "status": "EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES",
+  "as_of": "2026-10-15",
+  "purpose": "Link canonically sourced identities across existing Saints, Calendar and Art work without renaming, cloning or merging owners.",
+  "owners": {
+    "saints": {
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "pr": 1227,
+      "profile": "data/saints/holiness-first-editorial-pilot-20261015.v1.json"
+    },
+    "calendar": {
+      "branch": "calendar/1224-living-sanctoral-pilot",
+      "pr": 1226,
+      "roster": "data/calendar/doctors-of-church-roster.review.v1.json",
+      "canonizations": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+      "protectedFeasts": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json"
+    },
+    "sacredArt": {
+      "pr": 1231,
+      "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+      "source": "data/research/sacred-visual-w62-saints-map-identity-art-image-links-20261015.v1.json"
+    }
+  },
+  "observed_2026": {
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38729330632",
+    "json_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38729330632/artifacts/11969382750",
+    "extractor": "tests/saints-calendar-year-census.mjs",
+    "days": 365,
+    "sanctoral_principals": 165,
+    "temporal_principals": 129,
+    "source_cycle_other": 71,
+    "other_feria": 59,
+    "other_common_bvm": 12,
+    "days_with_named_commemorations": 112,
+    "named_commemoration_occurrences": 117,
+    "distinct_named_commemoration_strings": 115,
+    "distinct_principal_source_ids": 297,
+    "publication_scope": "REAL_2026_RESOLVER_OBSERVATIONS_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION",
+    "latest_reproduced_workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221",
+    "latest_dual_json_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38731156221/artifacts/11970800681"
+  },
+  "identity_links": [
+    {
+      "saints_id": "saint:therese-of-lisieux",
+      "calendar_person_id": "saint.therese-lisieux",
+      "relation": "SAME_PERSON_EXACT_AUTHORITATIVE_LITURGICAL_SOURCE_ID",
+      "observed_calendar_2026_principal_id": "sancti:10-03:3:w",
+      "observed_date": "2026-10-03",
+      "calendar_person_source": "data/calendar/doctors-of-church-roster.review.v1.json",
+      "status": "EXACT_SUPPORTED_NO_OWNER_MUTATION"
+    },
+    {
+      "saints_id": "saint:claude-la-colombiere",
+      "calendar_person_id": "saint.claude-la-colombiere",
+      "relation": "SAME_PERSON_EXACT_NAME_AND_POST1960_CANONIZATION",
+      "official_canonization_date": "1992-05-31",
+      "calendar_person_source": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+      "observed_calendar_2026_principal_id": null,
+      "status": "EXACT_SUPPORTED_NOT_1962_DEFAULT_FEAST"
+    }
+  ],
+  "nonlinks": [
+    {
+      "saints_id": "blessed:jacques-desire-laval",
+      "calendar_person_id": "saint.francois-de-montmorency-laval",
+      "relation": "DISTINCT_PERSON_DO_NOT_MERGE",
+      "evidence": "Name Laval only: Blessed Jacques-Désiré Laval of Mauritius is not canonized François de Montmorency-Laval of Quebec (2014 canonization)."
+    },
+    {
+      "saints_id": "saint:bernadette-soubirous",
+      "calendar_person_id": null,
+      "relation": "NO_ASSIGNED_ID_IN_TWO_REVIEWED_CALENDAR_SUBSETS_NOT_A_NEGATIVE_PERSON_CLAIM"
+    },
+    {
+      "saints_id": "saint:peter-chanel",
+      "calendar_person_id": null,
+      "relation": "NO_ASSIGNED_ID_IN_TWO_REVIEWED_CALENDAR_SUBSETS_NOT_A_NEGATIVE_PERSON_CLAIM"
+    },
+    {
+      "saints_id": "saint:margaret-mary-alacoque",
+      "calendar_person_id": null,
+      "relation": "OBSERVED_1962_PRINCIPAL_CONFIRMED_PERSON_ROSTER_ALIAS_NOT_YET_CERTIFIED",
+      "observed_calendar_2026_principal_id": "sancti:10-17:3:w"
+    }
+  ],
+  "collective_policy": "Calendar's 13 canonization martyr groups and Art's 311 historical saint/group component occurrences must be treated as groups/occurrences, not individual saint ID expansion.",
+  "calendar_policy": "Only actual observed principal and commemoration identifiers from the source resolver; keep 1962 liturgical precedence in Calendar owner.",
+  "art_policy": "Research link does not approve paintings or create a new canonical artwork master.",
+  "next": "Joint exact source-ID and name adjudication for all 2026 Sanctoral principals and named commemorations; compare with complete nominal 1962, 2024/2027 displaced feats, and W59/W62 historical 252-day/311-occurrence corpus.",
+  "subject_demand_review": {
+    "source_file": "saints-2026-daily-subject-demand-review.json",
+    "generator": "tools/saints/project-observed-day-subject-demand.mjs",
+    "review_days": 365,
+    "days_with_source_title_mentions": 222,
+    "provisional_sanctoral_principal_titles": 165,
+    "named_commemoration_title_occurrences": 117,
+    "total_source_title_mentions_not_unique_saints": 282,
+    "lexical_hint_individual_or_person": 187,
+    "lexical_hint_collective_or_group": 41,
+    "lexical_hint_marian": 17,
+    "lexical_hint_other": 37,
+    "canonical_person_id_promotions": 0,
+    "approved_artwork_promotions": 0,
+    "categorisation_note": "Keyword-only hints for an editorial queue; not a statement of sainthood, group membership, painting demand or missing art. All 365 daily image states remain NOT_YET_AUDITED."
+  }
+}

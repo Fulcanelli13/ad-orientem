@@ -1,0 +1,43 @@
+name: Saints native mobile and desktop visual acceptance
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/find/saints-*.js'
+      - 'src/find/browser-entry.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/explore-projection.js'
+      - 'src/find/heritage-presentation.js'
+      - 'data/saints/**'
+      - 'tests/saints-native-visual-acceptance.mjs'
+      - '.github/workflows/saints-visual-acceptance.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: saints-visual-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  saints-phone-desktop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chrome browser
+        run: npx playwright install --with-deps chromium
+      - name: Verify native Saints in actual browser (390px and desktop)
+        run: node tests/saints-native-visual-acceptance.mjs
+      - name: Upload screenshots even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saints-native-visual-acceptance
+          path: artifacts/saints-visual-acceptance/*.png
+          if-no-files-found: warn
+          retention-days: 14

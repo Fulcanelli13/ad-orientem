@@ -1,0 +1,246 @@
+{
+  "schema": "ao.saints.observed-2026-twelve-personlike-source-reconciliation.v1",
+  "status": "SOURCE_OWNER_ARCHIVE_ANCHORS_AND_EXCEPTIONS_NOT_CANONICAL_PERSON_CERTIFICATION",
+  "produced_at": "2026-10-16",
+  "owners": {
+    "observed_source": "GitHub Actions 2026 original Calendar resolver run 38848213986 / saints-2026-observed-42-source-gaps.json",
+    "historical": "data/saints/historical-v4333-311-components.recovered.v1.json",
+    "identity": "data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json",
+    "calendar_owner": "Calendar PR #1226 remains the rank/colour/feast authority"
+  },
+  "scope": "Exactly 12 source headings from the 42 raw observed source IDs missing in the historical ART OBSERVANCE id set; archived person/art subject records are a different namespace.",
+  "counts": {
+    "personlike_observed_gap_sources": 12,
+    "same_date_archived_individual_subject_anchors": 9,
+    "special_historical_companion_or_commemoration_overrides": 2,
+    "held_apostolic_conflict": 1,
+    "confirmed_new_unique_canonized_saints": 0,
+    "approved_image_assignments": 0,
+    "approved_1962_mass_changes": 0
+  },
+  "records": [
+    {
+      "observed_source_id": "commemoration:12-04-barbara:4:r",
+      "observed_date_2026": "2026-12-04",
+      "observed_title_en": "St Barbara, Virgin and Martyr",
+      "documented_archived_subject_key": "saint.barbara-nicomedia",
+      "documented_archived_component_id": "cal.12-04.barbara-nicomedia-2",
+      "archived_nominal_date": "12-04",
+      "historical_observance_source_ids": [
+        "sancti:12-04:3:w"
+      ],
+      "historical_primary_source_id": "sancti:12-04:3:w",
+      "source_owner_comparison_status": "SPECIAL_OVERRIDE_COMMEMORATION_REVIEW",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "The archived 4 December source day contains a distinct Barbara artwork subject beside Peter Chrysologus, but only Peter Chrysologus appears in original_source_observances. Preserve Barbara as a separately observed commemoration, without assuming the historical art component certifies the current commemorated source ID."
+    },
+    {
+      "observed_source_id": "inseparable:sancti:06-29-petrus",
+      "observed_date_2026": "2026-06-30",
+      "observed_title_en": "St Peter, Apostle",
+      "documented_archived_subject_key": null,
+      "documented_archived_component_id": null,
+      "archived_nominal_date": "06-30",
+      "historical_observance_source_ids": [
+        "sancti:06-30:3:r"
+      ],
+      "historical_primary_source_id": "sancti:06-30:3:r",
+      "source_owner_comparison_status": "HELD_APOSTOLIC_SOURCE_CONTEXT_CONFLICT",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "2026 named commemoration identifies Peter under inseparable 29 June source; frozen 30 June historical source title reads Commemoration of St Paul although archive also contains a Peter apostle image. Explicit owner adjudication is required; neither Peter nor Paul artwork is automatically attached."
+    },
+    {
+      "observed_source_id": "sancti:05-16:3:w",
+      "observed_date_2026": "2026-05-16",
+      "observed_title_en": "St. Ubaldus",
+      "documented_archived_subject_key": "saint.ubaldus",
+      "documented_archived_component_id": "cal.05-16.ubaldus",
+      "archived_nominal_date": "05-16",
+      "historical_observance_source_ids": [
+        "sancti:05-16:4:w"
+      ],
+      "historical_primary_source_id": "sancti:05-16:4:w",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical original uses sancti:05-16:4:w, observed uses class 3. No change to feast rank."
+    },
+    {
+      "observed_source_id": "sancti:06-18:3:w",
+      "observed_date_2026": "2026-06-18",
+      "observed_title_en": "St. Ephrem of Syria",
+      "documented_archived_subject_key": "saint.ephrem-of-syria",
+      "documented_archived_component_id": "cal.06-18.ephrem-of-syria",
+      "archived_nominal_date": "06-18",
+      "historical_observance_source_ids": [
+        "sancti:06-18:3:r",
+        "sancti:06-18t:4:r"
+      ],
+      "historical_primary_source_id": "sancti:06-18:3:r",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:06-18:3:r, observed uses 3:w. Red/white source colour discrepancy remains a Calendar-owner hold."
+    },
+    {
+      "observed_source_id": "sancti:06-19:3:w",
+      "observed_date_2026": "2026-06-19",
+      "observed_title_en": "St. Julia of Falconieri",
+      "documented_archived_subject_key": "saint.julia-of-falconieri",
+      "documented_archived_component_id": "cal.06-19.julia-of-falconieri",
+      "archived_nominal_date": "06-19",
+      "historical_observance_source_ids": [
+        "sancti:06-19:3:r",
+        "sancti:06-19o:4:r"
+      ],
+      "historical_primary_source_id": "sancti:06-19:3:r",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:06-19:3:r versus observed 3:w; colour discrepancy not silently resolved."
+    },
+    {
+      "observed_source_id": "sancti:07-18:3:w",
+      "observed_date_2026": "2026-07-18",
+      "observed_title_en": "Camillus de Lellis",
+      "documented_archived_subject_key": "saint.camillus-de-lellis",
+      "documented_archived_component_id": "cal.07-18.camillus-de-lellis",
+      "archived_nominal_date": "07-18",
+      "historical_observance_source_ids": [
+        "sancti:07-18:3:r",
+        "sancti:07-18cc:4:r"
+      ],
+      "historical_primary_source_id": "sancti:07-18:3:r",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:07-18:3:r versus observed 3:w. Separate from the named martyr companions."
+    },
+    {
+      "observed_source_id": "sancti:07-20:3:w",
+      "observed_date_2026": "2026-07-20",
+      "observed_title_en": "St. Jerome Emiliani",
+      "documented_archived_subject_key": "saint.jerome-emiliani",
+      "documented_archived_component_id": "cal.07-20.jerome-emiliani",
+      "archived_nominal_date": "07-20",
+      "historical_observance_source_ids": [
+        "sancti:07-20:3:r",
+        "sancti:07-20o:4:w"
+      ],
+      "historical_primary_source_id": "sancti:07-20:3:r",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:07-20:3:r versus observed 3:w. Do not conflate with Saint Jerome the Doctor."
+    },
+    {
+      "observed_source_id": "sancti:07-23:3:r",
+      "observed_date_2026": "2026-07-23",
+      "observed_title_en": "St. Apollinaris",
+      "documented_archived_subject_key": "saint.apollinaris",
+      "documented_archived_component_id": "cal.07-23.apollinaris",
+      "archived_nominal_date": "07-23",
+      "historical_observance_source_ids": [
+        "sancti:07-23:3:w",
+        "sancti:07-23cc:4:r"
+      ],
+      "historical_primary_source_id": "sancti:07-23:3:w",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:07-23:3:w versus observed 3:r. Colour conflict preserved."
+    },
+    {
+      "observed_source_id": "sancti:07-29:3:w",
+      "observed_date_2026": "2026-07-29",
+      "observed_title_en": "St. Martha",
+      "documented_archived_subject_key": "saint.martha-bethany",
+      "documented_archived_component_id": "cal.07-29.martha-bethany",
+      "archived_nominal_date": "07-29",
+      "historical_observance_source_ids": [
+        "sancti:07-29:3:r",
+        "sancti:07-29cc:4:r"
+      ],
+      "historical_primary_source_id": "sancti:07-29:3:r",
+      "source_owner_comparison_status": "SPECIAL_OVERRIDE_COMPANIONS_REVIEW",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical 29 July explicitly enumerates Martha and companion records by override. The archived Martha key is a research subject candidate; its exact Calendar colour changes 3:r to 3:w and companion identities must not be inherited."
+    },
+    {
+      "observed_source_id": "sancti:08-28:3:w",
+      "observed_date_2026": "2026-08-28",
+      "observed_title_en": "St. Augustine",
+      "documented_archived_subject_key": "saint.augustine-hippo",
+      "documented_archived_component_id": "cal.08-28.augustine-hippo",
+      "archived_nominal_date": "08-28",
+      "historical_observance_source_ids": [
+        "sancti:08-28:3:r",
+        "sancti:08-28cc:4:r"
+      ],
+      "historical_primary_source_id": "sancti:08-28:3:r",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:08-28:3:r versus observed 3:w, an existing held red/white source discrepancy. Augustine of Canterbury is a distinct saint."
+    },
+    {
+      "observed_source_id": "sancti:11-13:3:w",
+      "observed_date_2026": "2026-11-13",
+      "observed_title_en": "St. Didacus",
+      "documented_archived_subject_key": "saint.didacus",
+      "documented_archived_component_id": "cal.11-13.didacus",
+      "archived_nominal_date": "11-13",
+      "historical_observance_source_ids": [
+        "sancti:11-13:4:w"
+      ],
+      "historical_primary_source_id": "sancti:11-13:4:w",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:11-13:4:w; rank/source-code discrepancy, not a new saint."
+    },
+    {
+      "observed_source_id": "sancti:11-14:3:r",
+      "observed_date_2026": "2026-11-14",
+      "observed_title_en": "St. Josaphat",
+      "documented_archived_subject_key": "saint.josaphat",
+      "documented_archived_component_id": "cal.11-14.josaphat",
+      "archived_nominal_date": "11-14",
+      "historical_observance_source_ids": [
+        "sancti:11-14:3:w"
+      ],
+      "historical_primary_source_id": "sancti:11-14:3:w",
+      "source_owner_comparison_status": "NOMINAL_DATE_EXACT_PERSON_ARCHIVE_DIFFERENT_SOURCE_CODE",
+      "person_identity_is_canonically_certified": false,
+      "published_1962_observance_approved": false,
+      "authorized_artwork_id": null,
+      "physical_geography_id": null,
+      "documentation_note": "Historical source uses sancti:11-14:3:w versus observed 3:r; colour discrepancy held."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+name: Saints identity and holiness-first editorial pilot
+on:
+  pull_request:
+    paths:
+      - 'data/saints/**'
+      - 'src/find/**'
+      - 'tests/saints-explore-native-lens.mjs'
+      - 'tests/saints-catalogue-native.mjs'
+      - 'tests/saints-full-calendar-exact-key-ledger.mjs'
+      - 'tests/saints-twelve-observed-source-resolution.mjs'
+      - 'tests/saints-existing-shrine-geography-readiness.mjs'
+      - 'tests/saints-six-name-alias-evidence.mjs'
+      - 'tests/saints-w78-bulk-shrine-person-triage.mjs'
+      - 'data/saints/w78-bulk-119-shrine-person-match-triage-20261016.v1.json'
+      - 'tests/saints-research-shrine-map.mjs'
+      - 'tests/saints-w78-shrine-source-evidence.mjs'
+      - 'data/saints/w78-shrine-person-source-evidence-20261016.v1.json'
+      - 'tests/saints-w78-shrine-name-bulk-reconciliation.mjs'
+      - 'data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json'
+      - 'data/saints/six-duplicate-name-alias-evidence-20261016.v1.json'
+      - 'data/saints/w82-four-historical-doctors-source-identity-review-20261016.v1.json'
+      - 'tests/saints-w82-doctor-person-crosswalk.mjs'
+      - 'src/find/saints-shrine-map-research.js'
+      - 'data/saints/existing-shrine-geography-readiness-20261016.v1.json'
+      - 'data/saints/observed-2026-twelve-person-source-reconciliation.v1.json'
+      - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
+      - 'tests/saints-release-boundary.mjs'
+      - 'src/find/saints-release-policy.js'
+      - 'tests/saints-source-index.mjs'
+      - 'src/find/saints-source-index.js'
+      - 'data/saints/read-only-calendar-art-index-20261015.v1.json'
+      - 'src/find/saints-catalogue.js'
+      - 'src/find/explore-data-service.js'
+      - 'data/saints/holiness-first-eight-doctors-research-20261015.v1.json'
+      - 'data/saints/holiness-first-sixteen-cross-vocation-research.v1.json'
+      - 'tests/saints-parallel-owner-bridge.mjs'
+      - 'tests/saints-calendar-context-integration.mjs'
+      - 'previews/saints-map-holiness-first-20261015.html'
+      - 'tests/saints-atlas-editorial-pilot.mjs'
+      - '.github/workflows/saints-atlas-editorial.yml'
+  workflow_dispatch:
+jobs:
+  verify-saints-research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check preserved shrine links and holiness-first profiles
+        run: node tests/saints-atlas-editorial-pilot.mjs
+      - name: Check native Explore Saints lens and biography sheets
+        run: node tests/saints-explore-native-lens.mjs
+      - name: Verify W78 bulk 113 shrine names, 137 site associations and 209 source references
+        run: node tests/saints-w78-shrine-name-bulk-reconciliation.mjs
+      - name: Verify all 119 shrine-name identity triage records without person or map publication
+        run: node tests/saints-w78-bulk-shrine-person-triage.mjs
+      - name: Verify six source-owner alias cases without canonical renames
+        run: node tests/saints-six-name-alias-evidence.mjs
+      - name: Preserve four source-corroborated Doctor identities and distinct St Chrysogonus observance
+        run: node tests/saints-w82-doctor-person-crosswalk.mjs
+      - name: Validate 119 Saints names against source-owner keys, aliases and relic/art registry evidence
+        run: node tests/saints-w78-shrine-source-evidence.mjs
+      - name: Verify 121-site gated Saints research map without new physical site IDs
+        run: node tests/saints-research-shrine-map.mjs
+      - name: Protect existing source-backed Shrine and Geography candidate coverage
+        run: node tests/saints-existing-shrine-geography-readiness.mjs
+      - name: Verify all twelve observed personlike source gaps and held apostolic exception
+        run: node tests/saints-twelve-observed-source-resolution.mjs
+      - name: Check 608-source-key full-calendar identity ledger
+        run: node tests/saints-full-calendar-exact-key-ledger.mjs
+      - name: Gate public Saints pilot to six profiles and zero research indexes
+        run: node tests/saints-release-boundary.mjs
+      - name: Verify 30-person Saints reading catalogue and unchanged 8 physical pins
+        run: node tests/saints-catalogue-native.mjs
+      - name: Verify source-only historical and post-1960 Saints reference indexes
+        run: node tests/saints-source-index.mjs
+      - name: Reconcile Calendar, Relics and Sacred Art identities without merging owners
+        run: node tests/saints-parallel-owner-bridge.mjs
+      - name: Check observed 2026 Calendar context in native Saints lens
+        run: node tests/saints-calendar-context-integration.mjs
+      - name: Check native module syntax
+        run: |
+          node --check src/find/saints-lens.js
+          node --check src/find/saints-catalogue.js
+          node --check src/find/saints-shrine-map-research.js
+          node --check src/find/saints-release-policy.js
+          node --check src/find/saints-source-index.js
+          node --check src/find/saints-calendar-context.js
+          node --check src/find/saints-presentation.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/browser-entry.js

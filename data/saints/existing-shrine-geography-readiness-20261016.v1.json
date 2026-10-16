@@ -1,0 +1,3018 @@
+{
+  "schema": "ao.saints.existing-shrine-geography-readiness-20261016.v1",
+  "status": "SOURCE_LINKED_PLACE_CANDIDATES_NO_NEW_SAINT_PINS_OR_PERSON_ID_APPROVAL",
+  "as_of": "2026-10-16",
+  "source_owners": [
+    {
+      "path": "data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json",
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "2a933c6263989146fc7289bd38a954e72649cf0b"
+    },
+    {
+      "path": "data/saints/cross-module-source-reconciliation-20261015.v1.json",
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "0ab192f7e1b878e9270d68e3c891ab4bb2a71995"
+    },
+    {
+      "path": "data/geography/seed-registry.v1.json",
+      "branch": "saints/2026-10-15-identity-and-holiness-pilot",
+      "blob_sha": "fe2176d6b02bfb326cde9811e54daa6ba8b4cad5"
+    }
+  ],
+  "match_policy": {
+    "exact": "Diacritic-, honorific- and punctuation-insensitive FULL NAME equality only; matching names is not sufficient to certify a human person or group.",
+    "ambiguity": "If more than one existing key has the same full name, retain every candidate and do not choose one.",
+    "place": "All sites must exist in the original geography seed and have sourced coordinates. A shrine association does not establish birth, residence, death, apparition or relic authenticity.",
+    "no_auto_publication": "All new candidate associations remain non-public until owner confirms exact person identity and site relation. No duplicate map pin.",
+    "art": "No artwork ID, previous user rating or licensing state is changed."
+  },
+  "counts": {
+    "legacy_saint_name_strings": 119,
+    "all_source_linked_shrine_associations": 145,
+    "existing_geo_mappable_shrine_associations": 145,
+    "unique_shrine_place_ids": 121,
+    "single_exact_normalized_name_to_existing_source_key_candidates": 50,
+    "multi_source_key_name_collisions": 6,
+    "name_strings_without_exact_source_key": 63,
+    "confirmed_new_saint_geographical_pins": 0,
+    "confirmed_saint_birth_or_death_markers": 0,
+    "released_saint_artwork_reproductions": 0
+  },
+  "rows": [
+    {
+      "legacy_name_literal": "Blessed Bishop and Martyr Vasyl Velychkovsky",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "shrine_id": "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+          "provenance_source_ids": [
+            "SG-R70-SITE-SG-INV-0422",
+            "SG-R70-CUSTODIAN-SG-INV-0422",
+            "SG-R70-GEO-SG-INV-0422"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Blessed Jacques-Désiré Laval",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "blessed.jacques-desire-laval"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "blessed:jacques-desire-laval",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:MU:pere-laval-sainte-croix",
+          "shrine_id": "shrine:MU:pere-laval",
+          "provenance_source_ids": [
+            "SHR-PERE-LAVAL-CENTRE",
+            "PIL-PERE-LAVAL-ANNUAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Blessed Marie-Louise Trichet",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Adalbert of Prague",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PL:gniezno-cathedral-adalbert",
+          "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+          "provenance_source_ids": [
+            "SHR-PL-gniezno-cathedral-adalbert"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Agatha of Sicily",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:cattedrale-sant-agata-catania",
+          "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+          "provenance_source_ids": [
+            "SHR-IT-cattedrale-sant-agata-catania"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Alphonsus Liguori",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.alphonsus-liguori"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sant-alfonso-pagani",
+          "shrine_id": "shrine:IT:sant-alfonso-pagani",
+          "provenance_source_ids": [
+            "SHR-IT-sant-alfonso-pagani"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "provenance_source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Ambrose of Milan",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.ambrose-milan"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "provenance_source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint André Bessette",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "provenance_source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Andrew Kaggwa",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "provenance_source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Andrew the Apostle",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:amalfi-sant-andrea",
+          "shrine_id": "shrine:IT:amalfi-sant-andrea",
+          "provenance_source_ids": [
+            "SHR-IT-amalfi-sant-andrea"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Anne",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CA:sainte-anne-de-beaupre",
+          "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+          "provenance_source_ids": [
+            "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
+            "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:sainte-anne-d-auray",
+          "shrine_id": "shrine:FR:sainte-anne-d-auray",
+          "provenance_source_ids": [
+            "SHR-SAINTE-ANNE-IDENTITY",
+            "PIL-SAINTE-ANNE-GRAND-PARDON"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:st-anne-fiskdale",
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "provenance_source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Anthony of Padua",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.anthony-of-padua",
+        "saint.anthony-padua"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:grottes-saint-antoine-brive",
+          "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-grottes-saint-antoine-brive"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IT:basilica-sant-antonio-padova",
+          "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-basilica-sant-antonio-padova"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Apollinaris",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.apollinaris"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:DE:st-apollinaris-frielingsdorf",
+          "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+          "provenance_source_ids": [
+            "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+            "PIL-ST-APOLLINARIS-FRIELINGSDORF"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Augustine of Hippo",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.augustine-hippo"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:san-pietro-ciel-doro",
+          "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+          "provenance_source_ids": [
+            "SHR-IT-san-pietro-ciel-doro"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Bartholomew the Apostle",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:san-bartolomeo-isola",
+          "shrine_id": "shrine:IT:san-bartolomeo-isola",
+          "provenance_source_ids": [
+            "SHR-IT-san-bartolomeo-isola"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Bartolo Longo",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.bartolo-longo"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:pompei-rosary-shrine",
+          "shrine_id": "shrine:IT:pompei-rosary",
+          "provenance_source_ids": [
+            "SHR-POMPEI-CONTACT",
+            "PIL-POMPEI-SUPPLICA-MAY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Benedict of Nursia",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+          "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-fleury-saint-benoit-loire",
+            "R63-FLEURY-HISTORY",
+            "R63-FLEURY-PILGRIMAGE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IT:montecassino-abbey",
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "provenance_source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Bernadette Soubirous",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.bernadette-soubirous"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "saint:bernadette-soubirous",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:espace-bernadette-nevers",
+          "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-espace-bernadette-nevers"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+          "shrine_id": "shrine:FR:lourdes-our-lady",
+          "provenance_source_ids": [
+            "SHR-LOURDES-CONTACT",
+            "SHR-LOURDES-PILGRIMAGE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:lourdes-grotto-emmitsburg",
+          "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+          "provenance_source_ids": [
+            "SHR-GROTTO-LOURDES-EMMITSBURG",
+            "PIL-GROTTO-LOURDES-FEAST"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "provenance_source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Beuno",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:GB:holywell-st-winefride",
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "provenance_source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Brigid of Kildare",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IE:solas-bhride-kildare",
+          "shrine_id": "shrine:IE:solas-bhride-kildare",
+          "provenance_source_ids": [
+            "SG-R65-IE-BRIGID-CENTRE",
+            "SG-R65-IE-BRIGID-PILGRIMAGE",
+            "SG-R65-IE-BRIGID-OSM",
+            "SG-R65-IE-BRIGID-CATHEDRAL",
+            "SG-R65-IE-BRIGID-2026"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Casimir",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.casimir"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:LT:vilnius-cathedral-st-casimir",
+          "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+          "provenance_source_ids": [
+            "SHR-LT-vilnius-cathedral-st-casimir"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Catherine Labouré",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "provenance_source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:miraculous-medal-philadelphia",
+          "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+          "provenance_source_ids": [
+            "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+            "PIL-MIRACULOUS-MEDAL-NOVENA"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Catherine of Siena",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.catherine-of-siena",
+        "saint.catherine-siena"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:santa-maria-minerva-rome",
+          "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+          "provenance_source_ids": [
+            "SHR-IT-santa-maria-minerva-rome"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Charbel Makhlouf",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:LB:monastery-saint-maron-annaya",
+          "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+          "provenance_source_ids": [
+            "SHR-LB-monastery-saint-maron-annaya"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Charles Borromeo",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.charles-borromeo"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:duomo-milano",
+          "shrine_id": "shrine:IT:duomo-milano",
+          "provenance_source_ids": [
+            "SHR-IT-duomo-milano"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Charles Lwanga",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:UG:namugongo-martyrs",
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "provenance_source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Clare of Assisi",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:santa-chiara-assisi",
+          "shrine_id": "shrine:IT:santa-chiara-assisi",
+          "provenance_source_ids": [
+            "SHR-IT-santa-chiara-assisi"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Claude La Colombière",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.claude-la-colombiere"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "saint:claude-la-colombiere",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "provenance_source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Columbanus",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:abbey-san-colombano-bobbio",
+          "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+          "provenance_source_ids": [
+            "SHR-IT-abbey-san-colombano-bobbio"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Denis of Paris",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-saint-denis",
+          "shrine_id": "shrine:FR:basilique-saint-denis",
+          "provenance_source_ids": [
+            "SHR-SAINT-DENIS-OFFICIAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:basilique-saint-denys-argenteuil",
+          "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+          "provenance_source_ids": [
+            "SHR-FR-ARGENTEUIL-TUNIQUE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Dominic",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.dominic"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CO:chiquinquira-basilica",
+          "shrine_id": "shrine:CO:chiquinquira",
+          "provenance_source_ids": [
+            "SHR-CHIQUINQUIRA-DIOCESE",
+            "PIL-CHIQUINQUIRA-JULY9"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Dominic de Guzmán",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:basilica-san-domenico-bologna",
+          "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+          "provenance_source_ids": [
+            "SHR-IT-basilica-san-domenico-bologna"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Edward the Confessor",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:GB:westminster-abbey-st-edward",
+          "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+          "provenance_source_ids": [
+            "SHR-GB-westminster-abbey-st-edward"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Elizabeth Ann Seton",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.elizabeth-ann-seton"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:seton-emmitsburg",
+          "shrine_id": "shrine:US:seton-emmitsburg",
+          "provenance_source_ids": [
+            "SHR-SETON-EMMITSBURG",
+            "PIL-SETON-SEA-SERVICES-2026"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Eusebius of Vercelli",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.eusebius-vercelli"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+          "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+          "provenance_source_ids": [
+            "SHR-IT-duomo-sant-eusebio-vercelli"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Faustina Kowalska",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.faustina-kowalska"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PL:divine-mercy-plock",
+          "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-PL-divine-mercy-plock"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:divine-mercy-stockbridge",
+          "shrine_id": "shrine:US:divine-mercy-stockbridge",
+          "provenance_source_ids": [
+            "SHR-DIVINE-MERCY-STOCKBRIDGE",
+            "PIL-DIVINE-MERCY-SUNDAY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Francis de Sales",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.francis-de-sales",
+        "saint.francis-sales"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "provenance_source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Francis of Assisi",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.francis-assisi",
+        "saint.francis-of-assisi"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:basilica-san-francesco-assisi",
+          "shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Francis Xavier",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.francis-xavier"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Francisco Marto",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.francisco-marto"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PT:fatima-sanctuary",
+          "shrine_id": "shrine:PT:fatima",
+          "provenance_source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Gervasius of Milan",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "provenance_source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Helena",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:scala-santa-rome",
+          "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+          "provenance_source_ids": [
+            "SHR-PIL-IT-scala-santa-rome"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IT:santa-croce-gerusalemme-rome",
+          "shrine_id": "shrine:IT:santa-croce-rome",
+          "provenance_source_ids": [
+            "SHR-SANTA-CROCE-RELICS"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Hilary of Poitiers",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.hilary-poitiers"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+          "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+          "provenance_source_ids": [
+            "SHR-FR-saint-hilaire-le-grand-poitiers"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Ignatius of Loyola",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.ignatius-loyola"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:chiesa-gesu-rome",
+          "shrine_id": "shrine:IT:chiesa-gesu-rome",
+          "provenance_source_ids": [
+            "SHR-IT-chiesa-gesu-rome"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Isaac Jogues",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "provenance_source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "provenance_source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Jacinta Marto",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.jacinta-marto"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PT:fatima-sanctuary",
+          "shrine_id": "shrine:PT:fatima",
+          "provenance_source_ids": [
+            "SHR-FATIMA-CONTACT",
+            "PIL-FATIMA-MAY13"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint James the Greater",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.james-the-greater"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:ES:santiago-compostela-cathedral",
+          "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+          "provenance_source_ids": [
+            "SHR-PIL-ES-santiago-compostela-cathedral"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:BA:medjugorje-st-james-parish",
+          "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+          "provenance_source_ids": [
+            "SG-R71-MEDJUGORJE-PARISH",
+            "SG-R71-MEDJUGORJE-DDF",
+            "SG-R71-MEDJUGORJE-GEO"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Jane Frances de Chantal",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.jane-frances-de-chantal"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-visitation-annecy",
+          "shrine_id": "shrine:FR:basilique-visitation-annecy",
+          "provenance_source_ids": [
+            "SHR-FR-basilique-visitation-annecy"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Jean de Brébeuf",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "shrine_id": "shrine:CA:martyrs-midland",
+          "provenance_source_ids": [
+            "SHR-MARTYRS-CONTACT",
+            "SHR-MARTYRS-MINISTRY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Jean-Marie Vianney",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-ars",
+          "shrine_id": "shrine:20261009:FR:basilique-ars",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-ars"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Joachim",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:st-anne-fiskdale",
+          "shrine_id": "shrine:US:st-anne-fiskdale",
+          "provenance_source_ids": [
+            "SHR-ST-ANNE-FISKDALE",
+            "PIL-ST-ANNE-NOVENA"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Joan of Arc",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:bermont-greux",
+          "shrine_id": "shrine:FR:bermont-greux",
+          "provenance_source_ids": [
+            "SHR-BERMONT-GREUX"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John Bosco",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.john-bosco"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:maria-ausiliatrice-torino",
+          "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+          "provenance_source_ids": [
+            "SHR-IT-maria-ausiliatrice-torino"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John de Lalande",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "provenance_source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John Neumann",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "shrine_id": "shrine:US:alphonsus-baltimore",
+          "provenance_source_ids": [
+            "SHR-ALPHONSUS-BALTIMORE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:st-john-neumann-philadelphia",
+          "shrine_id": "shrine:US:neumann-philadelphia",
+          "provenance_source_ids": [
+            "SHR-NEUMANN-PHILADELPHIA",
+            "PIL-NEUMANN-PHILADELPHIA"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John of the Cross",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.john-cross",
+        "saint.john-of-the-cross"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:ES:convento-san-juan-cruz-segovia",
+          "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+          "provenance_source_ids": [
+            "SHR-ES-convento-san-juan-cruz-segovia"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John Paul II",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.john-paul-ii"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+          "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+          "provenance_source_ids": [
+            "SHR-JPII-KRAKOW-OFFICIAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John the Baptist",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:DE:aachener-dom-four-textiles",
+          "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+          "provenance_source_ids": [
+            "SHR-DE-aachener-dom-four-textiles"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:cathedrale-notre-dame-amiens",
+          "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+          "provenance_source_ids": [
+            "SHR-FR-AMIENS-JEAN-BAPTISTE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint John the Evangelist",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.john-the"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IE:knock-shrine",
+          "shrine_id": "shrine:IE:knock",
+          "provenance_source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint José de Anchieta",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.jose-de-anchieta"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+          "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+          "provenance_source_ids": [
+            "SHR-BR-pateo-do-collegio-sao-paulo"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Joseph",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:saint-joseph-bessillon",
+          "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-saint-joseph-bessillon"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:CA:oratoire-saint-joseph-montreal",
+          "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+          "provenance_source_ids": [
+            "SHR-ORATOIRE-MONTREAL",
+            "SHR-ORATOIRE-MONTREAL-TOMB"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IE:knock-shrine",
+          "shrine_id": "shrine:IE:knock",
+          "provenance_source_ids": [
+            "SHR-KNOCK-IDENTITY",
+            "PIL-KNOCK-ANNIVERSARY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Josephine Bakhita",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+          "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+          "provenance_source_ids": [
+            "SHR-IT-sacra-famiglia-bakhita-schio"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Juan Diego",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:MX:basilica-guadalupe-mexico-city",
+          "shrine_id": "shrine:MX:guadalupe-tepeyac",
+          "provenance_source_ids": [
+            "SHR-GUADALUPE-MX-CONTACT",
+            "PIL-GUADALUPE-MX-FEAST"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:US:guadalupe-shrine-la-crosse",
+          "shrine_id": "shrine:US:guadalupe-la-crosse",
+          "provenance_source_ids": [
+            "SHR-GUADALUPE-SCHEDULE",
+            "SHR-GUADALUPE-PILGRIMAGE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Julienne of Cornillon",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+          "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Junípero Serra",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.junipero-serra"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:carmel-mission-basilica-serra",
+          "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+          "provenance_source_ids": [
+            "SHR-US-carmel-mission-basilica-serra"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Kateri Tekakwitha",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.kateri-tekakwitha"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "provenance_source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Katharine Drexel",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.katharine-drexel"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+          "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+          "provenance_source_ids": [
+            "SHR-US-cathedral-katharine-drexel-philadelphia"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Kizito",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "provenance_source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Leonard of Noblac",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:DE:st-leonhard-nussdorf",
+          "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+          "provenance_source_ids": [
+            "SHR-ST-LEONHARD-NUSSDORF",
+            "PIL-ST-LEONHARD-NUSSDORF"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Louis de Montfort",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "provenance_source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Louis-Marie de Montfort",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-montfort-saint-laurent",
+          "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+            "R63-MONTFORT-HISTORY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Louise de Marillac",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.louise-de-marillac"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "provenance_source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Lucy of Syracuse",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+          "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+          "provenance_source_ids": [
+            "SHR-IT-san-geremia-santa-lucia-venezia"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Luke the Evangelist",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.luke-the"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:santa-giustina-padova",
+          "shrine_id": "shrine:IT:santa-giustina-padova",
+          "provenance_source_ids": [
+            "SHR-IT-santa-giustina-padova"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Margaret Mary Alacoque",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.margaret-mary-alacoque"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "saint:margaret-mary-alacoque",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "provenance_source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Mark the Evangelist",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:basilica-san-marco-venezia",
+          "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+          "provenance_source_ids": [
+            "SHR-IT-basilica-san-marco-venezia"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Martha of Bethany",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.martha-bethany"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+          "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+          "provenance_source_ids": [
+            "SHR-FR-collegiale-sainte-marthe-tarascon"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Martin de Porres",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "provenance_source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Martin of Tours",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.martin-tours"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-saint-martin-tours",
+          "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-saint-martin-tours"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Mary Magdalene",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.mary-magdalene"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+          "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+          "provenance_source_ids": [
+            "SHR-FR-VEZELAY-MADELEINE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Matthew the Apostle",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:salerno-duomo",
+          "shrine_id": "shrine:IT:salerno-duomo",
+          "provenance_source_ids": [
+            "SHR-IT-salerno-duomo"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Matthias the Apostle",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:DE:trier-sankt-matthias",
+          "shrine_id": "shrine:DE:trier-sankt-matthias",
+          "provenance_source_ids": [
+            "SHR-DE-trier-sankt-matthias"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Maurice and the Theban martyrs",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CH:abbaye-saint-maurice-agaune",
+          "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+          "provenance_source_ids": [
+            "SHR-CH-abbaye-saint-maurice-agaune"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Maximin",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Meinrad",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CH:einsiedeln-monastery",
+          "shrine_id": "shrine:CH:einsiedeln-our-lady",
+          "provenance_source_ids": [
+            "SHR-EINSIEDELN-PILGRIMAGE",
+            "SHR-EINSIEDELN-ENGELWEIHE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Michael the Archangel",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:abbaye-mont-saint-michel",
+          "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-abbaye-mont-saint-michel"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IT:san-michele-gargano",
+          "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-san-michele-gargano"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Monica",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.monica"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sant-agostino-campo-marzio",
+          "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+          "provenance_source_ids": [
+            "SHR-IT-sant-agostino-campo-marzio"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Nicholas",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.nicholas"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:basilica-san-nicola-bari",
+          "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-basilica-san-nicola-bari"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Nicholas of Myra",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-saint-nicolas-de-port",
+          "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+          "provenance_source_ids": [
+            "SHR-FR-basilique-saint-nicolas-de-port"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Oliver Plunkett",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+          "shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
+          "provenance_source_ids": [
+            "SG-R65-IE-OLIVER-ARMAGH",
+            "SG-R65-IE-OLIVER-RELIC",
+            "SG-R65-IE-OLIVER-TOURISM"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Oscar Romero",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:SV:catedral-metropolitana-san-salvador",
+          "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+          "provenance_source_ids": [
+            "SHR-SV-catedral-metropolitana-san-salvador"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Patrick",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.patrick"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+          "shrine_id": "shrine:IE:croagh-patrick-pilgrimage",
+          "provenance_source_ids": [
+            "SG-R65-IE-CROAGH-LOCAL",
+            "SG-R65-IE-CROAGH-TRAIL",
+            "SG-R65-IE-CROAGH-SAFETY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:IE:lough-derg-station-island",
+          "shrine_id": "shrine:IE:lough-derg",
+          "provenance_source_ids": [
+            "SHR-LOUGH-DERG-CONTACT",
+            "PIL-LOUGH-DERG-THREE-DAY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Paul the Apostle",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.paul-apostle"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:saint-paul-outside-walls-rome",
+          "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+          "provenance_source_ids": [
+            "SHR-PIL-IT-saint-paul-outside-walls-rome"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Peter Chanel",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.peter-chanel"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "saint:peter-chanel",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:NZ:st-peter-chanel-russell",
+          "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+          "provenance_source_ids": [
+            "SHR-ST-PETER-CHANEL-NZ",
+            "PIL-NGA-TAPUWAE"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "locality",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Peter the Apostle",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.peter-apostle"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:VA:saint-peter-vatican",
+          "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+          "provenance_source_ids": [
+            "SHR-PIL-VA-saint-peter-vatican"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
+          "shrine_id": "shrine:GH:kumasi-st-peter-cathedral-basilica",
+          "provenance_source_ids": [
+            "SG-R76-SITE-SG-INV-0726",
+            "SG-R76-GEO-SG-INV-0726"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+          "shrine_id": "shrine:MA:cathedrale-saint-pierre-rabat",
+          "provenance_source_ids": [
+            "SG-R70-SITE-SG-INV-0705",
+            "SG-R70-CUSTODIAN-SG-INV-0705",
+            "SG-R70-GEO-SG-INV-0705"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Philip Neri",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.philip-neri"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:santa-maria-vallicella-rome",
+          "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+          "provenance_source_ids": [
+            "SHR-IT-santa-maria-vallicella-rome"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Pio of Pietrelcina",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:santuario-san-pio-rotondo",
+          "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-santuario-san-pio-rotondo"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Protasius of Milan",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:sant-ambrogio-milano",
+          "shrine_id": "shrine:IT:sant-ambrogio-milano",
+          "provenance_source_ids": [
+            "SHR-IT-sant-ambrogio-milano"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Quentin",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-saint-quentin-aisne",
+          "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+          "provenance_source_ids": [
+            "SHR-FR-basilique-saint-quentin-aisne"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint René Goupil",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:US:auriesville-martyrs",
+          "shrine_id": "shrine:US:auriesville-martyrs",
+          "provenance_source_ids": [
+            "SHR-AURIESVILLE-MARTYRS",
+            "PIL-AURIESVILLE-RESTORATION",
+            "PIL-AURIESVILLE-AMSTERDAM"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Rita of Cascia",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:basilica-santa-rita-cascia",
+          "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-IT-basilica-santa-rita-cascia"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Rose of Lima",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.rose-of-lima"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+          "provenance_source_ids": [
+            "SHR-PE-convento-santo-domingo-lima"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Saturninus",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.saturninus"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-saint-sernin-toulouse",
+          "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+          "provenance_source_ids": [
+            "SHR-FR-basilique-saint-sernin-toulouse"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Scholastica",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.scholastica"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:montecassino-abbey",
+          "shrine_id": "shrine:IT:montecassino-abbey",
+          "provenance_source_ids": [
+            "SHR-IT-montecassino-abbey"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:cathedrale-saint-etienne-sens",
+          "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+          "provenance_source_ids": [
+            "SHR-FR-cathedrale-saint-etienne-sens"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Stanislaus of Kraków",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:PL:wawel-cathedral-stanislaus",
+          "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+          "provenance_source_ids": [
+            "SHR-PL-wawel-cathedral-stanislaus"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Stephen of Hungary",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.stephen-of-hungary"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:HU:st-stephen-basilica-budapest",
+          "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+          "provenance_source_ids": [
+            "SHR-HU-st-stephen-basilica-budapest"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Teresa of Ávila",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.teresa-avila"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:ES:carmel-alba-tormes",
+          "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+          "provenance_source_ids": [
+            "SHR-PIL-ES-carmel-alba-tormes"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Thérèse of Lisieux",
+      "identity_match_status": "MULTIPLE_EXACT_NAME_CANDIDATE_IDS_REVIEW",
+      "candidate_source_keys": [
+        "saint.therese-lisieux",
+        "saint.therese-of-lisieux"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": "saint:therese-of-lisieux",
+      "source_identity_status": "SIX_PERSON_EDITORIAL_PILOT_ONLY",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:basilique-sainte-therese-lisieux",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:FR:carmel-lisieux",
+          "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+          "provenance_source_ids": [
+            "SHR-PIL-BULK-FR-carmel-lisieux"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Thomas Aquinas",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.thomas-aquinas"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:couvent-jacobins-toulouse",
+          "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+          "provenance_source_ids": [
+            "SHR-FR-couvent-jacobins-toulouse"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Thomas the Apostle",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.thomas-apostle"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:IT:ortona-san-tommaso",
+          "shrine_id": "shrine:IT:ortona-san-tommaso",
+          "provenance_source_ids": [
+            "SHR-IT-ortona-san-tommaso"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Titus",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.titus"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:GR:saint-titus-heraklion",
+          "shrine_id": "shrine:GR:saint-titus-heraklion",
+          "provenance_source_ids": [
+            "SHR-GR-saint-titus-heraklion"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Turibius of Astorga",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:ES:santo-toribio-liebana",
+          "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+          "provenance_source_ids": [
+            "SHR-PIL-ES-santo-toribio-liebana"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Vincent de Paul",
+      "identity_match_status": "ONE_EXACT_NAME_CANDIDATE_ID_NOT_CERTIFIED",
+      "candidate_source_keys": [
+        "saint.vincent-de-paul"
+      ],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:FR:rue-du-bac",
+          "shrine_id": "shrine:FR:rue-du-bac",
+          "provenance_source_ids": [
+            "SHR-RUE-DU-BAC",
+            "PIL-RUE-DU-BAC",
+            "OBS-RUE-DU-BAC-NOV27"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Wenceslas",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+          "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+          "provenance_source_ids": [
+            "SHR-STARA-BOLESLAV-OFFICIAL",
+            "PIL-ST-WENCESLAS-NATIONAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Willibrord",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:LU:basilica-st-willibrord-echternach",
+          "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+          "provenance_source_ids": [
+            "SHR-LU-basilica-st-willibrord-echternach"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "site",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Saint Winefride",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:GB:holywell-st-winefride",
+          "shrine_id": "shrine:GB:holywell-st-winefride",
+          "provenance_source_ids": [
+            "SHR-HOLYWELL-CONTACT",
+            "PIL-HOLYWELL-FEAST",
+            "PIL-HOLYWELL-LMS"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "The Three Magi",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:DE:kolner-dom-three-kings",
+          "shrine_id": "shrine:DE:kolner-dom-three-kings",
+          "provenance_source_ids": [
+            "SHR-DE-kolner-dom-three-kings"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    },
+    {
+      "legacy_name_literal": "Uganda Martyrs",
+      "identity_match_status": "NAME_STRING_WITHOUT_EXACT_SOURCE_KEY",
+      "candidate_source_keys": [],
+      "canonical_saint_id_approved": null,
+      "source_pilot_id_unchanged": null,
+      "source_identity_status": "UNRECONCILED",
+      "physical_place_associations": [
+        {
+          "place_id": "place:UG:munyonyo-martyrs",
+          "shrine_id": "shrine:UG:munyonyo-martyrs",
+          "provenance_source_ids": [
+            "SHR-MUNYONYO-OFFICIAL"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        },
+        {
+          "place_id": "place:UG:namugongo-martyrs",
+          "shrine_id": "shrine:UG:namugongo-martyrs",
+          "provenance_source_ids": [
+            "SHR-NAMUGONGO-OFFICIAL",
+            "PIL-NAMUGONGO-MARTYRS-DAY"
+          ],
+          "observed_relation": "SHRINE_ASSOCIATION_ONLY_NOT_BIRTH_DEATH_RESIDENCE_OR_RELIC_AUTHENTICATION",
+          "geography_owner_status": "SOURCE_PLACE_HAS_MAPPABLE_COORDINATES",
+          "original_geo_precision": "complex_anchor",
+          "identity_approved_for_pin": false
+        }
+      ]
+    }
+  ]
+}

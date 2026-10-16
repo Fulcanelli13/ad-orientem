@@ -1,0 +1,64 @@
+{
+  "schema": "ao.saints.identity-exception-triage.v1",
+  "scope": "RESEARCH_ONLY_NOT_CANONICAL",
+  "correction": "Automatic string normalization is NOT saint identity resolution. These are the first manual review cases; no proposed merges are applied to owner registries.",
+  "likely_alias_pairs": [
+    {
+      "names": [
+        "Saint Dominic",
+        "Saint Dominic de Guzmán"
+      ],
+      "status": "LIKELY_SAME_PERSON_REVIEW",
+      "note": "Check Dominican founder and shrine-source meaning before any stable ID assignment."
+    },
+    {
+      "names": [
+        "Saint Louis de Montfort",
+        "Saint Louis-Marie de Montfort"
+      ],
+      "status": "LIKELY_SAME_PERSON_REVIEW",
+      "note": "Probable common referent Louis-Marie Grignion de Montfort; keep both literal strings during reconciliation."
+    },
+    {
+      "names": [
+        "Saint Nicholas",
+        "Saint Nicholas of Myra"
+      ],
+      "status": "LIKELY_SAME_PERSON_REVIEW",
+      "note": "Bari/Port source contexts suggest Nicholas of Myra; verify before identity merge."
+    }
+  ],
+  "special_entity_cases": [
+    {
+      "name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
+      "status": "MULTIPLE_PEOPLE_IN_ONE_LITERAL",
+      "note": "Split into three distinct persons only after matching source context; retain original compound association."
+    },
+    {
+      "name": "Saint Maurice and the Theban martyrs",
+      "status": "COLLECTIVE_HAGIOGRAPHY",
+      "note": "One named martyr and a traditional collective; do not count as one individual."
+    },
+    {
+      "name": "Uganda Martyrs",
+      "status": "COLLECTIVE_MARTYRS",
+      "note": "Group identity with individually named members where separately attested. Do not merge with single Saint Charles Lwanga or Saint Kizito."
+    },
+    {
+      "name": "The Three Magi",
+      "status": "BIBLICAL_GROUP",
+      "note": "Biblical/traditional group, not one canonized historical person; distinguish historical traditions."
+    },
+    {
+      "name": "Saint Michael the Archangel",
+      "status": "ANGELIC_FIGURE",
+      "note": "Not human life/birth/death; dedicated card structure may differ."
+    }
+  ],
+  "explicitly_blessed": [
+    "Blessed Bishop and Martyr Vasyl Velychkovsky",
+    "Blessed Jacques-Désiré Laval",
+    "Blessed Marie-Louise Trichet"
+  ],
+  "next_step": "Cross-check 1962 sanctoral titles, homepage art identities, relic records, novena owner, modern canonization status and source evidence. Do not infer saint count by subtracting alias/groups arithmetically."
+}
