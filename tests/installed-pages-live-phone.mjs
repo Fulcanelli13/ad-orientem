@@ -94,7 +94,16 @@ try{
  await page.reload({waitUntil:"domcontentloaded",timeout:60000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
   null,{timeout:55000});
+ // Offline snapshot state is restored asynchronously after the app shell
+ // becomes visible. Do not report a missing version from that brief boot gap.
+ await page.waitForFunction(()=>{
+   const s=globalThis.AO_OFFLINE_APP_V1?.status;
+   return Boolean(s?.ready===true&&s.version||s?.error);
+ },null,{timeout:35000});
  const cached=await capture("offline-home-reloaded");
+ assert.equal(cached.offline.error,null,"Offline snapshot failed to restore");
+ assert.equal(cached.offline.version,online.offline.version,
+  "Offline reload changed active snapshot without explicit consent");
  assert.equal(cached.offline.supported,true);
  assert.equal(cached.swControlled,true,"App reload did not use a service worker");
  await showSettings();
