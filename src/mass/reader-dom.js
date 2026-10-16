@@ -1060,6 +1060,12 @@ button.ao-schola-control{cursor:pointer}
   }
   .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:3px;padding:3px}
 }
+/* The Canon's contextual source banner is a LIVE-specific chrome
+   alternative. In Missal, rubrics remain inline and the gesture ribbon
+   must never be replaced by a redundant source title. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-source{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{display:flex!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-guide{height:64px}
 /* Source-owned Missal prayer divisions. No in-Mass study links. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
   margin:26px 0 12px;padding:12px 0 8px;
