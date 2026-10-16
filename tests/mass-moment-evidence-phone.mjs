@@ -35,6 +35,7 @@ try{
    assert.equal(await panel.locator("[data-ao-mf-evidence-claim]").count(),51);
    assert.equal(await root.locator(".aoReferencePanel").count(),0,
     "Candidate metadata must not appear as certified Sources drawer");
+   await panel.locator(".aoMFEvidenceAuthor summary").first().tap();
    const claim=panel.locator("[data-ao-mf-evidence-claim]").first();
    await claim.locator("select").selectOption("PRIORITIZE_COLLATION");
    assert.equal((await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1?.status?.())).evidenceTriageCount,1);
@@ -52,6 +53,7 @@ try{
    await root.locator('[data-ao-mf-moment="AO.CARD.014"]').tap();
    const reopened=root.locator('[data-ao-mf-evidence-review="AO.CARD.014"]');
    await reopened.locator("summary").first().tap();
+   await reopened.locator(".aoMFEvidenceAuthor summary").first().tap();
    assert.equal(await reopened.locator('[data-ao-mf-evidence-claim="'+id+'"] select').inputValue(),"PRIORITIZE_COLLATION");
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=2,"Source triage horizontal overflow: "+overflow+" at "+width);
