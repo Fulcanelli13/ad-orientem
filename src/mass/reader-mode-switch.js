@@ -2,6 +2,7 @@ import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
+import { projectGranularMissalCards } from "./reader-missal-granularity.js";
 
 function modeResolvedMass(prepared,mode){
   const normalized=normalizePresentationMode(mode);
@@ -26,9 +27,11 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  const presentationModel=reviewExpandedCards
-    ? projectCuratedOrdinaryLiveCards(sourceModel)
-    : projectSourceFirst48Presentation(sourceModel);
+  const presentationModel=normalized==="MISSAL"
+    ? projectGranularMissalCards(sourceModel)
+    : reviewExpandedCards
+      ? projectCuratedOrdinaryLiveCards(sourceModel)
+      : projectSourceFirst48Presentation(sourceModel);
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 
