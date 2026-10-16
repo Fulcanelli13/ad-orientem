@@ -53,7 +53,17 @@ export function massFormationScriptureForStage(stageId){
 
 /** Marked-up buttons are handled by the single installed Scripture click owner. */
 export function massFormationScriptureHtml(stageId,{french=false}={}){
- const links=massFormationScriptureForStage(stageId);
+ return renderMassFormationScriptureLinks(massFormationScriptureForStage(stageId),{french});
+}
+/** Existing study-only Scripture labels, reused without creating new verse
+ * citations, editions or a second Scripture reader. Unknown anchors fail closed. */
+export function massFormationScriptureHtmlForAnchorIds(ids,{french=false}={}){
+ const unique=[...new Set(ids||[])];
+ const byId=new Map(MASS_FORMATION_SCRIPTURE_ANCHORS.map(item=>[item.id,item]));
+ if(unique.some(id=>!byId.has(id)))throw new Error("Unknown Mass Formation Scripture anchor");
+ return renderMassFormationScriptureLinks(unique.map(id=>byId.get(id)),{french});
+}
+function renderMassFormationScriptureLinks(links,{french=false}={}){
  if(!links.length)return "";
  const lang=french?"fr":"en";
  const rows=links.map(item=>{
