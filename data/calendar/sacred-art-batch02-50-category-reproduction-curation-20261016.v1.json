@@ -1,0 +1,2116 @@
+{
+  "schema": "AO_SACRED_ART_BATCH02_50_CATEGORY_MASTER_PHOTO_REVIEW_V1",
+  "asOf": "2026-10-16",
+  "branch": "platform/885-sacred-art-candidates",
+  "authority": {
+    "w49": "86acb3686c6b2eeeb34c2aee197f97fce2fe84d3",
+    "w73": "b811ebd1ec5fe3f176bdb1aa702a9e5da3efd03d",
+    "w36": "1ca868515e16c079953b837350a85960b2dec5a1",
+    "w68": "33f5fb680164469d96e9c2e2369ea6ab5286e842",
+    "requirements": "10cf06c72733a2b9ebc310109de242eca88ce04e",
+    "priorRatings": "016ea5b23ac9df18332f111a7eb29d20ee2f606b",
+    "registry": "34f067732d67c4ab3efe1c93fe4110d9eedddbc5"
+  },
+  "summary": {
+    "categories": 50,
+    "remainingSaints": 25,
+    "crossModuleCategories": 25,
+    "devotions": 9,
+    "bible": 16,
+    "subjectsWithFive": 29,
+    "subjectsNoFive": 21,
+    "fiveStarPaintingRecords": 37,
+    "researchOptions": 20,
+    "visibleSourceFileCount": 40,
+    "fiveStarOriginalsWith2PlusPhotos": 3,
+    "fiveStarOriginalsWithoutPhoto": 4,
+    "categoriesWithNoImage": 21
+  },
+  "policies": {
+    "five": "Only earlier human five-star works displayed when any apply to this category. Old scores remain immutable.",
+    "candidates": "If no five-star source is documented, show real-source distinct physical paintings; aim for 4-5 but do not invent.",
+    "photoVersions": "Independent physical-original source photographs only. Variations not based on resizing a single image file.",
+    "sourceImage": "Some acquisition records have strong exact object and 2500+ px hashes but no public URL; show as linked source-only holds. No screenshots or uncertain image substitutions.",
+    "noAutomaticRelease": "Do not treat source URL, PDF, cached thumbnail or museum page as licence to publish. No permission requests."
+  },
+  "rows": [
+    {
+      "index": 51,
+      "subjectId": "SNT-OT-08",
+      "label": "Saint Louis IX",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W10-009",
+          "subjectId": "SNT-OT-08",
+          "title": "L'Apothéose de saint Louis",
+          "artist": "Jean-Honoré Fragonard (attributed)",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
+          "technicalHold": "CABANEL_SAINT_LOUIS_PHOTO_ON_FRAGONARD_RECORD",
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 52,
+      "subjectId": "SNT-OT-09",
+      "label": "Saint Patrick",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "G27-002",
+          "subjectId": "SNT-OT-09",
+          "title": "Ceiling of St Patrick's Hall, preparatory oil sketch (St Patrick lighting Paschal fire in upper panel)",
+          "artist": "Vincenzo Valdrè",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://digitalarchive.rds.ie/items/show/3978",
+          "technicalHold": "TIEPOLO_SAINT_PATRICK_IMAGE_ON_VALDRE_RECORD",
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 53,
+      "subjectId": "SNT-OT-10",
+      "label": "Saint Stephen",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+          "subjectId": "SNT-OT-10",
+          "title": "Martyrdom of Saint Stephen",
+          "artist": "Juan de Juanes",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": null,
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Martirio de San Esteban, de Juan de Juanes (Museo del Prado).jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 54,
+      "subjectId": "SNT-OT-11",
+      "label": "Saint Lawrence",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:antoniosicurezzacharityofstlaurencejpg",
+          "subjectId": "SNT-OT-11",
+          "title": "Antonio Sicurezza-Charity of St Laurence.jpg",
+          "artist": "Antonio Sicurezza",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Sicurezza-Charity_of_St_Laurence.jpg",
+          "technicalHold": "STROZZI_LAWRENCE_PHOTO_ON_SICUREZZA_CARD",
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Antonio Sicurezza-Charity of St Laurence.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Antonio_Sicurezza-Charity_of_St_Laurence.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio_Sicurezza-Charity_of_St_Laurence.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio_Sicurezza-Charity_of_St_Laurence.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 55,
+      "subjectId": "SNT-OT-12",
+      "label": "Saint Francis of Assisi",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+          "subjectId": "SNT-OT-12",
+          "title": "Saint Francis in Ecstasy",
+          "artist": "Anthony van Dyck",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": null,
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Anton van Dyck - Saint Francis of Assisi in Ecstasy.jpg",
+              "label": "Prado original, independently identified",
+              "pixels": "2549 × 3051",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "St Francis in Ecstasy.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Francis_in_Ecstasy.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Francis_in_Ecstasy.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Francis_in_Ecstasy.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W02-015",
+          "subjectId": "SNT-OT-12",
+          "title": "Saint Francis in Meditation (1639)",
+          "artist": "Francisco de Zurbarán",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+          "technicalHold": "CARAVAGGIO_FRANCIS_IMAGE_ON_ZURBARAN_RECORD",
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Francisco de Zurbarán 009.jpg",
+              "label": "National Gallery London source",
+              "pixels": "1237 × 1484",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_009.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco_de_Zurbar%C3%A1n_009.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 56,
+      "subjectId": "SNT-OT-13",
+      "label": "Saint Dominic",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C34:ambrosiusbensonsantodomingodeguzmanmuseodelpradomadridjpg",
+          "subjectId": "SNT-OT-13",
+          "title": "Ambrosius Benson - Santo Domingo de Guzman, Museo del Prado, Madrid.jpg",
+          "artist": "Artist not certified",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Ambrosius Benson - Santo Domingo de Guzman, Museo del Prado, Madrid.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W36-SNT-OT-13-5387d641cce6",
+          "subjectId": "SNT-OT-13",
+          "title": "Claudio coello-santo domingo.JPG",
+          "artist": "Artist recorded in source file",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W36_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Claudio coello-santo domingo.JPG",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudio_coello-santo_domingo.JPG",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Claudio_coello-santo_domingo.JPG?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 57,
+      "subjectId": "SNT-OT-14",
+      "label": "Saint Benedict",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W39-014",
+          "subjectId": "SNT-OT-14",
+          "title": "La cena de San Benito",
+          "artist": "Fray Juan Andrés Rizi",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Juan rizi-san benito.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_rizi-san_benito.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_rizi-san_benito.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W44-005",
+          "subjectId": "SNT-OT-14",
+          "title": "Saint Benedict Blessing the Bread",
+          "artist": "Juan Andrés Rizi",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito_bendiciendo.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Juan rizi-san benito bendiciendo.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito_bendiciendo.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_rizi-san_benito_bendiciendo.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_rizi-san_benito_bendiciendo.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W44-006",
+          "subjectId": "SNT-OT-14",
+          "title": "Saint Benedict in Prayer",
+          "artist": "Jean Restout (attribution in file name)",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Saint Benoît en prière de Jean Restout.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 58,
+      "subjectId": "SNT-OT-15",
+      "label": "Saint Francis Xavier",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W14-006",
+          "subjectId": "SNT-OT-15",
+          "title": "The Miracles of Saint Francis Xavier (oil modello)",
+          "artist": "Peter Paul Rubens",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Peter Paul Rubens - The miracles of St. Francis Xavier - Google Art Project.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier_-_Google_Art_Project.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 59,
+      "subjectId": "SNT-OT-16",
+      "label": "Saint Ignatius of Loyola",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W14-004",
+          "subjectId": "SNT-OT-16",
+          "title": "The Miracles of Saint Ignatius of Loyola (oil modello)",
+          "artist": "Peter Paul Rubens",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Peter Paul Rubens, , Kunsthistorisches Museum Wien, Gemäldegalerie - Wunder des Hl. Ignatius von Loyola - GG 517 - Kunsthistorisches Museum.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens%2C_%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Wunder_des_Hl._Ignatius_von_Loyola_-_GG_517_-_Kunsthistorisches_Museum.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 60,
+      "subjectId": "SNT-OT-17",
+      "label": "Saint Margaret Mary Alacoque",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "podesti-margaret-mary-source",
+          "subjectId": "SNT-OT-17",
+          "title": "Apparizione a Marguerite Marie Alacoque",
+          "artist": "Attributed on Commons to Francesco Podesti",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Apparizione a Marguerite Marie Alacoque.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apparizione_a_Marguerite_Marie_Alacoque.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 61,
+      "subjectId": "SNT-OT-18",
+      "label": "Saint Jean Vianney",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "france-PM01002671-vianney",
+          "subjectId": "SNT-OT-18",
+          "title": "Guérison de saint Jean-Marie Vianney, curé d'Ars",
+          "artist": "Unidentified 19th-century painter",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Jean-Marie Vianney.png",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean-Marie_Vianney.png",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Marie_Vianney.png",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Marie_Vianney.png?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 62,
+      "subjectId": "SNT-OT-19",
+      "label": "Saint Sebastian",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:eliseuviscontirecompensadesaosebastiaojpg",
+          "subjectId": "SNT-OT-19",
+          "title": "Eliseu Visconti - Recompensa de São Sebastião.jpg",
+          "artist": "Eliseu Visconti",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Eliseu Visconti - Recompensa de São Sebastião.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 63,
+      "subjectId": "SNT-OT-20",
+      "label": "Saint Nicholas",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:stnicholasofbaripresentstherovellistudentstomadonnaandchildb",
+          "subjectId": "SNT-OT-20",
+          "title": "St Nicholas of Bari presents the Rovelli students to Madonna and Child, by Moretto da Brescia.jpg",
+          "artist": "Moretto da Brescia",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "St Nicholas of Bari presents the Rovelli students to Madonna and Child, by Moretto da Brescia.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 64,
+      "subjectId": "SNT-OT-21",
+      "label": "Saint Lucy",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "G17-010",
+          "subjectId": "SNT-OT-21",
+          "title": "The Martyrdom and Last Communion of Saint Lucy",
+          "artist": "Paolo Veronese",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/PAOLO-VERONESE-THE-MARTYRDOM-AND-LAST-COMMUNION-OF-SAINT-LUCY.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 65,
+      "subjectId": "SNT-OT-22",
+      "label": "Saint Agnes",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C35:saintagnesbycesaredandinijpg",
+          "subjectId": "SNT-OT-22",
+          "title": "Saint Agnes by Cesare Dandini.jpg",
+          "artist": "Artist not certified",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Saint Agnes by Cesare Dandini.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Agnes_by_Cesare_Dandini.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Agnes_by_Cesare_Dandini.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W38-001",
+          "subjectId": "SNT-OT-22",
+          "title": "Saint Agnes",
+          "artist": "Massimo Stanzione",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Massimo Stanzione - Saint Agnes - Google Art Project.jpg",
+              "label": "Google Art Project original",
+              "pixels": "4414 × 4568",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "Saint Agnes.JPG",
+              "label": "MNAC independent source photo",
+              "pixels": "3000 × 4000",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Agnes.JPG",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Agnes.JPG",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Agnes.JPG?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W42-NEW-002",
+          "subjectId": "SNT-OT-22",
+          "title": "Saint Agnes of Rome",
+          "artist": "Francesco Furini",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Francesco Furini - Saint Agnes of Rome.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco_Furini_-_Saint_Agnes_of_Rome.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 66,
+      "subjectId": "SNT-OT-23",
+      "label": "Saint Cecilia",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:cavalierarpinosantaceciliajpg",
+          "subjectId": "SNT-OT-23",
+          "title": "Cavalier Arpino - santa cecilia.jpg",
+          "artist": "Cavalier d'Arpino",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Cavalier Arpino - santa cecilia.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cavalier_Arpino_-_santa_cecilia.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cavalier_Arpino_-_santa_cecilia.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "C32:hippolytefourniersaintcecilejpg",
+          "subjectId": "SNT-OT-23",
+          "title": "Hippolyte Fournier Saint Cécile.jpg",
+          "artist": "Hippolyte Fournier",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Hippolyte Fournier Saint Cécile.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hippolyte_Fournier_Saint_C%C3%A9cile.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 67,
+      "subjectId": "SNT-OT-24",
+      "label": "Saint Catherine of Alexandria",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+          "subjectId": "SNT-OT-24",
+          "title": "Claude Vignon - St Catherine refuses to sacrifice to the idols.jpg",
+          "artist": "Claude Vignon",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Claude Vignon - St Catherine refuses to sacrifice to the idols.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 68,
+      "subjectId": "SNT-OT-25",
+      "label": "Saint Mary Magdalene",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C32:gustavevanaisemagdaleneinchriststombjpg",
+          "subjectId": "SNT-OT-25",
+          "title": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+          "artist": "Gustave Vanaise",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        },
+        {
+          "paintingId": "W40-012",
+          "subjectId": "SNT-OT-25",
+          "title": "Saint Mary Magdalene",
+          "artist": "Guido Reni",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Guido Reni - The Penitent Magdalene - Google Art ProjectFXD.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 69,
+      "subjectId": "SNT-OT-26",
+      "label": "Saint Geneviève",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C35:saintegenevieve1821byelisabethvigeelebrunjpg",
+          "subjectId": "SNT-OT-26",
+          "title": "Sainte Genevieve, 1821, by Elisabeth Vigee Le Brun.jpg",
+          "artist": "Artist not certified",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Sainte Genevieve, 1821, by Elisabeth Vigee Le Brun.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 70,
+      "subjectId": "SNT-OT-27",
+      "label": "Saint Denis of Paris",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "G17-009",
+          "subjectId": "SNT-OT-27",
+          "title": "Episode de la vie de saint Denis",
+          "artist": "Baronne Girod de l'Ain (Émilie Sivard de Beaulieu)",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W73_HUMAN_FIVE",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002382",
+          "technicalHold": "PHOTO_ORIGINAL_UNCERTIFIED",
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 71,
+      "subjectId": "SNT-OT-28",
+      "label": "Saint Vincent de Paul",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W38-019",
+          "subjectId": "SNT-OT-28",
+          "title": "San Vicente de Paul",
+          "artist": "Juan Nepomuceno Herrera",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "San Vicente de Paul - Juan Nepomuceno.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 72,
+      "subjectId": "SNT-OT-29",
+      "label": "Saint Martin of Tours",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+          "subjectId": "SNT-OT-29",
+          "title": "Saint Martin Dividing His Cloak",
+          "artist": "Anthony van Dyck",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": null,
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Van Dyck, Anthony - St Martin Dividing his Cloak - 1620-1621.JPG",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 73,
+      "subjectId": "SNT-OT-30",
+      "label": "Saint Anne",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent",
+          "subjectId": "SNT-OT-30",
+          "title": "La Educación de la Virgen (The Education of the Virgin), Workshop of Vicent López Portaña.jpg",
+          "artist": "Artist not certified",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "La Educación de la Virgen (The Education of the Virgin), Workshop of Vicent López Portaña.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 74,
+      "subjectId": "SNT-OT-31",
+      "label": "Saint Rosalia",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "subjectId": "SNT-OT-31",
+          "title": "Saint Rosalia Interceding for Palermo",
+          "artist": "Anthony van Dyck",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": null,
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Saint Rosalie Interceding for the Plague-stricken of Palermo MET DT2728.jpg",
+              "label": "Met Open Access original",
+              "pixels": "2755 × 3722",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 75,
+      "subjectId": "SNT-OT-32",
+      "label": "Saint Francis of Paola",
+      "group": "Saints",
+      "subgroup": "Other saints",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+          "subjectId": "SNT-OT-32",
+          "title": "Miracles of Saint Francis of Paola",
+          "artist": "Peter Paul Rubens",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "W49_HUMAN_FIVE",
+          "sourceUrl": null,
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Peter Paul Rubens - The Miracles of Saint Francis of Paola - 91.PB.50 - J. Paul Getty Museum.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "family": "Saints"
+    },
+    {
+      "index": 76,
+      "subjectId": "DEV-01",
+      "label": "Sacred Heart of Jesus",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "commons-morlete-sacred-heart-1759",
+          "subjectId": "DEV-01",
+          "title": "The Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Juan Patricio Morlete Ruiz - The Heart of Jesus - Google Art Project.jpg",
+              "label": "Google Art Project source file",
+              "pixels": "2345 × 3045",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": {
+            "width": 2345,
+            "height": 3045,
+            "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+            "localArchiveOriginal": "originals/commons-morlete-sacred-heart-1759.jpg"
+          },
+          "rights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Devotional Sacred Heart versus apparition are different compositions.",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 77,
+      "subjectId": "DEV-02",
+      "label": "Immaculate Heart of Mary",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "B02-HEART-MARY-MORLETE",
+          "subjectId": "DEV-02",
+          "title": "The Heart of Mary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_ADDITIONAL_ORIGINAL",
+          "sourceUrl": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
+          "technicalHold": "SOURCE_ORIGINAL_AND_OPEN_PHOTO_NEEDED",
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Exact devotional iconography required, weaker source to review.",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 78,
+      "subjectId": "DEV-05",
+      "label": "Blessed Sacrament / Eucharistic Adoration",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "met-438434",
+          "subjectId": "DEV-05",
+          "title": "The Virgin Adoring the Host",
+          "artist": "Jean Auguste Dominique Ingres",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "OCT13_EXPLICIT_HUMAN_FIVE",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "Jean Auguste Dominique Ingres - The Virgin Adoring the Host.jpg",
+              "label": "Met Open Access source photo",
+              "pixels": "4964 × 6060",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "The Virgin Adoring the Host.PNG",
+              "label": "Second Met-original rendering",
+              "pixels": "1379 × 1854",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Virgin_Adoring_the_Host.PNG",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Virgin_Adoring_the_Host.PNG",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Virgin_Adoring_the_Host.PNG?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": {
+            "width": 3122,
+            "height": 3813,
+            "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+            "localArchiveOriginal": "originals/met-438434.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 79,
+      "subjectId": "DEV-10",
+      "label": "Saint Joseph",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "W04-009",
+          "subjectId": "DEV-10",
+          "title": "Le songe de saint Joseph",
+          "artist": "Philippe de Champaigne",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "SNT_SAINT_JOSEPH_FIVE_REUSED_EXACT_PERSON",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060517",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "The Dream of Saint Joseph.jpg",
+              "label": "Earlier five-star reviewed photo",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg?width=950",
+              "verification": "USER_PREVIEW_NOT_MASTER",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 80,
+      "subjectId": "DEV-11",
+      "label": "Holy Souls in Purgatory",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-437542",
+          "subjectId": "DEV-11",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "artist": "Workshop of Peter Paul Rubens",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 3094,
+            "height": 4000,
+            "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+            "localArchiveOriginal": "museum-originals/met-437542.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 81,
+      "subjectId": "DEV-12",
+      "label": "Our Lady of Perpetual Help",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "B02-HELP-ICON-BYZ",
+          "subjectId": "DEV-12",
+          "title": "Our Lady of Perpetual Help — traditional Roman icon",
+          "artist": "Byzantine iconographer (unknown)",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_ADDITIONAL_ORIGINAL",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
+          "technicalHold": "DEVOTIONAL_ICON_NOT_OIL_PAINTING_SOURCE_MASTER_NEEDED",
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "The original devotional icon is the canonical subject.",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 82,
+      "subjectId": "DEV-13",
+      "label": "Saint Thérèse of Lisieux",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "carmel-lisieux-1925-therese-aux-roses",
+          "subjectId": "DEV-13",
+          "title": "Thérèse aux roses (1925)",
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "SNT_THERESE_FIVE_REUSED_EXACT_PERSON",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Modern saint: historic devotional image needed; exact candidate unverified.",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 83,
+      "subjectId": "DEV-15",
+      "label": "Christ the King",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [],
+      "leads": [],
+      "scriptureOrContext": "Salvator Mundi depicts sovereignty, not necessarily the feast-specific devotional image.",
+      "curationStatus": "ACQUISITION_GAP"
+    },
+    {
+      "index": 84,
+      "subjectId": "DEV-19",
+      "label": "All Saints",
+      "group": "Devotions",
+      "subgroup": "Prayers & novenas",
+      "family": "Devotions",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-437743",
+          "subjectId": "DEV-19",
+          "title": "The Trinity Adored by All Saints",
+          "artist": "Spanish Painter",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437743",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 3490,
+            "height": 3852,
+            "sha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+            "localArchiveOriginal": "originals/met-437743.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 85,
+      "subjectId": "BIB-OR02",
+      "label": "The Fall",
+      "group": "Bible",
+      "subgroup": "Origins",
+      "family": "Bible Atlas",
+      "hasFive": true,
+      "works": [
+        {
+          "paintingId": "cma-150046",
+          "subjectId": "BIB-OR02",
+          "title": "Expulsion of Adam and Eve",
+          "artist": "John Faed",
+          "rating": 5,
+          "lockedRating": true,
+          "authority": "OCT13_EXPLICIT_HUMAN_FIVE",
+          "sourceUrl": "https://clevelandart.org/art/1980.258",
+          "technicalHold": null,
+          "placementNote": "Approved for Expulsion from Paradise; fits the aftermath of the Fall, not the temptation itself.",
+          "files": [
+            {
+              "id": "John Faed - Expulsion of Adam and Eve.jpg",
+              "label": "Source identity still needs validation",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:John_Faed_-_Expulsion_of_Adam_and_Eve.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": {
+            "width": 2645,
+            "height": 3400,
+            "sha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5",
+            "localArchiveOriginal": "originals/cma-150046.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Genesis 3:1–24",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 86,
+      "subjectId": "BIB-G03",
+      "label": "Flight into Egypt",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-437849",
+          "subjectId": "BIB-G03",
+          "title": "The Flight into Egypt",
+          "artist": "Cosmè Tura",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437849",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "The Flight into Egypt MET DT7231.jpg",
+              "label": "Met Open Access original",
+              "pixels": "3578 × 3665",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Flight_into_Egypt_MET_DT7231.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Flight_into_Egypt_MET_DT7231.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Flight_into_Egypt_MET_DT7231.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": {
+            "width": 3875,
+            "height": 4000,
+            "sha256": "a4c2c2f6c7e1a844658f941a0fc1c14c58821db58e8be5f29c9390ef3c6f74e6",
+            "localArchiveOriginal": "originals/met-437849.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Matthew 2:13–15",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 87,
+      "subjectId": "BIB-G04",
+      "label": "Baptism of Christ",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "cma-127746",
+          "subjectId": "BIB-G04",
+          "title": "Baptism of Christ",
+          "artist": "workshop of Jacopo Tintoretto",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://clevelandart.org/art/1950.400",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 3400,
+            "height": 2253,
+            "sha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+            "localArchiveOriginal": "originals/cma-127746.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Matthew 3:13–17",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 88,
+      "subjectId": "BIB-G05",
+      "label": "Temptation of Christ",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "nga-50726",
+          "subjectId": "BIB-G05",
+          "title": "The Temptation of Christ",
+          "artist": "Juan de Flandes",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 3087,
+            "height": 4096,
+            "sha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+            "localArchiveOriginal": "nga-originals/nga-50726.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Matthew 4:1–11",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 89,
+      "subjectId": "BIB-G06",
+      "label": "Calling the Fishermen",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "nga-96688",
+          "subjectId": "BIB-G06",
+          "title": "The Miraculous Draught of Fishes",
+          "artist": "Jacopo Bassano",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 4096,
+            "height": 2395,
+            "sha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+            "localArchiveOriginal": "originals/nga-96688.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Luke 5:1–11",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 90,
+      "subjectId": "BIB-G07",
+      "label": "Wedding at Cana",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-436801",
+          "subjectId": "BIB-G07",
+          "title": "The Marriage Feast at Cana",
+          "artist": "Juan de Flandes",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436801",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 2851,
+            "height": 3722,
+            "sha256": "45fa890f6d70b6a1aa4d22a120fe4c86deb752a4290740154385e177a1656400",
+            "localArchiveOriginal": "museum-originals/met-436801.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "John 2:1–11",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 91,
+      "subjectId": "BIB-G08",
+      "label": "Samaritan Woman",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-702752",
+          "subjectId": "BIB-G08",
+          "title": "Christ and the Woman of Samaria",
+          "artist": "Benedetto Luti",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/702752",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": null,
+            "height": null,
+            "sha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+            "localArchiveOriginal": "museum-originals/met-702752.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "John 4:4–26",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 92,
+      "subjectId": "BIB-G09",
+      "label": "Healing the Paralytic",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "nga-12205",
+          "subjectId": "BIB-G09",
+          "title": "The Healing of the Paralytic",
+          "artist": "Netherlandish 16th Century",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 2892,
+            "height": 4096,
+            "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+            "localArchiveOriginal": "originals/nga-12205.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Mark 2:1–12",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 93,
+      "subjectId": "BIB-G15",
+      "label": "Transfiguration",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "kress-k2016",
+          "subjectId": "BIB-G15",
+          "title": "The Transfiguration",
+          "artist": "Maestro Bartolomé",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 5448,
+            "height": 7584,
+            "sha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+            "localArchiveOriginal": "originals/kress-k2016.jpg"
+          },
+          "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Matthew 17:1–9",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 94,
+      "subjectId": "BIB-G17",
+      "label": "The Good Samaritan",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-436302",
+          "subjectId": "BIB-G17",
+          "title": "The Good Samaritan",
+          "artist": "Workshop of Domenico Fetti",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436302",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "The Good Samaritan MET DP278746.jpg",
+              "label": "Met Open Access original",
+              "pixels": "2792 × 3866",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Good_Samaritan_MET_DP278746.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Good_Samaritan_MET_DP278746.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Good_Samaritan_MET_DP278746.jpg?width=950",
+              "verification": "SOURCE_FILE_METADATA_INDEXED",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": {
+            "width": 2792,
+            "height": 3866,
+            "sha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+            "localArchiveOriginal": "originals/met-436302.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Luke 10:25–37",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 95,
+      "subjectId": "BIB-G18",
+      "label": "The Prodigal Son",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "nga-34956",
+          "subjectId": "BIB-G18",
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Luke 15:11–32",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 96,
+      "subjectId": "BIB-G19",
+      "label": "Christ and Martha and Mary",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "B02-MARTHA-VERMEER",
+          "subjectId": "BIB-G19",
+          "title": "Christ in the House of Martha and Mary",
+          "artist": "Johannes Vermeer",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_ADDITIONAL_ORIGINAL",
+          "sourceUrl": "https://www.nationalgalleries.org/art-and-artists/5573/christ-house-martha-and-mary",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Luke 10:38–42",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 97,
+      "subjectId": "BIB-G21",
+      "label": "Christ and Doubting Thomas",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "B02-THOMAS-CARAVAGGIO",
+          "subjectId": "BIB-G21",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_ADDITIONAL_ORIGINAL",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [
+            {
+              "id": "The Incredulity of Saint Thomas.jpg",
+              "label": "Source-linked Commons file",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Incredulity_of_Saint_Thomas.jpg?width=950",
+              "verification": "EXACT_SOURCE_FILE_NAME",
+              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+            }
+          ],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "John 20:24–29",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 98,
+      "subjectId": "BIB-G22",
+      "label": "Road to Emmaus",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "met-437871",
+          "subjectId": "BIB-G22",
+          "title": "The Supper at Emmaus",
+          "artist": "Diego Velázquez",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 3538,
+            "height": 3303,
+            "sha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+            "localArchiveOriginal": "originals/met-437871.jpg"
+          },
+          "rights": "CC0",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Luke 24:13–35",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 99,
+      "subjectId": "BIB-G25",
+      "label": "Entry into Jerusalem",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "kress-k2017",
+          "subjectId": "BIB-G25",
+          "title": "The Entry into Jerusalem",
+          "artist": "Maestro Bartolomé",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_MUSEUM_ORIGINAL_OPTION",
+          "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": {
+            "width": 5510,
+            "height": 7700,
+            "sha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+            "localArchiveOriginal": "originals/kress-k2017.jpg"
+          },
+          "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "Matthew 21:1–11",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    },
+    {
+      "index": 100,
+      "subjectId": "BIB-G26",
+      "label": "Washing of the Feet",
+      "group": "Bible",
+      "subgroup": "Gospel",
+      "family": "Bible Atlas",
+      "hasFive": false,
+      "works": [
+        {
+          "paintingId": "B02-FOOTWASH-TINTORETTO",
+          "subjectId": "BIB-G26",
+          "title": "Christ Washing the Disciples' Feet",
+          "artist": "Jacopo Tintoretto",
+          "rating": null,
+          "lockedRating": false,
+          "authority": "UNRATED_ADDITIONAL_ORIGINAL",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-disciples-feet",
+          "technicalHold": null,
+          "placementNote": "",
+          "files": [],
+          "acquisition": null,
+          "rights": "UNREVIEWED_FILE_LEVEL",
+          "releaseApproved": false
+        }
+      ],
+      "leads": [],
+      "scriptureOrContext": "John 13:1–17",
+      "curationStatus": "REVIEW_WHERE_PHOTO_EXISTS"
+    }
+  ]
+}
