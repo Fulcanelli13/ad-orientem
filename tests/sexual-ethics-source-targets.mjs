@@ -107,8 +107,13 @@ for(const language of ["en","fr"]){
    item.id+" original locator/witness entries were lost");
   if(item.depth==="DEBATE")assert.match(index,
    language==="en"?/opposing positions remain in their respective argument stages/:/sources des positions adverses restent/);
-  for(const [,locator] of item.refs)assert.ok(detail.includes(locator.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"))||detail.includes(locator),
-   item.id+" original locator disappeared");
+  for(const [sourceId,locator] of item.refs){
+   for(const target of cseSourceTargets(sourceId,locator,CSE_SOURCE_MAP[sourceId],{french:language==="fr"})){
+    const text=String(target.locator||locator);
+    const escaped=text.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+    assert.ok(detail.includes(escaped),item.id+" resolved original locator disappeared: "+text);
+   }
+  }
   indexed++;
  }
 }
