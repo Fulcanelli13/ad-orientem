@@ -1,0 +1,1817 @@
+{
+  "schema": "AO_SCHUSTER_1908_ATLAS_TOPIC_CORRECTION_AND_BODY_EVIDENCE_V3",
+  "date": "2026-10-16",
+  "sourceOfTruthEdition": "SCHUSTER-EN-SADLIER-11TH-ORIGINAL_1908",
+  "previousDraft": "data/explore/biblical-schuster-1908-atlas-topic-shortlist-expanded.v2.json",
+  "sourcePdfSha256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+  "researchEvidenceArtifact": {
+    "name": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json",
+    "sha256": "5d51d66a6fb63480cad1b1025cfcc79dedb6f56d3df236581cce08ce2693e356"
+  },
+  "localReaderArtifact": {
+    "name": "Schuster_1908_Offline_Research_Reader_v6.html",
+    "sha256": "9419502c5a974725e9f6c5e38a038a536520b8d1a8024a35574a6655790f51f7"
+  },
+  "counts": {
+    "candidatePairsRetained": 87,
+    "original1908BodySupportedCandidatePairs": 45,
+    "original1908BodySupportedDistinctChapters": 42,
+    "laterEditionMisassignedChaptersFixed": 3,
+    "previouslyLoggedEpisodeLociMaintained": 20,
+    "combinedPreviewEpisodeLoci": 65,
+    "wholeVerseCoverageCertified": 0,
+    "productionAppLinksEnabled": 0
+  },
+  "editorialWarnings": [
+    "Later 32nd-edition subject headings cannot establish correct 1908 chapter number",
+    "Some chapters cover only a subpart of the linked Scripture reference or combine Gospel traditions",
+    "Source-body OCR terms do not prove word-for-word Biblical verse alignment",
+    "Question, notes, epigraphs and historical interpretation must not be treated as the canonical Scripture text"
+  ],
+  "safety": {
+    "historicalSourceProseNotCommitted": true,
+    "sourceAppUnchanged": true,
+    "scriptureCoverageCertified": false,
+    "noAIComposedBibleNarrative": true,
+    "sourceRightsNotApproved": true,
+    "missingOriginalPrintedPages": [
+      384,
+      385
+    ]
+  },
+  "candidates": [
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-I",
+      "editionChapterRoman": "I",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Creation of the World",
+      "atlasEventKey": "biblical:passage:genesis-1-1-31",
+      "atlasEventTitle": "Creation",
+      "atlasScriptureReference": "Genesis 1:1–31",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-I"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-IV",
+      "editionChapterRoman": "IV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Fall of Our First Parents",
+      "atlasEventKey": "biblical:passage:genesis-3-1-24",
+      "atlasEventTitle": "The Fall",
+      "atlasScriptureReference": "Genesis 3:1–24",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-IV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "serpent",
+          "forbidden tree"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-V",
+      "editionChapterRoman": "V",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Cain and Abel",
+      "atlasEventKey": "biblical:passage:genesis-4-1-16",
+      "atlasEventTitle": "Cain and Abel",
+      "atlasScriptureReference": "Genesis 4:1–16",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-V"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-VI",
+      "editionChapterRoman": "VI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "The Deluge",
+      "atlasEventKey": "biblical:passage:genesis-7-1-24",
+      "atlasEventTitle": "The Flood",
+      "atlasScriptureReference": "Genesis 7:1–24",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-VI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "ark",
+          "rain"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-VII",
+      "editionChapterRoman": "VII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Noe's Offering; His Children",
+      "atlasEventKey": "biblical:passage:genesis-9-8-17",
+      "atlasEventTitle": "God's covenant with Noah",
+      "atlasScriptureReference": "Genesis 9:8–17",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-VII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Noe",
+          "covenant"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-VIII",
+      "editionChapterRoman": "VIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Tower of Babel",
+      "atlasEventKey": "biblical:passage:genesis-11-1-9",
+      "atlasEventTitle": "The tower of Babel",
+      "atlasScriptureReference": "Genesis 11:1–9",
+      "atlasEra": "ORIGINS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-VIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-IX",
+      "editionChapterRoman": "IX",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Call of Abraham",
+      "atlasEventKey": "biblical:passage:genesis-12-1-9",
+      "atlasEventTitle": "The call of Abram",
+      "atlasScriptureReference": "Genesis 12:1–9",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-IX"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XIII",
+      "editionChapterRoman": "XIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Birth of Isaac and Abraham's Sacrifice",
+      "atlasEventKey": "biblical:passage:genesis-21-1-7",
+      "atlasEventTitle": "Birth of Isaac",
+      "atlasScriptureReference": "Genesis 21:1–7",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Isaac",
+          "circumcised"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XIII",
+      "editionChapterRoman": "XIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Birth of Isaac and Abraham's Sacrifice",
+      "atlasEventKey": "biblical:passage:genesis-22-1-19",
+      "atlasEventTitle": "The sacrifice of Isaac",
+      "atlasScriptureReference": "Genesis 22:1–19",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Mount Moria",
+          "altar"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XVIII",
+      "editionChapterRoman": "XVIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Joseph Sold by His Brethren",
+      "atlasEventKey": "biblical:passage:genesis-37-18-36",
+      "atlasEventTitle": "Joseph is sold",
+      "atlasScriptureReference": "Genesis 37:18–36",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XVIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Joseph",
+          "merchants"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXI",
+      "editionChapterRoman": "XXI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Joseph's Exaltation",
+      "atlasEventKey": "biblical:passage:genesis-41-37-45",
+      "atlasEventTitle": "Joseph governs Egypt",
+      "atlasScriptureReference": "Genesis 41:37–45",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "seven cows",
+          "Pharao"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXVI",
+      "editionChapterRoman": "XXVI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Jacob Goes into Egypt",
+      "atlasEventKey": "biblical:passage:genesis-46-1-7",
+      "atlasEventTitle": "Israel settles in Egypt",
+      "atlasScriptureReference": "Genesis 46:1–7",
+      "atlasEra": "PATRIARCHS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXIX",
+      "editionChapterRoman": "XXIX",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Birth of Moses",
+      "atlasEventKey": "biblical:passage:exodus-2-1-10",
+      "atlasEventTitle": "The birth of Moses",
+      "atlasScriptureReference": "Exodus 2:1–10",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXIX",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Moses",
+          "daughter"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXI",
+      "editionChapterRoman": "XXXI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Burning Bush",
+      "atlasEventKey": "biblical:passage:exodus-3-1-15",
+      "atlasEventTitle": "The burning bush",
+      "atlasScriptureReference": "Exodus 3:1–15",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXII",
+      "editionChapterRoman": "XXXII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Plagues Wrought in Egypt",
+      "atlasEventKey": "biblical:passage:exodus-7-14-25",
+      "atlasEventTitle": "The plagues begin",
+      "atlasScriptureReference": "Exodus 7:14–25",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Pharao",
+          "frogs"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXIII",
+      "editionChapterRoman": "XXXIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Paschal Lamb; Departure from Egypt",
+      "atlasEventKey": "biblical:passage:exodus-12-1-28",
+      "atlasEventTitle": "The first Passover",
+      "atlasScriptureReference": "Exodus 12:1–28",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "lamb",
+          "blood"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXIII",
+      "editionChapterRoman": "XXXIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Paschal Lamb; Departure from Egypt",
+      "atlasEventKey": "biblical:passage:exodus-12-31-42",
+      "atlasEventTitle": "The departure from Egypt",
+      "atlasScriptureReference": "Exodus 12:31–42",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Egypt",
+          "children of Israel"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXIV",
+      "editionChapterRoman": "XXXIV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Passage of the Red Sea",
+      "atlasEventKey": "biblical:passage:exodus-14-15-31",
+      "atlasEventTitle": "The crossing of the sea",
+      "atlasScriptureReference": "Exodus 14:15–31",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXIV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Red Sea",
+          "waters"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXV",
+      "editionChapterRoman": "XXXV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Miracles Wrought in the Desert",
+      "atlasEventKey": "biblical:passage:exodus-16-1-36",
+      "atlasEventTitle": "Manna in the wilderness",
+      "atlasScriptureReference": "Exodus 16:1–36",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "manna",
+          "quails"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXVI",
+      "editionChapterRoman": "XXXVI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Ten Commandments on Mount Sinai",
+      "atlasEventKey": "biblical:passage:exodus-19-16-20",
+      "atlasEventTitle": "The Covenant at Sinai",
+      "atlasScriptureReference": "Exodus 19:16–20",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXVI",
+      "editionChapterRoman": "XXXVI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Ten Commandments on Mount Sinai",
+      "atlasEventKey": "biblical:passage:exodus-20-1-17",
+      "atlasEventTitle": "The Ten Commandments",
+      "atlasScriptureReference": "Exodus 20:1–17",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXVI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Mount Sinai",
+          "law"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXVII",
+      "editionChapterRoman": "XXXVII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Golden Calf",
+      "atlasEventKey": "biblical:passage:exodus-32-1-35",
+      "atlasEventTitle": "The golden calf",
+      "atlasScriptureReference": "Exodus 32:1–35",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXVII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "calf",
+          "Aaron"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XXXVIII",
+      "editionChapterRoman": "XXXVIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Making of the Tabernacle",
+      "atlasEventKey": "biblical:passage:exodus-40-1-38",
+      "atlasEventTitle": "The Tabernacle",
+      "atlasScriptureReference": "Exodus 40:1–38",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XXXVIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-XLIV",
+      "editionChapterRoman": "XLIV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Parting Advice of Moses; His Death",
+      "atlasEventKey": "biblical:passage:deuteronomy-34-1-6",
+      "atlasEventTitle": "Moses sees the Promised Land",
+      "atlasScriptureReference": "Deuteronomy 34:1–6",
+      "atlasEra": "EXODUS",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-XLIV"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LI",
+      "editionChapterRoman": "LI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "David Fights and Slays Goliath",
+      "atlasEventKey": "biblical:passage:1samuel-17-1-54",
+      "atlasEventTitle": "David and Goliath",
+      "atlasScriptureReference": "1Samuel 17:1–54",
+      "atlasEra": "ISRAEL",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Goliath",
+          "stone"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LIX",
+      "editionChapterRoman": "LIX",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Building and Consecration of the Temple",
+      "atlasEventKey": "biblical:passage:1kings-8-1-66",
+      "atlasEventTitle": "Solomon dedicates the Temple",
+      "atlasScriptureReference": "1Kings 8:1–66",
+      "atlasEra": "ISRAEL",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LIX"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXI",
+      "editionChapterRoman": "LXI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Division of the Kingdom",
+      "atlasEventKey": "biblical:passage:1kings-12-1-24",
+      "atlasEventTitle": "Division of the kingdom",
+      "atlasScriptureReference": "1Kings 12:1–24",
+      "atlasEra": "ISRAEL",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXIII",
+      "editionChapterRoman": "LXIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Sacrifice of Elias",
+      "atlasEventKey": "biblical:passage:1kings-18-19-39",
+      "atlasEventTitle": "Elijah on Mount Carmel",
+      "atlasScriptureReference": "1Kings 18:19–39",
+      "atlasEra": "ISRAEL",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Elias",
+          "Baal"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXVII",
+      "editionChapterRoman": "LXVII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Tobias During the Captivity of Babylon",
+      "atlasEventKey": "biblical:passage:tobit-1-10",
+      "atlasEventTitle": "Tobit in Nineveh",
+      "atlasScriptureReference": "Tobit 1:10",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXVII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXIV",
+      "editionChapterRoman": "LXXV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Babylonian Captivity; Fall of Kingdom of Juda",
+      "atlasEventKey": "biblical:passage:judith-13-1-20",
+      "atlasEventTitle": "Judith saves her people",
+      "atlasScriptureReference": "Judith 13:1–20",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXV",
+      "sourceEditionMismatch": {
+        "wrongHistoricalChapterId": "SCHUSTER-EN-1908-OT-LXXV",
+        "correctOriginal1908ChapterId": "SCHUSTER-EN-1908-OT-LXXIV",
+        "basis": "Actual 1908 original chapter heading AND body, rather than later 1950 chapter-number slot",
+        "status": "RESOLVED_1908_ORIGINAL_BODY_SUBJECT"
+      },
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Judith",
+          "Holofernes"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXVI",
+      "editionChapterRoman": "LXXVII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Daniel and the Three Young Men in Fiery Furnace",
+      "atlasEventKey": "biblical:passage:daniel-13-1-64",
+      "atlasEventTitle": "Susanna is vindicated",
+      "atlasScriptureReference": "Daniel 13:1–64",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXVII",
+      "sourceEditionMismatch": {
+        "wrongHistoricalChapterId": "SCHUSTER-EN-1908-OT-LXXVII",
+        "correctOriginal1908ChapterId": "SCHUSTER-EN-1908-OT-LXXVI",
+        "basis": "Actual 1908 original chapter heading AND body, rather than later 1950 chapter-number slot",
+        "status": "RESOLVED_1908_ORIGINAL_BODY_SUBJECT"
+      },
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Susanna",
+          "Daniel"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXVII",
+      "editionChapterRoman": "LXXVIII",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "King Baltassar and the God Bel",
+      "atlasEventKey": "biblical:passage:daniel-3-24-90",
+      "atlasEventTitle": "The song of the three youths",
+      "atlasScriptureReference": "Daniel 3:24–90",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXVIII",
+      "sourceEditionMismatch": {
+        "wrongHistoricalChapterId": "SCHUSTER-EN-1908-OT-LXXVIII",
+        "correctOriginal1908ChapterId": "SCHUSTER-EN-1908-OT-LXXVII",
+        "basis": "Actual 1908 original chapter heading AND body, rather than later 1950 chapter-number slot",
+        "status": "RESOLVED_1908_ORIGINAL_BODY_SUBJECT"
+      },
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "furnace",
+          "angel"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXX",
+      "editionChapterRoman": "LXXX",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Return of Jews from Babylon",
+      "atlasEventKey": "biblical:passage:ezra-1-1-11",
+      "atlasEventTitle": "Return from exile",
+      "atlasScriptureReference": "Ezra 1:1–11",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXX"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXXI",
+      "editionChapterRoman": "LXXXI",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Esther",
+      "atlasEventKey": "biblical:passage:esther-4-1-17",
+      "atlasEventTitle": "Esther intercedes",
+      "atlasScriptureReference": "Esther 4:1–17",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-OT-LXXXIV",
+      "editionChapterRoman": "LXXXIV",
+      "testament": "OT",
+      "chapterTitleFrom32ndTOC": "Martyrdom of Seven Machabees",
+      "atlasEventKey": "biblical:passage:2maccabees-7-1-42",
+      "atlasEventTitle": "The seven brothers' witness",
+      "atlasScriptureReference": "2Maccabees 7:1–42",
+      "atlasEra": "EXILE",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-OT-LXXXIV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "seven sons",
+          "mother"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-II",
+      "editionChapterRoman": "II",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Annunciation of Birth of Christ",
+      "atlasEventKey": "biblical:event:nazareth-e1",
+      "atlasEventTitle": "The Annunciation",
+      "atlasScriptureReference": "Luke 1:26–38",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-II"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-III",
+      "editionChapterRoman": "III",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "The Visitation",
+      "atlasEventKey": "biblical:event:ein-karem-e1",
+      "atlasEventTitle": "The Visitation",
+      "atlasScriptureReference": "Luke 1:39–56",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-III"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-V",
+      "editionChapterRoman": "V",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Birth of Jesus Christ",
+      "atlasEventKey": "biblical:event:bethlehem-e1",
+      "atlasEventTitle": "Birth of Jesus and adoration of the shepherds",
+      "atlasScriptureReference": "Luke 2:1–20",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-V",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Mary",
+          "city of David"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-VI",
+      "editionChapterRoman": "VI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Shepherds at the Manger",
+      "atlasEventKey": "biblical:event:bethlehem-e1",
+      "atlasEventTitle": "Birth of Jesus and adoration of the shepherds",
+      "atlasScriptureReference": "Luke 2:1–20",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-VI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "shepherds",
+          "angel"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-VII",
+      "editionChapterRoman": "VII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Presentation in the Temple",
+      "atlasEventKey": "biblical:event:jerusalem-temple-e1",
+      "atlasEventTitle": "The Presentation of Jesus",
+      "atlasScriptureReference": "Luke 2:22–38",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-VII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Simeon",
+          "turtle-doves"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-VIII",
+      "editionChapterRoman": "VIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Adoration of the Magi",
+      "atlasEventKey": "biblical:event:bethlehem-e2",
+      "atlasEventTitle": "The visit of the Magi",
+      "atlasScriptureReference": "Matthew 2:1–12",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-VIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "wise men",
+          "star"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-IX",
+      "editionChapterRoman": "IX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Flight into Egypt",
+      "atlasEventKey": "biblical:event:egypt-e1",
+      "atlasEventTitle": "The flight into Egypt",
+      "atlasScriptureReference": "Matthew 2:13–15",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-IX",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Egypt",
+          "Herod"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-X",
+      "editionChapterRoman": "X",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus at Twelve Years Goes to the Temple",
+      "atlasEventKey": "biblical:event:jerusalem-temple-e2",
+      "atlasEventTitle": "The twelve-year-old Jesus in the Temple",
+      "atlasScriptureReference": "Luke 2:41–52",
+      "atlasEra": "INFANCY",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-X",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "twelve years",
+          "doctors"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XII",
+      "editionChapterRoman": "XII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Baptized by John and Tempted by the Devil",
+      "atlasEventKey": "biblical:event:jordan-baptism-e1",
+      "atlasEventTitle": "Baptism of Jesus",
+      "atlasScriptureReference": "Matthew 3:13–17",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Jordan",
+          "dove"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XII",
+      "editionChapterRoman": "XII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Baptized by John and Tempted by the Devil",
+      "atlasEventKey": "biblical:event:judean-wilderness-e1",
+      "atlasEventTitle": "The forty-day fast and temptations",
+      "atlasScriptureReference": "Matthew 4:1–11",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "devil",
+          "stones"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XIII",
+      "editionChapterRoman": "XIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "First Disciples of Jesus Christ",
+      "atlasEventKey": "biblical:event:jordan-east-bank-additional-008",
+      "atlasEventTitle": "The first disciples follow Jesus",
+      "atlasScriptureReference": "John 1:35–51",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XIV",
+      "editionChapterRoman": "XIV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "First Miracle of Jesus; Water into Wine",
+      "atlasEventKey": "biblical:event:cana-e1",
+      "atlasEventTitle": "The wedding at Cana",
+      "atlasScriptureReference": "John 2:1–11",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XIV"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XV",
+      "editionChapterRoman": "XV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Temple Sellers Expelled; Discourse with Nicodemus",
+      "atlasEventKey": "biblical:event:jerusalem-temple-e3",
+      "atlasEventTitle": "Jesus purifies the Temple",
+      "atlasScriptureReference": "John 2:13–22",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XV"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XVI",
+      "editionChapterRoman": "XVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus at the Well of Jacob",
+      "atlasEventKey": "biblical:event:sychar-e1",
+      "atlasEventTitle": "Jesus and the Samaritan woman",
+      "atlasScriptureReference": "John 4:4–26",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XX",
+      "editionChapterRoman": "XX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Heals the Man Sick of Palsy",
+      "atlasEventKey": "biblical:event:capernaum-e2",
+      "atlasEventTitle": "The healing of a paralytic",
+      "atlasScriptureReference": "Mark 2:1–12",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XX"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXI",
+      "editionChapterRoman": "XXI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Sermon on the Mount",
+      "atlasEventKey": "biblical:event:beatitudes-e2",
+      "atlasEventTitle": "The Sermon on the Mount",
+      "atlasScriptureReference": "Matthew 5:13–48",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXIII",
+      "editionChapterRoman": "XXIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Raises the Widow's Son at Naim",
+      "atlasEventKey": "biblical:event:nain-e1",
+      "atlasEventTitle": "The raising of the widow's son",
+      "atlasScriptureReference": "Luke 7:11–17",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXVI",
+      "editionChapterRoman": "XXVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "The Man Infirm for Thirty-Eight Years Cured",
+      "atlasEventKey": "biblical:event:bethesda-miracle-18",
+      "atlasEventTitle": "Healing at the Pool of Bethesda",
+      "atlasScriptureReference": "John 5:1–15",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXIX",
+      "editionChapterRoman": "XXIX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Christ Stills the Tempest",
+      "atlasEventKey": "biblical:event:galilee-sea-e2",
+      "atlasEventTitle": "Jesus calms the storm",
+      "atlasScriptureReference": "Mark 4:35–41",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXIX",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "tempest",
+          "calm"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXXIII",
+      "editionChapterRoman": "XXXIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Miracle of Loaves and Fishes",
+      "atlasEventKey": "biblical:event:tabgha-e1",
+      "atlasEventTitle": "The feeding of the multitude",
+      "atlasScriptureReference": "John 6:1–15",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXXIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "loaves",
+          "fishes"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXXIV",
+      "editionChapterRoman": "XXXIV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Promises Bread of Life",
+      "atlasEventKey": "biblical:event:capernaum-e3",
+      "atlasEventTitle": "The discourse on the Bread of Life",
+      "atlasScriptureReference": "John 6:24–59",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXXIV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "living bread",
+          "flesh"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXXVI",
+      "editionChapterRoman": "XXXVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Promises Peter Keys of Kingdom of Heaven",
+      "atlasEventKey": "biblical:event:caesarea-philippi-e1",
+      "atlasEventTitle": "Peter's confession of faith",
+      "atlasScriptureReference": "Matthew 16:13–20",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXXVI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Caesarea Philippi",
+          "Peter"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XXXVII",
+      "editionChapterRoman": "XXXVII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Transfiguration",
+      "atlasEventKey": "biblical:event:transfiguration-e1",
+      "atlasEventTitle": "The Transfiguration",
+      "atlasScriptureReference": "Matthew 17:1–8",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XXXVII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XLIII",
+      "editionChapterRoman": "XLIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Mary and Martha",
+      "atlasEventKey": "biblical:event:bethany-additional-057",
+      "atlasEventTitle": "Jesus visits Martha and Mary",
+      "atlasScriptureReference": "Luke 10:38–42",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XLIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Martha",
+          "Mary"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LVI",
+      "editionChapterRoman": "LVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Raising Lazarus from the Dead",
+      "atlasEventKey": "biblical:event:bethany-e1",
+      "atlasEventTitle": "The raising of Lazarus",
+      "atlasScriptureReference": "John 11:1–44",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LVIII",
+      "editionChapterRoman": "LVIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Anointed by Mary",
+      "atlasEventKey": "biblical:event:bethany-e2",
+      "atlasEventTitle": "The anointing at Bethany",
+      "atlasScriptureReference": "John 12:1–8",
+      "atlasEra": "PUBLIC",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LVIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "ointment",
+          "Lazarus"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LIX",
+      "editionChapterRoman": "LIX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Triumphal Entry of Jesus into Jerusalem",
+      "atlasEventKey": "biblical:event:olives-e1",
+      "atlasEventTitle": "The triumphal entry into Jerusalem",
+      "atlasScriptureReference": "Luke 19:37–44",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LIX",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Bethphage",
+          "Hosanna"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXIV",
+      "editionChapterRoman": "LXIV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Last Supper; Washing Disciples' Feet",
+      "atlasEventKey": "biblical:event:cenacle-e1",
+      "atlasEventTitle": "The Last Supper and institution of the Eucharist",
+      "atlasScriptureReference": "Luke 22:7–20",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXIV"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXIV",
+      "editionChapterRoman": "LXIV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Last Supper; Washing Disciples' Feet",
+      "atlasEventKey": "biblical:event:cenacle-e2",
+      "atlasEventTitle": "The washing of the feet",
+      "atlasScriptureReference": "John 13:1–17",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXIV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "feet",
+          "washed"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXV",
+      "editionChapterRoman": "LXV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Institution of Most Holy Sacrament; Treason of Judas",
+      "atlasEventKey": "biblical:event:cenacle-e1",
+      "atlasEventTitle": "The Last Supper and institution of the Eucharist",
+      "atlasScriptureReference": "Luke 22:7–20",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "body",
+          "chalice"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXVII",
+      "editionChapterRoman": "LXVII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Agony in the Garden",
+      "atlasEventKey": "biblical:event:gethsemane-e1",
+      "atlasEventTitle": "The agony in the garden",
+      "atlasScriptureReference": "Matthew 26:36–46",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXVII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXVIII",
+      "editionChapterRoman": "LXVIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Seized",
+      "atlasEventKey": "biblical:event:gethsemane-e2",
+      "atlasEventTitle": "The arrest of Jesus",
+      "atlasScriptureReference": "Matthew 26:47–56",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXVIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXI",
+      "editionChapterRoman": "LXXI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Before Pilate and Herod",
+      "atlasEventKey": "biblical:event:jerusalem-trial-e2",
+      "atlasEventTitle": "Jesus before Pilate",
+      "atlasScriptureReference": "Matthew 27:11–26",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXII",
+      "editionChapterRoman": "LXXII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Scourging, Crowning, Condemnation",
+      "atlasEventKey": "biblical:event:jerusalem-trial-e3",
+      "atlasEventTitle": "The scourging and crowning with thorns",
+      "atlasScriptureReference": "John 19:1–16",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXIII",
+      "editionChapterRoman": "LXXIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Carries Cross to Calvary; Crucifixion",
+      "atlasEventKey": "biblical:event:golgotha-e2",
+      "atlasEventTitle": "The Crucifixion and death of Jesus",
+      "atlasScriptureReference": "John 19:17–30",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXIV",
+      "editionChapterRoman": "LXXIV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Seven Words on Cross; Death",
+      "atlasEventKey": "biblical:event:golgotha-e2",
+      "atlasEventTitle": "The Crucifixion and death of Jesus",
+      "atlasScriptureReference": "John 19:17–30",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXIV",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "cross",
+          "paradise"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXV",
+      "editionChapterRoman": "LXXV",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Laid in Sepulcher",
+      "atlasEventKey": "biblical:event:christ-tomb-e1",
+      "atlasEventTitle": "The burial of Jesus",
+      "atlasScriptureReference": "John 19:38–42",
+      "atlasEra": "PASSION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXV"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXVI",
+      "editionChapterRoman": "LXXVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Resurrection of Jesus",
+      "atlasEventKey": "biblical:event:christ-tomb-e2",
+      "atlasEventTitle": "The empty tomb and Mary Magdalene",
+      "atlasScriptureReference": "John 20:1–18",
+      "atlasEra": "RESURRECTION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXVII",
+      "editionChapterRoman": "LXXVII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Appears to Mary Magdalen and Peter",
+      "atlasEventKey": "biblical:event:christ-tomb-e2",
+      "atlasEventTitle": "The empty tomb and Mary Magdalene",
+      "atlasScriptureReference": "John 20:1–18",
+      "atlasEra": "RESURRECTION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXVII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Magdalen",
+          "gardener"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXVIII",
+      "editionChapterRoman": "LXXVIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Appears to Disciples on Way to Emmaus",
+      "atlasEventKey": "biblical:event:emmaus-e1",
+      "atlasEventTitle": "The risen Jesus walks to Emmaus",
+      "atlasScriptureReference": "Luke 24:13–35",
+      "atlasEra": "RESURRECTION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXVIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXIX",
+      "editionChapterRoman": "LXXIX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Jesus Appears to Apostles; Sacrament of Penance",
+      "atlasEventKey": "biblical:event:cenacle-e3",
+      "atlasEventTitle": "The risen Lord appears to the Apostles",
+      "atlasScriptureReference": "John 20:19–29",
+      "atlasEra": "RESURRECTION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXIX",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "peace",
+          "sins"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXI",
+      "editionChapterRoman": "LXXXI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Ascension of Jesus Christ",
+      "atlasEventKey": "biblical:event:olives-e3",
+      "atlasEventTitle": "The Ascension of Our Lord",
+      "atlasScriptureReference": "Acts 1:6–12",
+      "atlasEra": "RESURRECTION",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXII",
+      "editionChapterRoman": "LXXXII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Election of Matthias; Descent of Holy Ghost",
+      "atlasEventKey": "biblical:passage:acts-2-1-41",
+      "atlasEventTitle": "Pentecost",
+      "atlasScriptureReference": "Acts 2:1–41",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXIII",
+      "editionChapterRoman": "LXXXIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Lame Man Cured by Peter and John; Before Council",
+      "atlasEventKey": "biblical:passage:acts-3-1-10",
+      "atlasEventTitle": "Peter heals the lame man",
+      "atlasScriptureReference": "Acts 3:1–10",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "lame",
+          "Beautiful"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXVI",
+      "editionChapterRoman": "LXXXVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Election of Deacons; Stephen First Martyr",
+      "atlasEventKey": "biblical:passage:acts-7-54-60",
+      "atlasEventTitle": "Martyrdom of Stephen",
+      "atlasScriptureReference": "Acts 7:54–60",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXVI",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Stephen",
+          "stoned"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXVII",
+      "editionChapterRoman": "LXXXVII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Confirmation; Baptism of Officer of Queen Candace",
+      "atlasEventKey": "biblical:passage:acts-8-26-40",
+      "atlasEventTitle": "Philip baptizes the Ethiopian",
+      "atlasScriptureReference": "Acts 8:26–40",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXVII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "Philip",
+          "Candace"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXVIII",
+      "editionChapterRoman": "LXXXVIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Conversion of Saul",
+      "atlasEventKey": "biblical:passage:acts-9-1-22",
+      "atlasEventTitle": "Conversion of Saul",
+      "atlasScriptureReference": "Acts 9:1–22",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": true,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXVIII"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-LXXXIX",
+      "editionChapterRoman": "LXXXIX",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Peter Raises Tabitha",
+      "atlasEventKey": "biblical:passage:acts-9-36-43",
+      "atlasEventTitle": "Peter raises Tabitha at Joppa",
+      "atlasScriptureReference": "Acts 9:36–43",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": true,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-LXXXIX"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XC",
+      "editionChapterRoman": "XC",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Conversion of Cornelius",
+      "atlasEventKey": "biblical:passage:acts-10-1-48",
+      "atlasEventTitle": "Conversion of Cornelius",
+      "atlasScriptureReference": "Acts 10:1–48",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XC"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XCIII",
+      "editionChapterRoman": "XCIII",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Council of Jerusalem",
+      "atlasEventKey": "biblical:passage:acts-15-1-29",
+      "atlasEventTitle": "Council of Jerusalem",
+      "atlasScriptureReference": "Acts 15:1–29",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "ORIGINAL_1908_STORY_SUBJECT_IN_BODY_NOT_VERIFIED_BIBLE_VERSE_SCOPE",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XCIII",
+      "original1908BodyEvidence": {
+        "type": "TWO_DISTINCT_OCR_NARRATIVE_BODY_MARKERS_ON_ORIGINAL_SOURCE_PDF",
+        "tokens": [
+          "circumcised",
+          "Barnabas"
+        ],
+        "fullVerseCoverageVerified": false,
+        "originalAuthorWordingVerified": false,
+        "sourcePageLocatorEvidence": "Schuster_1908_Batch02_Narrative_Episode_Source_Anchors.json"
+      }
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XCVI",
+      "editionChapterRoman": "XCVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Last Years of the Apostles",
+      "atlasEventKey": "biblical:passage:acts-27-13-44",
+      "atlasEventTitle": "Paul's shipwreck at sea",
+      "atlasScriptureReference": "Acts 27:13–44",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XCVI"
+    },
+    {
+      "chapterId": "SCHUSTER-EN-1908-NT-XCVI",
+      "editionChapterRoman": "XCVI",
+      "testament": "NT",
+      "chapterTitleFrom32ndTOC": "Last Years of the Apostles",
+      "atlasEventKey": "biblical:passage:acts-28-16-31",
+      "atlasEventTitle": "St Paul in Rome",
+      "atlasScriptureReference": "Acts 28:16–31",
+      "atlasEra": "APOSTLES",
+      "relationship": "CHAPTER_SUBJECT_RELEVANCE_ONLY_NOT_VERSE_ALIGNMENT",
+      "reviewStatus": "REQUIRES_1908_SOURCE_BODY_AND_SCRIPTURE_SCOPE_REVIEW",
+      "noAutomaticAppJump": true,
+      "sourceChapterHeld": false,
+      "previousChapterId": "SCHUSTER-EN-1908-NT-XCVI"
+    }
+  ]
+}
