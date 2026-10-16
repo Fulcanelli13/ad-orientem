@@ -93,6 +93,29 @@ const usOnly=reviewNewSaintMassChoice({
  protectedFeasts:annex.feasts
 });
 assert.equal(usOnly.status,"INDETERMINATE","US-only date witness never confers global authority");
+const pioPrimarySource={
+ subjectId:"saint.pio-pietrelcina",monthDay:"09-23",
+ authorityScope:"GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+ universalStatus:"ATTESTED_BY_PAPAL_ANNOUNCEMENT",
+ sourceEvidenceType:"PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE",
+ sourceUrl:"https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html",
+ publishedOn:"2002-06-16"
+};
+const pioEmber=reviewNewSaintMassChoice({
+ date:"2026-09-23",saint:byId.get("saint.pio-pietrelcina"),
+ observedDay:{day:{main:{id:"tempora:Pent17-3:2:v",rank:"II"}}},
+ protectedFeasts:annex.feasts,sourceObservance:pioPrimarySource
+});
+assert.equal(pioEmber.status,"BLOCKED","Papal memorial must not displace 1962 Ember Wednesday");
+assert.equal(pioEmber.massInsertionAuthorized,false);
+const papalAsDecree=reviewNewSaintMassChoice({
+ date:"2026-09-23",saint:{...byId.get("saint.pio-pietrelcina"),observances:[]},
+ observedDay:{day:{main:{id:"sancti:09-23:3:w",rank:"III"}}},
+ protectedFeasts:annex.feasts,
+ sourceObservance:{...pioPrimarySource,sourceEvidenceType:null}
+});
+assert.notEqual(papalAsDecree.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
+  "Provenance classification must reject an unproven papal-decree substitute");
 assert.equal(reviewNewSaintMassChoice({
  date:"2026-09-23",saint:byId.get("saint.pio-pietrelcina"),
  observedDay:resolve("tempora:Pent17-3:2:v","II"),protectedFeasts:annex.feasts
