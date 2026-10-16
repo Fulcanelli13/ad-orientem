@@ -48,7 +48,7 @@ def main():
       nxt.append(sibling)
       if len(nxt)>300:break
      headings.append({"heading":title,"images":extract(nxt,site["url"])[:15]})
-   rec.update(status="SOURCE_HTML_FETCHED",pageBytes=len(r.content),headingMatches:headings)
+   rec.update(status="SOURCE_HTML_FETCHED",pageBytes=len(r.content),headingMatches=headings)
   except Exception as e:rec.update(status="FETCH_FAILURE",error=str(e)[:250])
   results.append(rec)
   print("W90_PROBE",site["subject"],rec["status"],sum(len(x["images"]) for x in rec.get("headingMatches",[])),flush=True)
