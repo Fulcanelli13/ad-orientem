@@ -14,8 +14,11 @@ assert.deepEqual(registry.precedence.map(x=>x.sourceKind),[
 ]);
 assert.deepEqual(registry.commemorationOrations,["collect","secret","postcommunion"]);
 assert.equal(registry.knownCases.find(x=>x.saintId==="saint.john-henry-newman")?.traditionalSelectedFormularyId,null);
-assert.equal(registry.knownCases.find(x=>x.saintId==="saint.john-henry-newman")?.stKevinsEvent?.exactMassFormulary,
-  "UNKNOWN_NO_FIRST_PARTY_PROGRAM_FOUND");
+const newmanEvent=registry.knownCases.find(x=>x.saintId==="saint.john-henry-newman")?.stKevinsEvent;
+assert.equal(newmanEvent.exactMassFormulary,
+  "UNKNOWN_FIRST_PARTY_NEWSLETTER_DOES_NOT_IDENTIFY_FORMULARY");
+assert.equal(newmanEvent.verifiedAnnounced7PmHighMass,true);
+assert.match(newmanEvent.verifiedFirstPartyNewsletterUrl,/squarespace\.com/);
 const eligible={status:"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW"};
 const blocked={status:"BLOCKED",reason:"CLASS_I_OR_II_DAY"};
 const review=(x={})=>reviewTraditionalMassFormulary({
