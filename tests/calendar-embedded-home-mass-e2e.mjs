@@ -48,26 +48,39 @@ try{
 
   await page.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed&&globalThis.AO_CALENDAR_APP_V1?.openEmbedded),null,{timeout:40000});
   assert.equal(await page.locator(".homeScreen .aoTodayV2Frontispiece").count(),1);
+  if(width>=700){
+    const layout=await page.locator(".homeScreen .aoTodayV2Frontispiece").evaluate(hero=>{
+      const art=hero.querySelector(".aoTodayV2Art"),mass=hero.querySelector(".aoTodayV2PrimaryMass");
+      return {noArt:hero.classList.contains("aoTodayV2ArtMissing"),
+        artHeight:art?.getBoundingClientRect().height,
+        massBottom:mass?.getBoundingClientRect().bottom,viewport:innerHeight};
+    });
+    if(layout.noArt){
+      assert.ok(layout.artHeight<=215,"No approved art must not leave an empty desktop billboard: "+JSON.stringify(layout));
+      assert.ok(layout.massBottom<layout.viewport-40,"Mass CTA should appear above the desktop fold: "+JSON.stringify(layout));
+    }
+  }
   await page.screenshot({path:resolve(shots,"today-"+width+".png"),fullPage:true});
   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
-  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Ring').count(),1,"The canonical 1962 year wheel must appear inside Today");
-  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDial').count(),0,
-    "Embedded Today must not repeat the full-year clock");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDial').count(),1,
+    "Home Liturgical Year must show the interactive Clock");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Ring').count(),0,
+    "Legacy mini-wheel must not obscure the Clock in Home");
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Coming').count(),0,
     "Embedded Today must not repeat Coming next");
   assert.equal(await page.locator(".aoTodayV2CalendarInline .aoCalYearDailyTrack").count(),1,"A separate daily-colour track must survive Calendar embedding");
-  const wheel=await page.locator('.aoTodayV2CalendarInline .aoCalV2Ring').evaluate(el=>({
-    verified:Number(el.dataset.verifiedDays),gradient:el.style.getPropertyValue("--year-daily-gradient"),
-    season:el.style.getPropertyValue("--year-season-gradient")
+  const wheel=await page.locator('.aoTodayV2CalendarInline .aoClockDial').evaluate(el=>({
+    verified:Number(el.dataset.verifiedDays),gradient:el.style.getPropertyValue("--ao-clock-daily-gradient"),
+    seasons:el.querySelectorAll("[data-cal-clock-season]").length
   }));
-  assert.match(wheel.gradient,/conic-gradient/,"Daily wheel must be sourced from real 1962 dates");
-  assert.match(wheel.season,/conic-gradient/,"Inner seasons must remain independent from daily Mass colours");
+  assert.match(wheel.gradient,/conic-gradient/,"Clock daily colour must be sourced from real 1962 dates");
+  assert.ok(wheel.seasons>=8,"Interactive Clock must retain all season controls");
 
   await page.waitForFunction(()=>{
     const home=document.querySelector(".homeScreen.aoTodayV2");
     const slot=home?.querySelector("[data-home-calendar-inline]");
-    const wheel=slot?.querySelector(".aoCalV2Ring");
+    const wheel=slot?.querySelector(".aoClockDial");
     const timeline=slot?.querySelector(".aoCalYearTrack");
     if(!wheel||!timeline)return false;
     const style=getComputedStyle(slot),wr=wheel.getBoundingClientRect(),tr=timeline.getBoundingClientRect();
@@ -77,13 +90,17 @@ try{
     console.log("YEAR_VISUAL_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
       const h=document.querySelector(".homeScreen.aoTodayV2"),slot=h?.querySelector("[data-home-calendar-inline]");
       const root=slot?.querySelector("#ao-calendar-modular-root");
-      const child=root?.querySelector(".aoCalV2Ring"),track=root?.querySelector(".aoCalYearTrack");
+      const child=root?.querySelector(".aoClockDial"),track=root?.querySelector(".aoCalYearTrack");
       const data=node=>node?({outer:node.outerHTML.slice(0,300),rect:node.getBoundingClientRect().toJSON(),display:getComputedStyle(node).display}):null;
       return {homeView:h?.dataset.aoHomeCalendarView,tabs:[...h?.querySelectorAll(".aoTodayV2Tabs button")||[]].map(n=>({text:n.textContent,active:n.getAttribute("aria-current")})),
         slot:data(slot),root:data(root),wheel:data(child),timeline:data(track),calendarStatus:globalThis.AO_CALENDAR_APP_V1?.status?.()};
     })));
     throw error;
   });
+  await page.locator('.aoTodayV2CalendarInline [data-cal-clock-season="lent"]').click();
+  await page.locator('.aoTodayV2CalendarInline .aoClockDetail').waitFor({state:"visible",timeout:12000});
+  await page.locator('.aoTodayV2CalendarInline [data-cal-clock-close]').click();
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDetail').count(),0);
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
     "Embedded Calendar must not repeat the host Day/Month/Year tabs");
