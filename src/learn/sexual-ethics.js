@@ -224,7 +224,7 @@ function sourceIndexMarkup(win,item,refs){
 function sourceDetails(win,item){
   const refs=item.refs||[];
   if(!refs.length)return "";
-  return `<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure><summary>${esc(L(win,"Sources","Sources"))} · ${new Set(refs.map(ref=>ref[0])).size}</summary>${sourceIndexMarkup(win,item,refs)}<details class="aoCSESourceDetail" data-ao-cse-source-detail><summary>${esc(L(win,"Detailed locators & provenance","Références précises et provenance"))} · ${refs.length}</summary>${refs.map(([sourceId,locator])=>{
+  return `<details class="aoCSESources aoSourceDisclosure" data-ao-cse-source-disclosure><summary>${esc(L(win,"Sources","Sources"))} · ${new Set(refs.map(ref=>ref[0])).size}</summary>${sourceIndexMarkup(win,item,refs)}<details class="aoCSESourceDetail" data-ao-cse-source-detail><summary>${esc(L(win,"Sources & provenance · detailed locators","Sources et provenance · références précises"))} · ${refs.length}</summary>${refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     const authority=source.authority_type?String(source.authority_type).replaceAll("_"," "):"";
     return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).map(target=>{
