@@ -14,6 +14,11 @@
       "id": 38882299843,
       "scope": "October 12 selected-painting Wikimedia photo recovery",
       "result": "success"
+    },
+    {
+      "id": 38883374539,
+      "scope": "slower second acquisition round corrected oversized/rate-limited sources in first 30",
+      "result": "success"
     }
   ],
   "sourceArtifactConstraints": {
@@ -23,19 +28,20 @@
   },
   "counts": {
     "requiredCategories": 168,
-    "categoriesWithAtLeastOneRetrievedPhoto": 104,
-    "categoriesWithoutAnyRetrievedPhoto": 64,
-    "activeFirst100WithPhoto": 74,
-    "activeFirst100WithoutPhoto": 26,
+    "categoriesWithAtLeastOneRetrievedPhoto": 105,
+    "categoriesWithoutAnyRetrievedPhoto": 63,
+    "activeFirst100WithPhoto": 75,
+    "activeFirst100WithoutPhoto": 25,
     "additional68WithPhoto": 30,
     "additional68WithoutPhoto": 38,
     "initialBatchRecordsSubmitted": 253,
     "sourceAcquiredPaintingRecordsFirstPass": 129,
     "sourceAcquiredPhotoVersionsFirstPass": 157,
     "additionalOctober12ResearchLeadRecordsAcquired": 31,
-    "distinctPreviewFilesBundledAfterOverlap": 186,
+    "distinctPreviewFilesBundledAfterOverlap": 187,
     "checksumFailures": 0,
-    "visualArtAcceptedByCuratorDuringThisPass": 0
+    "visualArtAcceptedByCuratorDuringThisPass": 0,
+    "imagePlacementsFromReusedSources": 193
   },
   "strictDistinctions": [
     "A source photograph successfully downloaded, decoded and hashed DOES NOT certify that it matches the exact historic original painting; conditional leads remain subject to accession/iconographic reconciliation.",
@@ -46,7 +52,7 @@
   ],
   "reviewGalleryGate": {
     "ready": false,
-    "reason": "64 of 168 categories have no acquired picture; user explicitly declines rating without complete visuals.",
+    "reason": "63 of 168 categories still have no acquired picture; user requires image acquisition before final rating HTML.",
     "needs": [
       "Acquire credible source images for remaining 64 categories, especially 26 of current 100 review categories.",
       "Verify previews load at full artwork proportions and permit 1600px+ enlargement.",
