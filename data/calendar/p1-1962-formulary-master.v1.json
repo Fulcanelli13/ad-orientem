@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_1962_FORMULARY_MASTER_V1",
   "asOf": "2026-10-16",
-  "status": "INDEXED_38_COMMON_FORMS_ZERO_PRIMARY_1962_TEXT_CERTIFICATIONS",
+  "status": "38_DIRECT_SECONDARY_PAGES_4_PRINT_FAMILIES_STRUCTURALLY_SCANNED_ZERO_FULL_LATIN_EDITION_CERTIFICATIONS",
   "baselineFile": "data/calendar/traditional-1962-common-formularies.review.v1.json",
   "sourceDirectory": "https://missale.online/proprium/en/commune",
   "corroboratingIndex": "https://fsspx.uk/en/proper-prayers-traditional-latin-mass-31673",
@@ -31,7 +31,7 @@
       "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
       "indexOrder": 1,
       "label": "Abbots",
-      "latinTitle": null,
+      "latinTitle": "Commune Abbatum",
       "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_abbatis",
@@ -103,7 +103,23 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_abbatis",
       "directIndexRowLinkNumber": 18,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "printedFamilyId": "commune-print:abbatum",
+      "printed1962Heading": "Commune Abbatum",
+      "secondaryWebLatinTitleBeforePrintReconciliation": null,
+      "printedVariant": "FIRST_MASS",
+      "printedFacsimilePages": [
+        "(28)",
+        "(29)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0851.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0852.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
     },
     {
       "id": "p1:index:1962:apostles",
@@ -1374,7 +1390,7 @@
       "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
       "indexOrder": 18,
       "label": "Bishop and Confessor",
-      "latinTitle": null,
+      "latinTitle": "Commune Confessoris Pontificis",
       "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_unius_confessoris_pontificis",
@@ -1446,14 +1462,30 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_confessoris_pontificis",
       "directIndexRowLinkNumber": 35,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "printedFamilyId": "commune-print:confessor-pontiff",
+      "printed1962Heading": "Commune Confessoris Pontificis",
+      "secondaryWebLatinTitleBeforePrintReconciliation": null,
+      "printedVariant": "FIRST_MASS",
+      "printedFacsimilePages": [
+        "(20)",
+        "(21)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0843.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0844.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
     },
     {
       "id": "p1:index:1962:bishop_and_confessor_second_mass",
       "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
       "indexOrder": 19,
       "label": "Bishop and Confessor – Second Mass",
-      "latinTitle": null,
+      "latinTitle": "Commune Confessoris Pontificis",
       "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_unius_confessoris_pontificis_altera_missa",
@@ -1525,14 +1557,30 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_confessoris_pontificis_altera_missa",
       "directIndexRowLinkNumber": 36,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "printedFamilyId": "commune-print:confessor-pontiff",
+      "printed1962Heading": "Commune Confessoris Pontificis",
+      "secondaryWebLatinTitleBeforePrintReconciliation": null,
+      "printedVariant": "ALTERA_MISSA",
+      "printedFacsimilePages": [
+        "(21)",
+        "(22)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0844.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0845.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
     },
     {
       "id": "commune:1962:doctor_pontiff",
       "canonicalIdStatus": "REUSE_EXISTING_OWNER_ID",
       "indexOrder": 20,
       "label": "Bishop and Doctor of the Church",
-      "latinTitle": "Commune Doctoris Pontificis",
+      "latinTitle": "Commune Doctorum",
       "latinTitleStatus": "SECONDARY_PAGE_ATTESTED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis",
@@ -1604,7 +1652,25 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_doctoris_pontificis",
       "directIndexRowLinkNumber": 37,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "printedFamilyId": "commune-print:doctorum",
+      "printed1962Heading": "Commune Doctorum",
+      "secondaryWebLatinTitleBeforePrintReconciliation": "Commune Doctoris Pontificis",
+      "printedVariant": "DOCTOR_PONTIFF",
+      "printedFacsimilePages": [
+        "(23)",
+        "(24)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0846.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0847.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "printedFamilySiblingCandidateId": "commune:1962:doctor_non_pontiff",
+      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons."
     },
     {
       "id": "p1:index:1962:bishop_and_martyr",
@@ -1841,14 +1907,31 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_confessoris_non_pontificis",
       "directIndexRowLinkNumber": 40,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "printedFamilyId": "commune-print:confessor-non-pontiff",
+      "printed1962Heading": "Commune Confessoris non Pontificis",
+      "secondaryWebLatinTitleBeforePrintReconciliation": "Commune Confessoris non Pontificis",
+      "printedVariant": "FIRST_MASS",
+      "printedFacsimilePages": [
+        "(25)",
+        "(26)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0848.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0849.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "printedFamilySiblingCandidateId": "p1:index:1962:confessor_not_a_bishop_second_mass"
     },
     {
       "id": "p1:index:1962:confessor_not_a_bishop_second_mass",
       "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
       "indexOrder": 24,
       "label": "Confessor, not a Bishop – Second Mass",
-      "latinTitle": null,
+      "latinTitle": "Commune Confessoris non Pontificis",
       "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_confessoris_non_pontificis_altera_missa",
@@ -1920,14 +2003,30 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_confessoris_non_pontificis_altera_missa",
       "directIndexRowLinkNumber": 41,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "printedFamilyId": "commune-print:confessor-non-pontiff",
+      "printed1962Heading": "Commune Confessoris non Pontificis",
+      "secondaryWebLatinTitleBeforePrintReconciliation": null,
+      "printedVariant": "ALTERA_MISSA",
+      "printedFacsimilePages": [
+        "(26)",
+        "(27)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0849.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0850.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
     },
     {
       "id": "commune:1962:doctor_non_pontiff",
       "canonicalIdStatus": "REUSE_EXISTING_OWNER_ID",
       "indexOrder": 25,
       "label": "Doctor of the Church, not a Bishop",
-      "latinTitle": "Commune Doctoris non Pontificis",
+      "latinTitle": "Commune Doctorum",
       "latinTitleStatus": "SECONDARY_PAGE_ATTESTED",
       "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
       "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis",
@@ -1999,7 +2098,25 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_doctoris_non_pontificis",
       "directIndexRowLinkNumber": 42,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "printedFamilyId": "commune-print:doctorum",
+      "printed1962Heading": "Commune Doctorum",
+      "secondaryWebLatinTitleBeforePrintReconciliation": "Commune Doctoris non Pontificis",
+      "printedVariant": "DOCTOR_NON_PONTIFF",
+      "printedFacsimilePages": [
+        "(23)",
+        "(24)"
+      ],
+      "printedFacsimilePhotoUrls": [
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0846.jpg",
+        "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0847.jpg"
+      ],
+      "originalPrintedPageImagesVisuallyReviewed": true,
+      "fullLatinPhotoToTextCertified": false,
+      "editionProvenanceIndependentlyVerified": false,
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "printedFamilySiblingCandidateId": "commune:1962:doctor_pontiff",
+      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons."
     },
     {
       "id": "p1:index:1962:female_martyr_not_a_virgin",
@@ -3042,5 +3159,10 @@
     "pagesVerified": 38,
     "source": "https://missale.online/proprium/en/commune",
     "meaning": "Every row's exact individual online source URL was opened; contents and 1962 print correctness are not certified."
-  }
+  },
+  "printedIndexIdentityInterpretation": "38 online index entries do NOT equal 38 independent Latin Common families; both Doctor pages come from one original printed Commune Doctorum, with Pontiff/non-Pontiff oration variants. Other variants must be checked before counting distinct printed families.",
+  "distinctPrintedFamilyCandidatesAmong38AtMost": 37,
+  "printedFamiliesWithVisualPageEvidence": 4,
+  "originalPrintedPagePhotoLinksVerified": 14,
+  "printedFamilyEvidenceSourceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
 }
