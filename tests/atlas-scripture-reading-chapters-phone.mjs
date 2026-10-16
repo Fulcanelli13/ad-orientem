@@ -57,7 +57,10 @@ try{
  await toggle.tap({timeout:15000});
  assert.equal(await toggle.getAttribute("aria-expanded"),"true");
  assert.equal(await panel.isVisible(),true);
- assert.equal(await panel.locator("[data-bible-reading-start]").count(),37);
+ assert.equal(await panel.locator('[data-bible-reading-view="chapters"] [data-bible-reading-start]').count(),37);
+ assert.equal(await panel.locator('[data-bible-arc]').count(),10);
+ assert.equal(await panel.locator('[data-bible-theme]').count(),9);
+ assert.equal(await panel.locator('[data-bible-reading-tab]').count(),3);
  assert.match(await panel.innerText(),/not an abridged or complete Bible/);
  for(const width of [320,390,768]){
   await page.setViewportSize({width,height:width===768?1024:844});
@@ -76,12 +79,39 @@ try{
   await page.screenshot({path:resolve(folder,"reading-chapters-"+width+".png"),animations:"disabled"});
  }
  await page.setViewportSize({width:390,height:844});
- await panel.locator('[data-bible-reading-start="'+target.start+'"]').tap({timeout:15000});
+ // A reader can inspect source-selected arcs and exact-reference themes
+ // without changing the canonical chronology or the native Scripture reader.
+ const tabs=panel.locator("[data-bible-reading-tab]");
+ await tabs.filter({hasText:"10 arcs"}).tap({timeout:15000});
+ assert.equal(await panel.locator('[data-bible-reading-view="arcs"]').isVisible(),true);
+ assert.equal(await panel.locator('[data-bible-reading-view="chapters"]').isVisible(),false);
+ const broad=panel.locator('[data-bible-arc="arc:life-of-christ"]');
+ await broad.locator("summary").tap();
+ assert.equal(await broad.locator('[data-bible-reading-start]').count(),14);
+ await page.screenshot({path:resolve(folder,"reading-arcs-390.png"),animations:"disabled"});
+ await tabs.filter({hasText:"9 themes"}).tap();
+ assert.equal(await panel.locator('[data-bible-reading-view="themes"]').isVisible(),true);
+ const missing=panel.locator('[data-bible-theme="theme:kingdom-and-mercy"]');
+ await missing.locator("summary").tap();
+ assert.equal(await missing.locator("[data-bible-reading-start]").count(),0);
+ assert.match(await missing.innerText(),/No exact match yet/);
+ const verified=panel.locator('[data-bible-theme="theme:signs-miracles"]');
+ await verified.locator("summary").tap();
+ assert.equal(await verified.locator("[data-bible-reading-start]").count(),16);
+ await page.screenshot({path:resolve(folder,"reading-themes-390.png"),animations:"disabled"});
+ const themeFirst=Number(await verified.locator("[data-bible-reading-start]").first().getAttribute("data-bible-reading-start"));
+ await verified.locator("[data-bible-reading-start]").first().tap({timeout:15000});
+ await page.waitForFunction(index=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===index,themeFirst,{timeout:15000});
+ assert.equal(await panel.isVisible(),false);
+ await toggle.tap();
+ await tabs.filter({hasText:"37 chapters"}).tap();
+ assert.equal(await panel.locator('[data-bible-reading-view="chapters"]').isVisible(),true);
+ await panel.locator('[data-bible-reading-view="chapters"] [data-bible-reading-start="'+target.start+'"]').tap({timeout:15000});
  await page.waitForFunction(index=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===index,target.start,{timeout:15000});
  assert.equal(await panel.isVisible(),false);
  assert.equal(await toggle.getAttribute("aria-expanded"),"false");
  await toggle.tap();
- assert.equal(await panel.locator('[data-bible-reading-start="'+target.start+'"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await panel.locator('[data-bible-reading-view="chapters"] [data-bible-reading-start="'+target.start+'"]').getAttribute("aria-pressed"),"true");
  await toggle.tap();
  await page.locator("#ao-find-modular-root [data-bible-context-open]").tap({timeout:15000});
  const reader=page.locator("#ao-find-modular-root [data-bible-detail] [data-ao-scripture-context]");
@@ -99,6 +129,6 @@ try{
  assert.equal((await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex)),target.start,
   "Reopening Atlas must restore source-owned exact canonical scene");
  assert.deepEqual(errors,[],"Runtime errors: "+errors.join(" | "));
- console.log("PASS normal unflagged 37-chapter chooser, 320/390/768, no overflow, native Scripture, saved exact scene");
+ console.log("PASS normal unflagged 37 chapters, 10 arcs, 9 provisional exact-citation themes; 320/390/768, native Scripture and resume");
  await context.close();
 }finally{await browser?.close().catch(()=>{});await new Promise(ok=>server.close(ok))}
