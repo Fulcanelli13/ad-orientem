@@ -163,7 +163,7 @@ const spanish1908=fam.spanish1908ReadingAndSourceReview;
 assert.ok(spanish1908);
 assert.equal(spanish1908.witnessId,"SCHUSTER-ES-1908-HERDER-ORTI-12TH");
 assert.ok(fam.witnesses.some(w=>w.id===spanish1908.witnessId && w.physicalPageImagesDirectlyInspected===false));
-assert.equal(fam.witnesses.length,6);
+assert.equal(fam.witnesses.length,7);
 assert.equal(spanish1908.openingTocNineSpanishUnits.length,9);
 assert.deepEqual(spanish1908.openingTocNineSpanishUnits.map(x=>x.spanishNumber),[1,2,3,4,5,6,7,8,9]);
 assert.deepEqual(spanish1908.openingTocNineSpanishUnits.map(x=>x.printedPage),[1,2,3,4,5,6,8,10,12]);
