@@ -47,6 +47,20 @@ The originating study position, whether a Mass Map stop, precise prayer block or
 - Source URLs continue to open the original external site (no in-app re-hosting), with explicit warning that title/link alone does **not** certify a passage, edition or reproduction rights. The Scripture owner remains the sole in-app full biblical passage reader. Full historical documents/excerpts remain on **hold** pending the separate textual and rights/certification process.
 - Acceptance: source-context contract `tests/mass-source-reading-contract.mjs`, the complete Map → MF03 → Bible → Mediator Dei context → original lesson → selected prayer phone journey, and bilingual source-document screenshots in `tests/source-reference-browser-acceptance.mjs`.
 
+## Source-passage publication gate — display only; no textual certification (16 October 2026)
+
+P1 now supplies an **optional rendering contract**, not a second approval authority, in `src/learn/mass-passage-publication.js` and `data/learn/mass-formation-approved-passages.v1.json`. The shipped register has `status: NO_APPROVED_PASSAGES` and `entries: []` — **zero historical passages are released or rendered**. The Formation source-context viewer remains useful through original source identities, claim associations and existing external links even when the manifest is absent or inaccessible.
+
+For a later explicitly editorially approved excerpt to appear, **every** release gate must hold:
+
+- The entire manifest must be uniquely versioned, `scope: FORMATION_ONLY`, `status: RELEASED_FOR_FORMATION`, with a release identifier, human reviewer and approval date. It must never be derived automatically from a P0 research status, a source URL or a draft claim.
+- Every entry must have an identified **exact passage, locus, edition and edition URL**, a declared language, a source ID present in the existing Formation registry, a specific MF01–MF08 lesson, and at least one claim ID **already linked to that same source** in the original lesson. This is for contextual display; it is not permission to revise those claims.
+- Every entry must carry an explicitly approved publication decision, a human reviewer and date, a reproduction basis (`PUBLIC_DOMAIN`, `LICENSED`, or `PERMISSION_GRANTED`) and a separate safe URL documenting that rights basis. An incomplete or corrupted manifest fails **closed across all entries**; no text is published.
+- Excerpts are displayed only inside the Formation **source context** drawer as clearly labelled document extracts, separated from the course's own explanatory claims, with independently accessible edition and rights links. Exact text is HTML-escaped; no auto-generated French translation or invented Latin text is allowed.
+- A human source/editorial review is **still mandatory**: a syntactically valid JSON field or passing P1 test does not itself authenticate wording, an edition, a theological attribution or the legal rights declaration. The P0 research pipeline retains evidence/certification ownership, and approved *release* decisions must be separately adopted into this source-of-truth manifest.
+
+The non-browser `tests/mass-source-reading-contract.mjs` exercises a **purely synthetic in-test fixture** and rejection of draft, mismatched claim/source, missing rights/reviewer, unsafe URL, empty passage, duplicate identifier and forbidden ritual scope. The full 48-case phone/desktop browser acceptance also asserts no historical excerpt appears in the current released app state. **No manuscript material has been added here.**
+
 ## Non-loss retirement gates (not passed yet)
 1. Prove every original published Guide moment (32) and every Sung source block (96) is available from the new Map.
 2. Prove all eight Formation lessons, claims, and their already-public source drawers are reachable without rewriting them.
