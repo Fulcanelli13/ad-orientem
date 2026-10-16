@@ -1,3 +1,17 @@
+# Product correction — Ad Orientem internal Missal links are authoritative (16 October 2026)
+
+**Supersedes all earlier suggestions to use scanned *Missale Romanum* pages or external digital missals as user-facing destinations.** Those books are reference witnesses for source certification only. The application already has its own 1962 Mass and Proper infrastructure. All Saints, Calendar, Mass Explorer, commentary and commemoration references must resolve into **Ad Orientem's canonical Missal text at the exact prayer or subsection**, via stable owner IDs. Never build a separate in-app Missal-text copy from P1 research data.
+
+**Implemented research contract:** `data/calendar/p1-internal-missal-navigation.v1.json`. The 38 indexed formulary records now contain `internalMissalReference` (always unresolved until an exact canonical source mapping is verified). The two historical 9 October commemoration trios now expose six typed `internalMissalAnchors`. The Newman case and saint crosswalk point to those typed anchors without choosing a Mass or pretending the route is live.
+
+**Existing canonical interfaces inspected:** `src/mass/proper-contracts.js` (resolved oration `id`, `sourceRef`, Latin body/conclusion), `src/mass/proper-reader-slots.js` (11 authoritative reader slots including `COLLECT_SET`, `SECRET_SET`, `POSTCOMMUNION_SET`), `src/mass/reader-proper-runtime-recovery.js` (`proper.sourcePath` and source-owned commemorations), `src/mass/reader-projection.js` (reader paragraph identities) and `src/mass/browser-entry.js` (current app shell's `navigate("mass")` surface action). **That app-shell action is not yet a verified read-only exact prayer deep-link**: no fictitious `/mass?...` URLs or hashes. Reader/P0 must implement a read-only route from canonical `sourcePath + source oration id + reader slot`, maintaining the correct Common variant and trilingual/Latin display, and must not change the actual selected celebrant Mass or LIVE progress.
+
+**New primary next step:** reconcile each P1 Formulary/Common and commemoration to the existing in-app `Proper.sourcePath`, edition-approved owner `id`, and applicable `READER_PROPER_SLOTS`; mark missing canonical texts as `NOT_IN_INTERNAL_MISSAL`. When a text isn't actually in the app, research and certify it **in the existing Proper owner** via controlled P0/Mass-source integration rather than publish a second source store. External facsimile links remain only in audit/References metadata; never show them as "Open Missal" UI links. Liturgical permission and source completeness checks are separate.
+
+**Acceptance tests:** mapping uses canonical ID (never infer from Saint English name, PDF page or 2026 modern date); six 9 October prayer anchors point to the exact original feast/commemoration identity and reader slot; no fabricated routes; Doctor pontiff/non-pontiff variant remains one printed family; optional Newman Mass does not become automatically selected. Tests verify data-contract parity with `READER_PROPER_SLOTS`.
+
+---
+
 # P1 — Traditional Mass formulary research handoff (2026-10-16)
 
 ## Isolation and reconciliation
