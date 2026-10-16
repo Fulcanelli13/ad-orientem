@@ -8,7 +8,8 @@ const paths=[
  "index.html","sw.js","src/app/offline-boot.js",
  "src/learn/mass-formation.js","src/learn/spiritual-life.js",
  "src/learn/sexual-ethics.js","src/learn/latin-course-v2.js",
- "src/learn/latin-course-source-display.js"
+ "src/learn/latin-course-source-display.js",
+ "src/pray/devotional-sequence-adapter.js"
 ];
 const sha=b=>createHash("sha256").update(b).digest("hex");
 const run=String(process.env.GITHUB_RUN_ID||"local");
