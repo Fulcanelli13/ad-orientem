@@ -29,6 +29,10 @@ assert.doesNotMatch(leonardi.html,/data-cal-mass|data-home-mass-entry/);
 
 assert.deepEqual(view("2026-10-11","sancti:10-11:2:w",[]).model.modernHonours.map(x=>x.id),
   ["saint.john-xxiii"],"Contemporary saint does not replace historical feast");
+assert.deepEqual(view("2026-10-12","sancti:10-12:3:w",[]).model.modernHonours.map(x=>x.id),
+ ["saint.carlo-acutis"],"Home renders Holy See feast-date witness without new 1962 Mass");
+assert.deepEqual(view("2024-10-12","sancti:10-12:3:w",[]).model.modernHonours.map(x=>x.id),
+ [],"No retrojection before Carlo canonization");
 assert.deepEqual(view("2026-10-22","sancti:10-22:3:w",[]).model.modernHonours.map(x=>x.id),
   ["saint.john-paul-ii"]);
 assert.deepEqual(view("2026-09-23","tempora:Pent17-3:2:v",[]).model.modernHonours.map(x=>x.id),
@@ -61,6 +65,6 @@ const asFr=view("2026-10-09","sancti:10-09:3:w",
 assert.match(asFr.html,/Saint Nom/);
 assert.match(asFr.html,/Saint John Henry Newman|John Henry Newman/);
 assert.match(asFr.html,/Messe traditionnelle inchangée/);
-assert.ok(read.observanceRegistry.observances.length===18);
+assert.ok(read.observanceRegistry.observances.length===26);
 assert.equal(buildReviewedSanctoralCards({date:"2026-10-09",observedPrincipalId:"sancti:10-09:3:w",...read}).length,1);
 console.log("Home Living Traditional Calendar: PASS (1962 observances first, 10 Holy See primary dates, date history, bilingual, no added Mass)");
