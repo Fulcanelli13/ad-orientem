@@ -141,6 +141,35 @@ try{
     assert.ok(await scripture.locator(".aoScriptureVerse").count()>10,"MF03 biblical chapter unavailable");
     await scripture.locator("[data-scripture-close]").click();
     assert.equal(await indirect.evaluate(el=>el===document.activeElement),true,"Scripture must restore exact MF03 passage focus");
+    // Study the already cited primary source without claiming any passage has
+    // been licensed, verified or transcribed as an original document.
+    const formation=page.locator("#ao-mass-formation-root");
+    const sources=formation.locator(".aoReferencePanel");
+    await sources.locator("summary").first().click();
+    const contextButton=sources.locator('[data-ao-reference-study-source="SRC-MEDIATOR-DEI"]');
+    assert.equal(await contextButton.count(),1,"Original cited Pius XII source missing its contextual reader");
+    await contextButton.scrollIntoViewIfNeeded();
+    const lessonScroll=await formation.evaluate(node=>node.scrollTop);
+    await contextButton.click();
+    const context=page.locator('[data-ao-mf-source-reader="SRC-MEDIATOR-DEI"]');
+    await context.waitFor({state:"visible",timeout:10000});
+    assert.equal(await context.locator('[data-ao-mf-source-claim]').count(),2,
+      "The contextual document view must retain both and only the cited MF03 claims");
+    assert.equal(await context.locator('[data-ao-mf-source-original="SRC-MEDIATOR-DEI"]').count(),1);
+    assert.equal(await formation.evaluate(node=>node.inert),true,
+      "Reading documentary context must temporarily exclude the underlying lesson");
+    assert.match(await context.innerText(),/not quotations or verified passages/,
+      "Lesson text cannot be misrepresented as original historical document excerpts");
+    await page.screenshot({path:resolve(screenshotDir,"source-context-"+width+"-en.png")});
+    await context.locator(".aoMFSourceReturn").click();
+    assert.equal(await page.locator('[data-ao-mf-source-reader]').count(),0,
+      "Closing documentary context should dispose of its separate study overlay");
+    assert.equal(await formation.evaluate(node=>node.inert),false,
+      "Closing source context must restore the original lesson interactivity");
+    assert.equal(await contextButton.evaluate(el=>document.activeElement===el),true,
+      "Source study must return exact keyboard focus to the original source link");
+    assert.ok(Math.abs((await formation.evaluate(node=>node.scrollTop))-lessonScroll)<=3,
+      "Source study cannot reset the original lesson reading position");
     await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.blockId==="AO.SM.B031"&&
       globalThis.AO_MASS_EXPLORER_V1?.status?.()?.momentKey==="AO.CARD.010",null,{timeout:12000});
