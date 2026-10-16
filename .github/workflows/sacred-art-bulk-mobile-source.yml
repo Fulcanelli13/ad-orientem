@@ -1,0 +1,32 @@
+name: Sacred Art Consolidated Mobile Gap Images
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-bulk-mobile-source-recovery.v1.json
+      - tools/calendar/acquire-sacred-art-bulk-mobile.py
+      - .github/workflows/sacred-art-bulk-mobile-source.yml
+permissions:
+  contents: read
+jobs:
+  acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow>=10,<12' 'requests>=2.31,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Retrieve source bytes, phone previews and ranked institutional media leads
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-bulk-mobile.py
+          python tools/calendar/acquire-sacred-art-bulk-mobile.py
+      - name: Preserve research-only photos, source checksums and contact sheet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-consolidated-mobile-gap-acquisition
+          path: artifacts/sacred-art-bulk-mobile-source-recovery/
+          retention-days: 30
+          if-no-files-found: warn
