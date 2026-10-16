@@ -57,3 +57,14 @@ All **435/435** source research Latin micro-units have now been checked against 
 Across these two methods: **153 full-cue text-equivalences, 274 exact contained-subspan candidate equivalences, three mismatches and five variable source slots**. The mismatches are `AO.V3.0023.U002` and `AO.V3.0237.U002` (the same `orare` vs `oráre` accent difference in two Confiteor positions), plus `AO.V3.0084.U001` (`secúndum N.` placeholder versus the donor's named Gospel). These are not automatic defects in the published Mass; they are recorded as an editorial text/variant review.
 
 **The P0 source-text identity census is therefore 435/435 compared, but 0/435 independently printed-Missal certified and 0/66 exact-word triggers independently certified.** A research-unit subspan match alone is not authorisation to use it as a UI trigger or publish an historical statement. Every row remains explicitly non-public until owner and applicability sign-off. The 34 canonical reverse-only cue entries, four moment-level Guide link gaps and publication holds remain for P0 adjudication.
+
+
+## Full structural event and word-cue reconciliation
+
+The frozen workbook `09 PRIEST EVENTS 279` has been reconciled by explicit event-ID → source-cue-ID relationships, with 279 unique event IDs and 279 corresponding canonical Sung cue IDs; see `MASS-P0-PRIEST-EVENT-IDENTITIES-20261016.v1.json`. No actor, voice or rubrical instruction has been promoted from this structural mapping.
+
+The `23 WORD CUE 66` worksheet's offsets now match the exact UTF-16 substrings in the canonical Sung donor for all 66 triggers; see `MASS-P0-CANONICAL-WORD-ANCHOR-VERIFICATION-20261016.v1.json`. Offsets are relative to the **canonical source cue**, not necessarily to the fine-grained research micro-unit. Gesture/actor/ritual applicability approvals remain zero. This distinction must be enforced by P1 and by any future precise-word UI highlights.
+
+The 34 canonical source-only entries are classified as **15 source-action states, 18 variable Proper/ritual placeholders and 1 optional sermon synthetic entry**. Four published Guides are section-level owners (`AO.CARD.006`, `AO.CARD.008`, `PRE.ASPERGES`, `POST.MASS`) and must not be forced into microtext units; see `MASS-P0-REVERSE-COVERAGE-DISPOSITIONS-20261016.v1.json`.
+
+The original workbook has complete internal microtext-to-source-cue literal continuity (159 exact whole cue, 276 exact subspan), which does **not** negate three comparison differences and five variable slots against the production Sung donor. On the advancing `main`, source file SHA comparisons confirm unchanged Sung/Low corpora, Guide registry, curated reader, 48-card rollback and rubric overlay from the original snapshot. Branch divergence still requires a normal integration check and no release is implied.
