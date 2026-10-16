@@ -12,14 +12,14 @@
 <header class="top">
  <div class="toprow"><div><div class="eyebrow">Ad Orientem / Sacred Art / Curator workspace</div><h1>Unified artwork review</h1></div>
  <div class="buttons"><button type="button" class="button-strong" id="export">Export all decisions · JSON</button><button type="button" id="importButton">Import review JSON</button><input class="hidden" type="file" id="importFile" accept=".json,application/json"><button type="button" class="mutebutton" id="reset">Reset to submitted exports</button></div></div>
- <p>One gallery for all artwork categories, October 12 choices, competing paintings and reproduction files. Rate the <strong>painting</strong> separately from the <strong>photograph</strong>; choose a primary painting for each category and a primary photograph for each painting. Assign priorities without replacing existing selections.</p>
+ <p>One gallery for all artwork categories, October 12 choices, competing paintings and reproduction files. Rate the <strong>painting</strong> separately from the <strong>photograph</strong>; choose a primary painting for each category and a primary photograph for each painting. Assign priorities without replacing existing selections. <strong>Start with the 100 existing review categories;</strong> the other 68 protected categories remain in the additional backlog.</p>
  <div class="metrics" id="metrics"></div>
 </header>
 <div class="layout">
  <aside class="sidebar compact" id="sidebar"><div class="sidebar-controls">
   <div class="spaced"><strong style="font:19px Georgia,serif">Subjects</strong><button class="drawerbtn mini" id="toggleSidebar">Show / hide list</button></div>
   <input type="search" id="search" placeholder="Search saint, scene, artist, painting…" aria-label="Search categories">
-  <div class="row2"><div><label for="filter">Review filter</label><select id="filter"><option value="all">All categories</option><option value="attention">Needs attention</option><option value="3">3★ · alternative painting</option><option value="4">4★ · better photograph</option><option value="missing">No linked photograph</option><option value="oct12">October 12 selections</option><option value="ready">5★ image quality</option><option value="future">Additional 68</option><option value="prioritized">Prioritized by me</option></select></div>
+  <div class="row2"><div><label for="filter">Review filter</label><select id="filter"><option value="current" selected>Current 100 review categories</option><option value="all">All 168 categories</option><option value="attention">Needs attention</option><option value="3">3★ · alternative painting</option><option value="4">4★ · better photograph</option><option value="missing">No linked photograph</option><option value="oct12">October 12 selections</option><option value="ready">5★ image quality</option><option value="future">Additional 68</option><option value="prioritized">Prioritized by me</option></select></div>
   <div><label for="sort">Sort</label><select id="sort"><option value="priority">Priority / review needs</option><option value="original">Original research order</option><option value="name">Alphabetical</option></select></div></div>
   <div><label for="group">Category family</label><select id="group"></select></div>
  </div><div class="sidecount" id="sidecount"></div><nav class="categorylist" id="categorylist" aria-label="Artwork categories"></nav></aside>
@@ -61,6 +61,7 @@ function getFiltered(){
   if(group!=="all"&&group!==String(c.group))return false;
   if(text&&!([c.label,c.group,c.id].concat(c.works.map(function(w){return w.title+" "+w.artist}))).join(" ").toLowerCase().includes(text))return false;
   const n=needs(c);
+  if(filter==="current"&&c.batch===3)return false;
   if(filter==="3"&&!n.three)return false;
   if(filter==="4"&&!n.four)return false;
   if(filter==="attention"&&!(n.three||n.four||n.missing))return false;
