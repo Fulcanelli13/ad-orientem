@@ -73,7 +73,7 @@ export function massSourceBatchLocus(data,locusId){
 }
 export function massSourceBatchChoice(locus,claimChoices={}){
  const statuses=locus.claimIds.map(x=>claimChoices[x]||"HOLD");
- return unique(statuses)?statuses[0]:"MIXED";
+ return new Set(statuses).size===1?statuses[0]:"MIXED";
 }
 export function massSourceBatchDecisionPatch(data,locusId,value){
  const locus=massSourceBatchLocus(data,locusId);
