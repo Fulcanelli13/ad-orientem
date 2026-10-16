@@ -1,0 +1,149 @@
+name: Mystery of the Mass editorial inventory gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/mystery-mass-editorial-consolidation-20261014
+    paths:
+      - '.github/workflows/mystery-mass-editorial-inventory.yml'
+      - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
+      - 'tests/mystery-mass-editorial-inventory.mjs'
+      - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
+      - 'tests/mystery-mass-phase3-editorial-evidence.mjs'
+      - 'tests/mystery-mass-complete-source-recovery.mjs'
+      - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
+      - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
+      - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
+      - 'tests/mystery-mass-review-app-route.mjs'
+      - 'data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json'
+      - 'docs/review/mystery-mass-editorial-batch-review-44-20261015.html'
+      - 'tests/mystery-mass-full-editorial-44-review.mjs'
+      - 'data/learn/research/mass-low-35-guide-legacy-index-20261016.v1.json'
+      - 'src/mass/reader-low-guide.js'
+      - 'tests/mass-low-35-guide-research.mjs'
+      - 'tests/mass-low-35-native-guide-preview.mjs'
+      - 'tests/mass-low-35-source-audit.mjs'
+      - 'data/learn/research/mass-low-35-guide-full-source-audit-20261016.v1.json'
+      - 'src/mass/reader-dom.js'
+      - 'src/learn/mystery-mass-review-data.js'
+      - 'src/learn/mystery-mass-review.js'
+      - 'src/learn/mystery-mass-canon-precision-review.js'
+      - 'src/learn/presentation.js'
+      - 'src/learn/browser-entry.js'
+      - 'src/learn/lazy-module-registry.js'
+      - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'data/learn/research/mystery-mass-39-to-curated65-67-source-author-handoff-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
+      - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
+      - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
+      - 'tests/mystery-mass-creed-source-and-nobis.mjs'
+      - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
+      - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
+      - 'tests/mystery-mass-p3-full-triage.mjs'
+      - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
+      - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
+      - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
+      - 'tests/mystery-mass-p1-dedup-p2-family-routing.mjs'
+      - 'tests/mystery-mass-p2-family-review.mjs'
+      - 'data/learn/research/mystery-mass-p2-remaining122-family-review-20261015.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
+      - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
+  pull_request:
+    paths:
+      - 'data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-CANONICAL-CONSOLIDATION-20261014.md'
+      - 'tests/mystery-mass-editorial-inventory.mjs'
+      - 'tests/mystery-mass-phase2-bilingual-manuscript.mjs'
+      - 'tests/mystery-mass-phase3-editorial-evidence.mjs'
+      - 'tests/mystery-mass-complete-source-recovery.mjs'
+      - 'tests/mystery-mass-dual-chronology-source-crosswalk.mjs'
+      - 'tests/mystery-mass-source-led-narrative-drafts.mjs'
+      - 'tests/mystery-mass-bilingual-scripture-art-handoff.mjs'
+      - 'data/learn/research/mystery-mass-*-20261014.v1.json'
+      - 'data/learn/research/mystery-mass-39-to-curated65-67-source-author-handoff-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json'
+      - 'data/learn/research/mystery-mass-canon-six-pair-five-issue-bilingual-drafts-20261015.v1.json'
+      - 'tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs'
+      - 'data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json'
+      - 'docs/review/mystery-mass-editorial-batch-review-44-20261015.html'
+      - 'tests/mystery-mass-full-editorial-44-review.mjs'
+      - 'data/learn/research/mass-low-35-guide-legacy-index-20261016.v1.json'
+      - 'src/mass/reader-low-guide.js'
+      - 'tests/mass-low-35-guide-research.mjs'
+      - 'tests/mass-low-35-native-guide-preview.mjs'
+      - 'tests/mass-low-35-source-audit.mjs'
+      - 'data/learn/research/mass-low-35-guide-full-source-audit-20261016.v1.json'
+      - 'src/mass/reader-dom.js'
+      - 'data/learn/research/mystery-mass-creed-25-source-verdicts-nobis-ritus-20261015.v1.json'
+      - 'tests/mystery-mass-creed-source-and-nobis.mjs'
+      - 'data/learn/research/mystery-mass-p1-six-lookups-thirtytwo-source-alignments-20261015.v1.json'
+      - 'tests/mystery-mass-p1-source-alignment.mjs'
+      - 'data/learn/research/mystery-mass-p3-57-full-gap-triage-20261015.v1.json'
+      - 'tests/mystery-mass-p3-full-triage.mjs'
+      - 'data/learn/research/mystery-mass-p1-seven-prayers-p2-58-editorial-review-20261015.v1.json'
+      - 'tests/mystery-mass-p1-p2-review-ownership.mjs'
+      - 'data/learn/research/mystery-mass-p1-22-dedup-p2-180-prayer-families-20261015.v1.json'
+      - 'tests/mystery-mass-p1-dedup-p2-family-routing.mjs'
+      - 'tests/mystery-mass-p2-family-review.mjs'
+      - 'data/learn/research/mystery-mass-p2-remaining122-family-review-20261015.v1.json'
+      - 'docs/research/MYSTERY-OF-MASS-PHASE2-BILINGUAL-MANUSCRIPT-20261014.md'
+      - 'docs/research/MYSTERY-OF-MASS-FULL-SOURCE-RECOVERY-AND-DUAL-ARC-20261014.md'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-ownership:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify baseline Formation route is unchanged
+        run: node tests/mass-formation.mjs
+      - name: Verify 122 remaining P2 micro-units and source/rubric release holds
+        run: node tests/mystery-mass-p2-family-review.mjs
+      - name: Reconcile P1 bilingual duplicate claims and P2 12 prayer groups
+        run: node tests/mystery-mass-p1-dedup-p2-family-routing.mjs
+      - name: Verify P1 seven owner details and P2 58 clause release holds
+        run: node tests/mystery-mass-p1-p2-review-ownership.mjs
+      - name: Check P1 source-backed six lookups and 32 micro-unit alignments
+        run: node tests/mystery-mass-p1-source-alignment.mjs
+      - name: Verify P3 57 clause classifications and existing priest cue reuse
+        run: node tests/mystery-mass-p3-full-triage.mjs
+      - name: Check Creed historical-source accuracy and the existing Nobis quoque rubric
+        run: node tests/mystery-mass-creed-source-and-nobis.mjs
+      - name: Verify Canon six-pair collation, five issues and eleven bilingual cue-owned drafts
+        run: node tests/mystery-mass-canon-source-collation-and-bilingual-drafts.mjs
+      - name: Guard full 44-study offline editorial review, source identity, and four review batches
+        run: node tests/mystery-mass-full-editorial-44-review.mjs
+      - name: Check Low Mass 35 original Guide source and fail-closed preview
+        run: node tests/mass-low-35-guide-research.mjs
+      - name: Check native Low Mass research Guide drawer on 33 source cues and conditional gates
+        run: node tests/mass-low-35-native-guide-preview.mjs
+      - name: Certify 35 Low Mass source-cue audit records and explicit form gates
+        run: node tests/mass-low-35-source-audit.mjs
+      - name: Validate source-first editorial inventory and deduplication
+        run: node tests/mystery-mass-editorial-inventory.mjs
+      - name: Validate full Phase 2 bilingual research manuscript
+        run: node tests/mystery-mass-phase2-bilingual-manuscript.mjs
+      - name: Validate Phase 3 editorial evidence and release blocks
+        run: node tests/mystery-mass-phase3-editorial-evidence.mjs
+      - name: Validate complete source recovery and old 422-event crosswalk
+        run: node tests/mystery-mass-complete-source-recovery.mjs
+      - name: Validate two chronological paths and source-critical meditations
+        run: node tests/mystery-mass-dual-chronology-source-crosswalk.mjs
+      - name: Validate substantive sourced scene writing and exact earlier bilingual manuscript inheritance
+        run: node tests/mystery-mass-source-led-narrative-drafts.mjs
+      - name: Validate 24 French narratives and real Bible/curator handoffs
+        run: node tests/mystery-mass-bilingual-scripture-art-handoff.mjs
+      - name: Validate gated in-app two-mode Mystery reader
+        run: node tests/mystery-mass-review-app-route.mjs

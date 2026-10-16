@@ -1,0 +1,1551 @@
+{
+  "schema": "AO_MYSTERY_MASS_24_GAP_SECTION_BILINGUAL_DRAFTS_V1",
+  "date": "2026-10-14",
+  "status": "CONTENT_MANUSCRIPT_DRAFT_ONLY_NOT_PUBLICATION_APPROVED",
+  "sectionScope": "24 of 39 current source-first units not already reached by polished 20 MB source examples; all retain baseline Guide and original 1962 rubric authority",
+  "sourceInventory": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
+  "baseRiteAuthority": "Existing Guide's 1962 Missal and Ritus servandus source record; never original 1897 source",
+  "count": 24,
+  "englishAndFrenchCount": 24,
+  "coverage": [
+    "AO.CARD.002",
+    "AO.CARD.004",
+    "AO.CARD.005",
+    "AO.CARD.006",
+    "AO.CARD.008",
+    "AO.CARD.011",
+    "AO.CARD.012",
+    "AO.CANON.01",
+    "AO.CANON.02",
+    "AO.CANON.03",
+    "AO.CANON.04",
+    "AO.CANON.05",
+    "AO.CANON.10",
+    "AO.CANON.11",
+    "AO.CANON.12",
+    "AO.CANON.13",
+    "AO.CANON.14",
+    "AO.CARD.020",
+    "AO.CARD.024",
+    "AO.CARD.025",
+    "AO.CARD.026",
+    "AO.CARD.027",
+    "AO.CARD.028",
+    "AO.CARD.029"
+  ],
+  "publicationApproved": false,
+  "rules": [
+    "Every paragraph contains directly clickable original source links in both languages.",
+    "These supplemental 24 section drafts cover the explanatory material the polished 20 did not cover; not all are newly published cards.",
+    "No changes to 1962 Mass Latin, gestures, rubrics, Mass roles or reader architecture.",
+    "Each published prayer owner must reconcile Guéranger, Lanslots and Mass–Bible evidence before release.",
+    "No variable proper or homily invented as a fixed universal passage.",
+    "All source-specific form conditions and French editorial review must be approved before publishing."
+  ],
+  "records": [
+    {
+      "id": "MM-NEW-01",
+      "sourceFirstOwner": "AO.CARD.002",
+      "canonicalTitle": "Kyrie",
+      "formationStage": "MF01",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Mercy at the threshold [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "La miséricorde au seuil de la Messe [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The repeated Kyrie is the Church's appeal to the Lord's mercy, not a mere pause before the Gloria. The cries of those who begged Christ for mercy in the Gospel show the faith and need with which we can make this prayer our own. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/mat020.htm).",
+        "fr": "Le Kyrie répété est la supplication de l'Église à la miséricorde du Seigneur, non une simple attente avant le Gloria. Les appels de ceux qui demandaient miséricorde au Christ dans l'Évangile montrent la foi et le besoin avec lesquels nous pouvons faire nôtre cette prière. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/mat020.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.002",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "EXISTING_MASS_BIBLE_DRAFT",
+          "url": "https://www.newadvent.org/bible/mat020.htm",
+          "draftId": "MB04"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.002",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [
+        "MB04"
+      ],
+      "conditionalityFlags": [
+        "KYRIE_TEXT_NOT_DEPENDENT_ON_GLORIA"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-02",
+      "sourceFirstOwner": "AO.CARD.004",
+      "canonicalTitle": "Collect",
+      "formationStage": "MF01",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "One prayer of the Church [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Une seule prière de l'Église [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In the Collect, the priest gathers the Church's petitions into the appointed public prayer of the day. Its words are determined by the Mass being celebrated, sometimes with permitted commemorations. The faithful make this prayer their own through attentive prayer and the response Amen; a general explanation must never substitute a different day's text. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Dans la Collecte, le prêtre rassemble les demandes de l'Église dans la prière publique propre à la célébration. Ses paroles dépendent de la Messe du jour et, lorsque les rubriques le permettent, des commémoraisons. Les fidèles s'y unissent et la ratifient par l'Amen ; une explication générale ne remplace jamais le texte du jour. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.004",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.004",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "COLLECT_AND_COMMEMORATIONS_DEPEND_ON_DAY_CLASS_AND_MASS_TYPE"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-03",
+      "sourceFirstOwner": "AO.CARD.005",
+      "canonicalTitle": "Epistle / Lesson",
+      "formationStage": "MF01",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "God addresses his Church [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Dieu s'adresse à son Église [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The Lesson or Epistle is not simply preparation for a sermon: it places the words of inspired Scripture within the Church's worship. The passage depends on the chosen Proper and may be one of several lessons on certain days. Listen for what God says through the text actually proclaimed, rather than assuming a fixed biblical episode at every Mass. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/1co012.htm).",
+        "fr": "La Leçon ou l'Épître ne sert pas seulement d'introduction à l'homélie : la Parole inspirée de Dieu prend place dans le culte de l'Église. Le passage dépend du Propre choisi et certains jours comportent plusieurs leçons. Il faut écouter l'Écriture réellement proclamée, sans supposer que le même épisode se trouve à toutes les Messes. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/1co012.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.005",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "EXISTING_MASS_BIBLE_DRAFT",
+          "url": "https://www.newadvent.org/bible/1co012.htm",
+          "draftId": "MB06"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.005",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [
+        "MB06"
+      ],
+      "conditionalityFlags": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER",
+        "SCRIPTURE_LESSONS_DEPEND_ON_ACTUAL_SELECTED_PROPER",
+        "EMBER_EXTENDED_LECTURES_MUST_FOLLOW_SOURCE_ORDER"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-04",
+      "sourceFirstOwner": "AO.CARD.006",
+      "canonicalTitle": "Gradual · Alleluia / Tract / Sequence",
+      "formationStage": "MF01",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The psalmody between readings [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "La psalmodie entre les lectures [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The Gradual, Alleluia, Tract or Sequence gives a sung response to God's word. Which chant occurs depends upon the liturgical calendar and the particular Mass: an Alleluia is not simply interchangeable with a Tract or Sequence. Its words deserve explanation from the actual Proper rather than an invented universal Scripture quotation. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Le Graduel, l'Alléluia, le Trait ou la Séquence répond en chant à la Parole de Dieu. Le choix dépend du calendrier et de la Messe célébrée : un Alléluia ne se substitue pas librement au Trait ou à la Séquence. Le sens des paroles doit être étudié à partir du Propre réellement assigné, sans inventer une citation biblique universelle. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.006",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.006",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "PROPER_AND_SEASON_SPECIFIC_CHANT_OWNER",
+        "GRADUAL_ALLELUIA_TRACT_SEQUENCE_DEPEND_ON_ACTUAL_PROPER"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-05",
+      "sourceFirstOwner": "AO.CARD.008",
+      "canonicalTitle": "Sermon / Homily",
+      "formationStage": "MF01",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The homily explains, it does not replace [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "L'homélie explique sans remplacer [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The sermon may expound the readings, the feast, the doctrine or the Christian life, but it is not a fixed text of the Missal. The Church's worship and the homily therefore require distinct kinds of attention: the prescribed Mass texts retain their own identity even when preaching is brief, absent or extended. Any biblical links from a sermon should belong to that actual sermon, not to an imaginary standard reading. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Le sermon peut expliquer les lectures, la fête, la doctrine ou la vie chrétienne, mais il n'est pas un texte fixe du Missel. La liturgie et la prédication appellent donc une attention distincte : les textes prescrits de la Messe gardent leur identité, que le sermon soit bref, absent ou développé. Les références bibliques d'une homélie appartiennent à cette homélie réelle, non à une lecture standard imaginée. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.008",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.008",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "HOMILY_CONTENT_NOT_FIXED_IN_THE_MISSAL",
+        "HOMILY_NO_FIXED_MISSAL_TEXT",
+        "HOMILY_MAY_BE_ABSENT"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-06",
+      "sourceFirstOwner": "AO.CARD.011",
+      "canonicalTitle": "Orate fratres & Secret",
+      "formationStage": "MF03",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "My sacrifice and yours [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Mon sacrifice et le vôtre [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "At Orate fratres the celebrant asks the brethren to pray that his sacrifice, also theirs in their proper way, may be acceptable to God. This distinction is important: the baptized unite their prayer, thanksgiving, sufferings and self-offering to the Eucharistic Sacrifice, while the ordained priest performs its sacramental action in the person of Christ. The Secret continues the petition over the prepared offerings and is proper to the celebration. [1962 ceremonial witness](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/rom012.htm) · [Pius XII, Mediator Dei §§82, 85–93](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+        "fr": "À l'Orate fratres, le célébrant demande aux fidèles de prier pour que son sacrifice, auquel ils s'unissent à leur manière, soit agréable à Dieu. La distinction importe : les baptisés joignent leur prière, leur action de grâces, leurs souffrances et leur propre offrande au Sacrifice eucharistique, tandis que le prêtre ordonné en accomplit l'action sacramentelle dans la personne du Christ. La Secrète poursuit la supplication sur les oblats et dépend de la célébration. [Témoin cérémoniel de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/rom012.htm) · [Pie XII, Mediator Dei §§82, 85–93](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.011",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "EXISTING_MASS_BIBLE_DRAFT",
+          "url": "https://www.newadvent.org/bible/rom012.htm",
+          "draftId": "MB10"
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+          "theme": "Orate"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.011",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [
+        "MB10"
+      ],
+      "conditionalityFlags": [
+        "SECRET_VARIABLE_PROPER_PRAYER",
+        "ORATE_FRATRES_PRIEST_AND_FAITHFUL_DISTINCT_ROLES"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "pinpointDoctrinalWitness": {
+          "source": "Pius XII, Mediator Dei (1947), paragraphs 82 and 85–93",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+          "verifiedScope": "Priestly consecratory action belongs to ordained minister; faithful participate in the offering differently",
+          "originalLatinMissalVerified": false,
+          "frenchIndependentApproval": false
+        }
+      }
+    },
+    {
+      "id": "MM-NEW-07",
+      "sourceFirstOwner": "AO.CARD.012",
+      "canonicalTitle": "Preface",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Lift up your hearts [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Élevons notre cœur [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The dialogue Sursum corda calls the congregation to turn its attention to the Lord. The Preface then gives the Church's solemn thanksgiving, recalling the divine mysteries according to the text prescribed for this Mass. It opens into the Sanctus; the spiritual meaning is the united praise of God, not a fixed text that can be assigned regardless of feast or season. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Le dialogue Sursum corda invite l'assemblée à tourner son cœur vers le Seigneur. La Préface exprime ensuite l'action de grâces solennelle de l'Église en célébrant les mystères divins selon le texte prescrit pour cette Messe. Elle débouche sur le Sanctus ; son sens spirituel est la louange commune, non un texte fixe valable sans égard à la fête ou au temps liturgique. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.012",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.012",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "PREFACE_VARIABLE_SOURCE_GATED",
+        "SURSUM_CORDA_PUBLIC_DIALOGUE_NOT_SOLEMN_SECRET_CANON"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-08",
+      "sourceFirstOwner": "AO.CANON.01",
+      "canonicalTitle": "Te igitur",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The whole Church in Te igitur [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Toute l'Église dans le Te igitur [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The opening petition of the Roman Canon seeks God's acceptance of the offering and peace, protection and unity for the Church. Naming the Pope and the local bishop expresses the ecclesial dimension of the sacrifice, not merely a list of private intentions. The priest prays at the altar while the faithful can unite their own prayers to his intercession; do not confuse his silent words with an obligatory congregational recitation. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/1ti002.htm).",
+        "fr": "La première supplication du Canon romain demande à Dieu d'agréer l'offrande et de donner à l'Église la paix, la protection et l'unité. La mention du Pape et de l'évêque du lieu exprime la dimension ecclésiale du Sacrifice, non une simple liste d'intentions privées. Tandis que le prêtre prie à l'autel, les fidèles peuvent unir leur prière à son intercession sans devoir réciter chaque parole silencieuse. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/1ti002.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.014",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "EXISTING_MASS_BIBLE_DRAFT",
+          "url": "https://www.newadvent.org/bible/1ti002.htm",
+          "draftId": "MB13"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.014",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [
+        "MB13"
+      ],
+      "conditionalityFlags": [
+        "CANON_PAPAL_EPISCOPAL_REFERENCE_IS_RITE_SPECIFIC"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-09",
+      "sourceFirstOwner": "AO.CANON.02",
+      "canonicalTitle": "Memento, Domine — Living",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Remembering the living [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Se souvenir des vivants [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In the Memento for the living, the Canon embraces particular persons and those who stand near the altar, whose faith and devotion are named in the prayer. This is a fitting moment to place one's family, benefactors and those in need before God. Their union with the offering is real, but it does not give them the ministerial priest's power to consecrate. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Dans le Mémento des vivants, le Canon englobe des personnes particulières et ceux qui entourent l'autel, dont la foi et la dévotion sont évoquées. C'est un moment approprié pour présenter à Dieu sa famille, ses bienfaiteurs et ceux qui sont dans le besoin. Leur union à l'offrande est réelle, mais ne leur confère pas le pouvoir de consacrer propre au prêtre ordonné. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.014",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG31"
+          ]
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.014",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG31"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "MEMENTO_VIVORUM_SILENT_PETITION"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-10",
+      "sourceFirstOwner": "AO.CANON.03",
+      "canonicalTitle": "Communicantes",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The communion of the saints [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "La communion des saints [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "Communicantes invokes communion with the Blessed Virgin Mary, St Joseph, the apostles and the martyrs. The Church praying on earth does not offer this sacrifice in isolation from the saints in glory. Earlier explanations that omit St Joseph describe a historical text state: his name was inserted into the Roman Canon by decree effective on 8 December 1962 and must be retained even when a special Communicantes formula is appointed in the corresponding 1962 rite. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret). [Original 1962 decree in French translation](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret).",
+        "fr": "Le Communicantes invoque la communion avec la bienheureuse Vierge Marie, saint Joseph, les apôtres et les martyrs. L'Église qui prie sur la terre n'offre pas ce Sacrifice séparément des saints dans la gloire. Les explications anciennes qui omettent saint Joseph décrivent un état antérieur du texte : son nom fut inséré au Canon romain par un décret entré en vigueur le 8 décembre 1962 et doit être conservé même lorsque la Messe prescrit une formule propre du Communicantes. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Écriture](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret). [Décret du 13 novembre 1962](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.014",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG32",
+            "FRG33"
+          ]
+        },
+        {
+          "kind": "1962_SACRED_CONGREGATION_OF_RITES_NOVIS_HISCE_TEMPORIBUS_FRENCH_TRANSLATION",
+          "url": "https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret",
+          "theme": "Communicantes",
+          "verifiedDocumentDate": "1962-11-13",
+          "verifiedEffectiveDate": "1962-12-08",
+          "appliesToSpecialCommunicantes": true
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.014",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG32",
+        "FRG33"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "ST_JOSEPH_INSERTION_EFFECTIVE_1962_12_08",
+        "SPECIAL_COMMUNICANTES_ALSO_INCLUDES_JOSEPH"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-11",
+      "sourceFirstOwner": "AO.CANON.04",
+      "canonicalTitle": "Hanc igitur",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "This oblation and our deliverance [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Cette oblation et notre délivrance [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In Hanc igitur the celebrant asks God graciously to receive the offering and to order our days in peace, rescue us from eternal condemnation and admit us among the elect. The extended hands are a gesture prescribed by the Roman rite; similarities to Old Testament laying-on of hands may illuminate their meaning but do not prove the historical origin of the Christian gesture. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/lev008.htm).",
+        "fr": "Dans le Hanc igitur, le célébrant demande à Dieu d'accueillir l'offrande avec bienveillance, de disposer nos jours dans la paix, de nous délivrer de la damnation et de nous compter parmi les élus. Les mains étendues constituent un geste prescrit par le rite romain ; l'analogie avec l'imposition des mains de l'Ancien Testament en éclaire le sens sans démontrer l'origine historique du geste chrétien. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Écriture](https://www.newadvent.org/bible/lev008.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.014",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG34"
+          ]
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/lev008.htm",
+          "theme": "Hanc"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.014",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG34"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "HANC_IGITUR_PRIEST_HANDS_OVER_OBLATION_NOT_LAY_GESTURE"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-12",
+      "sourceFirstOwner": "AO.CANON.05",
+      "canonicalTitle": "Quam oblationem",
+      "formationStage": "MF04",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The offering prepared for the mystery [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "L'offrande préparée au mystère [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In Quam oblationem the priest asks God to make the offering blessed, approved, confirmed, reasonable and acceptable, so that it may become for us the Body and Blood of Christ. Under the 1962 ceremonial directions, he makes three signs of the Cross over both offerings, one over the Host at Corpus, and one over the chalice at Sanguis. These five signs precede, and are not themselves, the separate sacramental consecrations of bread and wine. [Roman Canon text and rubrics](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [O’Connell, The Celebration of Mass (1962), p. 262](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf).",
+        "fr": "Dans Quam oblationem, le prêtre demande à Dieu de rendre l’offrande bénie, agréée, ratifiée, raisonnable et acceptable, afin qu’elle devienne pour nous le Corps et le Sang du Christ. Selon les prescriptions cérémonielles de 1962, il trace trois signes de croix sur les deux oblats, puis un sur l’Hostie au mot Corpus et un sur le calice au mot Sanguis. Ces cinq signes précèdent les consécrations sacramentelles distinctes du pain et du vin : ils ne constituent pas eux-mêmes ces consécrations. [Texte et rubriques du Canon romain](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [O’Connell, The Celebration of Mass (1962), p. 262](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.014",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG35",
+            "FRG36",
+            "FRG37"
+          ]
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/rom012.htm",
+          "theme": "Quam"
+        },
+        {
+          "kind": "CEREMONIAL_COMMENTARY_1962_NOT_PRIMARY_PRINTED_MISSAL",
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+          "locator": "p. 262, Quam Oblationem",
+          "qualification": "Specific five-cross sequence corroborated; requires final original printed 1962 Missal collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.014",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG35",
+        "FRG36",
+        "FRG37"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "QUAM_OBLATIONEM_SIGNS_NOT_ADDITIONAL_CONSECRATION"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "focusedClaimReview": "FIVE_CROSS_SEQUENCE_CORROBORATED_WITH_1962_CEREMONIAL_COMMENTARY_NOT_ORIGINAL_PRINT_CERTIFIED"
+      }
+    },
+    {
+      "id": "MM-NEW-13",
+      "sourceFirstOwner": "AO.CANON.10",
+      "canonicalTitle": "Supplices te rogamus",
+      "formationStage": "MF06",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The holy Angel and the heavenly altar [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "L'Ange saint et l'autel céleste [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In Supplices te rogamus the priest asks that the offering be borne before God's majesty by the hands of his holy Angel, so that communicants may receive heavenly blessing and grace. St Thomas Aquinas explains both an angel presenting the prayers of priest and people and a spiritual interpretation referring to Christ, the Angel of great counsel. These are interpretations, not a dogmatic identification imposed by the prayer. Aquinas explicitly denies that the consecrated species or Christ's true Body are physically carried from the altar to heaven. [Roman Canon](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [St Thomas, Summa theologiae III, q. 83, a. 4, ad 9](https://www.newadvent.org/summa/4083.htm#article4) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Dans Supplices te rogamus, le prêtre demande que l'offrande soit portée devant la majesté divine par les mains du saint Ange de Dieu, afin que ceux qui communient reçoivent la bénédiction et la grâce célestes. Saint Thomas d'Aquin explique à la fois l'intervention d'un ange présentant les prières du prêtre et du peuple, et une interprétation spirituelle rapportant l'Ange au Christ, l'Ange du grand conseil. Il s'agit d'interprétations, non d'une identification dogmatique imposée par la prière. Saint Thomas exclut expressément que les espèces consacrées ou le vrai Corps du Christ soient matériellement transportés de l'autel au ciel. [Canon romain](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [Saint Thomas, Somme théologique III, q. 83, a. 4, ad 9](https://www.newadvent.org/summa/4083.htm#article4) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.017",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG44",
+            "FRG45"
+          ]
+        },
+        {
+          "kind": "PRIMARY_SCHOLASTIC_DOCTRINAL_INTERPRETATION",
+          "url": "https://www.newadvent.org/summa/4083.htm#article4",
+          "locator": "Thomas Aquinas, ST III q.83 a.4 ad 9",
+          "qualification": "States both angelic and Christological interpretations; denies literal transport of Eucharistic species; not a normative 1962 rubric."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.017",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG44",
+        "FRG45"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "SUPPLICES_ANGEL_IDENTITY_DISPUTED_NOT_DOGMA",
+        "SUPPLICES_ANGEL_IDENTITY_NOT_DOGMATICALLY_DEFINED"
+      ],
+      "editorialWarnings": [
+        "Do not assert Angel=Christ as dogmatic identity."
+      ],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "claimSpecificAquinasPassage": "ST_III_Q83_A4_AD9_REVIEWED",
+        "frenchDoctrinalNativeReview": "REQUIRED"
+      }
+    },
+    {
+      "id": "MM-NEW-14",
+      "sourceFirstOwner": "AO.CANON.11",
+      "canonicalTitle": "Memento etiam, Domine — Dead",
+      "formationStage": "MF06",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The faithful departed [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Les fidèles défunts [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The Memento for the dead prays for those who have gone before us in faith and rest in peace, asking God to grant light, refreshment and peace. To pray for the dead is an act of charity and hope in God's mercy, not an attempt to declare the final state of an individual soul. Historical rules about public naming in the Canon must be kept distinct from private intercession and from the normative rubrics of the particular celebration. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/1th004.htm).",
+        "fr": "Le Mémento des défunts prie pour ceux qui nous ont précédés dans la foi et reposent dans la paix, afin que Dieu leur accorde la lumière, le rafraîchissement et la paix. Prier pour les morts est un acte de charité et d'espérance en la miséricorde divine, non une déclaration sur le sort éternel d'une âme particulière. Les anciennes règles sur les noms publiquement mentionnés au Canon se distinguent de la prière privée et des rubriques applicables. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Écriture](https://www.newadvent.org/bible/1th004.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.017",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG46",
+            "FRG47"
+          ]
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/1th004.htm",
+          "theme": "Death"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.017",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG46",
+        "FRG47"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "MEMENTO_DEFUNCTORUM_DURING_CANON_NOT_REQUIEM_ONLY"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-15",
+      "sourceFirstOwner": "AO.CANON.12",
+      "canonicalTitle": "Nobis quoque peccatoribus",
+      "formationStage": "MF06",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Nobis quoque: the sinner's hope [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Nobis quoque : l'espérance du pécheur [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "At Nobis quoque peccatoribus, the celebrant asks that sinners who hope in God's manifold mercies receive some part in fellowship with the apostles and martyrs. The petition is marked by humility: the promised reward is sought not by presuming on personal merit, but by asking pardon and admittance through Christ. It gives the faithful language for the hope of conversion during the silent Canon. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Au Nobis quoque peccatoribus, le célébrant demande que les pécheurs qui espèrent en la multitude des miséricordes divines aient part à la société des apôtres et des martyrs. La demande est humble : la récompense n'est pas revendiquée au titre du mérite personnel, mais implorée par le pardon et l'admission en Jésus-Christ. Les fidèles trouvent ainsi une prière d'espérance et de conversion au cœur du Canon silencieux. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.017",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG48",
+            "FRG49"
+          ]
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.017",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG48",
+        "FRG49"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "NOBIS_QUOQUE_BREAST_STRIKE_PRIEST_RUBRIC"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-16",
+      "sourceFirstOwner": "AO.CANON.13",
+      "canonicalTitle": "Per quem haec omnia",
+      "formationStage": "MF06",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Every good gift through Christ [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Tout bien nous vient par le Christ [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "Per quem haec omnia acknowledges that through Christ God creates, sanctifies, gives life, blesses and bestows all these good things. The priest makes three signs of the Cross over the Host and chalice at sanctificas, vivificas and benedicis; these do not consecrate again. The precise referent of haec omnia has received differing historical interpretations, including a possible association with blessings of material gifts in earlier usage. That proposed origin should not be taught as certain or imposed on the 1962 rite. [Roman Canon text and rubrics](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [Catholic Encyclopedia, Canon of the Mass (historical interpretation)](https://www.newadvent.org/cathen/03255c.htm).",
+        "fr": "Dans Per quem haec omnia, l'Église reconnaît que, par le Christ, Dieu crée, sanctifie, vivifie, bénit et nous accorde tous ces biens. Le prêtre trace trois signes de croix sur l'Hostie et le calice aux mots sanctificas, vivificas et benedicis ; il ne s'agit pas de nouvelles consécrations. Le sens précis de haec omnia a donné lieu à diverses interprétations historiques, dont un rapprochement possible avec d'anciennes bénédictions de biens matériels. Cette hypothèse d'origine ne doit pas être présentée comme certaine ni confondue avec les rubriques de 1962. [Texte et rubriques du Canon romain](https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon) · [Catholic Encyclopedia, Canon de la Messe (interprétation historique)](https://www.newadvent.org/cathen/03255c.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.017",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG50",
+            "FRG51"
+          ]
+        },
+        {
+          "kind": "HISTORICAL_SECONDARY_SOURCE_INTERPRETIVE_NOT_NORMATIVE",
+          "url": "https://www.newadvent.org/cathen/03255c.htm",
+          "locator": "Canon of the Mass, Per quem haec omnia",
+          "qualification": "The fruits/material-gifts explanation is a historical hypothesis, not a normative rubric or settled origin."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.017",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG50",
+        "FRG51"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "PER_QUEM_HAEC_OMNIA_NOT_A_GENERAL_OBJECT_BLESSING"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "focusedReview": "THREE_SIGNS_AND_HISTORICAL_UNCERTAINTY_RECONCILED_FROM_PUBLISHED_TEXT_NOT_1962_PRINT_SCAN"
+      }
+    },
+    {
+      "id": "MM-NEW-17",
+      "sourceFirstOwner": "AO.CANON.14",
+      "canonicalTitle": "Per ipsum · Minor Elevation",
+      "formationStage": "MF06",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "All honour and glory to the Father [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Tout honneur et toute gloire au Père [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In Per ipsum the priest performs the lesser elevation with the consecrated Host and chalice during the final doxology of the Canon: through Christ, with Him and in Him, honour and glory are given to the Father in the unity of the Holy Ghost. This lesser elevation is not another consecration. It brings the long Eucharistic prayer to its liturgical conclusion and is ratified by the prescribed response Amen. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Dans le Per ipsum, le prêtre accomplit la petite élévation avec l'Hostie consacrée et le calice pendant la doxologie finale du Canon : par le Christ, avec lui et en lui, tout honneur et toute gloire sont rendus au Père dans l'unité du Saint-Esprit. Cette petite élévation n'est pas une nouvelle consécration. Elle conduit la longue prière eucharistique à sa conclusion liturgique, ratifiée par l'Amen prescrit. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.018",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG52",
+            "FRG53"
+          ]
+        },
+        {
+          "kind": "ROMAN_CANON_TEXT_AND_RUBRICS_PUBLISHED_TRANSCRIPTION",
+          "url": "https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon",
+          "qualification": "Provides canonical Latin text and described gestures; original printed 1962 page and exact action timing still require collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.018",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG52",
+        "FRG53"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "PER_IPSUM_MINOR_ELEVATION_NOT_NEW_CONSECRATION"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "focusedReview": "MINOR_ELEVATION_DISTINGUISHED_FROM_CONSECRATION_PUBLIC_TRANSCRIPTION_ONLY"
+      }
+    },
+    {
+      "id": "MM-NEW-18",
+      "sourceFirstOwner": "AO.CARD.020",
+      "canonicalTitle": "Libera nos · Fraction · Pax Domini",
+      "formationStage": "MF07",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Deliverance, peace, and the commingling [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Délivrance, paix et mélange des espèces [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "Libera nos expands the last petition of the Lord's Prayer, asking deliverance from past, present and future evils through the saints' intercession. The Fraction breaks the consecrated Host; the Pax Domini wishes the Lord's peace. At the commingling a small particle enters the chalice: the word consecratio in that prayer does not mean a second Eucharistic Consecration. The successive actions possess distinct meanings and must not be collapsed into one invented gesture. At Requiem Mass, the prayer Domine Iesu Christe, qui dixisti Apostolis tuis is omitted and the kiss of peace is not given. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/mat006.htm). [1962 Mass and Requiem rubrics](https://1962ordo.today/1962-rubrics/).",
+        "fr": "Le Libera nos développe la dernière demande du Notre Père, implorant la délivrance des maux passés, présents et futurs avec l'intercession des saints. La fraction divise l'Hostie consacrée ; le Pax Domini souhaite la paix du Seigneur. Lors du mélange, une parcelle est déposée dans le calice : le mot consecratio de cette prière ne signifie pas une seconde Consécration eucharistique. Ces gestes successifs ont leur sens propre et ne doivent pas être confondus. À la messe des défunts, la prière Domine Iesu Christe, qui dixisti Apostolis tuis est omise et le baiser de paix n'est pas donné. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Écriture](https://www.newadvent.org/bible/mat006.htm). [Rubriques de la Messe de 1962 et des défunts](https://1962ordo.today/1962-rubrics/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.020",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG55",
+            "FRG56",
+            "FRG57"
+          ]
+        },
+        {
+          "kind": "EXISTING_MASS_BIBLE_DRAFT",
+          "url": "https://www.newadvent.org/bible/mat006.htm",
+          "draftId": "MB22"
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/joh014.htm",
+          "theme": "Peace"
+        },
+        {
+          "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+          "url": "https://1962ordo.today/1962-rubrics/",
+          "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.020",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG55",
+        "FRG56",
+        "FRG57"
+      ],
+      "bibleResearchDraftIds": [
+        "MB22"
+      ],
+      "conditionalityFlags": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION",
+        "FRACTION_AND_COMMIXTURE_DISTINCT_FROM_PEACE_PRAYER",
+        "REQUIEM_PAX_EXCEPTIONS_APPLY"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "focusedRequiemSource": {
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_REQUIEM_SECTION",
+          "findings": [
+            "Agnus Dei changes in Requiem and no breast strikes",
+            "First pre-Communion peace prayer omitted and Pax not given",
+            "Requiescant in pace replaces standard dismissal; no final blessing; Last Gospel remains under normal Requiem rubric"
+          ],
+          "notOriginalPrintedLatinCollation": true,
+          "independentFrenchReview": false
+        }
+      }
+    },
+    {
+      "id": "MM-NEW-19",
+      "sourceFirstOwner": "AO.CARD.024",
+      "canonicalTitle": "Ecce Agnus Dei & Faithful Preparation",
+      "formationStage": "MF07",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Prepare to receive the Lord [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Se préparer à recevoir le Seigneur [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "When Communion is to be distributed to the faithful, the liturgy has its own preparation distinct from the priest's earlier private prayers. The 'Ecce Agnus Dei' and the faithful's 'Domine, non sum dignus' invite a confession of faith and humility before Christ truly present. The additional Confiteor found in older or some local usages is not prescribed for the faithful's Communion in the 1962 Missal; nor may the priest's earlier repetitions be assigned automatically to the congregation. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/1co011.htm). [1962 Mass and Requiem rubrics](https://1962ordo.today/1962-rubrics/).",
+        "fr": "Lorsque la Communion doit être distribuée aux fidèles, la liturgie prévoit une préparation distincte des prières privées récitées auparavant par le prêtre. L'« Ecce Agnus Dei » et le « Domine, non sum dignus » des fidèles invitent à une profession de foi et d'humilité devant le Christ réellement présent. Le second Confiteor, présent dans des usages anciens ou locaux, n'est pas prescrit pour la distribution de la Communion par le Missel de 1962 et ne doit donc pas être présenté comme une obligation liturgique universelle ; les répétitions distinctes du prêtre ne doivent pas non plus être transférées à l'assemblée. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/1co011.htm). [Rubriques de la Messe de 1962 et des défunts](https://1962ordo.today/1962-rubrics/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.024",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/1co011.htm",
+          "theme": "Communion"
+        },
+        {
+          "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+          "url": "https://1962ordo.today/1962-rubrics/",
+          "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.024",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "SECOND_CONFITEOR_OLDER_OR_LOCAL_CUSTOM_NOT_UNIVERSALLY_MANDATORY",
+        "FAITHFUL_COMMUNION_CONDITIONAL",
+        "SECOND_CONFITEOR_NOT_PRESCRIBED_IN_1962"
+      ],
+      "editorialWarnings": [
+        "Do not generalize optional second Confiteor as a 1962 norm."
+      ],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "focusedRequiemSource": {
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_REQUIEM_SECTION",
+          "findings": [
+            "Agnus Dei changes in Requiem and no breast strikes",
+            "First pre-Communion peace prayer omitted and Pax not given",
+            "Requiescant in pace replaces standard dismissal; no final blessing; Last Gospel remains under normal Requiem rubric"
+          ],
+          "notOriginalPrintedLatinCollation": true,
+          "independentFrenchReview": false
+        }
+      }
+    },
+    {
+      "id": "MM-NEW-20",
+      "sourceFirstOwner": "AO.CARD.025",
+      "canonicalTitle": "Communion of the Faithful",
+      "formationStage": "MF07",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "Communion is a sacred participation [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "La Communion est une participation sacrée [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The faithful who receive Holy Communion truly receive the living Christ, whose sacrifice has been offered on the altar. Worthy reception asks for faith, preparation and reverence; St Paul warns against eating and drinking unworthily. Communion of the faithful is highly recommended, but the Eucharistic sacrifice does not depend upon every member of the congregation communicating. The actual distribution takes place only when communicants are present and according to the applicable rite. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Scripture](https://www.newadvent.org/bible/1co011.htm).",
+        "fr": "Les fidèles qui communient reçoivent réellement le Christ vivant, dont le Sacrifice a été offert à l'autel. Une réception digne demande la foi, la préparation et le respect ; saint Paul avertit contre une communion indigne. La Communion des fidèles est vivement recommandée, mais l'existence du Sacrifice eucharistique ne dépend pas de la communion de chaque assistant. La distribution a lieu lorsque des communiants sont présents, selon le rite applicable. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Écriture](https://www.newadvent.org/bible/1co011.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.025",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/1co011.htm",
+          "theme": "Communion"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.025",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "FAITHFUL_COMMUNION_MAY_NOT_TAKE_PLACE",
+        "FAITHFUL_COMMUNION_MAY_NOT_OCCUR",
+        "PRIEST_COMMUNION_UNCONDITIONAL_SEPARATE_OWNER"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-21",
+      "sourceFirstOwner": "AO.CARD.026",
+      "canonicalTitle": "Ablutions & Communion Antiphon",
+      "formationStage": "MF08",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "What we have received [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Ce que nous avons reçu [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "During the ablutions, the celebrant receives the prescribed purifications and prays that what has passed his lips may be received with a pure mind and bring an enduring spiritual remedy. The Communion antiphon belongs to the variable Proper and cannot be supplied from one unchanging example. This part of the Mass teaches that the sacramental gift should bear fruit beyond the brief moments of Communion. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Pendant les ablutions, le célébrant accomplit les purifications prescrites et demande que ce qu'il a reçu de la bouche soit accueilli avec une âme pure et lui procure un remède durable. L'antienne de Communion appartient au Propre variable et ne peut être remplacée par un exemple uniforme. Cette partie de la Messe enseigne que le don sacramentel doit porter du fruit bien au-delà des instants de la Communion. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.026",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG66",
+            "FRG67"
+          ]
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.026",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG66",
+        "FRG67"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "ABLUTIONS_FOLLOW_PRIEST_COMMUNION",
+        "COMMUNION_ANTIPHON_VARIABLE_PROPER"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-22",
+      "sourceFirstOwner": "AO.CARD.027",
+      "canonicalTitle": "Postcommunion",
+      "formationStage": "MF08",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The Church gives thanks [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "L'Église rend grâce [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "In the Postcommunion prayer the Church asks that the Sacrament received accomplish its fruit in those who have shared in the holy mysteries. This liturgical thanksgiving is not the same as a person's own thanksgiving after Mass: both have a proper place. The particular words are those appointed for the day, with any lawful additional orations; the generic explanation should not replace them. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Scripture](https://www.newadvent.org/bible/col003.htm).",
+        "fr": "Dans la Postcommunion, l'Église demande que le Sacrement reçu produise ses fruits chez ceux qui ont participé aux saints mystères. Cette action de grâces liturgique ne se confond pas avec l'action de grâces personnelle après la Messe : chacune a sa place. Les paroles sont celles qui sont prescrites pour le jour, avec les oraisons supplémentaires permises ; une explication générale ne les remplace pas. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/) · [Écriture](https://www.newadvent.org/bible/col003.htm)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.027",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG68"
+          ]
+        },
+        {
+          "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+          "url": "https://www.newadvent.org/bible/col003.htm",
+          "theme": "Post"
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.027",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG68"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "POSTCOMMUNION_VARIABLE_PROPER",
+        "NOT_PERSONAL_THANKSGIVING_AFTER_MASS"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-23",
+      "sourceFirstOwner": "AO.CARD.028",
+      "canonicalTitle": "Dismissal",
+      "formationStage": "MF08",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The dismissal is not always identical [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "Le renvoi n'est pas toujours identique [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "The dismissal concludes the public liturgical action with the formula appropriate to the day or rite. Ite, missa est is not interchangeable with Benedicamus Domino or Requiescant in pace (the Requiem dismissal); special liturgies and subsequent actions can also modify what follows. Its practical lesson is to carry the worship of God into one's duties, without presenting that application as the linguistic origin of missa. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/). [1962 Mass and Requiem rubrics](https://1962ordo.today/1962-rubrics/).",
+        "fr": "Le renvoi conclut l'action liturgique publique par la formule qui convient au jour ou au rite. Ite, missa est ne se substitue pas indifféremment à Benedicamus Domino ou à Requiescant in pace (le renvoi de la Messe des défunts) ; certaines liturgies ou actions qui suivent modifient aussi la conclusion. L'application pratique est de prolonger le culte rendu à Dieu par la fidélité à ses devoirs, sans ériger cette méditation en étymologie du mot missa. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/). [Rubriques de la Messe de 1962 et des défunts](https://1962ordo.today/1962-rubrics/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.028",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+          "url": "https://1962ordo.today/1962-rubrics/",
+          "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.028",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "DISMISSAL_VARIANT_BY_MASS_TYPE_OR_FOLLOWING_ACTION",
+        "DISMISSAL_FORMULA_DEPENDS_ON_MASS_TYPE_AND_FOLLOWING_RITE",
+        "REQUIEM_REQUIESCANT_IN_PACE"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false
+      }
+    },
+    {
+      "id": "MM-NEW-24",
+      "sourceFirstOwner": "AO.CARD.029",
+      "canonicalTitle": "Placeat & Final Blessing",
+      "formationStage": "MF08",
+      "kind": "ADDITIONAL_SHORT_AND_DEEP_BILINGUAL_SECTION_EXPLANATION",
+      "short": {
+        "en": "The prayer and blessing after the dismissal [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/).",
+        "fr": "La prière et la bénédiction après le renvoi [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/)."
+      },
+      "deep": {
+        "en": "Through Placeat the celebrant asks the Holy Trinity to receive the sacrifice accomplished and make it fruitful for those for whom it was offered. The final blessing is a separate prescribed action when the rite includes it; it is not implied simply because the dismissal has sounded. At a Requiem Mass the final blessing is omitted, but the Last Gospel is ordinarily read; it would be incorrect to infer that Requiem itself suppresses the Last Gospel. Distinct special liturgical continuations require their own rubrical review. [1962 rite](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/). [1962 Mass and Requiem rubrics](https://1962ordo.today/1962-rubrics/).",
+        "fr": "Par le Placeat, le célébrant demande à la Sainte Trinité d'agréer le Sacrifice accompli et d'en faire bénéficier ceux pour qui il a été offert. La bénédiction finale est un geste distinct lorsqu'elle est prescrite ; elle ne découle pas automatiquement du renvoi. À la messe des défunts, la bénédiction finale est omise, mais le Dernier Évangile se lit ordinairement : on ne peut donc pas prétendre que la messe de Requiem le supprime en tant que telle. Les autres conclusions liturgiques particulières doivent être examinées selon leurs propres rubriques. [Rite de 1962](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/). [Rubriques de la Messe de 1962 et des défunts](https://1962ordo.today/1962-rubrics/)."
+      },
+      "primarySourceHierarchy": [
+        {
+          "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+          "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+          "sourceOwner": "AO.CARD.029",
+          "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+        },
+        {
+          "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "guérangerIds": [
+            "FRG69",
+            "FRG70"
+          ]
+        },
+        {
+          "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+          "url": "https://1962ordo.today/1962-rubrics/",
+          "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+        }
+      ],
+      "existingGuideOwner": "AO.CARD.029",
+      "originalGuideSourceAlreadyExists": true,
+      "guerangerIds": [
+        "FRG69",
+        "FRG70"
+      ],
+      "bibleResearchDraftIds": [],
+      "conditionalityFlags": [
+        "FINAL_BLESSING_CAN_BE_SUPPRESSED_BY_SPECIAL_RITE_OR_REQUIEM",
+        "BLESSING_OMITTED_AT_REQUIEM",
+        "BLESSING_MAY_BE_OMITTED_WITH_SPECIAL_FOLLOWING_RITE",
+        "PLACEAT_NOT_IDENTICAL_TO_BLESSING"
+      ],
+      "editorialWarnings": [],
+      "publication": {
+        "approved": false,
+        "hasNativeFrenchReview": false,
+        "requiresRubricAndEditionAcceptance": true,
+        "kind": "CANDIDATE_NOT_PUBLIC_TEXT"
+      },
+      "provenance": {
+        "author": "Composite synthesis; paraphrases of approved original sources, not attributed as quotations from Guéranger or Lanslots",
+        "originalGuideOnMain": true
+      },
+      "editorialCertification": {
+        "sourceLinkPresenceChecked": true,
+        "sourceClaimSpecificity": "MIXED_MUST_APPROVE_PER_PARAGRAPH",
+        "frEnFirstPass": "BILINGUAL_DRAFT_INTERNAL_ONLY",
+        "original1962TextCollation": "NOT_COMPLETE",
+        "nativeFrenchApproval": false,
+        "publicReleaseApproved": false,
+        "requiemLastGospelDistinction": "CHECKED_AGAINST_TRANSLATED_1962_RITUS_SERVANDUS_ORIGINAL_PRINT_STILL_PENDING"
+      }
+    }
+  ]
+}

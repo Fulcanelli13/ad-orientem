@@ -1,0 +1,412 @@
+{
+  "schema": "AO_MYSTERY_OF_MASS_SOURCE_RECOVERY_V1",
+  "date": "2026-10-14",
+  "status": "RECOVERED_SOURCE_LEDGER_NOT_FULL_TEXT_OR_PUBLICATION_CERTIFICATION",
+  "productSeparation": {
+    "mass": "rubrics_and_following_only",
+    "studyMass": "complete_historical_theological_biblical_and_ceremonial_reference",
+    "mysteryMass": {
+      "biblicalChronology": "meditative_salvation_history",
+      "liturgicalChronology": "descriptive_studyMass_driven"
+    }
+  },
+  "preservedCollections": {
+    "septemberEvidence": {
+      "rows": 422,
+      "github": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "perSourceCounts": {
+        "L": 34,
+        "OC64": 47,
+        "SLPM": 7,
+        "SVF": 28,
+        "W": 71,
+        "MR62": 30,
+        "B": 26,
+        "A31": 18,
+        "KNOX": 19,
+        "SFS": 29,
+        "Wy": 22,
+        "OB": 16,
+        "G": 26,
+        "OAK": 12,
+        "RG60": 37
+      }
+    },
+    "septemberComparisons": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
+    "oldFull22TabSot": "docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md",
+    "guérangerStructuredFRGRecords": 71,
+    "alphonsusVolumeResearchUnits": 7,
+    "dujardinMeditationStages": 22,
+    "vincentFerrerSourceSections": 30,
+    "vincentFerrerSeptemberGroupedRows": 26,
+    "attributedFrancisDeSalesSeptemberGroupedRows": 6,
+    "fortescueOriginalOrderLocators": 30,
+    "massBibleBilingualConnections": 31,
+    "pr1193CurrentSectionOwners": 39,
+    "pr1193CurrentNarrativeResearchUnits": 48
+  },
+  "sources": [
+    {
+      "id": "MR62",
+      "title": "Missale Romanum and Ritus servandus (1962)",
+      "authority": "normative_roman_rite",
+      "application": "mass_and_study",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 30,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "RG60",
+      "title": "Codex Rubricarum / 1960 rubrics",
+      "authority": "normative_roman_rite",
+      "application": "mass_and_study",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 37,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "OC64",
+      "title": "J. B. O'Connell — The Celebration of Mass, 4th ed.",
+      "authority": "1962_specific_secondary",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 47,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": null,
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "G",
+      "title": "Dom Prosper Guéranger — Explication des prières et cérémonies",
+      "authority": "historical_theological_interpretation",
+      "application": "study_liturgical_and_biblical_typology",
+      "recoveryState": "FRG_01_71_AND_ARCHIVE",
+      "archivedEvidenceRows": 26,
+      "repositoryPath": "docs/research/MASS-RESEARCH-ARCHIVE-INDEX-20261013.md",
+      "originalOrBibliographicUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "originalFrenchFirstPass": 30,
+        "originalFrenchSecondPass": 41
+      }
+    },
+    {
+      "id": "A",
+      "title": "St Alphonsus de Liguori — The Sacrifice of Jesus Christ / Short Explanation of the Prayers of Mass",
+      "authority": "sacrificial_theology_and_exposition",
+      "application": "biblical_and_liturgical_and_study",
+      "recoveryState": "TEXT_TREATISE_INDEXED_SEPARATE_FROM_DUJARDIN",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "ceremonialLocatorRecords": 113,
+        "source": "data/mass/alphonsus-fortescue-direct-book-evidence-batch02.v1.json",
+        "caution": "Historical ceremonial passages, not 113 doctrinal expositions or normative 1962 cues."
+      }
+    },
+    {
+      "id": "DJ",
+      "title": "Fr Léopold J. Dujardin — Mass in relation to Christ's life, year, history",
+      "authority": "authorial_devotional_salvation_history",
+      "application": "biblical_meditative_and_liturgical_secondary",
+      "recoveryState": "22_RESEARCH_STAGES",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "SVF",
+      "title": "St Vincent Ferrer — The Life of Christ in the Mass",
+      "authority": "dominican_rite_devotional_allegory",
+      "application": "biblical_meditative_with_rite_distinction",
+      "recoveryState": "THIRTY_NUMBERED_TRANSLATED_SOURCE_SECTIONS_DIRECTLY_ACCESSIBLE_TWENTY_SIX_ARCHIVE_GROUPS",
+      "archivedEvidenceRows": 28,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://www.svfsermons.org/Parts%20of%20the%20Mass.htm",
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "originalSections": 30,
+        "septemberComparisonGroups": 26,
+        "sourceRite": "DOMINICAN_NOT_1962_ROMAN"
+      },
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-32-legacy-meditation-group-crosswalk-20261014.v1.json"
+    },
+    {
+      "id": "SFS",
+      "title": "Passion-of-Christ method attributed to St Francis de Sales",
+      "authority": "attribution_pending_private_passion_method",
+      "application": "biblical_meditative_optional",
+      "recoveryState": "SIX_COMPARISON_GROUPS",
+      "archivedEvidenceRows": 29,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-comparisons.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://www.newliturgicalmovement.org/2024/04/st-francis-de-sales-method-of-hearing.html",
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "septemberComparisonGroups": 6,
+        "attribution": "NOT_CRITICALLY_CERTIFIED"
+      }
+    },
+    {
+      "id": "SLPM",
+      "title": "St Leonard of Port Maurice — Hidden Treasure of the Mass",
+      "authority": "theology_and_devotional_method",
+      "application": "biblical_meditative_and_study",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 7,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://sensusfidelium.com/meditations/the-hidden-treasue-of-the-holy-mass-by-st-leonard-of-port-maurice/devout-method-of-hearing-mass/",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "L",
+      "title": "F. X. Lasance — My Prayer-Book: Holy Sacrifice of the Mass",
+      "authority": "devotional_lay_method",
+      "application": "biblical_meditative_optional",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 34,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://en.wikisource.org/wiki/My_Prayer-Book/The_Holy_Sacrifice_of_the_Mass",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "KNOX",
+      "title": "Ronald Knox — The Mass in Slow Motion",
+      "authority": "mystagogical_lay_exposition",
+      "application": "study_liturgical_and_biblical_secondary",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 19,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://archive.ccwatershed.org/media/pdfs/14/04/09/13-00-12_0.pdf",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "OAK",
+      "title": "Frederick Oakeley — Order and Ceremonial of the Mass",
+      "authority": "historical_ceremonial",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 12,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://dn790002.ca.archive.org/0/items/orderceremonialo00oakerich/orderceremonialo00oakerich_hocr.html",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "OB",
+      "title": "John O'Brien — A History of the Mass and Its Ceremonies",
+      "authority": "historical_rite",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 16,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://archive.org/stream/historyofmass00obriuoft/historyofmass00obriuoft_djvu.txt",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "W",
+      "title": "John Walsh — Mass and Vestments",
+      "authority": "historical_lay_custom",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 71,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://archive.org/stream/TheMassAndVestments/TheMassAndVestments_djvu.txt",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "Wy",
+      "title": "John J. Wynne — The Mass: Holy Sacrifice with the Priest at the Altar",
+      "authority": "lay_ordinary_explanation",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 22,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": "https://archive.org/stream/TheMassTheHolySacrificeWithThePriestAtTheAltar/TheMassTheHolySacrificeWithThePriestAtTheAltar_djvu.txt",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "B",
+      "title": "Dom Matthew Britt — How to Serve",
+      "authority": "historical_ceremonial",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 26,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": null,
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "A31",
+      "title": "Charles Augustine — Liturgical Law",
+      "authority": "historical_legal",
+      "application": "study_liturgical",
+      "recoveryState": "ARCHIVED_CLAIMS",
+      "archivedEvidenceRows": 18,
+      "repositoryPath": "data/research/archive/mass-compendium-20260921-evidence-ledger.snapshot.v1.json",
+      "originalOrBibliographicUrl": null,
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "FT",
+      "title": "Adrian Fortescue — The Mass: A Study of the Roman Liturgy",
+      "authority": "liturgical_history",
+      "application": "study_liturgical",
+      "recoveryState": "30_HISTORICAL_LOCATORS_PLUS_27_THEMES",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://archive.org/details/cu31924029398553",
+      "publishedCopyApproved": false,
+      "supplementaryEvidence": {
+        "historicalThemeExcerpts": 27,
+        "originalTextLocators": 30,
+        "distinctRegistersMayOverlap": true
+      }
+    },
+    {
+      "id": "L1897",
+      "title": "D. I. Lanslots — Illustrated Explanation of Prayers and Ceremonies of Mass",
+      "authority": "theology_ceremonies_history",
+      "application": "study_liturgical_and_biblical",
+      "recoveryState": "SEVEN_BILINGUAL_AND_TEN_CRITICAL",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/research/mass-lanslots-1897-seven-bilingual-mystagogy-drafts.v1.json",
+      "originalOrBibliographicUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "LEB",
+      "title": "Pierre Le Brun — Explication littérale, historique et dogmatique",
+      "authority": "history_dogma_source_criticism",
+      "application": "study_liturgical",
+      "recoveryState": "1843_FACSIMILE_TOC_PLUS_ONE_ORIGINAL_FRENCH_CRITICAL_METHOD_PASSAGE",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
+    },
+    {
+      "id": "DUR",
+      "title": "Guillaume Durand of Mende — Rationale IV",
+      "authority": "medieval_allegory",
+      "application": "biblical_secondary_and_liturgical_study",
+      "recoveryState": "SIX_CLAIMS_LOCATED",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "AQ",
+      "title": "St Thomas Aquinas — Summa Theologiae III q.83",
+      "authority": "scholastic_theological_interpretation",
+      "application": "biblical_and_liturgical_study",
+      "recoveryState": "ELEVEN_CLAIMS_LOCATED",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://www.newadvent.org/summa/4083.htm",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "CYP",
+      "title": "St Cyprian — Letter on the Sacrament of the Cup",
+      "authority": "patristic_eucharistic_typology",
+      "application": "biblical_and_liturgical_study",
+      "recoveryState": "THREE_CLAIMS_LOCATED",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://www.newadvent.org/fathers/050662.htm",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "AMB",
+      "title": "St Ambrose — De mysteriis",
+      "authority": "patristic_sacramental_theology",
+      "application": "biblical_and_liturgical_study",
+      "recoveryState": "FOUR_CLAIMS_LOCATED",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": "data/geography/research/mass-scripture-source-extractions-20261011.v1.json",
+      "originalOrBibliographicUrl": "https://www.newadvent.org/fathers/3405.htm",
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "GIHR",
+      "title": "Nicholas Gihr — Holy Sacrifice of the Mass",
+      "authority": "dogmatic_liturgical_treatise",
+      "application": "study_liturgical_and_biblical",
+      "recoveryState": "SIX_DIRECT_1902_TEXT_LOCATORS_ADDED_PRIOR_31_REVIEW_NOT_RECOVERED",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": null,
+      "originalOrBibliographicUrl": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
+    },
+    {
+      "id": "JUNG",
+      "title": "Josef A. Jungmann — Missarum Sollemnia",
+      "authority": "historical_liturgical_study",
+      "application": "study_liturgical",
+      "recoveryState": "BIBLIOGRAPHY_ONLY_IN_THIS_RECOVERY",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": null,
+      "originalOrBibliographicUrl": null,
+      "publishedCopyApproved": false
+    },
+    {
+      "id": "LANG",
+      "title": "Jean-Joseph Languet de Gergy — Du véritable esprit de l'Église",
+      "authority": "ceremonial_symbolism_method",
+      "application": "study_liturgical",
+      "recoveryState": "1715_DIGITIZATION_IDENTIFIED_ONE_SECONDHAND_TEXTUAL_CITATION_IN_LEBRUN_NO_PRIMARY_CLAIM",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": null,
+      "originalOrBibliographicUrl": "https://play.google.com/store/books/details?id=OXjkCUPQumgC",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
+    },
+    {
+      "id": "TORMA",
+      "title": "Zac Torma — Traditional Latin Mass in a Year",
+      "authority": "modern_expository_serial_copyrighted",
+      "application": "study_liturgical_comparative",
+      "recoveryState": "TWO_ORIGINAL_2026_ARTICLE_TOPIC_PASSAGES_NOT_EVIDENCE_OF_RITE_ORIGIN",
+      "archivedEvidenceRows": 0,
+      "repositoryPath": null,
+      "originalOrBibliographicUrl": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
+      "publishedCopyApproved": false,
+      "newDirectStudyRecordPath": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
+    }
+  ],
+  "coverageWarning": "The 422 September evidence rows overlap later records and must never be added as unique commentaries; 39 liturgical owners do not constitute complete bibliographic coverage.",
+  "unrecoveredOrUnverified": [
+    "Gihr earlier 31 claim review location",
+    "Languet earlier detailed extract, if any",
+    "Torma earlier extract, if any",
+    "full Saint Vincent Ferrer 30-section edition-text witness",
+    "full St Francis de Sales method attribution",
+    "older 35-part Passion manuscript precise standalone identity",
+    "earlier narrative prototype text beyond the archived comparisons"
+  ],
+  "integrationStatus": "RESEARCH_INVENTORY_ONLY_NO_APP_CHANGES",
+  "crosswalks": {
+    "twoChronologies": "data/learn/research/mystery-mass-two-chronologies-evidence-crosswalk-20261014.v1.json",
+    "historicalMeditations": "data/learn/research/mystery-mass-32-legacy-meditation-group-crosswalk-20261014.v1.json",
+    "newOriginalAuthorPassages": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json",
+    "preserved422": "data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json"
+  },
+  "remainingCriticalGaps": {
+    "gihrEarlier31ClaimReviewManuscript": "STILL_UNLOCATED_NEW_SIX_LOCATORS_NOT_SUBSTITUTE_FOR_OLD_31",
+    "lebrunFullBook": "1843_VOL1_TOC_AND_ONE_FRENCH_PASSAGE_LOCATED_COMPLETE_BODY_NOT_COLLATED",
+    "languetOriginalArgument": "1715_DIGITAL_EDITION_IDENTIFIED_BUT_ARGUMENT_ONLY_SECONDHAND_IN_LE_BRUN",
+    "torma": "CONTEMPORARY_COPYRIGHT_LIMIT_REFERENCE_ONLY",
+    "ferrer": "30_TRANSLATED_SECTIONS_AVAILABLE_ORIGINAL_LATIN_NOT_COLLATED",
+    "francisDeSales": "ATTRIBUTION_STILL_PENDING",
+    "narrativePublication": "NO_STORY_APPROVED_AND_NO_UI_INTEGRATION"
+  }
+}

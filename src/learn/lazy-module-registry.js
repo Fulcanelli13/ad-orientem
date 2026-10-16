@@ -14,6 +14,7 @@ export const SPIRITUAL_LIFE_ROUTE_ID="learn.spiritual_life";
 export const LATIN_COURSE_ROUTE_ID="learn.latin";
 export const GLOSSARY_ROUTE_ID="learn.glossary";
 export const MASS_FORMATION_ROUTE="learn.mass";
+export const MYSTERY_MASS_REVIEW_ROUTE="learn.mystery_mass";
 const aliases=Object.freeze({"learn.serve_mass":"learn.serve_mass.responses"});
 const named=new Map(LEARN_LAYOUT.sections.flatMap(s=>s.items.map(i=>[i.id,i])));
 const descriptors=Object.freeze(Object.fromEntries([...named].map(([id,item])=>[id,Object.freeze({
@@ -27,7 +28,8 @@ const loaders=Object.freeze({
  spiritual:()=>import("./spiritual-life.js"),
  latin:()=>import("./latin-course-v2.js"),
  glossary:()=>import("../glossary/browser-entry.js"),
- mass:()=>import("./mass-formation.js")
+ mass:()=>import("./mass-formation.js"),
+ mystery:()=>import("./mystery-mass-review.js")
 });
 const groupFor=id=>{
  if(TRADITIONAL_LEARN_ROUTES[id])return "traditional";
@@ -36,6 +38,7 @@ const groupFor=id=>{
  if(id===LATIN_COURSE_ROUTE_ID)return "latin";
  if(id===GLOSSARY_ROUTE_ID)return "glossary";
  if(id===MASS_FORMATION_ROUTE)return "mass";
+ if(id===MYSTERY_MASS_REVIEW_ROUTE)return "mystery";
  return null; // existing Daily Catechism, Catechism, Today are untouched
 };
 export async function ensureLearnModule(id,win=globalThis){
@@ -54,6 +57,7 @@ export async function ensureLearnModule(id,win=globalThis){
  else if(group==="latin")mod.installLatinCourseModule(win);
  else if(group==="glossary")mod.installGlossaryModule(win);
  else if(group==="mass")mod.installMassFormationModule(win);
+ else if(group==="mystery")mod.installMysteryMassReview(win);
  return true;
 }
 export function installLazyLearnRegistry(win=globalThis){

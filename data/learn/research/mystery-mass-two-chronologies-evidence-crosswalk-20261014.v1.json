@@ -1,0 +1,4949 @@
+{
+  "schema": "AO_MYSTERY_MASS_DUAL_CHRONOLOGY_EVIDENCE_CROSSWALK_V1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_SKELETON_FROM_RECOVERED_EVIDENCE_NOT_FINISHED_NARRATIVE",
+  "productScope": {
+    "biblicalArc": "MEDITATIVE_BIBLICAL_CHRONOLOGY",
+    "liturgicalArc": "DESCRIPTIVE_MASS_CHRONOLOGY_USING_STUDY_OF_MASS",
+    "massReader": "SOURCE_FIRST_48_CARD_LIVE_UNTOUCHED",
+    "eightFormationLessons": "EXISTING_SEPARATE_FORMATION_REUSABLE_NOT_SYNONYM_OF_MYSTERY"
+  },
+  "counts": {
+    "biblicalResearchAnchors": 24,
+    "liturgicalSourceFirstOwners": 39,
+    "archivalEvidenceRowsAssigned": 402,
+    "archivalEvidenceUnmapped": 20,
+    "dujardinAuthorMeditationRows": 22,
+    "sourceCriticallyReadNewClaims": 12,
+    "massBibleOriginalContextRecords": 26,
+    "studyManuscriptResearchTopics": 48,
+    "guérangerSourceDrafts": 71,
+    "lanslotsDistinctSourceCandidates": 36
+  },
+  "sourceOfTruth": {
+    "studyInventory": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
+    "archivalCrosswalk": "data/learn/research/mystery-mass-september422-to-canonical39-bridge-20261014.v1.json",
+    "originalMassBible": "feature/mass-bible-study-source-bridge-20261012:data/learn/mass-bible-source-layers.v1.json",
+    "dujardin": "research/biblical-people-genealogy-explorer-20261011:data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json",
+    "newAuthorFindings": "data/learn/research/mystery-mass-four-authors-original-source-findings-20261014.v1.json"
+  },
+  "editorialRules": [
+    "The biblical anchors are research moments, not yet approved scene count or final script chapters.",
+    "Chronology follows Bible/salvation history for biblical arc, 1962 Mass for liturgical arc.",
+    "Exactly one canonical Mass explanation owner per source-first prayer section; multiple Scriptural/mystagogical links allowed.",
+    "Existing 422 historical evidence claim IDs are preserved as links, not treated as 422 unique commentaries.",
+    "Every relationship type must distinguish direct liturgical words, adapted words, actual named figure, doctrinal typology, historical hypothesis and attributed meditation.",
+    "Dujardin headings remain his, not those of St Alphonsus; optional allegories never define 1962 historical origins.",
+    "Scripture expansion must delegate to shared Canonical Bible reader, and images to canonical approved artworks.",
+    "Do not project any research copy into LIVE Mass rubric/action rail without separate audit.",
+    "For every liturgical owner, carry independently classified MB passage links even when no full biblical chronology scene is assigned. Variable Proper readings are resolved from the Mass calendar/Proper rather than a guessed fixed chapter.",
+    "All 71 Guéranger French cue-based draft records are assigned once to a source-first owner: 30 archived first pass plus 41 structured second pass. FRG22 also references the chalice Consecration, without creating a second text owner.",
+    "All 48 Phase 3 bilingual research topics have one original Mass owner; 48 explanatory research topics are not the same as 48 LIVE presentation cards."
+  ],
+  "biblicalChronology": [
+    {
+      "id": "SH01",
+      "title": "Creation and worship",
+      "scriptureReferences": [
+        "Genesis 1–2"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.012",
+        "AO.CANON.13",
+        "AO.CANON.14"
+      ],
+      "relationType": "THEOLOGICAL_FRAME",
+      "governingInquiry": "Why can created gifts become the matter of offering, and how does the Eucharistic doxology return all honour to the Creator?",
+      "editorialQualifications": [
+        "Creation-to-Preface analogy is theological, not a biblical quotation or historical cause of a rite."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [
+        "GIHR-01"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH02",
+      "title": "Fall and promised redemption",
+      "scriptureReferences": [
+        "Genesis 3",
+        "Luke 18:13"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002"
+      ],
+      "relationType": "AUTHORIAL_MEDITATION_AND_BIBLICAL_PARALLEL",
+      "governingInquiry": "The Mass begins with a sinner asking to approach God: differentiate actual Psalm/Confiteor from Dujardin's Adam/Fall interpretation.",
+      "editorialQualifications": [
+        "Do not state Introibo or Confiteor were composed to reenact the Fall."
+      ],
+      "existingMassBibleIds": [
+        "MB03",
+        "MB04"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH03",
+      "title": "Abel: sacrifice, righteousness and innocent blood",
+      "scriptureReferences": [
+        "Genesis 4:1–16",
+        "Hebrews 11:4",
+        "Hebrews 12:24"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "relationType": "EXPLICIT_CANON_FIGURE_AND_TYPOLOGY",
+      "governingInquiry": "Why is Abel a model of accepted sacrifice, and why does the Blood of Christ speak more effectively than innocent Abel's blood?",
+      "editorialQualifications": [
+        "Genesis 4 does not state that fire consumed Abel's sacrifice: Gihr's fire inference is conjectural."
+      ],
+      "existingMassBibleIds": [
+        "MB17"
+      ],
+      "sourceFindingIds": [
+        "GIHR-03",
+        "GIHR-04"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH04",
+      "title": "Melchisedech: bread, wine and priesthood",
+      "scriptureReferences": [
+        "Genesis 14:18–20",
+        "Psalm 109:4 (Vulgate)",
+        "Hebrews 7:1–17"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.09",
+        "AO.CARD.010"
+      ],
+      "relationType": "EXPLICIT_CANON_FIGURE_PLUS_THEOLOGICAL_TYPOLOGY",
+      "governingInquiry": "How does Hebrews' exposition of an abiding priesthood permit a Christological reading of the enigmatic bread and wine?",
+      "editorialQualifications": [
+        "Genesis says he brought bread/wine, not that they were consecrated or sacrificed in a specific rite; distinguish Gihr's sacrificial inference."
+      ],
+      "existingMassBibleIds": [
+        "MB19",
+        "MB20"
+      ],
+      "sourceFindingIds": [
+        "GIHR-02",
+        "GIHR-03"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH05",
+      "title": "Abraham and Isaac: son of the promise",
+      "scriptureReferences": [
+        "Genesis 22:1–19",
+        "Romans 8:32",
+        "Hebrews 11:17–19"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "relationType": "EXPLICIT_CANON_FIGURE_AND_TYPOLOGY",
+      "governingInquiry": "What can Abraham's obedience, Isaac's carried wood and the ram's substitution teach about Christ's voluntary sacrifice?",
+      "editorialQualifications": [
+        "Genesis explicitly spares Isaac; do not present his immolation as completed.",
+        "Biblical order of Melchisedech and Abraham/Isaac differs from Supra quae word order."
+      ],
+      "existingMassBibleIds": [
+        "MB18"
+      ],
+      "sourceFindingIds": [
+        "GIHR-05",
+        "GIHR-03"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH06",
+      "title": "Passover: blood of deliverance",
+      "scriptureReferences": [
+        "Exodus 12:1–28",
+        "1 Corinthians 5:7",
+        "John 19:33–36"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.07",
+        "AO.CARD.021"
+      ],
+      "relationType": "PATRISTIC_AND_DOCTRINAL_TYPOLOGY",
+      "governingInquiry": "Explain the Paschal lamb's blood and shared meal as preparation for understanding Christ's sacrifice and the invocation Agnus Dei.",
+      "editorialQualifications": [
+        "Do not assert the entire Roman Agnus Dei text is transcribed from Exodus."
+      ],
+      "existingMassBibleIds": [
+        "MB15",
+        "MB23"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH07",
+      "title": "Manna: food in the wilderness",
+      "scriptureReferences": [
+        "Exodus 16",
+        "John 6:31–58"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.023",
+        "AO.CARD.025"
+      ],
+      "relationType": "CHRISTOLOGICAL_BIBLICAL_TYPOLOGY",
+      "governingInquiry": "Distinguish bread that preserves temporal life from the Eucharistic Bread of Life, without collapsing manna into a literal Eucharist.",
+      "editorialQualifications": [],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH08",
+      "title": "Sinai: covenant sealed in blood",
+      "scriptureReferences": [
+        "Exodus 24:3–8",
+        "Jeremiah 31:31–34",
+        "Luke 22:20",
+        "Hebrews 9:15–22"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.07"
+      ],
+      "relationType": "COVENANT_TYPOLOGY",
+      "governingInquiry": "What does Christ mean by the new covenant in His Blood, and how does this exceed Sinai?",
+      "editorialQualifications": [
+        "1962 chalice formula includes wording not identical with any single Evangelist; no wholesale Scripture replacement."
+      ],
+      "existingMassBibleIds": [
+        "MB15"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH09",
+      "title": "Sanctuary and ministerial priesthood",
+      "scriptureReferences": [
+        "Exodus 25–30",
+        "Leviticus 16",
+        "Hebrews 7–10"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.010",
+        "AO.CANON.04",
+        "AO.CARD.011"
+      ],
+      "relationType": "RITUAL_TYPOLOGY_WITH_HISTORICAL_GATES",
+      "governingInquiry": "Differentiate actual ancient priesthood, sacred altar, atonement ceremonies and later Roman offertory/intercession gestures.",
+      "editorialQualifications": [
+        "The live scapegoat of Leviticus 16 is sent away, not sacrificed in the rite; don't infer historical origin of Hanc igitur's hand extension from an analogy."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [
+        "TORMA-01"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH10",
+      "title": "Isaiah's heavenly worship",
+      "scriptureReferences": [
+        "Isaiah 6:1–8",
+        "Revelation 4:8"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "relationType": "ADAPTED_SCRIPTURAL_WORDING",
+      "governingInquiry": "How does the threefold holiness proclaimed by Isaiah enter the text and theology of the Sanctus?",
+      "editorialQualifications": [
+        "Vulgate Isaiah says Dominus Deus exercituum; Roman Sanctus uses Deus Sabaoth, an adapted witness."
+      ],
+      "existingMassBibleIds": [
+        "MB11"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH11",
+      "title": "Suffering Servant: the innocent victim",
+      "scriptureReferences": [
+        "Isaiah 52:13–53:12",
+        "1 Peter 2:21–25"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CARD.021"
+      ],
+      "relationType": "DOCTRINAL_PROPHECY_AND_TYPOLOGY",
+      "governingInquiry": "Explore substitution, willing suffering and the need to interpret sacrifice through Christ, not merely animal ritual.",
+      "editorialQualifications": [
+        "Use controlled doctrinal sources for Eucharistic presence of once-for-all sacrifice; not mere pictorial analogy."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH12",
+      "title": "Prophecy of the pure offering",
+      "scriptureReferences": [
+        "Malachi 1:11",
+        "Hebrews 10:1–18"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.011",
+        "AO.CANON.01"
+      ],
+      "relationType": "TRADITIONAL_EUCHARISTIC_PROPHECY",
+      "governingInquiry": "Why did early Christian authors understand Malachi's pure offering among the nations in Eucharistic terms?",
+      "editorialQualifications": [
+        "A Christian traditional reading must be identified as such; don't present modern sacrificial practice as described literally in Malachi."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH13",
+      "title": "Annunciation and Incarnation",
+      "scriptureReferences": [
+        "Luke 1:26–38",
+        "John 1:1–14",
+        "Hebrews 10:5–10"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.009",
+        "AO.CARD.030"
+      ],
+      "relationType": "DIRECT_DOGMATIC_EVENT",
+      "governingInquiry": "The mystery making Christ both Priest and Victim: the Word takes flesh; why does Mass profess it in the Creed and sometimes end with John 1?",
+      "editorialQualifications": [
+        "Last Gospel is conditional; do not infer its universal use from narrative structure."
+      ],
+      "existingMassBibleIds": [
+        "MB08",
+        "MB26"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH14",
+      "title": "Nativity and angelic Gloria",
+      "scriptureReferences": [
+        "Luke 2:1–20"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.003"
+      ],
+      "relationType": "ADAPTED_SCRIPTURAL_WORDING",
+      "governingInquiry": "Distinguish the angels' original proclamation from the Church's extended hymn to God and the Lamb.",
+      "editorialQualifications": [
+        "Latin Luke 2:14 differs from the Roman Gloria's opening phrase; do not certify literal identity."
+      ],
+      "existingMassBibleIds": [
+        "MB05"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH15",
+      "title": "John the Baptist calls Christ the Lamb",
+      "scriptureReferences": [
+        "John 1:19–36"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.021",
+        "AO.CARD.024"
+      ],
+      "relationType": "ADAPTED_SCRIPTURAL_WORDING",
+      "governingInquiry": "Why is the same Lamb invoked before Communion and shown to the faithful?",
+      "editorialQualifications": [
+        "Mass Agnus Dei petitions are liturgical adaptation; distinguish Requiem form."
+      ],
+      "existingMassBibleIds": [
+        "MB23"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH16",
+      "title": "Christ the living Bread",
+      "scriptureReferences": [
+        "John 6:25–59",
+        "Matthew 8:5–13"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "relationType": "CHRISTOLOGICAL_READING_AND_ADAPTED_WORDS",
+      "governingInquiry": "Join Bread of Life doctrine to actual Communion and centurion's humility without conflating the centurion's servant with the communicant's soul.",
+      "editorialQualifications": [
+        "Matthew 8:8 speaks of the servant; liturgy changes to anima mea.",
+        "Priest and faithful have separate liturgical Domine non sum dignus contexts."
+      ],
+      "existingMassBibleIds": [
+        "MB24"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH17",
+      "title": "Entry into Jerusalem and Benedictus",
+      "scriptureReferences": [
+        "Matthew 21:1–11",
+        "Psalm 117:26 (Vulgate)"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "relationType": "ADAPTED_SCRIPTURAL_WORDING",
+      "governingInquiry": "Why does the Roman liturgy unite Isaiah's Sanctus with the Gospel acclamation of Christ entering Jerusalem?",
+      "editorialQualifications": [
+        "Do not treat Sanctus and Benedictus as a single biblical quotation."
+      ],
+      "existingMassBibleIds": [
+        "MB12"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH18",
+      "title": "The Last Supper and Eucharistic institution",
+      "scriptureReferences": [
+        "Matthew 26:26–29",
+        "Mark 14:22–25",
+        "Luke 22:14–20",
+        "1 Corinthians 11:23–26"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CANON.08"
+      ],
+      "relationType": "INSTITUTION_NARRATIVE_AND_SACRAMENTAL_DOCTRINE",
+      "governingInquiry": "How does Christ institute the sacrament under two species in relation to His impending Passion?",
+      "editorialQualifications": [
+        "1962 Missal consecration text is its own controlled witness; don't replace with Gospel wording.",
+        "Do not narrate a second independent sacrifice separate from Calvary."
+      ],
+      "existingMassBibleIds": [
+        "MB14",
+        "MB15",
+        "MB16"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH19",
+      "title": "Gethsemane and voluntary oblation",
+      "scriptureReferences": [
+        "Matthew 26:36–46",
+        "Luke 22:39–46",
+        "Philippians 2:5–11"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.010",
+        "AO.CANON.04"
+      ],
+      "relationType": "AUTHORIAL_PASSION_MEDITATION",
+      "governingInquiry": "Explore the freely obedient offering of Christ as interpreted by St Alphonsus and voluntary Passion methods, not as the causal explanation for Hanc igitur's hands.",
+      "editorialQualifications": [
+        "Dujardin/Francis-de-Sales style analogies are not ceremony history.",
+        "Time/order cannot be forced to match the liturgy."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [
+        "TORMA-01"
+      ],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH20",
+      "title": "Calvary: the unique and perfect sacrifice",
+      "scriptureReferences": [
+        "John 19",
+        "Hebrews 9:11–28",
+        "Hebrews 10:1–18"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CANON.08",
+        "AO.CARD.011"
+      ],
+      "relationType": "CENTRAL_SACRAMENTAL_DOCTRINE",
+      "governingInquiry": "Why does the Mass make present the one sacrifice of Christ, with Priest and Victim identical but sacramental manner of offering distinct?",
+      "editorialQualifications": [
+        "Avoid reenactment language, additional crucifixions, or claims that consecrated species are actually separated in the glorified Christ."
+      ],
+      "existingMassBibleIds": [
+        "MB14",
+        "MB15",
+        "MB16"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH21",
+      "title": "Resurrection and Emmaus",
+      "scriptureReferences": [
+        "Luke 24",
+        "John 20",
+        "1 Corinthians 15"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.08",
+        "AO.CARD.025"
+      ],
+      "relationType": "DIRECT_CANON_REMEMBRANCE_AND_DEVOTIONAL_PARALLEL",
+      "governingInquiry": "Distinguish the Canon's explicit remembrance of Resurrection from later meditation on Eucharistic recognition at Emmaus.",
+      "editorialQualifications": [
+        "Emmaus does not independently prove that the breaking of bread in that episode is the Mass rite."
+      ],
+      "existingMassBibleIds": [
+        "MB16"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH22",
+      "title": "Ascension and permanent priestly mediation",
+      "scriptureReferences": [
+        "Acts 1:1–11",
+        "Hebrews 7:23–28",
+        "Hebrews 9:24"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.08",
+        "AO.CANON.10"
+      ],
+      "relationType": "DIRECT_CANON_REMEMBRANCE_AND_SCHOLASTIC_EXEGESIS",
+      "governingInquiry": "How are earthly altar and heavenly sanctuary related through Christ's enduring priesthood?",
+      "editorialQualifications": [
+        "Supplices holy Angel interpretations are contested and should be named by author; no physical transport of species."
+      ],
+      "existingMassBibleIds": [
+        "MB16"
+      ],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH23",
+      "title": "Pentecost and the Church's Eucharistic life",
+      "scriptureReferences": [
+        "Acts 2:1–47",
+        "1 Corinthians 10:16–17"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CANON.01",
+        "AO.CANON.03",
+        "AO.CARD.025"
+      ],
+      "relationType": "ECLESIAL_SALVATION_HISTORY",
+      "governingInquiry": "How does the Spirit-formed Church participate in Christ's sacrificial worship and communion of saints?",
+      "editorialQualifications": [
+        "Pentecost cannot be used to prove arbitrary late rituals' apostolic origins."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    },
+    {
+      "id": "SH24",
+      "title": "The Lamb and heavenly Jerusalem",
+      "scriptureReferences": [
+        "Revelation 4–5",
+        "Revelation 19:6–9",
+        "Revelation 21–22"
+      ],
+      "relatedMassOwnerIds": [
+        "AO.CARD.013",
+        "AO.CANON.10",
+        "AO.CANON.14",
+        "AO.CARD.025"
+      ],
+      "relationType": "HEAVENLY_LITURGY_AND_ESCHATOLOGY",
+      "governingInquiry": "How does Eucharistic worship participate in the worship of the Lamb while sacramental signs anticipate the unveiled eternal communion?",
+      "editorialQualifications": [
+        "Distinguish prophetic vision and future consummation from past-event timeline.",
+        "Do not depict angel physically lifting consecrated species into heaven."
+      ],
+      "existingMassBibleIds": [],
+      "sourceFindingIds": [],
+      "weight": "CORE",
+      "scriptureReaderPolicy": "Use existing Bible reader: exact Catholic edition + expanded surrounding passage; do not invent a new Bible text or event ID."
+    }
+  ],
+  "liturgicalChronology": [
+    {
+      "sequence": 1,
+      "ownerId": "AO.CARD.001",
+      "title": "Introit & Preparatory Prayers",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.001",
+      "existingMassBibleIds": [
+        "MB01",
+        "MB02",
+        "MB03"
+      ],
+      "archivalEventIds": [
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0013",
+        "EV3-0015",
+        "EV3-0016",
+        "EV3-0017",
+        "EV3-0018",
+        "EV3-0019",
+        "EV3-0022",
+        "EV3-0023",
+        "EV3-0025",
+        "EV3-0026",
+        "EV3-0027",
+        "EV3-0028",
+        "EV3-0031",
+        "EV3-0032",
+        "EV3-0033",
+        "EV3-0035",
+        "EV3-0036",
+        "EV3-0037",
+        "EV3-0041",
+        "EV3-0044",
+        "EV3-0045",
+        "EV3-0050",
+        "EV3-0051",
+        "EV3-0052",
+        "EV3-0053",
+        "EV3-0054",
+        "EV3-0055",
+        "EV3-0058",
+        "EV3-0059",
+        "EV3-0060",
+        "RG60-001",
+        "RG60-002",
+        "RG60-003",
+        "RG60-004",
+        "RG60-005",
+        "RG60-006"
+      ],
+      "archivalEvidenceCount": 36,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ02"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH02",
+          "relation": "AUTHORIAL_MEDITATION_AND_BIBLICAL_PARALLEL",
+          "scripture": [
+            "Genesis 3",
+            "Luke 18:13"
+          ],
+          "interpretiveQuestion": "The Mass begins with a sinner asking to approach God: differentiate actual Psalm/Confiteor from Dujardin's Adam/Fall interpretation."
+        }
+      ],
+      "specialRiteCautions": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "editorialCautions": [
+        "Do not state Introibo or Confiteor were composed to reenact the Fall."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB01",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 42:4 (Vulgate; 43:4 in most modern numbering)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ],
+          "qualification": "NOT_A_FULL_PSALM_EDITION_MAPPING",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB02",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ],
+          "qualification": "OMITTED_IN_SOME_LITURGICAL_CIRCUMSTANCES",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB03",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Luke 18:13",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_LITURGICAL_CITATION",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 18:13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB02"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-01"
+        ],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG01",
+          "cueText": "`AO.SM.C0001`",
+          "class": "EXPLICIT_HISTORICAL_CEREMONIAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG02",
+          "cueText": "`AO.SM.C0004`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG03",
+          "cueText": "`AO.SM.C0037\\`, \\`AO.SM.C0039`",
+          "class": "HISTORY_AND_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG04",
+          "cueText": "`AO.SM.C0042`",
+          "class": "HISTORY_PRIEST_SCHOLA_CONCURRENCY",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-07",
+        "L1897-NP-001",
+        "L1897-NP-002",
+        "L1897-NP-003",
+        "L1897-NP-004",
+        "L1897-NP-005",
+        "L1897-NP-006"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 2,
+      "ownerId": "AO.CARD.002",
+      "title": "Kyrie",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.002",
+      "existingMassBibleIds": [
+        "MB04"
+      ],
+      "archivalEventIds": [
+        "E09"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0062",
+        "EV3-0063",
+        "EV3-0064",
+        "EV3-0065",
+        "EV3-0068",
+        "EV3-0069",
+        "RG60-007"
+      ],
+      "archivalEvidenceCount": 7,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ03"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH02",
+          "relation": "AUTHORIAL_MEDITATION_AND_BIBLICAL_PARALLEL",
+          "scripture": [
+            "Genesis 3",
+            "Luke 18:13"
+          ],
+          "interpretiveQuestion": "The Mass begins with a sinner asking to approach God: differentiate actual Psalm/Confiteor from Dujardin's Adam/Fall interpretation."
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Do not state Introibo or Confiteor were composed to reenact the Fall."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB04",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Matthew 20:30–31",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat020.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_SINGLE_EXACT_QUOTE",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 20:30–31",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-01"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG05",
+          "cueText": "`AO.SM.C0044`",
+          "class": "ATTRIBUTED_THEOLOGICAL_INTERPRETATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 3,
+      "ownerId": "AO.CARD.003",
+      "title": "Gloria",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.003",
+      "existingMassBibleIds": [
+        "MB05"
+      ],
+      "archivalEventIds": [
+        "E10"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0071",
+        "EV3-0072",
+        "EV3-0073",
+        "EV3-0074",
+        "EV3-0077",
+        "RG60-008"
+      ],
+      "archivalEvidenceCount": 6,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ04"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH14",
+          "relation": "ADAPTED_SCRIPTURAL_WORDING",
+          "scripture": [
+            "Luke 2:1–20"
+          ],
+          "interpretiveQuestion": "Distinguish the angels' original proclamation from the Church's extended hymn to God and the Lamb."
+        }
+      ],
+      "specialRiteCautions": [
+        "GLORIA_ONLY_WHEN_PRESCRIBED"
+      ],
+      "editorialCautions": [
+        "Latin Luke 2:14 differs from the Roman Gloria's opening phrase; do not certify literal identity."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB05",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Luke 2:14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk002.htm"
+            }
+          ],
+          "qualification": "ALTISSIMIS_VULGATE_VERSUS_EXCELSIS_MISSAL_NOT_WORD_FOR_WORD",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 2:14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB05"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG06",
+          "cueText": "`AO.SM.C0053`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 4,
+      "ownerId": "AO.CARD.004",
+      "title": "Collect",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.004",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E11"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0079",
+        "EV3-0080",
+        "EV3-0083",
+        "EV3-0084"
+      ],
+      "archivalEvidenceCount": 4,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ05"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-02"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG07",
+          "cueText": "`AO.SM.C0072`",
+          "class": "HISTORICAL_GESTURE_INTERPRETATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 5,
+      "ownerId": "AO.CARD.005",
+      "title": "Epistle / Lesson",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.005",
+      "existingMassBibleIds": [
+        "MB06"
+      ],
+      "archivalEventIds": [
+        "E12"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0086",
+        "EV3-0087",
+        "EV3-0088",
+        "EV3-0089",
+        "EV3-0090",
+        "EV3-0091",
+        "EV3-0094",
+        "EV3-0095",
+        "EV3-0096",
+        "RG60-009"
+      ],
+      "archivalEvidenceCount": 10,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ06"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB06",
+          "relationship": "VARIABLE_PROPER_READING",
+          "scriptureReference": "1 Corinthians 12:2–11 (example: Pentecost X only)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co012.htm"
+            }
+          ],
+          "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+          "properDependent": true,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-03"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG08",
+          "cueText": "`AO.SM.C0075`",
+          "class": "HISTORY_AND_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 6,
+      "ownerId": "AO.CARD.006",
+      "title": "Gradual · Alleluia / Tract / Sequence",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.006",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E13",
+        "E14",
+        "E15"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0098",
+        "EV3-0099",
+        "EV3-0100",
+        "EV3-0101",
+        "EV3-0102",
+        "EV3-0103",
+        "EV3-0106",
+        "EV3-0108",
+        "EV3-0109",
+        "EV3-0112",
+        "EV3-0114",
+        "EV3-0117",
+        "RG60-010",
+        "RG60-011",
+        "RG60-012"
+      ],
+      "archivalEvidenceCount": 15,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "PROPER_AND_SEASON_SPECIFIC_CHANT_OWNER"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-04"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 7,
+      "ownerId": "AO.CARD.007",
+      "title": "Holy Gospel",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.007",
+      "existingMassBibleIds": [
+        "MB07"
+      ],
+      "archivalEventIds": [
+        "E16",
+        "E17",
+        "E18",
+        "E19"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0119",
+        "EV3-0120",
+        "EV3-0121",
+        "EV3-0124",
+        "EV3-0126",
+        "EV3-0127",
+        "EV3-0130",
+        "EV3-0132",
+        "EV3-0133",
+        "EV3-0134",
+        "EV3-0135",
+        "EV3-0136",
+        "EV3-0137",
+        "EV3-0138",
+        "EV3-0139",
+        "EV3-0142",
+        "EV3-0143",
+        "EV3-0144",
+        "EV3-0145",
+        "EV3-0146",
+        "EV3-0148",
+        "EV3-0149",
+        "EV3-0150",
+        "EV3-0151",
+        "EV3-0154",
+        "RG60-013"
+      ],
+      "archivalEvidenceCount": 26,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ07"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "VARIABLE_GOSPEL_AND_LITURGICAL_FORM_CHECK"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB07",
+          "relationship": "VARIABLE_PROPER_READING",
+          "scriptureReference": "Luke 18:9–14 (example: Pentecost X only)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ],
+          "qualification": "EXAMPLE_ONLY_MUST_USE_SELECTED_SOURCE_PATH",
+          "properDependent": true,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-N01"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG09",
+          "cueText": "`AO.SM.C0084`",
+          "class": "HISTORY_AND_CEREMONIAL;FAITHFUL_CUSTOM_SEPARATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-01",
+        "L1897-OCR-018"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 8,
+      "ownerId": "AO.CARD.008",
+      "title": "Sermon / Homily",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.008",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "HOMILY_CONTENT_NOT_FIXED_IN_THE_MISSAL"
+      ],
+      "editorialCautions": [
+        "This owner is study-first, not an automatic Bible event or proof of an Old Testament allegory."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-05"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 9,
+      "ownerId": "AO.CARD.009",
+      "title": "Credo",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.009",
+      "existingMassBibleIds": [
+        "MB08"
+      ],
+      "archivalEventIds": [
+        "E20",
+        "E21"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0155",
+        "EV3-0157",
+        "EV3-0158",
+        "EV3-0159",
+        "EV3-0160",
+        "EV3-0161",
+        "EV3-0162",
+        "EV3-0165",
+        "EV3-0166",
+        "EV3-0168",
+        "EV3-0169",
+        "EV3-0170",
+        "EV3-0171",
+        "EV3-0174",
+        "RG60-014",
+        "RG60-015"
+      ],
+      "archivalEvidenceCount": 16,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ08"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH13",
+          "relation": "DIRECT_DOGMATIC_EVENT",
+          "scripture": [
+            "Luke 1:26–38",
+            "John 1:1–14",
+            "Hebrews 10:5–10"
+          ],
+          "interpretiveQuestion": "The mystery making Christ both Priest and Victim: the Word takes flesh; why does Mass profess it in the Creed and sometimes end with John 1?"
+        }
+      ],
+      "specialRiteCautions": [
+        "CREDO_ONLY_WHEN_PRESCRIBED"
+      ],
+      "editorialCautions": [
+        "Last Gospel is conditional; do not infer its universal use from narrative structure."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB08",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "John 1:14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "NOT_VERBATIM_CREED_TEXT",
+          "properDependent": false,
+          "scriptureReaderRef": "John 1:14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB08"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF01"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG10",
+          "cueText": "`AO.SM.C0089\\`, \\`AO.SM.C0096`",
+          "class": "PRAYER_MEANING;FAITHFUL_POSTURE_CONDITIONAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 10,
+      "ownerId": "AO.CARD.010",
+      "title": "Offertory",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.010",
+      "existingMassBibleIds": [
+        "MB09"
+      ],
+      "archivalEventIds": [
+        "E22",
+        "E23",
+        "E24",
+        "E25",
+        "E26",
+        "E27",
+        "E28"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0176",
+        "EV3-0177",
+        "EV3-0178",
+        "EV3-0179",
+        "EV3-0180",
+        "EV3-0181",
+        "EV3-0182",
+        "EV3-0185",
+        "EV3-0186",
+        "EV3-0187",
+        "EV3-0189",
+        "EV3-0190",
+        "EV3-0191",
+        "EV3-0192",
+        "EV3-0193",
+        "EV3-0194",
+        "EV3-0198",
+        "EV3-0199",
+        "EV3-0200",
+        "EV3-0201",
+        "EV3-0202",
+        "EV3-0206",
+        "EV3-0207",
+        "EV3-0208",
+        "EV3-0211",
+        "EV3-0213",
+        "EV3-0214",
+        "EV3-0215",
+        "EV3-0218",
+        "EV3-0220",
+        "EV3-0221",
+        "EV3-0222",
+        "EV3-0223",
+        "EV3-0224",
+        "EV3-0227",
+        "EV3-0229",
+        "EV3-0230",
+        "EV3-0233",
+        "EV3-0234",
+        "RG60-016",
+        "RG60-017",
+        "RG60-018",
+        "RG60-019"
+      ],
+      "archivalEvidenceCount": 43,
+      "sourceFindingIds": [
+        "GIHR-02",
+        "GIHR-06"
+      ],
+      "dujardinOptionalMeditationIds": [
+        "DJ09",
+        "DJ10"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH04",
+          "relation": "EXPLICIT_CANON_FIGURE_PLUS_THEOLOGICAL_TYPOLOGY",
+          "scripture": [
+            "Genesis 14:18–20",
+            "Psalm 109:4 (Vulgate)",
+            "Hebrews 7:1–17"
+          ],
+          "interpretiveQuestion": "How does Hebrews' exposition of an abiding priesthood permit a Christological reading of the enigmatic bread and wine?"
+        },
+        {
+          "anchor": "SH09",
+          "relation": "RITUAL_TYPOLOGY_WITH_HISTORICAL_GATES",
+          "scripture": [
+            "Exodus 25–30",
+            "Leviticus 16",
+            "Hebrews 7–10"
+          ],
+          "interpretiveQuestion": "Differentiate actual ancient priesthood, sacred altar, atonement ceremonies and later Roman offertory/intercession gestures."
+        },
+        {
+          "anchor": "SH19",
+          "relation": "AUTHORIAL_PASSION_MEDITATION",
+          "scripture": [
+            "Matthew 26:36–46",
+            "Luke 22:39–46",
+            "Philippians 2:5–11"
+          ],
+          "interpretiveQuestion": "Explore the freely obedient offering of Christ as interpreted by St Alphonsus and voluntary Passion methods, not as the causal explanation for Hanc igitur's hands."
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Genesis says he brought bread/wine, not that they were consecrated or sacrificed in a specific rite; distinguish Gihr's sacrificial inference.",
+        "The live scapegoat of Leviticus 16 is sent away, not sacrificed in the rite; don't infer historical origin of Hanc igitur's hand extension from an analogy.",
+        "Dujardin/Francis-de-Sales style analogies are not ceremony history.",
+        "Time/order cannot be forced to match the liturgy."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB09",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 25:6–12 (Vulgate; 26:6–12 modern)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa025.htm"
+            }
+          ],
+          "qualification": "VULGATE_PSALM_NUMBERING",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB09",
+          "MM-PRIMARY-N03",
+          "MM-PRIMARY-N04"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-03"
+        ],
+        "otherExistingFormationStage": "MF03"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG11",
+          "cueText": "`AO.SM.C0110`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG12",
+          "cueText": "`AO.SM.C0112`",
+          "class": "PRAYER_MEANING_AND_ATTRIBUTED_SYMBOLISM",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG13",
+          "cueText": "`AO.SM.C0125`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG14",
+          "cueText": "`AO.SM.C0128`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-02",
+        "L1897-MYST-06",
+        "L1897-NP-007",
+        "L1897-OCR-006",
+        "L1897-OCR-025",
+        "L1897-OCR-026"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 11,
+      "ownerId": "AO.CARD.011",
+      "title": "Orate fratres & Secret",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.011",
+      "existingMassBibleIds": [
+        "MB10"
+      ],
+      "archivalEventIds": [
+        "E29",
+        "E30"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0236",
+        "EV3-0237",
+        "EV3-0238",
+        "EV3-0241",
+        "EV3-0242",
+        "EV3-0244",
+        "EV3-0245",
+        "EV3-0246",
+        "EV3-0249",
+        "RG60-020"
+      ],
+      "archivalEvidenceCount": 10,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ11"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH09",
+          "relation": "RITUAL_TYPOLOGY_WITH_HISTORICAL_GATES",
+          "scripture": [
+            "Exodus 25–30",
+            "Leviticus 16",
+            "Hebrews 7–10"
+          ],
+          "interpretiveQuestion": "Differentiate actual ancient priesthood, sacred altar, atonement ceremonies and later Roman offertory/intercession gestures."
+        },
+        {
+          "anchor": "SH12",
+          "relation": "TRADITIONAL_EUCHARISTIC_PROPHECY",
+          "scripture": [
+            "Malachi 1:11",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why did early Christian authors understand Malachi's pure offering among the nations in Eucharistic terms?"
+        },
+        {
+          "anchor": "SH20",
+          "relation": "CENTRAL_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "John 19",
+            "Hebrews 9:11–28",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why does the Mass make present the one sacrifice of Christ, with Priest and Victim identical but sacramental manner of offering distinct?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "The live scapegoat of Leviticus 16 is sent away, not sacrificed in the rite; don't infer historical origin of Hanc igitur's hand extension from an analogy.",
+        "A Christian traditional reading must be identified as such; don't present modern sacrificial practice as described literally in Malachi.",
+        "Avoid reenactment language, additional crucifixions, or claims that consecrated species are actually separated in the glorified Christ."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB10",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "Romans 12:1",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/rom012.htm"
+            }
+          ],
+          "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+          "properDependent": false,
+          "scriptureReaderRef": "Romans 12:1",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-06"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF03"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG15",
+          "cueText": "`AO.SM.C0130`",
+          "class": "PRAYER_MEANING_WITH_DOCTRINAL_QUALIFICATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG16",
+          "cueText": "`AO.SM.C0135`",
+          "class": "HISTORICAL_VOICE_AND_RESPONSE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 12,
+      "ownerId": "AO.CARD.012",
+      "title": "Preface",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.012",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E31"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0250",
+        "EV3-0252",
+        "EV3-0253",
+        "EV3-0256",
+        "EV3-0257",
+        "EV3-0258",
+        "RG60-021"
+      ],
+      "archivalEvidenceCount": 7,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ12"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH01",
+          "relation": "THEOLOGICAL_FRAME",
+          "scripture": [
+            "Genesis 1–2"
+          ],
+          "interpretiveQuestion": "Why can created gifts become the matter of offering, and how does the Eucharistic doxology return all honour to the Creator?"
+        }
+      ],
+      "specialRiteCautions": [
+        "PREFACE_VARIABLE_SOURCE_GATED"
+      ],
+      "editorialCautions": [
+        "Creation-to-Preface analogy is theological, not a biblical quotation or historical cause of a rite."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-07"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG17",
+          "cueText": "`AO.SM.C0137`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 13,
+      "ownerId": "AO.CARD.013",
+      "title": "Sanctus · Benedictus",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.013",
+      "existingMassBibleIds": [
+        "MB11",
+        "MB12"
+      ],
+      "archivalEventIds": [
+        "E32",
+        "E33"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0259",
+        "EV3-0261",
+        "EV3-0262",
+        "EV3-0263",
+        "EV3-0264",
+        "EV3-0265",
+        "EV3-0268",
+        "EV3-0269",
+        "EV3-0271",
+        "EV3-0272",
+        "RG60-022"
+      ],
+      "archivalEvidenceCount": 11,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH10",
+          "relation": "ADAPTED_SCRIPTURAL_WORDING",
+          "scripture": [
+            "Isaiah 6:1–8",
+            "Revelation 4:8"
+          ],
+          "interpretiveQuestion": "How does the threefold holiness proclaimed by Isaiah enter the text and theology of the Sanctus?"
+        },
+        {
+          "anchor": "SH17",
+          "relation": "ADAPTED_SCRIPTURAL_WORDING",
+          "scripture": [
+            "Matthew 21:1–11",
+            "Psalm 117:26 (Vulgate)"
+          ],
+          "interpretiveQuestion": "Why does the Roman liturgy unite Isaiah's Sanctus with the Gospel acclamation of Christ entering Jerusalem?"
+        },
+        {
+          "anchor": "SH24",
+          "relation": "HEAVENLY_LITURGY_AND_ESCHATOLOGY",
+          "scripture": [
+            "Revelation 4–5",
+            "Revelation 19:6–9",
+            "Revelation 21–22"
+          ],
+          "interpretiveQuestion": "How does Eucharistic worship participate in the worship of the Lamb while sacramental signs anticipate the unveiled eternal communion?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Vulgate Isaiah says Dominus Deus exercituum; Roman Sanctus uses Deus Sabaoth, an adapted witness.",
+        "Do not treat Sanctus and Benedictus as a single biblical quotation.",
+        "Distinguish prophetic vision and future consummation from past-event timeline.",
+        "Do not depict angel physically lifting consecrated species into heaven."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB11",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Isaiah 6:3",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/isa006.htm"
+            }
+          ],
+          "qualification": "VULGATE_EXERCITUUM_VERSUS_LITURGICAL_SABAOTH",
+          "properDependent": false,
+          "scriptureReaderRef": "Isaiah 6:3",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB12",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 21:9",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat021.htm"
+            }
+          ],
+          "qualification": "LITURGICAL_COMPOSITION",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 21:9",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB11"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-02"
+        ],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-03",
+        "L1897-MYST-04",
+        "L1897-OCR-027",
+        "L1897-OCR-028",
+        "L1897-OCR-029"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 14,
+      "ownerId": "AO.CANON.01",
+      "title": "Te igitur",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.01",
+      "existingMassBibleIds": [
+        "MB13"
+      ],
+      "archivalEventIds": [
+        "E34"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0275",
+        "EV3-0277",
+        "EV3-0278",
+        "EV3-0279",
+        "EV3-0280",
+        "EV3-0281",
+        "EV3-0282",
+        "EV3-0285",
+        "EV3-0286",
+        "RG60-023"
+      ],
+      "archivalEvidenceCount": 10,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH12",
+          "relation": "TRADITIONAL_EUCHARISTIC_PROPHECY",
+          "scripture": [
+            "Malachi 1:11",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why did early Christian authors understand Malachi's pure offering among the nations in Eucharistic terms?"
+        },
+        {
+          "anchor": "SH23",
+          "relation": "ECLESIAL_SALVATION_HISTORY",
+          "scripture": [
+            "Acts 2:1–47",
+            "1 Corinthians 10:16–17"
+          ],
+          "interpretiveQuestion": "How does the Spirit-formed Church participate in Christ's sacrificial worship and communion of saints?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "A Christian traditional reading must be identified as such; don't present modern sacrificial practice as described literally in Malachi.",
+        "Pentecost cannot be used to prove arbitrary late rituals' apostolic origins."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB13",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "1 Timothy 2:1–2",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1ti002.htm"
+            }
+          ],
+          "qualification": "COMPARATIVE_NOT_EXACT_QUOTATION",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Timothy 2:1–2",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-08"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG18",
+          "cueText": "`AO.SM.C0150`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-008"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 15,
+      "ownerId": "AO.CANON.02",
+      "title": "Memento, Domine — Living",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.02",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E35"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0288",
+        "EV3-0289",
+        "EV3-0290",
+        "EV3-0293"
+      ],
+      "archivalEvidenceCount": 4,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ13"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-09"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG19",
+          "cueText": "`AO.SM.C0154`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG31",
+          "cueText": "AO.SM.C0156",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 16,
+      "ownerId": "AO.CANON.03",
+      "title": "Communicantes",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.03",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH23",
+          "relation": "ECLESIAL_SALVATION_HISTORY",
+          "scripture": [
+            "Acts 2:1–47",
+            "1 Corinthians 10:16–17"
+          ],
+          "interpretiveQuestion": "How does the Spirit-formed Church participate in Christ's sacrificial worship and communion of saints?"
+        }
+      ],
+      "specialRiteCautions": [
+        "ST_JOSEPH_INSERTION_EFFECTIVE_1962_12_08"
+      ],
+      "editorialCautions": [
+        "Pentecost cannot be used to prove arbitrary late rituals' apostolic origins."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-10"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG32",
+          "cueText": "AO.SM.C0157",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG33",
+          "cueText": "AO.SM.C0159",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 17,
+      "ownerId": "AO.CANON.04",
+      "title": "Hanc igitur",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.04",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E36"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0294",
+        "EV3-0296",
+        "EV3-0297",
+        "EV3-0298",
+        "EV3-0299",
+        "EV3-0302",
+        "EV3-0303"
+      ],
+      "archivalEvidenceCount": 7,
+      "sourceFindingIds": [
+        "TORMA-01"
+      ],
+      "dujardinOptionalMeditationIds": [
+        "DJ14"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH09",
+          "relation": "RITUAL_TYPOLOGY_WITH_HISTORICAL_GATES",
+          "scripture": [
+            "Exodus 25–30",
+            "Leviticus 16",
+            "Hebrews 7–10"
+          ],
+          "interpretiveQuestion": "Differentiate actual ancient priesthood, sacred altar, atonement ceremonies and later Roman offertory/intercession gestures."
+        },
+        {
+          "anchor": "SH19",
+          "relation": "AUTHORIAL_PASSION_MEDITATION",
+          "scripture": [
+            "Matthew 26:36–46",
+            "Luke 22:39–46",
+            "Philippians 2:5–11"
+          ],
+          "interpretiveQuestion": "Explore the freely obedient offering of Christ as interpreted by St Alphonsus and voluntary Passion methods, not as the causal explanation for Hanc igitur's hands."
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "The live scapegoat of Leviticus 16 is sent away, not sacrificed in the rite; don't infer historical origin of Hanc igitur's hand extension from an analogy.",
+        "Dujardin/Francis-de-Sales style analogies are not ceremony history.",
+        "Time/order cannot be forced to match the liturgy."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-11"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG20",
+          "cueText": "`AO.SM.C0161`",
+          "class": "ATTRIBUTED_HISTORICAL_SYMBOLISM_PLUS_PRAYER",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG34",
+          "cueText": "AO.SM.C0161",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 18,
+      "ownerId": "AO.CANON.05",
+      "title": "Quam oblationem",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.05",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E37"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0305"
+      ],
+      "archivalEvidenceCount": 1,
+      "sourceFindingIds": [
+        "TORMA-02"
+      ],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-12"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF04"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG21",
+          "cueText": "`AO.SM.C0164\\`, \\`AO.SM.C0165\\`, \\`AO.SM.C0166`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG35",
+          "cueText": "AO.SM.C0164",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG36",
+          "cueText": "AO.SM.C0165",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG37",
+          "cueText": "AO.SM.C0166",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 19,
+      "ownerId": "AO.CANON.06",
+      "title": "Consecration of the Sacred Host",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.06",
+      "existingMassBibleIds": [
+        "MB14"
+      ],
+      "archivalEventIds": [
+        "E38",
+        "E39",
+        "E40",
+        "E41"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0308",
+        "EV3-0310",
+        "EV3-0311",
+        "EV3-0312",
+        "EV3-0313",
+        "EV3-0316",
+        "EV3-0317",
+        "EV3-0318",
+        "EV3-0320",
+        "EV3-0321",
+        "EV3-0324",
+        "EV3-0325",
+        "EV3-0327",
+        "EV3-0328",
+        "EV3-0329",
+        "EV3-0330",
+        "EV3-0331",
+        "EV3-0332",
+        "EV3-0333",
+        "EV3-0334",
+        "EV3-0335",
+        "EV3-0338",
+        "EV3-0339",
+        "EV3-0340",
+        "EV3-0341",
+        "EV3-0342",
+        "EV3-0344",
+        "EV3-0345",
+        "EV3-0348"
+      ],
+      "archivalEvidenceCount": 29,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ15"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH11",
+          "relation": "DOCTRINAL_PROPHECY_AND_TYPOLOGY",
+          "scripture": [
+            "Isaiah 52:13–53:12",
+            "1 Peter 2:21–25"
+          ],
+          "interpretiveQuestion": "Explore substitution, willing suffering and the need to interpret sacrifice through Christ, not merely animal ritual."
+        },
+        {
+          "anchor": "SH18",
+          "relation": "INSTITUTION_NARRATIVE_AND_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "Matthew 26:26–29",
+            "Mark 14:22–25",
+            "Luke 22:14–20",
+            "1 Corinthians 11:23–26"
+          ],
+          "interpretiveQuestion": "How does Christ institute the sacrament under two species in relation to His impending Passion?"
+        },
+        {
+          "anchor": "SH20",
+          "relation": "CENTRAL_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "John 19",
+            "Hebrews 9:11–28",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why does the Mass make present the one sacrifice of Christ, with Priest and Victim identical but sacramental manner of offering distinct?"
+        }
+      ],
+      "specialRiteCautions": [
+        "CONSECRATION_BREAD_NOT_COMBINED_WITH_CHALICE"
+      ],
+      "editorialCautions": [
+        "Use controlled doctrinal sources for Eucharistic presence of once-for-all sacrifice; not mere pictorial analogy.",
+        "1962 Missal consecration text is its own controlled witness; don't replace with Gospel wording.",
+        "Do not narrate a second independent sacrifice separate from Calvary.",
+        "Avoid reenactment language, additional crucifixions, or claims that consecrated species are actually separated in the glorified Christ."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB14",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "scriptureReference": "1 Corinthians 11:23–26",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ],
+          "qualification": "NO_WORD_FOR_WORD_EQUIVALENCE",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Corinthians 11:23–26",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB14"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF05"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG22",
+          "cueText": "`AO.SM.C0173\\`, \\`AO.SM.C0174\\`, \\`AO.SM.C0181`",
+          "class": "DOCTRINE_AND_SOURCE_ACTION_ORDER",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG38",
+          "cueText": "AO.SM.C0169",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG39",
+          "cueText": "AO.SM.C0174",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        null,
+        "L1897-NP-009",
+        "L1897-NP-010"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 20,
+      "ownerId": "AO.CANON.07",
+      "title": "Consecration of the Chalice",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.07",
+      "existingMassBibleIds": [
+        "MB15"
+      ],
+      "archivalEventIds": [
+        "E42",
+        "E43",
+        "E44",
+        "E45"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0349",
+        "EV3-0351",
+        "EV3-0352",
+        "EV3-0355",
+        "EV3-0356",
+        "EV3-0358",
+        "EV3-0361",
+        "EV3-0362",
+        "EV3-0364",
+        "EV3-0365",
+        "EV3-0366",
+        "EV3-0367",
+        "EV3-0368",
+        "EV3-0369",
+        "EV3-0370",
+        "EV3-0371",
+        "EV3-0374",
+        "EV3-0375",
+        "EV3-0376",
+        "EV3-0377",
+        "EV3-0378",
+        "EV3-0380",
+        "EV3-0383"
+      ],
+      "archivalEvidenceCount": 23,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ15"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH06",
+          "relation": "PATRISTIC_AND_DOCTRINAL_TYPOLOGY",
+          "scripture": [
+            "Exodus 12:1–28",
+            "1 Corinthians 5:7",
+            "John 19:33–36"
+          ],
+          "interpretiveQuestion": "Explain the Paschal lamb's blood and shared meal as preparation for understanding Christ's sacrifice and the invocation Agnus Dei."
+        },
+        {
+          "anchor": "SH08",
+          "relation": "COVENANT_TYPOLOGY",
+          "scripture": [
+            "Exodus 24:3–8",
+            "Jeremiah 31:31–34",
+            "Luke 22:20",
+            "Hebrews 9:15–22"
+          ],
+          "interpretiveQuestion": "What does Christ mean by the new covenant in His Blood, and how does this exceed Sinai?"
+        },
+        {
+          "anchor": "SH11",
+          "relation": "DOCTRINAL_PROPHECY_AND_TYPOLOGY",
+          "scripture": [
+            "Isaiah 52:13–53:12",
+            "1 Peter 2:21–25"
+          ],
+          "interpretiveQuestion": "Explore substitution, willing suffering and the need to interpret sacrifice through Christ, not merely animal ritual."
+        },
+        {
+          "anchor": "SH18",
+          "relation": "INSTITUTION_NARRATIVE_AND_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "Matthew 26:26–29",
+            "Mark 14:22–25",
+            "Luke 22:14–20",
+            "1 Corinthians 11:23–26"
+          ],
+          "interpretiveQuestion": "How does Christ institute the sacrament under two species in relation to His impending Passion?"
+        },
+        {
+          "anchor": "SH20",
+          "relation": "CENTRAL_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "John 19",
+            "Hebrews 9:11–28",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why does the Mass make present the one sacrifice of Christ, with Priest and Victim identical but sacramental manner of offering distinct?"
+        }
+      ],
+      "specialRiteCautions": [
+        "CONSECRATION_CHALICE_NOT_COMBINED_WITH_BREAD"
+      ],
+      "editorialCautions": [
+        "Do not assert the entire Roman Agnus Dei text is transcribed from Exodus.",
+        "1962 chalice formula includes wording not identical with any single Evangelist; no wholesale Scripture replacement.",
+        "Use controlled doctrinal sources for Eucharistic presence of once-for-all sacrifice; not mere pictorial analogy.",
+        "1962 Missal consecration text is its own controlled witness; don't replace with Gospel wording.",
+        "Do not narrate a second independent sacrifice separate from Calvary.",
+        "Avoid reenactment language, additional crucifixions, or claims that consecrated species are actually separated in the glorified Christ."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB15",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "scriptureReference": "Luke 22:20",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk022.htm"
+            }
+          ],
+          "qualification": "MYSTERIUM_FIDEI_NOT_PROVEN_AS_EXACT_GOSPEL_WORDS",
+          "properDependent": false,
+          "scriptureReaderRef": "Luke 22:20",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB15"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF05"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [
+        "FRG22"
+      ],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 21,
+      "ownerId": "AO.CANON.08",
+      "title": "Unde et memores",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.08",
+      "existingMassBibleIds": [
+        "MB16"
+      ],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH18",
+          "relation": "INSTITUTION_NARRATIVE_AND_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "Matthew 26:26–29",
+            "Mark 14:22–25",
+            "Luke 22:14–20",
+            "1 Corinthians 11:23–26"
+          ],
+          "interpretiveQuestion": "How does Christ institute the sacrament under two species in relation to His impending Passion?"
+        },
+        {
+          "anchor": "SH20",
+          "relation": "CENTRAL_SACRAMENTAL_DOCTRINE",
+          "scripture": [
+            "John 19",
+            "Hebrews 9:11–28",
+            "Hebrews 10:1–18"
+          ],
+          "interpretiveQuestion": "Why does the Mass make present the one sacrifice of Christ, with Priest and Victim identical but sacramental manner of offering distinct?"
+        },
+        {
+          "anchor": "SH21",
+          "relation": "DIRECT_CANON_REMEMBRANCE_AND_DEVOTIONAL_PARALLEL",
+          "scripture": [
+            "Luke 24",
+            "John 20",
+            "1 Corinthians 15"
+          ],
+          "interpretiveQuestion": "Distinguish the Canon's explicit remembrance of Resurrection from later meditation on Eucharistic recognition at Emmaus."
+        },
+        {
+          "anchor": "SH22",
+          "relation": "DIRECT_CANON_REMEMBRANCE_AND_SCHOLASTIC_EXEGESIS",
+          "scripture": [
+            "Acts 1:1–11",
+            "Hebrews 7:23–28",
+            "Hebrews 9:24"
+          ],
+          "interpretiveQuestion": "How are earthly altar and heavenly sanctuary related through Christ's enduring priesthood?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "1962 Missal consecration text is its own controlled witness; don't replace with Gospel wording.",
+        "Do not narrate a second independent sacrifice separate from Calvary.",
+        "Avoid reenactment language, additional crucifixions, or claims that consecrated species are actually separated in the glorified Christ.",
+        "Emmaus does not independently prove that the breaking of bread in that episode is the Mass rite.",
+        "Supplices holy Angel interpretations are contested and should be named by author; no physical transport of species."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB16",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "scriptureReference": "1 Corinthians 11:26",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ],
+          "qualification": "THEOLOGICAL_CONNECTION_NOT_LITERAL",
+          "properDependent": false,
+          "scriptureReaderRef": "1 Corinthians 11:26",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB16"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG23",
+          "cueText": "`AO.SM.C0182`",
+          "class": "CANON_PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG40",
+          "cueText": "AO.SM.C0184",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 22,
+      "ownerId": "AO.CANON.09",
+      "title": "Supra quae",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.09",
+      "existingMassBibleIds": [
+        "MB17",
+        "MB18",
+        "MB19",
+        "MB20"
+      ],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [
+        "GIHR-02",
+        "GIHR-03",
+        "GIHR-04",
+        "GIHR-05"
+      ],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH03",
+          "relation": "EXPLICIT_CANON_FIGURE_AND_TYPOLOGY",
+          "scripture": [
+            "Genesis 4:1–16",
+            "Hebrews 11:4",
+            "Hebrews 12:24"
+          ],
+          "interpretiveQuestion": "Why is Abel a model of accepted sacrifice, and why does the Blood of Christ speak more effectively than innocent Abel's blood?"
+        },
+        {
+          "anchor": "SH04",
+          "relation": "EXPLICIT_CANON_FIGURE_PLUS_THEOLOGICAL_TYPOLOGY",
+          "scripture": [
+            "Genesis 14:18–20",
+            "Psalm 109:4 (Vulgate)",
+            "Hebrews 7:1–17"
+          ],
+          "interpretiveQuestion": "How does Hebrews' exposition of an abiding priesthood permit a Christological reading of the enigmatic bread and wine?"
+        },
+        {
+          "anchor": "SH05",
+          "relation": "EXPLICIT_CANON_FIGURE_AND_TYPOLOGY",
+          "scripture": [
+            "Genesis 22:1–19",
+            "Romans 8:32",
+            "Hebrews 11:17–19"
+          ],
+          "interpretiveQuestion": "What can Abraham's obedience, Isaac's carried wood and the ram's substitution teach about Christ's voluntary sacrifice?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Genesis 4 does not state that fire consumed Abel's sacrifice: Gihr's fire inference is conjectural.",
+        "Genesis says he brought bread/wine, not that they were consecrated or sacrificed in a specific rite; distinguish Gihr's sacrificial inference.",
+        "Genesis explicitly spares Isaac; do not present his immolation as completed.",
+        "Biblical order of Melchisedech and Abraham/Isaac differs from Supra quae word order."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB17",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 4:4",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen004.htm"
+            }
+          ],
+          "qualification": "NAME_IN_MISSAL_NOT_READING",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 4:4",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB18",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 22:1–19",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen022.htm"
+            }
+          ],
+          "qualification": "ISAAC_NOT_KILLED",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 22:1–19",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB19",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "scriptureReference": "Genesis 14:18–20",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen014.htm"
+            }
+          ],
+          "qualification": "GENESIS_PROFERENS_NOT_EXPLICIT_BREAD_WINE_SACRIFICE",
+          "properDependent": false,
+          "scriptureReaderRef": "Genesis 14:18–20",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        },
+        {
+          "researchId": "MB20",
+          "relationship": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+          "scriptureReference": "Hebrews 7:1–17",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/heb007.htm"
+            }
+          ],
+          "qualification": "INTERPRETATION_NOT_MISSAL_WORDING",
+          "properDependent": false,
+          "scriptureReaderRef": "Hebrews 7:1–17",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [
+          "MM-SUP-04"
+        ],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG41",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG42",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG43",
+          "cueText": "AO.SM.C0186",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        "L1897-NP-011",
+        "L1897-NP-012",
+        "L1897-NP-013",
+        "L1897-OCR2-023"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 23,
+      "ownerId": "AO.CANON.10",
+      "title": "Supplices te rogamus",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.10",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH22",
+          "relation": "DIRECT_CANON_REMEMBRANCE_AND_SCHOLASTIC_EXEGESIS",
+          "scripture": [
+            "Acts 1:1–11",
+            "Hebrews 7:23–28",
+            "Hebrews 9:24"
+          ],
+          "interpretiveQuestion": "How are earthly altar and heavenly sanctuary related through Christ's enduring priesthood?"
+        },
+        {
+          "anchor": "SH24",
+          "relation": "HEAVENLY_LITURGY_AND_ESCHATOLOGY",
+          "scripture": [
+            "Revelation 4–5",
+            "Revelation 19:6–9",
+            "Revelation 21–22"
+          ],
+          "interpretiveQuestion": "How does Eucharistic worship participate in the worship of the Lamb while sacramental signs anticipate the unveiled eternal communion?"
+        }
+      ],
+      "specialRiteCautions": [
+        "SUPPLICES_ANGEL_IDENTITY_DISPUTED_NOT_DOGMA"
+      ],
+      "editorialCautions": [
+        "Supplices holy Angel interpretations are contested and should be named by author; no physical transport of species.",
+        "Distinguish prophetic vision and future consummation from past-event timeline.",
+        "Do not depict angel physically lifting consecrated species into heaven."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-13"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG44",
+          "cueText": "AO.SM.C0187",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG45",
+          "cueText": "AO.SM.C0188",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 24,
+      "ownerId": "AO.CANON.11",
+      "title": "Memento etiam, Domine — Dead",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.11",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E47"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0392",
+        "EV3-0393",
+        "EV3-0394",
+        "EV3-0397"
+      ],
+      "archivalEvidenceCount": 4,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ16"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-14"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG46",
+          "cueText": "AO.SM.C0192",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG47",
+          "cueText": "AO.SM.C0194",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 25,
+      "ownerId": "AO.CANON.12",
+      "title": "Nobis quoque peccatoribus",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.12",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E48"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0398",
+        "EV3-0400",
+        "EV3-0401",
+        "EV3-0402",
+        "EV3-0403",
+        "EV3-0404",
+        "EV3-0407",
+        "EV3-0408",
+        "RG60-024"
+      ],
+      "archivalEvidenceCount": 9,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-15"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG24",
+          "cueText": "`AO.SM.C0196`",
+          "class": "CANON_PRAYER_MEANING_AND_GESTURE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG48",
+          "cueText": "AO.SM.C0196",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG49",
+          "cueText": "AO.SM.C0197",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 26,
+      "ownerId": "AO.CANON.13",
+      "title": "Per quem haec omnia",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.13",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [],
+      "archivalEvidenceIds": [],
+      "archivalEvidenceCount": 0,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH01",
+          "relation": "THEOLOGICAL_FRAME",
+          "scripture": [
+            "Genesis 1–2"
+          ],
+          "interpretiveQuestion": "Why can created gifts become the matter of offering, and how does the Eucharistic doxology return all honour to the Creator?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Creation-to-Preface analogy is theological, not a biblical quotation or historical cause of a rite."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-16"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG50",
+          "cueText": "AO.SM.C0199",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG51",
+          "cueText": "AO.SM.C0200",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 27,
+      "ownerId": "AO.CANON.14",
+      "title": "Per ipsum · Minor Elevation",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CANON.14",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E49"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0410",
+        "EV3-0411",
+        "EV3-0412",
+        "EV3-0413",
+        "EV3-0414",
+        "EV3-0417",
+        "EV3-0418",
+        "RG60-025"
+      ],
+      "archivalEvidenceCount": 8,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH01",
+          "relation": "THEOLOGICAL_FRAME",
+          "scripture": [
+            "Genesis 1–2"
+          ],
+          "interpretiveQuestion": "Why can created gifts become the matter of offering, and how does the Eucharistic doxology return all honour to the Creator?"
+        },
+        {
+          "anchor": "SH24",
+          "relation": "HEAVENLY_LITURGY_AND_ESCHATOLOGY",
+          "scripture": [
+            "Revelation 4–5",
+            "Revelation 19:6–9",
+            "Revelation 21–22"
+          ],
+          "interpretiveQuestion": "How does Eucharistic worship participate in the worship of the Lamb while sacramental signs anticipate the unveiled eternal communion?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Creation-to-Preface analogy is theological, not a biblical quotation or historical cause of a rite.",
+        "Distinguish prophetic vision and future consummation from past-event timeline.",
+        "Do not depict angel physically lifting consecrated species into heaven."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-17"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF06"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG25",
+          "cueText": "`AO.SM.C0202`",
+          "class": "CANON_DOXOLOGY_AND_CEREMONIAL",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG52",
+          "cueText": "AO.SM.C0202",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG53",
+          "cueText": "AO.SM.C0204",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 28,
+      "ownerId": "AO.CARD.019",
+      "title": "Pater noster",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.019",
+      "existingMassBibleIds": [
+        "MB21"
+      ],
+      "archivalEventIds": [
+        "E50"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0419",
+        "EV3-0421",
+        "EV3-0422",
+        "EV3-0423",
+        "EV3-0426",
+        "EV3-0427",
+        "EV3-0428",
+        "RG60-026"
+      ],
+      "archivalEvidenceCount": 8,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ17"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB21",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            },
+            {
+              "sourceRole": "BIBLICAL_CONTEXT_LUKE_LATIN_WORDING",
+              "url": "https://www.newadvent.org/bible/luk011.htm"
+            }
+          ],
+          "qualification": "CLEMENTINE_MATTHEW_SUPERSUBSTANTIALEM_VS_BENZIGER_1962_COTIDIANUM_LUKE_QUOTIDIANUM",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 6:9–13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB21"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG26",
+          "cueText": "`AO.SM.C0208`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG54",
+          "cueText": "AO.SM.C0209",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-014"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 29,
+      "ownerId": "AO.CARD.020",
+      "title": "Libera nos · Fraction · Pax Domini",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.020",
+      "existingMassBibleIds": [
+        "MB22"
+      ],
+      "archivalEventIds": [
+        "E51",
+        "E52",
+        "E53"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0430",
+        "EV3-0434",
+        "EV3-0435",
+        "EV3-0438",
+        "EV3-0439",
+        "EV3-0441",
+        "EV3-0442",
+        "EV3-0443",
+        "EV3-0446",
+        "EV3-0447"
+      ],
+      "archivalEvidenceCount": 10,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ18"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB22",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "scriptureReference": "Matthew 6:13",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            }
+          ],
+          "qualification": "LITURGICAL_EMBOLISM",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 6:13",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-18"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG27",
+          "cueText": "`AO.SM.C0221`",
+          "class": "LEXICAL_DOCTRINAL_CLARIFICATION",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG55",
+          "cueText": "AO.SM.C0212",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG56",
+          "cueText": "AO.SM.C0219",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG57",
+          "cueText": "AO.SM.C0221",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        null,
+        "L1897-NP-015"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 30,
+      "ownerId": "AO.CARD.021",
+      "title": "Agnus Dei",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.021",
+      "existingMassBibleIds": [
+        "MB23"
+      ],
+      "archivalEventIds": [
+        "E54"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0449",
+        "EV3-0450",
+        "EV3-0451",
+        "EV3-0452",
+        "EV3-0453",
+        "EV3-0454",
+        "EV3-0455",
+        "EV3-0458",
+        "EV3-0459",
+        "EV3-0460",
+        "RG60-027"
+      ],
+      "archivalEvidenceCount": 11,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ19"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH06",
+          "relation": "PATRISTIC_AND_DOCTRINAL_TYPOLOGY",
+          "scripture": [
+            "Exodus 12:1–28",
+            "1 Corinthians 5:7",
+            "John 19:33–36"
+          ],
+          "interpretiveQuestion": "Explain the Paschal lamb's blood and shared meal as preparation for understanding Christ's sacrifice and the invocation Agnus Dei."
+        },
+        {
+          "anchor": "SH11",
+          "relation": "DOCTRINAL_PROPHECY_AND_TYPOLOGY",
+          "scripture": [
+            "Isaiah 52:13–53:12",
+            "1 Peter 2:21–25"
+          ],
+          "interpretiveQuestion": "Explore substitution, willing suffering and the need to interpret sacrifice through Christ, not merely animal ritual."
+        },
+        {
+          "anchor": "SH15",
+          "relation": "ADAPTED_SCRIPTURAL_WORDING",
+          "scripture": [
+            "John 1:19–36"
+          ],
+          "interpretiveQuestion": "Why is the same Lamb invoked before Communion and shown to the faithful?"
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Do not assert the entire Roman Agnus Dei text is transcribed from Exodus.",
+        "Use controlled doctrinal sources for Eucharistic presence of once-for-all sacrifice; not mere pictorial analogy.",
+        "Mass Agnus Dei petitions are liturgical adaptation; distinguish Requiem form."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB23",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "John 1:29",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "MASS_INVOCATION_EXTENDS_VERSE",
+          "properDependent": false,
+          "scriptureReaderRef": "John 1:29",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB23"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG58",
+          "cueText": "AO.SM.C0222",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG59",
+          "cueText": "AO.SM.C0224",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-035"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 31,
+      "ownerId": "AO.CARD.022",
+      "title": "Prayers before Communion",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.022",
+      "existingMassBibleIds": [
+        "MB24"
+      ],
+      "archivalEventIds": [
+        "E56",
+        "E57"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0472",
+        "EV3-0476",
+        "EV3-0477",
+        "EV3-0478",
+        "EV3-0481",
+        "RG60-028"
+      ],
+      "archivalEvidenceCount": 6,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH16",
+          "relation": "CHRISTOLOGICAL_READING_AND_ADAPTED_WORDS",
+          "scripture": [
+            "John 6:25–59",
+            "Matthew 8:5–13"
+          ],
+          "interpretiveQuestion": "Join Bread of Life doctrine to actual Communion and centurion's humility without conflating the centurion's servant with the communicant's soul."
+        }
+      ],
+      "specialRiteCautions": [
+        "PRIEST_DOMINE_NON_SUM_DIGNUS_NOT_FAITHFUL_RESPONSE"
+      ],
+      "editorialCautions": [
+        "Matthew 8:8 speaks of the servant; liturgy changes to anima mea.",
+        "Priest and faithful have separate liturgical Domine non sum dignus contexts."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB24",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "scriptureReference": "Matthew 8:8",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat008.htm"
+            }
+          ],
+          "qualification": "PUER_MEUS_VERSUS_ANIMA_MEA",
+          "properDependent": false,
+          "scriptureReaderRef": "Matthew 8:8",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB24",
+          "MM-PRIMARY-N05"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG60",
+          "cueText": "AO.SM.C0225",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG61",
+          "cueText": "AO.SM.C0226",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG62",
+          "cueText": "AO.SM.C0227",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG63",
+          "cueText": "AO.SM.C0229",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-038"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 32,
+      "ownerId": "AO.CARD.023",
+      "title": "Communion of the Priest",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.023",
+      "existingMassBibleIds": [
+        "MB25"
+      ],
+      "archivalEventIds": [
+        "E58",
+        "E59"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0483",
+        "EV3-0484",
+        "EV3-0485",
+        "EV3-0488",
+        "EV3-0490",
+        "EV3-0491"
+      ],
+      "archivalEvidenceCount": 6,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH07",
+          "relation": "CHRISTOLOGICAL_BIBLICAL_TYPOLOGY",
+          "scripture": [
+            "Exodus 16",
+            "John 6:31–58"
+          ],
+          "interpretiveQuestion": "Distinguish bread that preserves temporal life from the Eucharistic Bread of Life, without collapsing manna into a literal Eucharist."
+        },
+        {
+          "anchor": "SH16",
+          "relation": "CHRISTOLOGICAL_READING_AND_ADAPTED_WORDS",
+          "scripture": [
+            "John 6:25–59",
+            "Matthew 8:5–13"
+          ],
+          "interpretiveQuestion": "Join Bread of Life doctrine to actual Communion and centurion's humility without conflating the centurion's servant with the communicant's soul."
+        }
+      ],
+      "specialRiteCautions": [],
+      "editorialCautions": [
+        "Matthew 8:8 speaks of the servant; liturgy changes to anima mea.",
+        "Priest and faithful have separate liturgical Domine non sum dignus contexts."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB25",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "scriptureReference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://vulgate.org/ot/psalms_115.htm"
+            }
+          ],
+          "qualification": "CLEMENTINE_115_3_4_MODERN_116_12_13",
+          "properDependent": false,
+          "scriptureReaderRef": null,
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB25"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG64",
+          "cueText": "AO.SM.C0232",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG65",
+          "cueText": "AO.SM.C0234",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-MYST-05",
+        "L1897-OCR-009"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 33,
+      "ownerId": "AO.CARD.024",
+      "title": "Ecce Agnus Dei & Faithful Preparation",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.024",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E60",
+        "E61",
+        "E62",
+        "E63"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0494",
+        "EV3-0496",
+        "EV3-0499",
+        "EV3-0500",
+        "EV3-0502",
+        "EV3-0503",
+        "EV3-0504",
+        "EV3-0505",
+        "EV3-0506",
+        "EV3-0509",
+        "EV3-0510",
+        "EV3-0512",
+        "EV3-0513",
+        "EV3-0514",
+        "EV3-0517",
+        "EV3-0518",
+        "EV3-0520",
+        "EV3-0521",
+        "EV3-0522",
+        "EV3-0523",
+        "EV3-0526",
+        "RG60-029",
+        "RG60-030",
+        "RG60-031"
+      ],
+      "archivalEvidenceCount": 24,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH15",
+          "relation": "ADAPTED_SCRIPTURAL_WORDING",
+          "scripture": [
+            "John 1:19–36"
+          ],
+          "interpretiveQuestion": "Why is the same Lamb invoked before Communion and shown to the faithful?"
+        },
+        {
+          "anchor": "SH16",
+          "relation": "CHRISTOLOGICAL_READING_AND_ADAPTED_WORDS",
+          "scripture": [
+            "John 6:25–59",
+            "Matthew 8:5–13"
+          ],
+          "interpretiveQuestion": "Join Bread of Life doctrine to actual Communion and centurion's humility without conflating the centurion's servant with the communicant's soul."
+        }
+      ],
+      "specialRiteCautions": [
+        "SECOND_CONFITEOR_OLDER_OR_LOCAL_CUSTOM_NOT_UNIVERSALLY_MANDATORY"
+      ],
+      "editorialCautions": [
+        "Mass Agnus Dei petitions are liturgical adaptation; distinguish Requiem form.",
+        "Matthew 8:8 speaks of the servant; liturgy changes to anima mea.",
+        "Priest and faithful have separate liturgical Domine non sum dignus contexts."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-19"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 34,
+      "ownerId": "AO.CARD.025",
+      "title": "Communion of the Faithful",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.025",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E64"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0527",
+        "EV3-0529",
+        "EV3-0530",
+        "EV3-0531",
+        "EV3-0532",
+        "EV3-0533",
+        "EV3-0536",
+        "EV3-0537",
+        "EV3-0538",
+        "RG60-032"
+      ],
+      "archivalEvidenceCount": 10,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH07",
+          "relation": "CHRISTOLOGICAL_BIBLICAL_TYPOLOGY",
+          "scripture": [
+            "Exodus 16",
+            "John 6:31–58"
+          ],
+          "interpretiveQuestion": "Distinguish bread that preserves temporal life from the Eucharistic Bread of Life, without collapsing manna into a literal Eucharist."
+        },
+        {
+          "anchor": "SH16",
+          "relation": "CHRISTOLOGICAL_READING_AND_ADAPTED_WORDS",
+          "scripture": [
+            "John 6:25–59",
+            "Matthew 8:5–13"
+          ],
+          "interpretiveQuestion": "Join Bread of Life doctrine to actual Communion and centurion's humility without conflating the centurion's servant with the communicant's soul."
+        },
+        {
+          "anchor": "SH21",
+          "relation": "DIRECT_CANON_REMEMBRANCE_AND_DEVOTIONAL_PARALLEL",
+          "scripture": [
+            "Luke 24",
+            "John 20",
+            "1 Corinthians 15"
+          ],
+          "interpretiveQuestion": "Distinguish the Canon's explicit remembrance of Resurrection from later meditation on Eucharistic recognition at Emmaus."
+        },
+        {
+          "anchor": "SH23",
+          "relation": "ECLESIAL_SALVATION_HISTORY",
+          "scripture": [
+            "Acts 2:1–47",
+            "1 Corinthians 10:16–17"
+          ],
+          "interpretiveQuestion": "How does the Spirit-formed Church participate in Christ's sacrificial worship and communion of saints?"
+        },
+        {
+          "anchor": "SH24",
+          "relation": "HEAVENLY_LITURGY_AND_ESCHATOLOGY",
+          "scripture": [
+            "Revelation 4–5",
+            "Revelation 19:6–9",
+            "Revelation 21–22"
+          ],
+          "interpretiveQuestion": "How does Eucharistic worship participate in the worship of the Lamb while sacramental signs anticipate the unveiled eternal communion?"
+        }
+      ],
+      "specialRiteCautions": [
+        "FAITHFUL_COMMUNION_MAY_NOT_TAKE_PLACE"
+      ],
+      "editorialCautions": [
+        "Matthew 8:8 speaks of the servant; liturgy changes to anima mea.",
+        "Priest and faithful have separate liturgical Domine non sum dignus contexts.",
+        "Emmaus does not independently prove that the breaking of bread in that episode is the Mass rite.",
+        "Pentecost cannot be used to prove arbitrary late rituals' apostolic origins.",
+        "Distinguish prophetic vision and future consummation from past-event timeline.",
+        "Do not depict angel physically lifting consecrated species into heaven."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-20"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF07"
+      },
+      "guérangerOriginalFrenchSourceIds": [],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-NP-016"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 35,
+      "ownerId": "AO.CARD.026",
+      "title": "Ablutions & Communion Antiphon",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.026",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E65",
+        "E66"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0539",
+        "EV3-0541",
+        "EV3-0542",
+        "EV3-0543",
+        "EV3-0544",
+        "EV3-0547",
+        "EV3-0548",
+        "EV3-0549",
+        "EV3-0550",
+        "EV3-0552",
+        "EV3-0555",
+        "RG60-033"
+      ],
+      "archivalEvidenceCount": 12,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-21"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG28",
+          "cueText": "`AO.SM.C0247`",
+          "class": "PRAYER_MEANING",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG66",
+          "cueText": "AO.SM.C0247",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG67",
+          "cueText": "AO.SM.C0248",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 36,
+      "ownerId": "AO.CARD.027",
+      "title": "Postcommunion",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.027",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E67"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0556",
+        "EV3-0558",
+        "EV3-0561",
+        "EV3-0562",
+        "EV3-0563",
+        "RG60-034"
+      ],
+      "archivalEvidenceCount": 6,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ20"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-22"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG68",
+          "cueText": "AO.SM.C0254",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 37,
+      "ownerId": "AO.CARD.028",
+      "title": "Dismissal",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.028",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E68"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0564",
+        "EV3-0566",
+        "EV3-0567",
+        "EV3-0570",
+        "EV3-0571",
+        "EV3-0572",
+        "RG60-035"
+      ],
+      "archivalEvidenceCount": 7,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "DISMISSAL_VARIANT_BY_MASS_TYPE_OR_FOLLOWING_ACTION"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-23"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG29",
+          "cueText": "`AO.SM.C0259`",
+          "class": "HISTORICAL_ETYMOLGY_WITH_1962_EXCEPTION_GATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 38,
+      "ownerId": "AO.CARD.029",
+      "title": "Placeat & Final Blessing",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.029",
+      "existingMassBibleIds": [],
+      "archivalEventIds": [
+        "E69"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0573",
+        "EV3-0575",
+        "EV3-0576",
+        "EV3-0579",
+        "EV3-0580",
+        "EV3-0581",
+        "RG60-036"
+      ],
+      "archivalEvidenceCount": 7,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ21"
+      ],
+      "biblicalCorrespondences": [],
+      "specialRiteCautions": [
+        "FINAL_BLESSING_CAN_BE_SUPPRESSED_BY_SPECIAL_RITE_OR_REQUIEM"
+      ],
+      "editorialCautions": [],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [],
+      "studyManuscriptIds": {
+        "polishedBilingual": [],
+        "additionalBilingual": [
+          "MM-NEW-24"
+        ],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG69",
+          "cueText": "AO.SM.C0261",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        },
+        {
+          "id": "FRG70",
+          "cueText": "AO.SM.C0264",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    },
+    {
+      "sequence": 39,
+      "ownerId": "AO.CARD.030",
+      "title": "Last Gospel",
+      "product": "MYSTERY_LITURGICAL_DESCRIPTIVE",
+      "studyContentOwner": "AO.CARD.030",
+      "existingMassBibleIds": [
+        "MB26"
+      ],
+      "archivalEventIds": [
+        "E70"
+      ],
+      "archivalEvidenceIds": [
+        "EV3-0582",
+        "EV3-0584",
+        "EV3-0585",
+        "EV3-0586",
+        "EV3-0587",
+        "EV3-0588",
+        "EV3-0589",
+        "EV3-0592",
+        "RG60-037"
+      ],
+      "archivalEvidenceCount": 9,
+      "sourceFindingIds": [],
+      "dujardinOptionalMeditationIds": [
+        "DJ22"
+      ],
+      "biblicalCorrespondences": [
+        {
+          "anchor": "SH13",
+          "relation": "DIRECT_DOGMATIC_EVENT",
+          "scripture": [
+            "Luke 1:26–38",
+            "John 1:1–14",
+            "Hebrews 10:5–10"
+          ],
+          "interpretiveQuestion": "The mystery making Christ both Priest and Victim: the Word takes flesh; why does Mass profess it in the Creed and sometimes end with John 1?"
+        }
+      ],
+      "specialRiteCautions": [
+        "LAST_GOSPEL_NOT_UNIVERSALLY_PRESENT"
+      ],
+      "editorialCautions": [
+        "Last Gospel is conditional; do not infer its universal use from narrative structure."
+      ],
+      "prayerAndSourcePolicy": "Explain actual 1962 action and text through shared Study-of-Mass content; Bible reader opens exact verses in context; optional author-meditations remain separately attributed.",
+      "artworkPolicy": "Reference approved Sacred Art IDs only when selected; no generated or guess artworks.",
+      "release": "RESEARCH_ONLY",
+      "existingMassBiblePassages": [
+        {
+          "researchId": "MB26",
+          "relationship": "VARIABLE_RITE_SCRIPTURE_READING",
+          "scriptureReference": "John 1:1–14",
+          "sourceChapterLinks": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ],
+          "qualification": "RITE_DEPENDENT_NOT_UNCONDITIONAL",
+          "properDependent": true,
+          "scriptureReaderRef": "John 1:1–14",
+          "approval": "SOURCE_LINK_RESEARCH_ONLY_NOT_PRINTED_1962_CERTIFIED"
+        }
+      ],
+      "studyManuscriptIds": {
+        "polishedBilingual": [
+          "MM-PRIMARY-MB26"
+        ],
+        "additionalBilingual": [],
+        "supplementaryBilingual": [],
+        "otherExistingFormationStage": "MF08"
+      },
+      "guérangerOriginalFrenchSourceIds": [
+        {
+          "id": "FRG30",
+          "cueText": "`AO.SM.C0269`",
+          "class": "HISTORICAL_DEVOTION_AND_1962_EXCEPTION_GATE",
+          "origin": "ORIGINAL_FIRST_30_RESEARCH"
+        },
+        {
+          "id": "FRG71",
+          "cueText": "AO.SM.C0273",
+          "class": "GUERANGER_RESEARCH_B2",
+          "origin": "ORIGINAL_SECOND_41_RESEARCH"
+        }
+      ],
+      "guérangerRelatedSecondarySourceIds": [],
+      "lanslotsOriginalSourceCandidateIds": [
+        "L1897-OCR-043"
+      ],
+      "allHistoricalStudySourcePolicy": "Historical/source candidates are linked for progressive Study-of-Mass depth; 1885 Guéranger and 1897 Lanslots neither override 1962 rubrics nor become live priest cue assertions; older French original short notes are not public translation."
+    }
+  ],
+  "dujardinSecondaryMethod": [
+    {
+      "meditationId": "DJ01",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Preparation",
+      "sourceCues": [],
+      "sourceBlocks": [],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 934,
+      "sourceLineEnd": 947,
+      "relatedOwnerIds": [],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Meditation preparation precedes the source-owned Mass Order; must not force C0001 as its historical origin.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ02",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "The beginning of Mass",
+      "sourceCues": [
+        "AO.SM.C0002"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B002"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 948,
+      "sourceLineEnd": 970,
+      "relatedOwnerIds": [
+        "AO.CARD.001"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "The entry into the Mass is the textual location; Fall narrative is Dujardin's contemplation only.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ03",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Kyrie eleison",
+      "sourceCues": [
+        "AO.SM.C0044"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B015"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 972,
+      "sourceLineEnd": 983,
+      "relatedOwnerIds": [
+        "AO.CARD.002"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Kyrie is present; expectation of the Messiah is not literal Kyrie text.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ04",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Gloria",
+      "sourceCues": [
+        "AO.SM.C0053",
+        "AO.SM.C0055"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B016"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 984,
+      "sourceLineEnd": 990,
+      "relatedOwnerIds": [
+        "AO.CARD.003"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Only the opening Gloria wording is Luke 2; rest of hymn has separate history.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ05",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Prayer / Collect",
+      "sourceCues": [],
+      "sourceBlocks": [
+        "AO.SM.B019"
+      ],
+      "conditionalProperSlot": "COLLECT_SET",
+      "sourceLineStart": 991,
+      "sourceLineEnd": 999,
+      "relatedOwnerIds": [
+        "AO.CARD.004"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Collect text changes by feast/date; Christ's hidden life is Dujardin's meditation, not each Collect's Scripture.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ06",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Epistle",
+      "sourceCues": [],
+      "sourceBlocks": [
+        "AO.SM.B020"
+      ],
+      "conditionalProperSlot": "EPISTLE_OR_LESSON",
+      "sourceLineStart": 1000,
+      "sourceLineEnd": 1009,
+      "relatedOwnerIds": [
+        "AO.CARD.005"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Actual Epistle passage must come from resolved 1962 Proper, not Dujardin's precursor allegory.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ07",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Gospel",
+      "sourceCues": [],
+      "sourceBlocks": [
+        "AO.SM.B026"
+      ],
+      "conditionalProperSlot": "GOSPEL",
+      "sourceLineStart": 1011,
+      "sourceLineEnd": 1022,
+      "relatedOwnerIds": [
+        "AO.CARD.007"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Actual Gospel passage must come from resolved 1962 Proper; Dujardin's general ministry is thematic.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ08",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Credo",
+      "sourceCues": [
+        "AO.SM.C0089"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B027"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1023,
+      "sourceLineEnd": 1030,
+      "relatedOwnerIds": [
+        "AO.CARD.009"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Credo is fixed doctrinal formulation, not one geographically located biblical event.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ09",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Offertory",
+      "sourceCues": [
+        "AO.SM.C0110"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B031"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1033,
+      "sourceLineEnd": 1039,
+      "relatedOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Offertory is an anchor for meditation on Last Supper, not historically the Last Supper's bread action.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ10",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Lavabo",
+      "sourceCues": [
+        "AO.SM.C0125"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B037"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1040,
+      "sourceLineEnd": 1047,
+      "relatedOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Lavabo is a Psalm and practical handwashing; John 13 is solely a named devotional meditation.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ11",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Orate fratres",
+      "sourceCues": [
+        "AO.SM.C0130"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B039"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1048,
+      "sourceLineEnd": 1053,
+      "relatedOwnerIds": [
+        "AO.CARD.011"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Orate fratres is fixed; no Bible event forced.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ12",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Preface",
+      "sourceCues": [],
+      "sourceBlocks": [
+        "AO.SM.B045"
+      ],
+      "conditionalProperSlot": "PREFACE",
+      "sourceLineStart": 1054,
+      "sourceLineEnd": 1061,
+      "relatedOwnerIds": [
+        "AO.CARD.012"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Preface varies; author contemplates Christ's thanksgiving, not exact text of any day's Preface.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ13",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Memento for living",
+      "sourceCues": [
+        "AO.SM.C0154"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B048"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1062,
+      "sourceLineEnd": 1071,
+      "relatedOwnerIds": [
+        "AO.CANON.02"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Memento of living; Gethsemane and Christ's prayer are devotional parallels.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ14",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Hanc igitur",
+      "sourceCues": [
+        "AO.SM.C0161"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B050"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1073,
+      "sourceLineEnd": 1086,
+      "relatedOwnerIds": [
+        "AO.CANON.04"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Hanc igitur source phrase is fixed; Leviticus 1:4 comparison does not explain ritual origin.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ15",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Consecration",
+      "sourceCues": [
+        "AO.SM.C0173",
+        "AO.SM.C0179"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B052",
+        "AO.SM.B053"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1088,
+      "sourceLineEnd": 1101,
+      "relatedOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Two actual consecrations, one and the same Sacrifice sacramentally present; not a second bloody execution.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ16",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Memento for dead",
+      "sourceCues": [
+        "AO.SM.C0192"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B057"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1102,
+      "sourceLineEnd": 1112,
+      "relatedOwnerIds": [
+        "AO.CANON.11"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Memento for dead source cue; Purgatory/limbus distinctions require doctrinal review.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ17",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Pater noster",
+      "sourceCues": [
+        "AO.SM.C0209"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B063"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1113,
+      "sourceLineEnd": 1116,
+      "relatedOwnerIds": [
+        "AO.CARD.019"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Lord's Prayer is direct Scripture; Dujardin's tomb meditation is a different relationship.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ18",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Pax Domini",
+      "sourceCues": [
+        "AO.SM.C0219",
+        "AO.SM.C0221"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B066",
+        "AO.SM.B067"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1117,
+      "sourceLineEnd": 1124,
+      "relatedOwnerIds": [
+        "AO.CARD.020"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Pax Domini and commixture occur separately; Resurrection symbolism is only devotional.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ19",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Agnus Dei",
+      "sourceCues": [
+        "AO.SM.C0222"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B068"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1125,
+      "sourceLineEnd": 1141,
+      "relatedOwnerIds": [
+        "AO.CARD.021"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Agnus Dei from John 1, while Dujardin contemplates Communion.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ20",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Post-Communion",
+      "sourceCues": [],
+      "sourceBlocks": [
+        "AO.SM.B088"
+      ],
+      "conditionalProperSlot": "POSTCOMMUNION_SET",
+      "sourceLineStart": 1144,
+      "sourceLineEnd": 1152,
+      "relatedOwnerIds": [
+        "AO.CARD.027"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Postcommunion prayers vary; Ascension and Cenacle are authorial contemplations.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ21",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Blessing",
+      "sourceCues": [
+        "AO.SM.C0264"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B092"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1154,
+      "sourceLineEnd": 1156,
+      "relatedOwnerIds": [
+        "AO.CARD.029"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "Final blessing is an Order anchor for Pentecost contemplation, not biblical origin of benediction.",
+      "publicationApproved": false
+    },
+    {
+      "meditationId": "DJ22",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "heading": "Last Gospel",
+      "sourceCues": [
+        "AO.SM.C0271"
+      ],
+      "sourceBlocks": [
+        "AO.SM.B095"
+      ],
+      "conditionalProperSlot": null,
+      "sourceLineStart": 1157,
+      "sourceLineEnd": 1163,
+      "relatedOwnerIds": [
+        "AO.CARD.030"
+      ],
+      "relation": "AUTHORIAL_MEDITATION_NOT_RITUAL_ORIGIN",
+      "qualifiedBySource": "John 1 is the usual Last Gospel in the source corpus; individual special Masses may replace or omit it.",
+      "publicationApproved": false
+    }
+  ],
+  "deliberateExclusions": [
+    {
+      "subject": "Noah",
+      "reason": "Useful broader salvation-history context but no strong present direct 1962 Mass-prayer anchor; retain as expandable biblical context, not forced centerpiece."
+    },
+    {
+      "subject": "Every single Passion gesture equals biblical action",
+      "reason": "Ferrer/Dujardin and attributed Francis de Sales can offer a source-labelled optional meditation; Guéranger, Le Brun and Gihr oppose artificial universal causal derivations."
+    }
+  ],
+  "unresolvedEvents": [
+    {
+      "id": "E01",
+      "reason": "Optional priest entrance/preparation before the first reader prayer: use pre-Mass event owner, not Introit as guaranteed text",
+      "evidenceCount": 4
+    },
+    {
+      "id": "E02",
+      "reason": "Asperges/Vidi aquam is a distinct conditional pre-Mass rite; no automatic Mass 39-owner binding",
+      "evidenceCount": 2
+    },
+    {
+      "id": "E46",
+      "reason": "Broad Post-Consecration Canon event spans Unde et memores, Supra quae, Supplices, and possibly other prayers: cannot infer one 14-Canon owner",
+      "evidenceCount": 4
+    },
+    {
+      "id": "E55",
+      "reason": "Peace-prayer and Solemn Pax combines distinct texts/minister events; handoff between Libera/Pax and prayers-before-Communion needs exact cue mapping",
+      "evidenceCount": 7
+    },
+    {
+      "id": "E71",
+      "reason": "Departure/post-Mass prayers are outside the fixed final Mass prayer or depend on observance",
+      "evidenceCount": 3
+    }
+  ],
+  "recoveredGuérangerFirst30": [
+    {
+      "sourceId": "FRG01",
+      "originalCueText": "`AO.SM.C0001`",
+      "originalFrenchHeading": "EXPLICATION DE LA MESSE, paratus et debita reverentia",
+      "sourceParaphraseFr": "Le prêtre s'approche de l'autel pour le Sacrifice. Sa première révérence dépend de la présence du Saint-Sacrement; elle n'est pas une simple formalité.",
+      "sourceClass": "EXPLICIT_HISTORICAL_CEREMONIAL",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG02",
+      "originalCueText": "`AO.SM.C0004`",
+      "originalFrenchHeading": "PSAUME JUDICA",
+      "sourceParaphraseFr": "Le psaume donne voix au désir de monter vers l'autel de Dieu. L'antienne Introibo en éclaire l'usage au commencement de la Messe.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG03",
+      "originalCueText": "`AO.SM.C0037\\`, \\`AO.SM.C0039`",
+      "originalFrenchHeading": "Fin PSAUME JUDICA, passage à l'autel",
+      "sourceParaphraseFr": "En montant à l'autel, le célébrant demande d'être purifié. Le baiser rend honneur à l'autel et évoque les reliques des saints; la prière rassemble également les intentions de ceux qui assistent.",
+      "sourceClass": "HISTORY_AND_PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG04",
+      "originalCueText": "`AO.SM.C0042`",
+      "originalFrenchHeading": "INTROÏT",
+      "sourceParaphraseFr": "L'Introït était d'abord le chant du chœur accompagnant l'entrée; sa récitation par le célébrant s'est développée avec les messes basses. Au chant, le prêtre et la schola peuvent donc suivre des rythmes distincts.",
+      "sourceClass": "HISTORY_PRIEST_SCHOLA_CONCURRENCY",
+      "primaryOwner": "AO.CARD.001",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG05",
+      "originalCueText": "`AO.SM.C0044`",
+      "originalFrenchHeading": "KYRIE",
+      "sourceParaphraseFr": "Le Kyrie est l'invocation répétée de la miséricorde divine. Guéranger y voit une adresse trinitaire et un écho à la louange des neuf chœurs angéliques: c'est son interprétation, non une rubrique.",
+      "sourceClass": "ATTRIBUTED_THEOLOGICAL_INTERPRETATION",
+      "primaryOwner": "AO.CARD.002",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG06",
+      "originalCueText": "`AO.SM.C0053`",
+      "originalFrenchHeading": "GLORIA IN EXCELSIS",
+      "sourceParaphraseFr": "Le Gloria prolonge la louange angélique et unit adoration, action de grâces et supplication. Les gestes du célébrant doivent être rattachés aux mots auxquels ils sont prescrits.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.003",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG07",
+      "originalCueText": "`AO.SM.C0072`",
+      "originalFrenchHeading": "COLLECTE",
+      "sourceParaphraseFr": "Le prêtre prie les bras étendus, geste ancien que Guéranger rapproche de la posture des orants des premiers siècles. L'oraison rassemble l'intention de la célébration et reçoit l'assentiment des fidèles.",
+      "sourceClass": "HISTORICAL_GESTURE_INTERPRETATION",
+      "primaryOwner": "AO.CARD.004",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG08",
+      "originalCueText": "`AO.SM.C0075`",
+      "originalFrenchHeading": "ÉPÎTRE",
+      "sourceParaphraseFr": "L'Épître fait entendre la parole des apôtres ou un autre texte scripturaire avant l'Évangile; elle a sa propre dignité, différente de la proclamation solennelle de l'Évangile.",
+      "sourceClass": "HISTORY_AND_PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.005",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG09",
+      "originalCueText": "`AO.SM.C0084`",
+      "originalFrenchHeading": "ÉVANGILE",
+      "sourceParaphraseFr": "Le livre et sa proclamation reçoivent des honneurs particuliers parce que l'Église écoute la parole du Christ. Les petites croix du ministre se rapportent au front, aux lèvres et au cœur; la pratique des fidèles relève d'un autre niveau d'autorité.",
+      "sourceClass": "HISTORY_AND_CEREMONIAL;FAITHFUL_CUSTOM_SEPARATE",
+      "primaryOwner": "AO.CARD.007",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG10",
+      "originalCueText": "`AO.SM.C0089\\`, \\`AO.SM.C0096`",
+      "originalFrenchHeading": "CREDO",
+      "sourceParaphraseFr": "À l'Évangile répond la profession commune de foi. La génuflexion à l'Incarnation exprime l'adoration du Verbe fait chair; les postures des fidèles dépendent de la fête, du chant et des coutumes attestées.",
+      "sourceClass": "PRAYER_MEANING;FAITHFUL_POSTURE_CONDITIONAL",
+      "primaryOwner": "AO.CARD.009",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG11",
+      "originalCueText": "`AO.SM.C0110`",
+      "originalFrenchHeading": "OFFERTOIRE",
+      "sourceParaphraseFr": "L'oblation du pain anticipe le Sacrifice eucharistique sans avoir encore opéré la consécration. Le prêtre pense déjà à la Victime qui sera réellement présente après les paroles consécratoires.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG12",
+      "originalCueText": "`AO.SM.C0112`",
+      "originalFrenchHeading": "OFFERTOIRE, Deus qui humanae substantiae",
+      "sourceParaphraseFr": "L'eau mêlée au vin donne à l'Église l'occasion de demander une participation à la vie divine du Christ, qui a pris notre humanité. Guéranger développe aussi le symbole christologique des deux natures.",
+      "sourceClass": "PRAYER_MEANING_AND_ATTRIBUTED_SYMBOLISM",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG13",
+      "originalCueText": "`AO.SM.C0125`",
+      "originalFrenchHeading": "LAVABO",
+      "sourceParaphraseFr": "Le lavement des doigts accompagne un psaume demandant la pureté nécessaire à l'approche de l'autel. Le geste visible éclaire cette disposition intérieure, sans être une simple opération matérielle.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG14",
+      "originalCueText": "`AO.SM.C0128`",
+      "originalFrenchHeading": "SUSCIPE SANCTA TRINITAS",
+      "sourceParaphraseFr": "L'Église offre le Sacrifice en mémoire de la Passion, de la Résurrection et de l'Ascension. Guéranger souligne que ces trois mystères appartiennent ensemble à l'économie du salut.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.010",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG15",
+      "originalCueText": "`AO.SM.C0130`",
+      "originalFrenchHeading": "ORATE FRATRES",
+      "sourceParaphraseFr": "Le prêtre demande aux fidèles de prier pour que le sacrifice soit agréé. Leur réponse s'unit à l'offrande sans abolir le rôle sacramentel propre du prêtre.",
+      "sourceClass": "PRAYER_MEANING_WITH_DOCTRINAL_QUALIFICATION",
+      "primaryOwner": "AO.CARD.011",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG16",
+      "originalCueText": "`AO.SM.C0135`",
+      "originalFrenchHeading": "SECRÈTE ET PRÉFACE",
+      "sourceParaphraseFr": "La prière sur les offrandes est dite à voix basse. Son dernier Per omnia devient audible pour que l'assemblée réponde Amen à l'oraison du prêtre, même sans en entendre chaque mot.",
+      "sourceClass": "HISTORICAL_VOICE_AND_RESPONSE",
+      "primaryOwner": "AO.CARD.011",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG17",
+      "originalCueText": "`AO.SM.C0137`",
+      "originalFrenchHeading": "PRÉFACE",
+      "sourceParaphraseFr": "Sursum corda invite les fidèles à élever leur cœur; Gratias agamus appelle à l'action de grâces que le prêtre va offrir au nom de l'assemblée.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.012",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG18",
+      "originalCueText": "`AO.SM.C0150`",
+      "originalFrenchHeading": "CANON, TE IGITUR",
+      "sourceParaphraseFr": "Le Canon s'adresse au Père par Jésus-Christ et implore l'acceptation de l'offrande pour l'Église. La voix basse ne signifie pas que la prière cesse d'être l'action liturgique de l'Église.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.01",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG19",
+      "originalCueText": "`AO.SM.C0154`",
+      "originalFrenchHeading": "MEMENTO DES VIVANTS",
+      "sourceParaphraseFr": "Le prêtre présente des intentions particulières au sein de la supplication pour l'Église et tous ceux qui l'entourent. Leurs foi et dévotion sont mentionnées dans la prière elle-même.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.02",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG20",
+      "originalCueText": "`AO.SM.C0161`",
+      "originalFrenchHeading": "HANC IGITUR",
+      "sourceParaphraseFr": "Les mains du prêtre étendues sur l'oblation sont rapprochées par Guéranger des sacrifices de l'ancienne Loi. Le Canon demande ici que l'offrande soit accueillie et que nos jours soient disposés dans la paix.",
+      "sourceClass": "ATTRIBUTED_HISTORICAL_SYMBOLISM_PLUS_PRAYER",
+      "primaryOwner": "AO.CANON.04",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG21",
+      "originalCueText": "`AO.SM.C0164\\`, \\`AO.SM.C0165\\`, \\`AO.SM.C0166`",
+      "originalFrenchHeading": "QUAM OBLATIONEM",
+      "sourceParaphraseFr": "La prière demande que l'offrande soit bénie, reconnue, ratifiée, spirituelle et agréée, afin de devenir pour nous le Corps et le Sang du Christ. Les signes de croix accompagnent des mots précis; ce ne sont pas des consécrations successives.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.05",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG22",
+      "originalCueText": "`AO.SM.C0173\\`, \\`AO.SM.C0174\\`, \\`AO.SM.C0181`",
+      "originalFrenchHeading": "CONSÉCRATION DE L'HOSTIE; CONSÉCRATION DU VIN",
+      "sourceParaphraseFr": "Dès les paroles consacratoires, la Présence réelle exige l'adoration: d'abord la génuflexion du prêtre, ensuite l'élévation offerte à l'adoration des fidèles, puis une nouvelle génuflexion. La consécration et l'ostension ne doivent jamais être confondues.",
+      "sourceClass": "DOCTRINE_AND_SOURCE_ACTION_ORDER",
+      "primaryOwner": "AO.CANON.06",
+      "secondOwner": "AO.CANON.07",
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG23",
+      "originalCueText": "`AO.SM.C0182`",
+      "originalFrenchHeading": "UNDE ET MEMORES",
+      "sourceParaphraseFr": "Après les consécrations, l'Église fait mémoire de la Passion, de la Résurrection et de l'Ascension; elle offre au Père les dons mêmes qu'elle a reçus de lui.",
+      "sourceClass": "CANON_PRAYER_MEANING",
+      "primaryOwner": "AO.CANON.08",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG24",
+      "originalCueText": "`AO.SM.C0196`",
+      "originalFrenchHeading": "NOBIS QUOQUE PECCATORIBUS",
+      "sourceParaphraseFr": "L'appel aux pécheurs rompt brièvement le silence du Canon. Le prêtre frappe sa poitrine et demande d'avoir part à la compagnie des saints, par la miséricorde et non par ses mérites.",
+      "sourceClass": "CANON_PRAYER_MEANING_AND_GESTURE",
+      "primaryOwner": "AO.CANON.12",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG25",
+      "originalCueText": "`AO.SM.C0202`",
+      "originalFrenchHeading": "PER IPSUM",
+      "sourceParaphraseFr": "À la doxologie, le Christ offert glorifie le Père dans l'unité de l'Esprit Saint. Les signes de croix et la petite élévation accompagnent cette louange; elle diffère de l'ostension après les consécrations.",
+      "sourceClass": "CANON_DOXOLOGY_AND_CEREMONIAL",
+      "primaryOwner": "AO.CANON.14",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG26",
+      "originalCueText": "`AO.SM.C0208`",
+      "originalFrenchHeading": "PATER NOSTER",
+      "sourceParaphraseFr": "L'Église ose dire Notre Père sur l'ordre même du Seigneur. À l'approche de la Communion, la demande du pain quotidien prend également une résonance eucharistique.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.019",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG27",
+      "originalCueText": "`AO.SM.C0221`",
+      "originalFrenchHeading": "FRACTION ET COMMIXTION",
+      "sourceParaphraseFr": "Une parcelle de l'Hostie consacrée est placée dans le calice. Le terme consecratio employé dans la formule n'indique pas ici une nouvelle consécration sacramentelle mais l'union de choses déjà sacrées.",
+      "sourceClass": "LEXICAL_DOCTRINAL_CLARIFICATION",
+      "primaryOwner": "AO.CARD.020",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG28",
+      "originalCueText": "`AO.SM.C0247`",
+      "originalFrenchHeading": "ABLUTIONS ET POSTCOMMUNION",
+      "sourceParaphraseFr": "La purification soigneuse manifeste la révérence due aux saintes Espèces. La prière demande que le don reçu dans un instant de cette vie devienne un remède pour l'éternité.",
+      "sourceClass": "PRAYER_MEANING",
+      "primaryOwner": "AO.CARD.026",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG29",
+      "originalCueText": "`AO.SM.C0259`",
+      "originalFrenchHeading": "ITE MISSA EST",
+      "sourceParaphraseFr": "La formule congédie l'assemblée à l'issue de l'action liturgique. Guéranger en propose une explication historique; ses indications anciennes sur les jours où l'on emploie d'autres formules ne remplacent pas les rubriques de 1960–1962.",
+      "sourceClass": "HISTORICAL_ETYMOLGY_WITH_1962_EXCEPTION_GATE",
+      "primaryOwner": "AO.CARD.028",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    },
+    {
+      "sourceId": "FRG30",
+      "originalCueText": "`AO.SM.C0269`",
+      "originalFrenchHeading": "DERNIER ÉVANGILE",
+      "sourceParaphraseFr": "La proclamation du Prologue de saint Jean rappelle le mystère du Verbe incarné. Son adoption comme dernier Évangile relève d'une histoire dévotionnelle; ses emplois et omissions sont réglés en 1962, non par l'usage décrit au XIXe siècle.",
+      "sourceClass": "HISTORICAL_DEVOTION_AND_1962_EXCEPTION_GATE",
+      "primaryOwner": "AO.CARD.030",
+      "secondOwner": null,
+      "originalGuérangerText": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "textWitness": "FRENCH_RESEARCH_PARAPHRASE_OF_1885_CONFERENCE_NOTES",
+      "publicApproved": false
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "schema": "AO_MYSTERY_MASS_EIGHT_LESSON_BILINGUAL_SYNTHESIS_V1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_BILINGUAL_COURSE_SYNTHESIS_NOT_PUBLISHED",
+  "owner": "learn.mass",
+  "baseline": "data/learn/mass-formation-campion.v1.json",
+  "sections": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
+  "recordCount": 8,
+  "stagesRemainExisting": true,
+  "noParallelCourse": true,
+  "noChangesToMassRuntime": true,
+  "notes": [
+    "Two/three substantive paragraphs per lesson extend the already-present 24 claims, not eight replacement modules.",
+    "Each paragraph has one or more direct original source hyperlinks in both French and English.",
+    "Section links point to canonical existing source-first owner; the same prayer explanation is not duplicated in lesson and LIVE reader.",
+    "Each lesson remains subject to final doctrinal, rubrical, edition-specific, native-French and screen acceptance."
+  ],
+  "records": [
+    {
+      "stageId": "MF01",
+      "title": {
+        "en": "The shape of the Mass",
+        "fr": "La structure de la Messe"
+      },
+      "existingClaimIds": [
+        "MF01-C01",
+        "MF01-C02",
+        "MF01-C03"
+      ],
+      "synopsis": {
+        "en": "The Mass is one sacred action: the introductory preparation and readings lead to the offering, the Roman Canon, and Communion. The old names ‘Mass of the Catechumens’ and ‘Mass of the Faithful’ help us see its shape, but do not describe two different sacrifices.",
+        "fr": "La Messe est une seule action sacrée : la préparation et les lectures conduisent à l'offrande, au Canon romain et à la Communion. Les anciens noms « Messe des catéchumènes » et « Messe des fidèles » aident à en comprendre la structure, sans désigner deux sacrifices distincts."
+      },
+      "paragraphs": [
+        {
+          "en": "The Church begins with prayer and the word of God, then enters the sacrificial action, whose heart is Christ made present and offered sacramentally. Scripture, song and ceremony should therefore be read as parts of one act directed to the Father through Christ, rather than as a succession of unrelated devotions. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "L'Église commence par la prière et la Parole de Dieu, puis entre dans l'action sacrificielle dont le centre est le Christ rendu présent et offert sacramentellement. L'Écriture, le chant et le cérémonial s'éclairent ainsi mutuellement : ils forment un même culte adressé au Père par le Christ, et non une succession de dévotions sans lien. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        },
+        {
+          "en": "For a specific day, the Collect, readings, chants and Preface can change while the main Eucharistic structure remains. The purpose of studying these parts is not to recite everything the priest says in private, but to understand the Church's action and unite one's heart to it. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.newadvent.org/bible/psa042.htm).",
+          "fr": "Pour un jour donné, la Collecte, les lectures, les chants et la Préface peuvent changer tandis que la structure eucharistique demeure. Étudier ces parties ne signifie pas devoir réciter toutes les prières privées du prêtre ; il s'agit de comprendre l'action de l'Église et d'y unir son cœur. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.newadvent.org/bible/psa042.htm).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "psalm",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CARD.001",
+        "AO.CARD.010",
+        "AO.CANON.06"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF02",
+      "title": {
+        "en": "The body at prayer",
+        "fr": "Le corps en prière"
+      },
+      "existingClaimIds": [
+        "MF02-C01",
+        "MF02-C02",
+        "MF02-C03"
+      ],
+      "synopsis": {
+        "en": "The visible gestures of Mass serve prayer: signs of the Cross, bows, genuflections and elevations are made at particular moments by the minister whose rite prescribes them. Not every priestly gesture is something a lay person should imitate.",
+        "fr": "Les gestes visibles de la Messe servent la prière : signes de croix, inclinations, génuflexions et élévations sont accomplis aux moments prévus par le ministre auquel les rubriques les prescrivent. Tous les gestes du prêtre ne doivent pas être imités par le fidèle."
+      },
+      "paragraphs": [
+        {
+          "en": "The traditional gestures of the faithful include standing, kneeling and sitting, but these may reflect local congregational customs rather than the celebrant's own prescriptions. Their purpose is outward reverence joined to inward attention, never choreography detached from devotion. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "Les fidèles se tiennent debout, à genoux ou assis selon la célébration et les usages légitimes, lesquels ne sont pas identiques aux rubriques du célébrant. Leur finalité est le respect extérieur uni à l'attention intérieure, non une chorégraphie séparée de la dévotion. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        },
+        {
+          "en": "During silent prayers one may follow a missal, adore, listen to a chant or pray with the intention of the priest. These are forms of participation, not evidence that the congregation must hear or pronounce every priestly word. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Pendant les prières silencieuses, on peut suivre son missel, adorer, écouter un chant ou prier aux intentions du prêtre. Ce sont des formes de participation, sans que l'assemblée soit tenue d'entendre ni de prononcer chaque parole sacerdotale. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CARD.001",
+        "AO.CARD.009",
+        "AO.CANON.06"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF03",
+      "title": {
+        "en": "The Offertory and your offering",
+        "fr": "L’Offertoire et votre offrande"
+      },
+      "existingClaimIds": [
+        "MF03-C01",
+        "MF03-C02",
+        "MF03-C03"
+      ],
+      "synopsis": {
+        "en": "At the Offertory the bread and wine are prepared for the Eucharistic Sacrifice, while the faithful are invited to offer their intentions and lives with Christ. These two offerings are intimately related but not identical: the consecrating act belongs to the priest.",
+        "fr": "À l'Offertoire, le pain et le vin sont préparés pour le Sacrifice eucharistique, tandis que les fidèles sont invités à offrir leurs intentions et leur vie avec le Christ. Ces deux offrandes sont étroitement liées sans être identiques : l'acte de consécration appartient au prêtre."
+      },
+      "paragraphs": [
+        {
+          "en": "In Orate fratres, ‘my sacrifice and yours’ names this participation with a real distinction of roles. Pius XII explains that the faithful offer through the hands of the priest by uniting their interior disposition and self-offering to the sacrificial action, without exercising the ordained ministry. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Further source](https://www.newadvent.org/bible/1pe002.htm).",
+          "fr": "Dans l'Orate fratres, « mon sacrifice et le vôtre » nomme cette participation dans la distinction réelle des fonctions. Pie XII enseigne que les fidèles offrent par les mains du prêtre, en joignant leurs dispositions intérieures et le don d'eux-mêmes à l'action sacramentelle, sans exercer le ministère ordonné. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Autre source](https://www.newadvent.org/bible/1pe002.htm).",
+          "sourceKinds": [
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            },
+            {
+              "id": "peter",
+              "url": "https://www.newadvent.org/bible/1pe002.htm"
+            }
+          ]
+        },
+        {
+          "en": "The private work, grief, gratitude and petitions one brings to the altar acquire devotional meaning through this union with Christ. Romans 12:1 calls believers to offer their bodies as a living sacrifice; it illuminates the faithful's spiritual offering, rather than supplying the text of the Offertory prayer. [Source](https://www.newadvent.org/bible/rom012.htm) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "Le travail, les peines, la reconnaissance et les demandes présentés à l'autel acquièrent ainsi un sens spirituel par l'union au Christ. Rm 12,1 invite à offrir son corps en sacrifice vivant : cette parole éclaire l'offrande des fidèles, sans constituer le texte liturgique de l'Offertoire. [Source](https://www.newadvent.org/bible/rom012.htm) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "bibleCor",
+              "url": "https://www.newadvent.org/bible/rom012.htm"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CARD.010",
+        "AO.CARD.011"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF04",
+      "title": {
+        "en": "Inside the Roman Canon",
+        "fr": "Au cœur du Canon romain"
+      },
+      "existingClaimIds": [
+        "MF04-C01",
+        "MF04-C02",
+        "MF04-C03"
+      ],
+      "synopsis": {
+        "en": "The silent Roman Canon is not an interval without worship. The priest asks God to receive the sacrifice, prays for the Church and the living, invokes communion with the saints, and approaches the Consecration.",
+        "fr": "Le Canon romain silencieux n'est pas une interruption du culte. Le prêtre demande à Dieu d'agréer le Sacrifice, prie pour l'Église et les vivants, invoque la communion des saints, puis s'approche de la Consécration."
+      },
+      "paragraphs": [
+        {
+          "en": "After the Consecration, the same Canon recalls the Passion, Resurrection and Ascension, names Abel, Abraham and Melchisedech, asks heavenly blessings, commends the dead and ends in the doxology. Each of these prayers has its own place; together they express one great priestly offering. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Après la Consécration, le même Canon rappelle la Passion, la Résurrection et l'Ascension, nomme Abel, Abraham et Melchisédech, implore les bénédictions du ciel, recommande les défunts et s'achève par la doxologie. Chaque prière garde sa place dans une unique et grande offrande sacerdotale. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        },
+        {
+          "en": "Historical commentary must be dated: Lanslots and Guéranger wrote before St Joseph was introduced into the Communicantes in late 1962. Such differences should deepen historical understanding, never alter the prayer actually prescribed for the liturgy followed. [Source](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Les commentaires anciens doivent être datés : Lanslots et Guéranger ont écrit avant l'introduction de saint Joseph dans le Communicantes à la fin de 1962. Ces différences éclairent l'histoire, mais ne changent jamais la prière effectivement prescrite dans le rite suivi. [Source](https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "joseph",
+              "url": "https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CANON.01",
+        "AO.CANON.03",
+        "AO.CANON.11"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF05",
+      "title": {
+        "en": "What changes at the Consecration",
+        "fr": "Ce qui change à la Consécration"
+      },
+      "existingClaimIds": [
+        "MF05-C01",
+        "MF05-C02",
+        "MF05-C03"
+      ],
+      "synopsis": {
+        "en": "At the Consecration, the substance of bread becomes Christ's Body, and the substance of wine becomes his Blood, while the appearances of bread and wine remain. This is the Church's teaching on transubstantiation, not merely a symbol of the Lord's absence or a theatrical recollection of the Last Supper.",
+        "fr": "À la Consécration, la substance du pain devient le Corps du Christ et celle du vin son Sang, tandis que demeurent les apparences du pain et du vin. C'est l'enseignement de l'Église sur la transsubstantiation, non un simple symbole d'un Seigneur absent ou une représentation théâtrale de la Cène."
+      },
+      "paragraphs": [
+        {
+          "en": "The two separate sacramental consecrations signify the sacrifice and death of Christ, yet the risen Christ is wholly present under either consecrated species. He is not divided, killed anew or made present only when the Host is raised for adoration. [Source](https://www.newadvent.org/summa/4075.htm) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "Les deux consécrations sacramentelles distinctes signifient le Sacrifice et la mort du Christ, mais le Christ ressuscité est tout entier présent sous chacune des espèces consacrées. Il n'est ni divisé ni immolé de nouveau, et sa présence ne commence pas seulement quand l'Hostie est élevée à l'adoration. [Source](https://www.newadvent.org/summa/4075.htm) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "thomas",
+              "url": "https://www.newadvent.org/summa/4075.htm"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        },
+        {
+          "en": "The priest's first genuflection after the words of Consecration recognizes a presence that is already real. Elevations call for adoration: they are not themselves an additional sacramental Consecration. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.newadvent.org/summa/4075.htm).",
+          "fr": "La première génuflexion du prêtre après les paroles consécratoires reconnaît une présence déjà réelle. Les élévations invitent à l'adoration : elles ne constituent pas une Consécration sacramentelle supplémentaire. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.newadvent.org/summa/4075.htm).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "thomas",
+              "url": "https://www.newadvent.org/summa/4075.htm"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF06",
+      "title": {
+        "en": "Is the Mass another Calvary?",
+        "fr": "La Messe est-elle un autre Calvaire ?"
+      },
+      "existingClaimIds": [
+        "MF06-C01",
+        "MF06-C02",
+        "MF06-C03"
+      ],
+      "synopsis": {
+        "en": "The Mass does not repeat the bloody death of Christ. The Church offers the same divine Victim sacramentally and unbloodily, drawing upon the once-for-all Sacrifice of Calvary. The priest acts in Christ's person, while the faithful truly unite themselves to the offering.",
+        "fr": "La Messe ne répète pas la mort sanglante du Christ. L'Église offre sacramentellement et de manière non sanglante la même Victime divine, en vertu de l'unique Sacrifice du Calvaire. Le prêtre agit dans la personne du Christ, tandis que les fidèles s'unissent réellement à l'offrande."
+      },
+      "paragraphs": [
+        {
+          "en": "The Canon recalls sacrifices that Scripture presents as pleasing to God: Abel's gift, Abraham's obedient willingness to offer Isaac and Melchisedech's bread and wine. They illuminate Christ's sacrifice by typology, without making the Old Testament actions historically identical to every gesture of the Roman priest. [Source](https://www.catholicculture.org/culture/library/view.cfm?recnum=5369) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Le Canon rappelle les sacrifices agréables à Dieu dont parle l'Écriture : l'offrande d'Abel, l'obéissance d'Abraham prêt à offrir Isaac, et le pain et le vin de Melchisédech. Ils éclairent le Sacrifice du Christ comme figures, sans faire des gestes de l'Ancien Testament des précédents historiquement identiques à chaque geste du prêtre romain. [Source](https://www.catholicculture.org/culture/library/view.cfm?recnum=5369) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "tr22",
+              "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5369"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        },
+        {
+          "en": "Sacrifice and Communion are inseparable in meaning, but should not be confused. The celebrant's Communion belongs to the integrity of Mass, whereas the faithful may participate in its sacrifice without themselves receiving Communion that day. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Further source](https://www.newadvent.org/bible/1co011.htm).",
+          "fr": "Sacrifice et Communion sont inséparables par leur sens, sans pour autant se confondre. La Communion du célébrant appartient à l'intégrité de la Messe ; les fidèles peuvent participer au Sacrifice sans nécessairement communier ce jour-là. [Source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html) · [Autre source](https://www.newadvent.org/bible/1co011.htm).",
+          "sourceKinds": [
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            },
+            {
+              "id": "paul",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CANON.09",
+        "AO.CARD.023"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF07",
+      "title": {
+        "en": "Why the priest must receive",
+        "fr": "Pourquoi le prêtre doit communier"
+      },
+      "existingClaimIds": [
+        "MF07-C01",
+        "MF07-C02",
+        "MF07-C03"
+      ],
+      "synopsis": {
+        "en": "In receiving Holy Communion, the priest completes his sacramental participation in the sacrifice he has offered. The faithful who communicate share in the same living Christ, but their reception is not the act that makes the Mass a Mass.",
+        "fr": "En recevant la Sainte Communion, le prêtre achève sa participation sacramentelle au Sacrifice qu'il a offert. Les fidèles qui communient reçoivent le même Christ vivant ; pourtant leur réception n'est pas l'acte qui constitue la Messe comme telle."
+      },
+      "paragraphs": [
+        {
+          "en": "The priest's private preparatory prayers ask for peace, freedom from sin and worthy reception. The separate preparation of the faithful is not merely a repetition of all those prayers; it calls for faith, humility, contrition and reverence. Saint Paul warns against receiving the Eucharist unworthily. [Source](https://www.newadvent.org/bible/1co011.htm) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "Les prières privées du prêtre demandent la paix, la délivrance du péché et une communion digne. La préparation distincte des fidèles n'est pas simplement la répétition de toutes ces prières : elle exige la foi, l'humilité, la contrition et le respect. Saint Paul met en garde contre la réception indigne de l'Eucharistie. [Source](https://www.newadvent.org/bible/1co011.htm) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "paul",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        },
+        {
+          "en": "The centurion's words, Domine, non sum dignus, are said by the priest before his Communion and, in a separate place, by the faithful when they receive. The optional older or local second Confiteor must not be mistaken for a universal rule of the 1962 Mass. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Le Domine, non sum dignus du centurion est prononcé par le prêtre avant sa Communion et, à un autre moment, par les fidèles lorsqu'ils communient. Le second Confiteor, ancien ou propre à certains usages locaux, ne doit pas être présenté comme une règle universelle de la Messe de 1962. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    },
+    {
+      "stageId": "MF08",
+      "title": {
+        "en": "Thanksgiving and being sent",
+        "fr": "Action de grâces et envoi"
+      },
+      "existingClaimIds": [
+        "MF08-C01",
+        "MF08-C02",
+        "MF08-C03"
+      ],
+      "synopsis": {
+        "en": "The Postcommunion is the Church's public thanksgiving and petition that the sacrament bear fruit. Personal thanksgiving afterward continues this response in the heart: gratitude ought to shape one's conduct, not end at the church door.",
+        "fr": "La Postcommunion est l'action de grâces publique de l'Église et sa demande que le Sacrement porte du fruit. L'action de grâces personnelle prolonge cette réponse dans le cœur : la reconnaissance doit aussi transformer la conduite et ne pas s'arrêter au seuil de l'église."
+      },
+      "paragraphs": [
+        {
+          "en": "The prescribed dismissal and final rites depend on the kind of Mass. At some Masses the blessing or the Last Gospel is omitted or another liturgical action follows. The content of the day must determine the conclusion; it is not sound to show the same sequence and words on every occasion. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Further source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "fr": "Le renvoi et les rites de conclusion dépendent du genre de Messe. La bénédiction ou le Dernier Évangile peuvent être omis et une autre action liturgique peut suivre. Le rite propre au jour commande donc la conclusion : il ne serait pas correct de présenter toujours la même suite de gestes et de paroles. [Source](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) · [Autre source](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+          "sourceKinds": [
+            {
+              "id": "missal",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+            },
+            {
+              "id": "gueranger",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/"
+            }
+          ]
+        },
+        {
+          "en": "The fruit of worship becomes visible in fidelity to daily duties, mercy and charity. Saint Paul's exhortation to do all things in the name of the Lord is a practical application, not an alternate rubrical instruction for the final blessing. [Source](https://www.newadvent.org/bible/col003.htm) · [Further source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "fr": "Le fruit du culte devient visible dans la fidélité aux devoirs quotidiens, la miséricorde et la charité. L'exhortation de saint Paul à tout accomplir au nom du Seigneur est une application pratique, non une nouvelle rubrique pour la bénédiction finale. [Source](https://www.newadvent.org/bible/col003.htm) · [Autre source](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).",
+          "sourceKinds": [
+            {
+              "id": "col",
+              "url": "https://www.newadvent.org/bible/col003.htm"
+            },
+            {
+              "id": "mediator",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            }
+          ]
+        }
+      ],
+      "linksToExistingSections": [
+        "AO.CARD.027",
+        "AO.CARD.028",
+        "AO.CARD.029",
+        "AO.CARD.030"
+      ],
+      "provenance": "Extension of existing 24 sourced Campion baseline claims, coordinated with Mass–Bible and source-critical research.",
+      "editorialState": "BILINGUAL_RESEARCH_MANUSCRIPT_NEEDS_FINAL_SOURCE_AND_LANGUAGE_APPROVAL",
+      "publicationApproved": false
+    }
+  ]
+}

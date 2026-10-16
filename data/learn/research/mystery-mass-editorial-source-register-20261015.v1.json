@@ -1,0 +1,2966 @@
+{
+  "schema": "AO_MYSTERY_MASS_EDITORIAL_SOURCE_REGISTER_V1",
+  "preparedOn": "2026-10-15",
+  "contentIdentity": "SOURCE_POINTER_INDEX_ONLY_NOT_ANOTHER_AUTHOR_CATALOGUE",
+  "ownerOfRecord": "research/mystery-mass-editorial-consolidation-20261014 PR #1193",
+  "sourceManuscript": "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json",
+  "sourceInventory": "data/learn/research/mystery-mass-canonical-39-owner-inventory-20261014.v1.json",
+  "referenceParserOwner": "Separate canonical source parser; this index points to source IDs, never creates new work records.",
+  "countingRules": {
+    "chapters": 8,
+    "canonicalExplanationOwners": 39,
+    "distinctBilingualStudyDrafts": 44,
+    "sourceReviewApprovalsGranted": 0,
+    "initialGapFlagsClassified": 325,
+    "liveMassCardModel": "65–67, not touched"
+  },
+  "reviewMode": "EN/FR existing manuscripts for human review, not doctrinal certification or publication",
+  "chapters": [
+    {
+      "id": "MF01",
+      "title": {
+        "en": "The shape of the Mass",
+        "fr": "La structure de la Messe"
+      },
+      "description": {
+        "en": "The traditional Roman Mass moves from preparation and instruction into the sacrificial action and Communion.",
+        "fr": "La Messe romaine traditionnelle conduit de la préparation et de l’instruction à l’action sacrificielle et à la Communion."
+      },
+      "ownerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002",
+        "AO.CARD.003",
+        "AO.CARD.004",
+        "AO.CARD.005",
+        "AO.CARD.006",
+        "AO.CARD.007",
+        "AO.CARD.008",
+        "AO.CARD.009"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF02",
+      "title": {
+        "en": "The body at prayer",
+        "fr": "Le corps en prière"
+      },
+      "description": {
+        "en": "The ceremonies make the Church’s prayer visible, but the faithful do not simply copy every priestly rubric.",
+        "fr": "Les cérémonies rendent visible la prière de l’Église, mais les fidèles ne copient pas simplement chaque rubrique du prêtre."
+      },
+      "ownerIds": [],
+      "kind": "CROSS_CUTTING_GESTURE_CHAPTER",
+      "note": "Cross-cutting formation chapter, not a separate 40th explanation owner."
+    },
+    {
+      "id": "MF03",
+      "title": {
+        "en": "The Offertory and your offering",
+        "fr": "L’Offertoire et votre offrande"
+      },
+      "description": {
+        "en": "The priest performs the sacramental offering; the faithful truly participate by uniting their interior oblation to Christ and the priestly offering.",
+        "fr": "Le prêtre accomplit l’offrande sacramentelle ; les fidèles participent réellement en unissant leur offrande intérieure au Christ et à l’offrande sacerdotale."
+      },
+      "ownerIds": [
+        "AO.CARD.010",
+        "AO.CARD.011"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF04",
+      "title": {
+        "en": "Inside the Roman Canon",
+        "fr": "Au cœur du Canon romain"
+      },
+      "description": {
+        "en": "The Canon is a tightly ordered prayer of offering and intercession embracing the whole Church.",
+        "fr": "Le Canon est une prière ordonnée d’offrande et d’intercession qui embrasse toute l’Église."
+      },
+      "ownerIds": [
+        "AO.CARD.012",
+        "AO.CARD.013",
+        "AO.CANON.01",
+        "AO.CANON.02",
+        "AO.CANON.03",
+        "AO.CANON.04",
+        "AO.CANON.05"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF05",
+      "title": {
+        "en": "What changes at the Consecration",
+        "fr": "Ce qui change à la Consécration"
+      },
+      "description": {
+        "en": "After the Consecration Christ is truly present under the appearances of bread and wine.",
+        "fr": "Après la Consécration, le Christ est réellement présent sous les apparences du pain et du vin."
+      },
+      "ownerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF06",
+      "title": {
+        "en": "Is the Mass another Calvary?",
+        "fr": "La Messe est-elle un autre Calvaire ?"
+      },
+      "description": {
+        "en": "The Victim is the same Christ; the manner of offering differs.",
+        "fr": "La Victime est le même Christ ; le mode d’offrande diffère."
+      },
+      "ownerIds": [
+        "AO.CANON.08",
+        "AO.CANON.09",
+        "AO.CANON.10",
+        "AO.CANON.11",
+        "AO.CANON.12",
+        "AO.CANON.13",
+        "AO.CANON.14"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF07",
+      "title": {
+        "en": "Why the priest must receive",
+        "fr": "Pourquoi le prêtre doit communier"
+      },
+      "description": {
+        "en": "The celebrant’s Communion belongs to the integrity of the Mass; Communion of the faithful is earnestly encouraged but is not what makes the sacrifice a Mass.",
+        "fr": "La Communion du célébrant appartient à l’intégrité de la Messe ; la Communion des fidèles est vivement recommandée mais n’est pas ce qui constitue le sacrifice comme Messe."
+      },
+      "ownerIds": [
+        "AO.CARD.019",
+        "AO.CARD.020",
+        "AO.CARD.021",
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    },
+    {
+      "id": "MF08",
+      "title": {
+        "en": "Thanksgiving and being sent",
+        "fr": "Action de grâces et envoi"
+      },
+      "description": {
+        "en": "The liturgy ends, but thanksgiving and Christian duty continue.",
+        "fr": "La liturgie s’achève, mais l’action de grâces et le devoir chrétien continuent."
+      },
+      "ownerIds": [
+        "AO.CARD.026",
+        "AO.CARD.027",
+        "AO.CARD.028",
+        "AO.CARD.029",
+        "AO.CARD.030"
+      ],
+      "kind": "MASS_SOURCE_SEQUENCE",
+      "note": null
+    }
+  ],
+  "owners": [
+    {
+      "ownerId": "AO.CARD.001",
+      "title": "Introit & Preparatory Prayers",
+      "stageId": "MF01",
+      "sequence": 1,
+      "draftIds": [
+        "MM-PRIMARY-MB02"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG01",
+        "FRG02",
+        "FRG03",
+        "FRG04"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-MYST-07",
+        "L1897-NP-001",
+        "L1897-NP-002",
+        "L1897-NP-003",
+        "L1897-NP-004",
+        "L1897-NP-005",
+        "L1897-NP-006"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0013",
+        "EV3-0015",
+        "EV3-0016",
+        "EV3-0017",
+        "EV3-0018",
+        "EV3-0019",
+        "EV3-0022",
+        "EV3-0023",
+        "EV3-0025",
+        "EV3-0026",
+        "EV3-0027",
+        "EV3-0028",
+        "EV3-0031",
+        "EV3-0032",
+        "EV3-0033",
+        "EV3-0035",
+        "EV3-0036",
+        "EV3-0037",
+        "EV3-0041",
+        "EV3-0044",
+        "EV3-0045",
+        "EV3-0050",
+        "EV3-0051",
+        "EV3-0052",
+        "EV3-0053",
+        "EV3-0054",
+        "EV3-0055",
+        "EV3-0058",
+        "EV3-0059",
+        "EV3-0060",
+        "RG60-001",
+        "RG60-002",
+        "RG60-003",
+        "RG60-004",
+        "RG60-005",
+        "RG60-006"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Psalm 42:4 (Vulgate; 43:4 in most modern numbering)",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Psalm 42:1–5 (Vulgate; 43:1–5 modern)",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa042.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Luke 18:13",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH02"
+      ],
+      "conditionalRules": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB02",
+          "sourceOwner": "AO.CARD.001",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/298.png",
+            "biblicalText": "https://www.newadvent.org/bible/psa042.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.002",
+      "title": "Kyrie",
+      "stageId": "MF01",
+      "sequence": 2,
+      "draftIds": [
+        "MM-NEW-01"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG05"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0062",
+        "EV3-0063",
+        "EV3-0064",
+        "EV3-0065",
+        "EV3-0068",
+        "EV3-0069",
+        "RG60-007"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Matthew 20:30–31",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat020.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH02"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-01",
+          "sourceOwner": "AO.CARD.002",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.002",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "EXISTING_MASS_BIBLE_DRAFT",
+              "url": "https://www.newadvent.org/bible/mat020.htm",
+              "draftId": "MB04"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.003",
+      "title": "Gloria",
+      "stageId": "MF01",
+      "sequence": 3,
+      "draftIds": [
+        "MM-PRIMARY-MB05"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG06"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0071",
+        "EV3-0072",
+        "EV3-0073",
+        "EV3-0074",
+        "EV3-0077",
+        "RG60-008"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Luke 2:14",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk002.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH14"
+      ],
+      "conditionalRules": [
+        "GLORIA_ONLY_WHEN_PRESCRIBED"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB05",
+          "sourceOwner": "AO.CARD.003",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/300.png",
+            "biblicalText": "https://www.newadvent.org/bible/luk002.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.004",
+      "title": "Collect",
+      "stageId": "MF01",
+      "sequence": 4,
+      "draftIds": [
+        "MM-NEW-02"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG07"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0079",
+        "EV3-0080",
+        "EV3-0083",
+        "EV3-0084"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-02",
+          "sourceOwner": "AO.CARD.004",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.004",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.005",
+      "title": "Epistle / Lesson",
+      "stageId": "MF01",
+      "sequence": 5,
+      "draftIds": [
+        "MM-NEW-03"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG08"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0086",
+        "EV3-0087",
+        "EV3-0088",
+        "EV3-0089",
+        "EV3-0090",
+        "EV3-0091",
+        "EV3-0094",
+        "EV3-0095",
+        "EV3-0096",
+        "RG60-009"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "1 Corinthians 12:2–11 (example: Pentecost X only)",
+          "relationship": "VARIABLE_PROPER_READING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co012.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-03",
+          "sourceOwner": "AO.CARD.005",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.005",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "EXISTING_MASS_BIBLE_DRAFT",
+              "url": "https://www.newadvent.org/bible/1co012.htm",
+              "draftId": "MB06"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.006",
+      "title": "Gradual · Alleluia / Tract / Sequence",
+      "stageId": "MF01",
+      "sequence": 6,
+      "draftIds": [
+        "MM-NEW-04"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0098",
+        "EV3-0099",
+        "EV3-0100",
+        "EV3-0101",
+        "EV3-0102",
+        "EV3-0103",
+        "EV3-0106",
+        "EV3-0108",
+        "EV3-0109",
+        "EV3-0112",
+        "EV3-0114",
+        "EV3-0117",
+        "RG60-010",
+        "RG60-011",
+        "RG60-012"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "PROPER_AND_SEASON_SPECIFIC_CHANT_OWNER"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-04",
+          "sourceOwner": "AO.CARD.006",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.006",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.007",
+      "title": "Holy Gospel",
+      "stageId": "MF01",
+      "sequence": 7,
+      "draftIds": [
+        "MM-PRIMARY-N01"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG09"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-MYST-01",
+        "L1897-OCR-018"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0119",
+        "EV3-0120",
+        "EV3-0121",
+        "EV3-0124",
+        "EV3-0126",
+        "EV3-0127",
+        "EV3-0130",
+        "EV3-0132",
+        "EV3-0133",
+        "EV3-0134",
+        "EV3-0135",
+        "EV3-0136",
+        "EV3-0137",
+        "EV3-0138",
+        "EV3-0139",
+        "EV3-0142",
+        "EV3-0143",
+        "EV3-0144",
+        "EV3-0145",
+        "EV3-0146",
+        "EV3-0148",
+        "EV3-0149",
+        "EV3-0150",
+        "EV3-0151",
+        "EV3-0154",
+        "RG60-013"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Luke 18:9–14 (example: Pentecost X only)",
+          "relationship": "VARIABLE_PROPER_READING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk018.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "VARIABLE_GOSPEL_AND_LITURGICAL_FORM_CHECK"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-N01",
+          "sourceOwner": "AO.CARD.007",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/301.png",
+            "biblicalText": "https://www.newadvent.org/bible/isa006.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.008",
+      "title": "Sermon / Homily",
+      "stageId": "MF01",
+      "sequence": 8,
+      "draftIds": [
+        "MM-NEW-05"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "HOMILY_CONTENT_NOT_FIXED_IN_THE_MISSAL"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-05",
+          "sourceOwner": "AO.CARD.008",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.008",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.009",
+      "title": "Credo",
+      "stageId": "MF01",
+      "sequence": 9,
+      "draftIds": [
+        "MM-PRIMARY-MB08"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG10"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0155",
+        "EV3-0157",
+        "EV3-0158",
+        "EV3-0159",
+        "EV3-0160",
+        "EV3-0161",
+        "EV3-0162",
+        "EV3-0165",
+        "EV3-0166",
+        "EV3-0168",
+        "EV3-0169",
+        "EV3-0170",
+        "EV3-0171",
+        "EV3-0174",
+        "RG60-014",
+        "RG60-015"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "John 1:14",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH13"
+      ],
+      "conditionalRules": [
+        "CREDO_ONLY_WHEN_PRESCRIBED"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB08",
+          "sourceOwner": "AO.CARD.009",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/302.png",
+            "biblicalText": "https://www.newadvent.org/bible/joh001.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.010",
+      "title": "Offertory",
+      "stageId": "MF03",
+      "sequence": 10,
+      "draftIds": [
+        "MM-PRIMARY-MB09",
+        "MM-PRIMARY-N03",
+        "MM-PRIMARY-N04"
+      ],
+      "originalAuthorIds": [
+        "GIHR-02",
+        "GIHR-06"
+      ],
+      "guerangerSourceIds": [
+        "FRG11",
+        "FRG12",
+        "FRG13",
+        "FRG14"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-MYST-02",
+        "L1897-MYST-06",
+        "L1897-NP-007",
+        "L1897-OCR-006",
+        "L1897-OCR-025",
+        "L1897-OCR-026"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0176",
+        "EV3-0177",
+        "EV3-0178",
+        "EV3-0179",
+        "EV3-0180",
+        "EV3-0181",
+        "EV3-0182",
+        "EV3-0185",
+        "EV3-0186",
+        "EV3-0187",
+        "EV3-0189",
+        "EV3-0190",
+        "EV3-0191",
+        "EV3-0192",
+        "EV3-0193",
+        "EV3-0194",
+        "EV3-0198",
+        "EV3-0199",
+        "EV3-0200",
+        "EV3-0201",
+        "EV3-0202",
+        "EV3-0206",
+        "EV3-0207",
+        "EV3-0208",
+        "EV3-0211",
+        "EV3-0213",
+        "EV3-0214",
+        "EV3-0215",
+        "EV3-0218",
+        "EV3-0220",
+        "EV3-0221",
+        "EV3-0222",
+        "EV3-0223",
+        "EV3-0224",
+        "EV3-0227",
+        "EV3-0229",
+        "EV3-0230",
+        "EV3-0233",
+        "EV3-0234",
+        "RG60-016",
+        "RG60-017",
+        "RG60-018",
+        "RG60-019"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Psalm 25:6–12 (Vulgate; 26:6–12 modern)",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/psa025.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH04",
+        "SH09",
+        "SH19"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB09",
+          "sourceOwner": "AO.CARD.010",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/303.png",
+            "biblicalText": "https://www.newadvent.org/bible/psa025.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        },
+        {
+          "studyId": "MM-PRIMARY-N03",
+          "sourceOwner": "AO.CARD.010",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/303.png",
+            "biblicalText": "https://www.newadvent.org/bible/dan003.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        },
+        {
+          "studyId": "MM-PRIMARY-N04",
+          "sourceOwner": "AO.CARD.010",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/303.png",
+            "biblicalText": "https://www.newadvent.org/bible/psa140.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/bible/apo008.htm",
+                "description": "Incense and the prayers of the saints in Revelation 8"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.011",
+      "title": "Orate fratres & Secret",
+      "stageId": "MF03",
+      "sequence": 11,
+      "draftIds": [
+        "MM-NEW-06"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG15",
+        "FRG16"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0236",
+        "EV3-0237",
+        "EV3-0238",
+        "EV3-0241",
+        "EV3-0242",
+        "EV3-0244",
+        "EV3-0245",
+        "EV3-0246",
+        "EV3-0249",
+        "RG60-020"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Romans 12:1",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/rom012.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH09",
+        "SH12",
+        "SH20"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-06",
+          "sourceOwner": "AO.CARD.011",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.011",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "EXISTING_MASS_BIBLE_DRAFT",
+              "url": "https://www.newadvent.org/bible/rom012.htm",
+              "draftId": "MB10"
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+              "theme": "Orate"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.012",
+      "title": "Preface",
+      "stageId": "MF04",
+      "sequence": 12,
+      "draftIds": [
+        "MM-NEW-07"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG17"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0250",
+        "EV3-0252",
+        "EV3-0253",
+        "EV3-0256",
+        "EV3-0257",
+        "EV3-0258",
+        "RG60-021"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH01"
+      ],
+      "conditionalRules": [
+        "PREFACE_VARIABLE_SOURCE_GATED"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-07",
+          "sourceOwner": "AO.CARD.012",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.012",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.013",
+      "title": "Sanctus · Benedictus",
+      "stageId": "MF04",
+      "sequence": 13,
+      "draftIds": [
+        "MM-PRIMARY-MB11"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [
+        "L1897-MYST-03",
+        "L1897-MYST-04",
+        "L1897-OCR-027",
+        "L1897-OCR-028",
+        "L1897-OCR-029"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0259",
+        "EV3-0261",
+        "EV3-0262",
+        "EV3-0263",
+        "EV3-0264",
+        "EV3-0265",
+        "EV3-0268",
+        "EV3-0269",
+        "EV3-0271",
+        "EV3-0272",
+        "RG60-022"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Isaiah 6:3",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/isa006.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Matthew 21:9",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat021.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH10",
+        "SH17",
+        "SH24"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB11",
+          "sourceOwner": "AO.CARD.013",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/376.png",
+            "biblicalText": "https://www.newadvent.org/bible/isa006.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "TRADITIONAL_DOCTRINAL_OR_SCRIPTURAL_CONTEXT",
+                "url": "https://www.newadvent.org/bible/apo004.htm"
+              },
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/bible/apo004.htm",
+                "description": "The distinct heavenly vision in Revelation 4"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.01",
+      "title": "Te igitur",
+      "stageId": "MF04",
+      "sequence": 14,
+      "draftIds": [
+        "MM-NEW-08"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG18"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-NP-008"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0275",
+        "EV3-0277",
+        "EV3-0278",
+        "EV3-0279",
+        "EV3-0280",
+        "EV3-0281",
+        "EV3-0282",
+        "EV3-0285",
+        "EV3-0286",
+        "RG60-023"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "1 Timothy 2:1–2",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1ti002.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH12",
+        "SH23"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-08",
+          "sourceOwner": "AO.CANON.01",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.014",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "EXISTING_MASS_BIBLE_DRAFT",
+              "url": "https://www.newadvent.org/bible/1ti002.htm",
+              "draftId": "MB13"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.02",
+      "title": "Memento, Domine — Living",
+      "stageId": "MF04",
+      "sequence": 15,
+      "draftIds": [
+        "MM-NEW-09"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG19",
+        "FRG31"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0288",
+        "EV3-0289",
+        "EV3-0290",
+        "EV3-0293"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-09",
+          "sourceOwner": "AO.CANON.02",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.014",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG31"
+              ]
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.03",
+      "title": "Communicantes",
+      "stageId": "MF04",
+      "sequence": 16,
+      "draftIds": [
+        "MM-NEW-10"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG32",
+        "FRG33"
+      ],
+      "lanslotsSourceIds": [
+        null
+      ],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH23"
+      ],
+      "conditionalRules": [
+        "ST_JOSEPH_INSERTION_EFFECTIVE_1962_12_08"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-10",
+          "sourceOwner": "AO.CANON.03",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.014",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG32",
+                "FRG33"
+              ]
+            },
+            {
+              "kind": "1962_SACRED_CONGREGATION_OF_RITES_NOVIS_HISCE_TEMPORIBUS_FRENCH_TRANSLATION",
+              "url": "https://www.icrsp.org/Pages/mois-saint-joseph.php?groupe=magistere&nom=decret",
+              "theme": "Communicantes",
+              "verifiedDocumentDate": "1962-11-13",
+              "verifiedEffectiveDate": "1962-12-08",
+              "appliesToSpecialCommunicantes": true
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.04",
+      "title": "Hanc igitur",
+      "stageId": "MF04",
+      "sequence": 17,
+      "draftIds": [
+        "MM-NEW-11"
+      ],
+      "originalAuthorIds": [
+        "TORMA-01"
+      ],
+      "guerangerSourceIds": [
+        "FRG20",
+        "FRG34"
+      ],
+      "lanslotsSourceIds": [
+        null
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0294",
+        "EV3-0296",
+        "EV3-0297",
+        "EV3-0298",
+        "EV3-0299",
+        "EV3-0302",
+        "EV3-0303"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH09",
+        "SH19"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-11",
+          "sourceOwner": "AO.CANON.04",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.014",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG34"
+              ]
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/lev008.htm",
+              "theme": "Hanc"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.05",
+      "title": "Quam oblationem",
+      "stageId": "MF04",
+      "sequence": 18,
+      "draftIds": [
+        "MM-NEW-12"
+      ],
+      "originalAuthorIds": [
+        "TORMA-02"
+      ],
+      "guerangerSourceIds": [
+        "FRG21",
+        "FRG35",
+        "FRG36",
+        "FRG37"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0305"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-12",
+          "sourceOwner": "AO.CANON.05",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.014",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG35",
+                "FRG36",
+                "FRG37"
+              ]
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/rom012.htm",
+              "theme": "Quam"
+            },
+            {
+              "kind": "CEREMONIAL_COMMENTARY_1962_NOT_PRIMARY_PRINTED_MISSAL",
+              "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+              "locator": "p. 262, Quam Oblationem",
+              "qualification": "Specific five-cross sequence corroborated; requires final original printed 1962 Missal collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.06",
+      "title": "Consecration of the Sacred Host",
+      "stageId": "MF05",
+      "sequence": 19,
+      "draftIds": [
+        "MM-PRIMARY-MB14"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG22",
+        "FRG38",
+        "FRG39"
+      ],
+      "lanslotsSourceIds": [
+        null,
+        null,
+        "L1897-NP-009",
+        "L1897-NP-010"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0308",
+        "EV3-0310",
+        "EV3-0311",
+        "EV3-0312",
+        "EV3-0313",
+        "EV3-0316",
+        "EV3-0317",
+        "EV3-0318",
+        "EV3-0320",
+        "EV3-0321",
+        "EV3-0324",
+        "EV3-0325",
+        "EV3-0327",
+        "EV3-0328",
+        "EV3-0329",
+        "EV3-0330",
+        "EV3-0331",
+        "EV3-0332",
+        "EV3-0333",
+        "EV3-0334",
+        "EV3-0335",
+        "EV3-0338",
+        "EV3-0339",
+        "EV3-0340",
+        "EV3-0341",
+        "EV3-0342",
+        "EV3-0344",
+        "EV3-0345",
+        "EV3-0348"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "1 Corinthians 11:23–26",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH11",
+        "SH18",
+        "SH20"
+      ],
+      "conditionalRules": [
+        "CONSECRATION_BREAD_NOT_COMBINED_WITH_CHALICE"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB14",
+          "sourceOwner": "AO.CANON.06",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/388.png",
+            "biblicalText": "https://www.newadvent.org/bible/1co011.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "TRADITIONAL_DOCTRINAL_OR_SCRIPTURAL_CONTEXT",
+                "url": "https://www.newadvent.org/summa/4083.htm"
+              },
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/summa/4083.htm",
+                "description": "Saint Thomas, the Eucharist as sacramental sacrifice"
+              },
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/summa/4075.htm",
+                "description": "St Thomas on transubstantiation"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.07",
+      "title": "Consecration of the Chalice",
+      "stageId": "MF05",
+      "sequence": 20,
+      "draftIds": [
+        "MM-PRIMARY-MB15"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [
+        null
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0349",
+        "EV3-0351",
+        "EV3-0352",
+        "EV3-0355",
+        "EV3-0356",
+        "EV3-0358",
+        "EV3-0361",
+        "EV3-0362",
+        "EV3-0364",
+        "EV3-0365",
+        "EV3-0366",
+        "EV3-0367",
+        "EV3-0368",
+        "EV3-0369",
+        "EV3-0370",
+        "EV3-0371",
+        "EV3-0374",
+        "EV3-0375",
+        "EV3-0376",
+        "EV3-0377",
+        "EV3-0378",
+        "EV3-0380",
+        "EV3-0383"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Luke 22:20",
+          "relationship": "NARRATIVE_SCRIPTURE_CONNECTION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/luk022.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH06",
+        "SH08",
+        "SH11",
+        "SH18",
+        "SH20"
+      ],
+      "conditionalRules": [
+        "CONSECRATION_CHALICE_NOT_COMBINED_WITH_BREAD"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB15",
+          "sourceOwner": "AO.CANON.07",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/389.png",
+            "biblicalText": "https://www.newadvent.org/bible/luk022.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/summa/4075.htm",
+                "description": "St Thomas on the Eucharistic presence"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.08",
+      "title": "Unde et memores",
+      "stageId": "MF06",
+      "sequence": 21,
+      "draftIds": [
+        "MM-PRIMARY-MB16"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG23",
+        "FRG40"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [
+        {
+          "reference": "1 Corinthians 11:26",
+          "relationship": "DOCTRINAL_SCRIPTURE_CONNECTION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/1co011.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH18",
+        "SH20",
+        "SH21",
+        "SH22"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB16",
+          "sourceOwner": "AO.CANON.08",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/390.png",
+            "biblicalText": "https://www.newadvent.org/bible/1co011.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "TRADITIONAL_DOCTRINAL_OR_SCRIPTURAL_CONTEXT",
+                "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)"
+              },
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://la.wikisource.org/wiki/De_sacramentis_(Ambrosius)",
+                "description": "Early Eucharistic witness, De sacramentis"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.09",
+      "title": "Supra quae",
+      "stageId": "MF06",
+      "sequence": 22,
+      "draftIds": [
+        "MM-PRIMARY-MB17",
+        "MM-PRIMARY-MB18",
+        "MM-PRIMARY-MB19"
+      ],
+      "originalAuthorIds": [
+        "GIHR-02",
+        "GIHR-03",
+        "GIHR-04",
+        "GIHR-05"
+      ],
+      "guerangerSourceIds": [
+        "FRG41",
+        "FRG42",
+        "FRG43"
+      ],
+      "lanslotsSourceIds": [
+        null,
+        "L1897-NP-011",
+        "L1897-NP-012",
+        "L1897-NP-013",
+        "L1897-OCR2-023"
+      ],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [
+        {
+          "reference": "Genesis 4:4",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen004.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Genesis 22:1–19",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen022.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Genesis 14:18–20",
+          "relationship": "EXPLICIT_BIBLICAL_FIGURE",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/gen014.htm"
+            }
+          ]
+        },
+        {
+          "reference": "Hebrews 7:1–17",
+          "relationship": "INTERPRETIVE_BIBLICAL_TYPOLOGY",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/heb007.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH03",
+        "SH04",
+        "SH05"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB17",
+          "sourceOwner": "AO.CANON.09",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/390.png",
+            "biblicalText": "https://www.newadvent.org/bible/gen004.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        },
+        {
+          "studyId": "MM-PRIMARY-MB18",
+          "sourceOwner": "AO.CANON.09",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/390.png",
+            "biblicalText": "https://www.newadvent.org/bible/gen022.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/bible/heb011.htm",
+                "description": "Hebrews 11, faith of Abraham"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        },
+        {
+          "studyId": "MM-PRIMARY-MB19",
+          "sourceOwner": "AO.CANON.09",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/391.png",
+            "biblicalText": "https://www.newadvent.org/bible/gen014.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "TRADITIONAL_DOCTRINAL_OR_SCRIPTURAL_CONTEXT",
+                "url": "https://www.newadvent.org/fathers/050662.htm"
+              },
+              {
+                "role": "DOCTRINAL_PATRISTIC_OR_SECONDARY_BIBLE_ORIGINAL",
+                "url": "https://www.newadvent.org/fathers/050662.htm",
+                "description": "Cyprian to Caecilius on the mixed chalice and Melchisedech"
+              },
+              {
+                "role": "SCRIPTURAL_INTERPRETATION_PRIESTHOOD_NOT_LITERAL_CANON_QUOTATION",
+                "url": "https://www.newadvent.org/bible/heb007.htm",
+                "description": "Hebrews 7, interpretation of Melchizedek's priesthood"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.10",
+      "title": "Supplices te rogamus",
+      "stageId": "MF06",
+      "sequence": 23,
+      "draftIds": [
+        "MM-NEW-13"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG44",
+        "FRG45"
+      ],
+      "lanslotsSourceIds": [
+        null
+      ],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH22",
+        "SH24"
+      ],
+      "conditionalRules": [
+        "SUPPLICES_ANGEL_IDENTITY_DISPUTED_NOT_DOGMA"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-13",
+          "sourceOwner": "AO.CANON.10",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.017",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG44",
+                "FRG45"
+              ]
+            },
+            {
+              "kind": "PRIMARY_SCHOLASTIC_DOCTRINAL_INTERPRETATION",
+              "url": "https://www.newadvent.org/summa/4083.htm#article4",
+              "locator": "Thomas Aquinas, ST III q.83 a.4 ad 9",
+              "qualification": "States both angelic and Christological interpretations; denies literal transport of Eucharistic species; not a normative 1962 rubric."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.11",
+      "title": "Memento etiam, Domine — Dead",
+      "stageId": "MF06",
+      "sequence": 24,
+      "draftIds": [
+        "MM-NEW-14"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG46",
+        "FRG47"
+      ],
+      "lanslotsSourceIds": [
+        null
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0392",
+        "EV3-0393",
+        "EV3-0394",
+        "EV3-0397"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-14",
+          "sourceOwner": "AO.CANON.11",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.017",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG46",
+                "FRG47"
+              ]
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/1th004.htm",
+              "theme": "Death"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.12",
+      "title": "Nobis quoque peccatoribus",
+      "stageId": "MF06",
+      "sequence": 25,
+      "draftIds": [
+        "MM-NEW-15"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG24",
+        "FRG48",
+        "FRG49"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0398",
+        "EV3-0400",
+        "EV3-0401",
+        "EV3-0402",
+        "EV3-0403",
+        "EV3-0404",
+        "EV3-0407",
+        "EV3-0408",
+        "RG60-024"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-15",
+          "sourceOwner": "AO.CANON.12",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.017",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG48",
+                "FRG49"
+              ]
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.13",
+      "title": "Per quem haec omnia",
+      "stageId": "MF06",
+      "sequence": 26,
+      "draftIds": [
+        "MM-NEW-16"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG50",
+        "FRG51"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH01"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-16",
+          "sourceOwner": "AO.CANON.13",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.017",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG50",
+                "FRG51"
+              ]
+            },
+            {
+              "kind": "HISTORICAL_SECONDARY_SOURCE_INTERPRETIVE_NOT_NORMATIVE",
+              "url": "https://www.newadvent.org/cathen/03255c.htm",
+              "locator": "Canon of the Mass, Per quem haec omnia",
+              "qualification": "The fruits/material-gifts explanation is a historical hypothesis, not a normative rubric or settled origin."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CANON.14",
+      "title": "Per ipsum · Minor Elevation",
+      "stageId": "MF06",
+      "sequence": 27,
+      "draftIds": [
+        "MM-NEW-17"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG25",
+        "FRG52",
+        "FRG53"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0410",
+        "EV3-0411",
+        "EV3-0412",
+        "EV3-0413",
+        "EV3-0414",
+        "EV3-0417",
+        "EV3-0418",
+        "RG60-025"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH01",
+        "SH24"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-17",
+          "sourceOwner": "AO.CANON.14",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.018",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG52",
+                "FRG53"
+              ]
+            },
+            {
+              "kind": "ROMAN_CANON_TEXT_AND_RUBRICS_PUBLISHED_TRANSCRIPTION",
+              "url": "https://en.wikipedia.org/wiki/Text_and_rubrics_of_the_Roman_Canon",
+              "qualification": "Provides canonical Latin text and described gestures; original printed 1962 page and exact action timing still require collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.019",
+      "title": "Pater noster",
+      "stageId": "MF07",
+      "sequence": 28,
+      "draftIds": [
+        "MM-PRIMARY-MB21"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG26",
+        "FRG54"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-NP-014"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0419",
+        "EV3-0421",
+        "EV3-0422",
+        "EV3-0423",
+        "EV3-0426",
+        "EV3-0427",
+        "EV3-0428",
+        "RG60-026"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Matthew 6:9–13 (cf. Luke 11:2–4); Matt 6:11 Latin variant",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            },
+            {
+              "sourceRole": "BIBLICAL_CONTEXT_LUKE_LATIN_WORDING",
+              "url": "https://www.newadvent.org/bible/luk011.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB21",
+          "sourceOwner": "AO.CARD.019",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/395.png",
+            "biblicalText": "https://www.newadvent.org/bible/mat006.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.020",
+      "title": "Libera nos · Fraction · Pax Domini",
+      "stageId": "MF07",
+      "sequence": 29,
+      "draftIds": [
+        "MM-NEW-18"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG27",
+        "FRG55",
+        "FRG56",
+        "FRG57"
+      ],
+      "lanslotsSourceIds": [
+        null,
+        "L1897-NP-015"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0430",
+        "EV3-0434",
+        "EV3-0435",
+        "EV3-0438",
+        "EV3-0439",
+        "EV3-0441",
+        "EV3-0442",
+        "EV3-0443",
+        "EV3-0446",
+        "EV3-0447"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Matthew 6:13",
+          "relationship": "SCRIPTURAL_PARALLEL_NOT_QUOTATION",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat006.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-18",
+          "sourceOwner": "AO.CARD.020",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.020",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG55",
+                "FRG56",
+                "FRG57"
+              ]
+            },
+            {
+              "kind": "EXISTING_MASS_BIBLE_DRAFT",
+              "url": "https://www.newadvent.org/bible/mat006.htm",
+              "draftId": "MB22"
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/joh014.htm",
+              "theme": "Peace"
+            },
+            {
+              "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+              "url": "https://1962ordo.today/1962-rubrics/",
+              "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.021",
+      "title": "Agnus Dei",
+      "stageId": "MF07",
+      "sequence": 30,
+      "draftIds": [
+        "MM-PRIMARY-MB23"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG58",
+        "FRG59"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-OCR-035"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0449",
+        "EV3-0450",
+        "EV3-0451",
+        "EV3-0452",
+        "EV3-0453",
+        "EV3-0454",
+        "EV3-0455",
+        "EV3-0458",
+        "EV3-0459",
+        "EV3-0460",
+        "RG60-027"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "John 1:29",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH06",
+        "SH11",
+        "SH15"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB23",
+          "sourceOwner": "AO.CARD.021",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/400.png",
+            "biblicalText": "https://www.newadvent.org/bible/joh001.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "RITUS_SERVANDUS_PRO_DEFUNCTIS_XIII_PUBLISHED_TRANSCRIPTION",
+                "url": "https://1962ordo.today/1962-rubrics/",
+                "exactIssue": "Agnus Dei in Mass for the Dead: no breast strike, dona eis requiem / requiem sempiternam"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.022",
+      "title": "Prayers before Communion",
+      "stageId": "MF07",
+      "sequence": 31,
+      "draftIds": [
+        "MM-PRIMARY-MB24",
+        "MM-PRIMARY-N05"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG60",
+        "FRG61",
+        "FRG62",
+        "FRG63"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-OCR-038"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0472",
+        "EV3-0476",
+        "EV3-0477",
+        "EV3-0478",
+        "EV3-0481",
+        "RG60-028"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Matthew 8:8",
+          "relationship": "SCRIPTURAL_WORDING_ADAPTED",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/mat008.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH16"
+      ],
+      "conditionalRules": [
+        "PRIEST_DOMINE_NON_SUM_DIGNUS_NOT_FAITHFUL_RESPONSE"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB24",
+          "sourceOwner": "AO.CARD.022",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/402.png",
+            "biblicalText": "https://www.newadvent.org/bible/mat008.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        },
+        {
+          "studyId": "MM-PRIMARY-N05",
+          "sourceOwner": "AO.CARD.022",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/400.png",
+            "biblicalText": "https://www.newadvent.org/bible/joh014.htm",
+            "otherOriginalAndTradition": [
+              {
+                "role": "RITUS_SERVANDUS_PRO_DEFUNCTIS_XIII_PUBLISHED_TRANSCRIPTION",
+                "url": "https://1962ordo.today/1962-rubrics/",
+                "exactIssue": "First pre-Communion prayer Domine Iesu Christe qui dixisti and Pax omitted at Requiem"
+              }
+            ]
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.023",
+      "title": "Communion of the Priest",
+      "stageId": "MF07",
+      "sequence": 32,
+      "draftIds": [
+        "MM-PRIMARY-MB25"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG64",
+        "FRG65"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-MYST-05",
+        "L1897-OCR-009"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0483",
+        "EV3-0484",
+        "EV3-0485",
+        "EV3-0488",
+        "EV3-0490",
+        "EV3-0491"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "Psalm 115:3–4 (Clementine Vulgate; Psalm 116:12–13 in modern numbering)",
+          "relationship": "DIRECT_SCRIPTURAL_WORDING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://vulgate.org/ot/psalms_115.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH07",
+        "SH16"
+      ],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB25",
+          "sourceOwner": "AO.CARD.023",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/403.png",
+            "biblicalText": "https://www.studybible.info/Clementine_Vulgate/Psalms%20115:3-8",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.024",
+      "title": "Ecce Agnus Dei & Faithful Preparation",
+      "stageId": "MF07",
+      "sequence": 33,
+      "draftIds": [
+        "MM-NEW-19"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0494",
+        "EV3-0496",
+        "EV3-0499",
+        "EV3-0500",
+        "EV3-0502",
+        "EV3-0503",
+        "EV3-0504",
+        "EV3-0505",
+        "EV3-0506",
+        "EV3-0509",
+        "EV3-0510",
+        "EV3-0512",
+        "EV3-0513",
+        "EV3-0514",
+        "EV3-0517",
+        "EV3-0518",
+        "EV3-0520",
+        "EV3-0521",
+        "EV3-0522",
+        "EV3-0523",
+        "EV3-0526",
+        "RG60-029",
+        "RG60-030",
+        "RG60-031"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH15",
+        "SH16"
+      ],
+      "conditionalRules": [
+        "SECOND_CONFITEOR_OLDER_OR_LOCAL_CUSTOM_NOT_UNIVERSALLY_MANDATORY"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-19",
+          "sourceOwner": "AO.CARD.024",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.024",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/1co011.htm",
+              "theme": "Communion"
+            },
+            {
+              "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+              "url": "https://1962ordo.today/1962-rubrics/",
+              "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.025",
+      "title": "Communion of the Faithful",
+      "stageId": "MF07",
+      "sequence": 34,
+      "draftIds": [
+        "MM-NEW-20"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [],
+      "lanslotsSourceIds": [
+        "L1897-NP-016"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0527",
+        "EV3-0529",
+        "EV3-0530",
+        "EV3-0531",
+        "EV3-0532",
+        "EV3-0533",
+        "EV3-0536",
+        "EV3-0537",
+        "EV3-0538",
+        "RG60-032"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [
+        "SH07",
+        "SH16",
+        "SH21",
+        "SH23",
+        "SH24"
+      ],
+      "conditionalRules": [
+        "FAITHFUL_COMMUNION_MAY_NOT_TAKE_PLACE"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-20",
+          "sourceOwner": "AO.CARD.025",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.025",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/1co011.htm",
+              "theme": "Communion"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.026",
+      "title": "Ablutions & Communion Antiphon",
+      "stageId": "MF08",
+      "sequence": 35,
+      "draftIds": [
+        "MM-NEW-21"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG28",
+        "FRG66",
+        "FRG67"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0539",
+        "EV3-0541",
+        "EV3-0542",
+        "EV3-0543",
+        "EV3-0544",
+        "EV3-0547",
+        "EV3-0548",
+        "EV3-0549",
+        "EV3-0550",
+        "EV3-0552",
+        "EV3-0555",
+        "RG60-033"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-21",
+          "sourceOwner": "AO.CARD.026",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.026",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG66",
+                "FRG67"
+              ]
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.027",
+      "title": "Postcommunion",
+      "stageId": "MF08",
+      "sequence": 36,
+      "draftIds": [
+        "MM-NEW-22"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG68"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0556",
+        "EV3-0558",
+        "EV3-0561",
+        "EV3-0562",
+        "EV3-0563",
+        "RG60-034"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-22",
+          "sourceOwner": "AO.CARD.027",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.027",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG68"
+              ]
+            },
+            {
+              "kind": "BIBLE_OR_MAGISTERIAL_PRIMARY_WITNESS",
+              "url": "https://www.newadvent.org/bible/col003.htm",
+              "theme": "Post"
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.028",
+      "title": "Dismissal",
+      "stageId": "MF08",
+      "sequence": 37,
+      "draftIds": [
+        "MM-NEW-23"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG29"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0564",
+        "EV3-0566",
+        "EV3-0567",
+        "EV3-0570",
+        "EV3-0571",
+        "EV3-0572",
+        "RG60-035"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "DISMISSAL_VARIANT_BY_MASS_TYPE_OR_FOLLOWING_ACTION"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-23",
+          "sourceOwner": "AO.CARD.028",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.028",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+              "url": "https://1962ordo.today/1962-rubrics/",
+              "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.029",
+      "title": "Placeat & Final Blessing",
+      "stageId": "MF08",
+      "sequence": 38,
+      "draftIds": [
+        "MM-NEW-24"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG69",
+        "FRG70"
+      ],
+      "lanslotsSourceIds": [],
+      "historicalEvidenceIds": [
+        "EV3-0573",
+        "EV3-0575",
+        "EV3-0576",
+        "EV3-0579",
+        "EV3-0580",
+        "EV3-0581",
+        "RG60-036"
+      ],
+      "scriptureRefs": [],
+      "biblicalSceneIds": [],
+      "conditionalRules": [
+        "FINAL_BLESSING_CAN_BE_SUPPRESSED_BY_SPECIAL_RITE_OR_REQUIEM"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-NEW-24",
+          "sourceOwner": "AO.CARD.029",
+          "originalSourceHierarchy": [
+            {
+              "kind": "TRANSLATED_1962_RITUS_SERVANDUS_RUBRICAL_WITNESS",
+              "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+              "sourceOwner": "AO.CARD.029",
+              "qualification": "Supports ceremonial description, not independently every theological claim or all exact Latin prayer words; selected textual or doctrinal claims require their own source."
+            },
+            {
+              "kind": "GUERANGER_ORIGINAL_FRENCH_EXPOSITION",
+              "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+              "guérangerIds": [
+                "FRG69",
+                "FRG70"
+              ]
+            },
+            {
+              "kind": "RITUS_SERVANDUS_1962_REQUIEM_CEREMONY_TRANSCRIPTION",
+              "url": "https://1962ordo.today/1962-rubrics/",
+              "qualification": "Read relevant in-Mass and Requiem conditions; secondary accessible transcription; original Latin primary witness still requires collation."
+            }
+          ],
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    },
+    {
+      "ownerId": "AO.CARD.030",
+      "title": "Last Gospel",
+      "stageId": "MF08",
+      "sequence": 39,
+      "draftIds": [
+        "MM-PRIMARY-MB26"
+      ],
+      "originalAuthorIds": [],
+      "guerangerSourceIds": [
+        "FRG30",
+        "FRG71"
+      ],
+      "lanslotsSourceIds": [
+        "L1897-OCR-043"
+      ],
+      "historicalEvidenceIds": [
+        "EV3-0582",
+        "EV3-0584",
+        "EV3-0585",
+        "EV3-0586",
+        "EV3-0587",
+        "EV3-0588",
+        "EV3-0589",
+        "EV3-0592",
+        "RG60-037"
+      ],
+      "scriptureRefs": [
+        {
+          "reference": "John 1:1–14",
+          "relationship": "VARIABLE_RITE_SCRIPTURE_READING",
+          "links": [
+            {
+              "sourceRole": "BIBLICAL_CONTEXT",
+              "url": "https://www.newadvent.org/bible/joh001.htm"
+            }
+          ]
+        }
+      ],
+      "biblicalSceneIds": [
+        "SH13"
+      ],
+      "conditionalRules": [
+        "LAST_GOSPEL_NOT_UNIVERSALLY_PRESENT"
+      ],
+      "publicationApproved": false,
+      "studySources": [
+        {
+          "studyId": "MM-PRIMARY-MB26",
+          "sourceOwner": "AO.CARD.030",
+          "originalSourceHierarchy": {
+            "normative1962": "https://gregobase.selapa.net/sources/42/409.png",
+            "biblicalText": "https://www.newadvent.org/bible/joh001.htm",
+            "otherOriginalAndTradition": []
+          },
+          "hasEnShort": true,
+          "hasEnDeep": true,
+          "hasFrShort": true,
+          "hasFrDeep": true,
+          "releaseApproved": false
+        }
+      ]
+    }
+  ],
+  "sourceClassRules": [
+    "Author or witness citation must point to an identified printed work/passage; avoid attributing synthetic prose to original authors.",
+    "OriginalSourceHierarchy.otherOriginalAndTradition are supplementary source leads; absence does not imply certified passage.",
+    "Scripture text and translation must be retrieved via the canonical Bible reader; manuscript links are not Bible-text copies.",
+    "Roman Catechism parallels the Nicene creed in some articles but Apostles-Creed exegesis is not a literal source for every Nicene phrase.",
+    "Normative rubrics and priest/faithful actions belong to the published 1962 Mass reader registry.",
+    "The original 435 micro-unit workbook, 139 verified historical claims, 955 evidence attachments are not copied here.",
+    "All 44 manuscript drafts remain unapproved and may require replacement by properly attributed original author excerpts; no fresh theological prose is authorized.",
+    "Existing prayer/article owners and conditional variants must be reused; do not create a second Mass reader or source parser."
+  ],
+  "activeEditorialHolds": [
+    {
+      "id": "CREED_23",
+      "scope": "AO.CARD.009",
+      "disposition": "23 source-index crosslinks assessed; do not falsely call all literal quotations of the Nicene text"
+    },
+    {
+      "id": "OFFERTORY_7",
+      "scope": "AO.CARD.001;AO.CARD.010;AO.CARD.022",
+      "disposition": "Seven prayer-group findings are source pointers, not seven new essays."
+    },
+    {
+      "id": "CANON_NOBIS_C0196",
+      "scope": "AO.CANON.12",
+      "disposition": "Ritus servandus IX.3 priest breast strike; existing review candidate AO.CANON.R62.050 requires register integration check."
+    },
+    {
+      "id": "MICRO_LATIN_BOUNDARIES",
+      "scope": "435-unit micro splitter",
+      "disposition": "Ten comma boundaries and two punctuation questions; do not alter Mass text without source comparison."
+    },
+    {
+      "id": "GIHR_GUERANGER_FACSIMILES",
+      "scope": "historical editions",
+      "disposition": "Five page-image checks remain unverified; metadata/OCR do not constitute visual verification."
+    }
+  ],
+  "draftPublicationApproved": false,
+  "rawReviewOutput": "Reviewer-owned exported JSON of 44 study decisions; never silently auto-import into publication."
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "AO_MYSTERY_MASS_PRIORITY_1_88_CLAUSE_TRIAGE_20261015_V1",
+  "date": "2026-10-15",
+  "sourceOfTruth": "Three existing 2026-10-15 user-owned Mass workbooks, consolidated master reference xlsx, original evidence attachments; do not duplicate these records.",
+  "originalMasterWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_2026-10-15.xlsx",
+  "newUserArtifact": "Ad_Orientem_Mass_Master_Reference_Matrix_P1_Reviewed_2026-10-15.xlsx",
+  "artifactStatus": "CREATED_AS_CHATGPT_CONVERSATION_ATTACHMENT_NOT_COMMITTED_TO_GITHUB",
+  "sheetCount": 25,
+  "newSheets": [
+    "22 P1 DASHBOARD",
+    "23 P1 TRIAGE",
+    "24 P1 GROUPS"
+  ],
+  "counts": {
+    "reviewedOriginalP1ClauseRows": 88,
+    "distinctSourceParentPrayers": 55,
+    "parentHistoricalEvidenceAttachedRows": 64,
+    "withoutParentHistoricalEvidenceRows": 24,
+    "withBoundaryOrFormValidationFlags": 29,
+    "microExactVerifiedClaimsOnTheseP1Rows": 0,
+    "byDisposition": {
+      "COLLATE_PARENT_EVIDENCE": 32,
+      "SCRIPTURE_CONTEXT": 18,
+      "CANON_STUDY_REUSE": 16,
+      "FORM_AND_SPEAKER_REUSE": 11,
+      "TARGETED_SOURCE_LOOKUP": 6,
+      "SHARED_LITURGICAL_FORMULA": 5
+    }
+  },
+  "targetedExistingSourceLookups": [
+    {
+      "parent": "AO.V3.0091",
+      "micro": "AO.V3.0091.U001",
+      "prayer": "Credo",
+      "need": "Authoritative Nicene Creed explanation of Creator of visible/invisible; link existing catechism rather than generating prose."
+    },
+    {
+      "parent": "AO.V3.0095",
+      "micro": "AO.V3.0095.U001",
+      "prayer": "Credo",
+      "need": "Clarify 'for us and our salvation' from established Christological exposition; preserve genuflection cue ownership."
+    },
+    {
+      "parent": "AO.V3.0113",
+      "micro": "AO.V3.0113.U001",
+      "prayer": "Deus qui humanae substantiae",
+      "need": "Source-led reading of water/wine prayer's participation in divinity."
+    },
+    {
+      "parent": "AO.V3.0113",
+      "micro": "AO.V3.0113.U002",
+      "prayer": "Deus qui humanae substantiae",
+      "need": "Source-led reading of Incarnation's participation in humanity; same parent, not new owner."
+    },
+    {
+      "parent": "AO.V3.0123",
+      "micro": "AO.V3.0123.U001",
+      "prayer": "Accendat in nobis",
+      "need": "Existing liturgical-source reading of incense charity petition and actor."
+    },
+    {
+      "parent": "AO.V3.0132",
+      "micro": "AO.V3.0132.U001",
+      "prayer": "Suscipiat Dominus",
+      "need": "Source-grounded explanation of congregational response and communal offering."
+    }
+  ],
+  "reviewFlags": [
+    {
+      "unit": "AO.V3.0122.U001",
+      "issue": "Ps 140, 2–4 appears in Latin extract; verify source vs metadata before production attachment; original text left unchanged."
+    },
+    {
+      "units": [
+        "AO.V3.0226.U003",
+        "AO.V3.0227.U003"
+      ],
+      "issue": "Latin segments begin with a comma at prior clause boundary; validate precise donor offsets; original text left unchanged."
+    },
+    {
+      "parentPrefix": [
+        "AO.V3.0235",
+        "AO.V3.0237",
+        "AO.V3.0238",
+        "AO.V3.0240"
+      ],
+      "issue": "Second Confiteor / Misereatur / Indulgentiam belongs to conditional historical/local profile; not universal 1962 Mass requirement."
+    },
+    {
+      "unitFamily": "Last Gospel",
+      "issue": "Actual Mass lifecycle must allow Last Gospel; source text belongs to John 1; conditional procession cases may omit it."
+    },
+    {
+      "unitFamily": "Priest gestures and signs of cross",
+      "issue": "Candidate Latin-token cues do not themselves certify rubrical actions; use existing R17 actor/cue registry."
+    }
+  ],
+  "hardRules": [
+    "P1 was originally a HEURISTIC lack of clause-specific commentary; it is NOT automatically a new editorial passage or a failed theological claim.",
+    "The attached 64/88 count concerns historical evidence on original parent paragraphs, never proves any historical author's position on a particular microphrase.",
+    "None of these 88 P1 clauses had an exact verified claim ID entered in the original P1 gap queue; candidate sibling parent claims remain distinct.",
+    "18 directly scriptural/referenced excerpts can be linked to the approved Scripture reader rather than duplicated in generated narrative.",
+    "Reuse existing Roman Canon 14 studies and 39 research owners/65–67 LIVE model. Preserve text and gesture source ledgers.",
+    "The 6 targeted lookups form 5 prayer-parent groups, NOT 6 independent new research modules.",
+    "Do not auto-populate author Scripture columns with citations inferred by the editor; only original author-attested references.",
+    "No app publishing, reader text mutation, source ID deletion, or source certification was performed."
+  ],
+  "next": "Review five source-lookup parent groups first; then phrase-match the 32 candidate inherited-evidence clauses using existing authors; route the other 50 to original Scripture/Canon/formula owners and validate exact cue and form conditions.",
+  "publication": "NOT_APPROVED"
+}

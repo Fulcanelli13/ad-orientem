@@ -1,0 +1,484 @@
+{
+  "schema": "AO_MYSTERY_MASS_24_BIBLICAL_FR_DRAFTS_V1",
+  "date": "2026-10-14",
+  "status": "FRENCH_FIRST_PASS_AUTHOR_GROUNDED_EDITORIAL_TRANSLATION_NOT_NATIVE_REVIEW",
+  "underlyingEnSource": "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json",
+  "sourceCriticalPolicy": "French prose follows source-led 24-scene English, while original Latin, Biblical variants and era-specific author arguments remain individually cited through original record IDs. No user-facing final text until independent Catholic liturgical/French editorial review.",
+  "counts": {
+    "scenes": 24,
+    "translatedTransitions": 24,
+    "nativeFrenchApproved": 0,
+    "artworksApprovedForMystery": 0
+  },
+  "drafts": [
+    {
+      "sceneId": "SH01",
+      "titleFr": "La création et l'offrande",
+      "narrativeFr": "Le problème n'est pas d'abord de savoir pourquoi l'homme a inventé le sacrifice, mais pourquoi la créature doit rendre un culte à son Créateur. Saint Alphonse distingue les fins traditionnelles du sacrifice — adoration, action de grâces, expiation et demande — ainsi que les actes qui constituent l'oblation. La Création fait comprendre l'adoration et la reconnaissance ; la Chute rendra nécessaire la réconciliation. L'Eucharistie ne se réduit pourtant pas à une forme supérieure des sacrifices anciens : c'est l'offrande du Christ lui-même, dans laquelle l'Église rend grâce et présente ses supplications au Père.",
+      "transitionFr": "La vocation au culte précède le péché. Mais, après la Chute, l'hommage de la créature devra aussi devenir supplication pour obtenir miséricorde.",
+      "sourceAlphonsusIds": [
+        "ALPX02",
+        "ALPX03"
+      ],
+      "sourceBiblePassages": [
+        "Genesis 1–2"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH02",
+      "titleFr": "La Chute et la promesse",
+      "narrativeFr": "Le péché introduit une contradiction dans le culte de l'homme : il demeure tenu d'honorer Dieu, mais ne peut plus s'approcher de lui comme si rien ne s'était passé. Le père Dujardin rapproche le commencement de la Messe de la perte d'innocence d'Adam. Il s'agit de sa méditation, non de l'origine historique des prières romaines. Le Confiteor exprime effectivement l'aveu des fautes ; le Kyrie implore la miséricorde. La Genèse montre pourquoi ces actes ont toute leur place dans l'histoire du salut, sans permettre d'affirmer que leurs gestes auraient été composés pour représenter la sortie du paradis.",
+      "transitionFr": "La première question laissée ouverte par la Chute est désormais celle de l'offrande agréable à Dieu : que vaut le sacrifice d'un homme blessé par le péché ?",
+      "sourceAlphonsusIds": [],
+      "sourceBiblePassages": [
+        "Genesis 3",
+        "Luke 18:13"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH03",
+      "titleFr": "Abel, la justice et le sang",
+      "narrativeFr": "Dieu porte un regard favorable sur Abel et son offrande. Le récit de la Genèse ne donne pas de formule rituelle expliquant cette préférence ; l'Épître aux Hébreux insiste sur la foi d'Abel. Gihr, lisant le récit à la lumière du Canon romain, développe le rapprochement entre le juste qui offre et le sang innocent qui crie vers Dieu. Il faut pourtant écarter sa conjecture supplémentaire d'un feu descendu du ciel : la Genèse ne raconte rien de tel. Lorsque le Supra quae nomme Abel après la consécration, la comparaison porte sur l'accueil divin de l'offrande, non sur une égalité entre l'offrande ancienne et le Christ.",
+      "transitionFr": "L'offrande du juste ouvre la question du sacrifice. Un personnage plus mystérieux permettra d'entrevoir un sacerdoce qui précède celui d'Israël.",
+      "sourceAlphonsusIds": [
+        "ALPX18"
+      ],
+      "sourceBiblePassages": [
+        "Genesis 4:1–16",
+        "Hebrews 11:4",
+        "Hebrews 12:24"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH04",
+      "titleFr": "Melchisédech, roi et prêtre",
+      "narrativeFr": "Le récit de la Genèse présente Melchisédech comme roi et prêtre du Dieu Très-Haut : il apporte du pain et du vin, puis bénit Abram. L'Épître aux Hébreux reprend ce bref épisode pour expliquer le sacerdoce accompli dans le Christ. Gihr, avec une longue tradition chrétienne, interprète le pain et le vin en termes sacrificiels. Cependant, la Genèse ne décrit ni consécration eucharistique ni immolation explicite de ces dons. La distinction permet de conserver toute la force de la figure biblique sans transformer le récit ancien en description du rite romain. Le Canon nommera Melchisédech avec Abel et Abraham.",
+      "transitionFr": "Dans l'ordre de la Genèse, la rencontre avec Melchisédech précède l'épreuve au cours de laquelle Abraham devra remettre à Dieu le fils de la promesse.",
+      "sourceAlphonsusIds": [
+        "ALPX08",
+        "ALPX18"
+      ],
+      "sourceBiblePassages": [
+        "Genesis 14:18–20",
+        "Psalm 109:4 (Vulgate)",
+        "Hebrews 7:1–17"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH05",
+      "titleFr": "Abraham et le fils promis",
+      "narrativeFr": "L'ordre de sacrifier Isaac met à l'épreuve la promesse même que Dieu a faite à Abraham : l'avenir de l'alliance semble reposer sur le fils qu'il doit abandonner. Mais Dieu arrête son geste ; Isaac n'est pas mis à mort. Gihr et saint Alphonse voient dans l'obéissance d'Abraham, dans le fils bien-aimé et dans le bois porté sur la montagne des figures du Christ. Le rapprochement tire précisément sa force de la différence entre les deux issues : Isaac est épargné, tandis que le Christ donne librement sa vie. Le Supra quae rappelle le sacrifice d'Abraham après que l'unique sacrifice du Sauveur a été rendu sacramentellement présent.",
+      "transitionFr": "L'épreuve d'un père et de son fils prépare un autre signe : la délivrance de tout un peuple par le sang de l'agneau pascal.",
+      "sourceAlphonsusIds": [
+        "ALPX18"
+      ],
+      "sourceBiblePassages": [
+        "Genesis 22:1–19",
+        "Romans 8:32",
+        "Hebrews 11:17–19"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH06",
+      "titleFr": "La Pâque et la délivrance",
+      "narrativeFr": "En Égypte, le sang de l'agneau marque les maisons épargnées par le jugement, et le repas prescrit accompagne le départ d'Israël. La Pâque unit donc une délivrance, un sacrifice et une mémoire confiée aux générations suivantes. Saint Alphonse compte l'agneau pascal parmi les figures de l'offrande du Christ. Ce n'est pas dire que l'Agnus Dei romain soit simplement une citation de l'Exode. Les Évangiles et saint Paul permettent le passage vers le sens chrétien : le véritable Agneau opère par son sang une délivrance qui dépasse la sortie d'Égypte et atteint l'esclavage du péché.",
+      "transitionFr": "Le peuple délivré doit encore traverser le désert. Il lui faut une nourriture qui lui permette de poursuivre sa route vers l'héritage promis.",
+      "sourceAlphonsusIds": [
+        "ALPX04"
+      ],
+      "sourceBiblePassages": [
+        "Exodus 12:1–28",
+        "1 Corinthians 5:7",
+        "John 19:33–36"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH07",
+      "titleFr": "La manne et le pain du ciel",
+      "narrativeFr": "La manne vient soutenir un peuple pèlerin qui ne saurait se nourrir par ses propres forces. Mais ceux qui en mangent demeurent mortels. Dans le discours du Pain de vie, le Christ oppose à cet aliment provisoire le don de sa propre chair pour la vie du monde. Le rapport entre les deux textes doit être établi par les paroles du Seigneur et par la doctrine catholique de l'Eucharistie : l'Exode ne décrit pas déjà une hostie consacrée. Cette étape prépare la compréhension de la communion sacramentelle, tout en préservant le sens historique du séjour d'Israël au désert.",
+      "transitionFr": "Après la nourriture du désert vient le sang de l'Alliance : la délivrance et la marche ne sont pas séparables d'une relation solennelle avec Dieu.",
+      "sourceAlphonsusIds": [],
+      "sourceBiblePassages": [
+        "Exodus 16",
+        "John 6:31–58"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH08",
+      "titleFr": "L'Alliance scellée dans le sang",
+      "narrativeFr": "Au Sinaï, le peuple accepte les paroles de l'Alliance, et Moïse en confirme solennellement l'engagement avec le sang sacrificiel. Jérémie annoncera cependant une Alliance nouvelle, inscrite dans les cœurs et liée au pardon des péchés. À la dernière Cène, le Christ parle de son Sang comme du Sang de cette nouvelle Alliance. Saint Alphonse relie la promesse prophétique à l'institution eucharistique et à l'accomplissement du sacrifice. La formule du calice dans le Missel romain de 1962 conserve son texte liturgique propre : il ne faut pas la remplacer par les mots d'un seul récit évangélique.",
+      "transitionFr": "L'Alliance comporte aussi un culte ordonné : un autel, un sanctuaire, des prêtres et des sacrifices déterminés.",
+      "sourceAlphonsusIds": [
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "Exodus 24:3–8",
+        "Jeremiah 31:31–34",
+        "Luke 22:20",
+        "Hebrews 9:15–22"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH09",
+      "titleFr": "Le sanctuaire et le sacerdoce",
+      "narrativeFr": "Le Tabernacle, puis le Temple, manifestent que la présence divine ne se traite jamais avec désinvolture. Le sacerdoce et les sacrifices de l'ancienne Loi ont leur dignité ; l'Épître aux Hébreux en explique aussi les limites devant le sacerdoce du Christ. Saint Alphonse reprend plusieurs figures lévitiques. D'autres commentateurs rapprochent les mains étendues du prêtre au Hanc igitur de l'imposition des mains sur une victime. Le rapprochement peut éclairer la méditation sans établir l'origine historique du geste romain. Dans le Lévitique, le bouc vivant du rite d'expiation est envoyé au désert : il n'est pas immolé.",
+      "transitionFr": "Le prophète admis devant le trône divin entendra des paroles que l'Église reprendra réellement dans sa propre prière.",
+      "sourceAlphonsusIds": [
+        "ALPX01",
+        "ALPX17"
+      ],
+      "sourceBiblePassages": [
+        "Exodus 25–30",
+        "Leviticus 16",
+        "Hebrews 7–10"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH10",
+      "titleFr": "La sainteté proclamée par Isaïe",
+      "narrativeFr": "La vision d'Isaïe met d'abord l'homme en présence de la sainteté du Seigneur. Les séraphins se voilent et proclament sa gloire. Le Sanctus reprend cette acclamation et lui joint la bénédiction adressée au Christ lors de son entrée à Jérusalem. Ces deux situations bibliques doivent rester distinctes : la prière romaine rassemble leurs paroles sans former la citation continue d'un seul récit. Cette adaptation liturgique mérite elle-même d'être contemplée, car elle unit la louange céleste et l'accueil du Seigneur qui vient. Le détail des mots et de leur histoire appartient à l'étude du Sanctus.",
+      "transitionFr": "Le prophète qui a vu la sainteté de Dieu parlera aussi du Serviteur souffrant : le salut passera par l'obéissance et la douleur de l'innocent.",
+      "sourceAlphonsusIds": [],
+      "sourceBiblePassages": [
+        "Isaiah 6:1–8",
+        "Revelation 4:8"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH11",
+      "titleFr": "Le Serviteur souffrant",
+      "narrativeFr": "Isaïe présente un Serviteur qui porte les fautes d'autrui et se livre sans répondre à la violence. Saint Alphonse rapproche cette prophétie des figures sacrificielles de l'ancienne Loi, puis se tourne vers l'Épître aux Hébreux pour en montrer l'accomplissement. Le sens chrétien n'est pas que le Christ aurait accompli simplement un sacrifice animal plus parfait selon les mêmes modalités matérielles : son obéissance personnelle et son offrande de lui-même dépassent les anciennes victimes. Il convient de lire d'abord le passage prophétique dans son contexte, puis d'examiner avec les Pères et la théologie de l'Église son accomplissement dans la Passion et dans la Messe.",
+      "transitionFr": "La nécessité d'un sacrifice définitif une fois reconnue, la prophétie annonce aussi une offrande pure rendue à Dieu parmi les nations.",
+      "sourceAlphonsusIds": [
+        "ALPX01",
+        "ALPX02"
+      ],
+      "sourceBiblePassages": [
+        "Isaiah 52:13–53:12",
+        "1 Peter 2:21–25"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH12",
+      "titleFr": "L'offrande pure annoncée",
+      "narrativeFr": "Chez Malachie, l'annonce d'une offrande pure offerte parmi les nations appartient d'abord à une dénonciation des sacrifices accomplis sans fidélité. La tradition chrétienne reconnaît dans l'universalité et la pureté de cette offrande une annonce du sacrifice eucharistique. Le Brun organise précisément son traité préliminaire autour de l'histoire des sacrifices et de leur accomplissement dans le Christ, avant d'exposer les cérémonies de la Messe. Il faut présenter ce cheminement comme une lecture théologique traditionnelle, et non comme si Malachie avait déjà décrit les signes de croix, les inclinations ou les paroles du Missel romain.",
+      "transitionFr": "La promesse va maintenant prendre chair : le Fils éternel reçoit la nature humaine dans laquelle il pourra s'offrir au Père.",
+      "sourceAlphonsusIds": [
+        "ALPX02"
+      ],
+      "sourceBiblePassages": [
+        "Malachi 1:11",
+        "Hebrews 10:1–18"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH13",
+      "titleFr": "L'Incarnation et la Victime préparée",
+      "narrativeFr": "À l'Annonciation, le Fils éternel de Dieu devient homme sans cesser d'être Dieu. Saint Alphonse explique l'Incarnation comme la préparation de Celui qui s'offrira librement : le corps assumé rend possible l'accomplissement humain de la volonté du Père, à la lumière de l'Épître aux Hébreux. Cela ne signifie pas que le sacrifice historique du Calvaire serait déjà consommé à Nazareth. Le Credo et le dernier Évangile confessent l'Incarnation à des endroits différents de l'ordre liturgique ; la chronologie biblique la rencontre, elle, au commencement de la vie terrestre du Sauveur. Cette dissymétrie est essentielle à nos deux parcours.",
+      "transitionFr": "La naissance du Verbe fait chair sera accueillie par une louange qui deviendra les premiers mots de l'hymne liturgique du Gloria.",
+      "sourceAlphonsusIds": [
+        "ALPX05",
+        "ALPX06"
+      ],
+      "sourceBiblePassages": [
+        "Luke 1:26–38",
+        "John 1:1–14",
+        "Hebrews 10:5–10"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH14",
+      "titleFr": "La Nativité et le Gloria",
+      "narrativeFr": "Le Gloria commence par l'acclamation que les bergers entendent à Bethléem. Saint Alphonse remarque l'origine évangélique de ces paroles, mais l'hymne qui suit est une prière développée par l'Église : elle n'est pas la transcription inchangée du chant des anges. La Nativité fournit donc à la Messe des mots bibliques effectivement repris, tandis que le texte liturgique les prolonge en adoration, action de grâces et supplication adressées à Dieu. Cette relation est plus solide que l'idée d'un geste sacerdotal qui représenterait matériellement l'attitude d'un berger. L'histoire du Gloria et ses omissions prescrites doivent être examinées dans le parcours descriptif.",
+      "transitionFr": "L'Enfant annoncé comme Sauveur sera publiquement désigné comme l'Agneau de Dieu, celui qui enlève les péchés du monde.",
+      "sourceAlphonsusIds": [
+        "ALPX12"
+      ],
+      "sourceBiblePassages": [
+        "Luke 2:1–20"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH15",
+      "titleFr": "Voici l'Agneau de Dieu",
+      "narrativeFr": "Le témoignage de saint Jean-Baptiste ne fait pas de l'agneau une simple image de douceur. Après les récits de la Pâque et les paroles des prophètes, ce nom désigne Jésus comme Celui par qui le péché est enlevé. L'Agnus Dei reprend les paroles du Précurseur, mais les développe en supplications de miséricorde et, ordinairement, de paix. Leur place avant la communion appartient à l'ordonnance liturgique. Leur sens théologique repose sur l'identité du Christ, immolé pour le salut du monde et désormais vivant. Les formes propres aux messes des défunts exigent une explication distincte.",
+      "transitionFr": "Celui que Jean désigne comme Agneau parlera bientôt d'un pain venu du ciel, autrement véritable que la nourriture passagère d'Israël.",
+      "sourceAlphonsusIds": [],
+      "sourceBiblePassages": [
+        "John 1:19–36"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH16",
+      "titleFr": "Le Pain de vie et l'humilité du centurion",
+      "narrativeFr": "Dans le sixième chapitre de saint Jean, le Christ annonce la nourriture qu'il donne pour la vie du monde. Il faut lire le discours dans son ensemble, y compris les objections et le départ de nombreux auditeurs. Il ne s'agit pas d'un petit manuel des gestes de la communion. Le rapprochement eucharistique demande l'étude du récit et de la doctrine sacramentelle. Une seconde correspondance provient du centurion de l'Évangile selon saint Matthieu : la liturgie adapte ses paroles sur la guérison d'un serviteur en confession personnelle d'indignité avant de recevoir le Christ. Ce n'est donc pas une citation inchangée du récit.",
+      "transitionFr": "L'entrée du Seigneur à Jérusalem ouvre le dernier mouvement de sa vie publique et conduit au mystère de son sacrifice.",
+      "sourceAlphonsusIds": [
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "John 6:25–59",
+        "Matthew 8:5–13"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH17",
+      "titleFr": "L'entrée à Jérusalem et le Benedictus",
+      "narrativeFr": "La foule acclame le Christ à son entrée à Jérusalem par la bénédiction adressée à Celui qui vient au nom du Seigneur. Dans la Messe, l'Église joint cette acclamation au Sanctus inspiré de la vision d'Isaïe. La juxtaposition est décisive : on accueille le Messie tout en s'unissant à l'adoration céleste. Il ne faut pourtant pas lire ces deux passages comme si Isaïe et la procession des Rameaux appartenaient au même épisode biblique. Leur union est liturgique ; le parcours chronologique garde leur séparation historique. L'étude du Sanctus explique comment et pourquoi les mots ont été associés.",
+      "transitionFr": "L'entrée dans la ville mène à l'institution de l'Eucharistie, anticipation sacramentelle de la Passion désormais proche.",
+      "sourceAlphonsusIds": [],
+      "sourceBiblePassages": [
+        "Matthew 21:1–11",
+        "Psalm 117:26 (Vulgate)"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH18",
+      "titleFr": "La dernière Cène et l'institution eucharistique",
+      "narrativeFr": "Les Évangiles et saint Paul attestent que le Christ donne le pain et le vin comme son Corps et son Sang, puis confie aux apôtres la mémoire sacramentelle de son offrande. Saint Alphonse examine la Cène dans son rapport à la Croix et à la participation eucharistique de l'Église. Il répond aussi à un auteur français anonyme dont l'explication place autrement l'accomplissement de certains actes sacrificiels. Il faut conserver cette différence d'interprétation plutôt que fabriquer une unanimité. L'institution anticipe le Calvaire et lui demeure inséparable ; elle ne multiplie pas pour autant les sacrifices historiques de Jésus-Christ.",
+      "transitionFr": "L'offrande du Christ est libre. Cette volonté apparaît avec une gravité particulière lorsqu'il accepte la Passion dans le jardin de Gethsémani.",
+      "sourceAlphonsusIds": [
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "Matthew 26:26–29",
+        "Mark 14:22–25",
+        "Luke 22:14–20",
+        "1 Corinthians 11:23–26"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH19",
+      "titleFr": "Gethsémani et l'obéissance",
+      "narrativeFr": "À Gethsémani, Jésus-Christ accepte librement la volonté du Père. L'efficacité de son sacrifice ne vient donc pas seulement des souffrances que d'autres lui infligent : elle est inséparable de son obéissance et de son amour. Saint Alphonse suit la finalité sacrificielle de l'Incarnation jusqu'à cet assentiment et à son accomplissement. Les méthodes de méditation de la Passion proposées par des auteurs spirituels rattachent parfois certains gestes de la Messe à l'agonie au jardin. Ces rapprochements peuvent nourrir la prière, mais ils doivent conserver leur auteur, demeurer facultatifs et ne jamais se substituer à l'histoire réelle des rites.",
+      "transitionFr": "Ce que le Fils consent à offrir dans le jardin sera accompli au Calvaire, où toutes les figures anciennes trouvent leur mesure véritable.",
+      "sourceAlphonsusIds": [
+        "ALPX02",
+        "ALPX06"
+      ],
+      "sourceBiblePassages": [
+        "Matthew 26:36–46",
+        "Luke 22:39–46",
+        "Philippians 2:5–11"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH20",
+      "titleFr": "Le Calvaire, sacrifice unique et parfait",
+      "narrativeFr": "Au Calvaire, le véritable Prêtre est aussi la Victime. Saint Alphonse examine les actes constitutifs du sacrifice et souligne la valeur de l'offrande accomplie une fois pour toutes par le Christ. Il explique ensuite comment l'Eucharistie donne à l'Église de participer sacramentellement à ce même sacrifice. Il discute expressément une théorie qui placerait l'accomplissement de tous les actes sacrificiels dans la seule glorification du Christ : la communion eucharistique tient une place importante dans sa propre argumentation. Le Brun fait également converger les sacrifices anciens vers celui du Sauveur. La Messe ne répète pas une nouvelle exécution sanglante.",
+      "transitionFr": "La Résurrection n'annule pas la Croix : elle manifeste la victoire du Crucifié et la permanence de la fécondité de son offrande.",
+      "sourceAlphonsusIds": [
+        "ALPX03",
+        "ALPX06",
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "John 19",
+        "Hebrews 9:11–28",
+        "Hebrews 10:1–18"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH21",
+      "titleFr": "La Résurrection et Emmaüs",
+      "narrativeFr": "Sur le chemin d'Emmaüs, le Ressuscité ouvre les Écritures à ses disciples. Leur compréhension rétrospective fournit une image de la méthode de ce parcours biblique : reconnaître l'accomplissement des figures anciennes sans faire comme si leurs auteurs avaient déjà connu toutes les cérémonies romaines. Le Canon rappelle explicitement la Résurrection dans l'Unde et memores. Le rapprochement entre la fraction du pain à Emmaüs et la communion eucharistique appartient à une tradition d'interprétation ; le seul récit de saint Luc ne suffit pas à prouver que cet épisode décrive déjà la Messe romaine.",
+      "transitionFr": "Le Ressuscité monte vers le Père. Sa disparition du regard des apôtres n'est pas la fin de son sacerdoce ni de son intercession.",
+      "sourceAlphonsusIds": [
+        "ALPX09",
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "Luke 24",
+        "John 20",
+        "1 Corinthians 15"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH22",
+      "titleFr": "L'Ascension et le sacerdoce éternel",
+      "narrativeFr": "Le Christ entre dans le sanctuaire céleste en Grand Prêtre dont le sacerdoce demeure. Saint Alphonse éclaire la relation entre le psaume sur Melchisédech et l'Épître aux Hébreux. À propos du Supplices te rogamus, il rapporte aussi une divergence : l'« Ange » désigne-t-il le Christ, ou bien un ministère angélique présentant les prières de l'Église ? Saint Alphonse préfère une explication rattachée à saint Thomas, qu'il faut distinguer de celle de son prédécesseur français. Rien n'autorise à imaginer que les espèces consacrées quitteraient matériellement l'autel terrestre pour être transportées au ciel.",
+      "transitionFr": "Le Seigneur glorifié envoie l'Esprit Saint et la vie sacramentelle de l'Église se déploie parmi les hommes.",
+      "sourceAlphonsusIds": [
+        "ALPX08",
+        "ALPX19"
+      ],
+      "sourceBiblePassages": [
+        "Acts 1:1–11",
+        "Hebrews 7:23–28",
+        "Hebrews 9:24"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH23",
+      "titleFr": "La Pentecôte et la vie de l'Église",
+      "narrativeFr": "À la Pentecôte, l'Esprit Saint rassemble une Église qui persévère dans l'enseignement des apôtres, la communion fraternelle, la fraction du pain et les prières. Les intercessions du Canon pour les vivants et la mémoire des saints s'éclairent à partir de cette unité ecclésiale. Le père Dujardin rapproche spirituellement la bénédiction finale de l'envoi de l'Esprit, sans que cette association suffise à établir une origine apostolique du geste. Il faut distinguer soigneusement l'histoire attestée de la communauté chrétienne et les méditations particulières que les auteurs placent au fil des cérémonies.",
+      "transitionFr": "Le culte sacramentel de l'Église en pèlerinage annonce une communion définitive que l'Apocalypse présente sous les images de l'Agneau et de la cité céleste.",
+      "sourceAlphonsusIds": [
+        "ALPX20"
+      ],
+      "sourceBiblePassages": [
+        "Acts 2:1–47",
+        "1 Corinthians 10:16–17"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    },
+    {
+      "sceneId": "SH24",
+      "titleFr": "L'Agneau et la Jérusalem céleste",
+      "narrativeFr": "L'Apocalypse présente l'adoration céleste autour de l'Agneau et les noces annoncées à la fin des temps. Ce langage visionnaire n'est pas une description codée d'une Messe romaine terrestre. Il permet toutefois de comprendre que le sacrifice et la communion eucharistiques s'ordonnent au sacerdoce du Christ glorifié et à la communion définitive avec Dieu. Saint Alphonse discute précisément où situer l'accomplissement des actes sacrificiels : sa réponse ne confond pas la glorification du Sauveur avec la participation sacramentelle de l'Église. Le terme du parcours est l'espérance des biens futurs, non un événement déjà placé sur une carte historique.",
+      "transitionFr": "Le récit rejoint son commencement : l'homme créé pour Dieu trouve dans le Christ la voie de la communion éternelle.",
+      "sourceAlphonsusIds": [
+        "ALPX09",
+        "ALPX10"
+      ],
+      "sourceBiblePassages": [
+        "Revelation 4–5",
+        "Revelation 19:6–9",
+        "Revelation 21–22"
+      ],
+      "approval": {
+        "linguistic": "FIRST_PASS_ONLY",
+        "theological": "PENDING",
+        "nativeFrench": "PENDING",
+        "publication": false
+      }
+    }
+  ]
+}

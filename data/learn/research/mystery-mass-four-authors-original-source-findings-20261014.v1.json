@@ -1,0 +1,291 @@
+{
+  "schema": "AO_MYSTERY_MASS_NEW_AUTHOR_DIRECT_PASSAGES_V1",
+  "date": "2026-10-14",
+  "status": "SOURCE_PASSAGES_LOCATED_EDITORIAL_NOT_PUBLICATION_APPROVAL",
+  "sources": {
+    "GIHR": {
+      "author": "Nicholas Gihr",
+      "edition": "The Holy Sacrifice of the Mass, 1902 English from German edition 6",
+      "fullTextUrl": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "publicationRights": "Historical 1902 original; check applicable reproduction/transcription rights",
+      "originalTextPassagesRead": true,
+      "printedPageFacsimileChecked": false
+    },
+    "LEB": {
+      "author": "Pierre Le Brun",
+      "edition": "1843 Paris / Avignon Tome 1 reprint",
+      "bookToc": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/653",
+      "passageUrl": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+      "originalTextPassagesRead": true,
+      "wholeVolumeTextRead": false
+    },
+    "LANG": {
+      "author": "Jean-Joseph Languet de Gergy",
+      "edition": "1715",
+      "digitalBibliographicUrl": "https://play.google.com/store/books/details?id=OXjkCUPQumgC",
+      "originalTextPassagesRead": false,
+      "secondhandQuoteLocatedInLeBrun": true
+    },
+    "TORMA": {
+      "author": "Zac Torma",
+      "edition": "Traditional Latin Mass in a Year, 26 September 2026",
+      "articleUrl": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
+      "originalTextPassagesRead": true,
+      "modernCopyright": true
+    }
+  },
+  "records": [
+    {
+      "id": "GIHR-01",
+      "author": "GIHR",
+      "role": "METHOD",
+      "subject": "PREFACE_1902",
+      "studyOwnerIds": [
+        "MF01"
+      ],
+      "attributableClaim": "Gihr expressly advocates explaining liturgical words and acts while avoiding subjective or artificial symbolism.",
+      "evidenceClass": "AUTHORIAL_METHOD_EXPLICIT",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed preface p. 5–6; OCR lines 282–293"
+      },
+      "review": {
+        "caution": "Use this to govern the difference between authentic rite meaning and freely chosen meditation.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "GIHR-02",
+      "author": "GIHR",
+      "role": "SALVATION_HISTORY",
+      "subject": "MELCHISEDECH",
+      "studyOwnerIds": [
+        "AO.CANON.09",
+        "AO.CARD.010"
+      ],
+      "attributableClaim": "Gihr argues for Eucharistic sacrificial typology from Melchisedech's bread/wine and Christ's perpetual priesthood.",
+      "evidenceClass": "THEOLOGICAL_TYPOLOGY_AUTHORIAL",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed p. 84–85; OCR lines 4802–4851"
+      },
+      "review": {
+        "caution": "Genesis 14:18 does not literally state that Melchisedech sacrificed the bread/wine, despite Gihr's emphatic inference. Hold strict differentiation between literal Genesis and subsequent Christian typology.",
+        "defect": "EXPLICIT_GENESIS_VS_AUTHOR_INFERENCE",
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "GIHR-03",
+      "author": "GIHR",
+      "role": "MASS_PRAYER",
+      "subject": "SUPRA_QUAE",
+      "studyOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "attributableClaim": "Gihr, following Aquinas, explains why the Canon compares the incomparable Eucharistic offering to ancient sacrifices: God's favourable regard for the ancient offerers' devotion, not an assertion of equal sacrifices.",
+      "evidenceClass": "AUTHORIAL_THOMISTIC_EXPLANATION",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed p. 658–659; OCR lines 38312–38330"
+      },
+      "review": {
+        "caution": "High-priority interpretative hinge for BOTH journeys. Original explanatory claim is text-located but not independently published or native-French approved.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "GIHR-04",
+      "author": "GIHR",
+      "role": "SCRIPTURAL_EXEGESIS",
+      "subject": "ABEL",
+      "studyOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "attributableClaim": "Gihr reads Abel as righteous offerer and innocent victim, citing Genesis 4, Hebrews 11:4, Hebrews 12:24.",
+      "evidenceClass": "THEOLOGICAL_TYPOLOGY",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed p. 659; OCR lines 38336–38353"
+      },
+      "review": {
+        "caution": "Gihr speculates that fire from heaven consumed Abel's offering; Genesis 4 does not say this. Do not present it as biblical fact.",
+        "defect": "AUTHOR_HYPOTHESIS_NOT_SCRIPTURE",
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "GIHR-05",
+      "author": "GIHR",
+      "role": "SCRIPTURAL_EXEGESIS",
+      "subject": "ABRAHAM",
+      "studyOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "attributableClaim": "Gihr expounds Abraham's voluntary obedience, Isaac spared by the ram, and the Christian interpretation of the event as a figure of Christ's sacrifice.",
+      "evidenceClass": "THEOLOGICAL_TYPOLOGY",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed p. 659; OCR lines 38355–38366"
+      },
+      "review": {
+        "caution": "Keep Isaac actually spared; do not imply human sacrifice completed.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "GIHR-06",
+      "author": "GIHR",
+      "role": "LITURGICAL_STUDY",
+      "subject": "OFFERIMUS_CHALICE",
+      "studyOwnerIds": [
+        "AO.CARD.010"
+      ],
+      "attributableClaim": "Gihr examines the plural offerimus in the chalice oblation as referring to the priest who acts for the Church and the faithful united spiritually; he also records a differing historical ministerial reading.",
+      "evidenceClass": "ATTRIBUTED_OLDER_EXEGESIS",
+      "source": {
+        "url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "locator": "printed p. 525–526; OCR lines 30265–30283"
+      },
+      "review": {
+        "caution": "Avoid deriving 1962 active lay ministry or deacon ritual from Gihr's 1902 explanation.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "LEBRUN-01",
+      "author": "LEB",
+      "role": "SOURCE_METHOD",
+      "subject": "GESTURES",
+      "studyOwnerIds": [
+        "MF02"
+      ],
+      "attributableClaim": "Le Brun rejects the hypothesis that a prostration during a Passion reading originates as theatrical imitation of a dying man; he interprets gestures as expressing actual devotion, not pantomime.",
+      "evidenceClass": "ORIGINAL_FRENCH_METHOD_PASSAGE",
+      "source": {
+        "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+        "locator": "1843 Tome 1 facsimile index p.30; French text (preface) lines 102–108"
+      },
+      "review": {
+        "caution": "Critical contrast with forced Passion-event = Mass-action allegories. Passage explicitly cites Languet de Gergy but does not by itself certify Languet's whole book.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "LEBRUN-02",
+      "author": "LEB",
+      "role": "BOOK_STRUCTURE",
+      "subject": "SACRIFICE_TO_MASS",
+      "studyOwnerIds": [
+        "MF01"
+      ],
+      "attributableClaim": "Le Brun's table of contents places a preliminary treatise on sacrifice from primordial offerings and the Law to Christ and the Eucharist before its liturgical explanation divided into six portions.",
+      "evidenceClass": "VERIFIED_PRINTED_TOC_ONLY",
+      "source": {
+        "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/653",
+        "locator": "1843 Tome 1 table of contents scan index p.653, printed headings 1–15"
+      },
+      "review": {
+        "caution": "Source for sequencing both journeys; table-of-contents evidence only, not 100% full chapter text recovered.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "LANGUET-01",
+      "author": "LANG",
+      "role": "CEREMONIAL_SYMBOLISM",
+      "subject": "GENUINE_GESTURE_MEANING",
+      "studyOwnerIds": [
+        "MF02"
+      ],
+      "attributableClaim": "Le Brun cites Languet, then Bishop of Soissons, for the view that genuine religious gestures arise from lively faith and devotion; oppose a purely theatrical reading.",
+      "evidenceClass": "SECONDHAND_CITATION_IN_LEBRUN_NOT_ORIGINAL_LANGUET_COLLATED",
+      "source": {
+        "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+        "locator": "Le Brun Tome 1 preface facsimile p.30, footnote Languet Refutation p.177"
+      },
+      "review": {
+        "caution": "Exact passage in Languet's own original 1715 volume remains to be checked; quote only as Le Brun's attribution, not direct Languet quotation.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "LANGUET-02",
+      "author": "LANG",
+      "role": "BIBLIOGRAPHY",
+      "subject": "WORK_1715",
+      "studyOwnerIds": [],
+      "attributableClaim": "Languet authored Du véritable esprit de l'Église dans l'usage de ses cérémonies (1715), a rebuttal of Dom Claude de Vert's interpretation of church ceremonies.",
+      "evidenceClass": "BIBLIOGRAPHY_ONLY",
+      "source": {
+        "url": "https://play.google.com/store/books/details?id=OXjkCUPQumgC",
+        "locator": "1715 title, 460-page digitized book metadata"
+      },
+      "review": {
+        "caution": "No original Mass-specific chapter claim extracted here. Book should not be promoted to independent evidence until opened and collated.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "TORMA-01",
+      "author": "TORMA",
+      "role": "MASS_PRAYER",
+      "subject": "HANC_IGITUR",
+      "studyOwnerIds": [
+        "AO.CANON.04"
+      ],
+      "attributableClaim": "Torma describes Hanc igitur's prayer for acceptance, peace, deliverance and salvation, with extended hands, while suggesting a Leviticus 16 scapegoat association.",
+      "evidenceClass": "MODERN_SECONDARY_AUTHORIAL_CLAIM",
+      "source": {
+        "url": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
+        "locator": "2026-09-26 article, paragraphs before Quam oblationem"
+      },
+      "review": {
+        "caution": "His statement that the scapegoat was sacrificed conflicts with Leviticus 16, where the live scapegoat is sent into the wilderness; no automatic historical derivation or 1962 gesture certification.",
+        "defect": "LITERAL_LEVITICUS_INACCURACY",
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    },
+    {
+      "id": "TORMA-02",
+      "author": "TORMA",
+      "role": "MASS_PRAYER",
+      "subject": "QUAM_OBLATIONEM",
+      "studyOwnerIds": [
+        "AO.CANON.05"
+      ],
+      "attributableClaim": "Torma transcribes Quam oblationem and enumerates five crosses in their prayer positions, drawing on modern secondary explanations for the meanings of the petitions.",
+      "evidenceClass": "MODERN_SECONDARY_WITH_PRIOR_MISSAL_CHECK",
+      "source": {
+        "url": "https://tlminayear.substack.com/p/the-eighteenth-sunday-after-pentecost",
+        "locator": "2026-09-26 article, sections following Hanc igitur"
+      },
+      "review": {
+        "caution": "Preserve direct older 1962 verification rather than deriving authority from recent Substack. Five wounds as symbolism, not rubrical origin; no copying of contemporary article prose.",
+        "defect": null,
+        "printedFacsimileChecked": false,
+        "approvedForPublication": false
+      }
+    }
+  ],
+  "sourceClaimPolicy": "Do not infer historical origins of Mass actions from allegories; retain literal Bible distinction, author voice and 1962 rubrical authority. Languet claims currently secondhand or bibliographic only."
+}

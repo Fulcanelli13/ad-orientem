@@ -1,0 +1,73 @@
+{
+  "schema": "AO_MYSTERY_MASS_MASTER_REFERENCE_WORKBOOK_CONSOLIDATION_V1",
+  "date": "2026-10-15",
+  "purpose": "Handoff to existing PR #1193: consolidated Excel workbook generated from three existing user-owned Oct 15 files; workbook presently delivered as conversation XLSX, NOT committed to GitHub.",
+  "inputWorkbooks": [
+    "Ad_Orientem_Order_of_Mass_Paragraph_By_Author_Scripture_Matrix_2026-10-15.xlsx",
+    "Ad_Orientem_Order_of_Mass_Primary_Witness_and_Aquinas_Collation_2026-10-15.xlsx",
+    "Ad_Orientem_Mass_Author_Reference_Reconciliation_2026-10-15.xlsx"
+  ],
+  "outputFileName": "Ad_Orientem_Mass_Master_Reference_Matrix_2026-10-15.xlsx",
+  "outputAvailability": "GENERATED_AS_CONVERSATION_ATTACHMENT_NOT_REPOSITORY_FILE",
+  "counts": {
+    "parentParagraphs": 246,
+    "originalLatinMicroUnits": 435,
+    "authorOrWitnessPairs": 42,
+    "authorInterpretationCellsSomeOn": 165,
+    "unitsWithNonParentOnlyInterpretation": 110,
+    "parentLevelOnlyUnits": 55,
+    "unitsWithNoCommentaryCell": 270,
+    "authorScriptureCellUnits": 63,
+    "verifiedAuthorClaimRecords": 139,
+    "legacyEvidenceAttachments": 955,
+    "currentMassNumberedSourceCueIds": 279,
+    "canonOwners": 14,
+    "studyOwners": 39,
+    "liveBaseCards": 65,
+    "properDependentLiveCards": "65-67",
+    "sourceOnlyEditorialQueue": {
+      "priorityOne": 88,
+      "priorityTwo": 180,
+      "priorityThree": 57,
+      "total": 325
+    }
+  },
+  "workbookTabs": [
+    "00 READ ME",
+    "01 MASTER PASSAGES",
+    "02 AUTHOR COVERAGE",
+    "03 VERIFIED CLAIMS",
+    "04 EVIDENCE 955",
+    "05 WORD CUES",
+    "06 SCRIPTURE TEXT",
+    "07 AUTHOR PROVENANCE",
+    "08 EARLY WITNESSES",
+    "09 LE BRUN",
+    "10 AQUINAS",
+    "11 JUNGMANN",
+    "12 FIRSTHAND TEXT",
+    "13 CANON CROSSWALK",
+    "14 PRIORITY HOLDS",
+    "15 ACCESS LEDGER",
+    "16 JEWISH PARALLELS",
+    "17 SCRIPTURE VERDICTS",
+    "18 AUTHOR WORK HOLD",
+    "19 CLAUSE GAP QUEUE",
+    "20 LATEST HOLDS",
+    "21 PROVENANCE INDEX"
+  ],
+  "integrity": [
+    "All original 435 micro-unit IDs and 246 unique source parent ids carried to master; order and Latin extracts unchanged from the original user workbook.",
+    "42 pairs include named authors and original source witnesses (Didache and Liturgies); not all 42 are individual scholars.",
+    "Each author has separate existing interpretation and author-cited Scripture columns; no unattributed Scripture parallels promoted to author citation.",
+    "All 139 source-verified claim records and all 955 historical evidence attachments preserved on separate tabs.",
+    "Counts of 110 non-parent-only rows are descriptive of cell-level granularity, NOT verified theological correctness; the 55 parent-only rows and 270 blank commentary rows are NOT automatically missing app content.",
+    "AO.SM.C#### candidate source cue is determined from matching numeric historic parent ID and the current main corpus contains 1–279, but word-level text matching and actual priest action not approved by this alone.",
+    "Canon owners AO.CANON.01 through .14 based on main reader cue intervals 150–207, while 39 research owners and 65–67 LIVE cards are separate models.",
+    "325 gap queue is an editorial triage list, with priority 3 for short/repetitive text; not 325 new writing tasks.",
+    "Latest Guéranger / Gihr original-book image holds and Alphonsus corrected p46 are preserved, no source archive reopened."
+  ],
+  "outstanding": "After sharing/exporting workbook, reconcile source/witness stage with Reference parser pipeline, incorporate reviewed 11 bilingual drafts at exact row-level without blanking existing author evidence, and validate final 65–67 card linkage; user editorial review is required prior to publication.",
+  "productionChanged": false,
+  "workbookGitHubCommitted": false
+}

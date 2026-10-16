@@ -1,0 +1,503 @@
+{
+  "schema": "AO_MYSTERY_MASS_CANON_BILINGUAL_PRECISION_DRAFTS_V1",
+  "date": "2026-10-15",
+  "status": "EDITING_AND_REVIEW_ONLY_NOT_PUBLISHED",
+  "productOwner": "learn.mystery_mass",
+  "derivation": [
+    "data/learn/research/mystery-mass-six-pair-five-issue-text-collation-20261015.v1.json",
+    "data/learn/research/mystery-mass-canon-32-comparison-adjudication-20261015.v1.json"
+  ],
+  "notice": "Hand-authored fresh summaries, not translations copied from any modern source edition; English/French drafts require theological, French-language, source, and typography review. No claim that original German/Italian or all print scans have been visually collated.",
+  "entryCount": 11,
+  "contentOwnership": "One unique text per topic/anchor; multiple source evidence IDs allowed, cards remain source-first 65–67 by conditional Proper.",
+  "entries": [
+    {
+      "id": "MM-CAN-D-001",
+      "sourceOwnerId": "AO.CANON.02",
+      "latinCueId": "AO.SM.C0156",
+      "latinPhrase": "quorum tibi fides cógnita est et nota devótio",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.02.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-045",
+        "I006"
+      ],
+      "scriptureContext": [],
+      "workLocators": [
+        "Guéranger 1885, MEMENTO DES VIVANTS"
+      ],
+      "reading": {
+        "en": "The priest remembers those present at the altar, whose faith and devotion are known to God. The Church's public offering includes their intentions: active participation requires more than bodily attendance.",
+        "fr": "Le prêtre recommande ceux qui entourent l’autel, dont Dieu connaît la foi et la dévotion. Le sacrifice public de l’Église accueille leurs intentions : y participer ne se réduit pas à être physiquement présent."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.02",
+        "coreQuestion": "Whose sacrifice is this, and how can individual intentions belong to a single public offering?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-09"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-002",
+      "sourceOwnerId": "AO.CANON.05",
+      "latinCueId": "AO.SM.C0164",
+      "latinPhrase": "rationábilem",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-049",
+        "I016"
+      ],
+      "scriptureContext": [
+        "Romans 12:1"
+      ],
+      "workLocators": [
+        "Guéranger 1885, QUAM OBLATIONEM",
+        "Aquinas ST III q.83 a.4 ad 7"
+      ],
+      "reading": {
+        "en": "The Church asks that this offering be rational and truly spiritual. Guéranger relates the word to St Paul's appeal to offer one's whole life to God (Rom 12:1); St Thomas also reads the prayer as asking that the sacrament bear fruit in us.",
+        "fr": "L’Église demande que cette offrande soit raisonnable et véritablement spirituelle. Dom Guéranger rapproche ce mot de l’appel de saint Paul à offrir toute notre vie à Dieu (Rm 12, 1) ; saint Thomas y voit aussi une demande pour que le sacrement porte du fruit en nous."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.05",
+        "coreQuestion": "Why does the Church ask God to make the offering 'reasonable' and acceptable immediately before Consecration?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-12"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-003",
+      "sourceOwnerId": "AO.CANON.09",
+      "latinCueId": "AO.SM.C0186",
+      "latinPhrase": "iusti Abel",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-057",
+        "I054"
+      ],
+      "scriptureContext": [
+        "Genesis 4:4",
+        "Hebrews 11:4",
+        "Hebrews 12:24"
+      ],
+      "workLocators": [
+        "Gihr 1902 translated, §61 p.659"
+      ],
+      "reading": {
+        "en": "Abel offers his gift in faith and later suffers an innocent death. Christian tradition sees in him a figure of Christ, the innocent Victim. Gihr additionally conjectures a heavenly fire at Abel's sacrifice; Scripture does not say that this occurred.",
+        "fr": "Abel offre son présent avec foi, puis subit une mort innocente. La tradition chrétienne reconnaît en lui une figure du Christ, Victime innocente. Gihr suppose aussi qu’un feu céleste consuma son sacrifice ; ce détail n’est pas rapporté par l’Écriture."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.09",
+        "coreQuestion": "Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-004",
+      "sourceOwnerId": "AO.CANON.09",
+      "latinCueId": "AO.SM.C0186",
+      "latinPhrase": "Patriárchæ nostri Abrahæ",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-058",
+        "I056"
+      ],
+      "scriptureContext": [
+        "Genesis 22:1-19",
+        "Hebrews 11:17-19"
+      ],
+      "workLocators": [
+        "Gihr 1902 translated, §61 p.659"
+      ],
+      "reading": {
+        "en": "Abraham's willingness to offer Isaac reveals faith and obedience. Yet God spared Isaac, and a ram was offered in his place. The episode foreshadows the self-offering of Christ without suggesting that Isaac was actually slain.",
+        "fr": "La disposition d’Abraham à offrir Isaac manifeste sa foi et son obéissance. Mais Dieu épargna Isaac, et un bélier fut offert à sa place. Cet épisode préfigure l’offrande du Christ sans signifier qu’Isaac ait réellement été immolé."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.09",
+        "coreQuestion": "Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-005",
+      "sourceOwnerId": "AO.CANON.09",
+      "latinCueId": "AO.SM.C0186",
+      "latinPhrase": "Melchísedech",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-059",
+        "I058"
+      ],
+      "scriptureContext": [
+        "Genesis 14:18",
+        "Psalm 109:4 (Vulgate)",
+        "Hebrews 7:1-17"
+      ],
+      "workLocators": [
+        "Gihr 1902 translated, §61 p.660"
+      ],
+      "reading": {
+        "en": "Melchizedek, priest of the Most High, brings bread and wine to Abraham. Christian tradition reads his priesthood and offering as figures of Christ and the Eucharist. Genesis itself does not explicitly describe the bread and wine as a ritual sacrifice.",
+        "fr": "Melchisédech, prêtre du Dieu Très-Haut, apporte du pain et du vin à Abraham. La tradition chrétienne voit dans son sacerdoce et son offrande des figures du Christ et de l’Eucharistie. La Genèse ne décrit toutefois pas explicitement le pain et le vin comme un sacrifice rituel."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.09",
+        "coreQuestion": "Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-006",
+      "sourceOwnerId": "AO.CANON.10",
+      "latinCueId": "AO.SM.C0187",
+      "latinPhrase": "sancti Angeli tui",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "displayTier": "CONCISE",
+      "priorEvidenceIds": [
+        "VER-032",
+        "I062",
+        "VER-051",
+        "I033"
+      ],
+      "scriptureContext": [
+        "Revelation 8:3-4",
+        "Isaiah 9:6 (Septuagintal title)"
+      ],
+      "workLocators": [
+        "Guéranger 1885, SUPPLICES TE ROGAMUS",
+        "Aquinas ST III q.83 a.4 ad 9",
+        "Alphonsus, Grimm ed.1887, printed p.46 / scanned image 48"
+      ],
+      "reading": {
+        "en": "The Canon asks that the offering be brought before God's heavenly altar through His holy Angel. Guéranger understands this Angel as Christ; St Thomas permits either Christ or an angel presenting the Church's prayers. These are theological interpretations of the prayer, not a description of the sacred species physically leaving the altar.",
+        "fr": "Le Canon demande que l’offrande soit présentée devant l’autel céleste de Dieu par les mains de son saint Ange. Dom Guéranger reconnaît dans cet Ange le Christ ; saint Thomas admet aussi l’interprétation d’un ange présentant les prières de l’Église. Il s’agit d’interprétations théologiques, et non d’un déplacement matériel des saintes espèces."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.10",
+        "coreQuestion": "Who is the holy Angel, and what does it mean for the offering to be borne to the heavenly altar?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-13"
+        ]
+      },
+      "integrationPolicy": "USE_AS_CUE_LEVEL_MICRO_SUMMARY_ONLY_NOT_SECOND_ARTICLE"
+    },
+    {
+      "id": "MM-CAN-D-007",
+      "sourceOwnerId": "AO.CANON.09",
+      "latinCueId": "AO.SM.C0186",
+      "latinPhrase": "accépta habére",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.09.1"
+      ],
+      "displayTier": "STUDY",
+      "priorEvidenceIds": [
+        "VER-030",
+        "I052",
+        "I053"
+      ],
+      "scriptureContext": [
+        "Malachi 3:3-4"
+      ],
+      "workLocators": [
+        "Gihr §61 pp.658–660",
+        "Aquinas ST III q.83 a.4 ad 8",
+        "Guéranger 1885 SUPRA QUAE"
+      ],
+      "reading": {
+        "en": "Why ask the Father to accept the Eucharistic sacrifice when Christ is infinitely pleasing to Him? The comparison with Abel, Abraham and Melchizedek concerns the faithful devotion of the offerers, not any deficiency in Christ's sacrifice. The prayer thus directs attention to the Church's offering and its reception through Christ.",
+        "fr": "Pourquoi demander au Père d’agréer le sacrifice eucharistique, alors que le Christ lui est infiniment agréable ? La comparaison avec Abel, Abraham et Melchisédech regarde la dévotion fidèle des offrants, et non quelque insuffisance du sacrifice du Christ. L’oraison nous tourne ainsi vers l’offrande de l’Église, accueillie par le Père à travers le Christ."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.09",
+        "coreQuestion": "Why ask that the Eucharistic offering be received like the gifts of Abel, Abraham and Melchisedech, if it is infinitely greater?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-PRIMARY-MB17",
+          "MM-PRIMARY-MB18",
+          "MM-PRIMARY-MB19"
+        ]
+      },
+      "integrationPolicy": "REFINE_EXISTING_14_CANON_LONGFORM_STUDY_NOT_SECOND_OWNER"
+    },
+    {
+      "id": "MM-CAN-D-008",
+      "sourceOwnerId": "AO.CANON.05",
+      "latinCueId": "AO.SM.C0164",
+      "latinPhrase": "bene ✠ díctam, adscríp ✠ tam, ra ✠ tam, rationábilem, acceptabilémque",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.05.1"
+      ],
+      "displayTier": "STUDY",
+      "priorEvidenceIds": [
+        "VER-049",
+        "I016",
+        "VER-052",
+        "VER-053",
+        "VER-054",
+        "VER-055",
+        "VER-056"
+      ],
+      "scriptureContext": [
+        "Romans 12:1"
+      ],
+      "workLocators": [
+        "Guéranger 1885 QUAM OBLATIONEM",
+        "Alphonsus Grimm ed.1887 Quam oblationem",
+        "Aquinas ST III q.83 a.4 ad 7"
+      ],
+      "reading": {
+        "en": "The five adjectives ask that the offering be blessed, reckoned, ratified, reasonable and acceptable. Guéranger explains their liturgical vocabulary; St Alphonsus provides devotional glosses; St Thomas sees a petition for the Eucharist's grace to be fruitful in those who receive it. The signs of the cross over the gifts accompany this prayer but must not be confused with the sacramental words of consecration.",
+        "fr": "Les cinq qualificatifs demandent que l’offrande soit bénie, inscrite, ratifiée, raisonnable et agréable à Dieu. Dom Guéranger éclaire leur vocabulaire liturgique ; saint Alphonse en donne une explication spirituelle ; saint Thomas considère surtout le fruit de la grâce eucharistique chez ceux qui la reçoivent. Les signes de croix accompagnent l’oraison, mais ne se confondent pas avec les paroles sacramentelles de la consécration."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.05",
+        "coreQuestion": "Why does the Church ask God to make the offering 'reasonable' and acceptable immediately before Consecration?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-12"
+        ]
+      },
+      "integrationPolicy": "REFINE_EXISTING_14_CANON_LONGFORM_STUDY_NOT_SECOND_OWNER"
+    },
+    {
+      "id": "MM-CAN-D-009",
+      "sourceOwnerId": "AO.CANON.04",
+      "latinCueId": "AO.SM.C0161",
+      "latinPhrase": "Hanc igitur oblatiónem",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.04.1"
+      ],
+      "displayTier": "STUDY",
+      "priorEvidenceIds": [
+        "VER-018",
+        "I046"
+      ],
+      "scriptureContext": [
+        "Leviticus 1:4"
+      ],
+      "workLocators": [
+        "Guéranger 1885 HANC IGITUR",
+        "Alphonsus Grimm ed.1887 Hanc igitur"
+      ],
+      "reading": {
+        "en": "At Hanc igitur the priest extends his hands over the offerings. Guéranger and St Alphonsus contemplate this action alongside the ancient laying of hands upon a sacrificial victim: the offerer joins himself spiritually to what is offered. This is a theological parallel, not sufficient historical evidence that the Roman gesture descended directly from a particular Levitical ceremony.",
+        "fr": "À Hanc igitur, le prêtre étend les mains sur les oblats. Dom Guéranger et saint Alphonse rapprochent ce geste de l’imposition des mains sur une victime dans l’Ancienne Loi : l’offrant s’unit spirituellement à ce qu’il présente. Ce rapprochement théologique ne suffit pas à prouver que le geste romain dérive directement d’une cérémonie lévitique précise."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.04",
+        "coreQuestion": "What do the priest's extended hands mean, and is the gesture derived from an Old Testament sacrificial act?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-11"
+        ]
+      },
+      "integrationPolicy": "REFINE_EXISTING_14_CANON_LONGFORM_STUDY_NOT_SECOND_OWNER"
+    },
+    {
+      "id": "MM-CAN-D-010",
+      "sourceOwnerId": "AO.CANON.07",
+      "latinCueId": "AO.SM.C0179",
+      "latinPhrase": "MYSTÉRIUM FÍDEI",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.07.2"
+      ],
+      "displayTier": "STUDY",
+      "priorEvidenceIds": [
+        "VER-023",
+        "VER-024",
+        "VER-025",
+        "VER-026"
+      ],
+      "scriptureContext": [
+        "Matthew 26:28",
+        "Luke 22:20",
+        "Hebrews 13:20",
+        "1 Corinthians 11:25"
+      ],
+      "workLocators": [
+        "Alphonsus Grimm ed.1887, consecration of chalice",
+        "Missale Romanum 1962, Canon"
+      ],
+      "reading": {
+        "en": "The 1962 Roman chalice formula draws upon several New Testament accounts of the institution, rather than reproducing one Gospel verse verbatim. St Alphonsus associates its language of an everlasting covenant with Hebrews and explains mysterium fidei through received tradition. Its complete traditional wording belongs to the Missal; the biblical parallels must be identified phrase by phrase.",
+        "fr": "La formule romaine de 1962 sur le calice reprend plusieurs témoignages néotestamentaires de l’institution, sans reproduire littéralement un seul verset évangélique. Saint Alphonse rapproche l’alliance éternelle de l’épître aux Hébreux et explique mysterium fidei à la lumière de la tradition reçue. La formule intégrale appartient au Missel ; ses parallèles bibliques doivent être indiqués expression par expression."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.07",
+        "coreQuestion": "How does Christ's Blood of the covenant become present without a second historical shedding of blood?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-PRIMARY-MB15"
+        ]
+      },
+      "integrationPolicy": "REFINE_EXISTING_14_CANON_LONGFORM_STUDY_NOT_SECOND_OWNER"
+    },
+    {
+      "id": "MM-CAN-D-011",
+      "sourceOwnerId": "AO.CANON.10",
+      "latinCueId": "AO.SM.C0187",
+      "latinPhrase": "in sublíme altáre tuum",
+      "presentationCardCandidates": [
+        "AO.LIVECURATED.AO.CANON.10.1"
+      ],
+      "displayTier": "STUDY",
+      "priorEvidenceIds": [
+        "VER-032",
+        "I062",
+        "VER-051",
+        "I033"
+      ],
+      "scriptureContext": [
+        "Revelation 5:6",
+        "Revelation 8:3-4"
+      ],
+      "workLocators": [
+        "Guéranger 1885 SUPPLICES TE ROGAMUS",
+        "Aquinas ST III q.83 a.4 ad 9",
+        "Alphonsus Grimm ed.1887, Supplices"
+      ],
+      "reading": {
+        "en": "The earthly altar and the heavenly liturgy are not rival sacrifices. Guéranger emphasizes the unity of Christ's self-offering, while Aquinas relates the heavenly altar either to the triumphant Church or to God Himself. The reference to an Angel must be explained through the distinct interpretations the authors actually give, without implying that Christ's Eucharistic body departs from the altar.",
+        "fr": "L’autel terrestre et la liturgie céleste ne sont pas deux sacrifices concurrents. Dom Guéranger souligne l’unité de l’offrande du Christ, tandis que saint Thomas rapporte l’autel céleste à l’Église triomphante ou à Dieu lui-même. La mention de l’Ange doit respecter les diverses interprétations des auteurs, sans laisser entendre que le corps eucharistique du Christ quitterait matériellement l’autel."
+      },
+      "editorialChecks": {
+        "sourceTextPhraseMatched": true,
+        "originalAuthorPrintedPageVisualVerified": false,
+        "fullBilingualEditorialApproved": false,
+        "sourceRightsApproved": false,
+        "readyForPublication": false
+      },
+      "inheritedLongformStudy": {
+        "sourceFile": "data/learn/research/mystery-mass-roman-canon-14-critical-narrative-20261014.v1.json",
+        "ownerId": "AO.CANON.10",
+        "coreQuestion": "Who is the holy Angel, and what does it mean for the offering to be borne to the heavenly altar?",
+        "inheritedBilingualManuscriptIds": [
+          "MM-NEW-13"
+        ]
+      },
+      "integrationPolicy": "REFINE_EXISTING_14_CANON_LONGFORM_STUDY_NOT_SECOND_OWNER"
+    }
+  ],
+  "publicationGate": [
+    "review primary edition/text consistency against exact registered witness",
+    "review French translation and magisterial distinction separately",
+    "ensure no duplicated inline explanation with existing Mystery manuscript",
+    "set actual LIVE card/cue precise lookup at runtime without editing Mass corpus",
+    "respect conditional Proper and source event actor cues",
+    "publish only after user/editorial acceptance"
+  ],
+  "duplicationGuard": "Each of 11 drafted cues is subordinate to one of existing 14 Canon research owners and existing bilingual manuscript ownership. Do not add new route/card/standalone article or copy the long form twice."
+}

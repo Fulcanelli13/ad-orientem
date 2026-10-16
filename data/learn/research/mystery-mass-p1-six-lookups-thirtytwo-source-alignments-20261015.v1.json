@@ -1,0 +1,768 @@
+{
+  "schema": "AO_MYSTERY_MASS_P1_SIX_LOOKUPS_AND_32_PARENTS_SOURCE_ALIGNMENT_V1",
+  "date": "2026-10-15",
+  "originalP1Triage": "data/learn/research/mystery-mass-priority1-88-clause-triage-20261015.v1.json",
+  "inputWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_P1_Reviewed_2026-10-15.xlsx",
+  "status": "HISTORICAL_TEXT_EXPOSITION_IDENTIFIED_CLAUSE_LEVEL_RESEARCH_NOT_CERTIFIED_SOURCE_CLAIMS",
+  "sourceWitness": {
+    "author": "Dom Prosper Guéranger",
+    "work": "Explication des prières de la sainte messe",
+    "edition": "1885 second ed, posthumous conference notes",
+    "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+    "limitation": "HTML transcription has known textual errors; do not treat its Latin as the normative 1962 Mass witness or its symbolic interpretation as rubrical authority."
+  },
+  "counts": {
+    "targetedUnits": 6,
+    "targetedPrayerParents": 5,
+    "collationUnits": 32,
+    "collationPrayerParents": 17,
+    "assessmentCounts": {
+      "DIRECT_AUTHOR_EXPOSITION": 21,
+      "PRAYER_QUOTED_NO_DEEP_EXEGESIS": 3,
+      "PRAYER_LEVEL_CONTEXT_ONLY": 3,
+      "DIRECT_AUTHOR_EXPOSITION_WITH_SYMBOLIC_CAVEAT": 1,
+      "CLAUSE_BOUNDARY_HOLD": 2,
+      "SHARED_CONCLUSION_REUSE": 2
+    },
+    "sourceCueIdentifiersExist": 22,
+    "printedBookPagesNewlyInspected": 0,
+    "newPublicationApprovals": 0
+  },
+  "focusedSix": [
+    {
+      "ids": [
+        "AO.V3.0091.U001"
+      ],
+      "cueId": "AO.SM.C0091",
+      "prayer": "Credo: maker of visible and invisible",
+      "primary": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "webLines": [
+        225,
+        226
+      ],
+      "sourceAuthor": "Guéranger",
+      "interpretation": "Creator of both bodily and angelic spiritual beings; anti-dualist reading is attributed to Guéranger; compare Catechism §§325–327 without treating the latter as an 1885 original.",
+      "corroboration": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_5_heaven_and_earth.index.html",
+      "scriptureAsAuthorCited": [],
+      "action": "REUSE_EXISTING_CREED_AND_CREATION_OWNER",
+      "latinCueVerified": true
+    },
+    {
+      "ids": [
+        "AO.V3.0095.U001"
+      ],
+      "cueId": "AO.SM.C0095",
+      "prayer": "Credo: for us and for salvation",
+      "primary": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "webLines": [
+        239,
+        244
+      ],
+      "sourceAuthor": "Guéranger",
+      "interpretation": "God the Word assumes our humanity for deliverance from sin and salvation; the liturgical genuflection occurs at Incarnatus, a later distinct clause, and must not be moved to this cue.",
+      "corroboration": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/artcile_3.index.html",
+      "scriptureAsAuthorCited": [],
+      "action": "REUSE_EXISTING_INCARNATION_REDEMPTION_OWNER",
+      "latinCueVerified": true
+    },
+    {
+      "ids": [
+        "AO.V3.0113.U001",
+        "AO.V3.0113.U002"
+      ],
+      "cueId": "AO.SM.C0113",
+      "prayer": "Deus qui humanae substantiae water/wine prayer",
+      "primary": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "webLines": [
+        309,
+        319
+      ],
+      "sourceAuthor": "Guéranger",
+      "interpretation": "Water/wine as representation of Christ's humanity and divinity, and of humanity joined to Christ; reciprocity of participating in divine nature / Christ participating in humanity. One prayer owner, two linked Latin phrases.",
+      "corroboration": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/artcile_3.index.html",
+      "scriptureAsAuthorCited": [
+        "Psalm 8",
+        "2 Peter 1:4"
+      ],
+      "action": "TWO_MICROPHRASES_ONE_SOURCE_OWNER",
+      "latinCueVerified": true
+    },
+    {
+      "ids": [
+        "AO.V3.0123.U001"
+      ],
+      "cueId": "AO.SM.C0123",
+      "prayer": "Accendat in nobis incense prayer",
+      "primary": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "webLines": [
+        343,
+        349
+      ],
+      "sourceAuthor": "Guéranger",
+      "interpretation": "Petition for the fire of divine love and eternal charity while returning thurible; in Guéranger's Solemn Mass description this is to the deacon; priest/minister action varies by Mass form.",
+      "corroboration": "data/presentation/reader-rubric-events.v1.json",
+      "scriptureAsAuthorCited": [],
+      "action": "PRAYER_EXPOSITION_WITH_SEPARATE_RUBRIC_GATE",
+      "latinCueVerified": true
+    },
+    {
+      "ids": [
+        "AO.V3.0132.U001"
+      ],
+      "cueId": "AO.SM.C0132",
+      "prayer": "Suscipiat Dominus response",
+      "primary": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "webLines": [
+        378,
+        383
+      ],
+      "sourceAuthor": "Guéranger",
+      "interpretation": "Faithful assent to priest's invitation and benefit of same sacrifice; spiritual participation not equal to ministerial sacramental consecration; server/priest grammatical variants should be form-gated.",
+      "corroboration": "data/presentation/reader-text-sung.v1.json",
+      "scriptureAsAuthorCited": [
+        "1 Peter 2:9"
+      ],
+      "action": "REUSE_RESPONSE_OWNER_AND_SPEAKER_VARIANTS",
+      "latinCueVerified": true
+    }
+  ],
+  "parentEvidenceThirtyTwo": [
+    {
+      "unitId": "AO.V3.0038.U001",
+      "parentId": "AO.V3.0038",
+      "sourceCueId": "AO.SM.C0038",
+      "prayer": "Oramus te, Domine",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Oramus te, Domine, lines 113–114",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        113,
+        114
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Oramus te in plural joins the congregation to the priest's request; altar relics context.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0040.U001",
+      "parentId": "AO.V3.0040",
+      "sourceCueId": "AO.SM.C0040",
+      "prayer": "Ab illo benedicaris",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Ab illo benedicaris, lines 340–342",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        340,
+        342
+      ],
+      "assessment": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "sourceRationale": "Author cites earlier, shorter incense-blessing formula, distinguishing the second incense blessing.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0079.U001",
+      "parentId": "AO.V3.0079",
+      "sourceCueId": "AO.SM.C0079",
+      "prayer": "Munda cor meum",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Munda cor meum, lines 195–196",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        195,
+        196
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Both purified lips/heart and worthiness to proclaim Gospel compared with Isaiah's lips; Low/Solemn roles differ.",
+      "authorExplicitScripture": [
+        "Isaiah 6:5-7"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0079.U002",
+      "parentId": "AO.V3.0079",
+      "sourceCueId": "AO.SM.C0079",
+      "prayer": "Munda cor meum",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Munda cor meum, lines 195–196",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        195,
+        196
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Both purified lips/heart and worthiness to proclaim Gospel compared with Isaiah's lips; Low/Solemn roles differ.",
+      "authorExplicitScripture": [
+        "Isaiah 6:5-7"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0110.U002",
+      "parentId": "AO.V3.0110",
+      "sourceCueId": "AO.SM.C0110",
+      "prayer": "Suscipe sancte Pater",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Suscipe sancte Pater, lines 301–305",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        301,
+        305
+      ],
+      "assessment": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "sourceRationale": "Pro omnibus circumstantibus and living/dead beneficiaries separately discussed; confession of priest's sins not uniquely explained.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0110.U003",
+      "parentId": "AO.V3.0110",
+      "sourceCueId": "AO.SM.C0110",
+      "prayer": "Suscipe sancte Pater",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Suscipe sancte Pater, lines 301–305",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        301,
+        305
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Pro omnibus circumstantibus and living/dead beneficiaries separately discussed; confession of priest's sins not uniquely explained.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0114.U001",
+      "parentId": "AO.V3.0114",
+      "sourceCueId": "AO.SM.C0114",
+      "prayer": "Offerimus tibi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Offerimus tibi, lines 325–326",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        325,
+        326
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Chalice offered in anticipation of consecration; pleasing fragrance and whole world's salvation directly expounded.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0114.U002",
+      "parentId": "AO.V3.0114",
+      "sourceCueId": "AO.SM.C0114",
+      "prayer": "Offerimus tibi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Offerimus tibi, lines 325–326",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        325,
+        326
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Chalice offered in anticipation of consecration; pleasing fragrance and whole world's salvation directly expounded.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0116.U001",
+      "parentId": "AO.V3.0116",
+      "sourceCueId": "AO.SM.C0116",
+      "prayer": "In spiritu humilitatis",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to In spiritu humilitatis, lines 330–331",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        330,
+        331
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Humility, contrition, and acceptability explained; Guéranger directly links to the three youths' prayer.",
+      "authorExplicitScripture": [
+        "Daniel 3:39-40"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0116.U002",
+      "parentId": "AO.V3.0116",
+      "sourceCueId": "AO.SM.C0116",
+      "prayer": "In spiritu humilitatis",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to In spiritu humilitatis, lines 330–331",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        330,
+        331
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Humility, contrition, and acceptability explained; Guéranger directly links to the three youths' prayer.",
+      "authorExplicitScripture": [
+        "Daniel 3:39-40"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0118.U001",
+      "parentId": "AO.V3.0118",
+      "sourceCueId": "AO.SM.C0118",
+      "prayer": "Veni sanctificator",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Veni sanctificator, lines 332–334",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        332,
+        334
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Invokes the Holy Spirit and accompanying blessing; do not reclassify the prayer as a new consecratory formula.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0120.U001",
+      "parentId": "AO.V3.0120",
+      "sourceCueId": "AO.SM.C0120",
+      "prayer": "Per intercessionem beati Michaelis",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Per intercessionem beati Michaelis, lines 340–342",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        340,
+        342
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Author distinguishes unnamed incense angel in Apocalypse from liturgical Michael; blessing and fragrant offering placed in prayer context.",
+      "authorExplicitScripture": [
+        "Revelation 8:4"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0120.U002",
+      "parentId": "AO.V3.0120",
+      "sourceCueId": "AO.SM.C0120",
+      "prayer": "Per intercessionem beati Michaelis",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Per intercessionem beati Michaelis, lines 340–342",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        340,
+        342
+      ],
+      "assessment": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "sourceRationale": "Author distinguishes unnamed incense angel in Apocalypse from liturgical Michael; blessing and fragrant offering placed in prayer context.",
+      "authorExplicitScripture": [
+        "Revelation 8:4"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0128.U002",
+      "parentId": "AO.V3.0128",
+      "sourceCueId": "AO.SM.C0128",
+      "prayer": "Suscipe sancta Trinitas",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Suscipe sancta Trinitas, lines 367–375",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        367,
+        375
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Names and honour of Mary, John Baptist, Apostles and altar relics, and heavenly intercession clearly treated.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0128.U004",
+      "parentId": "AO.V3.0128",
+      "sourceCueId": "AO.SM.C0128",
+      "prayer": "Suscipe sancta Trinitas",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Suscipe sancta Trinitas, lines 367–375",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        367,
+        375
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Names and honour of Mary, John Baptist, Apostles and altar relics, and heavenly intercession clearly treated.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0208.U002",
+      "parentId": "AO.V3.0208",
+      "sourceCueId": "AO.SM.C0208",
+      "prayer": "Praeceptis salutaribus moniti",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Praeceptis salutaribus moniti, lines 674–678",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        674,
+        678
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Lord's Prayer introduced as salvific teaching of Christ, grounding 'we dare to say'.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0212.U001",
+      "parentId": "AO.V3.0212",
+      "sourceCueId": "AO.SM.C0212",
+      "prayer": "Libera nos",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Libera nos, lines 694–696",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        694,
+        696
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Past/present/future evils distinguished; Mary's and apostles' intercession including Andrew directly discussed.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0212.U002",
+      "parentId": "AO.V3.0212",
+      "sourceCueId": "AO.SM.C0212",
+      "prayer": "Libera nos",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Libera nos, lines 694–696",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        694,
+        696
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Past/present/future evils distinguished; Mary's and apostles' intercession including Andrew directly discussed.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0221.U001",
+      "parentId": "AO.V3.0221",
+      "sourceCueId": "AO.SM.C0221",
+      "prayer": "Haec commixtio",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Haec commixtio, lines 702–705",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        702,
+        705
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION_WITH_SYMBOLIC_CAVEAT",
+      "sourceRationale": "Consecratio means joining consecrated species, not Eucharistic consecration; Resurrection reading is Guéranger's mystagogical symbolism, not independent historical fact.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0226.U003",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        720,
+        724
+      ],
+      "assessment": "CLAUSE_BOUNDARY_HOLD",
+      "sourceRationale": "Trinitarian action and deliverance and perseverance explained; U003 starts with detached comma; U006 is standard liturgical conclusion.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0226.U004",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        720,
+        724
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Trinitarian action and deliverance and perseverance explained; U003 starts with detached comma; U006 is standard liturgical conclusion.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0226.U005",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        720,
+        724
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Trinitarian action and deliverance and perseverance explained; U003 starts with detached comma; U006 is standard liturgical conclusion.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0226.U006",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "prayer": "Domine Jesu Christe Fili Dei vivi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Domine Jesu Christe Fili Dei vivi, lines 720–724",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        720,
+        724
+      ],
+      "assessment": "SHARED_CONCLUSION_REUSE",
+      "sourceRationale": "Trinitarian action and deliverance and perseverance explained; U003 starts with detached comma; U006 is standard liturgical conclusion.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0227.U003",
+      "parentId": "AO.V3.0227",
+      "sourceCueId": "AO.SM.C0227",
+      "prayer": "Perceptio Corporis tui",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        726,
+        729
+      ],
+      "assessment": "CLAUSE_BOUNDARY_HOLD",
+      "sourceRationale": "Warnings about unworthy Communion linked explicitly to St Paul; other petition quoted with devotional context; U003 begins with detached comma.",
+      "authorExplicitScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0227.U004",
+      "parentId": "AO.V3.0227",
+      "sourceCueId": "AO.SM.C0227",
+      "prayer": "Perceptio Corporis tui",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        726,
+        729
+      ],
+      "assessment": "PRAYER_LEVEL_CONTEXT_ONLY",
+      "sourceRationale": "Warnings about unworthy Communion linked explicitly to St Paul; other petition quoted with devotional context; U003 begins with detached comma.",
+      "authorExplicitScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0227.U005",
+      "parentId": "AO.V3.0227",
+      "sourceCueId": "AO.SM.C0227",
+      "prayer": "Perceptio Corporis tui",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Perceptio Corporis tui, lines 726–729",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        726,
+        729
+      ],
+      "assessment": "SHARED_CONCLUSION_REUSE",
+      "sourceRationale": "Warnings about unworthy Communion linked explicitly to St Paul; other petition quoted with devotional context; U003 begins with detached comma.",
+      "authorExplicitScripture": [
+        "1 Corinthians 11:29"
+      ],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0247.U001",
+      "parentId": "AO.V3.0247",
+      "sourceCueId": "AO.SM.C0247",
+      "prayer": "Quod ore sumpsimus",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Quod ore sumpsimus, lines 741–742",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        741,
+        742
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Temporal reception of Communion and its enduring spiritual effect discussed at the first ablution.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0248.U001",
+      "parentId": "AO.V3.0248",
+      "sourceCueId": "AO.SM.C0248",
+      "prayer": "Corpus tuum Domine",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Corpus tuum Domine, lines 743–745",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        743,
+        745
+      ],
+      "assessment": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "sourceRationale": "Author quotes the prayer and explains ablution procedure; not distinct interpretation of adhesion to inmost being or cleansing every stain.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0248.U003",
+      "parentId": "AO.V3.0248",
+      "sourceCueId": "AO.SM.C0248",
+      "prayer": "Corpus tuum Domine",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Corpus tuum Domine, lines 743–745",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        743,
+        745
+      ],
+      "assessment": "PRAYER_QUOTED_NO_DEEP_EXEGESIS",
+      "sourceRationale": "Author quotes the prayer and explains ablution procedure; not distinct interpretation of adhesion to inmost being or cleansing every stain.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0261.U001",
+      "parentId": "AO.V3.0261",
+      "sourceCueId": "AO.SM.C0261",
+      "prayer": "Placeat tibi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        756,
+        757
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Prayer is concluding summary asking God to receive sacrifice and make it fruitful to beneficiaries.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0261.U003",
+      "parentId": "AO.V3.0261",
+      "sourceCueId": "AO.SM.C0261",
+      "prayer": "Placeat tibi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        756,
+        757
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Prayer is concluding summary asking God to receive sacrifice and make it fruitful to beneficiaries.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    },
+    {
+      "unitId": "AO.V3.0261.U004",
+      "parentId": "AO.V3.0261",
+      "sourceCueId": "AO.SM.C0261",
+      "prayer": "Placeat tibi",
+      "sourceAuthor": "Dom Prosper Guéranger (1885 posthumous lecture notes)",
+      "sourceLocator": "HTML section corresponding to Placeat tibi, lines 756–757",
+      "sourceUrl": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "sourceLines": [
+        756,
+        757
+      ],
+      "assessment": "DIRECT_AUTHOR_EXPOSITION",
+      "sourceRationale": "Prayer is concluding summary asking God to receive sacrifice and make it fruitful to beneficiaries.",
+      "authorExplicitScripture": [],
+      "authorScriptureScope": "AUTHOR_DISCUSSION_OF_PRAYER_NOT_AUTOMATICALLY_EACH_MICROPHRASE",
+      "editorialApproved": false,
+      "printedFacsimileChecked": false
+    }
+  ],
+  "hardHolds": [
+    "Existing 955 parent evidence attachments are not proofs of precise word-level interpretation; do not relabel author claims in 42-pair workbook without direct citation.",
+    "This Guéranger historical source is one text witness supplementing the existing evidence; do not create 32 new canonical publications or author IDs.",
+    "Latin cue existence is confirmed, but 435 micro-unit subdivisions are not automatically exact runtime word spans. Existing split-boundary U003 in AO.V3.0226 and AO.V3.0227 starts with a comma.",
+    "Liturgical conclusion formulas do not need new individual exegesis.",
+    "Do not infer a deacon at Low Mass or confuse the priest's incense action with a universal faithful posture.",
+    "Do not promote Guéranger's symbolic reading of commixture to new sacramental consecration, nor his possible historical liturgical judgments to universal 1962 law.",
+    "Scripture cited in a discussion of a prayer should be attached at discussion/source scope until its exact clause is editorially verified.",
+    "Guéranger and Catholic Catechism sources give different publication dates and authority classes; never merge their identities.",
+    "No new author-specific Scripture columns should be populated as if authored by an uncited authority."
+  ]
+}

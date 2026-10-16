@@ -1,0 +1,1176 @@
+{
+  "schema": "AO_MYSTERY_MASS_24_SCENE_SOURCE_HANDOFF_V1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_REAL_ATLAS_SCRIPTURE_AND_EXISTING_CURATOR_IDS",
+  "upstream": {
+    "english": "data/learn/research/mystery-mass-source-led-narrative-drafts-20261014.v1.json",
+    "french": "data/learn/research/mystery-mass-biblical-24-french-editorial-drafts-20261014.v1.json",
+    "biblePlace": "data/explore/bible-places-compact.v1.json",
+    "atlas": "src/find/bible-atlas.js",
+    "artWorklist": "platform/885-sacred-art-candidates:data/calendar/sacred-art-consolidated-subject-review-index-20261013.v1.json",
+    "artCurator": "platform/885-sacred-art-candidates:data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+  },
+  "counts": {
+    "scenes": 24,
+    "scenesWithStablePlaceEvent": 10,
+    "placeEventsPresentInAtlasSourceCandidates": 9,
+    "scenesWithEditorialArtSubject": 16,
+    "scenesWithExistingRelatedApprovedArtworkSelection": 6,
+    "artworksApprovedForMystery": 0,
+    "frenchApproved": 0
+  },
+  "integrityPolicy": [
+    "Only use a canonical Bible place event ID if present in original Bible Places entry; never fabricate place coordinates or timeline years.",
+    "Atlas source membership is a candidate flag only: the 151-event canonical runtime export should be used to confirm membership before navigation, because not every compact event is in the 151.",
+    "Original curated artwork approval for a Rosary subject is not approval for Mystery of the Mass: conditional reuse only.",
+    "No art selections from subjects without approved registry artwork ID; historic editorial choice without registry join is not a product asset.",
+    "Original Scripture reader opens exact one-chapter references and accepts language and return callbacks; never duplicate Bible text.",
+    "Do not infer edition equivalence for Psalms, additions, or variant verses."
+  ],
+  "rows": [
+    {
+      "sceneId": "SH01",
+      "order": 1,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Genesis 1:1–31",
+        "additionalContextReferences": [
+          "Genesis 2:4–25"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Genesis 1–2"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-OR01",
+        "subjectTitle": "Creation",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.012",
+        "AO.CANON.13",
+        "AO.CANON.14"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH02",
+      "order": 2,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Genesis 3:1–24",
+        "additionalContextReferences": [
+          "Luke 18:9–14"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Genesis 3",
+          "Luke 18:13"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-OR02",
+        "subjectTitle": "The Fall",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH03",
+      "order": 3,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Genesis 4:1–16",
+        "additionalContextReferences": [
+          "Hebrews 11:4",
+          "Hebrews 12:24"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Genesis 4:1–16",
+          "Hebrews 11:4",
+          "Hebrews 12:24"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-OR03",
+        "subjectTitle": "Cain and Abel",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH04",
+      "order": 4,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Genesis 14:18–20",
+        "additionalContextReferences": [
+          "Hebrews 7:1–17"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Genesis 14:18–20",
+          "Psalm 109:4 (Vulgate)",
+          "Hebrews 7:1–17"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-PA03",
+        "subjectTitle": "Melchizedek Blesses Abram",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.09",
+        "AO.CARD.010"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH05",
+      "order": 5,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Genesis 22:1–19",
+        "additionalContextReferences": [
+          "Romans 8:32"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Genesis 22:1–19",
+          "Romans 8:32",
+          "Hebrews 11:17–19"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-PA06",
+        "subjectTitle": "Sacrifice of Isaac",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.09"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH06",
+      "order": 6,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Exodus 12:1–28",
+        "additionalContextReferences": [
+          "1 Corinthians 5:7"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Exodus 12:1–28",
+          "1 Corinthians 5:7",
+          "John 19:33–36"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-EX04",
+        "subjectTitle": "First Passover",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.07",
+        "AO.CARD.021"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH07",
+      "order": 7,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Exodus 16:1–36",
+        "additionalContextReferences": [
+          "John 6:31–58"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Exodus 16",
+          "John 6:31–58"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-EX07",
+        "subjectTitle": "Manna in the Wilderness",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.023",
+        "AO.CARD.025"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH08",
+      "order": 8,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Exodus 24:3–8",
+        "additionalContextReferences": [
+          "Jeremiah 31:31–34",
+          "Luke 22:20"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Exodus 24:3–8",
+          "Jeremiah 31:31–34",
+          "Luke 22:20",
+          "Hebrews 9:15–22"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-EX09",
+        "subjectTitle": "Covenant at Sinai / Ten Commandments",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.07"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH09",
+      "order": 9,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Exodus 25:1–9",
+        "additionalContextReferences": [
+          "Leviticus 16:1–34",
+          "Hebrews 9:1–14"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Exodus 25–30",
+          "Leviticus 16",
+          "Hebrews 7–10"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-EX11",
+        "subjectTitle": "The Tabernacle",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.010",
+        "AO.CANON.04",
+        "AO.CARD.011"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH10",
+      "order": 10,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Isaiah 6:1–8",
+        "additionalContextReferences": [
+          "Revelation 4:8"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Isaiah 6:1–8",
+          "Revelation 4:8"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-IS09",
+        "subjectTitle": "Isaiah’s Calling",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH11",
+      "order": 11,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Isaiah 52:13–15",
+        "additionalContextReferences": [
+          "Isaiah 53:1–12"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Isaiah 52:13–53:12",
+          "1 Peter 2:21–25"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CARD.021"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH12",
+      "order": 12,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Malachi 1:11",
+        "additionalContextReferences": [
+          "Hebrews 10:1–18"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Malachi 1:11",
+          "Hebrews 10:1–18"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.011",
+        "AO.CANON.01"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH13",
+      "order": 13,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Luke 1:26–38",
+        "additionalContextReferences": [
+          "John 1:1–14",
+          "Hebrews 10:5–10"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Luke 1:26–38",
+          "John 1:1–14",
+          "Hebrews 10:5–10"
+        ]
+      },
+      "atlas": {
+        "eventId": "nazareth-e1",
+        "existingPlaceId": "nazareth",
+        "title": "The Annunciation",
+        "reference": "Luke 1:26–38",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.joy1",
+          "artworkId": "met-438724",
+          "sourceOriginalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.009",
+        "AO.CARD.030"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH14",
+      "order": 14,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Luke 2:1–20",
+        "additionalContextReferences": [],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Luke 2:1–20"
+        ]
+      },
+      "atlas": {
+        "eventId": "bethlehem-e1",
+        "existingPlaceId": "bethlehem",
+        "title": "Birth of Jesus and adoration of the shepherds",
+        "reference": "Luke 2:1–20",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.joy3",
+          "artworkId": "cma-143784",
+          "sourceOriginalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+          "sourceUrl": "https://clevelandart.org/art/1968.22",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.003"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH15",
+      "order": 15,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "John 1:29–36",
+        "additionalContextReferences": [],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "John 1:19–36"
+        ]
+      },
+      "atlas": {
+        "eventId": "jordan-east-bank-additional-007",
+        "existingPlaceId": "jordan-east-bank",
+        "title": "John the Baptist identifies the Lamb of God",
+        "reference": "John 1:29–34",
+        "in151EventSequenceCandidate": false,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.021",
+        "AO.CARD.024"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH16",
+      "order": 16,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "John 6:25–59",
+        "additionalContextReferences": [
+          "Matthew 8:5–13"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "John 6:25–59",
+          "Matthew 8:5–13"
+        ]
+      },
+      "atlas": {
+        "eventId": "capernaum-e3",
+        "existingPlaceId": "capernaum",
+        "title": "The discourse on the Bread of Life",
+        "reference": "John 6:24–59",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-G14",
+        "subjectTitle": "Multiplication of Loaves",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH17",
+      "order": 17,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Matthew 21:1–11",
+        "additionalContextReferences": [
+          "Isaiah 6:3"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Matthew 21:1–11",
+          "Psalm 117:26 (Vulgate)"
+        ]
+      },
+      "atlas": {
+        "eventId": "olives-e1",
+        "existingPlaceId": "olives",
+        "title": "The triumphal entry into Jerusalem",
+        "reference": "Luke 19:37–44",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-G25",
+        "subjectTitle": "Entry into Jerusalem",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.013"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH18",
+      "order": 18,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Luke 22:14–20",
+        "additionalContextReferences": [
+          "1 Corinthians 11:23–26"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Matthew 26:26–29",
+          "Mark 14:22–25",
+          "Luke 22:14–20",
+          "1 Corinthians 11:23–26"
+        ]
+      },
+      "atlas": {
+        "eventId": "cenacle-e1",
+        "existingPlaceId": "cenacle",
+        "title": "The Last Supper and institution of the Eucharist",
+        "reference": "Luke 22:7–20",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-G24",
+        "subjectTitle": "Last Supper / Institution of Eucharist",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CANON.08"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH19",
+      "order": 19,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Matthew 26:36–46",
+        "additionalContextReferences": [
+          "Philippians 2:5–11"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Matthew 26:36–46",
+          "Luke 22:39–46",
+          "Philippians 2:5–11"
+        ]
+      },
+      "atlas": {
+        "eventId": "gethsemane-e1",
+        "existingPlaceId": "gethsemane",
+        "title": "The agony in the garden",
+        "reference": "Matthew 26:36–46",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.sor1",
+          "artworkId": "met-442488",
+          "sourceOriginalSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/442488",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.010",
+        "AO.CANON.04"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH20",
+      "order": 20,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "John 19:17–30",
+        "additionalContextReferences": [
+          "Hebrews 9:11–28"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "John 19",
+          "Hebrews 9:11–28",
+          "Hebrews 10:1–18"
+        ]
+      },
+      "atlas": {
+        "eventId": "golgotha-e2",
+        "existingPlaceId": "golgotha",
+        "title": "The Crucifixion and death of Jesus",
+        "reference": "John 19:17–30",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.sor5",
+          "artworkId": "cma-129386",
+          "sourceOriginalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+          "sourceUrl": "https://clevelandart.org/art/1952.222",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07",
+        "AO.CANON.08",
+        "AO.CARD.011"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH21",
+      "order": 21,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Luke 24:13–35",
+        "additionalContextReferences": [
+          "1 Corinthians 15:1–11"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Luke 24",
+          "John 20",
+          "1 Corinthians 15"
+        ]
+      },
+      "atlas": {
+        "eventId": "emmaus-e1",
+        "existingPlaceId": "emmaus",
+        "title": "The risen Jesus walks to Emmaus",
+        "reference": "Luke 24:13–35",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-G22",
+        "subjectTitle": "Road to Emmaus",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.glo1",
+          "artworkId": "cma-78982",
+          "sourceOriginalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "sourceUrl": "https://clevelandart.org/art/2017.192",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.08",
+        "AO.CARD.025"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH22",
+      "order": 22,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Acts 1:6–12",
+        "additionalContextReferences": [
+          "Hebrews 7:23–28"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Acts 1:1–11",
+          "Hebrews 7:23–28",
+          "Hebrews 9:24"
+        ]
+      },
+      "atlas": {
+        "eventId": "olives-e3",
+        "existingPlaceId": "olives",
+        "title": "The Ascension of Our Lord",
+        "reference": "Acts 1:6–12",
+        "in151EventSequenceCandidate": true,
+        "provenance": "data/explore/bible-places-compact.v1.json"
+      },
+      "artwork": {
+        "canonicalBiblicalSubjectId": null,
+        "subjectTitle": null,
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "NO_CANONICAL_SUBJECT_MAPPED",
+        "existingRelatedCuratorSelection": {
+          "targetId": "rosary.glo2",
+          "artworkId": "met-436835",
+          "sourceOriginalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835",
+          "sourceRights": "CC0",
+          "sourceScopeStatus": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "originalOwnerApproval": "EDITORIALLY_APPROVED_ONLY"
+        },
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.08",
+        "AO.CANON.10"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH23",
+      "order": 23,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Acts 2:1–47",
+        "additionalContextReferences": [
+          "1 Corinthians 10:16–17"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Acts 2:1–47",
+          "1 Corinthians 10:16–17"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-A01",
+        "subjectTitle": "Pentecost",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "selected",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CANON.01",
+        "AO.CANON.03",
+        "AO.CARD.025"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    },
+    {
+      "sceneId": "SH24",
+      "order": 24,
+      "script": {
+        "en": true,
+        "fr": true,
+        "editorialFrenchApproved": false
+      },
+      "scripture": {
+        "primaryContextReference": "Revelation 4:1–11",
+        "additionalContextReferences": [
+          "Revelation 19:6–9",
+          "Revelation 21:1–27"
+        ],
+        "readMechanism": "AO_SCRIPTURE_CONTEXT_V1.open(reference,{language,onCloseReturn})",
+        "engine": "src/scripture/browser-entry.js",
+        "fallbackPolicy": "If source unavailable, show unavailable state; do not invent Bible words",
+        "numberingCaution": "Traditional Psalm numbering not silently converted; multiple chapters shown as separate read targets",
+        "editorialSourceReferences": [
+          "Revelation 4–5",
+          "Revelation 19:6–9",
+          "Revelation 21–22"
+        ]
+      },
+      "atlas": null,
+      "artwork": {
+        "canonicalBiblicalSubjectId": "BIB-V02",
+        "subjectTitle": "Heavenly Liturgy",
+        "canonicalArtWorkId": null,
+        "subjectReviewStatus": "research",
+        "existingRelatedCuratorSelection": null,
+        "needsMysteryCrossUseApproval": true,
+        "artReleaseApproved": false
+      },
+      "studyMassOwnerIds": [
+        "AO.CARD.013",
+        "AO.CANON.10",
+        "AO.CANON.14",
+        "AO.CARD.025"
+      ],
+      "permissions": {
+        "notReleaseCopy": true,
+        "notNarrativeApproved": true,
+        "noArtAssetAutopublish": true
+      }
+    }
+  ]
+}

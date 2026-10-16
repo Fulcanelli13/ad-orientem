@@ -1,0 +1,160 @@
+{
+  "schema": "AO_MYSTERY_MASS_FOUR_NONPRIMARY_BIBLICAL_SUBTOPICS_V1",
+  "date": "2026-10-14",
+  "status": "DRAFT_SUBTOPICS_TO_COMPLETE_PRAYER_LEVEL_GRANULARITY_NOT_NEW_SECTION_CARDS",
+  "sourceBranch": "feature/mass-bible-study-source-bridge-20261012",
+  "counts": {
+    "subtopics": 4,
+    "distinctExistingOwners": 4,
+    "original31MassBibleEntriesUsed": [
+      "MB03",
+      "MB12",
+      "N02",
+      "MB20"
+    ]
+  },
+  "notes": [
+    "These four subtopics reuse existing prayer owners and do not change the baseline 39 sections.",
+    "Confiteor is not a second published Introibo explanation; Benedictus remains subpart of Sanctus/Benedictus; N02 belongs to the Offertory; Hebrews 7 augments the existing Melchisedech subsection.",
+    "Each source and nonprimary Bible mapping remains blocked pending independently examined Latin source, Catholic Scripture, vernacular and form-specific acceptance."
+  ],
+  "records": [
+    {
+      "id": "MM-SUP-01",
+      "sourceManuscriptId": "MB03",
+      "sourceFirstOwner": "AO.CARD.001",
+      "title": {
+        "en": "Confiteor: the sinner's humility",
+        "fr": "Confiteor : l'humilité du pécheur"
+      },
+      "short": {
+        "en": "The Confiteor expresses contrition and the need for God's mercy, in the proper role of each person praying it. [Source](https://www.newadvent.org/bible/luk018.htm).",
+        "fr": "Le Confiteor exprime la contrition et le besoin de miséricorde, selon le rôle de celui qui le récite. [Source](https://www.newadvent.org/bible/luk018.htm)."
+      },
+      "deep": {
+        "en": "The Confiteor acknowledges sin before God and asks the intercession of the saints and the other participants in the sacred rite. The publican of Luke 18:13, striking his breast and imploring mercy, illuminates the humility of this prayer without supplying its literal text. The priest's and ministers' liturgical parts should not be represented as an obligatory independent congregational recital. [Gospel witness](https://www.newadvent.org/bible/luk018.htm) · [Traditional explanation](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "Le Confiteor reconnaît le péché devant Dieu et invoque l'intercession des saints et des autres participants au rite sacré. Le publicain de Luc 18,13, qui se frappe la poitrine en implorant miséricorde, éclaire l'humilité de cette prière sans en fournir le texte littéral. Il ne faut pas présenter les parties liturgiques du prêtre et des ministres comme une récitation supplémentaire imposée à toute l'assemblée. [Évangile](https://www.newadvent.org/bible/luk018.htm) · [Explication traditionnelle](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "originalResearchSourceUrls": [
+        "https://www.newadvent.org/bible/luk018.htm",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/298.png"
+      ],
+      "conditionalDisplay": [
+        "CONFITEOR_MINISTER_PARTS_DISTINCT_FROM_FAITHFUL_PRIVATE_DEVOTION",
+        "SECOND_CONFITEOR_BEFORE_COMMUNION_NOT_IMPLIED"
+      ],
+      "ownership": "SUBTOPIC_UNDER_EXISTING_SECTION_NO_SECOND_CANONICAL_EXPLANATION",
+      "sourceApproval": {
+        "bibleReferenceCheckedAgainstExistingSourceCorpus": true,
+        "exact1962PageCollation": false,
+        "independentFrenchTheologicalApproval": false,
+        "publish": false
+      }
+    },
+    {
+      "id": "MM-SUP-02",
+      "sourceManuscriptId": "MB12",
+      "sourceFirstOwner": "AO.CARD.013",
+      "title": {
+        "en": "Benedictus: the One who comes",
+        "fr": "Benedictus : Celui qui vient"
+      },
+      "short": {
+        "en": "The Benedictus welcomes Christ in the words once sung at his entry into Jerusalem. [Source](https://www.newadvent.org/bible/mat021.htm).",
+        "fr": "Le Benedictus accueille le Christ avec l'acclamation jadis chantée lors de son entrée à Jérusalem. [Source](https://www.newadvent.org/bible/mat021.htm)."
+      },
+      "deep": {
+        "en": "Benedictus qui venit in nomine Domini and the Hosanna recall the acclaim given to Jesus as he entered Jerusalem (Matthew 21:9), drawing also on Psalm 117:26 in the Vulgate numbering. This is a different biblical scene from Isaiah's heavenly Sanctus: the two proclamations are joined in the Mass, not confused as one Gospel event. Where the Benedictus is sung after the Consecration, its timing belongs to the schola's chant, not to a second Consecration. [Gospel](https://www.newadvent.org/bible/mat021.htm) · [Psalm](https://www.newadvent.org/bible/psa117.htm) · [Lanslots original OCR](https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt).",
+        "fr": "Benedictus qui venit in nomine Domini et l'Hosanna reprennent l'acclamation adressée à Jésus lors de son entrée à Jérusalem (Mt 21,9), en lien également avec le psaume 117,26 de la Vulgate. Il s'agit d'une scène biblique distincte de la vision céleste d'Isaïe qui inspire le Sanctus : la Messe unit ces louanges sans confondre les événements. Lorsque le Benedictus est chanté après la Consécration, c'est le moment du chant de la schola, non une seconde Consécration. [Évangile](https://www.newadvent.org/bible/mat021.htm) · [Psaume](https://www.newadvent.org/bible/psa117.htm) · [OCR original de Lanslots](https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt)."
+      },
+      "originalResearchSourceUrls": [
+        "https://www.newadvent.org/bible/mat021.htm",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://gregobase.selapa.net/sources/42/376.png"
+      ],
+      "conditionalDisplay": [
+        "BENEDICTUS_MAY_BE_SUNG_AFTER_CONSECRATION",
+        "SANCTUS_BENEDICTUS_ONE_RITE_OWNER_TWO_BIBLICAL_SOURCES"
+      ],
+      "ownership": "SUBTOPIC_UNDER_EXISTING_SECTION_NO_SECOND_CANONICAL_EXPLANATION",
+      "sourceApproval": {
+        "bibleReferenceCheckedAgainstExistingSourceCorpus": true,
+        "exact1962PageCollation": false,
+        "independentFrenchTheologicalApproval": false,
+        "publish": false
+      }
+    },
+    {
+      "id": "MM-SUP-03",
+      "sourceManuscriptId": "N02",
+      "sourceFirstOwner": "AO.CARD.010",
+      "title": {
+        "en": "The water mixed with the wine",
+        "fr": "L'eau mêlée au vin"
+      },
+      "short": {
+        "en": "The prayer at the mixing of water and wine asks that we share in Christ's divinity through his Incarnation. [Source](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt).",
+        "fr": "La prière lors du mélange de l'eau et du vin demande de participer à la divinité du Christ par son Incarnation. [Source](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt)."
+      },
+      "deep": {
+        "en": "As water is mixed with the wine, the liturgical prayer asks that we become partakers of Christ's divinity, since he deigned to share our humanity. Its thought recalls the promise of sharing in the divine nature (2 Peter 1:4). St Cyprian develops a distinct symbolism of wine and water and the union of Christ with his people; this devotional interpretation does not by itself establish the exact historical origin of every Roman ceremonial detail. [Second Epistle of Peter](https://www.newadvent.org/bible/2pe001.htm) · [St Cyprian, Letter 62](https://www.newadvent.org/fathers/050662.htm).",
+        "fr": "Lorsque l'eau est mêlée au vin, la prière liturgique demande que nous devenions participants de la divinité du Christ, qui a daigné partager notre humanité. Cette pensée rappelle la promesse de participer à la nature divine (2 P 1,4). Saint Cyprien développe par ailleurs la symbolique du vin et de l'eau ainsi que l'union du Christ à son peuple ; cette interprétation spirituelle ne prouve pas à elle seule l'origine historique exacte de chaque détail cérémoniel romain. [Deuxième épître de Pierre](https://www.newadvent.org/bible/2pe001.htm) · [Saint Cyprien, lettre 62](https://www.newadvent.org/fathers/050662.htm)."
+      },
+      "originalResearchSourceUrls": [
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+        "https://ebible.org/latVUC/2PE01.htm",
+        "https://www.newadvent.org/fathers/050662.htm",
+        "https://gregobase.selapa.net/sources/42/303.png"
+      ],
+      "conditionalDisplay": [
+        "WINE_WATER_MIXING_MINISTER_AND_CEREMONY_FORM_SPECIFIC",
+        "BIBLICAL_VERSE_THEOLOGICAL_ALLUSION_NOT_VERBATIM_WATER_FORMULA"
+      ],
+      "ownership": "SUBTOPIC_UNDER_EXISTING_SECTION_NO_SECOND_CANONICAL_EXPLANATION",
+      "sourceApproval": {
+        "bibleReferenceCheckedAgainstExistingSourceCorpus": true,
+        "exact1962PageCollation": false,
+        "independentFrenchTheologicalApproval": false,
+        "publish": false
+      }
+    },
+    {
+      "id": "MM-SUP-04",
+      "sourceManuscriptId": "MB20",
+      "sourceFirstOwner": "AO.CANON.09",
+      "title": {
+        "en": "Melchisedech and Christ's enduring priesthood",
+        "fr": "Melchisédech et le sacerdoce éternel du Christ"
+      },
+      "short": {
+        "en": "Hebrews explains the priesthood of Melchisedech as a figure of Christ's unique priesthood. [Source](https://www.newadvent.org/bible/heb007.htm).",
+        "fr": "L'épître aux Hébreux présente le sacerdoce de Melchisédech comme figure du sacerdoce unique du Christ. [Source](https://www.newadvent.org/bible/heb007.htm)."
+      },
+      "deep": {
+        "en": "Hebrews 7 interprets Melchisedech's mysterious priesthood as a figure pointing toward the enduring priesthood of Jesus Christ. The Roman Canon names Melchisedech in Supra quae, while it does not quote Hebrews 7 word for word; these sources illuminate the same sacrificial theology at different levels. Nor does Genesis 14 itself describe the detailed ceremony or a distribution of consecrated gifts to Abraham's soldiers sometimes imagined in older commentaries. [Hebrews 7](https://www.newadvent.org/bible/heb007.htm) · [Genesis 14](https://www.newadvent.org/bible/gen014.htm) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).",
+        "fr": "L'épître aux Hébreux (chapitre 7) interprète le mystérieux sacerdoce de Melchisédech comme une figure annonçant le sacerdoce permanent de Jésus-Christ. Le Canon romain nomme Melchisédech dans le Supra quae sans citer littéralement le chapitre 7 de l'épître : les deux textes éclairent à des niveaux distincts la même théologie du Sacrifice. La Genèse 14 ne décrit pas non plus le cérémonial détaillé ou la distribution de dons consacrés aux soldats d'Abraham que suggèrent certains commentaires anciens. [Hébreux 7](https://www.newadvent.org/bible/heb007.htm) · [Genèse 14](https://www.newadvent.org/bible/gen014.htm) · [Guéranger](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/)."
+      },
+      "originalResearchSourceUrls": [
+        "https://www.newadvent.org/bible/heb007.htm",
+        "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.txt",
+        "https://www.newadvent.org/summa/4022.htm",
+        "https://gregobase.selapa.net/sources/42/391.png"
+      ],
+      "conditionalDisplay": [
+        "MELCHISEDECH_TYPOLOGY_DOES_NOT_PROVE_HISTORICAL_MEAL",
+        "ONE_CANON_OWNER_FOR_ABEL_ABRAHAM_MELCHISEDECH"
+      ],
+      "ownership": "SUBTOPIC_UNDER_EXISTING_SECTION_NO_SECOND_CANONICAL_EXPLANATION",
+      "sourceApproval": {
+        "bibleReferenceCheckedAgainstExistingSourceCorpus": true,
+        "exact1962PageCollation": false,
+        "independentFrenchTheologicalApproval": false,
+        "publish": false
+      }
+    }
+  ]
+}

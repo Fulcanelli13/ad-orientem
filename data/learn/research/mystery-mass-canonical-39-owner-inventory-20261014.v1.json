@@ -1,0 +1,2609 @@
+{
+  "schema": "AO_MYSTERY_OF_MASS_CANONICAL_EDITORIAL_INVENTORY_V1",
+  "generatedDate": "2026-10-14",
+  "status": "PHASE1_TRACKED_RESEARCH_INPUTS_MAPPED_PUBLICATION_UNAPPROVED",
+  "productTarget": "One eight-chapter learn.mass course plus contextual teaching through existing canonical Mass source-first sections; not a second Mass reader.",
+  "canonicalOwnershipRule": "One content owner per exact sectionId, reused by thematic lessons and a contextual Guide; no duplication, no alteration of normative 1962 rubrics.",
+  "researchSourceBranches": {
+    "baseline": {
+      "branch": "main",
+      "path": "data/learn/mass-formation-campion.v1.json"
+    },
+    "guide": {
+      "branch": "main",
+      "path": "data/presentation/guide-registry.v1.json"
+    },
+    "sourceFirst": {
+      "branch": "mass/342-lanslots-1897-crosswalk",
+      "sha": "634dc975f7daa66af99c60bbf1b48518ed750d59",
+      "path": "data/research/mass-lanslots-1897-source-first39-map.v1.json",
+      "pr": 1179
+    },
+    "massBible": {
+      "branch": "feature/mass-bible-study-source-bridge-20261012",
+      "sha": "ebb854aef68433ce2aff250ac189797b25426f8f",
+      "path": "data/learn/research/mass-bible-31-bilingual-teaching-drafts-20261013.v1.json",
+      "pr": 1082
+    },
+    "massBiblePolished": {
+      "branch": "feature/mass-bible-study-source-bridge-20261012",
+      "sha": "ebb854aef68433ce2aff250ac189797b25426f8f",
+      "path": "data/learn/research/mass-bible-20-primary-polished-bilingual-20261013.v1.json",
+      "pr": 1082
+    },
+    "gueranger": {
+      "branch": "main",
+      "path": "data/research/mass-fr-gueranger-microguide-batch02.v1.json"
+    },
+    "lanslotsBilingual": {
+      "branch": "mass/342-lanslots-1897-crosswalk",
+      "sha": "634dc975f7daa66af99c60bbf1b48518ed750d59",
+      "path": "data/research/mass-lanslots-1897-seven-bilingual-mystagogy-drafts.v1.json",
+      "pr": 1179
+    },
+    "lanslotsCritical": {
+      "branch": "mass/342-lanslots-1897-crosswalk",
+      "sha": "634dc975f7daa66af99c60bbf1b48518ed750d59",
+      "path": "data/research/mass-lanslots-1897-doctrinal-historical-critical-review.v1.json",
+      "pr": 1179
+    },
+    "lanslotsContext": {
+      "branch": "mass/342-lanslots-1897-crosswalk",
+      "sha": "634dc975f7daa66af99c60bbf1b48518ed750d59",
+      "path": "data/research/mass-lanslots-1897-nonparenthetical-bible-connections.v1.json",
+      "pr": 1179
+    },
+    "lanslotsCues": {
+      "branch": "mass/342-lanslots-1897-crosswalk",
+      "sha": "634dc975f7daa66af99c60bbf1b48518ed750d59",
+      "path": "data/research/mass-lanslots-1897-69-reference-cue-ownership.v1.json",
+      "pr": 1179
+    }
+  },
+  "counts": {
+    "sections": 39,
+    "stages": 8,
+    "existingClaims": 24,
+    "existingGuideEntries": 32,
+    "massBibleDrafts": 31,
+    "massBiblePolished": 20,
+    "guerangerCueRecords": 41,
+    "lanslotsBilingualDrafts": 7,
+    "lanslotsCriticalCases": 10,
+    "lanslotsNonparentheticalConnections": 16,
+    "lanslotsExactPrayerAnchors": 12,
+    "sectionsWithAtLeastOneCandidate": 33,
+    "sectionsWithPolishedBibleCopy": 15,
+    "sectionsWithoutAnySupplementalCandidate": 6,
+    "sectionsWithGuerangerCueEvidence": 21,
+    "sectionsWithExistingGuide": 39,
+    "newApprovedPublicationEntries": 0
+  },
+  "outstandingSourceCorpus": [
+    "FRG01..FRG30 and older Gueranger archives as non-structured entries require reconciliation, not counted in the 41 cue-linked FRG31..FRG71.",
+    "422 earlier historical research claims require item-level duplicate checks before final release.",
+    "Broader 105 Proper paths / 420 chant source slots / 1052 research candidates are independently gated and not in scope for this fixed Mass formation module."
+  ],
+  "stages": [
+    {
+      "stageId": "MF01",
+      "existingTitle": {
+        "en": "The shape of the Mass",
+        "fr": "La structure de la Messe"
+      },
+      "existingSummary": {
+        "en": "The traditional Roman Mass moves from preparation and instruction into the sacrificial action and Communion.",
+        "fr": "La Messe romaine traditionnelle conduit de la préparation et de l’instruction à l’action sacrificielle et à la Communion."
+      },
+      "existingClaimIds": [
+        "MF01-C01",
+        "MF01-C02",
+        "MF01-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CARD.001",
+        "AO.CARD.002",
+        "AO.CARD.003",
+        "AO.CARD.004",
+        "AO.CARD.005",
+        "AO.CARD.006",
+        "AO.CARD.007",
+        "AO.CARD.008",
+        "AO.CARD.009"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "SYNTHESIZE_ARCHITECTURE_NOT_30_SUBCARDS",
+      "newBilingualDraftIds": [
+        "MB01",
+        "MB02",
+        "MB03",
+        "MB04",
+        "MB05",
+        "MB06",
+        "MB07",
+        "N01",
+        "MB08"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF02",
+      "existingTitle": {
+        "en": "The body at prayer",
+        "fr": "Le corps en prière"
+      },
+      "existingSummary": {
+        "en": "The ceremonies make the Church’s prayer visible, but the faithful do not simply copy every priestly rubric.",
+        "fr": "Les cérémonies rendent visible la prière de l’Église, mais les fidèles ne copient pas simplement chaque rubrique du prêtre."
+      },
+      "existingClaimIds": [
+        "MF02-C01",
+        "MF02-C02",
+        "MF02-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [],
+      "crossCutting": true,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "DO_NOT_TREAT_POSTURES_AS_PRIEST_RUBRICS_FOR_LAITY; OVERLAY_ALL_SECTIONS",
+      "newBilingualDraftIds": [],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF03",
+      "existingTitle": {
+        "en": "The Offertory and your offering",
+        "fr": "L’Offertoire et votre offrande"
+      },
+      "existingSummary": {
+        "en": "The priest performs the sacramental offering; the faithful truly participate by uniting their interior oblation to Christ and the priestly offering.",
+        "fr": "Le prêtre accomplit l’offrande sacramentelle ; les fidèles participent réellement en unissant leur offrande intérieure au Christ et à l’offrande sacerdotale."
+      },
+      "existingClaimIds": [
+        "MF03-C01",
+        "MF03-C02",
+        "MF03-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CARD.010",
+        "AO.CARD.011"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
+      "newBilingualDraftIds": [
+        "MB09",
+        "N02",
+        "N03",
+        "N04",
+        "MB10"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF04",
+      "existingTitle": {
+        "en": "Inside the Roman Canon",
+        "fr": "Au cœur du Canon romain"
+      },
+      "existingSummary": {
+        "en": "The Canon is a tightly ordered prayer of offering and intercession embracing the whole Church.",
+        "fr": "Le Canon est une prière ordonnée d’offrande et d’intercession qui embrasse toute l’Église."
+      },
+      "existingClaimIds": [
+        "MF04-C01",
+        "MF04-C02",
+        "MF04-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CARD.012",
+        "AO.CARD.013",
+        "AO.CANON.01",
+        "AO.CANON.02",
+        "AO.CANON.03",
+        "AO.CANON.04",
+        "AO.CANON.05"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
+      "newBilingualDraftIds": [
+        "MB11",
+        "MB12",
+        "MB13"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF05",
+      "existingTitle": {
+        "en": "What changes at the Consecration",
+        "fr": "Ce qui change à la Consécration"
+      },
+      "existingSummary": {
+        "en": "After the Consecration Christ is truly present under the appearances of bread and wine.",
+        "fr": "Après la Consécration, le Christ est réellement présent sous les apparences du pain et du vin."
+      },
+      "existingClaimIds": [
+        "MF05-C01",
+        "MF05-C02",
+        "MF05-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
+      "newBilingualDraftIds": [
+        "MB14",
+        "MB15"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF06",
+      "existingTitle": {
+        "en": "Is the Mass another Calvary?",
+        "fr": "La Messe est-elle un autre Calvaire ?"
+      },
+      "existingSummary": {
+        "en": "The Victim is the same Christ; the manner of offering differs.",
+        "fr": "La Victime est le même Christ ; le mode d’offrande diffère."
+      },
+      "existingClaimIds": [
+        "MF06-C01",
+        "MF06-C02",
+        "MF06-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CANON.08",
+        "AO.CANON.09",
+        "AO.CANON.10",
+        "AO.CANON.11",
+        "AO.CANON.12",
+        "AO.CANON.13",
+        "AO.CANON.14"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ONE_THEOLOGY_OF_SACRIFICE_LINK_TO_TYPED_CANON_SECTIONS",
+      "newBilingualDraftIds": [
+        "MB16",
+        "MB17",
+        "MB18",
+        "MB19",
+        "MB20"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF07",
+      "existingTitle": {
+        "en": "Why the priest must receive",
+        "fr": "Pourquoi le prêtre doit communier"
+      },
+      "existingSummary": {
+        "en": "The celebrant’s Communion belongs to the integrity of the Mass; Communion of the faithful is earnestly encouraged but is not what makes the sacrifice a Mass.",
+        "fr": "La Communion du célébrant appartient à l’intégrité de la Messe ; la Communion des fidèles est vivement recommandée mais n’est pas ce qui constitue le sacrifice comme Messe."
+      },
+      "existingClaimIds": [
+        "MF07-C01",
+        "MF07-C02",
+        "MF07-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CARD.019",
+        "AO.CARD.020",
+        "AO.CARD.021",
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
+      "newBilingualDraftIds": [
+        "MB21",
+        "MB22",
+        "MB23",
+        "MB24",
+        "N05",
+        "MB25"
+      ],
+      "requiresSourceApproval": true
+    },
+    {
+      "stageId": "MF08",
+      "existingTitle": {
+        "en": "Thanksgiving and being sent",
+        "fr": "Action de grâces et envoi"
+      },
+      "existingSummary": {
+        "en": "The liturgy ends, but thanksgiving and Christian duty continue.",
+        "fr": "La liturgie s’achève, mais l’action de grâces et le devoir chrétien continuent."
+      },
+      "existingClaimIds": [
+        "MF08-C01",
+        "MF08-C02",
+        "MF08-C03"
+      ],
+      "existingClaimCount": 3,
+      "canonicalSectionIds": [
+        "AO.CARD.026",
+        "AO.CARD.027",
+        "AO.CARD.028",
+        "AO.CARD.029",
+        "AO.CARD.030"
+      ],
+      "crossCutting": false,
+      "currentMainStatus": "EXISTS_IN_MAIN_BRANCH_LEARN_MASS_RUNTIME",
+      "editorialDirective": "ENRICH_EXISTING_LESSON_NOT_REPLACE_WITH_RESEARCH_DATA",
+      "newBilingualDraftIds": [
+        "MB26"
+      ],
+      "requiresSourceApproval": true
+    }
+  ],
+  "sections": [
+    {
+      "sectionId": "AO.CARD.001",
+      "sequence": 1,
+      "canonicalTitle": "Introit & Preparatory Prayers",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.001",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.001",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB01",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "MERGE_INTO_MB02"
+          },
+          {
+            "id": "MB02",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "MB03",
+            "priorFormationTopic": "MF02",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [
+          {
+            "id": "L1897-MYST-07",
+            "cue": null,
+            "association": "THEMATIC_CONTEXT_ONLY"
+          }
+        ],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-001",
+          "L1897-NP-002",
+          "L1897-NP-003",
+          "L1897-NP-004",
+          "L1897-NP-005",
+          "L1897-NP-006"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "PSALM_42_CONDITIONAL_FOR_REQUIEM_AND_PASSIONTIDE",
+        "PRE_MASS_CONDITIONS_MUST_USE_NORMATIVE_SOURCE"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB02"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.002",
+      "sequence": 2,
+      "canonicalTitle": "Kyrie",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.002",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.002",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "VIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB04",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "ASSEMBLE_EXPLANATION_FROM_SOURCE_DRAFTS",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.003",
+      "sequence": 3,
+      "canonicalTitle": "Gloria",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.003",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.003",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "IX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB05",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "GLORIA_ONLY_WHEN_PRESCRIBED"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB05"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.004",
+      "sequence": 4,
+      "canonicalTitle": "Collect",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.004",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.004",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "IX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "WRITE_OR_REUSE_GUIDE_INTRO_ONLY_WHERE_USEFUL",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.005",
+      "sequence": 5,
+      "canonicalTitle": "Epistle / Lesson",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.005",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.005",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "X"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB06",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "VARIABLE_PROPER_EXAMPLE_NOT_FIXED_PRAYER"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "VARIABLE_LESSON_DO_NOT_SUBSTITUTE_EXAMPLE_FOR_SELECTED_PROPER"
+      ],
+      "defaultEditorialAction": "ASSEMBLE_EXPLANATION_FROM_SOURCE_DRAFTS",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.006",
+      "sequence": 6,
+      "canonicalTitle": "Gradual · Alleluia / Tract / Sequence",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.006",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.006",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "X"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "PROPER_AND_SEASON_SPECIFIC_CHANT_OWNER"
+      ],
+      "defaultEditorialAction": "WRITE_OR_REUSE_GUIDE_INTRO_ONLY_WHERE_USEFUL",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.007",
+      "sequence": 7,
+      "canonicalTitle": "Holy Gospel",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.007",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.007",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XI"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB07",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "VARIABLE_PROPER_EXAMPLE_NOT_FIXED_PRAYER"
+          },
+          {
+            "id": "N01",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [
+          {
+            "id": "L1897-MYST-01",
+            "cue": "AO.SM.C0079",
+            "association": "PRAYER_MATCH"
+          }
+        ],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-018"
+        ]
+      },
+      "conditionalityFlags": [
+        "VARIABLE_GOSPEL_AND_LITURGICAL_FORM_CHECK"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "N01"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.008",
+      "sequence": 8,
+      "canonicalTitle": "Sermon / Homily",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.008",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.008",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "HOMILY_CONTENT_NOT_FIXED_IN_THE_MISSAL"
+      ],
+      "defaultEditorialAction": "KEEP_HOMILY_AS_VARIABLE_CONTEXT_NOT_STATIC_EXPLANATION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": true
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.009",
+      "sequence": 9,
+      "canonicalTitle": "Credo",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.009",
+      "mainFormationChapter": "MF01",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.009",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB08",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "CREDO_ONLY_WHEN_PRESCRIBED"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB08"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.010",
+      "sequence": 10,
+      "canonicalTitle": "Offertory",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.010",
+      "mainFormationChapter": "MF03",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.010",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XIII",
+        "XIV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB09",
+            "priorFormationTopic": "MF03",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "N02",
+            "priorFormationTopic": "MF03",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          },
+          {
+            "id": "N03",
+            "priorFormationTopic": "MF03",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "N04",
+            "priorFormationTopic": "MF03",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [
+          {
+            "id": "L1897-MYST-02",
+            "cue": "AO.SM.C0122",
+            "association": "PRAYER_MATCH"
+          },
+          {
+            "id": "L1897-MYST-06",
+            "cue": null,
+            "association": "THEMATIC_CONTEXT_ONLY"
+          }
+        ],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-007"
+        ],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-006",
+          "L1897-OCR-025",
+          "L1897-OCR-026"
+        ]
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB09",
+        "N03",
+        "N04"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.011",
+      "sequence": 11,
+      "canonicalTitle": "Orate fratres & Secret",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.011",
+      "mainFormationChapter": "MF03",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.011",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB10",
+            "priorFormationTopic": "MF03",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "ASSEMBLE_EXPLANATION_FROM_SOURCE_DRAFTS",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.012",
+      "sequence": 12,
+      "canonicalTitle": "Preface",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.012",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.012",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "PREFACE_VARIABLE_SOURCE_GATED"
+      ],
+      "defaultEditorialAction": "WRITE_OR_REUSE_GUIDE_INTRO_ONLY_WHERE_USEFUL",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.013",
+      "sequence": 13,
+      "canonicalTitle": "Sanctus · Benedictus",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.013",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.013",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB11",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "MB12",
+            "priorFormationTopic": "MF01",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [
+          {
+            "id": "L1897-MYST-03",
+            "cue": "AO.SM.C0145",
+            "association": "PRAYER_MATCH"
+          },
+          {
+            "id": "L1897-MYST-04",
+            "cue": "AO.SM.C0148",
+            "association": "PRAYER_MATCH"
+          }
+        ],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-027",
+          "L1897-OCR-028",
+          "L1897-OCR-029"
+        ]
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB11"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.01",
+      "sequence": 14,
+      "canonicalTitle": "Te igitur",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.01",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.014",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XVI"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB13",
+            "priorFormationTopic": "MF04",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-008"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "ASSEMBLE_EXPLANATION_FROM_SOURCE_DRAFTS",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.02",
+      "sequence": 15,
+      "canonicalTitle": "Memento, Domine — Living",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.02",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.014",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XVII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG31",
+            "sourceCueId": "AO.SM.C0156",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.03",
+      "sequence": 16,
+      "canonicalTitle": "Communicantes",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.03",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.014",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XVII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG32",
+            "sourceCueId": "AO.SM.C0157",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG33",
+            "sourceCueId": "AO.SM.C0159",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-10"
+        ],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "ST_JOSEPH_INSERTION_EFFECTIVE_1962_12_08"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.04",
+      "sequence": 17,
+      "canonicalTitle": "Hanc igitur",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.04",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.014",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XVIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG34",
+            "sourceCueId": "AO.SM.C0161",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-06"
+        ],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.05",
+      "sequence": 18,
+      "canonicalTitle": "Quam oblationem",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.05",
+      "mainFormationChapter": "MF04",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.014",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XVIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG35",
+            "sourceCueId": "AO.SM.C0164",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG36",
+            "sourceCueId": "AO.SM.C0165",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG37",
+            "sourceCueId": "AO.SM.C0166",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.06",
+      "sequence": 19,
+      "canonicalTitle": "Consecration of the Sacred Host",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.06",
+      "mainFormationChapter": "MF05",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.015",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XIX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB14",
+            "priorFormationTopic": "MF05",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG38",
+            "sourceCueId": "AO.SM.C0169",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG39",
+            "sourceCueId": "AO.SM.C0174",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-01",
+          "L1897-DISC-08"
+        ],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-009",
+          "L1897-NP-010"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "CONSECRATION_BREAD_NOT_COMBINED_WITH_CHALICE"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB14"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.07",
+      "sequence": 20,
+      "canonicalTitle": "Consecration of the Chalice",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.07",
+      "mainFormationChapter": "MF05",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.016",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XIX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB15",
+            "priorFormationTopic": "MF05",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-01"
+        ],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "CONSECRATION_CHALICE_NOT_COMBINED_WITH_BREAD"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB15"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.08",
+      "sequence": 21,
+      "canonicalTitle": "Unde et memores",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.08",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB16",
+            "priorFormationTopic": "MF06",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG40",
+            "sourceCueId": "AO.SM.C0184",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB16"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.09",
+      "sequence": 22,
+      "canonicalTitle": "Supra quae",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.09",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB17",
+            "priorFormationTopic": "MF06",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "MB18",
+            "priorFormationTopic": "MF06",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "MB19",
+            "priorFormationTopic": "MF06",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "MB20",
+            "priorFormationTopic": "MF06",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_MB19_BUT_DIFFERENT_SCRIPTURE_PASSAGE"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG41",
+            "sourceCueId": "AO.SM.C0186",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG42",
+            "sourceCueId": "AO.SM.C0186",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG43",
+            "sourceCueId": "AO.SM.C0186",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-07"
+        ],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-011",
+          "L1897-NP-012",
+          "L1897-NP-013"
+        ],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR2-023"
+        ]
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB17",
+        "MB18",
+        "MB19"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.10",
+      "sequence": 23,
+      "canonicalTitle": "Supplices te rogamus",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.10",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XX"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG44",
+            "sourceCueId": "AO.SM.C0187",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG45",
+            "sourceCueId": "AO.SM.C0188",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-02"
+        ],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "SUPPLICES_ANGEL_IDENTITY_DISPUTED_NOT_DOGMA"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.11",
+      "sequence": 24,
+      "canonicalTitle": "Memento etiam, Domine — Dead",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.11",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXI"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG46",
+            "sourceCueId": "AO.SM.C0192",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG47",
+            "sourceCueId": "AO.SM.C0194",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-05"
+        ],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.12",
+      "sequence": 25,
+      "canonicalTitle": "Nobis quoque peccatoribus",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.12",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXI"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG48",
+            "sourceCueId": "AO.SM.C0196",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG49",
+            "sourceCueId": "AO.SM.C0197",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.13",
+      "sequence": 26,
+      "canonicalTitle": "Per quem haec omnia",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.13",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.017",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG50",
+            "sourceCueId": "AO.SM.C0199",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG51",
+            "sourceCueId": "AO.SM.C0200",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CANON.14",
+      "sequence": 27,
+      "canonicalTitle": "Per ipsum · Minor Elevation",
+      "kind": "CANON_SOURCE_SEGMENT",
+      "oneCanonicalExplanationOwner": "AO.CANON.14",
+      "mainFormationChapter": "MF06",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.018",
+      "liveGuideInheritedMacro": true,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG52",
+            "sourceCueId": "AO.SM.C0202",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG53",
+            "sourceCueId": "AO.SM.C0204",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.019",
+      "sequence": 28,
+      "canonicalTitle": "Pater noster",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.019",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.019",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB21",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG54",
+            "sourceCueId": "AO.SM.C0209",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-014"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB21"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.020",
+      "sequence": 29,
+      "canonicalTitle": "Libera nos · Fraction · Pax Domini",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.020",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.020",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXII",
+        "XXIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB22",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": false,
+            "disposition": "SUPPORT_OR_REVISE_BEFORE_SELECTION"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG55",
+            "sourceCueId": "AO.SM.C0212",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG56",
+            "sourceCueId": "AO.SM.C0219",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG57",
+            "sourceCueId": "AO.SM.C0221",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [
+          "L1897-DISC-03"
+        ],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-015"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "FRACTION_COMMIXTURE_NOT_SECOND_TRANSUBSTANTIATION"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.021",
+      "sequence": 30,
+      "canonicalTitle": "Agnus Dei",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.021",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.021",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB23",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG58",
+            "sourceCueId": "AO.SM.C0222",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG59",
+            "sourceCueId": "AO.SM.C0224",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-035"
+        ]
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB23"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.022",
+      "sequence": 31,
+      "canonicalTitle": "Prayers before Communion",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.022",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.022",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXIII"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB24",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          },
+          {
+            "id": "N05",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG60",
+            "sourceCueId": "AO.SM.C0225",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG61",
+            "sourceCueId": "AO.SM.C0226",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG62",
+            "sourceCueId": "AO.SM.C0227",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG63",
+            "sourceCueId": "AO.SM.C0229",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-038"
+        ]
+      },
+      "conditionalityFlags": [
+        "PRIEST_DOMINE_NON_SUM_DIGNUS_NOT_FAITHFUL_RESPONSE"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB24",
+        "N05"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.023",
+      "sequence": 32,
+      "canonicalTitle": "Communion of the Priest",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.023",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.023",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXIV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB25",
+            "priorFormationTopic": "MF07",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG64",
+            "sourceCueId": "AO.SM.C0232",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG65",
+            "sourceCueId": "AO.SM.C0234",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [
+          {
+            "id": "L1897-MYST-05",
+            "cue": "AO.SM.C0233",
+            "association": "PRAYER_MATCH"
+          }
+        ],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-009"
+        ]
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB25"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.024",
+      "sequence": 33,
+      "canonicalTitle": "Ecce Agnus Dei & Faithful Preparation",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.024",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.024",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXIV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "SECOND_CONFITEOR_OLDER_OR_LOCAL_CUSTOM_NOT_UNIVERSALLY_MANDATORY"
+      ],
+      "defaultEditorialAction": "WRITE_OR_REUSE_GUIDE_INTRO_ONLY_WHERE_USEFUL",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.025",
+      "sequence": 34,
+      "canonicalTitle": "Communion of the Faithful",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.025",
+      "mainFormationChapter": "MF07",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.025",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXIV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [
+          "L1897-NP-016"
+        ],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "FAITHFUL_COMMUNION_MAY_NOT_TAKE_PLACE"
+      ],
+      "defaultEditorialAction": "ASSEMBLE_EXPLANATION_FROM_SOURCE_DRAFTS",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.026",
+      "sequence": 35,
+      "canonicalTitle": "Ablutions & Communion Antiphon",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.026",
+      "mainFormationChapter": "MF08",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.026",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG66",
+            "sourceCueId": "AO.SM.C0247",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG67",
+            "sourceCueId": "AO.SM.C0248",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.027",
+      "sequence": 36,
+      "canonicalTitle": "Postcommunion",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.027",
+      "mainFormationChapter": "MF08",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.027",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG68",
+            "sourceCueId": "AO.SM.C0254",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": false,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.028",
+      "sequence": 37,
+      "canonicalTitle": "Dismissal",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.028",
+      "mainFormationChapter": "MF08",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.028",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "DISMISSAL_VARIANT_BY_MASS_TYPE_OR_FOLLOWING_ACTION"
+      ],
+      "defaultEditorialAction": "WRITE_OR_REUSE_GUIDE_INTRO_ONLY_WHERE_USEFUL",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.029",
+      "sequence": 38,
+      "canonicalTitle": "Placeat & Final Blessing",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.029",
+      "mainFormationChapter": "MF08",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.029",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [],
+        "guéranger": [
+          {
+            "id": "FRG69",
+            "sourceCueId": "AO.SM.C0261",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          },
+          {
+            "id": "FRG70",
+            "sourceCueId": "AO.SM.C0264",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": []
+      },
+      "conditionalityFlags": [
+        "FINAL_BLESSING_CAN_BE_SUPPRESSED_BY_SPECIAL_RITE_OR_REQUIEM"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": true,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    },
+    {
+      "sectionId": "AO.CARD.030",
+      "sequence": 39,
+      "canonicalTitle": "Last Gospel",
+      "kind": "ORDINARY_MACRO",
+      "oneCanonicalExplanationOwner": "AO.CARD.030",
+      "mainFormationChapter": "MF08",
+      "crossCuttingTeachingChapters": [
+        "MF02"
+      ],
+      "liveGuideExistingSource": "AO.CARD.030",
+      "liveGuideInheritedMacro": false,
+      "existingGuidePresent": true,
+      "lanslots1897ChapterCandidates": [
+        "XXV"
+      ],
+      "selectedResearchSourceIds": {
+        "massBible": [
+          {
+            "id": "MB26",
+            "priorFormationTopic": "MF08",
+            "publicationApproved": false,
+            "manuscriptPolished": true,
+            "disposition": "PRIMARY_BILINGUAL_RESEARCH_MANUSCRIPT"
+          }
+        ],
+        "guéranger": [
+          {
+            "id": "FRG71",
+            "sourceCueId": "AO.SM.C0273",
+            "disposition": "ENRICH_EXISTING_CANONICAL_SECTION_AFTER_DEDUP"
+          }
+        ],
+        "lanslotsBilingual": [],
+        "lanslotsCritical": [],
+        "lanslotsNonparenthetical": [],
+        "lanslotsExactLatinAnchors": [
+          "L1897-OCR-043"
+        ]
+      },
+      "conditionalityFlags": [
+        "LAST_GOSPEL_NOT_UNIVERSALLY_PRESENT"
+      ],
+      "defaultEditorialAction": "RECONCILE_AND_ENRICH_EXISTING_SECTION",
+      "primaryDraftCandidateIds": [
+        "MB26"
+      ],
+      "contentGaps": {
+        "requiresEditorialReconciliation": true,
+        "requiresEnglishFrenchPublicationApproval": true,
+        "requiresSourceLinkReview": true,
+        "requiresLiturgicalFormCheck": true,
+        "lacksNewPolishedBilingualDraft": false,
+        "requiresSpecialConditionalDisplay": true,
+        "noLanslotsChapterMapping": false
+      },
+      "publicationGate": "NOT_APPROVED_FOR_EXPANDED_MODULE",
+      "uiPolicy": "USE_EXISTING_LEARN_MASS_OWNER_AND_EXISTING_GUIDE; NO_SECOND_LIVE_MASS_READER"
+    }
+  ],
+  "cautions": [
+    "39 source-first presentation sections are not the historical 48-card LIVE target; this is content ownership mapping only, not permission to alter the established 48-card LIVE product.",
+    "32 baseline Guide entries remain exactly 30 macro Guide explanations plus pre/post entries. Fourteen Canon segments inherit macro explanation owners; do not manufacture fourteen distinct published Guide records from a macro source.",
+    "The 31 Mass–Bible drafts include 26 existing MB IDs plus N01-N05; 20 have polished research text, but 0 have publication approval. No source evidence count denotes approved publication.",
+    "Only 41 Guéranger FRG31–71 records are accessible as currently structured cue-linked records; FRG01–30 are historical identifiers requiring source inventory reconciliation, not automatically counted as verified structured records in this inventory.",
+    "Seven Lanslots bilingual drafts are scholarly proposals. 91 original citation/allusion occurrences and 16 additional editorial Bible connections are non-additive evidence populations.",
+    "One section is the only canonical owner of its explanation; eight lessons provide thematic learning paths and must link to that owner instead of duplicating the prayer explanation.",
+    "Every substantive final paragraph, in both languages, needs source citations. Original 1897 symbolism, original Scripture text and normative 1962 ceremony need separate provenance.",
+    "Variable Propers, Mass conditions, priest-vs-faithful text, special rites, Requiem and historical local customs require explicit contextual ownership. No automatic historical ritual inference.",
+    "Preserve source provenance by original branch and commit; PR #1179 and PR #1082 are open drafts, not merged source files in main.",
+    "NO reader code, Guide registry, image assets or publication flags are changed by this editorial inventory.",
+    "The eight-stage learn.mass reader exists on main; do not infer production-store visibility or public rollout from source-code presence alone.",
+    "Eight of ten Lanslots critical issue IDs have canonical prayer-section owners (one has two); two remaining (DISC04, DISC09) belong to lesson-level context, deliberately without a live Guide cue."
+  ],
+  "nextReleaseSequence": [
+    {
+      "gate": "E1",
+      "name": "EVIDENCE_AND_OWNER_DEDUP",
+      "deliverable": "Single source-claim owner mapping by canonical section for each selected paragraph, with full Guéranger FRG01–30/422 historical comparison",
+      "passed": false
+    },
+    {
+      "gate": "E2",
+      "name": "BILINGUAL_MANUSCRIPT",
+      "deliverable": "8 coherent lessons plus graded short/deep explanation at meaningful 39 Mass sections, with English and French per paragraph and sources",
+      "passed": false
+    },
+    {
+      "gate": "E3",
+      "name": "PRIMARY_WITNESS_APPROVAL",
+      "deliverable": "Original primary-page checks for SELECTED claims only, Bible edition checks, 1962 Mass form, doctrinal and native French editorial approval",
+      "passed": false
+    },
+    {
+      "gate": "E4",
+      "name": "USER_EXPERIENCE",
+      "deliverable": "Connect approved content through existing learn.mass and contextual Guide; preserve 48-card LIVE runtime architecture",
+      "passed": false
+    },
+    {
+      "gate": "E5",
+      "name": "RELEASE_ACCEPTANCE",
+      "deliverable": "All selected content linked, sources live, mobile/desktop, 1962 variable conditions and 1962 roles pass; merge and production verification",
+      "passed": false
+    }
+  ],
+  "selectedOrDeferredPolicy": {
+    "retain": [
+      "Existing published intro structure, 30 macro plus pre/post Guide owners, 20 polished MB drafts as research draft candidates, source-precise Guéranger French and Lanslots theological evidence."
+    ],
+    "combine": [
+      "MB01 into MB02 at Introibo",
+      "MB19 and MB20 as one Melchisedech explanatory subject with distinct Scripture refs",
+      "Guéranger and Lanslots within one original owner per prayer rather than parallel repeated cards"
+    ],
+    "defer": [
+      "Variable Proper epistle/gospel example as a permanent reading",
+      "Chant-source 420/1052 whole-universe edition certification",
+      "Historical ritual assertions without 1962 corroboration",
+      "Unverified artwork, secondary panels, or new duplicate Mass reader"
+    ]
+  },
+  "publication": {
+    "newApprovals": 0,
+    "doNotTouchProductionGuide": true,
+    "doNotChangeMassText": true,
+    "doNotChangeNativeReader": true
+  },
+  "contextualNonSectionCriticalItems": [
+    {
+      "id": "L1897-DISC-04",
+      "subject": "Apostolic Latin and liturgical language",
+      "reason": "Cross-chapter historical source warning, no specific normative Mass prayer owner",
+      "lessonOwner": "MF01",
+      "inlineGuideCue": null
+    },
+    {
+      "id": "L1897-DISC-09",
+      "subject": "Eucharistic unity through one bread",
+      "reason": "General theological unity context, not exact Latin wording of one 1962 cue",
+      "lessonOwner": "MF06",
+      "inlineGuideCue": null
+    }
+  ]
+}

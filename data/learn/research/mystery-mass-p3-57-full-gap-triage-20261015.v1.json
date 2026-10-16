@@ -1,0 +1,574 @@
+{
+  "schema": "AO_MYSTERY_MASS_PRIORITY_3_57_FULL_TRIAGE_V1",
+  "date": "2026-10-15",
+  "status": "INITIAL_GAP_TRIAGE_COMPLETE_325_OF_325_SOURCE_CERTIFICATION_NOT_IMPLIED",
+  "inputWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_All_P2_Reviewed_2026-10-15.xlsx",
+  "reviewedWorkbook": "Ad_Orientem_Mass_Master_Reference_Matrix_All_Priorities_Triaged_2026-10-15.xlsx",
+  "reviewedWorkbookDelivery": "CONVERSATION_XLSX_NOT_COMMITTED_IN_GITHUB",
+  "originalGapCounts": {
+    "P1": 88,
+    "P2": 180,
+    "P3": 57,
+    "total": 325
+  },
+  "microUnitsInOriginalMassMatrix": 435,
+  "pairedAuthorsAndWitnesses": 42,
+  "verifiedHistoricalClaimsPreserved": 139,
+  "olderEvidenceAttachmentsPreserved": 955,
+  "p3ClassCounts": {
+    "SHARED_AMEN_WITH_CONTEXT": 36,
+    "SAME_PRAYER_INVOCATION_REUSE": 5,
+    "SHARED_OREMUS_INVITATION": 4,
+    "MEANINGFUL_SINGLE_CLAUSE_REUSE": 4,
+    "EXISTING_PRIEST_BOW_AT_WORD": 3,
+    "OPTIONAL_COMMUNION_RESPONSE": 2,
+    "PUNCTUATION_AND_CLAUSE_SEGMENT_REVIEW": 2,
+    "PRIEST_ACTION_TIMING_REVIEW": 1
+  },
+  "exceptionCount": 8,
+  "exceptionPolicy": {
+    "threeExistingBowEvents": [
+      "AO.RUB.C0061.01",
+      "AO.RUB.C0067.01",
+      "AO.RUB.C0101.01"
+    ],
+    "optionalSecondConfiteor": [
+      "AO.V3.0239.U001",
+      "AO.V3.0241.U001"
+    ],
+    "donorPunctuationHolds": [
+      "AO.V3.0248.U002",
+      "AO.V3.0261.U002"
+    ],
+    "priestGestureCheck": [
+      "AO.V3.0196.U002"
+    ],
+    "priestGestureCheckNote": "Nobis quoque peccatoribus requires source/timing reconciliation; no new event should be issued without inspecting existing gesture registry and 1962 ceremony."
+  },
+  "methodologicalHold": [
+    "Classification is coverage triage, not approval of an author quotation, Latin-text span, theological exposition or new runtime gesture.",
+    "36 Amen clauses retain original speaker, prayer ending and conditional role; never treat as 36 missing exegeses.",
+    "Short theology phrases Deo, Adoramus te, Credo, simul adoratur are meaningful and cannot be deleted as boilerplate.",
+    "Existing bow event at both Gloria Iesu Christe clauses and Credo simul adoratur remains in current R17 priest register.",
+    "Do not treat two historical/local second-Confiteor responses as universal 1962 instructions.",
+    "The extracted 'et praesta;' punctuation is not corrected automatically; exact donor/1962 Latin witness comparison required.",
+    "Original 40-sheet workbook remains separate from this compact GitHub research handoff; do not claim GitHub contains its xlsx binary.",
+    "Do not merge into production Mass reader or publish unreviewed bilingual paragraphs."
+  ],
+  "rows": [
+    {
+      "unitId": "AO.V3.0001.U002",
+      "parentId": "AO.V3.0001",
+      "sourceCueId": "AO.SM.C0001",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0011.U003",
+      "parentId": "AO.V3.0011",
+      "sourceCueId": "AO.SM.C0011",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0020.U001",
+      "parentId": "AO.V3.0020",
+      "sourceCueId": "AO.SM.C0020",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0025.U001",
+      "parentId": "AO.V3.0025",
+      "sourceCueId": "AO.SM.C0025",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0027.U001",
+      "parentId": "AO.V3.0027",
+      "sourceCueId": "AO.SM.C0027",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0036.U001",
+      "parentId": "AO.V3.0036",
+      "sourceCueId": "AO.SM.C0036",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_OREMUS_INVITATION",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0037.U004",
+      "parentId": "AO.V3.0037",
+      "sourceCueId": "AO.SM.C0037",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0039.U003",
+      "parentId": "AO.V3.0039",
+      "sourceCueId": "AO.SM.C0039",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0040.U002",
+      "parentId": "AO.V3.0040",
+      "sourceCueId": "AO.SM.C0040",
+      "existingSourceOwner": "AO.CARD.001",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0054.U001",
+      "parentId": "AO.V3.0054",
+      "sourceCueId": "AO.SM.C0054",
+      "existingSourceOwner": "AO.CARD.003",
+      "disposition": "MEANINGFUL_SINGLE_CLAUSE_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0056.U001",
+      "parentId": "AO.V3.0056",
+      "sourceCueId": "AO.SM.C0056",
+      "existingSourceOwner": "AO.CARD.003",
+      "disposition": "MEANINGFUL_SINGLE_CLAUSE_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0061.U001",
+      "parentId": "AO.V3.0061",
+      "sourceCueId": "AO.SM.C0061",
+      "existingSourceOwner": "AO.CARD.003",
+      "disposition": "EXISTING_PRIEST_BOW_AT_WORD",
+      "existingPublishedPriestEvent": "AO.RUB.C0061.01",
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0067.U001",
+      "parentId": "AO.V3.0067",
+      "sourceCueId": "AO.SM.C0067",
+      "existingSourceOwner": "AO.CARD.003",
+      "disposition": "EXISTING_PRIEST_BOW_AT_WORD",
+      "existingPublishedPriestEvent": "AO.RUB.C0067.01",
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0069.U002",
+      "parentId": "AO.V3.0069",
+      "sourceCueId": "AO.SM.C0069",
+      "existingSourceOwner": "AO.CARD.003",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0074.U001",
+      "parentId": "AO.V3.0074",
+      "sourceCueId": "AO.SM.C0074",
+      "existingSourceOwner": "AO.CARD.004",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0079.U004",
+      "parentId": "AO.V3.0079",
+      "sourceCueId": "AO.SM.C0079",
+      "existingSourceOwner": "AO.CARD.007",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0080.U004",
+      "parentId": "AO.V3.0080",
+      "sourceCueId": "AO.SM.C0080",
+      "existingSourceOwner": "AO.CARD.007",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0089.U001",
+      "parentId": "AO.V3.0089",
+      "sourceCueId": "AO.SM.C0089",
+      "existingSourceOwner": "AO.CARD.009",
+      "disposition": "MEANINGFUL_SINGLE_CLAUSE_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0101.U001",
+      "parentId": "AO.V3.0101",
+      "sourceCueId": "AO.SM.C0101",
+      "existingSourceOwner": "AO.CARD.009",
+      "disposition": "EXISTING_PRIEST_BOW_AT_WORD",
+      "existingPublishedPriestEvent": "AO.RUB.C0101.01",
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0105.U002",
+      "parentId": "AO.V3.0105",
+      "sourceCueId": "AO.SM.C0105",
+      "existingSourceOwner": "AO.CARD.009",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0108.U001",
+      "parentId": "AO.V3.0108",
+      "sourceCueId": "AO.SM.C0108",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_OREMUS_INVITATION",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0110.U005",
+      "parentId": "AO.V3.0110",
+      "sourceCueId": "AO.SM.C0110",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0113.U005",
+      "parentId": "AO.V3.0113",
+      "sourceCueId": "AO.SM.C0113",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0114.U003",
+      "parentId": "AO.V3.0114",
+      "sourceCueId": "AO.SM.C0114",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0120.U004",
+      "parentId": "AO.V3.0120",
+      "sourceCueId": "AO.SM.C0120",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0123.U002",
+      "parentId": "AO.V3.0123",
+      "sourceCueId": "AO.SM.C0123",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0127.U003",
+      "parentId": "AO.V3.0127",
+      "sourceCueId": "AO.SM.C0127",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0128.U006",
+      "parentId": "AO.V3.0128",
+      "sourceCueId": "AO.SM.C0128",
+      "existingSourceOwner": "AO.CARD.010",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0133.U001",
+      "parentId": "AO.V3.0133",
+      "sourceCueId": "AO.SM.C0133",
+      "existingSourceOwner": "AO.CARD.011",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0142.U001",
+      "parentId": "AO.V3.0142",
+      "sourceCueId": "AO.SM.C0142",
+      "existingSourceOwner": "AO.CARD.012",
+      "disposition": "MEANINGFUL_SINGLE_CLAUSE_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0160.U002",
+      "parentId": "AO.V3.0160",
+      "sourceCueId": "AO.SM.C0160",
+      "existingSourceOwner": "AO.CANON.03",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0162.U002",
+      "parentId": "AO.V3.0162",
+      "sourceCueId": "AO.SM.C0162",
+      "existingSourceOwner": "AO.CANON.04",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0191.U002",
+      "parentId": "AO.V3.0191",
+      "sourceCueId": "AO.SM.C0191",
+      "existingSourceOwner": "AO.CANON.10",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0195.U002",
+      "parentId": "AO.V3.0195",
+      "sourceCueId": "AO.SM.C0195",
+      "existingSourceOwner": "AO.CANON.11",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0196.U002",
+      "parentId": "AO.V3.0196",
+      "sourceCueId": "AO.SM.C0196",
+      "existingSourceOwner": "AO.CANON.12",
+      "disposition": "PRIEST_ACTION_TIMING_REVIEW",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0208.U001",
+      "parentId": "AO.V3.0208",
+      "sourceCueId": "AO.SM.C0208",
+      "existingSourceOwner": "AO.CARD.019",
+      "disposition": "SHARED_OREMUS_INVITATION",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0221.U002",
+      "parentId": "AO.V3.0221",
+      "sourceCueId": "AO.SM.C0221",
+      "existingSourceOwner": "AO.CARD.020",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0225.U001",
+      "parentId": "AO.V3.0225",
+      "sourceCueId": "AO.SM.C0225",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SAME_PRAYER_INVOCATION_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0225.U002",
+      "parentId": "AO.V3.0225",
+      "sourceCueId": "AO.SM.C0225",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SAME_PRAYER_INVOCATION_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0225.U008",
+      "parentId": "AO.V3.0225",
+      "sourceCueId": "AO.SM.C0225",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0226.U001",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SAME_PRAYER_INVOCATION_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0226.U002",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SAME_PRAYER_INVOCATION_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0226.U007",
+      "parentId": "AO.V3.0226",
+      "sourceCueId": "AO.SM.C0226",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0227.U002",
+      "parentId": "AO.V3.0227",
+      "sourceCueId": "AO.SM.C0227",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SAME_PRAYER_INVOCATION_REUSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0227.U006",
+      "parentId": "AO.V3.0227",
+      "sourceCueId": "AO.SM.C0227",
+      "existingSourceOwner": "AO.CARD.022",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0232.U002",
+      "parentId": "AO.V3.0232",
+      "sourceCueId": "AO.SM.C0232",
+      "existingSourceOwner": "AO.CARD.023",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0234.U002",
+      "parentId": "AO.V3.0234",
+      "sourceCueId": "AO.SM.C0234",
+      "existingSourceOwner": "AO.CARD.023",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0239.U001",
+      "parentId": "AO.V3.0239",
+      "sourceCueId": "AO.SM.C0239",
+      "existingSourceOwner": "AO.CARD.024",
+      "disposition": "OPTIONAL_COMMUNION_RESPONSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0241.U001",
+      "parentId": "AO.V3.0241",
+      "sourceCueId": "AO.SM.C0241",
+      "existingSourceOwner": "AO.CARD.024",
+      "disposition": "OPTIONAL_COMMUNION_RESPONSE",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0246.U002",
+      "parentId": "AO.V3.0246",
+      "sourceCueId": "AO.SM.C0246",
+      "existingSourceOwner": "AO.CARD.025",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0248.U002",
+      "parentId": "AO.V3.0248",
+      "sourceCueId": "AO.SM.C0248",
+      "existingSourceOwner": "AO.CARD.026",
+      "disposition": "PUNCTUATION_AND_CLAUSE_SEGMENT_REVIEW",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0248.U005",
+      "parentId": "AO.V3.0248",
+      "sourceCueId": "AO.SM.C0248",
+      "existingSourceOwner": "AO.CARD.026",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0253.U001",
+      "parentId": "AO.V3.0253",
+      "sourceCueId": "AO.SM.C0253",
+      "existingSourceOwner": "AO.CARD.027",
+      "disposition": "SHARED_OREMUS_INVITATION",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0255.U001",
+      "parentId": "AO.V3.0255",
+      "sourceCueId": "AO.SM.C0255",
+      "existingSourceOwner": "AO.CARD.027",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0261.U002",
+      "parentId": "AO.V3.0261",
+      "sourceCueId": "AO.SM.C0261",
+      "existingSourceOwner": "AO.CARD.029",
+      "disposition": "PUNCTUATION_AND_CLAUSE_SEGMENT_REVIEW",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0261.U006",
+      "parentId": "AO.V3.0261",
+      "sourceCueId": "AO.SM.C0261",
+      "existingSourceOwner": "AO.CARD.029",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    },
+    {
+      "unitId": "AO.V3.0266.U001",
+      "parentId": "AO.V3.0266",
+      "sourceCueId": "AO.SM.C0266",
+      "existingSourceOwner": "AO.CARD.029",
+      "disposition": "SHARED_AMEN_WITH_CONTEXT",
+      "existingPublishedPriestEvent": null,
+      "publicationApproved": false
+    }
+  ],
+  "existingPriestEventCount": 3
+}
