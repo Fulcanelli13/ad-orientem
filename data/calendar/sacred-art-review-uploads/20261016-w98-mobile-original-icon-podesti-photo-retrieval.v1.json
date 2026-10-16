@@ -11,16 +11,8 @@
       "commonsFile": "Apparizione a Marguerite Marie Alacoque.jpg",
       "physicalStatus": "COMMONS_ATTRIBUTION_WITHOUT_SECOND_INSTITUTIONAL_CONFIRMATION",
       "licenseExpectation": "CC BY-SA 4.0 / PD-Art, follow photographer terms",
-      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg"
-    },
-    {
-      "categoryIndex": 81,
-      "workId": "B02-HELP-ICON-BYZ",
-      "label": "Original Roman icon, 781x1024 complete icon",
-      "commonsFile": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
-      "physicalStatus": "COMMONS_SAYS_ORIGINAL_IN_SANT_ALFONSO_ROMA",
-      "licenseExpectation": "PD-Art / public domain reproduction with jurisdiction checks",
-      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant%27Alfonso_di_Liguori_(Rome).jpg"
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "photoRightsPolicy": "Commons shows both PD-Art and uploader CC BY-SA 4.0; retain uploader attribution/share-alike conditions pending legal review"
     },
     {
       "categoryIndex": 81,
@@ -29,7 +21,18 @@
       "commonsFile": "Perpetual help original icon.jpg",
       "physicalStatus": "IDENTITY_CONDITIONAL_ORIGINAL_ICON_REPRO",
       "licenseExpectation": "PD-Art public domain reproduction, jurisdiction checks",
-      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg"
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg",
+      "photoRightsPolicy": "Commons claims PD-Art for old icon; image is colourful, but exact physical source unproven"
+    },
+    {
+      "categoryIndex": 81,
+      "workId": "B02-HELP-ICON-BYZ",
+      "label": "Authenticated photographer self-described original Sant Alfonso icon 2009 photo",
+      "commonsFile": "PerpetualExact.jpg",
+      "physicalStatus": "PHOTO_AUTHOR_SAYS_TAKEN_OF_PHYSICAL_ORIGINAL_SANT_ALFONSO_ROME_2009",
+      "photoRightsPolicy": "CC BY-SA 3.0, attribution and share-alike even if photo page prose also says public domain",
+      "licenseExpectation": "CC BY-SA 3.0",
+      "physicalOriginalEvidence": "https://commons.wikimedia.org/wiki/File:PerpetualExact.jpg"
     }
   ],
   "allDecisionsResearchOnly": true,
@@ -39,5 +42,13 @@
     "maxHeightCSSpx": 500
   },
   "hardMinimumNativeImagePixels": null,
-  "note": "If source image depicts complete icon at mobile display size, do not reject based on 500- or 781-pixel source width."
+  "note": "If source image depicts complete icon at mobile display size, do not reject based on 500- or 781-pixel source width.",
+  "visualExclusions": [
+    {
+      "categoryIndex": 81,
+      "commonsFile": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+      "reason": "Decoded W98 source shows black-and-white mosaic rendering, not physical Roman icon's painted surface. Reject regardless of high pixel count.",
+      "sourceSha256": "4f1c9b7b87585c6a6a95d5c391cb67dc572557975f4b4e8c1a320e151f1e22af"
+    }
+  ]
 }
