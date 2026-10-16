@@ -141,6 +141,14 @@ const gaps=[...missing.values()].sort((a,b)=>a.source_id.localeCompare(b.source_
 const gapKinds=Object.fromEntries([...new Set(gaps.map(x=>x.provisional_kind))].sort().map(kind=>[
  kind,gaps.filter(x=>x.provisional_kind===kind).length
 ]));
+assert.deepEqual(gapKinds,{
+ "ANGELIC_FIGURE_OR_FEAST_REVIEW":1,
+ "CHRISTOLOGICAL_OR_EVENT_REVIEW":1,
+ "COLLECTIVE_OR_GROUP_REVIEW":1,
+ "INDIVIDUAL_OR_PERSON_TITLE_REVIEW":12,
+ "LITURGICAL_DAY_OR_EVENT_REVIEW":16,
+ "MARIAN_OR_MARIAN_CONTEXT_REVIEW":11
+},"42 observed-source gaps must be bulk-triaged by type, not presumed all individuals");
 const summary={
  year:2026,days_observed:365,observed_sanctoral_principals:165,
  observed_named_commemoration_occurrences:117,
