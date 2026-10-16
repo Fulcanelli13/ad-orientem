@@ -2336,12 +2336,20 @@ export async function mountNativeReaderPreview({
             .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)));
           const sourced=first&&ready.cueState.supported
             ? ready.cueState.project(first):null;
-          return sourced?.supported ? {
+          if(!sourced?.supported)return null;
+          const icons=iconKeysForReaderState({
+            priestAction:sourced.priestAction,
+            priestPosition:sourced.priestPosition,
+            gesture:sourced.gesture,
+          });
+          const withIcon=(value,key)=>value
+            ? Object.freeze({...value,iconKey:key??null}) : null;
+          return Object.freeze({
             sourceCueId:first,
-            priestAction:sourced.priestAction??null,
-            priestPosition:sourced.priestPosition??null,
-            faithfulGesture:sourced.gesture??null,
-          }:null;
+            priestAction:withIcon(sourced.priestAction,icons.priestActionIconKey),
+            priestPosition:withIcon(sourced.priestPosition,icons.priestPositionIconKey),
+            faithfulGesture:withIcon(sourced.gesture,icons.gestureIconKey),
+          });
         })()
         :null,
       missalHeadings:String(ready.prepared?.readerPreferences?.mode ??
