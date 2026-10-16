@@ -1,0 +1,78 @@
+{
+  "schema": "AO_BIBLICAL_STORY_FIRST_EDITORIAL_POLICY_V1",
+  "date": "2026-10-16",
+  "status": "GOVERNING_EDITORIAL_GOAL_RESEARCH_ONLY",
+  "mission": "Introduce readers to compelling biblical stories, help them understand their meaning, and encourage onward reading of Sacred Scripture. This is not a complete 73-book course.",
+  "productIntent": [
+    "Selected and manageable episodes, not exhaustive book-by-book coverage",
+    "Sufficient story context and exact Scripture with the approved Bible editions",
+    "Optional longer/full reading through existing native reader",
+    "Catholic typological Old-Testament/New-Testament links without overloading the beginner",
+    "Narrative and meditative texts combined when they help understanding"
+  ],
+  "preserve": {
+    "atlasMilestones": 151,
+    "atlasKeyIdentity": true,
+    "existingSections": 37,
+    "existingReferenceEvidenceRows": 460,
+    "sourceRegistryResearch": true,
+    "approvedBibleVersions": true,
+    "nativeReader": true
+  },
+  "nonGoals": [
+    "Reach 73/73 books in the core guided path",
+    "Include one passage per canonical Bible book",
+    "Require 264 or 299 teaching units",
+    "Turn every Atlas milestone into a mandatory lesson",
+    "Treat multiple citations from one Lectionary family as independent recommendations"
+  ],
+  "candidateClasses": {
+    "CORE_STORY": "A strong narrative, miracle, parable, conversation, or central salvation-history event suitable for the main path",
+    "SUPPORTING_REFLECTION": "A short Psalm, wisdom text, prophecy, Gospel or epistle passage illuminating an important story or doctrine",
+    "OPTIONAL_DEEPER_READING": "Longer contextual Scripture and related passages reached through the reader",
+    "SKIP_GUIDED_PATH": "No mandatory lesson; Scripture remains canonical and discoverable through existing reader",
+    "REVIEW_HOLD": "Context, source identification, chapter numbering or liturgical/theological association unresolved"
+  },
+  "selectionCriteria": [
+    "Memorable human story with coherent beginnings, action and outcome",
+    "Centrality to Christ, salvation history, Catholic doctrine and devotion",
+    "Understandable without distorting omitted dialogue, chronology or cause and effect",
+    "Important Old Testament figures, Passover, Protoevangelium, prophets, Psalms, wisdom and Song of Songs where they illuminate New Testament texts",
+    "Consider Johannine Gospel, letters and Revelation with particular editorial attention, without crowding out other biblical voices",
+    "Keep published short/long alternatives and independent publisher evidence as decision support, not minimum votes",
+    "A clear invitation to open the full text and read further"
+  ],
+  "allowOmission": [
+    "Long legal/ritual prescriptions with little role in an introductory narrative journey",
+    "Extended genealogies",
+    "Repetitive chronicle passages",
+    "Low-priority minor episodes",
+    "Unnecessary dedicated readings to satisfy 73-book coverage"
+  ],
+  "doNotInfer": [
+    "Skipping a guided reading denies the Catholic canon or its spiritual worth",
+    "Old Testament is dispensable: its major narrative and typological anchors are central",
+    "An Atlas pin is required for all Psalms, Prophets or Epistles",
+    "A publisher's whole-chapter assignment is a short abridgement"
+  ],
+  "readingLayers": [
+    "Concise context and reason this episode matters (not AI-authored Bible narrative)",
+    "Faithful chosen exact Scripture selection after editorial review",
+    "Optional extended passage and direct existing-reader full-text link"
+  ],
+  "sourceCuration": {
+    "keepFullBookSourceHarvest": "RESEARCH_ARCHIVE_NOT_PRODUCT_COMPLETENESS_GATE",
+    "keep151To264GranularityAudit": "OPTIONAL_STRUCTURAL_CANDIDATES_NOT_TARGET",
+    "minimum73BookTarget": "RETIRED",
+    "minimum299UnitArithmetic": "RETIRED",
+    "old460ReferenceMaster": "PRESERVED_UNALTERED",
+    "sourceIndependence": "Count distinct editorial families, not source citations",
+    "nextAction": "Review the 151 milestones, proposed subdivisions and supplements by story impact, typology and context; choose a curated, selective core, not all books"
+  },
+  "publication": {
+    "approvedNewPassages": 0,
+    "changesToApp": 0,
+    "changesToAtlas": 0,
+    "changesToBibleVersions": 0
+  }
+}
