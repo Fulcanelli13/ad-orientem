@@ -218,10 +218,16 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       :L("Offline version tracking unavailable here","Suivi des versions hors ligne indisponible ici");
     const checkLabel=vm.updateCheck==="checking"
       ?L("Checking for updates…","Recherche de mises à jour…")
-      :candidateId?L("Update available — use the update prompt","Mise à jour disponible — utiliser l’invite")
+      :candidateId?L("New copy staged; installation requires a separate tap","Nouvelle copie prête ; installation sur demande")
       :vm.updateCheck==="current"?L("No new offline copy detected","Aucune nouvelle copie hors ligne détectée")
       :vm.updateCheck==="error"?L("Update check failed; saved copy retained","Échec du contrôle ; copie conservée")
       :L("Check for a newer saved copy","Rechercher une nouvelle copie");
+    const canApply=Boolean(candidateId&&canCheck&&!vm.live&&vm.updateCheck!=="applying");
+    const applyLabel=vm.live
+      ?L("Finish Mass before installing; saved copy retained","Terminez la Messe avant installation ; copie conservée")
+      :vm.updateCheck==="applying"?L("Applying update…","Installation de la mise à jour…")
+      :vm.updateCheck==="applyError"?L("Update could not be installed; retry without deleting data","Installation impossible ; réessayez sans effacer les données")
+      :L("Install the ready copy and reload the app","Installer la copie prête et recharger l’application");
     const canonicalUrl="https://fulcanelli13.github.io/ad-orientem/";
     const snapshotLabel=snapshotId
       ?'<span class="aoSetBadge" data-settings-snapshot-id="'+esc(snapshotId)+'">'+esc(snapshotId)+'</span>'
@@ -232,8 +238,10 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         vm.canonicalHost?L("Canonical GitHub Pages","GitHub Pages canonique"):L("Current site is not the canonical GitHub Pages address","Ce site n’est pas l’adresse canonique GitHub Pages"),
         '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("Canonical site ↗","Site canonique ↗"))+'</a>')+
       row(L("Check for updates","Vérifier les mises à jour"),checkLabel,
-        icon("ao-ui-next"),'data-settings-check-update'+(canCheck&&vm.updateCheck!=="checking"?"":" disabled"))) +
-      note(esc(L("An update check only prepares a newer offline copy. Installing it requires a separate confirmation and must not interrupt an active Mass. The short copy ID is a snapshot fingerprint, not a Git commit.","La vérification prépare seulement une nouvelle copie hors ligne. Son installation demande une confirmation distincte et ne doit pas interrompre une Messe en cours. L’identifiant court désigne une copie, non un commit Git.")));
+        icon("ao-ui-next"),'data-settings-check-update'+(canCheck&&vm.updateCheck!=="checking"&&vm.updateCheck!=="applying"?"":" disabled"))+
+      (candidateId?row(L("Install ready update","Installer la mise à jour prête"),applyLabel,
+        icon("ao-ui-next"),'data-settings-apply-update'+(canApply?"":" disabled")):"")) +
+      note(esc(L("Checking only prepares a newer saved copy. Installing it is a separate action that reloads the app; never do this during Mass. Your saved preferences and progress are not cleared. The short ID is a snapshot fingerprint, not a Git commit.","La vérification ne fait que préparer une nouvelle copie. Son installation est une action distincte qui recharge l’application ; jamais pendant la Messe. Les préférences et la progression enregistrées ne sont pas effacées. L’identifiant court est une empreinte de copie, non un commit Git.")));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
       section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
