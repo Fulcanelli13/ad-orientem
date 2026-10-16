@@ -61,6 +61,7 @@ export function mountScriptureLibrary(root,{
  let section="read";
  let contextDepth="selected";
  let commentaryVisible=false;
+ let relatedExpanded=false;
  let browseExpanded=!context?.reference;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
@@ -365,6 +366,56 @@ export function mountScriptureLibrary(root,{
    main.append(actions);
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
+   // Lazy reverse index from the exact same cited-object source registries.
+   // Presence here indicates intersecting verses, not an identical rite.
+   const related=element("details",null,"aoScriptureRelated");
+   related.dataset.scriptureRelatedObjects="";
+   related.open=relatedExpanded;
+   const relatedSummary=element("summary",lang==="fr"?"Liens dans Ad Orientem":"Connected in Ad Orientem");
+   const relatedBody=element("div",null,"aoScriptureRelatedList");
+   const relationText=Object.freeze({
+     COMPOSITE_DEVOTION:["Partly biblical prayer, not a verbatim whole prayer","Prière composée, non intégralement biblique"],
+     GOSPEL_PASSION_CONTEXT:["Gospel context for this station","Contexte évangélique de cette station"],
+     BIBLICAL_PSALM_TRADITIONAL_NUMBERING:["Psalm in traditional numbering","Psaume en numérotation traditionnelle"],
+     traditional_marian_typology:["Traditional Marian typology","Typologie mariale traditionnelle"],
+     related_scripture_for_doctrinal_mystery:["Supporting passage, not direct narrative","Passage associé, non récit direct"],
+     LITURGICAL_ADAPTATION:["Liturgical adaptation of biblical words","Adaptation liturgique de paroles bibliques"]
+   });
+   const paintRelated=async()=>{
+     if(!related.open||!related.isConnected)return;
+     relatedBody.replaceChildren(element("p",lang==="fr"?"Recherche des liens…":"Finding source-linked objects…","aoScriptureNotice"));
+     try{
+       const module=await import("./related-objects.js");
+       if(!related.isConnected||!related.open)return;
+       const hits=module.scriptureLinkedObjectsForPassage(location,{limit:30});
+       relatedBody.replaceChildren();
+       if(!hits.length){relatedBody.append(element("p",lang==="fr"?"Aucun autre objet lié à ces versets.":"No documented cross-module connections for these verses.","aoScriptureNotice"));return;}
+       relatedBody.append(element("p",lang==="fr"
+         ?"Objets citant explicitement un verset commun. Ce recoupement ne prouve pas une identité de rites, d’événements ou d’interprétations."
+         :"Objects explicitly citing overlapping verses. Overlap does not establish identical rites, events or interpretations.","aoScriptureRelatedIntro"));
+       for(const hit of hits){
+         const row=element("article",null,"aoScriptureRelatedObject");
+         row.dataset.scriptureLinkedObject=hit.id;
+         row.append(element("strong",hit.title[lang]));
+         row.append(element("small",hit.reference,"aoScriptureRelatedReference"));
+         const explanation=hit.description?.[lang]||relationText[hit.relation]?.[lang==="fr"?1:0]||
+           (lang==="fr"?"Référence biblique liée à cet objet":"Source-linked biblical reference for this object");
+         row.append(element("p",explanation,"aoScriptureRelatedExplanation"));
+         // A destination link must not be faked: currently the original
+         // destination does not guarantee a Back route to this passage.
+         relatedBody.append(row);
+       }
+     }catch{
+       if(relatedBody.isConnected)relatedBody.replaceChildren(element("p",lang==="fr"
+         ?"Index momentanément indisponible.":"Related-object index currently unavailable.","aoScriptureNotice"));
+     }
+   };
+   relatedSummary.addEventListener("click",e=>{
+     e.preventDefault();relatedExpanded=!related.open;related.open=relatedExpanded;
+     if(relatedExpanded)void paintRelated();
+   });
+   related.append(relatedSummary,relatedBody);wrap.append(related);
+   if(relatedExpanded)void paintRelated();
    wrap.append(browse);
    const searchSection=element("details",null,"aoScriptureSearch");
    searchSection.append(element("summary",t.search));
