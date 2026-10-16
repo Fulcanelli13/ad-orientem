@@ -133,7 +133,18 @@
     "latinDiscrepanciesClassifiedAsAccentVariations": 2,
     "latinDiscrepanciesConditionalGospelName": 1,
     "approvedNewCeremonialTriggers": 0,
-    "gospelEvangelistHeaderSourceFirstMismatchReproduced": 1
+    "gospelEvangelistHeaderSourceFirstMismatchReproduced": 1,
+    "gospelAuthorRuntimeOwnerFixMerged": {
+      "pullRequest": 1297,
+      "sha": "e198a0a65536180830dbf0d6cb1c198abcf480d5",
+      "validatedForms": [
+        "LOW_MISSAL",
+        "LOW_SIMPLE",
+        "MISSA_CANTATA_LIVE",
+        "SOLEMN_LIVE"
+      ],
+      "releaseNotYetVerifiedLivePages": true
+    }
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -154,6 +165,7 @@
     "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge.",
     "1960 Codex Rubricarum §518(b) requires position/form/feast checks for Et incarnatus est; an unconditional priest kneel from one Latin token would contradict seated-vs-standing distinction.",
     "The frozen source-first model has a potentially static 'secúndum Matthǽum' donor at C0084 independent from the resolved Gospel Proper at B026; targeted John Gospel reproduction test is part of P0. Owner must certify and correct form-applicable runtime behavior before P1.",
-    "CI P0 research suite reproduced fixed 'secúndum Matthǽum' heading while a source-first test model renders synthetic Gospel according to John (run 38876627431); production deployment paths not exhaustively examined, owner correction required."
+    "CI P0 research suite reproduced fixed 'secúndum Matthǽum' heading while a source-first test model renders synthetic Gospel according to John (run 38876627431); production deployment paths not exhaustively examined, owner correction required.",
+    "The canonical reader correction was separately merged to main via PR #1297; P0's donor snapshot, its original three literal source differences, independent printed-source approvals and publication holds remain unchanged."
   ]
 }
