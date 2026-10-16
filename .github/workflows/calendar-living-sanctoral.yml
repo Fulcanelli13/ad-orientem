@@ -13,6 +13,9 @@ on:
       - 'data/calendar/cum-sanctissima-protected-third-class.review.v1.json'
       - 'data/calendar/particular-traditional-calendar-witnesses.review.v1.json'
       - 'data/calendar/traditional-calendar-adjudication-matrix.v1.json'
+      - 'data/calendar/traditional-mass-formulary-review.v1.json'
+      - 'src/calendar/traditional-formulary-review.js'
+      - 'tests/calendar-traditional-formulary-sources.mjs'
       - 'src/calendar/traditional-day-adjudication.js'
       - 'tests/calendar-traditional-adjudication.mjs'
       - 'tests/calendar-living-sanctoral-date-coverage.mjs'
@@ -63,6 +66,7 @@ jobs:
           node tests/calendar-reviewed-sanctoral-day-integration.mjs
           node tests/calendar-home-living-observances.mjs
           node tests/calendar-traditional-adjudication.mjs
+          node tests/calendar-traditional-formulary-sources.mjs
           node tests/calendar-living-sanctoral-date-coverage.mjs
       - name: Preserve dated-authority research queue
         if: always()
