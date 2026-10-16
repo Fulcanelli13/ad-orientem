@@ -184,3 +184,97 @@ export function massTransitionEditorialPreviewHtml(validation,{french=false}={})
      clean(item.block_id)+' · '+clean(item.proper_slot)+'</li>').join("")+'</ul></section>'+
   '</main>';
 }
+
+/**
+ * Roman Canon draft: exact Sung text blocks B047–B061 are a distinct
+ * Formation projection, not the native LIVE 48-card projection or P0
+ * manuscript segmentation. No theological assertion is approved here.
+ */
+export function validateRomanCanonReadingPilot(pilot,sung,formation,guide){
+ const fail=reason=>Object.freeze({ok:false,reason,readings:Object.freeze([])});
+ if(pilot?.schema!=="ao-formation-canon-prayer-reading-pilot-v1"||
+    pilot.status!=="EDITORIAL_DRAFT_NOT_RELEASED"||
+    pilot.scope!=="FORMATION_ONLY"||pilot.profile!=="ORDINARY_SUNG"||
+    pilot.study_level!=="DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT"||
+    !Array.isArray(pilot.entries)||pilot.entries.length!==15)return fail("INVALID_CANON_DRAFT");
+ if(!Array.isArray(sung?.blocks)||formation?.schema!=="ao-mass-formation-campion-v1"||
+    !guide?.entries)return fail("MISSING_ORIGINAL_OWNERS");
+ const lookup=new Map(sung.blocks.map(x=>[x.Block_ID,x]));
+ const seenIDs=new Set(),seenBlocks=new Set(),validated=[];
+ for(let index=0;index<15;index++){
+  const record=pilot.entries[index],number=index+47;
+  const expectedBlock="AO.SM.B"+String(number).padStart(3,"0");
+  const expectedMoment=number<=51?"AO.CARD.014":number===52?"AO.CARD.015":
+    number===53?"AO.CARD.016":number<=59?"AO.CARD.017":"AO.CARD.018";
+  const expectedMacro=number<=51?"AO.SM.M14":number===52?"AO.SM.M15":
+    number===53?"AO.SM.M16":number<=59?"AO.SM.M17":"AO.SM.M18";
+  const expectedStage=number===52||number===53?"MF05":"MF04";
+  const block=lookup.get(record?.block_id);
+  if(record?.id!=="AO.FORM.PRAYER.CANON."+String(index+1).padStart(2,"0")||
+     record.block_id!==expectedBlock||record.moment_id!==expectedMoment||
+     record.stage_id!==expectedStage||seenIDs.has(record.id)||seenBlocks.has(record.block_id)||
+     !guide.entries[record.moment_id]||
+     !formation.stages.some(x=>x.id===record.stage_id))return fail("CANON_BOUNDARY_OR_OWNER_MISMATCH");
+  if(!block||block.Macro_ID!==expectedMacro||block.Proper_Slot||
+     block.Branch_Status!=="NORMATIVE_1962"||
+     !Array.isArray(block.units)||block.units.length===0)return fail("CANON_SOURCE_BLOCK_NOT_PUBLISHED");
+  const wording=block.units.filter(x=>x.clock!=="PRIEST_ACTION").map(x=>String(x.english||"")).join("\n");
+  if(typeof record.text_anchor_en!=="string"||!wording.includes(record.text_anchor_en)||
+     !Array.isArray(record.scripture_within_text)||
+     record.scripture_within_text.some(x=>typeof x!=="string"||!wording.includes(x)))
+    return fail("CANON_TEXT_ANCHOR_OR_SCRIPTURE_MISMATCH");
+  // Supra quae explicitly names biblical people, but their exact citations
+  // are not part of this text witness and require future P0 adjudication.
+  const mentions=record.mentioned_biblical_persons_in_text;
+  const names=number===55?["Abel","Abraham","Melchisedech"]:[];
+  if(!Array.isArray(mentions)||mentions.length!==names.length||
+     mentions.some((person,k)=>person!==names[k]||!wording.includes(person)))
+    return fail("BIBLICAL_PERSON_NOT_EXPLICIT_IN_CANON");
+  if(record.scripture_within_text.length)return fail("UNAPPROVED_CANON_SCRIPTURE_RELATION");
+  if(number===52&&(!wording.includes("FOR THIS IS MY BODY.")||
+      !block.units.some(x=>x.clock==="PRIEST_ACTION"&&x.english.includes("elevates"))))
+    return fail("HOST_CONSECRATION_SOURCE_LOST");
+  if(number===53&&(!wording.includes("FOR THIS IS THE CHALICE OF MY BLOOD")||
+      !block.units.some(x=>x.clock==="PRIEST_ACTION"&&x.english.includes("elevates"))))
+    return fail("CHALICE_CONSECRATION_SOURCE_LOST");
+  if(number===58&&!block.units.every(x=>x.clock==="PUBLIC_TEXT"))
+    return fail("NOBIS_PUBLIC_VOICE_NOT_PRESERVED");
+  if(number===61&&(!block.units.some(x=>x.clock==="USER_RESPONSE")||
+      !block.units.some(x=>x.clock==="PUBLIC_TEXT")))
+    return fail("PUBLIC_CANON_AMEN_NOT_PRESERVED");
+  for(const field of ["heading","reading","observe"]){
+   for(const language of ["en","fr"]){
+    const prose=record[field]?.[language];
+    if(typeof prose!=="string"||prose.trim()!==prose||
+       prose.length<12||prose.length>1800)return fail("MISSING_BILINGUAL_EDITORIAL_PROSE");
+   }
+  }
+  seenIDs.add(record.id);seenBlocks.add(record.block_id);
+  validated.push(Object.freeze({...record,
+   scripture_within_text:Object.freeze([...record.scripture_within_text]),
+   mentioned_biblical_persons_in_text:Object.freeze([...mentions])}));
+ }
+ return Object.freeze({ok:true,reason:"EDITORIAL_PREVIEW_ONLY",readings:Object.freeze(validated)});
+}
+
+export function romanCanonEditorialPreviewHtml(validation,{french=false}={}){
+ if(!validation?.ok)return "";
+ return '<main class="aoFRPilot" data-ao-formation-editorial-only>'+
+  '<header><small>'+(french?"FORMATION · ÉBAUCHE ÉDITORIALE":"FORMATION · EDITORIAL DRAFT")+'</small>'+
+  '<h1>'+(french?"Le Canon romain, prière par prière":"The Roman Canon, prayer by prayer")+'</h1>'+
+  '<p>'+(french?
+    "Quinze lectures descriptives des textes déjà publiés. Elles ne remplacent ni les rubriques de la Messe ni la certification des sources par P0.":
+    "Fifteen descriptive readings of existing published texts, without replacing Mass rubrics or P0 source certification.")+'</p></header>'+
+  validation.readings.map(row=>'<article class="aoFRPilotArticle" data-ao-formation-prayer-block="'+clean(row.block_id)+'">'+
+    '<small>'+clean(row.block_id)+' · '+clean(row.moment_id)+'</small>'+
+    '<h2>'+clean(langText(row.heading,french))+'</h2>'+
+    '<p>'+clean(langText(row.reading,french))+'</p>'+
+    '<h3>'+(french?"Observer le texte":"Read the source wording")+'</h3>'+
+    '<p>'+clean(langText(row.observe,french))+'</p>'+
+    (row.mentioned_biblical_persons_in_text.length?
+      '<p class="aoFRPilotScripture">'+(french?
+        "Personnages bibliques nommés sans référence de verset certifiée : ":
+        "Biblical people named without certified verse references: ")+
+        row.mentioned_biblical_persons_in_text.map(clean).join(", ")+'</p>':"")+
+    '</article>').join("")+'</main>';
+}
