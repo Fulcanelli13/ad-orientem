@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_1962_FORMULARY_MASTER_V1",
   "asOf": "2026-10-16",
-  "status": "38_SECONDARY_COMMON_INDEX_ENTRIES_25_APP_SOURCE_COMPLETE_10_INCOMPLETE_3_UNRESOLVED_NO_NEW_SAINT_MASSES_AUTHORIZED",
+  "status": "38_INDEX_ENTRIES_26_APP_SOURCE_COMPLETE_9_INCOMPLETE_3_AMBIGUOUS_ZERO_NEW_SAINT_MASSES_AUTHORIZED",
   "baselineFile": "data/calendar/traditional-1962-common-formularies.review.v1.json",
   "sourceDirectory": "https://missale.online/proprium/en/commune",
   "corroboratingIndex": "https://fsspx.uk/en/proper-prayers-traditional-latin-mass-31673",
@@ -2695,7 +2695,7 @@
         "canonicalResearchFormularyId": "p1:index:1962:female_martyr_not_a_virgin",
         "printedFamilyId": null,
         "printedVariant": null,
-        "sourcePath": null,
+        "sourcePath": "Commune/C7",
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
@@ -2705,12 +2705,16 @@
         "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
         "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
         "formularyReadyForNewSaint": false,
-        "trilingualCoreSectionVerified": false,
-        "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false,
+        "trilingualCoreSectionVerified": true,
+        "inheritanceOrSourceGap": false,
+        "verifiedSourceId": true,
         "readOnlySourceCompositionStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
         "recoveredLanguageSectionCount": 7,
-        "remainingMissingSectionProof": "data/calendar/p1-partial-common-source-recovery.v1.json"
+        "remainingMissingSectionProof": "data/calendar/p1-partial-common-source-recovery.v1.json",
+        "verifiedViaSourceComposition": true,
+        "sourceCompositionOwner": "src/calendar/p1-partial-common-source-reconciliation.js",
+        "originalLessonSource": "Commune/C6",
+        "sourceCompositionEvidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867"
       }
     },
     {
@@ -3902,7 +3906,7 @@
   "userFacingLinkPolicy": "IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK",
   "citationAndPageReferencesRole": "AUDIT_EVIDENCE_ONLY",
   "importPolicy": "No new Missal text store, no app deep links invented; canonical existing Proper and reader section IDs are source of truth.",
-  "sourceOwnedCommonPathsMapped": 25,
+  "sourceOwnedCommonPathsMapped": 26,
   "directTrilingualSevenSectionCommonRows": 6,
   "partialInheritedLanguageCommonRows": 0,
   "internalCommonSourceCrosswalkPath": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
@@ -3910,10 +3914,10 @@
   "doctorCommonInheritedVernacularRows": 18,
   "directTrilingualNineSectionCommonRows": 23,
   "sourcePathsVerifiedAtLeastNineDirectCore": 24,
-  "partialSourcePathsWithVerifiedCandidateCodes": 10,
+  "partialSourcePathsWithVerifiedCandidateCodes": 9,
   "ambiguousUnmappedIndexRows": 3,
   "sourceEvidenceAudit": "data/calendar/p1-additional-common-app-audit.v1.json",
-  "composedCompleteCommonVariants": 2,
+  "composedCompleteCommonVariants": 3,
   "partialSourceReconciliationVerified": 2,
   "verifiedRecoveredSourceLanguageSections": 25
 }
