@@ -30,8 +30,8 @@ const approvedTraditionalSource=source=>
 // text source authority. Source-bearing placeholders N. are not arbitrary
 // permission to change or compose other prayers.
 export function reviewTraditionalMassFormulary({
-  date,saintId,eligibility,observed1962Id=null,candidates=[],
-  displaced1962Orations=null,commemorationLimitReviewed=false
+  date,saintId,eligibility,observed1962Id=null,observed1962DayKind=null,
+  candidates=[],displaced1962Orations=null,commemorationLimitReviewed=false
 }={}){
   if(!validDate(date)||!saintId?.startsWith?.("saint."))
     return result("INDETERMINATE","DATE_OR_SAINT_ID_REQUIRED");
@@ -56,7 +56,16 @@ export function reviewTraditionalMassFormulary({
       "TRADITIONAL_COLLECT_SECRET_POSTCOMMUNION_NOT_ALL_SOURCED",{
         original1962ObservanceId:observed1962Id,
         sourceCandidateId:first.formularyId});
-  if(observed1962Id&&!hasExactOrations(displaced1962Orations))
+  // Cum sanctissima §4 requires the three-orations commemoration when
+  // a feast or saint's vigil is omitted. A III/IV feria is different.
+  // Never infer a feast solely from the resolver's source ID.
+  if(observed1962Id&&!["FEAST","SAINT_VIGIL","FERIA"].includes(observed1962DayKind))
+    return result("ORIGINAL_DAY_TYPE_UNVERIFIED",
+      "DO_NOT_INFER_DISPLACED_FEAST_FROM_DATE_OR_SOURCE_ID",{
+      original1962ObservanceId:observed1962Id,
+      sourceCandidateId:first.formularyId});
+  if(["FEAST","SAINT_VIGIL"].includes(observed1962DayKind)&&
+     !hasExactOrations(displaced1962Orations))
     return result("DISPLACED_1962_ORATIONS_MISSING",
       "OMITTED_TRADITIONAL_FEAST_REQUIRES_FULL_COMMEMORATION_TRIO",{
       original1962ObservanceId:observed1962Id,
