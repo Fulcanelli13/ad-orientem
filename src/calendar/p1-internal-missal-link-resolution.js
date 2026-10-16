@@ -31,6 +31,8 @@ function sourceMatches(requested,actuallyUsed,observance){
 export function inspectP1InternalMissalLink({anchor,calendarResolution,proper,language="en"}={}){
  if(!anchor||typeof anchor!=="object"||!text(anchor.anchorId))
    return held("MISSING_REGISTERED_ANCHOR");
+ if(anchor.requestedSurface!=="MISSAL_READ_ONLY")
+   return held("NOT_A_READ_ONLY_MISSAL_REQUEST",{anchorId:anchor.anchorId});
  if(!ORATION_SLOTS.has(anchor.slot)||!READER_PROPER_SLOTS.includes(anchor.slot))
    return held("NON_CANONICAL_ORATION_SLOT",{anchorId:anchor.anchorId});
  const currentDate=calendarResolution?.date;
@@ -67,14 +69,11 @@ export function inspectP1InternalMissalLink({anchor,calendarResolution,proper,la
    if(sources.length!==comms.length||sources[index]?.id&&sources[index].id!==ownerId||
       !sourceMatches(sources[index]?.path,sourcePathFrom(sources[index]),ownerPath))
      return held("SOURCE_COMMEMORATION_OWNER_MISMATCH",{anchorId:anchor.anchorId});
-   // A calendar commemoration may have been omitted by the actual Mass-form
-   // selector. Never navigate to a prayer that is not in the source Proper.
-   const decision=data.commemorationFormDecision;
-   if(decision?.status!=="CERTIFIED"||
-     decision?.source!=="1962_PROPER_RESOLVER"||
-     !Array.isArray(data.appliedCommemorations)||
-     !data.appliedCommemorations.some(c=>c.id===ownerId && canonical(c.path)===canonical(ownerPath)))
-     return held("COMMEMORATION_NOT_APPLIED_TO_RESOLVED_MASS",{anchorId:anchor.anchorId});
+   // A REFERENCE in the Missal is not a statement that this oration was
+   // recited in a particular Low/Sung Mass. Raw 1962 Proper source already
+   // contains the historical commemoration and its three prayer rows.
+   // Mass-form projection independently decides whether to recite them.
+   // This bridge NEVER drives the actual Mass; reject requests to do so.
    index+=1;
  }else return held("UNSUPPORTED_ANCHOR_OWNER",{anchorId:anchor.anchorId});
  const [plural,singular]=FIELDS[anchor.slot];
@@ -131,5 +130,8 @@ export function inspectP1InternalMissalLink({anchor,calendarResolution,proper,la
    route:null,externalUrl:null,readOnly:true,
    affectsLiveSession:false,
    maySelectCelebrantMass:false,
+   referenceNotProofOfMassFormSelection:true,
+   intendedUse:"HISTORICAL_MISSAL_REFERENCE_ONLY",
+   liturgicalRecitationStatus:"NOT_ASSERTED_BY_THIS_LINK",
  });
 }
