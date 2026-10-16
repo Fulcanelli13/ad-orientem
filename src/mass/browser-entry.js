@@ -6,6 +6,8 @@ import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import { openAdjacentServiceReader } from "./adjacent-service-reader.js";
+import {commitPrayerJourneyMode} from "./prayer-journey-modes.js";
 import { mountObservedMassSourceSelector } from "./observed-mass-selector.js";
 import "./observed-mass-styles.js";
 import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
@@ -13,6 +15,7 @@ import { mountSpecialMassStage } from "./reader-special-stage.js";
 import "./reader-special-stage-styles.js";
 import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
+import "./mass-entry-harmony-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
@@ -822,6 +825,19 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
          getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",
+         getPrayerState:()=>runtimeState(),
+         onPrayerModeChange:(phase,mode)=>commitPrayerJourneyMode(runtime()?.store,phase,mode),
+         onOpenPreparation:()=>{
+           const store=runtime()?.store;
+           if(typeof store?.dispatch!=="function")return false;
+           store.dispatch({type:"enter-prepare"});
+           // A command is not a completed navigation. If the canonical
+           // route refused to open, keep the Mass-selection page intact.
+           return store.getState?.()?.route==="prepare";
+         },
+         onOpenAdjacentService:(id,trigger)=>openAdjacentServiceReader(id,{
+           win:window,trigger
+         }),
        });
       state.observedSource=mountObservedMassSourceSelector({
         doc:document,
