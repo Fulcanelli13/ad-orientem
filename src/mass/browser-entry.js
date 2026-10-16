@@ -18,7 +18,6 @@ import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
-import { installReaderMassExplorerStudy } from "../learn/mass-reader-study-bridge.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
@@ -628,7 +627,6 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
-  installReaderMassExplorerStudy(previewState.preview,prepared,{win:globalThis});
   installReaderSpecialMassContext(previewState.preview,prepared);
   globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
   globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
