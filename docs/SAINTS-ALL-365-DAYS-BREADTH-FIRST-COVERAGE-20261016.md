@@ -80,3 +80,38 @@ The output is collected as a GitHub Actions artifact, rather than manually revie
 5. **Coverage reporting:** maintain separate denominators for resolved observed dates, distinct source keys, certified persons, source-backed meaningful short profiles, verified map pins and approved image assets.
 
 No new Mass/Proper, new feast, inferred person or group splitting, portrait approval, user rating change, permission request or invented coordinate results from this task.
+
+
+## W76 — twelve person-like source headings and 145 existing shrine associations
+
+The previous 42 raw-observance source-ID differences have been classified in one batch. The **12 person-like source headings** now have a distinct research reconciliation in `data/saints/observed-2026-twelve-person-source-reconciliation.v1.json`.
+
+| Comparison of observed 2026 heading to frozen historical art/source inventory | Records |
+| --- | ---: |
+| Individual artwork/subject keyed to the **same nominal day**, but raw Calendar source ID differs in code, rank or colour | **9** |
+| Explicitly recorded historical additional subject/companion override requiring separate context (Barbara, Martha) | **2** |
+| Held contradictory/apostolic context (Peter on June 30 alongside an archive source labelled for Paul) | **1** |
+| **Person-like source cases covered without inventing a new identity** | **12/12** |
+
+The nine anchored examples include Ubaldus, Ephrem, Julia Falconieri, Camillus, Jerome Emiliani, Apollinaris, Augustine of Hippo, Didacus and Josaphat. **Their source-code differences are not approved calendar changes**: the historical red/white or class discrepancies, notably Ephrem and Augustine, remain visible. Barbara (4 December) is a distinct commemoration/art subject alongside Peter Chrysologus, not a replacement for him; Martha (29 July) is preserved separately from her archived companions. Peter's original 30 June component has a conflict with the associated St Paul commemoration source and remains on hold; neither apostle is assigned the other's art.
+
+The all-365-day matrix generator now includes any documented *archived source subject candidate* for these 12 cases, **while preserving `saint_or_group_person_identity_id:null`**. It also outputs `saints-2026-twelve-person-source-anchors.json` into the existing GitHub Actions artifact. This is a bulk source-audit reconciliation, not twelve publishable profiles.
+
+### Worldwide map readiness from existing source owners
+
+Rather than requesting 145 new geocodes, the existing Sacred Geography/shrine source inventory already contains **119 distinct associated saint-name strings** and **145 shrine/place associations** referencing **121 distinct existing geolocated sites**. `data/saints/existing-shrine-geography-readiness-20261016.v1.json` keeps every original physical place ID and original source references unchanged.
+
+| Name-to-existing-ledger triage | Name strings |
+| --- | ---: |
+| One full normalized name match to an existing source key | **50** |
+| Multiple competing source keys for the identical name (explicit alias collisions) | **6** |
+| No exact complete-name source key; cannot silently infer a person | **63** |
+| **Total name strings triaged** | **119** |
+
+All **145 links are pre-existing shrine associations with a mappable site** in the original Geography registry; none is a source-certified place of birth, death, martyrdom, home or authenticated relic. The site pins already belong to Geography. **Zero new Saints pins** have been published or invented; the 50 single-name cases remain *identity candidates*, not automatically approved people or independent geolocation records. The six ambiguous cases include historical duplicate source keys for Saints Thérèse, Anthony of Padua, Catherine of Siena, Francis de Sales, Francis of Assisi and John of the Cross.
+
+Artwork remains with the Sacred Art owner; no five-star candidate is silently promoted into an approved or licensed reproduction. Existing user ratings are preserved.
+
+### Release and next bulk handoff
+
+This research and map-readiness package remains on **draft PR #1227**. Public pilot [PR #1256](https://github.com/Fulcanelli13/ad-orientem/pull/1256) is separate and unmerged. The next efficient source-owner operation is to **certify the highest-confidence person→shrine association edges in bulk** and resolve the six known duplicate-name keys, not to revisit long biographies or research random new pins. Historical source colour/rank conflicts are handed to the Calendar owner, not changed here.
