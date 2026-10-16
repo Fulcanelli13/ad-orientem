@@ -326,6 +326,11 @@ try{
   "Requiem UI must not invent an Absolution before it is selected");
  assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').count(),1);
  assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').isChecked(),false);
+ // Changing the celebration resets the secondary chronology to its initial
+ // collapsed state; reopen it through the actual public disclosure control.
+ const funeralOrder=page.locator("[data-mass-journey-order]");
+ if(!(await funeralOrder.evaluate(el=>el.open)))
+  await funeralOrder.locator(":scope > summary").click();
  await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').check();
  const funeral=await page.evaluate(()=>__full.composeRitesFor(__legacyMass(),{
   precedingRites:[],followingActions:[],
