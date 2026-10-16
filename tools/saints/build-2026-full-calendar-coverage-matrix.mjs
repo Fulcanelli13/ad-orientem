@@ -24,6 +24,32 @@ assert.equal(identities.summary.exact_source_key_union_including_modern_collecti
 assert.equal(observed.days.length,365);
 assert.equal(candidates.days.length,365);
 assert.equal(archiveJoin.rows.length,252);
+// W86: archived source IDs are shared NOMINAL-DAY contexts, not individual
+// historical person IDs. Example: 24 Nov has John of the Cross AND
+// Chrysogonus, whose principal/commemoration observances remain distinct.
+const nominalDayContext=new Map();
+for(const key of identities.records){
+ const refs=key.identity_source_reconciliation;
+ assert(refs && refs.canonical_individual_identity_certified===false);
+ assert(refs.exact_original_observance_to_person_identity_approved===false);
+ assert(refs.archived_day_source_scope===
+   "ORIGINAL_DATE_LEVEL_OCCURRENCES_NOT_PER_SUBJECT_OBSERVANCE_EQUIVALENCE");
+ for(const sourceId of refs.archived_1962_nominal_day_observance_ids){
+  if(!nominalDayContext.has(sourceId))nominalDayContext.set(sourceId,[]);
+  nominalDayContext.get(sourceId).push(Object.freeze({
+    source_key:key.source_key,original_entity_kind:key.entity_inference,
+    nominal_days:[...refs.archived_historical_component_nominal_days],
+    relationship:"ORIGINAL_NOMINAL_DAY_CONTEXT_NOT_SAINT_OBSERVANCE_EQUIVALENCE"
+  }));
+ }
+}
+assert.equal(nominalDayContext.size,314);
+const novemberJohn=nominalDayContext.get("sancti:11-24:3:w")||[];
+const novemberOther=nominalDayContext.get("sancti:11-24o:4:r")||[];
+assert(novemberJohn.some(x=>x.source_key==="saint.john-of-the-cross"));
+assert(novemberJohn.some(x=>x.source_key==="saint.chrysogonus"));
+assert(novemberOther.some(x=>x.source_key==="saint.john-of-the-cross"));
+assert(novemberOther.some(x=>x.source_key==="saint.chrysogonus"));
 
 const byDate=new Map(archiveJoin.rows.map(r=>[r.observed_date_2026,r]));
 const demandByDate=new Map(candidates.days.map(r=>[r.date,r]));
@@ -92,6 +118,10 @@ for(const day of observed.days){
    archived_individual_subject_candidate_key:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.documented_archived_subject_key??null,
    archived_component_candidate_id:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.documented_archived_component_id??null,
    source_owner_reconciliation_status:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.source_owner_comparison_status??null,
+   original_1962_nominal_day_context_keys:(nominalDayContext.get(sourceOccurrences[i]?.source_id??event.source_id)||[])
+     .map(x=>x.source_key),
+   original_1962_context_kind:"DAY_LEVEL_CANDIDATE_ONLY_NOT_PERSON_OWNER_ID",
+   original_1962_person_equivalence_certified:false,
    saint_or_group_person_identity_id:null,identity_review:"NOT_INFERRED_FROM_FEAST_HEADING",
    artwork_approved_id:null
  }));
@@ -122,6 +152,9 @@ assert.equal(days.reduce((n,x)=>n+x.candidate_source_subjects.length,0),282);
 assert.equal(observedSourceIds.size,282);
 assert.equal(historicalSourceIds.size,314);
 assert.equal(exactObserved.length,240);
+assert(exactObserved.every(x=>nominalDayContext.has(x)));
+assert([...observedSourceIds].filter(x=>!historicalSourceIds.has(x)).every(x=>!nominalDayContext.has(x)));
+assert(days.every(x=>x.candidate_source_subjects.every(y=>y.original_1962_person_equivalence_certified===false)));
 assert.equal(missing.size,42);
 assert.equal(archiveJoin.summary.source_observed_as_principal,142);
 assert.equal(archiveJoin.summary.source_exactly_commemorated,99);
@@ -168,6 +201,9 @@ const summary={
  archived_historical_source_subject_keys:archiveJoin.summary.unique_historical_ids,
  archived_distinct_observance_source_ids:historicalSourceIds.size,
  exact_observed_source_ids_found_in_archive:exactObserved.length,
+ original_archived_nominal_day_source_ids_with_context:nominalDayContext.size,
+ exact_observed_source_ids_with_non_personal_day_context:exactObserved.length,
+ exact_observed_source_ids_with_certified_person_link_from_day_context:0,
  observed_source_ids_absent_from_archive:missing.size,
  archived_source_ids_not_in_observed_source_set:historicalSourceIds.size-exactObserved.length,
  archived_observance_occurrences_matching_2026_principal:archiveJoin.summary.source_observed_as_principal,
@@ -191,6 +227,7 @@ const matrix={schema:"ao.saints.2026-full-365-calendar-source-coverage-matrix.v1
   "Calendar has 365 observed 2026 civil days; this is not a claim of 365 distinct named saint feasts.",
   "One day may contain no source-identified saint, one main sanctoral source and many named commemorations.",
   "Observed source IDs and archival saint/art subject keys have different namespaces and MUST NOT be equated.",
+  "Shared nominal-day sources cannot be used as person-observance crosswalks: 24 November John of the Cross and St Chrysogonus retain independent identities and roles.",
   "Only exact raw Calendar observance IDs are joined to the frozen historical art archive.",
   "Individual, group, Marian, Angelic, Christological and liturgical-event subjects are separately adjudicated; title hints do not certify identities.",
   "The 608 source keys are not 608 distinct canonized individuals or 608 approved images.",
