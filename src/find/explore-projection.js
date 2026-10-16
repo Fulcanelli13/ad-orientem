@@ -1,5 +1,6 @@
 import { communionValue } from "./data-service.js";
 import { projectSaintPlaceItems } from "./saints-lens.js";
+import { projectSaintResearchShrinePlaces,mergeSaintPilotAndResearchPlaces } from "./saints-shrine-map-research.js";
 import { directoryGeoLabel, isMapPublishableGeo } from "./geo-provenance.js";
 import { isMapPublishablePlaceGeo } from "./geography-contracts.js";
 
@@ -485,7 +486,9 @@ export function projectExploreDataset(dataset={}){
     relics:projectSacredSiteItems({records:sacredPhenomena?.relics,places:geography?.places,kind:"relics"}),
     traditions:Object.freeze([...customTraditions,...novenaTraditions]),
     pilgrimages:projectPilgrimageItems({pilgrimages:shrines?.pilgrimages,shrines:shrines?.shrines,routes:shrines?.routes,temporalLinks:shrines?.temporalLinks,places:geography?.places,sources:shrines?.sources,novenaLinks:novenas?.links,novenas:novenas?.records,customs:customs?.customs,attestations:customs?.attestations,customSources:customs?.sources,novenaSources:novenas?.sources}),
-    saints:projectSaintPlaceItems(dataset),
+    saints:dataset?.saintsRelease?.researchEnabled
+      ?mergeSaintPilotAndResearchPlaces(projectSaintPlaceItems(dataset),projectSaintResearchShrinePlaces(dataset))
+      :projectSaintPlaceItems(dataset),
   });
   return Object.freeze({
     byLens,
