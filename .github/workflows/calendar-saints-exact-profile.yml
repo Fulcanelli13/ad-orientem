@@ -7,6 +7,7 @@ on:
     paths:
       - 'src/calendar/calendar-runtime.js'
       - 'src/calendar/calendar-saint-explore-handoff.js'
+      - 'src/calendar/sanctoral-day-ui.js'
       - 'src/find/browser-entry.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
       - 'tests/calendar-saints-exact-profile-phone.mjs'
@@ -15,6 +16,7 @@ on:
     paths:
       - 'src/calendar/calendar-runtime.js'
       - 'src/calendar/calendar-saint-explore-handoff.js'
+      - 'src/calendar/sanctoral-day-ui.js'
       - 'src/find/browser-entry.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
       - 'tests/calendar-saints-exact-profile-phone.mjs'
@@ -30,6 +32,7 @@ jobs:
           node-version: '22'
       - run: node --check src/calendar/calendar-runtime.js
       - run: node --check src/calendar/calendar-saint-explore-handoff.js
+      - run: node --check src/calendar/sanctoral-day-ui.js
       - run: node --check src/find/browser-entry.js
       - run: node tests/calendar-saints-exact-profile-handoff.mjs
       - run: node tests/saints-public-pilot.mjs
