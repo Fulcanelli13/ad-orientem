@@ -71,6 +71,28 @@ const nestedNewman=reviewNewSaintMassChoice({
 assert.equal(nestedNewman.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
   "Actual production-resolution shape must not conceal a source-attested candidate");
 assert.equal(nestedNewman.massInsertionAuthorized,false);
+const compactPerson={...byId.get("saint.john-henry-newman"),observances:undefined};
+const sourceObservance={
+ subjectId:"saint.john-henry-newman",monthDay:"10-09",
+ authorityScope:"GENERAL_ROMAN_VATICAN_DECREE",universalStatus:"CERTIFIED_BY_DECREE",
+ sourceUrl:"https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+ publishedOn:"2026-02-03"
+};
+const compactReview=reviewNewSaintMassChoice({
+ date:"2026-10-09",saint:compactPerson,sourceObservance,
+ observedDay:{day:{main:{id:"sancti:10-09:3:w",rank:"III"}}},
+ protectedFeasts:annex.feasts
+});
+assert.equal(compactReview.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
+  "Exact Holy See date witness must be joined to the compact person");
+assert.equal(compactReview.massInsertionAuthorized,false);
+const usOnly=reviewNewSaintMassChoice({
+ date:"2026-10-09",saint:compactPerson,
+ sourceObservance:{...sourceObservance,authorityScope:"USCCB_2026_CALENDAR_WITNESS"},
+ observedDay:{day:{main:{id:"sancti:10-09:3:w",rank:"III"}}},
+ protectedFeasts:annex.feasts
+});
+assert.equal(usOnly.status,"INDETERMINATE","US-only date witness never confers global authority");
 assert.equal(reviewNewSaintMassChoice({
  date:"2026-09-23",saint:byId.get("saint.pio-pietrelcina"),
  observedDay:resolve("tempora:Pent17-3:2:v","II"),protectedFeasts:annex.feasts
