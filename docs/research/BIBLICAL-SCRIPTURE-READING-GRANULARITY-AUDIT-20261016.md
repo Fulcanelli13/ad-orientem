@@ -1,4 +1,7 @@
 # Ad Orientem — Scripture granularity audit: 151 Atlas events to a finer reading-unit programme
+
+> **Editorial policy correction (16 October 2026):** The 264-unit structure is a *candidate pool*, **not** a required syllabus target. Likewise, 73-book completeness and the hypothetical 299 units are retired as selection criteria. Ad Orientem is a story-first, selective Catholic Scripture journey encouraging readers to open full passages. See `data/explore/biblical-story-first-editorial-policy.v1.json`. Preserve 151 Atlas event IDs, the 37 sections and historical evidence; prioritize compelling episodes, coherent context and meaningful OT–NT connections.
+
 **16 October 2026 · Research-only · No deployment, re-keying or approved pericopes**
 
 ## Purpose
