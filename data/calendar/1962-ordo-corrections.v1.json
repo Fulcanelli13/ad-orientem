@@ -219,7 +219,26 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Commemoration of Saint Peter absent under St Paul feast in pinned resolver; secondary 1962 calendar includes it.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Inseparable St Peter commemoration is represented in day metadata; Sancti/06-30 contains the reciprocal Collect, Secret and Postcommunion under one conclusion per §110."
+      "implementation": "Inseparable St Peter commemoration is represented in day metadata; Sancti/06-30 contains the reciprocal Collect, Secret and Postcommunion under one conclusion per §110.",
+      "rubricalClaim": {
+        "id": "PETER_PAUL_INSEPARABLE_2027",
+        "kind": "INSEPARABLE_APOSTLES",
+        "sourcePath": "Sancti/06-30",
+        "principalId": "sancti:06-30:3:r",
+        "principalClass": 3,
+        "commemorationId": "inseparable:sancti:06-29-petrus",
+        "clauses": [
+          "RG 110",
+          "RG 110(b)"
+        ],
+        "en": "At the Mass of St Paul, St Peter is commemorated inseparably. The 1960 rubrics direct the two apostolic prayers to be joined under one conclusion and counted as one prayer. The Mass reader alone certifies the actual Latin, English and French orations.",
+        "fr": "À la messe de saint Paul, saint Pierre est commémoré de façon inséparable. Les rubriques de 1960 prescrivent de joindre les deux oraisons sous une seule conclusion et de les compter comme une seule. Seul le lecteur de la messe certifie les oraisons latines, anglaises et françaises effectivement utilisées.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "massOrationSourceOwner": "src/mass/1962-inseparable-apostles-source.js",
+        "explanationOnly": true,
+        "orationCertification": "EXISTING_MASS_OWNER_ONLY",
+        "automaticMassChange": false
+      }
     },
     {
       "dates": [

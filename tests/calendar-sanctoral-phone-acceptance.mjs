@@ -181,6 +181,26 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-observed-commemoration]").count(),0,
        "No 2027-source claim can leak into an unrelated Sunday");
    }
+   if(width===390){
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-06-30")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-06-30",
+       null,{timeout:55000});
+     const peterPaul=page.locator('.aoTodayV2CalendarInline [data-cal-apostles-inseparable="PETER_PAUL_INSEPARABLE_2027"]');
+     await peterPaul.waitFor({state:"attached",timeout:30000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await peterPaul.waitFor({state:"visible",timeout:12000});
+     assert.match(await peterPaul.innerText(),/RG 110/);
+     assert.match(await peterPaul.innerText(),/one conclusion/i);
+     assert.equal(await peterPaul.locator("a").getAttribute("href"),
+       "https://gcatholic.org/calendar/2027/Extraordinary-en");
+     assert.equal(await peterPaul.locator("a").getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-06-29")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-06-29",
+       null,{timeout:50000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-apostles-inseparable]").count(),0,
+       "The combined Peter-Paul feast on June 29 must not inherit the June 30 §110 claim");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);

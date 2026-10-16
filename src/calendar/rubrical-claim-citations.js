@@ -276,3 +276,65 @@ export function calendarObservedCommemorationClaimsForDay(resolution,corrections
     automaticMassChange:false,formSpecificOrationDecision:"EXISTING_MASS_OWNER_ONLY"
   })]);
 }
+
+
+// §110 is *inseparable*, not an ordinary or privileged commemoration.
+// A Calendar citation may describe the actual 1962 occurrence; the Mass
+// oration source-owner must independently certify the three prayer groups.
+export function calendarInseparableApostlesClaimForDay(resolution,corrections){
+  if(corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
+     resolution?.date!=="2027-06-30"||
+     resolution?.status!=="ready"||
+     resolution?.proper?.status!=="ready"||
+     resolution?.day?.main?.id!=="sancti:06-30:3:r"||
+     resolution?.day?.main?.path!=="Sancti/06-30"||
+     resolution?.proper?.data?.sourcePath!=="Sancti/06-30")return Object.freeze([]);
+  const commemorations=resolution.day.commemorations;
+  if(!Array.isArray(commemorations)||commemorations.length!==1||
+     commemorations[0]?.id!=="inseparable:sancti:06-29-petrus"||
+     commemorations[0]?.inseparable!==true)return Object.freeze([]);
+  const rows=(Array.isArray(corrections.outstandingSecondaryCases)?
+    corrections.outstandingSecondaryCases:[]).filter(x=>
+      Array.isArray(x?.dates)&&x.dates.length===1&&x.dates[0]===resolution.date);
+  if(rows.length!==1||rows[0].status!=="FIXED_IN_PINNED_DAY_RESOLVER")return Object.freeze([]);
+  const row=rows[0],claim=row.rubricalClaim;
+  if(claim?.id!=="PETER_PAUL_INSEPARABLE_2027"||
+     claim.kind!=="INSEPARABLE_APOSTLES"||
+     claim.sourcePath!=="Sancti/06-30"||
+     claim.principalId!==resolution.day.main.id||
+     claim.principalClass!==3||
+     claim.commemorationId!==commemorations[0].id||
+     claim.authorityKind!=="NORMATIVE_1960_RUBRICS"||
+     claim.massOrationSourceOwner!=="src/mass/1962-inseparable-apostles-source.js"||
+     claim.explanationOnly!==true||
+     claim.orationCertification!=="EXISTING_MASS_OWNER_ONLY"||
+     claim.automaticMassChange!==false||
+     !Array.isArray(claim.clauses)||
+     claim.clauses.length!==2||
+     claim.clauses[0]!=="RG 110"||claim.clauses[1]!=="RG 110(b)"||
+     !claim.en?.trim()||!claim.fr?.trim())return Object.freeze([]);
+  let witnessUrl=null;
+  try{
+    const u=new URL(String(row.source||""));
+    if(u.protocol==="https:"&&u.hostname==="gcatholic.org"&&
+       u.pathname==="/calendar/2027/Extraordinary-en"&&
+       !u.username&&!u.password)witnessUrl=u.href;
+  }catch{/* reject unsafe or missing witness */}
+  if(!witnessUrl)return Object.freeze([]);
+  return Object.freeze([Object.freeze({
+    claimId:claim.id,
+    claimKind:"SOURCE_ATTESTED_INSEPARABLE_APOSTLES",
+    date:resolution.date,
+    principalId:resolution.day.main.id,
+    commemorationId:commemorations[0].id,
+    clauses:Object.freeze([...claim.clauses]),
+    explanation:Object.freeze({en:claim.en.trim(),fr:claim.fr.trim()}),
+    normativeUrl:GENERAL_RUBRICS_NORMATIVE_URL,
+    referenceUrl:GENERAL_RUBRICS_ENGLISH_REFERENCE_URL,
+    witnessUrl,
+    witnessKind:"DATE_SCOPED_1962_CALENDAR",
+    massOrationsOwner:claim.massOrationSourceOwner,
+    orationCertification:"EXISTING_MASS_OWNER_ONLY",
+    automaticMassChange:false
+  })]);
+}
