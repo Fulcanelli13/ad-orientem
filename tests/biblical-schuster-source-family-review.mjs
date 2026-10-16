@@ -436,4 +436,29 @@ assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented,18
 assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented,2);
 assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRUnresolvedChapterStartCount,1);
 
+// Bulk separation is source-preserving OCR partitioning, not publication approval.
+const sourceLayers=fam.english1908WholeVolumeSourceLayerSeparation;
+assert.ok(sourceLayers);
+assert.equal(sourceLayers.totalOriginalChapterSlots,182);
+assert.equal(sourceLayers.safelySourceBoundedChapterDrafts,180);
+assert.equal(sourceLayers.chapterOCRPartitionedLosslessly,180);
+assert.equal(sourceLayers.historicalChapterQuestionsHeadingsLocated,180);
+assert.equal(sourceLayers.chapterHeadingAndScriptureEpigraphCandidateSplits,138);
+assert.equal(sourceLayers.chapterHeadingAndScriptureEpigraphStillCombined,42);
+assert.equal(sourceLayers.chapterHeadingAndScriptureEpigraphCandidateSplits+sourceLayers.chapterHeadingAndScriptureEpigraphStillCombined,180);
+assert.equal(sourceLayers.candidateInlineIllustrationsOrPageCaptionsFlagged,209);
+assert.equal(sourceLayers.candidateInlineGlossariesOrFootnotesFlagged,61);
+assert.equal(sourceLayers.unsafeSourceChaptersHeld.length,2);
+assert.equal(sourceLayers.sourceLayerRecordSHA256.length,64);
+assert.equal(sourceLayers.sourceLayerMetricsSHA256.length,64);
+assert.equal(sourceLayers.experimentalGeneratorSHA256.length,64);
+assert.equal(sourceLayers.originalOCRChanged,false);
+assert.equal(sourceLayers.sourceTextImportedIntoProductionApp,false);
+assert.equal(sourceLayers.sourceTextImportedIntoPublicGitHub,false);
+assert.equal(sourceLayers.chapterReaderPublicationApproved,0);
+assert.equal(sourceLayers.newVerifiedAtlasToChapterLinks,0);
+assert.equal(fam.counts.earlyEnglishSadlierLayerSeparatedChapters,180);
+assert.equal(fam.counts.earlyEnglishSadlierQuestionBlocksDetected,180);
+assert.equal(fam.counts.earlyEnglishSadlierLayerSeparationApprovedChapters,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
