@@ -125,4 +125,23 @@ assert.equal(result.principalSourceId,"sancti:10-03:3:w");
 assert.deepEqual(result.supplementaryHonours.map(x=>x.id),["saint.other","saint.local"]);
 assert.deepEqual(result.suppressedDuplicatePersonIds,["saint.therese-lisieux","saint.teresa-avila","saint.other"]);
 assert.equal(result.massReaderUnchanged,true);
+// A first-party 1962-use chaplaincy bulletin describes a *local* transfer
+// and novena prayers, not a worldwide first-class feast or Mass commemoration.
+const particular=load("data/calendar/particular-traditional-calendar-witnesses.review.v1.json");
+assert.equal(particular.schema,"AO_PARTICULAR_TRADITIONAL_CALENDAR_WITNESSES_REVIEW_V1");
+assert.equal(particular.publicationStatus,"SOURCE_WITNESS_ONLY_NOT_RUNTIME_APPLIED");
+assert.equal(particular.witnesses.length,1);
+const stKevins=particular.witnesses[0];
+assert.equal(stKevins.originalFeastDate,"2026-05-26");
+assert.equal(stKevins.observedTransferredDate,"2026-06-01");
+assert.equal(stKevins.localRankReported,"FIRST_CLASS");
+assert.equal(stKevins.effectiveScope,"THIS_CHAPLAINCY_2026_ONLY");
+assert.equal(stKevins.appliesTo1962UniversalCalendar,false);
+assert.equal(stKevins.changesAnyOtherVenueOrMass,false);
+assert.equal(stKevins.devotionalNovena.startsOn,"2026-05-23");
+assert.equal(stKevins.devotionalNovena.liturgicalCommemorationOrationCertified,false);
+assert.equal(stKevins.sourceVenueIdentity.canonicalVenueId,null);
+assert.equal(reviewCommemorationAddition({
+  dayClass:"II",sunday:true,candidateKind:"ORDINARY",candidateFeastClass:"III"
+}).status,"BLOCKED","Local novena cannot fabricate a Sunday Mass commemoration");
 console.log("Living traditional Calendar: source matrix, no duplicate identity, Mass/Sunday limits and lawful external solemnity review PASS");
