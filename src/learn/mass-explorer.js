@@ -154,6 +154,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
      '</nav>':'<p class="aoMXQuiet">'+pick(french,"This Guide moment has no ordinary Sung source block; ceremony depends on the selected rite.","Cette étape du Guide ne comporte pas de texte ordinaire de la Messe chantée ; la cérémonie dépend du rite choisi.")+'</p>')+
    sourceBlockHtml(catalog,selected,french)+
    '<details class="aoMXDetails" open><summary>'+pick(french,"Guide explanation","Explication du Guide")+'</summary>'+
+     (french?'<p class="aoMXQuiet" lang="fr">Le commentaire du Guide est actuellement disponible en anglais ; aucune traduction française n’est inventée.</p>':"")+
      '<p class="aoMXQuiet">'+pick(french,"Existing Guide commentary for the broader Mass moment, not an independently certified commentary on every individual prayer.",
      "Commentaire existant du Guide pour l’ensemble de l’étape, non une analyse distinctement certifiée de chaque prière.")+'</p>'+
      guideSections.map(x=>'<section><h2>'+esc(x.heading)+'</h2><p>'+esc(x.text)+'</p></section>').join("")+'</details>'+
@@ -162,7 +163,8 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
      "Rapprochements bibliques étudiés pour l’étape entière du Guide ; chaque lien précise son rapport au texte.")+'</p>'+
      massFormationScriptureHtmlForAnchorIds(links.scriptureAnchorIds,{french})+'</section>':"")+
    guideSources(guide,french)+
-   (links.stageId?'<p class="aoMXQuiet">'+esc(pick(french,"Related Mass Formation lesson: ","Leçon de Formation liée : ")+links.stageId)+'</p>':"")+
+   (links.stageId?'<section class="aoMXFormationLink"><button type="button" data-ao-mx-study="'+esc(links.stageId)+'">'+
+     esc(pick(french,"Open related Formation lesson · ","Ouvrir la leçon de Formation · ")+links.stageId)+' →</button></section>':"")+
    '<nav class="aoMXPreviousNext">'+
      '<button type="button" data-ao-mx-prev '+(idx<=0?"disabled":"")+'>'+pick(french,"Previous","Précédent")+'</button>'+
      '<button type="button" data-ao-mx-index>'+pick(french,"All moments","Toutes les étapes")+'</button>'+
@@ -184,6 +186,7 @@ export function massExplorerCss(){
   ".aoMXText{margin:8px 0 25px;padding:8px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXText h2,.aoMXDetails h2{font:500 1.2rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXTextRow{padding:12px 0;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXLatin{font:400 1.15rem/1.7 var(--ao-font-body,Georgia,serif);margin:0 0 9px}.aoMXTranslation{font:400 .99rem/1.6 var(--ao-font-body,Georgia,serif);margin:0;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
+  ".aoMXFormationLink button{width:100%;min-height:48px;padding:12px 15px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);border:1px solid var(--ao-rule,#393c40);border-radius:10px;text-align:left;font:500 .85rem/1.5 system-ui;cursor:pointer}",
   ".aoMXPreviousNext{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:7px;margin:25px 0}.aoMXPreviousNext button:disabled{opacity:.35}.aoMXMoment{padding-top:20px}",
   "#ao-mass-explorer-root :is(button,summary,a):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
   "@media(max-width:430px){.aoMXWrap{padding:17px 13px 44px}.aoMXTop{gap:6px}.aoMXTextRow{padding:9px 0}.aoMXPreviousNext button{font-size:.76rem}}",
@@ -236,6 +239,15 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey){momentKey=null;blockId=null;paint();}else close(true);return;}
       if(t.dataset.aoMxMoment){event.preventDefault();setMoment(t.dataset.aoMxMoment);return;}
       if(t.dataset.aoMxBlock){event.preventDefault();setMoment(momentKey,t.dataset.aoMxBlock);return;}
+      if(t.dataset.aoMxStudy){
+        event.preventDefault();
+        const stageId=t.dataset.aoMxStudy;
+        const explorerReturn={momentKey,blockId};
+        close(false);
+        void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass",{stageId,explorerReturn})
+          ?.catch?.(error=>win?.console?.error?.("Formation lesson could not open",error));
+        return;
+      }
       if(t.matches("[data-ao-mx-index]")){event.preventDefault();momentKey=null;blockId=null;paint();return;}
       if(t.matches("[data-ao-mx-prev],[data-ao-mx-next]")){
         event.preventDefault();const i=catalog.sequence.indexOf(momentKey),next=i+(t.matches("[data-ao-mx-next]")?1:-1);
