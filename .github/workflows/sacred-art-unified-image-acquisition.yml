@@ -12,21 +12,32 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {start: 1, end: 30}
+          - {start: 31, end: 55}
+          - {start: 56, end: 80}
+          - {start: 81, end: 100}
+          - {start: 101, end: 134}
+          - {start: 135, end: 168}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install Pillow requests
-      - name: Acquire first source-linked paintings with source-image proofs
+      - name: Acquire identity-linked source paintings and review image proofs
         run: |
           python -m py_compile tools/calendar/acquire-sacred-art-unified-curator.py
-          python tools/calendar/acquire-sacred-art-unified-curator.py --start 1 --end 30 --max-records 130 --search
-      - name: Save full source and uncropped previews for verified research
+          python tools/calendar/acquire-sacred-art-unified-curator.py --start ${{ matrix.start }} --end ${{ matrix.end }} --max-records 250 --search
+      - name: Save source bytes, exact-artwork provenance, and full-frame previews
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sacred-art-unified-acquisition-001-030
+          name: sacred-art-images-${{ matrix.start }}-${{ matrix.end }}
           path: |
             artifacts/sacred-art-unified-acquisition/
             docs/research/review-galleries/acquired/
