@@ -1,3 +1,4 @@
+import {renderAtlasJourneyViews} from "./bible-atlas-journeys.js";
 // Reading-chapter NAVIGATION ONLY, sourced from the original 151-event Biblical Atlas.
 // Source witness: PR #1069, data/explore/biblical-reading-continuity-review.v1.json,
 // pinned research blob 8ea13c49c0285330bc0bcfe6aa3cbcf79d14c2c8 (15 October 2026).
@@ -495,7 +496,12 @@ export function renderAtlasReadingContents(stops,eras,lang="en",index=0){
   group.items.push(ch);
  }
  return '<section class="aoBibleReadingPanel" id="ao-bible-reading-list" data-bible-reading-panel hidden aria-label="'+
-  escapeHTML(label(lang,"Scripture reading chapters","Chapitres de lecture biblique"))+'">'+
+  escapeHTML(label(lang,"Scripture journeys","Parcours bibliques"))+'">'+
+  '<div class="aoBibleReadingTabs" role="tablist" aria-label="'+escapeHTML(label(lang,"Choose reading path","Choisir un parcours"))+'">'+
+  '<button type="button" role="tab" aria-selected="true" data-bible-reading-tab="chapters">'+escapeHTML(label(lang,"37 chapters","37 chapitres"))+'</button>'+
+  '<button type="button" role="tab" aria-selected="false" data-bible-reading-tab="arcs">'+escapeHTML(label(lang,"10 arcs","10 parcours"))+'</button>'+
+  '<button type="button" role="tab" aria-selected="false" data-bible-reading-tab="themes">'+escapeHTML(label(lang,"9 themes","9 thèmes"))+'</button></div>'+
+  '<div data-bible-reading-view="chapters" class="aoBibleReadingView">'+
   '<p class="aoBibleReadingDisclaimer">'+escapeHTML(label(lang,
    "37 groups of selected Scripture episodes · not an abridged or complete Bible",
    "37 groupes d’épisodes bibliques choisis · ni abrégé ni Bible intégrale"))+'</p>'+
@@ -508,5 +514,7 @@ export function renderAtlasReadingContents(stops,eras,lang="en",index=0){
       '<small>'+ch.count+' '+escapeHTML(label(lang,ch.count===1?"episode":"episodes",ch.count===1?"épisode":"épisodes"))+'</small>'+
       '</button>'
     ).join("")+'</div></div>').join("")+
+  '</div>'+
+  renderAtlasJourneyViews(stops,chapters,lang,index)+
   '</section>';
 }
