@@ -8,6 +8,8 @@ on:
       - 'src/calendar/calendar-runtime.js'
       - 'src/calendar/calendar-saint-explore-handoff.js'
       - 'src/find/browser-entry.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/saints-presentation.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
       - 'tests/calendar-saints-exact-profile-phone.mjs'
       - '.github/workflows/calendar-saints-exact-profile.yml'
@@ -16,6 +18,8 @@ on:
       - 'src/calendar/calendar-runtime.js'
       - 'src/calendar/calendar-saint-explore-handoff.js'
       - 'src/find/browser-entry.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/saints-presentation.js'
       - 'tests/calendar-saints-exact-profile-handoff.mjs'
       - 'tests/calendar-saints-exact-profile-phone.mjs'
       - '.github/workflows/calendar-saints-exact-profile.yml'
@@ -31,6 +35,8 @@ jobs:
       - run: node --check src/calendar/calendar-runtime.js
       - run: node --check src/calendar/calendar-saint-explore-handoff.js
       - run: node --check src/find/browser-entry.js
+      - run: node --check src/find/explore-presentation.js
+      - run: node --check src/find/saints-presentation.js
       - run: node tests/calendar-saints-exact-profile-handoff.mjs
       - run: node tests/saints-public-pilot.mjs
 
