@@ -151,7 +151,10 @@
       "liveInAppEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json",
       "sourceSectionReconciliationStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "sourcePathProofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
-      "nineSectionTrilingualReady": false
+      "nineSectionTrilingualReady": false,
+      "sourceRecoveryStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
+      "sourceRecoveryEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "readyViaSourceComposition": false
     },
     {
       "researchId": "p1:index:1962:several_martyrs_second_mass",
@@ -295,7 +298,10 @@
       "liveInAppEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json",
       "sourceSectionReconciliationStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "sourcePathProofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
-      "nineSectionTrilingualReady": false
+      "nineSectionTrilingualReady": false,
+      "sourceRecoveryStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
+      "sourceRecoveryEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "readyViaSourceComposition": false
     },
     {
       "researchId": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
@@ -476,5 +482,6 @@
   "auditedCandidateCount": 28,
   "auditEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json",
   "readyAfterVerifiedComposition": 18,
-  "remainingPartialSources": 10
+  "remainingPartialSources": 10,
+  "sourceReconciledButIncomplete": 2
 }
