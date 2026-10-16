@@ -42,6 +42,15 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
  assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i);
+ // Existing source-owner objects referencing Luke 1:28 must be discoverable
+ // without changing the current verse, Mass state or Rosary session.
+ await dialog.locator(".aoScriptureRelated summary").click();
+ await dialog.locator('[data-scripture-linked-object="rosary:joy1"]').waitFor({state:"visible",timeout:15000});
+ assert.equal(await dialog.locator('[data-scripture-linked-object="novena:annunciation"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="novena:immaculate_conception"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="prayer:foundations_hail_mary"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="rosary:joy2"]').count(),0);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
