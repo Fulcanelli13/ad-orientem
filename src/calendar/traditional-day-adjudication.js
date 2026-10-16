@@ -33,7 +33,7 @@ export function canonical1962Commemorations(resolution){
   ];
   const values=containers
     .map(x=>Array.isArray(x)?x:x==null?[]:[x])
-    .find(items=>items.length>0)||[];
+    .find(items=>items.some(item=>Boolean(commemorationSourceId(item))))||[];
   const out=[],seen=new Set();
   for(const item of values){
     const id=commemorationSourceId(item),key=base1962Identity(id);
@@ -94,7 +94,13 @@ export function reviewCommemorationAddition({
 // Reuse the existing Cum sanctissima evaluator instead of inventing
 // a second proper/rank engine. Its positive result remains advisory.
 export function reviewNewSaintMassChoice({date,saint,observedDay,protectedFeasts}={}){
-  const evaluation=assessOptionalPost1960SaintCelebration({date,saint,observedDay,protectedFeasts});
+  // The production resolver returns {day:{main,...},proper,...}, whereas
+  // the original conservative eligibility helper consumes {main,...}.
+  // Passing the outer resolution wrongly yields an INDETERMINATE rank.
+  const normalizedDay=observedDay?.day?.main?observedDay.day:observedDay;
+  const evaluation=assessOptionalPost1960SaintCelebration({
+    date,saint,observedDay:normalizedDay,protectedFeasts
+  });
   return Object.freeze({...evaluation,
     candidateOnly:evaluation.status==="CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
     original1962PrincipalId:observedDay?.day?.main?.id||observedDay?.main?.id||observedDay?.id||null,
