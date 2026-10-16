@@ -1,6 +1,6 @@
 {
   "schema": "AO_LIVING_SANCTORAL_MODERN_OBSERVANCE_SOURCE_CROSSWALK_V1",
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-16",
   "publicationStatus": "REVIEW_NOT_RUNTIME",
   "policies": {
     "modernAnd1962Separate": true,
@@ -62,28 +62,64 @@
       }
     },
     {
-      "subjectId": "saint.hildegard-bingen",
-      "monthDay": "09-17",
+      "subjectId": "saint.paul-vi",
+      "monthDay": "05-29",
       "kind": "OPTIONAL_MEMORIAL",
       "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
-      "publishedOn": "2021-02-02",
-      "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+      "publishedOn": "2019-02-06",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html",
       "historyGate": "FROM_PUBLICATION_DATE",
       "universalStatus": "CERTIFIED_BY_DECREE",
       "mass1962Effect": "NONE",
       "approved1962FormularyId": null,
       "editorialTeaser": {
         "whyHonoured": {
-          "en": "A Benedictine abbess and theologian who united profound prayer with teaching and sacred music.",
-          "fr": "Abbesse bénédictine et théologienne, elle unit une prière profonde à l'enseignement et à la musique sacrée."
+          "en": "Pope from 1963 to 1978, remembered for his pastoral ministry and proclamation of the Gospel.",
+          "fr": "Pape de 1963 à 1978, connu pour son ministère pastoral et sa prédication de l'Évangile."
         },
         "context": {
-          "en": "Her spiritual writings and compositions remain an important part of medieval Christian culture.",
-          "fr": "Ses écrits spirituels et ses compositions occupent une place importante dans la culture chrétienne médiévale."
+          "en": "Former archbishop of Milan, he guided the concluding sessions of the Second Vatican Council and promoted evangelisation.",
+          "fr": "Ancien archevêque de Milan, il guida les dernières sessions du deuxième concile du Vatican et promut l'évangélisation."
         },
         "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
-        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html"
       }
+    },
+    {
+      "subjectId": "canon-group.uganda-martyrs-22",
+      "monthDay": "06-03",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.irenaeus-lyon",
+      "monthDay": "06-28",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/062824.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.martyrs-china-1648-1930",
+      "monthDay": "07-09",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
     },
     {
       "subjectId": "saint.teresa-calcutta",
@@ -110,14 +146,38 @@
       }
     },
     {
-      "subjectId": "saint.john-henry-newman",
-      "monthDay": "10-09",
+      "subjectId": "saint.hildegard-bingen",
+      "monthDay": "09-17",
       "kind": "OPTIONAL_MEMORIAL",
       "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
-      "publishedOn": "2026-02-03",
-      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+      "publishedOn": "2021-02-02",
+      "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
       "historyGate": "FROM_PUBLICATION_DATE",
       "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A Benedictine abbess and theologian who united profound prayer with teaching and sacred music.",
+          "fr": "Abbesse bénédictine et théologienne, elle unit une prière profonde à l'enseignement et à la musique sacrée."
+        },
+        "context": {
+          "en": "Her spiritual writings and compositions remain an important part of medieval Christian culture.",
+          "fr": "Ses écrits spirituels et ses compositions occupent une place importante dans la culture chrétienne médiévale."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+      }
+    },
+    {
+      "subjectId": "canon-group.korean-martyrs-103",
+      "monthDay": "09-20",
+      "kind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
       "mass1962Effect": "NONE",
       "approved1962FormularyId": null
     },
@@ -128,6 +188,18 @@
       "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
       "publishedOn": null,
       "sourceUrl": "https://bible.usccb.org/bible/readings/092326.cfm",
+      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "canon-group.japan-martyrs-16-1987",
+      "monthDay": "09-28",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "publishedOn": null,
+      "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
       "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
       "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
       "mass1962Effect": "NONE",
@@ -146,72 +218,48 @@
       "approved1962FormularyId": null
     },
     {
+      "subjectId": "saint.maria-faustyna-kowalska",
+      "monthDay": "10-05",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2020-05-18",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A Polish religious sister who called the faithful to trust in Christ's mercy and practise mercy toward others.",
+          "fr": "Religieuse polonaise qui exhorta les fidèles à se confier à la miséricorde du Christ et à pratiquer la miséricorde."
+        },
+        "context": {
+          "en": "Her spiritual Diary inspired devotion to Divine Mercy; she was canonised in 2000.",
+          "fr": "Son Journal spirituel a inspiré la dévotion à la Miséricorde divine ; elle fut canonisée en 2000."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html"
+      }
+    },
+    {
+      "subjectId": "saint.john-henry-newman",
+      "monthDay": "10-09",
+      "kind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "publishedOn": "2026-02-03",
+      "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+      "historyGate": "FROM_PUBLICATION_DATE",
+      "universalStatus": "CERTIFIED_BY_DECREE",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null
+    },
+    {
       "subjectId": "saint.teresa-avila",
       "monthDay": "10-15",
       "kind": "MEMORIAL",
       "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
       "publishedOn": null,
       "sourceUrl": "https://bible.usccb.org/bible/readings/101526.cfm",
-      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
-      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
-      "mass1962Effect": "NONE",
-      "approved1962FormularyId": null
-    },
-    {
-      "subjectId": "saint.irenaeus-lyon",
-      "monthDay": "06-28",
-      "kind": "MEMORIAL",
-      "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
-      "publishedOn": null,
-      "sourceUrl": "https://bible.usccb.org/bible/readings/062824.cfm",
-      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
-      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
-      "mass1962Effect": "NONE",
-      "approved1962FormularyId": null
-    },
-    {
-      "subjectId": "canon-group.uganda-martyrs-22",
-      "monthDay": "06-03",
-      "kind": "MEMORIAL",
-      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
-      "publishedOn": null,
-      "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
-      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
-      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
-      "mass1962Effect": "NONE",
-      "approved1962FormularyId": null
-    },
-    {
-      "subjectId": "canon-group.martyrs-china-1648-1930",
-      "monthDay": "07-09",
-      "kind": "OPTIONAL_MEMORIAL",
-      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
-      "publishedOn": null,
-      "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
-      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
-      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
-      "mass1962Effect": "NONE",
-      "approved1962FormularyId": null
-    },
-    {
-      "subjectId": "canon-group.korean-martyrs-103",
-      "monthDay": "09-20",
-      "kind": "MEMORIAL",
-      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
-      "publishedOn": null,
-      "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
-      "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
-      "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
-      "mass1962Effect": "NONE",
-      "approved1962FormularyId": null
-    },
-    {
-      "subjectId": "canon-group.japan-martyrs-16-1987",
-      "monthDay": "09-28",
-      "kind": "OPTIONAL_MEMORIAL",
-      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
-      "publishedOn": null,
-      "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
       "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
       "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
       "mass1962Effect": "NONE",
