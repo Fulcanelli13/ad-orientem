@@ -46,16 +46,19 @@ assert major["status"]=="EDITORIAL_DRAFT_NOT_RELEASED"
 assert major["scope"]=="FORMATION_P2_EDITORIAL_ONLY"
 assert [x["id"] for x in major["studies"]]==["AO.FORM.CANON.DEEP.02","AO.FORM.CANON.DEEP.05"]
 assert [x["block_id"] for x in major["studies"]]==["AO.SM.B051","AO.SM.B055"]
-assert sum(len(x["chapters"]) for x in major["studies"])==11
+assert sum(len(x["chapters"]) for x in major["studies"])==13
 assert triage["schema"]=="ao-formation-canon-two-prayers-32-claim-collation-triage-v1"
 assert triage["status"]=="EDITORIAL_RESEARCH_ONLY_ALL_CLAIMS_HELD"
 assert triage["counts"]["total"]==32 and triage["counts"]["gihr"]==8
 assert triage["counts"]["primary_printed_gihr_collated"]==0
 assert triage["counts"]["author_citations_approved"]==0
+assert triage["counts"]["original_1902_ocr_context_inspected"]==8
+assert sum(1 for r in triage["claims"] if r.get("original_1902_ocr_context_read"))==8
+assert all(not r.get("printed_page_image_collated",False) for r in triage["claims"] if r["author"]=="Fr Nicholas Gihr")
 assert len(triage_by_id)==32
 assert all(not x["publication_allowed"] and not x["exact_printed_source_read_in_this_pass"] for x in triage["claims"])
 assert len(triage["identified_disputes"])==3
-assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==6
+assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==9
 for m in major["studies"]:
     assert m["level"]=="EXPANDED_PRIMARY_SOURCE_INTERPRETATION_EDITORIAL_DRAFT"
     assert m["block_id"] in [b for x in doc["studies"] if x["id"]==m["id"] for b in x["block_ids"]]
@@ -272,10 +275,10 @@ assert markup.count('class="lit-block"')==15
 assert markup.count('class="relation"')==8
 assert markup.count('class="research-docket"')==8
 assert markup.count('class="major-exegesis"')==2
-assert markup.count('class="detailed-chapter"')==11
+assert markup.count('class="detailed-chapter"')==13
 assert markup.count('data-source-triage=')==32
 assert markup.count('class="latin-item"')==5
-assert markup.count('class="source-link"')==6
+assert markup.count('class="source-link"')==9
 assert markup.count('data-p0-author-ref=')==88
 assert markup.count('data-primary-check=')==6
 assert markup.count('data-p0-scripture-held=')==1
@@ -283,4 +286,4 @@ assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 11 chapters, 32 claim-specific triage notes, five Latin glosses, 6 direct primary source refs; 79 P0 units, 88 held author refs, no publication ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 13 chapters, 8 checked Gihr original-edition OCR contexts, 32 claim-specific triage notes, five Latin glosses, 9 direct primary/translated source refs; 79 P0 units, 88 held author refs, no publication ->",out)
