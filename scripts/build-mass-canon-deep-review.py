@@ -15,6 +15,8 @@ evidence = read("data/learn/research/mass-formation-canon-p0-evidence-bridge-202
 major = read("data/learn/research/mass-formation-canon-two-major-prayers-deep-20261016.v1.json")
 triage = read("data/learn/research/mass-formation-canon-quam-supra-32-claim-triage-20261016.v1.json")
 triage_by_id = {item["id"]:item for item in triage["claims"]}
+lebrun = read("data/learn/research/mass-formation-lebrun-1843-source-collation-20261016.v1.json")
+lebrun_by_id = {item["claim_id"]:item for item in lebrun["claim_rows"]}
 sung = read("data/presentation/reader-text-sung.v1.json")
 old = read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json")
 formation = read("data/learn/mass-formation-campion.v1.json")
@@ -46,7 +48,12 @@ assert major["status"]=="EDITORIAL_DRAFT_NOT_RELEASED"
 assert major["scope"]=="FORMATION_P2_EDITORIAL_ONLY"
 assert [x["id"] for x in major["studies"]]==["AO.FORM.CANON.DEEP.02","AO.FORM.CANON.DEEP.05"]
 assert [x["block_id"] for x in major["studies"]]==["AO.SM.B051","AO.SM.B055"]
-assert sum(len(x["chapters"]) for x in major["studies"])==13
+assert sum(len(x["chapters"]) for x in major["studies"])==15
+assert lebrun["schema"]=="ao-formation-lebrun-1843-source-collation-v1"
+assert lebrun["status"]=="SOURCE_LOCATED_CLAIMS_UNCERTIFIED"
+assert len(lebrun_by_id)==9
+assert all(not v["quotation_approved"] and not v["publication_approved"] and not v["printed_scan_image_checked"] for v in lebrun["claim_rows"])
+assert major["source_collation_constraints"]["lebrun_printed_original_text_checked"] is False
 assert triage["schema"]=="ao-formation-canon-two-prayers-32-claim-collation-triage-v1"
 assert triage["status"]=="EDITORIAL_RESEARCH_ONLY_ALL_CLAIMS_HELD"
 assert triage["counts"]["total"]==32 and triage["counts"]["gihr"]==8
@@ -58,7 +65,7 @@ assert all(not r.get("printed_page_image_collated",False) for r in triage["claim
 assert len(triage_by_id)==32
 assert all(not x["publication_allowed"] and not x["exact_printed_source_read_in_this_pass"] for x in triage["claims"])
 assert len(triage["identified_disputes"])==3
-assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==9
+assert sum(len(x["direct_primary_sources"]) for x in major["studies"])==10
 for m in major["studies"]:
     assert m["level"]=="EXPANDED_PRIMARY_SOURCE_INTERPRETATION_EDITORIAL_DRAFT"
     assert m["block_id"] in [b for x in doc["studies"] if x["id"]==m["id"] for b in x["block_ids"]]
@@ -133,7 +140,11 @@ def research_docket(entry):
                 ('<p data-source-triage="'+h(item["claim_id"])+'"><strong>'+
                  h(triage_by_id[item["claim_id"]]["collation_status"])+'</strong> · '+
                  h(triage_by_id[item["claim_id"]]["editorial_observation"])+
-                 '</p>' if item["claim_id"] in triage_by_id else '')+'</li>'
+                 '</p>' if item["claim_id"] in triage_by_id else '')+
+                ('<p data-lebrun-held="'+h(item["claim_id"])+'"><strong>Le Brun 1843 volume I: original French page collation outstanding.</strong> '+
+                 h(lebrun_by_id[item["claim_id"]]["p0_caution"])+
+                 ' · provisional Wikisource scan index '+h(lebrun_by_id[item["claim_id"]]["provisional_djvu_first_page"])+
+                 ' (offset inferred; not verified for this page).</p>' if item["claim_id"] in lebrun_by_id else '')+'</li>'
             )
         groups.append('<details class="author-record"><summary>'+h(author)+' · '+
                       str(len(items))+' candidate references</summary><ol>'+
@@ -275,10 +286,11 @@ assert markup.count('class="lit-block"')==15
 assert markup.count('class="relation"')==8
 assert markup.count('class="research-docket"')==8
 assert markup.count('class="major-exegesis"')==2
-assert markup.count('class="detailed-chapter"')==13
+assert markup.count('class="detailed-chapter"')==15
+assert markup.count('data-lebrun-held=')==9
 assert markup.count('data-source-triage=')==32
 assert markup.count('class="latin-item"')==5
-assert markup.count('class="source-link"')==9
+assert markup.count('class="source-link"')==10
 assert markup.count('data-p0-author-ref=')==88
 assert markup.count('data-primary-check=')==6
 assert markup.count('data-p0-scripture-held=')==1
@@ -286,4 +298,4 @@ assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
 out.write_text(markup,encoding="utf-8")
-print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 13 chapters, 8 checked Gihr original-edition OCR contexts, 32 claim-specific triage notes, five Latin glosses, 9 direct primary/translated source refs; 79 P0 units, 88 held author refs, no publication ->",out)
+print("PASS Roman Canon deep review: 8 bilingual studies, 15 source blocks, 2 expanded essays with 15 chapters, 8 checked Gihr OCR contexts, 9 held Le Brun facsimile loci, 32 claim-specific triage notes, five Latin glosses, 10 cited source records; 79 P0 units, 88 held author refs, no publication ->",out)
