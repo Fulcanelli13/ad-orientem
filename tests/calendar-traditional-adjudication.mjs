@@ -23,7 +23,7 @@ assert.equal(base1962Identity("sancti:10-15:3:w"),"sancti:10-15");
 const r={day:{main:{id:"sancti:10-09:3:w",
     commemorations:["10-11","sancti:10-14:3:w","sancti:10-14:3:r"]},
   commemorations:["sancti:10-11:3:w",{id:"sancti:10-12:3:r",title:"Bishop"},
-    {sourceId:"sancti:10-11:3:r",title:"same resolved saint"}]},
+    {sourceId:"sancti:10-11:3:r",title:"same resolved saint"}]}},
   commemorations:[{id:"sancti:10-12:3:w"},{id:"sancti:10-13:3:r"}]};
 const copy=structuredClone(r);
 const ids=canonical1962Commemorations(r);
