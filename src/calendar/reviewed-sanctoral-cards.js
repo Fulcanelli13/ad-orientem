@@ -49,7 +49,18 @@ export function buildReviewedSanctoralCards({
       row.authorityScope==="USCCB_2026_CALENDAR_WITNESS" &&
       row.universalStatus==="NOT_INDEPENDENTLY_CERTIFIED" &&
       date.slice(0,4)==="2026" && /^https:\/\/bible\.usccb\.org\//.test(row.sourceUrl);
-    if(!general&&!us)continue;
+    const datedPerson=members.get(row.subjectId);
+    // The Holy See's Dicastery for the Causes of Saints gives a saint's
+    // "Memoria Liturgica" date on a profile. This establishes a DATE,
+    // not universal General Roman Calendar rank or a 1962 Mass permission.
+    const holySeeDated=row.authorityScope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE" &&
+      row.universalStatus==="DATE_ATTESTED_SCOPE_NOT_ASSIGNED" &&
+      row.sourceEvidenceType==="DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA" &&
+      row.historyGate==="FROM_CANONIZATION_DATE" &&
+      /^https:\/\/www\.causesanti\.va\/it\/santi-e-beati\/[a-z0-9-]+\.html$/.test(row.sourceUrl) &&
+      /^\d{4}-\d{2}-\d{2}$/.test(row.canonizedOn||"") &&
+      row.canonizedOn<=date && row.canonizedOn===(datedPerson?.canonizedOn||datedPerson?.recognition?.canonizedOn);
+    if(!general&&!us&&!holySeeDated)continue;
     if(row.mass1962Effect!=="NONE" || row.approved1962FormularyId!==null)continue;
     const isGroup=row.subjectId.startsWith("canon-group.");
     const group=isGroup?groups.get(row.subjectId):null;
@@ -73,7 +84,8 @@ export function buildReviewedSanctoralCards({
       id:row.subjectId,kind:isGroup?"COLLECTIVE_MARTYR_PROFILE":"INDIVIDUAL_SAINT_PROFILE",
       title,whyHonoured:rationale,context:shortHistory,
       currentCalendarDate:row.monthDay,currentCalendarKind:row.kind,
-      sourceScope:general?row.authorityScope:"USCCB_2026_WITNESS_ONLY",
+      sourceScope:general||holySeeDated?row.authorityScope:"USCCB_2026_WITNESS_ONLY",
+      dateAuthorityStatus:general?"UNIVERSAL_GENERAL_ROMAN":holySeeDated?"DATE_ATTESTED_JURISDICTION_NOT_ESTABLISHED":"PARTICULAR_OR_HISTORICAL_WITNESS",
       universalDateCertified:general,
       sourceUrls:Object.freeze([...new Set(sources)]),
       site,approvedSacredPaintingId:null,
