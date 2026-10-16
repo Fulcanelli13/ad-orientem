@@ -7,7 +7,7 @@ import {loadGuideRegistry,validateGuideRegistry} from "../mass/reader-guide.js";
 import {massMomentExistingGuideSections,massMomentStudyLinks} from "./mass-moments-study.js";
 import {massFormationScriptureHtmlForAnchorIds} from "./mass-formation-scripture-context.js";
 import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
-import {massMapHtml,massMapCss,projectMassMap} from "./mass-map.js";
+import {massMapHtml,massMapCss,projectMassMap,MASS_MAP_PHASES,massMapPhaseIndex} from "./mass-map.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -17,14 +17,8 @@ const FRENCH_URL=new URL("../../data/presentation/reader-french-ordinary.v1.json
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick=(fr,en,french)=>fr?french:en;
 const keys=["PRE.ASPERGES",...Array.from({length:30},(_,i)=>"AO.CARD."+String(i+1).padStart(3,"0")),"POST.MASS"];
-const groupIndex=sequence=>sequence===0?0:sequence<=9?1:sequence<=18?2:sequence<=25?3:4;
-const groupLabels=[
-  ["Before Mass","Avant la Messe"],
-  ["Entrance and the Word","Entrée et liturgie de la Parole"],
-  ["Offertory and Roman Canon","Offertoire et Canon romain"],
-  ["Communion","Communion"],
-  ["Conclusion and thanksgiving","Conclusion et action de grâces"]
-];
+// The visual Map and fallback textual index share one five-phase definition.
+const groupLabels=MASS_MAP_PHASES.map(phase=>phase.title);
 
 function assertCorpus(corpus,french){
   if(corpus?.schema!=="ao-reader-text-corpus-v1"||corpus.form!=="SUNG"||!Array.isArray(corpus.blocks))throw new Error("Certified Sung text corpus required");
@@ -129,7 +123,7 @@ function sourceBlockHtml(catalog,source,fr){
     (rows||'<p class="aoMXQuiet">'+esc(pick(fr,"No public text for this block.","Aucun texte publié pour cette section."))+'</p>')+
    '</section>';
 }
-function groupFor(key){return groupIndex(key==="PRE.ASPERGES"?0:key==="POST.MASS"?31:Number(key.slice(-3)));}
+function groupFor(key){return massMapPhaseIndex(key==="PRE.ASPERGES"?0:key==="POST.MASS"?31:Number(key.slice(-3)));}
 export function massExplorerIndexHtml(catalog,{french=false}={}){
   const rows=groupLabels.map((labels,n)=>{
     const moments=catalog.sequence.filter(key=>groupFor(key)===n);
@@ -196,7 +190,7 @@ export function massExplorerCss(){
   ".aoMXText{margin:8px 0 25px;padding:8px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXText h2,.aoMXDetails h2{font:500 1.2rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXTextRow{padding:12px 0;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXLatin{font:400 1.15rem/1.7 var(--ao-font-body,Georgia,serif);margin:0 0 9px}.aoMXTranslation{font:400 .99rem/1.6 var(--ao-font-body,Georgia,serif);margin:0;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXAction{margin:8px 0;padding:12px 14px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-surface-1,#101821);color:var(--ao-text-muted,#adb2b7)}.aoMXAction small{display:block;margin:0 0 5px;color:var(--liturgical,#c9ad78);font:600 .65rem/1.4 var(--ao-font-ui,system-ui);letter-spacing:.06em;text-transform:uppercase}.aoMXAction p{margin:0;font:400 .9rem/1.55 var(--ao-font-body,Georgia,serif);white-space:pre-line}",
   ".aoMXIndexSwitch button{min-height:44px;padding:9px 13px;border:1px solid var(--liturgical,#c9ad78);background:transparent;color:var(--liturgical,#c9ad78);border-radius:9px;cursor:pointer}",
-  ...massMapCss().split("}").filter(Boolean).map(rule=>rule+"}"),
+  massMapCss(),
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
   ".aoMXFormationLink button{width:100%;min-height:48px;padding:12px 15px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);border:1px solid var(--ao-rule,#393c40);border-radius:10px;text-align:left;font:500 .85rem/1.5 system-ui;cursor:pointer}",
