@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Reconcile the nine remaining partial Commons: C3ap needs six source-verified French texts absent from C3p French file; C1v has three distinct rubric-sensitive Collect options but English second variant appears mistranslated; other historical plural/Pope variants require canonical owner/rubric checking. Preserve no automatic Mass selection.",
+      "nextAction": "Only seven source-partial index rows remain: four original source records are office/plural variants without standalone [Missa], C1v has three named rubrical orations and a suspect English second translation, and C3p/C3ap share six genuinely absent French Paschal Mass sections. Verify printed 1962 family identities and source-owned translation rather than force extra Masses.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -128,8 +128,8 @@
         "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
         "furtherCommonCandidates": 28,
         "ambiguousUnmatchedIndexRows": 3,
-        "sourcePathsWithCompleteValidatedCore": 26,
-        "sourcePathCandidatesRequiringInheritance": 9,
+        "sourcePathsWithCompleteValidatedCore": 28,
+        "sourcePathCandidatesRequiringInheritance": 7,
         "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json",
         "paschalC2apCompletedFromSource": true,
         "paschalC2apSourceOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
@@ -154,7 +154,10 @@
         "originalC7SourceLessonRecovered": true,
         "originalC7SourceLessonOwner": "Commune/C6",
         "incompleteVigilCollectVariantAudit": "data/calendar/p1-apostle-vigil-oration-variant-audit.v1.json",
-        "originalC3pFrenchTextAbsent": true
+        "originalC3pFrenchTextAbsent": true,
+        "twoPapalMartyrSharedC4bComplete": true,
+        "sourceProof": "data/calendar/p1-papal-martyr-source-proof.v1.json",
+        "fourSourceOfficeVariantsNotIndependentMissa": true
       }
     },
     {
@@ -319,10 +322,10 @@
   ],
   "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
   "appCommonSourceProgress": {
-    "canonicalAppSourceComplete": 26,
+    "canonicalAppSourceComplete": 28,
     "originalSevenComplete": 7,
     "newDirectComplete": 17,
-    "partialAppSourceCandidates": 9,
+    "partialAppSourceCandidates": 7,
     "ambiguousWebVariants": 3,
     "totalIndexRows": 38,
     "doctorC5aSourceInheritanceVerified": true,
@@ -341,6 +344,10 @@
     "c7RejectedC6Alternate": "Eccli 51:13-17",
     "c1vNamedCollectVariantsFound": 3,
     "c1vEnglishSecondCollectUnderEditorialHold": true,
-    "c3pFrenchSourceMissingSixMassSections": true
+    "c3pFrenchSourceMissingSixMassSections": true,
+    "appPapalMartyrSourceCompositionVerified": 2,
+    "papalMartyrC4bSharedSectionReferences": 32,
+    "nonStandaloneOfficeOrDerivedSourceFiles": 4,
+    "sourceStructures": "data/calendar/p1-office-versus-mass-source-structure.v1.json"
   }
 }
