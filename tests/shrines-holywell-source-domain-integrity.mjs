@@ -34,7 +34,8 @@ for(const [id,url] of Object.entries(expected)){
  assert.equal(new URL(x.url).hostname,"www.stwinefridesshrine.org");
  assert(a.evidence_scope&&a.claim_limit);
 }
-assert(!/immutable 3 November/i.test(byId.get("PIL-HOLYWELL-FEAST").contribution??""));
+assert(/does not independently certify an immutable 3 November/i.test(byId.get("PIL-HOLYWELL-FEAST").contribution??""),
+  "Retain explicit non-certification of a fixed liturgical feast from a year-specific programme");
 assert(/year-specific programme/i.test(byId.get("PIL-HOLYWELL-FEAST").contribution??""));
 const shrine=sites.shrines.find(x=>x.shrine_id===audit.affected_shrine_id);
 assert(shrine);
