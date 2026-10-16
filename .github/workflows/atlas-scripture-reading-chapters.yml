@@ -4,9 +4,11 @@ on:
     branches: [main]
     paths:
       - "src/find/bible-atlas-reading-chapters.js"
+      - "src/find/bible-atlas-journeys.js"
       - "src/find/bible-atlas.js"
       - "src/find/browser-entry.js"
       - "tests/atlas-scripture-reading-chapters.mjs"
+      - "tests/atlas-reading-arcs-themes.mjs"
       - "tests/atlas-scripture-reading-chapters-phone.mjs"
       - ".github/workflows/atlas-scripture-reading-chapters.yml"
   workflow_dispatch:
@@ -24,9 +26,11 @@ jobs:
       - name: Validate source links, cardinalities and syntax
         run: |
           node --check src/find/bible-atlas-reading-chapters.js
+          node --check src/find/bible-atlas-journeys.js
           node --check src/find/bible-atlas.js
           node --check src/find/browser-entry.js
           node tests/atlas-scripture-reading-chapters.mjs
+          node tests/atlas-reading-arcs-themes.mjs
           node tests/explore-atlas-cinematic-151.mjs
           node tests/explore-bible-atlas-151.mjs
   phone:
