@@ -74,6 +74,7 @@ try{
   assert.equal(baseline.explorer?.sourceBlocks,96);
   assert.ok(baseline.overflow<=1,width+" px Explorer has unwanted horizontal overflow");
   assert.ok(baseline.rootBottom<=baseline.ribbonTop+2,width+" px Explorer overlays global ribbon");
+  await page.screenshot({path:resolve(screenshotDir,"mass-map-"+width+"-en.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-moment="AO.CARD.010"]').click();
   await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"]').click();
   const selectedTab=await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"]').evaluate(node=>{
@@ -140,6 +141,8 @@ try{
   assert.ok(await page.locator("#ao-mass-explorer-root .aoMXTextRow [lang=fr]").count()>0,
     width+" missing source-owned French by-cue witness");
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
+  await page.screenshot({path:resolve(screenshotDir,"mass-map-"+width+"-fr.png")});
   await page.locator("#ao-mass-explorer-root [data-ao-mx-close]").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.()?.child===null&&
      document.getElementById("ao-learn-modular-root")?.hidden===false,null,{timeout:12000});
