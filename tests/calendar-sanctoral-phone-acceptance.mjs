@@ -201,6 +201,27 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-apostles-inseparable]").count(),0,
        "The combined Peter-Paul feast on June 29 must not inherit the June 30 §110 claim");
    }
+   if(width===390){
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-04")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-10-04",
+       null,{timeout:55000});
+     const omission=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"]');
+     await omission.waitFor({state:"attached",timeout:30000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await omission.waitFor({state:"visible",timeout:12000});
+     assert.match(await omission.innerText(),/RG 111\(b\)/);
+     assert.match(await omission.innerText(),/St Francis of Assisi/);
+     assert.equal(await omission.locator("a").count(),2);
+     assert.equal(await omission.locator("a").first().getAttribute("href"),
+       "https://ordo.fsspx.org/day/2026-10-04?lang=en");
+     assert.equal(await omission.locator("a").first().getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-05")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-10-05",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "An omitted October 4 feast cannot be carried as a commemoration to October 5");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);

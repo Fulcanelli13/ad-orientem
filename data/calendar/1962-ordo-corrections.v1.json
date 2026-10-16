@@ -321,5 +321,38 @@
       }
     }
   ],
-  "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified"
+  "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified",
+  "nonCommemorationWitnesses": [
+    {
+      "id": "FRANCIS_ASSISI_2026_SUNDAY_OMISSION",
+      "date": "2026-10-04",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent19-0",
+        "sourceId": "tempora:Pent19-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/10-04",
+        "class": 3,
+        "saint": "SAINT_FRANCIS_OF_ASSISI",
+        "fixedMonthDay": "10-04"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "The nineteenth Sunday after Pentecost is celebrated in the general 1962 calendar. Although 4 October is normally the third-class feast of St Francis of Assisi, a second-class Sunday cannot add a third-class saint's commemoration. His feast is omitted from this Mass, not transferred to the next day. Particular Franciscan calendars may require separate adjudication.",
+      "fr": "Dans le calendrier romain général de 1962, on célèbre le dix-neuvième dimanche après la Pentecôte. Le 4 octobre est normalement la fête de troisième classe de saint François d’Assise, mais un dimanche de deuxième classe n’admet pas la commémoraison d’un saint de troisième classe. Sa fête est omise à cette messe, et non reportée au lendemain. Les calendriers particuliers franciscains exigent un examen distinct.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-10-04?lang=en",
+      "feastClassWitness": "https://ordo.fsspx.org/day/2027-10-04",
+      "independent1962Contrast": "https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    }
+  ]
 }

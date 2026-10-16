@@ -338,3 +338,60 @@ export function calendarInseparableApostlesClaimForDay(resolution,corrections){
     automaticMassChange:false
   })]);
 }
+
+
+// Source-certified absence is not proof by missing names alone. A negative
+// claim needs the explicit conflicting feast and *selected* 1962 Sunday.
+export function calendarOmittedFeastClaimForDay(resolution,corrections){
+  if(corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
+     resolution?.date!=="2026-10-04"||
+     resolution?.status!=="ready"||resolution?.proper?.status!=="ready"||
+     resolution?.day?.main?.id!=="tempora:Pent19-0:2:g"||
+     resolution?.day?.main?.path!=="Tempora/Pent19-0"||
+     resolution?.proper?.data?.sourcePath!=="Tempora/Pent19-0"||
+     !Array.isArray(resolution.day.commemorations)||
+     resolution.day.commemorations.length!==0||
+     canonical1962Commemorations(resolution).length!==0)return Object.freeze([]);
+  const entries=(Array.isArray(corrections.nonCommemorationWitnesses)?
+    corrections.nonCommemorationWitnesses:[]).filter(x=>x?.date===resolution.date);
+  if(entries.length!==1)return Object.freeze([]);
+  const w=entries[0],p=w.principal,excluded=w.impeded;
+  if(w.id!=="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"||
+     w.scope!=="1962_GENERAL_ROMAN_CALENDAR"||
+     p?.sourcePath!==resolution.proper.data.sourcePath||
+     p?.sourceId!==resolution.day.main.id||
+     p?.class!==2||p?.kind!=="II_CLASS_SUNDAY"||
+     excluded?.sourcePath!=="Sancti/10-04"||
+     excluded?.class!==3||
+     excluded?.saint!=="SAINT_FRANCIS_OF_ASSISI"||
+     excluded?.fixedMonthDay!=="10-04"||
+     w.disposition!=="OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED"||
+     !Array.isArray(w.clauses)||w.clauses.length!==3||
+     w.clauses[0]!=="RG 91"||w.clauses[1]!=="RG 93"||
+     w.clauses[2]!=="RG 111(b)"||
+     w.explanationOnly!==true||w.changes1962Mass!==false||
+     w.doesNotDetermineParticularCalendar!==true||
+     !w.en?.trim()||!w.fr?.trim())return Object.freeze([]);
+  const expected={
+    observedWitness:"https://ordo.fsspx.org/day/2026-10-04?lang=en",
+    feastClassWitness:"https://ordo.fsspx.org/day/2027-10-04",
+    independent1962Contrast:"https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737"
+  };
+  if(Object.entries(expected).some(([k,url])=>w[k]!==url))return Object.freeze([]);
+  return Object.freeze([Object.freeze({
+    claimId:w.id,
+    date:resolution.date,
+    claimKind:"SOURCE_CERTIFIED_OMITTED_SAINT_FEAST",
+    observedPrincipalId:resolution.day.main.id,
+    impededFeastPath:excluded.sourcePath,
+    disposition:w.disposition,
+    clauses:Object.freeze([...w.clauses]),
+    explanation:Object.freeze({en:w.en.trim(),fr:w.fr.trim()}),
+    normativeUrl:GENERAL_RUBRICS_NORMATIVE_URL,
+    witnessUrl:w.observedWitness,
+    feastClassWitnessUrl:w.feastClassWitness,
+    comparisonUrl:w.independent1962Contrast,
+    generalRomanCalendarOnly:true,
+    automaticMassChange:false
+  })]);
+}
