@@ -22,7 +22,7 @@ assert.equal(leonardi.model.modernHonours[0].id,"saint.john-henry-newman");
 assert.match(leonardi.html,/Historical Saint/);
 assert.match(leonardi.html,/1962 Mass commemoration/);
 assert.match(leonardi.html,/John Henry Newman/);
-assert.match(leonardi.html,/Also honoured · contemporary date/);
+assert.match(leonardi.html,/Modern Roman calendar/);
 assert.equal((leonardi.html.match(/class="aoTodayV2ObservedRow"/g)||[]).length,2);
 assert.match(leonardi.html,/data-home-calendar-view="day"/);
 assert.doesNotMatch(leonardi.html,/data-cal-mass|data-home-mass-entry/);
@@ -64,7 +64,7 @@ const asFr=view("2026-10-09","sancti:10-09:3:w",
   [{id:"sancti:10-11:3:w",title:"St Name",titleFr:"Saint Nom"}],"fr");
 assert.match(asFr.html,/Saint Nom/);
 assert.match(asFr.html,/Saint John Henry Newman|John Henry Newman/);
-assert.match(asFr.html,/Messe traditionnelle inchangée/);
+assert.match(asFr.html,/La messe prescrite de 1962 reste inchangée/);
 assert.ok(read.observanceRegistry.observances.length===26);
 assert.equal(buildReviewedSanctoralCards({date:"2026-10-09",observedPrincipalId:"sancti:10-09:3:w",...read}).length,1);
 console.log("Home Living Traditional Calendar: PASS (1962 observances first, 10 Holy See primary dates, date history, bilingual, no added Mass)");
