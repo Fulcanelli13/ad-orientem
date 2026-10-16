@@ -91,11 +91,23 @@ async function broadcast(type,detail={}){
  const clients=await self.clients.matchAll({type:"window",includeUncontrolled:true});
  for(const client of clients)client.postMessage({source:"AO_OFFLINE_V1",type,...detail});
 }
+// Retry transient CDN/network responses. Incomplete staged snapshots still fail closed.
 const safeFetch=async url=>{
- const request=new Request(url,{cache:"no-store",credentials:"same-origin"});
- const response=await fetch(request);
- if(!response.ok||response.type==="opaque")fail("FETCH_"+response.status+"_"+new URL(url).pathname);
- return response;
+ const path=new URL(url).pathname;
+ for(let attempt=0;attempt<3;attempt++){
+  let response;
+  try{response=await fetch(new Request(url,{cache:"no-store",credentials:"same-origin"}))}
+  catch{
+   if(attempt<2){await new Promise(done=>setTimeout(done,400*(attempt+1)));continue}
+   fail("NETWORK_"+path);
+  }
+  if(response.ok&&response.type!=="opaque")return response;
+  if([429,500,502,503,504].includes(response.status)&&attempt<2){
+   await new Promise(done=>setTimeout(done,400*(attempt+1)));continue;
+  }
+  fail("FETCH_"+response.status+"_"+path);
+ }
+ fail("NETWORK_"+path);
 };
 async function stageSnapshot(){
  if(stagedJob)return stagedJob;

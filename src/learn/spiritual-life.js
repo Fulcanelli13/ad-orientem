@@ -1,5 +1,7 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
+import { sourceReferenceSafeUrl } from "./source-reference-panel.js";
 import {
   SPIRITUAL_LIFE_ROUTE_ID,
   SPIRITUAL_LIFE_VERSION,
@@ -46,8 +48,10 @@ function css(){
 .aoSLSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin:24px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLSources summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted,#9ba5b1);font:500 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoSLSource{margin:11px 0;padding-left:10px;border-left:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));font-size:.76rem;line-height:1.45}.aoSLSource a{color:var(--liturgical,#c9ad78);text-decoration:none}.aoSLSource em{display:block;margin-top:2px;color:var(--muted,#9ba5b1);font-style:normal}.aoSLSourceLoc{margin-top:4px;color:var(--muted,#9ba5b1);font-size:.71rem}
 .aoSLInlineSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin-top:10px;color:var(--muted,#9ba5b1);font-size:max(13px,.8125rem);line-height:1.5}.aoSLInlineSources span{color:var(--muted,#9ba5b1)}.aoSLInlineSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:3px;overflow-wrap:anywhere}.aoSLInlineSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoSLSourceHold{font-style:italic}
 .aoSLSourceIntro{margin:5px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}
-.aoSLFurtherReading h3{margin:12px 0 5px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
-.aoSLFurtherReading ul{margin:4px 0 14px;padding-left:20px}.aoSLFurtherReading li{margin:9px 0}.aoSLFurtherReading a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-underline-offset:3px}
+.aoSLSourceIndex{list-style:none;margin:7px 0 10px;padding:0}.aoSLSourceIndex li{margin:8px 0;overflow-wrap:anywhere}.aoSLSourceIndex a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoSLSourceIndexHeading{margin:12px 0 6px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLReadingHint{display:inline-block;margin-inline-start:8px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLDocumentNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLWorks{margin:12px 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:4px}
 .aoSLWorks summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--ao-text-muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 
@@ -147,23 +151,33 @@ const SPIRITUAL_LIFE_FURTHER_READING=Object.freeze({
  SL12:["SL-PIUS-XI-MISERENTISSIMUS","SL-PAUL-VI-INDULGENTIARUM"],
  SL13:[],SL14:["SL-FRANCIS-SALES-DEVOUT-LIFE"]
 });
-function lessonReadingMarkup(win,lesson,sources){
- const selected=SPIRITUAL_LIFE_FURTHER_READING[lesson.id]||[];
- const approved=selected.filter(id=>sources.some(s=>s.id===id)).slice(0,4);
- if(!approved.length)return "";
- return '<div class="aoSLFurtherReading"><h3>'+esc(L(win,"Further reading","Pour approfondir"))+'</h3><ul>'+
-   approved.map(id=>{
-    const source=sources.find(s=>s.id===id);
-    const url=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
-    return /^https:\/\//.test(url)
-      ?'<li><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.title)+' ↗</a></li>'
-      :'';
-   }).join("")+'</ul></div>';
+// Cited works are visible on the first tap; further reading is a label on
+// expressly selected cited sources, never a second duplicated bibliography.
+function lessonSourceIndexMarkup(win,lesson,sources){
+  const claimIds=lessonClaimIds(lesson);
+  const selected=new Set((SPIRITUAL_LIFE_FURTHER_READING[lesson.id]||[])
+    .filter(id=>sources.some(source=>source.id===id&&
+      sourceReferenceSafeUrl(resolveSpiritualLifeSourceTarget(win,source,claimIds)))).slice(0,4));
+  const index=sources.map(source=>{
+    const url=sourceReferenceSafeUrl(resolveSpiritualLifeSourceTarget(win,source,claimIds));
+    const linked=url
+      ?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.title)+' ↗</a>'
+      :'<span class="aoSLSourceHold">'+esc(source.title)+' · '+esc(L(win,"Direct source link not verified","Lien direct non vérifié"))+'</span>';
+    const hint=selected.has(source.id)
+      ?'<span class="aoSLReadingHint" data-ao-sl-curated-reading="'+esc(source.id)+'">'+esc(L(win,"Further reading","Pour approfondir"))+'</span>'
+      :"";
+    return '<li data-ao-sl-cited-source="'+esc(source.id)+'">'+linked+hint+'</li>';
+  }).join("");
+  return '<h3 class="aoSLSourceIndexHeading">'+esc(L(win,"Cited sources","Sources citées"))+'</h3>'+
+    '<ul class="aoSLSourceIndex" data-ao-sl-source-index>'+index+'</ul>'+
+    '<p class="aoSLDocumentNote">'+esc(L(win,
+      "Document links do not by themselves verify an exact passage or edition.",
+      "Ces liens ne vérifient pas, à eux seuls, le passage ou l’édition exacte."))+'</p>';
 }
 function sourceMarkup(win,lesson){
   const sources=lessonSources(lesson);
   if(!sources.length)return "";
-  return `<details class="aoSLSources" data-ao-sl-source-disclosure><summary>${esc(L(win,"Sources & further reading","Sources et lectures complémentaires"))} ▾</summary>${lessonReadingMarkup(win,lesson,sources)}<details class="aoSLWorks"><summary>${esc(L(win,"Sources & provenance","Sources et provenance"))} · ${sources.length}</summary><p class="aoSLSourceIntro">${esc(L(win,"Works and editions cited in this lesson (not a curated reading list).","Ouvrages et éditions cités dans cette leçon (sans sélection de lecture supplémentaire)."))}</p>${sources.map(source=>{
+  return `<details class="aoSLSources" data-ao-sl-source-disclosure><summary>${esc(L(win,"Sources","Sources"))} · ${sources.length}</summary>${lessonSourceIndexMarkup(win,lesson,sources)}<details class="aoSLWorks"><summary>${esc(L(win,"Sources & provenance","Sources et provenance"))} · ${sources.length}</summary><p class="aoSLSourceIntro">${esc(L(win,"Works and editions cited in this lesson (not a curated reading list).","Ouvrages et éditions cités dans cette leçon (sans sélection de lecture supplémentaire)."))}</p>${sources.map(source=>{
     const locators=Array.isArray(source.locators)?source.locators:(source.locator?[source.locator]:[]);
     const meta=[source.authority_type?String(source.authority_type).replaceAll("_"," "):"",source.role?String(source.role).replaceAll("_"," "):""].filter(Boolean).join(" · ");
     const target=resolveSpiritualLifeSourceTarget(win,source,lessonClaimIds(lesson));
@@ -244,7 +258,9 @@ export function createSpiritualLifeRuntime(win=globalThis){
     return true;
   }
 
+  let entryOrigin=null,lessonFromList=false;
   function open(opts={}){
+    entryOrigin=captureObservedModuleOrigin(win,"learn");lessonFromList=false;
     if(!SPIRITUAL_LIFE_RUNTIME_AUDIT.bilingual||!SPIRITUAL_LIFE_RUNTIME_AUDIT.allClaimsResolved||!SPIRITUAL_LIFE_RUNTIME_AUDIT.allSourcesResolved)return false;
     if(opts.lessonId&&SPIRITUAL_LIFE_LESSON_MAP[opts.lessonId]){state.view="lesson";state.lessonId=opts.lessonId;}
     else{state.view="list";state.lessonId=null;}
@@ -254,6 +270,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
 
   function openLesson(id){
     if(!SPIRITUAL_LIFE_LESSON_MAP[id])return false;
+    if(state.view==="list")lessonFromList=true;
     state.view="lesson";state.lessonId=id;render();root()?.scrollTo?.(0,0);return true;
   }
 
@@ -265,7 +282,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
   }
 
   function back(){
-    if(state.view==="lesson"){state.view="list";state.lessonId=null;render();root()?.scrollTo?.(0,0);return true;}
+    if(state.view==="lesson"&&lessonFromList){state.view="list";state.lessonId=null;lessonFromList=false;render();root()?.scrollTo?.(0,0);return true;}
     return close(true);
   }
 
@@ -296,7 +313,8 @@ export function createSpiritualLifeRuntime(win=globalThis){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}
     node?.remove?.();win?.document?.body?.classList?.remove?.("aoSpiritualLifeOpen");
     state.view="list";state.lessonId=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    if(returnToLearn&&win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)return true;
+    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});
     return true;
   }
 

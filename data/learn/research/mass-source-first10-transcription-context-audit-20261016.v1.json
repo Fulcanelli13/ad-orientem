@@ -1,0 +1,280 @@
+{
+  "schema": "AO_MASS_SOURCE_FIRST10_TEXT_CONTEXT_AUDIT_V1",
+  "date": "2026-10-16",
+  "status": "TRANSCRIPTION_CONTEXT_ONLY__NO_PAGE_IMAGE_COLLATION",
+  "sourceBatchPath": "data/learn/research/mass-source-first69-locus-batches-20261016.v1.json",
+  "researchClaimCount": 18,
+  "locusCount": 10,
+  "latinCriticalTextContextsLocated": 2,
+  "originalEnglishEditionOcrContextsLocated": 7,
+  "partialOcrContextsLocated": 1,
+  "independentPrintedPageImageChecks": 0,
+  "certifiedSourcePassages": 0,
+  "editoriallyApprovedHistoricalQuotations": 0,
+  "publicTextExcerpts": 0,
+  "sourceTranslationNote": "Gihr 1902 title page states TRANSLATED FROM THE SIXTH GERMAN EDITION. It is a historical English translation, not Gihr's German autograph. Corpus Thomisticum identifies the Latin as Leonine 1906 text, machine-transcribed and subsequently checked by Enrique Alarcón.",
+  "criticalDistinctions": [
+    "Published Mass ritual remains governed by 1962 Missale Romanum, not allegorical comments by St Thomas or historical notes by Gihr.",
+    "Corpus Thomisticum is an accessible checked Latin digital transcription, not the printed Leonine page images.",
+    "Gihr's OCR confirms text proximity but is not scanned-page reading, textual edition collation or rights approval.",
+    "A named locus groups multiple claims but each author's exact meaning and page scope remains independently reviewable."
+  ],
+  "witnesses": [
+    {
+      "workId": "AO.MASS.WORK.AQUINAS",
+      "url": "https://www.corpusthomisticum.org/sth4083.html",
+      "textBase": "Latin Leonine 1906, with Busa/Alarcón digital correction",
+      "originalPageImageViewed": false,
+      "reproductionClearance": false
+    },
+    {
+      "workId": "AO.MASS.WORK.GIHR",
+      "url": "https://archive.org/details/holysacrificeofm00gihriala",
+      "ocrUrl": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "textBase": "1902 B. Herder English translation from sixth German edition",
+      "originalPageImageViewed": false,
+      "reproductionClearance": false
+    }
+  ],
+  "rows": [
+    {
+      "witnessLevel": "LATIN_CRITICAL_TEXT_LOCATED",
+      "target": "III q.83 a.5 ad 3",
+      "textUnit": "[51178]",
+      "contextDescription": "Aquinas gives symbolic interpretations of successive signs of the Cross as a depiction of the Passion; not a reconstruction of the historically original ritual.",
+      "observedAt": "https://www.corpusthomisticum.org/sth4083.html",
+      "contextCheck": "MATCHED_IN_CRITICAL_DIGITAL_LATIN_TEXT",
+      "additionalHold": "Leonine printed-page facsimile and any English/French translation remain uncollated; distinguish this argument from normative 1962 rubrics.",
+      "locusId": "AO.MASS.WORK.AQUINAS.L01",
+      "workId": "AO.MASS.WORK.AQUINAS",
+      "claimIds": [
+        "VER-064",
+        "VER-065",
+        "VER-066",
+        "VER-067",
+        "VER-068"
+      ],
+      "momentIds": [
+        "AO.CARD.014",
+        "AO.CARD.017"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "LATIN_CRITICAL_TEXT_LOCATED",
+      "target": "III q.83 a.5 ad 4",
+      "textUnit": "[51179]",
+      "contextDescription": "The post-consecration signs do not perform another consecration or blessing of Christ; they recall the power of the Cross and Passion.",
+      "observedAt": "https://www.corpusthomisticum.org/sth4083.html",
+      "contextCheck": "MATCHED_IN_CRITICAL_DIGITAL_LATIN_TEXT",
+      "additionalHold": "Leonine printed-page facsimile and any English/French translation remain uncollated; no claim about modern ritual rule.",
+      "locusId": "AO.MASS.WORK.AQUINAS.L02",
+      "workId": "AO.MASS.WORK.AQUINAS",
+      "claimIds": [
+        "VER-069"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §59, p. 628",
+      "textUnit": "§59",
+      "contextDescription": "The OCR discusses consecration as the supreme blessing, multiple interpretations of adscripta, and prefers the sense approved in accordance with Christ's institution; ratam discussed at the page boundary.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "All exact words and page breaks require page-image collation; Pauline citation in the footnote concerns the blessed chalice and must not be assigned to each adjective.",
+      "locusId": "AO.MASS.WORK.GIHR.L01",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-053",
+        "VER-054",
+        "VER-055"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §59, pp. 627–630",
+      "textUnit": "§59",
+      "contextDescription": "The sequence of five adjectives in Quam oblationem forms Gihr's exposition of the desired oblation and change of the gifts.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "Printed-page images and exact adjective-by-adjective scope remain to be collated.",
+      "locusId": "AO.MASS.WORK.GIHR.L02",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-052"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §59, pp. 629–630",
+      "textUnit": "§59",
+      "contextDescription": "The term rationabilis is discussed as reasonable/spiritual oblation, with an explicit Romans 12:1 source given in Gihr's footnote.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "Distinguish author's theological interpretation and Pauline citation from word-for-word borrowing of the entire Roman Canon text.",
+      "locusId": "AO.MASS.WORK.GIHR.L03",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-056"
+      ],
+      "momentIds": [
+        "AO.CARD.014"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_PARTIAL",
+      "target": "1902 B. Herder, §61, p. 660; cross-reference pp. 75–76",
+      "textUnit": "§61",
+      "contextDescription": "The pp. 660 treatment of Melchisedech's bread and wine as a typological figure of the Eucharistic Sacrifice is located.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "PRIMARY_CONTEXT_LOCATED_SECONDARY_CROSS_REFERENCE_NOT_CHECKED",
+      "additionalHold": "Earlier pp. 75–76 have not been separately checked; retain a partial flag. Do not convert typology into proof that the Canon existed in Genesis.",
+      "locusId": "AO.MASS.WORK.GIHR.L04",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-059"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §61, p. 659",
+      "textUnit": "§61",
+      "contextDescription": "Abel's offering, Hebrews 11:4, Abraham and Isaac are treated as accepted typological sacrifices; Gihr explicitly frames heavenly fire concerning Abel as conjectural.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "Fire from heaven is not stated in Genesis 4; the inference must remain author-attributed and not enter the Bible narrative.",
+      "locusId": "AO.MASS.WORK.GIHR.L05",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-057",
+        "VER-058"
+      ],
+      "momentIds": [
+        "AO.CARD.017"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §68, p. 717",
+      "textUnit": "§68",
+      "contextDescription": "The Lamb of God terminology is connected with Christ and the Eucharistic Communion invitation invoking St John the Baptist.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "Do not infer that every variant of the ritual Communion invitation had identical historical wording; printed page remains uncollated.",
+      "locusId": "AO.MASS.WORK.GIHR.L06",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-063"
+      ],
+      "momentIds": [
+        "AO.CARD.024"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §68, pp. 715–716",
+      "textUnit": "§68",
+      "contextDescription": "Gihr's note reviews older multiple miserere nobis usages and subsequent third dona nobis pacem, distinguishing the sequence historically.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "1962 Requiem and Holy Week variants are governed by the Missal, not the older historical commentary.",
+      "locusId": "AO.MASS.WORK.GIHR.L07",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-062"
+      ],
+      "momentIds": [
+        "AO.CARD.021"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    },
+    {
+      "witnessLevel": "EARLY_ENGLISH_EDITION_OCR_LOCATED",
+      "target": "1902 B. Herder, §68, pp. 715–717",
+      "textUnit": "§68",
+      "contextDescription": "The Agnus Dei threefold petition and its evolution from repetitive mercy petitions to a concluding peace petition are discussed in Gihr's historical account.",
+      "observedAt": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "contextCheck": "ORIGINAL_1902_BOOK_OCR_CONTEXT_LOCATED",
+      "additionalHold": "Historical account cannot overrule 1962 liturgical form conditions; printed-page images remain uncollated.",
+      "locusId": "AO.MASS.WORK.GIHR.L08",
+      "workId": "AO.MASS.WORK.GIHR",
+      "claimIds": [
+        "VER-060",
+        "VER-061"
+      ],
+      "momentIds": [
+        "AO.CARD.021"
+      ],
+      "printedPageImageInspected": false,
+      "originalEditionCertified": false,
+      "claimScopePublicationApproved": false,
+      "originalTextReproduced": false,
+      "translationApproved": false,
+      "releaseApproved": false
+    }
+  ]
+}

@@ -10996,6 +10996,129 @@
         "SG-R77-SITE-SG-INV-0609",
         "SG-R77-GEO-SG-INV-0609"
       ]
+    },
+    {
+      "place_id": "place:GB:westminster-cathedral",
+      "name": {
+        "official": "Westminster Cathedral — Most Precious Blood",
+        "aliases": [
+          "Westminster Cathedral",
+          "Metropolitan Cathedral of the Most Precious Blood",
+          "Cathédrale de Westminster"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.49582,
+        "lng": -0.13952,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/10810446",
+        "source_ref": "osm:way:10810446",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "GB",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "London",
+        "region": null,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "Westminster Cathedral, Victoria Street, London SW1P 1QW, United Kingdom"
+      },
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0264",
+        "SG-R79-GEO-SG-INV-0264"
+      ]
+    },
+    {
+      "place_id": "place:FR:sacre-coeur-montmartre",
+      "name": {
+        "official": "Basilique du Sacré-Cœur de Montmartre — Paris",
+        "aliases": [
+          "Basilica of the Sacred Heart of Montmartre",
+          "Sacré-Cœur Basilica",
+          "Basilique du Vœu national"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.8868,
+        "lng": 2.34303,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/23762981",
+        "source_ref": "osm:way:23762981",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Paris",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "35 rue du Chevalier de La Barre, 75018 Paris, France"
+      },
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0018",
+        "SG-R79-GEO-SG-INV-0018"
+      ]
+    },
+    {
+      "place_id": "place:IT:duomo-orvieto",
+      "name": {
+        "official": "Duomo di Orvieto — Cattedrale di Santa Maria Assunta",
+        "aliases": [
+          "Orvieto Cathedral",
+          "Cathédrale d'Orvieto",
+          "Duomo di Orvieto"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.71701,
+        "lng": 12.1136,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/44184811",
+        "source_ref": "osm:way:44184811",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-15"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Orvieto",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza del Duomo, 05018 Orvieto, Umbria, Italy"
+      },
+      "source_ids": [
+        "SG-R79-SITE-SG-INV-0056",
+        "SG-R79-GEO-SG-INV-0056"
+      ]
     }
   ],
   "directoryPlaceLinks": [

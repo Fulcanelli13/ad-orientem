@@ -59,6 +59,8 @@ try{
         overflow:document.documentElement.scrollWidth-innerWidth,
         wrap:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.renderWorldCopies,
         bounds:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.maxBounds,
+        zoom:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.zoom,
+        center:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.center,
         chips:[...document.querySelectorAll('.aoHeritageCategories button')].map(b=>b.getBoundingClientRect().height),
         searchWidth:rect(".aoFindSearch input")?.width};
     });
@@ -80,7 +82,16 @@ try{
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
-    assert.deepEqual(initial.bounds,[[-179.99,-85.051129],[179.99,85.051129]]);
+    assert.deepEqual(initial.bounds,width<=430
+      ?undefined
+      :[[-179.99,-85.051129],[179.99,85.051129]],
+      width+"px negative-zoom phone overview must not install a wrapping camera clamp");
+    if(width<=430){
+      assert.ok(initial.zoom<0&&initial.zoom>=-2,
+        width+"px must use negative phone overview zoom to prevent edge-clipped global clusters: "+initial.zoom);
+      assert.ok(initial.center[0]>-10&&initial.center[0]<50,
+        width+"px must centre on the nonwrapped published Place extent: "+JSON.stringify(initial.center));
+    }else assert.ok(initial.zoom>=0,"Tablet default zoom must remain unchanged");
     await page.locator('.aoHeritageNearby').tap();
     await page.locator('.aoHeritageNearbyPanel').waitFor({state:"visible"});
     const nearby=await page.locator('.aoHeritageNearbyResult').count();

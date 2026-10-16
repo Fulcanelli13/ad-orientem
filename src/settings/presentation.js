@@ -7,7 +7,7 @@ export function canonicalSettingsAppVersion(win=globalThis){
   return win?.document?.documentElement?.dataset?.aoRelease||win?.AO_RELEASE_AUTHORITY_V4359?.version||"43.59.6";
 }
 
-export function buildSettingsViewModel(win=globalThis,{route="/settings",live=false}={}){
+export function buildSettingsViewModel(win=globalThis,{route="/settings",live=false,updateCheck="idle"}={}){
   const donor=win?.AO_SETTINGS_DONOR_V4359?.snapshot?.()||{preferences:DEFAULT_PREFERENCES,profiles:[]};
   const language=donor.preferences?.general?.uiLanguage==="fr"?"fr":"en";
   return Object.freeze({
@@ -15,6 +15,9 @@ export function buildSettingsViewModel(win=globalThis,{route="/settings",live=fa
     language,
     live:Boolean(live),
     version:canonicalSettingsAppVersion(win),
+    updateCheck,
+    offline:win?.AO_OFFLINE_APP_V1?.status||null,
+    canonicalHost:win?.location?.hostname==="fulcanelli13.github.io",
     preferences:donor.preferences||DEFAULT_PREFERENCES,
     profiles:Array.isArray(donor.profiles)?donor.profiles:[]
   });
@@ -42,7 +45,7 @@ html[data-ao-settings-surface="open"] #ao-global-ribbon{z-index:var(--ao-z-globa
 #${rootId} .aoSetSelect{max-width:48vw;min-height:var(--ao-control-h,44px);border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px;background:var(--surface-2,#10151a);color:inherit;padding:6px 28px 6px 9px;font:650 var(--ao-type-ui-sm,12px)/1.2 var(--ao-font-ui,system-ui,sans-serif)}
 #${rootId} .aoSetNote{margin:10px 4px 0;padding:10px 11px;border-left:2px solid var(--liturgical,#c6a66b);border-radius:0 10px 10px 0;background:var(--liturgical-soft,rgba(198,166,107,.08));color:var(--muted,#b8c0c7);font-size:var(--ao-type-ui-sm,12px);line-height:1.42}#${rootId} .aoSetNote strong{color:var(--text,#f3efe8)}
 #${rootId} .aoSetDanger{color:#f0b8ae!important}#${rootId} .aoSetProfileName{width:100%;min-height:var(--ao-control-h,44px);border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-2,var(--surface-2,#10151a));color:inherit;padding:9px 10px;font:600 var(--ao-type-ui,14px)/1.2 var(--ao-font-ui,system-ui,sans-serif)}
-#${rootId} .aoSetBadge{display:inline-block;padding:3px 7px;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:999px;color:var(--muted,#b8c0c7);font-size:var(--ao-type-ui-xs,11px)}#${rootId} .aoSetBadge.active{border-color:var(--liturgical-border,var(--liturgical,#c6a66b));color:var(--liturgical,#c6a66b)}
+#${rootId} .aoSetRow:disabled{opacity:.55;cursor:not-allowed}#${rootId} .aoSetBadge{display:inline-block;padding:3px 7px;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:999px;color:var(--muted,#b8c0c7);font-size:var(--ao-type-ui-xs,11px)}#${rootId} .aoSetBadge.active{border-color:var(--liturgical-border,var(--liturgical,#c6a66b));color:var(--liturgical,#c6a66b)}
 #${rootId} .aoSetEmpty{padding:18px 13px;color:var(--muted,#b8c0c7);font-size:var(--ao-type-ui-sm,12px);line-height:1.45}#${rootId} .aoSetAction{min-height:var(--ao-control-h,44px);padding:9px 12px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-2,var(--surface-2,#10151a));color:inherit;font:700 var(--ao-type-ui-sm,12px)/1.1 var(--ao-font-ui,system-ui,sans-serif)}
 #${rootId} .aoSetInlineIcon{display:inline-block;width:1em;height:1em;background:currentColor;vertical-align:-.12em}
 #${rootId} .aoSetSource{padding:12px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09))}#${rootId} .aoSetSource:last-child{border-bottom:0}#${rootId} .aoSetSource summary{cursor:pointer;min-height:var(--ao-control-h,44px);display:flex;align-items:center;font:650 var(--ao-type-ui-sm,12px)/1.25 var(--ao-font-ui,system-ui,sans-serif)}#${rootId} .aoSetSource p{margin:8px 0 0;color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px);line-height:1.45}#${rootId} .aoSetSourceKey{padding:10px 13px;border-bottom:1px solid var(--border,rgba(255,255,255,.09));color:var(--muted,#b3bac0);font-size:var(--ao-type-ui-sm,12px)}#${rootId} .aoSetSourceKey:last-child{border-bottom:0}
@@ -51,8 +54,8 @@ html[data-ao-settings-surface="open"] #ao-global-ribbon{z-index:var(--ao-z-globa
 `;
 }
 
-export function renderSettingsToString(win=globalThis,{route="/settings",live=false}={}){
-  const vm=buildSettingsViewModel(win,{route,live}),p=vm.preferences,profiles=vm.profiles,fr=vm.language==="fr";
+export function renderSettingsToString(win=globalThis,{route="/settings",live=false,updateCheck="idle"}={}){
+  const vm=buildSettingsViewModel(win,{route,live,updateCheck}),p=vm.preferences,profiles=vm.profiles,fr=vm.language==="fr";
   const L=(en,frText)=>fr?(frText||en):en;
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const icon=(id,cls="aoSetInlineIcon")=>{const u=resolveCanonicalAssetUrl(id);return u?`<span class="${cls}" aria-hidden="true" data-ao-asset-id="${id}" style="-webkit-mask:url('${esc(u)}') center/contain no-repeat;mask:url('${esc(u)}') center/contain no-repeat"></span>`:"";};
@@ -204,9 +207,45 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const sourceDetails=sourceFamilies.map(([title,body])=>`<details class="aoSetSource"><summary>${esc(title)}</summary><p>${esc(body)}</p></details>`).join("");
     const provenanceSummary=provenance.join(" · ");
     const methodology=`<details class="aoSetSource"><summary>${esc(L("How source labels work","Fonctionnement des mentions de source"))}</summary><p>${esc(provenanceSummary)}</p></details>`;
+    const offline=vm.offline;
+    const snapshotId=offline?.ready&&offline?.version?String(offline.version).slice(0,12):"";
+    const candidateId=offline?.pendingVersion&&offline.pendingVersion!==offline.version?String(offline.pendingVersion).slice(0,12):"";
+    const canCheck=Boolean(offline?.supported&&offline?.registered);
+    const offlineLabel=candidateId
+      ?L("New offline copy ready to apply","Nouvelle copie hors ligne prête à être appliquée")
+      :snapshotId?L("Saved offline copy","Copie hors ligne enregistrée")
+      :offline?.supported?L("No active offline copy yet","Pas encore de copie hors ligne active")
+      :L("Offline version tracking unavailable here","Suivi des versions hors ligne indisponible ici");
+    const checkLabel=vm.updateCheck==="checking"
+      ?L("Checking for updates…","Recherche de mises à jour…")
+      :candidateId?L("New copy staged; installation requires a separate tap","Nouvelle copie prête ; installation sur demande")
+      :vm.updateCheck==="current"?L("No new offline copy detected","Aucune nouvelle copie hors ligne détectée")
+      :vm.updateCheck==="error"?L("Update check failed; saved copy retained","Échec du contrôle ; copie conservée")
+      :L("Check for a newer saved copy","Rechercher une nouvelle copie");
+    const canApply=Boolean(candidateId&&canCheck&&!vm.live&&vm.updateCheck!=="applying");
+    const applyLabel=vm.live
+      ?L("Finish Mass before installing; saved copy retained","Terminez la Messe avant installation ; copie conservée")
+      :vm.updateCheck==="applying"?L("Applying update…","Installation de la mise à jour…")
+      :vm.updateCheck==="applyError"?L("Update could not be installed; retry without deleting data","Installation impossible ; réessayez sans effacer les données")
+      :L("Install the ready copy and reload the app","Installer la copie prête et recharger l’application");
+    const canonicalUrl="https://fulcanelli13.github.io/ad-orientem/";
+    const snapshotLabel=snapshotId
+      ?'<span class="aoSetBadge" data-settings-snapshot-id="'+esc(snapshotId)+'">'+esc(snapshotId)+'</span>'
+      :'<span class="aoSetBadge" data-settings-snapshot-empty>—</span>';
+    const updateBox=section(L("INSTALLED COPY","COPIE INSTALLÉE"),
+      infoRow(L("This device","Cet appareil"),offlineLabel,snapshotLabel)+
+      infoRow(L("App address","Adresse de l’application"),
+        vm.canonicalHost?L("Canonical GitHub Pages","GitHub Pages canonique"):L("Current site is not the canonical GitHub Pages address","Ce site n’est pas l’adresse canonique GitHub Pages"),
+        '<a href="'+canonicalUrl+'" target="_blank" rel="noopener noreferrer" data-settings-canonical-site>'+esc(L("Canonical site ↗","Site canonique ↗"))+'</a>')+
+      row(L("Check for updates","Vérifier les mises à jour"),checkLabel,
+        icon("ao-ui-next"),'data-settings-check-update'+(canCheck&&vm.updateCheck!=="checking"&&vm.updateCheck!=="applying"?"":" disabled"))+
+      (candidateId?row(L("Install ready update","Installer la mise à jour prête"),applyLabel,
+        icon("ao-ui-next"),'data-settings-apply-update'+(canApply?"":" disabled")):"")) +
+      note(esc(L("Checking only prepares a newer saved copy. Installing it is a separate action that reloads the app; never do this during Mass. Your saved preferences and progress are not cleared. The short ID is a snapshot fingerprint, not a Git commit.","La vérification ne fait que préparer une nouvelle copie. Son installation est une action distincte qui recharge l’application ; jamais pendant la Messe. Les préférences et la progression enregistrées ne sont pas effacées. L’identifiant court est une empreinte de copie, non un commit Git.")));
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
       section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
+      updateBox+
       section(L("ABOUT","À PROPOS"),
         infoRow(L("1962 Roman Mass","Messe romaine de 1962"),L("The app keeps the 1962 Mass itself separate from local church practices and private prayers.","L’application garde la Messe de 1962 elle-même distincte des usages locaux et des prières privées."),icon("ao-ui-sources"))+
         infoRow(L("Local church practices","Usages de l’église locale"),L("Saved churches help the app reflect what usually happens in a particular place. They do not change the Mass.","Les églises enregistrées aident l’application à refléter ce qui se fait habituellement dans un lieu précis. Elles ne changent pas la Messe."),icon("ao-ui-info"))+

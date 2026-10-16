@@ -56,6 +56,17 @@ try{
  assert.match(await page.locator('#aoPray435930 .aoTenebPrayer').textContent(),/In pace/);
  await page.locator('#aoPray435930 [data-p435930-tenebrae-face]').click();
  assert.equal(await page.locator('#aoPray435930 .aoTenebPrayer').getAttribute("lang"),"en");
+ assert.equal(await page.locator('#aoPray435930 .aoTenebGuideIntro').count(),1,"About Tenebrae is always available");
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-mode="simple"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoTenebBody').getAttribute("data-tenebrae-mode"),"simple");
+ assert.equal(await page.locator('#aoPray435930 .aoTenebContext').count(),0);
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-mode="guided"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoTenebBody').getAttribute("data-tenebrae-mode"),"guided");
+ assert.equal(await page.locator('#aoPray435930 .aoTenebContext').count(),1);
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-jump="20"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N3.P1");
+ await page.locator('#aoPray435930 [data-p435930-tenebrae-jump="0"]').click();
+ assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),"M.N1.P1");
  const overflow=await page.evaluate(()=>{
   const el=document.querySelector("#aoPray435930 .aoTenebBody");
   return el?el.scrollWidth-el.clientWidth:null

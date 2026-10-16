@@ -1,0 +1,35 @@
+name: Pray Formation architecture crosswalk
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/app/pray-formation-ia-crosswalk.2026-10-10.v1.json"
+      - "docs/PRAY-FORMATION-REORGANISATION-2026-10-10.md"
+      - "tests/pray-formation-architecture.mjs"
+      - "src/pray/presentation-runtime.js"
+      - "src/learn/presentation.js"
+      - "src/apostolate/**"
+      - ".github/workflows/pray-formation-architecture.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/app/pray-formation-ia-crosswalk.2026-10-10.v1.json"
+      - "tests/pray-formation-architecture.mjs"
+      - "src/pray/presentation-runtime.js"
+      - "src/learn/presentation.js"
+      - "src/apostolate/**"
+
+permissions:
+  contents: read
+
+jobs:
+  crosswalk-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify crosswalk against canonical source owners
+        run: node tests/pray-formation-architecture.mjs

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {loadTenebraeHour,compileTenebraeHour,TENEBRAE_EXPECTED_PSALMS,resetTenebraeSourceCache} from "../src/pray/tenebrae-1960.js";
 import {renderTenebraeBody} from "../src/pray/tenebrae-presentation.js";
+import {tenebraeGuideCopy,TENEBRAE_GUIDE_LINKS} from "../src/pray/tenebrae-guides.js";
 
 resetTenebraeSourceCache();
 let sourceReads=0;
@@ -59,10 +60,24 @@ for(let day=0;day<3;day++){
   assert.ok(html.includes("aoTenebReading")&&html.includes('data-p435930-tenebrae-day="2"'));
   assert.ok(html.includes(model.steps[0][day===1?"fr":"en"].slice(0,16).replace(/&/g,"&amp;")));
   assert.ok(!html.includes("data-ao-replace-all"));
+  assert.ok(html.includes('data-tenebrae-mode="guided"'));
+  assert.ok(html.includes('data-p435930-tenebrae-mode="simple"'));
+  assert.ok(html.includes('aoTenebGuideIntro'));
+  assert.ok(html.includes('data-p435930-tenebrae-jump="'+(hour==="MATINS"?20:7)+'"'));
+  assert.ok(html.includes("aoTenebContext"),"Guided passage notes visible");
+  const simple=renderTenebraeBody({day,hour,index:0,data:model,guided:false});
+  assert.ok(simple.includes('data-tenebrae-mode="simple"'));
+  assert.ok(!simple.includes('class="aoTenebContext"'),"Simple mode must not interrupt prayer text");
   full++;
  }
 }
 assert.equal(full,6);
+const lesson=tenebraeGuideCopy({day:1,hour:"MATINS",step:{id:"M.LESSON5",kind:"LESSON",metadata:{nocturn:2}},french:false});
+assert.match(lesson.detail,/St Augustine/);
+assert.match(lesson.ceremonial,/fifteen candles/);
+assert.match(tenebraeGuideCopy({day:2,hour:"LAUDS",step:{id:"L.CHRISTUS",kind:"ANTIPHON"},french:true}).detail,/Christus factus est/);
+assert.ok(TENEBRAE_GUIDE_LINKS.rubrics.startsWith("https://"));
+
 assert.ok(sourceReads>=9&&sourceReads<=45,"Local source caching not applied: "+sourceReads);
 const failed=renderTenebraeBody({error:"Source missing"});
 assert.ok(failed.includes('role="alert"')&&!failed.includes('data-tenebrae-section'));

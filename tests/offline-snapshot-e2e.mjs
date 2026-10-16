@@ -282,6 +282,11 @@ try{
  assert.equal(failed.ok,false,"Broken update unexpectedly committed");
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");
+ console.log("OFFLINE_RETRY_DIAGNOSTIC="+JSON.stringify({failedHits,failed,failedPath,assetHits:assetHits.slice(-8)}));
+ assert.ok(failedHits>=3,"Transient HTTP 503 must receive three bounded attempts");
+ await page.waitForSelector("#ao-offline-check-failed",{timeout:10000});
+ assert.match(await page.locator("#ao-offline-check-failed").innerText(),/Could not check for an app update/);
+ assert.equal(await page.locator("#ao-offline-check-failed button").last().innerText(),"Retry");
  await assertRosaryUninterrupted("failed staging");
  // The update prompt must match the French language selected in the real app.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
@@ -291,6 +296,7 @@ try{
  const update=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
  assert.equal(update.ok,true,"Valid second release did not stage: "+JSON.stringify(update));
  assert.equal(update.updateAvailable,true,"New content did not offer an explicit update");
+ assert.equal(await page.locator("#ao-offline-check-failed").count(),0,"Resolved update-check warning remains visible");
  assert.notEqual(update.version,original.version,"Update version not fingerprinted");
  await page.waitForSelector("#ao-offline-update-ready",{timeout:10000});
  const prompt=page.locator("#ao-offline-update-ready");

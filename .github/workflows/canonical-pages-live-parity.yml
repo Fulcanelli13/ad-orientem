@@ -1,0 +1,36 @@
+name: Canonical Pages source and service-worker byte parity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/canonical-pages-live-parity.mjs"
+      - ".github/workflows/canonical-pages-live-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare-public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: node --check tests/canonical-pages-live-parity.mjs
+      - name: Fetch exact public Pages bytes with cache bypass
+        run: node tests/canonical-pages-live-parity.mjs
+      - name: Install dependencies for anonymous Chromium site check
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium browser
+        run: npx playwright install --with-deps chromium
+      - name: Test fresh phone and desktop offline boot against deployed site
+        run: node tests/canonical-pages-offline-browser.mjs
+      - name: Save evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-pages-live-source-parity
+          path: test-output/canonical-pages-parity/*.json
+          if-no-files-found: error

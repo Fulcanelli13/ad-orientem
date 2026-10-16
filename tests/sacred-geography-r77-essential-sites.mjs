@@ -10,16 +10,16 @@ const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.jso
 const ph=read("data/explore/sacred-phenomena-seed.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),m=read("data/geography/research/sacred-geography-r77-essential-completeness.v1.json");
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R77_ESSENTIAL_IDENTITY_AND_COMPLETENESS_V1");
 assert.deepEqual([m.published_new.length,m.held.length],[4,6]);
-assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[72,258,254,237,443]);
+assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[72,261,257,240,449]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
 assert.equal(q.rows.length,750);
-assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[163,6,581]);
-assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[161,6,583,6]);
+assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summary.candidate_status.POTENTIAL_EXISTING_ID_REVIEW,r.summary.candidate_status.PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW],[166,6,578]);
+assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[164,6,580,6]);
 const pBy=new Map(g.places.map(x=>[x.place_id,x])),shBy=new Map(s.shrines.map(x=>[x.shrine_id,x])),pilBy=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x])),sourceBy=new Map(sources.sources.map(x=>[x.id,x]));
-assert.equal(pBy.size,258,"No duplicates");
-assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,254);
+assert.equal(pBy.size,261,"No duplicates");
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257);
 assert.equal(new Set(s.shrines.map(x=>pBy.get(x.place_id)?.address.country_code)).size,69);
 const projected=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:ph,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
 for(const entry of m.published_new){
@@ -43,9 +43,9 @@ for(const entry of m.published_new){
  }else assert.equal(s.pilgrimages.some(x=>x.destination_shrine_id===entry.shrine_id),false,"Parish/co-cathedral not automatic pilgrim journey");
 }
 assert.equal(m.published_new.filter(x=>x.pilgrimage_id).length,1);
-assert.equal(h.place_crosswalk.length,258);
-assert.equal(exploreMapFeatures(projected.byLens.shrines).length,254);
-assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,237);
+assert.equal(h.place_crosswalk.length,261);
+assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
+assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 const heldIds=new Set(m.held.map(x=>x.candidate_id));
 assert.deepEqual(heldIds,new Set(q.rows.filter(x=>x.priority==="Essential"&&x.status!=="EXPLICIT_PROMOTED").map(x=>x.candidate_id)));
 assert.equal(m.held.find(x=>x.candidate_id==="SG-INV-0248")?.disposition,"EXCLUDE_NON_CATHOLIC");

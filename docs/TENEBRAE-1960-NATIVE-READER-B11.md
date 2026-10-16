@@ -32,3 +32,14 @@ From the [1960 Code of Rubrics](https://www.divinumofficium.com/www/horas/Help/R
 Acquisition history remains in [the original 9-file report](TENEBRAE-1960-TRILINGUAL-SOURCE-RECOVERY-2026-10-10.md); the machine status is [source registry](../data/pray/tenebrae-source-registry.v1.json). Previous Holy Week work is preserved; no Mass content was replaced.
 
 **Next phase:** edition-critical printed Breviary collation and a visual quality pass, then Good Friday source-safe EN/FR translation promotion and remaining Mandatum antiphons. No re-transcription from scratch.
+
+## Guided module extension (10 October 2026)
+
+**User entry:** PRAY → Passion & Stations → Office of Tenebrae. The existing six source-derived Offices remain the sole liturgical text authority; no duplication, retranscription, or additional Divine Office module.
+
+- **Simple / Guided:** both display the identical canonical text. Guided adds concise English/French passage explanations; Simple omits commentary. The mode is changed without restarting the selected text.
+- **Introduction:** a collapsible "Understanding Tenebrae" guide explains the three-day purpose, Matins and Lauds, their sequence, historical fifteen-candle practice and *strepitus*, and the 1960 distinction between anticipated Matins and morning Lauds. The app does not instruct the user to simulate a parish's ceremonial actions.
+- **Reading navigation:** jump to Nocturn I/II/III or concluding Matins prayers; at Lauds jump to psalms, Benedictus, Christus factus est and the final prayers. Prev/next and language switching remain intact.
+- **Per-passage guide:** psalms and antiphons, versicles, Lamentations (first nocturn), Augustine (second nocturn), Pauline/apostolic readings (third nocturn), responsories, silent Pater, Benedictus, Christus factus est and concluding oration. The three days have distinct introductory meditations. Notes are editorial commentary, not part of the Latin, French or English Office text.
+- **Sources:** [1960 Breviary rubrics §§144–145](https://www.divinumofficium.com/www/horas/Help/Rubrics/Breviary%201960.html); [Catholic Encyclopedia: Tenebræ](https://www.newadvent.org/cathen/14506a.htm); [Tenebræ hearse](https://www.newadvent.org/cathen/07162c.htm). Explanations are not presented as official rubric translations.
+- **Verification:** source-native tests cover both modes, guides and jump controls; the 390px phone test exercises toggling and nocturn jumps. As before, photographed 1961 printed-Breviary critical collation remains **not certified**.

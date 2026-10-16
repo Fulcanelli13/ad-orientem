@@ -42,6 +42,124 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
  assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i);
+ // Existing source-owner objects referencing Luke 1:28 must be discoverable
+ // without changing the current verse, Mass state or Rosary session.
+ await dialog.locator(".aoScriptureRelated summary").click();
+ await dialog.locator('[data-scripture-linked-object="rosary:joy1"]').waitFor({state:"visible",timeout:15000});
+ assert.equal(await dialog.locator('[data-scripture-linked-object="novena:annunciation"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="novena:immaculate_conception"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="prayer:foundations_hail_mary"]').count(),1);
+ assert.equal(await dialog.locator('[data-scripture-linked-object="rosary:joy2"]').count(),0);
+ // Jump into the source passage cited by one Novena object, and back to the
+ // precise original verse without losing the originating app route.
+ await dialog.locator('[data-scripture-read-linked-object="novena:annunciation"]').click();
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:26–38");
+ await dialog.locator("[data-scripture-context-depth='chapter']").click();
+ assert.equal(await dialog.locator("[data-scripture-related-back]").count(),1);
+ await dialog.locator("[data-scripture-related-back]").click();
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
+ // Object-level visit: exact Annunciation Novena detail, followed by its Back.
+ // The existing Scripture DOM, focused object, verse and Home surface survive.
+ await dialog.locator('[data-scripture-open-related-object="novena:annunciation"]').tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==="annunciation" &&
+   globalThis.AO_NOVENAS_V3?.state?.()?.screen==="detail",null,{timeout:25000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await page.locator('#aoPray435930.open [data-n1-back]').tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ try{
+   await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="novena:annunciation",
+     null,{timeout:7000});
+ }catch(error){
+   console.error("Scripture return-focus diagnostics",await page.evaluate(()=>({
+     focused:document.activeElement?.outerHTML?.slice(0,300),
+     buttons:[...document.querySelectorAll("#ao-scripture-overlay [data-scripture-open-related-object]")].map(x=>x.dataset.scriptureOpenRelatedObject),
+     relatedOpen:document.querySelector("#ao-scripture-overlay .aoScriptureRelated")?.open,
+     surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+     pray:globalThis.AO_PRAY_APP_V1?.status?.()?.open,
+     reader:globalThis.AO_SCRIPTURE_APP_V1?.status?.()
+   })));
+   throw error;
+ }
+ // Bead-specific Scripture → actual canonical Rosary step → exact original
+ // Bible reading. The original donor, not an invented bead player, owns state.
+ const beadLink=dialog.locator('[data-scripture-open-related-object="rosaryBead:joy1:2"]');
+ await beadLink.waitFor({state:"visible",timeout:9000});
+ await beadLink.tap();
+ const rosary=page.locator("#aoPrayerBookRoot.open");
+ await rosary.waitFor({state:"visible",timeout:25000});
+ await page.waitForFunction(()=>{
+   const donor=window.AO_ROSARY_V381,st=donor?.state?.(),step=donor?.steps?.()?.[st?.step];
+   return st?.set==="joyful"&&step?.mi===0&&Number(step?.bead)===2&&
+     Boolean(step?.cue)&&document.querySelectorAll("#aoPrayerBookRoot.open").length===1;
+ },null,{timeout:15000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>window.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await rosary.locator(".lab-back[data-pb-back],.lab-back").first().tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="rosaryBead:joy1:2",
+   null,{timeout:9000});
+ // A mystery jump is distinct from a bead jump; it must open the existing
+ // contemplation step before its first Hail Mary.
+ const mysteryLink=dialog.locator('[data-scripture-open-related-object="rosary:joy1"]');
+ await mysteryLink.tap();
+ await rosary.waitFor({state:"visible",timeout:25000});
+ await page.waitForFunction(()=>{
+   const d=window.AO_ROSARY_V381,st=d?.state?.(),step=d?.steps?.()?.[st?.step];
+   return st?.set==="joyful"&&step?.mi===0&&step?.kind==="mystery";
+ },null,{timeout:15000});
+ await rosary.locator(".lab-back[data-pb-back],.lab-back").first().tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ // The exact Biblical Atlas scene opens through the original Explore owner.
+ // Its stable source key, rather than its 151-item screen index, is authoritative.
+ const atlasLink=dialog.locator('[data-scripture-open-related-object^="atlas:biblical:"]').first();
+ await atlasLink.waitFor({state:"visible",timeout:20000});
+ const atlasId=await atlasLink.getAttribute("data-scripture-open-related-object");
+ const expectedAtlasEvent=atlasId.slice("atlas:".length);
+ await atlasLink.tap();
+ await page.waitForFunction(eventKey=>{
+   const selected=document.querySelector("#ao-find-root [data-bible-event-key][aria-pressed='true']")||
+     document.querySelector("[data-bible-event-key][aria-pressed='true']");
+   return globalThis.AO_FIND_APP_V1?.status?.()?.bibleAtlas===true&&
+     selected?.dataset?.bibleEventKey===eventKey;
+ },expectedAtlasEvent,{timeout:30000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await page.locator("[data-bible-atlas-close]").tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ await page.waitForFunction(id=>document.activeElement?.dataset?.scriptureOpenRelatedObject===id,
+   atlasId,{timeout:9000});
+ // A second reciprocal journey opens precisely the source-owned Mass lesson,
+ // not the Mass reader or a generic Learn landing.
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
+ await dialog.locator(".aoScriptureRelated summary").tap();
+ const massLink=dialog.locator('[data-scripture-open-related-object="massFormation:MFS01"]');
+ await massLink.waitFor({state:"visible",timeout:9000});
+ await massLink.tap();
+ const study=page.locator("#ao-mass-formation-root");
+ await study.waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId),"MF01");
+ assert.equal(await dialog.isHidden(),true);
+ await study.locator("[data-ao-mf-back]").tap();
+ await dialog.waitFor({state:"visible",timeout:18000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 2:14");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="massFormation:MFS01",
+   null,{timeout:9000});
+ // Restore standalone reading before testing the existing edition/book UI.
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});

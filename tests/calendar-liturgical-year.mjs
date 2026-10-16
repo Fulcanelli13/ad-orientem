@@ -11,6 +11,7 @@ import {
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
 import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
+import { clockGeometry, renderLiturgicalClock, resolvedClockFeasts } from "../src/calendar/liturgical-clock.js";
 import { calendarMassColour } from "../src/calendar/colour-projection.js";
 import { calendarPaletteColour, resolvedYearColour, yearDailyProjection, yearSeasonGradient } from "../src/calendar/year-colour-wheel.js";
 import { MASS_LITURGICAL_PALETTES } from "../src/mass/reader-liturgical-theme.js";
@@ -293,10 +294,14 @@ assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress 
 assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
 assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the proportional timeline and period journey");
 assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
-assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
+const clockSource = fs.readFileSync(new URL("../src/calendar/liturgical-clock.js",import.meta.url),"utf8");
+assert.match(browser,/clockForYear\(y,selected\)/,"Standalone Year lost Liturgical Clock");
+assert.match(clockSource,/aoClockUpcoming/,"Standalone Year lost its upcoming season and feast entries");
+assert.match(browser,/const embedded=root\(\)\?\.dataset\.aoCalendarEmbedded===/,"Embedded Year must not repeat the full clock");
 assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
 assert.ok(browser.includes('data-cal-year-open-day="${next.date}"'),"Next feast must open Day through existing Year-Journey handler");
-assert.ok(browser.includes('data-cal-year-open-day="${nextSeason.start}"'),"Next season must open Day through Year-Journey handler");
+assert.match(clockSource,/if\(season\)upcoming.push\(season\)/,"Full clock lost the next seasonal transition");
+assert.match(clockSource,/data-cal-clock-open-day/,"Clock seasonal transition no longer opens the selected day");
 assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale rows cannot intercept Day selection with saint-detail handler");
 assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Year-to-Month route must reset stale month");
 assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
@@ -391,5 +396,24 @@ assert.equal(calendarObservanceAlias(observed("2024-12-14","tempora:Adv2-6:3:v")
 assert.equal(calendarObservanceAlias(observed("2024-12-14","tempora:Adv2-6:3:v"),"fr"),"Samedi après le deuxième dimanche de l’Avent");
 assert.equal(calendarObservanceAlias(observed("2024-10-27","sancti:10-DU:1:w")),null,"Do not hide Christ the King commemoration in a Calendar alias");
 assert.equal(calendarObservanceAlias({status:"failed"}),null,"Do not invent a title for unresolved date");
+
+// Additive source-clock release guard: grouped visuals must not erase eleven
+// rubric periods, the year-wide resolved-day colours, or Month Practices.
+assert.equal(clockGeometry(rosary).groups.length,8,"Eight legible clock group sectors");
+assert.equal(rosary.periods.length,11,"Eleven canonical liturgical periods preserved");
+const visualClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-16",
+  getDay:id=>resolvedFixtures.get(id),titleFor:row=>row.day.main.id,
+  rankFor:()=>"",massColourFor:row=>calendarMassColour(row)});
+assert.match(visualClock,/data-ao-liturgical-clock="v1"/);
+assert.match(visualClock,/data-cal-clock-season="advent"/);
+assert.match(visualClock,/aoClockDial/);
+assert.equal(resolvedClockFeasts(rosary,()=>null,()=>"",()=>"",()=>"" ).length,0,
+  "Unresolved projected candidate dates cannot produce a certified clock feast");
+const integratedCalendarSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
+assert.match(integratedCalendarSource,/clockForYear\(y,selected\)/);
+assert.match(integratedCalendarSource,/renderYearJourney\(/,"Original eleven-period journey preserved");
+assert.match(integratedCalendarSource,/requestYearDailyColours\(/,"Full 1962 daily-colour projection preserved");
+assert.match(integratedCalendarSource,/calendarPracticeMonthEntries/,"Month Practices source owner preserved");
+assert.match(integratedCalendarSource,/serialize1962CalendarMonth/,"Month ICS export preserved");
 
 console.log("Calendar liturgical-year model, intelligence projection and v2 presentation contract: OK");
