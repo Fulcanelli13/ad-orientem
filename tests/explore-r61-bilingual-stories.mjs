@@ -8,6 +8,8 @@ const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const batch=read("data/shrines/research/explore-r61-bilingual-story-batch.v1.json");
 const shrines=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const source=read("data/shrines/source-registry.v1.json");
+const sourceDrift=read("data/shrines/research/holywell-source-url-drift-20261016.v1.json");
+const approvedDrift=new Map(sourceDrift.records.map(x=>[x.source_id,x]));
 const geography=read("data/geography/seed-registry.v1.json");
 const featured=read("data/geography/major-places-editorial.v1.json");
 const novenaSot=read("data/pray/novena-sot.v1.json");
@@ -53,7 +55,16 @@ for(const row of batch.items){
     translations++;
   }
   assert.ok(row.original_sources.length>=1);
-  assert.ok(row.original_sources.every(s=>s.url===sourceMap.get(s.source_id)?.url));
+  assert.ok(row.original_sources.every(original=>{
+    const live=sourceMap.get(original.source_id),change=approvedDrift.get(original.source_id);
+    if(!live)return false;
+    if(original.url===live.url)return true;
+    // Original R61 research URL is immutable historical evidence. A verified
+    // source-domain replacement must be explicit in the owner drift ledger.
+    return Boolean(change&&change.historical_url===original.url&&
+      change.replacement_url===live.url&&
+      new URL(live.url).hostname===sourceDrift.current_official_domain);
+  }),"Archived R61 source URLs must equal current registry or have an exact source-owner drift record");
 }
 assert.equal(translations,70);
 
