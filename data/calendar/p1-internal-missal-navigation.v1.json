@@ -53,7 +53,7 @@
     "If a historical 1962 observance or commemoration is requested, fetch that canonical 1962 resolver identity and existing source Proper.",
     "Resolve the exact proper.sourcePath and authenticated component/oration ID in the current app; never guess sourcePath from the printed page or nominal month/day.",
     "For optional later-saint formularies, require a lawfully approved 1962 Proper/Supplement/Common and explicit accepted variant; if the app lacks that text, return NOT_IN_INTERNAL_MISSAL.",
-    "Build a read-only Mass/Missal anchor for the exact owner and subsection; do not change day.main, actual celebrant selection or LIVE position.",
+    "Build a read-only historical Missal reference for the source-owned prayer independent of whether the optional prayer was recited at the user's Mass; never confuse this with the active Mass-form's appliedCommemorations.",
     "If the router cannot deep-link into the read-only Missal yet, return ROUTE_NOT_IMPLEMENTED; show an unavailable link rather than redirecting to an unrelated Mass.",
     "Keep source provenance in References/Source audit metadata separate from navigation, optionally expandable for scholarly verification."
   ],
@@ -94,7 +94,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     },
     {
       "anchorId": "p1:missal:leonardi:secret",
@@ -131,7 +131,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     },
     {
       "anchorId": "p1:missal:leonardi:postcommunion",
@@ -168,7 +168,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:collect",
@@ -206,7 +206,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:secret",
@@ -244,7 +244,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:postcommunion",
@@ -282,7 +282,7 @@
         "fr"
       ],
       "orationOwnerPath": "Sancti/10-09t",
-      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
+      "warning": "Read-only Missal reference only. It does not assert the prayer was actually recited at Low/Sung Mass; actual commemoration rules and selected Mass-form are separate."
     }
   ],
   "formExample": {
@@ -313,19 +313,37 @@
     "generatedPdfRouteFallback": false,
     "modifyExistingMassReader": false,
     "actualSourceIdentitiesVerified": 2,
-    "actualPrayerRowsVerified": 6
+    "actualPrayerRowsVerified": 6,
+    "activeMassSelectionAllowedViaP1Bridge": false,
+    "referenceNavigationDependentOnForm": false
   },
   "runtimeResolutionModule": "src/calendar/p1-internal-missal-link-resolution.js",
   "runtimeResolutionModuleStatus": "RESEARCH_ONLY_NOT_IMPORTED_BY_PRODUCTION",
   "verifiedLegacyPrayerRoutes": 0,
   "syntheticFixtureValidationScope": "Schema/path/paragraph projection tested against source-owned Reader Proper model; this is NOT a live 9 October resolver lookup.",
-  "prayerLinkResolutionRule": "Pass the actual Calendar day resolution and already resolved Proper to inspectP1InternalMissalLink; only return a potential reader target if exact owner and row order validated. Never build a URL if external or internal router not ready.",
-  "requireCurrentResolverCommemorationId": "Actual original 1962 commemoration confirmed: sancti:10-09t:4:r, path Sancti/10-09t. Validate form-specific appliedCommemorations before opening its slot.",
+  "prayerLinkResolutionRule": "In READ_ONLY_REFERENCE mode resolve exact canonical 1962 source + owner + reader slot + paragraph. A source-backed commemoration may be opened even if not applied to a particular sung Mass; such a link never asserts it was recited. Active Mass-form application remains separate and forbidden through this helper.",
+  "requireCurrentResolverCommemorationId": "Verified original 1962 commemoration: sancti:10-09t:4:r (Sancti/10-09t). Read-only reference may use its complete source Proper even when not recited; any active Mass usage MUST separately check appliedCommemorations and the selected Mass-form.",
   "actualSourceEvidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
   "actualSourceVerifiedObservanceCount": 2,
   "actualPrayerRowLanguageCoverage": 6,
   "actualSourceYears": [
     2026,
     2027
-  ]
+  ],
+  "missalReferenceVsCelebrantMass": {
+    "historicalPrayerReference": {
+      "mode": "READ_ONLY",
+      "governedBy": "ORIGINAL_1962_DAY_SOURCE",
+      "permittedWhenPrayerExistsButNotActuallyRecited": true,
+      "labels": "Historical prayer in 1962 Missal; not proof of what was recited",
+      "changesCurrentMass": false
+    },
+    "activeCelebrationPrayer": {
+      "mode": "ACTUAL_MASS_ONLY",
+      "governedBy": "SELECTED_MASS_FORM_AND_APPLIED_COMMEMORATIONS",
+      "allowedThroughThisP1Bridge": false,
+      "needsReaderP0Gate": true
+    },
+    "invariant": "The historical reference link does not assert Mass-form permissibility or applied status; the live Mass reader never uses P1 reference links for recitation."
+  }
 }
