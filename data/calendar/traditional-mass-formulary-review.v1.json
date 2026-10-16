@@ -86,6 +86,11 @@
       "id": "DOCTORS",
       "ref": "1962 Common of Doctors / Confessors; Cum sanctissima §5",
       "requirement": "A later Doctor title does not create new traditional feast, proper or oration. Doctor classification aids Common lookup, but complete edition-appropriate choice must be verified."
+    },
+    {
+      "id": "CUM_SANCTISSIMA_SUNG_COMM_RECONCILIATION",
+      "ref": "Cum sanctissima §4 (RG 111(d)); General Rubrics RG 111(a) sung nonconventual Mass",
+      "requirement": "The newer decree orders commemoration of omitted traditional feast or vigil; the 1960 sung Mass restriction must be reconciled for actual form and rite. Do not guess whether St Kevin recited all three Leonardi orations at the 2026 High Mass."
     }
   ],
   "knownCases": [
@@ -125,7 +130,9 @@
         "verifiedFirstPartyNewsletterUrl": "https://static1.squarespace.com/static/5fc7d9f84168c7185c8793de/t/6abd27217199117f41002de4/1790781217379/2026%2BOctober%2BNews.pdf",
         "verifiedAnnounced7PmHighMass": true,
         "verifiedAnnounced8AmMass": true,
-        "verifiedFirstClassRelicBlessingsAnnounced": true
+        "verifiedFirstClassRelicBlessingsAnnounced": true,
+        "highMassRubricalCommemorationReview": "RESOLVE_2020_CUM_SANCTISSIMA_4_VS_RG_111A_SUNG_NONCONVENTUAL_BEFORE_STATING_ACTUAL_ORATIONS",
+        "actualCommemorationCollectSecretPostcommunionAt7Pm": null
       },
       "status": "OPEN_TRADITIONAL_TEXT_AND_LOCAL_PRACTICE_REVIEW"
     },
@@ -159,7 +166,8 @@
     "COLLECT_SECRET_POSTCOMMUNION_FOR_DISPLACED_FEAST",
     "MASS_TYPE_AND_NUMERIC_COMMEMORATION_LIMITS",
     "OFFICE_AND_VOTIVE_RUBRICS",
-    "REGRESSION_TESTS"
+    "REGRESSION_TESTS",
+    "SUNG_MASS_RG_111A_VS_CUM_SANCTISSIMA_4_INTERACTION"
   ],
   "publicationGate": "NO_MASS_ORATION_OR_FORMULARY_INSERTION_BEFORE_POSITIVE_SOURCE_VALIDATION"
 }
