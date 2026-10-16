@@ -1176,16 +1176,18 @@
     "gate": "Repo witness availability and slot completeness does not constitute full human edition collation or approve final excerpt ranges",
     "noFinalApprovedExcerptRanges": true,
     "noAppChanges": true,
-    "latestReviewVersion": "v2",
-    "latestWitnessDataOwner": "data/explore/biblical-story-scripture-three-edition-witness-collation.v2.json",
-    "latestReviewUI": "data/explore/biblical-story-scripture-review-offline.v2.html",
+    "latestReviewVersion": "v3",
+    "latestWitnessDataOwner": "data/explore/biblical-story-scripture-three-edition-witness-collation.v3.json",
+    "latestReviewUI": "data/explore/biblical-story-scripture-review-offline.v3.html",
     "reviewDefaultEnglish": "cpdv-2009",
     "traditionalEnglishOption": "dr-challoner",
     "frenchEdition": "crampon-1923",
     "productCatalogueSettingsChanged": false,
     "editionSourceStatus": "UNCOLLATED_SOURCE_WITNESS",
-    "threeEditionChapterExtracts": 39,
-    "threeEditionVerseCells": 1701,
-    "note": "v1 bilingual review is archived; CPDV contemporary English was already approved as an alternative in src/scripture/catalogue.js. v2 restores it as the reviewer default. Does not modify the catalogue traditional default."
+    "threeEditionChapterExtracts": 87,
+    "threeEditionVerseCells": 3708,
+    "note": "Original 14-context audit remains its own source of truth for first cohort. Combined v3 adds 16 independent story research candidates; v1/v2 standalone tools are superseded for review.",
+    "latestReviewContainsOriginalCohort14PlusNextCohort16": true,
+    "judithAndSusannaVersionDifferencesFlagged": true
   }
 }
