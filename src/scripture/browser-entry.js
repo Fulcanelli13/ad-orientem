@@ -82,6 +82,11 @@ export function installScriptureBrowserOwner(win=globalThis){
        node.scrollTop=receipt.scrollTop;
        return true;
      };
+     // Route owners can schedule post-navigation focus after their own
+     // Promise resolves. Reassert the return target on the next render frames,
+     // without changing any Scripture reading or module state.
+     win.requestAnimationFrame?.(()=>win.requestAnimationFrame?.(focusExact));
+     win.setTimeout?.(focusExact,120);
      if(!focusExact()){
        // Related-object records are loaded on demand; the exact button may
        // arrive after we have reattached the Scripture reading subtree.
