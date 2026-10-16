@@ -4,9 +4,9 @@ import {
 } from "../src/scripture/related-objects.js";
 import {parseScriptureContext} from "../src/scripture/context.js";
 
-assert.deepEqual(SCRIPTURE_LINK_COUNTS,{rosary:20,novena:16,massFormation:18,prayer:8,station:9});
-assert.equal(SCRIPTURE_LINKED_OBJECTS.length,71);
-assert.equal(new Set(SCRIPTURE_LINKED_OBJECTS.map(x=>x.id)).size,71);
+assert.deepEqual(SCRIPTURE_LINK_COUNTS,{rosary:20,rosaryBead:190,novena:16,massFormation:18,prayer:8,station:9});
+assert.equal(SCRIPTURE_LINKED_OBJECTS.length,261);
+assert.equal(new Set(SCRIPTURE_LINKED_OBJECTS.map(x=>x.id)).size,261);
 for(const x of SCRIPTURE_LINKED_OBJECTS){
  assert.ok(x.reference&&x.relation&&x.title.en&&x.title.fr,x.id);
  assert.deepEqual(parseScriptureContext(x.reference).passage,x.passage,x.id);
@@ -15,6 +15,10 @@ for(const x of SCRIPTURE_LINKED_OBJECTS){
 const hits=scriptureLinkedObjectsForPassage(parseScriptureContext("Luke 1:28").passage,{limit:100});
 const ids=hits.map(x=>x.id);
 assert.ok(ids.includes("rosary:joy1"));
+assert.ok(ids.includes("rosaryBead:joy1:2"),"The individual Angelic Salutation bead must be discoverable");
+assert.equal(SCRIPTURE_LINKED_OBJECTS.filter(x=>x.source==="rosaryBead").length,190);
+assert.equal(SCRIPTURE_LINKED_OBJECTS.filter(x=>x.source==="rosaryBead"&&x.target?.bead>=1).length,190);
+assert.equal(SCRIPTURE_LINKED_OBJECTS.some(x=>x.id==="rosaryBead:lum5:9"),false,"Council of Trent is not a Bible citation");
 assert.ok(ids.includes("novena:annunciation"));
 assert.ok(ids.includes("novena:immaculate_conception"));
 assert.ok(ids.includes("prayer:foundations_hail_mary"));
@@ -32,4 +36,4 @@ assert.equal(lastGospel.relation,"CONDITIONAL_RITE_CONTEXT");
 assert.equal(lastGospel.target?.stageId,"MF08");
 const prayer=SCRIPTURE_LINKED_OBJECTS.find(x=>x.id==="prayer:foundations_hail_mary");
 assert.equal(prayer.relation,"COMPOSITE_DEVOTION");
-console.log("PASS cross-module reverse Scripture index: 71 exact curated object edges, relationship boundaries and 5 traditional Stations held");
+console.log("PASS Scripture reverse index: 71 original edges + 190 canonical Rosary bead citations, source boundaries and traditional Stations held");
