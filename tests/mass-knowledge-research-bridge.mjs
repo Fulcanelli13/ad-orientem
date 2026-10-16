@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import {
   validateMassKnowledgeResearchBridge,
   massKnowledgeResearchContext,
@@ -133,3 +134,43 @@ assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001",approvals:[approv
 ]);
 assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.B096.SYN",approvals:[approval]}),[]);
 console.log("Mass P0 Canonical Reconciliation: PASS — reverse mapping, text holds, release guard.");
+
+
+// Committed P0 baseline crosswalk integrity against the *actual* donor files.
+const readJson=rel=>JSON.parse(readFileSync(new URL(rel,import.meta.url),"utf8"));
+const p0Baseline=readJson("../docs/research/MASS-P0-CANONICAL-CUE-CROSSWALK-20261016.v1.json");
+const guideCrosswalk=readJson("../docs/research/MASS-P0-GUIDE-CONTENT-CROSSWALK-20261016.v1.json");
+const canonicalSung=readJson("../data/presentation/reader-text-sung.v1.json");
+const canonicalGuides=readJson("../data/presentation/guide-registry.v1.json");
+const realCueIds=new Set(canonicalSung.blocks.flatMap(b=>(b.units||[]).map(u=>u.cue_id)));
+assert.equal(p0Baseline.status,"DRAFT_RESEARCH_ONLY_NOT_SOURCE_TEXT_CERTIFIED");
+assert.equal(p0Baseline.units.length,435);
+assert.equal(p0Baseline.canonicalReverse.length,realCueIds.size);
+assert.equal(p0Baseline.canonicalReverse.length,280);
+assert.equal(p0Baseline.summary.researchCueIds,279);
+assert.equal(p0Baseline.summary.cuesLinked,246);
+assert.equal(p0Baseline.summary.fixedTextUnitsNotTextVerified,430);
+assert.equal(p0Baseline.summary.variableTextUnits,5);
+assert.ok(p0Baseline.units.every(u=>realCueIds.has(u.canonicalCueId)));
+assert.ok(p0Baseline.units.every(u=>u.latinSpanVerified===false));
+assert.ok(p0Baseline.units.every(u=>u.releaseDecision==="RESEARCH_ONLY_NO_AUTO_PUBLICATION"));
+const unitIds=new Set(p0Baseline.units.map(u=>u.unitId));
+assert.equal(unitIds.size,435);
+for(const reverse of p0Baseline.canonicalReverse){
+  assert.ok(realCueIds.has(reverse.cueId));
+  assert.deepEqual(reverse.unitIds,
+    p0Baseline.units.filter(u=>u.canonicalCueId===reverse.cueId).map(u=>u.unitId));
+  assert.equal(reverse.disposition,reverse.unitIds.length?"RESEARCH_LINK_ONLY":"APP_ONLY");
+}
+assert.equal(p0Baseline.canonicalReverse.filter(x=>x.disposition==="APP_ONLY").length,34);
+assert.ok(p0Baseline.canonicalReverse.some(x=>x.cueId==="AO.SM.B096.SYN"&&
+  x.disposition==="APP_ONLY"));
+assert.equal(guideCrosswalk.guides.length,154);
+assert.equal(guideCrosswalk.guides.filter(x=>x.canonicalRegistryIdFound).length,32);
+assert.equal(guideCrosswalk.guides.filter(x=>!x.canonicalRegistryIdFound).length,122);
+assert.deepEqual(
+  guideCrosswalk.guides.filter(x=>x.canonicalRegistryIdFound).map(x=>x.guideId).sort(),
+  Object.keys(canonicalGuides.entries).sort()
+);
+assert.ok(guideCrosswalk.guides.every(x=>x.approvedNewPublication===false));
+console.log("Mass P0 Real Source Inventory: PASS — 435↔280, 154 guides, no auto-publication.");
