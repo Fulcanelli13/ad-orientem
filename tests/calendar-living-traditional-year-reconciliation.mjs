@@ -27,7 +27,7 @@ const report={
   schema:"AO_LIVING_TRADITIONAL_2026_SOURCE_RECONCILIATION_V1",
   year:2026,calendarBase:"PRODUCTION_1962_ROMAN_DAY_RESOLVER",
   assurance:"RUNTIME_RESOLVER_SWEEP_NOT_INDEPENDENT_LITURGICAL_CERTIFICATION",
-  modernDateAuthority:"14_SOURCE_REVIEWED_RECORDS_ONLY",
+  modernDateAuthority:"16_SOURCE_REVIEWED_RECORDS_ONLY",
   massAuthority:"NONE_AUTOMATIC",
   rows:[],exceptions:[]
 };
@@ -158,8 +158,8 @@ try{
   assert.equal(errors.length,0,"All 2026 historical resolver dates must resolve");
   assert.equal(badCards.length,0,"Unknown/local witnesses entered global calendar");
   assert.equal(repeats.length,0,"Duplicate historical commemoration source IDs require review");
-  assert.equal(report.summary.reviewedObservanceRegistryRows,14);
-  assert.equal(report.summary.worldwideVaticanDecreeRows,5);
+  assert.equal(report.summary.reviewedObservanceRegistryRows,16);
+  assert.equal(report.summary.worldwideVaticanDecreeRows,7);
   assert.equal(report.summary.localOrHistoricalWitnessRows,9);
   assert.equal(report.rows.find(x=>x.date==="2026-10-09")?.mainId,"sancti:10-09:3:w");
   assert.deepEqual(report.rows.find(x=>x.date==="2026-10-09")?.globalHonourIds,["saint.john-henry-newman"]);
