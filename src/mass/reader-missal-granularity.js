@@ -117,6 +117,18 @@ function subsections(card,groups){
       paragraphs.push(...rows);
     }
     if(!paragraphs.length){
+      // The Gospel-chant branch (B022) can legitimately have no separate
+      // source text when the selected Proper contains only a Gradual.
+      // Preserve its block identity with the preceding page rather than
+      // emitting a blank fake prayer or silently dropping its metadata.
+      const preceding=results.at(-1);
+      if(preceding && groupBlocks.every(b=>b.paragraphCount===0)){
+        results[results.length-1]=Object.freeze({
+          ...preceding,
+          blocks:Object.freeze([...preceding.blocks,...groupBlocks]),
+        });
+        continue;
+      }
       // Optional omitted branches are not invented as empty prayer cards.
       if(groupBlocks.some(b=>b.stateOnly)){
         results.push(Object.freeze({...card,
