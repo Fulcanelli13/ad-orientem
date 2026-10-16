@@ -483,3 +483,121 @@ export function conclusionEditorialPreviewHtml(validation,{french=false}={}){
    (french?"Postcommunion variable réservée : ":"Variable Postcommunion held: ")+
    clean(validation.withheld[0].block_id)+'</p></main>';
 }
+
+
+/**
+ * Formation P2 before-Offertory editorial draft: B001–B030 fixed texts.
+ * Seven Proper slots are explicit holds, and B096 is a Guide-only homily.
+ * This validator never authorizes publication or changes the Mass owner.
+ */
+export function validateBeforeOffertoryReadingPilot(pilot,sung,formation,guide){
+ const fail=reason=>Object.freeze({ok:false,reason,readings:Object.freeze([]),withheld:Object.freeze([])});
+ if(pilot?.schema!=="ao-formation-before-offertory-prayer-reading-pilot-v1"||
+    pilot.status!=="EDITORIAL_DRAFT_NOT_RELEASED"||pilot.scope!=="FORMATION_ONLY"||
+    pilot.profile!=="ORDINARY_SUNG"||
+    pilot.study_level!=="DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT"||
+    !Array.isArray(pilot.entries)||pilot.entries.length!==23||
+    !Array.isArray(pilot.withheld_variable_propers)||pilot.withheld_variable_propers.length!==7)
+   return fail("INVALID_BEFORE_OFFERTORY_DRAFT");
+ if(!Array.isArray(sung?.blocks)||formation?.schema!=="ao-mass-formation-campion-v1"||
+    !guide?.entries)return fail("MISSING_ORIGINAL_OWNERS");
+ const source=new Map(sung.blocks.map(b=>[b.Block_ID,b]));
+ const expected=[...Array.from({length:13},(_,i)=>i+1),15,16,17,18,23,24,25,27,28,29];
+ const expectedHolds=new Map([
+  [14,"INTROIT"],[19,"COLLECT_SET"],[20,"EPISTLE_OR_LESSON"],
+  [21,"GRADUAL"],[22,"ALLELUIA_TRACT_SEQUENCE"],[26,"GOSPEL"],[30,"OFFERTORY"]
+ ]);
+ const conditionFor=n=>({
+  3:"PSALM_42_MAY_BE_OMITTED",
+  13:"INCENSATION_DEPENDENT",
+  16:"GLORIA_DEPENDENT",
+  25:"GOSPEL_HEADING_DEPENDENT",
+  27:"CREDO_DEPENDENT"
+ })[n]||"STANDARD_FIXED";
+ const momentFor=n=>n<=13?1:n===15?2:n===16?3:n<=18?4:n<=25?7:n===27?9:10;
+ const macroFor=n=>n<=13?1:n===15?2:n===16?3:n<=18?4:n<=25?7:n===27?9:10;
+ const stageFor=n=>[13,16,27].includes(n)?"MF02":"MF01";
+ const readings=[];
+ for(let i=0;i<expected.length;i++){
+  const n=expected[i],rec=pilot.entries[i];
+  const blockId="AO.SM.B"+String(n).padStart(3,"0");
+  const momentId="AO.CARD."+String(momentFor(n)).padStart(3,"0");
+  const block=source.get(blockId);
+  const expectedStatus=n===13?"CONDITIONAL_1962":"NORMATIVE_1962";
+  if(!rec||rec.id!=="AO.FORM.PRAYER.BEFORE_OFFERTORY."+String(i+1).padStart(2,"0")||
+     rec.block_id!==blockId||rec.moment_id!==momentId||rec.stage_id!==stageFor(n)||
+     rec.conditionality!==conditionFor(n)||
+     !guide.entries[momentId]||!formation.stages?.some(stage=>stage.id===stageFor(n)))
+    return fail("BEFORE_OFFERTORY_ID_OR_CONDITION_MISMATCH");
+  if(!block||block.Macro_ID!=="AO.SM.M"+String(macroFor(n)).padStart(2,"0")||
+     block.Proper_Slot||block.Branch_Status!==expectedStatus||
+     !Array.isArray(block.units)||!block.units.length)
+    return fail("WRONG_OR_MISSING_MASS_SOURCE");
+  const spoken=block.units.filter(u=>u.clock!=="PRIEST_ACTION")
+     .map(u=>String(u.english||"")).join("\n");
+  if(typeof rec.text_anchor_en!=="string"||
+     !spoken.includes(rec.text_anchor_en)||
+     !Array.isArray(rec.scripture_within_text)||rec.scripture_within_text.length)
+    return fail("UNVERIFIED_WORDING_OR_SCRIPTURE_LINK");
+  for(const field of ["heading","reading","observe"]){
+   for(const lang of ["en","fr"]){
+    const prose=rec[field]?.[lang];
+    if(typeof prose!=="string"||prose.length<12||prose.length>1800||
+       prose.trim()!==prose)return fail("MISSING_BILINGUAL_EDITORIAL_TEXT");
+   }
+  }
+  if((n===3&&!block.units.some(u=>u.english?.includes("Judge me, O God")))||
+     (n===13&&!block.units.some(u=>u.clock==="PRIEST_ACTION")))
+   return fail("PSALM_OR_INCENSE_SOURCE_LOST");
+  if(n===15&&block.units.filter(u=>u.clock==="SCHOLA_PUBLIC").length!==9)
+   return fail("KYRIE_NINEFOLD_CHANT_LOST");
+  if([16,27].includes(n)&&(!block.units.some(u=>u.clock==="SCHOLA_PUBLIC")||
+     !block.units.some(u=>u.clock==="PUBLIC_TEXT")))
+   return fail("PRIEST_SCHOLA_PARALLELISM_LOST");
+  if(n===25&&(!block.units[0]?.english?.includes("Matthew")||
+      !block.units.some(u=>u.clock==="USER_RESPONSE")))
+   return fail("GOSPEL_ANNOUNCEMENT_VARIABILITY_LOST");
+  readings.push(Object.freeze({...rec,scripture_within_text:Object.freeze([])}));
+ }
+ const withheld=[];
+ for(const [n,slot] of expectedHolds){
+  const blockId="AO.SM.B"+String(n).padStart(3,"0");
+  const rec=pilot.withheld_variable_propers[withheld.length];
+  const block=source.get(blockId);
+  if(rec?.block_id!==blockId||rec?.proper_slot!==slot||
+     typeof rec.reason!=="string"||rec.reason.length<25||
+     block?.Proper_Slot!==slot||
+     block.units?.some(u=>u.latin||u.english))
+   return fail("VARIABLE_OPENING_PROPER_NOT_HELD");
+  withheld.push(Object.freeze({...rec}));
+ }
+ if(!source.has("AO.SM.B096")||source.get("AO.SM.B096")?.Title!=="Sermon / Homily")
+  return fail("MISSING_GUIDE_ONLY_HOMILY");
+ return Object.freeze({ok:true,reason:"EDITORIAL_PREVIEW_ONLY",
+   readings:Object.freeze(readings),withheld:Object.freeze(withheld)});
+}
+
+export function beforeOffertoryEditorialPreviewHtml(validation,{french=false}={}){
+ if(!validation?.ok)return "";
+ const labels={
+  PSALM_42_MAY_BE_OMITTED:french?"PSAUME PARFOIS OMIS":"PSALM MAY BE OMITTED",
+  INCENSATION_DEPENDENT:french?"ENCENSEMENT CONDITIONNEL":"INCENSE CONDITION",
+  GLORIA_DEPENDENT:french?"GLORIA SELON LE JOUR":"GLORIA DEPENDS ON MASS",
+  GOSPEL_HEADING_DEPENDENT:french?"ÉVANGÉLISTE VARIABLE":"GOSPEL HEADING VARIES",
+  CREDO_DEPENDENT:french?"CREDO SELON LE JOUR":"CREDO DEPENDS ON MASS"
+ };
+ return '<main class="aoFRPilot" data-ao-formation-editorial-only>'+
+  '<header><small>'+(french?"FORMATION · ÉBAUCHE ÉDITORIALE":"FORMATION · EDITORIAL DRAFT")+'</small>'+
+  '<h1>'+(french?"Avant l’Offertoire":"Before the Offertory")+'</h1>'+
+  '<p>'+(french?"Vingt-trois lectures de textes fixes ; sept Propre réservés. Le sermon relève du Guide.":"Twenty-three fixed-text studies; seven Proper slots held. The sermon belongs to the Guide.")+'</p></header>'+
+  validation.readings.map(rec=>'<article class="aoFRPilotArticle" data-ao-formation-prayer-block="'+clean(rec.block_id)+'">'+
+   '<small>'+clean(rec.block_id)+' · '+clean(rec.moment_id)+'</small>'+
+   (rec.conditionality!=="STANDARD_FIXED"?'<strong class="aoFRPilotConditional">'+
+    clean(labels[rec.conditionality])+'</strong>':"")+
+   '<h2>'+clean(langText(rec.heading,french))+'</h2>'+
+   '<p>'+clean(langText(rec.reading,french))+'</p>'+
+   '<h3>'+(french?"Observer les paroles":"Read the published words")+'</h3>'+
+   '<p>'+clean(langText(rec.observe,french))+'</p></article>').join("")+
+  validation.withheld.map(held=>'<p data-ao-formation-proper-held="'+clean(held.block_id)+'">'+
+   clean(held.proper_slot)+' · '+clean(held.block_id)+'</p>').join("")+'</main>';
+}
