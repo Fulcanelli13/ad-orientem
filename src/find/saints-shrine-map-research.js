@@ -5,6 +5,10 @@ const arr=x=>Array.isArray(x)?x:[];
 const txt=x=>String(x??"").trim();
 const fold=x=>txt(x).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const esc=x=>txt(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+const quarantinedSourceHost=url=>{
+ try{return ["stwinefrideswell.org.uk","www.stwinefrideswell.org.uk"].includes(new URL(url).hostname.toLowerCase());}
+ catch{return false;}
+};
 const safeUrl=x=>{
  try{
   const u=new URL(x);
@@ -45,7 +49,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     official_source_links:Object.freeze(arr(link.provenance_source_ids).map(id=>{
       const source=originalSources.get(id);
       const href=source?.url;
-      if(!href||!/^https:\/\//i.test(href))return null;
+      if(!href||!/^https:\/\//i.test(href)||quarantinedSourceHost(href))return null;
       return Object.freeze({source_id:id,href,issuer:txt(source.issuer),directness:txt(source.directness)});
     }).filter(Boolean)),
     exact_name_candidate_keys:Object.freeze([...arr(row.candidate_source_keys)]),
@@ -56,6 +60,9 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     external_relic_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.relic_subjects).map(x=>x.subject_id)),
     shared_relic_subject_other_shrine_names:Object.freeze(arr(caseEvidence?.shared_original_relic_subject_name_references).map(x=>x.other_shrine_name)),
     external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
+    institutional_subject_source_links:Object.freeze(arr(caseEvidence?.institutional_subject_evidence_review?.references)
+      .filter(x=>/^https:\/\//i.test(txt(x.url))&&!quarantinedSourceHost(x.url))
+      .map(x=>({url:x.url,issuer:txt(x.issuer),claim_scope:txt(x.claim_scope),evidence_mode:txt(x.evidence_mode)}))),
     recorded_alias_source_keys:Object.freeze(arr(caseEvidence?.prior_documented_alias_candidates).flatMap(x=>arr(x.existing_exact_source_key_candidates))),
     entity_guard:caseEvidence?.person_kind_guard??"ENTITY_KIND_NOT_REVIEWED",
     cross_source_review_status:caseEvidence?.cross_owner_reference_reconciliation?.status??"NOT_REVIEWED",
@@ -137,6 +144,11 @@ export function renderSaintResearchShrineSheet(vm){
     ?'<small>'+esc(say("Other shrine name using the same relic-research subject (not certified identity): ","Autre nom de sanctuaire utilisant le même sujet de recherche sur les reliques (identité non certifiée) : ")+x.shared_relic_subject_other_shrine_names.join(" · "))+"</small>":"")
   +(arr(x.external_art_research_subject_ids).length
     ?'<small>'+esc(say("Unapproved art research subjects: ","Sujets de recherche artistique non approuvés : ")+x.external_art_research_subject_ids.join(" · "))+'</small>':"")
+  +(arr(x.institutional_subject_source_links).length
+    ?'<div class="aoSaintSourceInstitutionalEvidence"><small>'+esc(say("Additional official subject sources (identity still unapproved)","Sources institutionnelles supplémentaires (identité non approuvée)"))+'</small>'
+     +arr(x.institutional_subject_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.url)+'" target="_blank" rel="noopener noreferrer">'
+       +esc(link.issuer+' · '+say("subject source","source du sujet"))+' ↗</a>').join("")
+     +'</div>':"")
   +arr(x.official_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.href)+'" target="_blank" rel="noopener noreferrer">'+esc(link.issuer||say("Original site source","Source du site"))+' ↗</a>').join("")+'</li>').join("")+'</ul>';
  const url=safeUrl(item.geo?.source_url);
  if(url)h+='<a class="aoSaintSourceShrineGeoSource" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(
