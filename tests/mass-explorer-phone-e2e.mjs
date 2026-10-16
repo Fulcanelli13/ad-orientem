@@ -52,6 +52,28 @@ try{
     width+" missing one of five phase navigation controls");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
     width+" lost a canonical text in expanded map ownership");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-stage]").count(),8,
+    width+" missing the eight original source-backed Formation lessons");
+  if(width===390){
+    // Formation-only alternate route. The lesson is the canonical owner for
+    // Romans 12:1 (MF03), not a new unverified attribution to B031 itself.
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-jump="themes"]').click();
+    await page.locator('#ao-mass-explorer-root [data-ao-mx-stage="MF03"]').click();
+    await page.waitForFunction(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId==="MF03",null,{timeout:15000});
+    assert.match(await page.locator("#ao-mass-formation-root h1").innerText(),/The Offertory and your offering/);
+    const topicScripture=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
+    await topicScripture.click();
+    await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
+    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    await page.locator('#ao-scripture-overlay [data-scripture-close]').click();
+    await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
+    await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="map"&&
+       globalThis.AO_MASS_EXPLORER_V1?.status?.()?.momentKey===null,null,{timeout:12000});
+    assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-stage="MF03"]').evaluate(el=>document.activeElement===el),true,
+      "Thematic source roundtrip must restore focus to the actual visited lesson");
+    assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
+      "Formation roundtrip must return to intact 96-source map");
+  }
   if(width===390){
     await page.locator('#ao-mass-explorer-root [data-ao-mx-phase="2"]').click();
     const phase=page.locator('#ao-mx-phase-canon h2');
