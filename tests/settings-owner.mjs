@@ -83,7 +83,7 @@ assert.doesNotMatch(renderSettingsToString(noCandidate,{route:"/settings/about-s
   /data-settings-apply-update/,"An unstaged update must not have an Install control");
 assert.match(about,/data-settings-check-update/);
 assert.match(about,/abcde0123456/);
-assert.match(about,/Update available/);
+assert.match(about,/New copy staged/);
 assert.match(about,/data-settings-canonical-site/);
 const unsupported={...fakeWin,AO_OFFLINE_APP_V1:{status:{supported:false,registered:false,ready:false}}};
 const unsupportedAbout=renderSettingsToString(unsupported,{route:"/settings/about-sources"});
