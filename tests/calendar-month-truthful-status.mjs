@@ -1,4 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
+import { calendarRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -6,6 +7,65 @@ import "./calendar-scripture-handoff.mjs";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
+
+const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
+const rubricFixture=(date,sourcePath,rank,commem)=>({
+  date,status:"ready",
+  day:{main:{id:sourcePath.replace("/",":").toLowerCase()+":"+rank+":w",title:"Source text only"},
+       commemorations:commem?[{id:commem,title:"Observed commemoration"}]:[]},
+  proper:{status:"ready",data:{sourcePath}},
+});
+for(const [date,path,rank,commem,clauses] of [
+  ["2026-11-01","Sancti/11-01",1,"tempora:Pent23-0:2:g",["RG 108(a)","RG 111(a)"]],
+  ["2026-11-30","Sancti/11-30",2,"tempora:Adv1-1:3:v",["RG 25(b)","RG 108(e)","RG 111(c)"]],
+  ["2026-12-08","Sancti/12-08",1,"tempora:Adv2-2:3:v",["RG 25(b)","RG 108(e)","RG 111(a)"]],
+]){
+  const resolved=rubricFixture(date,path,rank,commem);
+  const claims=calendarRubricalClaimsForDay(resolved,claimLedger);
+  assert.equal(claims.length,1,date+" exact observed case must have one source claim");
+  assert.deepEqual(claims[0].clauses,clauses);
+  assert.equal(claims[0].authorityKind,"NORMATIVE_1960_RUBRICS");
+  assert.equal(claims[0].witnessKind,"DATE_SCOPED_HISTORICAL_ORDO");
+  assert.match(claims[0].witnessUrl,/^https:\/\/(?:ordo\.fsspx\.org|missale\.online)\//);
+  assert.equal(claims[0].normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+  assert.ok(claims[0].explanation.en&&claims[0].explanation.fr);
+  assert.equal(claims[0].automaticMassChange,false);
+  assert.ok(Object.isFrozen(claims)&&Object.isFrozen(claims[0]));
+  for(const variant of [
+    {...resolved,date:"2027"+date.slice(4)},  // Same feast in another year is NOT certified by this witness.
+    {...resolved,status:"failed"},
+    {...resolved,proper:{status:"failed",data:{sourcePath:path}}},
+    {...resolved,proper:{status:"ready",data:{sourcePath:"Sancti/08-15"}}},
+    {...resolved,day:{...resolved.day,main:{id:"sancti:08-15:1:w"}}},
+    {...resolved,day:{...resolved.day,main:{id:resolved.day.main.id.replace(/:[1-4]:/,":3:")}}},
+    {...resolved,day:{...resolved.day,commemorations:[]}},
+    {...resolved,day:{...resolved.day,commemorations:[{id:"tempora:Adv4-1:3:v"}]}},
+    {...resolved,day:{...resolved.day,commemorations:[{id:commem},{id:"tempora:Adv4-1:3:v"}]}},
+  ])assert.deepEqual(calendarRubricalClaimsForDay(variant,claimLedger),[],
+    date+" must fail closed on a stale or unverified principal/commemoration");
+  const poisoned=structuredClone(claimLedger);
+  poisoned.witnesses.find(w=>w.date===date).source="javascript:alert(1)";
+  assert.deepEqual(calendarRubricalClaimsForDay(resolved,poisoned),[],
+    "Untrusted ordo URL cannot become a citation");
+}
+for(const fixture of [
+  rubricFixture("2026-04-03","Tempora/Quad6-5r",1,null), // Good Friday
+  rubricFixture("2026-04-04","Tempora/Quad6-6",1,null), // Easter Vigil
+  rubricFixture("2026-09-23","Tempora/093-3",2,null), // September Ember day
+  rubricFixture("2026-10-11","Tempora/Pent20-0",2,null), // Ordinary Sunday
+])assert.deepEqual(calendarRubricalClaimsForDay(fixture,claimLedger),[],
+  "No original clause assertion without an exact date-specific witness");
+assert.deepEqual(calendarRubricalClaimsForDay(rubricFixture("2026-11-01","Sancti/11-01",1,"tempora:Pent23-0:2:g"),{}),[]);
+for(const marker of [
+  "calendarRubricalClaimsForDay(r,rubricClaimLedger)",
+  "loadCalendarRubricalClaims();",
+  "data-cal-rubric-claim",
+  "Why this commemoration is shown",
+  "Pourquoi cette commémoraison figure ici",
+  "previousRubricSourcesOpen",
+])assert.ok(runtime.includes(marker),
+  "Calendar lost a required rubrical source-bound UI contract: "+marker);
+
 // Calendar Day is liturgical information, not a progress/achievement dashboard.
 // Assert against the actual rendered Day template while keeping the 1962 source
 // and Mass/saint/print actions intact.
