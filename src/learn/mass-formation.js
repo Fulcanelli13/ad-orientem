@@ -5,7 +5,7 @@ import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-refe
 import { loadGuideRegistry } from "../mass/reader-guide.js";
 import {massMomentsStudyCss,massMomentsStudyListHtml,massMomentStudyDetailHtml,massMomentStudyKeys} from "./mass-moments-study.js";
 import {loadMassMomentEvidenceCatalog,massMomentEvidencePreviewEnabled,
- massMomentEvidenceReviewCss,massMomentEvidencePanelHtml,
+ massMomentEvidenceReviewCss,massMomentEvidencePanelHtml,massMomentEvidenceSummaryHtml,
  sanitizeMassMomentEvidenceDecisions,massMomentEvidenceChoiceIsSafe,
  massMomentEvidenceDecisionExport} from "./mass-moment-evidence-review.js";
 
@@ -193,6 +193,23 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
           massMomentStudyDetailHtml(state.guideRegistry,state.momentKey,{french:fr,stageTitles}):
       listHtml(win,state.data)+(state.guideError?
         '<div role="status" class="aoMFError">'+esc(fr?"Le Guide est temporairement indisponible ; les leçons restent accessibles.":"The Guide is temporarily unavailable; the lessons remain available.")+'</div>':"");
+    if(state.view==="moments"&&state.evidenceCatalog&&massMomentEvidencePreviewEnabled(win)){
+      const main=node.querySelector(".aoMFMomentsList");
+      if(main){
+        main.insertAdjacentHTML("afterbegin",massMomentEvidenceSummaryHtml(state.evidenceCatalog,{french:fr}));
+        const counts=new Map();
+        for(const claim of state.evidenceCatalog.records)
+          for(const key of claim.guideIds)counts.set(key,(counts.get(key)||0)+1);
+        for(const button of main.querySelectorAll("[data-ao-mf-moment]")){
+          const count=counts.get(button.dataset.aoMfMoment)||0;
+          if(!count)continue;
+          const hint=node.ownerDocument.createElement("small");
+          hint.className="aoMFEvidenceNote";hint.style.display="block";
+          hint.textContent=count+" "+(fr?"références de recherche":"research references");
+          button.querySelector("span:last-child")?.append(hint);
+        }
+      }
+    }
     if(state.view==="moment"&&massMomentEvidencePreviewEnabled(win)){
       const main=node.querySelector(".aoMFMomentDetail");
       const nav=main?.querySelector(".aoMFNav");
