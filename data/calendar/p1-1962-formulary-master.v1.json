@@ -119,7 +119,18 @@
       "originalPrintedPageImagesVisuallyReviewed": true,
       "fullLatinPhotoToTextCertified": false,
       "editionProvenanceIndependentlyVerified": false,
-      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:abbots",
+        "printedFamilyId": "commune-print:abbatum",
+        "printedVariant": "FIRST_MASS",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:apostles",
@@ -198,7 +209,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_apostolorum",
       "directIndexRowLinkNumber": 19,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:apostles",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:feasts_of_the_blessed_virgin_mary",
@@ -277,7 +299,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "in_festis_beatae_mariae_virginis",
       "directIndexRowLinkNumber": 20,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:feasts_of_the_blessed_virgin_mary",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_bishops_and_confessors",
@@ -356,7 +389,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurium_confessorum_pontificum",
       "directIndexRowLinkNumber": 21,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_bishops_and_confessors",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_bishops_and_martyrs",
@@ -435,7 +479,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum_pontificum",
       "directIndexRowLinkNumber": 22,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_bishops_and_martyrs",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_confessors_not_bishops",
@@ -514,7 +569,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurium_confessorum_non_pontificum",
       "directIndexRowLinkNumber": 23,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_confessors_not_bishops",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_female_martyrs_not_virgins",
@@ -593,7 +659,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimarum_non_virginum_martyrum",
       "directIndexRowLinkNumber": 24,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_female_martyrs_not_virgins",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_martyrs",
@@ -672,7 +749,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum",
       "directIndexRowLinkNumber": 25,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_martyrs",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_martyrs_eastertide",
@@ -751,7 +839,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum_tempore_paschali",
       "directIndexRowLinkNumber": 26,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_martyrs_eastertide",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_martyrs_eastertide_ii",
@@ -830,7 +929,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum_tempore_paschali_2",
       "directIndexRowLinkNumber": 27,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_martyrs_eastertide_ii",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_martyrs_eastertide_iii",
@@ -909,7 +1019,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum_tempore_paschali_3",
       "directIndexRowLinkNumber": 28,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_martyrs_eastertide_iii",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_martyrs_second_mass",
@@ -988,7 +1109,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurimorum_martyrum_altera_missa",
       "directIndexRowLinkNumber": 29,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_martyrs_second_mass",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_popes_and_confessors",
@@ -1067,7 +1199,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_summorum_pontificum_confessorum",
       "directIndexRowLinkNumber": 30,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_popes_and_confessors",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_popes_and_martyrs",
@@ -1146,7 +1289,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurium_summorum_pontificum_martyrum",
       "directIndexRowLinkNumber": 31,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_popes_and_martyrs",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:several_virgins_and_martyrs",
@@ -1225,7 +1379,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_plurium_virginum_martyrum",
       "directIndexRowLinkNumber": 32,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:several_virgins_and_martyrs",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:virgins",
@@ -1304,7 +1469,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_virginum_tantum",
       "directIndexRowLinkNumber": 33,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:virgins",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:virgins_second_mass",
@@ -1383,7 +1559,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_virginum_tantum_altera_missa",
       "directIndexRowLinkNumber": 34,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:virgins_second_mass",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:bishop_and_confessor",
@@ -1478,7 +1665,18 @@
       "originalPrintedPageImagesVisuallyReviewed": true,
       "fullLatinPhotoToTextCertified": false,
       "editionProvenanceIndependentlyVerified": false,
-      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:bishop_and_confessor",
+        "printedFamilyId": "commune-print:confessor-pontiff",
+        "printedVariant": "FIRST_MASS",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:bishop_and_confessor_second_mass",
@@ -1573,7 +1771,18 @@
       "originalPrintedPageImagesVisuallyReviewed": true,
       "fullLatinPhotoToTextCertified": false,
       "editionProvenanceIndependentlyVerified": false,
-      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:bishop_and_confessor_second_mass",
+        "printedFamilyId": "commune-print:confessor-pontiff",
+        "printedVariant": "ALTERA_MISSA",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "commune:1962:doctor_pontiff",
@@ -1670,7 +1879,18 @@
       "editionProvenanceIndependentlyVerified": false,
       "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
       "printedFamilySiblingCandidateId": "commune:1962:doctor_non_pontiff",
-      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons."
+      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons.",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "commune:1962:doctor_pontiff",
+        "printedFamilyId": "commune-print:doctorum",
+        "printedVariant": "DOCTOR_PONTIFF",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:bishop_and_martyr",
@@ -1749,7 +1969,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_pontificis",
       "directIndexRowLinkNumber": 38,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:bishop_and_martyr",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:bishop_and_martyr_second_mass",
@@ -1828,7 +2059,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_pontificis_altera_missa",
       "directIndexRowLinkNumber": 39,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:bishop_and_martyr_second_mass",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "commune:1962:confessor_non_pontiff",
@@ -1924,7 +2166,18 @@
       "fullLatinPhotoToTextCertified": false,
       "editionProvenanceIndependentlyVerified": false,
       "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
-      "printedFamilySiblingCandidateId": "p1:index:1962:confessor_not_a_bishop_second_mass"
+      "printedFamilySiblingCandidateId": "p1:index:1962:confessor_not_a_bishop_second_mass",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "commune:1962:confessor_non_pontiff",
+        "printedFamilyId": "commune-print:confessor-non-pontiff",
+        "printedVariant": "FIRST_MASS",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:confessor_not_a_bishop_second_mass",
@@ -2019,7 +2272,18 @@
       "originalPrintedPageImagesVisuallyReviewed": true,
       "fullLatinPhotoToTextCertified": false,
       "editionProvenanceIndependentlyVerified": false,
-      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
+      "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:confessor_not_a_bishop_second_mass",
+        "printedFamilyId": "commune-print:confessor-non-pontiff",
+        "printedVariant": "ALTERA_MISSA",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "commune:1962:doctor_non_pontiff",
@@ -2116,7 +2380,18 @@
       "editionProvenanceIndependentlyVerified": false,
       "facsimileAuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
       "printedFamilySiblingCandidateId": "commune:1962:doctor_pontiff",
-      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons."
+      "printedLayoutNotes": "Same original Commune Doctorum page, shared Collect/readings/chants; Pontiff vs non-Pontiff changes are explicit Secret and Postcommunion clauses, not two fully separate printed Commons.",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "commune:1962:doctor_non_pontiff",
+        "printedFamilyId": "commune-print:doctorum",
+        "printedVariant": "DOCTOR_NON_PONTIFF",
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:female_martyr_not_a_virgin",
@@ -2195,7 +2470,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_non_virginis_martyris",
       "directIndexRowLinkNumber": 43,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:female_martyr_not_a_virgin",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
@@ -2274,7 +2560,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_non_virginum_non_martyrum",
       "directIndexRowLinkNumber": 44,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr",
@@ -2353,7 +2650,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris",
       "directIndexRowLinkNumber": 45,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr_eastertide",
@@ -2432,7 +2740,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_tempore_paschali",
       "directIndexRowLinkNumber": 46,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr_eastertide",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr_eastertide_ii",
@@ -2511,7 +2830,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_tempore_paschali_2",
       "directIndexRowLinkNumber": 47,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr_eastertide_ii",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr_eastertide_iii",
@@ -2590,7 +2920,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_tempore_paschali_3",
       "directIndexRowLinkNumber": 48,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr_eastertide_iii",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr_eastertide_v",
@@ -2669,7 +3010,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_tempore_paschali_5",
       "directIndexRowLinkNumber": 49,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr_eastertide_v",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:martyr_second_mass",
@@ -2748,7 +3100,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_martyris_altera_missa",
       "directIndexRowLinkNumber": 50,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:martyr_second_mass",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:pope_and_martyr",
@@ -2827,7 +3190,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_summi_pontificis_et_martyris",
       "directIndexRowLinkNumber": 51,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:pope_and_martyr",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:virgin_and_martyr",
@@ -2906,7 +3280,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_virginis_et_martyris",
       "directIndexRowLinkNumber": 52,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:virgin_and_martyr",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:virgin_and_martyr_second_mass",
@@ -2985,7 +3370,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_unius_virginis_et_martyris_altera_missa",
       "directIndexRowLinkNumber": 53,
-      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION"
+      "formVariantStatus": "SECOND_MASS_PAGE_NOT_COMPREHENSIVE_PERMISSION",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:virgin_and_martyr_second_mass",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:dedication_of_a_church",
@@ -3064,7 +3460,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "commune_dedicationis_ecclesiae",
       "directIndexRowLinkNumber": 54,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:dedication_of_a_church",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     },
     {
       "id": "p1:index:1962:vigil_of_an_apostle",
@@ -3143,7 +3550,18 @@
       "directIndexVerification": "OPENED_PUBLIC_1962_CLAIMED_COMMON_PAGE",
       "directIndexSourceId": "vigilia_apostolorum",
       "directIndexRowLinkNumber": 55,
-      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED"
+      "formVariantStatus": "SINGLE_INDEXED_PAGE_NOT_APPLICATION_CERTIFIED",
+      "internalMissalReference": {
+        "targetKind": "FORMULARY",
+        "canonicalResearchFormularyId": "p1:index:1962:vigil_of_an_apostle",
+        "printedFamilyId": null,
+        "printedVariant": null,
+        "sourcePath": null,
+        "route": null,
+        "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
+        "sourceOwner": "src/mass/proper-reader-slots.js",
+        "mustNotRedirectToExternalSource": true
+      }
     }
   ],
   "categoryGaps": [
@@ -3164,5 +3582,9 @@
   "distinctPrintedFamilyCandidatesAmong38AtMost": 37,
   "printedFamiliesWithVisualPageEvidence": 4,
   "originalPrintedPagePhotoLinksVerified": 14,
-  "printedFamilyEvidenceSourceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json"
+  "printedFamilyEvidenceSourceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+  "navigationOwner": "data/calendar/p1-internal-missal-navigation.v1.json",
+  "userFacingLinkPolicy": "IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK",
+  "citationAndPageReferencesRole": "AUDIT_EVIDENCE_ONLY",
+  "importPolicy": "No new Missal text store, no app deep links invented; canonical existing Proper and reader section IDs are source of truth."
 }
