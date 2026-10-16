@@ -298,9 +298,8 @@ assert.equal(originalWorking.sourceWordingAddedToGitHub,false);
 assert.equal(originalWorking.independentlySecondCertifiedUnits,0);
 assert.equal(originalWorking.publicationApprovedUnits,0);
 assert.equal(originalWorking.noNewAiNarrative,true);
-assert.equal(fam.counts.earlyEnglishSadlierEleventhFirstPassOriginalEnglishUnitBodies,13);
+// Batch 02 is an immutable historical 13-unit snapshot; current totals are asserted with Batch 03 below.
 assert.equal(fam.counts.earlyEnglishSadlierEleventhWorkingPageOcrGenerated,17);
-assert.equal(fam.counts.earlyEnglishSadlierEleventhUnverifiedOriginalUnitsRemaining,34);
 
 // Complete 47-unit first-pass source transcription remains distinct from literal print certification.
 const originsBatch3=originSpans.workingTextBatch3;
