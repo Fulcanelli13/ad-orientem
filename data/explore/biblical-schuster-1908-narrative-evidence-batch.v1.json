@@ -1,0 +1,784 @@
+{
+  "schema": "AO_SCHUSTER_1908_NARRATIVE_SUBJECT_EVIDENCE_BATCH_V1",
+  "date": "2026-10-16",
+  "originalEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+  "sourceScanSha256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+  "canonicalEventRegistry": "data/explore/biblical-reading-continuity-review.v1.json",
+  "topicCandidateSource": "data/explore/biblical-schuster-1908-atlas-topic-shortlist-expanded.v2.json",
+  "sourceReadingBasis": "Original 1908 narrative-bearing OCR after chapter-question/epigraph separation, with two substantive in-body term occurrences located for each record. Selected original page images also separately inspected. Does not claim equivalent Scripture verses.",
+  "evidenceCaveat": "Two matching source-language anchors establish story subject presence, not literal transcription quality, completeness of event verses, Gospel-harmony equivalence, or legal permission.",
+  "counts": {
+    "originalHistoricalChapters": 182,
+    "atlasCanonicalEvents": 151,
+    "existingTopicCandidatePairs": 87,
+    "sourceBodyCorroboratedChapters": 35,
+    "imageSpotCheckSupportedChapters": 17,
+    "ocrOnlySupportedChapters": 18,
+    "fullyVerifiedVerseLocusLinks": 0,
+    "activeAppAtlasLinks": 0,
+    "unresolvedMissingHistoricalPrintedPages": 2
+  },
+  "missingSourcePages": {
+    "printedPages": [
+      384,
+      385
+    ],
+    "chapters": [
+      "SCHUSTER-EN-1908-NT-LXXXVIII",
+      "SCHUSTER-EN-1908-NT-LXXXIX"
+    ],
+    "status": "NO_SOURCE_BODY_VALIDATION_POSSIBLE_FOR_MISSING_CHAPTER_CONTENT"
+  },
+  "explicitNegativeControl": {
+    "chapterId": "SCHUSTER-EN-1908-OT-LXXVII",
+    "candidateSubject": "Susanna",
+    "reason": "On first pass its chapter OCR contains Daniel's dream rather than the Susanna episode; chapter/source boundaries must be rechecked, not auto-linked.",
+    "noPromotion": true
+  },
+  "policy": {
+    "noAutomaticAtlasLinks": true,
+    "noUnverifiedVerseAlignments": true,
+    "noNewGeographicalPins": true,
+    "noGenealogyEdges": true,
+    "noPublicHistoricalProse": true,
+    "noAIAuthoredNarrative": true,
+    "noAppChanges": true
+  },
+  "records": [
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-I",
+      "atlasCandidateEventKey": "biblical:passage:genesis-1-1-31",
+      "atlasReference": "Genesis 1:1–31",
+      "sourceStartPdfPage": 16,
+      "narrativeOCRAnchors": [
+        {
+          "text": "light",
+          "originalPdfPage": 16
+        },
+        {
+          "text": "firmament",
+          "originalPdfPage": 16
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-IV",
+      "atlasCandidateEventKey": "biblical:passage:genesis-3-1-24",
+      "atlasReference": "Genesis 3:1–24",
+      "sourceStartPdfPage": 20,
+      "narrativeOCRAnchors": [
+        {
+          "text": "serpent",
+          "originalPdfPage": 20
+        },
+        {
+          "text": "forbidden fruit",
+          "originalPdfPage": 22
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-V",
+      "atlasCandidateEventKey": "biblical:passage:genesis-4-1-16",
+      "atlasReference": "Genesis 4:1–16",
+      "sourceStartPdfPage": 23,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Cain",
+          "originalPdfPage": 23
+        },
+        {
+          "text": "Abel",
+          "originalPdfPage": 23
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-VI",
+      "atlasCandidateEventKey": "biblical:passage:genesis-7-1-24",
+      "atlasReference": "Genesis 7:1–24",
+      "sourceStartPdfPage": 26,
+      "narrativeOCRAnchors": [
+        {
+          "text": "ark",
+          "originalPdfPage": 26
+        },
+        {
+          "text": "Noe",
+          "originalPdfPage": 26
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-VIII",
+      "atlasCandidateEventKey": "biblical:passage:genesis-11-1-9",
+      "atlasReference": "Genesis 11:1–9",
+      "sourceStartPdfPage": 31,
+      "narrativeOCRAnchors": [
+        {
+          "text": "tower",
+          "originalPdfPage": 31
+        },
+        {
+          "text": "confound",
+          "originalPdfPage": 31
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-IX",
+      "atlasCandidateEventKey": "biblical:passage:genesis-12-1-9",
+      "atlasReference": "Genesis 12:1–9",
+      "sourceStartPdfPage": 33,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Abram",
+          "originalPdfPage": 33
+        },
+        {
+          "text": "kindred",
+          "originalPdfPage": 33
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XIII",
+      "atlasCandidateEventKey": "biblical:passage:genesis-21-1-7",
+      "atlasReference": "Genesis 21:1–7",
+      "sourceStartPdfPage": 40,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Isaac",
+          "originalPdfPage": 40
+        },
+        {
+          "text": "Mount Moria",
+          "originalPdfPage": 40
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXIX",
+      "atlasCandidateEventKey": "biblical:passage:exodus-2-1-10",
+      "atlasReference": "Exodus 2:1–10",
+      "sourceStartPdfPage": 75,
+      "narrativeOCRAnchors": [
+        {
+          "text": "daughter of Pharao",
+          "originalPdfPage": 75
+        },
+        {
+          "text": "Nile",
+          "originalPdfPage": 75
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXI",
+      "atlasCandidateEventKey": "biblical:passage:exodus-3-1-15",
+      "atlasReference": "Exodus 3:1–15",
+      "sourceStartPdfPage": 78,
+      "narrativeOCRAnchors": [
+        {
+          "text": "bush",
+          "originalPdfPage": 78
+        },
+        {
+          "text": "flame",
+          "originalPdfPage": 78
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXII",
+      "atlasCandidateEventKey": "biblical:passage:exodus-7-14-25",
+      "atlasReference": "Exodus 7:14–25",
+      "sourceStartPdfPage": 81,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Pharao",
+          "originalPdfPage": 81
+        },
+        {
+          "text": "blood",
+          "originalPdfPage": 81
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXIII",
+      "atlasCandidateEventKey": "biblical:passage:exodus-12-1-28",
+      "atlasReference": "Exodus 12:1–28",
+      "sourceStartPdfPage": 84,
+      "narrativeOCRAnchors": [
+        {
+          "text": "lamb",
+          "originalPdfPage": 85
+        },
+        {
+          "text": "Egypt",
+          "originalPdfPage": 84
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXIV",
+      "atlasCandidateEventKey": "biblical:passage:exodus-14-15-31",
+      "atlasReference": "Exodus 14:15–31",
+      "sourceStartPdfPage": 87,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Red Sea",
+          "originalPdfPage": 87
+        },
+        {
+          "text": "Egyptians",
+          "originalPdfPage": 87
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXVI",
+      "atlasCandidateEventKey": "biblical:passage:exodus-19-16-20",
+      "atlasReference": "Exodus 19:16–20",
+      "sourceStartPdfPage": 92,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Sinai",
+          "originalPdfPage": 92
+        },
+        {
+          "text": "Moses",
+          "originalPdfPage": 92
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXVII",
+      "atlasCandidateEventKey": "biblical:passage:exodus-32-1-35",
+      "atlasReference": "Exodus 32:1–35",
+      "sourceStartPdfPage": 94,
+      "narrativeOCRAnchors": [
+        {
+          "text": "calf",
+          "originalPdfPage": 94
+        },
+        {
+          "text": "Aaron",
+          "originalPdfPage": 94
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-LI",
+      "atlasCandidateEventKey": "biblical:passage:1samuel-17-1-54",
+      "atlasReference": "1Samuel 17:1–54",
+      "sourceStartPdfPage": 132,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Goliath",
+          "originalPdfPage": 132
+        },
+        {
+          "text": "stones",
+          "originalPdfPage": 133
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-LIX",
+      "atlasCandidateEventKey": "biblical:passage:1kings-8-1-66",
+      "atlasReference": "1Kings 8:1–66",
+      "sourceStartPdfPage": 152,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Solomon",
+          "originalPdfPage": 152
+        },
+        {
+          "text": "temple",
+          "originalPdfPage": 152
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-LXIII",
+      "atlasCandidateEventKey": "biblical:passage:1kings-18-19-39",
+      "atlasReference": "1Kings 18:19–39",
+      "sourceStartPdfPage": 163,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Elias",
+          "originalPdfPage": 164
+        },
+        {
+          "text": "Baal",
+          "originalPdfPage": 163
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-II",
+      "atlasCandidateEventKey": "biblical:event:nazareth-e1",
+      "atlasReference": "Luke 1:26–38",
+      "sourceStartPdfPage": 238,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Gabriel",
+          "originalPdfPage": 238
+        },
+        {
+          "text": "virgin",
+          "originalPdfPage": 238
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-III",
+      "atlasCandidateEventKey": "biblical:event:ein-karem-e1",
+      "atlasReference": "Luke 1:39–56",
+      "sourceStartPdfPage": 240,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Elizabeth",
+          "originalPdfPage": 240
+        },
+        {
+          "text": "Mary",
+          "originalPdfPage": 240
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-V",
+      "atlasCandidateEventKey": "biblical:event:bethlehem-e1",
+      "atlasReference": "Luke 2:1–20",
+      "sourceStartPdfPage": 244,
+      "narrativeOCRAnchors": [
+        {
+          "text": "manger",
+          "originalPdfPage": 244
+        },
+        {
+          "text": "swaddling",
+          "originalPdfPage": 244
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-VIII",
+      "atlasCandidateEventKey": "biblical:event:bethlehem-e2",
+      "atlasReference": "Matthew 2:1–12",
+      "sourceStartPdfPage": 249,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Magi",
+          "originalPdfPage": 249
+        },
+        {
+          "text": "gold",
+          "originalPdfPage": 250
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-IX",
+      "atlasCandidateEventKey": "biblical:event:egypt-e1",
+      "atlasReference": "Matthew 2:13–15",
+      "sourceStartPdfPage": 251,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Egypt",
+          "originalPdfPage": 251
+        },
+        {
+          "text": "Joseph",
+          "originalPdfPage": 251
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XIV",
+      "atlasCandidateEventKey": "biblical:event:cana-e1",
+      "atlasReference": "John 2:1–11",
+      "sourceStartPdfPage": 261,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Cana",
+          "originalPdfPage": 261
+        },
+        {
+          "text": "wine",
+          "originalPdfPage": 261
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XXI",
+      "atlasCandidateEventKey": "biblical:event:beatitudes-e2",
+      "atlasReference": "Matthew 5:13–48",
+      "sourceStartPdfPage": 274,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Beatitudes",
+          "originalPdfPage": 274
+        },
+        {
+          "text": "poor in spirit",
+          "originalPdfPage": 274
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XXXIII",
+      "atlasCandidateEventKey": "biblical:event:tabgha-e1",
+      "atlasReference": "John 6:1–15",
+      "sourceStartPdfPage": 299,
+      "narrativeOCRAnchors": [
+        {
+          "text": "loaves",
+          "originalPdfPage": 299
+        },
+        {
+          "text": "Andrew",
+          "originalPdfPage": 299
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XXXVII",
+      "atlasCandidateEventKey": "biblical:event:transfiguration-e1",
+      "atlasReference": "Matthew 17:1–8",
+      "sourceStartPdfPage": 306,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Moses",
+          "originalPdfPage": 306
+        },
+        {
+          "text": "Elias",
+          "originalPdfPage": 306
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LVI",
+      "atlasCandidateEventKey": "biblical:event:bethany-e1",
+      "atlasReference": "John 11:1–44",
+      "sourceStartPdfPage": 332,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Lazarus",
+          "originalPdfPage": 332
+        },
+        {
+          "text": "Martha",
+          "originalPdfPage": 332
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LIX",
+      "atlasCandidateEventKey": "biblical:event:olives-e1",
+      "atlasReference": "Luke 19:37–44",
+      "sourceStartPdfPage": 338,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Hosanna",
+          "originalPdfPage": 338
+        },
+        {
+          "text": "Bethphage",
+          "originalPdfPage": 338
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXVII",
+      "atlasCandidateEventKey": "biblical:event:gethsemane-e1",
+      "atlasReference": "Matthew 26:36–46",
+      "sourceStartPdfPage": 354,
+      "narrativeOCRAnchors": [
+        {
+          "text": "garden",
+          "originalPdfPage": 354
+        },
+        {
+          "text": "chalice",
+          "originalPdfPage": 355
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXXIII",
+      "atlasCandidateEventKey": "biblical:event:golgotha-e2",
+      "atlasReference": "John 19:17–30",
+      "sourceStartPdfPage": 367,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Golgotha",
+          "originalPdfPage": 367
+        },
+        {
+          "text": "Calvary",
+          "originalPdfPage": 367
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXXVIII",
+      "atlasCandidateEventKey": "biblical:event:emmaus-e1",
+      "atlasReference": "Luke 24:13–35",
+      "sourceStartPdfPage": 377,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Emmaus",
+          "originalPdfPage": 377
+        },
+        {
+          "text": "bread",
+          "originalPdfPage": 377
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_2_ANCHORS",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXXXII",
+      "atlasCandidateEventKey": "biblical:passage:acts-2-1-41",
+      "atlasReference": "Acts 2:1–41",
+      "sourceStartPdfPage": 384,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Pentecost",
+          "originalPdfPage": 384
+        },
+        {
+          "text": "tongues",
+          "originalPdfPage": 384
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXXXVI",
+      "atlasCandidateEventKey": "biblical:passage:acts-7-54-60",
+      "atlasReference": "Acts 7:54–60",
+      "sourceStartPdfPage": 393,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Stephen",
+          "originalPdfPage": 393
+        },
+        {
+          "text": "stoned",
+          "originalPdfPage": 394
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XC",
+      "atlasCandidateEventKey": "biblical:passage:acts-10-1-48",
+      "atlasReference": "Acts 10:1–48",
+      "sourceStartPdfPage": 399,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Cornelius",
+          "originalPdfPage": 399
+        },
+        {
+          "text": "centurion",
+          "originalPdfPage": 399
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XCIII",
+      "atlasCandidateEventKey": "biblical:passage:acts-15-1-29",
+      "atlasReference": "Acts 15:1–29",
+      "sourceStartPdfPage": 407,
+      "narrativeOCRAnchors": [
+        {
+          "text": "Paul",
+          "originalPdfPage": 407
+        },
+        {
+          "text": "Gentiles",
+          "originalPdfPage": 407
+        }
+      ],
+      "evidenceStrength": "NARRATIVE_OCR_WITH_ORIGINAL_PRINT_SPOT_CHECK",
+      "relationship": "SAME_NARRATED_SUBJECT_PRESENT_NOT_VERSE_EQUIVALENCE",
+      "verseCoverageCertified": false,
+      "sourceWordingCertified": false,
+      "appLinkEnabled": false
+    }
+  ]
+}
