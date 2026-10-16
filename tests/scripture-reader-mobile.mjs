@@ -60,6 +60,39 @@ try{
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
+ // Object-level visit: exact Annunciation Novena detail, followed by its Back.
+ // The existing Scripture DOM, focused object, verse and Home surface survive.
+ await dialog.locator('[data-scripture-open-related-object="novena:annunciation"]').tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==="annunciation" &&
+   globalThis.AO_NOVENAS_V3?.state?.()?.screen==="detail",null,{timeout:25000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await page.locator('#aoPray435930.open [data-n1-back]').tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureRelated").evaluate(el=>el.open),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject),"novena:annunciation");
+ // A second reciprocal journey opens precisely the source-owned Mass lesson,
+ // not the Mass reader or a generic Learn landing.
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
+ await dialog.locator(".aoScriptureRelated summary").tap();
+ const massLink=dialog.locator('[data-scripture-open-related-object="massFormation:MFS01"]');
+ await massLink.waitFor({state:"visible",timeout:9000});
+ await massLink.tap();
+ const study=page.locator("#ao-mass-formation-root");
+ await study.waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_MASS_FORMATION_V1?.status?.()?.stageId),"MF01");
+ assert.equal(await dialog.isHidden(),true);
+ await study.locator("[data-ao-mf-back]").tap();
+ await dialog.waitFor({state:"visible",timeout:18000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 2:14");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject),"massFormation:MFS01");
+ // Restore standalone reading before testing the existing edition/book UI.
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
