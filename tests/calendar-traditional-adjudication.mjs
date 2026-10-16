@@ -29,6 +29,10 @@ const copy=structuredClone(r);
 const ids=canonical1962Commemorations(r);
 assert.deepEqual(ids.map(x=>x.identity),["sancti:10-11","sancti:10-12"],
   "The resolved day must take priority; main/root fallback may contain candidates");
+assert.deepEqual(canonical1962Commemorations({
+  day:{commemorations:["10-11","St Someone"],main:{commemorations:["sancti:10-14:3:w"]}}
+}).map(x=>x.identity),["sancti:10-14"],
+  "A label-only preferred container must not suppress a sourced fallback");
 assert.deepEqual(canonical1962Commemorations({day:{main:{commemorations:["sancti:10-14:3:w"]}}}).map(x=>x.identity),
   ["sancti:10-14"],"Use main only if day-level commemorations are genuinely absent");
 assert.deepEqual(r,copy,"review must not edit the resolver");
@@ -59,6 +63,14 @@ assert.equal(newman.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW");
 assert.equal(newman.massInsertionAuthorized,false);
 assert.equal(newman.selectedFormularyId,null);
 assert.equal(newman.original1962PrincipalId,"sancti:10-09:3:w");
+const nestedNewman=reviewNewSaintMassChoice({
+ date:"2026-10-09",saint:byId.get("saint.john-henry-newman"),
+ observedDay:{date:"2026-10-09",day:{main:{id:"sancti:10-09:3:w",rank:"III"}},proper:{status:"ready"}},
+ protectedFeasts:annex.feasts
+});
+assert.equal(nestedNewman.status,"CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
+  "Actual production-resolution shape must not conceal a source-attested candidate");
+assert.equal(nestedNewman.massInsertionAuthorized,false);
 assert.equal(reviewNewSaintMassChoice({
  date:"2026-09-23",saint:byId.get("saint.pio-pietrelcina"),
  observedDay:resolve("tempora:Pent17-3:2:v","II"),protectedFeasts:annex.feasts
