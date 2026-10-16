@@ -1,0 +1,1775 @@
+{
+  "schema": "AO_MASS_P0_WORD_ANCHOR_RUBRIC_OWNER_CONCORDANCE_V1",
+  "status": "EXISTING_OWNER_REUSE_ONLY_NO_NEW_CEREMONIAL_AUTHORITY",
+  "evidence": {
+    "canonicalMainSHA": "7d88a0f193d947565259d8a41ed3c53aa38d1980",
+    "sourceRubricRegistry": "data/presentation/reader-rubric-events.v1.json",
+    "sourceRubricBlobSHA": "23e68bab2f1a819285b7fa719a09136801c3828c",
+    "sourcePriestActionRegistry": "data/presentation/reader-priest-actions.v1.json",
+    "sourcePriestActionBlobSHA": "4b55249ed6e7b6ade770a45ec2db804794accd1f",
+    "researchWorkbook": "Ad_Orientem_Ultra_Master_Research_Only_Low_Long_Guides_2026-10-16.xlsx",
+    "primaryRubrics": "Codex Rubricarum (1960), §§ 517–524; controlling the 1962 Missal",
+    "witnessPdfUrl": "https://maternalheart.org/library/1962rubrics.pdf",
+    "witnessPrintedPages": [
+      94,
+      95,
+      96,
+      97
+    ],
+    "pdfPhysicalPages": [
+      55,
+      56
+    ]
+  },
+  "governance": {
+    "noAutoPublish": true,
+    "noGestureRegistryChange": true,
+    "noActorAssignmentFromWordOnly": true,
+    "noUnconditionalCredoKneel": true,
+    "interpretCredoRule": "§ 518(b) sung Creed: priest recites—genuflects; when chanted and priest standing—genuflects; priest seated—profound bow of uncovered head; Christmas and Annunciation special exception; choir and people distinct. § 522(a) applies choral genuflection to recitation."
+  },
+  "summary": {
+    "anchorRows": 66,
+    "rubricEventOverlap": 18,
+    "priestActionOverlap": 37,
+    "withEitherExistingOwner": 53,
+    "withNoCueLevelGestureOwner": 13,
+    "exactTriggerStringAlreadyInRubricOverlay": 2,
+    "explicitSourceSpecialCases": 10,
+    "wordSpanLocationVerified": 66,
+    "wordAnchorCeremonialApprovals": 0,
+    "productionGestureMutations": 0
+  },
+  "anchors": [
+    {
+      "anchorId": "AO.V3.0001.C01",
+      "canonicalCueId": "AO.SM.C0001",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0014.C01",
+      "canonicalCueId": "AO.SM.C0014",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0017.C01",
+      "canonicalCueId": "AO.SM.C0017",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0017.C02",
+      "canonicalCueId": "AO.SM.C0017",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0022.C01",
+      "canonicalCueId": "AO.SM.C0022",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0022.C02",
+      "canonicalCueId": "AO.SM.C0022",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0026.C01",
+      "canonicalCueId": "AO.SM.C0026",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0040.C01",
+      "canonicalCueId": "AO.SM.C0040",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "BLESSES INCENSE"
+        ],
+        "priestActionConditions": [
+          "INCENSE_ENABLED"
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0056.C01",
+      "canonicalCueId": "AO.SM.C0056",
+      "originalSourceSpan": "Adorámus te",
+      "proposedResearchAction": "BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0061.C01",
+      "canonicalCueId": "AO.SM.C0061",
+      "originalSourceSpan": "Iesu Christe",
+      "proposedResearchAction": "HEAD BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0061.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "BOWS HEAD",
+            "triggerLat": "Iesu Christe",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": true,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0067.C01",
+      "canonicalCueId": "AO.SM.C0067",
+      "originalSourceSpan": "Iesu Christe",
+      "proposedResearchAction": "HEAD BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0067.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "BOWS HEAD",
+            "triggerLat": "Iesu Christe",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": true,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0068.C01",
+      "canonicalCueId": "AO.SM.C0068",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0068.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "SIGNS HIMSELF",
+            "triggerLat": "Cum Sancto Spiritu",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0084.C01",
+      "canonicalCueId": "AO.SM.C0084",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS BOOK"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "GOSPEL_AUTHOR_VARIABLE_AND_BOOK_CROSSES_ACTOR",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0096.C01",
+      "canonicalCueId": "AO.SM.C0096",
+      "originalSourceSpan": "Et incarnátus est",
+      "proposedResearchAction": "KNEEL — VERIFICATION REQUIRED",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "GENUFLECTS"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "CODE_518B_CREDO_ACTOR_POSITION_AND_CALENDAR_CONDITIONS",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0096.C02",
+      "canonicalCueId": "AO.SM.C0096",
+      "originalSourceSpan": "et homo factus est",
+      "proposedResearchAction": "CREED KNEEL — VERIFICATION REQUIRED",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "GENUFLECTS"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "CODE_518B_CREDO_ACTOR_POSITION_AND_CALENDAR_CONDITIONS",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0104.C01",
+      "canonicalCueId": "AO.SM.C0104",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0104.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "SIGNS HIMSELF",
+            "triggerLat": "Et vitam venturi saeculi",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0119.C01",
+      "canonicalCueId": "AO.SM.C0119",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0119.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "BLESSES OFFERINGS",
+            "triggerLat": "et benedic",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0120.C01",
+      "canonicalCueId": "AO.SM.C0120",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "BLESSES INCENSE"
+        ],
+        "priestActionConditions": [
+          "INCENSE_ENABLED"
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0152.C01",
+      "canonicalCueId": "AO.SM.C0152",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0152.C02",
+      "canonicalCueId": "AO.SM.C0152",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0152.C03",
+      "canonicalCueId": "AO.SM.C0152",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0164.C01",
+      "canonicalCueId": "AO.SM.C0164",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0164.C02",
+      "canonicalCueId": "AO.SM.C0164",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0164.C03",
+      "canonicalCueId": "AO.SM.C0164",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0165.C01",
+      "canonicalCueId": "AO.SM.C0165",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0166.C01",
+      "canonicalCueId": "AO.SM.C0166",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS CHALICE"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0171.C01",
+      "canonicalCueId": "AO.SM.C0171",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0177.C01",
+      "canonicalCueId": "AO.SM.C0177",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS CHALICE"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0184.C01",
+      "canonicalCueId": "AO.SM.C0184",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0184.C02",
+      "canonicalCueId": "AO.SM.C0184",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0184.C03",
+      "canonicalCueId": "AO.SM.C0184",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "THREE CROSSES"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0185.C01",
+      "canonicalCueId": "AO.SM.C0185",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0185.C02",
+      "canonicalCueId": "AO.SM.C0185",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0189.C01",
+      "canonicalCueId": "AO.SM.C0189",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0189.C02",
+      "canonicalCueId": "AO.SM.C0189",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0196.C01",
+      "canonicalCueId": "AO.SM.C0196",
+      "originalSourceSpan": "Nobis quoque",
+      "proposedResearchAction": "BREAST STRIKE — PRIEST",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0200.C01",
+      "canonicalCueId": "AO.SM.C0200",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0200.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES",
+            "triggerLat": "sanctificas · vivificas · benedicis",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0200.C02",
+      "canonicalCueId": "AO.SM.C0200",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0200.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES",
+            "triggerLat": "sanctificas · vivificas · benedicis",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0200.C03",
+      "canonicalCueId": "AO.SM.C0200",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0200.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES",
+            "triggerLat": "sanctificas · vivificas · benedicis",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0202.C01",
+      "canonicalCueId": "AO.SM.C0202",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0202.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH HOST OVER CHALICE",
+            "triggerLat": "Per ipsum · et cum ipso · et in ipso",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0202.C02",
+      "canonicalCueId": "AO.SM.C0202",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0202.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH HOST OVER CHALICE",
+            "triggerLat": "Per ipsum · et cum ipso · et in ipso",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0202.C03",
+      "canonicalCueId": "AO.SM.C0202",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0202.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH HOST OVER CHALICE",
+            "triggerLat": "Per ipsum · et cum ipso · et in ipso",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0203.C01",
+      "canonicalCueId": "AO.SM.C0203",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0203.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "TWO CROSSES WITH HOST",
+            "triggerLat": "Deo Patri omnipotenti · in unitate Spiritus Sancti",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0203.C02",
+      "canonicalCueId": "AO.SM.C0203",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0203.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "TWO CROSSES WITH HOST",
+            "triggerLat": "Deo Patri omnipotenti · in unitate Spiritus Sancti",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0219.C01",
+      "canonicalCueId": "AO.SM.C0219",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0219.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH PARTICLE",
+            "triggerLat": "Pax Domini sit semper vobiscum",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0219.C02",
+      "canonicalCueId": "AO.SM.C0219",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0219.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH PARTICLE",
+            "triggerLat": "Pax Domini sit semper vobiscum",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0219.C03",
+      "canonicalCueId": "AO.SM.C0219",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0219.01"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "THREE CROSSES WITH PARTICLE",
+            "triggerLat": "Pax Domini sit semper vobiscum",
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0225.C01",
+      "canonicalCueId": "AO.SM.C0225",
+      "originalSourceSpan": "Iesu Christe",
+      "proposedResearchAction": "HEAD BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "PROFOUND BOW"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "EXISTING_PROFOUND_BOW_VERSUS_RESEARCH_HEAD_BOW_MUST_NOT_SUPPLANT_SOURCE_OWNER",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0226.C01",
+      "canonicalCueId": "AO.SM.C0226",
+      "originalSourceSpan": "Iesu Christe",
+      "proposedResearchAction": "HEAD BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "PROFOUND BOW"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "EXISTING_PROFOUND_BOW_VERSUS_RESEARCH_HEAD_BOW_MUST_NOT_SUPPLANT_SOURCE_OWNER",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0227.C01",
+      "canonicalCueId": "AO.SM.C0227",
+      "originalSourceSpan": "Iesu Christe",
+      "proposedResearchAction": "HEAD BOW — VERIFY ACTOR / FORM",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "PROFOUND BOW"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "EXISTING_PROFOUND_BOW_VERSUS_RESEARCH_HEAD_BOW_MUST_NOT_SUPPLANT_SOURCE_OWNER",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0229.C01",
+      "canonicalCueId": "AO.SM.C0229",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0230.C01",
+      "canonicalCueId": "AO.SM.C0230",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0231.C01",
+      "canonicalCueId": "AO.SM.C0231",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "STRIKES BREAST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0232.C01",
+      "canonicalCueId": "AO.SM.C0232",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0232.01",
+          "AO.RUB.C0232.02"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "SIGNS WITH HOST",
+            "triggerLat": "Corpus Domini nostri Iesu Christi",
+            "authorityClass": "1962_NORMATIVE"
+          },
+          {
+            "actor": "PRIEST",
+            "kind": "ACTION",
+            "label": "RECEIVES HOST",
+            "triggerLat": null,
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [
+          "RECEIVES HOST"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0234.C01",
+      "canonicalCueId": "AO.SM.C0234",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [
+          "AO.RUB.C0234.01",
+          "AO.RUB.C0234.02"
+        ],
+        "rubricActorKinds": [
+          {
+            "actor": "PRIEST",
+            "kind": "GESTURE",
+            "label": "SIGNS WITH CHALICE",
+            "triggerLat": "Sanguis Domini nostri Iesu Christi",
+            "authorityClass": "1962_NORMATIVE"
+          },
+          {
+            "actor": "PRIEST",
+            "kind": "ACTION",
+            "label": "RECEIVES CHALICE",
+            "triggerLat": null,
+            "authorityClass": "1962_NORMATIVE"
+          }
+        ],
+        "priestActionLabels": [
+          "RECEIVES CHALICE"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": true,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0236.C01",
+      "canonicalCueId": "AO.SM.C0236",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0236.C02",
+      "canonicalCueId": "AO.SM.C0236",
+      "originalSourceSpan": "mea culpa",
+      "proposedResearchAction": "BREAST STRIKE — ACTOR/COUNT VERIFY",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0240.C01",
+      "canonicalCueId": "AO.SM.C0240",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0243.C01",
+      "canonicalCueId": "AO.SM.C0243",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "LAY_COMMUNICANT_GESTURE_NOT_MANDATORY_SOURCE",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0244.C01",
+      "canonicalCueId": "AO.SM.C0244",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "LAY_COMMUNICANT_GESTURE_NOT_MANDATORY_SOURCE",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0245.C01",
+      "canonicalCueId": "AO.SM.C0245",
+      "originalSourceSpan": "Dómine, non sum dignus",
+      "proposedResearchAction": "BREAST STRIKE — CELEBRANT / LAY NOT UNIVERSAL",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "LAY_COMMUNICANT_GESTURE_NOT_MANDATORY_SOURCE",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0246.C01",
+      "canonicalCueId": "AO.SM.C0246",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "GIVES COMMUNION"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0264.C01",
+      "canonicalCueId": "AO.SM.C0264",
+      "originalSourceSpan": "Benedícat vos",
+      "proposedResearchAction": "PRIEST BLESSING — FORM CONDITION",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [],
+        "priestActionConditions": []
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": false,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0265.C01",
+      "canonicalCueId": "AO.SM.C0265",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "BLESSES PEOPLE"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0269.C01",
+      "canonicalCueId": "AO.SM.C0269",
+      "originalSourceSpan": "✠",
+      "proposedResearchAction": "VERIFY PRIEST CROSS ACTION / ACTOR",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "SIGNS BOOK"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": null,
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    },
+    {
+      "anchorId": "AO.V3.0273.C01",
+      "canonicalCueId": "AO.SM.C0273",
+      "originalSourceSpan": "VERBUM CARO FACTUM EST",
+      "proposedResearchAction": "GENUFLECT — LAST GOSPEL CONDITION",
+      "currentOwnerRelationships": {
+        "rubricEventIds": [],
+        "rubricActorKinds": [],
+        "priestActionLabels": [
+          "GENUFLECTS"
+        ],
+        "priestActionConditions": [
+          null
+        ]
+      },
+      "sourceEventPresent": false,
+      "sourceActionPresent": true,
+      "existingRubricTriggerLiterallyContainsSelectedWord": false,
+      "conditionRequiringExplicitReview": "CODE_522B_LAST_GOSPEL_APPLICABILITY",
+      "decision": "REFERENCE_EXISTING_OWNER_ONLY_DO_NOT_MINT_SECOND_ACTION",
+      "permissiblePublicActionWithoutFurtherEditorialApproval": false,
+      "potentialSungLowAndRiteDifferences": "CHECK_CONDITIONAL_FORM_AND_ACTOR_BEFORE_PUBLICATION",
+      "sourceWordTextLocated": true,
+      "ceremonialActorAndTimingCertified": false
+    }
+  ]
+}
