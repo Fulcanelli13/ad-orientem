@@ -107,15 +107,37 @@ try{
   await page.locator("[data-settings-back]").click();
   await page.locator("[data-settings-back]").click();
 
+  // Stub only the existing offline-updater bridge: checking must stage, not apply.
+  await page.evaluate(()=>{
+    let copy={supported:true,registered:true,ready:true,
+      version:"e1f2a3b4c5d6e7f8",pendingVersion:null};
+    globalThis.__aoSettingsUpdateCheckCount=0;
+    globalThis.AO_OFFLINE_APP_V1={
+      get status(){return copy;},
+      async check(){
+        globalThis.__aoSettingsUpdateCheckCount++;
+        copy={...copy,pendingVersion:"abcdef0123456789"};
+        return {ok:true,active:copy.version,version:copy.pendingVersion,updateAvailable:true};
+      }
+    };
+  });
   await page.locator('[data-settings-route="/settings/about-sources"]').click();
   const about=await page.locator("#ao-settings-modular-root").innerText();
   assert.match(about,/Messe romaine de 1962/);
   assert.match(about,/Éditions de l’Écriture/);
   assert.match(about,/Version/);
-  assert.equal(await page.locator("#ao-settings-modular-root [data-settings-info]").count(),7,
+  assert.equal(await page.locator("#ao-settings-modular-root [data-settings-info]").count(),9,
     "Informational About rows must not masquerade as clickable buttons");
-  assert.equal(await page.locator("#ao-settings-modular-root button.aoSetRow").count(),1,
-    "Only Privacy & Data is an actionable row in About");
+  assert.equal(await page.locator("#ao-settings-modular-root button.aoSetRow").count(),2,
+    "Only Privacy & Data and offline update check are actionable in About");
+  assert.equal(await page.locator('[data-settings-snapshot-id="e1f2a3b4c5d6"]').count(),1);
+  await page.locator("[data-settings-check-update]").click();
+  await page.waitForFunction(()=>globalThis.__aoSettingsUpdateCheckCount===1);
+  await page.waitForFunction(()=>document.querySelector("#ao-settings-modular-root")?.textContent?.includes("Mise à jour disponible"));
+  assert.equal(await page.locator("[data-settings-snapshot-id]").getAttribute("data-settings-snapshot-id"),"e1f2a3b4c5d6",
+    "An update check must not replace the active saved copy");
+  assert.equal(await page.locator("[data-settings-canonical-site]").getAttribute("href"),
+    "https://fulcanelli13.github.io/ad-orientem/");
   await page.locator("#ao-settings-modular-root .aoSetSource summary").first().click();
   assert.equal(await page.locator("#ao-settings-modular-root .aoSetSource").first().evaluate(el=>el.open),true,
     "Source methodology categories must expand");
