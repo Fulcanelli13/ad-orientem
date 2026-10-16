@@ -4,6 +4,10 @@ import { massFormationScriptureHtml } from "./mass-formation-scripture-context.j
 import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-reference-panel.js";
 import { loadGuideRegistry } from "../mass/reader-guide.js";
 import {massMomentsStudyCss,massMomentsStudyListHtml,massMomentStudyDetailHtml,massMomentStudyKeys} from "./mass-moments-study.js";
+import {loadMassMomentEvidenceCatalog,massMomentEvidencePreviewEnabled,
+ massMomentEvidenceReviewCss,massMomentEvidencePanelHtml,
+ sanitizeMassMomentEvidenceDecisions,massMomentEvidenceChoiceIsSafe,
+ massMomentEvidenceDecisionExport} from "./mass-moment-evidence-review.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
 export const MASS_FORMATION_ROUTE="learn.mass";
@@ -34,7 +38,7 @@ function css(){
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
     ".aoMFBible{border-top:1px solid var(--border,rgba(255,255,255,.16));margin:24px 0 4px;padding-top:20px}.aoMFBible h2{margin:0 0 7px;font:500 1.2rem/1.28 var(--ao-font-display,Georgia,serif)}.aoMFBible>p{margin:0 0 14px;color:var(--muted,#9ba5b1);font:.82rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoMFBible ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;margin:0;padding:0;list-style:none}.aoMFBibleItem{border:1px solid var(--border,rgba(255,255,255,.13));border-radius:10px;padding:9px}.aoMFBibleItem button{display:flex;width:100%;min-height:44px;gap:7px;flex-wrap:wrap;align-items:center;justify-content:space-between;text-align:left;color:var(--liturgical,#c9ad78);background:transparent;border:0;font:.85rem/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}.aoMFBibleItem button strong{font-weight:500}.aoMFBibleItem button span{font-size:.73rem}.aoMFBibleItem small{display:block;margin-top:5px;font:.72rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#9ba5b1)}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("")+massMomentsStudyCss()+sourceReferencePanelCss()+formationReaderCss();
+  ].join("")+massMomentsStudyCss()+massMomentEvidenceReviewCss()+sourceReferencePanelCss()+formationReaderCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){
@@ -80,7 +84,8 @@ function stageHtml(win,data,stage){
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,
-    guideError:false,returnFocus:null,loading:null,guideLoading:null};
+    guideError:false,returnFocus:null,loading:null,guideLoading:null,
+    evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{}};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   async function ensureData(){
     if(state.data)return state.data;
@@ -94,12 +99,48 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     }).finally(()=>{state.guideLoading=null});
     return state.guideLoading;
   }
+  const evidenceStoreKey="ao.mass.source-evidence-triage.v1";
+  async function ensureEvidence(){
+    if(!massMomentEvidencePreviewEnabled(win))return null;
+    if(state.evidenceCatalog)return state.evidenceCatalog;
+    if(!state.evidenceLoading)state.evidenceLoading=loadMassMomentEvidenceCatalog({fetchImpl}).then(catalog=>{
+      state.evidenceCatalog=catalog;state.evidenceError=false;
+      try{state.evidenceChoices=sanitizeMassMomentEvidenceDecisions(
+        catalog,JSON.parse(win?.localStorage?.getItem?.(evidenceStoreKey)||"{}"));}catch{state.evidenceChoices={};}
+      return catalog;
+    }).finally(()=>{state.evidenceLoading=null});
+    return state.evidenceLoading;
+  }
+  function saveEvidenceDecision(id,choice){
+    if(!state.evidenceCatalog||!state.evidenceCatalog.records.some(r=>r.id===id)||
+      !massMomentEvidenceChoiceIsSafe(choice))return false;
+    if(choice==="HOLD")delete state.evidenceChoices[id];
+    else state.evidenceChoices[id]=choice;
+    try{win?.localStorage?.setItem?.(evidenceStoreKey,JSON.stringify(state.evidenceChoices));}catch{}
+    return true;
+  }
+  function exportEvidenceDecisions(){
+    if(!state.evidenceCatalog||!massMomentEvidencePreviewEnabled(win))return false;
+    const payload=massMomentEvidenceDecisionExport(state.evidenceCatalog,state.evidenceChoices);
+    const blob=new win.Blob([JSON.stringify(payload,null,2)+"\\n"],{type:"application/json"});
+    const href=win.URL.createObjectURL(blob);
+    const anchor=win.document.createElement("a");
+    anchor.href=href;anchor.download="Ad_Orientem_Mass_Source_Triage_2026-10-16.json";
+    win.document.body.append(anchor);anchor.click();anchor.remove();
+    win.setTimeout?.(()=>win.URL.revokeObjectURL(href),1000);
+    return true;
+  }
   function ensureRoot(){
     const doc=win?.document;if(!doc?.body)return null;
     let node=root();if(node)return node;
     node=doc.createElement("section");node.id=MASS_FORMATION_ROOT_ID;node.dataset.aoMassFormationOwner=MASS_FORMATION_VERSION;node.setAttribute("role","region");node.setAttribute("aria-label","Understand the Mass");
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button");if(!target)return;
+      if(target.matches("[data-ao-mf-evidence-export]")){
+        event.preventDefault();try{exportEvidenceDecisions();}catch(error){
+          try{win.console?.warn?.("Source triage export failed",error);}catch{}
+        }return;
+      }
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
       if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();
         if(state.view==="moment"){state.view="moments";state.momentKey=null;}
@@ -132,6 +173,11 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       if(target.matches("[data-ao-mf-prev]")&&idx>0){event.preventDefault();state.stageId=stages[idx-1].id;render();return;}
       if(target.matches("[data-ao-mf-next]")&&idx>=0&&idx<stages.length-1){event.preventDefault();state.stageId=stages[idx+1].id;render();return;}
     });
+    node.addEventListener("change",event=>{
+      const select=event.target?.closest?.("[data-ao-mf-evidence-decision]");
+      if(select&&massMomentEvidencePreviewEnabled(win))
+        saveEvidenceDecision(select.dataset.aoMfEvidenceDecision,select.value);
+    });
     doc.body.append(node);return node;
   }
   function render(){
@@ -147,6 +193,18 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
           massMomentStudyDetailHtml(state.guideRegistry,state.momentKey,{french:fr,stageTitles}):
       listHtml(win,state.data)+(state.guideError?
         '<div role="status" class="aoMFError">'+esc(fr?"Le Guide est temporairement indisponible ; les leçons restent accessibles.":"The Guide is temporarily unavailable; the lessons remain available.")+'</div>':"");
+    if(state.view==="moment"&&massMomentEvidencePreviewEnabled(win)){
+      const main=node.querySelector(".aoMFMomentDetail");
+      const nav=main?.querySelector(".aoMFNav");
+      if(state.evidenceCatalog&&nav){
+        nav.insertAdjacentHTML("beforebegin",massMomentEvidencePanelHtml(
+          state.evidenceCatalog,state.momentKey,{french:fr,decisions:state.evidenceChoices}));
+      }else if(state.evidenceError&&nav){
+        const note=fr?"Sources de recherche indisponibles. Le Guide reste accessible.":
+          "Research source review unavailable. Existing Guide is unaffected.";
+        nav.insertAdjacentHTML("beforebegin",'<p class="aoMFEvidenceNote" role="status">'+esc(note)+'</p>');
+      }
+    }
     node.hidden=false;node.removeAttribute("aria-hidden");node.scrollTop=0;
     installFormationNavigation(win,node);
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
@@ -161,6 +219,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     state.view=opts.stageId&&state.data.stages.some(x=>x.id===opts.stageId)?"stage":"list";
     state.stageId=state.view==="stage"?opts.stageId:null;
     state.momentKey=null;
+    if(massMomentEvidencePreviewEnabled(win)){
+      try{await ensureEvidence();}catch{state.evidenceError=true;}
+    }
     if(opts.momentKey){
       try{
         const guides=await ensureGuides();
@@ -180,7 +241,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
-  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data)});}
+  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data),evidenceReview:massMomentEvidencePreviewEnabled(win)&&Boolean(state.evidenceCatalog),evidenceTriageCount:Object.keys(state.evidenceChoices).length});}
   return Object.freeze({version:MASS_FORMATION_VERSION,open,close,render,status});
 }
 
