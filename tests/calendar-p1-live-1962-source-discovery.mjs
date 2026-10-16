@@ -242,6 +242,44 @@ try{
      historicalSourceOnly:true,approvedForMass:result.approvedForMass??false,
      route:result.route??null};
  });
+ const partialReconciliation=await page.evaluate(async()=>{
+   const {reconcileP1PartialCommon}=await import("/src/calendar/p1-partial-common-source-reconciliation.js");
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const diagnostic=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const memo=new Map();
+   const get=async path=>{
+     if(memo.has(path))return memo.get(path);
+     const result={};
+     for(const language of ["la","en","fr"])
+       result[language]=await resolver.resolveSource(path,language,diagnostic());
+     memo.set(path,result);return result;
+   };
+   const requests=[
+     {targetPath:"Commune/C3ap",basePath:"Commune/C3p",orationPath:"Commune/C3a"},
+     {targetPath:"Commune/C7",basePath:"Commune/C6-1"},
+   ];
+   const reports=[];
+   for(const request of requests){
+     const value=reconcileP1PartialCommon({
+       targetPath:request.targetPath,
+       target:await get(request.targetPath),
+       base:await get(request.basePath),
+       orations:request.orationPath?await get(request.orationPath):undefined,
+     });
+     reports.push({
+       targetPath:request.targetPath,
+       status:value.status,reason:value.reason??null,section:value.section??null,
+       borrowedSections:value.borrowedSections.map(x=>x.language+":"+x.section+":"+x.from),
+       missingByLanguage:value.missingByLanguage??null,
+       route:value.route,authorizedForSaintMass:value.authorizedForSaintMass
+     });
+   }
+   return reports;
+ });
+ console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
+ assert.equal(partialReconciliation.length,2);
+ assert.ok(partialReconciliation.every(x=>x.status==="PARTIAL_SOURCE_RECOVERY_VERIFIED"&&
+   x.route===null&&x.authorizedForSaintMass===false));
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
  assert.equal(paschalAlternate.status,"SOURCE_COMPOSITION_VERIFIED",paschalAlternate.reason+" / "+paschalAlternate.section);
  assert.deepEqual(paschalAlternate.completeByLanguage,{la:true,en:true,fr:true});
