@@ -45,7 +45,7 @@ jobs:
         run: node tests/sacred-art-w73-user-decisions.mjs
 
   audit-mobile-images:
-    name: Mobile 390px full-gallery image-load audit
+    name: Mobile 390px layout and on-demand remote image audit
     runs-on: ubuntu-latest
     timeout-minutes: 24
     steps:
@@ -59,7 +59,9 @@ jobs:
         run: node -e "import('@playwright/test').then(() => console.log('Playwright installed'))"
       - name: Install Chromium for 390px phone simulation
         run: npx playwright install --with-deps chromium
-      - name: Audit all linked image sources and mobile contain-fit
+      - name: Audit 390px mobile layout; full external image decoding on manual dispatch
+        env:
+          AO_ART_REMOTE_AUDIT: ${{ github.event_name == 'workflow_dispatch' && 'full' || 'layout' }}
         run: node tests/sacred-art-mobile-photo-e2e.mjs
       - name: Archive research-only image audit report
         if: always()
