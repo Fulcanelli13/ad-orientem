@@ -25,7 +25,11 @@
       "short": "Prepare for Mass and follow the local Low-Mass posture. The opening Sign of the Cross and Introibo at the foot of the altar are your first reliable landmarks.",
       "originalWorkbookRow": 34,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": null,
+      "cueLinkStatus": "NO_FIXED_READER_CUE_FOR_OBSERVED_STAGE",
+      "condition": "PRE_MASS_ENTRANCE_NO_CANONICAL_PRAYER_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.002": {
       "key": "LOW.002",
@@ -35,7 +39,11 @@
       "short": "The priest begins the prayers at the foot of the altar. Remain recollected and follow the opening prayer sequence if you wish.",
       "originalWorkbookRow": 35,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0001",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.003": {
       "key": "LOW.003",
@@ -45,7 +53,11 @@
       "short": "The preparatory prayers continue at the foot of the altar. The Confiteor and the visible striking of the breast are the next clear landmarks.",
       "originalWorkbookRow": 36,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0004",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "OMIT_PSALM_42_WHERE_1962_MISSAL_REQUIRES",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.004": {
       "key": "LOW.004",
@@ -55,7 +67,11 @@
       "short": "The Confiteor sequence is ending. Watch for the priest to leave the foot of the altar and ascend the steps.",
       "originalWorkbookRow": 37,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0017",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.005": {
       "key": "LOW.005",
@@ -65,7 +81,11 @@
       "short": "The priest ascends the altar and says the quiet altar prayers. Watch for him to move to the Epistle side for the Introit.",
       "originalWorkbookRow": 38,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0037",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.006": {
       "key": "LOW.006",
@@ -75,7 +95,11 @@
       "short": "The Introit begins the Proper of the Mass. Follow the text if you wish; the Kyrie and the priest’s movement toward the centre come next.",
       "originalWorkbookRow": 39,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0042",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.007": {
       "key": "LOW.007",
@@ -85,7 +109,11 @@
       "short": "Ordinary begins. Watch next for Gloria intonation if appointed; otherwise Dominus vobiscum for Collect.",
       "originalWorkbookRow": 40,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0044",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.008": {
       "key": "LOW.008",
@@ -95,7 +123,11 @@
       "short": "Major Ordinary landmark. Watch next for Priest turns/says Dominus vobiscum, then goes to Epistle side for Collect.",
       "originalWorkbookRow": 41,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0053",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "GLORIA_ONLY_IF_APPOINTED",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.009": {
       "key": "LOW.009",
@@ -105,7 +137,11 @@
       "short": "Opening oration. Watch next for Epistle begins with priest still at Epistle side.",
       "originalWorkbookRow": 42,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0070",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.010": {
       "key": "LOW.010",
@@ -115,7 +151,11 @@
       "short": "Scripture reading. Watch next for Server response / priest begins Gradual/Alleluia text.",
       "originalWorkbookRow": 43,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0075",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.011": {
       "key": "LOW.011",
@@ -125,7 +165,11 @@
       "short": "Transition toward Gospel. Watch next for Priest moves to center/Gospel side and begins Gospel preparation.",
       "originalWorkbookRow": 44,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0077",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.012": {
       "key": "LOW.012",
@@ -135,7 +179,11 @@
       "short": "Gospel is imminent. Watch next for Dóminus vobíscum / Sequéntia sancti Evangélii.",
       "originalWorkbookRow": 45,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0079",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.013": {
       "key": "LOW.013",
@@ -145,7 +193,11 @@
       "short": "Public Gospel. Watch next for Return toward center / Credo if appointed / Offertory if not.",
       "originalWorkbookRow": 46,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0082",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.014": {
       "key": "LOW.014",
@@ -155,7 +207,11 @@
       "short": "Creed landmark. Watch next for Dóminus vobíscum, then Orémus introducing Offertory.",
       "originalWorkbookRow": 47,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0089",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "CREDO_ONLY_IF_APPOINTED",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.015": {
       "key": "LOW.015",
@@ -165,7 +221,11 @@
       "short": "Offertory begins. Watch next for Priest uncovers chalice / prepares bread and wine.",
       "originalWorkbookRow": 48,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0106",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.016": {
       "key": "LOW.016",
@@ -175,7 +235,11 @@
       "short": "Offertory prayers are underway. Watch next for Orate fratres turn.",
       "originalWorkbookRow": 49,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0110",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.017": {
       "key": "LOW.017",
@@ -185,7 +249,11 @@
       "short": "Offertory is ending; Secret follows. Watch next for Quiet follows as Secret begins.",
       "originalWorkbookRow": 50,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0130",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.018": {
       "key": "LOW.018",
@@ -195,7 +263,11 @@
       "short": "Secret is not an audible navigation text/chant. Watch next for Public Per ómnia sæcula sæculórum / Amen, then Preface dialogue.",
       "originalWorkbookRow": 51,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0134",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.019": {
       "key": "LOW.019",
@@ -205,7 +277,11 @@
       "short": "One of the strongest auditory landmarks. Watch next for Sanctus begins; altar bell may sound.",
       "originalWorkbookRow": 52,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0137",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.020": {
       "key": "LOW.020",
@@ -215,7 +291,11 @@
       "short": "Canon is about to begin. Watch next for Sudden drop into silence / Canon + pre-Consecration warning.",
       "originalWorkbookRow": 53,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0145",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "CANON_FOLLOWS_WITH_PRIEST_SECRET_CLOCK",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.021": {
       "key": "LOW.021",
@@ -225,7 +305,11 @@
       "short": "Silent Canon underway. Watch next for Warning bell shortly before Consecration.",
       "originalWorkbookRow": 54,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0150",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.022": {
       "key": "LOW.022",
@@ -235,7 +319,11 @@
       "short": "Consecration is imminent; remain kneeling/recollected. Watch next for Host elevation bells.",
       "originalWorkbookRow": 55,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0161",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "WARNING_BELL_USER_OBSERVATION_NOT_ALWAYS_PRESENT",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.023": {
       "key": "LOW.023",
@@ -245,7 +333,11 @@
       "short": "You are exactly at the elevation of the Sacred Host. Watch next for Chalice elevation bell after the intervening consecration.",
       "originalWorkbookRow": 56,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0173",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "HOST_ELEVATION_NO_AUTOMATED_WORD_TIMING_INFERRED",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.024": {
       "key": "LOW.024",
@@ -255,7 +347,11 @@
       "short": "You are exactly at the elevation of the Precious Blood. Watch next for Canon returns to silence; later Nobis quoque can become audible.",
       "originalWorkbookRow": 57,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0179",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "CHALICE_ELEVATION_NO_AUTOMATED_WORD_TIMING_INFERRED",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.025": {
       "key": "LOW.025",
@@ -265,7 +361,11 @@
       "short": "Useful mid/late-Canon landmark. Watch next for Public Per omnia at the end of Canon.",
       "originalWorkbookRow": 58,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0196",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.026": {
       "key": "LOW.026",
@@ -275,7 +375,11 @@
       "short": "Canon has ended; Communion rites begin. Watch next for Pax Domini / Agnus Dei.",
       "originalWorkbookRow": 59,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0201",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.027": {
       "key": "LOW.027",
@@ -285,7 +389,11 @@
       "short": "Communion preparation. Watch next for Communion warning bell if faithful will receive.",
       "originalWorkbookRow": 60,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0212",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.028": {
       "key": "LOW.028",
@@ -295,7 +403,11 @@
       "short": "Communicants prepare/approach when directed. Watch next for Ecce Agnus Dei facing the people.",
       "originalWorkbookRow": 61,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": null,
+      "cueLinkStatus": "NO_FIXED_READER_CUE_FOR_OBSERVED_STAGE",
+      "condition": "FAITHFUL_COMMUNION_WARNING_LOCAL_OPTIONAL_NOT_NORMATIVE_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.029": {
       "key": "LOW.029",
@@ -305,7 +417,11 @@
       "short": "Faithful Communion rite is beginning. Watch next for Actual distribution at rail.",
       "originalWorkbookRow": 62,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0242",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "FAITHFUL_COMMUNION_IF_ANY_AND_OPTIONAL_SECOND_CONFITEOR_NOT_UNIVERSAL",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.030": {
       "key": "LOW.030",
@@ -315,7 +431,11 @@
       "short": "Distribution is in progress. Watch next for Priest returns to altar and begins ablutions.",
       "originalWorkbookRow": 63,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0246",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "COMMUNION_OF_FAITHFUL_ONLY_IF_DISTRIBUTED",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.031": {
       "key": "LOW.031",
@@ -325,7 +445,11 @@
       "short": "Communion section is closing. Watch next for Dóminus vobíscum before Postcommunion.",
       "originalWorkbookRow": 64,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0247",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.032": {
       "key": "LOW.032",
@@ -335,7 +459,11 @@
       "short": "Closing prayer. Watch next for Final Dóminus vobíscum / dismissal.",
       "originalWorkbookRow": 65,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0251",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ORDINARY_LOW_MASS_SEQUENCE_USE_READER_ACTUAL_CUE",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.033": {
       "key": "LOW.033",
@@ -345,7 +473,11 @@
       "short": "Mass is reaching formal conclusion. Watch next for Blessing if the rite includes it.",
       "originalWorkbookRow": 66,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0259",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "ITE_BENEDICAMUS_REQUIESCANT_BY_FORM",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.034": {
       "key": "LOW.034",
@@ -355,7 +487,11 @@
       "short": "Kneel/sign yourself according to established practice. Watch next for Priest moves to Gospel side for Last Gospel if present.",
       "originalWorkbookRow": 67,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0263",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "BLESSING_OMITTED_REQUIEM_AND_CERTIFIED_CONTINUATION",
+      "requiresRubricAndFormAudit": true
     },
     "LOW.035": {
       "key": "LOW.035",
@@ -365,7 +501,11 @@
       "short": "Last major landmark. Watch next for Priest leaves altar / recessional.",
       "originalWorkbookRow": 68,
       "longSourceOnly": true,
-      "releaseApproved": false
+      "releaseApproved": false,
+      "anchorCueCandidate": "AO.SM.C0267",
+      "cueLinkStatus": "CANDIDATE_MACRO_OR_PRAYER_STAGE_START_NOT_WORD_TIMING_CERTIFIED",
+      "condition": "LAST_GOSPEL_OMITTED_CERTIFIED_CONTINUATIONS",
+      "requiresRubricAndFormAudit": true
     }
   },
   "editorialCautions": [
@@ -375,5 +515,13 @@
     "No user or priest gesture can be inferred from a stage title; rubrics and posture profiles retain ownership.",
     "Confiteor, Gloria, Credo, Communion and Last Gospel need explicit liturgical form / selected Proper / local-practice gates."
   ],
-  "sourceRowNote": "Exact source row number 34–68, including header, in 05 GUIDE · APP COPY; the Ultra Master 03 ALL 154 WRITTEN GUIDES reproduces the same ordering."
+  "sourceRowNote": "Exact source row number 34–68, including header, in 05 GUIDE · APP COPY; the Ultra Master 03 ALL 154 WRITTEN GUIDES reproduces the same ordering.",
+  "crosswalkStatus": "35_EDITORIAL_STAGE_TO_1962_LOW_CORPUS_CANDIDATES_NO_PUBLICATION",
+  "crosswalkPolicy": [
+    "The 35 stage labels are editorial landmarks and not 35 independent Mass texts or 35 new LIVE cards.",
+    "Stage anchor cues are research candidates; exact active moment and gesture must come from current low corpus and card state.",
+    "LOW.001 and LOW.028 have no exact normative prayer cue and must not create invented Mass texts.",
+    "Low Mass has no Schola clock; a word in the short Guide is not a semantic trigger.",
+    "All conditional acts and proper-dependent texts must be gated by the selected liturgical Mass."
+  ]
 }
