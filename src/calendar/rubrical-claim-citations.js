@@ -141,10 +141,10 @@ export function calendarColourRubricalClaimsForDay(resolution,sourceLedger){
 import {annunciationObservanceDate,allSoulsObservanceDate,saintJosephObservanceDate} from "./liturgical-year.js";
 
 const TRANSFER_IDS=Object.freeze({
-  "annunciation-2024":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",project:annunciationObservanceDate}),
-  "all-souls-2025":Object.freeze({sourcePath:"Sancti/11-02",monthDay:"11-02",project:allSoulsObservanceDate}),
+  "annunciation-2024":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",colour:"White",suffix:"w",project:annunciationObservanceDate}),
+  "all-souls-2025":Object.freeze({sourcePath:"Sancti/11-02",monthDay:"11-02",colour:"Black",suffix:"b",project:allSoulsObservanceDate}),
   "annunciation-2027":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",project:annunciationObservanceDate}),
-  "joseph-2028":Object.freeze({sourcePath:"Sancti/03-19",monthDay:"03-19",project:saintJosephObservanceDate})
+  "joseph-2028":Object.freeze({sourcePath:"Sancti/03-19",monthDay:"03-19",colour:"White",suffix:"w",project:saintJosephObservanceDate})
 });
 const TRANSFER_CLAUSES=new Set(["RG 15","RG 16(b)","RG 95","RG 96","RG 96(a)","RG 96(b)","RG 99"]);
 const transferWitnessUrl=value=>{
@@ -190,6 +190,10 @@ export function calendarTransferRubricalClaimsForDay(resolution,ledger){
   if(w.id.startsWith("annunciation-")&&!c.clauses.includes("RG 96(a)"))return Object.freeze([]);
   if(w.id==="all-souls-2025"&&!c.clauses.includes("RG 96(b)"))return Object.freeze([]);
   if(w.id==="joseph-2028"&&(!c.clauses.includes("RG 95")||!c.clauses.includes("RG 96")))return Object.freeze([]);
+  const resolvedSuffix=String(resolution.day.main.id).match(/:1:([a-z]{1,3})$/i)?.[1]?.toLowerCase();
+  if(resolvedSuffix!==known.suffix||
+     String(calendarMassColour(resolution)).trim().toLowerCase()!==known.colour.toLowerCase()||
+     (resolution.colourPlan?.sequence?.length??0)>1)return Object.freeze([]);
   const witnessUrl=transferWitnessUrl(w.source);
   if(!witnessUrl)return Object.freeze([]);
   return Object.freeze([Object.freeze({
