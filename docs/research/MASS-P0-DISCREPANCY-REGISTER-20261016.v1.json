@@ -7,10 +7,13 @@
     "individualReverseCueGaps": 34,
     "publishedGuideLevelGaps": 4,
     "groupedCertificationHolds": 9,
-    "totalRegisterEntries": 47,
+    "totalRegisterEntries": 49,
     "confirmedDoctrinalOrRitualConflictsThisPass": "NOT_YET_ASSESSED",
     "actualMassEngineChanges": 0,
-    "approvedNewResearchPublications": 0
+    "approvedNewResearchPublications": 0,
+    "literalLatinWitnessComparisons": 288,
+    "literalLatinSourceDifferences": 2,
+    "uncollatedSourceUnits": 147
   },
   "cases": [
     {
@@ -583,6 +586,30 @@
       "evidence": "530 evidence associations are not 530 certified passages",
       "recommendedAction": "Deduplicate and certify exact locators, form applicability and independent source witnesses",
       "status": "OPEN_BATCH_HOLD"
+    },
+    {
+      "issueId": "P0-LATIN-AO.V3.0023.U002",
+      "priority": "P1",
+      "classification": "CONTENT_DIFFERENCE",
+      "canonicalOwner": "data/presentation/reader-text-sung.v1.json",
+      "canonicalObjectId": "AO.SM.C0023",
+      "researchObjectId": "AO.V3.0023.U002",
+      "evidence": "Original workbook writes 'orare' while canonical Sung donor has 'oráre' in the corresponding prayer",
+      "recommendedAction": "Use verified 1962 text and approved textual corrections to adjudicate accented form; no automatic Mass player change",
+      "status": "OPEN_TEXTUAL_REVIEW",
+      "mutationAllowed": false
+    },
+    {
+      "issueId": "P0-LATIN-AO.V3.0084.U001",
+      "priority": "P1",
+      "classification": "CONDITIONAL_VARIANT",
+      "canonicalOwner": "data/presentation/reader-text-sung.v1.json",
+      "canonicalObjectId": "AO.SM.C0084",
+      "researchObjectId": "AO.V3.0084.U001",
+      "evidence": "Original workbook uses generic Gospel-name placeholder 'secúndum N.' while frozen canonical source instantiates 'secúndum Matthǽum'",
+      "recommendedAction": "Identify selected Gospel/Proper applicability before classifying this as contradiction; do not force a static selection",
+      "status": "OPEN_RITUAL_CONDITION_REVIEW",
+      "mutationAllowed": false
     }
   ]
 }
