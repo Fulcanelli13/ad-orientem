@@ -307,6 +307,33 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    const restoreToday=target?.closest?.("[data-home-restore-today]");
+    if(restoreToday){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      // Calendar navigation deliberately retains its selected date so users
+      // can inspect its Mass from Home. Reset only on this explicit command,
+      // never as a side effect of closing the embedded Calendar.
+      if(state(win)?.route==="home"){
+        const now=new Date();
+        const today=[now.getFullYear(),String(now.getMonth()+1).padStart(2,"0"),
+          String(now.getDate()).padStart(2,"0")].join("-");
+        if(state(win)?.selectedDate!==today){
+          // The store action changes selectedDate but does NOT resolve the
+          // corresponding 1962 Proper. Use the canonical Calendar selector:
+          // it invalidates stale Home resolution work and commits the matching
+          // day and Proper atomically, even after the embedded view is closed.
+          const select=win?.AO_CALENDAR_APP_V1?.select;
+          if(typeof select!=="function"){showRouteError("calendar.today",restoreToday);return;}
+          void Promise.resolve(select(today,{closeAfter:false}))
+            .then(ok=>{if(ok!==true)showRouteError("calendar.today",restoreToday);})
+            .catch(error=>{
+              try{win?.console?.error?.("Return to today's Calendar day failed",error)}catch{}
+              showRouteError("calendar.today",restoreToday);
+            });
+        }
+      }
+      return;
+    }
     const backToday=target?.closest?.("[data-home-calendar-today]");
     if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");

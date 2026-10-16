@@ -113,7 +113,32 @@ try{
   },null,{timeout:12000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
     "Canonical Month content missing");
+  const originalHomeDate=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate);
+  const selectedFuture="2032-10-09";
+  assert.equal(await page.evaluate(async date=>globalThis.AO_CALENDAR_APP_V1.select(date),
+    selectedFuture),true,"Future 2032 Calendar date failed to resolve");
+  assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.getState().selectedDate),
+    selectedFuture);
   await page.locator('[data-home-calendar-today]').click();
+  await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
+  const futureHome=page.locator('.homeScreen [data-home-selected-day="'+selectedFuture+'"]');
+  await futureHome.waitFor({state:"visible",timeout:20000});
+  assert.match(await futureHome.textContent(),/not today/i,
+    "Selected future day must not be silently represented as Today");
+  assert.match(await page.locator(".homeScreen [data-home-mass-entry]").textContent(),
+    /Open Mass for selected day/,"Mass preparation must label a selected historical/future date honestly");
+  assert.match(await page.locator(".homeScreen .aoTodayV2Tabs [data-home-calendar-today]").textContent(),
+    /Selected day/);
+  assert.ok(await page.locator(".homeScreen #ao-calendar-modular-root").count()===0,
+    "Closing Calendar should retain the selected day without leaving its overlay open");
+  await futureHome.locator("[data-home-restore-today]").click();
+  await page.waitForFunction(date=>{
+    const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    return state?.selectedDate===date&&!state.resolving&&state.resolution?.day?.main;
+  },originalHomeDate,{timeout:35000});
+  assert.equal(await page.locator(".homeScreen [data-home-selected-day]").count(),0);
+  assert.match(await page.locator(".homeScreen [data-home-mass-entry]").textContent(),
+    /Open today’s Mass/);
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,"Returning to Today should close the embedded Calendar");
   const follow=page.locator('.homeScreen [data-home-mass-entry]');
