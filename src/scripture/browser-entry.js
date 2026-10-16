@@ -69,7 +69,26 @@ export function installScriptureBrowserOwner(win=globalThis){
      node.hidden=false;
      if(doc.body)doc.body.style.overflow="hidden";
      node.scrollTop=receipt.scrollTop;
-     node.querySelector?.('[data-scripture-open-related-object="'+record.id+'"]')?.focus?.({preventScroll:true});
+     const selector='[data-scripture-open-related-object="'+record.id+'"]';
+     const focusExact=()=>{
+       const target=node.querySelector?.(selector);
+       if(!target)return false;
+       target.focus?.({preventScroll:true});
+       node.scrollTop=receipt.scrollTop;
+       return true;
+     };
+     if(!focusExact()){
+       // Related-object records are loaded on demand; the exact button may
+       // arrive after we have reattached the Scripture reading subtree.
+       node.querySelector?.(".aoScriptureRelated summary")?.focus?.({preventScroll:true});
+       if(typeof win.MutationObserver==="function"){
+         const observer=new win.MutationObserver(()=>{
+           if(focusExact()||!reader||journey)observer.disconnect();
+         });
+         observer.observe(node,{childList:true,subtree:true});
+         win.setTimeout?.(()=>observer.disconnect(),5000);
+       }
+     }
      return true;
    };
    const restore=async()=>{
