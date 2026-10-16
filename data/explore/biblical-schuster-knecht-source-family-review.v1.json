@@ -515,7 +515,12 @@
     "earlyEnglishSadlierOfflineResearchReaderChapterSlots": 182,
     "earlyEnglishSadlierOfflineReaderResearchTextPages": 180,
     "earlyEnglishSadlierOfflineReaderTopicCandidates": 21,
-    "earlyEnglishSadlierOfflineReaderPublished": 0
+    "earlyEnglishSadlierOfflineReaderPublished": 0,
+    "earlyEnglishSadlierWholeBookOCRHighLegibilityHeuristic": 167,
+    "earlyEnglishSadlierWholeBookOCRMixedLegibilityHeuristic": 13,
+    "earlyEnglishSadlierAtlasTopicCandidatesExpanded": 87,
+    "earlyEnglishSadlierAtlasTopicCandidateChaptersExpanded": 81,
+    "earlyEnglishSadlierConfirmedVerseAlignedNew": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4474,5 +4479,64 @@
     "newSourceAuthoredBibleNarrativeWords": 0,
     "productionAppChanged": false,
     "nextProductStep": "Reconcile offline navigation/resume API with native Ad Orientem Bible reader while source rights and clean historic text quality remain gated; prefer large batch text-quality triage before publishing. Do not import 1908 OCR into production."
+  },
+  "english1908BulkReaderV2QualityAndAtlas": {
+    "date": "2026-10-16",
+    "editionWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "sourceOCRBaseline": "OCRmyPDF historic original scan 419 pages; no new source authored prose generated",
+    "trialEvidence": {
+      "pdfPagesChecked": [
+        16,
+        33,
+        83,
+        245,
+        275,
+        398
+      ],
+      "comparison": "Dictionary-token agreement on existing OCR vs fresh Tesseract psm4/psm6 at 180 DPI",
+      "outcome": "Original full-volume OCR outperformed both tested alternatives on all six sampled pages; avoid another full-book OCR run solely to vary PSM",
+      "notACharacterAccuracyTest": true
+    },
+    "bulkLegibilityEstimate": {
+      "method": "Dictionary-token share on narrative-bearing OCR; historical spelling/proper names can lower agreement",
+      "totalChapterSlots": 182,
+      "sourceOCRBoundedChapters": 180,
+      "higherHeuristic": 167,
+      "mixedHeuristic": 13,
+      "lowerHeuristic": 0,
+      "heldSourceBoundaries": 2,
+      "textCharacterCertified": 0
+    },
+    "expandedAtlasSubjectCandidates": {
+      "file": "data/explore/biblical-schuster-1908-atlas-topic-shortlist-expanded.v2.json",
+      "candidatePairs": 87,
+      "distinctHistoricalChapters": 81,
+      "canonicalAtlasEventsDenominator": 151,
+      "verseAlignedCertified": 0,
+      "autoActivatedAppLinks": 0,
+      "notVerifiedFrom1908NarrativeText": true,
+      "twoHeldActsCandidateEntriesRemainDisabled": true
+    },
+    "offlinePreview": {
+      "artifact": "Schuster_1908_Offline_Research_Reader_v2.html",
+      "artifactSHA256": "ec8f2a298845da9948067e7b9544fb47e7a920f63f578beeea00b53a7c1925c7",
+      "dataArtifact": "Schuster_1908_Research_Reader_Data_v2.json",
+      "features": [
+        "182_CHAPTER_BROWSE",
+        "180_UNVERIFIED_CHAPTER_OCR_PREVIEWS",
+        "87_ATLAS_SUBJECT_CANDIDATES_NOT_ACTIVE_LINKS",
+        "SOURCE_READABILITY_HEURISTIC",
+        "PRESERVE_LOCAL_READING_PROGRESS_V1_KEY",
+        "SOURCE_SCAN_PAGE_REFERENCES",
+        "SEPARATE_QUESTIONS_AND_FOOTNOTE_WARNINGS",
+        "NO_AUTO_BIBLE_TEXT_ORIGINATING_FROM_AI"
+      ],
+      "sourceProseCommittedToGitHub": false,
+      "sourceProsePublishedToApp": false,
+      "appChanged": false
+    },
+    "policy": "Concentrate later cleanup on 13 mixed OCR chapters and actual chapter-boundary problems; do not conflate dictionary legibility with historically accurate words. Keep historical theological/ethnic editorial holds and external copyright review.",
+    "originalAuthorTextModernized": false,
+    "sourcePublicationApproved": false
   }
 }
