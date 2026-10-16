@@ -57,7 +57,7 @@
     "If the router cannot deep-link into the read-only Missal yet, return ROUTE_NOT_IMPLEMENTED; show an unavailable link rather than redirecting to an unrelated Mass.",
     "Keep source provenance in References/Source audit metadata separate from navigation, optionally expandable for scholarly verification."
   ],
-  "currentNavigationLimitation": "Existing AO_APP_SHELL_V1.navigate('mass') only opens the Mass surface; no verified programmatic read-only exact prayer deep-link contract was found. This research record DOES NOT assert such navigation currently functions.",
+  "currentNavigationLimitation": "Existing AO_APP_SHELL_V1.navigate('mass') only opens the Mass surface; source owner and six prayer rows are now verified via actual resolver, but exact read-only prayer navigation is not implemented.",
   "exampleInternalAnchors": [
     {
       "anchorId": "p1:missal:leonardi:collect",
@@ -69,15 +69,32 @@
       "orationRole": "PRINCIPAL_ORATION",
       "orationOwnerId": "sancti:10-09:3:w",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     },
     {
       "anchorId": "p1:missal:leonardi:secret",
@@ -89,15 +106,32 @@
       "orationRole": "PRINCIPAL_ORATION",
       "orationOwnerId": "sancti:10-09:3:w",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     },
     {
       "anchorId": "p1:missal:leonardi:postcommunion",
@@ -109,15 +143,32 @@
       "orationRole": "PRINCIPAL_ORATION",
       "orationOwnerId": "sancti:10-09:3:w",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 1,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:collect",
@@ -129,16 +180,33 @@
       "orationRole": "COMMEMORATION_ORATION",
       "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
-      "calendarCommemorationId": null,
+      "calendarCommemorationId": "sancti:10-09t:4:r",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:secret",
@@ -150,16 +218,33 @@
       "orationRole": "COMMEMORATION_ORATION",
       "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
-      "calendarCommemorationId": null,
+      "calendarCommemorationId": "sancti:10-09t:4:r",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:postcommunion",
@@ -171,16 +256,33 @@
       "orationRole": "COMMEMORATION_ORATION",
       "orationOwnerId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
       "calendarDate": "2026-10-09",
-      "resolvedSourcePath": null,
+      "resolvedSourcePath": "Sancti/10-09",
       "resolvedOrationId": null,
       "route": null,
-      "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
+      "status": "ACTUAL_IN_APP_PROPER_SOURCE_VERIFIED_READER_ROUTE_PENDING",
       "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
       "monthDay": "10-09",
-      "calendarCommemorationId": null,
+      "calendarCommemorationId": "sancti:10-09t:4:r",
       "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
       "routingRequiresModelParagraphId": true,
-      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION",
+      "principalCelebrationId": "sancti:10-09:3:w",
+      "sourcePathVerification": {
+        "status": "VERIFIED_IN_APP_RESOLVER",
+        "years": [
+          2026,
+          2027
+        ],
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+      },
+      "sourceOrationRowIndex": 2,
+      "sourceRowLanguagesPresent": [
+        "lat",
+        "en",
+        "fr"
+      ],
+      "orationOwnerPath": "Sancti/10-09t",
+      "warning": "DayResolver includes this text, but actual 1962 Mass form may omit commemoration; read-only exact prayer target still requires projection and router."
     }
   ],
   "formExample": {
@@ -209,12 +311,21 @@
     "exactOrationRowEvidenceRequired": true,
     "postconciliarProperFallback": false,
     "generatedPdfRouteFallback": false,
-    "modifyExistingMassReader": false
+    "modifyExistingMassReader": false,
+    "actualSourceIdentitiesVerified": 2,
+    "actualPrayerRowsVerified": 6
   },
   "runtimeResolutionModule": "src/calendar/p1-internal-missal-link-resolution.js",
   "runtimeResolutionModuleStatus": "RESEARCH_ONLY_NOT_IMPORTED_BY_PRODUCTION",
   "verifiedLegacyPrayerRoutes": 0,
   "syntheticFixtureValidationScope": "Schema/path/paragraph projection tested against source-owned Reader Proper model; this is NOT a live 9 October resolver lookup.",
   "prayerLinkResolutionRule": "Pass the actual Calendar day resolution and already resolved Proper to inspectP1InternalMissalLink; only return a potential reader target if exact owner and row order validated. Never build a URL if external or internal router not ready.",
-  "requireCurrentResolverCommemorationId": "Research trio IDs are not canonical calendar ids. They cannot authorize commemorative prayer routes until exact source calendar commemoration ID is retrieved."
+  "requireCurrentResolverCommemorationId": "Actual original 1962 commemoration confirmed: sancti:10-09t:4:r, path Sancti/10-09t. Validate form-specific appliedCommemorations before opening its slot.",
+  "actualSourceEvidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+  "actualSourceVerifiedObservanceCount": 2,
+  "actualPrayerRowLanguageCoverage": 6,
+  "actualSourceYears": [
+    2026,
+    2027
+  ]
 }
