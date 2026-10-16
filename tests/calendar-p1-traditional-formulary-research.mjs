@@ -16,6 +16,9 @@ assert.equal(law.rules.length,35);
 assert.equal(new Set(law.rules.map(r=>r.id)).size,35);
 assert.ok(law.rules.every(r=>r.sourceCitation&&r.autoMassChange===false));
 assert.equal(law.runtimeAutomaticAuthorization,false);
+assert.equal(law.laterLegislationOverlay.status,"APPLICABILITY_MUST_BE_REVIEWED_IN_2026_NOT_AUTOMATIC_ABROGATION");
+assert.deepEqual(law.laterLegislationOverlay.sources.map(x=>x.id),["TRADITIONIS_CUSTODES_2021","RESPONSA_AD_DUBIA_2021","RESCRIPTUM_2023"]);
+assert.ok(law.laterLegislationOverlay.prohibitedInference===undefined || law.prohibitedInference.includes("does not imply authorization"));
 assert.ok(law.sourceReferences.RG.includes("vatican.va/archive/aas"),"Original AAS must own normative 1960 legal basis");
 assert.deepEqual(law.originalLatinPagesReviewed.map(p=>p.printedAASPage),[615,616,671]);
 assert.equal(law.commemorationCaps[0].limitStatus,"ORIGINAL_AAS_LATIN_RG111A_AND_RGMR434A_EXPLICIT_UNAM");
@@ -72,5 +75,6 @@ assert.ok(newman.otherHistoricCommemorationTrio.includes("denis-rusticus-eleuthe
 assert.equal(cases.cases.find(x=>x.id==="P1-PIO-2026").optionalFestiveMassStatus,"BLOCKED_ON_THIS_DAY");
 for(const x of cases.cases.filter(x=>x.id.includes("DOCTOR")))assert.match(x.effect,/NO_AUTOMATIC_1962_PROPER_REPLACEMENT/);
 assert.equal(holds.openCount,holds.items.length);
+assert.ok(holds.items.some(x=>x.code==="POST2020_LEGISLATION_2021_2023_AUTHORITY"&&x.status==="OPEN"));
 assert.ok(holds.items.every(x=>x.blocksRuntimeApproval&&x.status==="OPEN"));
 console.log("P1 research invariants PASS: "+law.rules.length+" legal rules, "+forms.forms.length+" indexed Commons, "+comm.trios.length+" source-addressed commemoration trios, "+saint.persons.length+" unique persons, "+saint.groups.length+" groups, "+holds.items.length+" explicit blockers; zero liturgical or reader permission inferred.");
