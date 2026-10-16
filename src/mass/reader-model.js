@@ -6,6 +6,7 @@ import { augmentReaderCardsWithPrayerOverPeople } from "./reader-prayer-over-peo
 import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
 import { projectNuptialInsertionModel } from "./reader-nuptial.js";
 import { holyThursdayCanonVariantsForProper } from "./reader-holy-thursday-canon.js";
+import { gospelHeadingVariantForProper } from "./reader-gospel-heading.js";
 import { projectHolyThursdayMass } from "./reader-holy-thursday-mandatum.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"]);
@@ -67,7 +68,14 @@ export function createMassReaderModel({
     sungCorpus,
   });
 
-  const ordinaryVariants=holyThursdayCanonVariantsForProper(resolvedMass);
+  // The frozen Ordinary C0084 is a Matthew *example*, not the selected
+  // Gospel author. The actual source-checked Proper owns this announcement.
+  const ordinaryVariants=Object.freeze({
+    ...(holyThursdayCanonVariantsForProper(resolvedMass)??{}),
+    "AO.SM.C0084":gospelHeadingVariantForProper(proper,{
+      sourcePath:resolvedMass.proper?.sourcePath??proper.sourcePath??null,
+    }),
+  });
   const baseCards=Object.freeze(sectionResolver.sections.map(section=>
     buildReaderSectionCard({
       corpus:selected.corpus,
