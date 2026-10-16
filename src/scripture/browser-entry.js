@@ -59,6 +59,11 @@ export function installScriptureBrowserOwner(win=globalThis){
         (Number.isInteger(record.target.bead)&&record.target.bead>=1&&record.target.bead<=10));
    if(record.target.type==="atlas")
      return /^biblical:(event|passage):[a-z0-9-]+$/.test(record.target.eventKey);
+   if(record.target.type==="calendarReading")
+     return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(record.target.date)&&
+       ["EPISTLE_OR_LESSON","GOSPEL"].includes(record.target.slot)&&
+       typeof record.target.sourcePath==="string"&&!!record.target.sourcePath&&
+       typeof record.target.reference==="string"&&!!record.target.reference;
    return false;
  }
  async function openRelatedObject(record){
@@ -169,6 +174,19 @@ export function installScriptureBrowserOwner(win=globalThis){
          accepted=(await win?.AO_FIND_APP_V1?.openAtlasEvent?.(record.target.eventKey,{
            onCloseReturn:restore
          }))===true;
+       }
+     }else if(record.target.type==="calendarReading"){
+       // Revalidate the selected, source-verified Proper *before* changing
+       // surfaces. A stale Bible card cannot open an unrelated Mass.
+       const {matchingSelectedCalendarScriptureObject}=await import(
+         "../calendar/selected-scripture-objects.js");
+       const current=win.AO_RUNTIME_V8?.store?.getState?.();
+       if(matchingSelectedCalendarScriptureObject(current,record.target)){
+         const nav=await shell.navigate("calendar");
+         if(nav?.ok===true){
+           accepted=(await win?.AO_CALENDAR_APP_V1?.openSelectedScriptureReading?.(
+             record.target,{onCloseReturn:restore}))===true;
+         }
        }
      }
    }catch(error){win.console?.error?.("Scripture object navigation failed",error)}

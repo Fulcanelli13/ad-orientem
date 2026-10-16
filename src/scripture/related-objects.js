@@ -114,10 +114,21 @@ export function scriptureLinkedObjectsForPassage(passage,{limit=24}={}){
  * Lazy Atlas backlinks: all 151 stable eventKeys come from the Explore owner.
  * An inaccessible Atlas dataset cannot suppress existing Novena/Rosary edges.
  */
-export async function scriptureLinkedObjectsForPassageWithAtlas(passage,{limit=40}={}){
+export async function scriptureLinkedObjectsForPassageWithAtlas(passage,{limit=40,selectedCalendarState=null}={}){
   const max=Math.max(0,Math.min(100,Number.isInteger(limit)?limit:40));
   const p=scripturePassage(passage);
   const established=scriptureLinkedObjectsForPassage(p,{limit:max});
+  // Derived from the *currently selected and source-verified* 1962 Proper,
+  // never an unconditional reverse lookup by feast or similar Gospel words.
+  let selected=[];
+  if(selectedCalendarState){
+    try{
+      const {selectedCalendarScriptureObjects}=await import("../calendar/selected-scripture-objects.js");
+      selected=selectedCalendarScriptureObjects(selectedCalendarState).filter(row=>
+        row.passages.some(hit=>hit.book===p.book&&hit.chapter===p.chapter&&
+          hit.verseStart<=p.verseEnd&&hit.verseEnd>=p.verseStart));
+    }catch{selected=[];}
+  }
   try{
     const {loadScriptureAtlasEventObjects}=await import("./atlas-related-events.js");
     const events=await loadScriptureAtlasEventObjects();
@@ -127,9 +138,14 @@ export async function scriptureLinkedObjectsForPassageWithAtlas(passage,{limit=4
     );
     // Reserve room for Atlas when many other published objects cite the same
     // verse, while keeping all 261 existing source-owner objects unchanged.
-    const room=Math.min(matches.length,8,max);
-    return Object.freeze([...established.slice(0,max-room),...matches.slice(0,room)]);
+    const selectedRoom=Math.min(selected.length,2,max);
+    const room=Math.min(matches.length,8,max-selectedRoom);
+    return Object.freeze([
+      ...established.slice(0,max-selectedRoom-room),
+      ...matches.slice(0,room),...selected.slice(0,selectedRoom)
+    ]);
   }catch{
-    return established;
+    const room=Math.min(selected.length,2,max);
+    return Object.freeze([...established.slice(0,max-room),...selected.slice(0,room)]);
   }
 }
