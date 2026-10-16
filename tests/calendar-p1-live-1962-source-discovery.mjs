@@ -277,6 +277,23 @@ try{
    }
    return reports;
  });
+ const apostleVigilOrations=await page.evaluate(async()=>{
+   const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+   const diag=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+   const rows={};
+   for(const language of ["la","en","fr"]){
+     const s=await resolver.resolveSource("Commune/C1v",language,diag());
+     rows[language]={};
+     for(const section of ["Oratio","Oratio 1 loco","Oratio 2 loco","Oratio pro Evangelistae"]){
+       const v=s?.map?.get(section);
+       rows[language][section]={present:Array.isArray(v)&&v.some(t=>typeof t==="string"&&t.trim()&&!t.trim().startsWith("@")),
+         totalRows:Array.isArray(v)?v.length:0,
+         firstRow:(Array.isArray(v)?v.find(t=>typeof t==="string"&&t.trim()):null)?.slice(0,165)??null};
+     }
+   }
+   return {source:"Commune/C1v",sourceRows:rows};
+ });
+ console.log("P1_C1V_ALT_ORATION_OWNERSHIP="+JSON.stringify(apostleVigilOrations));
  console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
  assert.equal(partialReconciliation.length,2);
  assert.deepEqual(partialReconciliation.map(x=>x.status),
