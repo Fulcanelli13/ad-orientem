@@ -60,7 +60,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(record.target.type==="atlas")
      return /^biblical:(event|passage):[a-z0-9-]+$/.test(record.target.eventKey);
    if(record.target.type==="calendarReading")
-     return /^\\d{4}-\\d{2}-\\d{2}$/.test(record.target.date)&&
+     return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(record.target.date)&&
        ["EPISTLE_OR_LESSON","GOSPEL"].includes(record.target.slot)&&
        typeof record.target.sourcePath==="string"&&!!record.target.sourcePath&&
        typeof record.target.reference==="string"&&!!record.target.reference;
