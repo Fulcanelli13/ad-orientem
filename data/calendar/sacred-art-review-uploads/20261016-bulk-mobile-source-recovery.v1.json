@@ -1,0 +1,59 @@
+{
+  "schema": "AO_SACRED_ART_BULK_SOURCE_RECOVERY_MOBILE_V1",
+  "created": "2026-10-16",
+  "purpose": "Recover actual images of exact missing originals, no megapixel thresholds or individual waves",
+  "rightsNotGrantedByResearchDownload": true,
+  "imageSources": [
+    {
+      "categoryIndex": 129,
+      "subject": "Station XIV Burial of Christ",
+      "physicalOriginal": "Giandomenico Tiepolo, Museo del Prado P000362, 1772, oil 124 x 144cm",
+      "url": "https://content3.cdnprado.net/imagenes/Documentos/imgsem/fc/fca2/fca27623-6bb0-4bca-9856-b7c23a6651a3/196afe8e-11ce-4877-8f44-ef3aaea08c56_832.jpg",
+      "sourcePage": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "identityClass": "EXACT_PHYSICAL_ORIGINAL",
+      "sourceReuseStatus": "PRADO_RESTRICTED_FOR_COMMERCIAL_USE",
+      "expectedNaturalAspect": 1.1612903225806452
+    },
+    {
+      "categoryIndex": 43,
+      "subject": "Saint Hilary of Poitiers",
+      "physicalOriginal": "Unidentified baroque devotional painting of Saint Hilary; definitely NOT 1823 Langlois canvas",
+      "url": "https://img.santogiorno.it/santi/520_ilario-poitiers.jpg",
+      "sourcePage": "https://www.santogiorno.it/ilario-poitiers",
+      "identityClass": "ALTERNATIVE_DIFFERENT_PHYSICAL_ORIGINAL_WITH_NO_ACCESSION",
+      "sourceReuseStatus": "RIGHTS_UNVERIFIED",
+      "expectedNaturalAspect": null
+    }
+  ],
+  "siteImageProbes": [
+    {
+      "categoryIndex": 42,
+      "subject": "Saint Ephrem",
+      "physicalOriginal": "Francesco Netti Sant'Effremo 1892 Bari; original exact identity verified; image not yet acquired",
+      "url": "https://www.francesconetti.com/newpage7d1e8e8d",
+      "needle": "Sant’Effremo",
+      "expectedNaturalAspect": 0.5480769230769231
+    },
+    {
+      "categoryIndex": 42,
+      "subject": "Saint Ephrem",
+      "physicalOriginal": "Francesco Netti Sant'Effremo 1892 Bari; site gallery",
+      "url": "https://www.francesconetti.com/newpage1285bd2c",
+      "needle": "Sant’Effremo",
+      "expectedNaturalAspect": 0.5480769230769231
+    }
+  ],
+  "reviewSettings": {
+    "cssViewport": 390,
+    "maxHeight": 500,
+    "fit": "contain",
+    "resolutionCutoff": null
+  },
+  "safeguards": [
+    "Never count different originals as selected same original",
+    "No score/rating/app modifications",
+    "Painted edges and color must be inspected, photo licensing remains separate",
+    "Archive original image bytes and 390px proofs",
+    "If an institutional website does not expose actual subject image, do not download/relabel logos"
+  ]
+}
