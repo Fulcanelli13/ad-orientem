@@ -2,6 +2,7 @@ import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
 import { renderLiturgicalClock, liturgicalClockCss } from "./liturgical-clock.js";
+import { romanClassTier } from "./roman-class-tier.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
@@ -115,20 +116,9 @@ async function loadNextResolvedMajor(selected){
   return promise;
 }
 function rankTier(r,id){
-  // A major-date index is an indicative list, not an ordo deciding rank or precedence.
-  // Never manufacture a Roman class for an unresolved day.
-  if(!r||r.status==="failed"||!r.day)return 0;
-  const rank=rankOf(r).trim().toLowerCase();
-  // Original sources and donor adapters also report bare class numbers/ordinals.
-  const bare=rank.replace(/^classis\s+|^class\s+|\s+classis$|\s+class$|\s+classe$/g,"").trim();
-  const numeral={i:1,ii:2,iii:3,iv:4};
-  if(Object.hasOwn(numeral,bare))return numeral[bare];
-  if(/^[1-4]$/.test(bare))return Number(bare);
-  if(/\b(?:i|1st|first|1)\s*(?:class|classe)\b/.test(rank))return 1;
-  if(/\b(?:ii|2nd|second|2)\s*(?:class|classe)\b/.test(rank))return 2;
-  if(/\b(?:iii|3rd|third|3)\s*(?:class|classe)\b/.test(rank))return 3;
-  if(/\b(?:iv|4th|fourth|4)\s*(?:class|classe)\b/.test(rank))return 4;
-  return 0;
+  // The source-resolved day remains authoritative. This is presentation only.
+  if(!r||r.status==="failed"||!r.day||r.date!==id)return 0;
+  return romanClassTier(rankOf(r));
 }
 function monthCellData(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null,sunday=dateOf(id).getDay()===0,tier=rankTier(r,id);
