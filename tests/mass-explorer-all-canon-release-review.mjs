@@ -102,6 +102,7 @@ try{
   await page.locator("[data-canon-select]").selectOption("AO.SM.B057");
   assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
   if(width===390){
+   await page.locator("[data-canon-reviewer]").fill("Example owner editor");
    const pending=page.waitForEvent("download");
    await page.locator("[data-canon-export]").click();
    const download=await pending;
@@ -113,6 +114,39 @@ try{
    assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.07").decision,"approve");
    assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.05").decision,"revise");
    assert.match(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.05").note,/recheck/);
+   assert.equal(payload.reviewer,"Example owner editor");
+   // Reopen a previous saved export: exact canonical ID and text hashes are rechecked.
+   await page.locator('[data-canon-decision="approve"]').click();
+   assert.match(await page.locator('[data-canon-progress]').innerText(),/0\/8/);
+   await page.locator('[data-canon-import]').setInputFiles({
+     name:"valid-owner-decisions.json",mimeType:"application/json",
+     buffer:Buffer.from(JSON.stringify(payload))
+   });
+   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Decisions restored/);
+   assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
+   assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
+   // Tampering one digest cannot import a stale review or mutate existing decisions.
+   const corrupted=JSON.parse(JSON.stringify(payload));
+   corrupted.decisions[0].content_sha256="f".repeat(64);
+   await page.locator('[data-canon-import]').setInputFiles({
+     name:"stale-owner-decisions.json",mimeType:"application/json",
+     buffer:Buffer.from(JSON.stringify(corrupted))
+   });
+   assert.match(await page.locator('[data-canon-import-status]').innerText(),/Import refused/);
+   assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
+   assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
+   // The restored review can continue to the next pending study.
+   await page.locator('[data-canon-next]').click();
+   assert.notEqual(await page.locator('[data-canon-select]').inputValue(),"AO.SM.B057");
+   const canStore=await page.evaluate(()=>{try{localStorage.setItem("ao-probe","1");return localStorage.getItem("ao-probe")==="1"}catch{return false}});
+   if(canStore){
+     const priorBlock=await page.locator('[data-canon-select]').inputValue();
+     await page.reload({waitUntil:"load"});
+     assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
+     // Autosave is content-scoped; the decision survives reload, not the navigation position.
+     await page.locator('[data-canon-select]').selectOption("AO.SM.B057");
+     assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
+   }
   }
   const overflow=await page.evaluate(()=>{const root=document.getElementById("ao-mass-explorer-root");return root.scrollWidth-root.clientWidth});
   assert.ok(overflow<=2,"Horizontal overflow at "+width+": "+overflow);
