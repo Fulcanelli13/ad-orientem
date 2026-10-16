@@ -26,7 +26,8 @@
     "Six additional title-stripped names are research leads only, and must not merge historic people or groups.",
     "Fifty-seven strings remain unidentified by the strictly limited full-name and title-stripped matching rules.",
     "The Uganda Martyrs is a collective unit, not one canonized person; do not explode its martyr list.",
-    "Neither original mappable pins, paintings, Masses nor the public six-profile release may be changed by this analysis."
+    "Neither original mappable pins, paintings, Masses nor the public six-profile release may be changed by this analysis.",
+    "This 119-row mechanical full-name/title-token audit is a compatibility overlay only. The independent 113-row W78 source-evidence register is authoritative for all non-collision source links: 24 curated variants and 39 unresolved; do not report this narrower six/57 pair as final gap coverage."
   ],
   "counts": {
     "shrine_name_strings": 119,
@@ -38,7 +39,9 @@
     "still_unmatched": 57,
     "newly_certified_person_to_shrine_life_event_edges": 0,
     "new_geocoded_pin_records": 0,
-    "approved_artwork_assets": 0
+    "approved_artwork_assets": 0,
+    "primary_curated_variant_leads": 24,
+    "primary_names_still_unmatched": 39
   },
   "records": [
     {
@@ -3121,5 +3124,7 @@
       "relation_certification": "SOURCE_NAME_TO_SHRINE_ONLY_PERSON_EQUIVALENCE_NOT_CERTIFIED",
       "source_requirement": "Original shrine source does not alone establish person-site biography relationship"
     }
-  ]
+  ],
+  "status": "COMPATIBILITY_SUBSET_TRIAGE_SUPERSEDED_BY_W78_113_ORIGINAL_SOURCE_EVIDENCE",
+  "primary_evidence_registry": "data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json"
 }
