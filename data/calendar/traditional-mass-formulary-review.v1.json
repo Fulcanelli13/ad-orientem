@@ -106,15 +106,19 @@
       "stKevinsEvent": {
         "venue": "St Kevin's Church, Dublin Latin Mass Chaplaincy",
         "reportedByUser": true,
-        "exactMassFormulary": "UNKNOWN_NO_FIRST_PARTY_PROGRAM_FOUND",
-        "datedProgram": "NOT_INDEPENDENTLY_RETRIEVED",
+        "exactMassFormulary": "UNKNOWN_FIRST_PARTY_NEWSLETTER_DOES_NOT_IDENTIFY_FORMULARY",
+        "datedProgram": "OCTOBER_2026_FIRST_PARTY_NEWSLETTER_ANNOUNCES_7PM_HIGH_MASS",
         "scope": "NOT_UNIVERSAL",
         "verificationNeeded": [
-          "ACTUAL_2026_10_09_MASS_PROGRAM",
-          "MISSAL_FORMULARY_SOURCE",
-          "COLLECT_SECRET_POSTCOMMUNION_AND_THEIR_ORDER",
-          "CELEBRANT_CHOICE"
-        ]
+          "EXACT_USED_1962_FORMULARY",
+          "LEONARDI_1962_COLLECT_SECRET_POSTCOMMUNION",
+          "WHETHER_RELIC_LITURGY_HAS_EXTRA_RUBRICS",
+          "ACTUAL_EXECUTION"
+        ],
+        "verifiedFirstPartyNewsletterUrl": "https://static1.squarespace.com/static/5fc7d9f84168c7185c8793de/t/6abd27217199117f41002de4/1790781217379/2026%2BOctober%2BNews.pdf",
+        "verifiedAnnounced7PmHighMass": true,
+        "verifiedAnnounced8AmMass": true,
+        "verifiedFirstClassRelicBlessingsAnnounced": true
       },
       "status": "OPEN_TRADITIONAL_TEXT_AND_LOCAL_PRACTICE_REVIEW"
     },
