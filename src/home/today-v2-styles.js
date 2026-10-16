@@ -1,6 +1,6 @@
 /* Home Today v2 styles as source-owned string: works in browser and Node ESM tests. */
 export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred frontispiece reference. Canonical Home actions remain unchanged. */
-.homeScreen.aoTodayV2{background:var(--bg,#080c12);color:var(--text,#eee9df);padding-bottom:76px}
+.homeScreen.aoTodayV2{background:var(--bg,#080c12);color:var(--text,#eee9df);padding-bottom:max(112px,calc(78px + env(safe-area-inset-bottom,0px)))}
 .aoTodayV2Header{position:relative;background:var(--bg,#080c12)}
 .aoTodayV2Tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--border,rgba(238,238,238,.12));background:var(--bg,#080c12);padding:0 8px}
 .aoTodayV2Tabs button,.aoTodayV2Tabs span{display:grid;place-items:center;min-height:47px;border:0;border-bottom:2px solid transparent;background:none;color:var(--muted,#9da3a2);font:700 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase;text-align:center}
@@ -45,7 +45,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Tabs button[aria-current="page"]{border-bottom-color:var(--liturgical,#939fa8);color:var(--text,#eee9df)}
 .aoTodayExploreFoot{padding:0 18px 35px}.aoTodayExploreFoot button{min-height:58px;width:100%;text-align:left;border:0;border-top:1px solid var(--border,rgba(238,238,238,.12));padding:12px 2px;background:transparent;color:var(--text,#eee9df)}.aoTodayExploreFoot strong{display:block;font:400 17px var(--ao-font-display,Georgia,serif)}.aoTodayExploreFoot small{display:block;margin-top:4px;color:var(--muted,#a6abb5);font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2CalendarInline[hidden]{display:none!important}
-.aoTodayV2CalendarInline{width:100%;min-height:100px;padding:0 10px 28px}
+.aoTodayV2CalendarInline{width:100%;min-height:100px;padding:0 10px max(64px,calc(36px + env(safe-area-inset-bottom,0px)))}
 .aoTodayV2[data-ao-home-calendar-view="day"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="picker"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="year"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Below{display:none!important}
 .aoTodayV2[data-ao-home-calendar-view] .aoTodayV2CalendarInline{display:block}
 .aoTodayV2[data-ao-home-calendar-view] > :not(.aoTodayV2Header){display:none!important}
