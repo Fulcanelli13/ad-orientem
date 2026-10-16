@@ -1,0 +1,34 @@
+name: Mass Moments Study Integration
+on:
+  pull_request:
+    paths:
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-moments-study.js'
+      - 'src/learn/mass-formation-scripture-context.js'
+      - 'tests/mass-moments-study.mjs'
+      - '.github/workflows/mass-moments-study.yml'
+  push:
+    branches:
+      - 'feature/mass-moments-study-links-20261016'
+    paths:
+      - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-moments-study.js'
+      - 'src/learn/mass-formation-scripture-context.js'
+      - 'tests/mass-moments-study.mjs'
+      - '.github/workflows/mass-moments-study.yml'
+permissions:
+  contents: read
+jobs:
+  study-navigation-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/learn/mass-moments-study.js
+      - run: node --check src/learn/mass-formation.js
+      - run: node tests/mass-moments-study.mjs
+      - run: node tests/mass-formation.mjs
+      - run: node tests/mass-formation-scripture-phone.mjs
