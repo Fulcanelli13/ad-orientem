@@ -50,6 +50,56 @@ const francisOmitted={
  proper:{status:"ready",data:{sourcePath:"Tempora/Pent19-0"}}
 };
 
+const omissionBatch2027_2028=[
+ ["2027-03-07","tempora:Quad4-0:1:v","Sancti/03-07","LENT4_THOMAS_AQUINAS_2027_OMITTED","RG 111(a)","I_CLASS_LENT_SUNDAY"],
+ ["2027-06-13","tempora:Pent04-0:2:g","Sancti/06-13","PENT4_ANTHONY_PADUA_2027_OMITTED","RG 111(b)","II_CLASS_SUNDAY"],
+ ["2027-08-08","tempora:Pent12-0:2:g","Sancti/08-08","PENT12_JOHN_VIANNEY_2027_OMITTED","RG 111(b)","II_CLASS_SUNDAY"],
+ ["2028-06-11","tempora:Pent01-0:1:w","Sancti/06-11","TRINITY_BARNABAS_2028_OMITTED","RG 111(a)","I_CLASS_TRINITY_SUNDAY"],
+ ["2028-08-20","tempora:Pent11-0:2:g","Sancti/08-20","PENT11_BERNARD_2028_OMITTED","RG 111(b)","II_CLASS_SUNDAY"],
+ ["2028-12-03","tempora:Adv1-0:1:v","Sancti/12-03","ADVENT1_FRANCIS_XAVIER_2028_OMITTED","RG 111(a)","I_CLASS_ADVENT_SUNDAY"],
+];
+for(const [date,principal,saintPath,id,cap,kind] of omissionBatch2027_2028){
+ const sourcePath="Tempora/"+principal.split(":")[1];
+ const selected={date,status:"ready",day:{main:{id:principal,path:sourcePath},commemorations:[]},
+    proper:{status:"ready",data:{sourcePath}}};
+ const claims=calendarOmittedFeastClaimForDay(selected,adjudicated2027);
+ assert.equal(claims.length,1,"2027–2028 source-reconciled omission absent "+date);
+ const c=claims[0];
+ assert.equal(c.claimId,id);
+ assert.equal(c.observedPrincipalId,principal);
+ assert.equal(c.impededFeastPath,saintPath);
+ assert.deepEqual(c.clauses,["RG 91","RG 93",cap]);
+ assert.equal(c.witnessUrl,"https://ordo.fsspx.org/calendar/"+date.slice(0,4)+"/"+Number(date.slice(5,7)));
+ assert.equal(c.feastClassWitnessUrl,"https://1962missal.com/feast");
+ assert.equal(c.comparisonUrl,"https://gcatholic.org/calendar/"+date.slice(0,4)+"/Extraordinary-en");
+ assert.equal(c.generalRomanCalendarOnly,true);
+ assert.equal(c.automaticMassChange,false);
+ assert.ok(c.explanation.en&&c.explanation.fr);
+ assert.ok(Object.isFrozen(claims)&&Object.isFrozen(c));
+ const ledgerRow=adjudicated2027.nonCommemorationWitnesses.find(w=>w.date===date);
+ assert.equal(ledgerRow.principal.kind,kind);
+ for(const invalid of [
+   {...selected,status:"failed"},
+   {...selected,date:"2026"+date.slice(4)},
+   {...selected,day:{main:{id:"sancti:"+date.slice(5)+":3:w",path:saintPath},commemorations:[]}},
+   {...selected,day:{main:{id:principal.replace(/:[12]:/,":4:"),path:sourcePath},commemorations:[]}},
+   {...selected,day:{main:selected.day.main,commemorations:[{id:"sancti:"+date.slice(5)+":3:w"}]}},
+   {...selected,proper:{status:"ready",data:{sourcePath:saintPath}}},
+ ])assert.deepEqual(calendarOmittedFeastClaimForDay(invalid,adjudicated2027),[],
+    "Cannot assert unreviewed date, principal or omitted saint "+date);
+ for(const poison of [
+  w=>{w.impeded.saint="SAINT_OTHER"},
+  w=>{w.sourceReview="UNVERIFIED"},
+  w=>{w.observedWitness="javascript:alert(1)"},
+  w=>{w.principal.kind="II_CLASS_SUNDAY"},
+ ]){
+  const edited=structuredClone(adjudicated2027);
+  poison(edited.nonCommemorationWitnesses.find(w=>w.date===date));
+  assert.deepEqual(calendarOmittedFeastClaimForDay(selected,edited),[],
+     "Wrong type/provenance must suppress 2027–2028 omitted saint "+date);
+ }
+}
+
 const omissionBatch2026=[
   ["2026-07-05","tempora:Pent06-0:2:g","Sancti/07-05","SAINT_ANTHONY_MARY_ZACCARIA","RG 111(b)"],
   ["2026-07-12","tempora:Pent07-0:2:g","Sancti/07-12","SAINT_JOHN_GUALBERT","RG 111(b)"],
