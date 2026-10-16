@@ -110,6 +110,28 @@
         "sourceProblem": "Institutional photo endpoint timed out; no bytes acquired; image not usable until actually fetched.",
         "imageAcquired": false,
         "ratingChanged": false
+      },
+      "alternativeOriginalAcquisition": {
+        "paintingId": "RUBENS-FRIEDENSTEIN-GOTHA-1621",
+        "type": "DISTINCT_NEW_ORIGINAL_ACQUIRED_MOBILE_VISUAL_STRONG",
+        "artist": "Peter Paul Rubens",
+        "title": "Saint Gregory of Nazianzus",
+        "date": 1621,
+        "currentOwner": "Stiftung Friedenstein Gotha, restitution completed 2024",
+        "formerCatalog": "Buffalo AKG 1952:14",
+        "sourcePhoto": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_St._Gregory_of_Nazianzus_-_1952-14_-_Albright%E2%80%93Knox_Art_Gallery.tiff",
+        "sourceFileSHA256": "8d4c9cdfb4bdb3db93f4722e7b90f01e7c8afd18b0c6a4c9e73aeef3c1eef845",
+        "sourceDimensions": [
+          3840,
+          2911
+        ],
+        "visualAssessment": "EXCELLENT_390PX_ORIGINAL_FULL_COMPOSITION",
+        "acquisitionArtifactId": 12061907353,
+        "qaFile": "data/calendar/sacred-art-review-uploads/20261016-gregory-rubens-gotha-mobile-QA.v1.json",
+        "curatorApproved": false,
+        "rightsCleared": false,
+        "ratingsUnchanged": true,
+        "caveat": "Different original from the selected Franchi Ambrosiana portrait whose image still cannot be downloaded."
       }
     },
     {
@@ -501,7 +523,7 @@
       "publicationApproved": false
     }
   ],
-  "lastReconciled": "2026-10-16 Three Hard Bulk exact Cyril + Patrick alternate",
+  "lastReconciled": "2026-10-16 three hard subjects + Rubens Gregory colour alternate",
   "w99Stats": {
     "attemptedPhotoFiles": 7,
     "downloadedAndDecoded": 7,
@@ -585,5 +607,34 @@
     "rightsAndCuratorStrictCoverage": "146/168 unchanged under original stricter release convention",
     "qaRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38937339059",
     "batchArtifactId": 12061592533
+  },
+  "threeHardSubjectBatch": {
+    "targetedCategories": [
+      30,
+      41,
+      52
+    ],
+    "exactOriginalNewImageAcquired": [
+      41
+    ],
+    "goodColorDifferentOriginalsAcquired": [
+      30,
+      52
+    ],
+    "existingSelectedPaintingMissingPhoto": [
+      30,
+      52
+    ],
+    "approvedReplacements": 0,
+    "researchOriginalsAvailableAllThree": true,
+    "runIds": [
+      38937339059,
+      38937969030
+    ],
+    "archiveIds": [
+      12061592533,
+      12061907353
+    ],
+    "status": "ALL_3_SUBJECTS_HAVE_VISUALLY_INSPECTED_RESEARCH_IMAGES; CURATOR_AND_RIGHTS_GATES_REMAIN"
   }
 }
