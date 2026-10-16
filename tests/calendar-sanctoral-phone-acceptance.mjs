@@ -111,7 +111,7 @@ try{
          .filter(x=>x.name.includes("living-sanctoral-read-model.v1.json")).length};
    });
    assert.ok(homeMetrics.titles.some(x=>/Newman/.test(x)),"Home omitted vetted Newman modern-date reference");
-   assert.ok(homeMetrics.titles.some(x=>/Traditional Mass unchanged/.test(x)),"Home confused modern saint with 1962 Mass");
+   assert.ok(homeMetrics.titles.some(x=>/The prescribed 1962 Mass remains unchanged/.test(x)),"Home confused modern saint with 1962 Mass");
    assert.equal(homeMetrics.buttons,1,"Home must have one Mass entry");
    assert.ok(homeMetrics.overflow<=1,"Home honour rows overflow phone width");
    assert.equal(requests.filter(x=>x.status===200).length,1,"Home and Calendar must share one dataset request");
