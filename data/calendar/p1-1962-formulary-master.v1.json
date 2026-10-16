@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_1962_FORMULARY_MASTER_V1",
   "asOf": "2026-10-16",
-  "status": "THIRTY_EIGHT_SECONDARY_INDEX_ENTRIES_SEVEN_MAPPED_TO_CANONICAL_APP_COMMON_SOURCES_SIX_DIRECT_TRILINGUAL_ONE_PENDING_INHERITANCE_NO_AUTHORISED_NEW_SAINT_MASS",
+  "status": "THIRTY_EIGHT_COMMON_INDEX_ENTRIES_24_CANONICAL_APP_SOURCE_COMPLETE_11_PARTIAL_CANDIDATES_3_AMBIGUOUS_ZERO_NEW_SAINT_MASSES_AUTHORISED",
   "baselineFile": "data/calendar/traditional-1962-common-formularies.review.v1.json",
   "sourceDirectory": "https://missale.online/proprium/en/commune",
   "corroboratingIndex": "https://fsspx.uk/en/proper-prayers-traditional-latin-mass-31673",
@@ -230,7 +230,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C1",
+        "auditedSourcePath": "Commune/C1",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -320,7 +327,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C11",
+        "auditedSourcePath": "Commune/C11",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -410,7 +424,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C4c",
+        "auditedSourcePath": "Commune/C4c",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -500,7 +521,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3",
+        "auditedSourcePath": "Commune/C3",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -590,7 +618,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C5c",
+        "auditedSourcePath": "Commune/C5c",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -680,7 +715,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C7b",
+        "auditedSourcePath": "Commune/C7b",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -770,7 +812,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3a",
+        "auditedSourcePath": "Commune/C3a",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -860,7 +909,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3p",
+        "auditedSourcePath": "Commune/C3p",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -950,7 +1006,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3ap",
+        "auditedSourcePath": "Commune/C3ap",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1130,7 +1193,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3a-1",
+        "auditedSourcePath": "Commune/C3a-1",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1220,7 +1290,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C4b",
+        "auditedSourcePath": "Commune/C4b",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1310,7 +1387,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C3b",
+        "auditedSourcePath": "Commune/C3b",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1400,7 +1484,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C6b",
+        "auditedSourcePath": "Commune/C6b",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1490,7 +1581,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C6a",
+        "auditedSourcePath": "Commune/C6a",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -1580,7 +1678,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C6a-1",
+        "auditedSourcePath": "Commune/C6a-1",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2023,7 +2128,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2",
+        "auditedSourcePath": "Commune/C2",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2113,7 +2225,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2-1",
+        "auditedSourcePath": "Commune/C2-1",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2560,7 +2679,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C7",
+        "auditedSourcePath": "Commune/C7",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2650,7 +2776,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C7a",
+        "auditedSourcePath": "Commune/C7a",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2740,7 +2873,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2a",
+        "auditedSourcePath": "Commune/C2a",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2830,7 +2970,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2p",
+        "auditedSourcePath": "Commune/C2p",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -2920,7 +3067,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2ap",
+        "auditedSourcePath": "Commune/C2ap",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3190,7 +3344,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2a-1",
+        "auditedSourcePath": "Commune/C2a-1",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3280,7 +3441,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C2b",
+        "auditedSourcePath": "Commune/C2b",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3370,7 +3538,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C6",
+        "auditedSourcePath": "Commune/C6",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3460,7 +3635,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C6-1",
+        "auditedSourcePath": "Commune/C6-1",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3550,7 +3732,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C8",
+        "auditedSourcePath": "Commune/C8",
+        "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     },
     {
@@ -3640,7 +3829,14 @@
         "route": null,
         "status": "REQUIRE_RESOLVER_BACKED_INTERNAL_MISSAL_SOURCE",
         "sourceOwner": "src/mass/proper-reader-slots.js",
-        "mustNotRedirectToExternalSource": true
+        "mustNotRedirectToExternalSource": true,
+        "candidateSourcePath": "Commune/C1v",
+        "auditedSourcePath": "Commune/C1v",
+        "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+        "liveAuditFile": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "formularyReadyForNewSaint": false,
+        "trilingualCoreSectionVerified": false,
+        "inheritanceOrSourceGap": true
       }
     }
   ],
@@ -3667,10 +3863,15 @@
   "userFacingLinkPolicy": "IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK",
   "citationAndPageReferencesRole": "AUDIT_EVIDENCE_ONLY",
   "importPolicy": "No new Missal text store, no app deep links invented; canonical existing Proper and reader section IDs are source of truth.",
-  "sourceOwnedCommonPathsMapped": 7,
+  "sourceOwnedCommonPathsMapped": 24,
   "directTrilingualSevenSectionCommonRows": 6,
   "partialInheritedLanguageCommonRows": 0,
   "internalCommonSourceCrosswalkPath": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
   "completeSevenCoreSectionMappedCommonRows": 7,
-  "doctorCommonInheritedVernacularRows": 18
+  "doctorCommonInheritedVernacularRows": 18,
+  "directTrilingualNineSectionCommonRows": 23,
+  "sourcePathsVerifiedAtLeastNineDirectCore": 24,
+  "partialSourcePathsWithVerifiedCandidateCodes": 11,
+  "ambiguousUnmappedIndexRows": 3,
+  "sourceEvidenceAudit": "data/calendar/p1-additional-common-app-audit.v1.json"
 }
