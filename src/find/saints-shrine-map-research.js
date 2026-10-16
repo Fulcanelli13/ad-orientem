@@ -54,6 +54,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
     source_key_review_bucket:caseEvidence?.source_key_review_bucket??"SHRINE_NAME_ONLY",
     curated_variant_source_key_leads:Object.freeze(arr(caseEvidence?.curated_variant_existing_key_leads).map(x=>x.source_key)),
     external_relic_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.relic_subjects).map(x=>x.subject_id)),
+    shared_relic_subject_other_shrine_names:Object.freeze(arr(caseEvidence?.shared_original_relic_subject_name_references).map(x=>x.other_shrine_name)),
     external_art_research_subject_ids:Object.freeze(arr(caseEvidence?.external_owner_evidence?.sacred_art_subjects).map(x=>x.subject_id)),
     recorded_alias_source_keys:Object.freeze(arr(caseEvidence?.prior_documented_alias_candidates).flatMap(x=>arr(x.existing_exact_source_key_candidates))),
     entity_guard:caseEvidence?.person_kind_guard??"ENTITY_KIND_NOT_REVIEWED",
@@ -91,7 +92,7 @@ export function projectSaintResearchShrinePlaces(dataset={}){
    map_state:precise?"MAPPED_EXISTING_SITE_RESEARCH_ONLY":"LIST_ONLY_GEO_HOLD",
    associated_saint_name_sources:associations,saints:Object.freeze([]),artwork_id:null,
    search_text:fold([title,p.address?.formatted,...associations.flatMap(a=>[
-     a.source_saint_name,...a.exact_name_candidate_keys,...a.recorded_alias_source_keys,...a.curated_variant_source_key_leads,...a.cross_source_index_links.map(x=>x.key)
+     a.source_saint_name,...a.exact_name_candidate_keys,...a.recorded_alias_source_keys,...a.curated_variant_source_key_leads,...a.shared_relic_subject_other_shrine_names,...a.cross_source_index_links.map(x=>x.key)
    ])].join(" ")),
    editorial_status:"RESEARCH_SHRINE_ASSOCIATION_NO_PERSON_IDENTITY_CERTIFIED"
   });
@@ -132,6 +133,8 @@ export function renderSaintResearchShrineSheet(vm){
       +'</nav>':"")
   +(arr(x.external_relic_subject_ids).length
     ?'<small>'+esc(say("Relic registry subjects (not authenticated): ","Sujets du registre des reliques (non authentifiées) : ")+x.external_relic_subject_ids.join(" · "))+'</small>':"")
+  +(arr(x.shared_relic_subject_other_shrine_names).length
+    ?'<small>'+esc(say("Other shrine name using the same relic-research subject (not certified identity): ","Autre nom de sanctuaire utilisant le même sujet de recherche sur les reliques (identité non certifiée) : ")+x.shared_relic_subject_other_shrine_names.join(" · "))+"</small>":"")
   +(arr(x.external_art_research_subject_ids).length
     ?'<small>'+esc(say("Unapproved art research subjects: ","Sujets de recherche artistique non approuvés : ")+x.external_art_research_subject_ids.join(" · "))+'</small>':"")
   +arr(x.official_source_links).map(link=>'<a class="aoSaintSourceShrineInstitution" href="'+esc(link.href)+'" target="_blank" rel="noopener noreferrer">'+esc(link.issuer||say("Original site source","Source du site"))+' ↗</a>').join("")+'</li>').join("")+'</ul>';
