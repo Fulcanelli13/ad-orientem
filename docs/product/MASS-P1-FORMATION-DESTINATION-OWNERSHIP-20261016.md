@@ -74,13 +74,23 @@ The public **Understand the Mass** destination now presents an immediate, delibe
 
 The new UI is intentionally **draft/unmerged**. Hiding the historical Guide route, changing owner content or releasing excerpts still requires separate editorial parity and release review.
 
-## Non-loss retirement gates (not passed yet)
-1. Prove every original published Guide moment (32) and every Sung source block (96) is available from the new Map.
-2. Prove all eight Formation lessons, claims, and their already-public source drawers are reachable without rewriting them.
-3. Verify the separate Bible passage context, version, language and exact return state.
-4. Inventory any additional legacy Mystery/short/long Guide material and demonstrate paragraph-level parity, editorial approvals, and no P0 held-claim leakage before suppressing a legacy route.
-5. Pass real 320/390/430/768/1280 phone/tablet/desktop and EN/FR visual/accessibility checks.
-6. Only after acceptance, simplify Learn navigation and retire redundant **links/pages**, never silently delete original content.
+## Initial P1 release boundary and non-loss retirement gates
+
+This release is **an initial Formation interface consolidation**, not a claim that the separate historical Mystery and unpublished Ultra Master material has passed editorial certification. The P1 UI can be accepted without making any of those unpublished materials public or removing the old source-owner routes.
+
+| Acceptance condition | Evidence / current decision |
+| --- | --- |
+| 32 original published Guide moments | Automated non-loss parity and live Mass Map/legacy deep-link browser contracts; original Guide owner retained |
+| 96 original Sung text blocks | Automated check of every block ID, published title and published text/explicit Proper placeholder; no generic Proper substitution |
+| 8 original Formation lessons and 24 bilingual cited claims | Existing course source owner retained; dedicated eight-lesson path, claim/source index and original deep links tested |
+| Scripture and documentary reading return | Original Bible and source-reference owners retained; test of Offertory → Romans 12:1 → cited original-source context → exact origin, including focus, scroll and Map drawer |
+| English/French and 320/390/430/768/1280 layouts | Dedicated Playwright screenshot and interaction suites, including 48 source-reference journeys; **automated evidence, not human aesthetic approval** |
+| No P0 held-text leakage or Mass ritual-reader invasion | Published Guide and Sung/catechetical originals only; historical source-passage release register deliberately empty; no `src/mass/` changes |
+| Further Mystery/short/long historical Guide manuscript parity | **HELD**. These materials are not retired, newly published or substituted. Their later incorporation remains a separate editorial/knowledge integration step |
+| Human product/visual approval | **PENDING** before changing PR out of draft or merging |
+| Current canonical main and CI | Merge current unrelated changes without overwriting owners; rerun required workflows on the final head |
+
+**Release decision:** P1 may be presented for acceptance as a *complete interface slice*. The final merge is conditional on the current-head automated checks plus the user's visual acceptance. Even after merge, retain original legacy/deep-link/source content until a separate, source-backed non-loss retirement decision. Never label an automated manifest validation as authorisation of an edition, copyright licence, or the theological truth of an unverified source claim.
 
 ## Intentionally not implemented by P1
 - New rubrical interpretations, miracle/historical research, P0 source-by-source certification, draft manuscript publication, source-ID consolidation, or alternate reader cards.
