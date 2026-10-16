@@ -63,6 +63,14 @@ assert.match(carloHtml,/www\.causesanti\.va/);
 assert.ok(!carloHtml.includes("data-cal-mass"),"Dicastery date is not a Mass selector");
 const pioHtml=renderSecondarySaintSection(cards("2026-09-23"));
 assert.match(pioHtml,/papal announcement/,"Source was not a separate decree");
+assert.ok(pioHtml.includes('data-cal-secondary-place="place:IT:santuario-san-pio-rotondo"'),"Verified Italian site must be actionable");
+assert.ok(pioHtml.includes('data-cal-secondary-saint="saint.pio-pietrelcina"'),"Exact person ID, not a display-name match");
+assert.ok(pioHtml.includes("View associated place"),"Associated site action must have a clear description");
+assert.ok(pioHtml.includes("View associated place") && !pioHtml.includes("data-cal-mass"),"Site links never select Masses");
+assert.match(renderSecondarySaintSection(cards("2026-09-23","fr"),{language:"fr"}),/Voir le lieu associé/);
+assert.ok(!html.includes("data-cal-secondary-place"),"Newman has no verified physical site in this projection");
+assert.ok(!renderSecondarySaintSection([{...cards("2026-09-23")[0],site:{...cards("2026-09-23")[0].site,placeId:"javascript:alert(1)"}}]).includes("data-cal-secondary-place"),"Unsafe, unreviewed IDs fail closed");
+assert.ok(!renderSecondarySaintSection([{...cards("2026-09-23")[0],site:null}]).includes("data-cal-secondary-place"),"No synthetic Place links");
 assert.equal(renderSecondarySaintSection([]),"");
 assert.ok(SANCTORAL_DAY_CSS.includes(".aoCalSecondarySaintCard"));
 const unsafe=renderSecondarySaintSection([{...newman[0],title:"<img src=x>",sourceUrls:["javascript:alert(1)"]}]);
@@ -73,6 +81,14 @@ for(const text of ["function loadCalendarSecondarySaints()","loadCalendarPilgrim
  "observedPrincipalId:r.day.main.id","observedCommemorationIds:canonical1962Commemorations(r).map(x=>x.sourceId)",'renderSecondarySaintSection(cards,{language:fr()?"fr":"en"})',
  "SANCTORAL_DAY_CSS","supplementaryDayMarkup(selected,r)","canonical1962Commemorations"]){assert.ok(cal.includes(text),text);}
 assert.ok(!cal.includes("jurisdiction:\"US\""),"Cannot silently infer user's jurisdiction");
+for(const guard of [
+ "function supplementaryDayCards(selected,r)","async function openSecondarySaintPlace(button)",
+ "r?.date!==selected","card.id===saintId&&card.site?.placeId===placeId",
+ 'globalThis.AO_APP_SHELL_V1?.navigate?.("find")',
+ 'owner.open({lens:"shrines",view:"map",placeId,query:""})',
+ "owner.status?.().selectedPlaceId!==placeId",
+ 'event.target.closest?.("[data-cal-secondary-place]")'
+])assert.ok(cal.includes(guard),"Missing fail-closed native Place route guard: "+guard);
 
 const home=readFileSync(new URL("../src/home/today-v2-sections.js",import.meta.url),"utf8");
 assert.ok(home.includes('data-home-calendar data-home-calendar-view="day"'),"Home must keep canonical Calendar day entry");

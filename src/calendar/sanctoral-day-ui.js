@@ -14,7 +14,8 @@ export const SANCTORAL_DAY_CSS=[
 ".aoCalSecondarySaintCard details{margin-top:6px;color:#bbb3a6;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
 ".aoCalSecondarySaintCard summary{cursor:pointer;display:flex;align-items:center;padding:9px 0;min-height:44px;touch-action:manipulation}",
 ".aoCalSecondarySaintCard a{display:inline-block;color:#d6c4a6;padding:5px 0;overflow-wrap:anywhere}",
-".aoCalSecondarySaintCard a:focus-visible,.aoCalSecondarySaintCard summary:focus-visible{outline:2px solid #bea77e;outline-offset:3px}"
+".aoCalSecondarySaintCard a:focus-visible,.aoCalSecondarySaintCard summary:focus-visible,.aoCalSecondarySaintCard button:focus-visible{outline:2px solid #bea77e;outline-offset:3px}",
+ ".aoCalSecondarySaintCard .aoCalSaintPlaceLink{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:4px 0 1px;padding:8px 12px;border:1px solid rgba(215,194,153,.26);border-radius:999px;background:transparent;color:#d6c4a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;touch-action:manipulation}.aoCalSecondarySaintCard .aoCalSaintPlaceLink:disabled{opacity:.55}"
 ].join("");
 export function renderSecondarySaintSection(cards,{language="en"}={}) {
   if(!Array.isArray(cards)||!cards.length)return "";
@@ -36,6 +37,11 @@ export function renderSecondarySaintSection(cards,{language="en"}={}) {
     let html='<article class="aoCalSecondarySaintCard"><small>'+esc(kind)+" · "+esc(scope)+"</small><h4>"+esc(c.title)+"</h4><p>"+esc(c.whyHonoured)+"</p>";
     if(c.context)html+="<p>"+esc(c.context)+"</p>";
     if(siteName)html+='<p class="aoCalSaintPlace">'+esc(loc(fr,"Associated place: ","Lieu associé : "))+esc(siteName)+"</p>";
+    // The read-model's source-reviewed crosswalk is the only source of this Place
+    // action. A place photograph is never substituted for a sacred portrait.
+    if(siteName && /^place:[A-Z]{2}:[a-z0-9-]+$/.test(c.site?.placeId||"") && /^saint\.[a-z0-9-]+$/.test(c.id||""))
+      html+='<button type="button" class="aoCalSaintPlaceLink" data-cal-secondary-place="'+esc(c.site.placeId)+'" data-cal-secondary-saint="'+esc(c.id)+'">'+
+        esc(loc(fr,"View associated place","Voir le lieu associé"))+' →</button>';
     if(source)html+='<details><summary>'+esc(loc(fr,"Further reading","Pour approfondir"))+'</summary><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">'+esc(loc(fr,"Read the source","Lire la source"))+' ↗</a></details>';
     html+="</article>";
     parts.push(html);

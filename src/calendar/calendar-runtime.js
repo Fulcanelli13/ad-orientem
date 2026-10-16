@@ -606,17 +606,42 @@ async function openCalendarScripture(button){
 function calendarScriptureStyles(){
  return `.aoCalDayScripture{margin:12px auto 0;max-width:580px;text-align:left}.aoCalDayScripture>small{display:block;color:var(--ao-text-muted,#a6a198);font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em}.aoCalDayScriptureActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.aoCalDayScriptureActions button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.22))!important;background:var(--ao-surface-1,rgba(16,24,33,.94))!important;border-radius:999px!important;color:var(--ao-text-primary,#e9e4d9)!important;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important}.aoCalDayScriptureActions button strong{font-weight:650}.aoCalDayScriptureActions button span{color:var(--ao-text-muted,#a6a198)}.aoCalDayScriptureActions button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoCalDayScriptureActions button:disabled{opacity:.55}.aoCalDayScriptureError:not([hidden]){color:#d9b99a;margin:8px 0 0;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}`;
 }
-function supplementaryDayMarkup(selected,r){
-  if(!secondarySaintModel||!r?.day?.main?.id)return "";
+function supplementaryDayCards(selected,r){
+  if(!secondarySaintModel||!r?.day?.main?.id)return [];
   try{
-    const cards=buildReviewedSanctoralCards({
+    return buildReviewedSanctoralCards({
       date:selected,language:fr()?"fr":"en",jurisdiction:"UNSPECIFIED",
       observedPrincipalId:r.day.main.id,
       observedCommemorationIds:canonical1962Commemorations(r).map(x=>x.sourceId),
       ...secondarySaintModel
     });
-    return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
-  }catch(error){console.warn("Supplementary saints projection unavailable",error);return ""}
+  }catch(error){console.warn("Supplementary saints projection unavailable",error);return []}
+}
+function supplementaryDayMarkup(selected,r){
+  const cards=supplementaryDayCards(selected,r);
+  return renderSecondarySaintSection(cards,{language:fr()?"fr":"en"});
+}
+// Revalidate date, observed 1962 day and the exact reviewed saint→Place edge.
+// Neither the browser's data attributes nor name similarity confer authority.
+async function openSecondarySaintPlace(button){
+  const current=state(),selected=String(current?.selectedDate||""),r=current?.resolution;
+  const placeId=button?.dataset?.calSecondaryPlace||"",saintId=button?.dataset?.calSecondarySaint||"";
+  if(!selected||r?.date!==selected||!r?.day?.main?.id||
+     !/^place:[A-Z]{2}:[a-z0-9-]+$/.test(placeId)||!/^saint\.[a-z0-9-]+$/.test(saintId)||
+     !supplementaryDayCards(selected,r).some(card=>card.id===saintId&&card.site?.placeId===placeId))
+    return false;
+  button.disabled=true;button.setAttribute("aria-busy","true");
+  try{
+    const routed=await globalThis.AO_APP_SHELL_V1?.navigate?.("find");
+    if(routed?.ok!==true)throw new Error("Canonical Explore route unavailable");
+    const owner=globalThis.AO_FIND_APP_V1;
+    if(typeof owner?.open!=="function")throw new Error("Explore Place owner unavailable");
+    const opened=await owner.open({lens:"shrines",view:"map",placeId,query:""});
+    if(opened!==true||owner.status?.().selectedPlaceId!==placeId)
+      throw new Error("Reviewed Place selection could not be confirmed");
+    return true;
+  }catch(error){console.error("Calendar reviewed saint Place handoff failed",error);return false}
+  finally{if(button.isConnected){button.disabled=false;button.removeAttribute("aria-busy")}}
 }
 function daySurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
@@ -1100,6 +1125,7 @@ function bind(r){
     const dayShift=event.target.closest?.("[data-cal-day-shift]");if(dayShift){event.preventDefault();void select(addDays(state()?.selectedDate||iso(new Date()),Number(dayShift.dataset.calDayShift||0)));return}
     const monthShift=event.target.closest?.("[data-cal-month-shift]");if(monthShift){event.preventDefault();const base=pickerMonthId||String(state()?.selectedDate||iso(new Date())).slice(0,7),parts=base.split("-").map(Number),d=new Date(parts[0],parts[1]-1+Number(monthShift.dataset.calMonthShift||0),1,12);pickerMonthId=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");paint();requestPickerMonth();return}
     const pick=event.target.closest?.("[data-cal-pick-date]");if(pick){event.preventDefault();calendarView="day";void select(pick.dataset.calPickDate);return}
+    const secondaryPlace=event.target.closest?.("[data-cal-secondary-place]");if(secondaryPlace){event.preventDefault();event.stopPropagation?.();void openSecondarySaintPlace(secondaryPlace);return}
     const saintDetail=event.target.closest?.("[data-cal-saint-date]");if(saintDetail){event.preventDefault();event.stopPropagation?.();void openSaintDetail(saintDetail.dataset.calSaintDate);return}
     const intelligenceRoute=event.target.closest?.("[data-cal-intelligence-route]");if(intelligenceRoute){event.preventDefault();const route=intelligenceRoute.dataset.calIntelligenceRoute||"";if(route==="mass.current"){void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("mass")).catch(error=>console.error("Calendar practice Mass route failed",error));return}if(route==="today.calendar"){calendarView="day";paint();return}if(route.startsWith("find:")){const [lens,calendarKey]=route.slice(5).split(":");void Promise.resolve(globalThis.AO_APP_SHELL_V1?.navigate?.("find")).then(result=>result?.ok===true?globalThis.AO_FIND_APP_V1?.open?.({lens:lens||"pilgrimages",view:"map",calendarKey:calendarKey||null,query:""}):false).catch(error=>console.error("Calendar Explore route failed",error));return}void Promise.resolve(globalThis.AO_MODULES?.open?.(route,{returnContext:{surface:"calendar",view:"day",date:state()?.selectedDate||null}})).catch(error=>console.error("Calendar practice route failed",error));return}
     const monthIndexDate=event.target.closest?.("[data-cal-month-index-date]");if(monthIndexDate){event.preventDefault();calendarView="day";void select(monthIndexDate.dataset.calMonthIndexDate);return}
