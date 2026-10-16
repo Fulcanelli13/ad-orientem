@@ -24,7 +24,7 @@ const roles=Object.freeze({
 });
 const labelFor=(mapping,key,fr)=>mapping[key]?.[fr?1:0]??String(key||"");
 
-export function massSourceStudyRecord(formation,stageId,sourceId){
+export function massSourceStudyRecord(formation,stageId,sourceId,{releasedPassages=[]}={}){
  if(formation?.schema!=="ao-mass-formation-campion-v1")return null;
  const stage=formation?.stages?.find(item=>item.id===stageId);
  const source=formation?.sources?.find(item=>item.id===sourceId);
@@ -35,6 +35,10 @@ export function massSourceStudyRecord(formation,stageId,sourceId){
  const canonicalUrl=sourceReferenceSafeUrl(source.canonical_url||source.url);
  return Object.freeze({stageId,stageTitle:stage.title,sourceId,sourceTitle:source.title,
    authorityType:source.authority_type,role:source.role,canonicalUrl,
+   // Caller supplies ONLY the output of the strict released-manifest adapter.
+   // Empty is always a valid fail-closed, source-metadata-only state.
+   passages:Object.freeze(releasedPassages.filter(x=>
+     x.stageId===stageId&&x.sourceId===sourceId)),
    claims:Object.freeze(claims.map(claim=>Object.freeze({
      id:claim.id,text:claim.text
    })))});
@@ -43,6 +47,17 @@ export function massSourceStudyRecord(formation,stageId,sourceId){
 export function massSourceStudyHtml(record,{french=false}={}){
  if(!record)return "";
  const source=record.canonicalUrl;
+ const passages=record.passages||[];
+ const excerptHtml=passages.length?
+    '<section class="aoMFApprovedExtracts" aria-label="'+tr(french,"Approved source extracts","Extraits documentaires approuvés")+'">'+
+      '<h2>'+tr(french,"Document extracts","Extraits du document")+'</h2>'+
+      passages.map(p=>'<article class="aoMFApprovedExtract" data-ao-mf-approved-extract="'+escape(p.id)+'">'+
+        '<p class="aoMFExtractCitation">'+escape(p.edition)+' · '+escape(p.locus)+' · '+escape(p.language.toUpperCase())+'</p>'+
+        '<blockquote lang="'+escape(p.language)+'">'+escape(p.exactText)+'</blockquote>'+
+        '<p class="aoMFExtractEvidence">'+tr(french,"Edition and rights evidence","Édition et justificatif des droits")+
+          ' · <a href="'+escape(p.editionUrl)+'" target="_blank" rel="noopener noreferrer">'+tr(french,"Source edition","Édition source")+'</a>'+
+          ' · <a href="'+escape(p.rightsEvidenceUrl)+'" target="_blank" rel="noopener noreferrer">'+tr(french,"Reproduction basis","Droits de reproduction")+'</a></p>'+
+       '</article>').join("")+'</section>':"";
  // One source action near the heading is enough. The bibliographic URL is
  // external; no unapproved full text or editorial quote is embedded.
  const sourceAccess='<section class="aoMFSourceAccess" aria-label="'+
@@ -51,8 +66,12 @@ export function massSourceStudyHtml(record,{french=false}={}){
      tr(french,"Open original document","Consulter le document original")+' ↗</a>':
      '<span class="aoMFSourceHeld">'+tr(french,"Document link held for verification","Lien documentaire en attente de vérification")+'</span>')+
    '<p>'+tr(french,
-     "Original text not reproduced. The link alone does not verify a passage, edition or reproduction rights.",
-     "Texte original non reproduit. Le lien seul ne vérifie ni passage, ni édition, ni droits de reproduction.")+'</p></section>';
+     passages.length?
+       "Only the individually approved extracts below are reproduced, not the complete document.":
+       "Original text not reproduced. The link alone does not verify a passage, edition or reproduction rights.",
+     passages.length?
+       "Seuls les extraits individuellement approuvés ci-dessous sont reproduits, et non le document intégral.":
+       "Texte original non reproduit. Le lien seul ne vérifie ni passage, ni édition, ni droits de reproduction.")+'</p></section>';
  return '<section class="aoMFSourceReading" role="dialog" aria-modal="true" aria-labelledby="ao-mf-source-title" data-ao-mf-source-reader="'+
    escape(record.sourceId)+'" data-ao-mf-source-stage="'+escape(record.stageId)+'">'+
    '<header class="aoMFSourceReadingTop"><button type="button" data-ao-mf-source-close aria-label="'+
@@ -69,7 +88,7 @@ export function massSourceStudyHtml(record,{french=false}={}){
      '<div><dt>'+tr(french,"Type","Nature")+'</dt><dd>'+escape(labelFor(types,record.authorityType,french))+'</dd></div>'+
      '<div><dt>'+tr(french,"Role in existing source registry","Rôle dans le registre existant")+'</dt><dd>'+
        escape(labelFor(roles,record.role,french))+'</dd></div>'+
-   '</dl>'+sourceAccess+
+   '</dl>'+sourceAccess+excerptHtml+
    '<section class="aoMFSourceClaimList"><h2>'+tr(french,"Claims in this lesson citing this work","Propositions de la leçon citant cet ouvrage")+
       ' · '+record.claims.length+'</h2>'+
       '<p class="aoMFSourceDisclaimer">'+tr(french,
@@ -98,6 +117,7 @@ export function massSourceStudyCss(){
  '.aoMFSourceAccess{display:flex;align-items:center;flex-wrap:wrap;gap:6px 13px;padding:12px 0 13px;border-top:1px solid var(--ao-rule,#393c40);border-bottom:1px solid var(--ao-rule,#393c40)}',
  '.aoMFSourceAccess a,.aoMFSourceReturn{display:inline-flex;align-items:center;min-height:44px;padding:10px 13px;border:1px solid var(--liturgical,#c9ad78);border-radius:9px;color:var(--liturgical,#c9ad78);background:transparent;text-decoration:none;font:.84rem/1.35 var(--ao-font-ui,system-ui)}',
  '.aoMFSourceAccess p{flex:1 1 230px;margin:0;font:.73rem/1.55 var(--ao-font-ui,system-ui)}.aoMFSourceHeld{color:var(--ao-text-muted,#a9a5a0)}',
+ '.aoMFApprovedExtracts{margin:17px 0 22px}.aoMFApprovedExtract{padding:12px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMFExtractCitation{color:var(--ao-text-muted,#a9a5a0);font:.75rem/1.4 var(--ao-font-ui,system-ui);margin:0 0 8px}.aoMFApprovedExtract blockquote{margin:0;padding:6px 0 9px 15px;border-left:2px solid var(--liturgical,#c9ad78);font:400 1.02rem/1.7 var(--ao-font-body,Georgia,serif);white-space:pre-wrap;overflow-wrap:anywhere}.aoMFExtractEvidence{margin:9px 0 0;font:.73rem/1.5 var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#a9a5a0)}.aoMFExtractEvidence a{color:var(--liturgical,#c9ad78)}',
  '.aoMFSourceClaimList{margin:19px 0 0}.aoMFSourceReading h2{font:500 1.19rem/1.34 var(--ao-font-display,Georgia,serif);margin:3px 0 7px}',
  '.aoMFSourceDisclaimer{font:.81rem/1.5 var(--ao-font-ui,system-ui);margin:0 0 9px}',
  '.aoMFSourceClaimList ol{padding-left:22px;margin:9px 0}.aoMFSourceClaimList li{padding:8px 0 11px;border-bottom:1px solid var(--ao-rule,#393c40);line-height:1.58}.aoMFSourceClaimList li p{margin:4px 0 0}',
