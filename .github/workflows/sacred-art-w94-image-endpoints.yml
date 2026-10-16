@@ -1,0 +1,32 @@
+name: Sacred Art W94 Institutional Image Source Discovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-w94-institutional-image-endpoint-probes.v1.json
+      - tools/calendar/research-sacred-art-w94-institutional-endpoints.py
+      - .github/workflows/sacred-art-w94-image-endpoints.yml
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'requests>=2.31,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Find source-page image URLs without importing media or approving rights
+        run: |
+          python -m py_compile tools/calendar/research-sacred-art-w94-institutional-endpoints.py
+          python tools/calendar/research-sacred-art-w94-institutional-endpoints.py
+      - name: Preserve image endpoint research
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w94-institutional-endpoint-leads
+          path: artifacts/sacred-art-w94-institutional-image-endpoints/
+          retention-days: 30
+          if-no-files-found: warn
