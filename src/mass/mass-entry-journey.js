@@ -226,7 +226,17 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  sources.dataset.massJourneySources="";
  sources.append(node(doc,"summary","",tr(fr,"Proper and sources","Propre et sources")),review,resolver);
  // Keep Calendar directly reachable without first expanding another disclosure.
- root.replaceChildren(title,lead,calendar,focus,before,order,sources,launch);
+ // Move the existing DOM islands through a detached fragment before clearing
+ // their former host; this preserves the 1962 Calendar/celebration identity and
+ // the six real category controls as one stable subtree.
+ const assembled=doc.createDocumentFragment();
+ assembled.append(title,lead,calendar,focus,before,order,sources,launch);
+ root.replaceChildren(assembled);
+ if(!root.querySelector("[data-full-mass-celebration]")||
+    !root.querySelector("[data-mass-calendar-context]")||
+    root.querySelectorAll("[data-full-mass-category]").length<5){
+   throw new Error("MASS_ENTRY_IDENTITY_ASSEMBLY_INCOMPLETE");
+ }
  root.dataset.massJourneyArranged="true";
  return true;
 }
