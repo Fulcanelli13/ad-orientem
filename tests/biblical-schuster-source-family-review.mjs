@@ -607,4 +607,43 @@ assert.equal(fam.counts.earlyEnglishSadlierVerseLocatedSourceChapters,14);
 assert.equal(fam.counts.earlyEnglishSadlierVerseLocatedCanonicalEvents,15);
 assert.equal(fam.counts.earlyEnglishSadlierVerseVerifiedCompleteLoci,0);
 
+// Edition-specific 1908 source narrative wins over later-edition chapter-number matches.
+const v6Evidence=fam.english1908EpisodeExpansionBatch02AndReaderV6;
+const v3Corrected=j("data/explore/biblical-schuster-1908-atlas-topic-shortlist-corrected.v3.json");
+assert.ok(v6Evidence);
+assert.equal(v6Evidence.additionalEpisodeSubjectCandidatesFromOriginalHistoricalNarrativeOCR,45);
+assert.equal(v6Evidence.additionalDistinctOriginalSourceChapters,42);
+assert.equal(v6Evidence.exactOriginalOCRBodyEvidenceTermsValidated,90);
+assert.equal(v6Evidence.editionCorrectedCandidateCount,3);
+assert.equal(v6Evidence.combinedStandaloneReaderEpisodeCandidates,65);
+assert.equal(v6Evidence.combinedOriginalChaptersHavingEpisodeCandidates,56);
+assert.equal(v6Evidence.newOriginalNarrativeSourceTextCharacterCorrections,0);
+assert.equal(v6Evidence.bibleVerseCompleteCoverageCertified,0);
+assert.equal(v6Evidence.productionReaderLinksPromoted,0);
+assert.equal(v6Evidence.sourceHistoricNarrativesCommittedToPublicGitHub,false);
+assert.equal(v6Evidence.sourceHistoricNarrativesPublishedInApp,false);
+assert.equal(v6Evidence.canonical151AtlasUnchanged,true);
+assert.equal(v6Evidence.authenticPrintPages384And385StillMissing,true);
+assert.equal(v3Corrected.candidates.length,87);
+assert.equal(v3Corrected.counts.original1908BodySupportedCandidatePairs,45);
+assert.equal(v3Corrected.counts.original1908BodySupportedDistinctChapters,42);
+assert.equal(v3Corrected.counts.laterEditionMisassignedChaptersFixed,3);
+assert.equal(v3Corrected.counts.productionAppLinksEnabled,0);
+assert.equal(v3Corrected.counts.wholeVerseCoverageCertified,0);
+assert.equal(v3Corrected.researchEvidenceArtifact.sha256.length,64);
+assert.equal(v3Corrected.localReaderArtifact.sha256.length,64);
+assert.ok(v3Corrected.candidates.every(c=>canon.events.some(e=>e.eventKey===c.atlasEventKey)));
+const corrected = v3Corrected.candidates.filter(c=>c.sourceEditionMismatch);
+assert.equal(corrected.length,3);
+assert.deepEqual(corrected.map(x=>[x.sourceEditionMismatch.wrongHistoricalChapterId,x.chapterId]),[
+ ["SCHUSTER-EN-1908-OT-LXXV","SCHUSTER-EN-1908-OT-LXXIV"],
+ ["SCHUSTER-EN-1908-OT-LXXVII","SCHUSTER-EN-1908-OT-LXXVI"],
+ ["SCHUSTER-EN-1908-OT-LXXVIII","SCHUSTER-EN-1908-OT-LXXVII"]
+]);
+assert.ok(v3Corrected.candidates.every(c=>!c.original1908BodyEvidence||c.original1908BodyEvidence.tokens.length===2));
+assert.equal(new Set(v3Corrected.candidates.filter(c=>c.original1908BodyEvidence).map(x=>x.chapterId)).size,42);
+assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderV6EpisodeCandidates,65);
+assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderV6EpisodeChapters,56);
+assert.equal(fam.counts.earlyEnglishSadlierNewVerifiedFullVerseLinks,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
