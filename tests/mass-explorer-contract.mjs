@@ -36,6 +36,7 @@ assert.equal(catalog.byBlock.size,sung.blocks.length,"no Sung source block omitt
 assert.equal(catalog.byBlock.size,96,"pinned Sung source corpus contract");
 assert.equal(catalog.source,"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT");
 assert.equal(catalog.crosswalkStatus,"P0_PENDING");
+assert.equal(catalog.approvedStudyByBlock.size,0,"Historical drafts cannot automatically publish new study panels");
 const map=projectMassMap(catalog);
 assert.equal(map.momentCount,32);
 assert.equal(map.blockCount,96);
