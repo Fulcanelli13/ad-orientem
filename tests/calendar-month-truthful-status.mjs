@@ -63,7 +63,7 @@ for(const marker of [
   "Why this commemoration is shown",
   "Pourquoi cette commémoraison figure ici",
   "previousRubricSourcesOpen",
-])assert.match(runtime,new RegExp(marker.replace(/[.*+?^$\u007b\u007d()|[\]\\]/g,"\\const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");")),
+])assert.ok(runtime.includes(marker),
   "Calendar lost a required rubrical source-bound UI contract: "+marker);
 
 // Calendar Day is liturgical information, not a progress/achievement dashboard.
