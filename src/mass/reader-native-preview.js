@@ -2318,7 +2318,7 @@ export async function mountNativeReaderPreview({
     if((changed || !activeCueId) && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
       const firstSourceCue=(visibleCard.paragraphs??[])
         .flatMap(paragraph=>paragraph.sourceCueIds??[])
-        .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)))??null;
+        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??null;
       activeCueId=firstSourceCue;
       if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
     }
@@ -2333,7 +2333,7 @@ export async function mountNativeReaderPreview({
         ? (()=>{
           const first=(visibleCard.paragraphs??[])
             .flatMap(row=>row.sourceCueIds??[])
-            .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)));
+            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
           const sourced=first&&ready.cueState.supported
             ? ready.cueState.project(first):null;
           if(!sourced?.supported)return null;
