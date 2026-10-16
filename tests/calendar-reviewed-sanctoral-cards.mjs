@@ -19,17 +19,17 @@ const groupIds=new Set(census.groups.map(x=>"canon-group."+x.id));
 const places=new Set(geography.places.map(x=>x.place_id));
 const mediaPaths=new Set(media.items.filter(x=>x.status==="APPROVED" &&
   x.rights_verified&&x.subject_verified&&x.crop_reviewed).map(x=>x.asset_path));
-assert.equal(registry.observances.length,16);
-assert.equal(registry.observances.filter(x=>x.universalStatus==="CERTIFIED_BY_DECREE").length,7);
-assert.equal(registry.observances.filter(x=>x.authorityScope.startsWith("USCCB_")).length,9);
-assert.equal(new Set(registry.observances.map(x=>x.subjectId+":"+x.monthDay)).size,16);
+assert.equal(registry.observances.length,18);
+assert.equal(registry.observances.filter(x=>x.universalStatus==="CERTIFIED_BY_DECREE").length,9);
+assert.equal(registry.observances.filter(x=>x.authorityScope.startsWith("USCCB_")).length,8);
+assert.equal(new Set(registry.observances.map(x=>x.subjectId+":"+x.monthDay)).size,18);
 for(const r of registry.observances){
  assert.ok(byId.has(r.subjectId)||doctorIds.has(r.subjectId)||groupIds.has(r.subjectId),r.subjectId);
  assert.match(r.monthDay,/^\d\d-\d\d$/);
  assert.ok(r.sourceUrl.startsWith("https://"));
  assert.equal(r.mass1962Effect,"NONE");
  assert.equal(r.approved1962FormularyId,null);
- assert.ok(["GENERAL_ROMAN_VATICAN_DECREE","USCCB_2026_CALENDAR_WITNESS","USCCB_HISTORIC_CALENDAR_WITNESS"].includes(r.authorityScope));
+ assert.ok(["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT","USCCB_2026_CALENDAR_WITNESS","USCCB_HISTORIC_CALENDAR_WITNESS"].includes(r.authorityScope));
  if(r.universalStatus==="CERTIFIED_BY_DECREE"){
    assert.equal(r.authorityScope,"GENERAL_ROMAN_VATICAN_DECREE");
    assert.match(r.publishedOn,/^20\d\d-\d\d-\d\d$/);
@@ -56,6 +56,12 @@ assert.deepEqual(get("2026-10-05").map(x=>x.id),["saint.maria-faustyna-kowalska"
 assert.deepEqual(get("2026-05-29").map(x=>x.id),["saint.paul-vi"]);
 assert.deepEqual(get("2018-05-29").map(x=>x.id),[],"Paul VI's memorial is not backdated before promulgation");
 assert.deepEqual(get("2019-10-05").map(x=>x.id),[],"Faustina's memorial is not backdated before promulgation");
+assert.deepEqual(get("2026-10-11").map(x=>x.id),["saint.john-xxiii"]);
+assert.deepEqual(get("2026-10-22").map(x=>x.id),["saint.john-paul-ii"]);
+assert.deepEqual(get("2013-10-11").map(x=>x.id),[],"Before 2014 canonisation/inscription");
+assert.deepEqual(get("2013-10-22").map(x=>x.id),[],"Before 2014 canonisation/inscription");
+assert.deepEqual(get("2026-09-23").map(x=>x.id),["saint.pio-pietrelcina"]);
+assert.deepEqual(get("2001-09-23").map(x=>x.id),[],"Before 2002 canonisation and announcement");
 assert.deepEqual(get("2026-10-09").map(x=>x.id),["saint.john-henry-newman"]);
 assert.deepEqual(get("2025-10-09").map(x=>x.id),[]);
 assert.deepEqual(get("2026-09-05").map(x=>x.id),["saint.teresa-calcutta"]);
@@ -84,7 +90,8 @@ assert.equal(lis.id,"saint.therese-lisieux");
 assert.equal(lis.site.placeId,"place:FR:basilique-sainte-therese-lisieux");
 assert.equal(lis.site.approvedSitePhotoPath,"assets/approved/place-media/FR-basilique-sainte-therese-lisieux.webp");
 assert.ok(lis.whyHonoured.includes("petite voie"));
-const pio=get("2026-09-23",{jurisdiction:"US"})[0];
+const pio=get("2026-09-23")[0];
+assert.equal(pio.sourceScope,"GENERAL_ROMAN_PAPAL_ANNOUNCEMENT");
 assert.equal(pio.site.placeId,"place:IT:santuario-san-pio-rotondo");
 assert.equal(pio.site.approvedSitePhotoPath,null);
 assert.equal(pio.massSelectionAuthority,"NONE");
@@ -106,4 +113,4 @@ for(const c of [...get("2026-10-09"),...get("2026-09-20",{jurisdiction:"US"}),..
  assert.ok(Object.isFrozen(c));
 }
 assert.throws(()=>get("2026-02-30"),TypeError);
-console.log("Living sanctoral reviewed cards: PASS (16 date witnesses; seven universal decrees, 5 real place IDs, two approved *site photos*, no Mass/artwork substitution)");
+console.log("Living sanctoral reviewed cards: PASS (18 date witnesses; nine formal decrees plus one papal announcement, 5 real place IDs, two approved *site photos*, no Mass/artwork substitution)");
