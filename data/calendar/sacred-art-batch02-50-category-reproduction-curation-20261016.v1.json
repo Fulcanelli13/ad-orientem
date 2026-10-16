@@ -21,11 +21,13 @@
     "subjectsNoFive": 21,
     "fiveStarPaintingRecords": 39,
     "researchOptions": 34,
-    "visibleSourceFileCount": 49,
+    "visibleSourceFileCount": 58,
     "fiveStarOriginalsWith2PlusPhotos": 3,
     "fiveStarOriginalsWithoutPhoto": 5,
-    "categoriesWithNoImage": 18,
-    "categoriesWith2PlusDistinctPaintingOptions": 15
+    "categoriesWithNoImage": 12,
+    "categoriesWith2PlusDistinctPaintingOptions": 15,
+    "categoriesWithImage": 38,
+    "reviewableNewPaintingOptions": 15
   },
   "policies": {
     "five": "Only earlier human five-star works displayed when any apply to this category. Old scores remain immutable.",
@@ -1521,7 +1523,18 @@
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/437542",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Saint Teresa of Ávila Interceding for Souls in Purgatory MET DT206354.jpg",
+              "label": "The Met painting original",
+              "pixels": "2857 × 3722",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": 3094,
             "height": 4000,
@@ -1530,7 +1543,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         },
         {
           "paintingId": "met-747199",
@@ -1890,7 +1903,28 @@
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/437457",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "The Baptism of Christ MET DT9354.jpg",
+              "label": "The Met frontal artwork image",
+              "pixels": "",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_DT9354.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_DT9354.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_DT9354.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "The Baptism of Christ MET 1981.186 1.jpg",
+              "label": "Alternate in-frame museum photograph",
+              "pixels": "5307 × 3684",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_1981.186_1.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_1981.186_1.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_1981.186_1.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": null,
             "height": null,
@@ -1899,7 +1933,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         },
         {
           "paintingId": "met-435755",
@@ -1948,7 +1982,18 @@
           "sourceUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Juan de Flandes, The Temptation of Christ, c. 1500-1504, NGA 50726.jpg",
+              "label": "National Gallery of Art CC0 image",
+              "pixels": "3014 × 4000",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": 3087,
             "height": 4096,
@@ -1957,7 +2002,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         }
       ],
       "leads": [],
@@ -2020,7 +2065,28 @@
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/436801",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "The Marriage Feast at Cana MET DT1459.jpg",
+              "label": "Met original JPEG",
+              "pixels": "2851 × 3722",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Marriage_Feast_at_Cana_MET_DT1459.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Marriage_Feast_at_Cana_MET_DT1459.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Marriage_Feast_at_Cana_MET_DT1459.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "Juan de Flandes - The Marriage Feast at Cana - WGA12055.jpg",
+              "label": "Independent painting reproduction",
+              "pixels": "2693 × 3601",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": 2851,
             "height": 3722,
@@ -2029,7 +2095,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         }
       ],
       "leads": [],
@@ -2136,7 +2202,18 @@
           "sourceUrl": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Netherlandish 16th Century, The Healing of the Paralytic, c. 1560-1590, NGA 12205.jpg",
+              "label": "National Gallery of Art CC0 image",
+              "pixels": "2222 × 3147",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": 2892,
             "height": 4096,
@@ -2145,7 +2222,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         }
       ],
       "leads": [],
@@ -2483,7 +2560,28 @@
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "The Supper at Emmaus MET DP120945.jpg",
+              "label": "Met open-access original",
+              "pixels": "3538 × 3303",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Supper_at_Emmaus_MET_DP120945.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Supper_at_Emmaus_MET_DP120945.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Supper_at_Emmaus_MET_DP120945.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            },
+            {
+              "id": "La cena de Emaús, by Diego Velázquez.jpg",
+              "label": "Independent open reproduction",
+              "pixels": "3479 × 3261",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg?width=950",
+              "verification": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS",
+              "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT"
+            }
+          ],
           "acquisition": {
             "width": 3538,
             "height": 3303,
@@ -2492,7 +2590,7 @@
           },
           "rights": "CC0",
           "releaseApproved": false,
-          "reviewableArtwork": false
+          "reviewableArtwork": true
         },
         {
           "paintingId": "cma-112626",
