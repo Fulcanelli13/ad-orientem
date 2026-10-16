@@ -1,0 +1,87 @@
+{
+  "schema": "AO_SACRED_ART_W93_HARD_GAP_SOURCE_IMAGES_V1",
+  "created": "2026-10-16",
+  "researchOnly": true,
+  "notPublication": true,
+  "strictCoverageBefore": 146,
+  "policy": [
+    "No score changes, no alternate physical original substitution",
+    "Source byte download is distinct from complete painted-surface verification",
+    "Noncommercial or unclear rights cannot be promoted for distribution",
+    "In-situ original photo is not the same as a clean painting master"
+  ],
+  "items": [
+    {
+      "key": "w93-51-louvre-2003",
+      "categoryIndex": 51,
+      "subject": "Saint Louis IX",
+      "workId": "W10-009",
+      "identity": "MI 1391/Inv 520, Louvre-owned original deposited Nancy",
+      "objectPage": "https://collections.louvre.fr/ark:/53355/cl010055469",
+      "imageUrl": "https://collections.louvre.fr/media/cache/original/0000000021/0000055469/0000041993_OG.JPG",
+      "basis": "Official Louvre JSON image[0]",
+      "legalStatus": "MUSEUM_PHOTOGRAPH_UNCLEARED",
+      "expectedSurfaceAspect": 0.84375,
+      "expectedResolutionMin": 600,
+      "automaticFullSurfaceApproval": false,
+      "attributionNote": "Nancy attributes to Fragonard; owning Louvre currently lists Anonymous French school with historic Le Moyne and Doyen associations"
+    },
+    {
+      "key": "w93-51-louvre-2021",
+      "categoryIndex": 51,
+      "subject": "Saint Louis IX",
+      "workId": "W10-009",
+      "identity": "MI 1391/Inv 520, Louvre-owned original deposited Nancy",
+      "objectPage": "https://collections.louvre.fr/ark:/53355/cl010055469",
+      "imageUrl": "https://collections.louvre.fr/media/cache/large/0000000021/0000055469/0001115586_OG.JPG",
+      "basis": "Official Louvre JSON image[1]",
+      "legalStatus": "MUSEUM_PHOTOGRAPH_UNCLEARED",
+      "expectedSurfaceAspect": 0.84375,
+      "expectedResolutionMin": 600,
+      "automaticFullSurfaceApproval": false
+    },
+    {
+      "key": "w93-81-roma-fc04",
+      "categoryIndex": 81,
+      "subject": "Our Lady of Perpetual Help",
+      "workId": "B02-HELP-ICON-BYZ",
+      "identity": "Original Roman icon at Sant'Alfonso all'Esquilino; in-situ photo",
+      "objectPage": "https://commons.wikimedia.org/wiki/File:Sant%27Alfonso_all%27Esquilino_-Roma_fc04.jpg",
+      "commonsFile": "Sant'Alfonso all'Esquilino -Roma fc04.jpg",
+      "basis": "Wikimedia Commons, photo of original icon at its Roman shrine",
+      "legalStatus": "CC BY-SA 4.0 PHOTOGRAPH; attribution and share-alike required",
+      "expectedResolutionMin": 1000,
+      "automaticFullSurfaceApproval": false,
+      "inSituNotPaintingMaster": true
+    },
+    {
+      "key": "w93-81-roma-fc06",
+      "categoryIndex": 81,
+      "subject": "Our Lady of Perpetual Help",
+      "workId": "B02-HELP-ICON-BYZ",
+      "identity": "Original Roman icon at Sant'Alfonso all'Esquilino; in-situ photo",
+      "objectPage": "https://commons.wikimedia.org/wiki/File:Sant%27Alfonso_all%27Esquilino_-Roma_fc06.jpg",
+      "commonsFile": "Sant'Alfonso all'Esquilino -Roma fc06.jpg",
+      "basis": "Wikimedia Commons, photo of original icon at its Roman shrine",
+      "legalStatus": "CC BY-SA 4.0 PHOTOGRAPH; attribution and share-alike required",
+      "expectedResolutionMin": 1000,
+      "automaticFullSurfaceApproval": false,
+      "inSituNotPaintingMaster": true
+    },
+    {
+      "key": "w93-129-gallerix",
+      "categoryIndex": 129,
+      "subject": "Station 14: Burial of Christ",
+      "workId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "identity": "Giandomenico Tiepolo, Prado P000362, 1772, 124 x 144 cm",
+      "objectPage": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "secondarySourcePage": "https://gallerix.org/storeroom/720112932/N/1645168634/",
+      "imageUrl": "https://gallerix.org/pic/_UNK/720112932/1645168634.jpeg",
+      "basis": "Secondary reproduction advertised as 2646x2291; not a license grant",
+      "legalStatus": "UNVERIFIED REUSE RIGHTS: RESEARCH-ONLY",
+      "expectedSurfaceAspect": 1.1612903225806452,
+      "expectedResolutionMin": 1200,
+      "automaticFullSurfaceApproval": false
+    }
+  ]
+}
