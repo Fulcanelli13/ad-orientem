@@ -1,0 +1,66 @@
+{
+  "schema": "AO_SACRED_ART_FRAME_AND_IMAGE_QUALITY_POLICY_V1",
+  "date": "2026-10-16",
+  "reason": "Curator rated multiple otherwise excellent reproductions 4★ solely because ornamental external physical frames were visible; do not conflate frame trim with artistic or image fidelity quality.",
+  "priority": "APPLY_TO_NEXT_UNIFIED_REVIEW_NOT_TO_IMMUTABLE_HISTORIC_EXPORTS",
+  "dimensions": {
+    "artisticSuitability": {
+      "scale": "0..5",
+      "meaning": "Aesthetic and subject appropriateness of the physical work; does not change because frame included in source photograph.",
+      "sourceLockedFiveStarRatingsUntouched": true
+    },
+    "photoFidelity": {
+      "scale": "0..5",
+      "criteria": [
+        "colour fidelity",
+        "exposure/dynamic range",
+        "resolution/fine detail",
+        "focus and geometrical faithfulness",
+        "genuine source quality"
+      ],
+      "frameVisiblePenalty": false,
+      "example": "5★ if otherwise excellent even when external physical frame surrounds painted surface; attach trim-needed flag."
+    },
+    "framingInstruction": {
+      "choices": {
+        "frame": "External decorative frame included: trim in app review derivative only",
+        "clean": "No external frame: full painted surface already visible",
+        "painted": "Painted border/inscription physically part of original composition: retain",
+        "straighten": "Photo keystone/perspective alignment to correct on derivative",
+        "source": "Better original master actually required beyond normal frame removal"
+      },
+      "scoreIndependent": true,
+      "default": "UNREVIEWED",
+      "sourceMasterPreserved": true
+    },
+    "photoSelection": {
+      "allowMultipleKeptVersions": true,
+      "primaryPhotoByPhysicalOriginal": true,
+      "qualityFiveDoesNotImplyPrimary": true,
+      "oneCanonicalPhysicalOriginalAcrossModules": true
+    }
+  },
+  "quality4LegacyPolicy": {
+    "existingFourScoreCount": "35 judgments across 33 original IDs (source inventory, before new annotations)",
+    "reinterpretation": "Do not bulk-upgrade rating. Mark frame as removable if visually confirmed; optionally re-rate photo 5 when fidelity otherwise excellent; keep full source master and provenance.",
+    "needSeparateSourceIf": [
+      "source resolution truly low",
+      "blur",
+      "colour distortion",
+      "glare obstructs painted surface",
+      "extreme perspective/cropping destroys composition"
+    ],
+    "editorialOverride": "No automatic inference that every historical 4★ meant frame-only"
+  },
+  "cropPipeline": {
+    "method": "Non-destructive derived copy with source-original SHA, normalized crop rectangle and derivative SHA",
+    "rules": [
+      "Never cut painted surface, signatures, relevant inscription or painted border",
+      "Do not equate an overlay or PDF border with external physical frame without visual check",
+      "Respect original aspect ratio unless perspective correction indicated",
+      "Store coordinates only after manual/visual confirmation, not guessed automatic cropping",
+      "Keep original file, rights terms, photographer credit and source URL"
+    ]
+  },
+  "deploymentGate": "No production asset release or proposed 4★ upgrade until exact object identity, image master rights and visual crop QA pass."
+}
