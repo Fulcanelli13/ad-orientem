@@ -92,6 +92,27 @@ try{
   await page.locator("[data-canon-select]").selectOption("AO.SM.B057");
   assert.equal(await page.locator('[data-ao-candidate-block="AO.SM.B057"]').count(),1);
   assert.equal(await page.locator("[data-ao-candidate-section]").count(),4);
+  // Decisions stay local to the review document; they never touch the release manifest.
+  await page.locator('[data-canon-decision="approve"]').click();
+  assert.match(await page.locator('[data-canon-progress]').innerText(),/1\/8/);
+  await page.locator("[data-canon-select]").selectOption("AO.SM.B055");
+  await page.locator('[data-canon-decision="revise"]').click();
+  await page.locator('[data-canon-note]').fill("Please recheck one wording choice");
+  await page.locator('[data-canon-note]').blur();
+  await page.locator("[data-canon-select]").selectOption("AO.SM.B057");
+  assert.equal(await page.locator('[data-canon-decision="approve"]').getAttribute("aria-pressed"),"true");
+  if(width===390){
+   const pending=page.waitForEvent("download");
+   await page.locator("[data-canon-export]").click();
+   const download=await pending;
+   const payload=JSON.parse(readFileSync(await download.path(),"utf8"));
+   assert.equal(payload.schema,"ao-mass-explorer-canon-owner-decisions-v1");
+   assert.equal(payload.decisions.length,8);
+   assert.equal(payload.scope,"EDITORIAL_WORDING_ONLY_NOT_PUBLICATION");
+   assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.07").decision,"approve");
+   assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.05").decision,"revise");
+   assert.match(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.05").note,/recheck/);
+  }
   const overflow=await page.evaluate(()=>{const root=document.getElementById("ao-mass-explorer-root");return root.scrollWidth-root.clientWidth});
   assert.ok(overflow<=2,"Horizontal overflow at "+width+": "+overflow);
   assert.deepEqual(errors,[],"Client errors at "+width+"px");
