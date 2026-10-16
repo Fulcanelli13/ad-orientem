@@ -82,15 +82,15 @@ Priority pathways:
 
 ## 5. Cross-link findings from the existing Apostolate corpus
 
-**72 scenario-level handoffs** are declared across 36 Apostolate scenarios. These are links in source, not 72 successfully opened journeys. Their source-level categories are: **56** declared ordinary targets awaiting end-to-end verification, **10** Mass-related targets deferred to the final Mass phase, and **six problematic handoffs**:
+**72 scenario-level handoffs** are declared across 36 Apostolate scenarios. These are links in source, not 72 successfully opened journeys. The historical six findings have been reconciled against canonical source on **16 October 2026**: four Prayer targets now point to existing routes, while two Calendar router exclusions remain. None of the six has independently passed an exact-origin phone return journey.
 
-| Scenario | Target | Finding |
+| Scenario | Current target | Current status |
 |---|---|---|
-| `AQ01` | `pray.marian` | No matching visible canonical Prayer module ID among the 24 public entrances; reconcile exact intended existing module before exposing |
-| `AQ07`, `HS05`, `HS06` | `pray.holy_souls` | Same direct-route discrepancy; a suitable existing Prayer Library item may be preferable, but inspect canonical prayer keys first |
-| `DV04`, `DV05` | `calendar` | The Apostolate handler currently allows `learn`, `pray`, `find`, `mass` but excludes `calendar` and rejects it |
+| `AQ01` | `pray.rosary` | Corrected source target; phone return not yet verified |
+| `AQ07`, `HS05`, `HS06` | `pray.eternal_rest` | Corrected source targets; phone return not yet verified |
+| `DV04`, `DV05` | `calendar` | Still blocked: Apostolate handler permits `learn`, `pray`, `find`, `mass` but not `calendar` |
 
-An unlisted `pray.*` target is a **source-level reconciliation finding**, not a declaration that its intended devotional text is missing. Do not manufacture replacement text or an extra Prayer module. The two Calendar transitions are **code-level router exclusions**.
+The four corrected Prayer links do **not** warrant new devotional text or another module. The two Calendar transitions are still **code-level router exclusions** and must be tested against exact-source ownership before activation.
 
 ## 6. Guide policy by reader type
 
@@ -113,7 +113,7 @@ PRAY: one salient 'Pray now' focus and one featured devotion, then a compact fou
 
 ## 8. Implementation phases and acceptance gates
 
-1. **Link repair and ownership:** solve six identified Apostolate handoffs, add precise existing Prayer Library identities rather than creating modules. Complete 24/24, 15/15, 36/36 reachability (source and actual phone) and exhaustive outbound scenario checks. Route fixes require tests.
+1. **Link repair and ownership:** verify four already-corrected Prayer handoffs on phone and repair the two outstanding Calendar router blocks without inventing modules. Complete 24/24, 15/15, 36/36 reachability (source and actual phone) and exhaustive outbound scenario checks. Route fixes require tests.
 2. **Pray IA migration:** change only the hub's presentation grouping/search, keeping the existing player components, saved prayer states, 24 IDs, source provenance and EN/FR copy.
 3. **Formation IA migration:** implement Learn/Questions/Practice projections over current 15 modules and Apostolate. Make approved content-only index searchable; no APOL/CR release; keep retired aliases.
 4. **Content-level linking and guide refinement:** claim-verified links for catechism, sacraments, spiritual life, confession, Marian prayer and Apostolate; expand guide material only after existing audit reconciliation.
