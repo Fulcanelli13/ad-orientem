@@ -2452,6 +2452,7 @@ export function createReaderDomAdapter({
         massForm:"LOW_1962",activeCueId,allowResearchPreview:true,
         applicableConditionalGuideIds:lowGuideResearchPreview.applicableConditionalGuideIds,
         selectedObservationalGuideId:moment?.selectedObservationalLowGuideId??null,
+        lowCorpus:lowGuideResearchPreview.lowCorpus??null,
       });
       // An absent/conditional-disabled stage is disabled, not represented by
       // an unrelated existing Sung Guide just because macro numbers coincide.
