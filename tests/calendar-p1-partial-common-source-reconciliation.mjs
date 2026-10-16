@@ -41,8 +41,9 @@ assert.ok(woman.borrowedSections.some(x=>x.language==="fr"&&x.section==="Communi
 assert.ok(!woman.borrowedSections.some(x=>x.section==="Lectio"));
 let altered=clone(c7);altered.la.map.set("Introitus",["False Latin identity for unknown saint"]);
 const held=reconcile({targetPath:"Commune/C7",target:altered,base:femaleDonor});
-assert.equal(held.status,"PARTIAL_SOURCE_RECOVERY_VERIFIED");
-assert.ok(!held.borrowedSections.some(x=>x.section==="Introitus"));
+assert.equal(held.status,"HELD");
+assert.equal(held.reason,"INHERITED_MASS_CONFLICT");
+assert.equal(held.section,"la:Introitus");
 assert.equal(reconcile({targetPath:"Commune/NOT_REAL",target,base}).reason,"UNKNOWN_COMMON_VARIANT");
 assert.equal(reconcile({targetPath:"Commune/C3ap",target,base,orations:null}).reason,"MISSING_SOURCE_OWNER");
 console.log("P1 partial Commons PASS: C3ap shared Easter Mass plus 3 exact Latin orations; C7 7 parity-gated borrowed translations, source gaps remain HELD.");
