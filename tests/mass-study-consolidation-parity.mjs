@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildMassExplorerCatalog,massExplorerMomentHtml} from "../src/learn/mass-explorer.js";
 import {massMapHtml,projectMassMap} from "../src/learn/mass-map.js";
-import {massMomentExistingGuideSections,massMomentStudyDetailHtml,massMomentStudyLinks,massMomentStudyListHtml} from "../src/learn/mass-moments-study.js";
+import {massMomentExistingGuideSections,massMomentStudyDetailHtml,massMomentStudyLinks,massMomentsStudyListHtml} from "../src/learn/mass-moments-study.js";
 import {massStudyStages,massStudyPathsHtml} from "../src/learn/mass-study-paths.js";
 import {searchDiscovery} from "../src/learn/discovery.js";
 import {LEARN_LAYOUT} from "../src/learn/presentation.js";
@@ -35,7 +35,7 @@ const mapHtml=massMapHtml(catalog,{studyHtml:massStudyPathsHtml(catalog.formatio
 for(const id of stageIds)assert.ok(mapHtml.includes('data-ao-mx-stage="'+id+'"'),"Unreachable original Formation lesson "+id);
 assert.equal((mapHtml.match(/data-ao-mx-map-block="/g)||[]).length,96);
 assert.equal((mapHtml.match(/data-ao-mx-moment="/g)||[]).length,32);
-const legacy=massMomentStudyListHtml(guide);
+const legacy=massMomentsStudyListHtml(guide);
 assert.equal((legacy.match(/data-ao-mf-moment="/g)||[]).length,32,
  "Research-only original Guide index must remain addressable");
 for(const key of catalog.sequence){
