@@ -26,6 +26,7 @@ export function createSettingsOwner(win=globalThis){
   const donor=createSettingsDonorState(win);
   win.AO_SETTINGS_DONOR_V4359=donor;
   let route="/settings",routeHistory=[],returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
+  let checkingUpdates=false,updateCheck="idle";
 
   const root=()=>win?.document?.getElementById?.("ao-settings-modular-root")||null;
   const isLive=()=>Boolean(liveGuards()?.status?.().live);
@@ -48,14 +49,14 @@ export function createSettingsOwner(win=globalThis){
     // the *same preference* rather than silently dumping the user onto body.
     const previous=win.document?.activeElement;
     const focusFields=["prefPath","prefValue","prefToggle","prefSelect","settingsRoute",
-      "settingsBack","settingsClose","profileId","profileKey","profileName"];
+      "settingsBack","settingsClose","settingsCheckUpdate","profileId","profileKey","profileName"];
     const activeFields=previous&&r.contains(previous)
       ?focusFields.filter(key=>previous.dataset?.[key]!==undefined)
         .map(key=>[key,previous.dataset[key]]):[];
     r.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";
     r.dataset.aoSettingsPresentationOwner=SETTINGS_PRESENTATION_VERSION;
     r.dataset.aoSettingsRoute=route;
-    r.innerHTML=renderSettingsToString(win,{route,live:isLive()});
+    r.innerHTML=renderSettingsToString(win,{route,live:isLive(),updateCheck:checkingUpdates?"checking":updateCheck});
     if(activeFields.length){
       const candidate=[...r.querySelectorAll("button,input,select,textarea")]
         .find(el=>activeFields.every(([key,value])=>el.dataset?.[key]===value));
@@ -148,6 +149,20 @@ export function createSettingsOwner(win=globalThis){
       if(button.dataset.settingsClose!==undefined){event.preventDefault();close();return;}
       if(button.dataset.settingsBack!==undefined){event.preventDefault();back();return;}
       if(button.dataset.settingsRoute){event.preventDefault();go(button.dataset.settingsRoute);return;}
+      if(button.dataset.settingsCheckUpdate!==undefined){
+        event.preventDefault();
+        if(checkingUpdates)return;
+        const updater=win?.AO_OFFLINE_APP_V1;
+        if(!updater?.status?.supported||!updater?.status?.registered)return;
+        checkingUpdates=true;updateCheck="idle";paint();
+        Promise.resolve().then(()=>updater.check()).then(result=>{
+          updateCheck=result?.ok?(result?.updateAvailable?"ready":"current"):"error";
+        }).catch(()=>{updateCheck="error";}).finally(()=>{
+          checkingUpdates=false;
+          if(root()?.dataset?.aoSettingsRoute==="/settings/about-sources")paint();
+        });
+        return;
+      }
       if(button.dataset.prefPath&&button.dataset.prefValue!==undefined){event.preventDefault();mutate(()=>donor.setPath(button.dataset.prefPath,button.dataset.prefValue));return;}
       if(button.dataset.prefToggle){event.preventDefault();mutate(()=>donor.togglePath(button.dataset.prefToggle));return;}
       if(button.dataset.profileDefault!==undefined){event.preventDefault();mutate(()=>donor.setPath("mass.defaultProfileId",null));return;}
