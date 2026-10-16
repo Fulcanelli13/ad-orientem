@@ -1,0 +1,65 @@
+{
+  "schema": "AO_SACRED_ART_W97_EXACT_REPRODUCTION_CANDIDATES_V1",
+  "created": "2026-10-16",
+  "ownerRepo": "Fulcanelli13/ad-orientem",
+  "researchOnly": true,
+  "strictAcquisitionCoveragePrior": "146/168",
+  "doNotTouch": [
+    "historical ratings",
+    "subject selections",
+    "public app",
+    "full picture review UI"
+  ],
+  "items": [
+    {
+      "categoryIndex": 145,
+      "subject": "Melchizedek Blesses Abram",
+      "registryWorkId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+      "physicalObject": {
+        "artist": "Peter Paul Rubens",
+        "title": "The Meeting of Abraham and Melchizedek",
+        "museum": "National Gallery of Art, Washington",
+        "accession": "1958.4.1",
+        "date": "c.1626",
+        "dimensions_cm": [
+          82.4,
+          65.5
+        ]
+      },
+      "commonsFile": "Sir Peter Paul Rubens, The Meeting of Abraham and Melchizedek, c. 1626, NGA 45640.jpg",
+      "officialPage": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "expectedWidthOverHeight": 1.2580152671755727,
+      "sourceRights": "NGA CC0 open access, Commons CC0",
+      "rightsStatus": "CC0_MUSEUM_SOURCE",
+      "sourceIdentityStatus": "EXACT_NGA_OBJECT_NOT_YET_RECONCILED_WITH_UNACCESSIONED_PREVIOUS_CURATOR_RECORD"
+    },
+    {
+      "categoryIndex": 142,
+      "subject": "Cain and Abel",
+      "registryWorkId": "ART-eter-aul-ubens-ain-and-bel",
+      "physicalObject": {
+        "artist": "Peter Paul Rubens",
+        "title": "Cain Slaying Abel",
+        "museum": "The Courtauld Gallery, London",
+        "accession": "P.1978.PG.353",
+        "date": "1608–1609",
+        "dimensions_cm": [
+          94.2,
+          131.2
+        ]
+      },
+      "commonsFile": "Peter Paul Rubens - Cain slaying Abel (Courtauld Institute).jpg",
+      "officialPage": "https://gallerycollections.courtauld.ac.uk/object-p-1978-pg-353",
+      "expectedWidthOverHeight": 0.7179878048780489,
+      "sourceRights": "Commons PD-Art claims jurisdiction-dependent, Courtauld collection photograph formally CC BY-NC 4.0",
+      "rightsStatus": "RIGHTS_CONFLICT_NONCOMMERCIAL_MUSEUM_ONLY",
+      "sourceIdentityStatus": "EXACT_COURTAULD_OBJECT_NOT_YET_RECONCILED_WITH_UNACCESSIONED_PREVIOUS_CURATOR_RECORD"
+    }
+  ],
+  "invariants": [
+    "Original file must be downloaded and SHA verified",
+    "Image aspect and size alone do not establish complete painted-surface proof",
+    "Do not present commercial-reuse approval for any Courtauld source",
+    "Do not count as closed 22-gap until original identity, art selection and rights reconciled"
+  ]
+}
