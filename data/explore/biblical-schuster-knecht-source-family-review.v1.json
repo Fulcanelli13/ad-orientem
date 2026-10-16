@@ -119,6 +119,27 @@
       "originalWordsPrintCollated": false,
       "importEligibility": "HOLD_ORIGINAL_PAGE_IMAGES_AND_TRANSLATOR_RIGHTS_AND_CHAR_BY_CHAR_SOURCE_COLLATION",
       "sourceRelationship": "SAME_SCHOOL_BIBLE_HISTORY_WORK_FAMILY_WITH_1925_EN_AND_1887_FR_BUT_DIFFERENT_TRANSLATION_EDITION_NOT_VERBATIM_SUBSTITUTABLE"
+    },
+    {
+      "id": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+      "language": "en",
+      "workId": "WORK-SCHUSTER-BIBLE-HISTORY",
+      "edition": "Undated 11th English edition, revised by Mrs J. Sadlier and further improved by clergymen; do not assign exact publication year from unrelated 1896 catalogue",
+      "witnessKind": "HISTORICAL_ENGLISH_EDITION_SCANNED_PDF_IDENTIFIED_OCR_INDEXED_NOT_VISUALLY_COLLATED",
+      "sourcePdfUrl": "https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf",
+      "indexedTextView": "https://www.yumpu.com/en/document/view/11515293/illustrated-bible-history-catholic-apologetics-information",
+      "sourcePdfContentBytesReportedByWeb": 23008160,
+      "publisherComparativeCatalogueUrl": "https://dspace.ut.ee/bitstreams/096f7cef-1c7f-4458-8444-83cb68d5d2ba/download",
+      "publisherComparativeCataloguePageIndex0": 26,
+      "editionNumberFromOnlineOcr": "ELEVENTH",
+      "originalEnglishReviser": "Mrs. J. Sadlier",
+      "publisherCatalogEditionFamilyDetails": "Herder Jahresbericht 1896 lists a new Sadlier-revised English edition with 110 illustrations and 2 coloured maps; xii+404 printed pages and two maps",
+      "samePrintEditionAs1896Catalog": "NOT_VERIFIED",
+      "samePrintEditionAs1925Nineteenth": "NOT_VERIFIED",
+      "scanImagePrintedPagesIndependentlyRead": 0,
+      "authorParagraphsCertified": 0,
+      "publicationEligibility": "HOLD_EDITION_TITLE_PAGE_DATE_PAGE_IMAGES_FULL_PARAGRAPHS_TRANSLATOR_RIGHTS",
+      "researchUtility": "Earlier English source to collate directly; potential fallback to 1925 but ONLY if work/edition provenance and print images are authenticated, never copy OCR directly"
     }
   ],
   "openingEnglishTocSections": [
@@ -417,7 +438,10 @@
     "spanish1908SchoolHistoryScansCatalogued": 1,
     "spanish1908OriginalPrintedImagesInspected": 0,
     "spanish1908OpeningTocUnitsReadFromOCR": 9,
-    "spanish1908ParagraphsPrintCertified": 0
+    "spanish1908ParagraphsPrintCertified": 0,
+    "earlyEnglishSadlierEleventhScansLocated": 1,
+    "earlyEnglishSadlierEleventhPagesPrintInspected": 0,
+    "earlyEnglishSadlierEleventhParagraphsCertified": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -2350,5 +2374,33 @@
     "eligibleEnglishTranslationsNow": 0,
     "releasedReaderSourceParagraphs": 0,
     "nextTarget": "Once original 1908 school-book pages become viewable, check whole contiguous paragraph groups including editor-level symbols, illustrations and printed page numbers against 1908 OCR. Prioritize historic EN 1925/FR 1887 scans; Spanish is an additional historical-language path, not replacement."
+  },
+  "earlyEnglishSadlierScanAcquisitionReview": {
+    "date": "2026-10-16",
+    "status": "DIRECT_23MB_HISTORICAL_ENGLISH_SOURCE_SCAN_LOCATED_BUT_PAGE_IMAGES_NOT_RETRIEVED_TO_RESEARCH_RUNTIME",
+    "newWitnessId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "sourceDigitalPdf": "https://www.catholicapologetics.info/scripture/newtestament/bhistory.pdf",
+    "observedSearchIndexCitation": "https://www.yumpu.com/en/document/view/11515293/illustrated-bible-history-catholic-apologetics-information",
+    "sourceScanEvidence": "PDF is publicly indexed as 419-page Schuster Bible History; web PDF loader reports content 23,008,160 bytes exceeding its size limit. Title page OCR on Yumpu identifies eleventh edition, Mrs J. Sadlier revised; publication year and physical page alignment not yet independently inspected.",
+    "independentPublisherPrimarySource": {
+      "url": "https://dspace.ut.ee/bitstreams/096f7cef-1c7f-4458-8444-83cb68d5d2ba/download",
+      "work": "Herder'scher Jahresbericht 1896",
+      "cataloguePdfPageIndex0": 26,
+      "printedPage": 26,
+      "observedPublisherFields": [
+        "English translation Schuster school Bible History",
+        "Revised by Mrs J. Sadlier",
+        "New edition improved by several clergymen",
+        "110 illustrations, 2 colored maps",
+        "xii+404 pages; two maps"
+      ],
+      "specificEleventhEditionIdentityFromPublisher": "NOT_PROVEN"
+    },
+    "preliminaryScanDownloadOutcome": "Direct PDF fetch returned content-length limit in web reader; container direct download failed. Do not assert printed page image inspection from a search-index extract.",
+    "workflowStrategy": "Use a separately-scoped research-only batch PDF acquisition job to download scan, hash, record metadata, and render source-page previews as transient artifacts; no source prose to production and no auto-approval.",
+    "originalPrintedPagesCertifiedNow": 0,
+    "authorNarrativeParagraphsCertifiedNow": 0,
+    "automaticSourceImportAllowed": false,
+    "appChanged": false
   }
 }
