@@ -77,6 +77,13 @@ try{
         root:"#ao-spiritual-life-root",disclosure:".aoSLSources",
         evidence:".aoSLEvidence",minRows:4};
       }
+      if(name==="ethics"){
+       const m=await import("/src/learn/sexual-ethics.js");
+       const app=m.createSexualEthicsRuntime(window);
+       window.__referenceRuntime=app;
+       return {opened:app.open({questionId:"CSE014"}),root:"#ao-sexual-ethics-root",
+        disclosure:".aoCSESources",evidence:".aoCSESourceDetail",minRows:2};
+      }
       const m=await import("/src/learn/formation-recovery-review.js");
       const app=m.createFormationRecoveryReview(window);
       window.__referenceRuntime=app;
@@ -92,7 +99,7 @@ try{
      }
      return info;
     }
-    for(const surface of ["mass","spiritual","formation"]){
+    for(const surface of ["mass","spiritual","ethics","formation"]){
      const info=await setup(surface);
      const label=device.name+"-"+lang+"-"+surface;
      const node=page.locator(info.root);
@@ -110,8 +117,8 @@ try{
      await page.screenshot({path:resolve(out,label+"-reading.png"),fullPage:false});
      await drawer.locator("summary").first().click();
      assert.notEqual(await drawer.getAttribute("open"),null,label+" drawer cannot be opened");
-     if(surface==="mass"||surface==="spiritual"){
-      const selector=surface==="mass"?"[data-ao-source-index]":"[data-ao-sl-source-index]";
+     if(surface==="mass"||surface==="spiritual"||surface==="ethics"){
+      const selector=surface==="mass"?"[data-ao-source-index]":surface==="spiritual"?"[data-ao-sl-source-index]":"[data-ao-cse-source-index]";
       const index=drawer.locator(selector).first();
       assert.equal(await index.count(),1,label+" missing first-tap source index");
       assert.equal(await index.isVisible(),true,label+" first-tap source list is hidden");
@@ -134,6 +141,7 @@ try{
       const block=document.querySelector(evidence);
       return surface==="mass"?block.querySelectorAll("[data-ao-evidence-row]").length:
        surface==="spiritual"?block.querySelectorAll("[data-ao-sl-evidence-block]").length:
+        surface==="ethics"?block.querySelectorAll(".aoCSESource").length:
        block.querySelectorAll("[data-rr-evidence-row]").length;
      },{surface,evidence:info.evidence});
      assert.ok(rows>=info.minRows,label+" missing source-to-paragraph links: "+rows);
