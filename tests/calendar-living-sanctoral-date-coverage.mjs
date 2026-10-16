@@ -37,8 +37,9 @@ for(const doctor of doctors.doctors){
 const rows=[];
 for(const [id,person] of index){
   const approved=dateMap.get(id)||[];
-  const vatican=approved.filter(x=>x.universalStatus==="CERTIFIED_BY_DECREE");
-  const particular=approved.filter(x=>x.universalStatus!=="CERTIFIED_BY_DECREE");
+  const vatican=approved.filter(x=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(x.scope));
+  const particular=approved.filter(x=>x.scope.startsWith("USCCB_"));
+  const dicastery=approved.filter(x=>x.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE");
   const historical=pilot.persons.find(x=>x.id===id)?.calendar1962?.principalId||
     doctorMap.get(id)?.observanceSourceIdentity||null;
   const name=person.name?.en||person.name||null;
@@ -50,6 +51,7 @@ for(const [id,person] of index){
     doctorDeclaredOn:pilot.persons.find(x=>x.id===id)?.recognition?.doctorDeclaredOn||
       doctorMap.get(id)?.declarationDate||null,
     reviewPriority:vatican.length?"TRADITIONAL_MASS_ELIGIBILITY_AND_FORMULARY_REVIEW":
+      dicastery.length?"VERIFY_MEMORIAL_JURISDICTION_NO_UNIVERSAL_INFERENCE":
       particular.length?"VERIFY_DATE_AUTHORITY_AND_JURISDICTION":"RESEARCH_UNIVERSAL_OR_PARTICULAR_FEAST_DATE",
     neverInventMassAuthority:true
   });
@@ -88,8 +90,11 @@ const summary={
  dateSourceRows:dates.observances.length,
  datedIndividualPersonProfiles:rows.filter(x=>x.modernDates.length).length,
  datedCollectiveProfiles:groups.filter(x=>x.knownDateWitnesses.length).length,
- datedVaticanGeneralRomanPersonProfiles:rows.filter(x=>x.modernDates.some(d=>d.universalStatus==="CERTIFIED_BY_DECREE")).length,
- individualProfilesRequiringDateAuthority:rows.filter(x=>!x.modernDates.some(d=>d.universalStatus==="CERTIFIED_BY_DECREE")).length,
+ datedVaticanGeneralRomanPersonProfiles:rows.filter(x=>x.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope))).length,
+ datedDicasteryMemorialProfiles:rows.filter(x=>x.modernDates.some(d=>d.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE")).length,
+ individualsWithoutAnyAttestedDate:rows.filter(x=>x.modernDates.length===0).length,
+ individualProfilesWithDatesButNoUniversalStanding:rows.filter(x=>x.modernDates.length>0&&!x.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE","GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope))).length,
+ individualProfilesRequiringDateAuthority:rows.filter(x=>x.modernDates.length===0).length,
  collectiveProfilesRequiringIndependentUniversalDate:groups.filter(x=>!x.knownDateWitnesses.some(d=>d.universalStatus==="CERTIFIED_BY_DECREE")).length,
  worldwideComplete:false,year2026CensusComprehensive:false
 };
