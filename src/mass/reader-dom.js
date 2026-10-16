@@ -4,6 +4,7 @@ import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
+import { validateLowGuideResearch, lowGuideForActiveCue } from "./reader-low-guide.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -1113,7 +1114,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
 
   const schola = persist(moment.schola, previous.schola);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
-  const guide = moment.guide?.registryAvailable === true && moment.guide?.text
+  const guide = (moment.guide?.registryAvailable === true ||
+    (moment.guide?.researchPreview === true && moment.guide?.releaseApproved === false &&
+     /^LOW\.\d{3}$/.test(String(moment.guide.key)))) && moment.guide?.text
     ? Object.freeze({
         text:String(moment.guide.text),
         detail:moment.guide.detail == null ? null : String(moment.guide.detail),
@@ -1122,6 +1125,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
         sourceLinks:moment.guide.sourceLinks == null ? null : String(moment.guide.sourceLinks),
         coverage:moment.guide.coverage == null ? null : String(moment.guide.coverage),
         sourceMoment:moment.guide.sourceMoment == null ? null : String(moment.guide.sourceMoment),
+        researchPreview:moment.guide.researchPreview === true,
+        sourceStatus:moment.guide.researchPreview === true ? "UNAPPROVED_LOW_MASS_RESEARCH" : null,
       })
     : null;
 
@@ -1200,10 +1205,15 @@ function renderGuideSheet(pop,guide,language="en"){
   const sheet=doc.createElement("section");sheet.className="ao-guide-sheet";sheet.setAttribute("role","dialog");sheet.setAttribute("aria-modal","true");
   const head=doc.createElement("header");head.className="ao-guide-head";
   const intro=doc.createElement("div");
-  const kicker=doc.createElement("div");kicker.className="ao-guide-kicker";kicker.textContent="Guide · 1962 Sung Mass";
+  const kicker=doc.createElement("div");kicker.className="ao-guide-kicker";kicker.textContent=guide.researchPreview===true ? "Low Mass · Unapproved research" : "Guide · 1962 Sung Mass";
   const title=doc.createElement("h2");title.className="ao-guide-title";title.textContent=guide.moment||"Guide";
   const summary=doc.createElement("p");summary.className="ao-guide-summary";summary.textContent=guide.text||"";
   intro.append(kicker,title,summary);
+  if(guide.researchPreview===true){
+    const caution=doc.createElement("p");caution.className="ao-guide-scope";
+    caution.textContent="Research-only short Guide. Not source-certified or approved for publication. Rubrical timing and form applicability still require review.";
+    intro.append(caution);
+  }
   if(guide.coverage==="INHERITED_MACRO_CONTEXT"&&guide.sourceMoment){
     const scope=doc.createElement("p");scope.className="ao-guide-scope";
     scope.textContent=(String(language).toLowerCase().startsWith("fr")?"Partie de : ":"Part of: ")+guide.sourceMoment;
@@ -1229,8 +1239,10 @@ function renderGuideSheet(pop,guide,language="en"){
   }
   // The rubric link is contextual and keeps the current Mass card untouched.
   const glossary=doc.createElement("div");glossary.className="ao-guide-contextual-term";
-  glossary.innerHTML=glossaryContextCapsule("G067");
-  body.append(glossary);
+  if(guide.researchPreview!==true){
+    glossary.innerHTML=glossaryContextCapsule("G067");
+    body.append(glossary);
+  }
   sheet.append(body);pop.append(sheet);
 }
 
@@ -1534,9 +1546,16 @@ export function createReaderDomAdapter({
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
+  // Explicitly injected by a research harness, never loaded by normal app mounts.
+  lowGuideResearchPreview = null,
 } = {}) {
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
+  if(lowGuideResearchPreview!=null){
+    if(lowGuideResearchPreview.allowResearchPreview!==true ||
+       !lowGuideResearchPreview.index)throw new Error("Low Mass Guide preview requires an explicit research-only source");
+    validateLowGuideResearch(lowGuideResearchPreview.index);
+  }
   let prepared=null;
   let current=null;
   let mode="LIVE";
@@ -2420,7 +2439,25 @@ export function createReaderDomAdapter({
 
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
-    current=normalizeReaderMoment(moment,current ?? {});
+    // Native Guide drawer research seam. Uses only the active Low reader cue;
+    // no silent fallback to Sung Guide, no calendar-implied procession or
+    // missing-form claims, and never promotes a research text to certification.
+    let rendered=moment;
+    if(lowGuideResearchPreview?.allowResearchPreview===true &&
+       prepared?.session?.resolvedMass?.form==="LOW"){
+      const activeCueId=moment?.activeSourceCueId ??
+        moment?.paragraphs?.find?.(p=>p?.active===true)?.sourceCueIds?.[0] ??
+        moment?.customary?.cueId ?? null;
+      const preview=lowGuideForActiveCue(lowGuideResearchPreview.index,{
+        massForm:"LOW_1962",activeCueId,allowResearchPreview:true,
+        applicableConditionalGuideIds:lowGuideResearchPreview.applicableConditionalGuideIds,
+        selectedObservationalGuideId:moment?.selectedObservationalLowGuideId??null,
+      });
+      // An absent/conditional-disabled stage is disabled, not represented by
+      // an unrelated existing Sung Guide just because macro numbers coincide.
+      rendered={...moment,guide:preview};
+    }
+    current=normalizeReaderMoment(rendered,current ?? {});
     setText(root,"section-title",current.sectionTitle);
     for(const button of root.querySelectorAll?.("[data-reader-section]")??[]){
       const active=button.dataset.readerSection===current.id;
