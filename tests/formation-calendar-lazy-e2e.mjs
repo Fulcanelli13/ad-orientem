@@ -34,6 +34,8 @@ try{
  const t=Date.now();
  await page.goto("http://127.0.0.1:4203/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:30000});
+ await page.waitForFunction(()=>document.title==="Ad Orientem",null,{timeout:12000});
+ assert.equal(await page.title(),"Ad Orientem","Obsolete 2.0/versioned tab title is still being presented");
  const coldMs=Date.now()-t,cold=hits.slice();
  for(const path of mustDefer)assert.equal(cold.some(h=>h.path===path),false,"Home eagerly downloaded "+path);
  const owners=await page.evaluate(()=>({
