@@ -5,6 +5,8 @@ const w78=read("data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json
 const w77=read("data/saints/six-duplicate-name-alias-evidence-20261016.v1.json");
 const geo=read("data/saints/existing-shrine-geography-readiness-20261016.v1.json");
 const registry=read("data/shrines/source-registry.v1.json");
+const officialSourceDrift=read("data/shrines/research/holywell-source-url-drift-20261016.v1.json");
+const exactSourceDrift=new Map(officialSourceDrift.records.map(x=>[x.source_id,x]));
 const shrines=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const ledger=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json");
 const named=read("data/saints/holiness-first-editorial-pilot-20261015.v1.json");
@@ -60,7 +62,15 @@ for(const row of rows){
   for(const evidence of edge.original_source_evidence){
    const live=source.get(evidence.source_id);
    assert(live&&s.source_ids.includes(live.id));
-   assert.equal(evidence.url,live.url);
+   if(evidence.url!==live.url){
+     // W78 retains the exact historical source URL; authoritative registry
+     // may repair an obsolete live domain only through a source-owned drift dossier.
+     const change=exactSourceDrift.get(live.id);
+     assert(change,"Unreviewed original-source URL drift: "+live.id);
+     assert.equal(evidence.url,change.historical_url);
+     assert.equal(live.url,change.replacement_url);
+     assert.equal(new URL(live.url).hostname,officialSourceDrift.current_official_domain);
+   }
    assert.match(evidence.url,/^https:\/\//);
    assert.equal(evidence.directness,live.directness);
   }
