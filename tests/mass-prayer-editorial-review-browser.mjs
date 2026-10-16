@@ -14,6 +14,10 @@ assert.equal((deepHtml.match(/class="relation"/g)||[]).length,8);
 assert.equal((deepHtml.match(/data-p0-author-ref=/g)||[]).length,88);
 assert.equal((deepHtml.match(/data-primary-check=/g)||[]).length,6);
 assert.equal((deepHtml.match(/data-p0-scripture-held=/g)||[]).length,1);
+assert.equal((deepHtml.match(/class="major-exegesis"/g)||[]).length,2);
+assert.equal((deepHtml.match(/class="detailed-chapter"/g)||[]).length,9);
+assert.equal((deepHtml.match(/class="latin-item"/g)||[]).length,5);
+assert.equal((deepHtml.match(/class="source-link"/g)||[]).length,6);
 assert.equal((html.match(/class="entry" id=/g)||[]).length,84);
 assert.equal((html.match(/<em class="optional"/g)||[]).length,3);
 const browser=await chromium.launch({headless:true});
@@ -93,6 +97,9 @@ try{
   assert.equal(await deepPage.locator("[data-p0-author-ref]").count(),88);
   assert.equal(await deepPage.locator("[data-primary-check]").count(),6);
   assert.equal(await deepPage.locator("[data-p0-scripture-held]").count(),1);
+  assert.equal(await deepPage.locator("[data-major-exegesis]").count(),2);
+  assert.equal(await deepPage.locator("[data-major-exegesis=\"AO.SM.B051\"] .latin-item").count(),5);
+  assert.equal(await deepPage.locator("[data-major-exegesis=\"AO.SM.B055\"] .detailed-chapter").count(),5);
   await deepPage.locator("article.study:nth-of-type(5) details.research-docket summary").first().click();
   assert.equal(await deepPage.locator("article.study:nth-of-type(5) details.research-docket").getAttribute("open"),"");
   await deepPage.locator('button[data-select-lang="fr"]').click();
@@ -104,7 +111,7 @@ try{
   const deepOverflow=await deepPage.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
   assert.ok(deepOverflow<=2,width+"px Canon deep review horizontal overflow: "+deepOverflow);
   await deepPage.close();
-  console.log("PASS Canon deep editorial HTML browser: "+width+"px; 8 studies, 15 Mass source blocks, 8 Scripture links, 88 held P0 author loci, 6 primary-source checks, bilingual toggle");
+  console.log("PASS Canon deep editorial HTML browser: "+width+"px; 8 studies, 15 Mass source blocks, 8 Scripture links, 88 held P0 author loci, 2 expanded studies, bilingual toggle");
   console.log("PASS P2 editorial HTML browser: "+width+"px; 84 text blocks, 3 optional customs, 11 held Propers, 5 opening conditions and conditional finales, bilingual toggle, exact speaking roles");
   await context.close();
  }
