@@ -544,6 +544,12 @@ export function mountScriptureLibrary(root,{
       if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
     },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
+   resume(){
+     // Canonical shell transitions can detach the original reading subtree.
+     // Reattach it without resetting the selected passage or edition.
+     if(!root.contains(wrap)){root.replaceChildren(wrap);draw();}
+     return true;
+   },
    destroy(){root.replaceChildren();}
  });
 }
