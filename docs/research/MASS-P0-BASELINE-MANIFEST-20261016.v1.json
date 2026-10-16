@@ -92,7 +92,12 @@
     "canonicalSourceCuesWithoutResearchMicroUnits": 34,
     "sourceUnitsTextVerifiedAgainstOriginalWorkbook": 0,
     "exactWordTriggerSpansVerified": 0,
-    "newPublicationApprovals": 0
+    "newPublicationApprovals": 0,
+    "originalWorkbookLatinComparedNFC": 288,
+    "originalWorkbookLatinLiteralEqualOrSubstring": 282,
+    "originalWorkbookLatinContentDifferences": 2,
+    "originalWorkbookVariableTextSlots": 4,
+    "originalWorkbookLatinNotCompared": 147
   },
   "controls": {
     "canonicalReaderFilesModified": false,
@@ -102,6 +107,7 @@
     "sourceClaimsAutomaticallyPublished": false
   },
   "limitations": [
+    "288/435 original-workbook unit Latin extracts were compared literally to the canonical Sung source (112 whole cue, 170 exact subspans, 2 material wording differences, 4 variable source slots). Remaining 147 inaccessible to this comparison; 0 independently printed-1962 / exact trigger authorisations.",
     "No complete full-span Latin text comparison has yet been executed from the exact workbook against the frozen canon",
     "Compiled reader card and paragraph IDs have not been independently reconciled for all 435 units",
     "Current guide field parity matches are asserted by the workbook's 32-field parity sheet, not independently recertified against this newer main commit",
