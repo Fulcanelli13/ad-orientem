@@ -36,6 +36,24 @@ const batch=evidence.summary.source_reference_batch_20261016;
 assert.deepEqual([batch.individual_alias_reference_lookups,batch.collective_alias_reference_lookups,batch.doctor_archived_owner_pairs_for_comparison,batch.existing_bridge_preserved,batch.collision_context_hold,batch.unchanged_source_cases],[23,2,4,1,1,88]);
 assert.equal(batch.person_identity_certifications_added,0);
 assert.equal(batch.geographic_pins_added,0);
+assert.deepEqual([evidence.summary.w80_institutional_subject_sweep.original_shrine_only_records_reviewed,evidence.summary.w80_institutional_subject_sweep.with_official_subject_evidence,evidence.summary.w80_institutional_subject_sweep.original_608_key_gaps_remain],[15,15,38]);
+assert.equal(evidence.summary.w80_institutional_subject_sweep.new_canonical_identity_keys,0);
+assert.deepEqual(evidence.source_safety_hold.affected_saint_shrine_names,["Saint Beuno","Saint Winefride"]);
+assert.equal(evidence.source_safety_hold.original_source_registry_modified,false);
+const W80=evidence.records.filter(x=>x.institutional_subject_evidence_review);
+assert.equal(W80.length,15);
+assert.equal(W80.reduce((n,x)=>n+x.institutional_subject_evidence_review.references.length,0),21);
+for(const row of W80){
+ assert.equal(row.residual_source_owner_research_tier,"SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY");
+ assert.equal(row.institutional_subject_evidence_review.canonical_identity_approved,false);
+ assert.equal(row.institutional_subject_evidence_review.saint_person_shrine_link_production_authorized,false);
+ for(const ref of row.institutional_subject_evidence_review.references){
+  assert.match(ref.url,/^https:\/\//);
+  assert(ref.issuer&&ref.claim_scope&&ref.evidence_mode);
+  assert.equal(ref.canonical_identity_equivalence_approved,false);
+  assert.equal(ref.relic_authenticity_certified,false);
+ }
+}
 assert.deepEqual(evidence.summary.residual_source_owner_38_tiers,{
  SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY:2,
  RELIC_OWNER_SUBJECT_NO_LEDGER_KEY:19,
@@ -140,6 +158,17 @@ for(const name of ["Saint Louis de Montfort","Saint Louis-Marie de Montfort"]){
 assert(siteNameRelations.get("Saint Dominic").shared_relic_subject_other_shrine_names.includes("Saint Dominic de Guzmán"));
 assert(siteNameRelations.get("Saint Nicholas of Myra").shared_relic_subject_other_shrine_names.includes("Saint Nicholas"));
 assert.equal(siteNameRelations.get("Saint Anthony of Padua").cross_source_index_links.length,2);
+for(const r of W80){
+ const mapped=siteNameRelations.get(r.legacy_shrine_person_or_group_name);
+ assert(mapped.institutional_subject_source_links.length===r.institutional_subject_evidence_review.references.length);
+ assert(mapped.institutional_subject_source_links.every(x=>!["stwinefrideswell.org.uk","www.stwinefrideswell.org.uk"].includes(new URL(x.url).hostname)));
+}
+const holywell=projected.find(p=>p.place_id==="place:GB:holywell-st-winefride");
+assert(holywell&&holywell.associated_saint_name_sources.some(x=>x.source_saint_name==="Saint Beuno"));
+assert(holywell.associated_saint_name_sources.some(x=>x.source_saint_name==="Saint Winefride"));
+assert(holywell.associated_saint_name_sources.every(x=>x.official_source_links.every(s=>!new URL(s.href).hostname.includes("stwinefrideswell.org.uk"))));
+assert(holywell.associated_saint_name_sources.every(x=>x.institutional_subject_source_links.some(s=>new URL(s.url).hostname==="www.stwinefridesshrine.org")));
+assert(holywell.associated_saint_name_sources.every(x=>x.source_ids.some(id=>id==="SHR-HOLYWELL-CONTACT")));
 assert.equal(projected.length,121);
 assert.equal(projected.filter(x=>x.map_publishable).length,119);
 assert.equal(projected.reduce((n,x)=>n+x.associated_saint_name_sources.length,0),145);
@@ -154,6 +183,10 @@ for(const lang of ["en","fr"]){
  const html=renderSaintResearchShrineSheet({language:lang,selected:withArt});
  assert(html.includes("aoSaintSourceEvidenceStatus"));
  assert(html.includes(lang==="fr"?"non approuvés":"Unapproved art research subjects"));
+ const holywellHtml=renderSaintResearchShrineSheet({language:lang,selected:holywell});
+ assert(!holywellHtml.includes("stwinefrideswell.org.uk"));
+ assert(holywellHtml.includes("stwinefridesshrine.org"));
+ assert(holywellHtml.includes("SHR-HOLYWELL-CONTACT"));
  const variantLocation=projected.find(x=>x.associated_saint_name_sources.some(n=>n.curated_variant_source_key_leads.includes("saint.giuseppina-bakhita")));
  assert(variantLocation,"Expected an existing shrine association for Josephine Bakhita");
  const navHtml=renderSaintResearchShrineSheet({language:lang,selected:variantLocation});
