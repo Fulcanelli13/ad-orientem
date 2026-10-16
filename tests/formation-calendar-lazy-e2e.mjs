@@ -224,10 +224,16 @@ try{
  assert.equal(await printOptions.getAttribute("open"),null,
    "Bilingual print remains a secondary, initially collapsed Calendar Day action");
  await printOptions.locator("summary").click();
+ await printOptions.locator("[data-cal-print-proper]").waitFor({state:"visible",timeout:15000});
  assert.equal(await printOptions.getAttribute("open"),"",
    "Opening the Print disclosure must reveal the existing proper-only action");
- const printButton=printOptions.locator("[data-cal-print-proper]");
+ // A late 1962 source/cache hydration must not silently collapse an open
+ // print panel or remove its print action while the selected day is unchanged.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.paint()),true);
+ const printButton=page.locator("#ao-calendar-modular-root .aoCalV2PrintOptions [data-cal-print-proper]");
  await printButton.waitFor({state:"visible",timeout:15000});
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2PrintOptions").getAttribute("open"),"",
+   "Same-day Calendar repaint must preserve the expanded print disclosure");
  const popupPromise=page.waitForEvent("popup",{timeout:15000});
  await printButton.click();
  const printed=await popupPromise;
