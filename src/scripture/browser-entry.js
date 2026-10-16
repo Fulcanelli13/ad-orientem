@@ -9,7 +9,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
  const doc=win.document;
  installScriptureContextStyles(doc);
- let reader=null,previousFocus=null,previousOverflow=null,onCloseReturn=null;
+ let reader=null,previousFocus=null,previousOverflow=null,onCloseReturn=null,journey=null;
  const loaded=new Map();
  const inflight=new Set();
  function overlay(){
@@ -25,7 +25,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    return root;
  }
  function close(){
-   if(!reader)return false;
+   if(!reader||journey)return false;
    reader.destroy();reader=null;
    const node=overlay();if(node)node.hidden=true;
    if(doc.body && previousOverflow!==null)doc.body.style.overflow=previousOverflow;
@@ -35,8 +35,74 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(typeof restore==="function")try{restore()}catch(error){win.console?.error?.("Scripture return context failed",error)}
    return true;
  }
+ // Verified reciprocal deep links may only begin on Home. Other active
+ // parent modules (especially an ongoing Mass or Rosary) remain untouched.
+ function canOpenRelatedObject(record){
+   if(!reader||!record?.target||!doc?.body)return false;
+   // Lazy Bible text loading may repaint the *hidden* reader during a
+   // journey. Preserve the original launch button for focus on return.
+   if((journey?.surface??win?.AO_APP_SHELL_V1?.getActive?.())!=="home")return false;
+   if(!journey&&win?.AO_PRAY_APP_V1?.status?.()?.open===true)return false;
+   if(!journey&&win?.AO_MASS_FORMATION_V1?.status?.()?.open===true)return false;
+   if(record.target.type==="massFormation")
+     return /^MF0[1-8]$/.test(record.target.stageId);
+   if(record.target.type==="novena")
+     return /^[a-z0-9_]+$/.test(record.target.novenaId);
+   return false;
+ }
+ async function openRelatedObject(record){
+   if(journey||!canOpenRelatedObject(record))return false;
+   const node=overlay(),shell=win.AO_APP_SHELL_V1;
+   if(!node||node.hidden)return false;
+   const receipt={id:record.id,surface:shell.getActive(),scrollTop:node.scrollTop};
+   journey=receipt;
+   node.hidden=true;
+   if(doc.body)doc.body.style.overflow=previousOverflow??"";
+   const reveal=()=>{
+     node.hidden=false;
+     if(doc.body)doc.body.style.overflow="hidden";
+     node.scrollTop=receipt.scrollTop;
+     node.querySelector?.('[data-scripture-open-related-object="'+record.id+'"]')?.focus?.({preventScroll:true});
+     return true;
+   };
+   const restore=async()=>{
+     if(journey!==receipt)return false;
+     journey=null;
+     try{
+       if(shell.getActive()!==receipt.surface){
+         const returned=await shell.navigate(receipt.surface);
+         if(returned?.ok!==true)win.console?.warn?.("Scripture source surface did not reopen");
+       }
+     }catch(error){win.console?.error?.("Scripture return route failed",error)}
+     return reveal();
+   };
+   let accepted=false;
+   try{
+     if(record.target.type==="massFormation"){
+       const {createMassFormationRuntime}=await import("../learn/mass-formation.js");
+       const owner=win.AO_MASS_FORMATION_V1||
+         (win.AO_MASS_FORMATION_V1=createMassFormationRuntime(win,{fetchImpl:win.fetch?.bind(win)}));
+       accepted=(await owner.open({stageId:record.target.stageId,onCloseReturn:restore}))===true;
+     }else if(record.target.type==="novena"){
+       const nav=await shell.navigate("pray");
+       if(nav?.ok===true){
+         const result=await win?.AO_MODULES?.open?.("pray.novenas",{
+           novenaId:record.target.novenaId,returnContext:null,onCloseReturn:restore
+         });
+         accepted=result?.ok===true;
+       }
+     }
+   }catch(error){win.console?.error?.("Scripture object navigation failed",error)}
+   if(accepted)return true;
+   if(journey===receipt){
+     journey=null;
+     try{if(shell.getActive()!==receipt.surface)await shell.navigate(receipt.surface)}catch{}
+     reveal();
+   }
+   return false;
+ }
  function open({passage=null,language=null,context=null,onCloseReturn:restoreOnClose=null}={}){
-   const node=overlay();if(!node)return false;
+   const node=overlay();if(!node||journey)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
    onCloseReturn=typeof restoreOnClose==="function"?restoreOnClose:null;
@@ -46,6 +112,8 @@ export function installScriptureBrowserOwner(win=globalThis){
      passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
      records:[...loaded.values()].flat(),
      onClose:close,
+     canOpenRelatedObject,
+     onOpenRelatedObject:openRelatedObject,
      onNeedBook:async({book,editionId})=>{
        const key=editionId+":"+book;
        if(inflight.has(key))return;
@@ -117,7 +185,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    e.preventDefault?.();e.stopPropagation?.();open();
  };
  const key=e=>{
-   if(!reader)return;
+   if(!reader||journey)return;
    if(e.key==="Escape"){e.preventDefault?.();e.stopPropagation?.();close();return;}
    if(e.key!=="Tab")return;
    const node=overlay();
@@ -131,7 +199,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
  const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,openSegments,close,
-   status:()=>Object.freeze({installed:true,open:Boolean(reader),reader:reader?.status?.()??null})});
+   status:()=>Object.freeze({installed:true,open:Boolean(reader&&!journey),suspended:Boolean(journey),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
  win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,openSegments,parse:parseScriptureContext});
  return api;
