@@ -7,6 +7,29 @@ export function canonicalSettingsAppVersion(win=globalThis){
   return win?.document?.documentElement?.dataset?.aoRelease||win?.AO_RELEASE_AUTHORITY_V4359?.version||"43.59.6";
 }
 
+
+// Read-only release identity: this is not an update or a storage operation.
+// The UI version, active offline cache and staged update are distinct facts.
+export function canonicalSettingsReleaseStatus(win=globalThis){
+  const state=win?.AO_OFFLINE_APP_V1?.status;
+  const cache=state&&typeof state==="object"?state:{};
+  const safe=value=>typeof value==="string"&&/^[A-Za-z0-9._:-]{1,120}$/.test(value)?value:null;
+  const hostname=String(win?.location?.hostname||"");
+  const path=String(win?.location?.pathname||"");
+  const channel=hostname==="fulcanelli13.github.io"&&/^\/ad-orientem(?:\/|$)/.test(path)
+    ?"canonical":hostname?"other":"unknown";
+  let standalone=false;
+  try{standalone=win?.matchMedia?.("(display-mode: standalone)")?.matches===true}catch{}
+  return Object.freeze({
+    channel,standalone,
+    activeSnapshot:safe(cache.version),
+    stagedSnapshot:safe(cache.pendingVersion),
+    offlineReady:cache.ready===true,
+    workerControlled:Boolean(win?.navigator?.serviceWorker?.controller),
+    offlineError:Boolean(cache.error)
+  });
+}
+
 export function buildSettingsViewModel(win=globalThis,{route="/settings",live=false}={}){
   const donor=win?.AO_SETTINGS_DONOR_V4359?.snapshot?.()||{preferences:DEFAULT_PREFERENCES,profiles:[]};
   const language=donor.preferences?.general?.uiLanguage==="fr"?"fr":"en";
@@ -15,6 +38,7 @@ export function buildSettingsViewModel(win=globalThis,{route="/settings",live=fa
     language,
     live:Boolean(live),
     version:canonicalSettingsAppVersion(win),
+    release:canonicalSettingsReleaseStatus(win),
     preferences:donor.preferences||DEFAULT_PREFERENCES,
     profiles:Array.isArray(donor.profiles)?donor.profiles:[]
   });
@@ -204,6 +228,15 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
     const sourceDetails=sourceFamilies.map(([title,body])=>`<details class="aoSetSource"><summary>${esc(title)}</summary><p>${esc(body)}</p></details>`).join("");
     const provenanceSummary=provenance.join(" · ");
     const methodology=`<details class="aoSetSource"><summary>${esc(L("How source labels work","Fonctionnement des mentions de source"))}</summary><p>${esc(provenanceSummary)}</p></details>`;
+    const release=vm.release;
+    const detail=value=>'<span class="aoSetBadge">'+esc(value)+'</span>';
+    const active=release.activeSnapshot||L("Not available","Indisponible");
+    const staged=release.stagedSnapshot||L("No pending update reported","Aucune mise à jour en attente signalée");
+    const host=release.channel==="canonical"?L("Canonical GitHub Pages","GitHub Pages canonique")
+      :release.channel==="other"?L("Other host / preview","Autre hôte / aperçu"):L("Unknown","Inconnu");
+    const mode=release.standalone?L("Installed home-screen app","Application installée sur l’écran d’accueil"):L("Browser / not detected","Navigateur / non détecté");
+    const worker=release.workerControlled?L("Controlling this page","Contrôle cette page")
+      :L("Not controlling this page","Ne contrôle pas cette page");
     return shell(L("About & Sources","À propos & sources"),
       `<div class="aoSetIntro">${esc(L("Sources are grouped by what they control. Exact prayer, commentary and calendar claims keep contextual attribution where they appear.","Les sources sont regroupées selon ce qu’elles contrôlent. Les prières, commentaires et affirmations calendaires gardent leur attribution contextuelle là où ils apparaissent."))}</div>`+
       section(L("SOURCES","SOURCES"),sourceDetails+methodology)+
@@ -215,6 +248,15 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         infoRow(L("Artwork sources & rights","Sources & droits des œuvres"),L("Artwork keeps a record of where it came from and how it may be used.","Les œuvres gardent une indication de leur origine et de leurs conditions d’utilisation."),icon("ao-ui-info"))+
         infoRow(L("Acknowledgements & licences","Remerciements & licences"),L("Third-party texts and artworks retain their individual source/licence notices.","Les textes et œuvres tiers conservent leurs notices de source/licence propres."),icon("ao-ui-info"))+
         infoRow(L("Version","Version"),"",`<span class="aoSetBadge" data-settings-app-version>${esc(vm.version)}</span>`)+
+        section(L("APP RELEASE STATUS","ÉTAT DE LA VERSION INSTALLÉE"),
+          infoRow(L("Website","Site web"),"",detail(host))+
+          infoRow(L("Display mode","Mode d’affichage"),"",detail(mode))+
+          infoRow(L("Current app interface version","Version de l’interface actuelle"),"",'<span class="aoSetBadge" data-settings-display-version>'+esc(vm.version)+'</span>')+
+          infoRow(L("Active offline snapshot","Version hors ligne active"),"",'<span class="aoSetBadge" data-settings-active-snapshot>'+esc(active)+'</span>')+
+          infoRow(L("Prepared update","Mise à jour préparée"),"",'<span class="aoSetBadge" data-settings-pending-snapshot>'+esc(staged)+'</span>')+
+          infoRow(L("Service worker","Service worker"),"",detail(worker))+
+          note(L("These values describe this browser or installed app only. No update is applied here. A blank update status does not prove that the installed app matches the published site. Never clear saved data merely to update.","Ces indications concernent uniquement ce navigateur ou cette application installée. Aucune mise à jour n’est appliquée ici. L’absence de mise à jour signalée ne prouve pas que l’application correspond au site publié. N’effacez pas les données enregistrées pour mettre à jour.")))+
+
         routeRow(L("Privacy & Data","Confidentialité & données"),L("Review storage and clear saved progress.","Consulter le stockage et effacer la progression."),"/settings/privacy-data")));
   }
   return renderSettingsToString(win,{route:"/settings",live});
