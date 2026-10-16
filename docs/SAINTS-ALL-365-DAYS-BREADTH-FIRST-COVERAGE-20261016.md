@@ -210,3 +210,25 @@ The output sets a batch processing order rather than a 119-person biography queu
 CI: `tests/saints-w78-shrine-source-evidence.mjs` enforces original owner edges, 119/50/6/63 counts, nine alias leads, 45 relic-subject leads, 145 physical shrine relations, no public research fetch, no added locations or images, and the explicit Blessed/group/angelic guards. All original owner datasets remain untouched.
 
 **Next unblocker:** source owners should approve precise identity equivalences in *one consolidated batch*, starting with the nine already documented aliases and six competing IDs. Reconcile remaining 54 without assuming they are all absent from the Church's calendar: this ledger indexes only the original Ad Orientem source families, not all historical saints.
+
+
+## W78 unified review partition — 81 source-key leads, 38 genuinely without leads
+
+The two existing W78 derived registers have now been reconciled on the **original 119 literal shrine-subject name strings**. This is a source-key coverage count, **not a count of certified saints, church feast days, or biography-ready persons**. No extra original Place, shrine association or source has been invented.
+
+| Non-overlapping bucket | Names |
+| --- | ---: |
+| Exactly one existing full-name source key | 50 |
+| Competing exact full-name source keys | 6 |
+| Prior documented alias lead (without exact-name key) | 9 |
+| Other curated variant-name source-key leads | 16 |
+| **No supported existing 608-ledger key lead** | **38** |
+| **Total original shrine names** | **119** |
+
+**Reason for the W78 delta:** the pre-existing `w78-113-shrine-name-source-evidence-20261016.v1.json` contains 24 curated unmatched-name variants, *eight* of which are among the nine previously documented aliases in `w78-shrine-person-source-evidence-20261016.v1.json`. The ninth alias is **Saint Wenceslas → existing historical key `saint.wenceslaus`**. Thus 24 + 9 − 8 = **25 distinct unmatched-name source-key leads**, and 63 − 25 = **38 without a ledger-key lead**. Previous statements of **54 without exact or previously documented alias** and **39 without a curated variant** remain correct *under their narrower definitions*; they must not be substituted for the combined deduplicated queue.
+
+The single integrated 119-row W78 evidence record now includes `curated_variant_existing_key_leads` and `source_key_review_bucket`, with original source family, reason and *explicit non-approval status*. It is still derived evidence rather than a re-keying of any original owner. The existing research-only Saints map shows exact candidates, aliases and curated variant leads alongside source URLs, relic-research IDs and unapproved artwork-research IDs. The public `PILOT_SIX` release channel never fetches this registry.
+
+Within the **38-name residual source-key queue**, 21 already have relic-research subject links and six have Sacred Art research subject links; these are overlapping source pointers, not verified identity or authenticated relic/approved image. Two are explicitly Blessed, two are group/composite names and one is an angelic subject. In particular **Saint Joseph**, **Saint John the Baptist** and their liturgical titles must not be confused with source records representing feasts or devotional contexts. **Louis de Montfort / Louis-Marie de Montfort** names require one person/alias owner decision rather than automatic identity creation.
+
+**Next owner action:** batch sign-off of the 25 curated/prior-alias proposals, adjudication of the six exact-name collisions (retaining the approved Thérèse bridge), and a focused source-owner lookup for 38 remaining source-name records. Link existing source IDs before researching additional lives. No canonical `saint_id`, historical calendar equivalence, geographic life-event relationship, art licensing/promotion or public deployment is authorized by these results.
