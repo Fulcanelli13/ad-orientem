@@ -12,6 +12,7 @@ import { observedCycle } from "./observed-cycle.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import { calendarObservanceAlias } from "./observance-title.js";
 import { buildReviewedSanctoralCards } from "./reviewed-sanctoral-cards.js";
+import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
 
@@ -43,7 +44,6 @@ const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","pr
 let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
 let pilgrimageCorpus=null,pilgrimageLoad=null;
 let secondarySaintModel=null,secondarySaintLoad=null;
-const secondarySaintModelUrl=new URL("../../data/calendar/living-sanctoral-read-model.v1.json",import.meta.url).href;
 const pilgrimageDataUrl=new URL("../../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url).href;
 function loadCalendarPilgrimagePlaces(){
   if(pilgrimageCorpus||pilgrimageLoad||typeof globalThis.fetch!=="function")return;
@@ -54,17 +54,13 @@ function loadCalendarPilgrimagePlaces(){
     .finally(()=>{pilgrimageLoad=null});
 }
 
-// Calendar-only lazy, source-derived data; Home and Mass startup unaffected.
+// Same verified read-model as Home: a single lazy network request.
 function loadCalendarSecondarySaints(){
-  if(secondarySaintModel||secondarySaintLoad||typeof globalThis.fetch!=="function")return;
-  secondarySaintLoad=globalThis.fetch(secondarySaintModelUrl,{headers:{accept:"application/json"}})
-    .then(response=>response.ok?response.json():null)
+  if(secondarySaintModel||secondarySaintLoad)return;
+  secondarySaintLoad=loadSharedSanctoralReadModel()
     .then(json=>{
-      if(json?.schema==="AO_LIVING_SANCTORAL_READ_MODEL_V1" &&
-         json.status==="READ_ONLY_SECONDARY_CALENDAR" &&
-         Array.isArray(json.observanceRegistry?.observances) &&
-         Array.isArray(json.visualCrosswalk?.links))secondarySaintModel=json;
-      if(root()&&calendarView==="day")paint();
+      if(json)secondarySaintModel=json;
+      if(json&&root()&&calendarView==="day")paint();
     })
     .catch(error=>console.warn("Supplementary saint cards unavailable",error))
     .finally(()=>{secondarySaintLoad=null});
