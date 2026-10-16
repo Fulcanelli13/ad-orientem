@@ -257,7 +257,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
       :L("Opened in browser","Ouverte dans le navigateur");
     const addressMarkup='<span class="aoSetInstallAddress" data-settings-active-site="'+
       esc(vm.hostKind)+'">'+esc(vm.appAddress||L("Unknown address","Adresse inconnue"))+'</span>';
-    const updateButtons=vm.hostKind==="github_pages"
+    const updateButtons=(vm.hostKind==="github_pages"||offline?.supported)
       ?row(L("Check for updates","Vérifier les mises à jour"),checkLabel,
         icon("ao-ui-next"),'data-settings-check-update'+(canCheck&&vm.updateCheck!=="checking"&&vm.updateCheck!=="applying"?"":" disabled"))+
         (candidateId?row(L("Install ready update","Installer la mise à jour prête"),applyLabel,
