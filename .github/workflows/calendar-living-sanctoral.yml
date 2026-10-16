@@ -14,6 +14,7 @@ on:
       - 'data/calendar/traditional-calendar-adjudication-matrix.v1.json'
       - 'src/calendar/traditional-day-adjudication.js'
       - 'tests/calendar-traditional-adjudication.mjs'
+      - 'tests/calendar-living-sanctoral-date-coverage.mjs'
       - 'src/calendar/living-sanctoral.js'
       - 'src/calendar/reviewed-sanctoral-cards.js'
       - 'src/calendar/sanctoral-day-ui.js'
@@ -55,3 +56,11 @@ jobs:
           node tests/calendar-reviewed-sanctoral-cards.mjs
           node tests/calendar-reviewed-sanctoral-day-integration.mjs
           node tests/calendar-traditional-adjudication.mjs
+          node tests/calendar-living-sanctoral-date-coverage.mjs
+      - name: Preserve dated-authority research queue
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-traditional-date-authority-backlog
+          path: artifacts/calendar-oracle/living-traditional-date-authority-backlog.json
+          if-no-files-found: warn
