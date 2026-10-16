@@ -18,6 +18,53 @@ const francisOmitted={
       commemorations:[]},
  proper:{status:"ready",data:{sourcePath:"Tempora/Pent19-0"}}
 };
+
+const omissionBatch2026=[
+  ["2026-07-05","tempora:Pent6-0:2:g","Sancti/07-05","SAINT_ANTHONY_MARY_ZACCARIA","RG 111(b)"],
+  ["2026-07-12","tempora:Pent7-0:2:g","Sancti/07-12","SAINT_JOHN_GUALBERT","RG 111(b)"],
+  ["2026-08-30","tempora:Pent14-0:2:g","Sancti/08-30","SAINT_ROSE_OF_LIMA","RG 111(b)"],
+  ["2026-11-22","tempora:Pent24-0:2:g","Sancti/11-22","SAINT_CECILIA","RG 111(b)"],
+  ["2026-12-06","tempora:Adv2-0:1:v","Sancti/12-06","SAINT_NICHOLAS_MYRA","RG 111(a)"]
+];
+for(const [date,principal,impeded,saint,cap] of omissionBatch2026){
+  const principalPath="Tempora/"+principal.split(":")[1];
+  const resolved={
+    date,status:"ready",
+    day:{main:{id:principal,path:principalPath},commemorations:[]},
+    proper:{status:"ready",data:{sourcePath:principalPath}}
+  };
+  const claims=calendarOmittedFeastClaimForDay(resolved,adjudicated2027);
+  assert.equal(claims.length,1,"Independent 1962 sources required for omitted feast "+date);
+  assert.equal(claims[0].observedPrincipalId,principal);
+  assert.equal(claims[0].impededFeastPath,impeded);
+  assert.deepEqual(claims[0].clauses,["RG 91","RG 93",cap]);
+  assert.equal(claims[0].witnessUrl,"https://ordo.fsspx.org/day/"+date+"?lang=en");
+  assert.equal(claims[0].feastClassWitnessUrl,"https://www.1962ordo.com/feast/");
+  assert.equal(claims[0].comparisonUrl,"https://gcatholic.org/calendar/2026/Extraordinary-en");
+  assert.equal(claims[0].generalRomanCalendarOnly,true);
+  assert.equal(claims[0].automaticMassChange,false);
+  assert.ok(Object.isFrozen(claims)&&Object.isFrozen(claims[0]));
+  assert.ok(claims[0].explanation.en&&claims[0].explanation.fr);
+  for(const bad of [
+    {...resolved,date:"2027"+date.slice(4)},
+    {...resolved,status:"failed"},
+    {...resolved,day:{main:{id:"sancti:"+date.slice(5)+":3:w",path:impeded},commemorations:[]}},
+    {...resolved,day:{main:{id:principal.replace(/:[12]:/,":4:"),path:principalPath},commemorations:[]}},
+    {...resolved,day:{main:{id:principal,path:principalPath},commemorations:[{id:"sancti:"+date.slice(5)+":3:w"}]}},
+    {...resolved,proper:{status:"ready",data:{sourcePath:impeded}}},
+  ])assert.deepEqual(calendarOmittedFeastClaimForDay(bad,adjudicated2027),[],
+     "Cannot imply a transferred/commemorated feast or wrong 1962 observance: "+date);
+  const alteration=structuredClone(adjudicated2027);
+  alteration.nonCommemorationWitnesses.find(w=>w.date===date).impeded.saint="SAINT_OTHER";
+  assert.deepEqual(calendarOmittedFeastClaimForDay(resolved,alteration),[],
+     "Source-reviewed impeded saint identity cannot drift: "+date);
+}
+assert.deepEqual(calendarOmittedFeastClaimForDay({
+  date:"2026-12-13",status:"ready",
+  day:{main:{id:"tempora:Adv3-0:1:v",path:"Tempora/Adv3-0"},commemorations:[]},
+  proper:{status:"ready",data:{sourcePath:"Tempora/Adv3-0"}}
+},adjudicated2027),[],"Disputed St Lucy/Advent III source must remain uncertified");
+
 const omitted=calendarOmittedFeastClaimForDay(francisOmitted,adjudicated2027);
 assert.equal(omitted.length,1,"Source-certified 2026 Sunday/St Francis omission missing");
 assert.deepEqual(omitted[0].clauses,["RG 91","RG 93","RG 111(b)"]);
