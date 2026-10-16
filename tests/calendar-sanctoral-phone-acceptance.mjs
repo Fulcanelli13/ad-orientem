@@ -223,6 +223,16 @@ try{
        "An omitted October 4 feast cannot be carried as a commemoration to October 5");
    }
    if(width===390){
+     const sourceSurvey=await page.evaluate(async()=>{
+       const dates=["2026-07-05","2026-07-12","2026-08-30","2026-11-22","2026-12-06"];
+       const resolver=window.AO_RUNTIME_V8.resolver;
+       return Promise.all(dates.map(async date=>{
+         const r=await resolver.resolveDay(date);
+         return {date,status:r?.status,main:r?.day?.main?.id,mainPath:r?.day?.main?.path,
+           properPath:r?.proper?.data?.sourcePath,comms:r?.day?.commemorations?.map(x=>x.id)};
+       }));
+     });
+     console.log("BATCH_OMISSION_SOURCE_AUDIT",JSON.stringify(sourceSurvey));
      for(const [date,id,clause] of [
        ["2026-07-05","PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED","RG 111(b)"],
        ["2026-07-12","PENT7_JOHN_GUALBERT_2026_OMITTED","RG 111(b)"],
