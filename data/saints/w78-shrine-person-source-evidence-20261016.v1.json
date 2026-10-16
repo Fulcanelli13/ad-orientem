@@ -133,7 +133,12 @@
       "original_608_key_gaps_remain": 38,
       "new_canonical_identity_keys": 0,
       "new_geographical_places": 0,
-      "prior_six_profile_publication_changed": false
+      "prior_six_profile_publication_changed": false,
+      "source_relationship_review_classes": {
+        "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE": 10,
+        "TRADITION_ATTESTED_NOT_LIFE_EVENT": 4,
+        "LOCAL_PATRON_EPITHET_REVIEW": 1
+      }
     }
   },
   "records": [
@@ -213,7 +218,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -772,7 +779,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "The shrine names Andrew Kaggwa among the Uganda Martyrs; group inclusion is not a canonical single-person key."
       }
     },
     {
@@ -1672,7 +1681,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "TRADITION_ATTESTED_NOT_LIFE_EVENT",
+        "qualifying_note": "The saint's connection to Holywell is told in the Winefride hagiographic tradition, not separately certified as a dated life event."
       }
     },
     {
@@ -3411,7 +3422,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "TRADITION_ATTESTED_NOT_LIFE_EVENT",
+        "qualifying_note": "The Holy Stairs shrine attributes their arrival to Helena according to ancient Christian tradition; do not assert transport as a verified historical event."
       }
     },
     {
@@ -3632,7 +3645,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Both Auriesville and Canadian Martyrs traditions mention this individual; these places remain distinct source-owned physical sites."
       }
     },
     {
@@ -3897,7 +3912,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -4249,7 +4266,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -5034,7 +5053,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -5346,7 +5367,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "LOCAL_PATRON_EPITHET_REVIEW",
+        "qualifying_note": "Nußdorf confirms the 6 November St Leonhard patronal custom; Augsburg's episcopal account identifies Leonhard of Limoges/Noblat on that date. The local dedication's exact epithet remains to be attested."
       }
     },
     {
@@ -6523,7 +6546,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "TRADITION_ATTESTED_NOT_LIFE_EVENT",
+        "qualifying_note": "The Fréjus–Toulon diocese recounts the Provençal Maximin/Aix tradition and explicitly distinguishes tradition from canonical Gospel history."
       }
     },
     {
@@ -6591,7 +6616,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -6977,7 +7004,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -7696,7 +7725,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "Institutional source names the historical/devotional subject in relation to the existing shrine; no canonical person ID or new life-event claim."
       }
     },
     {
@@ -8599,7 +8630,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "TRADITION_ATTESTED_NOT_LIFE_EVENT",
+        "qualifying_note": "The sanctuary history also names Toribio of Palencia in a separate local foundation narrative; Astorga bishop and local founder are not automatically the same individual."
       }
     },
     {
@@ -8898,7 +8931,9 @@
         "original_shrine_source_ids_preserved": true,
         "canonical_identity_approved": false,
         "historic_life_event_certified": false,
-        "saint_person_shrine_link_production_authorized": false
+        "saint_person_shrine_link_production_authorized": false,
+        "subject_site_claim_status": "DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE",
+        "qualifying_note": "The official shrine narrates legendary events as tradition; older shrine domain is quarantined after content drift."
       }
     },
     {
