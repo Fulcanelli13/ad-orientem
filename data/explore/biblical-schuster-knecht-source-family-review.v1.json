@@ -492,7 +492,9 @@
     "earlyEnglishSadlierEleventhAuthorialNarrativeProsePublished": 0,
     "earlyEnglishSadlierSecondWordingImageReviewedUnits": 10,
     "earlyEnglishSadlierPrintedFootnoteMarkersRecovered": 5,
-    "earlyEnglishSadlierLiterallyCharacterCertifiedUnits": 0
+    "earlyEnglishSadlierLiterallyCharacterCertifiedUnits": 0,
+    "earlyEnglishSadlierEleventhSecondVisualWordingCheckedUnits": 47,
+    "earlyEnglishSadlierEleventhRecoveredOriginalFootnoteAnchors": 10
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -3862,5 +3864,246 @@
     "lowOCRSimilarityIsProofOfTextDefect": false,
     "sourceContextHoldsRemain": true,
     "applicationProductionChanged": false
+  },
+  "english1908OriginsRepeatReviewCompletion": {
+    "date": "2026-10-16",
+    "status": "47_OF_47_ORIGINAL_AUTHOR_UNITS_HAVE_REPEAT_VISUAL_WORDING_CHECKS_ZERO_INDEPENDENT_CHARACTER_CERTIFICATION",
+    "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+    "sourceScanSHA256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+    "originalPdfPages": [
+      16,
+      32
+    ],
+    "originalPrintedPages": [
+      1,
+      17
+    ],
+    "prerequisiteFirstPassUnits": 47,
+    "batch04SecondVisualWordingUnitCount": 10,
+    "batch05NewSecondVisualWordingUnitCount": 17,
+    "batch06NewSecondVisualWordingUnitCount": 20,
+    "cumulativeSecondVisualWordingUnitCount": 47,
+    "cumulativeSecondVisualWordingUnitIds": [
+      "SCHUSTER-EN-1908-OT-I-UNIT-01",
+      "SCHUSTER-EN-1908-OT-I-UNIT-02",
+      "SCHUSTER-EN-1908-OT-I-UNIT-03",
+      "SCHUSTER-EN-1908-OT-I-UNIT-04",
+      "SCHUSTER-EN-1908-OT-I-UNIT-05",
+      "SCHUSTER-EN-1908-OT-I-UNIT-06",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-01",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-02",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-03",
+      "SCHUSTER-EN-1908-OT-VIII-UNIT-04",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-01",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-02",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-03",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-04",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-05",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-06",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-07",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-08",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-09",
+      "SCHUSTER-EN-1908-OT-IV-UNIT-10",
+      "SCHUSTER-EN-1908-OT-V-UNIT-01",
+      "SCHUSTER-EN-1908-OT-V-UNIT-02",
+      "SCHUSTER-EN-1908-OT-V-UNIT-03",
+      "SCHUSTER-EN-1908-OT-V-UNIT-04",
+      "SCHUSTER-EN-1908-OT-V-UNIT-05",
+      "SCHUSTER-EN-1908-OT-V-UNIT-06",
+      "SCHUSTER-EN-1908-OT-V-UNIT-07",
+      "SCHUSTER-EN-1908-OT-II-UNIT-01",
+      "SCHUSTER-EN-1908-OT-II-UNIT-02",
+      "SCHUSTER-EN-1908-OT-II-UNIT-03",
+      "SCHUSTER-EN-1908-OT-III-UNIT-01",
+      "SCHUSTER-EN-1908-OT-III-UNIT-02",
+      "SCHUSTER-EN-1908-OT-III-UNIT-03",
+      "SCHUSTER-EN-1908-OT-III-UNIT-04",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-01",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-02",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-03",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-04",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-05",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-06",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-07",
+      "SCHUSTER-EN-1908-OT-VI-UNIT-08",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-01",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-02",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-03",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-04",
+      "SCHUSTER-EN-1908-OT-VII-UNIT-05"
+    ],
+    "independentCharacterForCharacterCertifiedUnitCount": 0,
+    "sourceNoteAnchorsRecoveredCount": 10,
+    "sourceNoteAnchorsRecovered": [
+      {
+        "sourceUnit": "VII.1",
+        "sourcePdfPage": 29,
+        "sourcePrintedPage": 14,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "Armenia",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VII.2",
+        "sourcePdfPage": 29,
+        "sourcePrintedPage": 14,
+        "pageLocalNoteNumber": 2,
+        "anchorWord": "subsided",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VIII.1",
+        "sourcePdfPage": 31,
+        "sourcePrintedPage": 16,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "frustrated",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VIII.3",
+        "sourcePdfPage": 31,
+        "sourcePrintedPage": 16,
+        "pageLocalNoteNumber": 2,
+        "anchorWord": "Japhet",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VIII.4",
+        "sourcePdfPage": 32,
+        "sourcePrintedPage": 17,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "divinities",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "IV.7",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-IV-UNIT-07",
+        "sourcePdfPage": 22,
+        "sourcePrintedPage": 7,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "enmity",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "IV.8",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-IV-UNIT-08",
+        "sourcePdfPage": 22,
+        "sourcePrintedPage": 7,
+        "pageLocalNoteNumber": 2,
+        "anchorWord": "dominion",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.3",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-03",
+        "sourcePdfPage": 26,
+        "sourcePrintedPage": 11,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "Noe",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.4",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-04",
+        "sourcePdfPage": 27,
+        "sourcePrintedPage": 12,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "covenant",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.8",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-08",
+        "sourcePdfPage": 28,
+        "sourcePrintedPage": 13,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "deluge",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      }
+    ],
+    "newSourceNoteAnchorsOnPrint": [
+      {
+        "sourceUnit": "IV.7",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-IV-UNIT-07",
+        "sourcePdfPage": 22,
+        "sourcePrintedPage": 7,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "enmity",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "IV.8",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-IV-UNIT-08",
+        "sourcePdfPage": 22,
+        "sourcePrintedPage": 7,
+        "pageLocalNoteNumber": 2,
+        "anchorWord": "dominion",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.3",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-03",
+        "sourcePdfPage": 26,
+        "sourcePrintedPage": 11,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "Noe",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.4",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-04",
+        "sourcePdfPage": 27,
+        "sourcePrintedPage": 12,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "covenant",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      },
+      {
+        "sourceUnit": "VI.8",
+        "sourceUnitId": "SCHUSTER-EN-1908-OT-VI-UNIT-08",
+        "sourcePdfPage": 28,
+        "sourcePrintedPage": 13,
+        "pageLocalNoteNumber": 1,
+        "anchorWord": "deluge",
+        "noteTextCertification": "NOT_CHARACTER_CERTIFIED",
+        "sourceTextLayer": "SOURCE_FOOTNOTE_SEPARATE_FROM_NARRATIVE"
+      }
+    ],
+    "sourceNoteBodiesCertifiedCount": 0,
+    "chapterQuestionBlocksExcluded": true,
+    "epigraphsAndHistoricalIllustrationsExcluded": true,
+    "workingNarrativeTextModified": false,
+    "historicalAuthorContextHoldsStillActive": true,
+    "fullAuthorTextCopiedToPublicGitHub": false,
+    "textPublishedIntoAdOrientemApp": false,
+    "noAiCreatedBibleNarrative": true,
+    "batch05PrivateAudit": {
+      "name": "Schuster_1908_Origins_Batch05_Print_Review.json",
+      "sha256": "1b33006829a94b6b3298ac4f527dd0b920edb5c771b4963fbfb0aca4d800d871",
+      "summaryName": "Schuster_1908_Origins_Batch05_Review_Summary.md",
+      "summarySha256": "009b9cc9f5aac680e91715d6069248bc16c0095eccab81e8d1cddac61594a58f"
+    },
+    "batch06PrivateAudit": {
+      "name": "Schuster_1908_Origins_Batch06_Consolidated_Review.json",
+      "sha256": "64caf46fce83e1be61d14504a82cbde595117dbaaf538166059c4d4ceb41be52",
+      "summaryName": "Schuster_1908_Origins_Batch06_Review_Summary.md",
+      "summarySha256": "a6f5cfc722dcd5dcc5263c41c06d80c22f7c30913e8c9ed91350c9be0a937adb"
+    },
+    "nextGate": "INDEPENDENT_FULL_DIPLOMATIC_LITERAL_PROOFREAD_AND_NOTE_BODIES_47_UNITS_SOURCE_RIGHTS_AND_EDITORIAL_SIGNOFF",
+    "reviewAccuracyBoundary": "Second visual wording pass establishes that printed units and note anchors were compared but does NOT certify all original spelling, punctuation, superscripts, page layouts or edited contents."
   }
 }
