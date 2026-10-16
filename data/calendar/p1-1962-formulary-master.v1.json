@@ -1,0 +1,2849 @@
+{
+  "schema": "AO_P1_1962_FORMULARY_MASTER_V1",
+  "asOf": "2026-10-16",
+  "status": "INDEXED_38_COMMON_FORMS_ZERO_PRIMARY_1962_TEXT_CERTIFICATIONS",
+  "baselineFile": "data/calendar/traditional-1962-common-formularies.review.v1.json",
+  "sourceDirectory": "https://missale.online/proprium/en/commune",
+  "corroboratingIndex": "https://fsspx.uk/en/proper-prayers-traditional-latin-mass-31673",
+  "components": [
+    "introit",
+    "collect",
+    "epistle",
+    "gradual",
+    "alleluia",
+    "tract",
+    "gospel",
+    "offertory",
+    "secret",
+    "communion",
+    "postcommunion"
+  ],
+  "inventoryCount": 38,
+  "alreadyExistingCanonicalIds": [
+    "commune:1962:doctor_pontiff",
+    "commune:1962:doctor_non_pontiff",
+    "commune:1962:confessor_non_pontiff"
+  ],
+  "newIdsAreProvisional": true,
+  "forms": [
+    {
+      "id": "p1:index:1962:abbots",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 1,
+      "label": "Abbots",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Abbots",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:apostles",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 2,
+      "label": "Apostles",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Apostles",
+      "primaryEditionCollated": false,
+      "category": "OTHER",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:feasts_of_the_blessed_virgin_mary",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 3,
+      "label": "Feasts of the Blessed Virgin Mary",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Feasts of the Blessed Virgin Mary",
+      "primaryEditionCollated": false,
+      "category": "VIRGIN",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_bishops_and_confessors",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 4,
+      "label": "Several Bishops and Confessors",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Bishops and Confessors",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_bishops_and_martyrs",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 5,
+      "label": "Several Bishops and Martyrs",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Bishops and Martyrs",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_confessors_not_bishops",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 6,
+      "label": "Several Confessors, not Bishops",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Confessors, not Bishops",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_female_martyrs_not_virgins",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 7,
+      "label": "Several Female Martyrs, not Virgins",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Female Martyrs, not Virgins",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_martyrs",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 8,
+      "label": "Several Martyrs",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Martyrs",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_martyrs_eastertide",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 9,
+      "label": "Several Martyrs (Eastertide)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Martyrs (Eastertide)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_martyrs_eastertide_ii",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 10,
+      "label": "Several Martyrs (Eastertide, II)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Martyrs (Eastertide, II)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_martyrs_eastertide_iii",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 11,
+      "label": "Several Martyrs (Eastertide, III)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Martyrs (Eastertide, III)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_martyrs_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 12,
+      "label": "Several Martyrs – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Martyrs – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_popes_and_confessors",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 13,
+      "label": "Several Popes and Confessors",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Popes and Confessors",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_popes_and_martyrs",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 14,
+      "label": "Several Popes and Martyrs",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Popes and Martyrs",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:several_virgins_and_martyrs",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 15,
+      "label": "Several Virgins and Martyrs",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Several Virgins and Martyrs",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:virgins",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 16,
+      "label": "Virgins",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Virgins",
+      "primaryEditionCollated": false,
+      "category": "VIRGIN",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:virgins_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 17,
+      "label": "Virgins – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Virgins – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "VIRGIN",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:bishop_and_confessor",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 18,
+      "label": "Bishop and Confessor",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Bishop and Confessor",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:bishop_and_confessor_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 19,
+      "label": "Bishop and Confessor – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Bishop and Confessor – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "commune:1962:doctor_pontiff",
+      "canonicalIdStatus": "REUSE_EXISTING_OWNER_ID",
+      "indexOrder": 20,
+      "label": "Bishop and Doctor of the Church",
+      "latinTitle": "Commune Doctoris Pontificis",
+      "latinTitleStatus": "SECONDARY_PAGE_ATTESTED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis",
+      "sourceSection": "Commune Sanctorum / Bishop and Doctor of the Church",
+      "primaryEditionCollated": false,
+      "category": "DOCTOR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#entrance",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#collect",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#reading",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#graduale",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#alleluia",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#tract",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#gospel",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#offertory",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#secret",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#communion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_pontificis#postcommunion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:bishop_and_martyr",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 21,
+      "label": "Bishop and Martyr",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Bishop and Martyr",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:bishop_and_martyr_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 22,
+      "label": "Bishop and Martyr – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Bishop and Martyr – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "commune:1962:confessor_non_pontiff",
+      "canonicalIdStatus": "REUSE_EXISTING_OWNER_ID",
+      "indexOrder": 23,
+      "label": "Confessor, not a Bishop",
+      "latinTitle": "Commune Confessoris non Pontificis",
+      "latinTitleStatus": "SECONDARY_PAGE_ATTESTED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://1962missal.com/commune/commune-confessoris-non-pontificis/",
+      "sourceSection": "Commune Sanctorum / Confessor, not a Bishop",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#entrance",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "collect": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#collect",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "epistle": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#reading",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gradual": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#graduale",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "alleluia": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#alleluia",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "tract": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#tract",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gospel": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#gospel",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "offertory": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#offertory",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "secret": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#secret",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "communion": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#communion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "postcommunion": {
+          "reference": "https://1962missal.com/commune/commune-confessoris-non-pontificis/#postcommunion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:confessor_not_a_bishop_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 24,
+      "label": "Confessor, not a Bishop – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Confessor, not a Bishop – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "CONFESSOR_OR_RELIGIOUS",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "commune:1962:doctor_non_pontiff",
+      "canonicalIdStatus": "REUSE_EXISTING_OWNER_ID",
+      "indexOrder": 25,
+      "label": "Doctor of the Church, not a Bishop",
+      "latinTitle": "Commune Doctoris non Pontificis",
+      "latinTitleStatus": "SECONDARY_PAGE_ATTESTED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis",
+      "sourceSection": "Commune Sanctorum / Doctor of the Church, not a Bishop",
+      "primaryEditionCollated": false,
+      "category": "DOCTOR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#entrance",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#collect",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#reading",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#graduale",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#alleluia",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#tract",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#gospel",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#offertory",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#secret",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#communion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune/commune_doctoris_non_pontificis#postcommunion",
+          "latinText": null,
+          "status": "SECONDARY_COMPONENT_PAGE_LINK_ONLY"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:female_martyr_not_a_virgin",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 26,
+      "label": "Female Martyr, not a Virgin",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Female Martyr, not a Virgin",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 27,
+      "label": "Holy Woman, neither Virgin nor Martyr",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Holy Woman, neither Virgin nor Martyr",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 28,
+      "label": "Martyr",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr_eastertide",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 29,
+      "label": "Martyr (Eastertide)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr (Eastertide)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr_eastertide_ii",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 30,
+      "label": "Martyr (Eastertide, II)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr (Eastertide, II)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr_eastertide_iii",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 31,
+      "label": "Martyr (Eastertide, III)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr (Eastertide, III)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr_eastertide_v",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 32,
+      "label": "Martyr (Eastertide, V)",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr (Eastertide, V)",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:martyr_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 33,
+      "label": "Martyr – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Martyr – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:pope_and_martyr",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 34,
+      "label": "Pope and Martyr",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Pope and Martyr",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:virgin_and_martyr",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 35,
+      "label": "Virgin and Martyr",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Virgin and Martyr",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:virgin_and_martyr_second_mass",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 36,
+      "label": "Virgin and Martyr – Second Mass",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Virgin and Martyr – Second Mass",
+      "primaryEditionCollated": false,
+      "category": "MARTYR",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:dedication_of_a_church",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 37,
+      "label": "Dedication of a Church",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Dedication of a Church",
+      "primaryEditionCollated": false,
+      "category": "OTHER",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    },
+    {
+      "id": "p1:index:1962:vigil_of_an_apostle",
+      "canonicalIdStatus": "INDEX_ONLY_REQUIRES_OWNER_ID_RECONCILIATION",
+      "indexOrder": 38,
+      "label": "Vigil of an Apostle",
+      "latinTitle": null,
+      "latinTitleStatus": "PRINT_1962_CAPTION_NOT_YET_COLLATED",
+      "edition": "MISSALE_ROMANUM_1962_CLAIMED_BY_SECONDARY_INDEX_NOT_PRINT_COLLATED",
+      "sourceUrl": "https://missale.online/proprium/en/commune",
+      "sourceSection": "Commune Sanctorum / Vigil of an Apostle",
+      "primaryEditionCollated": false,
+      "category": "OTHER",
+      "choiceStatus": "NOT_EVALUATED_BY_DATE_SEASON_SAINT_AND_APPROVAL",
+      "formAlternativesAllowed": false,
+      "sourceComponents": {
+        "introit": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "collect": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "epistle": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gradual": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "alleluia": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "tract": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "gospel": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "offertory": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "secret": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "communion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        },
+        "postcommunion": {
+          "reference": "https://missale.online/proprium/en/commune",
+          "latinText": null,
+          "status": "INDEX_ONLY_TEXT_NOT_COLLATED"
+        }
+      },
+      "componentsCompleteIn1962Print": false,
+      "approvedForRuntime": false
+    }
+  ],
+  "categoryGaps": [
+    "Form alternatives must be identified by exact Latin incipits and print missal references; numbered English source-index labels are not form-choice authorization.",
+    "Evangelists and specialised saints may have specific Propers or apostolic Commons; no generic evangelist Common invented.",
+    "Apostles/vigils, paschal modifications, Marian Commons and proper local supplements require separate applicability examination."
+  ],
+  "publishedLatinTextCount": 0,
+  "primaryPrintedEditionCollationCount": 0
+}
