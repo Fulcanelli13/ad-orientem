@@ -495,6 +495,17 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     return true;
   }
 
+  // An observed child Back explicitly restores the already visited Formation
+  // family even when the child closed before the asynchronous visibility poll
+  // saw it. This never creates a synthetic parent or restarts its route.
+  function restoreObservedChild(){
+    if(!state.open||!state.child||!root(win)||childOpen(win,state.child))return false;
+    cancelMonitor();
+    state.child=null;state.guidedAttempted=false;state.seenChild=false;state.openPolls=0;
+    state.externalReturn=null;state.error="";
+    return showHub();
+  }
+
   function open(){
     // A specialist child may call AO_LEARN_APP_V1.open() on Back. If its
     // existing parent is still alive, restore that suspended Formation
@@ -568,7 +579,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.unsub=null;
   }
 
-  return Object.freeze({version:VERSION,open,close,openModule,paint,status,dispose});
+  return Object.freeze({version:VERSION,open,close,openModule,restoreObservedChild,paint,status,dispose});
 }
 
 function maybeOpenFormationResearchPreview(win){
