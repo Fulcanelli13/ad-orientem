@@ -239,7 +239,7 @@ export function calendarObservedCommemorationClaimsForDay(resolution,corrections
      ![1,2].includes(c.principalClass)||
      c.commemorationClass!==(c.kind==="PRIVILEGED_SUNDAY"?2:3)||
      pathId(c.sourcePath)!==mainId||
-     pathId(c.commemorationPath)!==observed[0].identity||
+     pathId(c.commemorationPath)!==ownerId(observed[0].identity)||
      !Array.isArray(c.clauses)||!c.clauses.length||
      !c.clauses.every(x=>EXACT_COMM_CLAUSES.has(x))||
      new Set(c.clauses).size!==c.clauses.length||
@@ -264,7 +264,7 @@ export function calendarObservedCommemorationClaimsForDay(resolution,corrections
   if(!witness)return Object.freeze([]);
   return Object.freeze([Object.freeze({
     claimId:c.id,claimKind:"RESOLVED_1962_PRIVILEGED_COMMEMORATION",
-    date:resolution.date,principalId:mainId,commemorationId:observed[0].identity,
+    date:resolution.date,principalId:mainId,commemorationId:ownerId(observed[0].identity),
     properSourcePath:resolution.proper.data.sourcePath,
     classes:Object.freeze({principal:mainRank,commemoration:commRank}),
     clauses:Object.freeze([...c.clauses]),
