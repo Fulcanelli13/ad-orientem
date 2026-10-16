@@ -1,0 +1,80 @@
+{
+  "schema": "AO_SACRED_ART_W96_ACTUAL_PHOTO_EVIDENCE_CERTIFICATION_V1",
+  "date": "2026-10-16",
+  "sourceActionsRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38909445161",
+  "acquisitionReportArtifactId": 12049895983,
+  "strictExistingGapCategories": 22,
+  "strictCoverageUnchanged": "146/168",
+  "statusPolicy": "Acquired original photo file is NOT by itself the same as certified selected physical painting or authorization for app publication.",
+  "records": [
+    {
+      "categoryIndex": 135,
+      "physicalArtworkId": "VAN-DYCK-BILBAO-85-221",
+      "source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Lamentation_over_the_Dead_Christ_-_Google_Art_Project.jpg",
+      "institution": "Bilbao Fine Arts Museum",
+      "accession": "85/221",
+      "pixels": [
+        6306,
+        3784
+      ],
+      "sourceSHA256": "bf3c3f2712df617e307aef52b2eeba31153e93b32b04960b070848b21a2e673d",
+      "observedQA": "Colour image visually shows full painted composition without frame; original depicts lamentation. Compare as DISTINCT ORIGINAL from Alte Pinakothek 606.",
+      "rights": "Wikimedia Commons PD-Art / public domain image assertion, subject to territorial reuse review",
+      "artisticSelection": "NOT SELECTED; no historic score transfer",
+      "completeSourceAvailable": true,
+      "publicationApproval": false
+    },
+    {
+      "categoryIndex": 139,
+      "physicalArtworkId": "RUBENS-BASEL-G-1988-24",
+      "source": "https://commons.wikimedia.org/wiki/File:Die_Heilige_Dreifaltigkeit_-_Peter_Paul_Rubens.jpg",
+      "institution": "Kunstmuseum Basel",
+      "accession": "G 1988.24",
+      "museumObjectId": "1082",
+      "pixels": [
+        1160,
+        1624
+      ],
+      "sourceSHA256": "f8d7d10ae7d9f9be1ee5067ca89a6591aacaa0ecdb577a2b47510a1021c114e1",
+      "observedQA": "Portrait painting visually complete in posted photograph but short edge 1160: NOT a high-resolution master. Different painting from Rubens KMSKA 314.",
+      "rights": "Photo by Paradise Chronicle, Commons CC BY-SA 4.0; do not treat Wikimedia's public-domain painting metadata as waiver of photo attribution/share alike.",
+      "artisticSelection": "NOT SELECTED; no historic score transfer",
+      "completeSourceAvailable": true,
+      "publicationApproval": false
+    }
+  ],
+  "clarifiedEarlierSources": [
+    {
+      "categoryIndex": 135,
+      "physicalArtworkId": "VAN-DYCK-MUNICH-606",
+      "rights": "Original photo PD-Art assertion",
+      "dimensions": [
+        3750,
+        2736
+      ],
+      "status": "Full-size acquisition exists W92; category painting selected accession not established"
+    },
+    {
+      "categoryIndex": 139,
+      "physicalArtworkId": "RUBENS-KMSKA-314",
+      "rights": "Museum official CC0 + Commons CC0",
+      "dimensions": [
+        3840,
+        3949
+      ],
+      "status": "Full-image acquisition exists W92; category painting selected accession not established"
+    },
+    {
+      "categoryIndex": 43,
+      "physicalArtworkId": "CORREA-VIVAR-PRADO-P001300",
+      "status": "The Commons 'San Lorenzo' file shows St Lawrence, not St Hilary verso. Forbid categorization as St Hilary."
+    },
+    {
+      "categoryIndex": 136,
+      "physicalArtworkId": "UNVERIFIED-RUBENS-ST-ANTHONY",
+      "status": "No exact Rubens physical original accession/source; forbid cross-artist substitutions."
+    }
+  ],
+  "result": "Four distinct historical paintings are now acquired across 2 category subjects, but only two are high resolution and existing app-curator selection is unresolved. Do not increase strict 146/168 numerator until an explicit exact original and rights certification.",
+  "next": "Research authentic full photo masters of remaining historical selections. No more rating UI before gap acquisitions."
+}
