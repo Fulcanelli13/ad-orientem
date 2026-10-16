@@ -1,0 +1,3570 @@
+{
+  "schema": "AO_P2_SOURCE_TO_DATE_EVIDENCE_LEDGER_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "dateEdges": [
+    {
+      "edgeId": "p2-existing-001",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.giuseppina-bakhita",
+      "monthDay": "02-08",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 8
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2000-10-01",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.giuseppina-bakhita",
+        "monthDay": "02-08",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2000-10-01",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Sudanese-born religious sister who survived enslavement and witnessed to Christian forgiveness and hope.",
+            "fr": "Religieuse née au Soudan, ancienne esclave, témoin du pardon et de l'espérance chrétienne."
+          },
+          "context": {
+            "en": "Canonised in 2000; the Dicastery records her memorial on 8 February.",
+            "fr": "Canonisée en 2000 ; le Dicastère indique sa mémoire au 8 février."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-002",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.gregory-narek",
+      "monthDay": "02-27",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 27
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2021-02-02",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": "2021-02-02",
+        "juridicalEffectiveFrom": "2021-02-02",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.gregory-narek",
+        "monthDay": "02-27",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "An Armenian monk and spiritual writer whose prayers express repentance, hope and confidence in God's mercy.",
+            "fr": "Moine arménien et écrivain spirituel dont les prières expriment le repentir, l'espérance et la confiance en la miséricorde de Dieu."
+          },
+          "context": {
+            "en": "His theological poetry, especially the Book of Lamentations, has nourished Christian prayer across traditions.",
+            "fr": "Sa poésie théologique, notamment le Livre des lamentations, a nourri la prière chrétienne au-delà des traditions."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-003",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.oscar-arnulfo-romero",
+      "monthDay": "03-24",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 24
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.oscar-arnulfo-romero",
+        "monthDay": "03-24",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2018-10-14",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Archbishop of San Salvador, murdered while celebrating Mass, who bore witness to the faith among the oppressed.",
+            "fr": "Archevêque de San Salvador, assassiné pendant la messe, qui témoigna de la foi auprès des opprimés."
+          },
+          "context": {
+            "en": "Canonised in 2018; the Dicastery identifies 24 March as his liturgical memorial.",
+            "fr": "Canonisé en 2018 ; le Dicastère indique le 24 mars comme sa mémoire liturgique."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-004",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.kateri-tekakwitha",
+      "monthDay": "04-17",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 17
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2012-10-21",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.kateri-tekakwitha",
+        "monthDay": "04-17",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2012-10-21",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Mohawk Catholic laywoman and virgin who remained faithful to prayer and Christ amid opposition.",
+            "fr": "Jeune laïque catholique mohawk et vierge, demeurée fidèle à la prière et au Christ malgré les oppositions."
+          },
+          "context": {
+            "en": "Canonised in 2012; 17 April is her Dicastery-listed liturgical memorial date.",
+            "fr": "Canonisée en 2012 ; le 17 avril est la date de mémoire indiquée par le Dicastère."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-005",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.gianna-beretta-molla",
+      "monthDay": "04-28",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 28
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2004-05-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.gianna-beretta-molla",
+        "monthDay": "04-28",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2004-05-16",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "An Italian physician, wife and mother, honoured for her self-giving love and fidelity to her family.",
+            "fr": "Médecin italienne, épouse et mère, honorée pour son amour généreux et sa fidélité familiale."
+          },
+          "context": {
+            "en": "Canonised in 2004; her memorial date is recorded as 28 April.",
+            "fr": "Canonisée en 2004 ; sa date de mémoire est indiquée au 28 avril."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-006",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.john-avila",
+      "monthDay": "05-10",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 10
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2021-02-02",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "1970-05-31",
+        "documentPublishedOn": "2021-02-02",
+        "juridicalEffectiveFrom": "2021-02-02",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.john-avila",
+        "monthDay": "05-10",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest and preacher who devoted his life to evangelisation and the spiritual formation of clergy and laypeople.",
+            "fr": "Prêtre et prédicateur, il consacra sa vie à l'évangélisation et à la formation spirituelle des prêtres et des fidèles."
+          },
+          "context": {
+            "en": "His writings and guidance contributed to Catholic renewal in sixteenth-century Spain.",
+            "fr": "Ses écrits et sa direction spirituelle contribuèrent au renouveau catholique dans l'Espagne du XVIe siècle."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-007",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.paul-vi",
+      "monthDay": "05-29",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 29
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2019-02-06",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": "2019-02-06",
+        "juridicalEffectiveFrom": "2019-02-06",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.paul-vi",
+        "monthDay": "05-29",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2019-02-06",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope from 1963 to 1978, remembered for his pastoral ministry and proclamation of the Gospel.",
+            "fr": "Pape de 1963 à 1978, connu pour son ministère pastoral et sa prédication de l'Évangile."
+          },
+          "context": {
+            "en": "Former archbishop of Milan, he guided the concluding sessions of the Second Vatican Council and promoted evangelisation.",
+            "fr": "Ancien archevêque de Milan, il guida les dernières sessions du deuxième concile du Vatican et promut l'évangélisation."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/02/06/190206b.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-008",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "canon-group.uganda-martyrs-22",
+      "monthDay": "06-03",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 3
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "canon-group.uganda-martyrs-22",
+        "monthDay": "06-03",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0603-memorial-charles-lwanga.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-009",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.josemaria-escriva-de-balaguer",
+      "monthDay": "06-26",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 26
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2002-10-06",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.josemaria-escriva-de-balaguer",
+        "monthDay": "06-26",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2002-10-06",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest who taught the sanctification of ordinary work and founded Opus Dei.",
+            "fr": "Prêtre qui enseigna la sanctification du travail ordinaire et fonda l'Opus Dei."
+          },
+          "context": {
+            "en": "Canonised in 2002; the Dicastery lists his liturgical memorial on 26 June.",
+            "fr": "Canonisé en 2002 ; le Dicastère indique sa mémoire liturgique au 26 juin."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-010",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.irenaeus-lyon",
+      "monthDay": "06-28",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 28
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/062824.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.irenaeus-lyon",
+        "monthDay": "06-28",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_HISTORIC_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/062824.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-011",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.pier-giorgio-frassati",
+      "monthDay": "07-04",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 4
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-09-07",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.pier-giorgio-frassati",
+        "monthDay": "07-04",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2025-09-07",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A young Dominican tertiary and lay Catholic whose prayer and works of charity centred on the poor.",
+            "fr": "Jeune tertiaire dominicain et laïc catholique dont la prière et les œuvres de charité étaient tournées vers les pauvres."
+          },
+          "context": {
+            "en": "Canonised on 7 September 2025; the Dicastery identifies 4 July as his memorial date.",
+            "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 4 juillet comme date de mémoire."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-012",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "canon-group.martyrs-china-1648-1930",
+      "monthDay": "07-09",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 9
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "canon-group.martyrs-china-1648-1930",
+        "monthDay": "07-09",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0709-memorial-augustine-zhao-rong.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-013",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.teresa-calcutta",
+      "monthDay": "09-05",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 5
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2025-02-11",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-09-04",
+        "documentPublishedOn": "2025-02-11",
+        "juridicalEffectiveFrom": "2025-02-11",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.teresa-calcutta",
+        "monthDay": "09-05",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2025-02-11",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "She served Christ among the poorest and most abandoned through the Missionaries of Charity.",
+            "fr": "Elle servit le Christ parmi les plus pauvres et les plus abandonnés par l'œuvre des Missionnaires de la Charité."
+          },
+          "context": {
+            "en": "Her life made works of mercy, personal dignity and care for the dying visible to the world.",
+            "fr": "Sa vie rendit visibles les œuvres de miséricorde, la dignité de chacun et le soin des mourants."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2025/02/11/250211b.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-014",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.hildegard-bingen",
+      "monthDay": "09-17",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 17
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2021-02-02",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2012-05-10",
+        "documentPublishedOn": "2021-02-02",
+        "juridicalEffectiveFrom": "2021-02-02",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.hildegard-bingen",
+        "monthDay": "09-17",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2021-02-02",
+        "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Benedictine abbess and theologian who united profound prayer with teaching and sacred music.",
+            "fr": "Abbesse bénédictine et théologienne, elle unit une prière profonde à l'enseignement et à la musique sacrée."
+          },
+          "context": {
+            "en": "Her spiritual writings and compositions remain an important part of medieval Christian culture.",
+            "fr": "Ses écrits spirituels et ses compositions occupent une place importante dans la culture chrétienne médiévale."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-015",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "canon-group.korean-martyrs-103",
+      "monthDay": "09-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 20
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "canon-group.korean-martyrs-103",
+        "monthDay": "09-20",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0920-memorial-andrew-kim-taegon.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-016",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.pio-pietrelcina",
+      "monthDay": "09-23",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 23
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+      "universalRomanStatus": "ATTESTED_BY_PAPAL_ANNOUNCEMENT",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html",
+        "exactFieldOrClaim": "PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE",
+        "publishedOn": "2002-06-16",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2002-06-16",
+        "documentPublishedOn": "2002-06-16",
+        "juridicalEffectiveFrom": "2002-06-16",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.pio-pietrelcina",
+        "monthDay": "09-23",
+        "kind": "MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+        "publishedOn": "2002-06-16",
+        "sourceUrl": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "ATTESTED_BY_PAPAL_ANNOUNCEMENT",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "sourceEvidenceType": "PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE",
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Capuchin priest whose prayer, ministry of confession and care of the suffering drew many to Christ.",
+            "fr": "Prêtre capucin dont la prière, le ministère de la confession et le soin des malades conduisirent de nombreux fidèles au Christ."
+          },
+          "context": {
+            "en": "John Paul II expressly announced a Roman Calendar memorial for him on 23 September at his canonisation in 2002.",
+            "fr": "Jean-Paul II annonça expressément lors de sa canonisation en 2002 sa mémoire au Calendrier romain le 23 septembre."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-017",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "canon-group.japan-martyrs-16-1987",
+      "monthDay": "09-28",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 28
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "canon-group.japan-martyrs-16-1987",
+        "monthDay": "09-28",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-018",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.therese-lisieux",
+      "monthDay": "10-01",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 1
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/100126.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.therese-lisieux",
+        "monthDay": "10-01",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/100126.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-019",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.maria-faustyna-kowalska",
+      "monthDay": "10-05",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 5
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2020-05-18",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2000-04-30",
+        "documentPublishedOn": "2020-05-18",
+        "juridicalEffectiveFrom": "2020-05-18",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.maria-faustyna-kowalska",
+        "monthDay": "10-05",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2020-05-18",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A Polish religious sister who called the faithful to trust in Christ's mercy and practise mercy toward others.",
+            "fr": "Religieuse polonaise qui exhorta les fidèles à se confier à la miséricorde du Christ et à pratiquer la miséricorde."
+          },
+          "context": {
+            "en": "Her spiritual Diary inspired devotion to Divine Mercy; she was canonised in 2000.",
+            "fr": "Son Journal spirituel a inspiré la dévotion à la Miséricorde divine ; elle fut canonisée en 2000."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/05/18/200518a.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-020",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.john-henry-newman",
+      "monthDay": "10-09",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 9
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2026-02-03",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2019-10-13",
+        "documentPublishedOn": "2026-02-03",
+        "juridicalEffectiveFrom": "2026-02-03",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.john-henry-newman",
+        "monthDay": "10-09",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2026-02-03",
+        "sourceUrl": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-021",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.john-xxiii",
+      "monthDay": "10-11",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 11
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2014-05-29",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-04-27",
+        "documentPublishedOn": "2014-05-29",
+        "juridicalEffectiveFrom": "2014-05-29",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.john-xxiii",
+        "monthDay": "10-11",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2014-05-29",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope and former patriarch of Venice, remembered for pastoral charity, prayer and concern for the unity of Christians.",
+            "fr": "Pape et ancien patriarche de Venise, honoré pour sa charité pastorale, sa prière et son souci de l'unité des chrétiens."
+          },
+          "context": {
+            "en": "Convened the Second Vatican Council; canonised in 2014. His modern optional memorial does not modify the 1962 feast of the day.",
+            "fr": "Convoqua le deuxième concile du Vatican ; canonisé en 2014. Sa mémoire facultative actuelle ne modifie pas la fête de 1962 du jour."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-022",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.carlo-acutis",
+      "monthDay": "10-12",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 12
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-09-07",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.carlo-acutis",
+        "monthDay": "10-12",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2025-09-07",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A young layman who loved the Eucharist and used digital tools to share the faith.",
+            "fr": "Jeune laïc amoureux de l'Eucharistie, qui utilisa l'informatique pour faire connaître la foi."
+          },
+          "context": {
+            "en": "Canonised on 7 September 2025; the Dicastery records 12 October as his liturgical memorial date.",
+            "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 12 octobre comme date de mémoire liturgique."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-023",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.teresa-avila",
+      "monthDay": "10-15",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 15
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/101526.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.teresa-avila",
+        "monthDay": "10-15",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/101526.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-024",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.john-paul-ii",
+      "monthDay": "10-22",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 22
+      },
+      "dateClaimKind": "OPTIONAL_MEMORIAL",
+      "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+      "universalRomanStatus": "CERTIFIED_BY_DECREE",
+      "source": {
+        "publisher": "Holy See / recorded ecclesiastical authority",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "exactFieldOrClaim": "OPTIONAL_MEMORIAL",
+        "publishedOn": "2014-05-29",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-04-27",
+        "documentPublishedOn": "2014-05-29",
+        "juridicalEffectiveFrom": "2014-05-29",
+        "effectiveCertainty": "SOURCE_DATE_PROVISIONAL",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "AS_RECORDED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.john-paul-ii",
+        "monthDay": "10-22",
+        "kind": "OPTIONAL_MEMORIAL",
+        "authorityScope": "GENERAL_ROMAN_VATICAN_DECREE",
+        "publishedOn": "2014-05-29",
+        "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html",
+        "historyGate": "FROM_PUBLICATION_DATE",
+        "universalStatus": "CERTIFIED_BY_DECREE",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "Pope whose extensive apostolic journeys and teaching encouraged prayer, the dignity of human life and fidelity to Christ.",
+            "fr": "Pape dont les voyages apostoliques et l'enseignement encouragèrent la prière, la dignité humaine et la fidélité au Christ."
+          },
+          "context": {
+            "en": "Served as Bishop of Rome from 1978 to 2005; canonised in 2014.",
+            "fr": "Fut évêque de Rome de 1978 à 2005 ; canonisé en 2014."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-existing-025",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "canon-group.vietnamese-martyrs-117",
+      "monthDay": "11-24",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 24
+      },
+      "dateClaimKind": "MEMORIAL",
+      "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+      "universalRomanStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+      "source": {
+        "publisher": "USCCB",
+        "url": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+        "exactFieldOrClaim": "MEMORIAL",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "US_CONFERENCE_WITNESS",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "canon-group.vietnamese-martyrs-117",
+        "monthDay": "11-24",
+        "kind": "MEMORIAL",
+        "authorityScope": "USCCB_2026_CALENDAR_WITNESS",
+        "publishedOn": null,
+        "sourceUrl": "https://bible.usccb.org/bible/readings/-1124-memorial-andrew-dung-lac.cfm",
+        "historyGate": "CHECKED_WITNESS_NOT_HISTORICALLY_RECONSTRUCTED",
+        "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null
+      }
+    },
+    {
+      "edgeId": "p2-existing-026",
+      "sourceCollection": "EXISTING_AO_REVIEW_REGISTRY",
+      "subjectId": "saint.charles-de-foucauld",
+      "monthDay": "12-01",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 12,
+        "day": 1
+      },
+      "dateClaimKind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalRomanStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "source": {
+        "publisher": "Holy See Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html",
+        "exactFieldOrClaim": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "UNVERIFIED",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY",
+      "originalRecord": {
+        "subjectId": "saint.charles-de-foucauld",
+        "monthDay": "12-01",
+        "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+        "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+        "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+        "publishedOn": null,
+        "canonizedOn": "2022-05-15",
+        "historyGate": "FROM_CANONIZATION_DATE",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html",
+        "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+        "mass1962Effect": "NONE",
+        "approved1962FormularyId": null,
+        "editorialTeaser": {
+          "whyHonoured": {
+            "en": "A priest and hermit whose life in the Sahara joined contemplation, hospitality and service.",
+            "fr": "Prêtre et ermite dont la vie au Sahara unit contemplation, hospitalité et service."
+          },
+          "context": {
+            "en": "Canonised in 2022; his memorial is listed as 1 December.",
+            "fr": "Canonisé en 2022 ; sa mémoire est indiquée au 1er décembre."
+          },
+          "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+          "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html"
+        }
+      }
+    },
+    {
+      "edgeId": "p2-dicastery-001",
+      "subjectId": "saint.pier-giorgio-frassati",
+      "monthDay": "07-04",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 4
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 4 luglio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-09-07",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-002",
+      "subjectId": "saint.ignazio-maloyan",
+      "monthDay": "06-11",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 11
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/ignazio-maloyan.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 11 giugno",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-003",
+      "subjectId": "saint.peter-to-rot",
+      "monthDay": "07-07",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 7
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/pietro-to-rot.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 7 luglio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-004",
+      "subjectId": "saint.vincenza-maria-poloni",
+      "monthDay": "11-11",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 11
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/vincenza-maria-poloni.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 11 novembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-005",
+      "subjectId": "saint.carmen-rendiles-martinez",
+      "monthDay": "05-09",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 9
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/carmen-rendiles-martinez.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 9 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-006",
+      "subjectId": "saint.maria-troncatti",
+      "monthDay": "08-25",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 25
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-troncatti.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 25 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-007",
+      "subjectId": "saint.jose-gregorio-hernandez-cisneros",
+      "monthDay": "10-26",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 26
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/jose-gregorio-hernandez-cisneros.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 26 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-008",
+      "subjectId": "saint.bartolo-longo",
+      "monthDay": "10-05",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 5
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/bartolo-longo.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 5 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2025.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2025-10-19",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-009",
+      "subjectId": "saint.maria-antonia-de-san-jose",
+      "monthDay": "03-07",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 7
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-antonia-de-san-jose.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 7 marzo",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2024-02-11",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-010",
+      "subjectId": "saint.giuseppe-allamano",
+      "monthDay": "02-16",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 16
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giuseppe-allamano.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 16 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2024-10-20",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-011",
+      "subjectId": "saint.marie-leonie-paradis",
+      "monthDay": "05-03",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 3
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/marie-leonie-paradis.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 3 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2024-10-20",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-012",
+      "subjectId": "saint.elena-guerra",
+      "monthDay": "04-11",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 11
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/elena-guerra.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 11 aprile",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2024.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2024-10-20",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-013",
+      "subjectId": "saint.lazzaro-devasahayam-pillai",
+      "monthDay": "01-14",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 14
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/devasahayam-pillai.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 14 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-014",
+      "subjectId": "saint.cesar-de-bus",
+      "monthDay": "04-15",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 15
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/cesar-de-bus.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 15 aprile",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-015",
+      "subjectId": "saint.luigi-maria-palazzolo",
+      "monthDay": "05-22",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 22
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/luigi-maria-palazzolo.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 22 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-016",
+      "subjectId": "saint.giustino-maria-russolillo",
+      "monthDay": "08-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giustino-maria-russolillo.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-017",
+      "subjectId": "saint.maria-francesca-rubatto",
+      "monthDay": "08-06",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 6
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-francesca-di-gesu-rubatto.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 6 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-018",
+      "subjectId": "saint.maria-domenica-mantovani",
+      "monthDay": "02-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-domenica-mantovani.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-019",
+      "subjectId": "saint.titus-brandsma",
+      "monthDay": "07-26",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 26
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/tito-brandsma.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 26 luglio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-020",
+      "subjectId": "saint.marie-rivier",
+      "monthDay": "02-03",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 3
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/marie-rivier.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 3 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-021",
+      "subjectId": "saint.maria-di-gesu-santocanale",
+      "monthDay": "01-27",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 27
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-di-gesu-santocanale.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 27 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-05-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-022",
+      "subjectId": "saint.artemide-zatti",
+      "monthDay": "11-13",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 13
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/artemide-zatti.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 13 novembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-10-09",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-023",
+      "subjectId": "saint.giovanni-battista-scalabrini",
+      "monthDay": "06-01",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 1
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giovanni-battista-scalabrini.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 1 giugno",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2022.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2022-10-09",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-024",
+      "subjectId": "saint.francesco-spinelli",
+      "monthDay": "02-06",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 6
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/francesco-spinelli.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 6 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2018.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-025",
+      "subjectId": "saint.vincenzo-romano",
+      "monthDay": "12-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 12,
+        "day": 20
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/vincenzo-romano.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 20 dicembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2018.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-026",
+      "subjectId": "saint.nunzio-sulprizio",
+      "monthDay": "05-05",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 5
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/nunzio-sulprizio.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 5 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2018.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-027",
+      "subjectId": "saint.maria-caterina-kasper",
+      "monthDay": "02-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-caterina-kasper.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2018.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-028",
+      "subjectId": "saint.nazaria-ignazia-march-mesa",
+      "monthDay": "07-06",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 6
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/nazaria-ignazia-di-santa-teresa-di-gesu.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 6 luglio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2018.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2018-10-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-029",
+      "subjectId": "saint.stanislaw-of-jesus-mary",
+      "monthDay": "09-17",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 17
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/stanislao-di-gesu-maria.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 17 settembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-06-05",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-030",
+      "subjectId": "saint.maria-elisabeth-hesselblad",
+      "monthDay": "04-24",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 24
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-elisabeth-hesselblad.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 24 aprile",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-06-05",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-031",
+      "subjectId": "saint.salomone-leclercq",
+      "monthDay": "09-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/salomone-leclercq.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 settembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-032",
+      "subjectId": "saint.jose-sanchez-del-rio",
+      "monthDay": "11-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 20
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/jose-sanchez-del-rio.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 20 novembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-033",
+      "subjectId": "saint.manuel-gonzalez-garcia",
+      "monthDay": "01-04",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 4
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/manuel-gonzalez-garcia.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 4 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-034",
+      "subjectId": "saint.lodovico-pavoni",
+      "monthDay": "04-01",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 1
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/lodovico-pavoni.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 1 aprile",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-035",
+      "subjectId": "saint.alfonso-maria-fusco",
+      "monthDay": "02-06",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 6
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/alfonso-maria-fusco.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 6 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-036",
+      "subjectId": "saint.jose-gabriel-del-rosario-brochero",
+      "monthDay": "01-26",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 26
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giuseppe-gabriele-del-rosario-brochero.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 26 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-037",
+      "subjectId": "saint.elisabeth-of-trinity",
+      "monthDay": "11-09",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 9
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/elisabetta-della-santissima-trinita.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 9 novembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2016.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2016-10-16",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-038",
+      "subjectId": "saint.giuseppe-vaz",
+      "monthDay": "01-16",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 16
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/jose-vaz.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 16 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-01-14",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-039",
+      "subjectId": "saint.jeanne-emilie-de-villeneuve",
+      "monthDay": "10-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/jeanne-emilie-de-villeneuve.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-05-17",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-040",
+      "subjectId": "saint.mariam-baouardy",
+      "monthDay": "08-26",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 26
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-di-gesu-crocifisso-baouardy.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 26 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-05-17",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-041",
+      "subjectId": "saint.marie-alphonsine-danil-ghattas",
+      "monthDay": "03-25",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 25
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/marie-alphonsine-danil-ghattas.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 25 marzo",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-05-17",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-042",
+      "subjectId": "saint.maria-cristina-brando",
+      "monthDay": "01-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 20
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-cristina-brando.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 20 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-05-17",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-043",
+      "subjectId": "saint.junipero-serra",
+      "monthDay": "08-28",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 28
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/junipero-serra.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 28 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-09-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-044",
+      "subjectId": "saint.vincenzo-grossi",
+      "monthDay": "11-07",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 11,
+        "day": 7
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/vincenzo-grossi.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 7 novembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-10-18",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-045",
+      "subjectId": "saint.maria-salvat-y-romero",
+      "monthDay": "10-31",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 31
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-dell-immacolata-concezione-salvat-y-romero.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 31 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2015.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-10-18",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-046",
+      "subjectId": "saint.faustino-miguez",
+      "monthDay": "03-08",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 8
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/faustino-miguez.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 8 marzo",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-10-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-047",
+      "subjectId": "saint.angelo-da-acri",
+      "monthDay": "10-30",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 30
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/angelo-da-acri.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 30 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-10-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-048",
+      "subjectId": "saint.cristobal-tlaxcala",
+      "monthDay": "09-23",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 23
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/cristobal-antonio-e-juan.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 23 settembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-10-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-049",
+      "subjectId": "saint.antonio-tlaxcala",
+      "monthDay": "09-23",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 23
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/cristobal-antonio-e-juan.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 23 settembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-10-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-050",
+      "subjectId": "saint.juan-tlaxcala",
+      "monthDay": "09-23",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 9,
+        "day": 23
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/cristobal-antonio-e-juan.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 23 settembre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2017.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-10-15",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-051",
+      "subjectId": "saint.francois-de-montmorency-laval",
+      "monthDay": "05-06",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 6
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/francois-de-montmorency-laval.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 6 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-04-03",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-052",
+      "subjectId": "saint.jose-de-anchieta",
+      "monthDay": "06-09",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 9
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giuseppe-de-anchieta.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 9 giugno",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-04-03",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-053",
+      "subjectId": "saint.marie-of-incarnation-guyart",
+      "monthDay": "04-30",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 4,
+        "day": 30
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-dell-incarnazione-guyart.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 30 aprile",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-04-03",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-054",
+      "subjectId": "saint.giovanni-antonio-farina",
+      "monthDay": "03-04",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 4
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/giovanni-antonio-farina.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 4 marzo",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-055",
+      "subjectId": "saint.kuriakose-elias-chavara",
+      "monthDay": "01-03",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 3
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/kuriakose-elias-chavara-della-sacra-famiglia.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 3 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-056",
+      "subjectId": "saint.ludovico-da-casoria",
+      "monthDay": "03-30",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 3,
+        "day": 30
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/ludovico-da-casoria.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 30 marzo",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-057",
+      "subjectId": "saint.nicola-da-longobardi",
+      "monthDay": "02-02",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 2
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/nicola-da-longobardi.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 2 febbraio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-058",
+      "subjectId": "saint.eufrasia-eluvathingal",
+      "monthDay": "08-29",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 29
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/eufrasia-eluvathingal-del-sacro-cuore.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 29 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-059",
+      "subjectId": "saint.amato-ronconi",
+      "monthDay": "05-08",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 5,
+        "day": 8
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/amato-ronconi.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 8 maggio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2014.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-060",
+      "subjectId": "saint.laura-montoya-upergui",
+      "monthDay": "10-21",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 21
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/laura-di-santa-caterina-da-siena.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 21 ottobre",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2013-05-12",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-061",
+      "subjectId": "saint.maria-guadalupe-garcia-zavala",
+      "monthDay": "06-24",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 24
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/maria-guadalupe-garcia-zavala.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 24 giugno",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2013-05-12",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-062",
+      "subjectId": "saint.angela-da-foligno",
+      "monthDay": "01-04",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 1,
+        "day": 4
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/angela-da-foligno.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 4 gennaio",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2013-10-09",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-dicastery-063",
+      "subjectId": "saint.pierre-favre",
+      "monthDay": "08-01",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 1
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/pierre-favre.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 1 agosto",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16",
+        "sourceYearIndex": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2013.html"
+      },
+      "effective": {
+        "canonizationNotBefore": "2013-12-17",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-064",
+      "subjectId": "saint.ludovico-da-casoria",
+      "monthDay": "06-17",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 6,
+        "day": 17
+      },
+      "dateClaimKind": "PARTICULAR_CALENDAR_DATE_ATTESTED",
+      "authorityScope": "RELIGIOUS_INSTITUTE_PROPER",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/ludovico-da-casoria.html",
+        "exactFieldOrClaim": "17 giugno per il Calendario proprio della Congregazione delle Suore Francescane Elisabettine, dette Bigie",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2014-11-23",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "SUORE_FRANCESCANE_ELISABETTINE",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-065",
+      "subjectId": "saint.louis-martin",
+      "monthDay": "07-12",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 12
+      },
+      "dateClaimKind": "PARTICULAR_CALENDAR_DATE_ATTESTED",
+      "authorityScope": "CARMEL_LITURGICAL_DATE_WITNESS",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Le Carmel (French Carmelite liturgical witness)",
+        "url": "https://www.lecarmel.org/saint-du-jour/saints-louis-et-zelie-martin",
+        "exactFieldOrClaim": "Fête: 12 juillet; mémoire facultative au Carmel",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-10-18",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "CARMEL",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-066",
+      "subjectId": "saint.zelie-guerin",
+      "monthDay": "07-12",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 12
+      },
+      "dateClaimKind": "PARTICULAR_CALENDAR_DATE_ATTESTED",
+      "authorityScope": "CARMEL_LITURGICAL_DATE_WITNESS",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Le Carmel (French Carmelite liturgical witness)",
+        "url": "https://www.lecarmel.org/saint-du-jour/saints-louis-et-zelie-martin",
+        "exactFieldOrClaim": "Fête: 12 juillet; mémoire facultative au Carmel",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2015-10-18",
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "CARMEL",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-067",
+      "subjectId": "saint.francisco-marto",
+      "monthDay": "02-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 20
+      },
+      "dateClaimKind": "PARTICULAR_FEAST_AUTHORIZED",
+      "authorityScope": "PAPAL_BEATIFICATION_LETTER",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "John Paul II, beatification apostolic letter reproduced by Dicastery",
+        "url": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+        "exactFieldOrClaim": "... possa celebrarsi annualmente, nei luoghi e secondo le norme del diritto, la festa di Francisco e Jacinta Marto nel giorno 20 di Febbraio",
+        "publishedOn": "2000-05-13",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-05-13",
+        "documentPublishedOn": "2000-05-13",
+        "juridicalEffectiveFrom": "2000-05-13",
+        "effectiveCertainty": "HISTORICAL_SOURCE_CLAIM",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "PERMITTED_PLACES_UNDER_CANON_LAW",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-068",
+      "subjectId": "saint.jacinta-marto",
+      "monthDay": "02-20",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 2,
+        "day": 20
+      },
+      "dateClaimKind": "PARTICULAR_FEAST_AUTHORIZED",
+      "authorityScope": "PAPAL_BEATIFICATION_LETTER",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "John Paul II, beatification apostolic letter reproduced by Dicastery",
+        "url": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+        "exactFieldOrClaim": "... possa celebrarsi annualmente, nei luoghi e secondo le norme del diritto, la festa di Francisco e Jacinta Marto nel giorno 20 di Febbraio",
+        "publishedOn": "2000-05-13",
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": "2017-05-13",
+        "documentPublishedOn": "2000-05-13",
+        "juridicalEffectiveFrom": "2000-05-13",
+        "effectiveCertainty": "HISTORICAL_SOURCE_CLAIM",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "PERMITTED_PLACES_UNDER_CANON_LAW",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-069",
+      "subjectId": "canon-group.martyrs-damascus-1860",
+      "monthDay": "07-10",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 10
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/martiri-damasco-ruiz-e-co-fratelli-massabki.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 07-10",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-070",
+      "subjectId": "canon-group.carmelites-compiegne",
+      "monthDay": "07-17",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 7,
+        "day": 17
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/martiri-carmelitane-di-compiegne.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 07-17",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-071",
+      "subjectId": "canon-group.martyrs-brazil-1645",
+      "monthDay": "10-03",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 10,
+        "day": 3
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/30-martiri-del-brasile.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 10-03",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    },
+    {
+      "edgeId": "p2-extra-072",
+      "subjectId": "canon-group.martyrs-otranto-1480",
+      "monthDay": "08-14",
+      "recurrence": {
+        "type": "MONTH_DAY",
+        "month": 8,
+        "day": 14
+      },
+      "dateClaimKind": "ATTESTED_MEMORIA_LITURGICA_DATE",
+      "authorityScope": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "universalRomanStatus": "NOT_ESTABLISHED_BY_THIS_SOURCE",
+      "source": {
+        "publisher": "Dicastery for the Causes of Saints",
+        "url": "https://www.causesanti.va/it/santi-e-beati/antonio-primaldo-e-compagni.html",
+        "exactFieldOrClaim": "Memoria Liturgica: 08-14",
+        "publishedOn": null,
+        "attestedAsOf": "2026-10-16"
+      },
+      "effective": {
+        "canonizationNotBefore": null,
+        "documentPublishedOn": null,
+        "juridicalEffectiveFrom": null,
+        "effectiveCertainty": "NO_PROMULGATION_DATE_FROM_PROFILE",
+        "effectiveUntil": null
+      },
+      "jurisdiction": "UNRESOLVED_PROFILE_DATE_ONLY",
+      "mass1962Effect": "NONE",
+      "importPolicy": "RESEARCH_ONLY"
+    }
+  ],
+  "readPolicy": "Dicastery profile date is not General Roman Calendar inscription nor 1962 Mass authorization"
+}

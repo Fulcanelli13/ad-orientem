@@ -1,0 +1,118 @@
+{
+  "schema": "AO_P2_IDENTITY_ALIAS_RECONCILIATION_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "reusedCanonicalIDs": [
+    {
+      "canonicalPersonId": "saint.peter-to-rot",
+      "sourceName": "Pietro To Rot",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pietro-to-rot.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.titus-brandsma",
+      "sourceName": "Tito Brandsma",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/tito-brandsma.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.giuseppe-vaz",
+      "sourceName": "Josè Vaz / Giuseppe Vaz",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/jose-vaz.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.mariam-baouardy",
+      "sourceName": "Maria di Gesù Crocifisso Baouardy",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/maria-di-gesu-crocifisso-baouardy.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.elisabeth-of-trinity",
+      "sourceName": "Elisabetta della Santissima Trinità",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/elisabetta-della-santissima-trinita.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.nazaria-ignazia-march-mesa",
+      "sourceName": "Nazaria Ignazia di Santa Teresa di Gesù",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/nazaria-ignazia-di-santa-teresa-di-gesu.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.stanislaw-of-jesus-mary",
+      "sourceName": "Stanislao di Gesù Maria",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/stanislao-di-gesu-maria.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.francois-de-montmorency-laval",
+      "sourceName": "François de Montmorency-Laval (Quebec bishop, not Jacques-Désiré Laval)",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/francois-de-montmorency-laval.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.louis-martin",
+      "sourceName": "Ludovico Martin",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-martin-e-maria-azelia-guerin.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.zelie-guerin",
+      "sourceName": "Maria Azelia Guérin",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-martin-e-maria-azelia-guerin.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.francisco-marto",
+      "sourceName": "Francisco e Jacinta Marto (Francisco)",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    },
+    {
+      "canonicalPersonId": "saint.jacinta-marto",
+      "sourceName": "Francisco e Jacinta Marto (Jacinta)",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+      "identityDisposition": "ALIAS_OF_EXISTING_ID_NO_NEW_SAINT"
+    }
+  ],
+  "ambiguities": [
+    {
+      "subjectIds": [
+        "saint.louis-martin",
+        "saint.zelie-guerin"
+      ],
+      "status": "MULTIPLE_DATE_CLAIMS_DISTINCT_AUTHORITY",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-martin-e-maria-azelia-guerin.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 29 luglio e 28 agosto",
+      "particularUrl": "https://www.lecarmel.org/saint-du-jour/saints-louis-et-zelie-martin",
+      "particularMonthDay": "07-12",
+      "action": "Preserve joint Carmel 12 July as particular witness; do not convert 29 July or 28 August into additional feast records without subject-specific liturgical evidence. These dates match individual death days but death date alone is not admissible evidence."
+    },
+    {
+      "subjectIds": [
+        "saint.francisco-marto",
+        "saint.jacinta-marto"
+      ],
+      "status": "PAPAL_PARTICULAR_FEAST_VS_PROFILE_DOUBLE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 4 aprile e 20 febbraio",
+      "papalParticularMonthDay": "02-20",
+      "action": "Papal beatification letter explicitly permits a joint feast on 20 February in places under law, beginning 2000; preserve distinct 4 April reference unassigned pending liturgical document, and do not label saints before 2017 canonization."
+    },
+    {
+      "subjectIds": [
+        "saint.ludovico-da-casoria"
+      ],
+      "status": "EXPLICIT_DIFFERENT_INSTITUTE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-da-casoria.html",
+      "generalAttested": "03-30",
+      "specificProper": "06-17",
+      "jurisdiction": "Congregazione delle Suore Francescane Elisabettine",
+      "action": "Keep separate scoped edges, neither a 1962 authorization."
+    }
+  ],
+  "numberOfCanonicalSubjects": 293,
+  "numberOfGroupSubjects": 13,
+  "noParallelSaintsCreated": true
+}

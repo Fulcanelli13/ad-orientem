@@ -1,0 +1,64 @@
+{
+  "schema": "AO_P2_JURISDICTION_AND_AUTHORITY_REGISTRY_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "authorityRules": [
+    {
+      "code": "GENERAL_ROMAN_VATICAN_DECREE",
+      "class": "HOLY_SEE_JURIDICAL_ACT",
+      "claimsModernUniversal": true,
+      "claims1962Universal": false
+    },
+    {
+      "code": "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT",
+      "class": "PAPAL_PUBLIC_STATEMENT",
+      "claimsModernUniversal": "SUBJECT_TO_EVIDENCE",
+      "claims1962Universal": false
+    },
+    {
+      "code": "HOLY_SEE_DICASTERY_SAINT_PROFILE",
+      "class": "OFFICIAL_DATE_WITNESS_NOT_JURIDICAL_INSCRIPTION",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNRESOLVED"
+    },
+    {
+      "code": "RELIGIOUS_INSTITUTE_PROPER",
+      "class": "INSTITUTE_PARTICULAR_CALENDAR_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "SUORE_FRANCESCANE_ELISABETTINE"
+    },
+    {
+      "code": "CARMEL_LITURGICAL_DATE_WITNESS",
+      "class": "CARMEL_PARTICULAR_CALENDAR_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "CARMEL"
+    },
+    {
+      "code": "PAPAL_BEATIFICATION_LETTER",
+      "class": "PAPAL_LIMITED_PERMISSION_IN_PLACES_AND_UNDER_LAW",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "PERMITTED_PLACES_UNDER_CANON_LAW"
+    },
+    {
+      "code": "USCCB_2026_CALENDAR_WITNESS",
+      "class": "US_EPISCOPAL_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNITED_STATES"
+    },
+    {
+      "code": "USCCB_HISTORIC_CALENDAR_WITNESS",
+      "class": "US_EPISCOPAL_HISTORIC_WITNESS",
+      "claimsModernUniversal": false,
+      "claims1962Universal": false,
+      "jurisdiction": "UNITED_STATES"
+    }
+  ],
+  "noRuntimeImport": true,
+  "selectionAndRubricsOwner": "P1",
+  "traditionalCalendarResolverOwner": "P0"
+}

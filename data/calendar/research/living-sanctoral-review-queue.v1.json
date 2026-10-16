@@ -1,0 +1,2191 @@
+{
+  "schema": "AO_P2_BULK_REVIEW_QUEUE_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NOT_RUNTIME",
+  "counts": {
+    "undatedPersonSubjects": 206,
+    "unminedIndexedYears": 42,
+    "unresolvedConflictFamilies": 3
+  },
+  "unknownPersonSubjects": [
+    {
+      "subjectId": "saint.agnes-bohemia",
+      "preferredName": "Agnese di Boemia",
+      "canonizedOn": "1989-11-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.agostina-livia-pietrantoni",
+      "preferredName": "Agostina Livia Pietrantoni",
+      "canonizedOn": "1999-04-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.agostino-roscelli",
+      "preferredName": "Agostino Roscelli",
+      "canonizedOn": "2001-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.agostino-zhao-rong",
+      "preferredName": "Agostino Zhao Rong",
+      "canonizedOn": "2000-10-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.albert-chmielowski",
+      "preferredName": "Alberto Adamo Chmielowski",
+      "canonizedOn": "1989-11-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.albert-great",
+      "preferredName": "Albert the Great",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.alberto-hurtado",
+      "preferredName": "Alberto Hurtado Cruchaga",
+      "canonizedOn": "2005-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.alfonso-rodriguez-paraguay",
+      "preferredName": "Alfonso Rodríguez (Paraguay Martyr)",
+      "canonizedOn": "1988-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.alonso-de-orozco",
+      "preferredName": "Alonso de Orozco",
+      "canonizedOn": "2002-05-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.alphonsa-immaculate-conception",
+      "preferredName": "Alfonsa dell’Immacolata Concezione",
+      "canonizedOn": "2008-10-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.alphonsus-liguori",
+      "preferredName": "Alphonsus Liguori",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.ambrose-milan",
+      "preferredName": "Ambrose of Milan",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.andre-bessette",
+      "preferredName": "André (Alfred) Bessette",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.andrew-dung-lac",
+      "preferredName": "Andrea Dung-Lac",
+      "canonizedOn": "1988-06-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.andrew-kim-taegon",
+      "preferredName": "Andrea Kim Tae-gon",
+      "canonizedOn": "1984-05-06",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.angela-de-la-cruz",
+      "preferredName": "Ángela de la Cruz",
+      "canonizedOn": "2003-05-04",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.anna-schaeffer",
+      "preferredName": "Anna Schäffer",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.annibale-maria-di-francia",
+      "preferredName": "Annibale Maria Di Francia",
+      "canonizedOn": "2004-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.anselm-canterbury",
+      "preferredName": "Anselm of Canterbury",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.anthony-padua",
+      "preferredName": "Anthony of Padua",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.antonio-de-santanna-galvao",
+      "preferredName": "Antonio de Sant’Anna Galvão",
+      "canonizedOn": "2007-05-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.antonio-maria-pucci",
+      "preferredName": "Antonio Maria Pucci",
+      "canonizedOn": "1962-12-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.arcangelo-tadini",
+      "preferredName": "Arcangelo Tadini",
+      "canonizedOn": "2009-04-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.arnold-janssen",
+      "preferredName": "Arnold Janssen",
+      "canonizedOn": "2003-10-05",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.athanasius",
+      "preferredName": "Athanasius",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.augustine-hippo",
+      "preferredName": "Augustine of Hippo",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bartolomeo-dei-martiri",
+      "preferredName": "Bartolomeo dei Martiri (Bartolomeu Fernandes)",
+      "canonizedOn": "2019-07-05",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.basil-great",
+      "preferredName": "Basil the Great",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.battista-camilla-da-varano",
+      "preferredName": "Battista Camilla da Varano",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.beatrice-de-silva",
+      "preferredName": "Beatrice de Silva Meneses",
+      "canonizedOn": "1976-10-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bede-venerable",
+      "preferredName": "Bede the Venerable",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.benedetta-cambiagio-frassinello",
+      "preferredName": "Benedetta Cambiagio Frassinello",
+      "canonizedOn": "2002-05-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.benedetto-menni",
+      "preferredName": "Benedetto Menni",
+      "canonizedOn": "1999-11-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.benilde-romancon",
+      "preferredName": "Benildo Romançon",
+      "canonizedOn": "1967-10-29",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bernard-clairvaux",
+      "preferredName": "Bernard of Clairvaux",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bernardo-da-corleone",
+      "preferredName": "Bernardo da Corleone",
+      "canonizedOn": "2001-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bernardo-tolomei",
+      "preferredName": "Bernardo Tolomei",
+      "canonizedOn": "2009-04-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bonaventure",
+      "preferredName": "Bonaventure",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.bonifacia-rodriguez-de-castro",
+      "preferredName": "Bonifacia Rodríguez de Castro",
+      "canonizedOn": "2011-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.callisto-caravario",
+      "preferredName": "Callisto Caravario",
+      "canonizedOn": "2000-10-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.candida-maria-de-jesus",
+      "preferredName": "Cándida María de Jesús",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.carmen-salles-y-barangueras",
+      "preferredName": "Maria del Monte Carmelo (Carmen Sallés)",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.caterina-volpicelli",
+      "preferredName": "Caterina Volpicelli",
+      "canonizedOn": "2009-04-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.catherine-siena",
+      "preferredName": "Catherine of Siena",
+      "canonizedOn": null,
+      "priority": "DOCTOR_HISTORICAL_SOURCE_RECONCILIATION",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.charbel-makhlouf",
+      "preferredName": "Charbel Makhluf",
+      "canonizedOn": "1977-10-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.charles-lwanga",
+      "preferredName": "Carlo Lwanga",
+      "canonizedOn": "1964-10-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.charles-of-mount-argus",
+      "preferredName": "Carlo di Sant’Andrea (Charles of Mount Argus)",
+      "canonizedOn": "2007-06-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.claude-la-colombiere",
+      "preferredName": "Claude La Colombière",
+      "canonizedOn": "1992-05-31",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.claudine-thevenet",
+      "preferredName": "Claudine Thévenet",
+      "canonizedOn": "1993-03-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.clelia-barbieri",
+      "preferredName": "Clelia Barbieri",
+      "canonizedOn": "1989-04-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.crispin-viterbo",
+      "preferredName": "Crispino da Viterbo",
+      "canonizedOn": "1982-06-20",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.cristobal-magallanes",
+      "preferredName": "Cristóbal Magallanes",
+      "canonizedOn": "2000-05-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.cyril-alexandria",
+      "preferredName": "Cyril of Alexandria",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.cyril-jerusalem",
+      "preferredName": "Cyril of Jerusalem",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.damien-de-veuster",
+      "preferredName": "Damiano (Damien) de Veuster",
+      "canonizedOn": "2009-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.daniele-comboni",
+      "preferredName": "Daniele Comboni",
+      "canonizedOn": "2003-10-05",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.deodat-da-ruticinio",
+      "preferredName": "Deodato da Ruticinio",
+      "canonizedOn": "1970-06-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.domingo-ibanez-de-erquicia",
+      "preferredName": "Domenico Ibáñez de Erquicia",
+      "canonizedOn": "1987-10-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.dulce-lopes-pontes",
+      "preferredName": "Dulce Lopes Pontes",
+      "canonizedOn": "2019-10-13",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.egidio-maria-san-giuseppe",
+      "preferredName": "Egidio Maria di San Giuseppe",
+      "canonizedOn": "1996-06-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.elizabeth-ann-seton",
+      "preferredName": "Elizabeth Ann Bayley Seton",
+      "canonizedOn": "1975-09-14",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.enrique-de-osso",
+      "preferredName": "Enrique de Ossó",
+      "canonizedOn": "1993-06-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.ephrem",
+      "preferredName": "Ephrem the Syrian",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.eugene-de-mazenod",
+      "preferredName": "Eugène de Mazenod",
+      "canonizedOn": "1995-12-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.eustochia-calafato",
+      "preferredName": "Eustochia Smeralda Calafato",
+      "canonizedOn": "1988-06-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.ezequiel-moreno",
+      "preferredName": "Ezequiel Moreno y Díaz",
+      "canonizedOn": "1992-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.felice-da-nicosia",
+      "preferredName": "Felice da Nicosia",
+      "canonizedOn": "2005-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.filippo-smaldone",
+      "preferredName": "Filippo Smaldone",
+      "canonizedOn": "2006-10-15",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.francesco-antonio-fasani",
+      "preferredName": "Francesco Antonio Fasani",
+      "canonizedOn": "1986-04-13",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.francesco-maria-camporosso",
+      "preferredName": "Francesco Maria da Camporosso",
+      "canonizedOn": "1962-12-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.francis-sales",
+      "preferredName": "Francis de Sales",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.francisco-coll-y-guitart",
+      "preferredName": "Francisco Coll y Guitart",
+      "canonizedOn": "2009-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.gaetano-catanoso",
+      "preferredName": "Gaetano Catanoso",
+      "canonizedOn": "2005-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.gaetano-errico",
+      "preferredName": "Gaetano Errico",
+      "canonizedOn": "2008-10-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.gaspare-bertoni",
+      "preferredName": "Gaspare Bertoni",
+      "canonizedOn": "1989-11-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.geltrude-comensoli",
+      "preferredName": "Geltrude Comensoli",
+      "canonizedOn": "2009-04-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.genoveva-torres-morales",
+      "preferredName": "Genoveva Torres Morales",
+      "canonizedOn": "2003-05-04",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.george-preca",
+      "preferredName": "Giorgio Preca",
+      "canonizedOn": "2007-06-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giovanni-battista-piamarta",
+      "preferredName": "Giovanni Battista Piamarta",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giovanni-calabria",
+      "preferredName": "Giovanni Calabria",
+      "canonizedOn": "1999-04-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giulia-salzano",
+      "preferredName": "Giulia Salzano",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giuseppe-marello",
+      "preferredName": "Giuseppe Marello",
+      "canonizedOn": "2001-11-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giuseppe-maria-tomasi",
+      "preferredName": "Giuseppe Maria Tomasi",
+      "canonizedOn": "1986-10-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giuseppe-moscati",
+      "preferredName": "Giuseppe Moscati",
+      "canonizedOn": "1987-10-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giuseppina-vannini",
+      "preferredName": "Giuseppina Vannini",
+      "canonizedOn": "2019-10-13",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.giustino-de-jacobis",
+      "preferredName": "Giustino de Jacobis",
+      "canonizedOn": "1975-10-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.gregory-great",
+      "preferredName": "Gregory the Great",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.gregory-nazianzen",
+      "preferredName": "Gregory Nazianzen",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.guido-maria-conforti",
+      "preferredName": "Guido Maria Conforti",
+      "canonizedOn": "2011-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.hilary-poitiers",
+      "preferredName": "Hilary of Poitiers",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.ignazio-da-santhia",
+      "preferredName": "Ignazio da Santhià",
+      "canonizedOn": "2002-05-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.inocencio-de-la-inmaculada",
+      "preferredName": "Inocencio de la Inmaculada",
+      "canonizedOn": "1999-11-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.isidore-seville",
+      "preferredName": "Isidore of Seville",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jacques-berthieu",
+      "preferredName": "Giacomo (Jacques) Berthieu",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jadwiga-queen-poland",
+      "preferredName": "Jadwiga (Edwige), Queen of Poland",
+      "canonizedOn": "1997-06-08",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.james-kyushei-tomonaga",
+      "preferredName": "Giacomo Kyushei Gorobioye Tomonaga",
+      "canonizedOn": "1987-10-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jan-sarkander",
+      "preferredName": "Jan Sarkander",
+      "canonizedOn": "1995-05-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jean-gabriel-perboyre",
+      "preferredName": "Jean Gabriel Perboyre",
+      "canonizedOn": "1996-06-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jeanne-delanoue",
+      "preferredName": "Jeanne Delanoue",
+      "canonizedOn": "1982-10-31",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jeanne-jugan",
+      "preferredName": "Marie de la Croix (Jeanne) Jugan",
+      "canonizedOn": "2009-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jerome",
+      "preferredName": "Jerome",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-chrysostom",
+      "preferredName": "John Chrysostom",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-cross",
+      "preferredName": "John of the Cross",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-damascene",
+      "preferredName": "John Damascene",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-duckla",
+      "preferredName": "Giovanni da Dukla",
+      "canonizedOn": "1997-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-neumann-philadelphia",
+      "preferredName": "Giovanni Nepomuceno Neumann",
+      "canonizedOn": "1977-06-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.john-ogilvie",
+      "preferredName": "John Ogilvie",
+      "canonizedOn": "1976-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jose-manyanet-y-vives",
+      "preferredName": "José Manyanet y Vives",
+      "canonizedOn": "2004-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jose-maria-de-yermo-y-parres",
+      "preferredName": "José María de Yermo y Parres",
+      "canonizedOn": "2000-05-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jose-maria-rubio-y-peralta",
+      "preferredName": "José María Rubio y Peralta",
+      "canonizedOn": "2003-05-04",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.josef-freinademetz",
+      "preferredName": "Josef Freinademetz",
+      "canonizedOn": "2003-10-05",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jozef-bilczewski",
+      "preferredName": "Józef Bilczewski",
+      "canonizedOn": "2005-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.jozef-sebastian-pelczar",
+      "preferredName": "Józef Sebastian Pelczar",
+      "canonizedOn": "2003-05-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.juan-bautista-concepcion",
+      "preferredName": "Giovanni Battista della Concezione",
+      "canonizedOn": "1975-05-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.juan-del-castillo",
+      "preferredName": "Juan del Castillo",
+      "canonizedOn": "1988-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.juan-diego-cuauhtlatoatzin",
+      "preferredName": "Juan Diego Cuauhtlatoatzin",
+      "canonizedOn": "2002-07-31",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.juan-grande-roman",
+      "preferredName": "Juan Grande Román",
+      "canonizedOn": "1996-06-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.juan-macias",
+      "preferredName": "Juan Macías",
+      "canonizedOn": "1975-09-28",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.julie-billiart",
+      "preferredName": "Giulia Billiart",
+      "canonizedOn": "1969-06-22",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.katharine-drexel",
+      "preferredName": "Katharine Drexel",
+      "canonizedOn": "2000-10-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.kinga-poland",
+      "preferredName": "Cunegonda (Kinga) of Poland",
+      "canonizedOn": "1999-06-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.lawrence-brindisi",
+      "preferredName": "Lawrence of Brindisi",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.leo-great",
+      "preferredName": "Leo the Great",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.leonardo-murialdo",
+      "preferredName": "Leonardo Murialdo",
+      "canonizedOn": "1970-05-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.leonie-francoise-de-sales-aviat",
+      "preferredName": "Léonie Françoise de Sales Aviat",
+      "canonizedOn": "2001-11-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.leopold-mandic",
+      "preferredName": "Leopoldo da Castelnovo (Leopold Mandić)",
+      "canonizedOn": "1983-10-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.lorenzo-ruiz",
+      "preferredName": "Lorenzo Ruiz",
+      "canonizedOn": "1987-10-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.luigi-guanella",
+      "preferredName": "Luigi Guanella",
+      "canonizedOn": "2011-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.luigi-orione",
+      "preferredName": "Luigi Orione",
+      "canonizedOn": "2004-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.luigi-scrosoppi",
+      "preferredName": "Luigi Scrosoppi",
+      "canonizedOn": "2001-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.luigi-versiglia",
+      "preferredName": "Luigi Versiglia",
+      "canonizedOn": "2000-10-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.magdalene-of-canossa",
+      "preferredName": "Maddalena di Canossa",
+      "canonizedOn": "1988-10-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marcellin-champagnat",
+      "preferredName": "Marcellin Joseph Benoît Champagnat",
+      "canonizedOn": "1999-04-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.margherita-citta-di-castello",
+      "preferredName": "Margherita di Città di Castello",
+      "canonizedOn": "2021-04-24",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marguerite-bays",
+      "preferredName": "Marguerite Bays",
+      "canonizedOn": "2019-10-13",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marguerite-bourgeoys",
+      "preferredName": "Marguerite Bourgeoys",
+      "canonizedOn": "1982-10-31",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marguerite-dyouville",
+      "preferredName": "Marie Marguerite d’Youville",
+      "canonizedOn": "1990-12-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-bernarda-butler",
+      "preferredName": "María Bernarda (Verena) Bütler",
+      "canonizedOn": "2008-10-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-bertilla-boscardin",
+      "preferredName": "Maria Bertilla Boscardin",
+      "canonizedOn": "1961-05-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-crescentia-hoss",
+      "preferredName": "Maria Crescentia Höss",
+      "canonizedOn": "2001-11-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-de-jesus-sacramentado-venegas",
+      "preferredName": "María de Jesús Sacramentado Venegas de la Torre",
+      "canonizedOn": "2000-05-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-de-mattias",
+      "preferredName": "Maria de Mattias",
+      "canonizedOn": "2003-05-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-josefa-sancho-de-guerra",
+      "preferredName": "María Josefa del Corazón de Jesús Sancho de Guerra",
+      "canonizedOn": "2000-10-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-maravillas-de-jesus",
+      "preferredName": "María Maravillas de Jesús",
+      "canonizedOn": "2003-05-04",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-rosa-molas-vallve",
+      "preferredName": "Maria Rosa Molas y Vallvé",
+      "canonizedOn": "1988-12-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-soledad-torres-acosta",
+      "preferredName": "María Soledad Torres Acosta",
+      "canonizedOn": "1970-01-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maria-teresa-chiramel-mankidiyan",
+      "preferredName": "Maria Teresa Chiramel Mankidiyan",
+      "canonizedOn": "2019-10-13",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marianne-cope",
+      "preferredName": "Marianna (Marianne) Cope",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marie-eugenie-milleret",
+      "preferredName": "Maria Eugenia di Gesù Milleret",
+      "canonizedOn": "2007-06-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.marko-krizevcanin",
+      "preferredName": "Marco Križevčanin",
+      "canonizedOn": "1995-07-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.martin-de-porres",
+      "preferredName": "Martino de Porres",
+      "canonizedOn": "1962-05-06",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.mary-of-the-cross-mackillop",
+      "preferredName": "Maria della Croce MacKillop",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.matthias-kalemba",
+      "preferredName": "Mattia Maulumba Kalemba",
+      "canonizedOn": "1964-10-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.maximilian-kolbe",
+      "preferredName": "Massimiliano Maria Kolbe",
+      "canonizedOn": "1982-10-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.meinhard-latvia",
+      "preferredName": "Meinhard, first Bishop of Latvia",
+      "canonizedOn": "1993-09-08",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.melchior-grodziecki",
+      "preferredName": "Melchiorre Grodziecki",
+      "canonizedOn": "1995-07-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.miguel-febres-cordero",
+      "preferredName": "Miguel Febres Cordero",
+      "canonizedOn": "1984-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.mutien-marie-wiaux",
+      "preferredName": "Muziano Maria Wiaux",
+      "canonizedOn": "1989-12-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.narcisa-de-jesus-martillo-moran",
+      "preferredName": "Narcisa de Jesús Martillo Morán",
+      "canonizedOn": "2008-10-12",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.nikola-tavelic",
+      "preferredName": "Nicola Tavelić",
+      "canonizedOn": "1970-06-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.nimatullah-kassab-al-hardini",
+      "preferredName": "Nimatullah Kassab Al-Hardini",
+      "canonizedOn": "2004-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.nuno-alvares-pereira",
+      "preferredName": "Nuno de Santa Maria Álvares Pereira",
+      "canonizedOn": "2009-04-26",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.paola-elisabetta-cerioli",
+      "preferredName": "Paola Elisabetta Cerioli",
+      "canonizedOn": "2004-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.paola-frassinetti",
+      "preferredName": "Paola Frassinetti",
+      "canonizedOn": "1984-03-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.paolina-cuore-gesu-agonizzante",
+      "preferredName": "Paolina del Cuore di Gesù Agonizzante",
+      "canonizedOn": "2002-05-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.paul-chong-hasang",
+      "preferredName": "Paolo Chong Ha-sang",
+      "canonizedOn": "1984-05-06",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.paula-montal-fornes",
+      "preferredName": "Paula Montal Fornés de San José de Calasanz",
+      "canonizedOn": "2001-11-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.pedro-calungsod",
+      "preferredName": "Pietro (Pedro) Calungsod",
+      "canonizedOn": "2012-10-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.pedro-de-san-jose-betancur",
+      "preferredName": "Pedro de San José Betancur",
+      "canonizedOn": "2002-07-30",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.pedro-poveda-castroverde",
+      "preferredName": "Pedro Poveda Castroverde",
+      "canonizedOn": "2003-05-04",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.peter-canisius",
+      "preferredName": "Peter Canisius",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.peter-chrysologus",
+      "preferredName": "Peter Chrysologus",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.peter-damian",
+      "preferredName": "Peter Damian",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.pierre-julien-eymard",
+      "preferredName": "Pierre-Julien Eymard",
+      "canonizedOn": "1962-12-09",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.pietro-da-narbona",
+      "preferredName": "Pietro da Narbona",
+      "canonizedOn": "1970-06-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rafael-arnaiz-baron",
+      "preferredName": "Rafael Arnáiz Barón",
+      "canonizedOn": "2009-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rafael-guizar-valencia",
+      "preferredName": "Rafael Guízar Valencia",
+      "canonizedOn": "2006-10-15",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rafaela-porras-ayllon",
+      "preferredName": "Rafaela Porras y Ayllón",
+      "canonizedOn": "1977-01-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rafqa-ar-rayes",
+      "preferredName": "Rebecca (Rafqa Ar-Rayès)",
+      "canonizedOn": "2001-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.raphael-kalinowski",
+      "preferredName": "Raffaele (Giuseppe) Kalinowski",
+      "canonizedOn": "1991-11-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.riccardo-pampuri",
+      "preferredName": "Riccardo Pampuri",
+      "canonizedOn": "1989-11-01",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.robert-bellarmine",
+      "preferredName": "Robert Bellarmine",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.roque-gonzalez",
+      "preferredName": "Roque González de Santa Cruz",
+      "canonizedOn": "1988-05-16",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rosa-venerini",
+      "preferredName": "Rosa Venerini",
+      "canonizedOn": "2006-10-15",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.rose-philippine-duchesne",
+      "preferredName": "Rose-Philippine Duchesne",
+      "canonizedOn": "1988-07-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.simon-de-rojas",
+      "preferredName": "Simón de Rojas",
+      "canonizedOn": "1988-07-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.simon-of-lipnica",
+      "preferredName": "Simone da Lipnica",
+      "canonizedOn": "2007-06-03",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.stanislaw-kazimierczyk",
+      "preferredName": "Stanisław Kazimierczyk",
+      "canonizedOn": "2010-10-17",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.stefan-pongracz",
+      "preferredName": "Stefano Pongracz",
+      "canonizedOn": "1995-07-02",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.stefano-da-cuneo",
+      "preferredName": "Stefano da Cuneo",
+      "canonizedOn": "1970-06-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.teresa-benedicta-cross-stein",
+      "preferredName": "Teresa Benedetta della Croce (Edith Stein)",
+      "canonizedOn": "1998-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.teresa-couderc",
+      "preferredName": "Teresa Couderc",
+      "canonizedOn": "1970-05-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.teresa-eustochio-verzeri",
+      "preferredName": "Teresa Eustochio Verzeri",
+      "canonizedOn": "2001-06-10",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.teresa-jornet-ibars",
+      "preferredName": "Teresa Jornet e Ibars",
+      "canonizedOn": "1974-01-27",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.teresa-los-andes",
+      "preferredName": "Teresa de Jesús de los Andes",
+      "canonizedOn": "1993-03-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.theodore-guerin",
+      "preferredName": "Theodore Guérin",
+      "canonizedOn": "2006-10-15",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.thomas-aquinas",
+      "preferredName": "Thomas Aquinas",
+      "canonizedOn": null,
+      "priority": "TRADITIONAL_1962_AND_DOCTOR_ROSTER",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.tommaso-da-cori",
+      "preferredName": "Tommaso da Cori",
+      "canonizedOn": "1999-11-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.umile-da-bisignano",
+      "preferredName": "Umile da Bisignano",
+      "canonizedOn": "2002-05-19",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.urszula-ledochowska",
+      "preferredName": "Urszula Ledóchowska",
+      "canonizedOn": "2003-05-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.vicenta-maria-lopez-vicuna",
+      "preferredName": "Vicenta María López y Vicuña",
+      "canonizedOn": "1975-05-25",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.vincent-pallotti",
+      "preferredName": "Vincenzo Pallotti",
+      "canonizedOn": "1963-01-20",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.virginia-centurione-bracelli",
+      "preferredName": "Virginia Centurione Bracelli",
+      "canonizedOn": "2003-05-18",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.zdislava-lemberk",
+      "preferredName": "Zdislava di Lembert",
+      "canonizedOn": "1995-05-21",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.zygmunt-gorazdowski",
+      "preferredName": "Zygmunt Gorazdowski",
+      "canonizedOn": "2005-10-23",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    },
+    {
+      "subjectId": "saint.zygmunt-szczesny-felinski",
+      "preferredName": "Zygmunt Szczęsny Feliński",
+      "canonizedOn": "2009-10-11",
+      "priority": "BATCH_DICASTERY_YEAR_INDEX",
+      "state": "MISSING_ATTESTED_DATE",
+      "nextSourceFamily": "Dicastery Memoria Liturgica, then decree / particular calendar",
+      "neverInferDateFromDeath": true
+    }
+  ],
+  "conflictingClaims": [
+    {
+      "subjectIds": [
+        "saint.louis-martin",
+        "saint.zelie-guerin"
+      ],
+      "status": "MULTIPLE_DATE_CLAIMS_DISTINCT_AUTHORITY",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-martin-e-maria-azelia-guerin.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 29 luglio e 28 agosto",
+      "particularUrl": "https://www.lecarmel.org/saint-du-jour/saints-louis-et-zelie-martin",
+      "particularMonthDay": "07-12",
+      "action": "Preserve joint Carmel 12 July as particular witness; do not convert 29 July or 28 August into additional feast records without subject-specific liturgical evidence. These dates match individual death days but death date alone is not admissible evidence."
+    },
+    {
+      "subjectIds": [
+        "saint.francisco-marto",
+        "saint.jacinta-marto"
+      ],
+      "status": "PAPAL_PARTICULAR_FEAST_VS_PROFILE_DOUBLE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+      "dicasteryVerbatim": "Memoria Liturgica: 4 aprile e 20 febbraio",
+      "papalParticularMonthDay": "02-20",
+      "action": "Papal beatification letter explicitly permits a joint feast on 20 February in places under law, beginning 2000; preserve distinct 4 April reference unassigned pending liturgical document, and do not label saints before 2017 canonization."
+    },
+    {
+      "subjectIds": [
+        "saint.ludovico-da-casoria"
+      ],
+      "status": "EXPLICIT_DIFFERENT_INSTITUTE_DATE",
+      "dicasteryUrl": "https://www.causesanti.va/it/santi-e-beati/ludovico-da-casoria.html",
+      "generalAttested": "03-30",
+      "specificProper": "06-17",
+      "jurisdiction": "Congregazione delle Suore Francescane Elisabettine",
+      "action": "Keep separate scoped edges, neither a 1962 authorization."
+    }
+  ],
+  "jurisdictionUnresolvedSubjects": [
+    "saint.alfonso-maria-fusco",
+    "saint.amato-ronconi",
+    "saint.angela-da-foligno",
+    "saint.angelo-da-acri",
+    "saint.antonio-tlaxcala",
+    "saint.artemide-zatti",
+    "saint.bartolo-longo",
+    "saint.carlo-acutis",
+    "saint.carmen-rendiles-martinez",
+    "saint.cesar-de-bus",
+    "saint.charles-de-foucauld",
+    "saint.cristobal-tlaxcala",
+    "saint.elena-guerra",
+    "saint.elisabeth-of-trinity",
+    "saint.eufrasia-eluvathingal",
+    "saint.faustino-miguez",
+    "saint.francesco-spinelli",
+    "saint.francois-de-montmorency-laval",
+    "saint.gianna-beretta-molla",
+    "saint.giovanni-antonio-farina",
+    "saint.giovanni-battista-scalabrini",
+    "saint.giuseppe-allamano",
+    "saint.giuseppe-vaz",
+    "saint.giuseppina-bakhita",
+    "saint.giustino-maria-russolillo",
+    "saint.ignazio-maloyan",
+    "saint.jeanne-emilie-de-villeneuve",
+    "saint.jose-de-anchieta",
+    "saint.jose-gabriel-del-rosario-brochero",
+    "saint.jose-gregorio-hernandez-cisneros",
+    "saint.jose-sanchez-del-rio",
+    "saint.josemaria-escriva-de-balaguer",
+    "saint.juan-tlaxcala",
+    "saint.junipero-serra",
+    "saint.kateri-tekakwitha",
+    "saint.kuriakose-elias-chavara",
+    "saint.laura-montoya-upergui",
+    "saint.lazzaro-devasahayam-pillai",
+    "saint.lodovico-pavoni",
+    "saint.luigi-maria-palazzolo",
+    "saint.manuel-gonzalez-garcia",
+    "saint.maria-antonia-de-san-jose",
+    "saint.maria-caterina-kasper",
+    "saint.maria-cristina-brando",
+    "saint.maria-di-gesu-santocanale",
+    "saint.maria-domenica-mantovani",
+    "saint.maria-elisabeth-hesselblad",
+    "saint.maria-francesca-rubatto",
+    "saint.maria-guadalupe-garcia-zavala",
+    "saint.maria-salvat-y-romero",
+    "saint.maria-troncatti",
+    "saint.mariam-baouardy",
+    "saint.marie-alphonsine-danil-ghattas",
+    "saint.marie-leonie-paradis",
+    "saint.marie-of-incarnation-guyart",
+    "saint.marie-rivier",
+    "saint.nazaria-ignazia-march-mesa",
+    "saint.nicola-da-longobardi",
+    "saint.nunzio-sulprizio",
+    "saint.oscar-arnulfo-romero",
+    "saint.peter-to-rot",
+    "saint.pier-giorgio-frassati",
+    "saint.pierre-favre",
+    "saint.salomone-leclercq",
+    "saint.stanislaw-of-jesus-mary",
+    "saint.titus-brandsma",
+    "saint.vincenza-maria-poloni",
+    "saint.vincenzo-grossi",
+    "saint.vincenzo-romano"
+  ],
+  "yearCollectionsToMine": [
+    {
+      "year": 2021,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2021.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2019,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2019.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2012,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2012.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2011,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2011.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2010,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2010.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2009,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2009.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2008,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2008.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2007,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2007.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2006,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2006.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2005,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2005.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2004,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2004.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2003,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2003.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2002,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2002.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2001,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2001.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 2000,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/2000.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1999,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1999.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1998,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1998.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1997,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1997.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1996,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1996.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1995,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1995.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1993,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1993.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1992,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1992.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1991,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1991.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1990,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1990.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1989,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1989.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1988,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1988.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1987,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1987.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1986,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1986.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1984,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1984.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1983,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1983.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1982,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1982.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1977,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1977.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1976,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1976.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1975,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1975.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1974,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1974.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1970,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1970.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1969,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1969.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1967,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1967.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1964,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1964.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1963,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1963.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1962,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1962.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    },
+    {
+      "year": 1961,
+      "sourceUrl": "https://www.causesanti.va/it/celebrazioni/canonizzazioni/1961.html",
+      "status": "CANONIZATION_INDEX_ALREADY_PRESERVED_DATE_PROFILE_HARVEST_PENDING"
+    }
+  ],
+  "furtherSourceFamilies": [
+    "Holy See decree corpus for universal standing",
+    "National/diocesan and institutes proper calendar promulgations",
+    "Traditional pro aliquibus locis witnesses",
+    "Historical Doctor declaration acts"
+  ]
+}
