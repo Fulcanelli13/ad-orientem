@@ -394,4 +394,32 @@ assert.equal(fam.counts.earlyEnglishSadlierEleventhWholeVolumePagesRawIndexed,40
 assert.equal(fam.counts.earlyEnglishSadlierEleventhWholeVolumeChapterSlotsIndexed,182);
 assert.equal(fam.counts.earlyEnglishSadlierEleventhImprovedOCRSampleOriginalPages,13);
 
+const wholeSegmentation=fam.english1908WholeVolumeOCRChapterSegmentation;
+assert.ok(wholeSegmentation);
+assert.equal(wholeSegmentation.sourceArtifactId,12027658040);
+assert.equal(wholeSegmentation.sourceWholeBookOCRSHA256.length,64);
+assert.equal(wholeSegmentation.sourceWholeBookOCRCharacters,682399);
+assert.equal(wholeSegmentation.sourcePdfPages,419);
+assert.equal(wholeSegmentation.chapterSlotsIndexed,182);
+assert.equal(wholeSegmentation.originalHeadingsWithPrintImageVerification,8);
+assert.equal(wholeSegmentation.originalHeadingsWithExactNumeralOCR,145);
+assert.equal(wholeSegmentation.fuzzyNumeralOCRHeadingCandidatesNeedingSourceImageCheck,22);
+assert.equal(wholeSegmentation.unresolvedOriginalChapterStarts,7);
+assert.equal(wholeSegmentation.locatedOriginalChapterStartPageCandidates,175);
+assert.equal(wholeSegmentation.chaptersWithBothOCRBoundaryOffsetsRecovered,168);
+assert.equal(wholeSegmentation.chaptersWithSourceTextDraftWithheldDueBoundaryUncertainty,14);
+assert.equal(wholeSegmentation.chapterSlotsIndexed,wholeSegmentation.chaptersWithBothOCRBoundaryOffsetsRecovered+wholeSegmentation.chaptersWithSourceTextDraftWithheldDueBoundaryUncertainty);
+assert.equal(wholeSegmentation.sourceIDsWithNoBoundedDraft.length,14);
+assert.equal(new Set(wholeSegmentation.sourceIDsWithNoBoundedDraft).size,14);
+assert.equal(wholeSegmentation.sourceWorkResearchArtifacts.chapterIndex.sha256.length,64);
+assert.equal(wholeSegmentation.sourceWorkResearchArtifacts.fullOCRSegments.sha256.length,64);
+assert.equal(wholeSegmentation.rawSegmentContentMayIncludeOriginalQuestionsFootnotesEpigraphIllustrations,true);
+assert.equal(wholeSegmentation.sourceSegmentsNotCertifiedBookNarrative,true);
+assert.equal(wholeSegmentation.proseCopiedToPublicRepository,false);
+assert.equal(wholeSegmentation.sourceTextPublishedInApp,false);
+assert.equal(wholeSegmentation.normalizedAIComposedAuthorNarrativeWords,0);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterStartCandidates,175);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented,168);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented,14);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
