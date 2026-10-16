@@ -270,3 +270,34 @@ The remaining 38 literal shrine names have been classified **without creating ne
 Among all 119 names, **95** have relic owner-subject references to **92 distinct relic research subjects**. Exactly **three subject IDs** are reused across different literal shrine names: **Saint Dominic / Saint Dominic de Guzmán**, **Saint Nicholas / Saint Nicholas of Myra**, and **Saint Louis de Montfort / Saint Louis-Marie de Montfort**. These are **shared original source references**, *not* authentication of physical relics, certificate of identical canonical person IDs, or authority to consolidate map pins. The two Louis de Montfort shrine-name records now explicitly display the common `subject:saint-louis-marie-grignion-de-montfort` source connection in the gated research UI, without fabricating a missing 608-ledger person key. All three shared-subject pairs have a regression guard.
 
 **Residual source-owner work is now focused on the 15 shrine-only names**, while 21 of the 38 have original relic research pointers, two have only artwork research pointers, and the separate source-group/angel/saint status distinctions remain locked. This prioritization is for existing-source retrieval, not writing 15 speculative biographies. Original `145` shrine relations, `121` Place IDs, public six-profile pilot and art approval state remain unchanged.
+
+
+## W80 — 15 institutional shrine-only subjects, source integrity and identity holds
+
+A single 15-name pass inspected current **original ecclesiastical and shrine sources** for every name previously classed `SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY` (15 of 38). **21 additional HTTPS institutional subject references** were recorded directly on the existing 119-name W78 evidence registry; the original 608 source keys, original 145 shrine-name edges, 121 physical Place IDs, 30 research/pilot biographies and all image decisions remain unchanged.
+
+| Institutional relation type | Original name strings | Disposition |
+| --- | ---: | --- |
+| Source directly names subject in connection with original shrine | **10** | Source-backed research relationship; no canonical identity promotion |
+| Source documents a traditional narrative/attribution | **4** | Tradition must remain labelled, not treated as independently verified historical life event |
+| Local saint patronage established, specific historical epithet pending | **1** | Research link, final patron identity not inferred |
+| **Total institutional/shrine-only cases reviewed** | **15** | **0 new canonical `saint_id`** |
+
+**Ten direct association references:** Blessed Vasyl Velychkovsky (Winnipeg), Andrew Kaggwa (Munyonyo), Isaac Jogues (Auriesville/Midland), Jean de Brébeuf (Midland), John de Lalande (Auriesville), Julienne of Cornillon (Liège), Meinrad (Einsiedeln), Oliver Plunkett (Drogheda), René Goupil (Auriesville), Winefride (Holywell). Original issuer and precise URL for each are stored under `records[].institutional_subject_evidence_review.references` with the scope of the attested claim and explicit `canonical_identity_equivalence_approved:false`.
+
+**Four tradition-scoped associations:** Beuno at Holywell (part of the traditional Winefride narrative); Helena and the Scala Santa (Rome shrine explicitly labels the attribution an ancient tradition); Maximin in the Provençal/Aix hagiographic narrative (Fréjus–Toulon); Turibius of Astorga and Liébana (Santander and Astorga diocesan source accounts). The last requires **explicit nonconflation of Toribio of Palencia**, a distinct figure in the site's foundation history. Each stays a named *tradition*, not an independently proved 1st-/4th-/5th-century historical event.
+
+**One local patronage review:** St Leonhard church in Nußdorf observes St Leonhard's patronal day **6 November**. The Diocese of Augsburg separately identifies Leonhard of Limoges/Noblat on that date. This supports a precise targeted owner review, but the Nußdorf dedication source does not itself explicitly expand the patron epithet to Noblac; no automatic final identity equivalence.
+
+### W80 source-domain safety hold — Holywell
+
+The old original Shrine source URL host `stwinefrideswell.org.uk` was found serving **unrelated gambling content on its root** as of 16 October 2026; older `contact.html` and `pilgrimages-2022--group-bookings.html` entries still appear in search indexes and must not be mistaken for proof that the current domain is safe. The new current official destination is `https://www.stwinefridesshrine.org/`, which explicitly identifies the national shrine and is listed by the Catholic Bishops' Conference of England and Wales, Visit Wales and Cadw. Existing original source IDs `SHR-HOLYWELL-CONTACT` and `PIL-HOLYWELL-FEAST` remain traceable but their old host links are **quarantined** from the native Saints research sheet. Both Beuno and Winefride records display current official shrine links instead. The original Geography/shrine `data/shrines/source-registry.v1.json` is **not overwritten** in Saints PR #1227; the Geography source owner must repair and regress the central URL records for every downstream consumer.
+
+### Release and exact remainder
+
+- Existing W78 608-ledger-name coverage still **50 exact single, 6 exact collision, 9 prior alias, 16 other curated variants, 38 without source-key lead**. The 15 above are a *source authority strengthening* subset within the 38, **not 15 newly inserted person keys**, so headline denominator stays 38.
+- W80 UI displays source links and labels **tradition vs named association vs unresolved patron epithet** in EN/FR. It never assigns birth/death or relic authentication, redirects from research-only to public, creates new portrait or mass link, or renders old compromised host URLs.
+- Regression tests enforce all 15 named records, 21 verified official links, original ID preservation, 10/4/1 classifications and public-channel exclusion; the tests are code committed but **not claimed passing in GitHub Actions** without an observed run.
+- Four historical/Doctors alias pairs remain submitted as one adjudication to Calendar PR #1226, *not silently approved*. Saints PR #1227 remains draft/unmerged and has been reported as conflicted against main.
+
+**Owner action:** correct central Holywell source URLs first; then certify source ID equivalences for four Doctor cases and targeted Leonhard patron epithet. No further biography round is needed to keep the 121 existing-place research map source-traceable.
