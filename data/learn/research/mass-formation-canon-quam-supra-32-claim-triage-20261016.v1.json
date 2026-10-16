@@ -12,7 +12,9 @@
     "catalogue_url": "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
     "scan_catalogue_url": "https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf",
     "source_printed_pages": "§59 pp. 627–630; §61 pp. 659–660",
-    "full_page_image_collation_done": false
+    "full_page_image_collation_done": false,
+    "ocr_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+    "original_edition_ocr_context_examined": true
   },
   "methodology": {
     "original_gihr_printed_pages_not_inspected": true,
@@ -21,7 +23,9 @@
     "guéranger_leo_addition_claim_unverified": true,
     "heavenly_fire_abel_not_stated_by_genesis": true,
     "these_are_source_claims_not_rubrics": true,
-    "p0_publication_approvals_granted": 0
+    "p0_publication_approvals_granted": 0,
+    "original_1902_ocr_page_text_inspected": true,
+    "historical_claim_text_from_p0_workbook_not_independently_matched": true
   },
   "counts": {
     "total": 32,
@@ -33,23 +37,27 @@
     "by_state": {
       "RESEARCH_LOCATOR_UNCOLLATED": 17,
       "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION": 5,
-      "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED": 8,
+      "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING": 8,
       "PRIMARY_TEXT_CROSSCHECK_NOT_P0_APPROVED": 2
-    }
+    },
+    "original_1902_ocr_context_inspected": 8
   },
   "identified_disputes": [
     {
       "id": "SUPRA_HOLY_SACRIFICE_REFERENT",
       "block_id": "AO.SM.B055",
-      "statement": "Guéranger parses sanctum sacrificium, immaculatam hostiam as identifying Eucharistic offering accepted by God; a later reproduction attributes to Gihr p.660 n.1 a different grammatical analysis that attaches the phrase to Melchisedech's offering.",
+      "statement": "Gihr 1902 OCR p660 footnote 2 joins sanctum sacrificium, immaculatam hostiam to quod obtulit ... Melchisedech; Guéranger takes Eucharistic offering as immediate referent. Suarez disp 83 sect 2 no 14 acknowledges both readings.",
       "gueranger_link": "https://www.liturgialatina.org/benedictine/holymass.htm",
       "reported_gihr_link": "https://sanctaliturgia.blogspot.com/2005/05/supra-quae.html",
       "p0_claims": [
         "VER-050",
         "VER-059"
       ],
-      "adjudication": "UNRESOLVED_PRINTED_GIHR_FOOTNOTE_NOT_COLLATED",
-      "educational_policy": "Present both as distinct historical interpretations, explicitly label secondary mediation of Gihr, never state either as universally settled grammar."
+      "adjudication": "GIHR_1902_OCR_GRAMMAR_CONFIRMED_PRINT_IMAGE_AND_LEBRUN_PENDING",
+      "educational_policy": "Present both as distinct historical interpretations, explicitly label secondary mediation of Gihr, never state either as universally settled grammar.",
+      "footnote_as_read": "p660 footnote 2",
+      "original_gihr_ocr_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "suarez_translation_url": "https://lumenscholasticum.wordpress.com/wp-content/uploads/2023/07/suarez.-de-sacramentis-disp.-lxxxiii-sect.-ii.pdf"
     },
     {
       "id": "QUAM_IN_OMNIBUS",
@@ -59,7 +67,7 @@
       "p0_claims": [
         "VER-052"
       ],
-      "adjudication": "PARTIAL_SECONDARY_CORROBORATION"
+      "adjudication": "GIHR_1902_OCR_DIRECTLY_SUPPORTS_IN_OMNIBUS_WITH_IMAGE_HOLD"
     },
     {
       "id": "ABEL_HEAVENLY_FIRE",
@@ -68,7 +76,7 @@
       "p0_claims": [
         "VER-057"
       ],
-      "adjudication": "NO_BIBLICAL_TEXTUAL_SUPPORT"
+      "adjudication": "GIHR_1902_OCR_PRESENTS_HEAVENLY_FIRE_AS_SPECULATION"
     }
   ],
   "claims": [
@@ -176,17 +184,27 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§59, pp. 627–630",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
         "https://www.newliturgicalmovement.org/2025/08/the-quam-oblationem_01670316511.html"
       ],
-      "editorial_observation": "Book TOC confirms Quam oblationem discussion begins printed p. 627. Modern 2025 discussion attributes in omnibus = thorough and perfect to Gihr p. 627. Exact original pages and complete claim not inspected.",
+      "editorial_observation": "§59 begins on p627: petition immediately precedes consecration; 'in omnibus' denotes completely or perfectly.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "627",
+      "ocr_line_range": [
+        36446,
+        36502
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-053",
@@ -194,16 +212,26 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§59, p. 628",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
       ],
-      "editorial_observation": "P0 mentions Gihr p. 628 on an apostolic reference to the Chalice. Present web evidence insufficient to distinguish this sentence from neighbouring claims; leave held.",
+      "editorial_observation": "Original OCR discusses consecration as blessing and the difficulty of adscripta; a separate workbook claim is not available for exact match.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36503,
+        36529
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-054",
@@ -211,16 +239,26 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§59, p. 628",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
       ],
-      "editorial_observation": "P0 points to printed p. 628, but no inspected primary page or claim-specific quotation here; leave held.",
+      "editorial_observation": "Gihr prefers 'approved' for adscripta as consonant with Christ's institution; he acknowledges alternatives.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36513,
+        36534
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-055",
@@ -228,16 +266,26 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§59, p. 628",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
       ],
-      "editorial_observation": "P0 points to printed p. 628, but no inspected primary page or claim-specific quotation here; leave held.",
+      "editorial_observation": "Original OCR describes ratam as true or valid in accordance with Christ's ordinance.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36531,
+        36556
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-056",
@@ -245,17 +293,27 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§59, pp. 629–630",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
         "https://sanctaliturgia.blogspot.com/2004/09/"
       ],
-      "editorial_observation": "2004 Sancta Liturgia reproduces an extended Gihr passage in its essay on Quam oblationem and cites printed p. 629. It distinguishes true sacrificial oblation and an oblatio rationabilis; must verify exact wording and extent against p. 629–630.",
+      "editorial_observation": "Original OCR discusses rationabilis as living Logos and acceptabilis as intrinsic value, nobis as salvation and Communion; five signs of Cross also discussed.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "629–630",
+      "ocr_line_range": [
+        36563,
+        36637
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-065",
@@ -509,17 +567,27 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§61, p. 659",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
         "https://www.remnantnewspaper.com/god-demands-a-holy-sacrifice-supra-quae-propitio/"
       ],
-      "editorial_observation": "P0 warns that the hypothesis of heavenly fire marking Abel's accepted offering is absent from Genesis. Must classify as Gihr's interpretative hypothesis, never an explicit biblical statement. Printed p. 659 unavailable for direct checking.",
+      "editorial_observation": "Gihr conjectures fire from heaven over Abel's offering, explicitly qualifying it by probability; Genesis does not say so.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "659",
+      "ocr_line_range": [
+        38337,
+        38354
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-058",
@@ -527,17 +595,27 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§61, p. 659",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
         "https://www.remnantnewspaper.com/god-demands-a-holy-sacrifice-supra-quae-propitio/"
       ],
-      "editorial_observation": "Secondary 2016 account reproduces Gihr's distinction between intrinsic acceptance of Christ's sacrifice and the devotion of those offering, but the original p. 659 is not independently collated.",
+      "editorial_observation": "Gihr denies equality between ancient victims and Christ; comparison concerns the faith and devotion of the offerers.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "657–659",
+      "ocr_line_range": [
+        38277,
+        38316
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-059",
@@ -545,18 +623,28 @@
       "author": "Fr Nicholas Gihr",
       "locator": "§61 p. 660; earlier discussion pp. 75–76",
       "original_p0_research_grade": "PASSAGE VERIFIED",
-      "collation_status": "SECONDARY_GIHR_EXCERPT_NOT_PRINT_COLLATED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
       "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
         "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
         "https://sanctaliturgia.blogspot.com/2005/05/supra-quae.html",
         "https://www.liturgialatina.org/benedictine/holymass.htm"
       ],
-      "editorial_observation": "May 2005 Sancta Liturgia attributes to Gihr p. 660 footnote 1 the grammatical reading that sanctum sacrificium, immaculatam hostiam modifies the Melchisedech offering. Guéranger's independent published interpretation takes the opposite view. Original Gihr footnote must be checked; record interpretative disagreement without automatic resolution.",
+      "editorial_observation": "Original OCR p660 *footnote 2* explicitly attaches sanctum sacrificium, immaculatam hostiam to Melchisedech's offering and cites Le Brun part IV art 12; image still unchecked.",
       "exact_printed_source_read_in_this_pass": false,
-      "primary_passage_context_rechecked": false,
+      "primary_passage_context_rechecked": true,
       "historical_quote_approved": false,
       "publication_allowed": false,
-      "review_priority": "HIGH"
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "660, footnote 2",
+      "ocr_line_range": [
+        38394,
+        38441
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
     },
     {
       "id": "VER-105",
