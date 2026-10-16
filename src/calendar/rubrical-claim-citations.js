@@ -346,8 +346,8 @@ export function calendarInseparableApostlesClaimForDay(resolution,corrections){
 // in *one ledger*. These are audited examples, never an inferred rule that
 // all saints on Sundays are absent or that particular calendars have no feasts.
 const APPROVED_2026_OMISSION_IDENTITIES=Object.freeze({
-  "2026-07-05":Object.freeze({id:"PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED",saint:"SAINT_ANTHONY_MARY_ZACCARIA",principal:"tempora:Pent6-0:2:g"}),
-  "2026-07-12":Object.freeze({id:"PENT7_JOHN_GUALBERT_2026_OMITTED",saint:"SAINT_JOHN_GUALBERT",principal:"tempora:Pent7-0:2:g"}),
+  "2026-07-05":Object.freeze({id:"PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED",saint:"SAINT_ANTHONY_MARY_ZACCARIA",principal:"tempora:Pent06-0:2:g"}),
+  "2026-07-12":Object.freeze({id:"PENT7_JOHN_GUALBERT_2026_OMITTED",saint:"SAINT_JOHN_GUALBERT",principal:"tempora:Pent07-0:2:g"}),
   "2026-08-30":Object.freeze({id:"PENT14_ROSE_LIMA_2026_OMITTED",saint:"SAINT_ROSE_OF_LIMA",principal:"tempora:Pent14-0:2:g"}),
   "2026-10-04":Object.freeze({id:"FRANCIS_ASSISI_2026_SUNDAY_OMISSION",saint:"SAINT_FRANCIS_OF_ASSISI",principal:"tempora:Pent19-0:2:g"}),
   "2026-11-22":Object.freeze({id:"PENT24_CECILIA_2026_OMITTED",saint:"SAINT_CECILIA",principal:"tempora:Pent24-0:2:g"}),
