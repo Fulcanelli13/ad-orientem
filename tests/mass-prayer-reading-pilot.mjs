@@ -4,7 +4,8 @@ import {validatePrayerReadingPilot,prayerReadingEditorialPreviewHtml,prayerReadi
  validateMassTransitionReadingPilot,massTransitionEditorialPreviewHtml,
  validateRomanCanonReadingPilot,romanCanonEditorialPreviewHtml,
  validateCommunionReadingPilot,communionEditorialPreviewHtml,
- validateConclusionReadingPilot,conclusionEditorialPreviewHtml}
+ validateConclusionReadingPilot,conclusionEditorialPreviewHtml,
+ validateBeforeOffertoryReadingPilot,beforeOffertoryEditorialPreviewHtml}
  from "../src/learn/mass-prayer-reading-pilot.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const pilot=read("data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json");
@@ -234,23 +235,73 @@ for(const [name,fn] of [
 }
 assert.equal(validateConclusionReadingPilot(conclusionDraft,{blocks:[]},formation,guide).ok,false);
 assert.equal(validateConclusionReadingPilot(conclusionDraft,sung,formation,{entries:{}}).ok,false);
-// Complete second-half coverage: every original B031–B095 source block must
+
+const beforeDraft=read("data/learn/research/mass-formation-before-offertory-prayer-reading-pilot-20261016.v1.json");
+const beforeValid=validateBeforeOffertoryReadingPilot(beforeDraft,sung,formation,guide);
+assert.equal(beforeValid.ok,true,beforeValid.reason);
+const expectedOpening=[...Array.from({length:13},(_,i)=>i+1),15,16,17,18,23,24,25,27,28,29]
+ .map(n=>"AO.SM.B"+String(n).padStart(3,"0"));
+assert.deepEqual(beforeValid.readings.map(r=>r.block_id),expectedOpening);
+assert.deepEqual(beforeValid.withheld.map(r=>r.block_id),
+ [14,19,20,21,22,26,30].map(n=>"AO.SM.B"+String(n).padStart(3,"0")));
+assert.deepEqual(beforeValid.readings.filter(r=>r.conditionality!=="STANDARD_FIXED")
+ .map(r=>r.conditionality),[
+  "PSALM_42_MAY_BE_OMITTED","INCENSATION_DEPENDENT","GLORIA_DEPENDENT",
+  "GOSPEL_HEADING_DEPENDENT","CREDO_DEPENDENT"
+ ]);
+for(const fr of [false,true]){
+ const html=beforeOffertoryEditorialPreviewHtml(beforeValid,{french:fr});
+ assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,23);
+ assert.equal((html.match(/data-ao-formation-proper-held=/g)||[]).length,7);
+ assert.equal((html.match(/class="aoFRPilotConditional"/g)||[]).length,5);
+ assert.match(html,fr?/ÉBAUCHE ÉDITORIALE/:/EDITORIAL DRAFT/);
+ assert.doesNotMatch(html,/data-ao-r17|data-ao-mass-reader|data-ao-mx-study/);
+}
+const invalidOpening=mutate=>{
+ const copy=JSON.parse(JSON.stringify(beforeDraft));
+ mutate(copy);
+ return validateBeforeOffertoryReadingPilot(copy,sung,formation,guide);
+};
+for(const [name,fn] of [
+ ["draft marked released",x=>{x.status="RELEASED_FOR_FORMATION"}],
+ ["wrong prayer-to-Guide moment",x=>{x.entries[0].moment_id="AO.CARD.002"}],
+ ["wrong stage",x=>{x.entries[13].stage_id="MF02"}],
+ ["invented opening prayer",x=>{x.entries[0].text_anchor_en="Invented opening"}],
+ ["invented Bible link",x=>{x.entries[2].scripture_within_text=["Psalm 42:1"]}],
+ ["missing French prose",x=>{x.entries[3].reading.fr=""}],
+ ["repeated ID",x=>{x.entries[0].id=x.entries[1].id}],
+ ["one prayer removed",x=>{x.entries.pop()}],
+ ["missing Introit hold",x=>{x.withheld_variable_propers.shift()}],
+ ["invented fixed Collect",x=>{x.entries[0].block_id="AO.SM.B019"}],
+ ["falsely universal Kyrie/Gloria",x=>{x.entries[14].conditionality="STANDARD_FIXED"}],
+ ["incense treated always said",x=>{x.entries[12].conditionality="STANDARD_FIXED"}],
+ ["Psalm treated always present",x=>{x.entries[2].conditionality="STANDARD_FIXED"}],
+ ["Gospel announcement treated fixed Matthew",x=>{x.entries[19].conditionality="STANDARD_FIXED"}],
+ ["Credo claimed always said",x=>{x.entries[20].conditionality="STANDARD_FIXED"}],
+ ["Proper slot relabelled",x=>{x.withheld_variable_propers[5].proper_slot="INTROIT"}]
+]){
+ assert.equal(invalidOpening(fn).ok,false,name+" must fail closed");
+}
+assert.equal(validateBeforeOffertoryReadingPilot(beforeDraft,{blocks:[]},formation,guide).ok,false);
+assert.equal(validateBeforeOffertoryReadingPilot(beforeDraft,sung,formation,{entries:{}}).ok,false);
+
+// Complete whole-ordinary coverage: every original B001–B095 source block must
 // be either a reviewed-only fixed-text draft or an explicit Mass-specific Proper
 // hold. No source block may disappear, duplicate, or become default Proper text.
 const publishedSourceBlocks=new Map(sung.blocks.map(b=>[b.Block_ID,b]));
-const studies=[...accepted.readings,...next.readings,...canonAccepted.readings,
+const studies=[...beforeValid.readings,...accepted.readings,...next.readings,...canonAccepted.readings,
  ...communionValidated.readings,...conclusionValid.readings];
-const held=[...next.withheld,...communionValidated.withheld,...conclusionValid.withheld];
+const held=[...beforeValid.withheld,...next.withheld,...communionValidated.withheld,...conclusionValid.withheld];
 const studyIds=studies.map(r=>r.block_id),heldIds=held.map(r=>r.block_id);
-assert.equal(studies.length,61);
-assert.equal(held.length,4);
-assert.equal(new Set(studyIds).size,61,"Duplicated prayer study source");
-assert.equal(new Set(heldIds).size,4,"Duplicated variable Proper hold");
+assert.equal(studies.length,84);
+assert.equal(held.length,11);
+assert.equal(new Set(studyIds).size,84,"Duplicated prayer study source");
+assert.equal(new Set(heldIds).size,11,"Duplicated variable Proper hold");
 assert.equal(studyIds.filter(id=>heldIds.includes(id)).length,0,
  "A variable Proper can never also be published as a fixed-text study");
-const total=Array.from({length:65},(_,i)=>"AO.SM.B"+String(i+31).padStart(3,"0"));
+const total=Array.from({length:95},(_,i)=>"AO.SM.B"+String(i+1).padStart(3,"0"));
 assert.deepEqual([...studyIds,...heldIds].sort(),total.sort(),
- "All B031–B095 originals must be accounted for without fabricating variable Proper text");
+ "All B001–B095 originals must be accounted for without fabricating variable Proper text");
 for(const sourceId of heldIds){
  assert.ok(publishedSourceBlocks.get(sourceId)?.Proper_Slot,
   "Every hold must be an actual variable Proper slot: "+sourceId);
@@ -260,4 +311,5 @@ for(const sourceId of studyIds){
   "Fixed-text drafts cannot replace variable Proper: "+sourceId);
 }
 assert.equal(studies.filter(r=>r.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM").length,3);
-console.log("PASS P2 editorial pilot: 61 bilingual prayer readings, 4 held Propers, 3 optional Communion customs; complete B031–B095 coverage; closing texts retain dismissal/blessing/Last Gospel exceptions and John Incarnation wording");
+assert.equal(publishedSourceBlocks.get("AO.SM.B096")?.Title,"Sermon / Homily");
+console.log("PASS P2 editorial pilot: 84 bilingual prayer readings, 11 held Propers, 3 optional Communion customs; complete B001–B095 coverage; closing texts retain dismissal/blessing/Last Gospel exceptions and John Incarnation wording");
