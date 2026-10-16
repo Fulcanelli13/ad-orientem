@@ -1309,6 +1309,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     paragraphs,
     missalHeadings:moment.cardUpdate===false ? (previous.missalHeadings??[]) :
       Object.freeze([...(moment.missalHeadings??[])]),
+    missalRubric:moment.cardUpdate===false ? (previous.missalRubric??null) :
+      (moment.missalRubric??null),
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
@@ -2617,7 +2619,7 @@ export function createReaderDomAdapter({
     }
     setText(root,"card-title",current.cardTitle);
     setText(root,"progress",current.progress);
-    setText(root,"priest-position",textValue(current.priestPosition));
+    setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
     setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
@@ -2625,8 +2627,8 @@ export function createReaderDomAdapter({
     // gestural reference; LIVE keeps its vertical-rail behaviour unchanged.
     const missalChrome=mode==="MISSAL";
     for(const [role,value] of [
-      ["missal-faithful-gesture",current.gesture],
-      ["missal-priest-action",current.priestAction],
+      ["missal-faithful-gesture",current.missalRubric?.faithfulGesture??current.gesture],
+      ["missal-priest-action",current.missalRubric?.priestAction??current.priestAction],
     ]){
       const label=textValue(value);
       const node=root.querySelector('[data-role="'+role+'"]');
@@ -2688,9 +2690,9 @@ export function createReaderDomAdapter({
     syncProgress();
     syncRailVisibility(root);
 
-    applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
+    applyIcon(root,"priest-position",mode==="MISSAL" ? (current.missalRubric?.priestPosition?.iconKey??current.priestPositionIconKey) : current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
-    applyIcon(root,"faithful-gesture-top",mode==="MISSAL"?current.gestureIconKey:null,iconResolver);
+    applyIcon(root,"faithful-gesture-top",mode==="MISSAL"?(current.missalRubric?.faithfulGesture?.iconKey??current.gestureIconKey):null,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
@@ -2698,7 +2700,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"response",current.responseIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
-    applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
+    applyIcon(root,"priest-action-top",mode==="MISSAL" ? (current.missalRubric?.priestAction?.iconKey??current.priestActionIconKey) : current.priestActionIconKey,iconResolver);
     applyIcon(root,"bell",visibleBell ? (current.bellIconKey??"bells") : null,iconResolver);
     applyIcon(root,"schola-shared",current.scholaShared ? current.scholaIconKey : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
