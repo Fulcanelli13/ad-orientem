@@ -39,7 +39,27 @@
         "actualLiturgicalOrations": "UNKNOWN",
         "originalMissalProperAuthority": "UNKNOWN"
       },
-      "status": "NOT_CERTIFIED_NO_MASS_SELECTION"
+      "status": "NOT_CERTIFIED_NO_MASS_SELECTION",
+      "sourceAuditPath": "data/calendar/p1-primary-latin-and-oct9-source-audit.v1.json",
+      "historicalMassSecondaryWitnesses": [
+        "https://missale.online/kalender/en/2026-10-09",
+        "https://www.missalemeum.com/en/calendar/2026-10-09"
+      ],
+      "inconsistentSecondaryDisplay": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
+      "inconsistentSecondaryDisplayStatus": "HEADER_LEONARDI_BUT_MASS_IS_MULTIPLE_MARTYRS_COMMON_NOT_ACCEPTED",
+      "actualMissingInformation": [
+        "Celebrant or chaplaincy's Mass booklet or usage",
+        "Competent interpretation of 2020 mandatory commemoration at nonconventual Sung Mass",
+        "Original-1962 printed Leonardi and Dionysius commemoration texts",
+        "Whether approved traditional particular Proper or 2020 Supplement exists for Newman",
+        "Oratorian institutional/particular liturgical permissions"
+      ],
+      "rubricalEvidence": {
+        "primaryLatinAAS": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "firstClassNonconventualSungLimit": "RG 108, 109, 111(a); RGMR 434(a)",
+        "newerLaw": "Cum sanctissima §4 and final non-obstante clause",
+        "status": "APPLICABILITY_DISPUTE_HELD"
+      }
     },
     {
       "id": "P1-PIO-2026",
