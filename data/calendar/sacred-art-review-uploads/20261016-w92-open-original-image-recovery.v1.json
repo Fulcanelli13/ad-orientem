@@ -12,48 +12,6 @@
   },
   "items": [
     {
-      "categoryIndex": 89,
-      "category": "Calling the Fishermen",
-      "registryPaintingId": "nga-96688",
-      "artist": "Jacopo Bassano",
-      "title": "The Miraculous Draught of Fishes",
-      "accession": "NGA 1997.21.1",
-      "sourceType": "commons",
-      "sourceLocation": "Jacopo Bassano, The Miraculous Draught of Fishes, 1545, NGA 96688.jpg",
-      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_Bassano,_The_Miraculous_Draught_of_Fishes,_1545,_NGA_96688.jpg",
-      "rightsDeclaration": "CC0 NGA",
-      "expectedAspect": 1.698,
-      "sourceIdentity": "EXACT_REGISTRY"
-    },
-    {
-      "categoryIndex": 93,
-      "category": "Transfiguration",
-      "registryPaintingId": "kress-k2016",
-      "artist": "Maestro Bartolomé",
-      "title": "The Transfiguration",
-      "accession": "K2016; UAMA 1961.013.041",
-      "sourceType": "direct",
-      "sourceLocation": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg",
-      "sourcePage": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
-      "rightsDeclaration": "Public Domain Kress",
-      "expectedAspect": 0.7134,
-      "sourceIdentity": "EXACT_REGISTRY"
-    },
-    {
-      "categoryIndex": 99,
-      "category": "Entry into Jerusalem",
-      "registryPaintingId": "kress-k2017",
-      "artist": "Maestro Bartolomé",
-      "title": "The Entry into Jerusalem",
-      "accession": "K2017; UAMA 1961.013.042",
-      "sourceType": "direct",
-      "sourceLocation": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg",
-      "sourcePage": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
-      "rightsDeclaration": "Public Domain Kress",
-      "expectedAspect": 0.7134,
-      "sourceIdentity": "EXACT_REGISTRY"
-    },
-    {
       "categoryIndex": 135,
       "category": "Seven Sorrows of Mary",
       "registryPaintingId": "ART-nthony-van-yck-amentation-of-hrist",
@@ -80,34 +38,16 @@
       "rightsDeclaration": "Commons PD-Art, jurisdictional check",
       "expectedAspect": 0.962,
       "sourceIdentity": "CANDIDATE_ACCESSION_RECONCILIATION"
-    },
-    {
-      "categoryIndex": 142,
-      "category": "Cain and Abel",
-      "registryPaintingId": "ART-eter-aul-ubens-ain-and-bel",
-      "artist": "Peter Paul Rubens",
-      "title": "Cain Slaying Abel",
-      "accession": "Courtauld P.1978.PG.353",
-      "sourceType": "commons",
-      "sourceLocation": "Peter Paul Rubens - Cain slaying Abel (Courtauld Institute).jpg",
-      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Cain_slaying_Abel_(Courtauld_Institute).jpg",
-      "rightsDeclaration": "Commons PD-Art, jurisdictional check",
-      "expectedAspect": 0.718,
-      "sourceIdentity": "CANDIDATE_ACCESSION_RECONCILIATION"
-    },
-    {
-      "categoryIndex": 145,
-      "category": "Melchizedek Blesses Abram",
-      "registryPaintingId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
-      "artist": "Peter Paul Rubens",
-      "title": "The Meeting of Abraham and Melchizedek",
-      "accession": "NGA 1958.4.1",
-      "sourceType": "commons",
-      "sourceLocation": "Sir Peter Paul Rubens, The Meeting of Abraham and Melchizedek, c. 1626, NGA 45640.jpg",
-      "sourcePage": "https://commons.wikimedia.org/wiki/File:Sir_Peter_Paul_Rubens,_The_Meeting_of_Abraham_and_Melchizedek,_c._1626,_NGA_45640.jpg",
-      "rightsDeclaration": "CC0 NGA",
-      "expectedAspect": 1.258,
-      "sourceIdentity": "CANDIDATE_ACCESSION_RECONCILIATION"
     }
+  ],
+  "supersession": "Reconciled against the v5 authoritative 22-gap register. Categories 89/93/99 were already acquired. Categories 142/145 have previously recorded different-original alternatives and cannot close strict gaps. Research candidates 135 and 139 are accession-specific and must not inherit the older generic source identity.",
+  "excludedAlreadyAcquiredCategories": [
+    89,
+    93,
+    99
+  ],
+  "excludedAlreadyRegisteredDifferentOriginalAlternatives": [
+    142,
+    145
   ]
 }
