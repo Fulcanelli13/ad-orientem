@@ -13,9 +13,12 @@
     "instituteLocalHistoricalOnly": 8,
     "modernGeneralDateClaimCount": 10,
     "newTraditionalMassPermissionsCreated": 0,
-    "legalEffectiveDatesCertifiedByThisPass": 0,
+    "legalEffectiveDatesCertifiedByThisPass": 2,
     "independent1962PrimaryTextCertificationsAdded": 0,
-    "unscopedCalendarPromotions": 0
+    "unscopedCalendarPromotions": 0,
+    "particularBlessedEraExplicitFromDateEdges": 2,
+    "modernGeneralJuridicalEffectiveDatesCertifiedByThisPass": 0,
+    "particularPermissionsStillNeedJurisdictionIdentification": 2
   },
   "priorities": [
     {
@@ -376,6 +379,27 @@
     "saint.jadwiga-queen-poland",
     "saint.margherita-citta-di-castello",
     "canon-group.japan-martyrs-16-1987",
-    "canon-group.forty-martyrs-england-wales"
-  ]
+    "canon-group.forty-martyrs-england-wales",
+    "saint.francisco-marto",
+    "saint.jacinta-marto"
+  ],
+  "particularBeatificationGrant": {
+    "edgeIds": [
+      "p2-extra-067",
+      "p2-extra-068"
+    ],
+    "subjectIds": [
+      "saint.francisco-marto",
+      "saint.jacinta-marto"
+    ],
+    "papalGrantDated": "2000-05-13",
+    "expressFromToday": true,
+    "rankAtGrant": "BLESSED",
+    "canonizationDate": "2017-05-13",
+    "jurisdiction": "IN_PERMITTED_PLACES_AND_UNDER_LAW",
+    "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/francisco-e-jacinta-marto.html",
+    "doNotAssumeGeneralCalendar": true,
+    "doNotAuthorize1962MassByThisSource": true,
+    "remainingDecision": "Identify actual permitted places and relevant liturgical regime"
+  }
 }

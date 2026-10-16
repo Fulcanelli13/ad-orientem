@@ -10,7 +10,7 @@ for(const edge of edges){
  assert.equal(result.subjectId,edge.subjectId);assert.equal(result.monthDay,edge.monthDay);
  assert.equal(result.sourceUrl,edge.source.url);assert.equal(result.runtimeImportAuthorized,false);
  assert.equal(result.eligibleForNewTraditionalMass,false);assert.equal(result.historical1962LegalSourceConfirmed,false);
- assert.equal(result.independentJuridicalEffectiveFrom,null);assert.equal(result.requiresEffectiveDateReview,true);
+ if(["p2-extra-067","p2-extra-068"].includes(edge.edgeId)){assert.equal(result.independentJuridicalEffectiveFrom,"2000-05-13");assert.equal(result.historicalEffectiveDateRank,"BLESSED_NOT_SAINT");assert.equal(result.requiresEffectiveDateReview,false);}else{assert.equal(result.independentJuridicalEffectiveFrom,null);assert.equal(result.requiresEffectiveDateReview,true);}
  if(edge.authorityScope==="HOLY_SEE_DICASTERY_SAINT_PROFILE")assert.equal(result.authorityDecision,"DICASTERY_LITURGICAL_DATE_NOT_INSCRIPTION");
 }
 const byDecision={};for(const x of verdicts)byDecision[x.authorityDecision]=(byDecision[x.authorityDecision]||0)+1;
@@ -45,7 +45,11 @@ const paul=ins.find(a=>a.subjectId==="saint.paul-vi");
 assert.equal(paul.documentDated,"2019-01-25");assert.equal(paul.publiclyReleasedOn,"2019-02-06");
 assert.equal(audit.summary.modernGeneralFormalDecree,9);
 assert.equal(audit.summary.newTraditionalMassPermissionsCreated,0);
-assert.equal(audit.summary.legalEffectiveDatesCertifiedByThisPass,0);
+assert.equal(audit.summary.legalEffectiveDatesCertifiedByThisPass,2);
+assert.equal(audit.summary.modernGeneralJuridicalEffectiveDatesCertifiedByThisPass,0);
+assert.equal(queue.particularBeatificationGrant.rankAtGrant,"BLESSED");
+const local=read("particular-source-verification");assert.equal(local.records.length,8);
+assert.ok(local.records.find(x=>x.subjectId==="saint.jadwiga-queen-poland").sourceUrl.includes("/chrystus-na-krowodrzy/"));
 assert.equal(queue.priorities.reduce((n,x)=>n+x.edgeIds.length,0),314);
 assert.ok(audit.edgeDecisions.every(x=>x.runtimeImportAuthorized===false));
 console.log("P2 authority and jurisdiction audit PASS: 314/314 edges, 9 official decrees, 1 papal statement; no assumed legal effective dates or 1962 permissions");

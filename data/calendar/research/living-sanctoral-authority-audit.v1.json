@@ -14,9 +14,12 @@
     "instituteLocalHistoricalOnly": 8,
     "modernGeneralDateClaimCount": 10,
     "newTraditionalMassPermissionsCreated": 0,
-    "legalEffectiveDatesCertifiedByThisPass": 0,
+    "legalEffectiveDatesCertifiedByThisPass": 2,
     "independent1962PrimaryTextCertificationsAdded": 0,
-    "unscopedCalendarPromotions": 0
+    "unscopedCalendarPromotions": 0,
+    "particularBlessedEraExplicitFromDateEdges": 2,
+    "modernGeneralJuridicalEffectiveDatesCertifiedByThisPass": 0,
+    "particularPermissionsStillNeedJurisdictionIdentification": 2
   },
   "edgeDecisions": [
     {
@@ -1964,13 +1967,15 @@
       "papalAnnouncementConfirmed": false,
       "documentDated": null,
       "publicReleaseOn": null,
-      "independentJuridicalEffectiveFrom": null,
+      "independentJuridicalEffectiveFrom": "2000-05-13",
       "historical1962LegalSourceConfirmed": false,
       "eligibleForNewTraditionalMass": false,
       "runtimeImportAuthorized": false,
       "requiresJurisdictionReview": true,
-      "requiresEffectiveDateReview": true,
-      "reviewAction": "Identify expressly permitted places and duration before historical display"
+      "requiresEffectiveDateReview": false,
+      "reviewAction": "Identify permitted territory and 1962/missal-specific eligibility separately; 2000-05-13 is BLESSED-era grant from 'today onward', never date of Saint recognition.",
+      "historicalEffectiveDateRank": "BLESSED_NOT_SAINT",
+      "effectiveDateScope": "RESTRICTED_PLACES_UNDER_CANON_LAW"
     },
     {
       "evidenceEdgeId": "p2-extra-068",
@@ -1985,13 +1990,15 @@
       "papalAnnouncementConfirmed": false,
       "documentDated": null,
       "publicReleaseOn": null,
-      "independentJuridicalEffectiveFrom": null,
+      "independentJuridicalEffectiveFrom": "2000-05-13",
       "historical1962LegalSourceConfirmed": false,
       "eligibleForNewTraditionalMass": false,
       "runtimeImportAuthorized": false,
       "requiresJurisdictionReview": true,
-      "requiresEffectiveDateReview": true,
-      "reviewAction": "Identify expressly permitted places and duration before historical display"
+      "requiresEffectiveDateReview": false,
+      "reviewAction": "Identify permitted territory and 1962/missal-specific eligibility separately; 2000-05-13 is BLESSED-era grant from 'today onward', never date of Saint recognition.",
+      "historicalEffectiveDateRank": "BLESSED_NOT_SAINT",
+      "effectiveDateScope": "RESTRICTED_PLACES_UNDER_CANON_LAW"
     },
     {
       "evidenceEdgeId": "p2-extra-069",
@@ -6491,7 +6498,7 @@
       "evidenceEdgeId": "p2-residue-036",
       "subjectId": "saint.jadwiga-queen-poland",
       "monthDay": "06-08",
-      "sourceUrl": "https://swietajadwiga.diecezja.pl/schola-dziecieca/odpust-parafialny-ku-czci-naszej-patronki-sw-jadwigi-krolowej",
+      "sourceUrl": "https://swietajadwiga.diecezja.pl/chrystus-na-krowodrzy/odpust-parafialny-ku-czci-naszej-patronki-sw-jadwigi-krolowej",
       "authorityScope": "KRAKOW_PARISH_PATRONAL_FEAST_WITNESS",
       "originalJurisdiction": "PARISH_SAINT_JADWIGA_KRAKOW",
       "authorityDecision": "PARTICULAR_INSTITUTE_OR_CHAPEL_WITNESS",

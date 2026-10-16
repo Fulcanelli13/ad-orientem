@@ -33,3 +33,10 @@ The `historicalVisibilitySafeFrom` field is a conservative source-availability b
 - Newman: https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html
 - John XXIII and John Paul II: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20140529_decreto-calendario-generale-gxxiii-gpii_en.html
 - Pio: https://www.vatican.va/content/john-paul-ii/en/angelus/2002/documents/hf_jp-ii_ang_20020616.html
+
+
+## Second source-level correction — historical beatification acts and particular witnesses
+
+The original 13 May 2000 apostolic beatification letter for Francisco and Jacinta Marto contains the Portuguese papal formula granting celebrations **“de hoje em diante”** (from today onwards), *in permitted places and according to law*, on **20 February**. This supplies an actual, date-effective **Blessed-era territorial grant**, independently of the subsequent canonisation on 13 May 2017. We have therefore preserved **two** canonical person-linked edges with `juridicalEffectiveFrom=2000-05-13` but `applicableRankFrom=BLESSED`, `saintRecognitionNotBefore=2017-05-13`, and narrow geographic/legal scope. This **does not** authorize traditional 1962 Mass formularies nor a universal modern Roman feast. The general Roman act effective dates remain unverified.
+
+The Queen Jadwiga parish URL formerly present in the ledger was inaccessible at its historic path; the direct first-party Kraków parish record was recovered at `https://swietajadwiga.diecezja.pl/chrystus-na-krowodrzy/odpust-parafialny-ku-czci-naszej-patronki-sw-jadwigi-krolowej` and ledger, audit and compatibility view now agree on it. Carmel 12 July, Wrocław Kinga 24 July, Lasallian Turón 9 October and historical Wrexham martyrs 25 October were separately checked against original publishers; their dates stay scope-limited. Source jurisdiction should not be overread as proof of a formal national/order promulgation. Exact details and follow-up controls are stored in `living-sanctoral-particular-source-verification.v1.json`.
