@@ -12,7 +12,12 @@ const folded=value=>norm(value).normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const validLink=url=>{
   try{
     const parsed=new URL(url);
-    return parsed.protocol==="https:"&&parsed.hostname==="www.vatican.va";
+    return parsed.protocol==="https:"&&new Set([
+      "www.vatican.va",
+      "www.vaticanstate.va",
+      "www.sainte-bernadette-soubirous-nevers.com",
+      "www.maristfathers.ie"
+    ]).has(parsed.hostname);
   }catch{return false;}
 };
 const addr=place=>place?.address?.formatted||[place?.address?.city,place?.address?.country].filter(Boolean).join(", ");
