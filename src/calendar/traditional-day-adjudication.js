@@ -93,13 +93,30 @@ export function reviewCommemorationAddition({
 
 // Reuse the existing Cum sanctissima evaluator instead of inventing
 // a second proper/rank engine. Its positive result remains advisory.
-export function reviewNewSaintMassChoice({date,saint,observedDay,protectedFeasts}={}){
-  // The production resolver returns {day:{main,...},proper,...}, whereas
-  // the original conservative eligibility helper consumes {main,...}.
-  // Passing the outer resolution wrongly yields an INDETERMINATE rank.
+export function reviewNewSaintMassChoice({
+  date,saint,observedDay,protectedFeasts,sourceObservance=null
+}={}){
+  // Production resolver returns {day:{main,...}}, whereas the original
+  // evaluator consumes {main,...}. The compact source-read model separately
+  // retains the Vatican date source but omits pilot.observances: join only
+  // an exact source-certified Vatican General Calendar witness.
   const normalizedDay=observedDay?.day?.main?observedDay.day:observedDay;
+  const observed=
+    sourceObservance?.subjectId===saint?.id &&
+    sourceObservance.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE" &&
+    sourceObservance.universalStatus==="CERTIFIED_BY_DECREE" &&
+    sourceObservance.monthDay===String(date||"").slice(5) &&
+    /^https:\/\/(?:www|press)\.vatican\.va\//.test(sourceObservance.sourceUrl||"") &&
+    /^\d{4}-\d{2}-\d{2}$/.test(sourceObservance.publishedOn||"") &&
+    sourceObservance.publishedOn<=date
+      ? {calendar:"CURRENT_ROMAN_GENERAL",monthDay:sourceObservance.monthDay,
+          sourceIds:[sourceObservance.sourceUrl],publishedOn:sourceObservance.publishedOn}
+      : null;
+  const reviewSaint=observed
+    ? {...saint,observances:[...(saint?.observances||[]),observed]}
+    : saint;
   const evaluation=assessOptionalPost1960SaintCelebration({
-    date,saint,observedDay:normalizedDay,protectedFeasts
+    date,saint:reviewSaint,observedDay:normalizedDay,protectedFeasts
   });
   return Object.freeze({...evaluation,
     candidateOnly:evaluation.status==="CANDIDATE_NEEDS_AUTHORITY_AND_RUBRICAL_REVIEW",
