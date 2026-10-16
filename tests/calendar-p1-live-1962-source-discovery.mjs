@@ -323,6 +323,32 @@ try{
    }
    return out;
  });
+ const papalComposition=await page.evaluate(async()=>{
+  const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+  const {composeP1PapalMartyrSource}=await import("/src/calendar/p1-papal-martyr-source-composition.js");
+  const diag=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+  const get=async path=>{
+   const result={};
+   for(const lang of ["la","en","fr"])result[lang]=await resolver.resolveSource(path,lang,diag());
+   return result;
+  };
+  const shared=await get("Commune/C4b");
+  const out=[];
+  for(const path of ["Commune/C2b","Commune/C3b"]){
+   const r=composeP1PapalMartyrSource({targetPath:path,target:await get(path),donor:shared});
+   out.push({path,status:r.status,reason:r.reason??null,section:r.section??null,
+    borrowedSections:r.borrowedSections.map(x=>x.language+":"+x.section),
+    variantCollectRetained:r.variantCollectRetained??false,latinParity:r.latinSectionParityCount??0,
+    sourcePath:r.sourcePath??null,donorSourcePath:r.donorSourcePath??null,
+    route:r.route,approvedForMass:r.approvedForMass});
+  }
+  return out;
+ });
+ console.log("P1_PAPAL_MARTYR_SOURCE_COMPOSITION="+JSON.stringify(papalComposition));
+ assert.equal(papalComposition.length,2);
+ assert.ok(papalComposition.every(x=>x.status==="SOURCE_COMPOSITION_VERIFIED"&&
+   x.variantCollectRetained&&x.latinParity===8&&x.borrowedSections.length===16&&
+   x.route===null&&x.approvedForMass===false));
  console.log("P1_PAPAL_COMMON_SOURCE_OWNERS="+JSON.stringify(papalCommonOwnerProbe));
  console.log("P1_C1V_ALT_ORATION_OWNERSHIP="+JSON.stringify(apostleVigilOrations));
  console.log("P1_PARTIAL_COMMON_COMPOSITION_WITNESS="+JSON.stringify(partialReconciliation));
