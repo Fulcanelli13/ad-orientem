@@ -1,0 +1,713 @@
+{
+  "schema": "AO_SCHUSTER_1908_SCRIPTURE_EPISODE_SOURCE_ANCHORS_V1",
+  "date": "2026-10-16",
+  "owner": "Biblical Atlas historical-source research PR #1069",
+  "sourceEditionId": "SCHUSTER-EN-SADLIER-11TH-CATHOLICAPOLOGETICS-SCAN",
+  "sourcePdfSHA256": "6555a9a86e19d9d0281fee1399ef867dab1d04c9305d6381b975538ce877f30f",
+  "sourceReference": "1908 original printed pages / 419-page user scan; source narrative spans from research OCR, not unverified chapter-title equivalence",
+  "scriptureWitness": "Douay-Rheims Challoner 1899; Scripture verse loci checked against Bible text, without assuming verbatim translation or complete chapter coverage",
+  "externalVerseTextSources": [
+    "https://www.ccel.org/c/challoner/douayrheims/Genesis/11.html",
+    "https://www.ccel.org/c/challoner/douayrheims/Matthew/26.html",
+    "https://www.ccel.org/c/challoner/douayrheims/Acts/02.html",
+    "https://novenaregina.com/bible/luke/1",
+    "https://novenaregina.com/bible/john/2"
+  ],
+  "method": "Two semantically distinctive OCR body markers located per proposed scripture locus and mapped to the particular Scripture verse or narrow subrange. Bible episode scope cross-checked in a traditional Catholic Bible. These are precise narrative anchors, not evidence of literal equivalence or complete textual coverage. The original manuscript has not been character-proofread.",
+  "counts": {
+    "sourceChaptersExamined": 14,
+    "episodeLociExamined": 20,
+    "ocrBodyMarkersLocated": 40,
+    "canonicalAtlasEventsTouched": 15,
+    "distinctAtlasEventKeys": 15,
+    "supplementaryNonCanonicalOrHarmonyLoci": 5,
+    "atlasEventRangeMismatches": 1,
+    "fullyCertifiedVerseCoverage": 0,
+    "activatedProductionReaderLinks": 0
+  },
+  "rangeMismatchCases": [
+    {
+      "chapter": "SCHUSTER-EN-1908-NT-XXXVII",
+      "scripture": "Matthew 17:1–9",
+      "eventReference": "Matthew 17:1–8"
+    }
+  ],
+  "importantEditorialFindings": [
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-I",
+      "finding": "Schuster Creation includes Genesis 2:1–3 although canonical Creation event is Genesis 1:1–31."
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-OT-XXXI",
+      "finding": "Schuster's burning bush narrative also describes Moses' signs and meeting the people in Exodus 4."
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XXXVII",
+      "finding": "Transfiguration narrative includes verse 9 and Gospel-harmony detail corresponding to Luke 9:30–31, so cannot be treated as only Matthew 17:1–8."
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXVII",
+      "finding": "Agony narrative contains angel and sweat material specifically in Luke 22:43–44, in addition to Matthew 26:36–46."
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-LXXXII",
+      "finding": "Matthias election Acts 1:12–26 appears before Pentecost Acts 2:1–41 in one Schuster chapter."
+    },
+    {
+      "sourceChapterId": "SCHUSTER-EN-1908-NT-XC",
+      "finding": "Cornelius Acts 10 narrative continues with Antioch Acts 11:19–26 in same Schuster chapter; both correspond to separate canonical Atlas selected events."
+    }
+  ],
+  "constraints": {
+    "retainCanonical151Atlas": true,
+    "retainOriginal182SchusterChapters": true,
+    "noAutomaticChapterEqualsBiblePassage": true,
+    "noNewGeographicalOrGenealogyEdges": true,
+    "noAIGeneratedNarrative": true,
+    "noOriginalSourceBookProseInGitHub": true,
+    "noProductionRelease": true,
+    "missingSchusterPrintedPages384_385RemainUnresolved": true
+  },
+  "records": [
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-I",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Genesis 1:1–31",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:genesis-1-1-31",
+      "canonicalEventScriptureReference": "Genesis 1:1–31",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "light made",
+          "specificVerse": "Genesis 1:3",
+          "sourcePdfPage": 16,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "firmament",
+          "specificVerse": "Genesis 1:6",
+          "sourcePdfPage": 16,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-I",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Genesis 2:1–3",
+      "relationType": "ADDITIONAL_PASSAGE",
+      "canonicalEventKey": null,
+      "canonicalEventScriptureReference": null,
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "seventh day",
+          "specificVerse": "Genesis 2:2–3",
+          "sourcePdfPage": 17,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "rested",
+          "specificVerse": "Genesis 2:2",
+          "sourcePdfPage": 17,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-V",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Genesis 4:1–16",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:genesis-4-1-16",
+      "canonicalEventScriptureReference": "Genesis 4:1–16",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Cain and Abel",
+          "specificVerse": "Genesis 4:2",
+          "sourcePdfPage": 23,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "fugitive",
+          "specificVerse": "Genesis 4:12–16",
+          "sourcePdfPage": 25,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-VIII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Genesis 11:1–9",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:genesis-11-1-9",
+      "canonicalEventScriptureReference": "Genesis 11:1–9",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "tower",
+          "specificVerse": "Genesis 11:4",
+          "sourcePdfPage": 31,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "language",
+          "specificVerse": "Genesis 11:7–9",
+          "sourcePdfPage": 31,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-IX",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Genesis 12:1–9",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:genesis-12-1-9",
+      "canonicalEventScriptureReference": "Genesis 12:1–9",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "kindred",
+          "specificVerse": "Genesis 12:1",
+          "sourcePdfPage": 33,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "altar",
+          "specificVerse": "Genesis 12:7–8",
+          "sourcePdfPage": 34,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-XXXI",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Exodus 3:1–15",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:exodus-3-1-15",
+      "canonicalEventScriptureReference": "Exodus 3:1–15",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "bush",
+          "specificVerse": "Exodus 3:2",
+          "sourcePdfPage": 78,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "holy ground",
+          "specificVerse": "Exodus 3:5",
+          "sourcePdfPage": 78,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-OT-XXXI",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Exodus 4:1–31",
+      "relationType": "ADDITIONAL_PASSAGE",
+      "canonicalEventKey": null,
+      "canonicalEventScriptureReference": null,
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "rod",
+          "specificVerse": "Exodus 4:2–4",
+          "sourcePdfPage": 79,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "miracles",
+          "specificVerse": "Exodus 4:30–31",
+          "sourcePdfPage": 80,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-II",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Luke 1:26–38",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:nazareth-e1",
+      "canonicalEventScriptureReference": "Luke 1:26–38",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Gabriel",
+          "specificVerse": "Luke 1:26",
+          "sourcePdfPage": 238,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "handmaid",
+          "specificVerse": "Luke 1:38",
+          "sourcePdfPage": 239,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-III",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Luke 1:39–56",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:ein-karem-e1",
+      "canonicalEventScriptureReference": "Luke 1:39–56",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Elizabeth",
+          "specificVerse": "Luke 1:41",
+          "sourcePdfPage": 240,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "magnify",
+          "specificVerse": "Luke 1:46",
+          "sourcePdfPage": 240,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-XIV",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "John 2:1–11",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:cana-e1",
+      "canonicalEventScriptureReference": "John 2:1–11",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Cana",
+          "specificVerse": "John 2:1",
+          "sourcePdfPage": 261,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "water",
+          "specificVerse": "John 2:7–9",
+          "sourcePdfPage": 261,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-XXXVII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Matthew 17:1–9",
+      "relationType": "CANONICAL_EVENT_BROADER_THAN_EVENT",
+      "canonicalEventKey": "biblical:event:transfiguration-e1",
+      "canonicalEventScriptureReference": "Matthew 17:1–8",
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "tabernacles",
+          "specificVerse": "Matthew 17:4",
+          "sourcePdfPage": 306,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "beloved Son",
+          "specificVerse": "Matthew 17:5",
+          "sourcePdfPage": 307,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-XXXVII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Luke 9:30–31",
+      "relationType": "GOSPEL_HARMONY_DETAIL",
+      "canonicalEventKey": null,
+      "canonicalEventScriptureReference": null,
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "passion and death",
+          "specificVerse": "Luke 9:31",
+          "sourcePdfPage": 306,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "Moses and Elias",
+          "specificVerse": "Luke 9:30",
+          "sourcePdfPage": 306,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LVI",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "John 11:1–44",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:bethany-e1",
+      "canonicalEventScriptureReference": "John 11:1–44",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Martha",
+          "specificVerse": "John 11:20",
+          "sourcePdfPage": 332,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "come forth",
+          "specificVerse": "John 11:43",
+          "sourcePdfPage": 334,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LXVII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Matthew 26:36–46",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:gethsemane-e1",
+      "canonicalEventScriptureReference": "Matthew 26:36–46",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "chalice",
+          "specificVerse": "Matthew 26:39",
+          "sourcePdfPage": 355,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "watch",
+          "specificVerse": "Matthew 26:38–41",
+          "sourcePdfPage": 355,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LXVII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Luke 22:43–44",
+      "relationType": "GOSPEL_HARMONY_DETAIL",
+      "canonicalEventKey": null,
+      "canonicalEventScriptureReference": null,
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "angel",
+          "specificVerse": "Luke 22:43",
+          "sourcePdfPage": 356,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "sweat",
+          "specificVerse": "Luke 22:44",
+          "sourcePdfPage": 356,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LXXVIII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Luke 24:13–35",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:event:emmaus-e1",
+      "canonicalEventScriptureReference": "Luke 24:13–35",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Emmaus",
+          "specificVerse": "Luke 24:13",
+          "sourcePdfPage": 377,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "breaking of bread",
+          "specificVerse": "Luke 24:35",
+          "sourcePdfPage": 378,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LXXXII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Acts 1:12–26",
+      "relationType": "ADDITIONAL_PASSAGE",
+      "canonicalEventKey": null,
+      "canonicalEventScriptureReference": null,
+      "canonicalEventExactRangeEqualsPassage": false,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Matthias",
+          "specificVerse": "Acts 1:23–26",
+          "sourcePdfPage": 384,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "lots",
+          "specificVerse": "Acts 1:26",
+          "sourcePdfPage": 384,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-LXXXII",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Acts 2:1–41",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:acts-2-1-41",
+      "canonicalEventScriptureReference": "Acts 2:1–41",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "tongues",
+          "specificVerse": "Acts 2:3",
+          "sourcePdfPage": 384,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "three thousand",
+          "specificVerse": "Acts 2:41",
+          "sourcePdfPage": 386,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-XC",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Acts 10:1–48",
+      "relationType": "CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:acts-10-1-48",
+      "canonicalEventScriptureReference": "Acts 10:1–48",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Cornelius",
+          "specificVerse": "Acts 10:1",
+          "sourcePdfPage": 399,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "Joppe",
+          "specificVerse": "Acts 10:5",
+          "sourcePdfPage": 399,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    },
+    {
+      "schusterChapterId": "SCHUSTER-EN-1908-NT-XC",
+      "schusterSourcePdfPageRange": null,
+      "scripturePassage": "Acts 11:19–26",
+      "relationType": "ADDITIONAL_CANONICAL_EVENT",
+      "canonicalEventKey": "biblical:passage:acts-11-19-26",
+      "canonicalEventScriptureReference": "Acts 11:19–26",
+      "canonicalEventExactRangeEqualsPassage": true,
+      "verseAnchors": [
+        {
+          "sourceKeyword": "Antioch",
+          "specificVerse": "Acts 11:19–26",
+          "sourcePdfPage": 400,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        },
+        {
+          "sourceKeyword": "Christians",
+          "specificVerse": "Acts 11:26",
+          "sourcePdfPage": 400,
+          "sourceMatch": "EXACT_NORMALIZED_OCR_TERM_PRESENT",
+          "exactOriginalPrintWordingCertified": false
+        }
+      ],
+      "sourceBookTextSource": "1908 English 11th edition Schuster narrative-bearing OCR",
+      "sourceDisplayRights": "RESEARCH_ONLY",
+      "status": "SPECIFIC_VERSE_EPISODE_ANCHORS_MATCHED_NOT_COMPLETE_PASSAGE_COVERAGE",
+      "wordingCharacterProofread": false,
+      "fullVerseCoverageCertified": false,
+      "publicationApproved": false,
+      "appNavigationEnabled": false
+    }
+  ]
+}
