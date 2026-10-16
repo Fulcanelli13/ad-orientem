@@ -481,4 +481,30 @@ assert.equal(fam.counts.earlyEnglishSadlierOfflineResearchReaderChapterSlots,182
 assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderTopicCandidates,21);
 assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderPublished,0);
 
+// Fast source-quality triage and expanded topic candidates are research-only.
+const bulkReaderV2=fam.english1908BulkReaderV2QualityAndAtlas;
+assert.ok(bulkReaderV2);
+assert.deepEqual(bulkReaderV2.trialEvidence.pdfPagesChecked,[16,33,83,245,275,398]);
+assert.equal(bulkReaderV2.trialEvidence.notACharacterAccuracyTest,true);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.totalChapterSlots,182);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.sourceOCRBoundedChapters,180);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.higherHeuristic,167);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.mixedHeuristic,13);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.heldSourceBoundaries,2);
+assert.equal(bulkReaderV2.bulkLegibilityEstimate.textCharacterCertified,0);
+assert.equal(bulkReaderV2.expandedAtlasSubjectCandidates.candidatePairs,87);
+assert.equal(bulkReaderV2.expandedAtlasSubjectCandidates.distinctHistoricalChapters,81);
+assert.equal(bulkReaderV2.expandedAtlasSubjectCandidates.verseAlignedCertified,0);
+assert.equal(bulkReaderV2.expandedAtlasSubjectCandidates.autoActivatedAppLinks,0);
+assert.equal(bulkReaderV2.offlinePreview.artifactSHA256.length,64);
+assert.equal(bulkReaderV2.offlinePreview.sourceProseCommittedToGitHub,false);
+assert.equal(bulkReaderV2.offlinePreview.sourceProsePublishedToApp,false);
+assert.equal(bulkReaderV2.offlinePreview.appChanged,false);
+assert.equal(bulkReaderV2.sourcePublicationApproved,false);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRHighLegibilityHeuristic,167);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRMixedLegibilityHeuristic,13);
+assert.equal(fam.counts.earlyEnglishSadlierAtlasTopicCandidatesExpanded,87);
+assert.equal(fam.counts.earlyEnglishSadlierAtlasTopicCandidateChaptersExpanded,81);
+assert.equal(fam.counts.earlyEnglishSadlierConfirmedVerseAlignedNew,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
