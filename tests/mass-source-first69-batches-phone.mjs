@@ -37,8 +37,6 @@ try{
    await batch.locator("summary").first().tap();
    assert.match(await batch.locator("[data-ao-source-context-summary]").innerText(),/0 \/ 37/);
    assert.equal(await batch.locator('[data-ao-source-context-locus="AO.MASS.WORK.AQUINAS.L01"]').count(),1);
-
-   await batch.locator("summary").first().tap();
    const works=batch.locator("[data-ao-source-work]");
    assert.equal(await works.count(),5);
    await works.first().locator("summary").first().tap();
