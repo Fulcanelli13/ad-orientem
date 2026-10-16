@@ -18,9 +18,9 @@ REGISTRY=ROOT/"data/calendar/sacred-art-candidates.v1.json"
 OUT=ROOT/"docs/research/review-galleries/acquired"
 ARCHIVE=ROOT/"artifacts/sacred-art-unified-acquisition"
 session=requests.Session()
-session.headers.update({"User-Agent":"AdOrientemArtResearch/1.0 (GitHub Actions image-identity QA; editor@ad-orientem.invalid)","Accept":"application/json,image/webp,image/jpeg,*/*"})
+session.headers.update({"User-Agent":"AdOrientemArtResearch/1.1 (https://github.com/Fulcanelli13/ad-orientem; open-source research)","Accept":"application/json,image/webp,image/jpeg,*/*"})
 MAX_DOWNLOAD=55_000_000
-WAIT=0.13
+WAIT=1.4
 MET_RE=re.compile(r"metmuseum\.org/art/collection/search/(\d+)")
 CMA_RE=re.compile(r"clevelandart\.org/art/([\d.]+)")
 cached_api={}
