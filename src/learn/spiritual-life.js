@@ -48,7 +48,7 @@ function css(){
 .aoSLInlineSources{font-family:var(--ao-font-ui,system-ui,sans-serif);margin-top:10px;color:var(--muted,#9ba5b1);font-size:max(13px,.8125rem);line-height:1.5}.aoSLInlineSources span{color:var(--muted,#9ba5b1)}.aoSLInlineSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:3px;overflow-wrap:anywhere}.aoSLInlineSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoSLSourceHold{font-style:italic}
 .aoSLSourceIntro{margin:5px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:400 max(13px,.8125rem)/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLSourceIndex{list-style:none;margin:7px 0 10px;padding:0}.aoSLSourceIndex li{margin:8px 0;overflow-wrap:anywhere}.aoSLSourceIndex a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.aoSLSourceIndex h3{margin:12px 0 6px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.aoSLSourceIndexHeading{margin:12px 0 6px;font:600 max(13px,.8125rem)/1.45 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLReadingHint{display:inline-block;margin-inline-start:8px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLDocumentNote{margin:8px 0 12px;color:var(--ao-text-muted,#a9a5a0);font:.73rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 .aoSLWorks{margin:12px 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12));padding-top:4px}
