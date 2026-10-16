@@ -219,7 +219,14 @@ try{
  assert.ok(printableCandidate,"No October 2026 ordinary Mass has printable bilingual Propers: "+JSON.stringify(candidates));
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),printableCandidate.date),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day")),true);
- const printButton=page.locator("#ao-calendar-modular-root [data-cal-print-proper]");
+ const printOptions=page.locator("#ao-calendar-modular-root .aoCalV2PrintOptions");
+ await printOptions.locator("summary").waitFor({state:"visible",timeout:15000});
+ assert.equal(await printOptions.getAttribute("open"),null,
+   "Bilingual print remains a secondary, initially collapsed Calendar Day action");
+ await printOptions.locator("summary").click();
+ assert.equal(await printOptions.getAttribute("open"),"",
+   "Opening the Print disclosure must reveal the existing proper-only action");
+ const printButton=printOptions.locator("[data-cal-print-proper]");
  await printButton.waitFor({state:"visible",timeout:15000});
  const popupPromise=page.waitForEvent("popup",{timeout:15000});
  await printButton.click();
