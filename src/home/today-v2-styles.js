@@ -68,6 +68,16 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Context small,.aoTodayV2SectionHead small{display:block;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted,#aab0b4)}
 .aoTodayV2Context strong{font:400 17px/1.17 var(--ao-font-display,Georgia,serif);overflow-wrap:anywhere}
 .aoTodayV2Context span{font:500 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
+.aoTodayV2Honoured{padding:18px 19px 8px;border-bottom:1px solid var(--border,rgba(235,235,235,.12));background:var(--surface-1,#101720)}
+.aoTodayV2HonouredHeading{margin:0 0 7px}
+.aoTodayV2HonouredHeading small{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:var(--text-muted,#aab0b4)}
+.aoTodayV2HonouredHeading h2{font:400 22px/1.2 var(--ao-font-display,Georgia,serif);margin:5px 0 0;color:var(--text,#eee9df)}
+.aoTodayV2ObservedRow{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding:10px 0;width:100%;border:0;border-bottom:1px solid var(--border,rgba(235,235,235,.10));background:transparent;color:inherit;text-align:left}
+.aoTodayV2ObservedRow:last-child{border-bottom:0}
+.aoTodayV2ObservedRow span:first-child{min-width:0}
+.aoTodayV2ObservedRow small{display:block;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4);letter-spacing:.025em}
+.aoTodayV2ObservedRow strong{display:block;margin-top:4px;font:400 17px/1.25 var(--ao-font-display,Georgia,serif);overflow-wrap:anywhere}
+.aoTodayV2ObservedRow em{display:block;font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;color:var(--text-muted,#aab0b4);margin-top:3px}
 .aoTodayV2Below{padding:2px 18px 34px}
 .aoTodayV2Zone{padding:23px 1px 22px;border-bottom:1px solid var(--border,rgba(235,235,235,.12))}
 .aoTodayV2SectionHead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:14px}
