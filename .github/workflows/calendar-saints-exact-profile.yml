@@ -1,0 +1,33 @@
+name: Calendar Saints exact profile integration
+
+on:
+  push:
+    branches:
+      - integration/calendar-saints-exact-profile-20261016
+    paths:
+      - 'src/calendar/calendar-runtime.js'
+      - 'src/calendar/calendar-saint-explore-handoff.js'
+      - 'src/find/browser-entry.js'
+      - 'tests/calendar-saints-exact-profile-handoff.mjs'
+      - '.github/workflows/calendar-saints-exact-profile.yml'
+  pull_request:
+    paths:
+      - 'src/calendar/calendar-runtime.js'
+      - 'src/calendar/calendar-saint-explore-handoff.js'
+      - 'src/find/browser-entry.js'
+      - 'tests/calendar-saints-exact-profile-handoff.mjs'
+      - '.github/workflows/calendar-saints-exact-profile.yml'
+
+jobs:
+  exact-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/calendar/calendar-runtime.js
+      - run: node --check src/calendar/calendar-saint-explore-handoff.js
+      - run: node --check src/find/browser-entry.js
+      - run: node tests/calendar-saints-exact-profile-handoff.mjs
+      - run: node tests/saints-public-pilot.mjs
