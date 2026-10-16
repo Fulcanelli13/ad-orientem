@@ -103,12 +103,17 @@ export function renderTodayV2Sections(model,vm){
     esc(txt("1962 Mass commemoration","Commémoraison à la messe de 1962"))+'</small><strong>'+
     esc(c.name)+'</strong></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>'
   ).join("");
-  const contemporary=(model.modernHonours||[]).map(c=>
-    '<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><span><small>'+
-    esc(txt("Also honoured · contemporary date","Également honoré · date actuelle"))+'</small><strong>'+
-    esc(c.title)+'</strong><em>'+esc(txt("Traditional Mass unchanged","Messe traditionnelle inchangée"))+
-    '</em></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>'
-  ).join("");
+  const contemporary=(model.modernHonours||[]).map(c=>{
+    const dateScope=c.dateAuthorityStatus==="DATE_ATTESTED_JURISDICTION_NOT_ESTABLISHED"
+      ?txt("Liturgical date · local scope unverified","Date liturgique · portée locale non vérifiée")
+      :c.dateAuthorityStatus==="UNIVERSAL_GENERAL_ROMAN"
+        ?txt("Modern Roman calendar","Calendrier romain actuel")
+        :txt("Particular calendar reference","Référence de calendrier particulier");
+    return '<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><span><small>'+
+      esc(dateScope)+'</small><strong>'+esc(c.title)+'</strong><em>'+
+      esc(txt("The prescribed 1962 Mass remains unchanged","La messe prescrite de 1962 reste inchangée"))+
+      '</em></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>';
+  }).join("");
   const honouredSection=historical||contemporary?
     '<section class="aoTodayV2Honoured" aria-label="'+esc(txt("Also observed today","Également honorés aujourd'hui"))+
     '"><div class="aoTodayV2HonouredHeading"><small>'+
