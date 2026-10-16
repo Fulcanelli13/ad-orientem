@@ -174,3 +174,19 @@ assert.deepEqual(
 );
 assert.ok(guideCrosswalk.guides.every(x=>x.approvedNewPublication===false));
 console.log("Mass P0 Real Source Inventory: PASS — 435↔280, 154 guides, no auto-publication.");
+
+
+// P0 typed source-candidate safety checks: source descriptions are never 1962 norms.
+const sourceCandidates=readJson("../docs/research/MASS-P0-SCRIPTURE-AUTHOR-RELATIONSHIPS-20261016.v1.json");
+assert.equal(sourceCandidates.scriptureCandidates.length,48);
+assert.equal(sourceCandidates.historicalAuthorClaims.length,139);
+assert.ok(sourceCandidates.scriptureCandidates.every(x=>
+  x.publicationAllowed===false && x.certification==="EDITORIAL_HOLD" &&
+  x.originalVersificationAndEdition==="NOT_VERIFIED_WITH_CANONICAL_SCRIPTURE_MODULE"));
+assert.ok(sourceCandidates.historicalAuthorClaims.every(x=>
+  x.publicationAllowed===false && x.normativeRubric===false &&
+  x.exactQuotationCertified===false));
+assert.equal(sourceCandidates.summary.scriptureCandidatesApproved,0);
+assert.equal(sourceCandidates.summary.historicalClaimsApproved,0);
+assert.equal(sourceCandidates.summary.byScriptureCandidateType["BIBLICAL_PARALLEL_NOT_DERIVATION"],8);
+console.log("Mass P0 Typed Source Candidates: PASS — no direct-link or rubric promotion.");
