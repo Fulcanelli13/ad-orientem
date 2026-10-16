@@ -34,7 +34,7 @@ for(const original of data.saints.people){
   for(const lang of ["en","fr"]){
     const paragraphs=[original.why_honoured[lang],...original.biography_facts.map(f=>f[lang])];
     assert(paragraphs.every(Boolean),"Missing substantial bilingual biography text");
-    const count=paragraphs.join(" ").trim().split(/\\s+/).length;
+    const count=paragraphs.join(" ").trim().split(/\s+/).length;
     assert(count>=110&&count<=165,"Underdeveloped/overlong Saints profile: "+original.saint_id+" "+lang+" "+count);
     sampleNarratives.set(original.saint_id+":"+lang,count);
   }
