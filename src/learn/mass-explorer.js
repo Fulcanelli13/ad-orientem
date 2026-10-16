@@ -203,10 +203,12 @@ export function massExplorerCss(){
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map";
+  let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0;
+  const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
   const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
        String(win?.document?.documentElement?.lang||"").startsWith("fr");
-  function paint({focusBlock=false}={}){
+  function paint({focusBlock=false,restoreIndex=false,restoreMoment=false}={}){
     const node=root();if(!node||!catalog)return false;
     const fr=french();
     node.setAttribute("aria-label",pick(fr,"Mass Explorer","Explorer la Messe"));
@@ -216,7 +218,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
         indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
-    node.scrollTop=0;
+    node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
+      restoreMoment?safeScroll(momentScrollTop):0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
     const rail=selected?.closest?.(".aoMXBlockIndex");
     if(rail){
@@ -227,14 +230,27 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     }
     const heading=node.querySelector("main h1");
     heading?.setAttribute("tabindex","-1");
-    (focusBlock&&selected?selected:heading)?.focus?.({preventScroll:true});
+    const returnToIndex=restoreIndex&&indexFocusKey?
+      [...node.querySelectorAll("[data-ao-mx-moment]")].find(button=>button.dataset.aoMxMoment===indexFocusKey):null;
+    const returnToStudy=restoreMoment?
+      node.querySelector('[data-ao-mx-study]'):null;
+    (returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
     return true;
   }
   function setMoment(key,selectedBlockId=null){
     if(!catalog?.byKey.has(key))return false;
+    if(momentKey===null){
+      indexScrollTop=safeScroll(root()?.scrollTop);
+      indexFocusKey=key;
+    }
     momentKey=key;
     blockId=selectedBlockId&&catalog.byBlock.get(selectedBlockId)?.key===key?selectedBlockId:null;
+    momentScrollTop=0;
     return paint({focusBlock:Boolean(selectedBlockId)});
+  }
+  function showIndex(){
+    momentKey=null;blockId=null;
+    return paint({restoreIndex:true});
   }
   function close(toLearn=false){
     const node=root();
@@ -254,7 +270,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     node.addEventListener("click",event=>{
       const t=event.target?.closest?.("button");if(!t)return;
       if(t.matches("[data-ao-mx-close]")){event.preventDefault();close(true);return;}
-      if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey){momentKey=null;blockId=null;paint();}else close(true);return;}
+      if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey)showIndex();else close(true);return;}
       if(t.dataset.aoMxMoment){event.preventDefault();setMoment(t.dataset.aoMxMoment);return;}
       if(t.dataset.aoMxMapBlock){
         event.preventDefault();
@@ -305,13 +321,14 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.dataset.aoMxStudy){
         event.preventDefault();
         const stageId=t.dataset.aoMxStudy;
-        const explorerReturn={momentKey,blockId};
+        const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,
+          momentScrollTop:safeScroll(root()?.scrollTop)};
         close(false);
         void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass",{stageId,explorerReturn})
           ?.catch?.(error=>win?.console?.error?.("Formation lesson could not open",error));
         return;
       }
-      if(t.matches("[data-ao-mx-index]")){event.preventDefault();momentKey=null;blockId=null;paint();return;}
+      if(t.matches("[data-ao-mx-index]")){event.preventDefault();showIndex();return;}
       if(t.matches("[data-ao-mx-prev],[data-ao-mx-next]")){
         event.preventDefault();const i=catalog.sequence.indexOf(momentKey),next=i+(t.matches("[data-ao-mx-next]")?1:-1);
         if(next>=0&&next<catalog.sequence.length)setMoment(catalog.sequence[next]);
@@ -327,15 +344,19 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       try{await loading;}catch(error){win?.console?.error?.("Mass Explorer sources unavailable",error);return false;}
     }
     if(!ensureRoot())return false;
-    indexView=opts.view==="list"?"list":"map";
+    indexView=opts.indexView==="list"||opts.view==="list"?"list":"map";
+    indexScrollTop=safeScroll(opts.indexScrollTop);
+    indexFocusKey=catalog.byKey.has(opts.indexFocusKey)?opts.indexFocusKey:null;
+    momentScrollTop=safeScroll(opts.momentScrollTop);
     const requested=opts.blockId&&catalog.byBlock.get(opts.blockId);
     momentKey=requested?.key??(catalog.byKey.has(opts.momentKey)?opts.momentKey:null);
     blockId=requested?.source.Block_ID??null;
     win?.document?.body?.classList?.add?.("aoMassExplorerOpen");
-    paint();return true;
+    paint({restoreIndex:!momentKey&&indexScrollTop>0,restoreMoment:Boolean(momentKey&&opts.momentScrollTop!==undefined)});
+    return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,indexView,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
+    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }
