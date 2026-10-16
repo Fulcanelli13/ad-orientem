@@ -5,6 +5,7 @@ on:
       - 'data/calendar/p1-*.json'
       - 'tests/calendar-p1-traditional-formulary-research.mjs'
       - 'tests/calendar-p1-internal-missal-link-resolution.mjs'
+      - 'tests/calendar-p1-live-1962-source-discovery.mjs'
       - 'src/calendar/p1-internal-missal-link-resolution.js'
       - '.github/workflows/calendar-p1-traditional-formularies.yml'
   push:
@@ -24,3 +25,17 @@ jobs:
       - run: node tests/calendar-p1-internal-missal-link-resolution.mjs
       - run: node tests/calendar-traditional-formulary-sources.mjs
       - run: node tests/calendar-traditional-adjudication.mjs
+  app-source-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect actual in-app 1962 Oct 9 and future year source IDs
+        run: node tests/calendar-p1-live-1962-source-discovery.mjs
