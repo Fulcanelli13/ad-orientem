@@ -180,5 +180,126 @@
     ],
     "nextWork": "Seek genuinely independent published selections for 24 missing events, especially short narrative texts of Judith, Daniel, Passion, Acts; full harvest all nine existing source families then independent consensus/editorial choice. Avoid adding another source from the same lectionary to vote totals."
   },
-  "latestResearchHarvest": "2026-10-16-v2"
+  "latestResearchHarvest": "2026-10-16-v3",
+  "thirdSourceHarvest20261016": {
+    "schema": "AO_COMPARATIVE_SCRIPTURE_SOURCE_MATRIX_HARVEST_V3",
+    "date": "2026-10-16",
+    "phase": "SOURCE_HARVEST_NO_SELECTION",
+    "preserveExistingBibleVersionsAndReader": true,
+    "canonicalAtlasEventsUnchanged": 151,
+    "canonicalReadingSectionsUnchanged": 37,
+    "comparativeSourceSystemsActive": 10,
+    "independentQualifiedPublisherFamilies": 9,
+    "provisionalMissalEditorialLineages": 1,
+    "archivedAndExcludedLegacyCandidateFamilies": 1,
+    "archivedLegacySourceId": "CHRON152",
+    "qualifiedSourceCoverageBefore": 127,
+    "qualifiedSourceCoverageAfter": 140,
+    "uncoveredAfter": 11,
+    "sourceSelectionRowsBefore": 281,
+    "sourceSelectionRowsAfter": 298,
+    "additions": 17,
+    "additionalPublisherPrimarySources": [
+      {
+        "sourceId": "ABS45",
+        "publisher": "American Bible Society",
+        "title": "Selected Readings from the Deuterocanon/Apocrypha — 45-day plan",
+        "url": "https://www.americanbible.org/engage/bible-resources/articles/selected-readings-from-the-deuterocanon-apocrypha1/",
+        "family": "American Bible Society Deuterocanon",
+        "qualification": "QUALIFIED_PRIMARY",
+        "examples": [
+          "Tobit 1.1-22",
+          "Judith 13.1-20",
+          "Esther 14.1-19",
+          "1 Maccabees 2.1-28"
+        ],
+        "caution": "Full-story/chapter source selections, not necessarily short; also includes non-Catholic-canon items not imported."
+      },
+      {
+        "sourceId": "HOPE_LENT",
+        "publisher": "The Hope Effect (YouVersion host)",
+        "title": "40 Days of Lent",
+        "url": "https://www.bible.com/reading-plans/85-40-days-of-lent",
+        "family": "The Hope Effect Lent",
+        "qualification": "QUALIFIED_PRIMARY",
+        "examples": [
+          "Mark 14:32-72",
+          "Luke 22:39-62",
+          "John 19:1-16"
+        ],
+        "caution": "Gethsemane Mark/Luke sources are long parallel Gospel selections, not Matthew verbatim."
+      }
+    ],
+    "additionalRowsSameEditorialFamily": {
+      "sourceId": "LEC98",
+      "extra": 7,
+      "publisher": "USCCB appointed Mass Scripture selections",
+      "examples": [
+        "Daniel 3:52, 53, 54, 55, 56",
+        "Matthew 14:22-33",
+        "Matthew 16:21-27",
+        "Luke 19:28-40",
+        "John 13:1-15",
+        "Luke 23:35-43"
+      ],
+      "caution": "Same Roman Catholic Lectionary family as existing source; do not increase editorial independence."
+    },
+    "sourceSelectionTypesDistinct": true,
+    "fullStoryNotMislabelledShort": true,
+    "parallelGospelsAreNotLiteralSameVerse": true,
+    "deuterocanonicalVerseNumberingHeld": true,
+    "qualifyingFamiliesAtLeastTwoEvents": 41,
+    "qualifyingFamiliesAtLeastThreeEvents": 12,
+    "remainingEventIndicesZeroBased": [
+      6,
+      35,
+      47,
+      59,
+      60,
+      77,
+      102,
+      131,
+      138,
+      142,
+      144
+    ],
+    "gapsInclude": [
+      "Genesis 11:31",
+      "2Samuel 2:1–4",
+      "Ezekiel 1:1–28",
+      "Daniel 14:1–22",
+      "Daniel 14:23–42",
+      "Luke 2:51–52",
+      "Matthew 17:9–13",
+      "Acts 9:29–30",
+      "Acts 17:1–9",
+      "Acts 20:7–12",
+      "Acts 27:13–44"
+    ],
+    "privateResearchDeliverables": [
+      {
+        "name": "AO_Biblical_Excerpt_Master_Matrix_v3.xlsx",
+        "sha256": "2a10c3fabb460dc4a393d79832c098aa711e52db3ed5ea89d4e04f7d11bd2254",
+        "sheets": 8
+      },
+      {
+        "name": "AO_Biblical_Excerpt_Master_Data_v3.json",
+        "sha256": "81b9372754c2739ae87d65f05771f48f5ff5f5a242a5b9cdf12fd008e5b69342"
+      },
+      {
+        "name": "AO_Biblical_Excerpt_Master_Coverage_v3.json",
+        "sha256": "7e4d60c48aca302485c2e5bbd5f3ad2f49e13026c82c78a4bb924b67490da560"
+      },
+      {
+        "name": "AO_Biblical_Excerpt_Master_New_Evidence_v3.csv",
+        "sha256": "0fc856e30c83dadffb3f5d2c6ef744f09e2ab3fd764a4ef1bb469eacc5ec44fd"
+      }
+    ],
+    "rights": "Only publisher verse citations and metadata harvested, not publisher Bible verse texts",
+    "editorialSelectionMade": false,
+    "newScriptureExcerptApproved": 0,
+    "SchusterOCRNotUsed": true,
+    "noReaderAppChanges": true,
+    "nextWork": "Complete published reference harvesting for 11 gaps, validating original selection scopes and prior source indexes; then finish independent-family comparisons before editorial short/extended/full passage decisions. Avoid adding whole-Bible plans as if they were purpose-designed abridgements."
+  }
 }
