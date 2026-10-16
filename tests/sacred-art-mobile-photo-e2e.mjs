@@ -21,6 +21,7 @@ const categories=data.categories,photos=categories.flatMap(c=>c.works.flatMap(w=
   preview:p.preview,original:p.original,sourcePage:p.page,sourceStatus:p.status||'',sourceRights:p.rights||''
 }))));
 const distinct=[...new Map(photos.map(p=>[p.preview,p])).values()];
+const fullRemoteAudit=process.env.AO_ART_REMOTE_AUDIT==='full';
 const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
 const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
 const pageErrors=[];
@@ -32,9 +33,12 @@ page.on('response',res=>{
 });
 page.on('requestfailed',request=>{
   const url=request.url();
-  if(/^https?:/.test(url))remoteRequestFailures.push({url,reason:String(request.failure()||'unknown')});
+  if(/^https?:/.test(url)){
+    const failure=request.failure();
+    remoteRequestFailures.push({url,reason:typeof failure==='string'?failure:(failure?.errorText||JSON.stringify(failure)||'unknown')});
+  }
 });
-const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,
+const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,mode:fullRemoteAudit?'full-remote':'layout-only',
   testedAt:new Date().toISOString(),viewport:{width:390,height:844},
   categories:categories.length,categoryWithLinkedPreview:categories.filter(c=>c.works.some(w=>w.photos.length)).length,
   photoEntries:photos.length,distinctPreviewURLs:distinct.length,
@@ -94,6 +98,7 @@ try {
     }
   }
 
+  if(fullRemoteAudit){
   // Actual browser decode for supported-size previews and bounded gallery fallback.
   // A 500px Commons retry is always distinguished from a successful primary load.
   const batchSize=3;
@@ -139,6 +144,9 @@ try {
     successful:distinct.length-outcome.broken.length,
     failures:outcome.broken.length,undersizeMobileCandidates:outcome.unavailable.length,
     note:'Failures may include external 403/429/network outages; retry before treating as an invalid artwork.'};
+  }else{
+    outcome.browserLoadChecks={skipped:true,reason:'Full 224-URL external test runs only via GitHub workflow_dispatch to avoid repeated remote-host throttling.'};
+  }
   const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow||!x.boundedPreviewFallback));
   outcome.layoutFailures=badLayout;
   if(pageErrors.length)outcome.notes.push('Gallery JavaScript raised errors; review pageErrors.');
