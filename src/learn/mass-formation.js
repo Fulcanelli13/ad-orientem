@@ -122,7 +122,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function exportEvidenceDecisions(){
     if(!state.evidenceCatalog||!massMomentEvidencePreviewEnabled(win))return false;
     const payload=massMomentEvidenceDecisionExport(state.evidenceCatalog,state.evidenceChoices);
-    const blob=new win.Blob([JSON.stringify(payload,null,2)+"\\n"],{type:"application/json"});
+    const blob=new win.Blob([JSON.stringify(payload,null,2)+"\n"],{type:"application/json"});
     const href=win.URL.createObjectURL(blob);
     const anchor=win.document.createElement("a");
     anchor.href=href;anchor.download="Ad_Orientem_Mass_Source_Triage_2026-10-16.json";
