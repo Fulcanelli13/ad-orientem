@@ -210,3 +210,69 @@ export function calendarTransferRubricalClaimsForDay(resolution,ledger){
     witnessUrl,changesMassResolver:false,
   })]);
 }
+
+
+// Legacy 1962 calendar source-adjudications from the existing correction
+// ledger. This is a provenance projection, NEVER a precedence/oration engine.
+const EXACT_2027_OBSERVED=new Set(["2027-08-15","2027-11-30","2027-12-08"]);
+const EXACT_COMM_CLAUSES=new Set(["RG 25(b)","RG 108(a)","RG 108(e)","RG 111(a)","RG 111(c)"]);
+const EXACT_COMM_CATEGORIES=new Set(["PRIVILEGED_SUNDAY","PRIVILEGED_ADVENT_FERIA"]);
+export function calendarObservedCommemorationClaimsForDay(resolution,corrections){
+  if(corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
+     resolution?.status==="failed"||resolution?.proper?.status!=="ready"||
+     !EXACT_2027_OBSERVED.has(resolution?.date)||
+     !resolution?.day?.main?.id)return Object.freeze([]);
+  const mainId=ownerId(resolution.day.main.id),source=pathId(resolution.proper.data?.sourcePath);
+  if(!mainId||mainId!==source)return Object.freeze([]);
+  const observed=canonical1962Commemorations(resolution);
+  if(observed.length!==1)return Object.freeze([]);
+  const entries=(Array.isArray(corrections.outstandingSecondaryCases)?corrections.outstandingSecondaryCases:[])
+    .filter(x=>x?.dates?.length===1&&x.dates[0]===resolution.date);
+  if(entries.length!==1)return Object.freeze([]);
+  const row=entries[0],c=row.rubricalClaim;
+  if(row.status!=="FIXED_IN_PINNED_DAY_RESOLVER"||
+     !c||!/^[A-Z0-9_]+$/.test(c.id||"")||
+     c.authorityKind!=="NORMATIVE_1960_RUBRICS"||
+     c.explanationOnly!==true||
+     c.formSpecificOrationCertification!=="DELEGATED_TO_CANONICAL_MASS_OWNER"||
+     !EXACT_COMM_CATEGORIES.has(c.kind)||
+     ![1,2].includes(c.principalClass)||
+     c.commemorationClass!==(c.kind==="PRIVILEGED_SUNDAY"?2:3)||
+     pathId(c.sourcePath)!==mainId||
+     pathId(c.commemorationPath)!==observed[0].identity||
+     !Array.isArray(c.clauses)||!c.clauses.length||
+     !c.clauses.every(x=>EXACT_COMM_CLAUSES.has(x))||
+     new Set(c.clauses).size!==c.clauses.length||
+     !c.en?.trim()||!c.fr?.trim())return Object.freeze([]);
+  const mainRank=Number(String(resolution.day.main.id).match(/:([1-4]):[a-z]{1,3}$/i)?.[1]);
+  const commRank=Number(String(observed[0].sourceId).match(/:([1-4]):[a-z]{1,3}$/i)?.[1]);
+  if(mainRank!==c.principalClass||commRank!==c.commemorationClass)return Object.freeze([]);
+  const isSunday=new Date(resolution.date+"T12:00:00Z").getUTCDay()===0;
+  if(c.kind==="PRIVILEGED_SUNDAY"&&(!isSunday||
+    !/^tempora:pent[0-9]+-0$/i.test(observed[0].identity)||
+    !c.clauses.includes("RG 108(a)")||!c.clauses.includes("RG 111(a)")))return Object.freeze([]);
+  if(c.kind==="PRIVILEGED_ADVENT_FERIA"&&(isSunday||
+    !/^tempora:adv[1-4]-[1-6]$/i.test(observed[0].identity)||
+    !c.clauses.includes("RG 25(b)")||!c.clauses.includes("RG 108(e)")||
+    !c.clauses.includes(c.principalClass===1?"RG 111(a)":"RG 111(c)")))return Object.freeze([]);
+  let witness=null;
+  try{
+    const u=new URL(String(row.source||""));
+    if(u.protocol==="https:"&&u.hostname==="gcatholic.org"&&
+       u.pathname==="/calendar/2027/Extraordinary-en"&&!u.username&&!u.password)witness=u.href;
+  }catch{/* Unverifiable external witness. */}
+  if(!witness)return Object.freeze([]);
+  return Object.freeze([Object.freeze({
+    claimId:c.id,claimKind:"RESOLVED_1962_PRIVILEGED_COMMEMORATION",
+    date:resolution.date,principalId:mainId,commemorationId:observed[0].identity,
+    properSourcePath:resolution.proper.data.sourcePath,
+    classes:Object.freeze({principal:mainRank,commemoration:commRank}),
+    clauses:Object.freeze([...c.clauses]),
+    explanation:Object.freeze({en:c.en.trim(),fr:c.fr.trim()}),
+    authorityKind:c.authorityKind,
+    normativeUrl:GENERAL_RUBRICS_NORMATIVE_URL,
+    referenceUrl:GENERAL_RUBRICS_ENGLISH_REFERENCE_URL,
+    witnessKind:"DATED_2027_GENERAL_ROMAN_CALENDAR",witnessUrl:witness,
+    automaticMassChange:false,formSpecificOrationDecision:"EXISTING_MASS_OWNER_ONLY"
+  })]);
+}
