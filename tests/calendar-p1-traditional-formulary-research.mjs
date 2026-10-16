@@ -47,6 +47,13 @@ assert.deepEqual(liveWitness.keyFindings.yearsChecked,[2026,2027]);
 assert.ok(liveWitness.observations.slice(0,2).every(x=>x.collects===2&&x.secrets===2&&x.postcommunions===2));
 assert.equal(liveWitness.observations[0].commemorations[0].id,"sancti:10-09t:4:r");
 assert.equal(liveWitness.keyFindings.runtimeReadOnlyExactParagraphNavigationImplemented,false);
+assert.deepEqual(internalMissal.exampleInternalAnchors.map(x=>x.verifiedReaderParagraphId),
+ ["COLLECT_SET.1","SECRET_SET.1","POSTCOMMUNION_SET.1","COLLECT_SET.2","SECRET_SET.2","POSTCOMMUNION_SET.2"]);
+assert.equal(internalMissal.actualReaderParagraphTargetsVerified,6);
+assert.equal(internalMissal.contractValidation.currentDirectPrayerDeepLinksVerified,0);
+assert.equal(liveWitness.readOnlyReaderParagraphProof.verifiedTargets,6);
+assert.equal(liveWitness.readOnlyReaderParagraphProof.status,"SOURCE_READY_ROUTER_NOT_IMPLEMENTED");
+assert.equal(internalMissal.missalReferenceVsCelebrantMass.activeCelebrationPrayer.allowedThroughThisP1Bridge,false);
 assert.ok(forms.forms.every(x=>x.internalMissalReference.route===null&&x.internalMissalReference.sourcePath===null));
 assert.ok(forms.forms.every(x=>x.internalMissalReference.canonicalResearchFormularyId===x.id&&x.internalMissalReference.mustNotRedirectToExternalSource===true));
 assert.equal(forms.userFacingLinkPolicy,"IN_APP_MISSAL_ONLY_NEVER_PUBLIC_PDF_OR_EXTERNAL_MISSAL_LINK");
