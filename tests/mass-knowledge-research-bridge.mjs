@@ -145,7 +145,7 @@ const guideCrosswalk=readJson("../docs/research/MASS-P0-GUIDE-CONTENT-CROSSWALK-
 const canonicalSung=readJson("../data/presentation/reader-text-sung.v1.json");
 const canonicalGuides=readJson("../data/presentation/guide-registry.v1.json");
 const realCueIds=new Set(canonicalSung.blocks.flatMap(b=>(b.units||[]).map(u=>u.cue_id)));
-assert.equal(p0Baseline.status,"DRAFT_RESEARCH_ONLY_NOT_SOURCE_TEXT_CERTIFIED");
+assert.equal(p0Baseline.status,"TEXT_IDENTITY_STRUCTURALLY_COMPARED_WITH_EDITORIAL_HOLDS");
 assert.equal(p0Baseline.units.length,435);
 assert.equal(p0Baseline.canonicalReverse.length,realCueIds.size);
 assert.equal(p0Baseline.canonicalReverse.length,280);
@@ -209,10 +209,37 @@ assert.equal(sourceLatin.summary.sourceTextApprovedForPublication,0);
 assert.ok(sourceLatin.units.every(x=>x.publicationApproved===false));
 assert.ok(sourceLatin.units.every(x=>unitIds.has(x.unitId)&&realCueIds.has(x.canonicalCueId)));
 assert.equal(new Set(sourceLatin.units.map(x=>x.unitId)).size,288);
-assert.equal(discrepancyRegister.summary.totalRegisterEntries,49);
+assert.equal(discrepancyRegister.summary.totalRegisterEntries,50);
 assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0023.U002"));
 assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0084.U001"));
-assert.equal(baseline.sourceCoverage.originalWorkbookLatinComparedNFC,288);
-assert.equal(baseline.sourceCoverage.originalWorkbookLatinNotCompared,147);
+assert.equal(baseline.sourceCoverage.originalWorkbookLatinComparedNFC,435);
+assert.equal(baseline.sourceCoverage.originalWorkbookLatinNotCompared,0);
 assert.equal(baseline.sourceCoverage.sourceUnitsTextVerifiedAgainstOriginalWorkbook,0);
 console.log("Mass P0 Latin Witness Sample: PASS — 288 literal comparisons, holds preserved.");
+
+
+// Second non-publishing corpus comparison completes the research-text census.
+const fingerprintLatin=readJson("../docs/research/MASS-P0-REMAINING-LATIN-FINGERPRINT-COMPARISON-20261016.v1.json");
+assert.equal(fingerprintLatin.units.length,147);
+assert.equal(fingerprintLatin.summary.results.NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH,41);
+assert.equal(fingerprintLatin.summary.results.NFC_DUAL_FINGERPRINT_SUBSPAN_MATCH,104);
+assert.equal(fingerprintLatin.summary.results.LATIN_CONTENT_DIFFERENCE_OR_UNRESOLVED,1);
+assert.equal(fingerprintLatin.summary.results.VARIABLE_CANONICAL_SLOT,1);
+assert.ok(fingerprintLatin.units.every(x=>x.sourceWitnessStored===false && x.publicationApproved===false));
+const directIDs=new Set(sourceLatin.units.map(u=>u.unitId));
+const remainingIDs=new Set(fingerprintLatin.units.map(u=>u.unitId));
+assert.ok([...remainingIDs].every(x=>!directIDs.has(x)));
+assert.equal(new Set([...directIDs,...remainingIDs]).size,435);
+assert.equal(p0Baseline.summary.workbookResearchUnitsComparedToFrozenCanonical,435);
+assert.equal(p0Baseline.summary.literalOrFingerprintMatchingStrings,427);
+assert.equal(p0Baseline.summary.fullCueMatches,153);
+assert.equal(p0Baseline.summary.subspanMatches,274);
+assert.equal(p0Baseline.summary.differingLatinWitnesses,3);
+assert.equal(p0Baseline.summary.variableProperOrConditionalSourceSlots,5);
+assert.equal(p0Baseline.summary.exactPrinted1962Certificates,0);
+assert.equal(p0Baseline.summary.wordTriggerCertificates,0);
+assert.ok(p0Baseline.units.every(u=>u.latinSpanVerified===false &&
+  u.exactPrinted1962Certification===false && u.releaseDecision==="RESEARCH_ONLY_NO_AUTO_PUBLICATION" &&
+  typeof u.researchWitnessComparison==="string"));
+assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0237.U002"));
+console.log("Mass P0 Full Research Witness Census: PASS — all 435 checked; 0 new liturgical certifications.");
