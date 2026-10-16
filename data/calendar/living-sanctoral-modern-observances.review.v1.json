@@ -8,9 +8,16 @@
     "neverInventLiturgicalDate": true,
     "grant1962OptionalPermission": false,
     "sourceScopesDistinct": true,
-    "verifiedUniversalOnlyOnVaticanDecree": true,
+    "verifiedUniversalOnlyOnVaticanDecree": false,
     "usccbExamplesRequireLocalScopeLabel": true,
-    "olderUsccbDatesNotBackProjected": true
+    "olderUsccbDatesNotBackProjected": true,
+    "acceptedGeneralDateSourceKinds": [
+      "HOLY_SEE_DECREE",
+      "POPE_PUBLIC_CALENDAR_ANNOUNCEMENT"
+    ],
+    "papalAnnouncementDistinctFromDecree": true,
+    "cumSanctissima1962MassEligibilityRequiresSeparateAdjudication": true,
+    "modernGeneralRomanMemorialNeverReplaces1962ObservedDayByDefault": true
   },
   "observances": [
     {
