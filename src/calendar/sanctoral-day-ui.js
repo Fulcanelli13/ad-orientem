@@ -1,7 +1,7 @@
 // Accessible secondary Calendar day content. No Mass/Proper actions.
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const loc=(fr,en,french)=>fr?french:en;
-const sourceLink=url=>/^https:\/\/(?:press\.vatican\.va|www\.vatican\.va|bible\.usccb\.org)\/[\w\-./%?=&]+$/i.test(url||"");
+const sourceLink=url=>/^https:\/\/(?:press\.vatican\.va|www\.vatican\.va|www\.causesanti\.va|bible\.usccb\.org)\/[\w\-./%?=&]+$/i.test(url||"");
 export const SANCTORAL_DAY_CSS=[
 ".aoCalSecondarySaints{margin:12px auto 0;max-width:620px;padding:0 12px 12px;border-top:1px solid rgba(215,194,153,.13)}",
 ".aoCalSecondarySaints h3{font:600 14px/1.35 var(--ao-font-serif,Georgia,serif);margin:12px 0 4px;color:#ddd3c4}",
@@ -23,10 +23,14 @@ export function renderSecondarySaintSection(cards,{language="en"}={}) {
     if(!c?.secondaryOnly||c.massSelectionAuthority!=="NONE"||c.changes1962Principal||c.selectedFormularyId!==null)continue;
     if(!c.title||!c.whyHonoured)continue;
     const source=c.sourceUrls?.find(sourceLink)||null;
-    const kind=fr?(c.kind==="COLLECTIVE_MARTYR_PROFILE"?"Groupe de martyrs":"Saint du calendrier actuel"):
-                  (c.kind==="COLLECTIVE_MARTYR_PROFILE"?"Martyr group":"Saint in the current calendar");
+    const kind=fr?(c.kind==="COLLECTIVE_MARTYR_PROFILE"?"Groupe de martyrs":"Saint honoré aujourd’hui"):
+                  (c.kind==="COLLECTIVE_MARTYR_PROFILE"?"Martyr group":"Saint honoured today");
     const scope=c.sourceScope==="GENERAL_ROMAN_VATICAN_DECREE"
-      ?loc(fr,"General Roman Calendar","Calendrier romain général")
+      ?loc(fr,"General Roman Calendar · decree","Calendrier romain général · décret")
+      :c.sourceScope==="GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"
+        ?loc(fr,"General Roman Calendar · papal announcement","Calendrier romain général · annonce pontificale")
+      :c.sourceScope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE"
+        ?loc(fr,"Holy See feast-date witness · scope not established","Date liturgique attestée par le Saint-Siège · portée non établie")
       :loc(fr,"U.S. calendar reference","Référence du calendrier américain");
     const siteName=c.site?.placeName||"";
     let html='<article class="aoCalSecondarySaintCard"><small>'+esc(kind)+" · "+esc(scope)+"</small><h4>"+esc(c.title)+"</h4><p>"+esc(c.whyHonoured)+"</p>";
@@ -40,7 +44,7 @@ export function renderSecondarySaintSection(cards,{language="en"}={}) {
   return '<section class="aoCalSecondarySaints" aria-label="'+esc(loc(fr,"Also honoured","Également honorés"))+'"><h3>'+
     esc(loc(fr,"Also honoured","Également honorés"))+"</h3><p>"+
     esc(loc(fr,
-      "In the current Roman calendar. The principal feast and Mass shown above follow the 1962 Missal.",
-      "Dans le calendrier romain actuel. La fête principale et la messe ci-dessus suivent le missel de 1962."))+
+      "Dates evidenced by Church sources, not a replacement for the 1962 Calendar. The feast and Mass above follow the traditional Missal.",
+      "Dates attestées par des sources ecclésiales, sans remplacer le calendrier de 1962. La fête et la messe ci-dessus suivent le missel traditionnel."))+
     "</p>"+parts.join("")+"</section>";
 }
