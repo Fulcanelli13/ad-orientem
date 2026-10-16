@@ -1,5 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
-import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -9,6 +9,59 @@ import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
+
+const adjudicated2027=JSON.parse(readFileSync("data/calendar/1962-ordo-corrections.v1.json","utf8"));
+const observedFixture=(date,principalPath,principalRank,commPath,commRank=3)=>({
+  date,status:"ready",
+  day:{main:{id:principalPath.replace("/",":").toLowerCase()+":"+principalRank+":w"},
+    commemorations:commPath?[{id:commPath.replace("/",":").toLowerCase()+":"+commRank+":v"}]:[]},
+  proper:{status:"ready",data:{sourcePath:principalPath}}
+});
+for(const [date,principal,classNo,comm,commClass,clauses] of [
+ ["2027-08-15","Sancti/08-15",1,"Tempora/Pent13-0",2,["RG 108(a)","RG 111(a)"]],
+ ["2027-11-30","Sancti/11-30",2,"Tempora/Adv1-2",3,["RG 25(b)","RG 108(e)","RG 111(c)"]],
+ ["2027-12-08","Sancti/12-08",1,"Tempora/Adv2-3",3,["RG 25(b)","RG 108(e)","RG 111(a)"]],
+]){
+ const verified=observedFixture(date,principal,classNo,comm,commClass);
+ const claims=calendarObservedCommemorationClaimsForDay(verified,adjudicated2027);
+ assert.equal(claims.length,1,"Source-matched 2027 commemoration lost "+date);
+ assert.deepEqual(claims[0].clauses,clauses);
+ assert.equal(claims[0].classes.principal,classNo);
+ assert.equal(claims[0].classes.commemoration,commClass);
+ assert.equal(claims[0].commemorationId,comm.replace("/",":").toLowerCase());
+ assert.equal(claims[0].properSourcePath,principal);
+ assert.equal(claims[0].formSpecificOrationDecision,"EXISTING_MASS_OWNER_ONLY");
+ assert.equal(claims[0].automaticMassChange,false);
+ assert.equal(claims[0].normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+ assert.equal(claims[0].witnessUrl,"https://gcatholic.org/calendar/2027/Extraordinary-en");
+ assert.ok(claims[0].explanation.en&&claims[0].explanation.fr);
+ assert.ok(Object.isFrozen(claims)&&Object.isFrozen(claims[0]));
+ for(const broken of [
+  {...verified,date:"2026"+date.slice(4)},
+  {...verified,status:"failed"},
+  {...verified,proper:{status:"failed",data:{sourcePath:principal}}},
+  {...verified,proper:{status:"ready",data:{sourcePath:"Sancti/01-01"}}},
+  {...verified,day:{...verified.day,main:{id:"sancti:01-01:1:w"}}},
+  {...verified,day:{...verified.day,main:{id:verified.day.main.id.replace(/:[1-4]:/,":4:")}}},
+  {...verified,day:{...verified.day,commemorations:[]}},
+  {...verified,day:{...verified.day,commemorations:[{id:"tempora:Other:3:v"}]}},
+  {...verified,day:{...verified.day,commemorations:[
+    ...verified.day.commemorations,{id:"tempora:Other:3:v"}]}},
+ ])assert.deepEqual(calendarObservedCommemorationClaimsForDay(broken,adjudicated2027),[],
+    "A stale/non-observed 2027 commemoration must not be presented "+date);
+ const forged=structuredClone(adjudicated2027);
+ forged.outstandingSecondaryCases.find(x=>x.dates?.[0]===date).source="javascript:bad()";
+ assert.deepEqual(calendarObservedCommemorationClaimsForDay(verified,forged),[],
+    "Unverified witness URL must never be an original clause link");
+}
+for(const [date,principal,classNo,comm,rank] of [
+ ["2027-06-30","Sancti/06-30",3,"Sancti/06-29",1], // St Peter/Paul §110 is a separate inseparable oration owner.
+ ["2026-11-01","Sancti/11-01",1,"Tempora/Pent23-0",2], // Covered by the existing 2026 source registry.
+ ["2027-08-22","Tempora/Pent14-0",2,null,3], // No identity-verified extra Sunday claim.
+])assert.deepEqual(calendarObservedCommemorationClaimsForDay(
+ observedFixture(date,principal,classNo,comm,rank),adjudicated2027),[],
+ "Uncertified 2027 or existing-2026 case cannot be duplicated");
+
 
 const transferOracle=JSON.parse(readFileSync("data/calendar/1962-transfer-oracle.v1.json","utf8"));
 const transferredDay=(date,sourcePath,colour="w")=>({
@@ -177,6 +230,10 @@ for(const marker of [
   "Why this observance was transferred",
   "Pourquoi cette célébration a été reportée",
   "loadCalendarTransferClaims();",
+  "calendarObservedCommemorationClaimsForDay(r,colourClaimLedger)",
+  "data-cal-observed-commemoration",
+  "Why this observance is commemorated",
+  "Pourquoi cette célébration est commémorée",
 ])assert.ok(runtime.includes(marker),
   "Calendar lost a required rubrical source-bound UI contract: "+marker);
 
