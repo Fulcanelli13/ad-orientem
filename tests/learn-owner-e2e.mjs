@@ -168,7 +168,7 @@ try{
   assert.equal(learned.routeOwner,"modular-learn-v1");
   assert.deepEqual(learned.families,["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","apologetics","church-crisis","latin","reference"],"Formation landing no longer exposes exactly nine coherent Formation subjects");
   assert.deepEqual(learned.modules,[],"Formation landing regressed to exposing the full module warehouse");
-  assert.deepEqual(learned.status?.modules,["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.sexual_ethics","learn.latin","learn.glossary"]);
+  assert.deepEqual(learned.status?.modules,["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.scapular","learn.mass_explorer","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.sexual_ethics","learn.latin","learn.glossary"]);
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module=\'today.saint\']").count(),0,"Saint of the Day remained visible in Learn");
   assert.equal(learned.donorVisible,false,"historical V37 Learn donor remained visible underneath modular Learn");
   assert.equal(learned.donorNavCount,0,"historical V37 navigation leaked into modular Learn");
@@ -555,11 +555,12 @@ try{
   // The legacy phone suite already covered Spiritual Life, Glossary and all
   // eight traditional guides. These five cold entry cards were only listed,
   // not actually tapped. Exercise their public launchers and the Back/Close
-  // path before claiming 15/15 Formation module reachability.
+  // path before claiming all 16 current Formation module entry points.
   const remainingFormation=[
     {id:"learn.catechism.daily",family:"foundations",root:"#ao-daily-cate-root",exit:"daily"},
     {id:"learn.catechism",family:"foundations",root:"#ao-cate-root",exit:"catechism"},
     {id:"learn.sexual_ethics",family:"questions",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
+    {id:"learn.mass_explorer",family:"liturgy-tradition",root:"#ao-mass-explorer-root",exit:"[data-ao-mx-close]"},
     {id:"learn.mass",family:"liturgy-tradition",root:"#ao-mass-formation-root",exit:"[data-ao-mf-close]"},
     {id:"learn.latin",family:"latin",root:"#ao-latin-course-root",exit:"[data-l2-back]"},
   ];
@@ -580,7 +581,7 @@ try{
       buttons:node.querySelectorAll("button").length,
     }));
     assert.ok(child.length>=40,"Blank Formation child: "+spec.id);
-    if(["learn.sexual_ethics","learn.mass","learn.latin"].includes(spec.id)){
+    if(["learn.sexual_ethics","learn.mass","learn.mass_explorer","learn.latin"].includes(spec.id)){
       await assertFormationChrome(spec.root,spec.id);
     }
     assert.ok(child.overflow<=1,"Formation child has horizontal overflow: "+spec.id);
@@ -612,11 +613,11 @@ try{
     "learn.rites.first_communion","learn.rites.confirmation",
     "learn.rites.holy_orders","learn.rites.matrimony",
   ];
-  assert.equal(entered.length,5);
+  assert.equal(entered.length,6);
   assert.deepEqual([...new Set([...previouslyCovered,...entered])].sort(),
     [...learned.status.modules].sort(),
-    "15 Formation launchers must each have an actual phone entry/return");
-  console.log("PASS all 15 Formation entry points: ten existing phone journeys + five cold visible-card launches and exact family returns");
+    "16 Formation launchers must each have an actual phone entry/return");
+  console.log("PASS all 16 Formation entry points: ten existing phone journeys + six cold visible-card launches and exact family returns");
 
   assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.seasonal_rites"]').count(),0,
     "final v38.4 donor dedupe requires no duplicate Seasonal Catholic Practice launcher");
