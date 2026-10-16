@@ -378,3 +378,108 @@ export function communionEditorialPreviewHtml(validation,{french=false}={}){
     (french?"Antienne variable réservée : ":"Variable antiphon held: ")+
     clean(validation.withheld[0].block_id)+'</p></main>';
 }
+
+/**
+ * Final fixed Sung texts B086–B095, omitting the variable Postcommunion
+ * Proper B088. The label NORMATIVE_1962 on a source block does NOT imply
+ * the blessing/Last Gospel or one dismissal formula appears in every Mass.
+ */
+export function validateConclusionReadingPilot(pilot,sung,formation,guide){
+ const fail=reason=>Object.freeze({ok:false,reason,readings:Object.freeze([]),withheld:Object.freeze([])});
+ if(pilot?.schema!=="ao-formation-conclusion-prayer-reading-pilot-v1"||
+    pilot.status!=="EDITORIAL_DRAFT_NOT_RELEASED"||
+    pilot.scope!=="FORMATION_ONLY"||pilot.profile!=="ORDINARY_SUNG"||
+    pilot.study_level!=="DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT"||
+    !Array.isArray(pilot.entries)||pilot.entries.length!==9||
+    !Array.isArray(pilot.withheld_variable_propers)||pilot.withheld_variable_propers.length!==1)
+   return fail("INVALID_CONCLUSION_DRAFT");
+ if(!Array.isArray(sung?.blocks)||formation?.schema!=="ao-mass-formation-campion-v1"||
+    !guide?.entries)return fail("MISSING_ORIGINAL_OWNERS");
+ const lookup=new Map(sung.blocks.map(b=>[b.Block_ID,b]));
+ const held=pilot.withheld_variable_propers[0],post=lookup.get("AO.SM.B088");
+ if(held?.block_id!=="AO.SM.B088"||held?.proper_slot!=="POSTCOMMUNION_SET"||
+    typeof held.reason!=="string"||held.reason.length<15||
+    post?.Proper_Slot!=="POSTCOMMUNION_SET"||
+    post?.units?.some(u=>u.english||u.latin))return fail("VARIABLE_POSTCOMMUNION_NOT_HELD");
+ const expectedBlocks=[86,87,89,90,91,92,93,94,95];
+ const expectedCondition=number=>number===89||number===90?"DISMISSAL_FORM_DEPENDENT":
+    number===92?"BLESSING_MAY_BE_OMITTED":
+    number>=93?"LAST_GOSPEL_MAY_BE_OMITTED":"STANDARD_FIXED";
+ const seen=new Set(),readings=[];
+ for(let i=0;i<expectedBlocks.length;i++){
+  const number=expectedBlocks[i],entry=pilot.entries[i];
+  const blockId="AO.SM.B"+String(number).padStart(3,"0");
+  const momentNumber=number<=87?27:number<=90?28:number<=92?29:30;
+  const momentId="AO.CARD."+String(momentNumber).padStart(3,"0");
+  const macro=number<=87?"AO.SM.M27":number<=90?"AO.SM.M28":number<=92?"AO.SM.M29":"AO.SM.M30";
+  const source=lookup.get(blockId);
+  if(!entry||entry.id!=="AO.FORM.PRAYER.CONCLUSION."+String(i+1).padStart(2,"0")||
+     entry.block_id!==blockId||entry.moment_id!==momentId||entry.stage_id!=="MF08"||
+     entry.conditionality!==expectedCondition(number)||seen.has(entry.id)||
+     !guide.entries[momentId]||!formation.stages.find(x=>x.id==="MF08"))
+    return fail("CONCLUSION_ID_OR_CONDITIONALITY_MISMATCH");
+  if(!source||source.Macro_ID!==macro||source.Proper_Slot||
+     source.Branch_Status!=="NORMATIVE_1962"||!Array.isArray(source.units)||
+     !source.units.length)return fail("MISSING_PUBLISHED_CONCLUSION_TEXT");
+  const spoken=source.units.filter(u=>u.clock!=="PRIEST_ACTION").map(u=>String(u.english||"")).join("\n");
+  if(typeof entry.text_anchor_en!=="string"||!spoken.includes(entry.text_anchor_en)||
+     !Array.isArray(entry.scripture_within_text)||entry.scripture_within_text.length)
+    return fail("UNVERIFIED_CONCLUSION_WORDING_OR_SCRIPTURE");
+  if((number===86||number===89||number===93)&&
+     source.units.map(u=>u.clock).join("/")!=="PUBLIC_TEXT/USER_RESPONSE")
+    return fail("PUBLIC_GREETING_ROLE_LOST");
+  if(number===87&&(source.units.length!==1||source.units[0].clock!=="PUBLIC_TEXT"))
+    return fail("OREMUS_NOT_DISTINCT");
+  if(number===90&&source.units.map(u=>u.clock).join("/")!=="PUBLIC_TEXT/USER_RESPONSE")
+    return fail("DISMISSAL_RESPONSE_LOST");
+  if(number===91&&source.units.map(u=>u.clock).join("/")!=="PRIEST_PRIVATE/PRIEST_ACTION")
+    return fail("QUIET_PLACEAT_LOST");
+  if(number===92&&source.units.map(u=>u.clock).join("/")!=="PRIEST_ACTION/PUBLIC_TEXT/PUBLIC_TEXT/USER_RESPONSE")
+    return fail("BLESSING_ACTION_OR_AMEN_LOST");
+  if(number===94&&(!source.units[0].english?.includes("Saint John")||
+       source.units.map(u=>u.clock).join("/")!=="PUBLIC_TEXT/USER_RESPONSE"))
+    return fail("LAST_GOSPEL_ANNOUNCEMENT_LOST");
+  if(number===95&&(
+     source.units.map(u=>u.clock).join("/")!=="PUBLIC_TEXT/PUBLIC_TEXT/PUBLIC_TEXT/PUBLIC_TEXT/USER_RESPONSE"||
+     source.units[2].english!=="AND THE WORD WAS MADE FLESH."||
+     !source.units[4].english?.includes("Thanks be to God.")))
+    return fail("LAST_GOSPEL_INCARNATION_OR_RESPONSE_LOST");
+  for(const field of ["heading","reading","observe"]){
+   for(const lang of ["en","fr"]){
+    const prose=entry[field]?.[lang];
+    if(typeof prose!=="string"||prose.length<12||prose.length>1800||prose.trim()!==prose)
+      return fail("MISSING_BILINGUAL_EDITORIAL_READING");
+   }
+  }
+  seen.add(entry.id);
+  readings.push(Object.freeze({...entry,scripture_within_text:Object.freeze([])}));
+ }
+ return Object.freeze({ok:true,reason:"EDITORIAL_PREVIEW_ONLY",readings:Object.freeze(readings),
+   withheld:Object.freeze([Object.freeze({...held})])});
+}
+
+export function conclusionEditorialPreviewHtml(validation,{french=false}={}){
+ if(!validation?.ok)return "";
+ const conditionLabel=code=>({
+   DISMISSAL_FORM_DEPENDENT:french?"FORMULE DE RENVOI VARIABLE":"DISMISSAL FORM VARIES",
+   BLESSING_MAY_BE_OMITTED:french?"BÉNÉDICTION PARFOIS OMISE":"BLESSING MAY BE OMITTED",
+   LAST_GOSPEL_MAY_BE_OMITTED:french?"DERNIER ÉVANGILE PARFOIS OMIS":"LAST GOSPEL MAY BE OMITTED"
+ })[code]||"";
+ return '<main class="aoFRPilot" data-ao-formation-editorial-only>'+
+  '<header><small>'+(french?"FORMATION · ÉBAUCHE ÉDITORIALE":"FORMATION · EDITORIAL DRAFT")+'</small>'+
+  '<h1>'+(french?"De la Postcommunion au dernier Évangile":"From Postcommunion to the Last Gospel")+'</h1>'+
+  '<p>'+(french?
+   "Neuf lectures de textes fixes. Le renvoi, la bénédiction et le dernier Évangile dépendent de la forme célébrée. La Postcommunion propre demeure réservée.":
+   "Nine fixed-text readings. The dismissal, blessing and Last Gospel depend on the form of Mass. The variable Postcommunion remains held.")+'</p></header>'+
+  validation.readings.map(rec=>'<article class="aoFRPilotArticle" data-ao-formation-prayer-block="'+clean(rec.block_id)+'">'+
+    '<small>'+clean(rec.block_id)+' · '+clean(rec.moment_id)+'</small>'+
+    (rec.conditionality!=="STANDARD_FIXED"?
+     '<strong class="aoFRPilotConditional">'+clean(conditionLabel(rec.conditionality))+'</strong>':"")+
+    '<h2>'+clean(langText(rec.heading,french))+'</h2>'+
+    '<p>'+clean(langText(rec.reading,french))+'</p>'+
+    '<h3>'+(french?"Observer la forme et le texte":"Read the form and wording")+'</h3>'+
+    '<p>'+clean(langText(rec.observe,french))+'</p></article>').join("")+
+  '<p data-ao-formation-proper-held="'+clean(validation.withheld[0].block_id)+'">'+
+   (french?"Postcommunion variable réservée : ":"Variable Postcommunion held: ")+
+   clean(validation.withheld[0].block_id)+'</p></main>';
+}
