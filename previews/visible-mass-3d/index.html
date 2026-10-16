@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Visible Mass — 3D Research Prototype</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--surface:#111824;--line:#455061;--text:#e7e0d5;--sub:#a5a8aa;--gold:#bb9c6b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Georgia,serif}
+header{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid #343d48}
+h1{font-variant:small-caps;letter-spacing:.09em;font-size:1.18rem;margin:0}small,.muted{color:var(--sub)}
+main{display:grid;grid-template-columns:minmax(0,1fr) 318px;height:calc(100dvh - 58px)}
+#stage{position:relative;overflow:hidden;background:radial-gradient(ellipse,#252e3a,#07090d 80%)}
+canvas{display:block;width:100%;height:100%;touch-action:none;outline:0}
+#empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding:30px}
+#empty>div{max-width:480px;background:#080c12dd;border:1px solid #4a4a50;border-radius:8px;padding:24px}
+#empty[hidden]{display:none}
+#status{position:absolute;left:12px;bottom:12px;font:12px/1.4 system-ui,sans-serif;color:#ddd;background:#0c111ccf;padding:7px 10px;max-width:calc(100% - 24px);border-radius:5px}
+#reticle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font:26px sans-serif;color:#dcc8a1;pointer-events:none;display:none}
+#reticle.visible{display:block}
+aside{padding:17px;background:var(--surface);border-left:1px solid #343d48;overflow:auto}
+h2{font-size:1.2rem;font-weight:normal;margin:8px 0}h3{margin:18px 0 6px;font-variant:small-caps;letter-spacing:.08em;font-size:1rem}
+p{margin:6px 0 12px}label{display:block;margin:10px 0 3px;color:var(--sub);font:12px system-ui,sans-serif}
+input,select,button{font:13px system-ui,sans-serif;border:1px solid #48515b;background:#202935;color:#eee;border-radius:5px;padding:8px;max-width:100%}
+input[type=url],select{width:100%}input[type=file]{width:100%;font-size:11px}
+button{cursor:pointer}button:hover{border-color:var(--gold)}button.primary{background:#544431;border-color:#a58b67}
+button:disabled{opacity:.4;cursor:not-allowed}.actions{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+#inspect{border-top:1px solid #46505a;margin-top:14px;padding-top:12px}
+#inspect[hidden]{display:none}
+#controls{position:absolute;right:12px;bottom:48px;display:none;grid-template-columns:repeat(3,45px);gap:3px;user-select:none;touch-action:none}
+#controls.visible{display:grid}#controls button{height:44px;font-size:18px;background:#111923c9;touch-action:none}
+.footnote{font:11px/1.5 system-ui,sans-serif;color:#9c9ea3;margin-top:20px}
+#help{color:#b9b6af;font-size:13px}
+a{color:#d6bc91}
+@media(max-width:760px){header{height:54px}main{height:calc(100dvh - 54px);grid-template-columns:1fr;grid-template-rows:minmax(260px,58%) minmax(180px,42%)}aside{border-left:0;border-top:1px solid #343d48}#controls{bottom:45px}}
+</style>
+</head>
+<body>
+<header><h1>The Visible Mass <small>· P0 research viewer</small></h1><small>Ad Orientem · unmerged prototype</small></header>
+<main>
+<section id="stage" aria-label="Three-dimensional church exploration">
+<canvas id="renderCanvas" tabindex="0" aria-label="Interactive 3D scene"></canvas>
+<div id="empty"><div><h2>Enter a church</h2><p>Load an authorised Catholic church GLB to begin exploring. No synthetic placeholder architecture will be shown.</p><small>Use the panel to load an existing model or select a local GLB file.</small></div></div>
+<div id="reticle" aria-hidden="true">+</div>
+<div id="controls" aria-label="Touch movement controls"><span></span><button data-move="w" aria-label="Forward">↑</button><span></span><button data-move="a" aria-label="Left">←</button><button data-move="s" aria-label="Back">↓</button><button data-move="d" aria-label="Right">→</button></div>
+<div id="status" role="status">Waiting for a licensed 3D church.</div>
+</section>
+<aside>
+<h2>Explore the church</h2>
+<p id="help">Load a real GLB, use Survey to find the nave, then place a starting point and enter Walk mode. Select sacred objects to read the existing Ad Orientem glossary.</p>
+<label for="modelFile">Your downloaded model (.glb)</label><input id="modelFile" type="file" accept=".glb,model/gltf-binary">
+<label for="modelUrl">Or a direct HTTPS GLB URL</label><input id="modelUrl" type="url" placeholder="https://…/church.glb">
+<div class="actions"><button id="loadUrl">Load URL</button><button id="reference">Load Durro reference (137 MB)</button></div>
+<small>Durro is CC BY and for technical testing only. Its sanctuary has not passed the traditional altar review. Large models may take time or exhaust mobile memory.</small>
+<h3>Movement</h3><div class="actions"><button id="survey" class="primary" disabled>Survey</button><button id="walk" disabled>Walk</button><button id="start" disabled>Set entrance</button></div>
+<p class="muted" style="font-size:13px">Survey: drag to orbit, scroll to zoom. Set entrance: click a floor point. Walk: WASD/arrows, drag to look; touch buttons on mobile. Escape exits pointer lock.</p>
+<h3>Liturgical objects</h3>
+<label for="kind">Existing canonical glossary entry</label><select id="kind"></select>
+<div class="actions"><button id="place" disabled>Place hotspot</button><button id="stopPlace" disabled>Cancel</button><button id="save" disabled>Export markers</button></div>
+<label for="importManifest">Import markers (.json)</label><input id="importManifest" type="file" accept=".json,application/json">
+<p class="muted" style="font-size:13px">Place hotspot, then click its location on the 3D church. Markers stay separate from the scanned geometry.</p>
+<section id="inspect" hidden><h3 id="entryTitle"></h3><p id="entryLatin" class="muted"></p><p id="entryDefinition"></p><p id="entryExplanation"></p><button id="closeInspect">Return to church</button></section>
+<p class="footnote">Research-only viewer. No church model is bundled or committed. Model rights and altar arrangements require separate approval. Runtime libraries are loaded from the Babylon.js CDN; this prototype is not yet an offline app module.</p>
+</aside>
+</main>
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+<script type="module" src="./viewer.js"></script>
+</body>
+</html>
