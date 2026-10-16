@@ -11,6 +11,9 @@ const deepHtml=await readFile(deepPath,"utf8");
 assert.equal((deepHtml.match(/class="study" id=/g)||[]).length,8);
 assert.equal((deepHtml.match(/class="lit-block"/g)||[]).length,15);
 assert.equal((deepHtml.match(/class="relation"/g)||[]).length,8);
+assert.equal((deepHtml.match(/data-p0-author-ref=/g)||[]).length,88);
+assert.equal((deepHtml.match(/data-primary-check=/g)||[]).length,6);
+assert.equal((deepHtml.match(/data-p0-scripture-held=/g)||[]).length,1);
 assert.equal((html.match(/class="entry" id=/g)||[]).length,84);
 assert.equal((html.match(/<em class="optional"/g)||[]).length,3);
 const browser=await chromium.launch({headless:true});
@@ -86,6 +89,12 @@ try{
   assert.equal(await deepPage.locator("article.study").count(),8);
   assert.equal(await deepPage.locator("details.lit-block").count(),15);
   assert.equal(await deepPage.locator(".relation").count(),8);
+  assert.equal(await deepPage.locator("details.research-docket").count(),8);
+  assert.equal(await deepPage.locator("[data-p0-author-ref]").count(),88);
+  assert.equal(await deepPage.locator("[data-primary-check]").count(),6);
+  assert.equal(await deepPage.locator("[data-p0-scripture-held]").count(),1);
+  await deepPage.locator("article.study:nth-of-type(5) details.research-docket summary").first().click();
+  assert.equal(await deepPage.locator("article.study:nth-of-type(5) details.research-docket").getAttribute("open"),"");
   await deepPage.locator('button[data-select-lang="fr"]').click();
   assert.equal(await deepPage.locator('button[data-select-lang="fr"]').getAttribute("aria-pressed"),"true");
   assert.equal(await deepPage.locator('article.study:first-of-type .study-head h2 [data-lang="fr"]').isVisible(),true);
@@ -95,7 +104,7 @@ try{
   const deepOverflow=await deepPage.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
   assert.ok(deepOverflow<=2,width+"px Canon deep review horizontal overflow: "+deepOverflow);
   await deepPage.close();
-  console.log("PASS Canon deep editorial HTML browser: "+width+"px; 8 studies, 15 Mass source blocks, 8 Scripture link placements (7 unique), bilingual toggle");
+  console.log("PASS Canon deep editorial HTML browser: "+width+"px; 8 studies, 15 Mass source blocks, 8 Scripture links, 88 held P0 author loci, 6 primary-source checks, bilingual toggle");
   console.log("PASS P2 editorial HTML browser: "+width+"px; 84 text blocks, 3 optional customs, 11 held Propers, 5 opening conditions and conditional finales, bilingual toggle, exact speaking roles");
   await context.close();
  }
