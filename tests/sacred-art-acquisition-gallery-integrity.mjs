@@ -77,7 +77,7 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=164,'Acquisition-to-gallery linked photo coverage has regressed below verified 164-category source-linked closeout checkpoint');
+assert.ok(categoriesWithPhoto>=166,'Acquisition-to-gallery linked photo coverage has regressed below verified 166-category source-linked closeout checkpoint');
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
@@ -138,9 +138,22 @@ for(const [idx,original,candidate] of [
  assert.ok(w.photos.length,'Research alternative missing its own photo '+idx);
  assert.match(w.hold,/NO_HUMAN|NO_RATING|NO_HISTORIC|NO_SCORE/,'Variant hold missing '+idx);
 }
-const holdCategories=[25,41,43,48];
+for(const [idx,oldId,alternativeId] of [
+ [25,'celine-1894-john-cross','CLOSEOUT-JOHN-CROSS-KATOWICE-1656'],
+ [48,'carmel-lisieux-1925-therese-aux-roses','CLOSEOUT-THERESE-HISTORIC-PHOTO-PRE1897']
+]){
+ const previouslyReviewed=at(idx,oldId);
+ const historicalAlternative=at(idx,alternativeId);
+ assert.ok(previouslyReviewed,'Previously reviewed work must remain intact');
+ assert.ok(historicalAlternative.photos.length,'Unselected historical research image missing');
+ assert.equal(historicalAlternative.lockedArtRating,false);
+ assert.equal(historicalAlternative.oct12Selected,undefined);
+ assert.equal(historicalAlternative.historicalArtRating,undefined);
+ assert.match(historicalAlternative.hold,/NO_RATING_TRANSFER/);
+}
+const holdCategories=[41,43];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
-assert.deepEqual(missingNow,holdCategories,'Four final unreconciled subject categories must remain explicit, not silently substituted');
+assert.deepEqual(missingNow,holdCategories,'Two final unreconciled Doctor-subject categories must remain explicit, not silently substituted');
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
