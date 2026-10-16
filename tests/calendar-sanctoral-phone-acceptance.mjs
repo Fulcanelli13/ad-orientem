@@ -125,6 +125,26 @@ try{
      "Newman 2026 memorial erroneously back-projected to 2025");
    assert.equal(await page.locator(".aoCalV2Hero").count(),1,
      "1962 principal feast disappeared when changing days");
+   // A later saint may have a source-reviewed physical shrine even when no
+   // dedicated Saints biography is published. Link only the exact Place ID.
+   assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
+   const placeAction=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root "+
+     '[data-cal-secondary-place="place:IT:santuario-san-pio-rotondo"]');
+   await placeAction.waitFor({state:"visible",timeout:55000});
+   assert.equal(await placeAction.getAttribute("data-cal-secondary-saint"),"saint.pio-pietrelcina");
+   assert.ok((await placeAction.boundingBox())?.height>=44,"Physical Place action below 44px target");
+   assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true,
+     "Additional Place button must not create Mass selection");
+   if(width===390){
+     await placeAction.click();
+     await page.waitForFunction(()=>window.AO_FIND_APP_V1?.status?.().open===true&&
+       window.AO_FIND_APP_V1.status().lens==="shrines"&&
+       window.AO_FIND_APP_V1.status().selectedPlaceId==="place:IT:santuario-san-pio-rotondo",
+       null,{timeout:60000});
+     assert.equal(await page.evaluate(()=>window.AO_RUNTIME_V8.store.getState().selectedDate),"2026-09-23",
+       "Explore must not reset the Calendar-selected date");
+     assert.equal(await page.locator("#ao-find-root").count()<=1,true,"No duplicate Explore mount");
+   }
    assert.equal(errors.length,0,"Browser runtime errors: "+errors.slice(0,4).join(" ; "));
    reports.push({width,...metrics,requestCount:requests.length,pageErrors:errors.length});
    console.log("PASS "+width+"px Calendar: Newman modern saint under 1962 principal, accessible disclosure, one lazy fetch, historical gate");
