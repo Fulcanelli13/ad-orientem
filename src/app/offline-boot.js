@@ -11,6 +11,7 @@ const eligible=!VERCEL_WEB_PREVIEW&&typeof navigator!=="undefined"&&"serviceWork
  (["localhost","127.0.0.1"].includes(globalThis.location?.hostname)&&TEST));
 let registered=false,version=null,pendingVersion=null,ready=false,error=null,lastChecked=0;
 let dismissed=null,promptNode=null,inflight=null,controller=null;
+let failureNode=null,failureDismissed=null;
 function send(type,extra={}){
  const target=navigator.serviceWorker.controller||controller;
  if(!target)return Promise.resolve({ok:false,error:"SERVICE_WORKER_INACTIVE"});
@@ -30,6 +31,36 @@ function liveMass(){
 }
 function removePrompt(){
  promptNode?.remove();promptNode=null;
+}
+function removeCheckFailure(){failureNode?.remove();failureNode=null}
+function paintCheckFailure(){
+ if(!error||error===failureDismissed||pendingVersion||typeof document==="undefined"||
+   !document.body||liveMass()||failureNode?.isConnected)return;
+ const fr=String(globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language||
+   document.documentElement?.lang||"en").toLowerCase().startsWith("fr");
+ const box=document.createElement("aside");
+ box.id="ao-offline-check-failed";box.setAttribute("role","status");
+ box.setAttribute("aria-live","polite");
+ box.style.cssText="position:fixed;z-index:2147483490;bottom:calc(82px + env(safe-area-inset-bottom,0px));right:12px;left:12px;max-width:380px;margin-left:auto;background:#101923;color:#f0e9dc;border:1px solid #746748;border-radius:10px;padding:12px 14px;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 28px rgba(0,0,0,.4)";
+ const message=document.createElement("span");
+ message.textContent=fr?"Impossible de vérifier la mise à jour. Réessayez lorsque la connexion est stable.":"Could not check for an app update. Retry when your connection is stable.";
+ const actions=document.createElement("div");
+ actions.style.cssText="display:flex;justify-content:flex-end;gap:8px;margin-top:10px";
+ const later=document.createElement("button"),retry=document.createElement("button");
+ for(const button of [later,retry]){
+  button.type="button";
+  button.style.cssText="min-height:44px;min-width:74px;padding:8px 13px;border-radius:8px;border:1px solid #746748;color:inherit;background:#192636;font:600 13px system-ui,sans-serif;cursor:pointer";
+ }
+ later.textContent=fr?"Plus tard":"Later";retry.textContent=fr?"Réessayer":"Retry";
+ later.addEventListener("click",()=>{failureDismissed=error;removeCheckFailure()});
+ retry.addEventListener("click",async()=>{
+  retry.disabled=true;retry.textContent=fr?"Vérification…":"Checking…";
+  try{await check({force:true})}catch(e){error=String(e?.message||e)}
+  if(!error){removeCheckFailure();return}
+  retry.disabled=false;retry.textContent=fr?"Réessayer":"Retry";
+ });
+ actions.append(later,retry);box.append(message,actions);
+ document.body.append(box);failureNode=box;
 }
 function promptCopy(){
  const language=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language||
@@ -99,9 +130,9 @@ function onMessage(e){
  if(data.type==="UPDATE_READY"){
   pendingVersion=data.version;paintPrompt();
  }else if(data.type==="OFFLINE_READY"){
-  ready=true;version=data.active;
+  ready=true;version=data.active;error=null;removeCheckFailure();
  }else if(data.type==="SNAPSHOT_FAILED"){
-  error=data.message;
+  error=data.message;paintCheckFailure();
  }else if(data.type==="ACTIVE_VERSION"){
   version=data.version;
  }
@@ -109,13 +140,13 @@ function onMessage(e){
 async function check({force=false}={}){
  if(!eligible)return {ok:false,error:"UNSUPPORTED"};
  if(!force&&inflight)return inflight;
- if(!force&&Date.now()-lastChecked<30*60*1000)return {ok:true,skipped:"RECENTLY_CHECKED"};
+ if(!force&&Date.now()-lastChecked<(error?60*1000:30*60*1000))return {ok:true,skipped:"RECENTLY_CHECKED"};
  lastChecked=Date.now();
  inflight=send("CHECK_UPDATE").then(result=>{
   if(result?.ok){
-   ready=true;version=result.active;
+   ready=true;version=result.active;error=null;failureDismissed=null;removeCheckFailure();
    if(result.updateAvailable){pendingVersion=result.version;paintPrompt()}
-  }else error=result?.error||"OFFLINE_SNAPSHOT_FAILED";
+  }else{error=result?.error||"OFFLINE_SNAPSHOT_FAILED";paintCheckFailure()}
   return result;
  }).finally(()=>{inflight=null});
  return inflight;
@@ -135,7 +166,7 @@ async function initialise(){
   const s=await send("STATUS");
   ready=Boolean(s?.active);version=s?.active||null;
   if(navigator.onLine!==false)await check({force:true});
- }catch(e){error=String(e?.message||e)}
+ }catch(e){error=String(e?.message||e);paintCheckFailure()}
 }
 if(eligible){
  if(document.readyState==="complete")setTimeout(()=>void initialise(),1800);
