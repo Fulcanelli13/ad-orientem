@@ -418,8 +418,22 @@ assert.equal(wholeSegmentation.sourceSegmentsNotCertifiedBookNarrative,true);
 assert.equal(wholeSegmentation.proseCopiedToPublicRepository,false);
 assert.equal(wholeSegmentation.sourceTextPublishedInApp,false);
 assert.equal(wholeSegmentation.normalizedAIComposedAuthorNarrativeWords,0);
-assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterStartCandidates,175);
-assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented,168);
-assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented,14);
+// Initial 168/14 segmentation remains an immutable research snapshot above.
+const followup=wholeSegmentation.followupOCRBoundaryRecovery;
+assert.equal(followup.recoveredOriginalOCRHeaderPageLocators,7);
+assert.equal(followup.recoveredDamagedOriginalOCRHeaderStrings.length,7);
+assert.equal(followup.chapterStartCandidatesNow,181);
+assert.equal(followup.draftsNowBoundedByTwoAdjacentOCRHeaders,180);
+assert.deepEqual(followup.sourceChaptersNotSafelySplit,["SCHUSTER-EN-1908-NT-LXXXVIII","SCHUSTER-EN-1908-NT-LXXXIX"]);
+assert.equal(followup.remainingUnresolvedChapterStartId,"SCHUSTER-EN-1908-NT-LXXXIX");
+assert.equal(followup.currentResearchArtifacts.chapterIndex.sha256.length,64);
+assert.equal(followup.currentResearchArtifacts.fullOCRSegments.sha256.length,64);
+assert.equal(followup.chapterTextStillUnverified,true);
+assert.equal(followup.originalWordingRewritten,false);
+assert.equal(followup.appUpdated,false);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterStartCandidates,181);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChapterDraftsSegmented,180);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRChaptersHeldUnsegmented,2);
+assert.equal(fam.counts.earlyEnglishSadlierWholeBookOCRUnresolvedChapterStartCount,1);
 
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
