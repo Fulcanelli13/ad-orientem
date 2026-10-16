@@ -2402,5 +2402,40 @@
     "authorNarrativeParagraphsCertifiedNow": 0,
     "automaticSourceImportAllowed": false,
     "appChanged": false
+  },
+  "printImageVerificationPilot": {
+    "status": "ONE_ORIGINAL_IMAGE_DIRECTLY_VIEWED_OTHERS_ACCESS_FAILED",
+    "editionId": "KNECHT-EN-1910-HERDER",
+    "inspected": [
+      {
+        "djvuPage": 41,
+        "printedPage": 3,
+        "source": "https://en.wikisource.org/wiki/Page:A_Practical_Commentary_on_Holy_Scripture_(1910).djvu/41",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/A_Practical_Commentary_on_Holy_Scripture_%281910%29.djvu/page41-1920px-A_Practical_Commentary_on_Holy_Scripture_%281910%29.djvu.jpg",
+        "inspection": "VISIBLE_ORIGINAL_PRINTED_PAGE_IMAGE",
+        "checkedFeatures": [
+          "Primitive Ages heading",
+          "Chapter I Creation heading",
+          "Genesis citation",
+          "opening narrative text and footnote markers",
+          "eight numbered original footnotes and note body at page bottom"
+        ],
+        "sampleBodyProseCertified": false,
+        "fullParagraphsProofread": 0,
+        "notes": "Page image confirms location and typography/footnote separation. No complete original paragraph transcription formally collated or approved."
+      }
+    ],
+    "unsuccessfulPageImages": [
+      43,
+      46,
+      59,
+      64
+    ],
+    "printedImagePagesSeen": 1,
+    "completeParagraphsCertified": 0,
+    "rightsClearedForApp": false,
+    "sourceTextImported": false,
+    "nextAction": "Get original high-resolution print page images in batch through source parser; collate 41–43 first, then all Origins and original Schuster EN/FR.",
+    "noAiNarrative": true
   }
 }
