@@ -152,13 +152,25 @@ async function loadModel(item,label){
   }catch(e){isLoaded=loaded.length>0;status('Unable to load the 3D file: '+String(e?.message||e).slice(0,260)+'. For remote links, try downloading the GLB and loading it through Choose File.');}
   finally{busy=false;}
 }
-$('demo').onclick=async()=>{
-  const node=document.getElementById('ao-demo-glb');
-  if(!node?.textContent?.trim()){status('Built-in test asset missing. Download the compiled standalone HTML from the GitHub artifact.');return;}
-  try{
-    const raw=atob(node.textContent.trim());const bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));
-    await loadModel(new File([bytes],'visible-mass-test.glb',{type:'model/gltf-binary'}),'Built-in 3D test fixture');
-  }catch(e){status('Unable to create demo GLB: '+e.message);}
+$('demo').onclick=()=>{
+  if(busy)return;
+  setMode('survey');
+  for(const m of markers.values())m.dispose();markers.clear();
+  loadedNodes.forEach(n=>n.dispose());loaded.forEach(m=>m.dispose());loaded=[];loadedNodes=[];
+  const materials=[[0.23,0.28,0.34],[0.65,0.50,0.28],[0.42,0.53,0.66],[0.18,0.22,0.27]].map((c,i)=>{
+    const m=new A.StandardMaterial('test-material-'+i,scene);m.diffuseColor=A.Color3.FromArray(c);m.specularColor=new A.Color3(.14,.14,.14);return m;
+  });
+  const floor=A.MeshBuilder.CreateGround('test-ground',{width:10,height:14},scene);floor.material=materials[0];
+  const block1=A.MeshBuilder.CreateBox('test-shape-A',{width:1.2,height:1.5,depth:1.2},scene);block1.position.set(-2,.75,-2);block1.material=materials[1];
+  const block2=A.MeshBuilder.CreateBox('test-shape-B',{width:1.3,height:2.1,depth:1.3},scene);block2.position.set(2,1.05,-2);block2.material=materials[2];
+  const wall=A.MeshBuilder.CreateBox('test-backdrop',{width:10,height:3,depth:.3},scene);wall.position.set(0,1.5,-7);wall.material=materials[3];
+  loaded=[floor,block1,block2,wall];loaded.forEach(m=>m.isPickable=true);
+  source='Technical control test — not a church';isLoaded=true;
+  entrance=new A.Vector3(0,0,5);floorY=0;walk.position.set(0,1.65,5);walk.rotation.set(0,Math.PI,0);
+  survey.target.set(0,1,0);survey.radius=13;survey.alpha=-Math.PI/2;survey.beta=Math.PI/2.7;
+  $('empty').hidden=true;['survey','walk','start','place','save'].forEach(id=>enable(id,true));
+  setMode('survey');
+  status('Test shapes loaded. Select Walk, then WASD/arrows or touch controls. This is NOT a proposed church.');
 };
 $('modelFile').onchange=async e=>{const file=e.target.files?.[0];if(file)await loadModel(file,file.name);};
 $('loadUrl').onclick=()=>{const url=$('modelUrl').value.trim();if(!/^https:\/\//i.test(url))return status('Use a direct HTTPS .glb URL.');loadModel(url,url);};
