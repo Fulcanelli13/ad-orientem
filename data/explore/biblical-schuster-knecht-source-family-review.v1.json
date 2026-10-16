@@ -528,7 +528,12 @@
     "earlyEnglishSadlierMixedOCRLiteralWordCorrections": 0,
     "earlyEnglishSadlierSourceNarrativeSubjectCorroboratedChapters": 35,
     "earlyEnglishSadlierSourceNarrativeSubjectPrintSpotCheckedChapters": 17,
-    "earlyEnglishSadlierNewVerseCertifiedLinks": 0
+    "earlyEnglishSadlierNewVerseCertifiedLinks": 0,
+    "earlyEnglishSadlierVerseSpecificSourceAnchors": 40,
+    "earlyEnglishSadlierVerseLocatedDistinctPassages": 20,
+    "earlyEnglishSadlierVerseLocatedSourceChapters": 14,
+    "earlyEnglishSadlierVerseLocatedCanonicalEvents": 15,
+    "earlyEnglishSadlierVerseVerifiedCompleteLoci": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4621,5 +4626,40 @@
     "uiBehaviour": "35 source-body OCR-corroborated Atlas subjects labelled separately from title-only candidates, with no external linking; prior local reading-state key unchanged",
     "safety": "Source OCR remains unverified historically, rights/editorial holds unchanged. No Schuster original prose committed to repo, no AI replacement story, no production app changes.",
     "nextPriority": "Direct original Scripture passage verification for high-impact chapter subjects; authentic alternate Schuster witness to recover missing 1908 printed pp 384–385; production reader gate remains closed."
+  },
+  "english1908ScriptureEpisodeBatchAndReaderV5": {
+    "date": "2026-10-16",
+    "source": "1908 English 11th-edition Schuster narrative OCR / original printed-source PDF",
+    "scriptureComparator": "Catholic Douay–Rheims (Challoner) text, verse by verse for distinctive narrative episodes",
+    "researchRegistry": "data/explore/biblical-schuster-1908-scripture-episode-anchors.v1.json",
+    "originalBookChaptersReviewed": 14,
+    "specificNarrativeLociLocated": 20,
+    "specificChapterBodyEvidenceAnchors": 40,
+    "alreadySelectedCanonicalAtlasEventKeysReferenced": 15,
+    "additionalOrHarmonizedScriptureLoci": 5,
+    "originalChapterTextVerbatimBibleVerseCoverageApproved": 0,
+    "liveAppAtlasLinksActivated": 0,
+    "correctedSourceScopeCases": [
+      "OT-I_GENESIS_2_SABBATH",
+      "OT-XXXI_EXODUS_4_MOSES_SIGNS",
+      "NT-XXXVII_MATTHEW_17_V9_AND_LUKE_9",
+      "NT-LXVII_LUKE_22_ANGEL_AND_SWEAT",
+      "NT-LXXXII_ACTS_1_MATTHIAS_AND_ACTS_2_PENTECOST",
+      "NT-XC_ACTS_10_CORNELIUS_PLUS_ACTS_11_ANTIOCH"
+    ],
+    "readerPrototype": "Schuster_1908_Offline_Research_Reader_v5.html",
+    "readerPrototypeSHA256": "ed36b173ab01db29419227e47c58b6fe1bdc7bd353700a7ef8c7fea86ed3efbd",
+    "readerDataArtifact": "Schuster_1908_Research_Reader_Data_v5.json",
+    "readerDataSHA256": "246d587a0119910ec17f627a36a6c4349a7f544efe3cc3e19235916d5e258f50",
+    "readerNewFunction": "Show 20 episode-level Scripture comparison links on 14 historical chapters; opens external Douay–Rheims passage, all clearly marked research-only; 87 prior candidate Atlas subjects and local resume preserved.",
+    "sourceTextOrScanCommittedToGitHub": false,
+    "aiBibleNarrativeGenerated": false,
+    "originalSourceOCRModified": false,
+    "canonical151EventRegistryModified": false,
+    "liveAdOrientemAppChanged": false,
+    "unrecoveredPrinted1908Pages": [
+      384,
+      385
+    ]
   }
 }
