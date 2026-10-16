@@ -3,7 +3,8 @@ import {readFileSync} from "node:fs";
 import {validatePrayerReadingPilot,prayerReadingEditorialPreviewHtml,prayerReadingEditorialPreviewCss,
  validateMassTransitionReadingPilot,massTransitionEditorialPreviewHtml,
  validateRomanCanonReadingPilot,romanCanonEditorialPreviewHtml,
- validateCommunionReadingPilot,communionEditorialPreviewHtml}
+ validateCommunionReadingPilot,communionEditorialPreviewHtml,
+ validateConclusionReadingPilot,conclusionEditorialPreviewHtml}
  from "../src/learn/mass-prayer-reading-pilot.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const pilot=read("data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json");
@@ -184,4 +185,53 @@ for(const [name,mutate] of [
 }
 assert.equal(validateCommunionReadingPilot(communionDraft,{blocks:[]},formation,guide).ok,false);
 assert.equal(validateCommunionReadingPilot(communionDraft,sung,formation,{entries:{}}).ok,false);
-console.log("PASS P2 editorial pilot: 52 bilingual prayer notes = 29 previous + 23 Communion; 20 normative, 3 explicitly optional, 3 cumulative variable Proper holds, no unpublished source or Mass reader release");
+const conclusionDraft=read("data/learn/research/mass-formation-conclusion-prayer-reading-pilot-20261016.v1.json");
+const conclusionValid=validateConclusionReadingPilot(conclusionDraft,sung,formation,guide);
+assert.equal(conclusionValid.ok,true,conclusionValid.reason);
+assert.deepEqual(conclusionValid.readings.map(r=>r.block_id),
+ ["AO.SM.B086","AO.SM.B087","AO.SM.B089","AO.SM.B090","AO.SM.B091","AO.SM.B092","AO.SM.B093","AO.SM.B094","AO.SM.B095"]);
+assert.deepEqual(conclusionValid.withheld.map(r=>r.block_id),["AO.SM.B088"]);
+assert.equal(conclusionValid.withheld[0].proper_slot,"POSTCOMMUNION_SET");
+assert.deepEqual(conclusionValid.readings.filter(r=>r.conditionality==="DISMISSAL_FORM_DEPENDENT").map(r=>r.block_id),
+ ["AO.SM.B089","AO.SM.B090"]);
+assert.deepEqual(conclusionValid.readings.filter(r=>r.conditionality==="BLESSING_MAY_BE_OMITTED").map(r=>r.block_id),
+ ["AO.SM.B092"]);
+assert.deepEqual(conclusionValid.readings.filter(r=>r.conditionality==="LAST_GOSPEL_MAY_BE_OMITTED").map(r=>r.block_id),
+ ["AO.SM.B093","AO.SM.B094","AO.SM.B095"]);
+assert.equal(conclusionValid.readings.reduce((n,r)=>n+r.scripture_within_text.length,0),0);
+for(const fr of [false,true]){
+ const html=conclusionEditorialPreviewHtml(conclusionValid,{french:fr});
+ assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,9);
+ assert.equal((html.match(/class="aoFRPilotConditional"/g)||[]).length,6);
+ assert.equal((html.match(/data-ao-formation-proper-held=/g)||[]).length,1);
+ assert.match(html,fr?/ÉBAUCHE ÉDITORIALE/:/EDITORIAL DRAFT/);
+ assert.match(html,fr?/DERNIER ÉVANGILE PARFOIS OMIS/:/LAST GOSPEL MAY BE OMITTED/);
+ assert.doesNotMatch(html,/data-ao-r17|data-ao-mass-reader|data-ao-mx-study/,
+  "This is editorial research material, not a Mass/Formation public route");
+}
+const invalidConclusion=mutate=>{
+ const copy=JSON.parse(JSON.stringify(conclusionDraft));
+ mutate(copy);
+ return validateConclusionReadingPilot(copy,sung,formation,guide);
+};
+for(const [name,fn] of [
+ ["draft prematurely released",x=>{x.status="RELEASED_FOR_FORMATION"}],
+ ["wrong Guide moment",x=>{x.entries[0].moment_id="AO.CARD.028"}],
+ ["wrong published source",x=>{x.entries[1].block_id="AO.SM.B088"}],
+ ["wrong theme",x=>{x.entries[2].stage_id="MF05"}],
+ ["invented public wording",x=>{x.entries[7].text_anchor_en="John Chapter 44"}],
+ ["uncertified verse citation",x=>{x.entries[8].scripture_within_text=["John 1:14"]}],
+ ["variant dismissal claimed universal",x=>{x.entries[3].conditionality="STANDARD_FIXED"}],
+ ["blessing claimed universal",x=>{x.entries[5].conditionality="STANDARD_FIXED"}],
+ ["Last Gospel claimed universal",x=>{x.entries[8].conditionality="STANDARD_FIXED"}],
+ ["no Postcommunion hold",x=>{x.withheld_variable_propers=[]}],
+ ["wrong Postcommunion slot",x=>{x.withheld_variable_propers[0].proper_slot="COMMUNION"}],
+ ["missing French reading",x=>{x.entries[8].observe.fr=""}],
+ ["duplicate entry ID",x=>{x.entries[1].id=x.entries[0].id}],
+ ["missing finale",x=>{x.entries.pop()}]
+]){
+ assert.equal(invalidConclusion(fn).ok,false,name+" must fail closed");
+}
+assert.equal(validateConclusionReadingPilot(conclusionDraft,{blocks:[]},formation,guide).ok,false);
+assert.equal(validateConclusionReadingPilot(conclusionDraft,sung,formation,{entries:{}}).ok,false);
+console.log("PASS P2 editorial pilot: 61 bilingual prayer readings, 4 held Propers, 3 optional Communion customs; nine closing texts retain dismissal/blessing/Last Gospel exceptions and John Incarnation wording");
