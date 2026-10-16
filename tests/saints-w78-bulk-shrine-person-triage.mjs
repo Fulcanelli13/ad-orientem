@@ -5,6 +5,10 @@ const q=read("data/saints/w78-bulk-119-shrine-person-match-triage-20261016.v1.js
 const previous=read("data/saints/existing-shrine-geography-readiness-20261016.v1.json");
 const ledger=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json");
 const aliases=read("data/saints/six-duplicate-name-alias-evidence-20261016.v1.json");
+const primary=read("data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json");
+assert.equal(q.primary_evidence_registry,"data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json");
+assert.equal(primary.counts.curated_variant_name_leads,24);
+assert.equal(primary.counts.names_with_no_supported_key_after_curated_leads,39);
 assert.equal(q.schema,"ao.saints.w78-all-119-shrine-name-person-match-triage.v1");
 assert.equal(q.records.length,119);assert.equal(q.counts.original_association_edges,145);
 const keys=new Set(ledger.records.map(x=>x.source_key));
@@ -36,6 +40,11 @@ assert.deepEqual(leads.map(x=>x.candidate_source_keys[0]).sort(),[
  "saint.andrew","saint.bartholomew","saint.mark","saint.matthew","saint.matthias","uganda-martyrs-22"
 ]);
 assert(q.records.find(x=>x.shrine_name_literal==="Uganda Martyrs").candidate_source_keys.every(x=>!x.startsWith("saint.")));
+for(const x of leads){
+ const original=primary.no_exact_key.find(y=>y.shrine_source_name===x.shrine_name_literal);
+ assert(original&&original.source_key_candidate===x.candidate_source_keys[0]);
+ assert.equal(original.identity_gate,"CURATED_VARIANT_NAME_LEAD_REQUIRES_OWNER_CERTIFICATION");
+}
 assert.equal(q.counts.newly_certified_person_to_shrine_life_event_edges,0);
 assert.equal(q.counts.new_geocoded_pin_records,0);
 assert.equal(q.counts.approved_artwork_assets,0);
