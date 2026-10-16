@@ -2,6 +2,8 @@ import { formationReaderCss, installFormationNavigation } from "./formation-ui.j
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { massFormationScriptureHtml } from "./mass-formation-scripture-context.js";
 import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-reference-panel.js";
+import { loadGuideRegistry } from "../mass/reader-guide.js";
+import {massMomentsStudyCss,massMomentsStudyListHtml,massMomentStudyDetailHtml,massMomentStudyKeys} from "./mass-moments-study.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
 export const MASS_FORMATION_ROUTE="learn.mass";
@@ -32,7 +34,7 @@ function css(){
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
     ".aoMFBible{border-top:1px solid var(--border,rgba(255,255,255,.16));margin:24px 0 4px;padding-top:20px}.aoMFBible h2{margin:0 0 7px;font:500 1.2rem/1.28 var(--ao-font-display,Georgia,serif)}.aoMFBible>p{margin:0 0 14px;color:var(--muted,#9ba5b1);font:.82rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoMFBible ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;margin:0;padding:0;list-style:none}.aoMFBibleItem{border:1px solid var(--border,rgba(255,255,255,.13));border-radius:10px;padding:9px}.aoMFBibleItem button{display:flex;width:100%;min-height:44px;gap:7px;flex-wrap:wrap;align-items:center;justify-content:space-between;text-align:left;color:var(--liturgical,#c9ad78);background:transparent;border:0;font:.85rem/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}.aoMFBibleItem button strong{font-weight:500}.aoMFBibleItem button span{font-size:.73rem}.aoMFBibleItem small{display:block;margin-top:5px;font:.72rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#9ba5b1)}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("")+sourceReferencePanelCss()+formationReaderCss();
+  ].join("")+massMomentsStudyCss()+sourceReferencePanelCss()+formationReaderCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){
@@ -50,7 +52,10 @@ function top(win,title){
 }
 function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
-  return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p><div class="aoMFList">'+rows+'</div></main>';
+  return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p>'+
+  '<div class="aoMFStudyEntry"><button type="button" data-ao-mf-open-moments>'+
+   esc(isFr(win)?"Parcourir les 32 moments de la Messe chantée":"Explore the 32 moments of the Sung Mass")+' →</button></div>'+
+  '<div class="aoMFList">'+rows+'</div></main>';
 }
 // Further reading requires explicit editorial selection from sources already
 // supporting the lesson. Third-party digitizations are not promoted automatically.
@@ -74,12 +79,20 @@ function stageHtml(win,data,stage){
 }
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  const state={data:null,view:"list",stageId:null,returnFocus:null,loading:null};
+  const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,
+    guideError:false,returnFocus:null,loading:null,guideLoading:null};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   async function ensureData(){
     if(state.data)return state.data;
     if(!state.loading)state.loading=loadData(fetchImpl).then(data=>{state.data=data;return data}).finally(()=>{state.loading=null});
     return state.loading;
+  }
+  async function ensureGuides(){
+    if(state.guideRegistry)return state.guideRegistry;
+    if(!state.guideLoading)state.guideLoading=loadGuideRegistry({fetchImpl}).then(({registry})=>{
+      state.guideRegistry=registry;state.guideError=false;return registry;
+    }).finally(()=>{state.guideLoading=null});
+    return state.guideLoading;
   }
   function ensureRoot(){
     const doc=win?.document;if(!doc?.body)return null;
@@ -88,8 +101,33 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button");if(!target)return;
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
-      if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();state.view="list";state.stageId=null;render();return;}
-      if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;render();return;}
+      if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();
+        if(state.view==="moment"){state.view="moments";state.momentKey=null;}
+        else {state.view="list";state.stageId=null;}
+        render();return;
+      }
+      if(target.matches("[data-ao-mf-open-moments]")){
+        event.preventDefault();
+        ensureGuides().then(()=>{if(!root())return;state.view="moments";state.stageId=null;render()})
+          .catch(()=>{state.guideError=true;state.view="list";render()});
+        return;
+      }
+      if(target.matches("[data-ao-mf-moments-list]")){
+        event.preventDefault();state.view="moments";state.momentKey=null;render();return;
+      }
+      if(target.dataset.aoMfMoment&&state.guideRegistry?.entries?.[target.dataset.aoMfMoment]){
+        event.preventDefault();state.view="moment";state.momentKey=target.dataset.aoMfMoment;render();return;
+      }
+      if(target.matches("[data-ao-mf-moment-prev],[data-ao-mf-moment-next]")&&state.guideRegistry){
+        event.preventDefault();
+        const keys=massMomentStudyKeys(state.guideRegistry),i=keys.indexOf(state.momentKey);
+        const next=i+(target.matches("[data-ao-mf-moment-next]")?1:-1);
+        if(next>=0&&next<keys.length){state.momentKey=keys[next];render()}return;
+      }
+      if(target.dataset.aoMfRelatedStage&&state.data?.stages?.some(s=>s.id===target.dataset.aoMfRelatedStage)){
+        event.preventDefault();state.stageId=target.dataset.aoMfRelatedStage;state.view="stage";render();return;
+      }
+      if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;state.momentKey=null;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
       if(target.matches("[data-ao-mf-prev]")&&idx>0){event.preventDefault();state.stageId=stages[idx-1].id;render();return;}
       if(target.matches("[data-ao-mf-next]")&&idx>=0&&idx<stages.length-1){event.preventDefault();state.stageId=stages[idx+1].id;render();return;}
@@ -99,7 +137,16 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function render(){
     const node=ensureRoot();if(!node||!state.data)return false;
     const stage=state.data.stages.find(x=>x.id===state.stageId);
-    node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):listHtml(win,state.data);
+    const fr=isFr(win);
+    const stageTitles=Object.fromEntries(state.data.stages.map(s=>[s.id,pick(win,s.title)]));
+    node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):
+      state.view==="moments"&&state.guideRegistry?
+        top(win,fr?"Moments de la Messe":"Mass moments")+massMomentsStudyListHtml(state.guideRegistry,{french:fr}):
+      state.view==="moment"&&state.guideRegistry?.entries?.[state.momentKey]?
+        top(win,state.guideRegistry.entries[state.momentKey].moment)+
+          massMomentStudyDetailHtml(state.guideRegistry,state.momentKey,{french:fr,stageTitles}):
+      listHtml(win,state.data)+(state.guideError?
+        '<div role="status" class="aoMFError">'+esc(fr?"Le Guide est temporairement indisponible ; les leçons restent accessibles.":"The Guide is temporarily unavailable; the lessons remain available.")+'</div>':"");
     node.hidden=false;node.removeAttribute("aria-hidden");node.scrollTop=0;
     installFormationNavigation(win,node);
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
@@ -113,17 +160,27 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     }
     state.view=opts.stageId&&state.data.stages.some(x=>x.id===opts.stageId)?"stage":"list";
     state.stageId=state.view==="stage"?opts.stageId:null;
+    state.momentKey=null;
+    if(opts.momentKey){
+      try{
+        const guides=await ensureGuides();
+        if(guides.entries[opts.momentKey]){state.view="moment";state.momentKey=opts.momentKey;}
+      }catch{state.guideError=true;}
+    }else if(opts.view==="moments"){
+      try{await ensureGuides();state.view="moments";}
+      catch{state.guideError=true;}
+    }
     win?.document?.body?.classList?.add?.("aoMassFormationOpen");
     render();return true;
   }
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
-    state.view="list";state.stageId=null;
+    state.view="list";state.stageId=null;state.momentKey=null;
     if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
-  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,sourceBacked:Boolean(state.data)});}
+  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data)});}
   return Object.freeze({version:MASS_FORMATION_VERSION,open,close,render,status});
 }
 
