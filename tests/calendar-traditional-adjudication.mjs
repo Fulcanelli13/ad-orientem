@@ -154,12 +154,12 @@ const particular=load("data/calendar/particular-traditional-calendar-witnesses.r
 assert.equal(particular.schema,"AO_PARTICULAR_TRADITIONAL_CALENDAR_WITNESSES_REVIEW_V1");
 assert.equal(particular.publicationStatus,"SOURCE_WITNESS_ONLY_NOT_RUNTIME_APPLIED");
 assert.equal(particular.witnesses.length,3);
-const newman=particular.witnesses.find(x=>x.canonicalSaintId==="saint.john-henry-newman");
-assert.equal(newman.feastDate,"2026-10-09");
-assert.equal(newman.extraHighMassAt,"19:00");
-assert.equal(newman.highMassInSaintHonour,true);
-assert.equal(newman.formularySource,"UNIDENTIFIED");
-assert.equal(newman.changesAnyOtherVenueOrMass,false);
+const stKevinsNewman=particular.witnesses.find(x=>x.canonicalSaintId==="saint.john-henry-newman");
+assert.equal(stKevinsNewman.feastDate,"2026-10-09");
+assert.equal(stKevinsNewman.extraHighMassAt,"19:00");
+assert.equal(stKevinsNewman.highMassInSaintHonour,true);
+assert.equal(stKevinsNewman.formularySource,"UNIDENTIFIED");
+assert.equal(stKevinsNewman.changesAnyOtherVenueOrMass,false);
 const scrosoppi=particular.witnesses.find(x=>x.saintName==="St Luigi Scrosoppi");
 assert.equal(scrosoppi.feastDate,"2026-10-05");
 assert.equal(scrosoppi.canonicalSaintId,null);
