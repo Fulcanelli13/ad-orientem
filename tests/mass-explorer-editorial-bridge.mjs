@@ -48,7 +48,11 @@ try{
   await page.locator('[data-review-lang="fr"]').click();
   assert.equal(await page.locator('[data-ao-editorial-block="AO.SM.B051"]').count(),1);
   assert.match(await page.locator(".aoEditorialStudy h2").innerText(),/Offrande|oblation|sacrifice|offering/i);
-  await page.locator('[data-ao-mx-block="AO.SM.B055"]').click();
+  // B055 belongs to another Guide macro moment, so navigate by Mass Map owner.
+  await page.locator("[data-ao-mx-index]").first().click();
+  const melchisedech=page.locator('[data-ao-mx-map-block="AO.SM.B055"]');
+  await melchisedech.evaluate(el=>{for(let p=el.parentElement;p;p=p.parentElement)if(p.tagName==="DETAILS")p.open=true});
+  await melchisedech.click();
   assert.equal(await page.locator('[data-ao-editorial-block="AO.SM.B055"]').count(),1);
   await page.locator("[data-ao-mx-index]").first().click();
   assert.equal(await page.locator("[data-ao-mx-map-block]").count(),96);
