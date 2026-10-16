@@ -44,7 +44,7 @@ export function projectMassMap(catalog){
    provenance:"PUBLISHED_SUNG_GUIDE_AND_SOURCE_ONLY",relationshipStatus:catalog.crosswalkStatus});
 }
 
-export function massMapHtml(catalog,{french=false}={}){
+export function massMapHtml(catalog,{french=false,studyHtml=""}={}){
  const map=projectMassMap(catalog);
  const phaseButtons=map.phases.map(phase=>
    '<button type="button" data-ao-mx-phase="'+phase.index+'" aria-controls="ao-mx-phase-'+phase.id+'">'+
@@ -91,7 +91,7 @@ export function massMapHtml(catalog,{french=false}={}){
        "The separate Mass reader selects the actual celebration and Proper. Opening it does not jump to a numbered study stop.",
        "Le lecteur de Messe distinct choisit la célébration et son Propre. Il ne passe pas automatiquement à une étape de cette carte.")+
      '</p><button type="button" data-ao-mx-open-mass>'+tr(french,"Open Mass preparation","Ouvrir la préparation de la Messe")+' ↗</button>'+
-   '</section></main>';
+   '</section>'+studyHtml+'</main>';
 }
 
 export function massMapCss(){
