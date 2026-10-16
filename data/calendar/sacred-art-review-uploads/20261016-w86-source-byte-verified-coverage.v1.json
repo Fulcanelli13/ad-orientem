@@ -1,0 +1,63 @@
+{
+  "schema": "AO_SACRED_ART_W86_SOURCE_ACQUISITION_QA_V1",
+  "asOf": "2026-10-16",
+  "researchOnly": true,
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38888651711",
+  "artifactId": 12040762294,
+  "counts": {
+    "W86SourceCandidates": 4,
+    "actualDownloadedSources": 4,
+    "sourceOriginalSHA256Verified": 4,
+    "reviewPreviewSHA256Verified": 4,
+    "oneNewCategoryWithActualUsefulFullPainting": 107,
+    "contextualIconPhotographs": 2,
+    "contextualIconCategoryStillMissingMaster": 81,
+    "totalCategoriesWithUsablePaintingImages": 141,
+    "totalCategories": 168,
+    "categoriesMissingUsableImage": 27,
+    "updatedUniqueReviewWebpFiles": 225,
+    "sourceImageBadHashes": 0
+  },
+  "exactPhysicalOriginals": [
+    {
+      "categoryIndex": 107,
+      "artist": "Peter Paul Rubens",
+      "title": "The Flagellation of Christ",
+      "venue": "Saint Paul's Church, Antwerp, Rosary cycle (1617)",
+      "originalFilename": "De Mysteriën van de Rozenkrans. De geseling van Christus, Peter Paul Rubens, 17de eeuw, Sint-Pauluskerk Antwerpen.jpg",
+      "originalDimensions": [
+        5126,
+        6920
+      ],
+      "identityStatus": "EXACT_SOURCE_PAINTING",
+      "distinctFrom": "Small oil study at MSK Ghent accession 1910-Z",
+      "usage": "RESEARCH_ARCHIVE_ONLY_WITH_FRAMING_FLAG_PENDING"
+    },
+    {
+      "categoryIndex": 107,
+      "artist": "Peter Paul Rubens",
+      "originalFilename": "Flagellation-of-christ- Rubens.jpg",
+      "originalDimensions": [
+        1093,
+        1500
+      ],
+      "identityStatus": "SECOND_SOURCE_PHOTOGRAPH_SAME_ANTWERP_PAINTING",
+      "usage": "LOWER_RES_COMPARISON_ONLY"
+    }
+  ],
+  "contextOnly": [
+    {
+      "categoryIndex": 81,
+      "work": "Original Our Lady of Perpetual Help icon, Rome",
+      "files": [
+        "Saint Alphonsus de Liguori - Rome - Our lady of perpetual help.JPG",
+        "Sant'Alfonso all'Esquilino -Roma fc06.jpg"
+      ],
+      "sourceImageTypes": "IN_SITU_CHURCH_INTERIOR",
+      "whyNotClosed": "Original icon occupies only a part of large interior photographs; no adequate uncropped close-up high-resolution original icon master acquired."
+    }
+  ],
+  "framingPolicy": "The curator's historic 4★ ratings remain unchanged; newly added HTML crop-status field is independent of reproduction fidelity score. Never penalize external removable physical frame, and preserve uncropped source masters.",
+  "publicationRelease": false,
+  "htmlDeliveredToUser": false
+}
