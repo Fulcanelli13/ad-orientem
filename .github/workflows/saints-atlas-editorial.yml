@@ -7,6 +7,8 @@ on:
       - 'tests/saints-explore-native-lens.mjs'
       - 'tests/saints-catalogue-native.mjs'
       - 'tests/saints-full-calendar-exact-key-ledger.mjs'
+      - 'tests/saints-twelve-observed-source-resolution.mjs'
+      - 'data/saints/observed-2026-twelve-person-source-reconciliation.v1.json'
       - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
       - 'tests/saints-release-boundary.mjs'
       - 'src/find/saints-release-policy.js'
@@ -35,6 +37,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Verify all twelve observed personlike source gaps and held apostolic exception
+        run: node tests/saints-twelve-observed-source-resolution.mjs
       - name: Check 608-source-key full-calendar identity ledger
         run: node tests/saints-full-calendar-exact-key-ledger.mjs
       - name: Gate public Saints pilot to six profiles and zero research indexes
