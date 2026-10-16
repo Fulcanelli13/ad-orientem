@@ -1,0 +1,102 @@
+{
+  "schema": "AO_SACRED_ART_W87_EXACT_SOURCE_AND_CONDITIONAL_ALT_IMAGES_V1",
+  "created": "2026-10-16",
+  "scope": "Image byte acquisition before user gallery, preserving 101 historical selections",
+  "rules": [
+    "Museum_exact objects must match the pre-existing canonical SHA-256 and recorded dimensions before recording success",
+    "Other gallery versions are alternative distinct physical paintings, not old selected original photographs",
+    "If Commons photo is too large, downloaded uncropped 2600px renderer derivative still qualifies for visual research, NOT certified highest-res original",
+    "No promotion of historical ratings, no production release or rights clearance inference"
+  ],
+  "official": [
+    {
+      "index": 89,
+      "id": "nga-96688",
+      "kind": "museum_exact",
+      "url": "https://api.nga.gov/iiif/f090d0ad-5d3d-4faf-a63c-8fddd765fb23/full/full/0/default.jpg",
+      "sha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+      "objectUrl": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+      "rights": "NGA_OPENACCESS_1",
+      "dimensions": [
+        4096,
+        2395
+      ]
+    },
+    {
+      "index": 93,
+      "id": "kress-k2016",
+      "kind": "museum_exact",
+      "url": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg",
+      "sha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+      "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "rights": "PUBLIC_DOMAIN_ART_KRESS_IMAGE_REUSE_PENDING",
+      "dimensions": [
+        5448,
+        7584
+      ]
+    },
+    {
+      "index": 99,
+      "id": "kress-k2017",
+      "kind": "museum_exact",
+      "url": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg",
+      "sha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "rights": "PUBLIC_DOMAIN_ART_KRESS_IMAGE_REUSE_PENDING",
+      "dimensions": [
+        5510,
+        7700
+      ]
+    }
+  ],
+  "commons": [
+    {
+      "index": 30,
+      "id": "research:akg-gregory-rubens-1952-14",
+      "kind": "alternative_not_old_original",
+      "file": "Peter Paul Rubens - St. Gregory of Nazianzus - 1952-14 - Albright–Knox Art Gallery.tiff",
+      "work": "Rubens Saint Gregory Nazianzen 1621 (Buffalo AKG inventory 1952:14, deaccessioned 2024)",
+      "hold": "DIFFERENT_FROM_SELECTED_GIUSEPPE_FRANCHI_SOURCE; large TIFF derivative acceptable for viewing only"
+    },
+    {
+      "index": 135,
+      "id": "research:vandyck-kmska-598",
+      "kind": "alternative_not_proven_old_original",
+      "file": "Anthony van Dyck - Antwerp Lamentation KMSKA 598.jpg",
+      "work": "Anthony van Dyck The Lamentation 116 × 87.5 cm KMSKA 598",
+      "hold": "October12 original did not provide collection, cannot automatically bind"
+    },
+    {
+      "index": 135,
+      "id": "research:vandyck-kmska-403",
+      "kind": "alternative_not_proven_old_original",
+      "file": "Anthony van Dyck - Bewening van Christus - 403 - Royal Museum of Fine Arts Antwerp.jpg",
+      "work": "Anthony van Dyck Lamentation of Christ KMSKA 403",
+      "hold": "DIFFERENT physical work from KMSKA 598; old original unspecified"
+    },
+    {
+      "index": 142,
+      "id": "research:rubens-courtauld-cain-1978",
+      "kind": "exact_subject_original_not_linked_old_selection",
+      "file": "Peter Paul Rubens - Cain slaying Abel (Courtauld Institute).jpg",
+      "work": "Peter Paul Rubens Cain Slaying Abel 1608–1609 Courtauld P.1978.PG.353",
+      "hold": "No historical accession crosswalk, conditional"
+    },
+    {
+      "index": 145,
+      "id": "research:rubens-nga-45640-melchizedek",
+      "kind": "exact_subject_original_not_linked_old_selection",
+      "file": "Sir Peter Paul Rubens, The Meeting of Abraham and Melchizedek, c. 1626, NGA 45640.jpg",
+      "work": "Rubens Meeting of Abraham and Melchizedek NGA 45640 1958.4.1",
+      "hold": "Different original variants exist, historical choice unqualified"
+    },
+    {
+      "index": 129,
+      "id": "research:san-polo-station14-alternative-to-prado-p362",
+      "kind": "different_original_research_only",
+      "file": "Chiesa di San Polo (Venice) - VIA CRUCIS XIV - Entombment of Christ by Giandomenico Tiepolo.jpg",
+      "work": "San Polo station XIV painting, exact original separate from Prado P000362",
+      "hold": "Never count as a photograph of user's Prado P000362 preferred work"
+    }
+  ]
+}
