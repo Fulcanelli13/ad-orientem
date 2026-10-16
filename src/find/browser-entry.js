@@ -10,6 +10,9 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
+import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
+import { projectSaintCatalogueItems } from "./saints-catalogue.js";
+import { projectSaintSourceIndexItems } from "./saints-source-index.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
 import { ATLAS_PHYSICAL_STYLE } from "./atlas-physical-style.js";
 import { readAtlasReadingPlace, saveAtlasReadingPlace } from "./bible-atlas-reading-place.js";
@@ -111,7 +114,7 @@ function installStyle(win){
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}",
     "\n/* Compact map-first TLM controls: search and List/Map stay visible while scrolling. */\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionNav{margin-bottom:2px;padding:4px 0}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionSwitcher>summary{min-height:38px}\n.aoExploreSurface .aoTlmToolbar{position:sticky;top:76px;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 14px;background:rgba(8,12,18,.97);border-bottom:1px solid #28404e;box-shadow:0 4px 12px #0005}\n.aoTlmToolbar .aoFindSearch{padding:0;min-width:0}\n.aoTlmToolbar .aoFindSearch input{height:46px;min-height:46px;padding:9px 13px;border:1px solid #365467;color:#eef7ff;background:#14202c;border-radius:10px;font:500 15px/1.2 var(--ao-font-ui,system-ui,sans-serif)}\n.aoTlmToolbar .aoFindViewTabs{display:flex;gap:5px;padding:0}\n.aoTlmToolbar .aoFindViewTabs button{min-height:46px;min-width:58px;border-radius:9px}\n.aoTlmToolbar .aoFindViewTabs button.active{background:#143a49;color:#e6faff;border-color:#25d5fc}\n.aoExploreSurface .aoExploreTlmFilters{padding:7px 14px 4px}\n.aoExploreTlmFilters .aoExploreQuickFilters{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap;padding:0 0 5px;scrollbar-width:thin}\n.aoExploreTlmFilters .aoExploreQuickFilters button{flex:none;min-height:38px;padding:8px 11px;border-radius:9px}\n.aoExploreTlmFilters .aoExploreQuickFilters button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}\n.aoTlmProviderStrip{display:flex;align-items:center;gap:9px;min-width:0;padding:1px 0 5px}\n.aoTlmProviderStrip .aoExploreFilterLabel{flex:none}\n.aoTlmProviderStrip .aoFindAffiliations{display:flex;align-items:center;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}\n.aoTlmProviderStrip button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:42px;padding:5px 10px;flex:none;border-radius:9px}\n.aoTlmProviderStrip button img{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 0 3px #00dbff55)}\n.aoTlmProviderStrip button[data-find-affiliation=SSPX] img{filter:brightness(0) invert(1) drop-shadow(0 0 4px #347cffb3)}\n.aoTlmProviderStrip button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}\n.aoExploreSurface .aoPreliminaryDirectoryNotice{display:block;margin:1px 0 4px;padding:0;color:#a5bed2;background:none;border:0;font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}\n.aoPreliminaryDirectoryNotice>summary{display:list-item;list-style:disclosure-closed inside;min-height:26px;cursor:pointer;color:#9fd7e4;padding:5px 0}\n.aoPreliminaryDirectoryNotice[open]>summary{list-style:disclosure-open inside}\n.aoPreliminaryDirectoryNotice p{margin:2px 0 5px;padding:9px 12px;border:1px solid #314755;background:#111c28;border-radius:8px;color:#b8c9d8;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindResultMeta{padding-top:5px;padding-bottom:8px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map]{padding:0 9px 7px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{margin:0;width:100%;box-sizing:border-box;height:clamp(430px,74dvh,860px);min-height:0;border:1px solid #304858;border-radius:11px}\n.aoExploreSurface .aoFindExternalSource{display:block;margin:5px 14px 18px;padding:0 10px;border:1px solid #293b48;background:#0d1721;border-radius:10px}\n.aoExploreSurface .aoFindExternalSource summary{display:list-item;cursor:pointer;padding:12px 5px;min-height:24px;color:#a8d5e5;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface .aoFindExternalSource>div{margin:8px 0}\n.aoExploreSurface .aoFindExternalSource a{margin:4px 7px 10px 0;display:inline-flex}\n.aoExploreMapReset{position:absolute;z-index:3;top:11px;left:11px;min-height:42px;max-width:190px;padding:8px 12px;display:flex;align-items:center;gap:7px;background:rgba(10,21,32,.95);color:#ebfaff;border:1px solid #39b3d7;border-radius:9px;font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);box-shadow:0 4px 16px #0009;cursor:pointer}\n.aoExploreMapReset:focus-visible{outline:2px solid #00e5ff;outline-offset:3px}\n@media(max-width:600px){\n.aoExploreSurface .aoTlmToolbar{top:69px;padding:6px 9px;gap:6px}\n.aoTlmToolbar .aoFindSearch input{min-height:44px;height:44px;font-size:16px}\n.aoTlmToolbar .aoFindViewTabs button{min-height:44px;min-width:49px;padding:7px 9px}\n.aoExploreSurface .aoExploreTlmFilters{padding:6px 9px 4px}\n.aoTlmProviderStrip{display:block}\n.aoTlmProviderStrip .aoExploreFilterLabel{display:block;padding:0 0 2px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{height:max(410px,63dvh)}\n.aoExploreMapReset{top:9px;left:9px;min-height:44px}\n}",
     "@media(max-width:600px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{grid-template-columns:44px minmax(0,1fr) 44px;gap:8px;padding:9px 10px}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader>span{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:clamp(17px,4.5vw,21px);line-height:1.03;margin:2px 0 0;overflow-wrap:normal}\n}\n@media(max-width:355px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader small{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:18px;line-height:1.06}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{padding-block:7px;min-height:54px}\n}",
-  ].join("")+HERITAGE_STYLE;
+  ].join("")+HERITAGE_STYLE+SAINTS_SHEET_CSS;
   win.document.head?.append?.(style);
 }
 
@@ -141,6 +144,8 @@ export function createFindOwner(win=globalThis){
     view:"map",
     directoryGroup:"ALL",
     query:"",
+    saintCategory:"ALL",
+    saintScope:"profiles",
     day:"ANY",
     affiliations:[],
     unaCum:"ANY",
@@ -164,6 +169,7 @@ export function createFindOwner(win=globalThis){
 
   function glossaryTerms(){
     if(state.lens==="tlm")return ["G135","G149","G150","G449","G450","G047","G048","G049"];
+    if(state.lens==="saints")return ["G336","G321"];
     if(state.lens==="shrines")return ["G336","G334","G338","G321"];
     if(state.lens==="apparitions")return ["G336","G321","G233"];
     if(state.lens==="relics")return ["G321","G336"];
@@ -264,6 +270,16 @@ export function createFindOwner(win=globalThis){
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
     }
     if(state.lens==="traditions")return filterCustomsAtlasItems(projection.byLens.traditions,state);
+    if(state.lens==="saints"&&state.view==="list"){
+      if(state.saintScope!=="profiles"&&dataset.saintsRelease?.researchEnabled)
+        return filterExploreItems(projectSaintSourceIndexItems(dataset,state.saintScope),{query:state.query});
+      const people=filterExploreItems(projectSaintCatalogueItems(dataset),{query:state.query});
+      if(state.saintCategory==="ALL"||!dataset.saintsRelease?.researchEnabled)return people;
+      return people.filter(item=>{
+        const saint=item.saints?.[0],classifications=saint?.classification??{};
+        return [...(classifications.roles??[]),...(classifications.honours??[])].some(category=>category.code===state.saintCategory);
+      });
+    }
     const list=filterExploreItems(projection.byLens?.[state.lens]??[],{query:state.query});
     return state.lens==="pilgrimages"&&state.calendarKey?list.filter(item=>item.calendar_keys?.includes(state.calendarKey)):list;
   }
@@ -390,6 +406,7 @@ export function createFindOwner(win=globalThis){
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       view:state.view,
       filters:state,
+      saintsRelease:dataset?.saintsRelease??null,
       selectedId:state.selectedId,
       selectedOverride,
       displayLimit:state.displayLimit,
@@ -609,7 +626,11 @@ export function createFindOwner(win=globalThis){
         state.query=queryByLens.get(value)??"";
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
-      if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
+      if(value==="saints")state.view="list";
+      else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
+    }else if(key==="saintScope"&&["profiles","historical","later","doctors"].includes(value)&&
+      (value==="profiles"||dataset?.saintsRelease?.researchEnabled)){
+      state.saintScope=value;state.query="";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
@@ -1002,6 +1023,20 @@ export function createFindOwner(win=globalThis){
         chapter.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth"});
       }
       return;
+    }
+    const saintCrosslink=target?.closest?.("[data-saint-crosslink-target]");
+    if(saintCrosslink&&state.lens==="saints"&&dataset){
+      event.preventDefault?.();event.stopPropagation?.();
+      const scope=saintCrosslink.dataset.saintCrosslinkScope;
+      const id=saintCrosslink.dataset.saintCrosslinkTarget;
+      if(!["profiles","historical","later","doctors"].includes(scope)||
+         (scope!=="profiles"&&!dataset.saintsRelease?.researchEnabled))return;
+      const candidates=scope==="profiles"?projectSaintCatalogueItems(dataset):projectSaintSourceIndexItems(dataset,scope);
+      if(!candidates.some(item=>item.item_id===id))return;
+      state.view="list";state.saintScope=scope;state.saintCategory="ALL";
+      state.query="";state.selectedId=id;state.selectedPlaceId=null;
+      state.expandPlace=false;state.expandDetail=false;state.displayLimit=24;
+      void paint();return;
     }
     const openPlace=target?.closest?.("[data-explore-open-place]");
     if(openPlace){

@@ -49,9 +49,9 @@ for(const id of external){
 }
 assert.ok(pray.includes("openExternalFamilyRoute")&&pray.includes("p435930RetryExternal"),
   "Prayer external module error/retry ownership lost");
-assert.equal(EXPLORE_LENSES.length,6,"Explore lost a published search lens");
-assert.equal(new Set(EXPLORE_LENSES).size,6);
-for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
+assert.equal(EXPLORE_LENSES.length,7,"Explore should preserve six published lenses and add the Saints pilot lens");
+assert.equal(new Set(EXPLORE_LENSES).size,7);
+for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 24 Prayer family entries including Tenebrae (10 lazy) and six Explore lenses");
+console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 24 Prayer family entries including Tenebrae (10 lazy) and seven Explore lenses");
