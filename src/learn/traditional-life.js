@@ -355,8 +355,16 @@ export function createTraditionalLearnRuntime(win=globalThis){
   }
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
-    if(b.matches("[data-ao-tradlearn-back]")){e.preventDefault();if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render()}else if(win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)close();
-      else returnToObservedModuleOrigin(win,entryOrigin,{close:()=>close(),restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});return}
+    if(b.matches("[data-ao-tradlearn-back]")){
+      e.preventDefault();
+      if(state.screen==="prayer"){state.screen="module";state.prayerId=null;render();return}
+      const origin=entryOrigin,external=win?.AO_LEARN_APP_V1?.status?.()?.externalReturn;
+      close();
+      if(!external)returnToObservedModuleOrigin(win,origin,{
+        close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()
+      });
+      return;
+    }
     if(b.matches("[data-ao-tradlearn-home]")){e.preventDefault();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
