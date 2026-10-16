@@ -30,7 +30,7 @@ const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:tr
   categories:categories.length,categoryWithLinkedPreview:categories.filter(c=>c.works.some(w=>w.photos.length)).length,
   photoEntries:photos.length,distinctPreviewURLs:distinct.length,
   owner:'draft PR #887 only',ratingOrSelectedStatusChanged:false,productionPhotoRightsCertified:false,
-  browserLoadChecks:{},layoutChecks:[],broken:[],unavailable:[],pageErrors,notes:[
+  browserLoadChecks:{},layoutChecks:[],broken:[],primaryFailures:[],recoveredViaFallback:[],unavailable:[],pageErrors,notes:[
     'A linked URL does not establish an image byte acquisition, complete painted surface or reusable app rights.',
     'Network errors from Commons or institutional servers require a human retry; never infer a painting rejection.',
     'All mobile images must be contain-fit and show the full painted surface, not clipped or stretched.'
@@ -58,7 +58,7 @@ try {
       const grid=image.closest('.photogrid');
       const gridCols=grid?getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/).length:0;
       const fallback=image.dataset.fallback||'';
-      const fallbackIsBounded=!fallback || !fallback.includes('commons.wikimedia.org/wiki/Special:FilePath/') || /[?&]width=640(?:&|$)/.test(fallback);
+      const fallbackIsBounded=!fallback || !fallback.includes('commons.wikimedia.org/wiki/Special:FilePath/') || /[?&]width=500(?:&|$)/.test(fallback);
       return {photoPresent:true,objectFit:getComputedStyle(image).objectFit,
         boundedPreviewFallback:fallbackIsBounded,
         photoGridColumns:gridCols,
@@ -85,41 +85,58 @@ try {
     }
   }
 
-  // Run the actual browser <img> decode route on each distinct 950px/1050px
-  // research thumbnail. Avoid downloading full-resolution files unnecessarily.
-  // Limit concurrency to prevent accidentally flooding Commons with requests.
-  const batchSize=4;
+  // Actual browser decode for supported-size previews and bounded gallery fallback.
+  // A 500px Commons retry is always distinguished from a successful primary load.
+  const batchSize=3;
   for(let offset=0;offset<distinct.length;offset+=batchSize){
     const batch=distinct.slice(offset,offset+batchSize);
-    const results=await page.evaluate(async rows=>Promise.all(rows.map(row=>
-      new Promise(done=>{
+    const results=await page.evaluate(async rows=>Promise.all(rows.map(async row=>{
+      const decode=url=>new Promise(done=>{
         const im=new Image();im.referrerPolicy='no-referrer';im.decoding='async';
         let settled=false;
         const finish=(ok,reason)=>{
           if(settled)return;settled=true;clearTimeout(timer);
-          done({categoryIndex:row.categoryIndex,subject:row.subject,photoId:row.photoId,
-            sourcePage:row.sourcePage,preview:row.preview,ok,reason,
-            width:ok?im.naturalWidth:0,height:ok?im.naturalHeight:0});
+          done({ok,reason,width:ok?im.naturalWidth:0,height:ok?im.naturalHeight:0});
         };
         const timer=setTimeout(()=>finish(false,'timeout_14s'),14000);
         im.onload=()=>finish(im.naturalWidth>0,'loaded');
         im.onerror=()=>finish(false,'image_error_or_http_failure');
-        im.src=row.preview;
-      }))),batch);
+        im.src=url;
+      });
+      const primary=await decode(row.preview);
+      const commons=row.preview.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/');
+      const fallback=commons?row.preview.replace(/([?&]width=)\d+(?=&|$)/,'$1'+'500'):null;
+      const retryEligible=!primary.ok && fallback && fallback!==row.preview;
+      const retry=retryEligible?await decode(fallback):null;
+      const actual=primary.ok?primary:(retry?.ok?retry:primary);
+      return {categoryIndex:row.categoryIndex,subject:row.subject,photoId:row.photoId,
+        sourcePage:row.sourcePage,preview:row.preview,ok:actual.ok,
+        reason:actual.ok?(primary.ok?'primary_loaded':'500px_fallback_loaded'):(retry?.reason||primary.reason),
+        width:actual.width,height:actual.height,primaryOk:primary.ok,primaryReason:primary.reason,
+        fallbackTried:Boolean(retryEligible),fallbackOk:retry?.ok??null,
+        fallbackURL:retryEligible?fallback:null};
+    })),batch);
     for(const r of results){
       if(!r.ok)outcome.broken.push(r);
       else if(r.width<300||r.height<300)outcome.unavailable.push({...r,reason:'tiny_preview_requires_photo_quality_review'});
+      if(!r.primaryOk)outcome.primaryFailures.push(r);
+      if(r.reason==='500px_fallback_loaded')outcome.recoveredViaFallback.push(r);
     }
     if((offset+batch.length)%32===0)process.stdout.write('Checked '+(offset+batch.length)+'/'+distinct.length+' source preview URLs\n');
     await page.waitForTimeout(220);
   }
-  outcome.browserLoadChecks={successful:distinct.length-outcome.broken.length,
+  outcome.browserLoadChecks={primarySuccessful:distinct.length-outcome.primaryFailures.length,
+    recoveredViaFallback:outcome.recoveredViaFallback.length,
+    successful:distinct.length-outcome.broken.length,
     failures:outcome.broken.length,undersizeMobileCandidates:outcome.unavailable.length,
     note:'Failures may include external 403/429/network outages; retry before treating as an invalid artwork.'};
   const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow||!x.boundedPreviewFallback));
   outcome.layoutFailures=badLayout;
   if(pageErrors.length)outcome.notes.push('Gallery JavaScript raised errors; review pageErrors.');
   writeFileSync(output+'/report.json',JSON.stringify(outcome,null,2)+'\n');
+  writeFileSync(output+'/primary-failures.tsv',
+    'categoryIndex\tphotoId\tprimaryReason\tfallbackTried\tfallbackOk\tpreview\tfallbackURL\n'+outcome.primaryFailures.map(p=>
+      [p.categoryIndex,p.photoId,p.primaryReason,p.fallbackTried,p.fallbackOk,p.preview,p.fallbackURL].join('\t')).join('\n')+'\n');
   writeFileSync(output+'/broken-previews.tsv',
     'categoryIndex\tsubject\tphotoId\treason\tpreview\tsourcePage\n'+outcome.broken.map(p=>
       [p.categoryIndex,p.subject,p.photoId,p.reason,p.preview,p.sourcePage].join('\t')).join('\n')+'\n');
