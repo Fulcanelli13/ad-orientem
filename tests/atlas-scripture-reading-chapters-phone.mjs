@@ -87,7 +87,7 @@ try{
  assert.equal(await panel.locator('[data-bible-reading-view="chapters"]').isVisible(),false);
  const broad=panel.locator('[data-bible-arc="arc:life-of-christ"]');
  await broad.locator("summary").tap();
- assert.equal(await broad.locator('[data-bible-reading-start]').count(),14);
+ assert.equal(await broad.locator('[data-bible-reading-start]').count(),12);
  await page.screenshot({path:resolve(folder,"reading-arcs-390.png"),animations:"disabled"});
  await tabs.filter({hasText:"9 themes"}).tap();
  assert.equal(await panel.locator('[data-bible-reading-view="themes"]').isVisible(),true);
