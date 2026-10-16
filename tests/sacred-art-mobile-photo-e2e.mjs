@@ -74,7 +74,13 @@ try {
       noImageFrameOverflow:!view.photoPresent||(view.imageBoxWidth<=view.frameWidth+2 &&
         view.imageBoxHeight<=view.frameHeight+2)});
     if([1,11,103,135,142,152].includes(index)){
-      try{await page.screenshot({path:output+'/mobile-'+String(index).padStart(3,'0')+'.png',fullPage:false,animations:'disabled',timeout:12000});}
+      try{
+        // Capture the actual painting review card, not the page header after render() scrolls to top.
+        const card=page.locator('main .photo').first();
+        await card.scrollIntoViewIfNeeded({timeout:12000});
+        await page.waitForTimeout(750); // Allow newly visible lazy-loaded thumbnail to start decoding.
+        await card.screenshot({path:output+'/mobile-'+String(index).padStart(3,'0')+'.png',animations:'disabled',timeout:12000});
+      }
       catch(err){outcome.notes.push('Screenshot '+index+': '+String(err).slice(0,120));}
     }
   }
