@@ -60,11 +60,14 @@ assert.equal(commonCrosswalk.schema,"AO_P1_CANONICAL_COMMON_APP_SOURCE_CROSSWALK
 assert.equal(commonCrosswalk.rows.length,7);
 assert.equal(commonCrosswalk.sourcePathsVerified,7);
 assert.equal(commonCrosswalk.directTrilingualSevenSectionPaths,6);
-assert.equal(commonCrosswalk.sourcePathsNeedingInheritedLanguageSections,1);
+assert.equal(commonCrosswalk.sourcePathsNeedingInheritedLanguageSections,0);
+assert.equal(commonCrosswalk.allSevenSectionSourceCompletenessVerified,7);
+assert.equal(commonCrosswalk.distinctSharedDoctorVernacularRecoveries,18);
 assert.equal(forms.sourceOwnedCommonPathsMapped,7);
 assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).length,7);
 assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourcePath==null).length,31);
-assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritancePending===true).length,1);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritancePending===true).length,0);
+assert.equal(forms.forms.filter(x=>x.internalMissalReference.sourceInheritanceVerified===true).length,1);
 assert.deepEqual(new Set(forms.forms.filter(x=>x.internalMissalReference.sourcePath!=null).map(x=>x.internalMissalReference.sourcePath)),new Set(["Commune/C4","Commune/C4-1","Commune/C4a","Commune/C5","Commune/C5-1","Commune/C5a","Commune/C5b"]));
 for(const row of commonCrosswalk.rows){
  const form=forms.forms.find(x=>x.id===row.researchId);
@@ -83,6 +86,9 @@ assert.equal(doctorPontiff.candidateCanonicalSourcePath,"Commune/C4a");
 assert.equal(doctorNonPontiff.candidateCanonicalSourcePath,"Commune/C5a");
 assert.deepEqual(doctorNonPontiff.directLanguageSectionCoverage,{la:7,en:2,fr:2});
 assert.equal(doctorNonPontiff.sharedFamilyForIncompleteLanguageSections,"Commune/C4a");
+assert.equal(doctorNonPontiff.verifiedBorrowedVernacularCount,18);
+assert.equal(doctorNonPontiff.inheritedLanguageSectionsComplete,true);
+assert.equal(doctorNonPontiff.nonPontiffVariantPrayersPreserved,true);
 assert.deepEqual(doctorNonPontiff.legitimateVariantSections,["Secreta","Postcommunio"]);
 assert.equal(commonCrosswalk.newmanExample.permittedFormularyChoice,null);
 assert.ok(forms.forms.every(x=>x.internalMissalReference.canonicalResearchFormularyId===x.id&&x.internalMissalReference.mustNotRedirectToExternalSource===true));
