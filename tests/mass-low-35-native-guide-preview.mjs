@@ -22,7 +22,7 @@ for(const entry of all){
   if(!entry.anchorCueCandidate)continue;
   assert(cues.has(entry.anchorCueCandidate));
   const guide=lowGuideForActiveCue(legacy,{
-    massForm:"LOW_1962",activeCueId:entry.anchorCueCandidate,
+    massForm:"LOW_1962",activeCueId:entry.anchorCueCandidate,lowCorpus:corpus,
     allowResearchPreview:true,applicableConditionalGuideIds:eligible,
   });
   assert.equal(guide?.key,entry.key,"source cue must select the existing research Guide");
@@ -33,6 +33,18 @@ for(const entry of all){
   assert.equal(guide.detail,null);
   assert.equal(guide.scholaClock,null);
 }
+assert.equal(lowGuideForActiveCue(legacy,{
+ massForm:"LOW_1962",activeCueId:"AO.SM.C0002",
+ allowResearchPreview:true,applicableConditionalGuideIds:eligible,
+}),null,"Without a corpus, non-anchor word cannot inherit Guide");
+assert.equal(lowGuideForActiveCue(legacy,{
+ massForm:"LOW_1962",activeCueId:"AO.SM.C0002",lowCorpus:corpus,
+ allowResearchPreview:true,applicableConditionalGuideIds:eligible,
+})?.key,"LOW.002","Same actual low macro may inherit latest valid anchor");
+assert.equal(lowGuideForActiveCue(legacy,{
+ massForm:"LOW_1962",activeCueId:"AO.SM.C0225",lowCorpus:corpus,
+ allowResearchPreview:true,applicableConditionalGuideIds:eligible,
+}),null,"Stale Fraction Guide must not leak into next Communion/Canon macro");
 assert.equal(all.filter(e=>e.anchorCueCandidate).length,33);
 assert.equal(all.filter(e=>!e.anchorCueCandidate).length,2);
 assert.equal(lowGuideForActiveCue(legacy,{massForm:"LOW_1962",activeCueId:"AO.SM.C0001"}),null);
@@ -66,7 +78,7 @@ const mount=(form,opts)=>{
 assert.throws(()=>createReaderDomAdapter({root:root(),lowGuideResearchPreview:{index:legacy}}),
   /explicit research-only/);
 let adapter=mount("LOW",{lowGuideResearchPreview:{
- index:legacy,allowResearchPreview:true,applicableConditionalGuideIds:eligible,
+ index:legacy,lowCorpus:corpus,allowResearchPreview:true,applicableConditionalGuideIds:eligible,
 }});
 for(const e of all.filter(e=>e.anchorCueCandidate)){
  const got=adapter.renderMoment(active(e.anchorCueCandidate));
@@ -80,7 +92,7 @@ assert.equal(initial.guide?.text,legacy.entries["LOW.002"].short);
 const before=adapter.renderMoment(active("AO.SM.C0053"));
 assert.equal(before.guide?.researchPreview,true);
 adapter.destroy();
-adapter=mount("LOW",{lowGuideResearchPreview:{index:legacy,allowResearchPreview:true}});
+adapter=mount("LOW",{lowGuideResearchPreview:{index:legacy,lowCorpus:corpus,allowResearchPreview:true}});
 assert.equal(adapter.renderMoment(active("AO.SM.C0053")).guide,null,
  "Gloria was allowed despite missing applicability");
 assert.equal(adapter.renderMoment(active("AO.SM.C0089")).guide,null,
@@ -88,7 +100,7 @@ assert.equal(adapter.renderMoment(active("AO.SM.C0089")).guide,null,
 assert.equal(adapter.renderMoment(active("AO.SM.C0001")).guide?.researchPreview,true);
 adapter.destroy();
 adapter=mount("MISSA_CANTATA_INCENSE",{lowGuideResearchPreview:{
- index:legacy,allowResearchPreview:true,applicableConditionalGuideIds:eligible,
+ index:legacy,lowCorpus:corpus,allowResearchPreview:true,applicableConditionalGuideIds:eligible,
 }});
 assert.equal(adapter.renderMoment(active("AO.SM.C0001")).guide,null,
  "Low research entered Sung Mass");
