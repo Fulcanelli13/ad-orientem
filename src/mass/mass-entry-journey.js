@@ -103,7 +103,7 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  // must never be hidden by the legacy host calendar layout on mobile.
  context.hidden=false;
  context.style.setProperty("display","grid","important");
- lead.append(kindKicker,selected,context,formIdentity,multiple,observed,readiness,choice);
+ // A liturgical-identity warning (notably Good Friday) must be visible without\n // opening the separate Proper/source details disclosure.\n lead.append(kindKicker,selected,context,formIdentity,note,multiple,observed,readiness,choice);
  const focus=node(doc,"aside","aoMassJourneyEssential");
  focus.dataset.massJourneyEssential="";focus.hidden=true;
  focus.setAttribute("aria-label",tr(fr,"Particular ceremonies","Cérémonies particulières"));
@@ -224,7 +224,7 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  launch.append(beginHelp);
  const sources=node(doc,"details","aoMassJourneySources");
  sources.dataset.massJourneySources="";
- sources.append(node(doc,"summary","",tr(fr,"Proper and sources","Propre et sources")),review,resolver,note);
+ sources.append(node(doc,"summary","",tr(fr,"Proper and sources","Propre et sources")),review,resolver);
  // Keep Calendar directly reachable without first expanding another disclosure.
  root.replaceChildren(title,lead,calendar,focus,before,order,sources,launch);
  root.dataset.massJourneyArranged="true";
