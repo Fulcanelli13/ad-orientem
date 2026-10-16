@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {exactCalendarPrincipalSaintProfile,loadCalendarSaintProfileBridge} from "../src/calendar/calendar-saint-explore-handoff.js";
+import {exactCalendarPrincipalSaintProfile,exactCalendarSupplementarySaintProfile,loadCalendarSaintProfileBridge} from "../src/calendar/calendar-saint-explore-handoff.js";
 import {applySaintsReleaseBoundary} from "../src/find/saints-release-policy.js";
 import {projectSaintCatalogueItems} from "../src/find/saints-catalogue.js";
+import {buildReviewedSanctoralCards} from "../src/calendar/reviewed-sanctoral-cards.js";
+import {renderSecondarySaintSection} from "../src/calendar/sanctoral-day-ui.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const bridge=read("data/saints/parallel-owner-identity-bridge-20261015.v1.json");
@@ -23,6 +25,45 @@ assert.equal(exactCalendarPrincipalSaintProfile({...probe,date:"2032-10-03"}).sa
   "No arbitrary 2026-only cutoff; require exact observed source for future years");
 const pilot=projectSaintCatalogueItems(dataset);
 assert.equal(pilot.length,6);
+const modernData=read("data/calendar/living-sanctoral-read-model.v1.json");
+const supplementary=buildReviewedSanctoralCards({
+  date:"2026-10-01",language:"en",jurisdiction:"UNSPECIFIED",
+  observedPrincipalId:"sancti:10-01:3:w",observedCommemorationIds:[],
+  ...modernData
+});
+const modernTherese=supplementary.find(x=>x.id==="saint.therese-lisieux");
+assert(modernTherese,"Published source-backed supplementary St Thérèse must exist on 1 October");
+const secondaryLink=exactCalendarSupplementarySaintProfile({
+  date:"2026-10-01",card:modernTherese,bridge
+});
+assert.equal(secondaryLink.saintsId,"saint:therese-of-lisieux");
+assert.equal(secondaryLink.readOnly,true);
+assert.equal(secondaryLink.massSelectionAuthority,"NONE");
+assert.equal(exactCalendarSupplementarySaintProfile({
+ date:"2026-10-03",card:modernTherese,bridge}),null,
+ "Modern 1 Oct date cannot be mistaken for the 1962 principal 3 Oct day");
+assert.equal(exactCalendarSupplementarySaintProfile({
+ date:"2026-10-01",card:{...modernTherese,massSelectionAuthority:"PERMITTED"},bridge
+}),null,"Supplementary profile navigation cannot confer Mass permission");
+assert.equal(exactCalendarSupplementarySaintProfile({
+ date:"2026-10-01",card:{...modernTherese,changes1962Principal:true},bridge
+}),null);
+assert.equal(exactCalendarSupplementarySaintProfile({
+ date:"2026-10-01",card:{...modernTherese,id:"saint.francois-de-montmorency-laval"},bridge
+}),null,"Laval persons must never be conflated by surname");
+assert.equal(exactCalendarSupplementarySaintProfile({
+ date:"2026-10-01",card:modernTherese,bridge:{...bridge,identity_links:[]}
+}),null);
+const secondaryHtml=renderSecondarySaintSection(supplementary,{
+ language:"en",profileIds:[modernTherese.id]
+});
+assert(secondaryHtml.includes('data-cal-secondary-saint-profile="saint.therese-lisieux"'));
+assert(!secondaryHtml.includes("data-cal-mass"));
+assert(renderSecondarySaintSection(supplementary,{language:"en"}).includes("Also honoured"));
+assert(!renderSecondarySaintSection(supplementary,{language:"en"}).includes("data-cal-secondary-saint-profile"));
+assert(renderSecondarySaintSection(supplementary,{language:"fr",
+ profileIds:[modernTherese.id]}).includes("Vie &amp; sources")===false);
+
 const exact=pilot.filter(x=>x.saint_id===link.saintsId);
 assert.equal(exact.length,1);
 assert.equal(exact[0].item_id,"saints:person:saint:therese-of-lisieux");
@@ -61,6 +102,9 @@ const calendar=readFileSync(new URL("../src/calendar/calendar-runtime.js",import
 const find=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
 assert(calendar.includes("exactCalendarPrincipalSaintProfile({date:target,principalId:observed,bridge})"));
 assert(calendar.includes("owner?.openSaintProfile?.(exact.saintsId)"));
+assert(calendar.includes("exactCalendarSupplementarySaintProfile({date:selected,card,bridge:saintProfileBridge})"));
+assert(calendar.includes("openSupplementarySaintProfile(secondaryProfile)"));
+
 assert(calendar.includes('globalThis.AO_MODULES?.open?.("today.saint"'),
   "Existing saint panel must remain the fallback on unmapped identities");
 assert(find.includes("async function verifiedSaintProfileItem(saintsId)"));
