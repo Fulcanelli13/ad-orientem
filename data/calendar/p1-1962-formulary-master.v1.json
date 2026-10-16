@@ -238,7 +238,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "originalSourceStructure": "NO_STANDALONE_MISSA_BLOCK_OFFICE_OR_DERIVED_VARIANT",
+        "sourceStructureEvidence": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+        "printedMassIndependenceUnverified": true
       }
     },
     {
@@ -434,7 +437,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "originalSourceStructure": "NO_STANDALONE_MISSA_BLOCK_OFFICE_OR_DERIVED_VARIANT",
+        "sourceStructureEvidence": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+        "printedMassIndependenceUnverified": true
       }
     },
     {
@@ -630,7 +636,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "originalSourceStructure": "NO_STANDALONE_MISSA_BLOCK_OFFICE_OR_DERIVED_VARIANT",
+        "sourceStructureEvidence": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+        "printedMassIndependenceUnverified": true
       }
     },
     {
@@ -728,7 +737,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "originalSourceStructure": "NO_STANDALONE_MISSA_BLOCK_OFFICE_OR_DERIVED_VARIANT",
+        "sourceStructureEvidence": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+        "printedMassIndependenceUnverified": true
       }
     },
     {
@@ -3929,5 +3941,6 @@
   "sourceEvidenceAudit": "data/calendar/p1-additional-common-app-audit.v1.json",
   "composedCompleteCommonVariants": 5,
   "partialSourceReconciliationVerified": 2,
-  "verifiedRecoveredSourceLanguageSections": 25
+  "verifiedRecoveredSourceLanguageSections": 25,
+  "sourceStructureNonStandaloneOfficeVariantCount": 4
 }
