@@ -9,6 +9,7 @@ import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
+import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -399,7 +400,9 @@ export async function prepareNativeReaderPreview({
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
-    : projectSourceFirst48Presentation(model);
+    : String(model.presentationMode??"").toUpperCase()==="MISSAL"
+      ? projectGranularMissalCards(model)
+      : projectSourceFirst48Presentation(model);
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
@@ -2315,6 +2318,13 @@ export async function mountNativeReaderPreview({
       sectionTitle:visibleCard.title,
       cardTitle:visibleCard.title,
       cardUpdate:true,
+      missalHeadings:String(ready.prepared?.readerPreferences?.mode ??
+        ready.prepared?.session?.resolvedMass?.presentationMode??"").toUpperCase()==="MISSAL" ||
+        String(root.dataset.r17PresentationMode??"").toUpperCase()==="MISSAL"
+          ? missalPrayerHeadingsForCard(visibleCard,{
+              language:ready.prepared?.readerPreferences?.language??"en",
+            })
+          : [],
       paragraphs:withPublishedCanonParagraphRubrics(
         visibleCard.paragraphs,ready.data?.rubricEvents??null,{
           form:ready.prepared?.session?.resolvedMass?.form,
