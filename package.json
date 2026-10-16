@@ -25,7 +25,7 @@
     "test:browser-entry": "node tests/browser-entry.mjs",
     "test:proper-reader-slots": "node tests/proper-reader-slots.mjs",
     "test:reader-1962-orations": "node tests/reader-1962-multiple-oration-boundaries.mjs",
-    "test:reader-model": "node tests/reader-model.mjs && node tests/reader-print-booklet.mjs",
+    "test:reader-model": "node tests/reader-model.mjs && node tests/reader-print-booklet.mjs && node tests/reader-gospel-heading.mjs",
     "test:reader-gate": "node tests/reader-gate.mjs",
     "test:reader-data": "node tests/reader-data.mjs",
     "test:reader-native-preview": "node tests/reader-native-preview.mjs",

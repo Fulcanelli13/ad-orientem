@@ -1,0 +1,44 @@
+{
+  "schema": "ao.shrines.source-url-drift-review.v1",
+  "as_of": "2026-10-16",
+  "status": "SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_AUTHORITY_CHANGE",
+  "source_registry": "data/shrines/source-registry.v1.json",
+  "original_source_id_contract": "ORIGINAL_SOURCE_IDS_PRESERVED",
+  "affected_shrine_id": "shrine:GB:holywell-st-winefride",
+  "affected_place_id": "place:GB:holywell-st-winefride",
+  "obsolete_host": "www.stwinefrideswell.org.uk",
+  "observed_current_obsolete_host_subject": "non-GamStop gambling/casino listings, not St Winefride's Catholic shrine",
+  "obsolete_root_checked": "https://www.stwinefrideswell.org.uk/",
+  "current_official_domain": "www.stwinefridesshrine.org",
+  "independent_ecclesial_confirmation": "https://www.cbcew.org.uk/jubilee-churches/",
+  "records": [
+    {
+      "source_id": "SHR-HOLYWELL-CONTACT",
+      "historical_url": "https://www.stwinefrideswell.org.uk/contact.html",
+      "replacement_url": "https://www.stwinefridesshrine.org/blank-2",
+      "replacement_title": "Contact",
+      "evidence_scope": "CURRENT_SHRINE_ADDRESS_AND_CONTACT",
+      "claim_limit": "The page does not prove any individual's birthplace, deathplace or relic authenticity"
+    },
+    {
+      "source_id": "PIL-HOLYWELL-FEAST",
+      "historical_url": "https://www.stwinefrideswell.org.uk/pilgrimages-2022--group-bookings.html",
+      "replacement_url": "https://www.stwinefridesshrine.org/pilgrimages",
+      "replacement_title": "Pilgrimages & Group Bookings",
+      "evidence_scope": "CURRENT_PILGRIMAGE_PROGRAMME_AND_GROUP_BOOKING",
+      "claim_limit": "The programme is year-specific; no new timeless 3 November historical 1962, diocesan or universal feast is certified from this page"
+    }
+  ],
+  "unchanged": [
+    "source_id values",
+    "shrine_id",
+    "place_id",
+    "associated_saints names including St Winefride and St Beuno",
+    "geographic coordinates",
+    "Calendar semantic key and observance",
+    "relic provenance/authenticity status",
+    "person and artwork release status"
+  ],
+  "separate_traditional_narrative": "https://www.stwinefridesshrine.org/the-legend-of-st-winefride",
+  "traditional_narrative_qualification": "The shrine explicitly describes the Winefride/Beuno account as a legend; it is not independently certified ancient life-event data."
+}
