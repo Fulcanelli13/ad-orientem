@@ -37,7 +37,7 @@ def acquire(row):
      "status":"DOWNLOADED_FOR_VISUAL_PHONE_INSPECTION", "nativeResolution":[width,height],
      "phoneProofDimensions":list(screen.size),"sourceSha256":sha,
      "sourceFile":rawname,"previewFile":prevname,"phoneProofFile":phonename,
-     "sourceUrl":resolved,"sourcePage":info["sourcePage"],"fileLicence":info["license"],
+     "sourceUrl":resolved,"sourcePage":info["sourcePage"],"fileLicence":info["license"],"conservativePhotoRightsNote":row.get("photoRightsPolicy",row.get("licenseExpectation","")),
      "originalEvidenceStatus":row["physicalStatus"],"automaticApproval":False,
      "publishedInApp":False,"ratingsChanged":False}
 def sheet(rows):
@@ -72,7 +72,7 @@ def main():
            "strictAutomaticallyClosed":0}
     (OUT/"w98-source-mobile-quality-proof.json").write_text(json.dumps({
        "schema":"AO_SACRED_ART_W98_PHONE_DISPLAY_SOURCE_PROOF_V1","counts":stats,
-       "photos":rows,"noPixelsThreshold":True,"strictCategoryCoveragePrior":"146/168",
+       "photos":rows,"visualExclusions":json.loads(SRC.read_text()).get("visualExclusions",[]),"noPixelsThreshold":True,"strictCategoryCoveragePrior":"146/168",
        "mobileQualityRequiresVisualInspection":True},indent=2,ensure_ascii=False)+"\n")
     print("W98_COMPLETE",json.dumps(stats),flush=True)
 if __name__=="__main__":main()
