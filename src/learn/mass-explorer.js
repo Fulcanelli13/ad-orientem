@@ -230,7 +230,7 @@ export function massExplorerCss(){
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map";
-  let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0;
+  let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0,studyStageId=null;
   const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
   const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
@@ -258,11 +258,13 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     }
     const heading=node.querySelector("main h1");
     heading?.setAttribute("tabindex","-1");
+    const returnToStage=restoreIndex&&studyStageId?
+      [...node.querySelectorAll("[data-ao-mx-stage]")].find(button=>button.dataset.aoMxStage===studyStageId):null;
     const returnToIndex=restoreIndex&&indexFocusKey?
       [...node.querySelectorAll("[data-ao-mx-moment]")].find(button=>button.dataset.aoMxMoment===indexFocusKey):null;
     const returnToStudy=restoreMoment?
       node.querySelector('[data-ao-mx-study],[data-ao-mx-stage]'):null;
-    (returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
+    (returnToStage||returnToIndex||returnToStudy||(focusBlock&&selected?selected:heading))?.focus?.({preventScroll:true});
     return true;
   }
   function setMoment(key,selectedBlockId=null){
@@ -270,6 +272,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     if(momentKey===null){
       indexScrollTop=safeScroll(root()?.scrollTop);
       indexFocusKey=key;
+      studyStageId=null;
     }
     momentKey=key;
     blockId=selectedBlockId&&catalog.byBlock.get(selectedBlockId)?.key===key?selectedBlockId:null;
@@ -310,7 +313,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         event.preventDefault();
         if(t.dataset.aoMxView==="map"||t.dataset.aoMxView==="list"){
           indexView=t.dataset.aoMxView;momentKey=null;blockId=null;
-          indexScrollTop=0;indexFocusKey=null;paint();
+          indexScrollTop=0;indexFocusKey=null;studyStageId=null;paint();
         }
         return;
       }
@@ -362,7 +365,13 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.dataset.aoMxStudy||t.dataset.aoMxStage){
         event.preventDefault();
         const stageId=t.dataset.aoMxStudy||t.dataset.aoMxStage;
-        const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,
+        if(!/^MF0[1-8]$/.test(stageId))return;
+        if(!momentKey){
+          indexScrollTop=safeScroll(root()?.scrollTop);
+          indexFocusKey=null;
+          studyStageId=stageId;
+        }
+        const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,studyStageId,
           momentScrollTop:safeScroll(root()?.scrollTop)};
         close(false);
         void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass",{stageId,explorerReturn})
@@ -388,6 +397,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     indexView=opts.indexView==="list"||opts.view==="list"?"list":"map";
     indexScrollTop=safeScroll(opts.indexScrollTop);
     indexFocusKey=catalog.byKey.has(opts.indexFocusKey)?opts.indexFocusKey:null;
+    studyStageId=catalog.formationStages.some(x=>x.id===opts.studyStageId)?opts.studyStageId:null;
     momentScrollTop=safeScroll(opts.momentScrollTop);
     const requested=opts.blockId&&catalog.byBlock.get(opts.blockId);
     momentKey=requested?.key??(catalog.byKey.has(opts.momentKey)?opts.momentKey:null);
@@ -397,7 +407,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,
+    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,studyStageId,moments:catalog?.sequence.length??0,
     sourceBlocks:catalog?.byBlock.size??0,formationLessons:catalog?.formationStages.length??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
