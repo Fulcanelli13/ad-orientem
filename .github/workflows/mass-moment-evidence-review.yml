@@ -1,0 +1,43 @@
+name: Mass Moment Historical Evidence Review
+on:
+  pull_request:
+    paths:
+      - 'data/learn/research/mass-moment-author-evidence-review-20261016.v1.json'
+      - 'src/learn/mass-moment-evidence-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-moment-evidence-review.mjs'
+      - 'tests/mass-moment-evidence-phone.mjs'
+      - '.github/workflows/mass-moment-evidence-review.yml'
+  push:
+    branches:
+      - research/mass-moment-author-evidence-review-20261016
+    paths:
+      - 'data/learn/research/mass-moment-author-evidence-review-20261016.v1.json'
+      - 'src/learn/mass-moment-evidence-review.js'
+      - 'src/learn/mass-formation.js'
+      - 'tests/mass-moment-evidence-review.mjs'
+      - 'tests/mass-moment-evidence-phone.mjs'
+      - '.github/workflows/mass-moment-evidence-review.yml'
+permissions:
+  contents: read
+jobs:
+  research-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JavaScript syntax
+        run: |
+          node --check src/learn/mass-moment-evidence-review.js
+          node --check src/learn/mass-formation.js
+          node --check tests/mass-moment-evidence-phone.mjs
+      - run: node tests/mass-moment-evidence-review.mjs
+      - run: node tests/mass-moments-study.mjs
+      - run: node tests/mass-formation.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-moment-evidence-phone.mjs
+      - run: node tests/mass-moments-phone.mjs
