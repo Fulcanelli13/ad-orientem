@@ -54,6 +54,17 @@ for(const [id,person] of index){
     neverInventMassAuthority:true
   });
 }
+// Doctors already honoured in the 1962 calendar retain their original
+// identity. They are NOT additional post-1960 canonizations.
+const historicalDoctorOnly=doctors.doctors.filter(d=>!index.has(d.canonicalPersonId)).map(d=>({
+  canonicalPersonId:d.canonicalPersonId,name:d.name,
+  canonizedOn:null,historical1962SourceId:d.observanceSourceIdentity||null,
+  modernDates:dateMap.get(d.canonicalPersonId)||[],
+  doctorDeclaredOn:d.declarationDate||null,
+  reviewPriority:dateMap.has(d.canonicalPersonId)?"TRADITIONAL_DATE_IDENTITY_RECONCILIATION":"HISTORICAL_DOCTOR_IDENTITY_ONLY",
+  neverInventMassAuthority:true
+}));
+rows.push(...historicalDoctorOnly);
 rows.sort((a,b)=>a.reviewPriority.localeCompare(b.reviewPriority)||a.canonicalPersonId.localeCompare(b.canonicalPersonId));
 const groups=census.groups.map(group=>{
  const id="canon-group."+group.id,entries=dateMap.get(id)||[];
@@ -70,8 +81,9 @@ const summary={
  censusPost1960NamedPersons:census.persons.length,
  additionalUniquePilotPersons:index.size-census.persons.length,
  distinctNamedResearchPersons:index.size,
+ existingDoctorOnlyPersons:historicalDoctorOnly.length,
+ combinedCanonicalSaintAndDoctorPersons:rows.length,
  groupProfiles:groups.length,
- doctorsOnSeparateIdentityObjects:0,
  doctorCensus:doctorMap.size,
  dateSourceRows:dates.observances.length,
  datedIndividualPersonProfiles:rows.filter(x=>x.modernDates.length).length,
@@ -90,6 +102,9 @@ const report={
 };
 assert.equal(new Set(rows.map(x=>x.canonicalPersonId)).size,rows.length);
 assert.equal(new Set(groups.map(x=>x.canonicalGroupId)).size,groups.length);
+assert.ok(dates.observances.every(x=>x.subjectId.startsWith("canon-group.")||
+  rows.some(p=>p.canonicalPersonId===x.subjectId)),
+  "Every modern date witness must resolve to a canonical person or group");
 assert.equal(summary.dateSourceRows,14);
 assert.equal(summary.doctorCensus,38);
 assert.ok(rows.some(x=>x.canonicalPersonId==="saint.carlo-acutis"&&x.modernDates.length===0),
