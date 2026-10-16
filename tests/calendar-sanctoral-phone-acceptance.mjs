@@ -125,6 +125,23 @@ try{
      "Newman 2026 memorial erroneously back-projected to 2025");
    assert.equal(await page.locator(".aoCalV2Hero").count(),1,
      "1962 principal feast disappeared when changing days");
+   if(width===390){
+     // Original RG claims are shown only for the source-resolved 1962 occurrence.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-11-01")),true);
+     const exact=page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-rubric-claim="ALL_SAINTS_OCCURRENT_SUNDAY"]');
+     await exact.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await exact.waitFor({state:"visible",timeout:12000});
+     assert.match(await exact.innerText(),/RG 108\(a\).*RG 111\(a\)/);
+     const witness=exact.locator("a");
+     assert.match(await witness.getAttribute("href"),/^https:\/\/ordo\.fsspx\.org\/day\/2026-11-01/);
+     assert.equal(await witness.getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-11")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8.store.getState().resolution?.date==="2026-10-11");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-rubric-claim]").count(),0,
+       "No date-specific clauses may survive when another observance is selected");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
