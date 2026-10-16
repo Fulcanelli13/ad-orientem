@@ -37,7 +37,8 @@ export const LEARN_LAYOUT=Object.freeze({
       title:Object.freeze(["Mass & Liturgy","Messe & liturgie"]),
       description:Object.freeze(["Understand traditional Catholic worship and learn how to take part in it.","Comprendre le culte catholique traditionnel et apprendre à y prendre part."]),
       items:Object.freeze([
-        Object.freeze({id:"learn.mass",type:"course",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["A guided course through the order, meaning, history and roles of the Roman Mass.","Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
+        Object.freeze({id:"learn.mass_explorer",type:"reference",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["Explore the 1962 Sung Mass prayer by prayer, or study its meaning through the eight existing source-backed lessons.","Explorer la Messe chantée de 1962 prière par prière, ou approfondir son sens dans les huit leçons existantes et sourcées."])}),
+        Object.freeze({id:"learn.mass",type:"course",featured:false,title:Object.freeze(["Eight thematic lessons","Huit leçons thématiques"]),description:Object.freeze(["Continue directly to the existing theological and liturgical course. Also accessible through Understand the Mass.","Accéder directement au parcours théologique et liturgique existant, également disponible dans Comprendre la Messe."])}),
         Object.freeze({id:"learn.serve_mass.responses",type:"practice",featured:false,title:Object.freeze(["Serve Low Mass","Servir la Messe basse"]),description:Object.freeze(["Exact minister-response trainer from the certified 1962 corpus.","Entraînement exact aux réponses du servant d’après le corpus certifié de 1962."])}),
 
       ])
@@ -300,7 +301,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id!=="liturgy-tradition"||item.id!=="learn.mass").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
         :`<div class="aoLearnIntentLayout">
           <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Domaines de formation":"Formation subjects")}">
             <div class="aoLearnIntentHeading"><small>${esc(langFr?"LES DOMAINES":"SUBJECTS")}</small><h2>${esc(langFr?"Choisir un domaine":"Choose a subject")}</h2></div>

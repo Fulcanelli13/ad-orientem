@@ -127,6 +127,24 @@ try{
       assert.equal(await nested.getAttribute("open"),null,label+" claim evidence should remain folded");
       assert.ok(await index.locator('a[href^="https://"]').count()>0,
        label+" existing citations not reachable on first tap");
+      if(surface==="mass"){
+       const sourceButton=index.locator('[data-ao-reference-study-source="SRC-MEDIATOR-DEI"]');
+       assert.equal(await sourceButton.count(),1,label+" contextual source reader is not available");
+       await sourceButton.click();
+       const study=page.locator('[data-ao-mf-source-reader="SRC-MEDIATOR-DEI"]');
+       await study.waitFor({state:"visible",timeout:12000});
+       assert.ok(await study.locator('[data-ao-mf-source-claim]').count()>=1,
+         label+" original claim backlinks lost");
+       assert.equal(await study.locator('[data-ao-mf-source-original="SRC-MEDIATOR-DEI"]').count(),1);
+       assert.equal(await node.evaluate(element=>element.inert),true,label+" original lesson must be inert in source context");
+       assert.match(await study.innerText(),lang==="fr"?/non des citations ou des passages vérifiés/:/not quotations or verified passages/,
+         label+" must distinguish claims from original source text");
+       await page.screenshot({path:resolve(out,label+"-context.png"),fullPage:false});
+       await study.locator(".aoMFSourceReturn").click();
+       assert.equal(await node.evaluate(element=>element.inert),false,label+" must restore lesson controls");
+       assert.equal(await sourceButton.evaluate(element=>document.activeElement===element),true,
+         label+" original cited source must regain keyboard focus");
+      }
      }
      const evidence=page.locator(info.evidence).first();
      await evidence.waitFor({state:"attached"});

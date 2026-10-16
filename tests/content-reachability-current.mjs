@@ -20,8 +20,9 @@ assert.ok(home.includes('navigateHomeShortcut("calendar"')&&homePresentation.inc
 
 const learn=read("src/learn/browser-entry.js");
 const learnLayout=read("src/learn/presentation.js");
-assert.equal(LEARN_MODULE_IDS.length,15,"Formation published entry count changed");
-assert.equal(new Set(LEARN_MODULE_IDS).size,15,"Duplicate Formation module launcher");
+assert.equal(LEARN_MODULE_IDS.length,16,"Formation published entry count changed");
+assert.ok(LEARN_MODULE_IDS.includes("learn.mass_explorer"),"Separate Mass Explorer launch missing");
+assert.equal(new Set(LEARN_MODULE_IDS).size,16,"Duplicate Formation module launcher");
 for(const id of LEARN_MODULE_IDS){
   assert.ok(learnLayout.includes('id:"'+id+'"'),"Declared Formation module lost its card "+id);
 }
@@ -49,9 +50,9 @@ for(const id of external){
 }
 assert.ok(pray.includes("openExternalFamilyRoute")&&pray.includes("p435930RetryExternal"),
   "Prayer external module error/retry ownership lost");
-assert.equal(EXPLORE_LENSES.length,7,"Explore should preserve six published lenses and add the Saints pilot lens");
+assert.equal(EXPLORE_LENSES.length,7,"Explore preserves original lenses and Saints pilot");
 assert.equal(new Set(EXPLORE_LENSES).size,7);
 for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 24 Prayer family entries including Tenebrae (10 lazy) and seven Explore lenses");
+console.log("PASS current app reachability contract: five tabs, three utility routes, 16 Formation cards including Explorer, 24 Prayer family entries including Tenebrae (10 lazy) and seven Explore lenses");

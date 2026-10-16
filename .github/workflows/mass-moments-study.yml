@@ -3,6 +3,14 @@ on:
   pull_request:
     paths:
       - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-explorer.js'
+      - 'src/learn/mass-source-reading.js'
+      - 'src/learn/mass-passage-publication.js'
+      - 'data/learn/mass-formation-approved-passages.v1.json'
+      - 'tests/mass-source-reading-contract.mjs'
+      - 'src/learn/source-reference-panel.js'
+      - 'tests/mass-source-reading-all-lessons-phone.mjs'
+      - 'tests/mass-explorer-phone-e2e.mjs'
       - 'src/learn/mass-moments-study.js'
       - 'src/learn/mass-formation-scripture-context.js'
       - 'tests/mass-moments-study.mjs'
@@ -37,3 +45,14 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
+      - run: node tests/mass-explorer-phone-e2e.mjs
+      - run: node tests/mass-source-reading-all-lessons-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mass-explorer-p1-visuals
+          path: |
+            artifacts/mass-explorer-p1/
+            artifacts/mass-source-context-p1/
+          if-no-files-found: warn
+          retention-days: 14

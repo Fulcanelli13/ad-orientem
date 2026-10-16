@@ -35,13 +35,15 @@ const sameIds=(actual,expected,label)=>{
  assert.equal(new Set(expected).size,expected.length,label+" duplicated mapping");
 };
 sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 24 entrances");
-sameIds(liveFormationIds,crosswalk.formation.map(x=>x.id),"Formation 15 launchers");
+// 10 October audit stays immutable; P1 adds exactly one new, separate public child.
+sameIds(liveFormationIds.filter(id=>id!=="learn.mass_explorer"),crosswalk.formation.map(x=>x.id),"Formation 15 historical launchers");
+assert.ok(liveFormationIds.includes("learn.mass_explorer"),"New Mass Explorer must be a distinct route");
 sameIds(scenarioIdSet,crosswalk.apostolate.scenarios.map(x=>x.id),"Apostolate 36 scenarios");
 sameIds(liveEdges,crosswalk.apostolate.handoff_edges.map(x=>x.from+"->"+x.to),"Apostolate scenario handoffs");
 assert.equal(crosswalk.apostolate.skills.length,9);
 assert.equal(crosswalk.cross_surface_handoff_types.length,15);
 assert.equal(livePrayerIds.length,24);
-assert.equal(liveFormationIds.length,15);
+assert.equal(liveFormationIds.length,16);
 assert.equal(scenarioIdSet.size,36);
 assert.equal(liveEdges.length,72);
 const current=Object.groupBy?Object.groupBy(crosswalk.apostolate.handoff_edges,x=>x.status):crosswalk.apostolate.handoff_edges.reduce((r,x)=>(r[x.status]??=[],r[x.status].push(x),r),{});
@@ -54,4 +56,4 @@ assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.church_crisis")));
 for(const x of crosswalk.prayer)assert.ok(x.primary_entrance&&x.content_owner==="pray");
 for(const x of crosswalk.formation)assert.ok(x.primary_view&&x.canonical_owner);
-console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 Formation, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");
+console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 legacy Formation + Mass Explorer, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");

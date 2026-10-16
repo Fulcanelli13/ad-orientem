@@ -18,10 +18,12 @@ assert.equal(registry.navigation.proposed_status,"IMPLEMENTED_FIVE_SLOT_SHELL_PE
 assert.equal(new Set(registry.routes.map(x=>x.id)).size,registry.routes.length,"duplicate route identifier");
 assert.equal(new Set(registry.corpora.map(x=>x.id)).size,registry.corpora.length,"duplicate corpus identifier");
 assert.deepEqual(
- LEARN_MODULE_IDS.slice().sort(),
+ LEARN_MODULE_IDS.filter(id=>id!=="learn.mass_explorer").sort(),
  registry.routes.filter(x=>x.status==="LAUNCHER_DECLARED").map(x=>x.id).sort(),
- "Learn launcher inventory drifted"
+ "Historic 15-route Learn navigation registry drifted (new Explorer has distinct runtime owner)"
 );
+assert.ok(LEARN_MODULE_IDS.includes("learn.mass_explorer"),"Separate new Explorer must be in live Formation");
+assert.equal(registry.routes.some(x=>x.id==="learn.mass_explorer"),false,"10 October historical census is immutable");
 assert.ok(registry.routes.every(x=>x.source&&existsSync(x.source)),"route source missing");
 assert.ok(registry.corpora.every(x=>x.source_of_truth&&existsSync(x.source_of_truth)),"corpus authority missing");
 assert.ok(registry.cross_module_handoffs.every(x=>x.return_to_origin_required&&x.source_copy_forbidden),"handoff policy drift");

@@ -15,7 +15,8 @@ for(const record of raw.entries){
  const item=(original.entries??original.items)?.[record.source_index];
  assert.equal(item?.id,record.id,"stale or misindexed Glossary record: "+record.id);
 }
-assert.equal(LEARN_MODULE_IDS.length,15);
+assert.equal(LEARN_MODULE_IDS.length,16);
+assert.ok(LEARN_MODULE_IDS.includes("learn.mass_explorer"),"Mass Explorer is missing from published Formation discovery");
 const q=(text,limit=25)=>searchDiscovery(text,{sections:LEARN_LAYOUT.sections,referenceEntries:raw.entries,limit});
 const term=q("grâce");
 assert.ok(term.some(x=>x.kind==="reference"&&x.id==="G001"),"French accented doctrine must reach the original concept");
@@ -26,6 +27,14 @@ assert.ok(q("first communion").some(x=>x.kind==="module"&&x.id==="learn.rites.fi
 assert.ok(q("catéchisme").some(x=>x.kind==="module"&&x.id==="learn.catechism"));
 assert.ok(q("mariage").some(x=>x.kind==="module"&&x.id==="learn.rites.matrimony"));
 assert.ok(q("liturgie").some(x=>x.kind==="family"&&x.id==="liturgy-tradition"));
+assert.ok(q("Mass Explorer").some(x=>x.kind==="module"&&x.id==="learn.mass_explorer"),
+ "Original Mass Explorer search must resolve to the one consolidated Understand the Mass entry");
+assert.ok(q("Messe").some(x=>x.kind==="module"&&x.id==="learn.mass_explorer"),
+ "French Mass discovery must reach the canonical study destination");
+assert.ok(!q("Mass").some(x=>x.kind==="module"&&x.id==="learn.mass"),
+ "The legacy eight-lesson route must not appear as a duplicate discovery entry");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="liturgy-tradition").items.filter(x=>x.id==="learn.mass").length,1,
+ "Original eight-lesson owner must remain registered for deep links");
 assert.ok(q("apologétique").some(x=>x.kind==="family"&&x.id==="apologetics"),
  "French Apologetics must resolve to its own category, never a phantom live module");
 assert.ok(q("crise dans l’église").some(x=>x.kind==="family"&&x.id==="church-crisis"),
@@ -140,5 +149,5 @@ assert.match(ownerDeep,/contentKind==="question"/);
 assert.match(ownerDeep,/contentKind==="catechism"/);
 assert.match(ownerDeep,/openNativeCatechismQuestion/);
 assert.match(ownerDeep,/opts\?\.lessonNumber/);
-console.log("PASS 15 Formation launchers, 880 Glossary references, 687 search entries including 433 native Catechism questions; unpublished guided lessons remain gated");
+console.log("PASS 16 Formation launchers, 880 Glossary references, 687 search entries including 433 native Catechism questions; unpublished guided lessons remain gated");
 

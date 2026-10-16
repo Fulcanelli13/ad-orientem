@@ -38,7 +38,12 @@ assert.equal(counts.UNPUBLISHED_HOLD,2);
 assert.equal(counts.RETIRED,1);
 assert.equal(counts.COMPATIBILITY_CALENDAR,1);
 assert.equal(counts.COMPATIBILITY_ALIAS,1);
-for(const id of LEARN_MODULE_IDS){
+// The 63-route source audit predates the separately owned P1 Explorer.
+// Preserve that historical source-only snapshot and prove the new runtime
+// has its own tested route instead of manufacturing a 2026-10-10 audit row.
+assert.ok(LEARN_MODULE_IDS.includes("learn.mass_explorer"),"Live Explorer route missing");
+assert.equal(audit.routes.some(x=>x.id==="learn.mass_explorer"),false,"Historical reachability audit was retroactively edited");
+for(const id of LEARN_MODULE_IDS.filter(id=>id!=="learn.mass_explorer")){
  const route=audit.routes.find(x=>x.id===id);
  assert.ok(route, "missing launcher audit "+id);
  assert.ok(route.kind==="FORMATION_FAMILY_LAUNCHER"||route.kind==="FORMATION_DONOR_DELEGATION");

@@ -51,7 +51,9 @@ assert.equal(prayerEntries.filter(x=>x.proposed_group==="prayer_library").length
 
 const formationEntries=map.formation.entries;
 assert.equal(formationEntries.length,15);
-assert.deepEqual(sort(unique(formationEntries,"Formation")),sort(LEARN_MODULE_IDS));
+assert.deepEqual(sort(unique(formationEntries,"Historic Formation")),sort(LEARN_MODULE_IDS.filter(id=>id!=="learn.mass_explorer")));
+assert.ok(LEARN_MODULE_IDS.includes("learn.mass_explorer"),"New separately owned Explorer missing from current UI");
+assert.ok(!formationEntries.some(x=>x.id==="learn.mass_explorer"),"Do not retroactively edit the 10 October organisational snapshot");
 for(const item of formationEntries){
   assert.ok(map.formation.groups.some(x=>x.id===item.primary_group),item.id+" is ungrouped");
   assert.equal(item.canonical_owner,navigation.routes.find(x=>x.id===item.id)?.canonical_owner,item.id+" owner mismatch");
