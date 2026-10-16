@@ -22,7 +22,7 @@
       "selectedFormularyId": null,
       "omittedLeonardiTrio": "oration-trio:1962:john-leonardi:10-09",
       "otherHistoricCommemorationTrio": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
-      "orationsSourceStatus": "SECONDARY_1962_PAGE_ALL_THREE_TEXTS_VISIBLE_PRINT_NOT_COLLATED",
+      "orationsSourceStatus": "SIX_FORMULARY_ORATIONS_LOCATED_IN_PRINTED_1962_CLAIMED_FACSIMILE_PAGES_696_698; INDEPENDENT_PROVENANCE_AND_EXACT_TRANSCRIPTION_PENDING",
       "sungMassRule": "CUM_SANCTISSIMA_4_VERSUS_RG_111A_UNRESOLVED",
       "chaplaincyEvidence": {
         "name": "St Kevin's Dublin Latin Mass Chaplaincy",
@@ -46,11 +46,11 @@
         "https://www.missalemeum.com/en/calendar/2026-10-09"
       ],
       "inconsistentSecondaryDisplay": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
-      "inconsistentSecondaryDisplayStatus": "HEADER_LEONARDI_BUT_MASS_IS_MULTIPLE_MARTYRS_COMMON_NOT_ACCEPTED",
+      "inconsistentSecondaryDisplayStatus": "ONLINE_SELECTED_CELEBRATION_MARTYRS_TEXT_MATCHES_SEPARATE_DIONYSIUS_COMMEMORATION_PRINTED_ON_698; NOT_EVIDENCE_FOR_MAIN_LEONARDI_PROPER",
       "actualMissingInformation": [
         "Celebrant or chaplaincy's Mass booklet or usage",
         "Competent interpretation of 2020 mandatory commemoration at nonconventual Sung Mass",
-        "Original-1962 printed Leonardi and Dionysius commemoration texts",
+        "Independent edition provenance, transcription accuracy, reproduction rights and contextual application of printed 1962 Leonardi/Dionysius texts",
         "Whether approved traditional particular Proper or 2020 Supplement exists for Newman",
         "Oratorian institutional/particular liturgical permissions"
       ],
@@ -59,6 +59,30 @@
         "firstClassNonconventualSungLimit": "RG 108, 109, 111(a); RGMR 434(a)",
         "newerLaw": "Cum sanctissima §4 and final non-obstante clause",
         "status": "APPLICABILITY_DISPUTE_HELD"
+      },
+      "facsOriginalMissalPrintRefs": {
+        "yearClaimed": 1962,
+        "october9FolioRange": "696–699",
+        "images": [
+          773,
+          774,
+          775,
+          776
+        ],
+        "sourceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "latinTextPublished": false,
+        "rightsCleared": false
+      },
+      "doctorCommonPrintIdentity": {
+        "printedFamily": "Commune Doctorum",
+        "pages": [
+          "(23)",
+          "(24)"
+        ],
+        "variant": "DOCTOR_NON_PONTIFF",
+        "distinctMassFromDoctorPontiff": false,
+        "alternativeOrationClauses": true,
+        "actualCelebrantSelection": null
       }
     },
     {
