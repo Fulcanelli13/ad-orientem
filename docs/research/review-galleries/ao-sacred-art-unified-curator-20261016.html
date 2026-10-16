@@ -7,19 +7,19 @@
 @media(max-width:880px){.layout{display:block}.sidebar{position:static;height:auto;border-right:0;border-bottom:1px solid var(--stroke)}.sidebar-controls{position:static}.categorylist{max-height:225px;overflow:auto}.drawerbtn{display:inline-block}.sidebar.compact .categorylist,.sidebar.compact .sidecount{display:none}.main{padding:18px 13px 45px}.gridworks{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}.top{padding:16px 14px}.imageframe{height:270px}}
 @media(max-width:500px){.gridworks{grid-template-columns:1fr}.photogrid{grid-template-columns:1fr 1fr;gap:6px;padding:0 8px 10px}.imageframe{height:190px}.photoactions button{padding:5px}.metrics{gap:10px}.controls{align-items:flex-start}.sidebar-controls{padding:9px}.workhead{padding:11px}.photobody{padding:7px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-</style></head>
+.crop-select{padding-top:8px;margin-top:8px;border-top:1px solid #40505b}.crop-select>span{font-size:11px;font-weight:650;color:#cfb795;display:block;margin-bottom:5px}.crop-actions{display:flex;flex-wrap:wrap;gap:5px}.crop-actions button{font-size:10px;padding:5px 7px}.crop-select small{color:#b4c9bb;display:block;margin:6px 0 0}</style></head>
 <body>
 <header class="top">
  <div class="toprow"><div><div class="eyebrow">Ad Orientem / Sacred Art / Curator workspace</div><h1>Unified artwork review</h1></div>
  <div class="buttons"><button type="button" class="button-strong" id="export">Export all decisions · JSON</button><button type="button" id="importButton">Import review JSON</button><input class="hidden" type="file" id="importFile" accept=".json,application/json"><button type="button" class="mutebutton" id="reset">Reset to submitted exports</button></div></div>
- <p>One gallery for all artwork categories, October 12 choices, competing paintings and reproduction files. Rate the <strong>painting</strong> separately from the <strong>photograph</strong>; choose a primary painting for each category and a primary photograph for each painting. Assign priorities without replacing existing selections. <strong>Start with the 100 existing review categories;</strong> the other 68 protected categories remain in the additional backlog.</p>
+ <p>One gallery for all artwork categories, October 12 choices, competing paintings and reproduction files. Rate the <strong>painting</strong> separately from the <strong>photograph</strong>. A faithful photograph can be 5★ with a separate external-frame trimming flag; choose a primary painting for each category and a primary photograph for each painting. Assign priorities without replacing existing selections. <strong>Start with the 100 existing review categories;</strong> the other 68 protected categories remain in the additional backlog.</p>
  <div class="metrics" id="metrics"></div>
 </header>
 <div class="layout">
  <aside class="sidebar compact" id="sidebar"><div class="sidebar-controls">
   <div class="spaced"><strong style="font:19px Georgia,serif">Subjects</strong><button class="drawerbtn mini" id="toggleSidebar">Show / hide list</button></div>
   <input type="search" id="search" placeholder="Search saint, scene, artist, painting…" aria-label="Search categories">
-  <div class="row2"><div><label for="filter">Review filter</label><select id="filter"><option value="current" selected>Current 100 review categories</option><option value="all">All 168 categories</option><option value="attention">Needs attention</option><option value="3">3★ · alternative painting</option><option value="4">4★ · better photograph</option><option value="missing">No linked photograph</option><option value="oct12">October 12 selections</option><option value="ready">5★ image quality</option><option value="future">Additional 68</option><option value="prioritized">Prioritized by me</option></select></div>
+  <div class="row2"><div><label for="filter">Review filter</label><select id="filter"><option value="current" selected>Current 100 review categories</option><option value="all">All 168 categories</option><option value="attention">Needs attention</option><option value="3">3★ · alternative painting</option><option value="4">4★ · inspect image / framing</option><option value="crop">Frame removal requested</option><option value="missing">No linked photograph</option><option value="oct12">October 12 selections</option><option value="ready">5★ image quality</option><option value="future">Additional 68</option><option value="prioritized">Prioritized by me</option></select></div>
   <div><label for="sort">Sort</label><select id="sort"><option value="priority">Priority / review needs</option><option value="original">Original research order</option><option value="name">Alphabetical</option></select></div></div>
   <div><label for="group">Category family</label><select id="group"></select></div>
  </div><div class="sidecount" id="sidecount"></div><nav class="categorylist" id="categorylist" aria-label="Artwork categories"></nav></aside>
@@ -35,7 +35,7 @@ const STORAGE="AO_SACRED_ART_UNIFIED_CURATOR_20261016_V1";
 const cats=M.categories;
 const byId=Object.fromEntries(cats.map(function(c){return [c.id,c]}));
 const clone=function(x){return JSON.parse(JSON.stringify(x))};
-const baseline=Object.assign({},clone(M.seed),{priorities:{},primaryPainting:{},categoryOrder:cats.map(function(c){return c.id}),categoryNotes:{}});
+const baseline=Object.assign({},clone(M.seed),{priorities:{},primaryPainting:{},categoryOrder:cats.map(function(c){return c.id}),categoryNotes:{},photoCropStatus:{}});
 let state=clone(baseline);
 let stored=false;
 try{const s=JSON.parse(localStorage.getItem(STORAGE)||"null");if(s&&typeof s==="object"){for(const k of Object.keys(baseline)){if(s[k]&&typeof s[k]==="object")state[k]=s[k]}stored=true}}catch(e){}
@@ -64,6 +64,7 @@ function getFiltered(){
   if(filter==="current"&&c.batch===3)return false;
   if(filter==="3"&&!n.three)return false;
   if(filter==="4"&&!n.four)return false;
+  if(filter==="crop"&&!c.works.some(function(w){return w.photos.some(function(p){return state.photoCropStatus[key(w.id,p.id)]==="frame"})}))return false;
   if(filter==="attention"&&!(n.three||n.four||n.missing))return false;
   if(filter==="missing"&&!n.noPhoto)return false;
   if(filter==="oct12"&&!n.oct)return false;
@@ -92,7 +93,7 @@ function renderList(){
  }).join("");
 }
 function photoMarkup(c,w,p,index){
- const photoKey=key(w.id,p.id),quality=scoreImage(w,p),s=imageState(w,p),isPrimary=(state.photoRank[w.id]||[])[0]===p.id&&s==="keep";
+ const photoKey=key(w.id,p.id),quality=scoreImage(w,p),s=imageState(w,p),crop=(state.photoCropStatus||{})[photoKey]||"",isPrimary=(state.photoRank[w.id]||[])[0]===p.id&&s==="keep";
  const original=safe(p.original)||safe(p.preview),preview=safe(p.preview)||original,page=safe(p.page);
  let scoreBtns=[0,1,2,3,4,5].map(function(n){return '<button data-action="photo-score" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-num="'+n+'" class="'+(quality===n?"on":"")+'" aria-label="Photo quality '+n+' of 5">'+n+'</button>'}).join("");
  const links='<div class="photolinks">'+(page?'<a href="'+h(page)+'" target="_blank" rel="noopener noreferrer">File / rights ↗</a>':"")+(original?'<a href="'+h(original)+'" target="_blank" rel="noopener noreferrer">Full file ↗</a>':"")+'</div>';
@@ -100,7 +101,11 @@ function photoMarkup(c,w,p,index){
  '<div class="imageframe"><img loading="lazy" referrerpolicy="no-referrer" src="'+h(preview)+'" data-fallback="'+h(original)+'" data-retry="0" alt="'+h(w.title+" — "+(p.label||p.id))+'"><button data-action="zoom" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'">Enlarge</button></div>'+
  '<div class="photobody"><b>'+h(p.label||p.id)+'</b><small>'+h(p.id)+'</small><small>'+h(p.pixels||"Pixel dimensions not certified")+'</small>'+
  (p.status&&p.status!=="EXACT_SOURCE_FILE_NAME"?'<small>'+h(p.status.replace(/_/g," "))+'</small>':"")+links+
- '<div class="photorating"><small>PHOTO reproduction quality · 0–5</small><div class="scores">'+scoreBtns+'</div></div>'+
+ '<div class="photorating"><small>PHOTO fidelity · 0–5 (do not penalize visible external frame)</small><div class="scores">'+scoreBtns+'</div></div>'+
+ '<div class="crop-select"><span>Framing instruction — independent of photo rating</span><div class="crop-actions">'+
+ [['frame','External frame — trim for app'],['clean','No external frame'],['painted','Painted border — preserve'],['straighten','Straighten perspective'],['source','Better master required']].map(function(opt){return '<button type="button" data-action="crop-status" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-value="'+opt[0]+'" class="'+(crop===opt[0]?'onaction':'')+'">'+h(opt[1])+'</button>'}).join('')+
+ (crop?'<button type="button" data-action="crop-status" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-value="">Clear</button>':'')+
+ '</div>'+(crop==="frame"?'<small>Keep the original source master. Crop only the exterior frame, never artwork, signature or painted edges.</small>':'')+'</div>'+
  '<div class="photoactions"><button class="'+(s==="keep"?"onaction":"")+'" data-action="photo-status" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-value="keep">Keep</button>'+
  '<button class="'+(isPrimary?"onaction":"")+'" data-action="photo-primary" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'">Best photo</button>'+
  '<button class="'+(s==="duplicate"?"bad-action":"")+'" data-action="photo-status" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-value="duplicate">Duplicate</button>'+
@@ -171,6 +176,7 @@ document.addEventListener("click",function(ev){
  if(a==="prev"||a==="next"){const idx=visible.findIndex(function(x){return x.id===selected}),nx=visible[idx+(a==="prev"?-1:1)];if(nx){selected=nx.id;render();window.scrollTo(0,0)}return}
  if(a==="zoom"){const p=w?.photos.find(function(ph){return ph.id===fid});if(!p)return;$("lightboxTitle").textContent=w.title+" — "+(p.label||p.id);$("lightboxImg").src=safe(p.original)||safe(p.preview);$("lightboxFoot").innerHTML=p.page&&safe(p.page)?'<a href="'+h(safe(p.page))+'" target="_blank" rel="noopener noreferrer">Source and rights information ↗</a>':"Source reference unavailable";$("lightbox").showModal();return}
  if(a==="photo-score")state.photoScore[key(pid,fid)]=Number(el.dataset.num);
+ if(a==="crop-status"){if(v)state.photoCropStatus[key(pid,fid)]=v;else delete state.photoCropStatus[key(pid,fid)];}
  if(a==="photo-status"){if(v)state.photoStatus[key(pid,fid)]=v;else delete state.photoStatus[key(pid,fid)];if(v==="duplicate"){state.photoRank[pid]=(state.photoRank[pid]||[]).filter(function(x){return x!==fid})}}
  if(a==="photo-primary"){state.photoStatus[key(pid,fid)]="keep";state.photoRank[pid]=[fid].concat((state.photoRank[pid]||[]).filter(function(x){return x!==fid}))}
  if(a==="photo-move")updatePhotoOrder(pid,fid,Number(el.dataset.step));
@@ -225,8 +231,8 @@ $("reset").addEventListener("click",function(){
 });
 $("export").addEventListener("click",function(){
  const summary=cats.map(function(c){return {categoryId:c.id,subject:c.label,priority:state.priorities[c.id]||null,primaryPaintingId:state.primaryPainting[c.id]||null,paintingOrder:state.paintingRank[c.id]||[],note:state.categoryNotes[c.id]||null,paintings:c.works.filter(function(w){return w.lockedArtRating||w.oct12Selected||state.paintingStatus[key(c.id,w.id)]||state.paintingScore[w.id]!==undefined}).map(function(w){return {id:w.id,artist:w.artist,title:w.title,historicalFiveLocked:w.lockedArtRating,historicalOct12Selected:!!w.oct12Selected,categoryDecision:workSelected(c,w)||null,newArtworkScore:state.paintingScore[w.id]??null,primary:w.id===state.primaryPainting[c.id]}})}});
- const photos=cats.flatMap(function(c){return c.works}).filter(function(w,i,a){return a.findIndex(function(z){return z.id===w.id})===i}).flatMap(function(w){return w.photos.map(function(p){return {paintingId:w.id,fileId:p.id,qualityScore:scoreImage(w,p),status:imageState(w,p)||"not_reviewed",primary:(state.photoRank[w.id]||[])[0]===p.id&&imageState(w,p)==="keep",sourcePage:p.page||null,sourceOriginal:p.original||null}})});
- const body={schema:"AO_SACRED_ART_UNIFIED_EXPORT_V1",exportedAt:new Date().toISOString(),sourceAuthoritativeExportPaths:[M.sourcePaths.r1,M.sourcePaths.r2],artworkHistoricRatings:"UNCHANGED",categories:summary,imageDecisions:photos.filter(function(x){return x.qualityScore!==null||x.status!=="not_reviewed"}),state:state,notes:"Independent subject-category painting choice, painting rating, reproduction-quality score, photograph choice and category priority; no automatic production release."};
+ const photos=cats.flatMap(function(c){return c.works}).filter(function(w,i,a){return a.findIndex(function(z){return z.id===w.id})===i}).flatMap(function(w){return w.photos.map(function(p){return {paintingId:w.id,fileId:p.id,qualityScore:scoreImage(w,p),status:imageState(w,p)||"not_reviewed",primary:(state.photoRank[w.id]||[])[0]===p.id&&imageState(w,p)==="keep",sourcePage:p.page||null,sourceOriginal:p.original||null,framingInstruction:(state.photoCropStatus||{})[key(w.id,p.id)]||null}})});
+ const body={schema:"AO_SACRED_ART_UNIFIED_EXPORT_V1",exportedAt:new Date().toISOString(),sourceAuthoritativeExportPaths:[M.sourcePaths.r1,M.sourcePaths.r2],artworkHistoricRatings:"UNCHANGED",categories:summary,imageDecisions:photos.filter(function(x){return x.qualityScore!==null||x.status!=="not_reviewed"||x.framingInstruction}),state:state,notes:"Independent subject-category painting choice, painting rating, reproduction-quality score, photograph choice and category priority; no automatic production release."};
  const data=JSON.stringify(body,null,2),url=URL.createObjectURL(new Blob([data],{type:"application/json"})),link=document.createElement("a");
  link.href=url;link.download="Ad_Orientem_Sacred_Art_Unified_Review_"+new Date().toISOString().slice(0,10)+".json";link.click();setTimeout(function(){URL.revokeObjectURL(url)},15000);
 });
