@@ -142,7 +142,7 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
      "Parcourez la Messe dans son ordre liturgique, puis ouvrez les prières originales et les explications du Guide existant. Ce lecteur d’étude ne modifie pas les modes LIVE, Simple ou Missel.")+
     '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+rows+'</main>';
 }
-export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={}){
+export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false,readerContext=false}={}){
   const moment=getMassExplorerMoment(catalog,key,{form:"SUNG"});
   if(!moment)return "";
   const {guide,blocks}=moment;
@@ -167,7 +167,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
      "Rapprochements bibliques étudiés pour l’étape entière du Guide ; chaque lien précise son rapport au texte.")+'</p>'+
      massFormationScriptureHtmlForAnchorIds(links.scriptureAnchorIds,{french})+'</section>':"")+
    guideSources(guide,french)+
-   (links.stageId?'<section class="aoMXFormationLink"><button type="button" data-ao-mx-study="'+esc(links.stageId)+'">'+
+   (links.stageId&&!readerContext?'<section class="aoMXFormationLink"><button type="button" data-ao-mx-study="'+esc(links.stageId)+'">'+
      esc(pick(french,"Open related Formation lesson · ","Ouvrir la leçon de Formation · ")+links.stageId)+' →</button></section>':"")+
    '<nav class="aoMXPreviousNext">'+
      '<button type="button" data-ao-mx-prev '+(idx<=0?"disabled":"")+'>'+pick(french,"Previous","Précédent")+'</button>'+
@@ -180,6 +180,7 @@ export function massExplorerCss(){
  return [
   "#ao-mass-explorer-root{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:14972;background:var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#eee9df);overflow-y:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,Georgia,serif)}",
   "#ao-mass-explorer-root[hidden]{display:none!important}#ao-mass-explorer-root *{box-sizing:border-box}",
+  "#ao-mass-explorer-root[data-ao-mx-origin=mass]{inset:0;z-index:2147483000}#ao-mass-explorer-root[data-ao-mx-origin=mass] .aoMXTop{padding-top:calc(9px + var(--safe-top,0px))}",
   ".aoMXTop{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:calc(9px + var(--safe-top,0px)) 12px 10px;border-bottom:1px solid var(--ao-rule,#393c40);background:#080c12eF;backdrop-filter:blur(12px)}",
   ".aoMXTop div{text-align:center;min-width:0}.aoMXTop small{display:block;color:var(--liturgical,#c9ad78);letter-spacing:.1em;font:600 .62rem/1.4 system-ui}.aoMXTop strong{display:block;line-height:1.35}",
   ".aoMXTop button,.aoMXPreviousNext button{min-height:44px;border:1px solid var(--ao-rule,#393c40);border-radius:9px;background:var(--ao-surface-1,#101821);color:inherit;cursor:pointer}",
@@ -202,7 +203,7 @@ export function massExplorerCss(){
 }
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map";
+  let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map",origin="learn";
   let indexScrollTop=0,indexFocusKey=null,momentScrollTop=0;
   const safeScroll=value=>Number.isFinite(value)&&value>=0?Math.min(value,100000):0;
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
@@ -213,11 +214,11 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     const fr=french();
     node.setAttribute("aria-label",pick(fr,"Mass Explorer","Explorer la Messe"));
     node.innerHTML='<style>'+massExplorerCss()+'</style>'+
-      '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
+      '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,origin==="mass"?"Back to Mass or Map":"Back",origin==="mass"?"Retour Messe ou carte":"Retour")+'">←</button>'+
       '<div><small>FORMATION</small><strong>'+pick(fr,"Mass Explorer","Explorer la Messe")+'</strong></div>'+
-      '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
-      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
-        indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
+      '<button type="button" data-ao-mx-close aria-label="'+pick(fr,origin==="mass"?"Return to Mass":"Close",origin==="mass"?"Retour à la Messe":"Fermer")+'">×</button></header>'+
+      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr,readerContext:origin==="mass"}):
+        indexView==="map"?massMapHtml(catalog,{french:fr,readerContext:origin==="mass"}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=restoreIndex?safeScroll(indexScrollTop):
       restoreMoment?safeScroll(momentScrollTop):0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
@@ -257,7 +258,9 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     if(node?.contains?.(win?.document?.activeElement))win.document.activeElement?.blur?.();
     node?.remove();
     win?.document?.body?.classList?.remove?.("aoMassExplorerOpen");
-    if(toLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    const massOrigin=origin==="mass";
+    origin="learn";
+    if(toLearn&&!massOrigin)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{returnFocus?.focus?.({preventScroll:true});}catch{}
     returnFocus=null;return true;
   }
@@ -269,7 +272,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     node.dataset.aoMassExplorerOwner=MASS_EXPLORER_VERSION;
     node.addEventListener("click",event=>{
       const t=event.target?.closest?.("button");if(!t)return;
-      if(t.matches("[data-ao-mx-close]")){event.preventDefault();close(true);return;}
+      if(t.matches("[data-ao-mx-close],[data-ao-mx-return-mass]")){event.preventDefault();close(true);return;}
       if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey)showIndex();else close(true);return;}
       if(t.dataset.aoMxMoment){event.preventDefault();setMoment(t.dataset.aoMxMoment);return;}
       if(t.dataset.aoMxMapBlock){
@@ -321,6 +324,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.dataset.aoMxBlock){event.preventDefault();setMoment(momentKey,t.dataset.aoMxBlock);return;}
       if(t.dataset.aoMxStudy){
         event.preventDefault();
+        if(origin==="mass")return; // Learn hub is not an owner of the active ritual reader.
+
         const stageId=t.dataset.aoMxStudy;
         const explorerReturn={momentKey,blockId,indexView,indexScrollTop,indexFocusKey,
           momentScrollTop:safeScroll(root()?.scrollTop)};
@@ -336,6 +341,9 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       }
       // Shared Scripture click owner receives the original capsule bubbling event.
     });
+    node.addEventListener("keydown",event=>{
+      if(event.key==="Escape"&&origin==="mass"){event.preventDefault();close(false);}
+    });
     win.document.body.append(node);return node;
   }
   async function open(opts={}){
@@ -345,19 +353,35 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       try{await loading;}catch(error){win?.console?.error?.("Mass Explorer sources unavailable",error);return false;}
     }
     if(!ensureRoot())return false;
+    origin=opts.origin==="mass"?"mass":"learn";
+    const overlay=root();
+    overlay.dataset.aoMxOrigin=origin;
+    overlay.setAttribute("role",origin==="mass"?"dialog":"region");
+    if(origin==="mass")overlay.setAttribute("aria-modal","true");
+    else overlay.removeAttribute("aria-modal");
     indexView=opts.indexView==="list"||opts.view==="list"?"list":"map";
     indexScrollTop=safeScroll(opts.indexScrollTop);
     indexFocusKey=catalog.byKey.has(opts.indexFocusKey)?opts.indexFocusKey:null;
     momentScrollTop=safeScroll(opts.momentScrollTop);
-    const requested=opts.blockId&&catalog.byBlock.get(opts.blockId);
-    momentKey=requested?.key??(catalog.byKey.has(opts.momentKey)?opts.momentKey:null);
+    const candidate=opts.blockId&&catalog.byBlock.get(opts.blockId);
+    const requestedMoment=catalog.byKey.has(opts.momentKey)?opts.momentKey:null;
+    // Source cue → original block is certified within the public Sung corpus;
+    // it is independent of 48/65/67 presentation card numbering.
+    const cue=String(opts.cueId||"");
+    const exactCue=requestedMoment&&/^AO\\.SM\\.C\\d{4}$/.test(cue)?
+      catalog.byKey.get(requestedMoment).blocks.filter(block=>
+        (block.units||[]).some(unit=>unit.cue_id===cue)):null;
+    const requested=exactCue?.length===1
+      ?{key:requestedMoment,source:exactCue[0]}
+      :candidate&&(!requestedMoment||requestedMoment===candidate.key)?candidate:null;
+    momentKey=requestedMoment??requested?.key??null;
     blockId=requested?.source.Block_ID??null;
     win?.document?.body?.classList?.add?.("aoMassExplorerOpen");
     paint({restoreIndex:!momentKey&&indexScrollTop>0,restoreMoment:Boolean(momentKey&&opts.momentScrollTop!==undefined)});
     return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,indexView,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
+    momentKey,blockId,indexView,origin,indexScrollTop,indexFocusKey,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }
