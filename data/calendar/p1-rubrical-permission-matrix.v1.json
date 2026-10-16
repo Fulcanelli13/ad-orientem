@@ -537,5 +537,44 @@
       ],
       "verification": "READ_ORIGINAL_SCAN_AND_OCR"
     }
-  ]
+  ],
+  "laterLegislationOverlay": {
+    "status": "APPLICABILITY_MUST_BE_REVIEWED_IN_2026_NOT_AUTOMATIC_ABROGATION",
+    "sources": [
+      {
+        "id": "TRADITIONIS_CUSTODES_2021",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/07/16/210716b.html",
+        "references": [
+          "art.2",
+          "art.3 §§2-3",
+          "art.4",
+          "art.5",
+          "art.7",
+          "art.8"
+        ],
+        "effect": "Roman Missal 1962 authorization by diocesan bishop and further Roman reservations; older norms contrary to 2021 motu proprio abrogated."
+      },
+      {
+        "id": "RESPONSA_AD_DUBIA_2021",
+        "url": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+        "references": [
+          "authorization of priest",
+          "temporal and territorial scope"
+        ],
+        "effect": "Additional Holy See administrative interpretation; not direct resolution of 2020 §4 ordinary commemoration conflict."
+      },
+      {
+        "id": "RESCRIPTUM_2023",
+        "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html",
+        "references": [
+          "first reserved dispensation",
+          "second reserved dispensation"
+        ],
+        "effect": "Parish church/personal parish and post-2021 ordained priests specified dispensation cases reserved to Apostolic See; does not itself identify Newman Proper or liturgical commemoration practice."
+      }
+    ],
+    "cumSanctissimaSurvival": "WHETHER_2020_SPECIFIC_SAINT_FORMULARY_FACULTY_REMAINS_CONFORMING_AND_APPLICABLE_IN_EACH_JURISDICTION_REQUIRES_DOCUMENTARY_AUTHORITY_REVIEW",
+    "noAssumption": "Do not claim blanket abrogation or blanket contemporary permission on the basis of this database."
+  },
+  "prohibitedInference": "Rubrical festival eligibility does not imply authorization to use the 1962 Missal at a particular place/date or by a particular priest; later 2021/2023 legislation and competent authority may affect admissibility."
 }
