@@ -31,7 +31,7 @@ assert.equal(master.persons.length,effective.records.length);
 assert.ok(master.persons.every(p=>p.runtimePublication==="BLOCKED_RESEARCH_ONLY"));
 assert.ok(compat.observances.every(x=>x.eligibleForRuntime===false&&x.mass1962Effect==="NONE"&&x.historyGate.includes("CANONIZATION")));
 assert.equal(authority.noRuntimeImport,true);assert.equal(aliases.noParallelSaintsCreated,true);
-assert.equal(batch.sourceYearCollections.length,20);assert.equal(queue.yearCollectionsToMine.length,31);
+assert.equal(batch.sourceYearCollections.length,25);assert.equal(queue.yearCollectionsToMine.length,26);
 assert.ok(aliases.ambiguities.some(x=>x.subjectIds.includes("saint.louis-martin")));
 assert.ok(aliases.ambiguities.some(x=>x.subjectIds.includes("saint.francisco-marto")));
 assert.ok(edges.some(x=>x.subjectId==="canon-group.martyrs-mexico-1927"&&x.monthDay==="05-25"));
@@ -39,6 +39,8 @@ assert.ok(edges.some(x=>x.subjectId==="saint.jozef-sebastian-pelczar"&&x.monthDa
 assert.ok(edges.some(x=>x.subjectId==="saint.mary-of-the-cross-mackillop"&&x.monthDay==="08-08"&&x.source.url.endsWith("maria-della-croce.html")));
 assert.ok(edges.some(x=>x.subjectId==="saint.carmen-salles-y-barangueras"&&x.monthDay==="07-25"));
 assert.ok(aliases.ambiguities.some(x=>x.subjectIds.includes("saint.zygmunt-gorazdowski")));
+assert.ok(!edges.some(x=>x.subjectId==="saint.kinga-poland"&&x.monthDay==="03-03"),"Suspected conflated Kinga date must stay withheld");
+assert.ok(queue.profileExceptions?.some(x=>x.subjectId==="saint.kinga-poland"));
 assert.ok(edges.some(x=>x.subjectId==="saint.ludovico-da-casoria"&&x.monthDay==="06-17"&&x.jurisdiction==="SUORE_FRANCESCANE_ELISABETTINE"));
 assert.ok(edges.some(x=>x.subjectId==="saint.francisco-marto"&&x.monthDay==="02-20"&&x.authorityScope==="PAPAL_BEATIFICATION_LETTER"));
 assert.ok(!master.persons.some(p=>p.subjectId==="saint.jacques-desire-laval"&&p.preferredName.includes("Montmorency")));

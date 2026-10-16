@@ -6,11 +6,11 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **159** dated individual identities, leaving **134** undated (net backlog reduction **138**).
-- Evidence ledger now **171** edges including **145** newly researched edges.
+- After new, source-visited batches: **184** dated individual identities, leaving **109** undated (net backlog reduction **163**).
+- Evidence ledger now **196** edges including **170** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
 - **10** group IDs with a dated source witness.
-- New date-profile coverage: **20** canonisation-year collections, with 31 of the 51 already-indexed source-year collections still to harvest for dates.
+- New date-profile coverage: **25** canonisation-year collections, with 26 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
 
@@ -27,9 +27,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `living-sanctoral-authorities.v1.json`: source-competence and jurisdiction classes.
 - `living-sanctoral-effective-dates.v1.json`: date-effective and Doctor-declaration crosswalk.
 - `living-sanctoral-identity-reconciliation.v1.json`: aliases, group policy, evidence contradictions.
-- `living-sanctoral-review-queue.v1.json`: undated subjects and 31 untouched (for memorial dates) already-indexed source-year collections.
+- `living-sanctoral-review-queue.v1.json`: undated subjects and 26 untouched (for memorial dates) already-indexed source-year collections.
 - `living-sanctoral-compatible-export.v1.json`: non-published compatibility projection; every candidate `eligibleForRuntime=false`.
-- `living-sanctoral-new-source-batch.v1.json`: twenty-year Dicastery source batch for reproducibility.
+- `living-sanctoral-new-source-batch.v1.json`: twenty-five-year Dicastery source batch for reproducibility.
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
@@ -49,3 +49,11 @@ The Dicastery's own profile headers were visited and their `Memoria Liturgica` d
 **New historical conflict:** the Zygmunt Gorazdowski profile header states `1 gennaio`, while the same document's biography reports a **26 June 2001** memorial assignment at beatification in Lviv. The historical/local authority and effective transition require separate documentation before calendar projection; do not substitute the beatification date for the profile date.
 
 All new entries are `RESEARCH_ONLY`; `eligibleForRuntime:false` remains set. New source URLs and field claims are in the ledger, linked to stable canonical subject IDs. P0 and P1 boundaries unchanged.
+
+## Source-verified bulk batch 4: 1995, 1999, 2006, 2007, 2008
+
+Added **25** direct Dicastery `Memoria Liturgica` records after checking page header, date and canonical identity in the original profile. The 1995 three Martyrs of Košice have the same 7 September profile date but remain **three canonically distinct individuals** and must not be turned into three different feasts by this data; P0 handles grouping rules. No independent liturgical calendar was created.
+
+**Critical exception (NOT IMPORTED):** The Dicastery's `cunegonda-kinga.html` page reports `3 marzo` but its surrounding text attributes the subject a husband described as St Henry emperor, evidently inconsistent with Kinga of Poland. Kinga's memorial date remains unresolved in the research queue. Do not accept this page header date until a second reliable witness clarifies identity.
+
+**Cumulative at commit:** 184/293 individually dated, 109 undated, 196 source edges (170 added during P2), 25/51 year collections with date harvest, 26 still untouched for dates. All dates are research-only and scoped. The 1962 principal feast, Mass permission and production resolver are untouched.
