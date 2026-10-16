@@ -1,5 +1,6 @@
 // Package an offline, single-file 3D viewer. No third-party church mesh is bundled.
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {Script} from 'node:vm';
 import {resolve,dirname,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -28,6 +29,12 @@ if(!out.includes(tag))throw new Error('Unknown viewer entrypoint');
 out=out.replace(tag,
  '<script type="application/json" id="ao-glossary-entries">'+safe(JSON.stringify(entries))+'</script>\n'+
  '<script type="module">\n'+safe(js)+'\n</script>');
+const inlineScripts=[...out.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+if(inlineScripts.length<2)throw new Error('Embedded engine scripts missing');
+for(const [i,block] of inlineScripts.slice(0,2).entries()){
+  try{new Script(block[1],{filename:'visible-mass-vendor-'+i+'.js'});}
+  catch(e){throw new Error('Corrupt embedded 3D library '+i+': '+e.message);}
+}
 const dir=join(root,'dist','visible-mass');await mkdir(dir,{recursive:true});
 const dest=join(dir,'The_Visible_Mass_P0_Offline.html');
 await writeFile(dest,out);
