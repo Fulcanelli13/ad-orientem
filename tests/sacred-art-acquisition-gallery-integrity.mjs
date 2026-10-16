@@ -151,6 +151,20 @@ for(const [idx,oldId,alternativeId] of [
  assert.equal(historicalAlternative.historicalArtRating,undefined);
  assert.match(historicalAlternative.hold,/NO_RATING_TRANSFER/);
 }
+const cyril=at(41,'CLOSEOUT-NANNONI-1637-CYRIL-0900117888A-1');
+assert.equal(cyril.notEligible,true,'Carmelite Cyril of Constantinople versus Jerusalem identity cannot silently pass');
+assert.equal(cyril.photos.length,0,'Italian catalogue metadata cannot stand in for painted-surface photograph');
+assert.match(cyril.hold,/CARMELITE/);
+const fussy=at(43,'CLOSEOUT-HILARY-FUSSY-1703-RESTORATION');
+assert.equal(fussy.notEligible,true,'1703 Fussy painting source lacks image/photo licence');
+assert.equal(fussy.photos.length,0);
+assert.ok(fussy.photoSourceEvidence.officialRegistration.includes('2022'),'Source-registration citation expected');
+for(const n of [113,130,164]){
+ const w=at(n,'ART-ean-estout-entecost');
+ assert.match(w.photoSourceEvidence.museumOfficialArtist,/Jean II Restout/,'Correct 1732 Louvre painter not Restout Elder');
+ assert.equal(w.photoSourceEvidence.removeExternalFrameForFinalApp,true,'Painted-surface image needs exterior gilt-frame trimming');
+ assert.equal(w.photoSourceEvidence.sourcePhotoRightsUnresolved,true);
+}
 const holdCategories=[41,43];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
 assert.deepEqual(missingNow,holdCategories,'Two final unreconciled Doctor-subject categories must remain explicit, not silently substituted');
