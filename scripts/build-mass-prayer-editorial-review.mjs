@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
-import {validatePrayerReadingPilot,validateMassTransitionReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
+import {validatePrayerReadingPilot,validateMassTransitionReadingPilot,validateRomanCanonReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
 const root=fileURLToPath(new URL("..",import.meta.url));
 const read=path=>JSON.parse(readFileSync(resolve(root,path),"utf8"));
 const corpus=read("data/presentation/reader-text-sung.v1.json");
@@ -14,9 +14,12 @@ const second=validateMassTransitionReadingPilot(
  read("data/learn/research/mass-formation-orate-preface-reading-pilot-20261016.v1.json"),corpus,formation,guide);
 assert.equal(first.ok,true,first.reason);
 assert.equal(second.ok,true,second.reason);
+const third=validateRomanCanonReadingPilot(
+ read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json"),corpus,formation,guide);
+assert.equal(third.ok,true,third.reason);
 const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const blocks=new Map(corpus.blocks.map(x=>[x.Block_ID,x]));
-const records=[...first.readings,...second.readings];
+const records=[...first.readings,...second.readings,...third.readings];
 const chapter=(rec,index)=>{
  const source=blocks.get(rec.block_id);
  const original=source.units.map(unit=>{
@@ -70,15 +73,16 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '@media(max-width:740px){.entryContent{grid-template-columns:1fr}.wrap{padding:15px 12px 50px}}'+
  '@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}'+
  '</style></head><body><main class="wrap"><span class="eyebrow">AD ORIENTEM · FORMATION P2 · EDITORIAL PREVIEW</span>'+
- '<h1>Prayer-by-prayer readings · first 14 fixed texts</h1>'+
- '<p class="deck">Eight Offertory prayers followed by six fixed texts from Orate, fratres to the Sanctus. The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
+ '<h1>Prayer-by-prayer readings · first 29 fixed texts</h1>'+
+ '<p class="deck">Eight Offertory prayers, six fixed texts from Orate, fratres to the Sanctus, and fifteen Roman Canon prayers. The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
  '<div class="toolbar" role="group" aria-label="Editorial reading language"><button type="button" data-select-lang="en" aria-pressed="true">English commentary</button>'+
  '<button type="button" data-select-lang="fr" aria-pressed="false">Commentaires français</button>'+
- '<span class="eyebrow">14 DRAFTS · 2 PROPER HOLDS</span></div>'+
+ '<span class="eyebrow">29 DRAFTS · 2 PROPER HOLDS</span></div>'+
  '<nav class="toc" aria-label="Prayer list">'+records.map((r,i)=>'<a href="#'+esc(r.block_id)+'">'+String(i+1).padStart(2,"0")+
  ' '+esc(blocks.get(r.block_id).Title)+'</a>').join("")+'</nav>'+
  '<h2>Published Offertory fixed texts</h2>'+first.readings.map((r,i)=>chapter(r,i)).join("")+
  '<h2>Orate, Preface dialogue and Sanctus</h2>'+second.readings.map((r,i)=>chapter(r,i+8)).join("")+
+ '<h2>The Roman Canon — original Guide divisions</h2>'+third.readings.map((r,i)=>chapter(r,i+14)).join("")+
  '<section class="held"><h2>Variable Propers — explicitly held</h2><p>These two source slots depend on the selected Mass. No generic text or per-prayer exposition has been invented.</p><ul>'+held+'</ul></section>'+
  '<footer>Review-only artifact; all editorial statements remain drafts. P0 certifies any deeper historical/doctrinal/scriptural research independently.</footer>'+
  '</main><script>'+
@@ -88,10 +92,10 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  'document.documentElement.lang=language;}));'+
  'document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",()=>{const target=document.querySelector(a.getAttribute("href"));if(target)target.open=true;}));'+
  '</script></body></html>';
-assert.equal((html.match(/class="entry" id=/g)||[]).length,14);
+assert.equal((html.match(/class="entry" id=/g)||[]).length,29);
 assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,0);
-assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,14);
+assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,29);
 const out=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 mkdirSync(dirname(out),{recursive:true});
 writeFileSync(out,html);
-console.log("PASS Formation P2 editorial review: 14 published fixed-text witnesses, 14 bilingual draft notes, two expressly held variable Propers → "+out);
+console.log("PASS Formation P2 editorial review: 29 published fixed-text witnesses, 29 bilingual draft notes, two expressly held variable Propers → "+out);
