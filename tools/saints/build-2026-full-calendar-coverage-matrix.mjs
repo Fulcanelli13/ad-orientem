@@ -13,6 +13,9 @@ const observed=read(sourceFile("saints-calendar-2026-observed-owner-census.json"
 const candidates=read(sourceFile("saints-2026-daily-subject-demand-review.json"));
 const archiveJoin=read(sourceFile("saints-v4333-311-component-observed-2026-join.json"));
 const identities=read("data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json");
+const personSourceReview=read("data/saints/observed-2026-twelve-person-source-reconciliation.v1.json");
+const personBySource=new Map(personSourceReview.records.map(r=>[r.observed_source_id,r]));
+assert.equal(personBySource.size,12);
 assert.equal(observed.schema,"ao.saints.2026-observed-liturgical-day-census.v1");
 assert.equal(candidates.schema,"ao.saints.2026-observed-daily-subject-demand.v1");
 assert.equal(archiveJoin.schema,"ao.saints.v4333-art-components-to-observed-2026.v1");
@@ -86,6 +89,9 @@ for(const day of observed.days){
    title_en:event.title_en,title_fr:event.title_fr,
    provisional_title_hint:event.title_hint,
    exact_source_id_in_historical_archive:historicalSourceIds.has(sourceOccurrences[i]?.source_id??event.source_id),
+   archived_individual_subject_candidate_key:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.documented_archived_subject_key??null,
+   archived_component_candidate_id:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.documented_archived_component_id??null,
+   source_owner_reconciliation_status:personBySource.get(sourceOccurrences[i]?.source_id??event.source_id)?.source_owner_comparison_status??null,
    saint_or_group_person_identity_id:null,identity_review:"NOT_INFERRED_FROM_FEAST_HEADING",
    artwork_approved_id:null
  }));
@@ -151,6 +157,9 @@ assert.deepEqual(gapKinds,{
 },"42 observed-source gaps must be bulk-triaged by type, not presumed all individuals");
 const summary={
  year:2026,days_observed:365,observed_sanctoral_principals:165,
+ personlike_source_gap_cases_reviewed:personBySource.size,
+ personlike_source_gaps_with_archived_subject_anchor:personSourceReview.records.filter(x=>x.documented_archived_subject_key).length,
+ personlike_source_gaps_held_peter_paul_context:personSourceReview.records.filter(x=>x.source_owner_comparison_status==="HELD_APOSTOLIC_SOURCE_CONTEXT_CONFLICT").length,
  observed_named_commemoration_occurrences:117,
  days_with_sanctoral_or_named_commemoration_subject:222,
  candidate_observed_source_subject_occurrences:282,
@@ -172,6 +181,7 @@ const sourceProvenance={
  source_demands:"saints-2026-daily-subject-demand-review.json · observed titles only",
  archive:"saints-v4333-311-component-observed-2026-join.json · original 311 component IDs",
  cross_owner:"data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json · read-only 608 exact keys",
+ person_gap_review:"data/saints/observed-2026-twelve-person-source-reconciliation.v1.json · 9 same-day art subjects, 2 historical overrides, 1 held apostolic context",
  build_commit:process.env.GITHUB_SHA??null
 };
 const matrix={schema:"ao.saints.2026-full-365-calendar-source-coverage-matrix.v1",
@@ -198,6 +208,13 @@ mkdirSync(dir,{recursive:true});
 const write=(filename,value)=>writeFileSync(resolve(dir,filename),JSON.stringify(value,null,2)+"\n");
 write("saints-2026-full-365-coverage-matrix.json",matrix);
 write("saints-2026-observed-42-source-gaps.json",gapQueue);
+write("saints-2026-twelve-person-source-anchors.json",{
+ schema:"ao.saints.2026-twelve-person-source-anchors.v1",
+ publication:"RESEARCH_ONLY_NO_NEW_SAINT_ID_NO_PROPER_ART_OR_MAP_PROMOTION",
+ source_provenance:sourceProvenance,
+ counts:personSourceReview.counts,
+ records:personSourceReview.records
+});
 const report=[
  "# Ad Orientem Saints · 2026 all-365-day source coverage",
  "",
