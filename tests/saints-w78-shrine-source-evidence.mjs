@@ -38,6 +38,11 @@ assert.equal(batch.person_identity_certifications_added,0);
 assert.equal(batch.geographic_pins_added,0);
 assert.deepEqual([evidence.summary.w80_institutional_subject_sweep.original_shrine_only_records_reviewed,evidence.summary.w80_institutional_subject_sweep.with_official_subject_evidence,evidence.summary.w80_institutional_subject_sweep.original_608_key_gaps_remain],[15,15,38]);
 assert.equal(evidence.summary.w80_institutional_subject_sweep.new_canonical_identity_keys,0);
+assert.deepEqual(evidence.summary.w80_institutional_subject_sweep.source_relationship_review_classes,{
+ DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE:10,
+ TRADITION_ATTESTED_NOT_LIFE_EVENT:4,
+ LOCAL_PATRON_EPITHET_REVIEW:1
+});
 assert.deepEqual(evidence.source_safety_hold.affected_saint_shrine_names,["Saint Beuno","Saint Winefride"]);
 assert.equal(evidence.source_safety_hold.original_source_registry_modified,false);
 const W80=evidence.records.filter(x=>x.institutional_subject_evidence_review);
@@ -46,6 +51,8 @@ assert.equal(W80.reduce((n,x)=>n+x.institutional_subject_evidence_review.referen
 for(const row of W80){
  assert.equal(row.residual_source_owner_research_tier,"SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY");
  assert.equal(row.institutional_subject_evidence_review.canonical_identity_approved,false);
+ assert(["DIRECT_NAMED_INSTITUTIONAL_SUBJECT_TO_SITE","TRADITION_ATTESTED_NOT_LIFE_EVENT","LOCAL_PATRON_EPITHET_REVIEW"].includes(row.institutional_subject_evidence_review.subject_site_claim_status));
+ assert(row.institutional_subject_evidence_review.qualifying_note.length>10);
  assert.equal(row.institutional_subject_evidence_review.saint_person_shrine_link_production_authorized,false);
  for(const ref of row.institutional_subject_evidence_review.references){
   assert.match(ref.url,/^https:\/\//);
@@ -161,6 +168,7 @@ assert.equal(siteNameRelations.get("Saint Anthony of Padua").cross_source_index_
 for(const r of W80){
  const mapped=siteNameRelations.get(r.legacy_shrine_person_or_group_name);
  assert(mapped.institutional_subject_source_links.length===r.institutional_subject_evidence_review.references.length);
+ assert.equal(mapped.subject_site_claim_status,r.institutional_subject_evidence_review.subject_site_claim_status);
  assert(mapped.institutional_subject_source_links.every(x=>!["stwinefrideswell.org.uk","www.stwinefrideswell.org.uk"].includes(new URL(x.url).hostname)));
 }
 const holywell=projected.find(p=>p.place_id==="place:GB:holywell-st-winefride");
@@ -183,6 +191,10 @@ for(const lang of ["en","fr"]){
  const html=renderSaintResearchShrineSheet({language:lang,selected:withArt});
  assert(html.includes("aoSaintSourceEvidenceStatus"));
  assert(html.includes(lang==="fr"?"non approuvés":"Unapproved art research subjects"));
+ const traditionalPlace=projected.find(x=>x.associated_saint_name_sources.some(a=>a.source_saint_name==="Saint Helena"));
+ const patronPlace=projected.find(x=>x.associated_saint_name_sources.some(a=>a.source_saint_name==="Saint Leonard of Noblac"));
+ assert(renderSaintResearchShrineSheet({language:lang,selected:traditionalPlace}).includes(lang==="fr"?"Association traditionnelle":"Traditional association"));
+ assert(renderSaintResearchShrineSheet({language:lang,selected:patronPlace}).includes(lang==="fr"?"Patronage local":"Local patronage"));
  const holywellHtml=renderSaintResearchShrineSheet({language:lang,selected:holywell});
  assert(!holywellHtml.includes("stwinefrideswell.org.uk"));
  assert(holywellHtml.includes("stwinefridesshrine.org"));
