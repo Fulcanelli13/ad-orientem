@@ -4,10 +4,11 @@
   "branch": "research/1224-traditional-formularies",
   "baseCommit": "359ed283ebc6dd28797039c9667791c80323c271",
   "sourceReferences": {
-    "RG": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "RG": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
     "RGMR": "https://maternalheart.org/library/1962rubrics.pdf",
     "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
-    "RG_PRINTED_1960_IMPRIMATUR_TRANSLATION": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf"
+    "RG_PRINTED_1960_IMPRIMATUR_TRANSLATION": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+    "RG_ABBREVIATED_MISNUMBERED_TRANSCRIPTION": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
   },
   "status": "RESEARCH_NO_AUTOMATIC_PERMISSION",
   "ruleCount": 35,
@@ -367,5 +368,26 @@
   "runtimeAutomaticAuthorization": false,
   "codexNumberingCorrection": "RG 108 = Mass form applicability of privileged vs ordinary; RG 109 = privileged types; RG 111 = cardinality/category restrictions.",
   "printedSourceStatus": "1960 imprimatur English translation examined on PDF image page 17 (printed pp.20-21); Latin AAS collation outstanding.",
-  "explanatoryNote": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html"
+  "explanatoryNote": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html",
+  "sourceAssessment": [
+    {
+      "source": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "kind": "CONTEMPORARY_1960_IMPRIMATUR_ENGLISH_CODE_TRANSLATION_PAGES_20_22",
+      "integrity": "RG108/109/111_PRESENT_CORRECTLY",
+      "isOriginalLatinAAS": false
+    },
+    {
+      "source": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "kind": "LATER_ABBREVIATED_HTML_1960_RUBRICS",
+      "integrity": "OMITS_RG108_FORM_SCOPE_AND_MISLABELS_RG109_PRIVILEGED_CATEGORIES_AS_108",
+      "approvedAsSoleReference": false
+    },
+    {
+      "source": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+      "kind": "ORIGINAL_1960_ACTA_APOSTOLICAE_SEDIS_LATIN",
+      "integrity": "NOT_YET_INDEPENDENTLY_COLLATED_TO_RELEVANT_PARAGRAPHS",
+      "approvedAsSoleReference": false
+    }
+  ],
+  "rubricCorrectionRisk": "Code translation is contemporary 1960 English witness with imprimatur; original AAS Latin collation needed for final legislative certification."
 }
