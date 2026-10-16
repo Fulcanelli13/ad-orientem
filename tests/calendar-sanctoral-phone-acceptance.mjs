@@ -167,15 +167,6 @@ try{
      assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-08-15")),true);
      const claim=page.locator('.aoTodayV2CalendarInline [data-cal-observed-commemoration="ASSUMPTION_SUNDAY_2027"]');
      await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-15",null,{timeout:55000});
-     const observedSource=await page.evaluate(()=>{
-       const r=window.AO_RUNTIME_V8?.store?.getState?.()?.resolution;
-       const c=r?.day?.commemorations;
-       return {date:r?.date,status:r?.status,main:r?.day?.main,commemorations:c,
-         mainCommemorations:r?.day?.main?.commemorations,
-         proper:{status:r?.proper?.status,sourcePath:r?.proper?.data?.sourcePath},
-         shown:[...document.querySelectorAll("[data-cal-observed-commemoration]")].map(x=>x.dataset.calObservedCommemoration)};
-     });
-     console.log("DIAG source-bound 2027-08-15",JSON.stringify(observedSource));
      await claim.waitFor({state:"attached",timeout:55000});
      await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
      await claim.waitFor({state:"visible",timeout:12000});
