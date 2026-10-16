@@ -1,0 +1,23 @@
+name: Research P1 traditional formularies
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/p1-*.json'
+      - 'tests/calendar-p1-traditional-formulary-research.mjs'
+      - '.github/workflows/calendar-p1-traditional-formularies.yml'
+  push:
+    branches:
+      - research/1224-traditional-formularies
+jobs:
+  research-invariants:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/calendar-p1-traditional-formulary-research.mjs
+      - run: node tests/calendar-traditional-formulary-sources.mjs
+      - run: node tests/calendar-traditional-adjudication.mjs
