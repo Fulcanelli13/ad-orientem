@@ -90,11 +90,11 @@ try{
   await page.screenshot({path:resolve(out,choice.label+"-study.png"),animations:"disabled"});
   const during=await page.evaluate(()=>{
     const p=window.__AO_PHONE_PREVIEW,scroll=p.root.querySelector(".ao-prayer-card");
-    return {connected:p.root.isConnected,sectionId:p.getCurrentCard()?.sectionId,
+    return {inert:p.root.inert,connected:p.root.isConnected,sectionId:p.getCurrentCard()?.sectionId,
       cueId:p.getActiveCue(),mode:p.getPresentationMode(),scrollTop:scroll?.scrollTop??0,
       count:p.model.totalCards};
   });
-  assert.deepEqual(during,{connected:true,sectionId:before.sectionId,cueId:before.cueId,
+  assert.deepEqual(during,{inert:true,connected:true,sectionId:before.sectionId,cueId:before.cueId,
     mode:before.mode,scrollTop:before.scrollTop,count:before.modelCount},
     "Opening study modified the live ritual state");
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
@@ -103,12 +103,13 @@ try{
   assert.equal(await page.locator("#ao-mass-explorer-root").count(),0);
   const after=await page.evaluate(()=>{
     const p=window.__AO_PHONE_PREVIEW,scroll=p.root.querySelector(".ao-prayer-card");
-    return {connected:p.root.isConnected,sectionId:p.getCurrentCard()?.sectionId,
+    return {inert:p.root.inert,connected:p.root.isConnected,sectionId:p.getCurrentCard()?.sectionId,
       cueId:p.getActiveCue(),mode:p.getPresentationMode(),scrollTop:scroll?.scrollTop??0,
       count:p.model.totalCards,focus:document.activeElement?.dataset?.readerMassExplorer??null};
   });
-  assert.deepEqual({...after,focus:undefined},{...during,focus:undefined},
+  assert.deepEqual({...after,focus:undefined,inert:true},{...during,focus:undefined},
     "Returning from Explorer changed live position");
+  assert.equal(after.inert,false,"Returning from Explorer must restore reader interactivity");
   assert.equal(after.focus,"","Mass reader must regain focus on originating control");
   assert.deepEqual(errors,[],choice.label+" page errors");
   await context.close();
