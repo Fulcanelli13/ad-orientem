@@ -77,7 +77,7 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=167,'Acquisition-to-gallery linked photo coverage has regressed below verified 167-category research-source closeout checkpoint');
+assert.ok(categoriesWithPhoto===168,'Acquisition-to-gallery linked photo coverage has is not exactly 168; photo pointer source discovery regressions');
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
@@ -172,9 +172,16 @@ assert.equal(solimena.photos.length,1,'Unselected mobile research source must re
 assert.match(solimena.hold,/MUSEO_DIOCESANO_NAPOLI/);
 assert.match(solimena.photos[0].rights,/NEVER app distribution/,'Photo reuse rights have not been cleared');
 assert.equal(solimena.photoSourceEvidence.browserInAppTested,false,'Source preview does not establish actual HTML browser QA');
-const holdCategories=[43];
+const hilaryPhoto=at(43,'CLOSEOUT-HILARY-AUCTION-CHISWICK-210389');
+assert.equal(hilaryPhoto.notEligible,true,'Auction original is a research-only subject lead, not approved as an app image');
+assert.equal(hilaryPhoto.historicalArtRating,undefined,'Auction photo cannot inherit previous user rating');
+assert.match(hilaryPhoto.hold,/PHOTO_COMMERCIAL_REUSE_RIGHTS_UNCLEARED/);
+assert.equal(hilaryPhoto.photos.length,1);
+const ineligibleSourceCategories=current.categories.filter(cat=>!cat.works.some(w=>w.photos.length&&!w.notEligible)).map(cat=>cat.index);
+assert.deepEqual(ineligibleSourceCategories,[41,43],'Exactly Cyril and Hilary still have no eligible image-source record');
+const holdCategories=[];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
-assert.deepEqual(missingNow,holdCategories,'One original-source-unlinked Doctor category must remain explicit, not silently substituted');
+assert.deepEqual(missingNow,holdCategories,'All 168 subject categories should have at least one research photo source, not silently substituted');
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
