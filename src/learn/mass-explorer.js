@@ -293,6 +293,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     if(!catalog?.byKey.has(key))return false;
     if(momentKey===null){
       indexScrollTop=safeScroll(root()?.scrollTop);
+      indexScrollPositions[indexView]=indexScrollTop;
       indexFocusKey=key;
       studyStageId=null;
     }
@@ -336,7 +337,12 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         const next=t.dataset.aoMxPath==="themes"?"themes":chronologyView;
         if(next==="themes"&&catalog.formationStages.length!==8)return;
         if(next!==indexView){
-          indexScrollPositions[indexView]=safeScroll(node.scrollTop);
+          const visibleScroll=safeScroll(node.scrollTop);
+          // A tap on the path control can scroll a deep Map up to the control
+          // before the click event fires. The already saved exact source
+          // position is more authoritative than that incidental jump.
+          indexScrollPositions[indexView]=indexView==="map"&&indexFocusBlockId&&
+            visibleScroll<20&&indexScrollTop>20?indexScrollTop:visibleScroll;
           indexView=next;momentKey=null;blockId=null;
           // Keep each path's last source/lesson focus as a return marker.
           // Only a new selection should replace these original targets.
