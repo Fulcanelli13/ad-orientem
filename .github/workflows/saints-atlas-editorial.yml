@@ -6,6 +6,8 @@ on:
       - 'src/find/**'
       - 'tests/saints-explore-native-lens.mjs'
       - 'tests/saints-catalogue-native.mjs'
+      - 'tests/saints-full-calendar-exact-key-ledger.mjs'
+      - 'data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json'
       - 'tests/saints-release-boundary.mjs'
       - 'src/find/saints-release-policy.js'
       - 'tests/saints-source-index.mjs'
@@ -33,6 +35,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Check 608-source-key full-calendar identity ledger
+        run: node tests/saints-full-calendar-exact-key-ledger.mjs
       - name: Gate public Saints pilot to six profiles and zero research indexes
         run: node tests/saints-release-boundary.mjs
       - name: Verify 30-person Saints reading catalogue and unchanged 8 physical pins
