@@ -6,6 +6,7 @@ on:
       - 'src/learn/mass-moments-study.js'
       - 'src/learn/mass-formation-scripture-context.js'
       - 'tests/mass-moments-study.mjs'
+      - 'tests/mass-moments-phone.mjs'
       - '.github/workflows/mass-moments-study.yml'
   push:
     branches:
@@ -15,6 +16,7 @@ on:
       - 'src/learn/mass-moments-study.js'
       - 'src/learn/mass-formation-scripture-context.js'
       - 'tests/mass-moments-study.mjs'
+      - 'tests/mass-moments-phone.mjs'
       - '.github/workflows/mass-moments-study.yml'
 permissions:
   contents: read
@@ -34,3 +36,4 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/mass-formation-scripture-phone.mjs
+      - run: node tests/mass-moments-phone.mjs
