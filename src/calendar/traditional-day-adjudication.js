@@ -21,23 +21,25 @@ function commemorationSourceId(item){
 
 // Records may be supplied by different 1962 resolver adapters as strings
 // or objects. Unlike visible *names*, date codes do not prove identity.
-// Reading every source container avoids dropping string-form commemorations.
-// Does not fabricate a commemoration when only an unexplained title exists.
+// Follow the resolver's precedence of collections: named resolved-day data
+// first, then historical fallback. Never union unrelated source containers,
+// since a lower-priority list may contain *candidates*, not actual observances.
+// Retain string- and object-form source IDs; never infer from date codes/titles.
 export function canonical1962Commemorations(resolution){
   const containers=[
     resolution?.day?.commemorations,
     resolution?.day?.main?.commemorations,
     resolution?.commemorations
   ];
+  const values=containers
+    .map(x=>Array.isArray(x)?x:x==null?[]:[x])
+    .find(items=>items.length>0)||[];
   const out=[],seen=new Set();
-  for(const entries of containers){
-    const values=Array.isArray(entries)?entries:entries==null?[]:[entries];
-    for(const item of values){
-      const id=commemorationSourceId(item),key=base1962Identity(id);
-      if(!id||seen.has(key))continue;
-      seen.add(key);
-      out.push(Object.freeze({sourceId:id,identity:key}));
-    }
+  for(const item of values){
+    const id=commemorationSourceId(item),key=base1962Identity(id);
+    if(!id||seen.has(key))continue;
+    seen.add(key);
+    out.push(Object.freeze({sourceId:id,identity:key}));
   }
   return Object.freeze(out);
 }
@@ -66,7 +68,7 @@ export function reviewCommemorationAddition({
   const normalized=Array.isArray(existing)?existing:[];
   const identity=base1962Identity(candidateId);
   if(identity&&normalized.some(x=>base1962Identity(typeof x==="string"?x:x?.id||x?.sourceId)===identity))
-    return decision("ALREADY_PRESENT","SAME_IDENTITY_MUST_NOT_BE_COMMEmORATED_TWICE");
+    return decision("ALREADY_PRESENT","SAME_IDENTITY_MUST_NOT_BE_COMMEMORATED_TWICE");
   // RG 111(a) also restricts non-conventual sung Masses, irrespective of rank.
   const sungNonconventual=massForm==="SUNG"&&!conventual;
   if((rank===1||sungNonconventual)&&kind!=="PRIVILEGED")
