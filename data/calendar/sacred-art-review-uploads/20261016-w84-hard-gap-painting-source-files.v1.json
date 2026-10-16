@@ -1,0 +1,75 @@
+{
+  "schema": "AO_SACRED_ART_W84_IMAGE_RECOVERY_20261016_V1",
+  "rules": [
+    "For 33 Penrose auction painting, do not auto-bind as same original as Cambridge 1902 photograph; source/artist/year ambiguity remains.",
+    "For 81 icon, authentic visual reference is low resolution and cannot be approved as final high-quality hero.",
+    "For 89 NGA, file title speculative; no claims or substitutions without exact page and accession.",
+    "All earlier scores/readings unchanged."
+  ],
+  "items": [
+    {
+      "categoryIndex": 6,
+      "file": "Ribera - San Bartolomé, P001099.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Bartolom%C3%A9%2C_P001099.jpg",
+      "identityStatus": "PRADO_P001099_EXACT",
+      "evidence": "Prado Saint Bartholomew Jusepe de Ribera original P001099, 1630-35.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 13,
+      "file": "Anthonis van Dyck, Kunsthistorisches Museum Wien, Gemäldegalerie - Apostel Judas Thaddäus - GG 6809 - Kunsthistorisches Museum.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Apostel_Judas_Thadd%C3%A4us_-_GG_6809_-_Kunsthistorisches_Museum.jpg",
+      "identityStatus": "KHM_GG6809_EXACT",
+      "evidence": "Kunsthistorisches Museum GG6809 Apostle Jude by Van Dyck.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 33,
+      "file": "James Doyle Penrose - The last chapter (Bonhams 2010).jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:James_Doyle_Penrose_-_The_last_chapter_(Bonhams_2010).jpg",
+      "identityStatus": "WORK_VARIANT_HOLD",
+      "evidence": "Bonhams oil canvas 40.7x50.8, date/year discrepancy and metadata artist mislabel, do not inherit 1902 approval.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 61,
+      "file": "Tableau Guérison de saint Jean-Marie Vianney curé d'Ars (basilique d'Ars).JPG",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tableau_Gu%C3%A9rison_de_saint_Jean-Marie_Vianney_cur%C3%A9_d'Ars_(basilique_d'Ars).JPG",
+      "identityStatus": "EXACT_ARS_PHYSICAL_OBJECT",
+      "evidence": "The exact painting of the healing of Saint Jean Vianney at Basilique d'Ars, France; original authenticated to basilica.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 64,
+      "file": "Veronese, The Martyrdom and Last Communion of Saint Lucy, c. 1585-1586, NGA 63264.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Veronese%2C_The_Martyrdom_and_Last_Communion_of_Saint_Lucy%2C_c._1585-1586%2C_NGA_63264.jpg",
+      "identityStatus": "NGA_63264_EXACT",
+      "evidence": "National Gallery of Art object 63264 / 1984.28.1; official photograph.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 72,
+      "file": "Van Dyck - St Martin Dividing his Cloak c.1620.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck_-_St_Martin_Dividing_his_Cloak_c.1620.jpg",
+      "identityStatus": "WINDSOR_VANDYCK_EXACT",
+      "evidence": "Windsor St Martin Dividing his Cloak, c1620, distinct from Zaventem version; user original expected Windsor.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 81,
+      "file": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant'Alfonso_di_Liguori_(Rome).jpg",
+      "identityStatus": "ORIGINAL_ICON_REFERENCE_LOW_RES",
+      "evidence": "Authentic Roman original icon photograph; only 781x1024, no claim satisfactory hero resolution; review-only.",
+      "reviewApproval": false
+    },
+    {
+      "categoryIndex": 89,
+      "file": "Jacopo Bassano - The Miraculous Draught of Fishes - NGA 96688.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacopo_Bassano_-_The_Miraculous_Draught_of_Fishes_-_NGA_96688.jpg",
+      "identityStatus": "NGA_96688_FILE_UNCONFIRMED",
+      "evidence": "NGA Jacopo Bassano official photo candidate, file identity to validate",
+      "reviewApproval": false
+    }
+  ]
+}
