@@ -27,6 +27,9 @@ on:
       - 'data/learn/research/mass-explorer-first-two-release-candidates-20261016.v1.json'
       - 'data/learn/research/mass-explorer-remaining-six-release-candidates-20261016.v1.json'
       - 'scripts/build-mass-explorer-all-canon-release-review.mjs'
+      - 'scripts/mass-explorer-canon-decision-core.mjs'
+      - 'scripts/prepare-mass-explorer-canon-release.mjs'
+      - 'tests/mass-explorer-canon-decision-import.mjs'
       - 'tests/mass-explorer-all-canon-release-review.mjs'
       - 'scripts/build-mass-explorer-first-two-release-review.mjs'
       - 'tests/mass-explorer-first-two-release-review.mjs'
@@ -74,6 +77,8 @@ jobs:
       - run: node scripts/build-mass-explorer-editorial-bridge.mjs
       - run: node scripts/build-mass-explorer-first-two-release-review.mjs
       - run: node scripts/build-mass-explorer-all-canon-release-review.mjs
+      - run: node scripts/prepare-mass-explorer-canon-release.mjs
+      - run: node tests/mass-explorer-canon-decision-import.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
@@ -96,5 +101,6 @@ jobs:
             artifacts/p2-mass-explorer-bridge/
             artifacts/p2-first-two-review/
             artifacts/p2-all-canon-candidates/
+            artifacts/p2-canon-decision-import/
           if-no-files-found: warn
           retention-days: 14
