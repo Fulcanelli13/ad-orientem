@@ -180,7 +180,7 @@
     ],
     "nextWork": "Seek genuinely independent published selections for 24 missing events, especially short narrative texts of Judith, Daniel, Passion, Acts; full harvest all nine existing source families then independent consensus/editorial choice. Avoid adding another source from the same lectionary to vote totals."
   },
-  "latestResearchHarvest": "2026-10-16-v3",
+  "latestResearchHarvest": "2026-10-16-v4",
   "thirdSourceHarvest20261016": {
     "schema": "AO_COMPARATIVE_SCRIPTURE_SOURCE_MATRIX_HARVEST_V3",
     "date": "2026-10-16",
@@ -301,5 +301,64 @@
     "SchusterOCRNotUsed": true,
     "noReaderAppChanges": true,
     "nextWork": "Complete published reference harvesting for 11 gaps, validating original selection scopes and prior source indexes; then finish independent-family comparisons before editorial short/extended/full passage decisions. Avoid adding whole-Bible plans as if they were purpose-designed abridgements."
+  },
+  "fourthSourceHarvest20261016": {
+    "schema": "AO_COMPARATIVE_SCRIPTURE_SOURCE_MATRIX_HARVEST_V4",
+    "date": "2026-10-16",
+    "v3ReportedQualifiedEvents": 140,
+    "v3StrictRecalculatedQualifiedEvents": 139,
+    "qualificationCorrection": "The malformed '2 Samuel 5:1-' was marked INCOMPLETE_PUBLISHED_REFERENCE and must not count towards David taking Jerusalem (Atlas event #37). Original source text preserved verbatim.",
+    "sourceSelectionRowsBefore": 298,
+    "sourceSelectionRowsAdded": 10,
+    "sourceSelectionRowsAfter": 308,
+    "strictQualifiedSourceCoverageEvents": 147,
+    "strictUncoveredEvents": 4,
+    "qualifyingFamiliesAtLeastTwoEvents": 43,
+    "qualifyingFamiliesAtLeastThreeEvents": 12,
+    "coreComparisonSourcesUnchanged": 10,
+    "coreQualifiedIndependentPublisherFamiliesUnchanged": 9,
+    "supplementalIndependentlyEditedSourceFamiliesNew": 9,
+    "researchOnly": true,
+    "approvedVerseSelections": 0,
+    "newProductionReaderLinks": 0,
+    "newlyCoveredEventNumbers": [
+      7,
+      36,
+      48,
+      78,
+      103,
+      139,
+      143,
+      145
+    ],
+    "remainingUncoveredEventNumbers": [
+      37,
+      60,
+      61,
+      132
+    ],
+    "newEvidenceFile": "data/explore/biblical-pericope-comparative-new-evidence.v4.json",
+    "conversationOutputFileDigests": {
+      "workbook": {
+        "file": "AO_Biblical_Excerpt_Master_Matrix_v4.xlsx",
+        "sha256": "aea28e423ca20cd7ad2e6489b3afbee0f18e6fcf60a8dc88dd461248ba5edf42"
+      },
+      "completeData": {
+        "file": "AO_Biblical_Excerpt_Master_Data_v4.json",
+        "sha256": "55a9bd8e6c4d2990dd89a5f11726530584af996617153293bc115036866188d1"
+      },
+      "coverage": {
+        "file": "AO_Biblical_Excerpt_Master_Coverage_v4.json",
+        "sha256": "c2a1ed45955645e1b7f7193d52fb4215e76b591b42aa4018dab1f0b2e24c231e"
+      },
+      "newEvidence": {
+        "file": "AO_Biblical_Excerpt_Master_New_Evidence_v4.csv",
+        "sha256": "244c75c1096e1686c3cee7f8d041cc8ef3595594fa93a1c625af4b5e8b15745b"
+      }
+    },
+    "publisherVerbatimReferencesOnly": true,
+    "noBibleTranslationChange": true,
+    "noUserFacingProseChange": true,
+    "nextWork": "Harvest wider multi-event originally edited Scripture selection systems to strengthen 2nd and 3rd family overlap, while separately targeting four held events; no editorial range decisions until source comparison reviewed."
   }
 }
