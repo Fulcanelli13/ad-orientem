@@ -6,7 +6,7 @@ import {chromium} from "@playwright/test";
 const root=fileURLToPath(new URL("..",import.meta.url));
 const path=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 const html=await readFile(path,"utf8");
-assert.equal((html.match(/class="entry" id=/g)||[]).length,52);
+assert.equal((html.match(/class="entry" id=/g)||[]).length,61);
 assert.equal((html.match(/<em class="optional"/g)||[]).length,3);
 const browser=await chromium.launch({headless:true});
 try{
@@ -16,9 +16,10 @@ try{
   const page=await context.newPage(),errors=[];
   page.on("pageerror",err=>errors.push(String(err)));
   await page.goto(pathToFileURL(path).href,{waitUntil:"load"});
-  assert.equal(await page.locator("details.entry").count(),52);
+  assert.equal(await page.locator("details.entry").count(),61);
   assert.equal(await page.locator('details.entry summary .optional').count(),3);
-  assert.equal(await page.locator(".held li").count(),3);
+  assert.equal(await page.locator(".held li").count(),4);
+  assert.equal(await page.locator("[data-conclusion-condition]").count(),6);
   assert.equal(await page.locator('details.entry[open]').count(),1);
   await page.locator('a[href="#AO.SM.B063"]').click();
   const pater=page.locator('#AO\\.SM\\.B063');
@@ -45,10 +46,22 @@ try{
   const last=page.locator('#AO\\.SM\\.B084');
   assert.equal(await last.getAttribute("open"),"");
   assert.match(await last.locator('[data-lang="fr"] h3').innerText(),/prière après la communion/i);
+  await page.locator('a[href="#AO.SM.B090"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B090 summary').innerText(),/DISMISSAL VARIES/);
+  await page.locator('a[href="#AO.SM.B092"]').click();
+  assert.match(await page.locator('#AO\\.SM\\.B092 summary').innerText(),/BLESSING MAY BE OMITTED/);
+  await page.locator('a[href="#AO.SM.B095"]').click();
+  const gospel=page.locator('#AO\\.SM\\.B095');
+  assert.equal(await gospel.getAttribute("open"),"");
+  assert.match(await gospel.locator("summary").innerText(),/LAST GOSPEL MAY BE OMITTED/);
+  assert.equal(await gospel.locator('[data-source-voice="PUBLIC_TEXT"]').count(),4);
+  assert.equal(await gospel.locator('[data-source-voice="USER_RESPONSE"]').count(),1);
+  assert.match(await gospel.locator('p[lang="la"]').nth(2).innerText(),/ET VERBUM CARO FACTUM EST/);
+  assert.match(await gospel.locator('[data-lang="fr"] h3').innerText(),/Verbe s’est fait chair/);
   assert.deepEqual(errors,[],width+"px script runtime exceptions");
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
   assert.ok(overflow<=2,width+"px horizontal overflow: "+overflow);
-  console.log("PASS P2 editorial HTML browser: "+width+"px; 52 text blocks, 3 optional customs, 3 held Propers, bilingual toggle, exact speaking roles");
+  console.log("PASS P2 editorial HTML browser: "+width+"px; 61 text blocks, 3 optional customs, 4 held Propers and conditional finales, bilingual toggle, exact speaking roles");
   await context.close();
  }
 }finally{await browser.close()}
