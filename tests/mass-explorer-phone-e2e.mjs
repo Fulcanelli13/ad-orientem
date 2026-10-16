@@ -53,6 +53,14 @@ try{
   assert.ok(baseline.rootBottom<=baseline.ribbonTop+2,width+" px Explorer overlays global ribbon");
   await page.locator('#ao-mass-explorer-root [data-ao-mx-moment="AO.CARD.010"]').click();
   await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"]').click();
+  const selectedTab=await page.locator('#ao-mass-explorer-root [data-ao-mx-block="AO.SM.B031"]').evaluate(node=>{
+    const tab=node.getBoundingClientRect(),rail=node.parentElement.getBoundingClientRect();
+    return {left:tab.left,right:tab.right,railLeft:rail.left,railRight:rail.right,
+      focused:document.activeElement===node};
+  });
+  assert.ok(selectedTab.left>=selectedTab.railLeft-2&&selectedTab.right<=selectedTab.railRight+2,
+    width+" selected prayer must remain visible in its scrollable index: "+JSON.stringify(selectedTab));
+  assert.equal(selectedTab.focused,true,width+" keyboard focus lost when selecting a prayer");
   const prayer=page.locator("#ao-mass-explorer-root .aoMXText");
   assert.match(await prayer.innerText(),/Suscipe, sancte Pater/);
   assert.ok((await prayer.locator(".aoMXLatin").count())>=1,width+" lost original Latin");
