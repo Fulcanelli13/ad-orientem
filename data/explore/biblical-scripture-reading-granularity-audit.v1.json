@@ -21,7 +21,11 @@
       "NARROW_ANCHOR_4_OR_FEWER_VERSES": 9,
       "OVERLAPS_ANOTHER_CANONICAL_ATLAS_EVENT": 4,
       "NO_QUALIFIED_SELECTION_REFERENCE": 2
-    }
+    },
+    "canonical73Books": 73,
+    "booksNamedInCurrent151": 28,
+    "booksNamedAfterProvisionalExpansion": 38,
+    "booksStillRequiringAtLeastOneDedicatedReadingCandidate": 35
   },
   "taxonomy": {
     "CHRONOLOGY_MILESTONE": "existing Atlas event key, never rekeyed or duplicated",
@@ -4932,5 +4936,566 @@
     }
   ],
   "approvedReadingUnits": [],
-  "productionChanges": []
+  "productionChanges": [],
+  "catholic73BookCoverage": {
+    "source": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html",
+    "booksInCatholicCanon": 73,
+    "oldTestament": 46,
+    "newTestament": 27,
+    "assessmentScope": "Book name presence in research proposal references, not certification of exhaustive reading or full-book coverage",
+    "booksWithExistingAtlasMilestones": 28,
+    "booksWithAnyProposedOrExistingReference": 38,
+    "booksStillWithoutAnyNamedAtlasOrSupplementalCandidate": [
+      "Leviticus",
+      "Judges",
+      "1 Chronicles",
+      "2 Chronicles",
+      "Psalms",
+      "Ecclesiastes",
+      "Lamentations",
+      "Hosea",
+      "Joel",
+      "Amos",
+      "Obadiah",
+      "Jonah",
+      "Micah",
+      "Nahum",
+      "Habakkuk",
+      "Zephaniah",
+      "Haggai",
+      "Zechariah",
+      "Malachi",
+      "2 Corinthians",
+      "Galatians",
+      "Ephesians",
+      "Colossians",
+      "1 Thessalonians",
+      "2 Thessalonians",
+      "1 Timothy",
+      "2 Timothy",
+      "Titus",
+      "Philemon",
+      "1 Peter",
+      "2 Peter",
+      "1 John",
+      "2 John",
+      "3 John",
+      "Jude"
+    ],
+    "inventory": [
+      {
+        "book": "Genesis",
+        "testament": "OT",
+        "existingAtlasMilestones": 18,
+        "splitProposalChildren": 13,
+        "supplementalCandidates": 5
+      },
+      {
+        "book": "Exodus",
+        "testament": "OT",
+        "existingAtlasMilestones": 11,
+        "splitProposalChildren": 8,
+        "supplementalCandidates": 3
+      },
+      {
+        "book": "Leviticus",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Numbers",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Deuteronomy",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Joshua",
+        "testament": "OT",
+        "existingAtlasMilestones": 2,
+        "splitProposalChildren": 2,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Judges",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Ruth",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "1 Samuel",
+        "testament": "OT",
+        "existingAtlasMilestones": 3,
+        "splitProposalChildren": 3,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "2 Samuel",
+        "testament": "OT",
+        "existingAtlasMilestones": 2,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 2
+      },
+      {
+        "book": "1 Kings",
+        "testament": "OT",
+        "existingAtlasMilestones": 4,
+        "splitProposalChildren": 10,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "2 Kings",
+        "testament": "OT",
+        "existingAtlasMilestones": 4,
+        "splitProposalChildren": 2,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "1 Chronicles",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 Chronicles",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Ezra",
+        "testament": "OT",
+        "existingAtlasMilestones": 2,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Nehemiah",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Tobit",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Judith",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 2,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Esther",
+        "testament": "OT",
+        "existingAtlasMilestones": 2,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "1 Maccabees",
+        "testament": "OT",
+        "existingAtlasMilestones": 2,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 Maccabees",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 3,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Job",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Psalms",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Proverbs",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Ecclesiastes",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Song of Songs",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Wisdom",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Sirach",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Isaiah",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 3
+      },
+      {
+        "book": "Jeremiah",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Lamentations",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Baruch",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Ezekiel",
+        "testament": "OT",
+        "existingAtlasMilestones": 1,
+        "splitProposalChildren": 3,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Daniel",
+        "testament": "OT",
+        "existingAtlasMilestones": 5,
+        "splitProposalChildren": 5,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Hosea",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Joel",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Amos",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Obadiah",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Jonah",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Micah",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Nahum",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Habakkuk",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Zephaniah",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Haggai",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Zechariah",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Malachi",
+        "testament": "OT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Matthew",
+        "testament": "NT",
+        "existingAtlasMilestones": 18,
+        "splitProposalChildren": 8,
+        "supplementalCandidates": 3
+      },
+      {
+        "book": "Mark",
+        "testament": "NT",
+        "existingAtlasMilestones": 6,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Luke",
+        "testament": "NT",
+        "existingAtlasMilestones": 16,
+        "splitProposalChildren": 10,
+        "supplementalCandidates": 4
+      },
+      {
+        "book": "John",
+        "testament": "NT",
+        "existingAtlasMilestones": 19,
+        "splitProposalChildren": 10,
+        "supplementalCandidates": 7
+      },
+      {
+        "book": "Acts",
+        "testament": "NT",
+        "existingAtlasMilestones": 21,
+        "splitProposalChildren": 20,
+        "supplementalCandidates": 2
+      },
+      {
+        "book": "Romans",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "1 Corinthians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 2
+      },
+      {
+        "book": "2 Corinthians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Galatians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Ephesians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Philippians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "Colossians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "1 Thessalonians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 Thessalonians",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "1 Timothy",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 Timothy",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Titus",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Philemon",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Hebrews",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "James",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 1
+      },
+      {
+        "book": "1 Peter",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 Peter",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "1 John",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "2 John",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "3 John",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Jude",
+        "testament": "NT",
+        "existingAtlasMilestones": 0,
+        "splitProposalChildren": 0,
+        "supplementalCandidates": 0
+      },
+      {
+        "book": "Revelation",
+        "testament": "NT",
+        "existingAtlasMilestones": 5,
+        "splitProposalChildren": 2,
+        "supplementalCandidates": 3
+      }
+    ],
+    "noBibleEditionReopened": true,
+    "requestAdditionalLiteraryCorpusAudit": true
+  }
 }
