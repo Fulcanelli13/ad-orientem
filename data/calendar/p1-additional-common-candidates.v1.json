@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_ADDITIONAL_COMMON_APP_SOURCE_CANDIDATES_V1",
   "asOf": "2026-10-16",
-  "status": "TWENTY_EIGHT_CANDIDATE_PATHS_CHECKED_17_DIRECT_TRILINGUAL_11_INCOMPLETE_3_INDEX_ROWS_NO_CANONICAL_CODE",
+  "status": "28_APP_CANDIDATES_17_DIRECT_1_INHERITED_10_REMAIN_PARTIAL",
   "owner": "data/calendar/p1-1962-formulary-master.v1.json",
   "basis": "The specified C-code file headings come from Divinum Officium's Latin Commune Office/Mass source family, not verified as the runtime Ad Orientem source or as independent printed-1962 distinct Masses.",
   "upstreamRepoUrl": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Commune",
@@ -350,7 +350,7 @@
       "candidateCanonicalSourcePath": "Commune/C2ap",
       "upstreamCommonLabel": "Eastertide alternate oration variant",
       "sourceCode": "C2ap",
-      "identityStatus": "SOURCE_PATH_RESPONDS_BUT_INHERITANCE_OR_SECTION_GAPS",
+      "identityStatus": "SOURCE_COMPLETE_AFTER_EXPLICIT_MASS_FAMILY_AND_ALTERNATE_ORATION_INHERITANCE",
       "distinctPrintedFormularyCertified": false,
       "linguisticTextCopied": false,
       "approvedForRuntime": false,
@@ -359,7 +359,10 @@
       "liveInAppEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json",
       "sourceSectionReconciliationStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "sourcePathProofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
-      "nineSectionTrilingualReady": false
+      "nineSectionTrilingualReady": false,
+      "readyViaSourceComposition": true,
+      "sourceCompositionOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38916464900"
     },
     {
       "researchId": "p1:index:1962:martyr_second_mass",
@@ -471,5 +474,7 @@
   "verifiedDirectTrilingualNineSectionCandidates": 17,
   "inheritedOrPartialSourceCandidates": 11,
   "auditedCandidateCount": 28,
-  "auditEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json"
+  "auditEvidencePath": "data/calendar/p1-additional-common-app-audit.v1.json",
+  "readyAfterVerifiedComposition": 18,
+  "remainingPartialSources": 10
 }
