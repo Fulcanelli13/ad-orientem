@@ -16,6 +16,7 @@ const ALIASES=Object.freeze({
  "learn.sexual_ethics":"morality moralite moralité sexual sex mariage chastete chasteté contraception abortion avortement",
  "learn.spiritual_life":"oraison mental prayer examen spiritual direction vie spirituelle",
  "learn.mass":"roman mass traditional liturgy missa messe liturgie",
+ "learn.mass_explorer":"mass explorer explorer la messe understand mass comprendre la messe traditional liturgical study study by theme cours formation",
  "learn.serve_mass.responses":"altar server acolyte servant messe reponses réponses",
  "learn.latin":"latin grammar grammar missa pronunciation langue latine",
  "learn.glossary":"dictionary latin term concept definition dictionnaire glossaire reference référence",
@@ -47,6 +48,10 @@ export function searchDiscovery(query,{sections=[],referenceEntries=[],contentEn
   const familyScore=score(q,section.title?.[0],[section.title?.[1],...(section.description??[])]);
   if(familyScore>=0)all.push({id:section.id,kind:"family",title:section.title,subtitle:section.description,score:familyScore+2,group:"formation"});
   for(const item of section.items??[]){
+   // Consolidated public discovery: the eight-lesson owner stays reachable
+   // through the thematic view and existing deep content results, not as a
+   // second competing root module result beside Understand the Mass.
+   if(item.id==="learn.mass")continue;
    const rank=score(q,item.title?.[0],[item.title?.[1],...(item.description??[]),ALIASES[item.id],...section.title]);
    if(rank>=0)all.push({id:item.id,kind:"module",title:item.title,subtitle:item.description,score:rank,group:"formation",familyId:section.id});
   }
