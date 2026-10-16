@@ -84,6 +84,8 @@ export function massMapHtml(catalog,{french=false,studyHtml=""}={}){
    '<div class="aoMXMapToolbar"><div><strong>'+map.momentCount+'</strong> '+tr(french,"Guide moments","étapes du Guide")+
     ' <span aria-hidden="true">·</span> <strong>'+map.blockCount+'</strong> '+tr(french,"source blocks","textes sources")+'</div>'+
     '<button type="button" data-ao-mx-view="list">'+tr(french,"Text index","Index textuel")+'</button></div>'+
+   (studyHtml?'<nav class="aoMXMapStudyShortcut" aria-label="'+tr(french,"Choose study path","Choisir un parcours")+'">'+
+     '<button type="button" data-ao-mx-jump="themes">'+tr(french,"Study by theme · eight lessons","Étudier par thème · huit leçons")+' ↓</button></nav>':"")+
    '<nav class="aoMXMapPhases" aria-label="'+tr(french,"Jump to a Mass part","Accéder à une partie de la Messe")+'">'+phaseButtons+'</nav>'+
    '<div class="aoMXMapJourney">'+steps+'</div>'+
    '<section class="aoMXMapRitualLink"><h2>'+tr(french,"Follow an actual Mass","Suivre une Messe réelle")+'</h2>'+
@@ -97,6 +99,7 @@ export function massMapHtml(catalog,{french=false,studyHtml=""}={}){
 export function massMapCss(){
  return [
  ".aoMXMap .aoMXHero{padding:2px 0 12px}.aoMXMap .aoMXHero h1{font-size:clamp(1.8rem,5vw,2.65rem);margin:6px 0 8px}.aoMXMap .aoMXHero p{font-size:.94rem;line-height:1.5;margin:8px 0 0;max-width:55ch}",
+ ".aoMXMapStudyShortcut{margin:10px 0 13px}.aoMXMapStudyShortcut button{min-height:44px;padding:7px 0;border:0;background:transparent;color:var(--liturgical,#c9ad78);font:500 .83rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}",
  ".aoMXMapToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;border-block:1px solid var(--ao-rule,#393c40);padding:12px 0;font:400 .8rem/1.4 var(--ao-font-ui,system-ui)}.aoMXMapToolbar strong{color:var(--liturgical,#c9ad78)}.aoMXMapToolbar button,.aoMXMapRitualLink button{min-height:44px;padding:8px 12px;background:transparent;border:1px solid var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78);border-radius:9px;cursor:pointer}",
  ".aoMXMapPhases{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:12px 0 25px}.aoMXMapPhases button{display:flex;flex-direction:column;gap:7px;text-align:left;padding:10px;min-height:80px;cursor:pointer;color:inherit;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,#393c40);border-radius:10px;font:500 .72rem/1.4 var(--ao-font-ui,system-ui)}.aoMXMapPhaseNumber{font:600 .71rem/1.3 var(--ao-font-ui,system-ui);color:var(--liturgical,#c9ad78)}.aoMXMapPhases button[aria-current=step]{border-color:var(--liturgical,#c9ad78)}",
  ".aoMXMapJourney{position:relative;margin:0}.aoMXMapPhase{position:relative;scroll-margin-top:112px;margin:0 0 38px;padding:0 0 0 22px;border-left:1px solid var(--ao-rule,#393c40)}.aoMXMapPhase:before{content:'';position:absolute;left:-5px;top:22px;width:9px;height:9px;border-radius:50%;background:var(--liturgical,#c9ad78)}.aoMXMapPhaseHead{display:flex;gap:17px;align-items:start;padding:8px 0 18px}.aoMXMapPhaseHead>span{color:var(--liturgical,#c9ad78);font:600 .72rem/1.5 system-ui}.aoMXMapPhaseHead h2{margin:0;font:500 1.5rem/1.25 var(--ao-font-display,Georgia,serif)}.aoMXMapPhaseHead small{color:var(--ao-text-muted,#adb2b7);font:.75rem/1.6 system-ui}",
