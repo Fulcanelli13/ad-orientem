@@ -37,7 +37,8 @@ export const LEARN_LAYOUT=Object.freeze({
       title:Object.freeze(["Mass & Liturgy","Messe & liturgie"]),
       description:Object.freeze(["Understand traditional Catholic worship and learn how to take part in it.","Comprendre le culte catholique traditionnel et apprendre à y prendre part."]),
       items:Object.freeze([
-        Object.freeze({id:"learn.mass",type:"course",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["A guided course through the order, meaning, history and roles of the Roman Mass.","Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
+        Object.freeze({id:"learn.mass_explorer",type:"reference",featured:true,title:Object.freeze(["Mass Explorer","Explorer la Messe"]),description:Object.freeze(["Explore the 1962 Sung Mass in order, with original prayers and approved Guide explanations.","Parcourir la Messe chantée de 1962 dans l’ordre, avec les prières originales et les explications du Guide approuvé."])}),
+        Object.freeze({id:"learn.mass",type:"course",featured:false,title:Object.freeze(["Mass Formation · Eight lessons","Formation sur la Messe · Huit leçons"]),description:Object.freeze(["The existing source-backed lessons on the order, meaning, history and roles of the Roman Mass.","Les leçons existantes et sourcées sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
         Object.freeze({id:"learn.serve_mass.responses",type:"practice",featured:false,title:Object.freeze(["Serve Low Mass","Servir la Messe basse"]),description:Object.freeze(["Exact minister-response trainer from the certified 1962 corpus.","Entraînement exact aux réponses du servant d’après le corpus certifié de 1962."])}),
 
       ])
