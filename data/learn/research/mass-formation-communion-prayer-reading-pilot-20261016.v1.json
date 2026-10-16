@@ -1,0 +1,526 @@
+{
+  "schema": "ao-formation-communion-prayer-reading-pilot-v1",
+  "scope": "FORMATION_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "profile": "ORDINARY_SUNG",
+  "study_level": "DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "guide_owner": "data/presentation/guide-registry.v1.json",
+  "curriculum_owner": "data/learn/mass-formation-campion.v1.json",
+  "editorial_note": "Published-text reading only. Existing MF01/MF07/MF08 assignments are suggestions for study navigation, NOT a certification of individual historical/doctrinal claims. B077–79 are optional older/local custom and must not be represented as normative. Scripture parallels await P0; no excerpt is publicly released.",
+  "entries": [
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.01",
+      "block_id": "AO.SM.B062",
+      "moment_id": "AO.CARD.019",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Admonished by saving precepts",
+      "heading": {
+        "en": "The invitation to the Lord’s Prayer",
+        "fr": "L’invitation au Notre Père"
+      },
+      "reading": {
+        "en": "The priest introduces the Pater noster by recalling saving precepts and divine teaching. The phrase “we dare to say” leads directly into the prayer.",
+        "fr": "Le prêtre introduit le Pater noster en rappelant les préceptes salutaires et l’enseignement divin. L’expression « nous osons dire » conduit directement à la prière."
+      },
+      "observe": {
+        "en": "This introduction belongs to its own published text block. It should not be merged into the prayer itself or treated as a separate congregational response.",
+        "fr": "Cette introduction possède son propre bloc de texte publié. Il ne faut pas la fondre dans la prière elle-même ni la présenter comme une réponse distincte de l’assemblée."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.02",
+      "block_id": "AO.SM.B063",
+      "moment_id": "AO.CARD.019",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Our Father, who art in heaven",
+      "heading": {
+        "en": "The Pater noster and its response",
+        "fr": "Le Notre Père et sa réponse"
+      },
+      "reading": {
+        "en": "The priest prays the Lord’s Prayer, from addressing the Father to the petition not to be led into temptation. The source then gives “But deliver us from evil” as the response and “Amen” as the priest’s private conclusion.",
+        "fr": "Le prêtre récite le Notre Père, depuis l’invocation du Père jusqu’à la demande de ne pas entrer en tentation. La source confie ensuite « Mais délivrez-nous du mal » à la réponse et « Amen » à la conclusion privée du prêtre."
+      },
+      "observe": {
+        "en": "Keep these three speaking assignments distinct: PUBLIC_TEXT, USER_RESPONSE and PRIEST_PRIVATE. Their placement is documented in the original Sung text, not decided by this Formation note.",
+        "fr": "Conservez les trois attributions vocales : PUBLIC_TEXT, USER_RESPONSE et PRIEST_PRIVATE. Leur place provient du texte chanté publié, et non d’une décision de cette notice."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.03",
+      "block_id": "AO.SM.B064",
+      "moment_id": "AO.CARD.020",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Deliver us, we beseech thee",
+      "heading": {
+        "en": "Deliverance and peace",
+        "fr": "Délivrance et paix"
+      },
+      "reading": {
+        "en": "Following the Pater noster, the priest asks to be delivered from past, present and future evils. He invokes the intercession of the Virgin Mary, apostles and saints, seeking peace, freedom from sin and protection from disturbance.",
+        "fr": "À la suite du Notre Père, le prêtre demande la délivrance des maux passés, présents et futurs. Il invoque l’intercession de la Vierge Marie, des apôtres et des saints, demandant la paix, la liberté du péché et la protection contre le trouble."
+      },
+      "observe": {
+        "en": "The prayer develops the petition for deliverance just heard in the Lord’s Prayer. Its separate words remain a private priestly text, not a new public response.",
+        "fr": "La prière développe la demande de délivrance entendue dans le Notre Père. Son texte demeure une prière privée du prêtre, et non une nouvelle réponse publique."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.04",
+      "block_id": "AO.SM.B065",
+      "moment_id": "AO.CARD.020",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "World without end.",
+      "heading": {
+        "en": "The conclusion of Libera nos",
+        "fr": "La conclusion de Libera nos"
+      },
+      "reading": {
+        "en": "The short public conclusion says “World without end” and receives the answer “Amen”. It marks the end of the preceding private prayer without repeating its full text.",
+        "fr": "La brève conclusion publique dit « Dans tous les siècles des siècles », à laquelle répond « Amen ». Elle termine la prière privée précédente sans en répéter tout le texte."
+      },
+      "observe": {
+        "en": "The source assigns the formula and the response to separate text units. Do not confuse this Amen with the private Amen at the end of the Pater noster.",
+        "fr": "La source répartit la formule et la réponse dans deux unités distinctes. Ne confondez pas cet Amen avec l’Amen privé qui conclut le Notre Père."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.05",
+      "block_id": "AO.SM.B066",
+      "moment_id": "AO.CARD.020",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "May the peace ✠ of the Lord",
+      "heading": {
+        "en": "The greeting of peace",
+        "fr": "La salutation de paix"
+      },
+      "reading": {
+        "en": "The priest publicly asks that the peace of the Lord remain with those addressed; the response is “And with thy spirit”. The original formula includes three cross marks in its published text.",
+        "fr": "Le prêtre souhaite publiquement que la paix du Seigneur demeure avec ceux auxquels il s’adresse ; la réponse est « Et avec votre esprit ». La formule publiée comporte trois signes de croix."
+      },
+      "observe": {
+        "en": "Those signs and the answering voice belong to the source. This study does not infer that a modern exchange of peace occurs here.",
+        "fr": "Ces signes et la réponse appartiennent à la source. Cette notice n’en déduit pas qu’un échange moderne de la paix se déroule à cet endroit."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.06",
+      "block_id": "AO.SM.B067",
+      "moment_id": "AO.CARD.020",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "May this mingling and consecration",
+      "heading": {
+        "en": "The prayer of the mingling",
+        "fr": "La prière de la commixtion"
+      },
+      "reading": {
+        "en": "The priest asks that the mingling and consecration of the Body and Blood of Christ serve unto everlasting life for those who receive.",
+        "fr": "Le prêtre demande que la commixtion et la consécration du Corps et du Sang du Christ servent à la vie éternelle de ceux qui les reçoivent."
+      },
+      "observe": {
+        "en": "The petition concerns the recipients and life everlasting. Any extended ceremonial symbolism of the commingling requires separately approved Formation evidence.",
+        "fr": "La demande concerne ceux qui reçoivent et la vie éternelle. Toute explication symbolique plus développée de la commixtion exige des sources approuvées séparément."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.07",
+      "block_id": "AO.SM.B068",
+      "moment_id": "AO.CARD.021",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Lamb of God, who takest away",
+      "heading": {
+        "en": "The three invocations of the Lamb of God",
+        "fr": "Les trois invocations de l’Agneau de Dieu"
+      },
+      "reading": {
+        "en": "The sung Agnus Dei addresses the Lamb of God who takes away the sins of the world. The first two invocations ask for mercy; the third asks for peace.",
+        "fr": "L’Agnus Dei chanté s’adresse à l’Agneau de Dieu qui enlève les péchés du monde. Les deux premières invocations demandent la miséricorde ; la troisième demande la paix."
+      },
+      "observe": {
+        "en": "All three text units are marked SCHOLA_PUBLIC in this Sung source. Their identical opening must not obscure the different final petition.",
+        "fr": "Les trois unités sont marquées SCHOLA_PUBLIC dans cette source chantée. Leur début commun ne doit pas faire oublier la demande finale différente."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.08",
+      "block_id": "AO.SM.B069",
+      "moment_id": "AO.CARD.022",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Peace I leave you, My peace I give you",
+      "heading": {
+        "en": "Peace and unity of the Church",
+        "fr": "Paix et unité de l’Église"
+      },
+      "reading": {
+        "en": "Addressing Jesus Christ, the priest recalls His words of peace to the apostles. He asks Christ to regard the faith of His Church rather than his sins, and to grant her peace and unity.",
+        "fr": "S’adressant à Jésus-Christ, le prêtre rappelle Ses paroles de paix aux apôtres. Il Lui demande de considérer la foi de Son Église plutôt que ses péchés et de lui accorder la paix et l’unité."
+      },
+      "observe": {
+        "en": "The text itself contains Christ’s saying but does not assign a chapter-and-verse reference. The scriptural relationship remains unlinked here until separately verified.",
+        "fr": "Le texte cite une parole du Christ sans donner de chapitre ni de verset. Le lien scripturaire exact reste en attente d’une vérification distincte."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.09",
+      "block_id": "AO.SM.B070",
+      "moment_id": "AO.CARD.022",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Son of the living God",
+      "heading": {
+        "en": "The prayer not to be separated from Christ",
+        "fr": "La prière pour ne pas être séparé du Christ"
+      },
+      "reading": {
+        "en": "The priest addresses Christ as Son of the living God, recalls His life-giving death, and asks deliverance from evil and fidelity to His commandments.",
+        "fr": "Le prêtre s’adresse au Christ, Fils du Dieu vivant, rappelle Sa mort qui donne la vie et demande la délivrance du mal ainsi que la fidélité à Ses commandements."
+      },
+      "observe": {
+        "en": "The first-person petition belongs to the priest’s private preparation. It asks to remain united to Christ; no additional historical explanation is introduced.",
+        "fr": "Cette supplication à la première personne appartient à la préparation privée du prêtre. Elle demande de demeurer uni au Christ, sans ajouter d’explication historique."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.10",
+      "block_id": "AO.SM.B071",
+      "moment_id": "AO.CARD.022",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Let not the partaking of Thy Body",
+      "heading": {
+        "en": "Receiving without condemnation",
+        "fr": "Recevoir sans condamnation"
+      },
+      "reading": {
+        "en": "The priest prays that receiving Christ’s Body not bring judgment or condemnation, but become protection and healing for soul and body through mercy.",
+        "fr": "Le prêtre demande que la réception du Corps du Christ ne soit pas pour lui jugement ou condamnation, mais protection et guérison de l’âme et du corps par la miséricorde."
+      },
+      "observe": {
+        "en": "This is distinct from the preceding prayer. Its contrast between condemnation and healing is already explicit in the published wording.",
+        "fr": "Cette prière se distingue de la précédente. L’opposition entre condamnation et guérison se trouve déjà dans les paroles publiées."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.11",
+      "block_id": "AO.SM.B072",
+      "moment_id": "AO.CARD.022",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Bread of heaven",
+      "heading": {
+        "en": "Taking the Bread of heaven",
+        "fr": "Recevoir le Pain du ciel"
+      },
+      "reading": {
+        "en": "The short private prayer says that the priest will take the Bread of heaven and invoke the Lord’s name.",
+        "fr": "La brève prière privée annonce que le prêtre recevra le Pain du ciel et invoquera le nom du Seigneur."
+      },
+      "observe": {
+        "en": "The wording is complete in a single fixed-text unit. A verse-level biblical attribution would be additional research, not something certified by this source block.",
+        "fr": "Le texte tient dans une seule unité fixe. Toute attribution biblique précise au verset exigerait une recherche supplémentaire, non certifiée par ce bloc."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.12",
+      "block_id": "AO.SM.B073",
+      "moment_id": "AO.CARD.022",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Lord, I am not worthy",
+      "heading": {
+        "en": "The priest’s threefold Domine, non sum dignus",
+        "fr": "Le triple Domine, non sum dignus du prêtre"
+      },
+      "reading": {
+        "en": "The priest repeats three times that he is not worthy to receive Christ, asking that Christ’s word heal his soul.",
+        "fr": "Le prêtre répète trois fois qu’il n’est pas digne de recevoir le Christ et demande que la parole de Celui-ci guérisse son âme."
+      },
+      "observe": {
+        "en": "All three entries are marked PRIEST_PRIVATE. They must remain distinct from the later faithful-preparation block, which repeats similar wording with a different speaking assignment.",
+        "fr": "Les trois occurrences sont marquées PRIEST_PRIVATE. Il ne faut pas les confondre avec le bloc ultérieur de préparation des fidèles, aux paroles semblables mais à l’attribution vocale différente."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.13",
+      "block_id": "AO.SM.B074",
+      "moment_id": "AO.CARD.023",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "May the Body ✠ of our Lord",
+      "heading": {
+        "en": "The priest receives the Sacred Host",
+        "fr": "Le prêtre reçoit la sainte Hostie"
+      },
+      "reading": {
+        "en": "The prayer asks that the Body of Jesus Christ preserve the priest’s soul unto everlasting life. It uses the first-person possessive “my soul”.",
+        "fr": "La prière demande que le Corps de Jésus-Christ garde l’âme du prêtre pour la vie éternelle. Elle emploie la première personne : « mon âme »."
+      },
+      "observe": {
+        "en": "This is the priest’s reception, not the later formula directed to an individual member of the faithful. The original wording establishes the distinction.",
+        "fr": "Il s’agit de la communion du prêtre, non de la formule plus tard adressée à un fidèle. La différence est portée par le texte original."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.14",
+      "block_id": "AO.SM.B075",
+      "moment_id": "AO.CARD.023",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "What return shall I make",
+      "heading": {
+        "en": "Thanksgiving and the chalice of salvation",
+        "fr": "Action de grâce et calice du salut"
+      },
+      "reading": {
+        "en": "The priest asks how to repay the Lord for His gifts, then speaks of taking the chalice of salvation, invoking the Lord and calling upon Him in praise.",
+        "fr": "Le prêtre demande comment rendre au Seigneur Ses bienfaits, puis parle de prendre le calice du salut, d’invoquer le Seigneur et de L’appeler dans la louange."
+      },
+      "observe": {
+        "en": "The prayer’s words are presented in the published Mass text without a verse citation. Its exact biblical locus remains outside the scope of this text-only reading.",
+        "fr": "Ces paroles figurent dans le texte publié sans référence biblique précise. Leur localisation scripturaire reste hors du champ de cette lecture limitée au texte."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.15",
+      "block_id": "AO.SM.B076",
+      "moment_id": "AO.CARD.023",
+      "stage_id": "MF07",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "May the Blood ✠ of our Lord",
+      "heading": {
+        "en": "The priest receives the Precious Blood",
+        "fr": "Le prêtre reçoit le précieux Sang"
+      },
+      "reading": {
+        "en": "The priest asks that the Blood of Jesus Christ preserve his soul unto everlasting life. The wording corresponds to the earlier prayer over the Host while naming the Blood instead of the Body.",
+        "fr": "Le prêtre demande que le Sang de Jésus-Christ garde son âme pour la vie éternelle. Les paroles correspondent à celles de la communion sous l’Hostie, mais nomment le Sang au lieu du Corps."
+      },
+      "observe": {
+        "en": "The two receptions have distinct source-block identities, B074 and B076. The present study preserves them without merging their texts.",
+        "fr": "Les deux communions ont des identités de blocs distinctes, B074 et B076. La présente étude les conserve sans les fusionner."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.16",
+      "block_id": "AO.SM.B077",
+      "moment_id": "AO.CARD.024",
+      "stage_id": "MF01",
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "branch": "OPTIONAL_LOCAL_OLDER_CUSTOM",
+      "text_anchor_en": "I confess to Almighty God",
+      "heading": {
+        "en": "The optional second Confiteor",
+        "fr": "Le second Confiteor facultatif"
+      },
+      "reading": {
+        "en": "This confession acknowledges sins of thought, word and deed and asks the named saints and the priest to pray for the speaker.",
+        "fr": "Cette confession reconnaît les péchés de pensée, de parole et d’action, et demande aux saints nommés ainsi qu’au prêtre de prier pour celui qui la prononce."
+      },
+      "observe": {
+        "en": "The source expressly marks this block LOCAL_CUSTOM_PRE1960_SURVIVAL. It is an older/local option, not an obligatory part of the normative 1962 Communion sequence.",
+        "fr": "La source marque expressément ce bloc LOCAL_CUSTOM_PRE1960_SURVIVAL. Il s’agit d’un usage ancien ou local facultatif, non d’une partie obligatoire de la séquence normative de 1962."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.17",
+      "block_id": "AO.SM.B078",
+      "moment_id": "AO.CARD.024",
+      "stage_id": "MF01",
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "branch": "OPTIONAL_LOCAL_OLDER_CUSTOM",
+      "text_anchor_en": "May Almighty God have mercy upon you",
+      "heading": {
+        "en": "Optional Misereatur for Communion",
+        "fr": "Misereatur facultatif de la communion"
+      },
+      "reading": {
+        "en": "The formula asks almighty God to show mercy, forgive sins and lead those addressed to everlasting life, followed by the response “Amen”.",
+        "fr": "La formule demande au Dieu tout-puissant de faire miséricorde, de pardonner les péchés et de conduire ceux auxquels elle s’adresse à la vie éternelle ; elle est suivie de la réponse « Amen »."
+      },
+      "observe": {
+        "en": "This belongs only to the same optional older/local Communion Confiteor branch as B077; it cannot be silently promoted into the normative 1962 sequence.",
+        "fr": "Elle appartient uniquement à la même branche facultative et ancienne du Confiteor de communion que B077 ; elle ne saurait être insérée tacitement dans la séquence normative de 1962."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.18",
+      "block_id": "AO.SM.B079",
+      "moment_id": "AO.CARD.024",
+      "stage_id": "MF01",
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "branch": "OPTIONAL_LOCAL_OLDER_CUSTOM",
+      "text_anchor_en": "May the Almighty and merciful God",
+      "heading": {
+        "en": "Optional Indulgentiam for Communion",
+        "fr": "Indulgentiam facultatif de la communion"
+      },
+      "reading": {
+        "en": "The formula asks almighty and merciful God for pardon, absolution and remission of sins, followed by “Amen”.",
+        "fr": "La formule demande au Dieu tout-puissant et miséricordieux le pardon, l’absolution et la rémission des péchés ; elle se conclut par « Amen »."
+      },
+      "observe": {
+        "en": "The original branch status remains LOCAL_CUSTOM_PRE1960_SURVIVAL. It is presented here only to help recognise an optional custom where actually used.",
+        "fr": "Le statut original reste LOCAL_CUSTOM_PRE1960_SURVIVAL. Cette notice permet seulement de reconnaître cet usage facultatif là où il est effectivement pratiqué."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.19",
+      "block_id": "AO.SM.B080",
+      "moment_id": "AO.CARD.024",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Behold the Lamb of God",
+      "heading": {
+        "en": "Behold the Lamb of God",
+        "fr": "Voici l’Agneau de Dieu"
+      },
+      "reading": {
+        "en": "The public invitation points to the Lamb of God and names Him as the one who takes away the sins of the world.",
+        "fr": "L’invitation publique désigne l’Agneau de Dieu comme Celui qui enlève les péchés du monde."
+      },
+      "observe": {
+        "en": "This is a separate public block following the possible older Confiteor branch. It remains present whether or not that optional branch occurs.",
+        "fr": "C’est un bloc public distinct qui suit l’éventuelle branche ancienne du Confiteor. Il demeure présent que cet usage facultatif ait lieu ou non."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.20",
+      "block_id": "AO.SM.B081",
+      "moment_id": "AO.CARD.024",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "Lord, I am not worthy",
+      "heading": {
+        "en": "The faithful’s threefold preparation",
+        "fr": "La triple préparation des fidèles"
+      },
+      "reading": {
+        "en": "The published Communion invitation is followed by the same plea of unworthiness and healing repeated three times in a separate block.",
+        "fr": "L’invitation à la communion est suivie de la même prière d’indignité et de guérison, répétée trois fois dans un bloc distinct."
+      },
+      "observe": {
+        "en": "Unlike B073, the three units here are marked PUBLIC_TEXT rather than PRIEST_PRIVATE. This distinction is fundamental to following the published Sung sequence.",
+        "fr": "Contrairement à B073, les trois unités sont ici marquées PUBLIC_TEXT et non PRIEST_PRIVATE. Cette distinction est essentielle pour suivre la séquence chantée publiée."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.21",
+      "block_id": "AO.SM.B082",
+      "moment_id": "AO.CARD.025",
+      "stage_id": "MF01",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "preserve thy soul unto life everlasting",
+      "heading": {
+        "en": "The formula addressed to the communicant",
+        "fr": "La formule adressée au communiant"
+      },
+      "reading": {
+        "en": "The formula asks that Christ’s Body preserve the recipient’s soul for everlasting life. It uses “thy soul”, unlike the priest’s earlier “my soul”.",
+        "fr": "La formule demande que le Corps du Christ garde l’âme de celui qui communie pour la vie éternelle. Elle dit « ton âme », à la différence de la formule précédente du prêtre : « mon âme »."
+      },
+      "observe": {
+        "en": "This is the published text for Communion of the faithful; it is not a substitute for personal reception or an invitation to operate a study interface during Communion.",
+        "fr": "Il s’agit du texte publié pour la communion des fidèles, non d’un substitut à la réception personnelle ni d’une invitation à utiliser une interface d’étude pendant la communion."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.22",
+      "block_id": "AO.SM.B083",
+      "moment_id": "AO.CARD.026",
+      "stage_id": "MF08",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "what we have taken with our mouth",
+      "heading": {
+        "en": "Receiving with a pure mind",
+        "fr": "Recevoir avec une âme pure"
+      },
+      "reading": {
+        "en": "The priest asks that what has been received by the mouth also be received with a pure mind, and that a temporal gift become an everlasting remedy.",
+        "fr": "Le prêtre demande que ce qui a été reçu par la bouche le soit aussi avec une âme pure, et qu’un don temporel devienne pour nous un remède éternel."
+      },
+      "observe": {
+        "en": "The words mark thanksgiving after Communion. This block stays distinct from the following private ablution prayer rather than becoming a generic Postcommunion text.",
+        "fr": "Ces paroles marquent l’action de grâce après la communion. Le bloc reste distinct de la prière privée suivante des ablutions, sans devenir une Postcommunion générique."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.COMMUNION.23",
+      "block_id": "AO.SM.B084",
+      "moment_id": "AO.CARD.026",
+      "stage_id": "MF08",
+      "source_status": "NORMATIVE_1962",
+      "branch": "NORMATIVE_FIXED_TEXT",
+      "text_anchor_en": "May Thy Body, O Lord",
+      "heading": {
+        "en": "The prayer following Communion",
+        "fr": "La prière après la communion"
+      },
+      "reading": {
+        "en": "The priest prays that the Body and Blood of Christ remain in his innermost being and that no stain of sin remain in him after receiving the pure and holy mysteries.",
+        "fr": "Le prêtre demande que le Corps et le Sang du Christ demeurent au plus profond de lui et qu’aucune tache du péché ne reste après la réception des saints mystères."
+      },
+      "observe": {
+        "en": "This is another private prayer within the ablutions, not the variable Communion antiphon nor the later Postcommunion Proper.",
+        "fr": "C’est une autre prière privée des ablutions, et non l’antienne de communion variable ni le Propre de la Postcommunion."
+      },
+      "scripture_within_text": []
+    }
+  ],
+  "withheld_variable_propers": [
+    {
+      "block_id": "AO.SM.B085",
+      "proper_slot": "COMMUNION",
+      "reason": "The Communion antiphon depends on the selected Mass; do not invent fixed wording or label a generic antiphon normative."
+    }
+  ]
+}
