@@ -76,7 +76,7 @@ try{
 
  const commons=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
-   const paths=["Commune/C4","Commune/C4a","Commune/C5","Commune/C5b"];
+   const paths=["Commune/C4","Commune/C4-1","Commune/C4a","Commune/C5","Commune/C5-1","Commune/C5a","Commune/C5b"];
    const languages=["la","en","fr"];
    const slots=["Introitus","Oratio","Lectio","Evangelium","Secreta","Communio","Postcommunio"];
    const diagnostic=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
