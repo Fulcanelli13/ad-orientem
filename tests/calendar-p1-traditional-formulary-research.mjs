@@ -9,6 +9,7 @@ const commonCrosswalk=load(root+"p1-canonical-common-source-crosswalk.v1.json");
 const additional=load(root+"p1-additional-common-candidates.v1.json");
 const additionalAudit=load(root+"p1-additional-common-app-audit.v1.json");
 const donorPlan=load(root+"p1-partial-common-donor-plan.v1.json");
+const partialRecovery=load(root+"p1-partial-common-source-recovery.v1.json");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -73,7 +74,26 @@ assert.deepEqual(new Set(donorPlan.cases.map(x=>x.target)),
  new Set(additionalAudit.sourceEntries.filter(x=>!x.directNineSectionTrilingual).map(x=>x.sourcePath)));
 assert.ok(donorPlan.cases.every(x=>x.allowAutoBorrow===false&&x.formularyApproved===false));
 assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="APP_RESOLVER_COMPOSITION_VERIFIED").length,1);
-assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="EVIDENCE_PENDING").length,10);
+assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="EVIDENCE_PENDING").length,8);
+assert.equal(donorPlan.cases.filter(x=>x.checkStatus==="PARTIAL_SOURCE_RECOVERY_VERIFIED").length,2);
+assert.equal(partialRecovery.schema,"AO_P1_PARTIAL_COMMON_SOURCE_RECOVERY_V1");
+assert.equal(partialRecovery.cases.length,2);
+assert.equal(partialRecovery.overall.borrowedLanguageSections,25);
+assert.equal(partialRecovery.overall.completeAdditionalCommonCount,0);
+assert.equal(additionalAudit.partialSourceReconciliationsVerified,2);
+assert.equal(forms.partialSourceReconciliationVerified,2);
+for(const caseRow of partialRecovery.cases){
+ const row=forms.forms.find(x=>x.internalMissalReference.auditedSourcePath===caseRow.target);
+ assert.ok(row,"Recovered Common must map existing canonical form index");
+ assert.equal(row.internalMissalReference.sourcePath,null);
+ assert.equal(row.internalMissalReference.inheritanceOrSourceGap,true);
+ assert.equal(row.internalMissalReference.recoveredLanguageSectionCount,caseRow.borrowedCount);
+ assert.equal(row.internalMissalReference.formularyReadyForNewSaint,false);
+ assert.ok(Object.values(caseRow.missingAfterRecovery).some(x=>x.length>0),"No partial form may be promoted as complete");
+}
+assert.deepEqual(partialRecovery.cases.find(x=>x.target==="Commune/C3ap").missingAfterRecovery.fr,
+ ["Introitus","Lectio","Graduale","Evangelium","Offertorium","Communio"]);
+assert.deepEqual(partialRecovery.cases.find(x=>x.target==="Commune/C7").missingAfterRecovery.la,["Lectio"]);
 assert.equal(donorPlan.cases.find(x=>x.target==="Commune/C1").donors.length,0);
 assert.deepEqual(donorPlan.cases.find(x=>x.target==="Commune/C3ap").donors,["Commune/C3p","Commune/C3a"]);
 assert.equal(additionalAudit.directTrilingualNineSectionCount,17);
