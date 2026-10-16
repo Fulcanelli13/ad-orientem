@@ -128,3 +128,23 @@ Further live production source witnesses: Teresa of Ávila `Sancti/10-15`, Thér
 
 **Remaining implementation obligation for P0:** deliver a read-only navigation API taking `{sourcePath,sourceIdentityId,readerMode:"MISSAL",readerSlot,readerParagraphId,readOnly:true}`. It must load the canonical Proper and focus the exact paragraph without changing the calendar day, selected celebrant's Mass, LIVE scroll/session or any canonical prayer text; no page PDFs or web missals. **No such clickable read-only router is implemented by this P1 draft**, so success is six source targets ready, zero user-clickable routes, and zero newly authorised optional Newman Masses. All 22 open legal, text and integration holds are preserved.
 
+
+## Live app Commons — seven verified source paths, six direct trilingual, one inherited Doctor (16 October 2026)
+
+Research-only evidence register: `data/calendar/p1-canonical-common-source-crosswalk.v1.json`; browser verification [P1 CI](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888). The study calls the exact **existing Ad Orientem** `AO_RUNTIME_V8.resolver.properResolver.resolveSource` and checks its `Introitus`, `Oratio`, `Lectio`, `Evangelium`, `Secreta`, `Communio`, `Postcommunio` keys in Latin/English/French. It verifies the app's actual *source* availability; it does not certify permission, inserted saint names, complete 11-slot Proper or read-only UI routing.
+
+| Existing research Common ID | Actual app source path | Direct Latin/EN/FR core coverage | Variant |
+| --- | --- | --- | --- |
+| Bishop Confessor first Mass | `Commune/C4` | 7/7 each | first |
+| Bishop Confessor second Mass | `Commune/C4-1` | 7/7 each | alternate |
+| Doctor bishop | `Commune/C4a` | 7/7 each | Pontiff of one printed Doctorum |
+| Confessor not bishop first Mass | `Commune/C5` | 7/7 each | first |
+| Confessor not bishop second Mass | `Commune/C5-1` | 7/7 each | alternate |
+| Doctor not bishop | `Commune/C5a` | **Latin 7/7; EN/FR only Secret & Postcommunion directly** | non-Pontiff of same Doctorum |
+| Abbot | `Commune/C5b` | 7/7 each | abbot |
+
+The [open upstream source `Commune/C5a`](https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/horas/Latin/Commune/C5a.txt) confirms that the non-Pontiff Doctor Mass inherits its common components from `Commune/C4a`, but explicitly has non-Pontiff versions of `Secreta` and `Postcommunio`. The source displays its `Oratio` as an alias to C4a. **Do not fill the non-Pontiff Secret/Postcommunion from the bishop Doctor**. The English and French direct provider return for C5a contains only those two distinctive prayers; shared EN/FR Introit, Collect, reading, Gospel and Communion must be inherited with verified Latin identity rather than guessed or treated as empty. The existing app's raw resolver currently does not return these shared vernacular sections from the C5a request. A concrete inheritance-resolution check is needed before claiming complete bilingual C5a.
+
+The 38-row web index master now carries seven **real app source paths**, with 31 still unmapped (and zero public routes). Source path availability is **not** approval to celebrate an optional modern saint's Mass: Newman has `Commune/C5a` (Doctor non-Pontiff) and `Commune/C5` (ordinary Confessor non-Pontiff) as *candidates*, neither selected. The complete Saint Mass decision still depends on approved *pro aliquibus locis*, Supplement, Common fallback, permissive legal conditions, accurate name inflection, and coherent Proper.
+
+**Reader integration status:** the existing native reader's current `setPresentationMode` and section-jump APIs act on the current LIVE session. They must **not** be reused to open a separate historical prayer reference, because this would mutate ongoing Mass position and mode. P0 must provide an independent read-only Missal session/surface with canonical `sourcePath + paragraphId` and restore the active session untouched. This P1 branch does not alter the production reader.
