@@ -20,8 +20,8 @@ const engine=await readFile(join(vendor,'babylonjs','babylon.js'),'utf8');
 const loaders=await readFile(join(vendor,'babylonjs-loaders','babylonjs.loaders.min.js'),'utf8');
 const safe=s=>s.replace(/<\/script/gi,'<\\/script').replace(/<!--/g,'<\\!--');
 let out=html
- .replace('<script src="https://cdn.babylonjs.com/babylon.js"></script>','<script>\n'+safe(engine)+'\n</script>')
- .replace('<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>','<script>\n'+safe(loaders)+'\n</script>');
+ .replace('<script src="https://cdn.babylonjs.com/babylon.js"></script>',()=>'<script>\n'+safe(engine)+'\n</script>')
+ .replace('<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>',()=>'<script>\n'+safe(loaders)+'\n</script>');
 if(!html.includes('<script src="https://cdn.babylonjs.com/babylon.js"></script>') || !html.includes('<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>'))throw new Error('Original viewer script references changed');
 const tag='<script type="module" src="./viewer.js"></script>';
 if(!out.includes(tag))throw new Error('Unknown viewer entrypoint');
