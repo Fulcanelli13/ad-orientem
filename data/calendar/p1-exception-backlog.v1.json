@@ -15,6 +15,14 @@
         "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
         "finding": "Facsimile images of four printed Common families were visually inspected (Doctorum, Confessor Pontiff, Confessor non Pontiff, Abbots); this verifies headings and variants, not complete 1962 edition text or other families.",
         "releaseGateStillOpen": true
+      },
+      "actualAppMapping": {
+        "verifiedSourcePaths": 7,
+        "unmappedInternetIndexRows": 31,
+        "fullyTrilingualDirectSevenSections": 6,
+        "doctorNonPontiffNeedsInheritedVernacular": true,
+        "evidence": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+        "originalMissalTextEditionCertified": false
       }
     },
     {
@@ -90,13 +98,25 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Reconcile 35 indexed labels to owner IDs and primary-print genuine alternative forms.",
+      "nextAction": "Reconcile remaining 31 online-index Common entries to actual app ProperResolver identities. For C5a restore source-authorized language inheritance C4a for shared sections (never the bishop-specific Secret/Postcommunion); prove exact Latin match and translated owner identity before runtime.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
-        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
-        "finding": "Printed (23)-(24) show one Commune Doctorum; two previously separate Doctor web-index IDs are source aliases for one printed Common with Pontiff vs non-Pontiff Secret/Postcommunion variants. Other print families and aliases still open.",
-        "releaseGateStillOpen": true
+        "appSourceMapped": 7,
+        "sourceVariantsFound": [
+          "Commune/C4",
+          "Commune/C4-1",
+          "Commune/C4a",
+          "Commune/C5",
+          "Commune/C5-1",
+          "Commune/C5a",
+          "Commune/C5b"
+        ],
+        "sourceCrosswalk": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+        "historicalPrintDoctorFamilyShared": true,
+        "technicalBlocker": "C5a non-bishop Doctor 1962 source in app returns Latin core but English/French directly expose ONLY Secreta and Postcommunio; shared C4a sections must be resolved with verified source inheritance.",
+        "fullTrilingualDirectSevenCore": 6,
+        "notAutomaticallyNewman": true
       }
     },
     {
@@ -249,5 +269,12 @@
     "PRIMARY_1962_COMMONS_COLLATION",
     "SUNG_MASS_SECTION4_VS_111A"
   ],
-  "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus."
+  "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
+  "appCommonSourceProgress": {
+    "mapped": 7,
+    "totalIndexRows": 38,
+    "unmapped": 31,
+    "sevenSectionDirectTrilingual": 6,
+    "sharedDoctorInheritancePending": 1
+  }
 }
