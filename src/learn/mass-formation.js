@@ -62,7 +62,7 @@ function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
   return top(win,pick(win,data.title))+'<main class="aoMFWrap"><p class="aoMFIntro">'+esc(pick(win,data.intro))+'</p>'+
   '<div class="aoMFStudyEntry"><button type="button" data-ao-mf-open-moments>'+
-   esc(isFr(win)?"Parcourir les 32 moments de la Messe chantée":"Explore the 32 moments of the Sung Mass")+' →</button></div>'+
+   esc(isFr(win)?"Explorer la Messe dans son ordre · carte des 32 étapes":"Explore the Mass in order · 32-moment Map")+' →</button></div>'+
   '<div class="aoMFList">'+rows+'</div></main>';
 }
 // Further reading requires explicit editorial selection from sources already
@@ -187,9 +187,25 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
         close(true);return;
       }
       if(target.matches("[data-ao-mf-open-moments]")){
-        event.preventDefault();momentsFromList=state.view==="list";
-        ensureGuides().then(()=>{if(!root())return;state.view="moments";state.stageId=null;render()})
-          .catch(()=>{state.guideError=true;state.view="list";render()});
+        event.preventDefault();
+        // Retain the original Guide browser for source-review mode and
+        // explicit legacy deep links; the public journey opens one Mass Map.
+        if(massMomentEvidencePreviewEnabled(win)){
+          momentsFromList=state.view==="list";
+          ensureGuides().then(()=>{if(!root())return;state.view="moments";state.stageId=null;render()})
+            .catch(()=>{state.guideError=true;state.view="list";render()});
+          return;
+        }
+        const launcher=target;
+        close(false);
+        void Promise.resolve(win?.AO_LEARN_APP_V1?.openModule?.("learn.mass_explorer",{trigger:launcher,view:"map"}))
+          .then(ok=>{
+            if(ok===true)return;
+            void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass");
+          }).catch(error=>{
+            win?.console?.error?.("Mass Map study route unavailable",error);
+            void win?.AO_LEARN_APP_V1?.openModule?.("learn.mass");
+          });
         return;
       }
       if(target.matches("[data-ao-mf-moments-list]")){
