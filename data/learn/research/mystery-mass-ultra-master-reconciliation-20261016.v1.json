@@ -182,5 +182,27 @@
       "method": "FNV1A32_JS_UTF16_CODE_UNIT_FINGERPRINTS_COMPARED_PER_FIELD",
       "conclusion": "Historical published Guide short/long text and source citation fields appear unchanged by this test; no user-facing rewritten Guide needed."
     }
-  ]
+  ],
+  "frozenWorkbookIntegrity": {
+    "file": "Ad_Orientem_Ultra_Master_Mass_Source_of_Truth_RECONCILED_2026-10-16.xlsx",
+    "sha256": "8da826ec8306a1fa8925ece4832763becbe08f56efd5f368c87be166a34545f1",
+    "bytes": 1226751,
+    "worksheets": 36,
+    "storedAs": "CHATGPT_CONVERSATION_FILE_NOT_GIT_BINARY",
+    "note": "A cryptographic freeze marker: repository metadata does not itself contain the binary 36-sheet workbook."
+  },
+  "lowMassFirstIntegration": {
+    "sourceIndex": "data/learn/research/mass-low-35-guide-legacy-index-20261016.v1.json",
+    "sourceRows": "Ad_Orientem_Full_Order_of_Mass_Master_Registry_2026-10-15.xlsx / 05 GUIDE · APP COPY / Excel rows 34–68",
+    "sourceTextScope": "35 exact historic short texts; 35 long originals retained only in workbook",
+    "originalShortTextSha256": "4fc28fa80b8845ac464e863071434df2ad3912959dc8104f07427278657ae626",
+    "sourceResolver": "src/mass/reader-low-guide.js",
+    "test": "tests/mass-low-35-guide-research.mjs",
+    "condition": "Exact form LOW_1962 plus explicit allowResearchPreview; fails closed and never publishes",
+    "publishedGuideRegistry": "data/presentation/guide-registry.v1.json; unchanged exactly 32",
+    "productionStatus": "NOT_MOUNTED_IN_PUBLIC_READER",
+    "editorialQualityBlock": "Original long text includes awkward templated phrasing; do not render as approved original Catholic author prose",
+    "pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1193"
+  },
+  "nextIntegrationDecision": "Review mapping of 35 Low Mass editorial stages to actual source cues/current reader session, with explicit optional stages (Gloria, Credo, second Confiteor, faithful Communion, Last Gospel). Only when source copy is approved, bind approved short and full texts to the existing Guide drawer without changing its 32-Sung corpus."
 }
