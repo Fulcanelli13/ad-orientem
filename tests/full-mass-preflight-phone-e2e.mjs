@@ -396,7 +396,7 @@ try{
  // A new mount can be reinitialized for distinct non-Mass rites.
  await page.evaluate(async()=>{
   const {mountFullMassPreflight}=await import("/src/mass/full-mass-preflight.js");
-  __full=mountFullMassPreflight({doc:document,getResolvedMass:__legacyMass,
+  __full=mountFullMassPreflight({doc:document,getResolvedMass:()=>__legacyMass(),
     getDefaultForm:()=>__formDefault,language:()=>__lang});
  });
  const gf=await page.evaluate(()=>({
