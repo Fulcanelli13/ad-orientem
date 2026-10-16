@@ -568,10 +568,18 @@ try{
   for(const spec of remainingFormation){
     await openFormationFamily(spec.family);
     const launcher=page.locator('#ao-learn-modular-root [data-ao-learn-module="'+spec.id+'"]');
-    assert.equal(await launcher.count(),1,"Formation has no unique visible card for "+spec.id);
-    const buttonSize=await launcher.evaluate(node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height}));
-    assert.ok(buttonSize.width>=44&&buttonSize.height>=44,"Formation card smaller than a touch target: "+spec.id);
-    await launcher.tap({timeout:12000});
+    if(spec.id==="learn.mass"){
+      // Its entire curriculum remains addressable by old route and through
+      // the new canonical study Map, without a redundant family-front card.
+      assert.equal(await launcher.count(),0,"Thematic Mass course should not duplicate the canonical public gateway");
+      assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.mass")),true,
+        "The historic eight-lesson deep link must remain live");
+    }else{
+      assert.equal(await launcher.count(),1,"Formation has no unique visible card for "+spec.id);
+      const buttonSize=await launcher.evaluate(node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height}));
+      assert.ok(buttonSize.width>=44&&buttonSize.height>=44,"Formation card smaller than a touch target: "+spec.id);
+      await launcher.tap({timeout:12000});
+    }
     await page.waitForSelector(spec.root,{state:"visible",timeout:25000});
     await page.waitForFunction(id=>globalThis.AO_LEARN_APP_V1?.status?.().child===id,spec.id,{timeout:12000});
     const child=await page.locator(spec.root).evaluate(node=>({
