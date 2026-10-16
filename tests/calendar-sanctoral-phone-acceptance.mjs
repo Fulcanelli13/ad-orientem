@@ -161,6 +161,25 @@ try{
      assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-transfer-claim]").count(),0,
        "Holy Thursday must not falsely claim to be the transferred Annunciation");
    }
+   if(width===390){
+     // An independently audited 2027 occurrence gets an exact clause; an
+     // unrelated Sunday may not inherit a source-only commemoration.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-08-15")),true);
+     const claim=page.locator('.aoTodayV2CalendarInline [data-cal-observed-commemoration="ASSUMPTION_SUNDAY_2027"]');
+     await claim.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await claim.waitFor({state:"visible",timeout:12000});
+     assert.match(await claim.innerText(),/RG 108\(a\).*RG 111\(a\)/);
+     assert.match(await claim.locator("a").getAttribute("href"),
+       /^https:\/\/gcatholic\.org\/calendar\/2027\/Extraordinary-en$/);
+     assert.equal(await claim.locator("a").getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-08-22")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-22",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-observed-commemoration]").count(),0,
+       "No 2027-source claim can leak into an unrelated Sunday");
+   }
    // A later saint may have a source-reviewed physical shrine even when no
    // dedicated Saints biography is published. Link only the exact Place ID.
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
