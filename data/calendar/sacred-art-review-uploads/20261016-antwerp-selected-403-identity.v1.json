@@ -1,0 +1,40 @@
+{
+  "schema": "AO_SACRED_ART_SELECTED_ANTWERP_403_RECONCILIATION_V1",
+  "date": "2026-10-16",
+  "purpose": "Recover human-selected Van Dyck Seven Sorrows KMSKA 403 after W92 acquired wrong physical originals",
+  "oct12Selected": {
+    "subjectId": "DEV-09",
+    "artworkId": "ART-nthony-van-yck-amentation-of-hrist",
+    "artist": "Anthony van Dyck",
+    "title": "Lamentation of Christ",
+    "location": "KMSKA Antwerp 403",
+    "sourceOfAuthority": "data/calendar/sacred-art-w78-oct12-preferred-paintings-recovery-20261016.v1.json"
+  },
+  "exactObject": {
+    "inventory": "403",
+    "museum": "Royal Museum of Fine Arts Antwerp",
+    "artist": "Anthony van Dyck",
+    "title": "Lamentation over the Dead Christ",
+    "dimensionsCm": [
+      225,
+      303
+    ],
+    "officialUrl": "https://kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-1",
+    "sourceRights": "https://vlaamsekunstcollectie.be/en/collectie/403",
+    "license": "CC0 (collection linked image)"
+  },
+  "photographicSource": {
+    "commonsFile": "Anthony van Dyck - Bewening van Christus - 403 - Royal Museum of Fine Arts Antwerp.jpg",
+    "photoRightsPage": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Bewening_van_Christus_-_403_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg"
+  },
+  "forbiddenSubstitutions": [
+    "W92 Munich Alte Pinakothek 606",
+    "W96 Bilbao 85/221",
+    "KMSKA Antwerp 404 second Lamentation",
+    "KMSKA Antwerp 598 third Lamentation"
+  ],
+  "photoQuality": "Download natural aspect 2600px Wikimedia rendition suitable for mobile; never require 20k-pixel source; verify complete painted edges",
+  "appModification": false,
+  "historicalRatingsModification": false,
+  "publicationStatus": "Research; rights CC0 declared but no app files changed"
+}
