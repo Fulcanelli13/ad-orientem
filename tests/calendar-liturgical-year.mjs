@@ -294,10 +294,14 @@ assert.match(browser, /aoCalV2Ring/, "Liturgical Year lost its sourced progress 
 assert.match(browser, /aoCalV2YearIdentity/, "Liturgical Year lost selected-day and period identity");
 assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the proportional timeline and period journey");
 assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
-assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
+const clockSource = fs.readFileSync(new URL("../src/calendar/liturgical-clock.js",import.meta.url),"utf8");
+assert.match(browser,/clockForYear\(y,selected\)/,"Standalone Year lost Liturgical Clock");
+assert.match(clockSource,/aoClockUpcoming/,"Standalone Year lost its upcoming season and feast entries");
+assert.match(browser,/const embedded=root\(\)\?\.dataset\.aoCalendarEmbedded===/,"Embedded Year must not repeat the full clock");
 assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
 assert.ok(browser.includes('data-cal-year-open-day="${next.date}"'),"Next feast must open Day through existing Year-Journey handler");
-assert.ok(browser.includes('data-cal-year-open-day="${nextSeason.start}"'),"Next season must open Day through Year-Journey handler");
+assert.match(clockSource,/if\(season\)upcoming.push\(season\)/,"Full clock lost the next seasonal transition");
+assert.match(clockSource,/data-cal-clock-open-day/,"Clock seasonal transition no longer opens the selected day");
 assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale rows cannot intercept Day selection with saint-detail handler");
 assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Year-to-Month route must reset stale month");
 assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
