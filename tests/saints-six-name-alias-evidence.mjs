@@ -23,6 +23,7 @@ for(const r of evidence.records){
  assert.deepEqual(r.geography_site_ids,row.physical_place_associations.map(x=>x.place_id));
  assert.equal(r.published_new_map_pin_links,undefined);
  assert.equal(r.artwork_authorized,false);
+ assert.equal(r.canonical_key_rename_or_merge_performed,false);
  assert.equal(r.publication_authorized,false);
  assert.equal(r.map_pin_identity_authorized,false);
  assert(ledger.records.some(x=>x.source_key===r.preferred_existing_profile_source_key));
@@ -35,11 +36,11 @@ for(const r of evidence.records){
   assert(previousAliases.proposed_pairs.some(x=>x.calendar_person_id===r.preferred_existing_profile_source_key&&
    x.historical_identity_id===r.historic_subject_id));
   assert.equal(r.doctor_nominal_day_source_compatible,true);
-  assert.equal(r.canonical_person_identity_merge_approved,false);
+  assert.equal(r.existing_owner_same_person_crosslink_documented,false);
  }
 }
 const th=evidence.records.find(x=>x.shrine_name_literal==="Saint Thérèse of Lisieux");
-assert(th&&th.canonical_person_identity_merge_approved);
+assert(th&&th.existing_owner_same_person_crosslink_documented);
 assert.deepEqual(th.source_bound_liturgical_identity_bridge,{
  saints_id:"saint:therese-of-lisieux",calendar_id:"saint.therese-lisieux",
  observed_2026_source_id:"sancti:10-03:3:w"});
@@ -47,5 +48,5 @@ assert(originalBridge.identity_links.some(x=>x.saints_id===th.source_bound_litur
  x.calendar_person_id===th.source_bound_liturgical_identity_bridge.calendar_id));
 const francis=evidence.records.find(x=>x.shrine_name_literal==="Saint Francis of Assisi");
 assert(francis&&francis.preferred_selection_status==="SOURCE_NAME_AND_HISTORICAL_CONTEXT_LEAD_NOT_CERTIFIED");
-assert.equal(francis.canonical_person_identity_merge_approved,false);
+assert.equal(francis.existing_owner_same_person_crosslink_documented,false);
 console.log("PASS W77 6 alias source pairs, 4 owner-proposed Calendar cases, 1 existing Thérèse identity bridge, 1 Francis held candidate; no public promotions");
