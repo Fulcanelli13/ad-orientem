@@ -76,7 +76,7 @@ assert.match(about,/How source labels work/,"About lost collapsed source-methodo
 assert.match(about,/Official \/ governing source/,"About lost provenance vocabulary");
 assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a standalone Settings section");
 assert.match(about,/43\.59\.99/);
-assert.equal((about.match(/data-settings-info\b/g)||[]).length,11,
+assert.equal((about.match(/data-settings-info\b/g)||[]).length,10,
   "Installed site, launch mode, release and sources are static text, not dead buttons");
 assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,3,
   "Only Privacy and explicit check/apply actions should be actionable");
