@@ -1,0 +1,215 @@
+{
+  "schema": "ao-formation-lebrun-1843-source-collation-v1",
+  "status": "SOURCE_LOCATED_CLAIMS_UNCERTIFIED",
+  "research_only": true,
+  "liturgical_profile": "ORDINARY_SUNG",
+  "source_edition": {
+    "book": "Pierre Le Brun, Explication littérale, historique et dogmatique des prières et des cérémonies de la messe, vol. I, Seguin Aîné, 1843",
+    "item_url": "https://archive.org/details/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843",
+    "wikisource_scan": "https://fr.wikisource.org/wiki/Livre:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu",
+    "image_book": "https://commons.wikimedia.org/wiki/File:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu",
+    "printed_to_djvu_provisional_offset": 49,
+    "page_anchor_check": {
+      "djvu_page": 391,
+      "printed_page": 342,
+      "source": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/391",
+      "status": "ONE_PAGE_VISUALLY_CORRELATED_PAGE_OFFSET_NOT_EXHAUSTIVELY_VERIFIED"
+    }
+  },
+  "cross_witnesses": [
+    {
+      "author": "St Alphonsus de Liguori",
+      "edition": "The Complete Ascetical Works, The Sacrifice of Jesus Christ: The Ceremonies of the Mass, printed p.157–158",
+      "source_url": "https://archive.org/stream/alphonsusworks13liguuoft/alphonsusworks13liguuoft_djvu.txt",
+      "locator": "OCR lines 6537–6579",
+      "finding": "St Alphonsus attributes to Le Brun a debated position about whether preparatory eucharistic prayers contribute to the necessary sacramental formula, contrasts it with the commonly held sufficiency of the Institution words and invokes Council of Florence.",
+      "status": "SECONDARY_AUTHOR_WITNESS_TO_LEBRUN_NOT_DIRECT_LEBRUN_PRINT_COLLATION"
+    },
+    {
+      "author": "Nicholas Gihr",
+      "edition": "The Holy Sacrifice of the Mass, B. Herder, 1902",
+      "source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "locator": "printed p.660 footnote 2",
+      "finding": "Gihr attaches final words to Melchisedech and cites Le Brun, Part IV article XII. Citation is not confirmation of Le Brun's complete position without collating original.",
+      "status": "ORIGINAL_GIHR_OCR_DIRECTLY_CHECKED_LEBRUN_NOT_DIRECTLY_CHECKED"
+    }
+  ],
+  "provisional_scans": {
+    "Quam": {
+      "block": "AO.SM.B051",
+      "pages": "397–400",
+      "expected_scans": [
+        446,
+        447,
+        448,
+        449
+      ],
+      "subject": "Quam oblationem and preparatory consecration prayer",
+      "cross_check": "Check 1843 text directly against St Alphonsus' 1890s English edition characterization; determine if his claim refers to Le Brun 1843 vol I at all or to Le Brun's separate vol III theological dissertation."
+    },
+    "Supra": {
+      "block": "AO.SM.B055",
+      "pages": "435–437",
+      "expected_scans": [
+        484,
+        485,
+        486
+      ],
+      "subject": "Supra quae, Abel/Abraham/Melchisedech offerings and final accusatives",
+      "cross_check": "Inspect Le Brun on sanctum sacrificium/immaculatam hostiam and his syntactic reading; Gihr 1902 p.660 n.2 cites Le Brun Part IV article XII but is not a quotation or proof of identity."
+    }
+  },
+  "claim_rows": [
+    {
+      "claim_id": "VER-095",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 397; OCR lines 24258–24297",
+      "printed_first_page": 397,
+      "provisional_djvu_first_page": 446,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/446",
+      "p0_caution": "His recourse to Paschasius Radbertus includes a noted historical misattribution to Augustine.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-096",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 398; OCR lines 24312–24332",
+      "printed_first_page": 398,
+      "provisional_djvu_first_page": 447,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/447",
+      "p0_caution": "Le Brun's application extends to the Church's self-offering.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-097",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 398–399; OCR lines 24334–24338",
+      "printed_first_page": 398,
+      "provisional_djvu_first_page": 447,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/447",
+      "p0_caution": "Particular interpretation; Gihr and other commentators need independent comparison.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-098",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24340–24348",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Author's doctrinal exposition, not demonstrated etymological origin.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-099",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24350–24375; 24407–24408",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Romans and 1 Peter explicitly cited by author; not a word-for-word liturgical borrowing.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-100",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24377–24391",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "This double application is interpretative, not a rubrical cue.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-101",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24393–24428",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Comparison is explicitly analogical, not evidence that the prayer quotes those verses.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-105",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 435–437; OCR lines 26314–26355; 26370–26389",
+      "printed_first_page": 435,
+      "provisional_djvu_first_page": 484,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/484",
+      "p0_caution": "Typological comparison already explicit in the Canon; interpretation of acceptability belongs to Le Brun.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    },
+    {
+      "claim_id": "VER-106",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 436–437; OCR lines 26370–26412",
+      "printed_first_page": 436,
+      "provisional_djvu_first_page": 485,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/485",
+      "p0_caution": "Do not mislabel Old Testament narrative as Jewish derivation of Roman prayer wording.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": true,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "outstanding": [
+    "Locate original 1843 full paragraphs for pp. 397–400 and 435–437 and compare corresponding scanned page images.",
+    "Determine whether St Alphonsus' Le Brun quotation concerns Le Brun 1843 vol. I or separate vol. III dissertation; distinguish historical consecration-theory discussion from 1962 Missal norms.",
+    "Check Le Brun's precise syntax on final Supra quae accusatives; Gihr's reading is original-to-Gihr OCR verified but not original-to-Le Brun certified.",
+    "Collate the nine exact P0 claim propositions to author wording; P0 ids alone carry no permission to publish text."
+  ],
+  "no_runtime_import": true
+}
