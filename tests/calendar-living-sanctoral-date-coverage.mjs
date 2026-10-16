@@ -112,8 +112,13 @@ assert.ok(dates.observances.every(x=>x.subjectId.startsWith("canon-group.")||
   "Every modern date witness must resolve to a canonical person or group");
 assert.equal(summary.dateSourceRows,26);
 assert.equal(summary.doctorCensus,38);
-assert.ok(rows.some(x=>x.canonicalPersonId==="saint.carlo-acutis"&&x.modernDates.length===0),
-  "Carlo's universal traditional liturgical date not certified by this research");
+const carlo=rows.find(x=>x.canonicalPersonId==="saint.carlo-acutis");
+assert.ok(carlo?.modernDates.some(d=>d.monthDay==="10-12"&&
+  d.scope==="DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE"),
+  "Carlo's Dicastery feast date is now independently attested");
+assert.ok(!carlo?.modernDates.some(d=>["GENERAL_ROMAN_VATICAN_DECREE",
+  "GENERAL_ROMAN_PAPAL_ANNOUNCEMENT"].includes(d.scope)),
+  "A sourced date must not be upgraded to universal General Roman Calendar standing");
 assert.ok(rows.find(x=>x.canonicalPersonId==="saint.john-henry-newman")?.modernDates
   .some(x=>x.publishedOn==="2026-02-03"));
 assert.ok(rows.every(x=>x.neverInventMassAuthority));
