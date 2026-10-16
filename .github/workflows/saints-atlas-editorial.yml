@@ -13,6 +13,8 @@ on:
       - 'tests/saints-w78-bulk-shrine-person-triage.mjs'
       - 'data/saints/w78-bulk-119-shrine-person-match-triage-20261016.v1.json'
       - 'tests/saints-research-shrine-map.mjs'
+      - 'tests/saints-w78-shrine-source-evidence.mjs'
+      - 'data/saints/w78-shrine-person-source-evidence-20261016.v1.json'
       - 'tests/saints-w78-shrine-name-bulk-reconciliation.mjs'
       - 'data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json'
       - 'data/saints/six-duplicate-name-alias-evidence-20261016.v1.json'
@@ -53,6 +55,8 @@ jobs:
         run: node tests/saints-w78-bulk-shrine-person-triage.mjs
       - name: Verify six source-owner alias cases without canonical renames
         run: node tests/saints-six-name-alias-evidence.mjs
+      - name: Validate 119 Saints names against source-owner keys, aliases and relic/art registry evidence
+        run: node tests/saints-w78-shrine-source-evidence.mjs
       - name: Verify 121-site gated Saints research map without new physical site IDs
         run: node tests/saints-research-shrine-map.mjs
       - name: Protect existing source-backed Shrine and Geography candidate coverage
