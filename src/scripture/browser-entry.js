@@ -30,7 +30,12 @@ export function installScriptureBrowserOwner(win=globalThis){
    const node=overlay();if(node)node.hidden=true;
    if(doc.body && previousOverflow!==null)doc.body.style.overflow=previousOverflow;
    previousOverflow=null;
-   previousFocus?.focus?.();previousFocus=null;
+   // A full Home → Pray → Home journey may replace the original Home
+   // launcher element. Restore keyboard focus to its current equivalent.
+   const focusReturn=previousFocus?.isConnected?previousFocus:
+     (win?.AO_APP_SHELL_V1?.getActive?.()==="home"?
+       doc.querySelector?.("[data-home-scripture]"):null);
+   focusReturn?.focus?.({preventScroll:true});previousFocus=null;
    const restore=onCloseReturn;onCloseReturn=null;
    if(typeof restore==="function")try{restore()}catch(error){win.console?.error?.("Scripture return context failed",error)}
    return true;
