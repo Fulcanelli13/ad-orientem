@@ -70,16 +70,20 @@ try{
     assert.ok(!/Commemorations|Commémorations/i.test(heroMeta),
       "Historic saints should not appear twice: the header and dedicated observed-day list");
     if(width===320&&date==="2026-01-14"){
-      const word=await page.locator(".aoTodayV2Context button+button strong").evaluate(el=>{
-        const range=document.createRange();
-        const target=el.firstChild;
-        const len=Math.min(13,target?.textContent?.length||0);
-        if(!target||!len)return {text:el.textContent,fragments:0};
-        range.setStart(target,0);range.setEnd(target,len);
-        return {text:el.textContent,fragments:range.getClientRects().length};
+      // The retired Coming Soon tile no longer owns the next feast.
+      // Check the single canonical Coming next date list at the same 320px width.
+      const candidates=page.locator(".aoTodayV2Approaching .aoTodayV2Event strong");
+      assert.ok(await candidates.count()>0,"The one upcoming list must remain accessible on a historical day");
+      const longWord=await candidates.first().evaluate(el=>{
+        const range=document.createRange(),target=el.firstChild;
+        const text=target?.textContent||"";
+        const word=text.match(/[A-Za-zÀ-ÿ]{8,}/);
+        if(!target||!word)return {text,fragments:0,hasLongWord:false};
+        range.setStart(target,word.index);range.setEnd(target,word.index+word[0].length);
+        return {text,fragments:range.getClientRects().length,hasLongWord:true};
       });
-      assert.match(word.text,/Septuagesima/i);
-      assert.equal(word.fragments,1,"Septuagesima must not break mid-word at 320px");
+      if(longWord.hasLongWord)
+        assert.equal(longWord.fragments,1,"Coming next feast titles must not split a word at 320px");
     }
     if(date==="2026-01-14")
       await page.screenshot({path:resolve(out,"home-1962-commemoration-"+width+".png"),animations:"disabled"});
