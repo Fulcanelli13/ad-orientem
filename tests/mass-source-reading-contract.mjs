@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {massSourceStudyRecord,massSourceStudyHtml,massSourceStudyCss} from "../src/learn/mass-source-reading.js";
 import {sourceReferencePanelHtml} from "../src/learn/source-reference-panel.js";
+import {releasedMassFormationPassages} from "../src/learn/mass-passage-publication.js";
 const formation=JSON.parse(readFileSync(new URL("../data/learn/mass-formation-campion.v1.json",import.meta.url),"utf8"));
 const stage=formation.stages.find(x=>x.id==="MF03");
 const primary=massSourceStudyRecord(formation,"MF03","SRC-MEDIATOR-DEI");
@@ -76,4 +77,63 @@ for(const stage of formation.stages){
  }
 }
 assert.equal(covered,23,"All 23 existing stage-source associations should be represented, with no new relationships");
-console.log("PASS source-study context: source metadata, explicit claim provenance, all 23 course source associations, safe original, bilingual, no invented excerpt or source relationship");
+// This shipped manifest has NO released historical texts. P0 research has
+// not made any textual or reproduction-rights decisions for public output.
+const heldManifest=JSON.parse(readFileSync(
+ new URL("../data/learn/mass-formation-approved-passages.v1.json",import.meta.url),"utf8"));
+assert.equal(heldManifest.status,"NO_APPROVED_PASSAGES");
+assert.equal(heldManifest.entries.length,0);
+assert.equal(releasedMassFormationPassages(heldManifest,formation).length,0);
+assert.doesNotMatch(massSourceStudyHtml(massSourceStudyRecord(formation,"MF03","SRC-MEDIATOR-DEI",
+ {passageManifest:heldManifest})),/data-ao-mf-approved-extract=/);
+
+// Only synthetic test fixture text is introduced here; it is not historical
+// prose and is NEVER placed in the source or public release data registry.
+const synthetic={
+ id:"AO.FORM.PASSAGE.0001",source_id:"SRC-MEDIATOR-DEI",
+ stage_id:"MF03",claim_ids:["MF03-C02"],language:"en",
+ exact_text:"SYNTHETIC FIXTURE <not a historical quotation> & test",
+ locus:"TEST § 1",edition:"Test edition — not a real source",
+ edition_url:"https://example.test/fake-edition",
+ rights_basis:"PERMISSION_GRANTED",rights_evidence_url:"https://example.test/fake-permission",
+ review_status:"APPROVED_FOR_PUBLICATION",reviewed_by:"Automated acceptance fixture",
+ reviewed_on:"2026-10-16",use:"FORMATION_ONLY"
+};
+const approved={schema:"ao-formation-approved-passages-v1",scope:"FORMATION_ONLY",
+ status:"RELEASED_FOR_FORMATION",release_id:"AO-P1-FORMATION-2026-10-16-TEST",
+ reviewed_by:"Automated acceptance fixture",approved_on:"2026-10-16",entries:[synthetic]};
+assert.equal(releasedMassFormationPassages(approved,formation).length,1);
+const mockPublished=massSourceStudyRecord(formation,"MF03","SRC-MEDIATOR-DEI",
+ {passageManifest:approved});
+const mockHtml=massSourceStudyHtml(mockPublished);
+assert.match(mockHtml,/data-ao-mf-approved-extract="AO.FORM.PASSAGE.0001"/);
+assert.match(mockHtml,/SYNTHETIC FIXTURE &lt;not a historical quotation&gt; &amp; test/);
+assert.doesNotMatch(mockHtml,/<not a historical quotation>/);
+assert.equal((mockHtml.match(/data-ao-mf-source-original=/g)||[]).length,1);
+assert.match(mockHtml,/target="_blank" rel="noopener noreferrer"/);
+assert.equal(massSourceStudyRecord(formation,"MF03","SRC-MR62",
+ {passageManifest:approved})?.passages.length,0);
+
+function denied(modifier,label){
+ const copy=JSON.parse(JSON.stringify(approved));
+ modifier(copy);
+ assert.deepEqual(releasedMassFormationPassages(copy,formation),[],label);
+ assert.equal(massSourceStudyRecord(formation,"MF03","SRC-MEDIATOR-DEI",
+  {passageManifest:copy})?.passages.length,0,label+" must render NO text");
+}
+denied(x=>{x.status="DRAFT"},"draft not a release");
+denied(x=>{x.release_id=null},"missing release identifier");
+denied(x=>{x.scope="RITUAL_MASS"},"research crossing into ritual reader");
+denied(x=>{x.approved_on=null},"missing editorial approval date");
+denied(x=>{x.reviewed_by=""},"missing editorial owner");
+denied(x=>{x.entries[0].review_status="IN_RESEARCH"},"uncertified excerpt");
+denied(x=>{x.entries[0].claim_ids=["MF03-C01"]},"wrong supporting claim");
+denied(x=>{x.entries[0].stage_id="MF04"},"unsupported claim of another lesson");
+denied(x=>{x.entries[0].source_id="SRC-MR62"},"source association mismatch");
+denied(x=>{x.entries[0].edition_url="javascript:alert(1)"},"unsafe original edition URL");
+denied(x=>{x.entries[0].rights_evidence_url=""},"undocumented reproduction rights");
+denied(x=>{x.entries[0].rights_basis="UNKNOWN"},"uncertified rights category");
+denied(x=>{x.entries[0].exact_text=""},"no actual source passage");
+denied(x=>{x.entries=[synthetic,synthetic]},"duplicate excerpt ID");
+denied(x=>{x.entries[0].use="FORMATION_AND_MASS"},"liturgical reader scope forbidden");
+console.log("PASS source-study context: source metadata, explicit claim provenance, all 23 course source associations, safe original, bilingual, release-gated excerpts only or source relationship");
