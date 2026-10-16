@@ -36,7 +36,7 @@ for(const fr of [false,true]){
  assert.ok(html.includes('data-ao-mf-evidence-review="AO.CARD.014"'));
  assert.equal((html.match(/data-ao-mf-evidence-claim="/g)||[]).length,51);
  assert.equal((html.match(/data-ao-mf-evidence-decision="/g)||[]).length,51);
- assert.ok(html.includes(fr?"Contrôler l'original":"Check printed original"));
+ assert.ok(html.includes(fr?"Contrôler l&#39;original":"Check printed original"));
  assert.ok(html.includes('data-ao-mf-evidence-export'));
  assert.ok(!html.includes("<a href="),"Unqualified source URLs may not be linked");
  assert.ok(!html.includes('data-ao-reference-panel'),"Research panel is not the certified Sources drawer");
