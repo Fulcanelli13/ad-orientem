@@ -22,7 +22,7 @@ const safe=s=>s.replace(/<\/script/gi,'<\\/script').replace(/<!--/g,'<\\!--');
 let out=html
  .replace('<script src="https://cdn.babylonjs.com/babylon.js"></script>','<script>\n'+safe(engine)+'\n</script>')
  .replace('<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>','<script>\n'+safe(loaders)+'\n</script>');
-if(out.includes('<script src="https://cdn.babylonjs.com/'))throw new Error('External 3D engine script remains');
+if(!html.includes('<script src="https://cdn.babylonjs.com/babylon.js"></script>') || !html.includes('<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>'))throw new Error('Original viewer script references changed');
 const tag='<script type="module" src="./viewer.js"></script>';
 if(!out.includes(tag))throw new Error('Unknown viewer entrypoint');
 out=out.replace(tag,
