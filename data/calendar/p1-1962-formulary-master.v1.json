@@ -1022,7 +1022,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "readOnlySourceCompositionStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
+        "recoveredLanguageSectionCount": 18,
+        "remainingMissingSectionProof": "data/calendar/p1-partial-common-source-recovery.v1.json"
       }
     },
     {
@@ -2704,7 +2707,10 @@
         "formularyReadyForNewSaint": false,
         "trilingualCoreSectionVerified": false,
         "inheritanceOrSourceGap": true,
-        "verifiedSourceId": false
+        "verifiedSourceId": false,
+        "readOnlySourceCompositionStatus": "PARTIAL_SOURCE_RECOVERY_VERIFIED",
+        "recoveredLanguageSectionCount": 7,
+        "remainingMissingSectionProof": "data/calendar/p1-partial-common-source-recovery.v1.json"
       }
     },
     {
@@ -3907,5 +3913,7 @@
   "partialSourcePathsWithVerifiedCandidateCodes": 10,
   "ambiguousUnmappedIndexRows": 3,
   "sourceEvidenceAudit": "data/calendar/p1-additional-common-app-audit.v1.json",
-  "composedCompleteCommonVariants": 2
+  "composedCompleteCommonVariants": 2,
+  "partialSourceReconciliationVerified": 2,
+  "verifiedRecoveredSourceLanguageSections": 25
 }
