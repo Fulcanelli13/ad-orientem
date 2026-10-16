@@ -290,6 +290,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
         indexScrollTop:validPos(explorer.indexScrollTop),
         indexFocusKey:/^(PRE\.ASPERGES|POST\.MASS|AO\.CARD\.0(?:0[1-9]|[12][0-9]|30))$/.test(String(explorer.indexFocusKey||""))?
           explorer.indexFocusKey:null,
+        studyStageId:/^MF0[1-8]$/.test(String(explorer.studyStageId||""))?explorer.studyStageId:null,
         momentScrollTop:validPos(explorer.momentScrollTop)}:null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
