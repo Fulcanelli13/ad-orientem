@@ -280,6 +280,14 @@ try{
  assert.equal(partialReconciliation.length,2);
  assert.ok(partialReconciliation.every(x=>x.status==="PARTIAL_SOURCE_RECOVERY_VERIFIED"&&
    x.route===null&&x.authorizedForSaintMass===false));
+ const c3ap=partialReconciliation.find(x=>x.targetPath==="Commune/C3ap");
+ const c7=partialReconciliation.find(x=>x.targetPath==="Commune/C7");
+ assert.equal(c3ap.borrowedSections.length,18);
+ assert.deepEqual(c3ap.missingByLanguage,{la:[],en:[],
+  fr:["Introitus","Lectio","Graduale","Evangelium","Offertorium","Communio"]});
+ assert.equal(c7.borrowedSections.length,7);
+ assert.deepEqual(c7.missingByLanguage,{la:["Lectio"],en:["Lectio"],fr:["Lectio"]});
+ assert.ok(c7.borrowedSections.every(x=>!x.includes("Lectio")),"Never invent missing female martyr Lesson");
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
  assert.equal(paschalAlternate.status,"SOURCE_COMPOSITION_VERIFIED",paschalAlternate.reason+" / "+paschalAlternate.section);
  assert.deepEqual(paschalAlternate.completeByLanguage,{la:true,en:true,fr:true});
