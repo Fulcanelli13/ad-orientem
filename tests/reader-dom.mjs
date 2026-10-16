@@ -62,6 +62,8 @@ for(const token of [
   'data-schola-faster',
   'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
+expect(html.includes('data-icon-slot="faithful-gesture-top"'),
+  "Missal top ribbon must show a source-owned gesture glyph independently from posture");
 expect(html.includes('data-role="missal-faithful-gesture"'),
   "Missal faithful gesture must have a dedicated top-ribbon display");
 expect(html.includes('data-role="missal-priest-action"'),
