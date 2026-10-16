@@ -44,7 +44,10 @@ export function reconcileP1PartialCommon({targetPath,target,base,orations}={}){
     for(const section of rule.inheritedMass){
       const current=map.get(section),parent=base[lang].map.get(section);
       if(has(current)){
-        if(has(parent)&&norm(current)!==norm(parent))
+        // C7 can own a legitimate independent translation of an inherited
+        // Latin chant; never override a source-owned vernacular section.
+        // C3ap expressly names a parent Mass, so conflict is a hard hold.
+        if(targetPath==="Commune/C3ap"&&has(parent)&&norm(current)!==norm(parent))
           return held("INHERITED_MASS_CONFLICT",lang+":"+section);
       }else if(has(parent)){
         // For nonvirgin C7, source identity is certified ONLY where target
