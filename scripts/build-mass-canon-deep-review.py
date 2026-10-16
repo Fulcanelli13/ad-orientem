@@ -127,7 +127,7 @@ toc=''.join('<a href="#'+h(s["id"])+'">'+str(i).zfill(2)+' · '+h(s["title"]["en
 markup=layout.replace("__CSS__",css).replace("__TOC__",toc).replace("__STUDIES__","".join(chapter(s,i) for i,s in enumerate(doc["studies"],1)))
 assert markup.count('class="study" id=')==8
 assert markup.count('class="lit-block"')==15
-assert markup.count('class="relation"')==7
+assert markup.count('class="relation"')==8
 assert "EDITORIAL DRAFT — NOT PUBLIC" in markup
 out=ROOT/"artifacts/p2-formation-prayer-review/roman-canon-deep/index.html"
 out.parent.mkdir(parents=True,exist_ok=True)
