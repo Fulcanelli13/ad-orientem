@@ -300,3 +300,28 @@ assert.ok(reverseDisposition.publishedGuideSectionBindings.every(x=>
   x.copyOrMoveGuideText===false &&
   x.linkReadyForP1==="OWNER_AND_RITUAL_CONDITION_REVIEW"));
 console.log("Mass P0 Reverse Source Coverage: PASS — 34 source-only cues and 4 Guide sections.");
+
+
+// P0 279 event-owner identity check: structural mapping, not 1962 rubrical certification.
+const eventOwners=readJson("../docs/research/MASS-P0-PRIEST-EVENT-IDENTITIES-20261016.v1.json");
+assert.equal(eventOwners.pairs.length,279);
+assert.equal(eventOwners.summary.uniqueCanonicalSourceCueIds,279);
+assert.equal(eventOwners.summary.actionActorAndRitualFullyCertified,0);
+const eventIds=new Set();
+const eventCueIds=new Set();
+const canonicalCueMetadata=new Map(canonicalSung.blocks.flatMap(b=>
+  (b.units||[]).map(c=>[c.cue_id,{blockId:b.Block_ID,clock:c.clock}])));
+for(const event of eventOwners.pairs){
+  assert.ok(/^AO\.SM\.P\d{4}$/.test(event.eventId));
+  assert.ok(!eventIds.has(event.eventId));
+  eventIds.add(event.eventId);
+  assert.ok(!eventCueIds.has(event.canonicalCueId));
+  eventCueIds.add(event.canonicalCueId);
+  assert.equal(canonicalCueMetadata.get(event.canonicalCueId)?.blockId,event.canonicalBlockId);
+  assert.equal(canonicalCueMetadata.get(event.canonicalCueId)?.clock,event.clockFromCanonicalText);
+  assert.equal(event.eventActionActorRitualVerified,false);
+  assert.equal(event.publicationPermission,false);
+}
+assert.equal(eventIds.size,279);
+assert.equal(eventCueIds.size,279);
+console.log("Mass P0 Research Priest-Event Identity: PASS — 279/279 donor cue IDs, no ritual promotion.");
