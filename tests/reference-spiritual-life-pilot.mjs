@@ -35,7 +35,27 @@ for(const lang of ["en","fr"]){
   assert.ok(!defaultContent.includes("data-ao-sl-claim-sources="),
    lesson.id+" visible teaching block still contains inline source links");
   const inside=markup.slice(disclosure);
-  assert.ok(inside.includes(lang==="fr"?"Sources et lectures complémentaires":"Sources &amp; further reading"));
+  const cited=[...new Set([...lesson.blocks.flatMap(b=>b.claims),...lesson.practice.claims]
+   .flatMap(id=>SPIRITUAL_LIFE_CLAIM_MAP[id].source_ids))];
+  const index=inside.split('<details class="aoSLWorks">')[0];
+  assert.match(index,/<ul class="aoSLSourceIndex" data-ao-sl-source-index>/,
+   lesson.id+" first-tap source list missing");
+  assert.ok(index.includes(lang==="fr"?"Sources citées":"Cited sources"),
+   lesson.id+" missing bilingual cited-source heading");
+  assert.ok(inside.includes("<summary>Sources · "+cited.length+"</summary>"));
+  assert.equal((index.match(/data-ao-sl-cited-source=/g)||[]).length,cited.length,
+   lesson.id+" cited works not unique at first tap");
+  for(const id of cited){
+   assert.equal((index.match(new RegExp('data-ao-sl-cited-source="'+id+'"','g'))||[]).length,1,
+    lesson.id+" source missing or duplicated in index: "+id);
+  }
+  const curated=[...index.matchAll(/data-ao-sl-curated-reading="([^"]+)"/g)].map(m=>m[1]);
+  assert.ok(curated.length<=4&&curated.every(id=>cited.includes(id)),
+   lesson.id+" promoted an uncited work as further reading");
+  if(lesson.id==="SL01")assert.deepEqual(curated,["SL-FRANCIS-SALES-DEVOUT-LIFE"]);
+  if(lesson.id==="SL11"||lesson.id==="SL13")assert.equal(curated.length,0);
+  assert.match(index,lang==="fr"?/Ces liens ne vérifient pas/:/Document links do not by themselves verify/);
+  assert.ok(!index.includes('class="aoSLFurtherReading"'),"Duplicate further-reading bibliography returned");
   assert.ok(inside.includes(lang==="fr"?"Sources par section":"Evidence by section"));
   assert.ok(inside.includes('<details class="aoSLEvidence">'));
   assert.equal((inside.match(/data-ao-sl-evidence-block=/g)||[]).length,4);
