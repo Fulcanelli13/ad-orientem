@@ -349,7 +349,7 @@ function open(id,opts={}){
     const switched=donor.setMysterySet(set,{step:0})===true;
     const steps=switched?donor.steps():[];
     const step=steps.findIndex(item=>item?.mi===index&&(
-      source.bead===undefined?item.kind==="mystery":item.cue===true&&item.bead===source.bead
+      source.bead===undefined?item.kind==="mystery":Boolean(item.cue)&&Number(item.bead)===source.bead
     ));
     if(step<0||donor.setStep(step)===false){
       try{window.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}
