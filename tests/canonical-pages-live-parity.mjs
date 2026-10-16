@@ -9,7 +9,11 @@ const paths=[
  "src/learn/mass-formation.js","src/learn/spiritual-life.js",
  "src/learn/sexual-ethics.js","src/learn/latin-course-v2.js",
  "src/learn/latin-course-source-display.js",
- "src/pray/devotional-sequence-adapter.js"
+ "src/pray/devotional-sequence-adapter.js",
+ "src/calendar/calendar-runtime.js",
+ "src/calendar/liturgical-clock.js",
+ "src/home/today-v2-styles.js",
+ "src/app/release-identity.js"
 ];
 const sha=b=>createHash("sha256").update(b).digest("hex");
 const run=String(process.env.GITHUB_RUN_ID||"local");
