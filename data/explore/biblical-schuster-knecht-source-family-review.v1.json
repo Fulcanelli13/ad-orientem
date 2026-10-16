@@ -525,7 +525,10 @@
     "earlyEnglishSadlierWholeBookPhysicalScanGapChapters": 2,
     "earlyEnglishSadlierMixedOCRChaptersLayoutExamined": 13,
     "earlyEnglishSadlierMixedOCRRunningHeadingsRemoved": 13,
-    "earlyEnglishSadlierMixedOCRLiteralWordCorrections": 0
+    "earlyEnglishSadlierMixedOCRLiteralWordCorrections": 0,
+    "earlyEnglishSadlierSourceNarrativeSubjectCorroboratedChapters": 35,
+    "earlyEnglishSadlierSourceNarrativeSubjectPrintSpotCheckedChapters": 17,
+    "earlyEnglishSadlierNewVerseCertifiedLinks": 0
   },
   "policy": {
     "keepExistingAuthorship": true,
@@ -4598,5 +4601,25 @@
     "originalSourceProseAddedToGitHub": false,
     "appDeployed": false,
     "rightsGateRemainsClosed": true
+  },
+  "english1908NarrativeEvidenceAndReaderV4": {
+    "date": "2026-10-16",
+    "sourceEvidenceRegistry": "data/explore/biblical-schuster-1908-narrative-evidence-batch.v1.json",
+    "originalSourceChapterSubjectsWithTwoOCRNarrativeAnchors": 35,
+    "originalPrintPagesSpotCheckedForSubset": true,
+    "sourceImageSpotSupportedChapters": 17,
+    "sourceOCROnlySupportedChapters": 18,
+    "canonicalAtlasCandidatesAll": 87,
+    "exactScriptureVerseAlignmentsVerified": 0,
+    "newLiveLinksActivated": 0,
+    "explicitSourceContentMismatchExample": "OT-LXXVII purported Susanna chapter OCR includes unrelated Daniel dream text; no automatic promotion",
+    "missingOriginalPages384_385StillUnrecovered": true,
+    "offlineResearchReaderV4": "Schuster_1908_Offline_Research_Reader_v4.html",
+    "offlineResearchReaderV4Sha256": "982b7dd794d2199b3235189ecc4561a3fb4faed80d0a9000964b6a3e43db6243",
+    "offlineResearchDataV4": "Schuster_1908_Research_Reader_Data_v4.json",
+    "offlineResearchDataV4Sha256": "2dbc63659e030cc264b3d60ef6bc577f35c8bb3d4fc72b786fb1b6c093884a2f",
+    "uiBehaviour": "35 source-body OCR-corroborated Atlas subjects labelled separately from title-only candidates, with no external linking; prior local reading-state key unchanged",
+    "safety": "Source OCR remains unverified historically, rights/editorial holds unchanged. No Schuster original prose committed to repo, no AI replacement story, no production app changes.",
+    "nextPriority": "Direct original Scripture passage verification for high-impact chapter subjects; authentic alternate Schuster witness to recover missing 1908 printed pp 384–385; production reader gate remains closed."
   }
 }
