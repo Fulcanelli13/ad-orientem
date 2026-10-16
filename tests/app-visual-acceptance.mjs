@@ -1487,11 +1487,13 @@ try{
   }));
   assert.equal(settingsParity.owner,"AO_SETTINGS_APP_V1");
   assert.equal(settingsParity.presentation,"modular-settings-presentation-v4359.6");
-  assert.deepEqual(settingsParity.headings,["APP","MASS & PRAYER","DATA","ABOUT"],"Settings donor hierarchy regressed");
+  assert.deepEqual(settingsParity.headings,["APP & UPDATES","APP","MASS & PRAYER","DATA"],"Settings must expose installed-version controls before general preferences");
   for(const route of ["/settings/general","/settings/accessibility","/settings/language-reading","/settings/mass","/settings/local-customs","/settings/prayer","/settings/privacy-data","/settings/about-sources"]){
     assert.ok(settingsParity.routes.includes(route),route+" missing from restored Settings landing");
   }
   assert.equal(settingsParity.sourcesLaunchers,1,"Settings must expose exactly one Sources & About destination");
+  assert.equal(settingsParity.routes.filter(x=>x==="/settings/about-sources").length,1,
+    "Installed-version action must remain a single source/settings route");
   assert.equal(settingsParity.historicalVisible,false,"historical Settings donor is visible beneath modular Settings");
   assert.equal(settingsParity.embeddedHomeSettings,false,"retired Home Settings surface is visible beneath modular Settings");
   assert.ok(settingsParity.overflow<=1,"Settings has horizontal overflow on 390px phone geometry");
