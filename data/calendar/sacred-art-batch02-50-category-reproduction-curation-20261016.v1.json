@@ -21,13 +21,13 @@
     "subjectsNoFive": 21,
     "fiveStarPaintingRecords": 39,
     "researchOptions": 34,
-    "visibleSourceFileCount": 58,
+    "visibleSourceFileCount": 63,
     "fiveStarOriginalsWith2PlusPhotos": 3,
-    "fiveStarOriginalsWithoutPhoto": 5,
-    "categoriesWithNoImage": 12,
+    "fiveStarOriginalsWithoutPhoto": 4,
+    "categoriesWithNoImage": 8,
     "categoriesWith2PlusDistinctPaintingOptions": 15,
-    "categoriesWithImage": 38,
-    "reviewableNewPaintingOptions": 15
+    "categoriesWithImage": 42,
+    "reviewableNewPaintingOptions": 18
   },
   "policies": {
     "five": "Only earlier human five-star works displayed when any apply to this category. Old scores remain immutable.",
@@ -1348,7 +1348,18 @@
           "sourceUrl": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
           "technicalHold": "SOURCE_ORIGINAL_AND_OPEN_PHOTO_NEEDED",
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Juan Patricio Morlete Ruiz - The Heart of Mary - Google Art Project.jpg",
+              "label": "Google Art Project original",
+              "pixels": "2277 × 2960",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg?width=950",
+              "verification": "COMMONS_FILE_PAGE_EXACT_PAINTING",
+              "rights": "SOURCE_FILE_RIGHTS_REVIEW_REQUIRED"
+            }
+          ],
           "acquisition": null,
           "rights": "UNREVIEWED_FILE_LEVEL",
           "releaseApproved": false,
@@ -1587,7 +1598,28 @@
           "sourceUrl": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
           "technicalHold": "DEVOTIONAL_ICON_NOT_OIL_PAINTING_SOURCE_MASTER_NEEDED",
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Original icon of Our Lady of Perpertual Help (Succour) in Sant'Alfonso di Liguori (Rome).jpg",
+              "label": "Documented photo of the original Roman icon",
+              "pixels": "781 × 1024",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant'Alfonso_di_Liguori_(Rome).jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant'Alfonso_di_Liguori_(Rome).jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Original_icon_of_Our_Lady_of_Perpertual_Help_(Succour)_in_Sant'Alfonso_di_Liguori_(Rome).jpg?width=950",
+              "verification": "COMMONS_FILE_PAGE_EXACT_PAINTING",
+              "rights": "SOURCE_FILE_RIGHTS_REVIEW_REQUIRED"
+            },
+            {
+              "id": "Perpetual help original icon.jpg",
+              "label": "Alternate original-icon photograph",
+              "pixels": "500 × 609",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Perpetual_help_original_icon.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Perpetual_help_original_icon.jpg?width=950",
+              "verification": "COMMONS_FILE_PAGE_EXACT_PAINTING",
+              "rights": "SOURCE_FILE_RIGHTS_REVIEW_REQUIRED"
+            }
+          ],
           "acquisition": null,
           "rights": "UNREVIEWED_FILE_LEVEL",
           "releaseApproved": false,
@@ -1618,7 +1650,18 @@
           "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "carmel-lisieux-thérèse-aux-roses-1925-archives-preview",
+              "label": "Previously approved Archive of Carmel photograph — open licence not established",
+              "pixels": "Unconfirmed",
+              "sourcePage": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+              "originalUrl": "https://archives.carmeldelisieux.fr/wp-content/uploads/2022/10/N%C2%B0109-Therese-aux-roses-1925-86x65-%C2%A9-Archives-du-Carmel-de-Lisieux-scaled.jpg",
+              "previewUrl": "https://archives.carmeldelisieux.fr/wp-content/uploads/2022/10/N%C2%B0109-Therese-aux-roses-1925-86x65-%C2%A9-Archives-du-Carmel-de-Lisieux-scaled.jpg",
+              "verification": "PREVIOUS_HUMAN_RATED_REFERENCE_NOT_OPEN_SOURCE",
+              "rights": "NOT_OPEN_SOURCE_RELEASE_HELD"
+            }
+          ],
           "acquisition": null,
           "rights": "UNREVIEWED_FILE_LEVEL",
           "releaseApproved": false,
@@ -2122,7 +2165,18 @@
           "sourceUrl": "https://www.metmuseum.org/art/collection/search/702752",
           "technicalHold": null,
           "placementNote": "",
-          "files": [],
+          "files": [
+            {
+              "id": "Benedetto Luti - Christ and the Woman of Samaria - 2015.645 - Metropolitan Museum of Art.jpg",
+              "label": "Met original painting photograph",
+              "pixels": "3116 × 3868",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg?width=950",
+              "verification": "COMMONS_FILE_PAGE_EXACT_PAINTING",
+              "rights": "SOURCE_FILE_RIGHTS_REVIEW_REQUIRED"
+            }
+          ],
           "acquisition": {
             "width": null,
             "height": null,
