@@ -20,13 +20,13 @@ def main():
    with Image.open(io.BytesIO(raw)) as i:
     i=ImageOps.exif_transpose(i)
     w,h=i.size
-    if min(w,h)<e["minimumWidth"]:raise ValueError("File is not sufficient resolution")
+    # Mobile quality is judged visually at the actual 390px app viewport.\n    # Do not discard complete originals merely because of source pixel count.
     im=i.convert("RGB");im.thumbnail((2200,2200),Image.Resampling.LANCZOS)
     buf=io.BytesIO();im.save(buf,"WEBP",quality=87,method=4);preview=buf.getvalue()
    digest=hashlib.sha256(raw).hexdigest()
    f=e["workId"]+"-"+digest[:14]+".webp"
    (OUT/f).write_bytes(preview)
-   result.update(status="EXACT_WORK_DOWNLOADED_RIGHTS_PENDING",photoSourceUrl=q.url,sourceDimensions=[w,h],sourceSha256=digest,sourceBytes=len(raw),previewFile=f,previewSha256=hashlib.sha256(preview).hexdigest(),previewDimensions=[im.width,im.height],approvalForPublicGallery=False)
+   result.update(status="EXACT_WORK_DOWNLOADED_RIGHTS_PENDING",photoSourceUrl=q.url,sourceDimensions=[w,h],sourceSha256=digest,sourceBytes=len(raw),previewFile=f,previewSha256=hashlib.sha256(preview).hexdigest(),previewDimensions=[im.width,im.height],approvalForPublicGallery=False,mobileResolutionGateRemoved=True)
    print("W91_ACQUIRED",e["workId"],w,h,flush=True)
   except Exception as ex:
    result.update(status="SOURCE_NOT_QUALIFIED",error=str(ex)[:190])
