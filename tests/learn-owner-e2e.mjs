@@ -596,12 +596,22 @@ try{
     }else{
       await page.locator(spec.root+" "+spec.exit).first().tap({timeout:10000});
     }
-    await page.waitForFunction(family=>{
-      const s=globalThis.AO_LEARN_APP_V1?.status?.();
-      return s?.open===true&&s?.child==null&&s?.family===family
-        &&!!document.getElementById("ao-learn-modular-root")
-        &&!document.getElementById("ao-learn-modular-root")?.hidden;
-    },spec.family,{timeout:14000});
+    try{
+      await page.waitForFunction(family=>{
+        const s=globalThis.AO_LEARN_APP_V1?.status?.();
+        return s?.open===true&&s?.child==null&&s?.family===family
+          &&!!document.getElementById("ao-learn-modular-root")
+          &&!document.getElementById("ao-learn-modular-root")?.hidden;
+      },spec.family,{timeout:14000});
+    }catch(error){
+      console.error("Observed Formation Back diagnostics",spec.id,await page.evaluate(()=>({
+        learn:globalThis.AO_LEARN_APP_V1?.status?.(),
+        surface:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+        familyVisible:!document.getElementById("ao-learn-modular-root")?.hidden,
+        active:document.activeElement?.outerHTML?.slice(0,180)
+      })));
+      throw error;
+    }
     assert.equal(await page.locator(spec.root).isVisible().catch(()=>false),false,"Closed Formation child remains visible: "+spec.id);
     await assertFocusSafe("Formation "+spec.id+" returned");
     entered.push(spec.id);
