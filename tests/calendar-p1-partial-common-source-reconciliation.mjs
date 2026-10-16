@@ -28,21 +28,29 @@ wrong=clone(target);wrong.en.map.set("Evangelium",["Unrelated Gospel passage fro
 assert.equal(reconcile({targetPath:"Commune/C3ap",target:wrong,base,orations}).reason,"INHERITED_MASS_CONFLICT");
 // C7: borrowing allowed only when existing target *Latin* equals the
 // original C6-1 Latin for that section. Latin Lectio remains missing.
-const c7=empty(),femaleDonor=material("C6-1");
+const c7=empty(),femaleDonor=material("C6-1"),originalParent=material("C6");
 for(const section of ["Introitus","Evangelium","Offertorium","Communio"])c7.la.map.set(section,femaleDonor.la.map.get(section));
 for(const section of ["Oratio","Secreta","Postcommunio","Graduale"])for(const lang of langs)
  c7[lang].map.set(section,["C7 DISTINCT "+lang+" "+section+" original Mass source"]);
 c7.en.map.set("Communio",femaleDonor.en.map.get("Communio"));
-const woman=reconcile({targetPath:"Commune/C7",target:c7,base:femaleDonor});
-assert.equal(woman.status,"PARTIAL_SOURCE_RECOVERY_VERIFIED");
-assert.deepEqual(woman.missingByLanguage.la,["Lectio"]);
+const woman=reconcile({targetPath:"Commune/C7",target:c7,base:femaleDonor,lessonSource:originalParent});
+assert.equal(woman.status,"SOURCE_COMPOSITION_COMPLETE");
+assert.deepEqual(woman.missingByLanguage,{la:[],en:[],fr:[]});
+assert.strictEqual(woman.maps.la.map.get("Lectio"),originalParent.la.map.get("Lectio"));
+assert.strictEqual(woman.maps.en.map.get("Lectio"),originalParent.en.map.get("Lectio"));
 assert.ok(woman.borrowedSections.some(x=>x.language==="en"&&x.section==="Introitus"));
 assert.ok(woman.borrowedSections.some(x=>x.language==="fr"&&x.section==="Communio"));
-assert.ok(!woman.borrowedSections.some(x=>x.section==="Lectio"));
+assert.equal(woman.borrowedSections.filter(x=>x.section==="Lectio").length,3);
 let altered=clone(c7);altered.la.map.set("Introitus",["False Latin identity for unknown saint"]);
-const held=reconcile({targetPath:"Commune/C7",target:altered,base:femaleDonor});
+const held=reconcile({targetPath:"Commune/C7",target:altered,base:femaleDonor,lessonSource:originalParent});
 assert.equal(held.status,"PARTIAL_SOURCE_RECOVERY_VERIFIED");
 assert.ok(!held.borrowedSections.some(x=>x.section==="Introitus"),"No nonidentical Latin may authorize an English/French donor");
+assert.equal(reconcile({targetPath:"Commune/C7",target:c7,base:femaleDonor}).reason,"MISSING_EXPLICIT_PARENT_LESSON_SOURCE");
+const falseLesson=clone(originalParent);
+falseLesson.la.map.delete("Lectio");
+assert.equal(reconcile({targetPath:"Commune/C7",target:c7,base:femaleDonor,lessonSource:falseLesson}).reason,"MISSING_ORIGINAL_PARENT_LATIN_LECTIO");
+const forged=clone(c7);forged.la.map.set("Lectio",["Another Saint's separate Latin Lesson"]);
+assert.equal(reconcile({targetPath:"Commune/C7",target:forged,base:femaleDonor,lessonSource:originalParent}).reason,"CONFLICTING_ORIGINAL_LATIN_LECTIO");
 assert.equal(reconcile({targetPath:"Commune/NOT_REAL",target,base}).reason,"UNKNOWN_COMMON_VARIANT");
 assert.equal(reconcile({targetPath:"Commune/C3ap",target,base,orations:null}).reason,"MISSING_SOURCE_OWNER");
-console.log("P1 partial Commons PASS: C3ap shared Easter Mass plus 3 exact Latin orations; C7 7 parity-gated borrowed translations, source gaps remain HELD.");
+console.log("P1 partial Commons PASS: C3ap shared Easter Mass plus 3 exact Latin orations; C7 explicit C6 Lesson ownership with separate C6-1 chant translations, all original source maps verified.");
