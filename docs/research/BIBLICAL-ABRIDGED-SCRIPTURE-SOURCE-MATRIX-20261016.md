@@ -104,3 +104,26 @@ Further comparative evidence now derives from **two additional original editoria
 **Private conversation deliverables:** `AO_Biblical_Excerpt_Master_Matrix_v3.xlsx` (eight worksheets, 151-event matrix, 298-evidence ledger, 37 sections, 11-gaps sheet, explicit new-17-evidence tab), SHA-256 `2a10c3fabb460dc4a393d79832c098aa711e52db3ed5ea89d4e04f7d11bd2254`; `AO_Biblical_Excerpt_Master_Data_v3.json` SHA-256 `81b9372754c2739ae87d65f05771f48f5ff5f5a242a5b9cdf12fd008e5b69342`; `AO_Biblical_Excerpt_Master_Coverage_v3.json` SHA-256 `7e4d60c48aca302485c2e5bbd5f3ad2f49e13026c82c78a4bb924b67490da560`; `AO_Biblical_Excerpt_Master_New_Evidence_v3.csv` SHA-256 `0fc856e30c83dadffb3f5d2c6ef744f09e2ab3fd764a4ef1bb469eacc5ec44fd`. The new 17 reference records and exact publisher URLs are also stored on the **existing GitHub research branch** in `data/explore/biblical-pericope-comparative-new-evidence.v3.json` for cross-pipeline reconciliation; larger workbook/legacy first 281 rows are private conversation deliverables referenced by digest in the source family manifest.
 
 **Next execution:** deliberately deepen overlap among the 9 independent source families; 41/151 events have ≥2 independent choices, only 12 have ≥3. Finish harvesting each source's original full selection index where technically available, then prepare the editorial comparison. **Zero chosen final abridged excerpts, zero Scripture prose reproduced, zero live app changes.**
+
+
+## Phase 4 — strict v3 accounting and publisher-verified targeted selections (16 October, v4 current)
+
+The exact original **298-row v3 Excel and full JSON** were retrieved and reconciled to the original **151 canonical event keys**. One previously unrecognized QA error affects v3's headline: David takes Jerusalem (event #37, 2 Samuel 5:6–10) had one nonarchived `IBS_STORY` entry, printed **`2 Samuel 5:1-`** and already marked `INCOMPLETE_PUBLISHED_REFERENCE`. That record cannot count as a qualified excerpt until the real publisher document is collated. Thus the **strict v3 baseline is 139/151**, not the reported 140/151. Do not repair the incomplete reference by inference or erase the original source record.
+
+**10 newly verified published passages** (eight distinct previously uncovered event subjects) are recorded at `data/explore/biblical-pericope-comparative-new-evidence.v4.json` with exact source/publisher URLs, distinct editorial families and length classifications. Key examples are the Catholic Roman Lectionary **Ez 1:2–5, 24–28c** (shortened, existing family), Moody's complete **Ezekiel 1:1–28** (new family), Dean Merrill's **Acts 20:7–12**, and both Calvary curriculum's extended **Acts 27:13–28:16** and Alpha International's author-commentary-supported **Acts 27:13–44** (new distinct families; the latter is not a short abridgement).
+
+| Measure | Strict v3 recount | v4 |
+|---|---:|---:|
+| Source-to-event selection records | 298 | **308** |
+| Events with at least one qualified source | 139 | **147/151** |
+| Events still without qualifying source | 12 | **4** |
+| Events with at least two independent publisher families | 41 | **43** |
+| Events with at least three independent publisher families | 12 | **12** |
+| Core comparison source systems | 10 | **10, unchanged** |
+| Verified supplemental editor families | 0 | **9** |
+
+**Four held:** (37) David takes Jerusalem, (60) Daniel and Bel, (61) Daniel and the dragon, (132) Saul returns to Tarsus. For Bel/Dragon, USCCB Daniel 14 is a Bible text page, not source-selection evidence; generic annual schedules and broad Bible text pages are not votes. Alpha's specific Acts 27 selection has authored commentary on that exact event, unlike unannotated mechanical annual allotments, but does not become an abridged reading merely for that reason.
+
+**Current complete conversation artifacts:** `AO_Biblical_Excerpt_Master_Matrix_v4.xlsx` (nine sheets), SHA256 `aea28e423ca20cd7ad2e6489b3afbee0f18e6fcf60a8dc88dd461248ba5edf42`; `AO_Biblical_Excerpt_Master_Data_v4.json` (308 full rows), SHA256 `55a9bd8e6c4d2990dd89a5f11726530584af996617153293bc115036866188d1`; coverage JSON and 10-row v4 CSV in the manifest. The original 298 rows plus the 10 reconciled additions are in the v4 master; the GitHub research branch stores the v4 incremental exact-source ledger and whole-master digests. **No approved excerpts, no Scripture text/prose import, no production app changes.**
+
+**Next focus:** expand independent family comparison over the 108 events with fewer than two families, rather than add one-off citations and claim popularity. Prefer full original editorial selection indexes for cross-event value; track shorter/longer selection options separately and retain Catholic canon verse-numbering holds.
