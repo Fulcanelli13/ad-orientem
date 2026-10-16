@@ -17,9 +17,37 @@
     ],
     "papalAnnouncementDistinctFromDecree": true,
     "cumSanctissima1962MassEligibilityRequiresSeparateAdjudication": true,
-    "modernGeneralRomanMemorialNeverReplaces1962ObservedDayByDefault": true
+    "modernGeneralRomanMemorialNeverReplaces1962ObservedDayByDefault": true,
+    "dicasteryMemorialDateNotUniversalGeneralRomanCalendar": true,
+    "dicasteryFeastDoesNotAuthorize1962Mass": true
   },
   "observances": [
+    {
+      "subjectId": "saint.giuseppina-bakhita",
+      "monthDay": "02-08",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2000-10-01",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A Sudanese-born religious sister who survived enslavement and witnessed to Christian forgiveness and hope.",
+          "fr": "Religieuse née au Soudan, ancienne esclave, témoin du pardon et de l'espérance chrétienne."
+        },
+        "context": {
+          "en": "Canonised in 2000; the Dicastery records her memorial on 8 February.",
+          "fr": "Canonisée en 2000 ; le Dicastère indique sa mémoire au 8 février."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/giuseppina-bakhita.html"
+      }
+    },
     {
       "subjectId": "saint.gregory-narek",
       "monthDay": "02-27",
@@ -42,6 +70,84 @@
         },
         "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
         "sourceUrl": "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210125_decreto-dottori_en.html"
+      }
+    },
+    {
+      "subjectId": "saint.oscar-arnulfo-romero",
+      "monthDay": "03-24",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2018-10-14",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "Archbishop of San Salvador, murdered while celebrating Mass, who bore witness to the faith among the oppressed.",
+          "fr": "Archevêque de San Salvador, assassiné pendant la messe, qui témoigna de la foi auprès des opprimés."
+        },
+        "context": {
+          "en": "Canonised in 2018; the Dicastery identifies 24 March as his liturgical memorial.",
+          "fr": "Canonisé en 2018 ; le Dicastère indique le 24 mars comme sa mémoire liturgique."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/oscar-romero.html"
+      }
+    },
+    {
+      "subjectId": "saint.kateri-tekakwitha",
+      "monthDay": "04-17",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2012-10-21",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A Mohawk Catholic laywoman and virgin who remained faithful to prayer and Christ amid opposition.",
+          "fr": "Jeune laïque catholique mohawk et vierge, demeurée fidèle à la prière et au Christ malgré les oppositions."
+        },
+        "context": {
+          "en": "Canonised in 2012; 17 April is her Dicastery-listed liturgical memorial date.",
+          "fr": "Canonisée en 2012 ; le 17 avril est la date de mémoire indiquée par le Dicastère."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/caterina-tekakwitha.html"
+      }
+    },
+    {
+      "subjectId": "saint.gianna-beretta-molla",
+      "monthDay": "04-28",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2004-05-16",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "An Italian physician, wife and mother, honoured for her self-giving love and fidelity to her family.",
+          "fr": "Médecin italienne, épouse et mère, honorée pour son amour généreux et sa fidélité familiale."
+        },
+        "context": {
+          "en": "Canonised in 2004; her memorial date is recorded as 28 April.",
+          "fr": "Canonisée en 2004 ; sa date de mémoire est indiquée au 28 avril."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/gianna-beretta-molla.html"
       }
     },
     {
@@ -105,6 +211,32 @@
       "approved1962FormularyId": null
     },
     {
+      "subjectId": "saint.josemaria-escriva-de-balaguer",
+      "monthDay": "06-26",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2002-10-06",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A priest who taught the sanctification of ordinary work and founded Opus Dei.",
+          "fr": "Prêtre qui enseigna la sanctification du travail ordinaire et fonda l'Opus Dei."
+        },
+        "context": {
+          "en": "Canonised in 2002; the Dicastery lists his liturgical memorial on 26 June.",
+          "fr": "Canonisé en 2002 ; le Dicastère indique sa mémoire liturgique au 26 juin."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/josemaria-escriva-de-balaguer.html"
+      }
+    },
+    {
       "subjectId": "saint.irenaeus-lyon",
       "monthDay": "06-28",
       "kind": "MEMORIAL",
@@ -115,6 +247,32 @@
       "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
       "mass1962Effect": "NONE",
       "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.pier-giorgio-frassati",
+      "monthDay": "07-04",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2025-09-07",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A young Dominican tertiary and lay Catholic whose prayer and works of charity centred on the poor.",
+          "fr": "Jeune tertiaire dominicain et laïc catholique dont la prière et les œuvres de charité étaient tournées vers les pauvres."
+        },
+        "context": {
+          "en": "Canonised on 7 September 2025; the Dicastery identifies 4 July as his memorial date.",
+          "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 4 juillet comme date de mémoire."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/pier-giorgio-frassati.html"
+      }
     },
     {
       "subjectId": "canon-group.martyrs-china-1648-1930",
@@ -298,6 +456,32 @@
       }
     },
     {
+      "subjectId": "saint.carlo-acutis",
+      "monthDay": "10-12",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2025-09-07",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A young layman who loved the Eucharist and used digital tools to share the faith.",
+          "fr": "Jeune laïc amoureux de l'Eucharistie, qui utilisa l'informatique pour faire connaître la foi."
+        },
+        "context": {
+          "en": "Canonised on 7 September 2025; the Dicastery records 12 October as his liturgical memorial date.",
+          "fr": "Canonisé le 7 septembre 2025 ; le Dicastère indique le 12 octobre comme date de mémoire liturgique."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/carlo-acutis.html"
+      }
+    },
+    {
       "subjectId": "saint.teresa-avila",
       "monthDay": "10-15",
       "kind": "MEMORIAL",
@@ -344,6 +528,32 @@
       "universalStatus": "NOT_INDEPENDENTLY_CERTIFIED",
       "mass1962Effect": "NONE",
       "approved1962FormularyId": null
+    },
+    {
+      "subjectId": "saint.charles-de-foucauld",
+      "monthDay": "12-01",
+      "kind": "LITURGICAL_MEMORIAL_DATE_ATTESTED",
+      "authorityScope": "DICASTERY_CAUSES_SAINTS_LITURGICAL_DATE",
+      "universalStatus": "DATE_ATTESTED_SCOPE_NOT_ASSIGNED",
+      "publishedOn": null,
+      "canonizedOn": "2022-05-15",
+      "historyGate": "FROM_CANONIZATION_DATE",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html",
+      "sourceEvidenceType": "DICASTERY_SAINT_PROFILE_MEMORIA_LITURGICA",
+      "mass1962Effect": "NONE",
+      "approved1962FormularyId": null,
+      "editorialTeaser": {
+        "whyHonoured": {
+          "en": "A priest and hermit whose life in the Sahara joined contemplation, hospitality and service.",
+          "fr": "Prêtre et ermite dont la vie au Sahara unit contemplation, hospitalité et service."
+        },
+        "context": {
+          "en": "Canonised in 2022; his memorial is listed as 1 December.",
+          "fr": "Canonisé en 2022 ; sa mémoire est indiquée au 1er décembre."
+        },
+        "status": "SOURCE_ANCHORED_BUT_COPY_REVIEW_PENDING",
+        "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/charles-de-foucauld.html"
+      }
     }
   ],
   "openQuestions": [
