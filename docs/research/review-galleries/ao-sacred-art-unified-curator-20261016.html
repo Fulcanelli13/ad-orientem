@@ -95,10 +95,14 @@ function renderList(){
 function photoMarkup(c,w,p,index){
  const photoKey=key(w.id,p.id),quality=scoreImage(w,p),s=imageState(w,p),crop=(state.photoCropStatus||{})[photoKey]||"",isPrimary=(state.photoRank[w.id]||[])[0]===p.id&&s==="keep";
  const original=safe(p.original)||safe(p.preview),preview=safe(p.preview)||original,page=safe(p.page);
+ // Mobile-safe fallback: never auto-download an unbounded high-resolution painting after a thumbnail error.
+ // The full original remains accessible only through the user's explicit Full file / Enlarge action.
+ const commonsFile=/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\//i.test(original);
+ const fallback=commonsFile?original.split('?')[0]+'?width=640':(original===preview?original:'');
  let scoreBtns=[0,1,2,3,4,5].map(function(n){return '<button data-action="photo-score" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'" data-num="'+n+'" class="'+(quality===n?"on":"")+'" aria-label="Photo quality '+n+' of 5">'+n+'</button>'}).join("");
  const links='<div class="photolinks">'+(page?'<a href="'+h(page)+'" target="_blank" rel="noopener noreferrer">File / rights ↗</a>':"")+(original?'<a href="'+h(original)+'" target="_blank" rel="noopener noreferrer">Full file ↗</a>':"")+'</div>';
  return '<div class="photo '+(isPrimary?"primary":"")+' '+(s==="duplicate"?"duplicate":"")+'">'+
- '<div class="imageframe"><img loading="lazy" referrerpolicy="no-referrer" src="'+h(preview)+'" data-fallback="'+h(original)+'" data-retry="0" alt="'+h(w.title+" — "+(p.label||p.id))+'"><button data-action="zoom" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'">Enlarge</button></div>'+
+ '<div class="imageframe"><img loading="lazy" referrerpolicy="no-referrer" src="'+h(preview)+'" data-fallback="'+h(fallback)+'" data-retry="0" alt="'+h(w.title+" — "+(p.label||p.id))+'"><button data-action="zoom" data-pid="'+h(w.id)+'" data-fid="'+h(p.id)+'">Enlarge</button></div>'+
  '<div class="photobody"><b>'+h(p.label||p.id)+'</b><small>'+h(p.id)+'</small><small>'+h(p.pixels||"Pixel dimensions not certified")+'</small>'+
  (p.status&&p.status!=="EXACT_SOURCE_FILE_NAME"?'<small>'+h(p.status.replace(/_/g," "))+'</small>':"")+links+
  '<div class="photorating"><small>PHOTO fidelity · 0–5 (do not penalize visible external frame)</small><div class="scores">'+scoreBtns+'</div></div>'+
@@ -133,7 +137,7 @@ function workMarkup(c,w){
  '<button data-action="art-move" data-cat="'+h(c.id)+'" data-pid="'+h(w.id)+'" data-step="1" title="Move painting lower">↓</button></div>';
  const marker='<div class="markerline">'+(primary?'<span class="tag gold">PRIMARY PAINTING</span>':"")+(w.oct12Selected?'<span class="tag gold">October 12 selected · protected</span>':"")+
  (w.researchCandidate?'<span class="tag">Research alternative</span>':"")+(w.needsAlternative?'<span class="tag warn">3★ · find painting alternative</span>':"")+
- (w.needsPhotoUpgrade?'<span class="tag warn">4★ · improve reproduction</span>':"")+(w.notEligible?'<span class="tag warn">Wrong saint identity · ineligible</span>':"")+'</div>';
+ (w.needsPhotoUpgrade?'<span class="tag warn">4★ · improve reproduction</span>':"")+(w.notEligible?'<span class="tag warn">Research only · not selectable (identity, image or rights hold)</span>':"")+'</div>';
  const links=(w.source&&safe(w.source)?'<a href="'+h(safe(w.source))+'" rel="noopener noreferrer" target="_blank">Painting / institutional source ↗</a>':"No verified object URL");
  const ordered=sortedPhotos(w);
  return '<article class="work '+(primary?"chosen":"")+' '+(w.oct12Selected?"previous":"")+'">'+
