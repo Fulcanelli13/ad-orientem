@@ -83,6 +83,25 @@
         "distinctMassFromDoctorPontiff": false,
         "alternativeOrationClauses": true,
         "actualCelebrantSelection": null
+      },
+      "printedMissalPageImageRole": "PROVENANCE_ONLY_NOT_LINK_DESTINATION",
+      "internalMissalTargets": {
+        "newmanFormulary": {
+          "canonicalFormularyId": "commune:1962:doctor_non_pontiff",
+          "printedFamilyId": "commune-print:doctorum",
+          "sourcePath": null,
+          "status": "AWAIT_INTERNAL_SOURCE_AND_PERMISSION"
+        },
+        "historicalLeonardiPrayerAnchors": [
+          "p1:missal:leonardi:collect",
+          "p1:missal:leonardi:secret",
+          "p1:missal:leonardi:postcommunion"
+        ],
+        "historicMartyrsCommemorationAnchors": [
+          "p1:missal:dionysius-rusticus-eleutherius:collect",
+          "p1:missal:dionysius-rusticus-eleutherius:secret",
+          "p1:missal:dionysius-rusticus-eleutherius:postcommunion"
+        ]
       }
     },
     {
@@ -116,5 +135,6 @@
       "protected70": true,
       "effect": "TITLE_ONLY_NO_AUTOMATIC_1962_PROPER_REPLACEMENT"
     }
-  ]
+  ],
+  "userFacingMissalLinks": "APP_INTERNAL_DEEP_LINKS_ONLY"
 }
