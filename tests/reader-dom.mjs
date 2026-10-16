@@ -136,10 +136,15 @@ const first=normalizeReaderMoment({
 });
 const namedMissal=normalizeReaderMoment({
   id:"MISSAL-PRAYER-EXAMPLE",sectionTitle:"Offertory",cardTitle:"Offertory",
+  missalRubric:{sourceCueId:"AO.SM.C0110",priestAction:{label:"OFFERS HOST",iconKey:"priest-offers-host"}},
   missalHeadings:[{blockId:"AO.SM.B031",paragraphIndex:0,
     title:"Suscipe, sancte Pater",description:"The offering of the bread."}],
   paragraphs:[{id:"AO.SM.C0110",primary:"Suscipe",secondary:"Receive"}],
 });
+expect(namedMissal.missalRubric?.priestAction?.label==="OFFERS HOST",
+  "Sourced Missal action was lost before ribbon rendering");
+expect(normalizeReaderMoment({id:"SAME",cardUpdate:false},namedMissal).missalRubric?.sourceCueId==="AO.SM.C0110",
+  "Static Missal page cue lost during a non-card update");
 expect(namedMissal.missalHeadings[0].blockId==="AO.SM.B031",
   "Canonical Missal source-block heading lost before DOM rendering");
 expect(normalizeReaderMoment({id:"SAME",cardUpdate:false},namedMissal).missalHeadings.length===1,
