@@ -5851,6 +5851,20 @@
     ],
     "minimumAdditionalUnitsToNameEveryBook": 35,
     "hypotheticalLowerBoundIfOneUnitPerRemainingBook": 299,
-    "lowerBoundIsNotContentCompleteness": true
+    "lowerBoundIsNotContentCompleteness": true,
+    "followOnSourceHarvest": {
+      "phase": "THIRTY_FIVE_MISSING_BOOKS_MINIMUM_PUBLISHED_REFERENCE_HARVEST_COMPLETE",
+      "separateResearchOwner": "data/explore/biblical-scripture-73-book-minimum-source-harvest.v1.json",
+      "candidateEvidenceSourceRows": 62,
+      "missingBookNamesWithSourceCandidate": 35,
+      "catholicCanonBookPresenceResearchEvidence": 73,
+      "retainedOriginal151AtlasBookCount": 28,
+      "retainedOriginal151Plus53ProposalsNamedBookCount": 38,
+      "additionalSourceBackedBookNamesNotYetFormalReadingUnits": 35,
+      "important": "The original unrepresentedBookResearchQueue is historical absence of a proposed navigation reading, NOT current absence of external source evidence. These 35 have references but still have no approved units or full-book coverage.",
+      "independentSourceFamiliesPerFormerlyMissingBook": 1,
+      "finalApprovedReadings": 0,
+      "currentNewResearchStage": "BOOK_DEPTH_AND_SECOND_INDEPENDENT_SOURCE_REQUIREMENTS"
+    }
   }
 }
