@@ -215,6 +215,8 @@ let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let MERCY={step:0,includeClosing:false,guide:'guided',optionsOpen:false};
 let ROSARY_FIFTEEN={active:false};
+// Only a source-launched exact Rosary object owns this temporary return receipt.
+let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
@@ -325,10 +327,39 @@ function open(id,opts={}){
   if(id==='pray.hub')view='home';
   else if(id==='pray.angelus'||id==='pray.angelus_regina'){view='angelus';ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
   else if(id==='pray.rosary'){
+    const source=opts.sourceObject;
+    if(source){
+      const mysteryId=String(source.mysteryId||"");
+      if(!/^(joy|lum|sor|glo)[1-5]$/.test(mysteryId)||
+         (source.bead!==undefined&&(!Number.isInteger(source.bead)||source.bead<1||source.bead>10)))
+        return false;
+      const donor=window.AO_ROSARY_V381;
+      if(typeof donor?.setMysterySet!=="function"||typeof donor?.steps!=="function"||
+         typeof donor?.setStep!=="function")return false;
+    }
     ROSARY_FIFTEEN.active=false;
+    rosaryScriptureReturn=null;
     window.AO_ROSARY_V381?.setMethod?.('ordinary');
     view='home';navStack=[];
-    return launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null});
+    if(!launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null}))return false;
+    if(!source)return true;
+    const donor=window.AO_ROSARY_V381,code=source.mysteryId.slice(0,3);
+    const set={joy:"joyful",lum:"luminous",sor:"sorrowful",glo:"glorious"}[code];
+    const index=Number(source.mysteryId.slice(3))-1;
+    const switched=donor.setMysterySet(set,{step:0})===true;
+    const steps=switched?donor.steps():[];
+    const step=steps.findIndex(item=>item?.mi===index&&(
+      source.bead===undefined?item.kind==="mystery":Boolean(item.cue)&&Number(item.bead)===source.bead
+    ));
+    if(step<0||donor.setStep(step)===false){
+      try{window.AOTraditionalPrayerBook?.close?.({silent:true})}catch{}
+      const root=rosaryDonorRoot();
+      root?.classList?.remove("open");root?.setAttribute?.("aria-hidden","true");
+      clearRosaryDonorReturn();return false;
+    }
+    rosaryScriptureReturn=typeof opts.onCloseReturn==="function"?opts.onCloseReturn:null;
+    decorateRosary();setTimeout(decorateRosary,0);
+    return true;
   }
   else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
@@ -689,6 +720,8 @@ function clearRosaryDonorReturn(){
 function returnFromRosaryDonor(e,root,snapshot){
  if(!root||!snapshot)return false;
  e?.preventDefault?.();e?.stopImmediatePropagation?.();
+ const sourceReturn=rosaryScriptureReturn;
+ rosaryScriptureReturn=null;
  clearRosaryDonorReturn();
  try{
   const api=window.AOTraditionalPrayerBook;
@@ -701,7 +734,8 @@ function returnFromRosaryDonor(e,root,snapshot){
   root.classList.remove('open');
   root.setAttribute('aria-hidden','true');
  }
- reopenResume(snapshot);
+ if(sourceReturn)queueMicrotask(()=>void sourceReturn());
+ else reopenResume(snapshot);
  return true;
 }
 function setRosaryPrayerLanguage(host,face='vernacular'){

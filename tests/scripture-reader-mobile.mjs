@@ -86,6 +86,38 @@ try{
    })));
    throw error;
  }
+ // Bead-specific Scripture → actual canonical Rosary step → exact original
+ // Bible reading. The original donor, not an invented bead player, owns state.
+ const beadLink=dialog.locator('[data-scripture-open-related-object="rosaryBead:joy1:2"]');
+ await beadLink.waitFor({state:"visible",timeout:9000});
+ await beadLink.tap();
+ const rosary=page.locator("#aoPrayerBookRoot.open");
+ await rosary.waitFor({state:"visible",timeout:25000});
+ await page.waitForFunction(()=>{
+   const donor=window.AO_ROSARY_V381,st=donor?.state?.(),step=donor?.steps?.()?.[st?.step];
+   return st?.set==="joyful"&&step?.mi===0&&Number(step?.bead)===2&&
+     Boolean(step?.cue)&&document.querySelectorAll("#aoPrayerBookRoot.open").length===1;
+ },null,{timeout:15000});
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>window.AO_SCRIPTURE_APP_V1.status().suspended),true);
+ await rosary.locator(".lab-back[data-pb-back],.lab-back").first().tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.getActive()),"home");
+ await page.waitForFunction(()=>document.activeElement?.dataset?.scriptureOpenRelatedObject==="rosaryBead:joy1:2",
+   null,{timeout:9000});
+ // A mystery jump is distinct from a bead jump; it must open the existing
+ // contemplation step before its first Hail Mary.
+ const mysteryLink=dialog.locator('[data-scripture-open-related-object="rosary:joy1"]');
+ await mysteryLink.tap();
+ await rosary.waitFor({state:"visible",timeout:25000});
+ await page.waitForFunction(()=>{
+   const d=window.AO_ROSARY_V381,st=d?.state?.(),step=d?.steps?.()?.[st?.step];
+   return st?.set==="joyful"&&step?.mi===0&&step?.kind==="mystery";
+ },null,{timeout:15000});
+ await rosary.locator(".lab-back[data-pb-back],.lab-back").first().tap();
+ await dialog.waitFor({state:"visible",timeout:25000});
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);

@@ -8,6 +8,7 @@
 import {scripturePassage} from "./catalogue.js";
 import {parseScriptureContext} from "./context.js";
 import {ROSARY_SCRIPTURE_LINKS} from "./links.js";
+import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../pray/rosary-guided-bead-evidence.v1.js";
 import {NOVENA_SCRIPTURE_CONTEXT_V1} from "../pray/novena-scripture-context.js";
 import {MASS_FORMATION_SCRIPTURE_ANCHORS,MASS_FORMATION_SCRIPTURE_RELATIONSHIPS} from "../learn/mass-formation-scripture-context.js";
 import {PRAYER_SCRIPTURE_ORIGINS,STATION_SCRIPTURE_ORIGINS} from "../pray/scripture-origins.js";
@@ -46,7 +47,27 @@ for(const [id,row] of Object.entries(ROSARY_SCRIPTURE_LINKS)){
   const n=id.slice(3);
   all.push(one("rosary",id,row.passage,row.relation,{
     en:group[0]+" "+n,fr:group[1]+" "+n
-  },row.editorialSummary));
+  },row.editorialSummary,{type:"rosary",mysteryId:id}));
+}
+// Bead evidence belongs to Prayer; it is NOT a text corpus or permission
+// to reproduce uncollated excerpts. Exclude the ten doctrinal-only cues,
+// including non-Scripture records, rather than pretending they are verses.
+for(const [mysteryId,beads] of Object.entries(ROSARY_GUIDED_BEAD_EVIDENCE_V1)){
+  if(!ROSARY_SCRIPTURE_LINKS[mysteryId])throw new Error("Unknown Rosary bead mystery: "+mysteryId);
+  const group=rosaryGroups[mysteryId.slice(0,3)];
+  for(const bead of beads){
+    if(!Number.isInteger(bead.bead)||bead.bead<1||bead.bead>10)
+      throw new Error("Invalid canonical Rosary bead: "+mysteryId);
+    const parsed=parseScriptureContext(bead.reference);
+    if(!parsed)continue; // Magisterial/doctrinal sources are not biblical verses.
+    all.push(one("rosaryBead",mysteryId+":"+bead.bead,parsed.passage,bead.relationship,{
+      en:group[0]+" "+mysteryId.slice(3)+" · bead "+bead.bead,
+      fr:group[1]+" "+mysteryId.slice(3)+" · grain "+bead.bead
+    },{
+      en:"Source-linked guided meditation; not a verbatim quotation.",
+      fr:"Méditation guidée liée à la source ; non citation littérale."
+    },{type:"rosary",mysteryId,bead:bead.bead}));
+  }
 }
 for(const [id,row] of Object.entries(NOVENA_SCRIPTURE_CONTEXT_V1)){
   const parsed=parseScriptureContext(row.reference);
@@ -78,7 +99,7 @@ const unique=new Set(all.map(x=>x.id));
 if(unique.size!==all.length)throw new Error("Duplicate cross-module Scripture object");
 export const SCRIPTURE_LINKED_OBJECTS=Object.freeze(all);
 export const SCRIPTURE_LINK_COUNTS=Object.freeze(Object.fromEntries(
- ["rosary","novena","massFormation","prayer","station"].map(source=>[
+ ["rosary","rosaryBead","novena","massFormation","prayer","station"].map(source=>[
   source,all.filter(x=>x.source===source).length
  ])
 ));
