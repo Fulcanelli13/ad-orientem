@@ -243,3 +243,31 @@ assert.ok(p0Baseline.units.every(u=>u.latinSpanVerified===false &&
   typeof u.researchWitnessComparison==="string"));
 assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0237.U002"));
 console.log("Mass P0 Full Research Witness Census: PASS — all 435 checked; 0 new liturgical certifications.");
+
+
+// P0 original 66 canonical word-span locations — cue-relative UTF-16 indices.
+// This verifies text span identity only, not normative rubrics or faithful posture.
+const wordLocations=readJson("../docs/research/MASS-P0-CANONICAL-WORD-ANCHOR-VERIFICATION-20261016.v1.json");
+const canonicalCues=new Map(canonicalSung.blocks.flatMap(block=>
+  (block.units||[]).map(cue=>[cue.cue_id,{latin:cue.latin,blockId:block.Block_ID}])));
+assert.equal(wordLocations.anchors.length,66);
+assert.equal(wordLocations.summary.canonicalCueOffsetsValid,66);
+assert.equal(wordLocations.summary.actorAndGestureApproved,0);
+assert.equal(wordLocations.summary.ritualApplicabilityApproved,0);
+assert.equal(wordLocations.policy.coordinateSystem,
+  "Canonical cue Latin UTF-16 code-unit offset, not research micro-unit offset");
+for(const a of wordLocations.anchors){
+  assert.ok(unitIds.has(a.researchUnitId),"unknown research unit "+a.researchUnitId);
+  const cue=canonicalCues.get(a.canonicalCueId);
+  assert.ok(cue,"unknown canonical cue "+a.canonicalCueId);
+  assert.equal(cue.blockId,a.canonicalBlockId);
+  assert.ok(Number.isInteger(a.start)&&Number.isInteger(a.end)&&
+    a.start>=0&&a.start<a.end&&a.end<=cue.latin.length);
+  assert.equal(cue.latin.slice(a.start,a.end),a.verifiedExactSourceSpan);
+  assert.equal(a.textLocationStatus,"CANONICAL_SOURCE_SPAN_LOCATED");
+  assert.equal(a.actorAndGestureStatus,"EDITORIAL_REVIEW_REQUIRED");
+  assert.equal(a.ritualApplicabilityStatus,"EDITORIAL_REVIEW_REQUIRED");
+  assert.equal(a.editoriallyApproved,false);
+  assert.equal(a.published,false);
+}
+console.log("Mass P0 Word Anchor Verification: PASS — 66 exact source spans, no ceremony approval.");
