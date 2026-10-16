@@ -122,7 +122,7 @@ assert.ok(paschalFrenchDraft.includes("Do not use as a runtime fallback"));
 assert.equal(originalSourceGaps.claims.find(x=>x.target==="Commune/C1v").sourceTranslationMismatchVerified,true);
 assert.ok(vigilEnglishDraft.includes("Our offenses") || vigilEnglishDraft.includes("our offenses"));
 assert.ok(vigilEnglishDraft.includes("every danger"));
-assert.ok(vigilEnglishDraft.includes("not approved or imported"));
+assert.ok(vigilEnglishDraft.includes("not** approved or imported"));
 assert.equal(forms.sourceOwnedCommonPathsMapped,28);
 assert.equal(apostleVigil.variants.length,3);
 assert.equal(apostleVigil.variants.find(x=>x.key==="Oratio 2 loco").certifiedEnglishTranslation,false);
