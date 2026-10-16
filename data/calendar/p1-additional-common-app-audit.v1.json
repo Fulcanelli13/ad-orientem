@@ -3,7 +3,7 @@
   "asOf": "2026-10-16",
   "witnessRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
   "producer": "tests/calendar-p1-live-1962-source-discovery.mjs via AO_RUNTIME_V8.resolver.properResolver.resolveSource",
-  "status": "CANDIDATE_PATHS_QUERIED_DO_NOT_PROMOTE_INCOMPLETE_OR_UNKNOWN_PRINT_VARIANTS",
+  "status": "17_DIRECT_COMPLETE_1_SOURCE_COMPOSED_10_PARTIAL_APP_SOURCES_3_AMBIGUOUS",
   "coreSections": [
     "Introitus",
     "Oratio",
@@ -1286,7 +1286,21 @@
       "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "approvedForNewSaintMass": false,
       "canonical1962PrintedFamilyCertified": false,
-      "readOnlyMissalRoute": null
+      "readOnlyMissalRoute": null,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38916464900",
+      "sourceCompositionModule": "src/calendar/p1-paschal-alternate-source-composition.js",
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "baseMassSource": "Commune/C2p",
+      "alternativeOrationSource": "Commune/C2a",
+      "inheritedBorrowedSectionCount": 23,
+      "verifiedLanguages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "distinctPrinted1962MassCertified": false
     },
     {
       "researchId": "p1:index:1962:martyr_second_mass",
@@ -1637,5 +1651,8 @@
   ],
   "interpretation": "C-codes inherit one another; missing sections need exact canonical owner resolution, not publication as separate full Masses. A direct 9-section audit is not full-1962 edition certification or an authorization to celebrate optional saints.",
   "routing": "NONE_EXTERNAL_OR_INTERNAL_UNTIL_READER_OWNS_READ_ONLY_SURFACE",
-  "massSelectionMutation": false
+  "massSelectionMutation": false,
+  "sourceComposedNineSectionCount": 1,
+  "completeAfterCompositionCount": 18,
+  "partialsAfterCompositionCount": 10
 }
