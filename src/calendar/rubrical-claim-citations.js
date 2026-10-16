@@ -143,7 +143,7 @@ import {annunciationObservanceDate,allSoulsObservanceDate,saintJosephObservanceD
 const TRANSFER_IDS=Object.freeze({
   "annunciation-2024":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",colour:"White",suffix:"w",project:annunciationObservanceDate}),
   "all-souls-2025":Object.freeze({sourcePath:"Sancti/11-02",monthDay:"11-02",colour:"Black",suffix:"b",project:allSoulsObservanceDate}),
-  "annunciation-2027":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",project:annunciationObservanceDate}),
+  "annunciation-2027":Object.freeze({sourcePath:"Sancti/03-25",monthDay:"03-25",colour:"White",suffix:"w",project:annunciationObservanceDate}),
   "joseph-2028":Object.freeze({sourcePath:"Sancti/03-19",monthDay:"03-19",colour:"White",suffix:"w",project:saintJosephObservanceDate})
 });
 const TRANSFER_CLAUSES=new Set(["RG 15","RG 16(b)","RG 95","RG 96","RG 96(a)","RG 96(b)","RG 99"]);
