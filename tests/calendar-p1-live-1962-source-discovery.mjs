@@ -102,6 +102,30 @@ try{
    }
    return {paths:summary};
  });
+ const doctorInheritance=await page.evaluate(async()=>{
+  const resolver=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+  const {reconcileP1NonPontiffDoctorSources}=await import("/src/calendar/p1-doctor-common-inheritance.js");
+  const diagnostic=()=>({requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]});
+  const target={},shared={};
+  for(const lang of ["la","en","fr"]){
+    target[lang]=await resolver.resolveSource("Commune/C5a",lang,diagnostic());
+    shared[lang]=await resolver.resolveSource("Commune/C4a",lang,diagnostic());
+  }
+  const result=reconcileP1NonPontiffDoctorSources({target,shared});
+  return {status:result.status,reason:result.reason??null,section:result.section??null,
+    sourcePath:result.sourcePath,sharedSourcePath:result.sourceOwner,
+    borrowedSections:result.borrowedSections.map(x=>x.language+":"+x.section),
+    nonPontiffOrationsPreserved:result.nonPontiffOrationsPreserved===true,
+    allSharedSections:["Introitus","Oratio","Lectio","Graduale","GradualeP","Tractus","Evangelium","Offertorium","Communio"],
+    variantLatinDistinct:["Secreta","Postcommunio"].map(section=>{
+      const v=target.la?.map?.get?.(section),b=shared.la?.map?.get?.(section);
+      return {section,different:JSON.stringify(v)!==JSON.stringify(b),
+        nonPontiffExists:Array.isArray(v)&&v.length>0};
+    }),
+    approvedForMass:result.approvedForMass??false,
+    route:result.route??null};
+ });
+ console.log("P1_DOCTOR_INHERITANCE_LIVE_WITNESS="+JSON.stringify(doctorInheritance));
  console.log("P1_REAL_COMMONS_SOURCE_WITNESS="+JSON.stringify(commons));
  console.log("P1_REAL_SOURCE_WITNESS="+JSON.stringify(results));
  const october=results[0];
