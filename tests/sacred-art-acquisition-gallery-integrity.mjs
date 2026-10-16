@@ -14,7 +14,7 @@ const from = html.indexOf(open), to = html.indexOf('</script>',from);
 assert.ok(from >= 0 && to > from, 'Embedded 168-category curator model exists');
 const current = JSON.parse(html.slice(from+open.length,to));
 
-assert.match(html,/const fallback=commonsFile\\?original\\.split\\('\\?'\\)\\[0\\]\\+'\\?width=640'/,
+assert.ok(html.includes("const fallback=commonsFile?original.split('?')[0]+'?width=640'"),
   'Mobile image load must never auto-retry an unbounded full-resolution Commons original');
 assert.ok(html.includes('Research only · not selectable (identity, image or rights hold)'),
   'Ineligible artworks require a neutral research hold label, not a misleading wrong-saint diagnosis');
