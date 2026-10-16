@@ -22,6 +22,9 @@ on:
       - 'tests/mass-prayer-reading-pilot.mjs'
       - 'scripts/build-mass-prayer-editorial-review.mjs'
       - 'src/learn/mass-explorer.js'
+      - 'src/learn/mass-explorer-study-publication.js'
+      - 'data/learn/mass-explorer-approved-studies.v1.json'
+      - 'tests/mass-explorer-study-publication.mjs'
       - 'src/learn/mass-source-reading.js'
       - 'src/learn/mass-passage-publication.js'
       - 'data/learn/mass-formation-approved-passages.v1.json'
@@ -59,6 +62,7 @@ jobs:
       - run: node --check src/learn/mass-formation.js
       - run: node tests/mass-moments-study.mjs
       - run: node tests/mass-prayer-reading-pilot.mjs
+      - run: node tests/mass-explorer-study-publication.mjs
       - run: node scripts/build-mass-prayer-editorial-review.mjs
       - run: python3 scripts/build-mass-canon-deep-review.py
       - run: node scripts/build-mass-explorer-editorial-bridge.mjs
