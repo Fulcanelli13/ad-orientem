@@ -19,6 +19,7 @@ import { loadSharedSanctoralReadModel } from "./living-sanctoral-read-model.js";
 import { canonical1962Commemorations } from "./traditional-day-adjudication.js";
 import { observedCommemorationLabels } from "./observed-commemoration-labels.js";
 import { renderSecondarySaintSection, SANCTORAL_DAY_CSS } from "./sanctoral-day-ui.js";
+import {loadCalendarSaintProfileBridge,exactCalendarPrincipalSaintProfile} from "./calendar-saint-explore-handoff.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -168,11 +169,30 @@ function principalSaintContext(r,id){
   return {date:id,title,marian,label:marian?L("Marian feast","Fête mariale"):L("Saint / feast","Saint / fête")};
 }
 async function openSaintDetail(id){
-  const target=String(id||state()?.selectedDate||"");if(!target)return false;
+  const target=String(id||state()?.selectedDate||"");if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(target))return false;
+  // Month-index entry first selects the actual canonical 1962 day. Do not
+  // look up a saint on the basis of month/day, name or a modern supplement.
   const ok=await select(target,{closeAfter:false});if(!ok)return false;
   try{
-    const result=await Promise.resolve(globalThis.AO_MODULES?.open?.("today.saint",{returnContext:{surface:"calendar",view:"day",date:target}}));
-    return result?.ok===true||result===true||Boolean(globalThis.AO_NAV_V25?.getState?.()?.panel==="saint");
+    const current=state(),day=current?.resolution;
+    if(current?.selectedDate!==target||day?.date!==target)return false;
+    const observed=day?.day?.main?.id;
+    const bridge=await loadCalendarSaintProfileBridge();
+    if(state()?.selectedDate!==target||state()?.resolution?.day?.main?.id!==observed)return false;
+    const exact=exactCalendarPrincipalSaintProfile({date:target,principalId:observed,bridge});
+    if(exact){
+      const owner=globalThis.AO_FIND_APP_V1||
+        (await import("../find/browser-entry.js")).installFindBrowserOwner(globalThis);
+      // Only a profile already present in the active Explore release can open.
+      // Otherwise preserve the old saint panel rather than guessing an ID.
+      if(state()?.selectedDate!==target)return false;
+      const opened=await owner?.openSaintProfile?.(exact.saintsId);
+      if(opened===true)return true;
+    }
+    const result=await Promise.resolve(globalThis.AO_MODULES?.open?.("today.saint",
+      {returnContext:{surface:"calendar",view:"day",date:target}}));
+    return result?.ok===true||result===true||
+      Boolean(globalThis.AO_NAV_V25?.getState?.()?.panel==="saint");
   }catch(error){console.error("Calendar saint detail failed",error);return false}
 }
 function monthEntry(id){
