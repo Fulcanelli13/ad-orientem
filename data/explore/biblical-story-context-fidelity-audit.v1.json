@@ -1,0 +1,1156 @@
+{
+  "schema": "AO_BIBLICAL_STORY_CONTEXT_FIDELITY_AUDIT_V1",
+  "date": "2026-10-16",
+  "status": "SCRIPTURE_CONTEXT_AND_SOURCE_REFERENCE_PRESELECTION_RESEARCH_ONLY",
+  "owners": {
+    "canonicalAtlas": "data/explore/biblical-reading-continuity-review.v1.json",
+    "sourceMaster": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+    "storyFirstTriage": "data/explore/biblical-story-first-editorial-triage.v1.json",
+    "nativeBibleWitnesses": "Existing imported Crampon French + Challoner English; no edition re-selection, original app data not collated in this pass"
+  },
+  "policy": {
+    "preserve151HistoricalAtlasEvents": true,
+    "preserve37ReadingSections": true,
+    "originalPublisherRowsPreserved": 460,
+    "appBibleVersionsChanged": false,
+    "appReaderChanged": false,
+    "sourceReferenceResearchOnly": true,
+    "noBibleHistoryProseComposed": true,
+    "publisherOriginalSHORTDoesNotAutomaticallyEqualBestIntroductoryCut": true,
+    "noFinalApprovals": true
+  },
+  "sourceCriticalQualification": "USCCB chapter text and Douay-Rheims external witness links were used solely to inspect story context; they are NOT direct verification of the exact already imported native reader strings. The record stores only references and factual omission risks; no biblical prose imported.",
+  "externalContextSourceFamily": "USCCB Catholic Bible chapters, with public-domain Douay-Rheims comparison links; published reference variants in the existing v7 ledger remain authoritative provenance for prior harvest",
+  "literaryOutcomeClasses": {
+    "WHOLE_STORY_PREFERRED_FOR_FIRST_READING": "Full existing literary scope makes introductory story intelligible",
+    "PUBLISHED_SHORT_RUBRICALLY_VALID_BUT_NOT_IDEAL_STORY_CUT": "A published Catholic shorter Mass reading omits useful narrative/typology and should not control beginner selection",
+    "COHERENT_MISSING_NARRATIVE_COMPLETION": "Critical omitted resolution not present in original 151 Atlas milestones",
+    "MULTI_MOVEMENT_COMPLEX_NO_AUTOMATIC_SHORTENING": "Coherent full passage containing multiple linked literary/doctrinal scenes, requiring internal navigation rather than detached slices"
+  },
+  "counts": {
+    "cohortStories": 14,
+    "existingAtlasEvents": 12,
+    "supplementalReadings": 2,
+    "recordsWithPublishedShortOrSuggestedCompactOption": 10,
+    "approvedFinalExcerpts": 0
+  },
+  "reviewedStories": [
+    {
+      "reviewId": "context-review:story-01",
+      "storySlug": "fall",
+      "editorialTitle": "The Fall and the first promise",
+      "canonicalAtlasEventKey": "biblical:passage:genesis-3-1-24",
+      "canonicalAtlasEventIndex": 1,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Genesis 3:1–24",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/genesis/3",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/01003.htm",
+      "researchDecision": "RESEARCH_PASS_WHOLE_STORY_NOT_APPROVED",
+      "contextAuditFinding": "WHOLE_STORY_PREFERRED_FOR_FIRST_READING",
+      "suggestedFullNarrativeScope": [
+        "Genesis 3:1–24"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Genesis 3:1–15"
+      ],
+      "deeperContextOptions": [
+        "Genesis 2:15–3:24"
+      ],
+      "essentialContextSegments": [
+        "3:1–7 temptation and transgression",
+        "3:8–13 God calls the guilty couple to account",
+        "3:14–15 judgment of serpent / protoevangelium",
+        "3:16–19 consequences of disobedience",
+        "3:22–24 loss of Eden"
+      ],
+      "omissionAndFidelityRisks": [
+        "Published Gen 3:9–15 starts after the transgression; cannot stand alone as the whole Fall",
+        "Short 3:1–15 omits human consequences and expulsion",
+        "Christian interpretation of Genesis 3:15 and Vulgate/Challoner wording must not be presented as an identical underlying-language reading"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "One Catholic liturgical citation starts at 3:9; multiple original story plans use the full third chapter.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Gen 3:9-15",
+            "Gen 2:7-9; 3:1-7"
+          ]
+        },
+        {
+          "sourceId": "E100",
+          "family": "Scripture Union E100",
+          "url": "https://www.bible.com/reading-plans/25-the-essential-100",
+          "examples": [
+            "Genesis 3"
+          ]
+        },
+        {
+          "sourceId": "GUTHRIE",
+          "family": "George Guthrie Highlights",
+          "url": "https://fbccola.com/wp-content/uploads/2023/12/The-Consumed-Plan-20231215.pdf",
+          "examples": [
+            "Genesis 3-4:16"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Genesis 3"
+          ]
+        },
+        {
+          "sourceId": "JACK_DAY",
+          "family": "Jackson Day Bible Stories",
+          "url": "https://www.biblestorytelling.org/adults/bible-stories.html",
+          "examples": [
+            "Genesis 3:1-24"
+          ]
+        },
+        {
+          "sourceId": "RIGHTNOW",
+          "family": "RightNow Kids curriculum",
+          "url": "https://resources.rightnow.org/web/Gods-Kids-Scope-and-Sequence.pdf",
+          "examples": [
+            "Genesis 3:1–24"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Genesis 3:1-24"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Genesis 2:4–3:24"
+          ]
+        },
+        {
+          "sourceId": "SMP_TIMELINE",
+          "family": "Saint Mary’s Press",
+          "url": "https://pages.smp.org/post/prayer-and-scripture/bible-timeline",
+          "examples": [
+            "Genesis 3:1–24"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Genesis 3:15 → Luke 1:26–38 (theological / Marian reflection; source interpretation requires precision)",
+        "Genesis 3:15 → Revelation 12 (traditional typological review)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-02",
+      "storySlug": "isaac",
+      "editorialTitle": "Abraham and Isaac",
+      "canonicalAtlasEventKey": "biblical:passage:genesis-22-1-19",
+      "canonicalAtlasEventIndex": 12,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Genesis 22:1–19",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/genesis/22",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/01022.htm",
+      "researchDecision": "HOLD_PUBLISHED_SHORT_AS_BEST_STORY",
+      "contextAuditFinding": "PUBLISHED_SHORT_RUBRICALLY_VALID_BUT_NOT_IDEAL_STORY_CUT",
+      "suggestedFullNarrativeScope": [
+        "Genesis 22:1–19"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Genesis 22:1–2, 6–14, 15–18"
+      ],
+      "deeperContextOptions": [
+        "Genesis 21:1–22:19"
+      ],
+      "essentialContextSegments": [
+        "22:1–2 who is tested and who is Isaac",
+        "22:6–8 Isaac carries the wood and asks about the victim",
+        "22:9–13 binding of Isaac, intervention and substitute ram",
+        "22:15–18 covenant promise and blessing"
+      ],
+      "omissionAndFidelityRisks": [
+        "Published lectionary SHORT 22:1–2, 9a, 10–13, 15–18 skips Isaac carrying the wood (22:6), his question (22:7) and the answer (22:8)",
+        "Do not conflate Christological types with an explicit NT retelling",
+        "A composite suggested shorter range is editorial invention until verse-context validation; not attributed to a published publisher"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "A Catholic liturgical SHORT exists; several independent story editors choose Genesis 22:1–19.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Gen 22:1-18",
+            "Gen 22:1-2, 9a, 10-13, 15-18",
+            "Gen 22:1b-19"
+          ]
+        },
+        {
+          "sourceId": "E100",
+          "family": "Scripture Union E100",
+          "url": "https://www.bible.com/reading-plans/25-the-essential-100",
+          "examples": [
+            "Genesis 21:1—22:19"
+          ]
+        },
+        {
+          "sourceId": "GUTHRIE",
+          "family": "George Guthrie Highlights",
+          "url": "https://fbccola.com/wp-content/uploads/2023/12/The-Consumed-Plan-20231215.pdf",
+          "examples": [
+            "Genesis 21:1-7; 22"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Genesis 22:1-19"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Genesis 22:1-19"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Genesis 22:1–19"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Genesis 22:6–13 → John 19:17–30 (traditional sacrifice and cross-bearing analogy)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-03",
+      "storySlug": "joseph-reconciliation",
+      "editorialTitle": "Joseph reveals himself and forgives his brothers",
+      "canonicalAtlasEventKey": null,
+      "canonicalAtlasEventIndex": null,
+      "supplementalResearchId": "reading-candidate:supplement-005",
+      "originalResearchAnchor": "Genesis 45:1–15",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/genesis/45",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/01045.htm",
+      "researchDecision": "RESEARCH_PASS_PRIORITY_SUPPLEMENT_NOT_APPROVED",
+      "contextAuditFinding": "COHERENT_MISSING_NARRATIVE_COMPLETION",
+      "suggestedFullNarrativeScope": [
+        "Genesis 45:1–15"
+      ],
+      "publisherShortOrSuggestedCompactScope": [],
+      "deeperContextOptions": [
+        "Genesis 44:18–45:15",
+        "Genesis 45:1–28"
+      ],
+      "essentialContextSegments": [
+        "45:1–4 revelation of Joseph's identity to his brothers",
+        "45:5–8 Joseph sees providence through betrayal and famine",
+        "45:9–15 invitation to father and joyful reconciliation"
+      ],
+      "omissionAndFidelityRisks": [
+        "Without preceding story of Joseph's betrayal, the recognition scene loses meaning",
+        "A longer lead-in to Judah's plea in Genesis 44 may greatly enrich Joseph's mercy",
+        "Prior v7 Atlas master does not contain an exact existing milestone for this supplemental episode; do not count other Atlas event sources as votes"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "An independently published Revised Common Lectionary selection gives exactly Genesis 45:1–15; preserve it as external research evidence, not retrofit into 460 older Atlas votes.",
+      "originalV7PublisherEvidenceByFamily": [],
+      "supplementalPublishedSourceURL": "https://lectionary.library.vanderbilt.edu/texts/?d=69&y=17134&z=p",
+      "typologicalLinksForReviewedInterpretation": [
+        "Joseph's forgiveness and preservation of life → Christ's saving mercy (typological reflection, not an explicit verse quotation)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-04",
+      "storySlug": "passover",
+      "editorialTitle": "The first Passover and the deliverance",
+      "canonicalAtlasEventKey": "biblical:passage:exodus-12-1-28",
+      "canonicalAtlasEventIndex": 21,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Exodus 12:1–28",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/exodus/12",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/02012.htm",
+      "researchDecision": "NEEDS_STORY_OUTCOME_RECONCILIATION",
+      "contextAuditFinding": "SPLIT_LITURGICAL_INSTITUTION_FROM_OUTCOME_BUT_KEEP_CAUSAL_LINK",
+      "suggestedFullNarrativeScope": [
+        "Exodus 12:1–14",
+        "Exodus 12:21–31"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Exodus 12:1–8, 11–14"
+      ],
+      "deeperContextOptions": [
+        "Exodus 11:1–12:42"
+      ],
+      "essentialContextSegments": [
+        "12:3–7 unblemished lamb and blood on doorposts",
+        "12:8–14 meal, judgment and protection",
+        "12:21–28 Moses' instructions and obedience",
+        "12:29–31 death of firstborn and Pharaoh's release",
+        "12:31–42 flight narrative linked to next Atlas event"
+      ],
+      "omissionAndFidelityRisks": [
+        "The published Exodus 12:1–8, 11–14 is a liturgical explanation but does not show the outcome",
+        "The source Atlas anchor 12:1–28 itself ends before 12:29–31",
+        "A composite 12:1–14 + 21–31 is only a research candidate, not a previously published excerpt",
+        "Never present postconciliar lectionary use as 1962 Missal permission"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Catholic lectionary selects 12:1–8, 11–14; other source editors select 12:1–17 or 12:21–31.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Exod 12:1-8, 11-14"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Exodus 12:1-17"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Exodus 12:21-31"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Exodus 12:1–42"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Exodus 12:3–14 → Luke 22:14–20",
+        "Exodus 12:46 → John 19:36 (Paschal Lamb, separate optional text)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-05",
+      "storySlug": "annunciation",
+      "editorialTitle": "The Annunciation",
+      "canonicalAtlasEventKey": "biblical:event:nazareth-e1",
+      "canonicalAtlasEventIndex": 66,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Luke 1:26–38",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/luke/1",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/49001.htm",
+      "researchDecision": "RESEARCH_PASS_SCOPE_NOT_PUBLICATION",
+      "contextAuditFinding": "SELF_CONTAINED_PRIMARY_SCOPE",
+      "suggestedFullNarrativeScope": [
+        "Luke 1:26–38"
+      ],
+      "publisherShortOrSuggestedCompactScope": [],
+      "deeperContextOptions": [
+        "Luke 1:5–45"
+      ],
+      "essentialContextSegments": [
+        "1:26–28 Gabriel arrives, Mary is named",
+        "1:29–33 annunciation of the Son and Davidic kingdom",
+        "1:34–37 Mary's question and the Holy Ghost",
+        "1:38 Mary's assent"
+      ],
+      "omissionAndFidelityRisks": [
+        "A shorter devotional excerpt lacking 1:34–38 would miss the Incarnation's response",
+        "Zachary and Elizabeth are contextual, not necessary to interrupt this already coherent Gospel story"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Catholic lectionary and independent narrative source editors repeatedly choose Luke 1:26–38.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Luke 1:26-38"
+          ]
+        },
+        {
+          "sourceId": "JACK_DAY",
+          "family": "Jackson Day Bible Stories",
+          "url": "https://www.biblestorytelling.org/adults/bible-stories.html",
+          "examples": [
+            "Matthew 1:18-25; Luke 1:5-80"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Luke 1:26-38"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Luke 1:26–38"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Isaiah 7:10–14 → Matthew 1:18–25, supporting Emmanuel prophecy",
+        "2 Samuel 7:8–17 → Luke 1:32–33, promise of Davidic kingdom"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-06",
+      "storySlug": "visitation",
+      "editorialTitle": "The Visitation and Magnificat",
+      "canonicalAtlasEventKey": "biblical:event:ein-karem-e1",
+      "canonicalAtlasEventIndex": 68,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Luke 1:39–56",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/luke/1",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/49001.htm",
+      "researchDecision": "RESEARCH_PASS_LONG_STORY_SCOPE",
+      "contextAuditFinding": "KEEP_CANTICLE_AS_DISTINCT_BEAT_WITHIN_STORY",
+      "suggestedFullNarrativeScope": [
+        "Luke 1:39–56"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Luke 1:39–45"
+      ],
+      "deeperContextOptions": [
+        "Luke 1:39–56"
+      ],
+      "essentialContextSegments": [
+        "1:39–45 Mary's journey and Elizabeth's recognition",
+        "1:46–55 Magnificat: Mary's response and divine praise",
+        "1:56 farewell / return"
+      ],
+      "omissionAndFidelityRisks": [
+        "A published short option ending at 1:45 omits the Magnificat, an essential Marian prayer in this context",
+        "Do not count a canticle as a new historical event or fabricate an independent map pin"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Catholic liturgical index publishes both Luke 1:39–45 short and Luke 1:39–56 long.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Luke 1:39-45",
+            "Luke 1:39-56"
+          ]
+        },
+        {
+          "sourceId": "JACK_DAY",
+          "family": "Jackson Day Bible Stories",
+          "url": "https://www.biblestorytelling.org/adults/bible-stories.html",
+          "examples": [
+            "Matthew 1:18-25; Luke 1:5-80"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "1 Samuel 2:1–10 (Hannah's canticle) → Luke 1:46–55, literary thematic parallel"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-07",
+      "storySlug": "bread-of-life",
+      "editorialTitle": "The Bread of Life discourse",
+      "canonicalAtlasEventKey": "biblical:event:capernaum-e3",
+      "canonicalAtlasEventIndex": 97,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "John 6:24–59",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/john/6",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/50006.htm",
+      "researchDecision": "HOLD_MULTIPART_FOR_CONTEXT_REVIEW",
+      "contextAuditFinding": "MULTI_MOVEMENT_COMPLEX_NO_AUTOMATIC_SHORTENING",
+      "suggestedFullNarrativeScope": [
+        "John 6:24–34",
+        "John 6:35–50",
+        "John 6:51–59",
+        "John 6:60–71"
+      ],
+      "publisherShortOrSuggestedCompactScope": [],
+      "deeperContextOptions": [
+        "John 6:22–71",
+        "John 6:1–71"
+      ],
+      "essentialContextSegments": [
+        "6:24–34 crowd seeks perishable bread and introduces manna",
+        "6:35–50 Christ names Himself Bread from heaven",
+        "6:51–59 Eucharistic climax concerning Christ's flesh and blood",
+        "6:60–71 the difficulty of His sayings, defection and Peter's confession"
+      ],
+      "omissionAndFidelityRisks": [
+        "Existing Atlas 6:24–59 omits the reaction in 6:60–71",
+        "Weekday lectionary fragment 6:22–29 or 6:35–40 is not equivalent to the whole Eucharistic discourse",
+        "Theological distinction between literal and figurative language must not be destroyed by truncation or selective notes",
+        "Do not use 6:63 to deny the Eucharistic passages 6:51–59"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Five weekday lectionary passages form successive sub-scenes of John 6; they are one publisher family and not five independent votes.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+          "examples": [
+            "John 6:22-29",
+            "John 6:30-35",
+            "John 6:35-40"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Exodus 16:1–36 → John 6:24–71 (manna is invoked explicitly)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-08",
+      "storySlug": "lazarus",
+      "editorialTitle": "Lazarus raised from the dead",
+      "canonicalAtlasEventKey": "biblical:event:bethany-e1",
+      "canonicalAtlasEventIndex": 104,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "John 11:1–44",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/john/11",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/50011.htm",
+      "researchDecision": "RESEARCH_PASS_FULL_ACCOUNT_PREFFERED",
+      "contextAuditFinding": "LITURGICAL_SHORT_EXISTS_WITH_CONTEXT_JUMPS",
+      "suggestedFullNarrativeScope": [
+        "John 11:1–44"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "John 11:3–7, 17, 20–27, 33b–45"
+      ],
+      "deeperContextOptions": [
+        "John 11:1–53"
+      ],
+      "essentialContextSegments": [
+        "11:1–16 who Lazarus is and why the disciples hesitate",
+        "11:17–27 Martha's faith and Christ's claim to be Resurrection and Life",
+        "11:28–37 Mary's grief and Jesus' tears",
+        "11:38–44 raising Lazarus from the tomb",
+        "11:45–53 consequent plot against Jesus (follow-on)"
+      ],
+      "omissionAndFidelityRisks": [
+        "Published short skips narrative connective tissue and may confuse novice readers",
+        "John 11:45–53 strongly illuminates why the sign leads towards the Passion",
+        "Verse 45 sits outside existing canonical Atlas 11:1–44, though in liturgical selected SHORT."
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Catholic lectionary long 11:1–45 and short 11:3–7,17,20–27,33b–45; two independent story editors use 11:1–44.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "John 11:1-45",
+            "John 11:3-7, 17, 20-27, 33b-45"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "John 11"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "John 11:1-44"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "John 11:1–44"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "John 11:25–26 → Christian resurrection hope"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-09",
+      "storySlug": "last-supper",
+      "editorialTitle": "The Last Supper and institution",
+      "canonicalAtlasEventKey": "biblical:event:cenacle-e1",
+      "canonicalAtlasEventIndex": 111,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Luke 22:7–20",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/luke/22",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/49022.htm",
+      "researchDecision": "RESEARCH_PASS_CORE_SCENE_SCOPE",
+      "contextAuditFinding": "DISTINGUISH_PREPARATION_AND_EUCHARIST_WITHIN_ONE_STORY",
+      "suggestedFullNarrativeScope": [
+        "Luke 22:7–20"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Luke 22:14–20"
+      ],
+      "deeperContextOptions": [
+        "Luke 22:7–30",
+        "John 13:1–17"
+      ],
+      "essentialContextSegments": [
+        "22:7–13 the Paschal preparation and setting",
+        "22:14–16 the meal's significance before suffering",
+        "22:17–20 institution of the Eucharist and New Covenant"
+      ],
+      "omissionAndFidelityRisks": [
+        "Luke 22:14–20 is intelligible with a short heading but omits how the Paschal meal was prepared",
+        "John 13 foot washing is a complementary Gospel witness and an existing separate Atlas event, not substitute words of institution",
+        "Do not combine Luke and John as if one continuous Gospel text"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "One modern story plan uses Luke 22:7–30; another takes 22:7–38; Catholic v7 1962 missal citation for John 13 belongs to a different actual Gospel witness and remains provisional.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Luke 22:7-38; 1 Corinthians 11:17-34"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Luke 22:7-30"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Luke 22:7–38"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Exodus 12:1–14 → Luke 22:7–20",
+        "1 Corinthians 11:23–29 → institution testimony"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-10",
+      "storySlug": "calvary",
+      "editorialTitle": "The Crucifixion and death of Christ",
+      "canonicalAtlasEventKey": "biblical:event:golgotha-e2",
+      "canonicalAtlasEventIndex": 117,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "John 19:17–30",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/john/19",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/50019.htm",
+      "researchDecision": "RESEARCH_PASS_JOHANNINE_SCENE_SCOPE",
+      "contextAuditFinding": "PROTECT_MOTHER_AT_CROSS_AND_DEATH_WITH_ONE_JOHANNINE_ACCOUNT",
+      "suggestedFullNarrativeScope": [
+        "John 19:17–30"
+      ],
+      "publisherShortOrSuggestedCompactScope": [],
+      "deeperContextOptions": [
+        "John 19:17–37",
+        "John 19:17–42"
+      ],
+      "essentialContextSegments": [
+        "19:17–22 crucifixion and title",
+        "19:23–24 garments and Scripture fulfillment",
+        "19:25–27 Mother of Jesus and beloved disciple",
+        "19:28–30 Christ's death and consummation",
+        "19:31–37 pierced side, blood and water as follow-up"
+      ],
+      "omissionAndFidelityRisks": [
+        "Shortening to merely 19:17–22 loses the Mother at the Cross and Christ's death",
+        "Joining Mark/Matthew parallel source references as if identical numbered verses is invalid",
+        "19:34 blood and water absent from Atlas anchor but essential as valuable deeper Johannine imagery",
+        "Do not conflate historical textual order with devotional Stations composites"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Original literature index offers the much broader John 18:1–19:42, and other publishers use parallel Gospel crucifixion narratives, not identical selections.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "John 18:1—19:42"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Luke 23:26-56; John 19:16-42"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Mark 15:16–47"
+          ]
+        },
+        {
+          "sourceId": "SMP_TIMELINE",
+          "family": "Saint Mary’s Press",
+          "url": "https://pages.smp.org/post/prayer-and-scripture/bible-timeline",
+          "examples": [
+            "Matthew 27:32–56"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Psalm 22 → John 19:23–24",
+        "Exodus 12:46 → John 19:36",
+        "Genesis 3:15 → John 19:25–27 (traditional typological reflection)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-11",
+      "storySlug": "resurrection-magdalene",
+      "editorialTitle": "The empty tomb and Mary Magdalene",
+      "canonicalAtlasEventKey": "biblical:event:christ-tomb-e2",
+      "canonicalAtlasEventIndex": 120,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "John 20:1–18",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/john/20",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/50020.htm",
+      "researchDecision": "RESEARCH_PASS_SELECT_INTENT_FIRST",
+      "contextAuditFinding": "EASTER_SUNDAY_SHORT_NOT_SUFFICIENT_FOR_MARY_STORY",
+      "suggestedFullNarrativeScope": [
+        "John 20:1–18"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "John 20:1–2, 11–18"
+      ],
+      "deeperContextOptions": [
+        "John 20:1–29"
+      ],
+      "essentialContextSegments": [
+        "20:1–2 Mary discovers the stone moved",
+        "20:3–10 Peter and beloved disciple inspect the tomb",
+        "20:11–18 Mary encounters Jesus and is sent to the disciples"
+      ],
+      "omissionAndFidelityRisks": [
+        "Easter Sunday John 20:1–9 ends before Mary's direct encounter with risen Jesus",
+        "The liturgical weekday selection 20:1–2,11–18 gives a compact Mary-focused alternative",
+        "A 'Mary Magdalene' title cannot be satisfied by 20:1–9 alone"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Catholic Sunday 20:1–9 and weekday 20:1–2,11–18 are different purposes and cannot be two independent editorial families.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "John 20:1-9",
+            "John 20:1-2, 11-18"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Luke 24; John 20"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "John 20:1–18"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Song of Songs 2:8–17 → John 20:11–18 is devotional/bridal analogy, not direct textual dependency"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-12",
+      "storySlug": "pentecost",
+      "editorialTitle": "Pentecost and the first conversions",
+      "canonicalAtlasEventKey": "biblical:passage:acts-2-1-41",
+      "canonicalAtlasEventIndex": 126,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Acts 2:1–41",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/acts/2",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/51002.htm",
+      "researchDecision": "RESEARCH_PASS_STAGED_READING_NOT_SHORT_APPROVAL",
+      "contextAuditFinding": "ONE_MIRACLE_AND_PREACHING_STORY_THREE_INTERNAL_BEATS",
+      "suggestedFullNarrativeScope": [
+        "Acts 2:1–13",
+        "Acts 2:14–36",
+        "Acts 2:37–41"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Acts 2:1–11"
+      ],
+      "deeperContextOptions": [
+        "Acts 2:1–47"
+      ],
+      "essentialContextSegments": [
+        "2:1–13 gift of tongues and public astonishment",
+        "2:14–36 Peter interprets the event, quotes Joel and proclaims risen Christ",
+        "2:37–41 repentance and baptism"
+      ],
+      "omissionAndFidelityRisks": [
+        "The feast-day Acts 2:1–11 explains the Spirit's descent but omits Peter's Gospel interpretation and the conversion of hearers",
+        "Full story may be divided into reading screens without inflating lessons",
+        "The quotation of Joel must stay identified as Scripture within Scripture"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Lectionary 2:1–11, IBS story Acts 2:1–21, and full publisher story Acts 2:1–41 show different editorial aims.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+          "examples": [
+            "Acts 2:1-11"
+          ]
+        },
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Acts 2:1-21"
+          ]
+        },
+        {
+          "sourceId": "RIGHTNOW",
+          "family": "RightNow Kids curriculum",
+          "url": "https://resources.rightnow.org/web/Gods-Kids-Scope-and-Sequence.pdf",
+          "examples": [
+            "Acts 2:1–12, 41"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Acts 2:1-41"
+          ]
+        },
+        {
+          "sourceId": "MANNORA100",
+          "family": "Mannora Bible",
+          "url": "https://mannora.com/events/",
+          "examples": [
+            "Acts 2:1–47"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Joel 2:28–32 → Acts 2:16–21 (direct citation; verify book/version numbering)",
+        "Genesis 11 Babel → Acts 2 tongues (traditional typological reflection)"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-13",
+      "storySlug": "lamb-heaven",
+      "editorialTitle": "The Lamb and heavenly worship",
+      "canonicalAtlasEventKey": null,
+      "canonicalAtlasEventIndex": null,
+      "supplementalResearchId": "reading-candidate:supplement-052",
+      "originalResearchAnchor": "Revelation 5:6–14",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/revelation/5",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/73005.htm",
+      "researchDecision": "RESEARCH_PASS_EXTEND_PROPOSED_5_6_ANCHOR",
+      "contextAuditFinding": "NEEDS_SCROLL_LION_PRELUDE_FOR_INTELLIGIBILITY",
+      "suggestedFullNarrativeScope": [
+        "Revelation 5:1–14"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Revelation 5:1–10"
+      ],
+      "deeperContextOptions": [
+        "Revelation 4:1–5:14"
+      ],
+      "essentialContextSegments": [
+        "5:1–4 sealed scroll and no worthy creature",
+        "5:5 Lion of Judah and Davidic root named",
+        "5:6–7 Lamb slain yet standing receives scroll",
+        "5:8–14 worship spreads from elders to all creatures"
+      ],
+      "omissionAndFidelityRisks": [
+        "Current supplement 5:6–14 starts after the scroll problem and obscures why the Lamb is acclaimed",
+        "The published weekday 5:1–10 preserves the dramatic setup but not final worship by all creatures",
+        "Apocalyptic vision should not be translated into a literal earthly time-map"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "Current Catholic weekday reading publishes Revelation 5:1–10; this is one source family, separate from historical Atlas Revelation 4 evidence.",
+      "originalV7PublisherEvidenceByFamily": [],
+      "supplementalPublishedSourceURL": "https://bible.usccb.org/bible/readings/111926.cfm",
+      "typologicalLinksForReviewedInterpretation": [
+        "Exodus 12 → Revelation 5 Lamb",
+        "Isaiah 11:1–10 and Genesis 49 → Revelation 5:5 Davidic Lion"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    },
+    {
+      "reviewId": "context-review:story-14",
+      "storySlug": "new-jerusalem",
+      "editorialTitle": "The new Jerusalem and the renewal of creation",
+      "canonicalAtlasEventKey": "biblical:passage:revelation-21-1-27",
+      "canonicalAtlasEventIndex": 150,
+      "supplementalResearchId": null,
+      "originalResearchAnchor": "Revelation 21:1–27",
+      "primaryExternalCatholicChapterForContext": "https://bible.usccb.org/bible/revelation/21",
+      "publicDomainDouayComparisonChapter": "https://www.drbo.org/chapter/73021.htm",
+      "researchDecision": "RESEARCH_PASS_TWO_MOVEMENTS",
+      "contextAuditFinding": "TWO_LINKED_LITERARY_VISIONS_NOT_HISTORICAL_EPISODES",
+      "suggestedFullNarrativeScope": [
+        "Revelation 21:1–8",
+        "Revelation 21:9–27"
+      ],
+      "publisherShortOrSuggestedCompactScope": [
+        "Revelation 21:1–8"
+      ],
+      "deeperContextOptions": [
+        "Revelation 21:1–22:5"
+      ],
+      "essentialContextSegments": [
+        "21:1–8 a new heaven/new earth and God's dwelling with mankind",
+        "21:9–21 symbolic bride/city, gates/foundations",
+        "21:22–27 the Lord and the Lamb are its temple and light"
+      ],
+      "omissionAndFidelityRisks": [
+        "Rev 21:1–8 makes a useful short closing meditation, but omits the heavenly-city imagery of 9–27",
+        "Do not date or geolocate this as an ordinary earthly city-building event",
+        "Some citations refer to Revelation 21–22 as two chapters, not a precision short selection"
+      ],
+      "previouslyHarvestedPublisherScopeNote": "One story plan selects Revelation 21:1–27, another Revelation 21–22, while Roman lectionary has an overlapping composite boundary.",
+      "originalV7PublisherEvidenceByFamily": [
+        {
+          "sourceId": "IBS_STORY",
+          "family": "IBS Greatest Story",
+          "url": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+          "examples": [
+            "Revelation 21-22"
+          ]
+        },
+        {
+          "sourceId": "LEC98",
+          "family": "Roman Catholic Lectionary",
+          "url": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+          "examples": [
+            "Rev 20:1-4, 11—21:2"
+          ]
+        },
+        {
+          "sourceId": "LIFE100",
+          "family": "Life Bible / Tecarta",
+          "url": "https://lifebible.com/plan/100-bible-stories",
+          "examples": [
+            "Revelation 21:1-27"
+          ]
+        }
+      ],
+      "supplementalPublishedSourceURL": null,
+      "typologicalLinksForReviewedInterpretation": [
+        "Isaiah 65–66 → Revelation 21 renewal",
+        "Ezekiel 40–48 → Revelation 21 heavenly temple/city as prophetic symbolism"
+      ],
+      "originalOfficialAppWitnessVerified": false,
+      "appWitnessCramponVsChallonerVerseCrosswalkStatus": "PENDING_BOOK_CHAPTER_VERSE_COLLATION_IN_NATIVE_READER",
+      "contextualReadabilityReviewedAgainstExternalCatholicWitness": true,
+      "scriptureTextImported": false,
+      "aiAuthoredBibleHistory": false,
+      "independentPublisherEvidenceInflated": false,
+      "readerPathAfterApproval": "OPEN_EXISTING_NATIVE_CATHOLIC_BIBLE_AT_FULL_CHAPTER_OR_NEAREST_LONG_RANGE",
+      "editorialApprovalStatus": "RESEARCH_ONLY_NOT_AUTHORIZED_FOR_PUBLICATION",
+      "finalEssentialRange": null,
+      "finalExtendedRange": null,
+      "nextReviewAction": "Verify wording and numbered verse ranges in the two existing native witnesses, then review short/full readability and source provenance before approval."
+    }
+  ],
+  "publicationChanges": [],
+  "approvalRegister": []
+}
