@@ -11,6 +11,7 @@ def h(value):
 def bilingual(obj):
     return '<span data-lang="en">'+h(obj["en"])+'</span><span data-lang="fr" hidden>'+h(obj["fr"])+'</span>'
 doc = read("data/learn/research/mass-formation-canon-deep-exemplar-20261016.v1.json")
+evidence = read("data/learn/research/mass-formation-canon-p0-evidence-bridge-20261016.v1.json")
 sung = read("data/presentation/reader-text-sung.v1.json")
 old = read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json")
 formation = read("data/learn/mass-formation-campion.v1.json")
@@ -26,6 +27,17 @@ assert doc["scope"] == "FORMATION_EDITORIAL_ONLY"
 assert doc["status"] == "EDITORIAL_DRAFT_NOT_RELEASED"
 assert doc["liturgical_profile"] == "ORDINARY_SUNG"
 assert len(doc["studies"]) == 8
+assert evidence["schema"]=="ao-formation-roman-canon-p0-evidence-bridge-v1"
+assert evidence["status"]=="RESEARCH_IDENTITY_CROSSWALK_ONLY_NOT_USER_FACING"
+assert evidence["scope"]=="FORMATION_P2_EDITORIAL_ONLY"
+assert evidence["governance"]["p0_historical_claims_publication_approved"]==0
+assert evidence["governance"]["p0_scripture_candidates_publication_approved"]==0
+assert evidence["totals"]=={"source_blocks":15,"deep_studies":8,"mapped_research_units":79,"p0_scripture_candidates":1,"historical_author_candidates":88,"approved_new_p0_publication":0}
+assert len(evidence["blocks"])==15 and len(evidence["studies"])==8
+assert [r["block_id"] for r in evidence["blocks"]]==["AO.SM.B"+str(n).zfill(3) for n in range(47,62)]
+assert all(not v["publication_allowed"] for b in evidence["blocks"] for v in b["historical_author_candidates"])
+assert all(not v["publication_allowed"] for b in evidence["blocks"] for v in b["scripture_candidates"])
+assert len(evidence["primary_source_spot_checks"])==6
 all_ids = [id for entry in doc["studies"] for id in entry["block_ids"]]
 assert all_ids == ["AO.SM.B"+str(n).zfill(3) for n in range(47,62)]
 assert len(set(all_ids))==15
