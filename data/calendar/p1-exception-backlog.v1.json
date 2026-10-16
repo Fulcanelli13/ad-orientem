@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Reconcile ten source-partial Commons with exact variant and language evidence; most lack source-owned target Latin and cannot be safely filled by simple donor borrowing. Retain three ambiguous internet Eastertide aliases. Do not merge any modern saint Mass automatically.",
+      "nextAction": "Resolve source-owned missing original six French C3ap/C3p Paschal chant/reading sections and C7 nonvirgin martyr Lesson separately; remaining eight partial cases require inherited source graphs and variant checks. Do not borrow missing target Latin by similarity, mark provisional orations as published, or change LIVE Mass reader.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -134,7 +134,23 @@
         "paschalC2apCompletedFromSource": true,
         "paschalC2apSourceOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
         "exactDonorPartialMatches": 18,
-        "donorEvidence": "data/calendar/p1-partial-common-donor-evidence.v1.json"
+        "donorEvidence": "data/calendar/p1-partial-common-donor-evidence.v1.json",
+        "verifiedPartialCompositions": 2,
+        "verifiedPartialSectionLanguageReferences": 25,
+        "partialRecoveryEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+        "c3apMissingFrench": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Communio"
+        ],
+        "c7MissingAllLanguages": [
+          "Lectio"
+        ],
+        "remainingUncompletedSources": 10,
+        "sourceComplete": 25
       }
     },
     {
@@ -312,6 +328,9 @@
     "paschalAlternativeC2apSourceVerified": true,
     "paschalAlternativeBaseOwner": "Commune/C2p",
     "paschalAlternativeOrationOwner": "Commune/C2a",
-    "paschalAlternativeBorrowedLanguageSections": 23
+    "paschalAlternativeBorrowedLanguageSections": 23,
+    "partialSourceCompositionsValidated": 2,
+    "recoveredSourceLanguageSectionLinks": 25,
+    "allUserFacingRoutesExternal": false
   }
 }
