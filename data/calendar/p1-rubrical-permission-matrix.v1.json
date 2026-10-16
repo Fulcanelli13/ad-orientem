@@ -1,0 +1,345 @@
+{
+  "schema": "AO_P1_RUBRICAL_PERMISSION_MATRIX_V1",
+  "asOf": "2026-10-16",
+  "branch": "research/1224-traditional-formularies",
+  "baseCommit": "359ed283ebc6dd28797039c9667791c80323c271",
+  "sourceReferences": {
+    "RG": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "RGMR": "https://maternalheart.org/library/1962rubrics.pdf",
+    "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html"
+  },
+  "status": "RESEARCH_NO_AUTOMATIC_PERMISSION",
+  "ruleCount": 35,
+  "sourceIndependence": "Existing day adjudicator remains canonical runtime owner; P1 is legislation/source research only.",
+  "interpretationCaveat": "RGMR clauses from 1960 Code are source-referenced; original signed printed-edition/page collation still required. Legal interpretation of §4 versus RG111(a) held.",
+  "commemorationCaps": [
+    {
+      "context": "CLASS_I",
+      "max": 1,
+      "types": [
+        "PRIVILEGED"
+      ],
+      "ref": "RG 111(a)"
+    },
+    {
+      "context": "SUNG_NONCONVENTUAL",
+      "max": 1,
+      "types": [
+        "PRIVILEGED"
+      ],
+      "ref": "RG 111(a)",
+      "cumSanctissimaSection4Conflict": "HELD_FOR_INTERPRETATION"
+    },
+    {
+      "context": "CLASS_II_SUNDAY",
+      "max": 1,
+      "types": [
+        "SPECIFIC_SECOND_CLASS_FEAST_OR_PRIVILEGED"
+      ],
+      "ref": "RG 111(b)"
+    },
+    {
+      "context": "CLASS_II_OTHER",
+      "max": 1,
+      "types": [
+        "PRIVILEGED",
+        "ORDINARY"
+      ],
+      "ref": "RG 111(c)"
+    },
+    {
+      "context": "CLASS_III_IV",
+      "max": 2,
+      "types": [
+        "PRIVILEGED",
+        "ORDINARY"
+      ],
+      "ref": "RG 111(d)"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01_SOURCE_BASELINE",
+      "sourceCitation": "RG 1-8; 91-102",
+      "decision": "Resolve liturgical day under 1960 Code, 1962 Missal and applicable particular calendars; modern observance metadata cannot substitute Mass or Office.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R02_OCCURRENCE",
+      "sourceCitation": "RG 92-95",
+      "decision": "Two liturgical days on one date: use table of precedence; lower ranked feast may be commemorated or omitted, not automatically replaced.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R03_TRANSFER",
+      "sourceCitation": "RG 96-99",
+      "decision": "Only eligible impeded first-class feast transfers under accidental occurrence; preserves its class.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R04_PERPETUAL_OCCURRENCE",
+      "sourceCitation": "RG 100-102",
+      "decision": "Separate permanent reassignment with diocesan/institute/local reach from accidental transfer.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R05_CONCURRENCE",
+      "sourceCitation": "RG 103-105",
+      "decision": "Vespers concurrence differs from Mass occurrence; do not use Vespers preference as a Mass switch.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R06_CLASS_PRECEDENCE",
+      "sourceCitation": "RG table of precedence 91",
+      "decision": "Classes, Sundays, seasonal ferias, vigils and local feasts evaluated by actual date.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R07_CLASS_II_EMBER",
+      "sourceCitation": "RG table of precedence 18",
+      "decision": "September Ember Wednesday, Friday and Saturday are II-class ferias and block ordinary III-class substitution.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R08_PRIVILEGED_COMM",
+      "sourceCitation": "RG 107-108",
+      "decision": "Privileged: Sunday, I class, Christmas octave, September Ember, ferias of Advent/Lent/Passiontide, greater Litanies at Mass.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R09_ORDINARY_COMM",
+      "sourceCitation": "RG 107-108",
+      "decision": "Other commemorations ordinary unless another rubric provides a specific treatment.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R10_INSEPARABLE_APOSTLES",
+      "sourceCitation": "RG 110",
+      "decision": "Mass or Office of Peter includes Paul and vice versa; inseparable paired prayer is counted as one.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R11_CLASS_I_COMM",
+      "sourceCitation": "RG 111(a)",
+      "decision": "On I-class days only a privileged commemoration may be admitted.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R12_SUNG_NONCONVENTUAL",
+      "sourceCitation": "RG 111(a)",
+      "decision": "Nonconventual Sung Mass has the same privileged-only commemoration restriction regardless of host day class.",
+      "scope": "SUNG_NONCONVENTUAL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R13_SECOND_SUNDAY",
+      "sourceCitation": "RG 111(b)",
+      "decision": "One II-class feast commemoration on II-class Sundays, omitted if a privileged commemoration intervenes.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R14_SECOND_OTHER",
+      "sourceCitation": "RG 111(c)",
+      "decision": "On other II-class days at most one privileged or ordinary commemoration.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R15_THIRD_FOURTH",
+      "sourceCitation": "RG 111(d)",
+      "decision": "On III/IV-class days at most two commemorations, subject to all other rubrics.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R16_EXCLUSIONS",
+      "sourceCitation": "RG 112(a)-(d)",
+      "decision": "Exclude redundant mysteries/person invocations and conflicting seasonal orations.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R17_ORDER",
+      "sourceCitation": "RG 113-114",
+      "decision": "Seasonal commemoration first; then table of precedence; omit any excess.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R18_CONCLUSIONS",
+      "sourceCitation": "RG 115-116; RGMR 436-446",
+      "decision": "Exact Latin conclusion depends on prayer addressee and mentions of Son/Holy Spirit; do not manufacture formula.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R19_THREE_ORATIONS",
+      "sourceCitation": "RGMR 433-437",
+      "decision": "Commemoration at Mass uses Collect, Secret, Postcommunion; own conclusion except expressly under-one-conclusion cases.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R20_SPECIAL_PRAYER_TYPES",
+      "sourceCitation": "RGMR 438-460",
+      "decision": "Identical-wording substitutions, ritual prayers, votive prayer and oratio imperata have distinct hierarchy; not all are commemorations.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R21_MULTI_LESSON",
+      "sourceCitation": "RGMR 442-443",
+      "decision": "Multiple-lesson Ember Mass orations have special placement; feria commemoration uses specified first oration.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R22_OPTIONAL_FESTIVE",
+      "sourceCitation": "Cum sanctissima §§1-2; RGMR 302(c)",
+      "decision": "For just cause, festival Mass in wider sense on permitted III-class days and III-class vigils; saint canonized after 26 July 1960 on established universal liturgical date.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R23_OPTIONAL_VOTIVE",
+      "sourceCitation": "Cum sanctissima §2; RGMR 311",
+      "decision": "Different faculty for votive saint Mass; apply complete votive day/class restrictions, not feast rule.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R24_MASS_AND_OFFICE",
+      "sourceCitation": "Cum sanctissima §3; RGBR 169",
+      "decision": "If missa festiva latiore sensu is celebrated, full proper Office may follow; Office permission is not a Mass choice.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R25_OMITTED_FEAST",
+      "sourceCitation": "Cum sanctissima §4; RG 111(d)",
+      "decision": "Ordinary commemoration of omitted traditional feast or vigil required; must be reconciled with pre-existing comms and form.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R26_FORMULARY_ORDER",
+      "sourceCitation": "Cum sanctissima §5",
+      "decision": "1962 pro aliquibus locis > approved Holy See traditional Supplement > edition-appropriate Common; ad libitum choice only among available forms of that Common.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R27_AD_LIB_COMM",
+      "sourceCitation": "Cum sanctissima §6; RG 111(d)",
+      "decision": "Optional separate commemoration on III/IV day only if saint/mystery specifically entered for that date in 1962 pro aliquibus locis or approved traditional Supplement; fallback Common does not establish entitlement.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R28_RELIGIOUS_HOUSES",
+      "sourceCitation": "Cum sanctissima §7",
+      "decision": "In religious institute/society houses, superior determines use in Conventual Mass or common/choir Office, not the celebrant.",
+      "scope": "CONVENTUAL_INSTITUTE",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R29_PROTECTED_70",
+      "sourceCitation": "Cum sanctissima §8 and annex",
+      "decision": "Exact 70 listed III-class feasts cannot be displaced; use canonical resolver identity, not month/day-only lookup.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R30_LENT_PROTECTED",
+      "sourceCitation": "Cum sanctissima §8",
+      "decision": "Protected feasts may be celebrated on III-class Lent or Passiontide feria, commemorating the feria as required.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R31_EXTERNAL_SOLEMNITY",
+      "sourceCitation": "RGMR 356-361",
+      "decision": "External solemnity is an authorized distinct Mass circumstance; no automatic Sunday transfer or universal saint permission.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R32_VOTIVE_FORMS",
+      "sourceCitation": "RGMR 306-343",
+      "decision": "Votive Mass classes/privileges and restrictions require a separate exact rubric evaluation.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R33_PARTICULAR",
+      "sourceCitation": "RG 43-46; RG table of precedence 12,19,23; Cum sanctissima preamble and §7",
+      "decision": "Diocese, titular church, order, house, Oratorian and other permissions need original jurisdictional authority and historical effective dates.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    },
+    {
+      "id": "R34_HIGH_MASS_TENSION",
+      "sourceCitation": "Cum sanctissima §4; RG 111(a),(d)",
+      "decision": "Ordinary commemoration explicitly prescribed by new decree versus nonconventual Sung privileged-only rule; must seek competent authoritative interpretation and actual liturgical form.",
+      "scope": "SUNG_NONCONVENTUAL",
+      "certification": "LEGAL_INTERPRETATION_UNRESOLVED",
+      "autoMassChange": false
+    },
+    {
+      "id": "R35_DOCTOR_TITLE",
+      "sourceCitation": "Cum sanctissima §5; historical 1962 saint Proper",
+      "decision": "Later Doctor proclamation changes saint's title/recognition but does not per se rewrite existing 1962 feast/Proper or create second observance.",
+      "scope": "ALL",
+      "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
+      "autoMassChange": false
+    }
+  ],
+  "protectedFeastsCanonicalPath": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+  "externalSolemnitiesOwner": "src/calendar/traditional-day-adjudication.js",
+  "runtimeAutomaticAuthorization": false
+}
