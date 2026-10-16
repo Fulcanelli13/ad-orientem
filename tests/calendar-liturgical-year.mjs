@@ -15,6 +15,7 @@ import { clockGeometry, renderLiturgicalClock, resolvedClockFeasts } from "../sr
 import { calendarMassColour } from "../src/calendar/colour-projection.js";
 import { calendarPaletteColour, resolvedYearColour, yearDailyProjection, yearSeasonGradient } from "../src/calendar/year-colour-wheel.js";
 import { MASS_LITURGICAL_PALETTES } from "../src/mass/reader-liturgical-theme.js";
+import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 
 // This is deliberately display-only. The production day resolver already
 // owns the phase colours; the Calendar must label the Mass, not the first
@@ -44,6 +45,23 @@ function assertContinuous(year) {
     );
   }
 }
+
+// Historical #1205 residual: actual rank labels from Latin, English and French
+// must map to the same indicative Calendar filter without changing source rank.
+for(const [label,expected] of [
+  ["I",1],["II",2],["III",3],["IV",4],["1",1],["4",4],
+  ["Class I",1],["classis II",2],["III classis",3],["IV class",4],
+  ["first class",1],["2nd class",2],["3rd class",3],["fourth class",4],
+  ["classe I",1],["classe II",2],["classe III",3],["classe IV",4],
+  ["1re classe",1],["1ère classe",1],["première classe",1],
+  ["IIe classe",2],["2ème classe",2],["deuxième classe",2],
+  ["IIIe classe",3],["3ème classe",3],["troisième classe",3],
+  ["IVe classe",4],["4ème classe",4],["quatrième classe",4],
+  ["Solennité de la 2ème classe",2],["Saint d'une troisième classe",3]
+])assert.equal(romanClassTier(label),expected,"Unrecognized sourced class: "+label);
+for(const label of ["",null,undefined,"V class","classe inconnue",
+  "unknown","class II–III","1st and 2nd class","Class V","Class I and Class II"])
+ assert.equal(romanClassTier(label),0,"Unresolved/ambiguous class must be neutral: "+label);
 
 const rosary = buildLiturgicalYear("2026-10-07");
 assert.equal(rosary.label, "2025–2026");
@@ -100,6 +118,8 @@ const yearRuntimeSource=fs.readFileSync(new URL("../src/calendar/calendar-runtim
 assert.match(yearRuntimeSource,/requestYearDailyColours\(y\)/,"Year view must initiate source-based day colours");
 assert.match(yearRuntimeSource,/data-verified-days/,"Year wheel must expose actual verification count");
 assert.match(yearRuntimeSource,/yearDailyProjection\(y,/);
+assert.match(yearRuntimeSource,/romanClassTier\(rankOf\(r\)\)/,"Month index must use source-sensitive EN/FR rank mapping");
+assert.match(yearRuntimeSource,/r\.date!==id/,"Stale result must not supply a rank for another date");
 const yearJourneySource=fs.readFileSync(new URL("../src/calendar/year-journey.js",import.meta.url),"utf8");
 assert.doesNotMatch(yearJourneySource,/const COLOR=Object.freeze/,"Legacy beige seasonal palette must be removed");
 assert.match(yearJourneySource,/aoCalYearDailyTrack/,"Timeline must show actual daily colours separately from seasons");

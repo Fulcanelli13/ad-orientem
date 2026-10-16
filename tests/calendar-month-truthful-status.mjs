@@ -1,4 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
+import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
 import "./calendar-scripture-handoff.mjs";
@@ -41,8 +42,11 @@ for(const pattern of [/function retryFailedMonth\(\)/,/data-cal-day-retry/,/data
 // Next major day is an actual resolved I/II-class observance; curated dates cannot skip nearer Sundays.
 assert.match(runtime,/return Array\.from\(\{length:21\}/);
 assert.doesNotMatch(runtime,/buildMajorCelebrations/);
-assert.match(runtime,/const bare=rank\.replace/);
-assert.match(runtime,/if\(\/\^\[1-4\]\$\/\.test\(bare\)\)return Number\(bare\)/);
+assert.match(runtime,/romanClassTier\(rankOf\(r\)\)/,"Display-only index uses shared source rank parser");
+assert.match(runtime,/r\.date!==id/,"Month rank must not infer from a stale date");
+assert.equal(romanClassTier("1ère classe"),1);
+assert.equal(romanClassTier("IIe classe"),2);
+assert.equal(romanClassTier("unresolved"),0);
 assert.match(runtime,/Cannot claim "next" across an unresolved earlier day/);
 const {execFileSync}=await import("node:child_process");
 execFileSync(process.execPath,["--check","src/calendar/calendar-runtime.js"],{stdio:"pipe"});
