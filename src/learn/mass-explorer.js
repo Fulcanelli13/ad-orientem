@@ -7,6 +7,7 @@ import {loadGuideRegistry,validateGuideRegistry} from "../mass/reader-guide.js";
 import {massMomentExistingGuideSections,massMomentStudyLinks} from "./mass-moments-study.js";
 import {massFormationScriptureHtmlForAnchorIds} from "./mass-formation-scripture-context.js";
 import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
+import {massMapHtml,massMapCss,projectMassMap} from "./mass-map.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -145,7 +146,7 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
   return '<main class="aoMXWrap"><div class="aoMXHero"><small>'+pick(french,"UNDERSTAND THE MASS","COMPRENDRE LA MESSE")+'</small>'+
     '<h1>'+pick(french,"Mass Explorer","Explorer la Messe")+'</h1><p>'+pick(french,"Follow the Mass in its proper order, then open the original prayers and existing approved Guide explanations. This study reader does not change LIVE, Simple or Missal.",
      "Parcourez la Messe dans son ordre liturgique, puis ouvrez les prières originales et les explications du Guide existant. Ce lecteur d’étude ne modifie pas les modes LIVE, Simple ou Missel.")+
-    '</p></div>'+rows+'</main>';
+    '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+rows+'</main>';
 }
 export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={}){
   const moment=getMassExplorerMoment(catalog,key,{form:"SUNG"});
@@ -194,6 +195,8 @@ export function massExplorerCss(){
   ".aoMXBlockIndex{display:flex;gap:8px;overflow:auto;scrollbar-width:thin;padding:12px 0 18px;scroll-snap-type:x proximity}.aoMXBlockIndex button{flex:0 0 auto;max-width:250px;min-height:44px;padding:10px 12px;border:1px solid var(--ao-rule,#393c40);border-radius:8px;background:var(--ao-surface-1,#101821);color:inherit;text-align:left;white-space:normal;font:400 .78rem/1.35 system-ui;scroll-snap-align:start}.aoMXBlockIndex button[aria-current=true]{border-color:var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78)}",
   ".aoMXText{margin:8px 0 25px;padding:8px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXText h2,.aoMXDetails h2{font:500 1.2rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXTextRow{padding:12px 0;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXLatin{font:400 1.15rem/1.7 var(--ao-font-body,Georgia,serif);margin:0 0 9px}.aoMXTranslation{font:400 .99rem/1.6 var(--ao-font-body,Georgia,serif);margin:0;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXAction{margin:8px 0;padding:12px 14px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-surface-1,#101821);color:var(--ao-text-muted,#adb2b7)}.aoMXAction small{display:block;margin:0 0 5px;color:var(--liturgical,#c9ad78);font:600 .65rem/1.4 var(--ao-font-ui,system-ui);letter-spacing:.06em;text-transform:uppercase}.aoMXAction p{margin:0;font:400 .9rem/1.55 var(--ao-font-body,Georgia,serif);white-space:pre-line}",
+  ".aoMXIndexSwitch button{min-height:44px;padding:9px 13px;border:1px solid var(--liturgical,#c9ad78);background:transparent;color:var(--liturgical,#c9ad78);border-radius:9px;cursor:pointer}",
+  ...massMapCss().split("}").filter(Boolean).map(rule=>rule+"}"),
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
   ".aoMXFormationLink button{width:100%;min-height:48px;padding:12px 15px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);border:1px solid var(--ao-rule,#393c40);border-radius:10px;text-align:left;font:500 .85rem/1.5 system-ui;cursor:pointer}",
@@ -205,7 +208,7 @@ export function massExplorerCss(){
 }
 
 export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null;
+  let catalog=null,loading=null,returnFocus=null,momentKey=null,blockId=null,indexView="map";
   const root=()=>win?.document?.getElementById?.(MASS_EXPLORER_ROOT)||null;
   const french=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
        String(win?.document?.documentElement?.lang||"").startsWith("fr");
@@ -217,7 +220,8 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
       '<div><small>FORMATION</small><strong>'+pick(fr,"Mass Explorer","Explorer la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
-      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
+      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
+        indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     node.scrollTop=0;
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
     const rail=selected?.closest?.(".aoMXBlockIndex");
@@ -258,6 +262,51 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       if(t.matches("[data-ao-mx-close]")){event.preventDefault();close(true);return;}
       if(t.matches("[data-ao-mx-back]")){event.preventDefault();if(momentKey){momentKey=null;blockId=null;paint();}else close(true);return;}
       if(t.dataset.aoMxMoment){event.preventDefault();setMoment(t.dataset.aoMxMoment);return;}
+      if(t.dataset.aoMxMapBlock){
+        event.preventDefault();
+        const target=catalog?.byBlock.get(t.dataset.aoMxMapBlock);
+        if(target)setMoment(target.key,t.dataset.aoMxMapBlock);
+        return;
+      }
+      if(t.dataset.aoMxView){
+        event.preventDefault();
+        if(t.dataset.aoMxView==="map"||t.dataset.aoMxView==="list"){
+          indexView=t.dataset.aoMxView;momentKey=null;blockId=null;paint();
+        }
+        return;
+      }
+      if(t.dataset.aoMxPhase!==undefined){
+        event.preventDefault();
+        const n=Number(t.dataset.aoMxPhase),phase=Number.isInteger(n)?projectMassMap(catalog).phases[n]:null;
+        if(!phase)return;
+        node.querySelectorAll("[data-ao-mx-phase]").forEach(button=>
+          button.getAttribute("data-ao-mx-phase")===String(n)?
+            button.setAttribute("aria-current","step"):button.removeAttribute("aria-current"));
+        const section=node.querySelector('[data-ao-mx-phase-section="'+n+'"]');
+        section?.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+        section?.querySelector?.("h2")?.setAttribute?.("tabindex","-1");
+        section?.querySelector?.("h2")?.focus?.({preventScroll:true});
+        return;
+      }
+      if(t.matches("[data-ao-mx-open-mass]")){
+        event.preventDefault();
+        t.disabled=true;
+        void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass")).then(result=>{
+          if(result?.ok===true)return;
+          if(t.isConnected){
+            t.disabled=false;
+            const notice=win.document.createElement("p");
+            notice.setAttribute("role","alert");
+            notice.className="aoMXQuiet";
+            notice.textContent=pick(french(),"Mass preparation could not be opened; your study position is preserved.","La préparation de la Messe n’a pas pu s’ouvrir ; votre position d’étude est conservée.");
+            t.insertAdjacentElement("afterend",notice);
+          }
+        }).catch(error=>{
+          win?.console?.error?.("Mass preparation handoff failed",error);
+          if(t.isConnected)t.disabled=false;
+        });
+        return;
+      }
       if(t.dataset.aoMxBlock){event.preventDefault();setMoment(momentKey,t.dataset.aoMxBlock);return;}
       if(t.dataset.aoMxStudy){
         event.preventDefault();
@@ -284,6 +333,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       try{await loading;}catch(error){win?.console?.error?.("Mass Explorer sources unavailable",error);return false;}
     }
     if(!ensureRoot())return false;
+    indexView=opts.view==="list"?"list":"map";
     const requested=opts.blockId&&catalog.byBlock.get(opts.blockId);
     momentKey=requested?.key??(catalog.byKey.has(opts.momentKey)?opts.momentKey:null);
     blockId=requested?.source.Block_ID??null;
@@ -291,7 +341,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     paint();return true;
   }
   const status=()=>Object.freeze({installed:true,open:!!root(),version:MASS_EXPLORER_VERSION,
-    momentKey,blockId,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
+    momentKey,blockId,indexView,moments:catalog?.sequence.length??0,sourceBlocks:catalog?.byBlock.size??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }
