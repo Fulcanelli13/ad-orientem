@@ -533,4 +533,29 @@ assert.equal(fam.counts.earlyEnglishSadlierMixedOCRChaptersLayoutExamined,13);
 assert.equal(fam.counts.earlyEnglishSadlierMixedOCRRunningHeadingsRemoved,13);
 assert.equal(fam.counts.earlyEnglishSadlierMixedOCRLiteralWordCorrections,0);
 
+
+const narrativeEvidence=j("data/explore/biblical-schuster-1908-narrative-evidence-batch.v1.json");
+const topicCandidates=j("data/explore/biblical-schuster-1908-atlas-topic-shortlist-expanded.v2.json");
+assert.equal(narrativeEvidence.counts.sourceBodyCorroboratedChapters,35);
+assert.equal(narrativeEvidence.records.length,35);
+assert.equal(new Set(narrativeEvidence.records.map(x=>x.sourceChapterId)).size,35);
+assert.equal(narrativeEvidence.counts.imageSpotCheckSupportedChapters+narrativeEvidence.counts.ocrOnlySupportedChapters,35);
+assert.equal(narrativeEvidence.counts.existingTopicCandidatePairs,topicCandidates.candidates.length);
+assert.equal(narrativeEvidence.counts.atlasCanonicalEvents,canon.events.length);
+assert.ok(narrativeEvidence.records.every(x=>x.narrativeOCRAnchors.length===2));
+assert.ok(narrativeEvidence.records.every(x=>x.narrativeOCRAnchors.every(a=>a.text.length>2&&a.originalPdfPage>=16&&a.originalPdfPage<=419)));
+const atlasKeys=new Set(canon.events.map(x=>x.eventKey));
+for(const evidence of narrativeEvidence.records){
+ assert.ok(atlasKeys.has(evidence.atlasCandidateEventKey));
+ assert.ok(topicCandidates.candidates.some(x=>x.chapterId===evidence.sourceChapterId&&x.atlasEventKey===evidence.atlasCandidateEventKey));
+ assert.equal(evidence.verseCoverageCertified,false);
+ assert.equal(evidence.appLinkEnabled,false);
+ assert.equal(evidence.sourceWordingCertified,false);
+}
+assert.equal(narrativeEvidence.explicitNegativeControl.noPromotion,true);
+assert.equal(narrativeEvidence.counts.fullyVerifiedVerseLocusLinks,0);
+assert.equal(narrativeEvidence.counts.activeAppAtlasLinks,0);
+assert.equal(narrativeEvidence.policy.noAppChanges,true);
+assert.equal(narrativeEvidence.policy.noAIAuthoredNarrative,true);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
