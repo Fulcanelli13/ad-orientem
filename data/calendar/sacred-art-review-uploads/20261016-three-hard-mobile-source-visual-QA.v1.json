@@ -1,0 +1,76 @@
+{
+  "schema": "AO_SACRED_ART_THREE_HARD_BULK_VISUAL_RECONCILIATION_V1",
+  "date": "2026-10-16",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38937339059",
+  "sourceArtifactId": 12061592533,
+  "originalBatchTargets": [
+    30,
+    41,
+    52
+  ],
+  "actualDownloaded": {
+    "uniqueImageFiles": 4,
+    "subjectsWithAtLeastOnePhotograph": 2,
+    "exactOriginalsAcquired": 1,
+    "distinctAlternateOriginalsAcquired": 1,
+    "failedExactSourceSubjects": 1,
+    "negativeAdjacentImageReferences": 2,
+    "duplicatedPatrickPhotoBytes": 1
+  },
+  "acceptedResearchPhotos": [
+    {
+      "categoryIndex": 41,
+      "subject": "Saint Cyril of Jerusalem",
+      "registryOriginalId": "ICCD-0900117888A-1",
+      "sourceUrl": "https://sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5047475_189881.jpg",
+      "sha256": "74d2fd8ab7ffe9f741abaf61a10ca7feaeb4afda63bb535080d7bf21e2fea102",
+      "pixels": [
+        939,
+        1280
+      ],
+      "visualQA": "Historic monochrome photograph depicts full 1637 Antonio Nannoni fresco in situ; cartouche legibly reads S. CYRILLVS. Some age/paper damage, yet strong enough for archival mobile iconography; not colour, not licensed for commercial distribution.",
+      "actualOriginalIdentityConfirmed": true,
+      "fullSubjectPhotographConfirmed": true,
+      "photoRightsForApp": false,
+      "approvedSelection": false
+    },
+    {
+      "categoryIndex": 52,
+      "subject": "Saint Patrick",
+      "candidateOriginalId": "NGI-4623",
+      "sourcePage": "https://onlinecollection.nationalgallery.ie/objects/8798",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_the_King_of_Cashel_by_Saint_Patrick_.PNG",
+      "sha256": "295f57db0d5719664e59500358dc833be0827461160b790ebfb3f152b5e2e82e",
+      "pixels": [
+        344,
+        332
+      ],
+      "visualQA": "Warm colour oil sketch full composition; Saint Patrick baptises Cashel king, image legible at mobile size despite being just 344px. Commons attributes photo to National Gallery of Ireland under CC BY 4.0.",
+      "differentPhysicalOriginalFromExistingRdsValdre": true,
+      "exactMuseumIdentityConfirmed": true,
+      "photoRightsAppConditions": "CC BY 4.0 attribution, review publication context",
+      "approvedSelection": false
+    }
+  ],
+  "excludedImages": [
+    {
+      "categoryIndex": 41,
+      "sourceFile": "ICCD5047473_189865.jpg",
+      "sha256": "ed28f092d98d99a35e7e359fc9fea642e7bbe41ff6754becb31470e9fbf93c5f",
+      "reason": "Cartouche reads S. ANDREAS; neighbouring fresco, not St Cyril."
+    },
+    {
+      "categoryIndex": 41,
+      "sourceFile": "ICCD5047477_189885.jpg",
+      "sha256": "401f1042a540bc7654a545da0c16683767fcd958c504ce7c2f369a4b0e1671cc",
+      "reason": "Different neighbouring saint; subject differs and cartouche not S. CYRILLVS."
+    }
+  ],
+  "unresolvedSource": {
+    "categoryIndex": 30,
+    "selectedArtwork": "Giuseppe Franchi (attributed), Ritratto di San Gregorio Nazianzeno, Lombardia L0070-00118",
+    "photoUrl": "https://www.lombardiabeniculturali.it/assets/immagini/liv2/OA310RL/SC/OA/L0070/00/OA_L0070-00118_IMG-0000222844.jpg",
+    "reason": "Live image endpoint failed at download; exact catalogue object confirmed but cannot count image as acquired. Regional/institutional image rights also not cleared."
+  },
+  "safeguards": "Ratings/selected originals/live app left intact; accepted research evidence is separate from lawful app use and selection."
+}
