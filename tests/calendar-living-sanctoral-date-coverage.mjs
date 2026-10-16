@@ -105,7 +105,7 @@ assert.equal(new Set(groups.map(x=>x.canonicalGroupId)).size,groups.length);
 assert.ok(dates.observances.every(x=>x.subjectId.startsWith("canon-group.")||
   rows.some(p=>p.canonicalPersonId===x.subjectId)),
   "Every modern date witness must resolve to a canonical person or group");
-assert.equal(summary.dateSourceRows,16);
+assert.equal(summary.dateSourceRows,18);
 assert.equal(summary.doctorCensus,38);
 assert.ok(rows.some(x=>x.canonicalPersonId==="saint.carlo-acutis"&&x.modernDates.length===0),
   "Carlo's universal traditional liturgical date not certified by this research");
