@@ -103,7 +103,9 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  // must never be hidden by the legacy host calendar layout on mobile.
  context.hidden=false;
  context.style.setProperty("display","grid","important");
- // A liturgical-identity warning (notably Good Friday) must be visible without\n // opening the separate Proper/source details disclosure.\n lead.append(kindKicker,selected,context,formIdentity,note,multiple,observed,readiness,choice);
+ // A liturgical-identity warning (notably Good Friday) must be visible without
+ // opening the separate Proper/source details disclosure.
+ lead.append(kindKicker,selected,context,formIdentity,note,multiple,observed,readiness,choice);
  const focus=node(doc,"aside","aoMassJourneyEssential");
  focus.dataset.massJourneyEssential="";focus.hidden=true;
  focus.setAttribute("aria-label",tr(fr,"Particular ceremonies","Cérémonies particulières"));
@@ -226,12 +228,8 @@ export function arrangeMassEntryJourney(root,{language="en"}={}){
  sources.dataset.massJourneySources="";
  sources.append(node(doc,"summary","",tr(fr,"Proper and sources","Propre et sources")),review,resolver);
  // Keep Calendar directly reachable without first expanding another disclosure.
- // Move the existing DOM islands through a detached fragment before clearing
- // their former host; this preserves the 1962 Calendar/celebration identity and
- // the six real category controls as one stable subtree.
- const assembled=doc.createDocumentFragment();
- assembled.append(title,lead,calendar,focus,before,order,sources,launch);
- root.replaceChildren(assembled);
+ // Preserve the actual 1962 celebration identity and category controls.
+ root.replaceChildren(title,lead,calendar,focus,before,order,sources,launch);
  if(!root.querySelector("[data-full-mass-celebration]")||
     !root.querySelector("[data-mass-calendar-context]")||
     root.querySelectorAll("[data-full-mass-category]").length<5){
