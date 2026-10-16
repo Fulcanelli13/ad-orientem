@@ -120,8 +120,16 @@
       "code": "ORIGINAL_RUBRIC_PAGE_CITATIONS",
       "kind": "SOURCE_HOLD",
       "status": "OPEN",
-      "nextAction": "Collate printed 1960 Code/Missal pages for referenced paragraphs.",
-      "blocksRuntimeApproval": true
+      "nextAction": "Original Latin RG 106-115 and RGMR 434-438 now verified in Vatican AAS 52 (1960) printed pp.615-616,671; still collate all other cited RG/RGMR provisions against original AAS and full 1962 edition.",
+      "blocksRuntimeApproval": true,
+      "partialResolution": {
+        "verifiedParts": [
+          "RG106-115",
+          "RGMR434-438"
+        ],
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "verifiedAt": "2026-10-16"
+      }
     },
     {
       "id": "P1-E16",
@@ -152,8 +160,9 @@
       "code": "FORMULARY_COMPONENT_VARIANTS",
       "kind": "SOURCE_HOLD",
       "status": "OPEN",
-      "nextAction": "Check differences in online source display and full printed 1962 prayers.",
-      "blocksRuntimeApproval": true
+      "nextAction": "SSPX digital 9-Oct-2026 Ordo heading Leonardi displays generic multiple Martyrs Mass (Sapiéntiam Sanctórum) rather than Leonardi Proper (In sermónibus Dómini) in two corroborating 1962-claiming sources; identify why and collate original 1962 print; also resolve any seasonal/variant mismatches.",
+      "blocksRuntimeApproval": true,
+      "discrepantSourceUrl": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical"
     },
     {
       "id": "P1-E20",
