@@ -726,6 +726,13 @@ function hydrateYearColourWheel(year){
     " · "+projection.verified+"/"+projection.total;
   // Refresh verified feast markers without displacing clock details or focus.
   const clock=root()?.querySelector(".aoClock");
+  // Keep the verified daily ring current even while a feast detail is open
+  // or a keyboard user has focus. Avoid replacing an interactive clock then.
+  const dial=clock?.querySelector(".aoClockDial");
+  if(dial&&clock?.dataset.yearStart===year.start){
+    dial.style.setProperty("--ao-clock-daily-gradient",projection.gradient);
+    dial.dataset.verifiedDays=String(projection.verified);
+  }
   if(clock&&!clockSelection&&!clock.contains(globalThis.document?.activeElement)){
     const selected=state()?.selectedDate||year.start;
     if(buildLiturgicalYear(selected).start===year.start)clock.outerHTML=clockForYear(year,selected);
