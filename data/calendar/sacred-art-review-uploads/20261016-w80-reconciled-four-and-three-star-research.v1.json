@@ -1,0 +1,711 @@
+{
+  "schema": "AO_SACRED_ART_USER_RESEARCH_W80_20261016",
+  "status": "RESEARCH_ONLY_EXISTING_PR_887",
+  "counts": {
+    "fourStarJudgments": 35,
+    "fourStarUniquePhysicalIds": 33,
+    "threeStarJudgments": 14,
+    "threeStarUniquePhysicalIds": 13,
+    "priorMuseumAlternativeRecords": 15
+  },
+  "rules": [
+    "Preserve source user-export files and all old ratings",
+    "4star means improve photograph of exact painting, not replace artwork",
+    "3star means provisional current painting pending better user-approved alternative",
+    "Candidate original source is not equivalent to approved photo master",
+    "Do not auto-publish to production"
+  ],
+  "fourStarPhotoQueue": [
+    {
+      "batch": 1,
+      "paintingId": "C32:pompeobatoniestasidisantateresa1743circajpg",
+      "subject": "Saint Teresa of Ávila",
+      "artist": "Pompeo Batoni",
+      "originalPhotoFile": "Pompeo batoni, estasi di santa teresa, 1743 circa.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C32:francescounterpergersantateresadavilatiff",
+      "subject": "Saint Teresa of Ávila",
+      "artist": "Francesco Unterperger",
+      "originalPhotoFile": "Francesco Unterperger – Santa Teresa d'Ávila.tiff",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Francesco_Unterperger_%E2%80%93_Santa_Teresa_d'%C3%81vila.tiff",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "subject": "Saint Catherine of Siena",
+      "artist": "Bernardino Mei",
+      "originalPhotoFile": "Bernardino mei, Santa Caterina da Siena, 1641.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Bernardino_mei%2C_Santa_Caterina_da_Siena%2C_1641.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C32:giambattistatiepolokunsthistorischesmuseumwiengemaldegalerie",
+      "subject": "Saint Catherine of Siena",
+      "artist": "Giambattista Tiepolo",
+      "originalPhotoFile": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "G17-006",
+      "subject": "Saint Francis de Sales",
+      "artist": "School of Philippe de Champaigne",
+      "originalPhotoFile": "Saint François de Sales.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg",
+      "physicalPaintingSource": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "paris-pm75001042-halle-sales",
+      "subject": "Saint Francis de Sales",
+      "artist": "Noël Hallé",
+      "originalPhotoFile": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+      "physicalPaintingSource": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "G17-003",
+      "subject": "Saint John Chrysostom",
+      "artist": "Pedro de Orrente",
+      "originalPhotoFile": "San Juan Crisóstomo, de Pedro de Orrente (Museo del Prado).jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:San_Juan_Cris%C3%B3stomo%2C_de_Pedro_de_Orrente_(Museo_del_Prado).jpg",
+      "physicalPaintingSource": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "G32-001",
+      "subject": "Saint Bede the Venerable",
+      "artist": "James Doyle Penrose",
+      "originalPhotoFile": "The last chapter by J. Doyle Penrose (1902).jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_last_chapter_by_J._Doyle_Penrose_(1902).jpg",
+      "physicalPaintingSource": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "W04-009",
+      "subject": "Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "originalPhotoFile": "The Dream of Saint Joseph.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
+      "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C32:guidoreni042jpg",
+      "subject": "Saint Joseph",
+      "artist": "Guido Reni (verify exact iconography)",
+      "originalPhotoFile": "Guido Reni 042.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "G26-005",
+      "subject": "Saint Michael Archangel",
+      "artist": "Raphael",
+      "originalPhotoFile": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+      "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060771",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+      "subject": "Saint Raphael Archangel",
+      "artist": "Attribution not recorded",
+      "originalPhotoFile": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "W38-009",
+      "subject": "Saint Anthony of Padua",
+      "artist": "Claudio Coello",
+      "originalPhotoFile": "Claudio coello-san antonio de padua.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-san_antonio_de_padua.jpg",
+      "physicalPaintingSource": "https://www.museodelprado.es/en/the-collection/art-work/saint-anthony-of-padua/94869cf9-4d95-443f-9372-4ad05440f8da",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 1,
+      "paintingId": "C35:jeannedarcenprisonbylouiscrignier1824jpg",
+      "subject": "Saint Joan of Arc",
+      "artist": "Attribution not established",
+      "originalPhotoFile": "Jeanne d'Arc en prison by Louis Crignier, 1824.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Jeanne_d'Arc_en_prison_by_Louis_Crignier%2C_1824.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W02-015",
+      "subject": "Saint Francis of Assisi",
+      "artist": "Francisco de Zurbarán",
+      "originalPhotoFile": "Francisco de Zurbarán 009.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_009.jpg",
+      "physicalPaintingSource": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W36-SNT-OT-13-5387d641cce6",
+      "subject": "Saint Dominic",
+      "artist": "Artist recorded in source file",
+      "originalPhotoFile": "Claudio coello-santo domingo.JPG",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W44-006",
+      "subject": "Saint Benedict",
+      "artist": "Jean Restout (attribution in file name)",
+      "originalPhotoFile": "Saint Benoît en prière de Jean Restout.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C35:saintagnesbycesaredandinijpg",
+      "subject": "Saint Agnes",
+      "artist": "Artist not certified",
+      "originalPhotoFile": "Saint Agnes by Cesare Dandini.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W38-001",
+      "subject": "Saint Agnes",
+      "artist": "Massimo Stanzione",
+      "originalPhotoFile": "Massimo Stanzione - Saint Agnes - Google Art Project.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
+      "physicalPaintingSource": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W42-NEW-002",
+      "subject": "Saint Agnes",
+      "artist": "Francesco Furini",
+      "originalPhotoFile": "Francesco Furini - Saint Agnes of Rome.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C32:hippolytefourniersaintcecilejpg",
+      "subject": "Saint Cecilia",
+      "artist": "Hippolyte Fournier",
+      "originalPhotoFile": "Hippolyte Fournier Saint Cécile.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+      "subject": "Saint Catherine of Alexandria",
+      "artist": "Claude Vignon",
+      "originalPhotoFile": "Claude Vignon - St Catherine refuses to sacrifice to the idols.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C32:gustavevanaisemagdaleneinchriststombjpg",
+      "subject": "Saint Mary Magdalene",
+      "artist": "Gustave Vanaise",
+      "originalPhotoFile": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W38-019",
+      "subject": "Saint Vincent de Paul",
+      "artist": "Juan Nepomuceno Herrera",
+      "originalPhotoFile": "San Vicente de Paul - Juan Nepomuceno.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent",
+      "subject": "Saint Anne",
+      "artist": "Artist not certified",
+      "originalPhotoFile": "La Educación de la Virgen (The Education of the Virgin), Workshop of Vicent López Portaña.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+      "subject": "Saint Rosalia",
+      "artist": "Anthony van Dyck",
+      "originalPhotoFile": "Saint Rosalie Interceding for the Plague-stricken of Palermo MET DT2728.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+      "physicalPaintingSource": null,
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "subject": "Saint Francis of Paola",
+      "artist": "Peter Paul Rubens",
+      "originalPhotoFile": "Peter Paul Rubens - The Miracles of Saint Francis of Paola - 91.PB.50 - J. Paul Getty Museum.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+      "physicalPaintingSource": null,
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "W04-009",
+      "subject": "Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "originalPhotoFile": "The Dream of Saint Joseph.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
+      "physicalPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "C32:guidoreni042jpg",
+      "subject": "Saint Joseph",
+      "artist": "Guido Reni (verify exact iconography)",
+      "originalPhotoFile": "Guido Reni 042.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "physicalPaintingSource": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-437542",
+      "subject": "Holy Souls in Purgatory",
+      "artist": "Workshop of Peter Paul Rubens",
+      "originalPhotoFile": "Saint Teresa of Ávila Interceding for Souls in Purgatory MET DT206354.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+      "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/437542",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "B02-HELP-ICON-BYZ",
+      "subject": "Our Lady of Perpetual Help",
+      "artist": "Byzantine iconographer (unknown)",
+      "originalPhotoFile": "Perpetual help original icon.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Perpetual_help_original_icon.jpg",
+      "physicalPaintingSource": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-437457",
+      "subject": "Baptism of Christ",
+      "artist": "Sebastiano Ricci",
+      "originalPhotoFile": "The Baptism of Christ MET DT9354.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_DT9354.jpg",
+      "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/437457",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "nga-50726",
+      "subject": "Temptation of Christ",
+      "artist": "Juan de Flandes",
+      "originalPhotoFile": "Juan de Flandes, The Temptation of Christ, c. 1500-1504, NGA 50726.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
+      "physicalPaintingSource": "https://www.nga.gov/artworks/50726-temptation-christ",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-702752",
+      "subject": "Samaritan Woman",
+      "artist": "Benedetto Luti",
+      "originalPhotoFile": "Benedetto Luti - Christ and the Woman of Samaria - 2015.645 - Metropolitan Museum of Art.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg",
+      "physicalPaintingSource": "https://www.metmuseum.org/art/collection/search/702752",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    },
+    {
+      "batch": 2,
+      "paintingId": "B02-FOOTWASH-TINTORETTO",
+      "subject": "Washing of the Feet",
+      "artist": "Jacopo Tintoretto",
+      "originalPhotoFile": "Tintoretto, Jacopo - Christ washing the Feet of the Disciples - National Gallery London.jpg",
+      "originalPhotoSource": "https://commons.wikimedia.org/wiki/File:Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg",
+      "physicalPaintingSource": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-disciples-feet",
+      "action": "FIND_BETTER_PHOTO_OF_THIS_EXACT_PHYSICAL_PAINTING",
+      "photoResearchStatus": "OPEN_NO_VERIFIED_UPGRADE",
+      "photoQualityStar": 4
+    }
+  ],
+  "threeStarAlternativeQueue": [
+    {
+      "batch": 1,
+      "paintingId": "louvre-crespi-inv259",
+      "subject": "Saint Anselm",
+      "artist": "Giuseppe Maria Crespi",
+      "existingPaintingSource": "https://collections.louvre.fr/ark:/53355/cl010064462",
+      "scoredFileIds": [
+        "The Immaculate Conception with St. Anselm and St. Martin - Giuseppe Maria Crespi - Louvre INV 259.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "G20-002",
+          "artist": "Unidentified painter",
+          "title": "Saint Anselme",
+          "source": "https://pop.culture.gouv.fr/notice/palissy/PM67000164",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "paintingId": "G30-007",
+      "subject": "Saint Peter Damian",
+      "artist": "Local school, artist unidentified",
+      "existingPaintingSource": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+      "scoredFileIds": [
+        "Pierodamiani2.JPG"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "zeri-45874-peter-damian",
+          "artist": "Venanzio l'Eremita",
+          "title": "San Pier Damiano",
+          "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "G30-006",
+          "artist": "Emilian school, artist unidentified",
+          "title": "San Pier Damiano",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "paintingId": "G31-001",
+      "subject": "Saint Peter Canisius",
+      "artist": "Anonymous Northern Netherlands",
+      "existingPaintingSource": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+      "scoredFileIds": [
+        "Saint Petrus Canisius.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "G20-003",
+          "artist": "Monogrammist AE von 1546",
+          "title": "Bildnis des Petrus Canisius",
+          "source": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "G30-012",
+          "artist": "Pierre Wuilleret",
+          "title": "Prédication de saint Pierre Canisius",
+          "source": "https://www.fr.ch/dfac/sbc/recensement-des-biens-culturels-meubles/recensement-des-meubles",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "paintingId": "G20-004",
+      "subject": "Saint Lawrence of Brindisi",
+      "artist": "Anonymous 17th century (?)",
+      "existingPaintingSource": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
+      "scoredFileIds": [
+        "LABRUZZI san lorenzo da brindisi.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "italy-banchero-0700031704",
+          "artist": "Angelo Giacinto Banchero",
+          "title": "San Lorenzo da Brindisi",
+          "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "paintingId": "C34:colognavenetachiesadisantamarianascenteilmiracolodellamulajp",
+      "subject": "Saint Anthony of Padua",
+      "artist": "Attribution not recorded",
+      "existingPaintingSource": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
+      "scoredFileIds": [
+        "Cologna Veneta, chiesa di Santa Maria Nascente - Il miracolo della mula.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "cma-150955",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "Saints Presenting a Devout Woman to the Virgin and Child",
+          "source": "https://clevelandart.org/art/1982.36",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "sevilla-murillo-vision-san-antonio",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "La visión de san Antonio de Padua",
+          "source": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "G17-012",
+          "artist": "Giuseppe Bazzani",
+          "title": "Saint Anthony of Padua with the Infant Christ",
+          "source": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "W07-006",
+          "artist": "Anthony van Dyck",
+          "title": "Madonna and Child with Saint Anthony of Padua",
+          "source": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova/",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "sdma-48-3-pittoni-anthony",
+          "artist": "Giovanni Battista Pittoni",
+          "title": "The Vision of Saint Anthony of Padua",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Vision_of_Saint_Anthony_of_Padua_painting_by_Giovanni_Battista_Pittoni,_San_Diego_Museum_of_Art.JPG",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "paintingId": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
+      "subject": "Saint Joan of Arc",
+      "artist": "Attribution not established",
+      "existingPaintingSource": "https://commons.wikimedia.org/wiki/File:'Head_of_Joan_of_Arc_in_Ecstasy'_(ca_1850)_by_Jean-Auguste-Dominique_Ingres_-_Museo_Soumaya_-_Mexico_2024.jpg",
+      "scoredFileIds": [
+        "'Head of Joan of Arc in Ecstasy' (ca 1850) by Jean-Auguste-Dominique Ingres - Museo Soumaya - Mexico 2024.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "Joan of Arc at Coronation of Charles VII",
+          "source": null,
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "G26-007",
+          "artist": "Eugène Carrière",
+          "title": "Joan of Arc Listening to the Voices",
+          "source": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "paintingId": "C32:antoniosicurezzacharityofstlaurencejpg",
+      "subject": "Saint Lawrence",
+      "artist": "Antonio Sicurezza",
+      "existingPaintingSource": "https://commons.wikimedia.org/wiki/File:Antonio_Sicurezza-Charity_of_St_Laurence.jpg",
+      "scoredFileIds": [
+        "Antonio Sicurezza-Charity of St Laurence.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": [
+        {
+          "id": "nga-106362",
+          "artist": "Jean Baptiste de Champaigne",
+          "title": "The Martyrdom of Saint Lawrence",
+          "source": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        },
+        {
+          "id": "G25-016",
+          "artist": "Valentin de Boulogne",
+          "title": "Martyrdom of Saint Lawrence",
+          "source": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
+          "verification": "W32_RESEARCH_ORIGINAL_NOT_USER_APPROVED"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-437849",
+      "subject": "Flight into Egypt",
+      "artist": "Cosmè Tura",
+      "existingPaintingSource": "https://www.metmuseum.org/art/collection/search/437849",
+      "scoredFileIds": [
+        "The Flight into Egypt MET DT7231.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-437457",
+      "subject": "Baptism of Christ",
+      "artist": "Sebastiano Ricci",
+      "existingPaintingSource": "https://www.metmuseum.org/art/collection/search/437457",
+      "scoredFileIds": [
+        "The Baptism of Christ MET 1981.186 1.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-436801",
+      "subject": "Wedding at Cana",
+      "artist": "Juan de Flandes",
+      "existingPaintingSource": "https://www.metmuseum.org/art/collection/search/436801",
+      "scoredFileIds": [
+        "Juan de Flandes - The Marriage Feast at Cana - WGA12055.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    },
+    {
+      "batch": 2,
+      "paintingId": "nga-12205",
+      "subject": "Healing the Paralytic",
+      "artist": "Netherlandish 16th Century",
+      "existingPaintingSource": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+      "scoredFileIds": [
+        "Netherlandish 16th Century, The Healing of the Paralytic, c. 1560-1590, NGA 12205.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    },
+    {
+      "batch": 2,
+      "paintingId": "met-436302",
+      "subject": "The Good Samaritan",
+      "artist": "Workshop of Domenico Fetti",
+      "existingPaintingSource": "https://www.metmuseum.org/art/collection/search/436302",
+      "scoredFileIds": [
+        "The Good Samaritan MET DP278746.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    },
+    {
+      "batch": 2,
+      "paintingId": "B02-PRODIGAL-REMBRANDT",
+      "subject": "The Prodigal Son",
+      "artist": "Rembrandt",
+      "existingPaintingSource": "https://commons.wikimedia.org/wiki/File:Rembrandt-The_return_of_the_prodigal_son.jpg",
+      "scoredFileIds": [
+        "Rembrandt-The return of the prodigal son.jpg",
+        "Rembrandt Harmensz. van Rijn - The Return of the Prodigal Son.jpg"
+      ],
+      "action": "KEEP_PROVISIONAL_PAINTING_AND_FIND_DIFFERENT_PAINTINGS",
+      "oldMatrixAlternatives": []
+    }
+  ]
+}
