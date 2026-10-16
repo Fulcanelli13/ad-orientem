@@ -1,0 +1,29 @@
+name: Sacred Art W90 Carmel Original Photo Discovery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - tools/calendar/research-sacred-art-w90-carmel-images.py
+      - .github/workflows/sacred-art-w90-carmel-research.yml
+permissions:
+  contents: read
+jobs:
+  archive-identification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4 requests
+      - name: Identify actual Lisieux original painting photo resources
+        run: python tools/calendar/research-sacred-art-w90-carmel-images.py
+      - name: Preserve institutional candidate details and photo-rights holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w90-carmel-image-discovery
+          path: artifacts/sacred-art-w90-carmel/
+          retention-days: 30
+          if-no-files-found: warn
