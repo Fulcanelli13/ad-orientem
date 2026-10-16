@@ -77,7 +77,7 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=158,'Acquisition-to-gallery linked photo coverage has regressed below verified 158-category source-linked closeout checkpoint');
+assert.ok(categoriesWithPhoto>=164,'Acquisition-to-gallery linked photo coverage has regressed below verified 164-category source-linked closeout checkpoint');
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
@@ -119,9 +119,28 @@ for(const [idx,originalId,candidateId] of [
  assert.ok(candidate.photos.length);
  assert.match(candidate.hold,/NO_HISTORIC|NO_SCORE/);
 }
-const holdCategories=[6,11,12,13,25,41,43,48,142,152];
+for(const [idx,work,accession] of [
+ [6,'W02-001','P001099'],[11,'ART-eter-aul-ubens-aint-atthias-postolate','P001653']
+]){
+ const w=at(idx,work);
+ assert.ok(w.photos.some(p=>p.status.includes(accession)),'Exact Prado Apostolate source missing '+idx);
+}
+for(const [idx,original,candidate] of [
+ [12,'ART-usepe-de-ibera-aint-aul-postolate','CLOSEOUT-RIBERA-PRADO-SAINT-PAUL-P001074'],
+ [13,'ART-usepe-de-ibera-aint-udas-haddeus','CLOSEOUT-RIBERA-PRADO-SAINT-JUDE-P001092'],
+ [142,'ART-eter-aul-ubens-ain-and-bel','CLOSEOUT-RUBENS-COURTAULD-P1978PG353-CAIN'],
+ [152,'ART-aravaggio-avid-with-the-ead-of-oliath','CLOSEOUT-CARAVAGGIO-BORGHESE-455-DAVID']
+]){
+ assert.equal(at(idx,original).oct12Selected,true,'Protected historical original not preserved '+idx);
+ const w=at(idx,candidate);
+ assert.equal(w.oct12Selected,undefined,'User choice incorrectly inherited by separate variant '+idx);
+ assert.equal(w.historicalArtRating,undefined,'Historic rating incorrectly inherited by separate variant '+idx);
+ assert.ok(w.photos.length,'Research alternative missing its own photo '+idx);
+ assert.match(w.hold,/NO_HUMAN|NO_RATING|NO_HISTORIC|NO_SCORE/,'Variant hold missing '+idx);
+}
+const holdCategories=[25,41,43,48];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
-assert.deepEqual(missingNow,holdCategories,'Ten true unmatched category holds must remain explicit, not silently substituted');
+assert.deepEqual(missingNow,holdCategories,'Four final unreconciled subject categories must remain explicit, not silently substituted');
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
