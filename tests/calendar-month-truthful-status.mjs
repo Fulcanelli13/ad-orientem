@@ -14,7 +14,7 @@ const adjudicated2027=JSON.parse(readFileSync("data/calendar/1962-ordo-correctio
 const observedFixture=(date,principalPath,principalRank,commPath,commRank=3)=>({
   date,status:"ready",
   day:{main:{id:principalPath.replace("/",":").toLowerCase()+":"+principalRank+":w"},
-    commemorations:commPath?[{id:commPath.replace("/",":").toLowerCase()+":"+commRank+":v"}]:[]},
+    commemorations:commPath?[{id:commPath.replace("/",":").replace(/^(tempora|sancti):/i,x=>x.toLowerCase())+":"+commRank+":v"}]:[]},
   proper:{status:"ready",data:{sourcePath:principalPath}}
 });
 for(const [date,principal,classNo,comm,commClass,clauses] of [
