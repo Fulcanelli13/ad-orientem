@@ -313,6 +313,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}
     node?.remove?.();win?.document?.body?.classList?.remove?.("aoSpiritualLifeOpen");
     state.view="list";state.lessonId=null;
+    if(returnToLearn&&win?.AO_LEARN_APP_V1?.status?.()?.externalReturn)return true;
     if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.restoreObservedChild?.()||win?.AO_LEARN_APP_V1?.open?.()});
     return true;
   }
