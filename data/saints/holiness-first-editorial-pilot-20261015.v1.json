@@ -73,6 +73,27 @@
       "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_20011122_ecclesia-in-oceania.html",
       "kind": "HOLY_SEE_DOCUMENT",
       "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN_NEVERS": {
+      "id": "BERN_NEVERS",
+      "title": "National Sanctuary of Saint Bernadette in Nevers — her life",
+      "url": "https://www.sainte-bernadette-soubirous-nevers.com/en/pages/bernadette-3/history/",
+      "kind": "OFFICIAL_SANCTUARY_BIOGRAPHY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG_VATICAN": {
+      "id": "MARG_VATICAN",
+      "title": "Vatican City State — Saint Margaret Mary Alacoque",
+      "url": "https://www.vaticanstate.va/en/component/content/article/october-16-saint-margaret-mary-alacoque.html?Itemid=216&catid=51",
+      "kind": "VATICAN_INSTITUTIONAL_BIOGRAPHY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER_MARIST": {
+      "id": "PETER_MARIST",
+      "title": "Marist Fathers — history of Saint Peter Chanel",
+      "url": "https://www.maristfathers.ie/about/history/our-founder-and-other-biographies",
+      "kind": "ORIGINAL_RELIGIOUS_INSTITUTE_HISTORY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
     }
   },
   "people": [
@@ -94,24 +115,24 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "She lived a hidden Carmelite life, practising charity and self-giving in everyday duties.",
-          "fr": "Elle a vécu une vie cachée au Carmel, pratiquant la charité et le don de soi dans les devoirs quotidiens.",
+          "en": "After her mother's death, Thérèse's family moved from Alençon to Lisieux. Drawn to contemplative life while still young, she appealed to Pope Leo XIII during a pilgrimage and entered the Carmel of Lisieux in 1888.",
+          "fr": "Après la mort de sa mère, la famille de Thérèse s'établit à Lisieux. Attirée très jeune par la vie contemplative, elle adressa sa demande au pape Léon XIII pendant un pèlerinage et entra au Carmel de Lisieux en 1888.",
           "source_ids": [
             "THER"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "She taught the Little Way of spiritual childhood, putting love and trust at the heart of Christian life.",
-          "fr": "Elle a enseigné la petite voie de l'enfance spirituelle, plaçant l'amour et la confiance au cœur de la vie chrétienne.",
+          "en": "Within the convent, she pursued holiness through patient charity in daily duties. She taught the novices her Little Way of spiritual childhood and supported missionaries through prayer and sacrifice rather than travelling abroad.",
+          "fr": "Au couvent, elle rechercha la sainteté par une charité patiente dans les devoirs quotidiens. Elle enseigna aux novices la petite voie de l'enfance spirituelle et soutint les missionnaires par sa prière et ses sacrifices, sans quitter le cloître.",
           "source_ids": [
             "THER"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "Her teaching inspired Christians worldwide; the Church proclaimed her a Doctor in 1997.",
-          "fr": "Son enseignement a inspiré des chrétiens du monde entier ; l'Église l'a proclamée docteur en 1997.",
+          "en": "Her autobiographical manuscripts explain trust in divine mercy amid illness and a painful trial of faith. She died in 1897, but her writings reached far beyond Carmel; John Paul II declared her a Doctor of the Church in 1997.",
+          "fr": "Ses manuscrits autobiographiques exposent sa confiance dans la miséricorde divine, au milieu de la maladie et d'une profonde épreuve de foi. Morte en 1897, elle exerça par ses écrits un rayonnement bien au-delà du Carmel ; Jean-Paul II la proclama docteur de l'Église en 1997.",
           "source_ids": [
             "THER"
           ]
@@ -224,26 +245,28 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "She remained steadfast despite poverty, sickness, scepticism and misunderstanding.",
-          "fr": "Elle est restée ferme malgré la pauvreté, la maladie, le scepticisme et l'incompréhension.",
+          "en": "Born into a miller's family at Lourdes, Bernadette experienced severe poverty as her family's circumstances declined. Her forthright testimony attracted enormous attention, but she never sought fame and faced persistent questioning and disbelief.",
+          "fr": "Née à Lourdes dans une famille de meuniers, Bernadette connut une grande pauvreté lorsque la situation familiale se dégrada. Son témoignage direct attira une attention immense, qu'elle ne rechercha jamais, et elle dut affronter interrogatoires et incrédulité.",
           "source_ids": [
-            "BERN"
+            "BERN",
+            "BERN_NEVERS"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "She reported the 1858 apparitions and faithfully relayed a message of prayer, penance and conversion.",
-          "fr": "Elle a témoigné des apparitions de 1858 et transmis fidèlement un message de prière, de pénitence et de conversion.",
+          "en": "In 1858 she reported eighteen encounters with the Virgin Mary at the grotto of Massabielle. She conveyed a call to prayer, penance and conversion while insisting that her duty was to report what she witnessed, not compel belief.",
+          "fr": "En 1858, elle rapporta dix-huit rencontres avec la Vierge Marie à la grotte de Massabielle. Elle transmit un appel à la prière, à la pénitence et à la conversion, tout en affirmant que sa tâche était de témoigner, non de contraindre autrui à croire.",
           "source_ids": [
-            "BERN"
+            "BERN",
+            "BERN_NEVERS"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "Her example of simplicity and faith continues to console pilgrims, especially those who suffer.",
-          "fr": "Son exemple de simplicité et de foi continue de réconforter les pèlerins, particulièrement ceux qui souffrent.",
+          "en": "In 1866 she joined the Sisters of Charity at Nevers, where she served in humble duties despite fragile health and recurring pain. Her subsequent hidden religious life, not only her Lourdes testimony, is central to the Church's recognition of her holiness.",
+          "fr": "En 1866, elle rejoignit les Sœurs de la Charité à Nevers, où elle assuma des services modestes malgré une santé fragile et de fréquentes souffrances. Sa vie religieuse cachée, autant que son témoignage de Lourdes, manifeste les vertus pour lesquelles l'Église la vénère.",
           "source_ids": [
-            "BERN"
+            "BERN_NEVERS"
           ]
         }
       ],
@@ -252,7 +275,8 @@
       ],
       "further_reading_source_ids": [
         "BERN",
-        "BERN_2007"
+        "BERN_2007",
+        "BERN_NEVERS"
       ],
       "place_links": [
         {
@@ -382,25 +406,28 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "She lived her Visitation vocation in a spirituality centred on Christ's love.",
-          "fr": "Elle a vécu sa vocation à la Visitation dans une spiritualité centrée sur l'amour du Christ.",
+          "en": "Margaret Mary entered the Visitation monastery of Paray-le-Monial in 1671. Prayer, obedience and the common duties of religious life formed the setting in which she deepened her devotion to Christ's love, particularly in the Eucharist.",
+          "fr": "Marguerite-Marie entra au monastère de la Visitation de Paray-le-Monial en 1671. La prière, l'obéissance et les travaux ordinaires de la vie religieuse furent le cadre dans lequel grandit sa dévotion à l'amour du Christ, particulièrement dans l'Eucharistie.",
           "source_ids": [
+            "MARG_VATICAN",
             "MARG1"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "She reported revelations at Paray-le-Monial concerning the love of the Heart of Jesus.",
-          "fr": "Elle a rapporté des révélations à Paray-le-Monial concernant l'amour du Cœur de Jésus.",
+          "en": "Between 1673 and 1675 she reported revelations of the Heart of Jesus, describing both His mercy and the indifference shown to His love. Such private revelations are recounted as her testimony, not as additions to public doctrine.",
+          "fr": "Entre 1673 et 1675, elle rapporta des révélations du Cœur de Jésus, évoquant sa miséricorde et l'indifférence des hommes envers son amour. Ces révélations privées sont présentées comme son témoignage spirituel, non comme des ajouts à la doctrine publique.",
           "source_ids": [
+            "MARG_VATICAN",
             "MARG2"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "With Claude La Colombière's support, her witness helped deepen and spread Sacred Heart devotion.",
-          "fr": "Avec l'appui de Claude La Colombière, son témoignage a contribué à approfondir et diffuser la dévotion au Sacré-Cœur.",
+          "en": "The Jesuit Claude La Colombière helped her discern and record these experiences. Despite difficulties within her community, she persevered; her witness contributed to the spread of the Holy Hour and the Feast of the Sacred Heart, subsequently recognised by the Church.",
+          "fr": "Le jésuite Claude La Colombière l'aida à discerner et à consigner ses expériences. Malgré les difficultés rencontrées dans sa communauté, elle persévéra ; son témoignage contribua à diffuser l'Heure sainte et la fête du Sacré-Cœur, reconnue ensuite par l'Église.",
           "source_ids": [
+            "MARG_VATICAN",
             "MARG1"
           ]
         }
@@ -411,7 +438,8 @@
       ],
       "further_reading_source_ids": [
         "MARG1",
-        "MARG2"
+        "MARG2",
+        "MARG_VATICAN"
       ],
       "place_links": [
         {
@@ -518,24 +546,24 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "He persevered in priestly service despite serious illness, false accusation and imprisonment.",
-          "fr": "Il a persévéré dans son ministère malgré une grave maladie, une accusation injuste et la prison.",
+          "en": "A Jesuit priest and preacher, Claude was sent to Paray-le-Monial in 1675. There he became spiritual director to Margaret Mary Alacoque, carefully discerning her reported experiences and encouraging her to write them down and remain faithful to her community.",
+          "fr": "Prêtre et prédicateur jésuite, Claude fut envoyé à Paray-le-Monial en 1675. Il y devint le directeur spirituel de Marguerite-Marie Alacoque, examina avec discernement ses expériences rapportées et l'encouragea à les écrire, tout en restant fidèle à sa communauté.",
           "source_ids": [
             "CLAUDE"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "He accompanied Margaret Mary Alacoque and supported her mission concerning the Sacred Heart.",
-          "fr": "Il a accompagné Marguerite-Marie Alacoque et soutenu sa mission relative au Sacré-Cœur.",
+          "en": "Appointed preacher to the Duchess of York, he travelled to London in 1676. There he instructed those seeking reconciliation with the Catholic Church, until a false accusation during the Popish Plot led to imprisonment and expulsion from England.",
+          "fr": "Nommé prédicateur de la duchesse d'York, il partit à Londres en 1676. Il y instruisit des personnes désireuses de revenir à l'Église catholique, jusqu'à ce qu'une fausse accusation lors du complot papiste provoque son emprisonnement puis son expulsion d'Angleterre.",
           "source_ids": [
             "CLAUDE"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "He led souls toward God along a path of trust, Gospel love and mercy.",
-          "fr": "Il a conduit les âmes vers Dieu par la confiance, l'amour évangélique et la miséricorde.",
+          "en": "His declining health did not extinguish his priestly zeal or confidence in Christ's mercy. Returning to France, he eventually died at Paray-le-Monial in 1682. His writings and spiritual counsel helped others discover the Sacred Heart as a sign of divine love.",
+          "fr": "Sa santé déclinante n'éteignit ni son zèle sacerdotal ni sa confiance dans la miséricorde du Christ. Revenu en France, il mourut finalement à Paray-le-Monial en 1682. Ses écrits et ses conseils spirituels aidèrent d'autres fidèles à découvrir le Sacré-Cœur comme signe de l'amour divin.",
           "source_ids": [
             "CLAUDE"
           ]
@@ -640,26 +668,29 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "He served amid hardship, isolation and opposition with remarkable patience.",
-          "fr": "Il a servi au milieu des épreuves, de l'isolement et de l'opposition avec une patience remarquable.",
+          "en": "Born in France, Peter Chanel became a priest in 1827 and later joined the Society of Mary. He sailed for Oceania in 1836 with the first group of Marist missionaries, leaving behind familiar surroundings for a demanding apostolate.",
+          "fr": "Né en France, Pierre Chanel devint prêtre en 1827 puis rejoignit la Société de Marie. En 1836, il partit pour l'Océanie avec le premier groupe de missionnaires maristes, quittant son pays pour un apostolat exigeant et incertain.",
           "source_ids": [
-            "PETER"
+            "PETER",
+            "PETER_MARIST"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "He was killed in 1841 while carrying out his missionary vocation on Futuna.",
-          "fr": "Il a été tué en 1841 dans l'exercice de sa vocation missionnaire à Futuna.",
+          "en": "On the island of Futuna, his missionary work unfolded amid isolation, cultural distance and opposition. He remained patient and committed to the people among whom he lived rather than abandoning the mission when his efforts seemed to bear little fruit.",
+          "fr": "Sur l'île de Futuna, sa mission se déroula dans l'isolement, les difficultés de langue et de culture et l'opposition. Il demeura patient et attaché aux habitants qu'il servait, sans abandonner son œuvre lorsque les résultats paraissaient limités.",
           "source_ids": [
-            "PETER"
+            "PETER",
+            "PETER_MARIST"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "His witness inspired the growing Church in Oceania and its missionary spirit.",
-          "fr": "Son témoignage a inspiré l'Église naissante d'Océanie et son esprit missionnaire.",
+          "en": "He was killed on 28 April 1841 while serving on Futuna and was later canonized by Pius XII in 1954. Venerated as the first martyr of Oceania, he embodies a missionary witness marked by perseverance rather than worldly success.",
+          "fr": "Il fut tué le 28 avril 1841 au cours de sa mission à Futuna et canonisé par Pie XII en 1954. Vénéré comme premier martyr d'Océanie, il incarne un témoignage missionnaire marqué par la persévérance plutôt que par le succès apparent.",
           "source_ids": [
-            "PETER"
+            "PETER",
+            "PETER_MARIST"
           ]
         }
       ],
@@ -668,7 +699,8 @@
       ],
       "further_reading_source_ids": [
         "PETER",
-        "PETER_OCEANIA"
+        "PETER_OCEANIA",
+        "PETER_MARIST"
       ],
       "place_links": [
         {
@@ -762,24 +794,24 @@
       "biography_facts": [
         {
           "kind": "holy_witness",
-          "en": "He left his medical career to become a priest and serve people in need.",
-          "fr": "Il a quitté sa carrière de médecin pour devenir prêtre et servir les personnes dans le besoin.",
+          "en": "Jacques-Désiré Laval first practised medicine in France, but eventually left that profession to prepare for the priesthood. As a parish priest in Normandy he shared his possessions with those in need, showing the practical charity that would mark his mission.",
+          "fr": "Jacques-Désiré Laval exerça d'abord la médecine en France, puis quitta cette profession pour se préparer au sacerdoce. Curé en Normandie, il partageait ses biens avec les nécessiteux, manifestant déjà la charité concrète qui caractériserait sa mission.",
           "source_ids": [
             "LAVAL"
           ]
         },
         {
           "kind": "concrete_action",
-          "en": "He placed the evangelization and dignity of the poorest at the heart of his missionary work in Mauritius.",
-          "fr": "Il a placé l'évangélisation et la dignité des plus pauvres au cœur de son œuvre missionnaire à Maurice.",
+          "en": "He arrived in Mauritius as a missionary in the nineteenth century and dedicated twenty-three years to people facing poverty and exclusion, especially the formerly enslaved population. He taught the faith, listened patiently and also attended to material and medical suffering.",
+          "fr": "Arrivé à Maurice comme missionnaire au XIXe siècle, il consacra vingt-trois ans aux personnes vivant dans la pauvreté et l'exclusion, particulièrement à celles issues de l'esclavage. Il enseigna la foi, écouta avec patience et se préoccupa aussi des souffrances matérielles et médicales.",
           "source_ids": [
             "LAVAL"
           ]
         },
         {
           "kind": "spiritual_legacy",
-          "en": "John Paul II beatified him in 1979, praising his heroic virtues and missionary witness.",
-          "fr": "Jean-Paul II l'a béatifié en 1979, saluant ses vertus héroïques et son témoignage missionnaire.",
+          "en": "His ministry sought the dignity and spiritual life of those neglected by society, through personal visits, catechesis and sustained pastoral care. John Paul II beatified him in 1979; he remains Blessed, not canonized, and is especially venerated in Mauritius.",
+          "fr": "Son ministère défendit la dignité et la vie spirituelle des personnes délaissées par la société, par des visites, la catéchèse et une présence pastorale constante. Jean-Paul II le béatifia en 1979 ; il demeure bienheureux, non canonisé, et particulièrement vénéré à Maurice.",
           "source_ids": [
             "LAVAL"
           ]
