@@ -101,7 +101,7 @@
       "code": "COMMONS_VARIANTS_AND_IDS",
       "kind": "IDENTITY_HOLD",
       "status": "OPEN",
-      "nextAction": "Resolve 11 incomplete Common candidate sources by exact source-owned inheritance and correct oration variants. Keep the 3 ambiguous Eastertide website entries outside canonical printed-family counts. Continue vetting legal/edition source constraints.",
+      "nextAction": "Reconcile ten source-partial Commons with exact variant and language evidence; most lack source-owned target Latin and cannot be safely filled by simple donor borrowing. Retain three ambiguous internet Eastertide aliases. Do not merge any modern saint Mass automatically.",
       "blocksRuntimeApproval": true,
       "partialProgress": {
         "asOf": "2026-10-16",
@@ -128,9 +128,13 @@
         "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
         "furtherCommonCandidates": 28,
         "ambiguousUnmatchedIndexRows": 3,
-        "sourcePathsWithCompleteValidatedCore": 24,
-        "sourcePathCandidatesRequiringInheritance": 11,
-        "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json"
+        "sourcePathsWithCompleteValidatedCore": 25,
+        "sourcePathCandidatesRequiringInheritance": 10,
+        "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "paschalC2apCompletedFromSource": true,
+        "paschalC2apSourceOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
+        "exactDonorPartialMatches": 18,
+        "donorEvidence": "data/calendar/p1-partial-common-donor-evidence.v1.json"
       }
     },
     {
@@ -171,7 +175,17 @@
       "kind": "TEXT_HOLD",
       "status": "OPEN",
       "nextAction": "Verify seasonal chants and variant texts and alternatives.",
-      "blocksRuntimeApproval": true
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "paschalAlternateC2apMassSourceProven": "Commune/C2p",
+        "differentThreeOrationsFrom": "Commune/C2a",
+        "languageCoverageAfterComposition": [
+          "la",
+          "en",
+          "fr"
+        ],
+        "sourceTextReadyNotLiturgicallyAuthorized": true
+      }
     },
     {
       "id": "P1-E15",
@@ -285,15 +299,19 @@
   ],
   "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
   "appCommonSourceProgress": {
-    "canonicalAppSourceComplete": 24,
+    "canonicalAppSourceComplete": 25,
     "originalSevenComplete": 7,
     "newDirectComplete": 17,
-    "partialAppSourceCandidates": 11,
+    "partialAppSourceCandidates": 10,
     "ambiguousWebVariants": 3,
     "totalIndexRows": 38,
     "doctorC5aSourceInheritanceVerified": true,
     "sharedDoctorComponents": 9,
     "sharedENFRSectionsRecovered": 18,
-    "reviewGateOpen": true
+    "reviewGateOpen": true,
+    "paschalAlternativeC2apSourceVerified": true,
+    "paschalAlternativeBaseOwner": "Commune/C2p",
+    "paschalAlternativeOrationOwner": "Commune/C2a",
+    "paschalAlternativeBorrowedLanguageSections": 23
   }
 }
