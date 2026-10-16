@@ -1,4 +1,7 @@
 # Ad Orientem — Bilingual Bible witness collation and offline story-review tool
+
+> **Current corrected reviewer — v2 (16 October 2026):** The earlier v1 HTML incorrectly exposed only Challoner English and Crampon French. The already agreed English **Catholic Public Domain Version (CPDV)** contemporary alternative is restored as the first review display. Use `data/explore/biblical-story-scripture-review-offline.v2.html` and `data/explore/biblical-story-scripture-three-edition-witness-collation.v2.json`. Challoner remains the traditional English comparison, Crampon remains the French default and Clementine Vulgate remains the Latin reference in the product catalogue. **The product edition roles have not been changed.** v1 is retained as historical research only.
+
 **16 October 2026 | 14-story first cohort | research-only; not certified or published**
 
 ## Outcome
