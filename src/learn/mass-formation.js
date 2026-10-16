@@ -74,7 +74,7 @@ function stageHtml(win,data,stage){
 }
 
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
-  const state={data:null,view:"list",stageId:null,returnFocus:null,loading:null};
+  const state={data:null,view:"list",stageId:null,returnFocus:null,returnToSource:null,loading:null};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   async function ensureData(){
     if(state.data)return state.data;
@@ -88,6 +88,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button");if(!target)return;
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
+      if(target.matches("[data-ao-mf-back]")&&state.returnToSource){event.preventDefault();close();return;}
       if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();state.view="list";state.stageId=null;render();return;}
       if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
@@ -106,8 +107,12 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     return true;
   }
   async function open(opts={}){
+    // Only a deliberate Scripture journey receives a return receipt.
+    // Ordinary Learn navigation retains its original close/back contract.
+    state.returnToSource=typeof opts.onCloseReturn==="function"?opts.onCloseReturn:null;
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
     try{await ensureData()}catch(error){
+      state.returnToSource=null;
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
       return false;
     }
@@ -119,7 +124,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    const sourceReturn=state.returnToSource;state.returnToSource=null;
+    if(sourceReturn)queueMicrotask(()=>{try{sourceReturn()}catch(error){win.console?.error?.("Mass study Scripture return failed",error)}});
+    else if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
