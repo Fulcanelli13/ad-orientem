@@ -1,4 +1,5 @@
 import { loadDirectoryDataset } from "./data-service.js";
+import { ACTIVE_SAINTS_CHANNEL, isResearchSaintsChannel, applySaintsReleaseBoundary } from "./saints-release-policy.js";
 
 function safeArray(value){return Array.isArray(value)?value:[];}
 async function fetchJson(url,{fetchImpl=fetch,optional=false}={}){
@@ -20,6 +21,11 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   geography:moduleUrl("../../data/geography/seed-registry.v1.json"),
   relatedPlaces:moduleUrl("../../data/geography/related-places.v1.json"),
   biblePlaces:moduleUrl("../../data/explore/bible-places-compact.v1.json"),
+  saintsPilot:moduleUrl("../../data/saints/holiness-first-editorial-pilot-20261015.v1.json"),
+  saintsDoctors:moduleUrl("../../data/saints/holiness-first-eight-doctors-research-20261015.v1.json"),
+  saintsVocations:moduleUrl("../../data/saints/holiness-first-sixteen-cross-vocation-research.v1.json"),
+  saintsOwnerIndex:moduleUrl("../../data/saints/read-only-calendar-art-index-20261015.v1.json"),
+  saintsCalendarBridge:moduleUrl("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
@@ -35,8 +41,9 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   illustratedFrenchR67:moduleUrl("../../data/shrines/illustrated-place-guides-france-r67.v1.json"),
 });
 
-export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces]=await Promise.all([
+export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
+  const research=isResearchSaintsChannel(saintsChannel);
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -54,10 +61,20 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchGuides,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchR67,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.biblePlaces,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.saintsPilot,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.saintsCalendarBridge,{fetchImpl,optional:true}),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsDoctors,{fetchImpl,optional:true}):Promise.resolve(null),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsVocations,{fetchImpl,optional:true}):Promise.resolve(null),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsOwnerIndex,{fetchImpl,optional:true}):Promise.resolve(null),
   ]);
-  return Object.freeze({
+  return applySaintsReleaseBoundary({
     directory,
     biblePlaces:Object.freeze({entries:safeArray(biblePlaces?.entries)}),
+    saints:saintsPilot?.schema==="ao.saints.holiness-first-editorial-pilot.v1"&&saintsPilot?.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE"?saintsPilot:null,
+    saintsDoctors:saintsDoctors?.publication==="RESEARCH_ONLY_NO_APP_VISIBILITY"?saintsDoctors:null,
+    saintsVocations:saintsVocations?.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE"?saintsVocations:null,
+    saintsOwnerIndex:saintsOwnerIndex?.schema==="ao.saints.read-only-owner-index-20261015.v1"?saintsOwnerIndex:null,
+    saintsCalendarBridge:saintsCalendarBridge?.schema==="ao.saints.parallel-owner-identity-bridge.v1" && saintsCalendarBridge?.status==="EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES"?saintsCalendarBridge:null,
     geography:Object.freeze({
       geoAreas:safeArray(geography?.geoAreas),
       places:safeArray(geography?.places),
@@ -91,5 +108,5 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       sources:safeArray(novenaBridge?.sources),
       researchStatus:novenaBridge?.research_status??null,
     }),
-  });
+  },saintsChannel);
 }

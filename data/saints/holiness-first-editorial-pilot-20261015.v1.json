@@ -1,0 +1,902 @@
+{
+  "schema": "ao.saints.holiness-first-editorial-pilot.v1",
+  "publication": "RESEARCH_ONLY_NOT_APP_VISIBLE",
+  "guiding_question": "Why is this person honoured as holy? Answer before offering dates, writings or geography.",
+  "exclusions": [
+    "No duplicate shrine/place owner",
+    "No unverified new pins",
+    "No copied full hagiographies",
+    "No unapproved art",
+    "No false canonization of Blesseds",
+    "No promotion of modern saints into the 1962 sanctoral"
+  ],
+  "sources": {
+    "THER": {
+      "id": "THER",
+      "title": "John Paul II, Divini Amoris Scientia (1997)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN": {
+      "id": "BERN",
+      "title": "Benedict XVI, Lourdes homily (2008)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080913_lourdes-processione.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG1": {
+      "id": "MARG1",
+      "title": "Pius XII, Haurietis aquas, §95 (1956)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15051956_haurietis-aquas.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG2": {
+      "id": "MARG2",
+      "title": "Francis, Dilexit nos, §§119–120 (2024)",
+      "url": "https://www.vatican.va/content/francesco/en/encyclicals/documents/20241024-enciclica-dilexit-nos.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "CLAUDE": {
+      "id": "CLAUDE",
+      "title": "Holy See, biography of Claude La Colombière (1992)",
+      "url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19920531_la-colombiere_en.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER": {
+      "id": "PETER",
+      "title": "John Paul II, address to Pacific bishops (1986)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1986/november/documents/hf_jp-ii_spe_19861121_vescovi-fiji.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "LAVAL": {
+      "id": "LAVAL",
+      "title": "John Paul II, beatification homily of Jacques-Désiré Laval (1979)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/1979/documents/hf_jp-ii_hom_19790429_beat-laval-coll.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN_2007": {
+      "id": "BERN_2007",
+      "title": "Benedict XVI, Angelus on the Lourdes apparition (11 February 2007)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/angelus/2007/documents/hf_ben-xvi_ang_20070211.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER_OCEANIA": {
+      "id": "PETER_OCEANIA",
+      "title": "John Paul II, Ecclesia in Oceania, §7 (2001)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_20011122_ecclesia-in-oceania.html",
+      "kind": "HOLY_SEE_DOCUMENT",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "BERN_NEVERS": {
+      "id": "BERN_NEVERS",
+      "title": "National Sanctuary of Saint Bernadette in Nevers — her life",
+      "url": "https://www.sainte-bernadette-soubirous-nevers.com/en/pages/bernadette-3/history/",
+      "kind": "OFFICIAL_SANCTUARY_BIOGRAPHY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "MARG_VATICAN": {
+      "id": "MARG_VATICAN",
+      "title": "Vatican City State — Saint Margaret Mary Alacoque",
+      "url": "https://www.vaticanstate.va/en/component/content/article/october-16-saint-margaret-mary-alacoque.html?Itemid=216&catid=51",
+      "kind": "VATICAN_INSTITUTIONAL_BIOGRAPHY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    },
+    "PETER_MARIST": {
+      "id": "PETER_MARIST",
+      "title": "Marist Fathers — history of Saint Peter Chanel",
+      "url": "https://www.maristfathers.ie/about/history/our-founder-and-other-biographies",
+      "kind": "ORIGINAL_RELIGIOUS_INSTITUTE_HISTORY",
+      "rights": "EXTERNAL_LINK_ONLY_NO_TEXT_REPRODUCTION"
+    }
+  },
+  "people": [
+    {
+      "saint_id": "saint:therese-of-lisieux",
+      "legacy_source_name": "Saint Thérèse of Lisieux",
+      "display_name": {
+        "en": "Saint Thérèse of Lisieux",
+        "fr": "Sainte Thérèse de Lisieux"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "She showed that everyone can grow in holiness through ordinary acts done with extraordinary love and confidence in God.",
+        "fr": "Elle a montré que chacun peut grandir en sainteté par des actes ordinaires accomplis avec un amour et une confiance extraordinaires en Dieu.",
+        "source_ids": [
+          "THER"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "After her mother's death, Thérèse's family moved from Alençon to Lisieux. Drawn to contemplative life while still young, she appealed to Pope Leo XIII during a pilgrimage and entered the Carmel of Lisieux in 1888.",
+          "fr": "Après la mort de sa mère, la famille de Thérèse s'établit à Lisieux. Attirée très jeune par la vie contemplative, elle adressa sa demande au pape Léon XIII pendant un pèlerinage et entra au Carmel de Lisieux en 1888.",
+          "source_ids": [
+            "THER"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "Within the convent, she pursued holiness through patient charity in daily duties. She taught the novices her Little Way of spiritual childhood and supported missionaries through prayer and sacrifice rather than travelling abroad.",
+          "fr": "Au couvent, elle rechercha la sainteté par une charité patiente dans les devoirs quotidiens. Elle enseigna aux novices la petite voie de l'enfance spirituelle et soutint les missionnaires par sa prière et ses sacrifices, sans quitter le cloître.",
+          "source_ids": [
+            "THER"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "Her autobiographical manuscripts explain trust in divine mercy amid illness and a painful trial of faith. She died in 1897, but her writings reached far beyond Carmel; John Paul II declared her a Doctor of the Church in 1997.",
+          "fr": "Ses manuscrits autobiographiques exposent sa confiance dans la miséricorde divine, au milieu de la maladie et d'une profonde épreuve de foi. Morte en 1897, elle exerça par ses écrits un rayonnement bien au-delà du Carmel ; Jean-Paul II la proclama docteur de l'Église en 1997.",
+          "source_ids": [
+            "THER"
+          ]
+        }
+      ],
+      "source_ids": [
+        "THER"
+      ],
+      "further_reading_source_ids": [
+        "THER"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:basilique-sainte-therese-lisieux",
+          "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:FR:carmel-lisieux",
+          "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-carmel-lisieux"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [
+          {
+            "code": "DOCTOR_OF_CHURCH",
+            "basis": "FORMAL_PAPAL_PROCLAMATION",
+            "source_ids": [
+              "THER"
+            ]
+          }
+        ],
+        "roles": [
+          {
+            "code": "CONTEMPLATIVE_RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "THER"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "THER"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1873-01-02",
+          "place": {
+            "en": "Alençon, France",
+            "fr": "Alençon, France"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_19101997_stherese_en.html"
+        },
+        "death": {
+          "date": "1897-09-30",
+          "place": {
+            "en": "Lisieux, France",
+            "fr": "Lisieux, France"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/documents/ns_lit_doc_19101997_stherese_en.html"
+        },
+        "celebration": {
+          "month_day": "10-01",
+          "scope": "CURRENT_ROMAN_CALENDAR",
+          "label": {
+            "en": "Current Roman calendar",
+            "fr": "Calendrier romain actuel"
+          },
+          "source_url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110406.html"
+        }
+      }
+    },
+    {
+      "saint_id": "saint:bernadette-soubirous",
+      "legacy_source_name": "Saint Bernadette Soubirous",
+      "display_name": {
+        "en": "Saint Bernadette Soubirous",
+        "fr": "Sainte Bernadette Soubirous"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "Her humble, persevering faith through poverty and rejection made her a witness to the call to prayer and conversion at Lourdes.",
+        "fr": "Sa foi humble et persévérante, au milieu de la pauvreté et du rejet, a fait d'elle un témoin de l'appel à la prière et à la conversion à Lourdes.",
+        "source_ids": [
+          "BERN"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "Born into a miller's family at Lourdes, Bernadette experienced severe poverty as her family's circumstances declined. Her forthright testimony attracted enormous attention, but she never sought fame and faced persistent questioning and disbelief.",
+          "fr": "Née à Lourdes dans une famille de meuniers, Bernadette connut une grande pauvreté lorsque la situation familiale se dégrada. Son témoignage direct attira une attention immense, qu'elle ne rechercha jamais, et elle dut affronter interrogatoires et incrédulité.",
+          "source_ids": [
+            "BERN",
+            "BERN_NEVERS"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "In 1858 she reported eighteen encounters with the Virgin Mary at the grotto of Massabielle. She conveyed a call to prayer, penance and conversion while insisting that her duty was to report what she witnessed, not compel belief.",
+          "fr": "En 1858, elle rapporta dix-huit rencontres avec la Vierge Marie à la grotte de Massabielle. Elle transmit un appel à la prière, à la pénitence et à la conversion, tout en affirmant que sa tâche était de témoigner, non de contraindre autrui à croire.",
+          "source_ids": [
+            "BERN",
+            "BERN_NEVERS"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "In 1866 she joined the Sisters of Charity at Nevers, where she served in humble duties despite fragile health and recurring pain. Her subsequent hidden religious life, not only her Lourdes testimony, is central to the Church's recognition of her holiness.",
+          "fr": "En 1866, elle rejoignit les Sœurs de la Charité à Nevers, où elle assuma des services modestes malgré une santé fragile et de fréquentes souffrances. Sa vie religieuse cachée, autant que son témoignage de Lourdes, manifeste les vertus pour lesquelles l'Église la vénère.",
+          "source_ids": [
+            "BERN_NEVERS"
+          ]
+        }
+      ],
+      "source_ids": [
+        "BERN"
+      ],
+      "further_reading_source_ids": [
+        "BERN",
+        "BERN_2007",
+        "BERN_NEVERS"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:espace-bernadette-nevers",
+          "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PIL-BULK-FR-espace-bernadette-nevers"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+          "shrine_id": "shrine:FR:lourdes-our-lady",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-LOURDES-CONTACT",
+            "SHR-LOURDES-PILGRIMAGE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:US:lourdes-grotto-emmitsburg",
+          "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-GROTTO-LOURDES-EMMITSBURG",
+            "PIL-GROTTO-LOURDES-FEAST"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        },
+        {
+          "place_id": "place:US:lourdes-litchfield",
+          "shrine_id": "shrine:US:lourdes-litchfield",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-LOURDES-LITCHFIELD",
+            "PIL-LOURDES-LITCHFIELD"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "BERN"
+            ]
+          },
+          {
+            "code": "VISIONARY_WITNESS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "BERN_2007"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "event_id": "event:bernadette:1858-lourdes",
+          "kind": "MARIAN_APPARITION_ACCOUNT",
+          "attribution": "PERSONAL_REPORTED_EXPERIENCE",
+          "subject": "BLESSED_VIRGIN_MARY",
+          "status": "ACKNOWLEDGED_IN_HOLY_SEE_DOCUMENT_NOT_PROOF_OF_EVERY_DETAIL",
+          "en": "Bernadette reported appearances of the Blessed Virgin Mary at Lourdes beginning in 1858. This is an apparition testimony—not a claim that Bernadette herself performed the cures reported at the shrine.",
+          "fr": "Bernadette a rapporté des apparitions de la Sainte Vierge à Lourdes à partir de 1858. Il s'agit d'un témoignage d'apparitions, non de l'affirmation qu'elle aurait personnellement accompli les guérisons rapportées au sanctuaire.",
+          "source_ids": [
+            "BERN_2007"
+          ]
+        }
+      ],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1844-01-07",
+          "place": {
+            "en": "Lourdes, France",
+            "fr": "Lourdes, France"
+          },
+          "source_url": "https://catalogue.bnf.fr/ark:/12148/cb11891469v"
+        },
+        "death": {
+          "date": "1879-04-16",
+          "place": {
+            "en": "Nevers, France",
+            "fr": "Nevers, France"
+          },
+          "source_url": "https://catalogue.bnf.fr/ark:/12148/cb11891469v"
+        },
+        "celebration": {
+          "month_day": "04-16",
+          "scope": "SAINT_DAY_NOT_1962_CERTIFIED",
+          "label": {
+            "en": "Saint's memorial (not certified in the universal 1962 calendar)",
+            "fr": "Mémoire de la sainte (non certifiée au calendrier universel de 1962)"
+          },
+          "source_url": "https://www2.bistum-augsburg.de/heilige-des-tages/kalender/bernadette-soubirous_id754555"
+        }
+      }
+    },
+    {
+      "saint_id": "saint:margaret-mary-alacoque",
+      "legacy_source_name": "Saint Margaret Mary Alacoque",
+      "display_name": {
+        "en": "Saint Margaret Mary Alacoque",
+        "fr": "Sainte Marguerite-Marie Alacoque"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "Her life of prayer, love and reparation helped renew devotion to the Sacred Heart of Jesus.",
+        "fr": "Sa vie de prière, d'amour et de réparation a contribué au renouveau de la dévotion au Sacré-Cœur de Jésus.",
+        "source_ids": [
+          "MARG1",
+          "MARG2"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "Margaret Mary entered the Visitation monastery of Paray-le-Monial in 1671. Prayer, obedience and the common duties of religious life formed the setting in which she deepened her devotion to Christ's love, particularly in the Eucharist.",
+          "fr": "Marguerite-Marie entra au monastère de la Visitation de Paray-le-Monial en 1671. La prière, l'obéissance et les travaux ordinaires de la vie religieuse furent le cadre dans lequel grandit sa dévotion à l'amour du Christ, particulièrement dans l'Eucharistie.",
+          "source_ids": [
+            "MARG_VATICAN",
+            "MARG1"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "Between 1673 and 1675 she reported revelations of the Heart of Jesus, describing both His mercy and the indifference shown to His love. Such private revelations are recounted as her testimony, not as additions to public doctrine.",
+          "fr": "Entre 1673 et 1675, elle rapporta des révélations du Cœur de Jésus, évoquant sa miséricorde et l'indifférence des hommes envers son amour. Ces révélations privées sont présentées comme son témoignage spirituel, non comme des ajouts à la doctrine publique.",
+          "source_ids": [
+            "MARG_VATICAN",
+            "MARG2"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "The Jesuit Claude La Colombière helped her discern and record these experiences. Despite difficulties within her community, she persevered; her witness contributed to the spread of the Holy Hour and the Feast of the Sacred Heart, subsequently recognised by the Church.",
+          "fr": "Le jésuite Claude La Colombière l'aida à discerner et à consigner ses expériences. Malgré les difficultés rencontrées dans sa communauté, elle persévéra ; son témoignage contribua à diffuser l'Heure sainte et la fête du Sacré-Cœur, reconnue ensuite par l'Église.",
+          "source_ids": [
+            "MARG_VATICAN",
+            "MARG1"
+          ]
+        }
+      ],
+      "source_ids": [
+        "MARG1",
+        "MARG2"
+      ],
+      "further_reading_source_ids": [
+        "MARG1",
+        "MARG2",
+        "MARG_VATICAN"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "RELIGIOUS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG1"
+            ]
+          },
+          {
+            "code": "MYSTIC",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          },
+          {
+            "code": "VISIONARY_WITNESS",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [
+        {
+          "event_id": "event:margaret-mary:paray-sacred-heart",
+          "kind": "CHRIST_APPARITION_ACCOUNT",
+          "attribution": "PERSONAL_REPORTED_EXPERIENCE",
+          "subject": "JESUS_CHRIST",
+          "status": "ACCOUNT_DESCRIBED_WITH_DISCERNMENT_IN_MAGISTERIAL_DOCUMENT",
+          "en": "Margaret Mary described appearances of Christ at Paray-le-Monial between 1673 and 1675, centred on his Sacred Heart. The Church discusses the account while cautioning that not every detail of a private experience must be accepted.",
+          "fr": "Marguerite-Marie a relaté des apparitions du Christ à Paray-le-Monial entre 1673 et 1675, centrées sur son Sacré-Cœur. L'Église en présente le récit tout en rappelant que chaque détail d'une expérience privée ne doit pas nécessairement être accepté.",
+          "source_ids": [
+            "MARG2"
+          ]
+        }
+      ],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1647-07-22",
+          "place": {
+            "en": "Lhautecour, Burgundy, France",
+            "fr": "Lhautecour, Bourgogne, France"
+          },
+          "source_url": "https://www.newadvent.org/cathen/09653a.htm"
+        },
+        "death": {
+          "date": "1690-10-17",
+          "place": {
+            "en": "Paray-le-Monial, France",
+            "fr": "Paray-le-Monial, France"
+          },
+          "source_url": "https://www.newadvent.org/cathen/09653a.htm"
+        },
+        "celebration": {
+          "month_day": "10-16",
+          "scope": "CURRENT_ROMAN_CALENDAR",
+          "label": {
+            "en": "Current Roman calendar",
+            "fr": "Calendrier romain actuel"
+          },
+          "source_url": "https://eglise.catholique.fr/saint-du-jour/16/10/sainte-marguerite-marie-alacoque/"
+        }
+      }
+    },
+    {
+      "saint_id": "saint:claude-la-colombiere",
+      "legacy_source_name": "Saint Claude La Colombière",
+      "display_name": {
+        "en": "Saint Claude La Colombière",
+        "fr": "Saint Claude La Colombière"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "His Jesuit fidelity and pastoral charity, tested through imprisonment and illness, exemplified trust in Christ's merciful love.",
+        "fr": "Sa fidélité de jésuite et sa charité pastorale, éprouvées par la prison et la maladie, ont manifesté la confiance dans l'amour miséricordieux du Christ.",
+        "source_ids": [
+          "CLAUDE"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "A Jesuit priest and preacher, Claude was sent to Paray-le-Monial in 1675. There he became spiritual director to Margaret Mary Alacoque, carefully discerning her reported experiences and encouraging her to write them down and remain faithful to her community.",
+          "fr": "Prêtre et prédicateur jésuite, Claude fut envoyé à Paray-le-Monial en 1675. Il y devint le directeur spirituel de Marguerite-Marie Alacoque, examina avec discernement ses expériences rapportées et l'encouragea à les écrire, tout en restant fidèle à sa communauté.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "Appointed preacher to the Duchess of York, he travelled to London in 1676. There he instructed those seeking reconciliation with the Catholic Church, until a false accusation during the Popish Plot led to imprisonment and expulsion from England.",
+          "fr": "Nommé prédicateur de la duchesse d'York, il partit à Londres en 1676. Il y instruisit des personnes désireuses de revenir à l'Église catholique, jusqu'à ce qu'une fausse accusation lors du complot papiste provoque son emprisonnement puis son expulsion d'Angleterre.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "His declining health did not extinguish his priestly zeal or confidence in Christ's mercy. Returning to France, he eventually died at Paray-le-Monial in 1682. His writings and spiritual counsel helped others discover the Sacred Heart as a sign of divine love.",
+          "fr": "Sa santé déclinante n'éteignit ni son zèle sacerdotal ni sa confiance dans la miséricorde du Christ. Revenu en France, il mourut finalement à Paray-le-Monial en 1682. Ses écrits et ses conseils spirituels aidèrent d'autres fidèles à découvrir le Sacré-Cœur comme signe de l'amour divin.",
+          "source_ids": [
+            "CLAUDE"
+          ]
+        }
+      ],
+      "source_ids": [
+        "CLAUDE"
+      ],
+      "further_reading_source_ids": [
+        "CLAUDE",
+        "MARG2"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+          "shrine_id": "shrine:FR:paray-sacred-heart",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PARAY-CONTACT",
+            "SHR-PARAY-MARGUERITE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "CLAUDE"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_DIRECTOR",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          },
+          {
+            "code": "SPIRITUAL_WRITER",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "MARG2"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1641-02-02",
+          "place": {
+            "en": "Saint-Symphorien-d’Ozon, France",
+            "fr": "Saint-Symphorien-d’Ozon, France"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19920531_la-colombiere_fr.html"
+        },
+        "death": {
+          "date": "1682-02-15",
+          "place": {
+            "en": "Paray-le-Monial, France",
+            "fr": "Paray-le-Monial, France"
+          },
+          "source_url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19920531_la-colombiere_fr.html"
+        },
+        "celebration": {
+          "month_day": "02-15",
+          "scope": "LOCAL_OR_PARTICULAR_CALENDAR",
+          "label": {
+            "en": "Local / particular-calendar celebration",
+            "fr": "Fête dans certains calendriers particuliers"
+          },
+          "source_url": "https://eglise.catholique.fr/saint-du-jour/15/02/saint-claude-de-la-colombiere/"
+        }
+      }
+    },
+    {
+      "saint_id": "saint:peter-chanel",
+      "legacy_source_name": "Saint Peter Chanel",
+      "display_name": {
+        "en": "Saint Peter Chanel",
+        "fr": "Saint Pierre Chanel"
+      },
+      "recognition_status": "CANONIZED_SAINT",
+      "why_honoured": {
+        "en": "A gentle and courageous Marist missionary, he persevered on Futuna and died for the Gospel, becoming Oceania's first martyr.",
+        "fr": "Missionnaire mariste doux et courageux, il a persévéré à Futuna et est mort pour l'Évangile, devenant le premier martyr d'Océanie.",
+        "source_ids": [
+          "PETER"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "Born in France, Peter Chanel became a priest in 1827 and later joined the Society of Mary. He sailed for Oceania in 1836 with the first group of Marist missionaries, leaving behind familiar surroundings for a demanding apostolate.",
+          "fr": "Né en France, Pierre Chanel devint prêtre en 1827 puis rejoignit la Société de Marie. En 1836, il partit pour l'Océanie avec le premier groupe de missionnaires maristes, quittant son pays pour un apostolat exigeant et incertain.",
+          "source_ids": [
+            "PETER",
+            "PETER_MARIST"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "On the island of Futuna, his missionary work unfolded amid isolation, cultural distance and opposition. He remained patient and committed to the people among whom he lived rather than abandoning the mission when his efforts seemed to bear little fruit.",
+          "fr": "Sur l'île de Futuna, sa mission se déroula dans l'isolement, les difficultés de langue et de culture et l'opposition. Il demeura patient et attaché aux habitants qu'il servait, sans abandonner son œuvre lorsque les résultats paraissaient limités.",
+          "source_ids": [
+            "PETER",
+            "PETER_MARIST"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "He was killed on 28 April 1841 while serving on Futuna and was later canonized by Pius XII in 1954. Venerated as the first martyr of Oceania, he embodies a missionary witness marked by perseverance rather than worldly success.",
+          "fr": "Il fut tué le 28 avril 1841 au cours de sa mission à Futuna et canonisé par Pie XII en 1954. Vénéré comme premier martyr d'Océanie, il incarne un témoignage missionnaire marqué par la persévérance plutôt que par le succès apparent.",
+          "source_ids": [
+            "PETER",
+            "PETER_MARIST"
+          ]
+        }
+      ],
+      "source_ids": [
+        "PETER"
+      ],
+      "further_reading_source_ids": [
+        "PETER",
+        "PETER_OCEANIA",
+        "PETER_MARIST"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:NZ:st-peter-chanel-russell",
+          "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-ST-PETER-CHANEL-NZ",
+            "PIL-NGA-TAPUWAE"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          },
+          {
+            "code": "MARTYR",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "PETER_OCEANIA"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1803-07-12",
+          "place": {
+            "en": "Cuet, Ain, France",
+            "fr": "Cuet, Ain, France"
+          },
+          "source_url": "https://www.maristfathers.ie/about/history/our-founder-and-other-biographies"
+        },
+        "death": {
+          "date": "1841-04-28",
+          "place": {
+            "en": "Futuna, Wallis and Futuna",
+            "fr": "Futuna, Wallis-et-Futuna"
+          },
+          "source_url": "https://www.newadvent.org/cathen/11769a.htm"
+        },
+        "celebration": {
+          "month_day": "04-28",
+          "scope": "CURRENT_ROMAN_CALENDAR",
+          "label": {
+            "en": "Current Roman calendar",
+            "fr": "Calendrier romain actuel"
+          },
+          "source_url": "https://www.vatican.va/content/francesco/en/cotidie/2020/documents/papa-francesco-cotidie_20200428_laverita-dellatestimonianza.html"
+        }
+      }
+    },
+    {
+      "saint_id": "blessed:jacques-desire-laval",
+      "legacy_source_name": "Blessed Jacques-Désiré Laval",
+      "display_name": {
+        "en": "Blessed Jacques-Désiré Laval",
+        "fr": "Bienheureux Jacques-Désiré Laval"
+      },
+      "recognition_status": "BEATIFIED_NOT_CANONIZED",
+      "why_honoured": {
+        "en": "He dedicated his ministry to the poorest and socially excluded people of Mauritius with outstanding charity and faith.",
+        "fr": "Il a consacré son ministère aux plus pauvres et aux exclus de la société mauricienne avec une charité et une foi remarquables.",
+        "source_ids": [
+          "LAVAL"
+        ]
+      },
+      "biography_facts": [
+        {
+          "kind": "holy_witness",
+          "en": "Jacques-Désiré Laval first practised medicine in France, but eventually left that profession to prepare for the priesthood. As a parish priest in Normandy he shared his possessions with those in need, showing the practical charity that would mark his mission.",
+          "fr": "Jacques-Désiré Laval exerça d'abord la médecine en France, puis quitta cette profession pour se préparer au sacerdoce. Curé en Normandie, il partageait ses biens avec les nécessiteux, manifestant déjà la charité concrète qui caractériserait sa mission.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        },
+        {
+          "kind": "concrete_action",
+          "en": "He arrived in Mauritius as a missionary in the nineteenth century and dedicated twenty-three years to people facing poverty and exclusion, especially the formerly enslaved population. He taught the faith, listened patiently and also attended to material and medical suffering.",
+          "fr": "Arrivé à Maurice comme missionnaire au XIXe siècle, il consacra vingt-trois ans aux personnes vivant dans la pauvreté et l'exclusion, particulièrement à celles issues de l'esclavage. Il enseigna la foi, écouta avec patience et se préoccupa aussi des souffrances matérielles et médicales.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        },
+        {
+          "kind": "spiritual_legacy",
+          "en": "His ministry sought the dignity and spiritual life of those neglected by society, through personal visits, catechesis and sustained pastoral care. John Paul II beatified him in 1979; he remains Blessed, not canonized, and is especially venerated in Mauritius.",
+          "fr": "Son ministère défendit la dignité et la vie spirituelle des personnes délaissées par la société, par des visites, la catéchèse et une présence pastorale constante. Jean-Paul II le béatifia en 1979 ; il demeure bienheureux, non canonisé, et particulièrement vénéré à Maurice.",
+          "source_ids": [
+            "LAVAL"
+          ]
+        }
+      ],
+      "source_ids": [
+        "LAVAL"
+      ],
+      "further_reading_source_ids": [
+        "LAVAL"
+      ],
+      "place_links": [
+        {
+          "place_id": "place:MU:pere-laval-sainte-croix",
+          "shrine_id": "shrine:MU:pere-laval",
+          "relation_kind": "SHRINE_ASSOCIATION_ONLY",
+          "source_ids": [
+            "SHR-PERE-LAVAL-CENTRE",
+            "PIL-PERE-LAVAL-ANNUAL"
+          ],
+          "coordinates": "INHERIT_EXISTING_PLACE_GEO_GATE"
+        }
+      ],
+      "calendar_1962_keys": [],
+      "later_calendar_keys": [],
+      "approved_artwork_ids": [],
+      "image_state": "AWAITING_SACRED_ART_OWNER_APPROVAL",
+      "publication": "EDITORIAL_REVIEW_ONLY",
+      "classification": {
+        "schema": "ao.saint.classification.v1",
+        "formal_honours": [],
+        "roles": [
+          {
+            "code": "PRIEST",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          },
+          {
+            "code": "MISSIONARY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          },
+          {
+            "code": "PASTORAL_CARITY",
+            "basis": "DOCUMENTED_BIOGRAPHICAL_ROLE",
+            "source_ids": [
+              "LAVAL"
+            ]
+          }
+        ]
+      },
+      "extraordinary_accounts": [],
+      "extraordinary_coverage": "PARTIAL_SOURCE_REVIEW_NOT_EXHAUSTIVE",
+      "life": {
+        "birth": {
+          "date": "1803-09-18",
+          "place": {
+            "en": "Croth, Normandy, France",
+            "fr": "Croth, Normandie, France"
+          },
+          "source_url": "https://www.vaticannews.va/fr/pape/news/2019-09/pere-laval-maurice-francois-voyage-apostolique.html"
+        },
+        "death": {
+          "date": "1864-09-09",
+          "place": {
+            "en": "Sainte-Croix, Mauritius",
+            "fr": "Sainte-Croix, Maurice"
+          },
+          "source_url": "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp"
+        },
+        "celebration": {
+          "month_day": "09-09",
+          "scope": "MAURITIUS_LOCAL_DEVOTION",
+          "label": {
+            "en": "Mauritius · local devotion to Blessed Laval",
+            "fr": "Maurice · dévotion locale au bienheureux Laval"
+          },
+          "source_url": "https://dioceseportlouis.org/evenements/pelerinage-pere-laval-2"
+        }
+      }
+    }
+  ],
+  "extraordinary_editorial_rule": "An empty extraordinary_accounts list means NOT_RESEARCHED_OR_NOT_SOURCE_CONFIRMED; it never means that no miracle, vision, stigmata or other extraordinary event occurred. Personal visions, authenticated miracles, reported cures and shrine-associated miracles are different claims."
+}

@@ -21,6 +21,8 @@ on:
       - 'tests/calendar-traditional-adjudication.mjs'
       - 'tests/calendar-living-sanctoral-date-coverage.mjs'
       - 'src/calendar/living-sanctoral-read-model.js'
+      - 'src/calendar/observed-commemoration-labels.js'
+      - 'tests/calendar-p0-observed-commemorations.mjs'
       - 'src/home/today-v2-sections.js'
       - 'src/home/today-v2-styles.js'
       - 'src/home/browser-entry.js'
@@ -66,6 +68,7 @@ jobs:
           node tests/calendar-reviewed-sanctoral-cards.mjs
           node tests/calendar-reviewed-sanctoral-day-integration.mjs
           node tests/calendar-home-living-observances.mjs
+          node tests/calendar-p0-observed-commemorations.mjs
           node tests/calendar-traditional-adjudication.mjs
           node tests/calendar-traditional-formulary-sources.mjs
           node tests/calendar-living-sanctoral-date-coverage.mjs
