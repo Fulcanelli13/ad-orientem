@@ -6,11 +6,11 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **87** dated individual identities, leaving **206** undated (net backlog reduction **66**).
-- Evidence ledger now **98** edges including **72** newly researched edges.
+- After new, source-visited batches: **115** dated individual identities, leaving **178** undated (net backlog reduction **94**).
+- Evidence ledger now **127** edges including **101** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
 - **9** group IDs with a dated source witness.
-- New date-profile coverage: **9** canonisation-year collections, with 42 of the 51 already-indexed source-year collections still to harvest for dates.
+- New date-profile coverage: **12** canonisation-year collections, with 39 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
 
@@ -33,3 +33,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
+
+## Additional high-yield source batch — 2000, 2003, 2009
+
+29 new primary-source date edges from three already-indexed official canonisation-year collections: 28 new individually dated saints and 1 collective martyrs group. Luigi Versiglia and Callisto Caravario share the same official profile and memorial date but remain distinct canonical identities. The Mexico 1927 martyrs remain a collective profile. Józef Sebastian Pelczar has a header memorial date of 28 March and an older text reference to 19 January when beatified; this discrepancy is explicitly retained for historical adjudication, not projected as two universal feasts.
+
+**Updated cumulative metrics:** 115/293 dated individual subjects, 178 undated, 10/13 dated collective groups, 127 total source edges (101 newly acquired), 12 canonisation-year collections with new date evidence, 39 remaining. No new universal-calendar or 1962 Mass permission claims. Source effective dates still unverified where no decree is known.
