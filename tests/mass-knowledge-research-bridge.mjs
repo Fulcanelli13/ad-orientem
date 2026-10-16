@@ -271,3 +271,32 @@ for(const a of wordLocations.anchors){
   assert.equal(a.published,false);
 }
 console.log("Mass P0 Word Anchor Verification: PASS — 66 exact source spans, no ceremony approval.");
+
+
+// P0 reverse source coverage dispositions: research microtext is not required
+// for priest-action states, Proper placeholders or synthetic sermon headers.
+const reverseDisposition=readJson("../docs/research/MASS-P0-REVERSE-COVERAGE-DISPOSITIONS-20261016.v1.json");
+const reverseSourceCueIds=new Set(p0Baseline.canonicalReverse
+  .filter(x=>x.disposition==="APP_ONLY").map(x=>x.cueId));
+assert.equal(reverseDisposition.canonicalSourceOnlyRows.length,34);
+assert.equal(reverseDisposition.summary.sourceKinds.SOURCE_ACTION_NOT_PRAYER_TEXT,15);
+assert.equal(reverseDisposition.summary.sourceKinds.VARIABLE_PROPER_OR_RITUAL_PLACEHOLDER,18);
+assert.equal(reverseDisposition.summary.sourceKinds.OPTIONAL_SERMON_SYNTHETIC_SOURCE,1);
+assert.deepEqual(
+  reverseDisposition.canonicalSourceOnlyRows.map(x=>x.cueId).sort(),
+  [...reverseSourceCueIds].sort()
+);
+for(const x of reverseDisposition.canonicalSourceOnlyRows){
+  assert.equal(x.identityDisposition,"CANONICAL_SOURCE_ONLY_EXPECTED_TYPE");
+  assert.equal(x.publicationApproval,false);
+}
+assert.equal(reverseDisposition.publishedGuideSectionBindings.length,4);
+assert.deepEqual(
+  reverseDisposition.publishedGuideSectionBindings.map(x=>x.guideId).sort(),
+  ["AO.CARD.006","AO.CARD.008","POST.MASS","PRE.ASPERGES"]
+);
+assert.ok(reverseDisposition.publishedGuideSectionBindings.every(x=>
+  x.disposition==="PUBLISHED_GUIDE_SECTION_LEVEL_NOT_MICROTEXT" &&
+  x.copyOrMoveGuideText===false &&
+  x.linkReadyForP1==="OWNER_AND_RITUAL_CONDITION_REVIEW"));
+console.log("Mass P0 Reverse Source Coverage: PASS — 34 source-only cues and 4 Guide sections.");
