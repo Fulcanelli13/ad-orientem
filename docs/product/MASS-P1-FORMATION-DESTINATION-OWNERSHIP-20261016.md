@@ -61,6 +61,19 @@ For a later explicitly editorially approved excerpt to appear, **every** release
 
 The non-browser `tests/mass-source-reading-contract.mjs` exercises a **purely synthetic in-test fixture** and rejection of draft, mismatched claim/source, missing rights/reviewer, unsafe URL, empty passage, duplicate identifier and forbidden ritual scope. The full 48-case phone/desktop browser acceptance also asserts no historical excerpt appears in the current released app state. **No manuscript material has been added here.**
 
+## Unified Formation user journey — final interface pass (16 October 2026)
+
+The public **Understand the Mass** destination now presents an immediate, deliberate choice between **Follow the Mass in order / Suivre l’ordre de la Messe** and **Study by theme / Étudier par thème**. These are two views of *one* original corpus architecture, not separate modules.
+
+- **Chronology**: five-phase Map with 32 original published Guide moments and all 96 original Sung source-block destinations; the text index remains an alternative representation of this chronology.
+- **Thematic**: one dedicated eight-lesson landing, MF01–MF08, with all original bilingual lesson titles and summaries drawn directly from the original Formation dataset. Users do **not** have to scroll through 32 Map moments to reach the course; the same lessons are no longer duplicated beneath the long Map or its text index.
+- **Cross-path continuity**: the Map and thematic path retain their last in-session reading scroll; the published Guide moment and selected source block are not converted to a Mass-reader card. A direct Map source-block entry remembers **the exact block button** and expanded disclosure, rather than only its broader Guide moment. These are presentation return tokens only, and cannot change the ceremonial sequence.
+- **Study round trip**: selecting MF03 within a prayer article or from the thematic path uses the *existing* Formation owner, then the canonical Scripture reader and optional source context; closing restores the original study view, selected paragraph, open citation drawer, source-block selection, reader scroll and keyboard focus where applicable.
+- **No new explanatory copy, source qualification or P0 decisions**. The standalone liturgical Mass remains a prayer-only companion; no direct Mass → Formation button is restored.
+- **Acceptance:** the five-width Playwright Mass Explorer suite checks both paths, the French thematic titles, return from MF03/Scripture, expanded Map-source restoration, and switching paths without discarding scroll. All eight original lessons and cited-source relationships are preserved separately by P1 non-loss contracts.
+
+The new UI is intentionally **draft/unmerged**. Hiding the historical Guide route, changing owner content or releasing excerpts still requires separate editorial parity and release review.
+
 ## Non-loss retirement gates (not passed yet)
 1. Prove every original published Guide moment (32) and every Sung source block (96) is available from the new Map.
 2. Prove all eight Formation lessons, claims, and their already-public source drawers are reachable without rewriting them.
