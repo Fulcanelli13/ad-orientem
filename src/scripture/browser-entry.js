@@ -38,10 +38,12 @@ export function installScriptureBrowserOwner(win=globalThis){
  // Verified reciprocal deep links may only begin on Home. Other active
  // parent modules (especially an ongoing Mass or Rosary) remain untouched.
  function canOpenRelatedObject(record){
-   if(!reader||journey||!record?.target||!doc?.body)return false;
-   if(win?.AO_APP_SHELL_V1?.getActive?.()!=="home")return false;
-   if(win?.AO_PRAY_APP_V1?.status?.()?.open===true)return false;
-   if(win?.AO_MASS_FORMATION_V1?.status?.()?.open===true)return false;
+   if(!reader||!record?.target||!doc?.body)return false;
+   // Lazy Bible text loading may repaint the *hidden* reader during a
+   // journey. Preserve the original launch button for focus on return.
+   if((journey?.surface??win?.AO_APP_SHELL_V1?.getActive?.())!=="home")return false;
+   if(!journey&&win?.AO_PRAY_APP_V1?.status?.()?.open===true)return false;
+   if(!journey&&win?.AO_MASS_FORMATION_V1?.status?.()?.open===true)return false;
    if(record.target.type==="massFormation")
      return /^MF0[1-8]$/.test(record.target.stageId);
    if(record.target.type==="novena")
@@ -49,7 +51,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    return false;
  }
  async function openRelatedObject(record){
-   if(!canOpenRelatedObject(record))return false;
+   if(journey||!canOpenRelatedObject(record))return false;
    const node=overlay(),shell=win.AO_APP_SHELL_V1;
    if(!node||node.hidden)return false;
    const receipt={id:record.id,surface:shell.getActive(),scrollTop:node.scrollTop};
