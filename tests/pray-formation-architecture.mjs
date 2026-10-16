@@ -34,13 +34,13 @@ const sameIds=(actual,expected,label)=>{
  assert.deepEqual([...actual].sort(),[...expected].sort(),label+" IDs must match current source");
  assert.equal(new Set(expected).size,expected.length,label+" duplicated mapping");
 };
-sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 23 entrances");
+sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 24 entrances");
 sameIds(liveFormationIds,crosswalk.formation.map(x=>x.id),"Formation 15 launchers");
 sameIds(scenarioIdSet,crosswalk.apostolate.scenarios.map(x=>x.id),"Apostolate 36 scenarios");
 sameIds(liveEdges,crosswalk.apostolate.handoff_edges.map(x=>x.from+"->"+x.to),"Apostolate scenario handoffs");
 assert.equal(crosswalk.apostolate.skills.length,9);
 assert.equal(crosswalk.cross_surface_handoff_types.length,15);
-assert.equal(livePrayerIds.length,23);
+assert.equal(livePrayerIds.length,24);
 assert.equal(liveFormationIds.length,15);
 assert.equal(scenarioIdSet.size,36);
 assert.equal(liveEdges.length,72);
@@ -52,4 +52,4 @@ assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.church_crisis")));
 for(const x of crosswalk.prayer)assert.ok(x.primary_entrance&&x.content_owner==="pray");
 for(const x of crosswalk.formation)assert.ok(x.primary_view&&x.canonical_owner);
-console.log("Pray/Formation IA static parity OK: 23 Prayer, 15 Formation, 36 Apostolate, 72 scenario handoffs, 6 priority link findings");
+console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 Formation, 36 Apostolate, 72 scenario handoffs, 6 priority link findings");
