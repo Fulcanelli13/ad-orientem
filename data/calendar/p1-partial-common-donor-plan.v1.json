@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_PARTIAL_COMMON_DONOR_EVALUATION_V1",
   "asOf": "2026-10-16",
-  "status": "SOURCE_DECLARED_CANDIDATES_NOT_YET_PARITY_CERTIFIED",
+  "status": "ONE_PARTIAL_VARIANT_COMPOSED_TEN_REMAIN_UNRESOLVED",
   "scope": "Compare 11 sparse Common sources to source-declared family donors; do not copy from web pages, substitute names or silently select a Mass",
   "coreSections": [
     "Introitus",
@@ -62,9 +62,15 @@
       "kind": "ALT_ONE_MARTYR_EASTER",
       "caution": "C2ap inherits Paschal one-martyr Mass with different orations",
       "allowAutoBorrow": false,
-      "checkStatus": "EVIDENCE_PENDING",
+      "checkStatus": "APP_RESOLVER_COMPOSITION_VERIFIED",
       "sourceIdentityMustBeVerified": true,
-      "formularyApproved": false
+      "formularyApproved": false,
+      "sourceCompositionModule": "src/calendar/p1-paschal-alternate-source-composition.js",
+      "sourceEvidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38916464900",
+      "sourceCoverage": "NINE_SECTIONS_COMPLETE_LA_EN_FR",
+      "borrowedLanguageSectionCount": 23,
+      "distinctOrationOwner": "Commune/C2a",
+      "baseMassOwner": "Commune/C2p"
     },
     {
       "target": "Commune/C3b",
