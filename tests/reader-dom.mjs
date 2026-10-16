@@ -62,6 +62,12 @@ for(const token of [
   'data-schola-faster',
   'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
+expect(html.includes('data-role="missal-faithful-gesture"'),
+  "Missal faithful gesture must have a dedicated top-ribbon display");
+expect(html.includes('data-role="missal-priest-action"'),
+  "Missal priest action must have a dedicated top-ribbon display");
+expect(html.includes(".ao-missal-prayer-heading"),
+  "Missal source prayer headings must have an accessible visible style");
 expect(html.includes('data-ao-donor-icon="home"'),"reader Home control lost exact v1.80 donor ownership");
 expect(html.includes("M3.5 10.7 12 3.8l8.5 6.9v9.1h-5.4v-5.7H8.9v5.7H3.5z"),"reader Home glyph drifted from v1.80 donor");
 expect(html.includes('data-ao-donor-icon="preferences"'),"reader Mass-preferences control lost exact v1.80 donor ownership");
@@ -126,6 +132,18 @@ const first=normalizeReaderMoment({
   guide:{registryAvailable:false,text:"must not render"},
   paragraphs:[{id:"p1",primary:"Credo in unum Deum",secondary:"I believe in one God",active:true}]
 });
+const namedMissal=normalizeReaderMoment({
+  id:"MISSAL-PRAYER-EXAMPLE",sectionTitle:"Offertory",cardTitle:"Offertory",
+  missalHeadings:[{blockId:"AO.SM.B031",paragraphIndex:0,
+    title:"Suscipe, sancte Pater",description:"The offering of the bread."}],
+  paragraphs:[{id:"AO.SM.C0110",primary:"Suscipe",secondary:"Receive"}],
+});
+expect(namedMissal.missalHeadings[0].blockId==="AO.SM.B031",
+  "Canonical Missal source-block heading lost before DOM rendering");
+expect(normalizeReaderMoment({id:"SAME",cardUpdate:false},namedMissal).missalHeadings.length===1,
+  "Source prayer heading disappeared on cue-only ribbon update");
+expect(normalizeReaderMoment({id:"NEW",cardUpdate:true,paragraphs:[]},namedMissal).missalHeadings.length===0,
+  "Source prayer heading leaked to a new card");
 expect(first.guide===null,"unsourced Guide rubric did not fail closed");
 expect(first.gesture?.label==="BOW","transient gesture missing");
 expect(first.posture?.label==="STAND","persistent posture missing");
