@@ -100,7 +100,7 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  'const language=button.dataset.selectLang;document.querySelectorAll("[data-select-lang]").forEach(x=>x.setAttribute("aria-pressed",String(x===button)));'+
  'document.querySelectorAll("[data-lang]").forEach(x=>{x.hidden=x.dataset.lang!==language});'+
  'document.documentElement.lang=language;}));'+
- 'document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",()=>{const target=document.querySelector(a.getAttribute("href"));if(target)target.open=true;}));'+
+ 'document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",()=>{const target=document.getElementById(a.getAttribute("href").slice(1));if(target)target.open=true;}));'+
  '</script></body></html>';
 assert.equal((html.match(/class="entry" id=/g)||[]).length,52);
 assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,0);
