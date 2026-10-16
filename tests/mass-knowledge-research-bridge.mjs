@@ -192,3 +192,27 @@ assert.equal(sourceCandidates.summary.scriptureCandidatesApproved,0);
 assert.equal(sourceCandidates.summary.historicalClaimsApproved,0);
 assert.equal(sourceCandidates.summary.byScriptureCandidateType["BIBLICAL_PARALLEL_NOT_DERIVATION"],8);
 console.log("Mass P0 Typed Source Candidates: PASS — no direct-link or rubric promotion.");
+
+
+// P0 original Latin comparison sample is evidence, not an editorial release.
+const sourceLatin=readJson("../docs/research/MASS-P0-PARTIAL-LATIN-WITNESS-COMPARISON-20261016.v1.json");
+const discrepancyRegister=readJson("../docs/research/MASS-P0-DISCREPANCY-REGISTER-20261016.v1.json");
+const baseline=readJson("../docs/research/MASS-P0-BASELINE-MANIFEST-20261016.v1.json");
+assert.equal(sourceLatin.units.length,288);
+assert.equal(sourceLatin.summary.remainingNotCompared,147);
+assert.equal(sourceLatin.summary.tally.NFC_FULL_CUE_MATCH,112);
+assert.equal(sourceLatin.summary.tally.NFC_LITERAL_SUBSPAN_MATCH,170);
+assert.equal(sourceLatin.summary.tally.LATIN_CONTENT_DIFFERENCE,2);
+assert.equal(sourceLatin.summary.tally.VARIABLE_CANONICAL_SLOT,4);
+assert.equal(sourceLatin.summary.wordTriggersCertified,0);
+assert.equal(sourceLatin.summary.sourceTextApprovedForPublication,0);
+assert.ok(sourceLatin.units.every(x=>x.publicationApproved===false));
+assert.ok(sourceLatin.units.every(x=>unitIds.has(x.unitId)&&realCueIds.has(x.canonicalCueId)));
+assert.equal(new Set(sourceLatin.units.map(x=>x.unitId)).size,288);
+assert.equal(discrepancyRegister.summary.totalRegisterEntries,49);
+assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0023.U002"));
+assert.ok(discrepancyRegister.cases.some(x=>x.issueId==="P0-LATIN-AO.V3.0084.U001"));
+assert.equal(baseline.sourceCoverage.originalWorkbookLatinComparedNFC,288);
+assert.equal(baseline.sourceCoverage.originalWorkbookLatinNotCompared,147);
+assert.equal(baseline.sourceCoverage.sourceUnitsTextVerifiedAgainstOriginalWorkbook,0);
+console.log("Mass P0 Latin Witness Sample: PASS — 288 literal comparisons, holds preserved.");
