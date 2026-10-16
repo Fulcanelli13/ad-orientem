@@ -1038,6 +1038,32 @@ button.ao-schola-control{cursor:pointer}
 }
 
 
+
+/* Source-owned Missal prayer divisions. No in-Mass study links. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
+  margin:26px 0 12px;padding:12px 0 8px;
+  border-top:1px solid color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);
+  text-align:center;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading:first-child{
+  margin-top:0;border-top:0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-name{
+  margin:0;font:500 clamp(1rem,2.2vw,1.3rem)/1.4 var(--ao-missal-display);
+  color:var(--ao-text);letter-spacing:.015em;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-description{
+  display:block;margin:4px auto 0;max-width:45ch;
+  font:italic clamp(.83rem,1.4vw,1rem)/1.35 var(--ao-missal-face);
+  color:var(--ao-muted);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail{
+  display:block;max-width:142px;margin-top:3px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;color:var(--ao-mass-accent-text);
+  font:400 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail[hidden]{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-prayer-title{display:none}
 `;
 
 function esc(value){
@@ -1250,6 +1276,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cardTitle:String(moment.cardUpdate === false ? (previous.cardTitle ?? "") : (moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "")),
     cardUpdate:moment.cardUpdate !== false,
     paragraphs,
+    missalHeadings:moment.cardUpdate===false ? (previous.missalHeadings??[]) :
+      Object.freeze([...(moment.missalHeadings??[])]),
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
@@ -1370,7 +1398,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
     <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
@@ -1378,7 +1406,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     </button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
@@ -2561,6 +2589,17 @@ export function createReaderDomAdapter({
     setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
+    // In Missal the upper ribbon is the only persistent faithful/priest
+    // gestural reference; LIVE keeps its vertical-rail behaviour unchanged.
+    const missalChrome=mode==="MISSAL";
+    for(const [role,value] of [
+      ["missal-faithful-gesture",current.gesture],
+      ["missal-priest-action",current.priestAction],
+    ]){
+      const label=textValue(value);
+      const node=root.querySelector('[data-role="'+role+'"]');
+      if(node){node.hidden=!missalChrome||!label;node.textContent=missalChrome&&label?label:"";}
+    }
     setText(root,"response",textValue(current.response));
     const visibleBell=displayBell(current.bell);
     setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
@@ -2696,7 +2735,28 @@ export function createReaderDomAdapter({
           ORATION_UNDER_ONE_CONCLUSION:frenchReader?"Oraison à conclusion commune":"Prayer under one conclusion",
         };
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
-        for(const p of current.paragraphs){
+        for(const [paragraphIndex,p] of current.paragraphs.entries()){
+          if(mode==="MISSAL"){
+            // Source-block headings are distinct from spoken Latin and from
+            // rubrics. They never acquire a ritual cue or trigger gesture.
+            for(const heading of (current.missalHeadings??[]).filter(h=>
+              h.paragraphIndex===paragraphIndex)){
+              const headingNode=doc.createElement("div");
+              headingNode.className="ao-missal-prayer-heading";
+              headingNode.dataset.sourceBlockId=heading.blockId;
+              const title=doc.createElement("h2");
+              title.className="ao-missal-prayer-name";
+              title.textContent=heading.title;
+              headingNode.append(title);
+              if(heading.description){
+                const description=doc.createElement("small");
+                description.className="ao-missal-prayer-description";
+                description.textContent=heading.description;
+                headingNode.append(description);
+              }
+              body.append(headingNode);
+            }
+          }
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
