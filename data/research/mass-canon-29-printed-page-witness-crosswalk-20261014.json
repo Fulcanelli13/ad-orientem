@@ -153,7 +153,40 @@
       "independentCopySignoff": "NOT_GRANTED",
       "independentCeremonialSignoff": "NOT_GRANTED",
       "exactLiveClockObserved": false,
-      "canPublish": false
+      "canPublish": false,
+      "supplementalAuthority": {
+        "ruleOrigin": "RUBRICAE_GENERALES_MISSALIS_ROMANI_1962_501",
+        "documentUrl": "https://www.fichier-pdf.fr/2018/06/03/missale-romanum-1962/",
+        "latinLocator": "Quoties infra Actionem Communicantes, Hanc igitur et Qui pridie",
+        "sourceFunction": "PROPER_FORM_SELECTION_NOT_AN_ACTION_CLOCK",
+        "formsWithProperSelection": [
+          "COMMUNICANTES",
+          "HANC_IGITUR",
+          "QUI_PRIDIE"
+        ],
+        "octaveRule": {
+          "octaves": [
+            "NATIVITY",
+            "EASTER",
+            "PENTECOST"
+          ],
+          "forms": [
+            "COMMUNICANTES",
+            "HANC_IGITUR"
+          ],
+          "appliesWhenCelebratedMassIsNotOfOctave": true,
+          "mayHaveDistinctProperPreface": true
+        },
+        "selectionDependencies": [
+          "1962_CALENDAR_DAY_AND_OCTAVE",
+          "ACTUAL_SELECTED_MASS_AND_PROPER_TEXT",
+          "PARTICULAR_RUBRICAL_EXCEPTIONS"
+        ],
+        "fixedOrdinaryTextAlwaysValid": false,
+        "automaticSelectionCertified": false,
+        "readerPublicationAuthorized": false,
+        "note": "No. 501 refers each variable formula to its proper Mass, and expressly extends Communicantes and Hanc igitur throughout three octaves even for Masses not of the octave. This record does not select a feast, an exact prayer or a runtime action."
+      }
     },
     {
       "actionId": "AO.CANON.R62.011",
@@ -220,7 +253,24 @@
       "independentCopySignoff": "NOT_GRANTED",
       "independentCeremonialSignoff": "NOT_GRANTED",
       "exactLiveClockObserved": false,
-      "canPublish": false
+      "canPublish": false,
+      "supplementalAuthority": {
+        "ruleOrigin": "RITUS_SERVANDUS_VIII_5_CONDITION_REFERENCES_VIII_4_CUE",
+        "documentUrl": "https://summorum-pontificum.de/z_archive/vorort/ritus_servandus_62.html",
+        "cueSourceRitus": "VIII.4",
+        "conditionalInstructionRitus": "VIII.5",
+        "exactLatinCondition": "antequam accipiat Hostiam",
+        "condition": "ADDITIONAL_HOSTS_FOR_CONSECRATION_IN_A_COVERED_VESSEL",
+        "orderedEvents": [
+          "UNCOVER_ADDITIONAL_HOSTS_VESSEL_WITH_RIGHT_HAND",
+          "TAKE_PRINCIPAL_HOST_AT_ACCEPIT_PANEM"
+        ],
+        "printOrderDeterminesActionOrder": false,
+        "postAccepitUncoveringAuthorized": false,
+        "newExactClockAuthorized": false,
+        "readerPublicationAuthorized": false,
+        "note": "VIII.5 states an earlier prerequisite despite following VIII.4 in print. Retain VIII.4 canonical cue ownership while separately recording VIII.5 as the rule authority."
+      }
     },
     {
       "actionId": "AO.CANON.R62.021",
@@ -930,7 +980,50 @@
       "independentCopySignoff": "NOT_GRANTED",
       "independentCeremonialSignoff": "NOT_GRANTED",
       "exactLiveClockObserved": false,
-      "canPublish": false
+      "canPublish": false,
+      "supplementalAuthority": {
+        "ruleOrigin": "RITUS_X_1_WITH_SACRED_CONGREGATION_RITES_INSTRUCTION_1958_25_26_31",
+        "sourceDocuments": [
+          {
+            "url": "https://summorum-pontificum.de/z_archive/vorort/ritus_servandus_62.html",
+            "locator": "Ritus servandus X.1",
+            "establishes": "Response R. Amen after Per omnia saecula saeculorum, but no unique named human speaker"
+          },
+          {
+            "url": "https://adoremus.org/1958/09/instruction-on-sacred-music/",
+            "locator": "De musica sacra et sacra liturgia (1958), nn. 25-26",
+            "establishes": "Faithful may sing the liturgical Amen in solemn and sung Masses"
+          },
+          {
+            "url": "https://adoremus.org/1958/09/instruction-on-sacred-music/",
+            "locator": "De musica sacra et sacra liturgia (1958), n. 31",
+            "establishes": "The faithful may make liturgical responses in a dialogue Low Mass"
+          }
+        ],
+        "formRules": [
+          {
+            "form": "LOW",
+            "respondentClass": "MINISTER_BY_DEFAULT",
+            "congregationalParticipation": "POSSIBLE_IF_DIALOGUE_MASS"
+          },
+          {
+            "form": "MISSA_CANTATA",
+            "respondentClass": "FORM_APPOINTED_RESPONDENTS",
+            "congregationalParticipation": "PERMITTED_NOT_IMPLIED"
+          },
+          {
+            "form": "SOLEMN",
+            "respondentClass": "FORM_APPOINTED_RESPONDENTS",
+            "congregationalParticipation": "PERMITTED_NOT_IMPLIED"
+          }
+        ],
+        "inheritedLedgerActor": "SERVER",
+        "inheritedActorIsUniversalSpeaker": false,
+        "actualRespondentObserved": false,
+        "newSpeakerClockAuthorized": false,
+        "readerPublicationAuthorized": false,
+        "note": "The original 62-action ledger keeps its SERVER identity for source compatibility; role projection remains form-dependent. Permission for congregational responses does not prove who in fact responded at a given celebration."
+      }
     },
     {
       "actionId": "AO.CANON.R62.062",
