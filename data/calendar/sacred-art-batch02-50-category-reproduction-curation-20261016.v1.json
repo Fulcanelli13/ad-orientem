@@ -1710,14 +1710,14 @@
           "placementNote": "Approved for Expulsion from Paradise; fits the aftermath of the Fall, not the temptation itself.",
           "files": [
             {
-              "id": "John Faed - Expulsion of Adam and Eve.jpg",
-              "label": "Source identity still needs validation",
-              "pixels": "",
-              "sourcePage": "https://commons.wikimedia.org/wiki/File:John_Faed_-_Expulsion_of_Adam_and_Eve.jpg",
-              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve.jpg",
-              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve.jpg?width=950",
-              "verification": "SOURCE_FILE_METADATA_INDEXED",
-              "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT"
+              "id": "John Faed - Expulsion of Adam and Eve - 1980.258 - Cleveland Museum of Art.tiff",
+              "label": "Exact CMA 1980.258 high-resolution open-access master (TIFF; preview generated at 950px)",
+              "pixels": "3,901 × 5,014",
+              "sourcePage": "https://commons.wikimedia.org/wiki/File:John_Faed_-_Expulsion_of_Adam_and_Eve_-_1980.258_-_Cleveland_Museum_of_Art.tiff",
+              "originalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve_-_1980.258_-_Cleveland_Museum_of_Art.tiff",
+              "previewUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Faed_-_Expulsion_of_Adam_and_Eve_-_1980.258_-_Cleveland_Museum_of_Art.tiff?width=950",
+              "verification": "MUSEUM_OBJECT_CMA_1980_258_COMMONS_TIFF_PHYSICAL_MATCH",
+              "rights": "CMA_OPEN_ACCESS_CC0_VERIFY_THUMBNAIL_LOAD"
             }
           ],
           "acquisition": {
@@ -2696,5 +2696,16 @@
         "id": "nga-42494"
       }
     ]
-  }
+  },
+  "auditCorrections": [
+    {
+      "paintingId": "cma-150046",
+      "wrongSourceFile": "John Faed - Expulsion of Adam and Eve.jpg",
+      "correctSourceFile": "John Faed - Expulsion of Adam and Eve - 1980.258 - Cleveland Museum of Art.tiff",
+      "museumObject": "https://www.clevelandart.org/art/1980.258",
+      "evidence": "Cleveland open access official museum; Commons painting category 3901 × 5014 TIFF",
+      "correctedAt": "2026-10-16",
+      "displayDerivativeStillRequiresBrowserCheck": true
+    }
+  ]
 }
