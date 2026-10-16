@@ -123,12 +123,14 @@ const approval={
   unitId:"AO.V3.0001.U001",targetOwner:"learn.mass",
   targetId:"MF01",evidenceLocator:"1982/edition/page test fixture",
   relationshipType:"OWNER_APPROVED_LINK",editorialDecision:"APPROVED_FOR_PUBLICATION",
-  ownerAccepted:true,publicationAllowed:true,sourceRevision:"fixture-sung-donor"
+  ownerAccepted:true,publicationAllowed:true,sourceTextCertified:true,ritualApplicabilityCertified:true,sourceRevision:"fixture-sung-donor"
 };
 assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001"}),[]);
 assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001",approvals:[{...approval,ownerAccepted:false}]}),[]);
 assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001",approvals:[{...approval,sourceRevision:"stale"}]}),[]);
-assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001",approvals:[approval]}),[
+assert.deepEqual(massP1ApprovedLinkIds(p0,{cueId:"AO.SM.C0001",approvals:[approval]}),[]);
+assert.deepEqual(massP1ApprovedLinkIds(exact,{cueId:"AO.SM.C0001",approvals:[{...approval,ritualApplicabilityCertified:false}]}),[]);
+assert.deepEqual(massP1ApprovedLinkIds(exact,{cueId:"AO.SM.C0001",approvals:[approval]}),[
   {unitId:"AO.V3.0001.U001",targetOwner:"learn.mass",targetId:"MF01",
     relationshipType:"OWNER_APPROVED_LINK"}
 ]);
