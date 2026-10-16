@@ -584,4 +584,27 @@ assert.equal(loci.counts.activatedProductionReaderLinks,0);
 assert.equal(loci.constraints.noProductionRelease,true);
 assert.equal(loci.constraints.missingSchusterPrintedPages384_385RemainUnresolved,true);
 
+
+const scriptureEpisodeBatch=fam.english1908ScriptureEpisodeBatchAndReaderV5;
+assert.ok(scriptureEpisodeBatch);
+assert.equal(scriptureEpisodeBatch.originalBookChaptersReviewed,14);
+assert.equal(scriptureEpisodeBatch.specificNarrativeLociLocated,20);
+assert.equal(scriptureEpisodeBatch.specificChapterBodyEvidenceAnchors,40);
+assert.equal(scriptureEpisodeBatch.alreadySelectedCanonicalAtlasEventKeysReferenced,15);
+assert.equal(scriptureEpisodeBatch.additionalOrHarmonizedScriptureLoci,5);
+assert.equal(scriptureEpisodeBatch.originalChapterTextVerbatimBibleVerseCoverageApproved,0);
+assert.equal(scriptureEpisodeBatch.liveAppAtlasLinksActivated,0);
+assert.equal(scriptureEpisodeBatch.readerPrototypeSHA256.length,64);
+assert.equal(scriptureEpisodeBatch.readerDataSHA256.length,64);
+assert.equal(scriptureEpisodeBatch.sourceTextOrScanCommittedToGitHub,false);
+assert.equal(scriptureEpisodeBatch.aiBibleNarrativeGenerated,false);
+assert.equal(scriptureEpisodeBatch.originalSourceOCRModified,false);
+assert.equal(scriptureEpisodeBatch.liveAdOrientemAppChanged,false);
+assert.deepEqual(scriptureEpisodeBatch.unrecoveredPrinted1908Pages,[384,385]);
+assert.equal(fam.counts.earlyEnglishSadlierVerseSpecificSourceAnchors,40);
+assert.equal(fam.counts.earlyEnglishSadlierVerseLocatedDistinctPassages,20);
+assert.equal(fam.counts.earlyEnglishSadlierVerseLocatedSourceChapters,14);
+assert.equal(fam.counts.earlyEnglishSadlierVerseLocatedCanonicalEvents,15);
+assert.equal(fam.counts.earlyEnglishSadlierVerseVerifiedCompleteLoci,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
