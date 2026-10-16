@@ -1,0 +1,153 @@
+{
+  "schema": "AO_P1_PARTIAL_COMMON_DONOR_EVALUATION_V1",
+  "asOf": "2026-10-16",
+  "status": "SOURCE_DECLARED_CANDIDATES_NOT_YET_PARITY_CERTIFIED",
+  "scope": "Compare 11 sparse Common sources to source-declared family donors; do not copy from web pages, substitute names or silently select a Mass",
+  "coreSections": [
+    "Introitus",
+    "Oratio",
+    "Lectio",
+    "Graduale",
+    "Evangelium",
+    "Offertorium",
+    "Secreta",
+    "Communio",
+    "Postcommunio"
+  ],
+  "cases": [
+    {
+      "target": "Commune/C3p",
+      "donors": [
+        "Commune/C2p"
+      ],
+      "kind": "PASCAL_MULTIPLE_MARTYRS",
+      "caution": "French shared chants/readings may come from Paschal one martyr source; compare Latin before any loan",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C7b",
+      "donors": [
+        "Commune/C6b",
+        "Commune/C7"
+      ],
+      "kind": "PLURAL_NONVIRGIN_MARTYRS",
+      "caution": "Latin plurals and name forms may require changes; no automatic equivalence",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C3ap",
+      "donors": [
+        "Commune/C3p",
+        "Commune/C3a"
+      ],
+      "kind": "ALT_MARTYRS_EASTER",
+      "caution": "C3ap historically derives the Paschal Mass and uses C3a alternative three orations",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C2ap",
+      "donors": [
+        "Commune/C2p",
+        "Commune/C2a"
+      ],
+      "kind": "ALT_ONE_MARTYR_EASTER",
+      "caution": "C2ap inherits Paschal one-martyr Mass with different orations",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C3b",
+      "donors": [
+        "Commune/C3"
+      ],
+      "kind": "POPE_MARTYRS_PLURAL",
+      "caution": "Pope-specific selected text must not be replaced with non-papal text",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C2b",
+      "donors": [
+        "Commune/C2"
+      ],
+      "kind": "POPE_MARTYR_SINGULAR",
+      "caution": "Papal variant may have a special Collect, Secret or Postcommunion",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C7",
+      "donors": [
+        "Commune/C6",
+        "Commune/C6-1"
+      ],
+      "kind": "NON_VIRGIN_WOMAN_MARTYR",
+      "caution": "Original single nonvirgin changes chants/prayers; do not conflate with Virgin",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C4c",
+      "donors": [
+        "Commune/C4"
+      ],
+      "kind": "PLURAL_BISHOP_CONFESSORS",
+      "caution": "Grammatical plural substitutions explicitly required; different Latin is expected",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C5c",
+      "donors": [
+        "Commune/C5"
+      ],
+      "kind": "PLURAL_NONBISHOP_CONFESSORS",
+      "caution": "Grammatical plural substitutions required; individual named saint not interchangeable",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C1v",
+      "donors": [
+        "Commune/C1"
+      ],
+      "kind": "VIGIL_APOSTLE",
+      "caution": "Missing vernacular Oratio: common Apostles Office source cannot automatically supply vigil oration",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    },
+    {
+      "target": "Commune/C1",
+      "donors": [],
+      "kind": "APOSTLE_COMMON",
+      "caution": "No complete Mass material under Office Common; must locate separate proper Mass owner",
+      "allowAutoBorrow": false,
+      "checkStatus": "EVIDENCE_PENDING",
+      "sourceIdentityMustBeVerified": true,
+      "formularyApproved": false
+    }
+  ]
+}
