@@ -567,6 +567,14 @@ try{
     await visualPage.locator('[data-reader-mode="MISSAL"]').click();
     await visualPage.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getPresentationMode()==="MISSAL");
     await visualPage.locator('[data-reader-preferences-close]').click();
+    await visualPage.waitForFunction(()=>document.querySelector(
+      '[data-role="mass-preferences"]')?.dataset.open==="false");
+    await visualPage.waitForTimeout(270);
+    const ribbon=visualPage.locator(".ao-state-ribbon");
+    assert.equal(await ribbon.isVisible(),true,
+      "Missal gesture and priest-action top ribbon must be visible");
+    assert.ok((await ribbon.boundingBox())?.height>=56,
+      "Missal top ribbon collapsed");
     const pages=[
       ["offertory-bread","AO.MISSAL.010.2","AO.SM.B031"],
       ["canon-opening","AO.MISSAL.014.1","AO.SM.B047"],
