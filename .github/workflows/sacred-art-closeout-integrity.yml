@@ -48,9 +48,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
       - name: Install existing project test dependencies
-        run: npm ci --ignore-scripts
+        run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+      - name: Confirm Playwright dependency is installed
+        run: node -e "import('@playwright/test').then(() => console.log('Playwright installed'))"
       - name: Install Chromium for 390px phone simulation
         run: npx playwright install --with-deps chromium
       - name: Audit all linked image sources and mobile contain-fit
