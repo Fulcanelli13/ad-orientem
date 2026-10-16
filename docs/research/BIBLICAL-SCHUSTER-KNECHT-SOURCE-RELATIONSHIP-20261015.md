@@ -244,3 +244,37 @@ A further **author-text role distinction** is visible in Chapter V *Cain and Abe
 - The **1925 nineteenth-edition English** Internet Archive PDF failed after three approximately 190-second download attempts; full print pages remain unavailable from that URL.
 
 The successful downloadable **uncompressed English PDF** has 419 pages and matches the uploaded compressed copy on original Acrobat metadata, PDF creation date and first-page dimensions; compressed file SHA-256 differs. Exact page-by-page identity has not been certified, so retain both provenance hashes and do not assume byte equivalence. This resolves the direct English page-acquisition problem for the eleventh-edition reading source without conflating it with 1925 English or 1887 French edition identities. Research previews are not paragraph proofreading or rights approval.
+
+
+## 16 October — 47 original numbered Schuster narrative units mapped against all 17 Origins source pages
+
+The authentic **1908 English eleventh-edition scanned book** (user-supplied, checksum already registered) has now been read against the original page images for **all 17 original printed pages 1–17 / PDF pages 16–32**. Rather than using a later nineteenth/32nd-edition table of contents as text authority, the register now contains a **complete 47-unit, per-page original English span inventory**, inside `data/explore/biblical-schuster-knecht-source-family-review.v1.json → english1908OriginsFullUnitSpanAudit`. No book text was copied to the repository and the production reader is unchanged.
+
+| Original 1908 English chapter | Numbered units | Original printed pages | PDF pages |
+|---|---:|---|---|
+| I. Creation | 6 | 1–2 | 16–17 |
+| II. Angels | 3 | 3–4 | 18–19 |
+| III. Adam and Paradise | 4 | 4–5 | 19–20 |
+| IV. Fall | 10 | 5–8 | 20–23 |
+| V. Cain and Abel | 7 | 8–10 | 23–25 |
+| VI. Deluge | 8 | 11–13 | 26–28 |
+| VII. Noe’s Offering | 5 | 14–15 | 29–30 |
+| VIII. Tower of Babel | 4 | 16–17 | 31–32 |
+| **Total** | **47** | **1–17** | **16–32** |
+
+**Original publication structure:** the unnumbered opening body block of each chapter is unit 1; subsequent paragraphs carry printed numerals. Chapters III, IV and VIII open on pages also occupied by the preceding chapter's narrative/questions; thus neither one-PDF-page-per-chapter nor all-text-until-next-heading extraction is safe. All eight source chapters contain separately headed QUESTIONS. Source epigraphs, footnotes and historical illustrations are additional layers, not story sentences.
+
+**Literary-role and serious import guards identified on actual page images:**
+- **IV.7**, printed p.7: Marian/protoevangelium interpretation inside the number-7 narrated unit. Preserve original author attribution and distinguish explanation from biblical narration.
+- **IV.10**, printed pp.7–8: authorial moral exhortation after the Fall; not a new biblical episode.
+- **V.7**, printed p.10: Abel-as-Christ typology contains the period source's **collective-blame formulation concerning Jews**. This is not a Church-endorsed conclusion. Block from unqualified devotional or catechetical output, and require contextual review if the original is ever reproduced.
+- **VI.8**, printed p.13: the ark as a figure of the Church, not a physical Atlas event.
+- **VII.1**, printed p.14: geographic assertion locating the ark at a mountain in Armenia called Ararat is source-specific; do not silently assign a confident modern pin.
+- **VII.5**, printed p.15: the author's moral warning concerning parents is included within a narrative unit.
+- **VIII.3**, printed pp.16–17: historical ethnogeographical claims assigning continents and peoples to the sons of Noe. Do **not** convert these claims into modern ethnic lineages, geographical facts, or automatic genealogy joins.
+- **VIII.4**, printed p.17: sweeping assertions about idolatry and human sacrifice need independently reviewed historical context rather than factual map chronology.
+
+The printed source also proposes **4000–2000 BC** for the first epoch on p.1; this is the historical textbook's framework, not a date to add to Ad Orientem's modern Bible timeline.
+
+**Progress must be reported without false inflation:** 47/47 original *unit spans* located and source-role checked; only Creation’s **6/47 original unit bodies have a separately supplied first-pass transcription**. **0/47 are independently character-certified and 0 are approved for public display.** The next substantive batch is to collate the remaining 41 full original English unit bodies from the page images, then independently check all 47 character-for-character including footnotes; no new synthesized narrative or substitute Knecht commentary is permitted.
+
