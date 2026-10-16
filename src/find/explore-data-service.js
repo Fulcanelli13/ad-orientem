@@ -26,6 +26,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   saintsVocations:moduleUrl("../../data/saints/holiness-first-sixteen-cross-vocation-research.v1.json"),
   saintsOwnerIndex:moduleUrl("../../data/saints/read-only-calendar-art-index-20261015.v1.json"),
   saintsShrineReadiness:moduleUrl("../../data/saints/existing-shrine-geography-readiness-20261016.v1.json"),
+  saintsW78Evidence:moduleUrl("../../data/saints/w78-shrine-person-source-evidence-20261016.v1.json"),
   saintsCalendarBridge:moduleUrl("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
@@ -44,7 +45,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,saintsShrineReadiness]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,saintsShrineReadiness,saintsW78Evidence]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -68,6 +69,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     research?fetchJson(EXPLORE_DATA_URLS.saintsVocations,{fetchImpl,optional:true}):Promise.resolve(null),
     research?fetchJson(EXPLORE_DATA_URLS.saintsOwnerIndex,{fetchImpl,optional:true}):Promise.resolve(null),
     research?fetchJson(EXPLORE_DATA_URLS.saintsShrineReadiness,{fetchImpl,optional:true}):Promise.resolve(null),
+    research?fetchJson(EXPLORE_DATA_URLS.saintsW78Evidence,{fetchImpl,optional:true}):Promise.resolve(null),
   ]);
   return applySaintsReleaseBoundary({
     directory,
@@ -77,6 +79,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     saintsVocations:saintsVocations?.publication==="RESEARCH_ONLY_NOT_APP_VISIBLE"?saintsVocations:null,
     saintsOwnerIndex:saintsOwnerIndex?.schema==="ao.saints.read-only-owner-index-20261015.v1"?saintsOwnerIndex:null,
     saintsShrineReadiness:saintsShrineReadiness?.schema==="ao.saints.existing-shrine-geography-readiness-20261016.v1"?saintsShrineReadiness:null,
+    saintsW78Evidence:saintsW78Evidence?.schema==="ao.saints.w78-119-shrine-name-owner-source-evidence.v1"?saintsW78Evidence:null,
     saintsCalendarBridge:saintsCalendarBridge?.schema==="ao.saints.parallel-owner-identity-bridge.v1" && saintsCalendarBridge?.status==="EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES"?saintsCalendarBridge:null,
     geography:Object.freeze({
       geoAreas:safeArray(geography?.geoAreas),
