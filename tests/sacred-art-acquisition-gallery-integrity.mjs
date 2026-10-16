@@ -77,7 +77,18 @@ for(const [idx,id] of [
  assert.ok(at(idx,id).photos.length,'Acquired exact-original photo missing from gallery: '+idx+'/'+id);
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
-assert.ok(categoriesWithPhoto>=93,'Research-gallery-linked image coverage regressed');
+assert.ok(categoriesWithPhoto>=130,'Acquisition-to-gallery linked photo coverage has regressed below verified closeout checkpoint');
+const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
+assert.equal(stationCategories.length,14);
+assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
+for(const n of [117,119,120,121,123,127]){
+ const c=current.categories.find(c=>c.index===n);
+ assert.ok(c.works.some(w=>w.photos.some(p=>p.status.includes('CC_BY_SA'))),'The six reopened San Polo source photos must retain their attribution-sharealike licence provenance');
+}
+for(const n of [89,93,99]){
+ const c=current.categories.find(c=>c.index===n);
+ assert.ok(c.works.some(w=>w.photos.some(p=>p.id.startsWith('W87-SHA-'))),'W87 verified museum photo disappeared from gallery');
+}
 assert.equal(reconciled.counts.photographicImageAcquisitionCovered,153,'Source acquisition count is NOT gallery-linked count');
 assert.equal(reconciled.counts.totalCategories,168);
 console.log('PASS Sacred Art gallery integrity: 168 source categories, '+categoriesWithPhoto+' have linked image previews; all human review seed decisions preserved; selected originals and identity holds protected.');
