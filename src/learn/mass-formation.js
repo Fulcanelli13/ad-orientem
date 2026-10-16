@@ -1,4 +1,5 @@
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
+import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { massFormationScriptureHtml } from "./mass-formation-scripture-context.js";
 import { sourceReferencePanelCss, sourceReferencePanelHtml } from "./source-reference-panel.js";
@@ -179,12 +180,13 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       }
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
       if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();
-        if(state.view==="moment"){state.view="moments";state.momentKey=null;}
-        else {state.view="list";state.stageId=null;}
-        render();return;
+        if(state.view==="moment"){state.view="moments";state.momentKey=null;render();return;}
+        if(state.view==="stage"&&stageFromList){state.view="list";state.stageId=null;stageFromList=false;render();return;}
+        if(state.view==="moments"&&momentsFromList){state.view="list";state.momentKey=null;momentsFromList=false;render();return;}
+        close(true);return;
       }
       if(target.matches("[data-ao-mf-open-moments]")){
-        event.preventDefault();
+        event.preventDefault();momentsFromList=state.view==="list";
         ensureGuides().then(()=>{if(!root())return;state.view="moments";state.stageId=null;render()})
           .catch(()=>{state.guideError=true;state.view="list";render()});
         return;
@@ -204,7 +206,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
       if(target.dataset.aoMfRelatedStage&&state.data?.stages?.some(s=>s.id===target.dataset.aoMfRelatedStage)){
         event.preventDefault();state.stageId=target.dataset.aoMfRelatedStage;state.view="stage";render();return;
       }
-      if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;state.momentKey=null;render();return;}
+      if(target.dataset.aoMfStage){event.preventDefault();stageFromList=state.view==="list";state.view="stage";state.stageId=target.dataset.aoMfStage;state.momentKey=null;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
       if(target.matches("[data-ao-mf-prev]")&&idx>0){event.preventDefault();state.stageId=stages[idx-1].id;render();return;}
       if(target.matches("[data-ao-mf-next]")&&idx>=0&&idx<stages.length-1){event.preventDefault();state.stageId=stages[idx+1].id;render();return;}
@@ -273,7 +275,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
+  let entryOrigin=null,stageFromList=false,momentsFromList=false;
   async function open(opts={}){
+    entryOrigin=captureObservedModuleOrigin(win,"learn");stageFromList=false;momentsFromList=false;
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
@@ -302,7 +306,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;state.momentKey=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    if(returnToLearn)return returnToObservedModuleOrigin(win,entryOrigin,{
+      close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.open?.()
+    });
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
