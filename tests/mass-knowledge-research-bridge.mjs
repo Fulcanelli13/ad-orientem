@@ -379,3 +379,63 @@ assert.equal(discrepancyDecisions.decisions.find(x=>
 assert.equal(discrepancyDecisions.release,
   "FAIL_CLOSED_UNTIL_FORM_CORRECT_GOSPEL_HEADING_RUNTIME_CHECK");
 console.log("Mass P0 Latin Adjudication: PASS — two accent variants, one unresolved Proper header risk.");
+
+
+// P0 Gospel heading risk in a real source-first model.
+// A synthetic, clearly Gospel-of-John Proper probes whether the donor's
+// static Matthew heading is resolved with the actual selected reading.
+// No production source or reader view is modified by this diagnostic.
+const {createMassReaderModel:p0CreateModel}=await import("../src/mass/reader-model.js");
+const p0SectionMap=readJson("../data/presentation/reader-section-map.v0.13.1.json");
+const p0TextLow=readJson("../data/presentation/reader-text-low.v1.json");
+const p0TextSung=readJson("../data/presentation/reader-text-sung.v1.json");
+const p0T=(lat,en)=>({lat,en});
+const p0JohnProper={
+  sourcePath:"TEST_ONLY/BIBLICAL_JOHN",
+  introit:p0T("Intróitus probationis","Test Introit"),
+  collects:[p0T("Orátio probationis","Test Collect")],
+  epistle:p0T("Léctio probationis","Test Epistle"),
+  gradual:p0T("Graduále probationis","Test Gradual"),
+  sequence:p0T("",""),
+  gospel:p0T("In princípio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.",
+    "In the beginning was the Word, and the Word was with God, and the Word was God."),
+  offertory:p0T("Offertórium probationis","Test Offertory"),
+  secrets:[p0T("Secréta probationis","Test Secret")],
+  preface:p0T("Præfátio probationis","Test Preface"),
+  communion:p0T("Commúnio probationis","Test Communion"),
+  postcommunions:[p0T("Postcommúnio probationis","Test Postcommunion")],
+};
+const p0JohnMass={
+  schema:"ao-resolved-mass-v2",date:"2026-10-04",
+  form:"MISSA_CANTATA_INCENSE",presentationMode:"LIVE",
+  actualCelebration:{id:"P0_JOHN_DIAGNOSTIC",type:"VOTIVE",title:"P0 Gospel heading test"},
+  calendarCelebration:{id:"P0_CALENDAR_FIXTURE",type:"CALENDAR"},
+  explicitlySelectedCelebration:true,
+  proper:{status:"READY",data:p0JohnProper,sourcePath:p0JohnProper.sourcePath},
+  overlays:[],precedingRites:[],followingActions:[],distinctRite:null,
+};
+const p0TestModel=p0CreateModel({
+  resolvedMass:p0JohnMass,
+  sectionMap:p0SectionMap,
+  lowCorpus:p0TextLow,
+  sungCorpus:p0TextSung,
+});
+const p0ModelCue=(id)=>p0TestModel.cards.flatMap(c=>c.paragraphs)
+  .find(p=>p.sourceCueIds?.includes(id));
+const p0GospelTitle=p0ModelCue("AO.SM.C0084");
+const p0GospelReading=p0TestModel.cards.flatMap(c=>c.paragraphs)
+  .filter(p=>p.sourceCueIds?.includes("AO.SM.C0086") || p.id?.startsWith("AO.SM.B026"));
+assert.ok(p0GospelTitle,"resolved reader lacks Gospel proclamation heading");
+assert.ok(p0GospelReading.length,"resolved reader lacks Gospel Proper reading");
+assert.ok(p0GospelReading.some(p=>
+  [p.primary,p.alternate].some(s=>String(s??"").includes("In princípio erat Verbum"))),
+  "John Proper fixture was not rendered");
+const p0HeadingText=[p0GospelTitle.primary,p0GospelTitle.alternate].join(" ");
+const p0StaticMatthew=p0HeadingText.includes("Matthǽum");
+if(p0StaticMatthew){
+  assert.equal(discrepancyDecisions.decisions.find(x=>
+    x.family==="GOSPEL_HEADING_VARIABLE_EVANGELIST")?.P0Decision,
+    "OPEN_FORM_CONDITIONAL_PRODUCTION_TEXT_RISK");
+}
+console.log("Mass P0 John Gospel heading source-first diagnostic: "+
+  (p0StaticMatthew?"CONFIRMED_STATIC_MATTHEW_HEADING_OWNER_RISK":"NO_STATIC_MATTHEW_HEADING_DETECTED")+" (no runtime mutation).");
