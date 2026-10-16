@@ -4,6 +4,7 @@
  * certifies an edition or promotes a research-only Mass/P0 bibliography.
  */
 import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
+import {releasedMassFormationPassages,formationPassagesForSource} from "./mass-passage-publication.js";
 
 export const MASS_SOURCE_READING_VERSION="ao-mass-source-reading-v1";
 const escape=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -24,7 +25,7 @@ const roles=Object.freeze({
 });
 const labelFor=(mapping,key,fr)=>mapping[key]?.[fr?1:0]??String(key||"");
 
-export function massSourceStudyRecord(formation,stageId,sourceId,{releasedPassages=[]}={}){
+export function massSourceStudyRecord(formation,stageId,sourceId,{passageManifest=null}={}){
  if(formation?.schema!=="ao-mass-formation-campion-v1")return null;
  const stage=formation?.stages?.find(item=>item.id===stageId);
  const source=formation?.sources?.find(item=>item.id===sourceId);
@@ -35,10 +36,10 @@ export function massSourceStudyRecord(formation,stageId,sourceId,{releasedPassag
  const canonicalUrl=sourceReferenceSafeUrl(source.canonical_url||source.url);
  return Object.freeze({stageId,stageTitle:stage.title,sourceId,sourceTitle:source.title,
    authorityType:source.authority_type,role:source.role,canonicalUrl,
-   // Caller supplies ONLY the output of the strict released-manifest adapter.
-   // Empty is always a valid fail-closed, source-metadata-only state.
-   passages:Object.freeze(releasedPassages.filter(x=>
-     x.stageId===stageId&&x.sourceId===sourceId)),
+   // Never trust a supplied passage list without validating the entire
+   // publication manifest and the original stage/source/claim relationships.
+   passages:formationPassagesForSource(
+     releasedMassFormationPassages(passageManifest,formation),stageId,sourceId),
    claims:Object.freeze(claims.map(claim=>Object.freeze({
      id:claim.id,text:claim.text
    })))});
