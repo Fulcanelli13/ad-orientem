@@ -1,6 +1,6 @@
 # 1962 Calendar — coverage and exception audit (P0 / #719)
 
-**Audit date:** 17 October 2026. **Scope:** General Roman Calendar, 1962 liturgical books, civil years **2026–2028**. **Status:** evidence and CI worklist only. It neither publishes a new liturgical decision nor changes the Calendar, Proper, Mass or Scripture engines.
+**Audit date:** 17 October 2026. **Scope:** General Roman Calendar, 1962 liturgical books, civil years **2026–2028**. **Status:** evidence and CI worklist only. It neither publishes a new liturgical decision nor changes the Calendar, Proper, Mass resolver, or Scripture engines.
 
 ## Measured coverage (not an overall completion percentage)
 
@@ -14,7 +14,7 @@
 | Reviewed omission records outside the protected-annex list | **3** | Not in the annex does not mean a feast is ineligible or automatically omitted. |
 | Existing general-calendar transfer witnesses | **7** | Four have source-matched exact RG clause citations; three are other or unannotated witness states. |
 | Particular Dublin chaplaincy witnesses still held for exact venue/jurisdiction/formulary review | **3** | No universal Mass/calendar decision follows from the local announcements. |
-| Explicit editorial exception and parity holds | **8** | Tracked separately and blocked from automatic Mass ororation changes. |
+| Explicit editorial exception and parity holds | **8** | Tracked separately and blocked from automatic Mass oration changes. |
 
 Do **not** divide twelve by thirty-three to claim overall rubrical coverage; the populations are different. The full denominator of occurring feasts, omitted offices, potential commemorations, and particular-calendar variants **has not yet been established**.
 
