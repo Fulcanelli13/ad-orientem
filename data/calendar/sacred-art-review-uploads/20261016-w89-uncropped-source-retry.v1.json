@@ -1,0 +1,39 @@
+{
+  "schema": "AO_SACRED_ART_W89_UNCROPPED_NG_IMAGE_RECOVERY_V1",
+  "items": [
+    {
+      "categoryIndex": 105,
+      "id": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "museumId": "NG1495",
+      "naturalAspectRatio": 0.7138263665594855,
+      "ratioTolerance": 0.035,
+      "minShortSide": 1400,
+      "sourcePage": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors-in-the-temple",
+      "candidateUrls": [
+        "https://www.nationalgallery.org.uk/media/0xhkcrwq/n-1495-00-000016-fs-hd.jpg?width=2400",
+        "https://www.nationalgallery.org.uk/media/0xhkcrwq/n-1495-00-000016-fs-hd.jpg?width=1800",
+        "https://www.nationalgallery.org.uk/media/0xhkcrwq/n-1495-00-000016-fs-hd.jpg"
+      ]
+    },
+    {
+      "categoryIndex": 157,
+      "id": "ART-uido-eni-usannah-and-the-lders",
+      "museumId": "NG196",
+      "naturalAspectRatio": 1.29073756432247,
+      "ratioTolerance": 0.035,
+      "minShortSide": 1400,
+      "sourcePage": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "candidateUrls": [
+        "https://www.nationalgallery.org.uk/media/54ndpgiq/n-0196-00-000017-web-hd.jpg?width=3200",
+        "https://www.nationalgallery.org.uk/media/54ndpgiq/n-0196-00-000017-web-hd.jpg?width=2400",
+        "https://www.nationalgallery.org.uk/media/54ndpgiq/n-0196-00-000017-web-hd.jpg"
+      ]
+    }
+  ],
+  "rules": [
+    "Accept complete composition only, expected painting natural aspect ratio anchored to museum dimensions with <=3.5% tolerance",
+    "Never digitally stretch or fabricate missing source-picture borders",
+    "Frame belongs to external derivative request, original research bytes preserved",
+    "No production rights claim, no rating changes"
+  ]
+}
