@@ -352,10 +352,10 @@ const APPROVED_OMISSION_IDENTITIES=Object.freeze({
   "2026-10-04":Object.freeze({id:"FRANCIS_ASSISI_2026_SUNDAY_OMISSION",saint:"SAINT_FRANCIS_OF_ASSISI",principal:"tempora:Pent19-0:2:g"}),
   "2026-11-22":Object.freeze({id:"PENT24_CECILIA_2026_OMITTED",saint:"SAINT_CECILIA",principal:"tempora:Pent24-0:2:g"}),
   "2026-12-06":Object.freeze({id:"ADVENT2_NICHOLAS_2026_OMITTED",saint:"SAINT_NICHOLAS_MYRA",principal:"tempora:Adv2-0:1:v"}),
-  "2027-03-07":Object.freeze({id:"LENT4_THOMAS_AQUINAS_2027_OMITTED",saint:"SAINT_THOMAS_AQUINAS",principal:"tempora:Quad4-0:1:v",kind:"I_CLASS_LENT_SUNDAY"}),
+  "2027-03-07":Object.freeze({id:"LENT4_THOMAS_AQUINAS_2027_OMITTED",saint:"SAINT_THOMAS_AQUINAS",principal:"tempora:Quad4-0:1:pv",kind:"I_CLASS_LENT_SUNDAY"}),
   "2027-06-13":Object.freeze({id:"PENT4_ANTHONY_PADUA_2027_OMITTED",saint:"SAINT_ANTHONY_PADUA",principal:"tempora:Pent04-0:2:g"}),
   "2027-08-08":Object.freeze({id:"PENT12_JOHN_VIANNEY_2027_OMITTED",saint:"SAINT_JOHN_MARY_VIANNEY",principal:"tempora:Pent12-0:2:g"}),
-  "2028-06-11":Object.freeze({id:"TRINITY_BARNABAS_2028_OMITTED",saint:"SAINT_BARNABAS_APOSTLE",principal:"tempora:Pent01-0:1:w",kind:"I_CLASS_TRINITY_SUNDAY"}),
+  "2028-06-11":Object.freeze({id:"TRINITY_BARNABAS_2028_OMITTED",saint:"SAINT_BARNABAS_APOSTLE",principal:"tempora:Pent01-0r:1:w",kind:"I_CLASS_TRINITY_SUNDAY"}),
   "2028-08-20":Object.freeze({id:"PENT11_BERNARD_2028_OMITTED",saint:"SAINT_BERNARD_CLAIRVAUX",principal:"tempora:Pent11-0:2:g"}),
   "2028-12-03":Object.freeze({id:"ADVENT1_FRANCIS_XAVIER_2028_OMITTED",saint:"SAINT_FRANCIS_XAVIER",principal:"tempora:Adv1-0:1:v"})
 });
