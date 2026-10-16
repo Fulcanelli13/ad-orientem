@@ -28,7 +28,13 @@ assert.ok(q("catéchisme").some(x=>x.kind==="module"&&x.id==="learn.catechism"))
 assert.ok(q("mariage").some(x=>x.kind==="module"&&x.id==="learn.rites.matrimony"));
 assert.ok(q("liturgie").some(x=>x.kind==="family"&&x.id==="liturgy-tradition"));
 assert.ok(q("Mass Explorer").some(x=>x.kind==="module"&&x.id==="learn.mass_explorer"),
- "Public Mass Explorer card must be discoverable without changing existing Formation corpus");
+ "Original Mass Explorer search must resolve to the one consolidated Understand the Mass entry");
+assert.ok(q("Messe").some(x=>x.kind==="module"&&x.id==="learn.mass_explorer"),
+ "French Mass discovery must reach the canonical study destination");
+assert.ok(!q("Mass").some(x=>x.kind==="module"&&x.id==="learn.mass"),
+ "The legacy eight-lesson route must not appear as a duplicate discovery entry");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="liturgy-tradition").items.filter(x=>x.id==="learn.mass").length,1,
+ "Original eight-lesson owner must remain registered for deep links");
 assert.ok(q("apologétique").some(x=>x.kind==="family"&&x.id==="apologetics"),
  "French Apologetics must resolve to its own category, never a phantom live module");
 assert.ok(q("crise dans l’église").some(x=>x.kind==="family"&&x.id==="church-crisis"),
