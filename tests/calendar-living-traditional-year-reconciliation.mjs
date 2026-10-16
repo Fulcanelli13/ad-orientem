@@ -168,6 +168,12 @@ try{
   assert.ok(report.rows.find(x=>x.date==="2026-10-09")?.optionalTraditionalMassReviews
     .every(x=>x.massInsertionAuthorized===false&&x.selectedFormularyId===null));
   assert.deepEqual(report.rows.find(x=>x.date==="2026-09-23")?.globalHonourIds,["saint.pio-pietrelcina"]);
+  assert.equal(report.rows.find(x=>x.date==="2026-09-23")?.optionalTraditionalMassReviews?.[0]?.massInsertionAuthorized,false,
+    "Papal announcement never authorizes a different 1962 Mass by itself");
+  assert.deepEqual(report.rows.find(x=>x.date==="2026-10-11")?.globalHonourIds,["saint.john-xxiii"]);
+  assert.deepEqual(report.rows.find(x=>x.date==="2026-10-22")?.globalHonourIds,["saint.john-paul-ii"]);
+  assert.notEqual(report.rows.find(x=>x.date==="2026-10-11")?.mainId,null,
+    "Traditional feast remains independently resolved on modern St John XXIII day");
   assert.equal(report.historicDates.find(x=>x.date==="2025-10-09").modernGlobalHonours.length,0);
   assert.ok(report.historicDates.every(x=>x.resolved));
 }finally{
