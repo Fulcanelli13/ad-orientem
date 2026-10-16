@@ -45,7 +45,8 @@ function proper(includeComm=true){
 }
 assert.equal(anchors.length,6);
 assert.deepEqual(new Set(anchors.map(a=>a.slot)),new Set(["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]));
-assert.ok(anchors.every(a=>READER_PROPER_SLOTS.includes(a.slot)&&a.route===null));
+assert.ok(anchors.every(a=>READER_PROPER_SLOTS.includes(a.slot)&&a.route===null&&a.resolvedSourcePath==="Sancti/10-09"));
+assert.ok(anchors.filter(a=>a.sourceKind==="HISTORICAL_COMMEMORATION").every(a=>a.calendarCommemorationId==="sancti:10-09t:4:r"));
 const principal=anchors.filter(a=>a.sourceKind==="PRINCIPAL_1962");
 const commemorations=anchors.filter(a=>a.sourceKind==="HISTORICAL_COMMEMORATION");
 for(const a of principal){
@@ -59,7 +60,7 @@ for(const a of principal){
  assert.equal(r.readOnly,true);assert.equal(r.maySelectCelebrantMass,false);
 }
 for(const a of commemorations){
- let r=inspectP1InternalMissalLink({anchor:a,calendarResolution:day(),proper:proper()});
+ let r=inspectP1InternalMissalLink({anchor:{...a,calendarCommemorationId:null},calendarResolution:day(),proper:proper()});
  assert.equal(r.reason,"CANONICAL_COMMEMORATION_ID_MISSING");
  r=inspectP1InternalMissalLink({anchor:{...a,calendarCommemorationId:commId},
   calendarResolution:day(),proper:proper()});
