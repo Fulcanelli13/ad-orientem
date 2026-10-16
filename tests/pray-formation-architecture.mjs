@@ -46,10 +46,12 @@ assert.equal(scenarioIdSet.size,36);
 assert.equal(liveEdges.length,72);
 const current=Object.groupBy?Object.groupBy(crosswalk.apostolate.handoff_edges,x=>x.status):crosswalk.apostolate.handoff_edges.reduce((r,x)=>(r[x.status]??=[],r[x.status].push(x),r),{});
 assert.equal((current.ROUTER_EXCLUDES_CALENDAR||[]).length,2);
-assert.equal((current.PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY||[]).length,4);
+assert.equal((current.PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY||[]).length,0);
+for(const id of ["apostolate:AQ01->pray.rosary","apostolate:AQ07->pray.eternal_rest","apostolate:HS05->pray.eternal_rest","apostolate:HS06->pray.eternal_rest"])
+ assert.ok(liveEdges.includes(id),"Repaired source-owned Prayer handoff missing: "+id);
 assert.match(apostolate,/\["learn","pray","find","mass"\]\.includes\(surface\)/,"Apostolate Calendar exclusion has changed; reevaluate flagged findings");
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.apologetics")));
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.church_crisis")));
 for(const x of crosswalk.prayer)assert.ok(x.primary_entrance&&x.content_owner==="pray");
 for(const x of crosswalk.formation)assert.ok(x.primary_view&&x.canonical_owner);
-console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 Formation, 36 Apostolate, 72 scenario handoffs, 6 priority link findings");
+console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 Formation, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");
