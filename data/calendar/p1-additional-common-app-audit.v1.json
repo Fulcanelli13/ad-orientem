@@ -3,7 +3,7 @@
   "asOf": "2026-10-16",
   "witnessRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
   "producer": "tests/calendar-p1-live-1962-source-discovery.mjs via AO_RUNTIME_V8.resolver.properResolver.resolveSource",
-  "status": "17_DIRECT_2_ADDITIONAL_SOURCE_COMPOSED_9_PARTIAL_APP_SOURCES_3_AMBIGUOUS",
+  "status": "17_DIRECT_4_SOURCE_COMPOSED_7_PARTIAL_3_AMBIGUOUS",
   "coreSections": [
     "Introitus",
     "Oratio",
@@ -716,7 +716,15 @@
       "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "approvedForNewSaintMass": false,
       "canonical1962PrintedFamilyCertified": false,
-      "readOnlyMissalRoute": null
+      "readOnlyMissalRoute": null,
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionModule": "src/calendar/p1-papal-martyr-source-composition.js",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38930425274",
+      "inheritedBorrowedSectionCount": 16,
+      "uniqueVariantCollectRetained": true,
+      "sourceDonor": "Commune/C4b"
     },
     {
       "researchId": "p1:index:1962:several_virgins_and_martyrs",
@@ -1431,7 +1439,15 @@
       "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
       "approvedForNewSaintMass": false,
       "canonical1962PrintedFamilyCertified": false,
-      "readOnlyMissalRoute": null
+      "readOnlyMissalRoute": null,
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionModule": "src/calendar/p1-papal-martyr-source-composition.js",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38930425274",
+      "inheritedBorrowedSectionCount": 16,
+      "uniqueVariantCollectRetained": true,
+      "sourceDonor": "Commune/C4b"
     },
     {
       "researchId": "p1:index:1962:virgin_and_martyr",
@@ -1667,9 +1683,9 @@
   "interpretation": "C-codes inherit one another; missing sections need exact canonical owner resolution, not publication as separate full Masses. A direct 9-section audit is not full-1962 edition certification or an authorization to celebrate optional saints.",
   "routing": "NONE_EXTERNAL_OR_INTERNAL_UNTIL_READER_OWNS_READ_ONLY_SURFACE",
   "massSelectionMutation": false,
-  "sourceComposedNineSectionCount": 2,
-  "completeAfterCompositionCount": 19,
-  "partialsAfterCompositionCount": 9,
+  "sourceComposedNineSectionCount": 4,
+  "completeAfterCompositionCount": 21,
+  "partialsAfterCompositionCount": 7,
   "partialSourceReconciliationsVerified": 2,
   "verifiedAdditionalPartialLanguageSections": 25
 }
