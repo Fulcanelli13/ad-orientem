@@ -65,8 +65,11 @@ assert.match(about,/How source labels work/,"About lost collapsed source-methodo
 assert.match(about,/Official \/ governing source/,"About lost provenance vocabulary");
 assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a standalone Settings section");
 assert.match(about,/43\.59\.99/);
-assert.equal((about.match(/data-settings-info\b/g)||[]).length,7,
-  "Seven informational About rows must be static text, not dead buttons");
+assert.equal((about.match(/data-settings-info\b/g)||[]).length,13,
+  "Seven original and six read-only release About rows must be static text, not dead buttons");
+for(const marker of ["Active offline snapshot","Prepared update","Service worker","Website","Display mode","Current app interface version"]){
+  assert.match(about,new RegExp(marker),"Missing non-actionable release evidence: "+marker);
+}
 assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,1,
   "Only the actionable Privacy route should remain a button in About");
 assert.match(about,/data-settings-route="\/settings\/privacy-data"/,
