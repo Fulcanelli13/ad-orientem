@@ -11,6 +11,8 @@ on:
       - 'tests/saints-existing-shrine-geography-readiness.mjs'
       - 'tests/saints-six-name-alias-evidence.mjs'
       - 'tests/saints-research-shrine-map.mjs'
+      - 'tests/saints-w78-shrine-name-bulk-reconciliation.mjs'
+      - 'data/saints/w78-113-shrine-name-source-evidence-20261016.v1.json'
       - 'data/saints/six-duplicate-name-alias-evidence-20261016.v1.json'
       - 'src/find/saints-shrine-map-research.js'
       - 'data/saints/existing-shrine-geography-readiness-20261016.v1.json'
@@ -43,6 +45,8 @@ jobs:
         run: node tests/saints-atlas-editorial-pilot.mjs
       - name: Check native Explore Saints lens and biography sheets
         run: node tests/saints-explore-native-lens.mjs
+      - name: Verify W78 bulk 113 shrine names, 137 site associations and 209 source references
+        run: node tests/saints-w78-shrine-name-bulk-reconciliation.mjs
       - name: Verify six source-owner alias cases without canonical renames
         run: node tests/saints-six-name-alias-evidence.mjs
       - name: Verify 121-site gated Saints research map without new physical site IDs
