@@ -19,10 +19,10 @@ const groupIds=new Set(census.groups.map(x=>"canon-group."+x.id));
 const places=new Set(geography.places.map(x=>x.place_id));
 const mediaPaths=new Set(media.items.filter(x=>x.status==="APPROVED" &&
   x.rights_verified&&x.subject_verified&&x.crop_reviewed).map(x=>x.asset_path));
-assert.equal(registry.observances.length,14);
-assert.equal(registry.observances.filter(x=>x.universalStatus==="CERTIFIED_BY_DECREE").length,5);
+assert.equal(registry.observances.length,16);
+assert.equal(registry.observances.filter(x=>x.universalStatus==="CERTIFIED_BY_DECREE").length,7);
 assert.equal(registry.observances.filter(x=>x.authorityScope.startsWith("USCCB_")).length,9);
-assert.equal(new Set(registry.observances.map(x=>x.subjectId+":"+x.monthDay)).size,14);
+assert.equal(new Set(registry.observances.map(x=>x.subjectId+":"+x.monthDay)).size,16);
 for(const r of registry.observances){
  assert.ok(byId.has(r.subjectId)||doctorIds.has(r.subjectId)||groupIds.has(r.subjectId),r.subjectId);
  assert.match(r.monthDay,/^\d\d-\d\d$/);
@@ -52,6 +52,10 @@ for(const link of artMap.links){
  }
  if(link.candidatePainting)assert.equal(link.candidatePainting.status,"ART_PIPELINE_RESEARCH_NOT_EDITORIALLY_APPROVED");
 }
+assert.deepEqual(get("2026-10-05").map(x=>x.id),["saint.maria-faustyna-kowalska"]);
+assert.deepEqual(get("2026-05-29").map(x=>x.id),["saint.paul-vi"]);
+assert.deepEqual(get("2018-05-29").map(x=>x.id),[],"Paul VI's memorial is not backdated before promulgation");
+assert.deepEqual(get("2019-10-05").map(x=>x.id),[],"Faustina's memorial is not backdated before promulgation");
 assert.deepEqual(get("2026-10-09").map(x=>x.id),["saint.john-henry-newman"]);
 assert.deepEqual(get("2025-10-09").map(x=>x.id),[]);
 assert.deepEqual(get("2026-09-05").map(x=>x.id),["saint.teresa-calcutta"]);
@@ -102,4 +106,4 @@ for(const c of [...get("2026-10-09"),...get("2026-09-20",{jurisdiction:"US"}),..
  assert.ok(Object.isFrozen(c));
 }
 assert.throws(()=>get("2026-02-30"),TypeError);
-console.log("Living sanctoral reviewed cards: PASS (14 date witnesses; five universal decrees, 5 real place IDs, two approved *site photos*, no Mass/artwork substitution)");
+console.log("Living sanctoral reviewed cards: PASS (16 date witnesses; seven universal decrees, 5 real place IDs, two approved *site photos*, no Mass/artwork substitution)");
