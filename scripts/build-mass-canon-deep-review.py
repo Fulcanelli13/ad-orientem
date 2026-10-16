@@ -144,8 +144,9 @@ def research_docket(entry):
                  h(triage_by_id[item["claim_id"]]["collation_status"])+'</strong> · '+
                  h(triage_by_id[item["claim_id"]]["editorial_observation"])+
                  '</p>' if item["claim_id"] in triage_by_id else '')+
-                ('<p data-lebrun-held="'+h(item["claim_id"])+'"><strong>Le Brun 1843 volume I: original French page collation outstanding.</strong> '+
-                 h(lebrun_by_id[item["claim_id"]]["p0_caution"])+
+                ('<p data-lebrun-held="'+h(item["claim_id"])+'"><strong>Le Brun 1843: original-edition French OCR context read; printed leaf image and publication approval still outstanding.</strong> '+
+                 h(lebrun_by_id[item["claim_id"]]["source_finding"])+
+                 ' · '+h(lebrun_by_id[item["claim_id"]]["p0_caution"])+
                  ' · provisional Wikisource scan index '+h(lebrun_by_id[item["claim_id"]]["provisional_djvu_first_page"])+
                  ' (offset inferred; not verified for this page).</p>' if item["claim_id"] in lebrun_by_id else '')+'</li>'
             )
