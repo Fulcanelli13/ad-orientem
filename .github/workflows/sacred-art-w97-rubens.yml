@@ -1,0 +1,32 @@
+name: Sacred Art W97 Exact Rubens Photo Acquisition
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - data/calendar/sacred-art-review-uploads/20261016-w97-two-rubens-exact-source-recovery.v1.json
+      - tools/calendar/acquire-sacred-art-w97-rubens.py
+      - .github/workflows/sacred-art-w97-rubens.yml
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Acquire Rubens source images with exact physical identities and separate rights holds
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w97-rubens.py
+          python tools/calendar/acquire-sacred-art-w97-rubens.py
+      - name: Preserve SHA backed research originals and overall composition sheet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w97-exact-original-rubens-research-only
+          path: artifacts/sacred-art-w97-rubens-originals/
+          retention-days: 30
+          if-no-files-found: warn
