@@ -56,7 +56,7 @@ const offDate=buildTodayV2Sections({...state,resolution:{status:"failed"}},vm,{v
 const unknownHtml=renderTodayV2Sections(offDate,vm);
 assert.doesNotMatch(unknownHtml,/Saint Francis Borgia/);
 assert.match(unknownHtml,/pray.library/);
-assert.match(unknownHtml,/Calendar day & sources/);
+assert.match(unknownHtml,/Calendar day &amp; sources/);
 assert.doesNotMatch(unknownHtml,/Life & sources/,"Failed resolution must not claim an observed saint");
 const temporaState={...state,resolution:{...state.resolution,day:{main:{id:"tempora:Pent19-6:4:g",rank:"IV",title:"Saturday after Pentecost"}}}};
 const temporaHtml=renderTodayV2Sections(buildTodayV2Sections(temporaState,vm,sample),vm);
