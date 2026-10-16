@@ -425,7 +425,7 @@ const p0ModelCue=(id)=>p0TestModel.cards.flatMap(c=>c.paragraphs)
   .find(p=>p.sourceCueIds?.includes(id));
 const p0GospelTitle=p0ModelCue("AO.SM.C0084");
 const p0GospelReading=p0TestModel.cards.flatMap(c=>c.paragraphs)
-  .filter(p=>p.sourceCueIds?.includes("AO.SM.C0086") || p.id?.startsWith("AO.SM.B026"));
+  .filter(p=>p.sourceCueIds?.includes("AO.SM.C0086") || p.id?.startsWith("GOSPEL.") || p.id?.startsWith("AO.SM.B026"));
 assert.ok(p0GospelTitle,"resolved reader lacks Gospel proclamation heading");
 assert.ok(p0GospelReading.length,"resolved reader lacks Gospel Proper reading");
 assert.ok(p0GospelReading.some(p=>
