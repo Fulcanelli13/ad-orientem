@@ -54,14 +54,17 @@ try{
      try{
       const r=await resolver.resolveDay(date);
       const main=r?.day?.main;
+      const rank=r?.proper?.data?.rank??main?.rank??null;
+      const colour=r?.colourPlan?.massColor??r?.proper?.data?.color??
+        r?.proper?.data?.colour??main?.color??main?.colour??null;
       const comm=canonical1962Commemorations(r);
       const modern=main?.id?buildReviewedSanctoralCards({
         date,jurisdiction:"UNSPECIFIED",observedPrincipalId:main.id,
         observedCommemorationIds:comm.map(x=>x.sourceId),...model}):[];
       return {
-       date,resolved:Boolean(r?.date===date&&main?.id&&main.rank&&main.color!==undefined),
-       mainId:main?.id||null,mainRank:main?.rank||null,
-       colour:main?.color??r?.day?.colour??null,
+       date,resolved:Boolean(r?.date===date&&main?.id&&rank&&colour),
+       mainId:main?.id||null,mainRank:rank,
+       colour,
        historicalCommemorationIds:comm.map(x=>x.identity),
        supplementaryIds:modern.map(x=>x.id),
        incorrectlySelectedMass:modern.some(x=>x.massSelectionAuthority!=="NONE"||x.changes1962Principal)
