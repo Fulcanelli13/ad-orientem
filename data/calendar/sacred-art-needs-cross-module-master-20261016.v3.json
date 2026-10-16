@@ -90,7 +90,8 @@
     "conservation": "Do not sum these overlapping counts as distinct artworks or new paintings. No comprehensive new unique-artwork target is certified.",
     "legacyVerifiedExactOriginalImageSourceBaseline": 146,
     "verifiedPublicationApprovedImageCount": null,
-    "publicationStatusNote": "No independently audited count of fully licensed, selected and app-approved artworks is established here; 146 was the original exact-source photographic coverage baseline, not a release-approved figure."
+    "publicationStatusNote": "No independently audited count of fully licensed, selected and app-approved artworks is established here; 146 was the original exact-source photographic coverage baseline, not a release-approved figure.",
+    "historiaFiveActEditorialGroups": 5
   },
   "supersedingProductRequirements": [
     {
@@ -6523,5 +6524,63 @@
       "Liturgical date coverage derives from dynamic 1962-oriented calendar resolver, not fixed year 2026.",
       "The interactive church glossary has its own object/3D registry, not part of this artwork inventory."
     ]
-  }
+  },
+  "historiaFiveActEditorialGrouping": [
+    {
+      "act": "I",
+      "title": "Creation, Fall and the First Promise",
+      "arcIds": [
+        "historia-arc:creation-first-promise",
+        "historia-arc:noah-nations"
+      ],
+      "artNeeds": "Primeval anchor imagery; selective, no painting for each event."
+    },
+    {
+      "act": "II",
+      "title": "Preparation of Israel",
+      "arcIds": [
+        "historia-arc:abraham-patriarchs",
+        "historia-arc:exodus-sinai",
+        "historia-arc:land-first-kings",
+        "historia-arc:davidic-kingdom",
+        "historia-arc:prophets-exile-return"
+      ],
+      "artNeeds": "Covenant, Patriarchs, Exodus, Davidic kingship, Prophets and Exile; select representative typological and character-story works."
+    },
+    {
+      "act": "III",
+      "title": "Fulfilment in Jesus Christ",
+      "arcIds": [
+        "historia-arc:incarnation",
+        "historia-arc:public-ministry",
+        "historia-arc:paschal-mystery"
+      ],
+      "artNeeds": "Incarnation, public ministry, Passion/Resurrection; reuse Gospel, Rosary, calendar and Stations art."
+    },
+    {
+      "act": "IV",
+      "title": "Birth and mission of the Church",
+      "arcIds": [
+        "historia-arc:apostolic-church"
+      ],
+      "artNeeds": "Pentecost, Apostles, Paul, early Church and martyrdom; illustrative anchors rather than 183 scene quotas."
+    },
+    {
+      "act": "V",
+      "title": "Consummation and New Creation",
+      "arcIds": [
+        "historia-arc:consummation"
+      ],
+      "artNeeds": "Apocalypse, Last Judgement, heavenly Jerusalem, Christ in glory; prioritize visually theologically accurate art."
+    }
+  ],
+  "historiaChapterNote": "Existing 37 canonical Atlas reading chapter groups are preserved. A separate earlier 78-chapter editorial proposal is not treated here as a finalized source dataset or as 78 image requirements.",
+  "implementationOrder": [
+    "Freeze canonical IDs and preserve exact previously chosen artworks plus old 0-5 ratings.",
+    "Classify v3 context opportunities as needed/reusable/optional; use exact ARTWORK_ID and event/person/saint links, no automatic new image quotas.",
+    "Prioritize outstanding existing acquired-image identity/rights work alongside strongest unmet major feast and Historia anchors.",
+    "Join independently authored P0/P1/P2 Historia event/story/covenant drafts only through source-backed stable IDs and explicit editorial states.",
+    "Update one mobile-first review interface after acquisition, with whole-image contain, frame removal queue, artistic score, photo quality, subject-context rating, alternate suitability and export.",
+    "Publish only user-approved works with documented commercial rights and correct links; do not merge draft PR #1310 or change canonical reader automatically."
+  ]
 }
