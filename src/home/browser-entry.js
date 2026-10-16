@@ -1,4 +1,5 @@
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
+import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 
 const VERSION="modular-home-v2";
 
@@ -88,6 +89,7 @@ export function createHomeOwner(win=globalThis){
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
   let inlineCalendarRestoring=false;
+  let requestedDailyHonours=false;
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -427,6 +429,16 @@ export function createHomeOwner(win=globalThis){
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
     markOwner();
+    // Lazy on resolved Home only. Calendar and Home reuse the exact same
+    // read model and network request; no second modern saint resolver.
+    if(!requestedDailyHonours&&next?.resolution?.day?.main&&!next?.resolving){
+      requestedDailyHonours=true;
+      const fetcher=typeof win?.fetch==="function"?win.fetch.bind(win):null;
+      void loadSharedSanctoralReadModel(fetcher).then(model=>{
+        if(model&&state(win)?.route==="home"&&!inlineCalendarView)
+          paint(state(win));
+      });
+    }
     const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
     queue(()=>{rehydrateRemainingHomeDonors(win);reconcileTodayHero(appRoot)});
     return true;
