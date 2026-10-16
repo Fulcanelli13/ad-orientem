@@ -2,12 +2,15 @@ import assert from "node:assert/strict";
 import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
-import {validatePrayerReadingPilot,validateMassTransitionReadingPilot,validateRomanCanonReadingPilot,validateCommunionReadingPilot,validateConclusionReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
+import {validatePrayerReadingPilot,validateMassTransitionReadingPilot,validateRomanCanonReadingPilot,validateCommunionReadingPilot,validateConclusionReadingPilot,validateBeforeOffertoryReadingPilot} from "../src/learn/mass-prayer-reading-pilot.js";
 const root=fileURLToPath(new URL("..",import.meta.url));
 const read=path=>JSON.parse(readFileSync(resolve(root,path),"utf8"));
 const corpus=read("data/presentation/reader-text-sung.v1.json");
 const formation=read("data/learn/mass-formation-campion.v1.json");
 const guide=read("data/presentation/guide-registry.v1.json");
+const before=validateBeforeOffertoryReadingPilot(
+ read("data/learn/research/mass-formation-before-offertory-prayer-reading-pilot-20261016.v1.json"),corpus,formation,guide);
+assert.equal(before.ok,true,before.reason);
 const first=validatePrayerReadingPilot(
  read("data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json"),corpus,formation);
 const second=validateMassTransitionReadingPilot(
@@ -25,7 +28,7 @@ const fifth=validateConclusionReadingPilot(
 assert.equal(fifth.ok,true,fifth.reason);
 const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const blocks=new Map(corpus.blocks.map(x=>[x.Block_ID,x]));
-const records=[...first.readings,...second.readings,...third.readings,...fourth.readings,...fifth.readings];
+const records=[...before.readings,...first.readings,...second.readings,...third.readings,...fourth.readings,...fifth.readings];
 const chapter=(rec,index)=>{
  const source=blocks.get(rec.block_id);
  const original=source.units.map(unit=>{
@@ -44,7 +47,16 @@ const chapter=(rec,index)=>{
    '<span><strong>'+esc(source.Title)+'</strong><small>'+esc(rec.block_id)+' · '+
    esc(rec.moment_id)+' · '+esc(rec.stage_id)+'</small>'+
    (rec.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM"?'<em class="optional" aria-label="Older local Communion custom, optional">OPTIONAL LOCAL CUSTOM</em>':"")+
-   (rec.conditionality&&rec.conditionality!=="STANDARD_FIXED"?'<em class="conditional" data-conclusion-condition="'+esc(rec.conditionality)+'">'+esc({DISMISSAL_FORM_DEPENDENT:"DISMISSAL VARIES",BLESSING_MAY_BE_OMITTED:"BLESSING MAY BE OMITTED",LAST_GOSPEL_MAY_BE_OMITTED:"LAST GOSPEL MAY BE OMITTED"}[rec.conditionality])+'</em>':"")+
+   (rec.conditionality&&rec.conditionality!=="STANDARD_FIXED"?'<em class="conditional" data-'+(rec.id.startsWith("AO.FORM.PRAYER.BEFORE_OFFERTORY.")?"opening":"conclusion")+'-condition="'+esc(rec.conditionality)+'">'+esc({
+   PSALM_42_MAY_BE_OMITTED:"PSALM MAY BE OMITTED",
+   INCENSATION_DEPENDENT:"INCENSE CONDITION",
+   GLORIA_DEPENDENT:"GLORIA DEPENDS ON MASS",
+   GOSPEL_HEADING_DEPENDENT:"GOSPEL HEADING VARIES",
+   CREDO_DEPENDENT:"CREDO DEPENDS ON MASS",
+   DISMISSAL_FORM_DEPENDENT:"DISMISSAL VARIES",
+   BLESSING_MAY_BE_OMITTED:"BLESSING MAY BE OMITTED",
+   LAST_GOSPEL_MAY_BE_OMITTED:"LAST GOSPEL MAY BE OMITTED"
+  }[rec.conditionality])+'</em>':"")+
    '</span><span class="openHint">+</span></summary>'+
    '<div class="entryContent"><section class="original" aria-label="Published Mass text">'+
     '<h3>Published Mass text · Latin / English</h3>'+original+'</section>'+
@@ -56,7 +68,7 @@ const chapter=(rec,index)=>{
       rec.scripture_within_text.map(esc).join(", ")+'</p>':"")+
     '</section></div></details>';
 };
-const held=[...second.withheld,...fourth.withheld,...fifth.withheld].map(item=>'<li><strong>'+esc(item.proper_slot)+'</strong>'+
+const held=[...before.withheld,...second.withheld,...fourth.withheld,...fifth.withheld].map(item=>'<li><strong>'+esc(item.proper_slot)+'</strong>'+
  ' <code>'+esc(item.block_id)+'</code> — '+esc(item.reason)+'</li>').join("");
 const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '<meta name="viewport" content="width=device-width,initial-scale=1">'+
@@ -86,19 +98,20 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '@media(max-width:740px){.entryContent{grid-template-columns:1fr}.wrap{padding:15px 12px 50px}}'+
  '@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}'+
  '</style></head><body><main class="wrap"><span class="eyebrow">AD ORIENTEM · FORMATION P2 · EDITORIAL PREVIEW</span>'+
- '<h1>Prayer-by-prayer readings · 61 source-anchored texts</h1>'+
- '<p class="deck">Eight Offertory prayers, six fixed texts from Orate, fratres to the Sanctus, fifteen Roman Canon prayers and twenty-three Communion text blocks (including three optional local/older customs), and nine concluding texts through the Last Gospel. The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
+ '<h1>Prayer-by-prayer readings · 84 source-anchored texts</h1>'+
+ '<p class="deck">Twenty-three opening fixed texts before the Offertory, eight Offertory prayers, six Orate-to-Sanctus texts, fifteen Roman Canon prayers, twenty-three Communion blocks (including three optional older/local customs) and nine concluding texts through the Last Gospel. The left column reproduces existing published liturgical text; the right column contains unpublished interpretive notes. Original Latin and existing English remain unchanged. The French toggle changes the editorial notes only. Nothing here is released in Formation or LIVE/Missal.</p>'+
  '<div class="toolbar" role="group" aria-label="Editorial reading language"><button type="button" data-select-lang="en" aria-pressed="true">English commentary</button>'+
  '<button type="button" data-select-lang="fr" aria-pressed="false">Commentaires français</button>'+
- '<span class="eyebrow">61 DRAFTS · 4 PROPER HOLDS · 3 LOCAL CUSTOMS</span></div>'+
+ '<span class="eyebrow">84 DRAFTS · 11 PROPER HOLDS · 3 LOCAL CUSTOMS</span></div>'+
  '<nav class="toc" aria-label="Prayer list">'+records.map((r,i)=>'<a href="#'+esc(r.block_id)+'">'+String(i+1).padStart(2,"0")+
  ' '+esc(blocks.get(r.block_id).Title)+'</a>').join("")+'</nav>'+
- '<h2>Published Offertory fixed texts</h2>'+first.readings.map((r,i)=>chapter(r,i)).join("")+
- '<h2>Orate, Preface dialogue and Sanctus</h2>'+second.readings.map((r,i)=>chapter(r,i+8)).join("")+
- '<h2>The Roman Canon — original Guide divisions</h2>'+third.readings.map((r,i)=>chapter(r,i+14)).join("")+
- '<h2>The Lord’s Prayer and Communion rites</h2>'+fourth.readings.map((r,i)=>chapter(r,i+29)).join("")+
- '<h2>Postcommunion, dismissal, blessing and Last Gospel</h2>'+fifth.readings.map((r,i)=>chapter(r,i+52)).join("")+
- '<section class="held"><h2>Variable Propers — explicitly held</h2><p>These four source slots depend on the selected Mass. No generic text or per-prayer exposition has been invented.</p><ul>'+held+'</ul></section>'+
+ '<h2>Before the Offertory — preparatory prayers, chants and readings</h2>'+before.readings.map((r,i)=>chapter(r,i)).join("")+
+ '<h2>Published Offertory fixed texts</h2>'+first.readings.map((r,i)=>chapter(r,i+23)).join("")+
+ '<h2>Orate, Preface dialogue and Sanctus</h2>'+second.readings.map((r,i)=>chapter(r,i+31)).join("")+
+ '<h2>The Roman Canon — original Guide divisions</h2>'+third.readings.map((r,i)=>chapter(r,i+37)).join("")+
+ '<h2>The Lord’s Prayer and Communion rites</h2>'+fourth.readings.map((r,i)=>chapter(r,i+52)).join("")+
+ '<h2>Postcommunion, dismissal, blessing and Last Gospel</h2>'+fifth.readings.map((r,i)=>chapter(r,i+75)).join("")+
+ '<section class="held"><h2>Variable Propers — explicitly held</h2><p>These eleven source slots depend on the selected Mass. No generic text or per-prayer exposition has been invented.</p><ul>'+held+'</ul></section>'+
  '<footer>Review-only artifact; all editorial statements remain drafts. P0 certifies any deeper historical/doctrinal/scriptural research independently.</footer>'+
  '</main><script>'+
  'document.querySelectorAll("[data-select-lang]").forEach(button=>button.addEventListener("click",()=>{'+
@@ -107,16 +120,17 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  'document.documentElement.lang=language;}));'+
  'document.querySelectorAll(".toc a").forEach(a=>a.addEventListener("click",()=>{const target=document.getElementById(a.getAttribute("href").slice(1));if(target)target.open=true;}));'+
  '</script></body></html>';
-assert.equal((html.match(/class="entry" id=/g)||[]).length,61);
+assert.equal((html.match(/class="entry" id=/g)||[]).length,84);
 assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,0);
-assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,61);
+assert.equal((html.match(/class="entry" id="AO.SM.B0/g)||[]).length,84);
 assert.equal((html.match(/OPTIONAL LOCAL CUSTOM/g)||[]).length,3);
-assert.equal((html.match(/<li><strong>/g)||[]).length,4);
+assert.equal((html.match(/<li><strong>/g)||[]).length,11);
 assert.equal((html.match(/data-conclusion-condition=/g)||[]).length,6);
+assert.equal((html.match(/data-opening-condition=/g)||[]).length,5);
 assert.ok(html.includes('data-source-voice="USER_RESPONSE"'));
 assert.ok(html.includes('data-source-voice="PRIEST_PRIVATE"'));
 assert.ok(html.includes('data-source-voice="SCHOLA_PUBLIC"'));
 const out=resolve(root,"artifacts/p2-formation-prayer-review/index.html");
 mkdirSync(dirname(out),{recursive:true});
 writeFileSync(out,html);
-console.log("PASS Formation P2 editorial review: 61 published text-block witnesses, 61 bilingual draft notes, three optional older/local custom blocks, four expressly held variable Propers and six conditional ending tags → "+out);
+console.log("PASS Formation P2 editorial review: 84 published text-block witnesses, 84 bilingual draft notes, three optional older/local customs, eleven held variable Propers, five opening conditions and six conditional ending tags → "+out);
