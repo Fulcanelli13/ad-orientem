@@ -461,4 +461,24 @@ assert.equal(fam.counts.earlyEnglishSadlierLayerSeparatedChapters,180);
 assert.equal(fam.counts.earlyEnglishSadlierQuestionBlocksDetected,180);
 assert.equal(fam.counts.earlyEnglishSadlierLayerSeparationApprovedChapters,0);
 
+// Offline source-only Bible reader preview: no app publication or automatic event join.
+const offlineReader=fam.english1908OfflineReaderResearchPrototype;
+assert.ok(offlineReader);
+assert.equal(offlineReader.totalSourceChapters,182);
+assert.equal(offlineReader.boundedSourceChaptersShown,180);
+assert.equal(offlineReader.unsafeSourceChaptersHeld,2);
+assert.equal(offlineReader.originalPrintFirstPassOriginsChaptersShown,8);
+assert.equal(offlineReader.uncorrectedOCRChaptersShown,172);
+assert.equal(offlineReader.candidateCanonicalAtlasSubjectLinks,21);
+assert.equal(offlineReader.confirmedVerseAlignedAtlasLinksNew,0);
+assert.equal(offlineReader.sourceTextPublicationApproved,0);
+assert.equal(offlineReader.productionAppChanged,false);
+assert.equal(offlineReader.newSourceAuthoredBibleNarrativeWords,0);
+assert.equal(offlineReader.browserRuntimeExternalNetworkRequired,false);
+assert.equal(offlineReader.artifactSHA256.length,64);
+assert.equal(offlineReader.progressLocalStorageVersion,"AO_SCHUSTER_1908_PREVIEW_READING_STATE_v1");
+assert.equal(fam.counts.earlyEnglishSadlierOfflineResearchReaderChapterSlots,182);
+assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderTopicCandidates,21);
+assert.equal(fam.counts.earlyEnglishSadlierOfflineReaderPublished,0);
+
 console.log("Schuster-Knecht source ownership: 8 headings, 6 Atlas linked, 2 source-only chapters; 73 canon books audited; no prose copied.");
