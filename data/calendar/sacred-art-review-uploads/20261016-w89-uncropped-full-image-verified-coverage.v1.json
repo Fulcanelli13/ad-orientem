@@ -1,0 +1,108 @@
+{
+  "schema": "AO_SACRED_ART_W89_VERIFIED_FULL_SURFACE_ACQUISITION_20261016",
+  "researchOnly": true,
+  "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38893219396",
+  "workflowArtifactId": 12042209457,
+  "verified": {
+    "sourceAcquired": 2,
+    "originalPaintingIDs": [
+      "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "ART-uido-eni-usannah-and-the-lders"
+    ],
+    "categoryIndices": [
+      105,
+      157
+    ],
+    "fullSurfaceVisualAcceptance": "INSPECTED_UNCROPPED_MUSEUM_PHOTOGRAPHS",
+    "imageSHA256Verified": 2,
+    "artistPainterNotSubstituted": true,
+    "museumReuseRightsCleared": false
+  },
+  "sourcePhotoRecords": [
+    {
+      "categoryIndex": 105,
+      "artist": "Ludovico Mazzolino",
+      "painting": "Christ disputing with the Doctors",
+      "inventory": "NG1495",
+      "originalImageSize": [
+        2400,
+        3335
+      ],
+      "actualAspectRatio": 0.719640179910045,
+      "actualMuseumPaintingAspectRatio": 0.7138263665594855,
+      "sourceSha256": "f5735166631271a96c5a8a82580031155654798c056b2d41f7d281a4dd4826f5",
+      "reviewDerivativeSha256": "ca36924c3e14c3a47d7180d1e7b7fa945e8795019edf0ba5f00287a232a6bb75",
+      "museumPhotoSource": "https://www.nationalgallery.org.uk/media/0xhkcrwq/n-1495-00-000016-fs-hd.jpg?width=2400",
+      "sourcePainting": "https://www.nationalgallery.org.uk/paintings/ludovico-mazzolino-christ-disputing-with-the-doctors-in-the-temple",
+      "status": "FULL_PAINTED_SURFACE_CONFIRMED"
+    },
+    {
+      "categoryIndex": 157,
+      "artist": "Guido Reni",
+      "painting": "Susannah and the Elders",
+      "inventory": "NG196",
+      "originalImageSize": [
+        3200,
+        2472
+      ],
+      "actualAspectRatio": 1.2944983818770226,
+      "actualMuseumPaintingAspectRatio": 1.29073756432247,
+      "sourceSha256": "fc76782a85d6fd746d97fe96443533e213686dae03a4c29fe8993197f204b54a",
+      "reviewDerivativeSha256": "18cd042679f1b4c881239f1a2eb14ffe3fda0ee0203219463fb6d1dd2217e919",
+      "museumPhotoSource": "https://www.nationalgallery.org.uk/media/54ndpgiq/n-0196-00-000017-web-hd.jpg?width=3200",
+      "sourcePainting": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "status": "FULL_PAINTED_SURFACE_CONFIRMED"
+    }
+  ],
+  "previousSourceCorrections": [
+    {
+      "categoryIndex": 105,
+      "issue": "Fixed-height-and-width 2400x2400 NG1495 image was dangerously CROPPED; replaced with width-only 2400x3335 full portrait",
+      "action": "QUARANTINE_CROPPED_W88_NO_CURATOR_PHOTO_PROMOTION"
+    },
+    {
+      "categoryIndex": 157,
+      "issue": "Fixed 3200x2400 NG196 generated frame ratio 4:3 slightly different from original; replaced width-only natural 3200x2472",
+      "action": "PREFER_W89_FULL_ORIGINAL"
+    }
+  ],
+  "smallInstitutionalImagesHeld": [
+    {
+      "categoryIndex": 51,
+      "institution": "Nancy",
+      "artist": "Jean-Honoré Fragonard",
+      "physicalOriginal": "Apothéose de saint Louis Nancy museum no. 520",
+      "resolution": [
+        600,
+        767
+      ],
+      "status": "REFERENCE_ONLY_MASTER_NOT_SUFFICIENT"
+    },
+    {
+      "categoryIndex": 129,
+      "institution": "Prado",
+      "artist": "Giandomenico Tiepolo",
+      "physicalOriginal": "Entierro de Cristo P000362",
+      "resolution": [
+        697,
+        605
+      ],
+      "status": "REFERENCE_ONLY_MASTER_NOT_SUFFICIENT"
+    }
+  ],
+  "cumulativeReviewCoverage": {
+    "allCategories": 168,
+    "verifiedCompletePaintingImageCategories": 146,
+    "unresolvedOriginalCategories": 22,
+    "verifiedPreviewFiles": 236,
+    "recordedPhotoPlacements": 244,
+    "imageByteChecksumFailures": 0
+  },
+  "policy": [
+    "Do not call fixed-width AND fixed-height CDN resizes image acquisition without verifying natural artwork ratio and inspecting full painted surface",
+    "Do not approve image for mobile app before image-level rights clear",
+    "Framing flags are separate from quality stars; preserve original source and trim outer wood frame only after approval",
+    "Never overwrite October 12 prior selections and Batch review scores",
+    "Consolidated local ZIP is review-only and does not imply publication"
+  ]
+}
