@@ -73,7 +73,11 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     },
     {
       "anchorId": "p1:missal:leonardi:secret",
@@ -89,7 +93,11 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     },
     {
       "anchorId": "p1:missal:leonardi:postcommunion",
@@ -105,7 +113,11 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:collect",
@@ -121,7 +133,12 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": null,
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:secret",
@@ -137,7 +154,12 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": null,
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     },
     {
       "anchorId": "p1:missal:dionysius-rusticus-eleutherius:postcommunion",
@@ -153,7 +175,12 @@
       "resolvedOrationId": null,
       "route": null,
       "status": "REFERENCE_DEFINED_RUNTIME_DEEP_LINK_UNRESOLVED",
-      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY"
+      "gate": "REQUIRE_EXACT_CANONICAL_SOURCE_PATH_AND_PRAYER_ROW_ID_WITH_SOURCE_PARITY",
+      "monthDay": "10-09",
+      "calendarCommemorationId": null,
+      "runtimeTargetResolver": "src/calendar/p1-internal-missal-link-resolution.js",
+      "routingRequiresModelParagraphId": true,
+      "scope": "READ_ONLY_HISTORIC_MISSAL_REFERENCE_NOT_OPTIONAL_NEW_SAINT_MASS_SELECTION"
     }
   ],
   "formExample": {
@@ -183,5 +210,11 @@
     "postconciliarProperFallback": false,
     "generatedPdfRouteFallback": false,
     "modifyExistingMassReader": false
-  }
+  },
+  "runtimeResolutionModule": "src/calendar/p1-internal-missal-link-resolution.js",
+  "runtimeResolutionModuleStatus": "RESEARCH_ONLY_NOT_IMPORTED_BY_PRODUCTION",
+  "verifiedLegacyPrayerRoutes": 0,
+  "syntheticFixtureValidationScope": "Schema/path/paragraph projection tested against source-owned Reader Proper model; this is NOT a live 9 October resolver lookup.",
+  "prayerLinkResolutionRule": "Pass the actual Calendar day resolution and already resolved Proper to inspectP1InternalMissalLink; only return a potential reader target if exact owner and row order validated. Never build a URL if external or internal router not ready.",
+  "requireCurrentResolverCommemorationId": "Research trio IDs are not canonical calendar ids. They cannot authorize commemorative prayer routes until exact source calendar commemoration ID is retrieved."
 }
