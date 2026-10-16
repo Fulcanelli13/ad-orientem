@@ -6,7 +6,8 @@
   "sourceReferences": {
     "RG": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
     "RGMR": "https://maternalheart.org/library/1962rubrics.pdf",
-    "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html"
+    "CUM_SANCTISSIMA": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html",
+    "RG_PRINTED_1960_IMPRIMATUR_TRANSLATION": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf"
   },
   "status": "RESEARCH_NO_AUTOMATIC_PERMISSION",
   "ruleCount": 35,
@@ -15,20 +16,22 @@
   "commemorationCaps": [
     {
       "context": "CLASS_I",
-      "max": 1,
-      "types": [
-        "PRIVILEGED"
-      ],
-      "ref": "RG 111(a)"
-    },
-    {
-      "context": "SUNG_NONCONVENTUAL",
-      "max": 1,
+      "max": null,
       "types": [
         "PRIVILEGED"
       ],
       "ref": "RG 111(a)",
-      "cumSanctissimaSection4Conflict": "HELD_FOR_INTERPRETATION"
+      "limitStatus": "NO_NUMBER_IN_RG111A_REQUIRES_FULL_CONTEXT"
+    },
+    {
+      "context": "SUNG_NONCONVENTUAL",
+      "max": null,
+      "types": [
+        "PRIVILEGED"
+      ],
+      "ref": "RG 111(a)",
+      "cumSanctissimaSection4Conflict": "HELD_FOR_INTERPRETATION",
+      "limitStatus": "NO_NUMBER_IN_RG111A_REQUIRES_FULL_CONTEXT_AND_2020_INTERPRETATION"
     },
     {
       "context": "CLASS_II_SUNDAY",
@@ -116,67 +119,83 @@
     },
     {
       "id": "R08_PRIVILEGED_COMM",
-      "sourceCitation": "RG 107-108",
-      "decision": "Privileged: Sunday, I class, Christmas octave, September Ember, ferias of Advent/Lent/Passiontide, greater Litanies at Mass.",
+      "sourceCitation": "RG 109(a)-(f)",
+      "decision": "List of privileged categories is in RG 109, not RG 108. RG 108 governs the Mass forms on which privileged and ordinary commemorations are made.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R09_ORDINARY_COMM",
-      "sourceCitation": "RG 107-108",
-      "decision": "Other commemorations ordinary unless another rubric provides a specific treatment.",
+      "sourceCitation": "RG 108-109",
+      "decision": "RG 108 explicitly confines ordinary commemorations to Lauds, Conventual Mass and Low Mass; all non-listed subjects are ordinary under RG 109.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R10_INSEPARABLE_APOSTLES",
-      "sourceCitation": "RG 110",
-      "decision": "Mass or Office of Peter includes Paul and vice versa; inseparable paired prayer is counted as one.",
+      "sourceCitation": "RG 110(a)-(c)",
+      "decision": "Peter/Paul inseparable oration is added under one conclusion and counted as one.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R11_CLASS_I_COMM",
-      "sourceCitation": "RG 111(a)",
-      "decision": "On I-class days only a privileged commemoration may be admitted.",
+      "sourceCitation": "RG 111(a); 108",
+      "decision": "I-class admits privileged only. RG 111(a) does not state a one-commemoration numerical cap: no automatic max=1.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R12_SUNG_NONCONVENTUAL",
-      "sourceCitation": "RG 111(a)",
-      "decision": "Nonconventual Sung Mass has the same privileged-only commemoration restriction regardless of host day class.",
+      "sourceCitation": "RG 108; 111(a)",
+      "decision": "Nonconventual Sung Mass excludes ordinary commemorations under RG 108 and RG 111(a). RG 111(a) gives category restriction, not numeric cap.",
       "scope": "SUNG_NONCONVENTUAL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R13_SECOND_SUNDAY",
       "sourceCitation": "RG 111(b)",
-      "decision": "One II-class feast commemoration on II-class Sundays, omitted if a privileged commemoration intervenes.",
+      "decision": "On II-class Sunday: II-class feast commemoration, or privileged if occurring; max one.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R14_SECOND_OTHER",
       "sourceCitation": "RG 111(c)",
-      "decision": "On other II-class days at most one privileged or ordinary commemoration.",
+      "decision": "On other II-class days max one, privileged or ordinary.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R15_THIRD_FOURTH",
       "sourceCitation": "RG 111(d)",
-      "decision": "On III/IV-class days at most two commemorations, subject to all other rubrics.",
+      "decision": "On III- and IV-class days no more than two; actual admissibility independently limited by RG 108 and Mass form.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R16_EXCLUSIONS",
@@ -189,10 +208,12 @@
     {
       "id": "R17_ORDER",
       "sourceCitation": "RG 113-114",
-      "decision": "Seasonal commemoration first; then table of precedence; omit any excess.",
+      "decision": "Season first then precedence; excess omitted.",
       "scope": "ALL",
       "certification": "SOURCE_RULE_CERTIFIED_APPLICATION_REVIEW",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R18_CONCLUSIONS",
@@ -324,11 +345,13 @@
     },
     {
       "id": "R34_HIGH_MASS_TENSION",
-      "sourceCitation": "Cum sanctissima §4; RG 111(a),(d)",
-      "decision": "Ordinary commemoration explicitly prescribed by new decree versus nonconventual Sung privileged-only rule; must seek competent authoritative interpretation and actual liturgical form.",
+      "sourceCitation": "Cum sanctissima §4; RG 108, 109, 111(a),(d); Vatican explanatory note paragraphs 7-11",
+      "decision": "An express 2020 ordinary commemoration with RG111(d) vs older RG108/111(a) Sung restriction. Newer decree 'all things contrary notwithstanding' may be materially relevant; without official adjudication leave legal application to nonconventual Sung UNKNOWN.",
       "scope": "SUNG_NONCONVENTUAL",
       "certification": "LEGAL_INTERPRETATION_UNRESOLVED",
-      "autoMassChange": false
+      "autoMassChange": false,
+      "witnessUrl": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
+      "witnessPage1960": 17
     },
     {
       "id": "R35_DOCTOR_TITLE",
@@ -341,5 +364,8 @@
   ],
   "protectedFeastsCanonicalPath": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
   "externalSolemnitiesOwner": "src/calendar/traditional-day-adjudication.js",
-  "runtimeAutomaticAuthorization": false
+  "runtimeAutomaticAuthorization": false,
+  "codexNumberingCorrection": "RG 108 = Mass form applicability of privileged vs ordinary; RG 109 = privileged types; RG 111 = cardinality/category restrictions.",
+  "printedSourceStatus": "1960 imprimatur English translation examined on PDF image page 17 (printed pp.20-21); Latin AAS collation outstanding.",
+  "explanatoryNote": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html"
 }
