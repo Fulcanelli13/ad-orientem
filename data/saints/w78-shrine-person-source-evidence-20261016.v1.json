@@ -40,6 +40,11 @@
       "ref": "saints/2026-10-15-identity-and-holiness-pilot",
       "blob_sha": "2dc20e3d37dfb03431f2e38297e049732823ba86",
       "relation": "PREEXISTING_THERESE_SOURCE_OWNER_BRIDGE"
+    },
+    {
+      "path": "data/shrines/source-registry.v1.json",
+      "ref": "saints/2026-10-15-identity-and-holiness-pilot",
+      "relation": "READ_ONLY_OFFICIAL_SHRINE_REFERENCE_IDS_PRESERVED_AND_HOST_DRIFT_FLAGGED"
     }
   ],
   "rules": [
@@ -52,7 +57,9 @@
     "The 24 curated variant leads overlap with eight of the nine previously documented aliases; Wenceslas is the additional prior alias. None creates a certified person identity.",
     "W78 sourced alias lookup navigation is research-only and links existing source-index records; it is NOT a certified person identity, feast, relic, person-to-site relationship or canonical key rename.",
     "For four matching Doctor/archive key pairs, retain both source keys and require Calendar owner's precise source-ID equivalence approval; Francis of Assisi stays held, Thérèse's earlier owner bridge remains unchanged.",
-    "The three shared relic owner-subject IDs are same-source-record references across literal shrine names, not authenticated relics or verified saint identity equivalences. Distinct saint subjects sharing a physical shrine remain distinct."
+    "The three shared relic owner-subject IDs are same-source-record references across literal shrine names, not authenticated relics or verified saint identity equivalences. Distinct saint subjects sharing a physical shrine remain distinct.",
+    "W80 institutional articles support precisely scoped shrine-subject mentions; traditional legends and relic translation reports must remain tradition-labelled, not verified events.",
+    "Old St Winefride shrine hostname is quarantined in research links due to detected unrelated current website content; replacement verified current national shrine site is used for research references."
   ],
   "summary": {
     "shrine_name_records": 119,
@@ -119,6 +126,14 @@
       "duplicated_louis_de_montfort_name_strings": 2,
       "distinct_relic_subject_ids_total": 92,
       "relational_person_identity_approvals": 0
+    },
+    "w80_institutional_subject_sweep": {
+      "original_shrine_only_records_reviewed": 15,
+      "with_official_subject_evidence": 15,
+      "original_608_key_gaps_remain": 38,
+      "new_canonical_identity_keys": 0,
+      "new_geographical_places": 0,
+      "prior_six_profile_publication_changed": false
     }
   },
   "records": [
@@ -170,7 +185,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://bvmartyrshrine.com/about/his-life/",
+            "issuer": "Bishop Velychkovsky National Martyr's Shrine",
+            "claim_scope": "NAMED_BLESSED_AND_PILGRIMAGE_SHRINE",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://www.cccb.ca/announcement/the-life-and-spirituality-of-blessed-vasyl-velychkovsky/",
+            "issuer": "Canadian Conference of Catholic Bishops",
+            "claim_scope": "BEATIFIED_STATUS_AND_WINNIPEG_ENSHRINEMENT_ACCOUNT",
+            "evidence_mode": "INDEPENDENT_EPISCOPAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Jacques-Désiré Laval",
@@ -223,7 +267,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Blessed Marie-Louise Trichet",
@@ -278,7 +323,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Adalbert of Prague",
@@ -332,7 +378,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Agatha of Sicily",
@@ -419,7 +466,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Alphonsus Liguori",
@@ -494,7 +542,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ambrose of Milan",
@@ -567,7 +616,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint André Bessette",
@@ -655,7 +705,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew Kaggwa",
@@ -703,7 +754,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://munyonyo-shrine.ug/",
+            "issuer": "Munyonyo Martyrs' Shrine",
+            "claim_scope": "NAMED_IN_UGANDA_MARTYRS_LIST_ST_ANDREW_KAGGWA_KAHWA",
+            "evidence_mode": "DIRECT_INSTITUTIONAL_GROUP_MEMBER",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Andrew the Apostle",
@@ -806,7 +876,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anne",
@@ -896,7 +967,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Anthony of Padua",
@@ -1021,7 +1093,8 @@
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Apollinaris",
@@ -1079,7 +1152,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Augustine of Hippo",
@@ -1149,7 +1223,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartholomew the Apostle",
@@ -1252,7 +1327,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bartolo Longo",
@@ -1305,7 +1381,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Benedict of Nursia",
@@ -1421,7 +1498,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Bernadette Soubirous",
@@ -1515,7 +1593,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Beuno",
@@ -1565,7 +1644,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.stwinefridesshrine.org/the-legend-of-st-winefride",
+            "issuer": "National Catholic Shrine of St Winefride",
+            "claim_scope": "TRADITIONAL_UNCLE_AND_FOUNDING_CHURCH_CONNECTION",
+            "evidence_mode": "TRADITION_AS_TRADITION",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://www.cbcew.org.uk/home/our-work/pilgrimage/wales-national-shrine-of-st-winefride/",
+            "issuer": "Catholic Bishops' Conference of England and Wales",
+            "claim_scope": "TRADITIONAL_RELATIONSHIP_NOT_INDEPENDENT_LIFE_EVENT_VERIFICATION",
+            "evidence_mode": "INDEPENDENT_ECCLESIAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Brigid of Kildare",
@@ -1623,7 +1731,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Casimir",
@@ -1681,7 +1790,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine Labouré",
@@ -1749,7 +1859,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Catherine of Siena",
@@ -1863,7 +1974,8 @@
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charbel Makhlouf",
@@ -1950,7 +2062,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Borromeo",
@@ -2008,7 +2121,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Charles Lwanga",
@@ -2096,7 +2210,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Clare of Assisi",
@@ -2183,7 +2298,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Claude La Colombière",
@@ -2236,7 +2352,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Columbanus",
@@ -2290,7 +2407,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Denis of Paris",
@@ -2361,7 +2479,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic",
@@ -2438,7 +2557,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Dominic de Guzmán",
@@ -2541,7 +2661,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Edward the Confessor",
@@ -2628,7 +2749,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Elizabeth Ann Seton",
@@ -2687,7 +2809,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Eusebius of Vercelli",
@@ -2745,7 +2868,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Faustina Kowalska",
@@ -2809,7 +2933,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis de Sales",
@@ -2923,7 +3048,8 @@
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis of Assisi",
@@ -3027,7 +3153,8 @@
         "relation": "SAME_NAME_HISTORICAL_AND_VOCATIONAL_RESEARCH_NOT_OWNER_APPROVED"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francis Xavier",
@@ -3091,7 +3218,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Francisco Marto",
@@ -3150,7 +3278,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Gervasius of Milan",
@@ -3204,7 +3333,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Helena",
@@ -3263,7 +3393,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.scala-santa.com/info-eng/",
+            "issuer": "Pontifical Sanctuary of the Holy Stairs",
+            "claim_scope": "TRADITION_HELENA_BROUGHT_HOLY_STAIRS_TO_ROME",
+            "evidence_mode": "TRADITION_AS_TRADITION",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Hilary of Poitiers",
@@ -3327,7 +3476,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Ignatius of Loyola",
@@ -3391,7 +3541,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Isaac Jogues",
@@ -3453,7 +3604,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.ourladyofmartyrsshrine.org/shrine-history",
+            "issuer": "National Shrine of Our Lady of Martyrs",
+            "claim_scope": "NAMED_JESUIT_MARTYR_AT_AURIESVILLE",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://martyrs-shrine.com/about-the-martyrs/",
+            "issuer": "Canadian Martyrs' Shrine",
+            "claim_scope": "NAMED_CANADIAN_MARTYRS_GROUP_SUBJECT",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jacinta Marto",
@@ -3512,7 +3692,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint James the Greater",
@@ -3589,7 +3770,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jane Frances de Chantal",
@@ -3647,7 +3829,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean de Brébeuf",
@@ -3696,7 +3879,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://martyrs-shrine.com/about-the-martyrs/",
+            "issuer": "Canadian Martyrs' Shrine",
+            "claim_scope": "NAMED_CANADIAN_JESUIT_MARTYR_IN_SHRINE_ACCOUNT",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Jean-Marie Vianney",
@@ -3802,7 +4004,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joachim",
@@ -3857,7 +4060,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joan of Arc",
@@ -3917,7 +4121,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Bosco",
@@ -3975,7 +4180,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John de Lalande",
@@ -4025,7 +4231,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.ourladyofmartyrsshrine.org/shrine-history",
+            "issuer": "National Shrine of Our Lady of Martyrs",
+            "claim_scope": "NAMED_JESUIT_LAY_MARTYR_AT_AURIESVILLE",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Neumann",
@@ -4091,7 +4316,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John of the Cross",
@@ -4201,7 +4427,8 @@
         "relation": "SOURCE_REFERENCE_PAIR_FOR_COMPARISON_NOT_AUTHORIZED_CANONICAL_IDENTITY_MERGE"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John Paul II",
@@ -4259,7 +4486,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Baptist",
@@ -4330,7 +4558,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint John the Evangelist",
@@ -4406,7 +4635,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint José de Anchieta",
@@ -4464,7 +4694,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Joseph",
@@ -4547,7 +4778,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Josephine Bakhita",
@@ -4634,7 +4866,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Juan Diego",
@@ -4734,7 +4967,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Julienne of Cornillon",
@@ -4782,7 +5016,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.saintejulienne.org/",
+            "issuer": "Sanctuaire Sainte-Julienne de Cornillon",
+            "claim_scope": "NAMED_SAINT_ASSOCIATED_WITH_SANCTUARY_AND_CORPUS_CHRISTI_TRADITION",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Junípero Serra",
@@ -4840,7 +5093,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kateri Tekakwitha",
@@ -4900,7 +5154,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Katharine Drexel",
@@ -4958,7 +5213,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Kizito",
@@ -5012,7 +5268,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Leonard of Noblac",
@@ -5061,7 +5318,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.nussdorf.de/tourismus-und-freizeit/was-ist-los-in-nussdorf/gelebtes-brauchtum",
+            "issuer": "Gemeinde Nußdorf am Inn",
+            "claim_scope": "ST_LEONHARD_CHURCH_PATRON_FEAST_SIX_NOVEMBER",
+            "evidence_mode": "LOCAL_PATRON_REFERENCE",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://www2.bistum-augsburg.de/gedenktag-des-heiligen-leonhard-am-6-november_id11405",
+            "issuer": "Bistum Augsburg",
+            "claim_scope": "LEONHARD_LIMOGES_NOBLAC_SIX_NOVEMBER_HAGIOGRAPHIC_CONTEXT",
+            "evidence_mode": "PARALLEL_DIOCESAN_CONTEXT_NOT_LOCAL_ID_ATTESTATION",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis de Montfort",
@@ -5128,7 +5414,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louis-Marie de Montfort",
@@ -5195,7 +5482,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHARED_RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Louise de Marillac",
@@ -5255,7 +5543,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Lucy of Syracuse",
@@ -5358,7 +5647,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Luke the Evangelist",
@@ -5422,7 +5712,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Margaret Mary Alacoque",
@@ -5487,7 +5778,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mark the Evangelist",
@@ -5580,7 +5872,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martha of Bethany",
@@ -5638,7 +5931,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin de Porres",
@@ -5725,7 +6019,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Martin of Tours",
@@ -5789,7 +6084,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Mary Magdalene",
@@ -5864,7 +6160,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthew the Apostle",
@@ -5967,7 +6264,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Matthias the Apostle",
@@ -6070,7 +6368,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maurice and the Theban martyrs",
@@ -6157,7 +6456,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Maximin",
@@ -6205,7 +6505,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://frejustoulon.fr/les-premiers-saints-de-provence-saint-maximin/",
+            "issuer": "Diocese of Fréjus–Toulon",
+            "claim_scope": "SAINT_MAXIMIN_AIX_FIRST_BISHOP_LOCAL_PROVENCAL_TRADITION",
+            "evidence_mode": "TRADITION_AS_TRADITION",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Meinrad",
@@ -6254,7 +6573,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.kloster-einsiedeln.ch/kloster/geschichte/heiliger-meinrad",
+            "issuer": "Kloster Einsiedeln",
+            "claim_scope": "EREMITIC_SITE_PREDECESSOR_OF_ABBEY_NOT_ABBEY_FOUNDER_IN_934",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Michael the Archangel",
@@ -6330,7 +6668,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "ART_RESEARCH_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Monica",
@@ -6388,7 +6727,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas",
@@ -6464,7 +6804,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Nicholas of Myra",
@@ -6567,7 +6908,8 @@
           "relation": "SHARED_RELIC_RESEARCH_SUBJECT_NOT_CERTIFIED_PERSON_ALIAS"
         }
       ],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oliver Plunkett",
@@ -6617,7 +6959,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/",
+            "issuer": "Archdiocese of Armagh",
+            "claim_scope": "NAMED_CANONIZED_SAINT_AND_DROGHEDA_SHRINE_CUSTODY",
+            "evidence_mode": "DIRECT_DIOCESAN",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Oscar Romero",
@@ -6704,7 +7065,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Patrick",
@@ -6782,7 +7144,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Paul the Apostle",
@@ -6852,7 +7215,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter Chanel",
@@ -6910,7 +7274,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Peter the Apostle",
@@ -7005,7 +7370,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Philip Neri",
@@ -7063,7 +7429,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Pio of Pietrelcina",
@@ -7150,7 +7517,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Protasius of Milan",
@@ -7204,7 +7572,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Quentin",
@@ -7258,7 +7627,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint René Goupil",
@@ -7308,7 +7678,26 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.ourladyofmartyrsshrine.org/shrine-history",
+            "issuer": "National Shrine of Our Lady of Martyrs",
+            "claim_scope": "NAMED_JESUIT_LAY_MARTYR_AT_AURIESVILLE",
+            "evidence_mode": "DIRECT_INSTITUTIONAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rita of Cascia",
@@ -7362,7 +7751,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Rose of Lima",
@@ -7420,7 +7810,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Saturninus",
@@ -7478,7 +7869,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Scholastica",
@@ -7536,7 +7928,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens",
@@ -7590,7 +7983,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stanislaus of Kraków",
@@ -7677,7 +8071,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Stephen of Hungary",
@@ -7735,7 +8130,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Teresa of Ávila",
@@ -7799,7 +8195,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thérèse of Lisieux",
@@ -7930,7 +8327,8 @@
         "relation": "EXISTING_SOURCE_OWNER_BRIDGE_PRESERVED_NO_KEY_RENAME"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas Aquinas",
@@ -7994,7 +8392,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Thomas the Apostle",
@@ -8064,7 +8463,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Titus",
@@ -8122,7 +8522,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Turibius of Astorga",
@@ -8170,7 +8571,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+            "issuer": "Diocese of Santander",
+            "claim_scope": "RELIC_TRANSLATION_TRADITION_ASTORGA_BISHOP_DISTINCT_FROM_EARLY_LOCAL_HERMIT",
+            "evidence_mode": "TRADITION_WITH_SIMILAR_NAME_COMPLEXITY",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://www.diocesisastorga.es/actualidad/noticias/santo-toribio-de-astorga-4967",
+            "issuer": "Diocese of Astorga",
+            "claim_scope": "NAMED_HISTORICAL_BISHOP_AND_TRADITIONAL_TRANSLATION_TO_LIEBANA",
+            "evidence_mode": "SECOND_DIOCESAN_CORROBORATION",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Vincent de Paul",
@@ -8236,7 +8666,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Wenceslas",
@@ -8328,7 +8759,8 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Willibrord",
@@ -8382,7 +8814,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Saint Winefride",
@@ -8437,7 +8870,36 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "SHRINE_INSTITUTIONAL_REFERENCE_ONLY_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": {
+        "review_tag": "W80_INSTITUTIONAL_SUBJECT_SOURCE_ATTESTATION_NOT_CANONICAL_ID",
+        "references": [
+          {
+            "url": "https://www.stwinefridesshrine.org/the-legend-of-st-winefride",
+            "issuer": "National Catholic Shrine of St Winefride",
+            "claim_scope": "SHRINE_PATRON_WITH_TRADITIONAL_BEUNO_RELATIONSHIP",
+            "evidence_mode": "DIRECT_SHRINE_WITH_LEGEND_CONTEXT",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          },
+          {
+            "url": "https://www.cbcew.org.uk/home/our-work/pilgrimage/wales-national-shrine-of-st-winefride/",
+            "issuer": "Catholic Bishops' Conference of England and Wales",
+            "claim_scope": "NATIONAL_SHRINE_INDEPENDENT_ECCLESIAL_ATTESTATION",
+            "evidence_mode": "INDEPENDENT_ECCLESIAL",
+            "official_source_subject_reference": true,
+            "canonical_identity_equivalence_approved": false,
+            "relic_authenticity_certified": false,
+            "canonical_person_place_event_approved": false
+          }
+        ],
+        "original_shrine_source_ids_preserved": true,
+        "canonical_identity_approved": false,
+        "historic_life_event_certified": false,
+        "saint_person_shrine_link_production_authorized": false
+      }
     },
     {
       "legacy_shrine_person_or_group_name": "The Three Magi",
@@ -8491,7 +8953,8 @@
         "shrine_person_life_relation_approved": false
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY"
+      "residual_source_owner_research_tier": "RELIC_OWNER_SUBJECT_NO_LEDGER_KEY",
+      "institutional_subject_evidence_review": null
     },
     {
       "legacy_shrine_person_or_group_name": "Uganda Martyrs",
@@ -8582,7 +9045,25 @@
         "relation": "ORIGINAL_SHRINE_SUBJECT_NAME_TO_EXISTING_SOURCE_INDEX_RECORD_NOT_CANONICAL_PERSON_IDENTITY"
       },
       "shared_original_relic_subject_name_references": [],
-      "residual_source_owner_research_tier": null
+      "residual_source_owner_research_tier": null,
+      "institutional_subject_evidence_review": null
     }
-  ]
+  ],
+  "source_safety_hold": {
+    "blocked_hosts": [
+      "stwinefrideswell.org.uk",
+      "www.stwinefrideswell.org.uk"
+    ],
+    "affected_original_source_ids": [
+      "SHR-HOLYWELL-CONTACT",
+      "PIL-HOLYWELL-FEAST"
+    ],
+    "affected_saint_shrine_names": [
+      "Saint Beuno",
+      "Saint Winefride"
+    ],
+    "replacement_current_shrine_url": "https://www.stwinefridesshrine.org/",
+    "reason": "Old domain root resolved to unrelated gambling content on 2026-10-16, while original archived pages remained indexed; quarantine all old-host links in the research presentation; Geography source owner to verify and replace",
+    "original_source_registry_modified": false
+  }
 }
