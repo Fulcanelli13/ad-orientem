@@ -2315,7 +2315,7 @@ export async function mountNativeReaderPreview({
     // page-level reference for its ribbon. Unlike LIVE, never advance the
     // ritual clock/cinematics from reading scroll. A page with no exact
     // sourced cue remains unresolved, not a guessed posture or action.
-    if(changed && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
+    if((changed || !activeCueId) && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
       const firstSourceCue=(visibleCard.paragraphs??[])
         .flatMap(paragraph=>paragraph.sourceCueIds??[])
         .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)))??null;
