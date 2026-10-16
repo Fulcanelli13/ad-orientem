@@ -1,0 +1,151 @@
+{
+  "schema": "ao.saints.w82-four-historical-doctors-source-identity-review.2026.v1",
+  "as_of": "2026-10-16",
+  "owner": "SAINTS_RESEARCH_PR_1227",
+  "calendar_source_owner": {
+    "pr": 1226,
+    "branch": "calendar/1224-living-sanctoral-pilot",
+    "file": "data/calendar/doctors-of-church-roster.review.v1.json",
+    "authority": "SOLE_OWNER_OF_OBSERVANCE_AND_RUBRICS"
+  },
+  "source_ledger": "data/saints/full-calendar-exact-source-key-ledger-20261016.v1.json",
+  "original_archive": "data/saints/historical-v4333-311-components.recovered.v1.json",
+  "collision_owner": "data/saints/six-duplicate-name-alias-evidence-20261016.v1.json",
+  "status": "FOUR_PRIMARY_ECCLESIAL_SAME_PERSON_REFERENCES_CONFIRMED_FOR_EDITORIAL_COMPARISON_OWNER_SIGNOFF_PENDING",
+  "records": [
+    {
+      "shrine_name_literal": "Saint Anthony of Padua",
+      "archived_historical_source_key": "saint.anthony-of-padua",
+      "calendar_doctor_roster_source_key": "saint.anthony-padua",
+      "nominal_1962_date_mm_dd": "06-13",
+      "archived_component_id": "cal.06-13.anthony-of-padua",
+      "observance_primary_1962_source_id": "sancti:06-13:3:w",
+      "subject_equivalence": "SOURCE_CORROBORATED_SAME_HISTORICAL_PERSON_CANDIDATE",
+      "source_attestation": {
+        "issuer": "Holy See (Vatican)",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100210.html",
+        "claim": "Saint Anthony of Padua and his Doctor of the Church declaration in 1946"
+      },
+      "doctor_declaration_after_1962": null,
+      "explicit_conditions": {
+        "new_canonical_person_id_created": false,
+        "existing_source_key_renamed": false,
+        "publication_approved": false,
+        "calendar_owner_identity_crosswalk_approved": false,
+        "doctor_title_backdated_into_1962": false,
+        "observance_source_id_rewritten": false,
+        "feast_date_transferred": false,
+        "other_saints_same_day_conflated": false,
+        "mass_selection_authorized": false,
+        "artwork_or_relic_or_geographic_link_approved": false
+      },
+      "review_action": "CALENDAR_OWNER_CONFIRM_OR_REJECT_CROSSWALK_WITH_EXACT_ARCHIVED_ID_AND_NOMINAL_FEAST_SOURCE"
+    },
+    {
+      "shrine_name_literal": "Saint Catherine of Siena",
+      "archived_historical_source_key": "saint.catherine-of-siena",
+      "calendar_doctor_roster_source_key": "saint.catherine-siena",
+      "nominal_1962_date_mm_dd": "04-30",
+      "archived_component_id": "cal.04-30.catherine-of-siena",
+      "observance_primary_1962_source_id": "sancti:04-30:3:w",
+      "subject_equivalence": "SOURCE_CORROBORATED_SAME_HISTORICAL_PERSON_CANDIDATE",
+      "source_attestation": {
+        "issuer": "Holy See (Vatican)",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20101124.html",
+        "claim": "Catherine of Siena, canonized saint and later Doctor title in 1970"
+      },
+      "doctor_declaration_after_1962": "1970-10-04",
+      "explicit_conditions": {
+        "new_canonical_person_id_created": false,
+        "existing_source_key_renamed": false,
+        "publication_approved": false,
+        "calendar_owner_identity_crosswalk_approved": false,
+        "doctor_title_backdated_into_1962": false,
+        "observance_source_id_rewritten": false,
+        "feast_date_transferred": false,
+        "other_saints_same_day_conflated": false,
+        "mass_selection_authorized": false,
+        "artwork_or_relic_or_geographic_link_approved": false
+      },
+      "review_action": "CALENDAR_OWNER_CONFIRM_OR_REJECT_CROSSWALK_WITH_EXACT_ARCHIVED_ID_AND_NOMINAL_FEAST_SOURCE"
+    },
+    {
+      "shrine_name_literal": "Saint Francis de Sales",
+      "archived_historical_source_key": "saint.francis-de-sales",
+      "calendar_doctor_roster_source_key": "saint.francis-sales",
+      "nominal_1962_date_mm_dd": "01-29",
+      "archived_component_id": "cal.01-29.francis-de-sales",
+      "observance_primary_1962_source_id": "sancti:01-29:3:w",
+      "subject_equivalence": "SOURCE_CORROBORATED_SAME_HISTORICAL_PERSON_CANDIDATE",
+      "source_attestation": {
+        "issuer": "Holy See (Vatican)",
+        "url": "https://www.vatican.va/content/john-paul-ii/en/letters/2002/documents/hf_jp-ii_let_20021209_francesco-sales.html",
+        "claim": "St Francis de Sales, historical Bishop of Geneva and Doctor of the Church"
+      },
+      "doctor_declaration_after_1962": null,
+      "explicit_conditions": {
+        "new_canonical_person_id_created": false,
+        "existing_source_key_renamed": false,
+        "publication_approved": false,
+        "calendar_owner_identity_crosswalk_approved": false,
+        "doctor_title_backdated_into_1962": false,
+        "observance_source_id_rewritten": false,
+        "feast_date_transferred": false,
+        "other_saints_same_day_conflated": false,
+        "mass_selection_authorized": false,
+        "artwork_or_relic_or_geographic_link_approved": false
+      },
+      "review_action": "CALENDAR_OWNER_CONFIRM_OR_REJECT_CROSSWALK_WITH_EXACT_ARCHIVED_ID_AND_NOMINAL_FEAST_SOURCE"
+    },
+    {
+      "shrine_name_literal": "Saint John of the Cross",
+      "archived_historical_source_key": "saint.john-of-the-cross",
+      "calendar_doctor_roster_source_key": "saint.john-cross",
+      "nominal_1962_date_mm_dd": "11-24",
+      "archived_component_id": "cal.11-24.john-of-the-cross",
+      "observance_primary_1962_source_id": "sancti:11-24:3:w",
+      "subject_equivalence": "SOURCE_CORROBORATED_SAME_HISTORICAL_PERSON_CANDIDATE",
+      "source_attestation": {
+        "issuer": "Holy See (Vatican)",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110216.html",
+        "claim": "St John of the Cross, Carmelite reformer, Doctor title declared in 1926"
+      },
+      "doctor_declaration_after_1962": null,
+      "explicit_conditions": {
+        "new_canonical_person_id_created": false,
+        "existing_source_key_renamed": false,
+        "publication_approved": false,
+        "calendar_owner_identity_crosswalk_approved": false,
+        "doctor_title_backdated_into_1962": false,
+        "observance_source_id_rewritten": false,
+        "feast_date_transferred": false,
+        "other_saints_same_day_conflated": false,
+        "mass_selection_authorized": false,
+        "artwork_or_relic_or_geographic_link_approved": false
+      },
+      "review_action": "CALENDAR_OWNER_CONFIRM_OR_REJECT_CROSSWALK_WITH_EXACT_ARCHIVED_ID_AND_NOMINAL_FEAST_SOURCE"
+    }
+  ],
+  "john_of_the_cross_exception": {
+    "historic_subject_id": "saint.john-of-the-cross",
+    "principal_source_id": "sancti:11-24:3:w",
+    "distinct_other_commemoration_source_id": "sancti:11-24o:4:r",
+    "distinct_other_commemoration_subject": "St Chrysogonus",
+    "same_person_with_john_of_cross": false,
+    "reason": "One nominal day has two historically distinct observance/source subjects; the secondary saint cannot be absorbed into the Doctor/source-person equivalence."
+  },
+  "scope_limits": [
+    "Owner source keys remain distinct stable references; any same-person crosswalk must be explicitly accepted by Calendar source owner before duplicate suppression or canonical ID promotion.",
+    "1962 nominal historical observance belongs to the original 1962 resolver; no rule follows from the modern General Roman Calendar's differing dates.",
+    "Canonicalization and Doctor declaration dates must never substitute for feast day or modify original 1962 Office/Mass/Proper/rank/colour.",
+    "Shrine/source subject link is research evidence only and never proof of physical relic authenticity, saint's birthplace or death site.",
+    "Do not replace or re-rate Sacred Art, add new research profiles to the public six-person pilot, or merge either 1962 ID."
+  ],
+  "counts": {
+    "total": 4,
+    "primary_historical_matches": 4,
+    "separate_november_24_chrysogonus_commemorations_preserved": 1,
+    "owner_final_approvals": 0,
+    "new_canonical_keys": 0
+  }
+}
