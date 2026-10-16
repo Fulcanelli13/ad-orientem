@@ -368,7 +368,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     // Source cue → original block is certified within the public Sung corpus;
     // it is independent of 48/65/67 presentation card numbering.
     const cue=String(opts.cueId||"");
-    const exactCue=requestedMoment&&/^AO\\.SM\\.C\\d{4}$/.test(cue)?
+    const exactCue=requestedMoment&&/^AO\.SM\.C\d{4}$/.test(cue)?
       catalog.byKey.get(requestedMoment).blocks.filter(block=>
         (block.units||[]).some(unit=>unit.cue_id===cue)):null;
     const requested=exactCue?.length===1
