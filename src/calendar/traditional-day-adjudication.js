@@ -103,8 +103,11 @@ export function reviewNewSaintMassChoice({
   const normalizedDay=observedDay?.day?.main?observedDay.day:observedDay;
   const observed=
     sourceObservance?.subjectId===saint?.id &&
-    sourceObservance.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE" &&
-    sourceObservance.universalStatus==="CERTIFIED_BY_DECREE" &&
+    ((sourceObservance.authorityScope==="GENERAL_ROMAN_VATICAN_DECREE" &&
+      sourceObservance.universalStatus==="CERTIFIED_BY_DECREE") ||
+     (sourceObservance.authorityScope==="GENERAL_ROMAN_PAPAL_ANNOUNCEMENT" &&
+      sourceObservance.universalStatus==="ATTESTED_BY_PAPAL_ANNOUNCEMENT" &&
+      sourceObservance.sourceEvidenceType==="PAPAL_CANONIZATION_ANNOUNCEMENT_NOT_SEPARATE_CDWS_DECREE")) &&
     sourceObservance.monthDay===String(date||"").slice(5) &&
     /^https:\/\/(?:www|press)\.vatican\.va\//.test(sourceObservance.sourceUrl||"") &&
     /^\d{4}-\d{2}-\d{2}$/.test(sourceObservance.publishedOn||"") &&
