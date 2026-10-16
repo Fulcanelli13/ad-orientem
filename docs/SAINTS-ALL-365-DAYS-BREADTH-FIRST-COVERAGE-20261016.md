@@ -185,3 +185,28 @@ The 24 curated variant leads include *Jean-Marie Vianney* / *John Mary Vianney*,
 The native **research-only** map now verifies the source name/ID against the original shrine registry and surfaces clickable original HTTPS institutional source links in its research detail sheets. With the existing original source registry available, all 145 shrine/name associations have at least one such link. The public pilot remains **six biographies / nine physical Places / eight precise pins**, and does not load the W78 research file.
 
 Next: obtain batch owner decisions on 43 single-name person-key candidates, 24 variant leads and the remaining 39 source-name items; require independently verified identity and relationship before promotion. This does **not** demand 39 AI-authored biographies, additional geocoding, artwork re-rating or new rightsholder outreach. No Calendar, Art, Mass, Geography owner source or public app was modified.
+
+
+## W78 — 119-name bulk cross-source reconciliation (16 October 2026)
+
+**No biography rerating, new saint ID, new physical pin or Sacred Art permission workflow.** The derived record `data/saints/w78-shrine-person-source-evidence-20261016.v1.json` reconciles **every one** of the 119 literal saint/group/angelic names in the original 145 Shrine→Place associations, preserving its original provenance and owner links.
+
+| Source-key result | Name strings |
+| --- | ---: |
+| Exactly one full normalized name match in the 608-key research ledger | 50 |
+| More than one competing exact source key | 6 |
+| No exact source key | 63 |
+| Of 63: previously documented explicit alias pointing to an existing ledger key | **9** |
+| Of 63: independent relic-subject research record linked by the existing source crosswalk | **45** |
+| Of 63: Sacred Art subject research record | 14 |
+| Of 63: still without exact match **or** earlier explicit alias to a ledger key | **54** |
+
+Those overlapping evidence totals **must not be added together**. A relic subject key attests a cross-module reference, not relic authenticity or identity certification. Two misleading abbreviated historical keys—`saint.john-the` (John the Evangelist) and `saint.luke-the` (Luke the Evangelist)—are held in an explicit truncated-key exception class even though their full display names match. Six original pilot identity bindings remain source-owned and are not renamed. The record preserves **three Blesseds**, **four collective/composite name records** and **one angelic subject** as distinct types.
+
+The output sets a batch processing order rather than a 119-person biography queue: (1) source-owner attestations already present for all 145 physical shrine-name edges; (2) nine previously recorded aliases with exact existing-key targets; (3) 45 unmatched names with original relic owner references; (4) remaining cases requiring exact identity documents; (5) six duplicate-name key collisions from W77. No inferred birth, death, martyrdom or authenticated relic information is used to position a pin.
+
+**Implemented in native research interface:** `src/find/saints-shrine-map-research.js` now displays the original shrine source links plus the W78 source matching category, relic-subject IDs where available, and the subject IDs of **unapproved** Sacred Art research. It does not display the art images, create profile links to uncertain identities or change the Map's existing owner-place coordinates. This extended evidence file is fetched **only** in the `RESEARCH_PREVIEW` source-code channel. `PILOT_SIX` never fetches it and stays at the original nine physical sites/eight publishable pins.
+
+CI: `tests/saints-w78-shrine-source-evidence.mjs` enforces original owner edges, 119/50/6/63 counts, nine alias leads, 45 relic-subject leads, 145 physical shrine relations, no public research fetch, no added locations or images, and the explicit Blessed/group/angelic guards. All original owner datasets remain untouched.
+
+**Next unblocker:** source owners should approve precise identity equivalences in *one consolidated batch*, starting with the nine already documented aliases and six competing IDs. Reconcile remaining 54 without assuming they are all absent from the Church's calendar: this ledger indexes only the original Ad Orientem source families, not all historical saints.
