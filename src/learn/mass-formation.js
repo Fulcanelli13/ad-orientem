@@ -10,6 +10,7 @@ import {loadMassMomentEvidenceCatalog,massMomentEvidencePreviewEnabled,
  massMomentEvidenceDecisionExport} from "./mass-moment-evidence-review.js";
 import {loadMassSourceLocusBatches,massSourceBatchCss,massSourceBatchReviewHtml,
  massSourceBatchDecisionPatch} from "./mass-source-batch-review.js";
+import {loadMassFirst10ContextAudit,massFirst10ContextCss} from "./mass-source-first10-review.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
 export const MASS_FORMATION_ROUTE="learn.mass";
@@ -40,7 +41,7 @@ function css(){
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
     ".aoMFBible{border-top:1px solid var(--border,rgba(255,255,255,.16));margin:24px 0 4px;padding-top:20px}.aoMFBible h2{margin:0 0 7px;font:500 1.2rem/1.28 var(--ao-font-display,Georgia,serif)}.aoMFBible>p{margin:0 0 14px;color:var(--muted,#9ba5b1);font:.82rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoMFBible ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;margin:0;padding:0;list-style:none}.aoMFBibleItem{border:1px solid var(--border,rgba(255,255,255,.13));border-radius:10px;padding:9px}.aoMFBibleItem button{display:flex;width:100%;min-height:44px;gap:7px;flex-wrap:wrap;align-items:center;justify-content:space-between;text-align:left;color:var(--liturgical,#c9ad78);background:transparent;border:0;font:.85rem/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}.aoMFBibleItem button strong{font-weight:500}.aoMFBibleItem button span{font-size:.73rem}.aoMFBibleItem small{display:block;margin-top:5px;font:.72rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#9ba5b1)}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("")+massMomentsStudyCss()+massMomentEvidenceReviewCss()+massSourceBatchCss()+sourceReferencePanelCss()+formationReaderCss();
+  ].join("")+massMomentsStudyCss()+massMomentEvidenceReviewCss()+massSourceBatchCss()+massFirst10ContextCss()+sourceReferencePanelCss()+formationReaderCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){
@@ -87,7 +88,7 @@ function stageHtml(win,data,stage){
 export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.fetch}={}){
   const state={data:null,guideRegistry:null,view:"list",stageId:null,momentKey:null,
     guideError:false,returnFocus:null,loading:null,guideLoading:null,
-    evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{},sourceBatches:null,batchLoading:null,batchError:false};
+    evidenceCatalog:null,evidenceLoading:null,evidenceError:false,evidenceChoices:{},sourceBatches:null,batchLoading:null,batchError:false,first10Audit:null,first10Loading:null,first10Error:false};
   const root=()=>win?.document?.getElementById?.(MASS_FORMATION_ROOT_ID)??null;
   async function ensureData(){
     if(state.data)return state.data;
@@ -123,6 +124,17 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     }).then(batches=>{state.sourceBatches=batches;state.batchError=false;return batches;})
       .finally(()=>{state.batchLoading=null});
     return state.batchLoading;
+  }
+  async function ensureFirst10Audit(){
+    if(!massMomentEvidencePreviewEnabled(win))return null;
+    const batches=await ensureSourceBatches();
+    if(!batches)return null;
+    if(state.first10Audit)return state.first10Audit;
+    if(!state.first10Loading)state.first10Loading=loadMassFirst10ContextAudit({
+      fetchImpl,batches
+    }).then(audit=>{state.first10Audit=audit;state.first10Error=false;return audit;})
+      .finally(()=>{state.first10Loading=null});
+    return state.first10Loading;
   }
   function saveEvidenceDecision(id,choice){
     if(!state.evidenceCatalog||!state.evidenceCatalog.records.some(r=>r.id===id)||
@@ -229,7 +241,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
         main.insertAdjacentHTML("afterbegin",massMomentEvidenceSummaryHtml(state.evidenceCatalog,{french:fr}));
         if(state.sourceBatches){
           main.querySelector("[data-ao-mf-evidence-summary]")?.insertAdjacentHTML("afterend",
-            massSourceBatchReviewHtml(state.sourceBatches,{french:fr,claimChoices:state.evidenceChoices}));
+            massSourceBatchReviewHtml(state.sourceBatches,{french:fr,claimChoices:state.evidenceChoices,contextAudit:state.first10Audit}));
         }
         const counts=new Map();
         for(const claim of state.evidenceCatalog.records)
@@ -273,6 +285,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     if(massMomentEvidencePreviewEnabled(win)){
       try{await ensureEvidence();}catch{state.evidenceError=true;}
       try{await ensureSourceBatches();}catch{state.batchError=true;}
+      try{await ensureFirst10Audit();}catch{state.first10Error=true;}
     }
     if(opts.momentKey){
       try{
@@ -293,7 +306,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
-  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data),evidenceReview:massMomentEvidencePreviewEnabled(win)&&Boolean(state.evidenceCatalog),evidenceTriageCount:Object.keys(state.evidenceChoices).length,sourceBatches:state.sourceBatches?.loci?.length??0});}
+  function status(){return Object.freeze({version:MASS_FORMATION_VERSION,installed:true,open:Boolean(root()),view:state.view,stageId:state.stageId,stages:state.data?.stages?.length??0,moments:state.guideRegistry?32:0,momentKey:state.momentKey,sourceBacked:Boolean(state.data),evidenceReview:massMomentEvidencePreviewEnabled(win)&&Boolean(state.evidenceCatalog),evidenceTriageCount:Object.keys(state.evidenceChoices).length,sourceBatches:state.sourceBatches?.loci?.length??0,sourceContextsLocated:state.first10Audit?.rows?.length??0});}
   return Object.freeze({version:MASS_FORMATION_VERSION,open,close,render,status});
 }
 
