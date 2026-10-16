@@ -1,7 +1,7 @@
 {
   "schema": "AO_P1_PRIMARY_RUBRICS_AND_OCTOBER9_TEXT_SOURCE_AUDIT_V1",
   "asOf": "2026-10-16",
-  "status": "PRIMARY_1960_RUBRICS_CERTIFIED_SECONDARY_1962_FORMULARIES_UNCERTIFIED",
+  "status": "1960_ORIGINAL_LATIN_NORMATIVE_CLAUSES_VERIFIED_1962_FACSIMILE_OCT9_AND_DOCTORS_STRUCTURE_VISUALLY_WITNESSED",
   "primaryNormativeSources": [
     {
       "id": "AAS_52_1960_RG",
@@ -126,10 +126,11 @@
       "displayedMassIntroitIncipit": "Sapiéntiam Sanctórum",
       "displayedMassCollectIncipit": "Deus, qui nos concédis sanctórum Mártyrum tuórum N. et N.",
       "displayedMassGospel": "Luke 6:17-23",
-      "conflict": "PAGE_TITLE_IS_LEONARDI_BUT_MASS_TEXT_WITNESSES_AN_UNASSIGNED_SEVERAL_MARTYRS_COMMON_NOT_LEONARDI",
+      "conflict": "PAGE_HEADING_LABELS_LEONARDI_BUT_SELECTED_MASS_TEXT_MATCHES_STANDALONE_DIONYSIUS_GROUP_COMMEMORATION_PRINTED_P_698_699; DO_NOT_INFER_BUG_OR_LEONARDI_TEXT",
       "acceptedAsNewmanLeonardiMassTextWitness": false,
-      "probableCause": "UNKNOWN_POSSIBLE_MASS_READER_DATA_ASSOCIATION_BUG",
-      "furtherReviewNeeded": true
+      "probableCause": "UNDETERMINED_SELECTED_CELEBRATION_PARAMETER_MAY_SHOW_SECONDARY_MARTYRS_COMMEMORATION",
+      "furtherReviewNeeded": true,
+      "disagreementReassessment": "Compared to printed page 698, Sapientiam sanctorum appears as standalone Oct 9 martyrs commemoration. The Ordo page includes celebration=403 selection parameter, so apparent mismatch may reflect chosen sub-celebration rather than bad data."
     }
   ],
   "crossSourceAgreement": {
@@ -141,7 +142,7 @@
       "1962-OCT09-MISSALE-ONLINE",
       "1962-OCT09-MISSALEMEUM"
     ],
-    "print1962FinalVerdict": "PENDING"
+    "print1962FinalVerdict": "PRINTED_PAGE_LAYOUT_AND_INCIPITS_VISUALLY_MATCHED_VIA_3RD_PARTY_FACSIMILE; INDEPENDENT_EDITION_PROVENANCE_AND_FULL_LATIN_TEXT_COMPARISON_PENDING"
   },
   "unresolvedLegalInterpretation": {
     "id": "CUM_SANCTISSIMA_4_NONCONVENTUAL_SUNG",
@@ -158,5 +159,30 @@
     "issue": "Whether a later compulsory ordinary commemoration on a new saint's festive Mass derogates older nonconventual sung rule; requires competent liturgical interpretation.",
     "default": "UNKNOWN_NOT_PERMITTED_AUTOMATICALLY"
   },
-  "runtimeApproved": false
+  "runtimeApproved": false,
+  "facsimile1962AuditFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+  "original1962PhotoFolios": [
+    {
+      "subject": "Leonardi and same-day Dionysius commemoration",
+      "folios": "696-699",
+      "photoScans": [
+        773,
+        774,
+        775,
+        776
+      ],
+      "visualStatus": "READ_PRINTED_MISSAL_PAGE_IMAGES",
+      "independentPhotoEditionProof": false
+    },
+    {
+      "subject": "Single Commune Doctorum, pontiff/non-pontiff Secret/Postcommunion",
+      "folios": "(23)-(24)",
+      "photoScans": [
+        846,
+        847
+      ],
+      "visualStatus": "READ_PRINTED_MISSAL_PAGE_IMAGES",
+      "independentPhotoEditionProof": false
+    }
+  ]
 }
