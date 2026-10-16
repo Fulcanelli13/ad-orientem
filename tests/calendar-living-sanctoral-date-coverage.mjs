@@ -22,7 +22,8 @@ for(const person of pilot.persons){
 }
 const dateMap=new Map(),doctorMap=new Map();
 for(const x of dates.observances){
-  assert.ok(index.has(x.subjectId)||x.subjectId.startsWith("canon-group."),"Orphan date: "+x.subjectId);
+  assert.ok(index.has(x.subjectId)||doctors.doctors.some(d=>d.canonicalPersonId===x.subjectId)||
+    x.subjectId.startsWith("canon-group."),"Orphan date: "+x.subjectId);
   const arr=dateMap.get(x.subjectId)||[];
   arr.push({monthDay:x.monthDay,scope:x.authorityScope,
     universalStatus:x.universalStatus,publishedOn:x.publishedOn,sourceUrl:x.sourceUrl});
