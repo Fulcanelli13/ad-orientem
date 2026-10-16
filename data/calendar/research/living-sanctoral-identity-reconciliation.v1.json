@@ -140,6 +140,20 @@
       "profileHeader": "Cunegonda (Kinga) canonized 1999; Memoria Liturgica: 3 marzo",
       "inconsistentText": "Describes a saint married to 'sant’Enrico imperatore', a different historical biography; Kinga of Poland was married to Bolesław V the Chaste.",
       "action": "HOLD all date import for saint.kinga-poland until a second independent episcopal, Holy See liturgical or documented particular-calendar witness authenticates the correct feast day. Do not count 3 March as reliable date evidence."
+    },
+    {
+      "subjectIds": [
+        "saint.lorenzo-ruiz",
+        "saint.domingo-ibanez-de-erquicia",
+        "saint.james-kyushei-tomonaga",
+        "canon-group.japan-martyrs-16-1987"
+      ],
+      "status": "CONFLICTING_DICASTERY_GROUP_PROFILE_02_06_VERSUS_USCCB_09_28",
+      "sourceUrl": "https://www.causesanti.va/it/santi-e-beati/martiri-in-giappone.html",
+      "dicasteryHeader": "Memoria Liturgica: 6 febbraio",
+      "usccbUrl": "https://bible.usccb.org/bible/readings/0928-memorial-lawrence-ruiz.cfm",
+      "usccbDate": "09-28",
+      "action": "Do not import 6 February to canonical Lorenzo Ruiz group or its individual members until identity-specific liturgical authority verifies this group date; preserve 28 September as USCCB-only and independent members' identity link."
     }
   ],
   "numberOfCanonicalSubjects": 293,

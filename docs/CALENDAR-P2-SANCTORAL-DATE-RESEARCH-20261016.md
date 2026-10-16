@@ -6,11 +6,11 @@ Immutable baseline: `359ed283ebc6dd28797039c9667791c80323c271`; independent `res
 
 - Canonical individual IDs **293**, group IDs **13**.
 - Baseline date registry: **26** date edges; **21** individual identities and **5** collective groups covered.
-- After new, source-visited batches: **184** dated individual identities, leaving **109** undated (net backlog reduction **163**).
-- Evidence ledger now **196** edges including **170** newly researched edges.
+- After new, source-visited batches: **223** dated individual identities, leaving **70** undated (net backlog reduction **202**).
+- Evidence ledger now **239** edges including **213** newly researched edges.
 - **10** people with pre-existing Vatican-decree or recorded papal General Roman evidence; new Dicastery profiles add **zero** claims of universal-calendar authority.
-- **10** group IDs with a dated source witness.
-- New date-profile coverage: **25** canonisation-year collections, with 26 of the 51 already-indexed source-year collections still to harvest for dates.
+- **11** group IDs with a dated source witness.
+- New date-profile coverage: **32** canonisation-year collections, with 19 of the 51 already-indexed source-year collections still to harvest for dates.
 
 ## Source discipline
 
@@ -27,9 +27,9 @@ Never infer traditional Mass eligibility from any date edge. P1 owns formularies
 - `living-sanctoral-authorities.v1.json`: source-competence and jurisdiction classes.
 - `living-sanctoral-effective-dates.v1.json`: date-effective and Doctor-declaration crosswalk.
 - `living-sanctoral-identity-reconciliation.v1.json`: aliases, group policy, evidence contradictions.
-- `living-sanctoral-review-queue.v1.json`: undated subjects and 26 untouched (for memorial dates) already-indexed source-year collections.
+- `living-sanctoral-review-queue.v1.json`: undated subjects and 19 untouched (for memorial dates) already-indexed source-year collections.
 - `living-sanctoral-compatible-export.v1.json`: non-published compatibility projection; every candidate `eligibleForRuntime=false`.
-- `living-sanctoral-new-source-batch.v1.json`: twenty-five-year Dicastery source batch for reproducibility.
+- `living-sanctoral-new-source-batch.v1.json`: thirty-two-year Dicastery source batch for reproducibility.
 - `tests/calendar-living-sanctoral-research-p2.mjs`: structural, identity, scope, effective-date, coverage and no-runtime claims.
 
 P0: ingest only after verifying authority, applicable jurisdiction and source effective date; retain `saint.*` and `canon-group.*` IDs, respect existing 1962 rank and Mass. P1: use subjectId + date edge + source URLs solely as input to separate traditional Mass authorization/formulary research. No merge or deploy.
@@ -57,3 +57,11 @@ Added **25** direct Dicastery `Memoria Liturgica` records after checking page he
 **Critical exception (NOT IMPORTED):** The Dicastery's `cunegonda-kinga.html` page reports `3 marzo` but its surrounding text attributes the subject a husband described as St Henry emperor, evidently inconsistent with Kinga of Poland. Kinga's memorial date remains unresolved in the research queue. Do not accept this page header date until a second reliable witness clarifies identity.
 
 **Cumulative at commit:** 184/293 individually dated, 109 undated, 196 source edges (170 added during P2), 25/51 year collections with date harvest, 26 still untouched for dates. All dates are research-only and scoped. The 1962 principal feast, Mass permission and production resolver are untouched.
+
+## Batch 5 — Official historical collections 1970, 1975, 1984, 1987, 1988, 1989, 1993
+
+This batch joins **39 newly date-attested canonical individuals** through **40 individual edges** (Giuseppe Moscati's Dicastery field lists both 12 April and 16 November). It adds three official source edges for existing collective subjects (Paraguayan Jesuit martyrs, Korean martyrs, Vietnamese martyrs). The new Paraguayan cohort date is 15 November; Korean and Vietnamese evidence corroborates already-indexed modern USCCB dates. The four Franciscan martyrs canonised in 1970 share one source-dated 14 November association but retain their existing four person IDs; no new public group is invented.
+
+**Conflicts withheld:** The Dicastery 1987 Japan martyrs page has `Memoria Liturgica: 6 febbraio`, while the existing USCCB source has **28 September** for Lorenzo Ruiz and companions. Date 6 February is NOT imported; 28 September is recorded as scoped USCCB evidence for the already named members and group. The Dicastery Forty Martyrs of England and Wales page explicitly says `Senza data (Celebrazioni singole)`; no group date is fabricated from the canonisation date.
+
+**Cumulative:** 223/293 named individuals with source-attested date associations, 70 undated, 239 separate source-to-date edges (213 new in P2), 11/13 dated collective groups, 32/51 canonisation-year collections harvested, 19 still untouched. Source publication dates and particular-calendar authority remain unresolved where not established in the record. No eligibility for a 1962 Mass is inferred.
