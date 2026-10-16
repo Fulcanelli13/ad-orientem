@@ -2311,6 +2311,17 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
+    // Missal is a static book: select only the canonical opening cue as a
+    // page-level reference for its ribbon. Unlike LIVE, never advance the
+    // ritual clock/cinematics from reading scroll. A page with no exact
+    // sourced cue remains unresolved, not a guessed posture or action.
+    if(changed && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
+      const firstSourceCue=(visibleCard.paragraphs??[])
+        .flatMap(paragraph=>paragraph.sourceCueIds??[])
+        .find(id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id)))??null;
+      activeCueId=firstSourceCue;
+      if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
+    }
     ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
