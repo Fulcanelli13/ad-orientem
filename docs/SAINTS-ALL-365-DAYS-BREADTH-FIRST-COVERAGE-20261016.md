@@ -115,3 +115,47 @@ Artwork remains with the Sacred Art owner; no five-star candidate is silently pr
 ### Release and next bulk handoff
 
 This research and map-readiness package remains on **draft PR #1227**. Public pilot [PR #1256](https://github.com/Fulcanelli13/ad-orientem/pull/1256) is separate and unmerged. The next efficient source-owner operation is to **certify the highest-confidence person→shrine association edges in bulk** and resolve the six known duplicate-name keys, not to revisit long biographies or research random new pins. Historical source colour/rank conflicts are handed to the Calendar owner, not changed here.
+
+
+## W77 — source-identity alias controls and source-backed 121-site research map
+
+16 October 2026 · built on the existing Saints draft branch and its **single** person/shrine research inventory. No new canonical places, biographies or Sacred Art assets were created.
+
+### Six previously ambiguous full-name cases
+
+`data/saints/six-duplicate-name-alias-evidence-20261016.v1.json` preserves all six competing pairs and explicit evidence:
+
+| Shrine-name subject | Existing source owners | Reconciliation status |
+| --- | --- | --- |
+| Thérèse of Lisieux | Native Saints pilot, historical 10 October? **3 October**, Calendar Doctor owner | **One existing source-owner-supported cross-module identity link**; original `saint:therese-of-lisieux` and `saint.therese-lisieux` keys retained |
+| Anthony of Padua | Original 13 June archive; Doctor roster | Previously proposed alias, exact nominal day; source-owner **final ID certification outstanding** |
+| Catherine of Siena | Original 30 April archive; Doctor and research biography | Previously proposed alias, exact nominal day; 1970 Doctor declaration is not a retrospective 1962 title |
+| Francis de Sales | Original 29 January archive; Doctor and research biography | Previously proposed alias, exact nominal day; source-owner certification outstanding |
+| John of the Cross | Original 24 November archive; Doctor roster | Previously proposed alias, exact nominal day; source-owner certification outstanding |
+| Francis of Assisi | Original 4 October archive; held biography | Documented same-name contextual lead; no explicit prior owner-approved alias, so **held** |
+
+*Correction:* Thérèse's source-contracted historical date is **3 October**, not an erroneous 10 October interpretation of `10-03`. The explicit existing identity bridge remains unchanged. These comparisons are **not permission** to rename source keys, alter Calendar titles or rank, assign art, or publish a biographical statement.
+
+### Native map development preview implemented
+
+`src/find/saints-shrine-map-research.js` projects the **already existing** Geography and shrine-source owner records. In the explicitly gated **RESEARCH_PREVIEW** channel only:
+
+- **121 unique existing Place records**, including all **nine** original pilot sites with their existing source-bound profile cards
+- **112 additional source-shrine cards** with *only names from original shrine sources*, not invented full saint biographies
+- **119 published-precision physical site coordinates** satisfying the existing `isMapPublishablePlaceGeo` contract; **two indicative-only sites remain list-only**
+- **145** original shrine-to-name association edges, never treated as births, deaths, residences or authenticated relics
+- Four evidence families remain distinct: pilot links already documented by its source owner; fifty single full-name source-key **candidates**; six duplicate-name cases; sixty-three unmatched name strings
+
+The research-only detail sheet explicitly says person identity is **not certified**, retains source IDs and links to the physical coordinate provenance where permitted. Multiple names at one real shrine remain one location marker; original pilot cards override research candidates at their nine shared place IDs. No fake Mass, saint-life events, approved portrait or duplicate geographic object.
+
+### Release boundary and Sacred Art
+
+The published-channel switch remains `PILOT_SIX`. The loader does **not** request `existing-shrine-geography-readiness-20261016.v1.json` in public, and the map stays **nine original physical Places / eight publishable pins** pending controlled release acceptance. The 121-place map is committed development functionality, **not a live deployment**.
+
+The Sacred Art owner's W65 technical release register still shows **zero** published portrait assets and two pilot five-star aesthetic candidates on rights/photographic-original certification hold. Neither is imported, rated again, offered as approved, or licensed via outreach. W75's 75 artwork subject links remain provisional owner-review evidence, not a reusable production image registry.
+
+### Next high-leverage owner tasks
+
+Calendar and Saints identity owners should jointly close the four existing nominal-date alias proposals in a single decision and separately adjudicate Francis of Assisi. Sacred Geography should affirm the *shrine-name association* relation for bulk matched IDs, without upgrading it to a birth/death place. Sacred Art should deliver already certified reproduction assets keyed by approved identity only; no fresh reviewer galleries of previously rejected artworks.
+
+Native map and alias tests are in the existing Saints editorial CI. PR #1227 remains draft and PR #1256 is separate, review-ready and not merged.
