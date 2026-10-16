@@ -1,4 +1,7 @@
 # Ad Orientem — 73-book Catholic Scripture minimum source harvest
+
+> **Editorial policy correction (16 October 2026):** This 73-book research harvest is **archival source evidence only**, not a required scope for the Ad Orientem guided Scripture journey. The user has clarified that the purpose is to help people understand selected biblical stories and encourage independent Scripture reading, **not** to cover all books. Do not resume mandatory per-book filling or interpret 73/73 as a product-success target. The governing policy is `data/explore/biblical-story-first-editorial-policy.v1.json`. Important Old Testament narratives and typology remain central; detailed law, genealogy or chronicle material may be omitted from the guided path.
+
 **16 October 2026 · research evidence only · no approved excerpts, release or app changes**
 
 ## Outcome
