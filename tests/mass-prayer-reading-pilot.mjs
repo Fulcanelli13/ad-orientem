@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {validatePrayerReadingPilot,prayerReadingEditorialPreviewHtml,prayerReadingEditorialPreviewCss,
  validateMassTransitionReadingPilot,massTransitionEditorialPreviewHtml,
- validateRomanCanonReadingPilot,romanCanonEditorialPreviewHtml}
+ validateRomanCanonReadingPilot,romanCanonEditorialPreviewHtml,
+ validateCommunionReadingPilot,communionEditorialPreviewHtml}
  from "../src/learn/mass-prayer-reading-pilot.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const pilot=read("data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json");
@@ -130,4 +131,57 @@ for(const [description,change] of [
 }
 assert.equal(validateRomanCanonReadingPilot(canonDraft,{blocks:[]},formation,guide).ok,false);
 assert.equal(validateRomanCanonReadingPilot(canonDraft,sung,formation,{entries:{}}).ok,false);
-console.log("PASS P2 editorial pilot: 29 bilingual prayer readings (14 early + 15 Canon), two Proper holds; exact source blocks, intact Consecration actions, biblical references held, no production release");
+const communionDraft=read("data/learn/research/mass-formation-communion-prayer-reading-pilot-20261016.v1.json");
+const communionValidated=validateCommunionReadingPilot(communionDraft,sung,formation,guide);
+assert.equal(communionValidated.ok,true,communionValidated.reason);
+assert.equal(communionValidated.readings.length,23);
+assert.deepEqual(communionValidated.readings.map(x=>x.block_id),
+ Array.from({length:23},(_,i)=>"AO.SM.B"+String(i+62).padStart(3,"0")));
+assert.equal(communionValidated.readings.filter(x=>x.branch==="NORMATIVE_FIXED_TEXT").length,20);
+assert.deepEqual(communionValidated.readings.filter(x=>x.branch==="OPTIONAL_LOCAL_OLDER_CUSTOM").map(x=>x.block_id),
+ ["AO.SM.B077","AO.SM.B078","AO.SM.B079"],"The three older/local branch prayers must not be normative");
+assert.deepEqual(communionValidated.withheld.map(x=>x.block_id),["AO.SM.B085"]);
+assert.equal(communionValidated.withheld[0].proper_slot,"COMMUNION");
+assert.equal(communionValidated.readings.reduce((n,x)=>n+x.scripture_within_text.length,0),0,
+ "No inferred Bible passages may be promoted into P2 as verified source references");
+assert.deepEqual(communionValidated.readings.filter(x=>x.stage_id==="MF07").map(x=>x.block_id),
+ ["AO.SM.B069","AO.SM.B070","AO.SM.B071","AO.SM.B072","AO.SM.B073","AO.SM.B074","AO.SM.B075","AO.SM.B076"]);
+assert.deepEqual(communionValidated.readings.filter(x=>x.stage_id==="MF08").map(x=>x.block_id),
+ ["AO.SM.B083","AO.SM.B084"]);
+for(const fr of [false,true]){
+ const html=communionEditorialPreviewHtml(communionValidated,{french:fr});
+ assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,23);
+ assert.equal((html.match(/class="aoFRPilotOptional"/g)||[]).length,3);
+ assert.equal((html.match(/data-ao-formation-proper-held=/g)||[]).length,1);
+ assert.match(html,fr?/ÉBAUCHE ÉDITORIALE/:/EDITORIAL DRAFT/);
+ assert.match(html,fr?/USAGE LOCAL\/ANCIEN FACULTATIF/:/OPTIONAL OLDER\/LOCAL CUSTOM/);
+ assert.doesNotMatch(html,/data-ao-r17|data-ao-mass-reader|data-ao-mx-study/,
+  "No ritual-reader or publicly activated study surfaces");
+}
+const invalidCommunion=mutate=>{
+ const copy=JSON.parse(JSON.stringify(communionDraft));
+ mutate(copy);
+ return validateCommunionReadingPilot(copy,sung,formation,guide);
+};
+for(const [name,mutate] of [
+ ["draft released",x=>{x.status="RELEASED_FOR_FORMATION"}],
+ ["wrong Pater moment",x=>{x.entries[0].moment_id="AO.CARD.020"}],
+ ["wrong priest/faithful teaching",x=>{x.entries[12].stage_id="MF01"}],
+ ["wrong source block",x=>{x.entries[12].block_id="AO.SM.B081"}],
+ ["unpublished Pater text",x=>{x.entries[1].text_anchor_en="New unverified text"}],
+ ["unapproved Psalm link",x=>{x.entries[13].scripture_within_text=["Psalm 115:4"]}],
+ ["Confiteor falsely normative",x=>{x.entries[15].branch="NORMATIVE_FIXED_TEXT"}],
+ ["Confiteor custom deleted",x=>{x.entries.splice(16,1)}],
+ ["Confiteor source status overwritten",x=>{x.entries[15].source_status="NORMATIVE_1962"}],
+ ["priest threefold prayer relabelled",x=>{x.entries[11].branch="OPTIONAL_LOCAL_OLDER_CUSTOM"}],
+ ["proper Communion text added",x=>{x.entries[20].block_id="AO.SM.B085"}],
+ ["proper Communion hold missing",x=>{x.withheld_variable_propers=[]}],
+ ["proper hold mislabeled",x=>{x.withheld_variable_propers[0].proper_slot="POSTCOMMUNION_SET"}],
+ ["French commentary missing",x=>{x.entries[20].reading.fr=""}],
+ ["extra draft entry",x=>{x.entries.push(x.entries[0])}]
+]){
+ assert.equal(invalidCommunion(mutate).ok,false,name+" must be rejected");
+}
+assert.equal(validateCommunionReadingPilot(communionDraft,{blocks:[]},formation,guide).ok,false);
+assert.equal(validateCommunionReadingPilot(communionDraft,sung,formation,{entries:{}}).ok,false);
+console.log("PASS P2 editorial pilot: 52 bilingual prayer notes = 29 previous + 23 Communion; 20 normative, 3 explicitly optional, 3 cumulative variable Proper holds, no unpublished source or Mass reader release");
