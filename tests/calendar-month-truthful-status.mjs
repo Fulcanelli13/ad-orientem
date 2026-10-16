@@ -1,5 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
-import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, calendarInseparableApostlesClaimForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
+import { calendarRubricalClaimsForDay, calendarColourRubricalClaimsForDay, calendarTransferRubricalClaimsForDay, calendarObservedCommemorationClaimsForDay, calendarInseparableApostlesClaimForDay, calendarOmittedFeastClaimForDay, GENERAL_RUBRICS_NORMATIVE_URL } from "../src/calendar/rubrical-claim-citations.js";
 import { romanClassTier } from "../src/calendar/roman-class-tier.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
@@ -11,6 +11,46 @@ const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
 const claimLedger=JSON.parse(readFileSync("data/calendar/1962-privileged-commemorations.v1.json","utf8"));
 
 const adjudicated2027=JSON.parse(readFileSync("data/calendar/1962-ordo-corrections.v1.json","utf8"));
+
+const francisOmitted={
+ date:"2026-10-04",status:"ready",
+ day:{main:{id:"tempora:Pent19-0:2:g",path:"Tempora/Pent19-0",rank:2},
+      commemorations:[]},
+ proper:{status:"ready",data:{sourcePath:"Tempora/Pent19-0"}}
+};
+const omitted=calendarOmittedFeastClaimForDay(francisOmitted,adjudicated2027);
+assert.equal(omitted.length,1,"Source-certified 2026 Sunday/St Francis omission missing");
+assert.deepEqual(omitted[0].clauses,["RG 91","RG 93","RG 111(b)"]);
+assert.equal(omitted[0].impededFeastPath,"Sancti/10-04");
+assert.equal(omitted[0].disposition,"OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED");
+assert.equal(omitted[0].generalRomanCalendarOnly,true);
+assert.equal(omitted[0].automaticMassChange,false);
+assert.equal(omitted[0].normativeUrl,GENERAL_RUBRICS_NORMATIVE_URL);
+assert.equal(omitted[0].witnessUrl,"https://ordo.fsspx.org/day/2026-10-04?lang=en");
+assert.equal(omitted[0].feastClassWitnessUrl,"https://ordo.fsspx.org/day/2027-10-04");
+assert.ok(omitted[0].explanation.en&&omitted[0].explanation.fr);
+assert.ok(Object.isFrozen(omitted)&&Object.isFrozen(omitted[0]));
+for(const other of [
+ {...francisOmitted,date:"2027-10-04"},
+ {...francisOmitted,date:"2026-10-11"},
+ {...francisOmitted,status:"failed"},
+ {...francisOmitted,proper:{status:"failed",data:{sourcePath:"Tempora/Pent19-0"}}},
+ {...francisOmitted,proper:{status:"ready",data:{sourcePath:"Sancti/10-04"}}},
+ {...francisOmitted,day:{...francisOmitted.day,main:{id:"sancti:10-04:3:w",path:"Sancti/10-04"}}},
+ {...francisOmitted,day:{...francisOmitted.day,main:{id:"tempora:Pent19-0:1:g",path:"Tempora/Pent19-0"}}},
+ {...francisOmitted,day:{...francisOmitted.day,commemorations:[{id:"sancti:10-04:3:w"}]}},
+ {...francisOmitted,day:{...francisOmitted.day,commemorations:null}},
+])assert.deepEqual(calendarOmittedFeastClaimForDay(other,adjudicated2027),[],
+  "No omitted-feast citation without the exact source-resolved Sunday and missing commemoration");
+for(const change of [
+ ledger=>ledger.nonCommemorationWitnesses[0].observedWitness="javascript:alert(1)",
+ ledger=>ledger.nonCommemorationWitnesses[0].impeded.class=2,
+ ledger=>ledger.nonCommemorationWitnesses[0].clauses=["RG 111(d)"],
+ ledger=>ledger.nonCommemorationWitnesses[0].doesNotDetermineParticularCalendar=false,
+]){const poison=structuredClone(adjudicated2027);change(poison);
+ assert.deepEqual(calendarOmittedFeastClaimForDay(francisOmitted,poison),[],
+  "Do not manufacture omitted-feast explanations from incomplete or unsafe evidence");}
+
 
 const inseparableFixture=(date="2027-06-30")=>({
  date,status:"ready",
@@ -273,6 +313,10 @@ for(const marker of [
   "loadCalendarTransferClaims();",
   "calendarObservedCommemorationClaimsForDay(r,colourClaimLedger)",
   "calendarInseparableApostlesClaimForDay(r,colourClaimLedger)",
+  "calendarOmittedFeastClaimForDay(r,colourClaimLedger)",
+  "data-cal-omitted-feast",
+  "Why St Francis is not commemorated",
+  "Pourquoi saint François n’est pas commémoré",
   "data-cal-apostles-inseparable",
   "Why St Peter is remembered with St Paul",
   "Pourquoi saint Pierre est uni à saint Paul",
