@@ -108,6 +108,7 @@ try{
    const payload=JSON.parse(readFileSync(await download.path(),"utf8"));
    assert.equal(payload.schema,"ao-mass-explorer-canon-owner-decisions-v1");
    assert.equal(payload.decisions.length,8);
+   assert.ok(payload.decisions.every(x=>/^[0-9a-f]{64}$/.test(x.content_sha256)),"Every decision must bind to precise reviewed study content");
    assert.equal(payload.scope,"EDITORIAL_WORDING_ONLY_NOT_PUBLICATION");
    assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.07").decision,"approve");
    assert.equal(payload.decisions.find(x=>x.study_id==="AO.FORM.CANON.DEEP.05").decision,"revise");
