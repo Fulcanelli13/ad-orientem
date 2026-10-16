@@ -1,0 +1,171 @@
+{
+  "schema": "AO_MYSTERY_MASS_ULTRA_MASTER_RECONCILIATION_V1",
+  "asOf": "2026-10-16",
+  "authority": "EDITORIAL_SOURCE_RECONCILIATION_NOT_PUBLICATION",
+  "canonicalWorkbook": "Ad_Orientem_Ultra_Master_Mass_Source_of_Truth_RECONCILED_2026-10-16.xlsx",
+  "workbookDistribution": "CHATGPT_CONVERSATION_ATTACHMENT_NOT_COMMITTED_AS_BINARY_TO_REPOSITORY",
+  "originalWorkbook": "Ad_Orientem_Ultra_Master_Mass_Source_of_Truth_2026-10-15.xlsx",
+  "originalSourceWorkbooks": [
+    "Ad_Orientem_Full_Order_of_Mass_Master_Registry_2026-10-15.xlsx",
+    "Ad_Orientem_1962_LIVE_Ceremonial_Atlas_v3_CORRECTED_RESEARCH.xlsx",
+    "Ad_Orientem_Order_of_Mass_Scripture_Pass4_Verified_Parallels_2026-10-15.xlsx",
+    "Ad_Orientem_Mass_Master_Reference_Matrix_Creed_Editorial_Source_Review_2026-10-15.xlsx",
+    "Roman_Canon_Scripture_Commentary_and_Meditation_Master_2026-10-14.xlsx",
+    "Ad_Orientem_Mass_Evidence_Integration_Contract_2026-10-15.xlsx"
+  ],
+  "workbookTabs": 35,
+  "appendedSheets": [
+    "31 GUIDE 154 RECONCILE",
+    "32 CUE 33 EXPLAINED",
+    "33 FR RUBRIC SEMANTIC QA",
+    "34 RELEASE INTEGRATION QUEUE",
+    "35 RECONCILIATION DASHBOARD"
+  ],
+  "invariantCounts": {
+    "microLatinUnits": 435,
+    "sourceCues": 279,
+    "priorHistoricalGuideEntries": 154,
+    "currentlyRegisteredGuideIds": 32,
+    "variantGuidesNotCurrent": 122,
+    "lowMassVariantGuides": 35,
+    "otherConditionalGuides": 87,
+    "olderGuideEvidenceAttachments": 1123,
+    "historicalFrenchRitusResearchEntries": 98,
+    "publishedRitusActionEventIds": 57,
+    "publishedSourceCuesWithEvents": 37,
+    "historicPriestEventRows": 279,
+    "faithfulPostureDonors": 23,
+    "gestureDonors": 31,
+    "responseDonors": 33,
+    "existingHistoricalEvidenceAttachments": 955,
+    "verifiedClaimRecords": 139,
+    "mysteryOwners": 39,
+    "mysteryUnapprovedBilingualStudyDrafts": 44,
+    "sourceGapFlagsTriaged": 325
+  },
+  "resolvedFalsePositive": {
+    "id": "SOURCE-33",
+    "previousDescription": "33 Mass cue IDs without corresponding micro-Latin parent numerical IDs were previously described as a research gap.",
+    "actualClassification": {
+      "PRIEST_ACTION_OR_CEREMONIAL_STATE": 18,
+      "PROPER_OR_PRAYER_SLOT": 11,
+      "PRIEST_SCHOLA_CLOCK_TRANSITION": 4
+    },
+    "decision": "ALL_33_ARE_SOURCE_CUES_NOT_MISSING_PRAYER_TEXT",
+    "explicitCues": {
+      "properlyVariable": [
+        "AO.SM.C0043",
+        "AO.SM.C0073",
+        "AO.SM.C0075",
+        "AO.SM.C0077",
+        "AO.SM.C0078",
+        "AO.SM.C0086",
+        "AO.SM.C0109",
+        "AO.SM.C0134",
+        "AO.SM.C0144",
+        "AO.SM.C0249",
+        "AO.SM.C0254"
+      ],
+      "parallelPriestScholaClock": [
+        "AO.SM.C0276",
+        "AO.SM.C0277",
+        "AO.SM.C0278",
+        "AO.SM.C0279"
+      ]
+    },
+    "action": "Retain as runtime cue states. Do not generate Latin phrase parent records or author commentary for any of these 33."
+  },
+  "guideStatus": {
+    "oldTotal": 154,
+    "current32": "Same IDs exist in current data/presentation/guide-registry.v1.json, but full text parity was not certified during this reconciliation.",
+    "olderProfiles": 122,
+    "lowMass": 35,
+    "otherProfiles": {
+      "ASPERGES / VIDI AQUAM": 2,
+      "CANDLEMAS": 5,
+      "ASH WEDNESDAY": 4,
+      "PALM SUNDAY": 9,
+      "HOLY THURSDAY": 9,
+      "GOOD FRIDAY": 12,
+      "EASTER VIGIL": 15,
+      "REQUIEM": 8,
+      "REQUIEM / FUNERAL ABSOLUTION": 2,
+      "ROGATIONS / GREATER-MINOR LITANIES": 1,
+      "ADDITIONAL LESSONS / EMBER DAYS": 1,
+      "CORPUS CHRISTI PROCESSION": 3,
+      "NUPTIAL_WEDDING": 16
+    },
+    "hardRule": "Older Guides are conditional-source copy, not a command to display every ceremony or force them into the generic 32-key reader."
+  },
+  "historicalFrenchRubricAudit": {
+    "total": 98,
+    "sameActorAndLatinTriggerOnCurrentCue": 12,
+    "sameActorButDifferentTriggerOnCurrentCue": 8,
+    "differentActorOnCurrentCue": 1,
+    "noPublishedEventOnSameCue": 77,
+    "methodology": "Candidate actor/Latin string matching, not validation of equivalent rubrical action or timing.",
+    "selectedPriorityCases": [
+      {
+        "id": "MR62.001",
+        "cue": "AO.SM.C0001",
+        "trigger": "In nomine Patris",
+        "kind": "Priest's Sign of Cross",
+        "status": "NO_SAME_CUE_PUBLISHED_EVENT"
+      },
+      {
+        "id": "MR62.005",
+        "cue": "AO.SM.C0017;AO.SM.C0022",
+        "trigger": "mea culpa",
+        "kind": "Three priest breast strikes in Confiteor",
+        "status": "NO_SAME_CUE_PUBLISHED_EVENT"
+      },
+      {
+        "id": "MR62.007",
+        "cue": "AO.SM.C0038",
+        "trigger": "Oramus te",
+        "kind": "Priest kisses altar",
+        "status": "NO_SAME_CUE_PUBLISHED_EVENT"
+      },
+      {
+        "id": "MR62.024",
+        "cue": "AO.SM.C0079",
+        "trigger": "Munda cor meum",
+        "kind": "Bow in Gospel preparation",
+        "status": "SAME_ACTOR_AND_TRIGGER_CANDIDATE"
+      },
+      {
+        "id": "MR62.090",
+        "cue": "AO.SM.C0259",
+        "trigger": "Requiem dismissal",
+        "kind": "No final blessing in Requiem",
+        "status": "FORM_RULE_NOT_EVENT"
+      }
+    ],
+    "normativeOwner": "data/presentation/reader-rubric-events.v1.json",
+    "originalFrenchSource": "Ad_Orientem_1962_LIVE_Ceremonial_Atlas_v3_CORRECTED_RESEARCH.xlsx / V2_FRENCH_RUBRICS",
+    "hardRule": "No same-cue event does NOT imply missing UX, because this current list is deliberately a subset, and some notes are responses, states, conditions, or already implemented elsewhere."
+  },
+  "ongoingReleaseGates": [
+    "Compare the 32 current Guide short/long strings against the old recovered text; rectify conflicts only by current approved owner.",
+    "Trace 35 Low Mass Guides to the Low Mass profile, preserve silent-priest clock separate from schola.",
+    "Assign remaining 87 historical conditional Guides to existing explicit Mass/overlay branches.",
+    "Review 98 French source-rubric semantics against 57 published event identities and existing actor/position registries before proposing implementation.",
+    "Check the existing AO.CANON.R62.050 Nobis quoque breast-strike candidate under 1962 rubrics; avoid duplicates and faithful-posture inference.",
+    "Keep 44 EN/FR manuscript drafts unapproved pending direct author-source and editorial review.",
+    "Verify printed Latin before micro punctuation or detached comma corrections.",
+    "Verify actual live canonical GitHub Pages app and mobile behavior before reporting publication."
+  ],
+  "authoritativeGitHubPaths": [
+    "data/presentation/reader-text-sung.v1.json",
+    "data/presentation/reader-rubric-events.v1.json",
+    "data/presentation/reader-canon-rubric-review.v1.json",
+    "data/presentation/guide-registry.v1.json",
+    "data/learn/research/mystery-mass-editorial-source-register-20261015.v1.json"
+  ],
+  "publication": {
+    "newPublicText": 0,
+    "newMassReaderCards": 0,
+    "newRubricEvents": 0,
+    "mutationToLiveReader": false
+  }
+}
