@@ -1,0 +1,237 @@
+{
+  "schema": "AO_SACRED_ART_MOBILE_FIRST_ACQUISITION_GATE_V1",
+  "issued": "2026-10-16",
+  "authority": "User correction: high-quality painting photograph != high-pixel-count photograph. Mobile display, not museum printing.",
+  "baseline": {
+    "categoryCount": 168,
+    "strictLegacyImageCoverage": 146,
+    "legacyUnresolved": 22,
+    "uniqueRequirementCount": 21
+  },
+  "triageCounts": {
+    "SOURCE_OR_RIGHTS_HOLD": 6,
+    "MOBILE_VISUAL_RECHECK": 7,
+    "NO_ELIGIBLE_PHOTO": 5,
+    "IMAGE_ACQUIRED_SELECTION_CHECK": 4
+  },
+  "mobileQualityPolicy": {
+    "visualTarget": "Full painting rendered with contain-fitting at a typical ~390 CSS px screen width, within available screen height; check colour, tonal range, visible painterly detail and edge integrity",
+    "reproductionFit": "A clean 700–1200 pixel photograph may be fully satisfactory at this scale. Higher pixel dimensions do not earn preference if image quality or subject fit is worse.",
+    "resolutionGate": "NO_FIXED_MINIMUM_AND_NO_AUTOMATIC_REJECTION_AT_1200PX_OR_2000PX. Distinguish technical decode from mobile appearance; record source width/height for reference only.",
+    "originalIdentity": "Exact selected physical painting, depicted saint and correct painted side must be verified; different original is a distinct candidate and cannot inherit rating.",
+    "frameHandling": "External frame may be present in acquired source; create independent cropped derivative after confirmation that every edge of painting is included. Do not remove parts of the painting.",
+    "rights": "Review file-specific and institution-specific licensing for prospective public/commercial app. A research acquisition is not a distribution licence.",
+    "preview": "On-device 390px contain-fit visual inspection should judge real display adequacy, not print-grade original resolution.",
+    "release": "Record MOBILE_VISUALLY_SUITABLE, EXACT_ORIGINAL_CONFIRMED, RIGHTS_COMPATIBLE, CURATOR_APPROVED separately. Never conflate them."
+  },
+  "execution": {
+    "priority": [
+      "Reconcile and finish four categories with actual open/high-quality imagery already acquired; do not chase more pixels",
+      "Recheck seven small existing source photos on mobile and resolve identity/rights, never reject for dimensions alone",
+      "Batch true image-source and rights holds, deduplicating one Thérèse original across two categories",
+      "Research five categories with no eligible original photo, offering alternatives only as distinct unapproved paintings"
+    ],
+    "reviewTool": "Defer until image-source collection complete; new viewer uses object-fit:contain and max-height of viewport, no oversized images.",
+    "process": "One consolidated backlog and batch processing; stop adding one PR wave per painting and stop duplicating already retrieved originals."
+  },
+  "rows": [
+    {
+      "categoryIndex": 25,
+      "subject": "Saint John of the Cross",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "Céline Martin 1894 original; Carmel source is not freely licensed",
+      "nextAction": "Identify reusable exact artwork photo or hold, never copy archival image",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 26,
+      "subject": "Saint Alphonsus Liguori",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "W95 Marini 1045x1280 and Lenzi 742x1065 photos; monochrome/framed; rights unclear",
+      "nextAction": "Reassess at phone size before requesting another image; rights still separate",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 30,
+      "subject": "Saint Gregory Nazianzen",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "Franchi Ambrosiana exact original; unrelated Commons figure is not substitute",
+      "nextAction": "Open-source exact photo only; no restricted Ambrosiana download",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 35,
+      "subject": "Saint Peter Damian",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "W95 complete-source photos 853x1280 and 989x1480; frames/monochrome; 1280x853 is detail only",
+      "nextAction": "Inspect complete colour photo at 390px display; reject detail and confirm rights",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 37,
+      "subject": "Saint Robert Bellarmine",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "W95 Roman-school 578x768 monochrome archival photo",
+      "nextAction": "Test actual phone presentation; colour/contrast more important than pixel count; rights hold",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 41,
+      "subject": "Saint Cyril of Jerusalem",
+      "workstream": "NO_ELIGIBLE_PHOTO",
+      "evidence": "No certified selected original; Lossau ceiling candidate photograph noncommercial",
+      "nextAction": "Find authentically depicted original and independent commercially compatible photo",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 42,
+      "subject": "Saint Ephrem",
+      "workstream": "NO_ELIGIBLE_PHOTO",
+      "evidence": "Netti G32-002 provenance/saint identity unresolved; old Commons icon is different",
+      "nextAction": "Certify exact saint and source image; no icon mistaken for naturalistic selected painting",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 43,
+      "subject": "Saint Hilary of Poitiers",
+      "workstream": "NO_ELIGIBLE_PHOTO",
+      "evidence": "Langlois Bordeaux source identified; Leduc church interior unsuitable; Prado Commons photo depicts Lawrence side",
+      "nextAction": "Find exact front image of Langlois or true Hilary verso; do not reuse Lawrence front",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 48,
+      "subject": "Saint Thérèse of Lisieux",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "Céline Martin Thérèse aux roses (1925), original Carmel image rights held; same physical work as category 82",
+      "nextAction": "Resolve once across 48 and 82 with compatible published original photo",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 51,
+      "subject": "Saint Louis IX",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "Louvre/Nancy framed photo 999x1500 acquired W93; attribution disputed; museum image rights unclear",
+      "nextAction": "Compare 390px colour and paint legibility; frame can be removed in derivative; check licence",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 52,
+      "subject": "Saint Patrick",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "RDS Valdrè original oil photo publication restricted",
+      "nextAction": "Search independently openly licensed exact physical painting photograph; no permissions outreach",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 60,
+      "subject": "Saint Margaret Mary Alacoque",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "Commons Podesti attribution only, 800x600 published file; physical object attribution unclear",
+      "nextAction": "Test visual quality at mobile size; authenticate attribution and rights separately",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 70,
+      "subject": "Saint Denis of Paris",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "W95 original source photograph 609x700; scene visible but small; reuse rights unclear",
+      "nextAction": "Review at 390px display with colour fidelity before seeking bigger",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 81,
+      "subject": "Our Lady of Perpetual Help",
+      "workstream": "MOBILE_VISUAL_RECHECK",
+      "evidence": "Commons original icon photo 781x1024 plus 500x609; W93 shrine-wide images not clean artwork masters",
+      "nextAction": "Reinspect 781x1024 original-icon photograph at mobile full-view; file-specific photo rights",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 82,
+      "subject": "Saint Thérèse of Lisieux",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "Same 1925 Céline Martin painting as category 48; archival photo rights not open",
+      "nextAction": "Do not double-acquire; share original work identity with category 48",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 83,
+      "subject": "Christ the King",
+      "workstream": "NO_ELIGIBLE_PHOTO",
+      "evidence": "No selected original painting in catalogue",
+      "nextAction": "Find strong premodern or nineteenth-century Christ-in-Majesty subject, verify exact work; curator choice pending",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 129,
+      "subject": "Station 14: Burial of Christ",
+      "workstream": "SOURCE_OR_RIGHTS_HOLD",
+      "evidence": "Giandomenico Tiepolo Prado P000362 confirmed; available reproduction noncommercial/failed endpoint",
+      "nextAction": "Find independently usable full original image; no Venice Station XIV substitution",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 135,
+      "subject": "Seven Sorrows of Mary",
+      "workstream": "IMAGE_ACQUIRED_SELECTION_CHECK",
+      "evidence": "W92 Munich Van Dyck 3750x2736 and W96 Bilbao 6306x3784 are two separate originals",
+      "nextAction": "Reconcile which physical original the existing curator record means; stop downloading more variants",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 136,
+      "subject": "Saint Anthony of Padua",
+      "workstream": "NO_ELIGIBLE_PHOTO",
+      "evidence": "Supposed Rubens original has no confirmed accession/source; cannot swap with other painters automatically",
+      "nextAction": "Prove Rubens physical original or document authentic same-subject alternative for explicit curator consideration",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 139,
+      "subject": "Most Holy Trinity",
+      "workstream": "IMAGE_ACQUIRED_SELECTION_CHECK",
+      "evidence": "W92 Rubens KMSKA 3840x3949 open source; W96 Basel 1160x1624 alternate",
+      "nextAction": "Reconcile selected physical original; no more pixel hunting",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 142,
+      "subject": "Cain and Abel",
+      "workstream": "IMAGE_ACQUIRED_SELECTION_CHECK",
+      "evidence": "W97 Rubens Courtauld 7045x9694 full image; museum says CC BY-NC",
+      "nextAction": "Reconcile accession and resolve right-of-use conflict; do not search larger photo",
+      "ratingChanged": false,
+      "publicationApproved": false
+    },
+    {
+      "categoryIndex": 145,
+      "subject": "Melchizedek Blesses Abram",
+      "workstream": "IMAGE_ACQUIRED_SELECTION_CHECK",
+      "evidence": "W97 Rubens NGA 4000x3193 full image, CC0",
+      "nextAction": "Reconcile legacy selected painting with NGA physical original; image acquisition itself complete",
+      "ratingChanged": false,
+      "publicationApproved": false
+    }
+  ]
+}
