@@ -39,17 +39,17 @@ a{color:#d6bc91}
 <main>
 <section id="stage" aria-label="Three-dimensional church exploration">
 <canvas id="renderCanvas" tabindex="0" aria-label="Interactive 3D scene"></canvas>
-<div id="empty"><div><h2>Enter a church</h2><p>Load an authorised Catholic church GLB to begin exploring. No synthetic placeholder architecture will be shown.</p><small>Use the panel to load an existing model or select a local GLB file.</small></div></div>
+<div id="empty"><div><h2>Enter a church</h2><p>Test the navigation immediately in a small neutral 3D scene, or import an authentic Catholic church GLB.</p><small>The test environment is not a church and is not proposed for publication.</small></div></div>
 <div id="reticle" aria-hidden="true">+</div>
 <div id="controls" aria-label="Touch movement controls"><span></span><button data-move="w" aria-label="Forward">↑</button><span></span><button data-move="a" aria-label="Left">←</button><button data-move="s" aria-label="Back">↓</button><button data-move="d" aria-label="Right">→</button></div>
-<div id="status" role="status">Waiting for a licensed 3D church.</div>
+<div id="status" role="status">Ready for a test scene or a downloaded GLB.</div>
 </section>
 <aside>
 <h2>Explore the church</h2>
 <p id="help">Load a real GLB, use Survey to find the nave, then place a starting point and enter Walk mode. Select sacred objects to read the existing Ad Orientem glossary.</p>
 <label for="modelFile">Your downloaded model (.glb)</label><input id="modelFile" type="file" accept=".glb,model/gltf-binary">
 <label for="modelUrl">Or a direct HTTPS GLB URL</label><input id="modelUrl" type="url" placeholder="https://…/church.glb">
-<div class="actions"><button id="loadUrl">Load URL</button><button id="reference">Load Durro reference (137 MB)</button></div>
+<div class="actions"><button id="demo" class="primary">Test controls (instant)</button><button id="loadUrl">Load URL</button><button id="reference">Load Durro (137 MB)</button></div>
 <small>Durro is CC BY and for technical testing only. Its sanctuary has not passed the traditional altar review. Large models may take time or exhaust mobile memory.</small>
 <h3>Movement</h3><div class="actions"><button id="survey" class="primary" disabled>Survey</button><button id="walk" disabled>Walk</button><button id="start" disabled>Set entrance</button></div>
 <p class="muted" style="font-size:13px">Survey: drag to orbit, scroll to zoom. Set entrance: click a floor point. Walk: WASD/arrows, drag to look; touch buttons on mobile. Escape exits pointer lock.</p>
@@ -64,6 +64,7 @@ a{color:#d6bc91}
 </main>
 <script src="https://cdn.babylonjs.com/babylon.js"></script>
 <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+<!-- The downloadable standalone build replaces the two CDN tags with embedded libraries. -->
 <script type="module" src="./viewer.js"></script>
 </body>
 </html>
