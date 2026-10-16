@@ -186,7 +186,7 @@ async function openSaintDetail(id){
       // Only a profile already present in the active Explore release can open.
       // Otherwise preserve the old saint panel rather than guessing an ID.
       if(state()?.selectedDate!==target)return false;
-      const opened=await owner?.openSaintProfile?.(exact.saintsId);
+      const opened=await owner?.openSaintProfile?.(exact.saintsId,{calendarReturn:exact});
       if(opened===true)return true;
     }
     const result=await Promise.resolve(globalThis.AO_MODULES?.open?.("today.saint",
