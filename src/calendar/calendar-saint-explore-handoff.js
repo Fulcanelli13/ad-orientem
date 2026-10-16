@@ -55,7 +55,7 @@ export function exactCalendarSupplementarySaintProfile({date,card,bridge}={}){
      card.massSelectionAuthority!=="NONE"||
      card.changes1962Principal!==false||
      card.selectedFormularyId!==null||
-     !/^saint\\.[a-z0-9-]+$/.test(card.id||"")||
+     !/^saint\.[a-z0-9-]+$/.test(card.id||"")||
      bridge?.schema!=="ao.saints.parallel-owner-identity-bridge.v1"||
      bridge?.status!=="EDITORIAL_SOURCE_LINKS_ONLY_NOT_GLOBAL_ID_RENAMES")return null;
   const forbidden=new Set((bridge.nonlinks??[])
