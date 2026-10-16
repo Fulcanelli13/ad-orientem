@@ -2,6 +2,7 @@
 // Never calculate precedence, replace the Mass resolver or promote a witness
 // into a universal or local liturgical permission. Unmatched days show none.
 import {canonical1962Commemorations} from "./traditional-day-adjudication.js";
+import {calendarMassColour} from "./colour-projection.js";
 
 export const GENERAL_RUBRICS_NORMATIVE_URL="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597";
 export const GENERAL_RUBRICS_ENGLISH_REFERENCE_URL="https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html";
@@ -69,4 +70,67 @@ export function calendarRubricalClaimsForDay(resolution,sourceLedger){
     }));
   }
   return Object.freeze(found);
+}
+
+
+const COLOUR_CLAUSE_IDS=new Set(["RG 119(a)","RG 127(a)","RG 128(a)"]);
+const COLOUR_EXPLANATION_URL="https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf#page=20";
+const PINNED_AUDIT_DATES=new Set(["2024-01-08","2027-01-11","2024-12-24","2027-12-24"]);
+const EXPECTED_COLOUR_CODES=Object.freeze({White:"w",Violet:"v"});
+
+/** Explain existing resolved Mass colours; never decide or overwrite one. */
+export function calendarColourRubricalClaimsForDay(resolution,sourceLedger){
+  if(sourceLedger?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
+     resolution?.status==="failed"||resolution?.proper?.status!=="ready"||
+     !PINNED_AUDIT_DATES.has(resolution?.date)||!resolution?.day?.main?.id)return Object.freeze([]);
+  const observed=ownerId(resolution.day.main.id);
+  const source=pathId(resolution.proper.data?.sourcePath);
+  if(!observed||source!==observed)return Object.freeze([]);
+  const date=resolution.date;
+  const entries=[
+    ...(Array.isArray(sourceLedger.disputes)?sourceLedger.disputes.filter(row=>row?.date===date):[]),
+    ...(Array.isArray(sourceLedger.secondaryAdjudications)?sourceLedger.secondaryAdjudications.filter(row=>row?.dates?.includes(date)):[])
+  ];
+  if(entries.length!==1)return Object.freeze([]); // No conflicting certifications.
+  const row=entries[0],claim=row.rubricClaim;
+  const expected=claim?.expectedColour;
+  const code=EXPECTED_COLOUR_CODES[expected];
+  if(row.status!=="ADJUDICATED_FROM_1960_RUBRICS"||
+     row.decision!==String(expected||"").toUpperCase()+"_CONFIRMED"||
+     (row.field&&row.field!=="colour")||
+     (row.app&&row.app!==expected)||
+     claim?.kind!=="SEASONAL_MASS_COLOUR"||
+     !/^[A-Z0-9_]+$/.test(claim?.id||"")||
+     !code||
+     !Array.isArray(claim.clauses)||!claim.clauses.length||
+     !claim.clauses.every(x=>COLOUR_CLAUSE_IDS.has(x))||
+     new Set(claim.clauses).size!==claim.clauses.length||
+     !claim.en?.trim()||!claim.fr?.trim()||
+     claim.referencePage!==COLOUR_EXPLANATION_URL||
+     row.authority?.url!==COLOUR_EXPLANATION_URL.split("#")[0])return Object.freeze([]);
+  // For a single source-resolved liturgical Mass only. The observed 1962
+  // principal and appointed Proper must agree, without ceremonial colour
+  // phases or an unrelated selected votive/alternative Mass.
+  const suffix=String(resolution.day.main.id).match(/:[1-4]:([a-z]{1,3})$/i)?.[1]?.toLowerCase();
+  if(suffix!==code)return Object.freeze([]);
+  const actual=String(calendarMassColour(resolution)).trim().toLowerCase();
+  if(actual!==expected.toLowerCase()||
+     [resolution.proper.data?.color,resolution.proper.data?.colour,
+      resolution.day.main.color,resolution.day.main.colour]
+       .some(c=>c!=null&&String(c).trim()&&String(c).trim().toLowerCase()!==actual)||
+     (resolution.colourPlan?.sequence?.length??0)>1)return Object.freeze([]);
+  return Object.freeze([Object.freeze({
+    claimId:claim.id,
+    claimKind:"SOURCE_ADJUDICATED_MASS_COLOUR",
+    date,principalId:observed,properSourcePath:resolution.proper.data.sourcePath,
+    expectedColour:expected,
+    clauses:Object.freeze([...claim.clauses]),
+    explanation:Object.freeze({en:claim.en.trim(),fr:claim.fr.trim()}),
+    authorityKind:"NORMATIVE_1960_RUBRICS",
+    normativeUrl:GENERAL_RUBRICS_NORMATIVE_URL,
+    referenceUrl:GENERAL_RUBRICS_ENGLISH_REFERENCE_URL,
+    historicalExplanationKind:"PRINTED_1960_RUBRICS_TRANSLATION",
+    historicalExplanationUrl:COLOUR_EXPLANATION_URL,
+    automaticMassChange:false
+  })]);
 }
