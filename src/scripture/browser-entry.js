@@ -57,6 +57,8 @@ export function installScriptureBrowserOwner(win=globalThis){
      return /^(joy|lum|sor|glo)[1-5]$/.test(record.target.mysteryId)&&
        (record.target.bead===undefined||
         (Number.isInteger(record.target.bead)&&record.target.bead>=1&&record.target.bead<=10));
+   if(record.target.type==="atlas")
+     return /^biblical:(event|passage):[a-z0-9-]+$/.test(record.target.eventKey);
    return false;
  }
  async function openRelatedObject(record){
@@ -160,6 +162,13 @@ export function installScriptureBrowserOwner(win=globalThis){
            sourceObject:record.target,returnContext:null,onCloseReturn:restore
          });
          accepted=result?.ok===true;
+       }
+     }else if(record.target.type==="atlas"){
+       const nav=await shell.navigate("find");
+       if(nav?.ok===true){
+         accepted=(await win?.AO_FIND_APP_V1?.openAtlasEvent?.(record.target.eventKey,{
+           onCloseReturn:restore
+         }))===true;
        }
      }
    }catch(error){win.console?.error?.("Scripture object navigation failed",error)}
