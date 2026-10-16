@@ -1066,6 +1066,37 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-source{display:none!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{display:flex!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-guide{height:64px}
+/* In a 320px Missal, show one priest image: the current source action
+   (if present) replaces the position pictogram; the position remains text.
+   The LIVE floating action badge continues unchanged. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"]{
+  justify-content:flex-start;gap:5px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"]:has(.ao-priest-action-badge[data-active="true"])>
+.ao-icon-mask[data-icon-slot="priest-position"]{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+  position:static!important;right:auto!important;top:auto!important;
+  width:31px!important;height:31px!important;flex:0 0 31px;
+  order:-1;border-radius:7px;background:transparent;
+  border:0;box-shadow:none;transform:none!important;
+  transition:none;opacity:1;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge[data-active="false"]{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-state-copy{
+  flex:1;min-width:0;align-items:flex-start;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-state-label{
+  white-space:normal;overflow:hidden;max-height:22px;
+  font-size:9px;line-height:1.09;letter-spacing:0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-missal-state-detail{
+  width:100%;font-size:8px;line-height:1.1;white-space:nowrap;
+}
+@media(max-width:360px){
+  .ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+    width:26px!important;height:26px!important;flex-basis:26px;
+  }
+}
 /* Source-owned Missal prayer divisions. No in-Mass study links. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
   margin:26px 0 12px;padding:12px 0 8px;
