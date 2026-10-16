@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {validatePrayerReadingPilot,prayerReadingEditorialPreviewHtml,prayerReadingEditorialPreviewCss,
- validateMassTransitionReadingPilot,massTransitionEditorialPreviewHtml}
+ validateMassTransitionReadingPilot,massTransitionEditorialPreviewHtml,
+ validateRomanCanonReadingPilot,romanCanonEditorialPreviewHtml}
  from "../src/learn/mass-prayer-reading-pilot.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const pilot=read("data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json");
@@ -87,4 +88,46 @@ assert.equal(validateMassTransitionReadingPilot(nextPilot,sung,formation,{entrie
 assert.doesNotMatch(readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8"),
  /mass-prayer-reading-pilot/,
  "The native Mass reader must remain study-free");
-console.log("PASS P2 editorial pilot: 14 bilingual fixed-text readings + two variable Proper holds; source anchors, moment IDs, thematic navigation, no invented Scripture or production release");
+const canonDraft=read("data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json");
+const canonAccepted=validateRomanCanonReadingPilot(canonDraft,sung,formation,guide);
+assert.equal(canonAccepted.ok,true,canonAccepted.reason);
+assert.equal(canonAccepted.readings.length,15);
+assert.deepEqual(canonAccepted.readings.map(x=>x.block_id),
+ Array.from({length:15},(_,i)=>"AO.SM.B"+String(47+i).padStart(3,"0")));
+assert.deepEqual(canonAccepted.readings.filter(x=>x.stage_id==="MF05").map(x=>x.block_id),
+ ["AO.SM.B052","AO.SM.B053"],"Consecration blocks must map to original MF05");
+assert.deepEqual(canonAccepted.readings.find(x=>x.block_id==="AO.SM.B055").mentioned_biblical_persons_in_text,
+ ["Abel","Abraham","Melchisedech"]);
+assert.equal(canonAccepted.readings.reduce((n,x)=>n+x.scripture_within_text.length,0),0,
+ "Do not invent Bible reference IDs in Canon before P0 research");
+for(const fr of [false,true]){
+ const html=romanCanonEditorialPreviewHtml(canonAccepted,{french:fr});
+ assert.equal((html.match(/data-ao-formation-prayer-block=/g)||[]).length,15);
+ assert.match(html,/data-ao-formation-editorial-only/);
+ assert.match(html,fr?/ÉBAUCHE ÉDITORIALE/:/EDITORIAL DRAFT/);
+ assert.match(html,fr?/Melchisédech|Melchisedech/:/Melchisedech/);
+ assert.doesNotMatch(html,/data-ao-r17|data-ao-mass-reader|data-ao-mx-study/,
+  "The Roman Canon draft is never a ritual action");
+}
+const changeCanon=action=>{
+ const copy=JSON.parse(JSON.stringify(canonDraft));action(copy);
+ return validateRomanCanonReadingPilot(copy,sung,formation,guide);
+};
+for(const [description,change] of [
+ ["unapproved release",x=>{x.status="RELEASED_FOR_FORMATION"}],
+ ["wrong Guide moment",x=>{x.entries[6].moment_id="AO.CARD.015"}],
+ ["wrong Canon boundary",x=>{x.entries[7].block_id="AO.SM.B055"}],
+ ["wrong thematic study",x=>{x.entries[5].stage_id="MF04"}],
+ ["source text invented",x=>{x.entries[2].text_anchor_en="New scriptural source"}],
+ ["unapproved biblical verse",x=>{x.entries[8].scripture_within_text=["Genesis 14:18"]}],
+ ["biblical attribution",x=>{x.entries[8].mentioned_biblical_persons_in_text.push("Moses")}],
+ ["missing source person",x=>{x.entries[8].mentioned_biblical_persons_in_text.pop()}],
+ ["French omitted",x=>{x.entries[10].observe.fr=""}],
+ ["duplicate record",x=>{x.entries[0].id=x.entries[1].id}],
+ ["missing Roman Canon text",x=>{x.entries.pop()}]
+]){
+ assert.equal(changeCanon(change).ok,false,description+" must fail closed");
+}
+assert.equal(validateRomanCanonReadingPilot(canonDraft,{blocks:[]},formation,guide).ok,false);
+assert.equal(validateRomanCanonReadingPilot(canonDraft,sung,formation,{entries:{}}).ok,false);
+console.log("PASS P2 editorial pilot: 29 bilingual prayer readings (14 early + 15 Canon), two Proper holds; exact source blocks, intact Consecration actions, biblical references held, no production release");
