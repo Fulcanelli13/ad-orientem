@@ -21,6 +21,9 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureRelatedObject strong{font:500 15px/1.4 Georgia,"Garamond",serif;color:#f1e5c7}
  .aoScriptureRelatedReference{font:12px/1.4 system-ui,sans-serif;color:#c3b79b}
  .aoScriptureRelatedExplanation{font:13px/1.45 system-ui,sans-serif;color:#e0d9ca;margin:0}
+ .aoScriptureRelatedObject button,.aoScriptureLibrary [data-scripture-related-back]{min-height:48px;box-sizing:border-box}
+ .aoScriptureRelatedObject button{justify-self:start;font:13px/1.4 system-ui,sans-serif;margin-top:4px}
+ .aoScriptureLibrary [data-scripture-related-back]{margin:9px 0}
  .aoScriptureLibrary label{display:flex;flex-direction:column;gap:5px;color:#d9d0bb;font-size:13px}
  .aoScriptureNav{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px;align-items:end}
  .aoScriptureNotice{color:#b4ac9c;font-family:system-ui,sans-serif;font-size:13px}
