@@ -325,3 +325,35 @@ for(const event of eventOwners.pairs){
 assert.equal(eventIds.size,279);
 assert.equal(eventCueIds.size,279);
 console.log("Mass P0 Research Priest-Event Identity: PASS — 279/279 donor cue IDs, no ritual promotion.");
+
+
+// P0 source word-to-ceremonial registry concordance: a found Latin word
+// never implies approval of a new ritual action or congregational mandate.
+const ritualOwners=readJson("../docs/research/MASS-P0-WORD-ANCHOR-RUBRIC-OWNER-CONCORDANCE-20261016.v1.json");
+const canonicalRubricOwners=readJson("../data/presentation/reader-rubric-events.v1.json");
+const canonicalPriestActions=readJson("../data/presentation/reader-priest-actions.v1.json");
+const ownersByCue=(items)=>new Map(items.reduce((rows,x)=>{
+  const group=rows.find(entry=>entry[0]===x.cueId);
+  if(group)group[1].push(x); else rows.push([x.cueId,[x]]);
+  return rows;
+},[]));
+const ownerRubricByCue=ownersByCue(canonicalRubricOwners.items);
+const ownerActionsByCue=ownersByCue(canonicalPriestActions.items);
+assert.equal(ritualOwners.anchors.length,66);
+assert.equal(ritualOwners.summary.withEitherExistingOwner,53);
+assert.equal(ritualOwners.summary.withNoCueLevelGestureOwner,13);
+assert.equal(ritualOwners.summary.wordAnchorCeremonialApprovals,0);
+assert.equal(ritualOwners.governance.noUnconditionalCredoKneel,true);
+for(const entry of ritualOwners.anchors){
+  const current=(ownerRubricByCue.get(entry.canonicalCueId)||[]).map(x=>x.id);
+  const actions=(ownerActionsByCue.get(entry.canonicalCueId)||[]).map(x=>x.label);
+  assert.deepEqual(entry.currentOwnerRelationships.rubricEventIds,current);
+  assert.deepEqual(entry.currentOwnerRelationships.priestActionLabels,actions);
+  assert.equal(entry.permissiblePublicActionWithoutFurtherEditorialApproval,false);
+  assert.equal(entry.ceremonialActorAndTimingCertified,false);
+}
+for(const id of ["AO.V3.0096.C01","AO.V3.0096.C02"]){
+  assert.equal(ritualOwners.anchors.find(x=>x.anchorId===id)?.conditionRequiringExplicitReview,
+    "CODE_518B_CREDO_ACTOR_POSITION_AND_CALENDAR_CONDITIONS");
+}
+console.log("Mass P0 Word Anchor/Ritual Owner: PASS — 66 anchors, 53 owner overlaps, 13 review-only; no new rubric.");
