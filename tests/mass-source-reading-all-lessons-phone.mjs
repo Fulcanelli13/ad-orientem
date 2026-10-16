@@ -64,6 +64,10 @@ try {
       const trigger=reader.locator('[data-ao-reference-study-source="'+sourceId+'"]');
       const originalUrl=await reader.locator('[data-ao-reference-id="'+sourceId+'"]').first().getAttribute("href");
       assert.equal(originalUrl,source.canonical_url);
+      // Capture the true launch position after Playwright has brought the
+      // source button into view; otherwise testing would compare the wrong
+      // (pre-scroll) position against the correctly preserved reader state.
+      await trigger.scrollIntoViewIfNeeded();
       const prevPosition=await reader.evaluate(x=>x.scrollTop);
       await trigger.click();
       const sourceReader=page.locator('[data-ao-mf-source-reader="'+sourceId+'"]');
