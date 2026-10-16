@@ -6,6 +6,7 @@ const root="data/calendar/";
 const law=load(root+"p1-rubrical-permission-matrix.v1.json");
 const forms=load(root+"p1-1962-formulary-master.v1.json");
 const commonCrosswalk=load(root+"p1-canonical-common-source-crosswalk.v1.json");
+const additional=load(root+"p1-additional-common-candidates.v1.json");
 const comm=load(root+"p1-three-oration-commemoration-matrix.v1.json");
 const saint=load(root+"p1-saint-formulary-crosswalk.v1.json");
 const cases=load(root+"p1-reference-cases.v1.json");
@@ -58,6 +59,15 @@ assert.equal(internalMissal.missalReferenceVsCelebrantMass.activeCelebrationPray
 assert.ok(forms.forms.every(x=>x.internalMissalReference.route===null),"No Common URL route may be invented");
 assert.equal(commonCrosswalk.schema,"AO_P1_CANONICAL_COMMON_APP_SOURCE_CROSSWALK_V1");
 assert.equal(commonCrosswalk.rows.length,7);
+assert.equal(additional.provisionalRows.length,28);
+assert.equal(additional.unmappedAmbiguousIndexRows.length,3);
+assert.equal(new Set(additional.provisionalRows.map(x=>x.researchId)).size,28);
+assert.equal(new Set(additional.provisionalRows.map(x=>x.candidateCanonicalSourcePath)).size,28);
+assert.ok(additional.provisionalRows.every(x=>x.route===null&&x.approvedForRuntime===false&&x.approvedForNewSaintMass===false));
+assert.ok(additional.provisionalRows.every(x=>forms.forms.some(f=>f.id===x.researchId)));
+assert.equal(additional.provisionalRows.filter(x=>x.identityStatus==="UPSTREAM_CANDIDATE_NOT_YET_RUNTIME_VERIFIED").length,28);
+assert.equal(additional.provisionalRows.length+commonCrosswalk.rows.length+additional.unmappedAmbiguousIndexRows.length,38);
+
 assert.equal(commonCrosswalk.sourcePathsVerified,7);
 assert.equal(commonCrosswalk.directTrilingualSevenSectionPaths,6);
 assert.equal(commonCrosswalk.sourcePathsNeedingInheritedLanguageSections,0);
