@@ -357,3 +357,25 @@ for(const id of ["AO.V3.0096.C01","AO.V3.0096.C02"]){
     "CODE_518B_CREDO_ACTOR_POSITION_AND_CALENDAR_CONDITIONS");
 }
 console.log("Mass P0 Word Anchor/Ritual Owner: PASS — 66 anchors, 53 owner overlaps, 13 review-only; no new rubric.");
+
+
+// P0 two display variants and live Gospel selection owner check.
+// A fixed donor heading must NOT be approved for use in all selected Masses.
+const discrepancyDecisions=readJson("../docs/research/MASS-P0-THREE-LATIN-DISCREPANCY-DECISIONS-20261016.v1.json");
+assert.equal(discrepancyDecisions.counts.rawDifferences,3);
+assert.equal(discrepancyDecisions.counts.displayAccentuationsExplained,2);
+assert.equal(discrepancyDecisions.counts.remainingConditionalGospelOwnerRisk,1);
+assert.equal(discrepancyDecisions.counts.publicationAuthorizations,0);
+const donorByCue=new Map(canonicalSung.blocks.flatMap(b=>(b.units||[]).map(x=>[x.cue_id,x])));
+for(const id of ["AO.SM.C0023","AO.SM.C0237"]){
+  const donor=donorByCue.get(id)?.latin;
+  assert.ok(donor?.includes("oráre pro me"),"frozen Confiteor witness shifted "+id);
+}
+const gospelCue=donorByCue.get("AO.SM.C0084")?.latin;
+assert.ok(gospelCue?.includes("secúndum Matthǽum"));
+assert.equal(discrepancyDecisions.decisions.find(x=>
+  x.family==="GOSPEL_HEADING_VARIABLE_EVANGELIST")?.P0Decision,
+  "OPEN_FORM_CONDITIONAL_PRODUCTION_TEXT_RISK");
+assert.equal(discrepancyDecisions.release,
+  "FAIL_CLOSED_UNTIL_FORM_CORRECT_GOSPEL_HEADING_RUNTIME_CHECK");
+console.log("Mass P0 Latin Adjudication: PASS — two accent variants, one unresolved Proper header risk.");
