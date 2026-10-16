@@ -31,4 +31,6 @@ jobs:
       - run: node --check src/learn/mass-formation.js
       - run: node tests/mass-moments-study.mjs
       - run: node tests/mass-formation.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
       - run: node tests/mass-formation-scripture-phone.mjs
