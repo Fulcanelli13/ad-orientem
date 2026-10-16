@@ -31,8 +31,8 @@ async function waitForWeekLoader(page){
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [390,320]){
-  const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true,locale:"en-GB"});
+ for(const width of [390,320,1280]){
+  const page=await browser.newPage({viewport:{width,height:844},isMobile:width<600,hasTouch:width<600,locale:"en-GB"});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
   // Do not visually certify a Home that is still behind the cinematic splash.
@@ -52,6 +52,10 @@ try{
   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Ring').count(),1,"The canonical 1962 year wheel must appear inside Today");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDial').count(),0,
+    "Embedded Today must not repeat the full-year clock");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Coming').count(),0,
+    "Embedded Today must not repeat Coming next");
   assert.equal(await page.locator(".aoTodayV2CalendarInline .aoCalYearDailyTrack").count(),1,"A separate daily-colour track must survive Calendar embedding");
   const wheel=await page.locator('.aoTodayV2CalendarInline .aoCalV2Ring').evaluate(el=>({
     verified:Number(el.dataset.verifiedDays),gradient:el.style.getPropertyValue("--year-daily-gradient"),
@@ -124,6 +128,8 @@ try{
   await page.locator('[data-mass-calendar-view="year"]').click();
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('[data-mass-calendar-host] .aoCalV2Ring').count(),1,"Calendar year must render within Mass preparation");
+  assert.equal(await page.locator('[data-mass-calendar-host] .aoClockDial').count(),0,
+    "Mass preflight must not repeat the full-year clock");
   assert.equal(await page.locator("[data-mass-calendar-host] .aoCalYearDailyTrack").count(),1);
   assert.equal(await page.locator('[data-mass-calendar-host] #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
     "Mass preparation already owns its three Calendar tabs");

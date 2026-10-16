@@ -662,10 +662,11 @@ function requestYearDailyColours(year){
 }
 function hydrateYearColourWheel(year){
   const el=root()?.querySelector(".aoCalV2Ring");
-  if(!el||el.dataset.yearStart!==year.start)return;
   const projection=yearDailyProjection(year,id=>weekCache.get(id));
-  el.style.setProperty("--year-daily-gradient",projection.gradient);
-  el.dataset.verifiedDays=String(projection.verified);
+  if(el?.dataset.yearStart===year.start){
+    el.style.setProperty("--year-daily-gradient",projection.gradient);
+    el.dataset.verifiedDays=String(projection.verified);
+  }
   const timeline=root()?.querySelector(".aoCalYearDailyTrack");
   if(timeline)timeline.style.background=projection.timeline;
   const label=root()?.querySelector("[data-cal-year-colour-status]");
@@ -689,11 +690,14 @@ function clockForYear(year,selected){
 }
 function yearSurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected);
+  const embedded=root()?.dataset.aoCalendarEmbedded==="true";
   const seasonGradient=yearSeasonGradient(y),daily=yearDailyProjection(y,id=>weekCache.get(id));
   queueMicrotask(()=>{if(calendarView==="year"&&root())requestYearDailyColours(y)});
-  const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
+  // The small ring belongs to embedded Today/Mass; full Calendar owns the
+  // interactive Liturgical Clock. Never stack both representations.
   return `
-    ${clockForYear(y,selected)}
+    ${embedded?"":clockForYear(y,selected)}
+    ${embedded?`
     <section class="aoCalV2YearHero">
       <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2></div>
       <div class="aoCalV2YearHeroGrid">
@@ -709,15 +713,9 @@ function yearSurface(selected,r){
         </div>
       </div>
     </section>
+    `:""}
     ${renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily})}
-    <section class="aoCalV2Coming">
-      <div class="aoCalV2SectionTitle"><div><small>${esc(L("WHAT NOW?","ET MAINTENANT ?"))}</small><h3>${esc(L("Coming next","Les prochains repères"))}</h3></div></div>
-      <div class="aoCalV2ComingGrid">
-        <button type="button" data-cal-year-open-day="${nextSeason.start}"><small>${esc(L("NEXT CHANGE OF SEASON","PROCHAIN CHANGEMENT DE TEMPS"))}</small><strong>${esc(periodName(nextSeason))}</strong><span>${esc(longDate(nextSeason.start))} · ${dayCount(selected,nextSeason.start)} ${esc(L("days","jours"))}</span></button>
-        ${next?`<button type="button" data-cal-year-open-day="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:""}
-      </div>
-      <button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>
-    </section>
+    ${embedded?"":`<button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>`}
   `;
 }
 function pickerSurface(selected){

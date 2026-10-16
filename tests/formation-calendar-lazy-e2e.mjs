@@ -34,6 +34,8 @@ try{
  const t=Date.now();
  await page.goto("http://127.0.0.1:4203/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:30000});
+ await page.waitForFunction(()=>document.title==="Ad Orientem",null,{timeout:12000});
+ assert.equal(await page.title(),"Ad Orientem","Obsolete 2.0/versioned tab title is still being presented");
  const coldMs=Date.now()-t,cold=hits.slice();
  for(const path of mustDefer)assert.equal(cold.some(h=>h.path===path),false,"Home eagerly downloaded "+path);
  const owners=await page.evaluate(()=>({
@@ -113,17 +115,16 @@ try{
  assert.ok(yearSize.trackWidth>150,"Year timeline has no usable phone width");
  assert.ok(Math.abs(yearSize.partsWidth-yearSize.trackWidth)<5,"Period widths are not proportional inside track");
  assert.ok(yearSize.horizontalOverflow<=2,"Year view causes horizontal overflow on phone");
- for(const width of [320,360,390,430]){
+ for(const width of [320,360,390,430,1280]){
    await page.setViewportSize({width,height:844});
    const measure=await page.evaluate(()=>{
      const root=document.getElementById("ao-calendar-modular-root");
-     const ring=root?.querySelector(".aoCalV2Ring")?.getBoundingClientRect();
+     const dial=root?.querySelector(".aoClockDial")?.getBoundingClientRect();
      const timeline=root?.querySelector(".aoCalYearTrack")?.getBoundingClientRect();
-     const hero=root?.querySelector(".aoCalV2YearHeroGrid")?.getBoundingClientRect();
-     return {overflow:root.scrollWidth-root.clientWidth,ringWidth:ring?.width||0,trackWidth:timeline?.width||0,heroWidth:hero?.width||0};
+     return {overflow:root.scrollWidth-root.clientWidth,dialWidth:dial?.width||0,trackWidth:timeline?.width||0};
    });
    assert.ok(measure.overflow<=2,"Year view overflows at "+width+"px: "+JSON.stringify(measure));
-   assert.ok(measure.ringWidth>100&&measure.ringWidth<165,"Year wheel is not compact at "+width+"px: "+JSON.stringify(measure));
+   assert.ok(measure.dialWidth>220&&measure.dialWidth<width,"Standalone clock is clipped at "+width+"px: "+JSON.stringify(measure));
    assert.ok(measure.trackWidth>width*.7,"Year timeline is too narrow at "+width+"px");
  }
  await page.setViewportSize({width:390,height:844});
@@ -139,10 +140,17 @@ try{
  // Calendar must preserve working day/year/month controls on actual mobile DOM.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
- assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").count()>0);
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2YearHero").count(),0,
+   "Full Year repeats the compact Today/Mass ring");
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoClockDial").count(),1,
+   "Full Year lost its interactive liturgical clock");
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoClockUpcoming").count(),1,
+   "Full Year must have exactly one forthcoming section");
+ assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Coming").count(),0,
+   "Full Year repeats Coming next");
  // Major milestones must open the Day surface, not update the year silently.
- const nextButton=page.locator("#ao-calendar-modular-root .aoCalV2YearHero [data-cal-year-open-day]").first();
- const targetDate=await nextButton.getAttribute("data-cal-year-open-day");
+ const nextButton=page.locator("#ao-calendar-modular-root .aoClockUpcoming [data-cal-clock-open-day]").first();
+ const targetDate=await nextButton.getAttribute("data-cal-clock-open-day");
  assert.match(targetDate,/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/);
  await nextButton.click();
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:15000});

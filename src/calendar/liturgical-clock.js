@@ -265,7 +265,7 @@ export const liturgicalClockCss=[
 '.aoClockYearNav strong{font:400 15px/1.3 Georgia,serif;white-space:nowrap;padding:0 4px}',
 '.aoClockYearNav button{min-width:40px!important;min-height:40px!important;border:0!important;background:transparent!important;color:var(--liturgical)!important;padding:0!important;font-size:24px!important}',
 '.aoClockMain{display:flex;width:100%;flex-direction:column;align-items:center;justify-content:center;margin:12px 0 6px}',
-'.aoClockDial{position:relative;display:block;width:100%;max-width:min(590px,calc(100vw - 38px));min-width:0;aspect-ratio:1;flex:0 0 auto;filter:drop-shadow(0 13px 28px rgba(0,0,0,.38))}',
+'.aoClockDial{position:relative;display:block;width:100%;max-width:min(490px,calc(100vw - 38px));min-width:0;aspect-ratio:1;flex:0 0 auto;filter:drop-shadow(0 13px 28px rgba(0,0,0,.38))}',
 '.aoClockDial svg{display:block;width:100%;height:100%;overflow:visible}',
 '.aoClockMonthSegment{stroke:var(--liturgical);stroke-width:1;fill:var(--bg)}',
 '.aoClockMonthLabel{fill:var(--liturgical);font:500 14px Georgia,serif;pointer-events:none;letter-spacing:.07em}',
