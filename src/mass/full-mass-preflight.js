@@ -343,6 +343,14 @@ export function mountFullMassPreflight({
       target.insertAdjacentElement("beforebegin",root);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    // The composite Easter Vigil must show its real light/lessons/Mass/Lauds
+    // sequence; ordinary Mass keeps the detailed ceremonial checklist closed.
+    // Once the user changes this disclosure, honour it until the kind changes.
+    const chronology=root.querySelector("[data-mass-journey-order]");
+    if(chronology&&chronology.dataset.massJourneyStageKind!==summary.kind){
+      chronology.open=summary.kind==="EASTER_VIGIL";
+      chronology.dataset.massJourneyStageKind=summary.kind;
+    }
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
     const commemorationDisclosure=root.querySelector("[data-mass-journey-commemoration-details]");
