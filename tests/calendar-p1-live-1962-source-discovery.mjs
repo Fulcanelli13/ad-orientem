@@ -243,6 +243,13 @@ try{
      route:result.route??null};
  });
  console.log("P1_PASCHAL_ALTERA_LIVE_WITNESS="+JSON.stringify(paschalAlternate));
+ assert.equal(paschalAlternate.status,"SOURCE_COMPOSITION_VERIFIED",paschalAlternate.reason+" / "+paschalAlternate.section);
+ assert.deepEqual(paschalAlternate.completeByLanguage,{la:true,en:true,fr:true});
+ assert.equal(paschalAlternate.baseSourcePath,"Commune/C2p");
+ assert.equal(paschalAlternate.alternativeOrationsSourcePath,"Commune/C2a");
+ assert.equal(paschalAlternate.borrowedSections.length,23);
+ assert.equal(paschalAlternate.approvedForMass,false);
+ assert.equal(paschalAlternate.route,null);
  if(donorProbe)console.log("P1_PARTIAL_COMMON_DONOR_LIVE_WITNESS="+JSON.stringify(donorProbe));
  if(additionalCommons){
    console.log("P1_ADDITIONAL_COMMONS_LIVE_WITNESS="+JSON.stringify(additionalCommons));
