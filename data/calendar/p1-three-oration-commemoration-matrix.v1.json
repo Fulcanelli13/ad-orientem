@@ -30,7 +30,15 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Deus, qui beátum Joánnem",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "PER_DOMINUM",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         },
         "secret": {
           "sourceUrl": "https://missale.online/kalender/en/2026-10-09",
@@ -38,7 +46,15 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Súscipe, Dómine, oblatiónem mundam",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "PER_DOMINUM",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         },
         "postcommunion": {
           "sourceUrl": "https://missale.online/kalender/en/2026-10-09",
@@ -46,10 +62,23 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Pretiósi córporis, et sánguinis tui",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "QUI_VIVIS",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         }
       },
-      "entireTrioPrintCertified": false
+      "entireTrioPrintCertified": false,
+      "secondaryWitnessUrls": [
+        "https://missale.online/kalender/en/2026-10-09",
+        "https://www.missalemeum.com/en/calendar/2026-10-09"
+      ],
+      "secondaryComparisonStatus": "ALL_THREE_ORATIONS_WITH_INCIPITS_FOUND_IN_BOTH_ONLINE_WITNESSES"
     },
     {
       "id": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
@@ -68,7 +97,15 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Deus, qui hodiérna die beátum Dionýsium",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "PER_DOMINUM",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         },
         "secret": {
           "sourceUrl": "https://missale.online/kalender/en/2026-10-09",
@@ -76,7 +113,15 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Obláta tibi, Dómine, múnera",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "PER_DOMINUM",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         },
         "postcommunion": {
           "sourceUrl": "https://missale.online/kalender/en/2026-10-09",
@@ -84,10 +129,23 @@
           "latinText": null,
           "sourceTextVisible": true,
           "primaryPrintCollated": false,
-          "conclusionVerifiedInPrinted1962": false
+          "conclusionVerifiedInPrinted1962": false,
+          "incipitWitness": "Sumptis, Dómine, sacraméntis",
+          "twoWitnessLatinTextAvailable": true,
+          "dualWitnessSourceUrls": [
+            "https://missale.online/kalender/en/2026-10-09",
+            "https://www.missalemeum.com/en/calendar/2026-10-09"
+          ],
+          "conclusionType": "PER_DOMINUM",
+          "conclusionStatus": "SOURCE_DISPLAY_MATCHES_TYPE_BUT_1962_PRINT_NOT_COLLATED"
         }
       },
-      "entireTrioPrintCertified": false
+      "entireTrioPrintCertified": false,
+      "secondaryWitnessUrls": [
+        "https://missale.online/kalender/en/2026-10-09",
+        "https://www.missalemeum.com/en/calendar/2026-10-09"
+      ],
+      "secondaryComparisonStatus": "ALL_THREE_ORATIONS_WITH_INCIPITS_FOUND_IN_BOTH_ONLINE_WITNESSES"
     }
   ],
   "combinations": [
@@ -160,5 +218,8 @@
     }
   ],
   "conclusionRule": "No grammatical name substitution unless the 1962 source explicitly carries N. and precise inflection is approved; RG 115-116 and RGMR 433-446 apply.",
-  "runtimeAuthorization": false
+  "runtimeAuthorization": false,
+  "crossSiteTextWitnessComparison": "Latin prayer incipits and both commemoration identities match two independently hosted 1962-claiming websites; this is not original 1962 printed-text collation.",
+  "latinTextSourcePolicy": "Only short incipits and source anchors recorded to avoid unlicensed wholesale transcript; no text copied into production.",
+  "sourceDisagreementEscalation": "SSPX Ordo 2026-10-09 displayed Mass text conflicts with page heading; source not used as prayer witness."
 }
