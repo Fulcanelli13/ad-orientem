@@ -3,12 +3,362 @@
   "sourceWorkbook": "Ad_Orientem_Historia_Salutis_Master_Matrix_v18_Abridgment_Decisions.xlsx",
   "sourceTab": "V18 Ordered Verse Segments",
   "sourceRowCount": 217,
-  "scope": "H42 and H76 only; other six chapters remain reviewed in workbook/chat",
+  "scope": "Eight v18 high-risk chapters H21, H27, H42, H45, H53, H54, H73, H76; exact prior 217-row v18 source preserved",
   "originalSourcePreserved": true,
   "releaseStatus": "EDITORIAL_RESEARCH_ONLY_NOT_APPROVED",
   "sourceAddressing": "Scripture references in v18 are not consistently edition-tagged. Do not import traditional Esther references as CPDV by matching numbers.",
   "editPolicy": "Overlay keyed by H chapter and exact original reference; never overwrite v18 or canonical 151 event IDs.",
   "chapters": [
+    {
+      "chapterId": "H21",
+      "title": "Crossing the Sea",
+      "sourceTitle": "Crossing the Sea",
+      "genre": "SEQUENTIAL_DISTINCT_EXODUS_EPISODES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "chronologyBoundary": "H20 Passover precedes H21; H22 Sinai follows; canticle of Moses is a distinct poetic witness",
+      "units": [
+        {
+          "unitId": "H21-01",
+          "v18Order": 1,
+          "originalReference": "Exodus 12:31–42",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 12:31–42"
+          ],
+          "principalReadings": [
+            "Exodus 12:31–33",
+            "Exodus 12:37–42"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Exodus begins after Passover H20; preserve Pharaoh's dismissal and departure, not a duplicate Passover ritual.",
+          "principalRationale": "Exodus begins after Passover H20; preserve Pharaoh's dismissal and departure, not a duplicate Passover ritual.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 12:31–42",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_DEPARTURE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H21-02",
+          "v18Order": 2,
+          "originalReference": "Exodus 13:17–22",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 13:17–22"
+          ],
+          "principalReadings": [
+            "Exodus 13:17–22"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep nonshortened route, Joseph's bones and pillar of cloud/fire; divine guidance connects H21 to its sea crossing.",
+          "principalRationale": "Keep nonshortened route, Joseph's bones and pillar of cloud/fire; divine guidance connects H21 to its sea crossing.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H21-03",
+          "v18Order": 3,
+          "originalReference": "Exodus 14:15–31",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 14:15–31"
+          ],
+          "principalReadings": [
+            "Exodus 14:5–10",
+            "Exodus 14:13–16",
+            "Exodus 14:19–23",
+            "Exodus 14:26–31",
+            "Exodus 15:1–2",
+            "Exodus 15:20–21"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore Pharaoh's pursuit (14:5–10), fear/command, crossing, rescue and Moses/Miriam thanksgiving. Exodus 15 is a later distinct song, never disguised as part of the sea-crossing prose.",
+          "principalRationale": "Restore Pharaoh's pursuit (14:5–10), fear/command, crossing, rescue and Moses/Miriam thanksgiving. Exodus 15 is a later distinct song, never disguised as part of the sea-crossing prose.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 14:1–31",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_PURSUIT_AND_CROSSING",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Exodus 15:1–21",
+              "edition": "cpdv-2009",
+              "role": "CANTICLE_OF_MOSES_AND_MIRIAM",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Exodus 14:5–14",
+            "Exodus 15:1–21"
+          ],
+          "originalGenreBoundary": "AFTER_CROSSING_SEPARATE_CANTICLE"
+        },
+        {
+          "unitId": "H21-04",
+          "v18Order": 4,
+          "originalReference": "Exodus 16:2–4, 12–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 16:2–4",
+            "Exodus 16:12–15"
+          ],
+          "principalReadings": [
+            "Exodus 16:2–4",
+            "Exodus 16:12–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Manna and quails are a distinct desert trial; retain hunger, divine promise and food's appearance rather than compress beyond recognition.",
+          "principalRationale": "Manna and quails are a distinct desert trial; retain hunger, divine promise and food's appearance rather than compress beyond recognition.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 16:1–36",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_MANNA_NARRATIVE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H21-05",
+          "v18Order": 5,
+          "originalReference": "Exodus 17:1–7",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 17:1–7"
+          ],
+          "principalReadings": [
+            "Exodus 17:1–3",
+            "Exodus 17:5–7"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep thirst, command to strike the rock and giving water; Moses' omitted appeal remains in companion passage.",
+          "principalRationale": "Keep thirst, command to strike the rock and giving water; Moses' omitted appeal remains in companion passage.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 17:1–7",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_WATER_FROM_THE_ROCK",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        }
+      ]
+    },
+    {
+      "chapterId": "H27",
+      "title": "The Deliverers of Israel",
+      "sourceTitle": "The Deliverers of Israel",
+      "genre": "INDEPENDENT_JUDGES_LIVES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "noNewAtlasEvent": true,
+      "personIds": [
+        "Deborah",
+        "Barak",
+        "Jael",
+        "Gideon",
+        "Samson"
+      ],
+      "h26Boundary": "The recurring judges cycle belongs in H26, not duplicated in H27.",
+      "units": [
+        {
+          "unitId": "H27-01",
+          "v18Order": 1,
+          "originalReference": "Judges 4:4–9, 14–24",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 4:4–9",
+            "Judges 4:14–24"
+          ],
+          "principalReadings": [
+            "Judges 4:4–9",
+            "Judges 4:12–15",
+            "Judges 4:17–23"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Deborah and Barak's commission, Sisera's army, battle and Jael's decisive action remain; do not isolate the tent killing from the commission and pursuit.",
+          "principalRationale": "Deborah and Barak's commission, Sisera's army, battle and Jael's decisive action remain; do not isolate the tent killing from the commission and pursuit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 4:1–24",
+              "edition": "cpdv-2009",
+              "role": "FULL_DEBORAH_BARAK_JAEL_ACCOUNT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Judges 5:1–31",
+              "edition": "cpdv-2009",
+              "role": "SONG_OF_DEBORAH",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H27-02",
+          "v18Order": 2,
+          "originalReference": "Judges 6:11–24",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 6:11–24"
+          ],
+          "principalReadings": [
+            "Judges 6:11–16",
+            "Judges 6:20–24"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
+          "principalRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 6:11–24",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_GIDEON_CALL",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H27-03",
+          "v18Order": 3,
+          "originalReference": "Judges 7:2–8, 16–22",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 7:2–8",
+            "Judges 7:16–22"
+          ],
+          "principalReadings": [
+            "Judges 7:2–7",
+            "Judges 7:16–22"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep reduction to three hundred and trumpets/lamps, the victory's extraordinary means rather than simple military triumph.",
+          "principalRationale": "Keep reduction to three hundred and trumpets/lamps, the victory's extraordinary means rather than simple military triumph.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 7:1–25",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_GIDEON_VICTORY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H27-04",
+          "v18Order": 4,
+          "originalReference": "Judges 13:2–7, 24–25",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 13:2–7",
+            "Judges 13:24–25"
+          ],
+          "principalReadings": [
+            "Judges 13:2–5",
+            "Judges 13:24–25"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Protect birth announcement and Nazirite dedication before Samson's eventual moral collapse.",
+          "principalRationale": "Protect birth announcement and Nazirite dedication before Samson's eventual moral collapse.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 13:1–25",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_SAMSON_BIRTH",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H27-05",
+          "v18Order": 5,
+          "originalReference": "Judges 16:23–30",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 16:23–30"
+          ],
+          "principalReadings": [
+            "Judges 16:4–5",
+            "Judges 16:17–22",
+            "Judges 16:23–30"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
+          "principalRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 16:1–31",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_SAMSON_AND_DELILAH_ACCOUNT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Judges 16:4–22"
+          ]
+        }
+      ]
+    },
     {
       "chapterId": "H42",
       "title": "Faithfulness under Foreign Rule",
@@ -290,6 +640,606 @@
       ]
     },
     {
+      "chapterId": "H45",
+      "title": "The Generations Awaiting Christ",
+      "sourceTitle": "The Generations Awaiting Christ",
+      "genre": "TWO_DISTINCT_GOSPEL_GENEALOGIES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "display": "TWO_PARALLEL_DISTINCT_GOSPEL_WITNESSES",
+      "excludedInference": "LUKE_IS_MARYS_BIOLOGICAL_GENEALOGY",
+      "units": [
+        {
+          "unitId": "H45-01",
+          "v18Order": 1,
+          "originalReference": "Matthew 1:1–17",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "RETAIN_DISTINCT_COMPLETE",
+          "candidateReadings": [
+            "Matthew 1:1–17"
+          ],
+          "principalReadings": [
+            "Matthew 1:1–17"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain whole Matthew witness, including Abraham–David, Solomon, Babylon exile and Joseph described as Mary's husband; no inferred maternal lineage.",
+          "principalRationale": "Retain whole Matthew witness, including Abraham–David, Solomon, Babylon exile and Joseph described as Mary's husband; no inferred maternal lineage.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Luke 3:23–38",
+              "edition": "cpdv-2009",
+              "role": "SEPARATE_NOT_PARALLEL_HARMONY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "alignmentPolicy": "NEVER_COMBINE_GENETIC_PARENT_LINKS_WITH_LUKE"
+        },
+        {
+          "unitId": "H45-02",
+          "v18Order": 2,
+          "originalReference": "Luke 3:23–38",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "RETAIN_DISTINCT_COMPLETE",
+          "candidateReadings": [
+            "Luke 3:23–38"
+          ],
+          "principalReadings": [
+            "Luke 3:23–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain the whole different Lucan witness reaching Adam, with Nathan rather than Matthew's Solomon; do not label it Mary's biological genealogy.",
+          "principalRationale": "Retain the whole different Lucan witness reaching Adam, with Nathan rather than Matthew's Solomon; do not label it Mary's biological genealogy.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 1:1–17",
+              "edition": "cpdv-2009",
+              "role": "SEPARATE_NOT_PARALLEL_HARMONY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "alignmentPolicy": "NEVER_COMBINE_GENETIC_PARENT_LINKS_WITH_MATTHEW"
+        }
+      ]
+    },
+    {
+      "chapterId": "H53",
+      "title": "The Teaching of the Kingdom",
+      "sourceTitle": "The Teaching of the Kingdom",
+      "genre": "THEMATIC_SAYINGS_AND_PARABLES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "noChronologyAssertion": true,
+      "genreBoundary": "Explicit teaching anthology; not one consecutive Gospel discourse",
+      "units": [
+        {
+          "unitId": "H53-01",
+          "v18Order": 1,
+          "originalReference": "Matthew 5:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 5:1–12"
+          ],
+          "principalReadings": [
+            "Matthew 5:1–12"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain the full beatitude series and its spoken setting; individual blessings are not disposable repetitions.",
+          "principalRationale": "Retain the full beatitude series and its spoken setting; individual blessings are not disposable repetitions.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 5:1–48",
+              "edition": "cpdv-2009",
+              "role": "SERMON_MOUNT_WIDER_CONTEXT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H53-02",
+          "v18Order": 2,
+          "originalReference": "Matthew 6:9–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 6:9–15"
+          ],
+          "principalReadings": [
+            "Matthew 6:9–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep complete Our Father and Christ's forgiveness explanation; no verse excision.",
+          "principalRationale": "Keep complete Our Father and Christ's forgiveness explanation; no verse excision.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 6:1–18",
+              "edition": "cpdv-2009",
+              "role": "FASTING_PRAYER_ALMSGIVING_CONTEXT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H53-03",
+          "v18Order": 3,
+          "originalReference": "Matthew 7:24–29",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 7:24–29"
+          ],
+          "principalReadings": [
+            "Matthew 7:24–29"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Wise and foolish builders form a deliberate contrast; retain Christ's final authority line.",
+          "principalRationale": "Wise and foolish builders form a deliberate contrast; retain Christ's final authority line.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 7:1–29",
+              "edition": "cpdv-2009",
+              "role": "ENTIRE_SERMON_CLOSE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H53-04",
+          "v18Order": 4,
+          "originalReference": "Matthew 13:1–23",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 13:1–23"
+          ],
+          "principalReadings": [
+            "Matthew 13:1–9",
+            "Matthew 13:18–23"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Read the sower parable then Christ's own interpretation, with explicit omission markers for 13:10–17 on why he speaks in parables.",
+          "principalRationale": "Read the sower parable then Christ's own interpretation, with explicit omission markers for 13:10–17 on why he speaks in parables.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 13:1–23",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_SOWER_AND_PURPOSE_PARABLES",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        }
+      ]
+    },
+    {
+      "chapterId": "H54",
+      "title": "The Signs of Christ",
+      "sourceTitle": "The Signs of Christ",
+      "genre": "DISTINCT_GOSPEL_MIRACLE_SCENES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "existingAtlasEventIdsPreserved": true,
+      "parallelNotDuplication": true,
+      "units": [
+        {
+          "unitId": "H54-01",
+          "v18Order": 1,
+          "originalReference": "Mark 1:21–28",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 1:21–28"
+          ],
+          "principalReadings": [
+            "Mark 1:21–28"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Short exorcism retained in full as a distinct sign.",
+          "principalRationale": "Short exorcism retained in full as a distinct sign.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Luke 4:31–37",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H54-02",
+          "v18Order": 2,
+          "originalReference": "Mark 2:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 2:1–12"
+          ],
+          "principalReadings": [
+            "Mark 2:1–12"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep forgiveness, opposition and physical healing; do not present a shortened miracle without the authority to forgive sins.",
+          "principalRationale": "Keep forgiveness, opposition and physical healing; do not present a shortened miracle without the authority to forgive sins.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 9:1–8",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H54-03",
+          "v18Order": 3,
+          "originalReference": "Mark 4:35–41",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 4:35–41"
+          ],
+          "principalReadings": [
+            "Mark 4:35–41"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Storm, word of command, disciples' fear and Christological question form a complete short unit.",
+          "principalRationale": "Storm, word of command, disciples' fear and Christological question form a complete short unit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 8:23–27",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H54-04",
+          "v18Order": 4,
+          "originalReference": "John 6:1–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "John 6:1–15"
+          ],
+          "principalReadings": [
+            "John 6:1–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Five loaves and two fish, sign, bread and crowds kept together; H56 Bread of Life may link this same source event but must not fork it into a second canonical event.",
+          "principalRationale": "Five loaves and two fish, sign, bread and crowds kept together; H56 Bread of Life may link this same source event but must not fork it into a second canonical event.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "John 6:22–59",
+              "edition": "cpdv-2009",
+              "role": "BREAD_OF_LIFE_FURTHER_DISCOURSE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "relatedChapter": "H56",
+          "canonicalEventOwnership": "H54_SHARED_SOURCE_TO_H56"
+        },
+        {
+          "unitId": "H54-05",
+          "v18Order": 5,
+          "originalReference": "John 9:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "John 9:1–12"
+          ],
+          "principalReadings": [
+            "John 9:1–3",
+            "John 9:6–7",
+            "John 9:10–12",
+            "John 9:24–25",
+            "John 9:35–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
+          "principalRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "John 9:1–41",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MAN_BORN_BLIND_NARRATIVE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "John 9:24–38"
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "H73",
+      "title": "Witness to the Nations",
+      "sourceTitle": "Witness to the Nations",
+      "genre": "ACTS_ORDERED_BUT_SELECTIVE_ITINERARY",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "status": "SEVEN_REPRESENTATIVE_SCENES_NOT_COMPLETE_ACTS_ITINERARY",
+      "adjacentBoundaries": [
+        "H71 Early missions",
+        "H72 Jerusalem council"
+      ],
+      "noNewAtlasEvent": true,
+      "units": [
+        {
+          "unitId": "H73-01",
+          "v18Order": 1,
+          "originalReference": "Acts 16:11–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 16:11–15"
+          ],
+          "principalReadings": [
+            "Acts 16:11–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Lydia's conversion at Philippi remains a five-verse unit.",
+          "principalRationale": "Lydia's conversion at Philippi remains a five-verse unit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 16:11–15",
+              "edition": "cpdv-2009",
+              "role": "LYDIA_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H73-02",
+          "v18Order": 2,
+          "originalReference": "Acts 16:22–40",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 16:22–40"
+          ],
+          "principalReadings": [
+            "Acts 16:16–19",
+            "Acts 16:22–26",
+            "Acts 16:27–34",
+            "Acts 16:37–40"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore Paul's liberation of enslaved divining girl and her owners' commercial motive; preserve prison prayer, earthquake, jailer's baptism and Roman citizen protest.",
+          "principalRationale": "Restore Paul's liberation of enslaved divining girl and her owners' commercial motive; preserve prison prayer, earthquake, jailer's baptism and Roman citizen protest.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 16:16–40",
+              "edition": "cpdv-2009",
+              "role": "PHILIPPI_WHOLE_JAILER_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Acts 16:16–21"
+          ]
+        },
+        {
+          "unitId": "H73-03",
+          "v18Order": 3,
+          "originalReference": "Acts 17:16–34",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 17:16–34"
+          ],
+          "principalReadings": [
+            "Acts 17:16–19",
+            "Acts 17:22–31",
+            "Acts 17:32–34"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Areopagus sermon requires Creator, repentance and Resurrection followed by mixed responses; do not truncate just at philosophical preface.",
+          "principalRationale": "Areopagus sermon requires Creator, repentance and Resurrection followed by mixed responses; do not truncate just at philosophical preface.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 17:16–34",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_AREOPAGUS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H73-04",
+          "v18Order": 4,
+          "originalReference": "Acts 18:1–11",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 18:1–11"
+          ],
+          "principalReadings": [
+            "Acts 18:1–3",
+            "Acts 18:7–11"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep Priscilla/Aquila, local response and divine reassurance at Corinth.",
+          "principalRationale": "Keep Priscilla/Aquila, local response and divine reassurance at Corinth.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 18:1–11",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_CORINTH_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H73-05",
+          "v18Order": 5,
+          "originalReference": "Acts 20:17–38",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 20:17–38"
+          ],
+          "principalReadings": [
+            "Acts 20:17–21",
+            "Acts 20:22–24",
+            "Acts 20:28–32",
+            "Acts 20:36–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Miletus farewell keeps commissioned overseers, apostolic vigilance, threat of false teachers and communal prayer, not a generic travel notice.",
+          "principalRationale": "Miletus farewell keeps commissioned overseers, apostolic vigilance, threat of false teachers and communal prayer, not a generic travel notice.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 20:17–38",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MILETUS_FAREWELL",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H73-06",
+          "v18Order": 6,
+          "originalReference": "Acts 27:1–44",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 27:1–44"
+          ],
+          "principalReadings": [
+            "Acts 27:1",
+            "Acts 27:9–11",
+            "Acts 27:14–15",
+            "Acts 27:20–26",
+            "Acts 27:31–32",
+            "Acts 27:39–44"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Danger on journey to Rome, ignored warning, storm, angelic assurance, crew's safety and shipwreck retained; itinerary detail remains navigable in full.",
+          "principalRationale": "Danger on journey to Rome, ignored warning, storm, angelic assurance, crew's safety and shipwreck retained; itinerary detail remains navigable in full.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 27:1–44",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_SHIPWRECK_WITH_ITINERARY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H73-07",
+          "v18Order": 7,
+          "originalReference": "Acts 28:23–31",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 28:23–31"
+          ],
+          "principalReadings": [
+            "Acts 28:23–24",
+            "Acts 28:28–31"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Open ending of Acts: preaching to the Jews in Rome, mixed reception, mission to Gentiles and two years of unhindered proclamation.",
+          "principalRationale": "Open ending of Acts: preaching to the Jews in Rome, mixed reception, mission to Gentiles and two years of unhindered proclamation.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 28:23–31",
+              "edition": "cpdv-2009",
+              "role": "FINAL_ACTS_ROME_PASSAGE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        }
+      ]
+    },
+    {
       "chapterId": "H76",
       "title": "The Great Conflict",
       "sourceTitle": "The Great Conflict",
@@ -482,9 +1432,9 @@
       ]
     }
   ],
-  "auditPass": "H42_H76_SOURCE_READ_PRINCIPAL_SHORTLIST_20261017",
+  "auditPass": "H21_H27_H45_H53_H54_H73_H42_H76_CONTINUITY_DELTA_20261017",
   "auditMethod": "Direct extraction of checked-in CPDV and Douay–Rheims verse arrays; confirm own source-edition references. No reproduced Bible words in research overlay.",
-  "statusNote": "Seven H42 and five H76 concise Scripture units are candidate principal readings only. Their expanded original research selections and complete companion readings remain intact; no theology, publication, licensing or read-aloud acceptance implied.",
+  "statusNote": "Eight high-risk chapters now have provisional source-based principal readings preserving the original v18 segments. Not publication-approved; pericope frequency, full literary review, legal rights and contextual linkage remain open.",
   "principalSelectionCount": {
     "h42Witnesses": 7,
     "principalVerseUnits": 181,
@@ -500,5 +1450,13 @@
     "h78": "Revelation 21–22 reserved; not absorbed into H76",
     "interpretation": "Symbolic/apocalyptic visions, not an asserted literal event-by-event chronological timeline",
     "status": "RESEARCH_STRUCTURE_ONLY"
+  },
+  "existingFileNamingNote": "Legacy part-ii filename retained to preserve all callers, but this record now includes six additional chapter repairs. No second canonical abridgment registry is created.",
+  "sourceProvenance": "v18 originalReferences transcribed from V18 Ordered Verse Segments in user's workbook; principals are independent editor research choices sourced to checked-in verse witnesses, NOT automatically publisher-frequency winners.",
+  "researchMetrics": {
+    "highRiskChapters": 8,
+    "legacyUnits": 12,
+    "addedUnits": 28,
+    "totalUnits": 40
   }
 }
