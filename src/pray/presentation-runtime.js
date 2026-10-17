@@ -2053,7 +2053,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  }
  if(view==='stations')queueMicrotask(stationsFx);
  if(view==='angelus')queueMicrotask(()=>{
-  const form=angelusChoice().form,posture=angelusExactPosture();
+  const form=angelusChoice().form;
   const cardDeck=installAngelusCardDeck({
    mount:m,form,language:lang(),historicalConclusion:form==='angelus'&&S.angelusHistoricalConclusion,
    appendixText:{vern:DATA.angelusAppendix?.[lang()],latin:DATA.angelusAppendix?.la},
@@ -2070,12 +2070,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     }):null;
     // Exact source cue remains in the prayer flow; no full-screen modal.
     showDevotionalParagraphCue({mount:m,cue,action,anchor:paragraph,language:lang(),win:window});
-    const rail=m.querySelector('[data-ao-ritual-module="angelus"]');
-    if(!rail)return;
-    rail.querySelectorAll('[data-channel="gesture"]').forEach(el=>el.remove());
-    if(cue==='profound-bow'&&posture.stand)
-     rail.insertAdjacentHTML('beforeend',ritualSlotMarkup('gesture','ao-live-profound-bow',
-      L('Bow profoundly','Inclination profonde'),{emphasis:true,value:'profound-bow'}));
+    // The posture strip remains informational; the gesture has one active
+    // owner, beside the exact Incarnation verse, not a duplicate rail chip.
    }
   });
   if(!cardDeck)bindAngelusExactRail();

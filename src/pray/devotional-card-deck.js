@@ -173,7 +173,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   // Opening a card starts with its opening sentence, not paragraph two.
   if(body.scrollTop<2)active=0;
   all.forEach((p,i)=>{
-   const strength=i===active?"1":Math.abs(i-active)===1?".56":".30";
+   const strength=i===active?"1":Math.abs(i-active)===1?".72":".46";
    p.style.setProperty("--ao-devo-focus",strength);
    // Legacy Angelus styles contain important whole-unit opacity declarations.
    // The shared card paragraph controller is the single active focus owner.

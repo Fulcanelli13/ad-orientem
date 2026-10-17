@@ -152,6 +152,39 @@ export const PRAY_FOLIO_CSS=String.raw`
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoRitualFaithfulRail .aoRitualSlot{
  min-width:0;flex:0 1 auto;gap:5px;
 }
+
+/* Folio's quiet header and discrete settings are scoped to Angelus, not
+   to the whole Prayer hub or other currently unmigrated modules. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] >.aoP435930Head p{
+ display:none!important;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930PrayerOptions{
+ border:0;background:transparent;border-radius:0;
+ box-shadow:none;margin:0 auto 4px;max-width:740px;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930PrayerOptions>summary{
+ min-height:39px;padding:4px 12px;
+ font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--ao-folio-muted);
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930PrayerOptions>summary>small{
+ font-size:10px;color:var(--ao-folio-muted);
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoRitualFaithfulRail .aoRitualSlot{
+ display:flex;flex-direction:row;align-items:center;
+ gap:8px;min-height:36px;min-width:0;
+ border:0;border-radius:99px;padding:2px 9px;
+ background:color-mix(in srgb,var(--ao-folio-accent) 6%,transparent);
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoRitualFaithfulRail .aoRitualIcon{
+ width:29px;height:29px;min-width:29px;min-height:29px;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoRitualFaithfulRail .aoRitualKey{
+ display:none;
+}
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoRitualFaithfulRail .aoRitualValue{
+ font:500 12px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+}
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930PrayerOptions{
  margin:0 auto 7px;max-width:740px;
 }
