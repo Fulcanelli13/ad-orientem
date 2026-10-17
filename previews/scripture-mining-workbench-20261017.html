@@ -217,7 +217,7 @@ async function loadHistoriaAudit(){
   for(const u of auditUnits)
    $("historiaAuditUnit").append(new Option(u.chapterId+" · "+u.originalReference+" · "+u.action,u.unitId));
   const id=params.get("unit");
-  if(id&&auditUnits.some(u=>u.unitId===id))$("historiaAuditUnit").value=id;
+  if(id&&auditUnits.some(u=>u.unitId===id)){$("historiaAuditUnit").value=id;void showHistoriaUnit()}
   $("historiaAuditStatus").textContent=auditUnits.length+" corrective units available. All are unapproved research.";
  }catch(error){$("historiaAuditStatus").textContent=String(error.message||error)}
 }
