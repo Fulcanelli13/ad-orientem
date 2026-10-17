@@ -161,8 +161,11 @@ try{
     // implicitly certified translation of the 1962 native prophecy.
     const witness=overlay.locator("[data-scripture-witness-unreviewed='dr-challoner']");
     await witness.waitFor({state:"visible",timeout:12000});
-    assert.match(await witness.innerText(),/not yet collated/i,
-      "The restored Douay witness must carry its source-collation warning");
+    assert.match(await witness.innerText(),/uncollated/i,
+      "The compact reader must disclose the original source's uncollated status");
+    await witness.click();
+    assert.match(await overlay.locator(".aoScriptureWitnessDetails p").innerText(),/not yet collated/i,
+      "The original source-collation warning must remain available on demand");
     assert.ok(await overlay.locator(".aoScriptureVerse").count()>0,
       "The source-bound Scripture overlay lost its historical text");
     assert.equal(await page.locator("#ao-r17-native-reader-preview .aoScriptureVerse").count(),0,
