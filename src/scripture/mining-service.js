@@ -91,8 +91,10 @@ export function validateScriptureMiningDecision(value){
    typeof value.reference!=="string"||!parseScriptureContext(value.reference)||
    !Number.isInteger(value.rating)||value.rating<0||value.rating>5||
    !["KEEP_HERE","SUITABLE_ELSEWHERE","REJECT","UNDECIDED"].includes(value.disposition)||
-   typeof value.originModule!=="string"||!["rosary","mass","formation","historia","prayer","other"].includes(value.originModule)||
-   typeof value.originId!=="string"||value.originId.length>100||
+   typeof value.originModule!=="string"||!["rosary","mass","formation","historia","novena","stations","prayer","other"].includes(value.originModule)||
+   typeof value.originId!=="string"||value.originId.length>150||
+   (value.originBead!==undefined&&value.originBead!==null&&
+    (!Number.isInteger(value.originBead)||value.originBead<1||value.originBead>10))||
    (value.destinationId!==null&&typeof value.destinationId!=="string")||
    (typeof value.destinationId==="string"&&value.destinationId.length>100)||
    (value.destinationBead!==null&&(!Number.isInteger(value.destinationBead)||value.destinationBead<1||value.destinationBead>10))||
@@ -101,6 +103,7 @@ export function validateScriptureMiningDecision(value){
  return Object.freeze({schema:"ao.scripture.mining-decision.v1",
    reference:value.reference,rating:value.rating,disposition:value.disposition,
    originModule:value.originModule,originId:value.originId,
+   originBead:value.originBead??null,
    destinationId:value.destinationId,destinationBead:value.destinationBead,
    duplicate:value.duplicate,
    // Selection metadata only: never falsely treat a reference as approved text.
