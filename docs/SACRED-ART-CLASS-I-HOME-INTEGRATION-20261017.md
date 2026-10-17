@@ -10,6 +10,12 @@
 - The old Home gallery can no longer display its **four known historical source conflicts** for Fra Angelico and El Greco: Annunciation, Pentecost, Trinity Sunday (including trailing-r variant) and Ninth Sunday after Pentecost. In all four, the Home retains its typographic no-art hero rather than silently substituting an unrelated painting. This is a source-path fail-closed guard; it does not modify the 1962 calendar or Mass reader.
 - The tests enforce approved identities, contextual vs exact roles, live Proper matching, image-release holds, and artist exclusions.
 
+## Source-media inspection (separate from release)
+
+An inspection of the supplied 17 October standalone-review archive found **17 distinct selected primary originals across the 18 dates**. **13 originals have local review WebP copies**, covering 14 date associations; **four do not**: `met-459131` (Last Supper), `cma-136507` (Trinity), `met-442491` (Peter and Paul), `cma-143784` (Adoration of the Shepherds). None of the 13 WebP review derivatives may be treated as a production master without independent checks.
+
+**Incorrect source-picture association to repair outside this mapping:** `ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross` is assigned a review image whose Commons filename explicitly identifies Station VIII (women of Jerusalem), and the displayed picture is not the Death on the Cross. Hold that media asset regardless of the physical artwork's 5-star/locked approval; do not repurpose or rewrite the rating.
+
 ## Deliberately NOT claimed
 
 - **0 newly cleared local painting-master images.** `RELEASED_SACRED_ART_MASTERS` is intentionally empty; a 5-star rating never establishes image licence, exact physical original, suitable image bytes, cropping, resolution or verified renderer. Therefore the 18 mappings do NOT suddenly render 18 paintings.
