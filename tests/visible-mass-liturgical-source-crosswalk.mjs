@@ -7,6 +7,20 @@ const root=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
 const file=rel=>JSON.parse(fs.readFileSync(path.join(root,rel),'utf8'));
 const x=file('previews/visible-mass-3d/LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json');
 const p1=file('previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json');
+const checked=file('previews/visible-mass-3d/PRIMARY_1960_RUBRIC_PASSAGE_CHECKS_20261017.v1.json');
+assert.equal(checked.passage_checks.length,24);
+assert.equal(new Set(checked.passage_checks.map(x=>x.id)).size,24);
+for(const r of checked.passage_checks){
+ assert.equal(r.source_id,'VM-RG60');
+ assert.ok(r.exact_locus.startsWith('RG '));
+ assert.equal(r.review_status,'ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING');
+ assert.ok(x.topics.some(t=>t.id===r.topic_id));
+ assert.ok(r.object_ids.every(id=>x.objects.some(o=>o.object_id===id)));
+}
+assert.equal(checked.counts.linked_topics,new Set(checked.passage_checks.map(r=>r.topic_id)).size);
+assert.ok(checked.passage_checks.some(r=>r.exact_locus.includes('RG 131')));
+assert.ok(checked.passage_checks.some(r=>r.exact_locus.includes('RG 126')));
+
 const status='SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED';
 assert.equal(x.status,'RESEARCH_CANDIDATE_NO_RUBRIC_OR_CONTENT_CERTIFICATION');
 assert.equal(x.topics.length,44);
