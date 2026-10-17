@@ -200,17 +200,19 @@ for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
  ["H70-01","PROPOSED_CURATED_TRIM"]])
  assert.equal(economy.decisions.find(x=>x.unitId===id).selectionStatus,status);
 assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
-assert.equal(economy.verification.coordinateChecks,"REQUIRES_NEW_CI_AFTER_BATCH_SOURCE_EXPANSIONS");
+assert.equal(economy.verification.coordinateChecks,"ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M01_M09_CORRECTIONS");
 assert.equal(economy.verification.targetCPDVAndDouaySourceCoordinatePresenceVerified,true);
 assert.equal(economy.verification.originalPrintedEditionAttested,false);
-assert.equal(economy.comparativeScriptureEconomy,null,
- "Previous aggregate counts are held until this revised reading passes");
+assert.equal(economy.comparativeScriptureEconomy.originalNominalVerseUnits,originalVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.proposedNominalVerseUnits,selectedVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.comparableActualVerseUnitReductions,137);
+assert.equal(economy.comparativeScriptureEconomy.comparableReductionRatePct,11.5);
 assert.deepEqual(economy.verification.batch01_09.sourceContinuityFixes,
  ["H11-02","H13-01","H16-03","H21-03"]);
 assert.equal(economy.verification.batch01_09.approved,false);
 assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_01_09_DESK_READING")
- .every(x=>!x.bothCatholicEditionVersePresenceVerified),
- "Changed coordinates must be revalidated before claiming witness approval");
+ .every(x=>x.bothCatholicEditionVersePresenceVerified===true),
+ "Every restored source boundary must pass witness checks");
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
