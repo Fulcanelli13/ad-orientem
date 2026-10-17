@@ -9,8 +9,8 @@ import {scriptureSegmentContext} from "../scripture/segments.js";
 const CONDITIONS=Object.freeze({
  GOOD_FRIDAY:Object.freeze({dateKey:"goodFriday",principal:/^tempora:Quad6-5r:1:[a-z]+$/i,
    proper:"Tempora/Quad6-5r",heading:{en:"Good Friday · Sacred readings",fr:"Vendredi saint · Lectures sacrées"}}),
- EASTER_VIGIL:Object.freeze({dateKey:"holySaturday",principal:/^tempora:Quad6-6[a-z]*:1:[a-z]+$/i,
-   proper:null,heading:{en:"Easter Vigil · Prophecies",fr:"Vigile pascale · Prophéties"}})
+ EASTER_VIGIL:Object.freeze({dateKey:"holySaturday",principal:/^tempora:Quad6-6r:1:[a-z]+$/i,
+   proper:"Tempora/Quad6-6r",heading:{en:"Easter Vigil · Prophecies",fr:"Vigile pascale · Prophéties"}})
 });
 const ROLES=Object.freeze({
  FIRST_LESSON:["First Lesson","Première lecture"],
