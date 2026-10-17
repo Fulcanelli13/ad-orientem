@@ -25,3 +25,21 @@ export function isExplicitRequiemMass(prepared,conditions=null){
 export function isRequiemAgnusBreastStrikeOmitted(cueId,prepared,conditions=null){
   return /^AO\.SM\.C022[234]$/.test(String(cueId??"")) && isExplicitRequiemMass(prepared,conditions);
 }
+
+// Ritus servandus XIII.1: this is a FORM-SELECTED TEXT substitution in the
+// existing Ordinary cue IDs, NOT another Proper or reader corpus.
+// https://www.intratext.com/IXT/LAT0820/_PO.HTM
+// Source-owned Requiem text does not imply observed physical action.
+const REQUIEM_AGNUS=Object.freeze(Object.fromEntries([
+  ["AO.SM.C0222","dona eis réquiem.","grant them rest.","donnez-leur le repos."],
+  ["AO.SM.C0223","dona eis réquiem.","grant them rest.","donnez-leur le repos."],
+  ["AO.SM.C0224","dona eis réquiem sempitérnam.","grant them eternal rest.","donnez-leur le repos éternel."],
+].map(([cueId,latinEnding,englishEnding,frenchEnding])=>[cueId,Object.freeze({
+  lat:"Agnus Dei, qui tollis peccáta mundi: "+latinEnding,
+  en:"Lamb of God, who takest away the sins of the world: "+englishEnding,
+  fr:"Agneau de Dieu, qui enlevez les péchés du monde : "+frenchEnding,
+})])));
+export function requiemAgnusVariantsForResolvedMass(resolvedMass){
+  if(!isExplicitRequiemMass({session:{resolvedMass}}))return null;
+  return REQUIEM_AGNUS;
+}
