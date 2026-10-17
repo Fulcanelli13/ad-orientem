@@ -103,6 +103,22 @@ try {
   }
 
   if(fullRemoteAudit){
+  // Held photographs must be visible as provenance records, not fetched or scored.
+  outcome.heldCardChecks=[];
+  for(const index of [26,35,37,44,79]){
+    const category=categories.find(c=>c.index===index);
+    await page.evaluate(id=>{
+      const item=[...document.querySelectorAll('[data-action="goto"]')].find(x=>x.dataset.cat===id);
+      if(item)item.click();
+    },category.id);
+    const expected=category.works.flatMap(w=>w.photos).filter(p=>p.deliveryHold||p.identityHold).length;
+    const visible=await page.evaluate(()=>({
+      held:document.querySelectorAll('main .imageframe.research-source-hold').length,
+      scoreControlsInHeld:[...document.querySelectorAll('main .photo')].filter(el=>el.querySelector('.research-source-hold')&&el.querySelector('[data-action="photo-score"]')).length,
+      selectsInHeld:[...document.querySelectorAll('main .photo')].filter(el=>el.querySelector('.research-source-hold')&&el.querySelector('[data-action="photo-primary"]')).length
+    }));
+    outcome.heldCardChecks.push({index,expected,...visible});
+  }
   // Actual browser decode for supported-size previews and bounded gallery fallback.
   // A 500px Commons retry is always distinguished from a successful primary load.
   const batchSize=3;
@@ -168,6 +184,7 @@ try {
   assert.equal(categories.length,168,'Category count drifted');
   assert.ok(outcome.categoryWithLinkedPreview===168,'Source-linked categories regressed');
   assert.deepEqual(badLayout,[],'390px contain-fit or frame overflow regression');
+  assert.ok(outcome.heldCardChecks.every(x=>x.expected===x.held&&x.scoreControlsInHeld===0&&x.selectsInHeld===0),'Held institutional/identity photos must not load or permit scoring/selection');
   assert.deepEqual(pageErrors,[],'Gallery runtime JavaScript errors');
   // External image failures are evidence, not a flaky CI failure: captured in report.
 }finally{await browser.close();}
