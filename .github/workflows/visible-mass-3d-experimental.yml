@@ -11,6 +11,7 @@ on:
       - "tests/visible-mass-liturgical-source-crosswalk.mjs"
       - "tests/visible-mass-liturgical-explanations-first20.mjs"
       - "tests/visible-mass-historical-symbolic-answers.mjs"
+      - "tests/visible-mass-historical-functional-next.mjs"
       - "tests/visible-mass-sanctuary-photo-browser.mjs"
       - "data/glossary/concepts-*.v1.json"
       - ".github/workflows/visible-mass-3d-experimental.yml"
@@ -35,6 +36,7 @@ jobs:
           node tests/visible-mass-liturgical-source-crosswalk.mjs
           node tests/visible-mass-liturgical-explanations-first20.mjs
           node tests/visible-mass-historical-symbolic-answers.mjs
+          node tests/visible-mass-historical-functional-next.mjs
       - name: Vendor browser 3D engine for offline package
         run: |
           mkdir -p /tmp/visible-mass-deps
