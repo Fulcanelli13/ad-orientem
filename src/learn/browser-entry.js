@@ -14,7 +14,7 @@ import {visibleMassReviewEnabled,VISIBLE_MASS_REVIEW_ROUTE} from "./visible-mass
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
-const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID,VISIBLE_MASS_REVIEW_ROUTE]);
+const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID]);
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function appState(win){return runtime(win)?.store?.getState?.()??null;}
@@ -406,8 +406,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   async function openModule(id,opts={}){
-    if(!state.open||!MODULE_SET.has(id)||
-      (id===VISIBLE_MASS_REVIEW_ROUTE&&!visibleMassReviewEnabled(win)))return false;
+    if(!state.open||(!MODULE_SET.has(id)&&
+      !(id===VISIBLE_MASS_REVIEW_ROUTE&&visibleMassReviewEnabled(win))))return false;
     const attempt=++launchEpoch;
     const current=()=>state.open&&launchEpoch===attempt;
     try{
