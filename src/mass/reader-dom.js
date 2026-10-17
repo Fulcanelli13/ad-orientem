@@ -1370,7 +1370,10 @@ export function projectCertifiedSolemnMinisterRubric(value){
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
-  const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle);
+  // Both curated 65-card words/elevation titles are distinct from the
+  // preparation cards. Consecratory Latin must remain prominent in both.
+  const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle) ||
+    /^Words of Consecration and Elevation\s*[·–—-]\s*(?:Host|Chalice)$/i.test(momentTitle);
   const paragraphs = Array.isArray(moment.paragraphs) ? moment.paragraphs.map((p, index) => {
     if (typeof p === "string") return Object.freeze({id:String(index),kind:"TEXT",primary:p,secondary:null,alternate:null,replaceOnToggle:false,active:false});
     let kind=String(p.kind ?? (p.response ? "RESPONSE" : "TEXT")).toUpperCase();
@@ -1380,7 +1383,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     let replaceOnToggle=p.replaceOnToggle === true && p.alternate != null;
     const rubric=/^\s*\[[\s\S]+\]\s*$/.test(primary);
     if(rubric)kind="RUBRIC";
-    if(latinProminent && alternate && kind!=="RUBRIC"){
+    // A sung-source paragraph may ALREADY have Latin in primary, with its
+    // vernacular in alternate. Never reverse that source-owned order.
+    if(latinProminent && alternate && kind!=="RUBRIC" &&
+       String(p.displayLanguage??"").toUpperCase()!=="LATIN"){
       secondary=primary;
       primary=alternate;
       alternate=null;
