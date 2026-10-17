@@ -17,7 +17,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"CPDV is the default for more accessible English. Douay–Rheims remains an optional traditional comparison. Both currently use source-labelled transcriptions pending edition-level collation.",
+  readable:"Choose Douay–Rheims or CPDV at any time. Both use source-labelled transcriptions pending edition-level collation.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Lecture de la Bible catholique. Les transcriptions historiques non collationnées sont signalées.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
