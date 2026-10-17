@@ -178,7 +178,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       for(const [cueId,ending] of Object.entries(agnusRequiemByCue)){
         const p=paragraphForCue(r,cueId);
         assert.ok(p,form+" missing Requiem "+cueId);
-        const words=[p.primary,p.secondary,p.latin,p.vernacular].filter(Boolean);
+        const words=[p.primary,p.secondary,p.alternate,p.latin,p.vernacular].filter(Boolean);
         const joined=words.join(" | ");
         assert.ok(joined.includes(ending),form+" Latin Agnus variant missing "+cueId);
         assert.match(joined,expectedRest,form+" "+language+" Requiem variant missing "+cueId);
@@ -194,7 +194,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     for(const cueId of Object.keys(agnusRequiemByCue)){
       const p=paragraphForCue(ordinary,cueId);
       assert.ok(p,form+" ordinary Agnus was removed");
-      const words=[p.primary,p.secondary,p.latin,p.vernacular].filter(Boolean).join(" | ");
+      const words=[p.primary,p.secondary,p.alternate,p.latin,p.vernacular].filter(Boolean).join(" | ");
       assert.doesNotMatch(words,/dona eis réquiem/i,
         form+" unselected Requiem variant leaked into ordinary "+cueId);
     }
