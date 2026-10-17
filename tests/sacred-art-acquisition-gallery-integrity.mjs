@@ -98,7 +98,7 @@ assert.ok(historicArchive.original.includes('upload.wikimedia.org/wikipedia/comm
 assert.equal(archiveWork.photoSourceEvidence.archivedFrancisFullSizeNeverAutoLoaded,true);
 assert.equal(archiveWork.photoSourceEvidence.archivedDifferentPhotoRenderingMustNotInheritRating,true);
 for(const c of current.categories)for(const w of c.works)for(const p of w.photos){
- assert.ok(!(/api\\.nga\\.gov\\/iiif/.test(p.preview)&&/\\/full\\/full\\//.test(p.preview)), 'No full-size NGA IIIF masters in auto-loaded gallery');
+ assert.ok(!(p.preview.includes('api.nga.gov/iiif/')&&p.preview.includes('/full/full/')), 'No full-size NGA IIIF masters in auto-loaded gallery');
  assert.ok(!p.preview.includes('bmmweb.blob.core.windows.net/kress/'), 'No full Kress master images auto-loaded');
  assert.ok(!p.preview.startsWith('https://upload.wikimedia.org/wikipedia/commons/archive/'), 'No giant archive auto-load in any category');
 }
