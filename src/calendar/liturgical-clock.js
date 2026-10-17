@@ -377,4 +377,31 @@ export const liturgicalClockCss=[
 ".aoClockFeast:hover .aoClockMarkerPrincipal,.aoClockFeast:focus-visible .aoClockMarkerPrincipal,.aoClockFeast.active .aoClockMarkerPrincipal,.aoClockFeast:hover .aoClockMarkerOther,.aoClockFeast:focus-visible .aoClockMarkerOther,.aoClockFeast.active .aoClockMarkerOther,.aoClockFeast:hover .aoClockMarkerCluster,.aoClockFeast:focus-visible .aoClockMarkerCluster,.aoClockFeast.active .aoClockMarkerCluster{filter:none!important;stroke:var(--text)!important}",
 ".aoClockDial svg>circle:first-of-type{stroke-opacity:.55;stroke-width:1!important}",
 "@media(prefers-reduced-motion:reduce){.aoClockSector .aoClockSectorFace{transition:none}}",
+
+/* The liturgical year has one visualization. Jewel-light is a translucent
+   instrument rendering of canonical 1962 seasonal colour, never a Mass Proper. */
+".aoClockSector .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.13!important;stroke:var(--ao-clock-glow,#8695a6)!important;stroke-opacity:.47!important;stroke-width:1.4!important;filter:none!important;transition:fill-opacity .2s,stroke-opacity .2s!important}",
+".aoClockSector:nth-of-type(even) .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.095!important}",
+".aoClockSector:hover .aoClockSectorFace,.aoClockSector:focus-visible .aoClockSectorFace,.aoClockSectorSelected .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.25!important;stroke:var(--ao-clock-glow,#8695a6)!important;stroke-opacity:.9!important;stroke-width:2!important;filter:drop-shadow(0 0 5px var(--ao-clock-glow,#8695a6))!important}",
+".aoClockSector .aoClockSeasonText{fill:var(--ao-clock-glow,#d1d8dc)!important;fill-opacity:.88!important;stroke:var(--bg,#080c12)!important;stroke-opacity:1;stroke-width:2px!important}",
+".aoClockMarkerLandmark{fill:var(--bg,#080c12);stroke:#dbe6ee;stroke-width:2.2;filter:drop-shadow(0 0 4px rgba(155,205,245,.3))}",
+".aoClockFeast:hover .aoClockMarkerLandmark,.aoClockFeast:focus-visible .aoClockMarkerLandmark,.aoClockFeast.active .aoClockMarkerLandmark{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 5px rgba(205,230,255,.5))}",
+".aoClockContext{border-top:1px solid var(--ao-rule,rgba(226,214,190,.18));padding:12px 0;margin:6px auto 0;max-width:690px}",
+".aoClockContext button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 9px;width:100%;padding:3px 4px!important;border:0!important;background:transparent!important;text-align:left!important}",
+".aoClockContext strong{font:400 22px/1.3 Georgia,serif;color:var(--text)}",
+".aoClockContext span{font:500 11px/1.3 var(--ao-font-ui,system-ui);color:var(--muted);text-align:right}",
+".aoClockContext small{font:400 13px/1.4 Georgia,serif;color:var(--muted);grid-column:1/-1}",
+".aoClockUpcoming{margin:3px auto 8px!important;padding:8px 0!important;max-width:690px!important;border-top:1px solid var(--ao-rule,rgba(226,214,190,.18))!important}",
+".aoClockUpcoming>strong{font:650 10px/1.3 var(--ao-font-ui,system-ui);letter-spacing:.09em;color:var(--muted);text-transform:uppercase}",
+".aoClockUpcoming>div{display:flex!important;gap:4px 13px!important;align-items:center;flex-wrap:wrap!important;margin-top:7px}",
+".aoClockUpcoming .aoClockUpcomingItem{display:inline-flex!important;min-height:36px!important;align-items:baseline!important;gap:6px!important;padding:4px 0!important;margin:0;border:0!important;border-radius:0!important;background:transparent!important;color:var(--text)!important;box-shadow:none!important}",
+".aoClockUpcomingItem small{font:600 12px/1.3 var(--ao-font-ui,system-ui);white-space:nowrap;color:var(--liturgical)!important}",
+".aoClockUpcomingItem span{font:400 13px/1.3 Georgia,serif}",
+".aoClockUpcomingItem i{font-style:normal;color:var(--muted);font-size:14px}",
+".aoClockSources{margin:5px auto 0;max-width:690px;color:var(--muted);border-top:1px solid var(--ao-rule,rgba(226,214,190,.18));font:400 12px/1.5 var(--ao-font-ui,system-ui)}",
+".aoClockSources summary{padding:10px 3px;cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted)}",
+".aoClockSources p{margin:4px 4px 8px}.aoClockSources a{color:var(--text)}",
+".aoClockFeastMenu{margin:0 auto 5px!important}",
+"@media(max-width:560px){.aoClockContext strong{font-size:20px}.aoClockContext span{font-size:10px}.aoClockUpcoming>div{gap:0 10px!important}.aoClockUpcomingItem span{font-size:12px}}",
+
 ].join("\n");
