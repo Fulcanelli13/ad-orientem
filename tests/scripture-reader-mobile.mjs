@@ -41,7 +41,8 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
- assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i);
+ assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Since, indeed, many have attempted/i,
+   "Fresh English reading must use CPDV instead of archaic Douay–Rheims");
  // Existing source-owner objects referencing Luke 1:28 must be discoverable
  // without changing the current verse, Mass state or Rosary session.
  await dialog.locator(".aoScriptureRelated summary").click();
@@ -160,9 +161,14 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
- assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
+ assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").count(),1,
+   "Fresh reader should select CPDV");
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
