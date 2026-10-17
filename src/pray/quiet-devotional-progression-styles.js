@@ -2,7 +2,7 @@
  * Quiet, prayer-first visual language shared by existing DAILY donor and
  * First Friday / First Saturday programmes. No artificial timers or rewards.
  */
-export const QUIET_DEVOTIONAL_PROGRESSION_CSS=String.raw\`
+export const QUIET_DEVOTIONAL_PROGRESSION_CSS=String.raw`
 /* Progressive horizon: abstract atmospheric light, not a drawn landscape. */
 #aoPray435930 [data-ao-quiet-daily-horizon]{
   --ao-sky-top:#111b29;--ao-sky-mid:#283440;--ao-sky-low:#50494a;--ao-sky-light:#916b60;
@@ -128,7 +128,7 @@ export const QUIET_DEVOTIONAL_PROGRESSION_CSS=String.raw\`
  #aoPray435930 .aoQuietHorizonCanvas.is-changing:before{animation:none!important}
  #aoPray435930 .aoQuietHorizonTrace>span{transition:none!important}
 }
-\`;
+`;
 export function installQuietDevotionalProgressionStyles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-quiet-devotional-progression-style"))return;
  const style=doc.createElement("style");style.id="ao-quiet-devotional-progression-style";
