@@ -174,6 +174,15 @@ try{
   // "Secrets" begins at the retable and then crosses to candlesticks.
   await page.locator('#guide-routes [data-trail="SANCTUARY_SECRETS"]').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0052');
+  assert.equal(await page.locator('#guide-opening').isVisible(),true);
+  assert.match(await page.locator('#guide-prompt').innerText(),/structure rising behind the altar/i);
+  assert.match(await page.locator('#guide-target').innerText(),/large decorated structure/i);
+  await page.locator('#guide-actions [data-guide-preview="AL19"]').click();
+  assert.equal(await page.locator('.marker[data-object="AL19"]').getAttribute('data-guide-preview'),'true');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,null,
+    'photo-only focus must not open a question card');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,0,
+    'observing photo marker must never count as reading');
   await page.locator('#guide-actions [data-guide-question="VMQ-0052"]').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,'AL19');
   assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'understand');
@@ -182,6 +191,8 @@ try{
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,1);
   await page.locator('#guide-return').click();
   assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'discover');
+  assert.equal(await page.locator('#guide-opening').isVisible(),false,
+    'visual-novel trail introduction is not repeated after an actual discovery');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0053');
   await page.locator('#guide-actions button').filter({hasText:'Skip suggestion'}).click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0017');
@@ -193,6 +204,8 @@ try{
   // Global discovery memory prevents the crucifix being re-read on another route.
   await page.locator('#guide-routes [data-trail="ALTAR_MYSTERY"]').click();
   assert.equal((await page.locator('#guide-prompt').innerText()).includes('crucifix'),true);
+  assert.equal(await page.locator('#guide-actions [data-guide-question="VMQ-0014"]').count(),1,
+    'strong Calvary crossover should be a separate optional source-owned choice');
   await page.locator('#guide-actions [data-guide-question="VMQ-0013"]').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,'AL06');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).question,'VMQ-0013');
