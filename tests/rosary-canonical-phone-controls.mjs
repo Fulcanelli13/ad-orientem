@@ -388,7 +388,7 @@ try{
        n+1,{timeout:9000});
    }
    const beadSource=player.locator(
-     ".aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source][data-ao-scripture-context]").first();
+     ".aoRosaryBeadScripture a[data-ao-rosary-meditation-source][data-ao-scripture-context]").first();
    await beadSource.waitFor({state:"visible",timeout:9000});
    if(width===390){
      const restored=player.locator(".aoRosaryBeadScripture");
