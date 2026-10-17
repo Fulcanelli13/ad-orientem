@@ -1,3 +1,4 @@
+import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
@@ -180,6 +181,8 @@ export function renderHome(root,state,win=globalThis){
     try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
     catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
     if(art)slot.innerHTML=art;
+    // Legacy art is not curatorial approval; remove known rejected painter/ID selections.
+    removeExcludedLegacyHomeArtwork(slot);
     // Donor fallback labels are not approved sacred paintings; retain the
     // devotional typographic hero but do not reserve an empty image column.
     const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
