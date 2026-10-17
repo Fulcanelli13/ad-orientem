@@ -18,7 +18,7 @@
     },
     {
       "path": "data/research/historia-salutis-v18-essential-verse-economy.v1.json",
-      "blobSha": "6b2bb69a08d4eb7c9f2ec33229ebcd77ee4b3d22"
+      "blobSha": "2603f23ea47db076294dec07525eb8b93f8929b2"
     }
   ],
   "totals": {
@@ -1246,10 +1246,10 @@
             "2Kings 17:13–18"
           ],
           "edition": "cpdv-2009",
-          "policy": "LITERARY_CONTINUITY_EXPANSION",
+          "policy": "LITERARY_CONTEXT_REBALANCED",
           "hasPartialVerseHold": false,
           "publicationApproved": false,
-          "editorialReason": "Original 17:5 begins 'And he wandered' without naming the Assyrian king. Verses 3–4 establish Shalmaneser, Hoshea, rebellion and the siege before Samaria's fall."
+          "editorialReason": "Samaria's fall had an unnamed assailant and should begin by identifying Shalmaneser in 2 Kings 17:3–4; verses 9–12 are omitted because 17:13–18 already interprets Israel's apostasy. This is a shorter overall source passage with a small but necessary pre-original antecedent."
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2365,11 +2365,12 @@
   "literaryReviewProgress": {
     "movementsDeskExamined": 19,
     "movementsTotal": 37,
-    "sourceContinuityExpansions": 7,
+    "sourceContinuityExpansions": 6,
     "historicSourceBridgesAbsorbedIntoEssentialText": 1,
     "editorialContextNotesReducedFrom32To29": true,
     "oralReadingsApproved": 0,
-    "theologicalPublicationApprovals": 0
+    "theologicalPublicationApprovals": 0,
+    "sourceSpanRebalances": 1
   },
   "historicallyProposedBridgeStatus": {
     "sourceCandidatesInDeskRegistry": 11,
