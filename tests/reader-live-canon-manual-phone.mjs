@@ -46,13 +46,37 @@ try{
    });
    assert.equal(initial.total,65);
    assert.equal(initial.visible,false,"Manual button must be absent outside the two elevation cues");
-   const hostCard=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.cards.find(c=>
-      c.paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0174")))?.sequence);
-   assert.ok(hostCard,"Curated Host elevation card missing");
-   await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),hostCard);
-   const hostLine=page.locator('[data-source-cue-ids~="AO.SM.C0174"]').first();
-   await hostLine.scrollIntoViewIfNeeded();
-   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:12000});
+   // Use the reader's exact 39%-focus geometry, not merely
+   // scrollIntoViewIfNeeded (a visible bottom rubric can remain unfocused).
+   async function focusCue(cueId){
+     const outcome=await page.evaluate(async target=>{
+       const api=window.__AO_PHONE_PREVIEW;
+       const card=api.model.cards.find(c=>c.paragraphs.some(p=>
+         p.sourceCueIds?.includes(target)));
+       if(!card)return {found:false,reason:"SOURCE_CARD_MISSING"};
+       api.showSequence(card.sequence);
+       const frames=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+       await frames();
+       const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+       const node=[...scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+         .find(n=>n.dataset.cueId===target);
+       if(!node)return {found:false,reason:"CUE_DOM_MISSING"};
+       const max=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+       const candidates=[0,max];
+       for(let y=0;y<=max;y+=16)candidates.push(y);
+       for(const amount of [...new Set(candidates)]){
+         scroller.scrollTop=Math.max(0,Math.min(max,amount));
+         scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+         await frames();
+         if(api.getActiveCue()===target)
+           return {found:true,cardId:card.sectionId,focused:target,max};
+       }
+       return {found:false,reason:"CUE_FOCUS_UNREACHABLE",
+         current:api.getActiveCue(),cardId:card.sectionId,max};
+     },cueId);
+     assert.equal(outcome.found,true,cueId+" focus unreachable "+JSON.stringify(outcome));
+   }
+   await focusCue("AO.SM.C0174");
    const trigger=page.locator("[data-live-canon-follow-trigger]");
    assert.equal(await trigger.isVisible(),true,"Follow control not visible at Host cue");
    await trigger.click();
@@ -77,13 +101,7 @@ try{
    await page.locator("[data-canon-follow-close]").click();
    assert.equal(await trigger.getAttribute("aria-expanded"),"false");
 
-   const chaliceCard=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.cards.find(c=>
-     c.paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0181")))?.sequence);
-   assert.ok(chaliceCard);
-   await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),chaliceCard);
-   const chaliceLine=page.locator('[data-source-cue-ids~="AO.SM.C0181"]').first();
-   await chaliceLine.scrollIntoViewIfNeeded();
-   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0181",null,{timeout:12000});
+   await focusCue("AO.SM.C0181");
    assert.equal(await trigger.isVisible(),true);
    await trigger.click();
    assert.equal(await page.locator("[data-canon-observe]").count(),5);
