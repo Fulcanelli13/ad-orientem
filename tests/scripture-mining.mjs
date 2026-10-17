@@ -159,4 +159,18 @@ assert.equal(sourceAware.referenceEdition,"dr-challoner");
 assert.equal(validateScriptureMiningDecision(selected).referenceEdition,"cpdv-2009",
  "Historic decision exports without edition metadata stay readable");
 
+
+const correctionDelta=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",import.meta.url),"utf8"));
+assert.equal(correctionDelta.sourceRowCount,217);
+assert.equal(correctionDelta.releaseStatus,"EDITORIAL_RESEARCH_ONLY_NOT_APPROVED");
+assert.deepEqual(correctionDelta.chapters.map(x=>x.chapterId),["H42","H76"]);
+assert.deepEqual(correctionDelta.chapters.map(x=>x.units.length),[7,5]);
+assert.equal(new Set(correctionDelta.chapters.flatMap(x=>x.units.map(y=>y.unitId))).size,12);
+assert.ok(correctionDelta.chapters.flatMap(x=>x.units).every(x=>
+ x.originalReference&&x.candidateReadings.length&&x.approved===false&&x.textReviewed===false));
+assert.equal(correctionDelta.chapters[0].units[6].originalReference,"Esther 4:1–17");
+assert.equal(correctionDelta.chapters[0].units[6].sourceEdition,"UNDETERMINED_IN_V18");
+assert.equal(correctionDelta.chapters[1].units[3].originalReference,"Revelation 13:1–10");
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
