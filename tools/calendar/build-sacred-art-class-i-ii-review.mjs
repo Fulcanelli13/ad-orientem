@@ -50,6 +50,31 @@ assert.equal(rows.length,129,'All 53 Class I and 76 Class II principal dates req
 assert.equal(rows.filter(x=>x.class==='I').length,53);
 assert.equal(rows.filter(x=>x.class==='II').length,76);
 assert.equal(new Set(rows.map(x=>x.date)).size,129);
+
+// Cleveland's CC0 API has no browser CORS header; obtain actual small web JPEGs
+// at build time. Never invent a CDN filename from the accession number.
+const cmaAccessions=[...new Set(rows.flatMap(r=>r.options.slice(0,3).map(o=>{
+ const m=o.sourceUrl.match(/^https:\/\/(?:www\.)?clevelandart\.org\/art\/([\w.]+)$/i);
+ return m?.[1]||null;
+}).filter(Boolean)))];
+const cmaImages=new Map();
+for(let i=0;i<cmaAccessions.length;i+=5){
+ await Promise.all(cmaAccessions.slice(i,i+5).map(async id=>{
+  try{
+   const response=await fetch('https://openaccess-api.clevelandart.org/api/artworks/'+id,
+    {signal:AbortSignal.timeout(8500)});
+   if(!response.ok)return;
+   const payload=await response.json(),record=payload.data||payload;
+   if(record.share_license_status==='CC0'&&/^https:\/\//.test(record.images?.web?.url||''))
+    cmaImages.set(id,record.images.web.url);
+  }catch(error){/* Retain official object link instead of inventing a photograph. */}
+ }));
+}
+for(const row of rows)for(const option of row.options){
+ const m=option.sourceUrl.match(/^https:\/\/(?:www\.)?clevelandart\.org\/art\/([\w.]+)$/i);
+ if(m&&cmaImages.has(m[1]))option.preview=cmaImages.get(m[1]);
+}
+
 assert.ok(rows.filter(x=>x.class==='I'&&x.artworkCoverage==='EXACT_SOURCE_RESEARCH').length<=exactResearchDates.size,
  'CC0 linked exact-source options cannot outnumber the historic research source dates');
 const counts=Object.fromEntries(['I','II'].map(k=>{
@@ -61,6 +86,7 @@ const counts=Object.fromEntries(['I','II'].map(k=>{
    noOption:d.filter(r=>!r.options.length).length}];
 }));
 const report={schema:'AO_SACRED_ART_2026_CLASS_I_II_REVIEW_V1',year:2026,
+ cmaWebPreviewResolved:cmaImages.size,cmaWebPreviewRequested:cmaAccessions.length,
  exactResearchDatesInEarlierCrosswalk:exactResearchDates.size,
  status:'DATE_INVENTORY_COMPLETE_ARTWORK_EDITION_UNFINISHED',
  source:'2026 full-year 1962 production DayResolver / CC0 acquired-original artwork registry',
