@@ -5,7 +5,7 @@
   "scope": "EXPLORER_ONLY",
   "liturgical_source": "data/presentation/reader-text-sung.v1.json",
   "guide_source": "data/presentation/guide-registry.v1.json",
-  "provenance": "84 original bilingual editorial paraphrases reconciled from six P2 prayer-reading pilot research families; prior drafts remain intact in PR #1307.",
+  "provenance": "84 original bilingual editorial paraphrases reconciled from six P2 prayer-reading pilot research families; prior drafts remain intact in PR #1307. Each entry retains the original English text anchor for automated source-text verification.",
   "editorial_scope": "Direct explanation of the words in the shown source block. Not theological/historical certification, not a ceremonial rubric or a substitute for the original Latin.",
   "exclusions": [
     "P0 historical claims",
@@ -39,7 +39,8 @@
         "fr": "Le signe de croix initial place la célébration sous le nom du Père, du Fils et du Saint-Esprit. L’Amen prononcé achève cette brève profession de foi."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "In the Name of the Father, ✠"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.02",
@@ -56,7 +57,8 @@
         "fr": "Le prêtre annonce son approche de l’autel de Dieu, et la réponse évoque Dieu qui réjouit la jeunesse. Ce bref échange ouvre les prières au bas de l’autel."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "I will go in unto the altar of God."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.03",
@@ -73,7 +75,8 @@
         "fr": "Le psaume demande à Dieu justice, protection, lumière et vérité, puis revient à l’espérance de s’approcher de son autel. Il fait passer l’âme de l’affliction à la confiance."
       },
       "conditionality": "PSALM_42_MAY_BE_OMITTED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Judge me, O God"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.04",
@@ -90,7 +93,8 @@
         "fr": "Avant la confession des péchés, le prêtre invoque le nom du Seigneur et reçoit la réponse qu’Il a fait le ciel et la terre. La confiance dans le Créateur précède l’acte de contrition."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Our help ✠ is in the Name of the Lord."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.05",
@@ -107,7 +111,8 @@
         "fr": "Le célébrant reconnaît ses péchés devant Dieu et les saints nommés, en se frappant la poitrine à la confession répétée de sa faute. Il demande ensuite leur intercession."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "I confess to almighty God"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.06",
@@ -124,7 +129,8 @@
         "fr": "Les ministres prient pour que Dieu tout-puissant fasse miséricorde au célébrant, lui pardonne ses péchés et le conduise à la vie éternelle. Le célébrant répond Amen."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May Almighty God have mercy upon you"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.07",
@@ -141,7 +147,8 @@
         "fr": "Les ministres confessent à leur tour leurs péchés, reconnaissent leur faute personnelle et demandent l’intercession de la Sainte Vierge et des saints. Le texte répond à la prière pénitentielle du célébrant."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "I confess to Almighty God"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.08",
@@ -158,7 +165,8 @@
         "fr": "Le célébrant demande que Dieu pardonne les péchés de ceux qui viennent de se confesser et les conduise à la vie éternelle. Le pluriel répond au Confiteor des ministres."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May Almighty God have mercy upon you, forgive you your sins"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.09",
@@ -175,7 +183,8 @@
         "fr": "Le célébrant invoque le Seigneur tout-puissant et miséricordieux pour demander pardon, absolution et rémission des péchés. La prière se termine par Amen."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May the Almighty and merciful God grant us pardon"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.10",
@@ -192,7 +201,8 @@
         "fr": "Le dialogue demande à Dieu de faire revivre son peuple, de manifester sa miséricorde, d’accorder le salut et d’écouter la prière. La salutation et le Prions final conduisent vers l’autel."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Thou wilt turn, O God"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.11",
@@ -209,7 +219,8 @@
         "fr": "En s’approchant de l’autel, le prêtre demande en privé au Seigneur d’ôter les iniquités, pour entrer dans le Saint des saints avec un esprit pur."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Take away from us our iniquities"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.12",
@@ -226,7 +237,8 @@
         "fr": "À l’autel, le prêtre demande le pardon par les mérites des saints dont les reliques sont présentes et de tous les saints. Cette prière unit la vénération de l’autel à une supplication de pardon."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "We beseech thee, O Lord"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.13",
@@ -243,7 +255,8 @@
         "fr": "Le prêtre bénit l’encens en invoquant Celui en l’honneur de qui il brûlera. L’action associée dans la source décrit l’encensement de la Croix et de l’autel."
       },
       "conditionality": "INCENSATION_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May you be blessed ✠"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.14",
@@ -260,7 +273,8 @@
         "fr": "Les neuf invocations chantées alternent Seigneur, ayez pitié et Christ, ayez pitié, puis reviennent à Seigneur, ayez pitié. Cette répétition implore la miséricorde divine."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Lord, have mercy."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.15",
@@ -277,7 +291,8 @@
         "fr": "Le Gloria loue Dieu, Le bénit, L’adore, Le remercie pour sa gloire et invoque Jésus-Christ comme Agneau de Dieu. Sa conclusion glorifie le Saint-Esprit avec le Père et le Fils."
       },
       "conditionality": "GLORIA_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Glory to God in the highest"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.16",
@@ -294,7 +309,8 @@
         "fr": "Avant la principale oraison d’ouverture, le prêtre salue l’assemblée par Le Seigneur soit avec vous, et reçoit la réponse Et avec votre esprit."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.17",
@@ -311,7 +327,8 @@
         "fr": "Le prêtre dit Prions et introduit la Collecte prévue pour la célébration. Cette invitation est fixe, tandis que la Collecte elle-même varie."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Let us pray."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.18",
@@ -328,7 +345,8 @@
         "fr": "Avant de proclamer l’Évangile, le prêtre demande en privé à Dieu de purifier son cœur et ses lèvres, en rappelant le prophète Isaïe, afin d’annoncer dignement l’Évangile."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Cleanse my heart and my lips"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.19",
@@ -345,7 +363,8 @@
         "fr": "La salutation du prêtre et sa réponse préparent la proclamation publique de l’Évangile. Ces paroles familières marquent un nouveau moment liturgique et non une répétition sans fonction."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.20",
@@ -362,7 +381,8 @@
         "fr": "Le prêtre annonce le saint Évangile, et la réponse rend gloire au Seigneur. La petite croix imprimée dans l’annonce appartient au texte liturgique."
       },
       "conditionality": "GOSPEL_HEADING_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Continuation ✠ of the Holy Gospel according to Matthew."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.21",
@@ -379,7 +399,8 @@
         "fr": "Le Credo professe la foi en un seul Dieu, en l’Incarnation, la Passion et la Résurrection de Jésus-Christ, au Saint-Esprit, à l’Église, au Baptême et à la vie future."
       },
       "conditionality": "CREDO_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "I believe"
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.22",
@@ -396,7 +417,8 @@
         "fr": "Le prêtre salue l’assemblée par Le Seigneur soit avec vous et reçoit la réponse habituelle. Cet échange ouvre la transition vers l’Offertoire."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.BEFORE_OFFERTORY.23",
@@ -413,7 +435,8 @@
         "fr": "Le prêtre dit Prions avant l’antienne d’Offertoire prévue pour le jour. L’invitation fixe précède un chant variable."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Let us pray."
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.01",
@@ -430,7 +453,8 @@
         "fr": "Le prêtre s’adresse au Père éternel et Lui demande de recevoir l’hostie offerte. Il évoque ses péchés et ses négligences, les personnes présentes et tous les fidèles chrétiens vivants et défunts. La portée de la prière dépasse donc les seules intentions du célébrant."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "living and dead"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.02",
@@ -447,7 +471,8 @@
         "fr": "La prière rappelle la dignité de la nature humaine, merveilleusement créée puis plus merveilleusement encore restaurée. Elle demande que le mystère de l’eau et du vin nous donne part à la divinité du Christ, puisqu’Il a pris part à notre humanité."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "partakers of his divinity"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.03",
@@ -464,7 +489,8 @@
         "fr": "Le prêtre offre le « calice du salut » et demande que l’offrande monte agréablement devant Dieu. L’intention embrasse expressément son propre salut et celui du monde entier."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "chalice of salvation"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.04",
@@ -481,7 +507,8 @@
         "fr": "Cette prière demande qu’un esprit humble et un cœur contrit trouvent grâce devant Dieu. Elle déplace l’attention des dons eux-mêmes vers la disposition intérieure qui accompagne l’offrande."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "contrite of heart"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.05",
@@ -498,7 +525,8 @@
         "fr": "La prière invoque directement le Sanctificateur tout-puissant et éternel, en Lui demandant de bénir le sacrifice préparé en Son saint nom."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Come, O Sanctifier"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.06",
@@ -515,7 +543,8 @@
         "fr": "Le texte publié de l’encensement demande que l’encens soit béni et reçu, puis rapproche sa montée de la prière qui s’élève vers Dieu. Il implore aussi la miséricorde et le feu de l’amour divin et de la charité durable."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Ps 140, 2–4"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.07",
@@ -532,7 +561,8 @@
         "fr": "Le texte du Lavabo est explicitement tiré du Psaume 25, 6–12. Il évoque le lavage des mains parmi les innocents, l’approche de l’autel, l’amour de la beauté de la maison de Dieu et la demande de miséricorde."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Ps 25, 6–12"
     },
     {
       "id": "AO.FORM.PRAYER.OFFERTORY.08",
@@ -549,7 +579,8 @@
         "fr": "Cette prière à la Sainte Trinité nomme la Passion, la Résurrection et l’Ascension du Christ, puis honore la Sainte Vierge, saint Jean-Baptiste, les saints Pierre et Paul et tous les saints. Elle demande le salut et leur intercession céleste."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Passion, Resurrection and Ascension"
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.01",
@@ -566,7 +597,8 @@
         "fr": "Le prêtre demande aux fidèles de prier pour que son sacrifice et le leur soient agréables au Père tout-puissant. La réponse demande à Dieu de recevoir le sacrifice des mains du prêtre, pour la gloire de Son nom et le bien de toute l’Église."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "my sacrifice and yours"
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.02",
@@ -583,7 +615,8 @@
         "fr": "Ce bloc publié contient la formule finale « Dans tous les siècles des siècles » (rendue par « World without end » dans la source anglaise), suivie de la réponse « Amen ». Il marque la conclusion audible après la Secrète, dont le texte varie selon le Propre de la Messe."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "World without end."
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.03",
@@ -600,7 +633,8 @@
         "fr": "Le dialogue de la Préface commence par « Le Seigneur soit avec vous », auquel répond « Et avec votre esprit ». Ces paroles forment un échange entre le célébrant et ceux qui répondent."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.04",
@@ -617,7 +651,8 @@
         "fr": "Le prêtre invite à élever les cœurs. La réponse déclare qu’ils sont tournés vers le Seigneur. Ce bref échange concerne l’orientation du cœur dans la prière."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Lift up your hearts."
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.05",
@@ -634,7 +669,8 @@
         "fr": "Le célébrant invite à rendre grâce au Seigneur notre Dieu ; la réponse reconnaît qu’il est juste et convenable de le faire. Cet échange introduit l’action de grâce avant le texte variable de la Préface."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Let us give thanks to the Lord"
     },
     {
       "id": "AO.FORM.PRAYER.TRANSITION.06",
@@ -651,7 +687,8 @@
         "fr": "Le Sanctus acclame la sainteté du Seigneur, Dieu des armées, et affirme que le ciel et la terre sont remplis de Sa gloire. Le Benedictus bénit Celui qui vient au nom du Seigneur ; « Hosanna au plus haut des cieux » figure dans les deux parties."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Holy, Holy, Holy, Lord God of Hosts."
     },
     {
       "id": "AO.FORM.PRAYER.CANON.01",
@@ -668,7 +705,8 @@
         "fr": "Le Canon s’ouvre par une supplication au Père miséricordieux, par Jésus-Christ, pour qu’Il reçoive et bénisse les offrandes. Sa première intention nommée concerne la sainte Église catholique, puis le Pape, l’évêque et ceux qui professent la foi catholique et apostolique."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "most merciful Father"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.02",
@@ -685,7 +723,8 @@
         "fr": "La prière fait mémoire de serviteurs de Dieu nommés, puis de tous les assistants dont Dieu connaît la foi et la dévotion. Elle étend l’intention à leurs proches, à la rédemption des âmes et à l’espérance de leur salut."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Remember, O Lord"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.03",
@@ -702,7 +741,8 @@
         "fr": "Cette prière honore la mémoire de la toujours Vierge Marie et de saint Joseph, puis nomme les apôtres, les martyrs et tous les saints. Elle demande que Dieu protège et secoure ceux qui prient par leurs mérites et leurs prières."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "In communion with"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.04",
@@ -719,7 +759,8 @@
         "fr": "La prière demande à Dieu de recevoir l’oblation du service du célébrant et de toute Sa famille. Elle demande la paix pendant la vie terrestre, la délivrance de la damnation éternelle et une place parmi les élus."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Order our days in Thy peace"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.05",
@@ -736,7 +777,8 @@
         "fr": "Le Canon supplie Dieu de rendre l’offrande bénie, agréée, ratifiée, raisonnable et acceptable, et demande qu’elle devienne pour nous le Corps et le Sang de Jésus-Christ."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "make blessed, approved"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.06",
@@ -753,7 +795,8 @@
         "fr": "Le texte publié rappelle que le Christ prit le pain avant Sa Passion, leva les yeux, rendit grâce, bénit, rompit le pain et le donna à Ses disciples. Viennent ensuite les paroles de la Consécration sur l’Hostie."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "FOR THIS IS MY BODY."
     },
     {
       "id": "AO.FORM.PRAYER.CANON.07",
@@ -770,7 +813,8 @@
         "fr": "La prière publiée rappelle que le Christ prit le Calice après le repas, rendit grâce, le bénit et le présenta à Ses disciples. Elle contient les paroles sur le Calice et l’instruction de faire ces choses en Sa mémoire."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "FOR THIS IS THE CHALICE OF MY BLOOD"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.08",
@@ -787,7 +831,8 @@
         "fr": "La prière rappelle la Passion, la Résurrection et l’Ascension du Christ, puis parle de l’offrande d’une Victime pure, sainte et immaculée, du Pain de la vie éternelle et du Calice du salut éternel."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "calling to mind the blessed Passion"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.09",
@@ -804,7 +849,8 @@
         "fr": "Le texte demande à Dieu de regarder favorablement les offrandes et nomme celles d’Abel, le sacrifice d’Abraham et ce que Melchisédech offrit. Ces noms et ces rapprochements figurent directement dans la prière du Canon."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Abel"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.10",
@@ -821,7 +867,8 @@
         "fr": "La prière demande que les offrandes soient portées par le saint Ange de Dieu à Son autel céleste et supplie que ceux qui reçoivent le Corps et le Sang de Son Fils soient remplis de bénédiction et de grâce."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Thy holy Angel"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.11",
@@ -838,7 +885,8 @@
         "fr": "Le prêtre prie pour les serviteurs de Dieu défunts, en laissant des emplacements pour des noms particuliers, puis élargit la demande à tous ceux qui reposent dans le Christ. Il demande pour eux le rafraîchissement, la lumière et la paix."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "a place of refreshment, light and peace"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.12",
@@ -855,7 +903,8 @@
         "fr": "La prière nomme ses locuteurs des serviteurs pécheurs qui mettent leur confiance dans l’abondante miséricorde de Dieu. Elle demande une place auprès des apôtres, des martyrs et de tous les saints, par le pardon plutôt qu’en s’appuyant sur leurs propres mérites."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "thy sinful servants"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.13",
@@ -872,7 +921,8 @@
         "fr": "La prière dit que Dieu crée continuellement tous ces biens, les sanctifie, les vivifie, les bénit et nous les accorde par le Christ."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "sanctify, quicken, bless"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.14",
@@ -889,7 +939,8 @@
         "fr": "La doxologie adresse tout honneur et toute gloire à Dieu le Père tout-puissant, par le Christ, avec Lui et en Lui, dans l’unité du Saint-Esprit."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Through him, and with him, and in him"
     },
     {
       "id": "AO.FORM.PRAYER.CANON.15",
@@ -906,7 +957,8 @@
         "fr": "La conclusion audible se formule par « Dans tous les siècles des siècles » (l’anglais de la source dit « World without end »), et la réponse est « Amen ». Cet échange termine le Canon avant le rite suivant."
       },
       "conditionality": null,
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "World without end."
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.01",
@@ -923,7 +975,8 @@
         "fr": "Le prêtre introduit le Pater noster en rappelant les préceptes salutaires et l’enseignement divin. L’expression « nous osons dire » conduit directement à la prière."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Admonished by saving precepts"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.02",
@@ -940,7 +993,8 @@
         "fr": "Le prêtre récite le Notre Père, depuis l’invocation du Père jusqu’à la demande de ne pas entrer en tentation. La source confie ensuite « Mais délivrez-nous du mal » à la réponse et « Amen » à la conclusion privée du prêtre."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Our Father, who art in heaven"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.03",
@@ -957,7 +1011,8 @@
         "fr": "À la suite du Notre Père, le prêtre demande la délivrance des maux passés, présents et futurs. Il invoque l’intercession de la Vierge Marie, des apôtres et des saints, demandant la paix, la liberté du péché et la protection contre le trouble."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Deliver us, we beseech thee"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.04",
@@ -974,7 +1029,8 @@
         "fr": "La brève conclusion publique dit « Dans tous les siècles des siècles », à laquelle répond « Amen ». Elle termine la prière privée précédente sans en répéter tout le texte."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "World without end."
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.05",
@@ -991,7 +1047,8 @@
         "fr": "Le prêtre souhaite publiquement que la paix du Seigneur demeure avec ceux auxquels il s’adresse ; la réponse est « Et avec votre esprit ». La formule publiée comporte trois signes de croix."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "May the peace ✠ of the Lord"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.06",
@@ -1008,7 +1065,8 @@
         "fr": "Le prêtre demande que la commixtion et la consécration du Corps et du Sang du Christ servent à la vie éternelle de ceux qui les reçoivent."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "May this mingling and consecration"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.07",
@@ -1025,7 +1083,8 @@
         "fr": "L’Agnus Dei chanté s’adresse à l’Agneau de Dieu qui enlève les péchés du monde. Les deux premières invocations demandent la miséricorde ; la troisième demande la paix."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Lamb of God, who takest away"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.08",
@@ -1042,7 +1101,8 @@
         "fr": "S’adressant à Jésus-Christ, le prêtre rappelle Ses paroles de paix aux apôtres. Il Lui demande de considérer la foi de Son Église plutôt que ses péchés et de lui accorder la paix et l’unité."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Peace I leave you, My peace I give you"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.09",
@@ -1059,7 +1119,8 @@
         "fr": "Le prêtre s’adresse au Christ, Fils du Dieu vivant, rappelle Sa mort qui donne la vie et demande la délivrance du mal ainsi que la fidélité à Ses commandements."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Son of the living God"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.10",
@@ -1076,7 +1137,8 @@
         "fr": "Le prêtre demande que la réception du Corps du Christ ne soit pas pour lui jugement ou condamnation, mais protection et guérison de l’âme et du corps par la miséricorde."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Let not the partaking of Thy Body"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.11",
@@ -1093,7 +1155,8 @@
         "fr": "La brève prière privée annonce que le prêtre recevra le Pain du ciel et invoquera le nom du Seigneur."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Bread of heaven"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.12",
@@ -1110,7 +1173,8 @@
         "fr": "Le prêtre répète trois fois qu’il n’est pas digne de recevoir le Christ et demande que la parole de Celui-ci guérisse son âme."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Lord, I am not worthy"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.13",
@@ -1127,7 +1191,8 @@
         "fr": "La prière demande que le Corps de Jésus-Christ garde l’âme du prêtre pour la vie éternelle. Elle emploie la première personne : « mon âme »."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "May the Body ✠ of our Lord"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.14",
@@ -1144,7 +1209,8 @@
         "fr": "Le prêtre demande comment rendre au Seigneur Ses bienfaits, puis parle de prendre le calice du salut, d’invoquer le Seigneur et de L’appeler dans la louange."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "What return shall I make"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.15",
@@ -1161,7 +1227,8 @@
         "fr": "Le prêtre demande que le Sang de Jésus-Christ garde son âme pour la vie éternelle. Les paroles correspondent à celles de la communion sous l’Hostie, mais nomment le Sang au lieu du Corps."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "May the Blood ✠ of our Lord"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.16",
@@ -1178,7 +1245,8 @@
         "fr": "Cette confession reconnaît les péchés de pensée, de parole et d’action, et demande aux saints nommés ainsi qu’au prêtre de prier pour celui qui la prononce."
       },
       "conditionality": "OPTIONAL_LOCAL_OLDER_CUSTOM",
-      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL"
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "text_anchor_en": "I confess to Almighty God"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.17",
@@ -1195,7 +1263,8 @@
         "fr": "La formule demande au Dieu tout-puissant de faire miséricorde, de pardonner les péchés et de conduire ceux auxquels elle s’adresse à la vie éternelle ; elle est suivie de la réponse « Amen »."
       },
       "conditionality": "OPTIONAL_LOCAL_OLDER_CUSTOM",
-      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL"
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "text_anchor_en": "May Almighty God have mercy upon you"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.18",
@@ -1212,7 +1281,8 @@
         "fr": "La formule demande au Dieu tout-puissant et miséricordieux le pardon, l’absolution et la rémission des péchés ; elle se conclut par « Amen »."
       },
       "conditionality": "OPTIONAL_LOCAL_OLDER_CUSTOM",
-      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL"
+      "source_status": "LOCAL_CUSTOM_PRE1960_SURVIVAL",
+      "text_anchor_en": "May the Almighty and merciful God"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.19",
@@ -1229,7 +1299,8 @@
         "fr": "L’invitation publique désigne l’Agneau de Dieu comme Celui qui enlève les péchés du monde."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Behold the Lamb of God"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.20",
@@ -1246,7 +1317,8 @@
         "fr": "L’invitation à la communion est suivie de la même prière d’indignité et de guérison, répétée trois fois dans un bloc distinct."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "Lord, I am not worthy"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.21",
@@ -1263,7 +1335,8 @@
         "fr": "La formule demande que le Corps du Christ garde l’âme de celui qui communie pour la vie éternelle. Elle dit « ton âme », à la différence de la formule précédente du prêtre : « mon âme »."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "preserve thy soul unto life everlasting"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.22",
@@ -1280,7 +1353,8 @@
         "fr": "Le prêtre demande que ce qui a été reçu par la bouche le soit aussi avec une âme pure, et qu’un don temporel devienne pour nous un remède éternel."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "what we have taken with our mouth"
     },
     {
       "id": "AO.FORM.PRAYER.COMMUNION.23",
@@ -1297,7 +1371,8 @@
         "fr": "Le prêtre demande que le Corps et le Sang du Christ demeurent au plus profond de lui et qu’aucune tache du péché ne reste après la réception des saints mystères."
       },
       "conditionality": null,
-      "source_status": "NORMATIVE_1962"
+      "source_status": "NORMATIVE_1962",
+      "text_anchor_en": "May Thy Body, O Lord"
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.01",
@@ -1314,7 +1389,8 @@
         "fr": "Après la communion, le prêtre dit de nouveau « Le Seigneur soit avec vous », et la réponse est « Et avec votre esprit ». Cet échange reprend la prière publique commune après les rites de communion."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.02",
@@ -1331,7 +1407,8 @@
         "fr": "Le « Prions » public du prêtre introduit la prière de Postcommunion. Ce bloc est une brève invitation et non le texte de la prière propre à la Messe célébrée."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Let us pray."
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.03",
@@ -1348,7 +1425,8 @@
         "fr": "Le prêtre et ceux qui répondent échangent la salutation familière juste avant le renvoi. Dans cette source, elle demeure un bloc public distinct."
       },
       "conditionality": "DISMISSAL_FORM_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.04",
@@ -1365,7 +1443,8 @@
         "fr": "La formule de renvoi ordinaire publiée dit « Allez, la Messe est finie » et reçoit pour réponse « Rendons grâces à Dieu »."
       },
       "conditionality": "DISMISSAL_FORM_DEPENDENT",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "Go, the Mass is ended."
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.05",
@@ -1382,7 +1461,8 @@
         "fr": "Dans Placeat tibi, le prêtre demande à la Sainte Trinité d’agréer son service et le Sacrifice offert par un ministre indigne, et prie pour que celui-ci profite à lui-même et à ceux pour qui il l’a offert."
       },
       "conditionality": "STANDARD_FIXED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May the homage of my service be pleasing"
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.06",
@@ -1399,7 +1479,8 @@
         "fr": "Le prêtre invoque publiquement la bénédiction de Dieu tout-puissant en nommant le Père, le Fils et le Saint-Esprit ; la réponse est « Amen »."
       },
       "conditionality": "BLESSING_MAY_BE_OMITTED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "May almighty God bless you"
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.07",
@@ -1416,7 +1497,8 @@
         "fr": "Lorsque le dernier Évangile a lieu, le prêtre prononce la salutation habituelle et reçoit « Et avec votre esprit ». Elle ouvre une séquence évangélique finale distincte."
       },
       "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The Lord be with you."
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.08",
@@ -1433,7 +1515,8 @@
         "fr": "Le prêtre annonce le commencement du saint Évangile selon saint Jean ; la réponse est « Gloire à Vous, Seigneur ». Le signe de croix figure dans l’annonce publiée."
       },
       "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "The beginning ✠ of the holy Gospel"
     },
     {
       "id": "AO.FORM.PRAYER.CONCLUSION.09",
@@ -1450,7 +1533,8 @@
         "fr": "Le dernier Évangile publié parle du Verbe qui était auprès de Dieu et qui était Dieu, de la vie et de la lumière, du témoignage de Jean et de ceux qui accueillent le Verbe. Sa phrase centrale proclame : « Et le Verbe s’est fait chair »."
       },
       "conditionality": "LAST_GOSPEL_MAY_BE_OMITTED",
-      "source_status": null
+      "source_status": null,
+      "text_anchor_en": "AND THE WORD WAS MADE FLESH."
     }
   ]
 }
