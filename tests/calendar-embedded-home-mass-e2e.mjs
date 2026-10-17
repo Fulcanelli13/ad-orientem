@@ -69,7 +69,7 @@ try{
     "Legacy mini-wheel must not obscure the Clock in Home");
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalV2Coming').count(),0,
     "Embedded Today must not repeat Coming next");
-  assert.equal(await page.locator(".aoTodayV2CalendarInline .aoCalYearDailyTrack").count(),1,"A separate daily-colour track must survive Calendar embedding");
+  assert.equal(await page.locator(".aoTodayV2CalendarInline .aoCalYearDailyTrack").count(),0,"Home Year must not repeat the thin outer day-colour ring");
   const wheel=await page.locator('.aoTodayV2CalendarInline .aoClockDial').evaluate(el=>({
     verified:Number(el.dataset.verifiedDays),gradient:el.style.getPropertyValue("--ao-clock-daily-gradient"),
     seasons:el.querySelectorAll("[data-cal-clock-season]").length
@@ -81,16 +81,15 @@ try{
     const home=document.querySelector(".homeScreen.aoTodayV2");
     const slot=home?.querySelector("[data-home-calendar-inline]");
     const wheel=slot?.querySelector(".aoClockDial");
-    const timeline=slot?.querySelector(".aoCalYearTrack");
-    if(!wheel||!timeline)return false;
-    const style=getComputedStyle(slot),wr=wheel.getBoundingClientRect(),tr=timeline.getBoundingClientRect();
+    if(!wheel)return false;
+    const style=getComputedStyle(slot),wr=wheel.getBoundingClientRect();
     return home.dataset.aoHomeCalendarView==="year"&&!slot.hidden&&
-      style.display!=="none"&&wr.width>90&&wr.height>90&&tr.width>120&&tr.height>25;
+      style.display!=="none"&&wr.width>90&&wr.height>90;
   },null,{timeout:15000}).catch(async error=>{
     console.log("YEAR_VISUAL_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
       const h=document.querySelector(".homeScreen.aoTodayV2"),slot=h?.querySelector("[data-home-calendar-inline]");
       const root=slot?.querySelector("#ao-calendar-modular-root");
-      const child=root?.querySelector(".aoClockDial"),track=root?.querySelector(".aoCalYearTrack");
+      const child=root?.querySelector(".aoClockDial"),track=root?.querySelector(".aoClockContext");
       const data=node=>node?({outer:node.outerHTML.slice(0,300),rect:node.getBoundingClientRect().toJSON(),display:getComputedStyle(node).display}):null;
       return {homeView:h?.dataset.aoHomeCalendarView,tabs:[...h?.querySelectorAll(".aoTodayV2Tabs button")||[]].map(n=>({text:n.textContent,active:n.getAttribute("aria-current")})),
         slot:data(slot),root:data(root),wheel:data(child),timeline:data(track),calendarStatus:globalThis.AO_CALENDAR_APP_V1?.status?.()};
@@ -101,7 +100,17 @@ try{
   await page.locator('.aoTodayV2CalendarInline .aoClockDetail').waitFor({state:"visible",timeout:12000});
   await page.locator('.aoTodayV2CalendarInline [data-cal-clock-close]').click();
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockDetail').count(),0);
-  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),0,
+    "Home Year must not duplicate Clock with a second timeline");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearSeason').count(),0,
+    "Home Year must not stack eleven redundant seasonal cards");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockContext').count(),1,
+    "One contextual season summary should replace the duplicated journey");
+  const feastIndex=page.locator('.aoTodayV2CalendarInline .aoClockFeastMenu');
+  await feastIndex.locator('summary').click();
+  await feastIndex.locator('button[data-cal-clock-feast="2026-11-01"]').waitFor({state:"visible",timeout:12000});
+  await feastIndex.locator('button[data-cal-clock-feast="2026-11-02"]').waitFor({state:"visible",timeout:12000});
+  await feastIndex.locator('summary').click();
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
     "Embedded Calendar must not repeat the host Day/Month/Year tabs");
   await waitForWeekLoader(page);
