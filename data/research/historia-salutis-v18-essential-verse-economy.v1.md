@@ -15,6 +15,17 @@ This is a proposal for using original Scripture as the direct narrator in **one 
 | Required causal setup restored from prior eight-chapter correction | **1** |
 | **Total essential units individually accounted for** | **93** |
 
+## Quantified source economy after automated verification
+
+The installed CPDV and Douay–Rheims witnesses now pass the original/selected verse-coordinate checks for **all 93 essential units**. The historical Crampon coordinates of Jacob's wrestling and Stephen's martyrdom are handled explicitly rather than forced into the wrong Bible edition.
+
+| Scope | Original verse units | Proposed verse units | Reduction |
+|---|---:|---:|---:|
+| All 93, **nominal** counts (mixes old/source verse systems) | 1,207 | 1,051 | 156 |
+| **Like-for-like comparable** units, excluding two historical numbering exceptions | 1,189 | 1,034 | **155 (13.0%)** |
+
+A different verse count for Stephen arises from a source-edition split/merge, *not* an omitted sentence. This measure includes only A/main-narrative source excerpts; no new B context bridges, supplementary reference material or source text has been published. Red Sea H21-03 correctly became longer than its original v18 passage in order to restore the pursuit, so this is **not** optimization by a blind percentage target.
+
 **The protected list is not permission to present 34 long passages without an editorial reason.** It reflects source-integrity safeguards: the full Ten Commandments, Beatitudes, Lord's Prayer, first covenant promises, the Annunciation and Fiat, Eucharistic institution, the Resurrection's key witness and commissioning, and the Lamb/New Creation. The remaining baseline passages require a proper continuous reading before any release approval.
 
 ## Why the highest-impact cuts differ
