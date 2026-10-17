@@ -508,24 +508,8 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
-  // Capture whether this user-visible route actually paints the folio.
-  // The canonical semantic rail may be hidden; only the single folio
-  // posture cue must be finger-sized and visibly actionable.
-  const entryGeometry=await page.evaluate(()=>{
-    const root=document.querySelector("#aoPray435930");
-    const body=root?.querySelector(".aoP435930AngelusReader");
-    const note=root?.querySelector(".aoFolioPostureNote");
-    const summary=note?.querySelector("summary");
-    const candidate=root?.querySelector(".aoP435930Mount");
-    const all=[root,candidate,body,note,summary].map(el=>el?({
-      tag:el.tagName,classes:el.className,rect:el.getBoundingClientRect().height,
-      display:getComputedStyle(el).display,hidden:el.hidden,
-      parentDisplay:el.parentElement?getComputedStyle(el.parentElement).display:null
-    }):null);
-    return {elements:all,open:root?.classList.contains("open"),view:candidate?.dataset?.aoPrayView};
-  });
-  console.log("Angelus visual-entry geometry: "+JSON.stringify(entryGeometry));
-  await shot("03a-pray-angelus-entry-debug");
+  // The folio intentionally has one visible posture cue; its source-owned
+  // semantic rail stays hidden to avoid duplicating a second control.
   await page.waitForFunction(()=>document.querySelector(
     '#aoPray435930 .aoFolioPostureNote > summary'
   )?.getBoundingClientRect()?.height>=44,null,{timeout:12000});
