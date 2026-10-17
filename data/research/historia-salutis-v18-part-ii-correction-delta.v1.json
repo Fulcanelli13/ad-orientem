@@ -242,13 +242,13 @@
           ],
           "principalReadings": [
             "Judges 6:11–16",
-            "Judges 6:20–24"
+            "Judges 6:17–24"
           ],
           "candidateEdition": "cpdv-2009",
           "principalEdition": "cpdv-2009",
           "editorialRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
           "principalRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
-          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
           "fullCompanionReadings": [
             {
               "reference": "Judges 6:11–24",
@@ -259,7 +259,14 @@
           ],
           "textReviewed": false,
           "rightsReviewed": false,
-          "approved": false
+          "approved": false,
+          "continuityCorrections": [
+            {
+              "replaced": "Judges 6:20–24",
+              "with": "Judges 6:17–24",
+              "reason": "The angel's directive to place a prepared offering presupposes Gideon's request/sign and preparation in 6:17–19."
+            }
+          ]
         },
         {
           "unitId": "H27-03",
@@ -334,14 +341,14 @@
           ],
           "principalReadings": [
             "Judges 16:4–5",
-            "Judges 16:17–22",
+            "Judges 16:15–22",
             "Judges 16:23–30"
           ],
           "candidateEdition": "cpdv-2009",
           "principalEdition": "cpdv-2009",
           "editorialRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
           "principalRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
-          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
           "fullCompanionReadings": [
             {
               "reference": "Judges 16:1–31",
@@ -355,6 +362,13 @@
           "approved": false,
           "continuityBridgeReferences": [
             "Judges 16:4–22"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "Judges 16:17–22",
+              "with": "Judges 16:15–22",
+              "reason": "Delilah's accusation and continued pressure motivate Samson's disclosure; restore 16:15–16."
+            }
           ]
         }
       ]
@@ -621,21 +635,43 @@
           "candidateApproval": "PROVISIONAL_TEXTUAL_READ_ONLY",
           "principalReadings": [
             "Esther 4:5–7",
-            "Esther 5:5–6",
+            "Esther 5:1–2",
             "Esther 5:8–9",
             "Esther 5:12–13",
             "Esther 7:13–19",
             "Esther 8:1–3",
             "Esther 8:12–14",
-            "Esther 9:17–20",
-            "Esther 11:2–6",
-            "Esther 12:3–8",
+            "Esther 9:17–24",
+            "Esther 11:2–10",
+            "Esther 12:3–12",
             "Esther 14:16–17",
             "Esther 14:20–22"
           ],
           "principalEdition": "cpdv-2009",
           "principalRationale": "Explicit CPDV order: upbringing, Haman's genocidal edict, Esther's risky choice, Greek Esther prayer, audience, accusation, counter-decree, defensive violence, and Purim. Greek expanded audience stays a companion, not a second consecutive entrance.",
-          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING"
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "continuityCorrections": [
+            {
+              "replaced": "Esther 5:5–6",
+              "with": "Esther 5:1–2",
+              "reason": "Establish Haman's elevation and Mordecai's refusal before Haman's rage."
+            },
+            {
+              "replaced": "Esther 9:17–20",
+              "with": "Esther 9:17–24",
+              "reason": "Esther's request for a second banquet explains the second day in 11:2."
+            },
+            {
+              "replaced": "Esther 11:2–6",
+              "with": "Esther 11:2–10",
+              "reason": "Include Haman's condemnation and execution; avoid jumping from accusation straight to reversal."
+            },
+            {
+              "replaced": "Esther 12:3–8",
+              "with": "Esther 12:3–12",
+              "reason": "Include authorization and delivery of Jews' defensive action, not only a new request to the king."
+            }
+          ]
         }
       ]
     },
@@ -977,8 +1013,9 @@
           ],
           "principalReadings": [
             "John 9:1–3",
-            "John 9:6–7",
+            "John 9:5–7",
             "John 9:10–12",
+            "John 9:13–17",
             "John 9:24–25",
             "John 9:35–38"
           ],
@@ -986,7 +1023,7 @@
           "principalEdition": "cpdv-2009",
           "editorialRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
           "principalRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
-          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
           "fullCompanionReadings": [
             {
               "reference": "John 9:1–41",
@@ -1000,6 +1037,23 @@
           "approved": false,
           "continuityBridgeReferences": [
             "John 9:24–38"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "John 9:6–7",
+              "with": "John 9:5–7",
+              "reason": "Preserve Jesus' explicit light-of-world claim, essential to the sign's theological meaning."
+            },
+            {
+              "replaced": "John 9:24–25",
+              "with": "John 9:13–17",
+              "reason": "Identify the Pharisees and the interrogation before the formerly blind man's testimony."
+            },
+            {
+              "replaced": "John 9:24–25",
+              "with": "John 9:13–17 plus reinserted John 9:24–25",
+              "reason": "Both establish the Pharisees' challenge and preserve the man's short first-person witness."
+            }
           ]
         }
       ]
@@ -1059,13 +1113,13 @@
             "Acts 16:16–21",
             "Acts 16:22–26",
             "Acts 16:27–34",
-            "Acts 16:37–40"
+            "Acts 16:35–40"
           ],
           "candidateEdition": "cpdv-2009",
           "principalEdition": "cpdv-2009",
           "editorialRationale": "Restore enslaved girl's exorcism, owners' lost divination profit and the magistrates' explicit charge before the imprisonment. Preserve jailer's baptism and Paul's Roman-citizen protest.",
           "principalRationale": "Restore enslaved girl's exorcism, owners' lost divination profit and the magistrates' explicit charge before the imprisonment. Preserve jailer's baptism and Paul's Roman-citizen protest.",
-          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
           "fullCompanionReadings": [
             {
               "reference": "Acts 16:16–40",
@@ -1079,6 +1133,13 @@
           "approved": false,
           "continuityBridgeReferences": [
             "Acts 16:16–21"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "Acts 16:37–40",
+              "with": "Acts 16:35–40",
+              "reason": "Paul's citizenship protest replies to the magistrates' release order at Acts 16:35–36; omitting it leaves the objection unmotivated."
+            }
           ]
         },
         {
@@ -1458,5 +1519,17 @@
     "legacyUnits": 12,
     "addedUnits": 28,
     "totalUnits": 40
+  },
+  "continuityPass": {
+    "method": "Visual inspection of the first and final CPDV source verses at high-risk fragment seams; restored necessary antecedents; NOT a completed oral read-through or Catholic editorial approval",
+    "alteredUnits": [
+      "H27-02",
+      "H27-05",
+      "H42-07",
+      "H54-05",
+      "H73-02"
+    ],
+    "remaining": "Other seams carry original omission markers; still require live sequential reading and editor acceptance",
+    "date": "2026-10-17"
   }
 }
