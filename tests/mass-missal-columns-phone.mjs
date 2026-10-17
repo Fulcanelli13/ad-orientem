@@ -100,6 +100,28 @@ try{
     "Missal chalice context language or form is wrong");
   assert.ok(!(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>1),
     "Long practical Missal description overflows "+width+"px viewport");
+  // Source-backed rubrics are BOOK annotations beneath their exact Latin
+  // and vernacular pairs, not a second LIVE priest clock.
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.2"));
+  await page.waitForFunction(()=>document.querySelectorAll(
+    '.ao-missal-inline-rubrics[data-source-authority="MR62_RITUS"] .ao-missal-rubric-action').length===3,
+    null,{timeout:5000});
+  const offertoryRubrics=await page.evaluate(()=>({
+    texts:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
+    note:document.querySelector(".ao-missal-inline-rubrics"),
+    link:document.querySelector(".ao-missal-inline-rubrics a")?.getAttribute("href"),
+    width:document.documentElement.scrollWidth-innerWidth,
+  }));
+  assert.equal(offertoryRubrics.texts.length,3,"Offertory has three 1962 paten gestures");
+  assert.match(offertoryRubrics.texts[0],lang==="fr"?/Le prêtre/:/The priest/);
+  assert.match(offertoryRubrics.link||"",/ritus-servandus/i);
+  assert.ok(offertoryRubrics.width<=1,"Missal inline Offertory rubric overflows phone width");
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.2"));
+  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
+    .some(x=>/remembers the living|mémoire des vivants/i.test(x.textContent)),null,{timeout:5000});
+  assert.equal(await page.locator(".ao-canon-inline-rubrics").count(),0,
+    "Missal should use restrained book rubric, not duplicate LIVE Canon rail note");
+
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
  }
