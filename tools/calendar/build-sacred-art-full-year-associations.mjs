@@ -2,12 +2,23 @@
 // Sacred art source-research index: MANY candidate paintings per observed 1962 day.
 // Do not mistake a seasonal fallback for an actual saint or appointed Gospel.
 import assert from "node:assert/strict";
-import {readFileSync,mkdirSync,writeFileSync} from "node:fs";
+import {readFileSync,mkdirSync,writeFileSync,existsSync} from "node:fs";
 import {buildLiturgicalYear} from "../../src/calendar/liturgical-year.js";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const folder="artifacts/sacred-art-coverage";
 const year=read("artifacts/calendar-oracle/1962-2026-full-year-audit.json");
-const observed=read(folder+"/liturgical-priority-v1.json").observedYear.days;
+// The day resolver is the authoritative owner. The older module-level research
+// audit is optional and may be absent or held for an unrelated rights decision.
+const observedPath=folder+"/liturgical-priority-v1.json";
+const normalRank=value=>{
+ const roman=String(value||"").match(/\b(IV|III|II|I)\s*class\b/i)?.[1];
+ return roman?({I:1,II:2,III:3,IV:4})[roman.toUpperCase()]:null;
+};
+const observed=existsSync(observedPath)?
+ read(observedPath).observedYear.days:
+ year.rows.map(r=>({date:r.date,rank:normalRank(r.rawRank),
+   observedPrincipalId:r.mainId,title:r.title,status:r.failed?"UNRESOLVED_SOURCE_DAY":"RESOLVED_SOURCE_DAY"}));
+assert.ok(observed.every(x=>Number.isInteger(x.rank)),"Observed rank unresolved");
 const art=read("data/calendar/sacred-art-candidates.v1.json").artworks;
 const exact=read("data/calendar/sacred-art-1962-exact-feast-source-links.v1.json").links;
 const context=read("data/calendar/sacred-art-2026-i-class-contextual-reuse.v1.json").entries;
