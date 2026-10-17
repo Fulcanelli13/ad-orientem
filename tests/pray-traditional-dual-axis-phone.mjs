@@ -61,6 +61,14 @@ try{
  await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");
+ const openingSky=await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").evaluate(el=>({
+  mode:el.dataset.aoQuietDailyHorizon,phase:el.dataset.aoHorizonPhase,
+  total:el.dataset.aoHorizonTotal,height:el.querySelector(".aoQuietHorizonCanvas")?.getBoundingClientRect().height
+ }));
+ assert.deepEqual([openingSky.mode,openingSky.phase,openingSky.total],["morning","0","11"]);
+ assert.ok(openingSky.height>=85&&openingSky.height<=135,
+  "Quiet sky must be a minor editorial accent, not the dominant screen: "+JSON.stringify(openingSky));
+
  assert.equal(await page.locator("#aoPray435930 [data-ao-daily-options]").evaluate(x=>x.open),false,
    "Reading options should not crowd the opening prayer");
  const opening=await page.evaluate(()=>{
@@ -84,11 +92,27 @@ try{
  assert.equal((await snapshot()).index,1,"Horizontal swipe did not move exactly one daily prayer card");
  await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(b=>b.click());
  assert.equal((await snapshot()).index,2,"Daily prayer timeline failed to navigate");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(6).evaluate(b=>b.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"2",
+  "Morning atmosphere must evolve with the actual prayer cursor");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(11).evaluate(b=>b.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"4");
+ await page.screenshot({path:resolve(captures,"morning-daylight-390-fr.png"),animations:"disabled"});
+
  // Switching dayparts preserves the source sequence and resets the card cursor.
  await page.locator("#aoPray435930 [data-tp381-daypart='evening']").evaluate(b=>b.click());
  await page.screenshot({path:resolve(captures,"evening-390-fr.png"),animations:"disabled"});
  const evening=await snapshot();
  assert.equal(evening.index,0);assert.equal(evening.kind,"daily");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-quiet-daily-horizon"),"evening");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"13");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(8).evaluate(b=>b.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"3",
+  "Evening atmosphere must pass from blue hour to nightfall");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(13).evaluate(b=>b.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"4");
+ await page.screenshot({path:resolve(captures,"evening-night-390-fr.png"),animations:"disabled"});
+
  await open("pray.nightly_examen");
  await page.screenshot({path:resolve(captures,"examen-390-fr.png"),animations:"disabled"});
  const exam=await snapshot();
