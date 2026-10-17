@@ -71,10 +71,14 @@ footer a{color:#d8bd89}
 @media(max-width:930px){
  main{grid-template-columns:1fr;gap:14px}
  .info{min-height:0}
- .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;width:100%;max-height:min(61dvh,620px);overflow:auto;overscroll-behavior:contain;background:#101821f7;border:1px solid #54616d;border-radius:16px 16px 0 0;padding:17px 17px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #000b}
+ .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;width:100%;max-height:min(50dvh,460px);overflow:auto;overscroll-behavior:contain;background:#101821f7;border:1px solid #54616d;border-radius:16px 16px 0 0;padding:17px 17px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #000b}
  .info.has-selection #object-card>.row{position:sticky;top:-17px;z-index:5;padding:10px 0;background:#101821}
  .info.has-selection h2{font-size:23px}
  .info.has-selection .definition{font-size:14px}
+ body.object-open{overflow:hidden}
+ body.object-open .photo-viewport{height:min(38dvh,330px);overflow:auto;touch-action:pan-x pan-y}
+ body.object-open .inspection-stage{max-height:min(38dvh,330px);overflow-y:auto}
+ body.object-open .inspection-stage img{height:min(27dvh,230px)}
  .wrap{padding-top:8px}header{align-items:flex-start}
 }
 @media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.marker{width:44px;height:44px}.info{padding:16px}.photobar{font-size:11px}}
@@ -140,7 +144,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,entries:new Map(),questions:[],inspections:[],view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],inspections:[],view:"church",loaded:false};
 const CHURCH={caption:"High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress",credit:"Anthony O'Neil · CC BY-SA 2.0 ↗",url:"https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg"};
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function findSpot(id){return SPOTS.find(x=>x.id===id)||state.inspections.filter(x=>x.object_id===id).map(x=>({id:x.object_id,g:x.glossary_id,title:x.label,match:"D",inspection:x}))[0];}
@@ -162,6 +166,7 @@ function showInspection(asset){
 function select(id,from){
  const spot=findSpot(id);if(!spot)return;
  if(spot.inspection)showInspection(spot.inspection);else showChurch();
+ if(!state.selected)state.returnScroll=window.scrollY;
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
  $("intro-card").hidden=true;$("object-card").hidden=false;
@@ -173,7 +178,17 @@ function select(id,from){
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
  buildDefinition(spot);renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  $("info").classList.add("has-selection");
- if(window.innerWidth<930){window.scrollTo({top:0,behavior:"instant"});}
+ document.body.classList.add("object-open");
+ if(window.innerWidth<930){
+   window.scrollTo(0,0);
+   if(!spot.inspection){
+     requestAnimationFrame(()=>{
+       const viewport=$("photo-viewport"),photo=$("photo-canvas");
+       viewport.scrollLeft=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
+       viewport.scrollTop=Math.max(0,photo.clientHeight*spot.y/100-viewport.clientHeight/2);
+     });
+   }
+ }
 }
 function buildDefinition(spot){
  const e=state.entries.get(spot.g);
@@ -203,12 +218,14 @@ function renderQuestions(){
  }
 }
 function closeCard(){
- state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");state.returnFocus=state.returnFocus||$("object-choices");
+ state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");document.body.classList.remove("object-open");state.returnFocus=state.returnFocus||$("object-choices");
+ const restoreY=state.returnScroll;state.returnScroll=0;
  $("intro-card").hidden=false;$("object-card").hidden=true;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed","false"));
  let previous=state.returnFocus;
  if(previous&&previous.isConnected&&typeof previous.focus==="function")previous.focus({preventScroll:true});
  else $("photo-viewport").focus({preventScroll:true});
+ if(window.innerWidth<930)window.scrollTo(0,restoreY);
 }
 for(const spot of SPOTS){
  const b=document.createElement("button");b.type="button";b.className="marker";b.dataset.object=spot.id;b.style.left=spot.x+"%";b.style.top=spot.y+"%";b.title=spot.title;b.setAttribute("aria-label",spot.title);b.setAttribute("aria-pressed","false");b.textContent=spot.n;
