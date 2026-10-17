@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:32,protected:34,unchanged:25,editionCorrections:2});
+assert.deepEqual(economy.counts,{essential:93,edited:31,protected:34,unchanged:25,editionCorrections:2,priorContinuityRestorations:1});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -78,7 +78,8 @@ function coords(piece,edition){
  }
  return result;
 }
-const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,halfVerses:0},books=new Set();
+const prior=JSON.parse(readFileSync(new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",import.meta.url),"utf8"));
+const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,priorContinuityRestorations:0,halfVerses:0},books=new Set();
 let originalVerseCount=0,selectedVerseCount=0;
 for(const decision of economy.decisions){
  assert.ok(!seen.has(decision.unitId),"No duplicated v18 identity");
@@ -93,6 +94,7 @@ for(const decision of economy.decisions){
  assert.equal(decision.sourceTextCollatedAgainstPrintedEditions,false);
  const source=v18.get(decision.unitId),v18Codes=[];
  const editionRepair=decision.selectionStatus==="EDITION_AWARE_REFERENCE_CORRECTION";
+ const seamRepair=decision.selectionStatus==="PRIOR_SOURCE_CONTINUITY_RESTORED";
  for(const piece of source.parts){
   if(editionRepair){
    assert.ok(["H15-02","H68-04"].includes(decision.unitId));
@@ -117,7 +119,7 @@ for(const decision of economy.decisions){
  assert.equal(chosenSet.size,chosen.length,"No repeated principal excerpt verse");
  let prior=-1;
  for(const code of chosen){
-  if(!editionRepair){
+  if(!editionRepair&&!seamRepair){
    assert.ok(universe.has(code),"Selection lies outside original v18: "+
     decision.unitId+" "+code);
    const order=v18Codes.indexOf(code);
@@ -135,6 +137,17 @@ for(const decision of economy.decisions){
  }else if(decision.selectionStatus==="DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"){
   stats.protected++;
   assert.equal(chosen.length,v18Codes.length,"Protected biblical reading must remain complete");
+ }else if(seamRepair){
+  stats.priorContinuityRestorations++;
+  assert.equal(decision.unitId,"H21-03");
+  const old=prior.chapters.find(x=>x.chapterId==="H21").units.find(x=>x.unitId==="H21-03");
+  const allowed=new Set(old.principalReadings.flatMap(z=>decodeBibleSequence(z).parts.flatMap(p=>coords(p,"cpdv-2009"))));
+  for(const code of chosen)assert.ok(allowed.has(code),
+   "Sea-crossing correction may only use verses previously defended in the eight-chapter source pass");
+  assert.deepEqual(decision.proposedSelectedReferences,
+   ["Exodus 14:5–10","Exodus 14:13–16","Exodus 14:19–22","Exodus 14:26–31"]);
+  assert.equal(chosen.length,20);
+  assert.equal(decision.priorHighRiskResearch.noPriorResearchDeleted,true);
  }else if(editionRepair){
   stats.editionCorrections++;
   assert.equal(decision.originalReferenceEditionWorkingHypothesis,"crampon-1923");
@@ -156,7 +169,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:32,protected:34,unchanged:25,editionCorrections:2,halfVerses:1});
+assert.deepEqual(stats,{edited:31,protected:34,unchanged:25,editionCorrections:2,priorContinuityRestorations:1,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -170,4 +183,4 @@ assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 34 locked, 25 baseline and 2 edition corrections; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 31 proposed trims, 34 locked, 25 baseline, 2 edition corrections and 1 carried source-seam repair; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
