@@ -810,6 +810,21 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
 #aoPrayerBookRoot .aoRosaryEnglishSwitch button[aria-pressed="true"]{background:rgba(170,136,78,.15);border-color:var(--liturgical,#b9a073);font-weight:750}
 #aoPrayerBookRoot .aoRosaryEnglishSwitch button:disabled{opacity:.45}
 #aoPrayerBookRoot .aoRosaryEnglishSwitch button:focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px}
+/* Rosary Scripture: one quiet line of controls, verse first, sources on demand. */
+#aoPrayerBookRoot .aoRosaryBeadScripture{margin:8px 0 4px;padding:7px 0 3px;border:0;border-top:1px solid rgba(188,155,104,.22);border-radius:0;background:transparent}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryBeadScriptureLabel{margin:0;font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--muted,#c8b89a)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip{flex:0 0 auto;min-height:44px;max-width:168px;min-width:114px;border:0;border-radius:4px;background:transparent;padding:10px 7px;color:var(--liturgical,#c4ac80);font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip:disabled{opacity:.4;cursor:default}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip:focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:2px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal clamp(17px,2vw,19px)/1.65 var(--ao-font-display,Georgia,serif);margin:2px 0 3px}
+#aoPrayerBookRoot .aoRosaryBeadVerse{margin-bottom:3px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions{gap:4px 13px;margin:4px 0 0}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button){min-height:44px;border:0;padding:10px 0;background:transparent;text-decoration:none;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#d2ba8b)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button):hover{text-decoration:underline;text-underline-offset:3px}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice{display:block;opacity:1;margin:0;border-top:1px solid rgba(188,155,104,.12);font:normal 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b6a99c)}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice>summary{display:flex;align-items:center;min-height:36px;font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice p{margin:0 0 7px;font:normal 11px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
 #aoPrayerBookRoot .aoRosaryBeadScriptureLabel{display:block;letter-spacing:.13em;text-transform:uppercase;font:650 10px/1.6 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#c8b89a)}
 #aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal 1.08rem/1.6 var(--ao-font-display,Georgia,serif);margin:8px 0 6px;color:inherit}
 #aoPrayerBookRoot .aoRosaryBeadVerse{display:block;margin-bottom:5px}
