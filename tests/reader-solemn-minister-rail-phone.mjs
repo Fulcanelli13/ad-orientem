@@ -75,7 +75,16 @@ try{
         assert.equal(current.minister,null);
       }
       assert.ok(current.overflow<=1,"New rail overflows "+width+"px phone");
-      await focusCue(page,"AO.CARD.010","AO.SM.C0112");
+      // The 48-card reader splits Offertory 010, and its source C0112 may
+      // share a display paragraph with C0113. Open the actual B032 prayer
+      // presentation, not an invented exact-word observation/gesture trigger.
+      const opened=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const card=api.model.cards.find(c=>c.blocks?.some(b=>b.blockId==="AO.SM.B032"));
+        return card?Boolean(api.showSequence(card.sequence)):false;
+      });
+      assert.ok(opened,"Canonical Offertory B032 is missing from LIVE");
+      await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
       const unknown=await page.evaluate(()=>{
         const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
         return {active:rail?.dataset.active,aria:rail?.getAttribute("aria-label"),
