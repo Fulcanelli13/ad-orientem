@@ -1,0 +1,155 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+
+const audit=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-necessity-audit.v1.json",import.meta.url),"utf8"));
+const spine=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-main-spine-consolidation.v1.json",import.meta.url),"utf8"));
+const economy=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-essential-verse-economy.v1.json",import.meta.url),"utf8"));
+
+assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
+assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
+assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:26});
+assert.equal(economy.decisions.length,93);
+assert.equal(economy.canonical.originalV18Chapters,78);
+assert.equal(economy.canonical.originalV18Segments,217);
+assert.equal(economy.canonical.secondExtendedBibleExperience,false);
+
+function decodeBibleSequence(raw,baseBook="",baseChapter=0){
+ let book=baseBook,chapter=baseChapter;
+ const parts=[],notes=[];
+ for(let part of raw.replaceAll("—","–").split(/[,;]/)){
+  part=part.trim();
+  if(!part)continue;
+  const bookMatch=part.match(/^((?:[1-3]\s*)?[A-Za-z]+(?:\s+[A-Za-z]+)?)\s+(?=\d+:)/);
+  if(bookMatch){book=bookMatch[1].replace(/\s+/g,"");part=part.slice(bookMatch[0].length);}
+  const chapterMatch=part.match(/^(\d+):/);
+  if(chapterMatch){chapter=Number(chapterMatch[1]);part=part.slice(chapterMatch[0].length);}
+  const verseMatch=part.match(/^(\d+)([a-d])?(?:[–-](?:(\d+):)?(\d+)([a-d])?)?$/i);
+  assert.ok(verseMatch&&book&&chapter,
+   "Unreadable original or selected verse notation: "+raw+" fragment "+part);
+  const endChapter=verseMatch[3]?Number(verseMatch[3]):chapter;
+  const end=verseMatch[4]?Number(verseMatch[4]):Number(verseMatch[1]);
+  assert.ok(endChapter>=chapter&&
+   (endChapter>chapter||end>=Number(verseMatch[1])),"Reversed reading: "+raw);
+  if(verseMatch[2]||verseMatch[5])notes.push("PART_VERSE_NO_EDITORIAL_CERTIFICATION");
+  parts.push({book,chapter,start:Number(verseMatch[1]),endChapter,end});
+ }
+ return {parts,book,chapter,notes};
+}
+const original=new Map(),v18=new Map();
+let lastBook="",lastChapter=0;
+for(const u of audit.units){
+ original.set(u.unitId,u);
+ const r=decodeBibleSequence(u.sourceReferenceOriginal,lastBook,lastChapter);
+ lastBook=r.book;lastChapter=r.chapter;
+ v18.set(u.unitId,r);
+}
+const witnessCache=new Map();
+function witness(edition,book){
+ const id=edition+":"+book;
+ if(!witnessCache.has(id)){
+  const data=JSON.parse(readFileSync(
+   new URL("../data/scripture/witness/"+edition+"/"+book+".json",import.meta.url),"utf8"));
+  assert.equal(data.editionId,edition);
+  const chapters=new Map();
+  for(const [ch,v] of data.verses){
+   if(!chapters.has(ch))chapters.set(ch,new Set());
+   chapters.get(ch).add(v);
+  }
+  witnessCache.set(id,chapters);
+ }
+ return witnessCache.get(id);
+}
+function coords(piece,edition){
+ const result=[],chapters=witness(edition,piece.book);
+ for(let chapter=piece.chapter;chapter<=piece.endChapter;chapter++){
+  const verses=chapters.get(chapter);
+  assert.ok(verses&&verses.size,
+   "Missing Catholic witness: "+edition+" "+piece.book+" "+chapter);
+  const start=chapter===piece.chapter?piece.start:1;
+  const end=chapter===piece.endChapter?piece.end:Math.max(...verses);
+  for(let verse=start;verse<=end;verse++){
+   assert.ok(verses.has(verse),
+    "Missing verse "+edition+" "+piece.book+" "+chapter+":"+verse);
+   result.push(piece.book+":"+chapter+":"+verse);
+  }
+ }
+ return result;
+}
+const seen=new Set(),stats={edited:0,protected:0,unchanged:0,halfVerses:0},books=new Set();
+let originalVerseCount=0,selectedVerseCount=0;
+for(const decision of economy.decisions){
+ assert.ok(!seen.has(decision.unitId),"No duplicated v18 identity");
+ seen.add(decision.unitId);
+ const owner=original.get(decision.unitId);
+ assert.ok(owner&&owner.disposition==="A","No B/C/D content may be promoted by compression");
+ assert.equal(decision.originalV18SourceReference,owner.sourceReferenceOriginal);
+ assert.ok(spine.movements.some(m=>m.id===decision.movementId&&
+  m.indispensable.sourceUnitIds.includes(decision.unitId)));
+ assert.equal(decision.reviewApproved,false);
+ assert.equal(decision.approvedForProduction,false);
+ assert.equal(decision.sourceTextCollatedAgainstPrintedEditions,false);
+ const source=v18.get(decision.unitId),v18Codes=[];
+ for(const piece of source.parts){
+  const cp=coords(piece,"cpdv-2009"),dr=coords(piece,"dr-challoner");
+  assert.deepEqual(cp,dr,"Edition coordinates must be verified separately");
+  v18Codes.push(...cp);
+ }
+ const universe=new Set(v18Codes),chosen=[];
+ for(const excerpt of decision.proposedSelectedReferences){
+  const s=decodeBibleSequence(excerpt,source.book,source.chapter);
+  for(const piece of s.parts){
+   books.add(piece.book);
+   const cp=coords(piece,"cpdv-2009"),dr=coords(piece,"dr-challoner");
+   assert.deepEqual(cp,dr,"Selected CPDV/Douay coordinates differ");
+   chosen.push(...cp);
+  }
+ }
+ const chosenSet=new Set(chosen);
+ assert.equal(chosenSet.size,chosen.length,"No repeated principal excerpt verse");
+ let prior=-1;
+ for(const code of chosen){
+  assert.ok(universe.has(code),"Selection lies outside original v18: "+
+   decision.unitId+" "+code);
+  const order=v18Codes.indexOf(code);
+  assert.ok(order>prior,"Out-of-order principal extraction: "+decision.unitId);
+  prior=order;
+ }
+ originalVerseCount+=v18Codes.length;
+ selectedVerseCount+=chosen.length;
+ if(decision.selectionStatus==="PROPOSED_CURATED_TRIM"){
+  stats.edited++;
+  assert.ok(chosen.length<v18Codes.length,
+   "Every editorial trim must actually reduce Scripture verse count: "+decision.unitId);
+  assert.equal(decision.omittedVersesMustBeVisible,true);
+ }else if(decision.selectionStatus==="DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"){
+  stats.protected++;
+  assert.equal(chosen.length,v18Codes.length,"Protected biblical reading must remain complete");
+ }else{
+  stats.unchanged++;
+  assert.equal(decision.selectionStatus,"ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK");
+  assert.equal(chosen.length,v18Codes.length);
+ }
+ if(decision.halfVerseNotationInOriginal){
+  stats.halfVerses++;
+  assert.ok(source.notes.length,"Need an original half-verse source citation");
+ }
+}
+assert.equal(seen.size,93);
+assert.deepEqual(stats,{edited:32,protected:35,unchanged:26,halfVerses:1});
+assert.ok(selectedVerseCount<originalVerseCount);
+assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
+for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
+ ["H53-01","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
+ ["H53-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
+ ["H60-01","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
+ ["H58-04","PROPOSED_CURATED_TRIM"],
+ ["H70-01","PROPOSED_CURATED_TRIM"]])
+ assert.equal(economy.decisions.find(x=>x.unitId===id).selectionStatus,status);
+assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
+assert.equal(economy.verification.fullLiteraryReadAloud,false);
+assert.equal(economy.verification.CatholicEditorialApproval,false);
+assert.equal(economy.verification.translationRightsApproval,false);
+console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 26 baseline; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
