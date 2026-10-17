@@ -23,7 +23,7 @@ for(const [i,a] of all.entries()){
  assert.ok(a.editorialRating===null||a.rating===null,"Ratings must remain deferred "+id);
  assert.notEqual(a.published,true,"Research lead cannot be marked published "+id);
  assert.notEqual(a.alreadyApproved,true,"Human approval not granted "+id);
- assert.ok(/paint|gouache|watercolor|manuscript/.test(a.medium.toLowerCase()),"Not a painting "+id);
+ assert.ok(/oil|paint|gouache|watercolor|manuscript|tempera/.test(a.medium.toLowerCase()),"Not a painting "+id);
  assert.ok(!/fra angelico|el greco/i.test(a.artist),"Rejected source painter "+id);
  const unique=a.date2026+"|"+page.toLowerCase();
  assert.ok(!keys.has(unique),"Duplicate image on same Gospel date "+unique);keys.add(unique);
