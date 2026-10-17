@@ -43,8 +43,16 @@ const rows=year.rows.filter(r=>r.rawRank==='I class'||r.rawRank==='II class').ma
  }).sort((x,y)=>sunday&&!feastOnSunday&&x.gospelDepictsReading!==y.gospelDepictsReading?(x.gospelDepictsReading?-1:1):0);
  const options=sourceOptions.slice(0,12).map(x=>{
   const found=previewByMuseum.get(norm(x.sourceUrl))||'';
-  const preview=found.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/')?
+  let preview=found.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/')?
    found.replace(/([?&]width=)\d+(?=&|$)/,'$1'+'500'):found;
+  // Reuse a real Commons file-page filename; never invent a remote image ID.
+  if(!preview&&x.rights==='PUBLIC_DOMAIN_PD_ART_PDM'){
+    const m=x.sourceUrl.match(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:(.+)$/i);
+    if(m){
+      const filename=decodeURIComponent(m[1].split('?')[0]).replaceAll('_',' ');
+      preview='https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(filename)+'?width=500';
+    }
+  }
   return {artworkId:x.artworkId,title:x.title,artist:x.artist,sourceUrl:x.sourceUrl,
     rights:x.rights,tier:x.tier,evidence:x.evidence,preview,gospelDepictsReading:x.gospelDepictsReading,
     metId:(x.sourceUrl.match(/metmuseum\.org\/art\/collection\/search\/(\d+)/)||[])[1]||null};
@@ -120,7 +128,8 @@ const report={schema:'AO_SACRED_ART_2026_CLASS_I_II_REVIEW_V1',year:2026,
  status:'DATE_INVENTORY_COMPLETE_ARTWORK_EDITION_UNFINISHED',
  source:'2026 full-year 1962 production DayResolver / CC0 acquired-original artwork registry',
  scope:'All observed general-calendar Class I/II principal days in 2026; not every displaced nominal or local feast',
- caveats:['One image per date is a selection target, not proof of exact iconography.',
+ caveats:['PD-Art/PDM photographic reuse may need jurisdiction-specific confirmation; review-source image is not publication clearance.',
+ 'One image per date is a selection target, not proof of exact iconography.',
  'Generic and seasonal candidates never count as exact feast coverage.',
  'Candidates must be reviewed by the user and then licensed/cropped/packaged before app release.',
  'Feasts suppressed or transferred by precedence and particular local calendars require a separate source-level audit.',
