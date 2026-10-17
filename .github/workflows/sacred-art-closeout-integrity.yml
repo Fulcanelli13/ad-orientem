@@ -14,6 +14,7 @@ on:
       - 'data/calendar/sacred-art-review-uploads/**'
       - 'tests/sacred-art-acquisition-gallery-integrity.mjs'
       - 'tests/sacred-art-mobile-photo-e2e.mjs'
+      - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
       - '.github/workflows/sacred-art-closeout-integrity.yml'
   pull_request:
     branches:
@@ -23,6 +24,7 @@ on:
       - 'data/calendar/sacred-art-review-uploads/**'
       - 'tests/sacred-art-acquisition-gallery-integrity.mjs'
       - 'tests/sacred-art-mobile-photo-e2e.mjs'
+      - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
       - '.github/workflows/sacred-art-closeout-integrity.yml'
   workflow_dispatch:
 
@@ -70,4 +72,38 @@ jobs:
           name: sacred-art-mobile-preview-audit
           path: artifacts/sacred-art-mobile-qa/
           retention-days: 7
+          if-no-files-found: warn
+
+  build-class-i-ii-review:
+    name: 2026 Class I and II 129-date artwork review
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing Playwright dependency
+        run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Resolve complete 1962 General Calendar 2026
+        run: node tests/calendar-1962-full-year-audit.mjs
+      - name: Generate verified source/season associations
+        run: |
+          node tools/calendar/audit-sacred-art-modules.mjs
+          node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
+          node tools/calendar/build-sacred-art-full-year-associations.mjs
+          node tools/calendar/build-sacred-art-class-i-ii-review.mjs
+      - name: Publish mobile HTML, every-date JSON, source gap report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-2026-class-i-ii-129-day-review
+          path: |
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.html
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.json
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.md
+            artifacts/sacred-art-coverage/full-year-multiple-associations.v1.json
+          retention-days: 30
           if-no-files-found: warn
