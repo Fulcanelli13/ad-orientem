@@ -97,13 +97,13 @@ export function massExplorerApprovedStudyHtml(study,{french=false,sourceTitle=""
  if(study?.publication!=="RELEASED_ORIGINAL_FORMATION_PROSE")return "";
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const lg=french?"fr":"en",t=obj=>esc(obj[lg]);
- return '<section class="aoMXDeepStudy" id="ao-mx-deep-study" data-ao-mx-anchor="deep-study" data-ao-mx-study-owner="'+esc(study.id)+'">'+
+ return '<details class="aoMXDeepStudy" id="ao-mx-deep-study" data-ao-mx-anchor="deep-study" data-ao-mx-study-owner="'+esc(study.id)+'">'+
+  '<summary>'+esc(french?"Étude complète : ":"Full study: ")+t(study.title)+'</summary>'+
   '<small>'+esc(french?"FORMATION · ÉTUDE APPROUVÉE":"FORMATION · APPROVED STUDY")+'</small>'+
-  '<h2>'+t(study.title)+'</h2>'+
   '<p class="aoMXQuiet">'+esc(french?
    "Étude thématique associée au passage sélectionné. Le texte de la Messe ci-dessus reste la source liturgique.":"Thematic study linked to the selected prayer. The Mass text above remains the liturgical source.")+'</p>'+
   '<p>'+t(study.lead)+'</p>'+
   study.sections.map(s=>'<details class="aoMXDeepSection"><summary>'+t(s.heading)+'</summary><p>'+t(s.body)+'</p></details>').join("")+
   '<p class="aoMXQuiet">'+esc(french?"Source de formation : ":"Formation source: ")+esc(sourceTitle)+
-  ' · '+esc(study.stageId)+'</p></section>';
+  ' · '+esc(study.stageId)+'</p></details>';
 }
