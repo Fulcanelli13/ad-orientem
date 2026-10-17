@@ -36,7 +36,7 @@ const incomplete=monthlyDevotionalRegister([
 ],{needed:5,selectedDate:"2026-03-07"});
 assert.equal(incomplete.streak,0,"Latest explicitly incomplete month interrupts the chain");
 assert.equal(incomplete.interrupted,true);
-assert.equal(incomplete.cells[0].status,"incomplete");
+assert.deepEqual(incomplete.cells.slice(0,3).map(x=>x.status),["recorded","recorded","incomplete"],"Interrupted series must retain earlier reported months visually");
 const resuming=monthlyDevotionalRegister([
  {date:"2026-10-02",complete:true},
  {date:"2026-11-06",complete:false},
