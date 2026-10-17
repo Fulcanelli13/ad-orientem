@@ -189,11 +189,11 @@ try{
      const root=document.querySelector("#aoPray435930.open");
      const height=selector=>root.querySelector(selector)?.getBoundingClientRect().height||0;
      return {
-       options:height(".aoP435930AngelusReader>.aoP435930PrayerOptions>summary"),
+       options:height("[data-ao-angelus-options]>summary"),
        timeline:height(".aoP435930AngelusReader .aoDevoTimeline"),
        stop:height(".aoP435930AngelusReader .aoDevoStop"),
        counter:getComputedStyle(root.querySelector(".aoP435930AngelusReader .aoDevoCardNumber")).display,
-       ritual:height(".aoP435930AngelusReader [data-channel='posture']")
+       ritual:height("[data-ao-ritual-module='angelus'] [data-channel='posture']")
      };
    });
    assert.ok(density.options>=44&&density.options<=56,
