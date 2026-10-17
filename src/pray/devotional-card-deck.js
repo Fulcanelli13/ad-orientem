@@ -51,8 +51,8 @@ function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
  const el=create(doc,"span","aoDevoAppendixFace");
  const lines=String(text||"").split("\n").filter(x=>x.trim());
  lines.forEach(line=>{
-  const pair=line.match(/^\\s*(?:℣|V|℟|R)\\.\\s*(.*)$/);
-  const role=/^\\s*(?:℟|R)\\./.test(line)?"response":"leader";
+  const pair=line.match(/^\s*(?:℣|V|℟|R)\.\s*(.*)$/);
+  const role=/^\s*(?:℟|R)\./.test(line)?"response":"leader";
   if(pair){el.append(voiceLine(doc,role,pair[1]));return}
   if(appendixIndex===0){
    // The canonical Appendix says "three times", but its text is not copied
