@@ -148,6 +148,34 @@ lines.push('','## Dates without specific feast / appointed Gospel subject eviden
 for(const r of rows.filter(x=>x.specificArtStillNeeded))
  lines.push('- '+r.date+' · Class '+r.class+' · '+r.title+' · '+r.observedPrincipalId);
 writeFileSync(out+'/class-i-ii-2026-review.md',lines.join('\n')+'\n');
+
+const sundayReport={
+ schema:'AO_SACRED_ART_SUNDAY_GOSPEL_1962_2026_V1',year:2026,
+ source:'Production 1962 DayResolver Gospel + shared canonical iconographic-scene registry',
+ status:'GOSPEL_RESEARCH_ASSOCIATIONS_NOT_USER_ART_APPROVAL',
+ counts:sundayGospelCounts,
+ policy:'For temporal Sundays the Gospel episode is the primary art-selection anchor. Feasts observed on Sundays retain their principal feast subject first. Generic/seasonal pictures never count as Gospel-scene evidence.',
+ sundays:sundays.map(r=>({
+  date:r.date,class:r.class,principalId:r.observedPrincipalId,title:r.title,
+  gospel:r.sundayGospel,
+  gospelPaintingCandidates:r.options.filter(x=>x.gospelDepictsReading),
+  otherFeastOrContextOptions:r.options.filter(x=>!x.gospelDepictsReading).slice(0,3)
+ }))
+};
+writeFileSync(out+'/sunday-gospel-2026-review.json',JSON.stringify(sundayReport,null,2)+'\n');
+const sundayMd=[
+ '# Sunday appointed Gospel → sacred artwork (1962; 2026)','',
+ 'The appointed Gospel and actual observed principal come from the production 1962 DayResolver. Scene identifiers describe iconography, not a confirmed painting.',
+ '', '| Date | Class | Observed Mass | Appointed Gospel | Possible scenes | Open gospel-painting candidates |',
+ '|---|---|---|---|---|---:|',
+ ...sundays.map(r=>'| '+r.date+' | '+r.class+' | '+r.title.replace(/\|/g,'/')+
+  ' | '+(r.sundayGospel.reference||'Special rite / source missing')+
+  ' | '+(r.sundayGospel.sceneKeys.join(', ')||'Discourse or not yet indexed')+
+  ' | '+r.sundayGospel.gospelArtworkCount+' |'),
+ '', 'No specific image does not mean the Gospel has no art; search Commons/CC0 first, group recurring pericopes, then label symbolic scene substitutions explicitly.'
+];
+writeFileSync(out+'/sunday-gospel-2026-backlog.md',sundayMd.join('\n')+'\n');
+
 // Compact mobile review. No external libraries; sourced images lazy-load via
 // existing Commons mirror or the Met open-access collection API.
 const shell=[
