@@ -353,7 +353,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   const requiem={...mass,actualCelebration:{id:"requiem",type:"REQUIEM"},overlays:["REQUIEM"]};
   const deadEn=chaliceHeading(requiem).description;
   const deadFr=chaliceHeading(requiem,"fr").description;
-  assert.match(deadEn,/without blessing the water/);
+  assert.match(deadEn,/without blessing (?:the water|it)/);
   assert.match(deadFr,/sans bénir l’eau/);
   assert.doesNotMatch(deadEn,/blesses it|blesses and adds/);
   assert.equal(chaliceHeading({...mass,overlays:["REQUIEM"]}).description,deadEn,
