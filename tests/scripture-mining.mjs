@@ -383,7 +383,7 @@ for(const id of additionalIds){
   assert.equal(u.approved,false);
   assert.equal(u.textReviewed,false);
   assert.equal(u.rightsReviewed,false);
-  assert.equal(u.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+  assert.ok(["SOURCE_SELECTED_CONTINUITY_PENDING","SOURCE_SEAM_INSPECTED_NOT_READALOUD"].includes(u.principalStatus),"These units still require final oral continuity acceptance");
   let lastChapter=-1,lastVerse=-1;
   for(const ref of [...u.candidateReadings,...u.principalReadings,
     ...u.fullCompanionReadings.map(c=>c.reference)]){
