@@ -8,6 +8,7 @@ import {SCRIPTURE_LINK_COUNTS} from "../src/scripture/related-objects.js";
 import {mineScriptureReference,validateScriptureMiningDecision,
   countIndependentSelections,MINING_ENGLISH_EDITIONS} from "../src/scripture/mining-service.js";
 import {estherParallelSpans} from "../src/scripture/esther-span-crosswalk.js";
+import {parseScriptureContext} from "../src/scripture/context.js";
 
 assert.equal(DEFAULT_SCRIPTURE_EDITION.en,"cpdv-2009");
 assert.equal(SCRIPTURE_EDITIONS["cpdv-2009"].role,"default");
