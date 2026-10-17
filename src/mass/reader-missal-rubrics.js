@@ -61,6 +61,22 @@ const ACTIONS=Object.freeze({
  "THREE CROSSES WITH PARTICLE":["The priest traces three signs of the Cross with the sacred Particle.","Le prêtre trace trois signes de croix avec la parcelle de l’Hostie."],
  "TWO CROSSES WITH HOST":["The priest traces two crosses with the Host.","Le prêtre trace deux croix avec l’Hostie."],
 });
+// Two ALREADY CERTIFIED, source-backed lasting priest states intentionally
+// excluded from the 52 immediate-action counter. MISSAL explanation only:
+// positioning the page NEVER starts or ends the real action in LIVE mode.
+// Ritus servandus VIII.5 and X.5; original MR62_RITUS provenance is reused.
+const APPROVED_MISSAL_PRIEST_STATES=Object.freeze({
+ "AO.RUB.C0174.06":Object.freeze({
+  label:"THUMB AND INDEX FINGERS REMAIN JOINED",key:"THUMB_INDEX_JOINED",value:true,
+  en:"After replacing the elevated Host, the priest keeps each thumb and forefinger joined, except when handling the consecrated Host, until the purification of his fingers after Communion.",
+  fr:"Après avoir reposé l’Hostie élevée, le prêtre garde le pouce et l’index de chaque main joints, sauf lorsqu’il touche l’Hostie consacrée, jusqu’à l’ablution des doigts après la communion.",
+ }),
+ "AO.RUB.C0248.01":Object.freeze({
+  label:"THUMB AND INDEX FINGER DISCIPLINE ENDS",key:"THUMB_INDEX_JOINED",value:false,
+  en:"With the purification of his fingers after Communion, the priest ceases to keep each thumb and forefinger joined.",
+  fr:"Après l’ablution des doigts qui suit la communion, le prêtre cesse de tenir joints le pouce et l’index de chaque main.",
+ }),
+});
 const FORM=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const validCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 const frozen=Object.freeze;
@@ -101,13 +117,28 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
   candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
     label:x.label,triggerLat:x.triggerLat??null,sourceUrl:source.url})));
  }
+ // Persistent post-Consecration finger discipline is *not* a new gesture
+ // clock. Attach source-approved facts only to their original visible cues.
+ for(const cueId of ids){
+  const rows=registry.items.filter(x=>x.cueId===cueId&&
+   Object.hasOwn(APPROVED_MISSAL_PRIEST_STATES,x.id)&&
+   x.actor==="PRIEST"&&x.kind==="STATE"&&x.displayPrimary===false&&
+   x.authorityClass==="1962_NORMATIVE"&&x.sources?.includes("MR62_RITUS")&&
+   Number.isInteger(x.order)&&
+   x.label===APPROVED_MISSAL_PRIEST_STATES[x.id].label&&
+   x.stateKey===APPROVED_MISSAL_PRIEST_STATES[x.id].key&&
+   x.stateValue===APPROVED_MISSAL_PRIEST_STATES[x.id].value);
+  candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
+   label:x.label,sourceUrl:source.url,kind:"STATE"})));
+ }
  const positioned=new Map(ids.map((id,i)=>[id,i]));
  return frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
-   .filter(x=>ACTIONS[x.label])
+   .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]))
    .map(x=>frozen({
      id:x.id,sourceCueId:x.cueId,actor:"PRIEST",
-     shortAction:x.label,displayText:ACTIONS[x.label][isFrench?1:0],
+     shortAction:x.label,displayText:x.kind==="STATE" ? APPROVED_MISSAL_PRIEST_STATES[x.id][isFrench?"fr":"en"] : ACTIONS[x.label][isFrench?1:0],
+     kind:x.kind??"ACTION",
      latinTrigger:x.triggerLat??null,sourceId:"MR62_RITUS",
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
      observedNow:false,owner:MISSAL_RUBRIC_OWNER,
