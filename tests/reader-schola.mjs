@@ -22,6 +22,36 @@ const frenchSchola=createNativeScholaController({
   prepared:{session:prepared.session,readerPreferences:{language:"fr"}},
   frenchOrdinary,
 });
+// Requiem Agnus text must agree between the main reader and the Schola's
+// separate public-chant track. Independent Schola navigation is unchanged.
+for(const form of ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const language of ["en","fr"]){
+    const req=createNativeScholaController({
+      sungCorpus:sung,properSlots,frenchOrdinary,
+      prepared:{session:{resolvedMass:{form,overlays:["REQUIEM"]}},
+        readerPreferences:{language}}
+    });
+    const ordinary=createNativeScholaController({
+      sungCorpus:sung,properSlots,frenchOrdinary,
+      prepared:{session:{resolvedMass:{form,overlays:[]}},
+        readerPreferences:{language}}
+    });
+    const seg=req.tracks.find(x=>x.id==="AGNUS_DEI").segments;
+    const plain=ordinary.tracks.find(x=>x.id==="AGNUS_DEI").segments;
+    assert.equal(seg.length,3,"Requiem Schola Agnus must retain three chant cues");
+    for(let i=0;i<3;i++){
+      assert.equal(seg[i].cueId,"AO.SM.C022"+(i+2),form+" Schola identity changed");
+      assert.match(seg[i].latin,i===2?/dona eis réquiem sempitérnam/:/dona eis réquiem/);
+      assert.match(seg[i].english,language==="fr"?/donnez-leur le repos/:/grant them/);
+      assert.doesNotMatch(seg[i].latin,/miserére nobis|dona nobis pacem/);
+      assert.doesNotMatch(plain[i].latin,/dona eis réquiem/,"Requiem text leaked into ordinary Schola");
+    }
+    const first=req.selectTrack("AGNUS_DEI");
+    assert.equal(first.schola.cueId,"AO.SM.C0222");
+    assert.equal(req.next().schola.cueId,"AO.SM.C0223");
+  }
+}
+
 const frenchGloria=frenchSchola.selectTrack("GLORIA");
 assert.equal(frenchGloria.schola.cueId,"AO.SM.C0055","Schola must start Et in terra pax after celebrant intonation");
 assert.match(frenchGloria.schola.latin,/Et in terra pax/);
