@@ -526,6 +526,9 @@ try{
       slotMinHeight:posture?getComputedStyle(posture).minHeight:null,
       slotTransform:posture?getComputedStyle(posture).transform:null,
       slotAnimation:posture?getComputedStyle(posture).animationName:null,
+      folioPostureHeight:(()=>{const note=grid?.closest(".aoFolioReader")?.querySelector(".aoFolioPostureNote>summary");return note?.getBoundingClientRect()?.height??0})(),
+      folioPostureText:grid?.closest(".aoFolioReader")?.querySelector(".aoFolioPostureNote>summary")?.innerText??"",
+      folioPostureAsset:grid?.closest(".aoFolioReader")?.querySelector(".aoFolioPostureNote .aoFolioPostureIcon")?.dataset?.aoAssetId??null,
       incarnationUnits:grid?.querySelectorAll?.('[data-ao-incarnation="true"]')?.length??0,
       genericAngelusContext:grid?.querySelectorAll?.('[data-ao-asset-id="ao-rich-angelus"]')?.length??0,
     };
