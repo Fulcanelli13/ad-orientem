@@ -160,7 +160,9 @@ body[data-experience=discover] .info,body[data-experience=understand] .info{disp
 body[data-experience=discover] .intro-card,body[data-experience=discover] #object-card{display:none}
 body[data-experience=discover] .guide-dock{display:block;margin:0;background:transparent;border:0;padding:0}
 body[data-experience=understand] .guide-dock{display:none}
-body.embedded header{display:none}
+body.embedded header{justify-content:flex-end;border:0;padding:3px 0 8px}
+body.embedded header>div:first-child{display:none}
+body.embedded .topactions{gap:6px;justify-content:flex-end}
 body.embedded .intro{display:none}
 body.embedded .experience-nav{margin-top:5px}
 body[data-experience=discover] .info{min-height:0}
