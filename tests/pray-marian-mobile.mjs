@@ -372,9 +372,9 @@ try{
  assert.equal(await guidedCue.count(),1,"Guided Hail Mary lacks its original coherent bilingual meditation");
  assert.match(await guidedCue.innerText(),/God sends Gabriel|Dieu envoie Gabriel/);
  assert.equal(await guidedCue.getAttribute("data-ao-rosary-context"),"editorial-meditation");
- const beadSource=guidedCue.locator("a[data-ao-rosary-meditation-source]");
+ const beadSource=page.locator("#aoPrayerBookRoot.open .aoRosaryBeadScripture a[data-ao-rosary-meditation-source]");
  assert.equal(await beadSource.count(),1,"Guided bead lacks contextual primary witness");
- assert.match(await beadSource.innerText(),/Luke 1:26-27/);
+ assert.match(await beadSource.getAttribute("data-ao-scripture-context"),/Luke 1:26-27/);
  assert.match(await beadSource.getAttribute("href"),/^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
  const beadSourceHref=await beadSource.getAttribute("href");
  if(beadSourceHref.includes("fr.wikisource.org/wiki/Bible_Crampon_1923/")){
@@ -496,7 +496,7 @@ try{
    await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]",{timeout:9000});
    const note=page.locator("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]");
    assert.equal(await note.getAttribute("data-ao-rosary-source-type"),"SCRIPTURAL_PARAPHRASE");
-   assert.match(await note.locator("a[data-ao-rosary-meditation-source]").getAttribute("href"),
+   assert.match(await page.locator("#aoPrayerBookRoot.open .aoRosaryBeadScripture a[data-ao-rosary-meditation-source]").getAttribute("href"),
     /^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
    assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0);
   }

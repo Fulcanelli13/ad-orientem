@@ -76,7 +76,7 @@ try{
     const topicScripture=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
     await topicScripture.click();
     await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
-    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureReading h3").innerText(),/Romans 12:1/);
     await page.locator('#ao-scripture-overlay [data-scripture-close]').click();
     await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="themes"&&
@@ -174,7 +174,7 @@ try{
     await indirect.click();
     const scripture=page.locator("#ao-scripture-overlay");
     await scripture.waitFor({state:"visible",timeout:12000});
-    assert.match(await scripture.locator(".aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await scripture.locator(".aoScriptureReading h3").innerText(),/Romans 12:1/);
     await scripture.locator('[data-scripture-context-depth="chapter"]').click();
     assert.ok(await scripture.locator(".aoScriptureVerse").count()>10,"MF03 biblical chapter unavailable");
     await scripture.locator("[data-scripture-close]").click();
@@ -228,7 +228,7 @@ try{
     await origin.click();
     const bible=page.locator("#ao-scripture-overlay");
     await bible.waitFor({state:"visible",timeout:12000});
-    assert.match(await bible.locator(".aoScriptureContextTitle").innerText(),/Isaiah 6:3/);
+    assert.match(await bible.locator(".aoScriptureReading h3").innerText(),/Isaiah 6:3/);
     await bible.locator("[data-scripture-close]").click();
     assert.equal(await origin.evaluate(el=>el===document.activeElement),true,"Scripture source-owner must restore exact Explorer focus");
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.013"]').count(),1,

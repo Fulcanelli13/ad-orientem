@@ -30,11 +30,15 @@ try{
  await entry.waitFor({state:"visible",timeout:20000});
  await entry.click();
  const dialog=page.locator("#ao-scripture-overlay");
+ const openTools=async()=>{
+   const shelf=dialog.locator(".aoScriptureTools");
+   if(!(await shelf.evaluate(el=>el.open)))await shelf.locator("summary").first().click();
+ };
  await dialog.waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.getAttribute("role"),"dialog");
  assert.equal(await dialog.locator(".aoScriptureBrowse").count(),1);
- assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
-   "Standalone Bible entry should expose book navigation");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false,
+   "Standalone Bible must open with Scripture visible, not a large navigation form");
  assert.equal(await dialog.getAttribute("aria-modal"),"true");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
@@ -45,6 +49,7 @@ try{
    "Fresh reading preserves Douay–Rheims, with an immediate CPDV option");
  // Existing source-owner objects referencing Luke 1:28 must be discoverable
  // without changing the current verse, Mass state or Rosary session.
+ await openTools();
  await dialog.locator(".aoScriptureRelated summary").click();
  await dialog.locator('[data-scripture-linked-object="rosary:joy1"]').waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.locator('[data-scripture-linked-object="novena:annunciation"]').count(),1);
@@ -143,6 +148,7 @@ try{
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
+ await openTools();
  await dialog.locator(".aoScriptureRelated summary").tap();
  const massLink=dialog.locator('[data-scripture-open-related-object="massFormation:MFS01"]');
  await massLink.waitFor({state:"visible",timeout:9000});
@@ -160,23 +166,25 @@ try{
  // Restore standalone reading before testing the existing edition/book UI.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
- assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false);
+ await openTools();
+ await dialog.locator(".aoScriptureBrowse summary").click();
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
    "Fresh reader should retain Douay–Rheims");
- assert.equal(await dialog.locator("[data-scripture-english-edition]").count(),2,
-   "Both Catholic English editions must be one tap away");
+ assert.equal(await dialog.locator("[data-scripture-english-edition]").count(),1,
+   "The visible edition switch should be one unobtrusive touch target");
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
  await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
  await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
- assert.equal(await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await dialog.locator('[data-scripture-active-edition="cpdv-2009"]').count(),1);
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
  await dialog.locator('[data-scripture-english-edition="dr-challoner"]').click();
  await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
- assert.equal(await dialog.locator('[data-scripture-english-edition="dr-challoner"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await dialog.locator('[data-scripture-active-edition="dr-challoner"]').count(),1);
  await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
@@ -221,7 +229,9 @@ try{
  assert.equal(await dialog.getByRole("button",{name:"Next chapter"}).isDisabled(),true);
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
- assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/different chapter order/i);
+ assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/Verse numbering varies/i);
+ await dialog.locator(".aoScriptureReferenceWarning summary").click();
+ assert.match(await dialog.locator(".aoScriptureReferenceWarning").innerText(),/different chapter order/i);
  // Same Catholic Esther event lives at Douay 11:2 but CPDV 1:1.
  await dialog.locator(".aoScriptureNav input").nth(0).fill("11");
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
@@ -252,7 +262,7 @@ try{
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
  assert.equal(await dialog.locator("[data-crosswalk-unverified]").count(),0);
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
- assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/i);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().evaluate(el=>el.disabled),false);
  await dialog.getByRole("button",{name:"Consulter la source"}).click();
@@ -279,7 +289,7 @@ try{
  assert.equal(await page.evaluate(()=>document.body.style.overflow),"");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-home-scripture")),true,"Focus was not restored to Home Scripture entry");
  await entry.click();
- assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/,"French preference did not persist");
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/i,"French preference did not persist");
  await dialog.locator("[data-scripture-close]").click();
  assert.equal(await dialog.isHidden(),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home","Scripture overlay changed app route");
@@ -328,6 +338,7 @@ try{
  await dialog.locator("[data-scripture-segment-index='1']").click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 27:1–60");
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.activeSegmentIndex),1);
+ await openTools();
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("en");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
@@ -381,6 +392,7 @@ try{
    "A liturgical arrangement may explain source order but never unlock additional Bible text");
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
    "The five uncollated source verses must remain explicitly unreviewed");
+ await openTools();
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);

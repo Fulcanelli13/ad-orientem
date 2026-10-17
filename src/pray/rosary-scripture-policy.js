@@ -219,7 +219,9 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
         citation.lang="la";
         citation.title="Texte latin original du Saint-Siège · ouvrir la source";
       }
-      note.appendChild(citation);
+      // The existing inline Scripture panel owns Read passage for Bible beads.
+      // Retain this historical citation only for non-biblical doctrinal sources.
+      if(!contextReference)note.appendChild(citation);
       // Reinstate Lab-ora's immediate verse / Read passage / Church Fathers
       // beneath the same canonical Rosary bead. Source text comes from the
       // already imported CPDV/Crampon witness, not uncollated donor snippets.
