@@ -68,6 +68,15 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .other summary{cursor:pointer;font:13px system-ui,sans-serif;color:var(--muted);padding:7px 0}
 .other .choices{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
 .other button{font:12px system-ui,sans-serif;padding:8px 10px;border-radius:6px;background:#19232d;color:var(--muted);border:1px solid var(--line)}
+#inspection-choices{display:block}
+.inspect-family{border-bottom:1px solid #2d3945;padding:7px 0}
+.inspect-family:last-child{border-bottom:0}
+.inspect-family>summary{font:12px/1.5 system-ui,sans-serif;cursor:pointer;color:#e4d8c7;padding:6px 0}
+.inspect-family .choices{padding:4px 0 8px}
+.related-objects{margin:12px 0;padding:10px 0 4px;border-top:1px solid var(--line)}
+.related-objects strong{display:block;margin-bottom:8px;color:var(--muted);font:12px system-ui,sans-serif}
+.related-objects button{display:inline-flex;margin:0 6px 7px 0;padding:8px 10px;border:1px solid var(--line);background:transparent;border-radius:7px;color:var(--gold);font:12px system-ui,sans-serif;min-height:38px}
+.related-objects button:hover{border-color:var(--gold)}
 footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
 footer a{color:#d8bd89}
 .noscript{padding:14px;color:#f7d19b}
@@ -106,7 +115,7 @@ footer a{color:#d8bd89}
 </div>
 </div>
 <div class="inspection-stage" id="inspection-stage" hidden>
-<div class="inspection-nav"><button type="button" id="return-to-church">← Return to Brompton</button><span>Separate reference photograph</span></div>
+<div class="inspection-nav"><button type="button" id="return-to-church">← Return to Brompton</button><span id="inspection-type">Separate reference photograph</span></div>
 <img id="inspection-photo" alt="" loading="lazy" decoding="async">
 <div class="inspection-failed" id="inspection-failed" hidden>Image unavailable. Use its source link below; the canonical glossary questions remain accessible.</div>
 <p class="inspection-notice" id="inspection-notice"></p>
@@ -117,14 +126,14 @@ footer a{color:#d8bd89}
 </div>
 </div>
 <details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
-<details class="other" id="inspection-details"><summary>Inspect further · separately photographed objects</summary><div class="choices" id="inspection-choices">Loading source-backed object references…</div></details>
+<details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
 </section>
 <aside class="info" id="info" aria-label="Selected object and questions" aria-live="polite">
 <div class="intro-card" id="intro-card"><div class="state">Living glossary · Phase 1</div><h2>Look closer</h2><p>Choose an object in the photograph to identify it and explore the questions it raises.</p><p>This is the object-discovery pilot. Detailed answers will be added after source research and approval.</p></div>
 <div id="object-card" hidden>
 <div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
 <h2 id="object-title"></h2>
-<div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p>
+<div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects · separate references</strong><div id="related-items"></div></div>
 <div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
 <div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div></div>
 <p class="meta-link" id="canonical-link"></p>
@@ -148,6 +157,15 @@ const SPOTS=[
 ];
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],inspections:[],view:"church",loaded:false};
+const RELATED_OBJECTS={
+ AL01:["AL03","AL16","BK01","AL14","SN05","SN07"],
+ AL07:["SN05"],AL19:["AL16","AL03"],SN02:["SV13"],SN07:["EQ01","EQ02"],
+ BK01:["AL16"],AL16:["BK01"],AL03:["SN05"],SN05:["AL03"],
+ SV01:["SV02","SV03","LN01","LN02","LN03","LN04","LN05"],
+ SV02:["SV01","SV13"],SV03:["SV01"],SV13:["SV02"],
+ LN01:["LN02","LN04","LN05"],LN02:["LN01","SV01"],LN03:["SV01","LN01"],
+ LN04:["LN05","LN01"],LN05:["LN04","LN01"],EQ01:["EQ02","SN07"],EQ02:["EQ01","SN07"]
+};
 const CHURCH={caption:"High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress",credit:"Anthony O'Neil · CC BY-SA 2.0 ↗",url:"https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg"};
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function findSpot(id){return SPOTS.find(x=>x.id===id)||state.inspections.filter(x=>x.object_id===id).map(x=>({id:x.object_id,g:x.glossary_id,title:x.label,match:"D",inspection:x}))[0];}
@@ -160,7 +178,8 @@ function showInspection(asset){
  state.view="inspection";
  $("photo-viewport").hidden=true;$("inspection-stage").hidden=false;
  $("inspection-failed").hidden=true;$("inspection-photo").hidden=false;
- $("inspection-photo").alt="Independent reference photograph of "+asset.label+", "+asset.source_location;
+ $("inspection-type").textContent=asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical reference illustration":"Separate reference photograph";
+ $("inspection-photo").alt=(asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical illustration":"Independent reference photograph")+" of "+asset.label+", "+asset.source_location;
  $("inspection-photo").src=asset.image_url;
  $("inspection-notice").textContent=asset.note;
  $("photo-caption").textContent="Reference · "+asset.source_location+" · not photographed at Brompton";
@@ -179,7 +198,7 @@ function select(id,from){
  $("object-title").textContent=spot.title;
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
- buildDefinition(spot);renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ buildDefinition(spot);renderRelatedObjects();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  $("info").classList.add("has-selection");
  document.body.classList.add("object-open");
  if(window.innerWidth<930){
@@ -203,6 +222,16 @@ function buildDefinition(spot){
    $("definition").innerHTML='<small>Dictionary · '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition);
  }
  $("canonical-link").innerHTML='Source record: <a href="../../data/glossary/concepts-'+(Number(spot.g.slice(1))<=150?"001-150":Number(spot.g.slice(1))<=300?"151-300":"301-450")+'.v1.json" target="_blank" rel="noopener">'+esc(spot.g)+'</a> · <span>existing canonical glossary</span>';
+}
+function renderRelatedObjects(){
+ const ids=(RELATED_OBJECTS[state.selected]||[]).filter(id=>state.inspections.some(x=>x.object_id===id));
+ $("related-items").replaceChildren();
+ $("related-objects").hidden=ids.length===0;
+ for(const id of ids){
+  const a=state.inspections.find(x=>x.object_id===id);
+  const b=document.createElement("button");b.type="button";b.textContent=a.label;
+  b.dataset.related=id;b.onclick=()=>select(id,b);$("related-items").appendChild(b);
+ }
 }
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
@@ -262,14 +291,23 @@ async function loadCanon(){
  if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];}
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
-   $("inspection-choices").replaceChildren();
-   for(const a of state.inspections){
-     const c=document.createElement("button");c.type="button";c.textContent=a.label;c.dataset.inspection=a.object_id;
-     c.onclick=()=>select(a.object_id,c);$("inspection-choices").appendChild(c);
+   const root=$("inspection-choices");root.replaceChildren();
+   const families=["Altar & sanctuary","Books","Vessels","Sacred linens","Serving equipment"];
+   for(const family of families){
+     const assets=state.inspections.filter(a=>a.zone===family);
+     if(!assets.length)continue;
+     const panel=document.createElement("details");panel.className="inspect-family";
+     const title=document.createElement("summary");title.textContent=family+" ("+assets.length+")";
+     const group=document.createElement("div");group.className="choices";
+     for(const a of assets){
+       const c=document.createElement("button");c.type="button";c.textContent=a.label;c.dataset.inspection=a.object_id;
+       c.onclick=()=>select(a.object_id,c);group.appendChild(c);
+     }
+     panel.append(title,group);root.appendChild(panel);
    }
- }else $("inspection-choices").textContent="Inspection photographs unavailable; the pilot must be served over HTTPS with its source files.";
+ }else $("inspection-choices").textContent="Inspection sources unavailable; serve the pilot over HTTPS with its source files.";
  state.loaded=true;
- if(state.selected){buildDefinition(findSpot(state.selected));renderQuestions();}
+ if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderQuestions();}
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
