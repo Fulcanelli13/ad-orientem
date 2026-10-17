@@ -2,6 +2,7 @@ import { formationReaderCss, installFormationNavigation } from "./formation-ui.j
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { searchDiscovery } from "./discovery.js";
+import {visibleMassReviewEnabled,VISIBLE_MASS_REVIEW_ROUTE} from "./visible-mass-review-gate.js";
 
 export const LEARN_PRESENTATION_VERSION="modular-learn-presentation-v1";
 export const LEARN_DONOR_RELEASE="43.59.30";
@@ -301,7 +302,8 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id!=="liturgy-tradition"||item.id!=="learn.mass").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id!=="liturgy-tradition"||item.id!=="learn.mass").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}${family.id==="liturgy-tradition"&&visibleMassReviewEnabled(win)
+  ?`<div class="aoLearnDossierReview"><p class="aoLearnDossierReviewNote">${esc(langFr?"Aperçu de recherche · questions en anglais non approuvées; cette visite n’est pas encore publiée.":"Research preview · English-only unapproved answers; this tour is not yet published.")}</p><div class="aoLearnModGrid"><article class="aoLearnModCard"><button type="button" class="aoLearnModCardMain" data-ao-learn-module="${VISIBLE_MASS_REVIEW_ROUTE}"><span class="type">${esc(langFr?"RECHERCHE · PHOTOGRAPHIES":"RESEARCH · PHOTOGRAPHIC TOUR")}</span><strong>${esc(langFr?"La Messe visible":"The Visible Mass")}</strong><p>${esc(langFr?"Explorer six objets du sanctuaire dans une photographie réelle.":"Explore six sanctuary objects in a genuine photograph.")}</p></button></article></div></div>`:""}</section>`
         :`<div class="aoLearnIntentLayout">
           <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Domaines de formation":"Formation subjects")}">
             <div class="aoLearnIntentHeading"><small>${esc(langFr?"LES DOMAINES":"SUBJECTS")}</small><h2>${esc(langFr?"Choisir un domaine":"Choose a subject")}</h2></div>
