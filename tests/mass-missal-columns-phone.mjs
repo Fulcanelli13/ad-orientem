@@ -155,7 +155,8 @@ try{
   }));
   assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
     "In-page priest rubrics must be localized");
-  assert.match(offertory.link||"",/ritus-servandus/i);
+  assert.equal(offertory.link,undefined,
+    "No repeated 1962 source links should follow individual short gestures");
   assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
     "A word-triggered short action alone must NOT create a fake long rubric");
   assert.equal(await page.locator(".ao-canon-inline-heading:visible").count(),0,
