@@ -173,10 +173,20 @@ export function createM4Panorama({mount,notice,onScene}){
    }
    if(token!==loading)return false;
    const img=images.get(sceneId);
-   if(gpu)gpu.upload(img);
+   // Commons' production request is at most 2048 px. Enforce the same upper
+   // bound even if a proxy serves the 4096 px research original. 4096 textures
+   // were silently black on headless/mobile GPU despite successful upload.
+   let photo=img;
+   if(img.naturalWidth>2048){
+    const reduced=document.createElement("canvas");
+    reduced.width=2048;reduced.height=Math.round(img.naturalHeight*2048/img.naturalWidth);
+    reduced.getContext("2d").drawImage(img,0,0,reduced.width,reduced.height);
+    photo=reduced;
+   }
+   if(gpu)gpu.upload(photo);
    else{
-    source.width=img.naturalWidth;source.height=img.naturalHeight;
-    sctx.drawImage(img,0,0);
+    source.width=photo.naturalWidth||photo.width;source.height=photo.naturalHeight||photo.height;
+    sctx.drawImage(photo,0,0,source.width,source.height);
     sourcePixels=sctx.getImageData(0,0,source.width,source.height);
    }
    ready=true;
