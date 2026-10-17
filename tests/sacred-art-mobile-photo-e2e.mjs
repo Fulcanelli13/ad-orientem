@@ -102,7 +102,6 @@ try {
     }
   }
 
-  if(fullRemoteAudit){
   // Held photographs must be visible as provenance records, not fetched or scored.
   outcome.heldCardChecks=[];
   for(const index of [26,35,37,44,79]){
@@ -119,6 +118,7 @@ try {
     }));
     outcome.heldCardChecks.push({index,expected,...visible});
   }
+  if(fullRemoteAudit){
   // Actual browser decode for supported-size previews and bounded gallery fallback.
   // A 500px Commons retry is always distinguished from a successful primary load.
   const batchSize=3;
