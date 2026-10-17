@@ -1501,7 +1501,10 @@
       "noExtraPresentation": [],
       "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
       "isFinalChapter": false,
-      "appChanges": false
+      "appChanges": false,
+      "proposedNonV18SourceBridgeIds": [
+        "HS-BRIDGE-PARACLETE"
+      ]
     },
     {
       "id": "HS-M27",
@@ -1860,7 +1863,10 @@
       "noExtraPresentation": [],
       "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
       "isFinalChapter": false,
-      "appChanges": false
+      "appChanges": false,
+      "proposedNonV18SourceBridgeIds": [
+        "HS-BRIDGE-ROME-ARRIVAL"
+      ]
     },
     {
       "id": "HS-M35",
@@ -2132,7 +2138,7 @@
         "John 14:16–17",
         "John 16:7–13"
       ],
-      "status": "NEW_SOURCE_BRIDGE_CANDIDATE_NOT_IN_ORIGINAL_217"
+      "status": "SOURCE_VERSE_PRESENCE_CHECKED_CP_DOUAY_EDITORIAL_CHOICE_PENDING"
     },
     {
       "id": "GS-10",
@@ -2161,7 +2167,7 @@
         "Acts 28:16",
         "Acts 28:23–31"
       ],
-      "status": "NEW_SOURCE_BRIDGE_CANDIDATE_NOT_IN_ORIGINAL_217"
+      "status": "SOURCE_VERSE_PRESENCE_CHECKED_CP_DOUAY_EDITORIAL_CHOICE_PENDING"
     },
     {
       "id": "GS-12",
@@ -2186,10 +2192,50 @@
     "all67ContextCandidatesDispositioned": true,
     "all54IndependentStoriesNotMandatory": true,
     "all3DuplicateOrIncidentalNoFeatured": true,
-    "sourceBridgeVersesChecked": false,
+    "sourceBridgeVersesChecked": true,
     "readAloudVerified": false,
     "catholicEditorialReview": false,
     "userAccepted": false,
-    "publicReaderChanged": false
-  }
+    "publicReaderChanged": false,
+    "sourceBridgeVersesPublicationApproved": false,
+    "sourceOwnershipReconciled": false
+  },
+  "sourceBridgeCandidates": [
+    {
+      "id": "HS-BRIDGE-PARACLETE",
+      "movementId": "HS-M26",
+      "priorTo": "HS-M31",
+      "reference": "John 14:16–17",
+      "scenePurpose": "Christ promises the Advocate/Spirit of Truth before the Pentecost narrative",
+      "biblicalBooksNotExtended": [
+        "John"
+      ],
+      "internalDispositions": "OUTSIDE_ORIGINAL_217_ADD_SOURCE_REFERENCES_ONLY",
+      "whyRequired": "The currently proposed H61 source John 14:1–14 omits the promised Paraclete. A reader could reach Pentecost without Christ's explicitly spoken promise of the Holy Ghost.",
+      "sourcePresence": "VERIFIED_BOTH_INSTALLED_CATHOLIC_ENGLISH_WITNESSES",
+      "cpdvVerseCount": 2,
+      "drVerseCount": 2,
+      "approval": "NOT_EDITORIALLY_APPROVED",
+      "needsExactWordingCollation": true,
+      "sourceOwnership": "Existing canonical Bible reader; reference overlay only; no duplicate verse record"
+    },
+    {
+      "id": "HS-BRIDGE-ROME-ARRIVAL",
+      "movementId": "HS-M34",
+      "priorTo": null,
+      "reference": "Acts 28:16",
+      "scenePurpose": "Acts explicitly announces Paul's arrival in Rome before his final uninterrupted proclamation",
+      "biblicalBooksNotExtended": [
+        "Acts"
+      ],
+      "internalDispositions": "OUTSIDE_ORIGINAL_217_ADD_SOURCE_REFERENCES_ONLY",
+      "whyRequired": "H73-07 starts at Acts 28:23; without the earlier arrival verse, the main story leaps directly from the Council to an unexplained Roman setting.",
+      "sourcePresence": "VERIFIED_BOTH_INSTALLED_CATHOLIC_ENGLISH_WITNESSES",
+      "cpdvVerseCount": 1,
+      "drVerseCount": 1,
+      "approval": "NOT_EDITORIALLY_APPROVED",
+      "needsExactWordingCollation": true,
+      "sourceOwnership": "Existing canonical Bible reader; reference overlay only; no duplicate verse record"
+    }
+  ]
 }
