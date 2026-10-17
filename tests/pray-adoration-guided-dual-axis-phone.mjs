@@ -64,6 +64,14 @@ try{
  await page.screenshot({path:resolve(captures,"visit-390-full-reverence-cinematic.png"),animations:"disabled"});
  await reverence.locator(".aoDevotionalActionContinue").click();
  assert.equal(await reverence.count(),0,"Visit cinematic did not return to the existing prayer");
+ assert.equal(await page.locator(sel).getAttribute("data-ao-adoration-folio"),"v1");
+ assert.equal(await page.locator(sel+" .aoDevoCardNumber").count(),1,"Canonical card number stays in DOM for semantics");
+ assert.equal(await page.locator(sel+" .aoDevoCardNumber").evaluate(x=>getComputedStyle(x).display),"none",
+  "Visit cannot present redundant 1/7 progress under the named stages");
+ assert.equal(await page.locator(sel+" .aoDevoCardScroll .aoP435930GuideNow h2").evaluate(x=>getComputedStyle(x).display),"none",
+  "Do not repeat the named card title inside the prayer direction");
+ assert.equal(await page.locator(sel+" .aoAdorationVisitNote").evaluate(x=>x.open),false,
+  "Editorial visit background must not precede prayer");
  await page.screenshot({path:resolve(captures,"visit-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:15,target:el,clientX:x,clientY:y});
@@ -83,12 +91,39 @@ try{
  assert.equal(await page.locator(timeline).count(),0);
  // Open-ended adoration must remain SILENCE FIRST, not become a 7-card workout.
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='open']").tap();
+ assert.equal(await page.locator(sel+" .aoAdorationOpenPrayer").count(),1,"Open adoration is silence-first");
+ assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure").count(),3);
+ assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure[open]").count(),0,"Aids must be collapsed until asked for");
  assert.equal(await page.locator(timeline).count(),0,"Open silent Adoration was forced into a step timeline");
  assert.match(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),/Silence is the default|Be still/i);
+ await page.screenshot({path:resolve(captures,"open-silence-390.png"),animations:"disabled"});
+ await page.locator(sel+" [data-p435930-ador-quiet-enter]").tap();
+ assert.equal(await page.locator(sel+'[data-ao-adoration-quiet="true"]').count(),1,
+  "Silence entry must remove prayer controls, not start a countdown");
+ assert.equal(await page.locator(sel+" .aoDevoSequenceTimeline").count(),0);
+ assert.equal(await page.locator(sel+" [data-p435930-timer]").count(),0);
+ await page.screenshot({path:resolve(captures,"quiet-screen-390.png"),animations:"disabled"});
+ await page.locator(sel+" [data-p435930-ador-quiet-exit]").tap();
+ assert.equal(await page.locator(sel+" .aoAdorationOpenPrayer").count(),1,"Returning to prayer must restore the same mode");
+ const aid=page.locator(sel+" .aoAdorationOptionDisclosure").first();
+ await aid.locator("summary").tap();
+ assert.equal(await aid.evaluate(x=>x.open),true,"Optional guidance not usable");
+ assert.equal(await page.locator(sel+" [data-p435930-open-prayer='adoration_spiritual_communion']").count(),1);
+ await aid.locator("summary").tap();
+ for(const width of [320,430]){
+  await page.setViewportSize({width,height:width===320?700:932});
+  const size=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+  assert.ok(size<=1,"Adoration opens wider than "+width+"px: "+size);
+  await page.screenshot({path:resolve(captures,"open-silence-"+width+".png"),animations:"disabled"});
+ }
+ await page.setViewportSize({width:390,height:844});
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='holy']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"holy");assert.equal(v.stops,8);
+ assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure").evaluate(x=>x.open),false,"Holy Hour timer must be optional and folded");
+ assert.equal(await page.locator(sel+" .aoDevoStopNumber").first().evaluate(x=>getComputedStyle(x).display),"none",
+  "Holy Hour must not show oversized stage numbers");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Optional Agony decade/i);
  assert.equal(await page.locator(sel+" [data-p435930-go-rosary]").count(),1,
@@ -100,6 +135,11 @@ try{
  assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Adoration/i);
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).final,"true");
+ assert.equal(await page.locator(sel+" [data-p435930-ador-quiet-enter]").count(),1,"Final silence needs a direct stillness doorway");
+ await page.locator(sel+" [data-p435930-ador-quiet-enter]").tap();
+ assert.equal(await page.locator(sel+'[data-ao-adoration-quiet="true"]').count(),1);
+ await page.locator(sel+" [data-p435930-ador-quiet-exit]").tap();
+ assert.equal((await snapshot()).final,"true","Quiet exit should restore the canonical selected stage");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Guided Adoration overflows narrow phone width");
