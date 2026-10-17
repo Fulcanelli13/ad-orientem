@@ -67,6 +67,7 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
+import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
@@ -1203,6 +1204,10 @@ export async function mountNativeReaderPreview({
   const priestEntranceState=createObservedPriestEntranceController({
     form:ready.prepared.session.resolvedMass.form
   });
+  // Optional human witness only; never linked to reading position or Schola.
+  const chaliceObservationState=createObservedChalicePreparationController({
+    resolvedMass:ready.prepared.session.resolvedMass
+  });
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
   const mandatumController=ready.model?.mandatumSource
@@ -1424,6 +1429,8 @@ export async function mountNativeReaderPreview({
     // eventAllowed flag only controls legacy event-state fallback above.
     const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
     const observedPriest=currentObservedCuratedPriestEvent();
+    const observedChalicePreparation=(current?.sourceSectionId??current?.sectionId)==="AO.CARD.010"
+      ? chaliceObservationState.project() : null;
     const gestureProfile=customaryPrefs.gestureProfile;
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
@@ -1612,6 +1619,8 @@ export async function mountNativeReaderPreview({
       schola:scholaProjection.schola,
       priestAction,
       priestEntrance,
+      // Audit-only report: no timed priest/minister action or rail projection.
+      observedChalicePreparation,
       sacredMinister:cueProjection?.sacredMinister??null,
       sacredMinisterAdvisory:cueProjection?.sacredMinisterAdvisory??null,
       rubricEvents:rubricProjection?.events??Object.freeze([]),
@@ -2302,7 +2311,10 @@ export async function mountNativeReaderPreview({
     // Explicit priest-side state persists between Gloria/Credo subcards but
     // must not leak into an unrelated source Mass section.
     if(previous && (previous.sourceSectionId??previous.sectionId)!==
-       (card.sourceSectionId??card.sectionId))observedCuratedPriestEvent=null;
+       (card.sourceSectionId??card.sectionId)){
+      observedCuratedPriestEvent=null;
+      chaliceObservationState.reset();
+    }
     // A direct section/sequence jump is navigation, not a liturgical
     // procession between adjacent cards. Preserve donor cinematics during
     // linear reading only; never mask a manually selected destination.
@@ -2426,6 +2438,7 @@ export async function mountNativeReaderPreview({
   function switchPresentationMode(nextMode){
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
+    chaliceObservationState.reset();
     const anchor=captureReaderModeAnchor(current,{activeCueId});
     const desiredCue=anchor.cueId;
     const rebuilt=buildReaderModeModels({
@@ -2546,6 +2559,7 @@ export async function mountNativeReaderPreview({
 
   function destroy(){
     priestEntranceState.reset();
+    chaliceObservationState.close();
     observedPriestEvent=null;
     clearScheduledTimer(partCinemaTimer);
     clearScheduledTimer(eventCinemaTimer);
@@ -2675,6 +2689,26 @@ export async function mountNativeReaderPreview({
       return result;
     },
     getPriestEntranceState:()=>priestEntranceState.project(),
+    // Optional independent human observation of chalice actions.
+    // Rejected outside the Offertory source section; never fires on scroll.
+    observeChalicePreparation:observation=>{
+      const sourceSection=current?.sourceSectionId??current?.sectionId;
+      if(sourceSection!=="AO.CARD.010"||
+         inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+         inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+         inGenericProcession||inLifecycle)
+        return Object.freeze({accepted:false,reason:"NOT_IN_OFFERTORY",
+          state:chaliceObservationState.project()});
+      const result=chaliceObservationState.observe(observation);
+      if(result.accepted)queue();
+      return result;
+    },
+    getObservedChalicePreparation:()=>chaliceObservationState.project(),
+    clearObservedChalicePreparation:()=>{
+      const state=chaliceObservationState.reset();
+      queue();
+      return state;
+    },
     // This optional hook is for explicit priest observations from a caller.
     // It is not microphone recognition and does not listen to the Schola.
     observePriestEvent:event=>{
