@@ -142,7 +142,7 @@ try{
   assert.match(offertory.link||"",/ritus-servandus/i);
   // For word-triggered instructions, depth reveals the precise Latin
   // anchor instead of a second paraphrase or devotional Guide.
-  const wordDetail=page.locator(".ao-missal-rubric-depth").first();
+  const wordDetail=page.locator(".ao-missal-rubric-depth:has(li[data-source-cue-id='AO.SM.C0119'])");
   assert.ok(await wordDetail.count()>0,"Word-triggered Missal rubric lost source depth");
   await wordDetail.locator("summary").click();
   assert.match(await wordDetail.innerText(),/bene|word|mots/i);
