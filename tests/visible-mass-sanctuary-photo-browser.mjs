@@ -51,6 +51,16 @@ try{
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().inspections===17,{timeout:20000});
   assert.ok(await page.locator('#related-items [data-related="AL03"]').count()===1,'altar links to tabernacle reference');
   assert.equal(await page.locator('#question-items button').count(),4);
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.status?.().explanationCount===20,{timeout:30000});
+  assert.equal(await page.locator('#liturgical-explanations').isVisible(),true);
+  await page.locator('#liturgical-explanations > summary').click();
+  assert.ok(await page.locator('#liturgical-answer-items .answer-entry').count()>=10,'high altar should lead to multiple liturgical explanations');
+  const firstExplanation=page.locator('#liturgical-answer-items .answer-entry').first();
+  await firstExplanation.locator('summary').click();
+  assert.ok((await firstExplanation.locator('.answer-lead').innerText()).length>50);
+  assert.ok(await firstExplanation.locator('.answer-source a[target="_blank"]').count()>=1);
+  await page.locator('#liturgical-explanations > summary').click();
+
   const stat=await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status());
   assert.equal(stat.selected,'AL01');
   if(spec.mobile){
