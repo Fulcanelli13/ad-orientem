@@ -14,7 +14,7 @@ assert.equal(blocked.open(),false);
 
 const byId=new Map();
 function element(tag,doc){
-  return {tagName:tag.toUpperCase(),children:[],attrs:{},events:{},hidden:false,textContent:"",id:"",
+  return {tagName:tag.toUpperCase(),children:[],attrs:{},dataset:{},events:{},hidden:false,textContent:"",id:"",
     classList:{add(){},remove(){}},
     append(...children){this.children.push(...children);children.forEach(x=>{if(x.id)byId.set(x.id,x)});},
     setAttribute(key,value){this.attrs[key]=value;},
