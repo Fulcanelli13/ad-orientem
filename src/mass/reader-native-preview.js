@@ -2364,6 +2364,7 @@ export async function mountNativeReaderPreview({
         String(root.dataset.r17PresentationMode??"").toUpperCase()==="MISSAL"
           ? missalPrayerHeadingsForCard(visibleCard,{
               language:ready.prepared?.readerPreferences?.language??"en",
+              resolvedMass:ready.prepared?.session?.resolvedMass??null,
             })
           : [],
       paragraphs:withPublishedCanonParagraphRubrics(
