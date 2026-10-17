@@ -33,6 +33,8 @@ on:
       - 'scripts/prepare-mass-explorer-canon-release.mjs'
       - 'tests/mass-explorer-canon-decision-import.mjs'
       - 'tests/mass-explorer-all-canon-release-review.mjs'
+      - 'previews/mass-canon-eight-review-20261017.html'
+      - 'tests/mass-canon-eight-review-direct-html.mjs'
       - 'scripts/build-mass-explorer-first-two-release-review.mjs'
       - 'tests/mass-explorer-first-two-release-review.mjs'
       - 'tests/mass-explorer-study-publication.mjs'
@@ -89,6 +91,7 @@ jobs:
       - run: node tests/mass-explorer-editorial-bridge.mjs
       - run: node tests/mass-explorer-first-two-release-review.mjs
       - run: node tests/mass-explorer-all-canon-release-review.mjs
+      - run: node tests/mass-canon-eight-review-direct-html.mjs
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
