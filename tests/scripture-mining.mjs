@@ -605,4 +605,109 @@ assert.equal(disp("H54-05").existingRouteAudit.candidateCanonicalAtlasEvent.even
 assert.equal(disp("H42-07").existingRouteAudit.linkActivationStatus,
  "HOLD_EDITION_CROSSWALK");
 
+
+// The 37 proposed movements are a narrative analysis layer. Neither v18's
+// 78 chapter IDs nor its 217 verse-segment source owners are replaced.
+const spine=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-main-spine-consolidation.v1.json",import.meta.url),"utf8"));
+assert.equal(spine.schema,"ao.historia.v18.provisional-main-spine-consolidation.v1");
+assert.equal(spine.status,"EDITORIAL_PROPOSAL_ONLY_NOT_PUBLICATION");
+assert.equal(spine.movements.length,37);
+assert.equal(spine.source.original78Chapters,true);
+assert.equal(spine.source.original217Segments,true);
+assert.equal(spine.stats.essentialUnits,93);
+assert.equal(spine.stats.shortContextCandidateUnits,58);
+assert.equal(spine.stats.otherContextNotSelected,9);
+assert.equal(spine.stats.independentStoriesExcludedFromMain,54);
+assert.equal(spine.stats.noExtraPresentations,3);
+assert.equal(spine.continuityChecks.length,12);
+assert.equal(spine.stats.highPrioritySourceBridges,2);
+let previousNumber=0;
+const seenChapterIds=new Set(),seenUnitIds=new Set(),seenA=new Set(),seenB=new Set();
+let totalC=0,totalD=0;
+for(const movement of spine.movements){
+ assert.equal(movement.proposedEditorialOrder,++previousNumber);
+ assert.equal(movement.id,"HS-M"+String(previousNumber).padStart(2,"0"));
+ assert.equal(movement.isFinalChapter,false);
+ assert.equal(movement.appChanges,false);
+ assert.equal(movement.editorialRisk,"CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED");
+ assert.ok(movement.indispensable.sourceUnitIds.length>=1);
+ for(const chapterId of movement.originalChapterSpan.chapterIds){
+  assert.ok(!seenChapterIds.has(chapterId));
+  seenChapterIds.add(chapterId);
+ }
+ assert.equal(movement.originalChapterSpan.first,movement.originalChapterSpan.chapterIds[0]);
+ assert.equal(movement.originalChapterSpan.last,movement.originalChapterSpan.chapterIds.at(-1));
+ const unitIds=[
+  ...movement.indispensable.sourceUnitIds,
+  ...movement.optionalBriefBridges.map(x=>x.unitId),
+  ...movement.secondaryContextHeld,
+  ...movement.independentStoriesNotMandatory,
+  ...movement.noExtraPresentation
+ ];
+ for(const uid of unitIds){
+  const original=disp(uid);
+  assert.ok(original,"A spine unit may only refer to an original v18 segment");
+  assert.ok(movement.originalChapterSpan.chapterIds.includes(original.historiaChapterId));
+  assert.ok(!seenUnitIds.has(uid),"All 217 original segments have exactly one disposition");
+  seenUnitIds.add(uid);
+ }
+ for(const x of movement.indispensable.sourceReferences){
+  const original=disp(x.unitId);
+  assert.equal(original.disposition,"A");
+  assert.equal(x.reference,original.sourceReferenceOriginal);
+  assert.equal(x.approved,false);
+  seenA.add(x.unitId);
+ }
+ for(const x of movement.optionalBriefBridges){
+  const original=disp(x.unitId);
+  assert.equal(original.disposition,"B");
+  assert.equal(x.sourceReference,original.sourceReferenceOriginal);
+  assert.equal(x.mode,"SHORT_CONTEXT_NOT_FULL_REQUIRED_READING");
+  seenB.add(x.unitId);
+ }
+ for(const uid of movement.secondaryContextHeld)assert.equal(disp(uid).disposition,"B");
+ for(const uid of movement.independentStoriesNotMandatory){
+  assert.equal(disp(uid).disposition,"C");
+  totalC++;
+ }
+ for(const uid of movement.noExtraPresentation){
+  assert.equal(disp(uid).disposition,"D");
+  totalD++;
+ }
+}
+assert.equal(seenChapterIds.size,78);
+assert.equal(seenUnitIds.size,217);
+assert.equal(seenA.size,93);
+assert.equal(seenB.size,58);
+assert.equal(totalC,54);
+assert.equal(totalD,3);
+const main34=spine.movements.find(x=>x.id==="HS-M34");
+assert.deepEqual(main34.indispensable.sourceUnitIds,["H73-07"]);
+assert.ok(main34.independentStoriesNotMandatory.includes("H73-02"));
+assert.ok(main34.independentStoriesNotMandatory.includes("H73-06"));
+const main21=spine.movements.find(x=>x.id==="HS-M21");
+assert.ok(main21.optionalBriefBridges.some(x=>x.unitId==="H54-02"));
+assert.ok(main21.noExtraPresentation.includes("H54-04"));
+const genealogyMovement=spine.movements.find(x=>x.id==="HS-M18");
+assert.ok(genealogyMovement.optionalBriefBridges.some(x=>x.unitId==="H45-01"));
+assert.ok(genealogyMovement.optionalBriefBridges.some(x=>x.unitId==="H45-02"));
+const bridgeIds=spine.sourceBridgeCandidates.map(x=>x.id);
+assert.deepEqual(bridgeIds,["HS-BRIDGE-PARACLETE","HS-BRIDGE-ROME-ARRIVAL"]);
+for(const source of spine.sourceBridgeCandidates){
+ assert.equal(source.sourcePresence,"VERIFIED_BOTH_INSTALLED_CATHOLIC_ENGLISH_WITNESSES");
+ assert.equal(source.approval,"NOT_EDITORIALLY_APPROVED");
+ assert.equal(source.needsExactWordingCollation,true);
+ const parsed=parseScriptureContext(source.reference)?.passage;
+ assert.ok(parsed);
+ for(let v=parsed.verseStart;v<=parsed.verseEnd;v++){
+  assert.ok(getSet("cpdv-2009",parsed.book).has(parsed.chapter+":"+v));
+  assert.ok(getSet("dr-challoner",parsed.book).has(parsed.chapter+":"+v));
+ }
+}
+assert.equal(spine.editorialGates.readAloudVerified,false);
+assert.equal(spine.editorialGates.catholicEditorialReview,false);
+assert.equal(spine.editorialGates.userAccepted,false);
+assert.equal(spine.editorialGates.publicReaderChanged,false);
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
