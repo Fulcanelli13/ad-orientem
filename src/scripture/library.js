@@ -114,6 +114,18 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   // Explicit research opt-in only: the public reader and parent Mass/Rosary
+   // state remain unchanged. This opens the editor's separate source workbench.
+   const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
+   if(new URLSearchParams(researchFlag).get("ao_scripture_research")==="1"){
+     const mine=element("a",lang==="fr"?"Analyser les sources de ce passage ↗":"Mine this passage and commentary ↗","aoScriptureEditorialMine");
+     const target=new URL("../../previews/scripture-mining-workbench-20261017.html",import.meta.url);
+     target.searchParams.set("module","other");
+     target.searchParams.set("reference",passageReference(location));
+     mine.href=target.href;mine.target="_blank";mine.rel="noopener noreferrer";
+     mine.dataset.scriptureEditorialMine="";
+     wrap.append(mine);
+   }
    if(relatedTrail.length){
      const back=element("button",lang==="fr"?"Retour au passage précédent":"Back to previous passage");
      back.type="button";back.dataset.scriptureRelatedBack="";
