@@ -10,7 +10,7 @@ export function angelusCommunalParts(text,kind="hail"){
  if(!original)return null;
  // Traditional response begins at Sancta Maria / Holy Mary / Sainte Marie.
  const halves=kind==="hail"
-  ? original.match(/^([\s\S]*?\b(?:Jesus|Iesus|Jésus|Jésus-Christ)[.!]?)(\s+)(Holy Mary|Sancta Maria|Sainte Marie|Sainte-Marie)([\s\S]*)$/i)
+  ? original.match(/^([\s\S]*?\b(?:Jesus|Iesus|Jésus|Jésus-Christ|béni)[.!]?)(\s+)(Holy Mary|Sancta Maria|Sainte Marie|Sainte-Marie)([\s\S]*)$/i)
   : kind==="doxology"
   ? original.match(/^([\s\S]*?\b(?:Holy Spirit|Spiritui Sancto|Saint-Esprit)[.,]?)(\s+)(As it was|Sicut erat|comme il était|comme il est)([\s\S]*)$/i)
   : null;
