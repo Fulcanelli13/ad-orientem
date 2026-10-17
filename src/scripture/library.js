@@ -64,6 +64,7 @@ export function mountScriptureLibrary(root,{
  let relatedExpanded=false;
  const relatedTrail=[];
  let browseExpanded=false;
+ let toolsExpanded=false;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -148,7 +149,7 @@ export function mountScriptureLibrary(root,{
        if(!prev)return;
        location=prev.location;context=prev.context;contextDepth=prev.contextDepth;
        commentaryVisible=prev.commentaryVisible;relatedExpanded=prev.relatedExpanded;
-       browseExpanded=prev.browseExpanded;
+       browseExpanded=prev.browseExpanded;toolsExpanded=prev.toolsExpanded;
        segmentSet=prev.segmentSet??null;
        activeSegmentIndex=prev.activeSegmentIndex??-1;
        draw();
@@ -407,7 +408,7 @@ export function mountScriptureLibrary(root,{
    bookmark.textContent=present?t.saved:t.save;
    bookmark.setAttribute("aria-pressed",String(present));
    bookmark.addEventListener("click",()=>{prefs.toggleBookmark(location,editionId);draw();});actions.append(bookmark);
-   for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
+   if(!context?.reference)for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
      button.disabled=direction<0 ? location.chapter===1 : location.chapter>=scriptureChapterLimit(location.book);
      button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
@@ -416,6 +417,15 @@ export function mountScriptureLibrary(root,{
    main.append(actions);
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
+   // One secondary disclosure shared by every source-owned Scripture entry.
+   const tools=element("details",null,"aoScriptureTools");
+   tools.open=toolsExpanded;
+   const toolsSummary=element("summary",lang==="fr"?"Explorer · bibliothèque et liens":"Explore · library & connections");
+   toolsSummary.addEventListener("click",event=>{
+     event.preventDefault();toolsExpanded=!tools.open;tools.open=toolsExpanded;
+   });
+   const toolsBody=element("div",null,"aoScriptureToolsBody");
+   tools.append(toolsSummary,toolsBody);wrap.append(tools);
    // Lazy reverse index from the exact same cited-object source registries.
    // Presence here indicates intersecting verses, not an identical rite.
    const related=element("details",null,"aoScriptureRelated");
@@ -460,7 +470,7 @@ export function mountScriptureLibrary(root,{
          read.addEventListener("click",()=>{
            relatedTrail.push({
              location,context,contextDepth,commentaryVisible,relatedExpanded,
-             segmentSet,activeSegmentIndex,browseExpanded,scrollTop:root.scrollTop
+             segmentSet,activeSegmentIndex,browseExpanded,toolsExpanded,scrollTop:root.scrollTop
            });
            segmentSet=hit.segments?scriptureSegments(hit.segments):null;
            activeSegmentIndex=segmentSet?0:-1;
@@ -468,7 +478,7 @@ export function mountScriptureLibrary(root,{
            context=Object.freeze({reference:hit.reference,passage:location,
              ...(segmentSet?{segments:segmentSet}:{})});
            contextDepth="selected";commentaryVisible=false;
-           relatedExpanded=false;browseExpanded=false;
+           relatedExpanded=false;browseExpanded=false;toolsExpanded=false;
            draw();root.scrollTop=0;
            queueMicrotask(()=>wrap.querySelector("[data-scripture-context-depth='selected']")?.focus?.({preventScroll:true}));
          });
@@ -507,9 +517,9 @@ export function mountScriptureLibrary(root,{
      e.preventDefault();relatedExpanded=!related.open;related.open=relatedExpanded;
      if(relatedExpanded)void paintRelated();
    });
-   related.append(relatedSummary,relatedBody);wrap.append(related);
+   related.append(relatedSummary,relatedBody);toolsBody.append(related);
    if(relatedExpanded)void paintRelated();
-   wrap.append(browse);
+   toolsBody.append(browse);
    const searchSection=element("details",null,"aoScriptureSearch");
    searchSection.append(element("summary",t.search));
    const searchField=element("input");searchField.type="search";searchField.placeholder=t.find;searchField.value=query;
@@ -530,7 +540,7 @@ export function mountScriptureLibrary(root,{
      }
    };
    searchField.addEventListener("input",()=>{query=searchField.value;paintResults();});
-   searchSection.append(searchField,resultArea);wrap.append(searchSection);paintResults();
+   searchSection.append(searchField,resultArea);toolsBody.append(searchSection);paintResults();
    const savedSection=element("details",null,"aoScriptureBookmarks");
    savedSection.append(element("summary",t.bookmarks));
    const marks=prefs.load().bookmarks.filter(b=>b.editionId===editionId);
@@ -540,7 +550,7 @@ export function mountScriptureLibrary(root,{
      button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(mark);draw();});
      savedSection.append(button);
    }
-   wrap.append(savedSection);
+   toolsBody.append(savedSection);
    const oldMarks=prefs.load().bookmarks.filter(b=>b.editionId===null);
    if(oldMarks.length){
      const older=element("details",null,"aoScriptureUnassignedBookmarks");
@@ -550,7 +560,7 @@ export function mountScriptureLibrary(root,{
        const add=element("button",(lang==="fr"?"Attribuer à cette édition : ":"Assign to this edition: ")+passageReference(mark));
        add.type="button";add.addEventListener("click",()=>{prefs.assignLegacyBookmark(mark,editionId);draw();});older.append(add);
      }
-     wrap.append(older);
+     toolsBody.append(older);
    }
    const rosary=element("details",null,"aoScriptureRosary");
    rosary.append(element("summary",t.rosary));
@@ -560,7 +570,7 @@ export function mountScriptureLibrary(root,{
      button.addEventListener("click",()=>{leaveSourceSegments();location=item.passage;draw();});
      line.append(button,element("p",item.editorialSummary[lang]));rosary.append(line);
    }
-   wrap.append(rosary);
+   toolsBody.append(rosary);
  }
  draw();
  return Object.freeze({
