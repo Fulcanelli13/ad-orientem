@@ -79,6 +79,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
   // The original Catena source is resolved by the canonical passage reader.
   fathers.dataset.aoScriptureContext=plan.reference;
   fathers.dataset.aoScriptureDepth="commentary";
+  if(french)fathers.dataset.aoScriptureLanguage="en";
   fathers.dataset.aoRosaryChurchFathers=identity;
   fathers.textContent=french?"Pères de l’Église (anglais)":"Church Fathers";
   actions.append(fathers);
