@@ -91,7 +91,7 @@ assert.equal(get("019").condition,"NOT_REQUIEM");
 // 22 new R18 rail tiles: SMIN-009 already covers broad C0120–C0124.
 const formState=read("presentation/reader-form-state.v1.json");
 assert.equal(formState.solemn.ministerEvents.length,19,"R18 released minister-state denominator must not drift");
-const off=ev.filter(x=>/^MR62\\.SOL\\.B02\\.(?:0(?:1[4-9]|2[0-9]|3[0-4])|068)$/.test(x.id));
+const off=ev.filter(x=>/^MR62\.SOL\.B02\.(?:0(?:1[4-9]|2[0-9]|3[0-4])|068)$/.test(x.id));
 assert.equal(off.length,22,"Offertory research crosswalk 014–034 plus 068");
 assert(off.every(x=>x.runtimeCertified===false),"Do not auto-promote Offertory research");
 assert(off.every(x=>x.latinFacsimileReviewed===false),"Latin transcription crosscheck is not 1962 printed facsimile approval");
