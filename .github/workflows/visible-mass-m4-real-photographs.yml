@@ -7,6 +7,7 @@ on:
       - "previews/visible-mass-3d/visible-mass-m4-panorama.mjs"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/visible-mass-m4-real-photo-browser.mjs"
+      - "tests/visible-mass-m4-live-network.mjs"
       - "tools/acquire-visible-mass-360-panorama.py"
       - ".github/workflows/visible-mass-m4-real-photographs.yml"
   workflow_dispatch:
@@ -53,6 +54,8 @@ jobs:
         env:
           AO_M4_REAL_DIR: dist/visible-mass/panorama-sources
         run: node tests/visible-mass-m4-real-photo-browser.mjs
+      - name: Verify live Commons HTTPS delivery and browser CORS without test intercepts
+        run: node tests/visible-mass-m4-live-network.mjs
       - name: Preserve original-image desktop and phone review captures
         if: always()
         uses: actions/upload-artifact@v4
@@ -60,6 +63,7 @@ jobs:
           name: Visible-Mass-M4-Real-Photos-Review
           path: |
             dist/visible-mass/m4-real-photo-qa/**
+            dist/visible-mass/m4-live-delivery/**
             dist/visible-mass/panorama-sources/metadata.json
           retention-days: 30
           if-no-files-found: warn
