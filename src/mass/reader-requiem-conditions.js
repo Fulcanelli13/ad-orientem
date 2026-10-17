@@ -1,0 +1,27 @@
+// One resolved-Mass Requiem predicate for Low and Sung ceremonial projections.
+// Do not infer the rite from a date or reader scroll. Unknown selections remain
+// ordinary only where an ordinary form has actually been selected.
+export function isExplicitRequiemMass(prepared,conditions=null){
+  const resolved=prepared?.session?.resolvedMass??{};
+  const plan=prepared?.session?.plan??{};
+  if(resolved?.provenance?.isRequiem===true || resolved?.isRequiem===true)return true;
+  const token=x=>String(typeof x==="string"?x:x?.id??x?.type??"").trim().toUpperCase();
+  const arr=x=>Array.isArray(x)?x:[];
+  if(["REQUIEM","MASS_FOR_THE_DEAD"].includes(token(resolved?.actualCelebration?.type)))return true;
+  if(["REQUIEM","MASS_FOR_THE_DEAD"].includes(token(resolved?.actualCelebration?.kind)))return true;
+  return [
+    ...arr(resolved.overlays),
+    ...arr(resolved.conditions),
+    ...arr(resolved?.provenance?.conditions),
+    ...arr(plan.overlayGraphs),
+    ...arr(conditions instanceof Set?[...conditions]:conditions)
+  ].some(x=>["REQUIEM","MASS_FOR_THE_DEAD"].includes(token(x)));
+}
+
+// Ritus servandus X.4 / XIII.1: at a Mass for the dead the celebrant does
+// not strike his breast at the three Agnus Dei invocations. Do not project
+// optional faithful strike prompts from the ordinary rite either.
+// This filters actions only: prayer, priest voice and posture stay independent.
+export function isRequiemAgnusBreastStrikeOmitted(cueId,prepared,conditions=null){
+  return /^AO\.SM\.C022[234]$/.test(String(cueId??"")) && isExplicitRequiemMass(prepared,conditions);
+}
