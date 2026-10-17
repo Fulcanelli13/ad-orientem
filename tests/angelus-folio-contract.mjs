@@ -44,6 +44,7 @@ assert.ok(deck.includes('entry.id==="collect"&&parts'),"Appendix must live insid
 assert.ok(deck.includes('for(let i=0;i<3;i++)'),"Gloria must be repeated 3x, not merely annotated");
 assert.ok(deck.includes('recitationMode==="group"'),"Appendix group mode missing");
 assert.ok(deck.includes('if(guided)'),"Guided context missing");
+assert.ok(deck.includes('unit.dataset.aoDevoCue="profound-bow"'),"Individual Mode lost Incarnation focus cue");
 assert.ok(runtime.includes('data-p435930-angelus-settings'),"Discrete settings icon missing");
 assert.ok(runtime.includes('angelusCommunalParts(text,type)'),"Group-mode Angelus missing");
 assert.ok(runtime.includes('aoFolioIncarnationCue'),"Inline Incarnation gesture missing");
