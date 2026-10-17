@@ -40,6 +40,12 @@ async function focusCue(page,section,cue){
     el.scrollTop=Math.max(0,b.top-a.top+el.scrollTop+b.height/2-el.clientHeight*.39);
   },cue);
   await page.waitForFunction(cue=>window.__AO_PHONE_PREVIEW.getActiveCue()===cue,cue,{timeout:7000});
+  // The cue focus tracker reports before the next RAF paints rail channels.
+  // Assert against the *rendered* native state, not the unpainted cursor.
+  await page.waitForFunction(cue=>
+    window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId===cue &&
+    document.querySelector('[data-r17-native-cue]')?.dataset.r17NativeCue===cue,
+    cue,{timeout:7000});
 }
 try{
   browser=await chromium.launch({headless:true});
