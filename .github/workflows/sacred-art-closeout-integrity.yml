@@ -89,10 +89,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Resolve complete 1962 General Calendar 2026
         run: node tests/calendar-1962-full-year-audit.mjs
-      - name: Generate verified source/season associations
+      - name: Generate source-identified open-artwork alternatives (no cross-pipeline approval checks)
         run: |
-          node tools/calendar/audit-sacred-art-modules.mjs
-          node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
           node tools/calendar/build-sacred-art-full-year-associations.mjs
           node tools/calendar/build-sacred-art-class-i-ii-review.mjs
       - name: Publish mobile HTML, every-date JSON, source gap report
