@@ -41,7 +41,8 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
- assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i);
+ assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Since, indeed, many have attempted/i,
+   "Fresh English reading must use CPDV instead of archaic Douay–Rheims");
  // Existing source-owner objects referencing Luke 1:28 must be discoverable
  // without changing the current verse, Mass state or Rosary session.
  await dialog.locator(".aoScriptureRelated summary").click();
@@ -160,9 +161,14 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
- assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
+ assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").count(),1,
+   "Fresh reader should select CPDV");
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
@@ -407,6 +413,65 @@ try{
     "Closing twice must not replay the return callback");
   await page.evaluate(()=>document.getElementById("ao-scripture-return-fixture")?.remove());
   assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
+  // Editorial mining uses the very same Scripture and Catena source packs.
+  await page.goto("http://127.0.0.1:4199/previews/scripture-mining-workbench-20261017.html",{
+    waitUntil:"domcontentloaded",timeout:25000});
+  await page.locator("#results .reading").first().waitFor({state:"visible",timeout:20000});
+  assert.match(await page.locator("#resultHeading").innerText(),/Luke 1:26-27/);
+  assert.match(await page.locator("#results .reading").first().innerText(),
+    /Catholic Public Domain Version/);
+  await page.locator("#bead").selectOption("2");
+  await page.waitForFunction(()=>document.querySelector("#resultHeading")?.textContent==="Luke 1:28",
+    null,{timeout:20000});
+  await page.locator("#results details").first().locator("summary").click();
+  assert.match(await page.locator("#results details").first().innerText(),/Douay/);
+  await page.locator("#rating").selectOption("5");
+  await page.locator("#disposition").selectOption("SUITABLE_ELSEWHERE");
+  await page.locator("#destination").selectOption("joy2");
+  await page.locator("#destinationBead").selectOption("7");
+  await page.locator("#duplicate").check();
+  await page.locator("#saveReview").click();
+  assert.equal(await page.locator("#reviewCount").innerText(),"1");
+  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.equal(saved[0].reference,"Luke 1:28");
+  assert.equal(saved[0].destinationId,"joy2");
+  assert.equal(saved[0].destinationBead,7);
+  assert.equal(saved[0].duplicate,true);
+  assert.equal(saved[0].rating,5);
+  assert.equal("text" in saved[0],false);
+  for(const [module,id,reference] of [
+    ["novena","annunciation","Luke 1:26–38"],
+    ["mass","MFS01","Luke 2:14"],
+    ["stations","5","Luke 23:26"],
+    ["prayer","foundations_our_father","Matthew 6:9–13"]]){
+    await page.locator("#module").selectOption(module);
+    await page.locator('#linkedObject option[value="'+id+'"]').waitFor({state:"attached",timeout:16000});
+    await page.locator("#linkedObject").selectOption(id);
+    await page.waitForFunction(value=>document.querySelector("#resultHeading")?.textContent===value,
+      reference,{timeout:15000});
+  }
+  await page.locator("#module").selectOption("historia");
+  await page.waitForFunction(()=>document.querySelector("#linkedObject")?.options?.length===151,null,{timeout:18000});
+  assert.equal(await page.locator("#linkedObject option").count(),151,"Reuse all 151 Atlas event IDs");
+  await page.locator("#module").selectOption("novena");
+  await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
+  await page.locator("#linkedObject").selectOption("annunciation");
+  await page.locator("#rating").selectOption("4");
+  await page.locator("#saveReview").click();
+  const crossModule=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.ok(crossModule.some(row=>row.originModule==="novena"&&row.originId==="annunciation"));
+  assert.equal(crossModule[0].originBead,2,"Saved Rosary record retains original exact bead");
+  assert.deepEqual(pageErrors,[],"Unexpected cross-module workbench runtime errors");
+  await page.goto("http://127.0.0.1:4199/index.html?ao_scripture_research=1",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
+    globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});
+  await page.locator("[data-home-scripture]").click();
+  const miningLink=page.locator("[data-scripture-editorial-mine]");
+  await miningLink.waitFor({state:"visible",timeout:12000});
+  assert.match(await miningLink.getAttribute("href"),/module=other/);
+  assert.equal(new URL(await miningLink.getAttribute("href")).searchParams.get("reference"),"Luke 1:28");
+  assert.deepEqual(pageErrors,[],"Unexpected research link browser errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
  await browser?.close?.();

@@ -17,7 +17,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"Douay–Rheims is the traditional reading. CPDV is the selected free alternative for easier English, but its wording and verse numbering still require verification before full text can appear inside the app.",
+  readable:"CPDV is the default for more accessible English. Douay–Rheims remains an optional traditional comparison. Both currently use source-labelled transcriptions pending edition-level collation.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Lecture de la Bible catholique. Les transcriptions historiques non collationnées sont signalées.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
@@ -114,6 +114,18 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   // Explicit research opt-in only: the public reader and parent Mass/Rosary
+   // state remain unchanged. This opens the editor's separate source workbench.
+   const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
+   if(new URLSearchParams(researchFlag).get("ao_scripture_research")==="1"){
+     const mine=element("a",lang==="fr"?"Analyser les sources de ce passage ↗":"Mine this passage and commentary ↗","aoScriptureEditorialMine");
+     const target=new URL("../../previews/scripture-mining-workbench-20261017.html",import.meta.url);
+     target.searchParams.set("module","other");
+     target.searchParams.set("reference",passageReference(location));
+     mine.href=target.href;mine.target="_blank";mine.rel="noopener noreferrer";
+     mine.dataset.scriptureEditorialMine="";
+     wrap.append(mine);
+   }
    if(relatedTrail.length){
      const back=element("button",lang==="fr"?"Retour au passage précédent":"Back to previous passage");
      back.type="button";back.dataset.scriptureRelatedBack="";
@@ -161,13 +173,13 @@ export function mountScriptureLibrary(root,{
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=!(edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || edition.id==="cpdv-2009" || (edition.enabled && edition.rights==="cleared"));
+     opt.disabled=!(["dr-challoner","cpdv-2009"].includes(edition.id) || edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || (edition.enabled && edition.rights==="cleared"));
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;
    editionSelect.addEventListener("change",()=>{
      const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
-     if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="cpdv-2009" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
+     if(!chosen || chosen.language!==lang || (!["dr-challoner","cpdv-2009"].includes(chosen.id) && chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
      moveEdition(chosen.id);
      if(lang==="en" && ["dr-challoner","cpdv-2009"].includes(editionId))prefs.setEnglishEdition(editionId);
      draw();

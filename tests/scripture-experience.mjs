@@ -30,7 +30,7 @@ assert.equal(oldPrefs.load().bookmarks[0].editionId,null);
 assert.equal(oldPrefs.assignLegacyBookmark(passage,"dr-challoner"),true);
 assert.equal(oldPrefs.load().bookmarks[0].editionId,"dr-challoner");
 assert.equal(prefs.load().language,"fr");
-assert.equal(prefs.englishEdition(),"dr-challoner");
+assert.equal(prefs.englishEdition(),"cpdv-2009");
 assert.equal(prefs.setEnglishEdition("cpdv-2009"),true);
 assert.equal(prefs.englishEdition(),"cpdv-2009");
 assert.throws(()=>prefs.setEnglishEdition("ncb-2019"));
