@@ -19,6 +19,13 @@ assert.equal(full.formationStages.length,8);
 assert.equal(massStudyStages(formation).length,8);
 assert.deepEqual(full.formationStages.map(x=>x.id),["MF01","MF02","MF03","MF04","MF05","MF06","MF07","MF08"]);
 assert.equal(full.formationStages[2].title.en,"The Offertory and your offering");
+const publishedLessonInExplorer=massExplorerMomentHtml(full,"AO.CARD.014",{blockId:"AO.SM.B051"});
+assert.match(publishedLessonInExplorer,/data-ao-mx-published-stage-summary="MF04"/,
+ "Existing certified Formation summary must be visible within Explorer's canonical moment");
+assert.ok(publishedLessonInExplorer.includes(full.formationStages[3].summary.en),
+ "Study summary must be reused directly from its source owner, not rewritten");
+assert.doesNotMatch(publishedLessonInExplorer,/data-ao-mx-study-owner=/,
+ "New P2 research must stay absent while the approval manifest is empty");
 const thematicHtml=massStudyPathsHtml(full.formationStages);
 assert.equal((thematicHtml.match(/data-ao-mx-stage="MF0[1-8]"/g)||[]).length,8);
 assert.match(thematicHtml,/id="ao-mx-themes"/);
@@ -36,6 +43,7 @@ assert.equal(catalog.byBlock.size,sung.blocks.length,"no Sung source block omitt
 assert.equal(catalog.byBlock.size,96,"pinned Sung source corpus contract");
 assert.equal(catalog.source,"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT");
 assert.equal(catalog.crosswalkStatus,"P0_PENDING");
+assert.equal(catalog.approvedStudyByBlock.size,0,"Historical drafts cannot automatically publish new study panels");
 const map=projectMassMap(catalog);
 assert.equal(map.momentCount,32);
 assert.equal(map.blockCount,96);

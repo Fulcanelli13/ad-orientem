@@ -1,0 +1,509 @@
+{
+  "schema": "ao-mass-explorer-remaining-six-candidates-v1",
+  "status": "EDITORIAL_CANDIDATES_NOT_HUMAN_APPROVED",
+  "scope": "FORMATION_ONLY",
+  "liturgical_profile": "ORDINARY_SUNG",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "published_claim_owner": "data/learn/mass-formation-campion.v1.json",
+  "release_manifest_owner": "data/learn/mass-explorer-approved-studies.v1.json",
+  "editorial_rules": [
+    "Original bilingual explanatory prose; no unapproved historical citations or quotations",
+    "Claims solely from existing published P1 lesson records and original 1962 Latin",
+    "One study may cover several canonical B blocks; never change Guide macro identity",
+    "No R17/Simple/Missal ritual, gestures, postures or proper-slot changes"
+  ],
+  "studies": [
+    {
+      "id": "AO.FORM.CANON.DEEP.01",
+      "stage_id": "MF04",
+      "block_ids": [
+        "AO.SM.B047",
+        "AO.SM.B048",
+        "AO.SM.B049",
+        "AO.SM.B050"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF04-C01",
+        "MF04-C02",
+        "MF04-C03"
+      ],
+      "title": {
+        "en": "At the beginning of the Canon — the whole Church",
+        "fr": "Au commencement du Canon — l’Église entière"
+      },
+      "lead": {
+        "en": "The Canon opens not with an isolated prayer for the celebrant but with the offering made for the Church, its shepherds and its members. The prayers for the living and the communion of saints place the sacrifice within the whole Church.",
+        "fr": "Le Canon ne s’ouvre pas sur une prière isolée pour le célébrant, mais sur l’offrande présentée pour l’Église, ses pasteurs et ses membres. Les prières pour les vivants et la communion des saints situent le sacrifice au sein de toute l’Église."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Te igitur: praying for the Church",
+            "fr": "Te igitur : prier pour l’Église"
+          },
+          "body": {
+            "en": "The first Canon prayer is addressed to the Father through Jesus Christ. The priest asks God to accept the offering and preserve the Church in peace, unity and good governance. The Pope and the local bishop are named within this intercession. These petitions show why the quiet Canon is not a private exercise disconnected from the faithful: the Church prays for her members, her pastors and her visible unity as she offers the sacrifice.",
+            "fr": "La première prière du Canon s’adresse au Père par Jésus-Christ. Le prêtre demande à Dieu d’agréer l’offrande et de conserver l’Église dans la paix, l’unité et un bon gouvernement. Le Pape et l’évêque du lieu sont nommés dans cette intercession. Ces demandes montrent pourquoi le Canon récité à voix basse n’est pas un exercice privé séparé des fidèles : l’Église prie pour ses membres, ses pasteurs et son unité visible en offrant le sacrifice."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The Memento of the living",
+            "fr": "Le Mémento des vivants"
+          },
+          "body": {
+            "en": "The Canon then makes room for the remembrance of living persons. Some may be named by the priest; others remain known to God. It is natural for those attending Mass to remember relatives, friends and people entrusted to their prayers. The silence need not be filled with explanations or extra ritual directions: the liturgical text already gives it purpose. This remembrance belongs to the Church's offering, not to a parallel private ceremony added to the Mass.",
+            "fr": "Le Canon fait ensuite place au souvenir des personnes vivantes. Certaines peuvent être nommées par le prêtre ; les autres demeurent connues de Dieu. Les fidèles qui assistent à la Messe peuvent naturellement se rappeler leurs proches, leurs amis et ceux qui leur sont confiés. Il n’est pas nécessaire de remplir ce silence d’explications ou d’indications cérémonielles supplémentaires : le texte liturgique lui donne déjà son sens. Ce souvenir appartient à l’offrande de l’Église et n’ajoute pas une cérémonie privée à la Messe."
+          },
+          "claim_ids": [
+            "MF04-C02",
+            "MF04-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Communicantes: communion beyond the congregation",
+            "fr": "Communicantes : une communion plus vaste que l’assemblée"
+          },
+          "body": {
+            "en": "The prayer Communicantes places the earthly Church in communion with the Blessed Virgin Mary, Saint Joseph, the Apostles and the martyrs named in the received Roman Canon. The presence of these names does not make them alternative mediators replacing Christ. Rather, the prayer expresses the unity of the Church in its worship. The faithful standing or kneeling in a particular church are not the whole company joined in the sacrifice.",
+            "fr": "La prière Communicantes situe l’Église terrestre en communion avec la Bienheureuse Vierge Marie, saint Joseph, les Apôtres et les martyrs nommés dans le Canon romain reçu. Leur présence ne fait pas d’eux des médiateurs de remplacement à la place du Christ. La prière exprime au contraire l’unité de l’Église dans son culte. Les fidèles présents dans une église déterminée ne représentent pas à eux seuls toute la communion unie dans le sacrifice."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Hanc igitur: peace and the final journey",
+            "fr": "Hanc igitur : la paix et le terme de la vie"
+          },
+          "body": {
+            "en": "The concluding petition of this opening group places the offering before God on behalf of His household, imploring peace in our days and deliverance from eternal condemnation. The priest does not interrupt the Canon to teach an additional lesson: these words are themselves prayer. Read Te igitur, Memento, Communicantes and Hanc igitur together as a movement from the visible Church and its living members toward the wider communion and the hope of salvation.",
+            "fr": "La dernière supplication de ce groupe initial présente l’offrande à Dieu pour toute sa famille, en demandant la paix en nos jours et la délivrance de la condamnation éternelle. Le prêtre n’interrompt pas le Canon pour donner une leçon supplémentaire : ces paroles sont elles-mêmes prière. Lisez Te igitur, Memento, Communicantes et Hanc igitur comme un mouvement de l’Église visible et de ses membres vivants vers la communion plus vaste et l’espérance du salut."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.03",
+      "stage_id": "MF05",
+      "block_ids": [
+        "AO.SM.B052",
+        "AO.SM.B053"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF05-C01",
+        "MF05-C02",
+        "MF05-C03"
+      ],
+      "title": {
+        "en": "The Consecration of the Host and chalice",
+        "fr": "La Consécration de l’Hostie et du calice"
+      },
+      "lead": {
+        "en": "The Roman Mass preserves the words of Christ over bread and wine in two distinct acts. The change is real, and the faithful adore the whole Christ present under each species. The separate sacramental signs make His sacrifice visible without repeating His death.",
+        "fr": "La Messe romaine conserve les paroles du Christ sur le pain et le vin en deux actes distincts. Le changement est réel, et les fidèles adorent le Christ tout entier présent sous chaque espèce. Les signes sacramentels séparés rendent visible son sacrifice sans répéter sa mort."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Why the words of Christ are central",
+            "fr": "Pourquoi les paroles du Christ sont essentielles"
+          },
+          "body": {
+            "en": "The preceding Canon petitions lead into the institution narrative. At the Consecration, the priest speaks the sacramental words over the Host and then over the chalice. The Mass does not invent another sacrifice beside Calvary: it makes present sacramentally the one sacrifice of Christ. A study reader should preserve these words as the core of this moment, avoiding extra explanatory sentences that might be mistaken for something the priest must say.",
+            "fr": "Les supplications précédentes du Canon conduisent au récit de l’institution. À la Consécration, le prêtre prononce les paroles sacramentelles d’abord sur l’Hostie, puis sur le calice. La Messe n’invente pas un sacrifice distinct du Calvaire : elle rend sacramentellement présent l’unique sacrifice du Christ. Un lecteur d’étude doit conserver ces paroles au centre de ce moment, sans ajouter des explications qui pourraient être prises pour des paroles à prononcer par le prêtre."
+          },
+          "claim_ids": [
+            "MF05-C01",
+            "MF05-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The real change and abiding appearances",
+            "fr": "Le changement réel et les apparences conservées"
+          },
+          "body": {
+            "en": "The Church calls this change transubstantiation. Bread and wine become the Body and Blood of Jesus Christ in substance, while the sensible appearances remain. Christ is not present only in memory or as a sign of fellowship: He is truly and substantially present under the Eucharistic species. This is why the response of the faithful is adoration rather than merely watching a symbolic gesture.",
+            "fr": "L’Église appelle ce changement transsubstantiation. Le pain et le vin deviennent substantiellement le Corps et le Sang de Jésus-Christ, tandis que les apparences sensibles demeurent. Le Christ n’est pas présent seulement dans le souvenir ni comme signe de fraternité : Il est réellement et substantiellement présent sous les espèces eucharistiques. C’est pourquoi la réponse des fidèles est l’adoration, non la simple observation d’un geste symbolique."
+          },
+          "claim_ids": [
+            "MF05-C01",
+            "MF05-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Two species, one risen Lord",
+            "fr": "Deux espèces, un seul Seigneur ressuscité"
+          },
+          "body": {
+            "en": "The words are pronounced separately over the Host and the chalice. This sacramental separation represents Christ’s sacrificial death, but it neither divides Him nor repeats His suffering in blood. The whole risen Lord is present under either species. The Roman reader should therefore preserve both Consecrations in their own order while showing how they belong to one sacrifice, never merging the texts into one invented formula.",
+            "fr": "Les paroles sont prononcées séparément sur l’Hostie et sur le calice. Cette séparation sacramentelle représente la mort sacrificielle du Christ, mais ne Le divise pas et ne répète pas ses souffrances de manière sanglante. Le Seigneur ressuscité tout entier est présent sous chacune des espèces. Le lecteur romain doit donc conserver les deux consécrations dans leur ordre propre et montrer leur unité dans un seul sacrifice, sans fondre les textes dans une formule inventée."
+          },
+          "claim_ids": [
+            "MF05-C01",
+            "MF05-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The elevations are for adoration",
+            "fr": "Les élévations invitent à l’adoration"
+          },
+          "body": {
+            "en": "After each Consecration, the elevation directs the faithful toward the Lord truly present. It is not an empty pause inserted to make the ceremony visually impressive. The appropriate interior response is worship of Christ. The study commentary may explain this purpose, but it must not assign its own timing for the priest’s movements, bells or the posture of the congregation: those belong to the ceremonial reader and the applicable local practice.",
+            "fr": "Après chaque Consécration, l’élévation oriente les fidèles vers le Seigneur réellement présent. Il ne s’agit pas d’une pause vide destinée à rendre la cérémonie spectaculaire. La réponse intérieure qui convient est l’adoration du Christ. Le commentaire d’étude peut en expliquer le sens, mais ne doit pas fixer lui-même la durée des gestes du prêtre, les sonneries ou la posture de l’assemblée : cela relève du lecteur cérémoniel et des usages locaux applicables."
+          },
+          "claim_ids": [
+            "MF05-C03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.04",
+      "stage_id": "MF06",
+      "block_ids": [
+        "AO.SM.B054"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF06-C01",
+        "MF06-C02"
+      ],
+      "title": {
+        "en": "Unde et memores — remembering and offering",
+        "fr": "Unde et memores — faire mémoire et offrir"
+      },
+      "lead": {
+        "en": "After the Consecration, the Church remembers Christ’s saving Passion, Resurrection and Ascension, and continues to offer the sacramental sacrifice. Remembrance here is inseparable from worship and offering.",
+        "fr": "Après la Consécration, l’Église fait mémoire de la Passion salvatrice, de la Résurrection et de l’Ascension du Christ, et poursuit l’offrande du sacrifice sacramentel. Le mémorial y demeure inséparable du culte et de l’offrande."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Remembrance within the Canon",
+            "fr": "Le mémorial au sein du Canon"
+          },
+          "body": {
+            "en": "Unde et memores follows the Consecration. The priest names the saving events of Christ’s Paschal mystery, not as distant information but in the very prayer of the offering. This memory gives the sacrificial action its Christian meaning. The Church does not present an unrelated object to God after the words of institution: she offers the one Redeemer whose Passion, Resurrection and Ascension she remembers.",
+            "fr": "Unde et memores suit la Consécration. Le prêtre rappelle les événements salvifiques du mystère pascal du Christ, non comme des informations lointaines, mais dans la prière même de l’offrande. Ce mémorial donne à l’action sacrificielle son sens chrétien. Après les paroles de l’institution, l’Église ne présente pas à Dieu un objet sans rapport avec celles-ci : elle offre l’unique Rédempteur dont elle célèbre la Passion, la Résurrection et l’Ascension."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The one sacrifice of Christ",
+            "fr": "L’unique sacrifice du Christ"
+          },
+          "body": {
+            "en": "When the Canon speaks of offering, it does not imply that Christ must die a second time. The divine Victim is the same Redeemer who offered Himself on Calvary; the mode of offering in the Mass is sacramental and unbloody. Remembering His sacrifice and offering it are thus related aspects of one liturgical mystery. The words must not be understood as another independent consecration taking place after the elevations.",
+            "fr": "Quand le Canon parle d’offrande, cela n’implique pas que le Christ doive mourir une deuxième fois. La Victime divine est le même Rédempteur qui s’est offert au Calvaire ; le mode d’offrande dans la Messe est sacramentel et non sanglant. Faire mémoire de son sacrifice et l’offrir sont donc deux aspects liés d’un même mystère liturgique. Ces paroles ne doivent pas être comprises comme une consécration indépendante venant après les élévations."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "From the Passion to the promised glory",
+            "fr": "De la Passion à la gloire promise"
+          },
+          "body": {
+            "en": "The Roman Canon does not stop its remembrance at Christ’s death. It names His Resurrection and Ascension as well. These mysteries prevent an incomplete picture in which the Mass concerns only a past tragedy. The risen and ascended Lord is the one present in the Eucharistic sacrifice. Following this prayer means keeping His whole saving work before the mind, while the liturgical source continues unchanged toward the subsequent intercessions.",
+            "fr": "Le Canon romain ne s’arrête pas à la mort du Christ dans son mémorial. Il nomme également sa Résurrection et son Ascension. Ces mystères évitent de réduire la Messe à une tragédie du passé. Le Seigneur ressuscité et monté aux cieux est Celui qui est présent dans le sacrifice eucharistique. Suivre cette prière, c’est garder à l’esprit l’ensemble de son œuvre salvifique, tandis que le texte liturgique se poursuit sans modification vers les supplications suivantes."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The history of sacrifice is fulfilled here",
+            "fr": "L’histoire des sacrifices trouve ici son accomplissement"
+          },
+          "body": {
+            "en": "The prayers that follow will recall sacrifices from biblical history. Unde et memores prepares that comparison by naming the saving work of Christ first. The ancient examples can help explain the language of offering, but no earlier victim can equal the Redeemer. Read the present prayer as the Church's act of thanksgiving and sacrifice; do not insert new readings or ceremonies to illustrate the biblical figures before the Canon itself names them.",
+            "fr": "Les prières suivantes rappelleront des sacrifices de l’histoire biblique. Unde et memores prépare ce rapprochement en nommant d’abord l’œuvre salvifique du Christ. Les exemples anciens aident à comprendre le langage de l’offrande, mais aucune victime antérieure ne peut égaler le Rédempteur. Lisez cette prière comme l’acte d’action de grâces et de sacrifice de l’Église ; n’ajoutez ni lectures ni cérémonies destinées à illustrer les figures bibliques avant que le Canon les nomme lui-même."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.06",
+      "stage_id": "MF06",
+      "block_ids": [
+        "AO.SM.B056"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF06-C01",
+        "MF06-C03"
+      ],
+      "title": {
+        "en": "Supplices te rogamus — gifts and Communion",
+        "fr": "Supplices te rogamus — les dons et la Communion"
+      },
+      "lead": {
+        "en": "The Canon now prays humbly that the offering reach the heavenly altar and that those who receive from it be filled with blessing and grace. The prayer joins sacrifice, divine worship and the faithful’s Communion.",
+        "fr": "Le Canon demande maintenant humblement que l’offrande atteigne l’autel céleste et que ceux qui y participent soient comblés de bénédiction et de grâce. Cette prière unit sacrifice, culte divin et Communion des fidèles."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Why the prayer is humble",
+            "fr": "Pourquoi cette prière est humble"
+          },
+          "body": {
+            "en": "Supplices te rogamus begins in a posture of petition: the priest asks Almighty God to command that the offering be borne before His divine majesty. Such language does not suggest that the Eucharistic sacrifice is defective. The Victim offered is Christ Himself. The humility belongs to those who stand before God and seek to receive the fruits of His sacrifice. The prayer's imagery points beyond the visible altar toward heavenly worship.",
+            "fr": "Supplices te rogamus commence comme une supplication : le prêtre demande au Dieu tout-puissant de faire porter l’offrande devant sa divine majesté. Ce langage ne suggère pas que le sacrifice eucharistique soit imparfait. La Victime offerte est le Christ Lui-même. L’humilité appartient à ceux qui se tiennent devant Dieu et demandent à recevoir les fruits de son sacrifice. Les images de la prière orientent le regard au-delà de l’autel visible vers le culte céleste."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The earthly and heavenly altar",
+            "fr": "L’autel terrestre et l’autel céleste"
+          },
+          "body": {
+            "en": "The Roman Canon speaks of an altar above and of the presence of God's majesty. These words should be read as part of the liturgy's worshipful language, without inventing a second consecration or imagining that the priest abandons the visible altar. The sacramental offering here and the heavenly worship of Christ are not rival realities. The Mass makes present the one sacrifice of the Redeemer, celebrated within the communion of the Church.",
+            "fr": "Le Canon romain parle d’un autel d’en haut et de la présence de la majesté divine. Il faut lire ces mots dans le langage d’adoration propre à la liturgie, sans inventer une seconde consécration ni imaginer que le prêtre quitte l’autel visible. L’offrande sacramentelle ici-bas et le culte céleste du Christ ne sont pas des réalités rivales. La Messe rend présent l’unique sacrifice du Rédempteur, célébré dans la communion de l’Église."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Those who receive are blessed",
+            "fr": "Ceux qui communient reçoivent la bénédiction"
+          },
+          "body": {
+            "en": "Supplices te rogamus asks that those who partake of the altar's gift receive heavenly blessing and grace. The faithful's Communion therefore does not sit outside the sacrifice as a separate, unrelated meal. The sacrificial Victim offered to the Father is the same Lord received in the Eucharist. This unity explains why the Canon prays for spiritual fruits in those who receive, while never suggesting that Communion creates another sacrificial offering.",
+            "fr": "Supplices te rogamus demande que ceux qui participent au don de l’autel reçoivent la bénédiction et la grâce du ciel. La Communion des fidèles n’est donc pas un repas séparé et sans rapport avec le sacrifice. La Victime sacrificielle offerte au Père est le même Seigneur reçu dans l’Eucharistie. Cette unité explique pourquoi le Canon demande des fruits spirituels pour ceux qui communient, sans jamais suggérer que la Communion constitue une nouvelle offrande sacrificielle."
+          },
+          "claim_ids": [
+            "MF06-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Reading the prayer without inventing a ceremony",
+            "fr": "Lire la prière sans inventer une cérémonie"
+          },
+          "body": {
+            "en": "The words of the Canon are enough to direct prayer toward God. Their imagery may be unfolded in personal meditation, but it does not authorize new gestures, processions or an additional scriptural lesson at this point of the Mass. Follow the priest’s actual Latin text and the approved translation provided by the app. The liturgical sequence then continues toward the remembrance of the departed and the Canon’s conclusion.",
+            "fr": "Les paroles du Canon suffisent à orienter la prière vers Dieu. On peut en méditer les images, mais elles n’autorisent ni gestes nouveaux, ni procession, ni leçon biblique supplémentaire à ce moment de la Messe. Suivez le texte latin véritable du prêtre et la traduction approuvée fournie par l’application. La succession liturgique se poursuit ensuite vers le souvenir des défunts et la conclusion du Canon."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.07",
+      "stage_id": "MF04",
+      "block_ids": [
+        "AO.SM.B057",
+        "AO.SM.B058",
+        "AO.SM.B059"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF04-C01",
+        "MF04-C02",
+        "MF04-C03"
+      ],
+      "title": {
+        "en": "The departed, the sinners and the gifts of God",
+        "fr": "Les défunts, les pécheurs et les dons de Dieu"
+      },
+      "lead": {
+        "en": "Near the end of the Canon, the Church remembers the faithful departed, asks mercy for the living who remain sinners, and acknowledges that every good gift comes from God. These prayers form one movement of humility and hope.",
+        "fr": "Vers la fin du Canon, l’Église se souvient des fidèles défunts, implore la miséricorde pour les vivants qui demeurent pécheurs et reconnaît que tout don bon vient de Dieu. Ces prières forment un même mouvement d’humilité et d’espérance."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "The Memento of the dead",
+            "fr": "Le Mémento des défunts"
+          },
+          "body": {
+            "en": "The Canon prays for the departed who have gone before us in the sign of faith. Names may be remembered by the priest, and the faithful can silently recall those for whom they wish to pray. The Mass does not abandon its sacrificial action when it turns toward the dead: intercession remains within the one offering made through Christ. The silence of this prayer can be received as an invitation to charity for those who have died.",
+            "fr": "Le Canon prie pour les défunts qui nous ont précédés, marqués du signe de la foi. Le prêtre peut rappeler leurs noms et les fidèles se souvenir en silence de ceux pour lesquels ils désirent prier. La Messe n’abandonne pas son action sacrificielle lorsqu’elle se tourne vers les morts : l’intercession demeure au sein de l’unique offrande présentée par le Christ. Le silence de cette prière peut être accueilli comme une invitation à la charité envers ceux qui sont décédés."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C02",
+            "MF04-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Nobis quoque: mercy for sinners",
+            "fr": "Nobis quoque : miséricorde pour les pécheurs"
+          },
+          "body": {
+            "en": "After praying for the dead, the priest turns toward those still on earth, including himself and the faithful, as sinners who hope in God's abundant mercies. The mention of saints here expresses hope of sharing their fellowship; it is not a claim that the congregation has already reached their glory by its own merits. The Church asks to be admitted to communion with them through God's goodness.",
+            "fr": "Après la prière pour les défunts, le prêtre se tourne vers ceux qui vivent encore sur la terre, lui-même et les fidèles compris, comme des pécheurs qui espèrent dans l’abondance des miséricordes de Dieu. La mention des saints exprime l’espérance de partager leur compagnie ; elle ne prétend pas que l’assemblée ait déjà atteint leur gloire par ses propres mérites. L’Église demande d’être admise à leur communion par la bonté divine."
+          },
+          "claim_ids": [
+            "MF04-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "Per quem: every gift through Christ",
+            "fr": "Per quem : tout don par le Christ"
+          },
+          "body": {
+            "en": "The Roman Canon turns toward the gifts that God creates, sanctifies, gives and bestows upon us through Christ. This thanksgiving belongs to the same prayer, although its words differ from the petitions immediately before it. Reading the sequence prayer by prayer is important: the app does not merge Per quem into the Memento of the dead or supply words that the 1962 text does not contain. The distinction makes the prayer easier to follow without changing its meaning.",
+            "fr": "Le Canon romain se tourne vers les dons que Dieu crée, sanctifie, donne et nous accorde par le Christ. Cette action de grâces appartient à la même prière, bien que ses paroles soient différentes des supplications qui la précèdent. Il importe de suivre la succession prière par prière : l’application ne fond pas Per quem dans le Mémento des défunts et n’ajoute aucune parole absente du texte de 1962. Cette distinction facilite le suivi sans modifier le sens de la prière."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C02"
+          ]
+        },
+        {
+          "heading": {
+            "en": "How these different petitions belong together",
+            "fr": "L’unité de ces différentes supplications"
+          },
+          "body": {
+            "en": "The remembrance of the dead, the request for mercy and the acknowledgement of God's gifts are distinct movements. They belong together because the Church never ceases to offer through Christ and to depend on His grace. The faithful can pray for departed loved ones and for their own conversion while following the priest's actual words. The commentary does not assign any separate rite or additional response to these petitions.",
+            "fr": "Le souvenir des défunts, la demande de miséricorde et la reconnaissance des dons de Dieu sont des mouvements distincts. Ils s’unissent parce que l’Église ne cesse d’offrir par le Christ et de dépendre de sa grâce. Les fidèles peuvent prier pour leurs proches disparus et pour leur propre conversion en suivant les paroles véritables du prêtre. Le commentaire n’attribue à ces supplications aucun rite séparé ni réponse supplémentaire."
+          },
+          "claim_ids": [
+            "MF04-C01",
+            "MF04-C03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.08",
+      "stage_id": "MF06",
+      "block_ids": [
+        "AO.SM.B060",
+        "AO.SM.B061"
+      ],
+      "profile": "ORDINARY_SUNG",
+      "use": "FORMATION_ONLY",
+      "content_type": "ORIGINAL_EDITORIAL_PARAPHRASE",
+      "review_status": "DRAFT_AWAITING_EDITORIAL_APPROVAL",
+      "claim_ids": [
+        "MF06-C01",
+        "MF06-C03"
+      ],
+      "title": {
+        "en": "Per ipsum — the Canon offered through Christ",
+        "fr": "Per ipsum — le Canon offert par le Christ"
+      },
+      "lead": {
+        "en": "The Canon concludes with a solemn doxology: all honour and glory are given to the Father through Christ in the unity of the Holy Spirit. The final Amen is the liturgical response to this whole Eucharistic prayer.",
+        "fr": "Le Canon s’achève par une doxologie solennelle : tout honneur et toute gloire sont rendus au Père par le Christ dans l’unité du Saint-Esprit. L’Amen final est la réponse liturgique à l’ensemble de cette prière eucharistique."
+      },
+      "sections": [
+        {
+          "heading": {
+            "en": "Through Him, with Him and in Him",
+            "fr": "Par Lui, avec Lui et en Lui"
+          },
+          "body": {
+            "en": "The concluding words Per ipsum, et cum ipso, et in ipso turn the offering toward the Father through Jesus Christ. The Canon does not end by directing honour to the visible assembly or to the celebrant considered separately from Christ. It expresses the Church's worship of God through the Redeemer, whose one sacrifice the Mass presents sacramentally. This is an especially clear place to recognise the unity of the lengthy preceding Canon.",
+            "fr": "Les paroles finales Per ipsum, et cum ipso, et in ipso orientent l’offrande vers le Père par Jésus-Christ. Le Canon ne s’achève pas en rendant l’honneur à l’assemblée visible ni au célébrant considéré séparément du Christ. Il exprime le culte que l’Église rend à Dieu par le Rédempteur, dont la Messe présente sacramentellement l’unique sacrifice. Ce moment permet de reconnaître avec clarté l’unité du long Canon qui précède."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The Father, Son and Holy Spirit",
+            "fr": "Le Père, le Fils et le Saint-Esprit"
+          },
+          "body": {
+            "en": "The doxology names the Father, the Son and the unity of the Holy Spirit. It shows the direction of Christian worship: Christ is not another victim alongside many equivalent sacrifices, but the divine Redeemer through whom the Church offers praise and thanksgiving. This brief prayer gathers the sacrificial and Trinitarian meaning of the Canon without adding a second Consecration or recapitulating all the prayers that preceded it.",
+            "fr": "La doxologie nomme le Père, le Fils et l’unité du Saint-Esprit. Elle montre l’orientation du culte chrétien : le Christ n’est pas une victime parmi de nombreux sacrifices équivalents, mais le divin Rédempteur par qui l’Église offre louange et action de grâces. Cette brève prière rassemble le sens sacrificiel et trinitaire du Canon sans ajouter une seconde Consécration ni recommencer toutes les prières précédentes."
+          },
+          "claim_ids": [
+            "MF06-C01"
+          ]
+        },
+        {
+          "heading": {
+            "en": "The response of Amen",
+            "fr": "La réponse de l’Amen"
+          },
+          "body": {
+            "en": "The great Amen at the end of the Canon gives the congregation a liturgical response to the prayer that has been offered. Its significance belongs to the whole Eucharistic action rather than to one isolated word. The faithful's participation does not replace the distinct sacramental ministry of the priest. Instead, the response expresses assent to the worship offered to the Father through Christ and points toward the Communion that follows.",
+            "fr": "Le grand Amen qui termine le Canon donne à l’assemblée une réponse liturgique à la prière offerte. Sa portée concerne toute l’action eucharistique plutôt qu’un mot isolé. La participation des fidèles ne remplace pas le ministère sacramentel propre du prêtre. La réponse exprime au contraire l’adhésion au culte rendu au Père par le Christ et prépare à la Communion qui suit."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C03"
+          ]
+        },
+        {
+          "heading": {
+            "en": "From the Canon toward Communion",
+            "fr": "Du Canon vers la Communion"
+          },
+          "body": {
+            "en": "The conclusion of the Canon does not end the celebration of Mass. The prayers leading toward Communion continue, and the same Lord offered to the Father is received sacramentally by the faithful. The doxology therefore joins praise and sacrifice with the gift of Communion. Use the original Mass text to follow the words and gestures in sequence; commentary explains the meaning but never supplies a competing set of rubrics or a different rite.",
+            "fr": "La conclusion du Canon n’achève pas la célébration de la Messe. Les prières qui conduisent vers la Communion se poursuivent, et le même Seigneur offert au Père est reçu sacramentellement par les fidèles. La doxologie unit donc louange et sacrifice au don de la Communion. Suivez les paroles et les gestes dans leur ordre grâce au texte original de la Messe ; le commentaire en explique le sens, mais ne fournit jamais des rubriques concurrentes ni un rite différent."
+          },
+          "claim_ids": [
+            "MF06-C01",
+            "MF06-C03"
+          ]
+        }
+      ]
+    }
+  ],
+  "certification": {
+    "human_reviewed": false,
+    "formal_rights_reviewed": false,
+    "eligible_to_promote_to_release_manifest": false
+  }
+}

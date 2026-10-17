@@ -1,0 +1,149 @@
+{
+  "schema": "ao-formation-lebrun-consecration-dissertation-source-20261016-v1",
+  "scope": "FORMATION_P2_HISTORICAL_EDITORIAL_ONLY",
+  "status": "AUTHOR_TEXT_READ_IN_LATER_EDITION_IMAGE_AND_EARLIEST_EDITION_UNCOLLATED",
+  "source_references": [
+    {
+      "id": "LEBRUN_1860_III_OBSERVATIONS",
+      "title": "Pierre Le Brun, Explication ... de la Messe, tome III, Observations sur la consécration",
+      "edition": "Périsse frères (Lyon/Paris), 1860 republication",
+      "url": "https://fr.scribd.com/document/794358554/Explication-litterale-historique-et-dogmatique-des-prieres-et-des-ceremonies-de-la-messe",
+      "section": "Observations liminaires, roman pp. V–X",
+      "visible_transcription_lines": [
+        [
+          90,
+          154
+        ],
+        [
+          155,
+          175
+        ],
+        [
+          212,
+          241
+        ],
+        [
+          267,
+          307
+        ]
+      ],
+      "witness_kind": "DIRECT_AUTHOR_PROSE_1860_REPRINT_TRANSCRIPTION_NOT_1843_FACSIMILE",
+      "source_image_checked": false,
+      "edition_text_collated_against_1843": false
+    },
+    {
+      "id": "LEBRUN_1843_III_ORIGINAL",
+      "title": "Pierre Le Brun, tome III, 1843 scan",
+      "edition": "Seguin aîné, 1843",
+      "url": "https://commons.wikimedia.org/wiki/File:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_3_(1843).djvu",
+      "witness_kind": "ORIGINAL_EDITION_SCAN_IDENTIFIED_NOT_VISUALLY_COLLATED",
+      "source_image_checked": false,
+      "edition_text_collated_against_1860": false
+    },
+    {
+      "id": "LEBRUN_1727_DEFENSE",
+      "title": "Pierre Le Brun, Défense de l’ancien sentiment sur la forme de la consécration de l’Eucharistie",
+      "edition": "Veuve Delaulne, Paris, 1727",
+      "url": "https://play.google.com/store/books/details/Pierre_Lebrun_D%C3%A9fense_de_l_ancien_sentiment_sur_la?id=VRgziK7Cz9AC",
+      "witness_kind": "ORIGINAL_WORK_BIBLIOGRAPHICALLY_IDENTIFIED_FULL_TEXT_UNCOLLATED",
+      "source_image_checked": false
+    },
+    {
+      "id": "ALPHONSUS_CEREMONIES",
+      "title": "St Alphonsus de Liguori, The Ceremonies of the Mass",
+      "edition": "English printed pp.157–158",
+      "url": "https://www.saintsbooks.net/books/St.%20Alphonsus%20Maria%20de%20Liguori%20-%20Complete%20Works%20-%2013%20-%20The%20Holy%20Mass.pdf",
+      "witness_kind": "DIRECT_AUTHOR_DESCRIPTION_OF_LEBRUN_WITH_DIFFERENT_VOLUME_LOCATOR",
+      "source_image_checked": false
+    },
+    {
+      "id": "DTC_EPICLESE",
+      "title": "Dictionnaire de théologie catholique, Épiclèse eucharistique",
+      "edition": "t.5, printed cols.275–276",
+      "url": "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_5.djvu/150",
+      "witness_kind": "SECONDARY_HISTORICAL_TREATMENT_PRINT_IMAGE_VERIFIED_1908_SOURCE",
+      "source_image_checked": true
+    }
+  ],
+  "primary_author_findings": [
+    {
+      "topic": "INSTITUTION_AND_EPICLESIS_TOGETHER",
+      "ed": "Le Brun says the words of Institution and the Church's invocation together effect consecration; he opposes both the merely-historical reading of Christ's words and the school's opinion that the Institution words alone suffice.",
+      "support_id": "LEBRUN_1860_III_OBSERVATIONS",
+      "lines": [
+        93,
+        160
+      ],
+      "historical_position_only": true
+    },
+    {
+      "topic": "ARMENIAN_EPICLESIS_POSITION",
+      "ed": "His immediate argument is the Armenian anaphora where an invocation follows the Institution words, NOT a claim that the Roman Quam oblationem is identical to the Armenian post-Institution epiclesis.",
+      "support_id": "LEBRUN_1860_III_OBSERVATIONS",
+      "lines": [
+        93,
+        110
+      ],
+      "historical_position_only": true
+    },
+    {
+      "topic": "FLORENCE_QUALIFICATION",
+      "ed": "He argues the Florentine identification of Christ's words as form is not decisive against an additional prayer, an argument he himself advances, not the Church's final settled theological rule.",
+      "support_id": "LEBRUN_1860_III_OBSERVATIONS",
+      "lines": [
+        139,
+        159
+      ],
+      "historical_position_only": true
+    },
+    {
+      "topic": "DIFFERENTIATE_MIRACLE_OBLATION_INSTITUTION",
+      "ed": "Le Brun distinguishes the original miraculous conversion by Christ, His sacrificial oblation and His institution of an enduring sacrament. His historical reasoning should not be copied into instructional rules about 1962 validity.",
+      "support_id": "LEBRUN_1860_III_OBSERVATIONS",
+      "lines": [
+        181,
+        241
+      ],
+      "historical_position_only": true
+    },
+    {
+      "topic": "PRESERVE_EASTERN_LITURGIES",
+      "ed": "He stresses his aim is to preserve Eastern liturgical invocation texts rather than to force them to conform textually to Latin scholastic simplifications, even while respecting the common opinion.",
+      "support_id": "LEBRUN_1860_III_OBSERVATIONS",
+      "lines": [
+        267,
+        307
+      ],
+      "historical_position_only": true
+    },
+    {
+      "topic": "CONTROVERSY_1727",
+      "ed": "Le Brun's 1727 defense against Bougeant and a subsequent 1728 exchange are separately confirmed bibliographically and in the Catholic theological dictionary; 1727 full original pamphlet remains uncollated.",
+      "support_id": "DTC_EPICLESE",
+      "lines": [
+        110,
+        117
+      ],
+      "historical_position_only": true
+    }
+  ],
+  "theological_placement": {
+    "ordinary_mass_explorer": "Quam oblationem is the Roman preparatory petition leading to the words of institution; the text/gestures/reader remain canonical as-is.",
+    "optional_advanced_layer": "Historical disagreement on the form of consecration, especially Eastern anaphoras and epiclesis; situate within the 1720s Le Brun–Bougeant controversy and late theological evaluation.",
+    "safeguards": [
+      "No implication that an Eastern post-Institution epiclesis is identical to the Roman pre-Institution Quam oblationem.",
+      "Do not teach Le Brun's contested sacramental validity hypothesis as Catholic norm.",
+      "Do not promote any unapproved P0 claim, add ritual gestures or modify Mass text.",
+      "Separate 1860 digitized text of original author from 1843 scanned source not image-verified."
+    ]
+  },
+  "certification": {
+    "volume_iii_1860_author_text_examined": true,
+    "volume_iii_1843_scanned_edition_identified": true,
+    "volume_iii_1843_page_images_examined": false,
+    "volume_iii_1860_1843_parallel_collated": false,
+    "separate_1727_original_full_text_examined": false,
+    "normative_new_rubrics_authorized": false,
+    "p0_historical_claims_published": 0
+  }
+}

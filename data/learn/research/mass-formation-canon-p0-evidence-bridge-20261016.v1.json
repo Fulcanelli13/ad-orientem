@@ -1,0 +1,1907 @@
+{
+  "schema": "ao-formation-roman-canon-p0-evidence-bridge-v1",
+  "status": "RESEARCH_IDENTITY_CROSSWALK_ONLY_NOT_USER_FACING",
+  "scope": "FORMATION_P2_EDITORIAL_ONLY",
+  "p0_source": {
+    "pr": 1270,
+    "commit": "d0ba0d1866981e890ce067f2d9d35e7136de38c5",
+    "branch": "research/ultra-master-mass-knowledge-bridge-20261016",
+    "crosswalk_path": "docs/research/MASS-P0-CANONICAL-CUE-CROSSWALK-20261016.v1.json",
+    "relations_path": "docs/research/MASS-P0-SCRIPTURE-AUTHOR-RELATIONSHIPS-20261016.v1.json"
+  },
+  "p2_source": {
+    "pr": 1307,
+    "commit_at_reconciliation": "6dceb85fd5861dcc3cfc1886c4b72b97681a427e",
+    "deep_study_path": "data/learn/research/mass-formation-canon-deep-exemplar-20261016.v1.json",
+    "historical_review_path": "data/learn/research/mass-moment-author-evidence-review-20261016.v1.json"
+  },
+  "governance": {
+    "editorial_review_required": true,
+    "p0_historical_claims_publication_approved": 0,
+    "p0_scripture_candidates_publication_approved": 0,
+    "research_grade_never_means_publication_approval": true,
+    "canonical_1962_ceremony_unchanged": true,
+    "never_runtime_import": true,
+    "source_quotation_reproduction_forbidden_without_owner_signoff": true
+  },
+  "totals": {
+    "source_blocks": 15,
+    "deep_studies": 8,
+    "mapped_research_units": 79,
+    "p0_scripture_candidates": 1,
+    "historical_author_candidates": 88,
+    "approved_new_p0_publication": 0
+  },
+  "studies": [
+    {
+      "study_id": "AO.FORM.CANON.DEEP.01",
+      "block_ids": [
+        "AO.SM.B047",
+        "AO.SM.B048",
+        "AO.SM.B049",
+        "AO.SM.B050"
+      ],
+      "priority": "HIGH",
+      "editorial_question": {
+        "en": "Confirm treatment of sacrifice for Church and faithful; distinguish communion of saints, papal/bishop references, and historical origins of the remembered names.",
+        "fr": "Contrôler l'explication du sacrifice pour l'Église et les fidèles, la communion des saints et les références au pape, à l'évêque et aux personnes commémorées."
+      },
+      "unit_count": 24,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 27,
+      "research_author_names": [
+        "Dom Prosper Guéranger",
+        "Fr Pierre Le Brun",
+        "Josef A. Jungmann",
+        "St Alphonsus de Liguori",
+        "St Thomas Aquinas"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.02",
+      "block_ids": [
+        "AO.SM.B051"
+      ],
+      "priority": "HIGH",
+      "editorial_question": {
+        "en": "Verify the five Latin petition adjectives one by one against Gihr, Guéranger, Aquinas, and the original Roman Missal, avoiding the claim that each sign of the Cross causes a separate consecration.",
+        "fr": "Vérifier un par un les cinq adjectifs de la supplication latine chez Gihr, Guéranger, saint Thomas et dans le Missel, sans attribuer une consécration à chaque signe de croix."
+      },
+      "unit_count": 5,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 24,
+      "research_author_names": [
+        "Dom Prosper Guéranger",
+        "Fr Nicholas Gihr",
+        "Fr Pierre Le Brun",
+        "Josef A. Jungmann",
+        "St Alphonsus de Liguori",
+        "St Thomas Aquinas"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.03",
+      "block_ids": [
+        "AO.SM.B052",
+        "AO.SM.B053"
+      ],
+      "priority": "HIGH",
+      "editorial_question": {
+        "en": "Compare the words and actions over Host and Chalice with the original source and the Roman Catechism; distinguish doctrinal teaching from exact 1962 wording and ceremonial instructions.",
+        "fr": "Confronter paroles et gestes sur l'Hostie et le Calice au texte original et au Catéchisme romain, en distinguant doctrine, formule de 1962 et rubriques."
+      },
+      "unit_count": 17,
+      "p0_scripture_candidate_count": 1,
+      "historical_author_candidate_count": 13,
+      "research_author_names": [
+        "Fr Pierre Le Brun",
+        "Roman Catechism (Council of Trent)",
+        "St Alphonsus de Liguori"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.04",
+      "block_ids": [
+        "AO.SM.B054"
+      ],
+      "priority": "MEDIUM",
+      "editorial_question": {
+        "en": "Check how the anamnesis and sacrificial terms are explained by St Alphonsus and Aquinas; keep the Passion, Resurrection and Ascension in their source order.",
+        "fr": "Vérifier l'anamnèse et le vocabulaire sacrificiel chez saint Alphonse et saint Thomas, en conservant l'ordre Passion, Résurrection, Ascension."
+      },
+      "unit_count": 5,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 4,
+      "research_author_names": [
+        "St Alphonsus de Liguori",
+        "St Thomas Aquinas"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.05",
+      "block_ids": [
+        "AO.SM.B055"
+      ],
+      "priority": "HIGH",
+      "editorial_question": {
+        "en": "Compare Gihr and St Alphonsus on Abel, Abraham and Melchisedech; distinguish the Canon's explicit named figures from the separately owned Genesis/Hebrews study links.",
+        "fr": "Comparer Gihr et saint Alphonse sur Abel, Abraham et Melchisédech ; distinguer les figures nommées par le Canon des liens d'étude biblique qui relèvent d'un autre propriétaire."
+      },
+      "unit_count": 3,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 8,
+      "research_author_names": [
+        "Dom Prosper Guéranger",
+        "Fr Nicholas Gihr",
+        "Fr Pierre Le Brun",
+        "St Alphonsus de Liguori"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.06",
+      "block_ids": [
+        "AO.SM.B056"
+      ],
+      "priority": "HIGH",
+      "editorial_question": {
+        "en": "Reconcile Aquinas on the holy Angel and heavenly altar with Guéranger, Le Brun and the original prayer, avoiding an exclusive identification of the Angel.",
+        "fr": "Rapprocher l'analyse de saint Thomas concernant l'Ange et l'autel céleste avec Guéranger, Le Brun et la prière, sans identifier exclusivement l'Ange."
+      },
+      "unit_count": 7,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 7,
+      "research_author_names": [
+        "Dom Prosper Guéranger",
+        "Fr Pierre Le Brun",
+        "St Alphonsus de Liguori",
+        "St Thomas Aquinas"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.07",
+      "block_ids": [
+        "AO.SM.B057",
+        "AO.SM.B058",
+        "AO.SM.B059"
+      ],
+      "priority": "MEDIUM",
+      "editorial_question": {
+        "en": "Distinguish the Memento of the dead from Nobis quoque and Per quem; do not introduce unapproved commemorations or invent extra priest gestures.",
+        "fr": "Distinguer le Memento des défunts, Nobis quoque et Per quem, sans créer de commémorations non approuvées ni de nouveaux gestes du prêtre."
+      },
+      "unit_count": 13,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 5,
+      "research_author_names": [
+        "Fr Pierre Le Brun",
+        "Josef A. Jungmann",
+        "St Alphonsus de Liguori"
+      ],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.08",
+      "block_ids": [
+        "AO.SM.B060",
+        "AO.SM.B061"
+      ],
+      "priority": "MEDIUM",
+      "editorial_question": {
+        "en": "These two blocks have no mapped historical-author claim in this P0 snapshot. Strengthen the explanation using the printed doxology and the existing Formation lesson, not an invented missing source.",
+        "fr": "Ces deux blocs n'ont pas de fiche d'auteur historique dans ce relevé P0. Approfondir à partir de la doxologie imprimée et de Formation existante, sans inventer une source."
+      },
+      "unit_count": 5,
+      "p0_scripture_candidate_count": 0,
+      "historical_author_candidate_count": 0,
+      "research_author_names": [],
+      "approved_source_count": 0,
+      "release_decision": "EDITORIAL_HOLD"
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "AO.SM.B047",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0150.U001",
+          "cue_id": "AO.SM.C0150",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0151.U001",
+          "cue_id": "AO.SM.C0151",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0152.U001",
+          "cue_id": "AO.SM.C0152",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0153.U001",
+          "cue_id": "AO.SM.C0153",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0153.U002",
+          "cue_id": "AO.SM.C0153",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0153.U003",
+          "cue_id": "AO.SM.C0153",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-011",
+          "unit_id": "AO.V3.0150.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Te igitur",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-012",
+          "unit_id": "AO.V3.0152.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Te igitur",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-013",
+          "unit_id": "AO.V3.0153.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Te igitur",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-039",
+          "unit_id": "AO.V3.0150.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "TE IGITUR, introductory paragraph",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-040",
+          "unit_id": "AO.V3.0152.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "TE IGITUR, offering and triple sign",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-041",
+          "unit_id": "AO.V3.0153.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "TE IGITUR, pro Ecclesia",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-042",
+          "unit_id": "AO.V3.0153.U002",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "TE IGITUR, adunare",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-043",
+          "unit_id": "AO.V3.0153.U003",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "TE IGITUR, Una cum",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-064",
+          "unit_id": "AO.V3.0152.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 3",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-089",
+          "unit_id": "AO.V3.0150.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 356–357; OCR lines 22044–22064",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "'Igitur' is explained as a connective; not a claim about every historical stage of the Canon."
+        },
+        {
+          "claim_id": "VER-090",
+          "unit_id": "AO.V3.0150.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 357; OCR lines 22066–22088",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Le Brun's explanation, not a scriptural quotation."
+        },
+        {
+          "claim_id": "VER-091",
+          "unit_id": "AO.V3.0153.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 359–364; OCR lines 22437–22463",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "1 Timothy is cited for prayer for rulers, not a verbatim source for the words 'pro Ecclesia'."
+        },
+        {
+          "claim_id": "VER-133",
+          "unit_id": "AO.V3.0150.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 54–56",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Exact wording and sequence in earlier witnesses remain under reconstruction."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B048",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0154.U001",
+          "cue_id": "AO.SM.C0154",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0156.U001",
+          "cue_id": "AO.SM.C0156",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0156.U002",
+          "cue_id": "AO.SM.C0156",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0156.U003",
+          "cue_id": "AO.SM.C0156",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0156.U004",
+          "cue_id": "AO.SM.C0156",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-014",
+          "unit_id": "AO.V3.0154.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, first Memento",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-015",
+          "unit_id": "AO.V3.0156.U002",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, first Memento",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-016",
+          "unit_id": "AO.V3.0156.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, first Memento",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-044",
+          "unit_id": "AO.V3.0154.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "MEMENTO DES VIVANTS",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-045",
+          "unit_id": "AO.V3.0156.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "MEMENTO DES VIVANTS",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-134",
+          "unit_id": "AO.V3.0154.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 54–55",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Jungmann discusses uncertain arrangement of prayers and names."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B049",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0157.U001",
+          "cue_id": "AO.SM.C0157",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0158.U001",
+          "cue_id": "AO.SM.C0158",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0159.U001",
+          "cue_id": "AO.SM.C0159",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0159.U002",
+          "cue_id": "AO.SM.C0159",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0159.U003",
+          "cue_id": "AO.SM.C0159",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0159.U004",
+          "cue_id": "AO.SM.C0159",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0159.U005",
+          "cue_id": "AO.SM.C0159",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0160.U001",
+          "cue_id": "AO.SM.C0160",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0160.U002",
+          "cue_id": "AO.SM.C0160",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-017",
+          "unit_id": "AO.V3.0157.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Communicantes",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-092",
+          "unit_id": "AO.V3.0157.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 380–381; OCR lines 23370–23396",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Isaiah is an author-applied image; neither verse is the literal source of the entire Communicantes."
+        },
+        {
+          "claim_id": "VER-135",
+          "unit_id": "AO.V3.0157.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 55–56",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "This does not imply a known date of composition."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B050",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0161.U001",
+          "cue_id": "AO.SM.C0161",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0161.U002",
+          "cue_id": "AO.SM.C0161",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0162.U001",
+          "cue_id": "AO.SM.C0162",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0162.U002",
+          "cue_id": "AO.SM.C0162",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-018",
+          "unit_id": "AO.V3.0161.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Hanc igitur",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-019",
+          "unit_id": "AO.V3.0161.U002",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Hanc igitur",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-093",
+          "unit_id": "AO.V3.0161.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 386–387; OCR lines 23728–23757",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Competing historical readings are described in the SAME source; do not flatten to one."
+        },
+        {
+          "claim_id": "VER-094",
+          "unit_id": "AO.V3.0161.U002",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 390–391; OCR lines 23919–23935",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "2 Peter grounds the exhortation; not the original textual source of the Canon clause."
+        },
+        {
+          "claim_id": "VER-136",
+          "unit_id": "AO.V3.0161.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 55–56",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "The silence of early evidence is not proof of a precise later date."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B051",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0163.U001",
+          "cue_id": "AO.SM.C0163",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0164.U001",
+          "cue_id": "AO.SM.C0164",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0165.U001",
+          "cue_id": "AO.SM.C0165",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0166.U001",
+          "cue_id": "AO.SM.C0166",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0167.U001",
+          "cue_id": "AO.SM.C0167",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-020",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Quam oblationem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-021",
+          "unit_id": "AO.V3.0165.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Quam oblationem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-046",
+          "unit_id": "AO.V3.0163.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "QUAM OBLATIONEM",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-047",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "QUAM OBLATIONEM, adscriptam",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-048",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "QUAM OBLATIONEM, ratam",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-049",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "QUAM OBLATIONEM, rationabilem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-052",
+          "unit_id": "AO.V3.0163.U001",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§59, pp. 627–630",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-053",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§59, p. 628",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Author's Pauline citation explains consecrated chalice; not etymology of each cross."
+        },
+        {
+          "claim_id": "VER-054",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§59, p. 628",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-055",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§59, p. 628",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-056",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§59, pp. 629–630",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-065",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 3",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-066",
+          "unit_id": "AO.V3.0165.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 3",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-074",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Quam oblationem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-075",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Quam oblationem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-076",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Quam oblationem",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-095",
+          "unit_id": "AO.V3.0163.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 397; OCR lines 24258–24297",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "His recourse to Paschasius Radbertus includes a noted historical misattribution to Augustine."
+        },
+        {
+          "claim_id": "VER-096",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 398; OCR lines 24312–24332",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Le Brun's application extends to the Church's self-offering."
+        },
+        {
+          "claim_id": "VER-097",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 398–399; OCR lines 24334–24338",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Particular interpretation; Gihr and other commentators need independent comparison."
+        },
+        {
+          "claim_id": "VER-098",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24340–24348",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Author's doctrinal exposition, not demonstrated etymological origin."
+        },
+        {
+          "claim_id": "VER-099",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24350–24375; 24407–24408",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Romans and 1 Peter explicitly cited by author; not a word-for-word liturgical borrowing."
+        },
+        {
+          "claim_id": "VER-100",
+          "unit_id": "AO.V3.0164.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24377–24391",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "This double application is interpretative, not a rubrical cue."
+        },
+        {
+          "claim_id": "VER-101",
+          "unit_id": "AO.V3.0165.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24393–24428",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Comparison is explicitly analogical, not evidence that the prayer quotes those verses."
+        },
+        {
+          "claim_id": "VER-137",
+          "unit_id": "AO.V3.0163.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 54–55",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "This does not settle the theological sense of each adjective."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B052",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0168.U001",
+          "cue_id": "AO.SM.C0168",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0169.U001",
+          "cue_id": "AO.SM.C0169",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0170.U001",
+          "cue_id": "AO.SM.C0170",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0171.U001",
+          "cue_id": "AO.SM.C0171",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0172.U001",
+          "cue_id": "AO.SM.C0172",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0172.U002",
+          "cue_id": "AO.SM.C0172",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0173.U001",
+          "cue_id": "AO.SM.C0173",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [
+        {
+          "unit_id": "AO.V3.0173.U001",
+          "reference_as_received": "Matthew 26:26; Mark 14:22; Luke 22:19; 1 Corinthians 11:24",
+          "relationship_type": "SCRIPTURAL_NARRATIVE_PARALLEL",
+          "verse_edition_verified": false,
+          "status": "EDITORIAL_HOLD",
+          "publication_allowed": false
+        }
+      ],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-022",
+          "unit_id": "AO.V3.0173.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Qui pridie",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-070",
+          "unit_id": "AO.V3.0173.U001",
+          "author": "Roman Catechism (Council of Trent)",
+          "source_locator": "Part II, Eucharist, form of consecration",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-102",
+          "unit_id": "AO.V3.0173.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 406–407; OCR lines 24492–24517; 24526–24535",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Exact 1962 vocal rubrics must be checked independently; he cites a much older Grenoble missal."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B053",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0175.U001",
+          "cue_id": "AO.SM.C0175",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0176.U001",
+          "cue_id": "AO.SM.C0176",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0177.U001",
+          "cue_id": "AO.SM.C0177",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0178.U001",
+          "cue_id": "AO.SM.C0178",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0178.U002",
+          "cue_id": "AO.SM.C0178",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0179.U001",
+          "cue_id": "AO.SM.C0179",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0179.U002",
+          "cue_id": "AO.SM.C0179",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0179.U003",
+          "cue_id": "AO.SM.C0179",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0179.U004",
+          "cue_id": "AO.SM.C0179",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0180.U001",
+          "cue_id": "AO.SM.C0180",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-023",
+          "unit_id": "AO.V3.0179.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, chalice institution",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-024",
+          "unit_id": "AO.V3.0179.U002",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, chalice institution",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-025",
+          "unit_id": "AO.V3.0179.U003",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, chalice institution",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-026",
+          "unit_id": "AO.V3.0179.U004",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, chalice institution",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-027",
+          "unit_id": "AO.V3.0180.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, after consecration",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-071",
+          "unit_id": "AO.V3.0179.U001",
+          "author": "Roman Catechism (Council of Trent)",
+          "source_locator": "Part II, Eucharist, form of chalice consecration",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-072",
+          "unit_id": "AO.V3.0179.U002",
+          "author": "Roman Catechism (Council of Trent)",
+          "source_locator": "Part II, Eucharist, form of chalice consecration",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-073",
+          "unit_id": "AO.V3.0179.U003",
+          "author": "Roman Catechism (Council of Trent)",
+          "source_locator": "Part II, Eucharist, form of chalice consecration",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-103",
+          "unit_id": "AO.V3.0179.U004",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 411–412; OCR lines 25535–25583",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Several texts are adduced for explanation, not all direct sources of the sacramental formula."
+        },
+        {
+          "claim_id": "VER-104",
+          "unit_id": "AO.V3.0180.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 412; OCR lines 25598–25601",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Author's contextual explanation; do not infer a modern scripture citation without checking paragraph footnotes."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B054",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0182.U001",
+          "cue_id": "AO.SM.C0182",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0182.U002",
+          "cue_id": "AO.SM.C0182",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0183.U001",
+          "cue_id": "AO.SM.C0183",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0184.U001",
+          "cue_id": "AO.SM.C0184",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0185.U001",
+          "cue_id": "AO.SM.C0185",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-028",
+          "unit_id": "AO.V3.0182.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Unde et memores",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-029",
+          "unit_id": "AO.V3.0184.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Unde et memores",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-067",
+          "unit_id": "AO.V3.0184.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 3",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-069",
+          "unit_id": "AO.V3.0184.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 4",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B055",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0186.U001",
+          "cue_id": "AO.SM.C0186",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0186.U002",
+          "cue_id": "AO.SM.C0186",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0186.U003",
+          "cue_id": "AO.SM.C0186",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-030",
+          "unit_id": "AO.V3.0186.U002",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Supra quae",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-031",
+          "unit_id": "AO.V3.0186.U003",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Supra quae",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-050",
+          "unit_id": "AO.V3.0186.U002",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "SUPRA QUAE",
+          "research_grade": "SECTION-LEVEL",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-057",
+          "unit_id": "AO.V3.0186.U002",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§61, p. 659",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Hypothesis of heavenly fire on Abel's offering is NOT stated in Genesis."
+        },
+        {
+          "claim_id": "VER-058",
+          "unit_id": "AO.V3.0186.U002",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§61, p. 659",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-059",
+          "unit_id": "AO.V3.0186.U003",
+          "author": "Fr Nicholas Gihr",
+          "source_locator": "§61 p. 660; earlier discussion pp. 75–76",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Ancient exegetical typology is not evidence the Latin prayer itself existed in Genesis."
+        },
+        {
+          "claim_id": "VER-105",
+          "unit_id": "AO.V3.0186.U002",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 435–437; OCR lines 26314–26355; 26370–26389",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Typological comparison already explicit in the Canon; interpretation of acceptability belongs to Le Brun."
+        },
+        {
+          "claim_id": "VER-106",
+          "unit_id": "AO.V3.0186.U003",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 436–437; OCR lines 26370–26412",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Do not mislabel Old Testament narrative as Jewish derivation of Roman prayer wording."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B056",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0187.U001",
+          "cue_id": "AO.SM.C0187",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0187.U002",
+          "cue_id": "AO.SM.C0187",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0188.U001",
+          "cue_id": "AO.SM.C0188",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0189.U001",
+          "cue_id": "AO.SM.C0189",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0190.U001",
+          "cue_id": "AO.SM.C0190",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0191.U001",
+          "cue_id": "AO.SM.C0191",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0191.U002",
+          "cue_id": "AO.SM.C0191",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-032",
+          "unit_id": "AO.V3.0187.U002",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, Supplices",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-051",
+          "unit_id": "AO.V3.0187.U002",
+          "author": "Dom Prosper Guéranger",
+          "source_locator": "SUPPLICES",
+          "research_grade": "SECTION-LEVEL",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-068",
+          "unit_id": "AO.V3.0189.U001",
+          "author": "St Thomas Aquinas",
+          "source_locator": "ST III q.83 a.5 ad 3",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-107",
+          "unit_id": "AO.V3.0187.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 443–444; OCR lines 26626–26652",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Historical pre-1962 ceremonial witness, not 1962 law."
+        },
+        {
+          "claim_id": "VER-108",
+          "unit_id": "AO.V3.0187.U002",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 445–449; OCR lines 26845–26889; 27006–27026",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Unresolved interpretative issue; do not state the Angel unequivocally means Christ."
+        },
+        {
+          "claim_id": "VER-109",
+          "unit_id": "AO.V3.0187.U002",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 446; OCR lines 26891–26897",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Not proof of historical derivation from a specific ancient temple rite."
+        },
+        {
+          "claim_id": "VER-110",
+          "unit_id": "AO.V3.0188.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 446; OCR lines 26899–26908",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Source-specific application; does not establish a universal modern lay Communion duty."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B057",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0192.U001",
+          "cue_id": "AO.SM.C0192",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0194.U001",
+          "cue_id": "AO.SM.C0194",
+          "comparison": "NFC_FULL_CUE_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0195.U001",
+          "cue_id": "AO.SM.C0195",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0195.U002",
+          "cue_id": "AO.SM.C0195",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-033",
+          "unit_id": "AO.V3.0192.U001",
+          "author": "St Alphonsus de Liguori",
+          "source_locator": "Short Explanation, Fourth Part, second Memento",
+          "research_grade": "PASSAGE VERIFIED",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "None"
+        },
+        {
+          "claim_id": "VER-111",
+          "unit_id": "AO.V3.0192.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 453; OCR lines 27270–27284",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Historical use of 'peace' and doctrinal inference not a direct quotation."
+        },
+        {
+          "claim_id": "VER-112",
+          "unit_id": "AO.V3.0194.U001",
+          "author": "Fr Pierre Le Brun",
+          "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 454–455; OCR lines 27321–27358; 27373–27397",
+          "research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Historical biblical precedent for prayer for the dead; the Roman Canon clause does not quote Maccabees."
+        },
+        {
+          "claim_id": "VER-138",
+          "unit_id": "AO.V3.0192.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 55–56",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Jungmann explicitly distinguishes it from sixth-century-attested additions."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B058",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0196.U001",
+          "cue_id": "AO.SM.C0196",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0196.U002",
+          "cue_id": "AO.SM.C0196",
+          "comparison": "NFC_LITERAL_SUBSPAN_MATCH",
+          "comparison_method": "DIRECT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0197.U001",
+          "cue_id": "AO.SM.C0197",
+          "comparison": "NFC_DUAL_FINGERPRINT_SUBSPAN_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0197.U002",
+          "cue_id": "AO.SM.C0197",
+          "comparison": "NFC_DUAL_FINGERPRINT_SUBSPAN_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0197.U003",
+          "cue_id": "AO.SM.C0197",
+          "comparison": "NFC_DUAL_FINGERPRINT_SUBSPAN_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0197.U004",
+          "cue_id": "AO.SM.C0197",
+          "comparison": "NFC_DUAL_FINGERPRINT_SUBSPAN_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0198.U001",
+          "cue_id": "AO.SM.C0198",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": [
+        {
+          "claim_id": "VER-139",
+          "unit_id": "AO.V3.0196.U001",
+          "author": "Josef A. Jungmann",
+          "source_locator": "The Mass of the Roman Rite, Vol. I, I, pp. 55–56",
+          "research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+          "original_quote_certified": false,
+          "publication_allowed": false,
+          "collation_completed": false,
+          "review_caution": "Do not treat this as evidence that its penitential theology is late."
+        }
+      ]
+    },
+    {
+      "block_id": "AO.SM.B059",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0199.U001",
+          "cue_id": "AO.SM.C0199",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0200.U001",
+          "cue_id": "AO.SM.C0200",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": []
+    },
+    {
+      "block_id": "AO.SM.B060",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0202.U001",
+          "cue_id": "AO.SM.C0202",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0203.U001",
+          "cue_id": "AO.SM.C0203",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0204.U001",
+          "cue_id": "AO.SM.C0204",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": []
+    },
+    {
+      "block_id": "AO.SM.B061",
+      "research_unit_ids": [
+        {
+          "id": "AO.V3.0206.U001",
+          "cue_id": "AO.SM.C0206",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        },
+        {
+          "id": "AO.V3.0207.U001",
+          "cue_id": "AO.SM.C0207",
+          "comparison": "NFC_DUAL_FINGERPRINT_FULL_CUE_MATCH",
+          "comparison_method": "DUAL_FINGERPRINT_NFC",
+          "printed_1962_certified": false
+        }
+      ],
+      "scripture_candidates": [],
+      "historical_author_candidates": []
+    }
+  ],
+  "primary_source_spot_checks": [
+    {
+      "study_id": "AO.FORM.CANON.DEEP.01",
+      "locus": "Summa theologiae III q.83 a.4 ad 3",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "finding": "Aquinas explicitly connects the Eucharistic prayer with the Church's unity; precise application to Te igitur is editorial, not a newly certified 1962 rubric.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.03",
+      "locus": "Pius XII, Mediator Dei §70",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "finding": "The separate consecrated species signify Christ's sacrificial death, while the risen Christ is not sacrificed by another bloody death.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.04",
+      "locus": "Summa theologiae III q.83 a.1",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "finding": "Aquinas distinguishes the sacrament's representation of Christ's Passion and the fruits communicated from that one sacrifice.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.05",
+      "locus": "Benedict XVI, Lectio divina, 18 February 2010, on Supra quae",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/speeches/2010/february/documents/hf_ben-xvi_spe_20100218_parroci-roma.html",
+      "finding": "The Pope explicitly names Abel, Abraham and Melchisedech as prefigurations of Christ's sacrifice in the Roman Canon.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.05",
+      "locus": "Summa theologiae III q.83 a.4 ad 8",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "finding": "Aquinas treats ancient sacrifices as acceptable for the devotion of their offerers, while the Eucharistic sacrifice is superior.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    },
+    {
+      "study_id": "AO.FORM.CANON.DEEP.06",
+      "locus": "Summa theologiae III q.83 a.4 ad 9",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "finding": "The heavenly altar and holy Angel admit more than one traditional theological interpretation; no unique named Angel should be asserted.",
+      "level": "PRIMARY_TEXT_LOCATION_CHECKED_NOT_P0_APPROVAL"
+    }
+  ]
+}

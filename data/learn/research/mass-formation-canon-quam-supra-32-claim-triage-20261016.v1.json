@@ -1,0 +1,776 @@
+{
+  "schema": "ao-formation-canon-two-prayers-32-claim-collation-triage-v1",
+  "status": "EDITORIAL_RESEARCH_ONLY_ALL_CLAIMS_HELD",
+  "scope": "FORMATION_P2_EDITORIAL_ONLY",
+  "p0_bridge_owner": "data/learn/research/mass-formation-canon-p0-evidence-bridge-20261016.v1.json",
+  "source_edition": {
+    "author": "Nikolaus Gihr",
+    "title": "The Holy Sacrifice of the Mass",
+    "year": 1902,
+    "publisher": "B. Herder",
+    "ia_id": "holysacrificeofm00gihriala",
+    "catalogue_url": "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+    "scan_catalogue_url": "https://commons.wikimedia.org/wiki/File:The_holy_sacrifice_of_the_mass;_dogmatically,_liturgically_and_ascetically_explained_(IA_holysacrificeofm00gihriala).pdf",
+    "source_printed_pages": "§59 pp. 627–630; §61 pp. 659–660",
+    "full_page_image_collation_done": false,
+    "ocr_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+    "original_edition_ocr_context_examined": true
+  },
+  "methodology": {
+    "original_gihr_printed_pages_not_inspected": true,
+    "secondary_text_reproductions_do_not_certify_gihr": true,
+    "guéranger_and_gihr_disagree_on_sanctum_sacrificium_grammatical_referent": true,
+    "guéranger_leo_addition_claim_unverified": true,
+    "heavenly_fire_abel_not_stated_by_genesis": true,
+    "these_are_source_claims_not_rubrics": true,
+    "p0_publication_approvals_granted": 0,
+    "original_1902_ocr_page_text_inspected": true,
+    "historical_claim_text_from_p0_workbook_not_independently_matched": true,
+    "lebrun_1843_original_edition_ocr_contexts_checked": true,
+    "lebrun_1843_original_page_images_unchecked": true
+  },
+  "counts": {
+    "total": 32,
+    "quamb051": 24,
+    "suprab055": 8,
+    "gihr": 8,
+    "primary_printed_gihr_collated": 0,
+    "author_citations_approved": 0,
+    "by_state": {
+      "RESEARCH_LOCATOR_UNCOLLATED": 8,
+      "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION": 5,
+      "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING": 8,
+      "PRIMARY_TEXT_CROSSCHECK_NOT_P0_APPROVED": 2,
+      "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING": 9
+    },
+    "original_1902_ocr_context_inspected": 8,
+    "original_1843_lebrun_ocr_context_checked": 9,
+    "printed_lebrun_image_checked": 0
+  },
+  "identified_disputes": [
+    {
+      "id": "SUPRA_HOLY_SACRIFICE_REFERENT",
+      "block_id": "AO.SM.B055",
+      "statement": "Original Le Brun 1843 OCR, printed pp.439–440, explicitly applies sanctum sacrificium, immaculatam hostiam to Melchisedech and argues from absence of crossing gestures; Gihr's original 1902 footnote 2 identifies Le Brun. Guéranger instead reads the phrase of the Eucharist. Both constructions remain historical interpretations; original page-image and release checks outstanding.",
+      "gueranger_link": "https://www.liturgialatina.org/benedictine/holymass.htm",
+      "reported_gihr_link": "https://sanctaliturgia.blogspot.com/2005/05/supra-quae.html",
+      "p0_claims": [
+        "VER-050",
+        "VER-059"
+      ],
+      "adjudication": "GIHR_AND_LEBRUN_ORIGINAL_EDITION_OCR_BOTH_SUPPORT_MELCHISEDECH_GRAMMAR_IMAGE_CHECK_PENDING",
+      "educational_policy": "Present both as distinct historical interpretations, explicitly label secondary mediation of Gihr, never state either as universally settled grammar.",
+      "footnote_as_read": "p660 footnote 2",
+      "original_gihr_ocr_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "suarez_translation_url": "https://lumenscholasticum.wordpress.com/wp-content/uploads/2023/07/suarez.-de-sacramentis-disp.-lxxxiii-sect.-ii.pdf",
+      "lebrun_ocr_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+    },
+    {
+      "id": "QUAM_IN_OMNIBUS",
+      "block_id": "AO.SM.B051",
+      "statement": "Gihr p.627 is cited by Foley (2025) in support of 'in every respect' rather than merely 'in all things'; exact original page still needs inspection.",
+      "source_link": "https://www.newliturgicalmovement.org/2025/08/the-quam-oblationem_01670316511.html",
+      "p0_claims": [
+        "VER-052"
+      ],
+      "adjudication": "GIHR_1902_OCR_DIRECTLY_SUPPORTS_IN_OMNIBUS_WITH_IMAGE_HOLD"
+    },
+    {
+      "id": "ABEL_HEAVENLY_FIRE",
+      "block_id": "AO.SM.B055",
+      "statement": "A hypothetical heaven-sent fire over Abel's offering is not present in Genesis 4. If present in Gihr, it must be identified as interpretive speculation, not Scripture.",
+      "p0_claims": [
+        "VER-057"
+      ],
+      "adjudication": "GIHR_1902_OCR_PRESENTS_HEAVENLY_FIRE_AS_SPECULATION"
+    }
+  ],
+  "claims": [
+    {
+      "id": "VER-020",
+      "block_id": "AO.SM.B051",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Quam oblationem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-021",
+      "block_id": "AO.SM.B051",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Quam oblationem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-046",
+      "block_id": "AO.SM.B051",
+      "author": "Dom Prosper Guéranger",
+      "locator": "QUAM OBLATIONEM",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION",
+      "evidence_urls": [
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Guéranger's Quam oblationem digital translation can be examined, but this P0 claim ID has not been matched to a distinct quoted clause in a particular printed edition.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-047",
+      "block_id": "AO.SM.B051",
+      "author": "Dom Prosper Guéranger",
+      "locator": "QUAM OBLATIONEM, adscriptam",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION",
+      "evidence_urls": [
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Guéranger discusses adscriptam in the Quam oblationem section; digitized English source exists; printed textual collation remains open.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-048",
+      "block_id": "AO.SM.B051",
+      "author": "Dom Prosper Guéranger",
+      "locator": "QUAM OBLATIONEM, ratam",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION",
+      "evidence_urls": [
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Guéranger discusses ratam; do not merge his sacrificial reading with Aquinas's fruits-of-Communion interpretation.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-049",
+      "block_id": "AO.SM.B051",
+      "author": "Dom Prosper Guéranger",
+      "locator": "QUAM OBLATIONEM, rationabilem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION",
+      "evidence_urls": [
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Guéranger discusses rationabilem; do not treat one nineteenth-century interpretative gloss as the exclusive Latin translation.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-052",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§59, pp. 627–630",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://www.newliturgicalmovement.org/2025/08/the-quam-oblationem_01670316511.html"
+      ],
+      "editorial_observation": "§59 begins on p627: petition immediately precedes consecration; 'in omnibus' denotes completely or perfectly.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "627",
+      "ocr_line_range": [
+        36446,
+        36502
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-053",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§59, p. 628",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
+      ],
+      "editorial_observation": "Original OCR discusses consecration as blessing and the difficulty of adscripta; a separate workbook claim is not available for exact match.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36503,
+        36529
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-054",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§59, p. 628",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
+      ],
+      "editorial_observation": "Gihr prefers 'approved' for adscripta as consonant with Christ's institution; he acknowledges alternatives.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36513,
+        36534
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-055",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§59, p. 628",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ"
+      ],
+      "editorial_observation": "Original OCR describes ratam as true or valid in accordance with Christ's ordinance.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "628",
+      "ocr_line_range": [
+        36531,
+        36556
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-056",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§59, pp. 629–630",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://sanctaliturgia.blogspot.com/2004/09/"
+      ],
+      "editorial_observation": "Original OCR discusses rationabilis as living Logos and acceptabilis as intrinsic value, nobis as salvation and Communion; five signs of Cross also discussed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "629–630",
+      "ocr_line_range": [
+        36563,
+        36637
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-065",
+      "block_id": "AO.SM.B051",
+      "author": "St Thomas Aquinas",
+      "locator": "ST III q.83 a.5 ad 3",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "PRIMARY_TEXT_CROSSCHECK_NOT_P0_APPROVED",
+      "evidence_urls": [
+        "https://www.newadvent.org/summa/4083.htm"
+      ],
+      "editorial_observation": "P0 Aquinas claim anchored to III q.83 a.5 reply 3: cross signs explained figuratively. Primary theological text independently inspected, no ritual promotion.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-066",
+      "block_id": "AO.SM.B051",
+      "author": "St Thomas Aquinas",
+      "locator": "ST III q.83 a.5 ad 3",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "PRIMARY_TEXT_CROSSCHECK_NOT_P0_APPROVED",
+      "evidence_urls": [
+        "https://www.newadvent.org/summa/4083.htm"
+      ],
+      "editorial_observation": "Same Aquinas passage as VER-065; independent P0 claim identity retained. Do not count second ID as independent primary witness.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-074",
+      "block_id": "AO.SM.B051",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Quam oblationem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-075",
+      "block_id": "AO.SM.B051",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Quam oblationem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-076",
+      "block_id": "AO.SM.B051",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Quam oblationem",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-095",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 397; OCR lines 24258–24297",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun expressly gives a double referent to Quam oblationem: the bread and wine about to be consecrated, and the self-offering of priest and faithful joined to that of the saints. He notes that a passage he quotes from Paschasius Radbertus had formerly been misattributed to Augustine.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "397",
+      "ocr_line_range": [
+        24258,
+        24303
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-096",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 398; OCR lines 24312–24332",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun reads in omnibus benedictam as the request for consecratory blessing, and explicitly asks for the Church's own offering to be blessed along with it.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24312,
+        24332
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-097",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 398–399; OCR lines 24334–24338",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Under adscriptam, Le Brun asks that the offering on the altar be admitted and that the faithful's own offering be joined to that of Christ and the saints.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24334,
+        24338
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-098",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24340–24348",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun reads ratam as a permanent and irrevocable offering; he also applies that stability to the faithful's lasting union with God. This is theological interpretation, not documented etymological origin.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24340,
+        24348
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-099",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24350–24375; 24407–24408",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun contrasts the living human Victim with irrational animal victims. His accompanying application asks for spiritual worship and submission of mind, will and heart. Romans 12:1 and 1 Peter 2:2 are expressly cited as explanatory analogies, not claimed to be sources for the exact Canon wording.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "398–399",
+      "ocr_line_range": [
+        24350,
+        24408
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-100",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24377–24391",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Acceptabilem refers at once to Christ as the only intrinsically infinitely acceptable Victim and to the moral offering of the faithful becoming more pleasing to God.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "399",
+      "ocr_line_range": [
+        24377,
+        24391
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-101",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24393–24428",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "For ut nobis, Le Brun stresses sacramental change for our salvation and sanctification. He draws analogies with fiat lux, Luke 1:38, Isaiah 9:6 and other scriptures without claiming the Latin formula quotes all those verses.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "399–400",
+      "ocr_line_range": [
+        24393,
+        24430
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-137",
+      "block_id": "AO.SM.B051",
+      "author": "Josef A. Jungmann",
+      "locator": "The Mass of the Roman Rite, Vol. I, I, pp. 54–55",
+      "original_p0_research_grade": "PRIMARY SOURCE TEXT REVIEWED — DIGITIZED OCR; PAGE-IMAGE CHECK OUTSTANDING",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-030",
+      "block_id": "AO.SM.B055",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Supra quae",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-031",
+      "block_id": "AO.SM.B055",
+      "author": "St Alphonsus de Liguori",
+      "locator": "Short Explanation, Fourth Part, Supra quae",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "RESEARCH_LOCATOR_UNCOLLATED",
+      "evidence_urls": [],
+      "editorial_observation": "Existing P0 bibliographic locator retained. No new exact original-edition collation or claim-specific wording has been performed.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": false,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-050",
+      "block_id": "AO.SM.B055",
+      "author": "Dom Prosper Guéranger",
+      "locator": "SUPRA QUAE",
+      "original_p0_research_grade": "SECTION-LEVEL",
+      "collation_status": "DIGITAL_AUTHOR_TRANSLATION_FOUND_NEEDS_EDITION_COLLATION",
+      "evidence_urls": [
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Guéranger reads sanctum sacrificium and immaculatam hostiam as receiving the Eucharistic offering; this is in explicit conflict with the later secondary report of Gihr's grammatical footnote. Guéranger's attribution of the phrase to Leo I is a historical claim requiring independent source corroboration.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "MEDIUM"
+    },
+    {
+      "id": "VER-057",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§61, p. 659",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://www.remnantnewspaper.com/god-demands-a-holy-sacrifice-supra-quae-propitio/"
+      ],
+      "editorial_observation": "Gihr conjectures fire from heaven over Abel's offering, explicitly qualifying it by probability; Genesis does not say so.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "659",
+      "ocr_line_range": [
+        38337,
+        38354
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-058",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§61, p. 659",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://www.remnantnewspaper.com/god-demands-a-holy-sacrifice-supra-quae-propitio/"
+      ],
+      "editorial_observation": "Gihr denies equality between ancient victims and Christ; comparison concerns the faith and devotion of the offerers.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "657–659",
+      "ocr_line_range": [
+        38277,
+        38316
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-059",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Nicholas Gihr",
+      "locator": "§61 p. 660; earlier discussion pp. 75–76",
+      "original_p0_research_grade": "PASSAGE VERIFIED",
+      "collation_status": "ORIGINAL_1902_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+        "https://books.google.com/books/about/The_Holy_Sacrifice_of_the_Mass.html?id=RkpIAAAAYAAJ",
+        "https://sanctaliturgia.blogspot.com/2005/05/supra-quae.html",
+        "https://www.liturgialatina.org/benedictine/holymass.htm"
+      ],
+      "editorial_observation": "Original OCR p660 *footnote 2* explicitly attaches sanctum sacrificium, immaculatam hostiam to Melchisedech's offering and cites Le Brun part IV art 12; image still unchecked.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1902_ocr_context_read": true,
+      "original_1902_ocr_printed_page": "660, footnote 2",
+      "ocr_line_range": [
+        38394,
+        38441
+      ],
+      "claim_specific_workbook_proposition_collated": false,
+      "printed_page_image_collated": false,
+      "original_ocr_source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt"
+    },
+    {
+      "id": "VER-105",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 435–437; OCR lines 26314–26355; 26370–26389",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun presents the Latin Supra quae with a French column, then explains God regards not just the intrinsically acceptable divine Victim but also sinful human offerers; Abel/Abraham/Melchisedec show dispositions that please God.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "435–436",
+      "ocr_line_range": [
+        26314,
+        26389
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    },
+    {
+      "id": "VER-106",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 436–437; OCR lines 26370–26412",
+      "original_p0_research_grade": "ORIGINAL 1843 EDITION OCR EXTRACTED; PRINTED PAGE IDENTIFIED; IMAGE COLLATION PENDING",
+      "collation_status": "ORIGINAL_1843_OCR_CONTEXT_CHECKED_PRINT_IMAGE_PENDING",
+      "evidence_urls": [
+        "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt"
+      ],
+      "editorial_observation": "Le Brun explicitly attaches 'sanctum sacrificium, immaculatam hostiam' to Melchisedech's typical offering, argues from absence of crosses at those words, and explains why this prefigure is called holy/spotless. He attributes historical insertion to Leo I via Walafrid, an independent historical claim still needing verification. He insists Christ is actually offered where the old figures only prefigured him.",
+      "exact_printed_source_read_in_this_pass": false,
+      "primary_passage_context_rechecked": true,
+      "historical_quote_approved": false,
+      "publication_allowed": false,
+      "review_priority": "HIGH",
+      "original_1843_ocr_context_checked": true,
+      "original_1843_ocr_printed_pages": "437–440",
+      "ocr_line_range": [
+        26397,
+        26587
+      ],
+      "printed_page_image_collated": false,
+      "claim_specific_workbook_proposition_collated": false
+    }
+  ]
+}

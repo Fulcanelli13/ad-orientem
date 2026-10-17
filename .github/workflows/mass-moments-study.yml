@@ -3,7 +3,39 @@ on:
   pull_request:
     paths:
       - 'src/learn/mass-formation.js'
+      - 'src/learn/mass-prayer-reading-pilot.js'
+      - 'data/learn/research/mass-formation-offertory-prayer-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-orate-preface-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-communion-prayer-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-conclusion-prayer-reading-pilot-20261016.v1.json'
+      - 'data/learn/research/mass-formation-canon-deep-exemplar-20261016.v1.json'
+      - 'data/learn/research/mass-formation-canon-p0-evidence-bridge-20261016.v1.json'
+      - 'data/learn/research/mass-formation-canon-two-major-prayers-deep-20261016.v1.json'
+      - 'data/learn/research/mass-formation-canon-quam-supra-32-claim-triage-20261016.v1.json'
+      - 'data/learn/research/mass-formation-lebrun-1843-source-collation-20261016.v1.json'
+      - 'data/learn/research/mass-formation-lebrun-epiclesis-tome-iii-20261016.v1.json'
+      - 'scripts/build-mass-canon-deep-review.py'
+      - 'scripts/build-mass-explorer-editorial-bridge.mjs'
+      - 'tests/mass-explorer-editorial-bridge.mjs'
+      - 'tests/mass-prayer-editorial-review-browser.mjs'
+      - 'tests/mass-prayer-reading-pilot.mjs'
+      - 'scripts/build-mass-prayer-editorial-review.mjs'
       - 'src/learn/mass-explorer.js'
+      - 'src/learn/mass-explorer-published-prayer-context.js'
+      - 'tests/mass-explorer-published-prayer-context.mjs'
+      - 'src/learn/mass-explorer-study-publication.js'
+      - 'data/learn/mass-explorer-approved-studies.v1.json'
+      - 'data/learn/research/mass-explorer-first-two-release-candidates-20261016.v1.json'
+      - 'data/learn/research/mass-explorer-remaining-six-release-candidates-20261016.v1.json'
+      - 'scripts/build-mass-explorer-all-canon-release-review.mjs'
+      - 'scripts/mass-explorer-canon-decision-core.mjs'
+      - 'scripts/prepare-mass-explorer-canon-release.mjs'
+      - 'tests/mass-explorer-canon-decision-import.mjs'
+      - 'tests/mass-explorer-all-canon-release-review.mjs'
+      - 'scripts/build-mass-explorer-first-two-release-review.mjs'
+      - 'tests/mass-explorer-first-two-release-review.mjs'
+      - 'tests/mass-explorer-study-publication.mjs'
       - 'src/learn/mass-source-reading.js'
       - 'src/learn/mass-passage-publication.js'
       - 'data/learn/mass-formation-approved-passages.v1.json'
@@ -40,9 +72,23 @@ jobs:
       - run: node --check src/learn/mass-moments-study.js
       - run: node --check src/learn/mass-formation.js
       - run: node tests/mass-moments-study.mjs
+      - run: node tests/mass-prayer-reading-pilot.mjs
+      - run: node tests/mass-explorer-study-publication.mjs
+      - run: node tests/mass-explorer-published-prayer-context.mjs
+      - run: node scripts/build-mass-prayer-editorial-review.mjs
+      - run: python3 scripts/build-mass-canon-deep-review.py
+      - run: node scripts/build-mass-explorer-editorial-bridge.mjs
+      - run: node scripts/build-mass-explorer-first-two-release-review.mjs
+      - run: node scripts/build-mass-explorer-all-canon-release-review.mjs
+      - run: node scripts/prepare-mass-explorer-canon-release.mjs
+      - run: node tests/mass-explorer-canon-decision-import.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/mass-prayer-editorial-review-browser.mjs
+      - run: node tests/mass-explorer-editorial-bridge.mjs
+      - run: node tests/mass-explorer-first-two-release-review.mjs
+      - run: node tests/mass-explorer-all-canon-release-review.mjs
       - run: node tests/mass-formation-scripture-phone.mjs
       - run: node tests/mass-moments-phone.mjs
       - run: node tests/mass-explorer-phone-e2e.mjs
@@ -50,9 +96,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: mass-explorer-p1-visuals
+          name: mass-formation-prayer-pilot-review
           path: |
             artifacts/mass-explorer-p1/
             artifacts/mass-source-context-p1/
+            artifacts/p2-formation-prayer-review/
+            artifacts/p2-mass-explorer-bridge/
+            artifacts/p2-first-two-review/
+            artifacts/p2-all-canon-candidates/
+            artifacts/p2-canon-decision-import/
           if-no-files-found: warn
           retention-days: 14

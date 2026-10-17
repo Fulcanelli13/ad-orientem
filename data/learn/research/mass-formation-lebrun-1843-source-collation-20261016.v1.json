@@ -1,0 +1,354 @@
+{
+  "schema": "ao-formation-lebrun-1843-source-collation-v1",
+  "status": "ORIGINAL_1843_OCR_CONTEXTS_CORROBORATED_IMAGE_AND_RELEASE_HOLD",
+  "research_only": true,
+  "liturgical_profile": "ORDINARY_SUNG",
+  "source_edition": {
+    "book": "Pierre Le Brun, Explication littérale, historique et dogmatique des prières et des cérémonies de la messe, vol. I, Seguin Aîné, 1843",
+    "item_url": "https://archive.org/details/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843",
+    "wikisource_scan": "https://fr.wikisource.org/wiki/Livre:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu",
+    "image_book": "https://commons.wikimedia.org/wiki/File:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu",
+    "printed_to_djvu_provisional_offset": 49,
+    "page_anchor_check": {
+      "djvu_page": 391,
+      "printed_page": 342,
+      "source": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/391",
+      "status": "ONE_PAGE_VISUALLY_CORRELATED_PAGE_OFFSET_NOT_EXHAUSTIVELY_VERIFIED"
+    },
+    "original_edition_ocr_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+    "original_edition_ocr_contexts_examined": true,
+    "original_printed_page_images_verified": false
+  },
+  "cross_witnesses": [
+    {
+      "author": "St Alphonsus de Liguori",
+      "edition": "The Complete Ascetical Works, The Sacrifice of Jesus Christ: The Ceremonies of the Mass, printed p.157–158",
+      "source_url": "https://archive.org/stream/alphonsusworks13liguuoft/alphonsusworks13liguuoft_djvu.txt",
+      "locator": "OCR lines 6537–6579",
+      "finding": "St Alphonsus attributes to Le Brun a debated position about whether preparatory eucharistic prayers contribute to the necessary sacramental formula, contrasts it with the commonly held sufficiency of the Institution words and invokes Council of Florence.",
+      "status": "SECONDARY_AUTHOR_WITNESS_TO_LEBRUN_NOT_DIRECT_LEBRUN_PRINT_COLLATION"
+    },
+    {
+      "author": "Nicholas Gihr",
+      "edition": "The Holy Sacrifice of the Mass, B. Herder, 1902",
+      "source_url": "https://archive.org/stream/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt",
+      "locator": "printed p.660 footnote 2",
+      "finding": "Gihr attaches final words to Melchisedech and cites Le Brun, Part IV article XII. Citation is not confirmation of Le Brun's complete position without collating original.",
+      "status": "ORIGINAL_GIHR_OCR_DIRECTLY_CHECKED_LEBRUN_NOT_DIRECTLY_CHECKED"
+    }
+  ],
+  "provisional_scans": {
+    "Quam": {
+      "block": "AO.SM.B051",
+      "pages": "397–400",
+      "expected_scans": [
+        446,
+        447,
+        448,
+        449
+      ],
+      "subject": "Quam oblationem and preparatory consecration prayer",
+      "cross_check": "Check 1843 text directly against St Alphonsus' 1890s English edition characterization; determine if his claim refers to Le Brun 1843 vol I at all or to Le Brun's separate vol III theological dissertation."
+    },
+    "Supra": {
+      "block": "AO.SM.B055",
+      "pages": "435–437",
+      "expected_scans": [
+        484,
+        485,
+        486
+      ],
+      "subject": "Supra quae, Abel/Abraham/Melchisedech offerings and final accusatives",
+      "cross_check": "Inspect Le Brun on sanctum sacrificium/immaculatam hostiam and his syntactic reading; Gihr 1902 p.660 n.2 cites Le Brun Part IV article XII but is not a quotation or proof of identity."
+    }
+  },
+  "claim_rows": [
+    {
+      "claim_id": "VER-095",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 397; OCR lines 24258–24297",
+      "printed_first_page": 397,
+      "provisional_djvu_first_page": 446,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/446",
+      "p0_caution": "His recourse to Paschasius Radbertus includes a noted historical misattribution to Augustine.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "397",
+      "ocr_line_range": [
+        24258,
+        24303
+      ],
+      "source_finding": "Le Brun expressly gives a double referent to Quam oblationem: the bread and wine about to be consecrated, and the self-offering of priest and faithful joined to that of the saints. He notes that a passage he quotes from Paschasius Radbertus had formerly been misattributed to Augustine.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-096",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 398; OCR lines 24312–24332",
+      "printed_first_page": 398,
+      "provisional_djvu_first_page": 447,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/447",
+      "p0_caution": "Le Brun's application extends to the Church's self-offering.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24312,
+        24332
+      ],
+      "source_finding": "Le Brun reads in omnibus benedictam as the request for consecratory blessing, and explicitly asks for the Church's own offering to be blessed along with it.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-097",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 398–399; OCR lines 24334–24338",
+      "printed_first_page": 398,
+      "provisional_djvu_first_page": 447,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/447",
+      "p0_caution": "Particular interpretation; Gihr and other commentators need independent comparison.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24334,
+        24338
+      ],
+      "source_finding": "Under adscriptam, Le Brun asks that the offering on the altar be admitted and that the faithful's own offering be joined to that of Christ and the saints.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-098",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24340–24348",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Author's doctrinal exposition, not demonstrated etymological origin.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "398",
+      "ocr_line_range": [
+        24340,
+        24348
+      ],
+      "source_finding": "Le Brun reads ratam as a permanent and irrevocable offering; he also applies that stability to the faithful's lasting union with God. This is theological interpretation, not documented etymological origin.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-099",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), p. 399; OCR lines 24350–24375; 24407–24408",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Romans and 1 Peter explicitly cited by author; not a word-for-word liturgical borrowing.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "398–399",
+      "ocr_line_range": [
+        24350,
+        24408
+      ],
+      "source_finding": "Le Brun contrasts the living human Victim with irrational animal victims. His accompanying application asks for spiritual worship and submission of mind, will and heart. Romans 12:1 and 1 Peter 2:2 are expressly cited as explanatory analogies, not claimed to be sources for the exact Canon wording.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-100",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24377–24391",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "This double application is interpretative, not a rubrical cue.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "399",
+      "ocr_line_range": [
+        24377,
+        24391
+      ],
+      "source_finding": "Acceptabilem refers at once to Christ as the only intrinsically infinitely acceptable Victim and to the moral offering of the faithful becoming more pleasing to God.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-101",
+      "block_id": "AO.SM.B051",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 399–400; OCR lines 24393–24428",
+      "printed_first_page": 399,
+      "provisional_djvu_first_page": 448,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/448",
+      "p0_caution": "Comparison is explicitly analogical, not evidence that the prayer quotes those verses.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "399–400",
+      "ocr_line_range": [
+        24393,
+        24430
+      ],
+      "source_finding": "For ut nobis, Le Brun stresses sacramental change for our salvation and sanctification. He draws analogies with fiat lux, Luke 1:38, Isaiah 9:6 and other scriptures without claiming the Latin formula quotes all those verses.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-105",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 435–437; OCR lines 26314–26355; 26370–26389",
+      "printed_first_page": 435,
+      "provisional_djvu_first_page": 484,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/484",
+      "p0_caution": "Typological comparison already explicit in the Canon; interpretation of acceptability belongs to Le Brun.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "435–436",
+      "ocr_line_range": [
+        26314,
+        26389
+      ],
+      "source_finding": "Le Brun presents the Latin Supra quae with a French column, then explains God regards not just the intrinsically acceptable divine Victim but also sinful human offerers; Abel/Abraham/Melchisedec show dispositions that please God.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    },
+    {
+      "claim_id": "VER-106",
+      "block_id": "AO.SM.B055",
+      "author": "Fr Pierre Le Brun",
+      "source_locator": "Explication littérale, historique et dogmatique... Tome I (1843), pp. 436–437; OCR lines 26370–26412",
+      "printed_first_page": 436,
+      "provisional_djvu_first_page": 485,
+      "source_page_url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/485",
+      "p0_caution": "Do not mislabel Old Testament narrative as Jewish derivation of Roman prayer wording.",
+      "printed_original_text_checked": false,
+      "printed_scan_image_checked": false,
+      "requires_direct_context_collation": false,
+      "history_vs_normative": "HISTORICAL_INTERPRETATION_NOT_LITURGICAL_RUBRIC",
+      "quotation_approved": false,
+      "publication_approved": false,
+      "ocr_witness_url": "https://archive.org/stream/LebrunExplicationLitteraleHistoriqueEtDogmatiqueDesPrieresEtDesCeremoniesDeLaMesseTomeI1843/Lebrun-Explicationlitteralehistoriqueetdogmatiquedesprieresetdesceremoniesdelamesse-TomeI-1843_djvu.txt",
+      "original_1843_edition_ocr_context_checked": true,
+      "ocr_printed_pages": "437–440",
+      "ocr_line_range": [
+        26397,
+        26587
+      ],
+      "source_finding": "Le Brun explicitly attaches 'sanctum sacrificium, immaculatam hostiam' to Melchisedech's typical offering, argues from absence of crosses at those words, and explains why this prefigure is called holy/spotless. He attributes historical insertion to Leo I via Walafrid, an independent historical claim still needing verification. He insists Christ is actually offered where the old figures only prefigured him.",
+      "original_claim_locator_matched": true,
+      "claim_specific_editorial_publication_approval": false,
+      "editorial_status": "SOURCE_CONTEXT_CORROBORATED_ORIGINAL_EDITION_OCR_IMAGE_PENDING"
+    }
+  ],
+  "outstanding": [
+    "Visual image check against scanned leaves for printed pp.397–400 and 435–440 (current original-edition OCR is examined, images not).",
+    "Check independent manuscript/editorial evidence for alleged Leo I interpolation instead of endorsing Le Brun's late attribution.",
+    "Compare actual original P0 workbook claim proposition text and original editions for final approval; source context checking is not automatic publication signoff.",
+    "Collate original 1843 tome III against the available 1860 republication for the epiclesis and institution discussion; the original 1843 photographic pages are not visually verified.",
+    "Read Le Brun's distinct 1727 Defense in full; at present only bibliographical identity and secondary description checked."
+  ],
+  "no_runtime_import": true,
+  "census": {
+    "identified_p0_claim_ids": 9,
+    "original_1843_ocr_loci_checked": 9,
+    "printed_image_checked": 0,
+    "quotations_approved": 0,
+    "publication_approved": 0,
+    "separate_tome_iii_1860_author_text_examined": 1,
+    "separate_tome_iii_1843_image_checked": 0
+  },
+  "key_resolutions": [
+    {
+      "issue": "QUAM_DUAL_OFFERING",
+      "conclusion": "DIRECT_LE_BRUN_1843_ORIGINAL_EDITION_OCR_CONFIRMATION",
+      "printed": "397–400",
+      "description": "Le Brun consistently applies Quam oblationem to the Eucharistic gifts and the self-offering of celebrant and faithful."
+    },
+    {
+      "issue": "SUPRA_FINAL_LATIN_ACCUSATIVES",
+      "conclusion": "DIRECT_LE_BRUN_1843_ORIGINAL_EDITION_OCR_CONFIRMS_MELCHISEDECH_REFERENT",
+      "printed": "439–440",
+      "description": "Le Brun explicitly argues that sanctum sacrificium, immaculatam hostiam denotes Melchisedech's offering as an exceptional type, citing absence of crosses at these words. Original Gihr 1902 OCR's Le Brun attribution is corroborated."
+    },
+    {
+      "issue": "LEO_I_INSERTION",
+      "conclusion": "HISTORICAL_ATTRIBUTION_UNVERIFIED",
+      "printed": "439–440",
+      "description": "Le Brun attributes the words to Leo I through Walafrid. Corroborating early textual witnesses are not collated; retain as Le Brun's report, not established history."
+    },
+    {
+      "issue": "LE_BRUN_FORM_OF_CONSECRATION",
+      "conclusion": "VOLUME_III_1860_AUTHOR_TEXT_EXAMINED_1843_ORIGINAL_FACSIMILE_AND_1727_DEFENSE_UNCOLLATED",
+      "printed": "St Alphonsus cited volume/dissertation",
+      "description": "Le Brun's own tome III preliminary Observations, as digitally transcribed in the 1860 reprint, expressly argues the sacramental form includes both Institution words and invocation, especially discussing Armenian post-Institution epiclesis. St Alphonsus reports the debated hypothesis. The 1843 tome III facsimile is identified but no comparison with 1860 transcription has been made; the distinct 1727 defense is bibliographically identified, not read."
+    }
+  ],
+  "separate_dissertation_dossier": "data/learn/research/mass-formation-lebrun-epiclesis-tome-iii-20261016.v1.json"
+}

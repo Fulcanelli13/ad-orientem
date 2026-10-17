@@ -1,0 +1,328 @@
+{
+  "schema": "ao-formation-canon-deep-exemplar-v1",
+  "scope": "FORMATION_EDITORIAL_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "liturgical_profile": "ORDINARY_SUNG",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "existing_p2_owner": "data/learn/research/mass-formation-roman-canon-reading-pilot-20261016.v1.json",
+  "scripture_owner": "src/learn/mass-formation-scripture-context.js",
+  "formation_owner": "data/learn/mass-formation-campion.v1.json",
+  "editorial_rules": [
+    "The 15 Canon source blocks are unchanged. These eight thematic studies group existing blocks; they are not eight new Mass actions.",
+    "Only existing publicly owned MFS study anchors are used. P0's 48 candidate links and 139 author-claim research records are not imported.",
+    "Doctrinal statements derived from existing P1 published claims; any additional Aquinas/Benedict theological interpretation is explicitly provisional pending editorial review.",
+    "No priest gesture or scriptural quote from an unapproved historical source is introduced.",
+    "Full English/French paragraphs are editorial, not source-certified or approved for release."
+  ],
+  "source_references": {
+    "MR62": {
+      "label": "Missale Romanum (1962) · Canon text",
+      "url": "https://archive.org/details/sp07mr62-editio-typica",
+      "authority": "EXISTING_P1_LITURGICAL_SOURCE"
+    },
+    "MEDIATOR70": {
+      "label": "Pius XII, Mediator Dei (1947) §§68–93",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+      "authority": "EXISTING_P1_DOCTRINAL_SOURCE"
+    },
+    "AQUINAS83": {
+      "label": "St Thomas Aquinas, Summa III q.83, especially a.1 and a.4, replies 7–9",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "authority": "ADDITIONAL_PRIMARY_THEOLOGICAL_INTERPRETATION_EDITORIAL_REVIEW"
+    },
+    "BENEDICT2010": {
+      "label": "Benedict XVI, Lectio divina to priests of Rome, 18 February 2010 (on Hebrews, Supra quae)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/speeches/2010/february/documents/hf_ben-xvi_spe_20100218_parroci-roma.html",
+      "authority": "ADDITIONAL_PRIMARY_MAGISTERIAL_INTERPRETATION_EDITORIAL_REVIEW"
+    }
+  },
+  "studies": [
+    {
+      "id": "AO.FORM.CANON.DEEP.01",
+      "block_ids": [
+        "AO.SM.B047",
+        "AO.SM.B048",
+        "AO.SM.B049",
+        "AO.SM.B050"
+      ],
+      "stage_id": "MF04",
+      "title": {
+        "en": "The whole Church gathered in the Canon",
+        "fr": "Toute l’Église réunie dans le Canon"
+      },
+      "question": {
+        "en": "Why does the Canon begin by praying for others?",
+        "fr": "Pourquoi le Canon commence-t-il par prier pour les autres ?"
+      },
+      "overview": {
+        "en": "The Canon is never only the private devotion of the celebrant. Its opening petitions place the offering before the Father through Christ on behalf of the Church, its pastors, those present and those remembered by name. The saints are invoked as members of the same communion, not as substitutes for Christ's mediation.",
+        "fr": "Le Canon n’est pas la dévotion privée du célébrant. Ses premières demandes présentent l’offrande au Père, par le Christ, pour l’Église, ses pasteurs, les fidèles présents et les personnes nommées. Les saints sont invoqués dans la même communion, et non à la place de la médiation du Christ."
+      },
+      "deep": {
+        "en": "Te igitur asks that God preserve, unite and govern the Church. Memento widens the circle from named people to all those whose faith and devotion God knows; the wording also speaks of the sacrifice offered for, or by, the faithful. Communicantes recalls Mary, Joseph, the Apostles and martyrs as a living communion. Hanc igitur brings the intention back to the whole household of God, asking for peace now and salvation at life's end. The sequence is a movement from the visible Church on earth to communion beyond the present congregation. In Mediator Dei, Pius XII carefully distinguishes the priest's sacramental action from the faithful's true interior participation in the offering; it is wrong either to exclude the people or to attribute the priest's consecratory power to them.",
+        "fr": "Te igitur demande que Dieu conserve, unisse et gouverne l’Église. Le Memento passe des personnes nommées à tous ceux dont Dieu connaît la foi et la dévotion ; le texte parle aussi du sacrifice offert pour les fidèles ou par eux. Communicantes rappelle Marie, Joseph, les Apôtres et les martyrs dans une même communion. Hanc igitur revient à toute la famille de Dieu, demandant la paix ici-bas et le salut éternel. L’ensemble va de l’Église visible à la communion qui dépasse l’assemblée présente. Dans Mediator Dei, Pie XII distingue soigneusement l’action sacramentelle du prêtre de la participation intérieure réelle des fidèles : il serait faux d’exclure ceux-ci ou de leur attribuer le pouvoir consécratoire du prêtre."
+      },
+      "liturgical_note": {
+        "en": "The prayers remain those of the priest in the existing Sung source, often quiet. The silent remembrance is a genuine place for personal intention; it does not insert invented names into the public Mass text.",
+        "fr": "Ces prières appartiennent au prêtre dans la source chantée, souvent à voix basse. Le souvenir silencieux est un vrai lieu pour une intention personnelle ; il n’ajoute aucun nom inventé au texte de la Messe."
+      },
+      "scripture_anchor_ids": [
+        "MFS06"
+      ],
+      "source_keys": [
+        "MR62",
+        "MEDIATOR70",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.02",
+      "block_ids": [
+        "AO.SM.B051"
+      ],
+      "stage_id": "MF05",
+      "title": {
+        "en": "Quam oblationem: asking for an acceptable offering",
+        "fr": "Quam oblationem : demander une offrande agréable"
+      },
+      "question": {
+        "en": "Does this prayer itself consecrate the gifts?",
+        "fr": "Cette prière consacre-t-elle déjà les dons ?"
+      },
+      "overview": {
+        "en": "Immediately before the consecration, the priest asks God to make the offering blessed, approved, ratified, reasonable and acceptable, so that it may become the Body and Blood of Christ. This is a petition leading into the consecration, not a second formula of consecration.",
+        "fr": "Juste avant la consécration, le prêtre demande à Dieu de rendre l’offrande bénie, agréée, ratifiée, raisonnable et acceptable, pour qu’elle devienne le Corps et le Sang du Christ. Il s’agit d’une demande qui conduit à la consécration, non d’une seconde formule consécratoire."
+      },
+      "deep": {
+        "en": "The succession of adjectives is deliberate: the offering is placed wholly under God's initiative and favour. The priest does not merely ask for a devout disposition; he prepares to pronounce Christ's words over the bread and wine. St Thomas Aquinas, in his explanation of the Roman rite (Summa theologiae III, q.83, a.4), distinguishes this prayer for the effect of the consecration from the consecration that follows. That analytical distinction protects the reader from conflating petitions, ritual signs and the sacramental act itself. The crosses in the received text should likewise be explained as part of the ceremonial language rather than portrayed as separate mini-consecrations.",
+        "fr": "La série d’adjectifs n’est pas fortuite : l’offrande est confiée à l’action et à la bienveillance de Dieu. Le prêtre ne demande pas seulement une disposition pieuse ; il se prépare à prononcer les paroles du Christ sur le pain et le vin. Saint Thomas d’Aquin (Somme théologique III, q.83, a.4) distingue la demande portant sur l’effet de la consécration de la consécration elle-même. Cette distinction évite de confondre supplication, signes rituels et acte sacramentel. De même, les signes de croix du texte reçu ne doivent pas être présentés comme autant de petites consécrations."
+      },
+      "liturgical_note": {
+        "en": "The exact crosses and priestly words remain owned by the Mass reader. No Formation note should independently create or time an action.",
+        "fr": "Les signes de croix et les paroles du prêtre restent régis par le lecteur de Messe. Aucune notice de Formation ne crée ou ne synchronise indépendamment un geste."
+      },
+      "scripture_anchor_ids": [],
+      "source_keys": [
+        "MR62",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.03",
+      "block_ids": [
+        "AO.SM.B052",
+        "AO.SM.B053"
+      ],
+      "stage_id": "MF05",
+      "title": {
+        "en": "The Consecration: one Lord, two species",
+        "fr": "La Consécration : un seul Seigneur, deux espèces"
+      },
+      "question": {
+        "en": "How is the one Sacrifice made present without another death?",
+        "fr": "Comment l’unique Sacrifice devient-il présent sans nouvelle mort ?"
+      },
+      "overview": {
+        "en": "The Roman Canon recounts Christ's actions at the Last Supper and contains the distinct words over the Host and the Chalice. Catholic teaching holds that Christ truly becomes present under each consecrated species; the separation of the two sacramental signs represents His sacrificial death without dividing the risen Christ.",
+        "fr": "Le Canon romain rappelle les gestes du Christ à la Cène et distingue les paroles prononcées sur l’Hostie et sur le Calice. Selon la foi catholique, le Christ est réellement présent sous chaque espèce consacrée ; la séparation des deux signes sacramentels représente sa mort sacrificielle sans diviser le Christ ressuscité."
+      },
+      "deep": {
+        "en": "St Paul transmits the apostolic account of the institution (1 Corinthians 11:23–26), and Luke speaks explicitly of the chalice of the new covenant (Luke 22:20). These passages provide narrative context, not a claim that every word of the printed 1962 formula is a literal Gospel transcription. In Mediator Dei, especially paragraph 70, Pius XII explains both transubstantiation and why the separately consecrated species sacramentally signify the death of Christ. The Eucharistic sacrifice is the same Victim as Calvary, offered in another manner: there is no new bloody immolation. The elevations invite adoration because Christ is really present, not because a decorative ritual scene has just concluded.",
+        "fr": "Saint Paul transmet le récit apostolique de l’institution (1 Corinthiens 11, 23–26), et saint Luc mentionne le calice de la nouvelle Alliance (Luc 22, 20). Ces textes donnent un contexte narratif ; ils ne signifient pas que chaque mot de la formule de 1962 soit la transcription littérale d’un seul Évangile. Dans Mediator Dei, notamment au n° 70, Pie XII explique la transsubstantiation et la signification sacrificielle des deux espèces consacrées séparément. La Victime est la même qu’au Calvaire, mais le mode d’offrande diffère : il n’y a pas de nouvelle immolation sanglante. Les élévations appellent l’adoration parce que le Christ est réellement présent, et non pour ponctuer une scène rituelle."
+      },
+      "liturgical_note": {
+        "en": "The Host and Chalice remain two separate source blocks, with their own genuflections and elevations. Formation does not move these events into a new timeline.",
+        "fr": "L’Hostie et le Calice restent deux blocs sources distincts, avec leurs génuflexions et élévations propres. La Formation ne déplace pas ces événements dans une nouvelle chronologie."
+      },
+      "scripture_anchor_ids": [
+        "MFS07",
+        "MFS08"
+      ],
+      "source_keys": [
+        "MR62",
+        "MEDIATOR70",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.04",
+      "block_ids": [
+        "AO.SM.B054"
+      ],
+      "stage_id": "MF06",
+      "title": {
+        "en": "Unde et memores: the Church remembers and offers",
+        "fr": "Unde et memores : l’Église fait mémoire et offre"
+      },
+      "question": {
+        "en": "What does remembering Christ mean after the Consecration?",
+        "fr": "Que signifie faire mémoire du Christ après la Consécration ?"
+      },
+      "overview": {
+        "en": "The Canon recalls Christ's Passion, Resurrection and Ascension, then offers to the Father the pure, holy and immaculate Victim. This memorial is not an attempt to repeat Christ's historical Passion; it speaks from within the Eucharistic sacrifice now present.",
+        "fr": "Le Canon rappelle la Passion, la Résurrection et l’Ascension du Christ, puis présente au Père la Victime pure, sainte et immaculée. Ce mémorial ne cherche pas à répéter la Passion historique ; il parle au cœur du sacrifice eucharistique rendu présent."
+      },
+      "deep": {
+        "en": "The sequence matters. The prayer remembers the saving events of Christ and immediately calls the consecrated offering a Victim, the Bread of eternal life and the Chalice of everlasting salvation. This is more than a meditation about a past meal. Pius XII teaches that the sacrifice of the altar represents the one sacrifice of the Cross and communicates its fruits; the same Christ acts as Priest and Victim, although the manner of offering differs. The words 'of Thy gifts and grants' also prevent an image of human self-sufficiency: the Church offers to the Father what she has first received from Him. The offering is inseparable from thanksgiving, adoration and supplication.",
+        "fr": "L’ordre importe. La prière rappelle les événements du salut puis nomme l’offrande consacrée Victime, Pain de vie éternelle et Calice du salut perpétuel. Ce n’est pas une simple méditation sur un repas passé. Pie XII enseigne que le sacrifice de l’autel représente l’unique sacrifice de la Croix et en communique les fruits ; le Christ reste Prêtre et Victime, bien que le mode d’offrande diffère. L’expression « de vos dons et présents » rappelle aussi que l’Église offre au Père ce qu’elle a d’abord reçu de Lui. Cette offrande unit action de grâces, adoration et supplication."
+      },
+      "liturgical_note": {
+        "en": "The printed source distinguishes the priest's quiet memorial from any gesture that may accompany a word. A source-backed ritual owner, not this essay, determines timing.",
+        "fr": "Le texte distingue le mémorial prononcé à voix basse des gestes attachés à certains mots. Leur synchronisation relève de la source rituelle, non de cet essai."
+      },
+      "scripture_anchor_ids": [],
+      "source_keys": [
+        "MR62",
+        "MEDIATOR70",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.05",
+      "block_ids": [
+        "AO.SM.B055"
+      ],
+      "stage_id": "MF06",
+      "title": {
+        "en": "Supra quae: three sacrifices pointing to Christ",
+        "fr": "Supra quae : trois sacrifices orientés vers le Christ"
+      },
+      "question": {
+        "en": "Why Abel, Abraham and Melchisedech?",
+        "fr": "Pourquoi Abel, Abraham et Melchisédech ?"
+      },
+      "overview": {
+        "en": "The priest asks God to accept the Eucharistic offering as He accepted the offerings of Abel, Abraham and Melchisedech. These names are printed in the Roman Canon itself. The stories form a chain of biblical figures for understanding acceptance, obedient self-offering and priesthood.",
+        "fr": "Le prêtre demande que Dieu accueille l’offrande eucharistique comme Il accueillit celles d’Abel, d’Abraham et de Melchisédech. Ces noms figurent dans le Canon lui-même. Leurs récits forment une chaîne biblique pour comprendre l’offrande agréée, l’obéissance et le sacerdoce."
+      },
+      "deep": {
+        "en": "Abel offers the firstlings of his flock and is regarded favourably by God (Genesis 4:4). Abraham obeys when tested over Isaac, but God prevents the killing of his son and provides a ram (Genesis 22); Christians read the scene as a figure pointing beyond itself to the Father's gift of His Son. Melchisedech, priest of God Most High, brings forth bread and wine and blesses Abraham (Genesis 14:18–20); Hebrews 7 interprets the enduring priesthood of Christ in relation to Melchisedech. The narratives are not interchangeable: Abel shows a just offering, Abraham the trial of faith, Melchisedech priesthood associated with bread and wine. In a 2010 lectio divina, Benedict XVI explicitly reads these three figures in the Roman Canon as prefigurations of Christ's sacrifice. Aquinas, in Summa theologiae III, q.83, a.4, reply 8, distinguishes these accepted ancient sacrifices from the superior Eucharistic offering; the comparison concerns God's acceptance and the devotion of the offerers, not equality between the sacrifices.",
+        "fr": "Abel offre les premiers-nés de son troupeau et son offrande reçoit un regard favorable de Dieu (Genèse 4, 4). Abraham obéit dans l’épreuve d’Isaac, mais Dieu empêche la mort de son fils et donne un bélier (Genèse 22) ; la lecture chrétienne y reconnaît une figure tournée vers le don du Fils par le Père. Melchisédech, prêtre du Dieu Très-Haut, apporte du pain et du vin et bénit Abraham (Genèse 14, 18–20) ; Hébreux 7 rapporte le sacerdoce du Christ à celui de Melchisédech. Ces récits ne sont pas équivalents : Abel témoigne de l’offrande juste, Abraham de l’épreuve de la foi, Melchisédech du sacerdoce lié au pain et au vin. Dans une lectio divina de 2010, Benoît XVI présente ces trois figures du Canon comme préfigurations du sacrifice du Christ. Saint Thomas, Somme théologique III, q.83, a.4, réponse 8, distingue ces sacrifices anciens agréés de l’offrande eucharistique qui leur est supérieure ; le rapprochement concerne l’acceptation par Dieu et la dévotion des offrants, non une égalité entre les sacrifices."
+      },
+      "liturgical_note": {
+        "en": "The source names three men, not three extra rites during Mass. Biblical references are contextual reading links and should not be mistaken for a Mass Proper or an extra ceremony.",
+        "fr": "La source nomme trois figures bibliques, non trois rites supplémentaires pendant la Messe. Les références sont des chemins de lecture, pas des lectures du Propre ni des gestes nouveaux."
+      },
+      "scripture_anchor_ids": [
+        "MFS09",
+        "MFS10",
+        "MFS11",
+        "MFS12"
+      ],
+      "source_keys": [
+        "MR62",
+        "BENEDICT2010",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.06",
+      "block_ids": [
+        "AO.SM.B056"
+      ],
+      "stage_id": "MF06",
+      "title": {
+        "en": "Supplices te rogamus: the heavenly altar",
+        "fr": "Supplices te rogamus : l’autel céleste"
+      },
+      "question": {
+        "en": "What does the request to the holy Angel mean?",
+        "fr": "Que signifie la demande adressée au saint Ange ?"
+      },
+      "overview": {
+        "en": "The priest asks that the offering be presented before the divine majesty upon the altar on high and that those who receive Christ's Body and Blood be filled with heavenly blessing and grace. Its movement is from the offering to the communion and sanctification of its recipients.",
+        "fr": "Le prêtre demande que l’offrande soit portée devant la majesté divine sur l’autel céleste et que ceux qui reçoivent le Corps et le Sang du Christ soient comblés de bénédiction et de grâce. La prière passe de l’offrande à la communion et à la sanctification de ceux qui la reçoivent."
+      },
+      "deep": {
+        "en": "The heavenly altar is not a second sacrifice competing with what occurs at the earthly altar. St Thomas (III, q.83, a.4, reply to objection 9) discusses several traditional ways of reading the holy Angel and the altar on high: the prayers of the Church presented to God, the Church triumphant, and Christ's mediating action. These are theological interpretations, not additional 1962 rubrics and not a settled requirement to identify the Angel with one named person. The final petition is particularly practical: participants who receive the sacrament ask for heavenly blessing and grace. Thus adoration, the offering and Communion remain connected without erasing their distinct moments.",
+        "fr": "L’autel céleste n’est pas un second sacrifice concurrent de celui de l’autel terrestre. Saint Thomas (III, q.83, a.4, réponse à l’objection 9) expose plusieurs lectures traditionnelles du saint Ange et de l’autel d’en haut : les prières de l’Église présentées à Dieu, l’Église triomphante et l’action médiatrice du Christ. Ce sont des interprétations théologiques, non de nouvelles rubriques de 1962 ; elles n’imposent pas d’identifier l’Ange à une seule personne nommée. La demande finale est concrète : ceux qui reçoivent le sacrement implorent la bénédiction céleste et la grâce. Adoration, offrande et communion sont ainsi liées sans être confondues."
+      },
+      "liturgical_note": {
+        "en": "The prayer is quiet priestly text; nothing in it authorizes a new Angel icon, altar position or action cue in LIVE mode.",
+        "fr": "La prière est prononcée à voix basse ; elle n’autorise ni nouvel icône d’Ange ni nouvelle position ni nouveau signal d’action en mode LIVE."
+      },
+      "scripture_anchor_ids": [],
+      "source_keys": [
+        "MR62",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.07",
+      "block_ids": [
+        "AO.SM.B057",
+        "AO.SM.B058",
+        "AO.SM.B059"
+      ],
+      "stage_id": "MF04",
+      "title": {
+        "en": "The departed, sinners and every good gift",
+        "fr": "Les défunts, les pécheurs et tous les dons"
+      },
+      "question": {
+        "en": "Who is still present in the prayer of the Church?",
+        "fr": "Qui demeure présent dans la prière de l’Église ?"
+      },
+      "overview": {
+        "en": "The Canon remembers the faithful departed, asks fellowship for sinners who trust in mercy, and acknowledges that all good gifts come through Christ. These prayers make the Church's supplication extend beyond those visibly gathered.",
+        "fr": "Le Canon se souvient des fidèles défunts, demande une place parmi les saints pour les pécheurs confiants en la miséricorde, et reconnaît que tous les dons viennent par le Christ. La supplication de l’Église dépasse ainsi les personnes visiblement réunies."
+      },
+      "deep": {
+        "en": "The Memento of the dead asks for rest, light and peace for named persons and all resting in Christ, parallel to the earlier remembrance of the living. Nobis quoque does not boast of entitlement to sainthood: its plea turns explicitly from personal merit to God's generous pardon and communion with the saints. Per quem haec omnia then acknowledges God's continuing action through Christ—creating, sanctifying, quickening, blessing and bestowing His gifts. The three texts make a coherent spiritual progression from intercession, through humility, to gratitude. As with the earlier Memento, private names belong to the celebrant's intention; a user-facing educational screen should not manufacture or expose anyone's intentions.",
+        "fr": "Le Memento des défunts demande repos, lumière et paix pour les personnes nommées et pour tous ceux qui reposent dans le Christ, en parallèle du souvenir des vivants. Nobis quoque ne revendique aucun droit à la sainteté : sa supplication s’appuie sur le pardon de Dieu plutôt que sur les mérites personnels et demande la communion des saints. Per quem haec omnia reconnaît ensuite l’action continue de Dieu par le Christ : créer, sanctifier, vivifier, bénir et donner. Ces trois textes vont de l’intercession à l’humilité, puis à l’action de grâces. Comme au premier Memento, les noms privés relèvent de l’intention du célébrant : l’interface ne doit fabriquer ni afficher les intentions d’autrui."
+      },
+      "liturgical_note": {
+        "en": "Nobis quoque is marked as public text in the existing source, unlike its neighbouring private blocks. The distinction belongs to the Mass source and must remain visible in the review.",
+        "fr": "Nobis quoque porte l’attribution de texte public dans la source existante, à la différence des blocs privés voisins. Cette distinction doit demeurer visible dans la revue."
+      },
+      "scripture_anchor_ids": [
+        "MFS06"
+      ],
+      "source_keys": [
+        "MR62",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    },
+    {
+      "id": "AO.FORM.CANON.DEEP.08",
+      "block_ids": [
+        "AO.SM.B060",
+        "AO.SM.B061"
+      ],
+      "stage_id": "MF04",
+      "title": {
+        "en": "Per ipsum: the Canon reaches its Amen",
+        "fr": "Per ipsum : le Canon atteint son Amen"
+      },
+      "question": {
+        "en": "What does the final Amen affirm?",
+        "fr": "Que confirme l’Amen final ?"
+      },
+      "overview": {
+        "en": "The Canon ends by giving all honour and glory to the Father through, with and in Christ in the unity of the Holy Ghost. The priest's doxology moves into an audible conclusion, to which the response is Amen.",
+        "fr": "Le Canon se termine en rendant tout honneur et toute gloire au Père par le Christ, avec Lui et en Lui, dans l’unité du Saint-Esprit. La doxologie du prêtre conduit à une conclusion audible à laquelle la réponse est Amen."
+      },
+      "deep": {
+        "en": "After the petitions for the Church and the faithful, the words focus everything upon God Himself. The doxology is Trinitarian, explicitly directed to the Father through Christ in the Holy Ghost. It provides an ending appropriate to the preceding sacrifice: the offering and the petitions have their final goal in divine praise. The response Amen is not filler or a separate Proper: it ratifies the priest's liturgical conclusion. St Thomas's discussion of the structure of the Canon helps explain why thanksgiving, petition and offering culminate rather than remain a sequence of disconnected prayers. The separate action cues involving Host and Chalice belong to the existing Mass engine.",
+        "fr": "Après les demandes pour l’Église et les fidèles, les paroles ramènent tout vers Dieu Lui-même. La doxologie est trinitaire : elle s’adresse au Père par le Christ dans l’Esprit-Saint. Elle conclut convenablement le sacrifice qui précède : l’offrande et les supplications trouvent leur but dans la louange divine. L’Amen n’est ni un remplissage ni un Propre indépendant ; il ratifie la conclusion liturgique du prêtre. L’explication de la structure du Canon par saint Thomas montre comment action de grâces, demande et offrande culminent au lieu de rester des prières disjointes. Les gestes avec l’Hostie et le Calice relèvent du moteur de Messe existant."
+      },
+      "liturgical_note": {
+        "en": "The priest's quiet doxology and the public conclusion with its response are distinct B060/B061 source blocks. Preserve their voices and original timing.",
+        "fr": "La doxologie silencieuse du prêtre et la conclusion publique avec sa réponse sont deux blocs sources B060/B061. Leurs voix et leurs temps propres doivent être préservés."
+      },
+      "scripture_anchor_ids": [],
+      "source_keys": [
+        "MR62",
+        "AQUINAS83"
+      ],
+      "status": "EDITORIAL_DRAFT_NOT_RELEASED"
+    }
+  ]
+}

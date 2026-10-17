@@ -1,0 +1,145 @@
+{
+  "schema": "ao-formation-prayer-reading-transition-pilot-v1",
+  "scope": "FORMATION_ONLY",
+  "status": "EDITORIAL_DRAFT_NOT_RELEASED",
+  "profile": "ORDINARY_SUNG",
+  "study_level": "DIRECT_READING_OF_PUBLISHED_LITURGICAL_TEXT",
+  "source_owner": "data/presentation/reader-text-sung.v1.json",
+  "curriculum_owner": "data/learn/mass-formation-campion.v1.json",
+  "guide_owner": "data/presentation/guide-registry.v1.json",
+  "editorial_note": "Reading-only pilot. Stage IDs are navigation suggestions, not assertions of newly certified source-to-claim correspondence. Do not publish before editorial approval or import into the ritual reader.",
+  "entries": [
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.01",
+      "block_id": "AO.SM.B039",
+      "moment_id": "AO.CARD.011",
+      "stage_id": "MF03",
+      "text_anchor_en": "my sacrifice and yours",
+      "heading": {
+        "en": "My sacrifice and yours",
+        "fr": "Mon sacrifice et le vôtre"
+      },
+      "reading": {
+        "en": "The priest asks the brethren to pray that his sacrifice and theirs may be acceptable to the almighty Father. The response asks God to accept the sacrifice from the priest’s hands, for the praise of His name and the good of the whole Church.",
+        "fr": "Le prêtre demande aux fidèles de prier pour que son sacrifice et le leur soient agréables au Père tout-puissant. La réponse demande à Dieu de recevoir le sacrifice des mains du prêtre, pour la gloire de Son nom et le bien de toute l’Église."
+      },
+      "observe": {
+        "en": "Read both parts, not only the opening appeal: the priest’s words distinguish “my” and “yours”, while the response names the hands of the priest. This is also the textual starting point for the existing Formation lesson MF03; it is not a newly certified claim about the mechanics of sacrifice.",
+        "fr": "Lisez l’appel et sa réponse : les mots du prêtre distinguent « mon » et « votre », tandis que la réponse nomme les mains du prêtre. C’est aussi le point de départ textuel de la leçon existante MF03, non une nouvelle affirmation certifiée sur le sacrifice."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.02",
+      "block_id": "AO.SM.B041",
+      "moment_id": "AO.CARD.011",
+      "stage_id": "MF03",
+      "text_anchor_en": "World without end.",
+      "heading": {
+        "en": "The audible end of the Secret",
+        "fr": "La conclusion audible de la Secrète"
+      },
+      "reading": {
+        "en": "The published block contains the concluding formula “World without end” and the reply “Amen”. It marks the audible conclusion after the Secret, whose variable wording belongs to the Proper selected for the Mass.",
+        "fr": "Ce bloc publié contient la formule finale « Dans tous les siècles des siècles » (rendue par « World without end » dans la source anglaise), suivie de la réponse « Amen ». Il marque la conclusion audible après la Secrète, dont le texte varie selon le Propre de la Messe."
+      },
+      "observe": {
+        "en": "The words of the Secret itself are not available in this ordinary-text block. The study view must not replace that Proper with a generic prayer or pretend to analyse an absent text.",
+        "fr": "Les paroles de la Secrète elle-même ne figurent pas dans ce bloc de l’ordinaire. La Formation ne doit pas remplacer ce Propre par une prière générique ni faire semblant d’analyser un texte absent."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.03",
+      "block_id": "AO.SM.B042",
+      "moment_id": "AO.CARD.012",
+      "stage_id": "MF01",
+      "text_anchor_en": "The Lord be with you.",
+      "heading": {
+        "en": "Greeting before the Preface",
+        "fr": "La salutation avant la Préface"
+      },
+      "reading": {
+        "en": "The Preface dialogue begins with “The Lord be with you”, answered by “And with thy spirit”. This is a two-part exchange between the celebrant and the responding voices.",
+        "fr": "Le dialogue de la Préface commence par « Le Seigneur soit avec vous », auquel répond « Et avec votre esprit ». Ces paroles forment un échange entre le célébrant et ceux qui répondent."
+      },
+      "observe": {
+        "en": "The source assigns the first line to public speech and the second to the response. At this level, the lesson describes those published words; the theology of ministerial office belongs to separate, cited Formation material.",
+        "fr": "La source attribue la première formule à la parole publique et la seconde à la réponse. La présente notice décrit ces paroles publiées ; la théologie du ministère relève de la Formation sourcée, distincte de ce bref commentaire."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.04",
+      "block_id": "AO.SM.B043",
+      "moment_id": "AO.CARD.012",
+      "stage_id": "MF01",
+      "text_anchor_en": "Lift up your hearts.",
+      "heading": {
+        "en": "Lift up your hearts",
+        "fr": "Élevons notre cœur"
+      },
+      "reading": {
+        "en": "The priest calls for hearts to be lifted up. The response declares that they are raised to the Lord. The subject of this brief exchange is the direction of the heart in prayer.",
+        "fr": "Le prêtre invite à élever les cœurs. La réponse déclare qu’ils sont tournés vers le Seigneur. Ce bref échange concerne l’orientation du cœur dans la prière."
+      },
+      "observe": {
+        "en": "The English wording is already supplied by the published Mass text. This is a direct reading of that invitation and reply; no unverified biblical origin or historical dating has been assigned.",
+        "fr": "La traduction anglaise provient du texte de la Messe déjà publié. Cette notice lit simplement l’invitation et sa réponse, sans attribuer une origine biblique ou une datation historique non vérifiée."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.05",
+      "block_id": "AO.SM.B044",
+      "moment_id": "AO.CARD.012",
+      "stage_id": "MF01",
+      "text_anchor_en": "Let us give thanks to the Lord",
+      "heading": {
+        "en": "Giving thanks to God",
+        "fr": "Rendre grâce à Dieu"
+      },
+      "reading": {
+        "en": "The celebrant calls the people to give thanks to the Lord their God; the response judges that thanksgiving fitting and just. The exchange introduces the act of thanksgiving immediately before the variable Preface text.",
+        "fr": "Le célébrant invite à rendre grâce au Seigneur notre Dieu ; la réponse reconnaît qu’il est juste et convenable de le faire. Cet échange introduit l’action de grâce avant le texte variable de la Préface."
+      },
+      "observe": {
+        "en": "The invocation is split into two public text units in the source, followed by a single response. The variable Preface that follows is not reproduced or interpreted by this fixed-text reading.",
+        "fr": "Dans la source, l’invitation est répartie sur deux segments de texte public, suivis d’une réponse. La Préface variable qui suit n’est ni reproduite ni interprétée par cette notice consacrée au texte fixe."
+      },
+      "scripture_within_text": []
+    },
+    {
+      "id": "AO.FORM.PRAYER.TRANSITION.06",
+      "block_id": "AO.SM.B046",
+      "moment_id": "AO.CARD.013",
+      "stage_id": "MF01",
+      "text_anchor_en": "Holy, Holy, Holy, Lord God of Hosts.",
+      "heading": {
+        "en": "Holy, Holy, Holy — and Blessed is He",
+        "fr": "Saint, Saint, Saint — et Béni soit Celui"
+      },
+      "reading": {
+        "en": "The Sanctus acclaims the Lord God of Hosts as holy and speaks of heaven and earth filled with His glory. The Benedictus blesses the one who comes in the name of the Lord; “Hosanna in the highest” appears in both parts.",
+        "fr": "Le Sanctus acclame la sainteté du Seigneur, Dieu des armées, et affirme que le ciel et la terre sont remplis de Sa gloire. Le Benedictus bénit Celui qui vient au nom du Seigneur ; « Hosanna au plus haut des cieux » figure dans les deux parties."
+      },
+      "observe": {
+        "en": "All five text units are assigned to the schola in this Sung Mass source. The text itself does not label individual biblical citations, so none are newly asserted here. The adjacent Guide notes that singing may overlap with the silent Canon; that is orientation, not a timing rule introduced by this entry.",
+        "fr": "Les cinq segments de la source sont attribués à la schola pour cette Messe chantée. Le texte ne fournit pas de références bibliques individuelles : aucune n’est inventée ici. Le Guide voisin indique que le chant peut se poursuivre pendant le Canon silencieux ; c’est un repère, non une nouvelle règle de durée."
+      },
+      "scripture_within_text": []
+    }
+  ],
+  "withheld_variable_propers": [
+    {
+      "block_id": "AO.SM.B040",
+      "proper_slot": "SECRET_SET",
+      "reason": "Text depends on selected Mass. Do not invent a fixed Secret."
+    },
+    {
+      "block_id": "AO.SM.B045",
+      "proper_slot": "PREFACE",
+      "reason": "Text depends on selected Mass. Do not invent a fixed Preface."
+    }
+  ]
+}
