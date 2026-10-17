@@ -201,6 +201,7 @@ body[data-experience=discover] .info{min-height:0}
 .panorama-actions{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}
 .panorama-actions button{min-width:43px;min-height:43px;border:1px solid #4b5762;color:var(--text);background:#17202a;border-radius:6px;font:15px system-ui,sans-serif}
 .panorama-notice{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:7px 2px 3px}
+#panorama-retry{min-height:44px;margin:9px 0;border:1px solid #7b745d;border-radius:7px;padding:10px 15px;background:#1c2731;color:var(--text);font:12px system-ui,sans-serif}
 @media(max-width:600px){.panorama-stage{padding:6px}.photo-mode-nav{gap:4px}.photo-mode-nav button{padding:8px}}
 @media(max-width:930px){body.object-open .photo-mode-nav{display:none}}
 </style>
@@ -241,6 +242,7 @@ body[data-experience=discover] .info{min-height:0}
 <button type="button" data-pan="farther" aria-label="Zoom out">−</button>
 </div>
 <p class="panorama-notice" id="panorama-notice" role="status">Genuine photographic panorama, from a single fixed camera position. No simulated walking.</p>
+<button type="button" id="panorama-retry" hidden>Retry original photograph</button>
 </div>
 <div class="photo-viewport" id="photo-viewport" role="region" tabindex="0" aria-label="Pan horizontally to inspect high altar photograph">
 <div class="photo-canvas" id="photo-canvas">
@@ -391,6 +393,7 @@ async function showPanorama(mode){
  state.photoMode=mode;state.view="panorama";
  $("panorama-stage").hidden=false;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;
  $("panorama-notice").textContent="Loading genuine 360° source photograph…";
+ $("panorama-retry").hidden=true;
  syncPhotoNav();
  const sceneId=mode==="brompton"?"BROMPTON_PANO":"NEWMAN_360";
  try{
@@ -409,9 +412,14 @@ async function showPanorama(mode){
    });
   }
   if(state.view!=="panorama"||state.photoMode!==mode)return false;
-  return await panoramaController.open(sceneId);
+  const loaded=await panoramaController.open(sceneId);
+  if(state.view==="panorama"&&state.photoMode===mode)$("panorama-retry").hidden=loaded;
+  return loaded;
  }catch(error){
-  $("panorama-notice").textContent="360° photograph unavailable; open the original source credit or return to the high altar. "+String(error.message||error);
+  if(state.view==="panorama"&&state.photoMode===mode){
+   $("panorama-retry").hidden=false;
+   $("panorama-notice").textContent="360° photograph unavailable; open the original source credit or return to the high altar. "+String(error.message||error);
+  }
   return false;
  }
 }
@@ -703,6 +711,7 @@ for(const b of $("photo-mode-nav").querySelectorAll("button"))b.onclick=()=>{
  const mode=b.dataset.photoMode;
  if(mode==="still")showChurch();else void showPanorama(mode);
 };
+$("panorama-retry").onclick=()=>{if(state.view==="panorama")void showPanorama(state.photoMode);};
 for(const b of document.querySelectorAll("[data-pan]"))b.onclick=()=>{
  if(state.view==="panorama")panoramaController?.adjust(...PAN_DELTAS[b.dataset.pan]);
 };
