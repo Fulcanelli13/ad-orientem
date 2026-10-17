@@ -10,6 +10,7 @@ for(const scene of scenes){
  assert.match(scene.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
  assert.equal(scene.creator,"David Iliff");
  assert.equal(scene.licence,"CC BY-SA 3.0");
+ assert.equal(scene.licenceUrl,"https://creativecommons.org/licenses/by-sa/3.0/");
  const request=new URL(m4SourceRequest(scene.id));
  assert.equal(request.searchParams.get("titles"),"File:"+scene.filename);
  assert.equal(request.searchParams.get("origin"),"*");
@@ -36,4 +37,10 @@ for(const target of ['data-photo-mode="still"','data-photo-mode="brompton"','dat
 assert.match(html,/state\.view="panorama"[\s\S]*?\$\("photo-viewport"\)\.hidden=true/,"no six still-photo hotspots on panorama");
 assert.match(html,/state\.view="church"[\s\S]*?\$\("panorama-stage"\)\.hidden=true/,"original still stays independent");
 assert.equal((html.match(/className="marker"/g)||[]).length,1,"existing six-marker controller unchanged");
+assert.ok(html.includes('id="photo-license"')&&html.includes('id="photo-transform"'),"original photographer, licence and perspective adaptation independently linked");
+const implementation=fs.readFileSync(new URL("../previews/visible-mass-3d/visible-mass-m4-panorama.mjs",import.meta.url),"utf8");
+assert.match(implementation,/img\.naturalWidth>2048/,"prevent large-image black GPU texture regression");
+assert.match(implementation,/function createM4Gpu/,"optional fast real-photo projection retained");
+assert.match(implementation,/const ctx=gpu\?null:canvas\.getContext/,"software fallback survives without WebGL");
+
 console.log("PASS M4 original upright 360° sources, distinct venues, no coordinate transfer, isolated panorama camera view.");
