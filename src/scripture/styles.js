@@ -114,7 +114,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureReading{margin:0 0 7px;padding:8px 0 11px}
  .aoScriptureReading h3{font:400 clamp(21px,3.4vw,26px)/1.4 Georgia,"Garamond",serif;margin:6px 0 12px}
  .aoScriptureWitnessDetails{margin:9px 0 0;color:#a9a18e;border:0}
- .aoScriptureLibrary .aoScriptureWitnessDetails>summary{min-height:34px;display:flex;align-items:center;font:500 11px/1.35 system-ui,sans-serif;color:#b5aa94;cursor:pointer}
+ .aoScriptureLibrary .aoScriptureWitnessDetails>summary{min-height:44px;display:flex;align-items:center;font:500 11px/1.35 system-ui,sans-serif;color:#b5aa94;cursor:pointer}
  .aoScriptureWitnessDetails p{margin:3px 0 8px}
  .aoScriptureLibrary .aoScriptureReferenceWarning>summary{min-height:44px;display:flex;align-items:center;color:#bdb196;font:500 12px/1.3 system-ui,sans-serif}
  .aoScriptureLibrary .aoScriptureReferenceWarning>p{margin:0 0 10px}
