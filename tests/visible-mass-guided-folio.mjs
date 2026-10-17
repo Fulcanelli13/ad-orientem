@@ -3,6 +3,8 @@ import fs from "node:fs";
 import vm from "node:vm";
 import {createVisibleMassDialogueDirector} from "../previews/visible-mass-3d/visible-mass-dialogue-director.mjs";
 import {mountVisibleMassDialogueFolio} from "../previews/visible-mass-3d/visible-mass-dialogue-folio.mjs";
+import {validateVisibleMassBeats,VISIBLE_MASS_BEATS,VISIBLE_MASS_PATH_OPENINGS,
+ VISIBLE_MASS_PRIORITY_CROSSOVERS,VISIBLE_MASS_BEAT_STATUS} from "../previews/visible-mass-3d/visible-mass-narrative-beats.mjs";
 const dir="previews/visible-mass-3d/";
 const read=p=>JSON.parse(fs.readFileSync(dir+p,"utf8"));
 const graph=read("GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json");
@@ -11,6 +13,15 @@ const historic=read("HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json");
 const functional=read("HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json");
 const answerIds=[...historic.answers,...functional.answers].map(x=>x.question_id);
 assert.equal(answerIds.length,97);
+const beats=validateVisibleMassBeats(graph,pilot,answerIds);
+assert.equal(beats.originalVMQStops,19);
+assert.equal(beats.crossovers,6);
+assert.equal(beats.status,VISIBLE_MASS_BEAT_STATUS);
+assert.equal(VISIBLE_MASS_PRIORITY_CROSSOVERS.length,6);
+assert.equal(Object.keys(VISIBLE_MASS_PATH_OPENINGS).length,4);
+assert.ok(Object.values(VISIBLE_MASS_BEATS).every(b=>b.status===VISIBLE_MASS_BEAT_STATUS));
+assert.ok(Object.values(VISIBLE_MASS_BEATS).every(b=>!b.observation.includes("St Pius X")));
+
 const make=(initialState=null)=>createVisibleMassDialogueDirector(graph,pilot,answerIds,{initialState});
 const g=make();
 assert.equal(g.status().active,null);
@@ -81,36 +92,51 @@ const doc={
     replaceChildren(...items){this.children=[...items];}
   })
 };
-for(const id of ["guide-dock","guide-toggle","guide-status","guide-routes","guide-actions","guide-prompt","guide-target"])
+for(const id of ["guide-dock","guide-toggle","guide-status","guide-routes","guide-actions","guide-opening","guide-prompt","guide-target"])
  elements.set(id,doc.createElement("div"));
 const storage=new Map();
 const win={document:doc,sessionStorage:{
   getItem:k=>storage.get(k)??null,
   setItem:(k,v)=>storage.set(k,v)
 }};
-const hits=[];
-let folio=mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigate:(objectId,questionId)=>{
+const hits=[];const focused=[];
+let folio=mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,onPreview:id=>focused.push(id),navigate:(objectId,questionId)=>{
  hits.push({objectId,questionId});return true;
 }});
 assert.equal(elements.get("guide-dock").hidden,false);
 assert.equal(elements.get("guide-routes").children.length,4);
 assert.equal(folio.chooseTrail("ALTAR_MYSTERY"),true);
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0013");
-assert.equal(elements.get("guide-prompt").textContent,pilot.questions.find(q=>q.id==="VMQ-0013").question.en);
+assert.equal(elements.get("guide-opening").textContent,VISIBLE_MASS_PATH_OPENINGS.ALTAR_MYSTERY);
+assert.equal(elements.get("guide-opening").hidden,false);
+assert.equal(elements.get("guide-prompt").textContent,VISIBLE_MASS_BEATS["VMQ-0013"].observation);
+assert.equal(elements.get("guide-target").textContent,pilot.questions.find(q=>q.id==="VMQ-0013").question.en);
+const alternate=elements.get("guide-actions").children.find(b=>b.dataset.guideQuestion==="VMQ-0014");
+assert.ok(alternate,"Calvary alternative should be available from photographed crucifix");
+assert.equal(alternate.textContent,pilot.questions.find(q=>q.id==="VMQ-0014").question.en);
+const photoFocus=elements.get("guide-actions").children.find(b=>b.dataset.guidePreview==="AL06");
+assert.ok(photoFocus);photoFocus.onclick();
+assert.deepEqual(focused,["AL06"],"focus must use genuine photographed object identity");
+assert.equal(folio.status().readCount,0,"pointing at a photo is not a discovery");
+assert.deepEqual(hits,[],"a photo focus must not open a source answer");
 assert.equal(folio.explore("VMQ-0013"),true);
 assert.deepEqual(hits,[{objectId:"AL06",questionId:"VMQ-0013"}]);
 assert.equal(folio.status().readCount,0,"navigating to a question must not mark it as read");
 assert.equal(folio.markRead("VMQ-0013"),true);
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0014");
+assert.equal(elements.get("guide-opening").hidden,true,"introductory narrative must not recur after original question opens");
 const actions=elements.get("guide-actions").children;
 const skip=actions.find(b=>b.textContent==="Skip suggestion");
 assert.ok(skip);skip.onclick();
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0002");
 assert.equal(folio.status().readCount,1);
 const afterSkip=folio.serialize();
+assert.equal(elements.get("guide-prompt").textContent,VISIBLE_MASS_BEATS["VMQ-0002"].observation);
 folio=mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigate:()=>true});
 assert.deepEqual(folio.serialize(),afterSkip,"same-session remount preserves reads and per-trail skips");
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0002");
+assert.equal(folio.chooseTrail("ALTAR_MYSTERY"),true);
+assert.equal(elements.get("guide-opening").hidden,true,"already introduced paths cannot repeat introduction");
 assert.equal(folio.chooseTrail("SANCTUARY_SECRETS"),true);
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0052");
 assert.equal(folio.explore("VMQ-0052"),true);
@@ -142,4 +168,4 @@ assert.match(source,/id="guide-return"/);
 const script=source.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(script);new vm.Script(script);
 assert.doesNotMatch(source,/<canvas\b/);
-console.log("PASS Visible Mass six-photo guided dialogue: skip, switch, suspend/resume, shared reads, held answer gates, original photo VMQ navigation and session restoration.");
+console.log("PASS Visible Mass M2 guide: original six-photo VMQ gates, non-fiction dialogue beats, six editorial crossovers, photo-only focus, no replay, skip/switch/resume and session restoration.");
