@@ -177,4 +177,57 @@ assert.equal(correctionDelta.chapters[0].units[6].originalReference,"Esther 4:1�
 assert.equal(correctionDelta.chapters[0].units[6].sourceEdition,"UNDETERMINED_IN_V18");
 assert.equal(correctionDelta.chapters[1].units[3].originalReference,"Revelation 13:1–10");
 
+
+const sourceVerses=(edition,book)=>{
+ const raw=JSON.parse(readFileSync(new URL(
+   "../data/scripture/witness/"+edition+"/"+book+".json",import.meta.url),"utf8"));
+ assert.equal(raw.editionId,edition);
+ return new Set(raw.verses.map(v=>v[0]+":"+v[1]));
+};
+const cpEsther=sourceVerses("cpdv-2009","Esther");
+const drEsther=sourceVerses("dr-challoner","Esther");
+const h42=correctionDelta.chapters[0],h76=correctionDelta.chapters[1];
+const estherUnit=h42.units.find(x=>x.originalReference==="Esther 4:1–17");
+assert.equal(estherUnit.sourceEdition,"UNDETERMINED_IN_V18",
+ "v18's unnamed Esther reference edition is never guessed");
+assert.equal(estherUnit.candidateEdition,"cpdv-2009");
+assert.equal(estherUnit.fullCompanionReadings.length,4);
+assert.ok(estherUnit.fullCompanionReadings.every(x=>x.edition==="cpdv-2009"));
+let previous=-1;
+for(const reference of estherUnit.candidateReadings){
+ const m=/^Esther (\d+):(\d+)(?:[–-](\d+))?$/.exec(reference);
+ assert.ok(m,"Candidate must be an explicit CPDV source reference: "+reference);
+ const ch=Number(m[1]),first=Number(m[2]),last=Number(m[3]||m[2]);
+ assert.ok(ch*1000+first>previous,"CPDV Esther primary reading order must be monotonic");
+ previous=ch*1000+last;
+ for(let v=first;v<=last;v++){
+  assert.ok(cpEsther.has(ch+":"+v),"Missing CPDV Esther "+ch+":"+v);
+  const destination=estherParallelSpans(esther({chapter:ch,verseStart:v}),"cpdv-2009","dr-challoner");
+  assert.ok(destination,"Unmapped Catholic Esther verse "+ch+":"+v);
+  for(const d of destination)for(let w=d.verseStart;w<=d.verseEnd;w++)
+   assert.ok(drEsther.has(d.chapter+":"+w),"Mapped Douay Esther missing "+d.chapter+":"+w);
+ }
+}
+assert.ok(estherUnit.candidateReadings.includes("Esther 10:1–11"),
+ "Haman's presence and speech must remain intelligible");
+assert.ok(estherUnit.candidateReadings.includes("Esther 14:16–22"),
+ "Violent reversal and Purim context may not be silently erased");
+const daniel3=h42.units.find(x=>x.originalReference==="Daniel 3:24–90");
+for(const edition of ["cpdv-2009","dr-challoner"]){
+ const source=sourceVerses(edition,"Daniel");
+ for(const reference of daniel3.candidateReadings){
+  const m=/^Daniel (\d+):(\d+)(?:[–-](\d+))?$/.exec(reference);
+  assert.ok(m);
+  for(let v=Number(m[2]);v<=Number(m[3]||m[2]);v++)
+   assert.ok(source.has(m[1]+":"+v),"Missing Daniel verse "+edition+" "+m[1]+":"+v);
+ }
+}
+const rev12=h76.units.find(x=>x.originalReference==="Revelation 12:1–17");
+assert.deepEqual(rev12.candidateReadings,["Revelation 12:1–18"]);
+for(const edition of ["cpdv-2009","dr-challoner"]){
+ const source=sourceVerses(edition,"Revelation");
+ assert.ok(source.has("12:18")&&source.has("13:11"),
+  "The two installed Catholic witnesses require the dragon transition and second beast");
+}
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
