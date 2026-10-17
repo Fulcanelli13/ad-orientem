@@ -476,7 +476,7 @@ try{
   await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("13 source fragments loaded"),
     null,{timeout:24000});
 
-  assert.match(await page.locator("#historiaSequence").innerText(),/Esther 11:2–6/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Esther 11:2–10/);
   const estherAudit=page.locator("#historiaSequence .auditSegment").first();
   assert.match(await estherAudit.innerText(),/CPDV|Mordecai|Esther/i);
   await estherAudit.getByRole("button",{name:"Rate / inspect this extract"}).click();
