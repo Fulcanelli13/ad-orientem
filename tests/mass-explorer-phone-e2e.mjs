@@ -196,8 +196,15 @@ try{
     assert.equal(await context.locator('[data-ao-mf-source-original="SRC-MEDIATOR-DEI"]').count(),1);
     assert.equal(await formation.evaluate(node=>node.inert),true,
       "Reading documentary context must temporarily exclude the underlying lesson");
-    assert.match(await context.innerText(),/not quotations or verified passages/,
-      "Lesson text cannot be misrepresented as original historical document excerpts");
+    assert.match(await context.innerText(),/Lesson commentary · not original quotations/,
+      "The compact source screen must disclose that lesson claims are not original quotations");
+    const sourceNotes=context.locator(".aoMFSourceLimitations");
+    assert.equal(await sourceNotes.evaluate(el=>el.open),false,
+      "Long evidence and reproduction caveats should not precede the lesson claims");
+    await sourceNotes.locator("summary").click();
+    assert.match(await sourceNotes.innerText(),/not quotations or verified passages/,
+      "The complete original source-verification warning must remain available");
+    await sourceNotes.locator("summary").click();
     await page.screenshot({path:resolve(screenshotDir,"source-context-"+width+"-en.png")});
     await context.locator(".aoMFSourceReturn").click();
     assert.equal(await page.locator('[data-ao-mf-source-reader]').count(),0,
