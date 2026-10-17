@@ -374,7 +374,7 @@ try{
  assert.equal(await guidedCue.getAttribute("data-ao-rosary-context"),"editorial-meditation");
  const beadSource=page.locator("#aoPrayerBookRoot.open .aoRosaryBeadScripture a[data-ao-rosary-meditation-source]");
  assert.equal(await beadSource.count(),1,"Guided bead lacks contextual primary witness");
- assert.match(await beadSource.innerText(),/Luke 1:26-27/);
+ assert.match(await beadSource.getAttribute("data-ao-scripture-context"),/Luke 1:26-27/);
  assert.match(await beadSource.getAttribute("href"),/^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
  const beadSourceHref=await beadSource.getAttribute("href");
  if(beadSourceHref.includes("fr.wikisource.org/wiki/Bible_Crampon_1923/")){
