@@ -439,7 +439,39 @@ try{
   assert.equal(saved[0].duplicate,true);
   assert.equal(saved[0].rating,5);
   assert.equal("text" in saved[0],false);
-  assert.deepEqual(pageErrors,[],"Unexpected mining workbench runtime errors");
+  for(const [module,id,reference] of [
+    ["novena","annunciation","Luke 1:26–38"],
+    ["mass","MFS01","Luke 2:14"],
+    ["stations","5","Luke 23:26"],
+    ["prayer","foundations_our_father","Matthew 6:9–13"]]){
+    await page.locator("#module").selectOption(module);
+    await page.locator('#linkedObject option[value="'+id+'"]').waitFor({state:"attached",timeout:16000});
+    await page.locator("#linkedObject").selectOption(id);
+    await page.waitForFunction(value=>document.querySelector("#resultHeading")?.textContent===value,
+      reference,{timeout:15000});
+  }
+  await page.locator("#module").selectOption("historia");
+  await page.waitForFunction(()=>document.querySelector("#linkedObject")?.options?.length===151,null,{timeout:18000});
+  assert.equal(await page.locator("#linkedObject option").count(),151,"Reuse all 151 Atlas event IDs");
+  await page.locator("#module").selectOption("novena");
+  await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
+  await page.locator("#linkedObject").selectOption("annunciation");
+  await page.locator("#rating").selectOption("4");
+  await page.locator("#saveReview").click();
+  const crossModule=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.ok(crossModule.some(row=>row.originModule==="novena"&&row.originId==="annunciation"));
+  assert.equal(crossModule[0].originBead,2,"Saved Rosary record retains original exact bead");
+  assert.deepEqual(pageErrors,[],"Unexpected cross-module workbench runtime errors");
+  await page.goto("http://127.0.0.1:4199/index.html?ao_scripture_research=1",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
+    globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});
+  await page.locator("[data-home-scripture]").click();
+  const miningLink=page.locator("[data-scripture-editorial-mine]");
+  await miningLink.waitFor({state:"visible",timeout:12000});
+  assert.match(await miningLink.getAttribute("href"),/module=other/);
+  assert.match(await miningLink.getAttribute("href"),/reference=Luke%201%3A28/);
+  assert.deepEqual(pageErrors,[],"Unexpected research link browser errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
  await browser?.close?.();
