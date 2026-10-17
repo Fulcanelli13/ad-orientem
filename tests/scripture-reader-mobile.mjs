@@ -519,6 +519,39 @@ try{
     /LAMB_AND_THE_REDEEMED/);
   assert.deepEqual(pageErrors,[],"H76 source-owned principal/companion editor must not create browser errors");
 
+  // Six additional v18 chapters reuse the same existing Scripture mining UI.
+  assert.equal(await page.locator("#historiaAuditUnit option").count(),40,
+    "Only one unified eight-chapter, 40-unit research overlay is loaded");
+  await page.locator("#historiaAuditUnit").selectOption("H21-03");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("6 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Exodus 14:5–10/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Exodus 15:20–21/);
+  await page.locator("#historiaAuditUnit").selectOption("H45-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Luke 3:23–38/);
+  await page.locator("#historiaAuditUnit").selectOption("H54-05");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("5 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/John 9:35–38/);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2);
+  await page.locator("#historiaAuditUnit").selectOption("H73-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:25000});
+  assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:16–21/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:27–34/);
+  assert.deepEqual(pageErrors,[],"Eight-chapter original-source editorial workbench cannot raise browser errors");
+
+
 
   await page.locator("#module").selectOption("novena");
   await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
