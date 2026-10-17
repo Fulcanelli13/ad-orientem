@@ -241,7 +241,7 @@ try {
   // The reverse Novena → Explore link must navigate through the app shell,
   // rather than opening the old Explore owner behind the Prayer sheet.
   await page.locator("#aoPray435930 .aoN1AboutDisclosure > summary").click();
-  const customSummary=page.locator("#aoPray435930 details:has([data-n1-explore]) > summary").first();
+  const customSummary=page.locator("#aoPray435930 details.aoN1Details:has([data-n1-explore]) > summary").first();
   const crossLink=page.locator("#aoPray435930 [data-n1-explore]").first();
   await customSummary.click();
   await crossLink.click();
