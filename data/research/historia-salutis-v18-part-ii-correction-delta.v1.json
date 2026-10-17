@@ -1,0 +1,3109 @@
+{
+  "schema": "ao.historia.v18.part-ii-correction-delta.v1",
+  "sourceWorkbook": "Ad_Orientem_Historia_Salutis_Master_Matrix_v18_Abridgment_Decisions.xlsx",
+  "sourceTab": "V18 Ordered Verse Segments",
+  "sourceRowCount": 217,
+  "scope": "Eight v18 high-risk chapters H21, H27, H42, H45, H53, H54, H73, H76; exact prior 217-row v18 source preserved",
+  "originalSourcePreserved": true,
+  "releaseStatus": "EDITORIAL_RESEARCH_ONLY_NOT_APPROVED",
+  "sourceAddressing": "Scripture references in v18 are not consistently edition-tagged. Do not import traditional Esther references as CPDV by matching numbers.",
+  "editPolicy": "Overlay keyed by H chapter and exact original reference; never overwrite v18 or canonical 151 event IDs.",
+  "chapters": [
+    {
+      "chapterId": "H21",
+      "title": "Crossing the Sea",
+      "sourceTitle": "Crossing the Sea",
+      "genre": "SEQUENTIAL_DISTINCT_EXODUS_EPISODES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "chronologyBoundary": "H20 Passover precedes H21; H22 Sinai follows; canticle of Moses is a distinct poetic witness",
+      "units": [
+        {
+          "unitId": "H21-01",
+          "v18Order": 1,
+          "originalReference": "Exodus 12:31–42",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 12:31–42"
+          ],
+          "principalReadings": [
+            "Exodus 12:31–33",
+            "Exodus 12:37–42"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Exodus begins after Passover H20; preserve Pharaoh's dismissal and departure, not a duplicate Passover ritual.",
+          "principalRationale": "Exodus begins after Passover H20; preserve Pharaoh's dismissal and departure, not a duplicate Passover ritual.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 12:31–42",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_DEPARTURE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:exodus-12-31-42",
+                "title": "The departure from Egypt",
+                "atlasReference": "Exodus 12:31–42"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 3,
+            "linkedIndependentPublisherFamilies": [
+              "IBS Greatest Story",
+              "Life Bible / Tecarta",
+              "Mannora Bible"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "IBS_STORY",
+                "sourceFamily": "IBS Greatest Story",
+                "reference": "Exodus 12:18-15:21",
+                "variant": "CURATED",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+                "atlasEventKey": "biblical:passage:exodus-12-31-42",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Exodus 12:21-31",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:exodus-12-31-42",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Exodus 12:1–42",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:passage:exodus-12-31-42",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H21-02",
+          "v18Order": 2,
+          "originalReference": "Exodus 13:17–22",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 13:17–22"
+          ],
+          "principalReadings": [
+            "Exodus 13:17–22"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep nonshortened route, Joseph's bones and pillar of cloud/fire; divine guidance connects H21 to its sea crossing.",
+          "principalRationale": "Keep nonshortened route, Joseph's bones and pillar of cloud/fire; divine guidance connects H21 to its sea crossing.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H21-03",
+          "v18Order": 3,
+          "originalReference": "Exodus 14:15–31",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 14:15–31"
+          ],
+          "principalReadings": [
+            "Exodus 14:5–10",
+            "Exodus 14:13–16",
+            "Exodus 14:19–23",
+            "Exodus 14:26–31",
+            "Exodus 15:1–2",
+            "Exodus 15:20–21"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore Pharaoh's pursuit (14:5–10), fear/command, crossing, rescue and Moses/Miriam thanksgiving. Exodus 15 is a later distinct song, never disguised as part of the sea-crossing prose.",
+          "principalRationale": "Restore Pharaoh's pursuit (14:5–10), fear/command, crossing, rescue and Moses/Miriam thanksgiving. Exodus 15 is a later distinct song, never disguised as part of the sea-crossing prose.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 14:1–31",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_PURSUIT_AND_CROSSING",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Exodus 15:1–21",
+              "edition": "cpdv-2009",
+              "role": "CANTICLE_OF_MOSES_AND_MIRIAM",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Exodus 14:5–14",
+            "Exodus 15:1–21"
+          ],
+          "originalGenreBoundary": "AFTER_CROSSING_SEPARATE_CANTICLE",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:exodus-14-15-31",
+                "title": "The crossing of the sea",
+                "atlasReference": "Exodus 14:15–31"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 5,
+            "linkedIndependentPublisherFamilies": [
+              "IBS Greatest Story",
+              "Life Bible / Tecarta",
+              "Mannora Bible",
+              "Roman Catholic Lectionary",
+              "Saint Mary’s Press"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Exod 14:15—15:1",
+                "variant": "SELECTED",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "IBS_STORY",
+                "sourceFamily": "IBS Greatest Story",
+                "reference": "Exodus 12:18-15:21",
+                "variant": "CURATED",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Exod 14:21—15:1",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Exodus 14:5-31",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Exodus 13:17–15:21",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "SMP_TIMELINE",
+                "sourceFamily": "Saint Mary’s Press",
+                "reference": "Exodus 14:5–29",
+                "variant": "CATHOLIC_CHILDRENS_BIBLE_STORY_SELECTION",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://pages.smp.org/post/prayer-and-scripture/bible-timeline",
+                "atlasEventKey": "biblical:passage:exodus-14-15-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [
+              {
+                "sourceId": "MISSAL62",
+                "reference": "Exodus 14:24—15:1",
+                "reason": "PROVISIONAL"
+              },
+              {
+                "sourceId": "CHRON152",
+                "reference": "Exodus 13:17 - 14:31",
+                "reason": "ARCHIVED_UNVERIFIED_NOT_IN_ACTIVE_10_SOURCE_POOL"
+              }
+            ],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H21-04",
+          "v18Order": 4,
+          "originalReference": "Exodus 16:2–4, 12–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 16:2–4",
+            "Exodus 16:12–15"
+          ],
+          "principalReadings": [
+            "Exodus 16:2–4",
+            "Exodus 16:12–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Manna and quails are a distinct desert trial; retain hunger, divine promise and food's appearance rather than compress beyond recognition.",
+          "principalRationale": "Manna and quails are a distinct desert trial; retain hunger, divine promise and food's appearance rather than compress beyond recognition.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 16:1–36",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_MANNA_NARRATIVE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:exodus-16-1-36",
+                "title": "Manna in the wilderness",
+                "atlasReference": "Exodus 16:1–36"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 3,
+            "linkedIndependentPublisherFamilies": [
+              "Life Bible / Tecarta",
+              "Mannora Bible",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Exod 16:2-4, 12-15",
+                "variant": "SELECTED",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:passage:exodus-16-1-36",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Exod 16:1-5, 9-15",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:exodus-16-1-36",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Exodus 16:1-35",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:exodus-16-1-36",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Exodus 16",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:passage:exodus-16-1-36",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [
+              {
+                "sourceId": "CHRON152",
+                "reference": "Exodus 16",
+                "reason": "ARCHIVED_UNVERIFIED_NOT_IN_ACTIVE_10_SOURCE_POOL"
+              }
+            ],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H21-05",
+          "v18Order": 5,
+          "originalReference": "Exodus 17:1–7",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Exodus 17:1–7"
+          ],
+          "principalReadings": [
+            "Exodus 17:1–3",
+            "Exodus 17:5–7"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep thirst, command to strike the rock and giving water; Moses' omitted appeal remains in companion passage.",
+          "principalRationale": "Keep thirst, command to strike the rock and giving water; Moses' omitted appeal remains in companion passage.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Exodus 17:1–7",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_WATER_FROM_THE_ROCK",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H27",
+      "title": "The Deliverers of Israel",
+      "sourceTitle": "The Deliverers of Israel",
+      "genre": "INDEPENDENT_JUDGES_LIVES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "noNewAtlasEvent": true,
+      "personIds": [
+        "Deborah",
+        "Barak",
+        "Jael",
+        "Gideon",
+        "Samson"
+      ],
+      "h26Boundary": "The recurring judges cycle belongs in H26, not duplicated in H27.",
+      "units": [
+        {
+          "unitId": "H27-01",
+          "v18Order": 1,
+          "originalReference": "Judges 4:4–9, 14–24",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 4:4–9",
+            "Judges 4:14–24"
+          ],
+          "principalReadings": [
+            "Judges 4:4–9",
+            "Judges 4:12–15",
+            "Judges 4:17–23"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Deborah and Barak's commission, Sisera's army, battle and Jael's decisive action remain; do not isolate the tent killing from the commission and pursuit.",
+          "principalRationale": "Deborah and Barak's commission, Sisera's army, battle and Jael's decisive action remain; do not isolate the tent killing from the commission and pursuit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 4:1–24",
+              "edition": "cpdv-2009",
+              "role": "FULL_DEBORAH_BARAK_JAEL_ACCOUNT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Judges 5:1–31",
+              "edition": "cpdv-2009",
+              "role": "SONG_OF_DEBORAH",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H27-02",
+          "v18Order": 2,
+          "originalReference": "Judges 6:11–24",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 6:11–24"
+          ],
+          "principalReadings": [
+            "Judges 6:11–16",
+            "Judges 6:17–24"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
+          "principalRationale": "Gideon's reluctant call, divine promise and sign preserved; this is not the same event as his later victory.",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 6:11–24",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_GIDEON_CALL",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityCorrections": [
+            {
+              "replaced": "Judges 6:20–24",
+              "with": "Judges 6:17–24",
+              "reason": "The angel's directive to place a prepared offering presupposes Gideon's request/sign and preparation in 6:17–19."
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H27-03",
+          "v18Order": 3,
+          "originalReference": "Judges 7:2–8, 16–22",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 7:2–8",
+            "Judges 7:16–22"
+          ],
+          "principalReadings": [
+            "Judges 7:2–7",
+            "Judges 7:16–22"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep reduction to three hundred and trumpets/lamps, the victory's extraordinary means rather than simple military triumph.",
+          "principalRationale": "Keep reduction to three hundred and trumpets/lamps, the victory's extraordinary means rather than simple military triumph.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 7:1–25",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_GIDEON_VICTORY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H27-04",
+          "v18Order": 4,
+          "originalReference": "Judges 13:2–7, 24–25",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 13:2–7",
+            "Judges 13:24–25"
+          ],
+          "principalReadings": [
+            "Judges 13:2–5",
+            "Judges 13:24–25"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Protect birth announcement and Nazirite dedication before Samson's eventual moral collapse.",
+          "principalRationale": "Protect birth announcement and Nazirite dedication before Samson's eventual moral collapse.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 13:1–25",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_SAMSON_BIRTH",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H27-05",
+          "v18Order": 5,
+          "originalReference": "Judges 16:23–30",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Judges 16:23–30"
+          ],
+          "principalReadings": [
+            "Judges 16:4–5",
+            "Judges 16:15–22",
+            "Judges 16:23–30"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
+          "principalRationale": "Restore Delilah's betrayal, loss of strength and imprisonment before final prayer and death; this last act includes his death and the Philistine dead, without sanitizing the narration.",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "fullCompanionReadings": [
+            {
+              "reference": "Judges 16:1–31",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_SAMSON_AND_DELILAH_ACCOUNT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Judges 16:4–22"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "Judges 16:17–22",
+              "with": "Judges 16:15–22",
+              "reason": "Delilah's accusation and continued pressure motivate Samson's disclosure; restore 16:15–16."
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H42",
+      "title": "Faithfulness under Foreign Rule",
+      "sourceTitle": "Faithfulness in Exile",
+      "genre": "INDEPENDENT_BIBLICAL_WITNESSES",
+      "units": [
+        {
+          "unitId": "H42-01",
+          "v18Order": 1,
+          "originalReference": "Daniel 1:1–21",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "SHORTEN",
+          "candidateReadings": [
+            "Daniel 1:1–8",
+            "Daniel 1:11–21"
+          ],
+          "editorialRationale": "Narrative of refusal and outcome; verify skipped dialogue.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalReadings": [
+            "Daniel 1:1–2",
+            "Daniel 1:5–8",
+            "Daniel 1:11–15",
+            "Daniel 1:17–20"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "King's training, Daniel's refusal, tested outcome, and divine gift; names of companions remain explicit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:daniel-1-1-21",
+                "title": "Daniel in Babylon",
+                "atlasReference": "Daniel 1:1–21"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 3,
+            "linkedIndependentPublisherFamilies": [
+              "Life Bible / Tecarta",
+              "Mannora Bible",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Dan 1:1-6, 8-20",
+                "variant": "LINKED_DANIEL_INDEX",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://church.catholic-resources.org/Bible/Daniel.htm",
+                "atlasEventKey": "biblical:passage:daniel-1-1-21",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Daniel 2:48-49",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "NO_VERIFIED_PRINCIPAL_VERSE_INTERSECTION_OR_GOSPEL_PARALLEL",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:daniel-1-1-21",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Daniel 1",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:passage:daniel-1-1-21",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-02",
+          "v18Order": 2,
+          "originalReference": "Daniel 3:24–90",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND_AND_SPLIT",
+          "candidateReadings": [
+            "Daniel 3:1",
+            "Daniel 3:4–6",
+            "Daniel 3:8",
+            "Daniel 3:12–25",
+            "Daniel 3:49–52",
+            "Daniel 3:88–97"
+          ],
+          "editorialRationale": "Actual CPDV/Challoner Daniel 3:1–100 checked; v18 3:24–90 lacks decree, confrontation and rescue. Main short narrative retains refusal, protective angel, representative hymn and king's response, with explicit omission markers; complete canonical prayer/song independently accessible.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "fullCompanionReadings": [
+            {
+              "reference": "Daniel 3:25–90",
+              "edition": "cpdv-2009",
+              "role": "PRAYER_OF_AZARIAH_AND_SONG",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "continuityStatus": "CPDV_AND_CHALLONER_SOURCE_VERSES_INSPECTED; TEXTUAL_ABRIDGMENT_PROVISIONAL",
+          "principalReadings": [
+            "Daniel 3:1",
+            "Daniel 3:4–6",
+            "Daniel 3:12",
+            "Daniel 3:14–20",
+            "Daniel 3:23–24",
+            "Daniel 3:49–52",
+            "Daniel 3:88–89",
+            "Daniel 3:91–95"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "Complete moral sequence: coerced worship, refusal, fire, protection, praise, sight of fourth figure and deliverance; full Azariah prayer and Benedicite are independent companion.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:daniel-3-24-90",
+                "title": "The song of the three youths",
+                "atlasReference": "Daniel 3:24–90"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Daniel 3:52, 53, 54, 55, 56",
+                "variant": "PUBLISHED_MASS_SELECTION",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://bible.usccb.org/bible/readings/053126.cfm",
+                "atlasEventKey": "biblical:passage:daniel-3-24-90",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-03",
+          "v18Order": 3,
+          "originalReference": "Daniel 6:10–24",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Daniel 6:4–24",
+            "Daniel 6:26–28"
+          ],
+          "editorialRationale": "Restore decree and concluding proclamation.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalReadings": [
+            "Daniel 6:3–5",
+            "Daniel 6:7–10",
+            "Daniel 6:13–16",
+            "Daniel 6:19–23",
+            "Daniel 6:26–27"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "Daniel's faithful prayer, jealous trap, lion's den, angelic preservation and king's proclamation; no interpolated narrator.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-04",
+          "v18Order": 4,
+          "originalReference": "Ezekiel 1:1–28",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RETAIN",
+          "candidateReadings": [
+            "Ezekiel 1:1–28"
+          ],
+          "editorialRationale": "Independent vision with its own prophetic setting.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalReadings": [
+            "Ezekiel 1:1–5",
+            "Ezekiel 1:10–12",
+            "Ezekiel 1:15–16",
+            "Ezekiel 1:22",
+            "Ezekiel 1:26–28"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "An independent prophetic vision; principal sequence keeps Chebar setting, creatures, wheels, firmament and throne; complete vision remains available.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:ezekiel-1-1-28",
+                "title": "Ezekiel's vision by the Chebar",
+                "atlasReference": "Ezekiel 1:1–28"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 2,
+            "linkedIndependentPublisherFamilies": [
+              "Moody Publishers",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Ez 1:2-5, 24-28c",
+                "variant": "LITURGICAL_SHORT_EXCERPT",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://bible.usccb.org/bible/readings/080816.cfm",
+                "atlasEventKey": "biblical:passage:ezekiel-1-1-28",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MOODY_EZ",
+                "sourceFamily": "Moody Publishers",
+                "reference": "Ezekiel 1:1-28",
+                "variant": "FULL_CHAPTER_THEMED",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.bible.com/reading-plans/31398-inviting-revival-a-study-of-ezekiel/day/1",
+                "atlasEventKey": "biblical:passage:ezekiel-1-1-28",
+                "sourceQualification": "SUPPLEMENTAL_VERIFIED_NOT_IN_CORE_10"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-05",
+          "v18Order": 5,
+          "originalReference": "Tobit 1:10–22",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RECONSTRUCT",
+          "candidateReadings": [
+            "Tobit 1:1–3",
+            "Tobit 1:16–22",
+            "Tobit 2:1–14",
+            "Tobit 3:7–17",
+            "Tobit 5:1–17",
+            "Tobit 6:1–9",
+            "Tobit 7:9–17",
+            "Tobit 8:1–9",
+            "Tobit 11:1–19",
+            "Tobit 12:11–22"
+          ],
+          "editorialRationale": "Independent family narrative, not Daniel's timeline. All cuts require source-context check.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalReadings": [
+            "Tobit 1:1–3",
+            "Tobit 2:10–11",
+            "Tobit 3:7–8",
+            "Tobit 3:24–25",
+            "Tobit 5:5–6",
+            "Tobit 6:4–5",
+            "Tobit 7:10–15",
+            "Tobit 8:2–3",
+            "Tobit 8:6–10",
+            "Tobit 11:13–17",
+            "Tobit 12:12–15"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "Retain Tobit's captivity and trial, Sarah's affliction, prayers heard, Raphael's concealed guidance, marriage with prayer, cure and the revelation of Raphael. Distinct family tale, not a Daniel episode.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-06",
+          "v18Order": 6,
+          "originalReference": "Judith 13:1–20",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RECONSTRUCT",
+          "candidateReadings": [
+            "Judith 7:1–7",
+            "Judith 7:19–32",
+            "Judith 8:1–8",
+            "Judith 8:28–36",
+            "Judith 9:1–14",
+            "Judith 10:1–10",
+            "Judith 12:10–20",
+            "Judith 13:1–20",
+            "Judith 15:1–7"
+          ],
+          "editorialRationale": "Restore siege, mission, climax and deliverance. Genre is not historical itinerary.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalReadings": [
+            "Judith 7:1",
+            "Judith 7:6–7",
+            "Judith 7:23–25",
+            "Judith 8:1",
+            "Judith 8:8",
+            "Judith 8:30–34",
+            "Judith 9:12–14",
+            "Judith 12:15–16",
+            "Judith 12:20",
+            "Judith 13:3–4",
+            "Judith 13:6–10",
+            "Judith 13:17–20",
+            "Judith 15:1–2"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "Retain siege and threatened surrender, Judith's identity and mission, prayer, Holofernes and his intoxication, Judith's act and the resulting Assyrian flight. Not treated as Daniel-era chronology.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:judith-13-1-20",
+                "title": "Judith saves her people",
+                "atlasReference": "Judith 13:1–20"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "American Bible Society Deuterocanon"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "ABS45",
+                "sourceFamily": "American Bible Society Deuterocanon",
+                "reference": "Judith 13.1-20",
+                "variant": "FULL_STORY_OR_CHAPTER_SELECTION",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.americanbible.org/engage/bible-resources/articles/selected-readings-from-the-deuterocanon-apocrypha1/",
+                "atlasEventKey": "biblical:passage:judith-13-1-20",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H42-07",
+          "v18Order": 7,
+          "originalReference": "Esther 4:1–17",
+          "sourceEdition": "UNDETERMINED_IN_V18",
+          "action": "RECONSTRUCT_WITH_EXPLICIT_CPDV_SOURCE_ORDER",
+          "candidateReadings": [
+            "Esther 4:5–7",
+            "Esther 4:16–17",
+            "Esther 5:1–2",
+            "Esther 5:5–6",
+            "Esther 5:8–13",
+            "Esther 7:1–8",
+            "Esther 7:12–19",
+            "Esther 7:20–21",
+            "Esther 7:29–30",
+            "Esther 8:1–3",
+            "Esther 8:12–14",
+            "Esther 8:19",
+            "Esther 9:17–24",
+            "Esther 10:1–11",
+            "Esther 10:14",
+            "Esther 11:1–10",
+            "Esther 12:3–12",
+            "Esther 14:1–2",
+            "Esther 14:16–22"
+          ],
+          "editorialRationale": "Actual CPDV witness read: Haman's decree in CPDV 5; risk/intercession in 7; Greek prayers in 7–8; Greek entrance expansion 9:1–16 distinct from the repeated entrance in 9:17–19; royal audience and banquets 9–11; reversal 12; Purim 14. The v18 Esther 4:1–17 edition remains UNDETERMINED; do not silently infer CPDV coordinates. All cuts visible; full Catholic additions separately navigable. Read-aloud transition check: CPDV 10:4–5 cannot be skipped without obscuring that Haman is the interlocutor; 14:1–2,16–22 preserve the violent reversal and institution of Purim, without sanitizing the passage.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "fullCompanionReadings": [
+            {
+              "reference": "Esther 7:20–30",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MORDECAI_PRAYER",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 8:1–19",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_ESTHER_PRAYER",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 9:1–16",
+              "edition": "cpdv-2009",
+              "role": "GREEK_ADDITION_D_EXPANDED_AUDIENCE",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 6:1–7",
+              "edition": "cpdv-2009",
+              "role": "FULL_ROYAL_DECREE",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            }
+          ],
+          "continuityStatus": "SOURCE_VERSES_INSPECTED_SEQUENCE_STILL_AWAITING_READ_ALOUD",
+          "candidateApproval": "PROVISIONAL_TEXTUAL_READ_ONLY",
+          "principalReadings": [
+            "Esther 4:5–7",
+            "Esther 5:1–2",
+            "Esther 5:5–6",
+            "Esther 5:8–9",
+            "Esther 5:12–13",
+            "Esther 7:13–19",
+            "Esther 8:1–3",
+            "Esther 8:12–14",
+            "Esther 9:17–24",
+            "Esther 11:2–10",
+            "Esther 12:3–12",
+            "Esther 14:16–17",
+            "Esther 14:20–22"
+          ],
+          "principalEdition": "cpdv-2009",
+          "principalRationale": "Explicit CPDV order: upbringing, Haman's genocidal edict, Esther's risky choice, Greek Esther prayer, audience, accusation, counter-decree, defensive violence, and Purim. Greek expanded audience stays a companion, not a second consecutive entrance.",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "continuityCorrections": [
+            {
+              "replaced": "Esther 5:5–6",
+              "with": "Esther 5:1–2",
+              "reason": "Establish Haman's elevation and Mordecai's refusal before Haman's rage."
+            },
+            {
+              "replaced": "Esther 9:17–20",
+              "with": "Esther 9:17–24",
+              "reason": "Esther's request for a second banquet explains the second day in 11:2."
+            },
+            {
+              "replaced": "Esther 11:2–6",
+              "with": "Esther 11:2–10",
+              "reason": "Include Haman's condemnation and execution; avoid jumping from accusation straight to reversal."
+            },
+            {
+              "replaced": "Esther 12:3–8",
+              "with": "Esther 12:3–12",
+              "reason": "Include authorization and delivery of Jews' defensive action, not only a new request to the king."
+            },
+            {
+              "added": "Esther 5:5–6",
+              "reason": "Preserve Haman's personal resentment, his decision to destroy the whole people and the causal transition to 5:8–9."
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:esther-4-1-17",
+                "title": "Esther intercedes",
+                "atlasReference": "Esther 4:1–17"
+              },
+              {
+                "eventKey": "biblical:passage:esther-14-1-19",
+                "title": "The prayer of Esther",
+                "atlasReference": "Esther 14:1–19"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 4,
+            "linkedIndependentPublisherFamilies": [
+              "AFLC Ambassador curriculum",
+              "American Bible Society Deuterocanon",
+              "IBS Greatest Story",
+              "Life Bible / Tecarta"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "IBS_STORY",
+                "sourceFamily": "IBS Greatest Story",
+                "reference": "Esther",
+                "variant": "CURATED",
+                "relation": "ESTHER_EDITION_UNSPECIFIED_IN_PUBLISHER_RECORD",
+                "sourceURL": "https://static1.squarespace.com/static/55d38751e4b0adc8c3260158/t/568d432069a91a2847f94d3e/1452098336707/Reading%2BGods%2BStory.pdf",
+                "atlasEventKey": "biblical:passage:esther-4-1-17",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "AFLC",
+                "sourceFamily": "AFLC Ambassador curriculum",
+                "reference": "Esther 2-7",
+                "variant": "CURRICULUM",
+                "relation": "ESTHER_EDITION_UNSPECIFIED_IN_PUBLISHER_RECORD",
+                "sourceURL": "https://www.aflcworldmissions.org/wp-content/uploads/archived_files/pdf/englishterm2.pdf",
+                "atlasEventKey": "biblical:passage:esther-4-1-17",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "ABS45",
+                "sourceFamily": "American Bible Society Deuterocanon",
+                "reference": "Esther 14.1-19",
+                "variant": "FULL_STORY_OR_CHAPTER_SELECTION",
+                "relation": "ESTHER_EDITION_UNSPECIFIED_IN_PUBLISHER_RECORD",
+                "sourceURL": "https://www.americanbible.org/engage/bible-resources/articles/selected-readings-from-the-deuterocanon-apocrypha1/",
+                "atlasEventKey": "biblical:passage:esther-14-1-19",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Esther 4:1-17",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "ESTHER_EDITION_UNSPECIFIED_IN_PUBLISHER_RECORD",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:esther-4-1-17",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H45",
+      "title": "The Generations Awaiting Christ",
+      "sourceTitle": "The Generations Awaiting Christ",
+      "genre": "TWO_DISTINCT_GOSPEL_GENEALOGIES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "display": "TWO_PARALLEL_DISTINCT_GOSPEL_WITNESSES",
+      "excludedInference": "LUKE_IS_MARYS_BIOLOGICAL_GENEALOGY",
+      "units": [
+        {
+          "unitId": "H45-01",
+          "v18Order": 1,
+          "originalReference": "Matthew 1:1–17",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "RETAIN_DISTINCT_COMPLETE",
+          "candidateReadings": [
+            "Matthew 1:1–17"
+          ],
+          "principalReadings": [
+            "Matthew 1:1–17"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain whole Matthew witness, including Abraham–David, Solomon, Babylon exile and Joseph described as Mary's husband; no inferred maternal lineage.",
+          "principalRationale": "Retain whole Matthew witness, including Abraham–David, Solomon, Babylon exile and Joseph described as Mary's husband; no inferred maternal lineage.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Luke 3:23–38",
+              "edition": "cpdv-2009",
+              "role": "SEPARATE_NOT_PARALLEL_HARMONY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "alignmentPolicy": "NEVER_COMBINE_GENETIC_PARENT_LINKS_WITH_LUKE",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H45-02",
+          "v18Order": 2,
+          "originalReference": "Luke 3:23–38",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "RETAIN_DISTINCT_COMPLETE",
+          "candidateReadings": [
+            "Luke 3:23–38"
+          ],
+          "principalReadings": [
+            "Luke 3:23–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain the whole different Lucan witness reaching Adam, with Nathan rather than Matthew's Solomon; do not label it Mary's biological genealogy.",
+          "principalRationale": "Retain the whole different Lucan witness reaching Adam, with Nathan rather than Matthew's Solomon; do not label it Mary's biological genealogy.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 1:1–17",
+              "edition": "cpdv-2009",
+              "role": "SEPARATE_NOT_PARALLEL_HARMONY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "alignmentPolicy": "NEVER_COMBINE_GENETIC_PARENT_LINKS_WITH_MATTHEW",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H53",
+      "title": "The Teaching of the Kingdom",
+      "sourceTitle": "The Teaching of the Kingdom",
+      "genre": "THEMATIC_SAYINGS_AND_PARABLES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "noChronologyAssertion": true,
+      "genreBoundary": "Explicit teaching anthology; not one consecutive Gospel discourse",
+      "units": [
+        {
+          "unitId": "H53-01",
+          "v18Order": 1,
+          "originalReference": "Matthew 5:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 5:1–12"
+          ],
+          "principalReadings": [
+            "Matthew 5:1–12"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Retain the full beatitude series and its spoken setting; individual blessings are not disposable repetitions.",
+          "principalRationale": "Retain the full beatitude series and its spoken setting; individual blessings are not disposable repetitions.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 5:1–48",
+              "edition": "cpdv-2009",
+              "role": "SERMON_MOUNT_WIDER_CONTEXT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H53-02",
+          "v18Order": 2,
+          "originalReference": "Matthew 6:9–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 6:9–15"
+          ],
+          "principalReadings": [
+            "Matthew 6:9–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep complete Our Father and Christ's forgiveness explanation; no verse excision.",
+          "principalRationale": "Keep complete Our Father and Christ's forgiveness explanation; no verse excision.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 6:1–18",
+              "edition": "cpdv-2009",
+              "role": "FASTING_PRAYER_ALMSGIVING_CONTEXT",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H53-03",
+          "v18Order": 3,
+          "originalReference": "Matthew 7:24–29",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 7:24–29"
+          ],
+          "principalReadings": [
+            "Matthew 7:24–29"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Wise and foolish builders form a deliberate contrast; retain Christ's final authority line.",
+          "principalRationale": "Wise and foolish builders form a deliberate contrast; retain Christ's final authority line.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 7:1–29",
+              "edition": "cpdv-2009",
+              "role": "ENTIRE_SERMON_CLOSE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H53-04",
+          "v18Order": 4,
+          "originalReference": "Matthew 13:1–23",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Matthew 13:1–23"
+          ],
+          "principalReadings": [
+            "Matthew 13:1–9",
+            "Matthew 13:18–23"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Read the sower parable then Christ's own interpretation, with explicit omission markers for 13:10–17 on why he speaks in parables.",
+          "principalRationale": "Read the sower parable then Christ's own interpretation, with explicit omission markers for 13:10–17 on why he speaks in parables.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 13:1–23",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_SOWER_AND_PURPOSE_PARABLES",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H54",
+      "title": "The Signs of Christ",
+      "sourceTitle": "The Signs of Christ",
+      "genre": "DISTINCT_GOSPEL_MIRACLE_SCENES",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "existingAtlasEventIdsPreserved": true,
+      "parallelNotDuplication": true,
+      "units": [
+        {
+          "unitId": "H54-01",
+          "v18Order": 1,
+          "originalReference": "Mark 1:21–28",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 1:21–28"
+          ],
+          "principalReadings": [
+            "Mark 1:21–28"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Short exorcism retained in full as a distinct sign.",
+          "principalRationale": "Short exorcism retained in full as a distinct sign.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Luke 4:31–37",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:event:capernaum-e1",
+                "title": "Teaching and exorcism in the synagogue",
+                "atlasReference": "Mark 1:21–28"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 2,
+            "linkedIndependentPublisherFamilies": [
+              "American Bible Society Deuterocanon",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 1:21-28",
+                "variant": "SELECTED",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:event:capernaum-e1",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 1:21-28",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:event:capernaum-e1",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "ABS_START",
+                "sourceFamily": "American Bible Society Deuterocanon",
+                "reference": "Mark 1:21–28",
+                "variant": "EDITOR_SELECTED_FAMOUS_STORY_REFERENCE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.americanbible.org/uploads/resources/Start-Here-Deutercanonicals.pdf",
+                "atlasEventKey": "biblical:event:capernaum-e1",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [
+              {
+                "reference": "Mark 1:21-28",
+                "independentFamilies": [
+                  "American Bible Society Deuterocanon",
+                  "Roman Catholic Lectionary"
+                ],
+                "independentFamilyCount": 2,
+                "fullyMatchesPrincipal": true
+              }
+            ],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H54-02",
+          "v18Order": 2,
+          "originalReference": "Mark 2:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 2:1–12"
+          ],
+          "principalReadings": [
+            "Mark 2:1–12"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep forgiveness, opposition and physical healing; do not present a shortened miracle without the authority to forgive sins.",
+          "principalRationale": "Keep forgiveness, opposition and physical healing; do not present a shortened miracle without the authority to forgive sins.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Matthew 9:1–8",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:event:capernaum-e2",
+                "title": "The healing of a paralytic",
+                "atlasReference": "Mark 2:1–12"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 4,
+            "linkedIndependentPublisherFamilies": [
+              "Life Bible / Tecarta",
+              "Mannora Bible",
+              "RightNow Kids curriculum",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 2:1-12",
+                "variant": "SELECTED",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:event:capernaum-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "RIGHTNOW",
+                "sourceFamily": "RightNow Kids curriculum",
+                "reference": "Mark 2:1–12",
+                "variant": "CURRICULUM",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://resources.rightnow.org/web/Gods-Kids-Scope-and-Sequence.pdf",
+                "atlasEventKey": "biblical:event:capernaum-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 2:1-12",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:event:capernaum-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Luke 5:17-26",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "NO_VERIFIED_PRINCIPAL_VERSE_INTERSECTION_OR_GOSPEL_PARALLEL",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:event:capernaum-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Mark 2:1–12",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:event:capernaum-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [
+              {
+                "reference": "Mark 2:1-12",
+                "independentFamilies": [
+                  "Mannora Bible",
+                  "RightNow Kids curriculum",
+                  "Roman Catholic Lectionary"
+                ],
+                "independentFamilyCount": 3,
+                "fullyMatchesPrincipal": true
+              }
+            ],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H54-03",
+          "v18Order": 3,
+          "originalReference": "Mark 4:35–41",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Mark 4:35–40"
+          ],
+          "principalReadings": [
+            "Mark 4:35–40"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "All three installed editions incorporate the closing question into Mark 4:40. The v18 original 4:35–41 remains unchanged; its source-witness extract therefore ends at printed verse 40.",
+          "principalRationale": "All three installed editions incorporate the closing question into Mark 4:40. The v18 original 4:35–41 remains unchanged; its source-witness extract therefore ends at printed verse 40.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Mark 4:35–40",
+              "edition": "cpdv-2009",
+              "role": "ALTERNATE_GOSPEL_WITNESS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "editionBoundaryNote": "CPDV, Douay–Rheims and Crampon all end this chapter at Mark 4:40; the conventional verse 41 words are within verse 40.",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:event:galilee-sea-e2",
+                "title": "Jesus calms the storm",
+                "atlasReference": "Mark 4:35–41"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 3,
+            "linkedIndependentPublisherFamilies": [
+              "Mannora Bible",
+              "RightNow Kids curriculum",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 4:35-41",
+                "variant": "SELECTED",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:event:galilee-sea-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "RIGHTNOW",
+                "sourceFamily": "RightNow Kids curriculum",
+                "reference": "Matthew 8:23–27",
+                "variant": "CURRICULUM",
+                "relation": "NO_VERIFIED_PRINCIPAL_VERSE_INTERSECTION_OR_GOSPEL_PARALLEL",
+                "sourceURL": "https://resources.rightnow.org/web/Gods-Kids-Scope-and-Sequence.pdf",
+                "atlasEventKey": "biblical:event:galilee-sea-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Mark 4:35-41",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:event:galilee-sea-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Mark 4:35–41",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:event:galilee-sea-e2",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [
+              {
+                "reference": "Mark 4:35-41",
+                "independentFamilies": [
+                  "Mannora Bible",
+                  "Roman Catholic Lectionary"
+                ],
+                "independentFamilyCount": 2,
+                "fullyMatchesPrincipal": false
+              }
+            ],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H54-04",
+          "v18Order": 4,
+          "originalReference": "John 6:1–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "John 6:1–15"
+          ],
+          "principalReadings": [
+            "John 6:1–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Five loaves and two fish, sign, bread and crowds kept together; H56 Bread of Life may link this same source event but must not fork it into a second canonical event.",
+          "principalRationale": "Five loaves and two fish, sign, bread and crowds kept together; H56 Bread of Life may link this same source event but must not fork it into a second canonical event.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "John 6:22–59",
+              "edition": "cpdv-2009",
+              "role": "BREAD_OF_LIFE_FURTHER_DISCOURSE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "relatedChapter": "H56",
+          "canonicalEventOwnership": "H54_SHARED_SOURCE_TO_H56",
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:event:tabgha-e1",
+                "title": "The feeding of the multitude",
+                "atlasReference": "John 6:1–15"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 2,
+            "linkedIndependentPublisherFamilies": [
+              "Mannora Bible",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "John 6:1-15",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:event:tabgha-e1",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "MANNORA100",
+                "sourceFamily": "Mannora Bible",
+                "reference": "Mark 6:30–44",
+                "variant": "SOURCE_ORIGINAL_STORY_SCOPE",
+                "relation": "NO_VERIFIED_PRINCIPAL_VERSE_INTERSECTION_OR_GOSPEL_PARALLEL",
+                "sourceURL": "https://mannora.com/events/",
+                "atlasEventKey": "biblical:event:tabgha-e1",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H54-05",
+          "v18Order": 5,
+          "originalReference": "John 9:1–12",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "John 9:1–12"
+          ],
+          "principalReadings": [
+            "John 9:1–3",
+            "John 9:5–7",
+            "John 9:10–12",
+            "John 9:13–17",
+            "John 9:24–25",
+            "John 9:35–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
+          "principalRationale": "The physical cure cannot terminate before the formerly blind man's testimony and confession of faith; the intervening interrogation stays available in full.",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "fullCompanionReadings": [
+            {
+              "reference": "John 9:1–41",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MAN_BORN_BLIND_NARRATIVE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "John 9:24–38"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "John 9:6–7",
+              "with": "John 9:5–7",
+              "reason": "Preserve Jesus' explicit light-of-world claim, essential to the sign's theological meaning."
+            },
+            {
+              "replaced": "John 9:24–25",
+              "with": "John 9:13–17",
+              "reason": "Identify the Pharisees and the interrogation before the formerly blind man's testimony."
+            },
+            {
+              "replaced": "John 9:24–25",
+              "with": "John 9:13–17 plus reinserted John 9:24–25",
+              "reason": "Both establish the Pharisees' challenge and preserve the man's short first-person witness."
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:event:siloam-miracle-26",
+                "title": "Healing of the man born blind at Siloam",
+                "atlasReference": "John 9:1–12"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "John 9:1-41",
+                "variant": "LONG",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:event:siloam-miracle-26",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "John 9:1, 6-9, 13-17, 34-38",
+                "variant": "SHORT",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.mobile.catholic-resources.org/Lectionary/Index-Sundays.htm",
+                "atlasEventKey": "biblical:event:siloam-miracle-26",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "John 9:1-41",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:event:siloam-miracle-26",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H73",
+      "title": "Witness to the Nations",
+      "sourceTitle": "Witness to the Nations",
+      "genre": "ACTS_ORDERED_BUT_SELECTIVE_ITINERARY",
+      "sourceWorkbookTab": "V18 Ordered Verse Segments",
+      "status": "SEVEN_REPRESENTATIVE_SCENES_NOT_COMPLETE_ACTS_ITINERARY",
+      "adjacentBoundaries": [
+        "H71 Early missions",
+        "H72 Jerusalem council"
+      ],
+      "noNewAtlasEvent": true,
+      "units": [
+        {
+          "unitId": "H73-01",
+          "v18Order": 1,
+          "originalReference": "Acts 16:11–15",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 16:11–15"
+          ],
+          "principalReadings": [
+            "Acts 16:11–15"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Lydia's conversion at Philippi remains a five-verse unit.",
+          "principalRationale": "Lydia's conversion at Philippi remains a five-verse unit.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 16:11–15",
+              "edition": "cpdv-2009",
+              "role": "LYDIA_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-16-11-15",
+                "title": "Paul meets Lydia in Philippi",
+                "atlasReference": "Acts 16:11–15"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 2,
+            "linkedIndependentPublisherFamilies": [
+              "American Bible Society Deuterocanon",
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 16:11-15",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-16-11-15",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "ABS_START",
+                "sourceFamily": "American Bible Society Deuterocanon",
+                "reference": "Acts 16:11–15",
+                "variant": "EDITOR_SELECTED_FAMOUS_STORY_REFERENCE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.americanbible.org/uploads/resources/Start-Here-Deutercanonicals.pdf",
+                "atlasEventKey": "biblical:passage:acts-16-11-15",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [
+              {
+                "reference": "Acts 16:11-15",
+                "independentFamilies": [
+                  "American Bible Society Deuterocanon",
+                  "Roman Catholic Lectionary"
+                ],
+                "independentFamilyCount": 2,
+                "fullyMatchesPrincipal": true
+              }
+            ],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-02",
+          "v18Order": 2,
+          "originalReference": "Acts 16:22–40",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 16:22–40"
+          ],
+          "principalReadings": [
+            "Acts 16:16–21",
+            "Acts 16:22–26",
+            "Acts 16:27–34",
+            "Acts 16:35–40"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Restore enslaved girl's exorcism, owners' lost divination profit and the magistrates' explicit charge before the imprisonment. Preserve jailer's baptism and Paul's Roman-citizen protest.",
+          "principalRationale": "Restore enslaved girl's exorcism, owners' lost divination profit and the magistrates' explicit charge before the imprisonment. Preserve jailer's baptism and Paul's Roman-citizen protest.",
+          "principalStatus": "SOURCE_SEAM_INSPECTED_NOT_READALOUD",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 16:16–40",
+              "edition": "cpdv-2009",
+              "role": "PHILIPPI_WHOLE_JAILER_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "continuityBridgeReferences": [
+            "Acts 16:16–21"
+          ],
+          "continuityCorrections": [
+            {
+              "replaced": "Acts 16:37–40",
+              "with": "Acts 16:35–40",
+              "reason": "Paul's citizenship protest replies to the magistrates' release order at Acts 16:35–36; omitting it leaves the objection unmotivated."
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-03",
+          "v18Order": 3,
+          "originalReference": "Acts 17:16–34",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 17:16–34"
+          ],
+          "principalReadings": [
+            "Acts 17:16–19",
+            "Acts 17:22–31",
+            "Acts 17:32–34"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Areopagus sermon requires Creator, repentance and Resurrection followed by mixed responses; do not truncate just at philosophical preface.",
+          "principalRationale": "Areopagus sermon requires Creator, repentance and Resurrection followed by mixed responses; do not truncate just at philosophical preface.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 17:16–34",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_AREOPAGUS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-17-16-34",
+                "title": "Paul speaks in Athens",
+                "atlasReference": "Acts 17:16–34"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 17:15, 22—18:1",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-17-16-34",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-04",
+          "v18Order": 4,
+          "originalReference": "Acts 18:1–11",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 18:1–11"
+          ],
+          "principalReadings": [
+            "Acts 18:1–11"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Preserve complete eleven-verse Corinth setting: tentmaking with Aquila/Priscilla, synagogue proclamation, transfer of venue, Crispus, Lord's reassurance and longer stay. Cutting its middle would leave Titus Justus without an antecedent.",
+          "principalRationale": "Preserve complete eleven-verse Corinth setting: tentmaking with Aquila/Priscilla, synagogue proclamation, transfer of venue, Crispus, Lord's reassurance and longer stay. Cutting its middle would leave Titus Justus without an antecedent.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 18:1–11",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_CORINTH_EPISODE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-18-1-18",
+                "title": "St Paul in Corinth",
+                "atlasReference": "Acts 18:1–18"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 2,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary",
+              "Saint Mary’s Press"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 18:1-8",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-18-1-18",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 18:9-18",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-18-1-18",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "SMP_TIMELINE",
+                "sourceFamily": "Saint Mary’s Press",
+                "reference": "Acts 18:1–10",
+                "variant": "CATHOLIC_CHILDRENS_BIBLE_STORY_SELECTION",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://pages.smp.org/post/prayer-and-scripture/bible-timeline",
+                "atlasEventKey": "biblical:passage:acts-18-1-18",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-05",
+          "v18Order": 5,
+          "originalReference": "Acts 20:17–38",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 20:17–38"
+          ],
+          "principalReadings": [
+            "Acts 20:17–21",
+            "Acts 20:22–24",
+            "Acts 20:28–32",
+            "Acts 20:36–38"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Miletus farewell keeps commissioned overseers, apostolic vigilance, threat of false teachers and communal prayer, not a generic travel notice.",
+          "principalRationale": "Miletus farewell keeps commissioned overseers, apostolic vigilance, threat of false teachers and communal prayer, not a generic travel notice.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 20:17–38",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MILETUS_FAREWELL",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-20-17-38",
+                "title": "Paul's farewell at Miletus",
+                "atlasReference": "Acts 20:17–38"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 20:17-27",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-20-17-38",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              },
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 20:28-38",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-20-17-38",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-06",
+          "v18Order": 6,
+          "originalReference": "Acts 27:1–44",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 27:1–44"
+          ],
+          "principalReadings": [
+            "Acts 27:1",
+            "Acts 27:9–11",
+            "Acts 27:14–15",
+            "Acts 27:20–26",
+            "Acts 27:30–32",
+            "Acts 27:39–44"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Keep crew's attempted escape 27:30 so Paul's warning at 27:31 has an antecedent; otherwise retain explicit sea warning, storm, angelic assurance, shipwreck and survivors.",
+          "principalRationale": "Keep crew's attempted escape 27:30 so Paul's warning at 27:31 has an antecedent; otherwise retain explicit sea warning, storm, angelic assurance, shipwreck and survivors.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 27:1–44",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_SHIPWRECK_WITH_ITINERARY",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-27-13-44",
+                "title": "Paul's shipwreck at sea",
+                "atlasReference": "Acts 27:13–44"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 3,
+            "linkedIndependentPublisherFamilies": [
+              "Alpha International",
+              "Calvary Fellowship Susquehanna Valley",
+              "Life Bible / Tecarta"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "CALVARY_SV",
+                "sourceFamily": "Calvary Fellowship Susquehanna Valley",
+                "reference": "Acts 27:13-28:16",
+                "variant": "CURRICULUM_BROADER_SELECTION",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.calvaryfellowshipsv.org/children-s-ministry-curriculum-new-testament",
+                "atlasEventKey": "biblical:passage:acts-27-13-44",
+                "sourceQualification": "SUPPLEMENTAL_VERIFIED_NOT_IN_CORE_10"
+              },
+              {
+                "sourceId": "ALPHA_BIBLE",
+                "sourceFamily": "Alpha International",
+                "reference": "Acts 27:13-44",
+                "variant": "COMMENTARY_ATTACHED_EXACT_SELECTION",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://www.bible.com/reading-plans/65489-the-bible-with-nicky-and-pippa-gumbel-classic/day/190",
+                "atlasEventKey": "biblical:passage:acts-27-13-44",
+                "sourceQualification": "SUPPLEMENTAL_VERIFIED_NOT_IN_CORE_10"
+              },
+              {
+                "sourceId": "LIFE100",
+                "sourceFamily": "Life Bible / Tecarta",
+                "reference": "Acts 27:1-44",
+                "variant": "SELECTED_100_STORY_DAY_PASSAGE",
+                "relation": "SAME_BOOK_VERSE_INTERSECTION_NOT_CONSENSUS",
+                "sourceURL": "https://lifebible.com/plan/100-bible-stories",
+                "atlasEventKey": "biblical:passage:acts-27-13-44",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H73-07",
+          "v18Order": 7,
+          "originalReference": "Acts 28:23–31",
+          "sourceEdition": "UNSPECIFIED_IN_V18",
+          "action": "SOURCE_CONTINUITY_REPAIR",
+          "candidateReadings": [
+            "Acts 28:23–31"
+          ],
+          "principalReadings": [
+            "Acts 28:23–24",
+            "Acts 28:28–31"
+          ],
+          "candidateEdition": "cpdv-2009",
+          "principalEdition": "cpdv-2009",
+          "editorialRationale": "Open ending of Acts: preaching to the Jews in Rome, mixed reception, mission to Gentiles and two years of unhindered proclamation.",
+          "principalRationale": "Open ending of Acts: preaching to the Jews in Rome, mixed reception, mission to Gentiles and two years of unhindered proclamation.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Acts 28:23–31",
+              "edition": "cpdv-2009",
+              "role": "FINAL_ACTS_ROME_PASSAGE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "MATCHED_ATLAS_EVENTS_SOURCE_REFS_UNAPPROVED",
+            "matchedAtlasEvents": [
+              {
+                "eventKey": "biblical:passage:acts-28-16-31",
+                "title": "St Paul in Rome",
+                "atlasReference": "Acts 28:16–31"
+              }
+            ],
+            "linkedIndependentPublisherFamilyCount": 1,
+            "linkedIndependentPublisherFamilies": [
+              "Roman Catholic Lectionary"
+            ],
+            "qualifiedSelectionRecords": [
+              {
+                "sourceId": "LEC98",
+                "sourceFamily": "Roman Catholic Lectionary",
+                "reference": "Acts 28:16-20, 30-31",
+                "variant": "WEEKDAY_LITURGICAL_PERICOPE",
+                "relation": "PUBLISHER_REFERENCE_COMPOUND_OR_CHAPTER_SCOPE",
+                "sourceURL": "https://www.catholic-resources.com/Lectionary/Index-Weekdays.htm",
+                "atlasEventKey": "biblical:passage:acts-28-16-31",
+                "sourceQualification": "QUALIFIED_PRIMARY"
+              }
+            ],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    },
+    {
+      "chapterId": "H76",
+      "title": "The Great Conflict",
+      "sourceTitle": "The Great Conflict",
+      "genre": "APOCALYPTIC_VISION_SEQUENCE",
+      "units": [
+        {
+          "unitId": "H76-01",
+          "v18Order": 1,
+          "originalReference": "Revelation 6:1–8",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RETAIN",
+          "candidateReadings": [
+            "Revelation 6:1–8"
+          ],
+          "editorialRationale": "Four horsemen as first vision; martyrs 6:9–11 are linked companion.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalEdition": "cpdv-2009",
+          "principalReadings": [
+            "Revelation 6:1–8"
+          ],
+          "principalRationale": "Retain all four distinct seals/horses; abbreviating individual horse images compromises the unit's parallel structure. Martyrs under the altar and white-robed multitude remain linked Catholic Scripture companion readings.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Revelation 6:9–11",
+              "edition": "cpdv-2009",
+              "role": "FIFTH_SEAL_MARTYRS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Revelation 7:9–17",
+              "edition": "cpdv-2009",
+              "role": "REDEEMED_FROM_TRIBULATION",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H76-02",
+          "v18Order": 2,
+          "originalReference": "Revelation 8:1–6",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Revelation 8:1–13"
+          ],
+          "editorialRationale": "Trumpet introduction otherwise stops before the first trumpet sounds.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalEdition": "cpdv-2009",
+          "principalReadings": [
+            "Revelation 8:1–7",
+            "Revelation 8:12–13"
+          ],
+          "principalRationale": "Preserve seventh-seal silence, incense and prayers, the actual first trumpet, the fourth trumpet and three remaining woes. Clearly disclose omitted second/third trumpets (8:8–11) rather than imply consecutive verses.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Revelation 8:1–13",
+              "edition": "cpdv-2009",
+              "role": "ALL_FOUR_TRUMPETS_IN_FULL",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H76-03",
+          "v18Order": 3,
+          "originalReference": "Revelation 12:1–17",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Revelation 12:1–18"
+          ],
+          "editorialRationale": "Both the installed CPDV and DR Challoner witnesses contain verse 12:18 ('he stood upon the sand of the sea'), the transition into 13:1. Include in this edition-specific chapter boundary.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "continuityStatus": "CPDV_AND_CHALLONER_WITNESSES_VERIFIED",
+          "principalEdition": "cpdv-2009",
+          "principalReadings": [
+            "Revelation 12:1–11",
+            "Revelation 12:17–18"
+          ],
+          "principalRationale": "Sun-clothed woman, dragon, male child, Michael, defeat of accuser through Lamb's blood, persecution of faithful offspring and seashore transition. The intervening woman's flight and protection (12:12–16) is omitted from the principal but preserved in full chapter. The woman has rich Catholic ecclesial and Marian readings; do not reduce the imagery to a single unsupported literal equation.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Revelation 12:1–18",
+              "edition": "cpdv-2009",
+              "role": "COMPLETE_WOMAN_DRAGON_VISION",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H76-04",
+          "v18Order": 4,
+          "originalReference": "Revelation 13:1–10",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Revelation 13:1–18"
+          ],
+          "editorialRationale": "Retain both beasts; do not stop after first beast.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalEdition": "cpdv-2009",
+          "principalReadings": [
+            "Revelation 13:1–4",
+            "Revelation 13:7–8",
+            "Revelation 13:10–12",
+            "Revelation 13:15–18"
+          ],
+          "principalRationale": "Keep sea beast, deceptive recovery, worship, persecution of saints, perseverance, land beast, enforced image worship and mark. CPDV and Challoner differ in the second beast's grammatical pronouns; retain each edition's original wording rather than conflating them.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Revelation 13:1–18",
+              "edition": "cpdv-2009",
+              "role": "BOTH_BEASTS_COMPLETE_VISION",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Revelation 14:12–13",
+              "edition": "cpdv-2009",
+              "role": "PERSEVERANCE_AND_REST_OF_SAINTS",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        },
+        {
+          "unitId": "H76-05",
+          "v18Order": 5,
+          "originalReference": "Revelation 18:1–8",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND_AND_SPLIT",
+          "candidateReadings": [
+            "Revelation 17:1–6",
+            "Revelation 17:12–18",
+            "Revelation 18:1–8",
+            "Revelation 18:20–24"
+          ],
+          "editorialRationale": "Identify Babylon and preserve final judgment. Linked Revelation 14:1–5 as hope counterpoint.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false,
+          "principalEdition": "cpdv-2009",
+          "principalReadings": [
+            "Revelation 17:1–6",
+            "Revelation 17:12–14",
+            "Revelation 18:1–4",
+            "Revelation 18:20–21",
+            "Revelation 18:24"
+          ],
+          "principalRationale": "Identify Babylon and her persecution, kings allied with beast but overcome by Lamb, announced fall, summons to God's people, final judgment and martyrs' blood. Do not claim the abbreviated vision alone explains the whole symbolism or that Revelation follows a simple chronological sequence.",
+          "principalStatus": "SOURCE_SELECTED_CONTINUITY_PENDING",
+          "fullCompanionReadings": [
+            {
+              "reference": "Revelation 17:1–18",
+              "edition": "cpdv-2009",
+              "role": "BABYLON_SYMBOLISM_COMPLETE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Revelation 18:1–24",
+              "edition": "cpdv-2009",
+              "role": "FALL_OF_BABYLON_COMPLETE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Revelation 14:1–5",
+              "edition": "cpdv-2009",
+              "role": "LAMB_AND_THE_REDEEMED",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            },
+            {
+              "reference": "Revelation 14:12–13",
+              "edition": "cpdv-2009",
+              "role": "FAITHFUL_DEAD_AND_PERSEVERANCE",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "v7FrequencyReconciliation": {
+            "provenance": {
+              "sourceSchema": "AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7",
+              "sourceBlobSha": "469036f830a128a80bab31d8e34722117570862d",
+              "sourceBranch": "feature/biblical-atlas-current-main-convergence-20261012",
+              "sourcePath": "data/explore/biblical-pericope-comparative-full-master.v7.json",
+              "harvest": "2026-10-16-v7"
+            },
+            "evidenceBasis": "151_ATLAS_EVENT_OVERLAP_ONLY_NOT_UNIVERSAL_VERSE_FREQUENCY",
+            "status": "NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT",
+            "matchedAtlasEvents": [],
+            "linkedIndependentPublisherFamilyCount": 0,
+            "linkedIndependentPublisherFamilies": [],
+            "qualifiedSelectionRecords": [],
+            "excludedNonQualifiedSelections": [],
+            "exactSimpleSelectionBoundaryAgreements": [],
+            "interpretation": "This unit's independent-family total counts publisher associations to overlapping Atlas events, including broad stories and alternate Gospel parallels; it does NOT count agreements with these proposed principal verses. Exact range agreement is only recorded for independently qualified, identical, single-chapter original publisher references overlapping this unit. Never infer a no-source conclusion from absent V7 Atlas events.",
+            "automaticApproval": false
+          }
+        }
+      ]
+    }
+  ],
+  "auditPass": "HISTORIA_8_HIGH_RISK_CHAPTERS_V7_EVIDENCE_CROSSWALK_AND_SEAM_TRIAGE_20261017",
+  "auditMethod": "Direct extraction of checked-in CPDV and Douay–Rheims verse arrays; confirm own source-edition references. No reproduced Bible words in research overlay.",
+  "statusNote": "Eight high-risk chapters now have provisional source-based principal readings preserving the original v18 segments. Not publication-approved; pericope frequency, full literary review, legal rights and contextual linkage remain open.",
+  "principalSelectionCount": {
+    "h42Witnesses": 7,
+    "principalVerseUnits": 195,
+    "publicationApprovals": 0,
+    "h76Witnesses": 5,
+    "h76PrincipalVerseUnits": 59,
+    "h76ExpandedVerseUnits": 83,
+    "h76PublicationApprovals": 0
+  },
+  "revelationEditorialBoundary": {
+    "h76": "Revelation 6; 8; 12–13; 17–18, selected symbolic vision units",
+    "h77": "Revelation 19–20 reserved; not absorbed into H76",
+    "h78": "Revelation 21–22 reserved; not absorbed into H76",
+    "interpretation": "Symbolic/apocalyptic visions, not an asserted literal event-by-event chronological timeline",
+    "status": "RESEARCH_STRUCTURE_ONLY"
+  },
+  "existingFileNamingNote": "Legacy part-ii filename retained to preserve all callers, but this record now includes six additional chapter repairs. No second canonical abridgment registry is created.",
+  "sourceProvenance": "v18 originalReferences transcribed from V18 Ordered Verse Segments in user's workbook; principals are independent editor research choices sourced to checked-in verse witnesses, NOT automatically publisher-frequency winners.",
+  "researchMetrics": {
+    "highRiskChapters": 8,
+    "legacyUnits": 12,
+    "addedUnits": 28,
+    "totalUnits": 40
+  },
+  "continuityPass": {
+    "method": "Visual inspection of the first and final CPDV source verses at high-risk fragment seams; restored necessary antecedents; NOT a completed oral read-through or Catholic editorial approval",
+    "alteredUnits": [
+      "H27-02",
+      "H27-05",
+      "H42-07",
+      "H54-05",
+      "H73-02"
+    ],
+    "remaining": "Other seams carry original omission markers; still require live sequential reading and editor acceptance",
+    "date": "2026-10-17"
+  },
+  "frequencyReconciliation": {
+    "status": "COMPLETE_V7_ATLAS_ASSOCIATION_CROSSWALK_NOT_VERSE_CONSENSUS_CERTIFICATION",
+    "v7PublishedSelections": 460,
+    "v7AtlasEvents": 151,
+    "reconciledEditorialUnits": 40,
+    "withOverlappingAtlasEvent": 19,
+    "withoutOverlappingAtlasEvent": 21,
+    "distinctAtlasEventsLinked": 20,
+    "qualifiedSourceRowsLinked": 53,
+    "heldNonQualifiedRowsLinked": 3,
+    "unitsWithStrictSimpleMultiFamilyBoundaryAgreement": 4,
+    "independentFamilyGrouping": "sourceRegister.independentFamily; multiple rows and variants from same publisher family count once; provisional MISSAL62 and unauthenticated CHRON152 excluded",
+    "limitations": [
+      "Original V7 is research for 151 Bible Atlas events, not exhaustive Historia Salutis verse selection",
+      "Most source references are broad story, lectionary, or alternate Gospel parallels",
+      "Cross-edition Esther numbering requires its exact 274↔275 verse crosswalk, not guessed publication coordinates",
+      "No new source discovery or publication approval attempted"
+    ],
+    "noPublisherPopularityClaim": true
+  }
+}
