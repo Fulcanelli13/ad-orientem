@@ -9,8 +9,11 @@ const html=fs.readFileSync(path.join(root,'previews/visible-mass-3d/sanctuary-ho
 const registry=JSON.parse(fs.readFileSync(path.join(root,'previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json'),'utf8'));
 const main=fs.readFileSync(path.join(root,'previews/visible-mass-3d/PHASE1_OBJECT_QUESTION_RECONCILIATION_20261017.md'),'utf8');
 const photos=JSON.parse(fs.readFileSync(path.join(root,'previews/visible-mass-3d/sanctuary-inspection-sources-20261017.v1.json'),'utf8'));
-assert.equal(photos.assets.length,7,'seven documented inspection subjects');
-assert.deepEqual(photos.assets.map(a=>a.object_id),['AL03','AL16','BK01','SV01','SV02','LN02','LN03']);
+assert.equal(photos.assets.length,17,'seventeen documented inspection subjects');
+assert.deepEqual(new Set(photos.assets.map(a=>a.object_id)).size,17,'every inspection has distinct physical object identity');
+assert.deepEqual(photos.assets.slice(0,7).map(a=>a.object_id),['AL03','AL16','BK01','SV01','SV02','LN02','LN03']);
+for(const id of ['SV03','SN05','LN04','LN05','EQ01','EQ02','SV13','AL14','LN01','SN07'])
+ assert.ok(photos.assets.some(a=>a.object_id===id),'required reconciliation expansion: '+id);
 for(const photo of photos.assets) {
  assert.match(photo.image_url,/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//);
  assert.match(photo.source_url,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
@@ -24,7 +27,10 @@ for(const photo of photos.assets) {
  assert.equal(sliced[0],hash[0],photo.object_id+' Wikimedia storage prefix');
  assert.equal(sliced[1],hash.slice(0,2),photo.object_id+' Wikimedia filename hash');
 
- assert.ok(photo.note.includes('not') || photo.note.includes('museum') || photo.note.includes('Museum'),'independent reference must disclose scene separation');
+ assert.equal(photo.scene,'SEPARATE_INSPECTION_PHOTOGRAPH');
+ assert.ok(typeof photo.note==='string'&&photo.note.length>50,'inspection provenance note');
+ assert.ok(['Altar & sanctuary','Books','Vessels','Sacred linens','Serving equipment'].includes(photo.zone));
+ assert.ok(['PHOTO_OBJECT','PHOTO_MUSEUM','PHOTO_CONTEXT','HISTORICAL_ILLUSTRATION'].includes(photo.asset_kind));
  const object=registry.objects.find(o=>o.object_id===photo.object_id);
  assert.ok(object,'inspection must be a registry subject: '+photo.object_id);
  assert.equal(object.glossary_id,photo.glossary_id);
@@ -70,6 +76,10 @@ assert.match(html,/inspection-choices/);
 assert.match(html,/inspection-provenance/);
 assert.match(html,/photo-credit/);
 assert.match(html,/photo-viewport/);
+assert.match(html,/renderRelatedObjects/);
+assert.match(html,/inspect-family/);
+assert.match(html,/HISTORICAL_ILLUSTRATION/);
+assert.match(html,/id="inspection-type"/);
 
 assert.match(html,/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017\.v1\.json/);
 assert.match(html,/not yet been published/,'not fabricating Phase 1.5 answers');
