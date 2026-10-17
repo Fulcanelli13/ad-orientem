@@ -255,7 +255,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoFolioReader .aoDevoCardScroll .aoDevoParagraph{
  transition:opacity .22s ease,color .22s ease!important}
 #aoPray435930 .aoFolioReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active="true"]{opacity:1!important}
-#aoPray435930 .aoFolioReader .aoFolioConclusionPart{
+#aoPray435930 .aoFolioReader .aoFolioGuidedHint{margin:12px auto 0;max-width:50ch;color:var(--muted,#b6ad9a);font:italic 14px/1.48 Georgia,serif}\n#aoPray435930 .aoFolioReader .aoFolioConclusionPart{
  display:grid;gap:8px;padding:17px 0 0;margin:4px 0 0;
  border-top:1px solid var(--border,rgba(255,255,255,.13));
 }
