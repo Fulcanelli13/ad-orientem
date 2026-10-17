@@ -57,6 +57,25 @@ assert.deepEqual(spots.map(s=>s.id),['AL01','AL06','AL07','AL19','SN02','SN04'])
 assert.equal(new Set(spots.map(s=>s.id)).size,6);
 assert.equal(registry.objects.length,30);
 assert.equal(registry.questions.length,134);
+const relatedSection=script[1].match(/const RELATED_OBJECTS=\{([\s\S]*?)\};/);
+assert.ok(relatedSection,'related object adapter must be declared');
+const graph=vm.runInNewContext('({'+relatedSection[1]+'})');
+const visual=new Set([...spots.map(s=>s.id),...photos.assets.map(a=>a.object_id)]);
+const missing=registry.objects.filter(o=>!visual.has(o.object_id)).map(o=>o.object_id).sort();
+assert.deepEqual(missing,['AL08','AL10','AL13','AL17','AL18','BK02','EQ06']);
+const reached=new Set(spots.map(s=>s.id));
+let frontier=[...reached];
+while(frontier.length){
+ const next=[];
+ for(const from of frontier)for(const to of graph[from]||[]){
+  assert.ok(registry.objects.some(o=>o.object_id===to),'relation must refer to real pilot object: '+to);
+  if(!reached.has(to)){reached.add(to);next.push(to);}
+ }
+ frontier=next;
+}
+assert.equal(reached.size,30,'every pilot object must be navigable from an actual scene hotspot');
+assert.ok(missing.every(id=>reached.has(id)),'non-photographed subjects must still be discoverable');
+assert.match(html,/No independent object photograph or direct church hotspot has been verified/);
 for(const s of spots) {
  assert.ok(s.x>0&&s.x<100&&s.y>0&&s.y<100, s.id+' off image');
  assert.ok(s.title.length>3);
